@@ -193,7 +193,7 @@ function function_53150079(hidden, spotted) {
 // Checksum 0x4899f056, Offset: 0xe70
 // Size: 0x10a
 function function_94e62837() {
-    while (1) {
+    while (true) {
         level flag::wait_till("stealth_enabled");
         namespace_6c0cd084::function_c5861edc(1);
         level flag::wait_till("stealth_spotted");
@@ -218,17 +218,17 @@ function function_8f73eada() {
     if (isdefined(level.stealth.var_9bd7a27)) {
         foreach (group in level.stealth.var_9bd7a27.groups) {
             if (namespace_3fc78cb6::function_ec43a43a(group.name)) {
-                return 1;
+                return true;
             }
         }
     }
     ais = getactorteamarray("axis", "team3");
     foreach (guy in ais) {
         if (!isdefined(guy.stealth) && isdefined(guy.finished_spawning) && isdefined(guy.enemy) && guy.enemy == self) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_393f6012/manager
@@ -238,7 +238,7 @@ function function_8f73eada() {
 function function_5322dede() {
     waitframe(1);
     var_10415f32 = 0;
-    while (1) {
+    while (true) {
         if (level flag::get("stealth_enabled")) {
             var_1438b028 = function_8f73eada();
             if (var_1438b028) {
@@ -276,7 +276,7 @@ function function_5322dede() {
 function function_b88a8984() {
     level.stealth.enemies[#"axis"] = [];
     level.stealth.enemies[#"allies"] = [];
-    while (1) {
+    while (true) {
         level flag::wait_till("stealth_enabled");
         level.stealth.enemies[#"axis"] = getplayers();
         level.stealth.enemies[#"allies"] = getactorteamarray("axis");
@@ -289,7 +289,7 @@ function function_b88a8984() {
 // Checksum 0xcf4de6fb, Offset: 0x13f0
 // Size: 0x108
 function function_f880882d() {
-    while (1) {
+    while (true) {
         level flag::wait_till("stealth_enabled");
         if (isdefined(level.stealth.var_ebbdef7a) && level.stealth.var_ebbdef7a.size != 0) {
             foreach (group, var_462028a0 in level.stealth.var_ebbdef7a) {
@@ -307,7 +307,7 @@ function function_f880882d() {
 // Checksum 0x37f5cb3d, Offset: 0x1500
 // Size: 0x4c
 function function_807b87bc() {
-    while (1) {
+    while (true) {
         level flag::wait_till("stealth_enabled");
         level.stealth.var_69fc8bf2 = 0;
         wait(0.05);
@@ -342,7 +342,7 @@ function function_9b8c54e() {
 // Checksum 0x6aff4afa, Offset: 0x1658
 // Size: 0x80
 function function_18f089a0() {
-    while (1) {
+    while (true) {
         self waittill(#"grenade_pullback");
         level flag::set("stealth_player_nade");
         waitresult = undefined;
@@ -501,7 +501,7 @@ function private function_5ca45f26(trigger, var_a7c14b20, var_1910605e) {
         }
         level.var_5ca45f26[var_a7c14b20][level.var_5ca45f26[var_a7c14b20].size] = trigger;
     }
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = trigger waittill(#"trigger");
         other = waitresult.activator;

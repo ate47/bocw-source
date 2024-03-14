@@ -207,7 +207,7 @@ function function_33c3270c() {
 // Size: 0x170
 function function_98da33e1() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         n_index = randomint(3);
         switch (n_index) {
         case 0:
@@ -283,7 +283,7 @@ function function_a3d0a278() {
 // Size: 0x1f4
 function function_208f2fc1() {
     self endon(#"objective_ended", #"hash_4c2edcae0ab4fea9");
-    while (1) {
+    while (true) {
         foreach (player in getplayers()) {
             if (distance2dsquared(player.origin, self.origin) < self.var_8d583324) {
                 if (!is_true(player.var_cbf09f9f)) {
@@ -386,7 +386,7 @@ function function_a8a01818(*notifyhash) {
 function function_a55eccfe() {
     self endon(#"objective_ended", #"hash_4c2edcae0ab4fea9");
     n_delay = 5;
-    while (1) {
+    while (true) {
         player = zm_utility::get_closest_player(self.var_cf24b789.origin);
         if (isdefined(player)) {
             n_dist = int(distance2dsquared(self.var_cf24b789.origin, player.origin));
@@ -435,7 +435,7 @@ function function_8deb12b0(instance) {
     self endon("72791e0e596ee0ca");
     self endon(#"outside", #"disconnect", #"death");
     instance endon(#"objective_ended");
-    while (1) {
+    while (true) {
         if (isalive(self) && isdefined(instance)) {
             n_dist = self function_3dc3dd2d(instance);
         }
@@ -490,7 +490,7 @@ function player_damage() {
     self notify("789232237c21b584");
     self endon("789232237c21b584");
     self endon(#"outside", #"disconnect");
-    while (1) {
+    while (true) {
         if (zm_utility::is_player_valid(self)) {
             self dodamage(2, self.origin, undefined, undefined, "none", "MOD_DEATH_CIRCLE", 0, level.weaponnone);
             self function_bc82f900("damage_light");
@@ -514,7 +514,7 @@ function function_1f3a6644() {
 // Size: 0x100
 function function_49115855() {
     self endon(#"objective_ended", #"bomb");
-    while (1) {
+    while (true) {
         a_players = function_a1ef346b(undefined, self.origin, 800);
         if (is_true(a_players.size) && isdefined(self.var_cf24b789) && !level flag::get(#"in_dark_side")) {
             self.var_cf24b789 namespace_7589cf5c::function_ac709d66(self, #"hash_64697db39a227a4a");
@@ -1695,7 +1695,7 @@ function function_1c798ee9() {
     if (isdefined(str_trigger)) {
         var_520491cd = getent(str_trigger, "targetname");
         level.var_e6689780 = var_520491cd;
-        while (1) {
+        while (true) {
             s_result = undefined;
             s_result = var_520491cd waittill(#"trigger");
             if (is_true(s_result.activator.var_98f1f37c)) {
@@ -1871,7 +1871,7 @@ function function_953aa05e() {
 function function_e14d27d9() {
     self endon(#"objective_ended", #"hash_36719991d2a7edc6", #"hash_7729c6e7911b801d");
     wait(2);
-    while (1) {
+    while (true) {
         a_zombies = getentarray("holdout_zombie", "targetname");
         if (isdefined(a_zombies) && a_zombies.size > 0) {
             wait(1);
@@ -1911,7 +1911,7 @@ function function_34ac205(n_active, n_wave) {
     }
     var_559503f1 = self function_94e50668(n_wave);
     a_s_locs = arraycopy(var_559503f1);
-    while (1) {
+    while (true) {
         level flag::wait_till("spawn_zombies");
         if (self.n_active < n_active) {
             var_7ecdee63 = function_2631fff1(self, level.var_b48509f9);
@@ -2068,22 +2068,22 @@ function function_2631fff1(*instance, var_661691aa) {
 // Size: 0x11c
 function private function_6b130ce9() {
     if (!isdefined(level.var_7d45d0d4.activeobjective.var_75bfdd78[0].origin)) {
-        return 0;
+        return false;
     }
     spot = level.var_7d45d0d4.activeobjective.var_75bfdd78[0].origin;
     if (!self flag::get(#"hash_77a09d6234b7284f")) {
         self.var_6ca50f69 = 0;
         self namespace_e292b080::zombieupdategoal(spot);
-        return 1;
+        return true;
     }
     enemy = zm_ai_utility::function_825317c(self);
     if (isdefined(enemy) && !self cansee(enemy)) {
         if (isdefined(enemy.last_valid_position)) {
             self namespace_e292b080::zombieupdategoal(enemy.last_valid_position);
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_4db53432/namespace_4db53432
@@ -2095,7 +2095,7 @@ function function_bf606a73() {
     self callback::function_d8abfc3d(#"hash_4afe635f36531659", &function_fd68cae4);
     self flag::set(#"hash_52d6a75cdbf101f3");
     self.var_6bc9818 = &function_6b130ce9;
-    while (1) {
+    while (true) {
         if (isalive(self)) {
             player = awareness::function_d7fedde2(self);
             if (isdefined(player)) {
@@ -2228,7 +2228,7 @@ function function_5f3c406e() {
 function function_35559739(instance) {
     instance endon(#"objective_ended");
     self endon(#"death");
-    while (1) {
+    while (true) {
         self.var_b30a9f82 thread vehicle::get_on_and_go_path(self.nd_start);
         self.var_b30a9f82 waittill(#"reached_end_node");
     }

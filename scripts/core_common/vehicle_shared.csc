@@ -118,9 +118,9 @@ function private function_dd27aacd(localclientnum, vehicletype) {
         } else {
             self thread [[ level.vehicletypecallbackarray[vehicletype] ]](localclientnum);
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace vehicle/vehicle_shared
@@ -433,7 +433,7 @@ function function_5ce3e74e(localclientnum, var_1ca9b241, var_dc0238cc, player) {
     self endon(#"end_boost");
     self endon(#"veh_boost");
     self endon(#"death");
-    while (1) {
+    while (true) {
         if (!isinvehicle(localclientnum, self)) {
             if (isdefined(var_1ca9b241)) {
                 stopfx(localclientnum, var_1ca9b241);
@@ -441,7 +441,7 @@ function function_5ce3e74e(localclientnum, var_1ca9b241, var_dc0238cc, player) {
             if (isdefined(var_dc0238cc)) {
                 player stoprumble(localclientnum, var_dc0238cc);
             }
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -1223,10 +1223,10 @@ function shouldchangescreenpostfx(localclientnum) {
     if (function_1cbf351b(localclientnum)) {
         killcamentity = function_93e0f729(localclientnum);
         if (isdefined(killcamentity) && killcamentity != player) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace vehicle/vehicle_shared
@@ -1336,15 +1336,15 @@ function field_use_engine_damage_sounds(*localclientnum, *oldval, newval, *bnewe
         case 0:
             self.engine_damage_low = 0;
             self.engine_damage_high = 0;
-            return;
+            break;
         case 1:
             self.engine_damage_low = 1;
             self.engine_damage_high = 0;
-            return;
+            break;
         case 1:
             self.engine_damage_low = 0;
             self.engine_damage_high = 1;
-            return;
+            break;
         }
     }
 }
@@ -1390,18 +1390,18 @@ function private function_f753359a() {
 // Size: 0x86
 function private function_27b19317(localclientnum) {
     if (!self function_4add50a7()) {
-        return 0;
+        return false;
     }
     if (function_65b9eb0f(localclientnum)) {
-        return 0;
+        return false;
     }
     if (is_true(self.var_304cf9da)) {
-        return 0;
+        return false;
     }
     if (is_true(self.var_6aedef46)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace vehicle/vehicle_shared
@@ -1452,7 +1452,7 @@ function function_7d1d0e65(localclientnum, oldval, newval, *bnewent, *binitialsn
             }
             switch (bwastimejump) {
             case 0:
-                continue;
+                break;
             case 1:
                 if (isdefined(var_b5ddf091.warning) && isdefined(var_b5ddf091.tag_warning)) {
                     handle = util::playfxontag(binitialsnap, var_b5ddf091.warning, self, var_b5ddf091.tag_warning);
@@ -1463,7 +1463,7 @@ function function_7d1d0e65(localclientnum, oldval, newval, *bnewent, *binitialsn
                     }
                     self.fx_handles[#"malfunction"][self.fx_handles[#"malfunction"].size] = handle;
                 }
-                continue;
+                break;
             case 2:
                 if (isdefined(var_b5ddf091.active) && isdefined(var_b5ddf091.var_2f451e59)) {
                     handle = util::playfxontag(binitialsnap, var_b5ddf091.active, self, var_b5ddf091.var_2f451e59);
@@ -1474,7 +1474,7 @@ function function_7d1d0e65(localclientnum, oldval, newval, *bnewent, *binitialsn
                     }
                     self.fx_handles[#"malfunction"][self.fx_handles[#"malfunction"].size] = handle;
                 }
-                continue;
+                break;
             case 3:
                 if (isdefined(var_b5ddf091.fatal) && isdefined(var_b5ddf091.var_ceeccc7a)) {
                     handle = util::playfxontag(binitialsnap, var_b5ddf091.fatal, self, var_b5ddf091.var_ceeccc7a);
@@ -1485,7 +1485,7 @@ function function_7d1d0e65(localclientnum, oldval, newval, *bnewent, *binitialsn
                     }
                     self.fx_handles[#"malfunction"][self.fx_handles[#"malfunction"].size] = handle;
                 }
-                continue;
+                break;
             }
         }
     }
@@ -1510,16 +1510,16 @@ function function_7d1d0e65(localclientnum, oldval, newval, *bnewent, *binitialsn
         }
         switch (bwastimejump) {
         case 0:
-            return;
+            break;
         case 1:
             self.var_30141f5c = self playloopsound(var_ca456b21);
-            return;
+            break;
         case 2:
         case 3:
             if (fieldname != 2 && fieldname != 3) {
                 self.var_30141f5c = self playloopsound(var_b10574a9);
             }
-            return;
+            break;
         }
     }
 }
@@ -1781,17 +1781,17 @@ function private function_245fd53b(localclientnum) {
     self endon(#"death");
     starttime = self getclienttime();
     var_d183f050 = getservertime(localclientnum);
-    while (1) {
+    while (true) {
         self function_43d26f48();
         waitframe(1);
         currenttime = self getclienttime();
         var_5710f35c = getservertime(localclientnum);
         if (var_5710f35c < var_d183f050) {
-            return;
+            break;
         }
         elapsedtime = currenttime - starttime;
         if (elapsedtime >= 5000) {
-            return;
+            break;
         }
     }
 }
@@ -1819,22 +1819,22 @@ function field_update_alert_level(localclientnum, *oldval, newval, *bnewent, *bi
     settings = getscriptbundle(self.scriptbundlesettings);
     switch (bwastimejump) {
     case 0:
-        return;
+        break;
     case 1:
         if (isdefined(settings.unawarelightfx1)) {
             self.alert_light_fx_handles[0] = util::playfxontag(fieldname, settings.unawarelightfx1, self, settings.lighttag1);
         }
-        return;
+        break;
     case 2:
         if (isdefined(settings.alertlightfx1)) {
             self.alert_light_fx_handles[0] = util::playfxontag(fieldname, settings.alertlightfx1, self, settings.lighttag1);
         }
-        return;
+        break;
     case 3:
         if (isdefined(settings.combatlightfx1)) {
             self.alert_light_fx_handles[0] = util::playfxontag(fieldname, settings.combatlightfx1, self, settings.lighttag1);
         }
-        return;
+        break;
     }
 }
 

@@ -220,7 +220,7 @@ function function_879f2ed0() {
     self notify("ff2c4512ebde957");
     self endon("ff2c4512ebde957");
     level endon(#"game_over");
-    while (1) {
+    while (true) {
         wait(3);
         if (namespace_4dae815d::function_59a9cf1d() == 0 && flag::get("doa_round_spawning") == 0) {
             continue;
@@ -263,33 +263,33 @@ function function_19e7d0fc(name) {
 // Size: 0xc2
 function function_d52d06ee(id) {
     if (id == 6) {
-        return 1;
+        return true;
     }
     if (id == 7) {
-        return 1;
+        return true;
     }
     if (id == 5) {
-        return 1;
+        return true;
     }
     if (id == 9) {
-        return 1;
+        return true;
     }
     if (id == 10) {
-        return 1;
+        return true;
     }
     if (id == 11) {
-        return 1;
+        return true;
     }
     if (id == 12) {
-        return 1;
+        return true;
     }
     if (id == 13) {
-        return 1;
+        return true;
     }
     if (id == 16) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_5a917022/namespace_5a917022
@@ -459,19 +459,19 @@ function function_7230f033() {
         level thread function_898ca25f(room);
         level.doa.var_848746c8 = undefined;
         level.doa.var_ae635e19 = "FORCED";
-        return 1;
+        return true;
     }
     var_758057d3 = math::clamp(100 - (level.doa.roundnumber - level.doa.var_f8e35dd0) * 6 - level.doa.var_a5ade8f8, 15, 100);
     level.doa.var_ae635e19 = randomint(var_758057d3);
     if (level.doa.var_ae635e19 > 15) {
-        return 0;
+        return false;
     }
     room = function_3db4a0b1();
     if (!isdefined(room)) {
-        return 0;
+        return false;
     }
     level thread function_898ca25f(room);
-    return 1;
+    return true;
 }
 
 // Namespace namespace_5a917022/namespace_5a917022
@@ -898,7 +898,7 @@ function function_56e9011(room) {
 // Size: 0x110
 function function_6f63004b(var_74606c86, var_7d320f40) {
     level endon(#"hash_52ca1213084f29fa", #"hash_7dd47c99b7707b1c", #"game_over");
-    while (1) {
+    while (true) {
         result = undefined;
         result = level waittill(#"hash_6b1b7f8f320c0d3b");
         if (isdefined(result.pickup)) {
@@ -998,11 +998,11 @@ function function_92f612b2(def, pickup) {
     case 32:
     case 33:
         pickup namespace_3a8e4a3::function_22c4e231(1);
-        return;
+        break;
     case 6:
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 
@@ -1074,7 +1074,7 @@ function function_e5c7bce7() {
     room = level.doa.var_848746c8;
     var_dffc76c2 = 0;
     level.doa.var_1f2c7d5f = 1;
-    while (1) {
+    while (true) {
         level.doa.var_848746c8 = room;
         wait(3);
         level notify(#"round_over");
@@ -1082,7 +1082,7 @@ function function_e5c7bce7() {
         level namespace_ec06fe4a::function_de70888a();
         namespace_ec06fe4a::function_7ae4c183();
         wait(2);
-        while (1) {
+        while (true) {
             wait(1);
             guys = namespace_7f5aeb59::function_23e1f90f();
             var_271662e8 = [[ level.doa.var_39e3fa99 ]]->function_dfb49846();
@@ -1104,7 +1104,7 @@ function function_e5c7bce7() {
         if (isdefined(level.doa.var_a7ccb320) && flag::get("dungeon_building")) {
             level waittill(#"hash_40456743c6415fcd");
         }
-        while (1) {
+        while (true) {
             wait(1);
             if (isdefined(level.doa.var_6f3d327)) {
                 level.doa.var_6f3d327.var_1406397f notify(#"trigger");
@@ -1233,9 +1233,9 @@ function function_330ded6(var_4d842336, *origin) {
         assert(isdefined(level.doa.var_6f3d327));
     #/
     if (level.doa.var_8609e0e9.size && isinarray(level.doa.var_8609e0e9, [[ origin ]]->getname())) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_5a917022/namespace_5a917022
@@ -1291,7 +1291,7 @@ function function_8d3502d3() {
     self endon("2cb625666c1ab592");
     self endon(#"disconnect");
     level endon(#"hash_11a3b1e82b21ec58", #"game_over");
-    while (1) {
+    while (true) {
         self waittill(#"jump_begin");
         self namespace_e32bb68::function_3a59ec34("fly_doa_jump_plr");
         self waittill(#"jump_end");
@@ -1325,7 +1325,7 @@ function function_74c9e3dc(player, defaultval) {
     player endon(#"disconnect");
     toks = strtok(self.script_noteworthy, ";");
     val = int(toks[0]);
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"trigger");
         other = result.activator;
@@ -1354,7 +1354,7 @@ function function_6a60ea16(defaultval) {
     foreach (trig in var_987b26ec) {
         trig thread function_74c9e3dc(self, defaultval);
     }
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"hash_3ae4b1b9ce49f5e");
         if (isdefined(result.val)) {
@@ -1504,7 +1504,7 @@ function function_bbd6f14f(*room, var_5c0f8ea9, var_f0597ea3) {
     #/
     open = 0;
     self disconnectpaths();
-    while (1) {
+    while (true) {
         wait(0.5);
         diff = abs(self.origin[2] - var_5c0f8ea9[2]);
         if (diff <= 2) {
@@ -1563,7 +1563,7 @@ function function_430e5080(room) {
         #/
         margwa.ignoreall = 1;
     }
-    while (1) {
+    while (true) {
         self namespace_e32bb68::function_ae271c0b("evt_doa_stonedoor_close");
         self waittill(#"plate_activated");
         deltaz = abs(self.origin[2] - desiredpos[2]);
@@ -1587,7 +1587,7 @@ function function_2f1636cd(*room) {
     level endon(#"hash_7dd47c99b7707b1c");
     self notify("723adc9b07be551b");
     self endon("723adc9b07be551b");
-    while (1) {
+    while (true) {
         result = undefined;
         result = level waittill(#"hash_3f4be37646a2a9cb");
         if (result.ai.classname === #"hash_502ad85371f449ed") {
@@ -1752,7 +1752,7 @@ function function_1dfe9126(*room) {
     self endon("1205e69a3a57f0be");
     var_781834c0 = self.origin;
     desiredpos = self.origin + vectorscale((0, 0, -1), 158);
-    while (1) {
+    while (true) {
         self namespace_e32bb68::function_ae271c0b("evt_doa_stonedoor_close");
         self waittill(#"plate_activated");
         level notify(#"hash_62d02129547fa94a");
@@ -1785,7 +1785,7 @@ function function_c0dff79(room) {
     self endon("31268ba2fbd43ccf");
     self triggerenable(1);
     done = 0;
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"trigger");
         if (isdefined(result.activator)) {

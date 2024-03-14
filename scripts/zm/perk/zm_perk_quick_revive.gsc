@@ -67,15 +67,15 @@ function function_5a52e778(*perk) {
 // Size: 0x5e
 function function_d5c9a81(e_revivee) {
     if (!isdefined(e_revivee.revivetrigger)) {
-        return 0;
+        return false;
     }
     if (!isalive(self)) {
-        return 0;
+        return false;
     }
     if (is_true(e_revivee.var_d1e03242)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_perk_quick_revive/zm_perk_quick_revive
@@ -139,7 +139,7 @@ function function_3037364a(e_revivee) {
     revivetime = 3;
     e_revivee thread laststand::revive_hud_show_n_fade(#"hash_12e2c5e29f8ce6ad", 3, self);
     e_revivee startrevive(self);
-    while (1) {
+    while (true) {
         waitframe(1);
         if (isplayer(e_revivee)) {
             e_revivee.var_6fc48a11 = e_revivee.var_6fc48a11 + 0.05;
@@ -148,7 +148,7 @@ function function_3037364a(e_revivee) {
             }
             if (e_revivee.var_6fc48a11 >= revivetime) {
                 e_revivee zm_laststand::auto_revive(self);
-                return;
+                break;
             }
         }
     }
@@ -223,7 +223,7 @@ function quick_revive_perk_machine_setup(use_trigger, perk_machine, bump_trigger
 function turn_revive_on() {
     level endon(#"stop_quickrevive_logic");
     level flag::wait_till("start_zombie_round_logic");
-    while (1) {
+    while (true) {
         machine = getentarray("vending_revive", "targetname");
         machine_triggers = getentarray("vending_revive", "target");
         for (i = 0; i < machine.size; i++) {

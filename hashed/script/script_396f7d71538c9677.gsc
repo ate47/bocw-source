@@ -16,9 +16,9 @@
 function dialog_chance(chancekey) {
     dialogchance = mpdialog_value(chancekey);
     if (!isdefined(dialogchance) || dialogchance <= 0) {
-        return 0;
+        return false;
     } else if (dialogchance >= 100) {
-        return 1;
+        return true;
     }
     return randomint(100) < dialogchance;
 }
@@ -115,13 +115,13 @@ function function_e1983f22() {
 // Size: 0x196
 function function_d804d2f0(speakingplayer, player, allyradiussq) {
     if (!isdefined(player) || !isdefined(player.origin) || !isdefined(speakingplayer) || !isdefined(speakingplayer.origin) || !isalive(player) || player.sessionstate != "playing" || player.playingdialog || player isplayerunderwater() || player isremotecontrolling() || player isinvehicle() || player isweaponviewonlylinked() || player == speakingplayer || player.team != speakingplayer.team || player.playerrole == speakingplayer.playerrole || player hasperk(#"specialty_quieter")) {
-        return 0;
+        return false;
     }
     distsq = distancesquared(speakingplayer.origin, player.origin);
     if (distsq > allyradiussq) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace battlechatter/namespace_7819da81
@@ -218,12 +218,12 @@ function get_closest_player_enemy(origin, teamonly) {
 // Size: 0x100
 function can_play_dialog(teamonly) {
     if (!isplayer(self) || !isalive(self) || self.playingdialog === 1 || self isplayerunderwater() || self isremotecontrolling() || self isinvehicle() || self isweaponviewonlylinked()) {
-        return 0;
+        return false;
     }
     if (isdefined(teamonly) && !teamonly && self hasperk(#"specialty_quieter")) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace battlechatter/namespace_7819da81

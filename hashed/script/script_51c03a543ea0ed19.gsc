@@ -383,7 +383,7 @@ function function_17162917() {
 // Size: 0xaa
 function function_ba2c935e(mover, var_a44bbc63) {
     level endon(#"bustout_house_shotup");
-    while (1) {
+    while (true) {
         mover moveto(var_a44bbc63.origin, 1.5, 1.5 * 0.33, 1.5 * 0.33);
         wait(1.5);
         var_a44bbc63 = struct::get(var_a44bbc63.target, "targetname");

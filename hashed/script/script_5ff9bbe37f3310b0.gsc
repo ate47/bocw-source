@@ -68,7 +68,7 @@ function private function_8ba92985(s_instance) {
     var_8e27c3fd.target = s_chest.targetname;
     var_69b86a0a = spawn("trigger_radius", s_chest.origin - (0, 0, var_3ba64fe9.height / 2), 0, 1000, var_3ba64fe9.height);
     var_69b86a0a thread function_4dccab86(var_8e27c3fd);
-    while (1) {
+    while (true) {
         var_8e27c3fd waittill(#"trigger_look", #"proximity");
         if (level flag::get(#"objective_locked")) {
             level flag::wait_till_clear(#"objective_locked");
@@ -87,9 +87,9 @@ function private function_8ba92985(s_instance) {
 // Size: 0x62
 function function_a1ca0279(*v_origin_or_ent, *params) {
     if (level flag::get(#"objective_locked") && !level flag::get(#"hash_68097fc64a08e557")) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_12a6a726/namespace_12a6a726
@@ -98,7 +98,7 @@ function function_a1ca0279(*v_origin_or_ent, *params) {
 // Size: 0x62
 function private function_4dccab86(var_8e27c3fd) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self waittill(#"trigger");
         if (isdefined(var_8e27c3fd)) {
             var_8e27c3fd notify(#"proximity");

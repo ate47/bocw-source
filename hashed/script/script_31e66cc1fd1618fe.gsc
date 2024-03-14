@@ -51,12 +51,12 @@ function private fake_ads(localclientnum, oldval, newval, *bnewent, *binitialsna
     }
     if (!bwastimejump && bwastimejump != fieldname) {
         self namespace_ca99987f::function_f95cb457(undefined, 14.64, 0.2, #"sine");
-        while (1) {
+        while (true) {
             result = undefined;
             result = self waittill(#"hash_133229f708f5d10");
             if (result.target_value === 14.64) {
                 self function_9298adaf(binitialsnap);
-                return;
+                break;
             }
         }
     }

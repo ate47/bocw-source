@@ -98,9 +98,9 @@ function function_196797c9(vehicle) {
         assert(isvehicle(vehicle));
     #/
     if (isdefined(vehicle.vehicleridersbundle)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace vehicle/vehicleriders_shared
@@ -124,10 +124,10 @@ function private function_41cf7b1d(vehicle) {
     for (seat = 0; seat < var_4301b21d; seat++) {
         position = bundle.objects[seat].position;
         if (issubstr(position, "driver")) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace vehicle/vehicleriders_shared
@@ -143,10 +143,10 @@ function private function_f7ce77b(vehicle) {
     for (seat = 0; seat < var_4301b21d; seat++) {
         position = bundle.objects[seat].position;
         if (position == "passenger1") {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace vehicle/vehicleriders_shared
@@ -162,10 +162,10 @@ function private function_2453a4a2(vehicle) {
     for (seat = 0; seat < var_4301b21d; seat++) {
         position = bundle.objects[seat].position;
         if (position == "gunner1") {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace vehicle/vehicleriders_shared
@@ -181,10 +181,10 @@ function private function_6fd51bb0(vehicle) {
     for (seat = 0; seat < var_4301b21d; seat++) {
         position = bundle.objects[seat].position;
         if (position == "gunner2") {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace vehicle/vehicleriders_shared
@@ -237,10 +237,10 @@ function private function_faad1dd1(vehicle, position) {
         switch (vehicle.var_761c973.var_d11f76ab[position]) {
         case 1:
             vehicle clientfield::increment(position + "_exit_restore", 1);
-            return;
+            break;
         case 2:
             vehicle clientfield::increment(position + "_exit_combat_restore", 1);
-            return;
+            break;
         }
     }
 }
@@ -250,7 +250,7 @@ function private function_faad1dd1(vehicle, position) {
 // Checksum 0x2cfca903, Offset: 0xf08
 // Size: 0x174
 function private function_af0a6edf() {
-    while (1) {
+    while (true) {
         level waittill(#"save_restore");
         waitframe(1);
         a_vehicles = getentarraybytype(12);
@@ -354,7 +354,7 @@ function private function_8160dc33() {
     var_a2def763 = 0;
     var_d28d4ba5 = 0;
     notifytime = 0;
-    while (1) {
+    while (true) {
         waitframe(1);
         vehiclespeed = length(self.velocity);
         var_97f17bbd = vehiclespeed - var_b343ef50;
@@ -1258,7 +1258,7 @@ function exit_variable(ai, var_b67230a6) {
 // Size: 0xc0
 function exit_high_loop_anim(e_parent, var_b67230a6) {
     self endon(#"death", #"landing");
-    while (1) {
+    while (true) {
         if (var_b67230a6 && isdefined(self.var_ec30f5da.var_50d2110f)) {
             animation::play(self.var_ec30f5da.var_50d2110f, e_parent, "tag_origin");
             continue;
@@ -1476,7 +1476,7 @@ function private function_8a1b8aa0(ai, vehicle) {
         assert(isdefined(ai.var_ec30f5da));
     #/
     self thread function_88042c5b(ai, ai.var_ec30f5da.rideanim);
-    while (1) {
+    while (true) {
         result = undefined;
         result = vehicle waittill(#"vehicle_starting", #"vehicle_stopping");
         if (result._notify == "vehicle_starting" && isdefined(ai.var_ec30f5da.startanim)) {

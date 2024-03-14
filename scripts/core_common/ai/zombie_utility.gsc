@@ -579,10 +579,10 @@ function getquadrant(angle) {
 function isinset(input, set) {
     for (i = set.size - 1; i >= 0; i--) {
         if (input == set[i]) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zombie_utility/zombie_utility
@@ -625,7 +625,7 @@ function showlastenemysightpos(string) {
         } else {
             color = (1, 0.7, 0.4);
         }
-        while (1) {
+        while (true) {
             waitframe(1);
             if (!isdefined(self.lastenemysightpos)) {
                 continue;
@@ -661,7 +661,7 @@ function debugposinternal(org, string, size) {
         } else {
             color = (1, 0.7, 0.4);
         }
-        while (1) {
+        while (true) {
             waitframe(1);
             print3d(org, string, color, 1, size);
         }
@@ -1014,9 +1014,9 @@ function getanimendpos(theanim) {
 // Size: 0x1c
 function isvalidenemy(enemy) {
     if (!isdefined(enemy)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zombie_utility/zombie_utility
@@ -1025,78 +1025,78 @@ function isvalidenemy(enemy) {
 // Size: 0x21e
 function damagelocationisany(a, b, c, d, e, f, g, h, i, j, k, ovr) {
     if (!isdefined(self.damagelocation)) {
-        return 0;
+        return false;
     }
     if (!isdefined(a)) {
-        return 0;
+        return false;
     }
     if (self.damagelocation == a) {
-        return 1;
+        return true;
     }
     if (!isdefined(b)) {
-        return 0;
+        return false;
     }
     if (self.damagelocation == b) {
-        return 1;
+        return true;
     }
     if (!isdefined(c)) {
-        return 0;
+        return false;
     }
     if (self.damagelocation == c) {
-        return 1;
+        return true;
     }
     if (!isdefined(d)) {
-        return 0;
+        return false;
     }
     if (self.damagelocation == d) {
-        return 1;
+        return true;
     }
     if (!isdefined(e)) {
-        return 0;
+        return false;
     }
     if (self.damagelocation == e) {
-        return 1;
+        return true;
     }
     if (!isdefined(f)) {
-        return 0;
+        return false;
     }
     if (self.damagelocation == f) {
-        return 1;
+        return true;
     }
     if (!isdefined(g)) {
-        return 0;
+        return false;
     }
     if (self.damagelocation == g) {
-        return 1;
+        return true;
     }
     if (!isdefined(h)) {
-        return 0;
+        return false;
     }
     if (self.damagelocation == h) {
-        return 1;
+        return true;
     }
     if (!isdefined(i)) {
-        return 0;
+        return false;
     }
     if (self.damagelocation == i) {
-        return 1;
+        return true;
     }
     if (!isdefined(j)) {
-        return 0;
+        return false;
     }
     if (self.damagelocation == j) {
-        return 1;
+        return true;
     }
     if (!isdefined(k)) {
-        return 0;
+        return false;
     }
     if (self.damagelocation == k) {
-        return 1;
+        return true;
     }
     /#
         assert(!isdefined(ovr));
     #/
-    return 0;
+    return false;
 }
 
 // Namespace zombie_utility/zombie_utility
@@ -1319,10 +1319,10 @@ function spawn_zombie(spawner, target_name, spawn_point, round_number) {
 function zombie_spawn_failed(spawn) {
     if (isdefined(spawn) && isalive(spawn)) {
         if (isalive(spawn)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace zombie_utility/zombie_utility
@@ -1450,7 +1450,7 @@ function round_spawn_failsafe_debug_draw() {
     self notify("69e0e8d96408dd3f");
     self endon("69e0e8d96408dd3f");
     self endon(#"death");
-    for (prevorigin = self.origin; 1; prevorigin = self.origin) {
+    for (prevorigin = self.origin; true; prevorigin = self.origin) {
         if (is_true(level.toggle_keyline_always)) {
             self clientfield::set("zombie_keyline_render", 1);
             wait(1);
@@ -1481,7 +1481,7 @@ function round_spawn_failsafe() {
     if (is_true(level.debug_keyline_zombies)) {
         self thread round_spawn_failsafe_debug_draw();
     }
-    for (v_prev_origin = self.origin; 1; v_prev_origin = self.origin) {
+    for (v_prev_origin = self.origin; true; v_prev_origin = self.origin) {
         if (!function_d2dfacfd(#"zombie_use_failsafe")) {
             return;
         }
@@ -1513,7 +1513,7 @@ function round_spawn_failsafe() {
                 self.allowdeath = 1;
                 self kill(undefined, undefined, undefined, undefined, undefined, 1);
             }
-            return;
+            break;
         }
         var_25e376fd = 0;
         if (isdefined(level.var_62fc4786)) {
@@ -1543,7 +1543,7 @@ function round_spawn_failsafe() {
                 self.allowdeath = 1;
                 self kill(undefined, undefined, undefined, undefined, undefined, 1);
             }
-            return;
+            break;
         }
     }
 }
@@ -1752,7 +1752,7 @@ function set_zombie_run_cycle(new_move_speed) {
     self.zombie_move_speed = self function_d2f660ce(self.zombie_move_speed);
     if (isdefined(level.zm_variant_type_max)) {
         /#
-            if (0) {
+            if (false) {
                 debug_variant_type = getdvarint(#"scr_zombie_variant_type", -1);
                 if (debug_variant_type != -1) {
                     if (debug_variant_type <= level.zm_variant_type_max[self.zombie_move_speed][self.zombie_arms_position]) {
@@ -1949,7 +1949,7 @@ function get_current_actor_count() {
 // Size: 0xb0
 function zombie_gib_on_damage() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
         self thread zombie_gib(waitresult.amount, waitresult.attacker, waitresult.direction, waitresult.position, waitresult.mod, waitresult.tag_name, waitresult.model_name, waitresult.part_name, waitresult.weapon, waitresult.var_fd90b0bb);
@@ -2094,9 +2094,9 @@ function have_zombie_weapon_gib_callback(weapon) {
         weapon = weapon.name;
     }
     if (isdefined(level.zombie_gib_weapons[weapon])) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zombie_utility/zombie_utility
@@ -2134,9 +2134,9 @@ function have_zombie_weapon_gib_head_callback(weapon) {
         weapon = weapon.name;
     }
     if (isdefined(level.zombie_gib_head_weapons[weapon])) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zombie_utility/zombie_utility
@@ -2224,11 +2224,11 @@ function zombie_should_gib(amount, attacker, type, weapon) {
 // Size: 0x45e
 function head_should_gib(attacker, type, point, weaponused) {
     if (is_true(self.head_gibbed)) {
-        return 0;
+        return false;
     }
     if (!isdefined(attacker) || !isplayer(attacker)) {
         if (!is_true(attacker.can_gib_zombies)) {
-            return 0;
+            return false;
         }
     }
     if (isplayer(attacker)) {
@@ -2238,22 +2238,22 @@ function head_should_gib(attacker, type, point, weaponused) {
     }
     if (have_zombie_weapon_gib_head_callback(weapon)) {
         if (self get_zombie_weapon_gib_head_callback(weapon, self.damagelocation)) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
     if (type != "MOD_RIFLE_BULLET" && type != "MOD_PISTOL_BULLET") {
         if (type == "MOD_GRENADE" || type == "MOD_GRENADE_SPLASH") {
             if (distance(point, self gettagorigin("j_head")) > 16 || isdefined(weaponused) && isdefined(weaponused.explosionradius) && weaponused.explosionradius < distance(point, self gettagorigin("j_head"))) {
-                return 0;
+                return false;
             } else {
-                return 1;
+                return true;
             }
         } else if (type == "MOD_PROJECTILE") {
             if (distance(point, self gettagorigin("j_head")) > 10) {
-                return 0;
+                return false;
             } else {
-                return 1;
+                return true;
             }
         } else if (weapon.weapclass != "spread") {
             if (isplayer(attacker)) {
@@ -2261,29 +2261,29 @@ function head_should_gib(attacker, type, point, weaponused) {
                 dogibbing = isdefined(function_d7ea9303(weapon, var_f879230e)) ? function_d7ea9303(weapon, var_f879230e) : 0;
                 if (dogibbing) {
                     if (distance(point, self gettagorigin("j_head")) > 10) {
-                        return 0;
+                        return false;
                     } else {
-                        return 1;
+                        return true;
                     }
                 }
             }
-            return 0;
+            return false;
         }
     }
     if (!self damagelocationisany("head", "helmet", "neck")) {
-        return 0;
+        return false;
     }
     if (type == "MOD_PISTOL_BULLET" && weapon.weapclass != "smg" || weapon == level.weaponnone || isdefined(level.start_weapon) && weapon == level.start_weapon || weapon.isgasweapon) {
-        return 0;
+        return false;
     }
     if (sessionmodeiscampaigngame() && type == "MOD_PISTOL_BULLET" && weapon.weapclass != "smg") {
-        return 0;
+        return false;
     }
     low_health_percent = self.health / self.maxhealth * 100;
     if (low_health_percent > 10) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zombie_utility/zombie_utility
@@ -2326,7 +2326,7 @@ function damage_over_time(dmg, delay, attacker, means_of_death) {
     if (!isdefined(means_of_death)) {
         means_of_death = "MOD_UNKNOWN";
     }
-    while (1) {
+    while (true) {
         if (isdefined(delay)) {
             wait(delay);
         }
@@ -2519,21 +2519,21 @@ function gib_random_part() {
     switch (gib_index) {
     case 0:
         self zombie_head_gib();
-        return;
+        break;
     case 1:
         gibserverutils::gibrightleg(self, 0);
-        return;
+        break;
     case 2:
         gibserverutils::gibleftleg(self, 0);
-        return;
+        break;
     case 3:
         gibserverutils::gibrightarm(self, 0);
-        return;
+        break;
     case 4:
         gibserverutils::gibleftarm(self, 0);
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 
@@ -2678,7 +2678,7 @@ function updateanimationrate() {
         if (isdefined(var_fd8e23d9)) {
             self asmsetanimationrate(var_fd8e23d9);
         }
-        while (1) {
+        while (true) {
             wait(1);
             animation_rate = self function_9139c839().var_450edb3b;
             if (!isdefined(animation_rate)) {

@@ -448,7 +448,7 @@ function function_15158f84(localclientnum) {
     self.var_de98eb73 = function_530c3685(localclientnum, self.entnum);
     if (!isdefined(self.var_de98eb73)) {
         namespace_1e25ad94::function_f5f0c0f8("---> Request FAILED!!!");
-        return 0;
+        return false;
     }
     if (self.var_de98eb73 doa_textbubble::is_open(localclientnum) == 0) {
         self.var_de98eb73 doa_textbubble::open(localclientnum);
@@ -458,7 +458,7 @@ function function_15158f84(localclientnum) {
     self.var_de98eb73 doa_textbubble::set_text(localclientnum, #"hash_7ee185f0146bd791");
     self.var_de98eb73 doa_textbubble::set_offset(localclientnum, offset[0], offset[1], offset[2]);
     self thread function_b935ba2b(localclientnum, self.entnum);
-    return 1;
+    return true;
 }
 
 // Namespace namespace_6e90e490/namespace_6e90e490
@@ -626,13 +626,13 @@ function function_8394bc71(localclientnum) {
     }
     if (!isdefined(self.player)) {
         namespace_1e25ad94::function_f5f0c0f8("---> Request FAILED [Player Disconnect]");
-        return 0;
+        return false;
     }
     clientnum = self.player getentitynumber();
     self.var_7488bfe4 = function_9d28bdf3(localclientnum, self.entnum);
     if (!isdefined(self.var_7488bfe4)) {
         namespace_1e25ad94::function_f5f0c0f8("---> Request FAILED!!!");
-        return 0;
+        return false;
     }
     if (self.var_7488bfe4 doa_textbubble_playername::is_open(localclientnum) == 0) {
         self.var_7488bfe4 doa_textbubble_playername::open(localclientnum);
@@ -643,7 +643,7 @@ function function_8394bc71(localclientnum) {
     self.var_7488bfe4 doa_textbubble_playername::set_clientnum(localclientnum, clientnum);
     self.var_7488bfe4 doa_textbubble_playername::set_offset(localclientnum, offset[0], offset[1], offset[2]);
     self thread function_b935ba2b(localclientnum, self.entnum);
-    return 1;
+    return true;
 }
 
 // Namespace namespace_6e90e490/namespace_6e90e490

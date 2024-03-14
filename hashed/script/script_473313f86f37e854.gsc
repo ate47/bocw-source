@@ -105,7 +105,7 @@ function function_bfdbfcd(localclientnum, b_freeze) {
         var_875c79c1 = self.var_82fb67e7 + 0.5;
         self.var_958cf9c5 = 1;
     }
-    while (1) {
+    while (true) {
         self function_78233d29("rob_test_character_ice", "", "Threshold", self.var_82fb67e7);
         if (b_freeze) {
             self.var_82fb67e7 = self.var_82fb67e7 + 0.2;
@@ -113,7 +113,7 @@ function function_bfdbfcd(localclientnum, b_freeze) {
             self.var_82fb67e7 = self.var_82fb67e7 - 0.05;
         }
         if (b_freeze && (self.var_82fb67e7 >= var_875c79c1 || self.var_82fb67e7 >= 1)) {
-            return;
+            break;
         } else if (self.var_82fb67e7 <= 0) {
             self.var_958cf9c5 = undefined;
             self stoprenderoverridebundle("rob_test_character_ice");
@@ -143,7 +143,7 @@ function function_bfdbfcd(localclientnum, b_freeze) {
                 self stoploopsound(self.var_f41344b);
                 self.var_f41344b = undefined;
             }
-            return;
+            break;
         }
         wait(0.1);
     }

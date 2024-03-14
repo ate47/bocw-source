@@ -128,28 +128,28 @@ function function_ddb1f662(params) {
         switch (params.name) {
         case #"hash_68eef81d0a2a76ed":
             level.var_59a2c772 = params.value;
-            return;
+            break;
         case #"hash_130bfa97ce58483d":
             teleport_player(params.value);
-            return;
+            break;
         case #"hash_3c4a113ed57cc120":
             level.var_acfca739 = params.value;
-            return;
+            break;
         case #"hash_236d76abc8b15698":
             thread function_e099a386(params.value);
             setdvar(#"hash_236d76abc8b15698", "<unknown string>");
-            return;
+            break;
         case #"hash_69bc1ab1b58a4dd9":
             function_d6a44f15(params.value);
             setdvar(#"hash_69bc1ab1b58a4dd9", "<unknown string>");
-            return;
+            break;
         case #"hash_4adbfcef4bba8e12":
             function_5f0fa6bb(params.value);
             setdvar(#"hash_4adbfcef4bba8e12", "<unknown string>");
-            return;
+            break;
         case #"hash_2fd7846bcf2b3161":
             function_cad382ca();
-            return;
+            break;
         }
     #/
 }
@@ -288,7 +288,7 @@ function function_1c40531e() {
         level thread function_6559555e();
         host endon(#"disconnect");
         var_e0acd843 = 0;
-        while (1) {
+        while (true) {
             if (level get(#"menu_open")) {
                 waitframe(1);
                 continue;
@@ -459,7 +459,7 @@ function function_e742c352() {
         host = getplayers()[0];
         host endon(#"death");
         self endon(#"death");
-        while (1) {
+        while (true) {
             var_74aaeccd = host getnormalizedmovement();
             var_3e6ac197 = host getnormalizedcameramovement();
             if (level.var_acfca739 && host adsbuttonpressed() && var_3e6ac197 != (0, 0, 0)) {
@@ -846,7 +846,7 @@ function function_ff217e96(var_5a86a1c2, v_pos, v_ang, s_instance, var_2ceba174)
 // Size: 0x506
 function function_6559555e() {
     /#
-        while (1) {
+        while (true) {
             /#
                 if (level get(#"menu_open") || !level.var_acfca739) {
                     waitframe(1);
@@ -990,7 +990,7 @@ function function_2ccbc3d6() {
 // Size: 0x282
 function function_e01777dc(s_instance) {
     /#
-        while (1) {
+        while (true) {
             if (level get("<unknown string>") || level get("<unknown string>")) {
                 foreach (s_instance in level.var_2fb0636f) {
                     function_86086836(s_instance);
@@ -1019,7 +1019,7 @@ function function_e01777dc(s_instance) {
 // Size: 0x102
 function function_fcde0f45(s_instance) {
     /#
-        while (1) {
+        while (true) {
             if (level get("<unknown string>")) {
                 foreach (s_instance in level.var_2fb0636f) {
                     if (isdefined(s_instance.var_bfd82e27)) {

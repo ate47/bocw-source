@@ -71,7 +71,7 @@ function function_830c306e(localclientnum, *oldval, newval, *bnewent, *binitials
             self.var_b8bfe17e = undefined;
         }
         self notify(#"hash_52be29763bc2391e");
-        return;
+        break;
     case 1:
         if (isdefined(self.var_83f12b7c)) {
             self stoploopsound(self.var_83f12b7c);
@@ -87,7 +87,7 @@ function function_830c306e(localclientnum, *oldval, newval, *bnewent, *binitials
             self thread function_d9150e58(fieldname);
             self thread function_d99e101d(fieldname, zombie);
         }
-        return;
+        break;
     case 2:
         if (isdefined(self.var_3504fb78)) {
             stopfx(fieldname, self.var_3504fb78);
@@ -107,7 +107,7 @@ function function_830c306e(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_87fd74a7 = util::playfxontag(fieldname, #"hash_3354e735e33805a7", self, "tag_animate");
         self playsound(fieldname, #"hash_534278acb9340669");
         self notify(#"hash_52be29763bc2391e");
-        return;
+        break;
     case 3:
         if (isdefined(self.var_3504fb78)) {
             stopfx(fieldname, self.var_3504fb78);
@@ -129,9 +129,9 @@ function function_830c306e(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         self notify(#"hash_52be29763bc2391e");
         util::playfxontag(fieldname, #"hash_7e225ece0c91121", self, "tag_animate");
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 
@@ -159,7 +159,7 @@ function function_d99e101d(localclientnum, var_86cccd7b) {
     if (var_86cccd7b.archetype == #"zombie_dog") {
         var_c848a436 = array("j_spine2", "j_spine3", "j_spine4", "j_neck", "j_head");
     }
-    while (1) {
+    while (true) {
         tag = array::random(var_c848a436);
         start_pos = var_86cccd7b gettagorigin(tag);
         if (!isdefined(start_pos)) {

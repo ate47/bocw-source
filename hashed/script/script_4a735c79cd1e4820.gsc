@@ -74,7 +74,7 @@ function function_80d28d77(localclientnum, impactfx, var_4b30f907, var_9cb23c3, 
     wait_time = 1 / var_4b30f907;
     var_70bdcaa = int(max(0.016 / wait_time, 1));
     wait_time = 0.016 * int(max(wait_time / 0.016, 1));
-    while (1) {
+    while (true) {
         /#
             if (getdvarfloat(#"hash_366b9410b5385383", -1) >= 0) {
                 culldist = getdvarfloat(#"hash_366b9410b5385383", -1);

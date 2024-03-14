@@ -267,10 +267,10 @@ function private function_eaf23d80(clusterdata) {
     #/
     foreach (collectible in clusterdata.var_dade7c7f) {
         if (is_true(collectible.isunlocked)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_fa335fda/namespace_f784b4da
@@ -490,7 +490,7 @@ function private function_e8e65a88(statemachine, initialstate) {
     player endon(#"death");
     blackboard = statemachine.blackboard;
     blackboard.var_481d0fb1 = [0:initialstate];
-    while (1) {
+    while (true) {
         player waittill(#"hash_4e26526624ef0227");
         /#
             assert(isdefined(statemachine.current_state) && isdefined(statemachine.next_state));
@@ -584,7 +584,7 @@ function private function_361f6bd8(*params) {
     /#
         assertmsg("<unknown string>");
     #/
-    return 0;
+    return false;
 }
 
 // Namespace namespace_fa335fda/namespace_f784b4da
@@ -1097,7 +1097,7 @@ function private function_93dd1a56(var_ed4d2551) {
 function private function_d2acd9a1() {
     player = self;
     player endon(#"death");
-    while (1) {
+    while (true) {
         player waittill(#"hash_278b9a3955f6e5a");
         statemachine = player function_1bb19090();
         blackboard = statemachine.blackboard;
@@ -1125,7 +1125,7 @@ function private function_c7ffe282(*params) {
     if (namespace_c8e236da::function_295a2a9e(#"hash_21282e1a3a54e697")) {
         player childthread function_d2acd9a1();
     }
-    while (1) {
+    while (true) {
         option = undefined;
         option = level waittill(#"evidence_board_option_selected");
         if (!namespace_61e6d095::exists(#"hash_3ccc1702bc979da8")) {
@@ -1141,7 +1141,7 @@ function private function_c7ffe282(*params) {
             evidence = blackboard.var_3cb3ede5[blackboard.var_c5bde695];
             if (isdefined(evidence.var_dade7c7f) && evidence.var_dade7c7f.size > 0) {
                 player notify(#"hash_3ee5ee530fc0a790");
-                return;
+                break;
             }
             continue;
         }
@@ -1193,7 +1193,7 @@ function private function_c7ffe282(*params) {
                 #/
             #/
             player notify(#"hash_2c777238a293b545");
-            return;
+            break;
         }
         if (option.var_70b35161 == 4) {
             /#
@@ -1202,7 +1202,7 @@ function private function_c7ffe282(*params) {
                 #/
             #/
             player notify(#"hash_2985d911ba4185c8");
-            return;
+            break;
         }
         /#
             assertmsg("<unknown string>" + option.var_70b35161);
@@ -1353,7 +1353,7 @@ function private function_35a396ee(*params) {
         assert(var_26d73535 > 0);
     #/
     current_index = 0;
-    while (1) {
+    while (true) {
         result = undefined;
         result = player waittillmatch({#menu:#"hash_20ed03061e0850f3"}, #"menuresponse");
         if (!namespace_61e6d095::exists(#"hash_34f10865afcf9af7")) {
@@ -1506,7 +1506,7 @@ function private function_d4497273(*params) {
     statemachine = player function_1bb19090();
     blackboard = statemachine.blackboard;
     current_index = isdefined(blackboard.var_bcd1e3f9) ? blackboard.var_bcd1e3f9 : 0;
-    while (1) {
+    while (true) {
         result = undefined;
         result = player waittillmatch({#response:#"hash_79587d9fe84f7a23", #menu:#"hash_20ed03061e0850f3"}, #"menuresponse");
         if (blackboard.var_9b52b1bf) {
@@ -1739,7 +1739,7 @@ function private function_109f3f2(*params) {
     if (!isdefined(blackboard.var_bcd1e3f9)) {
         blackboard.var_bcd1e3f9 = 0;
     }
-    while (1) {
+    while (true) {
         result = undefined;
         result = player waittillmatch({#menu:#"hash_20ed03061e0850f3"}, #"menuresponse");
         if (!namespace_61e6d095::exists(#"hash_afc09dfd34bcde0")) {
@@ -1961,7 +1961,7 @@ function private function_e14ba795() {
     #/
     player endon(#"death", #"hash_3ac28b014653cac6");
     level endon(#"hash_46f3e63cfcb00995");
-    while (1) {
+    while (true) {
         while (player namespace_61e6d095::function_70217795()) {
             waitframe(1);
         }
@@ -1989,7 +1989,7 @@ function function_5f8cfb0f(var_88e62a80) {
 function function_f1d97432(var_88e62a80) {
     self endon(#"death", #"hash_3daf27ede70cbb90", #"hash_6216ed611b03c897", #"hash_3ee5ee530fc0a790");
     var_620beea5 = self gamepadusedlast();
-    while (1) {
+    while (true) {
         var_92e26cfc = self gamepadusedlast();
         if (var_92e26cfc != var_620beea5) {
             var_620beea5 = var_92e26cfc;

@@ -68,9 +68,9 @@ function private function_70a657d8() {
 // Size: 0x24
 function function_500047aa(view) {
     if (self.var_8a203916 === view) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_8a203916/namespace_8a203916

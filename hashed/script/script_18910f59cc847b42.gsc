@@ -66,7 +66,7 @@ function function_57ce3201(localclientnum) {
     self endon(#"disconnect");
     self notify("2862be11436776eb");
     self endon("2862be11436776eb");
-    while (1) {
+    while (true) {
         level waittill(#"hash_743e9066181c346e");
         if (isdefined(localclientnum) && isdefined(self.doa)) {
             if (isdefined(self.doa.cameramode)) {

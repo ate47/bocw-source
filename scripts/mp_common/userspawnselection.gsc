@@ -58,10 +58,10 @@ function private function_70a657d8() {
 function function_127864f2(player) {
     foreach (spawnbeacon in level.spawnselect.vox_plr_1_revive_down_2) {
         if (player == spawnbeacon.owner) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace userspawnselection/userspawnselection
@@ -82,9 +82,9 @@ function function_93076e1d() {
 function function_a316ca82(player) {
     spawnbeacon = player function_b9573d36();
     if (isdefined(spawnbeacon)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace userspawnselection/userspawnselection
@@ -234,7 +234,7 @@ function setspawngroupsenabled() {
 // Checksum 0xbbbe204e, Offset: 0xbe8
 // Size: 0x10
 function canplayerusespawngroup(*spawngroupindex) {
-    return 1;
+    return true;
 }
 
 // Namespace userspawnselection/userspawnselection
@@ -428,7 +428,7 @@ function function_b55c5868() {
 // Size: 0x184
 function waitforspawnselection() {
     self endon(#"disconnect", #"end_respawn");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
@@ -464,7 +464,7 @@ function waitforspawnselection() {
 function watchforselectiontimeout() {
     self endon(#"disconnect", #"end_respawn");
     self.spawnselect_start_time = gettime();
-    while (1) {
+    while (true) {
         if (level.spawnselect_timelimit_ms - gettime() - self.spawnselect_start_time <= 0) {
             self luinotifyevent(#"force_spawn_selection");
             return;

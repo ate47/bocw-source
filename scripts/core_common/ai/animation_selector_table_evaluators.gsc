@@ -54,10 +54,10 @@ function private function_aa7530df(entity, animation) {
     #/
     if (entity maymovefrompointtopoint(endpoint, forwardpoint, 1, 1)) {
         profileNamedStop();
-        return 1;
+        return true;
     }
     profileNamedStop();
-    return 0;
+    return false;
 }
 
 // Namespace animation_selector_table_evaluators/animation_selector_table_evaluators
@@ -95,11 +95,11 @@ function private evaluator_checkanimationagainstgeo(entity, animation) {
         #/
         if (entity maymovefrompointtopoint(midpoint, endpoint, 1, 1, entity, 0.05)) {
             profileNamedStop();
-            return 1;
+            return true;
         }
     }
     profileNamedStop();
-    return 0;
+    return false;
 }
 
 // Namespace animation_selector_table_evaluators/animation_selector_table_evaluators
@@ -117,10 +117,10 @@ function private evaluator_checkanimationendpointagainstgeo(entity, animation) {
     endpoint = (endpoint[0], endpoint[1], entity.origin[2]);
     if (entity maymovetopoint(endpoint, 0, 0)) {
         profileNamedStop();
-        return 1;
+        return true;
     }
     profileNamedStop();
-    return 0;
+    return false;
 }
 
 // Namespace animation_selector_table_evaluators/animation_selector_table_evaluators
@@ -131,16 +131,16 @@ function private function_91a832bb(entity, animation) {
     localdeltavector = getmovedelta(animation, 0, 1);
     var_f0ccb726 = lengthsquared(localdeltavector);
     if (var_f0ccb726 > function_a3f6cdac(entity getpathlength())) {
-        return 0;
+        return false;
     }
     splittime = function_382b0cfb(animation);
     localdeltavector = getmovedelta(animation, 0, splittime);
     var_773216e9 = length(localdeltavector);
     disttocorner = distance2d(entity.origin, entity.var_14b548c5);
     if (var_773216e9 >= disttocorner && var_773216e9 < disttocorner * 1.2) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace animation_selector_table_evaluators/animation_selector_table_evaluators
@@ -174,10 +174,10 @@ function private evaluator_checkanimationforovershootinggoal(entity, animation) 
         animdistsq = lengthsquared(localdeltavector);
         if (entity.traversalstartdist > 0 && animdistsq > function_a3f6cdac(entity.traversalstartdist)) {
             profileNamedStop();
-            return 0;
+            return false;
         } else if ((isdefined(entity.var_c4c50a0b) ? entity.var_c4c50a0b : 0) && animdistsq > disttogoalsq) {
             profileNamedStop();
-            return 0;
+            return false;
         }
         var_aca7a141 = function_199662d1(animation);
         localdeltavector = getmovedelta(animation, 0, var_aca7a141);
@@ -188,7 +188,7 @@ function private evaluator_checkanimationforovershootinggoal(entity, animation) 
         }
         if (animdistsq < disttogoalsq * 0.9) {
             profileNamedStop();
-            return 1;
+            return true;
         }
         /#
             record3dtext("<unknown string>" + function_9e72a96(animation) + "<unknown string>" + sqrt(animdistsq) + "<unknown string>" + sqrt(disttogoalsq), entity.origin, (1, 0.5, 0), "<unknown string>", entity, 0.4);
@@ -199,7 +199,7 @@ function private evaluator_checkanimationforovershootinggoal(entity, animation) 
         #/
     }
     profileNamedStop();
-    return 0;
+    return false;
 }
 
 // Namespace animation_selector_table_evaluators/animation_selector_table_evaluators
@@ -220,7 +220,7 @@ function private function_da29fa63(entity, animation) {
             animdistsq = lengthsquared(localdeltavector);
             if (animdistsq <= disttogoalsq) {
                 pixendevent();
-                return 1;
+                return true;
             }
         }
         /#
@@ -228,7 +228,7 @@ function private function_da29fa63(entity, animation) {
         #/
     }
     pixendevent();
-    return 0;
+    return false;
 }
 
 // Namespace animation_selector_table_evaluators/animation_selector_table_evaluators
@@ -242,12 +242,12 @@ function private function_89b21ba9(entity, animation) {
     localdeltavector = getmovedelta(animation, 0, 1);
     endpoint = coordtransform(localdeltavector, entity.origin, entity.angles);
     if (!ispointonstairs(endpoint)) {
-        return 1;
+        return true;
     }
     /#
         record3dtext("<unknown string>" + endpoint, entity.origin, (1, 0.5, 0), "<unknown string>", entity);
     #/
-    return 0;
+    return false;
 }
 
 // Namespace animation_selector_table_evaluators/animation_selector_table_evaluators
@@ -271,11 +271,11 @@ function private function_8bd6d54d(entity, animation) {
                 /#
                     record3dtext("<unknown string>", entity.origin, (1, 0.5, 0), "<unknown string>", entity);
                 #/
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace animation_selector_table_evaluators/animation_selector_table_evaluators
@@ -290,12 +290,12 @@ function private evaluator_checkanimationagainstnavmesh(entity, animation) {
     var_e21fa5a4 = entity.angles + (0, entity function_144f21ef(), 0);
     endpoint = coordtransform(localdeltavector, entity.origin, var_e21fa5a4);
     if (ispointonnavmesh(endpoint)) {
-        return 1;
+        return true;
     }
     /#
         record3dtext("<unknown string>" + endpoint, entity.origin, (1, 0.5, 0), "<unknown string>", entity);
     #/
-    return 0;
+    return false;
 }
 
 // Namespace animation_selector_table_evaluators/animation_selector_table_evaluators
@@ -309,14 +309,14 @@ function function_50c1352d(entity, animation) {
     disttogoalsq = distance2dsquared(entity.origin, goalpos);
     if (disttogoalsq <= animdistsq && abs(goalpos[2] - entity.origin[2]) < 48) {
         if (is_true(entity.ai.var_a5dabb8b)) {
-            return 1;
+            return true;
         }
         var_4da2186 = coordtransform(localdeltavector, entity.origin, entity.angles);
         if (distance2dsquared(goalpos, var_4da2186) < function_a3f6cdac(16) && abs(goalpos[2] - var_4da2186[2]) < 48) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace animation_selector_table_evaluators/animation_selector_table_evaluators
@@ -664,7 +664,7 @@ function private function_147224(entity, animation) {
     var_3f5aa15b = distance2dsquared(entity.origin, midpoint);
     if (var_3f5aa15b > 0 && var_3f5aa15b < function_d6eaf8b0(localdeltahalfvector)) {
         profileNamedStop();
-        return 0;
+        return false;
     }
     entrypoint = midpoint + vectornormalize(entity.origin - midpoint) * length(localdeltahalfvector);
     entrypoint = entity function_fe8e7e36(entrypoint);
@@ -682,7 +682,7 @@ function private function_147224(entity, animation) {
                 recordline(midpoint, endpoint, (0, 1, 0), "<unknown string>", entity);
             #/
             profileNamedStop();
-            return 1;
+            return true;
         } else {
             /#
                 recordline(midpoint, endpoint, (1, 0, 0), "<unknown string>", entity);
@@ -694,7 +694,7 @@ function private function_147224(entity, animation) {
         #/
     }
     profileNamedStop();
-    return 0;
+    return false;
 }
 
 // Namespace animation_selector_table_evaluators/animation_selector_table_evaluators

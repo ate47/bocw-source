@@ -61,29 +61,29 @@ function function_ab6fd86c(e_player, reward_terminal) {
 function function_bfa2ba47(e_player) {
     if (e_player != self.stub.player) {
         self sethintstringforplayer(e_player, #"");
-        return 0;
+        return false;
     } else if (level.var_2dffd020 == 0) {
         self sethintstringforplayer(e_player, #"");
-        return 0;
+        return false;
     } else if (e_player.var_9e09931e != 0) {
         str_prompt = e_player zm_utility::function_d6046228(#"hash_603d187dac2f57c", #"hash_7cc2cf9d21806bf0");
         self sethintstringforplayer(e_player, str_prompt);
-        return 1;
+        return true;
     } else if (is_true(e_player.var_43300e)) {
         weapon = e_player getcurrentweapon();
         if (killstreaks::is_killstreak_weapon(weapon)) {
-            return 0;
+            return false;
         }
         self sethintstringforplayer(e_player, #"hash_603d187dac2f57c");
-        return 1;
+        return true;
     } else if (e_player.var_9e09931e == 0) {
         self sethintstringforplayer(e_player, #"hash_194fb852eef34414");
-        return 1;
+        return true;
     } else {
         self sethintstringforplayer(e_player, #"hash_194fb852eef34414");
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_f999c142/namespace_f999c142
@@ -92,7 +92,7 @@ function function_bfa2ba47(e_player) {
 // Size: 0x1d4
 function function_fc7d3519() {
     self endon(#"end_game");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         e_player = waitresult.activator;
@@ -755,13 +755,13 @@ function function_923efc48(str_item_name, var_7ed75e97) {
     switch (var_7ed75e97) {
     case 1:
         self namespace_1cc7b406::give_item(str_item_name);
-        return;
+        break;
     case 2:
         self namespace_1cc7b406::give_item(str_item_name);
-        return;
+        break;
     case 3:
         self namespace_1cc7b406::give_item(str_item_name);
-        return;
+        break;
     }
 }
 
@@ -949,10 +949,10 @@ function function_fc6ae19f() {
 function function_8665509b(var_6c9485fc = 10) {
     var_62fef0f1 = self zm_perks::function_5ea0c6cf();
     if (!isdefined(var_62fef0f1)) {
-        return 0;
+        return false;
     }
     self thread give_perk_reward(var_62fef0f1, var_6c9485fc);
-    return 1;
+    return true;
 }
 
 // Namespace namespace_f999c142/namespace_f999c142
@@ -1372,7 +1372,7 @@ function function_6c62f074(var_9e09931e) {
         } else {
             level thread function_445c5623("carpenter", self.var_642ed51a.var_f693bf0b.origin, self.var_642ed51a);
         }
-        return;
+        break;
     case 3:
         if (math::cointoss()) {
             level thread function_445c5623("double_points", self.var_642ed51a.var_f693bf0b.origin, self.var_642ed51a);
@@ -1384,7 +1384,7 @@ function function_6c62f074(var_9e09931e) {
         } else {
             level thread function_445c5623("fire_sale", self.var_642ed51a.var_f693bf0b.origin, self.var_642ed51a);
         }
-        return;
+        break;
     case 4:
         if (math::cointoss() || zm_utility::is_survival()) {
             level thread function_445c5623("full_ammo", self.var_642ed51a.var_f693bf0b.origin, self.var_642ed51a);
@@ -1396,9 +1396,9 @@ function function_6c62f074(var_9e09931e) {
         } else {
             level thread function_445c5623("carpenter", self.var_642ed51a.var_f693bf0b.origin, self.var_642ed51a);
         }
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 
@@ -1413,7 +1413,7 @@ function function_ae58bd73(var_8b84b3ce) {
     mdl_reward playsound(#"hash_e3e5f7c83015171");
     mdl_reward playloopsound(#"hash_2adfa98b79668366");
     v_forward = anglestoforward(v_angles);
-    while (1) {
+    while (true) {
         s_result = positionquery_source_navigation(self.var_642ed51a.var_e3345cac.origin, 1, 60, 4, 15, 1);
         var_cb7582a6 = s_result.data;
         random_index = randomint(var_cb7582a6.size);
@@ -1452,7 +1452,7 @@ function function_445c5623(var_aa4f9213, var_8b84b3ce, reward_terminal) {
     mdl_reward playloopsound(#"hash_2adfa98b79668366");
     mdl_reward.hint = level.zombie_powerups[var_aa4f9213].hint;
     n_tries = 0;
-    while (1) {
+    while (true) {
         s_result = positionquery_source_navigation(var_80f6fcee, 1, 60, 4, 15, 1);
         var_ae04771e = s_result.data;
         if (isarray(var_ae04771e)) {
@@ -1590,9 +1590,9 @@ function function_dcda5d87(mdl_reward, b_rotate = 1, var_b9b24 = 1, var_d1bb6924
     self.var_642ed51a.var_f693bf0b clientfield::set("" + #"hash_653b5827e6fbe5f9", 0);
     self notify(#"hash_358f065cca50b2a7");
     if (is_true(b_timeout)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_f999c142/namespace_f999c142
@@ -1708,13 +1708,13 @@ function function_57b8a4e9(e_pickup) {
 // Size: 0x8c
 function function_545834dc(var_16c042b8) {
     self endon(#"death", #"hash_358f065cca50b2a7");
-    while (1) {
+    while (true) {
         if (self function_e5039011(var_16c042b8)) {
             if (isdefined(self.var_7a281a7e)) {
                 self.var_7a281a7e.b_timeout = 1;
             }
             self notify(#"challenge_reward_timeout");
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -1728,10 +1728,10 @@ function private function_e5039011(var_7da1f8d5) {
     a_str_perks = array(var_7da1f8d5, var_7da1f8d5 + "_1", var_7da1f8d5 + "_2", var_7da1f8d5 + "_3", var_7da1f8d5 + "_4", var_7da1f8d5 + "_5");
     foreach (str_perk in a_str_perks) {
         if (self function_6c32d092(str_perk)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_f999c142/namespace_f999c142
@@ -1741,8 +1741,8 @@ function private function_e5039011(var_7da1f8d5) {
 function validation() {
     current_weapon = self getcurrentweapon();
     if (!zm_weapons::is_weapon_or_base_included(current_weapon) || !self zm_magicbox::can_buy_weapon() || self laststand::player_is_in_laststand() || is_true(self.intermission) || self isthrowinggrenade() || self isswitchingweapons() || !zm_weapons::weapon_supports_aat(current_weapon)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 

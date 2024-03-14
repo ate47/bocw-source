@@ -202,7 +202,7 @@ function function_43c21e81(entity) {
 // Size: 0xc0
 function private function_f7c8ccf5(entity, point1, point2) {
     if (isdefined(entity.var_a8eff0f2) && gettime() - entity.var_a8eff0f2 < int(1 * 1000)) {
-        return 0;
+        return false;
     }
     trace = physicstraceex(point1, point2, entity getmins(), entity getmaxs(), entity);
     return trace[#"fraction"] >= 1;

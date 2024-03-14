@@ -184,7 +184,7 @@ function private function_40dbe923(dvarstr) {
 // Checksum 0xc51cab2d, Offset: 0xfd8
 // Size: 0xb8
 function private devgui_loop() {
-    while (1) {
+    while (true) {
         waitframe(1);
         dvarstr = getdvarstring(#"devgui_bot", "");
         if (dvarstr == "") {
@@ -832,7 +832,7 @@ function private function_93996ae6(botarg) {
 // Size: 0xbc
 function private function_cc8c642a(&goals) {
     self endoncallback(&function_bc3bbe26, #"death", #"hash_7597caa242064632");
-    for (i = 0; 1; i = (i + 1) % goals.size) {
+    for (i = 0; true; i = (i + 1) % goals.size) {
         self setgoal(goals[i], 1);
         while (goals.size <= 1) {
             waitframe(1);

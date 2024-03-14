@@ -31,7 +31,7 @@ function private function_70a657d8() {
 // Size: 0x15a
 function ai_puppeteer_think() {
     /#
-        while (1) {
+        while (true) {
             if (getdvar(#"debug_ai_puppeteer", 0) && !is_true(level.ai_puppeteer_active)) {
                 level.ai_puppeteer_active = 1;
                 level notify(#"kill ai puppeteer");
@@ -85,7 +85,7 @@ function ai_puppet_manager() {
     /#
         level endon(#"kill ai puppeteer");
         self endon(#"death");
-        while (1) {
+        while (true) {
             if (self buttonpressed("<unknown string>")) {
                 if (isdefined(level.ai_puppet)) {
                     if (isdefined(level.ai_puppet_target)) {
@@ -295,7 +295,7 @@ function ai_puppet_cursor_tracker() {
     /#
         level endon(#"kill ai puppeteer");
         self endon(#"death");
-        while (1) {
+        while (true) {
             forward = anglestoforward(self getplayerangles());
             forward_vector = vectorscale(forward, 4000);
             physicsbox = vectorscale((1, 1, 1), 10);

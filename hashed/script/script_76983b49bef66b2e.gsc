@@ -208,7 +208,7 @@ function function_8efc825c(org) {
 // Size: 0x100
 function function_49ee8def() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"trigger");
         guy = result.activator;
@@ -251,12 +251,12 @@ function function_8d45f3be(guy, attacker) {
 // Size: 0x3a
 function function_5d21013(player) {
     if (!isdefined(player.var_e253250e)) {
-        return 1;
+        return true;
     }
     if (player.var_e253250e == 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
@@ -319,16 +319,16 @@ function function_d9c75d31(source_enemy, player, arc_num) {
 // Size: 0xe8
 function function_a34a58f4(arc_num, enemies_hit_num) {
     if (arc_num >= getdvarint(#"hash_7ec1e8e3c113c497", 5)) {
-        return 1;
+        return true;
     }
     if (enemies_hit_num >= getdvarint(#"hash_29241bffeb128947", 20)) {
-        return 1;
+        return true;
     }
     radius_decay = getdvarint(#"hash_3eb3a662a40de94a", 20) * arc_num;
     if (getdvarint(#"hash_28fd9a5b3176c120", 300) - radius_decay <= 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1

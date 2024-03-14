@@ -49,7 +49,7 @@ function sessionadvertisementcheck() {
         return;
     }
     level endon(#"game_end");
-    for (currentadvertisedstatus = undefined; 1; currentadvertisedstatus = advertise) {
+    for (currentadvertisedstatus = undefined; true; currentadvertisedstatus = advertise) {
         sessionadvertcheckwait = getdvarint(#"sessionadvertcheckwait", 1);
         wait(sessionadvertcheckwait);
         advertise = [[ level.var_a962eeb6 ]]();
@@ -84,14 +84,14 @@ function teamscorelimitcheck(rulescorepercent, debug_count) {
                 /#
                     debug_count = updatedebughud(debug_count, "<unknown string>", int(scorepercentageleft));
                 #/
-                return 0;
+                return false;
             }
         }
         /#
             debug_count = updatedebughud(debug_count, "<unknown string>", int(minscorepercentageleft));
         #/
     }
-    return 1;
+    return true;
 }
 
 // Namespace gameadvertisement/gameadvertisement
@@ -103,10 +103,10 @@ function timelimitcheck(ruletimeleft) {
     if (maxtime != 0) {
         timeleft = globallogic_utils::gettimeremaining();
         if (ruletimeleft >= timeleft) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace gameadvertisement/gameadvertisement
@@ -123,7 +123,7 @@ function default_rules() {
         if (level.teambased) {
             if (currentround >= level.gameadvertisementruleround - 1) {
                 if (teamscorelimitcheck(level.gameadvertisementrulescorepercent, debug_count) == 0) {
-                    return 0;
+                    return false;
                 }
                 /#
                     debug_count++;
@@ -142,7 +142,7 @@ function default_rules() {
                 debug_count = updatedebughud(debug_count, "<unknown string>", int(scorepercentageleft));
             #/
             if (level.gameadvertisementrulescorepercent >= scorepercentageleft) {
-                return 0;
+                return false;
             }
         }
     }
@@ -151,7 +151,7 @@ function default_rules() {
             debug_count = updatedebughud(debug_count, "<unknown string>", level.gameadvertisementruletimeleft / 60000);
         #/
         if (timelimitcheck(level.gameadvertisementruletimeleft) == 0) {
-            return 0;
+            return false;
         }
     }
     if (level.gameadvertisementruleround) {
@@ -160,7 +160,7 @@ function default_rules() {
             debug_count = updatedebughud(debug_count, "<unknown string>", currentround);
         #/
         if (level.gameadvertisementruleround <= currentround) {
-            return 0;
+            return false;
         }
     }
     if (level.gameadvertisementruleroundswon) {
@@ -177,14 +177,14 @@ function default_rules() {
                 /#
                     debug_count = updatedebughud(debug_count, "<unknown string>", maxroundswon);
                 #/
-                return 0;
+                return false;
             }
         }
         /#
             debug_count = updatedebughud(debug_count, "<unknown string>", maxroundswon);
         #/
     }
-    return 1;
+    return true;
 }
 
 // Namespace gameadvertisement/gameadvertisement
@@ -264,7 +264,7 @@ function sessionadvertismentupdatedebughud() {
         level.sessionadverthud_3b_text = "<unknown string>";
         level.sessionadverthud_4a_text = "<unknown string>";
         level.sessionadverthud_4b_text = "<unknown string>";
-        while (1) {
+        while (true) {
             wait(1);
             showdebughud = getdvarint(#"sessionadvertshowdebughud", 0);
             level.sessionadverthud_0_text = "<unknown string>";

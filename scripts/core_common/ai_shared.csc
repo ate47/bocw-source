@@ -155,9 +155,9 @@ function function_b1897fe1(localclientnum) {
 // Size: 0x4a
 function shouldregisterclientfieldforarchetype(archetype) {
     if (is_true(level.clientfieldaicheck) && !isarchetypeloaded(archetype)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace ai/ai_shared

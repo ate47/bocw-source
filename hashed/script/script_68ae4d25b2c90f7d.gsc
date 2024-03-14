@@ -97,9 +97,9 @@ function function_93b178ae() {
 // Size: 0x2e
 function function_a4b3da97(trace) {
     if (trace[#"fraction"] < 1) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_32e85820/namespace_32e85820
@@ -108,7 +108,7 @@ function function_a4b3da97(trace) {
 // Size: 0x1aa
 function function_952f1795(localclientnum) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         foreach (player in getplayers(localclientnum)) {
             if (distance2d(self.origin, player.origin) < 64) {
                 beamname = "beam9_zm_fld_healing_aura_pulse";

@@ -410,7 +410,7 @@ function function_6b6cc0a8() {
     self endon("1d455bdfc1fd3f13");
     self endon(#"disconnect");
     self endon(#"hash_6edec00b6bae610a");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"missile_fire");
         if (isdefined(result.weapon) && result.weapon.name === #"zombietron_launcher_2") {

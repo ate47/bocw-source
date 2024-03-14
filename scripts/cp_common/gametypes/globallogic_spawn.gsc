@@ -104,10 +104,10 @@ function timeuntilspawn(includeteamkilldelay) {
 function allteamshaveexisted() {
     foreach (team, _ in level.teams) {
         if (!level.everexisted[team]) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace globallogic_spawn/globallogic_spawn
@@ -116,16 +116,16 @@ function allteamshaveexisted() {
 // Size: 0x176
 function mayspawn() {
     if (isdefined(level.playermayspawn) && !self [[ level.playermayspawn ]]()) {
-        return 0;
+        return false;
     }
     if (level.inovertime) {
-        return 0;
+        return false;
     }
     if (level.playerqueuedrespawn && !isdefined(self.allowqueuespawn) && !level.ingraceperiod && !spawning::usestartspawns()) {
-        return 0;
+        return false;
     }
     if (is_true(self.var_f68bc076)) {
-        return 0;
+        return false;
     }
     if (level.numlives) {
         if (level.teambased) {
@@ -134,14 +134,14 @@ function mayspawn() {
             gamehasstarted = level.maxplayercount > 1 || !util::isoneround() && !util::isfirstround();
         }
         if (!self.pers[#"lives"]) {
-            return 0;
+            return false;
         } else if (gamehasstarted) {
             if (!level.ingraceperiod && !self.hasspawned) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace globallogic_spawn/globallogic_spawn
@@ -184,7 +184,7 @@ function stoppoisoningandflareonspawn() {
 // Size: 0x84
 function spawnplayerprediction() {
     self endon(#"disconnect", #"end_respawn", #"game_ended", #"joined_spectators", #"spawned");
-    while (1) {
+    while (true) {
         wait(0.5);
         self [[ level.onspawnplayer ]](1);
     }
@@ -315,7 +315,7 @@ function spawnplayer() {
 function function_e3b1cd54() {
     self notify(#"hash_587f51dc5f621d5d");
     self endon(#"hash_587f51dc5f621d5d", #"disconnect");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"vehicle_death");
         if (waitresult.vehicle_died) {
@@ -562,17 +562,17 @@ function spawnqueuedclient(dead_player_team, killer) {
 // Size: 0xd6
 function allteamsnearscorelimit() {
     if (!level.teambased) {
-        return 0;
+        return false;
     }
     if (level.scorelimit <= 1) {
-        return 0;
+        return false;
     }
     foreach (team, _ in level.teams) {
         if (!(game.stat[#"teamscores"][team] >= level.scorelimit - 1)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace globallogic_spawn/globallogic_spawn
@@ -581,18 +581,18 @@ function allteamsnearscorelimit() {
 // Size: 0x6e
 function shouldshowrespawnmessage() {
     if (util::waslastround()) {
-        return 0;
+        return false;
     }
     if (util::isoneround()) {
-        return 0;
+        return false;
     }
     if (isdefined(level.livesdonotreset) && level.livesdonotreset) {
-        return 0;
+        return false;
     }
     if (allteamsnearscorelimit()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace globallogic_spawn/globallogic_spawn
@@ -819,9 +819,9 @@ function function_bb88905b(var_4dff964a) {
 // Size: 0x54
 function waitrespawnorsafespawnbutton() {
     self endon(#"disconnect", #"end_respawn");
-    while (1) {
+    while (true) {
         if (self usebuttonpressed()) {
-            return;
+            break;
         }
         waitframe(1);
     }

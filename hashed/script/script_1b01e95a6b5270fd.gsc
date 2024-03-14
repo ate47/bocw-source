@@ -253,7 +253,7 @@ function function_c617d577() {
     level endon(#"game_over");
     self notify("13d7a68c50b7bd36");
     self endon("13d7a68c50b7bd36");
-    while (1) {
+    while (true) {
         level waittill(#"round_about_to_start", #"round_over", #"doa_exit_taken");
         level.doa.var_2ad97fac = 0;
     }
@@ -270,7 +270,7 @@ function function_7495bd30() {
     level thread function_c617d577();
     level.doa.var_2ad97fac = 0;
     level.doa.var_afae28e0 = 0;
-    while (1) {
+    while (true) {
         var_d4f1a9a3 = level.doa.var_afae28e0;
         wait(1);
         if (var_d4f1a9a3 == level.doa.var_afae28e0) {
@@ -294,7 +294,7 @@ function function_e7e91016() {
     if (flag::get("doa_round_spawning")) {
         return (level.doa.var_2ad97fac == 30);
     }
-    return 0;
+    return false;
 }
 
 // Namespace doa_enemy/doa_enemy
@@ -497,7 +497,7 @@ function function_7292bc() {
     self endon("75a107ba19549f17");
     level endon(#"game_over");
     var_1fb31dea = gettime() + 2000;
-    while (1) {
+    while (true) {
         time = gettime();
         if (namespace_4dae815d::function_59a9cf1d() != 0 && time > var_1fb31dea) {
             removequeue = [];
@@ -547,7 +547,7 @@ function function_7292bc() {
                 groupid = var_3046d90a.groupid;
                 sizeneeded = 0;
                 idx = 0;
-                while (1) {
+                while (true) {
                     if (level.doa.var_dcbded2.size > idx && level.doa.var_dcbded2[idx].groupid === groupid) {
                         sizeneeded = sizeneeded + level.doa.var_dcbded2[idx].count;
                         level.doa.var_dcbded2[idx].groupid = undefined;

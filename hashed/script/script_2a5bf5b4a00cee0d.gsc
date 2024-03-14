@@ -227,7 +227,7 @@ function function_42304070() {
 // Size: 0x58
 function function_3b3bb5c(var_687ec70b, dmg) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         wait(var_687ec70b);
         self dodamage(dmg, self.origin);
     }
@@ -427,10 +427,10 @@ function function_22d11b92() {
             assert(isdefined(self.var_ef7cd97));
         #/
         if (isdefined(self.var_ef7cd97) && gettime() - self.var_ef7cd97 < 1500) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_ec06fe4a/namespace_ec06fe4a
@@ -477,7 +477,7 @@ function function_b4ff2191(dir, var_594fccd3, *unused = 100, attacker) {
 function function_592e0d6b() {
     self notify("1afc48493607fddf");
     self endon("1afc48493607fddf");
-    while (1) {
+    while (true) {
         wait(1);
         corpse_array = getcorpsearray();
         foreach (corpse in corpse_array) {
@@ -682,7 +682,7 @@ function function_8b1ae345(time = 2, dist = 24, killnote) {
     start_origin = self.origin;
     top = self.origin + (0, 0, var_c421a5fd);
     bottom = self.origin - (0, 0, var_c421a5fd);
-    while (1) {
+    while (true) {
         self moveto(top, var_e9fa66c6, 0.2, 0.2);
         wait(var_e9fa66c6);
         self moveto(bottom, var_e9fa66c6, 0.2, 0.2);
@@ -741,9 +741,9 @@ function getyawtoenemy() {
 // Size: 0x1c
 function isvalidenemy(enemy) {
     if (!isdefined(enemy)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_ec06fe4a/namespace_ec06fe4a
@@ -1114,12 +1114,12 @@ function is_facing(facee, requireddot = 0.9) {
 // Size: 0x7e
 function is_explosive_damage(mod) {
     if (!isdefined(mod)) {
-        return 0;
+        return false;
     }
     if (mod == "MOD_GRENADE" || mod == "MOD_GRENADE_SPLASH" || mod == "MOD_PROJECTILE" || mod == "MOD_PROJECTILE_SPLASH" || mod == "MOD_EXPLOSIVE") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_ec06fe4a/namespace_ec06fe4a
@@ -1172,13 +1172,13 @@ function function_73d79e7d(parent, var_b1f98440 = 0, offset = (0, 0, 0)) {
 // Size: 0x76
 function function_a8975c67(var_635abe53 = 0) {
     if (var_635abe53 == 0 & mayspawnentity()) {
-        return 1;
+        return true;
     }
     var_25384f8 = function_210c40b8() - var_635abe53;
     if (var_25384f8 > 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_ec06fe4a/namespace_ec06fe4a

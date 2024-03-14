@@ -39,22 +39,22 @@ function function_1a3aacac(state) {
     switch (state) {
     case 1:
         level clientfield::set("" + #"hash_5a41b1632428880c", 1);
-        return;
+        break;
     case 2:
         level clientfield::set("" + #"hash_22f0944e4bd4dea9", 1);
-        return;
+        break;
     case 3:
         level clientfield::set("" + #"hash_c9774e0d25f882a", 1);
-        return;
+        break;
     case 4:
         level clientfield::set("" + #"hash_5a41b1632428880c", 0);
-        return;
+        break;
     case 5:
         level clientfield::set("" + #"hash_22f0944e4bd4dea9", 0);
-        return;
+        break;
     case 6:
         level clientfield::set("" + #"hash_c9774e0d25f882a", 0);
-        return;
+        break;
     }
 }
 
@@ -64,7 +64,7 @@ function function_1a3aacac(state) {
 // Size: 0xc8
 function function_d20f5e48() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         level flag::wait_till("power_on");
         level clientfield::set("" + #"hash_249ac6ef9989bee4", 1);
         level flag::wait_till_clear("power_on");

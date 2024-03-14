@@ -308,7 +308,7 @@ function private function_a240798a(item, player, *networkid, *itemid, itemcount,
 // Checksum 0x8bcdf259, Offset: 0x13b0
 // Size: 0x3e
 function private function_24dc1d12(*item, *player, *networkid, *itemid, *itemcount, *var_aec6fa7f, *slotid) {
-    return 0;
+    return false;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -337,7 +337,7 @@ function private function_c3f4d281(item, *player, *networkid, *itemid, *itemcoun
             self setweaponammostock(inventoryweapon, int(var_e6527384));
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -345,7 +345,7 @@ function private function_c3f4d281(item, *player, *networkid, *itemid, *itemcoun
 // Checksum 0x85ef1bd8, Offset: 0x16f0
 // Size: 0x3e
 function private function_80ef3ea5(*item, *player, *networkid, *itemid, *itemcount, *var_aec6fa7f, *slotid) {
-    return 0;
+    return false;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -353,7 +353,7 @@ function private function_80ef3ea5(*item, *player, *networkid, *itemid, *itemcou
 // Checksum 0x1482fc6d, Offset: 0x1738
 // Size: 0x3e
 function private function_753fb11f(*item, *player, *networkid, *itemid, *itemcount, *var_aec6fa7f, *slotid) {
-    return 0;
+    return false;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -361,7 +361,7 @@ function private function_753fb11f(*item, *player, *networkid, *itemid, *itemcou
 // Checksum 0xdc2276b, Offset: 0x1780
 // Size: 0x3e
 function private function_88803841(*item, *player, *networkid, *itemid, *itemcount, *var_aec6fa7f, *slotid) {
-    return 0;
+    return false;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -370,7 +370,7 @@ function private function_88803841(*item, *player, *networkid, *itemid, *itemcou
 // Size: 0x56
 function private function_d46c2559(item, *player, *networkid, *itemid, *itemcount, *var_aec6fa7f, *slotid) {
     item_drop::function_d8342646(slotid.var_25b21f27);
-    return 0;
+    return false;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -392,7 +392,7 @@ function private function_2650d5c6(*item, player, *networkid, *itemid, *itemcoun
     }
     var_2cacdde7 = int(var_2cacdde7);
     self.armor = self.armor + math::clamp(var_2cacdde7, 0, self.maxarmor);
-    return 0;
+    return false;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec

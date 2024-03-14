@@ -1225,7 +1225,7 @@ function engagement_distance_debug_toggle() {
             setdvar(#"debug_engage_dists", 0);
         }
         laststate = getdvarint(#"debug_engage_dists", 0);
-        while (1) {
+        while (true) {
             currentstate = getdvarint(#"debug_engage_dists", 0);
             if (dvar_turned_on(currentstate) && !dvar_turned_on(laststate)) {
                 weapon_engage_dists_init();
@@ -1443,7 +1443,7 @@ function engage_dists_watcher() {
     /#
         level endon(#"kill_all_engage_dist_debug");
         level endon(#"kill_engage_dists_watcher");
-        while (1) {
+        while (true) {
             player = gethostplayer();
             playerweapon = player getcurrentweapon();
             if (!isdefined(player.lastweapon)) {
@@ -1476,7 +1476,7 @@ function debug_realtime_engage_dist() {
         level thread engage_dist_debug_hud_destroy(hudobjarray, "<unknown string>");
         level.debugrtengagedistcolor = level.green;
         player = gethostplayer();
-        while (1) {
+        while (true) {
             lasttracepos = (0, 0, 0);
             direction = player getplayerangles();
             direction_vec = anglestoforward(direction);
@@ -1967,7 +1967,7 @@ function equipment_dev_gui() {
         set_equipment_list();
         set_grenade_list();
         setdvar(#"scr_give_equipment", "<unknown string>");
-        while (1) {
+        while (true) {
             wait(0.5);
             devgui_int = getdvarint(#"scr_give_equipment", 0);
             if (devgui_int != 0) {
@@ -1990,7 +1990,7 @@ function grenade_dev_gui() {
         set_equipment_list();
         set_grenade_list();
         setdvar(#"scr_give_grenade", "<unknown string>");
-        while (1) {
+        while (true) {
             wait(0.5);
             devgui_int = getdvarint(#"scr_give_grenade", 0);
             if (devgui_int != 0) {
@@ -2050,7 +2050,7 @@ function devstraferunpathdebugdraw() {
         drawtime = maxdrawtime;
         origintextoffset = vectorscale((0, 0, -1), 50);
         endonmsg = "<unknown string>";
-        while (1) {
+        while (true) {
             if (should_draw_debug("<unknown string>") > 0) {
                 nodes = [];
                 end = 0;
@@ -2136,7 +2136,7 @@ function devhelipathdebugdraw() {
         drawtime = maxdrawtime;
         origintextoffset = vectorscale((0, 0, -1), 50);
         endonmsg = "<unknown string>";
-        while (1) {
+        while (true) {
             if (getdvarint(#"scr_devhelipathsdebugdraw", 0) > 0) {
                 script_origins = getentarray("<unknown string>", "<unknown string>");
                 foreach (ent in script_origins) {
@@ -2174,7 +2174,7 @@ function devhelipathdebugdraw() {
                             ent draworiginlines();
                             ent drawtargetnametext(textcolor, textalpha, textscale);
                             ent draworigintext(textcolor, textalpha, textscale, origintextoffset);
-                            continue;
+                            break;
                         }
                     }
                 }
@@ -2278,7 +2278,7 @@ function drawpath(linecolor, textcolor, textalpha, textscale, textoffset, drawti
             if (ent.targetname == "<unknown string>") {
                 entfirsttarget = ent.target;
             } else if (ent.target == entfirsttarget) {
-                return;
+                break;
             }
             ent = enttarget;
             waitframe(1);

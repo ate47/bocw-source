@@ -119,12 +119,12 @@ function function_cd2efd2d(player, ref) {
         foreach (var_773e2a17 in var_b7c59076) {
             if (var_773e2a17 == ref) {
                 [[ self ]]->function_afdd9f65(player, index);
-                return 1;
+                return true;
             }
             index++;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_ee630e04/namespace_ee630e04

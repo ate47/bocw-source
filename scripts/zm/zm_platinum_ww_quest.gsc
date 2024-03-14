@@ -126,7 +126,7 @@ function function_ce3b7324() {
 // Size: 0x1a4
 function function_7c943428(var_f345d85) {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (waitresult.attacker === level.var_56e22cfa && isdefined(level.var_56e22cfa.attackable)) {
@@ -171,13 +171,13 @@ function function_3eafd069(entity) {
 // Size: 0x6c
 function function_56b196db(e_player) {
     if (is_true(e_player.var_c6af46f9)) {
-        return 0;
+        return false;
     }
     if (isplayer(e_player)) {
         self sethintstringforplayer(e_player, #"hash_22569dcd09aa7bf9");
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_47f97e84/namespace_47f97e84
@@ -186,7 +186,7 @@ function function_56b196db(e_player) {
 // Size: 0x164
 function function_bb30710d() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
@@ -200,7 +200,7 @@ function function_bb30710d() {
             if (isdefined(self.stub.var_52dbcd71)) {
                 player thread zm_vo::function_7622cb70(self.stub.var_52dbcd71);
             }
-            return;
+            break;
         }
     }
 }
@@ -317,23 +317,23 @@ function function_4320379c(b_skipped, var_19e802fa) {
 function function_fb9b5ce9(e_player) {
     if (!level flag::get(#"hash_358a79602429d556") && isplayer(e_player)) {
         if (level flag::get(#"hash_7b5643f5ecc16c8f") || level flag::get(#"boss_fight_started")) {
-            return 0;
+            return false;
         }
         if (level flag::get(#"hash_1a103020b4fa4e2f")) {
             self sethintstringforplayer(e_player, #"hash_7c199160b79a2efe");
-            return 1;
+            return true;
         }
         if (e_player util::is_player_looking_at(level.var_6a086277.origin, 0.7, 0)) {
             if (!isdefined(level.var_a0657c54)) {
                 self sethintstringforplayer(e_player, #"hash_341be5b4253023ae");
-                return 1;
+                return true;
             } else if (level.var_a0657c54 == e_player) {
                 self sethintstringforplayer(e_player, #"hash_870fef240ee1356");
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_47f97e84/namespace_47f97e84
@@ -360,7 +360,7 @@ function private function_50cbcfee(e_user) {
 function function_46c3c6ea() {
     level endon(#"end_game");
     self endon(#"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
@@ -404,7 +404,7 @@ function function_b0952594(params) {
                 array::thread_all(getplayers(), &namespace_4abf1500::function_3ad8805e, #"zmintel_platinum_requiem_artifact_02");
                 level notify(#"ww_pickup", {#player:self});
                 callback::remove_callback(#"on_item_pickup", &function_b0952594);
-                return;
+                break;
             }
         }
     }

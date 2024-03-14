@@ -108,7 +108,7 @@ function function_c9c6dda1(player) {
 function private function_1e3ac913() {
     level endon(#"game_ended");
     var_1a1c0d86 = 0;
-    while (1) {
+    while (true) {
         foreach (index, player in getplayers()) {
             if (index % 10 == var_1a1c0d86) {
                 if (!isdefined(player.radiation)) {

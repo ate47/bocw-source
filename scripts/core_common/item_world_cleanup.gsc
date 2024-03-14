@@ -33,7 +33,7 @@ function private _cleanup() {
     level flag::wait_till(#"item_world_reset");
     var_ce255078 = array(&function_b465b436, &function_35e11623, &function_b7c5f376, &function_6ef5c287, &function_ada16428);
     var_314770d8 = array(&function_a534560c);
-    while (1) {
+    while (true) {
         if (death_circle::is_active()) {
             foreach (func in var_ce255078) {
                 util::wait_network_frame(1);
@@ -365,7 +365,7 @@ function private function_213a12e4() {
 // Size: 0xac
 function private function_3703bc36(entity, origin, radius, var_7e2f7f1f = 0) {
     if (!isdefined(entity) || !isdefined(origin) || !isdefined(radius)) {
-        return 0;
+        return false;
     }
     var_be38b475 = var_7e2f7f1f ? 5000 : 0;
     return distance2dsquared(entity.origin, origin) >= function_a3f6cdac(radius + var_be38b475);

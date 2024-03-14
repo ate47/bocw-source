@@ -84,7 +84,7 @@ function function_78f4a9dc(localclientnum, *oldval, newval, *bnewent, *binitials
     switch (bwastimejump) {
     case 0:
         self thread function_46e16bf3(fieldname, 0);
-        return;
+        break;
     case 1:
     case 2:
     case 3:
@@ -93,7 +93,7 @@ function function_78f4a9dc(localclientnum, *oldval, newval, *bnewent, *binitials
             self.var_1b11d1e = self playloopsound(#"hash_7ee016c54396fd0e");
         }
         self thread function_46e16bf3(fieldname, 1);
-        return;
+        break;
     case 5:
         if (self.archetype == #"zombie_dog") {
             self.var_565ef52d = util::playfxontag(fieldname, "zm_weapons/fx9_fld_frost_blast_lvl5_hound_torso", self, "j_spine2");
@@ -107,7 +107,7 @@ function function_78f4a9dc(localclientnum, *oldval, newval, *bnewent, *binitials
             self.var_1b11d1e = self playloopsound(#"hash_7ee016c54396fd0e");
         }
         self thread function_46e16bf3(fieldname, 1);
-        return;
+        break;
     }
 }
 
@@ -126,7 +126,7 @@ function function_46e16bf3(localclientnum, b_freeze) {
         var_875c79c1 = self.var_82fb67e7 + 0.5;
         self.var_958cf9c5 = 1;
     }
-    while (1) {
+    while (true) {
         self function_78233d29("rob_test_character_ice", "", "Threshold", self.var_82fb67e7);
         if (b_freeze) {
             self.var_82fb67e7 = self.var_82fb67e7 + 0.2;
@@ -134,7 +134,7 @@ function function_46e16bf3(localclientnum, b_freeze) {
             self.var_82fb67e7 = self.var_82fb67e7 - 0.05;
         }
         if (b_freeze && (self.var_82fb67e7 >= var_875c79c1 || self.var_82fb67e7 >= 1)) {
-            return;
+            break;
         } else if (self.var_82fb67e7 <= 0) {
             self.var_958cf9c5 = undefined;
             self stoprenderoverridebundle("rob_test_character_ice");
@@ -168,7 +168,7 @@ function function_46e16bf3(localclientnum, b_freeze) {
                 self.var_a76dc6cf = undefined;
                 self.var_abe559b3 = undefined;
             }
-            return;
+            break;
         } else if (gibclientutils::isgibbed(localclientnum, self, 2)) {
             self.var_958cf9c5 = undefined;
             if (isdefined(self.var_48152abe)) {
@@ -187,7 +187,7 @@ function function_46e16bf3(localclientnum, b_freeze) {
                 self stoploopsound(self.var_1b11d1e);
                 self.var_1b11d1e = undefined;
             }
-            return;
+            break;
         }
         wait(0.1);
     }

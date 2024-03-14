@@ -71,7 +71,7 @@ function start_vortex(localclientnum, oldval, newval, *bnewent, *binitialsnap, *
 // Size: 0x60
 function vortex_shake_and_rumble(localclientnum, *v_vortex_origin) {
     self endon(#"vortex_stop");
-    while (1) {
+    while (true) {
         self playrumbleonentity(v_vortex_origin, "zod_idgun_vortex_interior");
         wait(0.075);
     }

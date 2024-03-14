@@ -206,7 +206,7 @@ function function_f15c97d9(entity) {
 // Size: 0xd6
 function function_e3ea1f6f(entity) {
     entity endon(#"death", #"state_changed");
-    while (1) {
+    while (true) {
         flag::wait_till_clear(#"hash_624e5d5dfb7f742b");
         goal = function_c8417113(entity);
         if (flag::get(#"hash_624e5d5dfb7f742b")) {

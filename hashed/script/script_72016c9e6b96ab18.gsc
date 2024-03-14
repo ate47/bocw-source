@@ -149,7 +149,7 @@ function private function_30a971a4() {
             hudelem.color = vectorscale((1, 1, 1), 0.75);
             player.var_adeb44c2[i] = hudelem;
         }
-        while (1) {
+        while (true) {
             wait(0.5);
             for (i = 0; i < level.var_e85d5a3f.var_e4f193a3.size; i++) {
                 var_38b5d833 = level.var_e85d5a3f.var_e4f193a3[i];

@@ -704,7 +704,7 @@ function private function_9dfe141f(uid, var_6d62c29c, var_24af7a37 = 0) {
     level endon(#"close_interactive_map", #"hash_64a3b02565bdf75f");
     self endon(#"death", #"hash_7c1f9e1214f47b4e");
     self thread function_8e91c74c(uid);
-    while (1) {
+    while (true) {
         pos = self.origin;
         angles = self.angles;
         if (isentity(self)) {
@@ -743,7 +743,7 @@ function private function_75cb287(*var_ff0f9714) {
     level.interactive_map.var_eb166cf5 = undefined;
     level.interactive_map.var_1896103a = undefined;
     var_eb166cf5 = undefined;
-    while (1) {
+    while (true) {
         if (namespace_61e6d095::should_hide(#"interactive_map")) {
             waitframe(1);
             continue;
@@ -773,7 +773,7 @@ function private function_c9099483() {
             if (function_3fe61dc2(object)) {
                 thread function_7560d352(object);
                 level.interactive_map.var_eb166cf5 = object;
-                return;
+                break;
             }
         }
     }
@@ -788,10 +788,10 @@ function private function_3fe61dc2(object) {
         delta = object.var_2ac0bdff - level.interactive_map.var_1cd32747;
         scale = isdefined(function_dbf83dc4(object.interactive_map.uid, "scale")) ? function_dbf83dc4(object.interactive_map.uid, "scale") : 1;
         if (abs(delta[0]) < 0.04 * scale && abs(delta[1]) < 0.04 * scale) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace interactive_map/interactive_map
@@ -808,7 +808,7 @@ function private function_393ad031() {
         if (var_7188b3ba !== level.interactive_map.var_1896103a && function_4c186262(var_7188b3ba)) {
             thread function_7560d352(var_7188b3ba);
             level.interactive_map.var_1896103a = var_7188b3ba;
-            return;
+            break;
         }
     }
 }

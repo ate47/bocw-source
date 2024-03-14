@@ -97,7 +97,7 @@ function function_81c73263(localclientnum, rob) {
     self endon(#"death");
     var_6369afab = item_world::function_963d3f6e();
     maxdist = getdvarfloat(#"hash_2cd1a08f81049564", var_6369afab);
-    while (1) {
+    while (true) {
         wait(0.1);
         if (!self function_d2503806(rob) && getplayers(localclientnum, undefined, self.origin, maxdist).size) {
             self playrenderoverridebundle(rob);

@@ -80,9 +80,9 @@ function function_5890c14e() {
 // Size: 0x50
 function function_bac6b417(equipment_name) {
     if (isdefined(level.weapontacticalinsertion) && equipment_name == level.weapontacticalinsertion.name && level.disabletacinsert) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace loadout/loadout
@@ -166,9 +166,9 @@ function isexplosivedamage(meansofdeath) {
     case #"mod_grenade":
     case #"mod_grenade_splash":
     case #"mod_projectile_splash":
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace loadout/loadout
@@ -185,9 +185,9 @@ function function_88c673cf(player) {
 // Size: 0x64
 function isfiredamage(weapon, meansofdeath) {
     if (weapon.doesfiredamage && (meansofdeath == "MOD_BURNED" || meansofdeath == "MOD_GRENADE" || meansofdeath == "MOD_GRENADE_SPLASH")) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace loadout/loadout

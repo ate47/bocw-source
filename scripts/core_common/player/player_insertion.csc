@@ -130,7 +130,7 @@ function private function_6c4ae982(localclientnum) {
     var_d5823792 = 0;
     var_b9d612e8 = 0;
     var_a106daf5 = 0;
-    while (1) {
+    while (true) {
         local_player = function_5c10bd79(localclientnum);
         if (isdefined(local_player)) {
             if (!local_player hasdobj(localclientnum)) {
@@ -172,7 +172,7 @@ function function_d8beedc9(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Checksum 0x7bc2b751, Offset: 0xe18
 // Size: 0x8c
 function function_ba7d9848(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    if (1) {
+    if (true) {
         if (bwastimejump) {
             self function_d309e55a("tag_landing_gear_control_animate", 1);
             return;
@@ -432,7 +432,7 @@ function function_65cca2e1(localclientnum, var_1e7db62f) {
     }
     self notify(#"hash_503cb9224ca331c" + var_1e7db62f);
     self endon(#"hash_503cb9224ca331c" + var_1e7db62f);
-    while (1) {
+    while (true) {
         if (isdefined(level.var_a3ede655) && isdefined(level.var_a3ede655[var_1e7db62f]) && isdefined(level.var_697988b1) && isdefined(level.var_697988b1[var_1e7db62f])) {
             break;
         }

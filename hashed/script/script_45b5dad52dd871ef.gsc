@@ -277,11 +277,11 @@ function private function_9465e5f8(attacker) {
     n_current_time = float(gettime()) / 1000;
     if (isplayer(attacker)) {
         if (!isdefined(attacker.aat_cooldown_start[#"hash_79b39f3766407263"])) {
-            return 1;
+            return true;
         } else if (isdefined(attacker.aat_cooldown_start[#"hash_79b39f3766407263"]) && n_current_time >= attacker.aat_cooldown_start[#"hash_79b39f3766407263"] + 30) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 

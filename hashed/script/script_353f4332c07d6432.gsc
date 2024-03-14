@@ -146,7 +146,7 @@ function function_92105cc8(*var_a276c861) {
         e_part thread function_f108e709();
     }
     var_fc90ddf0 = 0;
-    while (1) {
+    while (true) {
         level waittill(#"hash_3cfc9bc31cad5e4a");
         var_fc90ddf0 = var_fc90ddf0 + 1;
         /#
@@ -184,7 +184,7 @@ function function_f108e709() {
 function function_7f55d66(e_player) {
     s_parent = self.stub.related_parent;
     if (!isdefined(s_parent)) {
-        return 0;
+        return false;
     }
     var_5168e40f = e_player zm_utility::is_player_looking_at(s_parent.origin, 0.9);
     var_f7675868 = !level flag::get(#"hash_434bc775e67b7233") || level flag::get(#"hash_434bc775e67b7233") && level flag::get(#"hash_20afa38b1f1c339e");
@@ -246,7 +246,7 @@ function function_957e8ad3() {
     level endon(#"game_ended", level.var_fe700d1d);
     self endon(#"death");
     self.takedamage = 1;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (isplayer(waitresult.attacker) && level flag::get(#"hash_25372b8b89ab540c")) {
@@ -382,7 +382,7 @@ function function_15741b86() {
     self endon(#"death");
     level endon(#"hash_51047505aeee86ad");
     self scene::play(#"hash_4380575dd04b7eeb", "entry_1", self);
-    while (1) {
+    while (true) {
         if (math::cointoss()) {
             str_scene = "loop_1";
         } else {
@@ -520,7 +520,7 @@ function function_ef40fc60() {
 // Size: 0xc0
 function function_38c50cf3() {
     level endon(#"hash_3239b4eb1e8b1e3b", #"hash_6ba7212a7d50425c");
-    while (1) {
+    while (true) {
         a_enemies = array::filter(getaiarray("bq_ai", "targetname"), 0, &function_1043505b);
         if (a_enemies.size === 0) {
             level flag::set(#"hash_3239b4eb1e8b1e3b");
@@ -535,9 +535,9 @@ function function_38c50cf3() {
 // Size: 0x2e
 function function_1043505b(ai) {
     if (is_true(ai.aat_turned)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_958b287a/namespace_958b287a
@@ -551,7 +551,7 @@ function function_704910e8(var_81c652e4) {
         return;
     }
     n_kill_count = 0;
-    while (1) {
+    while (true) {
         level waittill(#"hash_7e3660d8d125a63a");
         n_kill_count++;
         if (n_kill_count == var_81c652e4) {
@@ -1222,15 +1222,15 @@ function cmd(cmd) {
             foreach (e_part in var_22e48c9c) {
                 e_part thread function_35393ef2(1);
             }
-            return;
+            break;
         case #"hash_27e8451459a42bde":
             foreach (e_part in var_22e48c9c) {
                 e_part thread function_35393ef2(0);
             }
-            return;
+            break;
         case #"hash_ee6d09286bb442d":
             level set(#"hash_7cc4347161a79b86");
-            return;
+            break;
         }
     #/
 }
@@ -1245,7 +1245,7 @@ function function_35393ef2(state) {
         self endon("<unknown string>");
         self endon(#"death");
         if (state) {
-            while (1) {
+            while (true) {
                 circle(self.origin, 10, (0, 0, 1));
                 waitframe(1);
             }
@@ -1335,7 +1335,7 @@ function function_db3d8ac(mdl_target, var_d8f1c196, var_411cc8d4) {
 // Size: 0xcc
 function function_efcfff5b() {
     level endon(#"hash_7c8a1026b606ae9c");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
         w_weapon = waitresult.weapon;
@@ -1398,7 +1398,7 @@ function function_f602a366() {
     var_6de806b5 = getent("t_sq_ms", "targetname");
     var_f73afc46 = 0;
     s_struct = struct::get("s_sq_ms");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = var_6de806b5 waittill(#"damage");
         if (isplayer(waitresult.attacker) && waitresult.mod === "MOD_GRENADE_SPLASH" && !is_true(function_7fb7c83c(waitresult.weapon.name))) {
@@ -1621,7 +1621,7 @@ function function_c50aa4b2() {
 function function_a1c5be67() {
     /#
         self endon(#"death", #"hash_484127e0cbd8f8cb");
-        while (1) {
+        while (true) {
             sphere(self.origin, 15, (1, 0, 0), 0.75);
             waitframe(1);
         }

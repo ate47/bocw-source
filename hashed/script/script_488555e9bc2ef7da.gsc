@@ -173,7 +173,7 @@ function function_43b18d1c() {
     level.overground_fuse_hint_loc = array::random(var_97742376);
     var_be9c7d1f = struct::get(level.overground_fuse_hint_loc.target, "targetname");
     var_856f78b1 = level.overground_fuse_hint_loc.script_noteworthy;
-    while (1) {
+    while (true) {
         var_dfe526e8 = function_a1ef346b();
         foreach (player in var_dfe526e8) {
             var_862f834 = player zm_zonemgr::get_player_zone();
@@ -189,7 +189,7 @@ function function_43b18d1c() {
         }
         wait(0.5);
         if (isdefined(level.var_3f856791)) {
-            return;
+            break;
         }
     }
 }
@@ -200,13 +200,13 @@ function function_43b18d1c() {
 // Size: 0xb2
 function function_e01f1b8b() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         if (level flag::get("connect_ghost_station_to_sewers_and_escape_tunnel")) {
             level flag::set(#"hash_453dee78e48aa120");
-            return;
+            break;
         } else if (level flag::get("connect_ghost_station_to_secret_spy_tunnel")) {
             level flag::set(#"hash_7cbfe0771046c209");
-            return;
+            break;
         }
         wait(1);
     }
@@ -236,7 +236,7 @@ function function_9f0d2282(var_23589c3d) {
     level.var_6eccb0ad = struct::get(var_23589c3d, "targetname");
     var_be9c7d1f = struct::get(level.var_6eccb0ad.target, "targetname");
     var_2b2211f7 = level.var_6eccb0ad.script_noteworthy;
-    while (1) {
+    while (true) {
         var_dfe526e8 = function_a1ef346b();
         foreach (player in var_dfe526e8) {
             var_862f834 = player zm_zonemgr::get_player_zone();
@@ -252,7 +252,7 @@ function function_9f0d2282(var_23589c3d) {
         }
         wait(0.5);
         if (isdefined(level.var_b6309f5)) {
-            return;
+            break;
         }
     }
 }
@@ -273,7 +273,7 @@ function function_9de5caaf(*params) {
 // Size: 0x148
 function function_f73f4bc2() {
     level endon(#"end_game", #"player_has_both_fuse");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"hash_24ebf2a541a3c3ea");
         if (zm_utility::check_point_in_playable_area(waitresult.position)) {
@@ -294,13 +294,13 @@ function function_f73f4bc2() {
 // Size: 0xe8
 function function_f4f15fc() {
     level endon(#"end_game", #"player_has_both_fuse", #"power_on");
-    while (1) {
+    while (true) {
         var_ff0a4380 = struct::get_array("tempest_location", "script_noteworthy");
         var_6df640be = array::random(var_ff0a4380);
         var_c155f005 = spawnactor("spawner_bo5_avogadro_sr", var_6df640be.origin, var_6df640be.angles, undefined, 1);
         if (isdefined(var_c155f005)) {
             var_c155f005.var_93057265 = 1;
-            return;
+            break;
         }
         wait(1);
     }
@@ -532,11 +532,11 @@ function cmd(cmd) {
         case #"hash_64b8a356ba686f7b":
             level set(#"hash_7d72f2dda7a4104e");
             level set("<unknown string>");
-            return;
+            break;
         case #"hash_4cbd866bd8931c8a":
             level thread function_ce636e();
             level set(#"player_has_both_fuse");
-            return;
+            break;
         case #"hash_72b6d8c2e2e976a3":
             var_dfe526e8 = function_a1ef346b();
             foreach (player in var_dfe526e8) {

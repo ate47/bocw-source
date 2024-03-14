@@ -317,6 +317,6 @@ function function_fc882f9f(*var_47983f3e, eventtype, modifier, *delay, *eventstr
         break;
     }
     self battlechatter::function_4e7b6f6d("stealth", force, var_9c201ccd);
-    return 0;
+    return false;
 }
 

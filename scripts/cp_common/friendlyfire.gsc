@@ -232,7 +232,7 @@ function function_9d79ae6f(entity) {
     if (entity.archetype === "warlord_soldier") {
         return (entity.shieldhealth <= 0);
     }
-    return 0;
+    return false;
 }
 
 // Namespace friendlyfire/friendlyfire
@@ -490,9 +490,9 @@ function function_b893c9c0() {
         /#
             println("<unknown string>");
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace friendlyfire/friendlyfire

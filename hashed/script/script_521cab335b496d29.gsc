@@ -187,14 +187,14 @@ function private function_c01d14b6(var_3b192471, n_time_left) {
     switch (level.var_ef4974d7[var_3b192471].str_team) {
     case #"allies":
         setbombtimer("A", var_1c0820a1);
-        return;
+        break;
     case #"axis":
         setbombtimer("B", var_1c0820a1);
-        return;
+        break;
     default:
         setbombtimer("A", var_1c0820a1);
         setbombtimer("B", var_1c0820a1);
-        return;
+        break;
     }
 }
 
@@ -223,14 +223,14 @@ function private function_ba6cfb59(var_3b192471, b_enable = 1, var_96dc7504 = 1)
         switch (str_team) {
         case #"allies":
             clientfield::set_world_uimodel("hudItems.cpObjective.allies.progressType", 0);
-            return;
+            break;
         case #"axis":
             clientfield::set_world_uimodel("hudItems.cpObjective.axis.progressType", 0);
-            return;
+            break;
         default:
             clientfield::set_world_uimodel("hudItems.cpObjective.allies.progressType", 0);
             clientfield::set_world_uimodel("hudItems.cpObjective.axis.progressType", 0);
-            return;
+            break;
         }
     }
 }
@@ -348,7 +348,7 @@ function game_result(str_winning_team) {
 // Size: 0x196
 function private devgui_loop() {
     /#
-        while (1) {
+        while (true) {
             wait(0.25);
             dvarstr = getdvarstring(#"hash_146e539b33582942", "<unknown string>");
             if (dvarstr == "<unknown string>") {

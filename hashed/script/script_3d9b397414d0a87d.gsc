@@ -49,14 +49,14 @@ function private function_70a657d8() {
         level.var_8d67cbd8 = {#var_c1f04374:&function_712f816a, #var_284ea17f:#"hash_57af555874ed0050"};
         level.var_46fc4fdb = &function_4dc75f1b;
         level.var_e1206cfc = &function_f2282b8b;
-        return;
+        break;
     case #"sd":
         level.var_ab8dd45a = {#var_c1f04374:&function_39e8afcf, #var_284ea17f:#"hash_d9870c3e6c1e3c5"};
         level.var_86d47028 = {#var_c1f04374:&function_9555b8d2, #var_284ea17f:#"hash_63c6c30aa3ff880"};
         level.var_8d67cbd8 = {#var_c1f04374:&function_150786f3, #var_284ea17f:#"hash_628978e8b4daa872"};
         level.var_46fc4fdb = &function_86398c9c;
         level.var_e1206cfc = &function_ceb40ef4;
-        return;
+        break;
     case #"control":
         level.var_ab8dd45a = {#var_c1f04374:&function_91a0716f, #var_284ea17f:#"hash_22a8e3365d654f5b"};
         level.var_86d47028 = {#var_c1f04374:&function_b16086a1, #var_284ea17f:#"hash_740ef2b9ec63f1fe"};
@@ -64,7 +64,7 @@ function private function_70a657d8() {
         level.var_88531f89 = {#var_c1f04374:&function_2b1314ec, #var_284ea17f:#"hash_2880dbfd80bebbb2"};
         level.var_46fc4fdb = &function_979f0cb4;
         level.var_e1206cfc = &function_a9b19a49;
-        return;
+        break;
     }
 }
 
@@ -160,7 +160,7 @@ function function_ce7dd3eb() {
         wait(0.1);
         var_64e8f5a4++;
         if (var_64e8f5a4 >= 10) {
-            return;
+            break;
         }
     }
 }
@@ -428,7 +428,7 @@ function private function_1296760e() {
     self endon(#"death");
     level endon(#"game_ended");
     var_49d3ced6 = level.esports.var_49d3ced6;
-    while (1) {
+    while (true) {
         function_3651a831();
         function_a8ccfb6();
         wait(var_49d3ced6);

@@ -144,7 +144,7 @@ function function_93a99046(struct) {
 // Size: 0xea
 function function_ab8eee07() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         players = function_a1ef346b();
         foreach (player in players) {
             if (istouching(player.origin, self)) {
@@ -229,7 +229,7 @@ function function_6c71e778(machine, trigger) {
 function function_ef39f61b() {
     level endon(#"game_ended");
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         if ((isdefined(self.armortier) ? self.armortier : 0) != 0 && self.maxarmor != 0) {
             self clientfield::set_player_uimodel("hudItems.armorPercent", self.armor / self.maxarmor);
         }
@@ -322,16 +322,16 @@ function function_1490abe2(weapon) {
     var_78c4a705 = getweapon(#"bare_hands");
     item = item_inventory::function_230ceec4(weapon);
     if (!isdefined(weapon.name)) {
-        return 0;
+        return false;
     }
     if (killstreaks::is_killstreak_weapon(weapon)) {
-        return 0;
+        return false;
     }
     if (zm_weapons::is_wonder_weapon(weapon)) {
-        return 0;
+        return false;
     }
     if (weapon == level.weaponnone || weapon == var_78c4a705) {
-        return 0;
+        return false;
     }
     if (isdefined(item.var_a6762160.name)) {
         switch (item.var_a6762160.name) {
@@ -346,7 +346,7 @@ function function_1490abe2(weapon) {
         case #"ww_ieu_acid_t9_item_sr":
         case #"ww_ieu_electric_t9_upgraded_item_sr":
         case #"ww_ieu_plasma_t9_upgraded_item_sr":
-            return 0;
+            return false;
         }
     }
     switch (weapon.name) {
@@ -354,9 +354,9 @@ function function_1490abe2(weapon) {
     case #"ray_gun_upgraded":
     case #"ray_gun":
     case #"ray_gun_mk2_upgraded":
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_dd7e54e3/namespace_dd7e54e3
@@ -365,9 +365,9 @@ function function_1490abe2(weapon) {
 // Size: 0x3e
 function function_5aad4a79() {
     if (!is_true(getgametypesetting(#"hash_48d605c9ac0d9395"))) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_dd7e54e3/namespace_dd7e54e3
@@ -383,7 +383,7 @@ function function_cb2d9b9b(machine, trigger) {
     }
     self endoncallback(&function_6c71e778, #"death");
     self thread function_620db6a4(machine, trigger);
-    while (1) {
+    while (true) {
         while (isplayer(self) && self isswitchingweapons() || isplayer(self) && self getcurrentweapon() == level.weaponnone) {
             waitframe(1);
         }

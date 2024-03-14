@@ -54,7 +54,7 @@ function private on_end(*round_reset) {
 // Size: 0x230
 function private function_4458377c() {
     level endon(#"hash_7646638df88a3656");
-    while (1) {
+    while (true) {
         a_ai_zombies = getaiteamarray(level.zombie_team);
         foreach (ai in a_ai_zombies) {
             if (!isalive(ai) || is_true(ai.var_cda2fa8)) {

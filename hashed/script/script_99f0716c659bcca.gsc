@@ -38,7 +38,7 @@ function private function_1679806a(s_watcher) {
 // Size: 0x138
 function private function_e879ee6d(hatchet) {
     hatchet endon(#"delete", #"death");
-    while (1) {
+    while (true) {
         var_51b88026 = undefined;
         var_51b88026 = hatchet waittill(#"grenade_stuck");
         if (!isdefined(var_51b88026.hitent) || !isactor(var_51b88026.hitent)) {

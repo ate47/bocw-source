@@ -41,7 +41,7 @@ function function_422f24cc(watcher) {
 // Size: 0x8c
 function function_d79e9bb5(attacker, *victim, weapon, attackerweapon, *meansofdeath) {
     if (!isdefined(weapon) || isdefined(meansofdeath) && meansofdeath == attackerweapon) {
-        return 0;
+        return false;
     }
     return weapon isgrappling() || isdefined(weapon.var_700a5910) && weapon.var_700a5910 + 2000 > gettime();
 }

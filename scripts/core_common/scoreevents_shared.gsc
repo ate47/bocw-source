@@ -245,10 +245,10 @@ function private function_32358e67(callback, data) {
 // Size: 0x186
 function shouldaddrankxp(player) {
     if (level.gametype == "fr") {
-        return 0;
+        return false;
     }
     if (level.gametype == "zclassic" && is_true(level.var_5164a0ca)) {
-        return 0;
+        return false;
     }
     if (is_true(level.var_4f654f3a)) {
         /#
@@ -258,20 +258,20 @@ function shouldaddrankxp(player) {
             }
             println("<unknown string>" + playername);
         #/
-        return 0;
+        return false;
     }
     if (isdefined(level.var_77d7c40d)) {
         if ([[ level.var_77d7c40d ]](player)) {
-            return 0;
+            return false;
         }
     }
     if (!isdefined(level.rankcap) || level.rankcap == 0) {
-        return 1;
+        return true;
     }
     if (player.pers[#"plevel"] > 0 || player.pers[#"rank"] >= level.rankcap) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace scoreevents/scoreevents_shared

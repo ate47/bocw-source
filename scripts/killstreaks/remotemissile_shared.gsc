@@ -254,7 +254,7 @@ function _fire(killstreaktype, player, team, killstreak_id) {
         if (isdefined(veh)) {
             veh delete();
         }
-        return 0;
+        return false;
     }
     if (isdefined(player)) {
         player callback::callback(#"hash_247d67dbf83dbc1a");
@@ -301,13 +301,13 @@ function _fire(killstreaktype, player, team, killstreak_id) {
         animlen = getanimlength(#"hash_21fa3a72d877f87a");
         wait(animlen - 0.5);
         if (!isdefined(player)) {
-            return 0;
+            return false;
         }
     }
     player clientfield::set_to_player("remote_missile_piloting", 1);
     wait(0.5);
     if (!isdefined(player)) {
-        return 0;
+        return false;
     }
     player function_66b6e720(#"p9_fxanim_mp_remote_missile_bundle");
     var_99178ae6 = player util::create_streamer_hint(player.origin, player.angles, 1, undefined, 0, 0);
@@ -371,7 +371,7 @@ function _fire(killstreaktype, player, team, killstreak_id) {
         if (isdefined(veh)) {
             veh delete();
         }
-        return 0;
+        return false;
     }
     if (isdefined(cam)) {
         cam delete();
@@ -410,7 +410,7 @@ function _fire(killstreaktype, player, team, killstreak_id) {
     player thread sndwatchexplo();
     rocket influencers::create_entity_enemy_influencer("small_vehicle", rocket.team);
     player waittill(#"remotemissle_killstreak_done");
-    return 1;
+    return true;
 }
 
 // Namespace remotemissile/remotemissile_shared
@@ -1027,7 +1027,7 @@ function function_8fba4483(rocket) {
     self clientfield::set_player_uimodel("vehicle.rocketAmmo", 2);
     var_156f45fd = sessionmodeiszombiesgame() ? 9 : 2;
     team = rocket.team;
-    while (1) {
+    while (true) {
         framessincetargetscan++;
         if (framessincetargetscan > var_156f45fd) {
             target = self gettarget(rocket, 1);
@@ -1040,7 +1040,7 @@ function function_8fba4483(rocket) {
                 self.missiles_fired++;
                 self clientfield::set_player_uimodel("vehicle.rocketAmmo", 2 - self.missiles_fired);
                 if (self.missiles_fired >= 2) {
-                    return;
+                    break;
                 }
             }
             framessincetargetscan = 0;
@@ -1062,7 +1062,7 @@ function targeting_hud_think(rocket) {
     framessincetargetscan = 0;
     var_156f45fd = sessionmodeiszombiesgame() ? 9 : 2;
     team = rocket.team;
-    while (1) {
+    while (true) {
         framessincetargetscan++;
         if (framessincetargetscan > var_156f45fd) {
             targets = self getvalidtargets(rocket, 1, 2);
@@ -1159,7 +1159,7 @@ function missile_deploy_watch(rocket) {
     while (self attackbuttonpressed() || !self killstreaks::function_59e2c378()) {
         waitframe(1);
     }
-    while (1) {
+    while (true) {
         if (self attackbuttonpressed() || rocket.origin[2] < var_dc54c0bd || !self killstreaks::function_59e2c378()) {
             self thread missile_deploy(rocket, 0);
             continue;

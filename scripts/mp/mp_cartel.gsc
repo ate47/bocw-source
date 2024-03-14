@@ -61,7 +61,7 @@ function function_705159cd() {
         return;
     }
     self endon(#"death", #"disconnect");
-    while (1) {
+    while (true) {
         if (isdefined(self.prop)) {
             prop = undefined;
             if (isdefined(self.propclones)) {

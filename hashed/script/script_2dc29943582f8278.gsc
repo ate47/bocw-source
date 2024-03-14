@@ -188,7 +188,7 @@ function function_34038097(clone) {
             /#
                 function_f5f0c0f8("<unknown string>" + i + "<unknown string>" + level.doa.clones.size);
             #/
-            return;
+            break;
         }
     }
 }
@@ -288,7 +288,7 @@ function private _updateclonepathing(player) {
     var_81ef612a = self.origin;
     self.lastknownpos = self.origin;
     self.lastknownpostime = gettime();
-    while (1) {
+    while (true) {
         if (self.origin[2] + 36 <= getwaterheight(self.origin)) {
             self setblackboardattribute("_stance", "swim");
             self setgoal(var_81ef612a, 1);
@@ -514,7 +514,7 @@ function clonedamageoverride(*einflictor, eattacker, *idamage, *idflags, *smeans
     if (isdefined(surfacenormal) && surfacenormal.team !== self.team) {
         self thread function_504b77c8();
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_5d515bd5/namespace_515a5054

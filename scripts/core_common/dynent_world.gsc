@@ -131,7 +131,7 @@ function private devgui_loop() {
             waitframe(1);
         }
         adddebugcommand("<unknown string>");
-        while (1) {
+        while (true) {
             wait(0.25);
             dvarstr = getdvarstring(#"hash_40f9f26f308dd924", "<unknown string>");
             if (dvarstr == "<unknown string>") {

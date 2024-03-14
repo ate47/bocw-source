@@ -36,7 +36,7 @@
 function function_7980d69c() {
     self endon(#"death");
     self enableaimassist();
-    while (1) {
+    while (true) {
         target = self turretgettarget(0);
         if (isdefined(target)) {
             self turretsettarget(1, target);

@@ -153,7 +153,7 @@ function private function_56e7d0e3() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         level endon(#"hash_d28501bd896672c");
-        while (1) {
+        while (true) {
             if (exists(#"hash_2f8c229e8241a3a0")) {
                 for (i = 0; i < level._fx.var_de0019ea.var_bebc9d74; i++) {
                     function_7239e030(#"hash_2f8c229e8241a3a0", i);
@@ -198,7 +198,7 @@ function private function_263df0ea() {
 function private function_5402d440(input, buttons) {
     /#
         level endon(#"hash_d28501bd896672c");
-        while (1) {
+        while (true) {
             foreach (button in buttons) {
                 input.(button + "<unknown string>") = input.(button);
                 input.(button) = self buttonpressed(button);
@@ -223,7 +223,7 @@ function private function_a11a465a(input) {
         self notify("<unknown string>");
         self endon("<unknown string>");
         level endon(#"hash_d28501bd896672c");
-        while (1) {
+        while (true) {
             var_aa973631 = isdefined(level._fx.var_de0019ea.var_aa973631) ? level._fx.var_de0019ea.var_aa973631 : 0;
             current_time = gettime();
             var_5b49269e = getdvarint(#"hash_6d342deda30a228a", 100);
@@ -279,7 +279,7 @@ function private function_2e225b16() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         level endon(#"hash_d28501bd896672c");
-        while (1) {
+        while (true) {
             if (isdefined(level._fx.var_de0019ea.var_aa973631)) {
                 var_aa973631 = level._fx.var_de0019ea.var_aa973631;
                 var_dd94a1e3 = function_be6420e7(var_aa973631);

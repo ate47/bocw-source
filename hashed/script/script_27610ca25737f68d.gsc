@@ -168,7 +168,7 @@ function private function_1e6559d5(var_29030410) {
 // Size: 0x74
 function private function_a24e7103(e_player, n_radius) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         a_ai_targets = self function_3655d156(e_player, n_radius, self.origin);
         if (a_ai_targets.size) {
             return;
@@ -197,7 +197,7 @@ function private function_3655d156(e_player, n_radius, v_origin) {
 // Size: 0x94
 function function_39aea6b8(name) {
     if (!isdefined(name)) {
-        return 0;
+        return false;
     }
     switch (name) {
     case #"hash_41adc0ca9daf6e9d":
@@ -206,9 +206,9 @@ function function_39aea6b8(name) {
     case #"energy_mine_2":
     case #"energy_mine_3":
     case #"energy_mine_1":
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_797fe2e7/namespace_797fe2e7

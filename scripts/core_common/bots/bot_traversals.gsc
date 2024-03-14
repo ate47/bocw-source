@@ -83,7 +83,7 @@ function private function_5186819c(eventstruct) {
 // Size: 0xaa
 function private function_51cbae24(eventstruct) {
     if (eventstruct.deltaz < 18 || isdefined(eventstruct.var_921d19f9) || isdefined(eventstruct.var_a8cc518d) || !isdefined(eventstruct.start_node) || !isdefined(eventstruct.end_node)) {
-        return 0;
+        return false;
     }
     return eventstruct.start_node.spawnflags & 4194304 || eventstruct.end_node.spawnflags & 4194304;
 }

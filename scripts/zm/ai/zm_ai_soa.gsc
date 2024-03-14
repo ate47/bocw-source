@@ -79,7 +79,7 @@ function function_751146f8() {
 function function_9310b9ca() {
     self endon(#"death");
     if (level.zm_loc_types[#"zombie_location"].size <= 0) {
-        return 0;
+        return false;
     }
     closest_player = zm_utility::function_d7fedde2(self);
     if (isdefined(closest_player)) {
@@ -100,7 +100,7 @@ function function_9310b9ca() {
             waitframe(1);
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_ai_soa/zm_ai_soa
@@ -396,13 +396,13 @@ function function_6c3b6e9d() {
     closest_player = arraygetclosest(self.origin, getplayers());
     function_4a3e695a(self, closest_player);
     if (isdefined(self.var_ea989fd2) || isdefined(self.var_1389a0b3)) {
-        return 1;
+        return true;
     }
     var_4d21f369 = namespace_19c99142::function_da71e09a(self);
     if (var_4d21f369 === #"hash_110ee879f18b605f") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_ai_soa/zm_ai_soa
@@ -428,9 +428,9 @@ function function_917994fb(*entity, n_to_spawn) {
         #/
     #/
     if (isdefined(level.zombie_total) && level.zombie_total < n_to_spawn) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_ai_soa/zm_ai_soa
@@ -474,9 +474,9 @@ function function_ecce5272() {
     ai = function_e803632f();
     if (isdefined(ai)) {
         level.zombie_total--;
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_ai_soa/zm_ai_soa
@@ -576,9 +576,9 @@ function private function_f761f651() {
     var_268fb71d = function_ff7527d6();
     var_df9af27e = function_d7a21807();
     if (var_268fb71d >= var_df9af27e || !level flag::get("spawn_zombies")) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_ai_soa/zm_ai_soa

@@ -50,13 +50,13 @@ function function_a385666(slot) {
 // Size: 0x74
 function usekillstreakplanemortar(hardpointtype) {
     if (self killstreakrules::iskillstreakallowed(hardpointtype, self.team) == 0) {
-        return 0;
+        return false;
     }
     result = self selectplanemortarlocation(hardpointtype);
     if (!isdefined(result) || !result) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace planemortar/planemortar_shared
@@ -118,7 +118,7 @@ function selectplanemortarlocation(hardpointtype) {
             self.pers[#"hash_1aaccfe69e328d6e"][slot] = var_65ca83ef - i;
             self.pers[#"mortarradarused"] = 1;
             self notify(#"cancel_selection");
-            return 0;
+            return false;
         }
         if (!isdefined(killstreakid)) {
             killstreakid = self killstreakrules::killstreakstart("planemortar", self.team, 0, 1);
@@ -148,7 +148,7 @@ function selectplanemortarlocation(hardpointtype) {
     self.pers[#"hash_1aaccfe69e328d6e"][slot] = undefined;
     self.pers[#"mortarradarused"] = 0;
     self thread function_16f87e96(6);
-    return 1;
+    return true;
 }
 
 // Namespace planemortar/planemortar_shared
@@ -317,7 +317,7 @@ function function_6ffdbd95(var_5496c504) {
 function function_77ed0e9b(var_5496c504, fxanim) {
     /#
         var_5496c504 endon(#"magic_missile");
-        while (1) {
+        while (true) {
             println("<unknown string>" + fxanim.angles);
             println("<unknown string>" + fxanim.origin);
             println("<unknown string>" + var_5496c504.origin);

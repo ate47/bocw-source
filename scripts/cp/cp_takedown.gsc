@@ -205,19 +205,19 @@ function function_8106e2e1() {
         foreach (e_w in var_4f2ba130) {
             self takeweapon(e_w);
         }
-        return;
+        break;
     case #"tkdn_raid_gearup":
         var_4f2ba130 = self getweaponslist();
         foreach (e_w in var_4f2ba130) {
             self takeweapon(e_w);
         }
-        return;
+        break;
     case #"tkdn_raid_apt":
         function_95b5afc9();
-        return;
+        break;
     case #"tkdn_raid_capture":
         function_95b5afc9();
-        return;
+        break;
     case #"tkdn_af_tarmac":
     case #"tkdn_af_chase":
     case #"tkdn_af_intro":
@@ -225,10 +225,10 @@ function function_8106e2e1() {
     case #"tkdn_af_wreck":
     case #"tkdn_af_skid":
         function_43593d7d();
-        return;
+        break;
     default:
         function_95b5afc9();
-        return;
+        break;
     }
 }
 

@@ -249,16 +249,16 @@ function function_8dcd8623() {
         switch (var_7eb8f61a) {
         case 0:
             level thread function_82c73974(insertion);
-            continue;
+            break;
         case 1:
             namespace_b9471dc1::function_51c5f95f(insertion);
-            continue;
+            break;
         case 2:
             function_35742117(insertion);
-            continue;
+            break;
         case 3:
             level thread function_51b480e0(insertion);
-            continue;
+            break;
         }
     }
     level flag::wait_till(#"insertion_begin_completed");
@@ -635,7 +635,7 @@ function private function_7d880672(original_origin, var_9f8395cb, refly) {
             self function_7705a7fc(2, velocity);
         }
         if (refly % 2 == 0) {
-            while (1) {
+            while (true) {
                 waitframe(1);
                 if (self isonground() || self.origin[2] < -5000) {
                     while (self isonground() && self.origin[2] > -5000) {
@@ -722,7 +722,7 @@ function private function_e59d879f(insertion, var_cf46aa72) {
         return 0;
     }
     spawner::global_spawn_throttle(1);
-    if (1) {
+    if (true) {
         var_69f4f44c = "vehicle_t9_mil_helicopter_care_package";
     } else {
         var_69f4f44c = "vehicle_t9_mil_air_transport_hpc_intro";
@@ -745,7 +745,7 @@ function private function_e59d879f(insertion, var_cf46aa72) {
         insertion.var_41091905 = array(insertion.var_41091905);
     }
     insertion.var_41091905[insertion.var_41091905.size] = insertion.leadplane;
-    if (1) {
+    if (true) {
         insertion.var_dfaba736 = [];
         insertion thread function_45b56b0a(insertion, startpoint, endpoint, var_872f085f, var_d2f40e2f);
         if (var_cf46aa72) {
@@ -1093,7 +1093,7 @@ function function_ea6a4f96(startorigin, endorigin, var_872f085f, offsetvec, var_
     self setrotorspeed(1);
     self function_a57c34b7(endorigin, 0, 0);
     level waittill(#"formation_start");
-    if (1) {
+    if (true) {
         direction = anglestoforward(var_872f085f);
         distance = distance(endorigin, startorigin);
         var_27dfb385 = int(distance) / 5000;
@@ -1296,7 +1296,7 @@ function function_b80277f7() {
         self bot_insertion::function_a4f516ef();
         return;
     }
-    while (1) {
+    while (true) {
         waitframe(1);
         if (self flag::get(#"hash_287397edba8966f9") && isdefined(level.insertionpassenger) && isdefined(level.var_f3320ad2) && isdefined(level.var_a3c0d635) && isdefined(level.var_ce84dde9) && !level.insertionpassenger [[ level.var_a3c0d635 ]](self)) {
             level.insertionpassenger [[ level.var_f3320ad2 ]](self);
@@ -1621,19 +1621,19 @@ function private function_d7f18e8f(players) {
 function function_6660c1f() {
     /#
         if (getdvarint(#"scr_disable_infiltration", 0)) {
-            return 0;
+            return false;
         }
     #/
     if (!isdefined(level.insertions)) {
-        return 0;
+        return false;
     }
     for (index = 0; index < level.insertions.size; index++) {
         insertion = level.insertions[index];
         if (insertion flag::get(#"hash_60fcdd11812a0134")) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace player_insertion/player_insertion
@@ -1644,10 +1644,10 @@ function function_e5d4df1c() {
     for (index = 0; index < level.insertions.size; index++) {
         insertion = level.insertions[index];
         if (insertion flag::get(#"hash_122f326d72f4c884")) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace player_insertion/player_insertion
@@ -1700,7 +1700,7 @@ function private function_943c98fb(insertion) {
         adddebugcommand("<unknown string>" + mapname + "<unknown string>");
         waitframe(1);
         adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        while (1) {
+        while (true) {
             waitframe(1);
             string = getdvarstring(#"hash_683dafe2da41b42e", "<unknown string>");
             start_insertion = 0;
@@ -1801,14 +1801,14 @@ function function_ed4c9a32(falltime, var_1e13fbc6, var_921a1f7e, var_dc39d0fc, v
     player function_64742f62();
     var_d5dd0ca5 = 2000;
     starttime = gettime();
-    while (1) {
+    while (true) {
         if (player function_b9c43317() || starttime + var_d5dd0ca5 < gettime() || player function_b9370594()) {
             break;
         }
         waitframe(1);
     }
     self function_39c8b27e(0);
-    while (1) {
+    while (true) {
         if (player isinfreefall() && player.var_8460c472 != 1) {
             player function_64742f62();
             player.var_8460c472 = 1;
@@ -2064,7 +2064,7 @@ function function_c3c0b24b() {
     /#
         self endon(#"death", #"disconnect");
         self endon(#"hash_4dbf3de1e862e186");
-        while (1) {
+        while (true) {
             thread function_6a357716(self.origin, self.angles, 0.05, 5);
             velocity = self getvelocity();
             mag = length(velocity);

@@ -129,7 +129,7 @@ function function_aee47035() {
 // Size: 0x150
 function function_284b43aa() {
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"hash_7e3660d8d125a63a");
         if (zm_utility::check_point_in_playable_area(waitresult.position)) {
@@ -138,7 +138,7 @@ function function_284b43aa() {
             var_82545918.var_dd21aec2 = 1 | 16;
             level flag::wait_till_timeout(30, "player_got_card");
             if (level flag::get("player_got_card")) {
-                return;
+                break;
             }
             if (isdefined(var_82545918)) {
                 var_82545918 delete();
@@ -255,7 +255,7 @@ function function_eb0fb7fc(duration, cooldown) {
     var_410e2bb5 = getent("zm_start_door", "script_noteworthy");
     var_2f3cc38 = getent("zm_sw_gla", "script_noteworthy");
     var_7ee5c5e3 = 0;
-    while (1) {
+    while (true) {
         var_f769654e setvisibletoall();
         var_f769654e sethintstring(#"hash_14c27f71630de2a6");
         waitresult = undefined;
@@ -309,7 +309,7 @@ function function_eb0fb7fc(duration, cooldown) {
 function function_23ac3e06() {
     vol_death_zone = getent("vol_death_zone", "script_noteworthy");
     level thread function_890f302c();
-    while (1) {
+    while (true) {
         if (level.var_632fe5ca >= 20) {
             break;
         }
@@ -337,7 +337,7 @@ function function_23ac3e06() {
 // Size: 0x14a
 function function_37ba0961() {
     level endon(#"hash_38e1cbcaef1b44c9", #"hash_688da970d6800901");
-    while (1) {
+    while (true) {
         all_players = getplayers();
         foreach (player in all_players) {
             if (player istouching(self)) {
@@ -356,7 +356,7 @@ function function_37ba0961() {
 // Size: 0x11c
 function function_890f302c() {
     level endon(#"game_ended", #"ww_quest_completed");
-    while (1) {
+    while (true) {
         level waittill(#"hash_38e1cbcaef1b44c9", #"hash_688da970d6800901");
         all_players = getplayers();
         foreach (player in all_players) {
@@ -496,7 +496,7 @@ function function_c436fc75() {
     var_127d143e = getent("zm_fun_po", "script_noteworthy");
     var_811ae6d7 = getent("zm_fun_dmg", "script_noteworthy");
     var_811ae6d7 enablegrenadetouchdamage();
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = var_811ae6d7 waittill(#"damage");
         if (isdefined(waitresult.attacker) && waitresult.attacker.archetype === #"hash_7c0d83ac1e845ac2") {
@@ -572,7 +572,7 @@ function function_8fa801ac() {
     var_6dad8de0 = getent("zm_nit_box_start", "script_noteworthy");
     var_6954c829 = spawn("trigger_damage", var_6dad8de0.origin, 0, 64, 64);
     var_b14c0d6c = struct::get("zm_nit_box_po");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = var_6954c829 waittill(#"damage");
         if (isplayer(waitresult.attacker) && !is_true(waitresult.var_98e101b0)) {
@@ -716,7 +716,7 @@ function function_17329c15() {
     }
     var_b04e724c = util::spawn_model(#"hash_5995b3cc741a38e", struct::get("zm_can_box").origin);
     t_damage = spawn("trigger_damage", var_b04e724c.origin, 0, 32, 32);
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = t_damage waittill(#"damage");
         if (isdefined(waitresult) && isplayer(waitresult.attacker)) {
@@ -787,7 +787,7 @@ function function_3ca2b2c1(var_fd6475b5, var_743c16e0, var_93bdf906) {
         level.var_8dc29179 = [];
     }
     level.var_8dc29179[var_fd6475b5] = var_f2484ed9;
-    while (1) {
+    while (true) {
         if (!isdefined(var_f2484ed9.mdl_gameobject)) {
             var_f2484ed9.require_look_at = 1;
             var_f2484ed9 gameobjects::init_game_objects(#"hash_76653e6fda4bdfd1");
@@ -839,7 +839,7 @@ function function_9d7bc1dd(var_743c16e0) {
     self notify("7945456019aec3e7");
     self endon("7945456019aec3e7");
     self endon(#"death");
-    while (1) {
+    while (true) {
         if (level flag::get(var_743c16e0)) {
             self thread gameobjects::destroy_object(1, 1);
             return;
@@ -861,7 +861,7 @@ function function_f1ffb4dc() {
     self notify("360fe88ba1ddc6f4");
     self endon("360fe88ba1ddc6f4");
     self endon(#"death");
-    while (1) {
+    while (true) {
         level flag::wait_till(#"dark_aether_active");
         self thread gameobjects::disable_object(1, 1);
         level flag::wait_till_clear(#"dark_aether_active");
@@ -875,7 +875,7 @@ function function_f1ffb4dc() {
 // Size: 0x14a
 function function_79d5804a() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         foreach (player in function_a1ef346b()) {
             self setcursorhint("HINT_NOICON");
             self usetriggerignoreuseholdtime();
@@ -901,7 +901,7 @@ function function_a5ae82b0() {
     if (!isdefined(level.var_8dc29179)) {
         waitframe(1);
     }
-    while (1) {
+    while (true) {
         var_23412a82 = 1;
         if (is_true(level.var_e9f6c6da) && !level flag::get("in_dark_side") && !level flag::get("on_mq_step_0_2")) {
             var_95138a52 = 0;
@@ -955,7 +955,7 @@ function function_a5ae82b0() {
             }
         }
         if (var_23412a82) {
-            return;
+            break;
         }
         wait(1);
     }
@@ -1054,9 +1054,9 @@ function function_ead1edac(cutter) {
 function function_95913408(*e_player) {
     if (level flag::get(#"dark_aether_active") && level flag::get("player_got_the_fuse") && level flag::get("ww_plasma_dark_aether_active")) {
         self sethintstring(#"hash_f829dbd87edb790");
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
@@ -1066,7 +1066,7 @@ function function_95913408(*e_player) {
 function function_59642e27(a_ents) {
     var_fcb6d06e = a_ents[#"hash_15081fa69fd97eda"];
     var_11a6696e = spawn("trigger_damage", var_fcb6d06e.origin, 0, 96, 96);
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = var_11a6696e waittill(#"damage");
         if (isplayer(waitresult.attacker) && isdefined(waitresult.weapon) && is_true(waitresult.weapon.isbulletweapon)) {
@@ -1075,7 +1075,7 @@ function function_59642e27(a_ents) {
             var_ab549ef1.var_dd21aec2 = 1 | 16;
             playfxontag(#"hash_602926e040b2cc81", var_fcb6d06e, "tag_door_fx");
             level notify(#"hash_5fc83b7ed5236a3d");
-            return;
+            break;
         }
     }
 }
@@ -1100,7 +1100,7 @@ function function_d4647e9c() {
     var_64b5a257 = getent(self.target, "targetname");
     var_64b5a257 solid();
     var_64b5a257 disconnectpaths();
-    while (1) {
+    while (true) {
         level flag::wait_till(#"dark_aether_active");
         if (!level flag::get("ww_plasma_dark_crate_unfolded")) {
             self hide();
@@ -1190,7 +1190,7 @@ function function_d9046ad7(*crate, num) {
     var_db089991 = getent(self.target, "targetname");
     var_db089991.var_37d2c8f6 = &function_ba51c33f;
     var_db089991.var_4ffc53f = &function_e0e08fa2;
-    while (1) {
+    while (true) {
         level flag::wait_till_all([1:"ww_beam_dark_aether_active", 0:#"dark_aether_active"]);
         self show();
         self function_619a5c20();
@@ -1247,7 +1247,7 @@ function function_fbce146e(var_db089991) {
         self.player setweaponammoclip(self.player.currentweapon, var_e69a8f49);
     }
     self.player thread function_f5eebd57();
-    return 1;
+    return true;
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
@@ -1258,7 +1258,7 @@ function function_f5eebd57() {
     level endon(#"game_ended");
     self endon(#"disconnect");
     var_105682f = 0;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"weapon_fired", #"weapon_change");
         if (waitresult._notify === "weapon_fired" && namespace_b376a999::function_5fef4201(waitresult.weapon)) {
@@ -1334,7 +1334,7 @@ function function_43073640(crate, num) {
 // Size: 0x118
 function function_746a64df(var_15f88bee, t_damage, num) {
     level endon(#"game_ended", "receptacle_" + num + "_powered");
-    while (1) {
+    while (true) {
         self waittill(#"hash_33fac1f6f3a6dcc");
         /#
             assert(isdefined(self.player));
@@ -1359,7 +1359,7 @@ function function_ef55bb22(var_53f12789, num) {
         println("<unknown string>" + num + "<unknown string>");
         iprintlnbold("<unknown string>" + num + "<unknown string>");
     #/
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (waitresult.attacker === var_53f12789.player && waitresult.attacker flag::get("hold_crystal_energy")) {
@@ -1393,7 +1393,7 @@ function function_ef55bb22(var_53f12789, num) {
 // Size: 0x1c4
 function function_b39ee43f(a_ents) {
     var_bf71a40b = a_ents[#"weapon_crate"];
-    while (1) {
+    while (true) {
         flag_return = undefined;
         flag_return = level waittill(#"receptacle_1_powered", #"receptacle_2_powered", #"receptacle_3_powered");
         switch (flag_return._notify) {
@@ -1408,7 +1408,7 @@ function function_b39ee43f(a_ents) {
             break;
         }
         if (level flag::get_all([2:"receptacle_3_powered", 1:"receptacle_2_powered", 0:"receptacle_1_powered"])) {
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -1448,7 +1448,7 @@ function function_8d9ddc22(var_e7772c37) {
     }
     zm_unitrigger::unitrigger_force_per_player_triggers(var_339168c3, 1);
     scene::add_scene_func(#"hash_340eb7e983e34e72" + self.var_37023f0e + "_bundle", &function_217a625a, "open");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger_activated");
         player = waitresult.e_who;
@@ -1612,16 +1612,16 @@ function function_6d4e1f71(var_d5c2e187, var_e7772c37, var_b0e35c50) {
             switch (var_e7772c37) {
             case #"nitrogen":
                 level.var_c3accf46 = undefined;
-                return;
+                break;
             case #"gas":
                 level.var_ae002b60 = undefined;
-                return;
+                break;
             case #"plasma":
                 level.var_42000fd0 = undefined;
-                return;
+                break;
             case #"beam":
                 level.var_c8a2dc28 = undefined;
-                return;
+                break;
             }
         }
     }
@@ -1897,10 +1897,10 @@ function function_505c0acb(var_13167ed3) {
         case #"ww_ieu_electric_t9":
             return (self hasweapon(level.var_e0be56c0, 1) || self hasweapon(level.var_e80744aa, 1));
         default:
-            return 0;
+            return false;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest
@@ -1931,13 +1931,13 @@ function private function_98af2074(cmd) {
         switch (cmd) {
         case #"hash_58dc6f7eb86ecf83":
             level.var_a1b709cb thread function_8d9ddc22("<unknown string>");
-            return;
+            break;
         case #"hash_45e13a127a63e1f5":
             level.var_74ec088f thread function_8d9ddc22("<unknown string>");
-            return;
+            break;
         case #"hash_42477421da15ff00":
             level.var_267fe17e thread function_8d9ddc22("<unknown string>");
-            return;
+            break;
         case #"hash_1c88a4f3e72d4479":
             level.var_a6639798 thread function_8d9ddc22("<unknown string>");
             function_23255935("<unknown string>");
@@ -1949,9 +1949,9 @@ function private function_98af2074(cmd) {
             if (isdefined(var_a0f325fa)) {
                 var_a0f325fa delete();
             }
-            return;
+            break;
         default:
-            return;
+            break;
         }
     #/
 }

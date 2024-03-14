@@ -318,7 +318,7 @@ function function_8e4d84eb(localclientnum, bundlename) {
     player namespace_ca99987f::function_136edb11(undefined, 3.5, var_6588e6fc, #"hash_2de1684e2167ada4", 1, 0);
     var_58cb5a30 = 0;
     var_c846ce25 = 0;
-    while (1) {
+    while (true) {
         var_a23c6f11 = player function_ca4b4e19(localclientnum, 0)[#"move"][1];
         var_8c180cda = lerpfloat(var_8c180cda, function_b5338ccb(var_a23c6f11, var_2c46fc48.var_b4e0311b), 0.25);
         var_e8be0c0e = abs(var_a23c6f11) != 0 && (var_8c180cda < 0 && var_cbcfc238 > var_2c46fc48.var_11f00a95 || var_8c180cda > 0 && var_cbcfc238 < var_2c46fc48.var_8dd70933);

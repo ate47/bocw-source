@@ -88,7 +88,7 @@ function function_6b384c0f(radiationlevel, sickness) {
 // Size: 0x84
 function function_ab99e60c() {
     if (util::is_frontend_map()) {
-        return 0;
+        return false;
     }
     return currentsessionmode() != 4 && is_true(isdefined(getgametypesetting("wzRadiation")) ? getgametypesetting("wzRadiation") : 0);
 }

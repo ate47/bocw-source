@@ -56,7 +56,7 @@ function private postinit() {
 // Size: 0xf2
 function debug_powered_items() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(#"zombie_equipment_health", 0)) {
                 if (isdefined(level.local_power)) {
                     foreach (localpower in level.local_power) {
@@ -99,11 +99,11 @@ function electric_switch() {
                 master_switch = ent;
                 switch (ent.script_noteworthy) {
                 case #"elec_switch":
-                    continue;
+                    break;
                 case #"hash_47bde376753a03c9":
-                    continue;
+                    break;
                 case #"artifact_mind":
-                    continue;
+                    break;
                 }
             }
         }
@@ -250,7 +250,7 @@ function artifact_mind_on(*master_switch, *fx_pos, user) {
 // Checksum 0xe4496f80, Offset: 0xed8
 // Size: 0x80
 function watch_global_power() {
-    while (1) {
+    while (true) {
         level flag::wait_till("power_on");
         level thread set_global_power(1);
         level flag::wait_till_clear("power_on");
@@ -296,7 +296,7 @@ function standard_powered_items() {
 // Checksum 0x83abb33c, Offset: 0x12f0
 // Size: 0x90
 function zone_controlled_perk(zone) {
-    while (1) {
+    while (true) {
         power_flag = "power_on" + zone;
         level flag::wait_till(power_flag);
         self thread perk_power_on();
@@ -520,11 +520,11 @@ function has_local_power(origin) {
     if (isdefined(level.local_power)) {
         foreach (localpower in level.local_power) {
             if (distancesquared(localpower.origin, origin) < localpower.radius * localpower.radius) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_power/zm_power
@@ -675,12 +675,12 @@ function cost_high() {
 // Size: 0x5c
 function door_range(delta, origin, radius) {
     if (delta < 0) {
-        return 0;
+        return false;
     }
     if (distancesquared(self.target.origin, origin) < radius * radius) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_power/zm_power
@@ -757,14 +757,14 @@ function cost_door() {
 // Size: 0x7e
 function zombie_range(delta, origin, radius) {
     if (delta > 0) {
-        return 0;
+        return false;
     }
     self.zombies = array::get_all_closest(origin, zombie_utility::get_round_enemy_array(), undefined, undefined, radius);
     if (!isdefined(self.zombies)) {
-        return 0;
+        return false;
     }
     self.power = 1;
-    return 1;
+    return true;
 }
 
 // Namespace zm_power/zm_power
@@ -816,10 +816,10 @@ function perk_range(*delta, origin, radius) {
             perkorigin = perkorigin + vectorscale((0, 0, 1), 10000);
         }
         if (distancesquared(perkorigin, origin) < radius * radius) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_power/zm_power

@@ -434,7 +434,7 @@ function function_93b178ae() {
 function function_6f2ddf8e() {
     self endon(#"death");
     var_b9403c9 = self.origin;
-    while (1) {
+    while (true) {
         function_92297dd0(var_b9403c9, self.owner);
         wait(1);
     }

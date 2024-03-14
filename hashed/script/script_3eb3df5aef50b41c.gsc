@@ -51,7 +51,7 @@ function function_21ff6a71() {
     self endon(#"death");
     self notify(#"hash_60aae3c7a7d2c1ff");
     self endon(#"hash_60aae3c7a7d2c1ff");
-    while (1) {
+    while (true) {
         self flag::wait_till("stealth_enabled");
         self namespace_979752dc::function_b9259f5f("stealth_spotted");
         if (!self flag::get("stealth_enabled")) {
@@ -120,7 +120,7 @@ function function_42355eb3() {
 function function_7474a3ce() {
     self endon(#"death");
     self endon(#"hash_4bfd375383ea3706");
-    while (1) {
+    while (true) {
         self flag::wait_till("stealth_enabled");
         if (!isdefined(self.stealth.var_2692ce8e)) {
             self.maxvisibledist = self function_5fee4f6();

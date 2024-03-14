@@ -41,24 +41,24 @@ function function_a5680385(e_player) {
     if (isplayer(e_player)) {
         if (!level flag::get("power_on" + self.stub.var_98b970a9.script_int)) {
             self sethintstringforplayer(e_player, #"hash_39f4be8dba832f61");
-            return 1;
+            return true;
         } else if (is_true(self.stub.var_98b970a9.activate) && !is_true(self.stub.var_98b970a9.in_use)) {
             self sethintstringforplayer(e_player, #"hash_fcbeeb83bef84fa");
-            return 1;
+            return true;
         } else if (!is_true(self.stub.var_98b970a9.var_e12c4557)) {
             self sethintstringforplayer(e_player, #"hash_44085f35e03f91c7");
-            return 1;
+            return true;
         } else if (!is_true(self.stub.var_98b970a9.activate)) {
             self sethintstringforplayer(e_player, #"hash_782f31c93c442bc6", 1000);
             if (!e_player zm_score::can_player_purchase(1000)) {
                 e_player globallogic::function_d1924f29(#"hash_6e3ae7967dc5d414");
             }
-            return 1;
+            return true;
         } else {
-            return 0;
+            return false;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_5ce39742/namespace_5ce39742
@@ -67,7 +67,7 @@ function function_a5680385(e_player) {
 // Size: 0x262
 function function_5b0907b8() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;

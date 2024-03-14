@@ -566,7 +566,7 @@ function readspawndata(desiredid, relativepos) {
         if (isdefined(relativepos) && !isdefined(oldspawndata)) {
             return;
         }
-        while (1) {
+        while (true) {
             if (freadln(file) <= 0) {
                 break;
             }
@@ -711,7 +711,7 @@ function drawspawndata() {
         level notify(#"drawing_spawn_data");
         level endon(#"drawing_spawn_data");
         textoffset = vectorscale((0, 0, -1), 12);
-        while (1) {
+        while (true) {
             if (!isdefined(level.curspawndata)) {
                 wait(0.5);
                 continue;
@@ -1088,15 +1088,15 @@ function spawnlogic_begin() {
 // Size: 0xbc
 function watchspawnprofile() {
     /#
-        while (1) {
-            while (1) {
+        while (true) {
+            while (true) {
                 if (getdvarint(#"scr_spawnprofile", 0) > 0) {
                     break;
                 }
                 waitframe(1);
             }
             thread spawnprofile();
-            while (1) {
+            while (true) {
                 if (getdvarint(#"scr_spawnprofile", 0) <= 0) {
                     break;
                 }
@@ -1114,7 +1114,7 @@ function watchspawnprofile() {
 function spawnprofile() {
     /#
         level endon(#"stop_spawn_profile");
-        while (1) {
+        while (true) {
             if (level.players.size > 0 && level.spawnpoints.size > 0) {
                 playernum = randomint(level.players.size);
                 player = level.players[playernum];
@@ -1137,7 +1137,7 @@ function spawnprofile() {
 // Size: 0x5a
 function spawngraphcheck() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(#"scr_spawngraph", 0) < 1) {
                 wait(3);
                 continue;
@@ -1189,7 +1189,7 @@ function spawngraph() {
             }
         }
         didweights = 0;
-        while (1) {
+        while (true) {
             spawni = 0;
             numiters = 5;
             for (i = 0; i < numiters; i++) {
@@ -1281,7 +1281,7 @@ function spawngraphline(s1, s2, weightscale) {
 // Size: 0x362
 function loopbotspawns() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(#"scr_killbots", 0) < 1) {
                 wait(3);
                 continue;
@@ -1335,7 +1335,7 @@ function allowspawndatareading() {
         prevval = getdvarstring(#"scr_showspawnid");
         prevrelval = getdvarstring(#"scr_spawnidcycle");
         readthistime = 0;
-        while (1) {
+        while (true) {
             val = getdvarstring(#"scr_showspawnid");
             relval = undefined;
             if (!isdefined(val) || val == prevval) {
@@ -1366,7 +1366,7 @@ function allowspawndatareading() {
 // Size: 0x43e
 function showdeathsdebug() {
     /#
-        while (1) {
+        while (true) {
             if (!getdvarint(#"scr_spawnpointdebug", 0)) {
                 wait(3);
                 continue;
@@ -1418,7 +1418,7 @@ function showdeathsdebug() {
 // Checksum 0xc184a279, Offset: 0x4f40
 // Size: 0x56
 function updatedeathinfodebug() {
-    while (1) {
+    while (true) {
         if (!getdvarint(#"scr_spawnpointdebug", 0)) {
             wait(3);
             continue;
@@ -1436,7 +1436,7 @@ function spawnweightdebug(spawnpoints) {
     level notify(#"stop_spawn_weight_debug");
     level endon(#"stop_spawn_weight_debug");
     /#
-        while (1) {
+        while (true) {
             if (!getdvarint(#"scr_spawnpointdebug", 0)) {
                 wait(3);
                 continue;
@@ -1479,7 +1479,7 @@ function spawnweightdebug(spawnpoints) {
 // Checksum 0xb541dd06, Offset: 0x5248
 // Size: 0xe6
 function profiledebug() {
-    while (1) {
+    while (true) {
         if (!getdvarint(#"scr_spawnpointprofile", 0)) {
             wait(3);
             continue;
@@ -1504,7 +1504,7 @@ function debugnearbyplayers(players, origin) {
             return;
         }
         starttime = gettime();
-        while (1) {
+        while (true) {
             for (i = 0; i < players.size; i++) {
                 line(players[i].origin, origin, (0.5, 1, 0.5));
             }
@@ -1602,7 +1602,7 @@ function avoidweapondamage(spawnpoints) {
 // Size: 0x80
 function spawnperframeupdate() {
     spawnpointindex = 0;
-    while (1) {
+    while (true) {
         waitframe(1);
         if (!isdefined(level.spawnpoints)) {
             return;
@@ -1748,7 +1748,7 @@ function getlospenalty() {
 // Size: 0x27e
 function lastminutesighttraces(spawnpoint) {
     if (!isdefined(spawnpoint.nearbyplayers)) {
-        return 0;
+        return false;
     }
     closest = undefined;
     closestdistsq = undefined;
@@ -1785,15 +1785,15 @@ function lastminutesighttraces(spawnpoint) {
     }
     if (isdefined(closest)) {
         if (bullettracepassed(closest.origin + vectorscale((0, 0, 1), 50), spawnpoint.sighttracepoint, 0, undefined)) {
-            return 1;
+            return true;
         }
     }
     if (isdefined(secondclosest)) {
         if (bullettracepassed(secondclosest.origin + vectorscale((0, 0, 1), 50), spawnpoint.sighttracepoint, 0, undefined)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace spawnlogic/spawnlogic
@@ -1933,7 +1933,7 @@ function avoidsamespawn(spawnpoints) {
                     spawnpoints[i].spawndata[spawnpoints[i].spawndata.size] = "<unknown string>";
                 }
             #/
-            return;
+            break;
         }
     }
 }

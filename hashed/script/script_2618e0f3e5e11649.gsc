@@ -733,7 +733,7 @@ function update_hotzone_states() {
         return;
     }
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         level flag::clear("update_hotzone_states");
         waitframe(1);
         level flag::wait_till_clear("deactivate_hotzones");
@@ -798,7 +798,7 @@ function update_hotzone_states() {
             case 2:
                 function_fb4091d0(hotzone);
                 function_3c977c4f(hotzone, 0);
-                continue;
+                break;
             }
         }
         level.var_3b4ee947 = var_d8ee487e;
@@ -815,7 +815,7 @@ function function_9e0aba37() {
     }
     level endon(#"game_ended");
     level.var_71c1e90a = 0;
-    while (1) {
+    while (true) {
         waitframe(1);
         if (getaicount() >= getailimit() || !isdefined(level.var_3b4ee947)) {
             continue;
@@ -1115,10 +1115,10 @@ function function_e923faaf(hotzone) {
     var_be320827 = [1:#"idle", 0:#"wander"];
     foreach (key, __ in hotzone.instance.var_ac7b2365) {
         if (!isinarray(var_be320827, key)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_ce1f29cc/namespace_ce1f29cc
@@ -1184,14 +1184,14 @@ function function_a3ad37ef(hotzone) {
 // Size: 0x10e
 function function_64a303c6(hotzone) {
     if (!hotzone.instance.var_743c45a5.size || !getplayers(undefined, hotzone.origin, 3000).size) {
-        return 0;
+        return false;
     }
     foreach (ai in hotzone.instance.var_743c45a5) {
         if (isdefined(ai.current_state) && ai.current_state.name == #"chase") {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_ce1f29cc/namespace_ce1f29cc
@@ -1300,13 +1300,13 @@ function function_3fbd8696(dvar) {
         switch (dvar.value) {
         case 0:
             level notify(#"hash_7ef679d3b9fffd3f");
-            return;
+            break;
         case 1:
             level thread function_3de1c8ac(&function_c3eed624);
-            return;
+            break;
         case 2:
             level thread function_3de1c8ac(&function_bf876de8);
-            return;
+            break;
         }
     #/
 }
@@ -1468,7 +1468,7 @@ function function_3de1c8ac(var_2da12984) {
         level endon(#"game_ended", #"hash_7ef679d3b9fffd3f");
         self notify("<unknown string>");
         self endon("<unknown string>");
-        while (1) {
+        while (true) {
             waitframe(1);
             if (!isdefined(level.var_f804b293)) {
                 continue;
@@ -1750,7 +1750,7 @@ function function_89a74781(hotzone) {
             } else {
                 return ("<unknown string>" + float(hotzone.instance.var_c80ba91c - gettime()) / 1000);
             }
-            return;
+            break;
         default:
             return "<unknown string>";
         }

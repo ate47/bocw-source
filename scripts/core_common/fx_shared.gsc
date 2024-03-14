@@ -211,10 +211,10 @@ function private function_13fa0731() {
     self notify(#"hash_1481a83e14539c4");
     self endon(#"hash_1481a83e14539c4");
     self endoncallback(&function_e592b635, #"death");
-    while (1) {
+    while (true) {
         self flag::wait_till_clear("flag_autofocus_on");
         function_e592b635();
-        return;
+        break;
     }
 }
 

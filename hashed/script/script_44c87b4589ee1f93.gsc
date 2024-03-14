@@ -95,10 +95,10 @@ function function_29b682f8(localclientnum, *oldval, *newval, *bnewent, *binitial
 function function_bdc0d799(localclientnum) {
     self endon(#"death");
     self.time_to_wait = gettime() + 1000;
-    while (1) {
+    while (true) {
         if (isdefined(self.time_to_wait) && self.time_to_wait < gettime()) {
             self.time_to_wait = 0;
-            return;
+            break;
         } else {
             if (isdefined(self.var_bb7d3361)) {
                 self playsound(localclientnum, #"hash_64112ddcbb607d69");
@@ -106,7 +106,7 @@ function function_bdc0d799(localclientnum) {
                 self.var_bb7d3361 = undefined;
             }
             self thread postfx::stoppostfxbundle(#"hash_15272b37ec3c6110");
-            return;
+            break;
         }
         wait(1);
     }

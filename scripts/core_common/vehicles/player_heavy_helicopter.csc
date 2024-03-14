@@ -60,13 +60,13 @@ function hind_compass_icon(*localclientnum, *oldval, newval, *bnewent, *binitial
     switch (bwastimejump) {
     case 0:
         self setcompassicon(#"hash_238039183607226d");
-        return;
+        break;
     case 1:
         self setcompassicon(#"hash_a6a2a558ed7bec6");
-        return;
+        break;
     case 2:
         self setcompassicon("");
-        return;
+        break;
     }
 }
 

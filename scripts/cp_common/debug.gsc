@@ -192,7 +192,7 @@ function function_3496e019(tag) {
     /#
         for (;;) {
             if (!isdefined(self.origin)) {
-                return;
+                break;
             }
             function_219701e1(tag);
             waitframe(1);
@@ -1470,7 +1470,7 @@ function debug_show_viewpos() {
         var_7125033d setvalue(0);
         setdvar(#"debug_show_viewpos", 0);
         players = getplayers();
-        while (1) {
+        while (true) {
             if (getdvarint(#"debug_show_viewpos", 0) > 0) {
                 var_1071292.alpha = 1;
                 var_2a7875e1.alpha = 1;
@@ -1505,7 +1505,7 @@ function function_d2d39ee5(num) {
     /#
         var_dd9c91de = abs(num);
         count = 0;
-        while (1) {
+        while (true) {
             var_dd9c91de = var_dd9c91de * 0.1;
             count = count + 1;
             if (var_dd9c91de < 1) {
@@ -1543,7 +1543,7 @@ function engagement_distance_debug_toggle() {
     /#
         level endon(#"kill_engage_dist_debug_toggle_watcher");
         laststate = getdvarint(#"debug_engage_dists", 0);
-        while (1) {
+        while (true) {
             currentstate = getdvarint(#"debug_engage_dists", 0);
             if (dvar_turned_on(currentstate) && !dvar_turned_on(laststate)) {
                 weapon_engage_dists_init();
@@ -1707,7 +1707,7 @@ function get_engage_dists(weapon) {
 function engage_dists_watcher() {
     /#
         level endon(#"kill_all_engage_dist_debug", #"kill_engage_dists_watcher");
-        while (1) {
+        while (true) {
             player = function_1261f881();
             playerweapon = player getcurrentweapon();
             if (!isdefined(player.lastweapon)) {
@@ -1739,7 +1739,7 @@ function debug_realtime_engage_dist() {
         hudobjarray = engagement_distance_debug_init(player);
         level thread engage_dist_debug_hud_destroy(hudobjarray, "<unknown string>");
         level.debugrtengagedistcolor = (0, 1, 0);
-        while (1) {
+        while (true) {
             lasttracepos = (0, 0, 0);
             direction = player getplayerangles();
             direction_vec = anglestoforward(direction);
@@ -1848,7 +1848,7 @@ function function_16b58d7f() {
     /#
         level endon(#"kill_all_engage_dist_debug", #"hash_55d49f3fca6a3bdc");
         player = function_1261f881();
-        while (1) {
+        while (true) {
             axis = getaiteamarray(#"axis");
             if (isdefined(axis) && axis.size > 0) {
                 playereye = player geteye();
@@ -1958,7 +1958,7 @@ function function_90edec37() {
         level.dynamic_spawn_hud settext("<unknown string>");
         level.dynamic_spawn_dummy_model = spawn("<unknown string>", (0, 0, 0));
         wait(0.1);
-        while (1) {
+        while (true) {
             direction = self getplayerangles();
             direction_vec = anglestoforward(direction);
             eye = self geteye();

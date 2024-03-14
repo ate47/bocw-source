@@ -172,7 +172,7 @@ function function_d5cc022() {
     level endon(#"hash_1ab7d54e8692f78a");
     level flag::wait_till("flag_apt_approach_guard_vo");
     org = getent("org_bodyguard_alleyway_vo", "targetname");
-    while (1) {
+    while (true) {
         var_e8cccaf8 = snd::play("vox_cp_tdwn_03500_irg3_yellinggroan_7c_1", org.origin);
         snd::function_2fdc4fb(var_e8cccaf8);
         var_e8cccaf8 = snd::play("vox_cp_tdwn_03500_irg3_celebratoryyell_c3", org.origin);

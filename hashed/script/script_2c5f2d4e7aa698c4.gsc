@@ -68,19 +68,19 @@ function function_9ed71eeb(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     switch (bwastimejump) {
     case 0:
-        return;
+        break;
     case 1:
         self.var_9c32107c = playfx(fieldname, #"hash_6872157c3765f00c", self.v_pos, self.v_up, self.v_forward);
-        return;
+        break;
     case 2:
         self.var_9c32107c = playfx(fieldname, #"hash_31e1237ef42f8fd", self.v_pos, self.v_up, self.v_forward);
-        return;
+        break;
     case 3:
         self.var_9c32107c = playfx(fieldname, #"hash_67b599a0909158ef", self.v_pos, self.v_up, self.v_forward);
-        return;
+        break;
     case 4:
         self.var_9c32107c = playfx(fieldname, #"hash_6df17892ee107cdb", self.v_pos, self.v_up, self.v_forward);
-        return;
+        break;
     }
 }
 

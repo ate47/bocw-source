@@ -166,10 +166,10 @@ function private assert_registered(str_name) {
             /#
                 assertmsg("<unknown string>" + str_name + "<unknown string>");
             #/
-            return 0;
+            return false;
         }
     #/
-    return 1;
+    return true;
 }
 
 // Namespace val/values_shared
@@ -843,7 +843,7 @@ function private debug_values() {
     /#
         level init_dvar("<unknown string>");
         level wait_till("<unknown string>");
-        while (1) {
+        while (true) {
             level wait_till("<unknown string>");
             str_debug_values_entity = getdvarstring(#"scr_debug_values_entity", "<unknown string>");
             if (str_debug_values_entity == "<unknown string>" || str_debug_values_entity == "<unknown string>" || str_debug_values_entity == "<unknown string>") {

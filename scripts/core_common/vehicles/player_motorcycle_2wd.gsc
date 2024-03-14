@@ -124,7 +124,7 @@ function private function_45cb4291() {
     self notify("5e6d62a7a17f26b6");
     self endon("5e6d62a7a17f26b6");
     self endon(#"death", #"hash_7d134b21d3606f90");
-    while (1) {
+    while (true) {
         wait(1);
         if (isalive(self)) {
             if (lengthsquared(self.velocity) <= function_a3f6cdac(200)) {
@@ -159,7 +159,7 @@ function function_1f6bee9c() {
     self notify(#"hash_654356262621e15f");
     self endoncallback(&function_e972bd62, #"death", #"hash_579b16a6f8cc0305", #"hash_654356262621e15f");
     self.var_fbc196ab = 1;
-    while (1) {
+    while (true) {
         self waittill(#"veh_inair");
         time = gettime();
         self waittill(#"veh_landed");

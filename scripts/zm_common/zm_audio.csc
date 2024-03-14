@@ -144,7 +144,7 @@ function sndvonotifyplain(localclientnum, var_3d2dc382) {
     self notify("40aeb1ec9ae5d129");
     self endon("40aeb1ec9ae5d129");
     self endon(#"death");
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = self waittill(var_3d2dc382);
         if (is_true(self.is_player_zombie)) {
@@ -196,10 +196,10 @@ function function_42e50d5() {
         case #"hero_scepter_lv3":
         case #"hero_scepter_lv2":
         case #"hero_scepter_lv1":
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_audio/zm_audio
@@ -210,7 +210,7 @@ function sndvonotifydtp(localclientnum, notifystring) {
     self notify("77d556968f9c1b4");
     self endon("77d556968f9c1b4");
     self endon(#"death");
-    while (1) {
+    while (true) {
         self waittill(notifystring);
         self playerexert(localclientnum, notifystring);
     }

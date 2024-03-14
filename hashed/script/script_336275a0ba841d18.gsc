@@ -228,7 +228,7 @@ function function_2ce126c4() {
 function function_194f33cb() {
     /#
         level endon(#"end_game");
-        while (1) {
+        while (true) {
             if (isdefined(level.var_51514f45) && isdefined(level.var_df7b46d1) && is_true(level.var_2b37d0dd)) {
                 print3d(level.var_df7b46d1.origin + vectorscale((0, 0, 1), 40), "onslaught" + level.var_51514f45, (0, 1, 0), undefined, 0.25);
             }
@@ -245,7 +245,7 @@ function function_c1d511f6() {
     level endon(#"end_game");
     level flag::wait_till("rounds_started");
     wait(2);
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"hash_5731a6df491c37c7");
         var_c2f7b1a3 = waitresult.location;
@@ -277,7 +277,7 @@ function function_d6923f19() {
 function private function_d3379a31() {
     self endon(#"disconnect");
     var_e418724e = 0;
-    while (1) {
+    while (true) {
         if (is_true(self.outsidedeathcircle)) {
             self zm_vo::function_7622cb70(#"hash_55bd8afbd48fb16e");
             var_e418724e++;
@@ -298,7 +298,7 @@ function debug_spawns() {
     /#
         var_da0b6672 = 50;
         checkdist = 1000;
-        while (1) {
+        while (true) {
             player1 = getplayers()[0];
             var_273a84a9 = [];
             if (!isdefined(var_273a84a9)) {
@@ -508,9 +508,9 @@ function function_cf4e42ea() {
 // Size: 0x2e
 function private function_a3e209ba() {
     if (level flag::get("rounds_started")) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_51f64aa9/namespace_51f64aa9
@@ -1138,15 +1138,15 @@ function function_b33a5cf4(var_ba65b6cb) {
 function private function_50cda95() {
     if (is_true(level.var_e35c191f) || util::get_game_type() === #"hash_125fc0c0065c7dea") {
         if (level.var_50c8366e % 3 != 0) {
-            return 0;
+            return false;
         }
     }
     foreach (player in function_a1ef346b()) {
         if (isarray(player.var_7341f980) && player.var_7341f980.size < level.var_b8be892e.size) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_51f64aa9/namespace_51f64aa9
@@ -1312,7 +1312,7 @@ function function_b293ea58(var_50c8366e) {
 function function_453afff4() {
     /#
     #/
-    while (1) {
+    while (true) {
         var_88f09c5 = level.var_3a23a27;
         players = getplayers();
         foreach (player in players) {
@@ -1448,15 +1448,15 @@ function private function_ac940a26() {
 function function_334be69a(tacpoint) {
     navmeshpoint = getclosestpointonnavmesh(tacpoint.origin, 64, 32);
     if (!isdefined(navmeshpoint)) {
-        return 1;
+        return true;
     }
     if (!tracepassedonnavmesh(tacpoint.origin, navmeshpoint, 32)) {
-        return 1;
+        return true;
     }
     if (!ispointonnavmesh(tacpoint.origin, 32)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_51f64aa9/namespace_51f64aa9
@@ -1717,7 +1717,7 @@ function spawn_zombie(outer_radius, inner_radius, duration, var_d894caa2, var_8c
 // Checksum 0x3539d81f, Offset: 0x77b8
 // Size: 0x20e
 function function_6d6a276c(var_da0b6672) {
-    while (1) {
+    while (true) {
         var_b3dbfd56 = level.var_d5dc0bf2;
         /#
             if (is_true(level.var_2b37d0dd)) {
@@ -1743,7 +1743,7 @@ function function_6d6a276c(var_da0b6672) {
 // Size: 0xb2
 function function_54fc66c6() {
     /#
-        while (1) {
+        while (true) {
             foreach (point in self) {
                 circle(point.origin, 30, (1, 1, 0), 1, 1, 1);
             }
@@ -1758,7 +1758,7 @@ function function_54fc66c6() {
 // Size: 0x156
 function function_33824ce9(maxpoint) {
     /#
-        while (1) {
+        while (true) {
             foreach (var_d13f3ba2 in self) {
                 foreach (point in var_d13f3ba2) {
                     circle(point.origin, 5, (1, 0, 0), 1, 1, 1);
@@ -1776,7 +1776,7 @@ function function_33824ce9(maxpoint) {
 // Size: 0xb2
 function function_122d85c7() {
     /#
-        while (1) {
+        while (true) {
             foreach (point in self) {
                 circle(point.origin, 6, (0, 0, 1), 1, 1, 1);
             }
@@ -1791,7 +1791,7 @@ function function_122d85c7() {
 // Size: 0x1c1c
 function function_26667466() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         level flag::wait_till_clear("onslaught_host_migration_active");
         switch (self.state) {
         case 0:
@@ -2119,7 +2119,7 @@ function function_86d134a1() {
     level.circle_radius = var_569d5e56;
     level.deathcircle.var_5c54ab33 = death_circle::function_a8749d88(self.origin, var_569d5e56, 5, 1);
     level thread death_circle::function_dc15ad60(level.deathcircle.var_5c54ab33);
-    while (1) {
+    while (true) {
         if (isdefined(level.var_aa36d14e)) {
             if (level flag::get(#"hash_2c0ce601824acdf5")) {
                 var_871232e = level.var_aa36d14e * float(function_60d95f53()) / 1000 * 8;
@@ -2167,7 +2167,7 @@ function function_86d134a1() {
 // Checksum 0x3cd6be51, Offset: 0x9e00
 // Size: 0x7e
 function function_c6121618(*einflictor, *eattacker, *idamage, *idflags, *smeansofdeath, *weapon, *vpoint, *vdir, *shitloc, *vdamageorigin, *psoffsettime, *damagefromunderneath, *modelindex, *partname, *vsurfacenormal) {
-    return 0;
+    return false;
 }
 
 // Namespace namespace_51f64aa9/namespace_51f64aa9
@@ -2274,7 +2274,7 @@ function function_48faf7bb() {
     self.health = 9999;
     self.maxhealth = 9999;
     var_461a0bff = undefined;
-    while (1) {
+    while (true) {
         s_waitresult = undefined;
         s_waitresult = self waittill(#"damage");
         self.health = self.maxhealth;
@@ -2337,7 +2337,7 @@ function function_158444df(n_delay) {
 // Size: 0xb0
 function function_168569b2() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         level waittill(#"hash_4787b44eac7109dc");
         level.var_df7b46d1.var_48fcd26a playsound(#"hash_7f80b7729c2b0778");
         level waittill(#"hash_7cd8474c6919310b");
@@ -2356,7 +2356,7 @@ function function_6362d51(parent) {
     var_5328c5b2 = 1;
     var_71484728 = 1;
     self.origin = parent.origin + vectorscale((0, 0, 1), 68);
-    while (1) {
+    while (true) {
         if (level.var_df7b46d1.state === 3 || level.var_df7b46d1.state === 1) {
             if (var_7ae0f9f6 === 1) {
                 if (level.var_df7b46d1.state === 3) {
@@ -2467,7 +2467,7 @@ function function_6ea2e9fa() {
         var_457e9ab8 = (1, 0, 0);
         var_3045d5d6 = (0, 0, 1);
         duration = 1;
-        while (1) {
+        while (true) {
             var_d1803e09 = level.var_df7b46d1.origin;
             for (i = 0; i < 10; i++) {
                 function_11a1e593(var_d1803e09 + (0, 0, i * 10), var_3045d5d6, duration);
@@ -2514,7 +2514,7 @@ function setup_zones() {
             continue;
         }
         count = 0;
-        while (1) {
+        while (true) {
             count++;
             random_index = randomintrange(0, nodes.size);
             var_994bab50 = getclosestpointonnavmesh(nodes[random_index].origin, 64);
@@ -2561,7 +2561,7 @@ function function_582988d8(zone) {
     if (is_true(getgametypesetting(#"hash_3846b38f23c3d539"))) {
         nodes = arraysortclosest(nodes, zone.origin);
     } else {
-        while (1) {
+        while (true) {
             count++;
             random_index = randomintrange(0, nodes.size);
             var_994bab50 = getclosestpointonnavmesh(nodes[random_index].origin, 64);
@@ -2607,7 +2607,7 @@ function function_f19e31a2() {
     if (!(is_true(level.var_e35c191f) || util::get_game_type() === #"hash_125fc0c0065c7dea")) {
         level flag::wait_till("onslaught_round_logic_complete");
     }
-    while (1) {
+    while (true) {
         if (is_true(level.var_612d6a21) || util::get_game_type() === #"hash_75aa82b3ae89f54e") {
             while (level.var_50c8366e % 3 != 0) {
                 waitframe(1);
@@ -2865,7 +2865,7 @@ function function_310986be() {
 // Size: 0x76
 function function_32a5425() {
     level endon(#"end_game", #"hash_1b8264e950c01344");
-    while (1) {
+    while (true) {
         spawn_zombie(1000, 500, 400, 1);
         waitframe(1);
     }
@@ -2877,7 +2877,7 @@ function function_32a5425() {
 // Size: 0x30
 function function_b504f826() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         wait(0.5);
     }
 }
@@ -2888,7 +2888,7 @@ function function_b504f826() {
 // Size: 0x30
 function function_31add0ec() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         wait(0.5);
     }
 }
@@ -2920,7 +2920,7 @@ function function_69e5b9b() {
     level thread game_over();
     level thread function_3be471a2(0);
     level thread function_d0d7faac();
-    while (1) {
+    while (true) {
         players = getplayers();
         foreach (player in players) {
             player thread function_da556d60();
@@ -2978,7 +2978,7 @@ function function_69e5b9b() {
 // Size: 0x144
 function private function_d0d7faac() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         all_ai = getaiarray();
         foreach (ai in all_ai) {
             if (is_true(ai.var_173b6f35)) {
@@ -3012,31 +3012,31 @@ function event_handler[bhtn_action_start] function_320145f7(eventstruct) {
         } else {
             level thread zmbaivox_playvox(self, notify_string, 1, 4);
         }
-        return;
+        break;
     case #"pain":
         level thread zmbaivox_playvox(self, notify_string, 1, 3);
-        return;
+        break;
     case #"behind":
         level thread zmbaivox_playvox(self, notify_string, 1, 3);
-        return;
+        break;
     case #"electrocute":
         level thread zmbaivox_playvox(self, notify_string, 1, 3);
-        return;
+        break;
     case #"attack_melee_notetrack":
         level thread zmbaivox_playvox(self, "attack_melee", 1, 2, 1);
-        return;
+        break;
     case #"sprint":
     case #"ambient":
     case #"crawler":
     case #"teardown":
     case #"taunt":
         level thread zmbaivox_playvox(self, notify_string, 0, 1);
-        return;
+        break;
     case #"attack_melee":
-        return;
+        break;
     default:
         level thread zmbaivox_playvox(self, notify_string, 0, 2);
-        return;
+        break;
     }
 }
 
@@ -3141,7 +3141,7 @@ function zmbaivox_playdeath() {
 // Size: 0x11a
 function zmbaivox_playelectrocution() {
     self endon(#"disconnect", #"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
         weapon = waitresult.weapon;
@@ -3171,7 +3171,7 @@ function zmbaivox_ambientdelay() {
 // Checksum 0xbcc223c9, Offset: 0xe6c0
 // Size: 0x30
 function networksafereset() {
-    while (1) {
+    while (true) {
         level._numzmbaivox = 0;
         util::wait_network_frame();
     }
@@ -3186,10 +3186,10 @@ function sndisnetworksafe() {
         level thread networksafereset();
     }
     if (level._numzmbaivox >= 2) {
-        return 0;
+        return false;
     }
     level._numzmbaivox++;
-    return 1;
+    return true;
 }
 
 // Namespace namespace_51f64aa9/namespace_51f64aa9
@@ -3226,9 +3226,9 @@ function function_5ded2774() {
 // Size: 0x24
 function is_last_zombie() {
     if (function_5ded2774() <= 1) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_51f64aa9/namespace_51f64aa9
@@ -3262,7 +3262,7 @@ function zombie_behind_vox() {
         level._zbv_vox_last_update_time = 0;
         level._audio_zbv_shared_ent_list = get_zombie_array();
     }
-    while (1) {
+    while (true) {
         wait(1);
         t = gettime();
         if (t > level._zbv_vox_last_update_time + 1000) {
@@ -3320,7 +3320,7 @@ function zombie_behind_vox() {
 // Size: 0x170
 function play_ambient_zombie_vocals() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         type = "ambient";
         float = 3;
         if (isdefined(self.zombie_move_speed)) {

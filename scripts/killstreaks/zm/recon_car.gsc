@@ -76,12 +76,12 @@ function private function_93426c92(params) {
 function function_b5006cfa(v_origin, *v_angles, *player) {
     if (zm_utility::is_classic()) {
         if (zm_utility::check_point_in_playable_area(player) && zm_utility::check_point_in_enabled_zone(player) && ispointonnavmesh(player)) {
-            return 1;
+            return true;
         }
     } else if (ispointonnavmesh(player)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace recon_car/recon_car
@@ -139,7 +139,7 @@ function function_d1661ada() {
 // Size: 0x1f6
 function function_fdcfd41d() {
     self endon(#"death", #"shutdown");
-    while (1) {
+    while (true) {
         var_d39fdf94 = getaiarchetypearray(#"hash_da8fcc11dab30f");
         var_d39fdf94 = arraysortclosest(var_d39fdf94, self.origin, undefined, 0, 1000);
         foreach (ai_hulk in var_d39fdf94) {
@@ -199,7 +199,7 @@ function function_3f390797() {
 // Size: 0x60
 function function_5d0ef633() {
     self endon(#"death", #"shutdown");
-    while (1) {
+    while (true) {
         wait(1.5);
         if (isdefined(self.owner)) {
             self function_86e8d9af();

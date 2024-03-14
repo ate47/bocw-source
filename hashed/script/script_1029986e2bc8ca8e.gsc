@@ -214,10 +214,10 @@ function private function_20f53e16(&instances) {
 function function_b06af8e3(destination, var_2923cf48, category, variant) {
     instances = destination.var_e859e591[category];
     if (!isdefined(instances)) {
-        return 0;
+        return false;
     }
     if (isdefined(destination.var_cd5ba489[category]) && !var_2923cf48) {
-        return 0;
+        return false;
     }
     instances = array::randomize(instances);
     if (is_true(getdvarint(#"hash_c05968dc8f1a0f", 0)) && category === #"hunt" && level.var_cf558bf < 1) {
@@ -251,7 +251,7 @@ function function_b06af8e3(destination, var_2923cf48, category, variant) {
     level.var_7d45d0d4.var_90d90456 = instance;
     level.var_7d45d0d4.var_1fcbdf50 = category;
     callback::callback(#"hash_1b279f2bc1f45a83", {#category:category, #var_80d05eac:instance});
-    return 1;
+    return true;
 }
 
 // Namespace namespace_f3a74bbc/namespace_f3a74bbc
@@ -326,7 +326,7 @@ function function_c700a68b(categories) {
             if (isdefined(script_struct.var_4b7d58a)) {
                 if (is_false(getgametypesetting(script_struct.var_4b7d58a)) || is_false(getdvarint(script_struct.var_4b7d58a, 1))) {
                     categories[index] = "";
-                    continue;
+                    break;
                 }
             }
         }
@@ -495,7 +495,7 @@ function private function_cec3c94c(params) {
 // Size: 0x1d8
 function function_3e365c4f(instance, activator = undefined) {
     if (isdefined(level.var_7d45d0d4.activeobjective)) {
-        return 0;
+        return false;
     }
     level.var_7d45d0d4.activeobjective = instance;
     level flag::set("objective_locked");
@@ -516,7 +516,7 @@ function function_3e365c4f(instance, activator = undefined) {
     level notify(#"hash_17028f0b9883e5be");
     level callback::callback(#"hash_17028f0b9883e5be", {#activator:activator, #instance:instance});
     level thread function_fa47c63e(script.scriptname);
-    return 1;
+    return true;
 }
 
 // Namespace namespace_f3a74bbc/namespace_f3a74bbc
@@ -544,7 +544,7 @@ function private function_1e8b7f8(scriptmodel) {
     scriptmodel endon(#"death");
     toppos = scriptmodel.origin + (0, 0, 4);
     bottompos = scriptmodel.origin - (0, 0, 4);
-    while (1) {
+    while (true) {
         scriptmodel moveto(toppos, 0.5, 0.15, 0.15);
         scriptmodel rotateyaw(scriptmodel.angles[2] + 45, 0.5);
         wait(0.5);
@@ -910,7 +910,7 @@ function function_67b313bb() {
         level endon(#"hash_473116b92ba013b9");
         var_b49d430f = array("<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>");
         var_9986d9d6 = array((1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 1, 0), (1, 0.5, 0), (0, 1, 1), (1, 0, 1), (0.439216, 0.501961, 0.564706), (0, 0, 0), vectorscale((1, 1, 0), 0.501961), (0.545098, 0.270588, 0.0745098));
-        while (1) {
+        while (true) {
             foreach (index, var_83aaaa47 in var_b49d430f) {
                 v_color = var_9986d9d6[index];
                 var_2cd4e005 = get_array(var_83aaaa47, "<unknown string>");
@@ -956,14 +956,14 @@ function function_7a7ab1a2(params) {
             foreach (player in getplayers()) {
                 player luinotifyevent(#"hash_5b1ff06d07e9002a", 3, 2, level.var_b48509f9, 0);
             }
-            return;
+            break;
         case #"hash_7c2f98129d7c2219":
             level.var_cf558bf--;
             function_7c97e961(level.var_b48509f9 - 1);
             foreach (player in getplayers()) {
                 player luinotifyevent(#"hash_5b1ff06d07e9002a", 3, 2, level.var_b48509f9, 0);
             }
-            return;
+            break;
         case #"hash_6b5cf36b6de48f0a":
             if (isdefined(level.var_7d45d0d4.activeobjective)) {
                 if (level.var_7d45d0d4.activeobjective.content_script_name === #"holdout") {
@@ -974,12 +974,12 @@ function function_7a7ab1a2(params) {
                 }
                 objective_ended(level.var_7d45d0d4.activeobjective, 1);
             }
-            return;
+            break;
         case #"hash_41c8b0af55de9e31":
             if (isdefined(level.var_7d45d0d4.activeobjective)) {
                 objective_ended(level.var_7d45d0d4.activeobjective, 0);
             }
-            return;
+            break;
         case #"hash_56fb5b3dc9a94fb6":
             instance = level.var_7d45d0d4.activeobjective;
             if (!isdefined(instance)) {
@@ -990,7 +990,7 @@ function function_7a7ab1a2(params) {
                     player function_caba1575(instance);
                 }
             }
-            return;
+            break;
         case #"hash_5ec9d9c47f22480b":
             if (!is_true(level.var_44d6c017)) {
                 level.var_44d6c017 = 1;
@@ -999,10 +999,10 @@ function function_7a7ab1a2(params) {
                 level notify(#"hash_473116b92ba013b9");
                 level.var_44d6c017 = undefined;
             }
-            return;
+            break;
         case #"hash_4fd21096bcb24e82":
             setdvar(#"hash_4fd21096bcb24e82", !getdvar(#"hash_4fd21096bcb24e82", 0));
-            return;
+            break;
         }
     #/
 }

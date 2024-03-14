@@ -314,9 +314,9 @@ function is_weapon_upgraded(weapon) {
     }
     rootweapon = weapon.rootweapon;
     if (isdefined(level.zombie_weapons_upgraded[rootweapon])) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_weapons/zm_weapons

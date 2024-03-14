@@ -95,7 +95,7 @@ function function_a1667de7() {
     self endon(#"death");
     var_976a5e89 = 0;
     var_71bd8257 = undefined;
-    while (1) {
+    while (true) {
         if (!ispointonnavmesh(self.origin, self)) {
             var_976a5e89++;
             if (var_976a5e89 >= 5) {
@@ -130,7 +130,7 @@ function private function_2b6f50fd() {
     var_37c90cfe = 0;
     var_686cf729 = undefined;
     last_pos = undefined;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"bad_path");
         if (self isplayinganimscripted()) {

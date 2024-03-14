@@ -156,7 +156,7 @@ function enable_laser(b_enable, n_index) {
 function emp_watcher(n_index) {
     self notify(#"emp_thread_stop");
     self endon(#"emp_thread_stop", #"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (waitresult.weapon.isemp) {
@@ -383,7 +383,7 @@ function is_target(target, n_index) {
     if (isdefined(current_target) && (isentity(target) && isentity(current_target) || isvec(target) && isvec(current_target))) {
         return (current_target == target);
     }
-    return 0;
+    return false;
 }
 
 // Namespace turret/turret_shared
@@ -582,7 +582,7 @@ function private function_2c718f9e(var_34b21e8e, n_index) {
     self endon(#"death", "turret_disabled" + _index(n_index));
     var_34b21e8e endon(#"death");
     s_turret = _get_turret_data(n_index);
-    while (1) {
+    while (true) {
         var_34b21e8e waittill(#"pain");
         if (is_true(s_turret.var_7394b9dc) || is_true(s_turret.var_aa100948)) {
             continue;
@@ -922,7 +922,7 @@ function function_12269140(target, n_index = 0) {
     s_turret = _get_turret_data(n_index);
     v_pos = isdefined(target.origin) ? target.origin : target;
     if (!isdefined(s_turret.var_bf6d793d)) {
-        return 1;
+        return true;
     }
     var_8ee48240 = cos(s_turret.var_bf6d793d.aimyawanglel);
     v_angles = isdefined(s_turret.node) ? s_turret.node.angles : self.angles;
@@ -950,7 +950,7 @@ function _turret_think(n_index, v_offset) {
     if (isdefined(s_turret.has_laser)) {
         self laseron();
     }
-    while (1) {
+    while (true) {
         s_turret flag::wait_till_clear("turret manual");
         n_time_now = gettime();
         if (self _check_for_paused(n_index) || is_true(self.emped) || is_true(self.stunned)) {
@@ -1022,7 +1022,7 @@ function _turret_health_monitor(n_index) {
 // Size: 0x88
 function _turret_health_monitor_loop(n_index) {
     self endon(#"death", "turret_disabled" + _index(n_index));
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"broken");
         if (waitresult.type === "turret_destroyed_" + n_index) {
@@ -1094,7 +1094,7 @@ function _listen_for_damage_on_actor(ai_user, n_index) {
     self endon(#"death");
     ai_user endon(#"death");
     self endon("turret_disabled" + _index(n_index), "_turret_think" + _index(n_index), #"exit_vehicle");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = ai_user waittill(#"damage");
         s_turret = _get_turret_data(n_index);
@@ -1135,14 +1135,14 @@ function _check_for_paused(n_index) {
             paused_time = time - s_turret.pause_start_time;
             if (paused_time > s_turret.pause_time) {
                 s_turret.pause = undefined;
-                return 1;
+                return true;
             }
         } else {
-            return 1;
+            return true;
         }
         waitframe(1);
     }
-    return 0;
+    return false;
 }
 
 // Namespace turret/turret_shared
@@ -1195,7 +1195,7 @@ function function_2a4a311(n_index) {
         return;
     }
     var_f449d788 = function_a3f6cdac(s_turret.var_43ce86ed);
-    while (1) {
+    while (true) {
         s_notify = undefined;
         s_notify = self waittill(#"hash_4ecf2bd2fb1d75d9");
         var_34b21e8e = s_notify.entity;
@@ -1227,7 +1227,7 @@ function _debug_turret_think(n_index) {
         s_turret = _get_turret_data(n_index);
         var_34c31abc = (1, 1, 0);
         n_spacing = vectorscale((0, 0, -1), 7);
-        while (1) {
+        while (true) {
             if (!getdvarint(#"g_debugturrets", 0)) {
                 wait(0.2);
                 continue;
@@ -1321,9 +1321,9 @@ function _get_turret_data(n_index = 0) {
 // Size: 0x34
 function has_turret(n_index) {
     if (isdefined(self.a_turrets) && isdefined(self.a_turrets[n_index])) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace turret/turret_shared
@@ -1596,10 +1596,10 @@ function trace_test(e_target, v_offset = (0, 0, 0), n_index) {
             v_start_org = v_start_org + vectornormalize(v_target - v_start_org) * 50;
             a_trace = bullettrace(v_start_org, v_target, 1, s_turret.e_trace_ignore, 0, 1);
             if (a_trace[#"fraction"] > 0.6) {
-                return 1;
+                return true;
             }
         }
-        return 0;
+        return false;
     }
     s_turret = _get_turret_data(n_index);
     v_start_org = self gettagorigin(s_turret.str_tag_pivot);
@@ -1608,14 +1608,14 @@ function trace_test(e_target, v_offset = (0, 0, 0), n_index) {
         v_target = e_target getshootatpos();
     }
     if (distancesquared(v_start_org, v_target) < 10000) {
-        return 1;
+        return true;
     }
     v_dir_to_target = vectornormalize(v_target - v_start_org);
     v_start_org = v_start_org + v_dir_to_target * 50;
     if (sighttracepassed(v_start_org, v_target, 0, self, e_target)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace turret/turret_shared
@@ -1697,7 +1697,7 @@ function track_lens_flare() {
     self endon(#"death");
     self notify(#"disable_lens_flare");
     self endon(#"disable_lens_flare");
-    while (1) {
+    while (true) {
         e_target = self turretgettarget(0);
         if (self.turretontarget && isdefined(e_target) && isplayer(e_target)) {
             if (isdefined(self gettagorigin("TAG_LASER"))) {

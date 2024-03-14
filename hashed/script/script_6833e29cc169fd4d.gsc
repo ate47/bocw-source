@@ -225,10 +225,10 @@ function function_397e4d13(target, maxrange, *weapon) {
     if (isdefined(weapon)) {
         distancesqr = distancesquared(maxrange.origin, self.origin);
         if (distancesqr > function_a3f6cdac(weapon)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_8a67e6b6/namespace_8a67e6b6
@@ -574,7 +574,7 @@ function function_92c4b561() {
 // Checksum 0x956a3382, Offset: 0x22f0
 // Size: 0x10
 function function_a73ea525(*weapon) {
-    return 1;
+    return true;
 }
 
 // Namespace namespace_8a67e6b6/namespace_8a67e6b6

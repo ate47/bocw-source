@@ -207,7 +207,7 @@ function private breadcrumbs() {
         level waittill(#"game_playing");
         waittime = getdvarfloat(#"hash_2872d2b12241500c", 4);
     }
-    while (1) {
+    while (true) {
         if (isalive(self)) {
             lifeindex = isdefined(self.pers[#"telemetry"].life.var_2824e826) ? self.pers[#"telemetry"].life.var_2824e826 : -1;
             recordbreadcrumbdataforplayer(self, lifeindex);
@@ -235,7 +235,7 @@ function private travel_dist() {
     var_365f7ec5 = 0;
     var_7e8e90a4 = 0;
     var_87a9b1b1 = 0;
-    while (1) {
+    while (true) {
         profilestart();
         if (!isdefined(self)) {
             profilestop();
@@ -394,7 +394,7 @@ function private inactivity() {
     self notify(#"player_monitor_inactivity");
     self endon(#"player_monitor_inactivity");
     wait(10);
-    while (1) {
+    while (true) {
         if (isdefined(self)) {
             if (self isremotecontrolling() || self util::isusingremote() || is_true(level.inprematchperiod) || is_true(self.var_4c45f505)) {
                 self resetinactivitytimer();

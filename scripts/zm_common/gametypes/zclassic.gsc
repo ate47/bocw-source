@@ -83,7 +83,7 @@ function function_a143f9d1(*params) {
 // Size: 0x188
 function function_acafdd66() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self waittill(#"bad_path");
         self.var_4fe4e626 = 1;
         enemy = zm_ai_utility::function_825317c(self);
@@ -401,7 +401,7 @@ function function_1c2ce6a() {
     if (!is_true(level.player_out_of_playable_area_monitor)) {
         return;
     }
-    while (1) {
+    while (true) {
         players = getplayers();
         if (players.size == 0) {
             waitframe(1);

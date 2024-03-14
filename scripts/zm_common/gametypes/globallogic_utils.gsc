@@ -117,7 +117,7 @@ function assertproperplacement() {
                     /#
                         assertmsg("<unknown string>");
                     #/
-                    return;
+                    break;
                 }
             }
         }
@@ -140,7 +140,7 @@ function playtickingsound(gametype_tick_sound) {
     self endon(#"death", #"stop_ticking");
     level endon(#"game_ended");
     time = level.bombtimer;
-    while (1) {
+    while (true) {
         self playsound(gametype_tick_sound);
         if (time > 10) {
             time = time - 1;
@@ -282,7 +282,7 @@ function getestimatedtimeuntilscorelimit(team) {
 // Size: 0x48
 function rumbler() {
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         wait(0.1);
         self playrumbleonentity("damage_heavy");
     }

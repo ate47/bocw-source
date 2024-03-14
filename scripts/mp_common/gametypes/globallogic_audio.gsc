@@ -255,10 +255,10 @@ function announce_team_is_winning() {
             var_c678068b = isdefined(level.var_78739954) ? level.var_78739954 : "gameLosing";
             leader_dialog(var_5624e09d, team);
             leader_dialog_for_other_teams(var_c678068b, team);
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic_audio/globallogic_audio
@@ -454,7 +454,7 @@ function sndmusictimelimitwatcher() {
     if (halfway <= 100) {
         return;
     }
-    while (1) {
+    while (true) {
         timeleft = float(globallogic_utils::gettimeremaining()) / 1000;
         if (timeleft <= halfway) {
             level notify(#"sndmusichalfway");

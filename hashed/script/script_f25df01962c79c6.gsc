@@ -173,21 +173,21 @@ function function_4ec353f8(var_a5cecef6, idx) {
     switch (idx) {
     case 0:
         self thread function_eb32ec24(var_a5cecef6);
-        return;
+        break;
     case 1:
         self thread function_ae2b7e13(var_a5cecef6);
-        return;
+        break;
     case 2:
         self thread function_2a2af1eb(var_a5cecef6);
-        return;
+        break;
     case 3:
         self thread function_14456228(var_a5cecef6);
-        return;
+        break;
     default:
         /#
             assert(0);
         #/
-        return;
+        break;
     }
 }
 
@@ -228,7 +228,7 @@ function function_879d4ceb(idx) {
     self.var_85fab561 = 0;
     self.var_85a2d15c = var_85a2d15c[self.var_85fab561];
     self.var_f9b5545b = getanimlength(self.var_85a2d15c);
-    while (1) {
+    while (true) {
         self.angles = angles;
         self.origin = origin;
         self thread animation::play(self.var_85a2d15c);
@@ -271,7 +271,7 @@ function function_1f6e2084() {
     self endon("21b85cf319cbf6a8");
     angles = self.angles;
     origin = self.origin;
-    while (1) {
+    while (true) {
         self.angles = angles;
         self.origin = origin;
         idleanim = self.animarray[randomint(self.animarray.size)];
@@ -287,7 +287,7 @@ function function_1f6e2084() {
 // Size: 0xee
 function function_1e962dea() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         if (!isdefined(level.doa.var_e3c3fa5a)) {
             wait(randomfloatrange(0.1, 2));
             continue;
@@ -308,7 +308,7 @@ function function_d32e5650() {
     var_b64682f2 = array("ai_zombie_doa_cheer_v1", "ai_zombie_doa_cheer_v2", "ai_zombie_doa_cheer_v3");
     self.animarray = var_1159929c;
     self.var_2cbcf8e2 = "zombie_outro_mood_angry";
-    while (1) {
+    while (true) {
         result = undefined;
         result = level waittill(#"zombie_outro_mood_angry", #"hash_6b71fd0ed387fe82", #"hash_749ca0969fe37f63");
         if (!isdefined(self)) {
@@ -334,7 +334,7 @@ function function_6d378d86(var_ae2e8e1f) {
     if (isdefined(var_ae2e8e1f)) {
         wait(var_ae2e8e1f);
     }
-    while (1) {
+    while (true) {
         if (randomint(100) <= 1) {
             switch (self.var_2cbcf8e2) {
             case #"zombie_outro_mood_angry":
@@ -518,7 +518,7 @@ function function_c6630cce(weapon, org, var_ec941905, killnote) {
         chicken thread namespace_6e90e490::function_47e11416(1, 2, 1);
         chicken thread function_ecfe3016(killnote);
     }
-    while (1) {
+    while (true) {
         if (!is_true(self.var_cd7dffa1) && randomint(100) < 25) {
             chicken thread namespace_6e90e490::function_47e11416(48, 2);
         }

@@ -183,7 +183,7 @@ function pickuptimeout(timetowait) {
     wait(timetowait);
     for (i = 0; i < 40; i++) {
         if (!isdefined(self)) {
-            return;
+            break;
         }
         if (i % 2) {
             self hide();

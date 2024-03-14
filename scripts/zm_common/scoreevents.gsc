@@ -1056,7 +1056,7 @@ function function_4ffff5df(attacker, weapon, var_9c448324, enemy) {
 // Size: 0xdc
 function is_equipment(weapon) {
     if (!isdefined(weapon.name)) {
-        return 0;
+        return false;
     }
     switch (weapon.name) {
     case #"molotov_fire":
@@ -1067,11 +1067,11 @@ function is_equipment(weapon) {
     case #"hash_6a4dd5ed56f6e3f6":
     case #"satchel_charge":
     case #"cymbal_monkey":
-        return 1;
+        return true;
     default:
-        return 0;
+        return false;
     }
-    return 0;
+    return false;
 }
 
 // Namespace scoreevents/scoreevents
@@ -1960,7 +1960,7 @@ function function_2bf1d1bb(var_2f19890e, eattacker, weapon_name, weapon, var_5c5
                 if (var_6ccf95ba) {
                     eattacker stats::function_622feb0d(weapon_name, #"hash_7bf29fa438d54aad", 1);
                 }
-                return 1;
+                return true;
             }
         } else if (eattacker.var_4927d3d[weapon_name].time < gettime()) {
             eattacker.var_4927d3d[weapon_name] = {#var_e1ebf0a8:undefined, #oneshotmultikills:1, #var_510ca9f9:undefined, #var_1c91bc3c:undefined, #var_ba244c35:0, #multikills:1, #weapon:weapon, #var_9ccfda84:gettime(), #var_81be4996:gettime(), #time:gettime(), #player:eattacker};
@@ -1968,7 +1968,7 @@ function function_2bf1d1bb(var_2f19890e, eattacker, weapon_name, weapon, var_5c5
     } else {
         eattacker.var_4927d3d[weapon_name] = {#var_e1ebf0a8:undefined, #oneshotmultikills:1, #var_510ca9f9:undefined, #var_1c91bc3c:undefined, #var_ba244c35:0, #multikills:1, #weapon:weapon, #var_9ccfda84:gettime(), #var_81be4996:gettime(), #time:gettime(), #player:eattacker};
     }
-    return 0;
+    return false;
 }
 
 // Namespace scoreevents/scoreevents
@@ -2050,13 +2050,13 @@ function function_8fb658e2(params) {
 // Size: 0x9a
 function private function_39571ae(player, enemy) {
     if (!isdefined(player) || !isdefined(enemy)) {
-        return 0;
+        return false;
     }
     n_dist = distancesquared(player.origin, enemy.origin);
     if (n_dist >= 122500 && n_dist <= 1440000) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace scoreevents/scoreevents
@@ -2067,12 +2067,12 @@ function function_f5c2c1ec() {
     if (zm_utility::is_player_valid(self, 0, 0) && self isinvehicle()) {
         veh = self getvehicleoccupied();
         if (isdefined(veh) && veh getoccupantseat(self) === 0) {
-            return 1;
+            return true;
         }
         if (isdefined(veh.var_260e3593) && veh getoccupantseat(self) === veh.var_260e3593) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 

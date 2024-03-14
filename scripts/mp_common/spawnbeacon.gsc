@@ -54,12 +54,12 @@ function private function_70a657d8() {
 // Size: 0x94
 function function_ece8f018(attacker, *victim, *weapon, *attackerweapon, *meansofdeath) {
     if (!isdefined(meansofdeath) || !isdefined(meansofdeath.var_7c18e526) || !isdefined(meansofdeath.var_1a6703cc) || meansofdeath.var_1a6703cc + 5000 < gettime()) {
-        return 0;
+        return false;
     }
     if (meansofdeath == meansofdeath.var_7c18e526) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace spawn_beacon/spawnbeacon
@@ -167,7 +167,7 @@ function function_b42580a6() {
     if (isdefined(spawnbeacon)) {
         player thread function_abb55703(spawnbeacon, is_true(player.var_4ef33446) || is_true(self.suicide));
     }
-    return 0;
+    return false;
 }
 
 // Namespace spawn_beacon/spawnbeacon
@@ -257,11 +257,11 @@ function function_b74804ba(origin, *angles, player, *var_c7a191d5, *var_813ea9e)
     var_813ea9e.var_9bab32d9.spawns = getspawnbeaconspawns(var_c7a191d5);
     if (var_813ea9e.var_9bab32d9.spawns.size == 0) {
         var_813ea9e sethintstring(level.spawnbeaconsettings.settingsbundle.var_bf6a0873);
-        return 0;
+        return false;
     }
     foreach (protectedzone in level.spawnbeaconsettings.var_d6a27a84) {
         if (protectedzone istouching(var_c7a191d5, (16, 16, 70))) {
-            return 0;
+            return false;
         }
     }
     var_a25671b9 = isdefined(level.spawnbeaconsettings.settingsbundle.var_77498194) ? level.spawnbeaconsettings.settingsbundle.var_77498194 : 0;
@@ -280,11 +280,11 @@ function function_b74804ba(origin, *angles, player, *var_c7a191d5, *var_813ea9e)
             distsqr = distancesquared(var_c7a191d5, var_4d511d74[i].origin);
             if (distsqr <= testdistance) {
                 var_813ea9e sethintstring(level.spawnbeaconsettings.settingsbundle.var_c2aa4ca6);
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace spawn_beacon/spawnbeacon
@@ -535,11 +535,11 @@ function function_9aafb7bb(origin, *angles, player) {
     player.var_9bab32d9.spawns = getspawnbeaconspawns(angles);
     if (player.var_9bab32d9.spawns.size == 0) {
         player sethintstring(level.spawnbeaconsettings.settingsbundle.var_bf6a0873);
-        return 0;
+        return false;
     }
     foreach (protectedzone in level.spawnbeaconsettings.var_d6a27a84) {
         if (protectedzone istouching(angles, (16, 16, 70))) {
-            return 0;
+            return false;
         }
     }
     var_a25671b9 = isdefined(level.spawnbeaconsettings.settingsbundle.var_77498194) ? level.spawnbeaconsettings.settingsbundle.var_77498194 : 0;
@@ -557,10 +557,10 @@ function function_9aafb7bb(origin, *angles, player) {
             distsqr = distancesquared(angles, beacon.origin);
             if (distsqr <= testdistance) {
                 player sethintstring(level.spawnbeaconsettings.settingsbundle.var_c2aa4ca6);
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 

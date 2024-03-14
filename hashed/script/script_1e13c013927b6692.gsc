@@ -165,7 +165,7 @@ function function_54a36ee5(e_unitrigger) {
 function function_bce9fcbe() {
     level endon(#"end_game");
     self endon(#"disconnect", #"death");
-    while (1) {
+    while (true) {
         var_e8178f0 = self zm_zonemgr::is_player_in_zone([2:"zone_firebase3", 1:"zone_firebase2", 0:"zone_portal_transfer"]);
         self clientfield::set_to_player("" + #"hash_69dc133e22a2769f", var_e8178f0);
         self waittill(#"zone_change");

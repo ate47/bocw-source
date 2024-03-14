@@ -115,7 +115,7 @@ function function_1bb4a86d() {
 // Size: 0x7a
 function function_be16c377() {
     self endon(#"projectile_impact_explode", #"death");
-    while (1) {
+    while (true) {
         self.var_59ba00f5 = self getvelocity();
         wait(float(function_60d95f53()) / 1000);
     }

@@ -55,9 +55,9 @@ function isexplosivedamage(meansofdeath) {
     case #"mod_projectile":
     case #"mod_grenade_splash":
     case #"mod_projectile_splash":
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace weapons/weapon_utils
@@ -98,9 +98,9 @@ function isbulletdamage(meansofdeath) {
 // Size: 0x78
 function isfiredamage(weapon, meansofdeath) {
     if (weapon.doesfiredamage && (meansofdeath == "MOD_BURNED" || meansofdeath == "MOD_GRENADE" || meansofdeath == "MOD_GRENADE_SPLASH" || meansofdeath == "MOD_DOT")) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace weapons/weapon_utils
@@ -125,14 +125,14 @@ function function_a9a8aed8(primaryoffhand) {
 // Size: 0x80
 function isheadshot(weapon, shitloc, smeansofdeath) {
     if (weapon.noheadshots) {
-        return 0;
+        return false;
     }
     if (ismeleemod(smeansofdeath)) {
-        return 0;
+        return false;
     }
     if (isdefined(shitloc) && (shitloc == "head" || shitloc == "helmet")) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 

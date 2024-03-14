@@ -292,10 +292,10 @@ function private function_badfb816(entity) {
 // Size: 0x5c
 function margwashouldsmashattack(entity) {
     if (self.zombie_move_speed != "walk") {
-        return 0;
+        return false;
     }
     if (!isdefined(self.enemy)) {
-        return 0;
+        return false;
     }
     if (!isdefined(entity.var_bec33427)) {
         entity.var_bec33427 = 0;
@@ -309,18 +309,18 @@ function margwashouldsmashattack(entity) {
 // Size: 0xfc
 function margwashouldswipeattack(entity) {
     if (!isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     var_5065f112 = isdefined(entity.meleedistsq) ? entity.meleedistsq : 16384;
     if (distancesquared(entity.origin, entity.enemy.origin) > var_5065f112) {
-        return 0;
+        return false;
     }
     yaw = abs(namespace_ec06fe4a::getyawtoenemy());
     if (yaw > 45) {
         entity orientmode("face point", entity.enemy.origin);
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_a204c0f4/namespace_a204c0f4
@@ -341,9 +341,9 @@ function private margwashouldshowpain(entity) {
             self setblackboardattribute("_margwa_head", "right");
             break;
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_a204c0f4/namespace_a204c0f4
@@ -352,9 +352,9 @@ function private margwashouldshowpain(entity) {
 // Size: 0x2e
 function private margwashouldreactstun(entity) {
     if (is_true(entity.var_b8239c7b)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_a204c0f4/namespace_a204c0f4
@@ -363,9 +363,9 @@ function private margwashouldreactstun(entity) {
 // Size: 0x2e
 function private margwashouldspawn(entity) {
     if (is_true(entity.var_243b04fc)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_a204c0f4/namespace_a204c0f4
@@ -374,15 +374,15 @@ function private margwashouldspawn(entity) {
 // Size: 0x66
 function private margwashouldreset(entity) {
     if (isdefined(entity.headdestroyed)) {
-        return 1;
+        return true;
     }
     if (is_true(entity.var_42b101a5)) {
-        return 1;
+        return true;
     }
     if (is_true(entity.var_b8239c7b)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_a204c0f4/namespace_a204c0f4
@@ -481,16 +481,16 @@ function private margwatraverseactionstart(entity) {
             switch (entity.traversestartnode.animscript) {
             case #"hash_7df721eeb4b2a2e2":
                 entity clientfield::set("margwa_jaw", 21);
-                return;
+                break;
             case #"hash_7e1931eeb4cfa478":
                 entity clientfield::set("margwa_jaw", 22);
-                return;
+                break;
             case #"hash_539fe33dffe5b4f1":
                 entity clientfield::set("margwa_jaw", 24);
-                return;
+                break;
             case #"hash_537de33dffc8ce8b":
                 entity clientfield::set("margwa_jaw", 25);
-                return;
+                break;
             }
         }
     }
@@ -611,7 +611,7 @@ function function_729da05c() {
 // Size: 0xc8
 function function_66a5466d(origin, radius) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         currentangle = randomint(360);
         var_5ccd914d = rotatepointaroundaxis((randomintrange(12, radius), 0, 0), (0, 0, 1), currentangle);
         self.origin = origin + var_5ccd914d;
@@ -768,12 +768,12 @@ function private function_4a60d0c7(min, max) {
 function private function_d150bac6() {
     if (self.var_887aaf49 > 1) {
         if (self.var_a5d387bf < self.var_887aaf49 - 1) {
-            return 1;
+            return true;
         }
     } else {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_a204c0f4/namespace_a204c0f4
@@ -784,7 +784,7 @@ function private function_81b6b294(headinfo) {
     self endon(#"death", #"hash_28b17b286ff6e084");
     headinfo notify(#"hash_28b17b286ff6e084");
     headinfo endon(#"hash_28b17b286ff6e084");
-    while (1) {
+    while (true) {
         if (self ispaused()) {
             util::wait_network_frame();
             continue;
@@ -808,7 +808,7 @@ function private function_81b6b294(headinfo) {
         if (namespace_ec06fe4a::function_a8975c67()) {
             self playsoundontag("zmb_vocals_margwa_ambient", headinfo.tag);
         }
-        while (1) {
+        while (true) {
             if (!isdefined(headinfo.opentime)) {
                 headinfo.opentime = function_4a60d0c7(3000, 5000);
             }
@@ -928,10 +928,10 @@ function function_a6af900e(var_71938d68, attacker) {
 function function_71c049c4() {
     foreach (head in self.head) {
         if (isdefined(head) && head.health > 0 && is_true(head.candamage)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_a204c0f4/namespace_a204c0f4
@@ -940,9 +940,9 @@ function function_71c049c4() {
 // Size: 0x40
 function function_bbaf72a2() {
     if (isdefined(self) && self.health > 0 && is_true(self.candamage)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_a204c0f4/namespace_a204c0f4
@@ -1042,12 +1042,12 @@ function private function_35709f56(*var_71938d68) {
 // Size: 0x3a
 function function_b92d6daa() {
     if (!is_true(self.var_180ce19e)) {
-        return 0;
+        return false;
     }
     if (self.var_887aaf49 < 3) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_a204c0f4/namespace_a204c0f4
@@ -1077,13 +1077,13 @@ function private function_fe2eb01c(enemy) {
     var_9f06b4e9 = self.origin;
     heightoffset = abs(self.origin[2] - enemy.origin[2]);
     if (heightoffset > 48) {
-        return 0;
+        return false;
     }
     distsq = distancesquared(var_9f06b4e9, enemy.origin);
     if (distsq > 2500 && distsq < 10000) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_a204c0f4/namespace_a204c0f4

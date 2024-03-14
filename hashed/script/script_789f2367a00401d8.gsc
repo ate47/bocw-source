@@ -264,17 +264,17 @@ function function_31cc6bd9() {
 // Size: 0xfe
 function function_31f342a2(origin, var_9c7e3678) {
     if (!isdefined(level.var_a88ac760)) {
-        return 0;
+        return false;
     }
     foreach (molotov in level.var_a88ac760) {
         if (abs(molotov.origin[2] - origin[2] > 20)) {
             continue;
         }
         if (distance2dsquared(molotov.origin, origin) < var_9c7e3678) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_68a80213/namespace_68a80213
@@ -956,18 +956,18 @@ function hitpos(start, end, color) {
 // Size: 0xf4
 function candofiredamage(victim, resetfiretime) {
     if (isplayer(victim) && victim depthofplayerinwater() >= 1) {
-        return 0;
+        return false;
     }
     if (isactor(victim) && victim.var_9fde8624 === #"hash_28e36e7b7d5421f") {
-        return 0;
+        return false;
     }
     entnum = victim getentitynumber();
     if (!isdefined(level.var_e8a6b3ee[entnum])) {
         level.var_e8a6b3ee[entnum] = 1;
         level thread resetfiredamage(entnum, resetfiretime);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_68a80213/namespace_68a80213
@@ -1017,17 +1017,17 @@ function function_ccb2e201(position, radius) {
 // Size: 0x70
 function private function_53811067(zombie) {
     if (!isdefined(zombie)) {
-        return 0;
+        return false;
     }
     if (zombie.knockdown === 1) {
-        return 0;
+        return false;
     }
     if (zombie.archetype !== #"zombie") {
-        return 0;
+        return false;
     }
     if (zombie.var_33fb0350 === 1) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 

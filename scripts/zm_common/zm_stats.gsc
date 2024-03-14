@@ -750,12 +750,12 @@ function function_fd25ef51(stat_name, map_name) {
 // Size: 0x5c
 function function_de5c64c9(stat_name, value) {
     if (!isdefined(value)) {
-        return 0;
+        return false;
     } else if (value > function_c6b3eb96(stat_name)) {
         function_6688e31d(stat_name, value);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_stats/zm_stats
@@ -1984,7 +1984,7 @@ function function_7741345e(player, *w_current, n_shots_fired, n_hits) {
 function function_b14863c1() {
     level endon(#"end_game");
     level thread function_c5f9ea85();
-    while (1) {
+    while (true) {
         if (zm_utility::is_survival()) {
             level waittilltimeout(getdvarint(#"hash_40077e81a7bcd7c3", 300), #"objective_ended", #"hash_3b28fcaa0b9b4489");
         } else {
@@ -2004,7 +2004,7 @@ function function_c5f9ea85() {
     foreach (player in level.players) {
         player.var_78c18942 = 0;
     }
-    while (1) {
+    while (true) {
         wait(1);
         players = getplayers();
         foreach (player in players) {
@@ -2104,7 +2104,7 @@ function function_ea5b4947(b_end_game = 0, var_220c56da = 0) {
 function function_94335f4a(var_1aa5a6d6) {
     level.var_1aa5a6d6 = var_1aa5a6d6;
     level.var_ad5d54b = [];
-    for (n_row = 0; 1; n_row++) {
+    for (n_row = 0; true; n_row++) {
         n_event = tablelookupcolumnforrow(#"gamedata/stats/zm/zm_event_callings.csv", n_row, 0);
         if (!isdefined(n_event) || n_event > var_1aa5a6d6) {
             return;
@@ -2297,7 +2297,7 @@ function function_1a222bee(params) {
         case #"energy_mine_3":
         case #"energy_mine_1":
             self stats::function_622feb0d(#"hash_41adc0ca9daf6e9d", #"hash_7d6781e4032b4aa5", 1);
-            return;
+            break;
         case #"frost_blast_4":
         case #"frost_blast_5":
         case #"frost_blast":
@@ -2305,7 +2305,7 @@ function function_1a222bee(params) {
         case #"frost_blast_3":
         case #"frost_blast_2":
             self stats::function_622feb0d(#"frost_blast", #"hash_7d6781e4032b4aa5", 1);
-            return;
+            break;
         case #"hash_379869d5b6da974b":
         case #"hash_37986ad5b6da98fe":
         case #"hash_37986bd5b6da9ab1":
@@ -2313,7 +2313,7 @@ function function_1a222bee(params) {
         case #"hash_37986cd5b6da9c64":
         case #"hash_7b5a77a85b0ffab7":
             self stats::function_622feb0d(#"hash_7b5a77a85b0ffab7", #"hash_7d6781e4032b4aa5", 1);
-            return;
+            break;
         case #"hash_6319f23758cd411":
         case #"hash_6319e23758cd25e":
         case #"hash_631a023758cd5c4":
@@ -2321,7 +2321,7 @@ function function_1a222bee(params) {
         case #"hash_631a223758cd92a":
         case #"hash_1d9cb9dbd298acba":
             self stats::function_622feb0d(#"hash_1d9cb9dbd298acba", #"hash_7d6781e4032b4aa5", 1);
-            return;
+            break;
         case #"hash_2d88b4c5217c7e7c":
         case #"hash_164c43cbd0ee958":
         case #"hash_164c63cbd0eecbe":
@@ -2329,7 +2329,7 @@ function function_1a222bee(params) {
         case #"hash_164c83cbd0ef024":
         case #"hash_164c93cbd0ef1d7":
             self stats::function_622feb0d(#"hash_2d88b4c5217c7e7c", #"hash_7d6781e4032b4aa5", 1);
-            return;
+            break;
         case #"hash_43e322396554dac0":
         case #"hash_43e323396554dc73":
         case #"hash_43e326396554e18c":
@@ -2337,7 +2337,7 @@ function function_1a222bee(params) {
         case #"hash_43e329396554e6a5":
         case #"hash_55569355da0f0f68":
             self stats::function_622feb0d(#"hash_55569355da0f0f68", #"hash_7d6781e4032b4aa5", 1);
-            return;
+            break;
         case #"hash_5d6f444e983b62ca":
         case #"hash_7a071b09cf16c52e":
         case #"hash_7a071c09cf16c6e1":
@@ -2345,7 +2345,7 @@ function function_1a222bee(params) {
         case #"hash_7a071e09cf16ca47":
         case #"hash_7a071f09cf16cbfa":
             self stats::function_622feb0d(#"hash_5d6f444e983b62ca", #"hash_7d6781e4032b4aa5", 1);
-            return;
+            break;
         case #"hash_3d62bdc92bbcaf5f":
         case #"hash_148e5880a4f4d46f":
         case #"hash_3d62b9c92bbca893":
@@ -2353,16 +2353,16 @@ function function_1a222bee(params) {
         case #"hash_3d62bbc92bbcabf9":
         case #"hash_3d62bcc92bbcadac":
             self stats::function_622feb0d(#"hash_148e5880a4f4d46f", #"hash_7d6781e4032b4aa5", 1);
-            return;
+            break;
         case #"frag_grenade":
             self stats::function_622feb0d(#"eq_frag_grenade", #"hash_7d6781e4032b4aa5", 1);
-            return;
+            break;
         case #"hash_12f078ddc9b913c3":
             self stats::function_622feb0d(#"nightingale", #"hash_7d6781e4032b4aa5", 1);
-            return;
+            break;
         default:
             self stats::function_622feb0d(params.item.var_a6762160.weapon.statname, #"hash_7d6781e4032b4aa5", 1);
-            return;
+            break;
         }
     }
 }

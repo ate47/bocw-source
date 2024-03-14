@@ -275,7 +275,7 @@ function private function_26e7fb55(var_d44b8c3e, var_1838351, startangles) {
 function function_696b3380() {
     self endon(#"death");
     var_c6ac5940 = 1;
-    while (1) {
+    while (true) {
         if (!var_c6ac5940 && randomint(100) < 10) {
             offsettime = 0.5;
             self pathvariableoffset(vectorscale((0, 0, 1), 90), offsettime);
@@ -314,7 +314,7 @@ function function_dede0607(*isowner, killstreaktype) {
         choppergunner.failed2enter = 1;
         choppergunner function_71c46904(0);
         choppergunner function_f1d43cb2();
-        return 0;
+        return false;
     }
     if (isdefined(level.var_80f71aee)) {
         self [[ level.var_80f71aee ]]();
@@ -339,7 +339,7 @@ function function_dede0607(*isowner, killstreaktype) {
     }
     if (!isdefined(self) || var_df4a5052._notify != #"timeout") {
         function_cf58dcdd();
-        return 0;
+        return false;
     }
     choppergunner usevehicle(self, 2);
     choppergunner.usage[self.entnum] = 1;
@@ -358,7 +358,7 @@ function function_dede0607(*isowner, killstreaktype) {
     self setmodellodbias(isdefined(level.mothership_lod_bias) ? level.mothership_lod_bias : 8);
     self givededicatedshadow(choppergunner);
     self thread function_9bdafd36();
-    return 1;
+    return true;
 }
 
 // Namespace namespace_e8c18978/namespace_e8c18978
@@ -530,18 +530,18 @@ function ontimecheck() {
 // Size: 0x74
 function function_c2bfa7e1(ent, *weapon) {
     if (isdefined(weapon.var_7132bbb7)) {
-        return 0;
+        return false;
     }
     if (weapon.leaving === 1) {
-        return 1;
+        return true;
     }
     if (weapon.shuttingdown === 1) {
-        return 0;
+        return false;
     }
     if (weapon.completely_shutdown === 1) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_e8c18978/namespace_e8c18978
@@ -575,7 +575,7 @@ function watchplayerexitrequestthread(player) {
     player endon(#"disconnect", #"gunner_left");
     self endon(#"death");
     var_f6263fe2 = getdvarfloat(#"hash_2ed1b7031dae0df7", 0.5);
-    while (1) {
+    while (true) {
         timeused = 0;
         player function_7deaa2a4(timeused);
         player function_9d62ff6c();

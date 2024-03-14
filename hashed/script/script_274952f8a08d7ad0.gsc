@@ -43,42 +43,42 @@ function function_c64b5405(newval) {
     switch (newval) {
     case 0:
         self function_eadd0084();
-        return;
+        break;
     case 1:
         self function_7aa6104();
-        return;
+        break;
     case 2:
         self function_19690481();
-        return;
+        break;
     case 3:
         self function_7f56196();
-        return;
+        break;
     case 4:
         self function_19a404f3();
-        return;
+        break;
     case 5:
         self function_f27b36a2();
-        return;
+        break;
     case 6:
         self function_4887c796();
-        return;
+        break;
     case 7:
         self function_22441ab3();
-        return;
+        break;
     case 8:
         self function_5a740afe();
-        return;
+        break;
     case 9:
         self function_681e2652();
-        return;
+        break;
     case 10:
         self function_bd015017();
-        return;
+        break;
     case 11:
         self function_ccb26f79();
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 
@@ -138,13 +138,13 @@ function function_6757d9a1(startval, endval, duration) {
     duration = duration * 1000;
     endtime = int(currenttime + duration);
     diff = abs(startval - endval);
-    while (1) {
+    while (true) {
         currenttime = gettime();
         t = math::clamp(1 - (endtime - currenttime) / duration, 0, 1);
         frac = lerpfloat(startval, endval, t);
         self function_97c2dab8(frac);
         if (t == 1) {
-            return;
+            break;
         }
         waitframe(1);
     }

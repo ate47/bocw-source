@@ -214,7 +214,7 @@ function loop_thread(clientnum) {
     if (isdefined(self.fxstart)) {
         level waittill("start fx" + self.fxstart);
     }
-    while (1) {
+    while (true) {
         create_looper(clientnum);
         if (isdefined(self.timeout)) {
             thread loop_stop(clientnum, self.timeout);
@@ -263,7 +263,7 @@ function create_looper(clientnum) {
 function loop(clientnum) {
     validate(self.v[#"fxid"], self.v[#"origin"]);
     self.looperfx = playfx(clientnum, level._effect[self.v[#"fxid"]], self.v[#"origin"], self.v[#"forward"], self.v[#"up"], self.v[#"delay"], self.v[#"primlightfrac"], self.v[#"lightoriginoffs"]);
-    while (1) {
+    while (true) {
         if (isdefined(self.v[#"delay"])) {
             wait(self.v[#"delay"]);
         }
@@ -321,7 +321,7 @@ function blinky_light(localclientnum, tagname, friendlyfx, enemyfx) {
     self.lighttagname = tagname;
     self util::waittill_dobj(localclientnum);
     self thread blinky_emp_wait(localclientnum);
-    while (1) {
+    while (true) {
         if (isdefined(self.stunned) && self.stunned) {
             wait(0.1);
             continue;
@@ -364,7 +364,7 @@ function blinky_emp_wait(localclientnum) {
 function function_3b26f98c(localclientnum) {
     self notify(#"hash_348eb868068f5fa3");
     self endon(#"death", #"hash_348eb868068f5fa3");
-    while (1) {
+    while (true) {
         self waittill(#"weapon_fired");
         self postfx::playpostfxbundle(#"hash_6d2d4591d1249a6e");
         n_lerp_time = getdvarint(#"hash_3f9892863b8f6bb0", 50);
@@ -456,7 +456,7 @@ function function_a795470c() {
                 }
             }
             player thread function_70ba68f1(var_1498bcbe, var_486f31cd, var_bef008a5, var_e9f7aace, var_1436aa92);
-            return;
+            break;
         }
     }
 }

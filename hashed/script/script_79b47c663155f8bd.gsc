@@ -126,7 +126,7 @@ function private function_31a989f7(waitforplayers = 1) {
 // Size: 0x8e
 function private function_bbeb8bbe(maxplayers) {
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         playercount = getplayers().size;
         if (playercount > maxplayers) {
             level function_e88d0cf4();
@@ -143,7 +143,7 @@ function private function_bbeb8bbe(maxplayers) {
 // Size: 0xf6
 function private function_9bead880(var_8a291590, maxplayers) {
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         players = getplayers();
         bots = function_b16926ea();
         if (players.size > maxplayers) {

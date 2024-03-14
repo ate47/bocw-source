@@ -87,7 +87,7 @@ function function_62380b23() {
 function function_29c5050c() {
     level endon(#"hash_51a413763f592840");
     var_6aa6a4ac = [];
-    while (1) {
+    while (true) {
         delay = 10;
         level flag::wait_till("flag_vo_intro_walk_and_talk_nags");
         var_29a0fa27 = 0;
@@ -257,7 +257,7 @@ function function_1db51e3c() {
     level endon(#"hash_a3faf07853176cf");
     level.player endon(#"death");
     level endon(#"hash_71558717b42e8dc1");
-    while (1) {
+    while (true) {
         level waittill(#"hash_3eb3c24dcfb40680");
         if (level.var_74bc4f87 == 1) {
             level.player namespace_a635adb1::queue("vox_guid209f24c873734908b0ad786d93b17272");

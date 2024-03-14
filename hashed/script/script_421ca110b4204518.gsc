@@ -94,9 +94,9 @@ function function_309daad7(params) {
 function private function_baaff75b(var_cb73750, entity) {
     n_radius_sq = var_cb73750.n_radius * var_cb73750.n_radius;
     if (distance2dsquared(var_cb73750.origin, entity.origin) <= n_radius_sq && abs(entity.origin[2] - var_cb73750.origin[2]) <= var_cb73750.n_height) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2ab93693/namespace_2ab93693
@@ -107,11 +107,11 @@ function private function_ca26e871(entity) {
     if (isarray(level.var_686c81d7) && isalive(entity)) {
         foreach (var_cb73750 in level.var_686c81d7) {
             if (isdefined(var_cb73750) && function_baaff75b(var_cb73750, entity)) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2ab93693/namespace_2ab93693

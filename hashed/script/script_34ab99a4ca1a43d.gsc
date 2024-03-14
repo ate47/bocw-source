@@ -700,9 +700,9 @@ function function_34c59c2c(instance, var_c6e3f0a, var_cc1fb2d0, var_3a053962, st
 function function_ce254cce(struct) {
     var_4ee5a6d7 = arraysortclosest(level.var_8634611a, struct.origin, 1, 0, 2000);
     if (var_4ee5a6d7.size > 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_58949729/namespace_58949729
@@ -879,7 +879,7 @@ function function_2901cde1() {
     self notify("c55e88086deabce");
     self endon("c55e88086deabce");
     self endon(#"death");
-    while (1) {
+    while (true) {
         foreach (player in getplayers()) {
             if (!isdefined(player.var_4ee86e15)) {
                 player.var_4ee86e15 = [];
@@ -978,7 +978,7 @@ function function_1e2500f(player) {
 // Size: 0x78
 function function_a518db14(location, radius = 1500) {
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         if (getplayers("all", location, radius).size == 0) {
             return;
         }
@@ -1314,7 +1314,7 @@ function init_devgui() {
 function function_b6b13cf8() {
     /#
         var_50721d66 = 0;
-        while (1) {
+        while (true) {
             var_8f420c16 = getdvarint(#"hash_731bacd49b186d10", 0);
             if (var_8f420c16 && isdefined(level.var_50e94447)) {
                 iprintlnbold("<unknown string>");
@@ -1364,7 +1364,7 @@ function function_8f59f892(instance, str_dvar) {
         level notify(str_dvar);
         level endon(str_dvar);
         var_ad8b756a = 0;
-        while (1) {
+        while (true) {
             var_794c9d5f = getdvarint(str_dvar, 0);
             if (var_794c9d5f) {
                 setdvar(str_dvar, 0);
@@ -1389,7 +1389,7 @@ function function_8f59f892(instance, str_dvar) {
 // Size: 0x1ee
 function function_e4314d0e(struct) {
     /#
-        while (1) {
+        while (true) {
             var_794c9d5f = getdvarint(#"hash_29331ff5a16b8d53", 0);
             if (isdefined(struct.scriptmodel)) {
                 struct.b_spawned = 1;

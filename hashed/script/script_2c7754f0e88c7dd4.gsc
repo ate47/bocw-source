@@ -175,7 +175,7 @@ function function_5212ce3() {
     self notify("13067ef87ae5514e");
     self endon("13067ef87ae5514e");
     self endon(#"death");
-    while (1) {
+    while (true) {
         if (isdefined(self.favoriteenemy)) {
             distsq = distancesquared(self.origin, self.favoriteenemy.origin);
             if (distsq <= self.var_8de8630) {
@@ -193,7 +193,7 @@ function function_5212ce3() {
 function function_839fc28e() {
     /#
         self endon(#"death");
-        while (1) {
+        while (true) {
             line(self.origin, self.origin + vectorscale((0, 0, 1), 1000), (1, 0, 0), 1, 0, 1);
             waitframe(1);
         }
@@ -231,7 +231,7 @@ function private initblackboard() {
 // Size: 0x70
 function private updatetarget() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         if (is_true(self.ignoreall)) {
             wait(0.5);
             continue;

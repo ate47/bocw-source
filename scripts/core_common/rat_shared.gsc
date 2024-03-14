@@ -456,7 +456,7 @@ function function_51706559(params) {
                 player setplayerangles(angles);
             }
             if (!isdefined(params.all)) {
-                return;
+                break;
             }
         }
     #/

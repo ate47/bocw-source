@@ -51,7 +51,7 @@ function function_3c5d1e97(enabled, var_6d949755) {
         self childthread function_3b54da5f(1);
     }
     contents = function_21d2aa1e();
-    while (1) {
+    while (true) {
         level flag::wait_till("stealth_enabled");
         level flag::wait_till_clear("stealth_spotted");
         bestdot = -1;
@@ -143,7 +143,7 @@ function private function_9ffb7e50() {
     #/
     var_a57f6402 = 0;
     kills = undefined;
-    while (1) {
+    while (true) {
         kills = self.stats[#"kills"];
         if (!isdefined(kills)) {
             kills = 0;
@@ -311,7 +311,7 @@ function private function_6fc2f529(eventname) {
 // Size: 0x174
 function private function_1e099116() {
     /#
-        while (1) {
+        while (true) {
             var_7f729179 = undefined;
             var_7f729179 = getplayers()[0] waittill("<unknown string>");
             eventname = var_7f729179.event;
@@ -370,7 +370,7 @@ function function_3b54da5f(enabled) {
         return;
     }
     level.stealth.noteworthy.var_503e6ce5 = 0;
-    while (1) {
+    while (true) {
         wait(0.5);
         level flag::wait_till("stealth_enabled");
         if (!level.stealth.noteworthy.var_64b5ca93) {
@@ -501,19 +501,19 @@ function private function_680e04ab(ent) {
 // Size: 0xf8
 function private function_1aaf5c2d(other, var_5958f865) {
     if (!util::within_fov(self.origin, self.angles, other.origin, 0.7)) {
-        return 0;
+        return false;
     }
     eye = self geteye();
     if (isplayer(self)) {
         eye = self getplayercamerapos();
     }
     if (function_707a2560(eye, other.origin, other)) {
-        return 1;
+        return true;
     }
     if (var_5958f865 || function_707a2560(eye, other function_55b0a099(), other)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_7a865494/player
@@ -566,7 +566,7 @@ function function_3e0fb8b7(var_bfd9f922, var_ececce87, var_d572c578, var_4fb611a
         var_4fb611ad = 40;
     }
     level.stealth.var_d162b8a6 = [];
-    while (1) {
+    while (true) {
         if (!isalive(self)) {
             waitframe(1);
             continue;

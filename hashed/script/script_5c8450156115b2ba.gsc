@@ -208,7 +208,7 @@ function function_a70fa155(var_74fbad21, var_af6496cd, var_54829af, var_32281137
         }
         e_player function_66c3f496(var_74fbad21);
     }
-    while (1) {
+    while (true) {
         wait(1);
         if (var_c8bb51c4) {
             var_32281137 = var_54829af[0] [[ level.var_9fed8c8b ]]();
@@ -458,10 +458,10 @@ function function_e1579dc4() {
 function private function_5996e591(str_target_zone, a_str_zones) {
     foreach (str_zone in a_str_zones) {
         if (str_target_zone === str_zone) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_ff7e490/namespace_ff7e490

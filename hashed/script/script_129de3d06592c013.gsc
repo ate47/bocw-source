@@ -239,7 +239,7 @@ function function_d993c135() {
     var_24bfde42 = function_a3f6cdac(level.var_8ddf6d3d.var_9b69c823);
     var_46638976 = function_a3f6cdac(level.var_96492769.var_9b69c823);
     var_3d369b0c = min(var_af989ae4, var_84dbcde7);
-    while (1) {
+    while (true) {
         now = gettime();
         players = getplayers();
         foreach (player in players) {

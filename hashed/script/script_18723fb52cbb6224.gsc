@@ -89,9 +89,9 @@ function function_602f1c7e(instance) {
 // Size: 0x3e
 function function_f128aae9(*v_origin_or_ent, *params) {
     if (level flag::get(#"objective_locked")) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
@@ -107,7 +107,7 @@ function private function_1d6f6f32(*eventstruct) {
     self callback::remove_on_trigger(&function_1d6f6f32);
     level thread function_ba971eed(self.instance);
     level thread function_556eed55(self);
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = self waittill(#"trigger");
         if (self.instance flag::get("correct_frequencies")) {
@@ -132,7 +132,7 @@ function function_556eed55(trigger) {
     trigger.instance flag::wait_till("first_ambush_complete");
     trigger sethintstring(#"hash_57baaa534c81e367");
     trigger setvisibletoall();
-    while (1) {
+    while (true) {
         trigger.instance flag::wait_till("correct_frequencies");
         trigger sethintstring(#"hash_7c3a9502649aec15");
         trigger.instance flag::wait_till_clear("correct_frequencies");
@@ -220,7 +220,7 @@ function function_42d1d544(instance) {
     self playloopsound(#"hash_76a8c4dd7f9da5f3");
     self thread function_35bafcde(instance, "idle");
     self fx::play(#"hash_33d3573cec691428", self.origin, self.angles, #"hash_5fc1f0dacaa027e8");
-    while (1) {
+    while (true) {
         usetrigger waittill(#"trigger");
         var_b61e50f0 = var_b61e50f0 + 1;
         if (var_b61e50f0 > 8) {
@@ -276,7 +276,7 @@ function function_35bafcde(instance, str_suffix, str_type = "amplifier") {
     instance endon(#"cleanup");
     instance endon(#"radio_tuning_success");
     self endon(#"death");
-    while (1) {
+    while (true) {
         self playsound(#"hash_5025a103d5f8470" + str_type + "_subtitle_" + str_suffix);
         wait(5);
     }
@@ -289,7 +289,7 @@ function function_35bafcde(instance, str_suffix, str_type = "amplifier") {
 function function_2c1d994f(instance) {
     instance endon(#"cleanup");
     instance endon(#"radio_tuning_success");
-    for (n_count = 0; 1; n_count--) {
+    for (n_count = 0; true; n_count--) {
         result = undefined;
         result = instance waittill(#"hash_2277cbc7a1c6b43");
         if (is_true(result.increase)) {
@@ -315,13 +315,13 @@ function function_d3b57053(instance) {
     }
     if (randomintrange(1, 101) <= instance.var_abe944bc) {
         instance.var_abe944bc = 1;
-        return 1;
+        return true;
     }
     instance.var_abe944bc = instance.var_abe944bc + 5;
     if (instance.var_abe944bc >= 50) {
         instance.var_abe944bc = 50;
     }
-    return 0;
+    return false;
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning

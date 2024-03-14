@@ -115,14 +115,14 @@ function function_bd0bd9f4(entity, &var_426069a) {
 // Size: 0xb4
 function hasarmor(entity) {
     if (!isdefined(entity.var_5ace757d)) {
-        return 0;
+        return false;
     }
     foreach (var_dd54fdb1 in entity.var_5ace757d) {
         if (var_dd54fdb1.type === #"armor") {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_81245006/namespace_81245006

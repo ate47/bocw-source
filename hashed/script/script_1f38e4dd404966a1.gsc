@@ -88,9 +88,9 @@ function function_4e26277b(localclientnum, *oldval, *newval, *bnewent, *binitial
 // Size: 0x2e
 function function_a4b3da97(trace) {
     if (trace[#"fraction"] < 1) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire

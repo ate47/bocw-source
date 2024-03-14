@@ -47,11 +47,11 @@ function setupclientfields() {
 // Size: 0x70
 function function_21b773d5(localclientnum) {
     if (!is_true(level.var_d0252074)) {
-        return 0;
+        return false;
     }
     player = function_27673a7(localclientnum);
     if (!isdefined(player)) {
-        return 0;
+        return false;
     }
     return player clientfield::get_player_uimodel("hudItems.squadSpawnActive") == 1;
 }
@@ -197,7 +197,7 @@ function private function_bebd8395(localclientnum, array) {
 // Size: 0x2fe
 function private function_58710bd2(localclientnum) {
     self endon(#"game_ended", #"disconnect", #"hash_6843c6f6d0e53fd");
-    while (1) {
+    while (true) {
         players = getplayers(localclientnum);
         for (index = 0; index < players.size; index++) {
             player = players[index];

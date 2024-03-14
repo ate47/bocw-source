@@ -115,9 +115,9 @@ function spawn_single(b_force_spawn, var_eb3a8721 = 0, *var_bc66d64b) {
 function round_spawn() {
     ai = spawn_single();
     if (isdefined(ai)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_abfee9ba/namespace_abfee9ba
@@ -128,9 +128,9 @@ function function_e0968877() {
     n_alive = function_9f679c3c();
     var_12e5a581 = function_4b283bfa();
     if (n_alive >= var_12e5a581 || !level flag::get("spawn_zombies")) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_abfee9ba/namespace_abfee9ba
@@ -176,7 +176,7 @@ function function_5e09bd0f() {
     wait(1.1);
     self playsoundontag(#"hash_65eb1e22e2f9a826", "j_head");
     wait(2);
-    while (1) {
+    while (true) {
         self playsoundontag(#"hash_a3c5d5d69e0fc95", "j_head");
         wait(randomfloatrange(1.9, 2.4));
     }
@@ -350,7 +350,7 @@ function function_a58fe5b7(var_199d73cc = undefined) {
 function function_d8461453() {
     s_spawn_loc = function_a58fe5b7();
     if (!isdefined(s_spawn_loc)) {
-        return 0;
+        return false;
     }
     if (isdefined(self) && isentity(self)) {
         self endon(#"death");
@@ -364,6 +364,6 @@ function function_d8461453() {
             self.find_flesh_struct_string = s_spawn_loc.script_string;
         }
     }
-    return 1;
+    return true;
 }
 

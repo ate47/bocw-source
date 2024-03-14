@@ -196,18 +196,18 @@ function private radiation(localclientnum, oldval, newval, *bnewent, *binitialsn
 // Size: 0x7e
 function private function_8b3f3a7d(localclientnum) {
     if (!self isplayer()) {
-        return 0;
+        return false;
     }
     if (!isalive(self)) {
-        return 0;
+        return false;
     }
     if (self isremotecontrolling(localclientnum)) {
-        return 0;
+        return false;
     }
     if (squad_spawn::function_21b773d5(localclientnum)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_6615ea91/namespace_6615ea91
@@ -250,16 +250,16 @@ function private function_ec3bfba7(localclientnum, radiationlevel, *var_50cd907d
         switch (var_50cd907d) {
         case 0:
             function_f80b3e83(radiationlevel);
-            return;
+            break;
         case 1:
             function_f80b3e83(radiationlevel, "evt_radiation_dmg_1");
-            return;
+            break;
         case 2:
             function_f80b3e83(radiationlevel, "evt_radiation_dmg_2");
-            return;
+            break;
         case 3:
             function_f80b3e83(radiationlevel, "evt_radiation_dmg_3");
-            return;
+            break;
         }
     }
 }
@@ -290,7 +290,7 @@ function private function_5cb7f849(localclientnum) {
     if (!namespace_956bd4dd::function_ab99e60c()) {
         return;
     }
-    while (1) {
+    while (true) {
         localplayer = function_5c10bd79(localclientnum);
         if (localplayer function_8b3f3a7d(localclientnum)) {
             radiationlevel = localplayer clientfield::get_to_player("radiation") & 8 - 1;

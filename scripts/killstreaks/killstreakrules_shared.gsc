@@ -413,10 +413,10 @@ function function_40451ab0(killstreaktype) {
         momentum = self.pers[#"momentum"];
         var_36f2d8a2 = self function_dceb5542(level.killstreaks[killstreaktype].itemindex);
         if (isdefined(momentum) && isdefined(var_36f2d8a2) && momentum >= var_36f2d8a2) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace killstreakrules/killstreakrules_shared

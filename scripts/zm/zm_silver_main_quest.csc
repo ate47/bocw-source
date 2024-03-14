@@ -439,7 +439,7 @@ function function_9d39f661(localclientnum) {
     level endon(#"hash_3bbf8d3383f43cdf");
     audio::playloopat("zmb_silver_mq_6_alarm_2_lp", (-144, 2019, -170));
     wait(0.75);
-    while (1) {
+    while (true) {
         playsound(localclientnum, #"hash_1a12eda2416ca0a", (565, 2137, -178));
         wait(2);
     }

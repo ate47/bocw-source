@@ -147,7 +147,7 @@ function private function_d58c97c8() {
 // Size: 0x1b8
 function private function_348283c9() {
     level endon(#"stop_blocker_think");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"zombie_board_tear", #"hash_5cfbbb6ee8378665");
         if (waitresult._notify === #"hash_5cfbbb6ee8378665") {
@@ -172,7 +172,7 @@ function private function_348283c9() {
 // Size: 0x168
 function private function_55ce3493() {
     level endon(#"stop_blocker_think");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"hash_1748b3e6967cf7aa", #"hash_45aa77702fef26f4");
         var_1b8b64ca = self.attack_spots_taken.size;

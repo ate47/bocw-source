@@ -169,7 +169,7 @@ function function_defedffe() {
 function function_a64f8c66() {
     level endon(#"hash_3b34b6b1b8c07116");
     self endon(#"death");
-    while (1) {
+    while (true) {
         a_players = array::get_all_closest(self.origin, function_a1ef346b(), undefined, undefined, 150);
         foreach (player in a_players) {
             player function_bc82f900(#"damage_light");
@@ -227,7 +227,7 @@ function function_42b23f00() {
     level endon(#"hash_3b34b6b1b8c07116");
     self endon(#"death");
     var_71e5d64 = 0;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         if (zm_utility::is_player_valid(waitresult.activator)) {
@@ -420,20 +420,20 @@ function function_1c058bc5(weapon, means_of_death) {
 // Size: 0xc0
 function function_313be247(attacker, weapon, means_of_death) {
     if (!isdefined(attacker) || !isdefined(weapon) || !isdefined(means_of_death)) {
-        return 0;
+        return false;
     }
     if (means_of_death != "MOD_AAT") {
-        return 0;
+        return false;
     }
     aat_name = attacker aat::getaatonweapon(weapon, 1);
     if (!isdefined(aat_name)) {
-        return 0;
+        return false;
     }
     var_4f0c684c = zm_aat::function_296cde87(aat_name);
     if (var_4f0c684c !== "ammomod_napalmburst") {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_8a08914c/namespace_cc6c4729
@@ -466,23 +466,23 @@ function on_item_pickup(params) {
         level thread function_f9447d48(self);
         level clientfield::set("" + #"hash_45b04d88564a1cd", 0);
         array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_tungsten_darkaether_artifact_1");
-        return;
+        break;
     case #"item_zmquest_tungsten_ww_quest_part_b":
         level flag::set(#"hash_377409bcba0102a7");
         level zm_ui_inventory::function_7df6bb60(#"hash_2d5a3eb1a97e70e5", 1);
         level thread function_75bec488(self);
         array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_tungsten_darkaether_artifact_2");
-        return;
+        break;
     case #"item_zmquest_tungsten_ww_quest_part_c":
         level flag::set(#"hash_6eaa2d1db393bd70");
         level zm_ui_inventory::function_7df6bb60(#"hash_2d5a3db1a97e6f32", 1);
         level thread function_da57dd7c(self);
         array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_tungsten_darkaether_artifact_3");
-        return;
+        break;
     case #"ww_axe_gun_melee_t9_item_sr":
         level thread ww_pickup_vo(params.item, self);
         array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_tungsten_requiem_artifact_1");
-        return;
+        break;
     }
 }
 
@@ -838,7 +838,7 @@ function function_904d21fd() {
         if (player.sessionstate === "spectator") {
             continue;
         }
-        while (1) {
+        while (true) {
             if (!isdefined(player)) {
                 break;
             }
@@ -907,17 +907,17 @@ function cmd(cmd) {
             if (isdefined(var_1f3c6d19.var_f863218)) {
                 var_1f3c6d19.var_f863218 delete();
             }
-            return;
+            break;
         case #"hash_649638ef22bf3bf1":
             level set(#"hash_377409bcba0102a7");
             level function_7df6bb60(#"hash_2d5a3eb1a97e70e5", 1);
             level thread function_75bec488(self);
-            return;
+            break;
         case #"hash_649637ef22bf3a3e":
             level set(#"hash_6eaa2d1db393bd70");
             level function_7df6bb60(#"hash_2d5a3db1a97e6f32", 1);
             level thread function_da57dd7c(self);
-            return;
+            break;
         }
     #/
 }

@@ -409,9 +409,9 @@ function private mechzgrenadeservice(entity) {
 // Size: 0x30
 function private function_424646a8(grenade, mechz) {
     if (grenade.owner === mechz) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -471,16 +471,16 @@ function private mechzberserkknockdownservice(entity) {
 // Size: 0x178
 function private function_c01bcef(zombie, mechz, *var_6c6317b9) {
     if (!isdefined(mechz) || !isdefined(var_6c6317b9)) {
-        return 0;
+        return false;
     }
     if (mechz.knockdown === 1) {
-        return 0;
+        return false;
     }
     if (mechz.archetype !== #"zombie") {
-        return 0;
+        return false;
     }
     if (mechz.var_33fb0350 === 1) {
-        return 0;
+        return false;
     }
     origin = var_6c6317b9.origin;
     var_3c08a493 = anglestoforward(var_6c6317b9.angles);
@@ -491,9 +491,9 @@ function private function_c01bcef(zombie, mechz, *var_6c6317b9) {
     var_58877074 = vectornormalize(var_58877074);
     var_704c3d16 = vectordot(var_58877074, var_660d1fec);
     if (var_704c3d16 < 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -502,19 +502,19 @@ function private function_c01bcef(zombie, mechz, *var_6c6317b9) {
 // Size: 0xca
 function mechzshouldmelee(entity) {
     if (!isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     if (distancesquared(entity.origin, entity.enemy.origin) > 12544) {
-        return 0;
+        return false;
     }
     if (is_true(entity.enemy.usingvehicle)) {
-        return 1;
+        return true;
     }
     yaw = abs(zombie_utility::getyawtoenemy());
     if (yaw > 45) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -523,9 +523,9 @@ function mechzshouldmelee(entity) {
 // Size: 0x28
 function private mechzshouldshowpain(entity) {
     if (entity.var_bc17791c === 1) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -534,9 +534,9 @@ function private mechzshouldshowpain(entity) {
 // Size: 0x28
 function private mechzshouldshowjetpackpain(entity) {
     if (entity.var_97601164 === 1) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -545,9 +545,9 @@ function private mechzshouldshowjetpackpain(entity) {
 // Size: 0x2e
 function private mechzenemyinaim(entity) {
     if (entity namespace_8681f0e2::function_923942a7()) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -564,32 +564,32 @@ function private mechzenemynotinaim(entity) {
 // Size: 0x21e
 function mechzshouldshootgrenade(entity) {
     if (entity.var_72d96058 === 1) {
-        return 0;
+        return false;
     }
     if (entity.var_d03c4664 !== 1) {
-        return 0;
+        return false;
     }
     if (is_true(entity.var_10552fac)) {
-        return 0;
+        return false;
     }
     if (entity.var_9329a57c > gettime()) {
-        return 0;
+        return false;
     }
     if (is_true(self.ignoreall)) {
-        return 0;
+        return false;
     }
     if (isdefined(self.var_bfd4c4c4) || isdefined(self.var_6da37a9a)) {
-        return 0;
+        return false;
     }
     enemy = zm_ai_utility::function_825317c(entity);
     if (!isdefined(enemy)) {
-        return 0;
+        return false;
     }
     if (!isdefined(entity.var_a0e09fde) || entity.var_a0e09fde >= 1) {
-        return 0;
+        return false;
     }
     if (entity.var_856a7b8a >= 3) {
-        return 0;
+        return false;
     }
     if (!entity cansee(enemy)) {
         var_b51839b1 = 0;
@@ -598,17 +598,17 @@ function mechzshouldshootgrenade(entity) {
             var_b51839b1 = entity cansee(vehicle);
         }
         if (!var_b51839b1) {
-            return 0;
+            return false;
         }
     }
     dist_sq = distancesquared(entity.origin, enemy.origin);
     if (dist_sq < 62500 || dist_sq > 1440000) {
-        return 0;
+        return false;
     }
     if (!mechzenemyinaim(self)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -618,40 +618,40 @@ function mechzshouldshootgrenade(entity) {
 function mechzshouldshootflame(entity) {
     /#
         if (is_true(entity.var_7b41c3ce)) {
-            return 1;
+            return true;
         }
     #/
     if (entity.var_72d96058 === 1) {
-        return 0;
+        return false;
     }
     if (is_true(entity.var_492622ad) && gettime() < entity.var_b25ccf7) {
-        return 1;
+        return true;
     }
     enemy = is_true(entity.var_1fa24724) ? entity.enemy : entity.favoriteenemy;
     if (!isdefined(enemy)) {
-        return 0;
+        return false;
     }
     if (entity.var_492622ad === 1 && entity.var_b25ccf7 <= gettime()) {
-        return 0;
+        return false;
     }
     if (entity.var_e05f2c0a > gettime() || entity.var_9329a57c > gettime()) {
-        return 0;
+        return false;
     }
     if (!entity namespace_8681f0e2::function_923942a7(26)) {
-        return 0;
+        return false;
     }
     var_52ef606d = !is_true(entity.var_1fa24724) && isdefined(enemy) && abs(entity.origin[2] - enemy.origin[2]) < 60;
     dist_sq = distancesquared(entity.origin, enemy.origin);
     if (var_52ef606d && dist_sq < 9216 || dist_sq > 90000) {
-        return 0;
+        return false;
     }
     in_vehicle = isplayer(enemy) && enemy isinvehicle();
     can_see = bullettracepassed(entity.origin + vectorscale((0, 0, 1), 36), enemy.origin + vectorscale((0, 0, 1), 36), 0, undefined);
     if (!can_see && !in_vehicle) {
         entity.var_e05f2c0a = gettime() + 2500;
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -660,20 +660,20 @@ function mechzshouldshootflame(entity) {
 // Size: 0xb4
 function private mechzshouldshootflamesweep(entity) {
     if (entity.var_72d96058 === 1) {
-        return 0;
+        return false;
     }
     if (!mechzshouldshootflame(entity)) {
-        return 0;
+        return false;
     }
     if (randomint(100) > 10) {
-        return 0;
+        return false;
     }
     var_39156533 = 0;
     players = getplayers(undefined, entity.origin, 100);
     if (players.size < 2) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -682,12 +682,12 @@ function private mechzshouldshootflamesweep(entity) {
 // Size: 0xa2
 function private mechzshouldturnberserk(entity) {
     if (entity.var_72d96058 === 1 && entity.var_5eca4346 !== 1) {
-        return 1;
+        return true;
     }
     if (is_true(entity.var_10552fac) && !is_true(entity.var_72d96058) && !is_true(entity.var_5eca4346)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -696,9 +696,9 @@ function private mechzshouldturnberserk(entity) {
 // Size: 0x2e
 function private mechzshouldstumble(entity) {
     if (is_true(entity.stumble)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -707,13 +707,13 @@ function private mechzshouldstumble(entity) {
 // Size: 0x80
 function mechzisinsafezone(entity) {
     if (!isdefined(entity.favoriteenemy)) {
-        return 0;
+        return false;
     }
     distsqr = distancesquared(entity.origin, entity.favoriteenemy.origin);
     if (distsqr < 360000 && distsqr > 50625) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -723,12 +723,12 @@ function mechzisinsafezone(entity) {
 function mechzshouldturninplacebeforeidle(entity) {
     enemy = is_true(entity.var_1fa24724) ? entity.enemy : entity.favoriteenemy;
     if (!isdefined(enemy)) {
-        return 0;
+        return false;
     }
     if (entity namespace_8681f0e2::function_923942a7(26)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -834,7 +834,7 @@ function function_d58e0db5(entity, *asmstatename) {
 // Size: 0x1e
 function private mechzpreptoshootgrenadestart(entity) {
     entity.blindaim = 1;
-    return 1;
+    return true;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -843,7 +843,7 @@ function private mechzpreptoshootgrenadestart(entity) {
 // Size: 0x1a
 function private mechzpreptoshootgrenadesterminate(entity) {
     entity.blindaim = 0;
-    return 1;
+    return true;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -856,7 +856,7 @@ function private mechzshootgrenadestart(entity) {
         entity.var_a8e56aa3 = gettime() + 6000;
     }
     entity.blindaim = 1;
-    return 1;
+    return true;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -871,7 +871,7 @@ function private mechzshootgrenadeterminate(entity) {
         [[ entity.var_9d92b55a ]](entity);
     }
     entity.var_9329a57c = gettime() + 2000;
-    return 1;
+    return true;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -1205,7 +1205,7 @@ function deleteondeath(object) {
 // Size: 0x76
 function private function_769e329() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         if (isdefined(self.favoriteenemy)) {
             if (self.var_1df3d140 istouching(self.favoriteenemy)) {
                 /#
@@ -1496,7 +1496,7 @@ function function_923942a7(var_a460aef2, aim_tag, var_40f25562 = 0.5) {
     var_3c08a493 = anglestoforward(angles);
     enemy = is_true(self.var_1fa24724) ? self.enemy : self.favoriteenemy;
     if (!isdefined(enemy)) {
-        return 0;
+        return false;
     }
     var_e14511cb = enemy.origin - origin;
     var_660d1fec = (var_e14511cb[0], var_e14511cb[1], 0);
@@ -1505,13 +1505,13 @@ function function_923942a7(var_a460aef2, aim_tag, var_40f25562 = 0.5) {
     var_58877074 = vectornormalize(var_58877074);
     var_704c3d16 = vectordot(var_58877074, var_660d1fec);
     if (var_704c3d16 < var_40f25562) {
-        return 0;
+        return false;
     }
     var_529624a4 = vectortoangles(var_e14511cb);
     if (!is_true(self.var_1fa24724) && abs(angleclamp180(var_529624a4[0])) > 60) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_8681f0e2/mechz
@@ -1599,7 +1599,7 @@ function function_53f176ae(eventstruct) {
 function function_fb451f53() {
     self endon(#"death");
     str_notify = "ambient";
-    while (1) {
+    while (true) {
         min_wait = 2;
         max_wait = 5;
         if (is_true(self.var_72d96058) || is_true(self.var_e8f3d773)) {

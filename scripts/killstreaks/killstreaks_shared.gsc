@@ -212,14 +212,14 @@ function private function_e48aca4d(type, bundle, weapon, vehicle, killstreak_use
     switch (bundle.var_c36eb69b) {
     case #"none":
         level.killstreaks[type].teamkillpenaltyscale = 0;
-        return;
+        break;
     case #"hash_5a6d83d54a8fb299":
         level.killstreaks[type].teamkillpenaltyscale = level.teamkillreducedpenalty;
-        return;
+        break;
     case #"default":
     default:
         level.killstreaks[type].teamkillpenaltyscale = 1;
-        return;
+        break;
     }
 }
 
@@ -571,11 +571,11 @@ function give_if_streak_count_matches(index, killstreak, streakcount) {
             self give(get_by_menu_name(killstreak), streakcount);
             self.pers[#"killstreaksearnedthiskillstreak"] = index + 1;
             profileNamedStop();
-            return 1;
+            return true;
         }
     }
     profileNamedStop();
-    return 0;
+    return false;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -669,13 +669,13 @@ function remove_oldest() {
 function give_internal(killstreaktype, *do_not_update_death_count, noxp, tobottom) {
     self.just_given_new_inventory_killstreak = undefined;
     if (level.gameended) {
-        return 0;
+        return false;
     }
     if (!util::is_killstreaks_enabled()) {
-        return 0;
+        return false;
     }
     if (!isdefined(level.killstreaks[do_not_update_death_count])) {
-        return 0;
+        return false;
     }
     if (!isdefined(self.pers[#"killstreaks"])) {
         self.pers[#"killstreaks"] = [];
@@ -759,7 +759,7 @@ function give_internal(killstreaktype, *do_not_update_death_count, noxp, tobotto
         self.var_58d669ff[do_not_update_death_count] = [];
     }
     array::push(self.var_58d669ff[do_not_update_death_count], gettime(), self.var_58d669ff[do_not_update_death_count].size);
-    return 1;
+    return true;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -797,10 +797,10 @@ function has_equipped() {
     currentweapon = self getcurrentweapon();
     foreach (killstreak in level.killstreaks) {
         if (killstreak.weapon == currentweapon) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -915,7 +915,7 @@ function give_weapon(killstreaktype, usestoredammo) {
 // Size: 0x260
 function activate_next(do_not_update_death_count) {
     if (level.gameended) {
-        return 0;
+        return false;
     }
     if (is_true(level.usingmomentum)) {
         self setinventoryweapon(level.weaponnone);
@@ -923,11 +923,11 @@ function activate_next(do_not_update_death_count) {
         self setactionslot(4, "");
     }
     if (!isdefined(self.pers[#"killstreaks"]) || self.pers[#"killstreaks"].size == 0) {
-        return 0;
+        return false;
     }
     killstreaktype = self.pers[#"killstreaks"][self.pers[#"killstreaks"].size - 1];
     if (!isdefined(level.killstreaks[killstreaktype])) {
-        return 0;
+        return false;
     }
     weapon = level.killstreaks[killstreaktype].weapon;
     waitframe(1);
@@ -945,7 +945,7 @@ function activate_next(do_not_update_death_count) {
     if (!isdefined(do_not_update_death_count) || do_not_update_death_count != 0) {
         self.pers["killstreakItemDeathCount" + killstreaktype] = self.deathcount;
     }
-    return 1;
+    return true;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -1059,10 +1059,10 @@ function function_1f96e8f8(killstreakweapon) {
 function has_killstreak_in_class(killstreakmenuname) {
     foreach (equippedkillstreak in self.killstreak) {
         if (equippedkillstreak == killstreakmenuname) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -1072,14 +1072,14 @@ function has_killstreak_in_class(killstreakmenuname) {
 function has_killstreak(killstreak) {
     player = self;
     if (!isdefined(killstreak) || !isdefined(player.pers[#"killstreaks"])) {
-        return 0;
+        return false;
     }
     for (i = 0; i < self.pers[#"killstreaks"].size; i++) {
         if (player.pers[#"killstreaks"][i] == killstreak) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -1115,7 +1115,7 @@ function recordkillstreakbegindirect(killstreak, recordstreakindex) {
 // Size: 0x354
 function remove_when_done(killstreaktype, *haskillstreakbeenused, isfrominventory) {
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"killstreak_done");
         if (waitresult.var_d3413870 == haskillstreakbeenused) {
@@ -1554,22 +1554,22 @@ function on_offhand_fire(params) {
 // Size: 0xe8
 function should_delay_killstreak(killstreaktype) {
     if (!isdefined(level.starttime)) {
-        return 0;
+        return false;
     }
     if (level.roundstartkillstreakdelay < float(gettime() - level.starttime - level.discardtime) / 1000) {
-        return 0;
+        return false;
     }
     if (!is_delayable_killstreak(killstreaktype)) {
-        return 0;
+        return false;
     }
     killstreakweapon = get_killstreak_weapon(killstreaktype);
     if (killstreakweapon.iscarriedkillstreak) {
-        return 0;
+        return false;
     }
     if (util::isfirstround() || util::isoneround()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -1578,9 +1578,9 @@ function should_delay_killstreak(killstreaktype) {
 // Size: 0x50
 function is_delayable_killstreak(killstreaktype) {
     if (isdefined(level.killstreaks[killstreaktype]) && is_true(level.killstreaks[killstreaktype].delaystreak)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -1658,13 +1658,13 @@ function should_give_killstreak(weapon) {
     rootweapon = isdefined(weapon) && isdefined(weapon.rootweapon) ? weapon.rootweapon : weapon;
     if (getdvarint(#"scr_allow_killstreak_building", 0) == 0) {
         if (function_c5927b3f(rootweapon)) {
-            return 1;
+            return true;
         }
         if (is_weapon_associated_with_killstreak(rootweapon)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -1692,7 +1692,7 @@ function player_killstreak_threat_tracking(killstreaktype, var_bdb26ff0) {
     #/
     self endon(#"death", #"delete", #"leaving");
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         if (!isdefined(self.owner)) {
             return;
         }
@@ -1767,10 +1767,10 @@ function function_ece736e7(player, killstreak) {
 function function_c0c60634(weapon) {
     if (isdefined(weapon.var_95b0150d)) {
         if (weapon.var_95b0150d + int(10 * 1000) >= gettime()) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -1943,7 +1943,7 @@ function monitordamage(killstreak_ref, max_health, destroyed_callback, low_healt
     self setcandamage(1);
     self setup_health(killstreak_ref, max_health, low_health);
     self.damagetaken = 0;
-    while (1) {
+    while (true) {
         weapon_damage = undefined;
         waitresult = undefined;
         waitresult = self waittill(#"damage");
@@ -2302,12 +2302,12 @@ function waittillemp(onempdcallback, arg) {
 function is_killstreak_weapon_assist_allowed(weapon) {
     killstreak = get_killstreak_for_weapon(weapon);
     if (!isdefined(killstreak)) {
-        return 0;
+        return false;
     }
     if (is_true(level.killstreaks[killstreak].script_bundle.var_c4d802f4)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -2317,16 +2317,16 @@ function is_killstreak_weapon_assist_allowed(weapon) {
 function should_override_entity_camera_in_demo(player, weapon) {
     killstreak = get_killstreak_for_weapon(weapon);
     if (!isdefined(killstreak)) {
-        return 0;
+        return false;
     }
     bundle = get_script_bundle(killstreak);
     if (is_true(bundle.var_6648cf11)) {
-        return 1;
+        return true;
     }
     if (isdefined(player.remoteweapon) && is_true(player.remoteweapon.controlled)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -2517,15 +2517,15 @@ function function_50b430e0() {
 // Size: 0x66
 function is_interacting_with_object() {
     if (self iscarryingturret()) {
-        return 1;
+        return true;
     }
     if (is_true(self.isplanting)) {
-        return 1;
+        return true;
     }
     if (is_true(self.isdefusing)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -2808,9 +2808,9 @@ function missile_valid_target_check(missiletarget) {
     heli2forward_normal = vectornormalize(heli2forward);
     heli_dot_target = vectordot(heli2target_normal, heli2forward_normal);
     if (heli_dot_target >= level.heli_valid_target_cone) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -3057,12 +3057,12 @@ function getactivekillstreaks() {
 function function_55e3fed6(killstreaktype) {
     var_98037a32 = self.var_8b9b1bba[killstreaktype];
     if (!isdefined(var_98037a32)) {
-        return 0;
+        return false;
     }
     if (var_98037a32 > gettime()) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -3156,7 +3156,7 @@ function thermal_glow_enemies_only(enable) {
 // Size: 0x102
 function is_ricochet_protected(player) {
     if (!isdefined(player) || !isdefined(player.ricochet_protection)) {
-        return 0;
+        return false;
     }
     foreach (protection in player.ricochet_protection) {
         if (!isdefined(protection)) {
@@ -3166,10 +3166,10 @@ function is_ricochet_protected(player) {
             continue;
         }
         if (distancesquared(protection.origin, player.origin) < protection.distancesq) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -3331,24 +3331,24 @@ function function_ea21be29(killstreaktype, killstreak_weapon, player_died) {
         var_27dca80 = undefined;
         var_27dca80 = player waittill(#"loadout_given", #"disconnect");
         if (var_27dca80._notify !== "loadout_given") {
-            return 0;
+            return false;
         }
         if (isdefined(player) && var_38665394 !== player getteam()) {
-            return 0;
+            return false;
         }
     }
     if (isdefined(player)) {
         if (!isdefined(killstreak_weapon)) {
-            return 0;
+            return false;
         }
         if (player getammocount(killstreak_weapon) > 0) {
-            return 0;
+            return false;
         }
         var_f66fab06 = player killstreakrules::function_d9f8f32b(killstreaktype);
         player thread killstreakrules::function_9f635a5(var_f66fab06, killstreaktype);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -3459,7 +3459,7 @@ function function_47492133() {
     /#
         assert(isdefined(self.owner));
     #/
-    while (1) {
+    while (true) {
         var_2226e3f0 = self.killstreakendtime;
         if (!is_true(level.var_e80a117f)) {
             level waittill(#"esports_game_paused");
@@ -3511,7 +3511,7 @@ function debug_ricochet_protection() {
     /#
         debug_wait = 0.5;
         debug_frames = int(debug_wait / float(function_60d95f53()) / 1000) + 1;
-        while (1) {
+        while (true) {
             if (getdvarint(#"scr_ricochet_protection_debug", 0) == 0) {
                 wait(2);
                 continue;

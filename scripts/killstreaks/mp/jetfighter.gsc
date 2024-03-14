@@ -82,10 +82,10 @@ function function_6384fa58() {
 function usekillstreak(*hardpointtype) {
     killstreak_id = self killstreakrules::killstreakstart("jetfighter", self.team, undefined, 1);
     if (killstreak_id == -1) {
-        return 0;
+        return false;
     }
     self thread function_4b3b25af(killstreak_id);
-    return 1;
+    return true;
 }
 
 // Namespace jetfighter/jetfighter
@@ -450,12 +450,12 @@ function private function_3fbf2154(var_593a7842 = 1) {
                     if (var_593a7842) {
                         self thread function_593a7842(var_ce2c18d3);
                     }
-                    return 1;
+                    return true;
                 }
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace jetfighter/jetfighter

@@ -245,13 +245,13 @@ function function_379191c(name) {
     level.doa.var_a77e4601 = [];
     challenge = function_1a010742(name);
     if (challenge == 0) {
-        return 0;
+        return false;
     }
     if (function_d53627e4(challenge)) {
-        return 0;
+        return false;
     }
     level thread function_93e7ee52(challenge, name);
-    return 1;
+    return true;
 }
 
 // Namespace namespace_77eccc4f/namespace_77eccc4f
@@ -598,10 +598,10 @@ function function_c6834d32() {
             }
         }
     #/
-    while (1) {
+    while (true) {
         function_1eaaceab(var_f89c12f1);
         if (var_f89c12f1.size == 0) {
-            return;
+            break;
         }
         wait(2);
     }

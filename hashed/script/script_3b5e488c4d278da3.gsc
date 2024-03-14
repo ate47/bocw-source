@@ -172,7 +172,7 @@ function function_e71942eb() {
 function function_6f65e552() {
     self endon(#"death", #"disconnect");
     var_4531f22a = 0;
-    while (1) {
+    while (true) {
         if (var_4531f22a >= 3) {
             return;
         }
@@ -279,7 +279,7 @@ function function_bf79a643() {
 // Checksum 0x701a859c, Offset: 0x18a8
 // Size: 0x38
 function function_128f3b6b() {
-    while (1) {
+    while (true) {
         level waittill(#"end_of_round");
         function_bf79a643();
     }
@@ -292,7 +292,7 @@ function function_128f3b6b() {
 function private function_dd028fcb(e_player) {
     var_d49d10b0 = e_player zm_loadout::get_player_lethal_grenade();
     self sethintstring(#"hash_302511d2e9a9429b");
-    return 1;
+    return true;
 }
 
 // Namespace namespace_3bb7295f/namespace_3bb7295f
@@ -302,7 +302,7 @@ function private function_dd028fcb(e_player) {
 function private function_608b90b4() {
     self endon(#"end_game", #"death");
     self.var_e95e6830 = 5;
-    while (1) {
+    while (true) {
         s_notify = undefined;
         s_notify = self waittill(#"trigger_activated");
         e_player = s_notify.e_who;
@@ -490,7 +490,7 @@ function function_36043197() {
     self endon(#"death");
     var_47b592ad = randomfloatrange(1250, 7000);
     level flag::wait_till("gameplay_started");
-    while (1) {
+    while (true) {
         players = function_a1ef346b(#"allies", self.origin, 750);
         if (players.size === 0) {
             self.spawn_time = gettime();
@@ -565,7 +565,7 @@ function function_a9114898(origin, angles) {
 // Size: 0x1da
 function function_dc8f034(*snowman) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
         self function_96244838(waitresult.weapon, waitresult.attacker);
@@ -604,7 +604,7 @@ function function_856d0105() {
 // Size: 0x1ac
 function function_3a268da9(*params) {
     self endon(#"endgame");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"hash_4a4f23c60bbb7f6f");
         if (waitresult.itemname === "item_zm_ltm_holiday_gift_01" || waitresult.itemname === "item_zm_ltm_holiday_gift_02" || waitresult.itemname === "item_zm_ltm_holiday_gift_03") {

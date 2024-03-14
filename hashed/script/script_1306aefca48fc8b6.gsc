@@ -229,17 +229,17 @@ function function_a4c07e18(name) {
         setdvar(#"hash_4c2ff1f11662c879", var_5d3143fb);
         setdvar(#"hash_788fb3bfb03132f", gridsize);
         function_1a3f9fe1(1);
-        return;
+        break;
     case #"cellar":
         setdvar(#"hash_4c2ff1f11662c879", var_5d3143fb);
         setdvar(#"hash_788fb3bfb03132f", gridsize);
         function_1a3f9fe1();
-        return;
+        break;
     default:
         setdvar(#"hash_4c2ff1f11662c879", var_5d3143fb);
         setdvar(#"hash_788fb3bfb03132f", gridsize);
         function_9df20e11();
-        return;
+        break;
     }
 }
 
@@ -277,7 +277,7 @@ function function_18276de3(name = "") {
         level.doa.var_3d1f118d[#"floor"][#"hash_44d5576d6cc10d99"][7] = {#weight:1, #scale:1, #yaw_offset:0, #model:#"hash_7bc2d470b40f99cd"};
         level.doa.var_3d1f118d[#"floor"][#"hash_44d5576d6cc10d99"][8] = {#weight:1, #scale:1, #yaw_offset:0, #model:#"hash_3c37b2ed858227aa"};
         level.doa.var_3d1f118d[#"floor"][#"hash_44d5576d6cc10d99"][9] = {#weight:1, #scale:0.6, #yaw_offset:90, #model:#"hash_22d4a79eb4682aaf"};
-        return;
+        break;
     }
 }
 
@@ -290,10 +290,10 @@ function function_ed9ae881(name) {
     case #"jungle_1_dungeon4":
     case #"cellar":
         level.var_84c76431 = &function_9a834e27;
-        return;
+        break;
     default:
         level.var_84c76431 = &function_d5a0313a;
-        return;
+        break;
     }
 }
 

@@ -44,16 +44,16 @@ function function_9bfe9255(var_f75a02ea, mode) {
 // Size: 0x7e
 function function_b9f8bbd9(character_index, session_mode, *var_3f0e790b) {
     if (var_3f0e790b == 4) {
-        return 0;
+        return false;
     }
     if (!function_f4bf7e3f(session_mode, var_3f0e790b)) {
-        return 0;
+        return false;
     }
     fields = getcharacterfields(session_mode, var_3f0e790b);
     if (!isdefined(fields)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace frontend/frontend
@@ -805,7 +805,7 @@ function function_ee181cbd() {
         self notify("operator_missions");
         self endon("operator_missions");
         self endon(#"death");
-        while (1) {
+        while (true) {
             if (getdvarint(#"scr_show_shot_info_for_igcs", 0)) {
                 circle(self.origin, 10, (1, 0, 0));
             }
@@ -821,13 +821,13 @@ function function_ee181cbd() {
 function blackscreen_watcher() {
     blackscreenuimodel = getuimodel(function_5f72e972(#"hash_6067a54812de21c5"), "hideWorldForStreamer");
     setuimodelvalue(blackscreenuimodel, 1);
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"streamer_change");
         var_d0b01271 = waitresult.var_d0b01271;
         setuimodelvalue(blackscreenuimodel, 1);
         wait(0.1);
-        while (1) {
+        while (true) {
             charready = 1;
             if (isdefined(var_d0b01271)) {
                 charready = [[ var_d0b01271 ]]->is_streamed();
@@ -865,7 +865,7 @@ function handle_inspect_player(localclientnum, menu_name) {
     level thread scene::play(#"scene_frontend_t9_lobby_inspection_camera");
     force_update = 1;
     var_206eea38 = undefined;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"inspect_player", #"lobby_change");
         var_206eea38 = isdefined(waitresult.xuid) ? waitresult.xuid : var_206eea38;
@@ -930,7 +930,7 @@ function entityspawned(*localclientnum) {
 // Size: 0x208
 function function_90646a7f(localclientnum) {
     /#
-        while (1) {
+        while (true) {
             ct_cmd = getdvarint(#"hash_52d9845c30e27ace", 0);
             if (ct_cmd == 0) {
                 wait(0.25);
@@ -1142,7 +1142,7 @@ function function_db3c4c69(localclientnum) {
         var_ae05dc1b = [1:"<unknown string>", 0:"<unknown string>"];
         weapon_name = "<unknown string>";
         var_f7a528f2 = "<unknown string>";
-        while (1) {
+        while (true) {
             wait(0.1);
             if (getdvarstring(#"hash_1311d7636a782655", weapon_name) != weapon_name) {
                 weapon_name = getdvarstring(#"hash_1311d7636a782655");
@@ -1806,7 +1806,7 @@ function function_c5aa56cd(localclientnum, var_b9c520c2 = 0) {
     if (!var_b9c520c2) {
         function_90cad834(localclientnum, 0, undefined, undefined, [[ level.var_1c43dd3e ]]->function_1d4afc32());
     }
-    for (var_7114bc8c = 1; 1; var_7114bc8c = 0) {
+    for (var_7114bc8c = 1; true; var_7114bc8c = 0) {
         var_bec52aca = undefined;
         var_bec52aca = level waittill(#"hash_cf870c6cd8a0798");
         character_index = var_bec52aca.character_index;
@@ -1972,7 +1972,7 @@ function function_c033e4cc(localclientnum, var_2451e8ac, var_87c045d1, index, va
 // Checksum 0x1895601, Offset: 0xaf90
 // Size: 0x1ce
 function function_7c77108d(localclientnum, &var_13ef9467, var_63aea26e) {
-    for (i = 0; 1; i++) {
+    for (i = 0; true; i++) {
         target = struct::get(var_63aea26e + i);
         if (!isdefined(target)) {
             break;
@@ -2020,7 +2020,7 @@ function function_8be87802(*localclientnum, character) {
 // Size: 0x210
 function function_45827126() {
     level endon(#"disconnect");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"hash_6f2435126950e914");
         if (waitresult.var_90d2372c && ![[ level.var_1c43dd3e ]]->function_1d4afc32()) {
@@ -2082,7 +2082,7 @@ function function_f00ff0c7(localclientnum) {
     var_c7581878 = max(function_7c77108d(localclientnum, level.var_6f1da91a[3], "lobby_player" + var_6aeec2ad + "_"), var_c7581878);
     level.var_90fa1c3e = var_c7581878;
     var_68a9a63c = [];
-    for (var_a23d0a8c = 1; 1; var_a23d0a8c = 0) {
+    for (var_a23d0a8c = 1; true; var_a23d0a8c = 0) {
         var_6b002e4d = var_68a9a63c.size;
         waitresult = undefined;
         waitresult = level waittill(#"lobby_change");
@@ -2175,9 +2175,9 @@ function function_f00ff0c7(localclientnum) {
 // Size: 0x100
 function function_7dd48d78(localclientnum) {
     if (namespace_d5a9ff55::is_current_menu(localclientnum, #"personalizecharacter") || namespace_d5a9ff55::is_current_menu(localclientnum, #"characterselection_operatorpreview") || namespace_d5a9ff55::is_current_menu(localclientnum, #"characterselectionmenu") || namespace_d5a9ff55::is_current_menu(localclientnum, "PressStart", #"hash_3cd2043398b34262") || namespace_d5a9ff55::is_current_menu(localclientnum, #"hash_6d7490313f58cc98") || namespace_d5a9ff55::is_current_menu(localclientnum, #"hash_362dbface51182d1")) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace frontend/frontend
@@ -2186,9 +2186,9 @@ function function_7dd48d78(localclientnum) {
 // Size: 0xe4
 function function_50806385(n_index) {
     if ((level.lastlobbystate === #"hash_7da890f2771b41af" || level.lastlobbystate === #"hash_3cd2043398b34262" || level.lastlobbystate === #"armory") && n_index != 0 || level.lastlobbystate === #"lobby_pose" || level.lastlobbystate === #"cdl_hub" || level.lastlobbystate === #"private_lobby_pose") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace frontend/frontend
@@ -2197,9 +2197,9 @@ function function_50806385(n_index) {
 // Size: 0xaa
 function function_34fbc01b() {
     if (level.lastlobbystate === #"lobby_pose" || level.lastlobbystate === #"private_lobby_pose" || level.lastlobbystate === #"hash_3cd2043398b34262" || level.lastlobbystate === #"armory" || level.lastlobbystate === #"hash_7da890f2771b41af") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace frontend/frontend
@@ -2208,9 +2208,9 @@ function function_34fbc01b() {
 // Size: 0x8a
 function function_4fd0d58e() {
     if (level.lastlobbystate === #"cdl_hub" || level.lastlobbystate === #"hash_3cd2043398b34262" || level.lastlobbystate === #"armory" || level.lastlobbystate === #"hash_7da890f2771b41af") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace frontend/frontend
@@ -2279,7 +2279,7 @@ function function_7104551f(localclientnum) {
 function function_c336d245(localclientnum) {
     self notify("16be33477320f66e");
     self endon("16be33477320f66e");
-    while (1) {
+    while (true) {
         s_waitresult = undefined;
         s_waitresult = level waittill(#"lobby_change");
         var_9032876b = function_7104551f(localclientnum);
@@ -3053,7 +3053,7 @@ function function_79ac87ac(clientnum) {
                 if (var_c1468bbf != 0) {
                     self.var_8bba7189 = 1;
                 }
-                return;
+                break;
             }
         }
     }
@@ -3127,7 +3127,7 @@ function function_97b4eb2c(localclientnum, *var_2a4208a4, str_state = #"lobby_po
     }
     v_source = struct::get(str_fxanim, "scriptbundlename").origin;
     b_first_time = 1;
-    while (1) {
+    while (true) {
         if (b_first_time) {
             n_timeout = randomfloatrange(var_58b22097, var_685248c4);
             level scene::stop(str_fxanim);
@@ -3160,7 +3160,7 @@ function function_24ae4ffb() {
 // Size: 0x120
 function function_4ff471c2() {
     level endon(#"disconnect");
-    while (1) {
+    while (true) {
         wait(randomintrange(7, 20));
         if (math::cointoss()) {
             n_amount = randomfloatrange(0, 1);
@@ -3212,7 +3212,7 @@ function function_49efdec6(localclientnum, *menu_name, str_state) {
         if (getdvarint(#"hash_499e959d9b7fbd41", 0) || getdvarint(#"hash_735ace6b22542a65", 0)) {
             level thread function_74553225();
         }
-        return;
+        break;
     case #"armory":
     case #"hash_1aed7f95cf841dfc":
     case #"scorestreaks":
@@ -3232,7 +3232,7 @@ function function_49efdec6(localclientnum, *menu_name, str_state) {
         if (getdvarint(#"hash_499e959d9b7fbd41", 0) || getdvarint(#"hash_735ace6b22542a65", 0)) {
             level thread function_74553225();
         }
-        return;
+        break;
     case #"private_lobby_pose":
     case #"cdl_hub":
     case #"lobby_pose":
@@ -3248,7 +3248,7 @@ function function_49efdec6(localclientnum, *menu_name, str_state) {
         if (getdvarint(#"hash_499e959d9b7fbd41", 0) || getdvarint(#"hash_735ace6b22542a65", 0)) {
             level thread function_9b7d8cf8(menu_name);
         }
-        return;
+        break;
     case #"cp_story":
     case #"cp_evidence":
     case #"hash_3262189f972fcd0e":
@@ -3265,7 +3265,7 @@ function function_49efdec6(localclientnum, *menu_name, str_state) {
         if (getdvarint(#"hash_499e959d9b7fbd41", 0) || getdvarint(#"hash_735ace6b22542a65", 0)) {
             level thread function_74553225();
         }
-        return;
+        break;
     }
 }
 
@@ -3304,7 +3304,7 @@ function function_2a0a1f1a() {
     var_a4d9975b = 1;
     var_58d3d289 = 6;
     var_69836136 = "amb_frontend_lobby_numers_";
-    while (1) {
+    while (true) {
         str_suffix = "high";
         if (math::cointoss()) {
             str_suffix = "low";
@@ -3340,7 +3340,7 @@ function function_9b7d8cf8(localclientnum) {
     level endon(#"hash_6d06f88e8d5ec88a");
     n_wait_min = 8;
     n_wait_max = 25;
-    while (1) {
+    while (true) {
         wait(randomintrange(n_wait_min, n_wait_max + 1));
         playsound(localclientnum, #"hash_7621a4e2fbef69c0", (0, 0, 0));
     }
@@ -3455,7 +3455,7 @@ function function_92136eb2(localclientnum, menu_name, str_scene, var_f647c5b2, v
         level endon(menu_name + "_closed");
     }
     var_1dfa126c = 1;
-    while (1) {
+    while (true) {
         player_data = function_25f808c9(localclientnum, 1);
         if (!isdefined(player_data)) {
             player_data = character_customization::function_3f5625f1(1, 2);

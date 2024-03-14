@@ -110,7 +110,7 @@ function function_d4a86caf() {
     self notify("599e6beca01ea7e4");
     self endon("599e6beca01ea7e4");
     level endon(#"game_over", #"hash_15db1223146bc923");
-    while (1) {
+    while (true) {
         wait(0.5);
         state = namespace_4dae815d::function_59a9cf1d();
         if (state == 0) {
@@ -252,7 +252,7 @@ function function_62ba9be4() {
     var_ba28dc68 = getanimlength(#"p8_fxanim_zm_towers_trap_blade_01_start_anim");
     var_fb7d52cb = getanimlength(#"p8_fxanim_zm_towers_trap_blade_01_loop_anim");
     var_3493b9e = getanimlength(#"p8_fxanim_zm_towers_trap_blade_01_end_anim");
-    while (1) {
+    while (true) {
         self.script_model stopanimscripted();
         self.state = 0;
         wait(8 + randomint(5));

@@ -179,7 +179,7 @@ function function_ce530cda(b_skipped, var_19e802fa) {
 function function_2b26d68b() {
     level.var_1aca2bc0 = array::random([0:#"hash_3785cb37a2950fc7"]);
     level flag::wait_till(#"hash_722723ce1e3aa7d2");
-    while (1) {
+    while (true) {
         n_players_in_zone = zm_zonemgr::get_players_in_zone(#"zone_burnt_forest_defend") + zm_zonemgr::get_players_in_zone(#"zone_napalm_strike") + zm_zonemgr::get_players_in_zone(#"zone_napalm_strike2");
         if (n_players_in_zone <= 0) {
             break;
@@ -270,12 +270,12 @@ function function_5c2866af(e_player) {
     if (isplayer(e_player)) {
         if (!level flag::get(#"hash_49e515cdcf4bb8db")) {
             self sethintstring(#"hash_f6abf835e03d2f8");
-            return 1;
+            return true;
         } else {
-            return 0;
+            return false;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_gold_ww_quest/zm_gold_ww_quest
@@ -339,14 +339,14 @@ function function_e594b500(e_player) {
     if (isplayer(e_player)) {
         if (level flag::get("power_on3")) {
             self sethintstring(#"hash_6244ec26d09cb15d");
-            return 1;
+            return true;
         } else {
             self sethintstring(#"zombie/need_power");
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_gold_ww_quest/zm_gold_ww_quest
@@ -355,7 +355,7 @@ function function_e594b500(e_player) {
 // Size: 0xd0
 function function_5d8ec91d() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
@@ -570,7 +570,7 @@ function function_d7d376af(var_77d81993) {
 // Size: 0xe0
 function function_a8890244(var_c8e10123) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (isplayer(waitresult.attacker) && (waitresult.mod === "MOD_PISTOL_BULLET" || waitresult.mod === "MOD_RIFLE_BULLET")) {
@@ -622,7 +622,7 @@ function function_912a9d36(var_77d81993) {
     level.var_82f3ced5 = function_b3e7ac72(#"hash_51fb38a0b1fe9402", self.origin + vectorscale((0, 1, 0), 0.5), self.angles, #"hash_4dd185fb6c5516d");
     n_index = 0;
     level.var_1221f4ab function_a6d637ea(var_77d81993, n_index);
-    while (1) {
+    while (true) {
         if (level flag::get(#"hash_23851dbffef298e1")) {
             n_index++;
             if (n_index < var_77d81993.size) {
@@ -683,7 +683,7 @@ function function_d196daba(e_computer, var_77d81993) {
     level clientfield::increment("" + #"hash_4bbd14acfb65a055");
     var_35fc9135 = struct::get("go_co_sc_lo", "targetname");
     playsoundatposition(#"hash_5cffc6d32c1f7512", var_35fc9135.origin);
-    while (1) {
+    while (true) {
         activator = e_computer zm_unitrigger::function_fac87205(#"hash_6766f9d6a024ee72", 64);
         activator function_bc82f900(#"zm_gold_interact_rumble_small");
         playsoundatposition(#"hash_3874b1f24664c38a", var_35fc9135.origin);
@@ -730,7 +730,7 @@ function function_2d9c01e4() {
 function function_e08e775b() {
     level endon(#"end_game");
     self endon(#"death");
-    while (1) {
+    while (true) {
         self waittill(#"trigger");
         level thread zm_gold_main_quest::function_b9a3fa11(#"hash_1e547dbf77f66df3", #"hash_1e548dbf77f68923", #"hash_1e5491bf77f68fef");
         zm_unitrigger::unregister_unitrigger(self.stub);
@@ -863,7 +863,7 @@ function function_a91dc42a() {
 // Size: 0x340
 function function_6de8eec4() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
@@ -949,20 +949,20 @@ function function_eeecf07f(params) {
                 array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_gold_requiem_artifact_1");
                 level flag::set(#"hash_722723ce1e3aa7d2");
                 namespace_1812c3f4::function_65937665();
-                return;
+                break;
             case #"hash_7dcd682c7e6f92d0":
                 level zm_ui_inventory::function_7df6bb60(#"hash_36dcff5d560ebdf2", 1);
                 level notify(#"hash_28bed8664988e37a");
                 level thread namespace_1812c3f4::function_84947a87();
-                return;
+                break;
             case #"item_zmintel_gold_requiem_artifact_2":
                 array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_gold_requiem_artifact_2");
-                return;
+                break;
             case #"hash_63707e896cd62344":
                 level zm_ui_inventory::function_7df6bb60(#"hash_36dcff5d560ebdf2", 2);
                 level notify(#"hash_2aa8a173854fca6e");
                 level zm_gold_main_quest::function_b9a3fa11(#"hash_343bcffdd018ad79", #"hash_343bdffdd018c8a9", #"hash_343be3fdd018cf75");
-                return;
+                break;
             case #"item_zmintel_gold_requiem_artifact_4":
                 array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_gold_requiem_artifact_4");
                 level notify(#"ww_pickup");
@@ -971,22 +971,22 @@ function function_eeecf07f(params) {
                 self zm_vo::function_d342796e(#"hash_62aba8e16a728e4");
                 wait(1);
                 level zm_gold_main_quest::function_b9a3fa11(#"hash_32525c195b5b2706", #"hash_32526c195b5b4236", #"hash_325270195b5b4902");
-                return;
+                break;
             case #"hash_11a77d8a90e047f1":
                 level zm_ui_inventory::function_7df6bb60(#"hash_4214918e34681e5a", 2);
                 level flag::set(#"hash_5b2f8d1b5f283517");
                 level zm_gold_main_quest::function_b9a3fa11(#"hash_30dd69dc943a1b0f", #"hash_30dd59dc9439ffdf", #"hash_30dd55dc9439f913");
-                return;
+                break;
             case #"hash_1caaa6e2c3bfe02":
                 level zm_ui_inventory::function_7df6bb60(#"hash_64ec4aaf73911014", 2);
                 level flag::set(#"hash_370e627ee07d49f4");
                 level zm_gold_main_quest::function_b9a3fa11(#"hash_6c5be047d95ba22f", #"hash_6c5bd047d95b86ff", #"hash_6c5bcc47d95b8033");
-                return;
+                break;
             case #"hash_322a19bc285c73d9":
                 level zm_ui_inventory::function_7df6bb60(#"hash_64ec4aaf73911014", 1);
                 level notify(#"hash_2d5cdf8748bf209d");
                 level zm_gold_main_quest::function_b9a3fa11(#"hash_4900551fa5339d35", #"hash_4900451fa5338205", #"hash_4900411fa5337b39");
-                return;
+                break;
             }
         }
     }
@@ -1047,15 +1047,15 @@ function cmd(cmd) {
         switch (cmd) {
         case #"hash_ddb7689e8dd7f4a":
             function_f6d9adbf();
-            return;
+            break;
         case #"hash_1ca6d4b25ce0e1a1":
             function_4291c822();
-            return;
+            break;
         case #"hash_48623dc89693d85a":
             function_c6769eb8();
-            return;
+            break;
         default:
-            return;
+            break;
         }
     #/
 }

@@ -56,34 +56,34 @@ function function_a92a93e9(v_location, v_angles, var_75b5cef0 = 0, n_delay = 1) 
         switch (level.var_b48509f9) {
         default:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_1", #attacker:player});
-            continue;
+            break;
         case 2:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_2", #attacker:player});
-            continue;
+            break;
         case 3:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_3", #attacker:player});
-            continue;
+            break;
         case 4:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_4", #attacker:player});
-            continue;
+            break;
         case 5:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_5", #attacker:player});
-            continue;
+            break;
         case 6:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_6", #attacker:player});
-            continue;
+            break;
         case 7:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_7", #attacker:player});
-            continue;
+            break;
         case 8:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_8", #attacker:player});
-            continue;
+            break;
         case 9:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_9", #attacker:player});
-            continue;
+            break;
         case 10:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_10", #attacker:player});
-            continue;
+            break;
         }
     }
 }
@@ -139,7 +139,7 @@ function function_bdd95292(struct) {
 function function_9086861a() {
     level endon(#"game_ended");
     self endon(#"death");
-    while (1) {
+    while (true) {
         var_79e2063c = 0;
         foreach (trigger in self.var_9825cc78) {
             if (isdefined(trigger)) {
@@ -469,7 +469,7 @@ function function_80bbb50b(chest, trigger) {
     lasttime = gettime();
     time = gettime();
     delta = time - lasttime;
-    while (1) {
+    while (true) {
         lasttime = time;
         time = gettime();
         delta = time - lasttime;
@@ -558,7 +558,7 @@ function init_devgui() {
 // Size: 0x13e
 function function_578918d1() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(#"hash_316815357b0bca3a", 0)) {
                 setdvar(#"hash_316815357b0bca3a", 0);
                 player = getplayers()[0];

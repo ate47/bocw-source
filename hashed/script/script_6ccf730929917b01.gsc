@@ -240,15 +240,15 @@ function private function_f08e8278(data, trace, var_a74a4e75) {
     function_975e779f(data);
     var_2327a6ed = trace[#"position"] - data.center;
     if (abs(vectordot(var_2327a6ed, data.axis.forward)) > 6 || vectordot(var_a74a4e75, data.axis.forward) > -0.17) {
-        return 0;
+        return false;
     }
     if (abs(vectordot(var_2327a6ed, data.axis.right)) > data.width) {
-        return 0;
+        return false;
     }
     if (abs(vectordot(var_2327a6ed, data.axis.up)) > data.height) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_93648050/namespace_93648050
@@ -259,7 +259,7 @@ function private function_d0acce99(data, trace, var_a74a4e75) {
     function_975e779f(data);
     var_2327a6ed = trace[#"position"] - data.center;
     if (abs(vectordot(var_2327a6ed, data.axis.forward)) > 6 || vectordot(var_a74a4e75, data.axis.forward) > -0.17) {
-        return 0;
+        return false;
     }
     return lengthsquared(var_2327a6ed) < data.radius * data.radius;
 }
@@ -375,10 +375,10 @@ function private function_185fc34e(eye, var_a74a4e75) {
     foreach (data in level.var_93648050.objects) {
         origin = [[ data.var_f03d5bb1 ]](data);
         if (distancesquared(eye, origin) < data.max_dist * data.max_dist && vectordot(var_a74a4e75, origin - eye) > 0) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_93648050/namespace_93648050

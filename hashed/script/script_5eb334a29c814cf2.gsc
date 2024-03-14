@@ -283,18 +283,18 @@ function private function_18227767(cmd) {
                 var_49e9776e = !is_true(ai.var_fee1e0f4);
                 ai function_8996b315(var_49e9776e);
             }
-            return;
+            break;
         case #"hash_dc11efc5ca22f74":
             function_e3e858b1(250, "<unknown string>");
-            return;
+            break;
         case #"hash_35381ef4960cf279":
             function_e3e858b1(250, "<unknown string>");
-            return;
+            break;
         case #"hash_22d1be7a17698c91":
             function_e3e858b1(250, "<unknown string>");
-            return;
+            break;
         default:
-            return;
+            break;
         }
     #/
 }

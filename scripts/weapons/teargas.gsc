@@ -121,7 +121,7 @@ function function_dbdedd18(attacker, victim, var_3d1ed4bd, weapon, *meansofdeath
     if (isdefined(level.var_b7bc3c75.var_fbbc4c75)) {
         victim [[ level.var_b7bc3c75.var_fbbc4c75 ]](var_b5bddaea);
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_8a3384f2/namespace_8a3384f2
@@ -267,9 +267,9 @@ function function_12b45f48(var_7acab93a, team) {
 // Size: 0x40
 function function_585ad28f(weapon) {
     if (getweapon(#"tear_gas") == weapon.rootweapon) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_8a3384f2/namespace_8a3384f2
@@ -283,7 +283,7 @@ function function_516794d8(grenadeent, var_7e6e7f9f) {
     }
     grenadeteam = grenadeent.team;
     owner = grenadeent.owner;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = var_160d2855 waittilltimeout(0.2, #"death");
         playertargets = grenadeent getpotentialtargets(owner, grenadeteam, var_7e6e7f9f);

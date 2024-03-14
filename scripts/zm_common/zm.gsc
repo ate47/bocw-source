@@ -397,28 +397,28 @@ function function_bdf9485e() {
 // Size: 0x15c
 function function_21e4b1c2() {
     if (getdvarint(#"hash_5ba7cd097f9ffc14", 1) <= 0) {
-        return 1;
+        return true;
     }
     if (is_true(self.laststand)) {
-        return 1;
+        return true;
     }
     if (!level flag::get(#"intro_scene_done")) {
-        return 1;
+        return true;
     }
     if (self scene::is_igc_active()) {
-        return 1;
+        return true;
     }
     if (isdefined(self.var_11eebcd3)) {
         var_57e7a401 = float(gettime() - self.var_11eebcd3) / 1000;
         if (var_57e7a401 < level.var_df437ed2) {
             if (isdefined(self.var_97a988e7) && namespace_1b527536::function_841bae20(self.var_97a988e7.statname) === #"hash_5d6f444e983b62ca") {
-                return 0;
+                return false;
             }
             self function_f986fb53();
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm/zm
@@ -443,7 +443,7 @@ function function_b0613540() {
         self notify(var_17b7891d);
         self endon(var_17b7891d);
         var_655d056a = undefined;
-        while (1) {
+        while (true) {
             if (!isdefined(self)) {
                 return;
             }
@@ -552,13 +552,13 @@ function post_main() {
 function cheat_enabled(val) {
     if (getdvarint(#"zombie_cheat", 0) >= val) {
         /#
-            return 1;
+            return true;
         #/
         if (isprofilebuild()) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm/zm
@@ -678,7 +678,7 @@ function private function_3dbf3e8e() {
         return;
     }
     var_6aeffaf2 = undefined;
-    while (1) {
+    while (true) {
         var_17be922c = 1;
         fresh = 1;
         var_9084754 = getgametypesetting(#"hash_3afb9ec2416f3b78");
@@ -740,7 +740,7 @@ function function_d797f41f(n_waittime = 1) {
 function _outro_slow(func) {
     level endon(#"all_players_connected", #"game_ended");
     array::thread_all(getplayers(), func);
-    while (1) {
+    while (true) {
         result = undefined;
         result = level waittill(#"connected");
         result.player thread [[ func ]]();
@@ -2008,7 +2008,7 @@ function function_9dd8ba0b(weapon_name) {
     case #"energy_mine_3":
     case #"energy_mine_1":
         self zm_stats::increment_challenge_stat(#"hash_2c0504992b5785f2");
-        return;
+        break;
     }
 }
 
@@ -2017,7 +2017,7 @@ function function_9dd8ba0b(weapon_name) {
 // Checksum 0x84b7a932, Offset: 0x9e18
 // Size: 0x6e
 function round_end_monitor() {
-    while (1) {
+    while (true) {
         level waittill(#"end_of_round");
         demo::bookmark(#"zm_round_end", gettime(), undefined, undefined, 1);
         bbpostdemostreamstatsforround(level.round_number);
@@ -2031,7 +2031,7 @@ function round_end_monitor() {
 // Size: 0xbc
 function function_51133aa1() {
     level endon(#"resume_end_game");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         response = waitresult.response;
@@ -2408,9 +2408,9 @@ function disable_end_game_intermission(delay) {
 // Size: 0x3c
 function check_end_game_intermission_delay() {
     if (isdefined(level.disable_intermission)) {
-        while (1) {
+        while (true) {
             if (!isdefined(level.disable_intermission)) {
-                return;
+                break;
             }
             wait(0.01);
         }
@@ -2604,7 +2604,7 @@ function default_exit_level() {
 // Size: 0x74
 function default_delayed_exit() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         if (!level flag::get("wait_and_revive")) {
             return;
         }
@@ -2770,10 +2770,10 @@ function player_too_many_players_check() {
 function is_idgun_damage(weapon) {
     if (isdefined(level.idgun_weapons)) {
         if (isinarray(level.idgun_weapons, weapon)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm/zm
@@ -2961,9 +2961,9 @@ function function_78e7b549(xp) {
 function private function_ad7bd142(*item) {
     weapon = self getcurrentweapon();
     if (killstreaks::is_killstreak_weapon(weapon)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm/zm
@@ -2999,9 +2999,9 @@ function private function_be26a3f3(*item) {
 // Size: 0x2c
 function private function_d87329b7() {
     if ((isdefined(self.maxarmor) ? self.maxarmor : 0) == 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm/zm
@@ -3010,12 +3010,12 @@ function private function_d87329b7() {
 // Size: 0x46
 function private function_1072c231() {
     if ((isdefined(self.maxarmor) ? self.maxarmor : 0) == 0) {
-        return 1;
+        return true;
     }
     if (self.armor < self.maxarmor) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm/zm
@@ -3027,12 +3027,12 @@ function private function_96184f63(item) {
         foreach (talent in item.var_a6762160.talents) {
             foreach (var_7387d8e1 in self.var_7341f980) {
                 if (talent.talent == var_7387d8e1 || talent.talent == namespace_e86ffa8::function_cde018a9(var_7387d8e1)) {
-                    return 1;
+                    return true;
                 }
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm/zm
@@ -3065,9 +3065,9 @@ function function_8822a6d5(item) {
 // Size: 0x2e
 function private function_ce82b9ae(*weapon) {
     if (self laststand::player_is_in_laststand()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm/zm

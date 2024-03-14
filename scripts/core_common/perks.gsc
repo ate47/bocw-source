@@ -71,9 +71,9 @@ function perk_unsetperk(str_perk) {
 // Size: 0x4a
 function perk_hasperk(str_perk) {
     if (isdefined(self.var_fb3c9d6a) && isdefined(self.var_fb3c9d6a[str_perk]) && self.var_fb3c9d6a[str_perk] > 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace perks/perks
@@ -226,7 +226,7 @@ function private function_e5f5216f(var_2b9b7c0f) {
     }
     self playsoundtoplayer(#"hash_23df0ddc8d4048a2", self);
     self clientfield::set_player_uimodel("hudItems.ammoCooldowns.equipment.tactical", 1);
-    return 1;
+    return true;
 }
 
 // Namespace perks/perks
@@ -248,7 +248,7 @@ function private function_691948bf(var_2b9b7c0f) {
     sound = var_2b9b7c0f == "hudItems.ammoCooldowns.equipment.lethal" ? #"hash_6d4b6b0490117874" : #"hash_23df0ddc8d4048a2";
     self playsoundtoplayer(sound, self);
     self clientfield::set_player_uimodel(var_2b9b7c0f, 1);
-    return 1;
+    return true;
 }
 
 // Namespace perks/perks

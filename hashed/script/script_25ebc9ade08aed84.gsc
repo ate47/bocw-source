@@ -58,7 +58,7 @@ function init() {
 // Size: 0x12e
 function function_c10ae9f9() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self flag::clear(#"hash_681b86c36426c957");
         while (!self zm_laststand::function_c3249e8c() && !(self laststand::player_is_in_laststand() && self zm_laststand::function_30b9cdd5())) {
             waitframe(1);
@@ -110,7 +110,7 @@ function function_cc21ae2e() {
 // Checksum 0xbab4aba, Offset: 0xa30
 // Size: 0xb8
 function function_b2a2cce8() {
-    while (1) {
+    while (true) {
         level flag::wait_till("captured_control_point" + self.var_b555f02e);
         self clientfield::set("" + #"hash_5822132672ad230f", 1);
         level flag::wait_till_clear("captured_control_point" + self.var_b555f02e);
@@ -181,7 +181,7 @@ function function_679a29cd(player) {
 // Size: 0x256
 function function_23ef27c() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
@@ -474,7 +474,7 @@ function function_b858693f(index) {
     foreach (var_90ddceac in var_1c9a65cd) {
         if (var_90ddceac.var_b555f02e == index) {
             if (!isdefined(var_90ddceac.var_43032f5e) || !isdefined(var_90ddceac.var_63c8edf4) || !isdefined(var_90ddceac.var_6f3293fb)) {
-                return;
+                break;
             }
             switch (var_90ddceac.script_int) {
             case 1:
@@ -539,24 +539,24 @@ function function_df6e6fce() {
     switch (self.script_int) {
     case 1:
         self.var_43032f5e setmodel(#"hash_1730e3d42048d1b5");
-        return;
+        break;
     case 2:
         self.var_43032f5e setmodel(#"hash_1730e0d42048cc9c");
-        return;
+        break;
     case 3:
         self.var_43032f5e setmodel(#"hash_1730e1d42048ce4f");
-        return;
+        break;
     case 4:
         self.var_43032f5e setmodel(#"hash_1730ded42048c936");
-        return;
+        break;
     case 5:
         self.var_43032f5e setmodel(#"hash_1730dfd42048cae9");
-        return;
+        break;
     case 6:
         self.var_43032f5e setmodel(#"hash_1730dcd42048c5d0");
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 
@@ -602,12 +602,12 @@ function cmd(cmd) {
         switch (cmd) {
         case #"hash_3785a966b663fa40":
             function_de5992a1();
-            return;
+            break;
         case #"hash_627810dd51e05760":
             function_f4d4dc3b();
-            return;
+            break;
         default:
-            return;
+            break;
         }
     #/
 }

@@ -227,7 +227,7 @@ function registerbehaviorscriptfunctions() {
 // Size: 0x232
 function private zodcompanionshouldmelee(behaviortreeentity) {
     if (function_b0f37bd1(behaviortreeentity)) {
-        return 1;
+        return true;
     } else {
         enemy = function_a8bce123(behaviortreeentity);
         if (isdefined(enemy)) {
@@ -237,7 +237,7 @@ function private zodcompanionshouldmelee(behaviortreeentity) {
             }
             if (isalive(enemy) && distancesquared(behaviortreeentity.origin, enemy.origin) < function_a3f6cdac(meleedist)) {
                 if (behaviortreeentity cansee(enemy)) {
-                    return 1;
+                    return true;
                 }
             } else {
                 var_d32424f1 = getentitiesinradius(behaviortreeentity.origin, meleedist, 15);
@@ -247,16 +247,16 @@ function private zodcompanionshouldmelee(behaviortreeentity) {
                         if (isalive(ai) && behaviortreeentity cansee(ai)) {
                             self.favoriteenemy = ai;
                             self.nexttargetserviceupdate = gettime() + 1000;
-                            return 1;
+                            return true;
                         }
                     }
                 } else {
-                    return 0;
+                    return false;
                 }
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zodcompanionbehavior/archetype_zod_companion
@@ -265,10 +265,10 @@ function private zodcompanionshouldmelee(behaviortreeentity) {
 // Size: 0x4e
 function private zodcompanionisinmeleecooldown(behaviortreeentity) {
     if (!isdefined(behaviortreeentity)) {
-        return 0;
+        return false;
     }
     if (function_b0f37bd1(behaviortreeentity)) {
-        return 0;
+        return false;
     }
     return isdefined(behaviortreeentity.melee_cooldown) && gettime() < behaviortreeentity.melee_cooldown;
 }
@@ -299,15 +299,15 @@ function private zodshouldattackenemy(entity) {
 // Size: 0xbe
 function trystoppingcompanionservice(entity) {
     if (is_true(entity.exhausted) || isdefined(entity.var_9140144d) || isdefined(entity.v_zombie_custom_goal_pos) || is_true(self.reviving_a_player)) {
-        return 0;
+        return false;
     }
     enemy = function_a8bce123(entity);
     if (!isdefined(enemy)) {
         aiutility::keepclaimnode(entity);
-        return 1;
+        return true;
     }
     aiutility::releaseclaimnode(entity);
-    return 0;
+    return false;
 }
 
 // Namespace zodcompanionbehavior/archetype_zod_companion
@@ -368,12 +368,12 @@ function zodcompanioncanjuke(entity) {
         tooclosejukedistancesqr = 57600;
         foreach (event in jukeevents) {
             if (event.data.entity != entity && distance2dsquared(entity.origin, event.data.origin) <= tooclosejukedistancesqr) {
-                return 0;
+                return false;
             }
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zodcompanionbehavior/archetype_zod_companion
@@ -423,9 +423,9 @@ function zodcompanioncanpreemptivejuke(entity) {
 // Size: 0xa8
 function private _isvalidplayer(player) {
     if (!isdefined(player) || !isalive(player) || !isplayer(player) || player.sessionstate == "spectator" || player.sessionstate == "intermission" || player laststand::player_is_in_laststand() || player.ignoreme) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zodcompanionbehavior/archetype_zod_companion
@@ -564,9 +564,9 @@ function private zodcompanionabletoshootcondition(entity) {
 // Size: 0x2e
 function private zodcompanionshouldtacticalwalk(entity) {
     if (!entity haspath()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zodcompanionbehavior/archetype_zod_companion
@@ -609,23 +609,23 @@ function private zodcompaniontryreacquireservice(entity) {
     }
     if (!isdefined(entity.enemy)) {
         entity.reacquire_state = 0;
-        return 0;
+        return false;
     }
     if (entity haspath()) {
-        return 0;
+        return false;
     }
     if (!zodcompanionabletoshootcondition(entity)) {
-        return 0;
+        return false;
     }
     if (entity cansee(entity.enemy) && entity canshootenemy()) {
         entity.reacquire_state = 0;
-        return 0;
+        return false;
     }
     dirtoenemy = vectornormalize(entity.enemy.origin - entity.origin);
     forward = anglestoforward(entity.angles);
     if (vectordot(dirtoenemy, forward) < 0.5) {
         entity.reacquire_state = 0;
-        return 0;
+        return false;
     }
     switch (entity.reacquire_state) {
     case 0:
@@ -642,16 +642,16 @@ function private zodcompaniontryreacquireservice(entity) {
     default:
         if (entity.reacquire_state > 15) {
             entity.reacquire_state = 0;
-            return 0;
+            return false;
         }
         break;
     }
     if (isvec(reacquirepos)) {
         entity function_a57c34b7(reacquirepos);
-        return 1;
+        return true;
     }
     entity.reacquire_state++;
-    return 0;
+    return false;
 }
 
 // Namespace zodcompanionbehavior/archetype_zod_companion
@@ -803,7 +803,7 @@ function private manage_companion_movement(entity) {
 function private zodcompanioncollisionservice(entity) {
     if (isdefined(entity.dontpushtime)) {
         if (gettime() < entity.dontpushtime) {
-            return 1;
+            return true;
         }
     }
     var_26cddecd = 0;
@@ -823,10 +823,10 @@ function private zodcompanioncollisionservice(entity) {
     if (var_26cddecd) {
         entity collidewithactors(0);
         entity.dontpushtime = gettime() + 2000;
-        return 1;
+        return true;
     }
     entity collidewithactors(1);
-    return 0;
+    return false;
 }
 
 // Namespace zodcompanionbehavior/archetype_zod_companion
@@ -848,18 +848,18 @@ function private function_a2ba1ce8(target_entity, max_distance) {
     entity = self;
     target_location = target_entity.origin;
     if (distancesquared(entity.origin, target_location) > function_a3f6cdac(max_distance)) {
-        return 0;
+        return false;
     }
     path = entity calcapproximatepathtoposition(target_location);
     segmentlength = 0;
     for (index = 1; index < path.size; index++) {
         currentseglength = distance(path[index - 1], path[index]);
         if (currentseglength + segmentlength > max_distance) {
-            return 0;
+            return false;
         }
         segmentlength = segmentlength + currentseglength;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zodcompanionbehavior/archetype_zod_companion
@@ -995,7 +995,7 @@ function zod_companion_revive_player(player) {
     var_46939b30 = 96;
     var_26304c9d = 64;
     var_7ad033f4 = 3;
-    while (1) {
+    while (true) {
         target_point = is_true(player.var_b895a3ff) ? player.var_dc4f101.origin : player.origin;
         if (!isdefined(self.companion_destination) || distancesquared(self.companion_destination, target_point) > function_a3f6cdac(var_46939b30)) {
             queryresult = positionquery_source_navigation(target_point, var_26304c9d, var_46939b30, 96, 18, self);
@@ -1098,7 +1098,7 @@ function function_9cb5b8e0() {
             objective_setgamemodeflags(var_ae7a2103.var_57b374b4, 0);
         }
         if (var_d3e5d819 >= revivetime) {
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -1110,7 +1110,7 @@ function function_9cb5b8e0() {
 // Size: 0x1a6
 function zod_companion_monitor_revive_attempt(player) {
     self endon(#"death", #"revive_terminated");
-    while (1) {
+    while (true) {
         if (is_true(player.var_b895a3ff)) {
             if (!isdefined(player.var_dc4f101.revivetrigger) || player.var_dc4f101.revivetrigger.beingrevived === 1 && player.being_revived_by_robot !== 1) {
                 self zod_companion_revive_cleanup(player);
@@ -1175,21 +1175,21 @@ function private zodcompanionkeepscurrentmovementmode(behaviortreeentity) {
     var_c351bd17 = 36864;
     if (isdefined(behaviortreeentity.var_3948eee7)) {
         if (behaviortreeentity getblackboardattribute("_locomotion_speed") != behaviortreeentity.var_3948eee7) {
-            return 0;
+            return false;
         }
-        return 1;
+        return true;
     }
     dist = 0;
     if (isdefined(behaviortreeentity.pathgoalpos)) {
         dist = distancesquared(behaviortreeentity.origin, behaviortreeentity.pathgoalpos);
     }
     if (dist > var_202e5b5c && behaviortreeentity getblackboardattribute("_locomotion_speed") == "locomotion_speed_walk") {
-        return 0;
+        return false;
     }
     if (dist < var_c351bd17 && behaviortreeentity getblackboardattribute("_locomotion_speed") == "locomotion_speed_sprint") {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zodcompanionbehavior/archetype_zod_companion
@@ -1198,9 +1198,9 @@ function private zodcompanionkeepscurrentmovementmode(behaviortreeentity) {
 // Size: 0x28
 function private zodcompanionsprinttransitioning(behaviortreeentity) {
     if (behaviortreeentity.sprint_transition_happening === 1) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zodcompanionbehavior/archetype_zod_companion
@@ -1373,15 +1373,15 @@ function zodcompanionhasattackable(behaviortreeentity) {
 // Size: 0x9e
 function function_b0f37bd1(behaviortreeentity) {
     if (!isdefined(behaviortreeentity.attackable) || !isdefined(behaviortreeentity.var_b238ef38.position)) {
-        return 0;
+        return false;
     }
     if (isdefined(behaviortreeentity.var_8a3828c6)) {
-        return 0;
+        return false;
     }
     if (distancesquared(behaviortreeentity.var_b238ef38.position, behaviortreeentity.origin) < function_a3f6cdac(64)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zodcompanionbehavior/archetype_zod_companion
@@ -1811,7 +1811,7 @@ function private zodcompanionsoldierspawnsetup() {
 // Size: 0xb8
 function manage_companion() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         if (!self.reviving_a_player && !zodcompanionbehavior::zodcompanionisexhausted(self)) {
             if (!isdefined(self.leader) || !self.leader.eligible_leader) {
                 if (self flag::get(#"hash_2ba0c8dec55ab3f2")) {
@@ -2057,7 +2057,7 @@ function private function_9660ee54() {
     self endon(var_17b7891d);
     level endon(#"end_game");
     self endon(#"hash_6edebe8930290c3b", #"death");
-    while (1) {
+    while (true) {
         self waittill(#"goal");
         if (distancesquared(self.origin, self.var_a72ffc1e) > function_a3f6cdac(self.goalradius)) {
             /#
@@ -2149,7 +2149,7 @@ function function_30df05d5(func) {
     foreach (index, callback in self.var_fab98b03) {
         if (callback == func) {
             arrayremoveindex(self.var_fab98b03, index, 0);
-            return;
+            break;
         }
     }
 }
@@ -2244,10 +2244,10 @@ function function_681263de() {
 function function_878dd91(var_182df905) {
     if (isdefined(self.var_9140144d)) {
         if (!isdefined(self.var_a72ffc1e) || !is_true(var_182df905.reserved)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace zodcompanionutility/archetype_zod_companion
@@ -2263,7 +2263,7 @@ function private function_c2725e7e(goal) {
                 println("MOD_EXPLOSIVE" + "<unknown string>" + goal);
             }
         #/
-        return 1;
+        return true;
     }
     /#
         if (getdvarint(#"hash_1b2cf8e5ac354d32", 0)) {
@@ -2271,7 +2271,7 @@ function private function_c2725e7e(goal) {
         }
     #/
     self.var_c7f5b6e1 = undefined;
-    return 0;
+    return false;
 }
 
 // Namespace zodcompanionutility/archetype_zod_companion

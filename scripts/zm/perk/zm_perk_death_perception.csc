@@ -232,7 +232,7 @@ function perk_death_perception_visuals_items(localclientnum, *oldval, newval, *b
 // Size: 0x152
 function function_1300c2fe() {
     self endon(#"death", #"hash_48d1d774df4a8016");
-    while (1) {
+    while (true) {
         foreach (var_98bbded7 in level.var_5d9a0215) {
             if (isdefined(var_98bbded7)) {
                 if (distance2d(self.origin, var_98bbded7.origin) <= 1000) {
@@ -277,7 +277,7 @@ function perk_death_perception_visuals(localclientnum, *oldval, newval, *bnewent
 // Size: 0x15a
 function function_6c1f79e3(localclientnum) {
     self endon(#"death", #"hash_324f3fd9a0081db0");
-    while (1) {
+    while (true) {
         a_ai = function_793a9f3d(localclientnum);
         foreach (ai in a_ai) {
             if (isdefined(ai)) {
@@ -315,7 +315,7 @@ function function_731d83de(localclientnum) {
 // Size: 0x28c
 function function_fff5377e(localclientnum) {
     self endon(#"death", #"hash_45ed6efeef67b773");
-    while (1) {
+    while (true) {
         if (!is_true(level.var_dc60105c) && !isigcactive(localclientnum)) {
             a_ai = function_793a9f3d(localclientnum);
             a_ai = arraysortclosest(a_ai, self.origin, undefined, undefined, 200);

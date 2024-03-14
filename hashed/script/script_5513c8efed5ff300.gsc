@@ -162,7 +162,7 @@ function private function_64892fd7() {
             player.var_b9da7d3[i] = hudelem;
         }
         player.var_b9da7d3[0] settext("<unknown string>");
-        while (1) {
+        while (true) {
             wait(0.5);
             var_e462aa74 = "<unknown string>" + player function_2ee66e93(#"hash_6077f719ce58d931", 0);
             var_812674f1 = player.var_b9da7d3[2];

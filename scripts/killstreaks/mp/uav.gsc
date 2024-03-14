@@ -78,7 +78,7 @@ function function_1c601b99() {
     if (isdefined(level.var_1b900c1d)) {
         [[ level.var_1b900c1d ]](getweapon(#"uav"), &function_bff5c062);
     }
-    if (0) {
+    if (false) {
         profilestart();
         level.var_b59e7114 = killstreaks::function_f3875fb0(level.var_49dafe2a, isdefined(level.var_eb2556e1) ? level.var_eb2556e1 : 5000, 60, -1, 1);
         profilestop();
@@ -123,7 +123,7 @@ function function_ef80ceac() {
         }
         return (var_86510a2 > 0);
     }
-    return 0;
+    return false;
 }
 
 // Namespace uav/uav
@@ -136,10 +136,10 @@ function function_1b3ab65e() {
             continue;
         }
         if (!getdvar(#"hash_26bd5d5bf0e32197", 0) || uav function_457c378e(self)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace uav/uav
@@ -149,15 +149,15 @@ function function_1b3ab65e() {
 function function_91c243ba(enemy) {
     if (self function_ef80ceac()) {
         if (!getdvar(#"hash_26bd5d5bf0e32197", 0)) {
-            return 1;
+            return true;
         }
         foreach (uav in level.spawneduavs) {
             if (self === uav.owner && uav function_457c378e(enemy)) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace uav/uav
@@ -221,11 +221,11 @@ function activateuav(killstreaktype) {
         assert(isdefined(level.players));
     #/
     if (self killstreakrules::iskillstreakallowed("uav", self.team) == 0) {
-        return 0;
+        return false;
     }
     killstreak_id = self killstreakrules::killstreakstart("uav", self.team);
     if (killstreak_id == -1) {
-        return 0;
+        return false;
     }
     attach_angle = -90;
     minflyheight = killstreaks::function_43f4782d();
@@ -262,7 +262,7 @@ function activateuav(killstreaktype) {
     uav clientfield::set("uav_fx", 1);
     uav clientfield::set("scorestreakActive", 1);
     uav killstreaks::function_a781e8d2();
-    if (0) {
+    if (false) {
         uav killstreaks::function_67d553c4(level.var_b59e7114, isdefined(level.uav_rotation_radius) ? level.uav_rotation_radius : 4000, isdefined(level.uav_rotation_random_offset) ? level.uav_rotation_random_offset : 1000, -1);
         uav clientfield::set("uav", 1);
     } else {
@@ -292,7 +292,7 @@ function activateuav(killstreaktype) {
     self stats::function_dad108fa(#"hash_1030d5aac01a491e", 1);
     self stats::function_dad108fa(#"hash_436fffdd733392ba", 1);
     self stats::function_dad108fa(#"hash_437000dd7333946d", 1);
-    return 1;
+    return true;
 }
 
 // Namespace uav/uav
@@ -397,10 +397,10 @@ function onplayerspawned() {
 function function_9ee62e18(attacker, victim, *weapon, *attackerweapon, *meansofdeath) {
     if (attackerweapon util::isenemyplayer(meansofdeath) && (!isdefined(level.var_3d960463) || isdefined(level.var_3d960463) && !attackerweapon [[ level.var_3d960463 ]]())) {
         if (attackerweapon function_91c243ba(meansofdeath)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace uav/uav
@@ -409,7 +409,7 @@ function function_9ee62e18(attacker, victim, *weapon, *attackerweapon, *meansofd
 // Size: 0xda
 function function_781f1bf2() {
     if (!isdefined(self.team)) {
-        return 0;
+        return false;
     }
     var_a70c469f = self.team;
     foreach (team in level.teams) {
@@ -417,10 +417,10 @@ function function_781f1bf2() {
             continue;
         }
         if (isdefined(level.activeuavs[team]) && level.activeuavs[team] > 0) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace uav/uav

@@ -182,7 +182,7 @@ function function_358c899d() {
 function function_5ac8947e() {
     /#
         setdvar(#"zombie_devgui_hud", "<unknown string>");
-        while (1) {
+        while (true) {
             cmd = getdvar(#"zombie_devgui_hud", "<unknown string>");
             if (cmd == "<unknown string>") {
                 wait(0.1);
@@ -343,7 +343,7 @@ function zombie_devgui_player_menu_clear_on_disconnect(player) {
 // Size: 0x44a
 function function_38184bf8() {
     /#
-        while (1) {
+        while (true) {
             var_c635168c = getdvarint(#"hash_67d19b13a4ab8b94", 0);
             if (var_c635168c >= 0 && isdefined(level.zone_paths[var_c635168c])) {
                 zone_paths = level.zone_paths[var_c635168c];
@@ -405,7 +405,7 @@ function function_300dfb68() {
     /#
         setdvar(#"hash_45632f9301da0179", "<unknown string>");
         adddebugcommand("<unknown string>");
-        while (1) {
+        while (true) {
             cmd = getdvarstring(#"hash_45632f9301da0179");
             if (cmd != "<unknown string>") {
                 switch (cmd) {
@@ -429,7 +429,7 @@ function function_4eaed09d() {
         setdvar(#"hash_6850d2ee27e63e98", "<unknown string>");
         setdvar(#"hash_72c3f824ab058229", 50);
         adddebugcommand("<unknown string>");
-        while (1) {
+        while (true) {
             cmd = getdvarstring(#"hash_6850d2ee27e63e98");
             if (cmd != "<unknown string>") {
                 switch (cmd) {
@@ -479,7 +479,7 @@ function zombie_devgui_validation_commands() {
         adddebugcommand("<unknown string>");
         adddebugcommand("<unknown string>");
         adddebugcommand("<unknown string>");
-        while (1) {
+        while (true) {
             cmd = getdvarstring(#"validation_devgui_command");
             if (cmd != "<unknown string>") {
                 switch (cmd) {
@@ -768,10 +768,10 @@ function drawvalidation(origin, zone_name, nav_mesh_wait_point, boards_point, zo
         if (isdefined(archetype)) {
             archetype = function_9e72a96(archetype);
         }
-        while (1) {
+        while (true) {
             if (is_true(level.toggle_spawner_validation)) {
                 if (!isdefined(origin)) {
-                    return;
+                    break;
                 }
                 if (isdefined(zone_name)) {
                     circle(origin, 32, (1, 0, 0));
@@ -816,7 +816,7 @@ function drawvalidation(origin, zone_name, nav_mesh_wait_point, boards_point, zo
 function zone_adjacencies_validation() {
     /#
         zombie_devgui_open_sesame();
-        while (1) {
+        while (true) {
             if (is_true(level.toggle_zone_adjacencies_validation)) {
                 if (!isdefined(getplayers()[0].zone_name)) {
                     waitframe(1);
@@ -1162,7 +1162,7 @@ function function_bb54e671(weapon) {
             self.var_8d5839f4 = array(self.var_8d5839f4);
         }
         self.var_8d5839f4[self.var_8d5839f4.size] = weapon;
-        while (1) {
+        while (true) {
             self waittill(#"weapon_change_complete");
             foreach (weapon in arraycopy(self.var_8d5839f4)) {
                 if (!self hasweapon(weapon)) {
@@ -1272,7 +1272,7 @@ function zombie_healthbar(pos, dsquared) {
 // Size: 0x13a
 function devgui_zombie_healthbar() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(#"scr_zombie_healthbars", 0) == 1) {
                 e_player = getplayers()[0];
                 if (isalive(e_player)) {
@@ -2430,7 +2430,7 @@ function diable_fog_in_noclip() {
         level.fog_disabled_in_noclip = 1;
         level endon(#"allowfoginnoclip");
         level wait_till("<unknown string>");
-        while (1) {
+        while (true) {
             while (!any_player_in_noclip()) {
                 wait(1);
             }
@@ -2697,7 +2697,7 @@ function zombie_devgui_preserve_turbines() {
         self endon(#"preserve_turbines");
         if (!is_true(self.preserving_turbines)) {
             self.preserving_turbines = 1;
-            while (1) {
+            while (true) {
                 self.turbine_health = 1200;
                 wait(1);
             }
@@ -2717,7 +2717,7 @@ function zombie_devgui_equipment_stays_healthy() {
         self endon(#"preserve_equipment");
         if (!is_true(self.preserving_equipment)) {
             self.preserving_equipment = 1;
-            while (1) {
+            while (true) {
                 self.equipment_damage = [];
                 self.shielddamagetaken = 0;
                 if (isdefined(level.destructible_equipment)) {
@@ -2796,7 +2796,7 @@ function zombie_devgui_give_placeable_mine(weapon) {
             self weapon_take(self get_player_placeable_mine());
         }
         self thread setup_for_player(weapon);
-        while (1) {
+        while (true) {
             self givemaxammo(weapon);
             wait(1);
         }
@@ -2829,7 +2829,7 @@ function zombie_devgui_give_claymores() {
         if (wpn_type != level.weaponnone) {
             self thread setup_for_player(wpn_type);
         }
-        while (1) {
+        while (true) {
             self givemaxammo(wpn_type);
             wait(1);
         }
@@ -2860,7 +2860,7 @@ function zombie_devgui_give_lethal(weapon) {
         }
         self giveweapon(weapon);
         self set_player_lethal_grenade(weapon);
-        while (1) {
+        while (true) {
             self givemaxammo(weapon);
             wait(1);
         }
@@ -2911,7 +2911,7 @@ function zombie_devgui_give_monkey() {
         }
         if (isdefined(level.zombiemode_devgui_cymbal_monkey_give)) {
             self [[ level.zombiemode_devgui_cymbal_monkey_give ]]();
-            while (1) {
+            while (true) {
                 self givemaxammo(getweapon(#"cymbal_monkey"));
                 wait(1);
             }
@@ -2943,7 +2943,7 @@ function zombie_devgui_give_bhb() {
         }
         if (isdefined(level.var_5076c574)) {
             self [[ level.var_5076c574 ]]();
-            while (1) {
+            while (true) {
                 self givemaxammo(level.w_black_hole_bomb);
                 wait(1);
             }
@@ -2975,7 +2975,7 @@ function zombie_devgui_give_qed() {
         }
         if (isdefined(level.var_3079bbd7)) {
             self [[ level.var_3079bbd7 ]]();
-            while (1) {
+            while (true) {
                 self givemaxammo(level.w_quantum_bomb);
                 wait(1);
             }
@@ -3007,7 +3007,7 @@ function zombie_devgui_give_dolls() {
         }
         if (isdefined(level.var_42cebfa6)) {
             self [[ level.var_42cebfa6 ]]();
-            while (1) {
+            while (true) {
                 self givemaxammo(level.w_nesting_dolls);
                 wait(1);
             }
@@ -3039,7 +3039,7 @@ function zombie_devgui_give_emp_bomb() {
         }
         if (isdefined(level.var_153af402)) {
             self [[ level.var_153af402 ]]();
-            while (1) {
+            while (true) {
                 self givemaxammo(getweapon(#"emp_grenade"));
                 wait(1);
             }
@@ -3204,7 +3204,7 @@ function zombie_devgui_give_health() {
         self notify(#"devgui_health");
         self endon(#"devgui_health", #"disconnect", #"death");
         level.devcheater = 1;
-        while (1) {
+        while (true) {
             self.maxhealth = 100000;
             self.health = 100000;
             self waittill(#"player_revived", #"perk_used", #"spawned_player");
@@ -3231,7 +3231,7 @@ function zombie_devgui_low_health() {
         self notify(#"devgui_health");
         self endon(#"devgui_health", #"disconnect", #"death");
         level.devcheater = 1;
-        while (1) {
+        while (true) {
             self.maxhealth = 10;
             self.health = 10;
             self waittill(#"player_revived", #"perk_used", #"spawned_player");
@@ -4237,7 +4237,7 @@ function function_92523b12() {
 function wait_for_zombie(crawler) {
     /#
         nodes = getallnodes();
-        while (1) {
+        while (true) {
             ai = getactorarray();
             zombie = ai[0];
             if (isdefined(zombie)) {
@@ -4268,7 +4268,7 @@ function wait_for_zombie(crawler) {
                         }
                     }
                 }
-                return;
+                break;
             }
             wait(0.25);
         }
@@ -4284,7 +4284,7 @@ function zombie_draw_traversals() {
         level thread wait_for_zombie();
         level thread wait_for_zombie(1);
         nodes = getallnodes();
-        while (1) {
+        while (true) {
             if (is_true(level.toggle_draw_traversals)) {
                 foreach (node in nodes) {
                     if (isdefined(node.animscript)) {
@@ -4336,7 +4336,7 @@ function function_bbeaa2da() {
 // Size: 0x1ee
 function function_e9b89aac() {
     /#
-        while (1) {
+        while (true) {
             if (isdefined(level.zones) && (getdvarint(#"zombiemode_debug_zones", 0) || getdvarint(#"hash_756b3f2accaa1678", 0))) {
                 foreach (zone in level.zones) {
                     foreach (node in zone.nodes) {
@@ -4395,7 +4395,7 @@ function function_fb482cad() {
     /#
         self notify(#"hash_d592b5d81b7b3a7");
         self endoncallback(&function_2fcf8a4a, #"hash_d592b5d81b7b3a7", #"disconnect");
-        while (1) {
+        while (true) {
             if (!isdefined(self.var_d35d1d3d)) {
                 self.var_d35d1d3d = newdebughudelem(self);
                 self.var_d35d1d3d.alignx = "<unknown string>";
@@ -4448,7 +4448,7 @@ function function_5349e112() {
 // Size: 0x226
 function function_8817dd98() {
     /#
-        while (1) {
+        while (true) {
             if (is_true(level.var_5171ee4a)) {
                 if (!isdefined(level.var_fcfab54a)) {
                     level.var_fcfab54a = newdebughudelem();
@@ -4645,7 +4645,7 @@ function function_1762ff96() {
 function function_b7e34647() {
     /#
         level endon(#"hash_2876f101dd7375df");
-        while (1) {
+        while (true) {
             zombies = [];
             foreach (archetype in level.var_58903b1f) {
                 ai = getaiarchetypearray(archetype, level.zombie_team);
@@ -4879,7 +4879,7 @@ function function_15ee6847() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         level endon(#"hash_147174071dbfe31e");
-        while (1) {
+        while (true) {
             teststring = "<unknown string>";
             foreach (player in level.players) {
                 teststring = teststring + "<unknown string>" + player getentitynumber() + "<unknown string>";
@@ -4969,7 +4969,7 @@ function function_1a4752d0() {
 function function_5ec967f7() {
     /#
         level endon(#"hash_21adc62fc2f5bc32");
-        while (1) {
+        while (true) {
             foreach (location in level.var_7d45d0d4.locations) {
                 if (isdefined(location.instances[#"wallbuy"])) {
                     if (isarray(location.instances[#"wallbuy"].var_fe2612fe[#"wallbuy_chalk"])) {
@@ -5086,7 +5086,7 @@ function function_b5d522f8() {
         function_7c9dd642();
         setdvar(#"hash_46eec505e691414c", "<unknown string>");
         setdvar(#"hash_74f1952a0f93d08e", -1);
-        while (1) {
+        while (true) {
             wait(0.1);
             var_9261da43 = getdvar(#"hash_46eec505e691414c", "<unknown string>");
             var_10acd4fa = getdvar(#"hash_74f1952a0f93d08e", -1);
@@ -5283,7 +5283,7 @@ function private function_62e3e0a() {
         while (!isdefined(level.zm_loc_types)) {
             waitframe(1);
         }
-        while (1) {
+        while (true) {
             waitframe(1);
             player = getplayers()[0];
             player_vec = vectornormalize(anglestoforward(player getplayerangles()));

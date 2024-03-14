@@ -59,7 +59,7 @@ function anim_info_render_thread() {
         self notify(#"_anim_info_render_thread_");
         self endon(#"_anim_info_render_thread_", #"death", #"scriptedanim");
         level endon(#"kill_anim_debug");
-        while (1) {
+        while (true) {
             level wait_till("<unknown string>");
             _init_frame();
             str_extra_info = "<unknown string>";

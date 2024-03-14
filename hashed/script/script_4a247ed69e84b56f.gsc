@@ -135,7 +135,7 @@ function function_d4a86caf() {
     self notify("6ec0a773d4131741");
     self endon("6ec0a773d4131741");
     level endon(#"game_over");
-    while (1) {
+    while (true) {
         wait(0.5);
         foreach (trap in level.doa.var_ed906439) {
             time = gettime();
@@ -210,7 +210,7 @@ function function_e20d74b3() {
     self endon(#"hash_3e251384a5400dce");
     self thread function_49caf2d6();
     wait(randomfloatrange(0.1, 3));
-    while (1) {
+    while (true) {
         self.trigger = self namespace_268747c0::function_678eaf60("killzone", self.origin, 1024, 1, 256);
         if (self.trigger.radius != self.radius || self.trigger.height != self.height) {
             self.trigger delete();
@@ -241,7 +241,7 @@ function function_d1b295d7(trap) {
     level endon(#"game_over");
     self endon(#"death", #"hash_3e251384a5400dce", #"hash_5dc5b7f198cd1bec");
     var_f3e30707 = (isdefined(trap.var_f3e30707) ? trap.var_f3e30707 : 1) * 1000;
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"trigger");
         guy = result.activator;

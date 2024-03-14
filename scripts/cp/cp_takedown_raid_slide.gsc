@@ -202,7 +202,7 @@ function function_c5d4fec8(a_ents) {
 function function_58b2cc80() {
     level endon(#"hash_5737131f700cbdb");
     level waittill(#"hash_11a7d299dcf3358");
-    while (1) {
+    while (true) {
         wait(5);
         level.adler namespace_a635adb1::queue("vox_cp_tdwn_05100_adlr_masonqasimwants_ff");
         wait(5);
@@ -261,7 +261,7 @@ function function_41a8d47e() {
 // Size: 0x1a2
 function function_e99afe47() {
     level endon(#"hash_707e3fbcbfc9b954");
-    while (1) {
+    while (true) {
         if (level flag::get("flag_listen_for_slide") && level.var_962e7d10 == 0) {
             setsaveddvar(#"trm_enabled", 0);
             self val::set(#"hash_521245c0cfb3048", "allow_jump", 0);
@@ -288,7 +288,7 @@ function function_f9dfbac1() {
     level endon(#"hash_1480b995232f9d53");
     namespace_a052577e::function_c2eee241();
     player notifyonplayercommand("pressed_jump", "+gostand");
-    while (1) {
+    while (true) {
         player waittill(#"pressed_jump");
         if (!player flag::get("body_shield_active")) {
             level flag::set("flag_start_roof_slide");

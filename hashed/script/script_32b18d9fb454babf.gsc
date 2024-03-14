@@ -79,9 +79,9 @@ function private function_64a75da7() {
 function function_4824f1b9() {
     if (getdvarint(#"hash_15b141da1584bd0d", 1)) {
         namespace_553954de::function_bde08b58(0);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_18bbc38e/namespace_18bbc38e
@@ -242,7 +242,7 @@ function private function_66855ea6(destination, str_type) {
                     continue;
                 }
             #/
-            return;
+            break;
         }
     }
 }
@@ -671,24 +671,24 @@ function function_19e6d9ca(var_5ecdfc37) {
 function function_50967c59(destination, var_a3b3f1b, variant) {
     instances = destination.var_e859e591[var_a3b3f1b];
     if (!isdefined(instances)) {
-        return 0;
+        return false;
     }
     /#
         if (getdvarstring(#"hash_5dcd31d8e8a23597", "<unknown string>") != "<unknown string>") {
             if (issubstr(getdvarstring(#"hash_5dcd31d8e8a23597", "<unknown string>"), function_9e72a96(var_a3b3f1b))) {
-                return 0;
+                return false;
             }
         }
     #/
     if (isdefined(variant)) {
         foreach (instance in instances) {
             if (instance.variant === variant) {
-                return 1;
+                return true;
             }
         }
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_18bbc38e/namespace_18bbc38e

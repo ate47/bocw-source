@@ -45,9 +45,9 @@ function function_dc7eaabd(assignment) {
 function is_team_empty(team) {
     team_players = getplayers(team);
     if (team_players.size > 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace teams/teams
@@ -76,10 +76,10 @@ function function_959bac94() {
 function function_712e3ba6(score) {
     foreach (team, _ in level.teams) {
         if (game.stat[#"teamscores"][team] >= score) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace teams/teams

@@ -132,7 +132,7 @@ function private function_8ff2eaf3(trigger) {
 // Size: 0x208
 function private function_7649c09d() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"trigger");
         guy = result.activator;

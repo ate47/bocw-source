@@ -420,7 +420,7 @@ function private function_7dc13ec9(localclientnum) {
     if (isdefined(level._fx.cargo_plane)) {
         var_3b16b806 = function_a3f6cdac(400);
         var_87c1e213 = function_a3f6cdac(2500);
-        while (1) {
+        while (true) {
             distsqr = distance2dsquared(self.origin, level._fx.cargo_plane.origin);
             self.fx_interval = (distsqr - var_3b16b806) / (var_87c1e213 - var_3b16b806);
             self.fx_interval = max(0.1, min(1, self.fx_interval));
@@ -685,7 +685,7 @@ function private function_23f6671d() {
     self postfx::function_c8b5f318("pstfx_rain_loop_tkdn_rccar", "Sprite Count Squash", 1);
     setdvar(#"hash_252e699c41531f1a", 2);
     setdvar(#"r_motionblurstrength", 0.2);
-    while (1) {
+    while (true) {
         level._fx.rc_car.velocity = function_72c0c267(level._fx.rc_car getvelocity(), level._fx.rc_car.angles);
         scalar = level._fx.rc_car.velocity[0] / 1100;
         scalar = max(0, min(1, scalar));
@@ -777,16 +777,16 @@ function private function_d1374213(*localclientnum, *oldval, newval, *bnewent, *
     switch (bwastimejump) {
     case 0:
         self function_f6e99a8d("rob_p9_cp_takedown_snipercam_blood_henchman");
-        return;
+        break;
     case 1:
         self playrenderoverridebundle("rob_p9_cp_takedown_snipercam_blood_henchman");
-        return;
+        break;
     case 2:
         self function_f6e99a8d("rob_p9_cp_takedown_snipercam_blood_splatter");
-        return;
+        break;
     case 3:
         self playrenderoverridebundle("rob_p9_cp_takedown_snipercam_blood_splatter");
-        return;
+        break;
     }
 }
 

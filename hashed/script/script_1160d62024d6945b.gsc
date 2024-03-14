@@ -160,17 +160,17 @@ function private function_76e9830e(vehicletype, spawnpos, spawnangles, index, ca
 // Size: 0x310
 function private function_a20b03ed(vs) {
     if (vs.alive) {
-        return 0;
+        return false;
     }
     if (!vs.respawntime) {
-        return 0;
+        return false;
     }
     if (isdefined(vs.var_e7f51a60) && vs.spawncount >= vs.var_e7f51a60) {
-        return 0;
+        return false;
     }
     time = gettime();
     if (time < vs.var_93438377 + vs.respawntime) {
-        return 0;
+        return false;
     }
     if (isdefined(vs.vehicle)) {
         vs.vehicle delete();
@@ -197,11 +197,11 @@ function private function_a20b03ed(vs) {
                         box(ent.origin + var_84c67202, var_59485761 * -1, var_59485761, ent.angles, (1, 0, 0), 1, 0, 25);
                     }
                 #/
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_d0eacb0d/namespace_d0eacb0d
@@ -235,12 +235,12 @@ function function_ef4c0e24(vehicle) {
     players = vehicle getvehoccupants();
     if (players.size > 0) {
         profileNamedStop();
-        return 1;
+        return true;
     }
     players = getentitiesinradius(vehicle.origin, 150, 1);
     if (players.size > 0) {
         profileNamedStop();
-        return 1;
+        return true;
     }
     players = getentitiesinradius(vehicle.origin, 1000, 1);
     foreach (player in players) {
@@ -249,11 +249,11 @@ function function_ef4c0e24(vehicle) {
         forward = anglestoforward(player.angles);
         if (vectordot(forward, dir) > 0.707) {
             profileNamedStop();
-            return 1;
+            return true;
         }
     }
     profileNamedStop();
-    return 0;
+    return false;
 }
 
 // Namespace namespace_d0eacb0d/namespace_d0eacb0d
@@ -262,26 +262,26 @@ function function_ef4c0e24(vehicle) {
 // Size: 0x158
 function function_ef45a8f4(vs) {
     if (!level.var_10e55912) {
-        return 0;
+        return false;
     }
     if (!vs.alive) {
-        return 0;
+        return false;
     }
     if (!vs.timeouttime) {
-        return 0;
+        return false;
     }
     vehicle = vs.vehicle;
     if (!isdefined(vehicle)) {
-        return 0;
+        return false;
     }
     if (!isvehicle(vehicle)) {
-        return 0;
+        return false;
     }
     if (!isdefined(vehicle.last_enter)) {
-        return 0;
+        return false;
     }
     if (distancesquared(vehicle.origin, vs.spawnpos) < 36864) {
-        return 0;
+        return false;
     }
     time = gettime();
     if (!isdefined(vehicle.var_70ad8a9e) || function_ef4c0e24(vehicle)) {
@@ -289,12 +289,12 @@ function function_ef45a8f4(vs) {
     }
     occupants = vehicle getvehoccupants();
     if (isdefined(occupants) && occupants.size) {
-        return 0;
+        return false;
     }
     if (vs.timeouttime + vehicle.var_70ad8a9e > time) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_d0eacb0d/namespace_d0eacb0d
@@ -313,7 +313,7 @@ function function_6ecd8f13(vs) {
 // Checksum 0xc7596ed2, Offset: 0xf80
 // Size: 0x182
 function function_7955100c() {
-    while (1) {
+    while (true) {
         if (isdefined(level.var_9fd4b8f) && isdefined(level.var_9fd4b8f.vehicles)) {
             vehiclecount = level.var_9fd4b8f.vehicles.size;
             var_cefe19ce = int(vehiclecount * float(function_60d95f53()) / 1000);

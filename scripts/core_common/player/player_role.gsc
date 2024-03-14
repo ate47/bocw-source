@@ -91,7 +91,7 @@ function function_965ea244(var_6c93328a = 0, var_f99420aa = 0) {
 function function_63d13ea3(characterindex) {
     maxuniqueroles = getgametypesetting(#"maxuniquerolesperteam", characterindex);
     if (maxuniqueroles == 0) {
-        return 0;
+        return false;
     }
     rolecount = 0;
     foreach (player in level.players) {
@@ -102,11 +102,11 @@ function function_63d13ea3(characterindex) {
         if (isdefined(player.pers[#"team"]) && player.pers[#"team"] == self.pers[#"team"] && playercharacterindex == characterindex) {
             rolecount++;
             if (rolecount >= maxuniqueroles) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace player_role/player_role
@@ -115,7 +115,7 @@ function function_63d13ea3(characterindex) {
 // Size: 0x10e
 function is_valid(index) {
     if (!isdefined(index)) {
-        return 0;
+        return false;
     }
     if (currentsessionmode() == 2) {
         return (index >= 0 && index < getplayerroletemplatecount(currentsessionmode()));

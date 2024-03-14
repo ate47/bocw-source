@@ -155,9 +155,9 @@ function private function_9d59692c(var_33e339fe, var_551c6a0e) {
 // Size: 0x78
 function private function_ccdf9d44(params, *hotzone) {
     if (!isdefined(self.list_name) || !isdefined(self.var_89592ba7) || isplayer(hotzone.eattacker) || isalive(self.var_659efbe)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_cd6bd9f/namespace_cd6bd9f
@@ -166,9 +166,9 @@ function private function_ccdf9d44(params, *hotzone) {
 // Size: 0x92
 function private function_1915f8d6(params, *hotzone) {
     if (!is_true(self.var_8576e0be) && !isplayer(hotzone.eattacker) && isdefined(self.list_name) && isdefined(self.var_89592ba7) && !is_true(self.var_7a68cd0c)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_cd6bd9f/namespace_cd6bd9f

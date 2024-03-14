@@ -41,12 +41,12 @@ function calculate_map_center() {
 // Size: 0x3a
 function function_1bc642b7() {
     if (game.switchedsides == 0) {
-        return 0;
+        return false;
     }
     if (level.spawnsystem.var_3709dc53 == 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace spawning/namespace_48f955ce
@@ -339,15 +339,15 @@ function function_82ca1565(spawnpoint, gametype) {
 // Size: 0xc2
 function is_spawn_trapped(team) {
     if (!level.rankedmatch) {
-        return 0;
+        return false;
     }
     if (level.spawnsystem.spawntraptriggertime == 0) {
-        return 0;
+        return false;
     }
     if (isdefined(level.alivetimesaverage) && isdefined(level.alivetimesaverage[team]) && level.alivetimesaverage[team] != 0 && level.alivetimesaverage[team] < int(level.spawnsystem.spawntraptriggertime * 1000)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace spawning/namespace_48f955ce
@@ -408,12 +408,12 @@ function function_a782529(e_player) {
 // Size: 0x46
 function usestartspawns() {
     if (is_true(level.alwaysusestartspawns)) {
-        return 1;
+        return true;
     }
     if (!is_true(level.usestartspawns)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace spawning/namespace_48f955ce
@@ -519,7 +519,7 @@ function function_90dee50d() {
 // Size: 0x44
 function function_c24e290c(spawn) {
     if (!territory::is_valid(spawn)) {
-        return 0;
+        return false;
     }
     return !territory::is_inside(spawn.origin);
 }
@@ -530,8 +530,8 @@ function function_c24e290c(spawn) {
 // Size: 0x32
 function function_daa5852f() {
     if (level.var_f2814a96 === 0 || level.var_f2814a96 === 2) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 

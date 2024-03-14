@@ -454,15 +454,15 @@ function function_9dd75dad(team) {
 // Size: 0x88
 function is_all_dead(team) {
     if (level.numteamlives > 0 && !level.spawnsystem.var_c2cc011f && game.lives[team] > 0) {
-        return 0;
+        return false;
     }
     if (level.playerlives[team]) {
-        return 0;
+        return false;
     }
     if (function_a1ef346b(team).size) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace teams/teams

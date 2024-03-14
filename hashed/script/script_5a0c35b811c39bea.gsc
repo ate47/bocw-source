@@ -315,13 +315,13 @@ function onallcracks(entity) {
 // Size: 0x8a
 function function_7436ece2(entity) {
     if (!isplayer(entity) || !namespace_85745671::function_142c3c86(entity)) {
-        return 0;
+        return false;
     }
     vehicle = entity getvehicleoccupied();
     if (vehicle getspeed() < 100) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_9f3d3e9/namespace_9f3d3e9
@@ -350,15 +350,15 @@ function function_f498585b(entity) {
 // Size: 0x6e
 function function_14b5c940(entity) {
     if (is_false(entity.can_shoot)) {
-        return 0;
+        return false;
     }
     if (!isdefined(entity.favoriteenemy)) {
-        return 0;
+        return false;
     }
     if (isdefined(level.var_a35afcb2) && ![[ level.var_a35afcb2 ]](entity)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_9f3d3e9/namespace_9f3d3e9
@@ -579,21 +579,21 @@ function function_f59c1777(params) {
 // Size: 0x118
 function private function_b16c8865(entity, owner) {
     if (self == entity) {
-        return 0;
+        return false;
     }
     if (!isplayer(entity) && (!isdefined(entity.model) || entity.model == #"")) {
-        return 0;
+        return false;
     }
     if (isactor(entity) && !is_true(entity.var_8f61d7f4)) {
-        return 0;
+        return false;
     }
     if (isdefined(entity.team) && !util::function_fbce7263(entity.team, owner.team)) {
-        return 0;
+        return false;
     }
     if (isdefined(entity.ignoreemp) ? entity.ignoreemp : 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_9f3d3e9/namespace_9f3d3e9

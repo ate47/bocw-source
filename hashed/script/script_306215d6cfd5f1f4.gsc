@@ -11,9 +11,9 @@ function function_99652b58(name, index, team = #"none") {
     cameras = territory::function_1f583d2e(name, "targetname");
     if (cameras.size) {
         addobjectivecamerapoint(name, index, team, cameras[0].origin, cameras[0].angles);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_99c84a33/namespace_99c84a33

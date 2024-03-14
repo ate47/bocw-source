@@ -87,10 +87,10 @@ function init() {
                     }
                     s_loc.var_ae9d791b[s_loc.var_ae9d791b.size] = ent;
                     ent notsolid();
-                    continue;
+                    break;
                 case #"space":
                     s_loc.vol_arena = ent;
-                    continue;
+                    break;
                 }
             }
         }
@@ -109,11 +109,11 @@ function init() {
                                     struct.var_4ad75699 = array(struct.var_4ad75699);
                                 }
                                 struct.var_4ad75699[struct.var_4ad75699.size] = var_3c91d8e7;
-                                continue;
+                                break;
                             }
                         }
                     }
-                    continue;
+                    break;
                 case #"warp":
                     if (!isdefined(s_loc.var_a9cc7c2)) {
                         s_loc.var_a9cc7c2 = [];
@@ -121,7 +121,7 @@ function init() {
                         s_loc.var_a9cc7c2 = array(s_loc.var_a9cc7c2);
                     }
                     s_loc.var_a9cc7c2[s_loc.var_a9cc7c2.size] = struct;
-                    continue;
+                    break;
                 case #"hash_629346df19c15129":
                     if (!isdefined(s_loc.var_1619fc2f)) {
                         s_loc.var_1619fc2f = [];
@@ -129,7 +129,7 @@ function init() {
                         s_loc.var_1619fc2f = array(s_loc.var_1619fc2f);
                     }
                     s_loc.var_1619fc2f[s_loc.var_1619fc2f.size] = struct;
-                    continue;
+                    break;
                 case #"leave":
                     if (!isdefined(s_loc.var_cafd3f7e)) {
                         s_loc.var_cafd3f7e = [];
@@ -137,7 +137,7 @@ function init() {
                         s_loc.var_cafd3f7e = array(s_loc.var_cafd3f7e);
                     }
                     s_loc.var_cafd3f7e[s_loc.var_cafd3f7e.size] = struct;
-                    continue;
+                    break;
                 }
             }
         }
@@ -416,7 +416,7 @@ function function_6830c3a2() {
     }
     level endon(#"end_game");
     self endon(#"death");
-    while (1) {
+    while (true) {
         s_waitresult = undefined;
         s_waitresult = self waittill(#"trigger");
         if (zm_utility::is_player_valid(s_waitresult.activator)) {
@@ -1004,9 +1004,9 @@ function function_86c6df86(einflictor, eattacker, idamage, idflags, smeansofdeat
 // Size: 0x2e
 function function_f1d7560a() {
     if (self flag::get(#"hash_28a7976f46b038e")) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_4e8d47b1/namespace_4e8d47b1
@@ -1030,7 +1030,7 @@ function function_223f7204(var_75a7d6, var_b39864d6) {
     var_b39864d6.health = 1;
     var_b39864d6.var_95ee6823 = 0.3;
     var_b39864d6.var_4165b2d7 = 1;
-    while (1) {
+    while (true) {
         s_waitresult = undefined;
         s_waitresult = var_b39864d6 waittill(#"damage");
         e_attacker = s_waitresult.attacker;
@@ -1106,16 +1106,16 @@ function function_223f7204(var_75a7d6, var_b39864d6) {
 function is_wonder_weapon(w_weapon) {
     if (isdefined(w_weapon)) {
         if (zm_weapons::is_wonder_weapon(w_weapon)) {
-            return 1;
+            return true;
         }
         w_root = zm_weapons::function_386dacbc(w_weapon);
         w_ray_gun = getweapon(#"ray_gun");
         var_294057a4 = getweapon(#"ray_gun_upgraded");
         if (w_root === w_ray_gun || w_root === var_294057a4) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_4e8d47b1/namespace_4e8d47b1
@@ -1151,7 +1151,7 @@ function function_ab3592be(var_75a7d6, var_b39864d6) {
     level endon(#"end_game");
     var_75a7d6 endon(#"defeated", #"hash_2a901e02467da092");
     var_b39864d6 endon(#"death");
-    while (1) {
+    while (true) {
         var_75a7d6.mdl_shield = spawncollision(#"hash_3f6fd9083ac4ae62", "mdl_showdown_block", var_b39864d6.origin + (0, 0, 28), var_b39864d6.angles);
         if (isdefined(var_75a7d6.mdl_shield)) {
             break;
@@ -1166,8 +1166,8 @@ function function_ab3592be(var_75a7d6, var_b39864d6) {
     mdl_shield.health = 1;
     mdl_shield.var_95ee6823 = 0.3;
     mdl_shield.var_4165b2d7 = 1;
-    while (1) {
-        while (1) {
+    while (true) {
+        while (true) {
             s_waitresult = undefined;
             s_waitresult = mdl_shield waittill(#"damage");
             e_attacker = s_waitresult.attacker;
@@ -1595,7 +1595,7 @@ function function_c860cfeb(var_75a7d6, str_loc) {
 function function_5c1c7b14(var_75a7d6) {
     level endon(#"end_game");
     var_75a7d6 endon(#"defeated", #"hash_58daddce6edaed3a");
-    while (1) {
+    while (true) {
         var_1c869e1 = getaicount();
         if (!var_75a7d6 flag::get(#"hash_1e2734204ab845a2") && var_1c869e1 < getailimit() && var_1c869e1 < level.zombie_ai_limit && var_1c869e1 < var_75a7d6.var_de4a9f7a) {
             var_949e9e59 = function_544d0383(var_75a7d6);
@@ -2335,11 +2335,11 @@ function function_ec35f21(var_75a7d6, str_loc) {
     if (isdefined(vol_arena)) {
         foreach (e_player in function_a1ef346b()) {
             if (e_player istouching(vol_arena)) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_4e8d47b1/namespace_4e8d47b1
@@ -2389,12 +2389,12 @@ function function_14a35d6f(var_75a7d6, str_loc, b_play_vo = 1) {
                     }
                 }
                 if (b_teleporting) {
-                    return 1;
+                    return true;
                 }
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_4e8d47b1/namespace_4e8d47b1
@@ -2501,7 +2501,7 @@ function function_e6cfd3a8(var_75a7d6, vol_arena) {
     }
     var_75a7d6 endon(#"defeated", #"hash_70dcd61cd5d83be7");
     vol_arena endon(#"death");
-    while (1) {
+    while (true) {
         foreach (e_player in function_a1ef346b()) {
             if (e_player istouching(vol_arena)) {
                 var_75a7d6 notify(#"hash_36d3f175d79aef84");
@@ -2562,7 +2562,7 @@ function function_a094b1fc(var_75a7d6) {
     foreach (s_spawn in a_s_spawns) {
         function_4cc9e609(var_75a7d6);
         s_rise = struct::get(s_spawn.target);
-        while (1) {
+        while (true) {
             ai_zombie = var_ca4db1e2 spawnfromspawner(undefined, 1, 1, 1);
             if (isdefined(ai_zombie)) {
                 break;
@@ -3012,7 +3012,7 @@ function function_9da5eeca(var_75a7d6, n_spawn, e_target, v_center) {
     v_target = e_target.origin;
     var_8af6101c = 0;
     if (isvec(v_target) && distance2dsquared(v_target, v_center) <= function_a3f6cdac(1500)) {
-        while (1) {
+        while (true) {
             if (is_true(e_target.ignoreme)) {
                 var_8af6101c = 1;
             }
@@ -3073,7 +3073,7 @@ function function_a511bfce(var_75a7d6, n_spawn, var_3e5ed63d) {
     var_b39864d6 endon(#"death");
     var_3e5ed63d endon(#"death");
     wait(0.5);
-    while (1) {
+    while (true) {
         switch (n_spawn) {
         case 0:
             v_spawn = var_b39864d6 gettagorigin("j_head") - anglestoforward(var_b39864d6.angles) * 8;
@@ -3269,7 +3269,7 @@ function function_56818238(var_75a7d6) {
         n_spawns = randomintrangeinclusive(var_4d36bf1b, var_eff81ec3);
         for (i = 0; i < n_spawns; i++) {
             function_4cc9e609(var_75a7d6);
-            while (1) {
+            while (true) {
                 var_cdf231ac = namespace_abfee9ba::function_dfa96d1f();
                 if (isdefined(var_cdf231ac)) {
                     break;
@@ -3317,28 +3317,28 @@ function cmd(cmd) {
         switch (cmd) {
         case #"hash_213591a3df24967d":
             level.var_cc4817d7 = "phase_transition";
-            return;
+            break;
         case #"hash_7b914ebf5b57c696":
             level.var_cc4817d7 = "stand_teleport_out";
-            return;
+            break;
         case #"hash_f72e94a26490fd7":
             level.var_cc4817d7 = "vacuum_7";
-            return;
+            break;
         case #"hash_12274633230d3eb4":
             level.var_cc4817d7 = "vacuum_1";
-            return;
+            break;
         case #"hash_5de2ff5967070ea8":
             level.var_cc4817d7 = "stand_blast_loop";
-            return;
+            break;
         case #"hash_6ee66ab56d6217f6":
             level.var_cc4817d7 = undefined;
-            return;
+            break;
         case #"hash_264ec163f16c435b":
             level notify(#"hash_38f29f9cb03586ea");
             level notify(#"hash_3807e7b1086e4aa0");
-            return;
+            break;
         default:
-            return;
+            break;
         }
     #/
 }

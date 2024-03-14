@@ -915,9 +915,9 @@ function function_3d4f3242() {
 function function_525a83cb(skipto) {
     substr = tolower(getsubstr(skipto, 0, 4));
     if (substr == "dev_") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace skipto/skipto
@@ -2000,7 +2000,7 @@ function function_18193dd4() {
     var_6396ca45[3] = [1:198.512, 0:"titlescreen"];
     var_6396ca45[4] = [1:68.521, 0:"menu_theme_edit"];
     var_6396ca45[5] = [1:10, 0:""];
-    while (1) {
+    while (true) {
         foreach (var_1bb18053 in var_6396ca45) {
             state = var_1bb18053[0];
             seconds = float(var_1bb18053[1]);
@@ -2127,10 +2127,10 @@ function function_4e6fcdc(name) {
 function function_8916f54(trigger) {
     foreach (player in getplayers()) {
         if (!player istouching(trigger)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace skipto/skipto

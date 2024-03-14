@@ -308,9 +308,9 @@ function function_a59cd1c9() {
 function function_525a83cb(skipto) {
     substr = tolower(getsubstr(skipto, 0, 4));
     if (substr == "dev_") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace skipto/skipto
@@ -354,7 +354,7 @@ function handle() {
         }
     }
     function_51726ac8(var_ea94f865, 1);
-    while (1) {
+    while (true) {
         level waittill(#"skiptos_changed");
         level thread function_4fcf7c1();
     }

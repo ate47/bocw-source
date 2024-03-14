@@ -46,14 +46,14 @@ function spectate_player_watcher() {
         self function_38fd902d(spawnorigin, spawnangles);
     }
     self.watchingactiveclient = 1;
-    while (1) {
+    while (true) {
         if (self.pers[#"team"] != #"spectator" || level.gameended) {
             if (!is_true(level.inprematchperiod)) {
                 self val::reset(#"spectate", "freezecontrols");
                 self val::reset(#"spectate", "disablegadgets");
             }
             self.watchingactiveclient = 0;
-            return;
+            break;
         }
         count = 0;
         for (i = 0; i < level.players.size; i++) {

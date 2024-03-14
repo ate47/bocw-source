@@ -42,7 +42,7 @@ function init_shared() {
             level.var_51afeae4 = [];
         }
         level.emp_killstreaks = [];
-        if (0) {
+        if (false) {
             renderoverridebundle::function_f72f089c(#"hash_7d4b6b0d84ddafa3", #"friendly", sessionmodeiscampaigngame() ? #"rob_sonar_set_friendlyequip_cp" : #"rob_sonar_set_friendlyequip_mp", &function_95f96f3e);
         }
         function_8ac48939(level.killstreakcorebundle);
@@ -55,22 +55,22 @@ function init_shared() {
 // Size: 0xf2
 function function_95f96f3e(local_client_num, *bundle, *param) {
     if (!self function_e9fc6a64()) {
-        return 0;
+        return false;
     }
     if (codcaster::function_b8fe9b52(param)) {
-        return 0;
+        return false;
     }
     if (self.type === "vehicle" && self function_979020fe()) {
-        return 0;
+        return false;
     }
     if (isdefined(level.vision_pulse) && is_true(level.vision_pulse[param])) {
-        return 0;
+        return false;
     }
     player = function_5c10bd79(param);
     if (self == player) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace killstreak_detect/killstreak_detect
@@ -79,18 +79,18 @@ function function_95f96f3e(local_client_num, *bundle, *param) {
 // Size: 0x114
 function function_7181329a(entity) {
     if (isplayer(entity)) {
-        return 0;
+        return false;
     }
     if (entity.type != "missile" && entity.type != "vehicle" && entity.type != "scriptmover" && entity.type != "actor") {
-        return 0;
+        return false;
     }
     if (self clientfield::get("enemyvehicle") != 0) {
-        return 1;
+        return true;
     }
     if (entity.type != "actor" && self.type !== "vehicle" && self clientfield::get("enemyequip") != 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace killstreak_detect/killstreak_detect
@@ -99,27 +99,27 @@ function function_7181329a(entity) {
 // Size: 0x116
 function function_d63aa49b(local_client_num, *bundle) {
     if (self function_e9fc6a64()) {
-        return 0;
+        return false;
     }
     if (codcaster::function_b8fe9b52(bundle)) {
-        return 0;
+        return false;
     }
     if (self.type === "vehicle") {
         if (self function_4add50a7()) {
-            return 0;
+            return false;
         }
         if (!function_97980fde(bundle, self)) {
-            return 0;
+            return false;
         }
     }
     if (self.isbreachingfirewall === 1) {
-        return 0;
+        return false;
     }
     player = function_5c10bd79(bundle);
     if (player.var_33b61b6f === 1 && self flag::get(#"enemy") !== 1) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace killstreak_detect/killstreak_detect
@@ -128,21 +128,21 @@ function function_d63aa49b(local_client_num, *bundle) {
 // Size: 0xf8
 function function_903bbed3(local_client_num, *bundle) {
     if (self function_e9fc6a64()) {
-        return 0;
+        return false;
     }
     if (codcaster::function_b8fe9b52(bundle)) {
-        return 0;
+        return false;
     }
     if (self.type === "vehicle" && self function_4add50a7()) {
-        return 0;
+        return false;
     }
     if (isdefined(self.isbreachingfirewall) && self.isbreachingfirewall == 1) {
-        return 0;
+        return false;
     }
     if (function_5778f82(bundle, #"specialty_showenemyvehicles") && !isplayer(self) && function_7181329a(self)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace killstreak_detect/killstreak_detect
@@ -162,14 +162,14 @@ function function_d859c344(local_client_num, *newval) {
     }
     if (isdefined(bundle)) {
         show_friendly = bundle.("ksROBShowFriendly");
-        if (is_true(show_friendly) && 0) {
+        if (is_true(show_friendly) && false) {
             self renderoverridebundle::function_c8d97b8e(newval, #"friendly", bundle.var_d3413870 + "friendly");
         }
         show_enemy = bundle.("ksROBShowEnemy");
         if (is_true(show_enemy)) {
             self renderoverridebundle::function_c8d97b8e(newval, #"enemy", bundle.var_d3413870 + "enemy");
         }
-    } else if (0) {
+    } else if (false) {
         self renderoverridebundle::function_c8d97b8e(newval, #"friendly", #"hash_7d4b6b0d84ddafa3");
     }
     self renderoverridebundle::function_c8d97b8e(newval, #"rob_sonar_set_enemy", #"hash_6a966793a191bc8c");

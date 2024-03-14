@@ -195,7 +195,7 @@ function hit1_helispotlight(localclientnum, *oldval, newval, *bnewent, *binitial
     if (bwastimejump) {
         self endon(#"hash_55fc2759ea7b7c72");
         level.var_9a3944f4 = self;
-        while (1) {
+        while (true) {
             if (isdefined(self.var_ba240678.tracking)) {
                 /#
                     if (is_true(var_61bc4e7)) {
@@ -300,36 +300,36 @@ function lerp_fov(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fi
     switch (bwasdemojump) {
     case 1:
         self namespace_ca99987f::function_f95cb457(undefined, 15.5, 0.5, #"linear");
-        return;
+        break;
     case 2:
         self namespace_ca99987f::function_f95cb457(undefined, 20.2, 1.8, #"linear");
         self function_9e574055(0);
         self function_3c54e2b8(1);
-        return;
+        break;
     case 3:
         self function_9e574055(2);
         self namespace_ca99987f::function_136edb11(undefined, 3, 0.1, #"linear", 1, 1);
         self function_d7be9a9f(15, 0.1);
-        return;
+        break;
     case 5:
         self namespace_ca99987f::function_136edb11(undefined, 5.6, 2, #"linear", 1, 1);
-        return;
+        break;
     case 0:
         self function_9e574055(0);
         self function_3c54e2b8(2);
         self function_9ea7b4eb(2);
         self function_9298adaf(2);
-        return;
+        break;
     case 6:
         self namespace_ca99987f::function_f95cb457(undefined, 17.2, 2, #"linear");
         self function_9e574055(0);
         self function_3c54e2b8(1);
-        return;
+        break;
     case 7:
         self namespace_ca99987f::function_f95cb457(undefined, 20.2, 1.8, #"linear");
         self function_9e574055(0);
         self function_3c54e2b8(1);
-        return;
+        break;
     }
 }
 
@@ -341,7 +341,7 @@ function function_c4ad9641() {
     self endoncallback(&function_26826144, #"death", #"hash_b2522f6440eb5d5");
     self function_9e574055(1);
     self namespace_ca99987f::function_136edb11(undefined, 5.6, 1, #"linear");
-    while (1) {
+    while (true) {
         v_eye = self geteye();
         v_fwd = anglestoforward(self getcamangles());
         a_trace = physicstrace(v_eye, v_eye + v_fwd * 1000, (1 * -1, 1 * -1, 1 * -1), (1, 1, 1), self, 1);
@@ -389,7 +389,7 @@ function function_f48f6d3(*localclientnum, *oldval, newval, *bnewent, *binitials
         foreach (model in var_648616bf) {
             hidestaticmodel(model);
         }
-        return;
+        break;
     case 1:
         foreach (n_decal in a_n_decals) {
             unhidevolumedecal(n_decal);
@@ -397,9 +397,9 @@ function function_f48f6d3(*localclientnum, *oldval, newval, *bnewent, *binitials
         foreach (model in var_648616bf) {
             unhidestaticmodel(model);
         }
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 
@@ -414,14 +414,14 @@ function function_7f111718(*localclientnum, *oldval, newval, *bnewent, *binitial
         foreach (model in var_648616bf) {
             hidestaticmodel(model);
         }
-        return;
+        break;
     case 1:
         foreach (model in var_648616bf) {
             unhidestaticmodel(model);
         }
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 

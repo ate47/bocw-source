@@ -37,7 +37,7 @@ function function_922745a1(player) {
     player endon(#"disconnect");
     weapon = getweapon("zombietron_sprinkler_grenade");
     top = self.origin + vectorscale((0, 0, 1), 32);
-    while (1) {
+    while (true) {
         self rotateto(self.angles + vectorscale((0, 1, 0), 15), 0.2);
         wait(0.2);
         forward = anglestoforward(self.angles + vectorscale((0, 0, 1), 500));

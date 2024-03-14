@@ -105,7 +105,7 @@ function function_7f805dac(localclientnum, *oldval, newval, *bnewent, *binitials
     case 2:
     case 3:
         self.elemental_pop_reload_fx = util::playfxontag(fieldname, #"hash_70912cde462752a8", self, "tag_origin");
-        return;
+        break;
     }
 }
 

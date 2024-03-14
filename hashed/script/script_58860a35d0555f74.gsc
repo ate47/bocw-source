@@ -133,14 +133,14 @@ function private function_83407b23(v_destination) {
     foreach (var_f740b763 in level.var_ff7ae671) {
         if (isdefined(var_f740b763.v_position) && isdefined(var_f740b763.n_radius)) {
             if (distancesquared(v_destination, var_f740b763.v_position) <= function_a3f6cdac(var_f740b763.n_radius)) {
-                return 1;
+                return true;
             }
         }
         if (isstring(var_f740b763.var_faa5f280)) {
             var_5ea34012 = getentarray(var_f740b763.var_faa5f280, "targetname");
             foreach (var_9efd28d0 in var_5ea34012) {
                 if (istouching(v_destination, var_9efd28d0)) {
-                    return 1;
+                    return true;
                 }
             }
         }
@@ -149,12 +149,12 @@ function private function_83407b23(v_destination) {
     if (level.var_f3346ffc.size > 0) {
         foreach (var_eda0bf20 in level.var_f3346ffc) {
             if (istouching(v_destination, var_eda0bf20)) {
-                return 0;
+                return false;
             }
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_1fd59e39/namespace_1fd59e39
@@ -165,7 +165,7 @@ function private function_e41cc86b() {
     /#
         self notify("<unknown string>");
         self endon("<unknown string>");
-        while (1) {
+        while (true) {
             if (getdvarint(#"hash_3ce5890428b398f1", 0)) {
                 foreach (var_ee6a1fe8 in level.var_ff7ae671) {
                     if (isdefined(var_ee6a1fe8.v_position) && isdefined(var_ee6a1fe8.n_radius)) {
@@ -195,15 +195,15 @@ function on_spawned() {
 // Size: 0xcc
 function private function_4473f9bb(currentweapon) {
     if (killstreaks::is_killstreak_weapon(currentweapon)) {
-        return 0;
+        return false;
     }
     foreach (weaponname in level.var_e163165b) {
         weapon = getweapon(weaponname);
         if (weapon === currentweapon) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_1fd59e39/namespace_1fd59e39
@@ -219,26 +219,26 @@ function function_84c43da8(params) {
     switch (weapon.name) {
     case #"hash_2d88b4c5217c7e7c":
         self thread function_ff022837(5, weapon);
-        return;
+        break;
     case #"hash_164c43cbd0ee958":
         self thread function_ff022837(5, weapon);
         if (function_4473f9bb(currentweapon)) {
             self player::fill_current_clip(1);
         }
-        return;
+        break;
     case #"hash_164c73cbd0eee71":
         self thread function_ff022837(8, weapon);
         if (function_4473f9bb(currentweapon)) {
             self player::fill_current_clip(1);
         }
-        return;
+        break;
     case #"hash_164c63cbd0eecbe":
         self thread function_ff022837(8, weapon);
         if (function_4473f9bb(currentweapon)) {
             self player::fill_current_clip(1);
         }
         self thread function_c5e5e928(500);
-        return;
+        break;
     case #"hash_164c83cbd0ef024":
     case #"hash_164c93cbd0ef1d7":
         self thread function_ff022837(8, weapon);
@@ -247,7 +247,7 @@ function function_84c43da8(params) {
         }
         self thread function_c5e5e928(500);
         self thread function_df6782a4(1.5, 8);
-        return;
+        break;
     }
 }
 
@@ -363,9 +363,9 @@ function private function_2e44fb9a(var_ab528fee) {
     v_trace_start = var_ab528fee + vectorscale((0, 0, 1), 70);
     trace = physicstraceex(v_trace_start, var_ab528fee);
     if (trace[#"fraction"] < 0.99) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_1fd59e39/namespace_1fd59e39

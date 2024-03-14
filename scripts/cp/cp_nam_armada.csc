@@ -100,7 +100,7 @@ function function_c4ad9641() {
     self endoncallback(&function_26826144, #"death", #"hash_b2522f6440eb5d5");
     self function_9e574055(1);
     self namespace_ca99987f::function_136edb11(undefined, 5.6, 1, #"linear");
-    while (1) {
+    while (true) {
         v_eye = self geteye();
         v_fwd = anglestoforward(self getcamangles());
         a_trace = physicstrace(v_eye, v_eye + v_fwd * 1000, (1 * -1, 1 * -1, 1 * -1), (1, 1, 1), self, 1);
@@ -192,7 +192,7 @@ function function_949d138a(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Checksum 0x52a73528, Offset: 0x13e0
 // Size: 0xde
 function function_578ff07e() {
-    while (1) {
+    while (true) {
         fov = getdvarfloat(#"cg_fov", 60);
         started = 0;
         while (!started) {
@@ -520,13 +520,13 @@ function function_35172364(*localclientnum, *oldval, newval, *bnewent, *binitial
     switch (bwasdemojump) {
     case 1:
         level.var_a9e29100 = self function_82f1cbd2();
-        return;
+        break;
     case 2:
         if (isdefined(level.var_a9e29100)) {
             self function_49cdf043(level.var_a9e29100, 0);
             self function_9298adaf(1);
         }
-        return;
+        break;
     }
 }
 
@@ -538,13 +538,13 @@ function function_2dca33ef(*localclientnum, *oldval, newval, *bnewent, *binitial
     switch (bwasdemojump) {
     case 1:
         level.var_244d2f22 = self function_82f1cbd2();
-        return;
+        break;
     case 2:
         if (isdefined(level.var_244d2f22)) {
             self function_49cdf043(level.var_244d2f22, 0);
             self function_9298adaf(2);
         }
-        return;
+        break;
     }
 }
 

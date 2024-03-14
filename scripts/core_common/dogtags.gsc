@@ -233,7 +233,7 @@ function function_b9937933() {
     level endon(#"game_ended");
     self endon(#"reset");
     self.var_2581d0d endon(#"death", #"stationary");
-    while (1) {
+    while (true) {
         if (!isdefined(self.var_2581d0d)) {
             return;
         }
@@ -449,7 +449,7 @@ function function_1d8e2a5b(activator) {
 function team_updater(tags) {
     level endon(#"game_ended");
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         self waittill(#"joined_team");
         tags.victimteam = self.team;
         tags reset_tags();
@@ -489,21 +489,21 @@ function checkallowspectating() {
 // Size: 0x150
 function should_spawn_tags(*einflictor, attacker, *idamage, *smeansofdeath, *weapon, *vdir, *shitloc, *psoffsettime, *deathanimduration) {
     if (isalive(self)) {
-        return 0;
+        return false;
     }
     if (isdefined(self.switching_teams)) {
-        return 0;
+        return false;
     }
     if (isdefined(deathanimduration) && deathanimduration == self) {
-        return 0;
+        return false;
     }
     if (level.teambased && isdefined(deathanimduration) && isdefined(deathanimduration.team) && deathanimduration.team == self.team) {
-        return 0;
+        return false;
     }
     if (isdefined(deathanimduration) && (!isdefined(deathanimduration.team) || deathanimduration.team == #"none") && (deathanimduration.classname == "trigger_hurt" || deathanimduration.classname == "worldspawn")) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace dogtags/dogtags

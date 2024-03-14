@@ -228,7 +228,7 @@ function function_f205a29() {
     self notify(#"hash_56408ad5d2de0751");
     self endon(#"hash_56408ad5d2de0751");
     self endon(#"death");
-    while (1) {
+    while (true) {
         self flag::wait_till("stealth_enabled");
         var_7f729179 = undefined;
         var_7f729179 = self waittill(#"ai_events");
@@ -486,14 +486,14 @@ function function_961c59a4(event) {
         assert(event.type == "<unknown string>");
     #/
     if (!isdefined(event.entity.item.name)) {
-        return 0;
+        return false;
     }
     if (event.entity.item.name == #"hatchet") {
-        return 1;
+        return true;
     }
     if (event.entity.item.name == #"hash_5453c9b880261bcb") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 

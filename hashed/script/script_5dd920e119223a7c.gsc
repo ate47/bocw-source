@@ -213,7 +213,7 @@ function function_e67d6e33() {
 function function_ccaf09a(instance) {
     self endon(#"death");
     wait(15);
-    while (1) {
+    while (true) {
         self flag::wait_till_clear("kill_hvt_teleporting");
         if (self.aitype === #"hash_3ff43755c44e6d3d") {
             self namespace_7589cf5c::function_ac709d66(instance, #"hash_7bb2a4fde8d5a6fc");
@@ -813,7 +813,7 @@ function private function_dd27cb14(*var_f5064815, s_instance, var_559503f1) {
     level.var_1f73a372 endon(#"death", #"hash_316bee96eded77ba");
     s_instance endon(#"complete");
     self.n_spawned = 0;
-    while (1) {
+    while (true) {
         switch (function_a1ef346b().size) {
         case 1:
         default:
@@ -1566,11 +1566,11 @@ function function_314cd1eb() {
     while (!isdefined(level.n_spawned) || level.n_spawned <= n_threshold) {
         wait(1);
     }
-    while (1) {
+    while (true) {
         if (self.n_active <= n_threshold) {
             self flag::set("attack");
             self flag::set(#"hash_4c7f6759cef7aa9a");
-            return;
+            break;
         }
         wait(0.5);
     }
@@ -1582,7 +1582,7 @@ function function_314cd1eb() {
 // Size: 0xa0
 function function_47de2d14() {
     self endon(#"death", #"attacking");
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = self waittill(#"damage");
         if (isdefined(s_result.attacker) && isplayer(s_result.attacker)) {
@@ -1597,7 +1597,7 @@ function function_47de2d14() {
 // Size: 0x10c
 function function_4e1e24ae() {
     self endon(#"death", #"attacking");
-    while (1) {
+    while (true) {
         a_e_players = function_a1ef346b(undefined, self.origin, self.var_21249dfb);
         foreach (e_player in a_e_players) {
             if (!e_player laststand::player_is_in_laststand()) {
@@ -1802,7 +1802,7 @@ function function_42fbf5d9(s_dest, s_instance, var_f5064815) {
         self playsound(#"hash_292cc4273f4c0161");
     }
     level thread util::delay(0.5, "end_game", &zm_vo::function_7622cb70, "objectiveKillHVTMoves");
-    while (1) {
+    while (true) {
         if (isdefined(self)) {
             var_ed0c1ff8 = distance2d(self.origin, s_dest.origin);
             if (var_ed0c1ff8 <= 100) {
@@ -1880,7 +1880,7 @@ function private function_e13574ed(var_f5064815) {
     self endon(#"death");
     var_f5064815 endon(#"hash_733ab6814f36e8ee");
     var_1b8d5495 = self.health - 50;
-    while (1) {
+    while (true) {
         if (self.health <= var_1b8d5495) {
             break;
         }
@@ -1909,10 +1909,10 @@ function function_a1829ee4() {
     v_upper = v_origin + vectorscale((0, 0, 1), 30);
     foreach (player in getplayers()) {
         if (player util::is_player_looking_at(v_origin, 0.6, 1, self) || player util::is_player_looking_at(v_upper, 0.6, 1, self) || player util::is_player_looking_at(self.origin, 0.6, 1, self)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_662ff671/namespace_662ff671
@@ -1922,7 +1922,7 @@ function function_a1829ee4() {
 function function_667a319b(s_instance, *b_play_vo) {
     b_play_vo endon(#"hash_6e9f32e31f8d1c6f");
     self endon(#"death");
-    while (1) {
+    while (true) {
         v_origin = self getcentroid();
         v_upper = v_origin + vectorscale((0, 0, 1), 30);
         foreach (player in getplayers()) {
@@ -1946,12 +1946,12 @@ function function_667a319b(s_instance, *b_play_vo) {
 function private function_83c20994(var_31891b5a) {
     self endon(#"death");
     var_31891b5a endon(#"hash_733ab6814f36e8ee");
-    while (1) {
+    while (true) {
         s_waitresult = undefined;
         s_waitresult = self waittill(#"damage");
         if (isplayer(s_waitresult.attacker)) {
             var_31891b5a notify(#"hash_733ab6814f36e8ee");
-            return;
+            break;
         }
     }
 }
@@ -2004,7 +2004,7 @@ function private function_bb9468f8(var_c79f5f0) {
         s_trigger.radius = float(s_trigger.radius);
         s_trigger.trigger_height = float(isdefined(s_trigger.trigger_height) ? s_trigger.trigger_height : 1024);
     }
-    while (1) {
+    while (true) {
         foreach (s_trigger in var_c79f5f0) {
             a_e_players = function_a1ef346b(undefined, s_trigger.origin, s_trigger.radius);
             if (isdefined(a_e_players) && a_e_players.size > 0) {
@@ -2036,7 +2036,7 @@ function private function_9e2396e0(var_82706add, v_origin = (0, 0, 0), v_angles 
     if (var_94d02b5b) {
         str_targetname = "kill_hvt_hvt";
     }
-    while (1) {
+    while (true) {
         var_7ecdee63 = function_470ef707(var_82706add);
         if (namespace_7589cf5c::function_82e262cf(var_7ecdee63)) {
             if (isdefined(level.var_7d45d0d4.activeobjective.var_38c710c3)) {
@@ -2295,11 +2295,11 @@ function private function_c9a44b0b(v_point) {
         if (!e_player laststand::player_is_in_laststand()) {
             var_91d1913b = distancesquared(v_point, e_player.origin);
             if (var_91d1913b < function_a3f6cdac(256)) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_662ff671/namespace_662ff671
@@ -2311,7 +2311,7 @@ function private function_a810bd2f() {
     self callback::function_d8abfc3d(#"hash_4afe635f36531659", &function_fd68cae4);
     player = awareness::function_d7fedde2(self);
     awareness::function_e732359c(1, self.origin, 512, self, {#position:player.origin});
-    while (1) {
+    while (true) {
         player = awareness::function_d7fedde2(self);
         if (isdefined(player)) {
             awareness::function_c241ef9a(self, player, 11);

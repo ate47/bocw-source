@@ -186,7 +186,7 @@ function private function_cc4bf5ee(player, cmd, args) {
     }
     ent = undefined;
     framecount = 0;
-    while (1) {
+    while (true) {
         ent = getentbynum(player.localclientnum, entitynumber);
         if (isentity(ent)) {
             if (var_e1fb96c7) {
@@ -222,7 +222,7 @@ function private function_cc4bf5ee(player, cmd, args) {
                     }
                 }
             }
-            return;
+            break;
         }
         framecount++;
         if (function_81fac19d(framecount % 60 == 0, "snd: client voice entity not found '" + soundalias + "' (" + entitynumber + ")")) {

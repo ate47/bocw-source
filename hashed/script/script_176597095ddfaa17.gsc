@@ -222,7 +222,7 @@ function private function_fcf7c9c8() {
 // Size: 0xea
 function function_3824d2dc(v_loc) {
     if (!isdefined(level.var_3814eac9)) {
-        return 1;
+        return true;
     }
     if (!isdefined(v_loc)) {
         v_loc = self.origin;
@@ -232,10 +232,10 @@ function function_3824d2dc(v_loc) {
             continue;
         }
         if (var_df0c0b31 istouching(v_loc)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_d0ab5955/namespace_d0ab5955
@@ -245,7 +245,7 @@ function function_3824d2dc(v_loc) {
 function function_dc15ad60() {
     level endoncallback(&cleanup_feedback, #"game_ended");
     level flag::wait_till_clear(#"hash_4930756571725d11");
-    while (1) {
+    while (true) {
         if (is_true(level.var_973f0101)) {
             break;
         }
@@ -261,7 +261,7 @@ function function_dc15ad60() {
     for (i = 1; i <= var_69a1706b; i++) {
         var_2df437f5 = var_2df437f5 + var_69a1706b * i;
     }
-    while (1) {
+    while (true) {
         time = gettime();
         dodamage = time >= var_f4d9a132;
         var_6effa129 = arraycombine(getplayers(), getvehiclearray());

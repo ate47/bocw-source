@@ -123,7 +123,7 @@ function debug_missile(missile) {
         level notify(#"debug_missile");
         level endon(#"debug_missile");
         level.debug_missile_dots = [];
-        while (1) {
+        while (true) {
             if (isdefined(missile)) {
                 missile_info = spawnstruct();
                 missile_info.origin = missile.origin;
@@ -174,10 +174,10 @@ function stingerwaitforads() {
         currentweapon = self getcurrentweapon();
         weapon = getappropriateplayerweapon(currentweapon);
         if (weapon.lockontype != "Legacy Single" || weapon.noadslockoncheck) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
@@ -196,7 +196,7 @@ function on_weapon_change(params) {
             continue;
         }
         if (!weapon.noadslockoncheck && !stingerwaitforads()) {
-            return;
+            break;
         }
         self thread stingerirtloop(weapon);
         if (weapon.noadslockoncheck) {
@@ -375,7 +375,7 @@ function targetwithinrangeofplayspace(target) {
     #/
     if (level.missilelockplayspacecheckenabled === 1) {
         if (!isdefined(target)) {
-            return 0;
+            return false;
         }
         if (!isdefined(level.playspacecenter)) {
             level.playspacecenter = util::getplayspacecenter();
@@ -384,10 +384,10 @@ function targetwithinrangeofplayspace(target) {
             level.missilelockplayspacecheckradiussqr = function_a3f6cdac(util::getplayspacemaxwidth() * 0.5 + level.missilelockplayspacecheckextraradius);
         }
         if (distance2dsquared(target.origin, level.playspacecenter) > level.missilelockplayspacecheckradiussqr) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
@@ -433,12 +433,12 @@ function displaylockoncanceledmessage() {
 // Size: 0xc6
 function private function_d656e945(team) {
     if (!isdefined(self.team)) {
-        return 0;
+        return false;
     }
     vehicle_team = self.team;
     if (vehicle_team == #"neutral") {
         if (is_true(game.var_f4787795)) {
-            return 0;
+            return false;
         }
         driver = self getseatoccupant(0);
         if (isdefined(driver)) {
@@ -446,9 +446,9 @@ function private function_d656e945(team) {
         }
     }
     if (util::function_fbce7263(vehicle_team, team)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
@@ -637,15 +637,15 @@ function function_1b76fb42(ent, weapon) {
     var_91c7ae51 = distance2dsquared(self.origin, ent.origin);
     if (weapon.lockonminrange > 0) {
         if (var_91c7ae51 < weapon.lockonminrange * weapon.lockonminrange) {
-            return 0;
+            return false;
         }
     }
     if (weapon.lockonmaxrange > 0) {
         if (var_91c7ae51 > weapon.lockonmaxrange * weapon.lockonmaxrange) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
@@ -716,24 +716,24 @@ function looplocallocksound(alias, interval) {
 function locksighttest(target, subtarget, var_27cdcb1 = 0) {
     camerapos = self getplayercamerapos();
     if (!isdefined(target)) {
-        return 0;
+        return false;
     }
     if (is_true(target.var_e8ec304d)) {
-        return 0;
+        return false;
     }
     targetorigin = target_getorigin(target, subtarget);
     if (bullettracepassed(camerapos, targetorigin, 0, target, target.parent, var_27cdcb1)) {
-        return 1;
+        return true;
     }
     front = target getpointinbounds(1, 0, 0);
     if (bullettracepassed(camerapos, front, 0, target, target.parent, var_27cdcb1)) {
-        return 1;
+        return true;
     }
     back = target getpointinbounds(-1, 0, 0);
     if (bullettracepassed(camerapos, back, 0, target, target.parent, var_27cdcb1)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
@@ -744,7 +744,7 @@ function softsighttest(var_27cdcb1 = 0) {
     lost_sight_limit = 500;
     if (self locksighttest(self.stingertarget, self.stingersubtarget, var_27cdcb1)) {
         self.stingerlostsightlinetime = 0;
-        return 1;
+        return true;
     }
     if (self.stingerlostsightlinetime == 0) {
         self.stingerlostsightlinetime = gettime();
@@ -752,9 +752,9 @@ function softsighttest(var_27cdcb1 = 0) {
     timepassed = gettime() - self.stingerlostsightlinetime;
     if (timepassed >= lost_sight_limit) {
         self clearirtarget();
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
@@ -869,9 +869,9 @@ function playlockonsoundsthread(player, var_df318bbf, var_4edd2f28) {
     self.locksounds = spawn("script_model", self.origin);
     self.locksounds thread function_c8b14330(self);
     self.locksounds linkto(self, "tag_origin");
-    while (1) {
+    while (true) {
         self waittill(#"locking on");
-        while (1) {
+        while (true) {
             if (self enemyislocking()) {
                 self.locksounds playsoundtoplayer(var_df318bbf, player);
                 wait(0.125);
@@ -1179,12 +1179,12 @@ function _incomingmissiletracker(missile, attacker) {
 // Size: 0x26
 function missiletarget_ismissileincoming() {
     if (!isdefined(self.incoming_missile)) {
-        return 0;
+        return false;
     }
     if (self.incoming_missile) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
@@ -1193,16 +1193,16 @@ function missiletarget_ismissileincoming() {
 // Size: 0x80
 function missiletarget_isotherplayermissileincoming(attacker) {
     if (!isdefined(self.incoming_missile_owner)) {
-        return 0;
+        return false;
     }
     if (self.incoming_missile_owner.size == 0) {
-        return 0;
+        return false;
     }
     attacker_entnum = attacker getentitynumber();
     if (self.incoming_missile_owner.size == 1 && isdefined(self.incoming_missile_owner[attacker_entnum])) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
@@ -1399,7 +1399,7 @@ function missiletarget_deployflares(origin, angles) {
 function debug_tracker(target) {
     /#
         target endon(#"death");
-        while (1) {
+        while (true) {
             debug_sphere(target.origin, 10, (1, 0, 0), 1, 1);
             waitframe(1);
         }

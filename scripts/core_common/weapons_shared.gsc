@@ -45,7 +45,7 @@ function function_867af0b() {
         self endon(#"death");
         player = self;
         gameobject_link = undefined;
-        while (1) {
+        while (true) {
             wait(float(function_60d95f53()) / 1000);
             if (self.sessionstate != "<unknown string>") {
                 continue;
@@ -127,7 +127,7 @@ function function_e870d33d() {
     while (isdefined(player.var_766deb67)) {
         wait(float(function_60d95f53()) / 1000);
     }
-    while (1) {
+    while (true) {
         wait(float(function_60d95f53()) / 1000);
         if (isplayer(player)) {
             current_weapon = player getcurrentweapon();
@@ -270,7 +270,7 @@ function function_e870d33d() {
                     player setorigin(exit_origin);
                 }
                 if (var_628f1aed) {
-                    while (1) {
+                    while (true) {
                         wait(float(function_60d95f53()) / 1000);
                         current_weapon = player getcurrentweapon();
                         if (current_weapon == level.weaponnone) {

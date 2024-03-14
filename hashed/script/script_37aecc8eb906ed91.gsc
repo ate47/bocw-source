@@ -110,7 +110,7 @@ function private function_acc36c55(watcher) {
     self.var_20a0f018 setcandamage(1);
     self.var_20a0f018.maxhealth = 100000;
     self.var_20a0f018.health = self.var_20a0f018.maxhealth;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self.var_20a0f018 waittill(#"damage");
         attacker = waitresult.attacker;
@@ -361,10 +361,10 @@ function function_dedc78a9(attacker, victim, *weapon, *attackerweapon, *meansofd
             continue;
         }
         if (attackerweapon === var_e5d834ab.owner && level.var_432fa05c.var_558ae5bc >= distancesquared(var_e5d834ab.origin, meansofdeath.origin)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace nightingale/nightingale

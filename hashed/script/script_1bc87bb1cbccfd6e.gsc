@@ -65,7 +65,7 @@ function function_437dfc97() {
 function private function_3cc2b159() {
     self endon(#"hash_6f1306832c75c68f", #"death");
     self thread function_d7c9c129();
-    while (1) {
+    while (true) {
         if (isdefined(level.var_7466d419)) {
             weaponheat = level.var_7466d419 getturretheatvalue(3);
             weaponoverheating = level.var_7466d419 isvehicleturretoverheating(3);
@@ -90,7 +90,7 @@ function function_d7c9c129() {
     if (!namespace_61e6d095::exists(#"hash_10ec463196b21e75")) {
         namespace_61e6d095::create(#"hash_10ec463196b21e75", #"hash_1624d8814bab0c71");
     }
-    while (1) {
+    while (true) {
         if (isdefined(level.var_7466d419)) {
             var_2f37fbd = 0;
             weaponoverenemy = 0;

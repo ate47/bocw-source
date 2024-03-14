@@ -368,11 +368,11 @@ function function_8cb4e540(inputstring, var_329bae03) {
 // Size: 0x13a
 function function_dc4baa9(s) {
     if (isnumber(s) == 1) {
-        return 1;
+        return true;
     } else if (isstring(s) == 1 && s[0] == "0" || s[0] == "1" || s[0] == "2" || s[0] == "3" || s[0] == "4" || s[0] == "5" || s[0] == "6" || s[0] == "7" || s[0] == "8" || s[0] == "9" || s[0] == ".") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace snd/namespace_830c8cc
@@ -492,13 +492,13 @@ function function_322e32be(array) {
 function function_2ba9b0fd(str) {
     intvalue = int(str);
     if (intvalue > 0) {
-        return 1;
+        return true;
     } else if (intvalue < 0) {
-        return 1;
+        return true;
     } else if (intvalue == 0 && str == "0") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace snd/namespace_830c8cc
@@ -539,9 +539,9 @@ function function_e8185c19(currentvalue, var_2901828, var_dc0a4660) {
 // Size: 0x3a
 function function_a5300865(value, minvalue, maxvalue) {
     if (value >= minvalue && value <= maxvalue) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace snd/namespace_830c8cc
@@ -637,9 +637,9 @@ function function_69fd73ba(target, range) {
 // Size: 0x50
 function function_e3a36342(player) {
     if (isdefined(player) && isentity(player) && isplayer(player)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace snd/namespace_830c8cc
@@ -682,11 +682,11 @@ function function_a8210e43(localclientnum) {
 // Checksum 0xb32c93ee, Offset: 0x23f8
 // Size: 0x6c
 function waitforplayers() {
-    while (1) {
+    while (true) {
         function_294cb4fa();
         players = function_2b2b83dc();
         if (isarray(players) && players.size > 0) {
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -869,9 +869,9 @@ function function_5a06b6bd(var_2a4f2d56) {
 function function_c8caaab4(point, var_16a85d25, radius) {
     dist = distance(point, var_16a85d25);
     if (dist <= radius) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace snd/namespace_830c8cc
@@ -981,10 +981,10 @@ function function_95c9af4b() {
 function function_d78e3644() {
     /#
         if (function_95c9af4b() > 0) {
-            return 1;
+            return true;
         }
     #/
-    return 0;
+    return false;
 }
 
 // Namespace snd/namespace_830c8cc
@@ -994,10 +994,10 @@ function function_d78e3644() {
 function function_f984063f() {
     /#
         if (function_95c9af4b() > 2) {
-            return 1;
+            return true;
         }
     #/
-    return 0;
+    return false;
 }
 
 // Namespace snd/namespace_830c8cc
@@ -1109,7 +1109,7 @@ function private function_225d1cb8() {
     level notify(#"hash_6cc074e33d3d4045");
     level endon(#"hash_6cc074e33d3d4045");
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         foreach (dvar in level.var_ebd8d6b1) {
             callback = dvar.callback;
             key = dvar.key;

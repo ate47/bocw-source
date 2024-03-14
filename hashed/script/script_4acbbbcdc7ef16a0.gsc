@@ -51,7 +51,7 @@ function function_613a7ccc(b_success = 0) {
 // Size: 0xa0
 function function_acd83a15() {
     level endon(#"game_over");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"musroundend", #"hash_350a3e373494a400");
         if (waitresult._notify === "musRoundEnd") {
@@ -68,18 +68,18 @@ function function_acd83a15() {
 // Size: 0x74
 function function_e840d5a5() {
     if (is_true(level.musicsystemoverride)) {
-        return 0;
+        return false;
     }
     if (!isdefined(level.musicsystem)) {
-        return 1;
+        return true;
     }
     if (!isdefined(level.musicsystem.currentplaytype)) {
-        return 1;
+        return true;
     }
     if (level.musicsystem.currentplaytype >= 4) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_c097de49/namespace_c097de49

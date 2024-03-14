@@ -241,30 +241,30 @@ function function_86515c3b(player, var_191ca105, banner = 1) {
         player.doa.var_ed8fde10 = "zombietron_deathmachine";
         player.doa.var_d6b75dff = 1;
         player namespace_41cb996::function_8b7acf56();
-        return;
+        break;
     case 2:
         if (player.doa.score.var_194c59ae < 2) {
             player.doa.score.var_194c59ae = 2;
         }
-        return;
+        break;
     case 4:
         weaponlevel = player.doa.weaponlevel;
         player.doa.var_9c7d56c1 = [[ player.doa.weaponpack ]]->function_91c18b19(weaponlevel);
         weaponlevel = math::clamp(player.doa.weaponlevel + level.doa.var_6c58d51, player.doa.weaponlevel, 2);
         player.doa.var_4eda72ee = [[ player.doa.weaponpack ]]->function_91c18b19(weaponlevel);
         player.var_10948967 = player namespace_4ff32993::function_f69400ca("zombietron_fated_chicken", 1, 1.2);
-        return;
+        break;
     case 8:
         player.doa.var_e5805edb = 1.5;
         player setmovespeedscale(player.doa.var_e5805edb);
         player namespace_83eb6304::function_3ecfde67("fast_feet");
-        return;
+        break;
     case 32:
         player.doa.var_96ca2395 = 5;
         if (isdefined(level.doa.var_16a35e94)) {
             player thread [[ level.doa.var_16a35e94 ]]();
         }
-        return;
+        break;
     case 16:
         player.doa.score.bombs = int(max(player.doa.score.bombs, 2));
         roll = randomint(30);
@@ -276,7 +276,7 @@ function function_86515c3b(player, var_191ca105, banner = 1) {
             level namespace_dfc652ee::itemspawn(namespace_dfc652ee::function_6265bde4("zombietron_sawblade"), player.origin, undefined, undefined, 1, undefined, undefined, undefined, player);
         }
         player thread namespace_b754744b::function_b784c6bd(46);
-        return;
+        break;
     default:
         /#
             assert(0, "<unknown string>");
@@ -609,7 +609,7 @@ function function_e4867f1d(var_7f2666c4, roj = 0) {
     if (isdefined(trigger)) {
         self.trigger = trigger;
         trigger thread namespace_ec06fe4a::function_d55f042c(level, "game_over");
-        while (1) {
+        while (true) {
             result = undefined;
             result = trigger waittill(#"trigger");
             player = result.activator;

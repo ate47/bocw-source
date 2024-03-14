@@ -38,7 +38,7 @@ function on_gameplay_started(*localclientnum) {
 // Size: 0x1b4
 function function_1ab1b817() {
     level endon(#"hash_6be4b326e81b8240");
-    while (1) {
+    while (true) {
         level waittill(#"hash_7c4c4c5744bdad25");
         foreach (player in getlocalplayers()) {
             if (!player postfx::function_556665f2(#"hash_62902ec0cbc8636b")) {

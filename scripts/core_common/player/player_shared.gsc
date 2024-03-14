@@ -278,18 +278,18 @@ function function_31b5c778(origin, radius) {
 // Size: 0x12e
 function function_352d316e(player) {
     if (!isdefined(player)) {
-        return 0;
+        return false;
     }
     if (!isdefined(level.var_f0de6634) || level.var_f0de6634.size <= 0) {
-        return 0;
+        return false;
     }
     var_9101d730 = function_72d3bca6(level.var_f0de6634, player.origin, undefined, 0, level.var_c227eda9);
     foreach (area in var_9101d730) {
         if (isdefined(area) && distancesquared(player.origin, area.origin) < area.radius_sq) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace player/player_shared
@@ -558,7 +558,7 @@ function is_valid_weapon(weaponobject) {
 // Size: 0x74
 function is_spawn_protected() {
     if (!isdefined(self)) {
-        return 0;
+        return false;
     }
     if (!isdefined(self.spawntime)) {
         self.spawntime = 0;
@@ -610,17 +610,17 @@ function allow_stance_change(b_allow = 1) {
         self allowprone(1);
         self allowcrouch(0);
         self allowstand(0);
-        return;
+        break;
     case #"crouch":
         self allowprone(0);
         self allowcrouch(1);
         self allowstand(0);
-        return;
+        break;
     case #"stand":
         self allowprone(0);
         self allowcrouch(0);
         self allowstand(1);
-        return;
+        break;
     }
 }
 
@@ -1028,7 +1028,7 @@ function function_1cec6cba(players) {
 // Size: 0x9e
 function function_114b77dd(time, timeout) {
     if (self isstreamerready(-1, 1)) {
-        return 1;
+        return true;
     }
     if (!isdefined(timeout)) {
         timeout = getdvarint(#"hash_6974ec4bbf3b9e97");
@@ -1037,9 +1037,9 @@ function function_114b77dd(time, timeout) {
         time = gettime();
     }
     if (isdefined(self.var_f1863e67) && self.var_f1863e67 + timeout < gettime()) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace player/player_shared

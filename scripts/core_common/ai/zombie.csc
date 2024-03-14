@@ -50,13 +50,13 @@ function private _gibcallback(*localclientnum, *entity, gibflag) {
     switch (gibflag) {
     case 8:
         playsound(0, #"zmb_zombie_head_gib", self.origin + vectorscale((0, 0, 1), 60));
-        return;
+        break;
     case 16:
     case 32:
     case 128:
     case 256:
         playsound(0, #"zmb_death_gibs", self.origin + vectorscale((0, 0, 1), 30));
-        return;
+        break;
     }
 }
 
@@ -170,7 +170,7 @@ function function_fd2b858e(localclientnum) {
     self endon(#"death");
     self.var_e22ea2fc = 0;
     self callback::on_shutdown(&function_a0a0fbea);
-    while (1) {
+    while (true) {
         waitframe(1);
         [[ level.var_49883c7 ]]->waitinqueue(self);
         localclient = function_5c10bd79(localclientnum);
@@ -185,7 +185,7 @@ function function_fd2b858e(localclientnum) {
             self.var_e22ea2fc = 0;
             function_55aaf3b(self);
             if (!gibclientutils::isundamaged(localclientnum, self)) {
-                return;
+                break;
             }
         }
     }

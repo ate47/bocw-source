@@ -122,7 +122,7 @@ function function_77af9e81() {
         self [[ self.var_d438ec42 ]]();
     }
     arrayremovevalue(level.doa.var_537a3e29, undefined);
-    while (1) {
+    while (true) {
         self.attractors = [];
         if (isdefined(self.var_d7e0da8b)) {
             self [[ self.var_d7e0da8b ]]();
@@ -146,9 +146,9 @@ function function_77af9e81() {
 // Size: 0x42
 function function_9ded1b6c(type) {
     if (type == 1 || type == 9 || type == 8) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_7da86f3c/namespace_e7909880
@@ -161,7 +161,7 @@ function private function_68126677(var_624b8d02 = getdvarint(#"hash_5f8a3b48d8eb
     self endon(#"picked_up");
     self endon(#"death");
     self.var_76d7c415 = self.origin;
-    while (1) {
+    while (true) {
         waitframe(1);
         if (self.attractors.size == 0 && is_true(self.var_e48718a6)) {
             if (self.origin[0] != self.var_76d7c415[0] || self.origin[1] != self.var_76d7c415[1]) {

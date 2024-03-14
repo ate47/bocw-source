@@ -43,7 +43,7 @@ function function_b26dad22(level_notify) {
     var_270e748f = 0;
     var_9ddd4d57 = undefined;
     level.var_7466d419.var_2939dba = #"hash_5cad1a1b9fdc43ee";
-    while (1) {
+    while (true) {
         trace_result = physicstrace(level.var_7466d419.origin + vectorscale((0, 0, 1), 50), level.var_7466d419.origin + vectorscale((0, 0, 1), 5000), (0, 0, 0), (0, 0, 0), level.var_7466d419, 16);
         if (isdefined(trace_result) && isdefined(trace_result[#"position"])) {
             var_b4d6bef6 = distance(level.var_7466d419.origin, trace_result[#"position"]);
@@ -112,7 +112,7 @@ function function_4b0f12f6(level_notify) {
     level endon(level_notify);
     weapon = getweapon(#"ar_damage_t9");
     player_damage = 20;
-    while (1) {
+    while (true) {
         var_867b0f45 = level.var_7466d419 getspeedmph();
         shot_count = randomintrange(10, 12);
         var_b7fd7ab4 = 0;
@@ -205,7 +205,7 @@ function function_d262b525(level_notify, var_7366cb1a) {
     level.var_7466d419 endon(#"death");
     level endon(level_notify);
     weapon = getweapon(#"hash_513c26c6a751d20e");
-    while (1) {
+    while (true) {
         canshoot = 1;
         var_867b0f45 = level.var_7466d419 getspeedmph();
         var_b7fd7ab4 = 0;

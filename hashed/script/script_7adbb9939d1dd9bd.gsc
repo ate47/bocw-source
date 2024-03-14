@@ -91,7 +91,7 @@ function zombie_open_sesame() {
 // Size: 0x302
 function function_97346595() {
     var_2e0b8925 = getdvarint(#"hash_6d3c5317001d4fc6", 0);
-    while (1) {
+    while (true) {
         new_value = getdvarint(#"hash_6d3c5317001d4fc6", 0);
         players = getplayers();
         if (new_value != var_2e0b8925) {
@@ -147,7 +147,7 @@ function private function_c5342e8d() {
 // Size: 0xca
 function function_d379ba37() {
     setdvar(#"hash_429bdf1368d1a22c", "");
-    while (1) {
+    while (true) {
         if (getdvarint(#"hash_429bdf1368d1a22c", 0) > 0) {
             if (!is_true(level.var_a095060b)) {
                 level thread function_57bf0556();

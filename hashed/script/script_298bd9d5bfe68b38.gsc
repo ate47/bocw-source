@@ -138,9 +138,9 @@ function function_f9502d83() {
 // Size: 0x3e
 function private function_43017839(player) {
     if (level.var_50c35573[player getentitynumber()] != 1) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace weapon_cache/weapon_cache

@@ -82,7 +82,7 @@ function private function_6b10f386(w_weapon) {
 // Size: 0x26c
 function private function_5c555bdb(var_8e0e7e97, var_6db1f82a, var_484302b2, a_params = undefined) {
     self endon(#"death", #"hash_79917746ae9a28ed");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (is_true(self.b_active)) {
@@ -257,22 +257,22 @@ function function_31183ec4(e_player, var_b3dbe6aa) {
                 point = function_4ba8fde(#"hash_69a628368f8263f");
                 item_drop::drop_item(0, undefined, 1, 0, point.id, var_b3dbe6aa.origin, var_b3dbe6aa.angles, 2);
                 waitframe(1);
-                return;
+                break;
             case #"epic":
                 e_player zm_weapons::function_17e9ed37(#"legendary");
-                return;
+                break;
             case #"rare":
                 e_player zm_weapons::function_17e9ed37(#"epic");
-                return;
+                break;
             case #"uncommon":
                 e_player zm_weapons::function_17e9ed37(#"rare");
-                return;
+                break;
             case #"resource":
                 e_player zm_weapons::function_17e9ed37(#"uncommon");
-                return;
+                break;
             case #"loadout":
                 e_player zm_weapons::function_17e9ed37(#"uncommon");
-                return;
+                break;
             }
         }
     }
@@ -363,7 +363,7 @@ function function_66e02dca() {
         return 0;
     }
     s_parent = self.stub.related_parent;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         e_player = waitresult.activator;
@@ -385,7 +385,7 @@ function function_66e02dca() {
             if (isdefined(self.stub)) {
                 zm_unitrigger::unregister_unitrigger(self.stub);
             }
-            return;
+            break;
         }
     }
 }
@@ -429,7 +429,7 @@ function devgui_cmd(cmd) {
             foreach (var_17aa01a8 in var_4f18b78d) {
                 circle(var_17aa01a8.origin, 10, (0, 0, 1), 0, 0, 100);
             }
-            return;
+            break;
         case #"hash_138254d067e7c768":
             if (level get_any([1:#"hash_29f75f50c70f99c5", 0:#"hash_333ae351d01741c7"])) {
                 level set(#"hash_cf267d3414df1a0");
@@ -437,7 +437,7 @@ function devgui_cmd(cmd) {
             } else {
                 iprintlnbold("<unknown string>");
             }
-            return;
+            break;
         case #"hash_59553683c00d62f6":
             if (isdefined(level get(#"hash_aa416b9e4b5beaf"))) {
                 level clear(#"hash_aa416b9e4b5beaf");
@@ -447,7 +447,7 @@ function devgui_cmd(cmd) {
             }
             level set(#"hash_77fc8d99d35bea8");
             level thread function_386e50d5();
-            return;
+            break;
         case #"hash_7359a05feb8c82a4":
             if (isdefined(level get(#"hash_7f73d56a614ce047"))) {
                 level clear(#"hash_7f73d56a614ce047");
@@ -457,7 +457,7 @@ function devgui_cmd(cmd) {
             }
             level set(#"hash_19dcf958928fa920");
             level thread function_fcc5783b();
-            return;
+            break;
         case #"shooting_gallery_easy_mode":
             if (level get(#"shooting_gallery_easy_mode")) {
                 level clear(#"shooting_gallery_easy_mode");
@@ -470,7 +470,7 @@ function devgui_cmd(cmd) {
                     iprintlnbold("<unknown string>");
                 #/
             }
-            return;
+            break;
         }
     #/
 }
@@ -663,7 +663,7 @@ function private function_70ddbae9(var_24b25ceb) {
 function function_2c660cd2(e_player, var_24b25ceb) {
     level endon(#"end_game");
     if (!isplayer(e_player)) {
-        return 0;
+        return false;
     }
     e_player endon(#"death", #"disconnect");
     var_77ba553d = var_24b25ceb.size;
@@ -1106,7 +1106,7 @@ function function_10418fa8(e_player, var_24b25ceb, var_ae876f40, var_eb891a8f, n
             var_3d23ecc++;
             continue;
         }
-        return;
+        break;
     }
 }
 

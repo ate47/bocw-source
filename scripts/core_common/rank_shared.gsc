@@ -273,9 +273,9 @@ function getscoreinfoxp(type) {
 // Size: 0x2e
 function shouldskipmomentumdisplay(*type) {
     if (is_true(level.disablemomentum)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace rank/rank_shared
@@ -312,9 +312,9 @@ function function_f7b5d9fa(type) {
 // Size: 0x24
 function shouldkickbyrank() {
     if (self ishost()) {
-        return 0;
+        return false;
     }
-    return 0;
+    return false;
 }
 
 // Namespace rank/rank_shared
@@ -467,10 +467,10 @@ function on_player_connect() {
 function atleastoneplayeroneachteam() {
     foreach (team, _ in level.teams) {
         if (!level.playercount[team]) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace rank/rank_shared
@@ -489,7 +489,7 @@ function round_this_number(value) {
 function updaterank() {
     newrankid = self getrank();
     if (newrankid == self.pers[#"rank"]) {
-        return 0;
+        return false;
     }
     oldrank = self.pers[#"rank"];
     rankid = self.pers[#"rank"];
@@ -501,7 +501,7 @@ function updaterank() {
         print("<unknown string>" + oldrank + "<unknown string>" + newrankid + "<unknown string>" + self get_stat_global(#"time_played_total"));
     #/
     self setrank(newrankid);
-    return 1;
+    return true;
 }
 
 // Namespace rank/player_rankup

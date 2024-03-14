@@ -118,7 +118,7 @@ function function_d4a86caf() {
     self notify("1dbe5052204cf03");
     self endon("1dbe5052204cf03");
     level endon(#"game_over", #"hash_15db1223146bc923");
-    while (1) {
+    while (true) {
         wait(0.5);
         state = namespace_4dae815d::function_59a9cf1d();
         if (state == 0) {
@@ -194,7 +194,7 @@ function function_b853a1c6() {
     self endon(#"hash_3e251384a5400dce");
     self thread function_49caf2d6();
     wait(randomfloatrange(0.1, 3));
-    while (1) {
+    while (true) {
         if (isdefined(self.script_model)) {
             self.script_model clientfield::set("dragonTrapState", 2);
         }

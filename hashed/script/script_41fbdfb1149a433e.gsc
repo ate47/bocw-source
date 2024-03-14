@@ -70,7 +70,7 @@ function function_417fd9b() {
     self notify("5e78487020fa753c");
     self endon("5e78487020fa753c");
     level endon(#"game_over", #"hash_2303b11a0ac86ffe");
-    while (1) {
+    while (true) {
         wait(0.5);
         foreach (loot in level.doa.var_51400a66) {
             time = gettime();

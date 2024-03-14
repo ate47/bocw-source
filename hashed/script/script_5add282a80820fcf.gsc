@@ -126,7 +126,7 @@ function private function_3fb58860(localclientnum, *oldvalue, newvalue, *bnewent
         self.var_755e43c0 = beamlaunch(fieldname, self, "tag_flamethrower_fx", undefined, "none", "flamethrower_beam_3p_zm_mechz");
         self playsound(0, "zmb_ai_mechz_flame_start");
         self.var_28f02418 = self playloopsound("zmb_ai_mechz_flame_loop");
-        return;
+        break;
     case 0:
         self notify(#"hash_3998a66b558348cf");
         if (isdefined(self.var_755e43c0)) {
@@ -134,7 +134,7 @@ function private function_3fb58860(localclientnum, *oldvalue, newvalue, *bnewent
             self playsound(0, "zmb_ai_mechz_flame_stop");
             self stoploopsound(self.var_28f02418);
         }
-        return;
+        break;
     }
 }
 

@@ -39,13 +39,13 @@ function event_handler[event_f7d4a05b] function_69452d92(eventstruct) {
         switch (eventstruct.gamestate) {
         case #"playing":
             callback::callback(#"on_game_playing", eventstruct);
-            return;
+            break;
         case #"postgame":
             callback::callback(#"hash_3ca80e35288a78d0", eventstruct);
-            return;
+            break;
         case #"shutdown":
             callback::callback(#"hash_1b5be9017cd4b5fa", eventstruct);
-            return;
+            break;
         }
     }
 }

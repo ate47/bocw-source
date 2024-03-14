@@ -72,7 +72,7 @@ function function_878fd065() {
 // Size: 0x58
 function function_3e83eb5e() {
     level endon(#"hash_52d91a17b5ce6a13");
-    while (1) {
+    while (true) {
         wait(15);
         playsoundatposition(#"hash_18465a9117b3208f", (-6006, 18086, 1905));
     }
@@ -83,7 +83,7 @@ function function_3e83eb5e() {
 // Checksum 0x66398c83, Offset: 0x4d0
 // Size: 0x48
 function function_8e50d09b() {
-    while (1) {
+    while (true) {
         wait(65);
         playsoundatposition(#"hash_62c19eac25ff3f3c", (-6006, 18086, 1905));
     }
@@ -95,7 +95,7 @@ function function_8e50d09b() {
 // Size: 0x1dc
 function function_acd83a15() {
     level endon(#"game_over");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"musroundend", #"hash_350a3e373494a400");
         if (waitresult._notify === "musRoundEnd") {
@@ -118,18 +118,18 @@ function function_acd83a15() {
 // Size: 0x74
 function function_e840d5a5() {
     if (is_true(level.musicsystemoverride)) {
-        return 0;
+        return false;
     }
     if (!isdefined(level.musicsystem)) {
-        return 1;
+        return true;
     }
     if (!isdefined(level.musicsystem.currentplaytype)) {
-        return 1;
+        return true;
     }
     if (level.musicsystem.currentplaytype >= 4) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_99d0d95e/namespace_99d0d95e

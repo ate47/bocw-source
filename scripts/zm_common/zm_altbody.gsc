@@ -111,27 +111,27 @@ function devgui_start_altbody(name) {
 // Size: 0x100
 function private function_17d98816(trigger, name) {
     if (self zm_utility::is_drinking() && !is_true(self.trigger_kiosks_in_altbody)) {
-        return 0;
+        return false;
     }
     if (self zm_utility::in_revive_trigger()) {
-        return 0;
+        return false;
     }
     if (self laststand::player_is_in_laststand()) {
-        return 0;
+        return false;
     }
     if (self isthrowinggrenade()) {
-        return 0;
+        return false;
     }
     if (self function_1193c448(name)) {
-        return 0;
+        return false;
     }
     callback = level.altbody_allow_callbacks[name];
     if (isdefined(callback)) {
         if (!self [[ callback ]](name, trigger.kiosk)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_altbody/zm_altbody
@@ -140,30 +140,30 @@ function private function_17d98816(trigger, name) {
 // Size: 0x112
 function private player_can_altbody(kiosk, name) {
     if (is_true(self.altbody)) {
-        return 0;
+        return false;
     }
     if (self zm_utility::is_drinking() && !is_true(self.trigger_kiosks_in_altbody)) {
-        return 0;
+        return false;
     }
     if (self zm_utility::in_revive_trigger()) {
-        return 0;
+        return false;
     }
     if (self laststand::player_is_in_laststand()) {
-        return 0;
+        return false;
     }
     if (self isthrowinggrenade()) {
-        return 0;
+        return false;
     }
     if (self function_1193c448(name)) {
-        return 0;
+        return false;
     }
     callback = level.altbody_allow_callbacks[name];
     if (isdefined(callback)) {
         if (!self [[ callback ]](name, kiosk)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_altbody/zm_altbody
@@ -179,10 +179,10 @@ function function_1193c448(name) {
     }
     foreach (str_bgb in level.var_28f2d2b1[name]) {
         if (self bgb::is_enabled(str_bgb)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_altbody/zm_altbody
@@ -415,7 +415,7 @@ function kiosk_trigger_visibility(player) {
 // Checksum 0x34f49d0, Offset: 0x1570
 // Size: 0xe0
 function kiosk_trigger_think() {
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;

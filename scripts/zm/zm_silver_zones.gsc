@@ -194,7 +194,7 @@ function function_44b1279a() {
     self notify("5fce8be004d71149");
     self endon("5fce8be004d71149");
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         is_player_in_zone = self zm_zonemgr::is_player_in_zone(level.var_65c43c31, 0);
         var_c2858d41 = self clientfield::get_to_player("" + #"hash_464e0cd19b3b8c12");
         if (is_player_in_zone && var_c2858d41 == 0) {

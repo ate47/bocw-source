@@ -216,7 +216,7 @@ function function_4f024edb() {
 // Size: 0xb0
 function function_ca9dd78b() {
     level endon(#"hash_1a8ccb31e7a09c0e");
-    while (1) {
+    while (true) {
         level flag::wait_till_clear("perfect_sniper_spot");
         level.arash snipercam::set_enabled(1, 1, 2);
         level flag::wait_till("perfect_sniper_spot");
@@ -340,11 +340,11 @@ function function_b432f86a(nodename) {
 // Size: 0xbe
 function function_7a77e3be(player) {
     player thread util::show_hint_text(#"hash_1e0dbfcb374f641c", 0, "end_binocs", -1);
-    while (1) {
+    while (true) {
         if (player weaponswitchbuttonpressed() || player buttonbitstate("BUTTON_BIT_ANY_WEAP_CHANGE")) {
             level flag::set("end_binocs");
             player notify(#"end_binocs");
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -627,12 +627,12 @@ function function_e779ff3c(player, eye_pos, var_8067795d, var_dd9a54cd, *var_a74
     self endon(#"death");
     target_pos = self.origin + vectorscale((0, 0, 1), 30);
     if (var_8067795d getcurrentweapon().name != "eq_binoculars" || !var_8067795d adsbuttonpressed()) {
-        return 0;
+        return false;
     }
     if (util::within_fov(var_dd9a54cd, var_a74a4e75, target_pos, fov)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace tkdn_af_hill/namespace_a19fe693
@@ -641,16 +641,16 @@ function function_e779ff3c(player, eye_pos, var_8067795d, var_dd9a54cd, *var_a74
 // Size: 0xcc
 function function_b12fabe5(player) {
     player endon(#"death");
-    while (1) {
+    while (true) {
         result = undefined;
         result = player waittill(#"weapon_fired");
         if (level flag::get("end_binocs")) {
             level flag::set("player_fired_at_arash");
-            return;
+            break;
         }
         if (result.weapon !== level.var_42db149f) {
             level flag::set("player_break_stealth_fired");
-            return;
+            break;
         }
     }
 }

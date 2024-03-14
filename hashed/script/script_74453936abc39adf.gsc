@@ -99,7 +99,7 @@ function private control_start() {
     while (!isdefined(level.capturedzones)) {
         waitframe(1);
     }
-    while (1) {
+    while (true) {
         var_23c361c9 = [];
         foreach (info in controlinfo) {
             object = info.target;
@@ -159,7 +159,7 @@ function private dom_start() {
         }
     }
     waitframe(1);
-    while (1) {
+    while (true) {
         foreach (info in var_647c4a69) {
             object = info.target;
             ownerteam = object gameobjects::get_owner_team();
@@ -216,7 +216,7 @@ function private function_35d61d4() {
     }
     var_b84a8f51 = function_5f64ef84(level.var_bb695b91);
     var_9c4aa862 = {#neighborids:var_b84a8f51.neighborids, #var_dd2331cb:var_b84a8f51.var_dd2331cb};
-    while (1) {
+    while (true) {
         foreach (team in level.teams) {
             level function_8f96464(team, var_b84a8f51, #"capture", #"assault");
         }
@@ -252,9 +252,9 @@ function private function_35d61d4() {
 function private function_69fcc325(objective) {
     carrier = objective.info.target;
     if (isdefined(carrier) && carrier == self) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_38ee089b/namespace_38ee089b
@@ -279,9 +279,9 @@ function private function_dda40c33(objective) {
 function private function_a4ce3b72(objective) {
     carrier = objective.info.target;
     if (isdefined(carrier) && carrier == self) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_38ee089b/namespace_38ee089b
@@ -321,7 +321,7 @@ function private function_8d249e99() {
 // Checksum 0x806fa3c4, Offset: 0x16e8
 // Size: 0x10
 function private function_8b5d7508(*objective) {
-    return 1;
+    return true;
 }
 
 // Namespace namespace_38ee089b/namespace_38ee089b
@@ -364,7 +364,7 @@ function private koth_start() {
         var_4185bc81[var_4185bc81.size] = info;
     }
     var_df910e1 = undefined;
-    while (1) {
+    while (true) {
         if (isdefined(var_df910e1)) {
             object = var_df910e1.target;
             if (!object.trigger istriggerenabled()) {
@@ -498,16 +498,16 @@ function private function_5c2d40ff(target) {
 // Size: 0x92
 function private function_84750938(object, team) {
     if (object gameobjects::function_3a29539b(team)) {
-        return 0;
+        return false;
     }
     if (object gameobjects::get_num_touching(team)) {
-        return 1;
+        return true;
     }
     owner = object gameobjects::get_owner_team();
     if (isdefined(owner) && owner == team) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_38ee089b/namespace_38ee089b

@@ -284,9 +284,9 @@ function player_add_points(event, mod, hit_location, e_target, zombie_team, dama
 // Size: 0x54
 function private function_e31cf9d5(str_score_event) {
     if (zm_trial_damage_drains_points::is_active(1) && (str_score_event === "death" || str_score_event === "damage_points")) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_score/zm_score
@@ -572,15 +572,15 @@ function player_downed_penalty() {
 // Size: 0x8a
 function can_player_purchase(n_cost, var_1c65f833 = 0) {
     if (self.score >= n_cost) {
-        return 1;
+        return true;
     }
     if (self bgb::is_enabled(#"zm_bgb_shopping_free")) {
-        return 1;
+        return true;
     }
     if (zm_utility::is_standard() && !var_1c65f833) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_score/zm_score
@@ -598,14 +598,14 @@ function on_item_pickup(s_params) {
         switch (var_a6762160.name) {
         case #"resource_item_medium_harvesting_sr":
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"essence_pickup_medium", #attacker:e_player});
-            return;
+            break;
         case #"resource_item_harvesting_sr":
         case #"hash_69a628368f8263f":
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"essence_pickup_large", #attacker:e_player});
-            return;
+            break;
         default:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"essence_pickup_small", #attacker:e_player});
-            return;
+            break;
         }
     }
 }

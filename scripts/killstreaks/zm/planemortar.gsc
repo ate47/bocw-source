@@ -201,16 +201,16 @@ function function_66133f8b(var_5b276012) {
         killstreak_id = self killstreakrules::killstreakstart("planemortar", self.team, 0, 1);
         if (killstreak_id == -1) {
             self notify("planemortar_failed" + var_5b276012);
-            return 0;
+            return false;
         }
         if ((isdefined(self.var_fb18d24e) ? self.var_fb18d24e : 0) < gettime()) {
             self namespace_f9b02f80::play_killstreak_start_dialog("planemortar", self.team, killstreak_id);
             self.var_fb18d24e = gettime() + int(battlechatter::mpdialog_value("planeMortarCooldown", 7) * 1000);
         }
         self thread function_8f181838(var_5b276012, s_params, s_location.origin);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace planemortar/planemortar

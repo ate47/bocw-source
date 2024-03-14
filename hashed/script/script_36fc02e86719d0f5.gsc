@@ -116,7 +116,7 @@ class class_744b99c {
                 assert(var_e275e943.size);
             #/
             idx = 0;
-            while (1) {
+            while (true) {
                 wait(0.25);
                 foreach (player in getplayers()) {
                     if (!is_true(player.laststand)) {
@@ -136,7 +136,7 @@ class class_744b99c {
         self triggerenable(1);
         self thread function_226986c2();
         var_d2820900 = struct::get(self.target, "targetname");
-        while (1) {
+        while (true) {
             result = undefined;
             result = self waittill(#"trigger");
             if (isdefined(result.activator) && is_true(result.activator.laststand)) {
@@ -461,7 +461,7 @@ class class_744b99c {
         self endon(#"deactivate");
         self triggerenable(1);
         self thread function_53f0be18();
-        while (1) {
+        while (true) {
             result = undefined;
             result = self waittill(#"trigger");
             if (isdefined(result.activator)) {
@@ -619,7 +619,7 @@ class class_744b99c {
         level waittill(#"hash_5c97c4241ba01be4");
         self triggerenable(1);
         self thread function_9b22d331();
-        while (1) {
+        while (true) {
             result = undefined;
             result = self waittill(#"trigger");
             if (isdefined(result.activator)) {
@@ -915,7 +915,7 @@ class class_744b99c {
         self triggerenable(1);
         self thread function_82fd5391();
         type = isdefined(self.script_noteworthy) ? self.script_noteworthy : "setCameraDown";
-        while (1) {
+        while (true) {
             result = undefined;
             result = self waittill(#"trigger");
             if (!isdefined(result.activator.tweakcam)) {
@@ -1285,7 +1285,7 @@ function function_715ea8aa(var_46058269) {
     if (is_true(level.doa.var_318aa67a)) {
         var_429b69c0 = 2000;
     }
-    while (1) {
+    while (true) {
         players = namespace_7f5aeb59::function_23e1f90f();
         items = [];
         foreach (player in players) {
@@ -1336,11 +1336,11 @@ function function_e5488243(npc) {
     case #"none":
         return;
     case #"patrol":
-        return;
+        break;
     case #"guard":
     default:
         self thread namespace_250e9486::function_e1f7a9a0(npc.radius);
-        return;
+        break;
     }
 }
 
@@ -1459,7 +1459,7 @@ function function_3efbdeb3(var_46058269) {
     level endon(#"hash_325440d5433be263");
     level endon(#"game_over");
     level.doa.var_95cc492a = [[ var_46058269 ]]->function_a9d5a03d();
-    while (1) {
+    while (true) {
         if (namespace_250e9486::function_60f6a9e() && !isdefined(level.doa.var_182fb75a)) {
             players = namespace_7f5aeb59::function_23e1f90f();
             var_f807cf8f = [];

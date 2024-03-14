@@ -62,7 +62,7 @@ function private function_5c67d66(localclientnum) {
     setuimodelvalue(self.var_4a858373, 0);
     setuimodelvalue(self.var_e64f428b, 0);
     setuimodelvalue(self.var_f74ea54b, 0);
-    while (1) {
+    while (true) {
         ret = undefined;
         ret = self waittill(#"show_objectives");
         if (is_true(self.var_d52a8a6e)) {
@@ -102,7 +102,7 @@ function private function_cd9face2(localclientnum, var_d17dd25a) {
 // Size: 0xb8
 function private function_fd86c6ac(localclientnum) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self waittill(#"hash_3b00cabe4586a186");
         if (self postfx::function_556665f2("pstfx_highlight_objectives")) {
             self thread postfx::stoppostfxbundle("pstfx_highlight_objectives");
@@ -138,7 +138,7 @@ function private function_aa3ed46f(localclientnum, uimodel, var_d17dd25a) {
 // Size: 0xb2
 function private function_6311c9e8() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         response = waitresult.response;

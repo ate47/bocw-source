@@ -397,7 +397,7 @@ function private function_304c08c5() {
         var_1461c013 = isdefined(function_2ee66e93("last_saved_skipto")) ? function_2ee66e93("last_saved_skipto") : "";
         return (var_56528c9b != var_1461c013);
     }
-    return 0;
+    return false;
 }
 
 // Namespace savegame/save
@@ -486,7 +486,7 @@ function private function_655f1326(var_62a2ec8e, var_a8976c31, var_2f0cfe38) {
     level notify(#"hash_7608fe484d0bea80");
     level endon(#"hash_7608fe484d0bea80", #"hash_75b4a2cae07690ff", #"save_restore");
     wait(0.1);
-    while (1) {
+    while (true) {
         if (function_51c242e9(var_a8976c31, var_2f0cfe38)) {
             wait(0.1);
             checkpointcreate();
@@ -518,14 +518,14 @@ function private function_655f1326(var_62a2ec8e, var_a8976c31, var_2f0cfe38) {
 function function_51c242e9(var_a8976c31 = 0, var_2f0cfe38 = 1) {
     if (!var_a8976c31) {
         if (is_true(level.var_815395f5)) {
-            return 0;
+            return false;
         }
         if (getdvarint(#"hash_3a4333abc7abc233", 0)) {
-            return 0;
+            return false;
         }
     }
     if (is_true(level.missionfailed)) {
-        return 0;
+        return false;
     }
     var_e46695c4 = 0;
     foreach (player in level.players) {
@@ -535,27 +535,27 @@ function function_51c242e9(var_a8976c31 = 0, var_2f0cfe38 = 1) {
     }
     var_a9a7b3a2 = level.players.size;
     if (var_e46695c4 < var_a9a7b3a2) {
-        return 0;
+        return false;
     }
     if (!function_2ceb3570()) {
-        return 0;
+        return false;
     }
     if (!function_6dadecb9()) {
-        return 0;
+        return false;
     }
     if (isdefined(level.var_a1cfeb5a) && !var_a8976c31) {
         foreach (func in level.var_a1cfeb5a) {
             if (!level [[ func ]]()) {
-                return 0;
+                return false;
             }
         }
     }
     if (var_2f0cfe38 && isdefined(level.var_8bca2033)) {
         if (![[ level.var_8bca2033 ]]()) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace savegame/save
@@ -622,7 +622,7 @@ function private function_172f4daa(var_a8976c31 = 0) {
 // Size: 0x170
 function private function_6dadecb9() {
     if (!getdvarint(#"hash_3c20efa8bd1aa30", 1)) {
-        return 1;
+        return true;
     }
     ais = getaiteamarray(#"axis");
     foreach (ai in ais) {
@@ -640,10 +640,10 @@ function private function_6dadecb9() {
         }
         var_1d8aaace = ai function_838fa3a9();
         if (var_1d8aaace <= 80) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace savegame/save
@@ -652,23 +652,23 @@ function private function_6dadecb9() {
 // Size: 0x130
 function private function_6f9ec10b() {
     if (!isdefined(self.enemy)) {
-        return 1;
+        return true;
     }
     if (!isplayer(self.enemy)) {
-        return 1;
+        return true;
     }
     if (isdefined(self.melee) && isdefined(self.melee.target) && isplayer(self.melee.target)) {
-        return 0;
+        return false;
     }
     var_1d8aaace = self function_838fa3a9();
     if (var_1d8aaace < 500) {
-        return 0;
+        return false;
     } else if (var_1d8aaace > 1000 || var_1d8aaace < 0) {
-        return 1;
+        return true;
     } else if (isactor(self) && self cansee(self.enemy) && self canshootenemy()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace savegame/save
@@ -701,8 +701,8 @@ function private function_2ceb3570() {
         }
     }
     if (var_e1a8a025 > 0 && var_e1a8a025 >= function_a1ef346b().size) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 

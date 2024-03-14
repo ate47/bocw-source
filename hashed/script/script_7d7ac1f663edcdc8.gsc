@@ -216,7 +216,7 @@ function function_118215e2(str_targetname) {
 // Size: 0xe8
 function function_d55a8df1() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self flag::wait_till(#"hash_1e29d85de876dce8");
         if (isdefined(self.var_bb61ee3d)) {
             self namespace_68a80213::damageinfirearea(self.origin, undefined, undefined, getweapon(#"molotov_fire"), self.var_bb61ee3d, undefined, getscriptbundle("molotov_custom_settings"));

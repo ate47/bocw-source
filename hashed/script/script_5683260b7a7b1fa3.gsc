@@ -69,16 +69,16 @@ function private function_8df2fc68(cmd) {
         switch (cmd) {
         case #"hash_21b5fc9db9accec7":
             level thread function_4e9f972a(1);
-            return;
+            break;
         case #"hash_35aacbfc1cc6d1b0":
             level thread function_4e9f972a(3);
-            return;
+            break;
         case #"hash_25a40277684d32ee":
             level thread function_4e9f972a(6);
-            return;
+            break;
         case #"hash_26a37be826de2ef6":
             level thread function_4e9f972a(10);
-            return;
+            break;
         }
     #/
 }

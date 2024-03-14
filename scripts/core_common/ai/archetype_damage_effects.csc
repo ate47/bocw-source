@@ -38,12 +38,12 @@ function actor_fire_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap,
             }
             self.activefx = [];
         }
-        return;
+        break;
     case 1:
     case 2:
     case 3:
         self.activefx = playtagfxset(fieldname, "weapon_hero_molotov_fire_3p", self);
-        return;
+        break;
     }
 }
 

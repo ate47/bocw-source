@@ -244,7 +244,7 @@ function function_93a73f43() {
     player endon(#"death", #"grab_done");
     player clientfield::set_to_player("" + #"hash_802934d416ac981", 1);
     wait(1);
-    while (1) {
+    while (true) {
         player viewkick(10, player.origin + anglestoforward(player.angles + (0, randomintrange(90, 270), 0)));
         screenshake(player.origin, 4, 0, 2, 0.66, 0, 0.66, 0, 10, 0, 20, 2, player);
         player function_bc82f900("damage_heavy");

@@ -539,7 +539,7 @@ function function_294b258e(localclientnum, var_1280faf3) {
         var_96ce3194 = undefined;
         for (i = 0; i < 2; i++) {
             mdl_beam = undefined;
-            while (1) {
+            while (true) {
                 v_angles = var_1280faf3 gettagangles(str_tag);
                 v_origin = var_1280faf3 gettagorigin(str_tag);
                 if (i > 0) {

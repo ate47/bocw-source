@@ -169,7 +169,7 @@ function private function_26ff990a(local_client_num) {
 // Checksum 0x59f6267b, Offset: 0xa48
 // Size: 0x52
 function private update_players(local_client_num) {
-    while (1) {
+    while (true) {
         function_26ff990a(local_client_num);
         if (isdemoplaying()) {
             waitframe(1);

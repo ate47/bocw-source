@@ -72,11 +72,11 @@ function function_9e3ff948() {
         s_music_sq_location thread function_8853dd01();
         waitframe(1);
     }
-    while (1) {
+    while (true) {
         level waittill(#"hash_5f146847260b1b46");
         var_2ab51a2c++;
         if (var_2ab51a2c >= var_97671ac1) {
-            return;
+            break;
         }
     }
 }

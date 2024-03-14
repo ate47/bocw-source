@@ -140,15 +140,15 @@ function function_f9e445ee(localclientnum, *oldval, newval, *bnewent, *binitials
     switch (bwastimejump) {
     case 0:
         setdepthoffield(fieldname, 0, 0, 512, 512, 4, 0);
-        return;
+        break;
     case 1:
         setdepthoffield(fieldname, 0, 0, 512, 4000, 4, 0);
-        return;
+        break;
     case 2:
         setdepthoffield(fieldname, 0, 128, 512, 4000, 6, 1.8);
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 

@@ -284,10 +284,10 @@ function function_55fb73ea(var_d13a0347, var_28c9f917) {
 function function_e8d5de2c(mission_name = savegame::function_8136eb5a()) {
     foreach (collectible in level.var_19cf69db) {
         if (collectible.var_ed968ffd == mission_name) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace collectibles/collectibles
@@ -446,9 +446,9 @@ function function_606a97af(collectible) {
 function function_f539a1fa(collectible, params) {
     if (isdefined(level.var_4ac1758e[collectible])) {
         [[ level.var_4ac1758e[collectible] ]](params);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace collectibles/collectibles

@@ -93,7 +93,7 @@ function function_d7cf7d18(location, killstreak_id, *killstreaktype) {
     self thread watchforkillstreakend(team, spawn_influencer, killstreaktype);
     yaw = killstreak_id.yaw;
     self thread function_496d0824(killstreak_id.origin, killstreak_id.yaw, team, killstreaktype);
-    return 1;
+    return true;
 }
 
 // Namespace artillery_barrage/artillery_barrage_shared

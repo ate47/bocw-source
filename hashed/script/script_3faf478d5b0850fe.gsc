@@ -112,16 +112,16 @@ function function_2fc07d61() {
 function function_65fcd877() {
     switch (level.doa.world_state) {
     case 0:
-        return;
+        break;
     case 4:
         function_5e3127a5(#"overworld");
-        return;
+        break;
     case 5:
         function_5e3127a5(#"dungeon");
-        return;
+        break;
     case 1:
         function_5e3127a5(undefined, "winners_circle");
-        return;
+        break;
     }
 }
 
@@ -210,7 +210,7 @@ function function_914016fe(var_75e87d7f) {
 function networksafereset() {
     self notify("736ddcf43ece996d");
     self endon("736ddcf43ece996d");
-    while (1) {
+    while (true) {
         level.doa.var_3d0539c1 = 0;
         util::wait_network_frame();
     }
@@ -225,10 +225,10 @@ function sndisnetworksafe() {
         level thread networksafereset();
     }
     if (level.doa.var_3d0539c1 >= 2) {
-        return 0;
+        return false;
     }
     level.doa.var_3d0539c1++;
-    return 1;
+    return true;
 }
 
 // Namespace namespace_9fc66ac/namespace_9fc66ac
@@ -273,7 +273,7 @@ function function_55aa8bb7() {
     if (!isdefined(self.var_2b45c795)) {
         return;
     }
-    while (1) {
+    while (true) {
         if (isdefined(self.zombie_move_speed)) {
             if (self.zombie_move_speed === "sprint" || self.zombie_move_speed === "run") {
                 str_alias = self.var_2b45c795.var_71846889;

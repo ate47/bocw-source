@@ -46,57 +46,57 @@ function private function_887ac605(objective) {
     case #"tkdn_raid_bar":
         snd::function_7db65a93("triton_on");
         level thread function_a20133bd();
-        return;
+        break;
     case #"tkdn_raid_gearup":
         snd::function_7db65a93("triton_on");
-        return;
+        break;
     case #"tkdn_raid_apt":
         snd::function_7db65a93("triton_on");
         level notify(#"hash_7ad75056b30c451a");
         level notify(#"hash_63850bb43dbc38de");
-        return;
+        break;
     case #"tkdn_raid_rooftops":
         snd::function_7db65a93("triton_on");
-        return;
+        break;
     case #"tkdn_raid_slide":
         snd::function_7db65a93("triton_on");
-        return;
+        break;
     case #"tkdn_raid_capture":
         snd::function_7db65a93("triton_on");
-        return;
+        break;
     case #"hash_7db5c2bb92c102ae":
         snd::function_7db65a93("triton_on");
-        return;
+        break;
     case #"tkdn_af_intro":
         snd::function_7db65a93("triton_off");
-        return;
+        break;
     case #"tkdn_af_hill":
         snd::function_7db65a93("triton_off");
-        return;
+        break;
     case #"tkdn_af_tarmac":
         snd::function_7db65a93("triton_off");
-        return;
+        break;
     case #"tkdn_af_chase":
         snd::function_7db65a93("triton_off");
         snd::function_7db65a93(#"hash_55e0585ab6221a00");
-        return;
+        break;
     case #"tkdn_af_rc_chase":
         snd::function_7db65a93("triton_off");
-        return;
+        break;
     case #"tkdn_af_skid":
         snd::function_7db65a93("triton_off");
-        return;
+        break;
     case #"tkdn_af_wreck":
         snd::function_7db65a93("triton_off");
-        return;
+        break;
     case #"no_game":
     case #"hash_6e531fb9475df744":
-        return;
+        break;
     default:
         /#
             function_81fac19d(function_d78e3644(), "<unknown string>" + objective + "<unknown string>");
         #/
-        return;
+        break;
     }
 }
 
@@ -184,7 +184,7 @@ function function_a20133bd() {
     min_time = getdvarfloat(#"hash_5a9d5543cb5829b3", 3);
     max_time = getdvarfloat(#"hash_5ab96b43cb70c9cd", 15);
     var_88701456 = 0;
-    while (1) {
+    while (true) {
         view_origin = player snd::function_efda2d6d();
         var_839b8d61 = getentitiesinradius(view_origin, 900, 15);
         var_97d10723 = function_b6dd763(view_origin, 900);

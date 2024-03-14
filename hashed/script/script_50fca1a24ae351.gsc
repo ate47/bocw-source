@@ -209,7 +209,7 @@ function function_ec0b503f(var_499e2f80) {
 function function_fe17d41e() {
     level endon(#"dungeon_cleanup", #"dungeon_destroyed");
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         groundent = self getgroundent();
         if (isdefined(groundent) && groundent ismovingplatform() && groundent function_2ad80b99()) {
             self.doa.var_2fb8ffeb = groundent;
@@ -395,7 +395,7 @@ function function_fd83ca7f() {
     self notify("5fa33b4e47fc689c");
     self endon("5fa33b4e47fc689c");
     level endon(#"dungeon_cleanup", #"dungeon_destroyed");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"hash_4c72e79bdad8315e");
         result.ai.var_f979e699 = 0;
@@ -411,7 +411,7 @@ function function_3574d58() {
     self endon("4631b6bca4600740");
     level endon(#"dungeon_cleanup", #"dungeon_destroyed");
     self endon(#"death");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"hash_4c72e79bdad8315e");
         if (!isdefined(level.doa.var_35c4260d)) {
@@ -442,7 +442,7 @@ function doaenemyfillerfodder() {
         var_764338c3 thread namespace_ec06fe4a::function_d55f042c(level, "dungeon_cleanup");
         var_764338c3 thread namespace_ec06fe4a::function_d55f042c(level, "dungeon_destroyed");
     }
-    while (1) {
+    while (true) {
         if (namespace_ec06fe4a::function_9788bacc() < 4) {
             players = function_a1ef346b();
             if (players.size > 1) {

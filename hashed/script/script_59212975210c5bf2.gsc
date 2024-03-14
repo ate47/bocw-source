@@ -93,7 +93,7 @@ function private function_cc775529(s_instance) {
     var_31eda780 = 10 + zm_utility::function_e3025ca5() * 5;
     var_edcf865 = var_b7eee573.maxhealth / var_31eda780;
     var_d6cf3f65 = 1;
-    for (var_1b519b48 = var_8969e152; 1; var_1b519b48 = undefined) {
+    for (var_1b519b48 = var_8969e152; true; var_1b519b48 = undefined) {
         s_result = undefined;
         s_result = var_b7eee573 waittill(#"damage", #"hash_5261a9b309eef309", #"hash_13c4c7440825676a");
         if (s_result._notify === #"hash_13c4c7440825676a") {
@@ -104,7 +104,7 @@ function private function_cc775529(s_instance) {
             playsoundatposition(#"hash_76169abd873150fa", var_b7eee573.origin);
             var_b7eee573 stoploopsound();
             s_instance thread function_eda98f63();
-            return;
+            break;
         }
         if (s_result._notify === "damage") {
             if (!isplayer(s_result.attacker) || s_result.mod === "MOD_CRUSH") {
@@ -186,7 +186,7 @@ function private function_cc775529(s_instance) {
                 }
                 playsoundatposition(#"hash_4e565c316ea5ada2", var_b7eee573.origin);
                 s_instance thread function_eda98f63();
-                return;
+                break;
             }
             n_dist = distance(var_b7eee573.origin, var_1b519b48.origin);
             if (!isdefined(var_1b519b48.var_67700391)) {
@@ -232,7 +232,7 @@ function private function_7d88cc57() {
         return;
     }
     self.var_b8477436 = 1;
-    while (1) {
+    while (true) {
         self bobbing((randomfloatrange(-0.5, 0.5), randomfloatrange(-0.5, 0.5), randomfloatrange(-0.5, 0.5)), 10, 0.3);
         wait(randomfloatrange(0.3, 0.3 * 4));
     }

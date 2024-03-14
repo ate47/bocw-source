@@ -168,12 +168,12 @@ function function_db619336(hardpointtype, killstreak_id, location) {
     }
     planea = function_1e30e51e(hardpointtype, killstreak_id, location, #"hash_1dfff61be0d43f2d", "warthog_strafe1_a_start", "warthog_strafe1_pivot_a", (0, 0, 0), var_8cdd01c7);
     if (!isdefined(planea)) {
-        return 0;
+        return false;
     }
     planeb = function_1e30e51e(hardpointtype, killstreak_id, location, #"hash_1dfff31be0d43a14", "warthog_strafe1_b_start", "warthog_strafe1_pivot_b", (200, 200, 50), var_8cdd01c7);
     if (!isdefined(planeb)) {
         planea thread explode();
-        return 0;
+        return false;
     }
     planea.var_14494df9 = 1;
     planea.var_3971b935 = planeb;
@@ -192,7 +192,7 @@ function function_db619336(hardpointtype, killstreak_id, location) {
     level.var_32934cf9[killstreak_id] = 0;
     self stats::function_e24eec31(getweapon(#"straferun"), #"used", 1);
     planea thread function_51f5c557(self);
-    return 1;
+    return true;
 }
 
 // Namespace straferun/straferun
@@ -521,7 +521,7 @@ function dostraferuns(bundle, var_a6b1bda0, hardpointtype) {
                     self thread startstrafe();
                 }
             }
-            if (-1) {
+            if (true) {
                 self thread firerockets();
             }
             continue;
@@ -539,7 +539,7 @@ function dostraferuns(bundle, var_a6b1bda0, hardpointtype) {
             continue;
         }
         if (noteworthy == "fire_rockets") {
-            if (1) {
+            if (true) {
                 self thread firerockets();
             }
             continue;
@@ -562,7 +562,7 @@ function dostraferuns(bundle, var_a6b1bda0, hardpointtype) {
 // Size: 0x90
 function function_d4896942() {
     self endon(#"death", #"strafe_stop");
-    while (1) {
+    while (true) {
         self waittill(#"flare_deployed");
         if (!is_true(self.leavenexttime)) {
             self namespace_f9b02f80::play_pilot_dialog_on_owner("damageEvaded", "straferun", self.killstreakid);
@@ -784,15 +784,15 @@ function function_51f5c557(owner) {
 // Size: 0x76
 function shouldleavemap() {
     if (isdefined(self.leavenexttime) && self.leavenexttime) {
-        return 1;
+        return true;
     }
     if (self.numstrafes >= level.straferunmaxstrafes) {
-        return 1;
+        return true;
     }
     if (!isdefined(self.owner) || self.owner.straferunkills >= level.straferunkillsbeforeexit) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace straferun/straferun
@@ -876,9 +876,9 @@ function cantargetentity(entity) {
     heli_turret_point = heli_centroid + 144 * heli_forward_norm;
     visible_amount = entity sightconetrace(heli_turret_point, self);
     if (visible_amount < level.heli_target_recognition) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace straferun/straferun
@@ -950,9 +950,9 @@ function targetinfrontofplane(target) {
     target_delta = vectornormalize(target.origin - self.origin);
     dot = vectordot(forward_dir, target_delta);
     if (dot < 0.5) {
-        return 1;
+        return true;
     }
-    return 1;
+    return true;
 }
 
 // Namespace straferun/straferun
@@ -1172,7 +1172,7 @@ function unlinkwhenclose(selectedtarget, targetorigin, plane) {
     self notify(#"unlink_when_close");
     self endon(#"unlink_when_close");
     distsqr = 1000000;
-    while (1) {
+    while (true) {
         if (isdefined(selectedtarget)) {
             if (distancesquared(self.origin, selectedtarget.origin) < distsqr) {
                 self unlink();

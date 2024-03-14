@@ -99,7 +99,7 @@ function watch_player_drowning() {
     underwaterbreathtime = 1000;
     underwaterbreathtime = int(battlechatter::mpdialog_value("underwaterBreathTime", 1) * 1000);
     exertbuffer = battlechatter::mpdialog_value("playerExertBuffer", 1);
-    while (1) {
+    while (true) {
         waitframe(1);
         underwater = (game.state == #"pregame" || game.state == #"playing") && self isplayerunderwater();
         var_790acff6 = is_true(level.var_8e910e84) && self inlaststand() && getwaterheight(self.origin) > self.origin[2] + self getplayerviewheight();

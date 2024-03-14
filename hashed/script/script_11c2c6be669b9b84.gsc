@@ -42,7 +42,7 @@ function on_player_spawn(*localclientnum) {
     foreach (key, value in inputs) {
         self flag::clear(key);
     }
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"hash_74c593238b792d40");
         self childthread flag::set_for_time(0.05, waitresult.param1);

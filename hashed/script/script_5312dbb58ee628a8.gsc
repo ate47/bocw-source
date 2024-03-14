@@ -801,7 +801,7 @@ function function_4359e9e(e_target) {
     if (isdefined(self.turret.var_ddf7efa7) && distance2dsquared(self.origin, v_target_position) <= self.turret.var_ddf7efa7) {
         a_trace = bullettrace(self.origin, v_target_position, 0, self);
         if (a_trace[#"entity"] === e_target) {
-            return 1;
+            return true;
         } else {
             /#
                 function_600ab97b("<unknown string>" + e_target getentitynumber(), 3);
@@ -815,7 +815,7 @@ function function_4359e9e(e_target) {
             function_600ab97b("<unknown string>" + e_target getentitynumber() + "<unknown string>" + distance2d(self.origin, v_target_position) + "<unknown string>" + sqrt(self.turret.var_ddf7efa7), 3);
         #/
     }
-    return 0;
+    return false;
 }
 
 // Namespace missile_turret/namespace_1b611bca
@@ -1057,7 +1057,7 @@ function function_16ccb771() {
 // Size: 0x1fe
 function function_71eb999() {
     if (self.isjammed === 1 || self.isstunned === 1) {
-        return 1;
+        return true;
     }
     if (isdefined(level.var_69f91847)) {
         level function_d464ecf7();
@@ -1069,7 +1069,7 @@ function function_71eb999() {
                             self flag::set("is_jammed_by_cuav");
                             clientfield::set("missile_turret_is_jammed_by_cuav", 1);
                         }
-                        return 1;
+                        return true;
                     }
                 }
             }
@@ -1079,7 +1079,7 @@ function function_71eb999() {
             clientfield::set("missile_turret_is_jammed_by_cuav", 0);
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace missile_turret/namespace_1b611bca
@@ -1167,7 +1167,7 @@ function function_31477582() {
     waitframe(1);
     var_463c449d = 386.089 * float(function_60d95f53()) / 1000;
     max_delta = 1;
-    while (1) {
+    while (true) {
         if (!isdefined(self.turret)) {
             wait(1);
             continue;

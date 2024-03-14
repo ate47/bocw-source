@@ -54,7 +54,7 @@ function on_player_spawn() {
     foreach (key, value in level.var_61e6d095.inputs) {
         self flag::clear(key);
     }
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
@@ -917,7 +917,7 @@ function private update_timer(uid) {
     level notify("update_timer_" + uid);
     level endon("update_timer_" + uid, "delete_widget_" + uid, "scripted_widget_data_removed_timer_" + uid, #"hash_64a3b02565bdf75f");
     set_flags(uid, 3);
-    while (1) {
+    while (true) {
         timer = function_8db2364c(uid, "timer");
         set_time(uid, timer.time);
         if (!is_true(timer.paused)) {
@@ -971,7 +971,7 @@ function private function_c6d1cf1f(uid) {
     if (isdefined(offset)) {
         offset = offset.offset;
     }
-    while (1) {
+    while (true) {
         var_9941a398 = function_8db2364c(uid, "distance");
         ent = var_9941a398.ent;
         var_7f3f225e = player getplayercamerapos();
@@ -1567,16 +1567,16 @@ function function_e13a1a9c(var_c035ab4f, var_39359c1e, var_92c0faf8, cancel_call
     var_768a0348 = [1:-1, 0:-1];
     var_44b06a67 = isdefined(var_1da0c034) ? var_1da0c034 : [1:0, 0:0];
     player function_2947fddf(var_768a0348, var_44b06a67, var_c035ab4f, var_39359c1e, var_942056ea);
-    while (1) {
+    while (true) {
         if (isdefined(var_92c0faf8) && self function_affb1af1()) {
             var_75843d9b = player [[ var_92c0faf8 ]](var_768a0348, var_942056ea);
             if (is_true(var_75843d9b)) {
-                return;
+                break;
             }
         }
         if (isdefined(cancel_callback) && self function_57fbd346()) {
             player [[ cancel_callback ]](var_942056ea);
-            return;
+            break;
         }
         var_e73a18ff = player function_9c365c3b();
         for (var_ea37ba57 = 0; var_ea37ba57 < 2; var_ea37ba57++) {

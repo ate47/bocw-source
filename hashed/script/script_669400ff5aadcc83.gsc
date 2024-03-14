@@ -86,7 +86,7 @@ function function_c65468ef(var_2d1ee75a, var_ac9c0ee1, var_f965fa7, var_556c090f
 // Size: 0x2e2
 function function_4b4f57db(var_556c090f = 0) {
     self endon(#"hash_2c37ff2ab3cc12c5");
-    while (1) {
+    while (true) {
         var_d46eae05 = 0;
         foreach (player in function_a1ef346b()) {
             if (!zm_utility::function_1a01f2f7(player)) {

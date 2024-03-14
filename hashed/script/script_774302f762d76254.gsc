@@ -457,18 +457,18 @@ function function_ce7e12de(var_c042523 = 0) {
 // Size: 0x410
 function function_a511c7c4() {
     if (is_true(level.doa.var_41adf604)) {
-        return 0;
+        return false;
     }
     if (is_true(level.doa.hardcoremode)) {
-        return 0;
+        return false;
     }
     players = namespace_7f5aeb59::function_23e1f90f();
     if (players.size > 1) {
-        return 0;
+        return false;
     }
     player = players[0];
     if (!isdefined(player) || !isdefined(player.doa) || player.doa.score.keys <= 0) {
-        return 0;
+        return false;
     }
     player endon(#"disconnect");
     player.doa.var_70c50ae0 = 0;
@@ -520,7 +520,7 @@ function function_49592bf9(var_4b98f072) {
     self endon(#"disconnect");
     var_7d86dbf8 = self gamepadusedlast();
     setdvar(#"ui_busyblockingamemenu", !var_7d86dbf8);
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         response = waitresult.response;
@@ -545,7 +545,7 @@ function function_295c3381(var_4b98f072) {
     var_44294245 = 0;
     var_4b98f072.result = 0;
     self thread function_49592bf9(var_4b98f072);
-    while (1) {
+    while (true) {
         if (self.doa.score.lives > 0 && self.doa.score.keys > 0) {
             level.var_43cd3fe5 doa_keytrade::function_8a6595db(self, hash(#"hash_66f6e25631ff2352"));
         } else if (self.doa.score.keys > 0) {
@@ -624,7 +624,7 @@ function function_e591be12() {
     if (level flag::get("doa_roj_visited") || is_true(level.doa.hardcoremode)) {
         return;
     }
-    while (1) {
+    while (true) {
         level waittill(#"hash_2282d796a1f7533a");
         if (level.doa.roundnumber > 64) {
             if (!level flag::get("doa_roj_visited")) {
@@ -646,7 +646,7 @@ function function_e60cadb8() {
     level endon(#"game_over");
     self notify("65ced3b6a35fa8f9");
     self endon("65ced3b6a35fa8f9");
-    while (1) {
+    while (true) {
         level waittill(#"hash_77e4bcc14697c018");
         level.doa.var_60e0f7a0 = 0;
     }

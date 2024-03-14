@@ -789,7 +789,7 @@ function private function_27059a7f(var_34b21e8e, var_6a8278e5) {
     self endon(#"dialog_tree_end");
     level notify(#"watch_dt_skips");
     level endon(#"watch_dt_skips");
-    while (1) {
+    while (true) {
         self.activator namespace_61e6d095::function_b0bad5ff("dialog_tree_end", "watch_dt_skips");
         bb::function_7977c093(self.scriptbundle, #"hash_3c27402259e4c18e", getplayers()[0]);
         if (var_34b21e8e flag::get("_dialog_vo_playing")) {
@@ -823,10 +823,10 @@ function private function_27059a7f(var_34b21e8e, var_6a8278e5) {
 function private function_58881e72(var_7af0d1dc, str_shot, var_6a8278e5) {
     a_instances = scene::get_active_scenes(var_7af0d1dc);
     if (!isarray(a_instances)) {
-        return 0;
+        return false;
     }
     if (!isarray(a_instances[0].scene_ents)) {
-        return 0;
+        return false;
     }
     scene_ents = a_instances[0].scene_ents;
     var_4fd94186 = {#var_bd15dadd:-1, #var_30468601:1, #var_4fc15872:2.4, #ent:undefined, #skipt:9999, #var_dac7c195:var_7af0d1dc, #vox:"none"};
@@ -880,9 +880,9 @@ function private function_58881e72(var_7af0d1dc, str_shot, var_6a8278e5) {
     }
     if (isdefined(var_4fd94186.ent)) {
         var_6a8278e5 thread scene::play_from_time(var_7af0d1dc, str_shot, undefined, var_4fd94186.var_30468601, 1, 1);
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace dialog_tree/dialog_tree

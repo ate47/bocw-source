@@ -361,7 +361,7 @@ function function_53df1610(params, num_entries = 10) {
 // Size: 0x4f0
 function private function_a3fafde(uid, var_28ddca2c) {
     self endon(#"death", #"hash_56811b455b9b0e25");
-    for (var_57431990 = 0; 1; var_57431990 = 1) {
+    for (var_57431990 = 0; true; var_57431990 = 1) {
         var_674fe008 = [9:"vox_cp_chao_02000_fbro_nine_8a", 8:"vox_cp_chao_02000_fbro_eight_f1", 7:"vox_cp_chao_02000_fbro_seven_01", 6:"vox_cp_chao_02000_fbro_six_34", 5:"vox_cp_chao_02000_fbro_five_8a", 4:"vox_cp_chao_02000_fbro_four_9c", 3:"vox_cp_chao_02000_fbro_three_f8", 2:"vox_cp_chao_02000_fbro_two_3a", 1:"vox_cp_chao_02000_fbro_one_22", 0:"vox_cp_sh0_02000_fbro_zero_a0"];
         snd::play("uin_evidence_broadcast_start");
         level.var_751ee7b2 = snd::play("uin_evidence_broadcast_static_loop");
@@ -505,7 +505,7 @@ function function_af235cd2() {
             namespace_6f1d35e1::function_9806766(1, "");
             namespace_6f1d35e1::function_6ed8776d(1, 1);
             var_3d79eff5 = 0;
-            while (1) {
+            while (true) {
                 response = player function_7cfb600();
                 if (is_true(response)) {
                     entry = namespace_6f1d35e1::function_f887fdff(1);
@@ -545,7 +545,7 @@ function function_af235cd2() {
                 } else {
                     namespace_6f1d35e1::function_6ed8776d(2, 1);
                     wait(0.1);
-                    while (1) {
+                    while (true) {
                         response = player function_7cfb600();
                         if (is_true(response)) {
                             entry = namespace_6f1d35e1::function_f887fdff(2);
@@ -683,7 +683,7 @@ function private function_7cfb600() {
     self endon(#"death", #"hash_3c27402259e4c18e");
     self waittillmatch({#response:#"hash_260e4568c570b4ba", #menu:#"hash_20ed03061e0850f3"}, #"menuresponse");
     self playsound(#"hash_4bf3fb6e8fee5573");
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2b049a09/namespace_2b049a09
@@ -705,9 +705,9 @@ function private function_7655bab6(var_df3d8ccf, var_947f605b) {
         var_34a354e2 = floor(code / 100);
         var_7535d84c = code - var_34a354e2 * 100;
         if (code == var_947f605b || var_34a354e2 == var_2f18ad1 && var_7535d84c == var_be3496f3) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 

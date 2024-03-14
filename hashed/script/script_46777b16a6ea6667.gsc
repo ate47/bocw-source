@@ -50,7 +50,7 @@ function function_5a423724() {
     self endon(#"death");
     self.var_d9c5a0f9 = 0;
     var_7756d233 = function_a3f6cdac(1500);
-    while (1) {
+    while (true) {
         var_638f5ee0 = var_7756d233;
         if (isdefined(self.enemy)) {
             var_638f5ee0 = distancesquared(self.origin, self.enemy.origin);
@@ -170,15 +170,15 @@ function function_f7d9bc34() {
 // Size: 0xc0
 function private istargetvalid(target) {
     if (!isdefined(target) || !isalive(target)) {
-        return 0;
+        return false;
     }
     if (isplayer(target) && (target.sessionstate == "spectator" || target.sessionstate == "intermission")) {
-        return 0;
+        return false;
     }
     if (is_true(target.ignoreme) || target isnotarget()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_81522b3c/namespace_81522b3c
@@ -210,7 +210,7 @@ function private gettarget() {
 // Size: 0x128
 function private function_1076a2e0() {
     self endon(#"change_state", #"death");
-    while (1) {
+    while (true) {
         if (is_true(self.ignoreall)) {
             wait(0.5);
             continue;
@@ -239,7 +239,7 @@ function private function_1076a2e0() {
 function private function_776e45e5() {
     self endon(#"change_state", #"death");
     self waittilltimeout(10, #"reached_end_node");
-    while (1) {
+    while (true) {
         players = getplayers();
         var_3ada9d08 = 0;
         foreach (player in players) {
@@ -332,7 +332,7 @@ function state_combat_enter(*params) {
 function function_2b369c9f() {
     self endon(#"change_state", #"death");
     self.ai.var_e7d26c0f = 0;
-    while (1) {
+    while (true) {
         if (self.ai.var_e7d26c0f > 3) {
             if (isdefined(level.var_d9f4b654)) {
                 self.ai.var_e7d26c0f = 0;
@@ -434,7 +434,7 @@ function function_8550e9be(enemy) {
 // Size: 0xce
 function function_66d3e7c2() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         if (isdefined(self.var_c8c5a7d3)) {
             /#
                 recordsphere(self.var_c8c5a7d3, 8, (0, 0, 1), "<unknown string>");

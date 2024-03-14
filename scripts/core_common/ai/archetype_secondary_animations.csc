@@ -191,7 +191,7 @@ function private getfacialanimoverride(localclientnum) {
 // Size: 0xa6
 function private function_176c97f8(substate) {
     if (!isdefined(substate)) {
-        return 0;
+        return false;
     }
     return substate == #"pain" || substate == #"inplace_pain" || substate == #"pain_intro" || substate == #"pain_outro" || substate == #"painrecovery" || substate == #"pronepain";
 }
@@ -202,7 +202,7 @@ function private function_176c97f8(substate) {
 // Size: 0x5e
 function private function_f5dde44(substate) {
     if (!isdefined(substate)) {
-        return 0;
+        return false;
     }
     return substate == #"melee" || substate == #"charge_melee" || substate == #"hash_48dda7ed88efe32f";
 }
@@ -219,7 +219,7 @@ function private function_9d9508f(localclientnum) {
     }
     self endon(#"death");
     self endon(#"stopfacialthread");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"hash_f88532a558ad684", #"vox");
         if (waitresult._notify == #"vox") {
@@ -258,15 +258,15 @@ function private function_9d9508f(localclientnum) {
 // Size: 0x6a
 function private function_d474d993(localclientnum) {
     if (self.var_a5cdf0bd > 0) {
-        return 0;
+        return false;
     }
     if (!isdefined(self.model)) {
-        return 0;
+        return false;
     }
     if (!self hasdobj(localclientnum) || !self function_9ee2e79d()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace archetype_secondary_animations/archetype_secondary_animations
@@ -280,7 +280,7 @@ function private function_3673906(localclientnum) {
     self thread function_9d9508f(localclientnum);
     self endon(#"death");
     self endon(#"stopfacialthread");
-    while (1) {
+    while (true) {
         self waittill(#"hash_570b7fe3dfbdf155");
         animoverride = self getfacialanimoverride(localclientnum);
         if (isdefined(animoverride) && self._currentfaceanim !== animoverride) {
@@ -375,7 +375,7 @@ function private function_909a3089(localclientnum) {
             self._currentfacestate = nextfacestate;
         }
         if (self._currentfacestate == "death") {
-            return;
+            break;
         }
     }
 }
@@ -391,7 +391,7 @@ function private function_a7db9953(localclientnum) {
     if (sessionmodeiszombiesgame()) {
         var_31e8cbcb = 1;
     }
-    while (1) {
+    while (true) {
         arrayremovevalue(level.var_793d8279, undefined);
         var_1833656a = 0;
         var_aac955c5 = 0;

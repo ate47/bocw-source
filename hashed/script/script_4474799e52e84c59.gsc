@@ -96,16 +96,16 @@ function function_21aca219(cmd) {
         switch (cmd) {
         case #"hash_d1b4f368cc37b7b":
             function_546a7089(0);
-            return;
+            break;
         case #"hash_d1b4e368cc379c8":
             function_546a7089(1);
-            return;
+            break;
         case #"hash_d1b51368cc37ee1":
             function_546a7089(2);
-            return;
+            break;
         case #"hash_d1b50368cc37d2e":
             function_546a7089(3);
-            return;
+            break;
         }
     #/
 }
@@ -265,7 +265,7 @@ function function_35eeef70(var_e57cfd4a) {
     /#
         assert(isdefined(var_e57cfd4a), "<unknown string>");
     #/
-    while (1) {
+    while (true) {
         foreach (player in getplayers()) {
             currentweapon = player getcurrentweapon();
             itemweapon = player item_inventory::function_230ceec4(currentweapon);
@@ -329,10 +329,10 @@ function function_165e54c9(item) {
         case #"ww_ieu_acid_t9_item_sr":
         case #"ww_ieu_electric_t9_upgraded_item_sr":
         case #"ww_ieu_plasma_t9_upgraded_item_sr":
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_5b3a52eb/namespace_5b3a52eb
@@ -600,16 +600,16 @@ function function_6d4e1f71(var_d5c2e187, var_e7772c37, var_b0e35c50) {
             switch (var_e7772c37) {
             case #"nitrogen":
                 level.var_c3accf46 = undefined;
-                return;
+                break;
             case #"gas":
                 level.var_ae002b60 = undefined;
-                return;
+                break;
             case #"plasma":
                 level.var_42000fd0 = undefined;
-                return;
+                break;
             case #"beam":
                 level.var_c8a2dc28 = undefined;
-                return;
+                break;
             }
         }
     }

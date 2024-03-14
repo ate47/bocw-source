@@ -178,7 +178,7 @@ function function_fde39570() {
             continue;
         }
         bird notify(#"hash_71379f061079f246", 1);
-        return;
+        break;
     }
 }
 
@@ -500,7 +500,7 @@ function function_26d43617(player) {
     self endon(#"hash_451ceeb2b8839dc0");
     player endon(#"disconnect");
     self thread function_56f05e91(player);
-    while (1) {
+    while (true) {
         self waittill(#"hash_64f59f3fa314254d");
         if (is_true(self.var_a446cf09)) {
             continue;

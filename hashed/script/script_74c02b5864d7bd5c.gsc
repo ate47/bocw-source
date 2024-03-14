@@ -127,7 +127,7 @@ function private function_84845e32(*params) {
 function private function_eb585639() {
     self endon(#"disconnect", #"death", #"hash_91a93ea58d7ad74", #"player_selected");
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;

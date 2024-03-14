@@ -154,9 +154,9 @@ function function_29de6f1f(weapon, meansofdeath = undefined) {
     ismelee = isdefined(meansofdeath) && (meansofdeath == #"mod_melee" || meansofdeath == #"mod_melee_weapon_butt");
     var_4ea2a976 = weapon.name == "launcher_standard_t9" || weapon.name == "sig_buckler_dw" || weapon.name == "briefcase_bomb";
     if (var_62c1bfaa || islethalgrenade || istacticalgrenade || iskillstreak || ismelee || var_4ea2a976) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace supplypod/supplypod
@@ -165,9 +165,9 @@ function function_29de6f1f(weapon, meansofdeath = undefined) {
 // Size: 0x28
 function function_49ef5263() {
     if (self function_e8e1d88e() > 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace supplypod/supplypod
@@ -194,10 +194,10 @@ function hintobjectivehint_updat(weapon) {
 // Size: 0x184
 function function_92856c6(attacker, *victim, weapon, attackerweapon, meansofdeath) {
     if (!isdefined(victim) || !isdefined(weapon) || !isdefined(meansofdeath)) {
-        return 0;
+        return false;
     }
     if (!function_29de6f1f(attackerweapon, meansofdeath)) {
-        return 0;
+        return false;
     }
     if (victim function_49ef5263()) {
         if (isdefined(victim.var_bfeea3dd) && isalive(victim.var_bfeea3dd) && victim != victim.var_bfeea3dd && victim.team == victim.var_bfeea3dd.team) {
@@ -207,9 +207,9 @@ function function_92856c6(attacker, *victim, weapon, attackerweapon, meansofdeat
             }
         }
         victim playlocalsound(#"hash_6c2a2fee191330a0");
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace supplypod/supplypod
@@ -618,7 +618,7 @@ function watchfordamage() {
     supplypod endon(#"death");
     supplypod.health = level.var_934fb97.bundle.kshealth;
     startinghealth = supplypod.health;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
         if ((isdefined(level.var_934fb97.bundle.var_4f845dc4) ? level.var_934fb97.bundle.var_4f845dc4 : 0) && isdefined(waitresult.attacker) && isplayer(waitresult.attacker)) {
@@ -894,11 +894,11 @@ function function_1f8cd247(origin, *angles, player) {
             }
             distsqr = distancesquared(angles, pod.origin);
             if (distsqr <= testdistance) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace supplypod/supplypod

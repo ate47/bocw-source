@@ -138,7 +138,7 @@ function function_ce2c0029(localclientnum, *oldval, newval, *bnewent, *binitials
         var_2d090e03 = 0.5;
         e_player thread function_65490f35(fieldname, var_2de789b, var_2d090e03);
         function_5ea2c6e3("mute_blizzard", 30, 1);
-        return;
+        break;
     case 1:
         var_92d85419 = 1;
         var_312d65d1 = 1;
@@ -150,7 +150,7 @@ function function_ce2c0029(localclientnum, *oldval, newval, *bnewent, *binitials
         var_2d090e03 = 0.1;
         e_player thread function_65490f35(fieldname, var_2de789b, var_2d090e03);
         function_ed62c9c2("mute_blizzard", 30);
-        return;
+        break;
     case 2:
         level notify(#"dog_round_start");
         level notify(#"hash_1f7ec9fe70a9f7a6");
@@ -159,7 +159,7 @@ function function_ce2c0029(localclientnum, *oldval, newval, *bnewent, *binitials
         var_2d090e03 = 0.5;
         e_player thread function_65490f35(fieldname, var_2de789b, var_2d090e03);
         function_5ea2c6e3("mute_blizzard", 8, 1);
-        return;
+        break;
     case 3:
         function_be93487f(fieldname, 9, 0, 0, 0, 1);
         level notify(#"hash_2c882601b007c0f6");
@@ -171,13 +171,13 @@ function function_ce2c0029(localclientnum, *oldval, newval, *bnewent, *binitials
         function_ed62c9c2("mute_blizzard", 8);
         level.var_25fd57f3 = 0;
         level.var_653fb8f8 = 1;
-        return;
+        break;
     case 5:
         e_player = getlocalplayers()[fieldname];
         var_2de789b = 0.5;
         var_2d090e03 = 0.5;
         e_player thread function_65490f35(fieldname, var_2de789b, var_2d090e03);
-        return;
+        break;
     }
 }
 
@@ -187,7 +187,7 @@ function function_ce2c0029(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0xd0
 function private function_65490f35(localclientnum, var_2de789b, var_2d090e03, n_time = 30) {
     level endon(#"hash_1f7ec9fe70a9f7a6");
-    for (n_blend = n_time; 1; n_blend = n_blend - var_2de789b) {
+    for (n_blend = n_time; true; n_blend = n_blend - var_2de789b) {
         if (var_2de789b > var_2d090e03) {
             var_2de789b = var_2d090e03 + (var_2de789b - var_2d090e03) * n_blend / n_time;
         } else {

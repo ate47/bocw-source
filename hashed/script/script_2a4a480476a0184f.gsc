@@ -77,7 +77,7 @@ function function_33ef1077(var_7589d009, var_cfa5fdd5, var_5021564e, var_79d6c88
         }
     }
     wait(0.1);
-    while (1) {
+    while (true) {
         if (isdefined(var_14e7d014)) {
             var_c0646472 = self function_e538e340(var_14e7d014);
             if (is_true(var_c0646472)) {

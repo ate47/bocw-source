@@ -425,7 +425,7 @@ function function_93f99ad9(damage, time_interval) {
     self notify("9da33c91d7da95b");
     self endon("9da33c91d7da95b");
     if (util::function_7f7a77ab()) {
-        while (1) {
+        while (true) {
             for (var_9037cf6c = 0; var_9037cf6c < time_interval; var_9037cf6c = var_9037cf6c + float(function_60d95f53()) / 1000) {
                 util::function_9d5c26a();
                 waitframe(1);
@@ -434,7 +434,7 @@ function function_93f99ad9(damage, time_interval) {
         }
         return;
     }
-    while (1) {
+    while (true) {
         wait(time_interval);
         self dodamage(damage, self.origin);
     }

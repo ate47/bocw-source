@@ -161,7 +161,7 @@ function private function_16f6fb10() {
         self endon("<unknown string>");
         player endon(#"disconnect");
         self notifyonplayercommand("<unknown string>", "<unknown string>");
-        while (1) {
+        while (true) {
             self waittill(#"play_gesture");
             gesture = level.var_b63e01a9;
             var_f3002d70 = function_39ab832f(1);
@@ -184,7 +184,7 @@ function private function_16f6fb10() {
 // Size: 0x58
 function private function_c5972380() {
     /#
-        while (1) {
+        while (true) {
             level waittill(#"save_restore");
             level.var_841888e0 = getdvarint(#"hash_5db59e8350ba59e7", 1);
         }
@@ -523,7 +523,7 @@ function function_f92e23de() {
     if (!isdefined(var_11ffb46) || is_true(level.disablestattracking)) {
         return;
     }
-    while (1) {
+    while (true) {
         level waittill(#"save_restore");
         var_eeb08e4 = self getnoncheckpointdata("INCAPS");
         var_397a145d = self stats::get_stat(#"playerstatslist", #"incaps", #"statvalue");
@@ -646,11 +646,11 @@ function function_c2a2b500(victim, dir, smeansofdeath) {
                 axis = anglestoaxis(victim.angles);
             }
             if (vectordot(dir, axis.forward * -1) > var_e3dbc335) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic_player/globallogic_player
@@ -1194,9 +1194,9 @@ function function_8b3485() {
 function function_883dd64(idamage) {
     var_e561f9d9 = gamedifficulty::function_f4052850();
     if (idamage / 100 < var_e561f9d9) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace globallogic_player/globallogic_player
@@ -1239,10 +1239,10 @@ function function_decf3cb1(player, weapon, smeansofdeath, einflictor) {
 function isaikillstreakdamage(weapon, einflictor) {
     if (weapon.isaikillstreakdamage) {
         if (weapon.name != "ai_tank_drone_rocket" || isdefined(einflictor.firedbyai)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic_player/globallogic_player
@@ -1326,10 +1326,10 @@ function private function_39ab832f(debugdraw) {
     for (i = 0; i < var_d3eb1bf1.size; i++) {
         if (player function_bb371c3(var_d3eb1bf1[i], debugdraw)) {
             player.var_d11f7daf = var_d3eb1bf1[i];
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic_player/globallogic_player
@@ -2163,13 +2163,13 @@ function function_e577c1e() {
 function function_c725caa8(var_e577c1e) {
     if (var_e577c1e && level.minimumallowedteamkills >= 0) {
         if (globallogic_utils::gettimepassed() >= 5000) {
-            return 1;
+            return true;
         }
         if (self.pers[#"teamkills_nostats"] > 1) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic_player/globallogic_player
@@ -2179,12 +2179,12 @@ function function_c725caa8(var_e577c1e) {
 function function_da080186() {
     timeperoneteamkillreduction = 20;
     reductionpersecond = 1 / timeperoneteamkillreduction;
-    while (1) {
+    while (true) {
         if (isalive(self)) {
             self.pers[#"teamkills_nostats"] = self.pers[#"teamkills_nostats"] - reductionpersecond;
             if (self.pers[#"teamkills_nostats"] < level.minimumallowedteamkills) {
                 self.pers[#"teamkills_nostats"] = level.minimumallowedteamkills;
-                return;
+                break;
             }
         }
         wait(1);
@@ -2251,19 +2251,19 @@ function function_c29ad5cf(idamage, smeansofdeath, weapon, shitloc, vdir, vattac
 // Size: 0xb2
 function is_explosive_ragdoll(weapon, inflictor) {
     if (!isdefined(weapon)) {
-        return 0;
+        return false;
     }
     if (weapon.name == #"destructible_car" || weapon.name == #"explodable_barrel") {
-        return 1;
+        return true;
     }
     if (weapon.projexplosiontype == "grenade") {
         if (isdefined(inflictor) && isdefined(inflictor.stucktoplayer)) {
             if (inflictor.stucktoplayer == self) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic_player/globallogic_player
@@ -2474,7 +2474,7 @@ function function_4d3e38fb() {
         foreach (weapon in a_w_weapons) {
             if (is_true(weapon.isheavyweapon)) {
                 self savegame::function_6d003cb9(savegame::function_8136eb5a() + "heavy_weapon", weapon.name);
-                return;
+                break;
             }
         }
     }

@@ -75,7 +75,7 @@ function private function_7d76b3ac(local_client_num) {
     data.var_33c88c75 = [];
     self.var_8a1c2b55 = data;
     self thread function_8f050823();
-    while (1) {
+    while (true) {
         var_5479bede = undefined;
         var_5479bede = self waittill(#"damage");
         self function_2138c62(local_client_num, self.var_1e5d913d, var_5479bede);

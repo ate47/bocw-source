@@ -266,30 +266,30 @@ function function_abe84c14(localclientnum, *oldval, newval, *bnewent, *binitials
     switch (bwastimejump) {
     case 1:
         self.var_5ad9ac45 = util::playfxontag(fieldname, level._effect[#"hash_6778cbcf34bfebef"], mdl_piece, "tag_origin");
-        return;
+        break;
     case 2:
         self.var_5ad9ac45 = util::playfxontag(fieldname, level._effect[#"hash_5f2da0ff081c1699"], mdl_piece, "tag_origin");
-        return;
+        break;
     case 3:
         self.var_5ad9ac45 = util::playfxontag(fieldname, level._effect[#"hash_63697be07cc11490"], mdl_piece, "tag_origin");
         playsound(fieldname, #"hash_604498b9077301d9", self.origin);
-        return;
+        break;
     case 4:
         self.var_5ad9ac45 = util::playfxontag(fieldname, level._effect[#"hash_360e9275d6096589"], mdl_piece, "tag_origin");
         playsound(fieldname, #"hash_6c870d0f85573f60", self.origin);
-        return;
+        break;
     case 5:
         self.var_5ad9ac45 = util::playfxontag(fieldname, level._effect[#"hash_66be32f919d8b4a4"], mdl_piece, "tag_origin");
         playsound(fieldname, #"hash_65ae6ba40cb558cd", self.origin);
-        return;
+        break;
     case 6:
         self.var_5ad9ac45 = util::playfxontag(fieldname, level._effect[#"hash_638a4ec653717ef6"], mdl_piece, "tag_origin");
         playsound(fieldname, #"hash_66f3cff29be77acd", self.origin);
-        return;
+        break;
     case 7:
         self.var_5ad9ac45 = util::playfxontag(fieldname, level._effect[#"hash_1fa861cbe30adda9"], mdl_piece, "tag_origin");
         playsound(fieldname, #"hash_30dce35bee22371a", self.origin);
-        return;
+        break;
     case 0:
     default:
         if (isdefined(self.var_5ad9ac45)) {

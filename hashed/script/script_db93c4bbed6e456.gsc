@@ -120,9 +120,9 @@ function function_26d91402(old_position, new_position) {
 function function_b7f367ed(old_position, new_position) {
     trace = get_trace(old_position, new_position);
     if (trace[#"fraction"] < 1) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c

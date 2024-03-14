@@ -177,7 +177,7 @@ function function_4d980695(*isowner, killstreaktype) {
         }
         level.ac130.failed2enter = 1;
         level.ac130 notify(#"ac130_shutdown");
-        return 0;
+        return false;
     }
     bundle = killstreaks::get_script_bundle("ac130");
     /#
@@ -211,7 +211,7 @@ function function_4d980695(*isowner, killstreaktype) {
     if (isdefined(level.var_a93e4b60)) {
         level [[ level.var_a93e4b60 ]](player);
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2d34cefc/namespace_2d34cefc
@@ -463,18 +463,18 @@ function ontimecheck() {
 // Size: 0x74
 function function_c2bfa7e1(ent, *weapon) {
     if (isdefined(weapon.var_7132bbb7)) {
-        return 0;
+        return false;
     }
     if (weapon.leaving === 1) {
-        return 1;
+        return true;
     }
     if (weapon.shuttingdown === 1) {
-        return 0;
+        return false;
     }
     if (weapon.completely_shutdown === 1) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2d34cefc/namespace_2d34cefc
@@ -517,7 +517,7 @@ function watchplayerexitrequestthread(player) {
     player endon(#"disconnect", #"gunner_left");
     ac130 endon(#"death");
     var_f6263fe2 = getdvarfloat(#"hash_2ed1b7031dae0df7", 0.5);
-    while (1) {
+    while (true) {
         timeused = 0;
         player function_7deaa2a4(timeused);
         player function_9d62ff6c();
@@ -541,30 +541,30 @@ function watchplayerexitrequestthread(player) {
 // Size: 0x156
 function cantargetplayer(player, *hardpointtype) {
     if (!isalive(hardpointtype) || hardpointtype.sessionstate != "playing") {
-        return 0;
+        return false;
     }
     if (hardpointtype.ignoreme === 1) {
-        return 0;
+        return false;
     }
     if (hardpointtype isnotarget()) {
-        return 0;
+        return false;
     }
     if (hardpointtype hasperk(#"hash_37f82f1d672c4870")) {
-        return 0;
+        return false;
     }
     if (!isdefined(hardpointtype.team)) {
-        return 0;
+        return false;
     }
     if (!util::function_fbce7263(hardpointtype.team, self.team)) {
-        return 0;
+        return false;
     }
     if (hardpointtype.team == #"spectator") {
-        return 0;
+        return false;
     }
     if (isdefined(hardpointtype.spawntime) && float(gettime() - hardpointtype.spawntime) / 1000 <= level.heli_target_spawnprotection) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2d34cefc/namespace_2d34cefc
@@ -613,7 +613,7 @@ function function_a514a080(player) {
     player endon(#"disconnect");
     self.var_7917e5a1 = 1;
     turretindex = 1;
-    while (1) {
+    while (true) {
         target = function_7ec0bdc(player);
         if (isalive(target)) {
             self turretsettarget(0, target);
@@ -655,7 +655,7 @@ function function_5cdcce1e(player) {
     ac130 endon(#"delete", #"ac130_shutdown");
     player endon(#"disconnect", #"joined_team", #"joined_spectator", #"changed_specialist");
     var_2990ddbd = -1;
-    while (1) {
+    while (true) {
         ammo_in_clip = ac130 function_e2d89efe(1);
         player clientfield::set_player_uimodel("vehicle.rocketAmmo", ammo_in_clip);
         var_a4a44abc = ac130 function_fde0d99e(1);
@@ -986,7 +986,7 @@ function watchlocationchangethread(destnodes) {
     ac130 endon(#"delete", #"ac130_shutdown");
     player thread setplayermovedrecentlythread();
     player.moves = 0;
-    while (1) {
+    while (true) {
         ac130 waittill(#"goal");
         if (player.moves > 0) {
             waittime = randomintrange(bundle.var_efac0f7a, bundle.var_18d458d2);
@@ -1233,7 +1233,7 @@ function function_60e3edcc() {
     plane = self;
     plane endon(#"death");
     wait(randomfloatrange(0.1, 0.2));
-    if (0) {
+    if (false) {
         goalx = randomfloatrange(650, 700);
         goaly = randomfloatrange(650, 700);
         if (randomintrange(0, 2) > 0) {

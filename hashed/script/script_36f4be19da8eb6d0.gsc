@@ -196,7 +196,7 @@ function private on_player_connect() {
 // Size: 0x238
 function function_18fbdeee() {
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"hash_3abc816f9601bdd3");
         weapon = waitresult.weapon;
@@ -245,7 +245,7 @@ function private function_6e1aa0a9() {
 // Size: 0x21a
 function watch_weapon_changes() {
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"weapon_change");
         weapon = waitresult.weapon;
@@ -285,7 +285,7 @@ function watch_weapon_changes() {
 // Checksum 0x5a78bbda, Offset: 0x2368
 // Size: 0xe
 function function_7a7d85a4(*damage_percent) {
-    return 0;
+    return false;
 }
 
 // Namespace namespace_b376a999/namespace_b376a999
@@ -306,10 +306,10 @@ function function_5fef4201(weapon) {
         case #"ww_ieu_acid_t9":
         case #"ww_ieu_gas_t9":
         case #"ww_ieu_plasma_t9":
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_b376a999/namespace_b376a999
@@ -325,10 +325,10 @@ function function_7d5e7c71(weapon) {
         case #"hash_189ef2dafffe1f4c":
         case #"hash_294926d598e011fa":
         case #"hash_4ee16eb0581e4646":
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_b376a999/namespace_b376a999
@@ -339,10 +339,10 @@ function function_a93a6096(player) {
     var_57b1ae9e = player getweaponslist();
     foreach (var_681004f8 in var_57b1ae9e) {
         if (function_5fef4201(var_681004f8)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_b376a999/namespace_b376a999
@@ -509,12 +509,12 @@ function function_71c72692() {
     }
     self endon(#"death");
     var_e6d88abc = float(5) / 2;
-    while (1) {
+    while (true) {
         wait(var_e6d88abc);
         if (gettime() - self.var_423a9ef2 > int(var_e6d88abc * 1000)) {
             self clientfield::set("" + #"hash_48257c0dba76b140", 0);
             self.var_423a9ef2 = undefined;
-            return;
+            break;
         }
     }
 }
@@ -628,7 +628,7 @@ function function_5a2447b1(time) {
 // Size: 0xb8
 function function_ac1ff86e() {
     if (!isdefined(level.var_1a4cc228[self.aitype])) {
-        return 0;
+        return false;
     }
     self function_f9b43587();
     entitynum = self getentitynumber();
@@ -637,7 +637,7 @@ function function_ac1ff86e() {
     if (isdefined(self.gib_state)) {
         gibserverutils::function_96bedd91(self);
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_b376a999/namespace_b376a999
@@ -753,7 +753,7 @@ function function_c8f96d23(trigger) {
     if (isdefined(trigger.var_37d2c8f6)) {
         trigger [[ trigger.var_37d2c8f6 ]](self, trigger.var_42859232[self getentitynumber()]);
     }
-    while (1) {
+    while (true) {
         view_pos = self getweaponmuzzlepoint();
         forward_view_angles = self getweaponforwarddir();
         if (!isdefined(trigger) || !isdefined(trigger.var_22cea3da)) {
@@ -786,15 +786,15 @@ function function_bd61e5e5(target, view_pos, forward_view_angles) {
         /#
             target function_77d36cb8("<unknown string>", (1, 0, 0));
         #/
-        return 0;
+        return false;
     }
     if (0 == target damageconetrace(view_pos, self, forward_view_angles, 30)) {
         /#
             target function_77d36cb8("<unknown string>", (1, 0, 0));
         #/
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_b376a999/namespace_b376a999
@@ -957,7 +957,7 @@ function function_71b3af73() {
     self notify("5c66fef944a78307");
     self endon("5c66fef944a78307");
     self endon(#"death");
-    while (1) {
+    while (true) {
         if (self isinvehicle()) {
             vehicle = self getvehicleoccupied();
             seatindex = vehicle getoccupantseat(self);
@@ -1137,7 +1137,7 @@ function function_8811e4ff(owner, var_d3c8f6cd = 1) {
     self endon(#"death");
     ai_damaged = [];
     var_ef1d7300 = [];
-    while (1) {
+    while (true) {
         var_98c4a170 = 0;
         a_targets = getentitiesinradius(self.origin, 150, 15);
         a_targets = arraycombine(a_targets, getentitiesinradius(self.origin, 150, 12));
@@ -1330,7 +1330,7 @@ function function_ee76afdc(params, shatter_trigger, crumple_trigger) {
     self endon(#"death");
     wait(0.1);
     orig_attacker = params.eattacker;
-    while (1) {
+    while (true) {
         s_notify = undefined;
         s_notify = shatter_trigger waittill(#"damage");
         if (!is_true(shatter_trigger.var_9591a331) && function_8fbb3409(s_notify.weapon) && !is_true(s_notify.var_98e101b0)) {
@@ -1748,7 +1748,7 @@ function function_83869cdb(*watcher, player) {
 // Size: 0x176
 function function_615ff5e9(owner) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         var_6a77cda0 = getentarray("trigger_damage", "classname");
         arrayremovevalue(var_6a77cda0, undefined);
         var_6a77cda0 = arraysortclosest(var_6a77cda0, self.origin, undefined, undefined, 100);
@@ -1905,7 +1905,7 @@ function function_3a84d307(e_target, v_target_pos, weapon) {
 // Size: 0x300
 function function_4a074bb5(weapon) {
     self endon(#"death", #"stop_damage");
-    while (1) {
+    while (true) {
         v_position = self getplayercamerapos();
         v_forward = anglestoforward(self getplayerangles());
         a_trace = beamtrace(v_position, v_position + v_forward * 1000, 1, self);

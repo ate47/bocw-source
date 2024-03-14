@@ -143,7 +143,7 @@ function private function_94c3002d() {
         }
     #/
     wait(1);
-    while (1) {
+    while (true) {
         if (level flag::get(#"hash_3b763d6426336ce0")) {
             if (zombie_utility::get_current_zombie_count() == 0 && level.zombie_total <= 0 && !level.intermission && !level flag::get(#"infinite_round_spawning") && !level flag::get(#"hold_round_end")) {
                 return;
@@ -538,19 +538,19 @@ function on_item_pickup(params) {
     case #"hash_74d379a1496a3d22":
         level thread function_3ddd0bcb("a");
         level zm_ui_inventory::function_7df6bb60(#"hash_689d93f2ecc4ae51", 1);
-        return;
+        break;
     case #"hash_74d378a1496a3b6f":
         level thread function_3ddd0bcb("b");
         level zm_ui_inventory::function_7df6bb60(#"hash_689d90f2ecc4a938", 1);
-        return;
+        break;
     case #"hash_74d377a1496a39bc":
         level thread function_3ddd0bcb("c");
         level zm_ui_inventory::function_7df6bb60(#"hash_689d91f2ecc4aaeb", 1);
-        return;
+        break;
     case #"hash_74d376a1496a3809":
         level thread function_3ddd0bcb("d");
         level zm_ui_inventory::function_7df6bb60(#"hash_689d96f2ecc4b36a", 1);
-        return;
+        break;
     }
 }
 
@@ -701,7 +701,7 @@ function function_2a795365(*e_player) {
 // Size: 0x138
 function function_1446ef30() {
     level endon(#"end_game", #"hash_219a3f198a6aa63");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"crafting_started");
         player = waitresult.activator;
@@ -1083,7 +1083,7 @@ function function_b279c743() {
     level endon(#"end_game");
     self endon(#"death");
     s_interact = struct::get("lock_down_button");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         activator = waitresult.activator;
@@ -1100,7 +1100,7 @@ function function_b279c743() {
             activator playrumbleonentity("damage_light");
             playsoundatposition(#"hash_24529e08fd2e1264", s_interact.origin);
             level flag::set(#"hash_3814c5c6793e2b2d");
-            return;
+            break;
         }
     }
 }

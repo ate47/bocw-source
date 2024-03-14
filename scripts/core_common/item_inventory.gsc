@@ -241,10 +241,10 @@ function private function_d62822d5() {
 // Size: 0x186
 function private function_76646dad(weapon) {
     if (util::get_game_type() === #"spy" && weapon.name == #"hash_44678c77a1fa37b0") {
-        return 1;
+        return true;
     }
     if (weapon.name == #"basketball" || weapon.name == #"cymbal_monkey" || weapon.name == #"hash_364914e1708cb629" || weapon.name == #"snowball" || weapon.name == #"eq_grapple") {
-        return 1;
+        return true;
     }
     if (weapon.gadget_type != 0) {
         slot = self gadgetgetslot(weapon);
@@ -922,29 +922,29 @@ function private function_9d805044(itemtype, var_ab9610ad = undefined) {
     switch (itemtype) {
     case #"backpack":
         function_2e10e66e(var_ab9610ad);
-        return;
+        break;
     case #"equipment":
         function_283a29c8(var_ab9610ad);
-        return;
+        break;
     case #"field_upgrade":
         function_bf956054(var_ab9610ad);
-        return;
+        break;
     case #"tactical":
         function_cd5393a9(var_ab9610ad);
-        return;
+        break;
     case #"health":
         function_a7d62e18(var_ab9610ad);
-        return;
+        break;
     case #"scorestreak":
         function_986801b8(var_ab9610ad);
-        return;
+        break;
     case #"perk_tier_3":
     case #"perk_tier_2":
     case #"perk_tier_1":
         function_714fce55(hash(itemtype), var_ab9610ad);
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 
@@ -1010,10 +1010,10 @@ function function_520b16d6() {
 // Size: 0x5c
 function private function_27cd171b(inventoryitem) {
     if (!isdefined(inventoryitem.amount)) {
-        return 0;
+        return false;
     }
     if (inventoryitem.amount <= 0) {
-        return 1;
+        return true;
     }
     return inventoryitem.amount / inventoryitem.var_a6762160.amount <= 0.5;
 }
@@ -1033,7 +1033,7 @@ function function_d85c5382(sensordart, *player) {
 // Size: 0x254
 function private function_d2f05352() {
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         players = getplayers();
         time = gettime();
         for (playerindex = 0; playerindex < players.size; playerindex++) {
@@ -1385,11 +1385,11 @@ function function_550fcb41(item) {
         assert(isplayer(self));
     #/
     if (!is_true(item.var_a6762160.stackable)) {
-        return 0;
+        return false;
     }
     maxstack = namespace_a0d533d1::function_cfa794ca(self.inventory.var_7658cbec, item.var_a6762160);
     if (maxstack <= 1) {
-        return 0;
+        return false;
     }
     for (i = 0; i < self.inventory.items.size; i++) {
         if (self.inventory.items[i].id == 32767) {
@@ -1399,10 +1399,10 @@ function function_550fcb41(item) {
             continue;
         }
         if (self.inventory.items[i].count < maxstack) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace item_inventory/item_inventory
@@ -1526,23 +1526,23 @@ function function_6d647220(item) {
         assert(isdefined(item));
     #/
     if (!isdefined(item) || item.networkid == 32767) {
-        return 0;
+        return false;
     }
     if (!has_armor()) {
-        return 0;
+        return false;
     }
     if (!isdefined(self.armor) || !isdefined(self.maxarmor)) {
-        return 0;
+        return false;
     }
     if (self.armor == self.maxarmor) {
-        return 0;
+        return false;
     }
     self use_inventory_item(item.networkid, 1);
     armoritem = undefined;
     if (isplayer(self) && isdefined(self.inventory)) {
         armoritem = self.inventory.items[6];
         if (!isdefined(armoritem) || armoritem.networkid == 32767 || armoritem.var_a6762160.itemtype != #"armor") {
-            return 0;
+            return false;
         }
     }
     if (isdefined(self.var_3f1410dd)) {
@@ -1553,7 +1553,7 @@ function function_6d647220(item) {
     function_bdc03d88();
     self function_6c36ab6b();
     self function_db2abc4(item);
-    return 1;
+    return true;
 }
 
 // Namespace item_inventory/item_inventory
@@ -2031,9 +2031,9 @@ function drop_armor(stashitem = 0, var_7cab8e12 = undefined, targetname = undefi
     if (self has_armor()) {
         item = self.inventory.items[6];
         self thread drop_inventory_item(item.networkid, stashitem, var_7cab8e12, targetname);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace item_inventory/item_inventory
@@ -2690,9 +2690,9 @@ function equip_item(networkid, quickequip = 0, weaponid = 0) {
 // Size: 0x26
 function private can_switch_weapons() {
     if (self function_2cceca7b()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace item_inventory/item_inventory
@@ -2703,13 +2703,13 @@ function private function_bf2312f1(weapon) {
     currentweapon = self getcurrentweapon();
     if (isdefined(currentweapon) && currentweapon != level.weaponnone && currentweapon == weapon) {
         if (self function_55acff10()) {
-            return 0;
+            return false;
         }
         if (self isfiring()) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace item_inventory/item_inventory
@@ -3626,18 +3626,18 @@ function function_f3195b3d(networkid) {
     #/
     foreach (slot in array(5, 6, 12, 7, 13, 8, 17 + 1, 17 + 1 + 8 + 1, 17 + 1 + 8 + 1 + 8 + 1, 14, 15, 16, 17)) {
         if (self.inventory.items[slot].networkid === networkid) {
-            return 1;
+            return true;
         }
     }
     foreach (weaponid in array(17 + 1, 17 + 1 + 8 + 1, 17 + 1 + 8 + 1 + 8 + 1)) {
         foreach (var_259f58f3 in array(1, 2, 3, 4, 5, 6, 7, 8)) {
             attachmentid = namespace_a0d533d1::function_dfaca25e(weaponid, var_259f58f3);
             if (self.inventory.items[attachmentid].networkid === networkid) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace item_inventory/item_inventory
@@ -3684,28 +3684,28 @@ function function_db2abc4(item) {
         }
         switch (item.var_a6762160.itemtype) {
         case #"weapon":
-            return;
+            break;
         case #"ammo":
-            return;
+            break;
         case #"health":
-            return;
+            break;
         case #"equipment":
-            return;
+            break;
         case #"field_upgrade":
-            return;
+            break;
         case #"tactical":
-            return;
+            break;
         case #"armor":
-            return;
+            break;
         case #"backpack":
-            return;
+            break;
         case #"attachment":
             if (isdefined(item.var_a6762160.equipsound)) {
                 self playsoundtoplayer(item.var_a6762160.equipsound, self);
             }
-            return;
+            break;
         case #"generic":
-            return;
+            break;
         }
     }
 }
@@ -3790,18 +3790,18 @@ function remove_inventory_item(networkid, var_dfe6c7e5 = 0, notifyclient = 1, va
     itemid = function_c48cd17f(networkid);
     if (itemid == 32767) {
         debug_print("remove_inventory_item: failed! No ItemId");
-        return 0;
+        return false;
     }
     item = get_inventory_item(networkid);
     weapon = namespace_a0d533d1::function_2b83d3ff(item);
     var_a6762160 = item.var_a6762160;
     if (isdefined(self) && isdefined(weapon) && !var_1bdeec9 && (self function_c1cef1ec(weapon) || !self function_bf2312f1(weapon))) {
         debug_print("remove_inventory_item: failed! Weapon in Use");
-        return 0;
+        return false;
     }
     if (self.inventory.items[8].networkid === networkid) {
         function_eb70ad46(networkid, notifyclient, var_cda2ff12);
-        return 1;
+        return true;
     }
     for (i = 0; i < self.inventory.items.size; i++) {
         if (self.inventory.items[i].networkid === networkid) {
@@ -3834,14 +3834,14 @@ function remove_inventory_item(networkid, var_dfe6c7e5 = 0, notifyclient = 1, va
                 self function_3d113bfb();
             }
             debug_print("remove_inventory_item: Success!", weapon);
-            return 1;
+            return true;
         }
         if (!isdefined(self.inventory)) {
-            return 0;
+            return false;
         }
     }
     debug_print("remove_inventory_item: Failed!", weapon);
-    return 0;
+    return false;
 }
 
 // Namespace item_inventory/item_inventory
@@ -4090,9 +4090,9 @@ function function_cfe0e919(networkid, count) {
 // Size: 0x4e
 function function_23335063(networkid, var_cda2ff12 = 1) {
     if (!self remove_inventory_item(networkid, undefined, undefined, var_cda2ff12)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace item_inventory/item_inventory
@@ -4400,10 +4400,10 @@ function function_b3342af3(item, notifyclient = 1, ignoreweapon = undefined) {
             if (var_b917b36f > 0) {
                 self function_fc9f8b05(weapon, var_b917b36f);
             }
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace item_inventory/item_inventory
@@ -4555,7 +4555,7 @@ function function_3f5b2e2e(item, notifyclient = 1, var_8eb4edca = 1, var_1bdeec9
     if (notifyclient) {
         self function_b00db06(7, networkid);
     }
-    return 1;
+    return true;
 }
 
 // Namespace item_inventory/item_inventory
@@ -4573,12 +4573,12 @@ function use_inventory_item(networkid, usecount, *var_dfe6c7e5 = 1) {
     for (i = 0; i < self.inventory.items.size; i++) {
         if (self.inventory.items[i].networkid === usecount) {
             if (is_true(self.inventory.items[i].var_a6762160.unlimited)) {
-                return;
+                break;
             }
             self.inventory.items[i].count = self.inventory.items[i].count - var_dfe6c7e5;
             if (self.inventory.items[i].count < 0) {
                 self.inventory.items[i].count = 0;
-                return;
+                break;
             }
             var_641929a7 = {#item:self.inventory.items[i]};
             self callback::callback(#"on_item_use", var_641929a7);
@@ -4589,7 +4589,7 @@ function use_inventory_item(networkid, usecount, *var_dfe6c7e5 = 1) {
             if (self.inventory.items[i].count <= 0) {
                 self thread function_a24d6e36(usecount, 1);
             }
-            return;
+            break;
         }
     }
 }
@@ -4832,13 +4832,13 @@ function function_b579540e(item, aat_name) {
         assert(isstruct(item));
     #/
     if (!isdefined(item) || !isdefined(item.var_a6762160) || item.var_a6762160.itemtype != #"weapon") {
-        return 0;
+        return false;
     }
     if (!isdefined(aat_name)) {
-        return 0;
+        return false;
     }
     item.aat = aat_name;
-    return 1;
+    return true;
 }
 
 // Namespace item_inventory/item_inventory

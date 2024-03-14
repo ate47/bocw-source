@@ -71,7 +71,7 @@ function timeout_beep(localclientnum, *oldval, newval, *bnewent, *binitialsnap, 
     interval = 1;
     if (bwastimejump == 2) {
     }
-    for (interval = 0.133; 1; interval = math::clamp(interval / 1.17, 0.1, 1)) {
+    for (interval = 0.133; true; interval = math::clamp(interval / 1.17, 0.1, 1)) {
         if (isdefined(beepalias)) {
             var_91e09a3a = 1;
             if (var_4f5f9e46 === 1) {
@@ -419,7 +419,7 @@ function function_712a3516(localclientnum, var_38d5ac93, bundlename) {
     level endon(#"disconnect", #"game_ended");
     if (isdefined(var_38d5ac93) && isdefined(bundlename)) {
         playerentnum = var_38d5ac93 getentitynumber();
-        while (1) {
+        while (true) {
             waitframe(1);
             if (!isdefined(var_38d5ac93) || !isdefined(var_38d5ac93.var_29806c31)) {
                 player = getentbynum(localclientnum, playerentnum);
@@ -438,15 +438,15 @@ function function_712a3516(localclientnum, var_38d5ac93, bundlename) {
 // Size: 0x70
 function is_killstreak_weapon(weapon) {
     if (!isdefined(weapon)) {
-        return 0;
+        return false;
     }
     if (weapon == level.weaponnone || weapon.notkillstreak) {
-        return 0;
+        return false;
     }
     if (weapon.isspecificuse || is_weapon_associated_with_killstreak(weapon)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace killstreaks/killstreaks_shared

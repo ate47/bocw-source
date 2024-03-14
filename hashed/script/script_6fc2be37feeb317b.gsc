@@ -144,7 +144,7 @@ function function_e0069640(struct) {
 // Size: 0x138
 function function_395f9528() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self hide();
         level flag::wait_till_clear("disable_weapon_machine");
         self show();
@@ -164,7 +164,7 @@ function function_f15be4f1() {
     self endon(#"death");
     self val::set("pap", "takedamage", 1);
     self.health = 1000000;
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = self waittill(#"damage");
         self.health = self.health + s_result.amount;
@@ -249,7 +249,7 @@ function private function_90017e84(params) {
 function function_e3af0084() {
     level endon(#"game_ended");
     self endon(#"disconnect");
-    for (weapon = self getcurrentweapon(); 1; weapon = isdefined(waitresult.weapon) ? waitresult.weapon : self getcurrentweapon()) {
+    for (weapon = self getcurrentweapon(); true; weapon = isdefined(waitresult.weapon) ? waitresult.weapon : self getcurrentweapon()) {
         networkid = item_inventory::function_ec087745();
         if (networkid != 32767) {
             var_d2648452 = item_inventory::get_inventory_item(networkid);
@@ -399,10 +399,10 @@ function function_ef9d58d0(item, weapon) {
         case #"ww_mega_barrel_fullauto_micro_missile_t9_upgraded_item_sr":
         case #"ww_ieu_plasma_t9_upgraded_item_sr":
         case #"ww_mega_barrel_fullauto_diffusion_beam_t9_upgraded_item_sr":
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
@@ -415,39 +415,39 @@ function function_d2b370d7(aat_name, var_c3317960) {
         switch (var_c3317960) {
         case 1:
             if (var_4f0c684c != "ammomod_cryofreeze") {
-                return 1;
+                return true;
             }
             break;
         case 3:
         case 10:
         case 12:
             if (var_4f0c684c != "ammomod_napalmburst") {
-                return 1;
+                return true;
             }
             break;
         case 4:
         case 14:
         case 15:
             if (var_4f0c684c != "ammomod_deadwire") {
-                return 1;
+                return true;
             }
             break;
         case 7:
         case 9:
             if (var_4f0c684c != "ammomod_shatterblast") {
-                return 1;
+                return true;
             }
             break;
         case 6:
         case 8:
         case 16:
             if (var_4f0c684c != "ammomod_brainrot") {
-                return 1;
+                return true;
             }
             break;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
@@ -465,7 +465,7 @@ function function_4609e67c(machine, trigger) {
     self thread function_a9a3d4e0(machine, trigger);
     self zm_stats::increment_client_stat(#"use_pap");
     self zm_stats::increment_player_stat(#"use_pap");
-    while (1) {
+    while (true) {
         weapon = self getcurrentweapon();
         if (weapon === level.weaponnone || weapon === level.weaponbasemeleeheld || killstreaks::is_killstreak_weapon(weapon)) {
             self function_6c71e778(machine, trigger);

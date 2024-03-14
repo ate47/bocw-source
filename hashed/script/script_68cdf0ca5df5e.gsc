@@ -157,7 +157,7 @@ class class_f4bf8a8 {
     // Size: 0xa0
     function function_20b2a1e4(mask) {
         self endon(#"deactivate");
-        while (1) {
+        while (true) {
             if (level.doa.var_ecff3871) {
                 self triggerenable((mask & 2) != 0);
             } else {
@@ -583,7 +583,7 @@ class class_f4bf8a8 {
         self endon("3a1d3e220bd0ab10");
         level endon(#"hash_69b4bed202ddfa69");
         wait(1);
-        while (1) {
+        while (true) {
             result = undefined;
             result = self waittilltimeout(10, #"trigger");
             if (result._notify == #"timeout") {
@@ -864,7 +864,7 @@ class class_f4bf8a8 {
             var_fe263624 = int(toks[1]);
         }
         self.angles = angleclamp180(self.angles);
-        while (1) {
+        while (true) {
             result = undefined;
             result = self waittill(#"trigger");
             if (isplayer(result.activator) && !isdefined(result.activator.tweakcam)) {
@@ -1038,7 +1038,7 @@ function main() {
     }
     level.doa.var_23fd3659 = 0;
     level clientfield::set("setArena", level.doa.var_23fd3659);
-    while (1) {
+    while (true) {
         level thread function_6d6bfe1f(level.doa.var_23fd3659);
         result = undefined;
         result = level waittill(#"waiting_on_player_exit_teleporteronly", #"waiting_on_player_exit_decidechoice");
@@ -1242,7 +1242,7 @@ function function_37dc18ca() {
     self endon("5037d1e6b45447b3");
     level endon(#"game_over");
     util::wait_network_frame();
-    while (1) {
+    while (true) {
         if (isdefined(level.doa.var_39e3fa99)) {
             players = namespace_7f5aeb59::function_23e1f90f();
             foreach (player in players) {
@@ -1752,7 +1752,7 @@ function function_e1916608() {
     minwait = 10;
     maxwait = 20;
     var_627acedf = undefined;
-    while (1) {
+    while (true) {
         wait(randomfloatrange(minwait, maxwait));
         if (flag::get("doa_round_over") || !isdefined(level.doa.var_39e3fa99)) {
             continue;
@@ -1802,7 +1802,7 @@ function function_16902251() {
     var_46b5961c = 0;
     var_4b444556 = [[ level.doa.var_39e3fa99 ]]->getcenter();
     var_9bb0a315 = arraycombine([[ level.doa.var_39e3fa99 ]]->function_8054e011(), [[ level.doa.var_39e3fa99 ]]->function_c0402c8a());
-    while (1) {
+    while (true) {
         wait(0.25);
         while ([[ level.doa.var_39e3fa99 ]]->ispaused()) {
             wait(1);
@@ -1867,7 +1867,7 @@ function function_17e79564() {
     var_e36d70e2 = undefined;
     var_d7f489eb = array::randomize(arraycombine([[ level.doa.var_39e3fa99 ]]->function_8054e011(), [[ level.doa.var_39e3fa99 ]]->function_c0402c8a()));
     var_9a572c4e = 0;
-    while (1) {
+    while (true) {
         if (isdefined(var_e36d70e2)) {
             if (gettime() > var_e36d70e2) {
                 while ([[ level.doa.var_39e3fa99 ]]->ispaused()) {
@@ -1909,7 +1909,7 @@ function function_17e79564() {
 // Checksum 0xfd2d6bea, Offset: 0x92f8
 // Size: 0x10
 function function_80bb0f94(*name) {
-    return 1;
+    return true;
 }
 
 // Namespace namespace_8c04284b/namespace_8c04284b
@@ -1924,7 +1924,7 @@ function function_1b42a0bb() {
     if (function_80bb0f94([[ level.doa.var_39e3fa99 ]]->getname()) == 0) {
         return;
     }
-    while (1) {
+    while (true) {
         while (!is_true(level.doa.var_a6cd0cb7) && isdefined(level.doa.var_39e3fa99) && [[ level.doa.var_39e3fa99 ]]->ispaused() || isdefined(level.doa.var_6f3d327)) {
             wait(1);
         }
@@ -2249,7 +2249,7 @@ function private function_2419e70a(var_50c8366e, round_number) {
 // Size: 0x30
 function function_3af22009() {
     if (!isdefined(self.endtime)) {
-        return 0;
+        return false;
     }
     return gettime() > self.endtime || self.var_3ed31a82 <= 0;
 }

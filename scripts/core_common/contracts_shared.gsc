@@ -64,28 +64,28 @@ function player_contract_event(event_name, param1 = undefined, param2 = undefine
                 self [[ event_func ]]();
             }
         }
-        return;
+        break;
     case 1:
         foreach (event_func in level.player_contract_events[event_name].events) {
             if (isdefined(event_func)) {
                 self [[ event_func ]](param1);
             }
         }
-        return;
+        break;
     case 2:
         foreach (event_func in level.player_contract_events[event_name].events) {
             if (isdefined(event_func)) {
                 self [[ event_func ]](param1, param2);
             }
         }
-        return;
+        break;
     case 3:
         foreach (event_func in level.player_contract_events[event_name].events) {
             if (isdefined(event_func)) {
                 self [[ event_func ]](param1, param2, param3);
             }
         }
-        return;
+        break;
     }
 }
 
@@ -180,9 +180,9 @@ function setup_player_contracts(max_contract_slots, var_1b3f5772) {
 // Size: 0x34
 function is_contract_active(var_38280f2f) {
     if (!isdefined(self.pers[#"contracts"][var_38280f2f])) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace contracts/contracts_shared
@@ -261,7 +261,7 @@ function watch_contract_debug(var_300afbc8) {
     /#
         level notify(#"watch_contract_debug_singleton");
         level endon(#"watch_contract_debug_singleton", #"game_ended");
-        while (1) {
+        while (true) {
             profilestart();
             function_33bab9aa();
             if (isdefined(var_300afbc8)) {
@@ -495,7 +495,7 @@ function function_507247e8(var_9224acc) {
 function private function_bcd04944() {
     /#
         wait(3);
-        while (1) {
+        while (true) {
             players = getplayers();
             if (!isarray(players) || players.size == 0) {
                 wait(1);

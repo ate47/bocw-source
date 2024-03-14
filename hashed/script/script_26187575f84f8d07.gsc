@@ -48,7 +48,7 @@ function function_8e4e3bb2() {
     foreach (var_9bbce2cd in level.var_ac7be286) {
         var_8e392e0f = var_9bbce2cd.var_8e392e0f;
         if (distance2dsquared(self.origin, var_9bbce2cd.origin) < var_8e392e0f * var_8e392e0f) {
-            return 1;
+            return true;
         }
         var_537b12bd = var_9bbce2cd.var_261dd536 * 800 + level.var_cd139dc0;
         if (distance2dsquared(self.origin, var_9bbce2cd.origin) < var_537b12bd * var_537b12bd) {
@@ -57,7 +57,7 @@ function function_8e4e3bb2() {
                 if (var_9bbce2cd.var_e17ae8be[i].size > 0) {
                     var_b04baebd++;
                     if (self function_c7c0cee2(var_9bbce2cd, i)) {
-                        return 1;
+                        return true;
                     }
                 }
                 if (var_b04baebd >= 2) {
@@ -66,7 +66,7 @@ function function_8e4e3bb2() {
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
@@ -83,10 +83,10 @@ function private function_c7c0cee2(var_9bbce2cd, var_d9612d9) {
             continue;
         }
         if (distance2dsquared(self.origin, var_ac287808.origin) < var_ac287808.model.var_301e0bf7 * var_ac287808.model.var_301e0bf7) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
@@ -287,20 +287,20 @@ function private function_2020d6b0() {
         /#
             assert(0);
         #/
-        return 0;
+        return false;
     }
     checkdistance = level.var_67432513;
     checks = [3:(checkdistance * -1, 0, self.origin[2]), 2:(checkdistance, 0, self.origin[2]), 1:(0, checkdistance * -1, self.origin[2]), 0:(0, checkdistance, self.origin[2])];
     foreach (check in checks) {
         var_3a1904d3 = function_9cc082d2(self.origin + check, 10000);
         if (!isdefined(var_3a1904d3)) {
-            return 1;
+            return true;
         }
         if (oob::chr_party(var_3a1904d3[#"point"])) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
@@ -557,7 +557,7 @@ function private function_64d94faa() {
         level endon(#"game_ended");
         level.var_8c48fd1 = 0;
         level.var_a0cb7a38 = [];
-        while (1) {
+        while (true) {
             waitframe(1);
             level.var_2c9f7c6b = isdefined(getgametypesetting(#"hash_1cf5e61c49992dc3")) ? getgametypesetting(#"hash_1cf5e61c49992dc3") : 0;
             level.var_cd139dc0 = (isdefined(getgametypesetting(#"hash_7f837b709840950")) ? getgametypesetting(#"hash_7f837b709840950") : 0) * 100;

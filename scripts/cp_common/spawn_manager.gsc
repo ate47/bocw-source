@@ -96,7 +96,7 @@ function function_7051aeac(var_21472c04) {
 function function_92d46b09(var_42ff4dbe) {
     self endon(#"death");
     start = gettime();
-    while (1) {
+    while (true) {
         ai = self spawner::spawn();
         if (isdefined(ai) || gettime() - start > 1000 * var_42ff4dbe) {
             return ai;
@@ -713,19 +713,19 @@ function function_26374d3f() {
 // Size: 0x13c
 function function_42a4d0d8(spawner) {
     if (!isdefined(spawner.var_3717c478)) {
-        return 1;
+        return true;
     }
     radius = isdefined(spawner.var_3717c478) ? spawner.var_3717c478 : 0;
     players = getplayers();
     if (!isdefined(players) || players.size == 0) {
-        return 1;
+        return true;
     }
     foreach (player in players) {
         if (distancesquared(spawner.origin, player.origin) <= function_a3f6cdac(spawner.var_3717c478)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace spawn_manager/spawn_manager
@@ -1129,12 +1129,12 @@ function function_371d10c1(var_368d405d, count) {
     /#
         assert(spawn_manager.size == 1, "<unknown string>");
     #/
-    while (1) {
+    while (true) {
         if (isdefined(spawn_manager[0].spawncount) && spawn_manager[0].spawncount < count && !is_killed(var_368d405d)) {
             wait(0.5);
             continue;
         }
-        return;
+        break;
     }
 }
 

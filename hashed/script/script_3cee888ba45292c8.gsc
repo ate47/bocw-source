@@ -263,7 +263,7 @@ function function_440337c2(entity) {
             namespace_19c99142::function_ff6a04bc(entity);
         }
         awareness::function_5c40e824(entity);
-        return;
+        break;
     case #"hash_6192d8af630c6c07":
         /#
             /#
@@ -272,18 +272,18 @@ function function_440337c2(entity) {
         #/
         namespace_19c99142::function_ff6a04bc(entity);
         entity.favoriteenemy = var_cc7597dc;
-        return;
+        break;
     case #"hash_685254f9ed0ce346":
         awareness::function_5c40e824(entity);
-        return;
+        break;
     case #"hash_4ec3ec4f06b9498f":
         awareness::function_5c40e824(entity);
-        return;
+        break;
     case #"hash_110ee879f18b605f":
         awareness::function_5c40e824(entity);
-        return;
+        break;
     case #"circle":
-        return;
+        break;
     }
 }
 
@@ -420,9 +420,9 @@ function function_917994fb(entity, n_to_spawn) {
         #/
     #/
     if (isdefined(entity.var_9dabebcd) && entity.var_9dabebcd + n_to_spawn > 20) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_119be0ad/namespace_119be0ad
@@ -462,12 +462,12 @@ function function_2802bd9e(entity, var_e0599216) {
 // Size: 0x86
 function function_abeaa83(entity, *target) {
     if (!isdefined(target.var_74586bed)) {
-        return 1;
+        return true;
     }
     var_a889803d = distance2dsquared(target.origin, target.var_74586bed);
     if (var_a889803d > function_a3f6cdac(3000)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 

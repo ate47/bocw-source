@@ -182,7 +182,7 @@ function function_67127ba2(entity, yaw, length, width, height, timesec = 1, colo
 // Size: 0xe0
 function function_99069e31() {
     /#
-        while (1) {
+        while (true) {
             waitframe(1);
             if (level.doa.var_62f60f27.size && isdefined(level.doa.var_39e3fa99)) {
                 if (level.doa.world_state == 4) {

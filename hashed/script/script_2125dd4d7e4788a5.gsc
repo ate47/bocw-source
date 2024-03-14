@@ -186,7 +186,7 @@ function vo_end() {
 function function_6cbbd741(instance) {
     instance endon(#"objective_ended");
     self endon(#"ready", #"death");
-    while (1) {
+    while (true) {
         foreach (player in getplayers()) {
             if (isalive(player)) {
                 if (distance2dsquared(self.origin, player.origin) <= function_a3f6cdac(1000) && !isdefined(player.var_b1f1cfee)) {
@@ -278,7 +278,7 @@ function function_d52adbbc(instance) {
     instance endon(#"objective_ended", #"hash_8202877a3aadac8");
     self endon(#"disconnect", #"player_downed", #"hash_6d2d12b8afe43c8e", #"sudden_death");
     var_4beb87c8 = self gamepadusedlast();
-    while (1) {
+    while (true) {
         var_c648969d = level.zm_hint_text zm_hint_text::is_open(self);
         if (self isinvehicle()) {
             vehicle = self getvehicleoccupied();
@@ -408,23 +408,23 @@ function function_b61cfe16(player) {
         case #"spawner_bo5_abom":
         case #"spawner_bo5_mechz_sr":
             self function_98139c38(player, 0.25);
-            return;
+            break;
         case #"spawner_bo5_avogadro_sr":
         case #"spawner_bo5_soa":
             self function_98139c38(player, 0.6);
-            return;
+            break;
         case #"spawner_bo5_mimic":
             self function_98139c38(player, 0.6);
-            return;
+            break;
         case #"hash_4f87aa2a203d37d0":
             self function_98139c38(player, 0.5);
-            return;
+            break;
         case #"spawner_zm_steiner":
             self function_98139c38(player, 0.4);
-            return;
+            break;
         default:
             self function_98139c38(player, 0.5);
-            return;
+            break;
         }
     }
 }
@@ -540,7 +540,7 @@ function function_eae9567f() {
 // Size: 0x1f4
 function function_1ed83293() {
     self endon(#"cleared");
-    while (1) {
+    while (true) {
         a_players = getplayers();
         foreach (player in a_players) {
             if (zm_utility::is_player_valid(player)) {
@@ -567,7 +567,7 @@ function function_1ed83293() {
 function function_2ea1510(var_7be19157) {
     self endon(#"objective_ended");
     b_open_door = 0;
-    while (1) {
+    while (true) {
         foreach (player in getplayers()) {
             if (isalive(player) && is_true(player.var_28107825)) {
                 if (distance2dsquared(var_7be19157.origin, player.origin) <= function_a3f6cdac(300)) {
@@ -790,7 +790,7 @@ function function_b11e170c(instance) {
 // Size: 0x2c8
 function function_63544551(instance) {
     instance endon(#"objective_ended");
-    while (1) {
+    while (true) {
         s_waitresult = undefined;
         s_waitresult = self waittill(#"installed");
         level scoreevents::doscoreeventcallback("scoreEventSR", {#attacker:s_waitresult.player, #scoreevent:"retrieve_battery_installed_zm"});
@@ -824,10 +824,10 @@ function function_63544551(instance) {
 function function_c91906c5() {
     foreach (player in getplayers()) {
         if (is_true(player.var_28107825)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace objective_retrieval/objective_retrieval
@@ -837,7 +837,7 @@ function function_c91906c5() {
 function function_223e16e6(instance) {
     instance endon(#"objective_ended");
     objective_setprogress(instance.var_5ea363c.n_objective_id, 1);
-    while (1) {
+    while (true) {
         foreach (player in getplayers()) {
             if (is_true(player.var_28107825) && !instance.var_5ea363c.var_5542906) {
                 self gameobjects::function_664b40(player);
@@ -862,7 +862,7 @@ function function_f4562137(instance) {
     self.var_7be19157.n_objective_id = gameobjects::get_next_obj_id();
     self.var_7be19157.var_db7449cf = #"hash_336d05892f9a780e";
     objective_add(self.var_7be19157.n_objective_id, "active", self.var_7be19157, self.var_7be19157.var_db7449cf);
-    while (1) {
+    while (true) {
         foreach (player in getplayers()) {
             if (is_true(player.var_28107825) && !self.var_5542906) {
                 objective_setinvisibletoplayer(self.var_7be19157.n_objective_id, player);
@@ -890,7 +890,7 @@ function monitor_timer(instance) {
     }
     self thread function_54ad8bd3(instance);
     var_42f3b393 = 0;
-    while (1) {
+    while (true) {
         var_dc9a9acc = 0;
         foreach (var_57e77903 in instance.var_53ba65b) {
             if (is_true(var_57e77903.b_pickedup) || is_true(var_57e77903.var_2e5efdc7)) {
@@ -937,7 +937,7 @@ function function_69438b00(instance) {
     }
     waitframe(1);
     self thread zm_equipment::show_hint_text(#"hash_6a89bb99e54d4e8f", 60);
-    while (1) {
+    while (true) {
         self dodamage(5, self.origin);
         self function_bc82f900("damage_light");
         wait(1);
@@ -1017,7 +1017,7 @@ function function_457d7073() {
     if (isdefined(self.var_3aee78d5)) {
         self.var_3aee78d5 endon(#"death");
     }
-    while (1) {
+    while (true) {
         if (is_true(self.b_pickedup) && isdefined(self.var_3aee78d5)) {
             self.var_3aee78d5 setinvisibletoall();
         }
@@ -1055,7 +1055,7 @@ function function_5238fe78(instance) {
         return;
     }
     a_s_pts = namespace_85745671::function_e4791424(s_pt.origin, 32, 80, s_pt.radius);
-    while (1) {
+    while (true) {
         level flag::wait_till("spawn_zombies");
         while (instance.n_zombies >= instance.n_max_zombies) {
             wait(0.1);
@@ -1149,7 +1149,7 @@ function function_9d2e5887(instance) {
     n_spawns = function_e97e2683(1);
     n_spawned = 0;
     a_s_pts = instance.var_b69e83ca;
-    while (1) {
+    while (true) {
         level flag::wait_till("spawn_zombies");
         while (instance.n_zombies >= instance.n_max_zombies) {
             wait(0.1);
@@ -1234,7 +1234,7 @@ function function_6d863da0(instance) {
         }
         wait(0.5);
     }
-    while (1) {
+    while (true) {
         for (i = 0; i < n_spawns; i++) {
             level flag::wait_till("spawn_zombies");
             if (isdefined(var_559503f1[i])) {
@@ -1284,7 +1284,7 @@ function function_6d863da0(instance) {
 // Size: 0x168
 function function_d153c0f0() {
     self endon(#"objective_ended");
-    while (1) {
+    while (true) {
         level flag::wait_till("spawn_zombies");
         if (self.n_zombies < self.n_max_zombies) {
             if (self.targetname === "objective_black_sea_retrieval") {
@@ -1384,7 +1384,7 @@ function function_95aeefa7(instance) {
 function function_20ab9060(instance) {
     self endon(#"installed", #"death");
     instance endon(#"objective_ended");
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = self.var_3aee78d5 waittill(#"trigger");
         self notify(#"hash_4588a3de47c44f6f");
@@ -1466,7 +1466,7 @@ function function_20ab9060(instance) {
 function function_40285fbe(instance) {
     instance endon(#"objective_ended");
     self endon(#"disconnect", #"player_downed", #"hash_6d2d12b8afe43c8e");
-    while (1) {
+    while (true) {
         if (distance2dsquared(instance.var_fe2612fe[#"retrieval"][0].var_5ea363c.origin, self.origin) < function_a3f6cdac(100) && is_true(self.var_28107825)) {
             if (isdefined(self.var_67aa3392.var_3aee78d5)) {
                 self.var_67aa3392.var_3aee78d5 setinvisibletoplayer(self);
@@ -1485,7 +1485,7 @@ function function_40285fbe(instance) {
 function function_50a7d571(*var_67aa3392, instance) {
     self endon(#"disconnect", #"player_downed", #"hash_6d2d12b8afe43c8e");
     instance endon(#"objective_ended");
-    while (1) {
+    while (true) {
         var_53044e8e = self gamepadusedlast();
         if (!var_53044e8e && self buttonbitstate("BUTTON_BIT_ANY_DOWN") || var_53044e8e && self actionslottwobuttonpressed()) {
             self thread function_f1ae312a();
@@ -1653,7 +1653,7 @@ function function_bf606a73() {
     self callback::function_d8abfc3d(#"hash_4afe635f36531659", &function_fd68cae4);
     self flag::set(#"hash_52d6a75cdbf101f3");
     self.var_40e7d5fb = &function_ec4c64fd;
-    while (1) {
+    while (true) {
         a_players = array::get_all_closest(self.origin, function_a1ef346b(), undefined, 4, 1500);
         self.var_b7e90547 = undefined;
         if (isdefined(a_players)) {
@@ -1709,7 +1709,7 @@ function function_fd68cae4() {
 function function_2d670ab2(instance) {
     instance endon(#"objective_ended");
     self endon(#"installed", #"hash_792ba50e25030040");
-    while (1) {
+    while (true) {
         if (self.origin[2] < instance.origin[2] - 10000 && isdefined(self.e_owner) && !self.e_owner clientfield::get("phase_rift_player_fx")) {
             if (is_true(self.b_pickedup)) {
                 if (isdefined(self.e_owner)) {
@@ -1737,7 +1737,7 @@ function function_9181f7b3(instance) {
     self endon("2f7a42a7d1c41667");
     self endon(#"disconnect", #"hash_6d2d12b8afe43c8e");
     instance endon(#"objective_ended");
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = self waittill(#"enter_vehicle");
         if (isdefined(s_result.vehicle)) {
@@ -1767,7 +1767,7 @@ function function_eb9a0f67() {
         }
     }
     wait(2);
-    while (1) {
+    while (true) {
         players = self getvehoccupants();
         if (isdefined(players) && players.size > 0) {
             foreach (player in players) {
@@ -1776,7 +1776,7 @@ function function_eb9a0f67() {
                 }
             }
         } else {
-            return;
+            break;
         }
         wait(1);
     }
@@ -1862,7 +1862,7 @@ function function_6fd7f323() {
     wait(0.1);
     var_24d7fac5 = self depthinwater();
     if (var_24d7fac5 || var_ce819c69) {
-        while (1) {
+        while (true) {
             if (var_24d7fac5) {
                 self moveto((v_ground[0], v_ground[1], self.origin[2] + var_24d7fac5 - 10), 0.05);
             } else {
@@ -2111,7 +2111,7 @@ function function_eff08a36(instance) {
             self.vol = vol;
         }
     }
-    while (1) {
+    while (true) {
         b_clear = 1;
         a_players = getplayers();
         foreach (player in a_players) {

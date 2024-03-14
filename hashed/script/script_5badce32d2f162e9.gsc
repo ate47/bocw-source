@@ -414,9 +414,9 @@ function function_7dcf5e() {
 // Size: 0x58
 function shouldstealth(behaviortreeentity) {
     if (behaviortreeentity ai::has_behavior_attribute("stealth") && behaviortreeentity ai::get_behavior_attribute("stealth")) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_dba1ec08/namespace_186a1392
@@ -425,12 +425,12 @@ function shouldstealth(behaviortreeentity) {
 // Size: 0x3e
 function locomotionshouldstealth(behaviortreeentity) {
     if (namespace_77fd5d41::function_5bfdfc9d()) {
-        return 0;
+        return false;
     }
     if (behaviortreeentity haspath()) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_dba1ec08/namespace_186a1392
@@ -439,9 +439,9 @@ function locomotionshouldstealth(behaviortreeentity) {
 // Size: 0x40
 function private function_59b7ac43(behaviortreeentity) {
     if (behaviortreeentity getblackboardattribute("_human_demeanor") === "CQB") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_dba1ec08/namespace_186a1392
@@ -450,9 +450,9 @@ function private function_59b7ac43(behaviortreeentity) {
 // Size: 0x40
 function private function_50255836(behaviortreeentity) {
     if (behaviortreeentity getblackboardattribute("_human_demeanor") === "COMBAT") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_dba1ec08/namespace_186a1392
@@ -461,13 +461,13 @@ function private function_50255836(behaviortreeentity) {
 // Size: 0x5a
 function shouldstealthresume(behaviortreeentity) {
     if (!shouldstealth(behaviortreeentity)) {
-        return 0;
+        return false;
     }
     if (is_true(behaviortreeentity.stealth_resume)) {
         behaviortreeentity.stealth_resume = undefined;
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_dba1ec08/namespace_186a1392

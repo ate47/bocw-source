@@ -68,7 +68,7 @@ function function_f625256f(killstreak_id, context) {
     }
     player sethintstring("MP/DEPLOY_MARKER");
     self thread function_ef6c4a46(killstreak_id, trigger_event, var_9eb4725b, context);
-    while (1) {
+    while (true) {
         player allowmelee(0);
         notifystring = undefined;
         notifystring = self waittill(#"weapon_change", trigger_event, #"disconnect", #"spawned_player");
@@ -76,12 +76,12 @@ function function_f625256f(killstreak_id, context) {
         if (trigger_event != "none") {
             if (notifystring._notify != trigger_event) {
                 cleanup(context, player);
-                return 0;
+                return false;
             }
         }
         if (context.var_af2d7122 === 1 || context.var_b59f725a !== 1 && isdefined(context.var_14174f4e) && ![[ context.var_14174f4e ]](context.killstreaktype)) {
             cleanup(context, player);
-            return 0;
+            return false;
         }
         if (isdefined(player.markerposition)) {
             break;
@@ -90,9 +90,9 @@ function function_f625256f(killstreak_id, context) {
     self notify(#"trigger_weapon_shutdown");
     if (var_9eb4725b == level.weaponnone) {
         cleanup(context, player);
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace ir_strobe/namespace_f0840611
@@ -146,9 +146,9 @@ function markerupdatethread(context) {
         [[ level.var_14151f16 ]](markermodel, 0);
     }
     player thread markercleanupthread(context);
-    while (1) {
+    while (true) {
         if (player flag::get(#"marking_done")) {
-            return;
+            break;
         }
         ksbundle = killstreaks::get_script_bundle(context);
         minrange = 20;
@@ -237,7 +237,7 @@ function function_ef6c4a46(killstreak_id, trigger_event, supplydropweapon, conte
         self thread markerupdatethread(context);
     }
     self thread cleanupwatcherondeath(killstreak_id, supplydropweapon);
-    while (1) {
+    while (true) {
         waitframe(1);
         if (trigger_event == "none") {
             weapon = supplydropweapon;

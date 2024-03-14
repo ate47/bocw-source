@@ -211,7 +211,7 @@ function player_track_ammo_count() {
     self endon(#"disconnect", #"stop_ammo_tracking");
     ammolowcount = 0;
     ammooutcount = 0;
-    while (1) {
+    while (true) {
         wait(0.5);
         weapon = self getcurrentweapon();
         if (weapon == level.weaponnone || weapon.skiplowammovox) {
@@ -359,7 +359,7 @@ function function_7681dccc(einflictor, eattacker) {
 // Checksum 0xb4ee2a4, Offset: 0x15d0
 // Size: 0x5e
 function function_68f58ba3(*einflictor, *eattacker, *idamage, *idflags, *smeansofdeath, *weapon, *var_fd90b0bb, *vpoint, *vdir, *shitloc, *psoffsettime) {
-    return 0;
+    return false;
 }
 
 // Namespace zm_player/zm_player
@@ -600,7 +600,7 @@ function function_8ef51109(var_fb6fa3e1, var_bbbf9a69) {
 // Size: 0x29c
 function function_3799b373(var_fb6fa3e1, var_bbbf9a69 = 0) {
     if (!level flag::get("start_zombie_round_logic")) {
-        return 1;
+        return true;
     }
     a_e_players = getplayers();
     var_7ff2e79a = 0;
@@ -625,12 +625,12 @@ function function_3799b373(var_fb6fa3e1, var_bbbf9a69 = 0) {
             var_2af2f14d = 1;
             continue;
         }
-        return 1;
+        return true;
     }
     if (var_bbbf9a69 && var_2af2f14d && var_7ff2e79a) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_player/zm_player
@@ -714,14 +714,14 @@ function spawn_life_brush(origin, radius, height) {
 function in_life_brush() {
     life_brushes = getentarray("life_brush", "script_noteworthy");
     if (!isdefined(life_brushes) || !isdefined(self)) {
-        return 0;
+        return false;
     }
     for (i = 0; i < life_brushes.size; i++) {
         if (self istouching(life_brushes[i])) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_player/zm_player
@@ -742,15 +742,15 @@ function in_kill_brush() {
     kill_brushes = getentarray("kill_brush", "script_noteworthy");
     self.kill_brush = undefined;
     if (!isdefined(kill_brushes)) {
-        return 0;
+        return false;
     }
     for (i = 0; i < kill_brushes.size; i++) {
         if (self istouching(kill_brushes[i])) {
             self.kill_brush = kill_brushes[i];
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_player/zm_player
@@ -766,7 +766,7 @@ function in_enabled_playable_area(var_22a4c702 = 500) {
             var_12ed21a1 = function_72d3bca6(level.playable_area, self.origin, undefined, undefined, level.var_603981f1);
             foreach (area in var_12ed21a1) {
                 if (zm_zonemgr::zone_is_enabled(area.targetname) && self istouching(area)) {
-                    return 1;
+                    return true;
                 }
             }
         }
@@ -777,14 +777,14 @@ function in_enabled_playable_area(var_22a4c702 = 500) {
         }
         node = function_52c1730(self.origin, level.var_a2a9b2de, var_22a4c702);
         if (isdefined(node) && zm_zonemgr::zone_is_enabled(node.targetname)) {
-            return 1;
+            return true;
         }
         queryresult = function_72ce47bb(self.origin, 0, self getpathfindingradius(), self function_6a9ae71() * 0.5, 2, 1, undefined, undefined, level.var_e046d333);
         if (queryresult.data.size > 0) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_player/zm_player
@@ -809,12 +809,12 @@ function get_player_out_of_playable_area_monitor_wait_time() {
 // Size: 0x1a8
 function function_b01adf41() {
     if (isplayer(self) && self namespace_e86ffa8::function_8923370c(2)) {
-        return 1;
+        return true;
     }
     if (isplayer(self)) {
         var_6e618382 = item_inventory::function_2e711614(13);
         if (var_6e618382.var_a6762160.name === #"stimshot_t9_item_sr") {
-            return 1;
+            return true;
         }
     }
     foreach (player in function_a1ef346b()) {
@@ -826,11 +826,11 @@ function function_b01adf41() {
             case #"field_upgrade_heal_aoe_3_item_sr":
             case #"field_upgrade_heal_aoe_1_item_sr":
             case #"field_upgrade_heal_aoe_2_item_sr":
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_player/zm_player
@@ -845,7 +845,7 @@ function player_out_of_playable_area_monitor() {
         waitframe(1);
     }
     wait(0.15 * self.characterindex);
-    while (1) {
+    while (true) {
         if (self.sessionstate == "spectator") {
             wait(get_player_out_of_playable_area_monitor_wait_time());
             continue;
@@ -975,7 +975,7 @@ function zm_breadcrumbs() {
     level endon(#"end_game");
     waittime = getdvarfloat(#"hash_46009edd5032b8cc", 2);
     level flag::wait_till("start_zombie_round_logic");
-    while (1) {
+    while (true) {
         if (isalive(self)) {
             recordbreadcrumbdataforplayer(self);
         }
@@ -1047,7 +1047,7 @@ function player_grenade_watcher() {
     self endon(#"stop_player_grenade_watcher", #"disconnect");
     self.grenade_multiattack_count = 0;
     self.grenade_multikill_count = 0;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"grenade_fire");
         grenade = waitresult.projectile;
@@ -1069,7 +1069,7 @@ function player_grenade_watcher() {
 function player_prevent_damage(einflictor, eattacker, idamage, *idflags, smeansofdeath, *weapon, *vpoint, *vdir, *shitloc, *psoffsettime) {
     if (isai(vdir) && self.ignoreme && psoffsettime === "MOD_MELEE") {
         if (!isdefined(self.var_7342424d) || self.var_7342424d !== vdir) {
-            return 1;
+            return true;
         }
         var_3d9a5390 = 1;
     }
@@ -1095,24 +1095,24 @@ function player_prevent_damage(einflictor, eattacker, idamage, *idflags, smeanso
     if (isdefined(vdir) && isdefined(vdir.team) && vdir != self) {
         if (!is_true(vdir.damage_own_team)) {
             if (vdir.team === self.team) {
-                return 1;
+                return true;
             }
         }
     }
     if (!isdefined(vpoint) || !isdefined(vdir)) {
-        return 0;
+        return false;
     }
     if (vpoint == self || vdir == self) {
-        return 0;
+        return false;
     }
     if (isdefined(vpoint) && isdefined(vpoint.team)) {
         if (!is_true(vpoint.damage_own_team)) {
             if (vpoint.team == self.team) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_player/zm_player
@@ -1122,7 +1122,7 @@ function player_prevent_damage(einflictor, eattacker, idamage, *idflags, smeanso
 function player_revive_monitor() {
     self notify(#"stop_player_revive_monitor");
     self endon(#"stop_player_revive_monitor", #"disconnect");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"player_revived");
         reviver = waitresult.reviver;
@@ -1284,14 +1284,14 @@ function spectators_respawn() {
     if (!isdefined(zombie_utility::function_d2dfacfd(#"spectators_respawn")) || !zombie_utility::function_d2dfacfd(#"spectators_respawn")) {
         return;
     }
-    while (1) {
+    while (true) {
         players = getplayers();
         for (i = 0; i < players.size; i++) {
             e_player = players[i];
             e_player spectator_respawn_player();
         }
         if (is_true(level.var_eaa19257)) {
-            return;
+            break;
         }
         wait(1);
     }
@@ -1616,7 +1616,7 @@ function get_safe_breadcrumb_pos(player) {
 function play_door_dialog() {
     self endon(#"warning_dialog");
     timer = 0;
-    while (1) {
+    while (true) {
         waitframe(1);
         players = getplayers();
         for (i = 0; i < players.size; i++) {
@@ -1659,7 +1659,7 @@ function remove_ignore_attacker() {
 // Size: 0x86
 function player_damage_override_cheat(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, psoffsettime) {
     player_damage_override(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, psoffsettime);
-    return 0;
+    return false;
 }
 
 // Namespace zm_player/zm_player
@@ -2079,7 +2079,7 @@ function player_intermission() {
     if (isdefined(level.player_intemission_spawn_callback)) {
         self thread [[ level.player_intemission_spawn_callback ]](points[0].origin, points[0].angles);
     }
-    while (1) {
+    while (true) {
         for (i = 0; i < points.size; i++) {
             point = points[i];
             nextpoint = points[i + 1];

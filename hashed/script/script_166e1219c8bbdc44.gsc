@@ -671,10 +671,10 @@ function function_f8ed548c(b_freeze) {
             self.var_82fb67e7 = self.var_82fb67e7 - 0.05;
         }
         if (b_freeze && self.var_82fb67e7 >= 1) {
-            return;
+            break;
         } else if (self.var_82fb67e7 <= 0) {
             self stoprenderoverridebundle("rob_test_character_ice");
-            return;
+            break;
         }
         wait(0.1);
     }

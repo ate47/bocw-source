@@ -52,7 +52,7 @@ function private function_f4804ac(localclientnum) {
     var_75576067 = (0, 0, 0);
     var_8ab7eec6 = height / 1024;
     last_time = float(self getclienttime()) / 1000;
-    while (1) {
+    while (true) {
         var_5068885e = function_41fea20f(localclientnum);
         var_498c84ce = var_5068885e[0] / 1920 * 24;
         var_860de4e5 = var_5068885e[1] / 1080 * 24;

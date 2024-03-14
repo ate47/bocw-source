@@ -38,7 +38,7 @@ function shutdown() {
 function private handle_path_failed() {
     self endon(#"death", #"hash_3525e39d3694d0a9");
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         params = undefined;
         params = self waittill(#"bot_path_failed");
         switch (params.reason) {
@@ -217,14 +217,14 @@ function private function_e8a55078(point, info) {
 // Size: 0xe2
 function private function_794e2efa(trigger, point) {
     if (!isdefined(point)) {
-        return 0;
+        return false;
     }
     midpoint = point + vectorscale((0, 0, 1), 36);
     if (!isdefined(point) || !trigger istouching(midpoint, vectorscale((0, 0, 1), 36))) {
-        return 0;
+        return false;
     }
     if (trigger.classname != #"trigger_radius_use") {
-        return 1;
+        return true;
     }
     radius = trigger getmaxs()[0] + -32;
     return distance2dsquared(trigger.origin, point) < radius * radius;
@@ -245,9 +245,9 @@ function private function_de0e95b7(tpoint) {
                 recordline(tpoint.origin + vectorscale((0, 0, 1), 70), var_63e5d5aa, (1, 0, 0), "<unknown string>", self);
             }
         #/
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace bot_position/bot_position
@@ -257,13 +257,13 @@ function private function_de0e95b7(tpoint) {
 function private function_96f55844() {
     navmeshpoint = function_13796beb(self.origin);
     if (!isdefined(navmeshpoint)) {
-        return 0;
+        return false;
     }
     var_5245725e = (navmeshpoint[0], navmeshpoint[1], self.origin[2]);
     self setorigin(var_5245725e);
     velocity = self getvelocity();
     self setvelocity((0, 0, velocity[2]));
-    return 1;
+    return true;
 }
 
 // Namespace bot_position/bot_position
@@ -345,7 +345,7 @@ function private set_position(point, var_e125ba43) {
                 recordline(self.origin, point, (1, 0, 0), "<unknown string>", self);
             }
         #/
-        return 0;
+        return false;
     }
     self function_a57c34b7(navmeshpoint);
     self.bot.var_aa94cd1b = undefined;
@@ -355,7 +355,7 @@ function private set_position(point, var_e125ba43) {
             recordline(self.origin, navmeshpoint, (0, 1, 0), "<unknown string>", self);
         }
     #/
-    return 1;
+    return true;
 }
 
 // Namespace bot_position/bot_position
@@ -475,7 +475,7 @@ function private function_7e6af638() {
     /#
         level endon(#"game_ended");
         failures = level.var_51a0bf0;
-        while (1) {
+        while (true) {
             if (!getdvarint(#"hash_36fb3796a7eca97a", 0)) {
                 waitframe(1);
                 continue;

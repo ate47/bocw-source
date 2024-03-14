@@ -126,7 +126,7 @@ function proximitydetonate(attacker, weapon, *target) {
 function watchproximitygrenadehitplayer(owner) {
     self endon(#"death");
     self setteam(owner.team);
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"grenade_bounce");
         if (isdefined(waitresult.ent) && isplayer(waitresult.ent) && waitresult.surface != "riotshield") {

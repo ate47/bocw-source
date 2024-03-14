@@ -38,7 +38,7 @@ function main() {
 // Size: 0x96
 function function_130f4a75() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self flag::wait_till("stealth_enabled");
         level flag::wait_till_clear("stealth_spotted");
         if (is_true(self.var_22f5613a)) {

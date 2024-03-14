@@ -79,7 +79,7 @@ function private function_c96b0450() {
     level endon(#"game_ended");
     self endon(#"death");
     self.var_ce60d915 = 0;
-    while (1) {
+    while (true) {
         waitframe(1);
         if (self getblackboardattribute(#"hash_78e762abc4fbf1de") == "panic") {
             if (isdefined(level.players) && level.players.size > 0 && function_9308c21b()) {
@@ -113,13 +113,13 @@ function private function_74f41e14(entity) {
     itsbeenawhile = gettime() > entity.nextfindbestcovertime;
     var_1ebff8de = itsbeenawhile;
     if (forcedgoal || !var_1ebff8de) {
-        return 0;
+        return false;
     }
     if (isdefined(level.var_72b8905c)) {
         var_be34b5c6 = entity [[ level.var_72b8905c ]]();
         entity function_387a6908(var_be34b5c6);
         entity.nextfindbestcovertime = 2147483647;
-        return 1;
+        return true;
     }
     pickedpoint = undefined;
     var_cab884f3 = randomfloat(1);
@@ -146,11 +146,11 @@ function private function_74f41e14(entity) {
         if (is_true(entity.var_6fc509b9)) {
             entity.var_6fc509b9 = 0;
         }
-        return 1;
+        return true;
     } else {
         entity.nextfindbestcovertime = gettime() + 3000;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_f592a7b/namespace_45b9dd6a
@@ -162,7 +162,7 @@ function private function_ddb1fd83(var_d5020108, tacpoints, pickedpoint) {
     self endon("7fec587c06753641");
     self endon(#"death");
     goalinfo = self function_4794d6a3();
-    while (1) {
+    while (true) {
         waitframe(1);
         color = (1, 0.752941, 0.796078);
         var_f08d182b = " cover goalpos";
@@ -309,7 +309,7 @@ function private function_dcfd9c90() {
     self endon("2e7cf0b3ed141929");
     level endon(#"game_ended");
     level.var_2feffa6b = 0;
-    while (1) {
+    while (true) {
         waitframe(1);
         if (isdefined(level.players) && level.players.size > 0 && gettime() > level.var_2feffa6b) {
             player = level.players[0];
@@ -397,20 +397,20 @@ function function_b0876f77(value) {
     switch (value) {
     case #"briefcase_left":
         function_5c56272f("z_briefcase_01_closed", "tag_accessory_left", "BRIEFCASE_LEFT");
-        return;
+        break;
     case #"umbrella_left":
         function_5c56272f("par_umbrella_open_01", "tag_accessory_left", "UMBRELLA_LEFT");
-        return;
+        break;
     case #"hash_4ac48798a0be234b":
         function_5c56272f("par_umbrella_open_01_anim", "tag_accessory_left", "UMBRELLA_LEFT");
         function_5c56272f("z_briefcase_01_closed", "tag_accessory_right", "BRIEFCASE_RIGHT");
-        return;
+        break;
     case #"umbrella_right":
         function_5c56272f("par_umbrella_open_01", "tag_accessory_right", "UMBRELLA_RIGHT");
-        return;
+        break;
     case #"none":
     default:
-        return;
+        break;
     }
 }
 
@@ -429,7 +429,7 @@ function private function_f1d19be1() {
     self addsentienteventlistener("gunshot");
     self addsentienteventlistener("grenade danger");
     self addsentienteventlistener("projectile_impact");
-    while (1) {
+    while (true) {
         if (self getblackboardattribute(#"hash_78e762abc4fbf1de") != "panic") {
             waitframe(1);
             continue;
@@ -473,7 +473,7 @@ function private function_f1d19be1() {
 function private function_a8f579e() {
     level endon(#"game_ended");
     self endon(#"death");
-    while (1) {
+    while (true) {
         waitframe(1);
         enabled = getdvarint(#"hash_40c63080b0f73497", 0);
         if (!enabled) {

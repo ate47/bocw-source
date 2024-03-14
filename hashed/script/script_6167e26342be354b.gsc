@@ -219,25 +219,25 @@ function function_941bd62f() {
 // Size: 0x122
 function function_841e08f9(player) {
     if (!isdefined(level.inprematchperiod) || level.inprematchperiod) {
-        return 0;
+        return false;
     }
     if (player_insertion::function_6660c1f() && !is_true(player.var_7689a9b2)) {
-        return 0;
+        return false;
     }
     if (!getgametypesetting(#"hash_1e71b5ce1cd845b3")) {
-        return 0;
+        return false;
     }
     if (is_true(player.var_20250438)) {
-        return 1;
+        return true;
     }
     if (!isdefined(player.spawn.response) || player.spawn.response == "autoSpawn") {
-        return 1;
+        return true;
     }
     if (is_true(player.var_59baee6)) {
         player.var_59baee6 = undefined;
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace squad_spawn/namespace_cd4d78f1
@@ -285,10 +285,10 @@ function function_e5b0d177(player) {
     var_58d1e914 = function_a1cff525(player.squad);
     foreach (var_b5123467 in var_58d1e914) {
         if (var_b5123467.var_83de62a2 == 0) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace squad_spawn/namespace_cd4d78f1
@@ -446,17 +446,17 @@ function function_f6127864(player, attacker) {
 // Size: 0x92
 function private function_5e178d15(damagearea) {
     if (damagearea.createdtime + getsetting("damageAreaLifetimeMS", 0) < gettime()) {
-        return 1;
+        return true;
     }
     if (!isdefined(damagearea.attacker)) {
-        return 1;
+        return true;
     }
     if (isdefined(damagearea.attacker.deathtime)) {
         if (damagearea.createdtime < damagearea.attacker.deathtime) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace squad_spawn/namespace_cd4d78f1
@@ -555,23 +555,23 @@ function private function_6d9e5aa2() {
 // Size: 0x160
 function function_2ffd5f18() {
     if (is_true(self.var_312f13e0)) {
-        return 0;
+        return false;
     } else if (is_true(self.var_20250438)) {
-        return 1;
+        return true;
     } else if (self.spawn.response === "spawnOnPlayer") {
-        return 1;
+        return true;
     } else if (self.spawn.response === "spawnOnObjective") {
-        return 1;
+        return true;
     } else if (self.spawn.response === "autoSpawn") {
-        return 1;
+        return true;
     } else if (level.var_f0257219 && self.spawn.var_e8f87696 < gettime()) {
-        return 1;
+        return true;
     } else if (getgametypesetting(#"hash_5d65f5abcdad24fe") && self.spawn.var_e8f87696 < gettime()) {
-        return 1;
+        return true;
     } else if (isdefined(level.var_b8da6142) && [[ level.var_b8da6142 ]](self)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace squad_spawn/namespace_cd4d78f1
@@ -592,7 +592,7 @@ function private function_5cdf64e2() {
 // Size: 0x70
 function private function_bae8dea9() {
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         waitframe(1);
         if (!isdefined(level.players)) {
             continue;
@@ -916,9 +916,9 @@ function function_d66eb9cd(targetorigin, targetangles) {
 // Size: 0x2c
 function function_403f2d91(var_53227942) {
     if (!isdefined(var_53227942.spawn.var_8791b6ff)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace squad_spawn/namespace_cd4d78f1
@@ -1211,9 +1211,9 @@ function function_9e0c4479() {
     var_72ea2bd8 = function_c65231e2(self.squad);
     aliveplayers = function_a1cff525(self.squad);
     if (aliveplayers.size == 0 && var_72ea2bd8.size > 1) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace squad_spawn/namespace_cd4d78f1

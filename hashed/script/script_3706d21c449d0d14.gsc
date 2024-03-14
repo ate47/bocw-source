@@ -91,15 +91,15 @@ function function_66c52cbf(msg, *ignored) {
 function function_f4a93c9c() {
     /#
         waittillframeend();
-        while (1) {
-            while (1) {
+        while (true) {
+            while (true) {
                 if (getdvarint(#"scr_health_debug", 0)) {
                     break;
                 }
                 wait(0.5);
             }
             thread function_fe49c4b4();
-            while (1) {
+            while (true) {
                 if (!getdvarint(#"scr_health_debug", 0)) {
                     break;
                 }
@@ -167,7 +167,7 @@ function function_fe49c4b4() {
             level.var_60023d69[key] = var_cabf91e7;
         }
         level wait_till("<unknown string>");
-        while (1) {
+        while (true) {
             waitframe(1);
             players = level.players;
             for (i = 0; i < level.var_1c9484.size && players.size > 0; i++) {

@@ -59,7 +59,7 @@ function function_d54bb61() {
 // Checksum 0x390b73e7, Offset: 0x5b0
 // Size: 0x50
 function function_121aeba5() {
-    while (1) {
+    while (true) {
         wait(80);
         exploder::exploder("Flying_ocean");
         wait(91.5);
@@ -154,10 +154,10 @@ function function_a9a0debb(params) {
             switch (var_102cf4ae[0]) {
             case #"hash_a67f20a6e605d14":
                 var_486f31cd = float(var_102cf4ae[1]);
-                continue;
+                break;
             case #"hash_48ac5ace9c46cec8":
                 var_e9f7aace = float(var_102cf4ae[1]);
-                continue;
+                break;
             }
         }
     }

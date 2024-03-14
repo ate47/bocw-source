@@ -410,22 +410,22 @@ function function_1ca9d31b(entity) {
 // Size: 0x6ae
 function zombieshouldmelee(entity) {
     if (is_true(entity.var_8a96267d) || is_true(entity.var_8ba6ede3)) {
-        return 0;
+        return false;
     }
     if (is_true(entity.var_4c85ebad)) {
-        return 1;
+        return true;
     }
     if (function_d8b225ae(entity)) {
-        return 1;
+        return true;
     }
     if (!isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     if (!namespace_85745671::is_player_valid(entity.enemy) && !namespace_85745671::function_1b9ed9b0(entity.enemy) && !namespace_85745671::function_65e1fbbe(entity.enemy) && entity.team === level.zombie_team) {
-        return 0;
+        return false;
     }
     if (is_true(entity.ignoremelee)) {
-        return 0;
+        return false;
     }
     meleedistsq = zombiebehavior::function_997f1224(entity);
     enemy_vehicle = undefined;
@@ -459,40 +459,40 @@ function zombieshouldmelee(entity) {
     }
     var_dc0be666 = abs(entity.origin[2] - test_origin[2]);
     if (var_dc0be666 > (isdefined(entity.var_737e8510) ? entity.var_737e8510 : 64)) {
-        return 0;
+        return false;
     }
     if (var_dc0be666 < (isdefined(entity.var_f7f0128b) ? entity.var_f7f0128b : 40)) {
         if (distance2dsquared(entity.origin, test_origin) > meleedistsq) {
-            return 0;
+            return false;
         }
     } else if (distancesquared(entity.origin, test_origin) > meleedistsq) {
-        return 0;
+        return false;
     }
     if (!entity flag::get(#"hash_49b119b42f4610ea")) {
         yawtoenemy = angleclamp180(entity.angles[1] - vectortoangles(enemy.origin - entity.origin)[1]);
         if (abs(yawtoenemy) > (isdefined(entity.var_1c0eb62a) ? entity.var_1c0eb62a : 60)) {
-            return 0;
+            return false;
         }
         if (!entity cansee(isdefined(enemy_vehicle) ? enemy_vehicle : enemy)) {
-            return 0;
+            return false;
         }
     }
     if (distancesquared(entity.origin, test_origin) < function_a3f6cdac(40)) {
         entity.idletime = gettime();
         entity.var_1b250399 = entity.origin;
-        return 1;
+        return true;
     }
     if (isdefined(enemy_vehicle)) {
         entity.idletime = gettime();
         entity.var_1b250399 = entity.origin;
-        return 1;
+        return true;
     }
     if (is_true(self.isonnavmesh) && !tracepassedonnavmesh(entity.origin, isdefined(enemy.last_valid_position) ? enemy.last_valid_position : enemy.origin, enemy getpathfindingradius())) {
-        return 0;
+        return false;
     }
     entity.idletime = gettime();
     entity.var_1b250399 = entity.origin;
-    return 1;
+    return true;
 }
 
 // Namespace namespace_e292b080/namespace_e292b080
@@ -501,16 +501,16 @@ function zombieshouldmelee(entity) {
 // Size: 0xf6
 function function_d8b225ae(entity) {
     if (!isdefined(entity.attackable)) {
-        return 0;
+        return false;
     }
     radius = entity.goalradius;
     if (is_true(entity.allowoffnavmesh)) {
         radius = 16;
     }
     if (isdefined(entity.var_b238ef38) && distance2dsquared(entity.origin, entity.var_b238ef38.position) < function_a3f6cdac(radius) && abs(entity.origin[2] - entity.var_b238ef38.position[2]) < 50) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_e292b080/namespace_e292b080
@@ -524,9 +524,9 @@ function function_e8983bf3(target) {
     }
     distsq = distancesquared(self.origin, target.origin);
     if (distsq > meleedistsq * 1.44) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_e292b080/namespace_e292b080
@@ -543,20 +543,20 @@ function private zombieshouldmove(entity) {
 // Size: 0xde
 function private function_bfc25c77(entity) {
     if (!(isdefined(getgametypesetting(#"hash_2d40f1434ed94a2b")) ? getgametypesetting(#"hash_2d40f1434ed94a2b") : 0)) {
-        return 0;
+        return false;
     }
     if (self function_3c566724()) {
-        return 0;
+        return false;
     }
     startnode = entity.traversestartnode;
     if (!isnodeenabled(startnode)) {
-        return 0;
+        return false;
     }
     if (namespace_85745671::function_f4087909(startnode.var_597f08bf)) {
         entity.var_597f08bf = startnode.var_597f08bf;
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_e292b080/namespace_e292b080
@@ -565,13 +565,13 @@ function private function_bfc25c77(entity) {
 // Size: 0x72
 function private function_b9b03294(entity) {
     if (self function_3c566724()) {
-        return 1;
+        return true;
     }
     startnode = entity.traversestartnode;
     if (!isdefined(startnode) || !isnodeenabled(startnode)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_e292b080/namespace_e292b080
@@ -614,9 +614,9 @@ function private function_e1b85c34(entity) {
 // Size: 0x2e
 function function_e9e6482(entity) {
     if (!is_true(entity.var_8c4d3e5d)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_e292b080/namespace_e292b080
@@ -625,9 +625,9 @@ function function_e9e6482(entity) {
 // Size: 0x5e
 function function_67d5c154(entity) {
     if (isdefined(entity.var_62b4721) && entity.var_62b4721 + getdvarfloat(#"hash_2cc8a2770c6d6662", 3000) > gettime()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_e292b080/namespace_e292b080
@@ -674,19 +674,19 @@ function function_10b38c5a(entity) {
     enemy = zm_ai_utility::function_825317c(entity);
     if (isplayer(enemy)) {
         if (enemy isplayerswimming()) {
-            return 0;
+            return false;
         }
         if (enemy isinvehicle()) {
             vehicle = enemy getvehicleoccupied();
             if (namespace_85745671::function_7243fef2(vehicle)) {
-                return 0;
+                return false;
             }
         }
     }
     if (is_true(entity.var_1033fa72) && is_true(entity.var_9f6112bb) && (!isdefined(entity.var_6324ed63) || gettime() > entity.var_6324ed63)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_e292b080/namespace_e292b080
@@ -706,9 +706,9 @@ function function_837931eb(entity) {
 // Size: 0x36
 function function_5ac985fe(*entity) {
     if (getdvar(#"hash_2d0879ab385bc2c8", 0)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_e292b080/namespace_e292b080
@@ -732,7 +732,7 @@ function function_da99776f(entity) {
             recordline(entity.origin, entity.origin + forwardangles * 50, (0, 1, 0));
         #/
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_e292b080/namespace_e292b080
@@ -758,7 +758,7 @@ function function_573545a(entity) {
 // Size: 0x1a
 function function_c8caa34b(entity) {
     entity.var_2772a472 = undefined;
-    return 1;
+    return true;
 }
 
 // Namespace namespace_e292b080/namespace_e292b080
@@ -773,7 +773,7 @@ function private zombiemoveactionstart(entity) {
     if (isdefined(entity.var_16b73748)) {
         entity.var_cb2a43c0 = getmovedelta(entity.var_16b73748) / getanimlength(entity.var_16b73748) * 0.5;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_e292b080/namespace_e292b080
@@ -797,7 +797,7 @@ function private zombiemoveactionupdate(entity) {
         entity.movetime = gettime();
         entity.moveorigin = entity.origin;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_e292b080/namespace_e292b080
@@ -933,7 +933,7 @@ function private function_78106a79(entity, *asmstatename) {
 function private function_f8250d5e(entity) {
     entity.idletime = gettime();
     entity.var_1b250399 = entity.origin;
-    return 1;
+    return true;
 }
 
 // Namespace namespace_e292b080/namespace_e292b080

@@ -157,9 +157,9 @@ function private function_7ae07b7() {
 // Size: 0x26
 function private function_e95a0595() {
     if (isairborne(self)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace player_vehicle/player_vehicle
@@ -335,11 +335,11 @@ function on_vehicle_damage(params) {
                 switch (params.smeansofdeath) {
                 case #"mod_projectile":
                     self playsoundtoplayer(#"hash_4cf0470b5276e61a", occupant);
-                    continue;
+                    break;
                 case #"mod_rifle_bullet":
                 case #"mod_pistol_bullet":
                     self playsoundtoplayer(#"hash_6dd3a55ee3658ca", occupant);
-                    continue;
+                    break;
                 }
             }
         }
@@ -505,7 +505,7 @@ function on_player_corpse(*params) {
 // Size: 0x1b0
 function function_69c9e9a0() {
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"hash_4aced1739d6627a2");
         vehicle = waitresult.vehicle;
@@ -534,14 +534,14 @@ function function_c747eedd(vehicle, player, seatindex) {
     if (vehicle.vehicleclass === "boat") {
         if (vehicle function_7548ecb2() && is_true(vehicle.var_221879dc)) {
             if (seatindex === 0) {
-                return 0;
+                return false;
             }
         }
     }
     if (player flag::get("encumbered")) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace player_vehicle/player_vehicle
@@ -550,18 +550,18 @@ function function_c747eedd(vehicle, player, seatindex) {
 // Size: 0xb8
 function function_2513e40c(vehicle, player, seatindex) {
     if (!function_c747eedd(vehicle, player, seatindex)) {
-        return 0;
+        return false;
     }
     if (player item_world::function_8e0d14c1(0)) {
-        return 0;
+        return false;
     }
     if (isdefined(level.var_402b86e) && player [[ level.var_402b86e ]]()) {
-        return 0;
+        return false;
     }
     if (isdefined(level.var_edde2f10) && player [[ level.var_edde2f10 ]](vehicle, seatindex)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace player_vehicle/player_vehicle
@@ -574,9 +574,9 @@ function private function_d69d0773() {
     }
     if (gettime() - self.var_d6a1af09 >= 250) {
         self.var_d6a1af09 = gettime();
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace player_vehicle/player_vehicle
@@ -693,7 +693,7 @@ function private function_ea4291d3() {
 function private function_b3caeebc(player) {
     self endon(#"death");
     player endon(#"exit_vehicle", #"death");
-    while (1) {
+    while (true) {
         if (self function_ea4291d3()) {
             player clientfield::set_player_uimodel("vehicle.missileLock", 2);
             self playsoundtoplayer(#"hash_445c9fb1793c4259", player);
@@ -758,7 +758,7 @@ function private function_6aa73a2a(missile, vehicle) {
     vehicle endon(#"death");
     range = 8000 - 10;
     dist = undefined;
-    while (1) {
+    while (true) {
         old_dist = dist;
         dist = distance(missile.origin, self.origin);
         var_38fa5914 = isdefined(old_dist) && dist < old_dist;
@@ -1246,7 +1246,7 @@ function private function_85aaed19(seat_index) {
 function function_5bce3f3a(seat_index, *var_ddd294e3) {
     self endon(#"death");
     clientfield = function_85aaed19(var_ddd294e3);
-    while (1) {
+    while (true) {
         var_24139930 = self isvehicleturretoverheating(var_ddd294e3);
         if (var_24139930) {
             self clientfield::set(clientfield, 1);
@@ -1289,7 +1289,7 @@ function update_turret_fire(vehicle, seat_index, var_c269692d) {
         vehicle disablegunnerfiring(seat_index - 1, 1);
         return;
     }
-    while (1) {
+    while (true) {
         params = undefined;
         params = vehicle waittill(#"gunner_weapon_fired");
         if (params.gunner_index === seat_index) {
@@ -1310,7 +1310,7 @@ function update_turret_fire(vehicle, seat_index, var_c269692d) {
             }
             if (vehicle.var_96c0f900[seat_index] == 0) {
                 vehicle disablegunnerfiring(seat_index - 1, 1);
-                return;
+                break;
             }
         }
     }
@@ -1342,18 +1342,18 @@ function function_cc30c4bb(gesture, seat_index) {
 // Size: 0x90
 function private function_f43c0cb7(vehicle) {
     if (self function_104d7b4d()) {
-        return 0;
+        return false;
     }
     if (self isswitchingweapons()) {
-        return 0;
+        return false;
     }
     if (self isreloading()) {
-        return 0;
+        return false;
     }
     if (isdefined(vehicle.var_66329fbb) && self function_495bdc7b(vehicle.var_66329fbb)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace player_vehicle/player_vehicle
@@ -1368,7 +1368,7 @@ function private function_3afc1410(vehicle) {
     if (!isdefined(vehicle.var_66329fbb)) {
         return;
     }
-    while (1) {
+    while (true) {
         if (function_f43c0cb7(vehicle)) {
             self playgestureviewmodel(vehicle.var_66329fbb);
         }
@@ -1400,9 +1400,9 @@ function private function_17949e01() {
     mag = getdvarfloat(#"hash_2612e4b1db15d42e", 150);
     height = getdvarfloat(#"hash_57e0d780126c4f57", 100);
     var_80831eb5 = 0;
-    while (1) {
+    while (true) {
         self waittill(#"beached");
-        while (1) {
+        while (true) {
             waitresult = undefined;
             waitresult = self waittill(#"touch", #"unbeached");
             if (!self function_b835102b()) {
@@ -1458,7 +1458,7 @@ function function_e8e41bbb() {
         self thread function_17949e01();
     }
     fxorg = undefined;
-    while (1) {
+    while (true) {
         if (!self function_b835102b()) {
             /#
                 println("<unknown string>" + self getentitynumber());
@@ -1529,9 +1529,9 @@ function function_a2626745() {
 // Size: 0x26
 function function_7ca7a7e5() {
     if (is_true(self.var_b71d69e0)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace player_vehicle/player_vehicle
@@ -1611,7 +1611,7 @@ function function_d3da7e1e() {
     self notify("3df7debc9a06b9e4");
     self endon("3df7debc9a06b9e4");
     self endon(#"death", #"exit_vehicle", #"change_seat");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"weapon_fired");
         var_1c7142e7 = waitresult.projectile;
@@ -1676,7 +1676,7 @@ function function_f89e1149(seatindex) {
 function private function_2f3dd76f(targetent) {
     /#
         self endon(#"death");
-        while (1) {
+        while (true) {
             sphere(targetent.origin, 30, (0, 1, 0));
             waitframe(1);
         }
@@ -1712,7 +1712,7 @@ function function_53f7a11f(player) {
     self endon("3fc856dcf693f6af");
     self endon(#"death");
     player endon(#"death", #"exit_vehicle", #"change_seat");
-    while (1) {
+    while (true) {
         self.overridevehicledamage = undefined;
         if (self.var_9be5a571.size > 0) {
             for (i = self.var_9be5a571.size - 1; i >= 0; i--) {

@@ -240,7 +240,7 @@ function function_314e7dbf(stash) {
                         stash.tactical = undefined;
                     }
                 }
-                continue;
+                break;
             case #"lethal":
                 var_60d9ce9d = stash.lethal;
                 if (isdefined(var_60d9ce9d.var_a6762160)) {
@@ -249,7 +249,7 @@ function function_314e7dbf(stash) {
                         stash.lethal = undefined;
                     }
                 }
-                continue;
+                break;
             case #"weapon":
                 var_9f785cff = stash.weapon1;
                 if (isdefined(var_9f785cff.var_a6762160)) {
@@ -265,9 +265,9 @@ function function_314e7dbf(stash) {
                         stash.weapon2 = undefined;
                     }
                 }
-                continue;
+                break;
             default:
-                continue;
+                break;
             }
         }
     }
@@ -340,7 +340,7 @@ function function_dfd10619() {
 function function_c1ae3843() {
     start_time = 0;
     use_time = getdvarint(#"g_useholdtime", 0);
-    while (1) {
+    while (true) {
         usinggamepad = self gamepadusedlast();
         if (usinggamepad && self weaponswitchbuttonpressed() || !usinggamepad && self fragbuttonpressed()) {
             if (start_time == 0) {
@@ -380,7 +380,7 @@ function function_1fb0f83e() {
 // Size: 0x22a
 function function_cf07c32a() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         wait(1);
         var_3ab39d83 = self.origin + vectorscale((0, 0, 1), 30);
         var_9568b0fc = anglestoforward(self.angles);
@@ -436,7 +436,7 @@ function revive_trigger_spawn() {
 function revive_trigger_think(t_secondary) {
     self endon(#"disconnect", #"zombified", #"stop_revive_trigger", #"death");
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         wait(0.1);
         if (isdefined(t_secondary)) {
             t_revive = t_secondary;
@@ -868,7 +868,7 @@ function function_330c66cc() {
 // Size: 0x9e
 function function_cde4678f() {
     self endon(#"kill_trigger");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;

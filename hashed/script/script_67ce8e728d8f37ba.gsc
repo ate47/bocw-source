@@ -200,27 +200,27 @@ function function_f5692e0c(var_9c1ed9ea, str_team, player) {
 // Size: 0x150
 function function_14956b80() {
     if (is_true(level.var_633063a5)) {
-        return 0;
+        return false;
     }
     if (!util::isfirstround()) {
-        return 0;
+        return false;
     }
     if (currentsessionmode() == 4 || (isdefined(getgametypesetting(#"prematchperiod")) ? getgametypesetting(#"prematchperiod") : 0) <= 0) {
-        return 0;
+        return false;
     }
     if (!is_true(getgametypesetting(#"playintrocinematics"))) {
-        return 0;
+        return false;
     }
     if (!getdvarint(#"hash_3c02566432466eb2", 0)) {
-        return 0;
+        return false;
     }
     if (!getdvarint(#"hash_2e7f94473567b19a", 0)) {
-        return 0;
+        return false;
     }
     if (!isdefined(level.var_2efdea7)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_66d6aa44/namespace_66d6aa44
@@ -260,12 +260,12 @@ function function_4898fc47() {
 // Size: 0x44
 function private function_fd63b4bf(var_52b46a06) {
     if (level.var_d1455682.var_3316a534 !== 1) {
-        return 0;
+        return false;
     }
     if (!isdefined(var_52b46a06.var_d74b6b9c)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_66d6aa44/namespace_66d6aa44
@@ -331,7 +331,7 @@ function function_b499bfc7(*params) {
         str_scene = function_cf2c009a(team);
         if (isdefined(str_scene)) {
             thread scene::init_streamer(str_scene, array(self));
-            return;
+            break;
         }
     }
 }
@@ -475,7 +475,7 @@ function function_e94b8e1a(var_66cbfaf2, *var_2a832857) {
     level endoncallback(&function_59fe0fc1, #"postgame");
     /#
         if (getdvarint(#"hash_2abea44713c5fded", 0)) {
-            while (1) {
+            while (true) {
                 debug2dtext((150, 225, 0), "<unknown string>", undefined, undefined, undefined, undefined, 1);
                 var_a0579d1a = 1;
                 foreach (str_team in level.teams) {

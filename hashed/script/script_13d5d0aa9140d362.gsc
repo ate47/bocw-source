@@ -278,7 +278,7 @@ function function_c668a011(s_instance) {
                                         vehicle.v_ang = vehicle.angles;
                                         vehicle thread function_17a3dc2f(s_instance);
                                         if (s_instance.var_2bb61e5b >= 4) {
-                                            continue;
+                                            break;
                                         }
                                     }
                                 }
@@ -719,11 +719,11 @@ function function_a6b2f443(vehicle) {
                 }
             #/
             if (distance2dsquared(vehicle.origin, var_59efbf47.origin) <= var_26f1579c * var_26f1579c) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80

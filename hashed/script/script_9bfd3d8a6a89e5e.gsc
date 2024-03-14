@@ -45,13 +45,13 @@ function function_53e50b40(action) {
     self endon(action.ender);
     if (is_true(self actions::function_83bde308(action))) {
         if (self.takedown.var_67582ca5.var_f467e5b0.enabled[#"body_shield"] === 0) {
-            return 0;
+            return false;
         }
         self thread function_e3e4c03c(action, self.takedown.var_67582ca5);
         self.takedown.var_67582ca5 = undefined;
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
@@ -244,7 +244,7 @@ function function_756e29bb(action, anim_name, var_c09e9b1c, var_d60fb210, var_2e
         self childthread function_80f856a8(action, anim_name, var_7369af2b);
     }
     self childthread function_8ebed231(action);
-    while (1) {
+    while (true) {
         var_2ec5b92f = self namespace_594b67e::function_29fd0abd();
         var_fcd67307 = self namespace_594b67e::function_bda1ed48();
         doreload = self function_1dcff2c3(weapon);
@@ -305,7 +305,7 @@ function function_756e29bb(action, anim_name, var_c09e9b1c, var_d60fb210, var_2e
 // Checksum 0xc39fbe77, Offset: 0x16b0
 // Size: 0x46
 function function_2513e926(*action) {
-    while (1) {
+    while (true) {
         self thread namespace_594b67e::function_1c2992ed(self namespace_594b67e::function_29fd0abd());
         waitframe(1);
     }
@@ -317,7 +317,7 @@ function function_2513e926(*action) {
 // Size: 0xfc
 function function_80f856a8(*action, anim_name, *var_7369af2b) {
     firstframe = 1;
-    while (1) {
+    while (true) {
         loop_anim = namespace_594b67e::function_47ffa6b8(var_7369af2b);
         if (!isdefined(self.var_6639d45b.var_3f4de57b)) {
             blendtime = firstframe ? 0 : undefined;
@@ -347,7 +347,7 @@ function function_d6fbc26(*params) {
 // Size: 0x13e
 function function_8ebed231(*action) {
     visible = 1;
-    while (1) {
+    while (true) {
         var_2d6631c2 = 1;
         if (self flag::get("snipercam")) {
             var_2d6631c2 = 0;
@@ -517,7 +517,7 @@ function function_7acc6ae7(action) {
 // Size: 0x300
 function function_c13ab5c7(action) {
     self endon(action.ender, #"hash_2d036a7855e382b1");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"body_shield_damage");
         min_time = 2;
@@ -552,7 +552,7 @@ function function_c13ab5c7(action) {
 function function_e98922fb(action) {
     self endon(action.ender, #"hash_2d036a7855e382b1");
     wait(5);
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittilltimeout(1, #"body_shield_damage");
         if (result._notify != "body_shield_damage") {
@@ -629,7 +629,7 @@ function function_b25119b6(action) {
 function function_c6059aa(action) {
     self endon(#"death", action.ender);
     self namespace_f48ab2e1::function_82cf95d9(#"hash_24279f7ed6cd096c");
-    while (1) {
+    while (true) {
         var_4109ff8e = self.takedown.body_shield.health / self.takedown.body_shield.var_82bfd108;
         if (isdefined(self.var_3e95b88f)) {
             self namespace_f48ab2e1::function_b1cfa4bc(var_4109ff8e);
@@ -638,7 +638,7 @@ function function_c6059aa(action) {
             if (isdefined(self.var_3e95b88f)) {
                 self namespace_f48ab2e1::function_82cf95d9(#"hash_61bd6e94a9b1f44e");
             }
-            return;
+            break;
         }
         self waittill(#"hash_3cc22522d66c35f8");
     }

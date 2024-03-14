@@ -57,7 +57,7 @@ function function_e16b5033(actor) {
 // Size: 0xec
 function function_1f9de69d(var_40b86c4b) {
     if (!isdefined(var_40b86c4b)) {
-        return 0;
+        return false;
     }
     players = getplayers();
     foreach (player in players) {
@@ -66,10 +66,10 @@ function function_1f9de69d(var_40b86c4b) {
         }
         currentzone = player zm_utility::get_current_zone();
         if (currentzone === var_40b86c4b) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_bot/zm_bot

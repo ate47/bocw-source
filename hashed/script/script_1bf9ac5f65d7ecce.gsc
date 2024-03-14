@@ -47,48 +47,48 @@ function private function_32ab045(ent, name) {
         level.adler thread function_952e21e3(ent, name);
         level.adler waittill(#"death");
         level.adler = undefined;
-        return;
+        break;
     case #"lazar":
         level.lazar = ent;
         level.lazar thread function_952e21e3(ent, name);
         level.lazar waittill(#"death");
         level.lazar = undefined;
-        return;
+        break;
     case #"park":
         level.park = ent;
         level.park thread function_952e21e3(ent, name);
         level.park waittill(#"death");
         level.park = undefined;
-        return;
+        break;
     case #"sims":
         level.sims = ent;
         level.sims thread function_952e21e3(ent, name);
         level.sims waittill(#"death");
         level.sims = undefined;
-        return;
+        break;
     case #"hudson":
         level.hudson = ent;
         level.hudson thread function_952e21e3(ent, name);
         level.hudson waittill(#"death");
         level.hudson = undefined;
-        return;
+        break;
     case #"woods":
         level.woods = ent;
         level.woods thread function_952e21e3(ent, name);
         level.woods waittill(#"death");
         level.woods = undefined;
-        return;
+        break;
     case #"mason":
         level.mason = ent;
         level.mason thread function_952e21e3(ent, name);
         level.mason waittill(#"death");
         level.mason = undefined;
-        return;
+        break;
     default:
         /#
             function_81fac19d(function_d78e3644(), "tag_origin" + function_783b69(name, "<unknown string>"));
         #/
-        return;
+        break;
     }
 }
 
@@ -101,12 +101,12 @@ function private _trigger(player, trigger, *var_ec80d14b) {
     switch (trigger_name) {
     case #"$default":
         snd::function_645c2f9b(trigger, trigger_name);
-        return;
+        break;
     default:
         /#
             function_81fac19d(function_d78e3644(), "<unknown string>" + trigger_name + "<unknown string>");
         #/
-        return;
+        break;
     }
 }
 
@@ -120,111 +120,111 @@ function private function_f2a2832d(*player, msg) {
         setsoundcontext("visit", "post_takedown");
         level.var_28b99ea7 = "post_takedown";
         function_a269371b();
-        return;
+        break;
     case #"post_armada":
         setsoundcontext("visit", "post_armada");
         level.var_28b99ea7 = "post_armada";
         function_a269371b();
-        return;
+        break;
     case #"post_kgb":
         setsoundcontext("visit", "post_kgb");
         level.var_28b99ea7 = "post_kgb";
         function_a269371b();
-        return;
+        break;
     case #"post_cuba":
         setsoundcontext("visit", "post_cuba");
         level.var_28b99ea7 = "post_cuba";
         function_a269371b();
-        return;
+        break;
     case #"hash_4738825a1fd6beb8":
         setsoundcontext("visit", "post_prisoner");
         level.var_28b99ea7 = "post_prisoner";
         function_a269371b();
-        return;
+        break;
     case #"hash_1b78b54c338981ad":
         function_5ea2c6e3("cp_ger_hub8_submix", 0, 1);
-        return;
+        break;
     case #"hash_5c379cf8b486919b":
         function_ed62c9c2("cp_ger_hub8_submix", 1);
-        return;
+        break;
     case #"hash_2af641a7d0cd9ad3":
         setsoundcontext("visit", "post_prisoner_burn_scene");
         level.var_28b99ea7 = "post_prisoner_burn_scene";
         function_a269371b();
-        return;
+        break;
     case #"post_yamantau":
         setsoundcontext("visit", "post_yamantau");
         level.var_28b99ea7 = "yamantau";
         function_a269371b();
-        return;
+        break;
     case #"hash_774f81b7fe6ee1f6":
         audio::snd_set_snapshot("cp_ger_hub_evidenceboard_enter");
-        return;
+        break;
     case #"hash_3f89f51c820e2ec0":
         audio::snd_set_snapshot("");
-        return;
+        break;
     case #"hash_3e89d014789ae73b":
         audio::snd_set_snapshot("cp_ger_hub_arcade_machine");
-        return;
+        break;
     case #"hash_3992190071e0da2f":
         audio::snd_set_snapshot("");
-        return;
+        break;
     case #"snd_overlook_scene":
         thread function_34050dad();
-        return;
+        break;
     case #"hash_1e58e46360c0a83b":
         level notify(#"hash_1e58e46360c0a83b");
-        return;
+        break;
     case #"hash_6016dc6f6d055083":
         thread function_955f4842();
-        return;
+        break;
     case #"plane_idle":
         thread function_2d8bbe54(0.5);
-        return;
+        break;
     case #"start_plane_rev":
         thread function_e9cf99c1();
-        return;
+        break;
     case #"hash_181bf4d7bd0b8108":
         thread function_26282537();
-        return;
+        break;
     case #"hash_6e37b7c047667b8e":
         thread function_eeb6e2e1();
-        return;
+        break;
     case #"hash_795bc852357a8d1d":
         thread function_97d155da();
-        return;
+        break;
     case #"hash_72dc7d49e5a3096a":
         thread function_c2636a93();
-        return;
+        break;
     case #"hash_4f97009133f1b2dc":
         thread function_882509d5();
-        return;
+        break;
     case #"hash_3031949ab2125e03":
         function_5af45515();
-        return;
+        break;
     case #"hash_57bb837937381b5e":
         function_f4c3ff4f();
-        return;
+        break;
     case #"hash_5b6ae81610d69a78":
         function_d701d197();
-        return;
+        break;
     case #"hash_2a6c48d5e64b11f4":
         function_91962847();
-        return;
+        break;
     case #"hash_6fbdea34819cb7c5":
         function_351d940();
-        return;
+        break;
     case #"hash_2a8cd855faea97bc":
         function_d3856f8a();
-        return;
+        break;
     case #"hash_4e3a33825e832ae6":
         function_ef8c9b18();
-        return;
+        break;
     default:
         /#
             function_81fac19d(function_d78e3644(), "<unknown string>" + function_783b69(msg, "<unknown string>"));
         #/
-        return;
+        break;
     }
 }
 
@@ -238,49 +238,49 @@ function private function_887ac605(objective) {
     level thread function_8cb75a6();
     switch (objective) {
     case #"hash_55e940a3ca2d2533":
-        return;
+        break;
     case #"hash_de0a71f1b8beaa7":
     case #"hash_55e53afbf5115da0":
         level.var_28b99ea7 = "post_takedown";
         function_a269371b();
-        return;
+        break;
     case #"post_armada":
     case #"hash_3f942629dd634c1d":
         level.var_28b99ea7 = "post_armada";
         function_a269371b();
         snd::function_645c2f9b(player, "thunder_int");
-        return;
+        break;
     case #"post_yamantau":
     case #"hash_6b6b433835e19763":
         level.var_28b99ea7 = "post_yamantau";
         function_a269371b();
-        return;
+        break;
     case #"post_kgb":
     case #"hash_45b5ada813cf005f":
         level.var_28b99ea7 = "post_kgb";
         function_a269371b();
-        return;
+        break;
     case #"post_cuba":
     case #"hash_6245569317a5039e":
         level.var_28b99ea7 = "post_cuba";
         function_a269371b();
-        return;
+        break;
     case #"hash_4738825a1fd6beb8":
     case #"hash_65bc9e5b3b128daf":
         level.var_28b99ea7 = "post_prisoner";
         function_a269371b();
-        return;
+        break;
     case #"hash_2af641a7d0cd9ad3":
         level.var_28b99ea7 = "post_prisoner_burn_scene";
         function_a269371b();
-        return;
+        break;
     case #"no_game":
-        return;
+        break;
     default:
         /#
             function_81fac19d(function_d78e3644(), "<unknown string>" + objective + "<unknown string>");
         #/
-        return;
+        break;
     }
 }
 

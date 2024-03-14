@@ -191,7 +191,7 @@ function on_local_client_connect(localclientnum) {
 function function_84d33874() {
     level endon(#"game_ended");
     level endon(#"disable_compass_arrow");
-    while (1) {
+    while (true) {
         wait(0.05);
         foreach (localclientnum, var_4f67e1b in level.var_4f67e1b) {
             player = function_5c10bd79(localclientnum);

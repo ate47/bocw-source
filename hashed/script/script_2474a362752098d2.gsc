@@ -124,7 +124,7 @@ function function_bcedb01d() {
     self notify("1242aca585373200");
     self endon("1242aca585373200");
     level endon(#"game_over");
-    while (1) {
+    while (true) {
         wait(0.5);
         foreach (item in level.doa.var_b8ef1466) {
             if (!isstruct(item)) {
@@ -188,7 +188,7 @@ function function_ebbc302() {
     self clientclaimtrigger(var_2158df5f);
     var_2158df5f.player = self;
     self.doa.var_a594a0d0 = var_2158df5f;
-    while (1) {
+    while (true) {
         wait(0.5);
         closest = undefined;
         items = arraysortclosest(level.doa.var_b8ef1466, self.origin, 1);

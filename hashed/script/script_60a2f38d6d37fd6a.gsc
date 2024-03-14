@@ -52,7 +52,7 @@ function function_5521aa1c(localclientnum) {
         level.doa.var_57e2aa98 = undefined;
     }
     level.doa.var_228ae819 = [];
-    while (1) {
+    while (true) {
         if (!isdefined(level.doa.var_57e2aa98)) {
             if (level.doa.var_228ae819.size) {
                 var_3046d90a = level.doa.var_228ae819[0];
@@ -199,17 +199,17 @@ function function_65fcd877() {
     switch (level.doa.world_state) {
     case 0:
         var_9e5a6c0d = 1;
-        return;
+        break;
     case 4:
         function_30f7911(4);
         function_319e479e();
-        return;
+        break;
     case 5:
         function_30f7911(5);
-        return;
+        break;
     case 1:
         function_30f7911(1);
-        return;
+        break;
     }
 }
 

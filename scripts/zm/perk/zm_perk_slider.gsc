@@ -170,7 +170,7 @@ function function_dc9a257a() {
     self notify(#"hash_6939dd7af68cec");
     self endon(#"disconnect", #"hash_6939dd7af68cec");
     self.var_287f4e8 = undefined;
-    while (1) {
+    while (true) {
         self waittill(#"slide_begin");
         v_start_position = self.origin;
         self.var_4fe0aa35 = 1;
@@ -402,7 +402,7 @@ function event_handler[exit_vehicle] codecallback_exitvehicle(*eventstruct) {
 // Size: 0x92
 function function_55fdc82d(vehicle) {
     self endon(#"death", #"disconnect", #"hash_49c8852035063bfd");
-    while (1) {
+    while (true) {
         vehicle waittill(#"veh_inair");
         self.var_6d563065 = 1;
         vehicle waittill(#"veh_landed");
@@ -417,7 +417,7 @@ function function_55fdc82d(vehicle) {
 function function_815172d1() {
     self endon(#"death", #"disconnect", #"hash_19d583212e9b3200");
     var_be3643e6 = 0;
-    while (1) {
+    while (true) {
         if (isplayer(self)) {
             self.var_e9571d8b = undefined;
             onground = 1;

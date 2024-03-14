@@ -185,7 +185,7 @@ function function_b4b1df9c(*params) {
 // Size: 0x48
 function function_1c24aba3() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self namespace_83eb6304::function_3ecfde67("nova_crawler_burst");
         wait(0.25);
     }
@@ -202,7 +202,7 @@ function function_86555fba() {
         org thread namespace_ec06fe4a::function_d55f042c(self, "death");
         org thread function_1c24aba3();
     }
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"trigger");
         if (isdefined(org)) {
@@ -243,7 +243,7 @@ function function_df18852() {
     self function_56bb65ac("WALK");
     self.var_84f9cc2e = gettime() + 1000;
     var_30d02a4c = 0;
-    while (1) {
+    while (true) {
         self namespace_250e9486::function_89c95270();
         while (self function_ad163d5a()) {
             wait(0.5);
@@ -373,27 +373,27 @@ function need_to_run() {
     run_pitch = 30;
     run_height = 64;
     if (!isdefined(self.enemy)) {
-        return 0;
+        return false;
     }
     if (self.health < self.maxhealth) {
-        return 1;
+        return true;
     }
     if (isdefined(self.favoriteenemy) && !is_true(self.hasseenfavoriteenemy)) {
-        return 0;
+        return false;
     }
     height = self.origin[2] - self.enemy.origin[2];
     if (abs(height) > run_height) {
-        return 0;
+        return false;
     }
     yaw = self namespace_ec06fe4a::absyawtoenemy();
     if (yaw > run_yaw) {
-        return 0;
+        return false;
     }
     pitch = angleclamp180(vectortoangles(self.origin - self.enemy.origin)[0]);
     if (abs(pitch) > run_pitch) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_53a8fe5e/namespace_53a8fe5e
@@ -439,24 +439,24 @@ function get_last_valid_position(*bimmediate) {
 // Size: 0xce
 function is_target_valid(dog, target) {
     if (!isdefined(target)) {
-        return 0;
+        return false;
     }
     if (!isalive(target)) {
-        return 0;
+        return false;
     }
     if (dog.team == target.team) {
-        return 0;
+        return false;
     }
     if (isplayer(target) && !namespace_7f5aeb59::function_7df41f60(target)) {
-        return 0;
+        return false;
     }
     if (is_true(target.ignoreme)) {
-        return 0;
+        return false;
     }
     if (target isnotarget()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_53a8fe5e/namespace_53a8fe5e
@@ -489,17 +489,17 @@ function function_86104a92(behaviortreeentity) {
 // Size: 0xf0
 function function_cf98d4f7(behaviortreeentity) {
     if (behaviortreeentity.ignoreall || !is_target_valid(behaviortreeentity, behaviortreeentity.favoriteenemy)) {
-        return 0;
+        return false;
     }
     time = gettime();
     if (isdefined(self.var_96cd28f6) && time - self.var_96cd28f6 < 1000) {
-        return 0;
+        return false;
     }
     meleedist = 72;
     if (distancesquared(behaviortreeentity.origin, behaviortreeentity.favoriteenemy.origin) < function_a3f6cdac(meleedist) && behaviortreeentity cansee(behaviortreeentity.favoriteenemy)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_53a8fe5e/namespace_53a8fe5e
@@ -539,7 +539,7 @@ function function_a19ebce9(target) {
 // Size: 0x88
 function function_92312127() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"dog_melee");
         self namespace_e32bb68::function_3a59ec34("zmb_doa_ai_hound_bite");
@@ -553,19 +553,19 @@ function function_92312127() {
 // Size: 0x166
 function use_low_attack() {
     if (!isdefined(self.enemy) || !isplayer(self.enemy)) {
-        return 0;
+        return false;
     }
     height_diff = self.enemy.origin[2] - self.origin[2];
     low_enough = 30;
     if (height_diff < low_enough && self.enemy getstance() == "prone") {
-        return 1;
+        return true;
     }
     melee_origin = (self.origin[0], self.origin[1], self.origin[2] + 65);
     enemy_origin = (self.enemy.origin[0], self.enemy.origin[1], self.enemy.origin[2] + 32);
     if (!bullettracepassed(melee_origin, enemy_origin, 0, self)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_53a8fe5e/namespace_53a8fe5e

@@ -138,16 +138,16 @@ function private function_2c098ccc(localclientnum, *oldval, newval, *bnewent, *b
     switch (bwastimejump) {
     case 1:
         self.var_32caa02 = util::playfxontag(fieldname, level._effect[#"fx8_blightfather_vomit_purchase"], self, "tag_origin");
-        return;
+        break;
     case 2:
         self.var_32caa02 = util::playfxontag(fieldname, level._effect[#"fx8_blightfather_vomit_statue_purchase"], self, "tag_origin");
-        return;
+        break;
     case 3:
         self.var_32caa02 = util::playfxontag(fieldname, level._effect[#"fx8_blightfather_vomit_box_purchase"], self, "tag_origin");
-        return;
+        break;
     case 4:
         self.var_32caa02 = util::playfxontag(fieldname, level._effect[#"fx8_blightfather_vomit_craft_purchase"], self, "tag_origin");
-        return;
+        break;
     default:
         if (isdefined(self.var_32caa02)) {
             stopfx(fieldname, self.var_32caa02);
@@ -347,7 +347,7 @@ function function_cf88b888() {
         self function_78233d29("rob_zm_viewarm_vomit", "", "Threshold", var_72840ba5);
         if (var_72840ba5 >= 1) {
             var_893a571 = 1;
-            return;
+            break;
         }
         wait(0.1);
     }
@@ -370,7 +370,7 @@ function function_1ca2497b() {
         if (var_72840ba5 <= 0) {
             self stoprenderoverridebundle("rob_zm_viewarm_vomit");
             var_e935ecce = 1;
-            return;
+            break;
         }
         wait(0.1);
     }

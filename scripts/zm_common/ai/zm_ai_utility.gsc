@@ -171,9 +171,9 @@ function private function_a19d7104(settingsbundle) {
 // Size: 0x7a
 function function_94d76123(weapon) {
     if (isdefined(self.var_76167463) && isdefined(weapon) && isdefined(level.var_532264f5) && isdefined(level.var_532264f5[self.var_76167463]) && isdefined(level.var_532264f5[self.var_76167463][weapon.name])) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_ai_utility/zm_ai_utility
@@ -424,45 +424,45 @@ function function_5540d5f9(params) {
 // Size: 0x1a6
 function function_db610082() {
     if (!isdefined(self)) {
-        return 0;
+        return false;
     }
     if (!isalive(self)) {
-        return 0;
+        return false;
     }
     if (self.archetype !== #"zombie") {
-        return 0;
+        return false;
     }
     if (is_true(self.aat_turned)) {
-        return 0;
+        return false;
     }
     if (is_true(self.missinglegs)) {
-        return 0;
+        return false;
     }
     if (is_true(self.knockdown)) {
-        return 0;
+        return false;
     }
     if (gibserverutils::isgibbed(self, 56)) {
-        return 0;
+        return false;
     }
     if (isdefined(self.traversal) || self function_dd070839()) {
-        return 0;
+        return false;
     }
     if (is_true(self.var_69a981e6)) {
-        return 0;
+        return false;
     }
     if (is_true(self.barricade_enter)) {
-        return 0;
+        return false;
     }
     if (is_true(self.is_leaping)) {
-        return 0;
+        return false;
     }
     if (!is_true(self.completed_emerging_into_playable_area)) {
-        return 0;
+        return false;
     }
     if (!is_true(self zm_utility::in_playable_area())) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_ai_utility/zm_ai_utility
@@ -574,7 +574,7 @@ function make_zombie_target(entity) {
         /#
             iprintlnbold("<unknown string>" + entity getentitynumber() + "<unknown string>");
         #/
-        return 0;
+        return false;
     }
     function_1eaaceab(level.zombie_targets);
     arrayremovevalue(level.zombie_targets, undefined);
@@ -582,7 +582,7 @@ function make_zombie_target(entity) {
         /#
             iprintlnbold("<unknown string>" + entity getentitynumber() + "<unknown string>");
         #/
-        return 0;
+        return false;
     }
     if (!isdefined(entity.am_i_valid)) {
         entity.am_i_valid = 1;
@@ -593,7 +593,7 @@ function make_zombie_target(entity) {
         level.zombie_targets = array(level.zombie_targets);
     }
     level.zombie_targets[level.zombie_targets.size] = entity;
-    return 1;
+    return true;
 }
 
 // Namespace zm_ai_utility/zm_ai_utility
@@ -613,10 +613,10 @@ function remove_zombie_target(entity) {
         /#
             iprintlnbold("<unknown string>" + entity getentitynumber() + "<unknown string>");
         #/
-        return 0;
+        return false;
     }
     arrayremovevalue(level.zombie_targets, entity);
-    return 1;
+    return true;
 }
 
 // Namespace zm_ai_utility/zm_ai_utility
@@ -665,12 +665,12 @@ function function_991333ce(entity, ai_array) {
 // Size: 0x92
 function private function_f1b557c6() {
     if (self isplayinganimscripted()) {
-        return 0;
+        return false;
     }
     if (isactor(self) && (self.isarriving || self function_dd070839() || self asmistransdecrunning() || self asmistransitionrunning())) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_ai_utility/zm_ai_utility
@@ -716,10 +716,10 @@ function function_54054394(entity) {
     }
     foreach (volume in level.var_5fa2f970) {
         if (entity istouching(volume)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_ai_utility/zm_ai_utility
@@ -729,9 +729,9 @@ function function_54054394(entity) {
 function hashelmet(hitloc, enemy) {
     weakpoint = namespace_81245006::function_3131f5dd(enemy, hitloc, 1);
     if (isdefined(weakpoint) && weakpoint.type === #"armor" && weakpoint.var_f371ebb0 === "helmet" && namespace_81245006::function_f29756fe(weakpoint) !== 3) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_ai_utility/zm_ai_utility

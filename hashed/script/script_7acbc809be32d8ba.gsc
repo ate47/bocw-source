@@ -139,7 +139,7 @@ function watch_mega_barrel_mag_out_notetrack(localclientnum, weapon) {
     var_17b7891d = "51273cd61d1e6f07" + "watch_mega_barrel_mag_out_notetrack";
     self notify(var_17b7891d);
     self endon(var_17b7891d);
-    while (1) {
+    while (true) {
         self waittillmatch({#notetrack:"mag_out"}, #"notetrack");
         self.var_960d365a = 1;
         if (isdefined(self.var_49d95be6)) {
@@ -170,7 +170,7 @@ function watch_mega_barrel_mag_throw_notetrack(localclientnum, weapon) {
     var_17b7891d = "bb81bf554d144e6" + "watch_mega_barrel_mag_throw_notetrack";
     self notify(var_17b7891d);
     self endon(var_17b7891d);
-    while (1) {
+    while (true) {
         self waittillmatch({#notetrack:"mag_thrown"}, #"notetrack");
         currentammostock = self getweaponammostock(localclientnum, weapon);
         var_d678ba0b = getweaponammoclip(localclientnum, weapon);
@@ -202,7 +202,7 @@ function watch_mega_barrel_mag_in_notetrack(*localclientnum, *weapon) {
     var_17b7891d = "72c40ea1ad927740" + "watch_mega_barrel_mag_in_notetrack";
     self notify(var_17b7891d);
     self endon(var_17b7891d);
-    while (1) {
+    while (true) {
         self waittillmatch({#notetrack:"mag_in"}, #"notetrack");
         self.var_960d365a = 0;
     }
@@ -217,7 +217,7 @@ function watch_mega_barrel_ammo_change(localclientnum, weapon) {
     var_17b7891d = "54ae0da6d02ad59f" + "watch_mega_barrel_ammo_change";
     self notify(var_17b7891d);
     self endon(var_17b7891d);
-    while (1) {
+    while (true) {
         if (!is_true(self.var_960d365a)) {
             var_a1796c91 = self function_6fff5014(localclientnum, weapon);
             if (isdefined(self.var_49d95be6)) {
@@ -285,12 +285,12 @@ function function_88a55cb8(localclientnum, weapon, var_bb894354 = 0) {
     switch (weapon.name) {
     case #"hash_7bf7797b85b0089c":
         self function_d64a2c25(localclientnum, var_bb894354 > 0, 0);
-        return;
+        break;
     case #"hash_209d5c516bfdf9e5":
         self function_d64a2c25(localclientnum, var_bb894354 > 0, 1);
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 
@@ -333,10 +333,10 @@ function function_3efc58e4(weapon) {
         case #"hash_2d0c14dce5a6ebed":
         case #"hash_386308ed987052a4":
         case #"hash_7bf7797b85b0089c":
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_1e7573ec/namespace_1e7573ec

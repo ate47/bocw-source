@@ -194,7 +194,7 @@ function on_tripwire_spawn(watcher, player) {
 function function_15566346(ent) {
     self endon(#"death");
     oldpos = ent.origin;
-    while (1) {
+    while (true) {
         if (!isdefined(ent)) {
             return;
         }
@@ -286,9 +286,9 @@ function function_6c66b650() {
 // Size: 0x2e
 function function_a4b3da97(trace) {
     if (trace[#"fraction"] < 1) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace gadget_tripwire/gadget_tripwire
@@ -332,15 +332,15 @@ function function_55c50f15() {
 // Size: 0x5e
 function function_55e95173(hitent) {
     if (sessionmodeiswarzonegame()) {
-        return 0;
+        return false;
     }
     if (!isdefined(hitent)) {
-        return 0;
+        return false;
     }
     if (util::function_fbce7263(self.team, hitent.team)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace gadget_tripwire/gadget_tripwire
@@ -349,37 +349,37 @@ function function_55e95173(hitent) {
 // Size: 0x248
 function function_430b5b99(entity, tripmine) {
     if (sessionmodeiswarzonegame() && is_true(self.var_c2f0f6da) && !isdefined(entity)) {
-        return 1;
+        return true;
     }
     if (!isdefined(entity)) {
-        return 0;
+        return false;
     }
     if (!util::function_fbce7263(entity.team, tripmine.team)) {
-        return 0;
+        return false;
     }
     if (!isplayer(entity) && !isvehicle(entity) && !isai(entity) && !entity ismovingplatform() && !is_true(entity.var_4f564337)) {
-        return 0;
+        return false;
     }
     if (isvehicle(entity)) {
         if (entity isremotecontrol()) {
             owner = entity getvehicleowner();
             if (!isdefined(owner)) {
-                return 0;
+                return false;
             }
         } else {
             owner = entity getseatoccupant(0);
         }
         if (isplayer(owner) && !util::function_fbce7263(owner.team, tripmine.team)) {
-            return 0;
+            return false;
         }
     }
     if (isplayer(entity) && entity hasperk(#"specialty_nottargetedbytripwire")) {
-        return 0;
+        return false;
     }
     if (isplayer(entity) && entity isjuking()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace gadget_tripwire/gadget_tripwire
@@ -388,18 +388,18 @@ function function_430b5b99(entity, tripmine) {
 // Size: 0xaa
 function function_5b8dea90(player) {
     if (!player isgrappling()) {
-        return 0;
+        return false;
     }
     if (!util::function_fbce7263(player.team, self.team)) {
-        return 0;
+        return false;
     }
     if (player hasperk(#"specialty_nottargetedbytripwire")) {
-        return 0;
+        return false;
     }
     if (distancesquared(player.origin, player.prev_origin) == 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace gadget_tripwire/gadget_tripwire
@@ -443,7 +443,7 @@ function function_d334c3fa(endpoint) {
 function function_15de8daf() {
     self endoncallback(&function_84101bb5, #"death");
     self.var_d33355ff = [];
-    while (1) {
+    while (true) {
         if (self.var_c2f0f6da) {
             foreach (tripwire in self.var_5cbe5bde) {
                 if (!isdefined(tripwire)) {
@@ -487,7 +487,7 @@ function function_15de8daf() {
             if (function_d334c3fa(endpos)) {
                 self thread function_9e546fb3(undefined, self.weapon, undefined, undefined);
                 dotrace = 0;
-                return;
+                break;
             }
             if (dotrace) {
                 trace = beamtrace(self.var_db7f2def - self.hitnormal * 5, endpos, 1, self);
@@ -711,7 +711,7 @@ function function_7a905654(watcher) {
     self.health = self.maxhealth;
     self.damagetaken = 0;
     attacker = undefined;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
         attacker = waitresult.attacker;

@@ -87,7 +87,7 @@ function function_659d1778(attacker) {
     var_9a4ca881 = gettime() + 5000;
     var_7e6e7f9f = getweapon(#"tear_gas");
     params = getstatuseffect("dot_toxic_cloud");
-    while (1) {
+    while (true) {
         alive_players = function_a1ef346b(undefined, self.origin, 110);
         foreach (player in alive_players) {
             if (player laststand::player_is_in_laststand() === 0) {

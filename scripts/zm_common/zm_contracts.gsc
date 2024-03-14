@@ -154,20 +154,20 @@ function on_round_end() {
 // Size: 0xc0
 function can_process_contracts() {
     if (getdvarint(#"contracts_enabled", 0) == 0) {
-        return 0;
+        return false;
     }
     if (getdvarint(#"contracts_enabled_zm", 1) == 0) {
-        return 0;
+        return false;
     }
     /#
         if (getdvarint(#"hash_4cc2d974d4e9d2d6", 0) > 0) {
-            return 1;
+            return true;
         }
     #/
     if (!level.onlinegame || is_true(level.var_aa2d5655)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace contracts/zm_contracts
@@ -327,7 +327,7 @@ function function_ac03f21e() {
 function function_677a89c8() {
     level endon(#"hash_786860db94bcc0f3");
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         s_notify = undefined;
         s_notify = self waittill(#"weapon_change");
         w_current = s_notify.weapon;
@@ -345,7 +345,7 @@ function function_677a89c8() {
 function function_9d5cd9ee() {
     self endoncallback(&function_1395d508, #"disconnect", #"destroy_riotshield");
     var_c16ab86f = 0;
-    while (1) {
+    while (true) {
         level waittill(#"start_of_round");
         if (!is_true(self.hasriotshield)) {
             var_c16ab86f = 0;
@@ -384,7 +384,7 @@ function function_51db541e() {
     self endon(#"disconnect");
     var_c16ab86f = 0;
     var_b90fea5 = 1;
-    while (1) {
+    while (true) {
         level waittill(#"start_of_round");
         if (is_true(var_b90fea5)) {
             var_b90fea5 = 0;
@@ -419,7 +419,7 @@ function function_51db541e() {
 // Size: 0xb6
 function function_1d4fae71() {
     self endon(#"disconnect", #"hash_4bf9f2755fe74a0d");
-    while (1) {
+    while (true) {
         zone_name = #"";
         if (isdefined(level.var_27028b8e)) {
             zone_name = [[ level.var_27028b8e ]](self zm_zonemgr::get_player_zone());

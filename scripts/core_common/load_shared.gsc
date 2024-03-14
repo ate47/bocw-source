@@ -112,7 +112,7 @@ function private function_70a657d8() {
 // Size: 0x48
 function count_network_frames() {
     level.network_frame = 0;
-    while (1) {
+    while (true) {
         util::wait_network_frame();
         level.network_frame++;
         level.var_58bc5d04 = gettime();
@@ -124,7 +124,7 @@ function count_network_frames() {
 // Checksum 0x85167153, Offset: 0x7b8
 // Size: 0x22
 function keep_time() {
-    while (1) {
+    while (true) {
         level.time = gettime();
         waitframe(1);
     }
@@ -136,7 +136,7 @@ function keep_time() {
 // Size: 0x148
 function level_notify_listener() {
     /#
-        while (1) {
+        while (true) {
             val = getdvarstring(#"level_notify");
             if (val != "<unknown string>") {
                 toks = strtok(val, "<unknown string>");
@@ -160,7 +160,7 @@ function level_notify_listener() {
 // Size: 0x98
 function client_notify_listener() {
     /#
-        while (1) {
+        while (true) {
             val = getdvarstring(#"client_notify");
             if (val != "<unknown string>") {
                 clientnotify(val);
@@ -177,7 +177,7 @@ function client_notify_listener() {
 // Size: 0x48
 function save_checkpoint_on_notify() {
     /#
-        while (1) {
+        while (true) {
             level waittill(#"save");
             checkpointcreate();
             checkpointcommit();
@@ -191,7 +191,7 @@ function save_checkpoint_on_notify() {
 // Size: 0x68
 function load_checkpoint_on_notify() {
     /#
-        while (1) {
+        while (true) {
             level waittill(#"load");
             if (isdefined(level.var_36a4cf75)) {
                 [[ level.var_36a4cf75 ]]();
@@ -273,7 +273,7 @@ function badplace_think(badplace) {
 // Checksum 0x6b8fba31, Offset: 0xe60
 // Size: 0x58
 function playerdamagerumble() {
-    while (1) {
+    while (true) {
         self waittill(#"damage");
         if (isdefined(self.specialdamage)) {
             continue;
@@ -307,7 +307,7 @@ function map_is_early_in_the_game() {
 function player_throwgrenade_timer() {
     self endon(#"death", #"disconnect");
     self.lastgrenadetime = 0;
-    while (1) {
+    while (true) {
         while (!self isthrowinggrenade()) {
             wait(0.05);
         }
@@ -335,7 +335,7 @@ function water_think() {
     level.depth_allow_prone = 8;
     level.depth_allow_crouch = 33;
     level.depth_allow_stand = 50;
-    while (1) {
+    while (true) {
         waitframe(1);
         players = getplayers();
         for (i = 0; i < players.size; i++) {
@@ -351,7 +351,7 @@ function water_think() {
         if (!isplayer(other)) {
             continue;
         }
-        while (1) {
+        while (true) {
             players = getplayers();
             players_in_water_count = 0;
             for (i = 0; i < players.size; i++) {
@@ -460,7 +460,7 @@ function all_players_spawned() {
     level flag::wait_till("all_players_connected");
     waittillframeend();
     level.host = util::gethostplayer();
-    while (1) {
+    while (true) {
         if (getnumconnectedplayers() == 0) {
             waitframe(1);
             continue;
@@ -492,7 +492,7 @@ function shock_onpain() {
     if (getdvarstring(#"blurpain") == "") {
         setdvar(#"blurpain", "on");
     }
-    while (1) {
+    while (true) {
         oldhealth = self.health;
         waitresult = undefined;
         waitresult = self waittill(#"damage");
@@ -639,7 +639,7 @@ function art_review() {
         }
         level.prematchperiod = 0;
         level waittill(#"forever");
-        return;
+        break;
     }
 }
 

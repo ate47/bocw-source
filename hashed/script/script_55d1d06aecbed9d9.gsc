@@ -120,47 +120,47 @@ function function_29307fae(struct) {
 // Size: 0x1d4
 function function_1cbcfab5(player) {
     if (!isalive(player)) {
-        return 0;
+        return false;
     }
     if (player laststand::player_is_in_laststand()) {
-        return 0;
+        return false;
     }
     if (is_true(player.is_reviving_any)) {
-        return 0;
+        return false;
     }
     if (is_true(player.var_b895a3ff)) {
-        return 0;
+        return false;
     }
     if (player function_104d7b4d()) {
-        return 0;
+        return false;
     }
     if (player isplayerunderwater()) {
-        return 0;
+        return false;
     }
     if (!player isonground()) {
-        return 0;
+        return false;
     }
     if (player getstance() == "prone") {
         self sethintstring(#"hash_10249865c7d6aeb8");
-        return 0;
+        return false;
     }
     if (player isswitchingweapons()) {
-        return 0;
+        return false;
     }
     currentweapon = player getcurrentweapon();
     if (isdefined(currentweapon) && currentweapon != level.weaponnone) {
         if (currentweapon.isdualwield) {
             self sethintstring(#"hash_7837638f250e6186");
-            return 0;
+            return false;
         }
         if (killstreaks::is_killstreak_weapon(currentweapon)) {
             self sethintstring(#"hash_189973fb11ef10ea");
-            return 0;
+            return false;
         }
     } else {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_64b2e5a2/namespace_64b2e5a2
@@ -243,9 +243,9 @@ function fake_physicslaunch(start_pos, target_pos, power) {
 function function_86edc85c(target_pos, maxwait = 2) {
     self endon(#"death");
     var_1dd010d6 = gettime();
-    while (1) {
+    while (true) {
         if (self.origin[2] < target_pos[2] || float(gettime() - var_1dd010d6) / 1000 > maxwait) {
-            return;
+            break;
         }
         waitframe(1);
     }

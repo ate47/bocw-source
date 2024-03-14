@@ -159,9 +159,9 @@ function function_d92e3c5a(attacker, ai_zone, itemlist, var_e927082a = 0, n_powe
 // Size: 0x38
 function private function_1979a72e(pos) {
     if (isdefined(arraygetclosest(pos, level.var_288e4854, 4))) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_7da6f8ca/namespace_7da6f8ca

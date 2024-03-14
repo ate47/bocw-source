@@ -117,7 +117,7 @@ function function_802adb65(var_f90fc07b) {
     }
     arrayremovevalue(var_f90fc07b, undefined);
     level.var_f90fc07b = var_f90fc07b;
-    while (1) {
+    while (true) {
         players = getplayers();
         foreach (player in players) {
             if (!isdefined(player)) {
@@ -158,7 +158,7 @@ function function_376ddafd(origin, radius) {
 function private function_c1e8a50a(origin, radius) {
     radiussq = radius * radius;
     level.var_48f13f65 = {#radiussq:radiussq, #origin:origin};
-    while (1) {
+    while (true) {
         players = getplayers();
         foreach (player in players) {
             if (!isdefined(player)) {
@@ -213,7 +213,7 @@ function function_d298702c(var_f90fc07b) {
     }
     arrayremovevalue(var_f90fc07b, undefined);
     level.var_2734aa30 = var_f90fc07b;
-    while (1) {
+    while (true) {
         if (isdefined(level.var_40225902)) {
             arrayremovevalue(level.var_40225902, undefined);
             foreach (vehicle in level.var_40225902) {
@@ -262,7 +262,7 @@ function function_d298702c(var_f90fc07b) {
 // Size: 0x20
 function isoutofbounds() {
     if (!isdefined(self.oob_start_time)) {
-        return 0;
+        return false;
     }
     return self.oob_start_time != -1;
 }
@@ -303,20 +303,20 @@ function function_323d32db() {
 // Size: 0xf2
 function function_7aac4469() {
     if (getdvarint(#"hash_627b0c790443f8e5", 0)) {
-        return 1;
+        return true;
     }
     if (!isdefined(level.var_2734aa30)) {
-        return 1;
+        return true;
     }
     foreach (trigger in level.var_2734aa30) {
         if (!trigger istriggerenabled()) {
             continue;
         }
         if (self istouching(trigger)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace oob/oob
@@ -354,7 +354,7 @@ function istouchinganyoobtrigger() {
 // Size: 0x102
 function chr_party(point, var_b158c6d8 = (0, 0, 0)) {
     if (!isdefined(level.oob_triggers)) {
-        return 0;
+        return false;
     }
     arrayremovevalue(level.oob_triggers, undefined);
     foreach (trigger in level.oob_triggers) {
@@ -362,10 +362,10 @@ function chr_party(point, var_b158c6d8 = (0, 0, 0)) {
             continue;
         }
         if (istouching(point, trigger, var_b158c6d8)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace oob/oob
@@ -382,16 +382,16 @@ function function_1a0f9f54(point) {
 // Size: 0xdc
 function function_b347269d() {
     if (getdvarint(#"hash_627b0c790443f8e5", 0)) {
-        return 1;
+        return true;
     }
     if (!isstruct(level.var_48f13f65)) {
-        return 1;
+        return true;
     }
     if (isplayer(self) && function_65b20()) {
-        return 1;
+        return true;
     }
     if (self.var_e28b2990 === 1) {
-        return 1;
+        return true;
     }
     return distance2dsquared(self.origin, level.var_48f13f65.origin) < level.var_48f13f65.radiussq;
 }
@@ -510,20 +510,20 @@ function enter_oob(entity) {
 // Size: 0xc2
 function function_65b20() {
     if (self scene::is_igc_active()) {
-        return 1;
+        return true;
     }
     if (is_true(self.oobdisabled)) {
-        return 1;
+        return true;
     }
     if (level flag::exists("draft_complete") && !level flag::get("draft_complete")) {
-        return 1;
+        return true;
     }
     /#
         if (getdvarint(#"hash_2b58bf75b6021e78", 0) != 0) {
-            return 1;
+            return true;
         }
     #/
-    return 0;
+    return false;
 }
 
 // Namespace oob/oob
@@ -634,7 +634,7 @@ function watchforleave(entity) {
     self endon(#"oob_exit", #"disconnect");
     entity endon(#"death");
     var_e09617 = self function_54e69ee4();
-    while (1) {
+    while (true) {
         if ((is_true(entity.var_e28b2990) && !entity function_7aac4469() || entity istouchinganyoobtrigger() || !entity function_323d32db() || !entity function_b347269d()) && (isplayer(entity) || isplayer(self) && self isremotecontrolling() || entity.var_c5d65381 === 1)) {
             updatevisualeffects(entity);
             cur_time = gettime();

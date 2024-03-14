@@ -36,7 +36,7 @@ function spawnpoint_debug() {
         adddebugcommand("<unknown string>" + "<unknown string>" + "<unknown string>");
         adddebugcommand("<unknown string>");
         adddebugcommand("<unknown string>");
-        while (1) {
+        while (true) {
             spawnsystem_debug_command = getdvarstring(#"spawnsystem_debug_command");
             switch (spawnsystem_debug_command) {
             case #"next_best":
@@ -131,7 +131,7 @@ function function_48a6b85() {
         level.var_94f4ca81.var_1fde6598 = 0;
         level.var_94f4ca81.var_64799f7 = 0;
         var_f94a23 = 0;
-        while (1) {
+        while (true) {
             self setactionslot(3, "<unknown string>");
             self setactionslot(4, "<unknown string>");
             if (!dpad_up && (self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>"))) {
@@ -157,7 +157,7 @@ function function_48a6b85() {
                 dpad_down = 0;
             }
             if (!dpad_left && (self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>"))) {
-                while (1) {
+                while (true) {
                     level.var_94f4ca81.var_64799f7--;
                     if (level.var_94f4ca81.var_64799f7 < 0) {
                         level.var_94f4ca81.var_64799f7 = level.var_94f4ca81.dataset[level.var_94f4ca81.var_1fde6598].spawns.size - 1;
@@ -172,7 +172,7 @@ function function_48a6b85() {
                 dpad_left = 0;
             }
             if (!dpad_right && (self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>"))) {
-                while (1) {
+                while (true) {
                     level.var_94f4ca81.var_64799f7++;
                     if (level.var_94f4ca81.var_64799f7 >= level.var_94f4ca81.dataset[level.var_94f4ca81.var_1fde6598].spawns.size) {
                         level.var_94f4ca81.var_64799f7 = 0;

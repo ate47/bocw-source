@@ -298,7 +298,7 @@ function _setplayermomentum(player, momentum) {
 function setplayermomentumdebug() {
     /#
         setdvar(#"sv_momentumpercent", 0);
-        while (1) {
+        while (true) {
             wait(1);
             var_2227c36c = getdvarfloat(#"sv_momentumpercent", 0);
             if (var_2227c36c != 0) {
@@ -454,14 +454,14 @@ function gethighestteamscoreteam() {
 // Size: 0xaa
 function areteamarraysequal(teamsa, teamsb) {
     if (teamsa.size != teamsb.size) {
-        return 0;
+        return false;
     }
     foreach (team in teamsa) {
         if (!isdefined(teamsb[team])) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace globallogic_score/globallogic_score
@@ -658,7 +658,7 @@ function trackattackeedeath(attackername, rank, xp, prestige, xuid) {
 // Checksum 0xffb0534, Offset: 0x26e0
 // Size: 0x6
 function default_iskillboosting() {
-    return 0;
+    return false;
 }
 
 // Namespace globallogic_score/globallogic_score

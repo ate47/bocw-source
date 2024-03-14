@@ -572,7 +572,7 @@ function function_b104a7cb() {
         level.var_26340887 = 1;
         level endon(#"hash_f214fb1df20b46b");
         record = getdvar(#"recorder_enablerec", 0);
-        while (1) {
+        while (true) {
             foreach (player in function_a1ef346b()) {
                 color = (0, 1, 1);
                 position = player.last_valid_position;
@@ -637,7 +637,7 @@ function function_37c30a3b() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         level endon(#"game_ended", #"hash_38fcca4f222bb813");
-        while (1) {
+        while (true) {
             waitframe(1);
             if (!isdefined(level.var_29cf6901)) {
                 continue;
@@ -740,7 +740,7 @@ function private function_51403488() {
     /#
         level notify(#"hash_275c4bf3f697b9e");
         level endon(#"hash_275c4bf3f697b9e", #"end_game", #"game_ended");
-        while (1) {
+        while (true) {
             player = getplayers()[0];
             if (!isdefined(player)) {
                 return;
@@ -778,7 +778,7 @@ function private print_zombie_counts() {
     /#
         level notify(#"hash_87534d41fedbdf9");
         level endon(#"hash_87534d41fedbdf9");
-        while (1) {
+        while (true) {
             var_c708e6e1 = 120;
             var_6a432250 = [];
             a_ai = getaiarray();
@@ -833,7 +833,7 @@ function private function_e9939aa7() {
     /#
         self endon(#"death");
         level endon(#"hash_339fb98e940fbaf6");
-        while (1) {
+        while (true) {
             waitframe(1);
             record3dtext(is_true(self.var_1fa24724) ? "<unknown string>" : "<unknown string>", self.origin, (0, 1, 0), "<unknown string>", self);
         }
@@ -928,7 +928,7 @@ function function_afb25532(str_type, b_enable) {
         level notify("<unknown string>" + str_type);
         level endon("<unknown string>" + str_type, #"end_game", #"game_ended");
         if (b_enable) {
-            while (1) {
+            while (true) {
                 player = getplayers()[0];
                 if (!isdefined(player)) {
                     return;
@@ -1289,7 +1289,7 @@ function private function_df5be8b2() {
     /#
         self endon(#"death", #"disconnect");
         level endon(#"hash_624d34392463b628");
-        while (1) {
+        while (true) {
             view_pos = self getplayercamerapos();
             dir = anglestoforward(self getplayerangles()) * 500;
             end_pos = view_pos + dir;
@@ -1329,7 +1329,7 @@ function function_254bafc6() {
         }
         level.var_d9a2ea61 = !level.var_d9a2ea61;
         if (level.var_d9a2ea61) {
-            while (1) {
+            while (true) {
                 foreach (volume in level.var_afa5478b) {
                     foreach (node in volume.nodes) {
                         recordsphere(node.origin, 10, (1, 0, 0));

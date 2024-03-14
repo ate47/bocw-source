@@ -163,17 +163,17 @@ function function_1b3fc8e4() {
 // Size: 0xec
 function private function_d4f5b993(entity, eventname) {
     if (!isdefined(entity.favoriteenemy)) {
-        return 0;
+        return false;
     }
     var_b3a11ca1 = blackboard::getblackboardevents(eventname);
     if (isdefined(var_b3a11ca1) && var_b3a11ca1.size) {
         foreach (var_8d7c592b in var_b3a11ca1) {
             if (var_8d7c592b.data.favoriteenemy === entity.favoriteenemy) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_514c8ebc/namespace_514c8ebc
@@ -238,12 +238,12 @@ function private function_4b8e0aab(entity) {
 // Size: 0x9a
 function function_7f34a57c(entity) {
     if (function_697a9b7f(entity) && function_4b8e0aab(entity) && function_d4f5b993(entity, "geg_spear_attack")) {
-        return 1;
+        return true;
     }
     if (isdefined(entity.enemy) && !entity haspath()) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_514c8ebc/namespace_514c8ebc
@@ -329,21 +329,21 @@ function private function_a1fce938() {
 // Size: 0xc2
 function private function_fc4cc729(enemy, origin) {
     if (!isalive(enemy)) {
-        return 0;
+        return false;
     }
     if (is_true(enemy.knockdown)) {
-        return 0;
+        return false;
     }
     if (gibserverutils::isgibbed(enemy, 384)) {
-        return 0;
+        return false;
     }
     if (enemy.archetype === #"gegenees") {
-        return 0;
+        return false;
     }
     if (distancesquared(enemy.origin, origin) > 10000) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_514c8ebc/namespace_514c8ebc
@@ -412,7 +412,7 @@ function private function_43104218(entity) {
 // Checksum 0xba1eee9e, Offset: 0x2168
 // Size: 0xe
 function private function_e0b648bb(*entity) {
-    return 0;
+    return false;
 }
 
 // Namespace namespace_514c8ebc/namespace_514c8ebc
@@ -421,9 +421,9 @@ function private function_e0b648bb(*entity) {
 // Size: 0x2e
 function private function_d344063a(entity) {
     if (is_true(entity.var_d64b7af0)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_514c8ebc/namespace_514c8ebc
@@ -463,15 +463,15 @@ function private function_75db4aba(entity) {
         }
     }
     if (!var_98c55679) {
-        return 0;
+        return false;
     }
     if (isdefined(entity.enemy) && !entity haspath()) {
-        return 1;
+        return true;
     }
     if (function_697a9b7f(entity, 300, 1200) && function_180db9a7(entity) && function_d4f5b993(entity, "geg_shield_attack")) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_514c8ebc/namespace_514c8ebc
@@ -535,9 +535,9 @@ function private function_d82de95f(entity) {
 function private function_60164697() {
     self endon(#"death", #"disconnect");
     time = gettime() + 2000;
-    while (1) {
+    while (true) {
         if (gettime() > time) {
-            return;
+            break;
         }
         self playrumbleonentity("damage_heavy");
         waitframe(1);
@@ -688,13 +688,13 @@ function private function_a953d80d(entity) {
 // Size: 0x188
 function private function_3d752709(enemy, target) {
     if (is_true(enemy.knockdown)) {
-        return 0;
+        return false;
     }
     if (gibserverutils::isgibbed(enemy, 384)) {
-        return 0;
+        return false;
     }
     if (distancesquared(enemy.origin, target.origin) > function_a3f6cdac(self ai::function_9139c839().var_ef908ac8)) {
-        return 0;
+        return false;
     }
     facingvec = anglestoforward(target.angles);
     enemyvec = enemy.origin - target.origin;
@@ -704,9 +704,9 @@ function private function_3d752709(enemy, target) {
     var_c2ee8451 = vectornormalize(var_c2ee8451);
     var_34e02165 = vectordot(var_c2ee8451, var_3e3c8075);
     if (var_34e02165 < 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_514c8ebc/namespace_514c8ebc

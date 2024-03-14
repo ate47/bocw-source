@@ -148,41 +148,41 @@ function function_9d8b22d8(entity, throwifpossible = 0, var_f06df42 = 1) {
         }
     #/
     if (is_true(level.aidisablegrenadethrows)) {
-        return 0;
+        return false;
     }
     if (gettime() == entity.birthtime) {
-        return 0;
+        return false;
     }
     if (var_f06df42) {
         if (isdefined(level.var_7f6cef33) && isdefined(level.var_7f6cef33[entity.team])) {
             var_60777597 = gettime() - level.var_7f6cef33[entity.team];
             if (var_60777597 < 3000) {
-                return 0;
+                return false;
             }
         }
     }
     if (!isdefined(entity.var_38754eac)) {
         if (!isdefined(entity.enemy)) {
-            return 0;
+            return false;
         }
         if (!issentient(entity.enemy)) {
-            return 0;
+            return false;
         }
         if (isvehicle(entity.enemy) && isairborne(entity.enemy)) {
-            return 0;
+            return false;
         }
         if (isplayer(entity.enemy) && entity.enemy laststand::player_is_in_laststand()) {
-            return 0;
+            return false;
         }
         if (isdefined(entity.var_b28feab5) && gettime() < entity.var_b28feab5) {
-            return 0;
+            return false;
         }
     }
     if (isdefined(entity.grenadeammo) && entity.grenadeammo <= 0) {
-        return 0;
+        return false;
     }
     if (ai::hasaiattribute(entity, "useGrenades") && !ai::getaiattribute(entity, "useGrenades")) {
-        return 0;
+        return false;
     }
     entityangles = entity.angles;
     if (function_4387243d(entity)) {
@@ -214,11 +214,11 @@ function function_9d8b22d8(entity, throwifpossible = 0, var_f06df42 = 1) {
         var_b3989cb8 = 60;
         var_7f68850f = cos(var_b3989cb8);
         if (var_bdfbce20 < var_7f68850f) {
-            return 0;
+            return false;
         }
         if (var_bdfbce20 < var_eb57f968) {
             if (isdefined(entity.var_38754eac)) {
-                return 0;
+                return false;
             }
             var_d65a8f8b = vectortoangles(totarget);
             var_507685eb = angleclamp180(var_d65a8f8b[1] - entityangles[1]);
@@ -229,7 +229,7 @@ function function_9d8b22d8(entity, throwifpossible = 0, var_f06df42 = 1) {
             var_4748f6aa = entity.origin + var_af743256 * var_cc358029;
         }
     } else if (var_bdfbce20 < var_eb57f968) {
-        return 0;
+        return false;
     }
     if (!throwifpossible) {
         friendlyplayers = getplayers(entity.team);
@@ -237,44 +237,44 @@ function function_9d8b22d8(entity, throwifpossible = 0, var_f06df42 = 1) {
         if (isdefined(friendlyplayers) && friendlyplayers.size) {
             foreach (player in friendlyplayers) {
                 if (distancesquared(var_4748f6aa, player.origin) <= 640000) {
-                    return 0;
+                    return false;
                 }
             }
         }
         if (isdefined(allplayers) && allplayers.size) {
             foreach (player in allplayers) {
                 if (isdefined(player) && player laststand::player_is_in_laststand() && distancesquared(var_4748f6aa, player.origin) <= 640000) {
-                    return 0;
+                    return false;
                 }
             }
         }
         grenadethrowinfos = blackboard::getblackboardevents("self_grenade_throw");
         foreach (grenadethrowinfo in grenadethrowinfos) {
             if (grenadethrowinfo.data.grenadethrower == entity) {
-                return 0;
+                return false;
             }
         }
         grenadethrowinfos = blackboard::getblackboardevents("team_grenade_throw");
         foreach (grenadethrowinfo in grenadethrowinfos) {
             if (grenadethrowinfo.data.grenadethrowerteam === entity.team) {
-                return 0;
+                return false;
             }
         }
         grenadethrowinfos = blackboard::getblackboardevents("target_grenade_throw");
         foreach (grenadethrowinfo in grenadethrowinfos) {
             if (isdefined(grenadethrowinfo.data.grenadethrownat) && isalive(grenadethrowinfo.data.grenadethrownat)) {
                 if (grenadethrowinfo.data.grenadethrownat == entity.enemy) {
-                    return 0;
+                    return false;
                 }
                 if (isdefined(grenadethrowinfo.data.grenadethrownposition) && distancesquared(grenadethrowinfo.data.grenadethrownposition, var_4748f6aa) <= 1440000) {
-                    return 0;
+                    return false;
                 }
             }
         }
     }
     throw_dist = distance2dsquared(entity.origin, var_4748f6aa);
     if (throw_dist < function_a3f6cdac(500) || throw_dist > function_a3f6cdac(1250)) {
-        return 0;
+        return false;
     }
     arm_offset = undefined;
     if (isdefined(entity.var_ce7a311e)) {
@@ -284,18 +284,18 @@ function function_9d8b22d8(entity, throwifpossible = 0, var_f06df42 = 1) {
     }
     throw_vel = entity canthrowgrenadepos(arm_offset, var_4748f6aa);
     if (!isdefined(throw_vel)) {
-        return 0;
+        return false;
     }
     var_376e55ae = vectordot(vectornormalize(throw_vel), (0, 0, 1));
     if (var_376e55ae > 0.8192) {
-        return 0;
+        return false;
     }
     entity.grenadethrowposition = var_4748f6aa;
     if (var_f06df42) {
         level.var_7f6cef33[entity.team] = gettime();
     }
     entity.var_8a3fd1b2 = entity.health;
-    return 1;
+    return true;
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
@@ -305,10 +305,10 @@ function function_9d8b22d8(entity, throwifpossible = 0, var_f06df42 = 1) {
 function private function_4387243d(entity) {
     if (aiutility::isatcoverstrictcondition(entity)) {
         if (is_true(entity.var_b8cc25c) && isdefined(entity.var_342553bc) && entity.var_342553bc !== 1) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
@@ -400,9 +400,9 @@ function private covercleanuptothrowgrenade(entity) {
 // Size: 0x24
 function function_1fa73a96(entity) {
     if (isdefined(entity.preparegrenadeammo)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
@@ -433,9 +433,9 @@ function private canchangestanceatcovercondition(entity) {
 // Size: 0x2e
 function private shouldreturntosuppressedcover(entity) {
     if (!entity isatgoal()) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
@@ -444,7 +444,7 @@ function private shouldreturntosuppressedcover(entity) {
 // Size: 0x222
 function private shouldreturntocovercondition(entity) {
     if (entity asmistransitionrunning()) {
-        return 0;
+        return false;
     }
     if (!entity isatgoal()) {
         var_1c4c0ef7 = 0;
@@ -455,34 +455,34 @@ function private shouldreturntocovercondition(entity) {
             }
         }
         if (!var_1c4c0ef7) {
-            return 1;
+            return true;
         }
     }
     if (isdefined(entity.covershootstarttime)) {
         var_21e419d7 = gettime() - entity.covershootstarttime;
         if (var_21e419d7 < 3000) {
-            return 0;
+            return false;
         }
         var_a4127fed = entity.var_a4127fed * 1000;
         if (var_21e419d7 >= var_a4127fed) {
-            return 1;
+            return true;
         }
         if (isdefined(entity.enemy) && isplayer(entity.enemy) && entity.enemy.health < entity.enemy.maxhealth * 0.5) {
             if (var_21e419d7 < 5000) {
-                return 0;
+                return false;
             }
         }
     }
     if (aiutility::issuppressedatcovercondition(entity)) {
-        return 1;
+        return true;
     }
     if (aiutility::function_22766ccd(entity) && aiutility::function_15b9bbef(entity)) {
-        return 1;
+        return true;
     }
     if (gettime() > entity.nextfindbestcovertime && !is_true(entity.fixednode)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
@@ -491,25 +491,25 @@ function private shouldreturntocovercondition(entity) {
 // Size: 0x16e
 function private shouldadjusttocover(entity) {
     if (!isdefined(entity.node)) {
-        return 0;
+        return false;
     }
     if (entity.node.type == "cover_turret") {
-        return 0;
+        return false;
     }
     highestsupportedstance = entity aiutility::gethighestnodestance(entity.node);
     currentstance = entity getblackboardattribute("_stance");
     if (currentstance == "crouch" && highestsupportedstance == "crouch") {
-        return 0;
+        return false;
     }
     covermode = entity getblackboardattribute("_cover_mode");
     previouscovermode = entity getblackboardattribute("_previous_cover_mode");
     if (covermode != "cover_alert" && previouscovermode != "cover_alert" && !entity.keepclaimednode) {
-        return 1;
+        return true;
     }
     if (!entity aiutility::function_c97b59f8(currentstance, entity.node)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
@@ -539,7 +539,7 @@ function private function_49bbbf20(entity) {
 function private preparetochangestancetostand(entity, *asmstatename) {
     aiutility::cleanupcovermode(asmstatename);
     asmstatename setblackboardattribute("_desired_stance", "stand");
-    return 1;
+    return true;
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
@@ -607,10 +607,10 @@ function private coverchangestanceactionstart(entity, *asmstatename) {
     switch (asmstatename getblackboardattribute("_stance")) {
     case #"stand":
         asmstatename setblackboardattribute("_desired_stance", "crouch");
-        return;
+        break;
     case #"crouch":
         asmstatename setblackboardattribute("_desired_stance", "stand");
-        return;
+        break;
     }
 }
 

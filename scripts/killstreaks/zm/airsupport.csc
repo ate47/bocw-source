@@ -26,7 +26,7 @@ function function_fc85e1a(killstreaktype, var_68f473e3, var_5be6ed28, var_56d8a9
 function function_9cb260fd(localclientnum, killstreaktype, marker) {
     var_512049f7 = level.var_872c2ff[killstreaktype];
     if (!isdefined(var_512049f7)) {
-        return 0;
+        return false;
     }
     for (i = 0; i < 4; i++) {
         if (!isdefined(var_512049f7.markers[i])) {
@@ -36,10 +36,10 @@ function function_9cb260fd(localclientnum, killstreaktype, marker) {
             marker.var_595cc3a1 = i;
             var_512049f7.markers[i] = marker;
             level [[ var_512049f7.var_d19a1a47 ]](localclientnum, marker);
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_bf7415ae/airsupport

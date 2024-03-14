@@ -58,16 +58,16 @@ function private function_70a657d8() {
 // Size: 0xae
 function function_dcc1570d(action) {
     self endon(action.ender);
-    while (1) {
+    while (true) {
         if (is_true(self actions::function_83bde308(action, "frag"))) {
             if (self function_5ebe8eba(action.name)) {
                 self thread function_5053f358(action, self.takedown.body);
-                return 1;
+                return true;
             }
         }
         waitframe(1);
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_e1cd3aae/namespace_e1cd3aae
@@ -80,18 +80,18 @@ function function_a471f3b0(action) {
     if (isdefined(self.takedown.body)) {
         self.takedown.body childthread function_dc160233(action);
     }
-    while (1) {
+    while (true) {
         if (is_true(self actions::function_83bde308(action, "stance"))) {
             var_9a585e5c = isdefined(self.var_f467e5b0.var_c4e66a91);
             self actions::function_8488e359();
             if (var_9a585e5c || self function_5ebe8eba(action.name)) {
                 self thread function_6c9ddc07(action, self.takedown.body);
-                return 1;
+                return true;
             }
         }
         waitframe(1);
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_e1cd3aae/namespace_e1cd3aae
@@ -233,7 +233,7 @@ function function_a02c0e4f(*victim) {
     /#
         assert(isplayer(self));
     #/
-    return 1;
+    return true;
 }
 
 // Namespace namespace_e1cd3aae/namespace_e1cd3aae
@@ -656,7 +656,7 @@ function function_306feb88(*guy) {
     player endon(#"disconnect");
     destroyed = [];
     var_29fbf4b0 = max(60, max(80, 32));
-    while (1) {
+    while (true) {
         waitframe(1);
         var_dece365 = self.origin - last_position;
         var_dece365 = (var_dece365[0], var_dece365[1], 0);

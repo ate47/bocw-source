@@ -186,7 +186,7 @@ class class_23a25920 : class_853435cd {
     // Checksum 0x25e93fb0, Offset: 0x400
     // Size: 0xa0
     function function_f46949a6(v_pos, v_angles) {
-        while (1) {
+        while (true) {
             if (isdefined(self.var_a96ddb10)) {
                 [[ self.var_a96ddb10 ]](v_pos, v_angles);
             } else {
@@ -249,7 +249,7 @@ class class_853435cd {
     function function_5bf90f3() {
         self notify(#"hash_6b04c4b346983dcf");
         self endon(#"hash_6b04c4b346983dcf", #"hash_2f4c88b47a202bf0");
-        while (1) {
+        while (true) {
             waitframe(1);
             if (!isdefined(self.var_41c57d21)) {
                 return;
@@ -463,7 +463,7 @@ class class_853435cd {
     function function_7211e953(player) {
         self endon(#"death");
         player endon(#"death", #"hash_5cda245aa347c433");
-        while (1) {
+        while (true) {
             /#
                 player function_b5d0a39e(function_38a7d42b(), undefined, undefined, 0, 0.35);
             #/
@@ -547,7 +547,7 @@ class class_853435cd {
     // Size: 0xce
     function function_d45dcb98() {
         self endon(#"hash_2f4c88b47a202bf0");
-        while (1) {
+        while (true) {
             waitresult = undefined;
             waitresult = self.var_41c57d21 waittill(#"trigger");
             player = waitresult.activator;

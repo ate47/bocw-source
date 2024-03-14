@@ -84,10 +84,10 @@ function function_d3d4ff67(spawn) {
     foreach (var_a24ffdcc in level.supportedspawntypes) {
         supportedspawntype = var_a24ffdcc.type;
         if (function_82ca1565(spawn, supportedspawntype)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace spawning/namespace_ade8eb98
@@ -101,10 +101,10 @@ function function_7309b6b3(spawn) {
     foreach (var_a24ffdcc in level.supportedspawntypes) {
         supportedspawntype = var_a24ffdcc.type;
         if (function_82ca1565(spawn, supportedspawntype)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace spawning/namespace_ade8eb98

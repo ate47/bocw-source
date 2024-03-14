@@ -123,9 +123,9 @@ function function_d500905a(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x70
 function function_b9c917cc(localclientnum, *str_bundle) {
     if (!self function_ca024039() || is_true(level.var_dc60105c) || isigcactive(str_bundle)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace ammomod_brainrot/ammomod_brainrot

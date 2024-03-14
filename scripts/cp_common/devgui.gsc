@@ -585,7 +585,7 @@ function function_541ccb87() {
 function function_4a38f3a4(maxhealth) {
     /#
         self endon(#"disconnect", #"hash_147b5d37057b5a78");
-        while (1) {
+        while (true) {
             wait(1);
             if (self.maxhealth != maxhealth) {
                 self.maxhealth = maxhealth;
@@ -1029,7 +1029,7 @@ function function_505cd4da() {
     /#
         level notify(#"hash_242671403e167291");
         level endon(#"hash_242671403e167291");
-        while (1) {
+        while (true) {
             cmd = getdvarstring(#"hash_646be3524c8b225b");
             var_6019e2d9 = [];
             if (isarray(level.var_ef4974d7)) {
@@ -1069,7 +1069,7 @@ function private function_57edec18() {
     /#
         add_devgui("<unknown string>", "<unknown string>");
         add_devgui("<unknown string>", "<unknown string>");
-        while (1) {
+        while (true) {
             if (getdvarint(#"scr_drone_camera", 0)) {
                 if (isdefined(level.drone_camera)) {
                     waitframe(1);

@@ -196,7 +196,7 @@ function function_d14c2698() {
 // Size: 0x1ae
 function function_d08b7aef() {
     /#
-        while (1) {
+        while (true) {
             level.calloutplayer = getdvarint(#"scr_boast_player", 0);
             var_600cca03 = getdvarstring(#"hash_57f1a3b4775bec24");
             if (var_600cca03 != "<unknown string>") {
@@ -269,7 +269,7 @@ function function_caed2ca6() {
 // Size: 0x1b6
 function function_f9e5168a() {
     /#
-        while (1) {
+        while (true) {
             level.var_fba97209 = getdvarint(#"hash_2702f51d0ea9e486", 0);
             execution = getdvarstring(#"hash_874c8b63573fc42");
             if (execution != "<unknown string>") {
@@ -552,7 +552,7 @@ function devgui_attachment_cycling_update() {
                 if (name == supportedattachments[supportedindex]) {
                     textcolor[i] = "<unknown string>";
                     attachments[i] = name;
-                    continue;
+                    break;
                 }
             }
         }
@@ -903,7 +903,7 @@ function watch_player_death() {
     /#
         self endon(#"death");
         vehicle = self;
-        while (1) {
+        while (true) {
             driver = self getseatoccupant(0);
             if (isdefined(driver) && !isalive(driver)) {
                 driver unlink();
@@ -976,7 +976,7 @@ function function_6a24e58f() {
                 waitframe(1);
             }
         }
-        while (1) {
+        while (true) {
             if (getdvarint(#"hash_3a3f995b08f2b9b8", -1) != -1) {
                 var_6d2040ea = getdvarint(#"hash_3a3f995b08f2b9b8", -1);
                 var_14f1a63 = (int(var_6d2040ea * 1000) + gettimepassed()) / int(60 * 1000);
@@ -1012,7 +1012,7 @@ function function_7bef8d25() {
         wait(5);
         function_e4b86469();
         wait(1);
-        while (1) {
+        while (true) {
             wait(0.25);
             remaining_health = getdvarint(#"hash_28af507d964c5802", 0);
             if (remaining_health <= 0) {
@@ -1044,7 +1044,7 @@ function function_46b22d99() {
         wait(2);
         function_9fb69cba();
         wait(0.5);
-        while (1) {
+        while (true) {
             wait(0.5);
             if (level.gameended) {
                 continue;
@@ -1078,7 +1078,7 @@ function function_be0f9897() {
         wait(5.5);
         function_51cc2292();
         wait(1);
-        while (1) {
+        while (true) {
             wait(0.25);
             damage = getdvarint(#"scr_damage_health", 0);
             if (damage == 0) {
@@ -1162,7 +1162,7 @@ function private function_57edec18() {
         }
         add_devgui("<unknown string>", "<unknown string>");
         add_devgui("<unknown string>", "<unknown string>");
-        while (1) {
+        while (true) {
             if (getdvarint(#"scr_drone_camera", 0)) {
                 if (isdefined(level.drone_camera)) {
                     waitframe(1);

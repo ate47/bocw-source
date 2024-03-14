@@ -57,9 +57,9 @@ function function_8d59ee47(flashlight_out = 0) {
 // Size: 0x38
 function function_b8090745() {
     if (self getblackboardattribute("_flashlight") === "flashlight_out") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_3d84fa3e/namespace_3d84fa3e
@@ -308,12 +308,12 @@ function function_51dea76e(var_4efdd43) {
         if (isdefined(var_4a15e24e) && isdefined(var_72902a5c) && distancesquared(var_4a15e24e, var_78601034) < var_bcd4dcab) {
             if (self util::function_aae7d83d(var_4a15e24e, var_72902a5c, var_78601034, cosfov)) {
                 if (sighttracepassed(var_4a15e24e + anglestoforward(var_72902a5c) * 20, var_78601034, 0, var_4efdd43)) {
-                    return 1;
+                    return true;
                 }
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_3d84fa3e/namespace_3d84fa3e

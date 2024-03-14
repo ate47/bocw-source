@@ -38,12 +38,12 @@ function init() {
 // Size: 0x19e
 function on_player_spawn() {
     self endoncallback(&function_b5b9317a, #"death");
-    while (1) {
+    while (true) {
         s_waitresult = undefined;
         s_waitresult = self waittill(#"hash_360ecb13f668ae0f", #"hash_52a52b5007f36141");
         if (s_waitresult._notify === #"hash_360ecb13f668ae0f") {
             self.var_9c1a4644 = #"cdp_taacom";
-            while (1) {
+            while (true) {
                 s_waitresult = undefined;
                 s_waitresult = self waittill(#"hash_360ecb13f668ae0f", #"hash_52a52b5007f36141", #"killstreak_done");
                 if (s_waitresult._notify === #"hash_360ecb13f668ae0f") {
@@ -96,7 +96,7 @@ function function_43655604() {
     default:
         return;
     }
-    while (1) {
+    while (true) {
         var_ebf4f229 = 0;
         foreach (player in function_a1ef346b()) {
             if (player.cached_zone_name === var_88c20a4) {
@@ -144,7 +144,7 @@ function private function_303e39b2() {
 // Size: 0x80
 function function_81971b17() {
     level endon(#"hash_2815bf32fb443bc3", #"hash_a88cb65d3952bc4", #"hash_4210e12176f5ee6c");
-    while (1) {
+    while (true) {
         level waittill(#"hash_b637efb9d19e84a");
         level thread zm_vo::function_7622cb70("orda_weakpoint_warning");
     }
@@ -257,7 +257,7 @@ function function_20df51b5() {
     self endon(#"death");
     self notify("4691fb805f755f3f");
     self endon("4691fb805f755f3f");
-    while (1) {
+    while (true) {
         s_waitresult = undefined;
         s_waitresult = self waittill(#"hash_5db01607981fb0ea", #"hash_5db01507981faf37", #"hash_5db01407981fad84", #"hash_5db01307981fabd1");
         switch (s_waitresult._notify) {
@@ -321,7 +321,7 @@ function function_767d8cf3() {
 function function_51e0aa02(var_23d9277f) {
     /#
         level endon(#"pap_quest_completed");
-        while (1) {
+        while (true) {
             if (getdvarint(#"zm_debug_ee", 0)) {
                 circle(var_23d9277f.origin, 8, (0, 1, 0));
                 print3d(var_23d9277f.origin, "<unknown string>", (0, 1, 0), undefined, 0.15);
@@ -339,7 +339,7 @@ function function_a99c18d7() {
     self notify("352d8006dd0ad7bb");
     self endon("352d8006dd0ad7bb");
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         var_6450afa8 = 0;
         foreach (player in function_a1ef346b()) {
             if (player.cached_zone_name === #"zone_napalm_strike2") {
@@ -365,7 +365,7 @@ function function_df0c6e4e() {
     if (is_true(level.var_95f26c94)) {
         return;
     }
-    while (1) {
+    while (true) {
         var_30f24311 = 0;
         foreach (player in function_a1ef346b()) {
             var_cf81848f = distance2d(player.origin, level.var_9674d6e2.origin);
@@ -505,7 +505,7 @@ function function_78cc0d39(str_vo_alias, b_wait_if_busy = 1) {
 // Size: 0x1de
 function private function_543f9e02() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         s_waitresult = undefined;
         s_waitresult = level waittill(#"hash_6d7ff9f9ff07619c");
         switch (level.var_85422c0e) {
@@ -542,7 +542,7 @@ function private function_543f9e02() {
 function private function_9a419851(player, var_b3b54a4) {
     self endon(#"death");
     player endon(#"death");
-    while (1) {
+    while (true) {
         if (player util::is_player_looking_at(self getcentroid())) {
             break;
         }
@@ -647,7 +647,7 @@ function on_ai_spawned() {
 function function_886e25dc(player, var_b3b54a4) {
     self endon(#"death");
     player endon(#"death", #"hash_1a917d3ddd4fab73");
-    while (1) {
+    while (true) {
         if (player util::is_player_looking_at(self getcentroid())) {
             break;
         }
@@ -791,10 +791,10 @@ function function_1de1e6b4() {
 // Size: 0x58
 function function_c732de82(*e_player) {
     if (is_true(level.ravenov.isspeaking)) {
-        return 0;
+        return false;
     }
     self sethintstring(#"hash_78573012d7272fae");
-    return 1;
+    return true;
 }
 
 // Namespace namespace_1812c3f4/namespace_1812c3f4

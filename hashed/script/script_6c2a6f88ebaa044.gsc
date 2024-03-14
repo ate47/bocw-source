@@ -32,42 +32,42 @@ function function_92dd9a20(param) {
     switch (param) {
     case #"hash_5a4e4aa2a78f38a5":
         self clientfield::set_to_player("cinematicMotion", 0);
-        return;
+        break;
     case #"hash_5a4e49a2a78f36f2":
         self clientfield::set_to_player("cinematicMotion", 1);
-        return;
+        break;
     case #"hash_5a4e48a2a78f353f":
         self clientfield::set_to_player("cinematicMotion", 2);
-        return;
+        break;
     case #"hash_5a4e47a2a78f338c":
         self clientfield::set_to_player("cinematicMotion", 3);
-        return;
+        break;
     case #"hash_5a4e46a2a78f31d9":
         self clientfield::set_to_player("cinematicMotion", 4);
-        return;
+        break;
     case #"hash_5a4e45a2a78f3026":
         self clientfield::set_to_player("cinematicMotion", 5);
-        return;
+        break;
     case #"hash_1f2696a2ce6d028b":
         self clientfield::set_to_player("cinematicMotion", 6);
-        return;
+        break;
     case #"hash_1f2695a2ce6d00d8":
         self clientfield::set_to_player("cinematicMotion", 7);
-        return;
+        break;
     case #"hash_1f2698a2ce6d05f1":
         self clientfield::set_to_player("cinematicMotion", 8);
-        return;
+        break;
     case #"hash_1f2697a2ce6d043e":
         self clientfield::set_to_player("cinematicMotion", 9);
-        return;
+        break;
     case #"hash_1f269aa2ce6d0957":
         self clientfield::set_to_player("cinematicMotion", 10);
-        return;
+        break;
     case #"hash_1f2699a2ce6d07a4":
         self clientfield::set_to_player("cinematicMotion", 11);
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 

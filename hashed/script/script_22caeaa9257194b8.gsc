@@ -83,7 +83,7 @@ function private function_dad360dc(c_door) {
         var_be457ed9 = (randomfloat(1), randomfloat(1), randomfloat(1));
     #/
     var_1bb1d9d4 = 72;
-    while (1) {
+    while (true) {
         if (c_door flag::get("door_fully_open")) {
             return;
         }
@@ -209,10 +209,10 @@ function private function_71ebe09e() {
 function private function_a8a940ac() {
     if (isdefined(self.ai.var_f162ac3e)) {
         if (self.ai.var_f162ac3e == self.ai.var_c04898fc) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_4fa53161/namespace_4fa53161
@@ -269,7 +269,7 @@ function private function_a07f8293() {
         self endon(#"death");
         var_dc35cd8c = "<unknown string>";
         var_e9968086 = "<unknown string>";
-        while (1) {
+        while (true) {
             result = undefined;
             result = self waittill(#"hash_46fda91c613b40e5");
             msg = result.msg;
@@ -386,7 +386,7 @@ function private function_5eaa8292() {
     /#
         self thread function_a07f8293();
     #/
-    while (1) {
+    while (true) {
         var_12d56c89 = undefined;
         var_12d56c89 = self waittill(#"path_set", #"reset_door_check");
         result = var_12d56c89._notify;
@@ -402,7 +402,7 @@ function private function_5eaa8292() {
         self function_71ebe09e();
         var_88e76247 = 0;
         var_3e8fb6d0 = undefined;
-        while (1) {
+        while (true) {
             results = self function_a847c61f(4096);
             doorloc = results.entrypoint[0];
             var_3e8fb6d0 = function_13f8cd4c(results.entity[0]);

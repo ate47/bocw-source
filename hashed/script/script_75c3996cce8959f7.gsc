@@ -112,7 +112,7 @@ function function_ce6420c(localclientnum) {
     yaw = 0;
     var_183aaf3c = 0;
     latch = 1;
-    while (1) {
+    while (true) {
         wait(var_f3e30707);
         if (!isdefined(self)) {
             return;
@@ -158,7 +158,7 @@ function function_4fa1ee4f(localclientnum) {
     yaw = 0;
     var_183aaf3c = 0;
     latch = 1;
-    while (1) {
+    while (true) {
         wait(var_f3e30707);
         if (!isdefined(self)) {
             return;

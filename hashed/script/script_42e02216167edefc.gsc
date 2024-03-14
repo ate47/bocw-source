@@ -181,7 +181,7 @@ function function_3846f71f() {
     if (!isdefined(level.var_5b193175)) {
         level.var_5b193175 = &function_f4ad1256;
     }
-    for (loops = 0; 1; loops++) {
+    for (loops = 0; true; loops++) {
         namespace_95fdc800::function_f4b7f348("generate_level_internal loop:" + loops);
         if (isdefined(level.var_1c96bbc)) {
             level.var_1c96bbc.center = undefined;
@@ -766,7 +766,7 @@ function private function_6544fed5(var_e5a03c2d) {
 function private function_edc68cbd(var_adda5a0) {
     /#
         boxcolor = (1, 1, 1);
-        while (1) {
+        while (true) {
             if (!isdefined(var_adda5a0)) {
                 return;
             }
@@ -862,7 +862,7 @@ function private function_94306783(var_e5a03c2d, height) {
         }
         var_fcf998ca = (1, 0, 0);
         startcolor = (1, 1, 0);
-        while (1) {
+        while (true) {
             foreach (node in var_e5a03c2d) {
                 color = var_fcf998ca;
                 if (node.var_4e8e65e4 === 0) {
@@ -886,7 +886,7 @@ function private function_a38567b2(edges, height) {
             height = 0;
         }
         color = (0, 0, 1);
-        while (1) {
+        while (true) {
             if (!isdefined(edges)) {
                 return;
             }
@@ -909,7 +909,7 @@ function private function_7c408b40(var_adda5a0, mins, maxs, height) {
             height = 0;
         }
         color = (0, 1, 1);
-        while (1) {
+        while (true) {
             for (i = mins.row - 1; i <= maxs.row; i++) {
                 for (j = mins.col - 1; j <= maxs.col; j++) {
                     if (isdefined(var_adda5a0[i][j].var_dfb0558b)) {
@@ -944,7 +944,7 @@ function private function_9a7586fd(center, height) {
             height = 0;
         }
         color = (1, 0, 1);
-        while (1) {
+        while (true) {
             var_65e05a9d = [];
             push_front(var_65e05a9d, center);
             while (var_65e05a9d.size > 0) {

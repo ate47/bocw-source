@@ -127,15 +127,15 @@ function is_wallbuy(w_to_check) {
     }
     foreach (s_wallbuy in level._active_wallbuys) {
         if (s_wallbuy.weapon == w_base) {
-            return 1;
+            return true;
         }
     }
     if (isdefined(level._additional_wallbuy_weapons)) {
         if (isinarray(level._additional_wallbuy_weapons, w_base)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
@@ -571,7 +571,7 @@ function wallbuy_callback(localclientnum, *oldval, newval, *bnewent, binitialsna
         struct.models[bnewent].origin = struct.models[bnewent].parent_struct.origin;
         struct.models[bnewent].angles = struct.models[bnewent].parent_struct.angles;
         struct.models[bnewent] hide();
-        return;
+        break;
     case 1:
         if (fieldname) {
             if (!isdefined(struct.models)) {
@@ -597,12 +597,12 @@ function wallbuy_callback(localclientnum, *oldval, newval, *bnewent, binitialsna
             struct.models[bnewent] show();
             struct.models[bnewent] moveto(struct.models[bnewent].parent_struct.origin, 1);
         }
-        return;
+        break;
     case 2:
         if (isdefined(level.var_680d143d)) {
             struct.models[bnewent] [[ level.var_680d143d ]]();
         }
-        return;
+        break;
     }
 }
 

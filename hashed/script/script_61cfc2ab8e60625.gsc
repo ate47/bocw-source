@@ -408,7 +408,7 @@ function function_19919872() {
 function setup_objectives(var_567f1ddd) {
     switch (var_567f1ddd) {
     default:
-        return;
+        break;
     }
 }
 

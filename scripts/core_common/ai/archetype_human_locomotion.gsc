@@ -216,7 +216,7 @@ function private shouldtacticalwalkpain(entity) {
 // Size: 0x1a
 function private begintacticalwalkpain(entity) {
     entity.startpaintime = gettime();
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -260,36 +260,36 @@ function private preparetomoveawayfromnearbyenemy(behaviortreeentity) {
 function private shouldplanarrivalintocover(behaviortreeentity) {
     goingtocovernode = isdefined(behaviortreeentity.node) && iscovernode(behaviortreeentity.node) && behaviortreeentity function_4c2fffe6(behaviortreeentity.node);
     if (!goingtocovernode) {
-        return 0;
+        return false;
     }
     if (!aiutility::function_c94f0d1(behaviortreeentity)) {
-        return 0;
+        return false;
     }
     if (isdefined(behaviortreeentity.pathgoalpos)) {
         if (is_true(behaviortreeentity.ai.var_ee9a2dfd)) {
-            return 1;
+            return true;
         } else if (isdefined(behaviortreeentity.arrivalfinalpos)) {
             nodeoffsetpos = behaviortreeentity getnodeoffsetposition(behaviortreeentity.node);
             if (behaviortreeentity.arrivalfinalpos != nodeoffsetpos) {
-                return 1;
+                return true;
             } else if (behaviortreeentity.ai.replannedcoverarrival === 0 && isdefined(behaviortreeentity.exitpos) && isdefined(behaviortreeentity.predictedexitpos)) {
                 behaviortreeentity.ai.replannedcoverarrival = 1;
                 exitdir = vectornormalize(behaviortreeentity.predictedexitpos - behaviortreeentity.exitpos);
                 currentdir = vectornormalize(behaviortreeentity.origin - behaviortreeentity.exitpos);
                 if (lengthsquared(exitdir) > 0.0001 && lengthsquared(currentdir) > 0.0001 && vectordot(exitdir, currentdir) < cos(30)) {
                     behaviortreeentity.predictedarrivaldirectionvalid = 0;
-                    return 1;
+                    return true;
                 }
                 var_f4f4457e = function_15a5703b(#"human", behaviortreeentity function_28e7d252());
                 if (behaviortreeentity.var_2dc0ed5e !== var_f4f4457e) {
-                    return 1;
+                    return true;
                 }
             }
         } else {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -303,14 +303,14 @@ function private combatlocomotionstart(behaviortreeentity) {
     randomchance = randomint(100);
     if (randomchance > 50) {
         behaviortreeentity setblackboardattribute("_run_n_gun_variation", "variation_forward");
-        return 1;
+        return true;
     }
     if (randomchance > 25) {
         behaviortreeentity setblackboardattribute("_run_n_gun_variation", "variation_strafe_1");
-        return 1;
+        return true;
     }
     behaviortreeentity setblackboardattribute("_run_n_gun_variation", "variation_strafe_2");
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -320,7 +320,7 @@ function private combatlocomotionstart(behaviortreeentity) {
 function private function_52950d3d(behaviortreeentity) {
     behaviortreeentity.ai.var_9ec404f2 = undefined;
     behaviortreeentity ai::function_f6060793();
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -346,14 +346,14 @@ function private function_4937d436(behaviortreeentity) {
     randomchance = randomint(100);
     if (randomchance > 50) {
         behaviortreeentity setblackboardattribute("_run_n_gun_variation", "variation_forward");
-        return 1;
+        return true;
     }
     if (randomchance > 25) {
         behaviortreeentity setblackboardattribute("_run_n_gun_variation", "variation_strafe_1");
-        return 1;
+        return true;
     }
     behaviortreeentity setblackboardattribute("_run_n_gun_variation", "variation_strafe_2");
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -369,9 +369,9 @@ function private function_145df88b(entity) {
     }
     if (btapi_combatlocomotionupdate(entity)) {
         function_3b9e6ead(entity, "turn@locomotion");
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -382,7 +382,7 @@ function private function_2985b5fa(behaviortreeentity) {
     behaviortreeentity ai::function_f6060793();
     behaviortreeentity function_ed7c3705("none");
     behaviortreeentity.var_d4a1d7ed = 0;
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -393,7 +393,7 @@ function private function_31a6aada(behaviortreeentity) {
     behaviortreeentity setblackboardattribute("_desired_stance", "stand");
     behaviortreeentity function_ed7c3705("non_combat_run");
     behaviortreeentity ai::function_fc7bd6c7();
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -403,9 +403,9 @@ function private function_31a6aada(behaviortreeentity) {
 function private function_41ae663f(entity) {
     if (btapi_humannoncombatlocomotionupdate(entity)) {
         function_3b9e6ead(entity, "turn@locomotion");
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -415,7 +415,7 @@ function private function_41ae663f(entity) {
 function private function_76ff98aa(behaviortreeentity) {
     behaviortreeentity ai::function_f6060793();
     behaviortreeentity function_ed7c3705("none");
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -424,7 +424,7 @@ function private function_76ff98aa(behaviortreeentity) {
 // Size: 0x28
 function private function_e20dbfa4(behaviortreeentity) {
     behaviortreeentity ai::function_fc7bd6c7();
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -433,7 +433,7 @@ function private function_e20dbfa4(behaviortreeentity) {
 // Size: 0x28
 function private function_888d9ea5(behaviortreeentity) {
     behaviortreeentity ai::function_f6060793();
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -442,7 +442,7 @@ function private function_888d9ea5(behaviortreeentity) {
 // Size: 0x28
 function private function_45d8f364(behaviortreeentity) {
     behaviortreeentity ai::function_fc7bd6c7();
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -451,7 +451,7 @@ function private function_45d8f364(behaviortreeentity) {
 // Size: 0x28
 function private function_27c368b1(behaviortreeentity) {
     behaviortreeentity ai::function_f6060793();
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -460,7 +460,7 @@ function private function_27c368b1(behaviortreeentity) {
 // Size: 0x38
 function private prepareformovement(behaviortreeentity) {
     behaviortreeentity setblackboardattribute("_stance", "stand");
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -469,9 +469,9 @@ function private prepareformovement(behaviortreeentity) {
 // Size: 0x32
 function private isarrivingfour(arrivalangle) {
     if (arrivalangle >= 45 && arrivalangle <= 120) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -480,9 +480,9 @@ function private isarrivingfour(arrivalangle) {
 // Size: 0x32
 function private isarrivingone(arrivalangle) {
     if (arrivalangle >= 120 && arrivalangle <= 165) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -491,9 +491,9 @@ function private isarrivingone(arrivalangle) {
 // Size: 0x32
 function private isarrivingtwo(arrivalangle) {
     if (arrivalangle >= 165 && arrivalangle <= 195) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -502,9 +502,9 @@ function private isarrivingtwo(arrivalangle) {
 // Size: 0x32
 function private isarrivingthree(arrivalangle) {
     if (arrivalangle >= 195 && arrivalangle <= 240) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -513,9 +513,9 @@ function private isarrivingthree(arrivalangle) {
 // Size: 0x32
 function private isarrivingsix(arrivalangle) {
     if (arrivalangle >= 240 && arrivalangle <= 315) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -524,9 +524,9 @@ function private isarrivingsix(arrivalangle) {
 // Size: 0x32
 function private isfacingfour(facingangle) {
     if (facingangle >= 45 && facingangle <= 135) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -535,9 +535,9 @@ function private isfacingfour(facingangle) {
 // Size: 0x32
 function private isfacingeight(facingangle) {
     if (facingangle >= -45 && facingangle <= 45) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -546,9 +546,9 @@ function private isfacingeight(facingangle) {
 // Size: 0x30
 function private isfacingseven(facingangle) {
     if (facingangle >= 0 && facingangle <= 90) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -557,9 +557,9 @@ function private isfacingseven(facingangle) {
 // Size: 0x32
 function private isfacingsix(facingangle) {
     if (facingangle >= -135 && facingangle <= -45) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -568,9 +568,9 @@ function private isfacingsix(facingangle) {
 // Size: 0x30
 function private isfacingnine(facingangle) {
     if (facingangle >= -90 && facingangle <= 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -579,17 +579,17 @@ function private isfacingnine(facingangle) {
 // Size: 0x3fa
 function private shouldtacticalarrivecondition(behaviortreeentity) {
     if (getdvarint(#"enabletacticalarrival", 0) != 1) {
-        return 0;
+        return false;
     }
     if (!isdefined(behaviortreeentity.node)) {
-        return 0;
+        return false;
     }
     if (!(behaviortreeentity.node.type == #"cover left")) {
-        return 0;
+        return false;
     }
     stance = behaviortreeentity getblackboardattribute("_arrival_stance");
     if (stance != "stand") {
-        return 0;
+        return false;
     }
     arrivaldistance = 35;
     /#
@@ -600,38 +600,38 @@ function private shouldtacticalarrivecondition(behaviortreeentity) {
     #/
     nodeoffsetposition = behaviortreeentity getnodeoffsetposition(behaviortreeentity.node);
     if (distance(nodeoffsetposition, behaviortreeentity.origin) > arrivaldistance || distance(nodeoffsetposition, behaviortreeentity.origin) < 25) {
-        return 0;
+        return false;
     }
     entityangles = vectortoangles(behaviortreeentity.origin - nodeoffsetposition);
     if (abs(behaviortreeentity.node.angles[1] - entityangles[1]) < 60) {
-        return 0;
+        return false;
     }
     tacticalfaceangle = behaviortreeentity getblackboardattribute("_tactical_arrival_facing_yaw");
     arrivalangle = behaviortreeentity getblackboardattribute("_locomotion_arrival_yaw");
     if (isarrivingfour(arrivalangle)) {
         if (!isfacingsix(tacticalfaceangle) && !isfacingeight(tacticalfaceangle) && !isfacingfour(tacticalfaceangle)) {
-            return 0;
+            return false;
         }
     } else if (isarrivingone(arrivalangle)) {
         if (!isfacingnine(tacticalfaceangle) && !isfacingseven(tacticalfaceangle)) {
-            return 0;
+            return false;
         }
     } else if (isarrivingtwo(arrivalangle)) {
         if (!isfacingeight(tacticalfaceangle)) {
-            return 0;
+            return false;
         }
     } else if (isarrivingthree(arrivalangle)) {
         if (!isfacingseven(tacticalfaceangle) && !isfacingnine(tacticalfaceangle)) {
-            return 0;
+            return false;
         }
     } else if (isarrivingsix(arrivalangle)) {
         if (!isfacingfour(tacticalfaceangle) && !isfacingeight(tacticalfaceangle) && !isfacingsix(tacticalfaceangle)) {
-            return 0;
+            return false;
         }
     } else {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -641,18 +641,18 @@ function private shouldtacticalarrivecondition(behaviortreeentity) {
 function private planhumanarrivalatcover(behaviortreeentity, arrivalanim) {
     behaviortreeentity.ai.var_ee9a2dfd = undefined;
     if (behaviortreeentity ai::get_behavior_attribute("disablearrivals")) {
-        return 0;
+        return false;
     }
     behaviortreeentity setblackboardattribute("_desired_stance", "stand");
     if (!isdefined(arrivalanim)) {
-        return 0;
+        return false;
     }
     if (!aiutility::function_c94f0d1(behaviortreeentity)) {
-        return 0;
+        return false;
     }
     if (isdefined(behaviortreeentity.node) && isdefined(behaviortreeentity.pathgoalpos)) {
         if (!iscovernode(behaviortreeentity.node) || !behaviortreeentity function_4c2fffe6(behaviortreeentity.node)) {
-            return 0;
+            return false;
         }
         nodeoffsetposition = behaviortreeentity getnodeoffsetposition(behaviortreeentity.node);
         if (isdefined(arrivalanim)) {
@@ -683,10 +683,10 @@ function private planhumanarrivalatcover(behaviortreeentity, arrivalanim) {
                     record3dtext("<unknown string>", var_6c21c197, (1, 0.5, 0), "<unknown string>");
                 #/
                 if (!behaviortreeentity maymovefrompointtopoint(var_5fd77fe1, var_c7c8e445, 1, 1, behaviortreeentity, 0.05)) {
-                    return 0;
+                    return false;
                 }
                 if (!behaviortreeentity maymovefrompointtopoint(var_6c21c197, var_5fd77fe1, 1, 1, behaviortreeentity, 0.05)) {
-                    return 0;
+                    return false;
                 }
             } else {
                 forward = vectorscale(forwarddir, var_ff177acc[0]);
@@ -699,11 +699,11 @@ function private planhumanarrivalatcover(behaviortreeentity, arrivalanim) {
                     record3dtext("<unknown string>", var_6c21c197, (1, 0.5, 0), "<unknown string>");
                 #/
                 if (!behaviortreeentity maymovefrompointtopoint(var_6c21c197, var_c7c8e445, 1, 1, behaviortreeentity, 0.05)) {
-                    return 0;
+                    return false;
                 }
             }
             if (!checkcoverarrivalconditions(coverenterpos, nodeoffsetposition)) {
-                return 0;
+                return false;
             }
             if (ispointonnavmesh(coverenterpos, behaviortreeentity)) {
                 behaviortreeentity.var_2dc0ed5e = function_15a5703b(#"human", behaviortreeentity function_28e7d252());
@@ -711,11 +711,11 @@ function private planhumanarrivalatcover(behaviortreeentity, arrivalanim) {
                     recordcircle(coverenterpos, 2, (1, 0, 0), "<unknown string>");
                 #/
                 behaviortreeentity function_a57c34b7(coverenterpos, nodeoffsetposition, "arrival");
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -727,7 +727,7 @@ function private checkcoverarrivalconditions(coverenterpos, coverpos) {
     distsqfromnodetoenterpos = distancesquared(coverpos, coverenterpos);
     awayfromenterpos = distsqtonode >= distsqfromnodetoenterpos + 150;
     if (!awayfromenterpos) {
-        return 0;
+        return false;
     }
     trace = groundtrace(coverenterpos + vectorscale((0, 0, 1), 72), coverenterpos + vectorscale((0, 0, -1), 72), 0, 0, 0);
     if (isdefined(trace[#"position"]) && abs(trace[#"position"][2] - coverpos[2]) > 30) {
@@ -741,9 +741,9 @@ function private checkcoverarrivalconditions(coverenterpos, coverpos) {
                 recordline(coverenterpos, trace[#"position"], (1, 0, 0), "<unknown string>");
             }
         #/
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -855,14 +855,14 @@ function private function_cb9c22a2(entity) {
     var_55a3f1d3 = entity function_144f21ef();
     if (is_true(entity.ai.var_c978f9a1)) {
         if (-85 < var_55a3f1d3 && var_55a3f1d3 < 35) {
-            return 0;
+            return false;
         }
-        return 1;
+        return true;
     }
     if (var_55a3f1d3 < -90 || var_55a3f1d3 > 90) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -871,9 +871,9 @@ function private function_cb9c22a2(entity) {
 // Size: 0x2e
 function private function_1972c057(entity) {
     if (function_cb9c22a2(entity)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -882,9 +882,9 @@ function private function_1972c057(entity) {
 // Size: 0x2e
 function private function_968efd1f(entity) {
     if (!function_cb9c22a2(entity)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -893,16 +893,16 @@ function private function_968efd1f(entity) {
 // Size: 0x5e
 function private function_c2fb1a1e(entity) {
     if (!level.enablehipflip) {
-        return 0;
+        return false;
     }
     starttime = entity.ai.var_f92c6536;
     if (!isdefined(starttime)) {
-        return 0;
+        return false;
     }
     if (gettime() - starttime < 1000) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -913,14 +913,14 @@ function private function_aede5c43(entity) {
     if (entity haspath()) {
         disttogoalsq = distancesquared(entity.pathgoalpos, entity.origin);
         if (disttogoalsq < function_a3f6cdac(150)) {
-            return 0;
+            return false;
         }
     }
     footstep = entity function_4b57124f(150);
     if (footstep != "left foot") {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -1019,19 +1019,19 @@ function function_7ba867a8(entity) {
 // Size: 0x150
 function function_52c3ab28(entity) {
     if (!function_7ba867a8(entity)) {
-        return 0;
+        return false;
     } else if (!isdefined(entity.var_3b77553e) || entity.var_3b77553e <= 0) {
-        return 1;
+        return true;
     } else if (!isdefined(entity.var_7b1f015a)) {
-        return 1;
+        return true;
     } else if (distance2dsquared(entity.var_7b1f015a.pos, entity.var_14b548c5) > function_a3f6cdac(4)) {
-        return 1;
+        return true;
     } else if (abs(entity.var_7b1f015a.angle - entity.var_871c9e86) > 1) {
-        return 1;
+        return true;
     } else if (entity.var_7b1f015a.var_568d90d2 != function_15a5703b(#"human", entity function_359fd121())) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -1050,10 +1050,10 @@ function function_b1092561(entity) {
         }
         localdeltahalfvector = getmovedelta(entity.var_7b1f015a.animation, 0, splittime);
         if (distance2dsquared(entity.origin, entity.var_14b548c5) <= lengthsquared(localdeltahalfvector)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion
@@ -1096,9 +1096,9 @@ function private function_d68785cf(entity) {
     if (btapi_shouldarriveexposed(entity)) {
         var_55a3f1d3 = entity function_144f21ef();
         if (abs(var_55a3f1d3) < 3) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 

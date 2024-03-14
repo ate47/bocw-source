@@ -60,7 +60,7 @@ function private function_e782b221(start_time, var_8ab7d27b, var_c1c8f1d, var_ef
         }
         if (run_time <= 0) {
             level thread function_94505a0b();
-            return;
+            break;
         }
         waitframe(1);
     }

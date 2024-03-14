@@ -169,7 +169,7 @@ function function_f8588df3(localclientnum, var_80583f56, var_1ca727c) {
     self endon(#"death", #"disconnect", #"hash_16a083f97a5204f3");
     e_player = function_5c10bd79(localclientnum);
     self.var_cc9b9440 = 1;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"igc_activated", #"player_sitrep_toggle");
         if (isigcactive(localclientnum)) {

@@ -317,7 +317,7 @@ function wait_endon(waittime, endonstring, endonstring2, endonstring3, endonstri
         self endon(endonstring4);
     }
     wait(waittime);
-    return 1;
+    return true;
 }
 
 // Namespace util/util
@@ -365,15 +365,15 @@ function remove_trigger_from_ent(ent) {
 // Size: 0x70
 function ent_already_in_trigger(trig) {
     if (!isdefined(self._triggers)) {
-        return 0;
+        return false;
     }
     if (!isdefined(self._triggers[trig getentitynumber()])) {
-        return 0;
+        return false;
     }
     if (!self._triggers[trig getentitynumber()]) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace util/util
@@ -668,9 +668,9 @@ function getplayerfromclientnum(clientnum) {
 function ispressbuild() {
     buildtype = getdvarstring(#"buildtype");
     if (isdefined(buildtype) && buildtype == "press") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace util/util
@@ -908,15 +908,15 @@ function function_a3f7de13(var_e0dd85aa, s_team, n_clientnum, extradata = 0) {
 // Size: 0xbe
 function function_94a3be2() {
     if (is_true(level.var_903e2252)) {
-        return 1;
+        return true;
     }
     if ((isdefined(getgametypesetting(#"drafttime")) ? getgametypesetting(#"drafttime") : 0) < 30) {
-        return 1;
+        return true;
     }
     if (!is_true(getgametypesetting(#"draftenabled"))) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace util/util

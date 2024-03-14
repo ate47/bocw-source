@@ -445,7 +445,7 @@ function private function_78c0b36a(var_bd597cf5) {
     player waittill(#"hash_3599a97a925d8c4e");
     player function_8b02e139("vox_cp_sh0_02300_sims_itlookslikeapar_d7", #"hash_1b070b02b2fd153c", 0);
     wait(1.5);
-    while (1) {
+    while (true) {
         namespace_61e6d095::function_9ade1d9b(#"hash_5fbe0a5a2e82c156", "audioWave", randomintrange(1, 4));
         player namespace_a635adb1::radio(var_bd597cf5[0].var_dcdae085, undefined, undefined, 1);
         namespace_61e6d095::function_9ade1d9b(#"hash_5fbe0a5a2e82c156", "audioWave", 0);

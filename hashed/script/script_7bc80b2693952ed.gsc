@@ -128,7 +128,7 @@ function private enter_critical_health(localclientnum) {
 function private play_critical_health_rumble(localclientnum) {
     self endon(#"death", #"hash_6bf3273fdaffc859", #"disconnect", #"critical_health_end", #"spawned");
     var_cf155b98 = "new_health_stage_critical_cp";
-    while (1) {
+    while (true) {
         self waittill(#"pulse_blood");
         self playrumbleonentity(localclientnum, var_cf155b98);
         name = self getmpdialogname();
@@ -153,7 +153,7 @@ function private play_critical_health_rumble(localclientnum) {
 function private play_breath(localclientnum) {
     self endon(#"death", #"hash_6bf3273fdaffc859", #"disconnect", #"game_ended", #"critical_health_end");
     self.var_82dad7be = isdefined(self.var_82dad7be) ? self.var_82dad7be : self battlechatter::get_player_dialog_alias("exertBreatheHurt");
-    while (1) {
+    while (true) {
         if (isdefined(self.var_82dad7be)) {
             var_a1b836dd = self playsound(localclientnum, self.var_82dad7be);
         }
@@ -264,12 +264,12 @@ function function_672c739(localclientnum, shockrifle) {
 // Size: 0x68
 function private function_27d3ba05(localclientnum) {
     if (function_92beaa28(localclientnum) && !function_d17ae3cc(localclientnum)) {
-        return 0;
+        return false;
     }
     if (level.var_4ecf5754 === #"silent_film") {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace blood/namespace_5d18774f
@@ -316,9 +316,9 @@ function private update_damage_effects(localclientnum, damage, death) {
 function private player_splatter(localclientnum) {
     level notify("player_splatter" + localclientnum);
     level endon("player_splatter" + localclientnum);
-    while (1) {
+    while (true) {
         level waittill(#"splatters_active");
-        while (1) {
+        while (true) {
             splatter = getsplatter(localclientnum);
             blur = 0;
             opacity = 0;
@@ -370,15 +370,15 @@ function private player_splatter(localclientnum) {
 // Size: 0xaa
 function private function_b51756a0(localclientnum, splatter, damage) {
     if (damage > level.blood.var_de10c136.dot.var_6264f8dd) {
-        return 1;
+        return true;
     }
     if (!isdefined(splatter.var_90495387)) {
-        return 1;
+        return true;
     }
     if (getservertime(localclientnum) - splatter.var_90495387 < level.blood.var_de10c136.dot.var_372dff4b) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace blood/namespace_5d18774f
@@ -511,7 +511,7 @@ function private function_87544c4a(localclientnum) {
     var_4cdccc55 = util::is_mature();
     self function_55d01d42();
     self thread function_8d8880(localclientnum);
-    while (1) {
+    while (true) {
         forceupdate = 0;
         if (util::is_mature() != var_4cdccc55) {
             forceupdate = 1;
@@ -557,7 +557,7 @@ function private function_8d8880(localclientnum) {
     if (!level.blood.var_f5479429) {
         return;
     }
-    while (1) {
+    while (true) {
         waitframe(1);
         if (is_true(self.blood_enabled)) {
             for (pulse = 0; pulse < 2; pulse++) {

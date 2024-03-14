@@ -172,9 +172,9 @@ function function_c29a8aa1(cost) {
     var_88daa75e = self function_6f3fd157();
     var_ee2422c5 = var_88daa75e - cost;
     if (var_ee2422c5 >= 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2a9f256a/namespace_2a9f256a
@@ -185,9 +185,9 @@ function function_415b1e(cost) {
     var_88daa75e = self function_efd1d093();
     var_ee2422c5 = var_88daa75e - cost;
     if (var_ee2422c5 >= 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2a9f256a/namespace_2a9f256a
@@ -230,7 +230,7 @@ function add_devgui() {
 // Size: 0xe0
 function function_27fca01f() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(#"hash_5499eefe1f37aa95", 0)) {
                 setdvar(#"hash_5499eefe1f37aa95", 0);
                 thread_all(function_a1ef346b(), &function_afab250a, 5000);

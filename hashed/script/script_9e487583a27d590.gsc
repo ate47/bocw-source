@@ -109,7 +109,7 @@ function function_5a121cbf() {
     level thread exploder::exploder("exp_fx_post_takedown");
     level.park waittill(#"hash_733b5b04b1674e79");
     wait(10);
-    while (1) {
+    while (true) {
         while (!level flag::get("flag_player_in_dialog") && !level.park flag::get("flag_fidgeting") && !level flag::get("flag_player_using_evidence_board")) {
             level.park notify(#"kill_dialog");
             level.park flag::set("flag_in_scene");
@@ -392,7 +392,7 @@ function function_a7c58081() {
 // Size: 0xf4
 function function_c151a47e() {
     level.adler thread function_4dde8d1b();
-    while (1) {
+    while (true) {
         level.lazar waittill(#"hash_4d2471e4c1a34c74");
         level.lazar waittill(#"dialog_tree_end");
         if (level flag::get("talked_to_lazar_post_takedown")) {
@@ -400,7 +400,7 @@ function function_c151a47e() {
             level.lazar notify(#"kill_dialog");
             thread function_6ad219dd();
             level util::delay(3, undefined, &flag::clear, "flag_player_in_dialog");
-            return;
+            break;
         }
     }
 }
@@ -515,7 +515,7 @@ function function_4dde8d1b() {
     var_e698e973 = struct::get("struct_adler_check_back_corner", "targetname");
     var_d3a1e64d = getent("volume_adler_check_front_hall", "targetname");
     var_f9dcfdfc = struct::get("struct_adler_check_front_hall", "targetname");
-    while (1) {
+    while (true) {
         level function_a3e12ec8(var_9057efea, var_e698e973, "back_corner");
         level function_a3e12ec8(var_d3a1e64d, var_f9dcfdfc, "front_hall");
         wait(0.25);

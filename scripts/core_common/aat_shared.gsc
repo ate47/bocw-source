@@ -255,9 +255,9 @@ function function_3895d220(weapon) {
 // Size: 0x5a
 function function_42918474(entity) {
     if (isdefined(entity) && (isplayer(entity) || is_true(entity.var_42918474))) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace aat/aat_shared
@@ -402,7 +402,7 @@ function function_45db1b8a(name) {
     self notify("5cc8d10e5693e31f");
     self endon("5cc8d10e5693e31f");
     self endon(#"death");
-    while (1) {
+    while (true) {
         now = float(gettime()) / 1000;
         if (now >= self.aat_cooldown_start[name] + level.aat[name].cooldown_time_attacker) {
             self clientfield::set_to_player("rob_ammo_mod_ready", 1);
@@ -769,13 +769,13 @@ function watch_weapon_changes() {
 // Size: 0x68
 function has_aat(w_current) {
     if (!is_true(level.aat_in_use)) {
-        return 0;
+        return false;
     }
     w_current = function_702fb333(w_current);
     if (isdefined(self.aat) && isdefined(self.aat[w_current])) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace aat/aat_shared

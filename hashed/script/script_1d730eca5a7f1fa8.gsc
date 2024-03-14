@@ -61,14 +61,14 @@ function function_b784c6bd(type) {
 function function_a6ab97f0(type) {
     switch (type) {
     case 10:
-        return;
+        break;
     case 12:
-        return;
+        break;
     case 46:
         self.doa.var_ccd8393c = 0;
         self namespace_83eb6304::turnofffx("divine_shield");
         self namespace_83eb6304::function_3ecfde67("divine_shield_off");
-        return;
+        break;
     }
 }
 

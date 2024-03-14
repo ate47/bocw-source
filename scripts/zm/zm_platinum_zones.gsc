@@ -181,7 +181,7 @@ function function_44b1279a() {
         util::wait_network_frame();
         self clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 0);
     }
-    while (1) {
+    while (true) {
         is_player_in_zone = self zm_zonemgr::is_player_in_zone(level.var_65c43c31, 0);
         var_c2858d41 = self clientfield::get_to_player("" + #"hash_3c8a07f3b4eaf129");
         if (is_player_in_zone && var_c2858d41 == 0) {

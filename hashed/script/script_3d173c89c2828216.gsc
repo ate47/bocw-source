@@ -94,7 +94,7 @@ function private function_510ce803(player) {
         player endon(#"disconnect");
     }
     self endon(#"death");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"trigger");
         guy = result.activator;

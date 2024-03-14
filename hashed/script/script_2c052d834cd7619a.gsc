@@ -34,7 +34,7 @@
 function function_124c1a34(player, model, note) {
     blade = namespace_ec06fe4a::spawnmodel(self.origin, model);
     if (!isdefined(blade)) {
-        return 0;
+        return false;
     }
     blade.targetname = "blade";
     blade setplayercollision(0);
@@ -43,7 +43,7 @@ function function_124c1a34(player, model, note) {
     trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", blade.origin, 1 | 512 | 8, 30, 50);
     if (!isdefined(trigger)) {
         blade delete();
-        return 0;
+        return false;
     }
     trigger.targetname = "blade";
     trigger enablelinkto();
@@ -52,7 +52,7 @@ function function_124c1a34(player, model, note) {
     blade namespace_e32bb68::function_3a59ec34("evt_doa_pickup_sawblade_active_lp");
     self.blade = blade;
     self.trigger = trigger;
-    return 1;
+    return true;
 }
 
 // Namespace namespace_52ba5a8a/namespace_2c7d0af1
@@ -101,7 +101,7 @@ function private function_7daf5356(player, var_58be1fc5) {
         player endon(#"disconnect");
     }
     self endon(#"death");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"trigger");
         guy = result.activator;

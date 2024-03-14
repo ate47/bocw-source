@@ -208,10 +208,10 @@ function get(str_flag) {
 function get_any(&array) {
     foreach (str_flag in array) {
         if (get(str_flag)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace flag/flag_shared
@@ -221,10 +221,10 @@ function get_any(&array) {
 function get_all(&array) {
     foreach (str_flag in array) {
         if (!get(str_flag)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace flag/flag_shared
@@ -381,7 +381,7 @@ function function_4bf6d64f(var_5d544245, var_44bd221) {
         }
         var_c50f1f7b[var_c50f1f7b.size] = hash(flag);
     }
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(var_b1f5a9d1);
         flag = result._notify;
@@ -435,7 +435,7 @@ function wait_till_clear_all_timeout(n_timeout, a_flags) {
 // Size: 0xd2
 function wait_till_clear_any(a_flags) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         foreach (flag in a_flags) {
             if (!get(flag)) {
                 return {#_notify:flag};
@@ -465,8 +465,8 @@ function wait_till_clear_any_timeout(n_timeout, a_flags) {
 function script_flag_wait() {
     if (isdefined(self.script_flag_wait)) {
         self wait_till(self.script_flag_wait);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 

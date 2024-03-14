@@ -47,7 +47,7 @@ function function_f134291a() {
 // Checksum 0x1ad15468, Offset: 0x1f8
 // Size: 0x18
 function function_b797206c(*slot, *weapon) {
-    return 1;
+    return true;
 }
 
 // Namespace abilities/abilities

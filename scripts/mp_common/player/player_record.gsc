@@ -458,7 +458,7 @@ function function_7569c0fb() {
     case #"ctf_bb":
         self stats::function_81f5c0fe(#"stat1", self.pers[#"objectivescore"]);
         self stats::function_81f5c0fe(#"stat2", self.ekia);
-        return;
+        break;
     case #"koth10v10":
     case #"koth":
     case #"hash_156594d96f8a6568":
@@ -469,7 +469,7 @@ function function_7569c0fb() {
     case #"dropkick":
         self stats::function_81f5c0fe(#"stat1", self.pers[#"objectivetime"]);
         self stats::function_81f5c0fe(#"stat2", self.ekia);
-        return;
+        break;
     case #"hash_5a89fd80877a0eaa":
     case #"tdm_snipe_bb":
     case #"tdm_bb":
@@ -493,9 +493,9 @@ function function_7569c0fb() {
     case #"infect":
         self stats::function_81f5c0fe(#"stat1", self.ekia);
         self stats::function_81f5c0fe(#"stat2", self.deaths);
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 

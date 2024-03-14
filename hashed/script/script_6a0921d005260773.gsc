@@ -147,20 +147,20 @@ function function_8fe77681(name) {
 // Size: 0xa4
 function function_113a6123(name) {
     if (!isdefined(self)) {
-        return 0;
+        return false;
     }
     if (is_true(self.nocybercom)) {
-        return 1;
+        return true;
     }
     self function_6d4cf28e();
     flag = function_f9b48b95(name);
     if (!isdefined(flag)) {
-        return 0;
+        return false;
     }
     if (self.abilities.var_b10e8797 & flag) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace abilities/namespace_c78c9cc2
@@ -212,22 +212,22 @@ function function_196c351c(note, animname, kill = 0, attacker, weapon) {
 function function_ee76cb20() {
     if (isdefined(self.allowdeath)) {
         if (self.allowdeath == 0) {
-            return 0;
+            return false;
         }
     }
     if (is_true(self.var_4bc8b4c4)) {
-        return 1;
+        return true;
     }
     if (isdefined(self.var_8fbb3e63)) {
-        return 1;
+        return true;
     }
     if (isdefined(self.archetype) && self.archetype == "robot" && !function_4b870e5a(self)) {
-        return 1;
+        return true;
     }
     if (isactor(self) && !self isonground()) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace abilities/namespace_c78c9cc2
@@ -454,8 +454,8 @@ function function_cc83a141(eattacker, var_7607ad3, idamage) {
 // Size: 0x6c
 function function_8107e1c2() {
     if (isdefined(self.currentweapon) && (self.currentweapon == getweapon(#"hash_1e390e08e80d673f") || self.currentweapon == getweapon(#"hash_583cae2af0db7ab8"))) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 

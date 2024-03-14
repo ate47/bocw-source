@@ -191,40 +191,40 @@ function event_handler[weapon_change] function_edc4ebe8(eventstruct) {
 // Size: 0x15e
 function may_drop(weapon) {
     if (weapon == level.weaponnone) {
-        return 0;
+        return false;
     }
     if (isdefined(level.laststandpistol) && weapon == level.laststandpistol) {
-        return 0;
+        return false;
     }
     if (isdefined(level.var_f425c7f3)) {
         foreach (var_22174a13 in level.var_f425c7f3) {
             if (var_22174a13 == weapon) {
-                return 0;
+                return false;
             }
         }
     }
     if (killstreaks::is_killstreak_weapon(weapon)) {
-        return 0;
+        return false;
     }
     if (weapon.iscarriedkillstreak) {
-        return 0;
+        return false;
     }
     if (weapon.isgameplayweapon) {
-        return 0;
+        return false;
     }
     if (!weapon.isprimary) {
-        return 0;
+        return false;
     }
     if (weapon.var_29d24e37) {
-        return 0;
+        return false;
     }
     if (weapon.var_9a789947) {
-        return 0;
+        return false;
     }
     if (weapon.isnotdroppable) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace weapons/weapons
@@ -247,15 +247,15 @@ function function_fe1f5cc() {
 // Size: 0x4e
 function function_2be39078(last_weapon) {
     if (!isdefined(last_weapon)) {
-        return 0;
+        return false;
     }
     if (!self hasweapon(last_weapon)) {
-        return 0;
+        return false;
     }
     if (!may_drop(last_weapon)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace weapons/weapons
@@ -429,7 +429,7 @@ function private function_220ea8ba() {
     while (!isdefined(level.var_445b1bca)) {
         level waittill(#"hash_8c9c1055b97344e");
     }
-    while (1) {
+    while (true) {
         waitframe(1);
         if (level.var_c5a37526.size == 0) {
             level waittill(#"hash_8c9c1055b97344e");
@@ -455,15 +455,15 @@ function private function_220ea8ba() {
 // Size: 0x5e
 function private function_c44bf23e(info) {
     if (!isdefined(info.victim)) {
-        return 0;
+        return false;
     }
     if (info.victim.var_3ffebf0a !== 1) {
-        return 0;
+        return false;
     }
     if (info.time + 500 < gettime()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace weapons/weapons
@@ -625,7 +625,7 @@ function function_388f7cf7() {
     self notify("62d50dc4cfa71f56");
     self endon("62d50dc4cfa71f56");
     self waittill(#"spawned_player");
-    while (1) {
+    while (true) {
         function_d2c66128(self.origin);
         waitframe(1);
     }
@@ -997,7 +997,7 @@ function drop_grenades_to_ground(origin, radius) {
 function watch_grenade_cancel() {
     self endon(#"death", #"disconnect", #"grenade_fire");
     waittillframeend();
-    while (1) {
+    while (true) {
         if (!isplayer(self)) {
             return;
         }
@@ -1183,19 +1183,19 @@ function event_handler[grenade_fire] function_e2b6d5a5(eventstruct) {
         if (isdefined(level.var_b61fb563)) {
             grenade thread [[ level.var_b61fb563 ]]();
         }
-        return;
+        break;
     case #"c4":
     case #"satchel_charge":
         grenade thread check_stuck_to_player(1, 0, weapon);
-        return;
+        break;
     case #"hatchet":
         grenade.lastweaponbeforetoss = self function_fe1f5cc();
         grenade thread check_hatchet_bounce();
         grenade thread check_stuck_to_player(0, 0, weapon, 0);
         self stats::function_e24eec31(weapon, #"used", 1);
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 
@@ -1244,7 +1244,7 @@ function function_5ed178fd(parentent) {
     parentent endon(#"death", #"stuck_to_player");
     self endon(#"death");
     parentent endoncallback(&function_43ec7f33, #"death", #"stuck_to_player");
-    while (1) {
+    while (true) {
         waitframe(1);
         forward = anglestoforward(parentent.angles);
         pos = parentent.origin - forward * 20;
@@ -1322,7 +1322,7 @@ function stuck_to_player_team_change(player) {
     self endon(#"death");
     player endon(#"disconnect");
     originalteam = player.pers[#"team"];
-    while (1) {
+    while (true) {
         player waittill(#"joined_team");
         if (player.pers[#"team"] != originalteam) {
             self detonate();
@@ -1573,12 +1573,12 @@ function on_damage(eattacker, einflictor, weapon, meansofdeath, damage) {
     case #"eq_slow_grenade":
     case #"concussion_grenade":
         self.lastconcussedby = eattacker;
-        return;
+        break;
     default:
         if (isdefined(level.shellshockonplayerdamage) && isplayer(self)) {
             [[ level.shellshockonplayerdamage ]](eattacker, einflictor, weapon, meansofdeath, damage);
         }
-        return;
+        break;
     }
 }
 
@@ -1874,15 +1874,15 @@ function add_limited_weapon(weapon, owner, num_drops) {
 function should_drop_limited_weapon(weapon, owner) {
     limited_info = owner.limited_info;
     if (!isdefined(limited_info)) {
-        return 1;
+        return true;
     }
     if (limited_info.weapon != weapon) {
-        return 1;
+        return true;
     }
     if (limited_info.drops <= 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace weapons/weapons

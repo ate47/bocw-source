@@ -82,7 +82,7 @@ function is_active(*var_34f09024) {
 function private function_e4c3443c(s_challenge) {
     level endon(#"hash_7646638df88a3656");
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         if (is_true(s_challenge.var_2d4ba9d4)) {
             if (!is_true(self.var_167bc422) && self.score < s_challenge.var_e38c7612) {
                 self zm_trial_util::function_63060af4(1);

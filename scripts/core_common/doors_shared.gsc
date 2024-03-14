@@ -190,7 +190,7 @@ class cdoor {
     // Size: 0x1a6
     function function_54605e70() {
         self.m_e_trigger endon(#"death");
-        while (1) {
+        while (true) {
             self.m_e_door waittill(#"damage");
             if (!is_open() && !self flag::get("animating")) {
                 open(undefined);
@@ -223,7 +223,7 @@ class cdoor {
         e_fx = undefined;
         v_pos = get_hack_pos();
         v_angles = get_hack_angles();
-        while (1) {
+        while (true) {
             self flag::wait_till("locked");
             if (isdefined(e_fx)) {
                 e_fx delete();
@@ -334,11 +334,11 @@ class cdoor {
             }
         }
         if (sessionmodeiscampaigngame() && isdefined(level.var_6a7fb742)) {
-            return 1;
+            return true;
         }
         var_5bc6eed = self function_a5fa0850();
         if (!isdefined(var_5bc6eed)) {
-            return 0;
+            return false;
         }
         if (isdefined(var_79579129)) {
             if (var_79579129) {
@@ -353,7 +353,7 @@ class cdoor {
                 }
             }
         }
-        return 1;
+        return true;
     }
 
     // Namespace cdoor/doors_shared
@@ -363,7 +363,7 @@ class cdoor {
     function function_670cd4a3() {
         self endon(#"death");
         self.var_19fde5b7 = [];
-        while (1) {
+        while (true) {
             waitresult = undefined;
             waitresult = self waittill(#"grenade_stuck");
             if (isdefined(waitresult.projectile)) {
@@ -1223,7 +1223,7 @@ class cdoor {
         n_delay_max = isdefined(self.m_s_bundle.var_5cac6503) ? self.m_s_bundle.var_5cac6503 : 1;
         if (self.m_s_bundle.door_open_method === "slide" || self.m_s_bundle.door_open_method === "swing") {
             if (b_enable) {
-                while (1) {
+                while (true) {
                     open_internal(b_enable, randomfloatrange(n_delay_min, n_delay_max));
                     wait(randomfloatrange(n_delay_min, n_delay_max));
                     close_internal(b_enable, randomfloatrange(n_delay_min, n_delay_max));
@@ -1460,7 +1460,7 @@ function setup_doors_with_panel() {
 function door_panel_interact(b_is_panel_reusable) {
     self endon(#"death");
     self.mdl_gameobject endon(#"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self.mdl_gameobject waittill(#"gameobject_end_use_player");
         e_player = waitresult.player;
@@ -1485,7 +1485,7 @@ function door_panel_interact(b_is_panel_reusable) {
             }
             waitframe(1);
             if (is_true(b_is_panel_reusable)) {
-                while (1) {
+                while (true) {
                     b_door_animating = 0;
                     foreach (e_door in a_e_doors) {
                         if (isdefined(e_door) && isdefined(e_door.c_door)) {
@@ -1701,7 +1701,7 @@ function debug_draw() {
         if (isdefined(self.m_e_door)) {
             self.m_e_door endon(#"death");
             var_4b6c578e = self.m_e_door getentitynumber();
-            while (1) {
+            while (true) {
                 var_9599e270 = level.var_1def7d37[#"hash_5171254138328d84"];
                 if (var_9599e270 <= 0) {
                     level waittill(#"hash_5171254138328d84");
@@ -2002,21 +2002,21 @@ function private function_e173262f() {
 // Size: 0x14c
 function function_4011a3d9() {
     if (isdefined(self.var_a2f96f78.linkname)) {
-        return 0;
+        return false;
     }
     if (isdefined(self.var_a2f96f78.linkto)) {
         if (isdefined(self.var_d1c4f848)) {
-            return 1;
+            return true;
         } else if (!isdefined(level.var_1da7d7a6) || !level.var_1da7d7a6) {
             var_4ac9b3ea = struct::get_array(self.var_a2f96f78.linkto, "linkname");
             foreach (struct in var_4ac9b3ea) {
                 if (isdefined(struct.classname) && (struct.classname == "scriptbundle_doors" || struct.classname == "scriptbundle_windows")) {
-                    return 1;
+                    return true;
                 }
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace doors/doors_shared
@@ -2025,19 +2025,19 @@ function function_4011a3d9() {
 // Size: 0xaa
 function function_53f46e97() {
     if (isdefined(self.var_a2f96f78.linkto)) {
-        return 0;
+        return false;
     }
     if (isdefined(self.var_a2f96f78.linkname)) {
         if (isdefined(self.var_d1c4f848)) {
-            return 1;
+            return true;
         } else if (!isdefined(level.var_1da7d7a6) || !level.var_1da7d7a6) {
             var_26bf2138 = struct::get_array(self.var_a2f96f78.linkname, "linkto");
             if (var_26bf2138.size > 0) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace doors/doors_shared
@@ -2050,7 +2050,7 @@ function door_open_update(c_door) {
         return;
     }
     use_trigger endon(#"death");
-    while (1) {
+    while (true) {
         waitresult = c_door function_e173262f();
         self function_16136fe9(c_door, waitresult);
     }
@@ -2129,7 +2129,7 @@ function door_update(c_door) {
 // Checksum 0x6854a69a, Offset: 0x9238
 // Size: 0x126
 function function_463715ec(c_door) {
-    while (1) {
+    while (true) {
         if (c_door flag::get("locked")) {
             [[ c_door ]]->function_f584b243(1);
             c_door flag::wait_till_clear("locked");
@@ -2189,7 +2189,7 @@ function door_update_lock_scripted(c_door) {
     door_str = c_door.var_a2f96f78.targetname;
     c_door.m_e_trigger.targetname = door_str + "_trig";
     c_door.m_e_trigger endon(#"death");
-    while (1) {
+    while (true) {
         c_door.m_e_trigger waittill(#"unlocked");
         [[ c_door ]]->unlock();
     }
@@ -2309,7 +2309,7 @@ function trigger_wait_until_clear(c_door) {
     self.ents_in_trigger = 1;
     str_kill_trigger_notify = "trigger_now_clear";
     self thread trigger_check_for_ents_touching(str_kill_trigger_notify);
-    while (1) {
+    while (true) {
         time = gettime();
         if (self.ents_in_trigger == 1) {
             self.ents_in_trigger = 0;
@@ -2365,7 +2365,7 @@ function door_wait_until_clear(c_door, e_triggerer) {
 // Size: 0x4a
 function trigger_check_for_ents_touching(str_kill_trigger_notify) {
     self endon(#"death", str_kill_trigger_notify);
-    while (1) {
+    while (true) {
         self waittill(#"trigger");
         self.ents_in_trigger = 1;
     }
@@ -2377,7 +2377,7 @@ function trigger_check_for_ents_touching(str_kill_trigger_notify) {
 // Size: 0x90
 function door_debug_line(v_origin) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         v_start = v_origin;
         v_end = v_start + vectorscale((0, 0, 1), 1000);
         v_col = (0, 0, 1);
@@ -2518,7 +2518,7 @@ function waittill_door_opened(str_value, str_key = "targetname") {
         return;
     }
     a_e_doors = get_doors(str_value, str_key);
-    while (1) {
+    while (true) {
         var_8c4538df = 1;
         foreach (e_door in a_e_doors) {
             if (!e_door.c_door flag::get("open")) {
@@ -2544,7 +2544,7 @@ function waittill_door_closed(str_value, str_key = "targetname") {
         return;
     }
     a_e_doors = get_doors(str_value, str_key);
-    while (1) {
+    while (true) {
         var_a644cd9e = 1;
         foreach (e_door in a_e_doors) {
             if (e_door.c_door flag::get("open") || e_door.c_door flag::get("animating")) {
@@ -3003,27 +3003,27 @@ function private function_d47ab921(player) {
         /#
             self.var_41b735b8 = "<unknown string>";
         #/
-        return 0;
+        return false;
     }
     if (player getcurrentweapon() == level.weaponnone) {
-        return 0;
+        return false;
     }
     var_9c77e513 = anglestoforward((0, self.m_e_door.angles[1], 0));
     var_7636f9c2 = anglestoforward((0, self.var_85f2454d.angles[1], 0));
     if (vectordot(var_9c77e513, var_7636f9c2) < 0.5) {
-        return 0;
+        return false;
     }
     var_e5959a30 = self function_5869e01();
     var_e5959a30 = (var_e5959a30[0], var_e5959a30[1], player.origin[2]);
     if (util::within_fov(player.origin, player function_c2758350(), var_e5959a30, 0.77)) {
-        return 1;
+        return true;
     }
     var_dec83597 = self function_c177702e();
     var_dec83597 = (var_dec83597[0], var_dec83597[1], player.origin[2]);
     if (util::within_fov(player.origin, player function_c2758350(), var_dec83597, 0.866)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace doors/doors_shared
@@ -3047,32 +3047,32 @@ function private function_5622c3c1(player) {
             /#
                 self thread function_e02f357a(1000);
             #/
-            return 1;
+            return true;
         }
         if (!player issprinting()) {
-            return 0;
+            return false;
         }
         if (level.var_1def7d37[#"scr_door_bash_requires_use"]) {
             if (!player usebuttonpressed()) {
-                return 0;
+                return false;
             }
         }
         var_a0621713 = length(player getvelocity());
         if (var_a0621713 < 50) {
-            return 0;
+            return false;
         }
         vec = vectornormalize(player getplayercamerapos() - self function_810b782f());
         var_ed80ebc4 = self function_fb354714();
         var_9bd4d937 = vectordot(vec, var_ed80ebc4);
         if (abs(var_9bd4d937) < 0.4) {
-            return 0;
+            return false;
         }
         /#
             self thread function_e02f357a(1000);
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace doors/doors_shared
@@ -3160,7 +3160,7 @@ function private function_a555eafd() {
 // Size: 0x1ba
 function private function_49d51d56() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         ents = getentitiesinradius(self.origin, 60, 6);
         foreach (ent in ents) {
             if (isdefined(ent.c_door)) {
@@ -3190,10 +3190,10 @@ function function_dd965dab(player) {
         d = distancesquared(player.origin, endpoint);
         range = self flag::get("locked") ? 60 : 60;
         if (d < range * range) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace doors/doors_shared
@@ -3227,12 +3227,12 @@ function function_b29052a(var_84e2c431, var_a6028302 = 0, var_d14527df) {
 function private function_14c2fe40(player) {
     weapon = player getcurrentweapon();
     if (weapon.displayname == #"hash_5fe1e4f4cfb91755" || is_true(weapon.ismeleeweapon) && !is_true(weapon.isbulletweapon) && !is_true(weapon.isprojectileweapon)) {
-        return 1;
+        return true;
     }
     if (weapon.name == #"eq_spy_camera") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace doors/doors_shared
@@ -3288,7 +3288,7 @@ function private function_8d016934(var_248cbbcf) {
 // Size: 0x44
 function private function_38746391() {
     if (level.var_1def7d37[#"scr_door_player_gestures"] == 0) {
-        return 0;
+        return false;
     }
     return self getcurrentweapon() != level.weaponnone;
 }
@@ -3494,10 +3494,10 @@ function function_19b91fc1() {
                 assert(isdefined(var_b4d98031));
             #/
             if (is_true(var_b4d98031.var_a865c2cd) || isdefined(var_b4d98031.str_hint)) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 

@@ -143,25 +143,25 @@ function private findweapon(entity) {
 // Size: 0xfe
 function private function_808efdee(hacker, entity) {
     if (isplayer(entity)) {
-        return 0;
+        return false;
     }
     entityweapon = findweapon(entity);
     if ((!isdefined(entityweapon) || entityweapon == level.weaponnone) && !isplayer(entity)) {
-        return 0;
+        return false;
     }
     if (entity.team == hacker.team) {
-        return 0;
+        return false;
     }
     if (entity.team == #"spectator") {
-        return 0;
+        return false;
     }
     if (is_true(entity.canthack)) {
-        return 0;
+        return false;
     }
     if (!entityweapon.var_18608bfe) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_1ec2f789/namespace_1ec2f789
@@ -234,7 +234,7 @@ function function_fa58758(objid, var_288da8b5) {
 // Size: 0x10e
 function function_56762cd0(objid, var_288da8b5, hacktimems, targetentity) {
     if (hacktimems == 0) {
-        return 1;
+        return true;
     }
     lasttime = gettime();
     currentprogress = 0;
@@ -319,7 +319,7 @@ function function_d3d359e7(objid, targetentity, var_288da8b5) {
 function function_73e0b42c(player, trigger) {
     trigger endon(#"hash_6e16842532e5aadc");
     player endon(#"disconnect");
-    while (1) {
+    while (true) {
         trigger waittill(#"trigger");
         if (!isdefined(trigger.targetentity)) {
             continue;

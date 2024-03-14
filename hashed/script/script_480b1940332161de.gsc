@@ -149,7 +149,7 @@ function private function_b31aaef9() {
     }
     level.poi.var_9e5f97bf = 1;
     waitframe(1);
-    while (1) {
+    while (true) {
         if (!isarray(level.poi.var_5ee53e3) || level.poi.var_5ee53e3.size == 0) {
             level.poi.var_9e5f97bf = undefined;
             return;
@@ -319,7 +319,7 @@ function private function_75334336(var_df7a9e25) {
 // Size: 0x100
 function private function_a6d41d6e(poi) {
     if (is_true(self.poi.var_9f099b2c)) {
-        return 1;
+        return true;
     }
     /#
         assert(isdefined(poi));
@@ -338,12 +338,12 @@ function private function_b4d1a9bb() {
         assert(!isdefined(self) || isactor(self));
     #/
     if (isdefined(self.stealth) && level flag::get("stealth_spotted")) {
-        return 1;
+        return true;
     }
     if (isdefined(self.enemy)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace poi/namespace_b1048555
@@ -393,7 +393,7 @@ function private function_c6ff2ee5() {
     /#
         self childthread function_4c4e4ab0();
     #/
-    while (1) {
+    while (true) {
         var_bed66f89 = 0;
         if (var_960224ae <= gettime()) {
             self.poi.auto.angles = (0, 0, 0);
@@ -565,7 +565,7 @@ function private debug() {
         self notify(#"hash_4821a87b2782d121");
         self endon(#"hash_4821a87b2782d121");
         var_3b1af2ae = get_array("<unknown string>", "<unknown string>");
-        while (1) {
+        while (true) {
             if (isdefined(level.poi.var_5ee53e3)) {
                 foreach (ai in level.poi.var_5ee53e3) {
                     if (isdefined(ai.poi.var_7dfe573d) && gettime() < (isdefined(ai.poi.var_7dfe573d.var_3b03815e) ? ai.poi.var_7dfe573d.var_3b03815e : gettime() + float(function_60d95f53()) / 1000)) {
@@ -595,7 +595,7 @@ function private debug() {
 // Size: 0x126
 function private function_4c4e4ab0() {
     /#
-        while (1) {
+        while (true) {
             if (is_true(level.poi.debug) && isdefined(self.poi.auto.angles)) {
                 localdir = anglestoforward(self.poi.auto.angles);
                 worlddir = rotatepoint(localdir, angleclamp180(self.angles));

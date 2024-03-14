@@ -185,7 +185,7 @@ function function_e18d0975(localclientnum) {
     self endon("5fa89c4a37364797");
     var_bd0cdac3 = "weapon_cache_cac_request";
     var_b784f644 = var_bd0cdac3 + localclientnum;
-    while (1) {
+    while (true) {
         util::waittill_any_ents(self, var_bd0cdac3, level, var_b784f644);
         self function_a979e61b(localclientnum);
     }

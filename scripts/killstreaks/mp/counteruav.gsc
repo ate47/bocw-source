@@ -90,11 +90,11 @@ function function_c9938281(attacker, victim, *weapon, *attackerweapon, *meansofd
         arrayremovevalue(level.counter_uav_entities, undefined);
         foreach (var_49ddebb in level.counter_uav_entities) {
             if (attackerweapon === var_49ddebb.owner && var_49ddebb function_eb065a52(meansofdeath)) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace counteruav/counteruav
@@ -141,7 +141,7 @@ function fx_flesh_hit_neck_fatal(params) {
 // Checksum 0x63f8cb86, Offset: 0xa10
 // Size: 0xa8
 function function_3675de8b() {
-    if (0) {
+    if (false) {
         profilestart();
         level.var_f6bf445b = killstreaks::function_f3875fb0(level.var_38c5815f, isdefined(level.var_8ac94558) ? level.var_8ac94558 : 6000, 60, 1, 1);
         profilestop();
@@ -288,16 +288,16 @@ function function_af281272() {
 // Size: 0x6c0
 function activatecounteruav(killstreaktype) {
     if (self killstreakrules::iskillstreakallowed("counteruav", self.team) == 0) {
-        return 0;
+        return false;
     }
     killstreak_id = self killstreakrules::killstreakstart("counteruav", self.team);
     if (killstreak_id == -1) {
-        return 0;
+        return false;
     }
     bundle = getscriptbundle(function_1f11d560());
     counteruav = spawncounteruav(self, killstreak_id, bundle, killstreaktype);
     if (!isdefined(counteruav)) {
-        return 0;
+        return false;
     }
     counteruav clientfield::set("enemyvehicle", 1);
     counteruav clientfield::set("counteruav_fx", 1);
@@ -311,7 +311,7 @@ function activatecounteruav(killstreaktype) {
     counteruav thread function_af281272();
     counteruav thread function_f724cfe4(100000);
     counteruav thread killstreaks::function_2b6aa9e8("counteruav", &destroycounteruav, &onlowhealth, undefined);
-    if (0) {
+    if (false) {
         counteruav killstreaks::function_67d553c4(level.var_f6bf445b, isdefined(level.uav_rotation_radius) ? level.uav_rotation_radius : 4000, isdefined(level.uav_rotation_random_offset) ? level.uav_rotation_random_offset : 1000, 1);
         counteruav clientfield::set("counteruav", 1);
     } else {
@@ -339,7 +339,7 @@ function activatecounteruav(killstreaktype) {
         scoreevents::processscoreevent(#"hash_313b3158836e5466", self, undefined, weapon);
         self stats::function_8fb23f94("counteruav", #"hash_522722579f6b3630", 1);
     }
-    return 1;
+    return true;
 }
 
 // Namespace counteruav/counteruav
@@ -443,7 +443,7 @@ function ontimeout() {
     self.leaving = 1;
     function_7017e1bf();
     self clientfield::set("counteruav_fx", 0);
-    if (0) {
+    if (false) {
         self clientfield::set("counteruav", 0);
     } else {
         self.var_f6bf445b clientfield::set("counteruav", 0);
@@ -557,15 +557,15 @@ function deletecounteruav() {
 // Size: 0x11c
 function private function_4148fbc9() {
     if (isplayer(self) && self hasperk(#"specialty_immunecounteruav")) {
-        return 0;
+        return false;
     }
     arrayremovevalue(level.counter_uav_entities, undefined);
     foreach (var_49ddebb in level.counter_uav_entities) {
         if (util::function_fbce7263(var_49ddebb.team, self.team) && var_49ddebb function_eb065a52(self)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace counteruav/counteruav

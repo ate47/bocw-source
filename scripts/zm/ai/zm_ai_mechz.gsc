@@ -123,7 +123,7 @@ function private function_80ba943b(*e_attacker) {
 // Size: 0x3fe
 function function_66247c2() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         var_31f7011a = arraysortclosest(getplayers(), self.origin);
         foreach (player in var_31f7011a) {
             if (zm_utility::is_player_valid(player)) {
@@ -164,7 +164,7 @@ function function_66247c2() {
         }
     }
     if (var_69681a59.size < 1) {
-        return 1;
+        return true;
     }
     spawn_points = arraysortclosest(var_69681a59, closest_player.origin, undefined, 250);
     if (spawn_points.size > 0) {
@@ -173,7 +173,7 @@ function function_66247c2() {
         var_b2aa54a9 = arraygetfarthest(closest_player.origin, var_69681a59);
     }
     if (!isdefined(var_b2aa54a9)) {
-        return 1;
+        return true;
     }
     /#
         iprintln("<unknown string>" + self.origin + "<unknown string>" + var_b2aa54a9.origin);
@@ -181,7 +181,7 @@ function function_66247c2() {
     self zm_ai_utility::function_a8dc3363(var_b2aa54a9);
     self.completed_emerging_into_playable_area = 1;
     self.var_5e54763a = var_b2aa54a9.zone_name;
-    return 1;
+    return true;
 }
 
 // Namespace namespace_6f90aa12/namespace_6f90aa12
@@ -191,9 +191,9 @@ function function_66247c2() {
 function round_spawn() {
     ai = spawn_single();
     if (isdefined(ai)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_6f90aa12/namespace_6f90aa12
@@ -239,9 +239,9 @@ function function_42dcd795() {
     var_e2ec0129 = function_638411dd();
     var_1548fdf = function_33485c02();
     if (var_e2ec0129 >= var_1548fdf || !level flag::get("spawn_zombies")) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_6f90aa12/namespace_6f90aa12
@@ -345,7 +345,7 @@ function function_5e8a178a(*n_round_number) {
     if (!isdefined(level.var_ea1e9b1e)) {
         level.var_ea1e9b1e = 0;
     }
-    while (1) {
+    while (true) {
         level waittill(#"hash_5d3012139f083ccb");
         if (zm_round_spawning::function_d0db51fc(#"mechz")) {
             level.var_ea1e9b1e++;
@@ -369,11 +369,11 @@ function function_1064536d(pos) {
         radius = self getpathfindingradius();
         foreach (e_vol in a_vols) {
             if (istouching(pos, e_vol, (radius, radius, radius))) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_6f90aa12/namespace_6f90aa12
@@ -446,7 +446,7 @@ function private function_ea7b33b6() {
     var_37c90cfe = 0;
     var_686cf729 = undefined;
     last_pos = undefined;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittilltimeout(2, #"bad_path");
         if (self isplayinganimscripted()) {

@@ -126,7 +126,7 @@ function function_9ab553ff(org, ang, opcolor) {
 // Size: 0xae
 function private function_b8cb1a36() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(#"hash_2a31ff63684161c2") > 0) {
                 function_9ab553ff(level.var_49329074.origin, level.var_49329074.angles);
                 print3d(level.var_49329074.origin + vectorscale((0, 0, 1), 12), "<unknown string>");
@@ -144,7 +144,7 @@ function private function_2b478463() {
     /#
         self endon(#"death");
         var_eebf1bb0 = self function_cee62dac("<unknown string>", "<unknown string>");
-        while (1) {
+        while (true) {
             if (getdvarint(#"hash_2b815b1b53be7ca5") > 0) {
                 foreach (var_29e30639 in var_eebf1bb0) {
                     function_9ab553ff(var_29e30639.origin, var_29e30639.angles);
@@ -264,13 +264,13 @@ function private function_9a75d6e9(var_64f87a02, origin, angles) {
 // Size: 0x64
 function private function_700ae446(var_c71df200, var_6a0a1cc4) {
     if (isdefined(self.var_12650ad6[var_c71df200])) {
-        return 0;
+        return false;
     }
     self.var_12650ad6[var_c71df200] = var_6a0a1cc4;
     if (isdefined(var_6a0a1cc4.owner)) {
         self.neighbors[var_c71df200] = var_6a0a1cc4.owner;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_f27a9d0d/namespace_f27a9d0d
@@ -280,12 +280,12 @@ function private function_700ae446(var_c71df200, var_6a0a1cc4) {
 function private function_71b94f8a(var_5e97bd10, var_9482a8a5) {
     if (isdefined(var_5e97bd10.owner)) {
         if (!var_5e97bd10.owner function_700ae446(var_5e97bd10.id, var_9482a8a5)) {
-            return 0;
+            return false;
         }
     }
     if (isdefined(var_9482a8a5.owner)) {
         if (!var_9482a8a5.owner function_700ae446(var_9482a8a5.id, var_5e97bd10)) {
-            return 0;
+            return false;
         }
     }
     var_c5d10328 = function_b36a26fe();
@@ -299,7 +299,7 @@ function private function_71b94f8a(var_5e97bd10, var_9482a8a5) {
     linktraversal(var_7b6a398d);
     self.nodes[self.nodes.size] = var_ec449bd6;
     self.nodes[self.nodes.size] = var_7b6a398d;
-    return 1;
+    return true;
 }
 
 // Namespace namespace_f27a9d0d/namespace_f27a9d0d

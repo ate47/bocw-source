@@ -66,7 +66,7 @@ function hazard_gas_with_mask(localclientnum, oldval, newval, *bnewent, *binitia
 function function_f5b6d619() {
     self notify(#"hash_452ba9cb2df33d3f");
     self endon(#"death", #"hash_452ba9cb2df33d3f");
-    while (1) {
+    while (true) {
         self postfx::playpostfxbundle("pstfx_water_t_out");
         wait(2.4);
     }

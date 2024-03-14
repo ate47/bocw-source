@@ -138,7 +138,7 @@ function function_4ae6488b() {
     samples = 0;
     var_e7a7a8d9 = self.doa.score.points;
     var_86cc83fe = self.doa.score.killstotal;
-    while (1) {
+    while (true) {
         wait(1);
         var_d7ab2705 = self.doa.score.points - var_e7a7a8d9;
         var_e7a7a8d9 = self.doa.score.points;
@@ -407,23 +407,23 @@ function function_5ce79923() {
 function function_f3b382da(me) {
     players = namespace_7f5aeb59::function_23e1f90f();
     if (players.size == 1) {
-        return 0;
+        return false;
     }
     if (me.doa.score.points == 0) {
-        return 0;
+        return false;
     }
     if (me.doa.score.points == 500000000) {
-        return 1;
+        return true;
     }
     foreach (guy in players) {
         if (guy == me) {
             continue;
         }
         if (guy.doa.score.points >= me.doa.score.points) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_eccff4fb/namespace_eccff4fb

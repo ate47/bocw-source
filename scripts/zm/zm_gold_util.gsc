@@ -66,9 +66,9 @@ function function_b488623(b_show) {
 function function_13ebb331(*v_origin_or_ent, str_targetname) {
     volume = getent(str_targetname, "targetname");
     if (isdefined(volume) && self istouching(volume)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_gold_util/zm_gold_util
@@ -105,12 +105,12 @@ function function_72c803d3(cmd) {
         switch (cmd) {
         case #"hash_2c0a3e57a006c81d":
             function_e76968e1(1);
-            return;
+            break;
         case #"hash_3a2f14069605556a":
             function_e76968e1(0);
-            return;
+            break;
         default:
-            return;
+            break;
         }
     #/
 }

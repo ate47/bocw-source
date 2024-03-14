@@ -142,13 +142,13 @@ function function_270a48e0() {
     switch (var_ea95c1e7) {
     case #"park":
         level.str_scene_name = "scene_hub_post_prisoner_dialog_park_survived";
-        return;
+        break;
     case #"lazar":
         level.str_scene_name = "scene_hub_post_prisoner_dialog_lazar_survived";
-        return;
+        break;
     case #"sims":
         level.str_scene_name = "scene_hub_post_prisoner_dialog_no_survivor";
-        return;
+        break;
     }
 }
 
@@ -959,7 +959,7 @@ function function_af3dcba6() {
     e_tag = spawn("script_model", struct.origin);
     e_tag setmodel("tag_origin");
     level thread function_cb6a2e9b();
-    while (1) {
+    while (true) {
         if (level flag::get("flag_post_prisoner_radio")) {
             return;
         }
@@ -1009,11 +1009,11 @@ function function_8bd27331(e_tag) {
 // Size: 0xf4
 function function_b93309a5(e_tag, str_objective) {
     e_tag endon(#"trigger");
-    while (1) {
+    while (true) {
         var_9da15859 = distance2dsquared(e_tag.origin, level.player.origin);
         if (var_9da15859 <= 57600) {
             objectives::hide(str_objective);
-            while (1) {
+            while (true) {
                 var_9da15859 = distance2dsquared(e_tag.origin, level.player.origin);
                 if (var_9da15859 > 57600) {
                     objectives::show(str_objective);

@@ -410,7 +410,7 @@ function function_e393f5fe(behaviortreeentity) {
     if (isplayer(enemy) && util::within_fov(enemy getplayercamerapos(), enemy getplayerangles(), behaviortreeentity.origin, 0.5)) {
         behaviortreeentity setblackboardattribute("_dog_jump_explode", 1);
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_ec0691f8/namespace_ec0691f8
@@ -419,9 +419,9 @@ function function_e393f5fe(behaviortreeentity) {
 // Size: 0x30
 function function_80f985a4(behaviortreeentity) {
     if (behaviortreeentity.var_9fde8624 === #"hash_2a5479b83161cb35") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_ec0691f8/namespace_ec0691f8
@@ -443,19 +443,19 @@ function function_2bf6dd1c(entity) {
 // Size: 0x166
 function use_low_attack() {
     if (!isdefined(self.enemy) || !isplayer(self.enemy)) {
-        return 0;
+        return false;
     }
     height_diff = self.enemy.origin[2] - self.origin[2];
     low_enough = 30;
     if (height_diff < low_enough && self.enemy getstance() == "prone") {
-        return 1;
+        return true;
     }
     melee_origin = (self.origin[0], self.origin[1], self.origin[2] + 65);
     enemy_origin = (self.enemy.origin[0], self.enemy.origin[1], self.enemy.origin[2] + 32);
     if (!bullettracepassed(melee_origin, enemy_origin, 0, self)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_ec0691f8/namespace_ec0691f8

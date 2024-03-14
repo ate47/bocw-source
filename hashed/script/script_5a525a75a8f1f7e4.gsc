@@ -109,22 +109,22 @@ function function_adb75323(item) {
 function function_baef2915(player, currentweapon) {
     self setinvisibletoplayer(player);
     if (distancesquared(player.origin, self.origin) > function_a3f6cdac(160)) {
-        return 0;
+        return false;
     }
     if (player zm_utility::is_drinking() || player zm_equipment::hacker_active()) {
-        return 0;
+        return false;
     }
     if (player zm_utility::in_revive_trigger() || !player zm_laststand::laststand_has_players_weapons_returned()) {
-        return 0;
+        return false;
     }
     if (zm_loadout::is_placeable_mine(currentweapon) || zm_equipment::is_equipment_that_blocks_purchase(currentweapon)) {
-        return 0;
+        return false;
     }
     if (currentweapon.isgadget || currentweapon.isriotshield) {
-        return 0;
+        return false;
     }
     self setvisibletoplayer(player);
-    return 1;
+    return true;
 }
 
 // Namespace namespace_c09ae6c3/namespace_c09ae6c3
@@ -136,7 +136,7 @@ function function_5eeaa168() {
     self endon(#"death");
     nullweapon = getweapon(#"none");
     var_f945fa92 = getweapon(#"bare_hands");
-    while (1) {
+    while (true) {
         foreach (player in getplayers()) {
             if (!isdefined(player.var_b8783de6)) {
                 player.var_b8783de6 = 0;
@@ -347,10 +347,10 @@ function function_ef9d58d0(item) {
         case #"ww_ieu_acid_t9_item_sr":
         case #"ww_ieu_electric_t9_upgraded_item_sr":
         case #"ww_ieu_plasma_t9_upgraded_item_sr":
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_c09ae6c3/namespace_c09ae6c3

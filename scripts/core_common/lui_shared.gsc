@@ -150,9 +150,9 @@ function function_bed1b789(menuname, registrationindex, modelnameindex, modelval
     }
     if (!isdefined(self.var_3bc46b87[menuname][registrationindex][modelnameindex]) || self.var_3bc46b87[menuname][registrationindex][modelnameindex] != modelvalue) {
         self.var_3bc46b87[menuname][registrationindex][modelnameindex] = modelvalue;
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace lui/lui_shared
@@ -188,7 +188,7 @@ function function_e1038404(var_32613683) {
 // Checksum 0x4e5e5f0d, Offset: 0x600
 // Size: 0xa8
 function function_1c4c4975() {
-    while (1) {
+    while (true) {
         level waittill(#"hash_731d5f1e22d23b13");
         do {
             if (isdefined(level.var_b0d329df[0].ent)) {
@@ -458,7 +458,7 @@ function private _play_movie_for_player(str_movie, str_type, show_black_screen, 
         if (issubstr(str_type, "additive")) {
             [[ lui_menu ]]->set_additive(self, 1);
         }
-        while (1) {
+        while (true) {
             if (isdefined(n_timeout)) {
                 waitresult = undefined;
                 waitresult = self waittilltimeout(n_timeout, #"menuresponse");
@@ -474,7 +474,7 @@ function private _play_movie_for_player(str_movie, str_type, show_black_screen, 
                 }
                 [[ lui_menu ]]->close(self);
                 self notify(#"movie_done");
-                return;
+                break;
             }
         }
     }
@@ -534,7 +534,7 @@ function private function_1bc580af() {
     if (isdefined(lui_menu)) {
         [[ lui_menu ]]->set_playoutromovie(self, 1);
         [[ lui_menu ]]->set_showblackscreen(self, 1);
-        while (1) {
+        while (true) {
             waitresult = undefined;
             waitresult = self waittill(#"menuresponse");
             menu = waitresult.menu;
@@ -544,7 +544,7 @@ function private function_1bc580af() {
                 if (response === #"finished_movie_playback") {
                     [[ lui_menu ]]->close(self);
                     self notify(#"movie_done");
-                    return;
+                    break;
                 }
                 if (response === #"skippable" && isdefined(value)) {
                     [[ lui_menu ]]->registerplayer_callout_traversal(self, value);

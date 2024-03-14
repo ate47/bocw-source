@@ -115,7 +115,7 @@ function private function_98c21925() {
     var_a4d67f13 = int(0.4 * 1000);
     n_rotate_angle = 0.8;
     n_start_time = gettime();
-    while (1) {
+    while (true) {
         self.angles = self.angles + (n_rotate_angle, 0, 0);
         waitframe(1);
         if (gettime() > n_start_time + var_a4d67f13 / 2) {

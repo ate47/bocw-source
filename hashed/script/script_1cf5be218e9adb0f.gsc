@@ -179,13 +179,13 @@ function private function_6e0dbd75(localclientnum, oldval, newval, *bnewent, *bi
         if (fieldname != 2) {
             self thread function_38401b6f(binitialsnap);
         }
-        return;
+        break;
     case 2:
         if (fieldname == 1) {
             self thread function_c6c2696d(binitialsnap);
             snd::play("gdt_spy_camera_shutter");
         }
-        return;
+        break;
     default:
         self function_c2856ebd(0.1);
         if (!level.var_14094ff8.var_c5c03b2) {
@@ -204,7 +204,7 @@ function private function_6e0dbd75(localclientnum, oldval, newval, *bnewent, *bi
             }
         }
         self notify(#"hash_2b753d505c6182c", {#var_600ff81f:0});
-        return;
+        break;
     }
 }
 
@@ -260,7 +260,7 @@ function private function_38401b6f(localclientnum) {
     #/
     waitframe(1);
     self namespace_ca99987f::function_136edb11(undefined, 3.5, var_33a13023, #"hash_2de1684e2167ada4", 1, 0);
-    while (1) {
+    while (true) {
         var_546112ef = self util::function_ca4b4e19(localclientnum, 0)[#"move"];
         var_8c180cda = lerpfloat(var_8c180cda, util::function_b5338ccb(var_546112ef[1], var_b4e0311b), 0.25);
         if (var_8c180cda != 0 && (var_8c180cda < 0 && var_cbcfc238 > 14.64 || var_8c180cda > 0 && var_cbcfc238 < 200)) {
@@ -401,15 +401,15 @@ function private function_48d47618(localclientnum, ent, eye_pos, var_753686d6, v
             if (is_true(ent.var_f6ce3aa0)) {
                 var_cc746cfb = 1;
             } else {
-                return 0;
+                return false;
             }
         }
         var_dbe5c357 = var_3300333c - var_de79cd4c;
         if (var_dbe5c357 < 0 && var_dbe5c357 * -1 > var_1e8c12) {
-            return 0;
+            return false;
         }
         if (var_dbe5c357 > 0 && var_dbe5c357 > var_1456edd4) {
-            return 0;
+            return false;
         }
     }
     screen_pos = self function_a6a764a9(target_pos, 1);
@@ -417,20 +417,20 @@ function private function_48d47618(localclientnum, ent, eye_pos, var_753686d6, v
         if (is_true(level.var_14094ff8.var_1a686ec3) || bullettracepassed(eye_pos, target_pos, 1, ent, undefined, 0, 1)) {
             if (var_cc746cfb) {
                 function_bcae220e(localclientnum, ent, 0, 2);
-                return 0;
+                return false;
             } else if (isdefined(var_ff9d26ff)) {
                 if (!isdefined(ent.var_ff9d26ff)) {
                     ent.var_ff9d26ff = 0;
                 }
                 ent.var_ff9d26ff = ent.var_ff9d26ff + float(self function_8e4cd43b()) / 1000;
                 if (ent.var_ff9d26ff < var_ff9d26ff) {
-                    return 0;
+                    return false;
                 }
             }
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace spy_camera/spy_camera

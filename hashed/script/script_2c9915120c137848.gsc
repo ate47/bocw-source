@@ -200,13 +200,13 @@ function function_9592df27() {
                     }
                     self.var_152b081b[self.var_152b081b.size] = pickupitem;
                 }
-                continue;
+                break;
             }
         }
     }
     self.var_cb52058d = self.origin + (0, 0, self.verticaldistance);
     var_d893beb9 = abs(self.verticaldistance);
-    while (1) {
+    while (true) {
         self waittill(#"plate_activated");
         self function_1efdf194(self.var_cb52058d[2], self.var_edf3aca7, var_d893beb9);
         self waittill(#"plate_deactivated");
@@ -264,14 +264,14 @@ function function_92bae57c() {
                     }
                     self.var_152b081b[self.var_152b081b.size] = pickupitem;
                 }
-                continue;
+                break;
             }
         }
     }
     self.startpos = self.origin;
     self.var_cb52058d = self.origin + (0, 0, self.verticaldistance);
     var_d893beb9 = abs(self.verticaldistance);
-    while (1) {
+    while (true) {
         self waittill(#"plate_activated");
         dest = self.var_cb52058d[2];
         self function_4b059395(dest, self.var_edf3aca7, var_d893beb9);
@@ -326,7 +326,7 @@ function function_2efb907a() {
 function function_8a173823() {
     self.script_model endon(#"death");
     level.doa.var_b8ef1466[level.doa.var_b8ef1466.size] = self.script_model;
-    while (1) {
+    while (true) {
         self waittill(#"plate_activated");
         self thread namespace_f63bdb08::function_49957ef3(self.script_model, 0);
         self waittill(#"plate_deactivated");

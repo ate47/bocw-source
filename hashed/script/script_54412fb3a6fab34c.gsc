@@ -256,7 +256,7 @@ function private function_44a0fc4(var_af8e391e, var_48a9b1c9, var_a3fbfa71) {
         /#
             assert(isdefined(var_48a9b1c9));
         #/
-        while (1) {
+        while (true) {
             volume = getdvarfloat(var_749178c6);
             var_5cbd7bfa = 0;
             isbuttonpressed = level.player buttonpressed(var_48a9b1c9);
@@ -365,7 +365,7 @@ function private function_6134380c(alias, islooping, var_8b0894e2, var_887e31c1,
     if (isdefined(var_743c16e0) == 1) {
         self thread function_58019ad9(islooping, fadeout, var_743c16e0);
     }
-    while (1) {
+    while (true) {
         org = function_68dbcf23(var_8b0894e2, var_887e31c1);
         self moveto(org, waittime, 0, 0);
         wait(waittime);
@@ -413,7 +413,7 @@ function function_dda1d491(alias, var_8b0894e2, var_887e31c1, var_8389ee0a, var_
     self endon(#"hash_1fdfe9a2ee5c7a64");
     self endon(#"hash_21cbaaf28d93437b");
     self endon(#"death");
-    while (1) {
+    while (true) {
         function_6dc5d407(alias, 0, var_8b0894e2, var_887e31c1);
         var_7f793265 = function_83328b67(var_8389ee0a, var_9e8b9b15);
         wait(var_7f793265);
@@ -447,7 +447,7 @@ function private function_17b9cb33(label) {
         assert(isdefined(self) == 1);
     #/
     update_rate = 0.1;
-    while (1) {
+    while (true) {
         var_874f5aad = level.player.origin - level.var_77a389b2[label][0];
         var_7bfe4890 = vectordot(var_874f5aad, level.var_77a389b2[label][1]);
         var_7bfe4890 = math::clamp(var_7bfe4890, 0, level.var_77a389b2[label][2]);
@@ -586,7 +586,7 @@ function private function_4f2eaeca(range, view, scale) {
         scale = 1;
     }
     time = 0.05;
-    while (1) {
+    while (true) {
         wait(time);
         dist = distance(self.origin, level.player.origin);
         start_origin = level.player geteye();
@@ -626,7 +626,7 @@ function private function_ec6efa64(alias, position, range, view) {
         view = cos(view);
     }
     time = 0.1;
-    while (1) {
+    while (true) {
         wait(time);
         dist = distance(position, level.player.origin);
         wait(time);
@@ -787,7 +787,7 @@ function function_2517b19c(min, max, label = "shared_default", width = 0.5) {
 function private function_7776e399(alias, *var_f828a846, *attack, *hold, *release, *scale) {
     self endon(#"death");
     self endon("abort_" + scale);
-    while (1) {
+    while (true) {
     }
 }
 
@@ -1151,7 +1151,7 @@ function private function_c71c2a61(var_5229451c) {
         assert(isarray(level.var_cfbd198a) == 1);
     #/
     waitforplayers();
-    while (1) {
+    while (true) {
         waittime = function_f4127447(var_5229451c);
         wait(waittime);
         if (isdefined(level.var_a5a54d7a) == 0 || level.var_a5a54d7a.size == 0) {
@@ -1227,7 +1227,7 @@ function private function_d2c66f6e(flag_name, *var_2ce1e8bb, var_522acf74, var_a
     if (!isdefined(var_abbedf2e)) {
         var_abbedf2e = 0.5;
     }
-    while (1) {
+    while (true) {
         flag::wait_till(var_2ce1e8bb);
         flag::wait_till_clear(var_2ce1e8bb);
     }
@@ -1248,7 +1248,7 @@ function private function_b5c66198() {
         y = 540 - 112 * scale;
         var_97b12dd2 = 16 * scale;
         var_94de442b = vectorscale((1, 1, 1), 0.72974);
-        while (1) {
+        while (true) {
             yy = y;
             state = function_ea2f17d1(level.stealth.var_33b5cf8f.state, "<unknown string>");
             var_27dc744f = (1, 1, 1);

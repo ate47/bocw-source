@@ -258,7 +258,7 @@ function function_bbe2694a(networkid) {
                 ping.player function_b56144ae(ping.player function_9c9adcf1(), ping.eventtype, 1, ping.location, ping.param, ping.id);
             }
             function_aa50d3e4(ping);
-            return;
+            break;
         }
     }
 }
@@ -354,7 +354,7 @@ function private function_94eab4fb(params) {
 // Checksum 0xd27910e9, Offset: 0x14b8
 // Size: 0x162
 function private update() {
-    while (1) {
+    while (true) {
         time = gettime();
         foreach (ping in level.ping.var_92963150) {
             if (isdefined(ping.expiration) && ping.expiration < time) {

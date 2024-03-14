@@ -152,7 +152,7 @@ function function_c5f9ea85() {
     if (var_e984c3d6 <= 0) {
         return;
     }
-    while (1) {
+    while (true) {
         wait(var_cdcdd992);
         if (level.doa.world_state != 0) {
             continue;
@@ -198,7 +198,7 @@ function function_1782c6ad() {
     }
     var_f3e30707 = 1;
     thresh = function_a3f6cdac(0.1);
-    while (1) {
+    while (true) {
         wait(var_f3e30707);
         self.doa.var_e940d370 = self.doa.var_e940d370 + var_f3e30707;
         if (self function_8bc54983()) {
@@ -261,7 +261,7 @@ function function_bb0408ca() {
     self.doa.var_8f47d882 = 0;
     self.doa.var_b8232cd0 = level.doa.roundnumber;
     self.doa.var_e45f072b = gettime();
-    while (1) {
+    while (true) {
         /#
             lastlevel = self.doa.var_8f47d882;
         #/
@@ -550,21 +550,21 @@ function function_7781556b(origin, var_396c606d = 0) {
 // Size: 0xb0
 function function_7df41f60(player, var_396c606d = 0) {
     if (!isdefined(player)) {
-        return 0;
+        return false;
     }
     if (!isplayer(player)) {
-        return 0;
+        return false;
     }
     if (var_396c606d && is_true(player.ignoreme)) {
-        return 0;
+        return false;
     }
     if (player.sessionstate == "spectator") {
-        return 0;
+        return false;
     }
     if (player.sessionstate == "intermission") {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_7f5aeb59/namespace_7f5aeb59
@@ -575,10 +575,10 @@ function function_2e8dc9d3(volume) {
     players = function_23e1f90f();
     foreach (player in players) {
         if (!player istouching(volume)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_7f5aeb59/namespace_7f5aeb59
@@ -847,7 +847,7 @@ function turnplayershieldon(var_b5c21d1f = 1) {
 function function_9f177b30(player) {
     self endon(#"death");
     level endon(#"game_over");
-    while (1) {
+    while (true) {
         if (player function_61bccc9()) {
             level thread namespace_1e25ad94::function_e8f2d12c(self.origin, 60, 72, 1, (1, 0, 0));
         }
@@ -955,7 +955,7 @@ function private function_e93fae6f(*player) {
     if (!isdefined(level.doa) || !isdefined(level.doa.var_f9c9c0)) {
         return;
     }
-    while (1) {
+    while (true) {
         foreach (hazard in level.doa.var_f9c9c0) {
             if (isdefined(hazard) && self istouching(hazard) && isdefined(hazard.death_func)) {
                 hazard thread [[ hazard.death_func ]]();
@@ -1008,7 +1008,7 @@ function function_c0310e2a() {
         if (!getdvarint(#"hash_2364dfae0e289844", 0)) {
             return;
         }
-        while (1) {
+        while (true) {
             if (self stancebuttonpressed()) {
                 function_f5f0c0f8("<unknown string>");
             }
@@ -1631,7 +1631,7 @@ function function_e2104e07() {
     self endon(#"disconnect");
     self notify("df477f468230c60");
     self endon("df477f468230c60");
-    while (1) {
+    while (true) {
         waitframe(1);
         self function_8fef418b();
     }

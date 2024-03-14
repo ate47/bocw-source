@@ -423,9 +423,9 @@ function getplayerfromclientnum(clientnum) {
 function ispressbuild() {
     buildtype = getdvarstring(#"buildtype");
     if (isdefined(buildtype) && buildtype == "press") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace util/util

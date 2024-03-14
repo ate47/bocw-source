@@ -124,11 +124,11 @@ function private function_5c82fd66(entity) {
     if (isdefined(var_7a69f7e9) && var_7a69f7e9.size) {
         foreach (event in var_7a69f7e9) {
             if (event.nosferatu === entity) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_be2ae534/namespace_be2ae534
@@ -159,17 +159,17 @@ function private function_1d87e1af(entity, *asmstatename) {
 // Size: 0xec
 function function_3e73036b(entity) {
     if (!isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     var_623b3520 = blackboard::getblackboardevents("nfrtu_full_pain");
     if (isdefined(var_623b3520) && var_623b3520.size) {
         foreach (var_77d2339d in var_623b3520) {
             if (var_77d2339d.data.enemy === entity.enemy) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_be2ae534/namespace_be2ae534
@@ -197,7 +197,7 @@ function private function_7df9c6d8(entity) {
 function function_cf9a996(entity) {
     entity namespace_e32bb68::function_3a59ec34("zmb_doa_ai_demon_vocal_leap");
     entity clientfield::set("nfrtu_move_dash", 1);
-    return 1;
+    return true;
 }
 
 // Namespace namespace_be2ae534/namespace_be2ae534
@@ -206,6 +206,6 @@ function function_cf9a996(entity) {
 // Size: 0x30
 function function_bc8edc07(entity) {
     entity clientfield::set("nfrtu_move_dash", 0);
-    return 1;
+    return true;
 }
 

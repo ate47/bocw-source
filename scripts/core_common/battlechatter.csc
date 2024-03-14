@@ -36,7 +36,7 @@ function private function_70a657d8() {
 // Size: 0x120
 function function_4bc12499() {
     level endon(#"death");
-    while (1) {
+    while (true) {
         var_7f729179 = undefined;
         var_7f729179 = level waittill(#"play_death_vox");
         if (!isdefined(var_7f729179.body)) {
@@ -66,38 +66,38 @@ function function_f1d27638(var_f7f4481f) {
     switch (var_f7f4481f.eventid) {
     case 0:
         thread function_50e36ba7(var_f7f4481f.var_40209f44, var_f7f4481f.weapon, var_f7f4481f.var_3d136cd9, var_f7f4481f.var_7e98b410);
-        return;
+        break;
     case 2:
         thread function_ee8935da(var_f7f4481f.var_3d136cd9);
-        return;
+        break;
     case 3:
     case 4:
     case 5:
         thread function_bf569dab(var_f7f4481f.var_40209f44, var_f7f4481f.var_3d136cd9, var_f7f4481f.eventid, var_f7f4481f.weapon);
-        return;
+        break;
     case 6:
         thread function_6bed8fc0(var_f7f4481f.var_40209f44, var_f7f4481f.var_3d136cd9, var_f7f4481f.var_7e98b410);
-        return;
+        break;
     case 7:
         thread function_6afb2bd4(var_f7f4481f.var_40209f44, var_f7f4481f.weapon, var_f7f4481f.localclientnum, var_f7f4481f.var_7e98b410);
-        return;
+        break;
     case 8:
         thread function_22ea6c18(var_f7f4481f.var_40209f44, var_f7f4481f.weapon, var_f7f4481f.localclientnum, var_f7f4481f.var_7e98b410);
-        return;
+        break;
     case 9:
         thread function_7d29bb1e(var_f7f4481f.var_40209f44, var_f7f4481f.weapon, var_f7f4481f.localclientnum, var_f7f4481f.var_7e98b410);
-        return;
+        break;
     case 10:
         thread function_2ddd5b7d(var_f7f4481f.var_40209f44, var_f7f4481f.weapon, var_f7f4481f.localclientnum, var_f7f4481f.var_7e98b410);
-        return;
+        break;
     case 11:
         thread function_afa6ac4b(var_f7f4481f.var_40209f44, var_f7f4481f.weapon, var_f7f4481f.var_3d136cd9, var_f7f4481f.var_7e98b410);
-        return;
+        break;
     case 12:
     case 13:
     case 14:
         thread game_end_vox(var_f7f4481f.var_40209f44, var_f7f4481f.eventid);
-        return;
+        break;
     }
 }
 
@@ -570,7 +570,7 @@ function play_dialog(dialogkey, localclientnum) {
 // Checksum 0x1ce06d65, Offset: 0x2068
 // Size: 0x32
 function update_voice_origin(voicebox) {
-    while (1) {
+    while (true) {
         wait(0.1);
         return;
     }

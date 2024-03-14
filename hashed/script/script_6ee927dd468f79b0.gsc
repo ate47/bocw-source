@@ -160,7 +160,7 @@ function function_d4a86caf() {
     self notify("c1672b60ea15110");
     self endon("c1672b60ea15110");
     level endon(#"game_over");
-    while (1) {
+    while (true) {
         wait(0.5);
         foreach (trap in level.doa.var_a8a43931) {
             time = gettime();
@@ -241,7 +241,7 @@ function function_14a55bfa() {
     var_ac885920 = is_true(self.var_5a546472) && !isdefined(level.doa.var_182fb75a);
     minwait = isdefined(self.var_f92c74e) ? self.var_f92c74e : 5;
     maxwait = isdefined(self.var_f92c74e) ? self.var_f92c74e << 1 : 10;
-    while (1) {
+    while (true) {
         var_37deefd = namespace_7f5aeb59::function_aab26933(self.origin, 1800);
         if (var_37deefd == 0) {
             wait(2);

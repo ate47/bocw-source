@@ -254,12 +254,12 @@ function cmd(cmd) {
         switch (cmd) {
         case #"hash_4121f85b9490b08c":
             function_9fa3d0d(0);
-            return;
+            break;
         case #"hash_4121f95b9490b23f":
             function_9fa3d0d(1);
-            return;
+            break;
         default:
-            return;
+            break;
         }
     #/
 }

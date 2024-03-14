@@ -191,10 +191,10 @@ function private function_27844fc(var_5685d3ec) {
 function private function_5ff18583(shots, substr) {
     foreach (shotname in shots) {
         if (issubstr(tolower(shotname), substr)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace smart_object/smart_object
@@ -317,7 +317,7 @@ function private function_8b855873(&shots, ai, var_ee9cbc26) {
     self endon(#"smart_object_ending_normally", #"hash_334d02928f88cfaa");
     ai endon(#"hash_29b88049dcac8bb3", #"in_action");
     ai.var_a965704f = undefined;
-    while (1) {
+    while (true) {
         result = undefined;
         result = ai waittill(#"alert", #"death", #"damage");
         self childthread function_ca2d3925(shots, ai, var_ee9cbc26, result);
@@ -481,7 +481,7 @@ function function_a59dc8a8(obj) {
 // Size: 0x26
 function can_claim(obj) {
     if (!isdefined(obj)) {
-        return 0;
+        return false;
     }
     return !isdefined(obj.claimer);
 }
@@ -492,18 +492,18 @@ function can_claim(obj) {
 // Size: 0xba
 function can_use(obj) {
     if (!isdefined(obj)) {
-        return 0;
+        return false;
     }
     if (isdefined(obj.var_cd9d7cb) && (obj.var_cd9d7cb < 0 || gettime() < obj.var_cd9d7cb)) {
-        return 0;
+        return false;
     }
     if (is_true(obj.var_fbb20a79)) {
-        return 0;
+        return false;
     }
     if (isai(self) && obj.var_dd0284ce != self ai::get_behavior_attribute("demeanor")) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace smart_object/smart_object
@@ -576,15 +576,15 @@ function function_ab981ed(desiredpos, volume, var_ce60cc2e, var_2889f642 = 0) {
 // Size: 0x5c
 function function_1631909f(obj) {
     if (!isstruct(obj)) {
-        return 0;
+        return false;
     }
     if (!isdefined(obj.variantname)) {
-        return 0;
+        return false;
     }
     if (obj.variantname != "smart_object") {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace smart_object/smart_object
@@ -593,15 +593,15 @@ function function_1631909f(obj) {
 // Size: 0x98
 function function_b69b2de4(obj) {
     if (!function_1631909f(obj)) {
-        return 0;
+        return false;
     }
     if (!isstring(obj.scriptbundlename) && !ishash(obj.scriptbundlename)) {
-        return 0;
+        return false;
     }
     if (!isdefined(getscriptbundle(obj.scriptbundlename))) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace smart_object/smart_object
@@ -615,11 +615,11 @@ function function_b03cc199(obj) {
         if (distance2dsquared(obj.origin, player.origin) < radiussq && function_a3f6cdac(obj.origin[2] - player.origin[2]) < var_5d711abc) {
             var_f9938c4c = function_2981bd91(player.origin - obj.origin);
             if (abs(angleclamp180(var_f9938c4c - obj.angles[1])) < 90) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace smart_object/smart_object
@@ -806,7 +806,7 @@ function function_b5ba6914(obj, var_86fc8c6, volume, *var_2889f642) {
         assert(issentient(self));
     #/
     if (!is_true(var_86fc8c6.script_auto_use)) {
-        return 0;
+        return false;
     }
     if (isdefined(volume)) {
         pos = volume;
@@ -815,12 +815,12 @@ function function_b5ba6914(obj, var_86fc8c6, volume, *var_2889f642) {
     }
     distsqrd = distancesquared(pos, var_86fc8c6.origin);
     if (distsqrd > var_86fc8c6.var_2edb5d76) {
-        return 0;
+        return false;
     }
     if (isdefined(var_2889f642) && !var_2889f642 istouching(var_86fc8c6.origin)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace smart_object/smart_object
@@ -873,12 +873,12 @@ function function_feb48f7(*obj) {
         assert(issentient(self));
     #/
     if (!isdefined(self.var_d6319e36)) {
-        return 0;
+        return false;
     }
     if (isdefined(self.var_cd774402) && isdefined(self.var_678afc31) && !self [[ self.var_cd774402 ]]() && !self [[ self.var_678afc31 ]]()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace smart_object/smart_object
@@ -897,13 +897,13 @@ function function_97a10998(obj) {
         var_91d0d82d = 100;
     }
     if (distancesquared(self.origin, obj.origin) <= var_91d0d82d * var_91d0d82d) {
-        return 0;
+        return false;
     }
     forward = anglestoforward(obj.angles);
     if (vectordot(forward, normal) < cos(45)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace smart_object/smart_object
@@ -979,7 +979,7 @@ function private function_23eef632() {
     /#
         self notify(#"hash_6f64ca444d328bd0");
         self endon(#"hash_6f64ca444d328bd0");
-        while (1) {
+        while (true) {
             foreach (obj in level.var_1ccc840f) {
                 scriptbundlename = obj.scriptbundlename;
                 if (ishash(scriptbundlename)) {
@@ -1020,7 +1020,7 @@ function private function_ed7733c7() {
     /#
         self notify(#"hash_4844afd3d6da9bce");
         self endon(#"hash_4844afd3d6da9bce");
-        while (1) {
+        while (true) {
             foreach (obj in level.var_49430738) {
                 scriptbundlename = obj.scriptbundlename;
                 if (ishash(scriptbundlename)) {
@@ -1031,7 +1031,7 @@ function private function_ed7733c7() {
                 draw_arrow(obj.origin + (0, 0, 1), obj.origin + (0, 0, 1) + anglestoforward(obj.angles) * 16, vectorscale((1, 0, 0), 0.5));
             }
             if (level.var_49430738.size == 0) {
-                return;
+                break;
             }
             waitframe(1);
         }
@@ -1048,7 +1048,7 @@ function private function_6ab41bf7(shot) {
         self endon("<unknown string>");
         if (isstring(shot)) {
             self endon(#"death", #"scene_done");
-            while (1) {
+            while (true) {
                 if (is_true(level.var_929178b5)) {
                     print3d(self.origin + vectorscale((0, 0, 1), 71), shot, (1, 1, 0), 1, 0.25, 1, 1);
                 }

@@ -108,7 +108,7 @@ function private function_e74225a7(item, player, *networkid, *itemid, itemcount,
 // Size: 0xc2
 function private function_86b9a404() {
     if (self isonladder() || self function_b4813488() || self inlaststand() || self function_49b3360c() || self isinfreefall() || self function_b9c43317()) {
-        return 0;
+        return false;
     }
     return self.var_7d7d976a > 0 && armor::get_armor() < 225;
 }
@@ -140,9 +140,9 @@ function private function_d66636df() {
         var_3d557ef9 = var_8b8faf32 + 75;
         var_3d557ef9 = int(min(var_3d557ef9, 225));
         self armor::set_armor(var_3d557ef9, 225, 3, 0.4, 1, 0.5, 0, 1, 1, 1);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_2ed67032/namespace_2ed67032
@@ -207,21 +207,21 @@ function private function_a7879258(lastweapon) {
 // Size: 0xe8
 function private function_ce353466(last_weapon) {
     if (!isdefined(last_weapon) || last_weapon === level.weaponnone || last_weapon === level.var_8ef8b9e8) {
-        return 0;
+        return false;
     }
     if (!self hasweapon(last_weapon)) {
-        return 0;
+        return false;
     }
     if (last_weapon === level.laststandpistol) {
-        return 0;
+        return false;
     }
     if (killstreaks::is_killstreak_weapon(last_weapon) && last_weapon.iscarriedkillstreak !== 1) {
-        return 0;
+        return false;
     }
     if (last_weapon.isgameplayweapon || last_weapon.var_29d24e37 || last_weapon.var_9a789947 || last_weapon.isnotdroppable) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_2ed67032/namespace_2ed67032

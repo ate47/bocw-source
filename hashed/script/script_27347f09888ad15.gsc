@@ -79,7 +79,7 @@ function function_266ee075(var_8452bcb9, var_ddb02c2b) {
         var_cffbc08 = function_b9ea4226(entry.var_cffbc08, var_ddb02c2b.var_b0abb10e);
         if (entry.name === var_8452bcb9 && var_cffbc08 - entry.spawned > 0) {
             entry.spawned++;
-            return;
+            break;
         }
     }
 }
@@ -92,7 +92,7 @@ function function_898aced0(var_8452bcb9, var_ddb02c2b) {
     foreach (entry in var_ddb02c2b.var_7c88c117) {
         if (entry.name === var_8452bcb9 && entry.var_cffbc08 > 0) {
             entry.spawned--;
-            return;
+            break;
         }
     }
 }

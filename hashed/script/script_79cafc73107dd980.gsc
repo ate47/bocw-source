@@ -91,7 +91,7 @@ function function_3dbef270(*params) {
 // Size: 0x98
 function function_86555fba() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"trigger");
         if (isdefined(result.activator) && !is_true(result.activator.boss)) {
@@ -106,37 +106,37 @@ function function_86555fba() {
 // Size: 0x246
 function function_29c22852(entity) {
     if (!isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     if (isdefined(entity.marked_for_death)) {
-        return 0;
+        return false;
     }
     if (is_true(entity.ignoremelee)) {
-        return 0;
+        return false;
     }
     if (abs(entity.origin[2] - entity.enemy.origin[2]) > 64) {
-        return 0;
+        return false;
     }
     if (isdefined(entity.meleeweapon) && entity.meleeweapon !== level.weaponnone) {
         meleedistsq = entity.meleeweapon.aimeleerange * entity.meleeweapon.aimeleerange;
     }
     if (!isdefined(meleedistsq)) {
-        return 0;
+        return false;
     }
     if (distancesquared(entity.origin, entity.enemy.origin) > meleedistsq) {
-        return 0;
+        return false;
     }
     yawtoenemy = angleclamp180(entity.angles[1] - vectortoangles(entity.enemy.origin - entity.origin)[1]);
     if (abs(yawtoenemy) > 60) {
-        return 0;
+        return false;
     }
     if (!entity cansee(entity.enemy)) {
-        return 0;
+        return false;
     }
     if (!tracepassedonnavmesh(entity.origin, isdefined(entity.enemy.last_valid_position) ? entity.enemy.last_valid_position : entity.enemy.origin, entity getpathfindingradius())) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_f6712ec9/namespace_f6712ec9

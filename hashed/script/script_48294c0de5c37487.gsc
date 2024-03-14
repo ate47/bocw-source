@@ -96,16 +96,16 @@ function function_38603984(ent = self, var_393cf5b7) {
 function function_551f9f75(var_393cf5b7) {
     if (isdefined(var_393cf5b7)) {
         if (isinarray(level.var_f9c9c0[var_393cf5b7], self) && isdefined(self.var_11019442)) {
-            return 1;
+            return true;
         }
     } else {
         foreach (var_4db43f60 in level.var_f9c9c0) {
             if (isinarray(var_4db43f60.var_13b85955, self) && isdefined(self.var_11019442)) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace hazard/hazard
@@ -147,7 +147,7 @@ function function_d63819fe() {
     if (isbot(self)) {
         return;
     }
-    while (1) {
+    while (true) {
         foreach (str_name, var_4db43f60 in level.var_f9c9c0) {
             foreach (ent in var_4db43f60.var_13b85955) {
                 if (isdefined(ent) && self function_cc876e01(ent)) {
@@ -288,7 +288,7 @@ function function_ec94d4eb() {
     self endon(#"hash_440299874a982aae", #"death");
     level endon(#"hash_440299874a982aae");
     self.var_e3ab1888[#"gas"] = 0;
-    while (1) {
+    while (true) {
         if (is_true(level.var_a51b5712)) {
             if (is_true(self.var_59d09950)) {
                 if (self function_838a3ba4("gas") >= 0.75) {
@@ -310,7 +310,7 @@ function function_ec94d4eb() {
 // Size: 0x10c
 function function_26752de1() {
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         level waittill(#"save_restore");
         if (is_true(self.var_ac0c25c9)) {
             continue;
@@ -329,7 +329,7 @@ function function_26752de1() {
 // Size: 0xdc
 function function_66980cf3() {
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         self waittill(#"player_revived");
         foreach (str_name, _ in level.var_f9c9c0) {
             if (function_838a3ba4(str_name) >= 1) {
@@ -362,7 +362,7 @@ function do_damage(str_name, n_damage, e_ent, disable_ui) {
         disable_ui = 0;
     }
     if (self scene::is_igc_active()) {
-        return 0;
+        return false;
     }
     var_4db43f60 = level.var_f9c9c0[str_name];
     self.var_e3ab1888[str_name] = min(self.var_e3ab1888[str_name] + n_damage, var_4db43f60.var_43c0c72);
@@ -377,7 +377,7 @@ function do_damage(str_name, n_damage, e_ent, disable_ui) {
     }
     if (self.var_e3ab1888[str_name] < var_4db43f60.var_43c0c72) {
         self thread function_7a5f3e98(str_name, e_ent, disable_ui);
-        return 1;
+        return true;
     }
     switch (str_name) {
     case #"o2":
@@ -398,7 +398,7 @@ function do_damage(str_name, n_damage, e_ent, disable_ui) {
         self.var_b6364cf6 = 1;
         self thread function_df0660b4(str_name, str_mod, n_delay);
     }
-    return 0;
+    return false;
 }
 
 // Namespace hazard/hazard
@@ -777,7 +777,7 @@ function function_54b9a44e(var_c1735d11, var_25dc3e31, n_time, var_a64e984c) {
         if (var_235cc8af > 0) {
         }
     }
-    for (n_damage = var_235cc8af / n_time; 1; n_damage = var_25dc3e31) {
+    for (n_damage = var_235cc8af / n_time; true; n_damage = var_25dc3e31) {
         wait(1);
         var_9ec8f5ba = self do_damage(var_c1735d11, n_damage);
         var_6afe1e1a = self function_838a3ba4(var_c1735d11);

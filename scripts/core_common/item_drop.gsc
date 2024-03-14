@@ -85,7 +85,7 @@ function private function_344f8c02() {
 // Size: 0x76
 function private function_60c9a9e1() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(#"hash_9fd3c7ff85dca2c", 0)) {
                 setdvar(#"hash_9fd3c7ff85dca2c", 0);
                 function_8a5fd783();
@@ -208,7 +208,7 @@ function private function_44a6883c(&drop_item_id, &drop_items, &drop_count, &dro
         }
         for (var_604c3ae6 = 0; var_604c3ae6 < index; var_604c3ae6++) {
             if (!isdefined(drop_count[index]) || drop_count[index] <= 0) {
-                continue;
+                break;
             }
             if (drop_item_id[var_604c3ae6] == -1) {
                 continue;
@@ -234,7 +234,7 @@ function private function_44a6883c(&drop_item_id, &drop_items, &drop_count, &dro
                 drop_items[index] = undefined;
                 drop_count[index] = undefined;
                 drop_amount[index] = undefined;
-                continue;
+                break;
             }
         }
     }
@@ -553,12 +553,12 @@ function private function_a938fba7(player, position, angles, var_a6762160, var_7
         self setcontents(self setcontents(0) & ~(32768 | 16777216 | 2097152 | 8388608));
         self physicslaunch();
         self thread function_10ececeb();
-        return 1;
+        return true;
     }
     /#
         debug_sphere(self.origin, 1, (1, 1, 0));
     #/
-    return 0;
+    return false;
 }
 
 // Namespace item_drop/item_drop
@@ -574,7 +574,7 @@ function function_10ececeb(var_e280bfe2 = 1, tracedistance = 24, originheightoff
     parentent = undefined;
     var_9caaeb74 = undefined;
     var_6b8fe84d = undefined;
-    while (1) {
+    while (true) {
         origin = self.origin + anglestoup(self.angles) * originheightoffset;
         var_708a2754 = physicstrace(origin + (0, 0, 1), origin - (0, 0, tracedistance), min, max, self, 32);
         parentent = var_708a2754[#"entity"];

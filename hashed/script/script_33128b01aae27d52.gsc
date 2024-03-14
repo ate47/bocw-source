@@ -17,10 +17,10 @@ function init() {
     if (!isdefined(level.doa.var_258d537d)) {
         level.doa.var_258d537d = spawnstruct();
         level.doa.var_258d537d.var_a6b0949b = [];
-        for (var_36f009bd = 0; 1; var_36f009bd++) {
+        for (var_36f009bd = 0; true; var_36f009bd++) {
             shot = struct::get("podium_camera_shot" + var_36f009bd);
             if (!isdefined(shot)) {
-                return;
+                break;
             }
             args = strtok(shot.script_parameters, ";");
             /#
@@ -50,7 +50,7 @@ function function_650e4410(entity) {
     self endon("71f4ed6e2d9065b8");
     entity endon(#"death");
     level endon(#"hash_713b04a42601792c", #"terminatecutscene");
-    while (1) {
+    while (true) {
         level.doa.var_b73cc08.origin = entity.origin;
         level.doa.var_b73cc08.angles = entity.angles;
         waitframe(1);

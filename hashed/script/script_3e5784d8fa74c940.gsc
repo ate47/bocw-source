@@ -149,12 +149,12 @@ function function_4ba529a7(weapon) {
         switch (var_1236db9d) {
         case #"hash_426d7c850c7f1d2":
         case #"hash_493fc891e20b4f8a":
-            return 1;
+            return true;
         default:
-            return 0;
+            return false;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_a5ef5769/namespace_a5ef5769
@@ -189,12 +189,12 @@ function function_cbd0f11(weapon) {
         switch (var_1236db9d) {
         case #"hash_426d7c850c7f1d2":
         case #"ww_ray_rifle_t9":
-            return 1;
+            return true;
         default:
-            return 0;
+            return false;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_a5ef5769/namespace_a5ef5769
@@ -207,12 +207,12 @@ function function_4f6da2be(weapon) {
         switch (var_1236db9d) {
         case #"hash_ac86d29509a8939":
         case #"hash_493fc891e20b4f8a":
-            return 1;
+            return true;
         default:
-            return 0;
+            return false;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_a5ef5769/namespace_a5ef5769
@@ -224,7 +224,7 @@ function function_42807ff9() {
     var_17b7891d = "78938d0458bdc0fc" + "ray_rifle_reload";
     self notify(var_17b7891d);
     self endon(var_17b7891d);
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"reload_start");
         self function_d4759f13(0);
@@ -240,7 +240,7 @@ function function_46649524() {
     var_17b7891d = "11bbdb4af90f3d04" + "ray_rifle_melee";
     self notify(var_17b7891d);
     self endon(var_17b7891d);
-    while (1) {
+    while (true) {
         if (!self ismeleeing()) {
             waitframe(1);
             continue;
@@ -291,7 +291,7 @@ function function_54e9969b(params) {
 // Checksum 0x3a05ea3f, Offset: 0x17a0
 // Size: 0xe
 function function_81027f3e(*damage_percent) {
-    return 0;
+    return false;
 }
 
 // Namespace namespace_a5ef5769/namespace_a5ef5769
@@ -375,7 +375,7 @@ function function_bb80aad0() {
     self endon(#"death");
     var_5c022333 = 0;
     var_a8024c64 = 0;
-    while (1) {
+    while (true) {
         foreach (var_7dcfceb3 in self.var_6ccc858c) {
             if (var_7dcfceb3.var_a31e9c2 == var_5c022333) {
                 if (isdefined(var_7dcfceb3.var_7ef7dc23)) {
@@ -475,7 +475,7 @@ function function_b80325b1(owner, position, var_23130969) {
 function function_646f5566() {
     level endon(#"end_game");
     self endon(#"death");
-    while (1) {
+    while (true) {
         s_notify = undefined;
         s_notify = self waittill(#"ray_hit");
         if (!isdefined(self) || !self.is_active) {
@@ -487,7 +487,7 @@ function function_646f5566() {
         self.var_669f67cf++;
         if (self.var_669f67cf >= 8) {
             self function_a0ef7452();
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -711,7 +711,7 @@ function private function_4a074587(weapon) {
 // Size: 0xb8
 function function_bdb8126a() {
     if (!isdefined(level.var_1a4cc228[self.aitype])) {
-        return 0;
+        return false;
     }
     self function_f9b43587();
     entitynum = self getentitynumber();
@@ -720,7 +720,7 @@ function function_bdb8126a() {
     if (isdefined(self.gib_state)) {
         gibserverutils::function_96bedd91(self);
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_a5ef5769/namespace_a5ef5769

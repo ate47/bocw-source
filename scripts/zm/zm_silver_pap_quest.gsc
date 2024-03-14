@@ -162,7 +162,7 @@ function function_af722d1c() {
     var_1e94a095 = array(var_763f6aa3, var_84288675);
     level.var_f0a7e859 = 0;
     zm_sq::function_266d66eb(#"hash_51a6aa8cdd8606d6", var_1e94a095, undefined, #"hash_2c04785633aa43c5", undefined, 100);
-    while (1) {
+    while (true) {
         s_waitresult = undefined;
         s_waitresult = level waittill(#"terminal_1_is_on", #"terminal_2_is_on");
         if (s_waitresult._notify == "terminal_1_is_on") {
@@ -183,7 +183,7 @@ function function_af722d1c() {
     wait(12);
     zm_sq::function_266d66eb(#"hash_52a7a8068eacfe", level.var_f2484ed9, undefined, #"hash_2f6ada38af7b4a6a", undefined, 96);
     zm_sq::function_3029d343(#"hash_52a7a8068eacfe", level.var_f2484ed9);
-    while (1) {
+    while (true) {
         waitresult = level flag::wait_till_any(array(#"dark_aether_active", #"hash_447ca5049bb26ab6"));
         if (waitresult._notify == #"dark_aether_active") {
             level.var_f2484ed9 thread zm_silver_util::function_cc15b58a();
@@ -354,7 +354,7 @@ function function_da48420c() {
 function function_c0a7e4cc() {
     level endon(#"end_game");
     self endon(#"death");
-    while (1) {
+    while (true) {
         level flag::wait_till(#"dark_aether_active");
         self hide();
         level flag::wait_till_clear(#"dark_aether_active");
@@ -370,7 +370,7 @@ function function_c1bd7e55() {
     self notify("533c92333cbb33c0");
     self endon("533c92333cbb33c0");
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         if (level flag::get_all(array("connect_plane_exterior", "connect_medical_bay"))) {
             if (level flag::get_any(array(#"hash_268c943ffdd74fa", "in_dark_side"))) {
                 break;
@@ -413,7 +413,7 @@ function function_40102053() {
     self notify("6037ed8b794720bf");
     self endon("6037ed8b794720bf");
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         if (level flag::get_all(array("connect_plane_exterior", "connect_weapon_lab"))) {
             if (level flag::get_any(array(#"hash_268c943ffdd74fa", "in_dark_side"))) {
                 break;
@@ -599,7 +599,7 @@ function function_672727de() {
 // Size: 0x14a
 function function_79d5804a() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         foreach (player in function_a1ef346b()) {
             self setcursorhint("HINT_NOICON");
             self usetriggerignoreuseholdtime();
@@ -656,7 +656,7 @@ function function_61b74ad2(num) {
 function function_67c20e9d(e_player) {
     str_prompt = e_player zm_utility::function_d6046228(#"hash_7e6b90e7622dbbbc", #"hash_24497a2c0afb8b38");
     self sethintstringforplayer(e_player, str_prompt);
-    return 1;
+    return true;
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
@@ -666,7 +666,7 @@ function function_67c20e9d(e_player) {
 function function_600a5109(e_player) {
     str_prompt = e_player zm_utility::function_d6046228(#"hash_1cb24b9dbc2bff18", #"hash_268d58c0ce46e5e4");
     self sethintstringforplayer(e_player, str_prompt);
-    return 1;
+    return true;
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
@@ -697,7 +697,7 @@ function function_2efdaf37() {
 // Size: 0xc8
 function function_e42aed4c() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         level flag::wait_till(#"dark_aether_active");
         self show();
         showmiscmodels("sky_jellyfish");
@@ -770,9 +770,9 @@ function function_530c2230() {
 function function_557b8c82(*e_player) {
     if (level flag::get(#"dark_aether_active")) {
         self sethintstring(#"hash_53a4565555d8b22c");
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
@@ -782,7 +782,7 @@ function function_557b8c82(*e_player) {
 function function_931d1962(var_cfa99f0e) {
     level endon(#"end_game", #"pap_quest_completed", #"hash_4adb3a0e79514d43");
     self endon(#"death", #"trigger_activated");
-    while (1) {
+    while (true) {
         level flag::wait_till_clear(#"dark_aether_active");
         self hide();
         level.var_7bfbe1fc notsolid();
@@ -985,7 +985,7 @@ function function_9c8b7bf2() {
 function function_716add58() {
     level endon(#"end_game");
     level endon(#"hash_3e765c26047c9f54");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"into_the_dark_side");
         level flag::clear(#"hash_4d6700553ede7078");
@@ -1142,9 +1142,9 @@ function function_6c1800f0() {
 function function_2ad61161(*e_player) {
     if (level flag::get(#"dark_aether_active")) {
         self sethintstring(#"hash_22453a3bdc9b43d8");
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_silver_pap_quest/zm_silver_pap_quest
@@ -1155,7 +1155,7 @@ function function_b1b484d() {
     level endon(#"hash_40cd2e6f2c496d75", #"end_game");
     self endon(#"disconnect");
     var_f3b29ae8 = 0;
-    while (1) {
+    while (true) {
         wait(randomfloatrange(1, 20));
         for (i = 0; i < 2; i++) {
             self.var_3643da89 = 1;
@@ -1194,7 +1194,7 @@ function function_4b593f32() {
         waitframe(1);
     }
     level thread zm_utility::function_60daf5f7("wonderfizz", "targetname", 1);
-    while (1) {
+    while (true) {
         if (level flag::get("dark_aether_active")) {
             level thread zm_utility::function_60daf5f7("wonderfizz", "targetname", 0);
             hidemiscmodels("replace_wunderfizz_thing");
@@ -1301,12 +1301,12 @@ function private function_bde52114(cmd) {
                 }
                 level notify(#"into_the_dark_side");
             }
-            return;
+            break;
         case #"hash_2bceb571f82616ef":
             if (isdefined(level.var_f070b39a)) {
                 level.var_f070b39a notify(#"trigger_activated");
             }
-            return;
+            break;
         case #"hash_3eaff69edfc6cd75":
             if (level get("<unknown string>") && level get(#"dark_aether_active")) {
                 level notify(#"hash_61e8a39b3a4bee6a");
@@ -1314,7 +1314,7 @@ function private function_bde52114(cmd) {
             if (isdefined(level.var_241be029)) {
                 level.var_241be029 notify(#"trigger_activated");
             }
-            return;
+            break;
         case #"hash_50d92ca3c6c7c2a8":
             zombie_devgui_open_sesame();
             wait(6);
@@ -1337,12 +1337,12 @@ function private function_bde52114(cmd) {
             if (isdefined(level.var_241be029)) {
                 level.var_241be029 notify(#"trigger_activated");
             }
-            return;
+            break;
         case #"hash_d005bc857be0586":
             if (isdefined(level.var_ba3a0e1f) && level get(#"dark_aether_active")) {
                 level.var_ba3a0e1f = level.var_ba3a0e1f + 3600;
             }
-            return;
+            break;
         case #"hash_4d0546ccefa40f38":
             level set(#"hash_4d6700553ede7078");
             if (isdefined(level.var_8dc29179)) {
@@ -1353,29 +1353,29 @@ function private function_bde52114(cmd) {
             if (isdefined(level.var_f2484ed9)) {
                 level.var_f2484ed9 wait_till(#"hash_4d6700553ede7078");
             }
-            return;
+            break;
         case #"hash_4ddc655ce16a22ae":
             foreach (player in getplayers()) {
                 player set("<unknown string>" + #"hash_63af42145e260fb5", 0);
                 player set("<unknown string>" + #"hash_63af42145e260fb5", 1);
             }
-            return;
+            break;
         case #"hash_6e3bbba4f0ed5552":
             foreach (player in getplayers()) {
                 player set("<unknown string>" + #"hash_63af42145e260fb5", 0);
             }
-            return;
+            break;
         case #"hash_651a8146d52739a":
             foreach (player in getplayers()) {
                 player set("<unknown string>" + #"hash_63af42145e260fb5", 0);
                 player set("<unknown string>" + #"hash_63af42145e260fb5", 2);
             }
-            return;
+            break;
         case #"hash_407a1d2b33b93f95":
             level thread function_feecd74();
-            return;
+            break;
         default:
-            return;
+            break;
         }
     #/
 }

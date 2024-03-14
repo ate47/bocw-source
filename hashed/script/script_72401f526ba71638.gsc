@@ -228,7 +228,7 @@ function private function_3ef3cec3(var_c8a42ec) {
     for (i = 0; i < level.var_1b527536.size; i++) {
         if (level.var_1b527536[i] == var_d07d57b2) {
             self clientfield::set_to_player("field_upgrade_selected", i + 1);
-            return;
+            break;
         }
     }
 }
@@ -535,7 +535,7 @@ function function_4f8cb6fd(item_name) {
     case #"field_upgrade_aether_shroud_4_item_sr":
     case #"field_upgrade_aether_shroud_5_item_sr":
         if (!is_true(getgametypesetting(#"hash_26dc68686741b223"))) {
-            return 1;
+            return true;
         }
         break;
     case #"field_upgrade_frost_blast_2_item_sr":
@@ -545,7 +545,7 @@ function function_4f8cb6fd(item_name) {
     case #"field_upgrade_frost_blast_1_item_sr":
     case #"field_upgrade_frost_blast_item_sr":
         if (!is_true(getgametypesetting(#"hash_af8083f7ea1c28b"))) {
-            return 1;
+            return true;
         }
         break;
     case #"field_upgrade_heal_aoe_1_item_sr":
@@ -555,7 +555,7 @@ function function_4f8cb6fd(item_name) {
     case #"field_upgrade_heal_aoe_3_item_sr":
     case #"field_upgrade_heal_aoe_2_item_sr":
         if (!is_true(getgametypesetting(#"hash_77e5bcb82c95cf00"))) {
-            return 1;
+            return true;
         }
         break;
     case #"field_upgrade_energy_mine_item_sr":
@@ -565,7 +565,7 @@ function function_4f8cb6fd(item_name) {
     case #"field_upgrade_energy_mine_1_item_sr":
     case #"field_upgrade_energy_mine_4_item_sr":
         if (!is_true(getgametypesetting(#"hash_4230e2ce569b5e48"))) {
-            return 1;
+            return true;
         }
         break;
     case #"field_upgrade_ring_of_fire_4_item_sr":
@@ -575,7 +575,7 @@ function function_4f8cb6fd(item_name) {
     case #"field_upgrade_ring_of_fire_item_sr":
     case #"field_upgrade_ring_of_fire_3_item_sr":
         if (!is_true(getgametypesetting(#"hash_2015355bc530a7e8"))) {
-            return 1;
+            return true;
         }
         break;
     case #"field_upgrade_frenzied_guard_item_sr":
@@ -585,7 +585,7 @@ function function_4f8cb6fd(item_name) {
     case #"field_upgrade_frenzied_guard_1_item_sr":
     case #"field_upgrade_frenzied_guard_5_item_sr":
         if (!is_true(getgametypesetting(#"hash_6e7905f68c5d7bdd"))) {
-            return 1;
+            return true;
         }
         break;
     case #"field_upgrade_toxic_growth_5_item_sr":
@@ -595,7 +595,7 @@ function function_4f8cb6fd(item_name) {
     case #"field_upgrade_toxic_growth_1_item_sr":
     case #"field_upgrade_toxic_growth_3_item_sr":
         if (!is_true(getgametypesetting(#"hash_5cedd3fe49a8b4e1"))) {
-            return 1;
+            return true;
         }
         break;
     case #"field_upgrade_lightning_links_3_item_sr":
@@ -605,11 +605,11 @@ function function_4f8cb6fd(item_name) {
     case #"field_upgrade_lightning_links_2_item_sr":
     case #"field_upgrade_lightning_links_item_sr":
         if (!is_true(getgametypesetting(#"hash_1fc262f0136c2814"))) {
-            return 1;
+            return true;
         }
         break;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_1b527536/namespace_1b527536

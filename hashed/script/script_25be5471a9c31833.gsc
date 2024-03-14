@@ -376,7 +376,7 @@ function function_4513f006(machine, trigger) {
     }
     self endoncallback(&function_6c71e778, #"death");
     self thread function_3fec008f(machine, trigger);
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;

@@ -86,7 +86,7 @@ function private function_8c47bbe5(localclientnum) {
     self notify("12cc7fe31edc7db8");
     self endon("12cc7fe31edc7db8");
     self.var_d3fe9463 = undefined;
-    while (1) {
+    while (true) {
         var_4731ce01 = 0;
         if (isalive(self) && self isplayerads()) {
             entnum = function_6777167b(localclientnum);
@@ -120,18 +120,18 @@ function private function_8c47bbe5(localclientnum) {
 // Size: 0xa2
 function function_b6e83a42(localclientnum, ent) {
     if (!isplayer(ent)) {
-        return 0;
+        return false;
     }
     if (!isalive(ent)) {
-        return 0;
+        return false;
     }
     if (ent hasperk(localclientnum, #"specialty_immunetrackerspotting")) {
-        return 0;
+        return false;
     }
     if (!isdefined(ent.team) || self.team == ent.team) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace tracker/tracker_shared
@@ -144,7 +144,7 @@ function private function_e018cdc7(localclientnum) {
     level endon(#"game_ended");
     var_b117d19 = 0;
     var_cf075ce6 = 0;
-    while (1) {
+    while (true) {
         time = gettime();
         if (isdefined(self.var_ee1cc1c2)) {
             arrayremovevalue(self.var_ee1cc1c2, undefined, 1);

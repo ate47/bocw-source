@@ -365,10 +365,10 @@ function function_4165306b(player) {
 function function_6d1e4410(player, blueprint) {
     foreach (component in blueprint.components) {
         if (!zm_items::player_has(player, component)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_crafting/zm_crafting
@@ -399,16 +399,16 @@ function function_7a8f3cbd() {
 // Size: 0x96
 function function_7362ecc8(player, unitrigger) {
     if (is_true(unitrigger.locked)) {
-        return 0;
+        return false;
     }
     blueprints = unitrigger function_4165306b(player);
     if (blueprints.size < 1) {
-        return 0;
+        return false;
     }
     if (is_true(unitrigger.blueprint.locked)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_crafting/zm_crafting
@@ -416,7 +416,7 @@ function function_7362ecc8(player, unitrigger) {
 // Checksum 0x32e822d6, Offset: 0x18e8
 // Size: 0x18
 function function_8962a3bb(*player, *unitrigger) {
-    return 1;
+    return true;
 }
 
 // Namespace zm_crafting/zm_crafting
@@ -469,9 +469,9 @@ function function_73f3bb03(*player, unitrigger) {
 function function_7bffa1ac(weapon) {
     if (zm_equipment::is_equipment(weapon)) {
         if (zm_equipment::is_limited(weapon) && zm_equipment::limited_in_use(weapon)) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
     return !zm_weapons::limited_weapon_below_quota(weapon, undefined);
 }
@@ -890,7 +890,7 @@ function private function_b03ccfce() {
 // Size: 0x1c
 function private function_f189f7f(*player) {
     self.hint_string = "";
-    return 0;
+    return false;
 }
 
 // Namespace zm_crafting/zm_crafting
@@ -930,11 +930,11 @@ function private function_8109ae21(player) {
             self.var_c2f40a58 ghost();
             self.var_c2f40a58.is_visible = undefined;
         }
-        return 1;
+        return true;
     }
     if (is_true(self.blueprint.locked)) {
         self.hint_string = "";
-        return 0;
+        return false;
     }
     if (blueprints.size > 1 && isdefined(self.blueprint.var_4050486a)) {
         self.hint_string = self.blueprint.var_4050486a;
@@ -956,7 +956,7 @@ function private function_8109ae21(player) {
             self.var_c2f40a58.is_visible = undefined;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_crafting/zm_crafting
@@ -1152,11 +1152,11 @@ function private function_9693e041(player) {
     if (player function_7bffa1ac(self.blueprint.var_54a97edd)) {
         self.hint_string = #"hash_718d32f9e8cea17";
         self.cost = undefined;
-        return 1;
+        return true;
     }
     if (player function_2d53738e(self.blueprint.var_54a97edd)) {
         if (is_true(self.var_ad7ae074)) {
-            return 1;
+            return true;
         }
         if (is_true(self.blueprint.var_54a97edd.isriotshield) && isdefined(player.player_shield_reset_health) && is_true(player.var_d3345483)) {
             self.cost = function_ceac3bf9(player, 1);
@@ -1169,7 +1169,7 @@ function private function_9693e041(player) {
         } else {
             self.hint_string = #"hash_53fd856df9288be7";
             self.cost = undefined;
-            return 1;
+            return true;
         }
     } else if (!player function_2d53738e(self.blueprint.var_54a97edd) && (is_true(self.blueprint.var_c028dcfe) && !player function_48ce9379(self.blueprint.var_54a97edd) || is_true(level.var_905507c3))) {
         str = self.blueprint.var_abd9b2d0;
@@ -1197,7 +1197,7 @@ function private function_9693e041(player) {
     if (isdefined(level.var_932a1afb)) {
         self [[ level.var_932a1afb ]](player);
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_crafting/zm_crafting
@@ -1437,15 +1437,15 @@ function private function_6e16f902() {
 function private function_15d10d06(player) {
     if (player function_7bffa1ac(self.blueprint.var_54a97edd)) {
         self.hint_string = #"hash_7b4e31b02c13ed59";
-        return 1;
+        return true;
     } else if (is_true(self.bought)) {
         self.hint_string = #"hash_48157c44f8771b6c";
-        return 1;
+        return true;
     }
     str = self.blueprint.var_391591d0;
     var_e7ed2264 = function_c9163c5d(str);
     self.hint_string = player zm_utility::function_d6046228(str, var_e7ed2264);
-    return 1;
+    return true;
 }
 
 // Namespace zm_crafting/zm_crafting
@@ -1593,7 +1593,7 @@ function devgui_think() {
             str_cmd = "<unknown string>" + i + "<unknown string>" + i + "<unknown string>" + i + "<unknown string>";
             adddebugcommand(str_cmd);
         }
-        while (1) {
+        while (true) {
             var_cf5ebef8 = getdvarstring(#"hash_43086839e587cc6c");
             if (var_cf5ebef8 != "<unknown string>") {
                 table_id = int(var_cf5ebef8);

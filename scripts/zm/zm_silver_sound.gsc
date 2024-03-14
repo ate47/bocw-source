@@ -38,7 +38,7 @@ function function_c1db8d1a() {
 // Size: 0x1dc
 function function_acd83a15() {
     level endon(#"game_over");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"musroundend", #"hash_350a3e373494a400");
         if (waitresult._notify === "musRoundEnd") {
@@ -72,19 +72,19 @@ function function_30d9d43(str_msg, *n_delay) {
     case #"hash_5bad1025f0cf747e":
         level util::clientnotify("term1");
         level util::clientnotify("term2");
-        return;
+        break;
     case #"hash_7dbdd94b1b1e6829":
         playsoundatposition(#"hash_191f00f5f707e4ca", (1616, 741, -270));
         level util::clientnotify("term1");
-        return;
+        break;
     case #"hash_7dbdd64b1b1e6310":
         level util::clientnotify("term2");
-        return;
+        break;
     default:
         /#
             iprintlnbold("<unknown string>" + n_delay + "<unknown string>");
         #/
-        return;
+        break;
     }
 }
 
@@ -160,17 +160,17 @@ function function_d0f24e17() {
 // Size: 0x74
 function function_e840d5a5() {
     if (is_true(level.musicsystemoverride)) {
-        return 0;
+        return false;
     }
     if (!isdefined(level.musicsystem)) {
-        return 1;
+        return true;
     }
     if (!isdefined(level.musicsystem.currentplaytype)) {
-        return 1;
+        return true;
     }
     if (level.musicsystem.currentplaytype >= 4) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 

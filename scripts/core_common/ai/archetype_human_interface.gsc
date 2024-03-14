@@ -51,21 +51,21 @@ function vignettemodecallback(entity, *attribute, *oldvalue, value) {
         oldvalue collidewithactors(0);
         oldvalue pushplayer(0);
         oldvalue setavoidancemask("avoid all");
-        return;
+        break;
     case #"slow":
         oldvalue.pushable = 0;
         oldvalue collidewithactors(0);
         oldvalue pushplayer(1);
         oldvalue setavoidancemask("avoid ai");
-        return;
+        break;
     case #"fast":
         oldvalue.pushable = 0;
         oldvalue collidewithactors(1);
         oldvalue pushplayer(1);
         oldvalue setavoidancemask("avoid none");
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 
@@ -81,19 +81,19 @@ function function_20fdb709(entity, *attribute, oldvalue, value) {
     switch (value) {
     case #"combat":
         attribute setblackboardattribute("_human_demeanor", "COMBAT");
-        return;
+        break;
     case #"patrol":
         attribute setblackboardattribute("_human_demeanor", "PATROL");
-        return;
+        break;
     case #"cqb":
         attribute setblackboardattribute("_human_demeanor", "CQB");
-        return;
+        break;
     case #"alert":
         attribute setblackboardattribute("_human_demeanor", "ALERT");
-        return;
+        break;
     default:
         attribute setblackboardattribute("_human_demeanor", "COMBAT");
-        return;
+        break;
     }
 }
 
@@ -108,17 +108,17 @@ function function_beabbc97(entity, *attribute, oldvalue, value) {
     switch (value) {
     case #"ads":
         attribute setblackboardattribute("_aim_overlay", "ADS");
-        return;
+        break;
     case #"up":
         attribute setblackboardattribute("_aim_overlay", "UP");
-        return;
+        break;
     case #"down":
         attribute setblackboardattribute("_aim_overlay", "DOWN");
-        return;
+        break;
     case #"none":
     default:
         attribute setblackboardattribute("_aim_overlay", "NONE");
-        return;
+        break;
     }
 }
 

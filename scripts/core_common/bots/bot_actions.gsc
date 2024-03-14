@@ -16,7 +16,7 @@ function function_70a657d8() {
     switch (level.gametype) {
     default:
         function_9cefb01();
-        return;
+        break;
     }
 }
 
@@ -121,7 +121,7 @@ function private function_bebdaa6b(actionparams) {
 // Size: 0x8e
 function private reload(*actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
-    while (1) {
+    while (true) {
         if (!self isreloading()) {
             self bottapbutton(4);
         }
@@ -212,7 +212,7 @@ function private function_9575b14a(actionparams) {
 // Size: 0xa6
 function private function_5be2fa6e(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
-    while (1) {
+    while (true) {
         jammer = actionparams.jammer;
         if (isdefined(jammer.enemytrigger)) {
             self use_trigger(jammer.enemytrigger);
@@ -266,7 +266,7 @@ function private revive(actionparams) {
         self.bot.var_ce28855b = 1;
     }
     revivee = actionparams.revivetarget;
-    while (1) {
+    while (true) {
         self.bot.var_87751145 = revivee.origin;
         self waittill(#"hash_77f2882ff9140e86");
         if (self botgetlookdot() > 0.8) {
@@ -371,7 +371,7 @@ function private function_97bc2873(actionparams) {
 // Size: 0x15e
 function private melee(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
-    while (1) {
+    while (true) {
         var_bd773dde = actionparams.var_bd773dde;
         self.bot.var_87751145 = var_bd773dde;
         if (!self ismeleeing()) {
@@ -419,7 +419,7 @@ function private function_3aab44a3(*actionparams) {
         self.bot.var_ad331541 dodamage(10000, center, self, undefined, "MOD_MELEE_WEAPON_BUTT");
         return;
     }
-    while (1) {
+    while (true) {
         self.bot.var_87751145 = center;
         self waittill(#"hash_77f2882ff9140e86");
         if (!self ismeleeing() && self botgetlookdot() >= 0.7) {
@@ -458,7 +458,7 @@ function private function_96340252(actionparams) {
 function private function_c49cdd53(*actionparams) {
     self endoncallback(&function_84f889a2, #"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     crate = undefined;
-    while (1) {
+    while (true) {
         var_7485904b = self.bot.var_510b1057;
         if (isdefined(var_7485904b) && var_7485904b !== crate) {
             crate = var_7485904b;
@@ -519,7 +519,7 @@ function private function_9f7ee32b(actionparams) {
 // Size: 0x90
 function private function_f60b48cd(*actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
-    while (1) {
+    while (true) {
         object = self.bot.objective.info.target;
         self use_gameobject(object);
     }
@@ -531,7 +531,7 @@ function private function_f60b48cd(*actionparams) {
 // Size: 0x118
 function private use_trigger(trigger) {
     lookat = trigger triggerrequireslookat();
-    while (1) {
+    while (true) {
         if (lookat) {
             center = trigger getcentroid();
             self.bot.var_87751145 = center;
@@ -556,10 +556,10 @@ function private use_trigger(trigger) {
 // Size: 0x9a
 function private function_e02bffcd(trigger) {
     if (!self istouching(trigger)) {
-        return 0;
+        return false;
     }
     if (trigger.classname != #"trigger_radius_use") {
-        return 1;
+        return true;
     }
     radius = trigger getmaxs()[0] + -32;
     return distance2dsquared(trigger.origin, self.origin) < radius * radius;
@@ -572,7 +572,7 @@ function private function_e02bffcd(trigger) {
 function private use_gameobject(object) {
     trigger = object.trigger;
     lookat = trigger triggerrequireslookat();
-    while (1) {
+    while (true) {
         if (lookat) {
             center = trigger getcentroid();
             self.bot.var_87751145 = center;

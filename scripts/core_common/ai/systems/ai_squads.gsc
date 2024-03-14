@@ -67,10 +67,10 @@ class aisquad {
                 self.squadleader = self.squadmembers[0];
                 self.squadbreadcrumb = self.squadleader.origin;
             } else {
-                return 0;
+                return false;
             }
         }
-        return 1;
+        return true;
     }
 
     // Namespace aisquad/ai_squads
@@ -162,13 +162,13 @@ function private getsquad(squadname) {
 // Checksum 0x2a075094, Offset: 0x6d0
 // Size: 0x5c
 function private thinksquad(squadname) {
-    while (1) {
+    while (true) {
         if ([[ level._squads[squadname] ]]->think()) {
             wait(0.5);
             continue;
         }
         removesquad(squadname);
-        return;
+        break;
     }
 }
 
@@ -206,7 +206,7 @@ function private squadmemberthink() {
         if (is_true(newsquadcreated)) {
             level thread thinksquad(self.squadname);
         }
-        while (1) {
+        while (true) {
             squadleader = [[ level._squads[self.squadname] ]]->getleader();
             if (isdefined(squadleader) && !(isint(squadleader) && squadleader == 0)) {
                 if (squadleader == self) {
@@ -258,15 +258,15 @@ function private squadmemberthink() {
 // Size: 0xb6
 function isfollowingsquadleader(ai) {
     if (ai ai::get_behavior_attribute("move_mode") != "squadmember") {
-        return 0;
+        return false;
     }
     squadmember = issquadmember(ai);
     currentsquadleader = getsquadleader(ai);
     isaisquadleader = isdefined(currentsquadleader) && currentsquadleader == ai;
     if (squadmember && !isaisquadleader) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace aisquads/ai_squads
@@ -295,7 +295,7 @@ function issquadleader(ai) {
             return (isdefined(squadleader) && squadleader == ai);
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace aisquads/ai_squads

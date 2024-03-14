@@ -169,7 +169,7 @@ function private function_4b648627(var_e9a27711) {
 function function_d59c42ab(var_3f94a5b6) {
     level endon(#"hash_76c5d10560b669a7");
     var_3f94a5b6.screen.info function_92c05efb(var_3f94a5b6.target);
-    while (1) {
+    while (true) {
         if (!isdefined(var_3f94a5b6.target) || !var_3f94a5b6.target function_4b648627(var_3f94a5b6.cursor)) {
             profilestart();
             var_3f94a5b6.target = undefined;
@@ -252,7 +252,7 @@ function private function_dae63c17() {
     /#
         level endon(#"end_game", #"hash_76c5d10560b669a7");
         self endon(#"disconnect", #"death");
-        while (1) {
+        while (true) {
             self iprintlnbold("<unknown string>");
             self iprintlnbold("<unknown string>");
             self iprintlnbold("<unknown string>");
@@ -294,7 +294,7 @@ function function_b699cdc8(var_3f94a5b6) {
 function private function_d228e8b0(var_3f94a5b6) {
     level endon(#"hash_76c5d10560b669a7");
     self endon(#"disconnect", #"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;

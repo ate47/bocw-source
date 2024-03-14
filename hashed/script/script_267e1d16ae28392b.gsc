@@ -75,7 +75,7 @@ function on_player_connect() {
     self.var_8e5e0541.kills = [];
     self.var_8e5e0541.var_f79c95f9 = [];
     self thread function_fd51b8a8();
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"hash_55b653455cd7424c");
         function_659819fa(waitresult.id);
@@ -288,12 +288,12 @@ function on_ai_killed(s_params) {
 // Size: 0xa4
 function private function_fd51b8a8() {
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"gun_level_complete");
         if (waitresult.is_last_rank && waitresult.item_index >= 1 && waitresult.item_index <= 60) {
             self function_659819fa(#"hash_30b6860e2869b596");
-            return;
+            break;
         }
     }
 }

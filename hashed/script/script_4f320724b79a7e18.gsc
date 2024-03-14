@@ -221,7 +221,7 @@ function state_combat_enter(*params) {
 // Size: 0x98
 function function_24ec919c() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         struct = undefined;
         struct = self waittill(#"gunner_weapon_fired");
         if (struct.gunner_index == 2 || struct.gunner_index == 3) {
@@ -346,7 +346,7 @@ function function_72f3a888(point, enemy, var_b8bc109d) {
 // Size: 0x230
 function function_101f996f() {
     self endon(#"death", #"change_state", #"end_attack_thread");
-    while (1) {
+    while (true) {
         enemy = self.enemy;
         if (isdefined(enemy) && !is_true(self.inpain)) {
             self vehlookat(enemy);
@@ -377,7 +377,7 @@ function function_101f996f() {
 // Size: 0x4d0
 function function_20b4a129() {
     self endon(#"death", #"change_state", #"end_attack_thread");
-    while (1) {
+    while (true) {
         enemy = self.enemy;
         if (!isdefined(enemy) || is_true(self.inpain)) {
             wait(1);
@@ -628,7 +628,7 @@ function function_24798579() {
     self endon(#"death", #"exit_vehicle");
     weapon = self seatgetweapon(1);
     firetime = weapon.firetime;
-    while (1) {
+    while (true) {
         target = self turretgettarget(0);
         if (isdefined(target)) {
             self turretsettarget(1, self turretgettarget(0));
@@ -648,7 +648,7 @@ function function_1d8cf7a0() {
     self endon(#"death", #"exit_vehicle");
     weapon = self seatgetweapon(2);
     firetime = weapon.firetime;
-    while (1) {
+    while (true) {
         target = self turretgettarget(0);
         if (isdefined(target)) {
             self turretsettarget(2, self turretgettarget(0));
@@ -669,7 +669,7 @@ function function_14a42022() {
     weapon = getweapon("gunship_rockets_armada");
     firetime = weapon.firetime;
     driver = self getseatoccupant(0);
-    while (1) {
+    while (true) {
         if (driver jumpbuttonpressed()) {
             var_32d09ad1 = self.var_a6252c84[0];
             var_977d6429 = self.var_a6252c84[1];
@@ -690,7 +690,7 @@ function function_14a42022() {
 // Size: 0x128
 function function_e9e5bd0() {
     self endon(#"change_state", #"crash_done", #"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"veh_collision");
         velocity = waitresult.velocity;

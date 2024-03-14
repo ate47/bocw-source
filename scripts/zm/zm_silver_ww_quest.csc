@@ -44,19 +44,19 @@ function function_cadc50d8(localclientnum, *oldval, newval, *bnewent, *binitials
         if (isdefined(self.light_fx)) {
             stopfx(fieldname, self.light_fx);
         }
-        return;
+        break;
     case 1:
         self.light_fx = util::playfxontag(fieldname, #"hash_d208acedd2518ae", self, "tag_tank");
-        return;
+        break;
     case 2:
         self.light_fx = util::playfxontag(fieldname, #"hash_7a6a8f045e6c6b7e", self, "tag_tank");
-        return;
+        break;
     case 3:
         self.light_fx = util::playfxontag(fieldname, #"hash_1119b81f77cb3c61", self, "tag_tank");
-        return;
+        break;
     case 4:
         self.light_fx = util::playfxontag(fieldname, #"hash_6154a93403194405", self, "tag_tank");
-        return;
+        break;
     }
 }
 
@@ -238,7 +238,7 @@ function function_37ba0961(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_5bd0643d(localclientnum) {
     self notify(#"hash_7e008885ec855120");
     self endon(#"disconnect", #"hash_7e008885ec855120");
-    while (1) {
+    while (true) {
         if (isdefined(self)) {
             earthquake(localclientnum, 0.2, 1, self.origin, 100);
             self playrumbleonentity(localclientnum, "damage_light");
@@ -436,11 +436,11 @@ function private function_7532a0ff(weapon_name) {
         case #"ww_ieu_acid_t9":
         case #"ww_ieu_gas_t9":
         case #"ww_ieu_plasma_t9":
-            return 1;
+            return true;
         default:
-            return 0;
+            return false;
         }
     }
-    return 0;
+    return false;
 }
 

@@ -92,7 +92,7 @@ function clearhackertarget(weapon, successfulhack, spawned) {
 // Size: 0x6a0
 function watchhackertoolfired() {
     self endon(#"disconnect", #"death", #"killhackermonitor");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"hacker_tool_fired");
         hackertooltarget = waitresult.target;
@@ -195,7 +195,7 @@ function event_handler[grenade_pullback] function_f4068d35(eventstruct) {
 // Size: 0xc6
 function watchhackertoolinterrupt(weapon) {
     self endon(#"disconnect", #"hacker_tool_fired", #"death", #"weapon_change", #"grenade_fire");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"use_interrupt");
         if (self.hackertooltarget == waitresult.target) {
@@ -223,7 +223,7 @@ function watchhackertoolend(weapon) {
 // Size: 0x154
 function watchforgrenadefire(*weapon) {
     self endon(#"disconnect", #"hacker_tool_fired", #"weapon_change", #"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"grenade_fire");
         grenade_instance = waitresult.projectile;
@@ -239,7 +239,7 @@ function watchforgrenadefire(*weapon) {
             clip_ammo++;
         }
         self setweaponammoclip(grenade_weapon, clip_ammo);
-        return;
+        break;
     }
 }
 
@@ -273,7 +273,7 @@ function hackertooltargetloop(weapon) {
     self endon(#"disconnect", #"death", #"weapon_change", #"grenade_fire");
     self clientfield::set_to_player("hacker_tool", 1);
     self playhackertoolsoundloop();
-    while (1) {
+    while (true) {
         waitframe(1);
         waitframe(1);
         if (self.hackertoollockfinalized) {
@@ -493,12 +493,12 @@ function getbesthackertooltarget(weapon) {
 // Size: 0x56
 function cantargetentity(target, weapon) {
     if (!self iswithinhackertoolreticle(target, weapon)) {
-        return 0;
+        return false;
     }
     if (!isvalidhackertooltarget(target, weapon, 1)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace hacker_tool/hacker_tool
@@ -577,12 +577,12 @@ function isentityhackableweaponobject(entity) {
                             assert(isdefined(watcher.hackertooltimems));
                         #/
                     #/
-                    return 1;
+                    return true;
                 }
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace hacker_tool/hacker_tool
@@ -652,26 +652,26 @@ function isentityhackablecarepackage(entity) {
 // Size: 0x158
 function isvalidhackertooltarget(ent, weapon, allowhacked) {
     if (!isdefined(ent)) {
-        return 0;
+        return false;
     }
     if (self util::isusingremote()) {
-        return 0;
+        return false;
     }
     if (self isempjammed()) {
-        return 0;
+        return false;
     }
     if (!(target_istarget(ent) || isdefined(ent.allowhackingaftercloak) && ent.allowhackingaftercloak == 1) && !isentityhackableweaponobject(ent) && !isinarray(level.hackertooltargets, ent)) {
-        return 0;
+        return false;
     }
     if (isentityhackableweaponobject(ent)) {
         if (distancesquared(self.origin, ent.origin) > weapon.lockonmaxrange * weapon.lockonmaxrange) {
-            return 0;
+            return false;
         }
     }
     if (allowhacked == 0 && isentitypreviouslyhacked(ent)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace hacker_tool/hacker_tool
@@ -680,9 +680,9 @@ function isvalidhackertooltarget(ent, weapon, allowhacked) {
 // Size: 0x2e
 function isentitypreviouslyhacked(entity) {
     if (is_true(entity.previouslyhacked)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace hacker_tool/hacker_tool
@@ -872,7 +872,7 @@ function getlockontime(*target, weapon) {
 // Size: 0xa8
 function tunables() {
     /#
-        while (1) {
+        while (true) {
             level.hackertoollostsightlimitms = getdvarint(#"scr_hackertoollostsightlimitms", 1000);
             level.hackertoollockonradius = getdvarfloat(#"scr_hackertoollockonradius", 20);
             level.hackertoollockonfov = getdvarint(#"scr_hackertoollockonfov", 65);

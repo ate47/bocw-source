@@ -102,7 +102,7 @@ function function_3fc4da12(var_8ced85ea, var_1789c41) {
         level waittill(var_1789c41);
     }
     level thread function_d812ff0b();
-    while (1) {
+    while (true) {
         self thread function_a1353526();
         var_21de0571 = struct::get("hint_evidence_board", "targetname");
         level.var_8c892633 = util::spawn_model("tag_origin", var_21de0571.origin);
@@ -179,7 +179,7 @@ function function_a69227f8(var_f587343a) {
     }
     self thread function_6f86dee1(var_f587343a);
     self thread function_472dcec7(var_f587343a);
-    while (1) {
+    while (true) {
         self setstance("stand");
         self allowprone(0);
         self allowcrouch(0);
@@ -312,7 +312,7 @@ function function_1e3889e5(var_f587343a) {
 function function_6f86dee1(var_f587343a) {
     level endon(#"hash_3daf27ede70cbb90");
     var_f5cadbe8 = vectorscale((0, 0, -1), 60);
-    while (1) {
+    while (true) {
         level waittill(#"hash_7ce217c53edc8162");
         level thread namespace_4ed3ce47::function_6fe99ae0();
         self thread function_f961cba6(var_f587343a);
@@ -440,12 +440,12 @@ function function_6baebf65() {
 // Size: 0x148
 function function_c38c0276() {
     level endon(#"hash_3e8dc841ce47f8fd");
-    while (1) {
+    while (true) {
         option = undefined;
         option = level waittill(#"evidence_board_option_selected");
         if (option.var_70b35161 == 1) {
             level notify(#"hash_3ee5ee530fc0a790");
-            return;
+            break;
         }
         if (option.var_70b35161 == 2) {
             level notify(#"hash_3e8dc841ce47f8fd");
@@ -465,7 +465,7 @@ function function_c38c0276() {
 // Size: 0x3dc
 function function_487cf276(var_f587343a) {
     level endon(#"hash_3daf27ede70cbb90");
-    while (1) {
+    while (true) {
         level waittill(#"hash_3ee5ee530fc0a790");
         if (namespace_61e6d095::exists(#"hash_3ccc1702bc979da8")) {
             namespace_61e6d095::function_73c9a490(#"hash_3ccc1702bc979da8", 0);
@@ -484,7 +484,7 @@ function function_487cf276(var_f587343a) {
             self thread function_72c0d712(var_75c8057d);
             var_f587343a.var_a83e0330 = spawn("script_model", (0, 0, 0));
             self function_f2dbcc31(0, var_f587343a);
-            while (1) {
+            while (true) {
                 self thread function_5c499dd2(var_f587343a);
                 var_b7e306fc = undefined;
                 var_b7e306fc = level waittill(#"hash_1c5e7e49686536b9", #"hash_57c28d19fe61af2f");
@@ -561,10 +561,10 @@ function private function_72c0d712(var_75c8057d) {
     var_ac545d74 = 0;
     player = getplayers()[0];
     namespace_61e6d095::function_9ade1d9b(#"hash_afc09dfd34bcde0", "count", 0);
-    while (1) {
+    while (true) {
         if (self namespace_61e6d095::function_57fbd346()) {
             level notify(#"hash_57c28d19fe61af2f");
-            return;
+            break;
         }
         if (old_selected !== selected) {
             namespace_61e6d095::function_9ade1d9b(#"hash_afc09dfd34bcde0", "count", selected);
@@ -1020,7 +1020,7 @@ function function_472dcec7(var_f587343a) {
 // Checksum 0xb79303f4, Offset: 0x57d0
 // Size: 0xa6
 function function_d812ff0b() {
-    while (1) {
+    while (true) {
         level waittill(#"hash_5b9b855ef17e6ca4");
         var_bfca66fd = level.var_8c892633.origin;
         level.var_8c892633.origin = (var_bfca66fd[0], var_bfca66fd[1], var_bfca66fd[2] - 2000);
@@ -1118,7 +1118,7 @@ function function_9b006527(var_f587343a) {
 // Size: 0xde
 function function_a1353526() {
     level endon(#"hash_3daf27ede70cbb90");
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = level waittill(#"hash_7ce217c53edc8162", #"hash_3e8dc841ce47f8fd");
         switch (s_result._notify) {

@@ -217,7 +217,7 @@ function private function_5402d440(input, buttons) {
         self notify("<unknown string>");
         self endon("<unknown string>");
         level endon(#"hash_47e0ed0d8fb144dc");
-        while (1) {
+        while (true) {
             foreach (button in buttons) {
                 input.(button + "<unknown string>") = input.(button);
                 input.(button) = self buttonpressed(button);
@@ -242,7 +242,7 @@ function private function_a11a465a(input) {
         self notify("<unknown string>");
         self endon("<unknown string>");
         level endon(#"hash_47e0ed0d8fb144dc");
-        while (1) {
+        while (true) {
             var_aa973631 = isdefined(level._fx.var_7b96a5ce.var_aa973631) ? level._fx.var_7b96a5ce.var_aa973631 : 0;
             current_time = gettime();
             var_5b49269e = getdvarint(#"hash_1c94e0c8a0d5dd72", 100);
@@ -433,7 +433,7 @@ function private function_f46326c5() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         level endon(#"hash_47e0ed0d8fb144dc");
-        while (1) {
+        while (true) {
             if (isdefined(level._fx.var_7b96a5ce.var_4f5ffab2)) {
                 box(level._fx.var_7b96a5ce.var_4f5ffab2.origin, vectorscale((-1, -1, -1), 10), vectorscale((1, 1, 1), 10), 0, (0, 0, 0), 1, 0, 1);
                 function_b95b9a60(level._fx.var_7b96a5ce.var_4f5ffab2.origin, level._fx.var_7b96a5ce.data[0].value, (1, 1, 1), 1, 0, 32, 1);

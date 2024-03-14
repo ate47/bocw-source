@@ -147,25 +147,25 @@ function helping_hand_room_light(*localclientnum, *oldval, newval, *bnewent, *bi
         switch (bwastimejump) {
         case 0:
             level notify(#"hh_turn_all_lights_off");
-            return;
+            break;
         case 1:
             level notify(#"hh_turn_room_1_light_on");
-            return;
+            break;
         case 2:
             level notify(#"hh_turn_room_2_light_on");
-            return;
+            break;
         case 3:
             level notify(#"hh_turn_room_3_light_on");
-            return;
+            break;
         case 4:
             level notify(#"hh_turn_room_4_light_on");
-            return;
+            break;
         case 5:
             level notify(#"hh_turn_room_5_light_on");
-            return;
+            break;
         case 6:
             level notify(#"hh_turn_room_5_light_off");
-            return;
+            break;
         }
     }
 }
@@ -191,25 +191,25 @@ function eye_corpse_light(*localclientnum, *oldval, newval, *bnewent, *binitials
         switch (bwastimejump) {
         case 0:
             level notify(#"eye_corpse_all_lights_off");
-            return;
+            break;
         case 1:
             level notify(#"eye_corpse_1_light_on");
-            return;
+            break;
         case 2:
             level notify(#"eye_corpse_2_light_on");
-            return;
+            break;
         case 3:
             level notify(#"eye_corpse_3_light_on");
-            return;
+            break;
         case 4:
             level notify(#"eye_corpse_4_light_on");
-            return;
+            break;
         case 5:
             level notify(#"eye_corpse_5_light_on");
-            return;
+            break;
         case 6:
             level notify(#"eye_corpse_final_light_on");
-            return;
+            break;
         }
     }
 }
@@ -291,10 +291,10 @@ function private function_13508757() {
 // Checksum 0x70cd7cb5, Offset: 0x1f78
 // Size: 0x4e
 function private function_41575406() {
-    while (1) {
+    while (true) {
         level waittill(#"hash_29e046cf89ba2659");
         if (!level clientfield::get("center_zone_lights_off")) {
-            return;
+            break;
         }
     }
 }

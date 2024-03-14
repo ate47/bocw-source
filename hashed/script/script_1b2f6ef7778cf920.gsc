@@ -190,7 +190,7 @@ function function_aa00217e() {
     if (isdefined(level.localplayers) && level.localplayers.size > 1) {
         return (level.doa.r_splitscreenexpandfull == 1);
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_4dae815d/namespace_4dae815d

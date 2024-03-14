@@ -69,7 +69,7 @@ function init() {
 function private function_c7ab4997(*localclientnum) {
     self notify("8869c86eaf915ab");
     self endon("8869c86eaf915ab");
-    while (1) {
+    while (true) {
         result = undefined;
         result = level waittill(#"updategamerprofile", #"hash_ce3d6cba382b09e", #"hash_5f3b1ae5d64be652");
         namespace_1e25ad94::function_f5f0c0f8("profileWatch just intercepted notify-->" + result._notify);
@@ -279,10 +279,10 @@ function function_505038df() {
             continue;
         }
         if (is_true(player.doa.var_3e81d24c)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace doa_player/doa_player
@@ -490,7 +490,7 @@ function setcameradown(*localclientnum, *oldval, newval, *bnewent, *binitialsnap
 function function_9917e07(*localclientnum, value) {
     self notify("345cdae26411cd4f");
     self endon("345cdae26411cd4f");
-    while (1) {
+    while (true) {
         if (!isdefined(self)) {
             return;
         }
@@ -677,16 +677,16 @@ function function_65329ef6(id, localclientnum) {
         }
         self namespace_ac2a80f5::changecamera(self.doa.cameramode);
         level notify(#"terminatecutscene");
-        return;
+        break;
     case 1:
         self.doa.cameramode = 7;
         loc = struct::get("island_cutscene_camloc", "targetname");
         level.doa.var_b73cc08.origin = loc.origin;
         level.doa.var_b73cc08.angles = loc.angles;
-        return;
+        break;
     case 2:
         self thread namespace_b7d49cfd::function_8d4cb2b(localclientnum);
-        return;
+        break;
     }
 }
 

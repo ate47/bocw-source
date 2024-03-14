@@ -174,13 +174,13 @@ function private function_9a75d6e9(var_64f87a02, origin, angles) {
 // Size: 0x64
 function private function_700ae446(var_c71df200, var_6a0a1cc4) {
     if (isdefined(self.var_12650ad6[var_c71df200])) {
-        return 0;
+        return false;
     }
     self.var_12650ad6[var_c71df200] = var_6a0a1cc4;
     if (isdefined(var_6a0a1cc4.owner)) {
         self.neighbors[var_c71df200] = var_6a0a1cc4.owner;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_f27a9d0d/namespace_f27a9d0d
@@ -190,15 +190,15 @@ function private function_700ae446(var_c71df200, var_6a0a1cc4) {
 function private function_71b94f8a(var_5e97bd10, var_9482a8a5) {
     if (isdefined(var_5e97bd10.owner)) {
         if (!var_5e97bd10.owner function_700ae446(var_5e97bd10.id, var_9482a8a5)) {
-            return 0;
+            return false;
         }
     }
     if (isdefined(var_9482a8a5.owner)) {
         if (!var_9482a8a5.owner function_700ae446(var_9482a8a5.id, var_5e97bd10)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_f27a9d0d/namespace_f27a9d0d

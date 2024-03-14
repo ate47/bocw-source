@@ -178,7 +178,7 @@ function function_565588e1() {
     } else {
         level endon(#"woods_get_in_truck");
     }
-    while (1) {
+    while (true) {
         var_ca06ae66 = "nag" + string(randomint(2) + 1);
         level.var_49a5d2a4 scene::play("scene_tkd_hit3_pre_chase", var_ca06ae66, level.woods);
         level.var_49a5d2a4 scene::play("scene_tkd_hit3_pre_chase", "loop", level.woods);

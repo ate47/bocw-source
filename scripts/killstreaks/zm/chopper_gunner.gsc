@@ -77,9 +77,9 @@ function function_7948e616() {
     if (function_e08f14b3()) {
         self.var_baf4657c = 1;
         self killstreakrules::function_65739e7b("chopper_gunner");
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace chopper_gunner/chopper_gunner
@@ -88,17 +88,17 @@ function function_7948e616() {
 // Size: 0x8c
 function function_e08f14b3() {
     if (isdefined(level.chopper_gunner)) {
-        return 1;
+        return true;
     }
     if (is_true(level.chopper_gunner.shuttingdown)) {
-        return 1;
+        return true;
     }
     if (isdefined(level.var_a246c3cf)) {
         if (float(gettime() - level.var_a246c3cf) / 1000 < 15) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace chopper_gunner/chopper_gunner

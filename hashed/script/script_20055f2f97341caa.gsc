@@ -124,12 +124,12 @@ function private function_67189b6b(localclientnum, newval) {
 // Size: 0x74
 function private function_1a45bc2a(item) {
     if (!isdefined(item)) {
-        return 0;
+        return false;
     }
     if (!isdefined(item.type) || item.type != #"scriptmover" && item.type != #"missile") {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace item_drop/item_drop

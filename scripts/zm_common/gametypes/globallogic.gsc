@@ -412,10 +412,10 @@ function killserverpc() {
 function someoneoneachteam() {
     foreach (team, _ in level.teams) {
         if (level.playercount[team] == 0) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace globallogic/globallogic
@@ -424,12 +424,12 @@ function someoneoneachteam() {
 // Size: 0x64
 function checkifteamforfeits(team) {
     if (!level.everexisted[team]) {
-        return 0;
+        return false;
     }
     if (level.playercount[team] < 1 && util::totalplayercount() > 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic/globallogic
@@ -440,10 +440,10 @@ function checkforanyteamforfeit() {
     foreach (team, _ in level.teams) {
         if (checkifteamforfeits(team)) {
             thread [[ level.onforfeit ]](team);
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic/globallogic
@@ -473,10 +473,10 @@ function isteamalldead(team) {
 function areallteamsdead() {
     foreach (team, _ in level.teams) {
         if (!isteamalldead(team)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace globallogic/globallogic
@@ -501,14 +501,14 @@ function dodeadeventupdates() {
     if (level.teambased) {
         if (areallteamsdead()) {
             [[ level.ondeadevent ]]("all");
-            return 1;
+            return true;
         }
         if (isdefined(level.onlastteamaliveevent)) {
             if (alldeadteamcount() == level.teams.size - 1) {
                 foreach (team, _ in level.teams) {
                     if (!isteamalldead(team)) {
                         [[ level.onlastteamaliveevent ]](team);
-                        return 1;
+                        return true;
                     }
                 }
             }
@@ -516,15 +516,15 @@ function dodeadeventupdates() {
             foreach (team, _ in level.teams) {
                 if (isteamalldead(team)) {
                     [[ level.ondeadevent ]](team);
-                    return 1;
+                    return true;
                 }
             }
         }
     } else if (totalalivecount() == 0 && totalplayerlives() == 0 && level.maxplayercount > 1) {
         [[ level.ondeadevent ]]("all");
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic/globallogic
@@ -544,14 +544,14 @@ function doonelefteventupdates() {
         foreach (team, _ in level.teams) {
             if (isonlyoneleftaliveonteam(team)) {
                 [[ level.ononeleftevent ]](team);
-                return 1;
+                return true;
             }
         }
     } else if (totalalivecount() == 1 && totalplayerlives() == 1 && level.maxplayercount > 1) {
         [[ level.ononeleftevent ]]("all");
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic/globallogic
@@ -607,7 +607,7 @@ function updategameevents() {
 // Size: 0x14e
 function function_8da685e9() {
     level endon(#"hash_27f6b2240317c878");
-    while (1) {
+    while (true) {
         foreach (player in level.players) {
             shouldshow = 1;
             for (var_3c0cc784 = 0; var_3c0cc784 < level.var_75433ec1.size; var_3c0cc784++) {
@@ -712,13 +712,13 @@ function hostidledout() {
     hostplayer = util::gethostplayer();
     /#
         if (getdvarint(#"scr_writeconfigstrings", 0) == 1 || getdvarint(#"scr_hostmigrationtest", 0) == 1) {
-            return 0;
+            return false;
         }
     #/
     if (isdefined(hostplayer) && !is_true(hostplayer.hasspawned) && !isdefined(hostplayer.selectedclass)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic/globallogic
@@ -920,10 +920,10 @@ function checktimelimit() {
 function allteamsunderscorelimit() {
     foreach (team, _ in level.teams) {
         if (game.stat[#"teamscores"][team] >= level.scorelimit) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace globallogic/globallogic
@@ -1395,10 +1395,10 @@ function assertteamvariables() {
 function anyteamhaswavedelay() {
     foreach (team, _ in level.teams) {
         if (level.wavedelay[team]) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic/globallogic
@@ -1637,7 +1637,7 @@ function callback_startgametype() {
 // Size: 0x50
 function forcedebughostmigration() {
     /#
-        while (1) {
+        while (true) {
             waittillhostmigrationdone();
             wait(60);
             starthostmigration();
@@ -1669,19 +1669,19 @@ function registerfriendlyfiredelay(dvarstring, defaultvalue, minvalue, maxvalue)
 // Size: 0x90
 function checkroundswitch() {
     if (!isdefined(level.roundswitch) || !level.roundswitch) {
-        return 0;
+        return false;
     }
     if (!isdefined(level.onroundswitch)) {
-        return 0;
+        return false;
     }
     /#
         assert(game.roundsplayed > 0);
     #/
     if (game.roundsplayed % level.roundswitch == 0) {
         [[ level.onroundswitch ]]();
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic/globallogic

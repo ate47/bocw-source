@@ -167,9 +167,9 @@ function private function_8de15fec(entity, asmstatename) {
 // Size: 0x90
 function private function_dedfe444(entity) {
     if (isdefined(entity.traversestartnode) && isdefined(entity.traversestartnode.script_noteworthy) && entity.traversestartnode.script_noteworthy == "zipline_traversal" && isdefined(entity.traversestartnode.var_9a26509a) && entity shouldstarttraversal()) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zipline/zipline
@@ -419,7 +419,7 @@ function private function_aeb6539c() {
 // Size: 0xae
 function private function_25f7c630() {
     self.var_b20b0960 endon(#"death", #"reached_end_node", #"zipline_start_disconnect");
-    while (1) {
+    while (true) {
         waitframe(1);
         velocity = self.var_b20b0960 getvelocity();
         if (lengthsquared(velocity) > lengthsquared(self.var_b30ec151)) {
@@ -437,7 +437,7 @@ function private function_9dac9d34() {
     var_9f9bac58 = getvehiclenode(self.zipline_start.target, "targetname");
     var_8bb667c1 = var_9f9bac58.origin - self.zipline_start.origin;
     var_b00e3ead = vectornormalize(var_8bb667c1);
-    while (1) {
+    while (true) {
         waitframe(1);
         _attack_barrier_sprint = self.var_b20b0960.var_da287758 - self.var_b20b0960.origin;
         var_55ee4999 = vectordot(var_b00e3ead, _attack_barrier_sprint);
@@ -635,7 +635,7 @@ function number_b_(var_5c57c958, var_f3e138f3, var_3800dad7, plane_normal) {
 // Size: 0x110
 function function_a8c07396(zipline_start, var_4be77411, var_8f2ded8e) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         waitframe(1);
         /#
             sphere(zipline_start, 2, (0, 1, 0), 0.3, 0, 8, 1);
@@ -654,7 +654,7 @@ function function_a8c07396(zipline_start, var_4be77411, var_8f2ded8e) {
 function function_5ddff7e3() {
     self endon(#"death");
     self.var_b20b0960 endon(#"death");
-    while (1) {
+    while (true) {
         waitframe(1);
         enabled = getdvarint(#"hash_6e0cbdce6b2104a3", 0);
         if (enabled) {

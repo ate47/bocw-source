@@ -55,12 +55,12 @@ function init() {
 // Size: 0x46
 function is_hero(ai) {
     if (!isstring(ai.voiceprefix)) {
-        return 0;
+        return false;
     }
     if (ai.voiceprefix.size >= 8) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace battlechatter/battlechatter
@@ -69,33 +69,33 @@ function is_hero(ai) {
 // Size: 0x16e
 function function_51759b03(var_84d1299, eventstruct = undefined) {
     if (is_true(level.var_cc83507)) {
-        return 0;
+        return false;
     }
     if (!isactor(self)) {
         if (isplayer(self)) {
             if (!is_true(var_84d1299)) {
-                return 0;
+                return false;
             }
         } else {
-            return 0;
+            return false;
         }
     }
     if (isdefined(self.archetype) && self.archetype == "zombie") {
-        return 0;
+        return false;
     }
     if (isdefined(self.archetype) && self.archetype == "direwolf") {
-        return 0;
+        return false;
     }
     if (isdefined(self.team) && !is_true(level.allowbattlechatter[self.team])) {
-        return 0;
+        return false;
     }
     if (isdefined(level.var_8b7cb19c) && isdefined(eventstruct)) {
         result = self [[ level.var_8b7cb19c ]](eventstruct);
         if (!is_true(result)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace battlechatter/battlechatter
@@ -105,10 +105,10 @@ function function_51759b03(var_84d1299, eventstruct = undefined) {
 function private function_2346ea47(event) {
     if (event == #"hash_48185d924876594c") {
         if (self haspath() || absangleclamp180(self aiutility::function_dc8e1a0a()) < 45) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace battlechatter/battlechatter
@@ -126,13 +126,13 @@ function function_4a19b47a() {
     switch (self.voiceprefix) {
     case #"hash_6600f5c535189183":
         self.var_3d0026c9 = randomintrange(1, 3);
-        return;
+        break;
     case #"hash_6d6e10c538f37ef3":
         self.var_3d0026c9 = randomintrange(1, 5);
-        return;
+        break;
     default:
         self.var_3d0026c9 = randomintrange(1, 4);
-        return;
+        break;
     }
 }
 
@@ -168,7 +168,7 @@ function function_b791d0e4() {
 // Size: 0x88
 function private function_158cbf3() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"asm_notify");
         if (self function_2346ea47(result.param)) {
@@ -183,7 +183,7 @@ function private function_158cbf3() {
 // Size: 0xa0
 function function_e1c920f9() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"damage");
         if (isplayer(result.attacker) && function_7b3f38c6(result.mod)) {
@@ -198,7 +198,7 @@ function function_e1c920f9() {
 // Size: 0x86
 function function_7b3f38c6(mod) {
     if (!isdefined(mod)) {
-        return 0;
+        return false;
     }
     switch (mod) {
     case #"mod_grenade":
@@ -206,9 +206,9 @@ function function_7b3f38c6(mod) {
     case #"mod_grenade_splash":
     case #"mod_impact":
     case #"mod_melee":
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace battlechatter/actor_killed
@@ -465,7 +465,7 @@ function function_bf0a663a() {
             }
         }
     }
-    while (1) {
+    while (true) {
         wait(1);
         t = gettime();
         if (t > level.var_85c7869d + 1000) {
@@ -658,7 +658,7 @@ function function_14984343() {
 // Checksum 0x1c6542c1, Offset: 0x2558
 // Size: 0x30
 function function_aacf773a() {
-    while (1) {
+    while (true) {
         level.var_c3687237 = 0;
         util::wait_network_frame();
     }
@@ -670,12 +670,12 @@ function function_aacf773a() {
 // Size: 0x92
 function function_96dd94f5(str_category = "bc") {
     if (isdefined(level.allowbattlechatter) && !is_true(level.allowbattlechatter[str_category])) {
-        return 0;
+        return false;
     }
     if (isdefined(self.allowbattlechatter) && !is_true(self.allowbattlechatter[str_category])) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace battlechatter/battlechatter
@@ -710,7 +710,7 @@ function function_a0ec1dc0(suffix) {
 // Size: 0x118
 function pain_vox() {
     self endon(#"death", #"disconnect");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"hash_3ac4241a987b394f");
         if (randomintrange(0, 100) <= 100) {
@@ -738,7 +738,7 @@ function function_5ef33d49() {
     self endon(#"death", #"disconnect", #"hash_306970a8f0f651fe");
     level endon(#"game_ended");
     self.var_2503219f = 0;
-    while (1) {
+    while (true) {
         if (!self isplayerunderwater() && self.var_c7a2467a) {
             self.var_c7a2467a = 0;
             self.var_2503219f = 1;
@@ -863,7 +863,7 @@ function function_2ab9360b(b_allow, str_category = "bc") {
 // Size: 0x78
 function function_d85f6f61() {
     self endon(#"death", #"disconnect");
-    while (1) {
+    while (true) {
         self playsoundontag("aml_dog_bark", "tag_eye");
         wait(randomfloatrange(1, 3.5));
     }

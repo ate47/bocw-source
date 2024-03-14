@@ -209,7 +209,7 @@ class class_c6c0e94 {
             item notify(self.var_53070152);
             processed++;
             if (processed >= self.processlimit_) {
-                return;
+                break;
             }
         }
     }

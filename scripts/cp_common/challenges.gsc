@@ -491,13 +491,13 @@ function function_18b65152() {
                             switch (var_f220a4fb) {
                             case #"hash_353ab2195905975e":
                                 self stats::function_dad108fa(#"hash_13eb46cb3c4c5613", 1);
-                                continue;
+                                break;
                             case #"tott":
                                 self stats::function_dad108fa(#"hash_34e0fb49ecfca3e4", 1);
-                                continue;
+                                break;
                             case #"career":
                                 self stats::function_dad108fa(#"hash_2a83a140198f2c69", 1);
-                                continue;
+                                break;
                             }
                         }
                     }
@@ -526,7 +526,7 @@ function function_6d4abfcd(n_time) {
 // Size: 0x80
 function function_ba92458e() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(#"hash_557c55de257d4066", 0) == 1) {
                 self function_1b7d307e();
                 setdvar(#"hash_557c55de257d4066", 0);

@@ -43,7 +43,7 @@ function on_player_connect() {
 // Size: 0x96
 function should_play_sound(mod) {
     if (!isdefined(mod)) {
-        return 0;
+        return false;
     }
     switch (mod) {
     case #"mod_melee_weapon_butt":
@@ -52,9 +52,9 @@ function should_play_sound(mod) {
     case #"mod_grenade_splash":
     case #"mod_melee_assassinate":
     case #"mod_melee":
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace damagefeedback/damagefeedback_shared
@@ -338,12 +338,12 @@ function hit_alert_sfx_zm(mod, inflictor, *perkfeedback, weapon, victim, *psoffs
 // Size: 0x7a
 function function_34fbafdc(weapon, mod) {
     if (isdefined(weapon) && isdefined(weapon.var_965cc0b3) && weapon.var_965cc0b3) {
-        return 1;
+        return true;
     }
     if (isdefined(weapon) && weapon === level.shockrifleweapon && mod === "MOD_DOT") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace damagefeedback/damagefeedback_shared
@@ -587,25 +587,25 @@ function update_override(icon, sound, additional_icon) {
 // Size: 0xce
 function dodamagefeedback(weapon, *einflictor, idamage, smeansofdeath) {
     if (!isdefined(einflictor)) {
-        return 0;
+        return false;
     }
     if (is_true(einflictor.nohitmarker)) {
-        return 0;
+        return false;
     }
     if (level.allowhitmarkers == 0) {
-        return 0;
+        return false;
     }
     if (isdefined(smeansofdeath) && smeansofdeath == "MOD_MELEE_ASSASSINATE") {
-        return 0;
+        return false;
     }
     if (level.allowhitmarkers == 1) {
         if (isdefined(smeansofdeath) && isdefined(idamage)) {
             if (istacticalhitmarker(einflictor, smeansofdeath, idamage)) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace damagefeedback/damagefeedback_shared
@@ -616,12 +616,12 @@ function istacticalhitmarker(weapon, smeansofdeath, idamage) {
     if (weapons::is_grenade(weapon)) {
         if ("Smoke Grenade" == weapon.offhandclass) {
             if (smeansofdeath == "MOD_GRENADE_SPLASH") {
-                return 1;
+                return true;
             }
         } else if (idamage == 1) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 

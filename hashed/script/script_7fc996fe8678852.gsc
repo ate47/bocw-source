@@ -424,7 +424,7 @@ function function_f3d93ee9(struct, modelname, var_bfbc537c = 0, var_619a5c20 = 1
         model function_619a5c20();
     }
     parent = struct;
-    while (1) {
+    while (true) {
         if (parent.variantname === #"hash_60feba77d317eb4") {
             if (!isdefined(parent.a_models)) {
                 parent.a_models = [];
@@ -455,7 +455,7 @@ function function_94974eef(struct, var_145b9057, var_e546275c = 0) {
         zbarrier disconnectpaths();
     }
     parent = struct;
-    while (1) {
+    while (true) {
         if (parent.variantname === #"hash_60feba77d317eb4") {
             if (!isdefined(parent.a_models)) {
                 parent.a_models = [];
@@ -627,7 +627,7 @@ function devgui_path(...) {
 // Size: 0x1c0
 function private function_b3843ca7() {
     /#
-        while (1) {
+        while (true) {
             setdvar(#"hash_6d5a45dcdc3af9b5", "<unknown string>");
             waitframe(1);
             var_4eb7bd13 = getdvarstring(#"hash_6d5a45dcdc3af9b5", "<unknown string>");
@@ -665,7 +665,7 @@ function private function_b3843ca7() {
 // Size: 0x162
 function private debug_draw() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(#"hash_55e098bf3549b14d", 0)) {
                 foreach (destination in level.var_7d45d0d4.destinations) {
                     function_930df82f(destination);

@@ -101,7 +101,7 @@ function start(localclientnum) {
 function update(localclientnum) {
     self endon(#"death", #"hash_44d009a3793f7389");
     var_3c752058 = function_59a04cbf();
-    while (1) {
+    while (true) {
         foreach (name, fx in self.var_1ff088cf) {
             if (self.origin[2] < level.var_1ff088cf.layers[name].min_height - var_3c752058) {
                 self function_2baaca3c(localclientnum, name);

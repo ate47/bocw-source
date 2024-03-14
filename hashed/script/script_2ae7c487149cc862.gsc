@@ -178,7 +178,7 @@ function function_d233fb1f(localclientnum) {
     self endon(#"death", #"disconnect", #"hash_639f680ae2bb2ff");
     var_9b8a1091 = 0.01;
     self playsound(localclientnum, #"hash_20493da3bbf6cbbe");
-    while (1) {
+    while (true) {
         self function_116b95e5(#"pstfx_speedblur", #"blur", var_9b8a1091);
         wait(0.08);
         var_9b8a1091 = var_9b8a1091 + 0.01;

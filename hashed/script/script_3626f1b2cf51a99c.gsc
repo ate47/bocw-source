@@ -100,15 +100,15 @@ function function_9ddfe2d(action_name, var_7eba8145, parent_name, var_9386e7ce, 
 // Size: 0xec
 function function_1028d928(action_name, var_9386e7ce) {
     if (!isdefined(level.var_f467e5b0.actions[action_name])) {
-        return 0;
+        return false;
     }
     var_9386e7ce = tolower(var_9386e7ce);
     foreach (child in level.var_f467e5b0.actions[action_name].children) {
         if (child.var_9386e7ce == var_9386e7ce) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace actions/actions
@@ -329,7 +329,7 @@ function function_83bde308(action, var_d61bdbea, var_1ad5f3d8) {
         assert(isstruct(action));
     #/
     if (!isalive(self)) {
-        return 0;
+        return false;
     }
     if (isdefined(var_d61bdbea)) {
         self thread function_fb6a1439(action, var_d61bdbea, var_1ad5f3d8);
@@ -338,7 +338,7 @@ function function_83bde308(action, var_d61bdbea, var_1ad5f3d8) {
     if (isdefined(var_d61bdbea)) {
         self flag::wait_till(function_3e2aeb63(var_d61bdbea));
     }
-    return 1;
+    return true;
 }
 
 // Namespace actions/actions
@@ -564,7 +564,7 @@ function function_9cb5ca63(action, command) {
     if (isdefined(self.var_f467e5b0.var_c4e66a91)) {
         waitframe(1);
         if (isdefined(self.var_f467e5b0.var_c4e66a91[command])) {
-            return 1;
+            return true;
         }
         self waittill(#"never");
     }
@@ -596,10 +596,10 @@ function function_9cb5ca63(action, command) {
         self notifyonplayercommand(triggername, "+prone");
         break;
     default:
-        return 0;
+        return false;
     }
     self waittill(triggername);
-    return 1;
+    return true;
 }
 
 // Namespace actions/actions
@@ -611,7 +611,7 @@ function function_7ca47b7c(action, event) {
     self endon(#"death", #"disconnect");
     self notifyonplayercommand("player_cmd_melee_atk", "+attack");
     self notifyonplayercommand("player_cmd_melee_atk", "+attack_akimbo_accessible");
-    while (1) {
+    while (true) {
         self waittill(#"player_cmd_melee_atk");
         weapon = self getcurrentweapon();
         if (weapons::isknife(weapon)) {
@@ -777,7 +777,7 @@ function function_d661f822() {
             self.var_56116d92[i].vertalign = "<unknown string>";
             self.var_56116d92[i].fontscale = 1;
         }
-        while (1) {
+        while (true) {
             waitframe(1);
             for (i = 0; i < var_5283788; i++) {
                 text = "<unknown string>";

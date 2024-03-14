@@ -70,7 +70,7 @@ function private event_handler[event_9673dc9a] function_3981d015(eventstruct) {
 // Checksum 0x74115590, Offset: 0x558
 // Size: 0xa6
 function function_b217acf() {
-    while (1) {
+    while (true) {
         params = undefined;
         params = level waittill(#"hash_2d1093d938f2fad6");
         dynent = params.hitent;
@@ -93,7 +93,7 @@ function function_160e40a2() {
     cosangle = cos(20);
     var_3393f5fe = cos(50);
     var_2c51fa57 = function_a3f6cdac(64);
-    while (1) {
+    while (true) {
         foreach (i, player in getplayers()) {
             time = gettime();
             if (i % 2 == var_1a1c0d86) {
@@ -263,7 +263,7 @@ function function_67b96164(eventstruct) {
 // Size: 0x308
 function function_995a4e51(*activator, laststate, state) {
     if (state != 0 || laststate == state) {
-        return 1;
+        return true;
     }
     forward = anglestoforward(self.angles);
     right = anglestoright(self.angles);
@@ -286,10 +286,10 @@ function function_995a4e51(*activator, laststate, state) {
             /#
                 box(var_84c67202, var_59485761 * -1, var_59485761, ent.angles, (1, 0, 0), 1, 0, 600);
             #/
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_f3e83343/namespace_f3e83343
@@ -337,11 +337,11 @@ function function_d7b6ee00(activator, laststate, state) {
 function function_51a020(activator, laststate, state) {
     if (isdefined(self.target)) {
         if (laststate == state) {
-            return 0;
+            return false;
         }
         var_a9309589 = getdynent(self.target);
         if (!isdefined(var_a9309589)) {
-            return 0;
+            return false;
         }
         currentstate = function_ffdbe8c2(var_a9309589);
         if (state == 0) {
@@ -352,21 +352,21 @@ function function_51a020(activator, laststate, state) {
             end = center + right * bounds.maxs[1] * 0.85;
             results = bullettracepassed(start, end, 0, activator);
             if (!results) {
-                return 0;
+                return false;
             }
             center = var_a9309589.origin + vectorscale((0, 0, 1), 40);
             start = center + right * bounds.mins[1] * 0.85;
             end = center + right * bounds.maxs[1] * 0.85;
             results = bullettracepassed(start, end, 0, activator);
             if (!results) {
-                return 0;
+                return false;
             }
         }
         if (currentstate != state) {
             function_e2a06860(var_a9309589, state);
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_f3e83343/namespace_f3e83343

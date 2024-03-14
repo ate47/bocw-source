@@ -104,8 +104,8 @@ function ragdoll_override(*idamage, smeansofdeath, *weapon, *shitloc, *vdir, *va
         if (!isdefined(self.switching_teams)) {
             thread add(body, self, self.team, 5);
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 

@@ -114,12 +114,12 @@ function private function_3be79107(e_attacker) {
     n_current_time = float(gettime()) / 1000;
     if (isplayer(e_attacker)) {
         if (!isdefined(e_attacker.aat_cooldown_start[#"hash_6c45efdfc5561fe0"])) {
-            return 1;
+            return true;
         } else if (isdefined(e_attacker.aat_cooldown_start[#"hash_6c45efdfc5561fe0"]) && n_current_time >= e_attacker.aat_cooldown_start[#"hash_6c45efdfc5561fe0"] + 30) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
@@ -189,21 +189,21 @@ function function_76d7d189(*e_attacker, *weapon, tier = 0) {
         wait(var_b543d2cf / 8);
         self.var_d70e35fb = self.var_d70e35fb + 0.125;
         if (self.var_d70e35fb >= 1) {
-            return;
+            break;
         }
         switch (tier) {
         case 0:
         case 1:
             self thread namespace_df7b10e3::slowdown(#"hash_11428bfe58012e24", self.var_d70e35fb, &function_4279213e);
-            continue;
+            break;
         case 2:
             self thread namespace_df7b10e3::slowdown(#"hash_61bdd7c7815dd7a9", self.var_d70e35fb, &function_4279213e);
-            continue;
+            break;
         case 3:
         case 4:
         case 5:
             self thread namespace_df7b10e3::slowdown(#"hash_61bdd6c7815dd5f6", self.var_d70e35fb, &function_4279213e);
-            continue;
+            break;
         }
     }
 }

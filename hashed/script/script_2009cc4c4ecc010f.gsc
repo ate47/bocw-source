@@ -90,7 +90,7 @@ function private function_54e9d3c4(localclientnum) {
     self endon(#"death");
     self endon(#"exit_vehicle");
     vehicle = undefined;
-    while (1) {
+    while (true) {
         vehicle = getplayervehicle(self);
         if (isdefined(vehicle)) {
             break;
@@ -121,16 +121,16 @@ function private function_54e9d3c4(localclientnum) {
 function function_3ec2efae(*localclientnum) {
     vehicle = getplayervehicle(self);
     if (!isdefined(vehicle) || !vehicle isvehicle()) {
-        return 0;
+        return false;
     }
     if (!isdefined(vehicle.owner)) {
-        return 0;
+        return false;
     }
     if (util::function_fbce7263(vehicle.owner.team, self.team)) {
-        return 0;
+        return false;
     }
     if (!isdefined(vehicle.scriptbundlesettings)) {
-        return 0;
+        return false;
     }
     if (!isdefined(vehicle.settings)) {
         vehicle.settings = getscriptbundle(vehicle.scriptbundlesettings);
@@ -138,10 +138,10 @@ function function_3ec2efae(*localclientnum) {
     if (isdefined(vehicle.settings) && is_true(vehicle.settings.var_2627e80a)) {
         var_1861e0b1 = vehicle clientfield::get("toggle_horn_sound");
         if (is_true(var_1861e0b1)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace player_vehicle/player_vehicle

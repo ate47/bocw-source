@@ -221,7 +221,7 @@ function function_3dda2db1(var_50cc0d4f = 0) {
 // Size: 0xd0
 function function_5477c29() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         s = undefined;
         s = self waittill(#"damage");
         if (math::cointoss(60)) {
@@ -272,7 +272,7 @@ function function_9e2396e0() {
 function function_9283a7e2() {
     level endon(#"hash_32a51c08a30d997b");
     spawner::waittill_ai_group_count("crash_turret_enemies", 2);
-    while (1) {
+    while (true) {
         wait(randomfloatrange(0.333333, 0.666667));
         a_enemies = getaiteamarray(#"axis");
         if (isarray(a_enemies) && a_enemies.size) {
@@ -543,7 +543,7 @@ function function_7081d8a6() {
 function function_86f3197e() {
     self endon(#"death");
     var_73f57f25 = getent("last_stand_safe_trigger", "targetname", 1);
-    while (1) {
+    while (true) {
         if (self istouching(var_73f57f25)) {
             self val::set(#"hash_810823fc44f3ca4", "allowdeath", 0);
         } else {
@@ -590,7 +590,7 @@ function function_25d5fbb() {
     wait(0.1);
     level.vip thread namespace_a635adb1::queue("vox_cp_armd_00008_adlr_rpg_0a");
     wait(1);
-    while (1) {
+    while (true) {
         s_src = array::random(var_bd1e2865);
         s_dest = arraysortclosest(a_targets, level.player.origin)[0];
         magicbullet(getweapon("launcher_freefire_t9"), s_src.origin, s_dest.origin);

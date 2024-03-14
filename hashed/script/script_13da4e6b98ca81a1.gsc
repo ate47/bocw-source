@@ -157,7 +157,7 @@ function private codcaster_monitor_xray_change(localclientnum) {
     var_f4e066d = function_aa0b7b86(localclientnum, "codcaster_xray");
     var_fb32b8ee = function_aa0b7b86(localclientnum, "codcaster_xray_target");
     var_adcf5c30 = function_aa0b7b86(localclientnum, "codcaster_xray_advanced_target");
-    while (1) {
+    while (true) {
         waitframe(1);
         localplayer = function_5c10bd79(localclientnum);
         team = localplayer.team;
@@ -250,24 +250,24 @@ function private function_1cc61419(localclientnum, settings) {
 // Size: 0x2c0
 function function_471909d9(localclientnum, entity, settings, localplayerteam) {
     if (!isdefined(settings)) {
-        return 1;
+        return true;
     }
     var_52fe6881 = settings[0];
     var_6f36c5bc = settings[1];
     var_349e9a55 = settings[2];
     if (!var_52fe6881) {
-        return 0;
+        return false;
     }
     if (isigcactive(localclientnum) || game.state == #"postgame") {
-        return 0;
+        return false;
     }
     if (isplayer(entity)) {
         var_8ee5246c = function_5c10bd79(localclientnum);
         if (var_8ee5246c == entity && !function_c955fbd1(localclientnum) && !function_b3cde530(localclientnum, entity getentitynumber())) {
-            return 0;
+            return false;
         }
         if (var_349e9a55 != 1 && var_349e9a55 != 0) {
-            return 0;
+            return false;
         }
         if (!function_9e39e246(localclientnum)) {
             var_7a7c5b7d = is_friendly(localclientnum, #"allies") ? #"allies" : #"axis";
@@ -278,12 +278,12 @@ function function_471909d9(localclientnum, entity, settings, localplayerteam) {
         }
         var_3be52391 = util::get_enemy_team(var_7a7c5b7d);
         if (var_6f36c5bc == 0 || entity.team == var_7a7c5b7d && var_6f36c5bc == 1 || entity.team == var_3be52391 && var_6f36c5bc == 2) {
-            return 1;
+            return true;
         }
     } else if (var_349e9a55 == 0 || var_349e9a55 == 2) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace codcaster/codcaster
@@ -402,7 +402,7 @@ function private function_35248a94(playername) {
 function private codcaster_monitor_player_pucks(localclientnum) {
     level notify("codcaster_monitor_player_pucks" + localclientnum);
     level endon("codcaster_monitor_player_pucks" + localclientnum);
-    while (1) {
+    while (true) {
         waitframe(1);
         var_15dfb7fc = function_4af9029c(localclientnum) && function_aa0b7b86(localclientnum, "codcaster_freecam_pucks");
         var_c36a1b34 = function_21dc7cf(localclientnum) && function_aa0b7b86(localclientnum, "codcaster_aerialcam_pucks");

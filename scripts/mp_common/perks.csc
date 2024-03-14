@@ -24,7 +24,7 @@ function private function_70a657d8() {
     callback::on_localplayer_spawned(&on_localplayer_spawned);
     callback::on_spawned(&on_player_spawned);
     level.killtrackerfxenable = 1;
-    if (1) {
+    if (true) {
         level._monitor_tracker = &monitor_tracker_perk;
     }
     level.sitrepscan1_enable = getdvarint(#"scr_sitrepscan1_enable", 2);
@@ -55,7 +55,7 @@ function private function_70a657d8() {
 // Size: 0x2c
 function updatesitrepscan() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         wait(1);
     }
 }
@@ -66,7 +66,7 @@ function updatesitrepscan() {
 // Size: 0x2c0
 function updatedvars() {
     /#
-        while (1) {
+        while (true) {
             level.sitrepscan1_enable = getdvarint(#"scr_sitrepscan1_enable", level.sitrepscan1_enable);
             level.sitrepscan1_setoutline = getdvarint(#"scr_sitrepscan1_setoutline", level.sitrepscan1_setoutline);
             level.sitrepscan1_setsolid = getdvarint(#"scr_sitrepscan1_setsolid", level.sitrepscan1_setsolid);
@@ -140,7 +140,7 @@ function function_92725cf9(local_client_num) {
         return;
     }
     self thread function_e3426b1f(local_client_num);
-    if (1) {
+    if (true) {
         self thread monitor_tracker_perk_killcam(local_client_num);
         self thread monitor_tracker_existing_players(local_client_num);
     }
@@ -152,15 +152,15 @@ function function_92725cf9(local_client_num) {
 // Size: 0x8e
 function function_67c434(local_client_num, localplayer, var_53227942) {
     if (!localplayer hasperk(local_client_num, #"specialty_detectnearbyenemies")) {
-        return 0;
+        return false;
     }
     if (localplayer.team == var_53227942.team) {
-        return 0;
+        return false;
     }
     if (self hasperk(local_client_num, #"specialty_spycraft")) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace perks/perks
@@ -172,7 +172,7 @@ function on_player_spawned(local_client_num) {
         self thread watch_perks_change(local_client_num);
     #/
     self notify(#"perks_changed");
-    if (1) {
+    if (true) {
         self thread killtrackerfx_on_death(local_client_num);
         self thread monitor_tracker_perk(local_client_num);
     }
@@ -322,24 +322,24 @@ function monitor_tracker_perk_killcam(local_client_num) {
 // Size: 0xc6
 function function_26757b5e(local_client_num) {
     if (!function_5778f82(local_client_num, #"specialty_tracker")) {
-        return 0;
+        return false;
     }
     if (self function_4e0ca360()) {
-        return 0;
+        return false;
     }
     if (!isalive(self)) {
-        return 0;
+        return false;
     }
     if (is_true(self.flying)) {
-        return 0;
+        return false;
     }
     if (isdefined(getplayervehicle(self))) {
-        return 0;
+        return false;
     }
     if (self hasperk(local_client_num, "specialty_spycraft")) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace perks/perks
@@ -544,7 +544,7 @@ function function_f648816a(local_client_num) {
     for (i = 0; i < 4; i++) {
         array::add(var_c948d7f9, createuimodel(function_1df4c3b0(local_client_num, #"hash_6f4b11a0bee9b73d"), "awareness.seg" + i + ".segmentValue"));
     }
-    while (1) {
+    while (true) {
         localplayer = function_5c10bd79(local_client_num);
         playerangles = localplayer.angles;
         var_92b00101 = getdvarint(#"ui_awareness_rotate", 0);
@@ -584,7 +584,7 @@ function function_e3426b1f(local_client_num) {
     if (!isdefined(level.nearbyspawns)) {
         level.nearbyspawns = [];
     }
-    while (1) {
+    while (true) {
         localplayer = function_5c10bd79(local_client_num);
         if (!isplayer(localplayer)) {
             return;
@@ -641,7 +641,7 @@ function monitor_detectnearbyenemies(local_client_num) {
     var_55336d8d = level.var_6fc25f5c;
     var_c394e130 = level.var_842a5e1f;
     self.var_7122b2ff = 0;
-    while (1) {
+    while (true) {
         /#
             if (getdvarint(#"hash_340cb17d497f0877", 0) > 0) {
                 level.var_6fc25f5c = getscriptbundle(#"awareness");
@@ -855,7 +855,7 @@ function function_c90f8547(var_8bced359, var_832d6681, delay_time) {
 function function_c2b5b27c(*local_client_num) {
     self endon(#"death");
     self.var_7122b2ff = 1;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"awareness_action");
         if (isdefined(waitresult.var_53714565)) {

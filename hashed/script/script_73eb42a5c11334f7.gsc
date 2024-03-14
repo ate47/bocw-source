@@ -80,7 +80,7 @@ function private function_2dd58893(params) {
 // Size: 0x388
 function private function_c81ef836() {
     level endon(#"disconnect");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"minimap_waypoint", #"clear_all_pings");
         local_client_num = waitresult.localclientnum;
@@ -97,7 +97,7 @@ function private function_c81ef836() {
                 if (trace[#"fraction"] == 1) {
                     position = (position[0], position[1], 0);
                 }
-                if (1) {
+                if (true) {
                     params = {#var_dcc5aade:1, #localclientnum:local_client_num, #location:position, #var_89c7e02:function_27673a7(local_client_num), #var_a0bf56ac:waitresult.clientnum, #uniqueid:-1, #remove:0, #eventtype:0};
                     function_78827e7f(params);
                 }
@@ -106,7 +106,7 @@ function private function_c81ef836() {
             continue;
         }
         if (waitresult._notify == "clear_all_pings") {
-            if (1) {
+            if (true) {
                 player_ent = function_5c10bd79(local_client_num);
                 params = {#var_dcc5aade:1, #localclientnum:local_client_num, #var_89c7e02:function_5c10bd79(local_client_num), #var_a0bf56ac:waitresult.clientnum, #remove:1, #eventtype:15};
                 function_78827e7f(params);
@@ -302,7 +302,7 @@ function private function_94eab4fb(params) {
 // Size: 0x1a2
 function private function_c7db1f99(pingdata, params, event_type, param, remove, loc, doubletap) {
     pingdata.lastping.var_237e3e32 = undefined;
-    if (1) {
+    if (true) {
         if (event_type < 13) {
             var_237e3e32 = function_2e532eed(params);
             var_237e3e32.eventtype = event_type;
@@ -422,42 +422,42 @@ function private function_78827e7f(params) {
     case 1:
     case 2:
         function_d5a244dc(local_client_num, unique_id, event_type, location, var_56bcf423, var_ec31db0f, param, var_d09a35d4);
-        return;
+        break;
     case 3:
     case 6:
     case 7:
         function_afdaea76(local_client_num, unique_id, event_type, location, var_56bcf423, var_ec31db0f, param, var_d09a35d4);
-        return;
+        break;
     case 11:
         function_effa0b37(local_client_num, unique_id, event_type, location, var_56bcf423, var_ec31db0f, param, var_d09a35d4);
-        return;
+        break;
     case 4:
         function_a5de4bd1(local_client_num, unique_id, event_type, location, var_56bcf423, var_ec31db0f, param, var_d09a35d4);
-        return;
+        break;
     case 5:
         function_35dba327(local_client_num, unique_id, event_type, location, var_56bcf423, var_ec31db0f, param, var_d09a35d4);
-        return;
+        break;
     case 8:
     case 9:
         function_83751d93(local_client_num, unique_id, event_type, location, var_56bcf423, var_ec31db0f, param, var_d09a35d4);
-        return;
+        break;
     case 10:
         function_b7306aa(local_client_num, unique_id, event_type, location, var_56bcf423, var_ec31db0f, param, var_d09a35d4);
-        return;
+        break;
     case 14:
         function_f2e6b227(local_client_num, unique_id, event_type, var_56bcf423, var_ec31db0f, param, var_d09a35d4);
-        return;
+        break;
     case 12:
         function_3e306e80(local_client_num, unique_id, event_type, location, var_56bcf423, var_ec31db0f, param, var_d09a35d4);
-        return;
+        break;
     case 17:
         function_4b08d302(local_client_num, var_56bcf423, var_43a0500c);
-        return;
+        break;
     case 15:
         if (0 || !var_df55840) {
             function_892476d5(local_client_num, var_ec31db0f);
         }
-        return;
+        break;
     }
 }
 

@@ -81,7 +81,7 @@ function function_fadb1cd3(player) {
 // Size: 0x150
 function function_bc741cdd() {
     level endon(#"end_game", #"death", #"hash_20afa38b1f1c339e");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         activator = waitresult.activator;
@@ -209,7 +209,7 @@ function function_bf1953a() {
 function function_22ce4251() {
     level endon(#"end_game", #"hash_20afa38b1f1c339e");
     n_max_zombies = zombie_utility::function_d2dfacfd(#"zombie_max_ai");
-    while (1) {
+    while (true) {
         if (getaiteamarray(level.zombie_team).size < n_max_zombies - 11) {
             return;
         }
@@ -237,7 +237,7 @@ function function_904d21fd() {
         if (player.sessionstate === "spectator") {
             continue;
         }
-        while (1) {
+        while (true) {
             if (!isdefined(player)) {
                 break;
             }
@@ -366,9 +366,9 @@ function function_b1db8691() {
 // Size: 0x2c
 function function_e01b301e(s_loc) {
     if (s_loc.script_noteworthy === "riser_location") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_bce659ef/namespace_bce659ef
@@ -550,7 +550,7 @@ function function_5fc5de3e(ents) {
 // Checksum 0xc8905926, Offset: 0x2a28
 // Size: 0x10
 function function_1a49126a(*entity) {
-    return 1;
+    return true;
 }
 
 // Namespace namespace_bce659ef/namespace_bce659ef
@@ -558,7 +558,7 @@ function function_1a49126a(*entity) {
 // Checksum 0xcc9086a9, Offset: 0x2a40
 // Size: 0x6e
 function function_5d4aa7f8(*inflictor, *attacker, *damage, *dflags, *mod, *weapon, *var_fd90b0bb, *point, *dir, *hitloc, *offsettime, *boneindex, *modelindex) {
-    return 0;
+    return false;
 }
 
 // Namespace namespace_bce659ef/namespace_bce659ef
@@ -616,9 +616,9 @@ function private function_d18f9441() {
 // Size: 0x30
 function function_79e92fb0(zombie_spawner, spawner_int) {
     if (zombie_spawner.script_int === spawner_int) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_bce659ef/namespace_bce659ef
@@ -676,9 +676,9 @@ function cmd(cmd) {
                 level set("<unknown string>" + #"hash_3fb8ca8c017ba7ac", i);
                 waitframe(1);
             }
-            return;
+            break;
         default:
-            return;
+            break;
         }
     #/
 }

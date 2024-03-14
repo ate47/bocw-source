@@ -78,7 +78,7 @@ function jump_pad_essence_fx(localclientnum, *oldval, newval, *bnewent, *binitia
 // Size: 0x6e
 function function_6192b162() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         if (!self function_d2503806(#"hash_5b08235c0b55a003")) {
             self playrenderoverridebundle(#"hash_5b08235c0b55a003");
         }
@@ -123,7 +123,7 @@ function function_ca483953(localclientnum) {
     self notify("1a03edd1862740b0");
     self endon("1a03edd1862740b0");
     self endon(#"death", #"hash_5db49134b7c7de10", #"hash_7387c0ba13aefdd7");
-    while (1) {
+    while (true) {
         earthquake(localclientnum, 0.15, 0.3, self.origin, 256);
         wait(0.1);
     }
@@ -137,7 +137,7 @@ function function_6b3f6fa7(localclientnum) {
     self notify("2c1a4b7fe6426f07");
     self endon("2c1a4b7fe6426f07");
     self endon(#"death", #"hash_78558ed9d8282358", #"hash_7387c0ba13aefdd7");
-    while (1) {
+    while (true) {
         self playrumbleonentity(localclientnum, #"hash_33c84c73c645ea27");
         wait(0.1);
     }

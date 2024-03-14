@@ -259,7 +259,7 @@ function private use_ar(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
-    while (1) {
+    while (true) {
         self function_bbef6e21();
         self function_411e397e();
         if (self.bot.var_9931c7dc) {
@@ -301,7 +301,7 @@ function private function_82ebbce(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
-    while (1) {
+    while (true) {
         self function_bbef6e21();
         self function_411e397e();
         if (self.bot.var_9931c7dc) {
@@ -343,7 +343,7 @@ function private use_tr(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
-    while (1) {
+    while (true) {
         self function_bbef6e21();
         self function_411e397e();
         if (self.bot.var_9931c7dc) {
@@ -385,7 +385,7 @@ function private function_d6921803(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
-    while (1) {
+    while (true) {
         self function_bbef6e21();
         self function_411e397e();
         if (self.bot.var_9931c7dc) {
@@ -427,7 +427,7 @@ function private function_b3992b0(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
-    while (1) {
+    while (true) {
         self function_bbef6e21();
         self function_411e397e();
         if (self.bot.var_9931c7dc) {
@@ -469,7 +469,7 @@ function private function_3f4d56d1(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
-    while (1) {
+    while (true) {
         self function_bbef6e21();
         self function_411e397e();
         if (self.bot.var_9931c7dc) {
@@ -519,7 +519,7 @@ function private function_78135f4c(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
-    while (1) {
+    while (true) {
         self function_bbef6e21();
         self function_411e397e();
         if (self.bot.var_9931c7dc) {
@@ -585,7 +585,7 @@ function private use_launcher(actionparams) {
     var_677906a4 = weapon.explosionradius * 0.6;
     lockedflag = 1 << self getentitynumber();
     self function_185a3c39(weapon);
-    while (1) {
+    while (true) {
         target = self.enemy;
         if (isplayer(self.enemy) && self.enemy isinvehicle() && !self.enemy isremotecontrolling()) {
             target = self.enemy getvehicleoccupied();
@@ -1007,7 +1007,7 @@ function private function_f54e11c8(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
-    while (1) {
+    while (true) {
         self function_6b01cd20();
         self function_bbef6e21();
         self function_411e397e();
@@ -1031,7 +1031,7 @@ function private function_2bbdd2b4(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
-    while (1) {
+    while (true) {
         if (self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.enemydist / 500)) {
             self fire_weapon(weapon);
         }
@@ -1059,7 +1059,7 @@ function private function_27ae97ef(actionparams) {
     weapon = actionparams.weapon;
     var_677906a4 = weapon.explosionradius * 0.6;
     self function_185a3c39(weapon);
-    while (1) {
+    while (true) {
         self function_6b01cd20();
         self.bot.var_f50fa466 = weapon;
         self function_bbef6e21();
@@ -1360,7 +1360,7 @@ function private function_5d035c24(actionparams) {
     self endon(#"death", #"hash_3525e39d3694d0a9");
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
-    while (1) {
+    while (true) {
         self function_6b01cd20();
         self function_bbef6e21();
         self function_411e397e();
@@ -1417,7 +1417,7 @@ function private function_397a1c0a(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
-    while (1) {
+    while (true) {
         self function_6b01cd20();
         self function_bbef6e21();
         self function_411e397e();
@@ -1483,7 +1483,7 @@ function private function_69658e9b(actionparams) {
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
     point = isdefined(actionparams.point) ? actionparams.point : self function_1c8f36a4();
-    while (1) {
+    while (true) {
         self botsetlookpoint(point);
         self bottapbutton(0);
         if (self function_a39f313c() && self botgetlookdot() > 0.99) {
@@ -1817,7 +1817,7 @@ function private function_303bbccf(actionparams) {
 // Size: 0x108
 function private function_d55b60f8(actionparams) {
     if (!self function_303bbccf(actionparams) || self bot_action::function_ebb8205b(actionparams) || self bot_action::function_a0b0f487(actionparams) || self bot_action::function_2c3ea0c6(actionparams) || self bot_action::in_vehicle(actionparams)) {
-        return 0;
+        return false;
     }
     if (!self weaponcyclingenabled()) {
         weapon = actionparams.weapon;
@@ -1825,10 +1825,10 @@ function private function_d55b60f8(actionparams) {
             /#
                 actionparams.debug[actionparams.debug.size] = #"hash_4655fb464b842dfc";
             #/
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -1840,18 +1840,18 @@ function private function_98a9dad4(actionparams) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_499c1441b9e70c21";
         #/
-        return 0;
+        return false;
     }
     if (self bot_action::function_a43bc7e2(actionparams) || self bot_action::function_59d0ae4c(actionparams) || self bot_action::flashed(actionparams) || self bot_action::function_ebb8205b(actionparams) || self bot_action::function_a0b0f487(actionparams) || self bot_action::function_2c3ea0c6(actionparams) || self bot_action::in_vehicle(actionparams) || self bot_action::function_ed7b2f42(actionparams)) {
-        return 0;
+        return false;
     }
     if (!self offhandweaponsenabled()) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_6ac9b1d785eef92";
         #/
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -1860,7 +1860,7 @@ function private function_98a9dad4(actionparams) {
 // Size: 0x218
 function private function_808ca6bb(actionparams) {
     if (self bot_action::function_a43bc7e2(actionparams) || self bot_action::function_59d0ae4c(actionparams) || self bot_action::flashed(actionparams) || self bot_action::function_ebb8205b(actionparams) || self bot_action::function_a0b0f487(actionparams) || self bot_action::function_2c3ea0c6(actionparams) || self bot_action::in_vehicle(actionparams) || self bot_action::function_ed7b2f42(actionparams)) {
-        return 0;
+        return false;
     }
     weapon = actionparams.weapon;
     registered = 0;
@@ -1874,15 +1874,15 @@ function private function_808ca6bb(actionparams) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_40fce486e054dde0";
         #/
-        return 0;
+        return false;
     }
     if (!self killstreakrules::iskillstreakallowed(type, self.team, 1)) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_15c89d85f9320bf6";
         #/
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -1894,13 +1894,13 @@ function private function_f338aefb(actionparams) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_36676f11c5573c1e";
         #/
-        return 1;
+        return true;
     }
     if (isdefined(level.var_eb10c6a7) && isdefined(level.var_eb10c6a7[self.team]) && level.var_eb10c6a7[self.team] > 0) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_3839215d605aaf2f";
         #/
-        return 1;
+        return true;
     }
     if (isdefined(level.activecounteruavs)) {
         foreach (team in level.teams) {
@@ -1911,11 +1911,11 @@ function private function_f338aefb(actionparams) {
                 /#
                     actionparams.debug[actionparams.debug.size] = #"hash_669d47e05d0f549f";
                 #/
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -1932,11 +1932,11 @@ function private function_82350d4c(actionparams) {
                 /#
                     actionparams.debug[actionparams.debug.size] = #"hash_669d47e05d0f549f";
                 #/
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -1948,7 +1948,7 @@ function private function_4e17fb37(actionparams, var_b7fbe51b) {
     aimpoint = actionparams.aimpoint;
     if (!isdefined(aimpoint)) {
         if (!isdefined(self.enemy)) {
-            return 0;
+            return false;
         }
         aimpoint = self.enemy getcentroid();
     }
@@ -1957,7 +1957,7 @@ function private function_4e17fb37(actionparams, var_b7fbe51b) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_4861201ac3ea229e";
         #/
-        return 0;
+        return false;
     }
     trace = self function_6e8a2d86(weapon, aimangles.var_478aeacd);
     dist = distance2d(self.origin, aimpoint) - var_b7fbe51b;
@@ -1965,9 +1965,9 @@ function private function_4e17fb37(actionparams, var_b7fbe51b) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_50c1f0722206aaa8";
         #/
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -1979,12 +1979,12 @@ function private function_754cc239(actionparams) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_74827205c9eaaffe";
         #/
-        return 0;
+        return false;
     }
     /#
         actionparams.debug[actionparams.debug.size] = #"hash_3e4e2bab6555c31b";
     #/
-    return 1;
+    return true;
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -1993,21 +1993,21 @@ function private function_754cc239(actionparams) {
 // Size: 0xe8
 function private function_64f2e29(actionparams) {
     if (!isdefined(self.enemy)) {
-        return 0;
+        return false;
     }
     if (isvehicle(self.enemy)) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_18edaf9b6eee19a1";
         #/
-        return 1;
+        return true;
     }
     if (isplayer(self.enemy) && self.enemy isinvehicle() && !self.enemy isremotecontrolling()) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_28145be29cdebb73";
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -2019,9 +2019,9 @@ function private function_a469c9cd(actionparams) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_495e9766dfcb4aa3";
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -2138,7 +2138,7 @@ function private function_d19a634f() {
 // Size: 0x62
 function private function_9dfd5e88(trace) {
     if (!isdefined(self.enemy) || !isdefined(trace)) {
-        return 0;
+        return false;
     }
     var_d6e7a23f = trace[#"entity"];
     return isdefined(var_d6e7a23f) && var_d6e7a23f == self.enemy;
@@ -2150,7 +2150,7 @@ function private function_9dfd5e88(trace) {
 // Size: 0x58
 function private function_e5a76b54(trace, origin) {
     if (!isdefined(trace)) {
-        return 0;
+        return false;
     }
     distsq = distancesquared(trace[#"position"], origin);
     return distsq <= 100;
@@ -2162,7 +2162,7 @@ function private function_e5a76b54(trace, origin) {
 // Size: 0x50
 function private function_e63ee3e8(trace, distance) {
     if (!isdefined(trace)) {
-        return 0;
+        return false;
     }
     return distance2d(self.origin, trace[#"position"]) >= distance;
 }
@@ -2250,7 +2250,7 @@ function private throw_offhand(actionparams, var_dd95d559) {
     self.bot.var_6bea1d82 = 1;
     weapon = actionparams.weapon;
     self.bot.var_f50fa466 = weapon;
-    while (1) {
+    while (true) {
         self.bot.var_87751145 = actionparams.aimpoint;
         self function_e1e3b64c(0);
         while (!self function_d911b948() || !(self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.enemydist / 500))) {
@@ -2351,7 +2351,7 @@ function private function_411e397e() {
 // Size: 0xac
 function private function_d8b388a6() {
     if ((isdefined(self.bot.difficulty.var_a9c00d70) ? self.bot.difficulty.var_a9c00d70 : 0) <= 0) {
-        return 1;
+        return true;
     }
     return (!isdefined(self.bot.var_d70788cb) || self.bot.var_d70788cb <= gettime()) && !(!isdefined(self.bot.var_a9c00d70) || self.bot.var_a9c00d70 <= gettime());
 }
@@ -2395,7 +2395,7 @@ function private function_e1e3b64c(currentweapon) {
 // Size: 0x290
 function private function_9160a207(currentweapon) {
     if (!isdefined(self.bot.difficulty)) {
-        return 1;
+        return true;
     }
     var_f519fbc6 = isdefined(self.bot.difficulty.var_d20ff29c) ? self.bot.difficulty.var_d20ff29c : 0;
     if (currentweapon && !(self.bot.enemydist <= 200)) {
@@ -2417,7 +2417,7 @@ function private function_9160a207(currentweapon) {
         self.bot.var_9e5aaf8d = var_f519fbc6;
     #/
     if (var_f519fbc6 <= 0) {
-        return 0;
+        return false;
     }
     return randomfloat(100) < var_f519fbc6;
 }
@@ -2428,13 +2428,13 @@ function private function_9160a207(currentweapon) {
 // Size: 0xc8
 function private function_e3b275f0(enemy, var_755136c1) {
     if (!isdefined(enemy gettagorigin(var_755136c1))) {
-        return 0;
+        return false;
     }
     var_6e53ed46 = isdefined(self.bot.difficulty.var_fa680c5e) ? self.bot.difficulty.var_fa680c5e : 0;
     if (var_6e53ed46 <= 0) {
-        return 0;
+        return false;
     } else if (var_6e53ed46 >= 100) {
-        return 1;
+        return true;
     }
     return randomfloat(100) < var_6e53ed46;
 }

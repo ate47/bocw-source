@@ -200,15 +200,15 @@ function function_6db0705() {
         if (isdefined(self.var_1e593689)) {
             foreach (var_77a228b3 in self.var_1e593689) {
                 if (var_77a228b3 flag::get("satchelIsArmed")) {
-                    return 1;
+                    return true;
                 }
             }
         } else {
-            return 0;
+            return false;
         }
         waitframe(1);
     }
-    return 0;
+    return false;
 }
 
 // Namespace satchel_charge/satchel_charge
@@ -225,14 +225,14 @@ function function_51108722() {
                 }
             }
             if (var_263fb98) {
-                return 1;
+                return true;
             }
         } else {
-            return 0;
+            return false;
         }
         waitframe(1);
     }
-    return 0;
+    return false;
 }
 
 // Namespace satchel_charge/satchel_charge
@@ -256,7 +256,7 @@ function function_542663a0() {
             self takeweapon(var_5d175791);
         }
         self.var_bd5b6650 = undefined;
-        return 0;
+        return false;
     }
     function_a0a96965();
     wait(0.5);
@@ -264,7 +264,7 @@ function function_542663a0() {
         self takeweapon(var_5d175791);
     }
     self.var_bd5b6650 = undefined;
-    return 1;
+    return true;
 }
 
 // Namespace satchel_charge/satchel_charge
@@ -376,7 +376,7 @@ function function_9b8337c3(einflictor, eattacker, *idamage, *smeansofdeath, *wea
         foreach (var_71f7928d in shitloc.var_3c0a7eef) {
             if (self == var_71f7928d.vehicle && var_71f7928d.var_33c9fbd5 == gettime()) {
                 shitloc function_af9b1762(psoffsettime);
-                return;
+                break;
             }
         }
     }
@@ -451,7 +451,7 @@ function function_87e9f461() {
         self endon(#"death", #"hacked", #"detonating");
         function_a0778d59();
         starttime = gettime();
-        while (1) {
+        while (true) {
             function_335a9072("<unknown string>" + float(self.weapon.fusetime - gettime() - starttime) / 1000);
             waitframe(1);
         }

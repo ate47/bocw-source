@@ -114,7 +114,7 @@ function function_d379ba37() {
     setdvar(#"hash_442e0c29ec279820", "");
     setdvar(#"hash_5668d121a9e929c8", "");
     setdvar(#"hash_2d6ac7bedd2e2d8", "");
-    while (1) {
+    while (true) {
         if (getdvarint(#"hash_d874e4e73e9f18", 0)) {
             if (!is_true(level.var_a095060b)) {
                 level thread function_1552e594();
@@ -642,7 +642,7 @@ function function_c019882() {
     if (!is_true(level.doa.var_c2bb00bb)) {
         return;
     }
-    while (1) {
+    while (true) {
         foreach (player in getplayers()) {
             player.doa.var_640df11b = 1;
         }
@@ -674,7 +674,7 @@ function function_9ec06f93() {
         }
         var_8b9e74df[var_8b9e74df.size] = def;
     }
-    while (1) {
+    while (true) {
         waitframe(1);
         x = var_4df46b9b;
         y = var_f956d12;
@@ -840,7 +840,7 @@ function function_ec4525c8() {
     foreach (room in level.doa.var_8f6ccf63) {
         room.var_d52d06ee = 0;
     }
-    while (1) {
+    while (true) {
         waitframe(1);
         x = var_4df46b9b;
         y = var_f956d12;
@@ -1002,7 +1002,7 @@ function function_8f024d05() {
     var_af82a000 = var_bc153d9a - 30;
     var_4df46b9b = 100;
     var_f956d12 = 150;
-    while (1) {
+    while (true) {
         waitframe(1);
         if (!isdefined(level.doa.roundstarttime)) {
             continue;
@@ -1200,7 +1200,7 @@ function function_1a837918() {
     self notify("1c7aa15164b64a05");
     self endon("1c7aa15164b64a05");
     level endon(#"hash_39ebcccef3aa05c6", #"game_over");
-    while (1) {
+    while (true) {
         x = 800;
         y = 300;
         namespace_1e25ad94::function_70e370a(x, y, "DUNGEON STATISTICS", (1, 1, 1), 1, 2, 0.05);
@@ -1248,7 +1248,7 @@ function function_c93506fb() {
     level endon(#"hash_39ebcccef3aa05c6", #"game_over");
     level.doa.var_f33bb10 = 1;
     self thread function_1a837918();
-    while (1) {
+    while (true) {
         namespace_1e25ad94::function_4e3cfad("Dungeon Evolution: " + level.doa.var_f33bb10 + " started at:" + gettime(), undefined, undefined, undefined, 10);
         namespace_1e25ad94::function_f5f0c0f8("###DungeonMasterSupreme Cycle:" + level.doa.var_f33bb10);
         while (!level flag::get("dungeon_building")) {
@@ -1315,7 +1315,7 @@ function function_ddde8af6(delay = 0.1) {
     self endon(#"disconnect");
     level endon(#"hash_6b0c389ef8ac36b4", #"game_over");
     wait(delay);
-    while (1) {
+    while (true) {
         if (randomint(100) < getdvarint(#"hash_448d3a6683251780", 100)) {
             if (getdvarint(#"hash_58b45fb8267a06a", 1)) {
                 if (self.doa.score.lives <= 3) {
@@ -1372,7 +1372,7 @@ function function_1552e594() {
     level.var_a095060b = 1;
     level.var_96f7e84e = 1;
     setdvar(#"hash_2167ce61af5dc0b0", 0);
-    while (1) {
+    while (true) {
         waitframe(1);
         guys = namespace_7f5aeb59::function_23e1f90f();
         if (guys.size == 0) {
@@ -1501,7 +1501,7 @@ function function_1552e594() {
 // Size: 0xfe
 function function_b255a702() {
     level endon(#"hash_12d79bc0fed4ee5a");
-    while (1) {
+    while (true) {
         arena = getdvar(#"skipto_jump", "");
         if (arena != "") {
             setdvar(#"skipto_jump", "");
@@ -1669,7 +1669,7 @@ function function_db3aef8f() {
 function function_3a2701da() {
     level endon(#"game_over");
     level endon(#"hash_12d79bc0fed4ee5a");
-    while (1) {
+    while (true) {
         wait(10);
         if (namespace_dfc652ee::function_69cafbe0() < 5) {
             namespace_dfc652ee::function_ad7ac41b(getplayers()[0].origin, 12, 1024);
@@ -1769,7 +1769,7 @@ function function_43548cd2() {
         var_d7e22d96 = var_d7e22d96 * -1;
         bottomy = bottomy * -1;
     }
-    while (1) {
+    while (true) {
         var_eb40b4af = (var_bead1873, topy, 10000);
         var_5d5e18e0 = (var_bead1873, topy * -1, 10000);
         var_a515abf2 = (var_d7e22d96 * -1, bottomy, 10000);
@@ -1800,7 +1800,7 @@ function function_a2a93037(var_1d62f124 = 5) {
     if (!isdefined(self.var_3d8e0261)) {
         self.var_3d8e0261 = 0;
     }
-    while (1) {
+    while (true) {
         waitframe(1);
         self.var_588775c1 = 0;
         self.var_3d8e0261 = 0;
@@ -1832,7 +1832,7 @@ function function_f451bc26(var_1d62f124 = 5) {
         self.var_98f48bd3[i] = 0;
     }
     var_bb435707 = self.health;
-    for (idx = 0; 1; idx = 0) {
+    for (idx = 0; true; idx = 0) {
         self.var_98f48bd3[idx] = var_bb435707 - self.health;
         var_bb435707 = self.health;
         waitframe(1);
@@ -1848,7 +1848,7 @@ function function_f451bc26(var_1d62f124 = 5) {
 // Size: 0x60
 function function_6790d816() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self waittill(#"damage");
         self.var_cb0de45e++;
         self namespace_ec06fe4a::function_2f4b0f9(self.health);
@@ -2047,7 +2047,7 @@ function function_ade3e372() {
     foreach (player in namespace_7f5aeb59::function_23e1f90f()) {
         player thread function_ddde8af6();
     }
-    while (1) {
+    while (true) {
         foreach (player in namespace_7f5aeb59::function_23e1f90f()) {
             player dodamage(player.health + 100, player.origin);
         }

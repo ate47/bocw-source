@@ -229,7 +229,7 @@ function function_7b69ae3f() {
 function function_165a06f0(player_source, var_2b003a39, var_5baceff5, weapon) {
     if (isactor(self) && isalive(self) && !self flag::get(#"hash_6ab8e3db32b20d33") && isalive(player_source) && !player_source laststand::player_is_in_laststand() && self.team === level.zombie_team && !is_true(self.var_c8065bf4) && !is_true(self.var_8576e0be) && !is_true(player_source.var_16735873)) {
         if (self.var_6f84b820 === #"boss") {
-            return 0;
+            return false;
         } else if (self.var_6f84b820 === #"hash_72d4f2ad2e333eb4") {
             switch (weapon.name) {
             case #"hash_148e5880a4f4d46f":
@@ -237,18 +237,18 @@ function function_165a06f0(player_source, var_2b003a39, var_5baceff5, weapon) {
             case #"hash_3d62bac92bbcaa46":
             case #"hash_3d62bbc92bbcabf9":
             case #"hash_3d62bcc92bbcadac":
-                return 0;
+                return false;
             }
         } else if (self.var_6f84b820 === #"special") {
             switch (weapon.name) {
             case #"hash_148e5880a4f4d46f":
             case #"hash_3d62b9c92bbca893":
             case #"hash_3d62bac92bbcaa46":
-                return 0;
+                return false;
             }
         }
         if (distance(self.origin, player_source.origin) < var_2b003a39) {
-            return 1;
+            return true;
         }
         if (is_true(player_source.var_60b31640)) {
             var_281b41ca = function_a1ef346b(player_source.team, player_source.origin, var_5baceff5);
@@ -270,12 +270,12 @@ function function_165a06f0(player_source, var_2b003a39, var_5baceff5, weapon) {
                             line(v_start_pos, v_end_pos, (0, 0, 1), undefined, 20);
                         }
                     #/
-                    return 1;
+                    return true;
                 }
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_9111e6ab/namespace_9111e6ab
@@ -287,12 +287,12 @@ function function_6c7755f9(player, var_347c484e = 0, var_6f40c449 = 1) {
     var_4985c8bd = player gettagorigin("j_spineupper");
     if (!self isinvehicle() && !player isinvehicle() && (!var_6f40c449 || !is_true(player.var_23fa23a9)) && !self scene::is_igc_active() && !player scene::is_igc_active() && !self laststand::player_is_in_laststand() && !player laststand::player_is_in_laststand() && isdefined(var_38e2a777) && isdefined(var_4985c8bd) && beamtrace(var_38e2a777, var_4985c8bd, 0, self, 1, 1, player)[#"fraction"] === 1 && !is_true(self.var_16735873) && !is_true(player.var_16735873)) {
         if (var_347c484e) {
-            return 1;
+            return true;
         } else if (!is_true(player.var_60b31640)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_9111e6ab/namespace_9111e6ab

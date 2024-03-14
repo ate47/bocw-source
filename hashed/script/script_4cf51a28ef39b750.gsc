@@ -169,10 +169,10 @@ function private function_76138a38() {
 // Size: 0xb8
 function function_ebb262ad() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         level flag::wait_till(#"dark_aether_active");
         if (level flag::get(#"hash_268c943ffdd74fa")) {
-            return;
+            break;
         }
         level thread function_1fad5dd0();
         level flag::wait_till_clear(#"dark_aether_active");
@@ -186,7 +186,7 @@ function function_ebb262ad() {
 // Size: 0x204
 function function_130d4334() {
     level endon(#"hash_268c943ffdd74fa");
-    while (1) {
+    while (true) {
         level flag::wait_till(#"dark_aether_active");
         a_s_fasttravel = struct::get_array("fasttravel_trigger");
         foreach (s_fasttravel in a_s_fasttravel) {
@@ -252,7 +252,7 @@ function function_12f1a9dd() {
     level endon(#"end_game");
     level waittill(#"hash_3e765c26047c9f54");
     function_2b30b25d();
-    while (1) {
+    while (true) {
         var_bd1d9ca7 = 0;
         foreach (player in function_a1ef346b()) {
             if (is_true(player.var_16735873)) {
@@ -288,7 +288,7 @@ function function_1fad5dd0() {
     level endon(#"dark_side_timeout", #"hash_61e8a39b3a4bee6a", #"end_game");
     a_s_fasttravel = struct::get_array("fasttravel_trigger");
     var_7f26d025 = 0;
-    while (1) {
+    while (true) {
         foreach (s_fasttravel in a_s_fasttravel) {
             if (!isdefined(s_fasttravel.unitrigger_stub.b_play)) {
                 if (level flag::get_all(s_fasttravel.unitrigger_stub.var_a92d1b24)) {
@@ -308,7 +308,7 @@ function function_1fad5dd0() {
             }
         }
         if (var_7f26d025 === a_s_fasttravel.size) {
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -359,7 +359,7 @@ function function_ca8f3b73() {
 // Size: 0x118
 function function_b5f4f0c() {
     level.var_a43447e4 = [];
-    while (1) {
+    while (true) {
         s_notify = undefined;
         s_notify = level waittill(#"fasttravel_bought");
         s_notify.player zm_vo::function_604084ea();

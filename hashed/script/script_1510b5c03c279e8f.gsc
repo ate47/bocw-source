@@ -393,12 +393,12 @@ function function_fb7f416c() {
 // Size: 0x50
 function function_259536c8(*from_state, *to_state, *connection) {
     if (!util::iscooldownready("state_change")) {
-        return 0;
+        return false;
     }
     if (!isdefined(self.enemy)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_7457b8d5/namespace_7457b8d5
@@ -586,18 +586,18 @@ function function_f7dc8837(enemy) {
 // Size: 0xcc
 function function_e32c6513(*from_state, *to_state, *connection) {
     if (self.pathfailcount > 4) {
-        return 1;
+        return true;
     }
     if (!util::iscooldownready("state_change")) {
-        return 0;
+        return false;
     }
     if (isalive(self.enemy) && distance2dsquared(self.origin, self.enemy.origin) > function_a3f6cdac(200)) {
-        return 1;
+        return true;
     }
     if (!isdefined(self.enemy)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_7457b8d5/namespace_7457b8d5
@@ -612,7 +612,7 @@ function prevent_stuck() {
     wait(2);
     count = 0;
     previous_origin = undefined;
-    while (1) {
+    while (true) {
         if (isdefined(previous_origin) && distancesquared(previous_origin, self.origin) < function_a3f6cdac(0.1)) {
             count++;
         } else {
@@ -692,7 +692,7 @@ function function_b38859f() {
     self notify(#"hash_49730fc0dae6993c");
     self endon(#"hash_49730fc0dae6993c");
     wait(0.1);
-    while (1) {
+    while (true) {
         if (isdefined(self.current_pathto_pos)) {
             if (distance2dsquared(self.current_pathto_pos, self.goalpos) > function_a3f6cdac(self.goalradius)) {
                 wait(0.5);
@@ -739,7 +739,7 @@ function nudge_collision() {
     self endon(#"change_state");
     self notify(#"end_nudge_collision");
     self endon(#"end_nudge_collision");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"veh_collision");
         ang_vel = self getangularvelocity() * 0.8;

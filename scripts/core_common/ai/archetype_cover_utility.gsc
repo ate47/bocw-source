@@ -238,18 +238,18 @@ function private coverpeekterminate(entity) {
 // Size: 0x144
 function private supportsleancovercondition(entity) {
     if (entity ai::get_behavior_attribute("disablelean")) {
-        return 0;
+        return false;
     }
     if (isdefined(entity.node)) {
         if (entity.node.type == #"cover left" || entity.node.type == #"cover right") {
-            return 1;
+            return true;
         } else if (entity.node.type == #"cover pillar") {
             if (!(isdefined(entity.node.spawnflags) && (entity.node.spawnflags & 1024) == 1024) || !(isdefined(entity.node.spawnflags) && (entity.node.spawnflags & 2048) == 2048)) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace aiutility/archetype_cover_utility
@@ -296,12 +296,12 @@ function private shouldleanatcovercondition(entity) {
 // Size: 0x46
 function private function_5d1688a6(entity) {
     if (!supportsleancovercondition(entity)) {
-        return 0;
+        return false;
     }
     if (!shouldleanatcovercondition(entity)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_cover_utility
@@ -382,27 +382,27 @@ function private function_9e5575be(entity) {
 // Size: 0x23c
 function private supportsovercovercondition(entity) {
     if (entity ai::get_behavior_attribute("disablelean")) {
-        return 0;
+        return false;
     }
     stance = entity getblackboardattribute("_stance");
     if (isdefined(entity.node)) {
         if (entity.node.type == #"conceal crouch" || entity.node.type == #"conceal stand") {
-            return 1;
+            return true;
         }
         if (!isinarray(getvalidcoverpeekouts(entity.node), "over")) {
-            return 0;
+            return false;
         }
         if (entity.node.type == #"cover left" || entity.node.type == #"cover right" || entity.node.type == #"cover crouch" || entity.node.type == #"cover crouch window" || entity.node.type == #"conceal crouch") {
             if (stance == "crouch") {
-                return 1;
+                return true;
             }
         } else if (entity.node.type == #"cover stand" || entity.node.type == #"conceal stand") {
             if (stance == "stand") {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace aiutility/archetype_cover_utility
@@ -423,12 +423,12 @@ function private shouldoveratcovercondition(entity) {
 // Size: 0x46
 function private function_74e272f2(entity) {
     if (!supportsovercovercondition(entity)) {
-        return 0;
+        return false;
     }
     if (!shouldoveratcovercondition(entity)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_cover_utility
@@ -552,7 +552,7 @@ function isatcrouchnode(entity) {
             return (!entity function_c97b59f8("stand", entity.node) && entity function_c97b59f8("crouch", entity.node));
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace aiutility/archetype_cover_utility
@@ -565,7 +565,7 @@ function function_1d3ee45b(entity) {
             return (!entity function_c97b59f8("stand", entity.node) && !entity function_c97b59f8("crouch", entity.node) && entity function_c97b59f8("prone", entity.node));
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace aiutility/archetype_cover_utility
@@ -580,9 +580,9 @@ function function_3fe92ec8(entity) {
     }
     absdeltayaw = absangleclamp180(deltayaw);
     if (absdeltayaw > 45) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_cover_utility
@@ -593,23 +593,23 @@ function private function_94bbbfa3(entity) {
     if (!btapi_isatcovercondition(entity)) {
         if (entity isatcovernodestrict() && is_true(entity.var_b8cc25c)) {
             if (entity asmistransitionrunning()) {
-                return 1;
+                return true;
             }
             if (archetype_human_cover::function_1fa73a96(entity)) {
-                return 1;
+                return true;
             }
             if (is_true(entity.ai.reloading) && !btapi_shouldmelee(entity)) {
-                return 1;
+                return true;
             }
             if (isdefined(entity.var_f13fb34f) && gettime() - entity.var_f13fb34f < 3000) {
                 if (distancesquared(entity.origin, entity.var_39226de1) < function_a3f6cdac(32)) {
-                    return 1;
+                    return true;
                 }
             }
         }
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_cover_utility
@@ -659,10 +659,10 @@ function function_d18f7e29(entity) {
     if (entity.node.type == #"cover stand" || entity.node.type == #"conceal stand") {
         covermode = entity getblackboardattribute("_cover_mode");
         if (covermode == "cover_over") {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace aiutility/archetype_cover_utility
@@ -687,12 +687,12 @@ function function_bd4a2ff7(entity) {
 // Size: 0x5e
 function shouldcoveridleonly(entity) {
     if (entity ai::get_behavior_attribute("coverIdleOnly")) {
-        return 1;
+        return true;
     }
     if (is_true(entity.node.script_onlyidle)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace aiutility/archetype_cover_utility
@@ -701,9 +701,9 @@ function shouldcoveridleonly(entity) {
 // Size: 0x2a
 function issuppressedatcovercondition(entity) {
     if (entity.suppressionmeter > entity.var_4a68f84b) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace aiutility/archetype_cover_utility
@@ -711,7 +711,7 @@ function issuppressedatcovercondition(entity) {
 // Checksum 0x5912c7d6, Offset: 0x2c50
 // Size: 0x10
 function function_5d963944(*entity) {
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_cover_utility
@@ -913,11 +913,11 @@ function private function_db059f5c(entity, aimlimits) {
 function private function_cfe04a8d(entity, aimtable, var_b0b60311, var_ec53bfd8) {
     aimlimits = entity getaimlimitsfromentry(aimtable);
     if (!function_1587e509(entity, aimlimits, var_b0b60311, var_ec53bfd8)) {
-        return 0;
+        return false;
     }
     if (!function_db059f5c(entity, aimlimits)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 

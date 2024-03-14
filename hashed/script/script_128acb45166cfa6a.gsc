@@ -120,7 +120,7 @@ function function_59ee055f(localclientnum) {
 // Size: 0x76
 function function_c3ae0dcf() {
     self endon(#"death", #"hash_29b88049dcac8bb3");
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = self waittill(#"sndambientbreath");
         self.var_ce0f9600 = int(s_result.active);
@@ -145,7 +145,7 @@ function function_ce1bd3f2(localclientnum) {
     n_wait_min = var_4f50b172;
     n_wait_max = var_5fbfc988;
     var_d49193ec = #"hash_43accb909782c33";
-    while (1) {
+    while (true) {
         if (self.var_ce0f9600 >= 1) {
             suffix = "";
             n_wait_min = var_4f50b172;
@@ -186,7 +186,7 @@ function function_b53ee6c9(localclientnum) {
     n_wait_min = var_4f50b172;
     n_wait_max = var_5fbfc988;
     var_d49193ec = #"hash_24b7a2e5066beff3";
-    while (1) {
+    while (true) {
         if (self.var_ce0f9600 >= 1) {
             suffix = "";
             n_wait_min = var_4f50b172;

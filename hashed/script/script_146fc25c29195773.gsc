@@ -72,7 +72,7 @@ function private function_7825ee37(var_31d7501a) {
     var_b4ce0d8c = 0;
     var_16aebd94 = 250;
     player childthread namespace_61e6d095::block_kbm_pause_menu([1:#"hash_542efe3d2dcb6459", 0:#"exit"]);
-    while (1) {
+    while (true) {
         if (player namespace_61e6d095::function_70217795()) {
             function_838e9ba9();
             player notify(#"exit");
@@ -144,7 +144,7 @@ function private function_7825ee37(var_31d7501a) {
 function private function_ab53f639() {
     for (i = 0; i < level.var_91d22c7d.size; i++) {
         if (level.var_91d22c7d[i] != level.var_2462d06a[i]) {
-            return 0;
+            return false;
         }
     }
     function_2c85ed08(3);
@@ -154,7 +154,7 @@ function private function_ab53f639() {
     wait(1);
     player notify(#"hash_542efe3d2dcb6459");
     snd::play("evt_kgb_combo_lock_success", player);
-    return 1;
+    return true;
 }
 
 // Namespace namespace_6fdcb0/namespace_d2b0877a

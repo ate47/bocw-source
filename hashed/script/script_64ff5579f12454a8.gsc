@@ -505,7 +505,7 @@ function private function_701ee731(v_loc, var_751350bb = 800, n_timeout = 120) {
             }
         }
         if (!a_ai.size) {
-            return;
+            break;
         }
         wait(0.25);
     }
@@ -582,7 +582,7 @@ function private function_f5f14ffe(instance) {
     trigger = namespace_8b6a9d79::function_214737c7(level.var_2c678640, &function_4cb97b84, #"hash_2829798affdda59e", undefined, 96);
     trigger.instance = instance;
     /#
-        while (1) {
+        while (true) {
             sphere(level.var_2c678640.origin - vectorscale((0, 0, 1), 24), 16, (1, 1, 0));
             waitframe(1);
         }
@@ -961,7 +961,7 @@ function private function_7d88cc57() {
         return;
     }
     self.var_b8477436 = 1;
-    while (1) {
+    while (true) {
         self bobbing((randomfloatrange(-0.5, 0.5), randomfloatrange(-0.5, 0.5), randomfloatrange(-0.5, 0.5)), 15, 0.2);
         wait(randomfloatrange(0.2, 0.2 * 4));
     }

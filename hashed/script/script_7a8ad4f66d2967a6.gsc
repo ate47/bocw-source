@@ -228,7 +228,7 @@ function function_792e5cc5() {
             if (!isdefined(next_node)) {
                 next_node = getvehiclenode(startnode.target, "targetname");
             }
-            while (1) {
+            while (true) {
                 array::add(startnode.var_5943fcff, next_node);
                 current_node = next_node;
                 next_node = getent(current_node.target, "targetname");
@@ -450,15 +450,15 @@ function function_41d2eebc(params, chopper) {
 // Size: 0xa6
 function private function_8f2cab5d(params, chopper) {
     if (!(isdefined(params.weapon.name) && isdefined(params.weapon) && isdefined(params) && isdefined(params.projectile))) {
-        return 0;
+        return false;
     }
     if (params.weapon.name != "willy_pete_armada") {
-        return 0;
+        return false;
     }
     if (chopper flag::get("on_attack_run")) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_486c0593/namespace_486c0593
@@ -510,7 +510,7 @@ function function_80b42ad9(chopper) {
     dist_check = 600;
     var_c49fe85b = 0;
     var_c09dcd14 = 0;
-    while (1) {
+    while (true) {
         if (!isdefined(chopper)) {
             waitframe(1);
             continue;
@@ -765,18 +765,18 @@ function function_c7e60da8(target, var_b420e989) {
 // Size: 0xba
 function function_4ddd6e88(guy) {
     if (!isalive(guy)) {
-        return 0;
+        return false;
     }
     if (isvehicle(guy) && !(guy.vehicleclass === "artillery")) {
-        return 0;
+        return false;
     }
     if (distance(guy.origin, self.origin) > level.heli_visual_range) {
-        return 0;
+        return false;
     }
     if (distance(guy.origin, self.var_94e122a8) > 400) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_486c0593/namespace_486c0593
@@ -859,7 +859,7 @@ function function_79c4d29d() {
     self.var_cb55c804 = 512;
     self setneargoalnotifydist(self.var_cb55c804);
     pos = self.origin;
-    for (currentnode = undefined; 1; currentnode = nextnode) {
+    for (currentnode = undefined; true; currentnode = nextnode) {
         var_b202465d = self function_5dcf6173();
         loop = level.var_462eb982[var_b202465d].var_5943fcff;
         if (isdefined(currentnode) && var_b202465d == int(currentnode.script_noteworthy)) {
@@ -965,7 +965,7 @@ function function_c4b00a04(*startnode) {
         if (idx == var_60a69279[0]) {
             self.loopcount++;
             if (self.loopcount == 3) {
-                return;
+                break;
             }
         }
         if (idx == var_60a69279[0] - var_ef413b39) {
@@ -1058,7 +1058,7 @@ function private function_24111b5e() {
 // Size: 0x13e
 function private debug_killstreak() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(#"hash_194cd67703e18982", 0) > 0) {
                 level.var_6158b82e = !level.var_6158b82e;
                 setdvar(#"hash_194cd67703e18982", 0);
@@ -1115,7 +1115,7 @@ function private function_79dbd1f7(centroid, var_4f48f05, var_95e06609, frames, 
         }
         for (i = 0; i < frames; i++) {
             if (!isdefined(self)) {
-                return;
+                break;
             }
             dome_apex = centroid + vectorscale(var_4f48f05, level.heli_visual_range);
             debug_spherical_cone(centroid, dome_apex, var_95e06609, 16, color, 0.3, 1, frames);
@@ -1135,7 +1135,7 @@ function private function_c6423bad() {
         self endon("<unknown string>");
         var_121adbaa = self _get_turret_data(1);
         var_1c60f036 = self _get_turret_data(2);
-        while (1) {
+        while (true) {
             if (level.var_804dc5e === 1) {
                 if (!isdefined(self)) {
                     return;
@@ -1181,7 +1181,7 @@ function private function_a9c8d69a(msg, color, ent, offset, frames, scale, alpha
         }
         for (i = 0; i < frames; i++) {
             if (!isdefined(ent)) {
-                return;
+                break;
             }
             print3d(ent.origin + offset, msg, color, alpha, scale);
             waitframe(1);

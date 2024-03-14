@@ -79,9 +79,9 @@ function function_a0b0f487(actionparams) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_329792b380cfd409";
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace bot_action/bot_action
@@ -93,9 +93,9 @@ function function_2c3ea0c6(actionparams) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_5cbefc6b234455fc";
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace bot_action/bot_action
@@ -107,9 +107,9 @@ function in_vehicle(actionparams) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_74dd6cdecdd53e96";
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace bot_action/bot_action
@@ -121,9 +121,9 @@ function function_ed7b2f42(actionparams) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_17222d5087946703";
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace bot_action/bot_action
@@ -135,9 +135,9 @@ function function_a43bc7e2(actionparams) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_5a308775df684ba1";
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace bot_action/bot_action
@@ -149,9 +149,9 @@ function in_combat(actionparams) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_6c8a68a6b0ba3e46";
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace bot_action/bot_action
@@ -163,9 +163,9 @@ function function_59d0ae4c(actionparams) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_5080fb7f9d457021";
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace bot_action/bot_action
@@ -177,9 +177,9 @@ function flashed(actionparams) {
         /#
             actionparams.debug[actionparams.debug.size] = #"flashed";
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace bot_action/bot_action
@@ -191,14 +191,14 @@ function function_ebb8205b(actionparams) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_6ad5723518a9aa59";
         #/
-        return 1;
+        return true;
     } else if (self function_2b063e16()) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_21cc6a6be1e0b67";
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace bot_action/bot_action

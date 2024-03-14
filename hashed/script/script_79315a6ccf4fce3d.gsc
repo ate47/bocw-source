@@ -98,7 +98,7 @@ function function_db4a8bad(damaged = 0, barrel) {
 // Size: 0x180
 function function_7e0f72a5() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         result = undefined;
         result = level waittill(#"hash_c1cceae4479f2e5");
         distsq = distancesquared(self.origin, result.origin);
@@ -121,7 +121,7 @@ function function_7e0f72a5() {
 // Size: 0x178
 function function_ed0bfdae() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         result = undefined;
         result = level waittill(#"hash_50be6fd0db982086");
         distsq = distancesquared(self.origin, result.origin);
@@ -153,7 +153,7 @@ function function_d971ecbd(time) {
     detonationtime = gettime() + time * 1000;
     var_f83baa7c = detonationtime - 4500;
     var_38ec2561 = 0;
-    while (1) {
+    while (true) {
         time = gettime();
         if (time >= detonationtime) {
             break;
@@ -283,7 +283,7 @@ function function_2b60f30() {
     self notify("1343f00e4edb5ca3");
     self endon("1343f00e4edb5ca3");
     level endon(#"game_over", #"hash_15db1223146bc923");
-    while (1) {
+    while (true) {
         wait(0.5);
         state = namespace_4dae815d::function_59a9cf1d();
         if (state == 0) {

@@ -688,7 +688,7 @@ function function_a80cb651(activecamo, stagenum) {
     baseweapon = function_c14cb514(weapon);
     if (isdefined(stage.var_62b564ee.resetnotify)) {
         resettime = undefined;
-        while (1) {
+        while (true) {
             if (stage.var_62b564ee.resettimer > 0) {
                 if (!isdefined(resettime)) {
                     resettime = gettime() + stage.var_62b564ee.resettimer;
@@ -1277,7 +1277,7 @@ function function_12e53b2d() {
     /#
         self notify("<unknown string>");
         self endon("<unknown string>");
-        while (1) {
+        while (true) {
             var_f4eb4a50 = undefined;
             waitresult = undefined;
             waitresult = level waittill(#"liveupdate");

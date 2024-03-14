@@ -40,21 +40,21 @@ function function_feb491ef(localclientnum, *oldval, newval, *bnewent, *binitials
         switch (bwastimejump) {
         case 1:
             self.var_4cf2e329 = playfx(fieldname, "maps/ltm/fx9_winter_powerup_nice", self.origin);
-            return;
+            break;
         case 2:
             self.var_4cf2e329 = playfx(fieldname, "maps/ltm/fx9_winter_powerup_naughty", self.origin);
-            return;
+            break;
         case 3:
             self.var_4cf2e329 = playfx(fieldname, "maps/ltm/fx9_winter_powerup_nice_final", self.origin);
-            return;
+            break;
         case 4:
             self.var_4cf2e329 = playfx(fieldname, "maps/ltm/fx9_winter_powerup_naughty_final", self.origin);
-            return;
+            break;
         default:
             if (isdefined(self.var_4cf2e329)) {
                 stopfx(fieldname, self.var_4cf2e329);
             }
-            return;
+            break;
         }
     }
 }

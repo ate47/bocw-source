@@ -158,7 +158,7 @@ function function_d6a2486(command, flag) {
 function function_aec55b72() {
     level.var_d6f941c8 = 0;
     level endon(#"hash_79050352d0066bd8");
-    while (1) {
+    while (true) {
         if (level flag::get("flag_listen_for_mantle") && level.var_d6f941c8 == 0) {
             self val::set(#"hash_521245c0cfb3048", "allow_jump", 0);
             self val::set(#"hash_304cd84bed4b8707", "allow_mantle", 0);
@@ -180,7 +180,7 @@ function function_c39dde0e() {
     level.var_d6f941c8 = 1;
     level endon(#"hash_34688d2980137bca");
     player notifyonplayercommand("tutorial_pressed_jump", "+gostand");
-    while (1) {
+    while (true) {
         player waittill(#"tutorial_pressed_jump");
         if (!player flag::get("body_shield_active")) {
             level flag::set("flag_takedown_tutorial_player_mantling");
@@ -441,7 +441,7 @@ function function_92d25894() {
 // Size: 0x158
 function function_6d063272() {
     level endon(#"hash_5f84172c70d1eb4c");
-    while (1) {
+    while (true) {
         wait(randomintrange(8, 10));
         level.adler namespace_a635adb1::queue("vox_cp_tdwn_04100_adlr_movemove_9d");
         wait(randomintrange(8, 10));

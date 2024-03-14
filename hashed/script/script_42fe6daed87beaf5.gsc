@@ -29,14 +29,14 @@ function private function_70a657d8() {
 // Size: 0xb0
 function function_288ebce4(localclientnum, var_a6762160) {
     if (!(isdefined(var_a6762160) && isdefined(var_a6762160.weapon)) || !isdefined(localclientnum)) {
-        return 0;
+        return false;
     }
     data = item_world::function_a7e98a1a(localclientnum);
     tactical = data.inventory.items[13];
     if (tactical.var_a6762160.name === #"hash_7ada82abc5dad90e") {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_33c196c8/namespace_33c196c8
@@ -59,7 +59,7 @@ function function_6a08eb03(localclientnum) {
     self endon("1eaded3e9f2b476c");
     level endon(#"end_game");
     self endon(#"death", #"stop_update");
-    while (1) {
+    while (true) {
         player = function_27673a7(localclientnum);
         if (isplayer(player)) {
             player function_133a8053(self);

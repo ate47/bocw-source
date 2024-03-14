@@ -20,7 +20,7 @@ function devgui_think() {
         setdvar(#"testalias_player", "<unknown string>");
         setdvar(#"testalias_taacom", "<unknown string>");
         setdvar(#"testalias_commander", "<unknown string>");
-        while (1) {
+        while (true) {
             wait(1);
             player = gethostplayer();
             if (!isdefined(player)) {
@@ -184,7 +184,7 @@ function play_conv_self_other() {
         foreach (player in players) {
             if (player != self && isalive(player)) {
                 player play_test_dialog("<unknown string>" + self response_key() + num);
-                return;
+                break;
             }
         }
     #/
@@ -228,7 +228,7 @@ function play_conv_other_other() {
         foreach (player in players) {
             if (player != self && player !== firstplayer && isalive(player)) {
                 player play_test_dialog("<unknown string>" + firstplayer response_key() + num);
-                return;
+                break;
             }
         }
     #/

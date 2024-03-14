@@ -122,7 +122,7 @@ function wait_for_sounddone_or_death(org, other) {
     }
     self endon(#"death");
     org waittill(#"sounddone");
-    return 1;
+    return true;
 }
 
 // Namespace sound/sound_shared

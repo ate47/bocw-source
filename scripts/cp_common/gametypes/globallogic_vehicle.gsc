@@ -47,7 +47,7 @@ function private function_70a657d8() {
 function private function_80238885() {
     level endon(#"hash_3d8aca70026bca9e");
     self endon(#"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"enter_vehicle");
         var_80730518 = waitresult.vehicle;
@@ -74,7 +74,7 @@ function private function_80238885() {
 // Size: 0x1f0
 function private function_d521a2c1() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"exit_vehicle");
         var_80730518 = waitresult.vehicle;
@@ -108,11 +108,11 @@ function private function_d521a2c1() {
 // Size: 0xfc
 function function_5310fa38(vh_target, n_seat) {
     if (isbot(self) && (is_true(vh_target.var_3a60b519) || self isplayinganimscripted())) {
-        return 0;
+        return false;
     }
     if (isdefined(vh_target) && isalive(self) && is_true(vh_target function_dcef0ba1(n_seat)) && !vh_target isvehicleseatoccupied(n_seat) && !isdefined(self._scene_object)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 

@@ -62,7 +62,7 @@ function function_7d709aa4(*params) {
 function function_9505e24b() {
     self endon(#"disconnect", #"spawned");
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         if (self.currentspectatingclient > -1) {
             self.var_26074a5b = self.currentspectatingclient;
         }
@@ -343,7 +343,7 @@ function function_1e077098() {
     level.var_c1413cbd = [];
     var_e11beb90 = function_a3f6cdac(500);
     level.var_a349ea8 = [];
-    while (1) {
+    while (true) {
         var_dbcced97 = [];
         var_c1413cbd = level.var_c1413cbd;
         level.var_c1413cbd = [];

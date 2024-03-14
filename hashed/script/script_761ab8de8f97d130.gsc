@@ -124,7 +124,7 @@ function function_7f78da() {
 // Size: 0x4c
 function function_c291edbd() {
     if (!isdefined(level.doa.var_39e3fa99)) {
-        return 0;
+        return false;
     }
     return [[ level.doa.var_39e3fa99 ]]->function_7856fdb6() == #"bloodlake";
 }
@@ -227,7 +227,7 @@ function function_38f9cf8c() {
 // Size: 0x68
 function function_9bca3cb6() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         wait(randomfloatrange(0.3, 0.6));
         self namespace_83eb6304::function_3ecfde67("pole_zombie_elecBurst");
     }
@@ -265,7 +265,7 @@ function function_711927a1(origin) {
 function function_7b1377e8() {
     self endon(#"death");
     wait(5);
-    while (1) {
+    while (true) {
         wait(0.2);
         if (randomint(100) < 4) {
             break;
@@ -476,9 +476,9 @@ function function_f637b05d(behaviortreeentity) {
 function zombietraversalservice(entity) {
     if (isdefined(entity.traversestartnode)) {
         entity collidewithactors(0);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_b5ca279a/namespace_b5ca279a
@@ -487,13 +487,13 @@ function zombietraversalservice(entity) {
 // Size: 0x72
 function private function_b9b03294(entity) {
     if (self function_3c566724()) {
-        return 1;
+        return true;
     }
     startnode = entity.traversestartnode;
     if (!isdefined(startnode) || !isnodeenabled(startnode)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_b5ca279a/namespace_b5ca279a
@@ -510,7 +510,7 @@ function private function_4402c40a(entity) {
         entity disableaimassist();
         entity pathmode("dont move", 1);
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_b5ca279a/namespace_b5ca279a
@@ -522,7 +522,7 @@ function private function_6a3bcddc(entity) {
     entity notsolid();
     entity notify(#"hash_12b1eb419a23e3bd");
     entity.var_e5ad72a0 = undefined;
-    return 1;
+    return true;
 }
 
 // Namespace namespace_b5ca279a/namespace_b5ca279a

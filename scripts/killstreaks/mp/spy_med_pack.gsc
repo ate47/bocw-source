@@ -177,11 +177,11 @@ function function_4e22b9e6(origin, *angles, player) {
             }
             distsqr = distancesquared(angles, medpack.origin);
             if (distsqr <= testdistance) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace spy_med_pack/spy_med_pack
@@ -417,7 +417,7 @@ function watchfordamage() {
     medpack endon(#"death");
     medpack.health = level.var_c9404b0a.bundle.kshealth;
     startinghealth = medpack.health;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (isdefined(waitresult.attacker) && waitresult.amount > 0 && damagefeedback::dodamagefeedback(waitresult.weapon, waitresult.attacker)) {

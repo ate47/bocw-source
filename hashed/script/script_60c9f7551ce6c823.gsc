@@ -121,7 +121,7 @@ function function_4eec8432() {
     self namespace_83eb6304::turnofffx("hazard_electric_trap_red");
     self namespace_83eb6304::function_3ecfde67("hazard_electric_trap_green");
     wait(5);
-    while (1) {
+    while (true) {
         wait(randomfloatrange(5, 15));
         self namespace_83eb6304::function_3ecfde67("hazard_electric_trap_red");
         self namespace_83eb6304::turnofffx("hazard_electric_trap_green");
@@ -292,7 +292,7 @@ function function_16abf3d3() {
     self notify("44a4d8b4694b55f4");
     self endon("44a4d8b4694b55f4");
     level endon(#"game_over", #"hash_15db1223146bc923");
-    while (1) {
+    while (true) {
         wait(0.5);
         state = namespace_4dae815d::function_59a9cf1d();
         if (state == 0) {

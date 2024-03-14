@@ -57,7 +57,7 @@ function function_4317fa79(destination) {
     foreach (s_location in destination.locations) {
         if (isdefined(s_location.instances[#"hash_77bdab265fe2ca2c"])) {
             namespace_8b6a9d79::function_20d7e9c7(s_location.instances[#"hash_77bdab265fe2ca2c"]);
-            return;
+            break;
         }
     }
 }
@@ -206,7 +206,7 @@ function private function_789d2df5(var_5207017) {
         s_result = undefined;
         s_result = var_5207017.var_eb4df9cc waittill(#"trigger");
         if (!var_5207017 flag::get(#"hash_7f36ba06f49e9217")) {
-            return;
+            break;
         }
         if (isvehicle(s_result.activator)) {
             player = s_result.activator getvehicleowner();
@@ -315,7 +315,7 @@ function private function_4267539(var_545e45) {
     if (isdefined(var_545e45)) {
         wait(var_545e45);
     } else {
-        while (1) {
+        while (true) {
             v_velocity = self getvelocity();
             if (v_velocity[2] < 420) {
                 break;

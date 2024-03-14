@@ -202,7 +202,7 @@ function function_d675c2b1() {
 // Size: 0x1be
 function function_7b83d7d() {
     thread scene::play("scene_hub_post_armada_dialog_mixer", "stop_playing");
-    while (1) {
+    while (true) {
         var_c564fe97 = undefined;
         var_c564fe97 = level waittill(#"hash_30451ffd810d851f", #"hash_e6d697106a775c1", #"hash_2cdf7b0897751c59", #"hash_17bbd82ec0523a61");
         thread scene::stop();

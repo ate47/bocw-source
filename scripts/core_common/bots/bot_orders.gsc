@@ -107,11 +107,11 @@ function private function_79241feb() {
 // Size: 0x80
 function private function_b35e00d9(objective) {
     if (!self function_4b2723cf(objective.var_a1980fcb, objective) && !self function_4b2723cf(objective.var_5e99151a, objective)) {
-        return 0;
+        return false;
     }
     self.bot.objective = objective;
     objective.count++;
-    return 1;
+    return true;
 }
 
 // Namespace bot_orders/bot_orders
@@ -120,17 +120,17 @@ function private function_b35e00d9(objective) {
 // Size: 0x96
 function private function_4b2723cf(order, objective) {
     if (!isdefined(order)) {
-        return 0;
+        return false;
     }
     state = level.var_4b98dc10[order];
     if (!isdefined(state)) {
-        return 0;
+        return false;
     }
     if (!self [[ state.ready ]](objective) || !self [[ state.start ]](objective)) {
-        return 0;
+        return false;
     }
     self.bot.order = order;
-    return 1;
+    return true;
 }
 
 // Namespace bot_orders/bot_orders
@@ -176,14 +176,14 @@ function private function_82c1a3e9(*objective) {
 function private function_e98a6aae(*objective) {
     id = self function_e559e4d5();
     if (!isdefined(id)) {
-        return 0;
+        return false;
     }
     var_24e30bb8 = self function_89751246(id);
     if (var_24e30bb8.size <= 0) {
-        return 0;
+        return false;
     }
     self function_fd78dbc(var_24e30bb8);
-    return 1;
+    return true;
 }
 
 // Namespace bot_orders/bot_orders
@@ -244,14 +244,14 @@ function private function_7c479af0(*objective) {
 function private function_6790cfd3(*objective) {
     bot = self.bot;
     if (!isdefined(bot.var_494658cd)) {
-        return 0;
+        return false;
     }
     var_24e30bb8 = self function_89751246(bot.var_494658cd.region);
     if (var_24e30bb8.size <= 0) {
-        return 0;
+        return false;
     }
     self function_fd78dbc(var_24e30bb8);
-    return 1;
+    return true;
 }
 
 // Namespace bot_orders/bot_orders
@@ -293,13 +293,13 @@ function private function_199c516(*objective) {
 function private function_36d63786(*objective) {
     info = self function_4794d6a3();
     if (isdefined(info.regionid)) {
-        return 1;
+        return true;
     }
     if (!isdefined(self.bot.tpoint)) {
-        return 0;
+        return false;
     }
     self setgoal(self.bot.tpoint.region);
-    return 1;
+    return true;
 }
 
 // Namespace bot_orders/bot_orders
@@ -352,7 +352,7 @@ function private capture_start(objective) {
     self function_9392d2c9();
     trigger = objective.info.target.trigger;
     self setgoal(trigger);
-    return 1;
+    return true;
 }
 
 // Namespace bot_orders/bot_orders
@@ -377,7 +377,7 @@ function private function_1ba5e803(objective) {
 // Size: 0x28
 function defend_start(*objective) {
     self function_9392d2c9();
-    return 1;
+    return true;
 }
 
 // Namespace bot_orders/bot_orders
@@ -462,19 +462,19 @@ function private function_c5686e54(*objective) {
 function private function_c35b807e(*objective) {
     regioncount = function_548ca110();
     if (regioncount <= 0) {
-        return 0;
+        return false;
     }
     var_de0b3c66 = randomintrange(1, regioncount);
     var_f1120f81 = function_b507a336(var_de0b3c66);
     if (var_f1120f81.tacpoints.size < 15 || var_f1120f81.neighbors.size < 2) {
-        return 0;
+        return false;
     }
     var_24e30bb8 = self function_89751246(var_de0b3c66);
     if (var_24e30bb8.size <= 0) {
-        return 0;
+        return false;
     }
     self function_fd78dbc(var_24e30bb8);
-    return 1;
+    return true;
 }
 
 // Namespace bot_orders/bot_orders
@@ -503,14 +503,14 @@ function private function_17d77980(objective) {
 function private function_8b26cb41(objective) {
     tpoint = self.bot.tpoint;
     if (!isdefined(tpoint)) {
-        return 0;
+        return false;
     }
     foreach (id in objective.info.var_dd2331cb) {
         if (tpoint.region == id) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace bot_orders/bot_orders
@@ -519,15 +519,15 @@ function private function_8b26cb41(objective) {
 // Size: 0xd0
 function private function_c3253ef(objective) {
     if (!isdefined(objective.info.var_dd2331cb) || objective.info.var_dd2331cb.size <= 0) {
-        return 0;
+        return false;
     }
     id = objective.info.var_dd2331cb[randomint(objective.info.var_dd2331cb.size)];
     var_24e30bb8 = self function_89751246(id);
     if (var_24e30bb8.size <= 0) {
-        return 0;
+        return false;
     }
     self function_fd78dbc(var_24e30bb8);
-    return 1;
+    return true;
 }
 
 // Namespace bot_orders/bot_orders
@@ -761,7 +761,7 @@ function private function_f217ace2(volume) {
 function private function_7a7ab1a2() {
     /#
         level endon(#"game_ended");
-        while (1) {
+        while (true) {
             waitframe(1);
             if (getdvarint(#"hash_bb5c278818b000b", 0) <= 0) {
                 continue;

@@ -356,12 +356,12 @@ class class_38f05ef0 {
     // Size: 0x48
     function function_b0378495() {
         if (self.var_3b17d6fc == 0 || self.var_7248a65a == 0) {
-            return 1;
+            return true;
         }
         if (gettime() - self.var_7248a65a >= self.var_3b17d6fc) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
     // Namespace namespace_38f05ef0/namespace_dfc652ee
@@ -556,7 +556,7 @@ class class_a08a1bec {
         self.var_9453b0c1 = [[ self.var_ff66dbc5 ]]->function_63c67234();
         self.var_a116600e = namespace_ec06fe4a::spawnmodel(self.m_origin);
         if (!isdefined(self.var_a116600e)) {
-            return 0;
+            return false;
         }
         self.var_a116600e.angles = angles;
         self.var_a116600e.pickup = self;
@@ -566,7 +566,7 @@ class class_a08a1bec {
         self.var_a116600e setscale(self.var_a116600e.scale);
         self.var_a116600e.type = gettype();
         self.var_a116600e [[ [[ self.var_ff66dbc5 ]]->function_e52fe3ad() ]]();
-        if (!clientside || [[ self.var_a116600e.def ]]->function_8fa82fe8() == 0 || is_true(self.var_a116600e.popup) || !1) {
+        if (!clientside || [[ self.var_a116600e.def ]]->function_8fa82fe8() == 0 || is_true(self.var_a116600e.popup) || !true) {
             if (self.var_a116600e.type == 6) {
                 model = getweaponworldmodel(getweapon(model));
             }
@@ -590,7 +590,7 @@ class class_a08a1bec {
             [[ level.doa.var_a71b0305 ]](self.var_a116600e);
         }
         level.doa.var_cc831548[level.doa.var_cc831548.size] = self.var_a116600e;
-        return 1;
+        return true;
     }
 
     // Namespace namespace_a08a1bec/namespace_dfc652ee
@@ -803,7 +803,7 @@ function function_c1018360(var_49d95ac1, type, variant, rarity, modelscale, angl
     case 3:
         [[ var_4d842336 ]]->function_9a8ff4b1(5);
         [[ var_4d842336 ]]->function_43e11510(3 * 60000);
-        return;
+        break;
     case 17:
     case 24:
     case 19:
@@ -815,7 +815,7 @@ function function_c1018360(var_49d95ac1, type, variant, rarity, modelscale, angl
     case 42:
         [[ var_4d842336 ]]->function_9a8ff4b1(1);
         [[ var_4d842336 ]]->function_43e11510(3 * 60000);
-        return;
+        break;
     case 26:
     case 30:
     case 31:
@@ -827,7 +827,7 @@ function function_c1018360(var_49d95ac1, type, variant, rarity, modelscale, angl
     case 25:
         [[ var_4d842336 ]]->function_43e11510(15 * 60000);
         [[ var_4d842336 ]]->function_9a8ff4b1(7);
-        return;
+        break;
     case 4:
     case 5:
     case 8:
@@ -839,21 +839,21 @@ function function_c1018360(var_49d95ac1, type, variant, rarity, modelscale, angl
     case 23:
         [[ var_4d842336 ]]->function_43e11510(30 * 60000);
         [[ var_4d842336 ]]->function_9a8ff4b1(7);
-        return;
+        break;
     case 44:
         [[ var_4d842336 ]]->function_43e11510(60 * 60000);
         [[ var_4d842336 ]]->function_9a8ff4b1(20);
-        return;
+        break;
     case 33:
     case 16:
     case 46:
         [[ var_4d842336 ]]->function_43e11510(30 * 60000);
         [[ var_4d842336 ]]->function_9a8ff4b1(7);
-        return;
+        break;
     case 14:
         [[ var_4d842336 ]]->function_43e11510(30 * 60000);
         [[ var_4d842336 ]]->function_9a8ff4b1(9);
-        return;
+        break;
     case 12:
     case 36:
     case 37:
@@ -861,7 +861,7 @@ function function_c1018360(var_49d95ac1, type, variant, rarity, modelscale, angl
     case 39:
     case 41:
         [[ var_4d842336 ]]->function_9a8ff4b1(999999);
-        return;
+        break;
     }
 }
 
@@ -1352,9 +1352,9 @@ function function_ae609287(var_4d842336, origin) {
 // Size: 0x42
 function function_4821dfcf(type) {
     if (type == 5 || type == 4 || type == 40) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_dfc652ee/namespace_dfc652ee
@@ -1363,19 +1363,19 @@ function function_4821dfcf(type) {
 // Size: 0x27c
 function function_5bcfaaa1(type, player) {
     if (player hasdobj() == 0) {
-        return 0;
+        return false;
     }
     if (is_true(player.laststand)) {
-        return 0;
+        return false;
     }
     if (type == 1) {
-        return 1;
+        return true;
     }
     if (type == 13) {
-        return 1;
+        return true;
     }
     if (type == 32 || type == 33) {
-        return 0;
+        return false;
     }
     if (type == 8) {
         return (player.doa.score.bombs < player namespace_eccff4fb::function_4091beb5());
@@ -1387,27 +1387,27 @@ function function_5bcfaaa1(type, player) {
         return (player.doa.score.boosts < player namespace_eccff4fb::function_fd3d9ee0());
     }
     if (type == 16) {
-        return 1;
+        return true;
     }
     if (isdefined(player.doa.vehicle) || is_true(player.usingvehicle)) {
-        return 0;
+        return false;
     }
     if (type == 39 && !isdefined(level.doa.var_182fb75a)) {
-        return 0;
+        return false;
     }
     if (type == 46 && player.doa.var_ccd8393c > 0) {
-        return 0;
+        return false;
     }
     if (type == 41 && is_true(player.doa.var_82fb5d17)) {
-        return 0;
+        return false;
     }
     if (type == 34) {
         var_1c446dd6 = namespace_ec06fe4a::function_38de0ce8();
         if (var_1c446dd6 >= 44) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_dfc652ee/namespace_dfc652ee
@@ -1428,7 +1428,7 @@ function function_2ebebd0c() {
     self endon(#"death", #"hash_6749c13ce29143f7");
     self thread namespace_7da86f3c::function_77af9e81();
     wait(0.4);
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"hash_221d94db078860dd");
         player = waitresult.activator;
@@ -1769,7 +1769,7 @@ function function_cbae9ca3() {
         if (!isdefined(pickup)) {
             continue;
         }
-        if (0) {
+        if (false) {
             pickup thread namespace_1e25ad94::function_e8f2d12c(pickup.origin + vectorscale((0, 0, -1), 16), pickup.radius, pickup.height, 1, (0, 0, 1));
         }
         var_f0dd222e = pickup.height;

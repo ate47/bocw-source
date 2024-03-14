@@ -119,7 +119,7 @@ function function_7b038ec3(parms) {
         return;
     }
     delay = isdefined(self.weapon.firetime) ? self.weapon.firetime : 0.09;
-    while (1) {
+    while (true) {
         self fire_weapon(parms);
         wait(delay);
     }

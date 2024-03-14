@@ -123,7 +123,7 @@ function function_9db9ee76(enabled) {
 // Size: 0x74
 function function_c08727b4() {
     if (!level.var_53ad6e22[#"ai_threatsight"]) {
-        return 0;
+        return false;
     }
     if (self == level) {
         return (isdefined(level.stealth.var_c08727b4) && level.stealth.var_c08727b4);
@@ -228,7 +228,7 @@ function private function_3a739b35() {
     self notify(#"hash_3b836f1c1e601c4d");
     self endoncallback(&function_eefd0bb3, #"hash_3b836f1c1e601c4d", #"hash_247b691774e7a2e2", #"death");
     var_403d799 = 0;
-    while (1) {
+    while (true) {
         waitframe(1);
         if (!self namespace_979752dc::function_b60a878a()) {
             self clientfield::set("threat_sight", 0);
@@ -280,7 +280,7 @@ function function_36e0162b() {
     self notify(#"hash_1157f959aee315da");
     self endon(#"hash_1157f959aee315da", #"death");
     level endon(#"hash_47d94a76d1448431");
-    while (1) {
+    while (true) {
         level flag::wait_till("stealth_enabled");
         level flag::wait_till_clear("stealth_spotted");
         wait(randomfloatrange(0.4, 0.6));
@@ -456,7 +456,7 @@ function function_904262d0(player) {
     player endon(#"death");
     entid = self getentitynumber();
     player.stealth.var_a4965d8[entid] = undefined;
-    while (1) {
+    while (true) {
         self.stealth.var_2e86232e = self function_a884a736(player) < 0.75;
         if (self.stealth.var_2e86232e) {
             return;
@@ -547,7 +547,7 @@ function function_40733f9f() {
     self endon(#"death");
     level endon(#"hash_34d443ce908d0498");
     var_94603cb7 = 0;
-    while (1) {
+    while (true) {
         var_6330dd7b = 0;
         self.stealth.maxthreat = 0;
         self.stealth.var_96052c58 = -1;

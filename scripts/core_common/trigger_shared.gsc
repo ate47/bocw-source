@@ -140,7 +140,7 @@ function look_trigger(trigger) {
         a_parameters = strtok(trigger.script_parameters, ",; ");
     }
     b_ads_check = isinarray(a_parameters, "check_ads");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = trigger waittill(#"trigger");
         e_other = waitresult.activator;
@@ -276,7 +276,7 @@ function friendly_respawn_trigger(trigger) {
     #/
     spawners = undefined;
     spawner endon(#"death");
-    while (1) {
+    while (true) {
         trigger waittill(#"trigger");
         if (isdefined(trigger.script_forcecolor)) {
             level.respawn_spawners_specific[trigger.script_forcecolor] = spawner;
@@ -294,7 +294,7 @@ function friendly_respawn_trigger(trigger) {
 // Size: 0x70
 function friendly_respawn_clear(trigger) {
     trigger endon(#"death");
-    while (1) {
+    while (true) {
         trigger waittill(#"trigger");
         level flag::clear("respawn_friendlies");
         wait(0.5);
@@ -314,7 +314,7 @@ function script_flag_set_touching(trigger) {
         level function_ac2f203a(trigger.script_flag_set_on_not_touching);
     }
     trigger thread _detect_touched();
-    while (1) {
+    while (true) {
         var_b26d1711 = trigger.script_touched;
         trigger.script_touched = 0;
         waitframe(1);
@@ -349,7 +349,7 @@ function script_flag_set_touching(trigger) {
 // Size: 0x42
 function _detect_touched() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self waittill(#"trigger");
         self.script_touched = 1;
     }
@@ -360,7 +360,7 @@ function _detect_touched() {
 // Checksum 0x15669e06, Offset: 0x14e8
 // Size: 0x70
 function trigger_delete_on_touch(trigger) {
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = trigger waittill(#"trigger");
         other = waitresult.activator;
@@ -474,7 +474,7 @@ function _trigger_wait(e_entity) {
             #/
         }
     #/
-    while (1) {
+    while (true) {
         if (is_look_trigger()) {
             waitresult = undefined;
             waitresult = self waittill(#"trigger_look");
@@ -754,7 +754,7 @@ function _do_trigger_function(trigger, str_remove_on, func, param_1, param_2, pa
     if (isdefined(str_remove_on)) {
         trigger endon(str_remove_on);
     }
-    while (1) {
+    while (true) {
         if (isstring(trigger)) {
             wait_till(trigger);
         } else {
@@ -827,15 +827,15 @@ function function_thread(ent, on_enter_payload, on_exit_payload) {
 // Size: 0x4c
 function ent_already_in(var_d35ff8d8) {
     if (!isdefined(self._triggers)) {
-        return 0;
+        return false;
     }
     if (!isdefined(self._triggers[var_d35ff8d8])) {
-        return 0;
+        return false;
     }
     if (!self._triggers[var_d35ff8d8]) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace trigger/trigger_shared

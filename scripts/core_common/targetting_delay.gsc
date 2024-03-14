@@ -17,7 +17,7 @@ function function_7e1a12ce(radius) {
     info.var_2fae95e = [];
     update_interval = isdefined(self.var_ab84134) ? self.var_ab84134 : min(0.25, 1);
     var_dd3b2438 = int(update_interval * 1000);
-    while (1) {
+    while (true) {
         enemy_players = self getenemiesinradius(self.origin, radius);
         foreach (enemy in enemy_players) {
             if (!isplayer(enemy)) {
@@ -77,7 +77,7 @@ function function_568d5de9(radius, var_2770319) {
     info.var_2fae95e = [];
     update_interval = isdefined(self.var_ab84134) ? self.var_ab84134 : min(0.25, 1);
     var_dd3b2438 = int(update_interval * 1000);
-    while (1) {
+    while (true) {
         enemy_players = self getenemiesinradius(self.origin, radius);
         foreach (enemy in enemy_players) {
             if (isplayer(enemy)) {
@@ -114,19 +114,19 @@ function function_1c169b3a(enemy, defaultdelay = 250) {
     if (isplayer(enemy)) {
         delay = int(max(enemy function_9bd25293(), defaultdelay));
         if (delay <= 0) {
-            return 1;
+            return true;
         }
     } else {
         delay = defaultdelay;
     }
     info = self.var_5ddd7c26;
     if (!isdefined(info) || !isdefined(info.var_2fae95e)) {
-        return 0;
+        return false;
     }
     if ((isdefined(info.var_2fae95e[enemy getentitynumber()]) ? info.var_2fae95e[enemy getentitynumber()] : 0) < delay) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace targetting_delay/targetting_delay

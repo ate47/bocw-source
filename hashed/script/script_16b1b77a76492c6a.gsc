@@ -39,7 +39,7 @@ function main() {
 // Size: 0x4b8
 function function_5e62ed5c() {
     level endon(#"game_ended", #"hash_745d15f8fa0daab0");
-    while (1) {
+    while (true) {
         if (!isdefined(level.var_cf15d540)) {
             level.var_cf15d540 = 300;
         }
@@ -285,7 +285,7 @@ function private function_48defc2d(var_cf21a49f, var_6c57e71b, var_437c9d8d, var
 function function_1c491c2b(var_6cd49f50 = 120, var_f6dca9f2, var_6443acc) {
     self endon(#"death");
     self thread namespace_85745671::function_9456addc(var_6cd49f50);
-    while (1) {
+    while (true) {
         wait(5);
         a_players = getplayers("all", self.origin, 4096);
         if (a_players.size == 0 || isdefined(self.var_eb221ba) && self.var_eb221ba >= 10) {
@@ -404,7 +404,7 @@ function function_39ee3b21(eventstruct, a_spawns) {
                 } else {
                     var_4bf95f4c = namespace_679a22ba::function_ca209564(str_bundle);
                     if (!isdefined(var_4bf95f4c)) {
-                        return;
+                        break;
                     }
                     var_abb82760 = namespace_85745671::function_3b941e5c(spawn.origin, var_4bf95f4c.var_990b33df);
                     var_4bf95f4c.var_990b33df = isdefined(var_abb82760) ? var_abb82760 : var_4bf95f4c.var_990b33df;
@@ -472,7 +472,7 @@ function init_devgui() {
 // Size: 0x268
 function function_2ebea850() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(#"hash_21e1866f0c677ab8", 0)) {
                 level notify(#"hash_745d15f8fa0daab0");
                 setdvar(#"hash_21e1866f0c677ab8", 0);
@@ -504,7 +504,7 @@ function function_2ebea850() {
 // Size: 0x138
 function function_cfc99c9e() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(#"hash_6c7a7cb80d06cc72", 0)) {
                 level notify(#"hash_745d15f8fa0daab0");
                 level.var_cf15d540 = 30;
@@ -529,7 +529,7 @@ function function_cfc99c9e() {
 // Size: 0x120
 function function_986ead58() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(#"hash_35d97c59a1cbade9", 0)) {
                 spawns = function_10c88d2e();
                 level thread function_46997bdf(&spawns, "<unknown string>");

@@ -51,7 +51,7 @@ function main() {
 function function_a5a4f7fc() {
     self endon(#"death");
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         if (self function_96ce44c4()) {
             self.maxvisibledist = self function_5fee4f6();
         }
@@ -65,18 +65,18 @@ function function_a5a4f7fc() {
 // Size: 0x8a
 function function_96ce44c4() {
     if (is_true(self.var_9ee586cf)) {
-        return 0;
+        return false;
     }
     if (!self flag::get("stealth_enabled")) {
-        return 0;
+        return false;
     }
     if (self flag::get("stealth_in_shadow")) {
-        return 1;
+        return true;
     }
     if (isdefined(self.var_df48dfb) && gettime() < self.var_df48dfb) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_7a865494/player
@@ -125,7 +125,7 @@ function function_74d32108(enabled = 1) {
     self.stealth.combatstate.var_a0445fac = [];
     var_e8c14f37 = [];
     var_41b7c5cb = [];
-    while (1) {
+    while (true) {
         self flag::wait_till("stealth_enabled");
         arrayremovevalue(var_e8c14f37, undefined);
         function_1eaaceab(var_e8c14f37);
@@ -216,7 +216,7 @@ function function_74d32108(enabled = 1) {
 // Checksum 0x44863108, Offset: 0xce0
 // Size: 0xd6
 function function_56229e27() {
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"hash_ec8c1a398bebc57");
         foreach (func in self.stealth.combatstate.var_a0445fac) {
@@ -276,7 +276,7 @@ function function_1d29945c(key) {
 // Checksum 0x3c38066c, Offset: 0xfe0
 // Size: 0x42
 function function_815ac3de() {
-    while (1) {
+    while (true) {
         level waittill(#"hash_58d740afedebc182", #"hash_58419cfa256da59b");
         self.var_19962bb4 = gettime();
     }
@@ -306,7 +306,7 @@ function function_985c93ef() {
 // Size: 0x410
 function function_171246a9() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self flag::wait_till("stealth_enabled");
         var_7f729179 = undefined;
         var_7f729179 = level waittill(#"hash_733d7b56ac978e53");
@@ -409,7 +409,7 @@ function function_5b410730() {
 // Size: 0x9a
 function function_da7489b6() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self flag::wait_till("stealth_enabled");
         while (!isdefined(self.stealth.var_92b57f62.var_9d72f2de)) {
             waitframe(1);

@@ -292,27 +292,27 @@ function function_731b9325(struct, dir) {
 // Size: 0x150
 function function_8b08f357(player, var_13bb8c94) {
     if (is_true(var_13bb8c94.inuse)) {
-        return 0;
+        return false;
     }
     if (is_true(player.laststand) && !is_true(player.var_b895a3ff)) {
-        return 0;
+        return false;
     }
     if (player getstance() == "prone") {
-        return 0;
+        return false;
     }
     if (!player function_c73c0ee6()) {
-        return 0;
+        return false;
     }
     if (sessionmodeiszombiesgame()) {
         if (var_13bb8c94.inuse > 0) {
-            return 0;
+            return false;
         }
         entnum = player getentitynumber();
         if (is_true(var_13bb8c94.cooldown[entnum]) || is_true(var_13bb8c94.var_381fcaec.cooldown[entnum])) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace rappel/rappel

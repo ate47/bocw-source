@@ -51,7 +51,7 @@ function nuked_population_sign_think(localclientnum) {
             if (!isdefined(localplayer)) {
                 continue;
             }
-            if (1) {
+            if (true) {
                 var_c510abcc = 1;
                 break;
             }

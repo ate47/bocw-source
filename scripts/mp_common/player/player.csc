@@ -155,15 +155,15 @@ function function_c451ab29(local_client_num, bundle) {
 // Size: 0x68
 function function_9216f2c3(local_client_num, *bundle) {
     if (level.gameended) {
-        return 0;
+        return false;
     }
     if (!codcaster::function_b8fe9b52(bundle)) {
-        return 0;
+        return false;
     }
     if (!isdefined(level.isigcactive) || level.isigcactive) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace player/player

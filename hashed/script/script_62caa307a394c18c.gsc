@@ -210,7 +210,7 @@ function function_793d38f() {
         level.var_cc43c151 = [];
         level.var_536f1a3 = 0;
         var_92abc4e4 = [#"hash_bd108911963a54f":"<unknown string>", #"electrical":"<unknown string>", #"hash_16b5c37d8feae38c":"<unknown string>", #"explosive":"<unknown string>", #"fire":"<unknown string>"];
-        while (1) {
+        while (true) {
             waitframe(1);
             offset = 75 + 22 * 11;
             if (is_true(level.var_98e71360)) {

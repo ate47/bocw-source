@@ -746,7 +746,7 @@ function function_beb9b824() {
         log delete();
     }
     level flag::wait_till("flag_bamboo_first_turret_active");
-    while (1) {
+    while (true) {
         iprintlnbold("enemy 1 still alive");
         if (!isdefined(level.var_687b982b)) {
             level flag::set("flag_bamboo_advance_4");
@@ -756,12 +756,12 @@ function function_beb9b824() {
         waitframe(1);
     }
     level flag::wait_till("flag_vo_sims_callout_minigun_2");
-    while (1) {
+    while (true) {
         iprintlnbold("enemy 2 still alive");
         if (!isdefined(level.var_8c229d8e)) {
             level flag::set("flag_bamboo_advance_6");
             level flag::set("flag_bamboo_second_turret_destroyed");
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -1133,7 +1133,7 @@ function function_85ddf842() {
     function_c6968b8f("bamboo_vc_prone_nodes", "script_noteworthy", 0);
     level thread function_7810ad29();
     level.var_5220d63f = 0;
-    while (1) {
+    while (true) {
         function_1eaaceab(level.var_f9d42668);
         iprintlnbold("Down to " + level.var_f9d42668.size + " enemies");
         wait(1);

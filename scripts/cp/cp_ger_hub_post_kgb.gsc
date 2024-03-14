@@ -234,7 +234,7 @@ function function_77e1542b() {
     self namespace_a635adb1::queue(var_5179bfff);
     wait(5);
     var_c47e3e56 = 0;
-    while (1) {
+    while (true) {
         if (!self flag::get("flag_in_dialog")) {
             if (!self flag::get("looking_away_from_phone")) {
                 self namespace_a635adb1::queue(var_4cd38ab9[var_c47e3e56]);

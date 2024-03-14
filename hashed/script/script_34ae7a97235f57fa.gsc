@@ -133,7 +133,7 @@ function function_fbd43d2f() {
 function function_1a93b6b0() {
     level.var_96d850f9 = [];
     level flag::wait_till("all_players_spawned");
-    while (1) {
+    while (true) {
         wait(15);
         if (level.var_96d850f9.size < 1 && level.item_drops.size > 0) {
             drop = array::random(level.item_drops);
@@ -206,12 +206,12 @@ function pickup(drop) {
             multiplier = drop.multiplier;
         }
         if (!self [[ drop.drop.callback ]](multiplier)) {
-            return 0;
+            return false;
         }
     }
     playsoundatposition(#"hash_24560114c2498b4d", self.origin);
     drop.model delete();
     arrayremovevalue(level.var_96d850f9, drop);
-    return 1;
+    return true;
 }
 

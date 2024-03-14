@@ -150,7 +150,7 @@ function function_8a8a52ab() {
         assert(isdefined(level.var_7466d419.turretweapon), "<unknown string>");
     #/
     weapon = level.var_7466d419.turretweapon;
-    while (1) {
+    while (true) {
         while (!self function_e01d381a() && !self reloadbuttonpressed()) {
             waitframe(1);
         }
@@ -410,33 +410,33 @@ function function_6a03d24d(var_d3440450) {
         function_e1635dfe(0, struct::get("spawn_vip_intro", "targetname"));
         function_ed68628c(0, struct::get("spawn_vip_intro", "targetname"));
         function_882e6973(0, struct::get("spawn_vip_intro", "targetname"), 0);
-        return;
+        break;
     case #"hash_303b184d24152e6a":
         function_27e76b4c("heli_spawn_airbase", 2);
         function_14a42357(1);
         function_e1635dfe(1);
         function_ed68628c(1);
-        return;
+        break;
     case #"hash_1884fe67d203defa":
         function_27e76b4c("heli_spawn_airbase", 2);
         function_d5d40694();
         function_ed68628c(1);
-        return;
+        break;
     case #"hash_24f8004f04e29031":
         function_27e76b4c("heli_spawn_firebase_checkin", 2);
         function_d5d40694();
         function_ed68628c(0, struct::get("spawn_vip_intro", "targetname"));
-        return;
+        break;
     case #"hash_5ba1cebca2018024":
         function_27e76b4c("heli_spawn_fly_to_branch", 0);
         function_d5d40694();
         function_ed68628c(1);
-        return;
+        break;
     case #"hash_6397100038fc0825":
         function_27e76b4c("heli_spawn_fly_to_branch_reached", 0);
         function_d5d40694();
         function_ed68628c(1);
-        return;
+        break;
     case #"hash_77a0b655f39c2bd0":
         function_27e76b4c("heli_spawn_fly_to_branch_mortar", 0);
         function_14a42357(1);
@@ -444,76 +444,76 @@ function function_6a03d24d(var_d3440450) {
         function_ed68628c(1);
         function_882e6973(1);
         vehicle::get_in(level.vip, level.var_7466d419, "crew");
-        return;
+        break;
     case #"armada_mortar_orbit":
         function_27e76b4c("heli_spawn_mortar");
         function_14a42357(1);
         function_e1635dfe(1);
         function_ed68628c(1);
         level.var_3ff4669d function_1f7fdfdb(1);
-        return;
+        break;
     case #"armada_mortar_start":
         function_27e76b4c("heli_spawn_mortar", 2);
         function_14a42357(1);
         function_e1635dfe(1);
         function_ed68628c(1);
-        return;
+        break;
     case #"armada_mortar_exfil":
         function_ed68628c(0, struct::get("mortar_exfil_sim_spawn_loc", "targetname"));
-        return;
+        break;
     case #"hash_5beb082ca4e77486":
         function_27e76b4c("heli_spawn_mortar_exit_to_bamboo", 0);
         function_d5d40694();
         function_ed68628c(1);
-        return;
+        break;
     case #"hash_7b186002f3b2a8d2":
         function_27e76b4c("heli_spawn_bamboo_exit", 0);
         function_d5d40694();
         function_ed68628c(1);
         function_882e6973(1);
-        return;
+        break;
     case #"hash_26c770abea50b0af":
         function_27e76b4c("heli_spawn_bamboo", 2);
         function_d5d40694();
         function_ed68628c(1);
-        return;
+        break;
     case #"hash_18e570d80fb44818":
     case #"hash_23a89628ff715703":
         function_27e76b4c("heli_spawn_bamboo");
         function_d5d40694();
         function_ed68628c(0);
         function_882e6973(0);
-        return;
+        break;
     case #"hash_1883c7f222b5148a":
         function_27e76b4c("heli_spawn_bamboo");
         function_d5d40694();
         function_ed68628c(0, getent("bamboo_vip_end_spawn", "targetname"));
         function_882e6973(0, getent("bamboo_buddy_end_spawn", "targetname"));
-        return;
+        break;
     case #"hash_d9f7dbd88b82743":
         function_27e76b4c("heli_spawn_mortar_exit_to_firebase", 0);
         function_d5d40694();
         function_ed68628c(1);
         function_882e6973(1);
-        return;
+        break;
     case #"hash_1d34f56e80987e86":
         function_27e76b4c("heli_spawn_bamboo_exit", 0);
         function_d5d40694();
         function_ed68628c(1);
         function_882e6973(1);
-        return;
+        break;
     case #"hash_e6b8714bb3258c2":
         function_27e76b4c("heli_spawn_firebase_defend");
         function_d5d40694();
         function_ed68628c(1);
         function_882e6973(1);
-        return;
+        break;
     case #"hash_463da5a40abee8ee":
         function_27e76b4c("heli_spawn_firebase_orbit", 2);
         function_d5d40694();
         function_ed68628c(1);
         function_882e6973(1);
-        return;
+        break;
     case #"armada_crash_start":
         function_27e76b4c("heli_spawn_crash", 2, 1);
         function_14a42357(0);
@@ -521,7 +521,7 @@ function function_6a03d24d(var_d3440450) {
         function_166083c9(0);
         function_882e6973(0, undefined, 1);
         function_ed68628c(0, undefined, 1);
-        return;
+        break;
     }
 }
 
@@ -1278,34 +1278,34 @@ function function_ed1b0fb(params) {
             switch (var_102cf4ae[0]) {
             case #"pitch":
                 var_e1f655e4 = float(var_102cf4ae[1]);
-                continue;
+                break;
             case #"pitchmin":
                 pitchmin = float(var_102cf4ae[1]);
-                continue;
+                break;
             case #"pitchmax":
                 pitchmax = float(var_102cf4ae[1]);
-                continue;
+                break;
             case #"yaw":
                 var_35c7ad6e = float(var_102cf4ae[1]);
-                continue;
+                break;
             case #"hash_75e7d42f911442e4":
                 var_411041d2 = float(var_102cf4ae[1]);
-                continue;
+                break;
             case #"yawmax":
                 yawmax = float(var_102cf4ae[1]);
-                continue;
+                break;
             case #"roll":
                 roll = float(var_102cf4ae[1]);
-                continue;
+                break;
             case #"duration":
                 duration = float(var_102cf4ae[1]);
-                continue;
+                break;
             case #"freqpitch":
                 freqpitch = float(var_102cf4ae[1]);
-                continue;
+                break;
             case #"freqyaw":
                 freqyaw = float(var_102cf4ae[1]);
-                continue;
+                break;
             }
         }
     }
@@ -1498,7 +1498,7 @@ function function_6a00dfe2(var_6fa615ee, s_flag, n_min_delay, n_max_delay, var_9
     if (isdefined(var_91eb2583) && isdefined(var_7928fb3d)) {
         level thread function_c312f777(var_6fa615ee, var_91eb2583, var_7928fb3d);
     }
-    while (1) {
+    while (true) {
         level exploder::exploder(var_6fa615ee);
         wait(randomfloatrange(n_min_delay, n_max_delay));
     }
@@ -1554,7 +1554,7 @@ function function_786284e9() {
     self shoulddoinitialweaponraise(getweapon(#"shotgun_pump_t9"), 0);
     self shoulddoinitialweaponraise(getweapon(#"pistol_semiauto_t9"), 0);
     self util::function_749362d7(1);
-    while (1) {
+    while (true) {
         self waittill(#"hash_3c581de252037444");
         self util::function_749362d7(0);
         self function_8ce803d();
@@ -1632,7 +1632,7 @@ function function_48fcfe89() {
     level endon(#"hash_77eb6b782116ef53");
     time = 0;
     step = 0.05;
-    while (1) {
+    while (true) {
         iprintln("t: " + time);
         time = time + step;
         wait(step);
@@ -1729,9 +1729,9 @@ function function_34163738() {
     var_ee7471ce = savegame::function_8136eb5a();
     if (isdefined(world.mapdata[var_ee7471ce][#"transient"].var_2e7c022f)) {
         savegame::function_7396472d();
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_b7cfe907/namespace_862012f3
@@ -1759,7 +1759,7 @@ function function_a079809e() {
     /#
         self notify("<unknown string>");
         self endon("<unknown string>");
-        while (1) {
+        while (true) {
             var_f55e1260 = level.var_7466d419 getoccupantseat(level.gunner);
             iprintln("<unknown string>" + var_f55e1260);
             wait(1);
@@ -1780,7 +1780,7 @@ function function_becb869c(string, var_52763577, offset) {
         if (isdefined(var_52763577)) {
             level endon(var_52763577);
         }
-        while (1) {
+        while (true) {
             print3d(self.origin + offset, string, (0, 1, 0), 1, 0.6, 1, 1);
             waitframe(1);
         }

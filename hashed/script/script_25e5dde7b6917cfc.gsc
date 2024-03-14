@@ -714,7 +714,7 @@ function function_b4dd21d4(str_notify) {
 // Size: 0x188
 function function_7fabe565(str_notify, var_576fb569, var_2c4dfb60, var_3195dfe3, var_d437c203 = 1) {
     level endon(#"hash_4d46078cfbdcc621");
-    while (1) {
+    while (true) {
         level waittill(#"hash_9289689e4ceb55c");
         nd_start = array::random(var_576fb569);
         var_d240817d = array::random(var_2c4dfb60);
@@ -844,16 +844,16 @@ function function_8f9d1155(a_ents) {
         switch (index) {
         case #"vehicle 1":
             ent thread namespace_b7cfe907::function_9ac0bc90([1:1, 0:0]);
-            continue;
+            break;
         case #"vehicle 2":
             ent thread namespace_b7cfe907::function_9ac0bc90([5:10, 4:9, 3:8, 2:7, 1:1, 0:0]);
-            continue;
+            break;
         case #"vehicle 3":
             ent thread namespace_b7cfe907::function_9ac0bc90([3:10, 2:9, 1:1, 0:0]);
-            continue;
+            break;
         case #"hash_5c059a141887868b":
             ent thread namespace_b7cfe907::function_9ac0bc90([1:1, 0:0]);
-            continue;
+            break;
         }
     }
 }
@@ -929,13 +929,13 @@ function function_ea6224e(a_ents) {
                 level.var_da19489d = ent;
                 level.var_da19489d setrotorspeed(0.23);
             }
-            continue;
+            break;
         case #"hash_4441cc1284fe31e6":
             if (!isdefined(level.var_52874eb2)) {
                 level.var_52874eb2 = ent;
                 level.var_52874eb2 setrotorspeed(0.28);
             }
-            continue;
+            break;
         case #"hash_25a9a33c7c596183":
         case #"hash_25a9a43c7c596336":
         case #"hash_25a9a53c7c5964e9":
@@ -943,34 +943,34 @@ function function_ea6224e(a_ents) {
         case #"hash_25a9a73c7c59684f":
         case #"hash_25a9a83c7c596a02":
             ent thread namespace_b7cfe907::function_80a8e837();
-            continue;
+            break;
         case #"hash_3c898b6644de1c74":
             ent thread namespace_b7cfe907::function_9ac0bc90([1:1, 0:0]);
             ent thread function_e0c430cb("flag_intro_player_boarded_chopper");
-            continue;
+            break;
         case #"hash_3c898e6644de218d":
             ent thread namespace_b7cfe907::function_9ac0bc90([4:10, 3:9, 2:7, 1:1, 0:0]);
             ent thread function_e0c430cb("flag_intro_player_boarded_chopper");
-            continue;
+            break;
         case #"hash_3c898d6644de1fda":
             ent thread namespace_b7cfe907::function_9ac0bc90([4:10, 3:9, 2:7, 1:1, 0:0]);
             ent thread function_e0c430cb("flag_play_gear_up_pt02");
-            continue;
+            break;
         case #"hash_3c89876644de15a8":
         case #"hash_3c89886644de175b":
             ent thread function_e0c430cb("flag_intro_player_boarded_chopper");
-            continue;
+            break;
         case #"hash_7f1ef323fbb683c9":
-            continue;
+            break;
         case #"hash_3cd20118e4cb9c68":
             ent thread namespace_b7cfe907::function_9ac0bc90([3:10, 2:9, 1:1, 0:0]);
-            continue;
+            break;
         case #"hash_5f084b741ecc845c":
             ent thread namespace_b7cfe907::function_9ac0bc90([1:1, 0:0]);
-            continue;
+            break;
         case #"hash_25d7fb931fa86afc":
             ent thread namespace_b7cfe907::function_9ac0bc90([2:9, 1:7, 0:0]);
-            continue;
+            break;
         }
     }
 }
@@ -1030,21 +1030,21 @@ function function_b281d751(a_ents) {
             if (!isdefined(level.var_da19489d)) {
                 level.var_da19489d = ent;
             }
-            continue;
+            break;
         case #"hash_4441cc1284fe31e6":
             if (!isdefined(level.var_52874eb2)) {
                 level.var_52874eb2 = ent;
             }
-            continue;
+            break;
         case #"hash_7f1ef323fbb683c9":
             ent thread function_f9c12ca2();
             ent turretsettargetangles(1, (0, 0, 0));
-            continue;
+            break;
         case #"hash_25d7fb931fa86afc":
         case #"hash_3cd20118e4cb9c68":
         case #"hash_5f084b741ecc845c":
             ent thread function_f9c12ca2();
-            continue;
+            break;
         }
     }
 }
@@ -1326,7 +1326,7 @@ function function_e2df4629(var_74056fba, var_72364480, var_887853be, var_456e3d8
         foreach (drone in var_a8adb067) {
             drone namespace_4e75a347::function_cab4b520("alert");
         }
-        while (1) {
+        while (true) {
             s_waitresult = undefined;
             s_waitresult = level waittill(var_887853be, #"hash_4affce8b3ea8ab6d", #"hash_4d46078cfbdcc621");
             if (s_waitresult._notify == "flag_intro_base_cleanup" || s_waitresult._notify == "flag_intro_cleanup_runners") {
@@ -1507,7 +1507,7 @@ function function_535f1a04() {
     level endon(#"hash_5785c9d099726172");
     level.player endon(#"death");
     level.var_7466d419 endon(#"death");
-    while (1) {
+    while (true) {
         iprintlnbold("Player health: " + level.player.health + " Chopper Health: " + level.var_7466d419.health);
         wait(1);
     }
@@ -1525,13 +1525,13 @@ function function_49aeb63a() {
             switch (truck.script_noteworthy) {
             case #"hash_5f1c4271b44a354a":
                 thread function_5a9f70a0("firebase_arrival_spawner_enemy_road_solider_truck_end_01", "firebase_arrival_road_enemy_truck_01_end");
-                continue;
+                break;
             case #"hash_5f1c4171b44a3397":
                 thread function_5a9f70a0("firebase_arrival_spawner_enemy_road_solider_truck_end_02", "firebase_arrival_road_enemy_truck_02_end");
-                continue;
+                break;
             case #"hash_5f1c3f71b44a3031":
                 thread function_5a9f70a0("firebase_arrival_spawner_enemy_road_solider_truck_end_04", "firebase_arrival_road_enemy_truck_04_end");
-                continue;
+                break;
             }
         }
     }
@@ -1696,10 +1696,10 @@ function function_f56d55e3() {
             switch (var_bb0e9f14.script_noteworthy) {
             case #"hash_1c366d4d206df5a5":
                 var_bb0e9f14 thread function_903f2e76(var_dd4aa81d, 2.5);
-                continue;
+                break;
             case #"hash_1c366a4d206df08c":
                 var_bb0e9f14 thread function_903f2e76(var_af91cca8, 2.5);
-                continue;
+                break;
             }
         }
     }
@@ -1839,10 +1839,10 @@ function function_82bec60b() {
             switch (gunship.script_noteworthy) {
             case #"hash_4b32ffd1558c840a":
                 gunship thread function_c4d91c06(var_3875fce7, var_a3ca075, var_ad0b0321, var_2a30fd77);
-                continue;
+                break;
             case #"hash_4b32fed1558c8257":
                 gunship thread function_c4d91c06(var_3875fce7, var_a3ca075, var_ad0b0321, undefined, "gunship_02_road_rockets_complete");
-                continue;
+                break;
             }
         }
     }

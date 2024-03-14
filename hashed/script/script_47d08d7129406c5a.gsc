@@ -395,7 +395,7 @@ function private function_d6742832() {
 // Size: 0xe8
 function private function_638d1ade() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         if (death_circle::is_active()) {
             if (death_circle::function_f8dae197() <= 4298) {
                 function_825bbe3f();
@@ -566,7 +566,7 @@ function function_82224f4b(scale) {
     self notify("6aa6d6495c54ef81");
     self endon("6aa6d6495c54ef81");
     self endon(#"death", #"hash_ecab417d1ae9d64", #"hash_1d3acb3966f46517");
-    while (1) {
+    while (true) {
         accel = anglestoup(self.angles) * scale;
         self setphysacceleration((accel[0], accel[1], -200));
         waitframe(1);
@@ -594,7 +594,7 @@ function private function_7b63d976() {
     self endon(#"death", #"hash_ecab417d1ae9d64");
     wait(5);
     self clientfield::set("flickerlights", 2);
-    while (1) {
+    while (true) {
         self function_838515ae();
         wait(randomfloatrange(1, 3));
         self notify(#"hash_1d3acb3966f46517");
@@ -632,7 +632,7 @@ function private function_adbcb48d(*params) {
 // Size: 0x14a
 function private function_4f8aa02d() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         waterheight = getwaterheight(self.origin, 100, -10000);
         if (waterheight != -131072) {
             var_19dbcac7 = self.origin[2] + -70 - waterheight;
@@ -832,7 +832,7 @@ function private function_1c32d368() {
     self notify(#"hash_203455df2978ba88");
     self endon(#"death", #"hash_51cf6123efa445ce", #"hash_203455df2978ba88");
     waitframe(1);
-    while (1) {
+    while (true) {
         player = self getseatoccupant(0);
         if (isdefined(player) && (!isdefined(self.var_cd532f2c) || gettime() - self.var_cd532f2c >= 0)) {
             self.var_cd532f2c = undefined;
@@ -841,7 +841,7 @@ function private function_1c32d368() {
             if (var_d4865741) {
                 function_a2b127e3();
                 self notify(#"hash_51cf6123efa445ce");
-                return;
+                break;
             }
         }
         waitframe(1);
@@ -856,7 +856,7 @@ function private function_499252fe() {
     self notify(#"hash_69e2c4ec2a3d91b4");
     self endon(#"death", #"hash_2d3ebedb650b9759", #"hash_69e2c4ec2a3d91b4");
     waitframe(1);
-    while (1) {
+    while (true) {
         player = self getseatoccupant(0);
         if (!isdefined(player) || !player function_6947dde2() || player vehiclemoveupbuttonpressed()) {
             waitframe(1);
@@ -870,7 +870,7 @@ function private function_499252fe() {
         if (self function_479389f3() && !getdvarint(#"hash_4381be5e131dc9aa", 0)) {
             function_edd50d7d();
             self notify(#"hash_2d3ebedb650b9759");
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -884,7 +884,7 @@ function private function_7a66682a() {
     self notify(#"hash_73b33f91c657e33e");
     self endon(#"death", #"hash_74bba4f3dddf9fc3", #"hash_73b33f91c657e33e");
     waitframe(1);
-    while (1) {
+    while (true) {
         if (self function_479389f3()) {
             occupants = self getvehoccupants();
             if (!isdefined(occupants) || !occupants.size) {
@@ -893,7 +893,7 @@ function private function_7a66682a() {
                 function_edd50d7d();
             }
             self notify(#"hash_74bba4f3dddf9fc3");
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -907,7 +907,7 @@ function private function_637d1595() {
     self notify(#"hash_d4c7c76098ff4b8");
     self endon(#"death", #"hash_573e89d990d75799", #"hash_d4c7c76098ff4b8");
     waitframe(1);
-    while (1) {
+    while (true) {
         if (self function_479389f3()) {
             occupants = self getvehoccupants();
             if (!isdefined(occupants) || !occupants.size) {
@@ -916,7 +916,7 @@ function private function_637d1595() {
                 function_edd50d7d();
             }
             self notify(#"hash_573e89d990d75799");
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -930,11 +930,11 @@ function private function_b2cbe3f8() {
     self notify(#"hash_5b78f14ae4e8dc43");
     self endon(#"death", #"hash_ecab417d1ae9d64", #"hash_5b78f14ae4e8dc43");
     waitframe(1);
-    while (1) {
+    while (true) {
         if (self function_479389f3()) {
             function_6aa62d8b();
             self notify(#"hash_ecab417d1ae9d64");
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -976,7 +976,7 @@ function private function_158a4c05() {
 // Size: 0x682
 function private function_479389f3() {
     if (self function_5e768331() > 200) {
-        return 0;
+        return false;
     }
     height = self.height;
     /#
@@ -996,14 +996,14 @@ function private function_479389f3() {
     var_df47b913 = [];
     foreach (tag, origin in var_33a206d0) {
         if (!isdefined(origin)) {
-            return 0;
+            return false;
         }
         var_df47b913[tag] = physicstrace(origin + vectorscale((0, 0, 1), 25), origin - vectorscale((0, 0, 1), 75), (0, 0, 0), (0, 0, 0), self, 2);
     }
     var_dc8469e2 = [];
     foreach (tag, origin in var_8fc02d3b) {
         if (!isdefined(origin)) {
-            return 0;
+            return false;
         }
         var_dc8469e2[tag] = physicstrace(origin + vectorscale((0, 0, 1), 25), origin - vectorscale((0, 0, 1), 75), (0, 0, 0), (0, 0, 0), self, 2);
     }
@@ -1042,22 +1042,22 @@ function private function_479389f3() {
         self.var_eb4e4182 = avgnormal;
     }
     if (avgnormal[2] < 0.94) {
-        return 0;
+        return false;
     }
     if (var_e10b67f7.size == 0 || var_d3532cfe.size == 0 || var_d3532cfe.size + var_e10b67f7.size < 3) {
-        return 0;
+        return false;
     }
     if (var_d643c4fc) {
-        return 0;
+        return false;
     }
     var_4c962569 = var_4c962569 / (var_d3532cfe.size + var_e10b67f7.size + 1);
     if (var_4c962569 > 20) {
-        return 0;
+        return false;
     }
     var_b0e8278f = var_b0e8278f / (var_d3532cfe.size + var_e10b67f7.size);
     self.helilandingorigin = var_b0e8278f;
     self.var_6fac6f50 = var_4c962569;
     self.var_67136cb0 = avgnormal;
-    return 1;
+    return true;
 }
 

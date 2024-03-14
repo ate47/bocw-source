@@ -98,7 +98,7 @@ function on_player_spawned() {
     }
     time_interval = 1;
     var_f08f2050 = pow(528 * time_interval, 2);
-    while (1) {
+    while (true) {
         last_pos = self.origin;
         wait(time_interval);
         if (distancesquared(self.origin, last_pos) > var_f08f2050) {
@@ -943,11 +943,11 @@ function function_d675f5a4() {
 function private function_d626d354(prompt, player, dist) {
     var_62bce5b6 = self.var_3e95b88f.var_f48ab2e1[prompt];
     if (self flag::get("prompts_disabled") || level flag::get("prompts_disabled")) {
-        return 0;
+        return false;
     }
     if (level.var_a8ea96e8.size > 0) {
         if (!isdefined(var_62bce5b6.groups)) {
-            return 0;
+            return false;
         }
         var_a4d18ab4 = 0;
         foreach (var_405c2a4c in level.var_a8ea96e8) {
@@ -957,7 +957,7 @@ function private function_d626d354(prompt, player, dist) {
             }
         }
         if (!var_a4d18ab4) {
-            return 0;
+            return false;
         }
     }
     if (self != player) {
@@ -968,7 +968,7 @@ function private function_d626d354(prompt, player, dist) {
             }
         #/
         if (dist > var_71b9f0c0) {
-            return 0;
+            return false;
         }
         self.var_3e95b88f.var_98fa5077 = 1;
         var_6a1bdfa6 = isdefined(var_62bce5b6.var_8ce60046) ? var_62bce5b6.var_8ce60046 : 1;
@@ -981,14 +981,14 @@ function private function_d626d354(prompt, player, dist) {
             var_393b6e18 = self function_334e020();
             var_27a7ecaa = isdefined(var_62bce5b6.var_27a7ecaa) ? var_62bce5b6.var_27a7ecaa : player;
             if (!sighttracepassed(player getplayercamerapos(), var_393b6e18, 1, self, var_27a7ecaa)) {
-                return 0;
+                return false;
             }
         }
     }
     if (isdefined(var_62bce5b6.var_531201f1) && !self [[ var_62bce5b6.var_531201f1 ]]({#player:player, #prompt:prompt})) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_f48ab2e1/namespace_f48ab2e1
@@ -998,7 +998,7 @@ function private function_d626d354(prompt, player, dist) {
 function private function_12186571(prompt, var_62bce5b6, player, dist, var_393b6e18, var_693a4fcf) {
     if (self != player) {
         if (isdefined(player.var_b3c804a4[prompt]) && player.var_b3c804a4[prompt] != self) {
-            return 0;
+            return false;
         }
         hud = self.var_3e95b88f.hud;
         var_343e3ef2 = 0;
@@ -1013,7 +1013,7 @@ function private function_12186571(prompt, var_62bce5b6, player, dist, var_393b6
         if (hud) {
             foreach (var_3388fe0e in player.var_b3c804a4) {
                 if (isdefined(var_3388fe0e) && var_3388fe0e != self && (var_3388fe0e == player || var_343e3ef2 || var_3388fe0e.var_3e95b88f.hud)) {
-                    return 0;
+                    return false;
                 }
             }
         }
@@ -1024,7 +1024,7 @@ function private function_12186571(prompt, var_62bce5b6, player, dist, var_393b6
             }
         #/
         if (dist > var_87c991f3) {
-            return 0;
+            return false;
         }
         var_45913153 = is_true(var_62bce5b6.var_3c8a8153) && level.var_7315ba31 === (isdefined(var_62bce5b6.var_88ceabd) ? var_62bce5b6.var_88ceabd : self);
         var_b0cb5e43 = undefined;
@@ -1037,7 +1037,7 @@ function private function_12186571(prompt, var_62bce5b6, player, dist, var_393b6
                 }
             #/
             if (angle_delta > var_693a4fcf) {
-                return 0;
+                return false;
             }
         }
         if (isdefined(self.angles)) {
@@ -1057,7 +1057,7 @@ function private function_12186571(prompt, var_62bce5b6, player, dist, var_393b6
                 }
                 angle_delta = acos(vectordot(anglestoforward(self.angles), var_b0cb5e43));
                 if (angle_delta < var_9c89c587 || angle_delta > var_f17a78a7) {
-                    return 0;
+                    return false;
                 }
             }
         }
@@ -1069,10 +1069,10 @@ function private function_12186571(prompt, var_62bce5b6, player, dist, var_393b6
         #/
         var_1e4cbecf = isdefined(var_62bce5b6.var_1e4cbecf) ? var_62bce5b6.var_1e4cbecf : player;
         if (!var_9a27c4ee && !bullettracepassed(player getplayercamerapos(), var_393b6e18, 1, self, var_1e4cbecf)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_f48ab2e1/namespace_f48ab2e1
@@ -1310,7 +1310,7 @@ function private function_e8006b47() {
         } else if (self.var_3e95b88f.var_98fa5077) {
             state = 1;
         } else {
-            return;
+            break;
         }
         var_4ca73085 = #"hash_2de1684e2167ada4";
         ease_in = 1;
@@ -1584,7 +1584,7 @@ function private function_ab46a161(prompt, var_62bce5b6) {
 function private function_6d9e6b7d(player, prompt, uid) {
     player endon(#"death");
     self endon(#"hash_1316225507a4f1bb", "reset_button_inputs_" + prompt);
-    while (1) {
+    while (true) {
         player waittill(#"weapon_fired");
         weapon = player getcurrentweapon();
         if (is_true(weapon.isboltaction) || player getweaponammoclip(weapon) == 0 && player getweaponammostock(weapon) > 0) {
@@ -1610,14 +1610,14 @@ function private function_f619081c(prompt, var_62bce5b6) {
             player val::set(var_62bce5b6.uid, "disable_weapon_reload", 1);
             self thread function_6d9e6b7d(player, prompt, var_62bce5b6.uid);
         }
-        return;
+        break;
     case #"hash_3c5c65155dfb1731":
     case #"melee":
         player val::set(var_62bce5b6.uid, "allow_melee", 0);
-        return;
+        break;
     case #"attack":
         player val::set(var_62bce5b6.uid, "disable_weapon_fire", 1);
-        return;
+        break;
     case #"reload":
         player val::set(var_62bce5b6.uid, "disable_weapon_reload", 1);
         self thread function_6d9e6b7d(player, prompt, var_62bce5b6.uid);
@@ -1625,10 +1625,10 @@ function private function_f619081c(prompt, var_62bce5b6) {
             player val::set(var_62bce5b6.uid, "disable_usability", 1);
             player val::set(var_62bce5b6.uid, "disable_weapon_pickup", 1);
         }
-        return;
+        break;
     case #"frag":
         player val::set(var_62bce5b6.uid, "disable_offhand_weapons", 1);
-        return;
+        break;
     case #"stance":
         stance = player getstance();
         if (stance == "stand") {
@@ -1644,13 +1644,13 @@ function private function_f619081c(prompt, var_62bce5b6) {
             player val::set(var_62bce5b6.uid, "allow_crouch", 0);
             player val::set(var_62bce5b6.uid, "allow_prone", 1);
         }
-        return;
+        break;
     case #"weapnext":
         player val::set(var_62bce5b6.uid, "disable_weapon_cycling", 1);
-        return;
+        break;
     case #"ads":
         player val::set(var_62bce5b6.uid, "allow_ads", 0);
-        return;
+        break;
     }
 }
 
@@ -1885,7 +1885,7 @@ function private function_93551c9a(uid, prompt) {
     button_text[0] = level.var_f48ab2e1[prompt].var_e4c7b05f;
     button_text[1] = level.var_f48ab2e1[prompt].button_text;
     namespace_61e6d095::function_f2a9266(uid, self.var_3e95b88f.var_294a441e[prompt], "button_text", button_text[gamepad], self.var_3e95b88f.var_db58523e);
-    while (1) {
+    while (true) {
         waitframe(1);
         if (gamepad != player gamepadusedlast()) {
             gamepad = !gamepad;
@@ -1906,7 +1906,7 @@ function private function_17533001(uid) {
     if (actor_name === "") {
         actor_name = undefined;
     }
-    while (1) {
+    while (true) {
         ret = undefined;
         ret = self waittill(#"hash_5ede0284920c4c56");
         if (ret.var_65198261 || isdefined(self.var_3e95b88f.var_fc01e65d)) {
@@ -1945,8 +1945,8 @@ function private function_74f42405(*end_on) {
 // Size: 0x58
 function private function_5a11b8f6() {
     if (isstruct(self) || self.classname === "script_origin" || isplayer(self)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 

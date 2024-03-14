@@ -75,7 +75,7 @@ function function_5f3b1735(point) {
 function function_f6ad2be6(localclientnum) {
     self endon(#"death");
     uimodel = getuimodel(function_1df4c3b0(localclientnum, #"hash_6f4b11a0bee9b73d"), "locationText");
-    while (1) {
+    while (true) {
         if (isdefined(self)) {
             str_location = get_current_zone();
             str_location = function_ab7f70b9(str_location);

@@ -318,7 +318,7 @@ function function_e2d2754d(a_ents) {
 function function_94005f3d(guy) {
     level endon(#"hash_7d331e36702f2357");
     level waittill(#"hash_b55abd61e973251");
-    while (1) {
+    while (true) {
         guy namespace_a635adb1::queue("vox_cp_tdwn_03200_dmc3_comeon_a2");
         wait(1);
         guy namespace_a635adb1::queue("vox_cp_tdwn_03200_dmc3_nonono_b8");
@@ -341,7 +341,7 @@ function function_b252dec4() {
     level endon(#"hash_7d331e36702f2357");
     level waittill(#"hash_4aade1e09ed49814");
     wait(2);
-    while (1) {
+    while (true) {
         level.var_2e5999de namespace_a635adb1::queue("vox_cp_tdwn_03200_plch_goaheadanddoit_3a");
         wait(2);
         level.var_2e5999de namespace_a635adb1::queue("vox_cp_tdwn_03200_plch_thatsright_6b");
@@ -363,7 +363,7 @@ function function_b252dec4() {
 // Size: 0x110
 function function_616d61c3() {
     level endon(#"hash_7d331e36702f2357");
-    while (1) {
+    while (true) {
         wait(10);
         level.var_40c96673 namespace_a635adb1::queue("vox_cp_tdwn_03200_dfc1_idontthinkyoure_15");
         wait(2);
@@ -384,7 +384,7 @@ function function_616d61c3() {
 // Size: 0x138
 function function_9248227f() {
     level endon(#"hash_7d331e36702f2357");
-    while (1) {
+    while (true) {
         wait(5);
         level.var_37c2c37d namespace_a635adb1::queue("vox_cp_tdwn_03200_dfc1_idontthinkyoure_15");
         wait(2);
@@ -407,7 +407,7 @@ function function_9248227f() {
 // Size: 0x10e
 function function_fa84c01d(guy) {
     level endon(#"hash_7d331e36702f2357");
-    while (1) {
+    while (true) {
         guy namespace_a635adb1::queue("vox_cp_tdwn_03200_bart_lager_2a");
         wait(3);
         guy namespace_a635adb1::queue("vox_cp_tdwn_03200_bart_okaythenwellcel_27");
@@ -431,7 +431,7 @@ function function_fa84c01d(guy) {
 // Size: 0x13e
 function function_8c455090() {
     level endon(#"hash_7d331e36702f2357");
-    while (1) {
+    while (true) {
         level.var_41376757 namespace_a635adb1::queue("vox_cp_tdwn_03200_dfc2_clearsthroat_7d");
         wait(2);
         level.var_33884bf9 namespace_a635adb1::queue("vox_cp_tdwn_03200_dfc2_coughs_da");
@@ -455,7 +455,7 @@ function function_8c455090() {
 // Size: 0x13e
 function function_4a906234() {
     level endon(#"hash_7d331e36702f2357");
-    while (1) {
+    while (true) {
         level.var_f0282ee namespace_a635adb1::queue("vox_cp_tdwn_03200_dmc1_thatsjusttheway_a8");
         wait(2);
         level.var_2cb2be4e namespace_a635adb1::queue("vox_cp_tdwn_03200_dfc1_iwonderhowhetre_63");
@@ -479,7 +479,7 @@ function function_4a906234() {
 // Size: 0x300
 function function_10254e69() {
     level endon(#"hash_7d331e36702f2357");
-    while (1) {
+    while (true) {
         level.var_9330fa58 namespace_a635adb1::queue("vox_cp_tdwn_03200_dmc1_ithoughtthepoin_be");
         wait(2);
         level.var_9c278c41 namespace_a635adb1::queue("vox_cp_tdwn_03200_dmc2_bullseyesaregoo_4d");
@@ -581,7 +581,7 @@ function function_68461db2() {
 function function_3f2fe2a4(var_9f43fd46, var_5526621d, var_e3fbbf0d, var_f6723346) {
     level endon(#"hash_5c41a54cd623966e");
     player = getplayers()[0];
-    while (1) {
+    while (true) {
         if (!player hasweapon(var_9f43fd46)) {
             foreach (model in var_5526621d) {
                 model show();
@@ -652,7 +652,7 @@ function function_a6d1922d() {
     level endon(#"hash_77cacf3b22ba7d5c");
     player = getplayers()[0];
     player setlowready(0);
-    while (1) {
+    while (true) {
         if (player adsbuttonpressed()) {
             player enableweapons();
             wait(0.25);

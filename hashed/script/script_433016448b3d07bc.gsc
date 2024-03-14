@@ -157,7 +157,7 @@ function function_ec54a907(localclientnum, *oldval, newval, *bnewent, *binitials
         playsound(fieldname, "amb_train_incomming_rumble", (-2604, 11998, -258));
         wait(3);
         soundstoploopemitter("amb_train_alarm_lp", (-60, 12065, -200));
-        return;
+        break;
     case 2:
         soundloopemitter("amb_train_alarm_lp", (-2856, 11966, -200));
         var_27cb9568 = array((-1558, 12083, -201), (-726, 12057, -201), (-1100, 11955, -201), (-2311, 12012, -201));
@@ -171,7 +171,7 @@ function function_ec54a907(localclientnum, *oldval, newval, *bnewent, *binitials
         playsound(fieldname, "amb_train_incomming_rumble", (-2604, 11998, -258));
         wait(3);
         soundstoploopemitter("amb_train_alarm_lp", (-2856, 11966, -200));
-        return;
+        break;
     case 3:
         soundloopemitter("amb_train_alarm_lp", (-2856, 11966, -200));
         var_27cb9568 = array((-1558, 12083, -201), (-726, 12057, -201), (-1100, 11955, -201), (-2311, 12012, -201));
@@ -185,7 +185,7 @@ function function_ec54a907(localclientnum, *oldval, newval, *bnewent, *binitials
         playsound(fieldname, "amb_train_incomming_rumble", (-2604, 11998, -258));
         wait(3);
         soundstoploopemitter("amb_train_alarm_lp", (-2856, 11966, -200));
-        return;
+        break;
     case 4:
         var_27cb9568 = array((-1558, 12083, -201), (-726, 12057, -201), (-1100, 11955, -201), (-2311, 12012, -201));
         foreach (location in var_27cb9568) {
@@ -193,16 +193,16 @@ function function_ec54a907(localclientnum, *oldval, newval, *bnewent, *binitials
             playsound(fieldname, #"hash_7d743a5e64a0e1d", location);
             wait(randomfloatrange(0.25, 0.75));
         }
-        return;
+        break;
     case 5:
         function_5ea2c6e3("zmb_platinum_bossfight", 5, 1);
-        return;
+        break;
     case 6:
         function_ed62c9c2("zmb_platinum_bossfight", 5);
-        return;
+        break;
     case 7:
         function_5ea2c6e3("zmb_step_8", 1, 1);
-        return;
+        break;
     }
 }
 

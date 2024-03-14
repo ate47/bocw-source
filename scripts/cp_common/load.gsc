@@ -372,7 +372,7 @@ function player_intermission(var_1ed3b46b = 1) {
         }
     }
     org = undefined;
-    while (1) {
+    while (true) {
         points = array::randomize(points);
         for (i = 0; i < points.size; i++) {
             point = points[i];

@@ -205,20 +205,20 @@ function function_2e8014e(entity) {
 // Size: 0x10c
 function private function_b75dd595(entity) {
     if (!isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     if (entity.var_9fde8624 !== #"crimson_nosferatu") {
-        return 0;
+        return false;
     }
     var_ae9326df = blackboard::getblackboardevents("nfrtu_move_dash");
     if (isdefined(var_ae9326df) && var_ae9326df.size) {
         foreach (var_d86ae1c4 in var_ae9326df) {
             if (var_d86ae1c4.data.enemy === entity.enemy) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
@@ -229,7 +229,7 @@ function private function_8b2173e0(entity) {
     var_d86ae1c4 = spawnstruct();
     var_d86ae1c4.enemy = entity.enemy;
     blackboard::addblackboardevent("nfrtu_move_dash", var_d86ae1c4, randomintrange(8500, 10000));
-    return 1;
+    return true;
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
@@ -239,21 +239,21 @@ function private function_8b2173e0(entity) {
 function private function_3df24b25(entity) {
     /#
         if (getdvarint(#"hash_5ebc5d42d65e6fd1", 0)) {
-            return 1;
+            return true;
         }
     #/
     if (!isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     var_935d5acc = blackboard::getblackboardevents("nfrtu_latch_melee");
     if (isdefined(var_935d5acc) && var_935d5acc.size) {
         foreach (var_1e5d8d32 in var_935d5acc) {
             if (var_1e5d8d32.data.enemy === entity.enemy) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
@@ -265,7 +265,7 @@ function private function_15d413b9(entity) {
     var_1e5d8d32 = spawnstruct();
     var_1e5d8d32.enemy = entity.enemy;
     blackboard::addblackboardevent("nfrtu_latch_melee", var_1e5d8d32, randomintrange(30000, 50000));
-    return 1;
+    return true;
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
@@ -288,7 +288,7 @@ function private function_b5305a8f(entity) {
     if (isdefined(entity.enemy)) {
         entity thread function_20a76c21(entity);
     }
-    return 1;
+    return true;
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
@@ -378,32 +378,32 @@ function private function_db62d88a() {
 // Size: 0x1e6
 function private function_a41a5aea(entity) {
     if (!isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     if (!isplayer(entity.enemy)) {
-        return 0;
+        return false;
     }
     if (is_true(entity.enemy.var_7ebdb2c9)) {
-        return 0;
+        return false;
     }
     if (abs(entity.origin[2] - entity.enemy.origin[2]) > 64) {
-        return 0;
+        return false;
     }
     distancesq = distancesquared(entity.origin, entity.enemy.origin);
     if (distancesq >= function_a3f6cdac(96)) {
-        return 0;
+        return false;
     }
     if (!entity cansee(entity.enemy)) {
-        return 0;
+        return false;
     }
     enemyangles = entity.enemy getplayerangles();
     if (!util::within_fov(entity.enemy.origin, enemyangles, self.origin, cos(25))) {
-        return 0;
+        return false;
     }
     if (!tracepassedonnavmesh(entity.origin, entity.enemy.origin, entity getpathfindingradius())) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
@@ -412,33 +412,33 @@ function private function_a41a5aea(entity) {
 // Size: 0x17a
 function private function_b5047448(entity) {
     if (entity asmistransitionrunning() || entity asmistransdecrunning()) {
-        return 0;
+        return false;
     }
     if (isdefined(entity.enemy)) {
         if (!entity haspath()) {
-            return 0;
+            return false;
         }
         if (!btapi_shouldchargemelee(entity)) {
-            return 0;
+            return false;
         }
         if (!function_c2f87d6(entity)) {
-            return 0;
+            return false;
         }
         if (!isplayer(entity.enemy)) {
-            return 0;
+            return false;
         }
         if (abs(entity.origin[2] - entity.enemy.origin[2]) > 64) {
-            return 0;
+            return false;
         }
         if (!entity cansee(entity.enemy)) {
-            return 0;
+            return false;
         }
         if (!tracepassedonnavmesh(entity.origin, entity.enemy.origin, entity getpathfindingradius())) {
-            return 0;
+            return false;
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
@@ -447,26 +447,26 @@ function private function_b5047448(entity) {
 // Size: 0x3d2
 function private function_e9819a23(entity) {
     if (entity.var_9fde8624 !== #"crimson_nosferatu") {
-        return 0;
+        return false;
     }
     if (entity asmistransitionrunning() || entity asmistransdecrunning()) {
-        return 0;
+        return false;
     }
     if (isdefined(entity.enemy)) {
         if (!btapi_shouldchargemelee(entity)) {
-            return 0;
+            return false;
         }
         if (!function_3df24b25(entity)) {
-            return 0;
+            return false;
         }
         if (!isplayer(entity.enemy)) {
-            return 0;
+            return false;
         }
         if (is_true(entity.enemy.var_7ebdb2c9)) {
-            return 0;
+            return false;
         }
         if (abs(entity.origin[2] - entity.enemy.origin[2]) > 64) {
-            return 0;
+            return false;
         }
         predictedenemypos = entity.enemy.origin;
         velocity = entity.enemy getvelocity();
@@ -475,7 +475,7 @@ function private function_e9819a23(entity) {
         }
         distancesq = distancesquared(entity.origin, predictedenemypos);
         if (distancesq <= function_a3f6cdac(128)) {
-            return 0;
+            return false;
         }
         if (distancesq >= function_a3f6cdac(100)) {
             if (entity.enemy issprinting()) {
@@ -485,23 +485,23 @@ function private function_e9819a23(entity) {
                     /#
                         record3dtext("<unknown string>", entity.origin + vectorscale((0, 0, 1), 60), (1, 0, 0), "<unknown string>");
                     #/
-                    return 0;
+                    return false;
                 }
             }
         }
         if (!entity cansee(entity.enemy)) {
-            return 0;
+            return false;
         }
         enemyangles = entity.enemy getplayerangles();
         if (!util::within_fov(entity.enemy.origin, enemyangles, self.origin, cos(25))) {
-            return 0;
+            return false;
         }
         if (!tracepassedonnavmesh(entity.origin, predictedenemypos, entity getpathfindingradius())) {
-            return 0;
+            return false;
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
@@ -510,20 +510,20 @@ function private function_e9819a23(entity) {
 // Size: 0x322
 function private function_85d8b15d(entity) {
     if (entity asmistransitionrunning() || entity asmistransdecrunning()) {
-        return 0;
+        return false;
     }
     if (isdefined(entity.enemy)) {
         if (!btapi_shouldchargemelee(entity)) {
-            return 0;
+            return false;
         }
         if (!function_105988a0(entity)) {
-            return 0;
+            return false;
         }
         if (!isplayer(entity.enemy)) {
-            return 0;
+            return false;
         }
         if (abs(entity.origin[2] - entity.enemy.origin[2]) > 64) {
-            return 0;
+            return false;
         }
         predictedenemypos = entity.enemy.origin;
         velocity = entity.enemy getvelocity();
@@ -532,7 +532,7 @@ function private function_85d8b15d(entity) {
         }
         distancesq = distancesquared(entity.origin, predictedenemypos);
         if (distancesq <= function_a3f6cdac(128)) {
-            return 0;
+            return false;
         }
         if (distancesq >= function_a3f6cdac(100)) {
             if (entity.enemy issprinting()) {
@@ -542,19 +542,19 @@ function private function_85d8b15d(entity) {
                     /#
                         record3dtext("<unknown string>", entity.origin + vectorscale((0, 0, 1), 60), (1, 0, 0), "<unknown string>");
                     #/
-                    return 0;
+                    return false;
                 }
             }
         }
         if (!entity cansee(entity.enemy)) {
-            return 0;
+            return false;
         }
         if (!tracepassedonnavmesh(entity.origin, predictedenemypos, entity getpathfindingradius())) {
-            return 0;
+            return false;
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
@@ -563,17 +563,17 @@ function private function_85d8b15d(entity) {
 // Size: 0xec
 function function_ebe0e1b5(entity) {
     if (!isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     var_623b3520 = blackboard::getblackboardevents("nfrtu_full_pain");
     if (isdefined(var_623b3520) && var_623b3520.size) {
         foreach (var_77d2339d in var_623b3520) {
             if (var_77d2339d.data.enemy === entity.enemy) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
@@ -600,15 +600,15 @@ function private function_e0ad0db2(entity) {
 // Size: 0xb0
 function private nosferatushouldmelee(entity) {
     if (!isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     if (is_true(entity.enemy.ignoreme)) {
-        return 0;
+        return false;
     }
     if (function_85d8b15d(entity) || function_7ffbbff(entity) || function_e9819a23(entity) || function_b5047448(entity)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
@@ -617,34 +617,34 @@ function private nosferatushouldmelee(entity) {
 // Size: 0x24e
 function private function_7ffbbff(entity) {
     if (!isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     if (entity asmistransitionrunning() || entity asmistransdecrunning()) {
-        return 0;
+        return false;
     }
     if (isdefined(entity.marked_for_death)) {
-        return 0;
+        return false;
     }
     if (is_true(entity.ignoremelee)) {
-        return 0;
+        return false;
     }
     if (abs(entity.origin[2] - entity.enemy.origin[2]) > 64) {
-        return 0;
+        return false;
     }
     if (distancesquared(entity.origin, entity.enemy.origin) > function_a3f6cdac(80)) {
-        return 0;
+        return false;
     }
     yawtoenemy = angleclamp180(entity.angles[1] - vectortoangles(entity.enemy.origin - entity.origin)[1]);
     if (abs(yawtoenemy) > (isdefined(entity.var_1c0eb62a) ? entity.var_1c0eb62a : 60)) {
-        return 0;
+        return false;
     }
     if (!entity cansee(entity.enemy)) {
-        return 0;
+        return false;
     }
     if (!tracepassedonnavmesh(entity.origin, isdefined(entity.enemy.last_valid_position) ? entity.enemy.last_valid_position : entity.enemy.origin, entity.enemy getpathfindingradius())) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
@@ -654,21 +654,21 @@ function private function_7ffbbff(entity) {
 function private function_105988a0(entity) {
     /#
         if (getdvarint(#"hash_541d64bc060bdd29", 0)) {
-            return 1;
+            return true;
         }
     #/
     if (!isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     var_33f55f67 = blackboard::getblackboardevents("nfrtu_leap_melee");
     if (isdefined(var_33f55f67) && var_33f55f67.size) {
         foreach (var_3bfe8ebe in var_33f55f67) {
             if (var_3bfe8ebe.data.enemy === entity.enemy) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu
@@ -678,21 +678,21 @@ function private function_105988a0(entity) {
 function private function_c2f87d6(entity) {
     /#
         if (getdvarint(#"hash_43a13163c1956e08", 0)) {
-            return 1;
+            return true;
         }
     #/
     if (!isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     var_33f55f67 = blackboard::getblackboardevents("nfrtu_run_melee");
     if (isdefined(var_33f55f67) && var_33f55f67.size) {
         foreach (var_3bfe8ebe in var_33f55f67) {
             if (var_3bfe8ebe.data.enemy === entity.enemy) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace archetypenosferatu/archetype_nosferatu

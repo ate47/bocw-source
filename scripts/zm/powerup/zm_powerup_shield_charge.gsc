@@ -39,10 +39,10 @@ function func_drop_when_players_own() {
     players = getplayers();
     foreach (player in players) {
         if ((isdefined(player.armortier) ? player.armortier : 0) > 0) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_powerup_shield_charge/zm_powerup_shield_charge

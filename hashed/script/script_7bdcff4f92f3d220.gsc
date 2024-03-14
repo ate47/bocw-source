@@ -107,7 +107,7 @@ function private on_menu_response(eventstruct) {
                         self switchtoweapon(killstreakweapon);
                     }
                 }
-            } else if (1) {
+            } else if (true) {
                 killstreaktype = get_by_menu_name(self.killstreak[var_5b220756]);
                 killstreakweapon = get_killstreak_weapon(killstreaktype);
                 self switchtoweapon(killstreakweapon);
@@ -123,7 +123,7 @@ function private on_menu_response(eventstruct) {
         if (isdefined(killstreakbundle)) {
             var_18caa97d = getitemindexfromref(var_b133a8aa.unlockableitem);
             iteminfo = getunlockableiteminfofromindex(var_18caa97d, 0);
-            if (1) {
+            if (true) {
                 self give(killstreakbundle.var_d3413870);
                 self switchtoweapon(killstreakbundle.ksweapon);
             }

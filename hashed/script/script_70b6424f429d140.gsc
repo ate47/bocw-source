@@ -311,7 +311,7 @@ function function_e826dfbb() {
 function function_72dfda8f() {
     self endon(#"death");
     level endon(#"heli_intro_complete");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"shake_low", #"shake_med", #"hash_7fbec71ff58f17be");
         level.var_8f8dc88e = waitresult._notify;
@@ -327,7 +327,7 @@ function function_8227f24e() {
     level endon(#"heli_intro_complete");
     level.var_8f8dc88e = "shake_low";
     thread function_72dfda8f();
-    while (1) {
+    while (true) {
         source = self.origin;
         pitch = randomfloatrange(0, 0.15);
         yaw = randomfloatrange(0, 0.15);
@@ -367,7 +367,7 @@ function function_3cebcd1b() {
     level endon(#"bustout_start_shooting_house");
     var_979d3fe0 = [5:#"heli_focus_rear_house", 4:#"heli_focus_mid_house", 3:#"hit1_truck_front", 2:#"hit1_truck_mid", 1:#"hit1_truck_house", 0:#"hit1_truck_rear"];
     var_f01b798 = [5:"heli_focus_rear_house", 4:"heli_focus_mid_house", 3:"hit1_truck_front", 2:"hit1_truck_mid", 1:"hit1_truck_house", 0:"hit1_truck_rear"];
-    while (1) {
+    while (true) {
         ret = undefined;
         ret = level waittill(#"hit1_truck_rear", #"hit1_truck_house", #"hit1_truck_mid", #"hit1_truck_front", #"heli_focus_mid_house", #"heli_focus_rear_house");
         var_87c48267 = "GetEntDislikesHashStrings";
@@ -445,7 +445,7 @@ function function_efa33b5b(heli, tname, tag, var_2d65f507, var_ba240678, var_fa2
 // Size: 0x9e
 function function_336e9e88() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         /#
             sphere(self.origin + vectorscale((0, 0, 1), 12), 4, (1, 1, 0), 1, 0, 10, 1);
             sphere(self.origin, 8, (1, 1, 0), 1, 0, 10, 1);
@@ -461,7 +461,7 @@ function function_336e9e88() {
 function function_833e9642(tag) {
     self endon(#"death");
     tag = "tag_missle_target";
-    while (1) {
+    while (true) {
         /#
             sphere(self gettagorigin(tag), 16, self.col_hack, 1, 0, 10, 1);
         #/
@@ -539,7 +539,7 @@ function function_cbe25a41(var_4cd99adc, tag, var_fa2357fe = 0, var_1a67724f = 0
     var_13ad4669 = 0.05;
     self sethoverparams(75, 100, 50);
     self.var_2791e894 = 0;
-    while (1) {
+    while (true) {
         if (!isdefined(self.var_ba240678.tracking) && self.var_1a67724f == 0) {
             waitframe(1);
             continue;
@@ -670,7 +670,7 @@ function function_ccfab96() {
     var_7e34c54c = "c_t9_usa_hero_woods_head1_igc_no_bandana";
     curr = var_a77bd386;
     var_35d2e273 = 0;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill([2:"head_swap_flappy", 1:"head_swap_normal", 0:"head_swap_none"]);
         switch (waitresult._notify) {

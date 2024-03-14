@@ -89,7 +89,7 @@ function function_593b9cbb(&queue, flag) {
         assert(queue.size == 0);
     #/
     self clientfield::set(flag, 0);
-    return 1;
+    return true;
 }
 
 // Namespace namespace_e32bb68/namespace_e32bb68

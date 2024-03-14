@@ -135,7 +135,7 @@ function private function_b4b736a0() {
     self notify("35a5a9395d21a138");
     self endon("35a5a9395d21a138");
     self endon(#"death");
-    while (1) {
+    while (true) {
         self waittill(#"zmb_max_ammo", #"hash_75ec9942d2d5fd0f");
         waitframe(1);
         if (isdefined(self.var_c926b4fc)) {
@@ -244,12 +244,12 @@ function function_565c848a(weapon) {
         switch (var_1236db9d) {
         case #"hash_5382c3fae4273fed":
         case #"hash_69461751fa492ea4":
-            return 1;
+            return true;
         default:
-            return 0;
+            return false;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_6fc19861/namespace_6fc19861
@@ -262,12 +262,12 @@ function function_1b662278(weapon) {
         switch (var_1236db9d) {
         case #"hash_7eab88123b09e2c":
         case #"hash_18696150427f2efb":
-            return 1;
+            return true;
         default:
-            return 0;
+            return false;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_6fc19861/namespace_6fc19861
@@ -385,7 +385,7 @@ function private axe_right_melee_attack_think(weapon) {
     var_17b7891d = "75cc23f3c91f3b51" + "axe_right_melee_attack_think";
     self notify(var_17b7891d);
     self endon(var_17b7891d);
-    while (1) {
+    while (true) {
         self waittill(#"weapon_melee_power");
         self function_1ca5af86(weapon);
     }
@@ -410,21 +410,21 @@ function function_1ca5af86(weapon) {
 function function_1fa698a6(target, view_pos, forward_view_angles, var_ccb70dad, target_pos, var_3270c905) {
     dist_sq = distancesquared(view_pos, target_pos);
     if (dist_sq > level.var_386befd7) {
-        return 0;
+        return false;
     }
     v_normal = vectornormalize(target_pos - self.origin);
     dot = vectordot(var_ccb70dad, v_normal);
     if (is_true(var_3270c905)) {
         if (dot <= 0 && dist_sq > 1600) {
-            return 0;
+            return false;
         }
         if (0 == target damageconetrace(view_pos, self, forward_view_angles)) {
-            return 0;
+            return false;
         }
     } else if (dot <= 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_6fc19861/namespace_6fc19861
@@ -508,7 +508,7 @@ function private function_219565f5(weapon) {
     self endon(#"death");
     self notify("43c14c4f1b42d42a");
     self endon("43c14c4f1b42d42a");
-    while (1) {
+    while (true) {
         self waittill(#"weapon_melee_power_left");
         if (is_true(self.var_9996fc0f)) {
             continue;
@@ -930,7 +930,7 @@ function function_d243e3bc(*item) {
 function function_6492d995(*item) {
     var_3c4fcfcf = self function_49fa2899();
     if (!isdefined(var_3c4fcfcf)) {
-        return 0;
+        return false;
     }
     var_2f399b51 = var_3c4fcfcf.altweapon.maxammo;
     var_d5f34ff9 = self getweaponammostock(var_3c4fcfcf.altweapon);
@@ -1070,15 +1070,15 @@ function cmd(cmd) {
         switch (cmd) {
         case #"hash_4fd39fa505917bb8":
             function_4e036cff(#"axe_gun_volatile_crystal_item_t9");
-            return;
+            break;
         case #"hash_3282d077fe3c9d0c":
             function_4e036cff(#"axe_gun_energetic_shard_item_t9");
-            return;
+            break;
         case #"hash_2bbefdbbe0dcca8":
             function_c1fdd154();
-            return;
+            break;
         default:
-            return;
+            break;
         }
     #/
 }

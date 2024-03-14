@@ -204,12 +204,12 @@ function function_b686c867(e_attacker) {
     n_current_time = float(gettime()) / 1000;
     if (isplayer(e_attacker)) {
         if (!isdefined(e_attacker.aat_cooldown_start[#"zm_ammomod_deadwire_explosion"])) {
-            return 1;
+            return true;
         } else if (isdefined(e_attacker.aat_cooldown_start[#"zm_ammomod_deadwire_explosion"]) && n_current_time >= e_attacker.aat_cooldown_start[#"zm_ammomod_deadwire_explosion"] + 30) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire

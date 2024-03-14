@@ -209,7 +209,7 @@ function perk_machine_think(str_key, s_custom_perk) {
     str_off = s_custom_perk.alias + "_off";
     str_notify = str_key + "_power_on";
     var_a1247076 = 0;
-    while (1) {
+    while (true) {
         machine = getentarray(s_custom_perk.radiant_machine_name, "targetname");
         for (i = 0; i < machine.size; i++) {
             machine[i] setmodel(level.machine_assets[str_key].off_model);
@@ -222,37 +222,37 @@ function perk_machine_think(str_key, s_custom_perk) {
                 switch (str_key) {
                 case #"hash_210097a75bb6c49a":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_18affc9c62259b97", machine[i]);
-                    continue;
+                    break;
                 case #"hash_51b6cc6dbafb7f31":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_7b42c6913ace5b92", machine[i]);
-                    continue;
+                    break;
                 case #"hash_47d7a8105237c88":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_1beb3b600b93acae", machine[i]);
-                    continue;
+                    break;
                 case #"hash_7f98b3dd3cce95aa":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_366d84a7a7556fa4", machine[i]);
-                    continue;
+                    break;
                 case #"hash_5930cf0eb070e35a":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_1222f02fd5f3dc90", machine[i]);
-                    continue;
+                    break;
                 case #"hash_602a1b6107105f07":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_4461e8f7ec3c9836", machine[i]);
-                    continue;
+                    break;
                 case #"hash_38c08136902fd553":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_5a1f67cc9ebe8f78", machine[i]);
-                    continue;
+                    break;
                 case #"hash_17e4ae593eaf4a47":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_4ee5d6142a3e1e93", machine[i]);
-                    continue;
+                    break;
                 case #"hash_1ea1a9cfee998e89":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_1e4e6f5e54d92b01", machine[i]);
-                    continue;
+                    break;
                 case #"hash_3417450e1347185":
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_111451daa3600bb1", machine[i]);
-                    continue;
+                    break;
                 default:
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_75209b2b8f60e888", machine[i]);
-                    continue;
+                    break;
                 }
             }
         }
@@ -426,7 +426,7 @@ function electric_perks_dialog() {
     self endon(#"warning_dialog");
     level endon(#"switch_flipped");
     timer = 0;
-    while (1) {
+    while (true) {
         wait(0.5);
         players = getplayers();
         for (i = 0; i < players.size; i++) {
@@ -490,38 +490,38 @@ function function_6f418fda(perk) {
 // Size: 0x1ce
 function vending_trigger_can_player_use(player, var_93e7ba4f) {
     if (!isplayer(player)) {
-        return 0;
+        return false;
     }
     if (player laststand::player_is_in_laststand() || is_true(player.intermission)) {
-        return 0;
+        return false;
     }
     if (player zm_utility::in_revive_trigger()) {
-        return 0;
+        return false;
     }
     if (player isthrowinggrenade()) {
-        return 0;
+        return false;
     }
     if (player isswitchingweapons()) {
-        return 0;
+        return false;
     }
     if (player zm_utility::is_drinking()) {
-        return 0;
+        return false;
     }
     if (player ismeleeing()) {
-        return 0;
+        return false;
     }
     if (is_true(var_93e7ba4f)) {
         var_7dbbbf1f = array::exclude(level.var_b8be892e, player.perks_active);
         if (!isdefined(var_7dbbbf1f)) {
-            return 0;
+            return false;
         }
         if (isdefined(self.stub) && isdefined(self.stub.machine) && isdefined(player.var_c27f1e90[self.stub.machine.script_int])) {
             if (!isinarray(level.var_b8be892e, player.var_c27f1e90[self.stub.machine.script_int])) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_perks/zm_perks
@@ -767,7 +767,7 @@ function function_a7ae070c(var_16c042b8, var_b169f6df = 0) {
 function vending_set_hintstring(perk) {
     switch (perk) {
     case #"specialty_armorvest":
-        return;
+        break;
     }
 }
 
@@ -931,10 +931,10 @@ function quantum_bomb_give_nearest_perk_validation(position) {
     range_squared = 32400;
     for (i = 0; i < vending_machines.size; i++) {
         if (distancesquared(vending_machines[i].origin, position) < range_squared) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_perks/zm_perks
@@ -1106,9 +1106,9 @@ function function_d087adc6() {
 // Size: 0x46
 function has_perk_paused(perk) {
     if (isdefined(self.var_c4890291) && isdefined(self.var_c4890291[perk]) && self.var_c4890291[perk]) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_perks/zm_perks
@@ -1374,7 +1374,7 @@ function check_player_has_perk(perk) {
         }
     #/
     dist = 16384;
-    while (1) {
+    while (true) {
         players = getplayers();
         for (i = 0; i < players.size; i++) {
             if (distancesquared(players[i].origin, self.origin) < dist) {
@@ -1481,12 +1481,12 @@ function function_89e748a7() {
 // Size: 0x7e
 function function_ad1814a1(n_index, var_b0ab4cec) {
     if (isdefined(n_index) && n_index >= 0 && n_index < 9) {
-        return 1;
+        return true;
     }
     /#
         println("<unknown string>" + function_9e72a96(var_b0ab4cec) + "<unknown string>");
     #/
-    return 0;
+    return false;
 }
 
 // Namespace zm_perks/zm_perks
@@ -1632,10 +1632,10 @@ function players_are_in_perk_area(perk_machine) {
     dist_check = 9216;
     foreach (player in players) {
         if (distancesquared(player.origin, perk_area_origin) < dist_check) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_perks/zm_perks
@@ -1646,7 +1646,7 @@ function perk_hostmigration() {
     level endon(#"end_game");
     level notify(#"perk_hostmigration");
     level endon(#"perk_hostmigration");
-    while (1) {
+    while (true) {
         level waittill(#"host_migration_end");
         if (isdefined(level._custom_perks) && level._custom_perks.size > 0) {
             a_keys = getarraykeys(level._custom_perks);
@@ -1692,7 +1692,7 @@ function spare_change(str_trigger = "audio_bump_trigger", str_sound = "zmb_perks
 // Size: 0x10c
 function check_for_change() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
@@ -1700,7 +1700,7 @@ function check_for_change() {
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"loose_change_zm", #attacker:player});
             zm_utility::play_sound_at_pos("purchase", player.origin);
             player playrumbleonentity(#"zm_interact_rumble");
-            return;
+            break;
         }
         wait(0.1);
     }
@@ -1984,7 +1984,7 @@ function function_6b2d8dc0() {
 // Size: 0x32
 function function_9a0e9d65() {
     if (!isdefined(self) || !isdefined(self.var_466b927f)) {
-        return 0;
+        return false;
     }
     return self.var_466b927f.size >= 4;
 }
@@ -1995,7 +1995,7 @@ function function_9a0e9d65() {
 // Size: 0x50
 function function_80514167() {
     if (!isdefined(self) || !isdefined(self.var_466b927f) || !isdefined(self.var_67ba1237)) {
-        return 0;
+        return false;
     }
     return !self.var_466b927f.size && !self.var_67ba1237.size;
 }
@@ -2143,10 +2143,10 @@ function function_8c7cee86() {
 function function_c210fc2e(n_index, a_structs) {
     foreach (struct in a_structs) {
         if (isdefined(struct.script_int) && struct.script_int == n_index) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_perks/zm_perks
@@ -2161,32 +2161,32 @@ function function_b7f2c635(player) {
         player zm_score::add_to_player_score(100);
     }
     if (player.var_47654123[n_slot] && !isdefined(player function_5ea0c6cf())) {
-        return 0;
+        return false;
     }
     if (is_true(self.stub.var_e80aca0a)) {
-        return 0;
+        return false;
     }
     if (!isdefined(n_slot) || !isdefined(player.var_c27f1e90) || !isdefined(player.var_c27f1e90[n_slot]) || player.var_c27f1e90[n_slot] == "") {
-        return 0;
+        return false;
     }
     if (zm_custom::function_8b8fa6e5(player)) {
-        return 0;
+        return false;
     }
     if (isdefined(player.perk_purchased)) {
-        return 0;
+        return false;
     }
     var_99442276 = 0;
     if (self.stub.var_3468124.var_2977c27 == "off") {
         self sethintstringforplayer(player, #"zombie/need_power");
-        return 1;
+        return true;
     }
     if (zm_trial_disable_buys::is_active()) {
         self sethintstringforplayer(player, #"hash_55d25caf8f7bbb2f");
-        return 1;
+        return true;
     }
     if (zm_trial_disable_perks::is_active() || !zm_custom::function_901b751c(#"zmperksactive") || zm_trial_randomize_perks::is_active()) {
         self sethintstringforplayer(player, #"hash_77db65489366a43");
-        return 1;
+        return true;
     }
     if (self.stub.var_3468124.var_2977c27 == "on" && isdefined(perk) && !player hasperk(perk) && self vending_trigger_can_player_use(player, 1) && !player has_perk_paused(perk) && !player zm_utility::in_revive_trigger() && !zm_equipment::is_equipment_that_blocks_purchase(player getcurrentweapon()) && !player zm_equipment::hacker_active()) {
         var_99442276 = 1;
@@ -3117,7 +3117,7 @@ function function_ba56adf1(var_c188cf87, var_59ad3e22) {
     level endon(#"end_game");
     level flag::wait_till("all_players_spawned");
     level clientfield::set("" + #"hash_46334db9e3c76275", 1);
-    while (1) {
+    while (true) {
         a_e_players = arraysortclosest(level.players, var_c188cf87, undefined, 0, 750);
         a_e_players = array::filter(a_e_players, 0, &function_66c0d837, var_c188cf87, var_59ad3e22);
         if (a_e_players.size) {
@@ -3153,9 +3153,9 @@ function function_c99f4d81(var_c188cf87, var_59ad3e22) {
 // Size: 0xec
 function function_66c0d837(e_player, var_c188cf87, var_59ad3e22) {
     if (zm_utility::is_player_valid(e_player) && distancesquared(e_player.origin, var_c188cf87) < 562500 && abs(e_player.origin[2] - var_c188cf87[2]) < 85 && vectordot(vectornormalize(e_player.origin - var_c188cf87), anglestoforward(var_59ad3e22)) > 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_perks/zm_perks
@@ -3280,10 +3280,10 @@ function function_50691178() {
                 self.var_7341f980[self.var_7341f980.size] = talent;
             }
             self namespace_791d0451::function_4c1d0e25(talent, 1);
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_perks/zm_perks
@@ -3320,9 +3320,9 @@ function function_2babacc2() {
 // Size: 0x2e
 function function_e56d8ef4(str_perk_name) {
     if (isinarray(self.var_774e0ad7, str_perk_name)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_perks/zm_perks
@@ -3331,9 +3331,9 @@ function function_e56d8ef4(str_perk_name) {
 // Size: 0x2e
 function private function_d1cad55c(var_16c042b8) {
     if (function_e56d8ef4(var_16c042b8)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_perks/zm_perks
@@ -3355,14 +3355,14 @@ function register_lost_perk_override(func_override) {
 // Size: 0xb4
 function lost_perk_override(perk) {
     if (!self laststand::player_is_in_laststand()) {
-        return 0;
+        return false;
     }
     foreach (var_a4dddafc in level.var_91ac8112) {
         if (self [[ var_a4dddafc ]](perk)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_perks/zm_perks

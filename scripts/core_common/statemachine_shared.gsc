@@ -199,7 +199,7 @@ function threadnotifyconnections(state) {
 function connection_on_notify(state_machine, notify_name, connection) {
     self endon(#"death", #"disconnect", state_machine.change_note);
     state_machine endon(#"_cancel_connections");
-    while (1) {
+    while (true) {
         params = undefined;
         params = self waittill(notify_name);
         connectionvalid = 1;
@@ -289,7 +289,7 @@ function function_acc83382() {
         if (!isdefined(heightstart)) {
             heightstart = 20;
         }
-        while (1) {
+        while (true) {
             i = 1;
             foreach (state_machine in owner.state_machines) {
                 statename = "<unknown string>";

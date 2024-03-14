@@ -368,17 +368,17 @@ function private function_13aa0d3(bonuscard, bonuses) {
     switch (bonuscard) {
     case #"hash_44e17bf715d7ac82":
         bonuses.var_1c89585f = 1;
-        return;
+        break;
     case #"hash_639ebbcda56447e7":
         bonuses.var_c38351d8 = 1;
         bonuses.var_3f5d0ded = 1;
-        return;
+        break;
     case #"bonuscard_primary_gunfighter":
         bonuses.var_e22b188d = 1;
-        return;
+        break;
     case #"hash_4c417275f7523978":
         bonuses.extraperks = 1;
-        return;
+        break;
     }
 }
 
@@ -478,7 +478,7 @@ function private function_3dd3f3b6() {
     /#
         level endon(#"game_ended");
         var_ec9c0769 = [#"killstreak":4, #"bonuscard":3, #"talent":6];
-        while (1) {
+        while (true) {
             slot = getdvarstring(#"hash_601d0ce91dfa4b22", "<unknown string>");
             if (slot == "<unknown string>") {
                 waitframe(1);

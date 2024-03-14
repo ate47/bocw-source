@@ -103,7 +103,7 @@ function function_157f1b14() {
     self notify("74100d7d43395c8");
     self endon("74100d7d43395c8");
     level endon(#"game_over", #"hash_15db1223146bc923");
-    while (1) {
+    while (true) {
         wait(0.5);
         state = namespace_4dae815d::function_59a9cf1d();
         if (state == 0) {
@@ -190,7 +190,7 @@ function function_20cf5ee5() {
     var_16ddcf3 = vectorscale(up, -24);
     var_cae2bc5d = vectorscale(up, -48);
     wait(randomfloat(10));
-    while (1) {
+    while (true) {
         self.state = 1;
         self.script_model namespace_e32bb68::function_3a59ec34("evt_doa_hazard_pungi_spike_down");
         self.script_model moveto(self.origin + var_cae2bc5d, 0.15);

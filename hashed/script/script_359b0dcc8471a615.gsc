@@ -150,12 +150,12 @@ function function_a150d07b(randomize = 0) {
 // Size: 0x62
 function function_a23c96ea() {
     if (getdvarint(#"nuketown_mannequin", 0)) {
-        return 1;
+        return true;
     }
     if (sessionmodeisonlinegame() && !sessionmodeisprivateonlinegame()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_7fe06af4/namespace_7fe06af4
@@ -179,7 +179,7 @@ function devgui_init() {
 function function_9c9ba5() {
     /#
         level endon(#"game_ended");
-        while (1) {
+        while (true) {
             wait(0.5);
             function_a150d07b();
         }
@@ -193,7 +193,7 @@ function function_9c9ba5() {
 function function_ee18bf8f() {
     /#
         level endon(#"game_ended");
-        while (1) {
+        while (true) {
             wait(0.5);
             state = getdvarint(#"hash_4c0f0935eafdfaa", 0);
             if (state || state === 2) {
@@ -211,7 +211,7 @@ function function_ee18bf8f() {
 function function_fa68a2e6() {
     /#
         self endon(#"death", #"headless");
-        while (1) {
+        while (true) {
             sphere(self.origin, 16, (0, 1, 0));
             waitframe(1);
         }

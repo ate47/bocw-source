@@ -176,7 +176,7 @@ function devgui_notif_init() {
 function function_a65863ce() {
     /#
         level endon(#"game_ended");
-        while (1) {
+        while (true) {
             if (getdvarint(#"hash_5b32141cac382fa3", 0) > 0) {
                 remove_devgui("<unknown string>");
                 level thread notif_devgui_gun_rank();
@@ -345,33 +345,33 @@ function notif_devgui_gun_rank() {
                 if (weapon[#"reference"] != "<unknown string>") {
                     arrayinsert(a_weapons[#"pistol"], gun, 0);
                 }
-                continue;
+                break;
             case #"weapon_launcher":
                 arrayinsert(a_weapons[#"launcher"], gun, 0);
-                continue;
+                break;
             case #"weapon_assault":
                 arrayinsert(a_weapons[#"assault"], gun, 0);
-                continue;
+                break;
             case #"weapon_tactical":
                 arrayinsert(a_weapons[#"tactical"], gun, 0);
-                continue;
+                break;
             case #"weapon_smg":
                 arrayinsert(a_weapons[#"smg"], gun, 0);
-                continue;
+                break;
             case #"weapon_lmg":
                 arrayinsert(a_weapons[#"lmg"], gun, 0);
-                continue;
+                break;
             case #"weapon_cqb":
                 arrayinsert(a_weapons[#"shotgun"], gun, 0);
-                continue;
+                break;
             case #"weapon_sniper":
                 arrayinsert(a_weapons[#"sniper"], gun, 0);
-                continue;
+                break;
             case #"weapon_knife":
                 arrayinsert(a_weapons[#"knife"], gun, 0);
-                continue;
+                break;
             default:
-                continue;
+                break;
             }
         }
         foreach (group_name, gun_group in a_weapons) {
@@ -478,7 +478,7 @@ function notif_devgui_challenges_think() {
 // Size: 0x7f8
 function popupsfromconsole() {
     /#
-        while (1) {
+        while (true) {
             timeout = getdvarfloat(#"scr_popuptime", 1);
             if (timeout == 0) {
                 timeout = 1;
@@ -604,9 +604,9 @@ function displaykillstreakhackedteammessagetoall(killstreak, player) {
 // Size: 0x66
 function shoulddisplayteammessages() {
     if (level.hardcoremode == 1 || level.splitscreen == 1 || sessionmodeiscampaigngame() || level.var_c6dc0337 === 1) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace popups/popups_shared

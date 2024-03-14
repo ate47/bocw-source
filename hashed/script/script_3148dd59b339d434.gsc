@@ -31,7 +31,7 @@ function private function_70a657d8() {
 // Size: 0x2c2
 function private debug() {
     /#
-        while (1) {
+        while (true) {
             foreach (var_31f1a7be in level.var_e051b3bc) {
                 recordcircle(var_31f1a7be.origin, var_31f1a7be.radius, (0, 0, 1), "<unknown string>");
                 recordcircle(var_31f1a7be.origin, 20, (0, 0, 1), "<unknown string>");
@@ -122,7 +122,7 @@ function function_11280436(var_f9289185, origin, angles, radius, var_aae3fc82) {
 // Checksum 0x8de9b978, Offset: 0x950
 // Size: 0x110
 function private think() {
-    while (1) {
+    while (true) {
         for (i = 0; i < level.var_e051b3bc.size; i++) {
             var_31f1a7be = level.var_e051b3bc[i];
             var_71890760 = var_31f1a7be function_8ac809ae();
@@ -236,10 +236,10 @@ function private function_8ac809ae() {
     foreach (point in self.goal_points) {
         zombie = point.zombie;
         if (isdefined(zombie) && isalive(zombie)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_ac0c0ba8/namespace_ac0c0ba8

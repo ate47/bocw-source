@@ -365,9 +365,9 @@ function function_cf4432e8(weapon, attacker) {
     weap_min_dmg_range = scoreevents::get_distance_for_weapon(weapon, weaponclass);
     disttovictim = distancesquared(self.origin, attacker.origin);
     if (disttovictim > weap_min_dmg_range) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_b61a349a/namespace_b61a349a
@@ -378,9 +378,9 @@ function function_1d2de48d(attacker) {
     var_2e4eec5f = 16384;
     disttovictim = distancesquared(self.origin, attacker.origin);
     if (disttovictim <= var_2e4eec5f) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_b61a349a/namespace_b61a349a

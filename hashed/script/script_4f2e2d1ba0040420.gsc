@@ -87,7 +87,7 @@ function function_42818ffd(instance) {
 // Checksum 0x668b4bd1, Offset: 0x998
 // Size: 0x15c
 function function_5c3b5e05(v_position, n_obj_id) {
-    while (1) {
+    while (true) {
         var_53aa8ab9 = 0;
         foreach (player in function_a1ef346b()) {
             if (player util::is_player_looking_at(v_position, 0.9) && distancesquared(player.origin, v_position) <= 160000) {
@@ -129,7 +129,7 @@ function function_1e6004ec(instance) {
     level thread function_31125f54();
     level flag::set(#"hash_178cddf0409be677");
     var_4dc5ed09 = 0;
-    while (1) {
+    while (true) {
         foreach (player in function_a1ef346b()) {
             if (player util::is_player_looking_at(var_f6fe9c95.origin, 0.6)) {
                 w_current = player getcurrentweapon();
@@ -148,7 +148,7 @@ function function_1e6004ec(instance) {
         }
         waitframe(1);
     }
-    while (1) {
+    while (true) {
         level.var_570f49c5 = namespace_85745671::function_9d3ad056(#"hash_21f3d5d40d72e08d", var_f6fe9c95.origin, var_f6fe9c95.angles, "exfil_ai", 0);
         if (isdefined(level.var_570f49c5)) {
             break;
@@ -306,7 +306,7 @@ function private function_9190b7da(target) {
 // Checksum 0x1d2253ba, Offset: 0x1c40
 // Size: 0x21c
 function private function_31125f54() {
-    while (1) {
+    while (true) {
         s_waitresult = undefined;
         s_waitresult = level waittill(#"hash_4fbe4720f6f13107", #"exfil_cleared");
         if (level flag::get(#"exfil_cleared") && level flag::get(#"hash_fdc24944f59c262") || is_true(s_waitresult.b_success)) {
@@ -319,12 +319,12 @@ function private function_31125f54() {
                 player zm_stats::increment_challenge_stat(#"hash_774b3a384fb5ad");
             }
             level notify(#"hash_383cbd169f8d0938", {#b_success:1});
-            return;
+            break;
         }
         if (isdefined(level.var_72a3d8bc)) {
             level thread scene::init_streamer(level.var_72a3d8bc, getplayers(), 0, 0);
         }
-        return;
+        break;
     }
 }
 
@@ -438,7 +438,7 @@ function function_f0e44578(a_ents) {
     var_69406530 endon(#"death");
     level endon(#"end_game");
     var_69406530 waittill(#"hash_719b11d1aede6899");
-    while (1) {
+    while (true) {
         var_69406530 vehicle::lights_off();
         wait(randomfloatrange(0.25, 1));
         var_69406530 vehicle::lights_on();

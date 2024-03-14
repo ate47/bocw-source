@@ -92,7 +92,7 @@ function function_3d070ab6(location, killstreak_id, killstreaktype) {
     team = self.team;
     level influencers::create_enemy_influencer("artillery", location.origin, team);
     self thread function_88e2e18a(killstreaktype, location, team, killstreak_id, 1);
-    return 1;
+    return true;
 }
 
 // Namespace napalm_strike/namespace_b00a727a
@@ -692,15 +692,15 @@ function function_2f66cd96(var_93057333, weapon, killstreakbundle) {
 // Size: 0xbc
 function private candofiredamage(victim, resetfiretime) {
     if (isplayer(victim) && victim depthofplayerinwater() >= 1) {
-        return 0;
+        return false;
     }
     entnum = victim getentitynumber();
     if (!isdefined(level.var_b0b0650e[entnum])) {
         level.var_b0b0650e[entnum] = 1;
         level thread resetfiredamage(entnum, resetfiretime);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace napalm_strike/namespace_b00a727a

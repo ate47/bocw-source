@@ -57,7 +57,7 @@ function private function_8cdaa4ca() {
     self notify("44c5c1a40d2c6661");
     self endon("44c5c1a40d2c6661");
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         current_time = gettime();
         for (var_df2fb7be = level.var_a82d661a.size - 1; var_df2fb7be >= 0; var_df2fb7be = var_df2fb7be - 1) {
             var_b175b436 = level.var_a82d661a[var_df2fb7be];
@@ -124,7 +124,7 @@ function function_9d0a9f4e(entity, awareness_event) {
         }
     #/
     if (is_true(self.ignoreall)) {
-        return 0;
+        return false;
     }
     if (isdefined(self.var_3eaac485) && self.var_3eaac485 > gettime()) {
         /#
@@ -132,7 +132,7 @@ function function_9d0a9f4e(entity, awareness_event) {
                 record3dtext("<unknown string>", (start_pos + awareness_event.position) / 2, var_a6373be0, "<unknown string>", entity);
             }
         #/
-        return 0;
+        return false;
     }
     if (self isplayinganimscripted()) {
         /#
@@ -140,7 +140,7 @@ function function_9d0a9f4e(entity, awareness_event) {
                 record3dtext("<unknown string>", (start_pos + awareness_event.position) / 2, var_a6373be0, "<unknown string>", entity);
             }
         #/
-        return 0;
+        return false;
     }
     if (isdefined(entity.var_b4b8ad5f)) {
         if (distancesquared(entity.var_b4b8ad5f.position, awareness_event.position) <= function_a3f6cdac(256)) {
@@ -149,7 +149,7 @@ function function_9d0a9f4e(entity, awareness_event) {
                     record3dtext("<unknown string>", (start_pos + awareness_event.position) / 2, var_a6373be0, "<unknown string>", entity);
                 }
             #/
-            return 0;
+            return false;
         }
     }
     /#
@@ -157,7 +157,7 @@ function function_9d0a9f4e(entity, awareness_event) {
             record3dtext("<unknown string>", (start_pos + awareness_event.position) / 2, var_a6373be0, "<unknown string>", entity);
         }
     #/
-    return 1;
+    return true;
 }
 
 // Namespace awareness/namespace_df233b8a
@@ -208,7 +208,7 @@ function function_cf2fab43(event) {
 // Size: 0x110
 function private function_3041c2b8() {
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"glass_smash");
         origin = undefined;
@@ -235,7 +235,7 @@ function private function_3041c2b8() {
 function private function_7a84e563() {
     level endon(#"game_ended");
     level.var_ee6c4739 = [];
-    while (1) {
+    while (true) {
         waitframe(1);
         if (level.var_ee6c4739.size > 0) {
             event = array::pop(level.var_ee6c4739, 0, 0);
@@ -282,7 +282,7 @@ function function_44454d0f(n_radius) {
     } else {
         var_80121938 = 2000;
     }
-    while (1) {
+    while (true) {
         var_fb6494ee = var_80121938;
         if (is_true(self.var_4efd1a01)) {
             var_fb6494ee = 5000;
@@ -365,7 +365,7 @@ function private function_83c46567(dynent) {
 // Size: 0x2c6
 function private function_4645d5f8(*params) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"gunshot", #"explode", #"hash_c77d45f3ba174cb", #"alert");
         if (self.current_state.name === #"chase") {
@@ -397,7 +397,7 @@ function private function_4645d5f8(*params) {
 // Size: 0xd6
 function private function_fc45f7e2(*params) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"hash_4f3c0b937432f8b0");
         switch (waitresult._notify) {
@@ -482,7 +482,7 @@ function function_fa6e010d() {
         self.var_a2f87939 = 2;
     }
     var_4e686deb = int(pow(2, self.var_a2f87939) - 1);
-    while (1) {
+    while (true) {
         if (((self getentitynumber() & var_4e686deb) != (getlevelframenumber() & var_4e686deb) || flag::get(#"hash_624e5d5dfb7f742b")) && !is_true(self.var_bd1d170c)) {
             /#
                 if (getdvarint(#"hash_7228e2918da6da2a", 0) && get(#"hash_624e5d5dfb7f742b")) {
@@ -645,7 +645,7 @@ function function_3bac247(entity) {
     var_f0b43a45 = isdefined(entity.var_e4514346) ? entity.var_e4514346 : 0.5;
     var_7f4fe0f1 = isdefined(entity.var_f6ea781c) ? entity.var_f6ea781c : 1;
     entity.wander_radius = isdefined(entity.spawn_point.wander_radius) ? entity.spawn_point.wander_radius : isdefined(entity.wander_radius) ? entity.wander_radius : 128;
-    while (1) {
+    while (true) {
         flag::wait_till_clear(#"hash_624e5d5dfb7f742b");
         [[ level.var_108771cb ]]->waitinqueue(entity);
         if (isdefined(entity.spawn_point) && isdefined(entity.spawn_point.origin)) {
@@ -695,14 +695,14 @@ function function_c91092d2(var_f83c1c54, var_4972773c) {
     if (!var_27cd0f02) {
         self.var_eb5eeb0f[var_f83c1c54 getentitynumber()] = undefined;
         if (!isdefined(var_4972773c)) {
-            return 0;
+            return false;
         }
     } else {
         if (!isdefined(self.var_eb5eeb0f[var_f83c1c54 getentitynumber()])) {
             self.var_eb5eeb0f[var_f83c1c54 getentitynumber()] = gettime();
         }
         if (!isdefined(var_4972773c)) {
-            return 1;
+            return true;
         }
     }
     return var_27cd0f02 && gettime() - self.var_eb5eeb0f[var_f83c1c54 getentitynumber()] > int(var_4972773c * 1000);
@@ -755,7 +755,7 @@ function function_b264a0bc(entity) {
 // Size: 0x7c
 function function_4df0b826(entity, enemy) {
     if (!isdefined(entity.var_341387d5) || !isdefined(entity.var_b518f045)) {
-        return 1;
+        return true;
     }
     return distance2dsquared(entity.var_341387d5, enemy.origin) <= function_a3f6cdac(entity.var_b518f045);
 }
@@ -799,11 +799,11 @@ function function_6938f39b(entity, awareness_event) {
     if (distancesquared(entity.origin, awareness_event.position) < function_a3f6cdac(256) && !entity function_8ccbffca(awareness_event.params.enemy)) {
         function_c241ef9a(entity, awareness_event.params.enemy, -1);
         set_state(entity, #"chase");
-        return 1;
+        return true;
     } else if (!isdefined(awareness_event.entity) || !entity seerecently(awareness_event.entity, 1)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace awareness/namespace_df233b8a
@@ -998,23 +998,23 @@ function function_d7fedde2(entity) {
 // Size: 0x2b6
 function function_2bc424fd(entity, target) {
     if (!issentient(target)) {
-        return 0;
+        return false;
     }
     if (entity function_8ccbffca(target)) {
-        return 0;
+        return false;
     }
     var_fea794a = 0;
     if (isplayer(target) && target isinvehicle()) {
         var_fea794a = namespace_85745671::function_44a83b40(target getvehicleoccupied());
         if (distance2dsquared(entity.origin, target.origin) > 9000000) {
-            return 0;
+            return false;
         }
     }
     if (isplayer(target) && target util::is_spectating()) {
-        return 0;
+        return false;
     }
     if (entity.var_8a3828c6 === target) {
-        return 1;
+        return true;
     }
     var_a63ddc4 = entity.var_6324ed63 === -1 || isdefined(entity.var_6324ed63) && gettime() < entity.var_6324ed63;
     var_27cd0f02 = entity seerecently(target, isdefined(entity.var_e453bcfa) ? entity.var_e453bcfa : 5);
@@ -1544,16 +1544,16 @@ function function_b9f81e8b(entity) {
 // Size: 0xd0
 function function_85bb995c() {
     self endon(#"death", #"state_changed");
-    while (1) {
+    while (true) {
         wait(1);
         if (!isdefined(self.enemy)) {
             continue;
         }
         if (isdefined(level.var_7d45d0d4.activeobjective) && isdefined(self.var_6324ed63) && self.var_6324ed63 > gettime()) {
-            return;
+            break;
         }
         if (self flag::get(#"hash_52d6a75cdbf101f3")) {
-            return;
+            break;
         }
         self generateradioevent("radio_event_high", 800);
     }
@@ -1622,10 +1622,10 @@ function function_fd83d499(entity) {
                     line(entity.origin, entity.first_node.origin, (0.1, 0.9, 0));
                 }
             #/
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace awareness/namespace_df233b8a
@@ -1718,16 +1718,16 @@ function function_c6b1009e() {
     switch (self.current_state.name) {
     case #"wander":
         self clientfield::set("sndAwarenessChange", 1);
-        return;
+        break;
     case #"investigate":
         self clientfield::set("sndAwarenessChange", 2);
-        return;
+        break;
     case #"chase":
         self clientfield::set("sndAwarenessChange", 3);
-        return;
+        break;
     default:
         self clientfield::set("sndAwarenessChange", 1);
-        return;
+        break;
     }
 }
 

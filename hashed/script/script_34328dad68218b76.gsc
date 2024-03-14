@@ -176,7 +176,7 @@ function function_cfa54bac() {
     }
     level thread function_66917018();
     self thread function_4990efc9();
-    while (1) {
+    while (true) {
         self waittill(#"damage", #"healing");
         n_health_percent = self.health / self.maxhealth;
         foreach (e_player in getplayers()) {

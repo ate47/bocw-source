@@ -90,10 +90,10 @@ function private function_df47b31b(flag) {
     for (index = 0; index < level.insertions.size; index++) {
         insertion = level.insertions[index];
         if (!insertion flag::get(flag)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace player_insertion/namespace_3088f362
@@ -251,7 +251,7 @@ function function_f31cf3bb(point, direction, step, depth, var_94a1d56d = 5) {
     }
     count = 0;
     fail_safe = 50;
-    while (1) {
+    while (true) {
         if (depth > var_94a1d56d || count > fail_safe) {
             return undefined;
         }
@@ -581,7 +581,7 @@ function function_da0c552e() {
 // Checksum 0x21533913, Offset: 0x2b10
 // Size: 0x74
 function function_85635daf(startpoint, total_distance, delta_t) {
-    while (1) {
+    while (true) {
         current_distance = distance(startpoint, self.origin);
         current_t = current_distance / total_distance;
         if (current_t > delta_t) {
@@ -607,12 +607,12 @@ function function_2b41b403(*velocity) {
 // Size: 0x5c
 function function_51350a25() {
     if (level.var_f2814a96 !== 0 && level.var_f2814a96 !== 2) {
-        return 0;
+        return false;
     }
     if (self clientfield::get_to_player("inside_infiltration_vehicle") == 1) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace player_insertion/namespace_3088f362

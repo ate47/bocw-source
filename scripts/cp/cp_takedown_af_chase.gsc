@@ -228,7 +228,7 @@ function function_269adc62(var_d36613f6) {
     self endon(#"death", #"hash_79da7f3e8e35f82d");
     var_620beea5 = self gamepadusedlast();
     var_b04af81c = self function_afbfaf58();
-    while (1) {
+    while (true) {
         var_288becd = self gamepadusedlast();
         var_b86dfa19 = self function_afbfaf58();
         if (var_288becd != var_620beea5 || var_b86dfa19 != var_b04af81c) {
@@ -354,7 +354,7 @@ function function_8bbbfc85() {
     level.player endon(#"blow_rc_car");
     var_727f982c = 20;
     var_727f982c = var_727f982c * 39.3701;
-    while (1) {
+    while (true) {
         old_dist = distance2d(level.rc_car.origin, level.af_plane.origin);
         wait(5);
         var_ebb91c3f = distance2d(level.rc_car.origin, level.af_plane.origin);
@@ -372,11 +372,11 @@ function function_8bbbfc85() {
 // Size: 0x82
 function function_cc5078c1() {
     level.player endon(#"blow_rc_car");
-    while (1) {
+    while (true) {
         if (self boostbuttonpressed()) {
             level.player notify(#"rc_boosted");
             level flag::set("rc_boosted");
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -415,7 +415,7 @@ function function_761593b3() {
     level waittill(#"show_rc_hint");
     player = getplayers()[0];
     player thread util::show_hint_text(#"hash_102900bc26caa616", undefined, "rcxd_stop_hint_controller", -1);
-    while (1) {
+    while (true) {
         if (player actionslotfourbuttonpressed()) {
             player notify(#"rcxd_stop_hint_controller");
             break;
@@ -445,7 +445,7 @@ function function_7766538b() {
     level flag::wait_till("af_start_crash");
     player = getplayers()[0];
     player namespace_f48ab2e1::create(#"hash_400c7c122bc26dec", #"hash_6e490c4cf7210a63");
-    while (1) {
+    while (true) {
         level flag::wait_till("af_start_crash");
         level flag::wait_till_clear("af_start_crash");
     }
@@ -545,7 +545,7 @@ function function_f8223b2e() {
     level endon(#"hash_2b1bc16a2395a69d", #"hash_351eb749d2c8fa9c");
     var_93eeb60a = "shake_med";
     max_speed = 1000;
-    while (1) {
+    while (true) {
         scalar = 1;
         if (level.rc_car.active === 1) {
             scalar = level.rc_car.vehspeed / max_speed;
@@ -997,7 +997,7 @@ function function_dcc35e0b() {
 // Size: 0x1c2
 function function_8d9f9fd7() {
     level endon(#"af_start_rc_car");
-    for (var_2b4fa8ee = 0; 1; var_2b4fa8ee = 1) {
+    for (var_2b4fa8ee = 0; true; var_2b4fa8ee = 1) {
         if (!var_2b4fa8ee) {
             self thread scene::play("scene_tkd_hit3_chase_adler", "loop");
         }
@@ -1026,7 +1026,7 @@ function function_8d9f9fd7() {
 // Size: 0x70
 function function_c0061b42() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self waittill(#"hash_1bab4b4669295d55");
         self namespace_db2381c4::function_4b711786();
         self waittill(#"hash_26c4e6fedc0c9799");
@@ -1041,7 +1041,7 @@ function function_c0061b42() {
 function function_d4dfd1df() {
     self endon(#"death");
     /#
-        while (1) {
+        while (true) {
             debug_line(self.origin, self.origin + vectorscale((0, 0, 1), 5000), (0, 1, 0), undefined, undefined, 1);
             waitframe(1);
         }
@@ -1132,7 +1132,7 @@ function function_35bf824f() {
     var_539f7582 = [2:"vox_cp_tdwn_07300_adlr_lookleft_81", 1:"vox_cp_tdwn_07300_adlr_trucktotheleft_59", 0:"vox_cp_tdwn_07300_adlr_totheleft_10"];
     var_ea3f660f = 0;
     var_fb6cba84 = 0;
-    while (1) {
+    while (true) {
         ret = undefined;
         ret = level waittill(#"hash_23db14c35403da49");
         wait(randomfloatrange(3, 6));
@@ -1626,7 +1626,7 @@ function function_f311ea18(var_bbe56cd4 = 0) {
 function function_2682a954() {
     self endon(#"death");
     level endon(#"rc_detonate");
-    while (1) {
+    while (true) {
         self namespace_db2381c4::function_323b6e10();
         level flag::wait_till("af_start_crash");
         self namespace_db2381c4::function_53bd0317();
@@ -1765,7 +1765,7 @@ function function_ebfff762() {
     self endon(#"death");
     self endon(#"fake_death");
     level endon(#"af_start_rc_car");
-    while (1) {
+    while (true) {
         self waittill(#"damage");
         level.player playhitmarker(undefined, 5, undefined, 0, 0, 0);
     }
@@ -1787,7 +1787,7 @@ function function_f6fcf011(org, scene) {
     waitframe(1);
     self.vehicle.var_349e69c4--;
     if (self.vehicle.var_349e69c4 == 0) {
-        if (1) {
+        if (true) {
             self.vehicle notify(#"hash_19a857caf532c284");
         } else {
             self.vehicle notify(#"hash_38e103e482582e7f");
@@ -1870,7 +1870,7 @@ function function_326abc48() {
     var_8bd12fb4 = 2;
     var_1d542590 = 1;
     level.var_e37c1d1 = 0;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"hash_1b1fa861e29350f5");
         if (level.var_e37c1d1 < var_8bd12fb4) {
@@ -1897,11 +1897,11 @@ function function_1c4bdba5() {
     level.player endon(#"blow_rc_car");
     var_b2462917 = 30;
     var_b2462917 = var_b2462917 * 12;
-    while (1) {
+    while (true) {
         var_72f2834e = level.rc_car.origin + anglestoforward(level.rc_car.angles) * 150;
         if (var_72f2834e[0] - level.var_49a5d2a4.origin[0] > var_b2462917) {
             level notify(#"hash_4a8efa61ddc01361");
-            return;
+            break;
         }
         waitframe(1);
     }

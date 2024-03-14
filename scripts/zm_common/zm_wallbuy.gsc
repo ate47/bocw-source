@@ -379,7 +379,7 @@ function function_a1a1d2(weapon_name, var_e9040287, item_name, chalk_model, inde
 // Size: 0x1a4
 function function_7a2524b3() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         foreach (player in getplayers()) {
             if (distance2d(player.origin, self.origin) > 64) {
                 if (isdefined(player.var_ff409c52) && player.var_ff409c52 == self) {
@@ -928,7 +928,7 @@ function add_dynamic_wallbuy(weapon, wallbuy, pristine) {
 // Size: 0x470
 function wall_weapon_update_prompt(player) {
     if (!isdefined(player.currentweapon)) {
-        return 0;
+        return false;
     }
     weapon = self.stub.weapon;
     player_has_weapon = player zm_weapons::has_weapon_or_upgrade(weapon);
@@ -941,10 +941,10 @@ function wall_weapon_update_prompt(player) {
     }
     if (isdefined(level.func_override_wallbuy_prompt)) {
         if (!self [[ level.func_override_wallbuy_prompt ]](player, player_has_weapon)) {
-            return 0;
+            return false;
         }
     } else if (zm_trial_disable_buys::is_active()) {
-        return 0;
+        return false;
     } else if (!player_has_weapon) {
         self.stub.cursor_hint = "HINT_WEAPON";
         cost = zm_weapons::get_weapon_cost(weapon);
@@ -983,12 +983,12 @@ function wall_weapon_update_prompt(player) {
             }
         }
     } else {
-        return 0;
+        return false;
     }
     self.stub.cursor_hint = "HINT_WEAPON";
     self.stub.cursor_hint_weapon = weapon;
     self setcursorhint(self.stub.cursor_hint, self.stub.cursor_hint_weapon);
-    return 1;
+    return true;
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
@@ -1072,9 +1072,9 @@ function weapon_set_first_time_hint(*cost, *ammo_cost) {
 // Size: 0x3a
 function placeable_mine_can_buy_weapon_extra_check_func(w_weapon) {
     if (isdefined(w_weapon) && w_weapon == self zm_loadout::get_player_placeable_mine()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
@@ -1377,10 +1377,10 @@ function is_wallbuy(w_to_check) {
     w_base = zm_weapons::get_base_weapon(w_to_check);
     foreach (s_wallbuy in level._spawned_wallbuys) {
         if (s_wallbuy.weapon == w_base) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
@@ -1391,19 +1391,19 @@ function function_b5992fb1(var_13f9dee7 = #"none") {
     switch (var_13f9dee7) {
     case #"green":
         self clientfield::set("wallbuy_ambient_fx", 3);
-        return;
+        break;
     case #"blue":
         self clientfield::set("wallbuy_ambient_fx", 4);
-        return;
+        break;
     case #"purple":
         self clientfield::set("wallbuy_ambient_fx", 5);
-        return;
+        break;
     case #"orange":
         self clientfield::set("wallbuy_ambient_fx", 6);
-        return;
+        break;
     case #"gold":
         self clientfield::set("wallbuy_ambient_fx", 7);
-        return;
+        break;
     default:
         self clientfield::set("wallbuy_ambient_fx", 0);
         break;
@@ -1418,19 +1418,19 @@ function function_36eb0acc(var_13f9dee7 = #"none") {
     switch (var_13f9dee7) {
     case #"green":
         self clientfield::set("model_rarity_rob", 3);
-        return;
+        break;
     case #"blue":
         self clientfield::set("model_rarity_rob", 4);
-        return;
+        break;
     case #"purple":
         self clientfield::set("model_rarity_rob", 5);
-        return;
+        break;
     case #"orange":
         self clientfield::set("model_rarity_rob", 6);
-        return;
+        break;
     case #"gold":
         self clientfield::set("model_rarity_rob", 7);
-        return;
+        break;
     default:
         self clientfield::set("model_rarity_rob", 0);
         break;

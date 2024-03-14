@@ -542,7 +542,7 @@ function function_dc466f4e() {
 function function_9ad6d900() {
     level endon(#"hash_3807e7b1086e4aa0", #"end_game");
     self endon(#"death");
-    while (1) {
+    while (true) {
         self waittill(#"hash_67f026d74b2aa6d7");
         level flag::set(#"hash_7b2214bd0c40093");
         level thread namespace_1812c3f4::function_ed7aab5b(#"orda_weakpoint_warning", #"hash_6aa9238eb4e57fd3", 60);
@@ -560,7 +560,7 @@ function function_17836c63() {
     self function_aa6f0550("slam", 1);
     self function_aa6f0550("swarm", 1);
     self function_aa6f0550("idle", 1);
-    while (1) {
+    while (true) {
         switch (level.var_41afa8f) {
         case 1:
         default:
@@ -650,10 +650,10 @@ function function_a01cbba7() {
 function function_f40bbb22(var_7f0ca11a) {
     foreach (player in function_a1ef346b()) {
         if (player istouching(var_7f0ca11a) && !is_true(player.ignoreme)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_c4d353e7/namespace_c4d353e7
@@ -867,7 +867,7 @@ function function_c9cec280() {
     level endon(#"hash_211b2d007aced982", #"hash_3807e7b1086e4aa0", #"end_game");
     a_targets = struct::get_array("hellhound_launcher_target_loc");
     e_vol = getent("orda_dog_launcher_attack_volume", "targetname");
-    while (1) {
+    while (true) {
         self waittill(#"hash_63670ad154a3b11e");
         var_53e3ff82 = undefined;
         a_players = array::randomize(function_a1ef346b());
@@ -993,7 +993,7 @@ function function_386e82a(var_f6cc9550, var_25febefa) {
     self.maxhealth = var_f6cc9550;
     n_index = 0;
     var_245f6f1 = var_f6cc9550;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (isdefined(waitresult.amount) && isplayer(waitresult.attacker)) {
@@ -1240,7 +1240,7 @@ function function_de60e752(var_533ac894, a_s_spawnpoints) {
     n_index = 0;
     level.var_c92172f4 = 0;
     level.var_d306d2e = 0;
-    while (1) {
+    while (true) {
         while (getaiteamarray(level.zombie_team).size >= n_max_active_ai) {
             util::wait_network_frame();
         }
@@ -1359,18 +1359,18 @@ function function_c658f846() {
 // Size: 0xec
 function function_62b1d725(s_loc) {
     if (!isdefined(s_loc.script_noteworthy)) {
-        return 0;
+        return false;
     }
     if (s_loc.script_noteworthy === "spawn_location") {
-        return 1;
+        return true;
     }
     a_str_tokens = strtok(s_loc.script_noteworthy, " ");
     foreach (str_token in a_str_tokens) {
         if (str_token == "custom_spawner_entry") {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_c4d353e7/namespace_c4d353e7
@@ -1484,7 +1484,7 @@ function function_e4db583b(var_238eb6ec, var_bce45f4a = 0, var_533ac894, var_cb5
         if (var_bce45f4a > 0) {
             var_12ce7e88++;
             if (var_12ce7e88 >= var_bce45f4a) {
-                return;
+                break;
             }
         }
         level flag::wait_till(#"hash_3bdcbb902730e623");
@@ -1498,12 +1498,12 @@ function function_e4db583b(var_238eb6ec, var_bce45f4a = 0, var_533ac894, var_cb5
 // Size: 0x40
 function function_23fa277f(s_loc) {
     if (!isdefined(s_loc.script_noteworthy)) {
-        return 0;
+        return false;
     }
     if (s_loc.script_noteworthy === "mimic_location") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_c4d353e7/namespace_c4d353e7
@@ -1597,7 +1597,7 @@ function function_c7f8bea5(var_238eb6ec, var_9919554c = 0, var_533ac894, var_291
         if (var_9919554c > 0) {
             var_a6bf7be8++;
             if (var_a6bf7be8 >= var_9919554c) {
-                return;
+                break;
             }
         }
         level flag::wait_till(#"hash_3bdcbb902730e623");
@@ -1611,12 +1611,12 @@ function function_c7f8bea5(var_238eb6ec, var_9919554c = 0, var_533ac894, var_291
 // Size: 0x40
 function function_8499733d(s_loc) {
     if (!isdefined(s_loc.script_noteworthy)) {
-        return 0;
+        return false;
     }
     if (s_loc.script_noteworthy === "raz_location") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_c4d353e7/namespace_c4d353e7
@@ -1626,7 +1626,7 @@ function function_8499733d(s_loc) {
 function function_98198f98(str_archetype) {
     level endon(#"intermission");
     util::delay_notify(600, #"hash_20ba9a0874996fda");
-    while (1) {
+    while (true) {
         wait(0.5);
         b_wait = 0;
         a_ai = getaiarchetypearray(str_archetype);
@@ -1649,7 +1649,7 @@ function function_98198f98(str_archetype) {
 // Size: 0x138
 function function_2b6b4a44() {
     level endon(#"hash_38f29f9cb03586ea", #"spawn_zombies", #"intermission");
-    while (1) {
+    while (true) {
         level notify(#"hash_6986218d09dc1cb2");
         util::wait_network_frame();
         level function_e2f134ce();
@@ -1700,28 +1700,28 @@ function cmd(cmd) {
         switch (cmd) {
         case #"hash_213591a3df24967d":
             level.var_cc4817d7 = "<unknown string>";
-            return;
+            break;
         case #"hash_7b914ebf5b57c696":
             level.var_cc4817d7 = "<unknown string>";
-            return;
+            break;
         case #"hash_f72e94a26490fd7":
             level.var_cc4817d7 = "<unknown string>";
-            return;
+            break;
         case #"hash_12274633230d3eb4":
             level.var_cc4817d7 = "<unknown string>";
-            return;
+            break;
         case #"hash_5de2ff5967070ea8":
             level.var_cc4817d7 = "<unknown string>";
-            return;
+            break;
         case #"hash_6ee66ab56d6217f6":
             level.var_cc4817d7 = undefined;
-            return;
+            break;
         case #"hash_264ec163f16c435b":
             level notify(#"hash_38f29f9cb03586ea");
             level notify(#"hash_3807e7b1086e4aa0");
-            return;
+            break;
         default:
-            return;
+            break;
         }
     #/
 }

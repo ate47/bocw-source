@@ -312,13 +312,13 @@ function function_bb441173() {
 // Size: 0x62
 function function_975a46a() {
     if (!isvehicle(self)) {
-        return 0;
+        return false;
     }
     var_c1d7860f = self getvehoccupants();
     if (isdefined(var_c1d7860f.size) && var_c1d7860f.size != 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_6a37ec38/namespace_6a37ec38
@@ -525,7 +525,7 @@ function function_63c13dff() {
     if (!isdefined(level.var_261f640c.var_1270895)) {
         level.var_261f640c.var_1270895 = gettime();
     }
-    while (1) {
+    while (true) {
         var_77c4d94d = gettime();
         profilestart();
         function_3e2ef4c6();
@@ -533,7 +533,7 @@ function function_63c13dff() {
         profilestop();
         if (level.var_261f640c.var_9e2c9bc2.size == 0) {
             level.var_261f640c.var_1270895 = undefined;
-            return;
+            break;
         }
         level.var_261f640c.var_1270895 = var_77c4d94d;
         waitframe(1);
@@ -604,7 +604,7 @@ function function_6d1a12d3(var_cd03ffa) {
     self.maxhealth = 100000;
     self.health = self.maxhealth;
     self.damagetaken = 0;
-    while (1) {
+    while (true) {
         var_cc5d20f7 = undefined;
         var_cc5d20f7 = self waittill(#"damage");
         eattacker = var_cc5d20f7.attacker;
@@ -773,7 +773,7 @@ function function_9b8337c3(einflictor, eattacker, *idamage, *smeansofdeath, *wea
         foreach (var_71f7928d in shitloc.var_3c0a7eef) {
             if (self == var_71f7928d.vehicle && var_71f7928d.var_33c9fbd5 == gettime()) {
                 shitloc function_af9b1762(psoffsettime, var_71f7928d.playerentnum);
-                return;
+                break;
             }
         }
     }
@@ -823,7 +823,7 @@ function function_47ff3ce7() {
     /#
         self endon(#"death");
         if (getdvarint(#"hash_3c54e6d747dd7a6d", 0) >= 1) {
-            while (1) {
+            while (true) {
                 var_54d68ee6 = function_80b82a4d();
                 debug_sphere(var_54d68ee6, isdefined(level.var_261f640c.var_a74161cc.var_29467698) ? level.var_261f640c.var_a74161cc.var_29467698 : 25, (1, 0.85, 0), 0.25, 1);
                 debug_sphere(var_54d68ee6, isdefined(level.var_261f640c.var_a74161cc.var_40e96f5e) ? level.var_261f640c.var_a74161cc.var_40e96f5e : 180, (0, 1, 0), 0.25, 1);

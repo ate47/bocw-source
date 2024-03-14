@@ -331,63 +331,63 @@ function _single_func(entity, func, a_vars) {
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6], a_vars[7]);
         }
-        return;
+        break;
     case 7:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6]);
         }
-        return;
+        break;
     case 6:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5]);
         }
-        return;
+        break;
     case 5:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4]);
         }
-        return;
+        break;
     case 4:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3]);
         }
-        return;
+        break;
     case 3:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1], a_vars[2]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2]);
         }
-        return;
+        break;
     case 2:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1]);
         }
-        return;
+        break;
     case 1:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0]);
         } else {
             return [[ func ]](a_vars[0]);
         }
-        return;
+        break;
     case 0:
         if (isdefined(entity)) {
             return entity [[ func ]]();
         } else {
             return [[ func ]]();
         }
-        return;
+        break;
     default:
         /#
             assertmsg("<unknown string>");
@@ -406,7 +406,7 @@ function _clean_up_arg_array(&a_vars) {
             arrayremoveindex(a_vars, i, 0);
             continue;
         }
-        return;
+        break;
     }
 }
 
@@ -579,31 +579,31 @@ function _single_thread(entity, func, arg1, arg2, &a_vars) {
     switch (a_vars.size) {
     case 8:
         entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6], a_vars[7]);
-        return;
+        break;
     case 7:
         entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6]);
-        return;
+        break;
     case 6:
         entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5]);
-        return;
+        break;
     case 5:
         entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4]);
-        return;
+        break;
     case 4:
         entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3]);
-        return;
+        break;
     case 3:
         entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2]);
-        return;
+        break;
     case 2:
         entity thread [[ func ]](a_vars[0], a_vars[1]);
-        return;
+        break;
     case 1:
         entity thread [[ func ]](a_vars[0]);
-        return;
+        break;
     case 0:
         entity thread [[ func ]]();
-        return;
+        break;
     default:
         /#
             assertmsg("<unknown string>");
@@ -1034,12 +1034,12 @@ function get_other_team(str_team) {
 // Size: 0x42
 function function_fbce7263(team_a, team_b) {
     if (team_a === team_b) {
-        return 0;
+        return false;
     }
     if (!isdefined(team_a) || !isdefined(team_b)) {
-        return 1;
+        return true;
     }
-    return 1;
+    return true;
 }
 
 // Namespace util/util_shared
@@ -1059,16 +1059,16 @@ function isenemyplayer(player) {
         assert(isdefined(player));
     #/
     if (!isplayer(player)) {
-        return 0;
+        return false;
     }
     if (player.team != #"none") {
         if (player.team === self.team) {
-            return 0;
+            return false;
         }
     } else if (player == self) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace util/util_shared
@@ -1078,21 +1078,21 @@ function isenemyplayer(player) {
 function function_50ed1561(localclientnum) {
     function_89a98f85();
     if (!isdefined(self)) {
-        return 0;
+        return false;
     }
     if (!self function_21c0fa55()) {
-        return 0;
+        return false;
     }
     if (function_65b9eb0f(localclientnum)) {
-        return 0;
+        return false;
     }
     if (localclientnum !== self getlocalclientnumber()) {
-        return 0;
+        return false;
     }
     if (isdefined(level.localplayers[localclientnum]) && self getentitynumber() != level.localplayers[localclientnum] getentitynumber()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace util/util_shared
@@ -1101,12 +1101,12 @@ function function_50ed1561(localclientnum) {
 // Size: 0x4e
 function is_player_view_linked_to_entity(localclientnum) {
     if (function_fd3d58c7(localclientnum)) {
-        return 1;
+        return true;
     }
     if (function_e75c64a4(localclientnum)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace util/util_shared
@@ -1292,9 +1292,9 @@ function function_2c435484() {
 // Size: 0x38
 function is_gib_restricted_build() {
     if (!(ismaturecontentenabled() && isshowgibsenabled())) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace util/util_shared
@@ -1397,15 +1397,15 @@ function remove_trigger_from_ent(ent, trig) {
 // Size: 0x70
 function ent_already_in_trigger(trig) {
     if (!isdefined(self._triggers)) {
-        return 0;
+        return false;
     }
     if (!isdefined(self._triggers[trig getentitynumber()])) {
-        return 0;
+        return false;
     }
     if (!self._triggers[trig getentitynumber()]) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace util/util_shared
@@ -1559,7 +1559,7 @@ function releaseobjid(localclientnum, objid) {
 // Checksum 0xb877b0b8, Offset: 0x4628
 // Size: 0x28
 function is_safehouse(str_next_map = get_map_name()) {
-    return 0;
+    return false;
 }
 
 // Namespace util/util_shared
@@ -1574,7 +1574,7 @@ function button_held_think(which_button) {
         }
         self._holding_button[which_button] = 0;
         time_started = 0;
-        while (1) {
+        while (true) {
             if (self._holding_button[which_button]) {
                 if (!self [[ level._button_funcs[which_button] ]]()) {
                     self._holding_button[which_button] = 0;
@@ -1785,13 +1785,13 @@ function cf_team_mapping(*localclientnum, *oldval, newval, *bnewent, *binitialsn
     switch (bwastimejump) {
     case 0:
         set_team_mapping(#"axis", #"allies");
-        return;
+        break;
     case 1:
         set_team_mapping(#"allies", #"axis");
-        return;
+        break;
     default:
         set_team_mapping(#"allies", #"axis");
-        return;
+        break;
     }
 }
 
@@ -1866,30 +1866,30 @@ function function_35aed314(teama, teamb) {
     teama = get_team_mapping(teama);
     teamb = get_team_mapping(teamb);
     if (!isdefined(teama) || !isdefined(teamb)) {
-        return 0;
+        return false;
     }
     if (teama == teamb) {
-        return 0;
+        return false;
     }
     if (isdefined(level.team_enemy_mapping)) {
         if (isdefined(level.team_enemy_mapping[teama])) {
             if (#"any" == level.team_enemy_mapping[teama]) {
-                return 1;
+                return true;
             }
             if (teamb == level.team_enemy_mapping[teama]) {
-                return 1;
+                return true;
             }
         }
         if (isdefined(level.team_enemy_mapping[teamb])) {
             if (#"any" == level.team_enemy_mapping[teamb]) {
-                return 1;
+                return true;
             }
             if (teama == level.team_enemy_mapping[teamb]) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace util/util_shared
@@ -1948,9 +1948,9 @@ function function_26489405() {
 function is_arena_lobby() {
     mode = function_bea73b01();
     if (mode == 3) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace util/util_shared
@@ -1959,21 +1959,21 @@ function is_arena_lobby() {
 // Size: 0x60
 function function_e387bcd() {
     if (!isdefined(self)) {
-        return 0;
+        return false;
     }
     if (isdefined(self.script_wait)) {
-        return 1;
+        return true;
     }
     if (isdefined(self.script_wait_add)) {
-        return 1;
+        return true;
     }
     if (isdefined(self.script_wait_min)) {
-        return 1;
+        return true;
     }
     if (isdefined(self.script_wait_max)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace util/util_shared

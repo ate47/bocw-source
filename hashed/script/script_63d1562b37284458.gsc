@@ -313,28 +313,28 @@ function function_2a1bd467(struct) {
 // Size: 0x196
 function function_f8e9f7d7(player, var_5da09c55) {
     if (player laststand::player_is_in_laststand() && !is_true(player.var_b895a3ff)) {
-        return 0;
+        return false;
     }
     if (player getstance() == "prone") {
-        return 0;
+        return false;
     }
     if (!player function_b59f3ecd()) {
-        return 0;
+        return false;
     }
     if (sessionmodeiszombiesgame()) {
         if (var_5da09c55.inuse > 0) {
-            return 0;
+            return false;
         }
         entnum = player getentitynumber();
         if (is_true(var_5da09c55.cooldown[entnum]) || is_true(var_5da09c55.var_b53569ae.cooldown[entnum])) {
-            return 0;
+            return false;
         }
     }
     weapon = player getcurrentweapon();
     if (killstreaks::is_killstreak_weapon(weapon) && weapon.iscarriedkillstreak !== 1 || weapon === level.weaponnone) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_9cf4c697/namespace_9cf4c697

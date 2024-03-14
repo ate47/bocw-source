@@ -252,7 +252,7 @@ function autoexec registerbehaviorscriptfunctions() {
 // Size: 0x186
 function private locomotionisonstairs(behaviortreeentity) {
     if (is_true(behaviortreeentity.var_73e3e2aa)) {
-        return 0;
+        return false;
     }
     startnode = behaviortreeentity.traversestartnode;
     if (isdefined(startnode) && behaviortreeentity shouldstarttraversal()) {
@@ -262,7 +262,7 @@ function private locomotionisonstairs(behaviortreeentity) {
                     println("<unknown string>", behaviortreeentity.origin[0], "<unknown string>", behaviortreeentity.origin[1], "<unknown string>", behaviortreeentity.origin[2]);
                 }
             #/
-            return 1;
+            return true;
         }
     }
     /#
@@ -270,7 +270,7 @@ function private locomotionisonstairs(behaviortreeentity) {
             println("<unknown string>", behaviortreeentity.origin[0], "<unknown string>", behaviortreeentity.origin[1], "<unknown string>", behaviortreeentity.origin[2]);
         }
     #/
-    return 0;
+    return false;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -285,12 +285,12 @@ function private locomotionshouldskipstairs(behaviortreeentity) {
     stepssofar = behaviortreeentity getblackboardattribute("_staircase_num_steps");
     direction = behaviortreeentity getblackboardattribute("_staircase_direction");
     if (direction != "staircase_up") {
-        return 0;
+        return false;
     }
     numoutsteps = 2;
     totalstepswithoutout = numtotalsteps - numoutsteps;
     if (stepssofar >= totalstepswithoutout) {
-        return 0;
+        return false;
     }
     remainingsteps = totalstepswithoutout - stepssofar;
     if (remainingsteps >= 3 || remainingsteps >= 6 || remainingsteps >= 8) {
@@ -299,9 +299,9 @@ function private locomotionshouldskipstairs(behaviortreeentity) {
                 println("<unknown string>", behaviortreeentity.origin[0], "<unknown string>", behaviortreeentity.origin[1], "<unknown string>", behaviortreeentity.origin[2]);
             }
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -331,9 +331,9 @@ function private locomotionshouldlooponstairs(behaviortreeentity) {
     }
     if (stepssofar >= numtotalsteps - numoutsteps) {
         behaviortreeentity setstairsexittransform();
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -399,7 +399,7 @@ function private locomotionstairsstart(behaviortreeentity) {
         }
     }
     behaviortreeentity setblackboardattribute("_staircase_exit_type", exittype);
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -518,10 +518,10 @@ function private function_37ae0b11() {
 // Size: 0x61e
 function private function_7589776c(behaviortreeentity) {
     if (!behaviortreeentity function_ab533a33()) {
-        return 0;
+        return false;
     }
     if (is_true(behaviortreeentity.var_73e3e2aa)) {
-        return 0;
+        return false;
     }
     if (!isdefined(self.ai.var_4183a6fc) || distancesquared(self.ai.var_4183a6fc.goalpos, self.pathgoalpos) > 1) {
         self function_bb046570();
@@ -547,7 +547,7 @@ function private function_7589776c(behaviortreeentity) {
                         record3dtext("<unknown string>" + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0, 0), "<unknown string>", behaviortreeentity);
                     }
                 #/
-                return 1;
+                return true;
             } else {
                 /#
                     if (behaviortreeentity function_3b027260()) {
@@ -562,7 +562,7 @@ function private function_7589776c(behaviortreeentity) {
                     record3dtext("<unknown string>" + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0, 0), "<unknown string>", behaviortreeentity);
                 }
             #/
-            return 1;
+            return true;
         } else {
             /#
                 if (behaviortreeentity function_3b027260()) {
@@ -571,7 +571,7 @@ function private function_7589776c(behaviortreeentity) {
             #/
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -587,7 +587,7 @@ function private function_118d27ad(behaviortreeentity) {
             println("<unknown string>", self.ai.var_4183a6fc.direction, "<unknown string>", behaviortreeentity.origin[0], "<unknown string>", behaviortreeentity.origin[1], "<unknown string>", behaviortreeentity.origin[2]);
         }
     #/
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -601,7 +601,7 @@ function private function_9948d7a(behaviortreeentity) {
     }
     behaviortreeentity setblackboardattribute("_staircase_state", "staircase_loop");
     behaviortreeentity.ai.var_4183a6fc.var_ef0e5eed = distance2dsquared(behaviortreeentity.origin, behaviortreeentity.ai.var_4183a6fc.endpos);
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -619,7 +619,7 @@ function private function_39c609a4(behaviortreeentity) {
                     println("<unknown string>", behaviortreeentity.origin[0], "<unknown string>", behaviortreeentity.origin[1], "<unknown string>", behaviortreeentity.origin[2] + "<unknown string>" + end[0] + "<unknown string>" + end[1] + "<unknown string>" + end[2]);
                 }
             #/
-            return 1;
+            return true;
         }
     } else if (var_ef0e5eed <= 30 || var_ef0e5eed > behaviortreeentity.ai.var_4183a6fc.var_ef0e5eed) {
         /#
@@ -629,10 +629,10 @@ function private function_39c609a4(behaviortreeentity) {
                 println("<unknown string>", behaviortreeentity.origin[0], "<unknown string>", behaviortreeentity.origin[1], "<unknown string>", behaviortreeentity.origin[2] + "<unknown string>" + end[0] + "<unknown string>" + end[1] + "<unknown string>" + end[2]);
             }
         #/
-        return 1;
+        return true;
     }
     behaviortreeentity.ai.var_4183a6fc.var_ef0e5eed = var_ef0e5eed;
-    return 0;
+    return false;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -650,7 +650,7 @@ function private function_95b175c0(behaviortreeentity) {
     #/
     behaviortreeentity setblackboardattribute("_staircase_state", undefined);
     behaviortreeentity setblackboardattribute("_staircase_direction", undefined);
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -705,9 +705,9 @@ function private locomotionshouldtraverse(behaviortreeentity) {
             }
             record3dtext("<unknown string>" + startnode.animscript, self.origin, (1, 0, 0), "<unknown string>");
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -727,7 +727,7 @@ function private locomotionshouldparametrictraverse(entity) {
             return (traversaltype != "unknown_traversal");
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -743,9 +743,9 @@ function private function_5ef5b35a(behaviortreeentity) {
             }
             record3dtext("<unknown string>", self.origin, (1, 0, 0), "<unknown string>");
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -765,7 +765,7 @@ function private function_8a8c5d44(entity) {
             return (traversaltype != "unknown_traversal");
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -842,7 +842,7 @@ function traversesetup(behaviortreeentity, asmstatename) {
             #/
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -935,7 +935,7 @@ function shouldstartarrivalcondition(behaviortreeentity) {
 // Size: 0x28
 function private function_907ba31a(entity) {
     keepclaimnode(entity);
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -944,7 +944,7 @@ function private function_907ba31a(entity) {
 // Size: 0x28
 function private function_37e22c7(entity) {
     keepclaimnode(entity);
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -954,9 +954,9 @@ function private function_37e22c7(entity) {
 function function_c94f0d1(entity) {
     var_55a3f1d3 = entity function_144f21ef();
     if (var_55a3f1d3 < -60 || var_55a3f1d3 > 60) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -967,7 +967,7 @@ function cleararrivalpos(behaviortreeentity) {
     if (!isdefined(behaviortreeentity.isarrivalpending) || is_true(behaviortreeentity.isarrivalpending)) {
         self function_d4c687c9();
     }
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -979,7 +979,7 @@ function private function_63edf1f4(behaviortreeentity) {
         self function_d4c687c9();
     }
     self clearpath();
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -990,7 +990,7 @@ function private function_41b88b98(behaviortreeentity) {
     if (!isdefined(behaviortreeentity.isarrivalpending) || is_true(behaviortreeentity.isarrivalpending)) {
         self function_d4c687c9();
     }
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -999,7 +999,7 @@ function private function_41b88b98(behaviortreeentity) {
 // Size: 0x48
 function delaymovement(entity) {
     entity pathmode("move delayed", 0, randomfloatrange(1, 2));
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -1009,9 +1009,9 @@ function delaymovement(entity) {
 function private shouldadjuststanceattacticalwalk(behaviortreeentity) {
     stance = behaviortreeentity getblackboardattribute("_stance");
     if (stance != "stand") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -1022,7 +1022,7 @@ function private adjuststancetofaceenemyinitialize(behaviortreeentity) {
     behaviortreeentity.newenemyreaction = 0;
     behaviortreeentity setblackboardattribute("_desired_stance", "stand");
     behaviortreeentity orientmode("face enemy");
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -1043,7 +1043,7 @@ function private tacticalwalkactionstart(behaviortreeentity) {
     setcanbeflanked(behaviortreeentity, 0);
     behaviortreeentity setblackboardattribute("_stance", "stand");
     behaviortreeentity orientmode("face enemy");
-    return 1;
+    return true;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -1130,7 +1130,7 @@ function canjuke(entity) {
     if (isdefined(entity.jukemaxdistance) && isdefined(entity.enemy)) {
         maxdistsquared = entity.jukemaxdistance * entity.jukemaxdistance;
         if (distance2dsquared(entity.origin, entity.enemy.origin) > maxdistsquared) {
-            return 0;
+            return false;
         }
     }
     jukedirection = calculatedefaultjukedirection(entity);

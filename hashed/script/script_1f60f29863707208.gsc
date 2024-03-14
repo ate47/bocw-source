@@ -1060,32 +1060,32 @@ function function_62492e2(*localclientnum, *oldval, newval, *bnewent, *binitials
     switch (bwasdemojump) {
     case 1:
         forcestreamxmodel(#"hash_18ea421c8e112587");
-        return;
+        break;
     case 2:
         forcestreamxmodel(#"hash_18ea3f1c8e11206e");
         stopforcestreamingxmodel(#"hash_18ea421c8e112587");
-        return;
+        break;
     case 3:
         forcestreamxmodel(#"p9_zm_platinum_intel_documents_r_05");
         stopforcestreamingxmodel(#"hash_18ea3f1c8e11206e");
-        return;
+        break;
     case 4:
         forcestreamxmodel(#"p9_zm_platinum_intel_documents_r_06");
         stopforcestreamingxmodel(#"p9_zm_platinum_intel_documents_r_05");
-        return;
+        break;
     case 5:
         forcestreamxmodel(#"p9_zm_platinum_intel_documents_r_07");
         stopforcestreamingxmodel(#"p9_zm_platinum_intel_documents_r_06");
-        return;
+        break;
     case 6:
         forcestreamxmodel(#"p9_zm_platinum_personal_computer_screen_05");
         stopforcestreamingxmodel(#"p9_zm_platinum_intel_documents_r_07");
-        return;
+        break;
     case 7:
         forcestreamxmodel(#"hash_18ea3d1c8e111d08");
         forcestreamxmodel(#"hash_18ea3e1c8e111ebb");
         stopforcestreamingxmodel(#"p9_zm_platinum_personal_computer_screen_05");
-        return;
+        break;
     case 0:
         stopforcestreamingxmodel(#"hash_18ea3d1c8e111d08");
         stopforcestreamingxmodel(#"hash_18ea3e1c8e111ebb");
@@ -1095,7 +1095,7 @@ function function_62492e2(*localclientnum, *oldval, newval, *bnewent, *binitials
         stopforcestreamingxmodel(#"p9_zm_platinum_intel_documents_r_05");
         stopforcestreamingxmodel(#"p9_zm_platinum_intel_documents_r_06");
         stopforcestreamingxmodel(#"p9_zm_platinum_intel_documents_r_07");
-        return;
+        break;
     }
 }
 

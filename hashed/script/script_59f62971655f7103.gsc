@@ -82,43 +82,43 @@ function mpdialog_value(mpdialogkey, defaultvalue) {
 // Size: 0x16e
 function function_d804d2f0(localclientnum, speakingplayer, player, allyradiussq) {
     if (!is_true(level.var_e444d44)) {
-        return 0;
+        return false;
     }
     if (!isdefined(player)) {
-        return 0;
+        return false;
     }
     if (!isdefined(player.origin)) {
-        return 0;
+        return false;
     }
     if (!isalive(player)) {
-        return 0;
+        return false;
     }
     if (player underwater()) {
-        return 0;
+        return false;
     }
     if (player isdriving(localclientnum)) {
-        return 0;
+        return false;
     }
     if (function_e75c64a4(localclientnum)) {
-        return 0;
+        return false;
     }
     if (!isdefined(speakingplayer)) {
-        return 0;
+        return false;
     }
     if (!isdefined(speakingplayer.origin)) {
-        return 0;
+        return false;
     }
     if (player == speakingplayer || player.team != speakingplayer.team) {
-        return 0;
+        return false;
     }
     if (player hasperk(localclientnum, "specialty_quieter")) {
-        return 0;
+        return false;
     }
     distsq = distancesquared(speakingplayer.origin, player.origin);
     if (distsq > allyradiussq) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace battlechatter/namespace_7819da81
@@ -149,15 +149,15 @@ function function_db89c38f(localclientnum, speakingplayer, allyradiussq) {
 // Size: 0xba
 function function_5d7ad9a9(hacker, originalowner) {
     if (!is_true(level.var_e444d44)) {
-        return 0;
+        return false;
     }
     if (!isdefined(originalowner) || !isplayer(originalowner) || !originalowner function_21c0fa55()) {
-        return 0;
+        return false;
     }
     if (!isdefined(hacker) || !isplayer(hacker) || !isalive(hacker)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace battlechatter/namespace_7819da81

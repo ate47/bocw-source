@@ -226,17 +226,17 @@ function function_48fc612d() {
 // Size: 0x10a
 function function_e26ebe76(var_724e997e) {
     if (!level flag::get("stealth_enabled")) {
-        return 0;
+        return false;
     }
     foreach (group in level.stealth.var_9bd7a27.groups) {
         if (isdefined(var_724e997e) && !array::contains(var_724e997e, group.name)) {
             continue;
         }
         if (namespace_3fc78cb6::function_ec43a43a(group.name)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_979752dc/utility
@@ -376,13 +376,13 @@ function do_stealth() {
     case #"axis":
     case #"team3":
         self thread namespace_f1f700ac::main();
-        return;
+        break;
     case #"allies":
         self thread namespace_32a4062b::main();
-        return;
+        break;
     case #"neutral":
         self thread namespace_578db516::main();
-        return;
+        break;
     }
 }
 
@@ -526,18 +526,18 @@ function function_2b21025e(position) {
 // Size: 0xc2
 function function_b0c91323(var_affacce = 0) {
     if (!isdefined(self.stealth.var_d54b515e.position)) {
-        return 0;
+        return false;
     }
     currenttime = gettime();
     if (currenttime > self.stealth.var_d54b515e.settime + 100) {
-        return 0;
+        return false;
     }
     if (var_affacce) {
         if (isdefined(self.stealth.var_d54b515e.processtime) && currenttime == self.stealth.var_d54b515e.processtime) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_979752dc/utility
@@ -771,7 +771,7 @@ function function_18a4932b(var_901d9fb2, var_4a9f6f96) {
     self notify(#"hash_4bbabb12bbc62370");
     self endon(#"hash_4bbabb12bbc62370");
     self thread function_e0ab7074();
-    while (1) {
+    while (true) {
         level flag::wait_till("stealth_enabled");
         level flag::wait_till_clear("stealth_spotted");
         level flag::wait_till_clear("stealth_music_pause");
@@ -805,7 +805,7 @@ function function_755ee59f() {
 function function_e0ab7074(var_901d9fb2, var_4a9f6f96) {
     self notify(#"hash_5756bde459e582a0");
     self endon(#"hash_5756bde459e582a0");
-    while (1) {
+    while (true) {
         level flag::wait_till("stealth_music_pause");
         foreach (player in getplayers()) {
             player thread function_40a98466(undefined);
@@ -1068,12 +1068,12 @@ function function_bc54026c(eventtype) {
 function function_3a157fbf() {
     self endon(#"death");
     if (!isdefined(self.var_1e36e368) || self [[ self.var_1e36e368 ]]()) {
-        return 1;
+        return true;
     }
     if (!isdefined(self.stealth)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_979752dc/utility
@@ -1082,9 +1082,9 @@ function function_3a157fbf() {
 // Size: 0x2e
 function function_2baa2568() {
     if (level flag::get("stealth_spotted")) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_979752dc/utility
@@ -1096,10 +1096,10 @@ function function_60528ebd(origin, radius) {
     if (!isdefined(radius)) {
         radius = self.goalradius;
     }
-    while (1) {
+    while (true) {
         self waittill(#"goal");
         if (distance(self.origin, origin) < radius + 10) {
-            return;
+            break;
         }
     }
 }

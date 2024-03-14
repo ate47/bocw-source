@@ -200,7 +200,7 @@ function function_c260f7a1(var_e9ea5e13) {
     var_7de2a5d9 = getweapon(#"ww_ieu_shockwave_t9");
     if (isplayer(var_e9ea5e13)) {
         if (var_e9ea5e13 hasweapon(var_a02789e0) || var_e9ea5e13 hasweapon(var_f934814c) || var_e9ea5e13 hasweapon(var_fb0c0b60) || var_e9ea5e13 hasweapon(var_95254da2) || var_e9ea5e13 hasweapon(var_7de2a5d9)) {
-            return 0;
+            return false;
         }
     }
     var_b6a0e846 = 0;
@@ -215,12 +215,12 @@ function function_c260f7a1(var_e9ea5e13) {
         }
     }
     if (var_b6a0e846 >= 4) {
-        return 0;
+        return false;
     }
     if (level.chest_moves >= 1) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_silver/zm_silver
@@ -292,7 +292,7 @@ function offhand_weapon_give_override(str_weapon) {
         self setweaponammoclip(self zm_loadout::get_player_tactical_grenade(), 0);
         self takeweapon(self zm_loadout::get_player_tactical_grenade());
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_silver/zm_silver
@@ -377,16 +377,16 @@ function function_cd3a65e0() {
     switch (level.dog_round_count) {
     case 2:
         level.next_dog_round = level.round_number + randomintrangeinclusive(5, 7);
-        return;
+        break;
     case 3:
         level.next_dog_round = level.round_number + randomintrangeinclusive(6, 8);
-        return;
+        break;
     case 4:
         level.next_dog_round = level.round_number + randomintrangeinclusive(7, 9);
-        return;
+        break;
     default:
         level.next_dog_round = level.round_number + randomintrangeinclusive(8, 10);
-        return;
+        break;
     }
 }
 
@@ -396,7 +396,7 @@ function function_cd3a65e0() {
 // Size: 0x180
 function private function_360fb84d() {
     level endon(#"end_game");
-    for (var_d1ae80e1 = undefined; 1; var_d1ae80e1 = level.round_number + 2) {
+    for (var_d1ae80e1 = undefined; true; var_d1ae80e1 = level.round_number + 2) {
         s_waitresult = undefined;
         s_waitresult = level waittill(#"start_of_round", #"pap_quest_completed");
         n_players = zm_utility::function_a2541519(getplayers().size);
@@ -612,7 +612,7 @@ function function_be03ceef(time) {
 function function_e4e257b6() {
     level endon(#"end_game");
     level thread function_706bc947();
-    while (1) {
+    while (true) {
         level waittill(#"dog_round");
         function_7bb4a5d7("dog_round");
         wait(1);
@@ -668,7 +668,7 @@ function function_7cdd91fd() {
 // Size: 0x130
 function function_a6308ec9() {
     level endon(#"end_game", #"hash_245ff34dcc7bfe66", #"hash_795783e3edb7670");
-    while (1) {
+    while (true) {
         function_be03ceef(randomintrange(1200, 1500));
         function_7bb4a5d7("snowfall_fade_in");
         function_be03ceef(30);
@@ -694,7 +694,7 @@ function function_7bb4a5d7(state) {
             exploder::stop_exploder("fxexp_snow_blizzard_loop");
             setdvar(#"hash_7b06b8037c26b99b", 195);
         }
-        return;
+        break;
     case #"snowfall_loop":
         if (!level flag::get("dog_round") && level flag::get(#"snowfall_fade_in")) {
             level flag::clear(#"snowfall_fade_in");
@@ -702,7 +702,7 @@ function function_7bb4a5d7(state) {
             exploder::stop_exploder("fxexp_snow_blizzard_fade_in");
             exploder::exploder("fxexp_snow_blizzard_loop");
         }
-        return;
+        break;
     case #"snowfall_fade_out":
         if (!level flag::get("dog_round") && level flag::get(#"snowfall_loop")) {
             level flag::clear(#"snowfall_loop");
@@ -712,14 +712,14 @@ function function_7bb4a5d7(state) {
             exploder::stop_exploder("fxexp_snow_blizzard_loop");
             setdvar(#"hash_7b06b8037c26b99b", 72);
         }
-        return;
+        break;
     case #"snowfall_clear":
         if (level flag::get(#"snowfall_fade_out")) {
             level flag::clear(#"snowfall_fade_in");
             level flag::clear(#"hash_2751dc07d8287c1");
             level flag::clear(#"snowfall_fade_out");
         }
-        return;
+        break;
     case #"dog_round":
         level flag::clear(#"snowfall_fade_in");
         level flag::clear(#"snowfall_loop");
@@ -727,7 +727,7 @@ function function_7bb4a5d7(state) {
         level thread clientfield::set("" + #"hash_5e38b0496d9664bb", 2);
         exploder::stop_exploder("fxexp_snow_blizzard_fade_in");
         exploder::stop_exploder("fxexp_snow_blizzard_loop");
-        return;
+        break;
     }
 }
 
@@ -737,7 +737,7 @@ function function_7bb4a5d7(state) {
 // Size: 0xb0
 function function_706bc947() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         level flag::wait_till("dog_round");
         setdvar(#"hash_7b06b8037c26b99b", 220);
         level flag::wait_till_clear("dog_round");
@@ -752,7 +752,7 @@ function function_706bc947() {
 // Size: 0x1b2
 function function_7a15a086() {
     var_b6596672 = getentarray("earthquake_area", "tag");
-    while (1) {
+    while (true) {
         if (level flag::get("power_on")) {
             a_players = getplayers();
             foreach (player in a_players) {
@@ -867,9 +867,9 @@ function private function_3ab942cb(cmd) {
         switch (cmd) {
         case #"hash_fc3b784a3c0b31d":
             level.var_61a89694 = 1;
-            return;
+            break;
         default:
-            return;
+            break;
         }
     #/
 }

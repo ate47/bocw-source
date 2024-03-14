@@ -102,7 +102,7 @@ function function_e8a5f9ba() {
     /#
         current = getdvarstring(#"character", "<unknown string>");
         if (current != "<unknown string>") {
-            while (1) {
+            while (true) {
                 autoselection = getdvarstring(#"character");
                 if (autoselection != "<unknown string>" && autoselection != current) {
                     foreach (player in level.players) {
@@ -199,18 +199,18 @@ function clear_cooldown() {
 function function_904deeb2() {
     player = self;
     if (player.var_6b4e7428 === 1) {
-        return 0;
+        return false;
     }
     if (player function_2c7b2ff()) {
-        return 0;
+        return false;
     }
     if (level.draftstage == 0) {
-        return 1;
+        return true;
     }
     if (level.draftstage == 3 && !player isready()) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace draft/draft
@@ -219,11 +219,11 @@ function function_904deeb2() {
 // Size: 0x182
 function can_select_character(characterindex) {
     if (!function_904deeb2()) {
-        return 0;
+        return false;
     }
     maxuniqueroles = getgametypesetting(#"maxuniquerolesperteam", characterindex);
     if (maxuniqueroles == 0) {
-        return 0;
+        return false;
     }
     rolecount = 0;
     foreach (player in level.players) {
@@ -234,11 +234,11 @@ function can_select_character(characterindex) {
         if (isdefined(player.pers[#"team"]) && player.pers[#"team"] == self.pers[#"team"] && playercharacterindex == characterindex) {
             rolecount++;
             if (rolecount >= maxuniqueroles) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace draft/draft
@@ -247,13 +247,13 @@ function can_select_character(characterindex) {
 // Size: 0x122
 function select_character(characterindex, forceselection, *var_8a239568) {
     if (!player_role::is_valid(forceselection)) {
-        return 0;
+        return false;
     }
     /#
         assert(is_valid(forceselection));
     #/
     if (!is_true(var_8a239568) && !can_select_character(forceselection)) {
-        return 0;
+        return false;
     }
     self player_role::set(forceselection);
     if (!getdvarint(#"hash_1f80dbba75375e3d", 0)) {
@@ -262,7 +262,7 @@ function select_character(characterindex, forceselection, *var_8a239568) {
             self [[ level.curclass ]]("custom" + customloadoutindex);
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace draft/draft
@@ -271,7 +271,7 @@ function select_character(characterindex, forceselection, *var_8a239568) {
 // Size: 0xc4
 function function_ca33311e() {
     level endon(#"game_ended", #"draft_complete");
-    while (1) {
+    while (true) {
         foreach (player in level.players) {
             player resetinactivitytimer();
         }
@@ -322,9 +322,9 @@ function function_c5394b83(starttime, seconds) {
         /#
             println("<unknown string>");
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace draft/draft
@@ -337,17 +337,17 @@ function all_players_connected() {
         /#
             function_95c03d66("<unknown string>" + var_5c6783e9 + "<unknown string>" + level.players.size);
         #/
-        return 0;
+        return false;
     }
     foreach (player in level.players) {
         if (!player function_9b95ed9f() && !isbot(player)) {
             /#
                 function_95c03d66("<unknown string>" + player.name + "<unknown string>");
             #/
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace draft/draft
@@ -357,10 +357,10 @@ function all_players_connected() {
 function function_d255fb3e() {
     foreach (player in level.players) {
         if (player function_9b95ed9f()) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace draft/draft
@@ -370,7 +370,7 @@ function function_d255fb3e() {
 function function_21f5a2c1() {
     var_e8cb777 = getgametypesetting(#"draftrequiredclients");
     if (var_e8cb777 <= 0) {
-        return 1;
+        return true;
     }
     foreach (team, _ in level.teams) {
         teamcount[team] = 0;
@@ -385,10 +385,10 @@ function function_21f5a2c1() {
             /#
                 function_95c03d66("<unknown string>" + var_e8cb777 + "<unknown string>" + team + "<unknown string>" + teamcount[team]);
             #/
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace draft/draft
@@ -575,7 +575,7 @@ function assign_remaining_players(only_assign_player) {
             if (only_assign_player == player) {
                 validcharacters = array::randomize(validcharacters);
                 player select_character(validcharacters[0].index, 1, 0);
-                return;
+                break;
             }
         }
         return;
@@ -695,7 +695,7 @@ function assign_remaining_players(only_assign_player) {
                     println("<unknown string>");
                 #/
                 globallogic::exit_level();
-                while (1) {
+                while (true) {
                     wait(10);
                 }
             }

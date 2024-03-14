@@ -359,7 +359,7 @@ function function_70c0e823(aat_name) {
 function function_3ac3c47e(name, now, attacker) {
     /#
         if (is_true(level.var_12f54bf)) {
-            return 0;
+            return false;
         }
     #/
     n_multiplier = 1;
@@ -368,18 +368,18 @@ function function_3ac3c47e(name, now, attacker) {
             n_multiplier = 0.8;
         }
     } else {
-        return 0;
+        return false;
     }
     if (isdefined(level.aat[name]) && isdefined(level.aat) && isdefined(self.aat_cooldown_start[name]) && isdefined(self.aat_cooldown_start) && isdefined(level.aat[name].cooldown_time_entity) && now <= self.aat_cooldown_start[name] + level.aat[name].cooldown_time_entity * n_multiplier) {
-        return 1;
+        return true;
     }
     if (isdefined(attacker.aat_cooldown_start) && isdefined(attacker.aat_cooldown_start[name]) && now <= attacker.aat_cooldown_start[name] + level.aat[name].cooldown_time_attacker * n_multiplier) {
-        return 1;
+        return true;
     }
     if (now <= level.aat[name].cooldown_time_global_start + level.aat[name].cooldown_time_global * n_multiplier) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_aat/zm_aat

@@ -22,7 +22,7 @@ function function_117e5e22(*localclientnum, *oldval, newval, *bnewent, *binitial
         var_991ef290 = getdvarfloat(#"hash_244a543491606468", 0);
         var_24120947 = getdvarfloat(#"hash_29d46f70d5dcef62", 0);
         var_b4030a00 = getdvarfloat(#"hash_4d0da2cce37b5b96", 0);
-        while (1) {
+        while (true) {
             current_distance = getdvarfloat(#"current_distance", 0);
             if (current_distance > var_24120947) {
                 level.var_9d53a8fc = mapfloat(var_24120947, var_991ef290, 0.85, 0, current_distance);

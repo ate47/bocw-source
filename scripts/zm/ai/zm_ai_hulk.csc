@@ -217,7 +217,7 @@ function private function_2a4100e7(localclientnum) {
 // Size: 0xae
 function private function_7622c629(localclientnum) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"hs_turn_off_fx");
         switch (waitresult._notify) {

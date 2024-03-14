@@ -314,10 +314,10 @@ function function_caa61267() {
 function function_ce7cc822(entity) {
     enemy = zm_ai_utility::function_825317c(entity);
     if (!isdefined(enemy) || !isentity(enemy)) {
-        return 0;
+        return false;
     }
     if (!is_true(entity.var_c588eb)) {
-        return 0;
+        return false;
     }
     var_ff38566a = lengthsquared(enemy getvelocity());
     var_17c3916f = function_a3f6cdac(100);
@@ -326,14 +326,14 @@ function function_ce7cc822(entity) {
     }
     if (!is_true(level.intermission)) {
         if (distancesquared(entity.origin, enemy.origin) > var_17c3916f) {
-            return 0;
+            return false;
         }
     }
     yawtoenemy = angleclamp180(entity.angles[1] - vectortoangles(enemy.origin - entity.origin)[1]);
     if (abs(yawtoenemy) > 60) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace archetype_mimic/archetype_mimic
@@ -687,16 +687,16 @@ function function_66eaacd9() {
 // Size: 0x1c4
 function function_d3b009d4(entity) {
     if (entity.var_6f5b56f6 > gettime() || !isplayer(entity.favoriteenemy) || distancesquared(entity.favoriteenemy.origin, entity.origin) > function_a3f6cdac(96)) {
-        return 0;
+        return false;
     }
     if (isdefined(entity.var_f6fd2062) && ![[ entity.var_f6fd2062 ]](entity.favoriteenemy)) {
-        return 0;
+        return false;
     }
     if (isplayer(entity.favoriteenemy) && entity.favoriteenemy isinvehicle()) {
-        return 0;
+        return false;
     }
     if (function_435d7c54(entity gettagorigin("j_spine4"), entity.angles)) {
-        return 0;
+        return false;
     }
     return !function_4f401255(entity.origin, entity.angles, #"hash_770f46ba71e975e9", entity.favoriteenemy getmins(), entity.favoriteenemy getmaxs(), [1:entity.favoriteenemy, 0:entity]);
 }
@@ -826,7 +826,7 @@ function private function_ee186f54(entity) {
     if (is_true(entity.var_c588eb) && isdefined(entity.favoriteenemy) && gettime() >= entity.var_8706203c && distancesquared(entity.favoriteenemy.origin, entity.origin) <= function_a3f6cdac(500) && bullettracepassed(entity.favoriteenemy geteyeapprox(), entity geteyeapprox(), 0, undefined)) {
         entity.var_8c4d3e5d = 1;
     }
-    return 0;
+    return false;
 }
 
 // Namespace archetype_mimic/archetype_mimic
@@ -1009,7 +1009,7 @@ function function_f543fa16() {
             return;
         }
         level endon(#"hash_7bff198db7bad372" + "<unknown string>");
-        while (1) {
+        while (true) {
             var_2a1f535d = function_2e8c33f6();
             foreach (var_1386d828 in var_2a1f535d) {
                 color = is_true(var_1386d828.var_3a3cdab8) ? (1, 0, 0) : (0, 1, 1);
@@ -1036,7 +1036,7 @@ function function_fa613511() {
             return;
         }
         level endon(#"hash_7bff198db7bad372" + "<unknown string>");
-        while (1) {
+        while (true) {
             foreach (prop in level.var_5fafe5ac) {
                 if (is_true(prop.var_3e64167)) {
                     continue;
@@ -1150,7 +1150,7 @@ function function_37c34605() {
             return;
         }
         level endon(#"hash_7bff198db7bad372" + "<unknown string>");
-        while (1) {
+        while (true) {
             foreach (point in level.var_6e175eb) {
                 debugstar(point.origin, 5, (1, 0, 0));
             }
@@ -1174,7 +1174,7 @@ function function_bc75224c() {
         var_d6d4c388 = int(5 * 1000);
         var_88f244b8 = 0;
         spawn_points = [];
-        while (1) {
+        while (true) {
             if (gettime() >= var_88f244b8 + var_d6d4c388) {
                 spawn_points = function_bc29cf28();
                 var_88f244b8 = gettime();
@@ -1221,7 +1221,7 @@ function function_7f6a5e14() {
         var_d4034654 = get_array("<unknown string>", "<unknown string>");
         var_d4034654 = arraycombine(var_d4034654, function_bc29cf28(), 0, 0);
         waitframe(1);
-        while (1) {
+        while (true) {
             player = getplayers()[0];
             direction = player getplayerangles();
             direction_vec = anglestoforward(direction);

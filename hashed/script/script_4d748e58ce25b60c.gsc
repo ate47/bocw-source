@@ -150,7 +150,7 @@ function function_591138a4() {
     self notify("1577d7ba2bd6dee5");
     self endon("1577d7ba2bd6dee5");
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         if (getplayers().size == 1) {
@@ -399,7 +399,7 @@ function main() {
         player clientfield::increment_to_player("hardResetCamera");
         player namespace_eccff4fb::resetplayer();
     }
-    while (1) {
+    while (true) {
         waitframe(1);
         players = getplayers();
         var_7ada0b88 = players.size;

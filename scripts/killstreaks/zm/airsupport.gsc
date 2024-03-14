@@ -27,7 +27,7 @@ function function_890b3889(killstreaktype, killstreakweapon, maxrange, var_f6825
 // Size: 0x88
 function private function_4b1634b2(*killstreakweapon) {
     self endon(#"death", #"disconnect", #"cancel_selection", #"lockin_selection");
-    while (1) {
+    while (true) {
         if (!self killstreakrules::function_71e94a3b()) {
             self notify(#"hash_24520f447c149637");
         }
@@ -168,7 +168,7 @@ function private function_b66d4fac(killstreaktype, maxrange, var_f6825ff2, var_c
     }
     util::wait_network_frame();
     self.mdl_target[killstreaktype] [[ var_f6825ff2 ]]();
-    while (1) {
+    while (true) {
         v_start = self geteye();
         v_forward = self getweaponforwarddir();
         v_end = v_start + v_forward * maxrange;

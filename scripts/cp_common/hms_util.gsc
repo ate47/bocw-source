@@ -136,7 +136,7 @@ function function_32397759() {
         if (getdvarint(#"hash_392e1be829a88ce7", 0) == 0) {
             return;
         }
-        while (1) {
+        while (true) {
             if (getdvarint(#"hash_6187089da5dd2a15", 1) == 0) {
                 wait(1);
                 continue;
@@ -194,7 +194,7 @@ function function_5056f90d() {
         if (getdvarint(#"hash_392e1be829a88ce7", 0) == 0) {
             return;
         }
-        while (1) {
+        while (true) {
             if (isdefined(level.player.maxhealth) && level.player.maxhealth > 0) {
                 break;
             }
@@ -332,7 +332,7 @@ function function_b9afa497(var_69ddbb87) {
 function function_3b240a04() {
     /#
         self endon(#"hash_6387ba69ddfd9cab");
-        while (1) {
+        while (true) {
             level waittill(#"hash_c994d2af0329db3");
             self thread function_52f38f72();
         }
@@ -355,7 +355,7 @@ function function_52f38f72() {
                 waitframe(1);
                 continue;
             }
-            return;
+            break;
         }
     #/
 }
@@ -429,7 +429,7 @@ function function_36e9db45(var_5207b7a8) {
     case #"combat":
     case #"cqb":
         self ai::set_behavior_attribute("_human_demeanor", var_5207b7a8);
-        return;
+        break;
     default:
         /#
             assertmsg("<unknown string>" + var_5207b7a8 + "<unknown string>");
@@ -607,7 +607,7 @@ function function_3ab6b4b0(var_fa4801bb, n_min, n_max, str_endon) {
     if (!b_randomize) {
         n_wait = n_min;
     }
-    while (1) {
+    while (true) {
         if (b_randomize) {
             n_wait = randomfloatrange(n_min, n_max);
         }
@@ -682,7 +682,7 @@ function function_4f1192f6() {
 function function_bc0a80c() {
     /#
         level endon(#"hash_1cbb37dbc19ef261");
-        while (1) {
+        while (true) {
             if (isdefined(getdvar(#"hash_5783d5fbedee8801")) && !getdvar(#"hash_5783d5fbedee8801")) {
                 self triggerenable(0);
                 waitframe(1);
@@ -713,7 +713,7 @@ function function_35fdfa10(str_targetname) {
 function function_d0f58bc6(vol) {
     level endon(#"hash_1cbb37dbc19ef261");
     level.player endon(#"death");
-    while (1) {
+    while (true) {
         /#
             if (isdefined(getdvar(#"hash_5783d5fbedee8801")) && !getdvar(#"hash_5783d5fbedee8801")) {
                 waitframe(1);
@@ -723,7 +723,7 @@ function function_d0f58bc6(vol) {
         if (level.player istouching(vol)) {
             util::function_2a8f4806(#"hash_4ee2d7dccb9b2b02");
             level notify(#"hash_1cbb37dbc19ef261");
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -735,10 +735,10 @@ function function_d0f58bc6(vol) {
 // Size: 0x2ba
 function function_b72c5f95(var_7b23aa51 = 400, var_4e0e5493 = 250, var_e58f924c = 250, var_b8c7d3b1 = 10, var_e4ea7483 = 0) {
     self endon(#"death", #"hash_5b54b2be0ce0cc0c");
-    while (1) {
+    while (true) {
         wait(randomfloatrange(0.25, 1.25));
         if (!isalive(level.player)) {
-            return;
+            break;
         }
         var_91d1913b = distance2d(self.origin, level.player.origin);
         if (var_91d1913b < var_7b23aa51) {
@@ -779,7 +779,7 @@ function function_d370236e(target, var_7b23aa51 = 500, var_e544dc47 = 400, var_b
     coverdirection = undefined;
     var_5134ce37 = 0;
     self childthread function_c68d3621(target, var_7b23aa51);
-    while (1) {
+    while (true) {
         if (!isalive(target)) {
             self function_a4a30cfd();
             return;
@@ -1147,7 +1147,7 @@ function function_2f50100e(var_ce6e52bd, var_c412903e, var_b7925ab5 = "shutoff_a
     var_2431c996 = 0;
     var_f8a9678c = undefined;
     str_current = undefined;
-    while (1) {
+    while (true) {
         if (is_true(self.var_dfd2d506)) {
             if (var_9be70610) {
                 var_8000281 = distance(self.origin, var_c412903e);
@@ -1250,7 +1250,7 @@ function throw_grenade(v_target, var_9ff6ef8f = 0) {
     }
     if (self.grenadeammo != 0) {
         self.var_38754eac = v_target;
-        while (1) {
+        while (true) {
             var_29b8f3d0 = undefined;
             var_29b8f3d0 = self waittill(#"bhtn_action_terminate");
             if (var_29b8f3d0.action === #"grenade") {
@@ -1331,7 +1331,7 @@ function function_b064d2a4(var_6bb4ec43, var_c412903e, var_b7925ab5 = "shutoff_p
     }
     var_ab3e25a2 = e_player getmovespeedscale();
     var_7d7ccfc0 = 0;
-    while (1) {
+    while (true) {
         if (var_9be70610 == 1) {
             var_d85a63f6 = distance(e_player.origin, var_c412903e);
             var_d1764ea = distance(self.origin, var_c412903e);
@@ -1634,7 +1634,7 @@ function function_52791e07(var_a5a6c25b = "default") {
     v_offset = (0, 0, 0);
     self.var_df85ad4e = var_a5a6c25b;
     var_64c006fe = 0;
-    while (1) {
+    while (true) {
         if (self.var_df85ad4e == "suspend" || self.var_df85ad4e == "scripted") {
             wait(0.5);
             continue;

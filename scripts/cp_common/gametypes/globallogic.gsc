@@ -435,9 +435,9 @@ function atleasttwoteams() {
         }
     }
     if (valid_count < 2) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace globallogic/globallogic
@@ -446,12 +446,12 @@ function atleasttwoteams() {
 // Size: 0x64
 function checkifteamforfeits(team) {
     if (!game.everexisted[team]) {
-        return 0;
+        return false;
     }
     if (level.playercount[team] < 1 && util::totalplayercount() > 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic/globallogic
@@ -466,7 +466,7 @@ function function_a39c3df6() {
             var_f8765cbc++;
             if (!level.multiteam) {
                 thread [[ level.onforfeit ]](team);
-                return 1;
+                return true;
             }
             continue;
         }
@@ -474,9 +474,9 @@ function function_a39c3df6() {
     }
     if (level.multiteam && var_f8765cbc == level.teams.size - 1) {
         thread [[ level.onforfeit ]](var_64d2b1d6);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic/globallogic
@@ -506,10 +506,10 @@ function isteamalldead(team) {
 function areallteamsdead() {
     foreach (team, _ in level.teams) {
         if (!isteamalldead(team)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace globallogic/globallogic
@@ -541,32 +541,32 @@ function function_f2a0d980() {
 // Size: 0x1b8
 function dodeadeventupdates() {
     if (!isdefined(level.ondeadevent)) {
-        return 0;
+        return false;
     }
     if (level.teambased) {
         if (areallteamsdead()) {
             [[ level.ondeadevent ]]("all");
-            return 1;
+            return true;
         }
         if (!isdefined(level.ondeadevent)) {
             var_207e906a = function_f2a0d980();
             if (isdefined(var_207e906a)) {
                 [[ level.onlastteamaliveevent ]](var_207e906a);
-                return 1;
+                return true;
             }
         } else {
             foreach (team, _ in level.teams) {
                 if (isteamalldead(team)) {
                     [[ level.ondeadevent ]](team);
-                    return 1;
+                    return true;
                 }
             }
         }
     } else if (totalalivecount() == 0 && totalplayerlives() == 0 && level.maxplayercount > 1) {
         [[ level.ondeadevent ]]("all");
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic/globallogic
@@ -586,14 +586,14 @@ function doonelefteventupdates() {
         foreach (team, _ in level.teams) {
             if (isonlyoneleftaliveonteam(team)) {
                 [[ level.ononeleftevent ]](team);
-                return 1;
+                return true;
             }
         }
     } else if (totalalivecount() == 1 && totalplayerlives() == 1 && level.maxplayercount > 1) {
         [[ level.ononeleftevent ]]("all");
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic/globallogic
@@ -709,13 +709,13 @@ function hostidledout() {
     hostplayer = util::gethostplayer();
     /#
         if (getdvarint(#"scr_writeconfigstrings", 0) == 1 || getdvarint(#"scr_hostmigrationtest", 0) == 1) {
-            return 0;
+            return false;
         }
     #/
     if (isdefined(hostplayer) && !is_true(hostplayer.hasspawned) && !isdefined(hostplayer.selectedclass)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic/globallogic
@@ -1015,10 +1015,10 @@ function function_c2cd8bf7(winner, endreasontext) {
             game.state = "playing";
             level.allowbattlechatter[#"bc"] = getgametypesetting(#"allowbattlechatter");
             map_restart(1);
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic/globallogic
@@ -1146,10 +1146,10 @@ function checktimelimit() {
 function allteamsunderscorelimit() {
     foreach (team, _ in level.teams) {
         if (game.stat[#"teamscores"][team] >= level.scorelimit) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace globallogic/globallogic
@@ -1630,7 +1630,7 @@ function timelimitclock() {
             if (timeleftint <= 10 || timeleftint <= 30 && timeleftint % 2 == 0) {
                 level notify(#"match_ending_very_soon", "time");
                 if (timeleftint == 0) {
-                    return;
+                    break;
                 }
                 clockobject playsound(#"mpl_ui_timer_countdown");
             }
@@ -1800,10 +1800,10 @@ function watchmatchendingsoon() {
 function anyteamhaswavedelay() {
     foreach (team, _ in level.teams) {
         if (level.wavedelay[team]) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic/globallogic
@@ -2089,19 +2089,19 @@ function registerfriendlyfiredelay(dvarstring, defaultvalue, minvalue, maxvalue)
 // Size: 0x90
 function checkroundswitch() {
     if (!isdefined(level.roundswitch) || !level.roundswitch) {
-        return 0;
+        return false;
     }
     if (!isdefined(level.onroundswitch)) {
-        return 0;
+        return false;
     }
     /#
         assert(game.roundsplayed > 0);
     #/
     if (game.roundsplayed % level.roundswitch == 0) {
         [[ level.onroundswitch ]]();
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic/globallogic

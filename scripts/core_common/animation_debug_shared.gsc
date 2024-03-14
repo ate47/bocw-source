@@ -85,7 +85,7 @@ function anim_info_render_thread() {
         add(level.debug_ents_by_origin[str_origin], self, 0);
         n_same_origin_index = find(level.debug_ents_by_origin[str_origin], self);
         recordent(self);
-        while (1) {
+        while (true) {
             _init_frame();
             str_extra_info = "<unknown string>";
             color = (1, 1, 0);
@@ -98,8 +98,8 @@ function anim_info_render_thread() {
             var_f667af2f = self getanimtime(animation) * var_958054e5;
             str_extra_info = str_extra_info + "<unknown string>" + var_f667af2f + "<unknown string>" + var_958054e5 + "<unknown string>" + var_7b160393 + "<unknown string>" + var_13edeb1f + "<unknown string>";
             s_pos = _get_align_pos(v_origin_or_ent, v_angles_or_tag);
-            self anim_origin_render(s_pos.origin, s_pos.angles, undefined, undefined, !1);
-            if (1) {
+            self anim_origin_render(s_pos.origin, s_pos.angles, undefined, undefined, !true);
+            if (true) {
                 line(self.origin, s_pos.origin, color, 0.5, 1);
                 sphere(s_pos.origin, 2, vectorscale((1, 1, 1), 0.3), 0.5, 1);
             }
@@ -112,12 +112,12 @@ function anim_info_render_thread() {
                 } else if (isdefined(v_origin_or_ent.targetname)) {
                     str_name = v_origin_or_ent.targetname;
                 }
-                if (1) {
+                if (true) {
                     print3d(v_origin_or_ent.origin + vectorscale((0, 0, 1), 5), str_name, vectorscale((1, 1, 1), 0.3), 1, 0.15);
                 }
                 record3dtext(str_name, v_origin_or_ent.origin + vectorscale((0, 0, 1), 5), vectorscale((1, 1, 1), 0.3), "<unknown string>");
             }
-            self anim_origin_render(self.origin, self.angles, undefined, undefined, !1);
+            self anim_origin_render(self.origin, self.angles, undefined, undefined, !true);
             str_name = "<unknown string>";
             if (isdefined(self.anim_debug_name)) {
                 str_name = self.anim_debug_name;
@@ -127,7 +127,7 @@ function anim_info_render_thread() {
                 str_name = self.targetname;
             }
             maso_they_don_t_see_us_ye_ = self.origin - (0, 0, 15 * n_same_origin_index);
-            if (1) {
+            if (true) {
                 print3d(maso_they_don_t_see_us_ye_, self getentnum() + get_ent_type() + "<unknown string>" + str_name, color, 0.8, 0.3);
                 print3d(maso_they_don_t_see_us_ye_ - vectorscale((0, 0, 1), 5), "<unknown string>" + (isanimlooping(animation) ? "<unknown string>" : "<unknown string>") + function_9e72a96(animation), color, 0.8, 0.3);
                 print3d(maso_they_don_t_see_us_ye_ - vectorscale((0, 0, 1), 11), str_extra_info, color, 0.8, 0.3);
@@ -143,26 +143,26 @@ function anim_info_render_thread() {
             record3dtext(self getentnum() + get_ent_type() + "<unknown string>" + str_name, maso_they_don_t_see_us_ye_, color, "<unknown string>");
             record3dtext("<unknown string>" + animation, maso_they_don_t_see_us_ye_ - vectorscale((0, 0, 1), 5), color, "<unknown string>");
             record3dtext(str_extra_info, maso_they_don_t_see_us_ye_ - vectorscale((0, 0, 1), 7), color, "<unknown string>");
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
-            render_tag("<unknown string>", "<unknown string>", !1);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
+            render_tag("<unknown string>", "<unknown string>", !true);
             _reset_frame();
             waitframe(1);
         }

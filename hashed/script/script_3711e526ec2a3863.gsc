@@ -26,7 +26,7 @@ function function_4e1b7477() {
     }
     level.players[0] endon(#"death");
     level endon(#"hash_629da45ba6679aae");
-    while (1) {
+    while (true) {
         level flag::wait_till("dambs_armada_base_playing");
         thread function_816f9a23();
         level flag::wait_till_clear("dambs_armada_base_playing");
@@ -44,7 +44,7 @@ function function_827cf084() {
     }
     level.players[0] endon(#"death");
     level endon(#"hash_488f3af92d575e4d");
-    while (1) {
+    while (true) {
         level flag::wait_till("dambs_armada_mortar_village_playing");
         thread function_62d67678();
         level flag::wait_till_clear("dambs_armada_mortar_village_playing");
@@ -62,7 +62,7 @@ function function_2cc7f62c() {
     }
     level.players[0] endon(#"death");
     level endon(#"hash_6e7780f7f1e44599");
-    while (1) {
+    while (true) {
         level flag::wait_till("dambs_armada_swamp_playing");
         thread function_54b26c90();
         level flag::wait_till_clear("dambs_armada_swamp_playing");
@@ -81,7 +81,7 @@ function function_6cd6e708() {
     }
     level.players[0] endon(#"death");
     level endon(#"hash_11376b46ca5b856e");
-    while (1) {
+    while (true) {
         level flag::wait_till("dambs_armada_crash_playing");
         thread function_552d1d58();
         level flag::wait_till_clear("dambs_armada_crash_playing");
@@ -231,7 +231,7 @@ function function_7edafa59(str_msg, n_delay, var_37a6c96) {
             flag::wait_till(var_37a6c96);
         }
         music::setmusicstate(str_msg, undefined, n_delay);
-        return;
+        break;
     case #"hash_15d512eeb8abc51e":
         if (isdefined(var_37a6c96)) {
             flag::wait_till(var_37a6c96);
@@ -239,32 +239,32 @@ function function_7edafa59(str_msg, n_delay, var_37a6c96) {
         music::setmusicstate(str_msg, undefined, n_delay);
         wait(1);
         music::setmusicstate("12.0_turret");
-        return;
+        break;
     case #"hash_2375b08205562389":
         if (isdefined(var_37a6c96)) {
             flag::wait_till(var_37a6c96);
         }
         music::setmusicstate(str_msg, undefined, n_delay);
-        return;
+        break;
     case #"hash_3c930a111db30f46":
         music::setmusicstate(str_msg, undefined, n_delay);
         wait(5);
         music::setmusicstate("5.0_village_combat");
-        return;
+        break;
     case #"hash_7a72528b9f2c2f90":
         music::function_edda155f(str_msg, n_delay);
-        return;
+        break;
     case #"hash_2193c42e21ea2e63":
         music::function_2af5f0ec(str_msg);
-        return;
+        break;
     case #"hash_4c4e6fe764aec250":
         music::setmusicstate("explo_stinger", undefined, n_delay);
-        return;
+        break;
     default:
         /#
             iprintlnbold("<unknown string>" + str_msg + "<unknown string>");
         #/
-        return;
+        break;
     }
 }
 
@@ -278,17 +278,17 @@ function function_e80c0ccf(str_msg) {
         snd::function_7db65a93(#"musictrack_cp_armada_1");
         waitframe(1);
         snd::function_7db65a93(#"musictrack_cp_armada_2");
-        return;
+        break;
     case #"hash_3c930a111db30f46":
     case #"hash_5bfefcb798fc6c8a":
         snd::function_7db65a93(#"musictrack_cp_armada_3");
-        return;
+        break;
     case #"hash_6d6826a83750847":
         snd::function_7db65a93(#"musictrack_cp_armada_4");
-        return;
+        break;
     case #"hash_4c5ac549022188d4":
         snd::function_7db65a93(#"musictrack_cp_armada_5");
-        return;
+        break;
     }
 }
 

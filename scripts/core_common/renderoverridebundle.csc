@@ -94,7 +94,7 @@ function function_2dbeddb5(*local_client_num, var_166900a8) {
 // Checksum 0x8002f733, Offset: 0x548
 // Size: 0x3be
 function function_e04728e4(local_client_num) {
-    while (1) {
+    while (true) {
         result = undefined;
         result = level waittill(#"demo_jump", #"killcam_begin", #"killcam_end", #"player_switch", #"joined_team", #"localplayer_spawned", #"hash_7f642789ed08aae0", #"thermal_toggle", #"hacked");
         if (result._notify == "killcam_end") {
@@ -307,20 +307,20 @@ function function_c8d97b8e(local_client_num, flag, var_166900a8) {
 // Size: 0xce
 function function_6803f977(local_client_num, bundle) {
     if (!self function_ca024039()) {
-        return 0;
+        return false;
     }
     if (isigcactive(local_client_num)) {
-        return 0;
+        return false;
     }
     if (isdefined(level.vision_pulse) && is_true(level.vision_pulse[local_client_num])) {
-        return 0;
+        return false;
     }
     player = function_5c10bd79(local_client_num);
     if (player.var_33b61b6f === 1) {
         bundle.force_kill = 1;
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
@@ -329,17 +329,17 @@ function function_6803f977(local_client_num, bundle) {
 // Size: 0x8e
 function function_ce7fd1b9(local_client_num, bundle) {
     if (self function_21c0fa55()) {
-        return 0;
+        return false;
     }
     if (self function_ca024039()) {
-        return 0;
+        return false;
     }
     player = function_5c10bd79(local_client_num);
     if (player.var_33b61b6f === 1) {
         bundle.force_kill = 1;
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
@@ -348,15 +348,15 @@ function function_ce7fd1b9(local_client_num, bundle) {
 // Size: 0x6e
 function function_9216f2c3(local_client_num, *bundle) {
     if (is_true(level.gameended)) {
-        return 0;
+        return false;
     }
     if (!codcaster::function_b8fe9b52(bundle)) {
-        return 0;
+        return false;
     }
     if (is_true(level.isigcactive)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace renderoverridebundle/renderoverridebundle

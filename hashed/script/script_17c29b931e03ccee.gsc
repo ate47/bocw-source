@@ -56,15 +56,15 @@ function function_5fb139ea(*params) {
 // Size: 0xc0
 function function_41743630(*killstreaktype) {
     if (self killstreakrules::iskillstreakallowed("nuke", self.team) == 0) {
-        return 0;
+        return false;
     }
     killstreak_id = self killstreakrules::killstreakstart("nuke", self.team);
     if (killstreak_id == -1) {
-        return 0;
+        return false;
     }
     self namespace_f9b02f80::play_killstreak_start_dialog("nuke", self.team, killstreak_id);
     self thread function_65cd04d7(killstreak_id);
-    return 1;
+    return true;
 }
 
 // Namespace nuke/nuke
@@ -302,7 +302,7 @@ function private function_b830d52b() {
 // Checksum 0x262d1984, Offset: 0x1250
 // Size: 0x6
 function function_e3dc00a() {
-    return 0;
+    return false;
 }
 
 // Namespace nuke/nuke

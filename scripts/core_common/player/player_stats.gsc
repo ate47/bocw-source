@@ -33,17 +33,17 @@ function function_f94325d3() {
         assert(isplayer(self), "<unknown string>");
     #/
     if (sessionmodeiscampaigngame()) {
-        return 1;
+        return true;
     }
     if (sessionmodeiszombiesgame()) {
         if (level.gametype === #"doa") {
-            return 1;
+            return true;
         }
     }
     if (isbot(self) || is_true(level.disablestattracking)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace stats/player_stats
@@ -362,10 +362,10 @@ function function_ed81f25e(statname) {
 // Size: 0x78
 function function_baa25a23(statname, value) {
     if (!function_f94325d3()) {
-        return 0;
+        return false;
     }
     self set_stat(#"playerstatsbygametype", function_8921af36(), statname, #"statvalue", value);
-    return 1;
+    return true;
 }
 
 // Namespace stats/player_stats
@@ -374,10 +374,10 @@ function function_baa25a23(statname, value) {
 // Size: 0x48
 function function_d40764f3(statname, value) {
     if (!function_f94325d3()) {
-        return 0;
+        return false;
     }
     self addgametypestat(statname, value);
-    return 1;
+    return true;
 }
 
 // Namespace stats/player_stats
@@ -386,10 +386,10 @@ function function_d40764f3(statname, value) {
 // Size: 0x78
 function function_cc215323(statname, value) {
     if (!function_f94325d3()) {
-        return 0;
+        return false;
     }
     self inc_stat(#"playerstatsbygametype", function_8921af36(), statname, #"statvalue", value);
-    return 1;
+    return true;
 }
 
 // Namespace stats/player_stats
@@ -441,10 +441,10 @@ function function_b2c11cc(weapon, statname) {
 // Size: 0x68
 function function_53e7d4a5(weapon, statname, value) {
     if (!function_f94325d3()) {
-        return 0;
+        return false;
     }
     self set_stat(#"hash_3713686a5fc7b39e", weapon, statname, #"statvalue", value);
-    return 1;
+    return true;
 }
 
 // Namespace stats/player_stats
@@ -453,10 +453,10 @@ function function_53e7d4a5(weapon, statname, value) {
 // Size: 0x68
 function function_561716e6(weapon, statname, value) {
     if (!function_f94325d3()) {
-        return 0;
+        return false;
     }
     self inc_stat(#"hash_3713686a5fc7b39e", weapon, statname, #"statvalue", value);
-    return 1;
+    return true;
 }
 
 // Namespace stats/player_stats
@@ -465,10 +465,10 @@ function function_561716e6(weapon, statname, value) {
 // Size: 0x78
 function function_6cdd992f(weapon, bucket, value) {
     if (!function_f94325d3()) {
-        return 0;
+        return false;
     }
     self inc_stat(#"hash_3713686a5fc7b39e", weapon, #"hash_2a1ce63d60556431", bucket, #"statvalue", value);
-    return 1;
+    return true;
 }
 
 // Namespace stats/player_stats
@@ -477,10 +477,10 @@ function function_6cdd992f(weapon, bucket, value) {
 // Size: 0x78
 function function_328bc34a(weapon, location, value) {
     if (!function_f94325d3()) {
-        return 0;
+        return false;
     }
     self inc_stat(#"hash_3713686a5fc7b39e", weapon, #"hash_5b635080228b9c03", location, #"statvalue", value);
-    return 1;
+    return true;
 }
 
 // Namespace stats/player_stats
@@ -489,7 +489,7 @@ function function_328bc34a(weapon, location, value) {
 // Size: 0x184
 function function_80099ca1(weapon, statname) {
     if (!function_f94325d3()) {
-        return 0;
+        return false;
     }
     if (!isdefined(self.pers[#"hash_45ad01f9212e202c"])) {
         self.pers[#"hash_45ad01f9212e202c"] = [];
@@ -504,9 +504,9 @@ function function_80099ca1(weapon, statname) {
     value = self.pers[#"hash_45ad01f9212e202c"][weapon][statname];
     if (value > self function_b2c11cc(weapon, statname)) {
         self function_53e7d4a5(weapon, statname, value);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace stats/player_stats
@@ -535,10 +535,10 @@ function function_3f64434(weapon) {
 // Size: 0x68
 function function_c8da9a88(equipment, statname, value) {
     if (!function_f94325d3()) {
-        return 0;
+        return false;
     }
     self set_stat(#"hash_7a634ccef92080c6", equipment, statname, #"statvalue", value);
-    return 1;
+    return true;
 }
 
 // Namespace stats/player_stats
@@ -547,10 +547,10 @@ function function_c8da9a88(equipment, statname, value) {
 // Size: 0x68
 function function_622feb0d(equipment, statname, value) {
     if (!function_f94325d3()) {
-        return 0;
+        return false;
     }
     self inc_stat(#"hash_7a634ccef92080c6", equipment, statname, #"statvalue", value);
-    return 1;
+    return true;
 }
 
 // Namespace stats/player_stats
@@ -559,7 +559,7 @@ function function_622feb0d(equipment, statname, value) {
 // Size: 0x184
 function function_6fb0b113(equipment, statname) {
     if (!function_f94325d3()) {
-        return 0;
+        return false;
     }
     if (!isdefined(self.pers[#"hash_535ec6a0c26aaa28"])) {
         self.pers[#"hash_535ec6a0c26aaa28"] = [];
@@ -574,9 +574,9 @@ function function_6fb0b113(equipment, statname) {
     value = self.pers[#"hash_535ec6a0c26aaa28"][equipment][statname];
     if (value > self function_97f7728e(equipment, statname)) {
         self function_c8da9a88(equipment, statname, value);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace stats/player_stats
@@ -593,10 +593,10 @@ function function_9792680b(scorestreak, statname) {
 // Size: 0x68
 function function_1eb9272f(scorestreak, statname, value) {
     if (!function_f94325d3()) {
-        return 0;
+        return false;
     }
     self set_stat(#"hash_5d925e2af850ce9e", scorestreak, statname, #"statvalue", value);
-    return 1;
+    return true;
 }
 
 // Namespace stats/player_stats
@@ -605,10 +605,10 @@ function function_1eb9272f(scorestreak, statname, value) {
 // Size: 0x68
 function function_8fb23f94(scorestreak, statname, value) {
     if (!function_f94325d3()) {
-        return 0;
+        return false;
     }
     self inc_stat(#"hash_5d925e2af850ce9e", scorestreak, statname, #"statvalue", value);
-    return 1;
+    return true;
 }
 
 // Namespace stats/player_stats
@@ -617,7 +617,7 @@ function function_8fb23f94(scorestreak, statname, value) {
 // Size: 0x184
 function function_b04e7184(scorestreak, statname) {
     if (!function_f94325d3()) {
-        return 0;
+        return false;
     }
     if (!isdefined(self.pers[#"hash_5720f063ea8634a8"])) {
         self.pers[#"hash_5720f063ea8634a8"] = [];
@@ -632,9 +632,9 @@ function function_b04e7184(scorestreak, statname) {
     value = self.pers[#"hash_5720f063ea8634a8"][scorestreak][statname];
     if (value > self function_9792680b(scorestreak, statname)) {
         self function_1eb9272f(scorestreak, statname, value);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace stats/player_stats
@@ -651,10 +651,10 @@ function function_bd731115(vehicle, statname) {
 // Size: 0x68
 function function_e1c64c80(vehicle, statname, value) {
     if (!function_f94325d3()) {
-        return 0;
+        return false;
     }
     self set_stat(#"hash_3d466b9663c34ff2", vehicle, statname, #"statvalue", value);
-    return 1;
+    return true;
 }
 
 // Namespace stats/player_stats
@@ -663,10 +663,10 @@ function function_e1c64c80(vehicle, statname, value) {
 // Size: 0x68
 function function_7fd36562(vehicle, statname, value) {
     if (!function_f94325d3()) {
-        return 0;
+        return false;
     }
     self inc_stat(#"hash_3d466b9663c34ff2", vehicle, statname, #"statvalue", value);
-    return 1;
+    return true;
 }
 
 // Namespace stats/player_stats
@@ -976,12 +976,12 @@ function function_eec52333(weapon, statname, value, classnum, pickedup, forceads
     case #"shots":
     case #"used":
         self function_f95ea9b6(weapon);
-        return;
+        break;
     case #"kills":
         if (weapon.var_ff0b00ba) {
             self function_dad108fa(#"kills_equipment", 1);
         }
-        return;
+        break;
     }
 }
 

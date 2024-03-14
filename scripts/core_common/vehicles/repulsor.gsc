@@ -153,7 +153,7 @@ function guard_points_debug() {
             return;
         }
         self.isdebugdrawing = 1;
-        while (1) {
+        while (true) {
             foreach (point in self.debugpointsarray) {
                 color = (1, 0, 0);
                 if (ispointinnavvolume(point, "<unknown string>")) {
@@ -219,7 +219,7 @@ function function_4e26188c() {
         if (friend !== self && !vehicle_ai::entityisarchetype(friend, #"hash_1052c2bf3e49b03") && isalive(friend)) {
             if (self cansee(friend)) {
                 guard(friend);
-                return;
+                break;
             }
             if (!isalive(self.host)) {
                 guard(friend);
@@ -272,7 +272,7 @@ function state_guard_update(*params) {
     timenotatgoal = gettime();
     pointindex = 0;
     stuckcount = 0;
-    while (1) {
+    while (true) {
         function_4e26188c();
         usepathfinding = 1;
         onnavvolume = ispointinnavvolume(self.origin, "navvolume_small");
@@ -383,7 +383,7 @@ function state_guard_update(*params) {
 function function_92975fec() {
     self notify(#"hash_5d0727c5729a6b80");
     self endon(#"hash_5d0727c5729a6b80", #"death");
-    while (1) {
+    while (true) {
         self waittill(#"projectile_applyattractor", #"hash_13e7b61fa7e42ede");
         if (util::iscooldownready("repulsorfx_interval")) {
             playfxontag(self.settings.var_f5b66873, self, "tag_origin");
@@ -435,9 +435,9 @@ function drone_callback_damage(einflictor, eattacker, idamage, idflags, smeansof
 // Size: 0x86
 function drone_allowfriendlyfiredamage(*einflictor, eattacker, smeansofdeath, *weapon) {
     if (isdefined(smeansofdeath) && isdefined(smeansofdeath.archetype) && isdefined(weapon) && smeansofdeath.archetype == #"hash_1052c2bf3e49b03" && weapon == "MOD_EXPLOSIVE") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_71e6f25/namespace_71e6f25

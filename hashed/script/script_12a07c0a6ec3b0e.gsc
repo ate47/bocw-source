@@ -267,7 +267,7 @@ function private function_31253aed(localclientnum, starttime, var_aee56165) {
     self notify("1dd82b7e68f84364");
     self endon("1dd82b7e68f84364");
     level endon(#"end_game", #"hash_2ea4e3a9aa7709d5");
-    while (1) {
+    while (true) {
         n_delta = getservertime(localclientnum) - starttime;
         if (n_delta < 0) {
             n_delta = 0;

@@ -369,7 +369,7 @@ function function_21ba74a1(machine, trigger) {
     }
     self endoncallback(&function_6c71e778, #"death");
     self thread function_755edc7e(machine, trigger);
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
@@ -489,7 +489,7 @@ function function_22aada64() {
     self val::set(#"beacon", "allowdeath", 0);
     n_damage = 0;
     n_threshold = 1000 * getplayers().size * level.var_b48509f9;
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = self waittill(#"damage");
         n_damage = n_damage + s_result.amount;
@@ -505,7 +505,7 @@ function function_22aada64() {
             }
             level waittill(#"hash_345e9169ebba28fb");
             namespace_553954de::function_7c97e961(level.var_b48509f9 + 1);
-            return;
+            break;
         }
     }
 }

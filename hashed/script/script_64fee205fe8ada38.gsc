@@ -41,7 +41,7 @@ function private function_70a657d8() {
 function function_4b462025(enemy, b_ignore_cleanup) {
     self endon(#"death");
     if (!isdefined(enemy)) {
-        return 0;
+        return false;
     }
     enemy clientfield::increment("" + #"hash_2201faa112c8313", 1);
     var_d54a1968 = getweapon(#"hash_7b102ea666456cda");
@@ -110,7 +110,7 @@ function function_4b462025(enemy, b_ignore_cleanup) {
     if (isdefined(grenade)) {
         grenade thread function_b38c1846(var_b1d0a64, enemy, b_ignore_cleanup, self);
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
@@ -214,7 +214,7 @@ function private function_cf57c2cb(grenade) {
     self endon(#"hash_29b88049dcac8bb3", #"death");
     self setcandamage(1);
     self.health = 10;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (waitresult.amount > 0) {
@@ -225,7 +225,7 @@ function private function_cf57c2cb(grenade) {
                     grenade notify(#"projectile_impact_explode");
                 }
                 self function_cb48cddd();
-                return;
+                break;
             }
             waitframe(1);
         }
@@ -341,13 +341,13 @@ function private function_187bcbe() {
         self moveto(self.origin + var_5846115f * 100, 0.25, 0, 0.1875);
         wait(0.25);
     }
-    while (1) {
+    while (true) {
         var_6575092a = 1;
         var_2f769fb1 = (0, 0, 0);
         var_2d0b175 = 0;
         var_f6107d1 = self.origin;
         self.var_88b20e7f = min(self.var_88b20e7f, 60);
-        while (1) {
+        while (true) {
             if (isdefined(self.var_66a3d186)) {
                 var_2f769fb1 = self.var_66a3d186 gettagorigin("j_head");
             }
@@ -380,7 +380,7 @@ function private function_187bcbe() {
         var_1f2ee4ae = distance2d(self.origin, self.target_ent.origin);
         var_584124bc = self.origin;
         var_c0500b76 = (randomint(2) - 0.5) * 2;
-        while (1) {
+        while (true) {
             if (isdefined(self.target_ent)) {
                 var_2f769fb1 = self.target_ent.origin + vectorscale((0, 0, 1), 70);
                 to_target = vectornormalize(var_2f769fb1 - self.origin);
@@ -418,7 +418,7 @@ function private function_187bcbe() {
         self.var_88b20e7f = 60;
         var_2f769fb1 = (0, 0, 0);
         var_584124bc = self.origin;
-        while (1) {
+        while (true) {
             if (isdefined(self.var_66a3d186)) {
                 var_2f769fb1 = self.var_66a3d186 gettagorigin("j_head");
             }
@@ -450,12 +450,12 @@ function private function_c9bcf1cb(var_2f769fb1, var_1f14bda8, var_4717cb50) {
     waitresult = undefined;
     waitresult = self waittilltimeout(0.2, #"movedone");
     if (waitresult._notify === "movedone") {
-        return 1;
+        return true;
     }
     if (isdefined(var_1f14bda8) && distancesquared(var_2f769fb1, self.origin) < function_a3f6cdac(var_1f14bda8)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b

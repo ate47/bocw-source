@@ -228,7 +228,7 @@ function function_36b5330c(localclientnum, *oldval, newval, *bnewent, *binitials
         foreach (var_bb21be70 in var_8cbaf960) {
             var_bb21be70.var_cc1c5020 = util::spawn_model(fieldname, var_bb21be70.model, var_bb21be70.origin, var_bb21be70.angles);
         }
-        return;
+        break;
     case 2:
         foreach (var_bb21be70 in var_8cbaf960) {
             if (var_bb21be70.script_noteworthy === "rooftop") {
@@ -239,7 +239,7 @@ function function_36b5330c(localclientnum, *oldval, newval, *bnewent, *binitials
                 var_bb21be70.var_cc1c5020 function_619a5c20();
             }
         }
-        return;
+        break;
     case 3:
         foreach (var_bb21be70 in var_8cbaf960) {
             if (var_bb21be70.script_noteworthy === "hotel") {
@@ -250,7 +250,7 @@ function function_36b5330c(localclientnum, *oldval, newval, *bnewent, *binitials
                 var_bb21be70.var_cc1c5020 function_619a5c20();
             }
         }
-        return;
+        break;
     case 4:
         foreach (var_bb21be70 in var_8cbaf960) {
             if (var_bb21be70.script_noteworthy === "korber") {
@@ -261,7 +261,7 @@ function function_36b5330c(localclientnum, *oldval, newval, *bnewent, *binitials
                 var_bb21be70.var_cc1c5020 function_619a5c20();
             }
         }
-        return;
+        break;
     case 0:
         foreach (var_bb21be70 in var_8cbaf960) {
             if (var_bb21be70.script_noteworthy === "westberlin") {
@@ -280,7 +280,7 @@ function function_36b5330c(localclientnum, *oldval, newval, *bnewent, *binitials
                 var_bb21be70.var_cc1c5020 function_619a5c20();
             }
         }
-        return;
+        break;
     }
 }
 
@@ -561,7 +561,7 @@ function private function_347f52dd(localclientnum) {
     self endon("75f7b2f29a47cb00");
     var_ef2f4cec = spawnstruct();
     var_ef2f4cec.var_e450444f = 0;
-    while (1) {
+    while (true) {
         currentplayer = function_5c10bd79(localclientnum);
         if (!isdefined(currentplayer)) {
             waitframe(1);

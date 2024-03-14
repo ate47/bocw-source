@@ -64,12 +64,12 @@ function function_6190ae9e(origin, *angles, *player) {
             if (isdefined(protectedzone)) {
                 dist2 = distance2dsquared(player, protectedzone.origin);
                 if (dist2 < length2) {
-                    return 0;
+                    return false;
                 }
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace concertina_wire/gadget_concertina_wire

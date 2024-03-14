@@ -268,7 +268,7 @@ function flush_objective_dialog_on_player(objectivekey) {
     for (i = self.leaderdialogqueue.size - 1; i >= 0; i--) {
         if (objectivekey === self.leaderdialogqueue[i].objectivekey) {
             arrayremoveindex(self.leaderdialogqueue, i);
-            return;
+            break;
         }
     }
 }
@@ -941,11 +941,11 @@ function is_team_winning(checkteam) {
     foreach (team, _ in level.teams) {
         if (team != checkteam) {
             if (game.stat[#"teamscores"][team] >= score) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace globallogic_audio/globallogic_audio

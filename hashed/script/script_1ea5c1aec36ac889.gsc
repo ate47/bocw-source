@@ -69,10 +69,10 @@ function function_bad0c914(item) {
     if (item.var_a6762160.itemtype === #"tactical") {
         tactical = self.inventory.items[13];
         if (tactical.var_a6762160.name === #"hash_7ada82abc5dad90e") {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_33c196c8/namespace_33c196c8
@@ -231,7 +231,7 @@ function private function_b66d4fac() {
     self endon("28e12eeb6d841b74");
     self endon(#"death", #"disconnect", #"offhand_end", #"hash_7f812cfd98c00a7b", #"hash_65d1a61342635458");
     self.var_310a3632.mdl_target endon(#"death");
-    while (1) {
+    while (true) {
         self function_9132ad8e();
         self.var_310a3632.mdl_target moveto(self.var_310a3632.var_689f4026, float(function_60d95f53()) / 1000);
         b_valid = function_b864b947(self.var_310a3632.var_6164d302);
@@ -424,12 +424,12 @@ function cmd(cmd) {
         switch (cmd) {
         case #"hash_4b0f351e219eb41b":
             function_605ea132();
-            return;
+            break;
         case #"hash_53a8b6448d2d9f11":
             function_f4e829d6();
-            return;
+            break;
         default:
-            return;
+            break;
         }
     #/
 }

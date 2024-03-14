@@ -101,12 +101,12 @@ function function_d81240c3() {
 // Size: 0x68
 function function_3a3787ec() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self waittill(#"bad_path");
         if (isdefined(self.attackable)) {
             self.var_12af7864 = 1;
             self.attackable = undefined;
-            return;
+            break;
         }
         wait(0.5);
     }
@@ -198,25 +198,25 @@ function function_c03a8002(e_player) {
     e_player globallogic::function_d96c031e();
     if (isplayer(e_player)) {
         if (level flag::get(#"hash_1c70d74ceb5e9aa2") || level flag::get(#"hash_7752d012501cd222") || level flag::get(#"hash_49e515cdcf4bb8db")) {
-            return 0;
+            return false;
         } else if (isdefined(level.var_28c80220) && level.var_28c80220 != 0 && !is_true(self.stub.control_point.var_4e953b00)) {
             self sethintstringforplayer(e_player, #"hash_308c87761b873a1b");
-            return 1;
+            return true;
         } else if (level.round_number < self.stub.control_point.var_56d2adea) {
             self sethintstringforplayer(e_player, #"hash_7925f5addbd983a8");
-            return 1;
+            return true;
         } else if (self.stub.control_point.var_269ad176 === 0) {
             self sethintstringforplayer(e_player, #"hash_1dea4a165481ef03", 500);
             if (!e_player zm_score::can_player_purchase(500)) {
                 e_player globallogic::function_d1924f29(#"hash_6e3ae7967dc5d414");
             }
-            return 1;
+            return true;
         } else {
             self sethintstringforplayer(e_player, #"");
-            return 0;
+            return false;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_f7b3ed9/namespace_f7b3ed9
@@ -225,7 +225,7 @@ function function_c03a8002(e_player) {
 // Size: 0x208
 function function_789417a9() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         e_player = waitresult.activator;
@@ -382,7 +382,7 @@ function function_752dbea1(var_d9e04bad = #"low") {
     if (var_d9e04bad == #"hash_81d3d1917793b59") {
         str_rumble = #"hash_52050074b9862432";
     }
-    while (1) {
+    while (true) {
         playrumbleonposition(str_rumble, self.origin);
         wait(0.5);
     }
@@ -400,7 +400,7 @@ function function_de517a00() {
     self.var_6d81bf5c = self.var_126d7bef;
     self.var_c8a896e3 = self.ignore_round_spawn_failsafe;
     self.var_4e219048 = self.b_ignore_cleanup;
-    while (1) {
+    while (true) {
         wait(randomfloatrange(0.8, 1.2));
         var_ad7db199 = self.attackable;
         if (isdefined(var_ad7db199.control_point)) {
@@ -628,7 +628,7 @@ function function_30f8cfb4(satellite, zone_index, var_14a22ccd = 0) {
     zm_sq::function_266d66eb(#"hash_1598ff25b76743dd", e_objective, undefined, undefined, #"hash_8602209567f541c", undefined, &zm_gold_util::function_13ebb331, "vol_player_in_firebase");
     zm_sq::function_3029d343(#"hash_8602209567f541c", e_objective);
     zm_sq::function_266d66eb(#"hash_68f4e9062d28524d", e_objective, undefined, var_9bb2940e, #"hash_3e7926c5aefe4406", undefined, &zm_gold_util::function_13ebb331, "vol_player_in_firebase");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"damage");
         if (!isplayer(result.attacker)) {
@@ -716,7 +716,7 @@ function function_ea727237(*params) {
 function function_e69a5ae5() {
     level endon(#"end_game", "captured_control_point" + self.script_int, "failed_control_point" + self.script_int, #"hash_3e765c26047c9f54");
     self endon(#"defend_succeed");
-    while (1) {
+    while (true) {
         var_df9ba9f = getaiarchetypearray(#"zombie");
         foreach (ai in var_df9ba9f) {
             if (ai.zombie_move_speed !== "sprint" && !is_true(ai.in_the_ground) && ai getpathmode() !== "dont move") {
@@ -765,7 +765,7 @@ function function_bc369205(var_14a22ccd = 0, var_17f8efd5 = 0, var_d219813c = 0)
         }
     }
     self flag::clear(#"hash_7288309470ca474f");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill("damage" + self.script_int);
         amount = waitresult.amount;
@@ -1028,7 +1028,7 @@ function function_bf606a73() {
     level endon(#"hash_3e765c26047c9f54");
     self endon(#"death");
     self callback::function_d8abfc3d(#"hash_4afe635f36531659", &function_fd68cae4);
-    while (1) {
+    while (true) {
         a_players = getplayers();
         player = array::get_all_closest(self.origin, a_players)[0];
         namespace_85745671::function_744beb04(self);
@@ -1124,10 +1124,10 @@ function private function_afa5893c() {
     self notify("69d00b780355467d");
     self endon("69d00b780355467d");
     level endon(#"end_game", #"game_ended", #"hash_3e765c26047c9f54");
-    while (1) {
+    while (true) {
         if (level.round_number == self.var_56d2adea) {
             level zm_vo::function_d6f8bbd9(#"hash_51289ba87392a862", 5, function_a1ef346b());
-            return;
+            break;
         }
         wait(1);
     }
@@ -1141,17 +1141,17 @@ function private function_2f28c166() {
     self notify("49c2422d7007c933");
     self endon("49c2422d7007c933");
     level endon(#"end_game", "captured_control_point" + self.script_int, "failed_control_point" + self.script_int, #"hash_5dc90fb13f4ddf12", #"hash_22e4c4a43b33a4bd", #"hash_3e765c26047c9f54");
-    while (1) {
+    while (true) {
         if (self.var_2b239c6f > 2000) {
             level thread zm_vo::function_d6f8bbd9(#"hash_5aa4b5320ce722e0", undefined, function_a1ef346b());
             break;
         }
         wait(0.5);
     }
-    while (1) {
+    while (true) {
         if (self.var_2b239c6f > 3400) {
             level thread zm_vo::function_d6f8bbd9(#"hash_a7e5d16b0fe0df", undefined, function_a1ef346b());
-            return;
+            break;
         }
         wait(0.5);
     }
@@ -1180,18 +1180,18 @@ function cmd(cmd) {
         switch (cmd) {
         case #"hash_4d05810932ce7723":
             function_2ecb6786();
-            return;
+            break;
         case #"hash_5076e04551545ed9":
             function_b2d9913a();
-            return;
+            break;
         case #"hash_69d305bb8a491ab8":
             function_c4d7b0f0();
-            return;
+            break;
         case #"hash_3cc8f8a1ca5d7c9b":
             function_353c005c();
-            return;
+            break;
         default:
-            return;
+            break;
         }
     #/
 }

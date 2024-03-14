@@ -129,10 +129,10 @@ function function_58d581b6(weapon) {
         case #"hash_18696150427f2efb":
         case #"hash_5382c3fae4273fed":
         case #"hash_69461751fa492ea4":
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_6fc19861/namespace_6fc19861
@@ -144,10 +144,10 @@ function function_17a14a22(weapon) {
         switch (weapon.name) {
         case #"hash_5382c3fae4273fed":
         case #"hash_69461751fa492ea4":
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_6fc19861/namespace_6fc19861
@@ -159,10 +159,10 @@ function function_cb769ba9(weapon) {
         switch (weapon.name) {
         case #"hash_7eab88123b09e2c":
         case #"hash_18696150427f2efb":
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_6fc19861/namespace_6fc19861
@@ -174,10 +174,10 @@ function function_2da7c1b7(weapon) {
         switch (weapon.name) {
         case #"hash_7eab88123b09e2c":
         case #"hash_5382c3fae4273fed":
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_6fc19861/namespace_6fc19861
@@ -188,7 +188,7 @@ function function_5167b40a(localclientnum, weapon) {
     self endon(#"death", #"weapon_change", #"hash_20766a971f7a55b4");
     self notify("46b9e8dbcaf46fe1");
     self endon("46b9e8dbcaf46fe1");
-    while (1) {
+    while (true) {
         var_a1796c91 = self function_cb96958d(localclientnum, weapon);
         is_upgraded = function_2da7c1b7(weapon);
         if (!isdefined(var_a1796c91) || is_true(self.var_b7a5e43f)) {
@@ -507,7 +507,7 @@ function function_413411e1() {
         self function_60baf83(#"hash_224204b4ff32ed94");
         self function_60baf83(#"hash_7aaef7109d7bff11");
         self function_2f16cef6(#"hash_334400c4a621888e");
-        return;
+        break;
     case 1:
         self function_60baf83(#"hash_334400c4a621888e");
         self function_60baf83(#"hash_20f8b2c49b7e5461");
@@ -515,7 +515,7 @@ function function_413411e1() {
         self function_60baf83(#"hash_224204b4ff32ed94");
         self function_60baf83(#"hash_7aaef7109d7bff11");
         self function_2f16cef6(#"hash_2c13b8c4a279fcc5");
-        return;
+        break;
     case 2:
         self function_60baf83(#"hash_334400c4a621888e");
         self function_60baf83(#"hash_2c13b8c4a279fcc5");
@@ -523,7 +523,7 @@ function function_413411e1() {
         self function_60baf83(#"hash_224204b4ff32ed94");
         self function_60baf83(#"hash_7aaef7109d7bff11");
         self function_2f16cef6(#"hash_20f8b2c49b7e5461");
-        return;
+        break;
     case 3:
         self function_60baf83(#"hash_334400c4a621888e");
         self function_60baf83(#"hash_2c13b8c4a279fcc5");
@@ -531,7 +531,7 @@ function function_413411e1() {
         self function_60baf83(#"hash_224204b4ff32ed94");
         self function_60baf83(#"hash_7aaef7109d7bff11");
         self function_2f16cef6(#"hash_21149ec49b96ad1d");
-        return;
+        break;
     case 4:
         self function_60baf83(#"hash_334400c4a621888e");
         self function_60baf83(#"hash_2c13b8c4a279fcc5");
@@ -539,7 +539,7 @@ function function_413411e1() {
         self function_60baf83(#"hash_7aaef7109d7bff11");
         self function_2f16cef6(#"hash_21149ec49b96ad1d");
         self function_2f16cef6(#"hash_224204b4ff32ed94");
-        return;
+        break;
     case 5:
         self function_60baf83(#"hash_334400c4a621888e");
         self function_60baf83(#"hash_2c13b8c4a279fcc5");
@@ -547,7 +547,7 @@ function function_413411e1() {
         self function_2f16cef6(#"hash_21149ec49b96ad1d");
         self function_2f16cef6(#"hash_224204b4ff32ed94");
         self function_2f16cef6(#"hash_7aaef7109d7bff11");
-        return;
+        break;
     default:
         return;
     }
@@ -696,7 +696,7 @@ function function_710eb784(localclientnum) {
     self endon(#"death", #"hash_12304702f9d44271");
     self notify("1162ec3942c053c7");
     self endon("1162ec3942c053c7");
-    while (1) {
+    while (true) {
         self waittillmatch({#notetrack:"axe_gun_melee_altdrop"}, #"notetrack");
         self function_45a91739(localclientnum);
         self notify(#"hash_20766a971f7a55b4");
@@ -810,7 +810,7 @@ function function_bf8b2d3f(localclientnum) {
     self endon(#"death", #"hash_7d6901432c3a2ec4");
     self notify("275b14cced19b9b6");
     self endon("275b14cced19b9b6");
-    while (1) {
+    while (true) {
         self waittillmatch({#notetrack:"axe_gun_smg_altdrop"}, #"notetrack");
         self function_4a8e6688(localclientnum);
     }
@@ -824,7 +824,7 @@ function function_299fd631(localclientnum) {
     self endon(#"death", #"weapon_change");
     self notify("6444629ec0754469");
     self endon("6444629ec0754469");
-    while (1) {
+    while (true) {
         self waittillmatch({#notetrack:"mag_out"}, #"notetrack");
         self.var_960d365a = 1;
         weapon = self function_d2c2b168();
@@ -840,7 +840,7 @@ function function_36fddaa2(localclientnum) {
     self endon(#"death", #"weapon_change");
     self notify("60871ca768f2b5a0");
     self endon("60871ca768f2b5a0");
-    while (1) {
+    while (true) {
         self waittillmatch({#notetrack:"mag_in"}, #"notetrack");
         self.var_960d365a = 0;
         weapon = self function_d2c2b168();
@@ -856,7 +856,7 @@ function function_a9fa384(localclientnum) {
     self endon(#"death", #"weapon_change");
     self notify("5ad42f683de2e91e");
     self endon("5ad42f683de2e91e");
-    while (1) {
+    while (true) {
         if (!isdefined(self.var_a0d6f528) && !isigcactive(localclientnum)) {
             waitframe(1);
             continue;
@@ -880,7 +880,7 @@ function function_d09aaf1a(localclientnum) {
     self endon(#"death", #"weapon_change");
     self notify("32ec893b83e00d31");
     self endon("32ec893b83e00d31");
-    while (1) {
+    while (true) {
         if (!self function_f69ceea9(localclientnum) && !isdefined(self.var_a0d6f528) && !isigcactive(localclientnum)) {
             waitframe(1);
             continue;

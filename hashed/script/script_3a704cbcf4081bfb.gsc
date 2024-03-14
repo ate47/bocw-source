@@ -633,7 +633,7 @@ function function_6f7ce46e(&var_a6fe91fd, condition_func) {
         zm_zonemgr::zone_wait_till_enabled(self.zone_name);
         self.var_3a3cdab8 = undefined;
     }
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittilltimeout(float(function_60d95f53()) / 1000, #"hash_7fd40fb3202e52db");
         if (is_true(self.var_3a3cdab8)) {
@@ -647,7 +647,7 @@ function function_6f7ce46e(&var_a6fe91fd, condition_func) {
             }
             if (isdefined(self.health) && self.health > 0) {
                 if (isvehicle(self)) {
-                } else if (0.35) {
+                } else if (true) {
                     function_14bad487(self, 0.35, 0.05, 8);
                 }
             }
@@ -676,9 +676,9 @@ function function_e77fca72() {
     self endoncallback(&function_6a447863, #"death", #"hash_7fb506f40bcf5962");
     self.var_624e969b = 1;
     self.original_angles = self.angles;
-    while (1) {
+    while (true) {
         function_14bad487(self, 0.75, 0.05, 2);
-        if (2) {
+        if (true) {
             wait(2);
         }
     }
@@ -714,7 +714,7 @@ function function_8be6cc92() {
     level endon(#"game_ended");
     self notify("3b6d68b63c3dc423");
     self endon("3b6d68b63c3dc423");
-    while (1) {
+    while (true) {
         foreach (player in getplayers()) {
             if (!isalive(player)) {
                 continue;

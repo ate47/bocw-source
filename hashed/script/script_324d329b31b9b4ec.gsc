@@ -83,7 +83,7 @@ function previs(localclientnum, invalid) {
     level.var_9c4cdb79[localclientnum] show();
     self thread function_2b804e42(localclientnum);
     function_3e8d9b27(!invalid, localclientnum);
-    while (1) {
+    while (true) {
         update_previs(localclientnum, invalid);
         waitframe(1);
     }

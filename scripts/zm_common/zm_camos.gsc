@@ -157,12 +157,12 @@ function private function_e5ed6edb(weapon) {
 // Size: 0x52
 function private function_6b9dce34(weapon) {
     if (isdefined(self function_79be4786(weapon))) {
-        return 1;
+        return true;
     }
     if (self function_1744e243(weapon) != 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_camos/zm_camos

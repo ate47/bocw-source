@@ -169,19 +169,19 @@ function function_cde018a9(var_c1c9cf07) {
 // Size: 0x1bc
 function function_efb6dedf(localclientnum, n_level = 0) {
     if (self function_6c32d092(localclientnum, #"hash_520b59b0216b70be")) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(localclientnum, #"hash_520b5ab0216b7271") && n_level <= 4) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(localclientnum, #"hash_520b5bb0216b7424") && n_level <= 3) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(localclientnum, #"hash_520b5cb0216b75d7") && n_level <= 2) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(localclientnum, #"hash_520b5db0216b778a") && n_level <= 1) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(localclientnum, #"hash_5930cf0eb070e35a") && n_level == 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_e86ffa8/namespace_e86ffa8
@@ -190,19 +190,19 @@ function function_efb6dedf(localclientnum, n_level = 0) {
 // Size: 0x1bc
 function function_3623f9d1(localclientnum, n_level = 0) {
     if (self function_6c32d092(localclientnum, #"hash_17ccbeee64daa727")) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(localclientnum, #"hash_17ccbdee64daa574") && n_level <= 4) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(localclientnum, #"hash_17ccbcee64daa3c1") && n_level <= 3) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(localclientnum, #"hash_17ccbbee64daa20e") && n_level <= 2) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(localclientnum, #"hash_17ccbaee64daa05b") && n_level <= 1) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(localclientnum, #"hash_602a1b6107105f07") && n_level == 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_e86ffa8/namespace_e86ffa8
@@ -211,18 +211,18 @@ function function_3623f9d1(localclientnum, n_level = 0) {
 // Size: 0x1bc
 function function_cd6787b(localclientnum, n_level = 0) {
     if (self function_6c32d092(localclientnum, #"hash_79774956f321dfed")) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(localclientnum, #"hash_79774856f321de3a") && n_level <= 4) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(localclientnum, #"hash_79774356f321d5bb") && n_level <= 3) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(localclientnum, #"hash_79774256f321d408") && n_level <= 2) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(localclientnum, #"hash_79774556f321d921") && n_level <= 1) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(localclientnum, #"hash_51b6cc6dbafb7f31") && n_level == 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 

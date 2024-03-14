@@ -72,11 +72,11 @@ function function_4013aee1(status_effect, var_3bc85d80) {
             if (status_effect.var_3d1ed4bd == getweapon(#"concussion_grenade")) {
                 processscoreevent(#"concussed_enemy", status_effect.var_4b22e697, status_effect.owner, status_effect.var_3d1ed4bd);
                 status_effect.var_4b22e697.var_9d19aa30 = (isdefined(status_effect.var_4b22e697.var_9d19aa30) ? status_effect.var_4b22e697.var_9d19aa30 : 0) + 1;
-                return;
+                break;
             }
         }
     default:
-        return;
+        break;
     }
 }
 

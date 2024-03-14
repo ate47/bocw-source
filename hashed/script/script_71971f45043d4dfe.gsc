@@ -448,7 +448,7 @@ function private function_3aa93442(entity) {
             }
         }
         count--;
-        if (-1) {
+        if (true) {
             wait(0.5);
         }
     }
@@ -554,7 +554,7 @@ function private function_99ab692d(entity) {
 // Size: 0x54
 function private function_e6d0f1d4(entity) {
     if (!is_true(entity.var_22b8f534)) {
-        return 0;
+        return false;
     }
     return entity.ai.var_5dc77566 && entity function_52562969();
 }
@@ -565,7 +565,7 @@ function private function_e6d0f1d4(entity) {
 // Size: 0x38
 function private function_52562969() {
     if (isdefined(self.var_90c3aec8) && self.var_90c3aec8.size >= 3) {
-        return 0;
+        return false;
     }
     return level.var_879dbfb8 < 9;
 }
@@ -635,7 +635,7 @@ function private function_7ff0ce68(inflictor, attacker, damage, *flags, *meansof
 function private function_bf8080c1(entity) {
     enemy = entity get_enemy();
     if (!function_b860fc37(enemy)) {
-        return 0;
+        return false;
     }
     var_6e3ad56b = enemy.origin;
     if (isplayer(enemy)) {
@@ -661,7 +661,7 @@ function private function_bf8080c1(entity) {
         grenade.team = entity.team;
         grenade thread function_a56050b0();
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_6479037a/namespace_6479037a

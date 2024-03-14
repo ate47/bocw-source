@@ -163,7 +163,7 @@ function function_c42508f4() {
     self endon(#"death");
     self endon(#"exited_vehicle");
     start = gettime();
-    while (1) {
+    while (true) {
         /#
             print3d(self.origin + vectorscale((0, 0, 1), 72), "<unknown string>", (1, 0, 0), 1, 0.5, 1, 1);
             self.var_a285092d = int((gettime() - start) / 10) / 100;

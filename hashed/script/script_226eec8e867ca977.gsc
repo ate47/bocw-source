@@ -129,7 +129,7 @@ function function_9d10940b() {
     self notify("56bc794308d648b4");
     self endon("56bc794308d648b4");
     level endon(#"game_over");
-    while (1) {
+    while (true) {
         wait(0.5);
         if (namespace_4dae815d::function_59a9cf1d() == 0) {
             continue;
@@ -266,7 +266,7 @@ function function_b98fe7eb() {
     self notify("7897d0aa40ce1f82");
     self endon("7897d0aa40ce1f82");
     self endon(#"death");
-    for (log = 0; 1; log = !log) {
+    for (log = 0; true; log = !log) {
         self waittill(#"hash_4460cb197033d052");
         self namespace_e32bb68::function_3a59ec34("evt_doa_hazard_flogger_whoosh_" + log);
     }

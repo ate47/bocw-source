@@ -242,7 +242,7 @@ function get_empty_bars() {
 // Size: 0x3e
 function at_peak_armor_bars() {
     if (self.armorperbar <= 0) {
-        return 1;
+        return true;
     }
     return self.armor == self.maxarmor && self.maxarmor >= self.spawnarmor;
 }
@@ -293,45 +293,45 @@ function get_armor_bars() {
 // Size: 0x25e
 function private function_37f4e0e0(smeansofdeath, shitloc) {
     if (isdefined(self.var_fa7c46f)) {
-        return 1;
+        return true;
     }
     if (is_true(level.var_4ead52cc) && self laststand::player_is_in_laststand()) {
-        return 0;
+        return false;
     }
     if (!isdefined(smeansofdeath)) {
-        return 1;
+        return true;
     }
     isexplosivedamage = weapons::isexplosivedamage(smeansofdeath);
     if (isdefined(self.var_59a874a7) && isdefined(self.var_59a874a7.var_735ae1ee) && !is_true(isexplosivedamage)) {
         if (!isdefined(self.var_59a874a7.var_735ae1ee.(shitloc))) {
-            return 0;
+            return false;
         }
         if (self.var_59a874a7.var_735ae1ee.(shitloc) == 0) {
-            return 0;
+            return false;
         }
         if (smeansofdeath == "MOD_HEAD_SHOT") {
-            return 1;
+            return true;
         }
     }
     if (level.var_d89ef54a === 1 || sessionmodeiszombiesgame()) {
         if (smeansofdeath == "MOD_BULLET" || smeansofdeath == "MOD_RIFLE_BULLET" || smeansofdeath == "MOD_PISTOL_BULLET" || smeansofdeath == "MOD_MELEE" || smeansofdeath == "MOD_MELEE_WEAPON_BUTT") {
-            return 1;
+            return true;
         }
         if (isexplosivedamage) {
-            return 1;
+            return true;
         }
     } else {
         if (smeansofdeath == "MOD_BULLET" || smeansofdeath == "MOD_RIFLE_BULLET" || smeansofdeath == "MOD_PISTOL_BULLET" || smeansofdeath == "MOD_IMPACT" && shitloc !== "head") {
-            return 1;
+            return true;
         }
         if (isexplosivedamage) {
-            return 1;
+            return true;
         }
     }
     if (is_true(level.var_369305cf)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace armor/armor
@@ -340,9 +340,9 @@ function private function_37f4e0e0(smeansofdeath, shitloc) {
 // Size: 0x30
 function private function_7538fede(weapon) {
     if (weapon.name == #"ar_stealth_t8_operator") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace armor/armor
@@ -522,6 +522,6 @@ function has_helmet() {
     if (isdefined(self.var_59a874a7) && isdefined(self.var_59a874a7.var_735ae1ee)) {
         return ((isdefined(self.var_59a874a7.var_735ae1ee.helmet) ? self.var_59a874a7.var_735ae1ee.helmet : 0) || (isdefined(self.var_59a874a7.var_735ae1ee.head) ? self.var_59a874a7.var_735ae1ee.head : 0));
     }
-    return 0;
+    return false;
 }
 

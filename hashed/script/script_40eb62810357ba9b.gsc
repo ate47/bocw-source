@@ -70,7 +70,7 @@ function function_c610e461() {
     if (level.doa.world_state == 0) {
         return (level.doa.var_36fba6.size < 16);
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_df4fbf0/namespace_df4fbf0
@@ -152,31 +152,31 @@ function function_79445831() {
 // Size: 0x13e
 function private function_3bda3c55(entity) {
     if (!isdefined(entity)) {
-        return 0;
+        return false;
     }
     if (is_true(entity.var_e020e658)) {
-        return 0;
+        return false;
     }
     if (is_true(entity.var_8766b29b)) {
         entity.var_8766b29b = undefined;
-        return 1;
+        return true;
     }
     if (!isdefined(entity.var_9329a57c)) {
         entity.var_9329a57c = 0;
     }
     if (entity.var_9329a57c > gettime()) {
-        return 0;
+        return false;
     }
     if (!isdefined(entity.favoriteenemy)) {
-        return 0;
+        return false;
     }
     if (abs(entity.origin[2] - entity.favoriteenemy.origin[2]) > 72) {
-        return 0;
+        return false;
     }
     if (distance2dsquared(entity.origin, entity.favoriteenemy.origin) > function_a3f6cdac(200)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_df4fbf0/namespace_df4fbf0

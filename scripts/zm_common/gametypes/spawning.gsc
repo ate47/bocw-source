@@ -111,7 +111,7 @@ function on_joined_team(*params) {
 function ongrenadethrow() {
     self endon(#"disconnect");
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"grenade_fire");
         grenade = waitresult.projectile;
@@ -550,7 +550,7 @@ function is_hardcore() {
 // Size: 0x82
 function teams_have_enmity(team1, team2) {
     if (!isdefined(team1) || !isdefined(team2) || level.gametype == "dm") {
-        return 1;
+        return true;
     }
     return team1 != #"neutral" && team2 != #"neutral" && team1 != team2;
 }
@@ -606,14 +606,14 @@ function delete_all_spawns(spawnpoints) {
 // Size: 0x6a
 function spawn_point_class_name_being_used(name) {
     if (!isdefined(level.spawn_point_class_names)) {
-        return 0;
+        return false;
     }
     for (i = 0; i < level.spawn_point_class_names.size; i++) {
         if (level.spawn_point_class_names[i] == name) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace spawning/spawning

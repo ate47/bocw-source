@@ -95,7 +95,7 @@ function function_470d684a(name) {
 // Size: 0x46
 function private function_169b8acc(name) {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         function_fcfe0dbe(name);
         waitframe(1);
     }

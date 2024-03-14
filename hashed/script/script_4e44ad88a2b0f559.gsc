@@ -78,7 +78,7 @@ function private function_8174b063(aimpoint) {
 // Size: 0x72
 function private function_37d408b6(traversal) {
     if (!isdefined(traversal)) {
-        return 0;
+        return false;
     }
     return traversal.type == #"ladder" || traversal.type == #"jump" || traversal.deltaz >= 50;
 }
@@ -89,7 +89,7 @@ function private function_37d408b6(traversal) {
 // Size: 0xac
 function private function_9b25bbe5(traversal, aimpoint) {
     if (!self function_37d408b6(traversal)) {
-        return 0;
+        return false;
     }
     eye = self.origin + (0, 0, self getplayerviewheight());
     dir = vectornormalize(eye - aimpoint);
@@ -103,14 +103,14 @@ function private function_9b25bbe5(traversal, aimpoint) {
 function private function_204b5b9c() {
     point = self.enemylastseenpos;
     if (distance2dsquared(self.origin, point) <= 9216) {
-        return 0;
+        return false;
     }
     normal = self.bot.var_a0b6205e;
     if (isdefined(normal)) {
         dir = self.origin - self.enemylastseenpos;
         return (vectordot(dir, normal) > 0);
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_87549638/namespace_87549638
@@ -119,7 +119,7 @@ function private function_204b5b9c() {
 // Size: 0x210
 function private function_b21ea513() {
     if (self.bot.var_e8c84f98 || self.ignoreall) {
-        return 0;
+        return false;
     }
     enemies = self getenemiesinradius(self.origin, 1000);
     var_8a75d6bc = undefined;
@@ -139,11 +139,11 @@ function private function_b21ea513() {
         }
     }
     if (!isdefined(var_8a75d6bc)) {
-        return 0;
+        return false;
     }
     var_8a75d6bc = var_8a75d6bc + (0, 0, self getplayerviewheight());
     self function_b5460039(var_8a75d6bc, #"hash_4d7ab907ebdddd3c", (1, 0.5, 0));
-    return 1;
+    return true;
 }
 
 // Namespace namespace_87549638/namespace_87549638
@@ -168,10 +168,10 @@ function private function_e958519b() {
     point = self.enemylastseenpos;
     if (self function_9b25bbe5(self.bot.traversal, point)) {
         self function_23401de9();
-        return 0;
+        return false;
     }
     self function_b5460039(point, #"hash_517fc0a2cf80dbb8", (1, 0, 1));
-    return 1;
+    return true;
 }
 
 // Namespace namespace_87549638/namespace_87549638
@@ -194,7 +194,7 @@ function private function_19ef91d7() {
 function private function_58d48e86(ent, dist, tag) {
     if (self function_9b25bbe5(self.bot.traversal, ent.origin)) {
         self function_23401de9();
-        return 0;
+        return false;
     }
     if (isdefined(self.scriptenemy) && self.scriptenemy == ent) {
         tag = self.scriptenemytag;
@@ -205,22 +205,22 @@ function private function_58d48e86(ent, dist, tag) {
         tagorigin = ent gettagorigin(tag);
         if (isdefined(tagorigin)) {
             self function_b5460039(tagorigin, tag, (1, 0, 1));
-            return 1;
+            return true;
         }
     } else if (isvehicle(ent) && target_istarget(ent)) {
         tagorigin = target_getorigin(ent);
         self function_b5460039(tagorigin, #"hash_7b9926f357c45aa8", (1, 0, 1));
-        return 1;
+        return true;
     } else {
         point = self function_466e841e(ent, dist);
         if (isdefined(point)) {
             self function_b5460039(point, #"entity", (1, 0, 1));
-            return 1;
+            return true;
         }
     }
     centroid = ent getcentroid();
     self function_b5460039(centroid, #"centroid", (1, 0, 1));
-    return 1;
+    return true;
 }
 
 // Namespace namespace_87549638/namespace_87549638
@@ -274,7 +274,7 @@ function private function_311aed8b() {
 // Size: 0x130
 function private function_35170b35(var_104d463, mindist, var_e125ba43, debugcolor) {
     if (!isdefined(var_104d463) || distance2dsquared(self.origin, var_104d463) < mindist * mindist) {
-        return 0;
+        return false;
     }
     if (self isplayerswimming()) {
         eye = self.origin + (0, 0, self getplayerviewheight());
@@ -284,7 +284,7 @@ function private function_35170b35(var_104d463, mindist, var_e125ba43, debugcolo
         aimoffset = (0, 0, self getplayerviewheight());
         self function_b5460039(var_104d463 + aimoffset, var_e125ba43, debugcolor);
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_87549638/namespace_87549638

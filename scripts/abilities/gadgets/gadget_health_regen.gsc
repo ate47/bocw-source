@@ -514,15 +514,15 @@ function private function_18e0320b() {
 // Size: 0xa6
 function private function_dafd9cd(attacker, damage) {
     if (gettime() < self.heal.var_a1cac2f1) {
-        return 0;
+        return false;
     }
     if (damage < getdvarfloat(#"hash_3671f84e911fb747", isdefined(level.var_5714f442) ? level.var_5714f442 : 0)) {
-        return 0;
+        return false;
     }
     if (isdefined(level.deathcircle) && level.deathcircle === attacker) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace gadget_health_regen/gadget_health_regen

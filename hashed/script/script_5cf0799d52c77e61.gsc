@@ -116,7 +116,7 @@ function function_27b409b9() {
     level endon(#"game_over");
     self endon(#"hash_3e251384a5400dce");
     self thread function_f5114543();
-    while (1) {
+    while (true) {
         self moveto(self.destination, self.duration);
         self waittill(#"movedone");
         wait(1);

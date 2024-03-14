@@ -61,16 +61,16 @@ function function_64c37ade(territory = level.territory) {
 // Size: 0x18a
 function is_inside(point, var_73362d27 = 0, territory = level.territory) {
     if (!function_c0de0601()) {
-        return 1;
+        return true;
     }
     if (!isvec(point)) {
         /#
             assert(0);
         #/
-        return 0;
+        return false;
     }
     if (!isdefined(territory.bounds) || territory.bounds.size == 0) {
-        return 1;
+        return true;
     }
     foreach (boundary in territory.bounds) {
         testpoint = point;
@@ -78,10 +78,10 @@ function is_inside(point, var_73362d27 = 0, territory = level.territory) {
             testpoint = (testpoint[0], testpoint[1], boundary.origin[2]);
         }
         if (boundary istouching(testpoint)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace territory/namespace_c5b35f33
@@ -90,9 +90,9 @@ function is_inside(point, var_73362d27 = 0, territory = level.territory) {
 // Size: 0x6a
 function is_valid(object, territory = level.territory) {
     if (isdefined(territory.script_territory) && isdefined(object.script_territory) && territory.script_territory != object.script_territory) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace territory/namespace_c5b35f33

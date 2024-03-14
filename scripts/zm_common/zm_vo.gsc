@@ -70,9 +70,9 @@ function private function_70a657d8() {
 // Size: 0x48
 function function_32464c29() {
     if (isdedicated() || getdvarint(#"hash_214ae173d5af78a2", 0)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_vo/zm_vo
@@ -357,10 +357,10 @@ function function_5fef4201(weapon) {
         case #"ww_ieu_acid_t9":
         case #"ww_ieu_gas_t9":
         case #"ww_ieu_plasma_t9":
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_vo/zm_vo
@@ -370,9 +370,9 @@ function function_5fef4201(weapon) {
 function function_2d3f319c() {
     var_19a9f270 = int(45 * 1000);
     if (isdefined(self.var_f502715d) && self.var_f502715d + var_19a9f270 > gettime()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_vo/zm_vo
@@ -382,9 +382,9 @@ function function_2d3f319c() {
 function function_99262cf3() {
     var_19a9f270 = int(3 * 1000);
     if (isdefined(self.var_ce67a5b1) && self.var_ce67a5b1 + var_19a9f270 > gettime()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_vo/zm_vo
@@ -946,7 +946,7 @@ function function_347f7d34() {
 // Checksum 0xc0f65fef, Offset: 0x32f0
 // Size: 0x60
 function function_2ee2ece4(var_79dbc69 = 1) {
-    while (1) {
+    while (true) {
         a_valid_players = function_347f7d34();
         if (a_valid_players.size >= var_79dbc69) {
             break;
@@ -1041,12 +1041,12 @@ function function_47cf6c76(str_type, n_time = 45) {
 // Size: 0x9e
 function private function_a076708f(str_type) {
     if (is_true(self.zmannouncertalking)) {
-        return 0;
+        return false;
     }
     if (isdefined(level.var_14fa5e76[str_type]) && isdefined(self.var_7d8fdfe9[str_type]) && self.var_7d8fdfe9[str_type] + int(level.var_14fa5e76[str_type] * 1000) >= gettime()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_vo/zm_vo
@@ -1134,9 +1134,9 @@ function function_384269f(var_7382ea8b) {
     case #"hash_6b704db2e152d216":
     case #"hash_6e779060a26706e1":
     case #"se_molotovcocktailmultikill":
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_vo/zm_vo
@@ -1256,7 +1256,7 @@ function function_7622cb70(var_b58a6345, n_delay, b_wait_if_busy = 1, var_54c38d
         }
         if (var_adc203cc && !var_92885147) {
             if (b_wait_if_busy) {
-                while (1) {
+                while (true) {
                     var_adc203cc = 0;
                     players = function_a1ef346b();
                     foreach (player in players) {
@@ -1776,10 +1776,10 @@ function function_45e29f06() {
     var_5eb47b1d = function_a1ef346b();
     foreach (player in var_5eb47b1d) {
         if (is_player_speaking(player)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_vo/zm_vo
@@ -1791,9 +1791,9 @@ function is_player_speaking(e_player) {
         e_player = self;
     }
     if (isalive(e_player) && is_true(e_player.isspeaking)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_vo/zm_vo
@@ -1805,9 +1805,9 @@ function function_c10c4064(e_player) {
         e_player = self;
     }
     if (isalive(e_player) && isarray(e_player.var_671911e9) && e_player.var_671911e9.size) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_vo/zm_vo
@@ -1815,7 +1815,7 @@ function function_c10c4064(e_player) {
 // Checksum 0xfd5d7724, Offset: 0x6b70
 // Size: 0x3e
 function function_a2bd5a0c(*var_cadd3b0c, *n_delay, *b_wait_if_busy, *n_priority, *var_34e7887, *var_d7714e4e, *var_67fee570) {
-    return 0;
+    return false;
 }
 
 // Namespace zm_vo/zm_vo
@@ -1823,7 +1823,7 @@ function function_a2bd5a0c(*var_cadd3b0c, *n_delay, *b_wait_if_busy, *n_priority
 // Checksum 0xa39c8d83, Offset: 0x6bb8
 // Size: 0x46
 function vo_say(*str_vo_alias, *n_delay, *b_wait_if_busy, *n_priority, *var_34e7887, *var_d7714e4e, *var_9c64da7c, *var_67fee570) {
-    return 0;
+    return false;
 }
 
 // Namespace zm_vo/zm_vo

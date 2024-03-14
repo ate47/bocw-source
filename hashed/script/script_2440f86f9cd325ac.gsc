@@ -123,7 +123,7 @@ function function_b968c4a9() {
 // Size: 0x256
 function function_5160690e() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         var_4534d463 = array::get_all_closest(self.origin, getaiteamarray("axis"), undefined, 4, 48);
         for (i = 0; i < var_4534d463.size; i++) {
             zombie = var_4534d463[i];

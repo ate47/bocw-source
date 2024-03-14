@@ -44,7 +44,7 @@ function private function_14392c6e(weapon) {
         assert(weapon != level.weaponnone);
     #/
     if (zm_loadout::function_2ff6913(weapon)) {
-        return 1;
+        return true;
     }
     if (weapon.isaltmode) {
         str_weapon_name = weapon.altweapon.name;
@@ -54,20 +54,20 @@ function private function_14392c6e(weapon) {
         var_19010660 = w_root.name;
     }
     if (isdefined(level.var_526d919[str_weapon_name]) || isdefined(var_19010660) && isdefined(level.var_526d919[var_19010660])) {
-        return 1;
+        return true;
     }
     var_876795bf = weapon.attachments;
     if (is_true(level.var_4400c4f7)) {
         if (isarray(var_876795bf)) {
             foreach (var_96bc131f in var_876795bf) {
                 if (var_96bc131f != "clantag" && var_96bc131f != "killcounter" && var_96bc131f != "custom2") {
-                    return 0;
+                    return false;
                 }
             }
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
@@ -500,13 +500,13 @@ function private function_f3fdd8f7() {
     #/
     foreach (weapon in level.var_526d919) {
         if (self hasweapon(weapon, 1)) {
-            return 1;
+            return true;
         }
         if (isarray(level.var_5a069e6) && isweapon(level.var_5a069e6[weapon]) && self hasweapon(level.var_5a069e6[weapon], 1)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
@@ -523,7 +523,7 @@ function private monitor_objective(challenge) {
         objective_setinvisibletoplayer(n_objective_id, self);
     }
     wait(12);
-    while (1) {
+    while (true) {
         if (self function_f3fdd8f7()) {
             foreach (n_objective_id in challenge.a_n_objective_ids) {
                 objective_setinvisibletoplayer(n_objective_id, self);
@@ -543,17 +543,17 @@ function private monitor_objective(challenge) {
 // Size: 0x104
 function function_5fbf572(weapon, var_2f0cc3aa = 0) {
     if (!zm_utility::is_trials()) {
-        return 1;
+        return true;
     }
     if (var_2f0cc3aa && is_active(1) && isdefined(weapon) && is_melee_allowed(weapon)) {
-        return 1;
+        return true;
     }
     if (is_active(1) || namespace_fc5170d1::is_active() || self function_635f9c02(weapon)) {
         if (isplayer(self)) {
             self zm_trial_util::function_97444b02();
         }
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 

@@ -127,7 +127,7 @@ function on_player_spawned() {
 // Size: 0x98
 function private function_1c2829b5() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         s_waitresult = undefined;
         s_waitresult = self waittill(#"aoe_damage");
         if (s_waitresult.var_159100b7 == "zm_aoe_radiation_hazard") {
@@ -147,7 +147,7 @@ function private function_6fa1e587() {
     self.trigger_damage.health = 99999;
     self.trigger_damage.var_22cea3da = &function_4685c5f8;
     self.trigger_damage endon(#"death");
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = self.trigger_damage waittill(#"damage");
         if (isplayer(s_result.attacker)) {
@@ -256,13 +256,13 @@ function function_2499fe1b(cmd) {
         switch (cmd) {
         case #"hash_1a5bda29acd157fd":
             function_eccc5dbd();
-            return;
+            break;
         case #"hash_55c4e53689e598c3":
             function_9e3de60();
             level notify(#"hash_7e539f4178c9c27c");
-            return;
+            break;
         default:
-            return;
+            break;
         }
     #/
 }

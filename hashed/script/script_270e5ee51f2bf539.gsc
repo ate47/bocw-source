@@ -69,7 +69,7 @@ function function_5e443ed1() {
 // Checksum 0xb091dfe3, Offset: 0x3f0
 // Size: 0x8
 function mayspawn() {
-    return 1;
+    return true;
 }
 
 // Namespace doa/doa

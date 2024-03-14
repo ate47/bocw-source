@@ -315,20 +315,20 @@ function check_boost_start_conversation() {
 // Size: 0x124
 function function_e6457410(var_5c238c21, attacker, victim, weapon, *inflictor) {
     if (!isdefined(victim) || !isplayer(victim) || victim hasperk(#"specialty_quieter")) {
-        return 0;
+        return false;
     }
     if (!isdefined(inflictor) || !isplayer(weapon)) {
-        return 0;
+        return false;
     }
     if (!isdefined(attacker)) {
-        return 0;
+        return false;
     }
     if (!(isdefined(attacker.var_4a648cbd) ? attacker.var_4a648cbd : 0)) {
-        return 0;
+        return false;
     }
     var_49376124 = isdefined(attacker.var_14e8550b) ? attacker.var_14e8550b : 0;
     if (var_49376124 == 0) {
-        return 0;
+        return false;
     }
     return victim.var_3528f7e9 == var_49376124;
 }
@@ -537,26 +537,26 @@ function function_95e44f78(weapon, *timedelay) {
 // Size: 0x2f4
 function function_b06bbccf(sniper) {
     if (!function_e1983f22()) {
-        return 0;
+        return false;
     }
     if (!isdefined(sniper) || !isdefined(self) || !level.teambased || !is_true(level.allowspecialistdialog)) {
-        return 0;
+        return false;
     }
     if (!dialog_chance("sniperKillChance")) {
-        return 0;
+        return false;
     }
     closest_ally = self get_closest_player_ally(0);
     allyradius = mpdialog_value("sniperKillAllyRadius", 0);
     if (!isdefined(closest_ally) || distancesquared(self.origin, closest_ally.origin) > allyradius * allyradius) {
-        return 0;
+        return false;
     }
     voiceprefix = function_e05060f0(closest_ally);
     if (!isdefined(voiceprefix)) {
-        return 0;
+        return false;
     }
     playerbundle = function_58c93260(closest_ally);
     if (!isdefined(playerbundle) || !isdefined(playerbundle.threatsniper)) {
-        return 0;
+        return false;
     }
     var_a1886234 = voiceprefix + playerbundle.threatsniper;
     closest_ally thread function_a48c33ff(var_a1886234, 2);
@@ -571,7 +571,7 @@ function function_b06bbccf(sniper) {
             sniper.spottedby[sniper.spottedby.size] = player;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace battlechatter/battlechatter
@@ -580,19 +580,19 @@ function function_b06bbccf(sniper) {
 // Size: 0xb0
 function function_bafe1ee4(weapon) {
     if (!function_e1983f22()) {
-        return 0;
+        return false;
     }
     voiceprefix = function_e05060f0(self);
     if (!isdefined(voiceprefix)) {
-        return 0;
+        return false;
     }
     var_8e39def3 = function_cdd81094(weapon);
     if (!isdefined(var_8e39def3)) {
-        return 0;
+        return false;
     }
     dialogalias = voiceprefix + var_8e39def3.var_2c07bbf1;
     self thread function_a48c33ff(dialogalias, 6);
-    return 1;
+    return true;
 }
 
 // Namespace battlechatter/battlechatter
@@ -722,10 +722,10 @@ function function_b5242998() {
         }
         distsq = distancesquared(self.origin, player.origin);
         if (distsq > allyradiussq) {
-            return;
+            break;
         }
         player play_dialog("heroWeaponSuccessReaction", 2);
-        return;
+        break;
     }
 }
 
@@ -1275,9 +1275,9 @@ function function_9cc82a74() {
     self notify("738694dfda3636e4");
     self endon("738694dfda3636e4");
     level endon(#"match_end");
-    while (1) {
+    while (true) {
         level waittill(#"hash_6c17824062de93e5");
-        while (1) {
+        while (true) {
             if (level.var_648e79b7.size == 0) {
                 break;
             }

@@ -91,7 +91,7 @@ function function_b9adea4e() {
     self function_1aeb4889();
     var_fc700937 = 0;
     var_573efcf5 = 0;
-    while (1) {
+    while (true) {
         if (self flag::get(#"hash_7ef7aab6a305d0b0")) {
             self function_12995a01(3);
             if (!var_573efcf5) {
@@ -220,9 +220,9 @@ function function_4cc5fca6() {
 // Size: 0x58
 function function_dd9482b7(*e_player) {
     if (level flag::get(#"hash_3e765c26047c9f54") || level flag::get("in_exfil_event")) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_silver_util/zm_silver_util
@@ -295,18 +295,18 @@ function function_72c803d3(cmd) {
         switch (cmd) {
         case #"hash_bfe1136366775c6":
             function_14a89247();
-            return;
+            break;
         case #"hash_385b6dd43dd64f63":
             function_701cd5cf();
-            return;
+            break;
         case #"hash_61aa29debb64fda1":
             function_df4b3116(#"hash_1154242c9b1e4518");
-            return;
+            break;
         case #"hash_61aa28debb64fbee":
             function_df4b3116(#"hash_7ef7aab6a305d0b0", 2);
-            return;
+            break;
         default:
-            return;
+            break;
         }
     #/
 }

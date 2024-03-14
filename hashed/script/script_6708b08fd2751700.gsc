@@ -81,7 +81,7 @@ function function_7eabbc02(params) {
         if (isdefined(getplayers())) {
             for (i = 0; i < getplayers().size; i++) {
                 if (getplayers().size <= remaining) {
-                    return;
+                    break;
                 }
                 if (!isdefined(getplayers()[i].bot) || getplayers()[i].team == hostteam || getplayers()[i].team == "<unknown string>") {
                     continue;

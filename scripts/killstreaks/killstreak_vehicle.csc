@@ -98,7 +98,7 @@ function shutdown_think(localclientnum) {
 // Size: 0xa0
 function play_boost_fx(localclientnum) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         speed = self getspeed();
         if (speed > 400) {
             self playsound(localclientnum, #"mpl_veh_rc_boost");
@@ -115,7 +115,7 @@ function play_boost_fx(localclientnum) {
 function stunnedhandler(localclientnum) {
     self endon(#"death");
     self thread enginestutterhandler(localclientnum);
-    while (1) {
+    while (true) {
         self waittill(#"stunned");
         self setstunned(1);
         self thread notstunnedhandler(localclientnum);
@@ -142,7 +142,7 @@ function play_stunned_fx_handler(localclientnum) {
     self endon(#"death");
     self endon(#"stunned");
     self endon(#"not_stunned");
-    while (1) {
+    while (true) {
         util::playfxontag(localclientnum, level._effect[#"rcbomb_stunned"], self, "tag_origin");
         wait(0.5);
     }
@@ -154,7 +154,7 @@ function play_stunned_fx_handler(localclientnum) {
 // Size: 0x70
 function enginestutterhandler(localclientnum) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self waittill(#"veh_engine_stutter");
         if (self function_4add50a7()) {
             function_36e4ebd4(localclientnum, "rcbomb_engine_stutter");

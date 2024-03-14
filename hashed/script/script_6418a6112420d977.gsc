@@ -162,7 +162,7 @@ function function_17f1d0f3() {
 function function_c8b3217e(instance) {
     instance endon(#"objective_ended");
     self endon(#"death");
-    while (1) {
+    while (true) {
         foreach (player in getplayers()) {
             if (distance2dsquared(player.origin, self.origin) <= 250000) {
                 player.b_ignore_fow_damage = 1;
@@ -187,7 +187,7 @@ function function_a7ae3459(instance) {
             vehicle.var_e5f956c5 = 1;
         }
     }
-    while (1) {
+    while (true) {
         foreach (vehicle in a_vehicles) {
             if (isalive(vehicle)) {
                 if (distance2dsquared(vehicle.origin, self.origin) <= 250000) {
@@ -228,7 +228,7 @@ function function_7ae500b2(instance) {
     self setbrake(1);
     self setspeedimmediate(0);
     self thread function_36359055(instance);
-    while (1) {
+    while (true) {
         self.var_f4bd7934 = 1;
         self.n_players = 0;
         foreach (player in getplayers()) {
@@ -370,7 +370,7 @@ function function_174dde71() {
 function function_36359055(instance) {
     instance endon(#"objective_ended");
     self endon(#"death");
-    while (1) {
+    while (true) {
         if (!is_true(self.var_a123c71)) {
             self playsound(#"hash_52af5fa9a4db69a2");
         }
@@ -385,7 +385,7 @@ function function_36359055(instance) {
 function function_a76b2c1f(instance) {
     self endon(#"death");
     instance endon(#"objective_ended");
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = self waittill(#"bridge", #"stairs");
         if (s_result._notify === "bridge") {
@@ -419,7 +419,7 @@ function function_a76b2c1f(instance) {
 function function_738143f5(instance) {
     self endon(#"death");
     instance endon(#"objective_ended");
-    while (1) {
+    while (true) {
         self waittill(#"assault");
         self thread function_95015f9a(instance);
     }
@@ -613,7 +613,7 @@ function function_bf606a73(var_29611f04, instance) {
     self.str_move = "sprint";
     self callback::function_d8abfc3d(#"hash_4afe635f36531659", &function_fd68cae4);
     wait(0.1);
-    while (1) {
+    while (true) {
         a_players = getplayers();
         player = awareness::function_d7fedde2(self);
         if (!isdefined(self.var_b7e90547) && isalive(self) && isalive(player)) {
@@ -662,7 +662,7 @@ function function_fd68cae4() {
 function function_79ae8e99(instance) {
     instance endon(#"objective_ended");
     self endon(#"death");
-    while (1) {
+    while (true) {
         a_zombies = function_a38db454(self.origin, 200);
         foreach (zombie in a_zombies) {
             if (zombie.archetype === #"zombie" && is_true(self.var_a123c71) && !is_true(zombie.knockdown)) {
@@ -775,7 +775,7 @@ function function_3c40b07a() {
     var_8da3e170 = self.health / self.n_start_health;
     zm_sq::sndonoverride_eye_(var_8da3e170);
     zm_sq::function_2398ab16("objective_ended");
-    while (1) {
+    while (true) {
         var_c3a3ae13 = self.health / self.n_start_health;
         if (var_c3a3ae13 >= 0 && var_8da3e170 != var_c3a3ae13) {
             zm_sq::sndonoverride_eye_(var_c3a3ae13);
@@ -799,7 +799,7 @@ function function_1e4eea8e(instance) {
     self endon(#"death");
     instance endon(#"objective_ended");
     var_ad5fcb11 = 0;
-    while (1) {
+    while (true) {
         if (is_true(self.var_a123c71)) {
             if (var_ad5fcb11 != 1) {
                 self playsound(#"hash_432c591c600ef4d2");
@@ -848,7 +848,7 @@ function function_d4694f6c(instance) {
 function function_24735dd6(instance) {
     instance endon(#"objective_ended");
     self endon(#"death");
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = self waittill(#"hash_de9b6531b84fa36", #"bridge_riser");
         var_cec14fb9 = undefined;
@@ -938,7 +938,7 @@ function function_aa475e00(instance, player) {
     self endon(#"death");
     player endon(#"death");
     var_4c979c5b = getentarray("sr_boundary_clip", "targetname");
-    while (1) {
+    while (true) {
         player.var_d3316c50 = 0;
         foreach (var_b7e0b1c0 in var_4c979c5b) {
             if (player istouching(var_b7e0b1c0)) {
@@ -1139,7 +1139,7 @@ function private function_1cabf2e9(s_result) {
 function function_1eef26bc(instance) {
     instance endon(#"objective_ended");
     self endon(#"death");
-    while (1) {
+    while (true) {
         if (!self.var_a123c71) {
             wait(10);
             if (!self.var_a123c71 && !is_true(self.abnormal_status.emped)) {
@@ -1158,7 +1158,7 @@ function function_1eef26bc(instance) {
 function function_ca92ed05(instance) {
     instance endon(#"objective_ended");
     self endon(#"death");
-    while (1) {
+    while (true) {
         if (is_true(self.abnormal_status.emped)) {
             self namespace_7589cf5c::function_ac709d66(instance, #"hash_42e191393187cfdb");
             while (is_true(self.abnormal_status.emped)) {

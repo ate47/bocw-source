@@ -51,7 +51,7 @@ function private open_door(c_door, t) {
 // Checksum 0x3772840e, Offset: 0x260
 // Size: 0xe
 function private function_4301c636(*c_door) {
-    return 0;
+    return false;
 }
 
 // Namespace namespace_4f6b19b0/namespace_4f6b19b0
@@ -77,9 +77,9 @@ function private function_810b782f(c_door) {
 // Size: 0x46
 function private function_a416dacc(c_door) {
     if (is_true(c_door flag::get("door_fully_open"))) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_4f6b19b0/namespace_4f6b19b0
@@ -194,7 +194,7 @@ function private function_f1af5306(var_91fea62e) {
     var_636f02cd = #"hash_3866cfe35818bf88";
     self notify(#"hash_4df5ebbdfb65254e");
     self endon(#"hash_4df5ebbdfb65254e", #"death");
-    while (1) {
+    while (true) {
         if (isdefined(self.ai.var_e8cb3a15)) {
             var_9fdc36a = 0;
             if (self [[ self.var_e44ce7d2 ]](self.ai.var_e8cb3a15)) {

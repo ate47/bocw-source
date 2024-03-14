@@ -151,16 +151,16 @@ function function_f5b265ac() {
     var_c9d4ff68 = level.round_number;
     var_84d02e05 = var_c9d4ff68 + 15;
     wait(5);
-    while (1) {
+    while (true) {
         var_a26574af = zm_zonemgr::get_player_zone();
         if (isdefined(var_a26574af)) {
             if (var_a26574af == "zone_proto_start" || var_a26574af == "zone_proto_start2") {
                 if (level.round_number >= var_84d02e05) {
                     self zm_utility::function_659819fa(#"zm_silver_start");
-                    return;
+                    break;
                 }
             } else {
-                return;
+                break;
             }
         }
         wait(1);

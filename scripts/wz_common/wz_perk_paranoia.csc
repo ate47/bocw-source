@@ -130,7 +130,7 @@ function private function_3e9077b(localclientnum) {
     var_81f254ba = cos(10);
     self function_c97460c6();
     var_2b836fea = undefined;
-    while (1) {
+    while (true) {
         var_a0364f90 = var_5bc097ee && !squad_spawn::function_21b773d5(localclientnum);
         if (codcaster::function_c955fbd1(localclientnum)) {
             var_a0364f90 = 0;

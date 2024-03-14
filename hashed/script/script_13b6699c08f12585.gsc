@@ -90,7 +90,7 @@ function private function_8411122e(*localclientnum, *owner) {
 // Checksum 0xb141fadd, Offset: 0x580
 // Size: 0x18
 function private function_74272495(*localclientnum, *owner) {
-    return 1;
+    return true;
 }
 
 // Namespace namespace_f36ad2eb/namespace_f36ad2eb
@@ -99,7 +99,7 @@ function private function_74272495(*localclientnum, *owner) {
 // Size: 0x106
 function private function_69fda304(localclientnum) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"enter_vehicle");
         if ("right" == "right") {
@@ -124,7 +124,7 @@ function private function_5e7d8e1e() {
     self notify("5825fc11634841f0");
     self endon("5825fc11634841f0");
     self endon(#"death", #"disconnect", #"exit_vehicle");
-    while (1) {
+    while (true) {
         waitframe(1);
     }
 }
@@ -207,7 +207,7 @@ function private function_732976d8(localclientnum, vehicle) {
     self endon(#"disconnect");
     var_26408b5d = function_a3f6cdac(210);
     offsetorigin = (0, 0, 210 * 2);
-    while (1) {
+    while (true) {
         if (!isdefined(vehicle) || !isinvehicle(localclientnum, vehicle)) {
             break;
         }

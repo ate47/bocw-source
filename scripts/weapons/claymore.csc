@@ -28,7 +28,7 @@ function private function_70a657d8() {
 function claymore_spawned(localclientnum) {
     self endon(#"death");
     self util::waittill_dobj(localclientnum);
-    while (1) {
+    while (true) {
         if (isdefined(self.stunned) && self.stunned) {
             wait(0.1);
             continue;

@@ -203,7 +203,7 @@ function function_8ef296ea() {
         level.doa.var_5598fe58 = [];
     }
     self endon(#"death");
-    while (1) {
+    while (true) {
         level waittill(#"hash_11f6c6a82650cca2");
         if (is_true(self.collector)) {
             return;
@@ -235,7 +235,7 @@ function function_8ef296ea() {
 function function_2fdfff05() {
     self endon(#"death");
     var_89586b31 = 0;
-    while (1) {
+    while (true) {
         var_9099c696 = self.health;
         wait(1);
         var_dc5a778a = var_9099c696 - self.health;
@@ -266,7 +266,7 @@ function function_12462f60() {
     }
     self thread namespace_250e9486::function_8971bbb7();
     var_9a615a35 = 0;
-    while (1) {
+    while (true) {
         if (var_9a615a35 < 200 && self.zombie_move_speed == "run" || self.zombie_move_speed == "walk") {
             var_9a615a35++;
         }
@@ -295,7 +295,7 @@ function function_d1183a88() {
     self endon("35693ccf110437e6");
     self endon(#"death");
     wait(8);
-    while (1) {
+    while (true) {
         wait(1);
         if (isdefined(self.favoriteenemy)) {
             if (isdefined(self.favoriteenemy.doa) && isdefined(self.favoriteenemy.doa.vehicle)) {
@@ -461,7 +461,7 @@ function function_27adf2ff(on = 1, var_a53a6d94 = 1) {
 // Size: 0x136
 function function_f87ac23b(owner) {
     self endon(#"death");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"trigger");
         if (isdefined(result.activator)) {
@@ -512,7 +512,7 @@ function function_7ff8a49e(*inflictor, eattacker, idamage, *idflags, *smeansofde
 // Size: 0x60
 function function_fa03570e() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self waittill(#"hash_c7574e887244a9c");
         radiusdamage(self.origin, 100, 20000, 20000, self, "MOD_CRUSH");
     }
@@ -669,7 +669,7 @@ function function_2c4249ed(distsq) {
     self endon("6152e7d8ce12e7fa");
     self endon(#"death");
     self endon(#"hash_726c573f1b22d654");
-    while (1) {
+    while (true) {
         if (distancesquared(self.origin, self.goalpos) <= distsq) {
             self notify(#"near_goal");
         }
@@ -829,10 +829,10 @@ function function_bf037906(origin) {
 // Size: 0x80
 function function_f23c95c0(entity) {
     if (is_true(entity.var_ba88972)) {
-        return 1;
+        return true;
     }
     if (gettime() < entity.var_3b0b5ef8) {
-        return 0;
+        return false;
     }
     entity.var_3b0b5ef8 = entity.var_3b0b5ef8 + randomint(1000);
     return randomint(100) < 5;
@@ -1153,18 +1153,18 @@ function private function_3a558b65(var_8767c017) {
 // Size: 0xa2
 function function_7d0161cb(ent) {
     if (!isdefined(ent)) {
-        return 0;
+        return false;
     }
     if (!isplayer(ent)) {
-        return 0;
+        return false;
     }
     if (isdefined(ent.doa) && isdefined(ent.doa.vehicle)) {
-        return 0;
+        return false;
     }
     if (!isdefined(level.doa.var_39e3fa99) || ![[ level.doa.var_39e3fa99 ]]->function_94e37da2(ent)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_58e19d6/namespace_58e19d6
@@ -1180,7 +1180,7 @@ function function_36e94670(destination, timems, var_fbe64ccb) {
     if (isdefined(var_fbe64ccb)) {
         deltaz = var_fbe64ccb / frames / 2;
         var_aa3b6b10 = gettime() + timems / 2;
-        while (1) {
+        while (true) {
             time = gettime();
             if (time > stoptime) {
                 break;
@@ -1377,7 +1377,7 @@ function function_bcfd19b2(silverback, note, angles) {
 function private function_d70f65d0() {
     self endon(#"death");
     self playloopsound("zmb_doa_ai_silverback_banana_gas_lp");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"trigger");
         if (isplayer(result.activator)) {

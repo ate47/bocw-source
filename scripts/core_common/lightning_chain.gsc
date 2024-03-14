@@ -129,22 +129,22 @@ function private lc_end_arc_damage(arc_num, enemies_hit_num, params) {
         /#
             function_df47c3e8("<unknown string>");
         #/
-        return 1;
+        return true;
     }
     if (enemies_hit_num >= params.max_enemies_killed) {
         /#
             function_df47c3e8("<unknown string>");
         #/
-        return 1;
+        return true;
     }
     radius_decay = params.radius_decay * arc_num;
     if (params.radius_start - radius_decay <= 0) {
         /#
             function_df47c3e8("<unknown string>");
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace lightning_chain/lightning_chain

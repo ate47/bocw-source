@@ -98,7 +98,7 @@ function function_d8e8920a() {
         return;
     }
     wait(randomint(6) + 1);
-    while (1) {
+    while (true) {
         wait(1);
         if (isdefined(self.enemy)) {
             var_6e3ad56b = self.enemy.origin;

@@ -566,7 +566,7 @@ function slot_watcher(equipment) {
     self notify(#"kill_equipment_slot_watcher");
     self endon(#"kill_equipment_slot_watcher", #"disconnect");
     notify_strings = get_notify_strings(equipment);
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"weapon_change");
         prev_weapon = waitresult.last_weapon;
@@ -605,11 +605,11 @@ function is_limited(equipment) {
     if (isdefined(level._limited_equipment)) {
         for (i = 0; i < level._limited_equipment.size; i++) {
             if (level._limited_equipment[i] == equipment) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_equipment/zm_equipment
@@ -621,13 +621,13 @@ function limited_in_use(equipment) {
     for (i = 0; i < players.size; i++) {
         current_equipment = players[i] get_player_equipment();
         if (isdefined(current_equipment) && current_equipment == equipment) {
-            return 1;
+            return true;
         }
     }
     if (isdefined(level.dropped_equipment) && isdefined(level.dropped_equipment[equipment])) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_equipment/zm_equipment
@@ -861,7 +861,7 @@ function is_equipment_that_blocks_purchase(weapon, var_1a9b98ca = 0) {
 // Size: 0x38
 function is_player_equipment(weapon) {
     if (!isdefined(weapon) || !isdefined(self.current_equipment)) {
-        return 0;
+        return false;
     }
     return self.current_equipment == weapon;
 }
@@ -872,14 +872,14 @@ function is_player_equipment(weapon) {
 // Size: 0x86
 function has_deployed_equipment(weapon) {
     if (!isdefined(weapon) || !isdefined(self.deployed_equipment) || self.deployed_equipment.size < 1) {
-        return 0;
+        return false;
     }
     for (i = 0; i < self.deployed_equipment.size; i++) {
         if (self.deployed_equipment[i] == weapon) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_equipment/zm_equipment
@@ -1048,14 +1048,14 @@ function function_4f51b6ea(weapon, str_means_of_death) {
     if (isarray(level.var_1b5a4d1)) {
         foreach (var_5ee1b234 in level.var_1b5a4d1) {
             if (weapon.name === var_5ee1b234.str_weapon_name && var_5ee1b234.str_means_of_death === str_means_of_death) {
-                return 1;
+                return true;
             }
         }
     }
     if (str_means_of_death === "MOD_IMPACT" && isinarray(level.var_569aec98, weapon.name)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_equipment/zm_equipment
@@ -1070,7 +1070,7 @@ function function_e418901e() {
         waitframe(1);
         str_cmd = "<unknown string>" + "<unknown string>" + "<unknown string>";
         adddebugcommand(str_cmd);
-        while (1) {
+        while (true) {
             equipment_id = getdvarstring(#"give_equipment");
             if (equipment_id != "<unknown string>") {
                 foreach (player in getplayers()) {

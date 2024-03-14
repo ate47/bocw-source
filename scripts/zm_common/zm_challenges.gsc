@@ -284,7 +284,7 @@ function function_611805cb() {
     if (level.round_number > 1 || level flag::get(#"hash_6efaa75e1959aa0f")) {
         return;
     }
-    while (1) {
+    while (true) {
         level waittill(#"end_of_round");
         if (level.round_number >= 19) {
             break;
@@ -299,7 +299,7 @@ function function_611805cb() {
 // Size: 0x658
 function round_tracking() {
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         if (!isdefined(self.var_3c91d68e)) {
             self.var_3c91d68e = 0;
         }
@@ -1193,7 +1193,7 @@ function event_handler[grenade_stuck] function_5c5941ef(eventstruct) {
 function watchformantle() {
     self endon(#"disconnect", #"death", #"killmantlemonitor");
     self.mantletime = 0;
-    while (1) {
+    while (true) {
         if (self ismantling()) {
             self.mantletime = gettime();
         }
@@ -1207,7 +1207,7 @@ function watchformantle() {
 // Size: 0x1b2
 function function_31de0f93() {
     self endon(#"disconnect", #"death");
-    while (1) {
+    while (true) {
         self waittill(#"hash_381bb741cb320f95");
         weapon = self getinventoryweapon();
         if (killstreaks::is_killstreak_weapon(weapon)) {
@@ -1558,7 +1558,7 @@ function function_4281b2f1(*params) {
 // Size: 0xe0
 function spent_points_tracking() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         result = undefined;
         result = level waittill(#"spent_points");
         player = result.player;
@@ -1588,7 +1588,7 @@ function increment_magic_box() {
 function function_73696786() {
     self endon(#"disconnect");
     var_c0e0819a = 1;
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = self waittill(#"hash_13948ef3726b968f");
         if (is_true(var_c0e0819a)) {
@@ -1613,7 +1613,7 @@ function function_5bec2304() {
     }
     self.var_bd0352a9 = [];
     self.var_c0e11f30 = {#count:0, #time:gettime()};
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = self waittill(#"perk_acquired");
         if (self.var_c0e11f30.time > gettime() - 6000) {
@@ -1720,7 +1720,7 @@ function function_5bec2304() {
 // Size: 0x70
 function function_e365b5ab() {
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = self waittill(#"hash_4de2d5115dc310e2");
         self.var_152810ff[6] = 0;
@@ -1734,7 +1734,7 @@ function function_e365b5ab() {
 // Size: 0x70
 function function_169107a0() {
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = self waittill(#"hash_75ec9942d2d5fd0f");
         self.var_152810ff[6] = 0;
@@ -1748,7 +1748,7 @@ function function_169107a0() {
 // Size: 0xe2
 function function_d61cb0eb() {
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = level waittill(#"hash_159f5d1e1b511031");
         self.var_152810ff[6] = 0;
@@ -1770,7 +1770,7 @@ function function_d61cb0eb() {
 // Size: 0x90
 function function_b5df0b8b() {
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         self waittill(#"hash_63344bbf1789e2c7");
         self thread function_70fb11de(6);
         if (isdefined(self.var_3a289354) && self.var_3a289354.size > 33) {
@@ -1787,7 +1787,7 @@ function function_b3862180() {
     self endon(#"disconnect");
     function_5bce3615();
     self.var_55f98899 = [];
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"zone_change");
         if (is_true(level.var_92c52eed)) {
@@ -1869,9 +1869,9 @@ function function_3e8babbf(str_map_name) {
     }
     var_b6cbfb04 = self stats::get_stat(#"playerstatslist", var_d3f0948b, #"challengetier");
     if (isdefined(var_b6cbfb04) && var_b6cbfb04 > 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_challenges/zm_challenges
@@ -1902,7 +1902,7 @@ function function_5bce3615() {
 // Size: 0x296
 function function_f6cfe355() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         level waittill(#"captured_control_point");
         var_6012e65d = 0;
         players = getplayers();
@@ -1933,7 +1933,7 @@ function function_f6cfe355() {
 // Size: 0x250
 function function_4f4a3c59() {
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"hash_18e59631bf777496");
         if (isdefined(waitresult.var_855cc818) && waitresult.var_855cc818 > 0 && isdefined(self.var_9cd2c51d.var_43797ec0) && self.var_9cd2c51d.var_43797ec0.statname === #"hash_364914e1708cb629") {
@@ -1985,7 +1985,7 @@ function function_874334a5() {
 // Size: 0x10c
 function function_79deb4a0() {
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"hash_4fbe4720f6f13107", #"hash_383cbd169f8d0938");
         if (waitresult.b_success === 1) {
@@ -2061,7 +2061,7 @@ function function_c8cf642e() {
 // Size: 0x36
 function function_82383b3e() {
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         self waittill(#"hash_73cdf2e630b0bf6b");
     }
 }
@@ -2072,7 +2072,7 @@ function function_82383b3e() {
 // Size: 0xa2
 function function_12a35616() {
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"blueprint_completed");
         if (isdefined(waitresult.produced) && is_true(waitresult.produced.isriotshield)) {
@@ -2135,7 +2135,7 @@ function on_challenge_complete(params) {
 // Checksum 0xcc2dd717, Offset: 0xaa28
 // Size: 0xe
 function is_challenge(*n_challenge_index) {
-    return 0;
+    return false;
 }
 
 // Namespace zm_challenges/zm_challenges
@@ -2401,7 +2401,7 @@ function function_70fb11de(wait_time) {
 // Size: 0x60
 function function_eb3f0817() {
     self endon(#"death", #"disconnect");
-    while (1) {
+    while (true) {
         self waittill(#"loadout_given");
         self thread function_70fb11de(3);
     }
@@ -2650,7 +2650,7 @@ function function_64a04e4a() {
         if (!self isonground()) {
             var_577c82e7 = self.origin[2];
             var_e8ae4175 = 0;
-            while (1) {
+            while (true) {
                 if (self flag::get(#"hash_4e5451766f737d14") || self function_b4813488() || self function_49b3360c() || self laststand::player_is_in_laststand() || self scene::is_igc_active() || is_true(self.var_16735873)) {
                     var_e8ae4175 = 0;
                     while (!self isonground()) {

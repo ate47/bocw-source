@@ -126,7 +126,7 @@ function private function_da6accd0() {
 // Checksum 0x5415cb54, Offset: 0xb80
 // Size: 0x10
 function private function_aa5777b3(*player) {
-    return 1;
+    return true;
 }
 
 // Namespace zcranked/zcranked
@@ -164,7 +164,7 @@ function function_a143f9d1(*params) {
 // Size: 0x4c
 function function_acafdd66() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self waittill(#"bad_path");
         self.var_4fe4e626 = 1;
         wait(0.5);
@@ -464,7 +464,7 @@ function private function_b982cd4d() {
         }
     #/
     wait(1);
-    while (1) {
+    while (true) {
         if (level.zombie_total <= 0 && !level.intermission && !level flag::get(#"infinite_round_spawning") && !level flag::get(#"hold_round_end")) {
             var_9427911d = zombie_utility::get_current_zombie_count();
             if (level.round_number > 1 || var_9427911d <= 2) {
@@ -500,9 +500,9 @@ function function_26cf03ff() {
         }
     }
     if (!var_c1abcf30 && level.zombie_total <= 0 && !level flag::get(#"hold_round_end")) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zcranked/zcranked
@@ -712,9 +712,9 @@ function function_bab1a386(n_seconds) {
 // Size: 0xa8
 function function_64030a52() {
     if (level flag::get("cranked_pause") || isgodmode(self) || self isinmovemode("noclip", "ufo") || self getinvulnerability() || is_true(self.var_16735873)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zcranked/zcranked

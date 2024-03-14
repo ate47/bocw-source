@@ -272,11 +272,11 @@ function function_3ba5772b() {
         case #"avogadro":
         case #"hash_7c0d83ac1e845ac2":
             self.var_4356b0bd = 1;
-            return;
+            break;
         case #"soa":
             wait(1.4 + float(function_60d95f53()) / 1000);
             self.var_4356b0bd = 1;
-            return;
+            break;
         }
     }
 }
@@ -361,7 +361,7 @@ function private function_5da12481(params) {
                 } else {
                     item function_933708f2();
                 }
-                return;
+                break;
             }
         }
     }
@@ -417,7 +417,7 @@ function private function_33572994(cmd) {
             } else {
                 iprintlnbold("<unknown string>");
             }
-            return;
+            break;
         case #"hash_68f2deafb75d0499":
             level toggle(#"hash_6ef5c2fd97dfb8ba");
             if (level get(#"hash_6ef5c2fd97dfb8ba")) {
@@ -425,7 +425,7 @@ function private function_33572994(cmd) {
             } else {
                 iprintlnbold("<unknown string>");
             }
-            return;
+            break;
         case #"hash_3d3ef40bc9791d4b":
             if (level get("<unknown string>")) {
                 level clear("<unknown string>");

@@ -52,7 +52,7 @@ function function_1001f0ac() {
 // Checksum 0x6bcb735a, Offset: 0x390
 // Size: 0x6
 function function_647a2b33() {
-    return 0;
+    return false;
 }
 
 // Namespace wz_doa/wz_doa

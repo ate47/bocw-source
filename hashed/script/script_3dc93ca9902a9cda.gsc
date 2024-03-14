@@ -15,9 +15,9 @@
 // Size: 0x60
 function did_init() {
     if (isdefined(level._snd) && isdefined(level._snd.var_d37e94ca) && is_true(level._snd.isinitialized)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace snd/namespace_b63b5857
@@ -134,7 +134,7 @@ function function_2fdc4fb(var_afe43979) {
     }
     starttime = gettime();
     waittime = 0;
-    while (1) {
+    while (true) {
         var_d4337e5 = 0;
         var_2b6903e6 = function_f218bff5(var_afe43979);
         arrayremovevalue(var_2b6903e6, undefined);
@@ -161,9 +161,9 @@ function function_2fdc4fb(var_afe43979) {
 // Size: 0x2e
 function function_a6779cbd(var_afe43979) {
     if (isdefined(var_afe43979) && isdefined(var_afe43979.soundtype)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace snd/namespace_b63b5857
@@ -376,11 +376,11 @@ function private function_aaee1de3(var_db943b21, var_4769f013, item) {
         /#
             assert(0, "<unknown string>");
         #/
-        return;
+        break;
     case #"centity":
     case #"gentity":
         level._snd.var_3cc765a3[var_4769f013] = item;
-        return;
+        break;
     }
 }
 
@@ -400,14 +400,14 @@ function private function_7e9752b7(var_db943b21, var_4769f013, item) {
         /#
             assert(0, "<unknown string>");
         #/
-        return;
+        break;
     case #"centity":
     case #"gentity":
         /#
             assert(isinarray(level._snd.var_3cc765a3, item), "<unknown string>");
         #/
         level._snd.var_3cc765a3[var_4769f013] = undefined;
-        return;
+        break;
     }
 }
 
@@ -709,10 +709,10 @@ function private function_f937a6f7(var_afe43979, var_24ea4e17) {
     case #"gentity":
     default:
         namespace_afa8e18b::function_9f156b27(var_afe43979, var_24ea4e17);
-        return;
+        break;
     case #"centity":
         namespace_afa8e18b::function_273d939b(var_afe43979, var_24ea4e17);
-        return;
+        break;
     }
 }
 
@@ -926,11 +926,11 @@ function private function_dcc0344(soundalias, target, var_8fc5ff4a, var_6c6d0c21
             var_8fc5ff4a = [1:var_8fc5ff4a[3], 0:var_8fc5ff4a[2]];
         }
     }
-    while (1) {
+    while (true) {
         spawntime = function_84fc754d(var_8fc5ff4a, 0.05);
         wait(spawntime);
         if (!isdefined(target)) {
-            return;
+            break;
         }
         dist = function_84fc754d(function_ea2f17d1(var_6c6d0c21, 0));
         var_a7685aa3 = function_cdc85ae5(var_4be7fc38);
@@ -1236,9 +1236,9 @@ function function_fc955f31(curve) {
 function function_9020a959(curve) {
     lut = level.var_c386bd24[curve];
     if (isdefined(lut)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace snd/namespace_b63b5857
@@ -1494,9 +1494,9 @@ function function_e6dfc446(name) {
 // Size: 0x54
 function function_e74190aa(name) {
     if (isdefined(self.var_3dc056c0) && isarray(self.var_3dc056c0) && isdefined(self.var_3dc056c0[name])) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace snd/namespace_b63b5857
@@ -1507,11 +1507,11 @@ function function_e94ea06d(var_b90f380f) {
     if (isdefined(self.var_3dc056c0) && isarray(self.var_3dc056c0)) {
         foreach (p in self.var_3dc056c0) {
             if (p.var_b90f380f == var_b90f380f) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace snd/namespace_b63b5857
@@ -2030,7 +2030,7 @@ function private function_637f9a70(callback, var_7d665d77) {
         assert(isdefined(var_7d665d77));
     #/
     waitforplayers();
-    while (1) {
+    while (true) {
         skipto = function_bdd32fcc();
         if (skipto != "") {
             break;
@@ -2039,7 +2039,7 @@ function private function_637f9a70(callback, var_7d665d77) {
     }
     waitframe(1);
     objectives = [];
-    while (1) {
+    while (true) {
         skipto = function_bdd32fcc();
         if (skipto == "") {
         } else if (var_7d665d77 || !var_7d665d77 && !isdefined(objectives[skipto])) {
@@ -2110,7 +2110,7 @@ function private function_78013c7e(callback) {
     /#
         assert(isdefined(trigger));
     #/
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = trigger waittill(#"trigger");
         player = waitresult.activator;

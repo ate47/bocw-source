@@ -112,9 +112,9 @@ function function_95c61f07(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Size: 0x36
 function function_2fb8e4d4(*localclientnum, localplayer) {
     if (function_3132f113(localplayer)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace oob/oob

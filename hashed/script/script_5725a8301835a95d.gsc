@@ -185,7 +185,7 @@ function private function_95da1d88(instance, var_eece1f6a, var_f8dfa2cf) {
         }
         n_spawn = 0;
         var_9911be33 = "<unknown string>" + var_eece1f6a;
-        while (1) {
+        while (true) {
             var_794c9d5f = getdvarint(var_9911be33, 0);
             if (var_794c9d5f) {
                 if (var_794c9d5f == 2) {

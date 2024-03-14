@@ -31,11 +31,11 @@ function init_shared() {
 // Size: 0x206
 function function_5bf3c285(*killstreaktype) {
     if (self killstreakrules::iskillstreakallowed("weapon_armor", self.team) == 0) {
-        return 0;
+        return false;
     }
     self.var_c79fb13d = self killstreakrules::killstreakstart("weapon_armor", self.team);
     if (self.var_c79fb13d == -1) {
-        return 0;
+        return false;
     }
     if (isdefined(self.var_f721af54)) {
         self.var_f721af54 delete();
@@ -48,7 +48,7 @@ function function_5bf3c285(*killstreaktype) {
     self armor::set_armor(150, 150, 2, 0.4, 1, 0.5, 0, 1, 1, 1);
     self.var_67f4fd41 = &function_b299c6ec;
     self waittill(#"weapon_change_complete", #"death", #"disconnect", #"joined_team", #"killstreak_done");
-    return 1;
+    return true;
 }
 
 // Namespace weapon_armor/armor

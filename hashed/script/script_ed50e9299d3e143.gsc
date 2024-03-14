@@ -185,7 +185,7 @@ function private function_52c99a4f(entity) {
 // Size: 0xc9e
 function aileapgoalservice(entity) {
     if (isdefined(entity.var_862cb24b) || gettime() < entity.var_1e185a34 || !is_true(entity.var_7c4488fd) || isdefined(entity.var_ed09bf93)) {
-        return 0;
+        return false;
     }
     if (is_true(entity.var_2b5f41fd)) {
         if (function_673035b3(entity.var_6da37a9a)) {
@@ -200,14 +200,14 @@ function aileapgoalservice(entity) {
             entity function_56c12f58(entity.var_6da37a9a, 1);
             entity.var_ed09bf93 = function_c8c99c9f(entity.var_6da37a9a);
             entity.var_6da37a9a.nextpos = undefined;
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
     var_f0d4ca02 = function_52c99a4f(entity);
     if (!isdefined(var_f0d4ca02.goalpos)) {
         entity function_3113dfa4();
-        return 0;
+        return false;
     }
     goalpos = var_f0d4ca02.goalpos;
     var_8657abc1 = var_f0d4ca02.var_8657abc1;
@@ -216,7 +216,7 @@ function aileapgoalservice(entity) {
     var_db31ebd5 = !entity haspath() && abs(goalpos[2] - entity.origin[2]) > 120;
     if (!is_true(var_8657abc1) && !var_db31ebd5 && distance2dsquared(entity.origin, goalpos) <= function_a3f6cdac(var_ab0e4f00) && abs(entity.origin[2] - goalpos[2]) <= 2000) {
         entity function_3113dfa4();
-        return 0;
+        return false;
     }
     gravity = is_true(entity.is_zombie) ? 5 : 4.5;
     startpos = entity.origin + getmovedelta(#"hash_2cf640e3ec8ad827", 0, 1);
@@ -309,10 +309,10 @@ function aileapgoalservice(entity) {
         if (!is_true(var_8657abc1)) {
             entity function_3113dfa4();
         }
-        return 0;
+        return false;
     }
     entity.var_6178722c = 0;
-    return 1;
+    return true;
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
@@ -321,9 +321,9 @@ function aileapgoalservice(entity) {
 // Size: 0x36
 function aishouldleap(entity) {
     if (isdefined(entity.var_862cb24b) || isdefined(entity.var_ed09bf93)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
@@ -332,9 +332,9 @@ function aishouldleap(entity) {
 // Size: 0x24
 function aiisleaping(entity) {
     if (isdefined(entity.var_1eb8b1ad)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
@@ -343,9 +343,9 @@ function aiisleaping(entity) {
 // Size: 0x36
 function private aishouldleapfollowpath(entity) {
     if (isdefined(entity.var_6da37a9a) && isdefined(entity.var_ed09bf93)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
@@ -598,7 +598,7 @@ function private function_376516c9() {
     if (!function_fcfdadcd()) {
         return;
     }
-    while (1) {
+    while (true) {
         if (isdefined(self.var_862cb24b) || !is_true(self.var_7c4488fd)) {
             waitframe(1);
             continue;
@@ -733,7 +733,7 @@ function private function_b3069b6c(target) {
     if (isdefined(var_427872c2)) {
         self function_fe23c655(var_8787728e, var_427872c2);
     }
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = target waittill(#"zone_change");
         if (!isdefined(waitresult.zone_name) || waitresult.zone_name === var_427872c2) {
@@ -826,9 +826,9 @@ function private function_951ed389() {
         if (!self function_1c7692a4(var_5fc0e82b.origin, var_5fc0e82b.var_22043f8e)) {
             self function_c2576f59();
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
@@ -891,9 +891,9 @@ function private function_1c7692a4(var_441e6fcc, var_22043f8e) {
                 self [[ self.var_952959e1 ]]();
             }
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
@@ -966,9 +966,9 @@ function private function_236cda12() {
                 self [[ self.var_793f9f37 ]]();
             }
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
@@ -996,9 +996,9 @@ function private function_18867744(navmeshpoint, var_7d6b86d8) {
         if (isdefined(self.var_952959e1)) {
             self [[ self.var_952959e1 ]]();
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
@@ -1282,10 +1282,10 @@ function private function_6b400792(path) {
 function private function_af3889fa(zone_name, path) {
     foreach (var_84feab6c in path) {
         if (var_84feab6c.zone_name === zone_name) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
@@ -1297,12 +1297,12 @@ function function_a6b0387d(str_start, var_bee7a3d9, is_point = 0, var_f6e819e4 =
         radius = self getpathfindingradius();
         pointonnavmesh = getclosestpointonnavmesh(str_start, radius * 2, radius * 1.2);
         if (!isdefined(pointonnavmesh)) {
-            return 0;
+            return false;
         }
         var_8787728e = zm_zonemgr::get_zone_from_position(pointonnavmesh, 1);
         pointonnavmesh = getclosestpointonnavmesh(var_bee7a3d9, radius * 2, radius * 1.2);
         if (!isdefined(pointonnavmesh)) {
-            return 0;
+            return false;
         }
         var_266a0de8 = zm_zonemgr::get_zone_from_position(pointonnavmesh, 1);
     } else {
@@ -1311,7 +1311,7 @@ function function_a6b0387d(str_start, var_bee7a3d9, is_point = 0, var_f6e819e4 =
     }
     path = function_259b61b6(var_8787728e, var_266a0de8);
     if (!isdefined(path)) {
-        return 0;
+        return false;
     }
     var_ce169bc8 = [];
     foreach (var_84feab6c in path) {
@@ -1324,9 +1324,9 @@ function function_a6b0387d(str_start, var_bee7a3d9, is_point = 0, var_f6e819e4 =
         if (is_true(var_f6e819e4)) {
             self.var_c7f5b6e1 = var_ce169bc8;
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560

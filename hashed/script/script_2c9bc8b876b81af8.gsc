@@ -133,7 +133,7 @@ function function_15c21657() {
         level.var_4163ae0d = getplayers()[0];
         var_d5ae2adf = -1;
         var_e8343926 = undefined;
-        while (1) {
+        while (true) {
             if (!getdvar(#"hash_7668446d7f371f9", 0)) {
                 function_565627f7();
                 waitframe(1);
@@ -194,7 +194,7 @@ function function_15c21657() {
 // Size: 0x1cc
 function function_258a6c7() {
     /#
-        while (1) {
+        while (true) {
             if (!getdvarint(#"hash_7668446d7f371f9", 0)) {
                 wait(0.1);
                 continue;
@@ -225,7 +225,7 @@ function function_258a6c7() {
 function function_faf13f8e(text) {
     /#
         self endon(#"death");
-        while (1) {
+        while (true) {
             print3d(self.origin + vectorscale((0, 0, 1), 65), text, (0.48, 9.4, 0.76), 1, 1);
             waitframe(1);
         }
@@ -461,7 +461,7 @@ function function_cfed27e3() {
             level.var_92f8da9a.color = (1, 1, 1);
             level.var_254556d9.color = (1, 1, 1);
             level.var_6c6a96f9.color = (1, 1, 1);
-            return;
+            break;
         case 1:
             level.var_efdd94a4.color = (1, 1, 1);
             level.var_3ad36502.color = (0, 1, 0);
@@ -471,7 +471,7 @@ function function_cfed27e3() {
             level.var_92f8da9a.color = (1, 1, 1);
             level.var_254556d9.color = (1, 1, 1);
             level.var_6c6a96f9.color = (1, 1, 1);
-            return;
+            break;
         case 2:
             level.var_efdd94a4.color = (1, 1, 1);
             level.var_3ad36502.color = (1, 1, 1);
@@ -481,7 +481,7 @@ function function_cfed27e3() {
             level.var_92f8da9a.color = (1, 1, 1);
             level.var_254556d9.color = (1, 1, 1);
             level.var_6c6a96f9.color = (1, 1, 1);
-            return;
+            break;
         case 3:
             level.var_efdd94a4.color = (1, 1, 1);
             level.var_3ad36502.color = (1, 1, 1);
@@ -491,7 +491,7 @@ function function_cfed27e3() {
             level.var_92f8da9a.color = (1, 1, 1);
             level.var_254556d9.color = (1, 1, 1);
             level.var_6c6a96f9.color = (1, 1, 1);
-            return;
+            break;
         case 4:
             level.var_efdd94a4.color = (1, 1, 1);
             level.var_3ad36502.color = (1, 1, 1);
@@ -501,7 +501,7 @@ function function_cfed27e3() {
             level.var_92f8da9a.color = (1, 1, 1);
             level.var_254556d9.color = (1, 1, 1);
             level.var_6c6a96f9.color = (1, 1, 1);
-            return;
+            break;
         case 5:
             level.var_efdd94a4.color = (1, 1, 1);
             level.var_3ad36502.color = (1, 1, 1);
@@ -511,7 +511,7 @@ function function_cfed27e3() {
             level.var_92f8da9a.color = (0, 1, 0);
             level.var_254556d9.color = (1, 1, 1);
             level.var_6c6a96f9.color = (1, 1, 1);
-            return;
+            break;
         case 6:
             level.var_efdd94a4.color = (1, 1, 1);
             level.var_3ad36502.color = (1, 1, 1);
@@ -521,7 +521,7 @@ function function_cfed27e3() {
             level.var_92f8da9a.color = (1, 1, 1);
             level.var_254556d9.color = (0, 1, 0);
             level.var_6c6a96f9.color = (1, 1, 1);
-            return;
+            break;
         case 7:
             level.var_efdd94a4.color = (1, 1, 1);
             level.var_3ad36502.color = (1, 1, 1);
@@ -531,7 +531,7 @@ function function_cfed27e3() {
             level.var_92f8da9a.color = (1, 1, 1);
             level.var_254556d9.color = (1, 1, 1);
             level.var_6c6a96f9.color = (0, 1, 0);
-            return;
+            break;
         }
     #/
 }

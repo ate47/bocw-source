@@ -420,7 +420,7 @@ function client_menus(local_client_num) {
     level endon(#"disconnect");
     level.var_a14cc36b[local_client_num] = [];
     clientmenustack = level.var_a14cc36b[local_client_num];
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill("menu_change" + local_client_num);
         menu_name = waitresult.menu;
@@ -589,7 +589,7 @@ function function_4e55f369(var_8de6b51a, var_e3315405, var_b1e821c5) {
 // Size: 0xb4
 function is_current_menu(local_client_num, menu_name, state = undefined) {
     if (!isdefined(level.var_a14cc36b[local_client_num]) || level.var_a14cc36b[local_client_num].size == 0) {
-        return 0;
+        return false;
     }
     return level.var_a14cc36b[local_client_num][0].menu_name === menu_name && (!isdefined(state) || level.var_a14cc36b[local_client_num][0].state === state);
 }

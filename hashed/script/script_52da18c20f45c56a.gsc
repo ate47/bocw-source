@@ -303,7 +303,7 @@ function function_854fc491(var_6a87e928) {
     }
     if (isdefined(var_6a87e928)) {
         lastmode = -1;
-        while (1) {
+        while (true) {
             newmode = lastmode;
             if (player function_29fd0abd() && var_6a87e928.size > 1) {
                 newmode = 1;
@@ -1159,24 +1159,24 @@ function function_1a2a3654() {
 // Size: 0x12a
 function function_a06867b0(weapon) {
     if (!isweapon(weapon)) {
-        return 1;
+        return true;
     }
     if (is_true(weapon.isboltaction)) {
-        return 1;
+        return true;
     }
     if (is_true(weapon.isgrenadeweapon)) {
-        return 1;
+        return true;
     }
     if (isdefined(level.var_e3f5eafc) && weapon === level.var_e3f5eafc) {
-        return 1;
+        return true;
     }
     if (isdefined(level.var_42db149f) && weapon === level.var_42db149f) {
-        return 1;
+        return true;
     }
     if (weapon.name == #"launcher_freefire_t9" || weapon.name == #"hash_1e25706a023b5e09" || weapon.name == #"hash_1a377db5bfa579f3") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_594b67e/namespace_594b67e
@@ -1185,12 +1185,12 @@ function function_a06867b0(weapon) {
 // Size: 0x92
 function function_1c2cb657(weapon) {
     if (!isweapon(weapon)) {
-        return 0;
+        return false;
     }
     if (!is_true(weapon.ismeleeweapon) && (!is_true(weapon.isbulletweapon) || is_true(weapon.issniperweapon))) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_594b67e/namespace_594b67e
@@ -1199,12 +1199,12 @@ function function_1c2cb657(weapon) {
 // Size: 0x72
 function function_1fac6486(weapon) {
     if (!isweapon(weapon)) {
-        return 0;
+        return false;
     }
     if (is_true(weapon.ismeleeweapon) && !is_true(weapon.isbulletweapon)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_594b67e/namespace_594b67e

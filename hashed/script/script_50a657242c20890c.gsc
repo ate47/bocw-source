@@ -71,7 +71,7 @@ function function_2810997c(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_718ef5ea(var_a7dcc4c7, v_center) {
     self endon(#"death");
     var_a7dcc4c7 endon(#"death");
-    while (1) {
+    while (true) {
         v_target = var_a7dcc4c7.origin;
         if (self.origin[2] == 1) {
             v_target = v_center + (0, 60, -20) + self.origin[0] / 10000 * (0, cos(self.angles[0]) * -1, sin(self.angles[0]));

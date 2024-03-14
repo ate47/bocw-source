@@ -131,22 +131,22 @@ function function_2cfaf9d7() {
         switch (self.var_586c917d.script_int) {
         case 1:
             showmiscmodels("defend_corpses_1");
-            return;
+            break;
         case 2:
             showmiscmodels("defend_corpses_2");
-            return;
+            break;
         case 3:
             showmiscmodels("defend_corpses_3");
-            return;
+            break;
         case 4:
             showmiscmodels("defend_corpses_4");
-            return;
+            break;
         case 5:
             showmiscmodels("defend_corpses_5");
-            return;
+            break;
         case 6:
             showmiscmodels("defend_corpses_6");
-            return;
+            break;
         }
     }
 }
@@ -634,7 +634,7 @@ function function_7cf83691() {
     level.e_obj = util::spawn_model("tag_origin", self.var_4a416ea9.origin);
     n_objective_id = zm_utility::function_f5a222a8(#"hash_2e632d14a18ddc0", level.e_obj);
     var_f4bd7934 = 0;
-    while (1) {
+    while (true) {
         foreach (player in getplayers()) {
             if (distance2dsquared(level.e_obj.origin, player.origin) <= function_a3f6cdac(3000)) {
                 var_f4bd7934 = 1;
@@ -691,7 +691,7 @@ function function_57cc3128() {
     var_7631cbaa usetriggerrequirelookat(1);
     var_7631cbaa thread function_c4712107();
     var_4a416ea9 zm_utility::function_747180ea(level.var_11af7d74, undefined, var_7631cbaa);
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = var_7631cbaa waittill(#"trigger");
         if (isalive(s_result.activator) && s_result.activator hasweapon(level.var_e4731251) && is_true(s_result.activator.var_2941a093)) {
@@ -721,7 +721,7 @@ function function_57cc3128() {
 // Size: 0x14c
 function function_c4712107() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         foreach (player in getplayers()) {
             if (player hasweapon(level.var_e4731251)) {
                 self setvisibletoplayer(player);
@@ -778,7 +778,7 @@ function function_5f91d0c7(instance) {
 // Size: 0x5e
 function function_c043100e(n_time) {
     self endon(#"objective_ended");
-    while (1) {
+    while (true) {
         if (n_time == 60) {
         }
         if (n_time == 30) {
@@ -870,7 +870,7 @@ function function_a2254b83(instance, n_time) {
     instance endon(#"objective_ended", #"hash_7729c6e7911b801d");
     self endon(#"death");
     n_count = 0;
-    while (1) {
+    while (true) {
         a_ai_zombies = getentarray("defend_zombie", "targetname");
         if (!isdefined(a_ai_zombies) || a_ai_zombies.size < 3) {
             instance notify(#"hash_7729c6e7911b801d");
@@ -923,7 +923,7 @@ function function_fd68cae4() {
 // Size: 0xb0
 function function_a8ef97e6() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         player = awareness::function_d7fedde2(self);
         if (isalive(player)) {
             self.var_ff290a61 = player;
@@ -946,7 +946,7 @@ function function_bf606a73() {
     self callback::function_d8abfc3d(#"hash_4afe635f36531659", &function_fd68cae4);
     self flag::set(#"hash_52d6a75cdbf101f3");
     self.var_40e7d5fb = &function_809b1986;
-    while (1) {
+    while (true) {
         player = awareness::function_d7fedde2(self);
         if (math::cointoss(25)) {
             if (isalive(player)) {
@@ -976,7 +976,7 @@ function function_34ac205(instance, n_active, var_559503f1, n_wave) {
     n_delay = 1 / n_wave * 3;
     a_s_locs = instance function_94e50668(var_559503f1, n_wave);
     a_s_pts = array::randomize(a_s_locs);
-    while (1) {
+    while (true) {
         level flag::wait_till("spawn_zombies");
         if (instance.n_active < n_active) {
             if (!a_s_pts.size) {
@@ -1270,7 +1270,7 @@ function function_b9fb6c3a(instance) {
     self thread function_51779021(instance, 3, 10);
     instance.var_5b5e7a56 = 0;
     instance.var_319626c6 = 0;
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = self waittill(#"damage");
         if (isdefined(s_result.attacker) && isplayer(s_result.attacker)) {
@@ -1340,11 +1340,11 @@ function function_51779021(instance, var_63e8f3af = 3, var_321cde74 = 10) {
     instance endon(#"objective_ended");
     self endon(#"death");
     var_3057025e = 0;
-    for (var_1a944fca = gettime(); 1; var_1a944fca = gettime()) {
+    for (var_1a944fca = gettime(); true; var_1a944fca = gettime()) {
         s_result = undefined;
         s_result = self waittill(#"damage");
         if (self.health <= 0) {
-            return;
+            break;
         }
         if (isai(s_result.attacker)) {
             var_c4bac09b = gettime() - var_1a944fca;
@@ -1373,7 +1373,7 @@ function function_80ba1bc8(instance, n_objective_id) {
     objective_setprogress(n_objective_id, var_8da3e170);
     zm_sq::sndonoverride_eye_(var_8da3e170);
     zm_sq::function_2398ab16("timer_stop");
-    while (1) {
+    while (true) {
         var_c3a3ae13 = self.health / n_start_health;
         if (var_c3a3ae13 >= 0 && var_8da3e170 != var_c3a3ae13) {
             var_8da3e170 = var_c3a3ae13;
@@ -1410,7 +1410,7 @@ function function_c10cfcb5() {
 // Size: 0x154
 function cleanup_zombie() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         wait(0.1);
         a_players = getplayers();
         foreach (player in a_players) {
@@ -1459,7 +1459,7 @@ function function_232a7f41(instance) {
 function function_ab97e04b(instance, var_453e0a89, n_radius) {
     instance endon(#"objective_ended");
     self endon(#"death");
-    while (1) {
+    while (true) {
         foreach (vehicle in var_453e0a89) {
             if (isdefined(vehicle) && distance2dsquared(self.origin, vehicle.origin) <= function_a3f6cdac(n_radius)) {
                 if (!is_true(vehicle.abnormal_status.emped)) {
@@ -1494,7 +1494,7 @@ function function_81d3631c(*var_4a416ea9) {
 // Size: 0x58
 function function_1fe3eb34() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         if (!self.abnormal_status.emped) {
             self vehicle::function_bbc1d940(0);
         }
@@ -1517,7 +1517,7 @@ function function_58ec23ca(instance, defend_object) {
     self.time_to_wait = 0;
     self thread function_df9979de(instance);
     self.var_cdf71d99 = 0;
-    while (1) {
+    while (true) {
         if (current_target == 1) {
             current_time = gettime();
             if (isdefined(defend_object)) {
@@ -1560,7 +1560,7 @@ function function_58ec23ca(instance, defend_object) {
 function private function_df9979de(instance) {
     self endon(#"death");
     instance endon(#"objective_ended");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
         self.time_to_wait = gettime() + 8000;

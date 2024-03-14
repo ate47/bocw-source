@@ -68,7 +68,7 @@ function function_34427db() {
     hidemiscmodels("mdl_env_omega_defence_02");
     hidemiscmodels("mdl_env_omega_defence_03");
     level thread function_1ff92a8e();
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"power_on1", #"power_on2", #"power_on3");
         switch (waitresult._notify) {
@@ -96,7 +96,7 @@ function function_34427db() {
 // Size: 0x98
 function function_1ff92a8e() {
     hidemiscmodels("mdl_env_village");
-    while (1) {
+    while (true) {
         level flag::wait_till("power_on");
         showmiscmodels("mdl_env_village");
         level flag::wait_till_clear("power_on");
@@ -230,10 +230,10 @@ function private function_63193c65() {
 // Size: 0x78
 function function_db073473(*e_player) {
     if (level flag::get(#"hash_3e765c26047c9f54") || level flag::get(#"hash_7b872eebd26623c5")) {
-        return 0;
+        return false;
     }
     self sethintstring(#"hash_78573012d7272fae");
-    return 1;
+    return true;
 }
 
 // Namespace zm_gold_pap_quest/zm_gold_pap_quest
@@ -397,7 +397,7 @@ function function_9855e2a1(b_skipped) {
         }
     }
     zm_sq::function_266d66eb(#"hash_3fa48c6ce3445d51", level.var_9674d6e2, undefined, #"hash_329328a868c84e37", #"hash_69cca9825b7edc33", undefined, &zm_gold_util::function_13ebb331, "vol_player_in_village");
-    while (1) {
+    while (true) {
         foreach (player in function_a1ef346b()) {
             var_cf81848f = distance2d(player.origin, level.var_9674d6e2.origin);
             if (var_cf81848f <= 350) {
@@ -441,7 +441,7 @@ function function_e361ce1b() {
 // Size: 0x128
 function function_9d367ce1() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         level flag::wait_till_clear_any([2:#"power_on3", 1:#"power_on2", 0:#"power_on1"]);
         level flag::set(#"disable_weapon_machine");
         level flag::wait_till_all([2:#"power_on3", 1:#"power_on2", 0:#"power_on1"]);
@@ -455,7 +455,7 @@ function function_9d367ce1() {
 // Size: 0x126
 function private function_a2854e57() {
     level endon(#"enable_firebase_zone", #"hash_3e765c26047c9f54");
-    while (1) {
+    while (true) {
         a_players = function_a1ef346b();
         foreach (player in a_players) {
             if (distancesquared(player.origin, level.var_9674d6e2.origin) <= 90000) {

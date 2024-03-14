@@ -32,7 +32,7 @@ function function_4334ac55() {
         function_5ac4dc99("<unknown string>", "<unknown string>");
         function_5ac4dc99("<unknown string>", "<unknown string>");
         thread function_f5dd6400();
-        while (1) {
+        while (true) {
             waitframe(1);
             function_613009e2();
             if (!function_852e4bbb()) {
@@ -63,7 +63,7 @@ function debug_player() {
         z = 0;
         space = 10;
         tab = "<unknown string>";
-        while (1) {
+        while (true) {
             if (function_852e4bbb() && getplayers().size > 0) {
                 player = getplayers()[0];
                 if (!isdefined(player.stealth) || !player get("<unknown string>")) {
@@ -117,7 +117,7 @@ function function_b4d10409() {
     /#
         self endon(#"death");
         function_5ac4dc99("<unknown string>", "<unknown string>");
-        while (1) {
+        while (true) {
             if (function_852e4bbb()) {
                 space = 10;
                 count = 0;
@@ -141,7 +141,7 @@ function function_8c76fdc5() {
         self endon(#"death");
         function_5ac4dc99("<unknown string>", "<unknown string>");
         function_5ac4dc99("<unknown string>", "<unknown string>");
-        while (1) {
+        while (true) {
             if (is_true(self.var_fb9a2c03)) {
                 return;
             }
@@ -361,7 +361,7 @@ function debug_points(points, endonevent) {
         }
         self endon(#"death");
         self endon(endonevent);
-        while (1) {
+        while (true) {
             foreach (point in points) {
                 if (isdefined(point.var_9415f2bd)) {
                     print3d(point.origin, "<unknown string>" + point.var_9415f2bd);
@@ -749,7 +749,7 @@ function function_f5dd6400() {
         var_4c0b606b = 1;
         textcolor = (1, 1, 1);
         var_1caac9f9 = level.stealth;
-        while (1) {
+        while (true) {
             if (function_bc93e0c7()) {
                 var_12febe81 = gettime() - var_9d1f58f3;
                 if (var_1caac9f9.var_42d9f5df > 0) {

@@ -197,7 +197,7 @@ function function_f7f8a2cc(attacker, weapon) {
         a_ai_zombies[i] function_eb8a62bc(var_fd6c12d9, 1, attacker, weapon);
         n_flung_zombies++;
         if (-1 && n_flung_zombies >= 3) {
-            return;
+            break;
         }
     }
 }
@@ -231,33 +231,33 @@ function private function_eb8a62bc(var_c5ad44f1, n_damage, e_attacker, weapon) {
 // Size: 0x152
 function function_6f735de0() {
     if (is_true(level.aat[#"ammomod_brainrot"].immune_result_direct[self.archetype])) {
-        return 0;
+        return false;
     }
     if (is_true(self.barricade_enter)) {
-        return 0;
+        return false;
     }
     if (is_true(self.is_traversing)) {
-        return 0;
+        return false;
     }
     if (is_true(self.var_69a981e6)) {
-        return 0;
+        return false;
     }
     if (!is_true(self.completed_emerging_into_playable_area)) {
-        return 0;
+        return false;
     }
     if (is_true(self.is_leaping)) {
-        return 0;
+        return false;
     }
     if (is_true(self.missinglegs)) {
-        return 0;
+        return false;
     }
     if (is_true(self.var_1d8cde9)) {
-        return 0;
+        return false;
     }
     if (isdefined(level.var_11350584) && !self [[ level.var_11350584 ]]()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace ammomod_brainrot/ammomod_brainrot

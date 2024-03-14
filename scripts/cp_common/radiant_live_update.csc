@@ -29,7 +29,7 @@ function private function_70a657d8() {
 // Size: 0x84
 function scriptstruct_debug_render() {
     /#
-        while (1) {
+        while (true) {
             waitresult = undefined;
             waitresult = level waittill(#"liveupdate");
             if (isdefined(waitresult.selected_struct)) {

@@ -68,7 +68,7 @@ function function_16a186f(*s_watcher, player) {
 // Size: 0x55a
 function function_e95b2776() {
     self endon(#"delete", #"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"stationary");
         if (!isdefined(waitresult.target)) {
@@ -79,7 +79,7 @@ function function_e95b2776() {
                 /#
                     println("<unknown string>");
                 #/
-                return;
+                break;
             }
             var_6731520b = vectornormalize(var_6731520b);
             n_angle = acos(var_6731520b[2]) - 90;
@@ -108,7 +108,7 @@ function function_e95b2776() {
                 n_pitch = absangleclamp180(var_19e2c116[0]) > absangleclamp180(var_19e2c116[1]) ? a_safe[0] : a_safe[1];
                 self.angles = (n_pitch, self.angles[1], self.angles[2]);
             }
-            return;
+            break;
         }
     }
 }

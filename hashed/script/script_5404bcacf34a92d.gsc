@@ -246,7 +246,7 @@ function function_c50ebe3c(*watcher, owner) {
 function function_e7592c16() {
     self endon(#"death");
     self.var_dac47117 function_6018b54a(1);
-    while (1) {
+    while (true) {
         var_245d737a = undefined;
         zombies = getaiteamarray(level.zombie_team);
         var_4f6af2f4 = arraysortclosest(zombies, self.origin, 5, undefined, 64);
@@ -450,7 +450,7 @@ function function_3b028b4a(time_left, var_646dca28, var_7961a37e, var_b512a2d) {
     level.var_acb5d4ce[var_7961a37e] = spawnstruct();
     level.var_acb5d4ce[var_7961a37e].var_b512a2d = var_b512a2d;
     level.var_acb5d4ce[var_7961a37e].var_b722fee6 = var_b512a2d;
-    while (1) {
+    while (true) {
         result = undefined;
         result = level waittilltimeout(time_left, #"hash_c1bf755b6bc771e" + var_7961a37e);
         var_1967ad3 = level.var_acb5d4ce[var_7961a37e].var_b512a2d;
@@ -494,7 +494,7 @@ function function_3b028b4a(time_left, var_646dca28, var_7961a37e, var_b512a2d) {
                 }
             }
             level notify(#"hash_6382150c7bec4fd9", {#id:var_7961a37e});
-            return;
+            break;
         } else {
             if (isplayer(result.entity)) {
                 var_28dbb034 = 1;
@@ -638,7 +638,7 @@ function function_32e79e8() {
 function function_6fff9b43() {
     self endon(#"hash_6eff933a50ad6ea", #"death");
     self waittill(#"hash_53ccfec5da1e6068");
-    while (1) {
+    while (true) {
         a_players = function_a1ef346b();
         foreach (player in a_players) {
             if (distancesquared(player.origin, self.origin) < 62500) {

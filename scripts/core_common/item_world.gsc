@@ -267,9 +267,9 @@ function private function_8bac489c(supplystash, player) {
         assert(isplayer(player));
     #/
     if (supplystash.var_193b3626 === player getentitynumber()) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace item_world/item_world
@@ -304,7 +304,7 @@ function private function_35c26e09(supplystash) {
         }
     }
     function_e2a06860(supplystash, 0);
-    return 1;
+    return true;
 }
 
 // Namespace item_world/item_world
@@ -333,19 +333,19 @@ function private function_199c092d(supplystash, player = undefined) {
         assert(!isdefined(supplystash.var_193b3626));
     #/
     if (isdefined(supplystash.var_193b3626)) {
-        return 0;
+        return false;
     }
     supplystash.var_193b3626 = player getentitynumber();
     item = function_cc1aec8(player, 10);
     if (!isdefined(item) || item.var_a6762160.name !== #"resource_item_loot_locker_key") {
-        return 0;
+        return false;
     }
     lootweapons = player namespace_a0d533d1::get_loot_weapons();
     /#
         assert(lootweapons.size > 0);
     #/
     if (lootweapons.size <= 0) {
-        return 0;
+        return false;
     }
     var_cf23afee = [];
     foreach (weaponname in lootweapons) {
@@ -373,7 +373,7 @@ function private function_199c092d(supplystash, player = undefined) {
             function_bfc28859(3, item.id);
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace item_world/item_world
@@ -467,10 +467,10 @@ function private function_f27ff71f() {
             continue;
         }
         if (is_true(player.var_d7a70ae4)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace item_world/item_world
@@ -481,7 +481,7 @@ function private function_df1098a() {
     self notify("4117b1bdaea5da");
     self endon("4117b1bdaea5da");
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         players = getplayers();
         for (index = 0; index < players.size; index++) {
             player = players[index];
@@ -504,7 +504,7 @@ function private function_185f50c5() {
     self notify("3f33c17bf4699b32");
     self endon("3f33c17bf4699b32");
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         players = getplayers();
         for (index = 0; index < players.size; index++) {
             player = players[index];
@@ -631,7 +631,7 @@ function private function_6266f448() {
     self notify("54aa3c9d2a650c2");
     self endon("54aa3c9d2a650c2");
     self endon(#"death", #"entering_last_stand", #"hash_2781407e327b42ee");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         if (waitresult.menu == "MultiItemPickup" && waitresult.response == "multi_item_menu_closed") {
@@ -649,7 +649,7 @@ function private function_d87c50ae(stash) {
     self notify("a8a6e23c71cdd5f");
     self endon("a8a6e23c71cdd5f");
     self endon(#"death", #"entering_last_stand", #"hash_2781407e327b42ee");
-    while (1) {
+    while (true) {
         waitframe(1);
         if (!isdefined(self.groupitems)) {
             break;
@@ -737,7 +737,7 @@ function function_248022d9() {
     if (!isdefined(level.var_75dc9c49)) {
         level.var_75dc9c49 = 0;
     }
-    while (1) {
+    while (true) {
         level.var_37a4536d = [];
         if (level.var_75dc9c49 > 0) {
             time = gettime();
@@ -879,7 +879,7 @@ function loop_sound(alias, interval) {
     if (self haspart("tag_fx_01") && self haspart("tag_fx_02") && self haspart("tag_fx_03") && self haspart("tag_fx_04") && self haspart("tag_body")) {
         var_75b1f55f = 1;
     }
-    while (1) {
+    while (true) {
         playsoundatposition(alias, self.origin);
         if (is_true(var_75b1f55f)) {
             playfxontag(#"hash_73dda66347b73ddd", self, "tag_fx_01");
@@ -891,7 +891,7 @@ function loop_sound(alias, interval) {
         wait(interval);
         interval = interval / 1.2;
         if (interval < 0.08) {
-            return;
+            break;
         }
     }
 }
@@ -965,40 +965,40 @@ function private function_6105623a(item) {
 // Size: 0x27e
 function private function_3f63e44f(itemdef) {
     if (!isdefined(itemdef) || !isdefined(self)) {
-        return 0;
+        return false;
     }
     if (!is_true(itemdef.var_a6762160.var_b362e309) && !is_true(itemdef.var_a6762160.var_ef039d3d) || is_true(itemdef.var_5d97fed1)) {
-        return 0;
+        return false;
     }
     if (is_true(itemdef.var_eeb03183)) {
-        return 0;
+        return false;
     }
     if (isdefined(itemdef.var_afda6972) && gettime() < itemdef.var_afda6972) {
-        return 0;
+        return false;
     }
     usedir = itemdef.origin - self.origin;
     if (lengthsquared(usedir) > function_a3f6cdac(itemdef.var_a6762160.var_16e34ef4)) {
-        return 0;
+        return false;
     }
     if (!self item_world_util::can_pick_up(itemdef)) {
-        return 0;
+        return false;
     }
     if (isentity(itemdef)) {
         if (itemdef.classname === "script_model" || itemdef.classname === "script_origin" || itemdef.classname === "script_brushmodel") {
             var_ba207c19 = itemdef function_3d33610f();
             if (isdefined(var_ba207c19)) {
                 if (var_ba207c19.moving && gettime() - var_ba207c19.time < 1000) {
-                    return 0;
+                    return false;
                 }
             }
         }
     }
     if (is_true(itemdef.var_a6762160.var_ef039d3d) && !is_true(itemdef.var_a6762160.var_b362e309)) {
         if (!self function_6105623a(itemdef)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace item_world/item_world
@@ -1611,22 +1611,22 @@ function function_8e0d14c1(var_4b0875ec = 0) {
     #/
     usetrigger = self.var_19caeeea;
     if (!isdefined(usetrigger)) {
-        return 0;
+        return false;
     }
     if (!isdefined(usetrigger.itemstruct)) {
-        return 0;
+        return false;
     }
     if (var_4b0875ec && item_world_util::function_83c20f83(usetrigger.itemstruct)) {
-        return 0;
+        return false;
     }
     origin = self getplayercamerapos();
     if (distance2dsquared(usetrigger.itemstruct.origin, origin) > function_a3f6cdac(128)) {
-        return 0;
+        return false;
     }
     if (abs(usetrigger.itemstruct.origin[2] - origin[2]) > 128) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace item_world/item_world
@@ -1667,7 +1667,7 @@ function function_83ddce0f(item, inventoryslot) {
         var_3d1f9df4 = var_a1ca235e.amount;
         dropitem = self item_inventory::drop_inventory_item(var_69944179.networkid, 0, item.origin, undefined, 0);
         if (!isdefined(dropitem)) {
-            return 0;
+            return false;
         }
         waitframe(1);
     }
@@ -1678,7 +1678,7 @@ function function_83ddce0f(item, inventoryslot) {
         if (isdefined(dropitem) && isdefined(item) && isdefined(item.var_a6762160) && item.var_a6762160.itemtype == #"backpack") {
             item_inventory::function_ec238da8();
         }
-        return 0;
+        return false;
     }
     var_77e61fc6 = function_de2018e3(item, self, inventoryslot, 1, 1);
     if (var_77e61fc6 == 0) {
@@ -1697,7 +1697,7 @@ function function_83ddce0f(item, inventoryslot) {
             consume_item(item);
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace item_world/item_world

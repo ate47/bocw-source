@@ -170,20 +170,20 @@ function function_751b9d86(var_1799ae59) {
 // Size: 0xd4
 function is_valid_weapon(weapon) {
     if (weapon === level.weaponnone || weapon === level.weaponbasemeleeheld) {
-        return 0;
+        return false;
     }
     if (isdefined(weapon.dualwieldweapon) && is_true(weapon.var_bf0eb41)) {
         weapon = weapon.dualwieldweapon;
     }
     if (is_true(weapon.isprimary)) {
-        return 1;
+        return true;
     }
     if (self namespace_e86ffa8::function_cd6787b(1)) {
         if (weapon.inventorytype === "offhand") {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
@@ -220,7 +220,7 @@ function function_a26b7152() {
     self endon(#"disconnect", #"hash_51b6cc6dbafb7f31" + "_take");
     self.wait_on_reload = [];
     self.var_cb7633ba = 0;
-    while (1) {
+    while (true) {
         self waittill(#"reload_start");
         current_weapon = self getcurrentweapon();
         if (isinarray(self.wait_on_reload, current_weapon)) {
@@ -339,13 +339,13 @@ function function_7c82917f(current_weapon) {
 function check_for_reload_complete(weapon) {
     self endon(#"disconnect", "player_lost_weapon_" + weapon.name);
     self thread weapon_replaced_monitor(weapon);
-    while (1) {
+    while (true) {
         self waittill(#"reload", #"hash_278526d0bbdb4ce7");
         current_weapon = self getcurrentweapon();
         if (current_weapon == weapon) {
             arrayremovevalue(self.wait_on_reload, weapon);
             self notify("weapon_reload_complete_" + weapon.name);
-            return;
+            break;
         }
     }
 }
@@ -356,13 +356,13 @@ function check_for_reload_complete(weapon) {
 // Size: 0xbc
 function weapon_replaced_monitor(weapon) {
     self endon(#"disconnect", "weapon_reload_complete_" + weapon.name);
-    while (1) {
+    while (true) {
         self waittill(#"weapon_change");
         primaryweapons = self getweaponslistprimaries();
         if (!isinarray(primaryweapons, weapon)) {
             arrayremovevalue(self.wait_on_reload, weapon);
             self notify("player_lost_weapon_" + weapon.name);
-            return;
+            break;
         }
     }
 }

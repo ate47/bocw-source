@@ -77,7 +77,7 @@ function private function_70a657d8() {
 // Checksum 0x1290b7c1, Offset: 0x568
 // Size: 0x6
 function is_bot_ranked_match() {
-    return 0;
+    return false;
 }
 
 // Namespace bot/bot
@@ -248,7 +248,7 @@ function private respawn() {
         self thread squad_spawn(0.1);
         return;
     }
-    while (1) {
+    while (true) {
         self bottapbutton(3);
         wait(0.1);
     }
@@ -329,7 +329,7 @@ function private function_b781f1e5() {
     while (game.state != #"playing") {
         waitframe(1);
     }
-    while (1) {
+    while (true) {
         profileNamedStart(#"");
         /#
             self function_ef4e01f();
@@ -448,24 +448,24 @@ function private function_4fb21bb4() {
 // Size: 0x1e0
 function private function_ce3dfcfc(enemy) {
     if (!isdefined(enemy.targetname)) {
-        return 0;
+        return false;
     }
     if (enemy.targetname != "uav" && enemy.targetname != "counteruav" && enemy.targetname != "recon_plane" && enemy.targetname != "chopper_gunner" && enemy.targetname != "ac130" && enemy.targetname != "hoverjet") {
-        return 0;
+        return false;
     }
     if (is_true(enemy.leaving)) {
-        return 1;
+        return true;
     }
     if (isdefined(enemy.incoming_missile) && enemy.incoming_missile > 1) {
-        return 1;
+        return true;
     }
     weapons = self getweaponslist();
     foreach (weapon in weapons) {
         if (weapon.lockontype == #"legacy single" && self getammocount(weapon) > 0) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace bot/bot
@@ -715,7 +715,7 @@ function private function_ef59c9e() {
     self endon(#"death", #"hash_3525e39d3694d0a9");
     level endon(#"game_ended");
     self.bot.glasstouch = undefined;
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"glass");
         self.bot.glasstouch = result.position;
@@ -959,7 +959,7 @@ function private function_50c012c9() {
             var_3693c73b = vehicle function_defc91b2(i);
             if (isdefined(var_3693c73b) && var_3693c73b >= 0 && !vehicle isvehicleseatoccupied(i)) {
                 vehicle usevehicle(self, i);
-                return;
+                break;
             }
         }
     }

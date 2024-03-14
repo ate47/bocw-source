@@ -94,7 +94,7 @@ function onplayerspawned(*local_client_num) {
 // Size: 0xc8
 function function_769ed4e8(ent) {
     if (!(isdefined(ent.origin) && isdefined(self.var_23cd2a2f.origin))) {
-        return 0;
+        return false;
     }
     bundle = killstreaks::get_script_bundle("recon_plane");
     var_b2231ba3 = function_a3f6cdac((isdefined(bundle.var_e77ca4a1) ? bundle.var_e77ca4a1 : 0) / 2);
@@ -116,16 +116,16 @@ function function_e7ed088a() {
 function function_5604e453(enemy) {
     if (self function_e7ed088a()) {
         if (!getdvar(#"hash_5e7fdbdeddbdf32", 0)) {
-            return 1;
+            return true;
         }
         arrayremovevalue(level.var_d952ba86, undefined);
         foreach (recon_plane in level.var_d952ba86) {
             if (self === recon_plane.owner && recon_plane function_769ed4e8(enemy)) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace recon_plane/recon_plane
@@ -135,10 +135,10 @@ function function_5604e453(enemy) {
 function function_ed29480b(attacker, victim, *weapon, *attackerweapon, *meansofdeath) {
     if (attackerweapon util::isenemyplayer(meansofdeath) && (!isdefined(level.var_3d960463) || isdefined(level.var_3d960463) && !attackerweapon [[ level.var_3d960463 ]]())) {
         if (attackerweapon function_5604e453(meansofdeath)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace recon_plane/recon_plane
@@ -147,7 +147,7 @@ function function_ed29480b(attacker, victim, *weapon, *attackerweapon, *meansofd
 // Size: 0xda
 function function_4dc67281() {
     if (!isdefined(self.team)) {
-        return 0;
+        return false;
     }
     var_a70c469f = self.team;
     foreach (team in level.teams) {
@@ -155,10 +155,10 @@ function function_4dc67281() {
             continue;
         }
         if (isdefined(level.var_eb10c6a7[team]) && level.var_eb10c6a7[team] > 0) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace recon_plane/recon_plane
@@ -196,11 +196,11 @@ function fx_flesh_hit_neck_fatal(params) {
 // Size: 0x750
 function function_732dcb56(killstreaktype) {
     if (self killstreakrules::iskillstreakallowed("recon_plane", self.team) == 0) {
-        return 0;
+        return false;
     }
     killstreak_id = self killstreakrules::killstreakstart("recon_plane", self.team);
     if (killstreak_id == -1) {
-        return 0;
+        return false;
     }
     bundle = killstreaks::get_script_bundle("recon_plane");
     adjustedpath = function_98e60435(self.origin, bundle);
@@ -262,7 +262,7 @@ function function_732dcb56(killstreaktype) {
     recon_plane thread killstreaks::player_killstreak_threat_tracking("recon_plane", 0.984808);
     self stats::function_e24eec31(getweapon("recon_plane"), #"used", 1);
     recon_plane thread killstreaks::function_5a7ecb6b();
-    return 1;
+    return true;
 }
 
 // Namespace recon_plane/recon_plane
@@ -547,7 +547,7 @@ function function_cf33d294() {
 // Size: 0x1b0
 function function_bde85071() {
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         level waittill(#"hash_25b529a667fde073");
         if (level.teambased) {
             foreach (team, _ in level.teams) {

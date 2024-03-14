@@ -68,7 +68,7 @@ function private function_347f52dd(localclientnum) {
     self endon("49500164d82f5c49");
     var_ef2f4cec = spawnstruct();
     var_ef2f4cec.var_e450444f = 0;
-    while (1) {
+    while (true) {
         currentplayer = function_5c10bd79(localclientnum);
         if (!isdefined(currentplayer)) {
             waitframe(1);
@@ -318,13 +318,13 @@ function function_a84c11f7(localclientnum, *oldval, *newval, *bnewent, *binitial
     self function_78233d29(self.var_ee6bcd51, "", "Alpha", var_1105889c);
     self playsound(bwastimejump, #"hash_61951b05c7932ba6");
     self.var_f1c4246e = self playloopsound(#"hash_22d6d61841f2b48a");
-    while (1) {
+    while (true) {
         wait(0.5);
         var_1105889c = var_1105889c + 0.01;
         self function_78233d29(self.var_ee6bcd51, "", "Alpha", var_1105889c);
         if (var_1105889c >= 1) {
             var_1105889c = 1;
-            return;
+            break;
         }
     }
 }
@@ -440,7 +440,7 @@ function function_26e6cccc(localclientnum, *oldval, *newval, *bnewent, *binitial
         n_delay = 1;
         var_b978a3c9 = 0;
         wait(20);
-        while (1) {
+        while (true) {
             if (isdefined(self)) {
                 self playsound(bwastimejump, "mpl_veh_recon_alert");
                 wait(n_delay);

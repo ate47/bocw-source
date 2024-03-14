@@ -307,12 +307,12 @@ function function_2adc2518(str_notify) {
 function _blend_out(animation, n_blend, *n_rate, *n_start_time) {
     self endon(#"death", #"end", #"scriptedanim", #"new_scripted_anim");
     n_server_length = floor(getanimlength(n_rate) / float(function_60d95f53()) / 1000) * float(function_60d95f53()) / 1000;
-    while (1) {
+    while (true) {
         n_current_time = self getanimtime(n_rate) * n_server_length;
         n_time_left = n_server_length - n_current_time;
         if (n_time_left <= n_start_time) {
             self stop(n_start_time);
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -491,7 +491,7 @@ function function_ba45bb6c() {
     self endon(#"death", #"goal", #"new_anim_reach", #"new_scripted_anim", #"stop_scripted_anim", #"reach_done", #"reach_timed_out");
     var_89ae1c69 = self.origin;
     var_dc2b2d0b = 0;
-    while (1) {
+    while (true) {
         wait(1);
         var_ab436758 = self.origin;
         if (distance(var_ab436758, var_89ae1c69) < 60) {
@@ -514,7 +514,7 @@ function function_ba45bb6c() {
 function debug_anim_reach(v_goal, str_anim) {
     /#
         self endon(#"death", #"goal", #"new_anim_reach", #"new_scripted_anim", #"stop_scripted_anim");
-        while (1) {
+        while (true) {
             level wait_till("<unknown string>");
             print3d(self.origin, "<unknown string>" + function_9e72a96(str_anim) + "<unknown string>" + v_goal + "<unknown string>" + (ispointonnavmesh(v_goal) ? "<unknown string>" : "<unknown string>"), (1, 0, 0), 1, 0.4, 1);
             line(self.origin, v_goal, (1, 0, 0));
@@ -671,7 +671,7 @@ function setup_notetracks() {
 // Size: 0xce
 function handle_notetracks(animation) {
     self endon(#"death", #"new_scripted_anim");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(animation);
         str_note = waitresult.notetrack;
@@ -693,16 +693,16 @@ function cracks_on(str_type) {
     switch (str_type) {
     case #"red":
         clientfield::set("cracks_on", 1);
-        return;
+        break;
     case #"green":
         clientfield::set("cracks_on", 3);
-        return;
+        break;
     case #"blue":
         clientfield::set("cracks_on", 2);
-        return;
+        break;
     case #"all":
         clientfield::set("cracks_on", 4);
-        return;
+        break;
     }
 }
 
@@ -714,16 +714,16 @@ function cracks_off(str_type) {
     switch (str_type) {
     case #"red":
         clientfield::set("cracks_off", 1);
-        return;
+        break;
     case #"green":
         clientfield::set("cracks_off", 3);
-        return;
+        break;
     case #"blue":
         clientfield::set("cracks_off", 2);
-        return;
+        break;
     case #"all":
         clientfield::set("cracks_off", 4);
-        return;
+        break;
     }
 }
 

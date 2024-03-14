@@ -117,7 +117,7 @@ function private play_critical_health_rumble(localclientnum) {
     if (is_true(getgametypesetting(#"hash_1e8998fd7f271bb7"))) {
         sound = #"hash_5bbb0f2e7cbf753c";
     }
-    while (1) {
+    while (true) {
         self waittill(#"pulse_blood");
         self playrumbleonentity(localclientnum, var_cf155b98);
         if (!is_true(self.var_e9dd2ca0)) {
@@ -137,7 +137,7 @@ function private play_breath(localclientnum) {
     if (is_true(getgametypesetting(#"hash_1e8998fd7f271bb7"))) {
         waittime = 10;
     }
-    while (1) {
+    while (true) {
         if (isdefined(self.var_82dad7be)) {
             var_a1b836dd = self playsound(localclientnum, self.var_82dad7be);
         }
@@ -247,15 +247,15 @@ function function_672c739(localclientnum, shockrifle) {
 // Size: 0x90
 function private function_27d3ba05(localclientnum) {
     if (function_92beaa28(localclientnum) && !function_d17ae3cc(localclientnum)) {
-        return 0;
+        return false;
     }
     if (squad_spawn::function_21b773d5(localclientnum) === 1) {
-        return 0;
+        return false;
     }
     if (level.var_4ecf5754 === #"silent_film") {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace blood/blood
@@ -302,11 +302,11 @@ function private update_damage_effects(localclientnum, damage, death) {
 function private player_splatter(localclientnum) {
     level notify("player_splatter" + localclientnum);
     level endon("player_splatter" + localclientnum);
-    while (1) {
+    while (true) {
         level waittill(#"splatters_active");
         splatter = getsplatter(localclientnum);
         splatters = splatter.splatters;
-        while (1) {
+        while (true) {
             blur = 0;
             opacity = 0;
             for (i = 0; i < 4; i++) {
@@ -352,15 +352,15 @@ function private player_splatter(localclientnum) {
 // Size: 0xaa
 function private function_b51756a0(localclientnum, splatter, damage) {
     if (damage > level.blood.var_de10c136.dot.var_6264f8dd) {
-        return 1;
+        return true;
     }
     if (!isdefined(splatter.var_90495387)) {
-        return 1;
+        return true;
     }
     if (getservertime(localclientnum) - splatter.var_90495387 < level.blood.var_de10c136.dot.var_372dff4b) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace blood/blood
@@ -577,7 +577,7 @@ function private function_87544c4a(localclientnum) {
     var_4cdccc55 = util::is_mature();
     self function_55d01d42();
     self thread function_8d8880(localclientnum);
-    while (1) {
+    while (true) {
         forceupdate = 0;
         if (util::is_mature() != var_4cdccc55) {
             forceupdate = 1;
@@ -627,7 +627,7 @@ function private function_8d8880(localclientnum) {
     if (!level.blood.var_f5479429) {
         return;
     }
-    while (1) {
+    while (true) {
         waitframe(1);
         if (is_true(self.blood_enabled)) {
             for (pulse = 0; pulse < 2; pulse++) {

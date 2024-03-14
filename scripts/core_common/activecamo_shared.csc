@@ -284,7 +284,7 @@ function private function_3e27a7cb(localclientnum, tagname) {
 function private function_a946fb86(activecamo, stagenum, var_d1460f46) {
     foreach (key, stage in activecamo.var_13949c61.stages) {
         if (key > stagenum) {
-            return;
+            break;
         }
         if (isdefined(stage.var_9fbd261d)) {
             if (is_true(stage.var_d04f3816) || key < stagenum && is_true(stage.var_413aa223) || key == stagenum && is_true(stage.var_2873d2ba)) {
@@ -322,7 +322,7 @@ function private function_bc6005b5(stage, tagname, var_eb6a239c, lerptime, var_f
     self endon(#"death", #"weapon_change");
     if (!var_5e38d32e && lerptime > 0) {
         starttime = gettime();
-        while (1) {
+        while (true) {
             waitframe(1);
             if (!isdefined(self) || !isplayer(self)) {
                 return;
@@ -361,7 +361,7 @@ function private function_b5b4013c(stage, tagname, layer, var_5e38d32e) {
     tint = isdefined(stage.(var_7fd61736)) ? stage.(var_7fd61736) : 0;
     if (!var_5e38d32e && lerptime > 0) {
         starttime = gettime();
-        while (1) {
+        while (true) {
             waitframe(1);
             if (!isdefined(self) || !isplayer(self)) {
                 return;
@@ -487,7 +487,7 @@ function private init_activecamo(var_f4eb4a50, forceupdate) {
 // Size: 0x440
 function function_6c9e0e1a(localclientnum, weaponmodel, var_3594168e, &var_49daa2f6) {
     if (!isdefined(var_3594168e.rob)) {
-        return 0;
+        return false;
     }
     stage = {};
     stage.rob = var_3594168e.rob;
@@ -519,7 +519,7 @@ function function_6c9e0e1a(localclientnum, weaponmodel, var_3594168e, &var_49daa
     diffuse3alpha = isdefined(var_3594168e.diffuse3alpha) ? var_3594168e.diffuse3alpha : 0;
     weaponmodel function_78233d29(stage.rob, "tag_origin", "Diffuse2 Alpha", diffuse2alpha);
     weaponmodel function_78233d29(stage.rob, "tag_origin", "Diffuse3 Alpha", diffuse3alpha);
-    return 1;
+    return true;
 }
 
 // Namespace activecamo/activecamo_shared
@@ -648,7 +648,7 @@ function function_12e53b2d() {
     /#
         self notify("<unknown string>");
         self endon("<unknown string>");
-        while (1) {
+        while (true) {
             var_f4eb4a50 = undefined;
             waitresult = undefined;
             waitresult = level waittill(#"liveupdate");

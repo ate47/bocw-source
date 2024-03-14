@@ -166,7 +166,7 @@ function private function_222efb26(*localclientnum) {
     self notify("19cb22963ee837a1");
     self endon("19cb22963ee837a1");
     self endon(#"death", #"hash_3f0adb1cfeb5ef46");
-    while (1) {
+    while (true) {
         var_b1b72524 = self isplayerads();
         if (self function_d2503806(#"hash_280405958d740589") && var_b1b72524) {
             self stoprenderoverridebundle(#"hash_280405958d740589");

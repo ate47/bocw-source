@@ -308,12 +308,12 @@ function hud_update(localclientnum) {
 function function_f9af4fc2(localclientnum) {
     ent = function_93e0f729(localclientnum);
     if (!isdefined(ent)) {
-        return 0;
+        return false;
     }
     if (ent function_da43934d()) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace remotemissile/remotemissile_shared

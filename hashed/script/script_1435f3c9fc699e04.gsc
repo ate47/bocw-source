@@ -145,10 +145,10 @@ function function_3a29539b(var_77efb18) {
             continue;
         }
         if (var_b2dad138.touching.num > 0) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/namespace_87a60c47
@@ -395,10 +395,10 @@ function function_472b3c15(user, var_5717fa0c) {
 function private is_player_touching(var_9b6a15e9, player) {
     foreach (var_233ec7cb in var_9b6a15e9) {
         if (var_233ec7cb.player == player) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/namespace_87a60c47
@@ -477,9 +477,9 @@ function function_58901d83() {
 // Size: 0x28
 function function_7db44d1b(user) {
     if (user != #"none") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/namespace_87a60c47
@@ -512,12 +512,12 @@ function function_14fccbd9() {
 // Size: 0x34
 function function_4b64b7fd(team) {
     if (!isdefined(self.var_a4926509)) {
-        return 0;
+        return false;
     }
     if (team == self.var_a4926509) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/namespace_87a60c47
@@ -526,12 +526,12 @@ function function_4b64b7fd(team) {
 // Size: 0x30
 function function_abe3458c() {
     if (!isdefined(self.var_a4926509)) {
-        return 0;
+        return false;
     }
     if (self.ownerteam == self.var_a4926509) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/namespace_87a60c47
@@ -540,8 +540,8 @@ function function_abe3458c() {
 // Size: 0x42
 function function_abb86400() {
     if (self.ownerteam != #"neutral" && self.ownerteam != #"none") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 

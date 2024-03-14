@@ -25,7 +25,7 @@ function init_shared(friendly_rob, var_4885f19e) {
     clientfield::register("missile", "friendlyequip", 1, 1, "int", &friendly_outline, 0, 1);
     clientfield::register("scriptmover", "friendlyequip", 1, 1, "int", &friendly_outline, 0, 0);
     level._effect[#"powerlight"] = #"weapon/fx8_equip_light_os";
-    if (getgametypesetting(#"hash_48670d9509071424") && 0) {
+    if (getgametypesetting(#"hash_48670d9509071424") && false) {
         level.var_58253868 = friendly_rob;
     }
     if (isdefined(var_4885f19e)) {
@@ -128,12 +128,12 @@ function updateretrievable(*local_client_num, *newval) {
 // Size: 0x72
 function function_f89c4b81() {
     if (isdefined(self.weapon) && self.weapon.statname == #"ac130") {
-        return 0;
+        return false;
     }
     if (isdefined(self.weapon) && self.weapon.statname == #"tr_flechette_t8") {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace weaponobjects/weaponobjects
@@ -154,26 +154,26 @@ function enemyequip_changed(local_client_num, *oldval, newval, *bnewent, *biniti
 // Size: 0x134
 function function_6a5648dc(local_client_num, *bundle) {
     if (codcaster::function_b8fe9b52(bundle)) {
-        return 1;
+        return true;
     }
     if (!self function_e9fc6a64() || self.team === #"none") {
-        return 0;
+        return false;
     }
     if (is_true(level.vision_pulse[bundle])) {
-        return 0;
+        return false;
     }
     player = function_5c10bd79(bundle);
     if (self == player) {
-        return 0;
+        return false;
     }
     if (player.var_33b61b6f === 1) {
-        return 0;
+        return false;
     }
     type = self.type;
     if ((type == "missile" || type == "scriptmover") && self clientfield::get("friendlyequip") === 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace weaponobjects/weaponobjects
@@ -182,29 +182,29 @@ function function_6a5648dc(local_client_num, *bundle) {
 // Size: 0x17c
 function function_232f3acf(local_client_num, bundle) {
     if (codcaster::function_b8fe9b52(local_client_num)) {
-        return 1;
+        return true;
     }
     if (self function_e9fc6a64() && self.team !== #"none") {
-        return 0;
+        return false;
     }
     if (self.var_6abc296 === 1) {
-        return 1;
+        return true;
     }
     type = self.type;
     if ((type == "missile" || type == "scriptmover") && self clientfield::get("enemyequip") === 0) {
-        return 0;
+        return false;
     }
     if (sessionmodeiswarzonegame()) {
         if (function_5778f82(local_client_num, #"specialty_showenemyequipment") && is_true(self.var_f19b4afd)) {
-            return 1;
+            return true;
         }
     } else {
         if (function_5778f82(local_client_num, #"specialty_showenemyequipment")) {
-            return 1;
+            return true;
         }
         bundle.var_1a5b7293 = 1;
     }
-    return 0;
+    return false;
 }
 
 // Namespace weaponobjects/weaponobjects
@@ -346,7 +346,7 @@ function equipmentwatchplayerteamchanged(localclientnum, *fxhandle) {
     self notify(#"team_changed_watcher");
     self endon(#"team_changed_watcher");
     watcherplayer = function_5c10bd79(fxhandle);
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"team_changed");
         player = function_5c10bd79(waitresult.localclientnum);

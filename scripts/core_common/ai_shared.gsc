@@ -622,9 +622,9 @@ function bloody_death(n_delay, hit_loc) {
 // Size: 0x4a
 function shouldregisterclientfieldforarchetype(archetype) {
     if (is_true(level.clientfieldaicheck) && !isarchetypeloaded(archetype)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace ai/ai_shared
@@ -761,7 +761,7 @@ function function_41b04632() {
 // Size: 0x110
 function function_63734291(enemy) {
     if (!isdefined(enemy)) {
-        return 0;
+        return false;
     }
     var_aba9ee4c = 1;
     if (isdefined(self.var_ffa507cd)) {
@@ -774,10 +774,10 @@ function function_63734291(enemy) {
         dist_squared = distancesquared(self.origin, enemy.origin);
         if (dist_squared >= 562500) {
             enemy notify(#"hash_4853a85e5ddc4a47");
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace ai/ai_shared
@@ -786,9 +786,9 @@ function function_63734291(enemy) {
 // Size: 0x68
 function function_28aab32a() {
     if (!is_true(self.var_28aab32a) || is_true(self.var_c2986b66) || is_true(self.var_b736fc8b)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace ai/ai_shared
@@ -930,7 +930,7 @@ function look_at(look_at, priority = 2, var_9e364106 = 1, duration = 0, var_1520
         self.var_8a068c50 = function_191b31f3();
     }
     if (is_true(self.var_8a068c50[priority].set) && !var_9e364106) {
-        return 0;
+        return false;
     }
     function_e1c5902(var_9e364106);
     self.var_8a068c50[priority].object = look_at;
@@ -952,7 +952,7 @@ function look_at(look_at, priority = 2, var_9e364106 = 1, duration = 0, var_1520
         self thread function_4760d8c0(priority, duration);
     }
     function_fcd4fcb7();
-    return 1;
+    return true;
 }
 
 // Namespace ai/ai_shared
@@ -1040,12 +1040,12 @@ function function_6b85d60d(priority) {
 // Size: 0x76
 function function_5e5653d3() {
     if (self isinscriptedstate() && !is_true(self._scene_object._s.var_db255011)) {
-        return 0;
+        return false;
     }
     if (self flag::get("scripted_lookat_disable")) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace ai/ai_shared

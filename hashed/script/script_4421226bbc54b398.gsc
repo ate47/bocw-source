@@ -425,11 +425,11 @@ function function_15c36044(var_b48509f9 = 1) {
     switch (var_b48509f9) {
     case 1:
     case 2:
-        return 0;
+        return false;
     default:
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_d4ecbbf0/namespace_d4ecbbf0
@@ -716,7 +716,7 @@ function function_4f5dff62(starlevel = 1, type = #"rare") {
         case #"legendary":
             return 0;
         }
-        return;
+        break;
     case 2:
         switch (type) {
         case #"rare":
@@ -726,7 +726,7 @@ function function_4f5dff62(starlevel = 1, type = #"rare") {
         case #"legendary":
             return 0;
         }
-        return;
+        break;
     case 3:
         switch (type) {
         case #"rare":
@@ -736,7 +736,7 @@ function function_4f5dff62(starlevel = 1, type = #"rare") {
         case #"legendary":
             return 1;
         }
-        return;
+        break;
     case 4:
         switch (type) {
         case #"rare":
@@ -746,7 +746,7 @@ function function_4f5dff62(starlevel = 1, type = #"rare") {
         case #"legendary":
             return 1;
         }
-        return;
+        break;
     case 5:
         switch (type) {
         case #"rare":
@@ -756,7 +756,7 @@ function function_4f5dff62(starlevel = 1, type = #"rare") {
         case #"legendary":
             return 1;
         }
-        return;
+        break;
     case 6:
         switch (type) {
         case #"rare":
@@ -766,7 +766,7 @@ function function_4f5dff62(starlevel = 1, type = #"rare") {
         case #"legendary":
             return 1;
         }
-        return;
+        break;
     case 7:
         switch (type) {
         case #"rare":
@@ -776,7 +776,7 @@ function function_4f5dff62(starlevel = 1, type = #"rare") {
         case #"legendary":
             return 2;
         }
-        return;
+        break;
     case 8:
         switch (type) {
         case #"rare":
@@ -786,7 +786,7 @@ function function_4f5dff62(starlevel = 1, type = #"rare") {
         case #"legendary":
             return 2;
         }
-        return;
+        break;
     case 9:
         switch (type) {
         case #"rare":
@@ -796,7 +796,7 @@ function function_4f5dff62(starlevel = 1, type = #"rare") {
         case #"legendary":
             return 2;
         }
-        return;
+        break;
     case 10:
     default:
         switch (type) {
@@ -807,7 +807,7 @@ function function_4f5dff62(starlevel = 1, type = #"rare") {
         case #"legendary":
             return 2;
         }
-        return;
+        break;
     }
 }
 
@@ -832,7 +832,7 @@ function function_1c7ac571(round = 20) {
 // Checksum 0x8ee9f3f2, Offset: 0x2b08
 // Size: 0x10
 function function_70067981(*round) {
-    return 1;
+    return true;
 }
 
 // Namespace namespace_d4ecbbf0/namespace_d4ecbbf0
@@ -1025,13 +1025,13 @@ function on_item_pickup(params) {
                     switch (item.var_a6762160.rarity) {
                     case #"rare":
                         self function_d59d7b74();
-                        return;
+                        break;
                     case #"epic":
                         self function_89a45cd4();
-                        return;
+                        break;
                     case #"legendary":
                         self function_74f5b460();
-                        return;
+                        break;
                     }
                 }
             }
@@ -1065,7 +1065,7 @@ function function_14defa19() {
 // Size: 0x22e
 function function_868c9a6e() {
     /#
-        while (1) {
+        while (true) {
             str_command = getdvarstring(#"hash_45e7c4e448c5fdd3", "<unknown string>");
             if (str_command != "<unknown string>") {
                 if (strstartswith(str_command, "<unknown string>")) {

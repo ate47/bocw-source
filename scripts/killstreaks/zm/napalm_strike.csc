@@ -139,7 +139,7 @@ function private function_f43fb0d3(marker) {
 function function_6a08eb03(localclientnum, marker) {
     level endon(#"end_game", #"hash_14d956289c0e8ff0" + marker.var_595cc3a1);
     marker endon(#"death", #"hash_5b54de1881a4b84e");
-    while (1) {
+    while (true) {
         player = function_27673a7(localclientnum);
         if (isplayer(player)) {
             player function_f43fb0d3(marker);

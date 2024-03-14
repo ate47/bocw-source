@@ -61,12 +61,12 @@ function function_8d3a47ed() {
         foreach (player in a_players) {
             a_enemies = player getenemiesinradius(player.origin, 3000);
             if (a_enemies.size) {
-                return 1;
+                return true;
             }
         }
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke

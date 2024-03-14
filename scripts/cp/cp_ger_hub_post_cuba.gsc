@@ -92,13 +92,13 @@ function function_107195fb() {
     switch (var_ea95c1e7) {
     case #"park":
         function_276264f4("scene_hub_post_cuba_briefing_park_survived");
-        return;
+        break;
     case #"lazar":
         function_276264f4("scene_hub_post_cuba_briefing_lazar_survived");
-        return;
+        break;
     case #"sims":
         function_276264f4("scene_hub_post_cuba_briefing_no_survivor");
-        return;
+        break;
     }
 }
 

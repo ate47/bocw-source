@@ -50,14 +50,14 @@ function private init_shared() {
 // Size: 0xb8
 function function_6bbdb500(killstreaktype) {
     if (self killstreakrules::iskillstreakallowed("hoverjet", self.team) == 0) {
-        return 0;
+        return false;
     }
     killstreak_id = self killstreakrules::killstreakstart("hoverjet", self.team, undefined, 1);
     if (killstreak_id == -1) {
-        return 0;
+        return false;
     }
     self thread function_5398ca85(self.origin, 0, self.team, killstreak_id, killstreaktype);
-    return 1;
+    return true;
 }
 
 // Namespace hoverjet/hoverjet
@@ -283,9 +283,9 @@ function ontimecheck() {
 // Size: 0x46
 function function_51a4b25a(target) {
     if (target.isplayervehicle === 1 && target getvehoccupants().size <= 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace hoverjet/hoverjet
@@ -294,18 +294,18 @@ function function_51a4b25a(target) {
 // Size: 0xa6
 function function_bde5e05f(target, weapon) {
     if (!function_51a4b25a(target)) {
-        return 0;
+        return false;
     }
     if (!isalive(target)) {
-        return 0;
+        return false;
     }
     if (!target_istarget(target) && !is_true(target.allowcontinuedlockonafterinvis)) {
-        return 0;
+        return false;
     }
     if (!heatseekingmissile::function_1b76fb42(target, weapon)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace hoverjet/hoverjet
@@ -663,15 +663,15 @@ function function_8ae60573(*var_7adf0b0a) {
 // Size: 0x6e
 function function_61c4894(ent, *weapon) {
     if (isdefined(weapon.var_7132bbb7)) {
-        return 0;
+        return false;
     }
     if (is_true(weapon.destroyed)) {
-        return 0;
+        return false;
     }
     if (is_true(weapon.is_shutting_down)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace hoverjet/hoverjet

@@ -206,7 +206,7 @@ function tu21_t9_onslaught_gold_zm_firebase_fixedup() {
 function function_d2211917() {
     self endon(#"death");
     level flag::wait_till("rounds_started");
-    while (1) {
+    while (true) {
         a_ai = getaiteamarray(level.zombie_team);
         foreach (ai in a_ai) {
             if (isalive(ai) && ai istouching(self)) {
@@ -236,7 +236,7 @@ function function_8f3357bd() {
                 var_babbd92e = util::spawn_model("p8_usa_ventilation_duct_hatch_01", struct.origin, struct.angles);
                 var_babbd92e solid();
             }
-            return;
+            break;
         default:
             return;
         }
@@ -398,7 +398,7 @@ function function_2c482e69(*params) {
 // Size: 0x4c
 function function_acafdd66() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self waittill(#"bad_path");
         self.var_4fe4e626 = 1;
         wait(0.5);
@@ -416,7 +416,7 @@ function overridespawn(*ispredictedspawn) {
             self.resurrect_origin = level.var_4d75ad83.origin;
             self.resurrect_angles = level.var_4d75ad83.angles;
         }
-        return 1;
+        return true;
     } else if (isdefined(level.var_2492c7f)) {
         level.var_2492c7f.used = 1;
         if (!isdefined(self.resurrect_origin)) {
@@ -530,7 +530,7 @@ function overridespawn(*ispredictedspawn) {
         self.resurrect_angles = var_8e971f37.angles;
     }
     level.var_8a579fdb = var_8e971f37;
-    return 1;
+    return true;
 }
 
 // Namespace zonslaught/zonslaught
@@ -692,9 +692,9 @@ function private function_6e4a862f(medalindex, var_c0e8e1e0) {
 // Size: 0x5a
 function function_26bd1471() {
     if (util::get_game_type() === #"zonslaught" || util::get_game_type() === #"hash_35d5e49c19d9cf09") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zonslaught/zonslaught
@@ -928,73 +928,73 @@ function function_e88957df(var_a0168ed5 = 0) {
             switch (level.var_8de4d059) {
             case #"mp_cartel":
                 self zm_stats::increment_challenge_stat(#"hash_43c2b3a0dfc9bab3", undefined, 1);
-                return;
+                break;
             case #"mp_kgb":
                 self zm_stats::increment_challenge_stat(#"hash_5014636a724f5c14", undefined, 1);
-                return;
+                break;
             case #"mp_miami":
                 self zm_stats::increment_challenge_stat(#"hash_15a7d102d2edb893", undefined, 1);
-                return;
+                break;
             case #"mp_moscow":
                 self zm_stats::increment_challenge_stat(#"hash_567e99c4a5fb9fc8", undefined, 1);
-                return;
+                break;
             case #"mp_satellite":
                 self zm_stats::increment_challenge_stat(#"hash_40199f1bfb79141d", undefined, 1);
-                return;
+                break;
             case #"mp_tank":
                 self zm_stats::increment_challenge_stat(#"hash_525fc5df1c43afe4", undefined, 1);
-                return;
+                break;
             case #"mp_tundra":
                 self zm_stats::increment_challenge_stat(#"hash_4fb345ddd49a654c", undefined, 1);
-                return;
+                break;
             case #"mp_nuketown6":
                 self zm_stats::increment_challenge_stat(#"hash_17c6d5faa49457e1", undefined, 1);
-                return;
+                break;
             case #"mp_mall":
                 self zm_stats::increment_challenge_stat(#"hash_80f17b0b548e17e", undefined, 1);
-                return;
+                break;
             case #"mp_raid_rm":
                 self zm_stats::increment_challenge_stat(#"hash_65ed7b0fe5ddfe4c", undefined, 1);
-                return;
+                break;
             case #"mp_express_rm":
                 self zm_stats::increment_challenge_stat(#"hash_54df583b05e784c0", undefined, 1);
-                return;
+                break;
             case #"mp_apocalypse":
                 self zm_stats::increment_challenge_stat(#"hash_1ada6297a317cb2f", undefined, 1);
-                return;
+                break;
             case #"hash_418ef9f1f49298e6":
                 self zm_stats::increment_challenge_stat(#"hash_690bf214175428d", undefined, 1);
-                return;
+                break;
             case #"mp_village_rm":
                 self zm_stats::increment_challenge_stat(#"hash_138e156dd57f9824", undefined, 1);
-                return;
+                break;
             case #"mp_dune":
                 self zm_stats::increment_challenge_stat(#"hash_3cdbf06308503032", undefined, 1);
-                return;
+                break;
             case #"mp_paintball_rm":
                 self zm_stats::increment_challenge_stat(#"hash_203003e51c5621d", undefined, 1);
-                return;
+                break;
             case #"mp_echelon":
                 self zm_stats::increment_challenge_stat(#"hash_43ea4e7159b99b9c", undefined, 1);
-                return;
+                break;
             case #"mp_drivein_rm":
                 self zm_stats::increment_challenge_stat(#"hash_5af7140c7463d733", undefined, 1);
-                return;
+                break;
             case #"mp_firebase":
                 self zm_stats::increment_challenge_stat(#"hash_6f05f4cee5d4d81d", undefined, 1);
-                return;
+                break;
             case #"mp_sm_finance":
                 self zm_stats::increment_challenge_stat(#"hash_72b597c540b86d8d", undefined, 1);
-                return;
+                break;
             case #"mp_sm_central":
                 self zm_stats::increment_challenge_stat(#"hash_7b4e9ebeabbe183a", undefined, 1);
-                return;
+                break;
             case #"mp_sm_berlin_tunnel":
                 self zm_stats::increment_challenge_stat(#"hash_4b9152a0994640e4", undefined, 1);
-                return;
+                break;
             case #"mp_sm_game_show":
                 self zm_stats::increment_challenge_stat(#"hash_41333e39d398c7e1", undefined, 1);
-                return;
+                break;
             default:
                 /#
                     assertmsg("<unknown string>");

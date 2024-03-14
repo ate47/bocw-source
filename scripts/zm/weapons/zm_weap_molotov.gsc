@@ -103,7 +103,7 @@ function function_16a57018(damageendtime, owner, position, fireeffectarea, var_2
 // Size: 0x248
 function trytoapplyfiredamage(target, owner, position, fireeffectarea, var_289a74bc, killcament, weapon, customsettings, start_time) {
     if (!(isdefined(fireeffectarea) || isdefined(var_289a74bc)) || isdefined(target) && is_true(target.var_8ef7113a)) {
-        return 0;
+        return false;
     }
     var_4c3c1b32 = 0;
     var_75046efd = 0;
@@ -127,9 +127,9 @@ function trytoapplyfiredamage(target, owner, position, fireeffectarea, var_289a7
         } else {
             var_be45d685 = 1;
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov

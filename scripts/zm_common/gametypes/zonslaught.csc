@@ -255,7 +255,7 @@ function function_40deac72(localclientnum) {
     level endon(#"end_game");
     e_player = function_5c10bd79(localclientnum);
     e_player endon(#"death");
-    while (1) {
+    while (true) {
         n_dist = distancesquared(self.origin, e_player.origin);
         var_e71fa578 = 16384;
         if (var_e71fa578 > 0) {

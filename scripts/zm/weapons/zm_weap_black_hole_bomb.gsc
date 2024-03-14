@@ -208,7 +208,7 @@ function function_7ceb96bf(player, *endon_condition) {
 // Size: 0x158
 function function_c2f76b45(var_69cf75ad) {
     var_69cf75ad endon(#"hash_5e52043e21f343d7");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = var_69cf75ad waittill(#"trigger");
         ent_player = waitresult.activator;
@@ -263,15 +263,15 @@ function function_f6b48774(ent, on_enter_payload, on_exit_payload) {
 // Size: 0x70
 function function_fa82badd(trig) {
     if (!isdefined(self._triggers)) {
-        return 0;
+        return false;
     }
     if (!isdefined(self._triggers[trig getentitynumber()])) {
-        return 0;
+        return false;
     }
     if (!self._triggers[trig getentitynumber()]) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_71f583f0/namespace_71f583f0
@@ -406,7 +406,7 @@ function function_9c0c8ac3(v_vortex_origin, n_vortex_radius, n_start_time, n_vor
                         ai_zombie dodamage(var_34e3b3f7, v_vortex_origin, eattacker, svortex, undefined, "MOD_DOT", 0, weapon);
                         ai_zombie.var_56912e22 = gettime() + 1000;
                     }
-                    continue;
+                    break;
                 }
                 ai_zombie.var_db490292 = "blackholebomb_pull_fast";
                 ai_zombie.var_92b78660 = 1024;
@@ -426,7 +426,7 @@ function function_9c0c8ac3(v_vortex_origin, n_vortex_radius, n_start_time, n_vor
                     ai_zombie.interdimensional_gun_inflictor = eattacker;
                     ai_zombie.interdimensional_gun_weapon = weapon;
                 }
-                continue;
+                break;
             case #"special":
                 ai_zombie thread namespace_9ff9f642::slowdown(#"hash_2c88ef7895dccf65");
                 if (!isdefined(ai_zombie.var_56912e22) || time >= ai_zombie.var_56912e22) {
@@ -442,7 +442,7 @@ function function_9c0c8ac3(v_vortex_origin, n_vortex_radius, n_start_time, n_vor
                     ai_zombie.interdimensional_gun_inflictor = eattacker;
                     ai_zombie.interdimensional_gun_weapon = weapon;
                 }
-                continue;
+                break;
             case #"hash_72d4f2ad2e333eb4":
                 if (is_true(ai_zombie.var_8576e0be)) {
                     ai_zombie namespace_9ff9f642::function_520f4da5(#"hash_2c88ef7895dccf65");
@@ -462,9 +462,9 @@ function function_9c0c8ac3(v_vortex_origin, n_vortex_radius, n_start_time, n_vor
                     ai_zombie.interdimensional_gun_inflictor = eattacker;
                     ai_zombie.interdimensional_gun_weapon = weapon;
                 }
-                continue;
+                break;
             default:
-                continue;
+                break;
             }
         }
         waitframe(1);

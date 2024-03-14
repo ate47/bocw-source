@@ -38,7 +38,7 @@ function private function_3872d0f0() {
     self notify("676c2f77e9785ef0");
     self endon("676c2f77e9785ef0");
     self notifyonplayercommand("objective_ping", "+scores");
-    while (1) {
+    while (true) {
         self waittill(#"objective_ping");
         function_cd497743("show_objectives", self);
     }
@@ -83,7 +83,7 @@ function private function_88a4e45c() {
     level endon(#"game_ended");
     self notify("51e343fcfe3f702b");
     self endon("51e343fcfe3f702b");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"weapon_switch_started");
         var_9463444 = self getcurrentweapon();
@@ -114,7 +114,7 @@ function private function_85a6ae83() {
     level endon(#"game_ended");
     self notify("6d685e8e8bf91248");
     self endon("6d685e8e8bf91248");
-    while (1) {
+    while (true) {
         if (getdvarint(#"hash_7b899094cda20ec3", 1)) {
             recordbreadcrumbdataforplayer(self);
         }

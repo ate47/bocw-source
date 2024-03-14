@@ -156,7 +156,7 @@ function function_a6bc28c4() {
 // Size: 0x110
 function function_f58905f1() {
     level.var_629f8c1e = [];
-    while (1) {
+    while (true) {
         var_c5e8d21e = function_9b8a74e0(self, "nagra_play", "nagra_rew", "nagra_ff", "nagra_stop", "nagra_rec");
         function_90b786f0();
         function_5bae4a7e("emt_tapemach_" + var_c5e8d21e + "_lp");
@@ -204,32 +204,32 @@ function private function_887ac605(objective) {
     level thread function_8cb75a6();
     switch (objective) {
     case #"hash_55e940a3ca2d2533":
-        return;
+        break;
     case #"hash_de0a71f1b8beaa7":
     case #"hash_55e53afbf5115da0":
-        return;
+        break;
     case #"post_armada":
     case #"hash_3f942629dd634c1d":
-        return;
+        break;
     case #"post_yamantau":
     case #"hash_6b6b433835e19763":
-        return;
+        break;
     case #"post_kgb":
     case #"hash_45b5ada813cf005f":
-        return;
+        break;
     case #"post_cuba":
     case #"hash_6245569317a5039e":
-        return;
+        break;
     case #"hash_4738825a1fd6beb8":
     case #"hash_65bc9e5b3b128daf":
-        return;
+        break;
     case #"no_game":
-        return;
+        break;
     default:
         /#
             function_81fac19d(function_d78e3644(), "<unknown string>" + objective + "<unknown string>");
         #/
-        return;
+        break;
     }
 }
 
@@ -552,86 +552,86 @@ function function_7edafa59(str_msg) {
     case #"ambient":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("ambient");
-        return;
+        break;
     case #"hash_5e01e4aa0b21ce1d":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("evidence_board_main");
-        return;
+        break;
     case #"hash_75e670280bd9b6de":
         level.var_41fc1341 = str_msg;
-        return;
+        break;
     case #"post_takedown_briefing":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("briefing_takedown");
-        return;
+        break;
     case #"post_armada_briefing":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("briefing_armada");
-        return;
+        break;
     case #"post_yamantau_briefing":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("briefing_yamantau");
-        return;
+        break;
     case #"post_kgb_briefing":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("briefing_kgb");
-        return;
+        break;
     case #"post_cuba_briefing":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("briefing_cuba");
-        return;
+        break;
     case #"hash_210b4ac6f58c7279":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("briefing_prisoner");
-        return;
+        break;
     case #"hash_29d220b7fee85bbe":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("prisoner_part1_safehouse");
-        return;
+        break;
     case #"hash_5bf8edbf5c4855ad":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("prisoner_part2_takedown_flashback");
-        return;
+        break;
     case #"hash_4c115a2b5477280c":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("prisoner_part3_safehouse");
-        return;
+        break;
     case #"hash_289b349b05672334":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("prisoner_part4_vietnam_flashback");
-        return;
+        break;
     case #"hash_78d8f4233178e08a":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("prisoner_part5_safehouse");
-        return;
+        break;
     case #"hash_59f39bb536068a1":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("prisoner_part6_reddoor_flashback");
-        return;
+        break;
     case #"hash_672ea6854b14da18":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("prisoner_part7_safehouse");
-        return;
+        break;
     case #"hash_4fcd1eaf0bcc4b47":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("prisoner_part8_perseus_flashback");
-        return;
+        break;
     case #"hash_2ff2b2239a70ac96":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("prisoner_part9_safehouse");
-        return;
+        break;
     case #"hash_4c3601b94d00c72d":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("character_creation_screen");
-        return;
+        break;
     case #"hash_679e956b1aecbcdc":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("prisoner_lie");
-        return;
+        break;
     case #"none":
         level.var_41fc1341 = str_msg;
         music::setmusicstate("none");
-        return;
+        break;
     default:
         /#
             iprintlnbold("<unknown string>" + str_msg + "<unknown string>");

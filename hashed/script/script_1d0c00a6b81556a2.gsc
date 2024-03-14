@@ -59,14 +59,14 @@ function private function_afade0d0() {
 // Size: 0xca
 function function_dafd9cd(attacker, damage) {
     if (gettime() < self.heal.var_a1cac2f1) {
-        return 0;
+        return false;
     }
     if (!is_true(self.heal.var_f0f1ff36) && damage < getdvarfloat(#"hash_3671f84e911fb747", isdefined(level.var_5714f442) ? level.var_5714f442 : 0)) {
-        return 0;
+        return false;
     }
     if (isdefined(level.deathcircle) && level.deathcircle === attacker) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 

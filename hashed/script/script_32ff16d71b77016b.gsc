@@ -236,10 +236,10 @@ function private function_bfc92d86(drone) {
     allplayers = function_58385b58();
     foreach (player in allplayers) {
         if (util::within_fov(player getplayercamerapos(), player getplayerangles(), drone.origin, 0.5)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
@@ -806,18 +806,18 @@ function private function_a7879d43(node) {
 // Size: 0x84
 function private function_9f942d9a(script_noteworthy) {
     if (!isdefined(self)) {
-        return 1;
+        return true;
     }
     if (!isdefined(script_noteworthy)) {
-        return 1;
+        return true;
     }
     if (script_noteworthy == "delete_on_goal") {
         self delete();
-        return 1;
+        return true;
     } else if (script_noteworthy == "die_on_goal") {
         self function_a484fe9();
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 

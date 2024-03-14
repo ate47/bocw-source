@@ -199,7 +199,7 @@ function function_76a96530(start_node) {
     var_747be2ea = 0;
     var_3540205d = 0;
     current_node = start_node;
-    while (1) {
+    while (true) {
         var_59291c74[index] = current_node;
         var_cf47fb9 = current_node;
         if (isarray(var_cf47fb9)) {
@@ -231,7 +231,7 @@ function function_76a96530(start_node) {
         }
         if (isdefined(var_970a11fa)) {
             next_node = var_970a11fa;
-            while (1) {
+            while (true) {
                 current_node = next_node;
                 arrayinsert(var_59291c74, current_node, 0);
                 var_747be2ea++;
@@ -271,7 +271,7 @@ function function_8b5ce49a() {
     level.players[0] endon(#"death", #"hash_7a8828759fd65505", #"hash_7110d2bbe7758535");
     self notify("5c179faf816d1187");
     self endon("5c179faf816d1187");
-    while (1) {
+    while (true) {
         self waittill(#"hash_7f36e5b3acf5108e");
         self sethoverparams(75, 100, 50);
         self waittill(#"hash_13aff812c3414fc4");
@@ -419,7 +419,7 @@ function function_3028905b() {
     var_b6e34907 = chopper.origin[2];
     var_ff21af1 = 1;
     var_c9250ee0 = (0, 0, 0);
-    while (1) {
+    while (true) {
         if (player adsbuttonpressed()) {
             var_ff21af1 = 0.5;
         } else {
@@ -460,7 +460,7 @@ function function_5f7a4f66(var_23b6164f, var_e883a73e, var_794dcc13 = 0, var_c38
         if (!level.var_e3e3a045) {
             player waittill(#"hash_7a8828759fd65505");
         } else {
-            while (1) {
+            while (true) {
                 player waittill(#"hash_7a8828759fd65505");
                 var_b3463e05 = struct::get_array("orbit_lz", "script_noteworthy");
                 var_af6511a5 = arraygetclosest(chopper.origin, var_b3463e05);
@@ -606,7 +606,7 @@ function function_7eb6aae3(var_e883a73e) {
     if (isdefined(var_e883a73e)) {
         level flag::wait_till(var_e883a73e);
     }
-    while (1) {
+    while (true) {
         timeused = 0;
         while (level.players[0] actionslottwobuttonpressed()) {
             timeused = timeused + 0.05;

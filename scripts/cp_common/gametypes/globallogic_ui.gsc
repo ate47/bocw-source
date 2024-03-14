@@ -75,7 +75,7 @@ function on_player_spawn() {
 // Size: 0x84
 function private function_36e052() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         var_4b6c578e = self function_f053dcd4("hudItems.crosshairEntity");
         if (isdefined(var_4b6c578e)) {
             level.var_7315ba31 = getentbynum(var_4b6c578e);
@@ -93,7 +93,7 @@ function private function_36e052() {
 function private function_1cb458b4() {
     function_3e57e536();
     thread function_109202c3(1);
-    while (1) {
+    while (true) {
         level waittill(#"save_restore");
         setdvar(#"ui_busyblockingamemenu", 0);
         level flag::set(#"hash_321357f5b78401ef");
@@ -274,14 +274,14 @@ function function_4e49c51d(title = #"", description = #"", var_c7f36d1c = 0, var
             if (isdefined(var_92c0faf8)) {
                 self [[ var_92c0faf8 ]](var_21a58cc0);
             }
-            return 1;
+            return true;
         }
         waitframe(1);
     } while (menu != "InGameConfirmOverlay" || response != "confirmresponse");
     if (isdefined(cancel_callback)) {
         self [[ cancel_callback ]](var_21a58cc0);
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic_ui/globallogic_ui
@@ -306,14 +306,14 @@ function function_8f0a7b3b(playerent) {
     foreach (ai in ais) {
         if (issentient(ai)) {
             if (ai attackedrecently(playerent, 10)) {
-                return 1;
+                return true;
             }
             if (ai.enemy === playerent && isdefined(ai.weapon) && ai.weapon.name === "none" && distancesquared(ai.origin, playerent.origin) < function_a3f6cdac(240)) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic_ui/globallogic_ui
@@ -326,11 +326,11 @@ function function_ff5a6c36(playerent) {
     foreach (ai in ais) {
         if (issentient(ai)) {
             if (ai lastknowntime(playerent) + 4000 >= gettime()) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic_ui/globallogic_ui
@@ -348,7 +348,7 @@ function function_b0604e5b(playerent) {
 function function_261cbef4() {
     self notify(#"hash_4f9f0ce07fc8ab8c");
     self endon(#"hash_4f9f0ce07fc8ab8c", #"disconnect");
-    while (1) {
+    while (true) {
         if (function_b0604e5b(self) || function_8f0a7b3b(self)) {
             self clientfield::set_player_uimodel("hudItems.playerInCombat", 1);
         } else {
@@ -435,10 +435,10 @@ function teamplayercountsequal(playercounts) {
             continue;
         }
         if (count != playercounts[team]) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace globallogic_ui/globallogic_ui
@@ -521,10 +521,10 @@ function teamscoresequal() {
             continue;
         }
         if (score != getteamscore(team)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace globallogic_ui/globallogic_ui
@@ -892,7 +892,7 @@ function removespawnmessageshortly(delay) {
 // Size: 0x148
 function function_b4057fae(var_426fecc3) {
     self endon(#"death", #"hash_5aa439133f7cf591");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"hash_1fb77fec1c54b437");
         bonename = waitresult.bone_name;
@@ -1219,9 +1219,9 @@ function function_6db5e620(var_d98decb5, index, var_f566006a = 0, reset) {
             function_9ed5232e(var_d98decb5 + "." + index + ".remove", 1, undefined, undefined, undefined, undefined, undefined, reset);
         }
         function_2ec075a9(var_d98decb5 + "." + index, 1);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic_ui/globallogic_ui

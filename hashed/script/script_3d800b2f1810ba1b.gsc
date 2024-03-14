@@ -46,7 +46,7 @@ function private function_5a46c509(var_2fe0d693) {
     /#
         infovolumedebuginit();
         old_value = getdvarint(#"hash_5b0267c7f7e8d42", 0);
-        while (1) {
+        while (true) {
             if (old_value != getdvarint(#"hash_5b0267c7f7e8d42", 0)) {
                 old_value = getdvarint(#"hash_5b0267c7f7e8d42", 0);
                 setdvar(#"g_drawdebuginfovolumes", old_value);
@@ -112,7 +112,7 @@ function private function_7d76b3ac() {
     data.var_33c88c75 = [];
     self.var_8a1c2b55 = data;
     self thread function_8f050823();
-    while (1) {
+    while (true) {
         self.health = 999999;
         var_5479bede = undefined;
         var_5479bede = self waittill(#"damage");

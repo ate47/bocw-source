@@ -120,10 +120,10 @@ function private function_8e634de(entity) {
 // Size: 0x94
 function private function_27745f02(entity) {
     if (!isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     if (!util::within_fov(entity.origin, entity.angles, entity.enemy.origin, 0.6)) {
-        return 0;
+        return false;
     }
     return gettime() > entity.var_95bfdd95 && entity cansee(self.enemy);
 }
@@ -151,7 +151,7 @@ function private function_b11208a(entity) {
             #/
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_d1abdcb5/namespace_d1abdcb5
@@ -160,14 +160,14 @@ function private function_b11208a(entity) {
 // Size: 0xe8
 function private function_5a24dacc(entity) {
     if (!isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     distsq = distancesquared(entity.enemy.origin, entity.origin);
     if (distsq < function_a3f6cdac(40) || distsq > function_a3f6cdac(210)) {
-        return 0;
+        return false;
     }
     if (!util::within_fov(entity.origin, entity.angles, entity.enemy.origin, 0.6)) {
-        return 0;
+        return false;
     }
     return gettime() > entity.var_60188515;
 }
@@ -178,14 +178,14 @@ function private function_5a24dacc(entity) {
 // Size: 0xc8
 function private function_826b49d4(entity) {
     if (!isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     distsq = distancesquared(entity.enemy.origin, entity.origin);
     if (distsq > function_a3f6cdac(120)) {
-        return 0;
+        return false;
     }
     if (!util::within_fov(entity.origin, entity.angles, entity.enemy.origin, 0.6)) {
-        return 0;
+        return false;
     }
     return gettime() > entity.var_249206b6;
 }
@@ -198,7 +198,7 @@ function private function_c91fa191() {
     self endon(#"death");
     self notify("7debe29bdea3f840");
     self endon("7debe29bdea3f840");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"hash_4c72e79bdad8315e");
         result.ai namespace_83eb6304::function_3ecfde67("lightningStrike");
@@ -381,7 +381,7 @@ function private function_3311572f(entity) {
 // Size: 0xb4
 function function_e7667c0d() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         if (isdefined(self.enemy) && !self haspath()) {
             self.var_6e5b38d9 = self.var_6e5b38d9 - 2500;
             self.var_95bfdd95 = self.var_95bfdd95 - 3500;
@@ -756,9 +756,9 @@ function private function_be0c9c8b(*entity) {
         var_1423159a = var_d2287bdc.limit;
     }
     if (level.doa.var_33daab96 >= var_1423159a) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_d1abdcb5/namespace_d1abdcb5

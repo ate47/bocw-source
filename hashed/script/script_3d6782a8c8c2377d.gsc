@@ -208,7 +208,7 @@ function function_ddee0896(*params) {
 function function_660b79d2() {
     self endon(#"death", #"exit_vehicle");
     tilecount = 0;
-    while (1) {
+    while (true) {
         var_a95a42b4 = anglestoup(self.angles);
         worldup = (0, 0, 1);
         if (vectordot(var_a95a42b4, worldup) < 0.64) {
@@ -239,7 +239,7 @@ function function_a5d3ca57() {
     firetime = weapon.firetime;
     driver = self getseatoccupant(0);
     self thread function_a7909b7e();
-    while (1) {
+    while (true) {
         if (driver vehicleattackbuttonpressed()) {
             if (isdefined(self.var_8c05c51a)) {
                 [[ self.var_8c05c51a ]]();
@@ -259,7 +259,7 @@ function function_a5d3ca57() {
 // Size: 0x86
 function function_a7909b7e() {
     self endon(#"death", #"exit_vehicle");
-    while (1) {
+    while (true) {
         target = self turretgettarget(1);
         if (isdefined(target)) {
             self turretsettarget(2, target);
@@ -312,7 +312,7 @@ function function_57e36aad(*params) {
 // Checksum 0xdb578a5e, Offset: 0x1598
 // Size: 0xe
 function function_5be0fa52(*params) {
-    return 0;
+    return false;
 }
 
 // Namespace siegebot/siegebot
@@ -388,7 +388,7 @@ function function_ce40686c() {
 // Size: 0x4c
 function function_9fedfa78(*from_state, *to_state, *connection) {
     if (is_true(self.nojumping)) {
-        return 0;
+        return false;
     }
     return self.vehicletype === "spawner_enemy_boss_siegebot_zombietron";
 }
@@ -400,7 +400,7 @@ function function_9fedfa78(*from_state, *to_state, *connection) {
 function function_308a3c0e(params) {
     goal = params.var_c93384f1;
     trace = physicstrace(goal + vectorscale((0, 0, 1), 500), goal - vectorscale((0, 0, 1), 10000), vectorscale((-1, -1, -1), 10), vectorscale((1, 1, 1), 10), self, 2);
-    if (0) {
+    if (false) {
         /#
             debugstar(goal, 60000, (0, 1, 0));
         #/
@@ -436,7 +436,7 @@ function function_aa1e85d2(params) {
     waitframe(1);
     self linkto(self.jump.linkent);
     self.jump.var_a3fc817e = 1;
-    if (0) {
+    if (false) {
         /#
             debugstar(goal, 60000, (0, 1, 0));
         #/
@@ -462,19 +462,19 @@ function function_aa1e85d2(params) {
     self vehicle::impact_fx(self.settings.var_a54fd5f5);
     self waittill(#"hash_6155f993349506c6");
     self vehicle::impact_fx(self.settings.var_a596f383);
-    while (1) {
+    while (true) {
         distancetogoal = distance2d(self.jump.linkent.origin, goal);
         var_e985f88e = 1;
         var_bcf8dac0 = 1;
         var_b1a7dcb1 = (0, 0, 0);
-        if (0) {
+        if (false) {
             /#
                 line(self.jump.linkent.origin, self.jump.linkent.origin + var_b1a7dcb1, (0, 1, 0), 1, 0, 60000);
             #/
         }
         var_d15137d8 = mapfloat(self.radius * 1, self.radius * 4, 0.2, 1, distancetogoal);
         var_130db229 = var_712641e2 * var_d15137d8;
-        if (0) {
+        if (false) {
             /#
                 line(self.jump.linkent.origin, self.jump.linkent.origin + var_130db229, (0, 1, 0), 1, 0, 60000);
             #/
@@ -495,7 +495,7 @@ function function_aa1e85d2(params) {
             self notify(#"hash_528b934eace9e5db");
             self asmrequestsubstate(params.var_d49112b7);
         }
-        if (0) {
+        if (false) {
             /#
                 debugstar(self.jump.linkent.origin, 60000, (1, 0, 0));
             #/
@@ -615,7 +615,7 @@ function function_d6642451() {
     /#
         assert(isdefined(level.var_3d1b6323));
     #/
-    while (1) {
+    while (true) {
         if (isdefined(self.owner)) {
             wait(1);
             continue;
@@ -844,7 +844,7 @@ function function_20b4a129() {
 // Size: 0xe0
 function function_9bb8a3b9() {
     self endon(#"death", #"change_state", #"end_attack_thread");
-    while (1) {
+    while (true) {
         if (isdefined(self.enemy) && self cansee(self.enemy) && self.turretontarget) {
             self vehicle_ai::fire_for_time(randomfloatrange(0.75, 1.5), 0, self.enemy);
         }

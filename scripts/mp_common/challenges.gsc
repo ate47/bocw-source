@@ -2211,7 +2211,7 @@ function challengekills(data) {
                     case #"sentinel":
                         player stats::function_dad108fa(#"kill_blindeye_ghost_aircraft", 1);
                         awarded_kill_blindeye_ghost_aircraft = 1;
-                        continue;
+                        break;
                     }
                 }
             }
@@ -3185,7 +3185,7 @@ function challengegameendmp(data) {
                 player stats::function_dad108fa(#"hash_38cf622aaf2ce3d7", 1);
             }
         }
-        return;
+        break;
     case #"dm":
         if (player == winner) {
             if (level.placement[#"all"].size >= 2) {
@@ -3197,14 +3197,14 @@ function challengegameendmp(data) {
                 player stats::function_dad108fa(#"hash_20b4a91c344d73ec", 1);
             }
         }
-        return;
+        break;
     case #"ctf":
         if (player.team == winner) {
             if (loserscore == 0) {
                 player stats::function_d40764f3(#"shut_out", 1);
             }
         }
-        return;
+        break;
     case #"dom":
         if (player.team == winner) {
             if (winnerscore >= loserscore + 70) {
@@ -3212,14 +3212,14 @@ function challengegameendmp(data) {
                 player stats::function_dad108fa(#"hash_1b0c06f37648493f", 1);
             }
         }
-        return;
+        break;
     case #"hq":
         if (player.team == winner && winnerscore > 0) {
             if (winnerscore >= loserscore + 70) {
                 player stats::function_d40764f3(#"crush", 1);
             }
         }
-        return;
+        break;
     case #"koth":
         if (player.team == winner && winnerscore > 0) {
             if (winnerscore >= loserscore + 70) {
@@ -3232,7 +3232,7 @@ function challengegameendmp(data) {
                 player stats::function_d40764f3(#"annihilation", 1);
             }
         }
-        return;
+        break;
     case #"dem":
         if (player.team == game.defenders && player.team == winner) {
             if (loserscore == 0) {
@@ -3242,7 +3242,7 @@ function challengegameendmp(data) {
         if (player.team == winner) {
             player stats::function_bcf9602(#"hash_5a96fe436e73343", 1, #"hash_6abe83944d701459");
         }
-        return;
+        break;
     case #"control":
     case #"sd":
     case #"bounty":
@@ -3252,21 +3252,21 @@ function challengegameendmp(data) {
                 player stats::function_dad108fa(#"hash_644326620d99cbbb", 1);
             }
         }
-        return;
+        break;
     case #"conf":
         if (player.team == winner) {
             if (winnerscore >= loserscore + 25) {
                 player stats::function_d40764f3(#"crush", 1);
             }
         }
-        return;
+        break;
     case #"gunfight":
         if (player.team == winner) {
             player stats::function_dad108fa(#"hash_5072c55850678079", 1);
         }
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 
@@ -4245,7 +4245,7 @@ function private function_f9478088() {
     self notify("62320f1f60769c02");
     self endon("62320f1f60769c02");
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         players = getplayers();
         if (players.size == 0) {
             wait(1);
@@ -4337,7 +4337,7 @@ function function_de80e959(data) {
         switch (level.basegametype) {
         case #"gunfight":
             player stats::function_dad108fa(#"hash_5d841dfc6114d2ae", 1);
-            return;
+            break;
         }
     }
 }

@@ -43,7 +43,7 @@ function on_player_spawned() {
 // Size: 0x1e0
 function function_d75d084a() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         currentweapon = self getcurrentweapon();
         waitresult = undefined;
         waitresult = self waittill(#"weapon_change");
@@ -74,16 +74,16 @@ function function_d75d084a() {
 // Size: 0x66c
 function function_82ea8e15(hardpointtype) {
     if (!isdefined(hardpointtype)) {
-        return 0;
+        return false;
     }
     if (self killstreakrules::iskillstreakallowed(hardpointtype, self.team) == 0) {
         self switchtoweapon(self.lastdroppableweapon);
-        return 0;
+        return false;
     }
     currentweapon = self getcurrentweapon();
     killstreakweapon = killstreaks::get_killstreak_weapon(hardpointtype);
     if (killstreakweapon == level.weaponnone) {
-        return 0;
+        return false;
     }
     level weapons::add_limited_weapon(killstreakweapon, self, 3);
     if (issubstr(hardpointtype, "inventory")) {
@@ -149,7 +149,7 @@ function function_82ea8e15(hardpointtype) {
         self thread watchkillstreakremoval(hardpointtype, killstreak_id);
     }
     self.usingkillstreakheldweapon = 1;
-    return 0;
+    return false;
 }
 
 // Namespace killstreak_weapons/killstreak_weapons
@@ -158,11 +158,11 @@ function function_82ea8e15(hardpointtype) {
 // Size: 0x166
 function usekillstreakweaponfromcrate(hardpointtype) {
     if (!isdefined(hardpointtype)) {
-        return 0;
+        return false;
     }
     killstreakweapon = killstreaks::get_killstreak_weapon(hardpointtype);
     if (killstreakweapon == level.weaponnone) {
-        return 0;
+        return false;
     }
     self.firedkillstreakweapon = 0;
     self setblockweaponpickup(killstreakweapon, 1);
@@ -181,7 +181,7 @@ function usekillstreakweaponfromcrate(hardpointtype) {
         self thread watchkillstreakremoval(hardpointtype, killstreak_id);
     }
     self.usingkillstreakheldweapon = 1;
-    return 1;
+    return true;
 }
 
 // Namespace killstreak_weapons/killstreak_weapons
@@ -193,7 +193,7 @@ function watchkillstreakweaponswitch(killstreakweapon, killstreak_id, isfrominve
     noneweapon = getweapon(#"none");
     minigunweapon = getweapon(#"minigun");
     miniguninventoryweapon = getweapon(#"inventory_minigun");
-    while (1) {
+    while (true) {
         currentweapon = self getcurrentweapon();
         waitresult = undefined;
         waitresult = self waittill(#"weapon_change");
@@ -251,7 +251,7 @@ function watchkillstreakweaponswitch(killstreakweapon, killstreak_id, isfrominve
             self killstreaks::remove_used_killstreak(killstreaks::get_killstreak_for_weapon(killstreakweapon), killstreak_id);
             self killstreaks::activate_next();
         }
-        return;
+        break;
     }
 }
 

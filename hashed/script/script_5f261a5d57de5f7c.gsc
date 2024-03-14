@@ -201,19 +201,19 @@ function function_8b313976(var_c1c9cf07) {
 // Size: 0x184
 function function_30a8ed81(n_level = 0) {
     if (self function_6c32d092(#"hash_2cb9513f0cf67fe7")) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_2cb9503f0cf67e34") && n_level <= 4) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_2cb94f3f0cf67c81") && n_level <= 3) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_2cb94e3f0cf67ace") && n_level <= 2) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_2cb94d3f0cf6791b") && n_level <= 1) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_17e4ae593eaf4a47") && n_level == 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_e86ffa8/namespace_e86ffa8
@@ -222,19 +222,19 @@ function function_30a8ed81(n_level = 0) {
 // Size: 0x184
 function function_cb561923(n_level = 0) {
     if (self function_6c32d092(#"hash_7082a9127deb8f95")) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_7082a8127deb8de2") && n_level <= 4) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_7082a3127deb8563") && n_level <= 3) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_7082a2127deb83b0") && n_level <= 2) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_7082a5127deb88c9") && n_level <= 1) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_1ea1a9cfee998e89") && n_level == 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_e86ffa8/namespace_e86ffa8
@@ -243,19 +243,19 @@ function function_cb561923(n_level = 0) {
 // Size: 0x184
 function function_582d36be(n_level = 0) {
     if (self function_6c32d092(#"hash_332be40e760e69a1")) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_332be30e760e67ee") && n_level <= 4) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_332be60e760e6d07") && n_level <= 3) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_332be50e760e6b54") && n_level <= 2) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_332be80e760e706d") && n_level <= 1) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_3417450e1347185") && n_level == 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_e86ffa8/namespace_e86ffa8
@@ -264,19 +264,19 @@ function function_582d36be(n_level = 0) {
 // Size: 0x184
 function function_33d837e4(n_level = 0) {
     if (self function_6c32d092(#"hash_59dbe8f72baaa2a3")) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_59dbe7f72baaa0f0") && n_level <= 4) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_59dbeef72baaacd5") && n_level <= 3) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_59dbedf72baaab22") && n_level <= 2) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_59dbecf72baaa96f") && n_level <= 1) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_38c08136902fd553") && n_level == 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_e86ffa8/namespace_e86ffa8
@@ -285,19 +285,19 @@ function function_33d837e4(n_level = 0) {
 // Size: 0x184
 function function_8923370c(n_level = 0) {
     if (self function_6c32d092(#"hash_504b3df717f88c4e")) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_504b3ef717f88e01") && n_level <= 4) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_504b3ff717f88fb4") && n_level <= 3) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_504b40f717f89167") && n_level <= 2) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_504b41f717f8931a") && n_level <= 1) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_7f98b3dd3cce95aa") && n_level == 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_e86ffa8/namespace_e86ffa8
@@ -306,19 +306,19 @@ function function_8923370c(n_level = 0) {
 // Size: 0x184
 function function_efb6dedf(n_level = 0) {
     if (self function_6c32d092(#"hash_520b59b0216b70be")) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_520b5ab0216b7271") && n_level <= 4) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_520b5bb0216b7424") && n_level <= 3) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_520b5cb0216b75d7") && n_level <= 2) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_520b5db0216b778a") && n_level <= 1) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_5930cf0eb070e35a") && n_level == 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_e86ffa8/namespace_e86ffa8
@@ -327,19 +327,19 @@ function function_efb6dedf(n_level = 0) {
 // Size: 0x184
 function function_7bf30775(n_level = 0) {
     if (self function_6c32d092(#"hash_1f95b08e4a49d87e")) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_1f95b18e4a49da31") && n_level <= 4) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_1f95b28e4a49dbe4") && n_level <= 3) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_1f95b38e4a49dd97") && n_level <= 2) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_1f95b48e4a49df4a") && n_level <= 1) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_210097a75bb6c49a") && n_level == 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_e86ffa8/namespace_e86ffa8
@@ -348,19 +348,19 @@ function function_7bf30775(n_level = 0) {
 // Size: 0x184
 function function_3623f9d1(n_level = 0) {
     if (self function_6c32d092(#"hash_17ccbeee64daa727")) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_17ccbdee64daa574") && n_level <= 4) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_17ccbcee64daa3c1") && n_level <= 3) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_17ccbbee64daa20e") && n_level <= 2) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_17ccbaee64daa05b") && n_level <= 1) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_602a1b6107105f07") && n_level == 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_e86ffa8/namespace_e86ffa8
@@ -369,19 +369,19 @@ function function_3623f9d1(n_level = 0) {
 // Size: 0x184
 function function_cd6787b(n_level = 0) {
     if (self function_6c32d092(#"hash_79774956f321dfed")) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_79774856f321de3a") && n_level <= 4) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_79774356f321d5bb") && n_level <= 3) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_79774256f321d408") && n_level <= 2) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_79774556f321d921") && n_level <= 1) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_51b6cc6dbafb7f31") && n_level == 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_e86ffa8/namespace_e86ffa8
@@ -390,18 +390,18 @@ function function_cd6787b(n_level = 0) {
 // Size: 0x184
 function function_71680faf(n_level = 0) {
     if (self function_6c32d092(#"hash_afdc57f440fb620")) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_afdc67f440fb7d3") && n_level <= 4) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_afdcb7f440fc052") && n_level <= 3) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_afdcc7f440fc205") && n_level <= 2) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_afdc97f440fbcec") && n_level <= 1) {
-        return 1;
+        return true;
     } else if (self function_6c32d092(#"hash_47d7a8105237c88") && n_level == 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 

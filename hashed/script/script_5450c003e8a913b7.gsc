@@ -120,7 +120,7 @@ function function_43959107() {
 // Size: 0x10c
 function function_2b1c382() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         self flag::wait_till("stealth_enabled");
         level flag::wait_till_clear("stealth_spotted");
         self flag::wait_till_clear("in_action");
@@ -438,7 +438,7 @@ function function_cf839c4b(var_b2a2de70, var_a3dc7b53) {
     other = undefined;
     team = self.team;
     aiutility::addaioverridedamagecallback(self, &function_21e59acf);
-    while (1) {
+    while (true) {
         if (!isalive(self)) {
             return;
         }
@@ -636,14 +636,14 @@ function function_6b72945d(event) {
         }
         if (dist_sq < function_a3f6cdac(radius)) {
             var_c1c8aacd = util::can_see_ai(event.origin + traceoffset, self, 250, var_a5879569[0], var_a5879569[1]);
-            return 0;
+            return false;
         }
         var_1cc7bd2f = self cansee(event.entity);
         if (!var_1cc7bd2f && event.entity namespace_6c0cd084::function_911cdf32(self)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_f1f700ac/enemy
@@ -659,10 +659,10 @@ function function_d08280d7(event) {
         case #"footstep_run":
         case #"proximity":
             self thread namespace_6c0cd084::function_ac3ca2d7(event.entity, 1);
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_f1f700ac/enemy
@@ -674,10 +674,10 @@ function function_46dfd025(eventorigin, dist) {
     ais = getactorteamarray("axis", "team3");
     foreach (ai in ais) {
         if (distancesquared(eventorigin, ai.origin) <= distsq) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_f1f700ac/enemy
@@ -715,29 +715,29 @@ function function_ee9a5ec9(event) {
                 }
             }
         }
-        return;
+        break;
     case #"grenade danger":
         if (function_46dfd025(event.origin, 128)) {
             event.type = "combat";
         }
-        return;
+        break;
     case #"explode":
         if (function_46dfd025(event.origin, 192)) {
             event.type = "combat";
         } else if (distancesquared(event.origin, self.origin) <= 1048576) {
             event.type = "combat";
         }
-        return;
+        break;
     case #"gunshot":
         if (distancesquared(event.origin, self.origin) < 640000) {
             event.type = "combat";
         }
-        return;
+        break;
     case #"glass_destroyed":
         if (self util::function_748809fc(event.origin, 0) && distance2dsquared(event.origin, self.origin) < 36864) {
             event.type = "combat";
         }
-        return;
+        break;
     }
 }
 
@@ -770,7 +770,7 @@ function function_af982b1e(event) {
         /#
             function_65b21ab8(self, "<unknown string>");
         #/
-        return 1;
+        return true;
     case #"cover_blown":
         self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "coverblown", delaytime);
         /#
@@ -779,7 +779,7 @@ function function_af982b1e(event) {
         /#
             function_65b21ab8(self, "<unknown string>");
         #/
-        return 1;
+        return true;
     case #"combat":
         self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "combat", 1);
         /#
@@ -788,9 +788,9 @@ function function_af982b1e(event) {
         /#
             function_65b21ab8(self, "<unknown string>");
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_f1f700ac/enemy
@@ -804,52 +804,52 @@ function function_63ac72da(event) {
         switch (event.var_dd29a83a) {
         case #"sight":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "sight", delaytime);
-            return 1;
+            return true;
         case #"explode":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "explosion", delaytime);
-            return 1;
+            return true;
         case #"grenade danger":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "grenade_danger", delaytime);
-            return 1;
+            return true;
         case #"seek_backup":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "seek_backup", randomfloatrange(2, 2.5), event);
-            return 1;
+            return true;
         case #"saw_corpse":
         case #"found_corpse":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", event.var_dd29a83a, delaytime);
             /#
                 function_65b21ab8(self, "<unknown string>");
             #/
-            return 1;
+            return true;
         case #"bulletwhizby":
         case #"gunshot":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "gunshot", 0.2, event);
             /#
                 function_65b21ab8(self, "<unknown string>");
             #/
-            return 1;
+            return true;
         case #"ally_damaged":
         case #"gunshot_teammate":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "gunshot", randomfloatrange(0.8, 1.3), event);
             /#
                 function_65b21ab8(self, "<unknown string>");
             #/
-            return 1;
+            return true;
         case #"ally_killed":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "ally_killed", 0.5);
             /#
                 function_65b21ab8(self, "<unknown string>");
             #/
-            return 1;
+            return true;
         case #"proximity":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "proximity", 0.5);
-            return 1;
+            return true;
         case #"footstep_sprint":
         case #"footstep":
         case #"glass_destroyed":
         case #"footstep_run":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "investigate", delaytime);
-            return 1;
+            return true;
         default:
             /#
                 println("<unknown string>" + event.var_dd29a83a + "<unknown string>");
@@ -857,7 +857,7 @@ function function_63ac72da(event) {
             break;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_f1f700ac/enemy
@@ -916,7 +916,7 @@ function function_a76f0e02(event) {
     }
     self function_ee9a5ec9(event);
     if (self function_966c2411(event)) {
-        return 0;
+        return false;
     }
     self.stealth.var_fc47e73b = gettime();
     if (!namespace_979752dc::function_3a157fbf()) {
@@ -941,7 +941,7 @@ function function_a76f0e02(event) {
     if (isdefined(func) && func != &function_a76f0e02) {
         self thread [[ func ]](event);
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_f1f700ac/enemy

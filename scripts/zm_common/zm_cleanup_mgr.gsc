@@ -66,7 +66,7 @@ function private function_7415d2e2() {
 function private cleanup_main() {
     level endon(#"end_game");
     n_next_eval = 0;
-    while (1) {
+    while (true) {
         util::wait_network_frame();
         n_time = gettime();
         if (n_time < n_next_eval) {
@@ -117,10 +117,10 @@ function private function_399d4af3(n_override_cleanup_dist_sq) {
 function function_5372feb8() {
     foreach (player in function_a1ef346b()) {
         if (!is_true(player.var_16735873) || isdefined(player zm_zonemgr::get_player_zone())) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_cleanup/zm_cleanup_mgr
@@ -331,9 +331,9 @@ function private player_ahead_of_me(player) {
     v_dir = player getorigin() - self.origin;
     n_dot = vectordot(v_player_forward, v_dir);
     if (n_dot < 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_cleanup/zm_cleanup_mgr

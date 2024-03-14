@@ -91,9 +91,9 @@ function turret_destroyed(attacker, weapon) {
 // Size: 0xa8
 function function_53028023(v_origin, *v_angles, *player) {
     if (level.var_6f2028c7 < 4 && (!zm_utility::is_classic() || zm_utility::check_point_in_playable_area(player) && zm_utility::check_point_in_enabled_zone(player, 1)) && ispointonnavmesh(player)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace ultimate_turret/ultimate_turret
@@ -109,7 +109,7 @@ function turretscanning() {
     s_bundle = killstreaks::get_script_bundle("ultimate_turret");
     veh.maxsightdistsqrd = function_a3f6cdac(isdefined(s_bundle.var_2aeadfa0) ? s_bundle.var_2aeadfa0 : 3500);
     veh thread function_9d831b2f();
-    while (1) {
+    while (true) {
         /#
             veh.maxsightdistsqrd = function_a3f6cdac(isdefined(s_bundle.var_2aeadfa0) ? s_bundle.var_2aeadfa0 : 3500);
         #/

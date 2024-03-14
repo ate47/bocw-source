@@ -114,7 +114,7 @@ function private function_7c757878(player, mod = "MOD_UNKNOWN", var_70c63791) {
         player endon(#"disconnect");
     }
     self endon(#"death");
-    while (1) {
+    while (true) {
         result = undefined;
         result = self waittill(#"trigger");
         guy = result.activator;

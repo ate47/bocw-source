@@ -293,14 +293,14 @@ function function_a890cac2(attacker, owningteam, weapon, scoreevents, objectiveo
 // Size: 0xca
 function function_2e33e275(einflictor, attacker, weapon, var_5b1d28ec) {
     if (!isplayer(attacker) || !isplayer(self) || !isdefined(weapon) || !isdefined(var_5b1d28ec)) {
-        return 0;
+        return false;
     }
     if (!self istouching(var_5b1d28ec)) {
         if (!isdefined(einflictor) || einflictor != attacker || !attacker istouching(var_5b1d28ec)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace globallogic_score/globallogic_score
@@ -763,12 +763,12 @@ function function_84088ec3(var_f801f37e) {
         case #"eq_molotov":
         case #"satchel_charge":
             self stats::function_622feb0d(var_f801f37e.name, #"hash_7bf29fa438d54aad", 1);
-            return;
+            break;
         case #"special_grenadelauncher_t9":
             self stats::function_561716e6(var_f801f37e.name, #"hash_66ab89e31cfd2a9c", 1);
-            return;
+            break;
         default:
-            return;
+            break;
         }
     }
 }
@@ -959,7 +959,7 @@ function function_bb9f3842() {
         if (!isdefined(level.var_10cd7193)) {
             level.var_10cd7193 = [];
         }
-        while (1) {
+        while (true) {
             if (getdvarint(#"dumpscoreevents", 0) > 0) {
                 var_594354f3 = [];
                 foreach (scoreevent in level.var_10cd7193) {

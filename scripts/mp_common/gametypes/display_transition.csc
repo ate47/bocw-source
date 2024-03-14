@@ -56,7 +56,7 @@ function function_c73ec9a(*local_client_num, *oldval, newval, *bnewent, *binitia
 // Size: 0x1ac
 function function_57e7e78e() {
     level endon(#"disconnect", #"game_ended");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"hash_15feb9f40beffb1");
         xuids = associativearray();
@@ -76,13 +76,13 @@ function function_57e7e78e() {
 // Size: 0x9a
 function private function_d4f9edc8(character_index, session_mode) {
     if (!function_f4bf7e3f(character_index, session_mode)) {
-        return 0;
+        return false;
     }
     var_4fa755f8 = getcharacterfields(character_index, session_mode);
     if (isdefined(var_4fa755f8) && isdefined(var_4fa755f8.requireddvar) && !getdvarint(var_4fa755f8.requireddvar, 0)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace display_transition/display_transition

@@ -296,12 +296,12 @@ function function_7df596c3(item) {
         }
         level thread namespace_5a917022::function_a9f78bf(var_4200bfbf, room);
         level waittill(#"hash_1b322de3d2e3e781");
-        return;
+        break;
     default:
         /#
             assert(0);
         #/
-        return;
+        break;
     }
 }
 
@@ -483,25 +483,25 @@ function function_d2c582ec(origin, var_9e20508c, radius, reward, *flag) {
         namespace_dfc652ee::function_d06cbfe8(var_9e20508c, radius >> 2, reward);
     case #"treasure":
         namespace_dfc652ee::function_68442ee7(var_9e20508c, radius, reward);
-        return;
+        break;
     case #"extralife":
         namespace_dfc652ee::function_ad7ac41b(var_9e20508c, radius, 32, 16, 1);
-        return;
+        break;
     case #"boost":
         namespace_dfc652ee::function_ad7ac41b(var_9e20508c, radius, 32, 9, 1);
-        return;
+        break;
     case #"nuke":
         namespace_dfc652ee::function_ad7ac41b(var_9e20508c, radius, 32, 8, 1);
-        return;
+        break;
     case #"chickens":
         namespace_dfc652ee::function_ad7ac41b(var_9e20508c, radius, 32, 15, 1);
-        return;
+        break;
     case #"items":
         while (radius) {
             radius--;
             function_e2b14b6(var_9e20508c + (randomintrange(-60, 60), randomintrange(-60, 60), 0), (0, 0, 0));
         }
-        return;
+        break;
     case #"weapon_cache":
         var_d7d0ebdd = namespace_dfc652ee::function_57160cba(6);
         namespace_dfc652ee::itemspawn(var_d7d0ebdd, var_9e20508c + (randomintrange(-60, 60), randomintrange(-60, 60), 0), undefined, undefined, 1);
@@ -513,10 +513,10 @@ function function_d2c582ec(origin, var_9e20508c, radius, reward, *flag) {
         namespace_dfc652ee::itemspawn(var_d7d0ebdd, var_9e20508c + (randomintrange(-60, 60), randomintrange(-60, 60), 0), undefined, undefined, 1);
         namespace_dfc652ee::itemspawn(var_d7d0ebdd, var_9e20508c + (randomintrange(-60, 60), randomintrange(-60, 60), 0), undefined, undefined, 1);
         namespace_dfc652ee::itemspawn(var_d7d0ebdd, var_9e20508c + (randomintrange(-60, 60), randomintrange(-60, 60), 0), undefined, undefined, 1);
-        return;
+        break;
     default:
         namespace_dfc652ee::function_ad7ac41b(var_9e20508c, radius, reward, flag, 1);
-        return;
+        break;
     }
 }
 

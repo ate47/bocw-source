@@ -57,7 +57,7 @@ function rotating_object_think() {
         rotate_time = rotate_time * -1;
     }
     angles = self.angles;
-    while (1) {
+    while (true) {
         switch (axis) {
         case #"roll":
             self rotateroll(direction * revolutions, rotate_time * revolutions);

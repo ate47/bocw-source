@@ -133,13 +133,13 @@ function function_7da89497() {
 // Size: 0x200
 function usekillstreakhelicopter(hardpointtype) {
     if (self killstreakrules::iskillstreakallowed(hardpointtype, self.team) == 0) {
-        return 0;
+        return false;
     }
     if (!isdefined(level.heli_startnodes) || !level.heli_startnodes.size) {
         /#
             iprintlnbold("inventory_helicopter_comlink");
         #/
-        return 0;
+        return false;
     }
     level.helilocation = self.origin;
     destination = 0;
@@ -150,7 +150,7 @@ function usekillstreakhelicopter(hardpointtype) {
     protectlocation = (level.helilocation[0], level.helilocation[1], int(killstreaks::function_43f4782d()));
     killstreak_id = self killstreakrules::killstreakstart(hardpointtype, self.team);
     if (killstreak_id == -1) {
-        return 0;
+        return false;
     }
     if (isdefined(level.var_34f03cda)) {
         self [[ level.var_34f03cda ]](hardpointtype);
@@ -158,7 +158,7 @@ function usekillstreakhelicopter(hardpointtype) {
     self namespace_f9b02f80::play_killstreak_start_dialog(hardpointtype, self.team, killstreak_id);
     self thread announcehelicopterinbound(hardpointtype);
     thread heli_think(self, startnode, self.team, protectlocation, hardpointtype, armored, killstreak_id);
-    return 1;
+    return true;
 }
 
 // Namespace helicopter/helicopter_shared
@@ -791,49 +791,49 @@ function heli_targeting(missilesenabled, hardpointtype) {
 // Size: 0x2bc
 function cantargetplayer_turret(player, hardpointtype) {
     if (!isalive(player) || player.sessionstate != "playing") {
-        return 0;
+        return false;
     }
     if (player.ignoreme === 1) {
-        return 0;
+        return false;
     }
     if (player == self.owner) {
         self check_owner(hardpointtype);
-        return 0;
+        return false;
     }
     if (player isnotarget()) {
-        return 0;
+        return false;
     }
     if (player airsupport::cantargetplayerwithspecialty() == 0) {
-        return 0;
+        return false;
     }
     if (distance(player.origin, self.origin) > self.killstreakbundle.var_ddd44b49) {
-        return 0;
+        return false;
     }
     if (!isdefined(player.team)) {
-        return 0;
+        return false;
     }
     if (!util::function_fbce7263(player.team, self.team)) {
-        return 0;
+        return false;
     }
     if (player.team == #"spectator") {
-        return 0;
+        return false;
     }
     if (isdefined(player.spawntime) && float(gettime() - player.spawntime) / 1000 <= level.heli_target_spawnprotection) {
-        return 0;
+        return false;
     }
     heli_centroid = self.origin + vectorscale((0, 0, -1), 160);
     heli_forward_norm = anglestoforward(self.angles);
     heli_turret_point = heli_centroid + 144 * heli_forward_norm;
     visible_amount = player sightconetrace(heli_turret_point, self);
     if (visible_amount < level.heli_target_recognition) {
-        return 0;
+        return false;
     }
     var_2910def0 = self targetting_delay::function_1c169b3a(player);
     targetting_delay::function_a4d6d6d8(player, int((isdefined(self.targeting_delay) ? self.targeting_delay : 0.25) * 1000));
     if (!var_2910def0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace helicopter/helicopter_shared
@@ -872,25 +872,25 @@ function cantargetactor_turret(actor, *hardpointtype) {
 function function_7ebe7b18(heli, *hardpointtype) {
     helicopter = self;
     if (!isalive(hardpointtype)) {
-        return 0;
+        return false;
     }
     if (!isdefined(hardpointtype.team)) {
-        return 0;
+        return false;
     }
     if (!util::function_fbce7263(hardpointtype.team, helicopter.team)) {
-        return 0;
+        return false;
     }
     if (distancesquared(hardpointtype.origin, helicopter.origin) > level.heli_visual_range * level.heli_visual_range) {
-        return 0;
+        return false;
     }
     heli_centroid = helicopter.origin + vectorscale((0, 0, -1), 160);
     heli_forward_norm = anglestoforward(helicopter.angles);
     heli_turret_point = heli_centroid + 144 * heli_forward_norm;
     visible_amount = hardpointtype sightconetrace(heli_turret_point, helicopter);
     if (visible_amount < level.heli_target_recognition) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace helicopter/helicopter_shared
@@ -899,27 +899,27 @@ function function_7ebe7b18(heli, *hardpointtype) {
 // Size: 0x146
 function function_6c2ca54f(vehicle, *hardpointtype) {
     if (!isalive(hardpointtype)) {
-        return 0;
+        return false;
     }
     if (hardpointtype.ignoreme === 1) {
-        return 0;
+        return false;
     }
     if (distance(hardpointtype.origin, self.origin) > self.killstreakbundle.var_f6f22acf) {
-        return 0;
+        return false;
     }
     if (!isdefined(hardpointtype.team)) {
-        return 0;
+        return false;
     }
     if (!isdefined(hardpointtype.owner)) {
-        return 0;
+        return false;
     }
     if (level.teambased && !util::function_fbce7263(hardpointtype.team, self.team)) {
-        return 0;
+        return false;
     }
     heli_centroid = self.origin + vectorscale((0, 0, -1), 160);
     heli_forward_norm = anglestoforward(self.angles);
     heli_turret_point = heli_centroid + 144 * heli_forward_norm;
-    return 1;
+    return true;
 }
 
 // Namespace helicopter/helicopter_shared
@@ -928,38 +928,38 @@ function function_6c2ca54f(vehicle, *hardpointtype) {
 // Size: 0x2a2
 function cantargetplayer_missile(player, hardpointtype) {
     if (!isalive(player) || player.sessionstate != "playing") {
-        return 0;
+        return false;
     }
     if (player.ignoreme === 1) {
-        return 0;
+        return false;
     }
     if (player == self.owner) {
         self check_owner(hardpointtype);
-        return 0;
+        return false;
     }
     if (player airsupport::cantargetplayerwithspecialty() == 0) {
-        return 0;
+        return false;
     }
     if (distance(player.origin, self.origin) > self.killstreakbundle.var_f6f22acf) {
-        return 0;
+        return false;
     }
     if (!isdefined(player.team)) {
-        return 0;
+        return false;
     }
     if (level.teambased && !util::function_fbce7263(player.team, self.team)) {
-        return 0;
+        return false;
     }
     if (player.team == #"spectator") {
-        return 0;
+        return false;
     }
     if (isdefined(player.spawntime) && float(gettime() - player.spawntime) / 1000 <= level.heli_target_spawnprotection) {
-        return 0;
+        return false;
     }
     if (self target_cone_check(player, level.heli_missile_target_cone) == 0) {
-        return 0;
+        return false;
     }
     if (self targetting_delay::function_1c169b3a(player) == 0) {
-        return 0;
+        return false;
     }
     heli_centroid = self.origin + vectorscale((0, 0, -1), 160);
     heli_forward_norm = anglestoforward(self.angles);
@@ -969,9 +969,9 @@ function cantargetplayer_missile(player, hardpointtype) {
     }
     player.lasthit = self heliturretsighttrace(heli_turret_point, player, player.lasthit);
     if (player.lasthit != 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace helicopter/helicopter_shared
@@ -1190,7 +1190,7 @@ function heli_hover() {
 function wait_for_killed() {
     self endon(#"death", #"crashing", #"leaving");
     self.bda = 0;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"killed", #"destroyedaircraft");
         if (waitresult._notify == "destroyedAircraft") {
@@ -1862,7 +1862,7 @@ function private function_8de67419(var_b4c35bb7) {
     var_a9a839e2 = getclosestpointonnavvolume(var_b4c35bb7, "navvolume_big", radius);
     if (isdefined(var_a9a839e2)) {
         self function_86012f82(var_a9a839e2, 0);
-        while (1) {
+        while (true) {
             /#
                 recordsphere(var_a9a839e2, 8, (0, 0, 1), "<unknown string>");
             #/
@@ -1939,11 +1939,11 @@ function function_62eb6272(var_70031e7b) {
 // Size: 0x94
 function function_fabf8bc5(var_b4c35bb7) {
     self endon(#"death", #"near_goal");
-    while (1) {
+    while (true) {
         distsq = distancesquared(self.origin, var_b4c35bb7);
         if (distsq <= 10000) {
             self notify(#"fallback_goal");
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -2057,15 +2057,15 @@ function set_heli_speed_hover() {
 // Size: 0x64
 function is_targeted() {
     if (isdefined(self.locking_on) && self.locking_on) {
-        return 1;
+        return true;
     }
     if (isdefined(self.locked_on) && self.locked_on) {
-        return 1;
+        return true;
     }
     if (isdefined(self.locking_on_hacking) && self.locking_on_hacking) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace helicopter/helicopter_shared
@@ -2074,7 +2074,7 @@ function is_targeted() {
 // Size: 0x114
 function function_656691ab() {
     self endon(#"death", #"abandoned");
-    while (1) {
+    while (true) {
         var_baa92af9 = ispointinnavvolume(self.origin, "navvolume_big");
         if (var_baa92af9) {
             heli_reset();
@@ -2086,7 +2086,7 @@ function function_656691ab() {
                 self set_goal_pos(self.heligoalpos, 1);
             }
             self notify(#"hash_340ab3c2b94ff86a");
-            return;
+            break;
         }
         wait(2);
     }
@@ -2098,7 +2098,7 @@ function function_656691ab() {
 // Size: 0x22e
 function function_81cba63() {
     self endon(#"death", #"abandoned");
-    while (1) {
+    while (true) {
         if (isdefined(self.protectdest)) {
             /#
                 recordsphere(self.protectdest, 8, (0, 0, 1), "<unknown string>");
@@ -2404,7 +2404,7 @@ function heli_protect(startnode, protectdest, hardpointtype, heli_team) {
 // Size: 0xc6
 function updatespeed() {
     self endon(#"death", #"crashing", #"leaving");
-    while (1) {
+    while (true) {
         if (self is_targeted() || isdefined(self.evasive) && self.evasive) {
             set_heli_speed_evasive();
         } else if (isdefined(self.var_a6642d42)) {
@@ -2526,9 +2526,9 @@ function function_7078bd6e(*helicopter) {
     var_5052ae94[0] = self.killstreakbundle.var_86e2b32a;
     var_5052ae94[1] = self.killstreakbundle.var_793017c5;
     if (!isdefined(var_5052ae94[0]) && !isdefined(var_5052ae94[1])) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace helicopter/helicopter_shared
@@ -2694,9 +2694,9 @@ function target_cone_check(target, conecosine) {
         /#
             debug_print3d_simple("<unknown string>" + heli_dot_target, self, vectorscale((0, 0, -1), 40), 40);
         #/
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace helicopter/helicopter_shared

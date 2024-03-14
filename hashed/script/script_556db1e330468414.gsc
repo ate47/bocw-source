@@ -189,7 +189,7 @@ function private function_3a22c4f4() {
 // Size: 0x70
 function private function_a77f3600(instance) {
     instance endon(#"cleanup");
-    while (1) {
+    while (true) {
         namespace_2c949ef8::function_8b6ae460(instance.var_8b241b32, "monster_house_ambush_list_realm_" + level.realm, 500, 1500, undefined, undefined, 0, "monster_house_ai");
     }
 }
@@ -279,17 +279,17 @@ function function_fc37bb4f(str_type) {
     case #"active":
         self playsound(#"hash_1b7654f4f0a7838");
         self playloopsound(#"hash_1b70ba6d6b31bb21");
-        return;
+        break;
     case #"break":
         self stoploopsound();
         waitframe(1);
         self playsound(#"hash_4edec6e285df4ad8");
-        return;
+        break;
     case #"inactive":
         self stoploopsound();
         waitframe(1);
         self playsound(#"hash_48c691f36c44892c");
-        return;
+        break;
     }
 }
 
@@ -315,7 +315,7 @@ function private function_fa4d3a3e(instance) {
         }
         level endon(#"hash_345e9169ebba28fb");
         var_d56fdb6 = isdefined(instance.var_fe2612fe[#"hash_1c35d9839ba0d789"]) ? instance.var_fe2612fe[#"hash_1c35d9839ba0d789"] : [];
-        while (1) {
+        while (true) {
             foreach (var_d2ee34ea in var_d56fdb6) {
                 sphere(var_d2ee34ea.origin, 6, (0, 1, 1), 0.75, 0, 7, 10);
             }

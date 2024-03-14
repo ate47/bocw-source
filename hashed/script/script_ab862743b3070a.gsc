@@ -410,7 +410,7 @@ function function_246a0760() {
 // Size: 0x60
 function function_de0a6ae4() {
     /#
-        while (1) {
+        while (true) {
             level waittill(#"between_round_over");
             if (getdvarint(#"force_dogs", 0) > 0) {
                 level.next_dog_round = level.round_number;
@@ -654,7 +654,7 @@ function zombie_setup_attack_properties_dog() {
 function dog_clip_monitor() {
     clips_on = 0;
     level.dog_clips = getentarray("dog_clips", "targetname");
-    while (1) {
+    while (true) {
         for (i = 0; i < level.dog_clips.size; i++) {
             level.dog_clips[i] connectpaths();
         }
@@ -696,7 +696,7 @@ function dog_run_think() {
     if (self.aitype !== "spawner_zm_wolf") {
         self clientfield::set("dog_fx", 1);
     }
-    while (1) {
+    while (true) {
         if (!is_target_valid(self.favoriteenemy)) {
             self.favoriteenemy = get_favorite_enemy();
         }
@@ -741,9 +741,9 @@ function dog_round_spawn() {
     ai = function_62db7b1c();
     if (isdefined(ai)) {
         level.zombie_total--;
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zombie_dog_util/ai_dog_util
@@ -892,9 +892,9 @@ function function_c1faf4d5() {
     var_d881b102 = function_bb101706();
     var_672d3c4 = function_71e3c90d();
     if (!is_true(level.var_2b94ce72) && (is_true(level.var_15747fb1) || var_d881b102 >= var_672d3c4)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zombie_dog_util/ai_dog_util

@@ -73,25 +73,25 @@ function function_bda720e2(*localclientnum, *oldval, newval, *bnewent, *binitial
     switch (bwastimejump) {
     case 1:
         self function_9298adaf(n_time);
-        return;
+        break;
     case 2:
         self namespace_ca99987f::function_f95cb457(undefined, 22, var_31f0ff13, #"linear");
-        return;
+        break;
     case 3:
         self namespace_ca99987f::function_f95cb457(undefined, 22, 0, #"linear");
-        return;
+        break;
     case 4:
         self namespace_ca99987f::function_f95cb457(undefined, 20, n_time, #"linear");
-        return;
+        break;
     case 5:
         self namespace_ca99987f::function_f95cb457(undefined, 25, n_time, #"linear");
-        return;
+        break;
     case 6:
         self namespace_ca99987f::function_f95cb457(undefined, 30, n_time, #"linear");
-        return;
+        break;
     case 7:
         self namespace_ca99987f::function_f95cb457(undefined, 17.2, 0, #"linear");
-        return;
+        break;
     }
 }
 
@@ -109,31 +109,31 @@ function function_2b8377ef(*localclientnum, *oldval, newval, *bnewent, *binitial
         self function_3c54e2b8(var_31f0ff13);
         self function_9ea7b4eb(var_31f0ff13);
         self function_576abd46(0);
-        return;
+        break;
     case 2:
         self function_9e574055(2);
         self function_1816c600(1.5, n_time);
         self function_d7be9a9f(60, n_time);
         self function_576abd46(1);
-        return;
+        break;
     case 3:
         self function_9e574055(2);
         self function_1816c600(1.5, n_time);
         self function_d7be9a9f(90, n_time);
         self function_576abd46(1);
-        return;
+        break;
     case 4:
         self function_9e574055(2);
         self function_1816c600(1.5, var_1ea96e5d);
         self function_d7be9a9f(32, var_1ea96e5d);
         self function_576abd46(1);
-        return;
+        break;
     case 5:
         self function_9e574055(2);
         self function_1816c600(1.5, var_1ea96e5d);
         self function_d7be9a9f(14, var_1ea96e5d);
         self function_576abd46(1);
-        return;
+        break;
     }
 }
 
@@ -145,10 +145,10 @@ function function_d7690f9(*localclientnum, *oldval, newval, *bnewent, *binitials
     switch (bwastimejump) {
     case 1:
         level notify(#"hash_7ce217c53edc8162");
-        return;
+        break;
     case 2:
         level notify(#"hash_3e8dc841ce47f8fd");
-        return;
+        break;
     }
 }
 
@@ -185,16 +185,16 @@ function function_75789681(*localclientnum, *oldval, newval, *bnewent, *binitial
     var_a0497201 = 0.75;
     switch (bwastimejump) {
     case 28:
-        return;
+        break;
     case 1:
         self namespace_ca99987f::function_b6f1c993(undefined, 5000, var_a0497201, #"linear");
         self namespace_ca99987f::function_136edb11(undefined, 50, var_a0497201, #"linear");
-        return;
+        break;
     case 2:
         var_d298ff03 = self getcamangles();
         self namespace_ca99987f::ease_camera_position(level.var_420bb8d1, var_67367725, var_a0497201, #"hash_2080bcb1cad7945c");
         self namespace_ca99987f::ease_camera_angles((angleclamp180(var_d298ff03[0]), angleclamp180(var_d298ff03[1]), angleclamp180(var_d298ff03[2])), var_8939da60, var_a0497201, #"hash_2080bcb1cad7945c");
-        return;
+        break;
     }
 }
 
@@ -291,14 +291,14 @@ function function_b79ec6c8(*localclientnum, *oldval, newval, *bnewent, *binitial
         foreach (n_decal in a_n_decals) {
             hidevolumedecal(n_decal);
         }
-        return;
+        break;
     case 1:
         foreach (n_decal in a_n_decals) {
             unhidevolumedecal(n_decal);
         }
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 
@@ -322,12 +322,12 @@ function function_5863b8d0(*localclientnum, *oldval, newval, *bnewent, *binitial
     switch (bwastimejump) {
     case 0:
         function_e7647ecd("hub_garage_door", 1);
-        return;
+        break;
     case 1:
         function_e7647ecd("hub_garage_door", 0);
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 

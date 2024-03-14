@@ -25,7 +25,7 @@ function function_5b164bbc() {
                 dynent.start_origin = dynent.origin;
                 dynent.start_angles = dynent.angles;
                 dynent thread function_733e5314();
-                continue;
+                break;
             }
         }
     }
@@ -70,7 +70,7 @@ function function_be87aa71(var_c01b1f44) {
     if (!isdefined(var_c01b1f44)) {
         return;
     }
-    while (1) {
+    while (true) {
         if (self.var_ade25cfe === var_c01b1f44.var_53e359f7 && isdefined(self.var_6039cf61) && self.var_6039cf61 > getservertime(0)) {
             wait(float(self.var_6039cf61 - getservertime(0)) / 1000);
         }

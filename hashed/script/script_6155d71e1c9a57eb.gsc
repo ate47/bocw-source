@@ -244,7 +244,7 @@ function underscore() {
         self.var_187e3f7e = "";
     }
     self thread function_28f119be();
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"hash_766bf24383b8f582");
         if (is_true(level.var_b375589a)) {
@@ -266,7 +266,7 @@ function underscore() {
 function function_28f119be() {
     self endon(#"death");
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         if (!is_true(level.var_b375589a)) {
             wait(0.1);
             continue;
@@ -300,9 +300,9 @@ function function_28f119be() {
 function function_2d36215b(e_player, a_enemies) {
     ai_closest = array::get_all_closest(e_player.origin, a_enemies, undefined, undefined, 2500);
     if (ai_closest.size >= 6) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_9b972177/namespace_9b972177

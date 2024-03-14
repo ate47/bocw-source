@@ -311,20 +311,20 @@ class cinteractobj {
             case #"trigger_once":
             case #"trigger_radius":
             case #"trigger_multiple":
-                return 1;
+                return true;
             default:
-                return 0;
+                return false;
             }
         } else {
             switch (t_override.classname) {
             case #"trigger_radius_use":
             case #"trigger_use":
-                return 1;
+                return true;
             default:
-                return 0;
+                return false;
             }
         }
-        return 0;
+        return false;
     }
 
     // Namespace cinteractobj/gameobjects_shared
@@ -695,7 +695,7 @@ function private function_2f3ba1ad() {
 // Size: 0x26a
 function function_2e028a0e() {
     self.mdl_gameobject endon(#"death");
-    while (1) {
+    while (true) {
         self.mdl_gameobject waittill(#"pickup_object");
         self hide_waypoint();
         foreach (s_lock in self.a_s_locks) {
@@ -761,7 +761,7 @@ function private function_d85d429b(var_7d01398c) {
         var_7d01398c.var_bb7aca0c = array(var_7d01398c.var_bb7aca0c);
     }
     var_7d01398c.var_bb7aca0c[var_7d01398c.var_bb7aca0c.size] = self;
-    while (1) {
+    while (true) {
         if (isdefined(var_7d01398c.carrier)) {
             if (!is_true(self.var_2955c864)) {
                 var_f857ad18 = self.interactteam;
@@ -840,7 +840,7 @@ function function_9e7fca5f() {
     self.mdl_gameobject.trigger endon(#"destroyed");
     self.mdl_gameobject endon(#"death");
     self endon(#"hash_767d05d04b5ba2f6");
-    while (1) {
+    while (true) {
         s_waitresult = undefined;
         s_waitresult = self.mdl_gameobject waittill(#"gameobject_end_use_player");
         foreach (s_scene in self.var_abba8d92) {
@@ -989,12 +989,12 @@ function gameobjects_dropped(mod) {
 // Size: 0x3a
 function function_4ea98a09() {
     if (!isdefined(self.trigger.var_a865c2cd)) {
-        return 1;
+        return true;
     }
     if (self.trigger.var_a865c2cd) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -1342,12 +1342,12 @@ function set_new_base_position(v_base_pos, v_angles) {
 // Size: 0x52
 function is_object_away_from_home() {
     if (isdefined(self.carrier)) {
-        return 1;
+        return true;
     }
     if (distancesquared(self.trigger.origin, self.trigger.baseorigin) > 4) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -1552,16 +1552,16 @@ function is_touching_any_trigger(triggers, minz, maxz, var_943e96ce) {
         if (trigger istriggerenabled()) {
             if (is_true(var_943e96ce)) {
                 if (istouching(self.origin, trigger)) {
-                    return 1;
+                    return true;
                 }
                 continue;
             }
             if (self istouchingswept(trigger, minz, maxz)) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -1578,18 +1578,18 @@ function is_touching_any_trigger_key_value(value, key, minz, maxz, var_943e96ce)
 // Size: 0x20a
 function should_be_reset(minz, maxz) {
     if (self.visuals[0] is_touching_any_trigger_key_value("minefield", "targetname", minz, maxz, self.var_ac304f56)) {
-        return 1;
+        return true;
     }
     if (self.visuals[0] is_touching_any_trigger_key_value("trigger_hurt", "classname", minz, maxz, self.var_ac304f56)) {
-        return 1;
+        return true;
     }
     arrayremovevalue(level.oob_triggers, undefined);
     if (self.visuals[0] is_touching_any_trigger(level.oob_triggers, minz, maxz, self.var_ac304f56)) {
-        return 1;
+        return true;
     }
     if (is_true(self.var_8c812e0a)) {
         self.var_8c812e0a = 0;
-        return 1;
+        return true;
     }
     elevators = getentarray("script_elevator", "targetname");
     foreach (elevator in elevators) {
@@ -1597,10 +1597,10 @@ function should_be_reset(minz, maxz) {
             assert(isdefined(elevator.occupy_volume));
         #/
         if (self.visuals[0] istouchingswept(elevator.occupy_volume, minz, maxz)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -1856,7 +1856,7 @@ function watchholdusedrop() {
         assert(isdefined(self.carryobject.droptrigger));
     #/
     trigger = self.carryobject.droptrigger;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = trigger waittill(#"trigger");
         if (self usebuttonpressed() && !self.throwinggrenade && !self meleebuttonpressed() && !self attackbuttonpressed() && !is_true(self.isplanting) && !is_true(self.isdefusing) && !self isremotecontrolling()) {
@@ -1918,7 +1918,7 @@ function function_2544bab6() {
     /#
         assert(isdefined(self.carryobject));
     #/
-    while (1) {
+    while (true) {
         while (!self usebuttonpressed()) {
             waitframe(1);
         }
@@ -2177,21 +2177,21 @@ function function_fe788e71(object) {
 // Size: 0xd6
 function has_key_object(use) {
     if (!isdefined(use.keyobject)) {
-        return 0;
+        return false;
     }
     for (x = 0; x < use.keyobject.size; x++) {
         if (isdefined(self.carryobject) && self.carryobject == use.keyobject[x]) {
-            return 1;
+            return true;
         }
         if (isdefined(self.packobject)) {
             for (i = 0; i < self.packobject.size; i++) {
                 if (self.packobject[i] == use.keyobject[x]) {
-                    return 1;
+                    return true;
                 }
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -2223,7 +2223,7 @@ function use_object_use_think(disableinitialholddelay, disableweaponcyclingdurin
     if (self.usetime > 0 && disableinitialholddelay) {
         self.trigger usetriggerignoreuseholdtime();
     }
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self.trigger waittill(#"trigger");
         player = waitresult.activator;
@@ -2374,11 +2374,11 @@ function private function_76f3a4cd() {
         numother = self function_3a7a2963(self.var_a4926509);
         if (num && numother) {
             if (!level.gameobjectscontestedmajoritywins || num === numother) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -2403,12 +2403,12 @@ function private function_4783042a() {
 function private function_d897ff7() {
     numclaimants = isdefined(get_num_touching(self.var_a4926509)) ? get_num_touching(self.var_a4926509) : 0;
     if (numclaimants == 0) {
-        return 1;
+        return true;
     } else if (level.gameobjectscontestedmajoritywins) {
         numother = isdefined(function_3a7a2963(self.var_a4926509)) ? function_3a7a2963(self.var_a4926509) : 0;
         return (numother > numclaimants);
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -2455,7 +2455,7 @@ function use_object_prox_think() {
     level endon(#"game_ended");
     self.trigger endon(#"destroyed", #"death");
     self thread prox_trigger_think();
-    while (1) {
+    while (true) {
         if (game.state != #"playing") {
             waitframe(1);
             continue;
@@ -2677,32 +2677,32 @@ function check_gameobject_reenable() {
 // Size: 0x18c
 function can_claim(sentient) {
     if (isdefined(self.carrier)) {
-        return 0;
+        return false;
     }
     if (self.cancontestclaim) {
         num = self get_num_touching(sentient.team);
         numother = function_3a7a2963(function_4e3386a8(sentient.team));
         if (numother != 0 && (!level.gameobjectscontestedmajoritywins || numother >= num)) {
-            return 0;
+            return false;
         }
     }
     if (self.var_a4926509 == function_4e3386a8(sentient.team)) {
-        return 0;
+        return false;
     }
     if (sentient has_key_object(self)) {
-        return 1;
+        return true;
     }
     if (!isdefined(self.keyobject)) {
         if (level.gameobjectscontestedmajoritywins) {
             num = self get_num_touching(function_4e3386a8(sentient.team));
             numother = function_3a7a2963(function_4e3386a8(sentient.team));
             if (numother >= num) {
-                return 0;
+                return false;
             }
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -2711,24 +2711,24 @@ function can_claim(sentient) {
 // Size: 0x142
 function private function_dfec159b(player) {
     if (!isalive(player)) {
-        return 0;
+        return false;
     }
     if (is_true(player.laststand) && !is_true(player.can_capture) && !is_true(player.can_contest)) {
-        return 0;
+        return false;
     }
     if (player.spawntime == gettime()) {
-        return 0;
+        return false;
     }
     if (is_true(player.selectinglocation) && self.triggertype === "use") {
-        return 0;
+        return false;
     }
     if (player isweaponviewonlylinked()) {
-        return 0;
+        return false;
     }
     if (!is_true(self.cancontestclaim) && isdefined(self.keyobject) && !player has_key_object(self)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -2737,7 +2737,7 @@ function private function_dfec159b(player) {
 // Size: 0x21c
 function private function_bbb55f41(sentient) {
     if (!self can_interact_with(sentient)) {
-        return 0;
+        return false;
     }
     if (!self function_350d0352() || level.gameobjectscontestedmajoritywins && self.curprogress == 0) {
         if (self can_claim(sentient)) {
@@ -2760,9 +2760,9 @@ function private function_bbb55f41(sentient) {
             self [[ self.oncantuse ]](sentient);
         }
     } else if (self function_4b64b7fd(sentient.team) && self can_claim(sentient) && get_num_touching(self.var_a4926509) == 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -2773,7 +2773,7 @@ function prox_trigger_think() {
     level endon(#"game_ended");
     self.trigger endon(#"destroyed", #"death");
     entitynumber = self.entnum;
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self.trigger waittill(#"trigger");
         sentient = waitresult.activator;
@@ -2799,14 +2799,14 @@ function prox_trigger_think() {
 // Size: 0xb4
 function is_excluded(sentient) {
     if (!isdefined(self.exclusions)) {
-        return 0;
+        return false;
     }
     foreach (exclusion in self.exclusions) {
         if (isdefined(exclusion) && sentient is_touching_trigger(exclusion)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -2866,24 +2866,24 @@ function is_touching_trigger(trigger) {
 // Size: 0x11e
 function continue_trigger_touch_think(*team, object) {
     if (!isalive(self)) {
-        return 0;
+        return false;
     }
     if (is_true(self.laststand) && !is_true(self.can_capture) && !is_true(self.can_contest)) {
-        return 0;
+        return false;
     }
     if (!isdefined(object) || !isdefined(object.trigger)) {
-        return 0;
+        return false;
     }
     if (!object.trigger istriggerenabled()) {
-        return 0;
+        return false;
     }
     if (!object can_touch(self)) {
-        return 0;
+        return false;
     }
     if (!self is_touching_trigger(object.trigger)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -3202,66 +3202,66 @@ function has_line_of_sight(player) {
 function continue_hold_think_loop(player, waitforweapon, timedout, usetime) {
     maxwaittime = 1.5;
     if (!isalive(player)) {
-        return 0;
+        return false;
     }
     if (isdefined(player.laststand) && player.laststand) {
-        return 0;
+        return false;
     }
     if (self.curprogress >= usetime) {
-        return 0;
+        return false;
     }
     if (!player usebuttonpressed()) {
-        return 0;
+        return false;
     }
     if (player function_5673fb61()) {
-        return 0;
+        return false;
     }
     if (player function_f75eb1ae()) {
-        return 0;
+        return false;
     }
     if (player.throwinggrenade && (player isthrowinggrenade() || player function_55acff10()) && (!isdefined(self.var_c2f21609) || self.var_c2f21609 != 14 && self.var_c2f21609 != 15)) {
-        return 0;
+        return false;
     }
     if (player isinvehicle()) {
-        return 0;
+        return false;
     }
     if (player isremotecontrolling() || player util::isusingremote()) {
-        return 0;
+        return false;
     }
     if (is_true(player.selectinglocation)) {
-        return 0;
+        return false;
     }
     if (player isweaponviewonlylinked()) {
-        return 0;
+        return false;
     }
     if (isdefined(self.var_1567ba56)) {
         if (!self [[ self.var_1567ba56 ]](player)) {
-            return 0;
+            return false;
         }
     } else if (!player is_touching_trigger(self.trigger)) {
         if (!isdefined(player.cursorhintent) || player.cursorhintent != self) {
-            return 0;
+            return false;
         }
     }
     if (is_true(self.requireslos) && !has_line_of_sight(player)) {
-        return 0;
+        return false;
     }
     if (is_true(self.var_fd6764c2) && player getstance() !== "stand") {
-        return 0;
+        return false;
     }
     if (!self.userate && !waitforweapon) {
-        return 0;
+        return false;
     }
     if (waitforweapon && timedout > maxwaittime) {
-        return 0;
+        return false;
     }
     if (is_true(self.interrupted)) {
-        return 0;
+        return false;
     }
     if (game.state != #"playing") {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -3318,20 +3318,20 @@ function use_hold_think_loop(player) {
         }
         if (sessionmodeismultiplayergame() || sessionmodeiswarzonegame()) {
             if (self.curprogress >= self.usetime) {
-                return 1;
+                return true;
             }
             waitframe(1);
         } else {
             waitframe(1);
             if (self.curprogress >= self.usetime) {
                 util::wait_network_frame();
-                return 1;
+                return true;
             }
         }
         timedout = timedout + float(function_60d95f53()) / 1000;
         hostmigration::waittillhostmigrationdone();
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -3514,11 +3514,11 @@ function function_924032a4() {
 // Size: 0x64
 function should_ping_object(relativeteam) {
     if (relativeteam == #"hash_150a20fa4efc5c7a" && self.objidpingfriendly) {
-        return 1;
+        return true;
     } else if (relativeteam == #"hash_33c49a99551acae7" && self.objidpingenemy) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -3794,7 +3794,7 @@ function make_solid() {
     self endon(#"death");
     self notify(#"changing_solidness");
     self endon(#"changing_solidness");
-    while (1) {
+    while (true) {
         for (i = 0; i < level.players.size; i++) {
             if (level.players[i] is_touching_trigger(self)) {
                 break;
@@ -3802,7 +3802,7 @@ function make_solid() {
         }
         if (i == level.players.size) {
             self solid();
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -3888,20 +3888,20 @@ function gameobject_is_player_looking_at(origin, dot, do_trace, ignore_ent, igno
         if (do_trace) {
             trace = bullettrace(eye, origin, 0, ignore_ent);
             if (trace[#"position"] == origin) {
-                return 1;
+                return true;
             } else if (isdefined(ignore_trace_distance)) {
                 n_mag = distance(origin, eye);
                 n_dist = distance(trace[#"position"], eye);
                 n_delta = abs(n_dist - n_mag);
                 if (n_delta <= ignore_trace_distance) {
-                    return 1;
+                    return true;
                 }
             }
         } else {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -4158,33 +4158,33 @@ function can_touch(sentient) {
     var_47a62b7b = isvehicle(sentient) || isplayer(sentient) && sentient isinvehicle() && !sentient function_a867284b();
     if (var_47a62b7b && !is_true(level.b_allow_vehicle_proximity_pickup) && !is_true(self.b_allow_vehicle_proximity_pickup)) {
         if (!isdefined(level.var_5daabc2f) || [[ level.var_5daabc2f ]](sentient) !== 1) {
-            return 0;
+            return false;
         }
     }
     if (isplayer(sentient)) {
         if (!function_dfec159b(sentient)) {
-            return 0;
+            return false;
         }
         if (is_true(self.var_d647eb08) && sentient isreloading()) {
-            return 0;
+            return false;
         }
     } else if (!isdefined(sentient.var_69d05189) || sentient.var_69d05189 == 0) {
-        return 0;
+        return false;
     }
     if (self is_excluded(sentient)) {
-        return 0;
+        return false;
     }
     if (isdefined(self.canuseobject) && ![[ self.canuseobject ]](sentient)) {
-        return 0;
+        return false;
     }
     if (self.triggertype === "use" && isdefined(sentient.var_121392a1) && sentient.var_121392a1.size > 0) {
         foreach (var_cd6ef3e2 in sentient.var_121392a1) {
             if (isdefined(var_cd6ef3e2.var_4f6b79a4) && (isdefined(var_cd6ef3e2.var_4f6b79a4.var_cb34970a) ? var_cd6ef3e2.var_4f6b79a4.var_cb34970a : 0)) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace gameobjects/gameobjects_shared

@@ -196,13 +196,13 @@ function on_objective_ekia() {
         switch (level.gametype) {
         case #"hash_35a6541d081acef5":
             player function_ccf82192(#"hash_2b23579cbf8999f4");
-            return;
+            break;
         case #"hash_594c4ab1d31aa150":
             player function_ccf82192(#"hash_7182bb77d8974488");
-            return;
+            break;
         case #"hash_5fd7317230bb0fac":
             player function_ccf82192(#"hash_501faf9b8da2fcc7");
-            return;
+            break;
         }
     }
 }
@@ -226,13 +226,13 @@ function on_damagedone(damagedone) {
             switch (level.gametype) {
             case #"hash_35a6541d081acef5":
                 player function_ccf82192(#"hash_41263195cd7fa7f");
-                return;
+                break;
             case #"hash_594c4ab1d31aa150":
                 player function_ccf82192(#"hash_5579ada75c110186");
-                return;
+                break;
             case #"hash_5fd7317230bb0fac":
                 player function_ccf82192(#"hash_693d0b4e9c956a4");
-                return;
+                break;
             }
         }
     }

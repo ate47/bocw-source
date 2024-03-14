@@ -295,7 +295,7 @@ function function_8175cdcb(localclientnum) {
     var_17b7891d = "5e3d1de3b7ce4390" + "ray_rifle_should_hide_vfx";
     self notify(var_17b7891d);
     self endon(var_17b7891d);
-    while (1) {
+    while (true) {
         if (!self function_f69ceea9(localclientnum) && !isdefined(self.var_a0d6f528) && !is_true(self.inspect_clip_out)) {
             waitframe(1);
             continue;
@@ -330,7 +330,7 @@ function function_b63cc0c6(*localclientnum) {
     var_17b7891d = "b45b4208f077951" + "ray_rifle_watch_inspect_clip_out_notetrack";
     self notify(var_17b7891d);
     self endon(var_17b7891d);
-    while (1) {
+    while (true) {
         self waittillmatch({#notetrack:"inspect_clip_out"}, #"notetrack");
         self.inspect_clip_out = 1;
     }
@@ -345,7 +345,7 @@ function function_acb526aa(*localclientnum) {
     var_17b7891d = "61acf9b6fb63642b" + "ray_rifle_watch_inspect_done_notetrack";
     self notify(var_17b7891d);
     self endon(var_17b7891d);
-    while (1) {
+    while (true) {
         self waittillmatch({#notetrack:"inspect_done"}, #"notetrack");
         self.inspect_clip_out = 0;
     }

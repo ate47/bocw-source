@@ -320,7 +320,7 @@ function private function_66afafad(attacker) {
         __s util::delay_notify(180, "timeout");
     }
     var_c8c520ef = 1;
-    while (1) {
+    while (true) {
         if (isplayer(attacker) && isvec(attacker.origin)) {
             v_loc = attacker.origin;
             a_spawns = namespace_85745671::function_e4791424(v_loc, 5, 80, 750, 350);
@@ -358,7 +358,7 @@ function private function_7914c7ef(var_85c920d0, *s_chest) {
     s_chest clientfield::set("sr_demented_echo_fx", 2);
     wait(0.5);
     s_chest ghost();
-    while (1) {
+    while (true) {
         level flag::set(#"hash_1681da514d47c415");
         if (!isdefined(s_chest.a_str_vo) || !s_chest.a_str_vo.size) {
             for (i = 0; i <= 9; i++) {
@@ -423,9 +423,9 @@ function private function_7914c7ef(var_85c920d0, *s_chest) {
 function function_bfd926b1() {
     if (level flag::get(#"hash_1681da514d47c415") && !self isplayerunderwater()) {
         self flag::set(#"hash_1f1e2c0dad1deebf");
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_5cc6d100/world_event_black_chest
@@ -441,7 +441,7 @@ function private function_aa89ee85(v_center, n_duration = 5, n_delay, a_ai, n_ra
         a_ai = arraysortclosest(a_ai, v_center, undefined, undefined, n_radius);
     }
     n_start_time = gettime();
-    while (1) {
+    while (true) {
         foreach (ai in a_ai) {
             if (isalive(ai)) {
                 ai clientfield::set("soul_capture_zombie_fire", 1);

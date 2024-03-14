@@ -231,10 +231,10 @@ function private function_69bc40d4(action) {
 function function_3bab44ea(action, fullbody, *var_a2ca14bc) {
     self endon(fullbody.ender);
     if (is_true(self.takedown.disabled)) {
-        return 0;
+        return false;
     }
     if (function_f8af9078(fullbody.name)) {
-        return 0;
+        return false;
     }
     if (isalive(self.takedown.victim[fullbody.name])) {
         victim = self.takedown.victim[fullbody.name];
@@ -246,10 +246,10 @@ function function_3bab44ea(action, fullbody, *var_a2ca14bc) {
             } else {
                 self thread function_7395fe24(fullbody, var_a2ca14bc, victim, scene);
             }
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_9c83b58d/namespace_9c83b58d
@@ -400,7 +400,7 @@ function function_e3bc3dc9(action) {
     if (isdefined(level.var_c8b4a78a.var_ac859813) && isdefined(level.var_c8b4a78a.var_ac859813[action.name])) {
         var_ac859813 = level.var_c8b4a78a.var_ac859813[action.name];
     }
-    while (1) {
+    while (true) {
         waitframe(1);
         if (isdefined(self.takedown.victim[action.name]) && self.takedown.allow_melee) {
             self function_db07e398(action.name, undefined);
@@ -500,7 +500,7 @@ function takedown_prompt_monitor(action, var_d426470, var_72612ea0) {
     self notify("takedown_prompt_monitor" + (isdefined(var_d426470) ? var_d426470 : "_") + (isdefined(var_72612ea0) ? var_72612ea0 : "_"));
     self endon("takedown_prompt_monitor" + (isdefined(var_d426470) ? var_d426470 : "_") + (isdefined(var_72612ea0) ? var_72612ea0 : "_"));
     self endon(action.ender);
-    while (1) {
+    while (true) {
         if (!isdefined(self.takedown.victim) || self.takedown.victim.size == 0 || is_true(self.var_fb9a2c03)) {
             self function_db07e398(action.name, undefined, self.var_fb9a2c03);
             return;
@@ -645,37 +645,37 @@ function function_be279d34(action, takedown, enemy) {
         assert(isdefined(takedown));
     #/
     if (isdefined(takedown.actions) && !is_true(takedown.actions[action.name])) {
-        return 0;
+        return false;
     }
     if ((isdefined(self.health) ? self.health : 0) <= 0) {
-        return 0;
+        return false;
     }
     if (self isthrowinggrenade()) {
-        return 0;
+        return false;
     }
     /#
         if (is_true(self.takedown.debug.var_e2adb106)) {
-            return 0;
+            return false;
         }
     #/
     dir = self function_146a3d56(enemy);
     dir_2d = vectornormalize((dir[0], dir[1], 0));
     if (vectordot(dir_2d, anglestoforward((0, self getplayerangles()[1], 0))) < 0.7) {
-        return 0;
+        return false;
     }
     if (!is_true(takedown.sprint) && self issprinting()) {
-        return 0;
+        return false;
     }
     if (!is_true(takedown.var_7b381548) && !self issprinting()) {
-        return 0;
+        return false;
     }
     if (!is_true(takedown.slide) && self issliding()) {
-        return 0;
+        return false;
     }
     if (!is_true(takedown.var_10f9a19c) && !self issliding()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_9c83b58d/namespace_9c83b58d
@@ -687,43 +687,43 @@ function function_c943b729(*action, takedown, player) {
         assert(isactor(self));
     #/
     if (!(isdefined(takedown) && isdefined(player))) {
-        return 0;
+        return false;
     }
     if (isentity(self.vehicle)) {
-        return 0;
+        return false;
     }
     distsqr = distancesquared(player.origin, self.origin);
     combat = self function_2ae12730(player);
     if (!is_true(takedown.combat) && combat) {
-        return 0;
+        return false;
     }
     if (!is_true(takedown.var_72a597df) && !combat) {
-        return 0;
+        return false;
     }
     if (isdefined(takedown.var_4c067ed7) && distsqr < takedown.var_4c067ed7) {
-        return 0;
+        return false;
     }
     if (isdefined(takedown.var_6465622a) && distsqr > takedown.var_6465622a) {
-        return 0;
+        return false;
     }
     switch (blackboard::getstructblackboardattribute(self, "_stance")) {
     case #"stand":
         if (!is_true(takedown.var_72970ce2)) {
-            return 0;
+            return false;
         }
         break;
     case #"crouch":
         if (!is_true(takedown.var_38190f69)) {
-            return 0;
+            return false;
         }
         break;
     case #"prone":
         if (!is_true(takedown.var_a1aba651)) {
-            return 0;
+            return false;
         }
         break;
     default:
-        return 0;
+        return false;
     }
     if (isdefined(takedown.var_ad61bf60) && isdefined(takedown.var_8f4fda5a)) {
         var_d96cb66d = anglestoright(self gettagangles("j_head")) * -1;
@@ -731,15 +731,15 @@ function function_c943b729(*action, takedown, player) {
         var_da1c47f = lerpvector(var_d96cb66d, var_a15c1f47, 0.5);
         worlddir = rotatepoint(takedown.var_ad61bf60, (0, function_2981bd91(var_da1c47f), 0));
         if (vectordot(worlddir, self.var_97e2c0da.var_fe50a481) < takedown.var_8f4fda5a) {
-            return 0;
+            return false;
         }
     }
     deltaz = self.origin[2] - player.origin[2];
     if (isdefined(takedown.minheight) && deltaz < takedown.minheight) {
-        return 0;
+        return false;
     }
     if (isdefined(takedown.maxheight) && deltaz > takedown.maxheight) {
-        return 0;
+        return false;
     }
     if (is_true(takedown.trace)) {
         zoffset = vectorscale((0, 0, 1), 24);
@@ -756,10 +756,10 @@ function function_c943b729(*action, takedown, player) {
                     line(start, end, (0.8, 0.25, 0.25), 1, 1, 1);
                 }
             #/
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_9c83b58d/namespace_9c83b58d
@@ -1007,7 +1007,7 @@ function function_7a061b23(enabled, action_name) {
 function function_f8af9078(action_name) {
     if (isdefined(action_name)) {
         if (!isdefined(self.takedown.var_9871533) || !isdefined(self.takedown.var_9871533[action_name])) {
-            return 1;
+            return true;
         }
         bitmask = 1 << self.takedown.var_9871533[action_name];
         return ((self.takedown.var_d4da26de & bitmask) == 0);
@@ -1248,7 +1248,7 @@ function function_2ae12730(player) {
         assert(isactor(self));
     #/
     if (is_true(player.takedown.var_42b3f9a9)) {
-        return 0;
+        return false;
     }
     return self.awarenesslevelcurrent == "combat";
 }
@@ -1267,7 +1267,7 @@ function private function_ac7d52ad(show) {
         }
         color = (1, 1, 0);
         var_36abd3 = vectorscale((1, 0, 0), 0.9);
-        while (1) {
+        while (true) {
             waitframe(1);
             corpses = [];
             if (isdefined(level.var_d3a7bebd)) {

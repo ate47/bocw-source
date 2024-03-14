@@ -155,9 +155,9 @@ function function_f71a8c71() {
 // Size: 0x7a
 function function_75460593(e_player) {
     if (!e_player flag::get(#"hash_467e4279ccacfd8a") && !e_player flag::get(#"hash_56cc1795fa5f8e21") && !zm_tungsten::function_1fd1da2b(0)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_60bf0cf2/namespace_60bf0cf2
@@ -166,7 +166,7 @@ function function_75460593(e_player) {
 // Size: 0x148
 function function_16dfcdea() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         e_player = waitresult.activator;
@@ -394,9 +394,9 @@ function function_4e808365() {
 function function_56d84(e_player) {
     if (zm_utility::is_player_valid(e_player) && e_player flag::get(#"hash_467e4279ccacfd8a")) {
         self sethintstringforplayer(e_player, #"hash_d8170fb913d4b5e");
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_60bf0cf2/namespace_60bf0cf2
@@ -449,9 +449,9 @@ function function_6d459f8c(var_a276c861) {
 function function_810ff42(e_player) {
     if (zm_utility::is_player_valid(e_player) && e_player flag::get(#"hash_56cc1795fa5f8e21")) {
         self sethintstringforplayer(e_player, #"hash_2ed4696a3a664b8b");
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_60bf0cf2/namespace_60bf0cf2
@@ -463,7 +463,7 @@ function function_a32f14f8() {
     var_e07849bb = struct::get_array("pizza_delivery_reward_loc");
     v_pos = self.origin;
     var_221a8c4b = var_e07849bb[0];
-    while (1) {
+    while (true) {
         s_notify = undefined;
         s_notify = self waittill(#"trigger_activated");
         e_activator = s_notify.e_who;
@@ -549,10 +549,10 @@ function function_a42c42c2() {
 function function_f23f302d() {
     foreach (player in getplayers()) {
         if (player.var_72249004 === 0) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_60bf0cf2/namespace_60bf0cf2
@@ -590,12 +590,12 @@ function cmd(var_acfb518f) {
             foreach (var_f271f008 in var_329d95fb) {
                 var_f271f008 thread function_b7549e2f(1);
             }
-            return;
+            break;
         case #"hash_37bd682457b237c8":
             foreach (var_f271f008 in var_329d95fb) {
                 var_f271f008 thread function_b7549e2f(0);
             }
-            return;
+            break;
         }
     #/
 }
@@ -610,7 +610,7 @@ function function_b7549e2f(state) {
         self endon("<unknown string>");
         self endon(#"death");
         if (state) {
-            while (1) {
+            while (true) {
                 circle(self.origin, 10, (0, 0, 1), 0, 0, 10);
                 wait(10 * float(function_60d95f53()) / 1000);
             }

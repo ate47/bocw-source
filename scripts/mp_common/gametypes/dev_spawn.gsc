@@ -86,7 +86,7 @@ function function_f084faed() {
 // Size: 0xce
 function function_3326cf8d() {
     /#
-        while (1) {
+        while (true) {
             var_14d21c2b = getdvarstring(#"scr_set_spawns");
             if (var_14d21c2b != "<unknown string>") {
                 function_f084faed();

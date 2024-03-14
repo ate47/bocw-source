@@ -119,7 +119,7 @@ function init() {
 function function_23f77d98() {
     self notify("5fdcef14ef431335");
     self endon("5fdcef14ef431335");
-    while (1) {
+    while (true) {
         allies = namespace_7f5aeb59::function_23e1f90f();
         zombies = getaiteamarray(#"axis");
         foreach (ally in allies) {
@@ -341,31 +341,31 @@ function function_17d3b57() {
 // Size: 0x14c
 function function_60f6a9e() {
     if (is_true(level.doa.var_1b8c7044)) {
-        return 0;
+        return false;
     }
     if (isdefined(level.hostmigrationtimer)) {
-        return 0;
+        return false;
     }
     var_b4c55c59 = namespace_ec06fe4a::function_fb4eb048(#"axis");
     if (isdefined(level.doa.var_39e3fa99) && namespace_4dae815d::function_59a9cf1d() == 0) {
         if (var_b4c55c59 >= [[ level.doa.var_39e3fa99 ]]->function_c892290a()) {
-            return 0;
+            return false;
         }
     }
     if (namespace_4dae815d::function_59a9cf1d() == 5) {
         if (var_b4c55c59 >= 40) {
-            return 0;
+            return false;
         }
     } else if (namespace_4dae815d::function_59a9cf1d() == 4) {
         if (var_b4c55c59 >= 40) {
-            return 0;
+            return false;
         }
     }
     var_1c446dd6 = namespace_ec06fe4a::function_38de0ce8();
     if (var_1c446dd6 >= 40) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_250e9486/namespace_250e9486
@@ -491,7 +491,7 @@ function function_472bf4() {
             return;
         }
         self endon(#"death");
-        while (1) {
+        while (true) {
             level thread debugline(self.origin, self.goalpos, 0.05, self haspath() ? (0, 1, 0) : (1, 0, 0));
             level thread function_b57a9d84(self.goalpos, 0, 20, 20, 20, 0.05, self isatgoal() ? (0, 1, 0) : (1, 0, 0));
             waitframe(1);
@@ -597,7 +597,7 @@ function function_e1f7a9a0(radius = 1024, baseorigin) {
     var_71110327 = baseorigin;
     points = function_710ec146(baseorigin, radius >> 1, 32, 30);
     self thread function_572e5496(radius, baseorigin);
-    while (1) {
+    while (true) {
         wait(1);
         time = gettime();
         self.var_4bd563dd = 0;
@@ -638,7 +638,7 @@ function function_572e5496(radius, baseorigin) {
     maxdistsq = function_a3f6cdac(maxdist);
     minhealth = int(self.maxhealth * 0.75);
     var_9b39fe40 = function_a3f6cdac(256);
-    while (1) {
+    while (true) {
         wait(1);
         distsq = distancesquared(self.origin, baseorigin);
         if (distsq >= maxdistsq) {
@@ -678,7 +678,7 @@ function function_a25f74a5() {
     wait(1);
     var_a465da0e = int(self.maxhealth * 0.01);
     latch = 0;
-    while (1) {
+    while (true) {
         if (!isdefined(self.enemy)) {
             if (latch == 0) {
                 latch = 1;
@@ -951,7 +951,7 @@ function function_9ee1ee56() {
     }
     center = [[ self.arena ]]->function_ffcf1d1();
     minz = center[2] - 1000;
-    while (1) {
+    while (true) {
         if (self.arena !== level.doa.var_39e3fa99) {
             namespace_1e25ad94::function_f5f0c0f8("Enemy " + (isdefined(self.aitype) ? self.aitype : self.classname) + " at (" + self.origin + ") was killed for not being in the active arena!", 1);
             self.takedamage = 1;
@@ -1001,7 +1001,7 @@ function function_89c95270() {
 function function_8971bbb7() {
     self endon(#"death");
     waitframe(1);
-    while (1) {
+    while (true) {
         if (self function_cf2c9af()) {
             self function_89c95270();
         }
@@ -1390,7 +1390,7 @@ function private function_16aba2a6() {
     while (level flag::get("doa_round_spawning")) {
         wait(1);
     }
-    while (1) {
+    while (true) {
         wait(randomintrange(1, 4));
         if (self.team != #"axis") {
             continue;
@@ -1525,27 +1525,27 @@ function getyaw(org) {
 // Size: 0x124
 function function_33f06519(behaviortreeentity) {
     if (!isdefined(behaviortreeentity.enemy)) {
-        return 0;
+        return false;
     }
     if (is_true(behaviortreeentity.enemy.ignoreme)) {
-        return 0;
+        return false;
     }
     if (is_true(behaviortreeentity.ignoreall)) {
-        return 0;
+        return false;
     }
     if (!isdefined(behaviortreeentity.meleedistsq)) {
-        return 0;
+        return false;
     }
     targetorigin = behaviortreeentity.enemy.origin;
     if (distance2dsquared(behaviortreeentity.origin, targetorigin) > behaviortreeentity.meleedistsq) {
-        return 0;
+        return false;
     }
     yaw = abs(getyawtoenemy());
     if (yaw > 45) {
         behaviortreeentity orientmode("face point", targetorigin);
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_250e9486/namespace_250e9486
@@ -1554,9 +1554,9 @@ function function_33f06519(behaviortreeentity) {
 // Size: 0x2e
 function function_b87b3fef(behaviortreeentity) {
     if (is_true(behaviortreeentity.tesla_death)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_250e9486/namespace_250e9486
@@ -1651,9 +1651,9 @@ function function_1f0241e(behaviortreeentity, asmstatename) {
 // Size: 0x40
 function function_6aac668f() {
     if (is_true(self.var_e5ad72a0) || is_true(self.var_1f2d0447)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_250e9486/namespace_250e9486
@@ -1662,12 +1662,12 @@ function function_6aac668f() {
 // Size: 0x3e
 function function_cf2c9af() {
     if (is_true(self.var_834ad023)) {
-        return 0;
+        return false;
     }
     if (self function_6aac668f()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_250e9486/namespace_250e9486
@@ -1724,10 +1724,10 @@ function function_4bc5ddbb(behaviortreeentity, *asmstatename) {
 // Size: 0x64
 function function_dbce9550(behaviortreeentity) {
     if (self function_6aac668f()) {
-        return 0;
+        return false;
     }
     if (self isatgoal()) {
-        return 0;
+        return false;
     }
     return behaviortreeentity.allowoffnavmesh || behaviortreeentity haspath();
 }
@@ -1753,7 +1753,7 @@ function function_32353f6e(entity) {
 // Checksum 0xde1181a7, Offset: 0x6ab8
 // Size: 0x10
 function private function_5c82fd66(*entity) {
-    return 1;
+    return true;
 }
 
 // Namespace namespace_250e9486/namespace_250e9486
@@ -2183,12 +2183,12 @@ function approximate_path_dist(player) {
 // Size: 0x4e
 function zombieshouldknockdown(behaviortreeentity) {
     if (!zombiehaslegs(behaviortreeentity)) {
-        return 0;
+        return false;
     }
     if (is_true(behaviortreeentity.knockdown)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_250e9486/namespace_250e9486
@@ -2197,9 +2197,9 @@ function zombieshouldknockdown(behaviortreeentity) {
 // Size: 0x28
 function zombiehaslegs(entity) {
     if (entity.missinglegs === 1) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_250e9486/namespace_250e9486
@@ -2300,16 +2300,16 @@ function setup_zombie_knockdown(var_5f02306b, var_43b3242) {
 // Size: 0x1b0
 function function_3d752709(enemy, var_bd97c6ae) {
     if (!isdefined(enemy) || !isdefined(var_bd97c6ae)) {
-        return 0;
+        return false;
     }
     if (is_true(enemy.knockdown) || is_true(enemy.var_6edab899)) {
-        return 0;
+        return false;
     }
     if (gibserverutils::isgibbed(enemy, 384)) {
-        return 0;
+        return false;
     }
     if (distancesquared(enemy.origin, var_bd97c6ae.origin) > function_a3f6cdac(60)) {
-        return 0;
+        return false;
     }
     facingvec = anglestoforward(var_bd97c6ae.angles);
     enemyvec = enemy.origin - var_bd97c6ae.origin;
@@ -2319,9 +2319,9 @@ function function_3d752709(enemy, var_bd97c6ae) {
     var_c2ee8451 = vectornormalize(var_c2ee8451);
     var_34e02165 = vectordot(var_c2ee8451, var_3e3c8075);
     if (var_34e02165 < 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_250e9486/namespace_250e9486

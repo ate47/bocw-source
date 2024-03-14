@@ -763,9 +763,9 @@ function private initzmbehaviorsandasm() {
 // Size: 0xba
 function function_cbb1e2bb(entity) {
     if (!is_true(self.missinglegs) || !gibserverutils::isgibbed(entity, 128) && !gibserverutils::isgibbed(entity, 256) || !isdefined(self.var_177172b0) || gettime() - self.var_177172b0 < int(0.2 * 1000)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -774,19 +774,19 @@ function function_cbb1e2bb(entity) {
 // Size: 0x106
 function function_d8b225ae(entity) {
     if (!isdefined(entity.attackable)) {
-        return 0;
+        return false;
     }
     if (isdefined(entity.var_8a3828c6)) {
-        return 0;
+        return false;
     }
     radius = entity.goalradius;
     if (is_true(entity.allowoffnavmesh)) {
         radius = 16;
     }
     if (isdefined(entity.var_b238ef38) && distance2dsquared(entity.origin, entity.var_b238ef38.position) < function_a3f6cdac(radius) && abs(entity.origin[2] - entity.var_b238ef38.position[2]) < 50) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -798,21 +798,21 @@ function function_4180f67(entity) {
     entity.var_b719e78 = 1;
     if (is_true(entity.var_4c85ebad)) {
         entity.var_2d78e306 = 1;
-        return 1;
+        return true;
     }
     if (isdefined(entity.enemy_override)) {
         entity.var_b719e78 = 0;
-        return 1;
+        return true;
     }
     if (function_d8b225ae(entity)) {
         entity.var_2d78e306 = 1;
-        return 1;
+        return true;
     }
     if (is_true(entity.ignoremelee)) {
         entity.var_b719e78 = 0;
-        return 1;
+        return true;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -824,11 +824,11 @@ function function_754be649(entity) {
     entity.var_d1bb0ad = 1;
     if (!isdefined(entity.enemy)) {
         entity.var_d1bb0ad = 0;
-        return 1;
+        return true;
     }
     if (!namespace_85745671::is_player_valid(entity.enemy) && !namespace_85745671::function_1b9ed9b0(entity.enemy) && !namespace_85745671::function_65e1fbbe(entity.enemy) && entity.team === level.zombie_team) {
         entity.var_d1bb0ad = 0;
-        return 1;
+        return true;
     }
     entity.meleedistsq = zombiebehavior::function_997f1224(entity);
     entity.var_5a81324d = undefined;
@@ -852,9 +852,9 @@ function function_754be649(entity) {
     }
     if (is_true(self.isonnavmesh) && !tracepassedonnavmesh(entity.origin, isdefined(entity.enemy.last_valid_position) ? entity.enemy.last_valid_position : entity.enemy.origin, entity.enemy getpathfindingradius())) {
         entity.var_d1bb0ad = 0;
-        return 1;
+        return true;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -866,57 +866,57 @@ function function_fae6123(entity) {
     entity.var_e8e74caf = 1;
     if (isdefined(entity.zombie_poi)) {
         entity.var_e8e74caf = 0;
-        return 1;
+        return true;
     }
     if (isdefined(entity.enemy_override)) {
         entity.var_e8e74caf = 0;
-        return 1;
+        return true;
     }
     if (isdefined(entity.var_b3538985) && isdefined(entity.enemy)) {
         if (abs(entity.origin[2] - entity.var_b3538985[2]) > (isdefined(entity.var_737e8510) ? entity.var_737e8510 : 64)) {
             entity.var_e8e74caf = 0;
-            return 1;
+            return true;
         }
         if (distancesquared(entity.origin, entity.var_b3538985) > entity.meleedistsq) {
             entity.var_e8e74caf = 0;
-            return 1;
+            return true;
         }
         yawtoenemy = angleclamp180(entity.angles[1] - vectortoangles(entity.enemy.origin - entity.origin)[1]);
         if (abs(yawtoenemy) > (isdefined(entity.var_1c0eb62a) ? entity.var_1c0eb62a : 60)) {
             entity.var_e8e74caf = 0;
-            return 1;
+            return true;
         }
         if (isdefined(entity.var_5a81324d)) {
             if (isplayer(entity.enemy) && entity.enemy getvehicleoccupied() === entity.var_5a81324d && !entity namespace_85745671::function_98e73b11(entity.var_5a81324d)) {
                 entity.var_e8e74caf = 0;
-                return 1;
+                return true;
             }
         }
         if (distancesquared(entity.origin, entity.var_b3538985) < function_a3f6cdac(40) && (!isplayer(entity.enemy) || !entity.enemy.ignoreme && !entity.enemy isnotarget())) {
             entity.var_2fe49a8a = 1;
-            return 1;
+            return true;
         }
         if (!isplayer(entity.enemy) || entity.enemy getstance() != #"prone") {
             if (!entity cansee(isdefined(entity.var_5a81324d) ? entity.var_5a81324d : entity.enemy)) {
                 entity.var_e8e74caf = 0;
-                return 1;
+                return true;
             }
         }
         if (isdefined(entity.var_5a81324d)) {
             if (entity namespace_85745671::function_98e73b11(entity.var_5a81324d)) {
                 entity.var_2fe49a8a = 1;
             }
-            return 1;
+            return true;
         }
     } else {
         entity.var_e8e74caf = 0;
-        return 1;
+        return true;
     }
     if (is_true(entity.var_1fa24724)) {
         entity.var_e8e74caf = 0;
-        return 1;
+        return true;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -925,14 +925,14 @@ function function_fae6123(entity) {
 // Size: 0x10e
 function function_691fecba(entity) {
     if (entity function_dd070839()) {
-        return 0;
+        return false;
     }
     if (is_true(entity.var_b719e78) && is_true(entity.var_d1bb0ad) && is_true(entity.var_e8e74caf) || is_true(entity.var_2d78e306) || is_true(entity.var_85cea06c) || is_true(entity.var_2fe49a8a)) {
         entity.idletime = gettime();
         entity.var_1b250399 = entity.origin;
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1497,12 +1497,12 @@ function zombieenteredplayable(behaviortreeentity) {
 // Size: 0x4e
 function shouldmovecondition(behaviortreeentity) {
     if (behaviortreeentity haspath()) {
-        return 1;
+        return true;
     }
     if (is_true(behaviortreeentity.keep_moving)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1519,9 +1519,9 @@ function zombieshouldmoveawaycondition(*behaviortreeentity) {
 // Size: 0x2e
 function waskilledbyteslacondition(behaviortreeentity) {
     if (is_true(behaviortreeentity.tesla_death)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1530,9 +1530,9 @@ function waskilledbyteslacondition(behaviortreeentity) {
 // Size: 0x2e
 function function_a00b473a(behaviortreeentity) {
     if (is_true(behaviortreeentity.var_49fdad6a)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1541,9 +1541,9 @@ function function_a00b473a(behaviortreeentity) {
 // Size: 0x2e
 function function_8396494f(behaviortreeentity) {
     if (is_true(behaviortreeentity.var_ebd66e27)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1628,9 +1628,9 @@ function zombiemoveaway(behaviortreeentity, asmstatename) {
 // Size: 0x2e
 function zombieisbeinggrappled(behaviortreeentity) {
     if (is_true(behaviortreeentity.grapple_is_fatal)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1639,9 +1639,9 @@ function zombieisbeinggrappled(behaviortreeentity) {
 // Size: 0x2e
 function zombieshouldknockdown(behaviortreeentity) {
     if (is_true(behaviortreeentity.knockdown)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1658,9 +1658,9 @@ function function_6a690c50(behaviortreeentity) {
 // Size: 0x2e
 function zombieispushed(behaviortreeentity) {
     if (is_true(behaviortreeentity.pushed)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1669,9 +1669,9 @@ function zombieispushed(behaviortreeentity) {
 // Size: 0x2e
 function function_22d21726(behaviortreeentity) {
     if (is_true(behaviortreeentity.var_687de2a9)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1685,7 +1685,7 @@ function function_7531db00(behaviortreeentity) {
     behaviortreeentity pushplayer(1);
     behaviortreeentity callback::callback(#"hash_1518febf00439d5");
     behaviortreeentity setforcenocull();
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1704,7 +1704,7 @@ function function_1329e086(behaviortreeentity) {
         behaviortreeentity.var_9ed3cc11 = undefined;
     }
     behaviortreeentity callback::callback(#"hash_34b65342cbfdadac");
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1777,9 +1777,9 @@ function private function_6560f92b(behaviortreeentity) {
 // Size: 0x52
 function zombieshouldstun(behaviortreeentity) {
     if (behaviortreeentity ai::is_stunned() && !is_true(behaviortreeentity.tesla_death)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1877,9 +1877,9 @@ function zombietraverseactionterminate(behaviortreeentity, asmstatename) {
 // Size: 0x2e
 function zombiegottoentrancecondition(behaviortreeentity) {
     if (is_true(behaviortreeentity.got_to_entrance)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1888,9 +1888,9 @@ function zombiegottoentrancecondition(behaviortreeentity) {
 // Size: 0x2e
 function zombiegottoattackspotcondition(behaviortreeentity) {
     if (is_true(behaviortreeentity.at_entrance_tear_spot)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1899,9 +1899,9 @@ function zombiegottoattackspotcondition(behaviortreeentity) {
 // Size: 0x38
 function zombiehasattackspotalreadycondition(behaviortreeentity) {
     if (isdefined(behaviortreeentity.attacking_spot_index) && behaviortreeentity.attacking_spot_index >= 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1913,12 +1913,12 @@ function zombieshouldtearcondition(behaviortreeentity) {
         if (isdefined(behaviortreeentity.first_node.zbarrier)) {
             if (isdefined(behaviortreeentity.first_node.barrier_chunks)) {
                 if (!zm_utility::all_chunks_destroyed(behaviortreeentity.first_node, behaviortreeentity.first_node.barrier_chunks)) {
-                    return 1;
+                    return true;
                 }
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1927,7 +1927,7 @@ function zombieshouldtearcondition(behaviortreeentity) {
 // Size: 0x282
 function zombieshouldattackthroughboardscondition(behaviortreeentity) {
     if (is_true(behaviortreeentity.missinglegs)) {
-        return 0;
+        return false;
     }
     if (isdefined(behaviortreeentity.first_node.zbarrier)) {
         if (!behaviortreeentity.first_node.zbarrier zbarriersupportszombiereachthroughattacks()) {
@@ -1936,7 +1936,7 @@ function zombieshouldattackthroughboardscondition(behaviortreeentity) {
                 chunks = zm_utility::get_non_destroyed_chunks(behaviortreeentity.first_node, behaviortreeentity.first_node.barrier_chunks);
             }
             if (isdefined(chunks) && chunks.size > 0) {
-                return 0;
+                return false;
             }
         }
     }
@@ -1954,9 +1954,9 @@ function zombieshouldattackthroughboardscondition(behaviortreeentity) {
         }
     }
     if (!attack || freq < randomint(100)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1965,22 +1965,22 @@ function zombieshouldattackthroughboardscondition(behaviortreeentity) {
 // Size: 0x110
 function zombieshouldtauntcondition(behaviortreeentity) {
     if (is_true(behaviortreeentity.missinglegs)) {
-        return 0;
+        return false;
     }
     if (!isdefined(behaviortreeentity.first_node.zbarrier)) {
-        return 0;
+        return false;
     }
     if (!behaviortreeentity.first_node.zbarrier zbarriersupportszombietaunts()) {
-        return 0;
+        return false;
     }
     if (getdvarstring(#"zombie_taunt_freq") == "") {
         setdvar(#"zombie_taunt_freq", 5);
     }
     freq = getdvarint(#"zombie_taunt_freq", 0);
     if (freq >= randomint(100)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1991,11 +1991,11 @@ function zombieshouldenterplayablecondition(behaviortreeentity) {
     if (isdefined(behaviortreeentity.first_node) && isdefined(behaviortreeentity.first_node.barrier_chunks)) {
         if (zm_utility::all_chunks_destroyed(behaviortreeentity.first_node, behaviortreeentity.first_node.barrier_chunks)) {
             if ((!isdefined(behaviortreeentity.attacking_spot) || is_true(behaviortreeentity.at_entrance_tear_spot)) && !is_true(behaviortreeentity.completed_emerging_into_playable_area)) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2004,9 +2004,9 @@ function zombieshouldenterplayablecondition(behaviortreeentity) {
 // Size: 0x24
 function ischunkvalidcondition(behaviortreeentity) {
     if (isdefined(behaviortreeentity.chunk)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2015,9 +2015,9 @@ function ischunkvalidcondition(behaviortreeentity) {
 // Size: 0x2e
 function inplayablearea(behaviortreeentity) {
     if (is_true(behaviortreeentity.completed_emerging_into_playable_area)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2026,9 +2026,9 @@ function inplayablearea(behaviortreeentity) {
 // Size: 0x36
 function shouldskipteardown(behaviortreeentity) {
     if (behaviortreeentity zm_spawner::should_skip_teardown(behaviortreeentity.find_flesh_struct_string)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2038,13 +2038,13 @@ function shouldskipteardown(behaviortreeentity) {
 function zombieisthinkdone(behaviortreeentity) {
     /#
         if (is_true(behaviortreeentity.is_rat_test)) {
-            return 0;
+            return false;
         }
     #/
     if (is_true(behaviortreeentity.zombie_think_done)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2084,16 +2084,16 @@ function zombieisatentrance(behaviortreeentity) {
 // Size: 0x8a
 function function_4c12882b(behaviortreeentity) {
     if (!is_true(behaviortreeentity.got_to_entrance)) {
-        return 0;
+        return false;
     }
     if (isdefined(behaviortreeentity.first_node)) {
-        return 1;
+        return true;
     }
     node = behaviortreeentity.var_a5add0c0;
     if (isdefined(node.var_597f08bf) && node.var_597f08bf.targetname === "barricade_window") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2109,7 +2109,7 @@ function function_b86a1b9d(behaviortreeentity) {
                     record3dtext("<unknown string>" + barricade.zbarrier getentnum(), behaviortreeentity.origin, (1, 0.5, 0), "<unknown string>", behaviortreeentity);
                 }
             #/
-            return 1;
+            return true;
         }
         /#
             if (getdvarint(#"hash_2f078c2224f40586", 0) && isdefined(barricade.zbarrier)) {
@@ -2117,7 +2117,7 @@ function function_b86a1b9d(behaviortreeentity) {
             }
         #/
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2178,11 +2178,11 @@ function updatechunkservice(behaviortreeentity) {
 // Size: 0xf2
 function updateattackspotservice(behaviortreeentity) {
     if (is_true(behaviortreeentity.marked_for_death) || behaviortreeentity.health < 0) {
-        return 0;
+        return false;
     }
     if (!isdefined(behaviortreeentity.attacking_spot)) {
         if (!isdefined(behaviortreeentity.first_node) || !behaviortreeentity zm_spawner::get_attack_spot(behaviortreeentity.first_node)) {
-            return 0;
+            return false;
         }
     }
     if (isdefined(behaviortreeentity.attacking_spot)) {
@@ -2191,9 +2191,9 @@ function updateattackspotservice(behaviortreeentity) {
         if (zombieisatgoal(behaviortreeentity)) {
             behaviortreeentity.at_entrance_tear_spot = 1;
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2251,9 +2251,9 @@ function function_92d348e2(behaviortreeentity) {
     if (isdefined(node.var_597f08bf)) {
         barricade = node.var_597f08bf;
         barricade notify(#"hash_5cfbbb6ee8378665");
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2326,7 +2326,7 @@ function zombiemovetoattackspotaction(behaviortreeentity, asmstatename) {
 // Size: 0x1a
 function function_6eb4f847(behaviortreeentity) {
     behaviortreeentity.at_entrance_tear_spot = 0;
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2344,7 +2344,7 @@ function zombiemovetoattackspotactionterminate(behaviortreeentity, *asmstatename
 // Size: 0x1e
 function function_547701ae(behaviortreeentity) {
     behaviortreeentity.at_entrance_tear_spot = 1;
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2367,7 +2367,7 @@ function function_f83905d5(behaviortreeentity) {
     aiutility::keepclaimnode(behaviortreeentity);
     behaviortreeentity setblackboardattribute("_which_board_pull", int(behaviortreeentity.chunk));
     behaviortreeentity setblackboardattribute("_board_attack_spot", float(behaviortreeentity.attacking_spot_index));
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2387,7 +2387,7 @@ function function_7d0a2e12(behaviortreeentity) {
     aiutility::keepclaimnode(behaviortreeentity);
     behaviortreeentity setblackboardattribute("_which_board_pull", int(behaviortreeentity.chunk));
     behaviortreeentity setblackboardattribute("_board_attack_spot", float(behaviortreeentity.attacking_spot_index));
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2411,7 +2411,7 @@ function function_66a8aef2(behaviortreeentity) {
     behaviortreeentity pathmode("dont move");
     behaviortreeentity setblackboardattribute("_which_board_pull", int(behaviortreeentity.chunk));
     behaviortreeentity setblackboardattribute("_board_attack_spot", float(behaviortreeentity.attacking_spot_index));
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2429,7 +2429,7 @@ function zombiegrabboardactionterminate(behaviortreeentity, *asmstatename) {
 // Size: 0x28
 function function_16251b30(behaviortreeentity) {
     aiutility::releaseclaimnode(behaviortreeentity);
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2452,7 +2452,7 @@ function function_aa76355a(behaviortreeentity) {
     aiutility::keepclaimnode(behaviortreeentity);
     behaviortreeentity setblackboardattribute("_which_board_pull", int(behaviortreeentity.chunk));
     behaviortreeentity setblackboardattribute("_board_attack_spot", float(behaviortreeentity.attacking_spot_index));
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2471,7 +2471,7 @@ function zombiepullboardactionterminate(behaviortreeentity, *asmstatename) {
 function function_76d619c8(behaviortreeentity) {
     aiutility::releaseclaimnode(behaviortreeentity);
     self.lastchunk_destroy_time = gettime();
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2514,7 +2514,7 @@ function function_a26fcba() {
 // Size: 0x1e
 function function_a5a66d65(behaviortreeentity) {
     behaviortreeentity.var_348e5e19 = 1;
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2534,7 +2534,7 @@ function zombieattackthroughboardsaction(behaviortreeentity, asmstatename) {
 function function_ebba4d65(behaviortreeentity) {
     aiutility::keepclaimnode(behaviortreeentity);
     behaviortreeentity.boardattack = 1;
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2553,7 +2553,7 @@ function zombieattackthroughboardsactionterminate(behaviortreeentity, *asmstaten
 function function_28b47cc8(behaviortreeentity) {
     aiutility::releaseclaimnode(behaviortreeentity);
     behaviortreeentity.boardattack = 0;
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2572,7 +2572,7 @@ function zombietauntaction(behaviortreeentity, asmstatename) {
 // Size: 0x28
 function function_eb270aac(behaviortreeentity) {
     aiutility::keepclaimnode(behaviortreeentity);
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2590,7 +2590,7 @@ function zombietauntactionterminate(behaviortreeentity, *asmstatename) {
 // Size: 0x28
 function function_ba06c8a0(behaviortreeentity) {
     aiutility::releaseclaimnode(behaviortreeentity);
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2916,9 +2916,9 @@ function zombieblackholebombpullend(entity, *asmstatename) {
 // Size: 0x72
 function zombiekilledwhilegettingpulled(entity) {
     if (!is_true(self.missinglegs) && is_true(entity.interdimensional_gun_kill) && !is_true(entity._black_hole_bomb_collapse_death)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2927,9 +2927,9 @@ function zombiekilledwhilegettingpulled(entity) {
 // Size: 0x2e
 function zombiekilledbyblackholebombcondition(entity) {
     if (is_true(entity._black_hole_bomb_collapse_death)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2938,9 +2938,9 @@ function zombiekilledbyblackholebombcondition(entity) {
 // Size: 0x2e
 function function_38fec26f(entity) {
     if (is_true(entity.freezegun_death)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2957,14 +2957,14 @@ function function_e4d7303f(entity) {
 // Size: 0xd2
 function function_17cd1b17(behaviortreeentity) {
     if (!isdefined(behaviortreeentity.enemy)) {
-        return 0;
+        return false;
     }
     meleedistsq = 4096;
     if (isdefined(behaviortreeentity.meleeweapon) && behaviortreeentity.meleeweapon !== level.weaponnone) {
         meleedistsq = behaviortreeentity.meleeweapon.aimeleerange * behaviortreeentity.meleeweapon.aimeleerange;
     }
     if (distancesquared(behaviortreeentity.origin, behaviortreeentity.enemy.origin) > meleedistsq) {
-        return 0;
+        return false;
     }
     return isdefined(behaviortreeentity.melee_cooldown) && gettime() < behaviortreeentity.melee_cooldown;
 }
@@ -3251,7 +3251,7 @@ function function_92dcde87(start_pos, end_pos, velocity, var_781a6f9a, enemy) {
         tmidnear = tapex * 0.5;
         tdiscriminant = tapex * tapex + 2 * (start_pos[2] - end_pos[2]) / gravity;
         if (tdiscriminant <= 0) {
-            return 0;
+            return false;
         }
         var_3ebd279c = 0.5 * sqrt(tdiscriminant);
     } else {
@@ -3259,7 +3259,7 @@ function function_92dcde87(start_pos, end_pos, velocity, var_781a6f9a, enemy) {
         tmidnear = 0;
         tdiscriminant = velocity[2] * velocity[2] + 2 * (start_pos[2] - end_pos[2]) * gravity;
         if (tdiscriminant <= 0) {
-            return 0;
+            return false;
         }
         var_3ebd279c = 0.5 * (velocity[2] + sqrt(tdiscriminant)) / gravity;
     }
@@ -3309,13 +3309,13 @@ function function_92dcde87(start_pos, end_pos, velocity, var_781a6f9a, enemy) {
     }
     for (i = 0; i < points.size - 1; i++) {
         if (isdefined(self.var_f7c8ccf5) && ![[ self.var_f7c8ccf5 ]](self, points[i], points[i + 1])) {
-            return 0;
+            return false;
         }
         if (!bullettracepassed(points[i], points[i + 1], 0, self, player_vehicle)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -3330,8 +3330,8 @@ function function_4a99b560(entity, enemy) {
                 target_pos = enemy gettagorigin("<unknown string>");
                 to_target = target_pos - start_pos;
                 if (to_target === (0, 0, 0)) {
-                    record3dtext("<unknown string>", entity.origin, 0 ? (0, 1, 0) : (1, 0, 0), "<unknown string>", entity);
-                    return 0;
+                    record3dtext("<unknown string>", entity.origin, false ? (0, 1, 0) : (1, 0, 0), "<unknown string>", entity);
+                    return false;
                 }
                 time = max(length((to_target[0], to_target[1], 0)) / 700, 0.1);
                 var_813d38fa = (0.5 * getdvarfloat(#"bg_lowgravity", 400) * function_a3f6cdac(time) + to_target[2]) / time;
@@ -3349,13 +3349,13 @@ function function_4a99b560(entity, enemy) {
         }
     #/
     if (!isdefined(enemy.var_f904e440)) {
-        return 0;
+        return false;
     }
     start_pos = entity.origin + (0, 0, entity function_6a9ae71());
     target_pos = enemy.origin + vectorscale((0, 0, 1), 46);
     to_target = target_pos - start_pos;
     if (to_target === (0, 0, 0)) {
-        return 0;
+        return false;
     }
     time = max(length((to_target[0], to_target[1], 0)) / 700, 0.1);
     var_64b12059 = enemy namespace_98decc78::function_be5f206(start_pos, target_pos, time);
@@ -3366,9 +3366,9 @@ function function_4a99b560(entity, enemy) {
     var_813d38fa = (0.5 * getdvarfloat(#"bg_lowgravity", 400) * function_a3f6cdac(time) + to_target[2]) / time;
     to_target = vectornormalize((to_target[0], to_target[1], 0)) * 700;
     if (zm_utility::is_survival() && isdefined(entity.current_state) && entity.current_state.name !== #"chase" || zm_utility::is_survival() && distance2dsquared(entity.origin, enemy.origin) <= function_a3f6cdac(100) || !isinarray(enemy.var_f904e440, entity) || !entity function_92dcde87(start_pos, target_pos, (to_target[0], to_target[1], var_813d38fa), time, enemy)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -3531,21 +3531,21 @@ function function_35228e0b(entity) {
 // Size: 0x17e
 function function_ed33f941(entity) {
     if (isdefined(entity.zombie_poi) || isdefined(entity.enemy_override)) {
-        return 0;
+        return false;
     }
     if (!isdefined(entity.var_b3538985) || !isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     if (abs(entity.origin[2] - entity.var_b3538985[2]) > (isdefined(entity.var_737e8510) ? entity.var_737e8510 : 64)) {
-        return 0;
+        return false;
     }
     if (distancesquared(entity.origin, entity.var_b3538985) > entity.meleedistsq) {
-        return 0;
+        return false;
     }
     yawtoenemy = angleclamp180(entity.angles[1] - vectortoangles(entity.enemy.origin - entity.origin)[1]);
     if (abs(yawtoenemy) > (isdefined(entity.var_1c0eb62a) ? entity.var_1c0eb62a : 60)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 

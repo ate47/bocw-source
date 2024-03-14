@@ -59,7 +59,7 @@ function on_player_connect() {
                 level.var_31028c5d prototype_hud::set_active_objective_string(self, var_441061cd);
                 level.var_31028c5d prototype_hud::function_817e4d10(self, 2);
                 level.var_31028c5d prototype_hud::function_1b05e380(self, 0);
-                return;
+                break;
             }
         }
     }
@@ -746,12 +746,12 @@ function private function_5c98edf1(var_7f440703, var_8861fa85) {
         if (isarray(player.var_e453e8a5[var_7f440703]) && player.var_e453e8a5[var_7f440703].size) {
             foreach (n_obj_id in var_8861fa85) {
                 if (isinarray(player.var_e453e8a5[var_7f440703], n_obj_id)) {
-                    return 1;
+                    return true;
                 }
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_sq/zm_sq
@@ -1071,7 +1071,7 @@ function devgui_think() {
     /#
         self notify(#"hash_6d8b1a4c632ecc9");
         self endon(#"hash_6d8b1a4c632ecc9");
-        while (1) {
+        while (true) {
             wait(1);
             cmd = getdvarstring(#"hash_319d902ea18eb39");
             setdvar(#"hash_319d902ea18eb39", "<unknown string>");
@@ -1244,7 +1244,7 @@ function function_c1d3567c() {
 function function_9bee49bf() {
     /#
         level endon(#"hash_21c0567b0010f696");
-        while (1) {
+        while (true) {
             waitframe(1);
             foreach (ee in level._ee) {
                 ee.debug_hudelem.color = function_1091b2a0(ee);

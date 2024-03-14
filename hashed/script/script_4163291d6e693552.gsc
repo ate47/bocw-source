@@ -49,9 +49,9 @@ function function_df911075() {
 // Size: 0xa2
 function function_82e262cf(var_7ecdee63) {
     if (var_7ecdee63 === #"spawner_bo5_avogadro_sr" || var_7ecdee63 === #"spawner_bo5_mechz_sr" || var_7ecdee63 === #"spawner_bo5_mimic" || var_7ecdee63 === #"hash_4f87aa2a203d37d0" || var_7ecdee63 === #"spawner_zm_steiner" || var_7ecdee63 === #"spawner_bo5_abom") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_7589cf5c/namespace_7589cf5c
@@ -183,7 +183,7 @@ function function_ac709d66(instance, str_alias) {
 function function_64719f04(instance) {
     instance endon(#"objective_ended");
     var_d951c76b = 0;
-    while (1) {
+    while (true) {
         foreach (player in getplayers()) {
             if (isalive(player)) {
                 if (zm_vo::is_player_speaking(player) || zm_vo::function_c10c4064(player)) {
@@ -192,7 +192,7 @@ function function_64719f04(instance) {
             }
         }
         if (!var_d951c76b) {
-            return;
+            break;
         }
         var_d951c76b = 0;
         wait(0.1);
@@ -238,7 +238,7 @@ function function_98da2ed1(str_alias) {
     self notify("1ce2aed8c9f03373");
     self endon("1ce2aed8c9f03373");
     level flag::wait_till("all_players_spawned");
-    while (1) {
+    while (true) {
         foreach (player in getplayers()) {
             if (distancesquared(player.origin, self.origin) < function_a3f6cdac(1700)) {
                 level thread zm_vo::function_7622cb70(str_alias);
@@ -335,7 +335,7 @@ function function_df51a2e8(*var_5314bd63, *nd_path_start, *var_384528, str_notif
 // Size: 0xe8
 function function_8eafd734() {
     self endon(#"death");
-    while (1) {
+    while (true) {
         s_result = undefined;
         s_result = self waittill(#"damage");
         if (isplayer(s_result.attacker) && isalive(s_result.attacker)) {

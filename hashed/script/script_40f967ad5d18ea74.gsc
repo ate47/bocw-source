@@ -342,7 +342,7 @@ class class_c4926dee {
                 wait(1);
             }
         }
-        while (1) {
+        while (true) {
             if (!isalive()) {
                 return;
             }
@@ -466,7 +466,7 @@ class class_c4926dee {
     // Size: 0x108
     function function_7dff7809(generator, *interval, var_f0fd371f = 300) {
         self endon(#"death");
-        while (1) {
+        while (true) {
             wait(1);
             if ([[ interval ]]->isactive()) {
                 continue;
@@ -691,26 +691,26 @@ class class_c4926dee {
     function function_d8b78bb3() {
         if (isdefined(level.doa.var_182fb75a)) {
             if (function_30a0163e()) {
-                return 1;
+                return true;
             } else {
                 return (isdefined(level.doa.var_6f3d327) && function_bbdb303e());
             }
         }
         if (isdefined(level.doa.var_6f3d327)) {
             if (function_bbdb303e()) {
-                return 1;
+                return true;
             } else {
-                return 0;
+                return false;
             }
         }
         if (isdefined(level.doa.var_a77e6349)) {
             if (function_e55669e8()) {
-                return 1;
+                return true;
             } else {
-                return 0;
+                return false;
             }
         }
-        return 1;
+        return true;
     }
 
     // Namespace namespace_c4926dee/namespace_c85a46fe
@@ -844,7 +844,7 @@ function function_5db81c1c() {
     self notify("5065c960434bfd9d");
     self endon("5065c960434bfd9d");
     level endon(#"game_over");
-    while (1) {
+    while (true) {
         util::wait_network_frame();
         while (level.doa.var_c3219b45.size) {
             model = level.doa.var_c3219b45[0];

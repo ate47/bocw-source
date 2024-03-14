@@ -67,9 +67,9 @@ function function_43a7bead() {
 function function_59396fe8(squad) {
     var_74578e76 = function_c65231e2(squad);
     if (var_74578e76.size > 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace squads/squads
@@ -136,19 +136,19 @@ function function_46edfa55(var_74578e76) {
 function function_a65e2082(squad) {
     var_74578e76 = function_c65231e2(squad);
     if (var_74578e76.size >= level.var_704bcca1) {
-        return 0;
+        return false;
     }
     if (var_74578e76.size > 0) {
         if (var_74578e76[0].team != self.team) {
-            return 0;
+            return false;
         }
     }
     var_fa810454 = function_46edfa55(var_74578e76);
     party = self getparty();
     if (party.var_a15e4438 > var_fa810454) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace squads/squads
@@ -190,9 +190,9 @@ function function_33843308(status) {
 // Size: 0x50
 function function_b0c92599(party) {
     if (isdefined(level.var_7d3ed2bf) && level.var_7d3ed2bf && isdefined(party) && party.fill == 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace squads/squads
@@ -317,10 +317,10 @@ function function_ff3321ee(var_bdb3f6a6) {
 function private function_e249c6ae(var_58d1e914, index) {
     foreach (player in var_58d1e914) {
         if (player.teammateindex == index) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace squads/squads

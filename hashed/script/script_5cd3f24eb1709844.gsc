@@ -52,7 +52,7 @@ function function_63dce83f(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_dffa7aba = util::spawn_model(fieldname, "tag_origin", self.origin, self.angles);
         self.var_dffa7aba playsound(fieldname, "mpl_ultimate_turret_lockon_enemy");
         self callback::add_entity_callback(#"death", &function_3a7e8f1f);
-        while (1) {
+        while (true) {
             var_abdb3f07 = anglestoforward(self.angles);
             trace_result = bullettrace(self.origin, self.origin + var_abdb3f07 * 1000, 0, self);
             var_1328f706 = trace_result[#"position"];

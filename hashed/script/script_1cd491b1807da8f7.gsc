@@ -97,7 +97,7 @@ function private create_use_trigger() {
 function private update_loop() {
     level endon(#"game_ended");
     var_1a1c0d86 = 0;
-    while (1) {
+    while (true) {
         foreach (i, player in getplayers()) {
             if (i % 5 == var_1a1c0d86) {
                 if (!isdefined(player.var_8a022726)) {
@@ -207,7 +207,7 @@ function private function_2f394f36() {
 // Size: 0x2f8
 function function_662eb91e(dynent, vieworigin, viewforward, var_7c927bcc = 1) {
     if (!isdefined(dynent.var_667629e9) || dynent.var_667629e9.size <= 0) {
-        return 0;
+        return false;
     }
     foreach (var_806e6091 in dynent.var_667629e9) {
         if (!isdefined(var_806e6091.owner) || var_806e6091.owner != self || !isdefined(var_806e6091.pickuptrigger)) {
@@ -232,10 +232,10 @@ function function_662eb91e(dynent, vieworigin, viewforward, var_7c927bcc = 1) {
             }
         #/
         if (lookingat) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace dynent_use/dynent_use
@@ -262,7 +262,7 @@ function private function_46502841(trigger_struct) {
     dynent = self.var_a9309589;
     for (success = activator function_2b9e2224(self); success && isdefined(dynent) && self.var_a9309589 === dynent && is_true(dynent.var_e7823894); success = activator function_2b9e2224(self)) {
         if (isdefined(dynent.canuse) && !dynent [[ dynent.canuse ]](activator)) {
-            return;
+            break;
         }
         self triggerenable(1);
     }
@@ -323,27 +323,27 @@ function private function_2b9e2224(trigger) {
 // Size: 0xc0
 function function_58fa8833(trigger, dynent) {
     if (!isalive(self)) {
-        return 0;
+        return false;
     }
     if (self inlaststand()) {
-        return 0;
+        return false;
     }
     if (!self usebuttonpressed()) {
-        return 0;
+        return false;
     }
     if (!trigger istriggerenabled()) {
-        return 0;
+        return false;
     }
     if (!self istouching(trigger)) {
-        return 0;
+        return false;
     }
     if (!isdefined(dynent)) {
-        return 0;
+        return false;
     }
     if (trigger.var_a9309589 !== dynent) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace dynent_use/dynent_use
@@ -437,7 +437,7 @@ function private devgui_loop() {
 function private function_6b66543a() {
     /#
         self endon(#"disconnect");
-        while (1) {
+        while (true) {
             waitframe(1);
             waittillframeend();
             if (!getdvarint(#"hash_23e7101285284738", 0)) {

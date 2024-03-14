@@ -56,7 +56,7 @@ function function_9469a0c4() {
 // Size: 0x88
 function function_b922d5d7() {
     level endon(#"end_game", #"hash_3b763d6426336ce0");
-    while (1) {
+    while (true) {
         level waittill(#"start_of_round");
         if (level.round_number > 1) {
             function_752b5c36(#"hash_4a14d6908e12483c", 0);
@@ -179,7 +179,7 @@ function function_70e3ac08(index) {
     case 3:
         return "zamr_env_nar_f";
     default:
-        return;
+        break;
     }
 }
 
@@ -190,26 +190,26 @@ function function_70e3ac08(index) {
 function function_81e4abd(player) {
     if (isplayer(player)) {
         if (is_true(self.stub.var_b57b8b27.var_ed73ac32)) {
-            return 0;
+            return false;
         }
         if (isdefined(self.stub.var_b57b8b27.var_d1c178a)) {
             if (level flag::get(self.stub.var_b57b8b27.var_d1c178a)) {
                 self sethintstring(#"hash_7438d0d92b1eb60");
-                return 1;
+                return true;
             } else if (isdefined(self.stub.var_b57b8b27.var_2b65c496) && self.stub.var_b57b8b27.var_df272b25 < self.stub.var_b57b8b27.var_2b65c496) {
                 self sethintstring(#"hash_7438d0d92b1eb60");
-                return 1;
+                return true;
             } else {
-                return 0;
+                return false;
             }
         } else if (self.stub.var_b57b8b27.var_df272b25 <= self.stub.var_b57b8b27.var_4c2e6c3e) {
             self sethintstring(#"hash_7438d0d92b1eb60");
-            return 1;
+            return true;
         } else {
-            return 0;
+            return false;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_9771a88f/namespace_9771a88f
@@ -218,7 +218,7 @@ function function_81e4abd(player) {
 // Size: 0x2f0
 function function_d8cb1a45() {
     level endon(#"end_game");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         if (isplayer(waitresult.activator)) {
@@ -331,16 +331,16 @@ function function_e1798a8e(n_count) {
     switch (n_count) {
     case 1:
         level zm_vo::function_7622cb70(#"hash_398078d3d385a2ca");
-        return;
+        break;
     case 2:
         level zm_vo::function_7622cb70(#"hash_398077d3d385a117");
-        return;
+        break;
     case 3:
         level zm_vo::function_7622cb70(#"hash_398076d3d3859f64");
-        return;
+        break;
     default:
         level zm_vo::function_7622cb70(#"hash_398075d3d3859db1");
-        return;
+        break;
     }
 }
 
@@ -404,13 +404,13 @@ function function_d137d6a0(var_e0c6386f, var_40feefce, var_c4ad7aa9) {
     switch (level.var_114b6e35) {
     case #"strauss":
         self zm_vo::function_7622cb70(var_e0c6386f);
-        return;
+        break;
     case #"carver":
         self zm_vo::function_7622cb70(var_40feefce);
-        return;
+        break;
     case #"grey":
         self zm_vo::function_7622cb70(var_c4ad7aa9);
-        return;
+        break;
     }
 }
 
@@ -486,9 +486,9 @@ function cmd(cmd) {
         switch (cmd) {
         case #"hash_50a665b85beac5a5":
             level thread function_7622cb70("<unknown string>");
-            return;
+            break;
         default:
-            return;
+            break;
         }
     #/
 }

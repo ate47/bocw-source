@@ -527,7 +527,7 @@ function private function_66d43d96() {
     var_bee8f197 = float(function_60d95f53()) / 1000;
     lastangle = undefined;
     self animmode("gravity");
-    while (1) {
+    while (true) {
         while (self.var_11149e48.path.pathpoints.size > self.var_11149e48.path.index) {
             var_436b8c8c = self.var_11149e48.path.pathpoints[self.var_11149e48.path.index];
             var_436b8c8c = (var_436b8c8c[0], var_436b8c8c[1], self.origin[2]);

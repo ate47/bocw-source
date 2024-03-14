@@ -66,7 +66,7 @@ function private function_b61c27bb(einflictor, eattacker, idamage, *idflags, sme
                     }
                 }
                 occupant addtodamageindicator(damagepct, var_17308f26);
-                return;
+                break;
             }
         }
     }
@@ -176,7 +176,7 @@ function private function_44f6c97c() {
 function private function_2014e301(player) {
     player endon(#"hash_27646c99772610b4", #"death", #"exit_vehicle");
     self endon(#"death");
-    while (1) {
+    while (true) {
         self waittill(#"weapon_fired");
         if (!is_true(self.var_1bc57b69)) {
             self thread function_44f6c97c();

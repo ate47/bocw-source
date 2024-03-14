@@ -223,7 +223,7 @@ function function_6df7ba74(*b_pause, *str_perk, *str_result, *n_slot) {
 // Size: 0x2ac
 function function_9335851() {
     self endon(#"disconnect", #"hash_73b1e35c66a4e898");
-    while (1) {
+    while (true) {
         wait(1);
         a_weapons = self getweaponslistprimaries();
         foreach (weapon in a_weapons) {
@@ -264,9 +264,9 @@ function function_9335851() {
 function function_9ae34cb7() {
     if (namespace_e86ffa8::function_30a8ed81(4)) {
         if (math::cointoss(25)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 

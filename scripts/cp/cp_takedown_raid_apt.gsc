@@ -451,7 +451,7 @@ function function_ced2a7df() {
     level endon(#"hash_2d7f82360e399f87");
     level flag::wait_till("flag_player_told_shoot");
     level waittill(#"hash_67f0f350991bdaf4");
-    while (1) {
+    while (true) {
         wait(8);
         var_23811abd = snd::play("vox_cp_tdwn_03750_adlr_onyoumason_b2", [1:"j_head", 0:level.adler]);
         snd::function_2fdc4fb(var_23811abd);

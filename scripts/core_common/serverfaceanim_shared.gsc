@@ -50,7 +50,7 @@ function init_serverfaceanim() {
 // Checksum 0x77130515, Offset: 0x350
 // Size: 0xd0
 function wait_for_face_event() {
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill(#"face");
         face_notify = waitresult.face_notify;

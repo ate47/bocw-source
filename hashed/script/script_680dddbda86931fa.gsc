@@ -343,24 +343,24 @@ function function_2eb2c17c(origin, item) {
         if (var_5d97fed1) {
             var_acdfe076 = isdefined(var_b0fbfe59[#"dynent"]) && distance2dsquared(var_b0fbfe59[#"dynent"].origin, item.origin) <= function_a3f6cdac(12);
             if (var_acdfe076 && isdefined(level.var_7d3131e8) && self [[ level.var_7d3131e8 ]](var_b0fbfe59[#"dynent"], origin, anglestoforward(self getplayerangles()))) {
-                return 0;
+                return false;
             }
             var_45127074 = isdefined(var_b0fbfe59[#"entity"]) && distance2dsquared(var_b0fbfe59[#"entity"].origin, item.origin) <= function_a3f6cdac(12);
             if (!var_acdfe076 && !var_45127074) {
-                return 0;
+                return false;
             }
         } else {
             if (getdvarint(#"hash_51d59b9e94c5ff87", 0)) {
-                return 1;
+                return true;
             }
             var_5408bd2a = physicstraceex(origin, offsetposition, (0, 0, 0), (0, 0, 0), self, 1);
             if (var_5408bd2a[#"fraction"] >= 1) {
-                return 1;
+                return true;
             }
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace item_world_util/item_world_util
@@ -642,30 +642,30 @@ function function_c62ad9a7(vehicle) {
 // Size: 0x1e0
 function can_pick_up(item, servertime = undefined) {
     if (!isdefined(item) || !isdefined(item.var_a6762160)) {
-        return 0;
+        return false;
     }
     if (isdefined(servertime)) {
         if (item.hidetime > 0 && item.hidetime <= servertime) {
-            return 0;
+            return false;
         }
     } else if (item.hidetime > 0 && !function_83c20f83(item)) {
-        return 0;
+        return false;
     }
     if (!isstruct(item) && item getitemindex() == 32767) {
-        return 0;
+        return false;
     }
     if (isentity(item)) {
         if (isarray(item.var_699c6bfb) && isdefined(self) && isinarray(item.var_699c6bfb, self)) {
-            return 0;
+            return false;
         }
         entitytype = item getentitytype();
         if (entitytype == 6 || entitytype == 4 || entitytype == 12 || entitytype == 1) {
             if (isdefined(level.var_578f7c6d) && item clientfield::get("isJammed")) {
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace item_world_util/item_world_util
@@ -790,12 +790,12 @@ function function_da09de95(id) {
 function function_7363384a(name) {
     bundle = getscriptbundle(name);
     if (!isdefined(bundle)) {
-        return 0;
+        return false;
     }
     if (bundle.type != #"itemspawnentry") {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace item_world_util/item_world_util
@@ -812,7 +812,7 @@ function function_db35e94f(id) {
 // Size: 0x66
 function function_41f06d9d(var_a6762160) {
     if (!isdefined(var_a6762160) || !isdefined(var_a6762160.name)) {
-        return 0;
+        return false;
     }
     return var_a6762160.name == #"resource_item_paint" || var_a6762160.name == #"resource_item_paint_stack_10";
 }
@@ -823,14 +823,14 @@ function function_41f06d9d(var_a6762160) {
 // Size: 0xec
 function function_a57773a4(var_a6762160) {
     if (!isdefined(var_a6762160) || !isdefined(var_a6762160.itemtype)) {
-        return 0;
+        return false;
     }
     foreach (itemtype in array(#"perk_tier_1", #"perk_tier_2", #"perk_tier_3")) {
         if (var_a6762160.itemtype == itemtype) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace item_world_util/item_world_util
@@ -850,7 +850,7 @@ function function_83c20f83(item) {
         assert(isdefined(item));
     #/
     if (!isdefined(item)) {
-        return 0;
+        return false;
     }
     return item.hidetime === -1;
 }
@@ -880,7 +880,7 @@ function function_6daf3c87(var_a6762160) {
         var_2a456654 = isdefined(var_a6762160.var_ac75b59f) ? var_a6762160.var_ac75b59f : 0;
         return (var_2a456654 >= 0);
     }
-    return 0;
+    return false;
 }
 
 // Namespace item_world_util/item_world_util

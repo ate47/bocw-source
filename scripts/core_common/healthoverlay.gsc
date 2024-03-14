@@ -190,7 +190,7 @@ function player_health_regen_t7() {
 // Size: 0x4e
 function function_f7a21c4() {
     self endon(#"hash_2d775ef016d5c651");
-    while (1) {
+    while (true) {
         if (!isdefined(self)) {
             return;
         }
@@ -255,15 +255,15 @@ function private function_2eee85c1() {
 function private function_df99db2() {
     player = self;
     if (player.health <= 0) {
-        return 0;
+        return false;
     }
     if (player isremotecontrolling()) {
-        return 0;
+        return false;
     }
     if (player.laststand === 1 && player.var_8fd58a32 !== 1) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace healthoverlay/healthoverlay
@@ -275,15 +275,15 @@ function private function_f09367a0(var_dc77251f, regen_delay) {
         var_dc77251f.var_ba47a7a3 = 1;
     }
     if (!is_true(self.ignore_health_regen_delay) && var_dc77251f.time_now - var_dc77251f.var_ba47a7a3 < regen_delay) {
-        return 0;
+        return false;
     }
     if (regen_delay <= 0) {
-        return 0;
+        return false;
     }
     if (self.health >= self.var_66cb03ad) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace healthoverlay/healthoverlay
@@ -446,9 +446,9 @@ function private check_max_health(var_dc77251f) {
             self.atbrinkofdeath = undefined;
         }
         var_dc77251f.old_health = player.health;
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace healthoverlay/healthoverlay
@@ -552,7 +552,7 @@ function private function_8f2722f6(now, var_677a3e37) {
 // Size: 0x178
 function private function_b506b922() {
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         profilestart();
         var_677a3e37 = getdvarint(#"hash_4371c604abfbb2eb", 0) > 0;
         var_1556c25 = getlevelframenumber();

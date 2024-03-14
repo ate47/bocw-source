@@ -174,7 +174,7 @@ function function_d67bafb5(stub, category) {
             }
             level.var_f17bdf53[level.var_f17bdf53.size] = stub;
         }
-        return;
+        break;
     case #"lockdown_stub_type_pap":
         if (!isdefined(level.pap_lockdown_stubs)) {
             level.pap_lockdown_stubs = [];
@@ -187,7 +187,7 @@ function function_d67bafb5(stub, category) {
             }
             level.pap_lockdown_stubs[level.pap_lockdown_stubs.size] = stub;
         }
-        return;
+        break;
     case #"lockdown_stub_type_perks":
         if (!isdefined(level.var_9235b607)) {
             level.var_9235b607 = [];
@@ -200,7 +200,7 @@ function function_d67bafb5(stub, category) {
             }
             level.var_9235b607[level.var_9235b607.size] = stub;
         }
-        return;
+        break;
     case #"lockdown_stub_type_crafting_tables":
         if (!isdefined(level.var_16cfe3ef)) {
             level.var_16cfe3ef = [];
@@ -213,7 +213,7 @@ function function_d67bafb5(stub, category) {
             }
             level.var_16cfe3ef[level.var_16cfe3ef.size] = stub;
         }
-        return;
+        break;
     }
 }
 
@@ -380,7 +380,7 @@ function private function_9f952db3(stub, entity, maxheight) {
                 function_78eae22a(entity, stub, 7);
             }
         #/
-        return 0;
+        return false;
     }
     if (stub.origin[2] - entity.origin[2] > maxheight) {
         /#
@@ -388,9 +388,9 @@ function private function_9f952db3(stub, entity, maxheight) {
                 function_78eae22a(entity, stub, 11, stub.origin[2] - entity.origin[2]);
             }
         #/
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_lockdown_util/zm_lockdown_util
@@ -504,9 +504,9 @@ function private function_d3fbb5ec(entity, stub, current_zone) {
         /#
             function_78eae22a(entity, stub, 2);
         #/
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_lockdown_util/zm_lockdown_util
@@ -553,15 +553,15 @@ function private function_fea6f0c0(entity, stub, current_zone) {
         /#
             function_78eae22a(entity, stub, 2);
         #/
-        return 0;
+        return false;
     }
     if (isdefined(stub.var_3468124) && stub.var_3468124.var_2977c27 !== "on") {
         /#
             function_78eae22a(entity, stub, 17);
         #/
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_lockdown_util/zm_lockdown_util
@@ -608,9 +608,9 @@ function private function_ea677a9a(entity, stub, current_zone) {
         /#
             function_78eae22a(entity, stub, 2);
         #/
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_lockdown_util/zm_lockdown_util
@@ -657,27 +657,27 @@ function private function_95250640(entity, stub) {
         /#
             function_78eae22a(entity, stub.trigger_target, 15);
         #/
-        return 0;
+        return false;
     }
     if (is_true(stub.trigger_target.hidden)) {
         /#
             function_78eae22a(entity, stub.trigger_target, 3);
         #/
-        return 0;
+        return false;
     }
     if (is_true(stub.trigger_target._box_open)) {
         /#
             function_78eae22a(entity, stub.trigger_target, 4);
         #/
-        return 0;
+        return false;
     }
     if (is_true(stub.trigger_target.was_temp) || is_true(stub.trigger_target.being_removed)) {
         /#
             function_78eae22a(entity, stub.trigger_target, 13);
         #/
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_lockdown_util/zm_lockdown_util
@@ -723,15 +723,15 @@ function private function_790e3eb0(entity, trigger) {
         /#
             function_78eae22a(entity, trigger, 5);
         #/
-        return 0;
+        return false;
     }
     if (!trigger.pap_machine flag::get("pap_waiting_for_user")) {
         /#
             function_78eae22a(entity, trigger, 6);
         #/
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_lockdown_util/zm_lockdown_util
@@ -779,9 +779,9 @@ function private function_809ae5cb(entity, blocker) {
         /#
             function_78eae22a(entity, blocker, 12);
         #/
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_lockdown_util/zm_lockdown_util
@@ -830,9 +830,9 @@ function private function_387fd27e(entity, trap_trig) {
         /#
             function_78eae22a(entity, trap_trig, 16);
         #/
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace zm_lockdown_util/zm_lockdown_util
@@ -1017,7 +1017,7 @@ function function_7bfa8895(entity) {
 function function_b5dd9241(stub) {
     var_a0692a89 = function_fd31eb92(stub);
     if (!isdefined(var_a0692a89)) {
-        return 0;
+        return false;
     }
     return var_a0692a89.var_4f0ea1b5 === 1;
 }
@@ -1251,7 +1251,7 @@ function private function_2765c63(cmd) {
             } else {
                 level notify(#"hash_52b90374b27fcb8a");
             }
-            return;
+            break;
         }
     #/
 }
@@ -1280,7 +1280,7 @@ function private function_6e1690d5() {
         }
         var_3bd3c0c1 = vectorscale((-1, -1, 0), 16);
         var_cbe5413e = (16, 16, 32);
-        while (1) {
+        while (true) {
             wait(0.5);
             entity = getentbynum(getdvarint(#"zm_lockdown_ent", -1));
             if (!isdefined(entity)) {

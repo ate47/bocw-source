@@ -735,7 +735,7 @@ function function_4226df4b() {
     var_9a24b67c = level.var_73ffa220[self.name];
     if (isdefined(var_9a24b67c)) {
         if (isdefined(var_9a24b67c.var_7411a081) && var_9a24b67c.var_7411a081 > 2) {
-            return 0;
+            return false;
         }
     }
     if (level.doa.roundnumber > 30) {
@@ -745,7 +745,7 @@ function function_4226df4b() {
         var_833a4163 = (self.doa.var_87c1cd32 + 1) / level.doa.roundnumber;
         self.doa.var_64a9c906 = int(var_833a4163 * 100);
         if (var_833a4163 < 0.75) {
-            return 0;
+            return false;
         }
     }
     return self.var_248bd83 <= 4 || is_true(self.var_c213da47);

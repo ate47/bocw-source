@@ -302,7 +302,7 @@ function function_24a17c08() {
     self endon(#"death");
     self.var_f163034c = 1;
     self.var_664db4ed = 0;
-    while (1) {
+    while (true) {
         if (self.var_664db4ed >= 3) {
             level doscoreeventcallback("scoreEventZM", {#scoreevent:"jump_pads_collect_3_or_more_containers_zm", #attacker:self});
             return;

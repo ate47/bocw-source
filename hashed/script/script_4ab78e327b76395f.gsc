@@ -83,9 +83,9 @@ function function_c3475251(action) {
     self player_init();
     if (is_true(self actions::function_83bde308(action, "use", #"carry_body"))) {
         self thread function_b8268bd6(action, self.var_edbc8698);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_5f6e61d9/namespace_5f6e61d9
@@ -99,7 +99,7 @@ function function_b9c74598(action) {
     self endon(action.ender);
     self player_init();
     self waittill(#"body_pickup");
-    return 1;
+    return true;
 }
 
 // Namespace namespace_5f6e61d9/namespace_5f6e61d9
@@ -143,20 +143,20 @@ function function_c4fe1ef2() {
     player.var_ca6b6423 = undefined;
     setdvar(#"scr_door_player_gestures", 1);
     if (!is_true(player flag::get("body_carry"))) {
-        return 0;
+        return false;
     }
     if (is_true(player.var_f467e5b0.var_36a4a92c)) {
-        return 0;
+        return false;
     }
     if (!isdefined(player)) {
-        return 0;
+        return false;
     }
     if (is_true(player.var_9ebbaa46.var_87788f85)) {
-        return 0;
+        return false;
     }
     player.var_ca6b6423 = 1;
     setdvar(#"scr_door_player_gestures", 0);
-    return 1;
+    return true;
 }
 
 // Namespace namespace_5f6e61d9/namespace_5f6e61d9
@@ -166,27 +166,27 @@ function function_c4fe1ef2() {
 function function_ffb1d92f() {
     player = getplayers()[0];
     if (!isdefined(player)) {
-        return 0;
+        return false;
     }
     if (level flag::get("no_corpse_pickup") || isdefined(player getlinkedent())) {
-        return 0;
+        return false;
     }
     if (player namespace_594b67e::function_a06867b0(player getcurrentweapon())) {
-        return 0;
+        return false;
     }
     if (is_true(player flag::get("body_carry"))) {
-        return 0;
+        return false;
     }
     if (is_true(player flag::get("body_pickup"))) {
-        return 0;
+        return false;
     }
     if (!level flag::get("stealth_enabled") || level flag::get("stealth_spotted")) {
-        return 0;
+        return false;
     }
     if (player isswitchingweapons()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_5f6e61d9/namespace_5f6e61d9
@@ -401,7 +401,7 @@ function function_9abb3f03(victim) {
     self namespace_f48ab2e1::function_8f5eb0a6(button, 0);
     self namespace_f48ab2e1::function_d03d79d6(button, 0);
     self namespace_f48ab2e1::function_3171730f(button, #"actions");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"body_drop", #"hash_4dff86580406a1af");
         if (!self function_c4fe1ef2() && waitresult._notify === "body_drop") {
@@ -523,9 +523,9 @@ function function_145a8b5a(b_disable = 1) {
 // Size: 0x2e
 function function_cad84e26() {
     if (is_true(self.var_9ebbaa46.active)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_5f6e61d9/namespace_5f6e61d9

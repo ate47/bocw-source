@@ -206,22 +206,22 @@ function private razsprintservice(entity) {
 // Size: 0xd2
 function razshouldmelee(entity) {
     if (entity.ignoreall) {
-        return 0;
+        return false;
     }
     if (is_true(entity.var_bb461bfb)) {
-        return 1;
+        return true;
     }
     if (!isdefined(entity.enemy)) {
-        return 0;
+        return false;
     }
     if (distancesquared(entity.origin, entity.enemy.origin) > 5625) {
-        return 0;
+        return false;
     }
     yaw = abs(zombie_utility::getyawtoenemy());
     if (yaw > 45) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_b619101e/raz
@@ -230,15 +230,15 @@ function razshouldmelee(entity) {
 // Size: 0xca
 function private razshouldshowpain(entity) {
     if (is_true(entity.var_72d96058) && !is_true(entity.var_4e179643) || isdefined(entity.var_3059ea5f) || is_true(entity.var_6d2f7ac8)) {
-        return 0;
+        return false;
     }
     if (is_true(entity.var_10552fac)) {
-        return 0;
+        return false;
     }
     if (isdefined(level.var_eeb66e64) && ![[ level.var_eeb66e64 ]](entity)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_b619101e/raz
@@ -248,19 +248,19 @@ function private razshouldshowpain(entity) {
 function private razshouldshowspecialpain(entity) {
     var_76279076 = entity getblackboardattribute("_gib_location");
     if (var_76279076 === "right_arm") {
-        return 1;
+        return true;
     }
     if (!razshouldshowpain(entity)) {
-        return 0;
+        return false;
     }
     var_a8fd62d7 = gettime() - entity.var_5ed30918;
     if (var_a8fd62d7 > 100) {
-        return 0;
+        return false;
     }
     if (var_76279076 === "head" || var_76279076 === "arms" || var_76279076 === "right_leg" || var_76279076 === "left_leg" || var_76279076 === "left_arm") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_b619101e/raz
@@ -271,7 +271,7 @@ function private razshouldshowshieldpain(entity) {
     if (isdefined(entity.damageweapon) && isdefined(entity.damageweapon.name)) {
         return (entity.damageweapon.name == "dragonshield");
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_b619101e/raz
@@ -280,12 +280,12 @@ function private razshouldshowshieldpain(entity) {
 // Size: 0x9a
 function private razshouldgoberserk(entity) {
     if (is_true(entity.var_72d96058) && !is_true(entity.var_4e179643)) {
-        return 1;
+        return true;
     }
     if (is_true(entity.var_10552fac) && !is_true(entity.var_72d96058)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_b619101e/raz
@@ -318,10 +318,10 @@ function private razshouldcutoffarm(entity) {
 // Size: 0x18a
 function private razshouldmeleerun(entity) {
     if (entity.ignoreall) {
-        return 0;
+        return false;
     }
     if (!isdefined(entity.favoriteenemy) || entity getblackboardattribute("_locomotion_speed") != "locomotion_speed_sprint") {
-        return 0;
+        return false;
     }
     var_ff38566a = lengthsquared(entity.favoriteenemy getvelocity());
     var_17c3916f = 7225;
@@ -329,13 +329,13 @@ function private razshouldmeleerun(entity) {
         var_17c3916f = 30625;
     }
     if (distancesquared(entity.origin, entity.favoriteenemy.origin) > var_17c3916f) {
-        return 0;
+        return false;
     }
     yawtoenemy = angleclamp180(entity.angles[1] - vectortoangles(entity.favoriteenemy.origin - entity.origin)[1]);
     if (abs(yawtoenemy) > 60) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_b619101e/raz
@@ -370,24 +370,24 @@ function private razstartdeath(entity) {
             switch (weakpoint.var_f371ebb0) {
             case #"helmet":
                 self namespace_eb2895::function_2eb802f5(undefined);
-                continue;
+                break;
             case #"body_armor":
                 self namespace_eb2895::function_50c2a59e(undefined);
-                continue;
+                break;
             case #"left_arm_armor":
                 self namespace_eb2895::function_597f31c9(undefined);
-                continue;
+                break;
             case #"right_leg_armor":
                 self namespace_eb2895::function_578362e9(undefined);
-                continue;
+                break;
             case #"left_leg_armor":
                 self namespace_eb2895::function_50f53d3b(undefined);
-                continue;
+                break;
             case #"right_arm_armor":
                 self namespace_eb2895::function_afcd63e1(undefined, undefined, undefined);
-                continue;
+                break;
             default:
-                continue;
+                break;
             }
         }
     }
@@ -407,39 +407,39 @@ function private razgroundtorpedostaggerstart(entity) {
 // Size: 0x1be
 function private razshouldshootgroundtorpedo(entity) {
     if (entity.ignoreall) {
-        return 0;
+        return false;
     }
     if (is_true(entity.var_10552fac)) {
-        return 0;
+        return false;
     }
     if (is_true(entity.var_467d69c7)) {
-        return 1;
+        return true;
     }
     target = function_bd4a79a(entity);
     if (!isdefined(target)) {
-        return 0;
+        return false;
     }
     if (!is_true(entity.var_5c09e990)) {
-        return 0;
+        return false;
     }
     time = gettime();
     if (time < entity.var_af9cbc1c) {
-        return 0;
+        return false;
     }
     enemy_dist_sq = distancesquared(entity.origin, target.origin);
     if (!((enemy_dist_sq >= 22500 || is_true(entity.var_1fa24724)) && enemy_dist_sq <= 2250000 && entity function_bb9de4d7(target))) {
-        return 0;
+        return false;
     }
     if (isdefined(entity.check_point_in_enabled_zone)) {
         var_8a3fbe2f = [[ entity.check_point_in_enabled_zone ]](entity.origin);
         if (!var_8a3fbe2f) {
-            return 0;
+            return false;
         }
     }
     if (is_true(entity.var_e8f3d773)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_b619101e/raz
@@ -453,18 +453,18 @@ function private function_bb9de4d7(enemy) {
     var_8b96a9fe = anglestoforward(self.angles);
     var_6c822643 = target_point - var_b5b97aba;
     if (vectordot(var_8b96a9fe, var_6c822643) <= 0 && !is_true(entity.var_1fa24724)) {
-        return 0;
+        return false;
     }
     var_69a5225c = anglestoright(self.angles);
     var_6b5b7991 = vectordot(var_6c822643, var_69a5225c);
     if (abs(var_6b5b7991) > 50 && !is_true(entity.var_1fa24724)) {
-        return 0;
+        return false;
     }
     trace = bullettrace(var_b5b97aba, target_point, 0, enemy);
     if (trace[#"fraction"] === 1) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_b619101e/raz
@@ -951,7 +951,7 @@ function private function_abaec088() {
 // Size: 0x160
 function private function_2171139f(zombie, target) {
     if (zombie.archetype !== #"zombie" || zombie.knockdown === 1 || gibserverutils::isgibbed(zombie, 384)) {
-        return 0;
+        return false;
     }
     origin = target.origin;
     var_3c08a493 = anglestoforward(target.angles);
@@ -962,9 +962,9 @@ function private function_2171139f(zombie, target) {
     var_58877074 = vectornormalize(var_58877074);
     var_704c3d16 = vectordot(var_58877074, var_660d1fec);
     if (var_704c3d16 < 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 #namespace namespace_eb2895;
@@ -1136,7 +1136,7 @@ function function_5e4c45ae(str_type) {
 function function_3c2e8416() {
     self endon(#"death");
     str_notify = "ambient";
-    while (1) {
+    while (true) {
         min_wait = 2;
         max_wait = 5;
         if (is_true(self.var_72d96058) || is_true(self.var_e8f3d773)) {
@@ -1207,7 +1207,7 @@ function function_3d267030() {
 function private function_37c7f369() {
     self endon(#"death");
     self endon(#"disconnect");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"melee_fire", #"zombie_melee");
         if (waitresult._notify === #"melee_fire") {

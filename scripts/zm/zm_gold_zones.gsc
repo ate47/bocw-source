@@ -419,7 +419,7 @@ function function_44b1279a() {
     self zm_gold::setupminimap("", "village");
     self clientfield::set_to_player("" + #"hash_697cae64fbcf81f8", 0);
     util::wait_network_frame();
-    while (1) {
+    while (true) {
         if (!isplayer(self)) {
             return;
         }

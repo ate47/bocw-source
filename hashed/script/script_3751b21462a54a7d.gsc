@@ -125,14 +125,14 @@ function function_1050b262(talent, func) {
 // Size: 0xbc
 function function_56cedda7(perk) {
     if (!isplayer(self) || !isdefined(self.var_7341f980)) {
-        return 0;
+        return false;
     }
     foreach (var_7387d8e1 in self.var_7341f980) {
         if (perk == var_7387d8e1) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace namespace_791d0451/namespace_791d0451
@@ -619,7 +619,7 @@ function function_c5fb4741(var_79291fdb = 0) {
     self endon(#"hash_7d1062382b3d7c69");
     var_3354472e = array("mus_perks_jugganog_jingle", "mus_perks_speed_jingle", "mus_perks_revive_jingle", "mus_perks_stamin_jingle", "mus_perks_deadshot_jingle", "mus_perks_elementalpop_jingle", "mus_perks_tombstone_jingle", "mus_perks_mulekick_jingle", "mus_perks_deathperception_jingle", "mus_perks_phd_jingle");
     var_8f2bdcca = self function_381f04ca();
-    while (1) {
+    while (true) {
         wait(randomintrange(120, 300));
         if (self ishidden()) {
             continue;
@@ -798,7 +798,7 @@ function function_3e9d8a8e(var_11868f5d) {
 // Size: 0x6d6
 function function_cc0055e9(talent) {
     if (!isdefined(talent)) {
-        return 0;
+        return false;
     }
     switch (talent) {
     case #"hash_47d7a8105237c88":
@@ -808,7 +808,7 @@ function function_cc0055e9(talent) {
     case #"hash_afdcb7f440fc052":
     case #"hash_afdcc7f440fc205":
         if (!is_true(getgametypesetting(#"hash_350adc73849f66ad"))) {
-            return 0;
+            return false;
         }
         break;
     case #"hash_504b41f717f8931a":
@@ -818,7 +818,7 @@ function function_cc0055e9(talent) {
     case #"hash_504b3ef717f88e01":
     case #"hash_504b3df717f88c4e":
         if (!is_true(getgametypesetting(#"hash_790760c24def02df"))) {
-            return 0;
+            return false;
         }
         break;
     case #"hash_5930cf0eb070e35a":
@@ -828,7 +828,7 @@ function function_cc0055e9(talent) {
     case #"hash_520b5cb0216b75d7":
     case #"hash_520b5db0216b778a":
         if (!is_true(getgametypesetting(#"hash_3ad94f36f9fe01c3"))) {
-            return 0;
+            return false;
         }
         break;
     case #"hash_1f95b48e4a49df4a":
@@ -838,7 +838,7 @@ function function_cc0055e9(talent) {
     case #"hash_1f95b18e4a49da31":
     case #"hash_1f95b38e4a49dd97":
         if (!is_true(getgametypesetting(#"hash_6c0eea959e1beea9"))) {
-            return 0;
+            return false;
         }
         break;
     case #"hash_17ccbbee64daa20e":
@@ -848,7 +848,7 @@ function function_cc0055e9(talent) {
     case #"hash_17ccbdee64daa574":
     case #"hash_17ccbcee64daa3c1":
         if (!is_true(getgametypesetting(#"hash_1eae2946efd5fc50"))) {
-            return 0;
+            return false;
         }
         break;
     case #"hash_51b6cc6dbafb7f31":
@@ -858,7 +858,7 @@ function function_cc0055e9(talent) {
     case #"hash_79774856f321de3a":
     case #"hash_79774956f321dfed":
         if (!is_true(getgametypesetting(#"hash_4a821fd3ce297dbb"))) {
-            return 0;
+            return false;
         }
         break;
     case #"hash_4110e6372aa77f7e":
@@ -867,7 +867,7 @@ function function_cc0055e9(talent) {
     case #"hash_4110e6372aa77f7e":
     case #"hash_4110e6372aa77f7e":
     case #"hash_4110e6372aa77f7e":
-        return 0;
+        return false;
     case #"hash_59dbe8f72baaa2a3":
     case #"hash_59dbecf72baaa96f":
     case #"hash_59dbedf72baaab22":
@@ -875,7 +875,7 @@ function function_cc0055e9(talent) {
     case #"hash_59dbe7f72baaa0f0":
     case #"hash_38c08136902fd553":
         if (!is_true(getgametypesetting(#"hash_21f347fcb9fbef2a"))) {
-            return 0;
+            return false;
         }
         break;
     case #"hash_2cb9513f0cf67fe7":
@@ -885,7 +885,7 @@ function function_cc0055e9(talent) {
     case #"hash_2cb94d3f0cf6791b":
     case #"hash_17e4ae593eaf4a47":
         if (!is_true(getgametypesetting(#"hash_616a22c5c1ebe5b8"))) {
-            return 0;
+            return false;
         }
         break;
     case #"hash_1ea1a9cfee998e89":
@@ -895,7 +895,7 @@ function function_cc0055e9(talent) {
     case #"hash_7082a9127deb8f95":
     case #"hash_7082a5127deb88c9":
         if (!is_true(getgametypesetting(#"hash_45fa8995b51490e8"))) {
-            return 0;
+            return false;
         }
         break;
     case #"hash_332be40e760e69a1":
@@ -905,11 +905,11 @@ function function_cc0055e9(talent) {
     case #"hash_332be50e760e6b54":
     case #"hash_332be30e760e67ee":
         if (!is_true(getgametypesetting(#"hash_4b8929fb898a9e80"))) {
-            return 0;
+            return false;
         }
         break;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_791d0451/namespace_791d0451

@@ -279,18 +279,18 @@ function function_b8691499() {
     case 1:
         self.var_a4b9e38b = int(5);
         self.var_53be7e08 = 1.25;
-        return;
+        break;
     case 2:
         self.var_a4b9e38b = int(7);
         self.var_53be7e08 = 1;
-        return;
+        break;
     case 3:
         self.var_a4b9e38b = int(9);
         self.var_53be7e08 = 0.9;
     default:
         self.var_a4b9e38b = 10;
         self.var_53be7e08 = 0.8;
-        return;
+        break;
     }
 }
 
@@ -443,10 +443,10 @@ function function_3104e1a8() {
         self function_b8691499();
     }
     var_c309b891 = self.var_fe2612fe[#"boundary"][0];
-    while (1) {
+    while (true) {
         self thread function_acf692e();
         var_d484054 = 0;
-        while (1) {
+        while (true) {
             var_68298325 = 0;
             a_e_players = function_a1ef346b(undefined, var_c309b891.origin, 3000);
             foreach (e_player in a_e_players) {
@@ -491,7 +491,7 @@ function function_acf692e() {
     var_2eb61c8a = arraycopy(self.spawn_points);
     str_list = "default_ambush_list_realm_" + level.realm;
     var_6443acc = namespace_679a22ba::function_77be8a83(str_list);
-    while (1) {
+    while (true) {
         wait(randomfloatrange(0.25, 0.5));
         function_1eaaceab(self.a_ai_zombies);
         if (self.a_ai_zombies.size < self.var_a4b9e38b) {
@@ -616,7 +616,7 @@ function function_c57d25ff() {
     self endon(#"eater_leaving", #"looking_at_zombie", #"cleanup");
     var_f9cc146 = self.var_f9cc146;
     var_f9cc146 endon(#"death");
-    while (1) {
+    while (true) {
         s_waitresult = undefined;
         s_waitresult = var_f9cc146 waittill(#"dragon_side_front", #"dragon_side_left", #"dragon_side_right");
         switch (s_waitresult._notify) {
@@ -830,7 +830,7 @@ function function_c2cda275(ai_zombie, mdl_anchor) {
 function function_b2c1743d(ai_zombie) {
     self endon(#"cleanup");
     ai_zombie endon(#"death");
-    while (1) {
+    while (true) {
         s_waitresult = undefined;
         s_waitresult = ai_zombie waittill(#"gib = head", #"gib = arm_left", #"gib = arm_right", #"gib = leg_left");
         switch (s_waitresult._notify) {

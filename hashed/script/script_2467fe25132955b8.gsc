@@ -62,7 +62,7 @@ function private function_70a657d8() {
 // Checksum 0xeb6de00a, Offset: 0x8d0
 // Size: 0xe
 function no_gib(*percent) {
-    return 0;
+    return false;
 }
 
 // Namespace namespace_cf2b4f27/namespace_cf2b4f27
@@ -149,7 +149,7 @@ function function_6736205c(var_638b775a = 0) {
     if (var_638b775a >= 1) {
         self thread function_46f32076();
     }
-    while (1) {
+    while (true) {
         var_6c77565b = getentitiesinradius(var_189ef5f2.origin, radius, 15);
         foreach (zombie in var_6c77565b) {
             if (isalive(zombie) && zombie.team === level.zombie_team && (zombie.var_6f84b820 === #"normal" || zombie.archetype === #"zombie_dog" || var_638b775a >= 3 && zombie.var_6f84b820 === #"special")) {

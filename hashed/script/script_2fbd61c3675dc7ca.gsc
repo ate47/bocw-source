@@ -215,10 +215,10 @@ function function_7c865e3a(localclientnum, *oldval, newval, *bnewent, *binitials
         switch (bwasdemojump) {
         case 1:
             self.var_76156b5f = playfx(fieldname, #"hash_3cccd2d1a3de040", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
-            return;
+            break;
         case 2:
             self.var_76156b5f = playfx(fieldname, #"hash_20e36d2c5d741431", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
-            return;
+            break;
         }
     }
 }
@@ -379,18 +379,18 @@ function function_1e07ed6f(localclientnum, *oldval, newval, *bnewent, *binitials
             self stoploopsound(self.var_3e5319de);
             self.var_3e5319de = undefined;
         }
-        return;
+        break;
     case 1:
         self playsound(fieldname, #"hash_6a8d5841140aeb5a");
         self.var_3e5319de = self playloopsound(#"zmb_hellhound_loop_fire");
-        return;
+        break;
     case 2:
         if (isdefined(self.var_3e5319de)) {
             self stoploopsound(self.var_3e5319de);
             self.var_3e5319de = undefined;
         }
         self.var_407bbdf1 = util::playfxontag(fieldname, #"hash_1ece705913b0c51f", self, "j_spine4");
-        return;
+        break;
     }
 }
 
@@ -443,10 +443,10 @@ function function_55488fca(localclientnum, *oldval, newval, *bnewent, *binitials
         switch (bwasdemojump) {
         case 1:
             function_a837926b(fieldname, #"hash_4a8a66363bf60fc1");
-            return;
+            break;
         case 2:
             function_a837926b(fieldname, #"hash_6cb7165a57e6c770");
-            return;
+            break;
         }
     }
 }
@@ -509,7 +509,7 @@ function function_ab076c2e(localclientnum, var_b39864d6) {
     }
     var_b39864d6 endon(#"death", #"hash_1b3f15a04bc4d158");
     var_b39864d6 playrumblelooponentity(localclientnum, #"hash_23123e376b6cba91");
-    while (1) {
+    while (true) {
         var_b39864d6 playsound(localclientnum, #"hash_5de409a4b5a08239");
         wait(1);
     }

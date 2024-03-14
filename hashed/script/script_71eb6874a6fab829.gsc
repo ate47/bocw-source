@@ -264,11 +264,11 @@ function private function_d6faeb2b() {
     while (!self gamepadusedlast() && self usebuttonpressed()) {
         waitframe(1);
     }
-    while (1) {
+    while (true) {
         var_620beea5 = self gamepadusedlast();
         if (var_620beea5 && self namespace_61e6d095::function_70217795() || !var_620beea5 && self usebuttonpressed()) {
             self notify(#"request_menu_exit");
-            return;
+            break;
         }
         waitframe(1);
     }

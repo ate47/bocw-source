@@ -175,7 +175,7 @@ function function_43084f6c(player) {
         otherteam = util::getotherteam(player.team);
         foreach (var_f53fe24c in getplayers(otherteam)) {
             if (var_f53fe24c function_d210981e(player.origin)) {
-                return 1;
+                return true;
             }
         }
     } else {
@@ -185,11 +185,11 @@ function function_43084f6c(player) {
                 continue;
             }
             if (enemy function_d210981e(player.origin)) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace tracker/tracker_shared
@@ -199,12 +199,12 @@ function function_43084f6c(player) {
 function function_2c77961d(player) {
     expiretime = level.trackerperk.var_ec00f4ac[player.clientid];
     if (!isdefined(expiretime)) {
-        return 0;
+        return false;
     }
     if (gettime() > expiretime) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace tracker/tracker_shared
@@ -213,18 +213,18 @@ function function_2c77961d(player) {
 // Size: 0xb0
 function function_796e0334(player) {
     if (1 && globallogic_player::function_eddea888(player)) {
-        return 1;
+        return true;
     }
     if (1 && globallogic_player::function_43084f6c(player)) {
-        return 1;
+        return true;
     }
     if (1 && function_2c77961d(player)) {
-        return 1;
+        return true;
     }
     if (1 && globallogic_player::function_ce33e204(player)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace tracker/tracker_shared
@@ -235,7 +235,7 @@ function function_a7e7bda0() {
     if (getgametypesetting(#"hardcoremode")) {
         return;
     }
-    while (1) {
+    while (true) {
         foreach (player in level.players) {
             if (!isdefined(player)) {
                 continue;

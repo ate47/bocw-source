@@ -100,25 +100,25 @@ function autoexec registerbehaviorscriptfunctions() {
 // Size: 0x14c
 function function_fa6d93ea(entity) {
     if (btapi_locomotionbehaviorcondition(entity) && !entity shouldholdgroundagainstenemy()) {
-        return 0;
+        return false;
     }
     if (btapi_isatcovercondition(entity)) {
         if (entity isatcovernodestrict() && is_true(entity.var_342553bc)) {
             if (archetype_human_cover::function_1fa73a96(entity)) {
-                return 1;
+                return true;
             }
             if (is_true(entity.ai.reloading)) {
-                return 1;
+                return true;
             }
             if (isdefined(entity.var_541abeb7) && gettime() - entity.var_541abeb7 < 3000) {
                 if (distancesquared(entity.origin, entity.var_99d0daef) < function_a3f6cdac(32)) {
-                    return 1;
+                    return true;
                 }
             }
         }
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
@@ -223,9 +223,9 @@ function private resetreactiontoenemy(behaviortreeentity) {
 function private nocloseenemyservice(behaviortreeentity) {
     if (isdefined(behaviortreeentity.enemy) && aiutility::hascloseenemytomelee(behaviortreeentity)) {
         behaviortreeentity clearpath();
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
@@ -234,12 +234,12 @@ function private nocloseenemyservice(behaviortreeentity) {
 // Size: 0x5a
 function private hascloseenemy(behaviortreeentity) {
     if (!isdefined(behaviortreeentity.enemy)) {
-        return 0;
+        return false;
     }
     if (distancesquared(behaviortreeentity.origin, behaviortreeentity.enemy.origin) < 22500) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
@@ -248,7 +248,7 @@ function private hascloseenemy(behaviortreeentity) {
 // Size: 0x2a
 function private function_56512b87(entity) {
     entity.bulletsinclip = entity.sidearm.clipsize;
-    return 1;
+    return true;
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
@@ -268,7 +268,7 @@ function private outofammo(entity) {
 // Checksum 0x2cbc1442, Offset: 0xfb0
 // Size: 0x10
 function private function_bb575b62(*entity) {
-    return 1;
+    return true;
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
@@ -353,36 +353,36 @@ function private tryreacquireservice(behaviortreeentity) {
     }
     if (!isdefined(behaviortreeentity.enemy)) {
         behaviortreeentity.reacquire_state = 0;
-        return 0;
+        return false;
     }
     if (aiutility::isexposedatcovercondition(behaviortreeentity)) {
-        return 0;
+        return false;
     }
     if (isdefined(behaviortreeentity.ai.var_47823ae7) && gettime() < behaviortreeentity.ai.var_47823ae7) {
         behaviortreeentity.reacquire_state = 0;
-        return 0;
+        return false;
     }
     if (behaviortreeentity.birthtime + 1000 > gettime()) {
         behaviortreeentity.reacquire_state = 0;
-        return 0;
+        return false;
     }
     if (behaviortreeentity haspath()) {
         behaviortreeentity.reacquire_state = 0;
-        return 0;
+        return false;
     }
     if (is_true(behaviortreeentity.fixednode)) {
         behaviortreeentity.reacquire_state = 0;
-        return 0;
+        return false;
     }
     if (behaviortreeentity seerecently(behaviortreeentity.enemy, 4)) {
         behaviortreeentity.reacquire_state = 0;
-        return 0;
+        return false;
     }
     dirtoenemy = vectornormalize(behaviortreeentity.enemy.origin - behaviortreeentity.origin);
     forward = anglestoforward(behaviortreeentity.angles);
     if (vectordot(dirtoenemy, forward) < 0.5) {
         behaviortreeentity.reacquire_state = 0;
-        return 0;
+        return false;
     }
     switch (behaviortreeentity.reacquire_state) {
     case 0:
@@ -399,16 +399,16 @@ function private tryreacquireservice(behaviortreeentity) {
     default:
         if (behaviortreeentity.reacquire_state > 15) {
             behaviortreeentity.reacquire_state = 0;
-            return 0;
+            return false;
         }
         break;
     }
     if (isvec(reacquirepos)) {
         behaviortreeentity.ai.var_bb3caa0f = gettime();
         behaviortreeentity function_a57c34b7(reacquirepos, undefined, "exposed_reacquire");
-        return 1;
+        return true;
     }
     behaviortreeentity.reacquire_state++;
-    return 0;
+    return false;
 }
 

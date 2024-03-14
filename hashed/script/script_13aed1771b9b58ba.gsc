@@ -67,7 +67,7 @@ function function_95558618() {
     self notify("ec0e4c58b47ccc0");
     self endon("ec0e4c58b47ccc0");
     self endon(#"death");
-    while (1) {
+    while (true) {
         var_54c1ba2b = function_72d3bca6(level.var_54c1ba2b, self.origin, undefined, undefined, 2000);
         var_4eb7eef2 = 0;
         foreach (player in var_54c1ba2b) {
@@ -292,12 +292,12 @@ function function_a93e0f1e(*params) {
 // Size: 0x46
 function private function_1072c231() {
     if ((isdefined(self.maxarmor) ? self.maxarmor : 0) == 0) {
-        return 1;
+        return true;
     }
     if (self.armor < self.maxarmor) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_ce9594c1/namespace_ce9594c1
@@ -306,9 +306,9 @@ function private function_1072c231() {
 // Size: 0x2c
 function private function_d87329b7() {
     if ((isdefined(self.maxarmor) ? self.maxarmor : 0) == 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace namespace_ce9594c1/namespace_ce9594c1

@@ -88,7 +88,7 @@ function private function_654fa552(var_57e553fd) {
 // Size: 0xac
 function private function_a6928964(var_57e553fd) {
     self endon(#"death", #"hash_4e1642d862c17b5b", #"hash_54e0f219fc10204a");
-    while (1) {
+    while (true) {
         self waittillmatch({#fieldvalue:2, #var_aad36d51:0}, #"hash_72a5fe161eb7a0ce");
         self notify(#"hash_54596dc066040d8c");
         if (isdefined(var_57e553fd)) {
@@ -280,7 +280,7 @@ function private function_b917e313(*camera, var_e047216a, var_c5c03b2) {
     } else {
         setuimodelvalue(getuimodel(function_90d058e8(#"spy_camera"), "stream"), 2);
     }
-    while (1) {
+    while (true) {
         if (!self isswitchingweapons() && !self isreloading() && self adsbuttonpressed()) {
             if (!var_a30db60b) {
                 var_a30db60b = 1;
@@ -396,7 +396,7 @@ function private function_376f686f() {
     self endon(#"hash_5512f0799022267", #"hash_84ab457ebc19a5a", #"death");
     self notifyonplayercommand("toggle_stance", "+stance");
     self notifyonplayercommand("go_stand", "+gostand");
-    while (1) {
+    while (true) {
         ret = undefined;
         ret = self waittill(#"toggle_stance", #"go_stand");
         if (ret._notify == "go_stand" || self getstance() != "stand") {
@@ -452,7 +452,7 @@ function private function_2d8ba5c4() {
     if (!isdefined(level.var_e3f5eafc.var_f91a82ef)) {
         level.var_e3f5eafc.var_f91a82ef = 1;
     }
-    while (1) {
+    while (true) {
         var_b3fccd4b = gettime();
         var_496bb3bc = var_b3fccd4b - var_acca0715;
         if (is_true(level.var_e3f5eafc.var_f91a82ef) && var_496bb3bc >= level.var_e3f5eafc.var_3a0d6cd6 && !self scene::function_c935c42() && !self flag::get(#"lockpicking")) {

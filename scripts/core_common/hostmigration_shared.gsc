@@ -281,7 +281,7 @@ function migrationawarewait(durationms) {
     waittillhostmigrationdone();
     endtime = gettime() + durationms;
     timeremaining = durationms;
-    while (1) {
+    while (true) {
         event = level util::waittill_level_any_timeout(float(timeremaining) / 1000, self, "game_ended", "host_migration_begin");
         if (event != "host_migration_begin") {
             return;
@@ -303,7 +303,7 @@ function function_8d332f88(durationms) {
     waittillhostmigrationdone();
     endtime = gettime() + durationms;
     timeremaining = durationms;
-    while (1) {
+    while (true) {
         if (is_true(level.var_e80a117f)) {
             waitframe(1);
             continue;

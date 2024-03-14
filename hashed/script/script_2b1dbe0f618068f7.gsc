@@ -93,34 +93,34 @@ function private function_86b9a404() {
         /#
             function_ad64a47("<unknown string>");
         #/
-        return 0;
+        return false;
     }
     localclientnum = self getlocalclientnumber();
     if (!isdefined(localclientnum)) {
         /#
             function_ad64a47("<unknown string>");
         #/
-        return 0;
+        return false;
     }
     currentweapon = getcurrentweapon(localclientnum);
     if (currentweapon === level.var_8ef8b9e8 || currentweapon === level.weaponnone) {
         /#
             function_ad64a47("<unknown string>");
         #/
-        return 0;
+        return false;
     }
     if (isonturret(localclientnum) || self function_94ba7a2e() || self function_9a0edd92() || self isinfreefall() || self inlaststand() || self function_b9c43317()) {
         /#
             function_ad64a47("<unknown string>");
         #/
-        return 0;
+        return false;
     }
     if (isdefined(getplayervehicle(self))) {
         if (currentweapon === level.weaponnone || function_3feb54c8(localclientnum)) {
             /#
                 function_ad64a47("<unknown string>");
             #/
-            return 0;
+            return false;
         }
     }
     var_6aae821e = hasweapon(localclientnum, level.var_8ef8b9e8);

@@ -141,10 +141,10 @@ function function_933f292d(localclientnum, *oldval, newval, *bnewent, *binitials
     case 1:
         playsound(fieldname, #"hash_d8b240f851233e4", (1748, 1710, -263));
         soundloopemitter(#"hash_d3e38e2cdff435c", (1748, 1710, -263));
-        return;
+        break;
     case 2:
         playsound(fieldname, #"hash_4d517729f59c8e61", (3481, 1700, -287));
-        return;
+        break;
     case 3:
         soundlineemitter(#"hash_217e7b2f3a7fb948", (5123, 3650, -243), (5807, 3649, -243));
         var_c7c6ccec = (5420, 4087, -75);
@@ -157,7 +157,7 @@ function function_933f292d(localclientnum, *oldval, newval, *bnewent, *binitials
             soundloopemitter(#"hash_4ce12f8cb3254542", location);
             wait(randomfloatrange(0.05, 0.3));
         }
-        return;
+        break;
     case 4:
         soundstoplineemitter(#"hash_217e7b2f3a7fb948", (5123, 3650, -243), (5807, 3649, -243));
         var_c7c6ccec = (5420, 4087, -75);
@@ -169,45 +169,45 @@ function function_933f292d(localclientnum, *oldval, newval, *bnewent, *binitials
             playsound(fieldname, #"hash_6e16e98f86fc6546", location);
             soundstoploopemitter(#"hash_4ce12f8cb3254542", location);
         }
-        return;
+        break;
     case 5:
         function_5ea2c6e3("zmb_tungsten_bossfight", 5, 1);
         function_ed62c9c2("zmb_tungsten_escort", 4);
-        return;
+        break;
     case 6:
         function_ed62c9c2("zmb_tungsten_bossfight", 5);
         function_ed62c9c2("zmb_tungsten_boss_outro", 5);
         function_ed62c9c2("zmb_tungsten_boss_outro_igc", 2);
         soundstoploopemitter(#"hash_75e463968d66b62f", (8399, 1766, -387));
-        return;
+        break;
     case 7:
         playsound(fieldname, #"hash_418285810ee4b665", (0, 0, 0));
         soundloopemitter("zmb_mq_boss_intermission_blackscreen_lp", (0, 0, 0));
         function_5ea2c6e3("zmb_tungsten_intermission", 2, 1);
-        return;
+        break;
     case 8:
         playsound(fieldname, #"hash_541ffb94c24dbf12", (0, 0, 0));
         soundstoploopemitter("zmb_mq_boss_intermission_blackscreen_lp", (0, 0, 0));
         soundloopemitter("zmb_mq_boss_intermission_bg_lp", (0, 0, 0));
-        return;
+        break;
     case 9:
         soundstoploopemitter("zmb_mq_boss_intermission_bg_lp", (0, 0, 0));
         function_ed62c9c2("zmb_tungsten_intermission", 0.1);
-        return;
+        break;
     case 10:
         function_5ea2c6e3("zmb_tungsten_boss_outro", 2, 1);
-        return;
+        break;
     case 13:
         function_5ea2c6e3("zmb_tungsten_boss_outro_igc", 0.5, 1);
         function_ed62c9c2("zmb_tungsten_boss_outro", 2);
-        return;
+        break;
     case 11:
         level.var_21ece77b = 1;
         level.var_4ac6cdf7 = 1;
-        return;
+        break;
     case 12:
         function_5ea2c6e3("zmb_tungsten_escort", 4, 1);
-        return;
+        break;
     }
 }
 

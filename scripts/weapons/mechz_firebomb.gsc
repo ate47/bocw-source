@@ -127,7 +127,7 @@ function get_water_depth(position) {
 // Size: 0x7a
 function function_71c73ece() {
     self endon(#"projectile_impact_explode", #"death");
-    while (1) {
+    while (true) {
         self.var_59ba00f5 = self getvelocity();
         wait(float(function_60d95f53()) / 1000);
     }
@@ -287,17 +287,17 @@ function function_31cc6bd9() {
 // Size: 0xfe
 function function_31f342a2(origin, var_9c7e3678) {
     if (!isdefined(level.var_a88ac760)) {
-        return 0;
+        return false;
     }
     foreach (molotov in level.var_a88ac760) {
         if (abs(molotov.origin[2] - origin[2] > 20)) {
             continue;
         }
         if (distance2dsquared(molotov.origin, origin) < var_9c7e3678) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
@@ -883,22 +883,22 @@ function hitpos(start, end, color) {
 // Size: 0x13c
 function candofiredamage(victim, resetfiretime) {
     if (isplayer(victim) && victim depthofplayerinwater() >= 1) {
-        return 0;
+        return false;
     }
     in_vehicle = isplayer(victim) && victim isinvehicle();
     if (in_vehicle) {
         vehicle = victim getvehicleoccupied();
         if (is_true(vehicle.var_9a6644f2)) {
-            return 0;
+            return false;
         }
     }
     entnum = victim getentitynumber();
     if (!isdefined(level.var_f217c587[entnum])) {
         level.var_f217c587[entnum] = 1;
         level thread resetfiredamage(entnum, resetfiretime);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace mechzfirebomb/mechz_firebomb

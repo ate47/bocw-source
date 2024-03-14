@@ -160,16 +160,16 @@ function function_54354e4e(var_b3160f0, axis) {
     switch (axis) {
     case 0:
         self.origin = (var_b3160f0.var_872a88cd, self.origin[1], self.origin[2]);
-        return;
+        break;
     case 1:
         self.origin = (self.origin[0], var_b3160f0.var_872a88cd, self.origin[2]);
-        return;
+        break;
     case 2:
         self.origin = (self.origin[0], self.origin[1], var_b3160f0.var_872a88cd);
-        return;
+        break;
     default:
         self.origin = var_b3160f0.var_872a88cd;
-        return;
+        break;
     }
 }
 
@@ -181,16 +181,16 @@ function function_92b063ff(var_b3160f0, axis) {
     switch (axis) {
     case 0:
         self.origin = self.origin + (var_b3160f0.delta, 0, 0);
-        return;
+        break;
     case 1:
         self.origin = self.origin + (0, var_b3160f0.delta, 0);
-        return;
+        break;
     case 2:
         self.origin = self.origin + (0, 0, var_b3160f0.delta);
-        return;
+        break;
     default:
         self.origin = self.origin + var_b3160f0.delta;
-        return;
+        break;
     }
 }
 

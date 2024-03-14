@@ -112,7 +112,7 @@ function function_9fd1cc80(team) {
 // Checksum 0x13087b0f, Offset: 0x708
 // Size: 0xe
 function function_8fd32d09(*team) {
-    return 0;
+    return false;
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
@@ -121,17 +121,17 @@ function function_8fd32d09(*team) {
 // Size: 0xc8
 function function_b8fe203b(team) {
     if (function_8fd32d09(team)) {
-        return 1;
+        return true;
     }
     if (level.playercount[team] == 1 && function_a1ef346b(team).size == 1) {
         /#
             assert(function_a1ef346b(team).size == 1);
         #/
         if (function_a1ef346b(team)[0].lives > 0) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
@@ -201,7 +201,7 @@ function default_ontimelimit() {
 // Size: 0x110
 function default_onscorelimit() {
     if (!level.endgameonscorelimit) {
-        return 0;
+        return false;
     }
     winner = undefined;
     if (level.teambased) {
@@ -218,7 +218,7 @@ function default_onscorelimit() {
     }
     setdvar(#"ui_text_endreason", game.strings[#"score_limit_reached"]);
     thread globallogic::endgame();
-    return 1;
+    return true;
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
@@ -279,7 +279,7 @@ function default_gettimelimit() {
 // Checksum 0xa52c6ec2, Offset: 0xd78
 // Size: 0x26
 function default_getteamkillpenalty(*einflictor, *attacker, *smeansofdeath, *weapon) {
-    return 0;
+    return false;
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
@@ -287,6 +287,6 @@ function default_getteamkillpenalty(*einflictor, *attacker, *smeansofdeath, *wea
 // Checksum 0xccadb82a, Offset: 0xda8
 // Size: 0x26
 function default_getteamkillscore(*einflictor, *attacker, *smeansofdeath, *weapon) {
-    return 0;
+    return false;
 }
 

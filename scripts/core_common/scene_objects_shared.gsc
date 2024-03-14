@@ -171,12 +171,12 @@ class csceneobject {
                 if (var_74f5d118) {
                     var_50b24637++;
                     if (var_50b24637 == self._e.var_5b7900ec.size) {
-                        return 1;
+                        return true;
                     }
                 }
             }
         }
-        return 0;
+        return false;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -189,35 +189,35 @@ class csceneobject {
         case #"mod_rifle_bullet":
         case #"mod_pistol_bullet":
             if (is_true(s_shot.var_163ca9fa) || is_true(s_shot.var_b3dddfd3)) {
-                return 1;
+                return true;
             }
             break;
         case #"mod_explosive":
         case #"mod_grenade":
         case #"mod_grenade_splash":
             if (is_true(s_shot.var_dbd0fa6f) || is_true(s_shot.var_b3dddfd3)) {
-                return 1;
+                return true;
             }
             break;
         case #"mod_projectile":
         case #"mod_projectile_splash":
             if (is_true(s_shot.var_650063ca) || is_true(s_shot.var_b3dddfd3)) {
-                return 1;
+                return true;
             }
             break;
         case #"mod_melee_weapon_butt":
         case #"mod_melee":
             if (is_true(s_shot.var_efd784b6) || is_true(s_shot.var_b3dddfd3)) {
-                return 1;
+                return true;
             }
             break;
         default:
             if (is_true(s_shot.var_b3dddfd3)) {
-                return 1;
+                return true;
             }
             break;
         }
-        return 0;
+        return false;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -242,7 +242,7 @@ class csceneobject {
         if (is_true(self._s.var_2baad8fc)) {
             self._e util::function_5d36c37a();
         }
-        while (1) {
+        while (true) {
             flag::set(#"waiting_for_damage");
             var_37fa9b04 = undefined;
             var_37fa9b04 = self._e waittill(#"damage", #"death");
@@ -288,9 +288,9 @@ class csceneobject {
                 #/
             }
             thread [[ self._o_scene ]]->on_error();
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -567,11 +567,11 @@ class csceneobject {
         if (isarray(self.var_55b4f21e.entry) && self.var_55b4f21e.entry.size > 1) {
             for (i = 0; i < self.var_55b4f21e.entry.size; i++) {
                 if (self.var_55b4f21e.entry[i].anim === str_current_anim && isdefined(self.var_55b4f21e.entry[i + 1]) && isdefined(self.var_55b4f21e.entry[i + 1].anim)) {
-                    return 1;
+                    return true;
                 }
             }
         }
-        return 0;
+        return false;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -618,7 +618,7 @@ class csceneobject {
     // Size: 0xa6
     function is_alive() {
         if (is_true(function_4de466fd())) {
-            return 1;
+            return true;
         }
         return isdefined(self._e) && (!isai(self._e) || isalive(self._e)) && !is_true(self._e.isdying);
     }
@@ -678,9 +678,9 @@ class csceneobject {
     // Size: 0x72
     function function_3919a776() {
         if (self._o_scene._str_mode === "init" && (is_true(self._s.var_686939) || is_true(self._s.var_f9a5853f))) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -822,10 +822,10 @@ class csceneobject {
     function function_595c601b() {
         if (isarray(self.var_55b4f21e.entry) && self.var_55b4f21e.entry.size > 1) {
             if (isdefined(self.var_4da22aea) && self.var_4da22aea > 0) {
-                return 0;
+                return false;
             }
         }
-        return 1;
+        return true;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -909,10 +909,10 @@ class csceneobject {
         if (isdefined(self._o_scene._e_root) && isdefined(self._o_scene._e_root.var_1505fed6)) {
             a_str_keys = getarraykeys(self._o_scene._e_root.var_1505fed6);
             if (isdefined(self._s.name) && isinarray(a_str_keys, hash(self._s.name))) {
-                return 1;
+                return true;
             }
         }
-        return 0;
+        return false;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -956,21 +956,21 @@ class csceneobject {
         foreach (obj in self._o_scene._a_objects) {
             if (isplayer(ent)) {
                 if (is_shared_player()) {
-                    return 0;
+                    return false;
                 }
                 if (function_527113ae() && !function_71b7c9e3(ent)) {
-                    return 0;
+                    return false;
                 }
                 if (obj._e === ent) {
-                    return 1;
+                    return true;
                 }
                 continue;
             }
             if (obj._e === ent) {
-                return 1;
+                return true;
             }
         }
-        return 0;
+        return false;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -996,9 +996,9 @@ class csceneobject {
                 #/
                 skip_anim_on_client(self._e, self.current_playing_anim[self._n_ent_num]);
             }
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -1008,10 +1008,10 @@ class csceneobject {
     function function_71b7c9e3(player) {
         foreach (obj in self._o_scene._a_objects) {
             if (obj._e === player && [[ obj ]]->function_527113ae()) {
-                return 1;
+                return true;
             }
         }
-        return 0;
+        return false;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -1020,13 +1020,13 @@ class csceneobject {
     // Size: 0x4c4
     function function_72f549e0(s_shot, var_37fa9b04) {
         if (!isdefined(self._e)) {
-            return 0;
+            return false;
         }
         if (is_true(self._e.var_5b7900ec[s_shot.name])) {
-            return 0;
+            return false;
         }
         if (!function_128f0294(s_shot, var_37fa9b04)) {
-            return 0;
+            return false;
         }
         var_f506eca3 = 0;
         if (!isdefined(s_shot.damagethreshold) && !is_true(s_shot.var_132c9791)) {
@@ -1074,9 +1074,9 @@ class csceneobject {
                 self._e setcandamage(0);
                 thread function_b485ee21(s_shot, var_37fa9b04);
             }
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -1113,9 +1113,9 @@ class csceneobject {
             /#
                 warning_on_screen(str_msg);
             #/
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -1707,9 +1707,9 @@ class csceneobject {
     // Size: 0x26
     function function_b52254e6() {
         if (is_true(self.var_2a306f8a)) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -1785,13 +1785,13 @@ class csceneobject {
                 if (!isspawner(self._e)) {
                     e = scene::get_existing_ent(self._str_name, undefined, undefined, self._o_scene._str_name);
                     if (isdefined(e)) {
-                        return 0;
+                        return false;
                     }
                 }
-                return 1;
+                return true;
             }
         }
-        return 0;
+        return false;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -1867,7 +1867,7 @@ class csceneobject {
                             #/
                             var_aa49b05f = 1;
                             play_anim(entry, 1, undefined, n_start_time);
-                            continue;
+                            break;
                         case #"anim":
                             /#
                                 if (is_true(self._s.issiege)) {
@@ -1889,12 +1889,12 @@ class csceneobject {
                             }
                             var_aa49b05f = 1;
                             play_anim(entry, 0, is_true(self.var_55b4f21e.interactiveshot), n_start_time);
-                            continue;
+                            break;
                         default:
                             /#
                                 error(1, "<unknown string>" + str_entry_type + "<unknown string>");
                             #/
-                            continue;
+                            break;
                         }
                     }
                 }
@@ -1938,9 +1938,9 @@ class csceneobject {
     // Size: 0x58
     function has_streamer_hint() {
         if (is_player() && isdefined(self._o_scene._a_streamer_hint) && isdefined(self._o_scene._a_streamer_hint[self._str_team])) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -2033,11 +2033,11 @@ class csceneobject {
         if (isdefined(n_shot) && isdefined(self._s.shots[n_shot].entry)) {
             foreach (s_entry in self._s.shots[n_shot].entry) {
                 if (isdefined(s_entry.anim) || isdefined(s_entry.cameraswitcher)) {
-                    return 1;
+                    return true;
                 }
             }
         }
-        return 0;
+        return false;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -2047,10 +2047,10 @@ class csceneobject {
     function function_e91c94b9(n_shot) {
         if (isdefined(n_shot)) {
             if (is_true(self._s.shots[n_shot].interactiveshot)) {
-                return 1;
+                return true;
             }
         }
-        return 0;
+        return false;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -2160,9 +2160,9 @@ class csceneobject {
     // Size: 0xb0
     function function_f12c5e67(s_shot) {
         if (is_true(s_shot.var_b3dddfd3) || is_true(s_shot.var_163ca9fa) || is_true(s_shot.var_dbd0fa6f) || is_true(s_shot.var_650063ca) || is_true(s_shot.var_efd784b6)) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -2450,15 +2450,15 @@ class cscene {
     // Size: 0x138
     function function_13804c36(ent, var_3b0de5fa) {
         if (ent.script_animname === var_3b0de5fa || isstring(ent.script_animname) && tolower(ent.script_animname) === var_3b0de5fa) {
-            return 1;
+            return true;
         }
         if (ent.animname === var_3b0de5fa || isstring(ent.animname) && tolower(ent.animname) === var_3b0de5fa) {
-            return 1;
+            return true;
         }
         if (ent.targetname === var_3b0de5fa || isstring(ent.targetname) && tolower(ent.targetname) === var_3b0de5fa) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
     // Namespace cscene/scene_objects_shared
@@ -2487,9 +2487,9 @@ class cscene {
                 #/
             }
             thread [[ self ]]->on_error();
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
     // Namespace cscene/scene_objects_shared
@@ -2498,17 +2498,17 @@ class cscene {
     // Size: 0x10a
     function has_next_shot(str_current_shot = self._a_active_shots[0]) {
         if (isdefined(self.var_2e9fdf35)) {
-            return 1;
+            return true;
         }
         if (str_current_shot === "init") {
-            return 0;
+            return false;
         }
         foreach (i, str_shot in self.var_5a2219f0) {
             if (str_shot === str_current_shot && isdefined(self.var_5a2219f0[i + 1]) && self.var_5a2219f0[i + 1] !== "init") {
-                return 1;
+                return true;
             }
         }
-        return 0;
+        return false;
     }
 
     // Namespace cscene/scene_objects_shared
@@ -2646,7 +2646,7 @@ class cscene {
                     break;
                 }
                 self.n_frame_counter = var_82bbc872;
-                while (1) {
+                while (true) {
                     if (getdvarint(#"hash_67caa056eba27a53", 0) == 0 || !isdefined(self._a_objects)) {
                         waitframe(1);
                         continue;
@@ -2946,9 +2946,9 @@ class cscene {
                     warning_on_screen("<unknown string>" + self._str_name + "<unknown string>" + str_msg);
                 #/
             }
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
     // Namespace cscene/scene_objects_shared
@@ -3094,9 +3094,9 @@ class cscene {
     // Size: 0x26
     function is_scene_shared() {
         if (self._s scene::is_igc()) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
     // Namespace cscene/scene_objects_shared
@@ -3772,14 +3772,14 @@ class cscene {
     // Size: 0x9a
     function has_player() {
         if (!isdefined(self._a_objects)) {
-            return 0;
+            return false;
         }
         foreach (obj in self._a_objects) {
             if ([[ obj ]]->is_player()) {
-                return 1;
+                return true;
             }
         }
-        return 0;
+        return false;
     }
 
     // Namespace cscene/scene_objects_shared
@@ -3788,9 +3788,9 @@ class cscene {
     // Size: 0x46
     function is_player(s_obj) {
         if (s_obj.type === "player" || s_obj.type === "sharedplayer") {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
     // Namespace cscene/scene_objects_shared

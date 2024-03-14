@@ -125,7 +125,7 @@ function function_e74a3df6() {
     self notify("6a2e88ac4d6010df");
     self endon("6a2e88ac4d6010df");
     level endon(#"game_over", #"hash_15db1223146bc923");
-    while (1) {
+    while (true) {
         wait(0.5);
         state = namespace_4dae815d::function_59a9cf1d();
         if (state == 0) {

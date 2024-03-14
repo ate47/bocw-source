@@ -359,7 +359,7 @@ function zone_init() {
 function function_b9ad8870() {
     /#
         wait_till("connect_backlot_to_mainstreet");
-        while (1) {
+        while (true) {
             wait(2);
         }
     #/
@@ -511,7 +511,7 @@ function function_44b1279a() {
     self clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 4);
     self.var_9767e0af = 0;
     util::wait_network_frame();
-    while (1) {
+    while (true) {
         if (!isplayer(self)) {
             return;
         }

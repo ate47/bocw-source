@@ -85,22 +85,22 @@ function function_efe5a681(team) {
     max_players = player::function_d36b6597();
     team_players = getplayers(team);
     if (team_players.size >= max_players && max_players != 0) {
-        return 0;
+        return false;
     }
     if (!max_players) {
-        return 1;
+        return true;
     }
     var_fa810454 = function_ee150fcc(team_players);
     party = self getparty();
     if (party.var_a15e4438 > var_fa810454) {
-        return 0;
+        return false;
     }
     /#
         if (getdvarint(#"hash_2ffea48b89a9ff3f", 0) && self != getplayers()[0] && getplayers()[0].team == team && !isbot(self)) {
-            return 0;
+            return false;
         }
     #/
-    return 1;
+    return true;
 }
 
 // Namespace teams/team_assignment
@@ -241,13 +241,13 @@ function function_b0c92599(party) {
     /#
         var_f8896168 = getdvarint(#"hash_4cbf229ab691d987", 0);
         if (var_f8896168 && (var_f8896168 != 2 || self ishost())) {
-            return 0;
+            return false;
         }
     #/
     if (isdefined(level.var_7d3ed2bf) && level.var_7d3ed2bf && isdefined(party) && party.fill == 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace teams/team_assignment
@@ -375,10 +375,10 @@ function teamscoresequal() {
             continue;
         }
         if (score != getteamscore(team)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace teams/team_assignment
@@ -445,10 +445,10 @@ function teamplayercountsequal(playercounts) {
             continue;
         }
         if (count != playercounts[team]) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 // Namespace teams/team_assignment
@@ -472,7 +472,7 @@ function function_d078493a(playercounts) {
 // Checksum 0xeb8f63ba, Offset: 0x1910
 // Size: 0x10
 function function_321f8eb5(*player) {
-    return 1;
+    return true;
 }
 
 // Namespace teams/team_assignment
@@ -481,38 +481,38 @@ function function_321f8eb5(*player) {
 // Size: 0x106
 function function_a3e209ba(teamname, comingfrommenu) {
     if (level.rankedmatch) {
-        return 0;
+        return false;
     }
     if (level.inprematchperiod) {
-        return 0;
+        return false;
     }
     if (teamname != #"none") {
-        return 0;
+        return false;
     }
     if (comingfrommenu) {
-        return 0;
+        return false;
     }
     if (self ishost()) {
-        return 0;
+        return false;
     }
     if (level.forceautoassign) {
-        return 0;
+        return false;
     }
     if (isbot(self)) {
-        return 0;
+        return false;
     }
     if (self issplitscreen()) {
-        return 0;
+        return false;
     }
     /#
         if (getdvarint(#"hash_4421e80faf4736fc", 0)) {
-            return 0;
+            return false;
         }
     #/
     if (![[ level.var_a3e209ba ]]()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 // Namespace teams/team_assignment
@@ -822,7 +822,7 @@ function function_58b6d2c9() {
 // Size: 0x14c
 function function_1aa0418f() {
     /#
-        while (1) {
+        while (true) {
             wait(3);
             players = getplayers();
             if (players.size > 0 && players[0] isstreamerready()) {

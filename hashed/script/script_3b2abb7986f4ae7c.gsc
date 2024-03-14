@@ -181,7 +181,7 @@ function function_685a8288(instance) {
         var_deaf3fc0 = var_69406530 getcentroid();
         var_6fb21416 = 4000;
     }
-    while (1) {
+    while (true) {
         var_be19a72a = 0;
         foreach (player in function_a1ef346b()) {
             if (isdefined(player) && isdefined(var_69406530) && isdefined(var_deaf3fc0) && (var_69406530.health < var_69406530.maxhealth || distance(player.origin, var_deaf3fc0) <= var_6fb21416)) {
@@ -228,7 +228,7 @@ function function_90bceefd() {
         return;
     }
     self endon(#"death");
-    while (1) {
+    while (true) {
         level waittill(#"hash_6a805bca389d1daf");
         var_b212a8a9 = self.health / self.maxhealth;
         var_c835c552 = function_a0861762(2500, 150000);
@@ -591,7 +591,7 @@ function function_71c8970c(interval) {
     if (isdefined(self.var_d3256432)) {
         playsoundatposition(self.var_d3256432, self.origin);
     }
-    while (1) {
+    while (true) {
         if (!isdefined(self.var_d3256432)) {
             playsoundatposition("wpn_semtex_alert", self.origin);
         }
@@ -603,7 +603,7 @@ function function_71c8970c(interval) {
         wait(interval);
         interval = interval / 1.2;
         if (interval < 0.08) {
-            return;
+            break;
         }
     }
 }
@@ -718,7 +718,7 @@ function watchforcratekill(start_kill_watch_z_threshold) {
     killthreshold = 0.2;
     maxframestillstationary = 10;
     numframesstationary = 0;
-    while (1) {
+    while (true) {
         vel = 0;
         if (isdefined(self.velocity)) {
             vel = abs(self.velocity[2]);
@@ -733,7 +733,7 @@ function watchforcratekill(start_kill_watch_z_threshold) {
             numframesstationary = 0;
         }
         if (numframesstationary >= maxframestillstationary) {
-            return;
+            break;
         }
         waitframe(1);
     }

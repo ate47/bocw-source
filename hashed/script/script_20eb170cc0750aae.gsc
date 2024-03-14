@@ -129,7 +129,7 @@ function function_45b62760() {
 // Checksum 0x3da3af35, Offset: 0xc18
 // Size: 0x4d8
 function function_7f1305bc() {
-    while (1) {
+    while (true) {
         level waittill(#"save_restore");
         player = getplayers()[0];
         level thread lui::screen_fade(0, 1, 1, "black");
@@ -520,11 +520,11 @@ function function_958bdad1() {
     self endon(#"hash_6baa8d54b54f762e");
     if (is_true(level.inprematchperiod) || !isdefined(self.var_56e5037e)) {
         self.var_56e5037e = 1;
-        return 1;
+        return true;
     }
     hud_message::setlowermessage(game.strings[#"waiting_to_spawn"], 15);
     level waittilltimeout(15, #"objective_changed");
-    return 1;
+    return true;
 }
 
 // Namespace coop/coop
@@ -533,7 +533,7 @@ function function_958bdad1() {
 // Size: 0x104
 function function_5a6ac1d8() {
     level flag::wait_till("all_players_spawned");
-    while (1) {
+    while (true) {
         level waittill(#"objective_changed");
         foreach (player in level.players) {
             if (player.sessionstate == "spectator" && globallogic_utils::isvalidclass(player.curclass)) {
@@ -549,9 +549,9 @@ function function_5a6ac1d8() {
 // Size: 0x18
 function spawnedasspectator() {
     if (!isdefined(self.var_56e5037e)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
 // Namespace coop/coop
@@ -585,17 +585,17 @@ function function_fd5dfc25() {
                         if (self.var_83f25fdb < 5) {
                             self util::show_hint_text(#"hash_3d4165067dc18a6b");
                         }
-                        return;
+                        break;
                     case #"spike_launcher":
                         if (self.var_83f25fdb < 10) {
                             self util::show_hint_text(#"hash_9b1201effcb0c57");
                         }
-                        return;
+                        break;
                     case #"hash_7549b2fcdf36145a":
                         if (self.var_83f25fdb < 10) {
                             self util::show_hint_text(#"hash_50d6975fce35fa60");
                         }
-                        return;
+                        break;
                     }
                 }
             }
@@ -610,7 +610,7 @@ function function_fd5dfc25() {
 function function_bb5fae75() {
     self notify(#"hash_1d6b9f8f1e2663d9");
     self endon(#"death", #"hash_1d6b9f8f1e2663d9");
-    for (var_543d6995 = 0; 1; var_543d6995 = 0) {
+    for (var_543d6995 = 0; true; var_543d6995 = 0) {
         waitresult = undefined;
         waitresult = self waittill(#"weapon_change");
         if (isdefined(waitresult.weapon)) {
@@ -636,7 +636,7 @@ function function_bb5fae75() {
 // Size: 0x84
 function function_b296ed1c() {
     self endon(#"death", #"hash_6afb6967ed216cca");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"weapon_fired");
         if (is_true(waitresult.weapon.isheavyweapon)) {

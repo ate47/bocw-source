@@ -327,7 +327,7 @@ function on_localclient_connect(localclientnum) {
 // Size: 0x2be
 function function_3adc69b0(localclientnum = 0) {
     level endon(#"disconnect");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = level waittill("CollectibleInspect" + localclientnum, #"collectibleinspect");
         switch (waitresult.event_name) {

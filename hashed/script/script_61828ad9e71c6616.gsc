@@ -216,12 +216,12 @@ function function_2912fa8(var_d3413870) {
 // Size: 0x62
 function function_71e94a3b(var_d3413870) {
     if (self function_2912fa8(var_d3413870)) {
-        return 0;
+        return false;
     }
     if (isdefined(level.var_662dc783)) {
         return !is_true(self [[ level.var_662dc783 ]](var_d3413870));
     }
-    return 1;
+    return true;
 }
 
 // Namespace killstreakrules/killstreakrules

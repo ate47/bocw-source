@@ -103,7 +103,7 @@ function function_d186cb81() {
 // Size: 0x4f8
 function function_6a3e8a89() {
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
@@ -328,7 +328,7 @@ function function_55859752() {
         door.parent_struct = self;
         function_be2c24a3(self.target, 0);
     } else if (door.var_9420d4b4 && door.damage_level <= 0 || door.var_27a45076 != 0) {
-        return 0;
+        return false;
     }
     door.damage_level = 0;
     door.var_1c553fa4 = 1;
@@ -338,7 +338,7 @@ function function_55859752() {
     door.var_9420d4b4 = 1;
     namespace_85745671::function_1ede0cd3(self.target, self.door);
     door playsound(#"hash_4ef96dfa0f645331");
-    return 1;
+    return true;
 }
 
 // Namespace namespace_4faef43b/namespace_dd8b9b1a
@@ -378,7 +378,7 @@ function private function_e5d01ba1() {
 // Size: 0x460
 function private function_51095a3d() {
     level endon(#"game_ended");
-    while (1) {
+    while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
@@ -500,14 +500,14 @@ function function_673a485() {
         self.window = window;
         window.parent_struct = self;
     } else if (window.damage_level <= 0) {
-        return 0;
+        return false;
     }
     window.damage_level = 0;
     window.var_1c553fa4 = 1;
     window setmodel(self.var_811c2d3a[window.damage_level]);
     window playsound(#"hash_65d45ffe1b39c009");
     namespace_85745671::function_1ede0cd3(self.target, self.window);
-    return 1;
+    return true;
 }
 
 // Namespace namespace_4faef43b/namespace_dd8b9b1a

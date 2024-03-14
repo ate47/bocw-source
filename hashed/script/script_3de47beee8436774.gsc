@@ -150,10 +150,10 @@ function function_e59c6d2a() {
 function function_5985d444() {
     wait(1);
     for (i = 0; i < 2; i++) {
-        while (1) {
+        while (true) {
             ai = spawner::simple_spawn_single("sp_mortar_landing_vc", &function_d96fcf75, i);
             if (isdefined(ai)) {
-                continue;
+                break;
             }
             waitframe(1);
         }
@@ -282,13 +282,13 @@ function function_8feeb0be() {
     }
     var_61dc66d2 = 5 * (1 - var_c62824cc / var_be81a997);
     var_8fc81e63 = gettime();
-    while (1) {
+    while (true) {
         n_time_passed = float(gettime() - var_8fc81e63) / 1000;
         n_percent = min(1, n_time_passed / var_61dc66d2);
         var_53bb8ef2.var_cfa81957 = lerpfloat(var_c62824cc, var_be81a997, n_percent);
         self function_e7152de8();
         if (n_percent >= 1) {
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -380,7 +380,7 @@ function function_9ca7e163() {
     hidemiscmodels("bell_tower_final");
     var_4e227252 = 0;
     level clientfield::set("" + #"hash_147afd2c82d374fe", 1);
-    while (1) {
+    while (true) {
         s_waitresult = undefined;
         s_waitresult = trigger waittill(#"damage");
         if (s_waitresult.attacker === level.player) {
@@ -463,7 +463,7 @@ function function_e4c44785() {
     self notify("78a7000ddd1cc0f9");
     self endon("78a7000ddd1cc0f9");
     level endon(#"hash_5f68eb2d344b2ef0", #"disconnect");
-    while (1) {
+    while (true) {
         level waittill(#"save_restore");
         waitframe(1);
         level lui::screen_fade_out(0, "white");
@@ -1005,7 +1005,7 @@ function function_ab1c35d7() {
     s_anchor = var_777b7e33[0];
     self thread function_1e3fd6e0();
     self setspeedimmediate(30);
-    while (1) {
+    while (true) {
         self turret::disable(1);
         self turret::disable(2);
         self turret::disable(3);
@@ -1056,25 +1056,25 @@ function function_ba67d417(s_anchor) {
     switch (s_anchor.script_int) {
     case 0:
         self thread function_f1b25856(s_anchor, 0);
-        return;
+        break;
     case 1:
-        return;
+        break;
     case 2:
         self thread function_f1b25856(s_anchor, 1);
-        return;
+        break;
     case 3:
         self thread function_f1b25856(s_anchor, 1);
-        return;
+        break;
     case 4:
-        return;
+        break;
     case 5:
         self thread function_f1b25856(s_anchor, 1);
-        return;
+        break;
     case 6:
         self thread function_f1b25856(s_anchor, 1);
-        return;
+        break;
     default:
-        return;
+        break;
     }
 }
 
@@ -1228,7 +1228,7 @@ function function_7882569f(s_anchor, var_777b7e33, var_a9ad8d56) {
     self endon(#"death", #"hash_3a86066a301e90fc", #"stop path");
     self notify("16a7ca31dd85221b");
     self endon("16a7ca31dd85221b");
-    while (1) {
+    while (true) {
         var_ab252334 = function_506eaf20(var_777b7e33, var_a9ad8d56);
         if (s_anchor.targetname !== var_ab252334.targetname || s_anchor.script_int !== var_ab252334.script_int) {
             self notify(#"stop path");
@@ -2094,10 +2094,10 @@ function function_e12e064f() {
 function function_c1a89a46() {
     level endon(#"hash_5165eae58971e849");
     level flag::wait_till("flag_mortar_upper_mortar_building_reached");
-    while (1) {
+    while (true) {
         ai_enemy = spawner::simple_spawn_single("vign_cust_arm_door_roll_entr_01_guy", &function_5e509636);
         if (isdefined(ai_enemy)) {
-            return;
+            break;
         }
         waitframe(1);
     }
@@ -2432,7 +2432,7 @@ function function_ce707a4(var_d93ed883) {
 function function_7b37dd50(var_d93ed883) {
     level endon(#"hash_443f87164a353a53");
     self endon(#"death");
-    while (1) {
+    while (true) {
         level function_ad03d12c(1);
         level function_ad03d12c(0);
         setenablenode(var_d93ed883, 0);
@@ -3285,47 +3285,47 @@ function function_1df2273d(*destructible_event, attacker, *weapon, *piece_index,
         level scene::play(#"hash_7d136efada0c9af0");
         showmiscmodels("p9_fxanim_cp_armada_town_bldg_06_01_static_mod");
         level function_97bcc0e9(#"hash_7d136efada0c9af0");
-        return;
+        break;
     case #"hash_ca1368592862468":
         level scene::play(#"hash_72f8f56116f32b17");
         showmiscmodels("p9_fxanim_cp_armada_town_bldg_06_02_static_mod");
         level function_97bcc0e9(#"hash_72f8f56116f32b17");
-        return;
+        break;
     case #"hash_ca137859286261b":
         level scene::play(#"hash_35db7f3d2c472306");
         showmiscmodels("p9_fxanim_cp_armada_town_bldg_06_03_static_mod");
         level function_97bcc0e9(#"hash_35db7f3d2c472306");
-        return;
+        break;
     case #"hash_65f4d60588e2b888":
         level scene::play(#"hash_5e055056aa386e1f");
         showmiscmodels("p9_fxanim_cp_armada_town_bldg_14_01_static_mod");
         level function_97bcc0e9(#"hash_5e055056aa386e1f");
-        return;
+        break;
     case #"hash_65f4d90588e2bda1":
         level scene::play(#"hash_6c7177a6718884b8");
         showmiscmodels("p9_fxanim_cp_armada_town_bldg_14_02_static_mod");
         level function_97bcc0e9(#"hash_6c7177a6718884b8");
-        return;
+        break;
     case #"hash_65f4d80588e2bbee":
         level scene::play(#"hash_1fb12697821542a1");
         showmiscmodels("p9_fxanim_cp_armada_town_bldg_14_03_static_mod");
         level function_97bcc0e9(#"hash_1fb12697821542a1");
-        return;
+        break;
     case #"hash_65f4db0588e2c107":
         level scene::play(#"hash_1464d638ee5e23aa");
         showmiscmodels("p9_fxanim_cp_armada_town_bldg_14_04_static_mod");
         level function_97bcc0e9(#"hash_1464d638ee5e23aa");
-        return;
+        break;
     case #"hash_27d72049793f0ba2":
         level scene::play(#"hash_1849fb3a90d16a1");
         showmiscmodels("p9_fxanim_cp_armada_town_court_01_static_mod");
         level function_97bcc0e9(#"hash_1849fb3a90d16a1");
-        return;
+        break;
     case #"hash_27d71f49793f09ef":
         level scene::play(#"hash_60671afc06cb038e");
         showmiscmodels("p9_fxanim_cp_armada_town_court_02_static_mod");
         level function_97bcc0e9(#"hash_60671afc06cb038e");
-        return;
+        break;
     }
 }
 
