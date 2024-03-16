@@ -9,7 +9,7 @@
             "value": "1"
         }
     ],
-    "var_d260763": "#hash_7bf05ba8ce987acd",
+    "descriptionimage": "#hash_7bf05ba8ce987acd",
     "description": "#hash_7db7f4ef294f7917",
     "var_60fcfffa": "#hash_57f3f21157ef659b",
     "var_9bc3be7": 1,
@@ -19,7 +19,7 @@
     "var_43a952c1": 1,
     "name": "kbm_aim_down_sight_behavior",
     "displayname": "#hash_300edd2ddc95a1ad",
-    "var_4a4760c0": 60,
+    "rangestartvalue": 60,
     "var_500458ac": 10,
     "decimalplace": 1,
     "var_66faec87": 120,

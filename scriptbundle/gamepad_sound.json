@@ -22,7 +22,7 @@
     "var_43a952c1": 1,
     "name": "gamepad_sound",
     "displayname": "#hash_14cb571821f80040",
-    "var_4a4760c0": 60,
+    "rangestartvalue": 60,
     "var_500458ac": 10,
     "decimalplace": 1,
     "var_66faec87": 120,

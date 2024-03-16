@@ -1,9 +1,9 @@
 {
     "callingtask": "#hash_2333d2f2b7271a56",
     "var_922067c4": "scriptbundle",
-    "image": "#hash_952012b9984338d",
+    "image": "#ui_icon_zm_calling_tasks_sniperrifle",
     "dailytarget": 375,
     "name": "sniperrifles_task",
     "taskname": "#hash_3cd9cb94c3c3ca74",
-    "var_88e4a04f": "#hash_5b89c14a7fc78ed7"
+    "descsimple": "#hash_5b89c14a7fc78ed7"
 }

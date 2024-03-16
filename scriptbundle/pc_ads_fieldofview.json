@@ -10,7 +10,7 @@
         }
     ],
     "var_dfedf08e": 1,
-    "var_d260763": "#hash_551f49970607b07c",
+    "descriptionimage": "#hash_551f49970607b07c",
     "description": "#hash_12f714ad024cbf35",
     "var_60fcfffa": "#hash_54b9d28e8d5975fa",
     "var_9bc3be7": 1,
@@ -21,7 +21,7 @@
     "var_43a952c1": 1,
     "name": "pc_ads_fieldofview",
     "displayname": "#hash_52c0dd419a53863",
-    "var_4a4760c0": 60,
+    "rangestartvalue": 60,
     "var_500458ac": 10,
     "decimalplace": 1,
     "var_66faec87": 120,

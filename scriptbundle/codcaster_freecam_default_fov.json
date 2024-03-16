@@ -10,7 +10,7 @@
     "maxvalue": 1,
     "name": "codcaster_freecam_default_fov",
     "displayname": "#hash_681323ae30e32aeb",
-    "var_4a4760c0": 60,
+    "rangestartvalue": 60,
     "var_d6897f56": 1,
     "var_500458ac": 5,
     "var_66faec87": 120,

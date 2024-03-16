@@ -1,5 +1,5 @@
 {
-    "var_d260763": "#hash_3425f01d31581a1d",
+    "descriptionimage": "#hash_3425f01d31581a1d",
     "description": "#hash_56040d8792d87a44",
     "var_ebe98576": 1,
     "var_60fcfffa": "#hash_62ed1ce9b3cdba91",
@@ -13,7 +13,7 @@
     "maxvalue": -1,
     "name": "pc_fieldofview",
     "displayname": "#hash_2819b325197ab2bc",
-    "var_4a4760c0": 60,
+    "rangestartvalue": 60,
     "var_d6897f56": 1,
     "var_500458ac": 100,
     "decimalplace": 1,

@@ -21,7 +21,7 @@
     "var_4a1a4613": "armor_swap",
     "name": "resource_item_medium_harvesting_sr",
     "displayname": "#hash_1f00efce440309fb",
-    "var_9507cf45": "#hash_42a9c56cfc3985b9",
+    "stashicon": "#hash_42a9c56cfc3985b9",
     "var_36781d9f": "zmb_powerup_resource_large_spawn",
     "var_9e569978": 1,
     "stackcount": 500,

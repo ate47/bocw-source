@@ -10,7 +10,7 @@
         }
     ],
     "var_dfedf08e": 1,
-    "var_d260763": "#hash_2c9620a2cdef0968",
+    "descriptionimage": "#hash_2c9620a2cdef0968",
     "description": "#hash_3e51ac2d29511a11",
     "var_60fcfffa": "#hash_57f3f21157ef659b",
     "var_9bc3be7": 1,
@@ -21,7 +21,7 @@
     "var_43a952c1": 1,
     "name": "interact_behavior",
     "displayname": "#hash_3e31a98a9a5e2c3f",
-    "var_4a4760c0": 60,
+    "rangestartvalue": 60,
     "var_2d7a664e": 1,
     "var_500458ac": 10,
     "decimalplace": 1,

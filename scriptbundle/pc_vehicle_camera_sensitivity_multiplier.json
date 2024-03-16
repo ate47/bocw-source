@@ -9,7 +9,7 @@
     "maxvalue": 1,
     "name": "pc_vehicle_camera_sensitivity_multiplier",
     "displayname": "#hash_6cb313d2054705a",
-    "var_4a4760c0": 0.1,
+    "rangestartvalue": 0.1,
     "var_d6897f56": 1,
     "var_500458ac": 10,
     "decimalplace": 0.01,

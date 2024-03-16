@@ -10,7 +10,7 @@
     "maxvalue": 1,
     "name": "codcaster_freecam_slow_speed_modifier",
     "displayname": "#hash_5f023c789317b5c9",
-    "var_4a4760c0": 0.1,
+    "rangestartvalue": 0.1,
     "var_d6897f56": 1,
     "var_500458ac": 5,
     "var_66faec87": 0.9,

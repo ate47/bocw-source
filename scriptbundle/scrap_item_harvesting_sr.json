@@ -18,7 +18,7 @@
     "var_4a1a4613": "armor_swap",
     "name": "scrap_item_harvesting_sr",
     "displayname": "#hash_2bbec956cfce9af",
-    "var_9507cf45": "#hash_7bc7a0650101e5d0",
+    "stashicon": "#hash_7bc7a0650101e5d0",
     "var_9e569978": 1,
     "stackcount": 500,
     "icon": "#hash_7bc7a0650101e5d0",

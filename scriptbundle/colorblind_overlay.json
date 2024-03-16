@@ -17,7 +17,7 @@
             "value": "3"
         }
     ],
-    "var_d260763": "#hash_445d9863c4baeb98",
+    "descriptionimage": "#hash_445d9863c4baeb98",
     "description": "#hash_50ad421f03fd4095",
     "var_ebe98576": 1,
     "var_60fcfffa": "#menu/on",
@@ -33,7 +33,7 @@
     "name": "colorblind_overlay",
     "displayname": "#hash_3a94e6177f896e03",
     "var_500458ac": 10,
-    "var_b56e8776": "#startmenu_options_graphics_colorblind",
+    "openmenuname": "#startmenu_options_graphics_colorblind",
     "var_66faec87": 10,
     "statname": "colorblindOverlay",
     "var_8b80386": 1,

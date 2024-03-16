@@ -17,7 +17,7 @@
     "name": "ammo_special_item_t9",
     "displayname": "#hash_5bd019e89f2a1bc8",
     "var_9e569978": 1,
-    "icon": "#hash_69861de068dbd4bf",
+    "icon": "#ui_icon_inventory_p8_wz_ammo_pickup_rockets",
     "modelscale": 0.6,
     "rarity": "Resource",
     "handler": "#hash_9ed0c30684ca35a",

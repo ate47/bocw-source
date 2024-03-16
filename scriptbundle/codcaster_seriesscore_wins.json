@@ -1,7 +1,7 @@
 {
     "option_dependencies": [
         {
-            "var_1643d946": "1",
+            "optionvalue": "1",
             "optionname": "#codcaster_seriesscore",
             "operator": "=="
         }
@@ -27,7 +27,7 @@
     "maxvalue": 1,
     "name": "codcaster_seriesscore_wins",
     "displayname": "#hash_6613de4b7dfd2685",
-    "var_4a4760c0": 1,
+    "rangestartvalue": 1,
     "var_d6897f56": 1,
     "var_500458ac": 10,
     "var_66faec87": 9,

@@ -11,7 +11,7 @@
     "maxvalue": 1,
     "name": "ps4_menu_cursor_sensitivity",
     "displayname": "#hash_1809e9281b335b8c",
-    "var_4a4760c0": 0.1,
+    "rangestartvalue": 0.1,
     "var_d6897f56": 1,
     "var_500458ac": 10,
     "decimalplace": 0.1,

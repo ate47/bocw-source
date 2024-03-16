@@ -23,7 +23,7 @@
     "name": "pistol_fullauto_t9_white_item_sr",
     "var_36781d9f": "wpn_drop_generic_delay",
     "var_9e569978": 1,
-    "icon": "#hash_162f9dbe53561dc5",
+    "icon": "#ui_icon_weapon_pistol_burst",
     "attachslotmagazine": 1,
     "attachslotunderbarrel": 1,
     "modelscale": 1,

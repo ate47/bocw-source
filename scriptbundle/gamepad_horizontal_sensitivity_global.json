@@ -88,7 +88,7 @@
     "maxvalue": 1,
     "name": "gamepad_horizontal_sensitivity_global",
     "displayname": "#hash_614cd20c6f692572",
-    "var_4a4760c0": 0.01,
+    "rangestartvalue": 0.01,
     "var_500458ac": 10,
     "decimalplace": 0.01,
     "var_66faec87": 4,

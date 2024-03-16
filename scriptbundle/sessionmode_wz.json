@@ -1,8 +1,8 @@
 {
-    "var_bd6b8087": "fireteam_dirty_bomb",
+    "defaultgametype": "fireteam_dirty_bomb",
     "abbreviation": "wz",
     "name": "sessionmode_wz",
-    "var_3e36c924": "#hash_45b95a0b6dcb128b",
+    "selectdescription": "#hash_45b95a0b6dcb128b",
     "displayname": "#menu/warzone",
-    "var_d5f0dede": "wz_forest"
+    "defaultmap": "wz_forest"
 }

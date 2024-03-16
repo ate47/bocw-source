@@ -1,7 +1,7 @@
 {
     "option_dependencies": [
         {
-            "var_1643d946": "1",
+            "optionvalue": "1",
             "optionname": "#voice_chat_enable",
             "operator": "=="
         }

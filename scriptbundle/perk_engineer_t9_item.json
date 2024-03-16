@@ -20,13 +20,13 @@
     "displayname": "#hash_4baf5d49abad672",
     "var_9e569978": 1,
     "stackcount": 1,
-    "icon": "#hash_6e2b253dd7d6c6fa",
+    "icon": "#ui_icon_perk_engineer",
     "modelscale": 1,
     "rarity": "None",
     "equipsound": "uin_wz_perk_engineer",
     "var_97c5ead1": 1,
     "handler": "#hash_57df81951e3bc37c",
     "var_3af59a99": 1,
-    "pickupicon": "#hash_6e2b253dd7d6c6fa",
+    "pickupicon": "#ui_icon_perk_engineer",
     "itemtype": "perk_tier_1"
 }

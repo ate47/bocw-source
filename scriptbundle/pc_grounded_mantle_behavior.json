@@ -1,7 +1,7 @@
 {
     "option_dependencies": [
         {
-            "var_1643d946": "0",
+            "optionvalue": "0",
             "optionname": "#pc_airborne_mantle_behavior",
             "operator": "=="
         }
@@ -21,7 +21,7 @@
         }
     ],
     "var_dfedf08e": 1,
-    "var_d260763": "#hash_77307344bce4a4c",
+    "descriptionimage": "#hash_77307344bce4a4c",
     "description": "#hash_12470726fa75bd66",
     "var_60fcfffa": "#menu/on",
     "var_9bc3be7": 1,

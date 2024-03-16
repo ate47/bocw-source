@@ -1,7 +1,7 @@
 {
     "option_dependencies": [
         {
-            "var_1643d946": "1",
+            "optionvalue": "1",
             "optionname": "#pc_gamepad_grounded_mantle_behavior",
             "operator": "=="
         }

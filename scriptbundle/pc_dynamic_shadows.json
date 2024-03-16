@@ -13,7 +13,7 @@
             "value": "2"
         }
     ],
-    "var_d260763": "#hash_dd74e5f5fa1a5b2",
+    "descriptionimage": "#hash_dd74e5f5fa1a5b2",
     "description": "#hash_e7765a135a7fe71",
     "var_ebe98576": 1,
     "var_60fcfffa": "#menu/on",
@@ -27,7 +27,7 @@
     "var_43a952c1": 1,
     "name": "pc_dynamic_shadows",
     "displayname": "#hash_1b7f9bc0edbb0bdf",
-    "var_4a4760c0": 1,
+    "rangestartvalue": 1,
     "var_500458ac": 10,
     "var_66faec87": 10,
     "statname": "r_lightingSunShadowDisableDynamicDraw",

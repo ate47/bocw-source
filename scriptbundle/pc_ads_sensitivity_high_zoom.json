@@ -1,5 +1,5 @@
 {
-    "var_d260763": "#hash_1db36356b60cc8fe",
+    "descriptionimage": "#hash_1db36356b60cc8fe",
     "description": "#hash_d5a45977428ac8c",
     "var_60fcfffa": "#hash_7cdc6df793f97d8c",
     "var_9bc3be7": 1,
@@ -10,7 +10,7 @@
     "maxvalue": 1,
     "name": "pc_ads_sensitivity_high_zoom",
     "displayname": "#hash_5ab31eb32f83ec24",
-    "var_4a4760c0": 0.1,
+    "rangestartvalue": 0.1,
     "var_d6897f56": 1,
     "var_500458ac": 10,
     "decimalplace": 0.01,

@@ -19,7 +19,7 @@
     "var_43a952c1": 0.01,
     "name": "gamepad_target_assist",
     "displayname": "#hash_18b691a98ac16c17",
-    "var_4a4760c0": 0.01,
+    "rangestartvalue": 0.01,
     "var_500458ac": 10,
     "decimalplace": 0.01,
     "var_66faec87": 4,

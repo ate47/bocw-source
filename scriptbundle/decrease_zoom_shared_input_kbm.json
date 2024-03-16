@@ -19,7 +19,7 @@
     "var_43a952c1": 1,
     "name": "decrease_zoom_shared_input_kbm",
     "displayname": "#hash_23a01012dc6def43",
-    "var_4a4760c0": 60,
+    "rangestartvalue": 60,
     "var_500458ac": 10,
     "decimalplace": 1,
     "var_66faec87": 120,

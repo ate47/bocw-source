@@ -1,12 +1,12 @@
 {
     "option_dependencies": [
         {
-            "var_1643d946": "0",
+            "optionvalue": "0",
             "optionname": "#pc_nvidia_dlss",
             "operator": "~="
         }
     ],
-    "var_d260763": "#hash_2c363b43d01cf73e",
+    "descriptionimage": "#hash_2c363b43d01cf73e",
     "description": "#hash_3a2302383d4a250d",
     "var_ebe98576": 1,
     "var_60fcfffa": "#menu/on",
@@ -22,7 +22,7 @@
     "maxvalue": 1,
     "name": "pc_render_resolution",
     "displayname": "#hash_d0dc1945a1a5c5b",
-    "var_4a4760c0": 20,
+    "rangestartvalue": 20,
     "var_d6897f56": 1,
     "var_500458ac": 10,
     "var_66faec87": 200,

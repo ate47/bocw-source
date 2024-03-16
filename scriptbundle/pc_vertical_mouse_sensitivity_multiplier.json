@@ -10,7 +10,7 @@
     "maxvalue": 1,
     "name": "pc_vertical_mouse_sensitivity_multiplier",
     "displayname": "#hash_2d908be195d061b8",
-    "var_4a4760c0": 0.1,
+    "rangestartvalue": 0.1,
     "var_d6897f56": 1,
     "var_500458ac": 10,
     "decimalplace": 0.01,

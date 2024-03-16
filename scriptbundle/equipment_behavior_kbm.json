@@ -9,7 +9,7 @@
             "value": "1"
         }
     ],
-    "var_d260763": "#hash_2bd9382c67b87843",
+    "descriptionimage": "#hash_2bd9382c67b87843",
     "description": "#hash_5d3c401137a6c7",
     "var_60fcfffa": "#hash_57f3f21157ef659b",
     "var_9bc3be7": 1,
@@ -20,7 +20,7 @@
     "var_43a952c1": 1,
     "name": "equipment_behavior_kbm",
     "displayname": "#hash_194761eb2b4bdc26",
-    "var_4a4760c0": 60,
+    "rangestartvalue": 60,
     "var_500458ac": 10,
     "decimalplace": 1,
     "var_66faec87": 120,

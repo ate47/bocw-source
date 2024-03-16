@@ -32,8 +32,8 @@
         },
         {
             "type": "#hash_798212a6fd4ab166",
-            "image": "#hash_1d103f1bce12eb6c",
-            "imagelarge": "#hash_3341babf8fbca1b8",
+            "image": "#ui_icon_challenges_mpdarkops",
+            "imagelarge": "#ui_icon_challenges_mpdarkops_large",
             "displayname": "#challenge/darkops",
             "var_1a50db25": "#hash_4a8cef046ae0d4c1",
             "var_a4f2dd9e": "#none",

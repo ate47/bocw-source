@@ -106,7 +106,7 @@
     "name": "ar_slowhandling_t9_purple_rand_item_sr",
     "var_36781d9f": "wpn_drop_generic_delay",
     "var_9e569978": 1,
-    "icon": "#hash_1041ef6195cd904a",
+    "icon": "#ui_icon_weapon_ar_galil",
     "var_8e212f46": 6,
     "attachslotmagazine": 1,
     "attachslotunderbarrel": 1,
@@ -119,7 +119,7 @@
     "attachslotoptics": 1,
     "attachslothandle": 1,
     "var_3af59a99": 1,
-    "pickupicon": "#hash_79577163a2a64ce0",
+    "pickupicon": "#ui_icon_weapon_hud_ar_galil",
     "itemtype": "weapon",
     "pickupsound": "zmb_powerup_eqp_pickup"
 }

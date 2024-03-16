@@ -1,7 +1,7 @@
 {
     "option_dependencies": [
         {
-            "var_1643d946": "1",
+            "optionvalue": "1",
             "optionname": "#pc_gamepad_haptics",
             "operator": "=="
         }
@@ -20,7 +20,7 @@
     "maxvalue": 1,
     "name": "gamepad_trigger_deadzone_sensitivity_dualsense",
     "displayname": "#hash_854b7f647babbfe",
-    "var_4a4760c0": 0.01,
+    "rangestartvalue": 0.01,
     "var_d6897f56": 1,
     "var_500458ac": 10,
     "decimalplace": 0.1,

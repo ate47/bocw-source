@@ -28,7 +28,7 @@
     "var_43a952c1": 1,
     "name": "pc_vram_usage_target",
     "displayname": "#hash_5135ff9303b5bfa1",
-    "var_4a4760c0": 1,
+    "rangestartvalue": 1,
     "var_500458ac": 10,
     "var_66faec87": 10,
     "statname": "r_videoMemoryMultiplier",

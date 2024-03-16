@@ -20,13 +20,13 @@
     "displayname": "#hash_2b9883e118f9fa0b",
     "var_9e569978": 1,
     "stackcount": 1,
-    "icon": "#hash_58beba884bed0e5b",
+    "icon": "#ui_icon_perk_medic",
     "modelscale": 1,
     "rarity": "None",
     "equipsound": "uin_wz_perk_medic",
     "var_97c5ead1": 1,
     "handler": "#hash_57df81951e3bc37c",
     "var_3af59a99": 1,
-    "pickupicon": "#hash_58beba884bed0e5b",
+    "pickupicon": "#ui_icon_perk_medic",
     "itemtype": "perk_tier_1"
 }

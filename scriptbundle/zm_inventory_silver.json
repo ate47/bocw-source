@@ -6,11 +6,11 @@
                     "stages": [
                         {
                             "numneeded": 1,
-                            "var_2d787849": "#hash_704c4a0b391c38d6"
+                            "stageimage": "#hash_704c4a0b391c38d6"
                         },
                         {
                             "numneeded": 1,
-                            "var_2d787849": "#hash_274f96c2323265fd"
+                            "stageimage": "#hash_274f96c2323265fd"
                         }
                     ],
                     "clientfield": "#hash_2e341f321b2ab3da"
@@ -19,11 +19,11 @@
                     "stages": [
                         {
                             "numneeded": 1,
-                            "var_2d787849": "#hash_4d6c10213f266446"
+                            "stageimage": "#hash_4d6c10213f266446"
                         },
                         {
                             "numneeded": 1,
-                            "var_2d787849": "#hash_234f402ed80ac54d"
+                            "stageimage": "#hash_234f402ed80ac54d"
                         }
                     ],
                     "clientfield": "#hash_240dcac486ef946a"
@@ -32,7 +32,7 @@
                     "stages": [
                         {
                             "numneeded": 1,
-                            "var_2d787849": "#hash_a157fc0ead8fb24"
+                            "stageimage": "#hash_a157fc0ead8fb24"
                         }
                     ],
                     "clientfield": "#hash_7b8f7131712d7564"
@@ -42,15 +42,15 @@
     ],
     "shieldpieces": [
         {
-            "var_37acb3da": "#hash_392454387b878862",
+            "pieceimage": "#ui_icon_inventory_zm_red_shield_part_cover",
             "clientfield": "#hash_2fed7d3c1ea3e1b8"
         },
         {
-            "var_37acb3da": "#hash_392454387b878862",
+            "pieceimage": "#ui_icon_inventory_zm_red_shield_part_cover",
             "clientfield": "#hash_2fed803c1ea3e6d1"
         },
         {
-            "var_37acb3da": "#hash_392454387b878862",
+            "pieceimage": "#ui_icon_inventory_zm_red_shield_part_cover",
             "clientfield": "#hash_2fed7f3c1ea3e51e"
         }
     ],
@@ -62,7 +62,7 @@
                         {
                             "stages": [
                                 {
-                                    "var_2d787849": "#hash_3976028e08aefd91"
+                                    "stageimage": "#hash_3976028e08aefd91"
                                 }
                             ],
                             "clientfield": "#hash_1f87150a0632f418"
@@ -70,7 +70,7 @@
                         {
                             "stages": [
                                 {
-                                    "var_2d787849": "#hash_61b73326d5f47810"
+                                    "stageimage": "#hash_61b73326d5f47810"
                                 }
                             ],
                             "clientfield": "#hash_1f87180a0632f931"
@@ -78,7 +78,7 @@
                         {
                             "stages": [
                                 {
-                                    "var_2d787849": "#hash_531c94beccacef8c"
+                                    "stageimage": "#hash_531c94beccacef8c"
                                 }
                             ],
                             "clientfield": "#hash_1f87170a0632f77e"
@@ -97,7 +97,7 @@
                         {
                             "stages": [
                                 {
-                                    "var_2d787849": "#hash_29952045f8804440"
+                                    "stageimage": "#hash_29952045f8804440"
                                 }
                             ],
                             "clientfield": "#hash_6df578dd42812c70"
@@ -105,7 +105,7 @@
                         {
                             "stages": [
                                 {
-                                    "var_2d787849": "#hash_5f7bd05915dc4411"
+                                    "stageimage": "#hash_5f7bd05915dc4411"
                                 }
                             ],
                             "clientfield": "#hash_1b836a89598ddaa4"
@@ -113,7 +113,7 @@
                         {
                             "stages": [
                                 {
-                                    "var_2d787849": "#hash_57beeb5d0783c84a"
+                                    "stageimage": "#hash_57beeb5d0783c84a"
                                 }
                             ],
                             "clientfield": "#hash_2d5b26565a3e1ea1"
@@ -132,7 +132,7 @@
                         {
                             "stages": [
                                 {
-                                    "var_2d787849": "#hash_8eafe1525de2154"
+                                    "stageimage": "#hash_8eafe1525de2154"
                                 }
                             ],
                             "clientfield": "#hash_6de5cab1fba28d40"
@@ -140,7 +140,7 @@
                         {
                             "stages": [
                                 {
-                                    "var_2d787849": "#hash_2de1e7a326a9e6db"
+                                    "stageimage": "#hash_2de1e7a326a9e6db"
                                 }
                             ],
                             "clientfield": "#hash_1ec8e7f21f81afb0"
@@ -157,13 +157,13 @@
         {
             "stages": [
                 {
-                    "var_2d787849": "#hash_7dd33a96083ebc49"
+                    "stageimage": "#hash_7dd33a96083ebc49"
                 }
             ],
             "clientfield": "#hash_77bc2e157f9d438e"
         }
     ],
-    "var_fde97bcd": "#hash_48e8c8a1322af446",
+    "objectivebackground": "#ui_icon_inventory_zm_red_artifact_sentinel",
     "var_922067c4": "scriptbundle",
     "var_6d1d6580": "#hash_75cbce196912130e",
     "type": "zminventory",

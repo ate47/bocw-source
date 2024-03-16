@@ -18,7 +18,7 @@
     "var_43a952c1": 1,
     "name": "scoreboard_behavior",
     "displayname": "#hash_d858ba06aa18c9b",
-    "var_4a4760c0": 60,
+    "rangestartvalue": 60,
     "var_500458ac": 10,
     "decimalplace": 1,
     "var_66faec87": 120,

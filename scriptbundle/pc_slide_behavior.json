@@ -1,7 +1,7 @@
 {
     "option_dependencies": [
         {
-            "var_1643d946": "1",
+            "optionvalue": "1",
             "optionname": "#crouch_behavior",
             "operator": "=="
         }
@@ -21,7 +21,7 @@
         }
     ],
     "var_dfedf08e": 2,
-    "var_d260763": "#hash_5d3f403f78e8597f",
+    "descriptionimage": "#hash_5d3f403f78e8597f",
     "description": "#hash_50998f02bd65fa6e",
     "var_60fcfffa": "#hash_57f3f21157ef659b",
     "var_9bc3be7": 1,
@@ -33,7 +33,7 @@
     "var_43a952c1": 1,
     "name": "pc_slide_behavior",
     "displayname": "#hash_52b3c9ef51955a71",
-    "var_4a4760c0": 60,
+    "rangestartvalue": 60,
     "var_500458ac": 10,
     "decimalplace": 1,
     "var_66faec87": 120,

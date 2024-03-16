@@ -1,12 +1,12 @@
 {
     "option_dependencies": [
         {
-            "var_1643d946": "0",
+            "optionvalue": "0",
             "optionname": "#pc_gamepad_haptics",
             "operator": "~="
         },
         {
-            "var_1643d946": "0",
+            "optionvalue": "0",
             "optionname": "#pc_gamepad_vibration",
             "operator": "~="
         }

@@ -9,7 +9,7 @@
             "value": "1"
         }
     ],
-    "var_d260763": "#hash_67046b7249a52639",
+    "descriptionimage": "#hash_67046b7249a52639",
     "description": "#hash_8c7b9e3a9da0af2",
     "var_60fcfffa": "#hash_57f3f21157ef659b",
     "var_9bc3be7": 1,
@@ -20,7 +20,7 @@
     "var_43a952c1": 1,
     "name": "walk_behavior",
     "displayname": "#hash_63b5ebf970bb5b22",
-    "var_4a4760c0": 60,
+    "rangestartvalue": 60,
     "var_500458ac": 10,
     "decimalplace": 1,
     "var_66faec87": 120,

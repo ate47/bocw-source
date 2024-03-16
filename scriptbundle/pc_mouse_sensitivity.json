@@ -9,7 +9,7 @@
     "maxvalue": 1,
     "name": "pc_mouse_sensitivity",
     "displayname": "#hash_3fb4a1191cbaf67a",
-    "var_4a4760c0": 0.01,
+    "rangestartvalue": 0.01,
     "var_d6897f56": 1,
     "var_500458ac": 400,
     "decimalplace": 0.01,

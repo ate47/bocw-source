@@ -1,5 +1,5 @@
 {
-    "var_d260763": "#hash_3a31a63b9b625819",
+    "descriptionimage": "#hash_3a31a63b9b625819",
     "description": "#hash_6415e2c61ab19c2b",
     "var_60fcfffa": "#menu/on",
     "var_9bc3be7": 1,
@@ -11,7 +11,7 @@
     "maxvalue": 1,
     "name": "gamepad_left_stick_deadzone_max",
     "displayname": "#hash_4dda7d089afe4d11",
-    "var_4a4760c0": 10,
+    "rangestartvalue": 10,
     "var_d6897f56": 1,
     "var_500458ac": 10,
     "var_66faec87": 100,

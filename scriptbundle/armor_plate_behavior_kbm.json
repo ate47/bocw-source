@@ -9,7 +9,7 @@
             "value": "1"
         }
     ],
-    "var_d260763": "#hash_3aac51bdba2ad12f",
+    "descriptionimage": "#hash_3aac51bdba2ad12f",
     "var_a34b0960": 1,
     "description": "#hash_dd52e584d8615e6",
     "var_60fcfffa": "#hash_57f3f21157ef659b",
@@ -21,7 +21,7 @@
     "var_43a952c1": 1,
     "name": "armor_plate_behavior_kbm",
     "displayname": "#hash_767205c180b09d4d",
-    "var_4a4760c0": 60,
+    "rangestartvalue": 60,
     "var_500458ac": 10,
     "decimalplace": 1,
     "var_66faec87": 120,

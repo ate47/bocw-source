@@ -1,7 +1,7 @@
 {
     "stages": [
         {
-            "rob": "#hash_77c5c560c9fd83ef",
+            "rob": "#rob_headshot",
             "var_c6bd8560": 1,
             "var_1c54e7b8": "uin_active_camo_transition",
             "var_50046db7": "#menu/x_kills",
@@ -13,7 +13,7 @@
             "var_a70a5df4": 1
         },
         {
-            "rob": "#hash_77c5c560c9fd83ef",
+            "rob": "#rob_headshot",
             "var_c6bd8560": 1,
             "var_bf97d9e": -0.22,
             "var_1c54e7b8": "uin_active_camo_transition",
@@ -30,7 +30,7 @@
             "var_a70a5df4": 1
         },
         {
-            "rob": "#hash_77c5c560c9fd83ef",
+            "rob": "#rob_headshot",
             "var_bf97d9e": -0.02,
             "var_1c54e7b8": "uin_active_camo_transition",
             "var_50046db7": "#menu/x_kills",
@@ -46,7 +46,7 @@
             "var_a70a5df4": 1
         },
         {
-            "rob": "#hash_77c5c560c9fd83ef",
+            "rob": "#rob_headshot",
             "var_bf97d9e": -0.648,
             "var_1c54e7b8": "uin_active_camo_transition",
             "var_3dc5fdeb": 1,

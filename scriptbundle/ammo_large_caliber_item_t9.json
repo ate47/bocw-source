@@ -17,7 +17,7 @@
     "name": "ammo_large_caliber_item_t9",
     "displayname": "#hash_3a27e478bbbd5e93",
     "var_9e569978": 1,
-    "icon": "#hash_2eed7cba2b49518f",
+    "icon": "#ui_icon_inventory_p8_wz_ammo_pickup_762",
     "modelscale": 0.6,
     "rarity": "Resource",
     "handler": "#hash_9ed0c30684ca35a",

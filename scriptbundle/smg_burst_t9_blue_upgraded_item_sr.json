@@ -23,7 +23,7 @@
     "name": "smg_burst_t9_blue_upgraded_item_sr",
     "var_36781d9f": "wpn_drop_generic_delay",
     "var_9e569978": 1,
-    "icon": "#hash_36fa319e4a79c85c",
+    "icon": "#ui_icon_weapon_smg_fastburst_render",
     "attachslotmagazine": 1,
     "attachslotunderbarrel": 1,
     "modelscale": 1,
@@ -34,7 +34,7 @@
     "attachslotoptics": 1,
     "attachslothandle": 1,
     "var_3af59a99": 1,
-    "pickupicon": "#hash_36fa319e4a79c85c",
+    "pickupicon": "#ui_icon_weapon_smg_fastburst_render",
     "var_50773731": 1,
     "itemtype": "weapon",
     "pickupsound": "zmb_powerup_eqp_pickup"

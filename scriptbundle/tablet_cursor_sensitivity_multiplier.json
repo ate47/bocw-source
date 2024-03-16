@@ -9,7 +9,7 @@
     "maxvalue": 1,
     "name": "tablet_cursor_sensitivity_multiplier",
     "displayname": "#hash_6ecfe97cf5d93abc",
-    "var_4a4760c0": 0.1,
+    "rangestartvalue": 0.1,
     "var_d6897f56": 1,
     "var_500458ac": 10,
     "decimalplace": 0.1,

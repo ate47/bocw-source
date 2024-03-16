@@ -22,7 +22,7 @@
     "name": "ammo_ar_item_t9_sr",
     "displayname": "#hash_6e5aff5d2977de88",
     "var_9e569978": 1,
-    "icon": "#hash_40b058ba35782a6e",
+    "icon": "#ui_icon_inventory_p8_wz_ammo_pickup_556",
     "modelscale": 0.6,
     "rarity": "Resource",
     "handler": "#hash_9ed0c30684ca35a",

@@ -2,7 +2,7 @@
     "var_922067c4": "SCRIPTBUNDLE",
     "type": "craftfoundry",
     "var_2a2adea3": 1,
-    "var_110b7b70": "zblueprint_silver_aetherscope",
+    "blueprint01": "zblueprint_silver_aetherscope",
     "name": "ztable_silver_aetherscope",
     "displayname": "Aetherscope"
 }

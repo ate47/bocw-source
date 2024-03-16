@@ -21,7 +21,7 @@
     "var_43a952c1": 0.01,
     "name": "pc_gamepad_haptics",
     "displayname": "#hash_32ca3e04e2e503d9",
-    "var_4a4760c0": 0.01,
+    "rangestartvalue": 0.01,
     "var_500458ac": 10,
     "decimalplace": 0.01,
     "var_66faec87": 4,

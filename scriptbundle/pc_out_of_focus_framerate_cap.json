@@ -12,7 +12,7 @@
     "maxvalue": 1,
     "name": "pc_out_of_focus_framerate_cap",
     "displayname": "#hash_669d0f09654175ec",
-    "var_4a4760c0": 30,
+    "rangestartvalue": 30,
     "var_d6897f56": 1,
     "var_500458ac": 10,
     "var_66faec87": 335,

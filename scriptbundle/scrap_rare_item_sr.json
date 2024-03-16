@@ -19,7 +19,7 @@
     "var_4a1a4613": "armor_swap",
     "name": "scrap_rare_item_sr",
     "displayname": "#hash_7c8e6d410f2c107c",
-    "var_9507cf45": "#hash_35108769902e3898",
+    "stashicon": "#hash_35108769902e3898",
     "var_9e569978": 1,
     "stackcount": 500,
     "icon": "#hash_35108769902e3898",

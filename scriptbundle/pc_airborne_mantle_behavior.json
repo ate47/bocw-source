@@ -1,7 +1,7 @@
 {
     "option_dependencies": [
         {
-            "var_1643d946": "0",
+            "optionvalue": "0",
             "optionname": "#pc_grounded_mantle_behavior",
             "operator": "~="
         }
@@ -21,7 +21,7 @@
         }
     ],
     "var_dfedf08e": 2,
-    "var_d260763": "#hash_506404eafd1a9a98",
+    "descriptionimage": "#hash_506404eafd1a9a98",
     "description": "#hash_1bc7e05c5abda8a",
     "var_60fcfffa": "#menu/on",
     "var_9bc3be7": 1,

@@ -75,7 +75,7 @@
         {
             "unlockdescription": "#hash_114820e6dc864c66",
             "rewardtype": "#hash_178ab01368762c8b",
-            "image": "#hash_113b899c227af7cc",
+            "image": "#ui_icon_weapon_smg_fastfire_render",
             "var_b4ab831a": "#smg_fastfire_t9_mtxitem",
             "stattype": "#global",
             "var_57554d43": 1,
@@ -170,7 +170,7 @@
         {
             "unlockdescription": "#hash_726155b8c239005a",
             "rewardtype": "#hash_178ab01368762c8b",
-            "image": "#hash_113b899c227af7cc",
+            "image": "#ui_icon_weapon_smg_fastfire_render",
             "var_b4ab831a": "#smg_fastfire_t9_mtxitem",
             "stattype": "#global",
             "var_270fa547": "#hash_23fe7ee198149ca7"
