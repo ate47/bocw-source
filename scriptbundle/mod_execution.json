@@ -4,6 +4,6 @@
     "type": "meansofdeath",
     "name": "mod_execution",
     "displayname": "#hash_18ba5e1570f95bcd",
-    "icon": "#hash_44c93b0f59dbd825",
-    "iconlarge": "#hash_7c802d2b647337aa"
+    "icon": "#ui_icon_meansofdeath_assassinate",
+    "iconlarge": "#ui_icon_meansofdeath_assassinate_xl"
 }

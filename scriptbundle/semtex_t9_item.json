@@ -12,7 +12,7 @@
     "spawnsound": "zmb_powerup_eqp_spawn",
     "var_4a1a4613": "armor_swap",
     "name": "semtex_t9_item",
-    "displayname": "#hash_6a250d5c567b8950",
+    "displayname": "#weapon/sticky_grenade",
     "var_9e569978": 1,
     "stackcount": 1,
     "icon": "#hash_5b5d8326c6b7c806",

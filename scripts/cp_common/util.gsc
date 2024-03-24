@@ -1192,7 +1192,7 @@ function function_749362d7(var_53cdb3f5, gesture = #"hash_743809219cd0d96b") {
         self val::set(#"low_ready", "allow_prone", 0);
     }
     self.var_f82e2c3d = undefined;
-    namespace_446fe428::function_24966b9c(!var_53cdb3f5);
+    namespace_446fe428::enable_ev(!var_53cdb3f5);
 }
 
 // Namespace util/util

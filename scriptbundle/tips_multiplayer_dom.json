@@ -1,20 +1,20 @@
 {
-    "var_f2454da1": [
+    "tips": [
         {
             "var_9e589ff4": 1,
-            "var_75f09f03": "#hash_64cbe07dff4a1ecc",
+            "tip": "#hash_64cbe07dff4a1ecc",
             "var_81294378": "#==",
             "var_88ff5fc3": "#none"
         },
         {
             "var_9e589ff4": 1,
-            "var_75f09f03": "#hash_5286a36efc08b517",
+            "tip": "#hash_5286a36efc08b517",
             "var_81294378": "#==",
             "var_88ff5fc3": "#none"
         },
         {
             "var_9e589ff4": 1,
-            "var_75f09f03": "#hash_355fb240a778d4b4",
+            "tip": "#hash_355fb240a778d4b4",
             "var_81294378": "#==",
             "var_88ff5fc3": "#none"
         }

@@ -25,7 +25,7 @@ function function_6e338a1c() {
     if (str_gametype == "zsurvival") {
         namespace_1c7b37c6::item_replacer(var_f8a4c541, #"zm_equipment_list", #"zm_equipment_list_outbreak");
     }
-    if (str_gametype == "zclassic" || str_gametype == #"hash_1f847b868c4199a3") {
+    if (str_gametype == "zclassic" || str_gametype == #"zholiday") {
         namespace_1c7b37c6::item_replacer(var_f8a4c541, #"zombie_level1_resource_list", #"zombie_level1_scrap_list");
         namespace_1c7b37c6::item_replacer(var_f8a4c541, #"zombie_level2_resource_list", #"zombie_level2_scrap_list");
         namespace_1c7b37c6::item_replacer(var_f8a4c541, #"zombie_level3_resource_list", #"zombie_level3_scrap_list");

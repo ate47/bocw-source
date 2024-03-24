@@ -153,11 +153,11 @@ function function_50121b9(position) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x435cc780, Offset: 0xee8
 // Size: 0x3b6
-function function_9e8d4999(title = #"", var_41eca8d5, var_4d9a3f80, object) {
-    if (!isdefined(var_41eca8d5)) {
-        var_41eca8d5 = [];
-    } else if (!isarray(var_41eca8d5)) {
-        var_41eca8d5 = array(var_41eca8d5);
+function function_9e8d4999(title = #"", descriptions, var_4d9a3f80, object) {
+    if (!isdefined(descriptions)) {
+        descriptions = [];
+    } else if (!isarray(descriptions)) {
+        descriptions = array(descriptions);
     }
     if (!isdefined(var_4d9a3f80)) {
         var_4d9a3f80 = [];
@@ -165,11 +165,11 @@ function function_9e8d4999(title = #"", var_41eca8d5, var_4d9a3f80, object) {
         var_4d9a3f80 = array(var_4d9a3f80);
     }
     function_23036faa(#"cursor", "title", title);
-    foreach (index, description in var_41eca8d5) {
+    foreach (index, description in descriptions) {
         function_39d12272(#"cursor", index, "text", description, "descriptionList");
     }
-    if (isdefined(level.interactive_map.var_2c15274b.var_41eca8d5)) {
-        for (index = var_41eca8d5.size; index < level.interactive_map.var_2c15274b.var_41eca8d5.size; index++) {
+    if (isdefined(level.interactive_map.var_2c15274b.descriptions)) {
+        for (index = descriptions.size; index < level.interactive_map.var_2c15274b.descriptions.size; index++) {
             function_dcedf7f(#"cursor", index, "descriptionList");
         }
     }
@@ -183,7 +183,7 @@ function function_9e8d4999(title = #"", var_41eca8d5, var_4d9a3f80, object) {
     if (var_fadf668d) {
         player namespace_f48ab2e1::function_46f198(#"interactive_map", "cursor" + "." + "mapObjects" + "." + #"cursor" + "." + "interactionList");
     }
-    level.interactive_map.var_2c15274b = {#object:object, #var_4d9a3f80:var_4d9a3f80, #var_41eca8d5:var_41eca8d5, #title:title};
+    level.interactive_map.var_2c15274b = {#object:object, #var_4d9a3f80:var_4d9a3f80, #descriptions:descriptions, #title:title};
 }
 
 // Namespace interactive_map/interactive_map
@@ -201,7 +201,7 @@ function function_e4d34e68(state = 0) {
 function function_8b43da33() {
     function_23036faa(#"cursor", "title", #"");
     if (isdefined(level.interactive_map.var_2c15274b)) {
-        foreach (index, description in level.interactive_map.var_2c15274b.var_41eca8d5) {
+        foreach (index, description in level.interactive_map.var_2c15274b.descriptions) {
             function_dcedf7f(#"cursor", index, "descriptionList");
         }
         getplayers()[0] namespace_f48ab2e1::function_ee7adae5(#"cursor");

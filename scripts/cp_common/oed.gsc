@@ -139,7 +139,7 @@ function function_9ce86e2d(b_enabled = 1) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xa31077a, Offset: 0x798
 // Size: 0x4c
-function function_24966b9c(b_enabled = 1) {
+function enable_ev(b_enabled = 1) {
     self.var_3cebd57f = b_enabled;
     if (!b_enabled) {
         self function_4b06932(b_enabled);

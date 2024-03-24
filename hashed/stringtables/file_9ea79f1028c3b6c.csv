@@ -1,4 +1,4 @@
-0,25155228,#hash_425f7077499b8a56,#character_outfit,#legendary,0,0,#hash_206fafc51f5893d0,#hash_2c00d7d5f116330f,0
+0,25155228,#hash_425f7077499b8a56,#character_outfit,#legendary,0,0,#season_5,#hash_2c00d7d5f116330f,0
 0,30253483,#hash_45d64bf2345dbb66,#character_outfit,#epic,0,0,#,#hash_2c00d7d5f116330f,0
 0,28602746,#wristaccessory_t9_s5_analog_demon,#hash_c70e59dba98cf81,#epic,0,0,#,#,0
 0,22371352,#hash_1054e48da16ebab9,#hash_d48e5f30cecb510,#legendary,0,0,#,#,0
@@ -16,7 +16,7 @@
 12,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 13,19262075,#weapon_xp_token_legendary,#hash_7c692b8eb31f67eb,#legendary,0,0,#,#,0
 14,22383904,#reticle_109,#reticle,#rare,0,0,#,#,0
-15,30107283,#ar_british_t9,#weapon,#base,0,1,#hash_206fafc51f5893d0,#hash_2c00d7d5f116330f,0
+15,30107283,#ar_british_t9,#weapon,#base,0,1,#season_5,#hash_2c00d7d5f116330f,0
 16,24693824,#loot_ges_mtx_t9_chefs_kiss,#gesture,#epic,0,0,#,#,0
 17,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 18,31884481,#hash_2254c574168e279,#blueprint,#legendary,0,0,#,#hash_2c00d7d5f116330f,0
@@ -33,7 +33,7 @@
 28,18582948,#reticle_110,#reticle,#rare,0,1,#,#,0
 29,30886333,#player_xp_token_common,#hash_7c692b8eb31f67eb,#common,0,0,#,#,0
 30,29985441,#hash_50503ede666ede57,#character_outfit,#rare,0,0,#,#hash_2c00d7d5f116330f,0
-31,19175979,#smg_semiauto_t9,#weapon,#base,0,1,#hash_206fafc51f5893d0,#hash_2c00d7d5f116330f,0
+31,19175979,#smg_semiauto_t9,#weapon,#base,0,1,#season_5,#hash_2c00d7d5f116330f,0
 32,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 33,19767032,#hash_65efc336eb235eb7,#calling_card,#legendary,0,0,#,#,0
 34,20695559,#wristaccessory_t9_s5_digital_ghosted,#hash_c70e59dba98cf81,#legendary,0,1,#,#,0
@@ -98,13 +98,13 @@
 92,21472465,#hash_6150255bbaad4838,#calling_card,#legendary,0,0,#,#,0
 93,24734214,#wristaccessory_t9_s5_analog_riptide,#hash_c70e59dba98cf81,#epic,0,0,#,#,0
 94,22244093,#battletrack_pack_season5_80shits3,#hash_221a99278de5ad06,#legendary,0,1,#,#,0
-95,21375660,#hash_264acbab902ee3c,#blueprint,#ultra,0,0,#hash_206fafc51f5893d0,#hash_2c00d7d5f116330f,0
+95,21375660,#hash_264acbab902ee3c,#blueprint,#ultra,0,0,#season_5,#hash_2c00d7d5f116330f,0
 96,32109261,#player_xp_token_legendary,#hash_7c692b8eb31f67eb,#legendary,0,0,#,#,0
 97,27808140,#t9_charm_hacked_console,#charm,#legendary,0,0,#,#,0
 98,,#hash_7bb2d755872a5be5,#currency,#legendary,0,1,#,#,0
 99,31946171,#hash_11c3540892d6c096,#emblem,#legendary,0,0,#,#,0
-100,26496538,#hash_1aefc82240338283,#character_outfit,#ultra,0,0,#hash_206fafc51f5893d0,#hash_2c00d7d5f116330f,0
-100,20563767,#hash_760ee1a30fdfbce2,#blueprint,#legendary,0,0,#hash_206fafc51f5893d0,#hash_2c00d7d5f116330f,0
+100,26496538,#hash_1aefc82240338283,#character_outfit,#ultra,0,0,#season_5,#hash_2c00d7d5f116330f,0
+100,20563767,#hash_760ee1a30fdfbce2,#blueprint,#legendary,0,0,#season_5,#hash_2c00d7d5f116330f,0
 100,23690805,#hash_2e7088dcd193b38b,#hash_27fcf589ae53da66,#legendary,0,0,#,#,18
 100,,#hash_48368cab0ba2dd31,#hash_6e2e66060a72f89c,#legendary,0,0,#,#,18
 100,25275179,#hash_7d123b782229903a,#emblem,#legendary,0,0,#,#,0

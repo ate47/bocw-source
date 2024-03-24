@@ -1044,16 +1044,16 @@ function private function_36e939c(var_4146002e = 1, var_d76d90ac = 0) {
 function function_75788ef4(var_22323d67) {
     var_b263f6a2 = getscriptbundle(var_22323d67.m_s_bundle.var_b263f6a2);
     settings = getscriptbundle(var_b263f6a2.var_b263f6a2[var_22323d67.var_6dfc35a].var_e10de4ad);
-    var_41eca8d5 = settings.var_41eca8d5;
+    descriptions = settings.descriptions;
     var_f48ab2e1 = settings.var_f48ab2e1;
     if (isdefined(var_f48ab2e1)) {
         foreach (prompt in var_f48ab2e1) {
             namespace_c8e236da::function_ebf737f8(prompt.prompt);
         }
     }
-    if (isdefined(var_41eca8d5)) {
+    if (isdefined(descriptions)) {
         player = getplayers()[0];
-        foreach (description in var_41eca8d5) {
+        foreach (description in descriptions) {
             if (player gamepadusedlast()) {
                 hint_tutorial::function_4c2d4fc4(description.description);
             } else {

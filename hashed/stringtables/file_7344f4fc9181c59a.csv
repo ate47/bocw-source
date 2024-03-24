@@ -1,4 +1,4 @@
-0,29184728,#hash_2ada34abd8b93c17,#character_outfit,#legendary,0,0,#hash_206fb5c51f589e02,#hash_2c00d7d5f116330f,0
+0,29184728,#hash_2ada34abd8b93c17,#character_outfit,#legendary,0,0,#season_3,#hash_2c00d7d5f116330f,0
 0,32434283,#hash_20f858726e842619,#character_outfit,#rare,0,0,#,#hash_2c00d7d5f116330f,0
 0,29363868,#wristaccessory_t9_s3_analog_winter_ash,#hash_c70e59dba98cf81,#epic,0,0,#,#,0
 0,28737785,#hash_58faf4c5eb12b9af,#hash_d48e5f30cecb510,#legendary,0,0,#,#,0
@@ -17,7 +17,7 @@
 12,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 13,19262075,#weapon_xp_token_legendary,#hash_7c692b8eb31f67eb,#legendary,0,0,#,#,0
 14,23111756,#reticle_86,#reticle,#rare,0,0,#,#,0
-15,32959692,#smg_spray_t9,#weapon,#base,0,1,#hash_206fb5c51f589e02,#hash_2c00d7d5f116330f,0
+15,32959692,#smg_spray_t9,#weapon,#base,0,1,#season_3,#hash_2c00d7d5f116330f,0
 16,19746222,#loot_ges_mtx_t9_snap,#gesture,#epic,0,0,#,#,0
 17,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 18,26464392,#hash_42a47c25e2096556,#blueprint,#epic,0,0,#,#hash_2c00d7d5f116330f,0
@@ -34,7 +34,7 @@
 28,30636766,#reticle_73,#reticle,#rare,0,1,#,#,0
 29,30886333,#player_xp_token_common,#hash_7c692b8eb31f67eb,#common,0,0,#,#,0
 30,26638417,#hash_108554e5529a21fa,#character_outfit,#rare,0,0,#,#hash_2c00d7d5f116330f,0
-31,19029071,#sniper_accurate_t9,#weapon,#base,0,1,#hash_206fb5c51f589e02,#hash_2c00d7d5f116330f,0
+31,19029071,#sniper_accurate_t9,#weapon,#base,0,1,#season_3,#hash_2c00d7d5f116330f,0
 32,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 33,21939939,#hash_311ae5e62954054a,#calling_card,#legendary,0,0,#,#,0
 34,28164056,#wristaccessory_t9_s3_digital_rank_winter_fallout,#hash_c70e59dba98cf81,#legendary,0,1,#,#,0
@@ -80,7 +80,7 @@
 73,32109261,#player_xp_token_legendary,#hash_7c692b8eb31f67eb,#legendary,0,0,#,#,0
 74,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 75,25621290,#hash_123af9618bdf1c0a,#sticker,#legendary,0,0,#,#,0
-76,27959425,#hash_42c63cb66623887c,#blueprint,#ultra,0,0,#hash_206fb5c51f589e02,#hash_2c00d7d5f116330f,0
+76,27959425,#hash_42c63cb66623887c,#blueprint,#ultra,0,0,#season_3,#hash_2c00d7d5f116330f,0
 77,21067080,#hash_736121d37c2b4de2,#calling_card,#epic,0,1,#,#,0
 78,28150952,#weapon_xp_token_epic,#hash_7c692b8eb31f67eb,#epic,0,0,#,#,0
 79,22698657,#hash_3da1cd9112b9a252,#emblem,#epic,0,0,#,#,0
@@ -99,13 +99,13 @@
 92,22034239,#hash_305f87d8fed15157,#calling_card,#legendary,0,0,#,#,0
 93,27004418,#wristaccessory_t9_s3_analog_nuclear_fallout,#hash_c70e59dba98cf81,#epic,0,0,#,#,0
 94,33378681,#battletrack_pack_season3_80spop3,#hash_221a99278de5ad06,#legendary,0,1,#,#,0
-95,24273430,#hash_37e10268e0b125d3,#blueprint,#ultra,0,0,#hash_206fb5c51f589e02,#hash_2c00d7d5f116330f,0
+95,24273430,#hash_37e10268e0b125d3,#blueprint,#ultra,0,0,#season_3,#hash_2c00d7d5f116330f,0
 96,32109261,#player_xp_token_legendary,#hash_7c692b8eb31f67eb,#legendary,0,0,#,#,0
 97,27124329,#t9_charm_viking_helmet,#charm,#legendary,0,0,#,#,0
 98,,#hash_7bb2d755872a5be5,#currency,#legendary,0,1,#,#,0
 99,20981911,#hash_28ca91fd68d4f4b7,#emblem,#legendary,0,0,#,#,0
-100,29842205,#hash_5c072d70247fb838,#character_outfit,#legendary,0,0,#hash_206fb5c51f589e02,#hash_2c00d7d5f116330f,0
-100,29151384,#hash_73482751b69c002,#blueprint,#legendary,0,0,#hash_206fb5c51f589e02,#hash_2c00d7d5f116330f,0
+100,29842205,#hash_5c072d70247fb838,#character_outfit,#legendary,0,0,#season_3,#hash_2c00d7d5f116330f,0
+100,29151384,#hash_73482751b69c002,#blueprint,#legendary,0,0,#season_3,#hash_2c00d7d5f116330f,0
 100,23745925,#hash_692bf9aeffe84ffd,#hash_27fcf589ae53da66,#legendary,0,0,#,#,12
 100,,#hash_2507df36ff85ee79,#hash_6e2e66060a72f89c,#legendary,0,0,#,#,12
 100,19829306,#hash_59e0745f50134c46,#emblem,#legendary,0,0,#,#,0

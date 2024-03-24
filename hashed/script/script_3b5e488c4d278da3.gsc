@@ -40,7 +40,7 @@ function private autoexec __init__system__() {
 // Checksum 0xb016afb1, Offset: 0x3c0
 // Size: 0xcc
 function function_70a657d8() {
-    if ((is_true(getgametypesetting(#"hash_7e8e34cc69a77e0b")) || getdvarint(#"hash_40bd34b35079cf2e", 0) > 0) && (zm_utility::is_classic() || util::get_game_type() === #"hash_1f847b868c4199a3")) {
+    if ((is_true(getgametypesetting(#"hash_7e8e34cc69a77e0b")) || getdvarint(#"hash_40bd34b35079cf2e", 0) > 0) && (zm_utility::is_classic() || util::get_game_type() === #"zholiday")) {
         setdvar(#"hash_34cae673a047c202", 1);
     }
 }
@@ -50,7 +50,7 @@ function function_70a657d8() {
 // Checksum 0x116428ba, Offset: 0x498
 // Size: 0xaf4
 function init() {
-    if ((is_true(getgametypesetting(#"hash_7e8e34cc69a77e0b")) || getdvarint(#"hash_40bd34b35079cf2e", 0) > 0) && (zm_utility::is_classic() || util::get_game_type() === #"hash_1f847b868c4199a3")) {
+    if ((is_true(getgametypesetting(#"hash_7e8e34cc69a77e0b")) || getdvarint(#"hash_40bd34b35079cf2e", 0) > 0) && (zm_utility::is_classic() || util::get_game_type() === #"zholiday")) {
         namespace_679a22ba::function_3ba2f5dd(#"hash_9c00f9e4e4bd95a", #"silver_ai_zombie_xmas");
         namespace_679a22ba::function_3ba2f5dd(#"hash_539facc2c096b82", #"silver_ai_zombie_heavy_xmas");
         namespace_679a22ba::function_3ba2f5dd(#"hash_208e2483f559ccd2", #"silver_ai_dog_xmas");

@@ -1,50 +1,50 @@
 {
-    "var_f2454da1": [
+    "tips": [
         {
             "var_9e589ff4": 1,
-            "var_75f09f03": "#hash_198a8e6004f7560a",
+            "tip": "#hash_198a8e6004f7560a",
             "var_81294378": "#==",
             "var_88ff5fc3": "#none"
         },
         {
             "var_9e589ff4": 1,
-            "var_75f09f03": "#hash_6450a8b2338ab954",
+            "tip": "#hash_6450a8b2338ab954",
             "var_81294378": "#==",
             "var_88ff5fc3": "#none"
         },
         {
             "var_9e589ff4": 1,
-            "var_75f09f03": "#hash_4588cd5412655c2f",
+            "tip": "#hash_4588cd5412655c2f",
             "var_81294378": "#==",
             "var_88ff5fc3": "#none"
         },
         {
             "var_9e589ff4": 1,
-            "var_75f09f03": "#hash_3ab83bf46215233e",
+            "tip": "#hash_3ab83bf46215233e",
             "var_81294378": "#==",
             "var_88ff5fc3": "#none"
         },
         {
             "var_9e589ff4": 1,
-            "var_75f09f03": "#hash_115ac61372657f06",
+            "tip": "#hash_115ac61372657f06",
             "var_81294378": "#==",
             "var_88ff5fc3": "#none"
         },
         {
             "var_9e589ff4": 1,
-            "var_75f09f03": "#hash_22c7e90c780c7a2f",
+            "tip": "#hash_22c7e90c780c7a2f",
             "var_81294378": "#==",
             "var_88ff5fc3": "#none"
         },
         {
             "var_9e589ff4": 1,
-            "var_75f09f03": "#hash_73f560be73755131",
+            "tip": "#hash_73f560be73755131",
             "var_81294378": "#==",
             "var_88ff5fc3": "#none"
         },
         {
             "var_9e589ff4": 1,
-            "var_75f09f03": "#hash_6e77843312d6cbad",
+            "tip": "#hash_6e77843312d6cbad",
             "var_81294378": "#==",
             "var_88ff5fc3": "#none"
         }

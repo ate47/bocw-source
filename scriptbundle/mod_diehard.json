@@ -4,6 +4,6 @@
     "type": "meansofdeath",
     "name": "mod_diehard",
     "displayname": "#hash_68c7cf57605b3ec7",
-    "icon": "#hash_670329f857b9360",
-    "iconlarge": "#hash_58eb00cda0a8daf9"
+    "icon": "#ui_icon_meansofdeath_explosive_death",
+    "iconlarge": "#ui_icon_meansofdeath_explosive_death_xl"
 }

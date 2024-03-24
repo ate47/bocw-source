@@ -115,7 +115,7 @@ function init_utility() {
 // Size: 0x72
 function is_classic() {
     if (!isdefined(level.var_8d156cf3)) {
-        level.var_8d156cf3 = util::get_game_type() == #"zclassic" || util::get_game_type() == #"hash_1f847b868c4199a3";
+        level.var_8d156cf3 = util::get_game_type() == #"zclassic" || util::get_game_type() == #"zholiday";
     }
     return level.var_8d156cf3;
 }

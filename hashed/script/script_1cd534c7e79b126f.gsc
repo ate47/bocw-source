@@ -979,7 +979,7 @@ function function_149da5dd() {
 // Checksum 0x4ad3ee0d, Offset: 0x5098
 // Size: 0x94
 function function_f6ed3b36(instance) {
-    var_c0a0c72d = instance.var_fe2612fe[#"hash_4029f7cc7e6d2a6b"][0];
+    var_c0a0c72d = instance.var_fe2612fe[#"hole"][0];
     level.var_2606686d = namespace_8b6a9d79::function_f3d93ee9(var_c0a0c72d, #"hash_6e1380f2de74e0e6", 0, 0);
     level.var_2606686d hide();
     callback::on_spawned(&on_player_spawned);

@@ -1,32 +1,32 @@
 {
-    "var_f2454da1": [
+    "tips": [
         {
             "var_9e589ff4": 1,
-            "var_75f09f03": "#hash_13dff8df79f6a00f",
+            "tip": "#hash_13dff8df79f6a00f",
             "var_81294378": "#==",
             "var_88ff5fc3": "#none"
         },
         {
             "var_9e589ff4": 1,
-            "var_75f09f03": "#hash_180e965e41cc52da",
+            "tip": "#hash_180e965e41cc52da",
             "var_81294378": "#==",
             "var_88ff5fc3": "#none"
         },
         {
             "var_9e589ff4": 1,
-            "var_75f09f03": "#hash_52354007bd27c9ed",
+            "tip": "#hash_52354007bd27c9ed",
             "var_81294378": "#==",
             "var_88ff5fc3": "#none"
         },
         {
             "var_9e589ff4": 1,
-            "var_75f09f03": "#hash_41e57c6680ab6f0",
+            "tip": "#hash_41e57c6680ab6f0",
             "var_81294378": "#==",
             "var_88ff5fc3": "#none"
         },
         {
             "var_9e589ff4": 1,
-            "var_75f09f03": "#hash_67cbfd2db80d89e8",
+            "tip": "#hash_67cbfd2db80d89e8",
             "var_81294378": "#==",
             "var_88ff5fc3": "#none"
         },
@@ -128,7 +128,7 @@
         },
         {
             "var_9e589ff4": 1,
-            "var_75f09f03": "#hash_335c5da7ce227849",
+            "tip": "#hash_335c5da7ce227849",
             "var_81294378": "#==",
             "var_88ff5fc3": "#none"
         }

@@ -168,7 +168,7 @@ function function_203098f4(waittime) {
 // Checksum 0x106a962d, Offset: 0xd60
 // Size: 0x14c0
 function _fire(killstreaktype, player, team, killstreak_id) {
-    var_5c365255 = sessionmodeiszombiesgame();
+    iszombies = sessionmodeiszombiesgame();
     player notify(#"remote_missile_fired");
     bundle = killstreaks::get_script_bundle("remote_missile");
     weapon = bundle.ksweapon;
@@ -188,7 +188,7 @@ function _fire(killstreaktype, player, team, killstreak_id) {
     } else {
         remotemissilespawn = undefined;
     }
-    if (isdefined(remotemissilespawn) && !var_5c365255) {
+    if (isdefined(remotemissilespawn) && !iszombies) {
         startpos = remotemissilespawn.origin;
         targetpos = level.mapcenter;
         /#
@@ -872,13 +872,13 @@ function getvalidtargets(rocket, trace, max_targets) {
     profileNamedStart(#"");
     campos = self getplayercamerapos();
     enemies = self getenemies();
-    var_d38b313c = sessionmodeiszombiesgame();
+    iszm = sessionmodeiszombiesgame();
     weapon = getweapon(#"remote_missile");
     settings = getscriptbundle(weapon.customsettings);
     target_radius = isdefined(settings.target_radius) ? settings.target_radius : 600;
     var_9b9a5c94 = target_radius * target_radius;
     foreach (enemy in enemies) {
-        if (!var_d38b313c) {
+        if (!iszm) {
             if (!isplayer(enemy)) {
                 continue;
             }
@@ -930,10 +930,10 @@ function gettarget(rocket, trace) {
     forward = anglestoforward(rocket.angles);
     campos = self getplayercamerapos();
     enemies = self getenemies();
-    var_d38b313c = sessionmodeiszombiesgame();
+    iszm = sessionmodeiszombiesgame();
     team = rocket.team;
     foreach (target in enemies) {
-        if (!var_d38b313c) {
+        if (!iszm) {
             if (!isplayer(target)) {
                 continue;
             }
