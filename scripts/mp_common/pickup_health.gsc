@@ -15,14 +15,14 @@
 // Checksum 0x99256fbf, Offset: 0x130
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"pickup_health", &function_70a657d8, undefined, undefined, #"weapons");
+    system::register(#"pickup_health", &preinit, undefined, undefined, #"weapons");
 }
 
 // Namespace pickup_health/pickup_health
 // Params 0, eflags: 0x4
 // Checksum 0x90ac0a86, Offset: 0x180
 // Size: 0x12c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_connect(&onconnect);
     callback::on_spawned(&onspawned);
     ability_player::register_gadget_activation_callbacks(23, &onhealthregen, &offhealthregen);

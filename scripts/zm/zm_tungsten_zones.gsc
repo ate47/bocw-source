@@ -8,7 +8,7 @@
 #using scripts\zm_common\zm_zonemgr.gsc;
 #using scripts\zm_common\zm_utility.gsc;
 #using scripts\core_common\compass.gsc;
-#using script_d9b5c8b1ad38ef5;
+#using scripts\core_common\territory.gsc;
 #using scripts\core_common\util_shared.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
@@ -22,15 +22,15 @@
 // Size: 0x53c
 function autoexec init() {
     callback::on_spawned(&function_44b1279a);
-    level.var_65c43c31 = [13:"zone_board_office", 12:"zone_board_room", 11:"zone_service_tunnels", 10:"zone_bunker_entrance", 9:"zone_pa_room_02", 8:"zone_pa_room_01", 7:"zone_board_room_02", 6:"zone_board_room_01", 5:"zone_service_tunnels_03", 4:"zone_service_tunnels_02", 3:"zone_service_tunnels_01", 2:"zone_bunker_entrance_03", 1:"zone_bunker_entrance_02", 0:"zone_bunker_entrance_01"];
-    level.var_707f916f = [11:"zone_observation", 10:"zone_service_tunnels_03", 9:"zone_bunker_entrance_01", 8:"zone_video_store_roof", 7:"zone_anytown_usa_backlot", 6:"zone_main_street_bridge", 5:"zone_high_tide_bar_roof", 4:"zone_xxx_club_roof", 3:"zone_main_street_backlot", 2:"zone_helipads_portal_room", 1:"zone_helipads_3", 0:"zone_helipads"];
-    level.var_dc2ca204 = [4:"zone_helipads_portal_room", 3:"zone_helipads_4", 2:"zone_helipads_3", 1:"zone_helipads_2", 0:"zone_helipads"];
-    level.var_6097ff89 = [13:"zone_high_tide_bar_roof", 12:"zone_high_tide_bar", 11:"zone_pizza_parlor", 10:"zone_donuts", 9:"zone_pizza_kitchen", 8:"zone_xxx_club_roof", 7:"zone_xxx_club", 6:"zone_diner", 5:"zone_deck_bar", 4:"zone_main_street_bridge", 3:"zone_main_street_02", 2:"zone_main_street_01", 1:"zone_main_street", 0:"zone_main_street_backlot"];
-    level.var_2f941a56 = [16:"zone_anytown_usa_rooftops", 15:"zone_concessions", 14:"zone_cinema", 13:"zone_tv_repair", 12:"zone_video_store_roof", 11:"zone_video_store_2f", 10:"zone_video_store", 9:"zone_arcade", 8:"zone_anytown_usa_west_2", 7:"zone_anytown_usa_west", 6:"zone_drinks_bar_roof", 5:"zone_drinks_bar", 4:"zone_burger_town_roof", 3:"zone_burger_town", 2:"zone_anytown_usa_east_2", 1:"zone_anytown_usa_east", 0:"zone_anytown_usa_backlot"];
+    level.var_65c43c31 = ["zone_bunker_entrance_01", "zone_bunker_entrance_02", "zone_bunker_entrance_03", "zone_service_tunnels_01", "zone_service_tunnels_02", "zone_service_tunnels_03", "zone_board_room_01", "zone_board_room_02", "zone_pa_room_01", "zone_pa_room_02", "zone_bunker_entrance", "zone_service_tunnels", "zone_board_room", "zone_board_office"];
+    level.var_707f916f = ["zone_helipads", "zone_helipads_3", "zone_helipads_portal_room", "zone_main_street_backlot", "zone_xxx_club_roof", "zone_high_tide_bar_roof", "zone_main_street_bridge", "zone_anytown_usa_backlot", "zone_video_store_roof", "zone_bunker_entrance_01", "zone_service_tunnels_03", "zone_observation"];
+    level.var_dc2ca204 = ["zone_helipads", "zone_helipads_2", "zone_helipads_3", "zone_helipads_4", "zone_helipads_portal_room"];
+    level.var_6097ff89 = ["zone_main_street_backlot", "zone_main_street", "zone_main_street_01", "zone_main_street_02", "zone_main_street_bridge", "zone_deck_bar", "zone_diner", "zone_xxx_club", "zone_xxx_club_roof", "zone_pizza_kitchen", "zone_donuts", "zone_pizza_parlor", "zone_high_tide_bar", "zone_high_tide_bar_roof"];
+    level.var_2f941a56 = ["zone_anytown_usa_backlot", "zone_anytown_usa_east", "zone_anytown_usa_east_2", "zone_burger_town", "zone_burger_town_roof", "zone_drinks_bar", "zone_drinks_bar_roof", "zone_anytown_usa_west", "zone_anytown_usa_west_2", "zone_arcade", "zone_video_store", "zone_video_store_2f", "zone_video_store_roof", "zone_tv_repair", "zone_cinema", "zone_concessions", "zone_anytown_usa_rooftops"];
     level.var_359fd531 = level.var_65c43c31;
     level.var_6eacc74a = arraycombine(level.var_6097ff89, level.var_2f941a56);
-    level.var_747c9217 = [2:"zone_observation", 1:"zone_facility_shell_rooftop", 0:"zone_ndu_room"];
-    level.var_c9350d57 = [0:"zone_observation"];
+    level.var_747c9217 = ["zone_ndu_room", "zone_facility_shell_rooftop", "zone_observation"];
+    level.var_c9350d57 = ["zone_observation"];
     level.var_aa3b88c5 = &function_27028b8e;
     level.var_27028b8e = &function_27028b8e;
     level.var_662dc783 = &function_6e486b1;
@@ -303,9 +303,9 @@ function zone_init() {
     level clientfield::set("" + #"hash_deec7a5e441c482", 1);
     level thread function_49779a9c();
     level thread function_9dd333eb();
-    level.var_feaba1ca = struct::get_array("zm_ascend_begin", "script_noteworthy");
-    if (isdefined(level.var_feaba1ca)) {
-        array::thread_all(level.var_feaba1ca, &function_8aecc4f0);
+    level.ascendstarts = struct::get_array("zm_ascend_begin", "script_noteworthy");
+    if (isdefined(level.ascendstarts)) {
+        array::thread_all(level.ascendstarts, &function_8aecc4f0);
     }
     array::thread_all(struct::get_array("zipline_start_zm", "script_noteworthy"), &function_4fc2e560);
     array::thread_all(struct::get_array("zipline_power_gate"), &function_169ac2dd);
@@ -708,7 +708,7 @@ function function_9dd333eb() {
     a_t_doors = getentarray("zombie_door", "targetname");
     foreach (t_door in a_t_doors) {
         if (t_door.script_flag === "connect_pizza_parlor" || t_door.script_flag === "connect_diner") {
-            if (distance2dsquared(t_door.origin, var_47b7f8a9.origin) <= function_a3f6cdac(350)) {
+            if (distance2dsquared(t_door.origin, var_47b7f8a9.origin) <= sqr(350)) {
                 t_door.var_4f96681c = "zone_main_street_bridge";
             }
         }

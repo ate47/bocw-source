@@ -9,14 +9,14 @@
 // Checksum 0xb263d1ad, Offset: 0xf0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"teamset_allies", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"teamset_allies", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace teamset_allies/teamset_allies
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd67d8f20, Offset: 0x138
 // Size: 0xc8
-function private function_70a657d8() {
+function private preinit() {
     init(#"none");
     foreach (team in level.teams) {
         if (team == #"axis") {

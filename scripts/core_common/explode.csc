@@ -10,14 +10,14 @@
 // Checksum 0x4062e12, Offset: 0xc8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"explode", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"explode", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace explode/explode
 // Params 0, eflags: 0x4
 // Checksum 0x6ff53cc8, Offset: 0x110
 // Size: 0xcc
-function private function_70a657d8() {
+function private preinit() {
     level.dirt_enable_explosion = getdvarint(#"scr_dirt_enable_explosion", 1);
     level.dirt_enable_slide = getdvarint(#"scr_dirt_enable_slide", 1);
     level.dirt_enable_fall_damage = getdvarint(#"scr_dirt_enable_fall_damage", 1);

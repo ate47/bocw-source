@@ -35,14 +35,14 @@
 // Checksum 0x4046639e, Offset: 0x2a0
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_crafting", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_crafting", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_crafting/zm_crafting
 // Params 0, eflags: 0x6 linked
 // Checksum 0x654bdd48, Offset: 0x2f8
 // Size: 0x2c
-function private function_70a657d8() {
+function private preinit() {
     level.var_5df2581a = [];
     level.crafting_components = [];
     function_475a63eb();
@@ -869,7 +869,7 @@ function crafting_think() {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
-        level notify(#"crafting_started", {#activator:player, #unitrigger:self});
+        level notify(#"crafting_started", {#unitrigger:self, #activator:player});
         if (isdefined(self.stub.var_90dfb0bf)) {
             self [[ level.var_b87dee47[self.stub.var_90dfb0bf].var_ea7ebe1f ]](player);
         }
@@ -1022,8 +1022,8 @@ function private function_f37c4bb5(player) {
         if (is_true(self.stub.blueprint.var_d8967a0c)) {
             function_6f635422(player, self.stub.blueprint);
         }
-        level notify(#"blueprint_completed", {#player:player, #produced:self.stub.blueprint.var_54a97edd, #blueprint:self.stub.blueprint});
-        player notify(#"blueprint_completed", {#produced:self.stub.blueprint.var_54a97edd, #blueprint:self.stub.blueprint});
+        level notify(#"blueprint_completed", {#blueprint:self.stub.blueprint, #produced:self.stub.blueprint.var_54a97edd, #player:player});
+        player notify(#"blueprint_completed", {#blueprint:self.stub.blueprint, #produced:self.stub.blueprint.var_54a97edd});
         if (self.stub.blueprint.var_46309255 === "persistent_buy" || self.stub.blueprint.var_46309255 === "buy_once_then_box" || self.stub.blueprint.var_46309255 === "spawn_as_ingredient") {
             function_987a472(self.stub.blueprint.var_54a97edd.worldmodel, self.stub.blueprint);
         }
@@ -1633,22 +1633,22 @@ function function_fe738a08(table_id) {
         forward = anglestoforward(unitrigger.angles);
         right = anglestoright(unitrigger.angles);
         var_21f5823e = vectortoangles(forward * -1);
-        var_916d3dfe = origin + 48 * forward;
+        plorigin = origin + 48 * forward;
         switch (entnum) {
         case 0:
-            var_916d3dfe = var_916d3dfe + 16 * right;
+            plorigin = plorigin + 16 * right;
             break;
         case 1:
-            var_916d3dfe = var_916d3dfe + 16 * forward;
+            plorigin = plorigin + 16 * forward;
             break;
         case 2:
-            var_916d3dfe = var_916d3dfe - 16 * right;
+            plorigin = plorigin - 16 * right;
             break;
         case 3:
-            var_916d3dfe = var_916d3dfe - 16 * forward;
+            plorigin = plorigin - 16 * forward;
             break;
         }
-        self setorigin(var_916d3dfe);
+        self setorigin(plorigin);
         self setplayerangles(var_21f5823e);
     #/
 }

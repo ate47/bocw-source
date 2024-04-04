@@ -12,14 +12,14 @@
 // Checksum 0x415cab5d, Offset: 0x108
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_powerup_hero_weapon_power", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_powerup_hero_weapon_power", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_powerup_hero_weapon_power/zm_powerup_hero_weapon_power
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb098f054, Offset: 0x150
 // Size: 0xe4
-function private function_70a657d8() {
+function private preinit() {
     zm_powerups::register_powerup("hero_weapon_power", &hero_weapon_power);
     if (zm_powerups::function_cc33adc8()) {
         if (zm_utility::function_c200446c()) {

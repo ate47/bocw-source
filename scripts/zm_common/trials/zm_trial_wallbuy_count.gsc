@@ -13,14 +13,14 @@
 // Checksum 0x5f7a1df3, Offset: 0xb0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_wallbuy_count", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_wallbuy_count", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_wallbuy_count/zm_trial_wallbuy_count
 // Params 0, eflags: 0x4
 // Checksum 0x3bfbcd46, Offset: 0xf8
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

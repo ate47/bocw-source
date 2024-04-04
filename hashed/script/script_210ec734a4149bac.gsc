@@ -17,14 +17,14 @@
 // Checksum 0xe4b41309, Offset: 0x2f8
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_2846a4f4bd094545", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_2846a4f4bd094545", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_f592a7b/namespace_45b9dd6a
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc2586647, Offset: 0x350
 // Size: 0x10c
-function private function_70a657d8() {
+function private preinit() {
     /#
         assert(isscriptfunctionptr(&civilianpaniccoverservice));
     #/
@@ -85,7 +85,7 @@ function private function_c96b0450() {
             if (isdefined(level.players) && level.players.size > 0 && function_9308c21b()) {
                 player = level.players[0];
                 var_49122837 = distance2dsquared(self.origin, player.origin);
-                if (var_49122837 < function_a3f6cdac(300)) {
+                if (var_49122837 < sqr(300)) {
                     player_angles = player getplayerangles();
                     player_facing = anglestoforward(player_angles);
                     var_3495bfe6 = self.origin - player.origin;
@@ -157,7 +157,7 @@ function private function_74f41e14(entity) {
 // Params 3, eflags: 0x4
 // Checksum 0x33303fb4, Offset: 0xaa8
 // Size: 0x28c
-function private function_ddb1fd83(var_d5020108, tacpoints, pickedpoint) {
+function private function_ddb1fd83(nearestnode, tacpoints, pickedpoint) {
     self notify("7fec587c06753641");
     self endon("7fec587c06753641");
     self endon(#"death");
@@ -171,7 +171,7 @@ function private function_ddb1fd83(var_d5020108, tacpoints, pickedpoint) {
             var_f08d182b = " exposed goalpos";
         }
         /#
-            line(goalinfo.goalpos, var_d5020108.origin, (1, 0.5, 0), 1, 0, 1);
+            line(goalinfo.goalpos, nearestnode.origin, (1, 0.5, 0), 1, 0, 1);
             print3d(goalinfo.goalpos, "<unknown string>" + self getentitynumber() + var_f08d182b, color, 1, 1, 1);
         #/
         foreach (tacpoint in tacpoints) {
@@ -194,16 +194,16 @@ function private function_ddb1fd83(var_d5020108, tacpoints, pickedpoint) {
 // Checksum 0xe923f42c, Offset: 0xd40
 // Size: 0x240
 function private function_251c139d(entity, goalinfo, var_1fe38bcc) {
-    var_d5020108 = getnearestnode(goalinfo.goalpos);
+    nearestnode = getnearestnode(goalinfo.goalpos);
     tacpoints = undefined;
     pickedpoint = undefined;
-    if (!isdefined(var_d5020108)) {
-        var_d5020108 = getnearestnode(entity.origin);
+    if (!isdefined(nearestnode)) {
+        nearestnode = getnearestnode(entity.origin);
     }
-    if (isdefined(var_d5020108)) {
+    if (isdefined(nearestnode)) {
         pixbeginevent(var_1fe38bcc);
         aiprofile_beginentry(var_1fe38bcc);
-        tacpoints = tacticalquery(var_1fe38bcc, entity.origin, entity, goalinfo.goalpos, var_d5020108);
+        tacpoints = tacticalquery(var_1fe38bcc, entity.origin, entity, goalinfo.goalpos, nearestnode);
         pixendevent();
         aiprofile_endentry();
     }
@@ -220,7 +220,7 @@ function private function_251c139d(entity, goalinfo, var_1fe38bcc) {
         /#
             enabled = getdvarint(#"hash_40c63080b0f73497", 0);
             if (enabled && isdefined(pickedpoint)) {
-                entity thread function_ddb1fd83(var_d5020108, tacpoints, pickedpoint);
+                entity thread function_ddb1fd83(nearestnode, tacpoints, pickedpoint);
             }
         #/
     }
@@ -287,8 +287,8 @@ function private function_9cefbbde(var_5f60ac6c) {
 // Size: 0x110
 function private on_ai_killed(params) {
     if (self.archetype === #"civilian") {
-        if (isdefined(self.var_37a2393c)) {
-            foreach (var_5f60ac6c in self.var_37a2393c) {
+        if (isdefined(self.civilian_props)) {
+            foreach (var_5f60ac6c in self.civilian_props) {
                 function_9cefbbde(var_5f60ac6c);
             }
         }
@@ -342,8 +342,8 @@ function function_8e430c8(var_47b961dc) {
 // Size: 0x13c
 function private function_e2953db0(entity, *attribute, oldvalue, value) {
     if (value != oldvalue && value == "panic") {
-        if (isdefined(attribute.var_37a2393c)) {
-            foreach (var_5f60ac6c in self.var_37a2393c) {
+        if (isdefined(attribute.civilian_props)) {
+            foreach (var_5f60ac6c in self.civilian_props) {
                 function_9cefbbde(var_5f60ac6c);
             }
         }
@@ -374,13 +374,13 @@ function function_7bd21c92(value) {
 // Checksum 0x290ade84, Offset: 0x1760
 // Size: 0x9c
 function private function_5c56272f(var_df71f499, var_c72571dd, var_2e23b67d) {
-    if (!isdefined(self.var_37a2393c)) {
-        self.var_37a2393c = [];
+    if (!isdefined(self.civilian_props)) {
+        self.civilian_props = [];
     }
     var_5f60ac6c = util::spawn_model(var_df71f499);
     var_5f60ac6c linkto(self, var_c72571dd, (0, 0, 0), (0, 0, 0));
     var_5f60ac6c.var_2e23b67d = var_2e23b67d;
-    self.var_37a2393c[self.var_37a2393c.size] = var_5f60ac6c;
+    self.civilian_props[self.civilian_props.size] = var_5f60ac6c;
 }
 
 // Namespace namespace_f592a7b/namespace_45b9dd6a
@@ -388,9 +388,9 @@ function private function_5c56272f(var_df71f499, var_c72571dd, var_2e23b67d) {
 // Checksum 0x712b52d8, Offset: 0x1808
 // Size: 0x1b2
 function function_b0876f77(value) {
-    if (isdefined(self.var_37a2393c)) {
-        array::delete_all(self.var_37a2393c);
-        self.var_37a2393c = [];
+    if (isdefined(self.civilian_props)) {
+        array::delete_all(self.civilian_props);
+        self.civilian_props = [];
     }
     var_df71f499 = undefined;
     var_c72571dd = undefined;
@@ -438,13 +438,13 @@ function private function_f1d19be1() {
             waitframe(1);
             continue;
         }
-        var_7f729179 = undefined;
-        var_7f729179 = self waittill(#"ai_events");
+        wait_result = undefined;
+        wait_result = self waittill(#"ai_events");
         waittillframeend();
         if (self.ignoreall || self isragdoll()) {
             continue;
         }
-        foreach (event in var_7f729179.events) {
+        foreach (event in wait_result.events) {
             if (!isdefined(event.entity)) {
                 continue;
             }

@@ -13,14 +13,14 @@
 // Checksum 0x3a903798, Offset: 0x150
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"bowie_knife", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"bowie_knife", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_weap_bowie/zm_weap_bowie
 // Params 0, eflags: 0x6 linked
 // Checksum 0x13231bf0, Offset: 0x1a8
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     zm_loadout::register_melee_weapon_for_level(#"bowie_knife");
 }
 

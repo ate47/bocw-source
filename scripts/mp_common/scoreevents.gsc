@@ -30,14 +30,14 @@
 // Checksum 0x14aae964, Offset: 0x9b0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"scoreevents", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"scoreevents", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace scoreevents/scoreevents
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9fbdf87e, Offset: 0x9f8
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&init);
     callback::on_spawned(&on_player_spawned);
 }
@@ -54,7 +54,7 @@ function init() {
     callback::add_callback(#"done_healing", &function_9c3085c8);
     callback::add_callback(#"hash_4b807b1167b4a811", &function_abe2675d);
     level.var_e7152385 = &function_e7152385;
-    level.var_42648a02 = [#"killstreak_30":[4:1, 3:1000, 2:"SE_Killstreak30", 1:1, 0:4500], #"killstreak_25":[4:1, 3:1000, 2:"SE_Killstreak25", 1:1, 0:4400], #"killstreak_20":[4:1, 3:1000, 2:"SE_Killstreak20", 1:1, 0:4300], #"killstreak_15":[4:2, 3:1000, 2:"SE_Killstreak15", 1:1, 0:4200], #"killstreak_10":[4:2, 3:1000, 2:"SE_Killstreak10", 1:1, 0:4100], #"killstreak_5":[4:2, 3:1000, 2:"SE_Killstreak5", 1:0.4, 0:4000], #"hash_32f458fea519390d":[4:1, 3:1000, 2:"SE_Multikill6", 1:0.4, 0:3300], #"hash_3d37ae7181d5bdd0":[4:1, 3:2000, 2:"SE_UninterruptedObitFeed", 1:0.25, 0:3250], #"hash_3aede7f7a9880107":[4:2, 3:3000, 2:"SE_Multikill4", 1:0.4, 0:3200], #"hash_57097aa234f1ffc1":[4:undefined, 3:3000, 2:"SE_SwatGrenadeMultikill", 1:0.25, 0:3180], #"hash_293351f0ab09e08e":[4:undefined, 3:3000, 2:"SE_ListeningDeviceMultikill", 1:0.25, 0:3180], #"hash_5b873cde9fa1ddea":[4:undefined, 3:3000, 2:"SE_JammerMultikill", 1:0.25, 0:3180], #"hash_33961e0d8b3ef619":[4:undefined, 3:3000, 2:"SE_GasTrapMultikill", 1:0.25, 0:3180], #"hash_5dd8ac39b297ddbd":[4:undefined, 3:3000, 2:"SE_ConcussionGrenadeMultikill", 1:0.25, 0:3180], #"clear_2_attackers":[4:undefined, 3:3000, 2:"SE_Clear2Attackers", 1:0.4, 0:3150], #"hash_77c751d52184d6f":[4:undefined, 3:1000, 2:"SE_SemtexMultikill", 1:0.25, 0:3150], #"hash_36c50241f5969af3":[4:undefined, 3:1000, 2:"SE_SatchelChargeMultikill", 1:0.25, 0:3150], #"hash_3b399c451696641a":[4:undefined, 3:3000, 2:"SE_NightingaleMultikill", 1:0.25, 0:3150], #"hash_77327d63abe964a5":[4:undefined, 3:1000, 2:"SE_MolotovCocktailMultikill", 1:0.25, 0:3150], #"hash_2befcf4e795c58d7":[4:undefined, 3:1000, 2:"SE_LandMineChargeMultikill", 1:0.25, 0:3150], #"hash_2043687e5999396a":[4:undefined, 3:1000, 2:"SE_FragMultikill", 1:0.25, 0:3150], #"hash_4b2287fbdfc248b1":[4:undefined, 3:3000, 2:"SE_Multikill2", 1:0.4, 0:3100], #"hash_56ede06b1821a561":[4:undefined, 3:500, 2:"SE_PointBlankKill", 1:0.4, 0:3050], #"kill_enemy_injuring_teammate":[4:undefined, 3:2000, 2:"SE_KillEnemyInjuringTeammate", 1:0.4, 0:3000], #"hash_e0ebdc669e8fd7":[4:undefined, 3:500, 2:"SE_VehicleKill", 1:0.25, 0:2000], #"war_machine_shutdown":[4:undefined, 3:1500, 2:"SE_WarMachineShutdown", 1:0.25, 0:2000], #"scythe_shutdown":[4:undefined, 3:1500, 2:"SE_SigLmgShutdown", 1:0.25, 0:2000], #"cluster_semtex_stick":[4:undefined, 3:500, 2:"SE_SemtexStick", 1:0.25, 0:2000], #"hash_6adfe69a27bbb2d5":[4:2, 3:500, 2:"SE_SatchelChargeDestroyedVehicle", 1:0.25, 0:2000], #"revenge_kill":[4:undefined, 3:1000, 2:"SE_RevengeKill", 1:0.4, 0:2000], #"hash_551d67ca10327522":[4:undefined, 3:1500, 2:"SE_QuickshotBowShutdown", 1:0.25, 0:2000], #"purifier_shutdown":[4:undefined, 3:1500, 2:"SE_PurifierShutdown", 1:0.25, 0:2000], #"kill_enemy_with_gunbutt":[4:undefined, 3:1000, 2:"SE_KillEnemyWithGunbutt", 1:0.25, 0:2000], #"kill_enemy_when_injured":[4:undefined, 3:1500, 2:"SE_KillEnemyWhenInjured", 1:0.4, 0:2000], #"hash_17b4c2f07d4f33b9":[4:undefined, 3:2500, 2:"SE_KillEnemyFlashedSlowedStunned", 1:0.25, 0:2000], #"hash_7eea303a50912c2a":[4:2, 3:1500, 2:"SE_KillEnemiesOneBullet", 1:0.25, 0:2000], #"first_kill":[4:undefined, 3:1000, 2:"SE_FirstKill", 1:0.25, 0:2000], #"comeback_from_deathstreak":[4:undefined, 3:1000, 2:"SE_Comeback", 1:0.25, 0:2000], #"bounce_hatchet_kill":[4:undefined, 3:2000, 2:"SE_BounceHatchetKill", 1:0.25, 0:2000], #"kill_enemy_with_their_weapon":[4:2, 3:2000, 2:"SE_Backfire", 1:0.25, 0:2000], #"annihilator_shutdown":[4:undefined, 3:1000, 2:"SE_AnnihilatorShutdown", 1:0.25, 0:2000], #"hash_444270ecef7ca44":[4:undefined, 3:500, 2:"SE_HatchetLongshotKill", 1:0.1, 0:1500], #"hash_3a7ae1e782198db2":[4:undefined, 3:1500, 2:"SE_KillEnemyOneBullet", 1:0.1, 0:1200], #"backstabber_kill":[4:undefined, 3:1000, 2:"SE_BackstabberKill", 1:0.1, 0:1000], #"hash_23e04a595aa862a":[4:undefined, 3:1500, 2:undefined, 1:1, 0:0]];
+    level.var_42648a02 = [#"hash_23e04a595aa862a":[0, 1, undefined, 1500, undefined], #"backstabber_kill":[1000, 0.1, "SE_BackstabberKill", 1000, undefined], #"hash_3a7ae1e782198db2":[1200, 0.1, "SE_KillEnemyOneBullet", 1500, undefined], #"hash_444270ecef7ca44":[1500, 0.1, "SE_HatchetLongshotKill", 500, undefined], #"annihilator_shutdown":[2000, 0.25, "SE_AnnihilatorShutdown", 1000, undefined], #"kill_enemy_with_their_weapon":[2000, 0.25, "SE_Backfire", 2000, 2], #"bounce_hatchet_kill":[2000, 0.25, "SE_BounceHatchetKill", 2000, undefined], #"comeback_from_deathstreak":[2000, 0.25, "SE_Comeback", 1000, undefined], #"first_kill":[2000, 0.25, "SE_FirstKill", 1000, undefined], #"hash_7eea303a50912c2a":[2000, 0.25, "SE_KillEnemiesOneBullet", 1500, 2], #"hash_17b4c2f07d4f33b9":[2000, 0.25, "SE_KillEnemyFlashedSlowedStunned", 2500, undefined], #"kill_enemy_when_injured":[2000, 0.4, "SE_KillEnemyWhenInjured", 1500, undefined], #"kill_enemy_with_gunbutt":[2000, 0.25, "SE_KillEnemyWithGunbutt", 1000, undefined], #"purifier_shutdown":[2000, 0.25, "SE_PurifierShutdown", 1500, undefined], #"hash_551d67ca10327522":[2000, 0.25, "SE_QuickshotBowShutdown", 1500, undefined], #"revenge_kill":[2000, 0.4, "SE_RevengeKill", 1000, undefined], #"hash_6adfe69a27bbb2d5":[2000, 0.25, "SE_SatchelChargeDestroyedVehicle", 500, 2], #"cluster_semtex_stick":[2000, 0.25, "SE_SemtexStick", 500, undefined], #"scythe_shutdown":[2000, 0.25, "SE_SigLmgShutdown", 1500, undefined], #"war_machine_shutdown":[2000, 0.25, "SE_WarMachineShutdown", 1500, undefined], #"hash_e0ebdc669e8fd7":[2000, 0.25, "SE_VehicleKill", 500, undefined], #"kill_enemy_injuring_teammate":[3000, 0.4, "SE_KillEnemyInjuringTeammate", 2000, undefined], #"hash_56ede06b1821a561":[3050, 0.4, "SE_PointBlankKill", 500, undefined], #"hash_4b2287fbdfc248b1":[3100, 0.4, "SE_Multikill2", 3000, undefined], #"hash_2043687e5999396a":[3150, 0.25, "SE_FragMultikill", 1000, undefined], #"hash_2befcf4e795c58d7":[3150, 0.25, "SE_LandMineChargeMultikill", 1000, undefined], #"hash_77327d63abe964a5":[3150, 0.25, "SE_MolotovCocktailMultikill", 1000, undefined], #"hash_3b399c451696641a":[3150, 0.25, "SE_NightingaleMultikill", 3000, undefined], #"hash_36c50241f5969af3":[3150, 0.25, "SE_SatchelChargeMultikill", 1000, undefined], #"hash_77c751d52184d6f":[3150, 0.25, "SE_SemtexMultikill", 1000, undefined], #"clear_2_attackers":[3150, 0.4, "SE_Clear2Attackers", 3000, undefined], #"hash_5dd8ac39b297ddbd":[3180, 0.25, "SE_ConcussionGrenadeMultikill", 3000, undefined], #"hash_33961e0d8b3ef619":[3180, 0.25, "SE_GasTrapMultikill", 3000, undefined], #"hash_5b873cde9fa1ddea":[3180, 0.25, "SE_JammerMultikill", 3000, undefined], #"hash_293351f0ab09e08e":[3180, 0.25, "SE_ListeningDeviceMultikill", 3000, undefined], #"hash_57097aa234f1ffc1":[3180, 0.25, "SE_SwatGrenadeMultikill", 3000, undefined], #"hash_3aede7f7a9880107":[3200, 0.4, "SE_Multikill4", 3000, 2], #"hash_3d37ae7181d5bdd0":[3250, 0.25, "SE_UninterruptedObitFeed", 2000, 1], #"hash_32f458fea519390d":[3300, 0.4, "SE_Multikill6", 1000, 1], #"killstreak_5":[4000, 0.4, "SE_Killstreak5", 1000, 2], #"killstreak_10":[4100, 1, "SE_Killstreak10", 1000, 2], #"killstreak_15":[4200, 1, "SE_Killstreak15", 1000, 2], #"killstreak_20":[4300, 1, "SE_Killstreak20", 1000, 1], #"killstreak_25":[4400, 1, "SE_Killstreak25", 1000, 1], #"killstreak_30":[4500, 1, "SE_Killstreak30", 1000, 1]];
     level.var_c26a3a23 = [#"kill_enemy_one_bullet":"STATS_KILL_ENEMY_ONE_BULLET_HC"];
 }
 
@@ -122,7 +122,7 @@ function private on_weapon_change(params) {
 // Size: 0x5c
 function function_abe2675d() {
     if (self.var_9cd2c51d.var_158e75d4 === #"hash_364914e1708cb629") {
-        self stats::function_622feb0d(#"hash_364914e1708cb629", #"hash_7d6781e4032b4aa5", 1);
+        self stats::function_622feb0d(#"hash_364914e1708cb629", #"uses", 1);
     }
 }
 
@@ -212,9 +212,9 @@ function scoreeventplayerkill(data, time) {
     var_5fa4aeed = data.var_5fa4aeed;
     var_8099aa99 = data.var_8099aa99;
     var_4d1f1cc0 = data.var_60cb0c39;
-    var_284da85d = data.var_284da85d;
+    attackervehicle = data.attackervehicle;
     if (level.lastkilltime != time) {
-        level.var_e5595d9d = level.lastkilltime;
+        level.prevlastkilltime = level.lastkilltime;
         level.lastkilltime = time;
     }
     explosivedamage = 0;
@@ -253,7 +253,7 @@ function scoreeventplayerkill(data, time) {
                     attacker activecamo::function_896ac347(weapon, #"avenger", 1);
                     attacker activecamo::function_896ac347(weapon, #"hash_39ab7cda18fd5c74", 1);
                     attacker stats::function_dad108fa(#"hash_47c20b0aa74ca0c", 1);
-                    level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#var_bdc4bbd2:#"avenger", #player:victim});
+                    level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#player:victim, #var_bdc4bbd2:#"avenger"});
                 }
             }
             if (isdefined(victim.damagedplayers) && isdefined(attacker) && isdefined(attacker.clientid)) {
@@ -276,7 +276,7 @@ function scoreeventplayerkill(data, time) {
                             victim.damagedplayers[key].entity.lastrescuedtime = time;
                         }
                         challenges::function_3f57a5b(attacker, weapon);
-                        level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#var_bdc4bbd2:#"defender", #player:victim});
+                        level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#player:victim, #var_bdc4bbd2:#"defender"});
                     }
                 }
             }
@@ -413,13 +413,13 @@ function scoreeventplayerkill(data, time) {
             attacker stats::function_dad108fa(#"kills_molotov", 1);
         }
         attacker thread updatemultikills(weapon, weaponclass, killstreak, victim, time, meansofdeath);
-        if (level.var_e5595d9d == 0 && attacker.var_e5595d9d == 0) {
+        if (level.prevlastkilltime == 0 && attacker.prevlastkilltime == 0) {
             if (getdvarint(#"hash_5c49df97f4f82e12", 0)) {
                 processscoreevent(#"hash_295bfc462169cc24", attacker, victim, weapon);
             } else {
                 processscoreevent(#"first_kill", attacker, victim, weapon);
             }
-            level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#var_bdc4bbd2:#"firstblood", #player:victim});
+            level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#player:victim, #var_bdc4bbd2:#"firstblood"});
             level.var_8a3a9ca4.firstblood = gettime();
             attacker contracts::increment_contract(#"hash_61c7d530de491c8d");
             globallogic::function_3305e557(attacker, "firstBlood", 0);
@@ -439,7 +439,7 @@ function scoreeventplayerkill(data, time) {
                     attacker contracts::increment_contract(#"hash_be7f654734e0ee5");
                     attacker activecamo::function_896ac347(weapon, #"revenge", 1);
                     attacker activecamo::function_896ac347(weapon, #"hash_39ab7cda18fd5c74", 1);
-                    level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#var_bdc4bbd2:#"revenge", #player:victim});
+                    level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#player:victim, #var_bdc4bbd2:#"revenge"});
                     attacker.lastkilledby = undefined;
                     data.results.var_905bd140 = 1;
                 }
@@ -449,7 +449,7 @@ function scoreeventplayerkill(data, time) {
                 processscoreevent(#"stop_enemy_killstreak", attacker, victim, weapon);
                 attacker activecamo::function_896ac347(weapon, #"buzzkill", 1);
                 attacker activecamo::function_896ac347(weapon, #"hash_39ab7cda18fd5c74", 1);
-                level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#var_bdc4bbd2:#"buzzkill", #player:victim});
+                level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#player:victim, #var_bdc4bbd2:#"buzzkill"});
             }
             if (isdefined(victim.lastmansd) && victim.lastmansd == 1) {
                 processscoreevent(#"final_kill_elimination", attacker, victim, weapon);
@@ -472,7 +472,7 @@ function scoreeventplayerkill(data, time) {
                 processscoreevent(#"longshot_kill", attacker, victim, weapon);
                 attacker contracts::increment_contract(#"contract_mp_longshot");
                 attacker.pers[#"longshots"]++;
-                level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#var_bdc4bbd2:#"longshot", #player:victim});
+                level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#player:victim, #var_bdc4bbd2:#"longshot"});
                 data.results.var_91b86b21 = 1;
                 if (isdefined(attacker.var_ea1458aa)) {
                     if (!isdefined(attacker.var_ea1458aa.longshot_kills)) {
@@ -484,12 +484,12 @@ function scoreeventplayerkill(data, time) {
                     }
                 }
             }
-            if (var_dca08887 <= function_a3f6cdac(115)) {
+            if (var_dca08887 <= sqr(115)) {
                 processscoreevent(#"hash_56ede06b1821a561", attacker, victim, weapon);
                 challenges::function_ffdecc69(attacker, weapon, weaponclass);
                 if (weaponclass === #"weapon_pistol") {
                     victimyaw = var_5fceefd4[1];
-                    var_a48ab0d6 = function_2981bd91(victimorigin - attackerorigin);
+                    var_a48ab0d6 = vectortoyaw(victimorigin - attackerorigin);
                     anglediff = angleclamp180(victimyaw - var_a48ab0d6);
                     if (85 > anglediff && anglediff > -55) {
                         attacker stats::function_dad108fa(#"hash_383d73e35a0c6d17", 1);
@@ -522,12 +522,12 @@ function scoreeventplayerkill(data, time) {
         } else if (isdefined(attacker.deathtime) && attacker.deathtime + 800 < time && !attacker isinvehicle()) {
             level.globalafterlifes++;
             processscoreevent(#"kill_enemy_after_death", attacker, victim, weapon);
-            level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#var_bdc4bbd2:#"posthumous", #player:victim});
+            level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#player:victim, #var_bdc4bbd2:#"posthumous"});
         }
         if (isdefined(attacker.cur_death_streak) && attacker.cur_death_streak >= 3) {
             level.globalcomebacks++;
             processscoreevent(#"comeback_from_deathstreak", attacker, victim, weapon);
-            level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#var_bdc4bbd2:#"comeback", #player:victim});
+            level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#player:victim, #var_bdc4bbd2:#"comeback"});
         }
         if (isdefined(victim.lastmicrowavedby)) {
             foreach (beingmicrowavedby in victim.beingmicrowavedby) {
@@ -634,8 +634,8 @@ function scoreeventplayerkill(data, time) {
                 attacker stats::function_7fd36562(data.var_b840fc2a, #"hash_79b6d5046add3690", 1);
                 attacker stats::function_7fd36562(data.var_b840fc2a, #"driver_kills", 1);
                 if (var_4d1f1cc0 === 1) {
-                    if (isdefined(data.var_284da85d.session)) {
-                        data.var_284da85d.session.var_9678e53b++;
+                    if (isdefined(data.attackervehicle.session)) {
+                        data.attackervehicle.session.var_9678e53b++;
                     }
                     attacker stats::function_7fd36562(data.var_b840fc2a, #"hash_390729ed851d5efe", 1);
                 }
@@ -656,8 +656,8 @@ function scoreeventplayerkill(data, time) {
                         }
                         attacker stats::function_7fd36562(data.var_b840fc2a, #"driver_kills", 1);
                         if (var_4d1f1cc0 === 1) {
-                            if (isdefined(data.var_284da85d.session)) {
-                                data.var_284da85d.session.var_9678e53b++;
+                            if (isdefined(data.attackervehicle.session)) {
+                                data.attackervehicle.session.var_9678e53b++;
                             }
                             attacker stats::function_7fd36562(data.var_b840fc2a, #"hash_390729ed851d5efe", 1);
                         }
@@ -679,8 +679,8 @@ function scoreeventplayerkill(data, time) {
                         }
                         attacker stats::function_7fd36562(data.var_b840fc2a, #"hash_4c09c6ee2ec16f04", 1);
                         if (var_4d1f1cc0 === 1) {
-                            if (isdefined(data.var_284da85d.session)) {
-                                data.var_284da85d.session.var_afb151ad++;
+                            if (isdefined(data.attackervehicle.session)) {
+                                data.attackervehicle.session.var_afb151ad++;
                             }
                         }
                     }
@@ -697,8 +697,8 @@ function scoreeventplayerkill(data, time) {
                     }
                     attacker stats::function_7fd36562(data.var_b840fc2a, #"driver_kills", 1);
                     if (var_4d1f1cc0 === 1) {
-                        if (isdefined(data.var_284da85d.session)) {
-                            data.var_284da85d.session.var_9678e53b++;
+                        if (isdefined(data.attackervehicle.session)) {
+                            data.attackervehicle.session.var_9678e53b++;
                         }
                         attacker stats::function_7fd36562(data.var_b840fc2a, #"hash_390729ed851d5efe", 1);
                     }
@@ -744,7 +744,7 @@ function scoreeventplayerkill(data, time) {
                             break;
                         }
                     }
-                    attacker.var_a0c11592 = {#time:gettime(), #weapon:weapon};
+                    attacker.var_a0c11592 = {#weapon:weapon, #time:gettime()};
                 }
                 break;
             default:
@@ -825,7 +825,7 @@ function scoreeventplayerkill(data, time) {
     }
     if (isdefined(killstreak)) {
         attacker thread updatemultikills(weapon, weaponclass, killstreak, victim, time, meansofdeath);
-        level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#var_bdc4bbd2:#"killstreak", #player:victim});
+        level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#player:victim, #var_bdc4bbd2:#"killstreak"});
     }
     attacker.cur_death_streak = 0;
     attacker disabledeathstreak();
@@ -1680,7 +1680,7 @@ function function_c28e2c05(entity_origin, sensor_darts, var_e13a103a) {
         if (!isdefined(sensor)) {
             continue;
         }
-        if (distancesquared(entity_origin, sensor.origin) < function_a3f6cdac((sessionmodeiswarzonegame() ? 2400 : 800) + 50)) {
+        if (distancesquared(entity_origin, sensor.origin) < sqr((sessionmodeiswarzonegame() ? 2400 : 800) + 50)) {
             return sensor;
         }
     }
@@ -1747,7 +1747,7 @@ function function_43ee1b3d(attacker, victim, attackerweapon) {
 // Size: 0x1ac
 function function_b8495e95(data, time) {
     vehicle = data.vehicle;
-    var_43f2e2ad = data.var_43f2e2ad;
+    isoccupied = data.isoccupied;
     var_da46f58a = data.var_da46f58a;
     var_2879347f = data.var_2879347f;
     inflictor = data.inflictor;
@@ -1758,7 +1758,7 @@ function function_b8495e95(data, time) {
     hitloc = data.hitloc;
     time = data.time;
     var_c8757561 = data.var_c8757561;
-    if (var_2879347f && var_43f2e2ad || var_da46f58a) {
+    if (var_2879347f && isoccupied || var_da46f58a) {
         if (var_c8757561) {
             processscoreevent(#"hash_429ae888806770a4", attacker, undefined, weapon);
             attacker stats::function_561716e6(weapon.name, #"hash_109b0615c82fd4af", 1);

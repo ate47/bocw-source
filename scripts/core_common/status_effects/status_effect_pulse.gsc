@@ -11,14 +11,14 @@
 // Checksum 0x532523f6, Offset: 0xf0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"status_effect_pulse", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"status_effect_pulse", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace status_effect_pulse/status_effect_pulse
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa091b61c, Offset: 0x138
 // Size: 0xbc
-function private function_70a657d8() {
+function private preinit() {
     status_effect::register_status_effect_callback_apply(9, &pulse_apply);
     status_effect::function_5bae5120(9, &pulse_end);
     status_effect::function_6f4eaf88(getstatuseffect("pulse"));

@@ -13,14 +13,14 @@
 // Checksum 0x37970b4e, Offset: 0xb0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_reset_points", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_reset_points", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_reset_points/zm_trial_reset_points
 // Params 0, eflags: 0x4
 // Checksum 0x7d6792d0, Offset: 0xf8
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

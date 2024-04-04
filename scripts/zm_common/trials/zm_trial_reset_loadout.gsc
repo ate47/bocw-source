@@ -15,14 +15,14 @@
 // Checksum 0xaa3de343, Offset: 0x110
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_reset_loadout", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_reset_loadout", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_reset_loadout/zm_trial_reset_loadout
 // Params 0, eflags: 0x6 linked
 // Checksum 0x79f23353, Offset: 0x158
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }
@@ -60,9 +60,9 @@ function is_active(var_61ee083c = 0) {
     s_challenge = zm_trial::function_a36e8c38(#"reset_loadout");
     if (var_61ee083c) {
         if (isdefined(s_challenge) && isdefined(s_challenge.var_f2c84b6b)) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
     return isdefined(s_challenge);
 }

@@ -8,14 +8,14 @@
 // Checksum 0x9ba7b76b, Offset: 0xb0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"rewindobjects", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"rewindobjects", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace rewindobjects/rewindobjects
 // Params 0, eflags: 0x4
 // Checksum 0x797b3793, Offset: 0xf8
 // Size: 0x10
-function private function_70a657d8() {
+function private preinit() {
     level.rewindwatcherarray = [];
 }
 

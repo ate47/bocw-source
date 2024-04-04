@@ -19,7 +19,7 @@
 // Size: 0x3c
 function private autoexec __init__system__() {
     /#
-        register(#"rat", &function_70a657d8, undefined, undefined, undefined);
+        register(#"rat", &preinit, undefined, undefined, undefined);
     #/
 }
 
@@ -27,7 +27,7 @@ function private autoexec __init__system__() {
 // Params 0, eflags: 0x4
 // Checksum 0xd2a5965e, Offset: 0x120
 // Size: 0x544
-function private function_70a657d8() {
+function private preinit() {
     /#
         init();
         level.rat.common.gethostplayer = &gethostplayer;

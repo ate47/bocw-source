@@ -5,7 +5,7 @@
             "type": "#hash_1303dcb8d0e80e33",
             "image": "#hash_4292bd282539d4e8",
             "displayname": "#hash_51f9cc8e57d9804a",
-            "var_a4f2dd9e": "#hash_3069f93c4e1e6bd8",
+            "actionutility": "#hash_3069f93c4e1e6bd8",
             "var_4e4109db": "#zm_intel_stat_list_requiem",
             "action": "#hash_74047973e9fd3642"
         },
@@ -14,7 +14,7 @@
             "type": "#omega",
             "image": "#hash_4e8ec8a35253c333",
             "displayname": "#hash_47ec60f07681ad81",
-            "var_a4f2dd9e": "#hash_3069f93c4e1e6bd8",
+            "actionutility": "#hash_3069f93c4e1e6bd8",
             "var_4e4109db": "#zm_intel_stat_list_omega",
             "action": "#hash_74047973e9fd3642"
         },
@@ -23,7 +23,7 @@
             "type": "#maxis",
             "image": "#hash_64a8b32daac451aa",
             "displayname": "#hash_532a46bfdb304524",
-            "var_a4f2dd9e": "#hash_3069f93c4e1e6bd8",
+            "actionutility": "#hash_3069f93c4e1e6bd8",
             "var_4e4109db": "#zm_intel_stat_list_maxis",
             "action": "#hash_74047973e9fd3642"
         },
@@ -32,7 +32,7 @@
             "type": "#dark_aether",
             "image": "#hash_7b9522af37534188",
             "displayname": "#hash_28aa329225234b0b",
-            "var_a4f2dd9e": "#hash_3069f93c4e1e6bd8",
+            "actionutility": "#hash_3069f93c4e1e6bd8",
             "var_4e4109db": "#zm_intel_stat_list_darkaether",
             "action": "#hash_74047973e9fd3642"
         }

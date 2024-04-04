@@ -10,14 +10,14 @@
 // Checksum 0xc2290682, Offset: 0x108
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_f64d155dd9c41bd", &function_70a657d8, undefined, undefined, #"player_vehicle");
+    system::register(#"hash_f64d155dd9c41bd", &preinit, undefined, undefined, #"player_vehicle");
 }
 
 // Namespace namespace_ef91ed26/namespace_ef91ed26
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc3a22b9a, Offset: 0x158
 // Size: 0x2c
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_main_callback("gaz66_wz", &function_f9bdbd82);
 }
 

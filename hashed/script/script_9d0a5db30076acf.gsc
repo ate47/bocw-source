@@ -36,7 +36,7 @@ function private function_bc948200() {
 // Checksum 0x4b390b29, Offset: 0x1d0
 // Size: 0x94
 function private function_83c9fd20(params) {
-    var_21a143e = params.var_7a3dfae;
+    var_21a143e = params.countdowntime;
     player = getplayers()[0];
     if (var_21a143e > 0) {
         level notify(#"hash_722cff0020f34cd4");

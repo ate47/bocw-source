@@ -2,7 +2,7 @@
 #using script_355c6e84a79530cb;
 #using scripts\zm_common\zm_utility.gsc;
 #using scripts\core_common\system_shared.gsc;
-#using script_7fc996fe8678852;
+#using scripts\core_common\content_manager.gsc;
 
 #namespace namespace_7a9f67c8;
 
@@ -11,18 +11,18 @@
 // Checksum 0x977bdc54, Offset: 0xa0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_3617acb8b856566f", &function_70a657d8, undefined, undefined, #"hash_f81b9dea74f0ee");
+    system::register(#"hash_3617acb8b856566f", &preinit, undefined, undefined, #"content_manager");
 }
 
 // Namespace namespace_7a9f67c8/namespace_7a9f67c8
 // Params 0, eflags: 0x2 linked
 // Checksum 0xcc53b9be, Offset: 0xf0
 // Size: 0x4c
-function function_70a657d8() {
+function preinit() {
     if (!zm_utility::is_survival()) {
         return;
     }
-    namespace_8b6a9d79::function_b3464a7c(#"hash_38cc1135684934da", &function_f14de68);
+    content_manager::register_script(#"hash_38cc1135684934da", &function_f14de68);
 }
 
 // Namespace namespace_7a9f67c8/namespace_7a9f67c8

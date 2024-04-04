@@ -14,14 +14,14 @@
 // Checksum 0xb9a86276, Offset: 0x1c0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_1a2e8b1921eaf73f", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"oed", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_446fe428/namespace_446fe428
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd168f300, Offset: 0x208
 // Size: 0x2cc
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "sitrep_toggle", 1, 1, "int", &function_8305981d, 0, 0);
     clientfield::register("toplayer", "active_dni_fx", 1, 1, "counter", &function_81c8f4da, 0, 0);
     clientfield::register("toplayer", "hack_dni_fx", 1, 1, "counter", &hack_dni_fx, 0, 0);
@@ -97,7 +97,7 @@ function function_8305981d(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 2, eflags: 0x2 linked
 // Checksum 0x3c34074f, Offset: 0x710
 // Size: 0x38
-function function_182c5d6b(*var_6fd2a8ac, newval) {
+function function_182c5d6b(*lcn, newval) {
     self.var_bef05351 = newval;
     level notify(#"player_sitrep_toggle");
 }

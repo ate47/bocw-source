@@ -18,14 +18,14 @@
 // Checksum 0x1658bb0b, Offset: 0x2c0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_laststand", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_laststand", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_laststand/zm_laststand
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb6210b28, Offset: 0x308
 // Size: 0x2a4
-function private function_70a657d8() {
+function private preinit() {
     level.var_629da31e = function_e49dbc72();
     callback::on_localplayer_spawned(&function_772f66bd);
     revive_hud::register();
@@ -38,7 +38,7 @@ function private function_70a657d8() {
         level.laststands[i] = spawnstruct();
         level.laststands[i].laststand_update_clientfields = "laststand_update" + i;
         clientfield::register("world", level.laststands[i].laststand_update_clientfields, 1, 5, "float", &update_bleedout_timer, 0, 0);
-        clientfield::register_clientuimodel("WorldSpaceIndicators.bleedOutModel" + i + ".hide", #"hash_56cb8e9a65d9f9ad", [1:#"hide", 0:#"bleedoutmodel" + (isdefined(i) ? "" + i : "")], 1, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("WorldSpaceIndicators.bleedOutModel" + i + ".hide", #"hash_56cb8e9a65d9f9ad", [#"bleedoutmodel" + (isdefined(i) ? "" + i : ""), #"hide"], 1, 1, "int", undefined, 0, 0);
     }
     callback::on_localplayer_spawned(&function_e1479c);
     level thread wait_and_set_revive_shader_constant();

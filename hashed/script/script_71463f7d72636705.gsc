@@ -49,7 +49,7 @@ function function_9a82b890(localclientnum, duration, startsound, var_ed2d4562, e
 // Params 1, eflags: 0x20
 // Checksum 0x73aa3214, Offset: 0x228
 // Size: 0x444
-function event_handler[event_b19fdc1e] function_928600de(eventstruct) {
+function event_handler[event_b19fdc1e] event_watcher(eventstruct) {
     if (!isdefined(level.var_73eeec22[eventstruct.weapon.var_b57f13ef])) {
         level.var_73eeec22[eventstruct.weapon.var_b57f13ef] = getscriptbundle(eventstruct.weapon.var_b57f13ef);
         if (!isdefined(level.var_73eeec22[eventstruct.weapon.var_b57f13ef])) {
@@ -73,7 +73,7 @@ function event_handler[event_b19fdc1e] function_928600de(eventstruct) {
         playerforward = anglestoforward(viewangles);
         playerright = anglestoright(viewangles);
         var_1978c7fc = vectordot(dirtotarget, playerforward);
-        var_1006dafa = vectordot(dirtotarget, playerright);
+        rightdot = vectordot(dirtotarget, playerright);
         var_5c9ee157 = dirtotarget * -1;
         var_6059f1ff = local_player.origin + (randomfloat(10) - 5, randomfloat(10) - 5, randomfloat(10) - 5) + 2 * var_5c9ee157;
         local_player function_3edb40f5(eventstruct.weapon, eventstruct.position, var_6059f1ff, dirtotarget * -1);
@@ -82,11 +82,11 @@ function event_handler[event_b19fdc1e] function_928600de(eventstruct) {
         } else if (var_1978c7fc <= -0.5) {
             local_player thread function_9a82b890(eventstruct.localclientnum, var_73eeec22.duration, var_73eeec22.var_f3b0d4f, var_73eeec22.var_9d3d0581, var_73eeec22.var_efce6189);
         }
-        if (var_1006dafa >= 0.5) {
+        if (rightdot >= 0.5) {
             local_player thread function_9a82b890(eventstruct.localclientnum, var_73eeec22.duration, var_73eeec22.var_3db06635, var_73eeec22.var_5dddb8e8, var_73eeec22.var_edcc1468);
             return;
         }
-        if (var_1006dafa <= -0.5) {
+        if (rightdot <= -0.5) {
             local_player thread function_9a82b890(eventstruct.localclientnum, var_73eeec22.duration, var_73eeec22.var_90c3ef0c, var_73eeec22.var_60e944e1, var_73eeec22.var_94f03120);
         }
     }

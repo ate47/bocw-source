@@ -16,14 +16,14 @@
 // Checksum 0x5bb788e4, Offset: 0x118
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"radiation", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"radiation", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace radiation/radiation
 // Params 0, eflags: 0x6 linked
 // Checksum 0xcb217c3e, Offset: 0x160
 // Size: 0x9c
-function private function_70a657d8() {
+function private preinit() {
     if (!namespace_956bd4dd::function_ab99e60c()) {
         return;
     }

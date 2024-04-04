@@ -29,14 +29,14 @@
 // Checksum 0xf1b20de4, Offset: 0x2b0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"zombie_dog_util", &function_70a657d8, undefined, undefined, #"aat");
+    system::register(#"zombie_dog_util", &preinit, undefined, undefined, #"aat");
 }
 
 // Namespace zombie_dog_util/ai_dog_util
 // Params 0, eflags: 0x6 linked
 // Checksum 0x7030c01a, Offset: 0x300
 // Size: 0x1ac
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "dog_fx", 1, 1, "int");
     clientfield::register("world", "dog_round_fog_bank", 1, 1, "int");
     level.var_57c1626e = 1;
@@ -876,7 +876,7 @@ function function_62db7b1c(b_force_spawn = 0, var_eb3a8721) {
         } else {
             s_spawn_loc thread dog_spawn_fx(ai, s_spawn_loc);
         }
-        s_spawn_loc.var_d51f4e2d = gettime();
+        s_spawn_loc.spawned_timestamp = gettime();
         ai.favoriteenemy = e_target;
         ai.favoriteenemy.hunted_by++;
         ai.favoriteenemy.var_230becc2++;

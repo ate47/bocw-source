@@ -11,14 +11,14 @@
 // Checksum 0x305d749a, Offset: 0xc0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"spike_charge_siegebot", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"spike_charge_siegebot", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace spike_charge_siegebot/spike_charge_siegebot
 // Params 0, eflags: 0x4
 // Checksum 0x7b4edc6d, Offset: 0x108
 // Size: 0x11c
-function private function_70a657d8() {
+function private preinit() {
     level._effect[#"spike_charge_siegebot_light"] = #"light/fx_light_red_spike_charge_os";
     callback::add_weapon_type(#"spike_charge_siegebot", &spawned);
     callback::add_weapon_type(#"spike_charge_siegebot_theia", &spawned);

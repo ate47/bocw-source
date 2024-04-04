@@ -11,14 +11,14 @@
 // Checksum 0xaaaf74f7, Offset: 0xa0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"status_effects", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"status_effects", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace status_effect/status_effects
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc3095d74, Offset: 0xe8
 // Size: 0x7c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_connect(&on_player_connect);
     callback::on_disconnect(&on_player_disconnect);
     callback::on_end_game(&on_end_game);

@@ -23,8 +23,8 @@ function event_handler[gametype_init] main(*eventstruct) {
     level._zombie_gamemodeprecache = &onprecachegametype;
     level._zombie_gamemodemain = &onstartgametype;
     for (i = 0; i < 5; i++) {
-        clientfield::function_5b7d846d("PlayerList.client" + i + ".multiplier_count", #"hash_97df1852304b867", [1:#"multiplier_count", 0:hash(isdefined(i) ? "" + i : "")], 1, 12, "int", undefined, 0, 0);
-        clientfield::function_5b7d846d("PlayerList.client" + i + ".multiplier_blink", #"hash_97df1852304b867", [1:#"multiplier_blink", 0:hash(isdefined(i) ? "" + i : "")], 1, 1, "int", undefined, 0, 0);
+        clientfield::function_5b7d846d("PlayerList.client" + i + ".multiplier_count", #"hash_97df1852304b867", [hash(isdefined(i) ? "" + i : ""), #"multiplier_count"], 1, 12, "int", undefined, 0, 0);
+        clientfield::function_5b7d846d("PlayerList.client" + i + ".multiplier_blink", #"hash_97df1852304b867", [hash(isdefined(i) ? "" + i : ""), #"multiplier_blink"], 1, 1, "int", undefined, 0, 0);
     }
 }
 

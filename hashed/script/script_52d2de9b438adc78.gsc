@@ -79,7 +79,7 @@ function function_f625256f(killstreak_id, context) {
                 return false;
             }
         }
-        if (context.var_af2d7122 === 1 || context.var_b59f725a !== 1 && isdefined(context.var_14174f4e) && ![[ context.var_14174f4e ]](context.killstreaktype)) {
+        if (context.var_af2d7122 === 1 || context.deploying !== 1 && isdefined(context.var_14174f4e) && ![[ context.var_14174f4e ]](context.killstreaktype)) {
             cleanup(context, player);
             return false;
         }
@@ -264,14 +264,14 @@ function function_ef6c4a46(killstreak_id, trigger_event, supplydropweapon, conte
         }
         if (isdefined(self) && issupplydropweapon) {
             if (isdefined(context)) {
-                context.var_b59f725a = 1;
+                context.deploying = 1;
                 if (isdefined(context.var_14174f4e) && ![[ context.var_14174f4e ]](context.killstreaktype)) {
                     if (isdefined(level.var_956bde25)) {
                         player [[ level.var_956bde25 ]](context.killstreaktype, player.team, 0);
                     }
                     context.var_af2d7122 = 1;
                     weapon_instance notify(#"death");
-                    weapon_instance function_cb48cddd();
+                    weapon_instance deletedelay();
                     self killstreaks::switch_to_last_non_killstreak_weapon();
                     break;
                 }

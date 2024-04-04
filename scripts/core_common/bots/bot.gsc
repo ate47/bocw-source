@@ -27,14 +27,14 @@
 // Checksum 0x19584ed1, Offset: 0x1f8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"bot", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"bot", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace bot/bot
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa9c26442, Offset: 0x240
 // Size: 0x320
-function private function_70a657d8() {
+function private preinit() {
     if (util::is_frontend_map()) {
         return;
     }
@@ -48,21 +48,21 @@ function private function_70a657d8() {
         }
     #/
     if (is_true(level.var_fa5cacde)) {
-        namespace_ffbf548b::function_70a657d8();
+        namespace_ffbf548b::preinit();
         callback::on_spawned(&function_abe38e0f);
         callback::on_player_killed(&function_96dddf6f);
         return;
     }
-    namespace_87549638::function_70a657d8();
-    bot_action::function_70a657d8();
-    bot_difficulty::function_70a657d8();
-    namespace_38ee089b::function_70a657d8();
-    bot_orders::function_70a657d8();
-    namespace_ffbf548b::function_70a657d8();
-    bot_position::function_70a657d8();
-    bot_stance::function_70a657d8();
-    namespace_255a2b21::function_70a657d8();
-    bot_traversals::function_70a657d8();
+    namespace_87549638::preinit();
+    bot_action::preinit();
+    bot_difficulty::preinit();
+    namespace_38ee089b::preinit();
+    bot_orders::preinit();
+    namespace_ffbf548b::preinit();
+    bot_position::preinit();
+    bot_stance::preinit();
+    namespace_255a2b21::preinit();
+    bot_traversals::preinit();
     callback::on_connect(&on_player_connect);
     callback::on_spawned(&on_player_spawned);
     callback::on_player_killed(&on_player_killed);
@@ -214,7 +214,7 @@ function private on_player_spawned() {
         return;
     }
     self setgoal(self.origin);
-    self function_fdd00c49();
+    self forceupdategoalpos();
     self botreleasemanualcontrol();
     self thread function_b781f1e5();
     self thread fixed_spawn_override();
@@ -258,11 +258,11 @@ function private respawn() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xa0fce17f, Offset: 0xd78
 // Size: 0x1f2
-function private squad_spawn(var_2b6a7c31) {
+function private squad_spawn(respawninterval) {
     level endon(#"game_ended");
     self endon(#"death", #"disconnect", #"spawned");
     while (!isdefined(self.spawn.var_e8f87696) || self.spawn.var_e8f87696 <= 0) {
-        wait(var_2b6a7c31);
+        wait(respawninterval);
     }
     aliveplayers = function_a1cff525(self.squad);
     var_f2cc505e = [];
@@ -290,7 +290,7 @@ function private squad_spawn(var_2b6a7c31) {
 function private function_7291a729() {
     force = getdvarint(#"hash_5c4685215b35dda2", 0);
     self setgoal(self.origin, force);
-    self function_fdd00c49();
+    self forceupdategoalpos();
     self init_bot();
     self bot_difficulty::assign();
     self thread function_b781f1e5();
@@ -622,8 +622,8 @@ function private function_f9a34a68() {
 // Size: 0x84e
 function private function_fc619485() {
     profileNamedStart(#"");
-    movedir = self function_c3467a5d();
-    if (function_d6eaf8b0(movedir) <= 0 || self status_effect::function_4617032e(2)) {
+    movedir = self move_dir();
+    if (length2dsquared(movedir) <= 0 || self status_effect::function_4617032e(2)) {
         self function_f9a34a68();
         profileNamedStop();
         return;
@@ -756,7 +756,7 @@ function fov_angle_to_cosine(fovangle = 0) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x2de518a0, Offset: 0x2f78
 // Size: 0x82
-function function_c3467a5d() {
+function move_dir() {
     move = self getnormalizedmovement();
     fwd = anglestoforward(self.angles);
     right = anglestoright(self.angles);
@@ -1078,14 +1078,14 @@ function private function_4c0124cd() {
         var_270eb160 = is_true(rolefields.var_ae8ab113) ? (0, 1, 0) : (1, 0, 0);
         record3dtext(characterindex + "<unknown string>" + function_9e72a96(assetname) + "<unknown string>" + displayname, self.origin, var_270eb160, "<unknown string>", self);
         factioncolor = (1, 1, 1);
-        var_99dffb44 = isdefined(characterfields.var_306f8f14) ? characterfields.var_306f8f14 : "<unknown string>";
+        var_99dffb44 = isdefined(characterfields.superfaction) ? characterfields.superfaction : "<unknown string>";
         teamfaction = undefined;
         var_501b8f06 = "<unknown string>";
         if (is_true(level.var_d1455682.var_67bfde2a)) {
             teamfaction = function_20cfd8b5(self.team);
         }
-        if (isdefined(teamfaction.var_306f8f14)) {
-            var_501b8f06 = teamfaction.var_306f8f14;
+        if (isdefined(teamfaction.superfaction)) {
+            var_501b8f06 = teamfaction.superfaction;
             factioncolor = var_501b8f06 == var_99dffb44 ? (0, 1, 0) : (1, 0, 0);
         }
         record3dtext("<unknown string>" + function_9e72a96(var_99dffb44), self.origin, factioncolor, "<unknown string>", self);

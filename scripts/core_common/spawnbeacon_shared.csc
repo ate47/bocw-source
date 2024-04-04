@@ -18,7 +18,7 @@ function init_shared() {
 // Size: 0xbc
 function setupclientfields() {
     clientfield::register("scriptmover", "spawnbeacon_placed", 1, 1, "int", &spawnbeacon_placed, 0, 0);
-    clientfield::register_clientuimodel("hudItems.spawnbeacon.active", #"hash_6f4b11a0bee9b73d", [1:#"active", 0:#"spawnbeacon"], 1, 1, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.spawnbeacon.active", #"hash_6f4b11a0bee9b73d", [#"spawnbeacon", #"active"], 1, 1, "int", undefined, 0, 0);
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared

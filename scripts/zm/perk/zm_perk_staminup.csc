@@ -12,14 +12,14 @@
 // Checksum 0xb23efce0, Offset: 0xf8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_perk_staminup", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_perk_staminup", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_perk_staminup/zm_perk_staminup
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc569b62d, Offset: 0x140
 // Size: 0x14
-function private function_70a657d8() {
+function private preinit() {
     enable_staminup_perk_for_level();
 }
 

@@ -13,14 +13,14 @@
 // Checksum 0xb741a650, Offset: 0x2b0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"fx", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"fx", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace fx/fx_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa3372eb7, Offset: 0x2f8
 // Size: 0x54
-function private function_70a657d8() {
+function private preinit() {
     callback::on_localclient_connect(&player_init);
     callback::on_spawned(&on_player_spawned);
     function_1725d99a();
@@ -545,8 +545,8 @@ function trace_distance() {
     tracedist = 500;
     playereye = self geteye();
     var_a6cb20ff = self getplayerangles();
-    if (isdefined(self.var_e130941a)) {
-        playerangles = combineangles(self.var_e130941a.angles, var_a6cb20ff);
+    if (isdefined(self.dof_ref_ent)) {
+        playerangles = combineangles(self.dof_ref_ent.angles, var_a6cb20ff);
     } else {
         playerangles = var_a6cb20ff;
     }

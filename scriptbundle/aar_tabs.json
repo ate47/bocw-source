@@ -4,115 +4,115 @@
             "type": "#hash_d4ba556a6a9a7ec",
             "displayname": "#zmtrials/trial",
             "var_1a50db25": "#zmaartrialtab",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_82ead409": 3,
             "type": "#hash_76557c5ecf303891",
             "displayname": "#hash_29c7c549dbcfda00",
             "var_1a50db25": "#hash_163bc896296490b5",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_82ead409": -1,
             "type": "#hash_4c9ff6fa58bdf438",
             "displayname": "#aar/summary",
             "var_1a50db25": "#hash_9b81a3ddea71340",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_82ead409": 1,
             "type": "#hash_672e0d72ca86068c",
             "displayname": "#aar/rewards",
             "var_1a50db25": "#hash_52225b492aab7d68",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "type": "#hash_672e0d72ca86068c",
             "displayname": "#aar/rewards",
             "var_1a50db25": "#hash_52225b492aab7d68",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_82ead409": 1,
             "type": "#hash_78efec5d4e469a7e",
             "displayname": "#aar/challenges",
             "var_1a50db25": "#hash_7f2f7cb1c9b2b780",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_82ead409": -1,
             "type": "#hash_60dde1aea6191753",
             "displayname": "#hash_6616ebd2b8f67e64",
             "var_1a50db25": "#hash_3b0043bb5399827d",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_82ead409": 3,
             "type": "#hash_1140fd305587dc02",
             "displayname": "#hash_4e6506ea8a4a9311",
             "var_1a50db25": "#hash_10a56b0ba482a495",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_82ead409": 3,
             "type": "#hash_1e64c391621de558",
             "displayname": "#hash_8f69f5bdd4f7c26",
             "var_1a50db25": "#hash_6aaed149a5f8e5c2",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_82ead409": 1,
             "type": "#hash_1e64c391621de558",
             "displayname": "#hash_8f69f5bdd4f7c26",
             "var_1a50db25": "#hash_6aaed149a5f8e5c2",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "type": "#hash_1e64c391621de558",
             "displayname": "#hash_8f69f5bdd4f7c26",
             "var_1a50db25": "#hash_6aaed149a5f8e5c2",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_82ead409": 1,
             "type": "#hash_317b66c30ffa21c1",
             "displayname": "#hash_5e6098a7d9aa644",
             "var_1a50db25": "#hash_5470059dcb9facee",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_82ead409": 1,
             "type": "#hash_6e423248b4886812",
             "displayname": "#hash_2727544a4f3a7e59",
             "var_1a50db25": "#hash_71ed14ee263eafd0",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_82ead409": 3,
             "type": "#hash_6e423248b4886812",
             "displayname": "#hash_2727544a4f3a7e59",
             "var_1a50db25": "#hash_71ed14ee263eafd0",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "type": "#hash_58e559580d0eef01",
             "displayname": "#hash_7566c160f2cdf2ae",
             "var_1a50db25": "#hash_712b4d372f14f9d",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "type": "#zm_aar_scoreboard",
             "displayname": "#hash_2727544a4f3a7e59",
             "var_1a50db25": "#zmaarscoreboardtab",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         }
     ],
     "var_72ef398b": 1,
     "typetable": "#hash_5b1043d5d121105f",
     "var_2f050ffa": 1,
     "var_922067c4": "SCRIPTBUNDLE",
-    "var_a77ed948": "#hash_1d656fbd9f514ead",
+    "var_a77ed948": "#aarutility",
     "type": "datasourcelist",
     "name": "aar_tabs",
     "var_d7ecf096": 1,

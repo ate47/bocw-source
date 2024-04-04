@@ -16,14 +16,14 @@
 // Checksum 0xd9023aaf, Offset: 0x110
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"player_mp", &function_70a657d8, undefined, undefined, "renderoverridebundle");
+    system::register(#"player_mp", &preinit, undefined, undefined, "renderoverridebundle");
 }
 
 // Namespace player/player
 // Params 0, eflags: 0x6 linked
 // Checksum 0xaba49a03, Offset: 0x160
 // Size: 0x21c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_spawned(&on_player_spawned);
     callback::on_player_corpse(&on_player_corpse);
     callback::function_930e5d42(&function_930e5d42);

@@ -13,14 +13,14 @@
 // Checksum 0xde1a89ba, Offset: 0x138
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_2209575d9ead0b63", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_2209575d9ead0b63", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_65320816/namespace_65320816
 // Params 0, eflags: 0x4
 // Checksum 0xc8c00db1, Offset: 0x180
 // Size: 0x164
-function private function_70a657d8() {
+function private preinit() {
     zombie_utility::set_zombie_var(#"zombie_powerup_cranked_pause_on", 0, 0, 1);
     zombie_utility::set_zombie_var(#"zombie_powerup_cranked_pause_time", 10, 0, 1);
     zm_powerups::register_powerup("cranked_pause", &function_1202eaf8);

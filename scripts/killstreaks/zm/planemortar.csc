@@ -13,14 +13,14 @@
 // Checksum 0x93bfc996, Offset: 0x188
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"planemortar", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"planemortar", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace planemortar/planemortar
 // Params 0, eflags: 0x6 linked
 // Checksum 0x2eb8c8c1, Offset: 0x1d8
 // Size: 0xfc
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
     clientfield::register("scriptmover", "planemortar_contrail", 1, 1, "int", &planemortar_contrail, 0, 0);
     clientfield::register("scriptmover", "planemortar_marker_on", 1, 2, "int", &planemortar_marker_on, 0, 0);

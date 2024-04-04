@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_85cd2e9a28ea8a1;
 #using script_3dc93ca9902a9cda;
-#using script_1292451e284848cc;
+#using scripts\cp_common\snd.gsc;
 #using script_3de86a21a0c8d47b;
 #using script_74940ab70a48ee4e;
 #using script_4937c6974f43bb71;
@@ -19,7 +19,7 @@
 #using scripts\core_common\values_shared.gsc;
 #using scripts\cp_common\objectives.gsc;
 #using scripts\core_common\lui_shared.gsc;
-#using script_263b7f2982258785;
+#using scripts\cp_common\dialogue.gsc;
 #using script_2d443451ce681a;
 #using scripts\core_common\ai_shared.gsc;
 #using scripts\core_common\array_shared.gsc;
@@ -83,7 +83,7 @@ function main(var_d3440450, *var_50cc0d4f) {
     exploder::exploder("hit3_prop_mist");
     wait(1.25);
     level thread util::screen_fade_in(0.7);
-    level thread scene::play("scene_tkd_hit3_intro", "shot 1", [1:level.woods, 0:level.adler]);
+    level thread scene::play("scene_tkd_hit3_intro", "shot 1", [level.adler, level.woods]);
     thread function_d12ea338();
     music::setmusicstate("b1.0_opening_part_2");
     snd::function_7db65a93("af_intro_camera_whoosh");
@@ -112,7 +112,7 @@ function main(var_d3440450, *var_50cc0d4f) {
     level.woods ai::set_behavior_attribute("demeanor", "cqb");
     level waittill(#"hash_42c2d836748c8726");
     music::function_edda155f("b1.5_airfield_reveal");
-    player util::function_3b6593e4(0.6, 2);
+    player util::blend_movespeedscale(0.6, 2);
     namespace_82bfe441::fade(0, "FadeSlow");
     plane_flyover = vehicle::simple_spawn_and_drive("plane_flyover");
     thread namespace_a052577e::function_92a6fd6a(plane_flyover);

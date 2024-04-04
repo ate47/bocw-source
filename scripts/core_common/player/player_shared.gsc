@@ -13,14 +13,14 @@
 // Checksum 0xca2c6911, Offset: 0x168
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"player", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"player", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace player/player_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf7dab9ef, Offset: 0x1b0
 // Size: 0x1f4
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("world", "gameplay_started", 1, 1, "int");
     clientfield::register("toplayer", "gameplay_allows_deploy", 1, 1, "int");
     clientfield::register("toplayer", "player_dof_settings", 1, 2, "int");
@@ -43,7 +43,7 @@ function private function_70a657d8() {
 // Checksum 0x7ab3decd, Offset: 0x3b0
 // Size: 0xe
 function on_player_connect() {
-    self.var_f1863e67 = gettime();
+    self.connect_time = gettime();
 }
 
 // Namespace player/player_shared
@@ -207,12 +207,12 @@ function function_8fef418b() {
         return;
     }
     playerradius = self getpathfindingradius();
-    if (ispointonnavmesh(self.last_valid_position, self) && distance2dsquared(self.origin, self.last_valid_position) < function_a3f6cdac(playerradius) && function_a3f6cdac(self.origin[2] - self.last_valid_position[2]) < function_a3f6cdac(16)) {
+    if (ispointonnavmesh(self.last_valid_position, self) && distance2dsquared(self.origin, self.last_valid_position) < sqr(playerradius) && sqr(self.origin[2] - self.last_valid_position[2]) < sqr(16)) {
         return;
     }
     if (self isplayerswimming()) {
         if (isdefined(self.var_5d991645)) {
-            if (distancesquared(self.origin, self.var_5d991645) < function_a3f6cdac(playerradius)) {
+            if (distancesquared(self.origin, self.var_5d991645) < sqr(playerradius)) {
                 return;
             }
         }
@@ -231,7 +231,7 @@ function function_8fef418b() {
         self.last_valid_position = self.origin;
         return;
     }
-    if (!ispointonnavmesh(self.origin, self) && ispointonnavmesh(self.last_valid_position, self) && distance2dsquared(self.origin, self.last_valid_position) < function_a3f6cdac(32) && function_a3f6cdac(self.origin[2] - self.last_valid_position[2]) < function_a3f6cdac(32)) {
+    if (!ispointonnavmesh(self.origin, self) && ispointonnavmesh(self.last_valid_position, self) && distance2dsquared(self.origin, self.last_valid_position) < sqr(32) && sqr(self.origin[2] - self.last_valid_position[2]) < sqr(32)) {
         return;
     }
     var_946a4954 = isdefined(level.var_946a4954) ? level.var_946a4954 : playerradius;
@@ -269,7 +269,7 @@ function function_31b5c778(origin, radius) {
     if (!isdefined(level.var_f0de6634)) {
         level.var_f0de6634 = [];
     }
-    level.var_f0de6634[level.var_f0de6634.size] = {#radius_sq:function_a3f6cdac(radius), #origin:origin};
+    level.var_f0de6634[level.var_f0de6634.size] = {#origin:origin, #radius_sq:sqr(radius)};
 }
 
 // Namespace player/player_shared
@@ -416,7 +416,7 @@ function get_weapondata(weapon) {
         weapondata[#"fuel"] = self getweaponammofuel(weapon);
         weapondata[#"heat"] = self isweaponoverheating(1, weapon);
         weapondata[#"overheat"] = self isweaponoverheating(0, weapon);
-        weapondata[#"hash_23866d36042bcd19"] = self function_ade49959(weapon);
+        weapondata[#"renderoptionsweapon"] = self function_ade49959(weapon);
         weapondata[#"hash_305a93e7a368c654"] = self function_8cbd254d(weapon);
         if (weapon.isriotshield) {
             weapondata[#"health"] = self.weaponhealth;
@@ -453,7 +453,7 @@ function weapondata_give(weapondata) {
         return;
     }
     weapon = util::get_weapon_by_name(weapondata[#"weapon"], weapondata[#"attachments"]);
-    self giveweapon(weapon, weapondata[#"hash_23866d36042bcd19"], weapondata[#"hash_305a93e7a368c654"]);
+    self giveweapon(weapon, weapondata[#"renderoptionsweapon"], weapondata[#"hash_305a93e7a368c654"]);
     if (weapon != level.weaponnone) {
         self setweaponammoclip(weapon, weapondata[#"clip"]);
         self setweaponammostock(weapon, weapondata[#"stock"]);
@@ -657,8 +657,8 @@ function function_9080887a(var_cf05ebb7) {
     foreach (modifier in self.var_894f7879) {
         var_f7d37aa4 = var_f7d37aa4 + modifier;
     }
-    var_9fc0715e = isdefined(var_cf05ebb7) ? var_cf05ebb7 : self.spawnhealth;
-    self.var_66cb03ad = int(var_9fc0715e + var_f7d37aa4 + (isdefined(level.var_90bb9821) ? level.var_90bb9821 : 0));
+    basemaxhealth = isdefined(var_cf05ebb7) ? var_cf05ebb7 : self.spawnhealth;
+    self.var_66cb03ad = int(basemaxhealth + var_f7d37aa4 + (isdefined(level.var_90bb9821) ? level.var_90bb9821 : 0));
     if (self.var_66cb03ad < 1) {
         self.var_66cb03ad = 1;
     }
@@ -757,7 +757,7 @@ function function_74598aba(var_96a9fbf4) {
 // Checksum 0x3d8ace48, Offset: 0x2c98
 // Size: 0x94
 function function_466d8a4b(var_b66879ad, team) {
-    params = {#var_b66879ad:var_b66879ad, #team:team};
+    params = {#team:team, #var_b66879ad:var_b66879ad};
     self notify(#"joined_team", params);
     level notify(#"joined_team");
     self callback::callback(#"joined_team", params);
@@ -768,7 +768,7 @@ function function_466d8a4b(var_b66879ad, team) {
 // Checksum 0xfa5077bc, Offset: 0x2d38
 // Size: 0x9c
 function function_6f6c29e(var_b66879ad) {
-    params = {#var_b66879ad:var_b66879ad, #team:#"spectator"};
+    params = {#team:#"spectator", #var_b66879ad:var_b66879ad};
     self notify(#"joined_spectator", params);
     level notify(#"joined_spectator");
     self callback::callback(#"on_joined_spectator", params);
@@ -838,7 +838,7 @@ function function_38de2d5a(notification) {
 // Checksum 0x5f076cf7, Offset: 0x3198
 // Size: 0xc6
 function init_heal(var_cd7b9255, var_e9c4ebeb) {
-    var_84d04e6 = {#var_a1cac2f1:0, #var_b8c7d886:0, #var_c8777194:var_e9c4ebeb, #var_bc840360:0, #rate:0, #enabled:var_cd7b9255};
+    var_84d04e6 = {#enabled:var_cd7b9255, #rate:0, #var_bc840360:0, #var_c8777194:var_e9c4ebeb, #var_b8c7d886:0, #var_a1cac2f1:0};
     if (!isdefined(self.heal)) {
         self.heal = var_84d04e6;
     }
@@ -1036,7 +1036,7 @@ function function_114b77dd(time, timeout) {
     if (!isdefined(time)) {
         time = gettime();
     }
-    if (isdefined(self.var_f1863e67) && self.var_f1863e67 + timeout < gettime()) {
+    if (isdefined(self.connect_time) && self.connect_time + timeout < gettime()) {
         return true;
     }
     return false;

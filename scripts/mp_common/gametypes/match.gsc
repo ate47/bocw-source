@@ -13,14 +13,14 @@
 // Checksum 0x6854aefe, Offset: 0xe8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"match", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"match", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace match/match
 // Params 0, eflags: 0x6 linked
 // Checksum 0x888484ed, Offset: 0x130
 // Size: 0x14
-function private function_70a657d8() {
+function private preinit() {
     function_94003d29();
 }
 
@@ -265,17 +265,17 @@ function function_10cd0ad() {
             totaldeaths[team] = totaldeaths[team] + player.pers[#"deaths"];
         }
     }
-    var_62b2367e = undefined;
-    var_4d92ee18 = undefined;
+    highestkillcount = undefined;
+    lowestdeathcount = undefined;
     var_578c6319 = [];
     foreach (team in teamkeys) {
         killcount = totalkills[team];
-        if (!isdefined(var_62b2367e) || killcount > var_62b2367e) {
-            var_62b2367e = killcount;
+        if (!isdefined(highestkillcount) || killcount > highestkillcount) {
+            highestkillcount = killcount;
         }
     }
     foreach (team in teamkeys) {
-        if (totalkills[team] == var_62b2367e) {
+        if (totalkills[team] == highestkillcount) {
             var_578c6319[var_578c6319.size] = team;
         }
     }
@@ -285,22 +285,22 @@ function function_10cd0ad() {
     if (var_578c6319.size > 0) {
         foreach (team in var_578c6319) {
             deathcount = totaldeaths[team];
-            if (!isdefined(var_4d92ee18) || deathcount < var_4d92ee18) {
-                var_4d92ee18 = deathcount;
+            if (!isdefined(lowestdeathcount) || deathcount < lowestdeathcount) {
+                lowestdeathcount = deathcount;
             }
         }
         foreach (i, team in var_578c6319) {
-            if (totaldeaths[team] != var_4d92ee18) {
+            if (totaldeaths[team] != lowestdeathcount) {
                 var_578c6319[i] = #"hash_14ed42bb8a61e1e2";
             }
         }
         arrayremovevalue(var_578c6319, #"hash_14ed42bb8a61e1e2");
         if (var_578c6319.size > 0) {
-            var_51f8bdbd = randomint(var_578c6319.size);
-            return var_578c6319[var_51f8bdbd];
+            winnerindex = randomint(var_578c6319.size);
+            return var_578c6319[winnerindex];
         }
     }
-    var_51f8bdbd = randomint(teamkeys.size);
-    return teamkeys[var_51f8bdbd];
+    winnerindex = randomint(teamkeys.size);
+    return teamkeys[winnerindex];
 }
 

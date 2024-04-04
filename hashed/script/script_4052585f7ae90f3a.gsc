@@ -1,9 +1,9 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_54412fb3a6fab34c;
 #using script_85cd2e9a28ea8a1;
-#using script_5552bd756afee443;
+#using scripts\cp_common\snd_utility.gsc;
 #using script_3dc93ca9902a9cda;
-#using script_1292451e284848cc;
+#using scripts\cp_common\snd.gsc;
 #using scripts\core_common\util_shared.gsc;
 #using scripts\core_common\struct.gsc;
 #using scripts\core_common\music_shared.gsc;
@@ -322,7 +322,7 @@ function function_4b193e02() {
 // Checksum 0xc6ca1cc2, Offset: 0x18c8
 // Size: 0x17a
 function function_c26120ff(ent) {
-    type = array::random([2:"throat", 1:"sniff", 0:"cough"]);
+    type = array::random(["cough", "sniff", "throat"]);
     name = ent.targetname;
     if (isstring(name)) {
         if (issubstr(name, "adler")) {
@@ -354,7 +354,7 @@ function function_8a58b4f() {
     max_time = getdvarfloat(#"hash_5ab96b43cb70c9cd", 40);
     foreach (ally in level.var_dafd41b2) {
         if (!isdefined(ally.var_2de4672c)) {
-            ally thread snd::function_9299618(&function_c26120ff, [1:max_time, 0:min_time]);
+            ally thread snd::function_9299618(&function_c26120ff, [min_time, max_time]);
         }
     }
 }

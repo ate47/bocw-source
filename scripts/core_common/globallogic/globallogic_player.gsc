@@ -22,7 +22,7 @@ function function_c5343206(eattacker, einflictor, idamage, smeansofdeath, weapon
     if (self.attackerdata.size == 0) {
         self.firsttimedamaged = time;
         if (isstruct(self.var_fcfb50c6) && !self issprinting() && !self isinvehicle()) {
-            self.var_14e48fb5 = function_2e532eed(self.var_fcfb50c6);
+            self.var_14e48fb5 = structcopy(self.var_fcfb50c6);
             self.var_14e48fb5.var_c4fff679 = self getorigin();
         }
     }
@@ -31,7 +31,7 @@ function function_c5343206(eattacker, einflictor, idamage, smeansofdeath, weapon
         return;
     }
     if (self.attackerdata.size == 0 || !isdefined(self.attackerdamage[attackerclientid])) {
-        self.attackerdamage[attackerclientid] = {#time:time, #damage:0};
+        self.attackerdamage[attackerclientid] = {#damage:0, #time:time};
         self.attackers[self.attackers.size] = eattacker;
         self.attackerdata[attackerclientid] = 0;
     }
@@ -156,7 +156,7 @@ function function_9f942458(var_6ba44c6, var_fbbdf63c) {
         if (!isdefined(sensor)) {
             continue;
         }
-        if (distancesquared(var_6ba44c6.origin, sensor.origin) < function_a3f6cdac((sessionmodeiswarzonegame() ? 2400 : 800) + 50)) {
+        if (distancesquared(var_6ba44c6.origin, sensor.origin) < sqr((sessionmodeiswarzonegame() ? 2400 : 800) + 50)) {
             return true;
         }
     }
@@ -282,7 +282,7 @@ function trackattackerdamage(eattacker, idamage, smeansofdeath, weapon, shitloc)
     }
     attackerclientid = eattacker.clientid;
     if (self.attackerdata.size == 0 || !isdefined(self.attackerdamage[attackerclientid])) {
-        self.attackerdamage[attackerclientid] = {#time:now, #damage:0};
+        self.attackerdamage[attackerclientid] = {#damage:0, #time:now};
         self.attackers[self.attackers.size] = eattacker;
         self.attackerdata[attackerclientid] = 0;
     }

@@ -77,7 +77,7 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
     var_b5b1872d = -5;
     var_c2fd0740 = 5;
     var_f4c981a5 = 10;
-    var_54ba6233 = 360 / var_5b5e9cdb;
+    slot_yaw = 360 / var_5b5e9cdb;
     var_45875de2 = -5;
     var_af26a7db = 5;
     var_d0a44618 = 20;
@@ -90,10 +90,10 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
         var_d0a44618 = 0;
         var_d0a43e8b = 5;
     }
-    var_5d9d83c2 = 0;
+    noground = 0;
     ring = int(index / var_5b5e9cdb);
     slot = index - ring * var_5b5e9cdb;
-    yaw = baseangles[1] + slot * var_54ba6233 + ring * var_f4c981a5 + randomfloatrange(var_45875de2, var_af26a7db);
+    yaw = baseangles[1] + slot * slot_yaw + ring * var_f4c981a5 + randomfloatrange(var_45875de2, var_af26a7db);
     dist = var_a9c62ebc + ring * var_7e266d2a + randomfloatrange(var_b5b1872d, var_c2fd0740);
     if (isdefined(var_8c967549)) {
         yaw = baseangles[1] + var_8c967549;
@@ -106,19 +106,19 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
     var_118985a1 = baseorigin + dir * var_d0a43e8b;
     origin = var_118985a1 + dir * dist;
     var_ef1cacd6 = dir * -1 * var_3512e170;
-    var_a5879569 = getentitiesinradius(self.origin, 500, 12);
+    ignoreents = getentitiesinradius(self.origin, 500, 12);
     if (var_13406a7f) {
         if (isdefined(ignoreent)) {
-            if (!isdefined(var_a5879569)) {
-                var_a5879569 = [];
-            } else if (!isarray(var_a5879569)) {
-                var_a5879569 = array(var_a5879569);
+            if (!isdefined(ignoreents)) {
+                ignoreents = [];
+            } else if (!isarray(ignoreents)) {
+                ignoreents = array(ignoreents);
             }
-            var_a5879569[var_a5879569.size] = ignoreent;
+            ignoreents[ignoreents.size] = ignoreent;
         }
         tracestart = var_118985a1 + (0, 0, var_d0a44618);
         traceend = origin + (0, 0, var_d0a44618) + var_ef1cacd6;
-        traceresults = physicstraceex(tracestart, traceend, (0, 0, 0), (0, 0, 0), var_a5879569, 1);
+        traceresults = physicstraceex(tracestart, traceend, (0, 0, 0), (0, 0, 0), ignoreents, 1);
         /#
             if (var_ad49c795) {
                 function_7289b47(index, "<unknown string>", tracestart, traceend, traceresults);
@@ -132,7 +132,7 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
         }
         tracestart = origin;
         traceend = origin + (0, 0, var_172c8bf4);
-        traceresults = physicstraceex(tracestart, traceend, (0, 0, 0), (0, 0, 0), var_a5879569, 1);
+        traceresults = physicstraceex(tracestart, traceend, (0, 0, 0), (0, 0, 0), ignoreents, 1);
         /#
             if (var_ad49c795) {
                 function_7289b47(index, "<unknown string>", tracestart + (0, 1, 0), traceend + (0, 1, 0), traceresults);
@@ -146,7 +146,7 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
         tracestart = origin;
         var_c99af8d9 = -1 * getdvarfloat(#"hash_52c51de092ea7057", 2000);
         traceend = origin + (0, 0, var_c99af8d9);
-        traceresults = physicstraceex(tracestart, traceend, (0, 0, 0), (0, 0, 0), var_a5879569, 1);
+        traceresults = physicstraceex(tracestart, traceend, (0, 0, 0), (0, 0, 0), ignoreents, 1);
         /#
             if (var_ad49c795) {
                 function_7289b47(index, "<unknown string>", tracestart, traceend, traceresults);
@@ -160,7 +160,7 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
             }
         } else {
             origin = (0, 0, 0);
-            var_5d9d83c2 = 1;
+            noground = 1;
         }
     } else {
         origin = origin + (0, 0, var_7def9f0);
@@ -174,7 +174,7 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
         var_d69d1a6d = getclosestpointonnavmesh(origin, 48, 6);
         if (isdefined(var_d69d1a6d) && var_13406a7f) {
             traceoffset = vectorscale((0, 0, 1), 60);
-            traceresults = physicstraceex(var_d69d1a6d + traceoffset, var_d69d1a6d - traceoffset, (0, 0, 0), (0, 0, 0), var_a5879569, 1);
+            traceresults = physicstraceex(var_d69d1a6d + traceoffset, var_d69d1a6d - traceoffset, (0, 0, 0), (0, 0, 0), ignoreents, 1);
             if (traceresults[#"fraction"] < 1) {
                 origin = traceresults[#"position"] + (0, 0, var_7def9f0);
             } else {
@@ -192,7 +192,7 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
         origin = (origin[0], origin[1], origin[2] + offset);
         break;
     }
-    return {#end_angles:angles, #end_origin:origin, #start_angles:angles, #start_origin:start_origin};
+    return {#start_origin:start_origin, #start_angles:angles, #end_origin:origin, #end_angles:angles};
 }
 
 // Namespace namespace_b637a3ed/namespace_b637a3ed
@@ -208,21 +208,21 @@ function function_fb72164f(var_98c867cd, index, baseorigin, baseangles, ignoreen
     if (var_98c867cd == 6) {
         var_7def9f0 = 24;
     }
-    var_5d9d83c2 = 0;
-    var_a5879569 = getentitiesinradius(self.origin, 500, 12);
+    noground = 0;
+    ignoreents = getentitiesinradius(self.origin, 500, 12);
     if (isdefined(ignoreent)) {
-        if (!isdefined(var_a5879569)) {
-            var_a5879569 = [];
-        } else if (!isarray(var_a5879569)) {
-            var_a5879569 = array(var_a5879569);
+        if (!isdefined(ignoreents)) {
+            ignoreents = [];
+        } else if (!isarray(ignoreents)) {
+            ignoreents = array(ignoreents);
         }
-        var_a5879569[var_a5879569.size] = ignoreent;
+        ignoreents[ignoreents.size] = ignoreent;
     }
     origin = baseorigin;
     if (traces) {
         var_c99af8d9 = -1 * getdvarfloat(#"hash_52c51de092ea7057", 2000);
         traceend = baseorigin + (0, 0, var_c99af8d9);
-        traceresults = physicstraceex(baseorigin, traceend, (0, 0, 0), (0, 0, 0), var_a5879569, 1);
+        traceresults = physicstraceex(baseorigin, traceend, (0, 0, 0), (0, 0, 0), ignoreents, 1);
         /#
             if (var_ad49c795) {
                 function_7289b47(index, "<unknown string>", baseorigin, traceend, traceresults);
@@ -232,11 +232,11 @@ function function_fb72164f(var_98c867cd, index, baseorigin, baseangles, ignoreen
             origin = traceresults[#"position"] + (0, 0, var_7def9f0);
         } else {
             origin = (0, 0, 0);
-            var_5d9d83c2 = 1;
+            noground = 1;
         }
     }
     start_origin = baseorigin + vectorscale((0, 0, 1), 40);
-    return {#end_angles:baseangles, #end_origin:origin, #start_angles:baseangles, #start_origin:start_origin};
+    return {#start_origin:start_origin, #start_angles:baseangles, #end_origin:origin, #end_angles:baseangles};
 }
 
 // Namespace namespace_b637a3ed/namespace_b637a3ed
@@ -251,8 +251,8 @@ function function_7289b47(index, name, start, end, traceresults) {
             debugaxis(traceresults[#"position"], (0, 0, 0), 10, 1, 1, var_e011538a);
             println("<unknown string>" + start + "<unknown string>" + traceresults[#"position"]);
             if (isdefined(traceresults[#"entity"])) {
-                var_1143776a = traceresults[#"entity"];
-                println("<unknown string>" + index + "<unknown string>" + name + "<unknown string>" + traceresults[#"fraction"] + "<unknown string>" + var_1143776a.name);
+                selectedentity = traceresults[#"entity"];
+                println("<unknown string>" + index + "<unknown string>" + name + "<unknown string>" + traceresults[#"fraction"] + "<unknown string>" + selectedentity.name);
             } else {
                 println("<unknown string>" + index + "<unknown string>" + name + "<unknown string>" + traceresults[#"fraction"]);
             }

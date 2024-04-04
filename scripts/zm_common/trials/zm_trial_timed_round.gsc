@@ -15,14 +15,14 @@
 // Checksum 0x5247ee97, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_timed_round", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_timed_round", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_timed_round/zm_trial_timed_round
 // Params 0, eflags: 0x4
 // Checksum 0x2564badf, Offset: 0x120
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

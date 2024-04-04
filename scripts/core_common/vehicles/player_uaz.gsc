@@ -10,14 +10,14 @@
 // Checksum 0x218b77a5, Offset: 0xa8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"player_uaz", &function_70a657d8, undefined, undefined, #"player_vehicle");
+    system::register(#"player_uaz", &preinit, undefined, undefined, #"player_vehicle");
 }
 
 // Namespace player_uaz/player_uaz
 // Params 0, eflags: 0x6 linked
 // Checksum 0xde3def72, Offset: 0xf8
 // Size: 0x2c
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_main_callback("player_uaz", &function_bc02ac38);
 }
 

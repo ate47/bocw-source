@@ -52,11 +52,11 @@ function private mpl_heatwave_fx(ent, event, params) {
     callbacks = ent._callbacks[event];
     if (isdefined(callbacks)) {
         for (i = 0; i < callbacks.size; i++) {
-            var_3680f05b = callbacks[i];
-            if (!isarray(var_3680f05b)) {
+            callback_fields = callbacks[i];
+            if (!isarray(callback_fields)) {
                 continue;
             }
-            callback = var_3680f05b[0];
+            callback = callback_fields[0];
             /#
                 /#
                     assert(isfunctionptr(callback), "<unknown string>" + "<unknown string>");
@@ -65,8 +65,8 @@ function private mpl_heatwave_fx(ent, event, params) {
             if (!isfunctionptr(callback)) {
                 return;
             }
-            obj = var_3680f05b[1];
-            var_47e0b77b = var_3680f05b[2];
+            obj = callback_fields[1];
+            var_47e0b77b = callback_fields[2];
             if (!isdefined(var_47e0b77b)) {
                 var_47e0b77b = [];
             }
@@ -1121,8 +1121,8 @@ function function_c16ce2bc(func, obj) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x2fee2484, Offset: 0x2b30
 // Size: 0x3c
-function function_e72cad2b(func, obj) {
-    add_callback(#"hash_1419d25ba65c8bde", func, obj);
+function on_zipline(func, obj) {
+    add_callback(#"on_zipline", func, obj);
 }
 
 // Namespace callback/callbacks_shared
@@ -1163,7 +1163,7 @@ function function_dd017b2e(func, obj) {
 // Size: 0x3c
 function event_handler[level_preinit] codecallback_preinitialization(*eventstruct) {
     system::run_pre_systems();
-    flag::set(#"hash_2e89d1cf2db1b05c");
+    flag::set(#"preinit");
 }
 
 // Namespace callback/level_init
@@ -1364,7 +1364,7 @@ function event_handler[player_killed] codecallback_playerkilled(eventstruct) {
 function event_handler[event_2958ea55] function_73e8e3f9(eventstruct) {
     self endon(#"disconnect");
     if (isdefined(level.var_3a9881cb)) {
-        [[ level.var_3a9881cb ]](eventstruct.attacker, eventstruct.effect_name, eventstruct.var_894859a2, eventstruct.var_ab5b905e, eventstruct.weapon);
+        [[ level.var_3a9881cb ]](eventstruct.attacker, eventstruct.effect_name, eventstruct.var_894859a2, eventstruct.durationoverride, eventstruct.weapon);
     }
 }
 
@@ -1531,7 +1531,7 @@ function event_handler[event_50ce9aa8] function_e51b8b9d(*eventstruct) {
 // Size: 0x44
 function event_handler[event_6d81870d] function_78ddc6fb(*eventstruct) {
     self endon(#"disconnect");
-    callback(#"hash_1419d25ba65c8bde");
+    callback(#"on_zipline");
 }
 
 // Namespace callback/event_4be77411
@@ -1780,7 +1780,7 @@ function event_handler[ui_menuresponse] codecallback_menuresponse(eventstruct) {
         level thread menu_response_queue_pump();
     }
     index = level.menuresponsequeue.size;
-    level.menuresponsequeue[index] = {#eventstruct:eventstruct, #ent:self};
+    level.menuresponsequeue[index] = {#ent:self, #eventstruct:eventstruct};
     level notify(#"menuresponse_queue");
 }
 
@@ -1970,7 +1970,7 @@ function abort_level() {
 // Checksum 0x3524eab7, Offset: 0x4f48
 // Size: 0x58
 function event_handler[glass_smash] codecallback_glasssmash(eventstruct) {
-    level notify(#"glass_smash", {#direction:eventstruct.direction, #position:eventstruct.position});
+    level notify(#"glass_smash", {#position:eventstruct.position, #direction:eventstruct.direction});
 }
 
 // Namespace callback/freefall
@@ -2139,7 +2139,7 @@ function event_handler[event_596b7bdc] function_f5026566(eventstruct) {
     #/
     eventdata = {};
     eventdata.tableindex = eventstruct.tableindex;
-    eventdata.var_96db1aff = eventstruct.var_96db1aff;
+    eventdata.event_info = eventstruct.event_info;
     self [[ level.var_abb3fd2 ]](eventstruct.event_name, eventstruct.time, eventstruct.client, eventstruct.priority, eventdata);
 }
 

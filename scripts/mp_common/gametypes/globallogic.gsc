@@ -82,7 +82,7 @@
 #using scripts\core_common\high_value_operative.gsc;
 #using scripts\core_common\globallogic\globallogic_shared.gsc;
 #using scripts\core_common\gametype_shared.gsc;
-#using script_32c8b5b0eb2854f3;
+#using scripts\core_common\gamestate_util.gsc;
 #using scripts\core_common\gamestate.gsc;
 #using scripts\core_common\gameobjects_shared.gsc;
 #using scripts\core_common\demo_shared.gsc;
@@ -102,14 +102,14 @@
 // Checksum 0x266dad23, Offset: 0x1080
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"globallogic", &function_70a657d8, undefined, undefined, #"visionset_mgr");
+    system::register(#"globallogic", &preinit, undefined, undefined, #"visionset_mgr");
 }
 
 // Namespace globallogic/globallogic
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd96e5cd1, Offset: 0x10d0
 // Size: 0x3ec
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.vsmgr_prio_visionset_mpintro)) {
         level.vsmgr_prio_visionset_mpintro = 5;
     }
@@ -190,7 +190,7 @@ function init() {
     level.contractsenabled = 0;
     level.disablevehicleburndamage = 1;
     level.var_49d9aa70 = 1;
-    level.var_a3b3ad04 = {#center:(0, 0, 0)};
+    level.mapbounds = {#center:(0, 0, 0)};
     /#
         if (getdvarint(#"scr_forcerankedmatch", 0) == 1) {
             level.rankedmatch = 1;
@@ -225,7 +225,7 @@ function init() {
     level.var_3778003e = getgametypesetting(#"hash_3d23923f9c9757cd");
     setmatchflag("game_ended", 0);
     gametype::init();
-    gametype::function_3ea7ac99();
+    gametype::init_mp();
     init_teams();
     level.var_724cf71 = 1;
     /#
@@ -678,7 +678,7 @@ function function_4b670b29() {
     if (util::totalplayercount() == 0) {
         return false;
     }
-    params = {#var_6eb69269:[], #teams_forfeited:[]};
+    params = {#teams_forfeited:[], #var_6eb69269:[]};
     foreach (team, _ in level.teams) {
         if (function_f25690c1(team)) {
             if (!isdefined(params.teams_forfeited)) {
@@ -831,7 +831,7 @@ function function_7b75ee16(team) {
 // Checksum 0x7c3ceb8c, Offset: 0x4270
 // Size: 0x1ec
 function function_9c839e9() {
-    params = {#teams_alive:[], #var_46a749a8:[], #var_8245068d:0};
+    params = {#var_8245068d:0, #var_46a749a8:[], #teams_alive:[]};
     aliveteam = undefined;
     foreach (team, _ in level.teams) {
         if (teams::function_9dd75dad(team)) {
@@ -1099,7 +1099,7 @@ function showobjectivenotificationuiforallplayers(*missiontype, delay) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xe3d323f3, Offset: 0x5120
 // Size: 0x44c
-function matchstarttimer(var_885aa5b1, var_1be62bdc) {
+function matchstarttimer(timerlength, var_1be62bdc) {
     /#
         println("");
     #/
@@ -1107,12 +1107,12 @@ function matchstarttimer(var_885aa5b1, var_1be62bdc) {
     if (isdefined(var_1be62bdc)) {
         level flag::wait_till(var_1be62bdc);
     }
-    counttime = int(var_885aa5b1);
+    counttime = int(timerlength);
     var_5654073f = counttime >= 2;
     level.var_5654073f = var_5654073f;
     level.var_fd167bf6 = gettime() + int(counttime * 1000);
     /#
-        println("controllerParticipation" + level.var_fd167bf6 + "overtime" + var_885aa5b1);
+        println("controllerParticipation" + level.var_fd167bf6 + "overtime" + timerlength);
     #/
     var_c85a136a = 0;
     var_b9ef7eae = undefined;
@@ -1133,8 +1133,8 @@ function matchstarttimer(var_885aa5b1, var_1be62bdc) {
             var_b9ef7eae = [];
             foreach (player in level.players) {
                 shouldplaysound = 1;
-                for (var_3c0cc784 = 0; var_3c0cc784 < var_b9ef7eae.size; var_3c0cc784++) {
-                    if (player isplayeronsamemachine(var_b9ef7eae[var_3c0cc784])) {
+                for (playeridx = 0; playeridx < var_b9ef7eae.size; playeridx++) {
+                    if (player isplayeronsamemachine(var_b9ef7eae[playeridx])) {
                         shouldplaysound = 0;
                     }
                 }
@@ -1342,7 +1342,7 @@ function recordplaystyleinformation() {
     recordplayerstats(self, "percentageOfTimeMoving", percenttimemoving);
     recordplayerstats(self, "averageSpeedDuringMatch", avgspeedofplayerwhenmoving);
     recordplayerstats(self, "totalDistanceTravelled", totaldistancetravelled);
-    mpplaystyles = {#averagespeedduringmatch:avgspeedofplayerwhenmoving, #percentageoftimemoving:percenttimemoving, #averagekilldistance:avgkilldistance};
+    mpplaystyles = {#averagekilldistance:avgkilldistance, #percentageoftimemoving:percenttimemoving, #averagespeedduringmatch:avgspeedofplayerwhenmoving};
     function_92d1707f(#"hash_5cee5eb6de3811d0", mpplaystyles);
 }
 
@@ -1519,7 +1519,7 @@ function function_a50a4f61(outcome) {
 function function_9022da4e() {
     bb::function_a7ba460f(match::function_3624d032());
     if (sessionmodeismultiplayergame()) {
-        mpmatchfacts = {#killstreakcount:level.globalkillstreakscalled, #winner:match::get_winner(), #gametime:function_f8d53445()};
+        mpmatchfacts = {#gametime:function_f8d53445(), #winner:match::get_winner(), #killstreakcount:level.globalkillstreakscalled};
         function_92d1707f(#"hash_7784f98b4b9750ec", mpmatchfacts);
     }
 }
@@ -2030,7 +2030,7 @@ function private function_e4335431() {
     var_726f6c6 = [];
     foreach (stash in level.item_spawn_stashes) {
         state = function_ffdbe8c2(stash);
-        data = {#var_fa0ba6bc:is_true(stash.lootlocker), #var_a7feba9c:isdefined(stash.var_80b1d504) ? stash.var_80b1d504 : 0, #state:state, #used:state != 0, #type:stash.var_15d44120, #pos_z:stash.origin[2], #pos_y:stash.origin[1], #pos_x:stash.origin[0]};
+        data = {#pos_x:stash.origin[0], #pos_y:stash.origin[1], #pos_z:stash.origin[2], #type:stash.var_15d44120, #used:state != 0, #state:state, #var_a7feba9c:isdefined(stash.var_80b1d504) ? stash.var_80b1d504 : 0, #var_fa0ba6bc:is_true(stash.lootlocker)};
         if (!isdefined(var_726f6c6)) {
             var_726f6c6 = [];
         } else if (!isarray(var_726f6c6)) {
@@ -2064,24 +2064,24 @@ function private function_159d7b6f() {
         if (!isdefined(summary[item.targetname])) {
             summary[item.targetname] = {};
         }
-        if (isdefined(item.var_a6762160)) {
+        if (isdefined(item.itementry)) {
             if (!isdefined(summary[item.targetname].itemtypes)) {
                 summary[item.targetname].itemtypes = [];
             }
-            if (!isdefined(summary[item.targetname].itemtypes[item.var_a6762160.itemtype])) {
-                summary[item.targetname].itemtypes[item.var_a6762160.itemtype] = {};
+            if (!isdefined(summary[item.targetname].itemtypes[item.itementry.itemtype])) {
+                summary[item.targetname].itemtypes[item.itementry.itemtype] = {};
             }
-            if (!isdefined(summary[item.targetname].itemtypes[item.var_a6762160.itemtype].items)) {
-                summary[item.targetname].itemtypes[item.var_a6762160.itemtype].items = [];
+            if (!isdefined(summary[item.targetname].itemtypes[item.itementry.itemtype].items)) {
+                summary[item.targetname].itemtypes[item.itementry.itemtype].items = [];
             }
-            if (!isdefined(summary[item.targetname].itemtypes[item.var_a6762160.itemtype].items[item.var_a6762160.name])) {
-                summary[item.targetname].itemtypes[item.var_a6762160.itemtype].items[item.var_a6762160.name] = {};
+            if (!isdefined(summary[item.targetname].itemtypes[item.itementry.itemtype].items[item.itementry.name])) {
+                summary[item.targetname].itemtypes[item.itementry.itemtype].items[item.itementry.name] = {};
             }
-            if (!isdefined(summary[item.targetname].itemtypes[item.var_a6762160.itemtype].items[item.var_a6762160.name].count)) {
-                summary[item.targetname].itemtypes[item.var_a6762160.itemtype].items[item.var_a6762160.name].count = 0;
+            if (!isdefined(summary[item.targetname].itemtypes[item.itementry.itemtype].items[item.itementry.name].count)) {
+                summary[item.targetname].itemtypes[item.itementry.itemtype].items[item.itementry.name].count = 0;
             }
-            summary[item.targetname].itemtypes[item.var_a6762160.itemtype].items[item.var_a6762160.name].count = summary[item.targetname].itemtypes[item.var_a6762160.itemtype].items[item.var_a6762160.name].count + 1;
-            summary[item.targetname].itemtypes[item.var_a6762160.itemtype].items[item.var_a6762160.name].rarity = hash(item.var_a6762160.rarity);
+            summary[item.targetname].itemtypes[item.itementry.itemtype].items[item.itementry.name].count = summary[item.targetname].itemtypes[item.itementry.itemtype].items[item.itementry.name].count + 1;
+            summary[item.targetname].itemtypes[item.itementry.itemtype].items[item.itementry.name].rarity = hash(item.itementry.rarity);
         } else {
             if (!isdefined(var_69cbb8c[item.targetname])) {
                 var_69cbb8c[item.targetname] = {};
@@ -2099,7 +2099,7 @@ function private function_159d7b6f() {
             foreach (category_name, category in location.itemtypes) {
                 if (isdefined(category.items)) {
                     foreach (item_name, item in category.items) {
-                        data = {#count:item.count, #rarity:item.rarity, #item:item_name, #category:category_name, #location:location_name};
+                        data = {#location:location_name, #category:category_name, #item:item_name, #rarity:item.rarity, #count:item.count};
                         if (!isdefined(item_data)) {
                             item_data = [];
                         } else if (!isarray(item_data)) {
@@ -2107,7 +2107,7 @@ function private function_159d7b6f() {
                         }
                         item_data[item_data.size] = data;
                         if (item_data.size >= 100) {
-                            var_cae7fe15 = {#event_count:item_data.size, #seed:level.item_spawn_seed};
+                            var_cae7fe15 = {#seed:level.item_spawn_seed, #event_count:item_data.size};
                             function_92d1707f(#"hash_67dcbe8b30edd15a", #"summary", var_cae7fe15, #"entries", item_data);
                             item_data = [];
                             wait(0.1);
@@ -2118,7 +2118,7 @@ function private function_159d7b6f() {
         }
     }
     if (item_data.size > 0) {
-        var_cae7fe15 = {#event_count:item_data.size, #seed:level.item_spawn_seed};
+        var_cae7fe15 = {#seed:level.item_spawn_seed, #event_count:item_data.size};
         function_92d1707f(#"hash_67dcbe8b30edd15a", #"summary", var_cae7fe15, #"entries", item_data);
     }
 }
@@ -2487,7 +2487,7 @@ function bbplayermatchend(gamelength, var_c1e98979, gameover) {
     playerrank = getplacementforplayer(self);
     totaltimeplayed = self getroundtimeplayed(gamelength);
     xuid = int(self getxuid(1));
-    mpplayermatchfacts = {#specialist:self getspecialistindex(), #team:self.team, #gameover:gameover, #xuid:xuid, #playtime:int(totaltimeplayed), #sessionrank:playerrank, #endreason:var_c1e98979, #momentum:self.pers[#"momentum"], #score:self.pers[#"score"]};
+    mpplayermatchfacts = {#score:self.pers[#"score"], #momentum:self.pers[#"momentum"], #endreason:var_c1e98979, #sessionrank:playerrank, #playtime:int(totaltimeplayed), #xuid:xuid, #gameover:gameover, #team:self.team, #specialist:self getspecialistindex()};
     function_92d1707f(#"hash_7c173cd9201d5271", mpplayermatchfacts);
 }
 
@@ -3287,7 +3287,7 @@ function private function_54987b67() {
         var_84dc46fb = 0;
         var_47f5b811 = 0;
     }
-    data = {#player_count:totalplayers, #var_31942899:gettime(), #var_cac41566:var_47f5b811, #var_f0956407:var_84dc46fb, #var_be2fca42:var_b3418d40, #var_962b073b:var_2c5afb5e, #var_ea8aaaef:var_bc9cd862};
+    data = {#var_ea8aaaef:var_bc9cd862, #var_962b073b:var_2c5afb5e, #var_be2fca42:var_b3418d40, #var_f0956407:var_84dc46fb, #var_cac41566:var_47f5b811, #var_31942899:gettime(), #player_count:totalplayers};
     function_92d1707f(#"hash_24f510499c464072", data);
 }
 
@@ -3505,7 +3505,7 @@ function function_bf2901cf() {
                         var_93221c73 = var_7c0f98d7[team];
                     }
                 }
-                params = {#var_6eb69269:[], #teams_forfeited:[]};
+                params = {#teams_forfeited:[], #var_6eb69269:[]};
                 foreach (hash, team in level.teams) {
                     if (var_7c0f98d7[team] == var_93221c73) {
                         if (!isdefined(params.var_6eb69269)) {
@@ -3527,7 +3527,7 @@ function function_bf2901cf() {
                 break;
             }
             if (level.arenamatch) {
-                arena::function_530d2109();
+                arena::cancel_match();
             }
             exit_level();
             while (true) {
@@ -3894,7 +3894,7 @@ function function_b9b7618() {
         dogtags::init();
     }
     if (is_true(level.var_ac25d260)) {
-        namespace_8f42c328::init();
+        cranked::init();
     }
     gameobjects::main();
     foreach (team, _ in level.teams) {
@@ -4067,16 +4067,16 @@ function function_6e1f21c4() {
 function function_ec990830() {
     /#
         /#
-            assert(level.var_a3b3ad04.var_8faef7b7[0] <= level.mapcenter[0] && level.var_a3b3ad04.var_8faef7b7[1] <= level.mapcenter[1]);
+            assert(level.mapbounds.var_8faef7b7[0] <= level.mapcenter[0] && level.mapbounds.var_8faef7b7[1] <= level.mapcenter[1]);
         #/
         /#
-            assert(level.var_a3b3ad04.var_68fd6e0a[0] >= level.mapcenter[0] && level.var_a3b3ad04.var_68fd6e0a[1] >= level.mapcenter[1]);
+            assert(level.mapbounds.var_68fd6e0a[0] >= level.mapcenter[0] && level.mapbounds.var_68fd6e0a[1] >= level.mapcenter[1]);
         #/
         /#
-            assert(level.var_a3b3ad04.var_1d694d71[0] <= level.mapcenter[0] && level.var_a3b3ad04.var_1d694d71[1] <= level.mapcenter[1]);
+            assert(level.mapbounds.var_1d694d71[0] <= level.mapcenter[0] && level.mapbounds.var_1d694d71[1] <= level.mapcenter[1]);
         #/
         /#
-            assert(level.var_a3b3ad04.var_a13a9915[0] >= level.mapcenter[0] && level.var_a3b3ad04.var_a13a9915[1] >= level.mapcenter[1]);
+            assert(level.mapbounds.var_a13a9915[0] >= level.mapcenter[0] && level.mapbounds.var_a13a9915[1] >= level.mapcenter[1]);
         #/
     #/
 }
@@ -4110,17 +4110,17 @@ function private calculate_map_center() {
     if (!isdefined(level.mapcenter)) {
         level.mapcenter = center;
     }
-    if (!isdefined(level.var_a3b3ad04.center)) {
-        level.var_a3b3ad04.center = center;
+    if (!isdefined(level.mapbounds.center)) {
+        level.mapbounds.center = center;
     }
-    if (!isdefined(level.var_a3b3ad04.var_1d694d71)) {
-        level.var_a3b3ad04.var_1d694d71 = mins;
+    if (!isdefined(level.mapbounds.var_1d694d71)) {
+        level.mapbounds.var_1d694d71 = mins;
     }
-    if (!isdefined(level.var_a3b3ad04.var_a13a9915)) {
-        level.var_a3b3ad04.var_a13a9915 = maxs;
+    if (!isdefined(level.mapbounds.var_a13a9915)) {
+        level.mapbounds.var_a13a9915 = maxs;
     }
-    level.var_a3b3ad04.var_8faef7b7 = mins;
-    level.var_a3b3ad04.var_68fd6e0a = maxs;
+    level.mapbounds.var_8faef7b7 = mins;
+    level.mapbounds.var_68fd6e0a = maxs;
     setmapcenter(level.mapcenter);
     /#
     #/

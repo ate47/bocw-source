@@ -13,14 +13,14 @@
 // Checksum 0x25a53210, Offset: 0x400
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_62a392bb15b68ccd", &function_70a657d8, undefined, undefined, #"hash_13a43d760497b54d");
+    system::register(#"hash_62a392bb15b68ccd", &preinit, undefined, undefined, #"hash_13a43d760497b54d");
 }
 
 // Namespace namespace_cf2b4f27/namespace_cf2b4f27
 // Params 0, eflags: 0x6 linked
 // Checksum 0x2b4f6b3d, Offset: 0x450
 // Size: 0xdc
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "fx_frost_blast_clientfield", 1, 3, "int", &function_78f4a9dc, 1, 0);
     clientfield::register("toplayer", "fx_frost_blast_1p_lv1_clientfield", 1, 1, "counter", &function_e557117b, 1, 0);
     clientfield::register("toplayer", "fx_frost_blast_1p_lv3_clientfield", 1, 1, "counter", &function_fea42db5, 1, 0);

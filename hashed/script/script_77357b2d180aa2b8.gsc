@@ -93,7 +93,7 @@ function function_2a1e5c1f(origin, angles, modelname, type = 1, var_5653e2ee = 2
         }
         var_56d14168.var_fc5f2aa0 = undefined;
     }
-    namespace_1e25ad94::function_f5f0c0f8("Creating Door (" + modelname + ") at " + origin);
+    namespace_1e25ad94::debugmsg("Creating Door (" + modelname + ") at " + origin);
     level.doa.var_b8ef1466[level.doa.var_b8ef1466.size] = var_56d14168;
     return var_56d14168;
 }
@@ -107,7 +107,7 @@ function function_49957ef3(door, ignore = 1, activator) {
     door notify(#"hash_46e32085692bcb4b");
     door endon(#"death", #"hash_46e32085692bcb4b");
     if (isdefined(door.var_5710d551)) {
-        level notify(door.var_5710d551, {#activator:activator, #door:door});
+        level notify(door.var_5710d551, {#door:door, #activator:activator});
     }
     if (door.type == 4) {
         door namespace_83eb6304::function_3ecfde67("magic_door_open");
@@ -122,7 +122,7 @@ function function_49957ef3(door, ignore = 1, activator) {
         door delete();
         return;
     }
-    namespace_1e25ad94::function_f5f0c0f8("Door Opened");
+    namespace_1e25ad94::debugmsg("Door Opened");
     door namespace_e32bb68::function_3a59ec34("fly_open_door");
     door thread function_2740974(1);
     door.var_81b6ad63 = ignore;
@@ -142,7 +142,7 @@ function function_4c065330(door) {
     if (door.type == 4) {
         return;
     }
-    namespace_1e25ad94::function_f5f0c0f8("Door Closed");
+    namespace_1e25ad94::debugmsg("Door Closed");
     door namespace_e32bb68::function_3a59ec34("fly_close_door");
     door thread function_2740974(2);
     wait(0.5);
@@ -162,16 +162,16 @@ function function_2740974(state) {
     if (!isdefined(self.var_1f5ad513)) {
         self.var_1f5ad513 = 0;
     }
-    if (!isdefined(self.var_a659b4cd)) {
-        self.var_a659b4cd = 0;
+    if (!isdefined(self.doorstate)) {
+        self.doorstate = 0;
     }
     while (gettime() < self.var_1f5ad513) {
         waitframe(1);
     }
-    if (state === self.var_a659b4cd) {
+    if (state === self.doorstate) {
         return;
     }
-    self.var_a659b4cd = state;
+    self.doorstate = state;
     if (state == 1) {
         switch (self.type) {
         case 1:

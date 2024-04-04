@@ -116,7 +116,7 @@ function function_4d07056d(localclientnum, *oldval, *newval, *bnewent, *binitial
         return;
     }
     n_dist = distancesquared(var_e08888ec, e_player.origin);
-    var_b12c8a00 = function_a3f6cdac(1400);
+    var_b12c8a00 = sqr(1400);
     n_scale = (var_b12c8a00 - n_dist) / var_b12c8a00;
     if (n_scale > 0.01) {
         earthquake(bwastimejump, n_scale, 1, self.origin, n_dist);
@@ -147,7 +147,7 @@ function function_58e13aab(localclientnum, *oldval, *newval, *bnewent, *binitial
 function function_fe0bb012(localclientnum, pos, *surface, *notetrack, bone) {
     e_player = function_5c10bd79(surface);
     n_dist = distancesquared(notetrack, e_player.origin);
-    var_b12c8a00 = function_a3f6cdac(1200);
+    var_b12c8a00 = sqr(1200);
     if (n_dist < var_b12c8a00) {
         earthquake(surface, 0.1, 0.5, self.origin, n_dist);
         function_36e4ebd4(surface, "damage_light");

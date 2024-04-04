@@ -15,14 +15,14 @@
 // Checksum 0xd931b2dd, Offset: 0x100
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_6be63b3e08b5ceb9", &function_70a657d8, undefined, undefined, #"hash_13a43d760497b54d");
+    system::register(#"hash_6be63b3e08b5ceb9", &preinit, undefined, undefined, #"hash_13a43d760497b54d");
 }
 
 // Namespace namespace_bf2d4e77/namespace_bf2d4e77
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa96fb2a8, Offset: 0x150
 // Size: 0xc0
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "" + #"hash_6a9eb737488c81c7", 11000, 1, "counter", &function_77972a15, 0, 0);
     clientfield::register("actor", "" + #"hash_13a6ddf6358f814", 11000, 1, "int", &function_7431f6cc, 0, 0);
     level.var_1765ad79 = 0;

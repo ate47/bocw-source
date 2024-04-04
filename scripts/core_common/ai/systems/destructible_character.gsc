@@ -11,14 +11,14 @@
 // Checksum 0x4fe7217e, Offset: 0x280
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"destructible_character", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"destructible_character", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace destructserverutils/destructible_character
 // Params 0, eflags: 0x6 linked
 // Checksum 0xec684e9a, Offset: 0x2c8
 // Size: 0x5b0
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "destructible_character_state", 1, 21, "int");
     destructibles = getscriptbundles("destructiblecharacterdef");
     processedbundles = [];
@@ -81,7 +81,7 @@ function private _getdestructibledef(entity) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xfdd0b700, Offset: 0x8a8
 // Size: 0x2a
-function function_b9568365(entity) {
+function getdestructstate(entity) {
     if (isdefined(entity._destruct_state)) {
         return entity._destruct_state;
     }
@@ -103,7 +103,7 @@ function function_f865501b(entity, var_e9807706, var_9cea16fe) {
 // Checksum 0xe88375fa, Offset: 0x948
 // Size: 0x64
 function private _setdestructed(entity, destructflag) {
-    entity._destruct_state = function_b9568365(entity) | destructflag;
+    entity._destruct_state = getdestructstate(entity) | destructflag;
     entity clientfield::set("destructible_character_state", entity._destruct_state);
 }
 
@@ -112,7 +112,7 @@ function private _setdestructed(entity, destructflag) {
 // Checksum 0x907ab7f0, Offset: 0x9b8
 // Size: 0x64
 function copydestructstate(originalentity, newentity) {
-    newentity._destruct_state = function_b9568365(originalentity);
+    newentity._destruct_state = getdestructstate(originalentity);
     togglespawngibs(newentity, 0);
     reapplydestructedpieces(newentity);
 }
@@ -121,12 +121,12 @@ function copydestructstate(originalentity, newentity) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x9f073243, Offset: 0xa28
 // Size: 0xd4
-function function_8475c53a(entity, var_ba9eac46) {
+function function_8475c53a(entity, piecename) {
     if (isdefined(entity.destructibledef)) {
         destructbundle = _getdestructibledef(entity);
         for (index = 1; index <= destructbundle.pieces.size; index++) {
             piece = destructbundle.pieces[index - 1];
-            if (isdefined(piece.name) && piece.name == var_ba9eac46) {
+            if (isdefined(piece.name) && piece.name == piecename) {
                 destructpiece(entity, index);
             }
         }
@@ -339,7 +339,7 @@ function isdestructed(entity, piecenumber) {
             assert(1 <= piecenumber && piecenumber <= 20);
         #/
     #/
-    return function_b9568365(entity) & 1 << piecenumber;
+    return getdestructstate(entity) & 1 << piecenumber;
 }
 
 // Namespace destructserverutils/destructible_character
@@ -394,9 +394,9 @@ function showdestructedpieces(entity) {
 // Size: 0x94
 function togglespawngibs(entity, shouldspawngibs) {
     if (shouldspawngibs) {
-        entity._destruct_state = function_b9568365(entity) | 1;
+        entity._destruct_state = getdestructstate(entity) | 1;
     } else {
-        entity._destruct_state = function_b9568365(entity) & -2;
+        entity._destruct_state = getdestructstate(entity) & -2;
     }
     entity clientfield::set("destructible_character_state", entity._destruct_state);
 }

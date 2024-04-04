@@ -10,7 +10,7 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0x4d209f19, Offset: 0xa0
 // Size: 0x114
-function function_70a657d8() {
+function preinit() {
     if (currentsessionmode() == 4 || !(isdefined(getgametypesetting(#"allowlaststandforactiveclients")) ? getgametypesetting(#"allowlaststandforactiveclients") : 0)) {
         return;
     }
@@ -101,7 +101,7 @@ function private function_301f229d(team) {
             distance = undefined;
             if (bot istouching(player.revivetrigger)) {
                 distance = distance(bot.origin, player.origin);
-                arrayinsert(assignments, {#distance:distance, #target:player, #bot:bot}, 0);
+                arrayinsert(assignments, {#bot:bot, #target:player, #distance:distance}, 0);
                 continue;
             }
             navmeshpoint = bot_position::function_13796beb(player.origin);
@@ -129,7 +129,7 @@ function private function_301f229d(team) {
                     break;
                 }
             }
-            arrayinsert(assignments, {#distance:distance, #target:player, #bot:bot}, i);
+            arrayinsert(assignments, {#bot:bot, #target:player, #distance:distance}, i);
         }
     }
     for (i = 0; i < assignments.size; i++) {

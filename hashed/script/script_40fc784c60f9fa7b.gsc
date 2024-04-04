@@ -20,14 +20,14 @@
 // Checksum 0x89022c58, Offset: 0x438
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"player_vehicle", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"player_vehicle", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace player_vehicle/player_vehicle
 // Params 0, eflags: 0x6 linked
 // Checksum 0x97c11481, Offset: 0x480
 // Size: 0x274
-function private function_70a657d8() {
+function private preinit() {
     callback::on_vehicle_spawned(&on_vehicle_spawned);
     callback::on_vehicle_damage(&on_vehicle_damage);
     callback::on_vehicle_killed(&on_vehicle_killed);
@@ -46,7 +46,7 @@ function private function_70a657d8() {
     level.is_staircase_up = &is_staircase_up;
     level.var_80d8731e = 0;
     level.var_6ed50229 = 10;
-    level.var_7a086dd2 = [];
+    level.vehicle_tracking = [];
 }
 
 // Namespace player_vehicle/player_vehicle
@@ -66,7 +66,7 @@ function private on_vehicle_spawned() {
     if (isdefined(self.settings.var_b40b5493)) {
         self influencers::create_influencer_generic(self.settings.var_b40b5493, self, "any");
     }
-    level.var_7a086dd2[level.var_7a086dd2.size] = self;
+    level.vehicle_tracking[level.vehicle_tracking.size] = self;
     self function_7ae07b7();
 }
 
@@ -284,7 +284,7 @@ function is_staircase_up(attackingplayer = undefined, jammer = undefined) {
     params.param1 = attackingplayer;
     params.param2 = jammer;
     if (isplayer(attackingplayer)) {
-        level callback::callback(#"vehicle_emped", {#vehicle:self, #attacker:attackingplayer});
+        level callback::callback(#"vehicle_emped", {#attacker:attackingplayer, #vehicle:self});
     }
     if (isdefined(self.is_staircase_up)) {
         self [[ self.is_staircase_up ]](params);
@@ -361,8 +361,8 @@ function on_vehicle_killed(params) {
     }
     if (isdefined(vehicle.session) && isdefined(params.weapon)) {
         attachments = util::function_2146bd83(params.weapon);
-        var_feb5ebf5 = attachments != "" ? params.weapon.name + "+" + attachments : params.weapon.name;
-        vehicle.session.var_6e1d768e = hash(var_feb5ebf5);
+        weaponfullname = attachments != "" ? params.weapon.name + "+" + attachments : params.weapon.name;
+        vehicle.session.var_6e1d768e = hash(weaponfullname);
     }
     if (isdefined(level.var_c3f91417)) {
         vehicle clientfield::set("enemyvehicle", 0);
@@ -522,7 +522,7 @@ function function_69c9e9a0() {
             occupant.var_2e8665de = 1;
             occupant dodamage(occupant.health * 100, occupant.origin);
         }
-        vehicle function_cb48cddd();
+        vehicle deletedelay();
     }
 }
 
@@ -622,8 +622,8 @@ function private on_vehicle_collision(params) {
     if (isdefined(var_2ad7f33b) && var_2ad7f33b > var_1fdf316c) {
         applydamage = mapfloat(var_1fdf316c, var_a7796a79, mindamage, maxdamage, var_2ad7f33b);
         if (isdefined(params.normal) && params.normal[2] < -0.5) {
-            var_d3f8fc8a = vectordot(anglestoup(self.angles), -1 * params.normal);
-            if (var_d3f8fc8a > var_a1805d6e) {
+            impactdot = vectordot(anglestoup(self.angles), -1 * params.normal);
+            if (impactdot > var_a1805d6e) {
                 applydamage = applydamage * 0;
             }
         }
@@ -791,7 +791,7 @@ function function_3054737a(player) {
     if (game.state == #"pregame" || !isplayer(player) || player isremotecontrolling() || isdefined(vehicle.session)) {
         return;
     }
-    vehicle.session = {#var_6e1d768e:#"", #passenger_kills:0, #var_3893d13e:0, #var_45bf3627:0, #var_ffb0c509:0, #var_afb151ad:0, #var_7c3e6a02:0, #var_c5d87ed4:0, #var_f07350a4:0, #var_c19a5249:0, #var_7db0543d:0, #var_9678e53b:0, #driver_kills:0, #var_888cce59:0, #var_c1b985ee:0, #var_61ceb3c1:0, #vehicle_kills:0, #var_ecd1fe60:0, #var_33f48e5a:0, #var_770fd50d:0, #var_5ba0df6e:0, #var_309ad81f:0, #var_efe98761:1, #first_player:int(player getxuid(1)), #end_health:vehicle.health, #start_health:vehicle.health, #end_time:0, #start_time:function_f8d53445(), #var_c87538d9:vehicle.trackingindex, #var_4ba3155:vehicle.origin[1], #var_16f7d5d0:vehicle.origin[0], #var_1ff15d37:vehicle.origin[1], #var_2dbaf8ca:vehicle.origin[0], #vehicle:vehicle.vehicletype};
+    vehicle.session = {#vehicle:vehicle.vehicletype, #var_2dbaf8ca:vehicle.origin[0], #var_1ff15d37:vehicle.origin[1], #var_16f7d5d0:vehicle.origin[0], #var_4ba3155:vehicle.origin[1], #var_c87538d9:vehicle.trackingindex, #start_time:function_f8d53445(), #end_time:0, #start_health:vehicle.health, #end_health:vehicle.health, #first_player:int(player getxuid(1)), #var_efe98761:1, #var_309ad81f:0, #var_5ba0df6e:0, #var_770fd50d:0, #var_33f48e5a:0, #var_ecd1fe60:0, #vehicle_kills:0, #var_61ceb3c1:0, #var_c1b985ee:0, #var_888cce59:0, #driver_kills:0, #var_9678e53b:0, #var_7db0543d:0, #var_c19a5249:0, #var_f07350a4:0, #var_c5d87ed4:0, #var_7c3e6a02:0, #var_afb151ad:0, #var_ffb0c509:0, #var_45bf3627:0, #var_3893d13e:0, #passenger_kills:0, #var_6e1d768e:#""};
 }
 
 // Namespace player_vehicle/player_vehicle
@@ -819,11 +819,11 @@ function function_2d00376() {
 // Size: 0x20c
 function private function_f442b1c() {
     var_e61d6eb0 = [];
-    foreach (vehicle in level.var_7a086dd2) {
+    foreach (vehicle in level.vehicle_tracking) {
         if (!isdefined(vehicle)) {
             continue;
         }
-        data = {#used:is_true(vehicle.used), #type:vehicle.vehicletype, #pos_z:vehicle.origin[2], #pos_y:vehicle.origin[1], #pos_x:vehicle.origin[0]};
+        data = {#pos_x:vehicle.origin[0], #pos_y:vehicle.origin[1], #pos_z:vehicle.origin[2], #type:vehicle.vehicletype, #used:is_true(vehicle.used)};
         if (!isdefined(var_e61d6eb0)) {
             var_e61d6eb0 = [];
         } else if (!isarray(var_e61d6eb0)) {
@@ -924,7 +924,7 @@ function event_handler[enter_vehicle] codecallback_vehicleenter(eventstruct) {
         vehicle setbrake(0);
     }
     self clientfield::set_player_uimodel("vehicle.vehicleAttackMode", 0);
-    vehicle callback::callback(#"hash_666d48a558881a36", {#eventstruct:eventstruct, #player:self});
+    vehicle callback::callback(#"hash_666d48a558881a36", {#player:self, #eventstruct:eventstruct});
     occupants = vehicle getvehoccupants();
     if (isdefined(vehicle) && isdefined(self.team)) {
         vehicle.team = self.team;
@@ -960,8 +960,8 @@ function event_handler[enter_vehicle] codecallback_vehicleenter(eventstruct) {
     if (seatindex === 0) {
         self function_92bb5a6f(vehicle, -1);
     }
-    if (isdefined(level.var_7a086dd2)) {
-        foreach (var_c9fc0d83 in level.var_7a086dd2) {
+    if (isdefined(level.vehicle_tracking)) {
+        foreach (var_c9fc0d83 in level.vehicle_tracking) {
             if (var_c9fc0d83 === vehicle) {
                 var_c9fc0d83.used = 1;
             }
@@ -999,11 +999,11 @@ function event_handler[exit_vehicle] codecallback_vehicleexit(eventstruct) {
     if (vehicle function_f89e1149(seatindex)) {
         self.var_c0f5ab51 = self;
     } else {
-        self.var_c0f5ab51 = vehicle function_ab6c0861();
+        self.var_c0f5ab51 = vehicle get_vehicle_driver();
     }
     self clientfield::set_player_uimodel("vehicle.incomingMissile", 0);
     self clientfield::set_player_uimodel("vehicle.missileLock", 0);
-    vehicle callback::callback(#"hash_55f29e0747697500", {#eventstruct:eventstruct, #player:self});
+    vehicle callback::callback(#"hash_55f29e0747697500", {#player:self, #eventstruct:eventstruct});
     if (isdefined(level.var_3236015)) {
         self [[ level.var_3236015 ]](self.var_3a76b3aa);
     }
@@ -1011,7 +1011,7 @@ function event_handler[exit_vehicle] codecallback_vehicleexit(eventstruct) {
         self clientfield::set_to_player("toggle_vehicle_sensor", 0);
     }
     if (vehicle function_ea4291d3()) {
-        callback::callback("on_exit_locked_on_vehicle", {#seatindex:seatindex, #player:self, #vehicle:vehicle});
+        callback::callback("on_exit_locked_on_vehicle", {#vehicle:vehicle, #player:self, #seatindex:seatindex});
     }
     occupants = vehicle getvehoccupants();
     if (occupants.size == 0) {
@@ -1019,7 +1019,7 @@ function event_handler[exit_vehicle] codecallback_vehicleexit(eventstruct) {
     }
     if (vehicle.var_bd9434ec !== 1) {
         if (!isdefined(occupants) || !occupants.size) {
-            vehicle.var_37f0c900 = {#time:gettime(), #team:vehicle.team};
+            vehicle.var_37f0c900 = {#team:vehicle.team, #time:gettime()};
             vehicle.team = #"neutral";
             if (isdefined(level.var_c3f91417)) {
                 vehicle clientfield::set("enemyvehicle", 0);
@@ -1057,7 +1057,7 @@ function event_handler[event_363c2131] function_3a4d53f8(eventstruct) {
         return;
     }
     vehicle = eventstruct.vehicle;
-    vehicle callback::callback(#"hash_80ab24b716412e1", {#eventstruct:eventstruct, #player:self});
+    vehicle callback::callback(#"hash_80ab24b716412e1", {#player:self, #eventstruct:eventstruct});
 }
 
 // Namespace player_vehicle/change_seat
@@ -1111,7 +1111,7 @@ function event_handler[change_seat] function_2aa4e6cf(eventstruct) {
             self function_b9604c53(vehicle);
         }
     }
-    vehicle callback::callback(#"hash_2c1cafe2a67dfef8", {#eventstruct:eventstruct, #player:self});
+    vehicle callback::callback(#"hash_2c1cafe2a67dfef8", {#player:self, #eventstruct:eventstruct});
     isemped = vehicle function_adc0649a();
     if (!is_true(getgametypesetting(#"hash_85fbdce1f1a0290"))) {
         vehicle function_388973e4(isemped);
@@ -1350,7 +1350,7 @@ function private function_f43c0cb7(vehicle) {
     if (self isreloading()) {
         return false;
     }
-    if (isdefined(vehicle.var_66329fbb) && self function_495bdc7b(vehicle.var_66329fbb)) {
+    if (isdefined(vehicle.var_66329fbb) && self isgestureplaying(vehicle.var_66329fbb)) {
         return false;
     }
     return true;
@@ -1653,7 +1653,7 @@ function private function_11b95c7f(targetent) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0xb2478be5, Offset: 0x61b0
 // Size: 0x62
-function function_ab6c0861() {
+function get_vehicle_driver() {
     vehicledriver = self getseatoccupant(0);
     if (!isdefined(vehicledriver) && isdefined(self.var_260e3593)) {
         vehicledriver = self getseatoccupant(self.var_260e3593);
@@ -1748,8 +1748,8 @@ function function_53f7a11f(player) {
 function private function_4b3faa36(einflictor, eattacker, idamage, *idflags, smeansofdeath, *weapon, *vpoint, *vdir, *shitloc, *vdamageorigin, *psoffsettime, *damagefromunderneath, *modelindex, *partname, *vsurfacenormal) {
     damage = partname;
     if (isplayer(modelindex)) {
-        var_284da85d = modelindex getvehicleoccupied();
-        if (var_284da85d === self) {
+        attackervehicle = modelindex getvehicleoccupied();
+        if (attackervehicle === self) {
             if (isvehicle(damagefromunderneath) && vsurfacenormal === "MOD_EXPLOSIVE") {
                 damage = 0;
             }

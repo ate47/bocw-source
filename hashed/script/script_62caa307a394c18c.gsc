@@ -39,7 +39,7 @@ function function_d6863a3(inflictor, attacker, meansofdeath, weapon, aat, item) 
                 if (isdefined(var_c3317960)) {
                     switch (var_c3317960) {
                     case 1:
-                        element = #"hash_bd108911963a54f";
+                        element = #"cold";
                         break;
                     case 4:
                     case 14:
@@ -58,7 +58,7 @@ function function_d6863a3(inflictor, attacker, meansofdeath, weapon, aat, item) 
                     case 6:
                     case 8:
                     case 16:
-                        element = #"hash_16b5c37d8feae38c";
+                        element = #"toxic";
                         break;
                     }
                 }
@@ -79,11 +79,11 @@ function function_1b3815a7(element) {
             return 1;
         case #"explosive":
             return 2;
-        case #"hash_16b5c37d8feae38c":
+        case #"toxic":
             return 3;
         case #"electrical":
             return 4;
-        case #"hash_bd108911963a54f":
+        case #"cold":
             return 5;
         }
     }
@@ -115,26 +115,26 @@ function function_9fbcd067(element, inflictor, attacker, damage, *flags, *meanso
     if (!isdefined(shitloc)) {
         return;
     }
-    var_68ceb6c4 = surfacetype;
+    new_damage = surfacetype;
     if (isdefined(self.var_19f5037) && is_true(self.var_19f5037[shitloc])) {
-        var_68ceb6c4 = surfacetype * 1.5;
+        new_damage = surfacetype * 1.5;
         if (isplayer(boneindex) && boneindex namespace_e86ffa8::function_cd6787b(4)) {
-            var_68ceb6c4 = var_68ceb6c4 + (var_68ceb6c4 - surfacetype) * 0.5;
+            new_damage = new_damage + (new_damage - surfacetype) * 0.5;
         }
         level.var_d921ba10 = 1;
         /#
             if (is_true(level.var_a12b24d0)) {
-                function_8666eb93(surfacetype, var_68ceb6c4, shitloc, isplayer(psoffsettime) ? psoffsettime : boneindex, self);
+                function_8666eb93(surfacetype, new_damage, shitloc, isplayer(psoffsettime) ? psoffsettime : boneindex, self);
             }
         #/
     } else {
         /#
             if (is_true(level.var_a12b24d0) && !is_true(level.var_98e71360)) {
-                function_8666eb93(surfacetype, var_68ceb6c4, shitloc, isplayer(psoffsettime) ? psoffsettime : boneindex, self);
+                function_8666eb93(surfacetype, new_damage, shitloc, isplayer(psoffsettime) ? psoffsettime : boneindex, self);
             }
         #/
     }
-    return var_68ceb6c4;
+    return new_damage;
 }
 
 // Namespace namespace_42457a0/namespace_42457a0
@@ -143,8 +143,8 @@ function function_9fbcd067(element, inflictor, attacker, damage, *flags, *meanso
 // Size: 0xde
 function function_601fabe9(element, amount, pos, attacker, inflictor, hitloc, mod, dflags, weapon, var_65c05877, var_9473a4eb) {
     self.var_8126f3c8 = element;
-    var_68ceb6c4 = amount;
-    self dodamage(var_68ceb6c4, pos, attacker, inflictor, hitloc, mod, dflags, weapon, var_65c05877, is_true(var_9473a4eb));
+    new_damage = amount;
+    self dodamage(new_damage, pos, attacker, inflictor, hitloc, mod, dflags, weapon, var_65c05877, is_true(var_9473a4eb));
     if (isalive(self)) {
         self.var_8126f3c8 = undefined;
     }
@@ -209,7 +209,7 @@ function function_793d38f() {
         level endon(#"game_ended", #"hash_7417360c17579602");
         level.var_cc43c151 = [];
         level.var_536f1a3 = 0;
-        var_92abc4e4 = [#"hash_bd108911963a54f":"<unknown string>", #"electrical":"<unknown string>", #"hash_16b5c37d8feae38c":"<unknown string>", #"explosive":"<unknown string>", #"fire":"<unknown string>"];
+        var_92abc4e4 = [#"fire":"<unknown string>", #"explosive":"<unknown string>", #"toxic":"<unknown string>", #"electrical":"<unknown string>", #"cold":"<unknown string>"];
         while (true) {
             waitframe(1);
             offset = 75 + 22 * 11;
@@ -221,8 +221,8 @@ function function_793d38f() {
             }
             for (i = 0; i < level.var_cc43c151.size; i++) {
                 index = (level.var_536f1a3 - i + level.var_cc43c151.size - 1) % level.var_cc43c151.size;
-                var_2a31c87f = level.var_cc43c151[index];
-                string = var_2a31c87f.timestamp + "<unknown string>" + "<unknown string>" + var_2a31c87f.attacker + "<unknown string>" + "<unknown string>" + "<unknown string>" + var_2a31c87f.damage + "<unknown string>" + var_2a31c87f.var_d036befe + "<unknown string>" + "<unknown string>" + var_92abc4e4[var_2a31c87f.element] + function_9e72a96(var_2a31c87f.element) + "<unknown string>" + "<unknown string>" + "<unknown string>" + var_2a31c87f.entity;
+                debug_struct = level.var_cc43c151[index];
+                string = debug_struct.timestamp + "<unknown string>" + "<unknown string>" + debug_struct.attacker + "<unknown string>" + "<unknown string>" + "<unknown string>" + debug_struct.damage + "<unknown string>" + debug_struct.var_d036befe + "<unknown string>" + "<unknown string>" + var_92abc4e4[debug_struct.element] + function_9e72a96(debug_struct.element) + "<unknown string>" + "<unknown string>" + "<unknown string>" + debug_struct.entity;
                 debug2dtext((105, offset * 0.85, 0), string, (1, 1, 1), undefined, i == 0 ? vectorscale((1, 1, 1), 0.2) : vectorscale((1, 1, 1), 0.1), 0.9, 0.85);
                 offset = offset - 22;
             }
@@ -236,7 +236,7 @@ function function_793d38f() {
 // Size: 0x228
 function function_8666eb93(damage, var_d036befe, element, attacker, entity) {
     /#
-        level.var_cc43c151[level.var_536f1a3] = {#timestamp:gettime(), #entity:isdefined(entity) ? isplayer(entity) ? "<unknown string>" + entity getentitynumber() : isactor(entity) ? function_9e72a96(isdefined(entity.var_9fde8624) ? entity.var_9fde8624 : entity.archetype) : entity getentitynumber() : "<unknown string>", #attacker:isdefined(attacker) ? isplayer(attacker) ? "<unknown string>" + attacker getentitynumber() : isactor(attacker) ? function_9e72a96(isdefined(attacker.var_9fde8624) ? attacker.var_9fde8624 : attacker.archetype) : attacker getentitynumber() : "<unknown string>", #element:element, #var_d036befe:var_d036befe, #damage:damage};
+        level.var_cc43c151[level.var_536f1a3] = {#damage:damage, #var_d036befe:var_d036befe, #element:element, #attacker:isdefined(attacker) ? isplayer(attacker) ? "<unknown string>" + attacker getentitynumber() : isactor(attacker) ? function_9e72a96(isdefined(attacker.var_9fde8624) ? attacker.var_9fde8624 : attacker.archetype) : attacker getentitynumber() : "<unknown string>", #entity:isdefined(entity) ? isplayer(entity) ? "<unknown string>" + entity getentitynumber() : isactor(entity) ? function_9e72a96(isdefined(entity.var_9fde8624) ? entity.var_9fde8624 : entity.archetype) : entity getentitynumber() : "<unknown string>", #timestamp:gettime()};
         level.var_536f1a3 = (level.var_536f1a3 + 1) % 10;
     #/
 }

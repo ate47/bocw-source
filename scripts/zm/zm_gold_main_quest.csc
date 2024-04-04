@@ -414,7 +414,7 @@ function function_b66e99f1(localclientnum, *oldval, newval, *bnewent, *binitials
                 case #"sm":
                     str_fx = #"zm_ai/fx9_steiner_rad_bomb_spot_sm_loop";
                     break;
-                case #"hash_8a95e07b5504ef4":
+                case #"md":
                     str_fx = #"zm_ai/fx9_steiner_rad_bomb_spot_md_loop";
                     break;
                 case #"lg":

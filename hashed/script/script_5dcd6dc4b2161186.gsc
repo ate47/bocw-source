@@ -20,17 +20,17 @@ function function_97c69304(var_e1ab1198, var_ad825676 = 1, var_4d757ace = 2, var
     self val::set(#"hash_495fb25cf24868b4", "freezecontrols_allowlook", 1);
     self val::set(#"hash_495fb25cf24868b4", "disable_weapon_cycling", 1);
     if (var_ad825676) {
-        namespace_f48ab2e1::function_86eedc();
+        prompts::function_86eedc();
     }
     var_6fdd3a3a = getscriptbundle(var_e1ab1198);
     /#
         assert(isdefined(var_6fdd3a3a), "<unknown string>" + var_e1ab1198);
     #/
-    var_48ff4b02 = var_6fdd3a3a.var_df2d0a90.size;
+    len = var_6fdd3a3a.var_df2d0a90.size;
     namespace_61e6d095::function_9ade1d9b(#"hash_495fb25cf24868b4", "priority", 1);
     namespace_61e6d095::set_state(#"hash_495fb25cf24868b4", var_ec9a3f05);
     line_num = 0;
-    for (i = line_num; i < var_48ff4b02; i++) {
+    for (i = line_num; i < len; i++) {
         line_num = i + 1;
         var_c1deb575 = var_6fdd3a3a.var_df2d0a90[i];
         namespace_61e6d095::function_f2a9266(#"hash_495fb25cf24868b4", line_num, "index", i);
@@ -42,7 +42,7 @@ function function_97c69304(var_e1ab1198, var_ad825676 = 1, var_4d757ace = 2, var
     namespace_61e6d095::function_9ade1d9b(#"hash_495fb25cf24868b4", "image", var_6fdd3a3a.var_85ca818b);
     self playsound(var_34c6a562);
     wait(var_4d757ace);
-    self thread function_50f1b098(var_48ff4b02);
+    self thread function_50f1b098(len);
     namespace_c8e236da::function_ebf737f8(#"hash_1aefb4de625039be");
     self thread function_f432e1fd(var_5d0591d);
 }
@@ -76,14 +76,14 @@ function private function_f432e1fd(var_5d0591d) {
 // Size: 0x116
 function function_62296e85(var_5d0591d) {
     self playsound(var_5d0591d);
-    namespace_f48ab2e1::function_d675f5a4();
-    namespace_c8e236da::function_c27f93d5();
+    prompts::function_d675f5a4();
+    namespace_c8e236da::removelist();
     namespace_61e6d095::function_9ade1d9b(#"hash_495fb25cf24868b4", "priority", 0);
     if (namespace_61e6d095::exists(#"hash_495fb25cf24868b4")) {
         namespace_61e6d095::remove(#"hash_495fb25cf24868b4");
     }
     namespace_82bfe441::fade(0, "FadeImmediate");
-    val::function_e681e68e(#"hash_495fb25cf24868b4");
+    val::reset_all(#"hash_495fb25cf24868b4");
     self function_e0c7d69(1);
     self notify(#"hash_3fea3efdd8cc1e01");
 }

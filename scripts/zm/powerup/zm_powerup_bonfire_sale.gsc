@@ -20,14 +20,14 @@
 // Checksum 0x8195c132, Offset: 0x1c8
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_powerup_bonfire_sale", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_powerup_bonfire_sale", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_powerup_bonfire_sale/zm_powerup_bonfire_sale
 // Params 0, eflags: 0x6 linked
 // Checksum 0x868cbb46, Offset: 0x220
 // Size: 0x9c
-function private function_70a657d8() {
+function private preinit() {
     zm_powerups::register_powerup("bonfire_sale", &grab_bonfire_sale);
     if (zm_powerups::function_cc33adc8()) {
         zm_powerups::add_zombie_powerup("bonfire_sale", "p8_zm_power_up_bonfire_sale", #"hash_35f38d29d068c30d", &zm_powerups::func_should_never_drop, 0, 0, 0, undefined, "powerup_bon_fire", "zombie_powerup_bonfire_sale_time", "zombie_powerup_bonfire_sale_on");

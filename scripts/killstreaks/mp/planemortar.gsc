@@ -18,14 +18,14 @@
 // Checksum 0xd033656f, Offset: 0x1c0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"planemortar", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"planemortar", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace planemortar/planemortar
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf7f0db8c, Offset: 0x210
 // Size: 0xfc
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
     bundlename = "killstreak_planemortar";
     if (sessionmodeiswarzonegame()) {

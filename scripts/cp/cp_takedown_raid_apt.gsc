@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_5552bd756afee443;
+#using scripts\cp_common\snd_utility.gsc;
 #using script_7cf3e180e994d17f;
 #using script_31e9b35aaacbbd93;
 #using script_3dc93ca9902a9cda;
@@ -17,7 +17,7 @@
 #using scripts\cp\cp_takedown_raid_bar.gsc;
 #using scripts\cp_common\util.gsc;
 #using scripts\cp\cp_takedown_raid_rooftops.gsc;
-#using script_263b7f2982258785;
+#using scripts\cp_common\dialogue.gsc;
 #using scripts\core_common\struct.gsc;
 #using scripts\cp_common\objectives.gsc;
 #using scripts\core_common\gameobjects_shared.gsc;
@@ -59,10 +59,10 @@ function starting(*var_d3440450) {
     level.var_efac709f disconnectpaths();
     alley_clip = getent("alley_clip", "targetname");
     alley_clip delete();
-    self util::function_3b6593e4(0.5, 0.25);
+    self util::blend_movespeedscale(0.5, 0.25);
     level util::function_3e65fe0b(1);
     level.raid_car = getent("raid_car", "targetname");
-    level thread scene::play("scene_tkd_hit2_bar_alley", "Trunk_close", [0:level.raid_car]);
+    level thread scene::play("scene_tkd_hit2_bar_alley", "Trunk_close", [level.raid_car]);
     level thread scene::play("scene_tkd_hit2_alley_civilians", "window_civilian");
     level thread scene::play("scene_tkd_hit2_alley_civilians", "drug_deal");
     level thread scene::init("scene_tkd_hit2_bar_alley");
@@ -178,14 +178,14 @@ function function_a8e1bcc4() {
         namespace_b100dd86::function_53531f27("trig_woods_advance_inside_apt");
         level.woods thread function_9800206d(2, 2);
     }
-    self util::function_3b6593e4(0.7, 0.25);
+    self util::blend_movespeedscale(0.7, 0.25);
     exploder::exploder("hit2_kitchen_papers");
     thread function_aeaba0c9("pool_table_mb_pos", "pool_table_mb_dest", 1);
     namespace_a052577e::function_1dc92e4f();
     level.woods.script_accuracy = 0.1;
     level.adler.script_accuracy = 0.1;
     wait(1);
-    var_a79e4694 = snd::play("vox_cp_tdwn_03750_adlr_gogogo_c5", [1:"j_head", 0:level.adler]);
+    var_a79e4694 = snd::play("vox_cp_tdwn_03750_adlr_gogogo_c5", [level.adler, "j_head"]);
     level thread scene::play("scene_tkd_hit2_apt_door_kick", "start");
     level battlechatter::function_2ab9360b(1);
     wait(1);
@@ -359,8 +359,8 @@ function function_306807e5() {
     level waittill(#"hash_2d7f82360e399f87");
     wait(2);
     self notify(#"hash_72d5a2c9e1d7ed8a");
-    self val::set(#"hash_2cf4ba1f5c83113b", "takedamage", 1);
-    self val::set(#"hash_2cf4ba1f5c83113b", "allowdeath", 1);
+    self val::set(#"kitchen_guy", "takedamage", 1);
+    self val::set(#"kitchen_guy", "allowdeath", 1);
     self.health = 1;
     if (level flag::get("flag_player_told_shoot")) {
         self util::delay(randomfloatrange(1.3, 2), undefined, &function_629b5919);
@@ -374,7 +374,7 @@ function function_306807e5() {
 // Checksum 0x9fa9be2c, Offset: 0x21a8
 // Size: 0x34
 function function_629b5919() {
-    if (!is_true(self.var_fb9a2c03)) {
+    if (!is_true(self.in_melee_death)) {
         self ai::bloody_death();
     }
 }
@@ -389,8 +389,8 @@ function function_5ba83448() {
     result = undefined;
     result = self waittill(#"damage", #"hash_39550364a879e1d4");
     if (result._notify === "damage") {
-        self val::set(#"hash_2cf4ba1f5c83113b", "takedamage", 0);
-        self val::set(#"hash_2cf4ba1f5c83113b", "allowdeath", 0);
+        self val::set(#"kitchen_guy", "takedamage", 0);
+        self val::set(#"kitchen_guy", "allowdeath", 0);
         scene = "scene_tkd_hit2_bar_alley";
         if (self.script_noteworthy == "kitchen_enemy1") {
             self thread function_8dac85e(scene, "Enemy_Death_1");
@@ -423,7 +423,7 @@ function function_8dac85e(scene, var_a3671203, *var_5505b07f, *loop) {
     self notify(#"hash_10622d7e7f80ce71");
     level.player playhitmarker(undefined, 5, undefined, 1);
     level thread scene::play(var_5505b07f, loop, self);
-    self val::set(#"hash_2cf4ba1f5c83113b", "ignoreme", 1);
+    self val::set(#"kitchen_guy", "ignoreme", 1);
     self disableaimassist();
     self notsolid();
 }
@@ -453,7 +453,7 @@ function function_ced2a7df() {
     level waittill(#"hash_67f0f350991bdaf4");
     while (true) {
         wait(8);
-        var_23811abd = snd::play("vox_cp_tdwn_03750_adlr_onyoumason_b2", [1:"j_head", 0:level.adler]);
+        var_23811abd = snd::play("vox_cp_tdwn_03750_adlr_onyoumason_b2", [level.adler, "j_head"]);
         snd::function_2fdc4fb(var_23811abd);
         wait(4);
     }
@@ -476,13 +476,13 @@ function function_596afdef() {
     savegame::checkpoint_save(1);
     level.adler ai::set_behavior_attribute("demeanor", "combat");
     level.woods ai::set_behavior_attribute("demeanor", "combat");
-    var_f3ebe39 = ai::function_e8b6bfec("floor1_guys");
+    var_f3ebe39 = ai::array_spawn("floor1_guys");
     foreach (guy in var_f3ebe39) {
         guy.var_c681e4c1 = 1;
     }
     level thread function_801d630c();
     level thread function_5547ef8b();
-    level thread function_503c8eb7();
+    level thread left_flank();
     level thread function_917872db();
 }
 
@@ -490,7 +490,7 @@ function function_596afdef() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x594438d4, Offset: 0x2808
 // Size: 0x54
-function function_503c8eb7() {
+function left_flank() {
     level flag::wait_till("flag_left_flank");
     level thread tkdn_raid_roof::function_29f2624a("floor1_enemies_flank", "trig_apt_wave2", undefined, undefined, 0.1);
 }
@@ -574,17 +574,17 @@ function function_5001b9be() {
 function function_5547ef8b() {
     level waittill(#"hash_750f5969110dee88");
     wait(1);
-    level.adler namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_theresqasim_a2");
+    level.adler dialogue::queue("vox_cp_tdwn_03800_adlr_theresqasim_a2");
     wait(1);
-    level.adler namespace_a635adb1::queue("vox_cp_tdwn_03750_wood_comeonmason_ec");
+    level.adler dialogue::queue("vox_cp_tdwn_03750_wood_comeonmason_ec");
     wait(2);
-    level.adler namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_qasimsheadedupt_21");
+    level.adler dialogue::queue("vox_cp_tdwn_03800_adlr_qasimsheadedupt_21");
     wait(2.5);
-    level.adler namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_weneedqasimaliv_e5");
+    level.adler dialogue::queue("vox_cp_tdwn_03800_adlr_weneedqasimaliv_e5");
     level flag::wait_till("flag_near_apt_stairs");
-    level.adler namespace_a635adb1::queue("vox_cp_tdwn_04100_adlr_qasimcantescape_7b");
+    level.adler dialogue::queue("vox_cp_tdwn_04100_adlr_qasimcantescape_7b");
     wait(0.75);
-    level.adler namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_findhim_00");
+    level.adler dialogue::queue("vox_cp_tdwn_03800_adlr_findhim_00");
 }
 
 // Namespace tkdn_raid_apt/namespace_8c930e93

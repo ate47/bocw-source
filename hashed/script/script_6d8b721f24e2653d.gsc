@@ -10,14 +10,14 @@
 // Checksum 0x38563e5e, Offset: 0x158
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_35d5e49c19d9cf09", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_35d5e49c19d9cf09", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_a2fc8c70/namespace_a2fc8c70
 // Params 0, eflags: 0x4
 // Checksum 0xa44357cb, Offset: 0x1a0
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     if (is_true(getgametypesetting(#"hash_cd096e90260a26b"))) {
         level function_504792();
     }

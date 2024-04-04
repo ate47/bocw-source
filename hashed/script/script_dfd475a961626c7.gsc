@@ -1,8 +1,8 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_28e27ee9b45fd02d;
-#using script_31671175564a93b7;
+#using scripts\cp_common\snd_utility.csc;
 #using script_1cd690a97dfca36e;
-#using script_3318f11e3a1b2358;
+#using scripts\cp_common\snd.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\struct.csc;
 #using scripts\core_common\music_shared.csc;
@@ -19,7 +19,7 @@
 function event_handler[level_preinit] function_b489bb7b(*eventstruct) {
     snd::function_d4ec748e(&function_f2a2832d);
     snd::function_ce78b33b(&function_32ab045);
-    snd::function_a1961886(&_trigger);
+    snd::trigger_init(&_trigger);
     snd::function_5e69f468(&function_887ac605);
 }
 
@@ -268,7 +268,7 @@ function private function_f2a2832d(*player, msg) {
     case #"af_truck_plr_in":
         function_ed62c9c2("cp_tkdn_af_tarmac_combat", 4);
         function_5ea2c6e3("cp_tkdn_af_chase_mix", 4, 1);
-        snd::play([1:"evt_tkd_chase_start_peel_out", 0:4], [1:"tag_axel_front_up", 0:level.var_5acf72ee]);
+        snd::play([4, "evt_tkd_chase_start_peel_out"], [level.var_5acf72ee, "tag_axel_front_up"]);
         break;
     case #"hash_55e0585ab6221a00":
         function_5ea2c6e3("cp_tkdn_af_hill_plane", 0, 1);
@@ -359,9 +359,9 @@ function function_5f2fe011() {
                         velocity = var_15df3e17.var_90c86b97 getvelocity();
                         if (isvec(velocity)) {
                             speed = length(velocity);
-                            var_4e2d590d = "<unknown string>" + function_d6053a8f(speed, 1);
+                            txt = "<unknown string>" + function_d6053a8f(speed, 1);
                             pos = var_15df3e17.origin + vectorscale((0, 0, 1), 6);
-                            function_ac033c46(var_4e2d590d, pos, 0.333, "<unknown string>");
+                            function_ac033c46(txt, pos, 0.333, "<unknown string>");
                         }
                     }
                 }
@@ -379,7 +379,7 @@ function function_b3fdcb06(ent, var_9e542947, var_e03252b9) {
     if (snd::function_a6779cbd(ent.var_726d44d2)) {
         return;
     }
-    ent.var_726d44d2 = snd::play(var_e03252b9, [1:var_9e542947, 0:ent]);
+    ent.var_726d44d2 = snd::play(var_e03252b9, [ent, var_9e542947]);
     snd::function_f4f3a2a(ent.var_726d44d2, ent);
     if (!isinarray(level.var_b9a192d2, ent.var_726d44d2)) {
         level.var_b9a192d2[level.var_b9a192d2.size] = ent.var_726d44d2;
@@ -391,7 +391,7 @@ function function_b3fdcb06(ent, var_9e542947, var_e03252b9) {
 // Checksum 0x52f6b424, Offset: 0x1cb0
 // Size: 0x1f4
 function function_244835ac(ent, var_7eaf9fa5) {
-    var_1cafb128 = [3:[1:"tag_wheel_back_right", 0:ent], 2:[1:"tag_wheel_back_left", 0:ent], 1:[1:"tag_wheel_front_right", 0:ent], 0:[1:"tag_wheel_front_left", 0:ent]];
+    var_1cafb128 = [[ent, "tag_wheel_front_left"], [ent, "tag_wheel_front_right"], [ent, "tag_wheel_back_left"], [ent, "tag_wheel_back_right"]];
     if (isarray(ent.var_f4728878) && ent.var_f4728878.size > 0) {
         return;
     }
@@ -414,7 +414,7 @@ function function_d942b1c8(ent, var_9e542947, sndalias) {
     if (snd::function_a6779cbd(ent.var_726d44d2)) {
         return;
     }
-    var_5b1e99b6 = [1:var_9e542947, 0:ent];
+    var_5b1e99b6 = [ent, var_9e542947];
     ent.var_726d44d2 = snd::play(sndalias, var_5b1e99b6);
     snd::function_f4f3a2a(ent.var_726d44d2, ent);
     if (!isinarray(level.var_b9a192d2, ent.var_726d44d2)) {
@@ -466,9 +466,9 @@ function function_9c9fad4e() {
     function_5ea2c6e3("cp_tkdn_af_hill_binoculars", 0, 0);
     setsoundcontext("vehicle", "interior");
     while (true) {
-        var_bcebdd89 = undefined;
-        var_bcebdd89 = player waittill(#"hash_2b753d505c6182c");
-        function_672403ca("cp_tkdn_af_hill_binoculars", float(player function_8e4cd43b()) / 1000, var_bcebdd89.var_600ff81f);
+        camera_zoom = undefined;
+        camera_zoom = player waittill(#"camera_zoom");
+        function_672403ca("cp_tkdn_af_hill_binoculars", float(player function_8e4cd43b()) / 1000, camera_zoom.pct);
     }
 }
 
@@ -515,10 +515,10 @@ function function_4df43a5e() {
 function function_a43c0d2c() {
     var_1246faee = (-49666.6, -55444, -25160.2);
     var_2a88513c = (-49790, -55098, -25110.7);
-    var_17888610 = snd::play("emt_tkd_walla_plane_workers_lp", var_1246faee);
+    walla = snd::play("emt_tkd_walla_plane_workers_lp", var_1246faee);
     loaders = snd::play("emt_tkd_cargo_loading_vehicles_lp", var_2a88513c);
     level waittill(#"hash_1e58e46360c0a83b");
-    snd::stop(var_17888610, 1);
+    snd::stop(walla, 1);
     snd::stop(loaders, 1);
     wait(1.1);
     var_913d2991 = snd::play("emt_tkd_walla_runway_panic", var_1246faee);
@@ -554,7 +554,7 @@ function function_955f4842() {
     }
     level.var_1c393e86 = 1;
     function_5be14e40();
-    start = snd::play("veh_tkd_af_cargo_plane_start", [1:(288, 0, 108), 0:level.cargo_plane]);
+    start = snd::play("veh_tkd_af_cargo_plane_start", [level.cargo_plane, (288, 0, 108)]);
     thread function_2d8bbe54(3);
 }
 
@@ -569,7 +569,7 @@ function function_2d8bbe54(wait_time) {
     level.var_3f10e8f2 = 1;
     function_5be14e40();
     wait_time = snd::function_ea2f17d1(wait_time, 0.5);
-    level.var_2d8bbe54 = snd::play("veh_tkd_af_cargo_plane_idle_lp", [1:(288, 0, 108), 0:level.cargo_plane]);
+    level.var_2d8bbe54 = snd::play("veh_tkd_af_cargo_plane_idle_lp", [level.cargo_plane, (288, 0, 108)]);
     snd::function_db78159d(level.var_2d8bbe54, 0);
     snd::function_964c3a03(level.var_2d8bbe54, 1);
     wait(wait_time);
@@ -589,7 +589,7 @@ function function_e9cf99c1() {
     }
     level.var_b2f77aec = 1;
     function_5be14e40();
-    snd::play("veh_tkd_af_cargo_plane_accelerate", [1:(288, 0, 108), 0:level.cargo_plane]);
+    snd::play("veh_tkd_af_cargo_plane_accelerate", [level.cargo_plane, (288, 0, 108)]);
     level notify(#"hash_5b80aed93a868b80");
 }
 
@@ -603,7 +603,7 @@ function function_ad605463() {
     }
     level.var_72cef6cb = 1;
     function_53c8ee41();
-    snd::play("veh_tkd_af_cargo_plane_takeoff", [1:(288, 0, 108), 0:level.cargo_plane_mover]);
+    snd::play("veh_tkd_af_cargo_plane_takeoff", [level.cargo_plane_mover, (288, 0, 108)]);
     waitframe(3);
     level notify(#"hash_352bb96b1643631");
 }
@@ -670,7 +670,7 @@ function function_e8df4c70() {
     }
     level.var_b7589e37 = 1;
     function_81191c8a();
-    snd::play([2:0, 1:"wpn_tkd_rcxd_deploy_drop", 0:1.1], level.rc_car_plr);
+    snd::play([1.1, "wpn_tkd_rcxd_deploy_drop", 0], level.rc_car_plr);
     function_5ea2c6e3("cp_tkdn_af_chase_rcxd_mix", 1, 1);
     function_d942b1c8(level.rc_car_plr, "tag_suspension_front", "wpn_tkd_rcxd_veh_high_lp");
     function_ed62c9c2("cp_tkdn_af_rc_chase_tires", 3);
@@ -694,7 +694,7 @@ function function_b233d29e(wait_time = 1, fade_time = 0) {
 function function_7142e76c(veh) {
     level endon(#"hash_2b1ea816682de37d");
     while (isentity(veh)) {
-        snd::play("veh_tkd_chase_npc_jeeps_skid_stop", [1:vectorscale((0, 0, 1), 9), 0:veh]);
+        snd::play("veh_tkd_chase_npc_jeeps_skid_stop", [veh, vectorscale((0, 0, 1), 9)]);
         wait(1);
     }
 }

@@ -14,7 +14,7 @@ function function_6dbaba52(name, var_36286198, var_2f7c44e9, stop_exploders, var
     if (isdefined(level.rule[name])) {
         var_65e2dd7c = level.rule[name];
     } else {
-        var_65e2dd7c = {#kill:[], #stop:[], #var_e4474fe9:[], #play:[], #var_74a7721:var_82e50bac};
+        var_65e2dd7c = {#var_74a7721:var_82e50bac, #play:[], #var_e4474fe9:[], #stop:[], #kill:[]};
     }
     profilestart();
     function_6e561a85(var_65e2dd7c.play, var_36286198);

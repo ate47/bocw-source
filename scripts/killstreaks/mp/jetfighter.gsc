@@ -21,14 +21,14 @@
 // Checksum 0xcc6e2632, Offset: 0x2b8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"jetfighter", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"jetfighter", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace jetfighter/jetfighter
 // Params 0, eflags: 0x6 linked
 // Checksum 0x5b2ca576, Offset: 0x308
 // Size: 0x1d4
-function private function_70a657d8() {
+function private preinit() {
     killstreaks::register_killstreak("killstreak_jetfighter", &usekillstreak);
     killstreakrules::function_feb4595f("jetfighter", &function_a0624137);
     clientfield::register("scriptmover", "jetfighter_contrail", 1, 1, "int");
@@ -111,7 +111,7 @@ function private function_4b3b25af(killstreak_id) {
     var_ce2c18d3.killstreak_id = killstreak_id;
     var_ce2c18d3.owner = self;
     var_ce2c18d3.pilotindex = namespace_f9b02f80::get_random_pilot_index("jetfighter");
-    var_ce2c18d3 killstreakrules::function_2e6ff61a("jetfighter", killstreak_id, {#team:team, #origin:var_ce2c18d3.origin});
+    var_ce2c18d3 killstreakrules::function_2e6ff61a("jetfighter", killstreak_id, {#origin:var_ce2c18d3.origin, #team:team});
     if (var_ce2c18d3 function_3fbf2154()) {
         return;
     }
@@ -184,7 +184,7 @@ function private function_6ff76fc6() {
         angles = self.angles;
         var_d44b8c3e = (self.origin[0], self.origin[1], height);
     }
-    return {#angles:angles, #var_d44b8c3e:var_d44b8c3e};
+    return {#var_d44b8c3e:var_d44b8c3e, #angles:angles};
 }
 
 // Namespace jetfighter/jetfighter
@@ -219,9 +219,9 @@ function private function_8f304847(var_d44b8c3e, startangles) {
                 maxheight = var_59a518e1[var_59a518e1.size - 1];
                 var_35637e22 = maxheight - var_59a518e1[0];
                 trace = groundtrace((var_d44b8c3e[0], var_d44b8c3e[1], maxheight), var_d44b8c3e - vectorscale((0, 0, 1), 5000), 0, undefined);
-                var_6be9958b = trace[#"position"][2];
+                groundheight = trace[#"position"][2];
                 bundle = killstreaks::get_script_bundle("jetfighter");
-                var_6b1fb8d9 = var_6be9958b + (maxheight - var_6be9958b) * bundle.var_ff73e08c;
+                var_6b1fb8d9 = groundheight + (maxheight - groundheight) * bundle.var_ff73e08c;
                 if (var_35637e22 < 2000) {
                     adjustedpath[#"startposition"] = (var_90aa61b[0], var_90aa61b[1], var_6b1fb8d9);
                     adjustedpath[#"forward"] = forward;
@@ -256,11 +256,11 @@ function private function_8f304847(var_d44b8c3e, startangles) {
 // Size: 0x274
 function private function_ce402c10(bundle, team, var_d44b8c3e) {
     level function_6384fa58();
-    var_e06c789 = bundle.var_1018bb1;
-    var_85014cc6 = function_a3f6cdac(bundle.var_41c04fda);
+    maxtargets = bundle.var_1018bb1;
+    var_85014cc6 = sqr(bundle.var_41c04fda);
     targets = [];
-    foreach (var_587ae679 in level.var_a78d8a55) {
-        var_e54ee670 = level.var_500867a0[var_587ae679];
+    foreach (streaktype in level.var_a78d8a55) {
+        var_e54ee670 = level.var_500867a0[streaktype];
         if (isarray(var_e54ee670)) {
             foreach (streak in var_e54ee670) {
                 if (util::function_fbce7263(streak.team, team)) {
@@ -273,8 +273,8 @@ function private function_ce402c10(bundle, team, var_d44b8c3e) {
                         targets = array(targets);
                     }
                     targets[targets.size] = streak;
-                    streak.killstreakbundle = killstreaks::get_script_bundle(var_587ae679);
-                    if (targets.size >= var_e06c789) {
+                    streak.killstreakbundle = killstreaks::get_script_bundle(streaktype);
+                    if (targets.size >= maxtargets) {
                         return targets;
                     }
                 }
@@ -291,11 +291,11 @@ function private function_ce402c10(bundle, team, var_d44b8c3e) {
 function private function_a0624137(var_be96ce4e) {
     level function_6384fa58();
     bundle = killstreaks::get_script_bundle("jetfighter");
-    var_85014cc6 = function_a3f6cdac(bundle.var_41c04fda);
+    var_85014cc6 = sqr(bundle.var_41c04fda);
     targets = [];
     canuse = 0;
-    foreach (var_587ae679 in level.var_a78d8a55) {
-        var_e54ee670 = level.var_500867a0[var_587ae679];
+    foreach (streaktype in level.var_a78d8a55) {
+        var_e54ee670 = level.var_500867a0[streaktype];
         if (isarray(var_e54ee670)) {
             foreach (streak in var_e54ee670) {
                 if (util::function_fbce7263(streak.team, self.team)) {
@@ -353,18 +353,18 @@ function private function_a04ffd9d(target, var_196fbc4d, owner) {
         target.var_7cc84720 = self;
     }
     weapon = getweapon("jetfighter_missile");
-    var_ee7e70af = 0;
-    while (var_ee7e70af < 1) {
+    missilesfired = 0;
+    while (missilesfired < 1) {
         var_6a709ea1 = 0;
         foreach (var_367ba7d3 in var_196fbc4d) {
             if (isinarray(self.var_fb24e6b5, var_367ba7d3)) {
                 continue;
             }
             if (isdefined(owner)) {
-                self thread function_90471c53(target, var_367ba7d3, weapon, owner);
+                self thread firemissile(target, var_367ba7d3, weapon, owner);
             }
             var_6a709ea1 = 1;
-            var_ee7e70af++;
+            missilesfired++;
             break;
         }
         if (var_6a709ea1) {
@@ -406,7 +406,7 @@ function private function_8f23fd43() {
 // Params 4, eflags: 0x6 linked
 // Checksum 0x757ad531, Offset: 0x1d10
 // Size: 0x1cc
-function private function_90471c53(target, spawnpoint, weapon, owner) {
+function private firemissile(target, spawnpoint, weapon, owner) {
     self endon(#"death");
     if (!isdefined(self.var_fb24e6b5)) {
         self.var_fb24e6b5 = [];
@@ -446,7 +446,7 @@ function private function_3fbf2154(var_593a7842 = 1) {
     if (level.var_3e99cf4e.size) {
         foreach (var_ce2c18d3 in level.var_3e99cf4e) {
             if (util::function_fbce7263(var_ce2c18d3.team, self.team)) {
-                if (!isdefined(var_11c5ecfd) || distance2dsquared(var_ce2c18d3.origin, self.origin) <= function_a3f6cdac(var_11c5ecfd)) {
+                if (!isdefined(var_11c5ecfd) || distance2dsquared(var_ce2c18d3.origin, self.origin) <= sqr(var_11c5ecfd)) {
                     if (var_593a7842) {
                         self thread function_593a7842(var_ce2c18d3);
                     }
@@ -523,18 +523,18 @@ function private function_f7961216() {
 // Checksum 0xbc5adb23, Offset: 0x2330
 // Size: 0x1e8
 function private function_c3c5d5e1(var_f7d31a7) {
-    foreach (var_ea5d6a42 in var_f7d31a7) {
-        var_ea5d6a42 killstreaks::configure_team("jetfighter", self.killstreak_id, self.owner, undefined, undefined, undefined);
-        var_ea5d6a42 thread killstreaks::function_5a7ecb6b();
-        var_ea5d6a42 clientfield::set("jetfighter_contrail", 1);
-        var_ea5d6a42 playloopsound(#"hash_1245719ce362e37");
+    foreach (jet in var_f7d31a7) {
+        jet killstreaks::configure_team("jetfighter", self.killstreak_id, self.owner, undefined, undefined, undefined);
+        jet thread killstreaks::function_5a7ecb6b();
+        jet clientfield::set("jetfighter_contrail", 1);
+        jet playloopsound(#"hash_1245719ce362e37");
     }
     scenelength = scene::function_12479eba(#"p9_fxanim_mp_jetfighter_bundle");
     wait(scenelength - 1.5);
-    foreach (var_ea5d6a42 in var_f7d31a7) {
-        if (isdefined(var_ea5d6a42)) {
-            var_ea5d6a42 clientfield::set("jetfighter_contrail", 0);
-            var_ea5d6a42 thread killstreaks::function_3696d106();
+    foreach (jet in var_f7d31a7) {
+        if (isdefined(jet)) {
+            jet clientfield::set("jetfighter_contrail", 0);
+            jet thread killstreaks::function_3696d106();
         }
     }
 }

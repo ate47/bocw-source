@@ -11,7 +11,7 @@
 #using script_44b0b8420eabacad;
 #using scripts\core_common\rank_shared.gsc;
 #using scripts\core_common\math_shared.gsc;
-#using script_32c8b5b0eb2854f3;
+#using scripts\core_common\gamestate_util.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
 
 #namespace globallogic_defaults;
@@ -192,7 +192,7 @@ function default_onroundscorelimit() {
 function private function_85d45b4b(origin, angles) {
     self spawn(origin, angles);
     if (self.pers[#"team"] != #"spectator" && level.var_1ba484ad === 2) {
-        self namespace_8a203916::function_86df9236();
+        self spectate_view::function_86df9236();
     }
 }
 

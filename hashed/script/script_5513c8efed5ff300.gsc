@@ -17,14 +17,14 @@
 // Checksum 0x1572bc84, Offset: 0x3e8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_7f07ebed7e062c01", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_7f07ebed7e062c01", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_70eba6e6/namespace_70eba6e6
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80c37b1f, Offset: 0x430
 // Size: 0x38c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_connect(&function_af62abd5);
     /#
         function_5ac4dc99("<unknown string>", 0);
@@ -39,7 +39,7 @@ function private function_70a657d8() {
         function_5ac4dc99("<unknown string>", -1);
         function_5ac4dc99("<unknown string>", "<unknown string>");
         function_5ac4dc99("<unknown string>", "<unknown string>");
-        level.var_698302a = {#var_3b8c60fd:"<unknown string>", #var_a47d91bd:"<unknown string>", #var_73c7789b:-1, #var_8ef81ab9:-1, #var_3f25d9dc:-1, #var_6d4f5e7d:-1, #var_dc2904c0:"<unknown string>", #var_86c1b5e2:"<unknown string>", #var_fec76b21:[3:3, 2:2, 1:1, 0:0], #var_4751b3ae:[8:8, 7:7, 6:6, 5:5, 4:4, 3:3, 2:2, 1:1, 0:0], #var_b24c705f:[3:4, 2:2, 1:1, 0:0]};
+        level.var_698302a = {#var_b24c705f:[0, 1, 2, 4], #var_4751b3ae:[0, 1, 2, 3, 4, 5, 6, 7, 8], #var_fec76b21:[0, 1, 2, 3], #var_86c1b5e2:"<unknown string>", #var_dc2904c0:"<unknown string>", #var_6d4f5e7d:-1, #var_3f25d9dc:-1, #var_8ef81ab9:-1, #var_73c7789b:-1, #var_a47d91bd:"<unknown string>", #var_3b8c60fd:"<unknown string>"};
         function_5ac4dc99("<unknown string>", 0);
         function_cd140ee9("<unknown string>", &function_5db7f789);
         adddebugcommand("<unknown string>");
@@ -258,8 +258,8 @@ function private function_af62abd5() {
     /#
         var_27a3190b = getdvarint(#"hash_562b6e46f7c0d74", 0);
         if (var_27a3190b) {
-            var_f5e40a02 = [9:"<unknown string>", 8:"<unknown string>", 7:"<unknown string>", 6:"<unknown string>", 5:"<unknown string>", 4:"<unknown string>", 3:"<unknown string>", 2:"<unknown string>", 1:"<unknown string>", 0:"<unknown string>"];
-            var_d2e296c = [9:"<unknown string>", 8:"<unknown string>", 7:"<unknown string>", 6:"<unknown string>", 5:"<unknown string>", 4:"<unknown string>", 3:"<unknown string>", 2:"<unknown string>", 1:"<unknown string>", 0:"<unknown string>"];
+            var_f5e40a02 = ["<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>"];
+            var_d2e296c = ["<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>"];
             level.var_698302a.var_86c1b5e2 = "<unknown string>";
             level.var_698302a.var_dc2904c0 = "<unknown string>";
             var_91fbf14a = getscriptbundle("<unknown string>");
@@ -283,7 +283,7 @@ function private function_af62abd5() {
             var_8145cfce = [];
             var_4b60cd28 = function_979631fd();
             foreach (var_7ada56b4 in var_4b60cd28) {
-                var_8145cfce[var_8145cfce.size] = var_7ada56b4.var_9c480844;
+                var_8145cfce[var_8145cfce.size] = var_7ada56b4.ref_name;
             }
             var_8145cfce[var_8145cfce.size] = "<unknown string>";
             var_f7b0ce98 = randomint(var_8145cfce.size);
@@ -366,12 +366,12 @@ function private function_a2fd5d34() {
     player = self;
     traits = profile_traits::function_979631fd();
     var_8651d525 = profile_traits::function_3937b542();
-    var_75177bd7 = [1:player function_a24493b0(), 0:player function_c005cf32()];
+    var_75177bd7 = [player function_c005cf32(), player function_a24493b0()];
     for (var_f368f4c7 = 0; var_f368f4c7 < var_75177bd7.size; var_f368f4c7++) {
         var_fb7d23d9 = var_8651d525;
         if (level flag::get("cp_profile_perks_activated")) {
             foreach (var_7ada56b4 in traits) {
-                if (var_75177bd7[var_f368f4c7] == var_7ada56b4.var_9c480844) {
+                if (var_75177bd7[var_f368f4c7] == var_7ada56b4.ref_name) {
                     var_fb7d23d9 = var_7ada56b4;
                     break;
                 }
@@ -399,16 +399,16 @@ function private function_d4a8b603() {
 // Size: 0x284
 function private function_ba2aba1() {
     player = self;
-    player savegame::function_6d003cb9(#"hash_36948672f773e98c", 1);
-    player savegame::function_6d003cb9(#"hash_2895afd5f948f51", 0);
-    player savegame::function_6d003cb9(#"hash_3d3a5e4595ae72e3", "");
-    player savegame::function_6d003cb9(#"hash_3c708f964c0cdc7d", "");
-    player savegame::function_6d003cb9(#"hash_6077f719ce58d931", 0);
-    player savegame::function_6d003cb9(#"hash_57be239af33ccdc3", 0);
-    player savegame::function_6d003cb9(#"hash_69e7b14384f0405b", 0);
-    player savegame::function_6d003cb9(#"hash_353e9f2516585cdc", 0);
-    player savegame::function_6d003cb9(#"hash_25264c7bd6d77125", "");
-    player savegame::function_6d003cb9(#"hash_2526497bd6d76c0c", "");
+    player savegame::set_player_data(#"hash_36948672f773e98c", 1);
+    player savegame::set_player_data(#"hash_2895afd5f948f51", 0);
+    player savegame::set_player_data(#"hash_3d3a5e4595ae72e3", "");
+    player savegame::set_player_data(#"hash_3c708f964c0cdc7d", "");
+    player savegame::set_player_data(#"hash_6077f719ce58d931", 0);
+    player savegame::set_player_data(#"hash_57be239af33ccdc3", 0);
+    player savegame::set_player_data(#"hash_69e7b14384f0405b", 0);
+    player savegame::set_player_data(#"hash_353e9f2516585cdc", 0);
+    player savegame::set_player_data(#"hash_25264c7bd6d77125", "");
+    player savegame::set_player_data(#"hash_2526497bd6d76c0c", "");
     player stats::set_stat(#"hash_56496a50c42322a9", "");
     player stats::set_stat(#"hash_47f2aa02a53a0d57", "");
     player stats::set_stat(#"hash_37a113cbd02390eb", "");
@@ -443,7 +443,7 @@ function private function_cd5334d6(var_8f977acb, profilesubject = "player") {
     player function_c7410540(var_8f977acb, profilesubject);
     confirmresponse = undefined;
     confirmresponse = level waittill(#"personnel_profile_closed");
-    if (is_true(confirmresponse.var_ee99e999)) {
+    if (is_true(confirmresponse.isconfirmed)) {
         var_b91e212a = var_8f977acb == 0 || var_8f977acb == 2;
         if (var_b91e212a) {
             player function_e4376e3f();
@@ -456,7 +456,7 @@ function private function_cd5334d6(var_8f977acb, profilesubject = "player") {
     }
     namespace_61e6d095::remove(#"hash_7f07ebed7e062c01");
     namespace_61e6d095::function_4279fd02(#"hash_7f07ebed7e062c01");
-    player val::function_e681e68e(#"hash_5423215595996405");
+    player val::reset_all(#"hash_5423215595996405");
 }
 
 // Namespace namespace_70eba6e6/namespace_70eba6e6
@@ -514,7 +514,7 @@ function private function_c7410540(var_8f977acb, profilesubject) {
         for (i = 0; i < traits.size; i++) {
             listindex = i + 1;
             namespace_61e6d095::function_f2a9266(#"hash_7f07ebed7e062c01", listindex, "Identifier", i + 1);
-            namespace_61e6d095::function_f2a9266(#"hash_7f07ebed7e062c01", listindex, "reference", traits[i].var_9c480844);
+            namespace_61e6d095::function_f2a9266(#"hash_7f07ebed7e062c01", listindex, "reference", traits[i].ref_name);
             namespace_61e6d095::function_f2a9266(#"hash_7f07ebed7e062c01", listindex, "displayName", traits[i].display_name);
             namespace_61e6d095::function_f2a9266(#"hash_7f07ebed7e062c01", listindex, "description", traits[i].var_e473fa1e);
             namespace_61e6d095::function_f2a9266(#"hash_7f07ebed7e062c01", listindex, "effect", traits[i].var_50d366ef);
@@ -527,7 +527,7 @@ function private function_c7410540(var_8f977acb, profilesubject) {
     var_1659d59a = 0;
     var_1856af9d = getscriptbundle(#"hash_7dc9096275da99d4");
     foreach (var_fdf21313 in var_1856af9d.profiles) {
-        if (var_fdf21313.var_9c480844 == profilesubject) {
+        if (var_fdf21313.ref_name == profilesubject) {
             var_1659d59a = 1;
             namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "firstName", var_fdf21313.var_34d094eb);
             namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "lastName", var_fdf21313.var_705af76d);
@@ -564,16 +564,16 @@ function private function_e4376e3f() {
     militarybackgroundchoice = int(namespace_61e6d095::function_82e355ff(#"hash_7f07ebed7e062c01", "militaryBackgroundChoice"));
     var_dbbfc950 = namespace_61e6d095::function_82e355ff(#"hash_7f07ebed7e062c01", "psychProfile1Choice");
     var_b22f761b = namespace_61e6d095::function_82e355ff(#"hash_7f07ebed7e062c01", "psychProfile2Choice");
-    player savegame::function_6d003cb9(#"hash_36948672f773e98c", 1);
-    player savegame::function_6d003cb9(#"hash_2895afd5f948f51", 1);
-    player savegame::function_6d003cb9(#"hash_3d3a5e4595ae72e3", var_b5987294);
-    player savegame::function_6d003cb9(#"hash_3c708f964c0cdc7d", var_6b5bdb53);
-    player savegame::function_6d003cb9(#"hash_6077f719ce58d931", placeofbirthchoice);
-    player savegame::function_6d003cb9(#"hash_57be239af33ccdc3", genderchoice);
-    player savegame::function_6d003cb9(#"hash_69e7b14384f0405b", skintonechoice);
-    player savegame::function_6d003cb9(#"hash_353e9f2516585cdc", militarybackgroundchoice);
-    player savegame::function_6d003cb9(#"hash_25264c7bd6d77125", var_dbbfc950);
-    player savegame::function_6d003cb9(#"hash_2526497bd6d76c0c", var_b22f761b);
+    player savegame::set_player_data(#"hash_36948672f773e98c", 1);
+    player savegame::set_player_data(#"hash_2895afd5f948f51", 1);
+    player savegame::set_player_data(#"hash_3d3a5e4595ae72e3", var_b5987294);
+    player savegame::set_player_data(#"hash_3c708f964c0cdc7d", var_6b5bdb53);
+    player savegame::set_player_data(#"hash_6077f719ce58d931", placeofbirthchoice);
+    player savegame::set_player_data(#"hash_57be239af33ccdc3", genderchoice);
+    player savegame::set_player_data(#"hash_69e7b14384f0405b", skintonechoice);
+    player savegame::set_player_data(#"hash_353e9f2516585cdc", militarybackgroundchoice);
+    player savegame::set_player_data(#"hash_25264c7bd6d77125", var_dbbfc950);
+    player savegame::set_player_data(#"hash_2526497bd6d76c0c", var_b22f761b);
     player stats::set_stat(#"hash_56496a50c42322a9", var_b5987294);
     player stats::set_stat(#"hash_47f2aa02a53a0d57", var_6b5bdb53);
     player stats::set_stat(#"hash_37a113cbd02390eb", var_dbbfc950);

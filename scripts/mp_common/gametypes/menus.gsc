@@ -17,14 +17,14 @@
 // Checksum 0x5dc09785, Offset: 0x2b0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"menus", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"menus", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace menus/menus
 // Params 0, eflags: 0x6 linked
 // Checksum 0x3b44a654, Offset: 0x2f8
 // Size: 0x64
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&init);
     callback::on_connect(&on_player_connect);
     callback::on_menu_response(&on_menu_response);
@@ -232,7 +232,7 @@ function function_2d1eb0ec(intpayload) {
         }
         weapon = self getcurrentweapon();
         var_2cf49821 = isdefined(weapon) && weapon.var_2cf49821;
-        if (!var_2cf49821 && self function_7cadec11() && !self isinfreefall() && !self function_49b3360c() && !self inlaststand() && isalive(self)) {
+        if (!var_2cf49821 && self function_7cadec11() && !self isinfreefall() && !self isparachuting() && !self inlaststand() && isalive(self)) {
             gesture = undefined;
             if (isdefined(callout.var_17d07d2d) && var_f4cd8d56 == 1) {
                 gesture = self gestures::function_c77349d4(callout.var_17d07d2d);

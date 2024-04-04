@@ -22,7 +22,7 @@
 #using script_340a2e805e35f7a2;
 #using script_471b31bd963b388e;
 #using scripts\core_common\item_drop.gsc;
-#using script_7fc996fe8678852;
+#using scripts\core_common\content_manager.gsc;
 #using scripts\core_common\util_shared.gsc;
 #using scripts\core_common\system_shared.gsc;
 #using scripts\core_common\gameobjects_shared.gsc;
@@ -38,14 +38,14 @@
 // Checksum 0x5f3b3929, Offset: 0x4a0
 // Size: 0xa4
 function private autoexec __init__system__() {
-    system::register(#"zm_wallbuy", &function_70a657d8, &postinit, undefined, array(#"zm", #"zm_zonemgr", #"zm_unitrigger", #"zm_weapons", #"hash_5bcba15330839867"));
+    system::register(#"zm_wallbuy", &preinit, &postinit, undefined, array(#"zm", #"zm_zonemgr", #"zm_unitrigger", #"zm_weapons", #"hash_5bcba15330839867"));
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd8a2d3e5, Offset: 0x550
 // Size: 0x1bc
-function private function_70a657d8() {
+function private preinit() {
     if (!is_true(zm_custom::function_901b751c(#"zmwallbuysenabled"))) {
         a_outlines = getentarray("wallbuy_outline", "targetname");
         foreach (e_outline in a_outlines) {
@@ -57,7 +57,7 @@ function private function_70a657d8() {
         clientfield::register("scriptmover", "wallbuy_ambient_fx", 1, 3, "int");
         clientfield::register("scriptmover", "wallbuy_reveal_fx", 1, 1, "int");
     }
-    namespace_8b6a9d79::function_b3464a7c("wallbuy", &function_d77fb9ee);
+    content_manager::register_script("wallbuy", &function_d77fb9ee);
     callback::on_round_end(&on_round_end);
 }
 
@@ -69,13 +69,13 @@ function private postinit() {
     if (!getgametypesetting(#"zmwallbuysenabled")) {
         return;
     }
-    var_f5ae494f = struct::get_array(#"hash_313be7fccc870cdd", "variantname");
-    if (!isdefined(var_f5ae494f) || var_f5ae494f.size <= 0) {
+    mapdestinations = struct::get_array(#"hash_313be7fccc870cdd", "variantname");
+    if (!isdefined(mapdestinations) || mapdestinations.size <= 0) {
         thread init_spawnable_weapon_upgrade();
         return;
     }
-    if (!zm_utility::is_survival() && isdefined(var_f5ae494f) && var_f5ae494f.size > 0) {
-        level thread function_669a830(var_f5ae494f[0]);
+    if (!zm_utility::is_survival() && isdefined(mapdestinations) && mapdestinations.size > 0) {
+        level thread function_669a830(mapdestinations[0]);
     }
 }
 
@@ -89,100 +89,100 @@ function on_round_end() {
     }
     if (level.round_number % 5 == 0) {
         round_number = level.round_number;
-        foreach (instance in level.var_7d45d0d4.var_5eba96b3[#"wallbuy"]) {
-            foreach (var_727813d6 in instance.var_fe2612fe[#"wallbuy_chalk"]) {
-                if (isdefined(var_727813d6.trigger.weapon.name) && isdefined(var_727813d6.trigger.rarity) && isdefined(var_727813d6.trigger) && isdefined(var_727813d6.trigger.weapon.displayname) && is_true(var_727813d6.trigger.var_9f32a5f4)) {
-                    if (var_727813d6.trigger.rarity != "orange") {
+        foreach (instance in level.contentmanager.spawnedinstances[#"wallbuy"]) {
+            foreach (chalk in instance.contentgroups[#"wallbuy_chalk"]) {
+                if (isdefined(chalk.trigger.weapon.name) && isdefined(chalk.trigger.rarity) && isdefined(chalk.trigger) && isdefined(chalk.trigger.weapon.displayname) && is_true(chalk.trigger.var_9f32a5f4)) {
+                    if (chalk.trigger.rarity != "orange") {
                         n_chance = 0;
                         switch (round_number) {
                         case 5:
-                            if (var_727813d6.trigger.rarity == "green") {
+                            if (chalk.trigger.rarity == "green") {
                                 n_chance = 23;
-                            } else if (var_727813d6.trigger.rarity == "blue") {
+                            } else if (chalk.trigger.rarity == "blue") {
                                 n_chance = 8;
-                            } else if (var_727813d6.trigger.rarity == "purple") {
+                            } else if (chalk.trigger.rarity == "purple") {
                                 n_chance = 6;
                             }
                             break;
                         case 10:
-                            if (var_727813d6.trigger.rarity == "green") {
+                            if (chalk.trigger.rarity == "green") {
                                 n_chance = 45;
-                            } else if (var_727813d6.trigger.rarity == "blue") {
+                            } else if (chalk.trigger.rarity == "blue") {
                                 n_chance = 10;
-                            } else if (var_727813d6.trigger.rarity == "purple") {
+                            } else if (chalk.trigger.rarity == "purple") {
                                 n_chance = 7;
                             }
                             break;
                         case 15:
-                            if (var_727813d6.trigger.rarity == "green") {
+                            if (chalk.trigger.rarity == "green") {
                                 n_chance = 74;
-                            } else if (var_727813d6.trigger.rarity == "blue") {
+                            } else if (chalk.trigger.rarity == "blue") {
                                 n_chance = 19;
-                            } else if (var_727813d6.trigger.rarity == "purple") {
+                            } else if (chalk.trigger.rarity == "purple") {
                                 n_chance = 9;
                             }
                             break;
                         case 20:
-                            if (var_727813d6.trigger.rarity == "green") {
+                            if (chalk.trigger.rarity == "green") {
                                 n_chance = 84;
-                            } else if (var_727813d6.trigger.rarity == "blue") {
+                            } else if (chalk.trigger.rarity == "blue") {
                                 n_chance = 44;
-                            } else if (var_727813d6.trigger.rarity == "purple") {
+                            } else if (chalk.trigger.rarity == "purple") {
                                 n_chance = 9;
                             }
                             break;
                         case 25:
-                            if (var_727813d6.trigger.rarity == "green") {
+                            if (chalk.trigger.rarity == "green") {
                                 n_chance = 95;
-                            } else if (var_727813d6.trigger.rarity == "blue") {
+                            } else if (chalk.trigger.rarity == "blue") {
                                 n_chance = 73;
-                            } else if (var_727813d6.trigger.rarity == "purple") {
+                            } else if (chalk.trigger.rarity == "purple") {
                                 n_chance = 18;
                             }
                             break;
                         case 30:
-                            if (var_727813d6.trigger.rarity == "green") {
+                            if (chalk.trigger.rarity == "green") {
                                 n_chance = 100;
-                            } else if (var_727813d6.trigger.rarity == "blue") {
+                            } else if (chalk.trigger.rarity == "blue") {
                                 n_chance = 90;
-                            } else if (var_727813d6.trigger.rarity == "purple") {
+                            } else if (chalk.trigger.rarity == "purple") {
                                 n_chance = 43;
                             }
                             break;
                         case 35:
-                            if (var_727813d6.trigger.rarity == "green") {
+                            if (chalk.trigger.rarity == "green") {
                                 n_chance = 100;
-                            } else if (var_727813d6.trigger.rarity == "blue") {
+                            } else if (chalk.trigger.rarity == "blue") {
                                 n_chance = 100;
-                            } else if (var_727813d6.trigger.rarity == "purple") {
+                            } else if (chalk.trigger.rarity == "purple") {
                                 n_chance = 63;
                             }
                             break;
                         case 40:
                         default:
-                            if (var_727813d6.trigger.rarity == "green") {
+                            if (chalk.trigger.rarity == "green") {
                                 n_chance = 100;
-                            } else if (var_727813d6.trigger.rarity == "blue") {
+                            } else if (chalk.trigger.rarity == "blue") {
                                 n_chance = 100;
-                            } else if (var_727813d6.trigger.rarity == "purple") {
+                            } else if (chalk.trigger.rarity == "purple") {
                                 n_chance = 90;
                             }
                             break;
                         }
                         if (math::cointoss(n_chance)) {
-                            switch (var_727813d6.trigger.rarity) {
+                            switch (chalk.trigger.rarity) {
                             case #"green":
-                                var_3d2cce9 = "blue";
+                                new_rarity = "blue";
                                 break;
                             case #"blue":
-                                var_3d2cce9 = "purple";
+                                new_rarity = "purple";
                                 break;
                             case #"purple":
                             default:
-                                var_3d2cce9 = "orange";
+                                new_rarity = "orange";
                                 break;
                             }
-                            function_26b21477(var_727813d6, var_3d2cce9);
+                            function_26b21477(chalk, new_rarity);
                         }
                     }
                 }
@@ -196,25 +196,25 @@ function on_round_end() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x4d7c304, Offset: 0x1008
 // Size: 0x27c
-function function_26b21477(var_727813d6, var_3d2cce9) {
-    if (isdefined(var_727813d6.trigger.chalk_model)) {
-        var_727813d6.trigger.chalk_model delete();
-        var_a2a22fe0 = var_727813d6.var_fe2612fe[#"hash_79425207763b7a66"][0];
-        var_324ad795 = function_d26435e4(var_a2a22fe0, var_3d2cce9, var_727813d6.trigger.weapon.name);
-        chalk_model = self namespace_8b6a9d79::function_f3d93ee9(var_727813d6, var_324ad795, 0, 0);
+function function_26b21477(chalk, new_rarity) {
+    if (isdefined(chalk.trigger.chalk_model)) {
+        chalk.trigger.chalk_model delete();
+        var_a2a22fe0 = chalk.contentgroups[#"hash_79425207763b7a66"][0];
+        var_324ad795 = function_d26435e4(var_a2a22fe0, new_rarity, chalk.trigger.weapon.name);
+        chalk_model = self content_manager::spawn_script_model(chalk, var_324ad795, 0, 0);
         chalk_model clientfield::set("set_compass_icon", 1);
         fx_pos = chalk_model getcentroid();
-        playfx(#"hash_3d4331a432da7e8", fx_pos, anglestoforward(var_727813d6.angles), (0, 0, 1));
-        var_727813d6.trigger.chalk_model = chalk_model;
+        playfx(#"hash_3d4331a432da7e8", fx_pos, anglestoforward(chalk.angles), (0, 0, 1));
+        chalk.trigger.chalk_model = chalk_model;
         chalk_model.targetname = "chalk_model";
-        item_name = level.var_29d88fe5[var_727813d6.trigger.weapon.name][var_3d2cce9];
-        var_727813d6.trigger.item_name = item_name;
-        var_727813d6.trigger.rarity = var_3d2cce9;
-        cost = zm_weapons::get_weapon_cost(var_727813d6.trigger.weapon);
-        cost = cost + zm_weapons::function_5d47055e(var_3d2cce9);
-        var_727813d6.trigger.cost = cost;
-        hint = function_6e93c5b2(var_3d2cce9);
-        var_727813d6.trigger sethintstring(hint, var_727813d6.trigger.weapon.displayname, cost);
+        item_name = level.var_29d88fe5[chalk.trigger.weapon.name][new_rarity];
+        chalk.trigger.item_name = item_name;
+        chalk.trigger.rarity = new_rarity;
+        cost = zm_weapons::get_weapon_cost(chalk.trigger.weapon);
+        cost = cost + zm_weapons::function_5d47055e(new_rarity);
+        chalk.trigger.cost = cost;
+        hint = function_6e93c5b2(new_rarity);
+        chalk.trigger sethintstring(hint, chalk.trigger.weapon.displayname, cost);
     }
 }
 
@@ -287,8 +287,8 @@ function function_8183be86() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xec57d5d, Offset: 0x1630
 // Size: 0x174
-function function_6e93c5b2(var_13f9dee7) {
-    switch (var_13f9dee7) {
+function function_6e93c5b2(str_rarity) {
+    switch (str_rarity) {
     case #"resource":
     case #"none":
     case #"white":
@@ -318,12 +318,12 @@ function function_6e93c5b2(var_13f9dee7) {
 // Params 8, eflags: 0x2 linked
 // Checksum 0xb2609e23, Offset: 0x17b0
 // Size: 0x464
-function function_a1a1d2(weapon_name, var_e9040287, item_name, chalk_model, index, var_492e21a0, var_58bd64f1, var_13f9dee7) {
+function function_a1a1d2(weapon_name, var_e9040287, item_name, chalk_model, index, var_492e21a0, var_58bd64f1, str_rarity) {
     weapon = getweapon(weapon_name);
-    hint = function_6e93c5b2(var_13f9dee7);
+    hint = function_6e93c5b2(str_rarity);
     cost = zm_weapons::get_weapon_cost(weapon);
-    cost = cost + zm_weapons::function_5d47055e(var_13f9dee7);
-    chalk_model = self namespace_8b6a9d79::function_f3d93ee9(self, chalk_model, 0, 0);
+    cost = cost + zm_weapons::function_5d47055e(str_rarity);
+    chalk_model = self content_manager::spawn_script_model(self, chalk_model, 0, 0);
     chalk_model clientfield::set("set_compass_icon", 1);
     switch (weapon.weapclass) {
     case #"mg":
@@ -347,7 +347,7 @@ function function_a1a1d2(weapon_name, var_e9040287, item_name, chalk_model, inde
     }
     v_center = chalk_model getcentroid();
     var_8bda2b44 = v_center[1] - chalk_model.origin[1];
-    trigger = self namespace_8b6a9d79::function_22e120bc(self, &function_ab0340bb, hint, weapon.displayname, 25, var_7f9f4eb, 32, (0, var_8bda2b44, 0), cost);
+    trigger = self content_manager::function_22e120bc(self, &function_ab0340bb, hint, weapon.displayname, 25, var_7f9f4eb, 32, (0, var_8bda2b44, 0), cost);
     trigger.angles = chalk_model.angles + vectorscale((0, 1, 0), 90);
     v_forward = anglestoforward(trigger.angles) * 10;
     trigger.origin = trigger.origin - v_forward;
@@ -355,11 +355,11 @@ function function_a1a1d2(weapon_name, var_e9040287, item_name, chalk_model, inde
     trigger.cost = cost;
     trigger.var_9f32a5f4 = 1;
     trigger.item_name = item_name;
-    trigger.rarity = var_13f9dee7;
+    trigger.rarity = str_rarity;
     chalk_model.targetname = "chalk_model";
     trigger.chalk_model = chalk_model;
     trigger.targetname = "trigger_wallbuy";
-    tempmodel = var_e9040287 namespace_8b6a9d79::function_f3d93ee9(var_e9040287, weapon.worldmodel);
+    tempmodel = var_e9040287 content_manager::spawn_script_model(var_e9040287, weapon.worldmodel);
     tempmodel useweaponmodel(weapon);
     if (isdefined(var_e9040287.var_3474efbf)) {
         var_e27c9160 = tempmodel worldtolocalcoords(tempmodel.origin);
@@ -407,7 +407,7 @@ function function_7a2524b3() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x58842f51, Offset: 0x1dd0
 // Size: 0xc
-function function_ab0340bb(*var_71f7928d) {
+function function_ab0340bb(*sparams) {
     
 }
 
@@ -419,7 +419,7 @@ function function_d77fb9ee(s_instance) {
     if (!is_true(getgametypesetting(#"zmwallbuysenabled"))) {
         return;
     }
-    wallbuys = s_instance.var_fe2612fe[#"wallbuy_chalk"];
+    wallbuys = s_instance.contentgroups[#"wallbuy_chalk"];
     count = 0;
     foreach (wallbuy in wallbuys) {
         weapon_name = wallbuy.script_noteworthy;
@@ -427,7 +427,7 @@ function function_d77fb9ee(s_instance) {
             index = randomint(level.var_8e3edeb9.size);
             weapon_name = level.var_8e3edeb9[index];
         }
-        var_e9040287 = wallbuy.var_fe2612fe[#"hash_79425207763b7a66"][0];
+        var_e9040287 = wallbuy.contentgroups[#"hash_79425207763b7a66"][0];
         rarity = function_8183be86();
         if (zm_utility::is_classic() && isdefined(level.round_number) && level.round_number <= 1) {
             rarity = isdefined(wallbuy.script_string) ? wallbuy.script_string : "white";
@@ -645,12 +645,12 @@ function init_weapon_upgrade() {
 function init_spawnable_weapon_upgrade(s_destination) {
     if (isdefined(s_destination)) {
         foreach (s_location in s_destination.locations) {
-            if (namespace_8b6a9d79::function_fe9fb6fd(s_location)) {
+            if (content_manager::function_fe9fb6fd(s_location)) {
                 continue;
             }
             wallbuy = s_location.instances[#"wallbuy"];
             if (isdefined(wallbuy)) {
-                namespace_8b6a9d79::function_20d7e9c7(wallbuy);
+                content_manager::spawn_instance(wallbuy);
             }
         }
         return;
@@ -757,7 +757,7 @@ function init_spawnable_weapon_upgrade(s_destination) {
         unitrigger_stub.target = spawn_list[i].target;
         unitrigger_stub.targetname = spawn_list[i].targetname;
         unitrigger_stub.weapon = spawn_list[i].weapon;
-        unitrigger_stub.var_9d17fab9 = spawn_list[i].zombie_weapon_upgrade + "_item_sr";
+        unitrigger_stub.item_entry = spawn_list[i].zombie_weapon_upgrade + "_item_sr";
         unitrigger_stub.clientfieldname = clientfieldname;
         if (unitrigger_stub.weapon.weapclass != "melee" && unitrigger_stub.weapon.weapclass != "grenade") {
             zm_unitrigger::function_2547d31f(unitrigger_stub, &wall_weapon_update_prompt);
@@ -1180,7 +1180,7 @@ function weapon_spawn_think() {
             if (isdefined(level.var_db463b5)) {
                 self [[ level.var_db463b5 ]](player);
             }
-            level notify(#"weapon_bought", {#weapon:self.weapon, #player:player});
+            level notify(#"weapon_bought", {#player:player, #weapon:self.weapon});
             player zm_stats::increment_challenge_stat(#"survivalist_buy_wallbuy", undefined, 1);
             player zm_stats::increment_challenge_stat(#"hash_385398b8acbf8b4a", undefined, 1);
             player zm_stats::increment_challenge_stat(#"hash_702d98df99af63d5", undefined, 1);
@@ -1216,8 +1216,8 @@ function weapon_spawn_think() {
                         }
                     }
                     point = function_4ba8fde(item_name);
-                    if (isdefined(point.var_a6762160.var_a53e9db0)) {
-                        weapon = namespace_65181344::function_67456242(point.var_a6762160);
+                    if (isdefined(point.itementry.var_a53e9db0)) {
+                        weapon = namespace_65181344::function_67456242(point.itementry);
                         dropitem = item_drop::drop_item(0, weapon, 1, weapon.maxammo, point.id, self.origin, self.angles, 1);
                         dropitem.wallbuy_weapon = 1;
                         dropitem.hidetime = 1;
@@ -1231,12 +1231,12 @@ function weapon_spawn_think() {
                 }
             }
             if (isdefined(weapon)) {
-                level notify(#"hash_159f5d1e1b511031", {#weapon:self.weapon, #player:player});
+                level notify(#"hash_159f5d1e1b511031", {#player:player, #weapon:self.weapon});
                 player zm_stats::increment_client_stat("wallbuy_weapons_purchased");
                 player zm_stats::increment_player_stat("wallbuy_weapons_purchased");
                 player zm_stats::function_8f10788e("boas_wallbuy_weapons_purchased");
                 bb::logpurchaseevent(player, self, cost, weapon.name, player zm_weapons::has_upgrade(weapon), "_weapon", "_purchase");
-                telemetry::function_18135b72(#"hash_44873692d238cf3b", {#purchaser:player, #rarity:rarity, #weapon:weapon});
+                telemetry::function_18135b72(#"hash_44873692d238cf3b", {#weapon:weapon, #rarity:rarity, #purchaser:player});
                 weaponindex = undefined;
                 if (isdefined(weaponindex)) {
                     weaponindex = matchrecordgetweaponindex(weapon);
@@ -1333,8 +1333,8 @@ function show_all_weapon_buys(player, *cost, *ammo_cost, *is_grenade, var_4ee444
 // Size: 0x294
 function weapon_show(player, var_4ee4441d = 0) {
     if (var_4ee4441d) {
-        var_4487b2bf = self.origin;
-        var_e27c9160 = self worldtolocalcoords(var_4487b2bf);
+        final_pos = self.origin;
+        var_e27c9160 = self worldtolocalcoords(final_pos);
         var_e27c9160 = (var_e27c9160[0], var_e27c9160[1] - 3, var_e27c9160[2]);
         self.origin = self localtoworldcoords(var_e27c9160);
         waitframe(1);
@@ -1342,7 +1342,7 @@ function weapon_show(player, var_4ee4441d = 0) {
         zm_utility::play_sound_at_pos("weapon_show", self.origin, self);
         time = 1;
         if (!isdefined(self._linked_ent)) {
-            self moveto(var_4487b2bf, time);
+            self moveto(final_pos, time);
         }
         return;
     }
@@ -1387,8 +1387,8 @@ function is_wallbuy(w_to_check) {
 // Params 1, eflags: 0x0
 // Checksum 0x42b98e37, Offset: 0x6190
 // Size: 0x17a
-function function_b5992fb1(var_13f9dee7 = #"none") {
-    switch (var_13f9dee7) {
+function function_b5992fb1(str_rarity = #"none") {
+    switch (str_rarity) {
     case #"green":
         self clientfield::set("wallbuy_ambient_fx", 3);
         break;
@@ -1414,8 +1414,8 @@ function function_b5992fb1(var_13f9dee7 = #"none") {
 // Params 1, eflags: 0x0
 // Checksum 0xda0fe513, Offset: 0x6318
 // Size: 0x17a
-function function_36eb0acc(var_13f9dee7 = #"none") {
-    switch (var_13f9dee7) {
+function function_36eb0acc(str_rarity = #"none") {
+    switch (str_rarity) {
     case #"green":
         self clientfield::set("model_rarity_rob", 3);
         break;
@@ -1619,8 +1619,8 @@ function function_d26435e4(wallbuy, rarity = undefined, weapon_name = undefined)
 // Params 1, eflags: 0x6 linked
 // Checksum 0xd4da25ae, Offset: 0x6de8
 // Size: 0xda
-function private function_db435e40(var_13f9dee7 = "white") {
-    switch (var_13f9dee7) {
+function private function_db435e40(str_rarity = "white") {
+    switch (str_rarity) {
     case #"green":
         return "_uncommon";
     case #"purple":

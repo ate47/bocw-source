@@ -43,7 +43,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     level.teambased = 0;
     gamestate::set_state(#"pregame");
     level.var_26be8a4f = 1;
-    level.var_850ff7e2 = [1:#"zm_silver_six", 0:#"zm_silver_upgrade"];
+    level.var_850ff7e2 = [#"zm_silver_upgrade", #"zm_silver_six"];
     callback::add_callback(#"menu_response", &on_menu_response);
     /#
         level function_83f052f2();
@@ -103,7 +103,7 @@ function dailychallengedevguiinit() {
         for (row_num = 2; row_num < num_rows; row_num++) {
             challenge_name = tablelookupcolumnforrow(#"gamedata/stats/zm/statsmilestones4.csv", row_num, 5);
             display_row_num = row_num - 2;
-            devgui_string = "<unknown string>" + "<unknown string>" + (display_row_num > 10 ? "<unknown string>" + display_row_num : display_row_num) + "<unknown string>" + function_9e72a96(challenge_name) + "<unknown string>" + row_num + "<unknown string>";
+            devgui_string = "<unknown string>" + "<unknown string>" + (display_row_num > 10 ? display_row_num : "<unknown string>" + display_row_num) + "<unknown string>" + function_9e72a96(challenge_name) + "<unknown string>" + row_num + "<unknown string>";
             adddebugcommand(devgui_string);
         }
     #/
@@ -148,7 +148,7 @@ function function_5f1dd5aa() {
 // Size: 0x43c
 function event_handler[ui_menuresponse] codecallback_menuresponse(eventstruct) {
     /#
-        var_53227942 = self;
+        spawningplayer = self;
         menu = eventstruct.menu;
         response = eventstruct.response;
         if (!isdefined(menu)) {

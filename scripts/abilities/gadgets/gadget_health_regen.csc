@@ -12,14 +12,14 @@
 // Checksum 0xd6e44bbe, Offset: 0x108
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"gadget_health_regen", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"gadget_health_regen", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
 // Params 0, eflags: 0x6 linked
 // Checksum 0x284fc557, Offset: 0x150
 // Size: 0xec
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "healthregen", 1, 1, "int", &function_31f57700, 0, 1);
     clientfield::register_clientuimodel("hudItems.healingActive", #"hash_6f4b11a0bee9b73d", #"healingactive", 1, 1, "int", undefined, 0, 1);
     clientfield::register_clientuimodel("hudItems.numHealthPickups", #"hash_6f4b11a0bee9b73d", #"numhealthpickups", 1, 2, "int", undefined, 0, 1);

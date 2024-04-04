@@ -28,7 +28,7 @@
 // Checksum 0xd17dc8cc, Offset: 0x4d8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_1a2d9866d1e59eb6", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_1a2d9866d1e59eb6", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_486c0593/namespace_486c0593
@@ -43,7 +43,7 @@ function function_81b25df4() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x4da6294a, Offset: 0x530
 // Size: 0x4b4
-function function_70a657d8() {
+function preinit() {
     level.chopper_fx[#"explode"][#"death"] = "destruct/fx8_atk_chppr_exp_lg";
     level.chopper_fx[#"explode"][#"guard"] = "killstreaks/fx_heli_exp_md";
     level.chopper_fx[#"explode"][#"gunner"] = "killstreaks/fx_vtol_exp";
@@ -333,7 +333,7 @@ function destroyhelicopter(var_fec7078b) {
     if (is_true(var_fec7078b)) {
         self helicopter::function_e1058a3e();
     }
-    self function_cb48cddd();
+    self deletedelay();
 }
 
 // Namespace namespace_486c0593/namespace_486c0593
@@ -356,7 +356,7 @@ function function_5f5aa1e3(chopper) {
         iprintlnbold("<unknown string>");
     #/
     chopper flag::set("on_attack_run");
-    chopper.var_65c46f6d = [];
+    chopper.scripted_targets = [];
     chopper.targets = [];
     if (isdefined(level.var_63a234) && level.var_63a234.size > 0) {
         arrayremovevalue(level.var_63a234, undefined);
@@ -365,22 +365,22 @@ function function_5f5aa1e3(chopper) {
         foreach (target in level.var_63a234) {
             if (isdefined(target.ent.origin) && isdefined(target.ent) && isdefined(target) && isdefined(chopper.var_94e122a8) && isdefined(target.var_146dd712)) {
                 dist = distance(chopper.var_94e122a8, target.ent.origin);
-                if (dist <= target.var_146dd712 && !target.var_70806b8a) {
+                if (dist <= target.var_146dd712 && !target.is_destroyed) {
                     chopper flag::set("has_scripted_target");
                     /#
                         iprintlnbold("<unknown string>");
                     #/
-                    if (!isdefined(chopper.var_65c46f6d)) {
-                        chopper.var_65c46f6d = [];
-                    } else if (!isarray(chopper.var_65c46f6d)) {
-                        chopper.var_65c46f6d = array(chopper.var_65c46f6d);
+                    if (!isdefined(chopper.scripted_targets)) {
+                        chopper.scripted_targets = [];
+                    } else if (!isarray(chopper.scripted_targets)) {
+                        chopper.scripted_targets = array(chopper.scripted_targets);
                     }
-                    chopper.var_65c46f6d[chopper.var_65c46f6d.size] = target.ent;
+                    chopper.scripted_targets[chopper.scripted_targets.size] = target.ent;
                 }
             }
         }
     }
-    if (chopper.var_65c46f6d.size <= 0 && chopper flag::get("has_scripted_target")) {
+    if (chopper.scripted_targets.size <= 0 && chopper flag::get("has_scripted_target")) {
         chopper flag::clear("has_scripted_target");
     }
     riders = chopper vehicle::function_86c7bebb();
@@ -405,7 +405,7 @@ function function_5f5aa1e3(chopper) {
 function function_44cf45ff(chopper) {
     chopper.perfectaim = 0;
     chopper.script_accuracy = 1;
-    chopper.var_65c46f6d = [];
+    chopper.scripted_targets = [];
     riders = chopper vehicle::function_86c7bebb();
     foreach (rider in riders) {
         rider val::set("heli_killstreak_attack_run", "ignoreme", 0);
@@ -557,11 +557,11 @@ function function_1da8ff40(ent, *var_146dd712) {
 function function_e19bff4c(ent) {
     foreach (i in level.var_63a234) {
         if (i.ent === ent) {
-            i.var_70806b8a = 1;
+            i.is_destroyed = 1;
         }
     }
-    if (isdefined(level.var_fb14fd3b) && isdefined(level.var_fb14fd3b.var_65c46f6d) && array::contains(level.var_fb14fd3b.var_65c46f6d, ent)) {
-        arrayremovevalue(level.var_fb14fd3b.var_65c46f6d, ent);
+    if (isdefined(level.var_fb14fd3b) && isdefined(level.var_fb14fd3b.scripted_targets) && array::contains(level.var_fb14fd3b.scripted_targets, ent)) {
+        arrayremovevalue(level.var_fb14fd3b.scripted_targets, ent);
     }
 }
 
@@ -659,7 +659,7 @@ function heli_targeting() {
         }
         for (i = 0; i < enemies.size; i++) {
             guy = enemies[i];
-            if (self function_4ddd6e88(guy)) {
+            if (self isvalidtarget(guy)) {
                 self.targets[self.targets.size] = guy;
                 guy.threatlevel = 0;
             }
@@ -667,7 +667,7 @@ function heli_targeting() {
         if (isdefined(level.var_63a234)) {
             for (i = 0; i < level.var_63a234.size; i++) {
                 thing = level.var_63a234[i];
-                if (self function_4ddd6e88(thing)) {
+                if (self isvalidtarget(thing)) {
                     self.targets[self.targets.size] = thing;
                     thing.threatlevel = 0;
                 }
@@ -763,7 +763,7 @@ function function_c7e60da8(target, var_b420e989) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xb0d01ed1, Offset: 0x3220
 // Size: 0xba
-function function_4ddd6e88(guy) {
+function isvalidtarget(guy) {
     if (!isalive(guy)) {
         return false;
     }
@@ -870,21 +870,21 @@ function function_79c4d29d() {
             nextnode = var_6cfa3712[0];
             if (vectordot(nextnode.origin - self.origin, self getvelocity()) < 0) {
                 var_904ef016 = array::find(loop, currentnode);
-                nextnodeidx = var_904ef016 < 0 ? var_904ef016 - 1 : loop.size - 1;
+                nextnodeidx = var_904ef016 < 0 ? loop.size - 1 : var_904ef016 - 1;
                 nextnode = loop[nextnodeidx];
             }
         } else {
-            var_76e4c4ab = [];
+            validnodes = [];
             for (i = 0; i < loop.size; i++) {
                 if (vectordot(loop[i].origin - self.origin, self getvelocity()) > 0) {
-                    array::add(var_76e4c4ab, loop[i]);
+                    array::add(validnodes, loop[i]);
                 }
             }
-            if (var_76e4c4ab.size == 0) {
-                var_76e4c4ab = loop;
+            if (validnodes.size == 0) {
+                validnodes = loop;
             }
-            var_76e4c4ab = array::merge_sort(var_76e4c4ab, &function_f674a4dd);
-            nextnode = var_76e4c4ab[0];
+            validnodes = array::merge_sort(validnodes, &function_f674a4dd);
+            nextnode = validnodes[0];
             iprintlnbold("switching to loop" + nextnode.script_noteworthy);
         }
         pos = nextnode.origin;
@@ -940,7 +940,7 @@ function function_c4b00a04(*startnode) {
         }
     }
     if (var_60a69279.size == 0) {
-        var_60a69279 = [3:3, 2:2, 1:1, 0:0];
+        var_60a69279 = [0, 1, 2, 3];
     }
     var_60a69279 = array::merge_sort(var_60a69279, &function_f8db61f8, var_99ec1a2c);
     idx = var_60a69279[0];
@@ -1100,14 +1100,14 @@ function private function_1c2c90c7() {
 // Params 5, eflags: 0x4
 // Checksum 0x2582a9d4, Offset: 0x4828
 // Size: 0x12a
-function private function_79dbd1f7(centroid, var_4f48f05, var_95e06609, frames, color) {
+function private function_79dbd1f7(centroid, norm, var_95e06609, frames, color) {
     /#
         if (!isdefined(color)) {
             color = (1, 0, 0);
         }
         if (frames == 0) {
             while (isdefined(self)) {
-                dome_apex = centroid + vectorscale(var_4f48f05, level.heli_visual_range);
+                dome_apex = centroid + vectorscale(norm, level.heli_visual_range);
                 debug_spherical_cone(centroid, dome_apex, var_95e06609, 16, color, 0.3, 1, frames);
                 waitframe(1);
             }
@@ -1117,7 +1117,7 @@ function private function_79dbd1f7(centroid, var_4f48f05, var_95e06609, frames, 
             if (!isdefined(self)) {
                 break;
             }
-            dome_apex = centroid + vectorscale(var_4f48f05, level.heli_visual_range);
+            dome_apex = centroid + vectorscale(norm, level.heli_visual_range);
             debug_spherical_cone(centroid, dome_apex, var_95e06609, 16, color, 0.3, 1, frames);
             waitframe(1);
         }

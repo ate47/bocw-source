@@ -12,15 +12,15 @@
 // Checksum 0xa108665f, Offset: 0xd0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"chopper_gunner", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"chopper_gunner", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace chopper_gunner/chopper_gunner
 // Params 0, eflags: 0x6 linked
 // Checksum 0x70fe7c0c, Offset: 0x120
 // Size: 0xc4
-function private function_70a657d8() {
-    namespace_e8c18978::function_70a657d8();
+function private preinit() {
+    namespace_e8c18978::preinit();
     clientfield::register("vehicle", "" + #"hash_164696e86d29988d", 1, 1, "int", &function_d4e58332, 0, 0);
     clientfield::register("toplayer", "" + #"hash_dae8b06d746fac5", 8000, 1, "int", &function_99879bf2, 0, 0);
 }

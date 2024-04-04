@@ -13,14 +13,14 @@
 // Checksum 0x50414563, Offset: 0xb0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_c25f006b5e1726d", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_c25f006b5e1726d", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_ea9baedf/namespace_ea9baedf
 // Params 0, eflags: 0x4
 // Checksum 0xb09324f6, Offset: 0xf8
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

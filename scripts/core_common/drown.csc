@@ -12,14 +12,14 @@
 // Checksum 0x70b952bb, Offset: 0xd8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"drown", &function_70a657d8, undefined, undefined, #"visionset_mgr");
+    system::register(#"drown", &preinit, undefined, undefined, #"visionset_mgr");
 }
 
 // Namespace drown/drown
 // Params 0, eflags: 0x6 linked
 // Checksum 0x31744ef7, Offset: 0x128
 // Size: 0xbc
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "drown_stage", 1, 3, "int", &drown_stage_callback, 0, 0);
     callback::on_localplayer_spawned(&player_spawned);
     visionset_mgr::register_overlay_info_style_speed_blur("drown_blur", 1, 1, 0.04, 1, 1, 0, 0, 125, 125, 0);

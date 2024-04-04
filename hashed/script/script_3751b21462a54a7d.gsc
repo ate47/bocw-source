@@ -24,14 +24,14 @@
 // Checksum 0x8ab3b54a, Offset: 0x298
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_2d064899850813e2", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_2d064899850813e2", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_791d0451/namespace_791d0451
 // Params 0, eflags: 0x2 linked
 // Checksum 0x6f58e92e, Offset: 0x2f0
 // Size: 0x63c
-function function_70a657d8() {
+function preinit() {
     level.var_fcb9f1fb = [];
     callback::on_spawned(&on_player_spawn);
     callback::on_item_pickup(&on_item_pickup);
@@ -439,7 +439,7 @@ function private function_b4083162(talent, var_96b5aff5) {
             source = #"hash_a6101af5e5d2384";
             break;
         }
-        var_4f88d102 = {#var_fa7f8efb:self namespace_2a9f256a::function_6f3fd157(), #perks_active:self.var_7341f980.size, #var_2abfe4d3:self.var_77c69799, #var_96b5aff5:source, #perk:talent, #var_75c4407f:zm_utility::get_round_number(), #var_13f78fc7:zm_utility::function_e3025ca5(), #var_aa8a99e8:function_f8d53445()};
+        var_4f88d102 = {#var_aa8a99e8:function_f8d53445(), #var_13f78fc7:zm_utility::function_e3025ca5(), #var_75c4407f:zm_utility::get_round_number(), #perk:talent, #var_96b5aff5:source, #var_2abfe4d3:self.var_77c69799, #perks_active:self.var_7341f980.size, #var_fa7f8efb:self namespace_2a9f256a::function_6f3fd157()};
         self function_678f57c8(#"hash_1c64557e9577551e", var_4f88d102);
     }
 }
@@ -582,10 +582,10 @@ function on_player_spawn() {
 function on_item_pickup(params) {
     item = params.item;
     if (isplayer(self)) {
-        if (isdefined(item.var_a6762160)) {
-            if (item.var_a6762160.itemtype === #"survival_perk") {
-                if (isdefined(item.var_a6762160.talents)) {
-                    foreach (talent in item.var_a6762160.talents) {
+        if (isdefined(item.itementry)) {
+            if (item.itementry.itemtype === #"survival_perk") {
+                if (isdefined(item.itementry.talents)) {
+                    foreach (talent in item.itementry.talents) {
                         if (isdefined(talent.talent)) {
                             talent = self function_b852953c(talent.talent);
                             function_3fecad82(talent, 1, 1);
@@ -594,7 +594,7 @@ function on_item_pickup(params) {
                 }
                 return;
             }
-            if (item.var_a6762160.itemtype === #"armor") {
+            if (item.itementry.itemtype === #"armor") {
             }
         }
     }

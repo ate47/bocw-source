@@ -113,8 +113,8 @@ function function_5058f233(var_c93cfecf, var_c18a5a8b = 5) {
 // Checksum 0xb05d44b8, Offset: 0x7b0
 // Size: 0x44
 function function_bafc791c() {
-    self namespace_f48ab2e1::set_text(#"hash_13887dbed82d18b3");
-    self namespace_f48ab2e1::function_309bf7c2(#"hash_3f3936e8e8c3de2b");
+    self prompts::set_text(#"hash_13887dbed82d18b3");
+    self prompts::function_309bf7c2(#"hash_3f3936e8e8c3de2b");
 }
 
 // Namespace namespace_b27ebd77/namespace_b27ebd77
@@ -130,7 +130,7 @@ function private function_8de07df8(var_cffbeaae, var_f35de83) {
     if (abs(n_dot) < 0.3) {
         var_a16bf7b3 = "player_center_enter";
     } else {
-        var_a16bf7b3 = vectordot(vec_right, vec_to_player) > 0 ? "player_right_enter" : "player_left_enter";
+        var_a16bf7b3 = vectordot(vec_right, vec_to_player) > 0 ? "player_left_enter" : "player_right_enter";
     }
     level.player function_44d63ecd(0, 0.8);
     var_cffbeaae scene::play(var_a16bf7b3);
@@ -158,7 +158,7 @@ function private function_eee069b6(b_enable) {
         namespace_82bfe441::fade(1, "FadeImmediate");
         return;
     }
-    level.player val::function_e681e68e(#"hash_23eaaa0ed427f793");
+    level.player val::reset_all(#"hash_23eaaa0ed427f793");
     namespace_82bfe441::fade(0, "FadeMedium");
 }
 
@@ -265,8 +265,8 @@ function private function_d6faeb2b() {
         waitframe(1);
     }
     while (true) {
-        var_620beea5 = self gamepadusedlast();
-        if (var_620beea5 && self namespace_61e6d095::function_70217795() || !var_620beea5 && self usebuttonpressed()) {
+        isusinggamepad = self gamepadusedlast();
+        if (isusinggamepad && self namespace_61e6d095::function_70217795() || !isusinggamepad && self usebuttonpressed()) {
             self notify(#"request_menu_exit");
             break;
         }

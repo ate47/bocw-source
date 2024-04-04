@@ -40,14 +40,14 @@
 // Checksum 0x4bfcbcc4, Offset: 0x8d8
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"supplydrop", &function_70a657d8, undefined, &function_1c601b99, #"killstreaks");
+    system::register(#"supplydrop", &preinit, undefined, &function_1c601b99, #"killstreaks");
 }
 
 // Namespace supplydrop/supplydrop
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1ba762b, Offset: 0x938
 // Size: 0x49c
-function private function_70a657d8() {
+function private preinit() {
     bundle = getscriptbundle("killstreak_supply_drop");
     setdvar(#"hash_763d6ee8f054423f", 1);
     level.cratemodelfriendly = bundle.var_e7faf6c2;
@@ -114,7 +114,7 @@ function function_7422bd1e(var_b27d6a17) {
     weapon = getweapon(#"supplydrop_marker");
     while (true) {
         wait(var_b27d6a17);
-        context = {#tracemask:5, #radius:30, #max_dist_from_location:16, #perform_physics_trace:1, #droptag:"tag_cargo_attach", #var_8741accb:#"airdrop_supplydrop", #dist_from_boundary:50, #var_9fc6cfe9:1};
+        context = {#var_9fc6cfe9:1, #dist_from_boundary:50, #var_8741accb:#"airdrop_supplydrop", #droptag:"tag_cargo_attach", #perform_physics_trace:1, #max_dist_from_location:16, #radius:30, #tracemask:5};
         for (origin = function_2dcf7a5f(var_8cf55682, context); !isdefined(origin); origin = function_2dcf7a5f(var_8cf55682, context)) {
             waitframe(1);
         }
@@ -128,7 +128,7 @@ function function_7422bd1e(var_b27d6a17) {
 // Checksum 0x3057038a, Offset: 0x1038
 // Size: 0x33e
 function function_25ac512() {
-    var_8cf55682 = {#var_136d64b6:0, #absmaxs:[], #absmins:[]};
+    var_8cf55682 = {#absmins:[], #absmaxs:[], #var_136d64b6:0};
     absmins = var_8cf55682.absmins;
     absmaxs = var_8cf55682.absmaxs;
     if (isstruct(level.territory) && isarray(level.territory.bounds)) {
@@ -158,7 +158,7 @@ function function_25ac512() {
             absmaxs[i] = max(corners[0].origin[i], corners[1].origin[i]);
         }
     }
-    var_8cf55682.var_ae528125 = getentarray("trigger_hurt", "classname");
+    var_8cf55682.hurttriggers = getentarray("trigger_hurt", "classname");
     return var_8cf55682;
 }
 
@@ -176,7 +176,7 @@ function function_2dcf7a5f(var_8cf55682, context) {
         return undefined;
     }
     point = trace[#"position"];
-    foreach (trigger in var_8cf55682.var_ae528125) {
+    foreach (trigger in var_8cf55682.hurttriggers) {
         if (istouching(point, trigger)) {
             return undefined;
         }
@@ -684,7 +684,7 @@ function islocationgood(location, context) {
     if (isvalidpoint && context.check_same_floor === 1 && abs(location[2] - closestpoint[2]) > 96) {
         isvalidpoint = 0;
     }
-    if (isvalidpoint && distance2dsquared(location, closestpoint) > function_a3f6cdac(context.max_dist_from_location)) {
+    if (isvalidpoint && distance2dsquared(location, closestpoint) > sqr(context.max_dist_from_location)) {
         isvalidpoint = 0;
     }
     /#
@@ -874,7 +874,7 @@ function function_200081db(*owner, context, location) {
     if (killstreak_id == -1) {
         return 0;
     }
-    self stats::function_8fb23f94(#"supplydrop_marker", #"hash_7d6781e4032b4aa5", 1);
+    self stats::function_8fb23f94(#"supplydrop_marker", #"uses", 1);
     bundle = getscriptbundle("killstreak_supply_drop");
     killstreakweapon = killstreaks::get_killstreak_weapon(context.killstreaktype);
     context.selectedlocation = location;
@@ -1116,7 +1116,7 @@ function dropalltoground(origin, radius, stickyobjectradius) {
     waitframe(1);
     weapons::drop_all_to_ground(origin, radius);
     dropcratestoground(origin, radius);
-    level notify(#"drop_objects_to_ground", {#radius:stickyobjectradius, #position:origin});
+    level notify(#"drop_objects_to_ground", {#position:origin, #radius:stickyobjectradius});
 }
 
 // Namespace supplydrop/supplydrop
@@ -1263,7 +1263,7 @@ function cratedelete(drop_all_to_ground) {
     }
     self function_9813d292();
     self notify(#"stop_crate_use_think");
-    self function_cb48cddd();
+    self deletedelay();
 }
 
 // Namespace supplydrop/supplydrop
@@ -1306,8 +1306,8 @@ function cratephysics() {
 // Size: 0xdc
 function function_d2d0a813() {
     var_3b0688ef = "supply_drop_badplace" + self getentitynumber();
-    origin = self.origin + self function_2c662f72();
-    halfsize = self function_2a98d04f();
+    origin = self.origin + self getboundsmidpoint();
+    halfsize = self getboundshalfsize();
     var_921c5821 = max(halfsize[0], halfsize[1]) + 4;
     halfsize = (var_921c5821, var_921c5821, halfsize[2] + 4);
     badplace_box(var_3b0688ef, 0, origin, halfsize, "all");
@@ -1383,10 +1383,10 @@ function cratecontrolleddrop(killstreak, v_target_location, var_72886e11) {
         hostmigration::waittillhostmigrationdone();
     }
     crate thread cratephysics();
-    var_53d0638b = gettime() + 3000;
+    failsafetime = gettime() + 3000;
     while (distancesquared(crate.origin, v_target_location) > 100) {
         waitframe(1);
-        if (gettime() >= var_53d0638b) {
+        if (gettime() >= failsafetime) {
             break;
         }
     }
@@ -1395,11 +1395,11 @@ function cratecontrolleddrop(killstreak, v_target_location, var_72886e11) {
         trace = groundtrace(crate.origin + vectorscale((0, 0, 1), 70), crate.origin + vectorscale((0, 0, -1), 100), 0, crate);
         var_2122d2eb = crate getfxfromsurfacetable(params.var_827e3209, trace[#"surfacetype"]);
         if (isdefined(var_2122d2eb)) {
-            var_bc514cf = trace[#"normal"];
-            if (var_bc514cf == (0, 0, 0)) {
-                var_bc514cf = (0, 0, 1);
+            fxforward = trace[#"normal"];
+            if (fxforward == (0, 0, 0)) {
+                fxforward = (0, 0, 1);
             }
-            playfx(var_2122d2eb, trace[#"position"], var_bc514cf);
+            playfx(var_2122d2eb, trace[#"position"], fxforward);
             self playsound(#"phy_impact_supply");
         }
     }
@@ -1552,7 +1552,7 @@ function function_703ed715(trace) {
 // Size: 0x614
 function dropcrate(origin, angle, killstreak, owner, team, killcament, killstreak_id, package_contents_id, crate, context, var_83f3c388) {
     angles = (angle[0] * 0.5, angle[1] * 0.5, angle[2] * 0.5);
-    if (is_true(context.var_d6388d1)) {
+    if (is_true(context.vehicledrop)) {
         context.vehicle = spawnvehicle(#"archetype_mini_quadtank_mp", origin, angles, "talon", 1, self);
     }
     crate unlink();
@@ -1567,7 +1567,7 @@ function dropcrate(origin, angle, killstreak, owner, team, killcament, killstrea
         [[ level.var_14151f16 ]](crate, 0);
     }
     crate endon(#"death");
-    if (!is_true(context.var_d6388d1)) {
+    if (!is_true(context.vehicledrop)) {
         crate cratetimeoutthreader();
     }
     mask = 1 | 4;
@@ -1744,16 +1744,16 @@ function watch_explosive_crate(killcament) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x6de0580b, Offset: 0x7810
 // Size: 0x1ec
-function function_960ea519(var_da089436, killcament) {
+function function_960ea519(opener, killcament) {
     self notify(#"stop_crate_use_think");
     self.killcament = killcament;
     self thread scene::play(#"p9_fxanim_mp_care_package_bundle", self);
     if (getdvarint(#"hash_3f663d1e38d10d99", 0) == 1 || is_true(self.var_e8a59c52)) {
-        if (isplayer(var_da089436)) {
-            var_da089436 stats::function_bcf9602(#"hash_513bca963a91d668", 1, #"hash_735ace6b22542a65");
+        if (isplayer(opener)) {
+            opener stats::function_bcf9602(#"hash_513bca963a91d668", 1, #"hash_735ace6b22542a65");
         }
         if (isdefined(level.var_ccf67f32)) {
-            self thread [[ level.var_ccf67f32 ]](var_da089436);
+            self thread [[ level.var_ccf67f32 ]](opener);
         }
         playsoundatposition(#"hash_2dec6d8e4271a0e0", self.origin);
     }
@@ -1762,7 +1762,7 @@ function function_960ea519(var_da089436, killcament) {
     self entityheadicons::destroyentityheadicons();
     self thread function_71c8970c(0.84);
     wait(detonationdelay);
-    self function_345ada65(var_da089436);
+    self function_345ada65(opener);
     if (isdefined(self)) {
         self cratedelete(1);
     }
@@ -2065,7 +2065,7 @@ function spawnuseent(player) {
     useent.userate = 0;
     useent.usetime = 0;
     useent.owner = self;
-    useent.var_c56ec411 = player;
+    useent.capturingplayer = player;
     useent thread useentownerdeathwaiter(self);
     return useent;
 }
@@ -2118,13 +2118,13 @@ function crateusethink() {
         self.useent = useent;
         result = useent useholdthink(player, level.cratenonownerusetime);
         if (isdefined(useent)) {
-            useent function_cb48cddd();
+            useent deletedelay();
         } else {
             break;
         }
         if (result) {
             scoreevents::givecratecapturemedal(self, player);
-            self notify(#"captured", {#is_remote_hack:0, #player:player});
+            self notify(#"captured", {#player:player, #is_remote_hack:0});
         }
     }
 }
@@ -2160,7 +2160,7 @@ function crateusethinkowner() {
             break;
         }
         if (result && isdefined(player)) {
-            self notify(#"captured", {#is_remote_hack:0, #player:player});
+            self notify(#"captured", {#player:player, #is_remote_hack:0});
         }
     }
 }
@@ -2273,7 +2273,7 @@ function crategamblerthink() {
             continue;
         }
         if (isdefined(self.useent) && self.useent.inuse) {
-            if (isdefined(self.owner) && self.owner != player && isdefined(self.useent.var_c56ec411) && self.useent.var_c56ec411 != player) {
+            if (isdefined(self.owner) && self.owner != player && isdefined(self.useent.capturingplayer) && self.useent.capturingplayer != player) {
                 continue;
             }
         }
@@ -2443,7 +2443,7 @@ function destroyhelicopter(*var_fec7078b) {
         self.owner notify(#"payload_fail");
     }
     self scene::stop(1);
-    self notify(#"hash_525537be2de4c159", {#owner:self.owner, #direction:self.angles, #position:self.origin});
+    self notify(#"hash_525537be2de4c159", {#position:self.origin, #direction:self.angles, #owner:self.owner});
     lbexplode();
 }
 
@@ -3069,7 +3069,7 @@ function helidelivercrate(origin, weapon, owner, team, killstreak_id, package_co
         }
     #/
     on_target = 0;
-    last_distance_from_goal_squared = function_a3f6cdac(1e+07);
+    last_distance_from_goal_squared = sqr(1e+07);
     continue_waiting = 1;
     for (remaining_tries = 30; continue_waiting && remaining_tries > 0; remaining_tries--) {
         if (isdefined(context.dropoffset)) {
@@ -3078,7 +3078,7 @@ function helidelivercrate(origin, weapon, owner, team, killstreak_id, package_co
             chopper_drop_point = chopper getchopperdroppoint(context);
         }
         current_distance_from_goal_squared = distance2dsquared(chopper_drop_point, heli_drop_goal);
-        continue_waiting = current_distance_from_goal_squared < last_distance_from_goal_squared && current_distance_from_goal_squared > function_a3f6cdac(3.7);
+        continue_waiting = current_distance_from_goal_squared < last_distance_from_goal_squared && current_distance_from_goal_squared > sqr(3.7);
         last_distance_from_goal_squared = current_distance_from_goal_squared;
         /#
             if (getdvarint(#"scr_supply_drop_valid_location_debug", 0)) {
@@ -3101,7 +3101,7 @@ function helidelivercrate(origin, weapon, owner, team, killstreak_id, package_co
     #/
     chopper scene::play(#"p9_fxanim_wz_parachute_supplydrop_01_harness_bundle", "arrive");
     chopper thread scene::play(#"p9_fxanim_wz_parachute_supplydrop_01_harness_bundle", "retract");
-    chopper notify(#"drop_crate", {#owner:chopper.owner, #direction:chopper.angles, #position:chopper.origin});
+    chopper notify(#"drop_crate", {#position:chopper.origin, #direction:chopper.angles, #owner:chopper.owner});
     chopper.droptime = gettime();
     chopper playsound(#"veh_supply_drop");
     wait(0.7);
@@ -3128,7 +3128,7 @@ function helidelivercrate(origin, weapon, owner, team, killstreak_id, package_co
         println("<unknown string>" + gettime() - chopper.droptime);
     #/
     chopper notify(#"leaving");
-    chopper function_cb48cddd();
+    chopper deletedelay();
 }
 
 // Namespace supplydrop/supplydrop

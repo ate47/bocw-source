@@ -13,18 +13,18 @@
 // Checksum 0x21e75237, Offset: 0xd0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_7bb41176a4b58056", &function_70a657d8, undefined, &finalize, undefined);
+    system::register(#"hash_7bb41176a4b58056", &preinit, undefined, &finalize, undefined);
 }
 
 // Namespace namespace_dbb31ff3/namespace_dbb31ff3
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9189626f, Offset: 0x120
 // Size: 0xd4
-function private function_70a657d8() {
+function private preinit() {
     sr_beacon_menu::register();
     clientfield::register("toplayer", "" + #"hash_5616eb8cc6b9c498", 1, 1, "counter", &function_595556d0, 0, 0);
     clientfield::register("toplayer", "" + #"hash_5752601fd90562e1", 1, 1, "counter", &function_cc5db8e3, 0, 0);
-    namespace_52c8f34d::function_70a657d8();
+    namespace_52c8f34d::preinit();
 }
 
 // Namespace namespace_dbb31ff3/namespace_dbb31ff3

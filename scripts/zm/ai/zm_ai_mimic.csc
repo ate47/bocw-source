@@ -12,14 +12,14 @@
 // Checksum 0xe43c62c0, Offset: 0x138
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_ai_mimic", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_ai_mimic", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_ai_mimic/zm_ai_mimic
 // Params 0, eflags: 0x6 linked
 // Checksum 0x977ca8f1, Offset: 0x180
 // Size: 0xdc
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "mimic_show_on_minimap", 16000, 1, "int", &function_78505cdf, 0, 0);
     clientfield::register("actor", "mimic_cleanup_teleport", 16000, 1, "counter", &mimic_cleanup_teleport, 0, 0);
     clientfield::register("toplayer", "mimic_range_hit", 16000, 1, "counter", &function_4bc65819, 0, 0);

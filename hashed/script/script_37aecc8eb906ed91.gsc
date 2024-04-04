@@ -23,19 +23,19 @@
 // Checksum 0x5221b645, Offset: 0x178
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"nightingale", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"nightingale", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace nightingale/nightingale
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9a3e12b6, Offset: 0x1c0
 // Size: 0x21c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "" + #"hash_7cc71113338444c4", 1, 1, "int");
     clientfield::register("scriptmover", "" + #"hash_7c2ee5bfa7cad803", 1, 1, "int");
-    weapon_name = sessionmodeiszombiesgame() ? #"hash_12f078ddc9b913c3" : #"nightingale";
+    weapon_name = sessionmodeiszombiesgame() ? #"nightingale_zm" : #"nightingale";
     weapon = getweapon(weapon_name);
-    level.var_432fa05c = {#var_558ae5bc:function_a3f6cdac(500), #var_402a4207:[]};
+    level.var_432fa05c = {#var_402a4207:[], #var_558ae5bc:sqr(500)};
     callback::add_callback(#"hash_7c6da2f2c9ef947a", &function_30a3d1d2);
     globallogic_score::register_kill_callback(weapon, &function_dedc78a9);
     globallogic_score::function_c1e9b86b(weapon, &function_24e13681);
@@ -196,7 +196,7 @@ function private function_7dfb4daa(decoygrenade) {
 // Checksum 0x4f42a272, Offset: 0xc20
 // Size: 0x24c
 function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
-    if (eventstruct.weapon.name == #"nightingale" || eventstruct.weapon.name == #"hash_12f078ddc9b913c3") {
+    if (eventstruct.weapon.name == #"nightingale" || eventstruct.weapon.name == #"nightingale_zm") {
         grenade = eventstruct.projectile;
         grenade.var_cb19e5d4 = 1;
         grenade.var_515d6dda = 1;
@@ -210,7 +210,7 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
         }
         if (isdefined(level.var_1b5a1f0d) && ![[ level.var_1b5a1f0d ]](grenade.origin)) {
             weaponobjects::function_f2a06099(grenade, eventstruct.weapon);
-            grenade function_cb48cddd();
+            grenade deletedelay();
             return;
         }
         grenade thread function_db24f032();
@@ -259,7 +259,7 @@ function function_db24f032() {
     }
     weaponobjects::function_f2a06099(self, self.weapon);
     if (isdefined(decoy)) {
-        decoy function_cb48cddd();
+        decoy deletedelay();
     }
 }
 
@@ -315,15 +315,15 @@ function private function_65ee50ba() {
             var_1a055edd[var_1a055edd.size] = groundpos;
         }
     }
-    var_9c637566 = arraygetfarthest(basepos, var_1a055edd);
-    if (abs(var_9c637566[2] - var_2eefd050[2]) <= check_dist) {
-        var_9c637566 = var_2eefd050;
+    farthest = arraygetfarthest(basepos, var_1a055edd);
+    if (abs(farthest[2] - var_2eefd050[2]) <= check_dist) {
+        farthest = var_2eefd050;
     }
     /#
-        debugstar(var_9c637566, 30, (1, 1, 1));
-        recordline(self.origin, var_9c637566, vectorscale((1, 1, 1), 0.1));
+        debugstar(farthest, 30, (1, 1, 1));
+        recordline(self.origin, farthest, vectorscale((1, 1, 1), 0.1));
     #/
-    return getclosestpointonnavmesh(var_9c637566, 420, 15.1875);
+    return getclosestpointonnavmesh(farthest, 420, 15.1875);
 }
 
 // Namespace nightingale/nightingale

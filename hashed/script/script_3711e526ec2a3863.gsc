@@ -1,8 +1,8 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_5552bd756afee443;
+#using scripts\cp_common\snd_utility.gsc;
 #using script_54412fb3a6fab34c;
 #using script_3dc93ca9902a9cda;
-#using script_1292451e284848cc;
+#using scripts\cp_common\snd.gsc;
 #using scripts\core_common\flag_shared.gsc;
 #using scripts\core_common\music_shared.gsc;
 
@@ -12,7 +12,7 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0x518
 // Size: 0x4
-function function_4be4dcc5() {
+function init_audio() {
     
 }
 
@@ -95,22 +95,22 @@ function function_6cd6e708() {
 // Checksum 0x25949243, Offset: 0x898
 // Size: 0x794
 function function_816f9a23() {
-    snd::emitter("emt_wind_breeze", level.players[0], [3:15, 2:10, 1:15, 0:10]);
-    snd::emitter("emt_nam_base_canvas_sweetener", (-9092, -71547.3, 1071.8), [1:4, 0:2], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_nam_base_canvas_wind", (-9092, -71547.5, 1071.33), [1:15, 0:14], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_heli_distant_flyover", level.players[0], [3:15, 2:10, 1:17, 0:11], [1:650, 0:500], [1:0, 0:0]);
-    snd::emitter("emt_heli_distant_mono_flyover", level.players[0], [3:15, 2:10, 1:17, 0:10], [1:650, 0:500], [1:0, 0:0]);
-    snd::emitter("amb_radio_oneshot", (-9910, -71384, 1050), [1:11, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("amb_radio_oneshot", (-9893, -71400, 1051), [1:12, 0:7], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("amb_radio_oneshot", (-9713, -71944, 1055), [1:8, 0:4], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("amb_radio_oneshot", (-9635, -71998, 1057), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("amb_radio_oneshot", (-9725, -72024, 1057), [1:11, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("amb_radio_oneshot", (-10467, -71363, 1061), [1:11, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_walla_armada_base_calm", level.players[0], [1:15, 0:13], [1:750, 0:350], [1:0, 0:0]);
-    snd::emitter("emt_walla_armada_base_yell", level.players[0], [1:16, 0:13], [1:750, 0:350], [1:0, 0:0]);
-    snd::emitter("emt_walla_armada_base_yell_short", level.players[0], [1:15, 0:10], [1:750, 0:350], [1:0, 0:0]);
-    snd::emitter("emt_walla_armada_base_yell", (-10090, -73241, 1065), [1:14, 0:11], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_walla_armada_base_yell_short", (-8680, -71504, 1165), [1:15, 0:10], [1:0, 0:0], [1:0, 0:0]);
+    snd::emitter("emt_wind_breeze", level.players[0], [10, 15, 10, 15]);
+    snd::emitter("emt_nam_base_canvas_sweetener", (-9092, -71547.3, 1071.8), [2, 4], [0, 0], [0, 0]);
+    snd::emitter("emt_nam_base_canvas_wind", (-9092, -71547.5, 1071.33), [14, 15], [0, 0], [0, 0]);
+    snd::emitter("emt_heli_distant_flyover", level.players[0], [11, 17, 10, 15], [500, 650], [0, 0]);
+    snd::emitter("emt_heli_distant_mono_flyover", level.players[0], [10, 17, 10, 15], [500, 650], [0, 0]);
+    snd::emitter("amb_radio_oneshot", (-9910, -71384, 1050), [5, 11], [0, 0], [0, 0]);
+    snd::emitter("amb_radio_oneshot", (-9893, -71400, 1051), [7, 12], [0, 0], [0, 0]);
+    snd::emitter("amb_radio_oneshot", (-9713, -71944, 1055), [4, 8], [0, 0], [0, 0]);
+    snd::emitter("amb_radio_oneshot", (-9635, -71998, 1057), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("amb_radio_oneshot", (-9725, -72024, 1057), [5, 11], [0, 0], [0, 0]);
+    snd::emitter("amb_radio_oneshot", (-10467, -71363, 1061), [5, 11], [0, 0], [0, 0]);
+    snd::emitter("emt_walla_armada_base_calm", level.players[0], [13, 15], [350, 750], [0, 0]);
+    snd::emitter("emt_walla_armada_base_yell", level.players[0], [13, 16], [350, 750], [0, 0]);
+    snd::emitter("emt_walla_armada_base_yell_short", level.players[0], [10, 15], [350, 750], [0, 0]);
+    snd::emitter("emt_walla_armada_base_yell", (-10090, -73241, 1065), [11, 14], [0, 0], [0, 0]);
+    snd::emitter("emt_walla_armada_base_yell_short", (-8680, -71504, 1165), [10, 15], [0, 0], [0, 0]);
 }
 
 // Namespace namespace_72b0499b/namespace_268b0a5e
@@ -118,38 +118,38 @@ function function_816f9a23() {
 // Checksum 0xe85aed62, Offset: 0x1038
 // Size: 0xf04
 function function_62d67678() {
-    snd::emitter("emt_foliage_rustle_light", (-17917, 42063, 770), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_foliage_rustle_light", (-18005, 41844, 770), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_foliage_rustle_light", (-18246, 42188, 750), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_foliage_rustle_light", (-18465, 42476, 795), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_foliage_rustle_light", (-19424, 41721, 879), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_foliage_rustle_light", (-21149, 42321, 1066), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_foliage_rustle_light", (-21497, 42116, 1066), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_foliage_rustle_light", (-21764, 40218, 1094), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_foliage_rustle_light", (-20547, 38344, 1034), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_foliage_rustle_light", (-19255, 38504, 978), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_foliage_rustle_light", (-19262, 39331, 917), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_foliage_rustle_light", (-18193, 37664, 1047), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_foliage_rustle_light", (-17582, 39754, 586), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_foliage_rustle_light", (-17537, 40100, 576), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_foliage_rustle_light", (-18454, 41111, 533), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_nam_base_canvas_wind", (-19369, 40288, 800), [1:15, 0:14], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_animal_birds_forest", (-18101, 42238, 954), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_animal_birds_forest", (-19346, 41684, 1075), [1:12, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_animal_birds_forest", (-21440, 42351, 1145), [1:9, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_nam_swamp_jungle_birds", (-22326, 40112, 1145), [1:12, 0:7], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_animal_birds_forest", (-21707, 37928, 1201), [1:10, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_nam_swamp_jungle_birds", (-20230, 37827, 1201), [1:11, 0:7], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_nam_animals_bird_mystery", (-18775, 38029, 1125), [1:13, 0:8], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_foliage_wood_creaks_large", (-17343, 40343, 543), [1:15, 0:9], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_nam_water_lapping_short", (-17282, 39821, 467), [1:8, 0:4], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_nam_water_lapping_short", (-16920, 40840, 467), [1:8, 0:4], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_nam_water_lapping_short", (-17091, 39287, 512), [1:8, 0:4], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_wood_creaking_room", (-17854, 39134, 678), [1:10, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_wood_creaking_room", (-17155, 40476, 514), [1:10, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_wood_creaking_room", (-17096, 41070, 470), [1:10, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_nam_wood_forest_creak_deep", (-17854, 39134, 678), [1:13, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_nam_wood_forest_creak_deep", (-17096, 41070, 470), [1:13, 0:5], [1:0, 0:0], [1:0, 0:0]);
+    snd::emitter("emt_foliage_rustle_light", (-17917, 42063, 770), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("emt_foliage_rustle_light", (-18005, 41844, 770), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("emt_foliage_rustle_light", (-18246, 42188, 750), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("emt_foliage_rustle_light", (-18465, 42476, 795), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("emt_foliage_rustle_light", (-19424, 41721, 879), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("emt_foliage_rustle_light", (-21149, 42321, 1066), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("emt_foliage_rustle_light", (-21497, 42116, 1066), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("emt_foliage_rustle_light", (-21764, 40218, 1094), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("emt_foliage_rustle_light", (-20547, 38344, 1034), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("emt_foliage_rustle_light", (-19255, 38504, 978), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("emt_foliage_rustle_light", (-19262, 39331, 917), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("emt_foliage_rustle_light", (-18193, 37664, 1047), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("emt_foliage_rustle_light", (-17582, 39754, 586), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("emt_foliage_rustle_light", (-17537, 40100, 576), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("emt_foliage_rustle_light", (-18454, 41111, 533), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("emt_nam_base_canvas_wind", (-19369, 40288, 800), [14, 15], [0, 0], [0, 0]);
+    snd::emitter("emt_animal_birds_forest", (-18101, 42238, 954), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("emt_animal_birds_forest", (-19346, 41684, 1075), [5, 12], [0, 0], [0, 0]);
+    snd::emitter("emt_animal_birds_forest", (-21440, 42351, 1145), [5, 9], [0, 0], [0, 0]);
+    snd::emitter("emt_nam_swamp_jungle_birds", (-22326, 40112, 1145), [7, 12], [0, 0], [0, 0]);
+    snd::emitter("emt_animal_birds_forest", (-21707, 37928, 1201), [5, 10], [0, 0], [0, 0]);
+    snd::emitter("emt_nam_swamp_jungle_birds", (-20230, 37827, 1201), [7, 11], [0, 0], [0, 0]);
+    snd::emitter("emt_nam_animals_bird_mystery", (-18775, 38029, 1125), [8, 13], [0, 0], [0, 0]);
+    snd::emitter("emt_foliage_wood_creaks_large", (-17343, 40343, 543), [9, 15], [0, 0], [0, 0]);
+    snd::emitter("emt_nam_water_lapping_short", (-17282, 39821, 467), [4, 8], [0, 0], [0, 0]);
+    snd::emitter("emt_nam_water_lapping_short", (-16920, 40840, 467), [4, 8], [0, 0], [0, 0]);
+    snd::emitter("emt_nam_water_lapping_short", (-17091, 39287, 512), [4, 8], [0, 0], [0, 0]);
+    snd::emitter("emt_wood_creaking_room", (-17854, 39134, 678), [5, 10], [0, 0], [0, 0]);
+    snd::emitter("emt_wood_creaking_room", (-17155, 40476, 514), [5, 10], [0, 0], [0, 0]);
+    snd::emitter("emt_wood_creaking_room", (-17096, 41070, 470), [5, 10], [0, 0], [0, 0]);
+    snd::emitter("emt_nam_wood_forest_creak_deep", (-17854, 39134, 678), [5, 13], [0, 0], [0, 0]);
+    snd::emitter("emt_nam_wood_forest_creak_deep", (-17096, 41070, 470), [5, 13], [0, 0], [0, 0]);
 }
 
 // Namespace namespace_72b0499b/namespace_268b0a5e
@@ -157,26 +157,26 @@ function function_62d67678() {
 // Checksum 0x95b4f4c5, Offset: 0x1f48
 // Size: 0xa1c
 function function_54b26c90() {
-    snd::emitter("emt_foliage_rustle_light", level.players[0], [3:15, 2:11, 1:10, 0:6], [1:500, 0:300], [1:360, 0:0]);
-    snd::emitter("emt_animal_birds_forest", level.players[0], [3:15, 2:10, 1:19, 0:15], [1:700, 0:500], [1:360, 0:0]);
-    snd::emitter("emt_wind_breeze", level.players[0], [3:15, 2:10, 1:11, 0:8], [1:500, 0:300], [1:360, 0:0]);
-    snd::emitter("emt_nam_animals_howler_monkey", level.players[0], [3:15, 2:11, 1:16, 0:12], [1:400, 0:200], [1:360, 0:0]);
-    snd::emitter("emt_nam_animals_gibbon_monkey", level.players[0], [3:15, 2:10, 1:11, 0:7], [1:400, 0:200], [1:360, 0:0]);
-    snd::emitter("emt_nam_animals_bird_mystery", level.players[0], [3:15, 2:10, 1:15, 0:8], [1:600, 0:400], [1:360, 0:0]);
-    snd::emitter("emt_nam_swamp_jungle_birds", level.players[0], [3:15, 2:10, 1:21, 0:14], [1:500, 0:300], [1:360, 0:0]);
-    snd::emitter("emt_nam_wood_forest_creak_deep", level.players[0], [3:15, 2:8, 1:13, 0:5], [1:500, 0:200], [1:360, 0:0]);
-    snd::emitter("emt_foliage_wood_creaks_large", level.players[0], [3:15, 2:8, 1:16, 0:6], [1:500, 0:200], [1:360, 0:0]);
-    snd::emitter("emt_nam_jungle_foliage_breaks_medium_short", level.players[0], [1:15, 0:12], [1:400, 0:100], [1:180, 0:0]);
-    snd::emitter("emt_nam_jungle_foliage_breaks_medium_long", level.players[0], [1:15, 0:10], [1:400, 0:100], [1:180, 0:0]);
-    snd::emitter("emt_nam_jungle_foliage_breaks_medium_short", level.players[0], [1:14, 0:9], [1:400, 0:100], [1:180, 0:0]);
-    snd::emitter("emt_nam_walla_viet_yell_long", level.players[0], [3:15, 2:10, 1:15, 0:8], [1:300, 0:200], [1:180, 0:0]);
-    snd::emitter("emt_nam_walla_viet_yell_short", level.players[0], [3:15, 2:10, 1:15, 0:8], [1:300, 0:200], [1:180, 0:0]);
+    snd::emitter("emt_foliage_rustle_light", level.players[0], [6, 10, 11, 15], [300, 500], [0, 360]);
+    snd::emitter("emt_animal_birds_forest", level.players[0], [15, 19, 10, 15], [500, 700], [0, 360]);
+    snd::emitter("emt_wind_breeze", level.players[0], [8, 11, 10, 15], [300, 500], [0, 360]);
+    snd::emitter("emt_nam_animals_howler_monkey", level.players[0], [12, 16, 11, 15], [200, 400], [0, 360]);
+    snd::emitter("emt_nam_animals_gibbon_monkey", level.players[0], [7, 11, 10, 15], [200, 400], [0, 360]);
+    snd::emitter("emt_nam_animals_bird_mystery", level.players[0], [8, 15, 10, 15], [400, 600], [0, 360]);
+    snd::emitter("emt_nam_swamp_jungle_birds", level.players[0], [14, 21, 10, 15], [300, 500], [0, 360]);
+    snd::emitter("emt_nam_wood_forest_creak_deep", level.players[0], [5, 13, 8, 15], [200, 500], [0, 360]);
+    snd::emitter("emt_foliage_wood_creaks_large", level.players[0], [6, 16, 8, 15], [200, 500], [0, 360]);
+    snd::emitter("emt_nam_jungle_foliage_breaks_medium_short", level.players[0], [12, 15], [100, 400], [0, 180]);
+    snd::emitter("emt_nam_jungle_foliage_breaks_medium_long", level.players[0], [10, 15], [100, 400], [0, 180]);
+    snd::emitter("emt_nam_jungle_foliage_breaks_medium_short", level.players[0], [9, 14], [100, 400], [0, 180]);
+    snd::emitter("emt_nam_walla_viet_yell_long", level.players[0], [8, 15, 10, 15], [200, 300], [0, 180]);
+    snd::emitter("emt_nam_walla_viet_yell_short", level.players[0], [8, 15, 10, 15], [200, 300], [0, 180]);
     snd::play("emt_nam_engine_hiss_high_lp", (41965, 62150, 1340));
-    snd::emitter("emt_nam_engine_radiator_ones", (41965, 62150, 1340), [1:4, 0:2], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_nam_engine_radiator_clinks", (41965, 62150, 1340), [1:5, 0:3], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_nam_water_lapping_short", (41829, 62242, 1304), [1:8, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_nam_water_lapping_short", (41281, 62191, 1325), [1:8, 0:5], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("emt_nam_water_lapping_short", (42594, 62234, 1320), [1:8, 0:5], [1:0, 0:0], [1:0, 0:0]);
+    snd::emitter("emt_nam_engine_radiator_ones", (41965, 62150, 1340), [2, 4], [0, 0], [0, 0]);
+    snd::emitter("emt_nam_engine_radiator_clinks", (41965, 62150, 1340), [3, 5], [0, 0], [0, 0]);
+    snd::emitter("emt_nam_water_lapping_short", (41829, 62242, 1304), [5, 8], [0, 0], [0, 0]);
+    snd::emitter("emt_nam_water_lapping_short", (41281, 62191, 1325), [5, 8], [0, 0], [0, 0]);
+    snd::emitter("emt_nam_water_lapping_short", (42594, 62234, 1320), [5, 8], [0, 0], [0, 0]);
 }
 
 // Namespace namespace_72b0499b/namespace_268b0a5e
@@ -184,9 +184,9 @@ function function_54b26c90() {
 // Checksum 0xe0a42b6, Offset: 0x2970
 // Size: 0x1b4
 function function_552d1d58() {
-    snd::emitter("emt_nam_gunfire_distant", level.players[0], [3:15, 2:10, 1:4, 0:2], [1:800, 0:200], [1:0, 0:0]);
-    snd::emitter("emt_nam_exp_far", level.players[0], [3:15, 2:10, 1:6, 0:3], [1:800, 0:400], [1:0, 0:0]);
-    snd::emitter("emt_nam_exp_medium", level.players[0], [3:15, 2:10, 1:5, 0:2], [1:800, 0:400], [1:0, 0:0]);
+    snd::emitter("emt_nam_gunfire_distant", level.players[0], [2, 4, 10, 15], [200, 800], [0, 0]);
+    snd::emitter("emt_nam_exp_far", level.players[0], [3, 6, 10, 15], [400, 800], [0, 0]);
+    snd::emitter("emt_nam_exp_medium", level.players[0], [2, 5, 10, 15], [400, 800], [0, 0]);
 }
 
 // Namespace namespace_72b0499b/namespace_268b0a5e
@@ -194,8 +194,8 @@ function function_552d1d58() {
 // Checksum 0xa9b3ae7c, Offset: 0x2b30
 // Size: 0x17c
 function function_132ea7de() {
-    snd::emitter("amb_radio_oneshot", (-18790, 40029, 840), [1:7, 0:3], [1:0, 0:0], [1:0, 0:0]);
-    snd::emitter("amb_radio_oneshot", (-18755, 40033, 841), [1:8, 0:4], [1:0, 0:0], [1:0, 0:0]);
+    snd::emitter("amb_radio_oneshot", (-18790, 40029, 840), [3, 7], [0, 0], [0, 0]);
+    snd::emitter("amb_radio_oneshot", (-18755, 40033, 841), [4, 8], [0, 0], [0, 0]);
     snd::play("amb_computer_lp", (-18740, 40203, 837));
     var_cfe894ed = snd::play("amb_behind_reddoor_rustling_lp", (-18859, 40343, 842));
     level waittill(#"hash_1c61fc6e80974e9");

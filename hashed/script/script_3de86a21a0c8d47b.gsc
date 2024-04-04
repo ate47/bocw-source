@@ -24,14 +24,14 @@
 // Checksum 0x29b09891, Offset: 0x330
 // Size: 0x34
 function private autoexec __init__system__() {
-    system::register("spy_camera", &function_70a657d8, undefined, undefined, undefined);
+    system::register("spy_camera", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace spy_camera/spy_camera
 // Params 0, eflags: 0x6 linked
 // Checksum 0xcab31a7b, Offset: 0x370
 // Size: 0x20c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_weapon_change(&on_weapon_change);
     callback::on_spawned(&function_ab7ec803);
     clientfield::register("toplayer", "spy_camera_state", 1, 2, "int");
@@ -75,7 +75,7 @@ function function_f785d9e9(objects, var_7eb1c6be = 0, var_354b19f1) {
 // Size: 0x90
 function private function_654fa552(var_57e553fd) {
     self endon(#"death", #"hash_54e0f219fc10204a");
-    self waittillmatch({#fieldvalue:1, #var_aad36d51:0}, #"hash_72a5fe161eb7a0ce");
+    self waittillmatch({#var_aad36d51:0, #fieldvalue:1}, #"hash_72a5fe161eb7a0ce");
     self notify(#"hash_4e1642d862c17b5b");
     if (isdefined(var_57e553fd)) {
         var_57e553fd notify(#"hash_4e1642d862c17b5b");
@@ -89,7 +89,7 @@ function private function_654fa552(var_57e553fd) {
 function private function_a6928964(var_57e553fd) {
     self endon(#"death", #"hash_4e1642d862c17b5b", #"hash_54e0f219fc10204a");
     while (true) {
-        self waittillmatch({#fieldvalue:2, #var_aad36d51:0}, #"hash_72a5fe161eb7a0ce");
+        self waittillmatch({#var_aad36d51:0, #fieldvalue:2}, #"hash_72a5fe161eb7a0ce");
         self notify(#"hash_54596dc066040d8c");
         if (isdefined(var_57e553fd)) {
             var_57e553fd notify(#"hash_54596dc066040d8c");
@@ -237,13 +237,13 @@ function function_f91a82ef(b_enabled = 1, var_b3649521 = #"hash_12be6ba1327c64b1
 // Params 1, eflags: 0x0
 // Checksum 0x78928df2, Offset: 0xec8
 // Size: 0x100
-function function_de6d9b74(var_f48ab2e1) {
+function function_de6d9b74(prompts) {
     /#
-        assert(isarray(var_f48ab2e1) || ishash(var_f48ab2e1));
+        assert(isarray(prompts) || ishash(prompts));
     #/
     level.var_af143f1d = [];
-    if (isarray(var_f48ab2e1)) {
-        level.var_af143f1d = var_f48ab2e1;
+    if (isarray(prompts)) {
+        level.var_af143f1d = prompts;
         return;
     }
     if (!isdefined(level.var_af143f1d)) {
@@ -251,7 +251,7 @@ function function_de6d9b74(var_f48ab2e1) {
     } else if (!isarray(level.var_af143f1d)) {
         level.var_af143f1d = array(level.var_af143f1d);
     }
-    level.var_af143f1d[level.var_af143f1d.size] = var_f48ab2e1;
+    level.var_af143f1d[level.var_af143f1d.size] = prompts;
 }
 
 // Namespace spy_camera/spy_camera
@@ -268,7 +268,7 @@ function private function_b917e313(*camera, var_e047216a, var_c5c03b2) {
     var_ff17ab00 = 0;
     var_697c5b2b = int(2 * 1000);
     var_a05f9c5f = 0;
-    var_83cf950f = self function_57ce0ce1(var_e047216a, "loop") * 1000;
+    var_83cf950f = self getgesturestarttime(var_e047216a, "loop") * 1000;
     var_4308b3d8 = 0;
     var_a30db60b = 0;
     self val::set("spy_camera", "disable_weapon_fire", 1);
@@ -290,7 +290,7 @@ function private function_b917e313(*camera, var_e047216a, var_c5c03b2) {
                 self notify(#"hash_19f1b179d8ebf1dd");
                 self val::set("spy_camera", "freezecontrols_allowlook", 1);
                 self val::set("spy_camera", "disable_weapon_cycling", 1);
-            } else if (self function_495bdc7b(var_e047216a) && gettime() > var_4308b3d8) {
+            } else if (self isgestureplaying(var_e047216a) && gettime() > var_4308b3d8) {
                 if (!var_f94537f6) {
                     var_f94537f6 = 1;
                     self notify(#"hash_59b80e9e535f9788");
@@ -306,7 +306,7 @@ function private function_b917e313(*camera, var_e047216a, var_c5c03b2) {
                     self thread function_376f686f();
                     self hideviewmodel();
                     self val::reset("spy_camera", "disable_weapon_fire");
-                    namespace_c8e236da::function_c27f93d5();
+                    namespace_c8e236da::removelist();
                     if (!isdefined(level.var_af143f1d) || level.var_af143f1d.size == 0) {
                         level.var_af143f1d = [];
                         if (self gamepadusedlast()) {
@@ -357,7 +357,7 @@ function private function_b917e313(*camera, var_e047216a, var_c5c03b2) {
             var_a30db60b = 0;
             if (var_f94537f6) {
                 var_f94537f6 = 0;
-                namespace_c8e236da::function_c27f93d5();
+                namespace_c8e236da::removelist();
             }
             if (var_a05f9c5f != 0) {
                 self lui::screen_fade_out(0.1);
@@ -379,7 +379,7 @@ function private function_b917e313(*camera, var_e047216a, var_c5c03b2) {
             self notify(#"hash_5512f0799022267");
             self val::reset("spy_camera", "freezecontrols_allowlook");
             self val::reset("spy_camera", "disable_weapon_cycling");
-            while (self function_495bdc7b(var_e047216a)) {
+            while (self isgestureplaying(var_e047216a)) {
                 waitframe(1);
             }
             self notify(#"hash_2c04af2e3bf6a169");
@@ -414,7 +414,7 @@ function private function_376f686f() {
 // Size: 0x254
 function private function_d704edcd(*var_c5c03b2) {
     self notify(#"hash_84ab457ebc19a5a");
-    namespace_c8e236da::function_c27f93d5();
+    namespace_c8e236da::removelist();
     self val::reset("spy_camera", "freezecontrols_allowlook");
     self val::reset("spy_camera", "disable_weapon_cycling");
     self clientfield::set_to_player("spy_camera_state", 0);
@@ -429,7 +429,7 @@ function private function_d704edcd(*var_c5c03b2) {
     self notify(#"hide_camera_unequip_hint");
     level.var_af143f1d = [];
     self showviewmodel();
-    self val::function_e681e68e("spy_camera");
+    self val::reset_all("spy_camera");
     self notifyonplayercommandremove("toggle_stance", "+stance");
     self notifyonplayercommandremove("go_stand", "+gostand");
     setuimodelvalue(getuimodel(function_90d058e8(#"spy_camera"), "stream"), 0);
@@ -464,7 +464,7 @@ function private function_2d8ba5c4() {
             wait(1);
             var_acca0715 = gettime();
         }
-        if (self function_495bdc7b(#"ges_spy_camera_ads")) {
+        if (self isgestureplaying(#"ges_spy_camera_ads")) {
             self waittill(#"hash_2c04af2e3bf6a169");
             var_acca0715 = gettime();
         }

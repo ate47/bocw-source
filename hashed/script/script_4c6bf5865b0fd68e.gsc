@@ -17,21 +17,21 @@
 // Checksum 0x3beb0b08, Offset: 0x110
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"hash_695bd4a240716800", &function_70a657d8, &postinit, undefined, #"zm_weapons");
+    system::register(#"hash_695bd4a240716800", &preinit, &postinit, undefined, #"zm_weapons");
 }
 
 // Namespace namespace_5a359049/namespace_5a359049
 // Params 0, eflags: 0x6 linked
 // Checksum 0x7a722be, Offset: 0x170
 // Size: 0xe4
-function private function_70a657d8() {
+function private preinit() {
     level.var_1b5a1f0d = &zm_utility::is_point_inside_enabled_zone;
     level.var_3da1a113 = #"hash_733eecf99198ecb9";
     level.weaponzmcymbalmonkey = getweapon(#"cymbal_monkey");
     zm_loadout::register_lethal_grenade_for_level(#"cymbal_monkey");
     zm_weapons::function_404c3ad5(level.weaponzmcymbalmonkey, &function_c1c47eb6);
     callback::add_callback(#"on_ai_killed", &function_c58f9108);
-    namespace_cc411409::function_70a657d8();
+    namespace_cc411409::preinit();
 }
 
 // Namespace namespace_5a359049/namespace_5a359049

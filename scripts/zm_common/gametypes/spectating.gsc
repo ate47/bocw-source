@@ -10,14 +10,14 @@
 // Checksum 0x790f4c11, Offset: 0xd0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_spectating", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_spectating", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace spectating/spectating
 // Params 0, eflags: 0x6 linked
 // Checksum 0x5e165cb9, Offset: 0x118
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&main);
 }
 

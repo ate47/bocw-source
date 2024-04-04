@@ -115,18 +115,18 @@ function function_4b0f12f6(level_notify) {
     while (true) {
         var_867b0f45 = level.var_7466d419 getspeedmph();
         shot_count = randomintrange(10, 12);
-        var_b7fd7ab4 = 0;
-        var_aa2fdf19 = randomintrange(1000, 1500);
-        var_b9421e4 = randomintrange(400, 600);
+        random_y = 0;
+        random_x = randomintrange(1000, 1500);
+        random_z = randomintrange(400, 600);
         if (math::cointoss()) {
-            var_b7fd7ab4 = randomintrange(1250, 1500);
+            random_y = randomintrange(1250, 1500);
         } else {
-            var_b7fd7ab4 = randomintrange(-1500, -1250);
+            random_y = randomintrange(-1500, -1250);
         }
-        tag = [3:"tag_rotor_attach", 2:"tag_door_rear_right_null", 1:"tag_door_mid_right_null", 0:"tag_door_rear_left_null"];
+        tag = ["tag_door_rear_left_null", "tag_door_mid_right_null", "tag_door_rear_right_null", "tag_rotor_attach"];
         var_44960a56 = array::random(tag);
         var_9d5321a = level.var_7466d419 gettagorigin(var_44960a56);
-        var_5a3aa491 = (var_aa2fdf19, var_b7fd7ab4, var_b9421e4);
+        var_5a3aa491 = (random_x, random_y, random_z);
         var_f4d3e08a = rotatepoint(var_5a3aa491, level.var_7466d419.angles) + level.var_7466d419.origin;
         thread function_f4567c7c("stop");
         while (shot_count > 0) {
@@ -157,37 +157,37 @@ function function_ad449a1b(level_notify) {
     while (var_43050ba4 > 0) {
         canshoot = 1;
         var_867b0f45 = level.var_7466d419 getspeedmph();
-        var_b7fd7ab4 = 0;
-        var_aa2fdf19 = randomintrange(3000, 3500);
-        var_b9421e4 = randomintrange(400, 600);
+        random_y = 0;
+        random_x = randomintrange(3000, 3500);
+        random_z = randomintrange(400, 600);
         if (math::cointoss()) {
-            var_b7fd7ab4 = randomintrange(1250, 1500);
+            random_y = randomintrange(1250, 1500);
         } else {
-            var_b7fd7ab4 = randomintrange(-1500, -1250);
+            random_y = randomintrange(-1500, -1250);
         }
-        var_5a3aa491 = (var_aa2fdf19, var_b7fd7ab4, var_b9421e4);
+        var_5a3aa491 = (random_x, random_y, random_z);
         var_f4d3e08a = rotatepoint(var_5a3aa491, level.var_7466d419.angles) + level.var_7466d419.origin;
         if (canshoot) {
             if (var_867b0f45 > 10) {
                 offset = vectorscale((1, 0, 0), 4000);
                 var_6d32c483 = rotatepoint(offset, level.var_7466d419.angles) + level.var_7466d419.origin;
-                var_54a395f8 = magicbullet(weapon, var_f4d3e08a, var_6d32c483);
-                level.var_c95e0d20 = var_54a395f8;
+                missle = magicbullet(weapon, var_f4d3e08a, var_6d32c483);
+                level.var_c95e0d20 = missle;
                 if (var_43050ba4 <= 1) {
-                    var_54a395f8.var_30dc969d = 1;
-                    var_54a395f8.team = #"axis";
-                    var_54a395f8 setteam(#"axis");
-                    level.var_7466d419 thread heatseekingmissile::missiletarget_proximitydetonate(var_54a395f8, var_54a395f8, weapon, "death");
+                    missle.var_30dc969d = 1;
+                    missle.team = #"axis";
+                    missle setteam(#"axis");
+                    level.var_7466d419 thread heatseekingmissile::missiletarget_proximitydetonate(missle, missle, weapon, "death");
                     attractor = missile_createattractorent(level.var_7466d419, 25000, 150, 1);
                 }
             } else if (var_867b0f45 <= 10) {
-                var_54a395f8 = magicbullet(weapon, var_f4d3e08a, level.var_7466d419.origin);
-                level.var_c95e0d20 = var_54a395f8;
+                missle = magicbullet(weapon, var_f4d3e08a, level.var_7466d419.origin);
+                level.var_c95e0d20 = missle;
                 if (var_43050ba4 <= 1) {
-                    var_54a395f8.var_30dc969d = 1;
-                    var_54a395f8.team = #"axis";
-                    var_54a395f8 setteam(#"axis");
-                    level.var_7466d419 thread heatseekingmissile::missiletarget_proximitydetonate(var_54a395f8, var_54a395f8, weapon, "death");
+                    missle.var_30dc969d = 1;
+                    missle.team = #"axis";
+                    missle setteam(#"axis");
+                    level.var_7466d419 thread heatseekingmissile::missiletarget_proximitydetonate(missle, missle, weapon, "death");
                     attractor = missile_createattractorent(level.var_7466d419, 25000, 150, 1);
                 }
             }
@@ -208,25 +208,25 @@ function function_d262b525(level_notify, var_7366cb1a) {
     while (true) {
         canshoot = 1;
         var_867b0f45 = level.var_7466d419 getspeedmph();
-        var_b7fd7ab4 = 0;
-        var_aa2fdf19 = randomintrange(3000, 3500);
-        var_b9421e4 = randomintrange(400, 600);
+        random_y = 0;
+        random_x = randomintrange(3000, 3500);
+        random_z = randomintrange(400, 600);
         if (math::cointoss()) {
-            var_b7fd7ab4 = randomintrange(1250, 1500);
+            random_y = randomintrange(1250, 1500);
         } else {
-            var_b7fd7ab4 = randomintrange(-1500, -1250);
+            random_y = randomintrange(-1500, -1250);
         }
-        var_5a3aa491 = (var_aa2fdf19, var_b7fd7ab4, var_b9421e4);
+        var_5a3aa491 = (random_x, random_y, random_z);
         var_f4d3e08a = rotatepoint(var_5a3aa491, level.var_7466d419.angles) + level.var_7466d419.origin;
         if (canshoot) {
             if (var_867b0f45 > 10) {
                 offset = vectorscale((1, 0, 0), 4000);
                 var_6d32c483 = rotatepoint(offset, level.var_7466d419.angles) + level.var_7466d419.origin;
-                var_54a395f8 = magicbullet(weapon, var_f4d3e08a, var_6d32c483);
+                missle = magicbullet(weapon, var_f4d3e08a, var_6d32c483);
             } else if (var_867b0f45 <= 10) {
                 offset = vectorscale((1, 0, 0), 1000);
                 var_6d32c483 = rotatepoint(offset, level.var_7466d419.angles) + level.var_7466d419.origin;
-                var_54a395f8 = magicbullet(weapon, var_f4d3e08a, var_6d32c483);
+                missle = magicbullet(weapon, var_f4d3e08a, var_6d32c483);
             }
         }
         wait(var_7366cb1a);
@@ -241,10 +241,10 @@ function function_f4567c7c(distance, level_notify) {
     level.var_7466d419 endon(#"death");
     level endon(level_notify);
     source = level.players[0].origin;
-    pitch = [1:0.5, 0:0.25];
-    yaw = [1:0.5, 0:0.1];
-    roll = [1:0.5, 0:0.25];
-    duration = [1:0.3, 0:0.7];
+    pitch = [0.25, 0.5];
+    yaw = [0.1, 0.5];
+    roll = [0.25, 0.5];
+    duration = [0.7, 0.3];
     freqpitch = 4;
     freqyaw = 4;
     freqroll = 4;

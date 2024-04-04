@@ -25,14 +25,14 @@
 // Checksum 0xa0ac0519, Offset: 0x180
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"melee_weapon", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"melee_weapon", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_melee_weapon/zm_melee_weapon
 // Params 0, eflags: 0x6 linked
 // Checksum 0x5ad62296, Offset: 0x1d8
 // Size: 0x20
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level._melee_weapons)) {
         level._melee_weapons = [];
     }
@@ -425,7 +425,7 @@ function melee_weapon_think(weapon, cost, flourish_fn, vo_dialog_id, flourish_we
                         self.stub.first_time_triggered = 1;
                     }
                 }
-                level notify(#"weapon_bought", {#weapon:weapon, #player:player});
+                level notify(#"weapon_bought", {#player:player, #weapon:weapon});
                 player zm_score::minus_to_player_score(cost);
                 player zm_stats::function_c0c6ab19(#"wallbuys", 1, 1);
                 player zm_stats::function_c0c6ab19(#"weapons_bought", 1, 1);

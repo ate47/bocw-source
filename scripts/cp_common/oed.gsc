@@ -18,14 +18,14 @@
 // Checksum 0xefb54035, Offset: 0x198
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_1a2e8b1921eaf73f", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"oed", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_446fe428/namespace_446fe428
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9ea1eee3, Offset: 0x1f0
 // Size: 0x27c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "sitrep_toggle", 1, 1, "int");
     clientfield::register("toplayer", "active_dni_fx", 1, 1, "counter");
     clientfield::register("toplayer", "hack_dni_fx", 1, 1, "counter");

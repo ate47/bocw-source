@@ -18,14 +18,14 @@
 // Checksum 0xa4f42711, Offset: 0x218
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"out_of_bounds", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"out_of_bounds", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace oob/oob
 // Params 0, eflags: 0x6 linked
 // Checksum 0x63702396, Offset: 0x260
 // Size: 0x5ec
-function private function_70a657d8() {
+function private preinit() {
     level.oob_triggers = [];
     if (sessionmodeismultiplayergame()) {
         level.oob_timekeep_ms = getdvarint(#"oob_timekeep_ms", 3000);
@@ -67,7 +67,7 @@ function private function_70a657d8() {
     clientfield::register("toplayer", "out_of_bounds", 1, 5, "int");
     clientfield::register("toplayer", "nonplayer_oob_usage", 1, 1, "int");
     /#
-        function_46cfcff6();
+        init_debug();
     #/
 }
 
@@ -75,7 +75,7 @@ function private function_70a657d8() {
 // Params 0, eflags: 0x4
 // Checksum 0xe9139b02, Offset: 0x858
 // Size: 0x24
-function private function_46cfcff6() {
+function private init_debug() {
     /#
         adddebugcommand("<unknown string>");
     #/
@@ -157,7 +157,7 @@ function function_376ddafd(origin, radius) {
 // Size: 0x192
 function private function_c1e8a50a(origin, radius) {
     radiussq = radius * radius;
-    level.var_48f13f65 = {#radiussq:radiussq, #origin:origin};
+    level.var_48f13f65 = {#origin:origin, #radiussq:radiussq};
     while (true) {
         players = getplayers();
         foreach (player in players) {
@@ -705,12 +705,12 @@ function private function_20431d45(var_952a24b5) {
     if (!is_true(player.var_fe73e6f8) && var_952a24b5) {
         player.var_fe73e6f8 = 1;
         timeremaining = player function_f896a102();
-        callback::callback(#"hash_75edd53ff899cd30", {#var_7a3dfae:timeremaining});
+        callback::callback(#"hash_75edd53ff899cd30", {#countdowntime:timeremaining});
         return;
     }
     if (is_true(player.var_fe73e6f8) && !var_952a24b5) {
         player.var_fe73e6f8 = undefined;
-        callback::callback(#"hash_75edd53ff899cd30", {#var_7a3dfae:0});
+        callback::callback(#"hash_75edd53ff899cd30", {#countdowntime:0});
     }
 }
 

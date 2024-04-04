@@ -57,7 +57,7 @@ function barrelupdate(model_name = "zombietron_barrel") {
         if (isplayer(self)) {
             barrel thread namespace_ec06fe4a::function_ae010bb4(self);
         }
-        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", barrel.origin, 1 | 512 | 8, 40, 50);
+        trigger = namespace_ec06fe4a::spawntrigger("trigger_radius", barrel.origin, 1 | 512 | 8, 40, 50);
         if (isdefined(trigger)) {
             if (isplayer(self)) {
                 trigger thread namespace_ec06fe4a::function_ae010bb4(self);
@@ -79,7 +79,7 @@ function barrelupdate(model_name = "zombietron_barrel") {
         barrel setmodel(model_name);
         barrel setplayercollision(0);
         barrel linkto(org, "tag_origin", vectorscale((0, -1, 0), 90));
-        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", barrel.origin, 1 | 512 | 8, 40, 50);
+        trigger = namespace_ec06fe4a::spawntrigger("trigger_radius", barrel.origin, 1 | 512 | 8, 40, 50);
         if (isdefined(trigger)) {
             if (isplayer(self)) {
                 trigger thread namespace_ec06fe4a::function_ae010bb4(self);

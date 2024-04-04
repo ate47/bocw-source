@@ -17,7 +17,7 @@
 #using scripts\core_common\clientfield_shared.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
 #using scripts\core_common\system_shared.gsc;
-#using script_7fc996fe8678852;
+#using scripts\core_common\content_manager.gsc;
 #using scripts\core_common\animation_shared.gsc;
 #using scripts\core_common\array_shared.gsc;
 
@@ -28,14 +28,14 @@
 // Checksum 0x9015e434, Offset: 0x270
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_1e60252f388011fb", &function_70a657d8, undefined, undefined, #"hash_f81b9dea74f0ee");
+    system::register(#"hash_1e60252f388011fb", &preinit, undefined, undefined, #"content_manager");
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
 // Params 0, eflags: 0x2 linked
 // Checksum 0x67337126, Offset: 0x2c0
 // Size: 0x174
-function function_70a657d8() {
+function preinit() {
     if (!zm_utility::is_survival()) {
         return;
     }
@@ -45,7 +45,7 @@ function function_70a657d8() {
     if (!is_true(getgametypesetting(#"hash_7029ea8551fb906f")) && !getdvarint(#"hash_730311c63805303a", 0) && !getdvarint(#"hash_6a8bc2baa3d9fcb8", 0)) {
         return;
     }
-    namespace_8b6a9d79::function_b3464a7c(#"hash_766306ef00ce07f3", &function_8ebf52b6, 1);
+    content_manager::register_script(#"hash_766306ef00ce07f3", &function_8ebf52b6, 1);
     clientfield::register("actor", "sr_horde_hunt_fx", 1, 1, "int");
     clientfield::register("world", "sr_horde_hunt_decals", 1, 2, "int");
 }
@@ -58,7 +58,7 @@ function private function_8ebf52b6(instance) {
     instance flag::clear("cleanup");
     instance callback::function_d8abfc3d(#"hash_345e9169ebba28fb", &function_1226f6af);
     level callback::add_callback(#"hash_594217387367ebb4", &function_1226f6af, instance);
-    var_2b737124 = instance.var_fe2612fe[#"corpses"][0];
+    var_2b737124 = instance.contentgroups[#"corpses"][0];
     if (isdefined(var_2b737124.targetname)) {
         showmiscmodels(var_2b737124.targetname);
         /#
@@ -75,8 +75,8 @@ function private function_8ebf52b6(instance) {
             level clientfield::set("sr_horde_hunt_decals", 3);
         }
     }
-    s_start = instance.var_fe2612fe[#"start"][0];
-    instance.trigger = namespace_8b6a9d79::function_214737c7(s_start, &function_dbeb7b0f, #"hash_38e8b4d1311b4a2d", undefined, 100);
+    s_start = instance.contentgroups[#"start"][0];
+    instance.trigger = content_manager::spawn_interact(s_start, &function_dbeb7b0f, #"hash_38e8b4d1311b4a2d", undefined, 100);
     instance.trigger.instance = instance;
     instance.var_ec694b2c = util::spawn_model(#"hash_7893e6c7d1cf2d74", s_start.origin - vectorscale((0, 0, 1), 8));
     instance.var_ec694b2c setscale(3);
@@ -105,7 +105,7 @@ function private function_dbeb7b0f(*eventstruct) {
     level thread zm_vo::function_7622cb70(#"hash_19913c8f26e0a808", 1);
     level thread function_deefa538(self.instance);
     if (isdefined(var_9bb8ce1a)) {
-        var_9bb8ce1a function_cb48cddd();
+        var_9bb8ce1a deletedelay();
     }
     if (isdefined(self)) {
         self delete();
@@ -140,8 +140,8 @@ function private function_deefa538(instance) {
             n_variant = var_3d0c759f;
         }
     #/
-    var_eb92deab = isdefined(instance.var_fe2612fe[#"hash_36fe80c29811691c"]) ? instance.var_fe2612fe[#"hash_36fe80c29811691c"] : [];
-    var_ea63e380 = isdefined(instance.var_fe2612fe[#"hash_55507f11db488717"]) ? instance.var_fe2612fe[#"hash_55507f11db488717"] : [];
+    var_eb92deab = isdefined(instance.contentgroups[#"hash_36fe80c29811691c"]) ? instance.contentgroups[#"hash_36fe80c29811691c"] : [];
+    var_ea63e380 = isdefined(instance.contentgroups[#"hash_55507f11db488717"]) ? instance.contentgroups[#"hash_55507f11db488717"] : [];
     function_283f2fb3(var_eb92deab);
     function_283f2fb3(var_ea63e380);
     var_18d554fc = int(min(level.realm, 3));
@@ -276,7 +276,7 @@ function private function_1b8f27ec() {
     array::flag_wait(self.a_ai, #"hash_576e1b7f4a5fe88e");
     foreach (ai in self.a_ai) {
         ai flag::clear(#"hash_576e1b7f4a5fe88e");
-        ai val::function_e681e68e(#"hash_59345e23ee60c2dd");
+        ai val::reset_all(#"hash_59345e23ee60c2dd");
     }
     self flag::set(#"hash_50b20165dfb09565");
     self thread function_2660ef47();
@@ -611,7 +611,7 @@ function private function_ca912561(instance) {
     if (isdefined(self.instance)) {
         self.instance flag::clear(#"hash_3ea0bab19c8c86b6");
     }
-    level scoreevents::doscoreeventcallback("scoreEventSR", {#location:self.origin, #var_b0a57f8c:5000, #nearbyplayers:1, #scoreevent:"event_complete"});
+    level scoreevents::doscoreeventcallback("scoreEventSR", {#scoreevent:"event_complete", #nearbyplayers:1, #var_b0a57f8c:5000, #location:self.origin});
     players = getplayers();
     foreach (player in players) {
         player zm_stats::function_945c7ce2(#"hash_165462f560a0538c", 1);
@@ -654,12 +654,12 @@ function private function_d3d7a798(ai) {
             foreach (var_f077a87e in instance.a_ai) {
                 if (var_f077a87e.aitype === #"spawner_zm_steiner_split_radiation_blast" || var_f077a87e.aitype === #"spawner_zm_steiner_split_radiation_bomb") {
                     /#
-                        var_6c0639a1 = var_f077a87e.aitype === #"spawner_zm_steiner_split_radiation_blast" ? "<unknown string>" : "<unknown string>";
-                        println("<unknown string>" + var_6c0639a1 + "<unknown string>" + var_f077a87e getentitynumber() + "<unknown string>" + var_f077a87e.origin);
+                        ai_name = var_f077a87e.aitype === #"spawner_zm_steiner_split_radiation_blast" ? "<unknown string>" : "<unknown string>";
+                        println("<unknown string>" + ai_name + "<unknown string>" + var_f077a87e getentitynumber() + "<unknown string>" + var_f077a87e.origin);
                     #/
                     if (var_f077a87e.origin[2] < -1000) {
                         /#
-                            println("<unknown string>" + var_6c0639a1 + "<unknown string>" + var_f077a87e getentitynumber() + "<unknown string>");
+                            println("<unknown string>" + ai_name + "<unknown string>" + var_f077a87e getentitynumber() + "<unknown string>");
                         #/
                         var_f077a87e.allowdeath = 1;
                         var_f077a87e kill();

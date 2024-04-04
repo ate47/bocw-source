@@ -17,14 +17,14 @@
 // Checksum 0x5c69cacd, Offset: 0x5c8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"globallogic_audio", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"globallogic_audio", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace globallogic_audio/globallogic_audio
 // Params 0, eflags: 0x6 linked
 // Checksum 0xda72249f, Offset: 0x610
 // Size: 0x1c
-function private function_70a657d8() {
+function private preinit() {
     level thread function_dd5d8f8e();
 }
 
@@ -448,7 +448,7 @@ function wait_next_killstreak_dialog(waittime) {
 // Size: 0x5c
 function function_30f16f29(soundevent, var_8a6b001a, weapon) {
     if (isdefined(var_8a6b001a) && isalive(var_8a6b001a)) {
-        var_8a6b001a function_18aba49d(soundevent, weapon, self);
+        var_8a6b001a playsoundevent(soundevent, weapon, self);
     }
 }
 
@@ -627,16 +627,16 @@ function play_next_leader_dialog(dialogalias) {
         }
     }
     if (dialogkey === "gamePlayerKicked") {
-        self function_18aba49d(2);
+        self playsoundevent(2);
     } else if (dialogkey === "gameDraw") {
-        self function_18aba49d(12);
+        self playsoundevent(12);
     } else if (dialogkey === "gameLost") {
-        self function_18aba49d(13);
+        self playsoundevent(13);
     } else if (dialogkey === "gameWon") {
         if (isdefined(level.var_21d88451)) {
             self playlocalsound(level.var_21d88451);
         } else {
-            self function_18aba49d(14);
+            self playsoundevent(14);
         }
     } else {
         if (!isdefined(dialogalias)) {

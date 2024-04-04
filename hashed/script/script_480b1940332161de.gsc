@@ -22,35 +22,35 @@ function private autoexec __init__system__() {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xcb357765, Offset: 0x178
 // Size: 0x4ae
-function enable(var_dc8b0c0d, firstpoint, var_8fbcda45) {
+function enable(shouldenable, firstpoint, var_8fbcda45) {
     /#
         assert(isactor(self));
     #/
     /#
-        assert(var_dc8b0c0d === 1 || var_dc8b0c0d === 0, "<unknown string>");
+        assert(shouldenable === 1 || shouldenable === 0, "<unknown string>");
     #/
-    if (is_true(var_dc8b0c0d)) {
+    if (is_true(shouldenable)) {
         if (!isdefined(self.poi)) {
             self.poi = {};
         }
     } else if (!isdefined(self.poi)) {
         return;
     }
-    if (!var_dc8b0c0d && (isdefined(self.poi.var_7dfe573d.var_3b03815e) ? self.poi.var_7dfe573d.var_3b03815e : 0) > gettime()) {
+    if (!shouldenable && (isdefined(self.poi.currentpoi.var_3b03815e) ? self.poi.currentpoi.var_3b03815e : 0) > gettime()) {
         self ai::look_at(undefined, 3);
     }
-    self.poi.var_7dfe573d = undefined;
-    self.poi.var_6faefa54 = undefined;
-    self.poi.var_40c78170 = var_dc8b0c0d;
+    self.poi.currentpoi = undefined;
+    self.poi.nextpoi = undefined;
+    self.poi.doingpoi = shouldenable;
     self.poi.var_8fbcda45 = var_8fbcda45;
-    if (!var_dc8b0c0d) {
+    if (!shouldenable) {
         /#
             assert(isdefined(level.poi.var_5ee53e3), "<unknown string>");
         #/
         arrayremovevalue(level.poi.var_5ee53e3, self);
-        self.turnrate = isdefined(self.poi.var_3cf5f944) ? self.poi.var_3cf5f944 : self.turnrate;
-        self.var_acf874aa = undefined;
-        self.var_6141b84e = undefined;
+        self.turnrate = isdefined(self.poi.poi_oldturnrate) ? self.poi.poi_oldturnrate : self.turnrate;
+        self.gunadditiveoverride = undefined;
+        self.gunposeoverride = undefined;
         if (isdefined(self.poi.auto)) {
             self.poi = {#auto:self.poi.auto};
         } else {
@@ -71,34 +71,34 @@ function enable(var_dc8b0c0d, firstpoint, var_8fbcda45) {
     if (!array::contains(level.poi.var_5ee53e3, self)) {
         level.poi.var_5ee53e3[level.poi.var_5ee53e3.size] = self;
     }
-    if (isdefined(level.poi.var_28bdae79)) {
-        level thread [[ level.poi.var_28bdae79 ]]();
+    if (isdefined(level.poi.fnfindcqbpointsofinterest)) {
+        level thread [[ level.poi.fnfindcqbpointsofinterest ]]();
     }
     /#
         assert(!isdefined(firstpoint) || isstruct(firstpoint));
     #/
-    self.poi.var_3cf5f944 = self.turnrate;
+    self.poi.poi_oldturnrate = self.turnrate;
     self.turnrate = 0.25;
     self.poi.leftaimlimit = 90;
     self.poi.rightaimlimit = -90;
-    self.poi.var_5fccb5cd = firstpoint;
-    self.var_6141b84e = "disable";
-    self notify(#"hash_66e66f69a86651cd");
+    self.poi.poi_firstpoint = firstpoint;
+    self.gunposeoverride = "disable";
+    self notify(#"poi_enabled");
 }
 
 // Namespace poi/namespace_b1048555
 // Params 6, eflags: 0x2 linked
 // Checksum 0x1476d96e, Offset: 0x630
 // Size: 0x186
-function function_fc1d22bd(var_dc8b0c0d, var_411041d2, yawmax, pitchmin, pitchmax, var_8fbcda45) {
-    var_dc8b0c0d = is_true(var_dc8b0c0d);
-    if (var_dc8b0c0d && !isdefined(self.poi.auto)) {
-        self function_4d1af993(var_411041d2, yawmax, pitchmin, pitchmax, var_8fbcda45);
+function function_fc1d22bd(shouldenable, yawmin, yawmax, pitchmin, pitchmax, var_8fbcda45) {
+    shouldenable = is_true(shouldenable);
+    if (shouldenable && !isdefined(self.poi.auto)) {
+        self function_4d1af993(yawmin, yawmax, pitchmin, pitchmax, var_8fbcda45);
         self thread function_c6ff2ee5();
         self notify(#"hash_4f88221ad3977829");
         return;
     }
-    if (!var_dc8b0c0d && isdefined(self.poi.auto)) {
+    if (!shouldenable && isdefined(self.poi.auto)) {
         self notify(#"hash_5ea869d8ad18e50b");
         self ai::look_at(self.poi.auto.angles, 3, 1, float(function_60d95f53()) / 1000, self.poi.auto.var_8fbcda45, 1);
         self.poi.auto = undefined;
@@ -113,8 +113,8 @@ function function_fc1d22bd(var_dc8b0c0d, var_411041d2, yawmax, pitchmin, pitchma
 function private function_f64316de() {
     level.poi = {};
     level.poi.var_1ee388be = [];
-    level.poi.var_28bdae79 = &function_b31aaef9;
-    level.poi.var_705e0648 = &enable;
+    level.poi.fnfindcqbpointsofinterest = &function_b31aaef9;
+    level.poi.fnenable = &enable;
     level.poi.var_38974483 = &function_fc1d22bd;
     /#
         function_5ac4dc99("<unknown string>", 0);
@@ -144,31 +144,31 @@ function private function_4de58b23() {
 // Checksum 0x317dec04, Offset: 0x9d0
 // Size: 0x3c4
 function private function_b31aaef9() {
-    if (is_true(level.poi.var_9e5f97bf)) {
+    if (is_true(level.poi.alreadyfindingpoi)) {
         return;
     }
-    level.poi.var_9e5f97bf = 1;
+    level.poi.alreadyfindingpoi = 1;
     waitframe(1);
     while (true) {
         if (!isarray(level.poi.var_5ee53e3) || level.poi.var_5ee53e3.size == 0) {
-            level.poi.var_9e5f97bf = undefined;
+            level.poi.alreadyfindingpoi = undefined;
             return;
         }
         var_6a9ced4 = [];
         waited = 0;
         foreach (guy in level.poi.var_5ee53e3) {
-            if (isalive(guy) && is_true(guy.poi.var_40c78170) && !guy function_b4d1a9bb()) {
+            if (isalive(guy) && is_true(guy.poi.doingpoi) && !guy function_b4d1a9bb()) {
                 poi = guy function_f3a2a643();
-                if (isdefined(poi) && poi !== guy.poi.var_7dfe573d) {
+                if (isdefined(poi) && poi !== guy.poi.currentpoi) {
                     now = gettime();
-                    guy.poi.var_a192c8da = now;
-                    guy.poi.var_7dfe573d = poi;
+                    guy.poi.poi_starttime = now;
+                    guy.poi.currentpoi = poi;
                     var_8fbcda45 = isdefined(poi.var_1eabcced) ? poi.var_1eabcced : self.poi.var_8fbcda45;
                     var_9ced4e21 = poi util::function_4b93f9c2();
                     if ((isdefined(var_9ced4e21) ? var_9ced4e21 : 0) == 0) {
                         var_9ced4e21 = float(2000) / 1000;
                     }
-                    guy.poi.var_7dfe573d.var_3b03815e = now + var_9ced4e21 * 1000;
+                    guy.poi.currentpoi.var_3b03815e = now + var_9ced4e21 * 1000;
                     guy ai::look_at(poi.origin, 3, 1, var_9ced4e21, var_8fbcda45);
                     guy thread function_d0341c76(3, var_9ced4e21);
                 }
@@ -193,20 +193,20 @@ function private function_b31aaef9() {
 // Size: 0x352
 function private function_f3a2a643() {
     ismoving = isdefined(self.pathgoalpos);
-    var_df7a9e25 = isdefined(self.poi.var_7dfe573d);
-    if (!var_df7a9e25 && isdefined(self.poi.var_5fccb5cd)) {
+    haspoi = isdefined(self.poi.currentpoi);
+    if (!haspoi && isdefined(self.poi.poi_firstpoint)) {
         return function_aabc1f4c();
     }
-    if (var_df7a9e25 && isdefined(self.poi.var_7dfe573d.target) || isdefined(self.poi.var_6faefa54)) {
-        return function_75334336(var_df7a9e25);
+    if (haspoi && isdefined(self.poi.currentpoi.target) || isdefined(self.poi.nextpoi)) {
+        return function_75334336(haspoi);
     }
-    self.poi.var_6faefa54 = undefined;
-    if (var_df7a9e25) {
+    self.poi.nextpoi = undefined;
+    if (haspoi) {
         /#
-            assert(isdefined(self.poi.var_a192c8da));
+            assert(isdefined(self.poi.poi_starttime));
         #/
-        if (gettime() < self.poi.var_a192c8da + 2000) {
-            return self.poi.var_7dfe573d;
+        if (gettime() < self.poi.poi_starttime + 2000) {
+            return self.poi.currentpoi;
         }
     }
     var_c2fb3093 = undefined;
@@ -244,12 +244,12 @@ function private function_f3a2a643() {
 // Size: 0xf4
 function private function_aabc1f4c() {
     /#
-        assert(isdefined(self.poi.var_5fccb5cd));
+        assert(isdefined(self.poi.poi_firstpoint));
     #/
-    if (sighttracepassed(self geteye(), self.poi.var_5fccb5cd.origin, 0, undefined)) {
-        poi = self.poi.var_5fccb5cd;
+    if (sighttracepassed(self geteye(), self.poi.poi_firstpoint.origin, 0, undefined)) {
+        poi = self.poi.poi_firstpoint;
         if (isdefined(poi.target)) {
-            self.poi.var_6faefa54 = struct::get(poi.target, "targetname");
+            self.poi.nextpoi = struct::get(poi.target, "targetname");
         }
         if (function_a6d41d6e(poi)) {
             return poi;
@@ -265,52 +265,52 @@ function private function_aabc1f4c() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xeee4a349, Offset: 0x1200
 // Size: 0x348
-function private function_75334336(var_df7a9e25) {
+function private function_75334336(haspoi) {
     min_time = undefined;
     /#
-        assert(var_df7a9e25 && isdefined(self.poi.var_7dfe573d.target) || isdefined(self.poi.var_6faefa54));
+        assert(haspoi && isdefined(self.poi.currentpoi.target) || isdefined(self.poi.nextpoi));
     #/
-    if (var_df7a9e25) {
-        if (isdefined(self.poi.var_7dfe573d.target)) {
-            self.poi.var_6faefa54 = struct::get(self.poi.var_7dfe573d.target, "targetname");
+    if (haspoi) {
+        if (isdefined(self.poi.currentpoi.target)) {
+            self.poi.nextpoi = struct::get(self.poi.currentpoi.target, "targetname");
         } else {
-            self.poi.var_6faefa54 = undefined;
+            self.poi.nextpoi = undefined;
         }
     }
-    if (isdefined(self.poi.var_5fccb5cd)) {
-        self.poi.var_5fccb5cd = undefined;
+    if (isdefined(self.poi.poi_firstpoint)) {
+        self.poi.poi_firstpoint = undefined;
     }
     min_time = 2000;
-    if (var_df7a9e25) {
-        var_d78af89e = self.poi.var_7dfe573d util::function_4b93f9c2();
+    if (haspoi) {
+        var_d78af89e = self.poi.currentpoi util::function_4b93f9c2();
         if (var_d78af89e > 0) {
             min_time = var_d78af89e;
         }
     }
-    if (!isdefined(self.poi.var_6faefa54)) {
+    if (!isdefined(self.poi.nextpoi)) {
         self notify(#"hash_1a7483ed1381776b");
-        if (gettime() < self.poi.var_a192c8da + min_time && function_a6d41d6e(self.poi.var_7dfe573d)) {
-            return self.poi.var_7dfe573d;
+        if (gettime() < self.poi.poi_starttime + min_time && function_a6d41d6e(self.poi.currentpoi)) {
+            return self.poi.currentpoi;
         } else {
             self enable(0);
             return undefined;
         }
     }
-    if (var_df7a9e25 && gettime() < self.poi.var_a192c8da + min_time && function_a6d41d6e(self.poi.var_7dfe573d)) {
-        return self.poi.var_7dfe573d;
+    if (haspoi && gettime() < self.poi.poi_starttime + min_time && function_a6d41d6e(self.poi.currentpoi)) {
+        return self.poi.currentpoi;
     }
-    if (!sighttracepassed(self geteye(), self.poi.var_6faefa54.origin, 0, undefined)) {
+    if (!sighttracepassed(self geteye(), self.poi.nextpoi.origin, 0, undefined)) {
         return undefined;
     }
-    if (!function_a6d41d6e(self.poi.var_6faefa54)) {
-        if (isdefined(self.poi.var_6faefa54.target)) {
-            self.poi.var_6faefa54 = struct::get(self.poi.var_6faefa54.target, "targetname");
+    if (!function_a6d41d6e(self.poi.nextpoi)) {
+        if (isdefined(self.poi.nextpoi.target)) {
+            self.poi.nextpoi = struct::get(self.poi.nextpoi.target, "targetname");
         } else {
             self enable(0);
         }
         return undefined;
     }
-    return self.poi.var_6faefa54;
+    return self.poi.nextpoi;
 }
 
 // Namespace poi/namespace_b1048555
@@ -318,15 +318,15 @@ function private function_75334336(var_df7a9e25) {
 // Checksum 0x269e583f, Offset: 0x1550
 // Size: 0x100
 function private function_a6d41d6e(poi) {
-    if (is_true(self.poi.var_9f099b2c)) {
+    if (is_true(self.poi.poi_disablefov)) {
         return true;
     }
     /#
         assert(isdefined(poi));
     #/
-    var_beabc994 = anglestoforward(self.angles);
-    var_82b1379b = acos(vectordot(var_beabc994, vectornormalize(poi.origin - self geteye())));
-    return var_82b1379b < (isdefined(self.poi.var_a3e1ce4f) ? self.poi.var_a3e1ce4f : 90);
+    myforward = anglestoforward(self.angles);
+    var_82b1379b = acos(vectordot(myforward, vectornormalize(poi.origin - self geteye())));
+    return var_82b1379b < (isdefined(self.poi.poi_fovlimit) ? self.poi.poi_fovlimit : 90);
 }
 
 // Namespace poi/namespace_b1048555
@@ -363,13 +363,13 @@ function private function_d0341c76(priority, var_9ced4e21) {
 // Params 5, eflags: 0x6 linked
 // Checksum 0x995f9ddb, Offset: 0x17a8
 // Size: 0x11e
-function private function_4d1af993(var_411041d2 = 15, yawmax = 35, pitchmin = -20, pitchmax = 0, var_8fbcda45) {
+function private function_4d1af993(yawmin = 15, yawmax = 35, pitchmin = -20, pitchmax = 0, var_8fbcda45) {
     if (!isdefined(self.poi)) {
         self.poi = {};
     }
     self.poi.auto = {};
     self.poi.auto.yawmax = yawmax;
-    self.poi.auto.var_411041d2 = var_411041d2;
+    self.poi.auto.yawmin = yawmin;
     self.poi.auto.pitchmin = pitchmin;
     self.poi.auto.pitchmax = pitchmax;
     self.poi.auto.var_8fbcda45 = var_8fbcda45;
@@ -425,9 +425,9 @@ function private function_c6ff2ee5() {
 // Size: 0x96
 function private function_34ed055a(angles) {
     forward = anglestoforward(angles);
-    var_553ec518 = rotatepoint(forward, self.angles);
+    worldforward = rotatepoint(forward, self.angles);
     eye = self geteye();
-    pos = eye + var_553ec518 * 128;
+    pos = eye + worldforward * 128;
     return pos;
 }
 
@@ -439,7 +439,7 @@ function private function_e019f08b() {
     yaw = randomfloatrange(-45, 45);
     pitch = randomfloatrange(-20, 20);
     pos = function_34ed055a((pitch, yaw, 0));
-    self.poi.auto.var_90d58445 = 1;
+    self.poi.auto.glancing = 1;
     self thread function_18a11ca3();
     self ai::look_at(pos, 3, 1, 0.55);
 }
@@ -449,10 +449,10 @@ function private function_e019f08b() {
 // Checksum 0x290bea74, Offset: 0x1c98
 // Size: 0x4a
 function private function_18a11ca3() {
-    self notify(#"hash_73ae51491006140e");
-    self endon(#"hash_73ae51491006140e");
+    self notify(#"poiauto_glanceend");
+    self endon(#"poiauto_glanceend");
     wait(0.55);
-    self.poi.auto.var_90d58445 = 0;
+    self.poi.auto.glancing = 0;
 }
 
 // Namespace poi/namespace_b1048555
@@ -460,7 +460,7 @@ function private function_18a11ca3() {
 // Checksum 0x76c59dbd, Offset: 0x1cf0
 // Size: 0x2a
 function private function_28f716d5() {
-    return is_true(self.poi.auto.var_90d58445);
+    return is_true(self.poi.auto.glancing);
 }
 
 // Namespace poi/namespace_b1048555
@@ -480,9 +480,9 @@ function private function_504eb38e(var_bed66f89) {
             yaw = yaw * -1;
         }
     } else {
-        var_97311e28 = self.poi.auto;
-        yaw = randomfloatrange(var_97311e28.var_411041d2, var_97311e28.yawmax);
-        pitch = randomfloatrange(var_97311e28.pitchmin, var_97311e28.pitchmax);
+        poiauto = self.poi.auto;
+        yaw = randomfloatrange(poiauto.yawmin, poiauto.yawmax);
+        pitch = randomfloatrange(poiauto.pitchmin, poiauto.pitchmax);
         if (math::cointoss()) {
             yaw = yaw * -1;
         }
@@ -497,24 +497,24 @@ function private function_504eb38e(var_bed66f89) {
 // Params 4, eflags: 0x4
 // Checksum 0x270fd26c, Offset: 0x1fc0
 // Size: 0x1ea
-function private function_636d2b5d(yawmax, var_411041d2, pitchmin, pitchmax) {
+function private function_636d2b5d(yawmax, yawmin, pitchmin, pitchmax) {
     /#
         assert(isdefined(self.poi.auto));
     #/
-    if (!isdefined(self.poi.auto.var_12ae34ee)) {
-        self.poi.auto.var_12ae34ee = self.poi.auto.yawmax;
+    if (!isdefined(self.poi.auto.og_yawmax)) {
+        self.poi.auto.og_yawmax = self.poi.auto.yawmax;
     }
-    if (!isdefined(self.poi.auto.var_f38392e2)) {
-        self.poi.auto.var_f38392e2 = self.poi.auto.var_411041d2;
+    if (!isdefined(self.poi.auto.og_yawmin)) {
+        self.poi.auto.og_yawmin = self.poi.auto.yawmin;
     }
-    if (!isdefined(self.poi.auto.var_c14fca00)) {
-        self.poi.auto.var_c14fca00 = self.poi.auto.pitchmin;
+    if (!isdefined(self.poi.auto.og_pitchmin)) {
+        self.poi.auto.og_pitchmin = self.poi.auto.pitchmin;
     }
-    if (!isdefined(self.poi.auto.var_b4ec95d6)) {
-        self.poi.auto.var_b4ec95d6 = self.poi.auto.pitchmax;
+    if (!isdefined(self.poi.auto.og_pitchmax)) {
+        self.poi.auto.og_pitchmax = self.poi.auto.pitchmax;
     }
     self.poi.auto.yawmax = yawmax;
-    self.poi.auto.var_411041d2 = var_411041d2;
+    self.poi.auto.yawmin = yawmin;
     self.poi.auto.pitchmin = pitchmin;
     self.poi.auto.pitchmax = pitchmax;
 }
@@ -525,21 +525,21 @@ function private function_636d2b5d(yawmax, var_411041d2, pitchmin, pitchmax) {
 // Size: 0x182
 function private function_d60aa558() {
     /#
-        assert(isdefined(self.poi.auto.var_12ae34ee));
+        assert(isdefined(self.poi.auto.og_yawmax));
     #/
     /#
-        assert(isdefined(self.poi.auto.var_f38392e2));
+        assert(isdefined(self.poi.auto.og_yawmin));
     #/
     /#
-        assert(isdefined(self.poi.auto.var_c14fca00));
+        assert(isdefined(self.poi.auto.og_pitchmin));
     #/
     /#
-        assert(isdefined(self.poi.auto.var_b4ec95d6));
+        assert(isdefined(self.poi.auto.og_pitchmax));
     #/
-    self.poi.auto.yawmax = self.poi.auto.var_12ae34ee;
-    self.poi.auto.var_411041d2 = self.poi.auto.var_f38392e2;
-    self.poi.auto.pitchmin = self.poi.auto.var_c14fca00;
-    self.poi.auto.pitchmax = self.poi.auto.var_b4ec95d6;
+    self.poi.auto.yawmax = self.poi.auto.og_yawmax;
+    self.poi.auto.yawmin = self.poi.auto.og_yawmin;
+    self.poi.auto.pitchmin = self.poi.auto.og_pitchmin;
+    self.poi.auto.pitchmax = self.poi.auto.og_pitchmax;
 }
 
 // Namespace poi/namespace_b1048555
@@ -568,16 +568,16 @@ function private debug() {
         while (true) {
             if (isdefined(level.poi.var_5ee53e3)) {
                 foreach (ai in level.poi.var_5ee53e3) {
-                    if (isdefined(ai.poi.var_7dfe573d) && gettime() < (isdefined(ai.poi.var_7dfe573d.var_3b03815e) ? ai.poi.var_7dfe573d.var_3b03815e : gettime() + float(function_60d95f53()) / 1000)) {
-                        line(ai geteye(), ai.poi.var_7dfe573d.origin, (0, 0, 1), 1, 0, 1);
+                    if (isdefined(ai.poi.currentpoi) && gettime() < (isdefined(ai.poi.currentpoi.var_3b03815e) ? ai.poi.currentpoi.var_3b03815e : gettime() + float(function_60d95f53()) / 1000)) {
+                        line(ai geteye(), ai.poi.currentpoi.origin, (0, 0, 1), 1, 0, 1);
                         continue;
                     }
-                    if (isdefined(ai.poi.var_6faefa54)) {
-                        line(ai geteye(), ai.poi.var_6faefa54.origin, (1, 0, 0), 1, 0, 1);
+                    if (isdefined(ai.poi.nextpoi)) {
+                        line(ai geteye(), ai.poi.nextpoi.origin, (1, 0, 0), 1, 0, 1);
                         continue;
                     }
-                    if (isdefined(ai.poi.var_5fccb5cd)) {
-                        line(ai geteye(), ai.poi.var_5fccb5cd.origin, (1, 0, 0), 1, 0, 1);
+                    if (isdefined(ai.poi.poi_firstpoint)) {
+                        line(ai geteye(), ai.poi.poi_firstpoint.origin, (1, 0, 0), 1, 0, 1);
                     }
                 }
             }
@@ -659,7 +659,7 @@ function private function_9c52ce45(poi) {
                 }
             }
             if (auto) {
-                time = time + "<unknown string>" + (float(isdefined(poi.var_715fc83d) ? poi.var_715fc83d : 0) < 0 ? float(poi.var_715fc83d) : float(5000) / 1000);
+                time = time + "<unknown string>" + (float(isdefined(poi.var_715fc83d) ? poi.var_715fc83d : 0) < 0 ? float(5000) / 1000 : float(poi.var_715fc83d));
             }
             print3d(poi.origin + vectorscale((0, 0, 1), 5), text, color, 1, 0.25, 1, 1);
             print3d(poi.origin + vectorscale((0, 0, -1), 10), time, color, 1, 0.25, 1, 1);
@@ -667,7 +667,7 @@ function private function_9c52ce45(poi) {
         }
         if (isdefined(next) && (gettime() < (isdefined(poi.var_3b03815e) ? poi.var_3b03815e : 0) || visible)) {
             line(poi.origin, next.origin, vectorscale((1, 1, 1), 0.5), 0.5, 1, 1);
-            function_e82f6faf(vectorlerp(poi.origin, next.origin, 0.1), vectortoangles(next.origin - poi.origin), vectorscale((1, 1, 1), 0.5), 0, 10, 0);
+            drawarrow(vectorlerp(poi.origin, next.origin, 0.1), vectortoangles(next.origin - poi.origin), vectorscale((1, 1, 1), 0.5), 0, 10, 0);
         }
     #/
 }

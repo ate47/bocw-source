@@ -32,12 +32,12 @@ function function_98ebe1b4() {
     }
     callback::on_player_killed(&function_7d709aa4);
     level.var_4cf012f7 = [];
-    level.var_4cf012f7[level.var_4cf012f7.size] = {#var_64e61448:0, #rightoffset:100, #forwardoffset:300};
-    level.var_4cf012f7[level.var_4cf012f7.size] = {#var_64e61448:100, #rightoffset:-100, #forwardoffset:300};
-    level.var_4cf012f7[level.var_4cf012f7.size] = {#var_64e61448:200, #rightoffset:300, #forwardoffset:150};
-    level.var_4cf012f7[level.var_4cf012f7.size] = {#var_64e61448:300, #rightoffset:-300, #forwardoffset:150};
-    level.var_4cf012f7[level.var_4cf012f7.size] = {#var_64e61448:400, #rightoffset:500, #forwardoffset:0};
-    level.var_4cf012f7[level.var_4cf012f7.size] = {#var_64e61448:500, #rightoffset:-500, #forwardoffset:0};
+    level.var_4cf012f7[level.var_4cf012f7.size] = {#forwardoffset:300, #rightoffset:100, #upoffset:0};
+    level.var_4cf012f7[level.var_4cf012f7.size] = {#forwardoffset:300, #rightoffset:-100, #upoffset:100};
+    level.var_4cf012f7[level.var_4cf012f7.size] = {#forwardoffset:150, #rightoffset:300, #upoffset:200};
+    level.var_4cf012f7[level.var_4cf012f7.size] = {#forwardoffset:150, #rightoffset:-300, #upoffset:300};
+    level.var_4cf012f7[level.var_4cf012f7.size] = {#forwardoffset:0, #rightoffset:500, #upoffset:400};
+    level.var_4cf012f7[level.var_4cf012f7.size] = {#forwardoffset:0, #rightoffset:-500, #upoffset:500};
     if (!isdefined(level.var_b113cd65)) {
         level.var_b113cd65 = 1;
     }
@@ -105,7 +105,7 @@ function function_46fcf917(player) {
     point_team = player.pers[#"team"];
     influencer_team = player.pers[#"team"];
     vis_team_mask = util::getotherteamsmask(player.pers[#"team"]);
-    var_5f9a6e72 = [0:"start_spawn"];
+    var_5f9a6e72 = ["start_spawn"];
     if (level.var_5e74f048[player.squad].lasttime + 6000 < gettime()) {
         var_ffdfd3c9 = util::get_start_time();
         level.var_5e74f048[player.squad].anchorpoint = getbestspawnpoint(point_team, influencer_team, vis_team_mask, player, 0, var_5f9a6e72);
@@ -118,7 +118,7 @@ function function_46fcf917(player) {
         assert(isdefined(var_5a752f59));
     #/
     if (!isdefined(var_5a752f59)) {
-        return {#angles:(0, 0, 0), #origin:level.mapcenter};
+        return {#origin:level.mapcenter, #angles:(0, 0, 0)};
     }
     return function_e624cfcf(player, var_5a752f59[#"origin"], var_5a752f59[#"angles"]);
 }
@@ -138,10 +138,10 @@ function function_e624cfcf(player, origin, angles) {
     } else {
         playerorigin = trace[#"position"];
     }
-    var_c018f5f = playerorigin + anglestoforward(angles) * var_4cf012f7.forwardoffset;
-    var_c018f5f = var_c018f5f + anglestoright(angles) * var_4cf012f7.rightoffset;
-    var_c018f5f = var_c018f5f + anglestoup(angles) * var_4cf012f7.var_64e61448;
-    return {#angles:angles, #origin:var_c018f5f};
+    offset_origin = playerorigin + anglestoforward(angles) * var_4cf012f7.forwardoffset;
+    offset_origin = offset_origin + anglestoright(angles) * var_4cf012f7.rightoffset;
+    offset_origin = offset_origin + anglestoup(angles) * var_4cf012f7.upoffset;
+    return {#origin:offset_origin, #angles:angles};
 }
 
 // Namespace namespace_aaddef5a/namespace_f9f7b554
@@ -313,7 +313,7 @@ function function_2613549d(origin, angles) {
         self solid();
         self unlink();
         launchvelocity = anglestoforward(self getplayerangles());
-        vehicle function_cb48cddd();
+        vehicle deletedelay();
     }
     self setplayerangles((85, angles[1], 0));
     self player_insertion::start_freefall(launchvelocity, 1);
@@ -341,7 +341,7 @@ function function_5d5011dc(var_b1cf3b20) {
 function function_1e077098() {
     level endon(#"game_ended");
     level.var_c1413cbd = [];
-    var_e11beb90 = function_a3f6cdac(500);
+    var_e11beb90 = sqr(500);
     level.var_a349ea8 = [];
     while (true) {
         var_dbcced97 = [];

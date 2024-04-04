@@ -23,14 +23,14 @@
 // Checksum 0xd3a6066e, Offset: 0x120
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_powerup_full_ammo", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_powerup_full_ammo", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_powerup_full_ammo/zm_powerup_full_ammo
 // Params 0, eflags: 0x6 linked
 // Checksum 0x2ec1ee35, Offset: 0x168
 // Size: 0x8c
-function private function_70a657d8() {
+function private preinit() {
     zm_powerups::register_powerup("full_ammo", &grab_full_ammo);
     if (zm_powerups::function_cc33adc8()) {
         zm_powerups::add_zombie_powerup("full_ammo", #"p7_zm_power_up_max_ammo", #"zombie/powerup_max_ammo", &zm_powerups::func_should_always_drop, 0, 0, 0);

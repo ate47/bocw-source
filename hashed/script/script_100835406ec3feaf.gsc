@@ -29,7 +29,7 @@ function function_f8a8ff3f() {
 // Checksum 0xb269aa19, Offset: 0x2a0
 // Size: 0x2c4
 function function_756f46cf() {
-    a_locs = [2:3, 1:3, 0:3];
+    a_locs = [3, 3, 3];
     n_bits = getminbitcountfornum(39);
     a_data = [];
     /#
@@ -200,7 +200,7 @@ function function_8b40c670(e_trigger) {
     }
     self unlink();
     waitframe(1);
-    self val::function_e681e68e(#"hash_c13c4143edde35b");
+    self val::reset_all(#"hash_c13c4143edde35b");
     if (var_ba127c46 != 0) {
         self.var_19f4406e = var_ba127c46;
         self flag::set(#"hash_2d6980738132f263");

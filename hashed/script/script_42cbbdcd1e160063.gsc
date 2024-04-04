@@ -47,7 +47,7 @@ function init() {
     level._effect[#"skel_stomp_impact"] = "explosions/fx_exp_grenade_dirt";
     level._effect[#"character_fire_death_torso"] = "zombie/fx_fire_torso_os_doa";
     level._effect[#"character_fire_death_sm"] = "zombie/fx_fire_zombie_sm_os_doa";
-    level._effect[#"hash_1bd1aca7803defd8"] = "zombie/fx_blood_torso_explo_zmb";
+    level._effect[#"gib_fx"] = "zombie/fx_blood_torso_explo_zmb";
     level._effect[#"hash_7dc3095b19e01572"] = "blood/fx_blood_trail_zmb";
     level._effect[#"zombie_guts_explosion"] = "zombie/fx_blood_torso_explo_lg_os_zmb";
     level._effect[#"hash_551e1d0fcdb105e6"] = "zombie/fx_fire_arm_left_os_doa";
@@ -242,21 +242,21 @@ function function_79f3460b(localclientnum, cmd) {
     }
     self.var_7d4b2574[self.var_7d4b2574.size] = cmd;
     self util::waittill_dobj(localclientnum);
-    namespace_1e25ad94::function_f5f0c0f8("============================================== Processing DOBJ FX Queue");
+    namespace_1e25ad94::debugmsg("============================================== Processing DOBJ FX Queue");
     while (isdefined(self.var_7d4b2574) && self.var_7d4b2574.size) {
         cmd = self.var_7d4b2574[0];
         arrayremoveindex(self.var_7d4b2574, 0);
         if (cmd.on === 1) {
-            namespace_1e25ad94::function_f5f0c0f8("" + self getentitynumber() + "++++++++++++++++++++++++++++++++++++++++++> ON " + cmd.name + " issued at: " + cmd.time);
+            namespace_1e25ad94::debugmsg("" + self getentitynumber() + "++++++++++++++++++++++++++++++++++++++++++> ON " + cmd.name + " issued at: " + cmd.time);
             self function_d0edb8b6(localclientnum, cmd.name, cmd.tag, cmd.unique);
         } else {
-            namespace_1e25ad94::function_f5f0c0f8("" + self getentitynumber() + "-----------------------------------------> OFF " + cmd.name + " issued at: " + cmd.time);
+            namespace_1e25ad94::debugmsg("" + self getentitynumber() + "-----------------------------------------> OFF " + cmd.name + " issued at: " + cmd.time);
             self function_a28211cd(localclientnum, cmd.name);
         }
         waitframe(1);
     }
     self.var_7d4b2574 = undefined;
-    namespace_1e25ad94::function_f5f0c0f8("============================================== FINISHED DOBJ FX Queue");
+    namespace_1e25ad94::debugmsg("============================================== FINISHED DOBJ FX Queue");
 }
 
 // Namespace namespace_83eb6304/namespace_83eb6304
@@ -286,7 +286,7 @@ function function_e76f738(localclientnum, name, tag, unique, var_1fbeccf = 0) {
         return;
     }
     if (self hasdobj(localclientnum) === 0 || isdefined(self.var_7d4b2574)) {
-        cmd = {#unique:unique, #tag:tag, #name:name, #on:1};
+        cmd = {#on:1, #name:name, #tag:tag, #unique:unique};
         self thread function_79f3460b(localclientnum, cmd);
         return;
     }
@@ -331,7 +331,7 @@ function function_a28211cd(localclientnum, name) {
 // Size: 0xac
 function function_68c546ac(localclientnum, name) {
     if (self hasdobj(localclientnum) === 0 || isdefined(self.var_7d4b2574)) {
-        cmd = {#name:name, #on:0};
+        cmd = {#on:0, #name:name};
         self thread function_79f3460b(localclientnum, cmd);
         return;
     }
@@ -357,7 +357,7 @@ function function_4060ccb4(name, tag, *unused1 = "tag_origin", forcestream = 0, 
     /#
         assert(var_318e5b78 < 256, "zombie/fx_magnet_ring_zdo");
     #/
-    level.var_11c4dca4[var_318e5b78] = {#unique:var_23a371c9, #id:var_318e5b78, #tag:unused1, #name:tag};
+    level.var_11c4dca4[var_318e5b78] = {#name:tag, #tag:unused1, #id:var_318e5b78, #unique:var_23a371c9};
     if (forcestream) {
         function_3385d776(level._effect[tag]);
     }
@@ -498,11 +498,11 @@ function function_f58618d7(localclientnum, name, tag, var_fc8ee72b = 0) {
             tag = "tag_origin";
         }
     }
-    var_91bd4506 = isdefined(self.var_f3b82c6d) ? self.var_f3b82c6d : self;
+    modelent = isdefined(self.var_f3b82c6d) ? self.var_f3b82c6d : self;
     if (var_fc8ee72b && isdefined(self.var_10b0846b[name]) && isfxplaying(localclientnum, self.var_10b0846b[name])) {
         killfx(localclientnum, self.var_10b0846b[name]);
     }
-    self.var_10b0846b[name] = util::playfxontag(localclientnum, level._effect[name], var_91bd4506, tag);
+    self.var_10b0846b[name] = util::playfxontag(localclientnum, level._effect[name], modelent, tag);
 }
 
 // Namespace namespace_83eb6304/namespace_83eb6304
@@ -645,8 +645,8 @@ function function_918c5de1(origin, count = 3, dir) {
             dir = (level.var_45fa1b3d + (randomfloatrange(level.var_be2bb100 * -1 - count, level.var_be2bb100 + count), randomfloatrange(level.var_be2bb100 * -1 - count, level.var_be2bb100 + count), randomintrange(level.var_e696e731 * -1 - count, level.var_e696e731 + count))) * level.var_49fcf1d9;
         }
         model = level.var_48152abe[randomint(level.var_48152abe.size)];
-        var_c180650d = origin + (randomintrange(-12, 12), randomintrange(-12, 12), randomintrange(-40, 12));
-        createdynentandlaunch(0, model, var_c180650d, (0, 0, 0), var_c180650d, dir, level._effect[#"hash_7dc3095b19e01572"], 1);
+        launchorigin = origin + (randomintrange(-12, 12), randomintrange(-12, 12), randomintrange(-40, 12));
+        createdynentandlaunch(0, model, launchorigin, (0, 0, 0), launchorigin, dir, level._effect[#"hash_7dc3095b19e01572"], 1);
         count--;
     }
 }
@@ -694,12 +694,12 @@ function function_e5d3c2b4(localclientnum) {
 // Checksum 0x2f5b2e1d, Offset: 0x5380
 // Size: 0xcc
 function function_96d7f2e2(localclientnum) {
-    if (isdefined(level._effect[#"hash_432fb4891367ab24"]) && util::is_mature()) {
+    if (isdefined(level._effect[#"gif_fx"]) && util::is_mature()) {
         where = self gettagorigin("J_SpineLower");
         if (!isdefined(where)) {
             where = self.origin;
         }
-        playfx(localclientnum, level._effect[#"hash_432fb4891367ab24"], where);
+        playfx(localclientnum, level._effect[#"gif_fx"], where);
         level thread function_918c5de1(where, 5);
     }
 }

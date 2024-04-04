@@ -17,14 +17,14 @@
 // Checksum 0xe4385a26, Offset: 0x218
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"auto_turret", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"auto_turret", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace auto_turret/auto_turret
 // Params 0, eflags: 0x4
 // Checksum 0x95f0d993, Offset: 0x260
 // Size: 0x2c
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_main_callback("auto_turret", &function_f17009ff);
 }
 

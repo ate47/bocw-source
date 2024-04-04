@@ -192,8 +192,8 @@ function onprecachegametype() {
 // Checksum 0x24b18f76, Offset: 0xd20
 // Size: 0x1a4
 function onstartgametype() {
-    zm_behavior::function_70a657d8();
-    zm_cleanup::function_70a657d8();
+    zm_behavior::preinit();
+    zm_cleanup::preinit();
     zm_spawner::init();
     zm_behavior::postinit();
     zm_cleanup::postinit();
@@ -721,7 +721,7 @@ function function_64030a52() {
 // Params 2, eflags: 0x0
 // Checksum 0xa6155ff1, Offset: 0x2ef0
 // Size: 0x10e
-function function_50454ebf(var_e8c75d3a, waittime = 0) {
+function function_50454ebf(b_paused, waittime = 0) {
     level endon(#"end_game");
     self endon(#"disconnect");
     self notify(#"hash_3d27f53ca284b924");
@@ -729,7 +729,7 @@ function function_50454ebf(var_e8c75d3a, waittime = 0) {
     if (isdefined(waittime) && waittime > 0) {
         wait(waittime);
     }
-    if (!var_e8c75d3a && level.var_4f12f6d0 sr_objective_timer::is_open(self)) {
+    if (!b_paused && level.var_4f12f6d0 sr_objective_timer::is_open(self)) {
         level.var_4f12f6d0 sr_objective_timer::close(self);
     }
     self clientfield::set_to_player("cranked_timer_sfx", 0);

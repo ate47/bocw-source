@@ -17,14 +17,14 @@
 // Checksum 0xc569bb27, Offset: 0x238
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_62a392bb15b68ccd", &function_70a657d8, undefined, undefined, #"hash_13a43d760497b54d");
+    system::register(#"hash_62a392bb15b68ccd", &preinit, undefined, undefined, #"hash_13a43d760497b54d");
 }
 
 // Namespace namespace_cf2b4f27/namespace_cf2b4f27
 // Params 0, eflags: 0x6 linked
 // Checksum 0xbdaf9e23, Offset: 0x288
 // Size: 0x63c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "fx_frost_blast_clientfield", 1, 3, "int");
     clientfield::register("toplayer", "fx_frost_blast_1p_lv1_clientfield", 1, 1, "counter");
     clientfield::register("toplayer", "fx_frost_blast_1p_lv3_clientfield", 1, 1, "counter");
@@ -140,8 +140,8 @@ function function_6736205c(var_638b775a = 0) {
     }
     self playsound(var_3decbda2);
     playsoundatposition(var_89ae2770, self.origin);
-    var_6c77565b = getentitiesinradius(var_189ef5f2.origin, radius, 15);
-    foreach (zombie in var_6c77565b) {
+    nearbyzombies = getentitiesinradius(var_189ef5f2.origin, radius, 15);
+    foreach (zombie in nearbyzombies) {
         if (isalive(zombie) && zombie.team === level.zombie_team) {
             zombie dodamage(damage, zombie.origin, self, undefined, undefined, "MOD_UNKNOWN", 0, weapon);
         }
@@ -150,8 +150,8 @@ function function_6736205c(var_638b775a = 0) {
         self thread function_46f32076();
     }
     while (true) {
-        var_6c77565b = getentitiesinradius(var_189ef5f2.origin, radius, 15);
-        foreach (zombie in var_6c77565b) {
+        nearbyzombies = getentitiesinradius(var_189ef5f2.origin, radius, 15);
+        foreach (zombie in nearbyzombies) {
             if (isalive(zombie) && zombie.team === level.zombie_team && (zombie.var_6f84b820 === #"normal" || zombie.archetype === #"zombie_dog" || var_638b775a >= 3 && zombie.var_6f84b820 === #"special")) {
                 var_2b1ad45b = 0;
                 if (is_true(zombie.var_958cf9c5)) {

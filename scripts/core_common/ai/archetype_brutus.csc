@@ -13,7 +13,7 @@
 // Checksum 0xd936eb8f, Offset: 0xb0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"brutus", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"brutus", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace archetype_brutus/archetype_brutus
@@ -28,7 +28,7 @@ function autoexec precache() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x108
 // Size: 0x4
-function private function_70a657d8() {
+function private preinit() {
     
 }
 

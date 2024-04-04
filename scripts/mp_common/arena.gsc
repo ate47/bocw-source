@@ -2,7 +2,7 @@
 #using scripts\mp_common\gametypes\match.gsc;
 #using scripts\core_common\player\player_stats.gsc;
 #using scripts\core_common\system_shared.gsc;
-#using script_32c8b5b0eb2854f3;
+#using scripts\core_common\gamestate_util.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
 
 #namespace arena;
@@ -12,14 +12,14 @@
 // Checksum 0xeab2f411, Offset: 0xd0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"arena", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"arena", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace arena/arena
 // Params 0, eflags: 0x6 linked
 // Checksum 0x321ae3d4, Offset: 0x118
 // Size: 0xac
-function private function_70a657d8() {
+function private preinit() {
     callback::on_connecting(&on_connecting);
     callback::on_connect(&on_connect);
     callback::on_disconnect(&on_disconnect);
@@ -168,7 +168,7 @@ function function_77151fd1() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x44705e30, Offset: 0xa38
 // Size: 0xcc
-function function_530d2109() {
+function cancel_match() {
     if (gamemodeisarena()) {
         for (index = 0; index < level.players.size; index++) {
             player = level.players[index];
@@ -208,9 +208,9 @@ function match_end() {
                     if (var_74386ffc == -1) {
                         var_23491496 = getscriptbundle(#"arena_league_play_skill_divisions_default");
                         if (isdefined(var_876fccfb) && isdefined(var_23491496)) {
-                            foreach (var_3bb20037, var_b5ddbfd7 in var_23491496.skilldivisiontierlist) {
+                            foreach (tierindex, var_b5ddbfd7 in var_23491496.skilldivisiontierlist) {
                                 if (var_876fccfb < var_b5ddbfd7.var_7197b13a) {
-                                    var_74386ffc = var_3bb20037;
+                                    var_74386ffc = tierindex;
                                     break;
                                 }
                             }

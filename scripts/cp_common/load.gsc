@@ -9,7 +9,7 @@
 #using scripts\cp_common\spawn_manager.gsc;
 #using scripts\cp_common\skipto.gsc;
 #using scripts\cp_common\oed.gsc;
-#using script_3706d21c449d0d14;
+#using scripts\cp_common\gamedifficulty.gsc;
 #using scripts\cp_common\devgui.gsc;
 #using scripts\cp_common\debug.gsc;
 #using scripts\cp_common\challenges.gsc;
@@ -52,7 +52,7 @@
 // Checksum 0x685680c, Offset: 0x398
 // Size: 0x23c
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
-    foreach (var_55e4dfcf, k in [1:"script_likelyenemy", 0:"script_objective"]) {
+    foreach (var_55e4dfcf, k in ["script_objective", "script_likelyenemy"]) {
         if (!isdefined(level.var_41204f29)) {
             level.var_41204f29 = [];
         } else if (!isarray(level.var_41204f29)) {
@@ -114,7 +114,7 @@ function function_5e443ed1() {
     level thread register_clientfields();
     setup_traversals();
     level thread onallplayersready();
-    gamedifficulty::function_529e6ed7(undefined, level.var_648a2ef0);
+    gamedifficulty::setskill(undefined, level.var_648a2ef0);
     system::function_c11b0642();
     art_review();
     level.growing_hitmarker = 1;

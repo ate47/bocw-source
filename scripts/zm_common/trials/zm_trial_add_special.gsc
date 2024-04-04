@@ -10,14 +10,14 @@
 // Checksum 0xb9cbd7ad, Offset: 0x98
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_add_special", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_add_special", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_add_special/zm_trial_add_special
 // Params 0, eflags: 0x4
 // Checksum 0x8da3b6e3, Offset: 0xe0
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

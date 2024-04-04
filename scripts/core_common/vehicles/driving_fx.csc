@@ -26,7 +26,7 @@ function vehicle_enter(localclientnum, vehicle) {
     self endon(#"death");
     vehicle endon(#"death");
     waitframe(1);
-    if (vehicle isvehicle() && vehicle function_973c841f(self)) {
+    if (vehicle isvehicle() && vehicle isdrivingvehicle(self)) {
         vehicle thread collision_thread(localclientnum);
         vehicle thread vehicle::boost_think(localclientnum);
         if (vehicle function_b835102b()) {
@@ -55,7 +55,7 @@ function collision_thread(localclientnum) {
         hit_intensity = waitresult.intensity;
         player = function_5c10bd79(localclientnum);
         if (isdefined(self.driving_fx_collision_override)) {
-            if (player function_21c0fa55() && self function_973c841f(player)) {
+            if (player function_21c0fa55() && self isdrivingvehicle(player)) {
                 self [[ self.driving_fx_collision_override ]](localclientnum, player, hip, hitn, hit_intensity);
             }
             continue;
@@ -75,7 +75,7 @@ function collision_thread(localclientnum) {
                         debug2dtext(vectorscale((0, 1, 0), 100), function_9e72a96(alias) + "<unknown string>" + volume + "<unknown string>", undefined, undefined, (0, 0, 0), 1, 3, 16);
                     }
                 #/
-                if (isdefined(self.heavycollisionrumble) && player function_21c0fa55() && self function_973c841f(player)) {
+                if (isdefined(self.heavycollisionrumble) && player function_21c0fa55() && self isdrivingvehicle(player)) {
                     player playrumbleonentity(localclientnum, self.heavycollisionrumble);
                 }
                 continue;
@@ -94,7 +94,7 @@ function collision_thread(localclientnum) {
                         debug2dtext(vectorscale((0, 1, 0), 200), function_9e72a96(alias) + "<unknown string>" + volume + "<unknown string>", undefined, undefined, (0, 0, 0), 1, 3, 16);
                     }
                 #/
-                if (isdefined(self.lightcollisionrumble) && player function_21c0fa55() && self function_973c841f(player)) {
+                if (isdefined(self.lightcollisionrumble) && player function_21c0fa55() && self isdrivingvehicle(player)) {
                     player playrumbleonentity(localclientnum, self.lightcollisionrumble);
                 }
             }
@@ -130,7 +130,7 @@ function jump_landing_thread(localclientnum) {
                     debug2dtext((0, 0, 0), function_9e72a96(alias) + "<unknown string>" + volume + "<unknown string>", undefined, undefined, (0, 0, 0), 1, 3, 16);
                 }
             #/
-            if (isdefined(self.jumplandingrumble) && player function_21c0fa55() && self function_973c841f(player)) {
+            if (isdefined(self.jumplandingrumble) && player function_21c0fa55() && self isdrivingvehicle(player)) {
                 player playrumbleonentity(localclientnum, self.jumplandingrumble);
             }
         }
@@ -161,7 +161,7 @@ function suspension_thread(localclientnum) {
                     debug2dtext(vectorscale((0, 1, 0), 300), function_9e72a96(alias) + "<unknown string>" + volume + "<unknown string>", undefined, undefined, (0, 0, 0), 1, 3, 16);
                 }
             #/
-            if (player function_21c0fa55() && self function_973c841f(player)) {
+            if (player function_21c0fa55() && self isdrivingvehicle(player)) {
                 player playrumbleonentity(localclientnum, "damage_light");
             }
         }
@@ -249,7 +249,7 @@ function function_ace6c248(var_89ae88b4) {
         self.var_8e45c356 = [];
     }
     if (!isdefined(self.var_8e45c356[var_89ae88b4])) {
-        self.var_8e45c356[var_89ae88b4] = {#endtime:0, #exiting:1};
+        self.var_8e45c356[var_89ae88b4] = {#exiting:1, #endtime:0};
     }
     if (self.var_8e45c356[var_89ae88b4].exiting && !self postfx::function_556665f2(var_89ae88b4)) {
         self postfx::playpostfxbundle(var_89ae88b4);

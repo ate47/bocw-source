@@ -16,14 +16,14 @@
 // Checksum 0x7ddb897b, Offset: 0x450
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_util", &function_70a657d8, &finalize_clientfields, undefined, undefined);
+    system::register(#"zm_trial_util", &preinit, &finalize_clientfields, undefined, undefined);
 }
 
 // Namespace zm_trial_util/zm_trial_util
 // Params 0, eflags: 0x6 linked
 // Checksum 0x7d5b276a, Offset: 0x4a8
 // Size: 0xfc
-function private function_70a657d8() {
+function private preinit() {
     level.var_940b67bb = getuimodel(function_5f72e972(#"zm_trials"), "roundTitle");
     level.var_63e5f17c = getuimodel(function_5f72e972(#"zm_trials"), "roundDescription");
     if (!zm_trial::is_trial_mode()) {
@@ -75,8 +75,8 @@ function private finalize_clientfields(*localclientnum) {
     clientfield::function_5b7d846d("ZMHudGlobal.trials.globalCounterMax", #"zm_trials", #"globalcountermax", 1, getminbitcountfornum(1000), "int", undefined, 0, 0);
     clientfield::function_5b7d846d("ZMHudGlobal.trials.hudDeactivated", #"zm_trials", #"huddeactivated", 1, 1, "int", undefined, 0, 0);
     for (i = 0; i < 5; i++) {
-        clientfield::function_5b7d846d("PlayerList.client" + i + "." + "trialsCheckState", #"hash_97df1852304b867", [1:#"trialscheckstate", 0:hash(isdefined(i) ? "" + i : "")], 1, 2, "int", undefined, 0, 0);
-        clientfield::function_5b7d846d("PlayerList.client" + i + "." + "trialsCounterValue", #"hash_97df1852304b867", [1:#"trialscountervalue", 0:hash(isdefined(i) ? "" + i : "")], 1, getminbitcountfornum(1000), "int", undefined, 0, 0);
+        clientfield::function_5b7d846d("PlayerList.client" + i + "." + "trialsCheckState", #"hash_97df1852304b867", [hash(isdefined(i) ? "" + i : ""), #"trialscheckstate"], 1, 2, "int", undefined, 0, 0);
+        clientfield::function_5b7d846d("PlayerList.client" + i + "." + "trialsCounterValue", #"hash_97df1852304b867", [hash(isdefined(i) ? "" + i : ""), #"trialscountervalue"], 1, getminbitcountfornum(1000), "int", undefined, 0, 0);
     }
 }
 

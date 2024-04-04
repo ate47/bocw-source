@@ -14,14 +14,14 @@
 // Checksum 0x6f4de03c, Offset: 0x408
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"battlechatter", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"battlechatter", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace battlechatter/battlechatter
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdbab748, Offset: 0x450
 // Size: 0xec
-function private function_70a657d8() {
+function private preinit() {
     level.var_2829c23d = &function_50e36ba7;
     level.var_44e74ef4 = &function_f1d27638;
     level.allowbattlechatter[#"bc"] = is_true(getgametypesetting(#"allowbattlechatter"));
@@ -37,20 +37,20 @@ function private function_70a657d8() {
 function function_4bc12499() {
     level endon(#"death");
     while (true) {
-        var_7f729179 = undefined;
-        var_7f729179 = level waittill(#"play_death_vox");
-        if (!isdefined(var_7f729179.body)) {
+        wait_result = undefined;
+        wait_result = level waittill(#"play_death_vox");
+        if (!isdefined(wait_result.body)) {
             return;
         }
-        bundlename = var_7f729179.body getmpdialogname();
+        bundlename = wait_result.body getmpdialogname();
         if (!isdefined(bundlename)) {
             return;
         }
         playerbundle = getscriptbundle(bundlename);
         voiceprefix = playerbundle.voiceprefix;
-        var_c45d3b76 = get_death_vox(playerbundle, var_7f729179.mod);
-        if (isdefined(voiceprefix) && isdefined(var_c45d3b76)) {
-            var_7f729179.body playsound(0, voiceprefix + var_c45d3b76);
+        deathalias = get_death_vox(playerbundle, wait_result.mod);
+        if (isdefined(voiceprefix) && isdefined(deathalias)) {
+            wait_result.body playsound(0, voiceprefix + deathalias);
         }
     }
 }
@@ -88,7 +88,7 @@ function function_f1d27638(var_f7f4481f) {
         thread function_7d29bb1e(var_f7f4481f.var_40209f44, var_f7f4481f.weapon, var_f7f4481f.localclientnum, var_f7f4481f.var_7e98b410);
         break;
     case 10:
-        thread function_2ddd5b7d(var_f7f4481f.var_40209f44, var_f7f4481f.weapon, var_f7f4481f.localclientnum, var_f7f4481f.var_7e98b410);
+        thread equipcallback(var_f7f4481f.var_40209f44, var_f7f4481f.weapon, var_f7f4481f.localclientnum, var_f7f4481f.var_7e98b410);
         break;
     case 11:
         thread function_afa6ac4b(var_f7f4481f.var_40209f44, var_f7f4481f.weapon, var_f7f4481f.var_3d136cd9, var_f7f4481f.var_7e98b410);
@@ -638,7 +638,7 @@ function function_6afb2bd4(speakingplayer, weapon, *localclientnum, seed) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0xf9679d1d, Offset: 0x2358
 // Size: 0x4c
-function function_2ddd5b7d(speakingplayer, weapon, *localclientnum, seed) {
+function equipcallback(speakingplayer, weapon, *localclientnum, seed) {
     weapon function_edf14b78("equipAlias", undefined, 0, localclientnum, seed);
 }
 

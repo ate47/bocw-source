@@ -345,16 +345,16 @@ function onplayerkilled(params) {
         if (!isdefined(einflictor.var_3c0a7eef)) {
             einflictor.var_3c0a7eef = [];
         }
-        var_71f7928d = spawnstruct();
-        var_71f7928d.player = self;
-        var_71f7928d.vehicle = self getvehicleoccupied();
-        var_71f7928d.var_33c9fbd5 = gettime();
+        sparams = spawnstruct();
+        sparams.player = self;
+        sparams.vehicle = self getvehicleoccupied();
+        sparams.var_33c9fbd5 = gettime();
         if (!isdefined(einflictor.var_3c0a7eef)) {
             einflictor.var_3c0a7eef = [];
         } else if (!isarray(einflictor.var_3c0a7eef)) {
             einflictor.var_3c0a7eef = array(einflictor.var_3c0a7eef);
         }
-        einflictor.var_3c0a7eef[einflictor.var_3c0a7eef.size] = var_71f7928d;
+        einflictor.var_3c0a7eef[einflictor.var_3c0a7eef.size] = sparams;
     }
 }
 
@@ -373,8 +373,8 @@ function function_9b8337c3(einflictor, eattacker, *idamage, *smeansofdeath, *wea
         return;
     }
     if (isdefined(shitloc.var_3c0a7eef)) {
-        foreach (var_71f7928d in shitloc.var_3c0a7eef) {
-            if (self == var_71f7928d.vehicle && var_71f7928d.var_33c9fbd5 == gettime()) {
+        foreach (sparams in shitloc.var_3c0a7eef) {
+            if (self == sparams.vehicle && sparams.var_33c9fbd5 == gettime()) {
                 shitloc function_af9b1762(psoffsettime);
                 break;
             }

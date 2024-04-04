@@ -15,14 +15,14 @@
 // Checksum 0x6350d898, Offset: 0x218
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"helicopter", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"helicopter", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace helicopter/helicopter
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc5c71d10, Offset: 0x268
 // Size: 0x254
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
     bundle = "killstreak_helicopter_guard";
     if (sessionmodeiswarzonegame()) {

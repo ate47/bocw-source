@@ -112,7 +112,7 @@ function autoexec ignore_systems() {
     system::ignore(#"counteruav");
     system::ignore(#"demo");
     system::ignore(#"draft");
-    system::ignore(#"hash_219e23a3229c5733");
+    system::ignore(#"flashlight");
     system::ignore(#"gadget_cleanse");
     system::ignore(#"gadget_concertina_wire");
     system::ignore(#"gadget_health_regen");
@@ -207,17 +207,17 @@ function autoexec ignore_systems() {
     system::ignore(#"wz_ai_zonemgr");
     system::ignore(#"serversettings");
     system::ignore(#"ai_puppeteer");
-    system::ignore(#"hash_f81b9dea74f0ee");
+    system::ignore(#"content_manager");
     system::ignore(#"debug");
     system::ignore(#"dev");
     system::ignore(#"dev_class");
     system::ignore(#"cymbal_monkey");
-    system::ignore(#"hash_11ee2f7201f8ce6c");
+    system::ignore(#"objective_manager");
     system::ignore(#"hash_5ff56dba9074b0b4");
     system::ignore(#"zm_audio");
     system::ignore(#"hash_5bcba15330839867");
     system::ignore(#"zm_destination_manager");
-    system::ignore(#"hash_7f844a124cb54e5a");
+    system::ignore(#"ctrlfx");
     system::ignore(#"zm");
     system::ignore(#"zm_devqui");
     system::ignore(#"hash_5a13dbfcdb2f9b51");
@@ -270,7 +270,7 @@ function autoexec ignore_systems() {
     system::ignore(#"zm_bgb_burned_out");
     system::ignore(#"zm_bgb_cache_back");
     system::ignore(#"zm_fasttravel");
-    system::ignore(#"hash_63e00d742a373f5f");
+    system::ignore(#"zm_intel");
     system::ignore(#"zm_bgb_conflagration_liquidation");
     system::ignore(#"zm_bgb_crate_power");
     system::ignore(#"zm_bgb_crawl_space");
@@ -353,7 +353,7 @@ function autoexec ignore_systems() {
     system::ignore(#"zm_perk_mule_kick");
     system::ignore(#"zm_perk_death_perception");
     system::ignore(#"zm_perk_slider");
-    system::ignore(#"hash_1e8eafe505e52c51");
+    system::ignore(#"zm_ping");
     system::ignore(#"zm_player");
     system::ignore(#"zm_power");
     system::ignore(#"zm_powerup_bonfire_sale");
@@ -443,7 +443,7 @@ function autoexec ignore_systems() {
     system::ignore(#"zm_zonemgr");
     system::ignore(#"hash_5f19cd68b4607f52");
     system::ignore(#"hash_538411714a272c00");
-    system::ignore(#"hash_770956d673fdbba2");
+    system::ignore(#"zombie_horde");
     system::ignore(#"zm_escape_util");
     system::ignore(#"zm_hero_weapons");
     system::ignore(#"zm_ai_catalyst");
@@ -454,7 +454,7 @@ function autoexec ignore_systems() {
     system::ignore(#"hash_6be63b3e08b5ceb9");
     system::ignore(#"hash_6c156e681484d01a");
     system::ignore(#"hash_4fce085585f422db");
-    system::ignore(#"hash_6cff6e60e2fa224d");
+    system::ignore(#"zm_fishing");
     system::ignore(#"hash_244949c60a0b2941");
     system::ignore(#"hash_75d08e0bf3b9e062");
 }

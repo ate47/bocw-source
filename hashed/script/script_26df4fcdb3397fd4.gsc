@@ -151,7 +151,7 @@ function function_933f292d(localclientnum, *oldval, newval, *bnewent, *binitials
         soundloopemitter(#"hash_1a2ebdbaf9f4ebea", var_c7c6ccec);
         playsound(fieldname, #"hash_311090818d1a7b66", var_c7c6ccec);
         soundloopemitter(#"hash_de383039c33a4a", var_c7c6ccec);
-        var_4083c07b = [3:(5644, 4180, -1), 2:(5667, 3896, -1), 1:(5186, 4002, -2), 0:(5202, 4273, 1)];
+        var_4083c07b = [(5202, 4273, 1), (5186, 4002, -2), (5667, 3896, -1), (5644, 4180, -1)];
         foreach (location in var_4083c07b) {
             playsound(fieldname, #"hash_1f8772e2696eb83e", location);
             soundloopemitter(#"hash_4ce12f8cb3254542", location);
@@ -164,7 +164,7 @@ function function_933f292d(localclientnum, *oldval, newval, *bnewent, *binitials
         soundstoploopemitter(#"hash_1a2ebdbaf9f4ebea", var_c7c6ccec);
         playsound(fieldname, #"hash_3f8768d683b8eace", var_c7c6ccec);
         soundstoploopemitter(#"hash_de383039c33a4a", var_c7c6ccec);
-        var_4083c07b = [3:(5644, 4180, -1), 2:(5667, 3896, -1), 1:(5186, 4002, -2), 0:(5202, 4273, 1)];
+        var_4083c07b = [(5202, 4273, 1), (5186, 4002, -2), (5667, 3896, -1), (5644, 4180, -1)];
         foreach (location in var_4083c07b) {
             playsound(fieldname, #"hash_6e16e98f86fc6546", location);
             soundstoploopemitter(#"hash_4ce12f8cb3254542", location);

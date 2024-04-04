@@ -81,7 +81,7 @@ function private function_4ad903f4(einflictor, eattacker, idamage, idflags, smea
             if (isdefined(self.var_8a3fb9e2)) {
                 mindist = self.var_8a3fb9e2;
             }
-            if (distancesquared(self.origin, attacker.origin) > function_a3f6cdac(mindist)) {
+            if (distancesquared(self.origin, attacker.origin) > sqr(mindist)) {
                 if (self.var_fa99a047 || !self.var_fa99a047 && self.health - idflags <= 0) {
                     var_afe2c3af = !is_true(self.var_fa99a047);
                     self set_enabled(0);
@@ -145,7 +145,7 @@ function private function_856a28c3(var_afe2c3af, einflictor, eattacker, *idamage
     wait(0.1);
     self notify(#"hash_377b8997737880e7");
     hint_tutorial::function_57a24ab5(1);
-    player val::function_e681e68e(#"snipercam");
+    player val::reset_all(#"snipercam");
     player show();
     self clientfield::set("stop_snipercam", 0);
     player flag::clear("snipercam");

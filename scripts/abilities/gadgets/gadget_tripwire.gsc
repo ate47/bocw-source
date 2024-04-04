@@ -20,14 +20,14 @@
 // Checksum 0x1a5b298f, Offset: 0x240
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"gadget_tripwire", &function_70a657d8, undefined, &function_3675de8b, undefined);
+    system::register(#"gadget_tripwire", &preinit, undefined, &function_3675de8b, undefined);
 }
 
 // Namespace gadget_tripwire/gadget_tripwire
 // Params 0, eflags: 0x4
 // Checksum 0x6bfd4247, Offset: 0x290
 // Size: 0x1e4
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("missile", "tripwire_state", 1, 2, "int");
     clientfield::register("scriptmover", "tripwire_solo_beam_fx", 1, 1, "int");
     callback::on_connect(&function_d863663f);

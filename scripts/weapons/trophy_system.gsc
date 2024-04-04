@@ -320,7 +320,7 @@ function trophyactive(owner) {
 // Params 4, eflags: 0x0
 // Checksum 0xd3d00bd7, Offset: 0x1300
 // Size: 0x2e4
-function projectileexplode(projectile, trophy, var_84c1f04c, fxup) {
+function projectileexplode(projectile, trophy, fxfwd, fxup) {
     if (isdefined(self)) {
         scoreevents::processscoreevent(#"trophy_defense", self, projectile.owner, trophy.weapon);
         self function_3170d645(projectile, trophy);
@@ -342,7 +342,7 @@ function projectileexplode(projectile, trophy, var_84c1f04c, fxup) {
         }
     }
     projposition = projectile.origin;
-    playfx(level.trophydetonationfx, projposition, var_84c1f04c, fxup);
+    playfx(level.trophydetonationfx, projposition, fxfwd, fxup);
     projectile playsound(#"hash_741683e10b98efd8");
     projectile notify(#"trophy_destroyed");
     if (isdefined(trophy)) {
@@ -475,7 +475,7 @@ function trophysystemdetonate(attacker, weapon, *target) {
 function function_3044fc5() {
     weaponobjects::function_f2a06099(self, self.weapon);
     playsoundatposition(#"exp_trophy_system", self.origin);
-    self function_cb48cddd();
+    self deletedelay();
 }
 
 // Namespace trophy_system/trophy_system

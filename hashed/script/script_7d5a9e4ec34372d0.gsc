@@ -4,8 +4,8 @@
 #using script_3411bb48d41bd3b;
 #using scripts\zm_common\zm_devgui.gsc;
 #using scripts\zm_common\callbacks.gsc;
-#using script_b9d273dc917ee1f;
-#using script_72596c919cdba3f7;
+#using scripts\zm_common\zm_intel.gsc;
+#using scripts\zm_common\zm_hazard.gsc;
 #using scripts\zm_common\zm_zonemgr.gsc;
 #using scripts\zm_common\zm_utility.gsc;
 #using scripts\zm_common\zm_spawner.gsc;
@@ -55,7 +55,7 @@ function init() {
     var_ebcd5c24 array::thread_all(var_ebcd5c24, &function_ff3d341d);
     level.var_9e7b0d9 = getweapon(#"hash_6cbce408f40df23d");
     zm::register_actor_damage_callback(&function_de54ff01);
-    level.var_f339857a = [1:"zone_no_mans_land_3", 0:"zone_no_mans_land_2"];
+    level.var_f339857a = ["zone_no_mans_land_2", "zone_no_mans_land_3"];
     /#
         level thread function_37597f29();
     #/
@@ -193,7 +193,7 @@ function function_4dd91c93(activator) {
 function function_ae0208d3(s_params) {
     attacker = s_params.eattacker;
     if (isinarray(level.var_d94359b, attacker) && isplayer(attacker.owner)) {
-        level scoreevents::doscoreeventcallback("scoreEventZM", {#enemy:self, #scoreevent:#"hash_748d4479ffd0521e", #attacker:attacker.owner});
+        level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:attacker.owner, #scoreevent:#"hash_748d4479ffd0521e", #enemy:self});
     }
 }
 
@@ -460,8 +460,8 @@ function function_c46f0aa(var_edfffb43, target_entity, var_bb839e1, cone_angle, 
     var_ccde70d2 = length(var_bb839e1 - var_d5da08f6);
     if (var_ccde70d2 < cone_angle) {
         if (var_a11fa31c) {
-            var_8e862768 = bullettracepassed(var_edfffb43, target_entity.origin + vectorscale((0, 0, 1), 2), 1, self, undefined);
-            if (var_8e862768) {
+            b_passed = bullettracepassed(var_edfffb43, target_entity.origin + vectorscale((0, 0, 1), 2), 1, self, undefined);
+            if (b_passed) {
                 return true;
             }
             return false;
@@ -552,10 +552,10 @@ function function_6ecaca22() {
 // Checksum 0x3123f8e4, Offset: 0x27c0
 // Size: 0xaa
 function function_78344094(var_7b783ebb, var_43ed722a, speed) {
-    var_7b783ebb = var_7b783ebb < 0 ? var_7b783ebb : var_7b783ebb + 360;
-    var_43ed722a = var_43ed722a < 0 ? var_43ed722a : var_43ed722a + 360;
+    var_7b783ebb = var_7b783ebb < 0 ? var_7b783ebb + 360 : var_7b783ebb;
+    var_43ed722a = var_43ed722a < 0 ? var_43ed722a + 360 : var_43ed722a;
     var_7b7eb047 = abs(var_7b783ebb - var_43ed722a);
-    var_7b7eb047 = (var_7b7eb047 < 180 ? 360 - var_7b7eb047 : var_7b7eb047) / speed;
+    var_7b7eb047 = (var_7b7eb047 < 180 ? var_7b7eb047 : 360 - var_7b7eb047) / speed;
     return var_7b7eb047;
 }
 
@@ -646,7 +646,7 @@ function turretscanning() {
     veh playsound(#"mpl_turret_startup");
     veh playloopsound(#"hash_69240c6db92da5bf");
     s_bundle = killstreaks::get_script_bundle("ultimate_turret");
-    veh.maxsightdistsqrd = function_a3f6cdac(isdefined(s_bundle.var_2aeadfa0) ? s_bundle.var_2aeadfa0 : 3500);
+    veh.maxsightdistsqrd = sqr(isdefined(s_bundle.var_2aeadfa0) ? s_bundle.var_2aeadfa0 : 3500);
     veh thread function_9d831b2f();
 }
 
@@ -708,11 +708,11 @@ function function_16ccb771(var_e110fa82, e_target) {
     var_108a39a1 = s_bundle.ksburstfireenabled;
     self thread function_ad3a71a3(var_e110fa82, e_target);
     if (var_108a39a1) {
-        n_fire_time = var_b009f4df > var_b72152c3 ? randomfloatrange(var_b009f4df, var_b72152c3) : var_b009f4df;
+        n_fire_time = var_b009f4df > var_b72152c3 ? var_b009f4df : randomfloatrange(var_b009f4df, var_b72152c3);
         self vehicle_ai::fire_for_time(n_fire_time, 0, e_target);
         var_2da97dc2 = !isdefined(e_target) || !isalive(e_target);
         if (var_1d860ae4 > 0 && !var_2da97dc2) {
-            var_91d9f057 = var_1d860ae4 > var_f8ba3204 ? randomfloatrange(var_1d860ae4, var_f8ba3204) : var_1d860ae4;
+            var_91d9f057 = var_1d860ae4 > var_f8ba3204 ? var_1d860ae4 : randomfloatrange(var_1d860ae4, var_f8ba3204);
             waitresult = undefined;
             waitresult = e_target waittilltimeout(var_91d9f057, #"death", #"disconnect");
             var_2da97dc2 = waitresult._notify === "death";

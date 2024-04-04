@@ -12,14 +12,14 @@
 // Checksum 0x5592b60a, Offset: 0xb8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_purchase_rush", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_purchase_rush", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_purchase_rush/zm_trial_purchase_rush
 // Params 0, eflags: 0x4
 // Checksum 0x7241f419, Offset: 0x100
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

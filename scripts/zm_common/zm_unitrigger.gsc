@@ -18,7 +18,7 @@
 // Checksum 0x9d42fb1d, Offset: 0x1f8
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"zm_unitrigger", &function_70a657d8, &postinit, undefined, #"zm_zonemgr");
+    system::register(#"zm_unitrigger", &preinit, &postinit, undefined, #"zm_zonemgr");
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
@@ -108,7 +108,7 @@ function function_cf3f2bd8() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x2546e21, Offset: 0x738
 // Size: 0x18c
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.var_dc25ba05)) {
         level.var_dc25ba05 = 1;
     }
@@ -1044,8 +1044,8 @@ function private build_trigger_from_unitrigger_stub(s_stub, player) {
         trigger.stub = s_stub;
         trigger.player = player;
         function_699abf2(s_stub, trigger);
-        if (isdefined(s_stub.var_8232be15)) {
-            s_stub [[ s_stub.var_8232be15 ]](trigger);
+        if (isdefined(s_stub.onspawnfunc)) {
+            s_stub [[ s_stub.onspawnfunc ]](trigger);
         }
         function_d0676c62(s_stub, trigger, player);
         trigger triggerignoreteam();

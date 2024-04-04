@@ -626,7 +626,7 @@ function private destroyentities(entities, attacker, team, weapon, radius) {
             continue;
         }
         if (distancesquared(entity.origin, attacker.origin) < radiussq) {
-            entity notify(#"damage", {#weapon:weapon, #part_name:partname, #model_name:modelname, #tag_name:tagname, #mod:meansofdeath, #position:point, #direction:direction_vec, #attacker:attacker, #amount:damage});
+            entity notify(#"damage", {#amount:damage, #attacker:attacker, #direction:direction_vec, #position:point, #mod:meansofdeath, #tag_name:tagname, #model_name:modelname, #part_name:partname, #weapon:weapon});
         }
     }
 }

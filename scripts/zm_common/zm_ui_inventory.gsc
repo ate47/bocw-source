@@ -11,14 +11,14 @@
 // Checksum 0xfa836dbd, Offset: 0xf0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_ui_inventory", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_ui_inventory", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_ui_inventory/zm_ui_inventory
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6f736028, Offset: 0x138
 // Size: 0x178
-function private function_70a657d8() {
+function private preinit() {
     callback::on_connecting(&onconnect);
     clientfield::function_91cd7763("string", "hudItems.zmFeatureDescription", 1, 1);
     zm_inventory::function_c7c05a13();
@@ -26,7 +26,7 @@ function private function_70a657d8() {
     foreach (mapping in level.var_a16c38d9) {
         if (!isdefined(registeredfields[mapping.var_cd35dfb2])) {
             registeredfields[mapping.var_cd35dfb2] = 1;
-            if (is_true(mapping.var_7f12f171)) {
+            if (is_true(mapping.ispersonal)) {
                 clientfield::register_clientuimodel(mapping.var_cd35dfb2, 1, mapping.numbits, "int");
                 continue;
             }
@@ -65,7 +65,7 @@ function private function_13ad9a60() {
 // Size: 0xdc
 function function_7df6bb60(fieldname, value, player) {
     var_d5423fb8 = level.var_a16c38d9[fieldname];
-    if (!(isdefined(var_d5423fb8) && is_true(var_d5423fb8.var_7f12f171))) {
+    if (!(isdefined(var_d5423fb8) && is_true(var_d5423fb8.ispersonal))) {
         self clientfield::set_world_uimodel(var_d5423fb8.var_cd35dfb2, value);
         return;
     }

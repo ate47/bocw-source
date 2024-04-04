@@ -240,10 +240,10 @@ class class_744b99c {
                 if (player === result.activator) {
                     continue;
                 }
-                if (!isalive(player) || is_true(player.doa.var_70c50ae0)) {
+                if (!isalive(player) || is_true(player.doa.respawning)) {
                     player namespace_7f5aeb59::function_513831e1();
                 }
-                if (distancesquared(player.origin, result.activator.origin) > function_a3f6cdac(700)) {
+                if (distancesquared(player.origin, result.activator.origin) > sqr(700)) {
                     player setorigin(result.activator.origin + (randomintrange(-40, 40), randomintrange(-40, 40), 0));
                     waitframe(1);
                     player namespace_83eb6304::function_3ecfde67("lightningStrike");
@@ -282,10 +282,10 @@ class class_744b99c {
         loc.count = count;
         loc.permanent = permanent;
         loc.activated = 0;
-        loc.var_a3192b0f = 0;
+        loc.totalspawned = 0;
         loc.var_82725140 = 0;
         loc.scale = scale;
-        loc.var_e3d90223 = randomint(100) < loc.chance;
+        loc.canspawn = randomint(100) < loc.chance;
         addobject(loc);
     }
 
@@ -297,7 +297,7 @@ class class_744b99c {
         /#
             assert(isdefined(self.var_6c9ec3e8));
         #/
-        return self.var_6c9ec3e8.var_9045aedc;
+        return self.var_6c9ec3e8.lightstate;
     }
 
     // Namespace namespace_744b99c/doa_wild
@@ -320,7 +320,7 @@ class class_744b99c {
             if (player === result.activator) {
                 continue;
             }
-            if (!isalive(player) || is_true(player.doa.var_70c50ae0)) {
+            if (!isalive(player) || is_true(player.doa.respawning)) {
                 player namespace_7f5aeb59::function_513831e1();
             }
             player setorigin(teleporter.origin + (randomintrange(-40, 40), randomintrange(-40, 40), 0));
@@ -367,7 +367,7 @@ class class_744b99c {
                 assert(isdefined(section.id));
             #/
             section.flipcamera = 0;
-            section.var_9045aedc = 1;
+            section.lightstate = 1;
             section.playerstarts = struct::get_array(section.target);
             /#
                 assert(section.playerstarts.size == 4);
@@ -380,7 +380,7 @@ class class_744b99c {
                 assert(params.size >= 2);
             #/
             section.flipcamera = int(params[0]);
-            section.var_9045aedc = int(params[1]);
+            section.lightstate = int(params[1]);
             if (params.size > 2) {
                 section.exit = struct::get(params[2]);
             }
@@ -530,8 +530,8 @@ class class_744b99c {
     // Params 1, eflags: 0x2 linked
     // Checksum 0x511d0272, Offset: 0x27c8
     // Size: 0x1a
-    function function_774497ee(var_34fa8ed5) {
-        self.var_622da539 = var_34fa8ed5;
+    function function_774497ee(cb) {
+        self.var_622da539 = cb;
     }
 
     // Namespace namespace_744b99c/doa_wild
@@ -593,8 +593,8 @@ class class_744b99c {
     // Size: 0xf4
     function function_98a61f4e(section = 0) {
         self.var_6c9ec3e8 = function_60ca2154(section);
-        var_ec67aff2 = function_70111aa4(section);
-        level thread namespace_ec06fe4a::function_87612422(var_ec67aff2.origin, var_ec67aff2.angles);
+        hintpos = function_70111aa4(section);
+        level thread namespace_ec06fe4a::function_87612422(hintpos.origin, hintpos.angles);
         if (isdefined(self.var_6c9ec3e8.exit) && isdefined(self.var_6c9ec3e8.exit.teleporter)) {
             objective_onentity(12, self.var_6c9ec3e8.exit.teleporter);
             objective_setstate(12, "active");
@@ -694,7 +694,7 @@ class class_744b99c {
             level thread [[ self.var_622da539 ]](self.var_6c9ec3e8);
         }
         self.var_6c9ec3e8 = undefined;
-        self notify(#"hash_25392c6d0eb63175");
+        self notify(#"deactivated");
         level notify(#"hash_77e4bcc14697c018");
     }
 
@@ -702,8 +702,8 @@ class class_744b99c {
     // Params 1, eflags: 0x2 linked
     // Checksum 0xf88df70c, Offset: 0x27a0
     // Size: 0x1a
-    function function_b6954aba(var_34fa8ed5) {
-        self.var_486c1553 = var_34fa8ed5;
+    function function_b6954aba(cb) {
+        self.var_486c1553 = cb;
     }
 
     // Namespace namespace_744b99c/doa_wild
@@ -715,7 +715,7 @@ class class_744b99c {
         level.doa.var_997a0313++;
         level.doa.var_8dc464fe = gettime();
         foreach (dungeon in self.var_2a0f52f3) {
-            dungeon.trigger = namespace_ec06fe4a::function_b5731057("trigger_box", dungeon.origin, 2, dungeon.var_27264bb4, dungeon.var_efa6dcc2, dungeon.var_a69f4ab4);
+            dungeon.trigger = namespace_ec06fe4a::spawntrigger("trigger_box", dungeon.origin, 2, dungeon.var_27264bb4, dungeon.var_efa6dcc2, dungeon.var_a69f4ab4);
         }
         function_c4836f01();
         function_98a61f4e(section);
@@ -760,10 +760,10 @@ class class_744b99c {
                     loc.chance = 1;
                 }
             }
-            loc.var_e3d90223 = randomint(100) < loc.chance;
+            loc.canspawn = randomint(100) < loc.chance;
             loc.count = isdefined(loc.script_int) ? int(loc.script_int) : 1;
             loc.activated = 0;
-            loc.var_a3192b0f = 0;
+            loc.totalspawned = 0;
             loc.var_82725140 = 0;
             loc.permanent = 0;
             if (isdefined(loc.script_noteworthy) && issubstr(loc.script_noteworthy, "world_")) {
@@ -801,7 +801,7 @@ class class_744b99c {
                     npc.var_a4c4ac53 = args[5];
                 }
             }
-            npc.var_e3d90223 = randomint(100) < npc.chance;
+            npc.canspawn = randomint(100) < npc.chance;
             npc.count = isdefined(npc.script_int) ? int(npc.script_int) : 1;
         }
         foreach (var_f0ce243e in self.var_e2a6dd61) {
@@ -844,7 +844,7 @@ class class_744b99c {
                     var_b458883a setmovingplatformenabled(1, 1);
                     var_b458883a disconnectpaths();
                     var_b458883a thread namespace_ec06fe4a::function_f506b4c7();
-                    var_b458883a.trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", var_b458883a.origin, 0, 40, 80);
+                    var_b458883a.trigger = namespace_ec06fe4a::spawntrigger("trigger_radius", var_b458883a.origin, 0, 40, 80);
                     var_b458883a thread function_40ee47dc(var_b458883a.var_d1fc07a7);
                 }
             }
@@ -866,7 +866,7 @@ class class_744b99c {
     function function_c8fbcc3f(id) {
         foreach (section in self.m_sections) {
             if (section.id == id) {
-                return section.var_9045aedc;
+                return section.lightstate;
             }
         }
         return undefined;
@@ -942,10 +942,10 @@ function function_2828aa1() {
     if (isinarray([[ level.doa.var_a77e6349 ]]->function_d9ad5c49(), level.doa.var_c0036bbd) == 0) {
         loc = level.doa.var_c0036bbd;
         loc.chance = 100;
-        loc.var_e3d90223 = 1;
+        loc.canspawn = 1;
         loc.count = 1;
         loc.activated = 0;
-        loc.var_a3192b0f = 0;
+        loc.totalspawned = 0;
         loc.var_82725140 = 0;
         loc.permanent = 1;
         loc.script_string = "arcade_machine1";
@@ -1060,7 +1060,7 @@ function function_7c5bc025(name, section) {
     level clientfield::set("setWildTOD", [[ level.doa.var_a77e6349 ]]->function_39f259cc());
     level namespace_a6ddb172::function_7a0e5387();
     util::wait_network_frame();
-    level notify(#"hash_77a8f97f2648672", {#section:section, #name:name});
+    level notify(#"hash_77a8f97f2648672", {#name:name, #section:section});
     level.doa.var_3902985f = &function_c6dcd966;
     level.doa.var_a71b0305 = &function_a1832a08;
     level thread function_715ea8aa(level.doa.var_a77e6349);
@@ -1161,7 +1161,7 @@ function function_87922476(name, section) {
 function function_c6dcd966(item) {
     if (isdefined(item.var_aa1b5d45)) {
         item.var_aa1b5d45.var_82725140++;
-        item.var_aa1b5d45.var_e3d90223 = 0;
+        item.var_aa1b5d45.canspawn = 0;
         if ([[ item.def ]]->gettype() == 14) {
             item.var_aa1b5d45.norespawn = 1;
         }
@@ -1177,7 +1177,7 @@ function function_a1832a08(item) {
     if (isdefined(item.var_aa1b5d45)) {
         item notify(#"hash_2a866f50cc161ca8");
         level.doa.var_aa1b5d45.pickups[level.doa.var_aa1b5d45.pickups.size] = item;
-        level.doa.var_aa1b5d45.var_a3192b0f = level.doa.var_aa1b5d45.pickups.size;
+        level.doa.var_aa1b5d45.totalspawned = level.doa.var_aa1b5d45.pickups.size;
     }
 }
 
@@ -1192,19 +1192,19 @@ function spawnitem(item) {
     item.pickups = [];
     item.activated = 1;
     level.doa.var_aa1b5d45 = item;
-    var_e9e24bda = 1600;
+    despawndistance = 1600;
     if (is_true(level.doa.var_318aa67a)) {
-        var_e9e24bda = 2400;
+        despawndistance = 2400;
     }
     switch (item.script_noteworthy) {
     case #"hash_717f51c8c82e526c":
         namespace_f63bdb08::function_2a1e5c1f(item.origin, item.angles, item.model, isdefined(item.script_int) ? int(item.script_int) : undefined, isdefined(item.script_objective) ? int(item.script_objective) : undefined, 1, item.script_parameters);
         if (is_true(level.doa.var_318aa67a)) {
-            var_e9e24bda = 2800;
+            despawndistance = 2800;
         }
         break;
     case #"world_loot":
-        namespace_41f5b853::function_cd388232(item.origin, item.angles, item.script_string, item.radius, 1);
+        namespace_41f5b853::spawnlootitem(item.origin, item.angles, item.script_string, item.radius, 1);
         break;
     case #"hash_708bdcbf801445c6":
         namespace_dfc652ee::function_68442ee7(item.origin, 20, isdefined(item.radius) ? item.radius : 200);
@@ -1232,9 +1232,9 @@ function spawnitem(item) {
         break;
     }
     if (!item.permanent) {
-        level thread function_612fa49c(item, var_e9e24bda);
+        level thread function_612fa49c(item, despawndistance);
     } else {
-        item.var_e3d90223 = 0;
+        item.canspawn = 0;
     }
     level.doa.var_aa1b5d45 = undefined;
 }
@@ -1249,7 +1249,7 @@ function function_612fa49c(item, distance = 1600) {
         players = namespace_7f5aeb59::function_23e1f90f();
         active = 0;
         foreach (player in players) {
-            if (distancesquared(item.origin, player.origin) < function_a3f6cdac(distance)) {
+            if (distancesquared(item.origin, player.origin) < sqr(distance)) {
                 active = 1;
                 break;
             }
@@ -1261,7 +1261,7 @@ function function_612fa49c(item, distance = 1600) {
         remove = 0;
     }
     if (remove) {
-        item.var_e3d90223 = 0;
+        item.canspawn = 0;
     }
     if (isdefined(item.pickups)) {
         arrayremovevalue(item.pickups, undefined);
@@ -1295,7 +1295,7 @@ function function_715ea8aa(var_46058269) {
             if (is_true(item.activated)) {
                 continue;
             }
-            if (!is_true(item.var_e3d90223)) {
+            if (!is_true(item.canspawn)) {
                 continue;
             }
             if (is_true(item.norespawn)) {
@@ -1339,7 +1339,7 @@ function function_e5488243(npc) {
         break;
     case #"guard":
     default:
-        self thread namespace_250e9486::function_e1f7a9a0(npc.radius);
+        self thread namespace_250e9486::ai_guard(npc.radius);
         break;
     }
 }
@@ -1355,7 +1355,7 @@ function function_d81916f4() {
     while (self.activated) {
         result = undefined;
         result = self waittill(#"hash_4c72e79bdad8315e");
-        namespace_1e25ad94::function_f5f0c0f8("ai_queue_spawned notify recieved for ent:" + result.ai getentitynumber() + " at: " + gettime() + " note typestamp:" + result.time);
+        namespace_1e25ad94::debugmsg("ai_queue_spawned notify recieved for ent:" + result.ai getentitynumber() + " at: " + gettime() + " note typestamp:" + result.time);
         if (isdefined(result.ai) && !isinarray(self.enemylist, result.ai)) {
             result.ai.boss = isdefined(self.boss) ? self.boss : result.ai.boss;
             result.ai.script_noteworthy = self.script_noteworthy;
@@ -1421,7 +1421,7 @@ function function_7d406bae(npc, distance = 2400) {
         players = namespace_7f5aeb59::function_23e1f90f();
         active = 0;
         foreach (player in players) {
-            if (distancesquared(npc.origin, player.origin) < function_a3f6cdac(distance)) {
+            if (distancesquared(npc.origin, player.origin) < sqr(distance)) {
                 active = 1;
                 break;
             }
@@ -1430,12 +1430,12 @@ function function_7d406bae(npc, distance = 2400) {
         wait(1);
     }
     items = doa_enemy::function_924423d(npc);
-    var_a5a975dd = 0;
+    unspawned = 0;
     foreach (item in items) {
-        var_a5a975dd = var_a5a975dd + item.count;
+        unspawned = unspawned + item.count;
     }
     arrayremovevalue(npc.enemylist, undefined);
-    npc.count = npc.count + npc.enemylist.size + var_a5a975dd;
+    npc.count = npc.count + npc.enemylist.size + unspawned;
     foreach (guy in npc.enemylist) {
         if (is_true(guy.boss)) {
             guy thread namespace_ec06fe4a::function_52afe5df();
@@ -1462,15 +1462,15 @@ function function_3efbdeb3(var_46058269) {
     while (true) {
         if (namespace_250e9486::function_60f6a9e() && !isdefined(level.doa.var_182fb75a)) {
             players = namespace_7f5aeb59::function_23e1f90f();
-            var_f807cf8f = [];
+            npcs = [];
             foreach (player in players) {
-                var_f807cf8f = arraycombine(var_f807cf8f, arraysortclosest(level.doa.var_95cc492a, player.origin, undefined, 0, 2000));
+                npcs = arraycombine(npcs, arraysortclosest(level.doa.var_95cc492a, player.origin, undefined, 0, 2000));
             }
-            foreach (npc in var_f807cf8f) {
+            foreach (npc in npcs) {
                 if (is_true(npc.activated)) {
                     continue;
                 }
-                if (!is_true(npc.var_e3d90223)) {
+                if (!is_true(npc.canspawn)) {
                     continue;
                 }
                 level function_72405345(npc);
@@ -1489,7 +1489,7 @@ function function_e8146c4c() {
     level endon(#"game_over");
     wait(5);
     foreach (player in getplayers()) {
-        player namespace_6e90e490::function_55775bbc(12);
+        player namespace_6e90e490::showhint(12);
     }
     wait(30);
     while (isdefined(level.doa.var_6f3d327)) {
@@ -1497,7 +1497,7 @@ function function_e8146c4c() {
     }
     if (!is_true(level.doa.var_318aa67a)) {
         foreach (player in getplayers()) {
-            player namespace_6e90e490::function_55775bbc(13);
+            player namespace_6e90e490::showhint(13);
         }
     }
 }

@@ -10,14 +10,14 @@
 // Checksum 0xa5ee95d3, Offset: 0x128
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"influencers_shared", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"influencers_shared", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace influencers/influencers_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x75bbbf3c, Offset: 0x170
 // Size: 0x104
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.var_3d984b4c)) {
         level.var_3d984b4c = 1;
     }

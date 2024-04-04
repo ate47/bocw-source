@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_17a9d06bf819b2d3;
+#using scripts\zm_common\zm_ping.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\system_shared.csc;
 #using scripts\core_common\clientfield_shared.csc;
@@ -11,16 +11,16 @@
 // Checksum 0xa0d3c45f, Offset: 0xf8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_3c412421c33b7764", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_3c412421c33b7764", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_9d3ef6c5/namespace_9d3ef6c5
 // Params 0, eflags: 0x2 linked
 // Checksum 0xe61faa99, Offset: 0x140
 // Size: 0x4c
-function function_70a657d8() {
+function preinit() {
     init_clientfields();
-    namespace_5b1144e::function_5ae4a10c(undefined, "aether_tunnel", #"hash_4a0616e4966dcff5", undefined, #"hash_7d007703c89ea64a");
+    zm_ping::function_5ae4a10c(undefined, "aether_tunnel", #"hash_4a0616e4966dcff5", undefined, #"hash_7d007703c89ea64a");
 }
 
 // Namespace namespace_9d3ef6c5/namespace_9d3ef6c5

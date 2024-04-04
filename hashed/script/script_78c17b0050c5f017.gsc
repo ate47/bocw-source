@@ -12,14 +12,14 @@
 // Checksum 0x3a37b9f7, Offset: 0x158
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_1e60252f388011fb", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_1e60252f388011fb", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
 // Params 0, eflags: 0x2 linked
 // Checksum 0xb521cfc8, Offset: 0x1a0
 // Size: 0x144
-function function_70a657d8() {
+function preinit() {
     if (!zm_utility::is_survival()) {
         return;
     }

@@ -9,7 +9,7 @@
 // Checksum 0x5ab89e9, Offset: 0xa8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"catalyst", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"catalyst", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace archetype_catalyst/archetype_catalyst
@@ -24,7 +24,7 @@ function autoexec precache() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x3c8c2d06, Offset: 0x100
 // Size: 0x34
-function private function_70a657d8() {
+function private preinit() {
     ai::add_archetype_spawn_function(#"catalyst", &function_5608540a);
 }
 

@@ -24,7 +24,7 @@
 // Size: 0x4c
 function private autoexec __init__system__() {
     /#
-        register(#"dev", &function_70a657d8, undefined, undefined, #"spawnlogic");
+        register(#"dev", &preinit, undefined, undefined, #"spawnlogic");
     #/
 }
 
@@ -32,7 +32,7 @@ function private autoexec __init__system__() {
 // Params 0, eflags: 0x4
 // Checksum 0x1ff2225, Offset: 0x158
 // Size: 0x2c
-function private function_70a657d8() {
+function private preinit() {
     /#
         on_start_gametype(&init);
     #/

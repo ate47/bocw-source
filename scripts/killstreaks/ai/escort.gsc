@@ -25,7 +25,7 @@ function private init_escort(var_5a529222, var_edc20efd, var_d73e0c6e, var_544ae
     /#
         assert(isdefined(self.ai));
     #/
-    self.ai.escort = {#var_db083d2c:var_db083d2c, #var_544ae93d:var_544ae93d, #var_d73e0c6e:var_d73e0c6e, #var_edc20efd:var_edc20efd, #var_5a529222:var_5a529222, #state:2};
+    self.ai.escort = {#state:2, #var_5a529222:var_5a529222, #var_edc20efd:var_edc20efd, #var_d73e0c6e:var_d73e0c6e, #var_544ae93d:var_544ae93d, #var_db083d2c:var_db083d2c};
 }
 
 // Namespace ai_escort/escort
@@ -320,10 +320,10 @@ function function_11d6df2c() {
         return true;
     }
     if (isdefined(self.ai.escort.var_8d8186ad)) {
-        if (distancesquared(self.ai.escort.var_8d8186ad, var_56bd1bef) >= function_a3f6cdac(self.ai.escort.var_5a529222)) {
+        if (distancesquared(self.ai.escort.var_8d8186ad, var_56bd1bef) >= sqr(self.ai.escort.var_5a529222)) {
             return true;
         }
-    } else if (distancesquared(self.origin, var_56bd1bef) >= function_a3f6cdac(self.ai.escort.var_5a529222)) {
+    } else if (distancesquared(self.origin, var_56bd1bef) >= sqr(self.ai.escort.var_5a529222)) {
         return true;
     }
     if (isdefined(var_56bd1bef) && isdefined(self.script_owner) && isdefined(self.script_owner.angles)) {
@@ -337,7 +337,7 @@ function function_11d6df2c() {
     }
     if (isdefined(self.ai.escort.var_8d8186ad) && isdefined(self.ai.escort.var_e48a6ca) && !self haspath()) {
         if (isdefined(var_56bd1bef) && gettime() > self.ai.escort.var_e48a6ca + randomintrange(3000, 5000)) {
-            if (distancesquared(self.ai.escort.var_8d8186ad, var_56bd1bef) <= function_a3f6cdac(350)) {
+            if (distancesquared(self.ai.escort.var_8d8186ad, var_56bd1bef) <= sqr(350)) {
                 self.ai.var_82cafa78 = 1;
                 return true;
             }

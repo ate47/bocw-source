@@ -11,14 +11,14 @@
 // Checksum 0x1e4be3a4, Offset: 0x108
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"jetfighter", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"jetfighter", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace jetfighter/jetfighter
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb4823c84, Offset: 0x158
 // Size: 0x6c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "jetfighter_contrail", 1, 1, "int", &jetfighter_contrail, 0, 0);
     level.var_852b61e4 = getscriptbundle("killstreak_jetfighter");
 }

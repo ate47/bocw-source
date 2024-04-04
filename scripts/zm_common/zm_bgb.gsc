@@ -31,14 +31,14 @@
 // Checksum 0xe235e6a2, Offset: 0x2e8
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"bgb", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"bgb", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace bgb/zm_bgb
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6e7de987, Offset: 0x340
 // Size: 0x2d4
-function private function_70a657d8() {
+function private preinit() {
     callback::on_connect(&on_player_connect);
     if (!is_true(level.bgb_in_use)) {
         return;
@@ -1192,7 +1192,7 @@ function give(name) {
     /#
         assert(isdefined(level.bgb[name]), "<unknown string>" + name + "<unknown string>");
     #/
-    self notify(#"bgb_update", {#var_826ddd38:self.bgb, #var_3aee8e4:name});
+    self notify(#"bgb_update", {#var_3aee8e4:name, #var_826ddd38:self.bgb});
     self notify("bgb_update_give_" + name);
     self.bgb = name;
     self clientfield::set_player_uimodel("zmhud.bgb_current", level.bgb[name].item_index);
@@ -1224,7 +1224,7 @@ function take() {
         self thread [[ level.bgb[self.bgb].disable_func ]]();
     }
     self bgb_clear_monitors_and_clientfields();
-    self notify(#"bgb_update", {#var_826ddd38:self.bgb, #var_3aee8e4:#"none"});
+    self notify(#"bgb_update", {#var_3aee8e4:#"none", #var_826ddd38:self.bgb});
     self notify("bgb_update_take_" + self.bgb);
     self.bgb = #"none";
 }

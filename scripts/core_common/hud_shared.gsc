@@ -20,7 +20,7 @@
 // Checksum 0x7d8776ea, Offset: 0x368
 // Size: 0x22c
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
-    foreach (var_2f758e99, k in [0:"script_main_objective_src"]) {
+    foreach (var_2f758e99, k in ["script_main_objective_src"]) {
         if (!isdefined(level.var_41204f29)) {
             level.var_41204f29 = [];
         } else if (!isarray(level.var_41204f29)) {
@@ -46,14 +46,14 @@ function private event_handler[createstruct] function_e0a8e4ba(struct) {
 // Checksum 0x1f198033, Offset: 0x5a0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hud", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hud", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace hud/hud_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0xcc529174, Offset: 0x5e8
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&init);
     level.scavenger_icon = scavenger_icon::register();
     mission flag::init("pvp_objectives_updating");
@@ -207,7 +207,7 @@ function function_32de5fc7() {
 function function_6cf4a466() {
     level.var_6371e281 = [];
     foreach (var_cc966c56 in array(#"axis", #"allies")) {
-        level.var_6371e281[var_cc966c56] = {#var_bde2b289:[], #var_4e490ff2:[], #var_f6fd19fc:[], #var_ba87ac95:[]};
+        level.var_6371e281[var_cc966c56] = {#var_ba87ac95:[], #var_f6fd19fc:[], #var_4e490ff2:[], #var_bde2b289:[]};
         level.var_6371e281[var_cc966c56] flag::init("updating");
     }
 }
@@ -224,7 +224,7 @@ function set_team_objective(var_3c9f56bd, var_cc966c56, n_obj_id, n_widget, var_
     if (isstruct(var_3c9f56bd)) {
         s_objective = var_3c9f56bd;
     } else {
-        s_objective = {#s_radiant:self, #n_widget:n_widget, #n_obj_id:n_obj_id, #str_identifier:var_3c9f56bd};
+        s_objective = {#str_identifier:var_3c9f56bd, #n_obj_id:n_obj_id, #n_widget:n_widget, #s_radiant:self};
     }
     var_776f69c5 = level.var_6371e281[var_cc966c56];
     str_team = level.teams[var_cc966c56];
@@ -1296,7 +1296,7 @@ function function_e2f8b883(str_team, str_objective, var_e563ad04, e_player, *var
     n_obj_id = gameobjects::get_next_obj_id();
     objective_add(n_obj_id, "invisible", undefined, var_e563ad04);
     objective_setteam(n_obj_id, var_cc966c56);
-    var_869753ec = {#var_b1f5cba2:var_b1f5cba2, #str_objective:var_e563ad04, #var_428fe2c1:1, #n_obj_id:n_obj_id};
+    var_869753ec = {#n_obj_id:n_obj_id, #var_428fe2c1:1, #str_objective:var_e563ad04, #var_b1f5cba2:var_b1f5cba2};
     if (isdefined(e_player)) {
         var_869753ec.var_e563ad04 = e_player;
     }

@@ -15,14 +15,14 @@
 // Checksum 0x2907d96, Offset: 0x120
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_7aac5c09cf9461e3", &function_70a657d8, undefined, &finalize, undefined);
+    system::register(#"hash_7aac5c09cf9461e3", &preinit, undefined, &finalize, undefined);
 }
 
 // Namespace namespace_2ed67032/namespace_2ed67032
 // Params 0, eflags: 0x4
 // Checksum 0xe0bc9b2f, Offset: 0x170
 // Size: 0x124
-function private function_70a657d8() {
+function private preinit() {
     level.var_8ef8b9e8 = getweapon(#"hash_9825a3f1d038c6f");
     clientfield::register_clientuimodel("hudItems.armorPlateCount", 1, 4, "int", 0);
     clientfield::register_clientuimodel("hudItems.armorPlateMaxCarry", 1, 4, "int");
@@ -93,7 +93,7 @@ function private on_player_loadout() {
 // Checksum 0x7969a433, Offset: 0x5b0
 // Size: 0xf0
 function private function_e74225a7(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, *slot) {
-    if (itemcount.var_a6762160.itemtype == #"armor_shard") {
+    if (itemcount.itementry.itemtype == #"armor_shard") {
         var_82da4e0 = int(min(slot, self.var_c52363ab - var_aec6fa7f.var_7d7d976a));
         var_aec6fa7f.var_7d7d976a = var_aec6fa7f.var_7d7d976a + var_82da4e0;
         var_aec6fa7f clientfield::set_player_uimodel("hudItems.armorPlateCount", var_aec6fa7f.var_7d7d976a);
@@ -107,7 +107,7 @@ function private function_e74225a7(item, player, *networkid, *itemid, itemcount,
 // Checksum 0xf08bef71, Offset: 0x6a8
 // Size: 0xc2
 function private function_86b9a404() {
-    if (self isonladder() || self function_b4813488() || self inlaststand() || self function_49b3360c() || self isinfreefall() || self function_b9c43317()) {
+    if (self isonladder() || self function_b4813488() || self inlaststand() || self isparachuting() || self isinfreefall() || self isskydiving()) {
         return false;
     }
     return self.var_7d7d976a > 0 && armor::get_armor() < 225;

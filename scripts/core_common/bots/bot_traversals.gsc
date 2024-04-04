@@ -9,7 +9,7 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0x4663c1e5, Offset: 0xc0
 // Size: 0x34
-function function_70a657d8() {
+function preinit() {
     callback::add_callback(#"hash_767bb029d2dcda7c", &function_45ed4ebd);
 }
 

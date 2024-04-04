@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\zm_common\zm_utility.csc;
-#using script_17a9d06bf819b2d3;
+#using scripts\zm_common\zm_ping.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\clientfield_shared.csc;
 
@@ -14,7 +14,7 @@ function init() {
     clientfield::register("world", "" + #"hash_666ad912cb4541f1", 16000, 1, "int", &function_7d467651, 0, 0);
     clientfield::register("world", "" + #"hash_18c31f1201f7c968", 16000, 1, "counter", &function_e4ea3f5f, 0, 0);
     clientfield::register("world", "" + #"hash_4d477a055c04e499", 16000, 1, "counter", &function_b35747a, 0, 0);
-    namespace_5b1144e::function_5ae4a10c(undefined, "gold_teleporter", #"hash_4046a68ee9d717fc", undefined, #"hash_6416821107fc95b2");
+    zm_ping::function_5ae4a10c(undefined, "gold_teleporter", #"hash_4046a68ee9d717fc", undefined, #"hash_6416821107fc95b2");
 }
 
 // Namespace zm_gold_pap_quest/zm_gold_pap_quest
@@ -48,8 +48,8 @@ function function_7d467651(localclientnum, *oldval, newval, *bnewent, *binitials
 // Checksum 0xb7027a8d, Offset: 0x4b8
 // Size: 0xfe
 function function_e4ea3f5f(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
-    var_ca9ffa6a = getentarray(bwasdemojump, "gold_teleporter", "targetname");
-    foreach (teleporter in var_ca9ffa6a) {
+    teleporters = getentarray(bwasdemojump, "gold_teleporter", "targetname");
+    foreach (teleporter in teleporters) {
         teleporter function_619a5c20();
         teleporter.var_fc558e74 = "gold_teleporter";
     }

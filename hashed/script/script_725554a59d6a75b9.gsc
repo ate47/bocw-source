@@ -139,21 +139,21 @@ function play_death_vox(body, *attacker, weapon, meansofdeath) {
     if (!isdefined(voiceprefix)) {
         return;
     }
-    var_c45d3b76 = self get_death_vox(weapon, playerbundle, meansofdeath);
+    deathalias = self get_death_vox(weapon, playerbundle, meansofdeath);
     if (self function_8b1a219a()) {
-        if (isdefined(var_c45d3b76)) {
-            var_27e6026e = function_5d15920e(var_c45d3b76, playerbundle);
+        if (isdefined(deathalias)) {
+            var_27e6026e = function_5d15920e(deathalias, playerbundle);
             entitynumber = self getentitynumber();
             attacker function_661a6cc1(var_27e6026e, entitynumber);
         }
         return;
     }
-    if (isdefined(var_c45d3b76)) {
+    if (isdefined(deathalias)) {
         if (attacker hasdobj() && attacker haspart("J_Head")) {
-            attacker playsoundontag(voiceprefix + var_c45d3b76, "J_Head");
+            attacker playsoundontag(voiceprefix + deathalias, "J_Head");
             return;
         }
-        attacker playsoundontag(voiceprefix + var_c45d3b76, "tag_origin");
+        attacker playsoundontag(voiceprefix + deathalias, "tag_origin");
     }
 }
 

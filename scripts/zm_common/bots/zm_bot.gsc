@@ -17,14 +17,14 @@
 // Checksum 0x8a823906, Offset: 0x108
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_bot", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_bot", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_bot/zm_bot
 // Params 0, eflags: 0x6 linked
 // Checksum 0x46d2d38c, Offset: 0x150
 // Size: 0x8c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_connect(&on_player_connect);
     level.var_df0a0911 = "bot_tacstate_zm_default";
     level.var_258cdebb = "bot_tacstate_zm_laststand";

@@ -9,14 +9,14 @@
 // Checksum 0x3030ed3a, Offset: 0xe0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"serverfaceanim", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"serverfaceanim", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace serverfaceanim/serverfaceanim_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x3c49b72f, Offset: 0x128
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     if (!is_true(level._use_faceanim)) {
         return;
     }

@@ -110,8 +110,8 @@ function function_bd34685d(origin, angles, var_91e0802f) {
     testangles[9] = vectorscale((0, 1, 0), 150);
     testangles[10] = vectorscale((0, -1, 0), 150);
     testangles[11] = vectorscale((0, 1, 0), 180);
-    var_37c06a3d = spawnstruct();
-    var_dc688353 = [];
+    validspawns = spawnstruct();
+    validpositions = [];
     var_e9fa8058 = [];
     var_c78218d5 = [];
     var_c78218d5[0] = 5;
@@ -133,7 +133,7 @@ function function_bd34685d(origin, angles, var_91e0802f) {
                         startpoint = trace[#"position"];
                     }
                 }
-                var_dc688353[var_dc688353.size] = startpoint;
+                validpositions[validpositions.size] = startpoint;
                 var_e9fa8058[var_e9fa8058.size] = startangles[i] + testangles[i];
                 if (var_e9fa8058.size == 3) {
                     break;
@@ -144,9 +144,9 @@ function function_bd34685d(origin, angles, var_91e0802f) {
             break;
         }
     }
-    var_37c06a3d.var_dc688353 = var_dc688353;
-    var_37c06a3d.var_e9fa8058 = var_e9fa8058;
-    return var_37c06a3d;
+    validspawns.validpositions = validpositions;
+    validspawns.var_e9fa8058 = var_e9fa8058;
+    return validspawns;
 }
 
 // Namespace namespace_5d515bd5/namespace_515a5054
@@ -166,7 +166,7 @@ function function_4e0fa155(clone) {
             level.doa.clones[i] = clone;
             var_329388c = 1;
             /#
-                function_f5f0c0f8("<unknown string>" + i + "<unknown string>" + level.doa.clones.size);
+                debugmsg("<unknown string>" + i + "<unknown string>" + level.doa.clones.size);
             #/
             break;
         }
@@ -186,7 +186,7 @@ function function_34038097(clone) {
             level.doa.clones[i] = undefined;
             arrayremovevalue(level.doa.clones, undefined);
             /#
-                function_f5f0c0f8("<unknown string>" + i + "<unknown string>" + level.doa.clones.size);
+                debugmsg("<unknown string>" + i + "<unknown string>" + level.doa.clones.size);
             #/
             break;
         }
@@ -214,7 +214,7 @@ function function_56d29b42() {
         }
     }
     /#
-        function_f5f0c0f8("<unknown string>" + i + "<unknown string>" + level.doa.clones.size);
+        debugmsg("<unknown string>" + i + "<unknown string>" + level.doa.clones.size);
     #/
     level.doa.clones[oldestindex] notify(#"clone_shutdown");
     level.doa.clones[oldestindex] = undefined;
@@ -243,22 +243,22 @@ function function_f9d22968() {
     velocity = velocity + (0, 0, velocity[2] * -1);
     velocity = vectornormalize(velocity);
     origin = self.origin + velocity * 17 + vectorscale(anglestoforward(self getangles()), 17);
-    var_37c06a3d = function_bd34685d(origin, self getangles(), 300);
-    if (var_37c06a3d.var_dc688353.size < 3) {
+    validspawns = function_bd34685d(origin, self getangles(), 300);
+    if (validspawns.validpositions.size < 3) {
         var_262ce494 = function_bd34685d(origin, self getangles(), 900);
-        for (index = 0; index < var_262ce494.var_dc688353.size && var_37c06a3d.var_dc688353.size < 3; index++) {
-            var_37c06a3d.var_dc688353[var_37c06a3d.var_dc688353.size] = var_262ce494.var_dc688353[index];
-            var_37c06a3d.var_e9fa8058[var_37c06a3d.var_e9fa8058.size] = var_262ce494.var_e9fa8058[index];
+        for (index = 0; index < var_262ce494.validpositions.size && validspawns.validpositions.size < 3; index++) {
+            validspawns.validpositions[validspawns.validpositions.size] = var_262ce494.validpositions[index];
+            validspawns.var_e9fa8058[validspawns.var_e9fa8058.size] = var_262ce494.var_e9fa8058[index];
         }
     }
-    for (i = 0; i < var_37c06a3d.var_dc688353.size; i++) {
-        traveldistance = distance(var_37c06a3d.var_dc688353[i], self.origin);
-        var_37c06a3d.var_c1ddc2[i] = traveldistance / 200;
-        self thread function_7e6356ef(var_37c06a3d.var_dc688353[i], var_37c06a3d.var_c1ddc2[i]);
+    for (i = 0; i < validspawns.validpositions.size; i++) {
+        traveldistance = distance(validspawns.validpositions[i], self.origin);
+        validspawns.spawntimes[i] = traveldistance / 200;
+        self thread function_7e6356ef(validspawns.validpositions[i], validspawns.spawntimes[i]);
     }
-    for (i = 0; i < var_37c06a3d.var_dc688353.size; i++) {
+    for (i = 0; i < validspawns.validpositions.size; i++) {
         function_cb30c0aa();
-        clone = spawnactor("spawner_zombietron_hat_clone", var_37c06a3d.var_dc688353[i], var_37c06a3d.var_e9fa8058[i], "", 1);
+        clone = spawnactor("spawner_zombietron_hat_clone", validspawns.validpositions[i], validspawns.var_e9fa8058[i], "", 1);
         if (!isdefined(clone)) {
             continue;
         }
@@ -269,11 +269,11 @@ function function_f9d22968() {
         clone.team = self.team;
         clone.var_c497caa3 = 1;
         function_241f12a1(clone, self);
-        clone pathmode("move delayed", 1, var_37c06a3d.var_c1ddc2[i]);
+        clone pathmode("move delayed", 1, validspawns.spawntimes[i]);
         clone.var_539ad42b = 1;
         clone.doa = spawnstruct();
         clone.doa.var_484cc88b = 0;
-        self thread function_5d01145(clone, self, anglestoforward(var_37c06a3d.var_e9fa8058[i]), var_37c06a3d.var_c1ddc2[i]);
+        self thread function_5d01145(clone, self, anglestoforward(validspawns.var_e9fa8058[i]), validspawns.spawntimes[i]);
         self function_4e0fa155(clone);
         waitframe(1);
     }
@@ -297,7 +297,7 @@ function private _updateclonepathing(player) {
         } else {
             self setblackboardattribute("_stance", "stand");
         }
-        if (distancesquared(self.lastknownpos, self.origin) < function_a3f6cdac(24) && !self haspath()) {
+        if (distancesquared(self.lastknownpos, self.origin) < sqr(24) && !self haspath()) {
             self setblackboardattribute("_stance", "crouch");
             wait(0.5);
             continue;
@@ -313,7 +313,7 @@ function private _updateclonepathing(player) {
         if (isdefined(self.var_ef51fb4c)) {
             distance = distancesquared(self.var_ef51fb4c, self.origin);
         }
-        if (distance > function_a3f6cdac(120) || !self haspath()) {
+        if (distance > sqr(120) || !self haspath()) {
             if (isdefined(player)) {
                 forward = anglestoforward(player getangles());
             } else {

@@ -41,7 +41,7 @@ function play_in_space(alias, origin, *master) {
     org playsoundwithnotify(origin, "sounddone");
     org waittill(#"sounddone");
     if (isdefined(org)) {
-        org function_cb48cddd();
+        org deletedelay();
     }
 }
 
@@ -75,13 +75,13 @@ function loop_on_tag(alias, tag, bstopsoundondeath) {
 // Params 5, eflags: 0x2 linked
 // Checksum 0x56dfdeb6, Offset: 0x3d8
 // Size: 0x204
-function play_on_tag(alias, tag, ends_on_death, var_50bba55f, *var_82ea274f) {
+function play_on_tag(alias, tag, ends_on_death, var_50bba55f, *radio_dialog) {
     if (self ai::is_dead_sentient()) {
         return;
     }
     org = spawn("script_origin", self.origin);
     org endon(#"death");
-    thread function_24d166a0(org, "sounddone");
+    thread delete_on_death_wait_sound(org, "sounddone");
     if (isdefined(ends_on_death)) {
         org linkto(self, ends_on_death, (0, 0, 0), (0, 0, 0));
     } else {
@@ -90,7 +90,7 @@ function play_on_tag(alias, tag, ends_on_death, var_50bba55f, *var_82ea274f) {
         org linkto(self);
     }
     /#
-        if (self === level.var_ca328321) {
+        if (self === level.player_radio_emitter) {
             println("<unknown string>" + tag);
         }
     #/
@@ -106,8 +106,8 @@ function play_on_tag(alias, tag, ends_on_death, var_50bba55f, *var_82ea274f) {
     } else {
         org waittill(#"sounddone");
     }
-    if (isdefined(var_82ea274f)) {
-        self notify(var_82ea274f);
+    if (isdefined(radio_dialog)) {
+        self notify(radio_dialog);
     }
     org delete();
 }
@@ -129,14 +129,14 @@ function wait_for_sounddone_or_death(org, other) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xb3b7a9b8, Offset: 0x650
 // Size: 0x7c
-function function_24d166a0(ent, sounddone) {
+function delete_on_death_wait_sound(ent, sounddone) {
     ent endon(#"death");
     self waittill(#"death");
     if (isdefined(ent)) {
-        if (ent function_2b576327()) {
+        if (ent iswaitingonsound()) {
             ent waittill(sounddone);
         }
-        ent function_cb48cddd();
+        ent deletedelay();
     }
 }
 

@@ -14,14 +14,14 @@
 // Checksum 0x9d098e4b, Offset: 0x100
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial/zm_trial
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb92ef6da, Offset: 0x148
 // Size: 0x34
-function private function_70a657d8() {
+function private preinit() {
     if (!is_trial_mode()) {
         return;
     }
@@ -72,7 +72,7 @@ function register_challenge(name, var_c5dd8620, var_bbcdbff5) {
     /#
         assert(!isdefined(level.var_75e93a54[name]));
     #/
-    info = {#var_bbcdbff5:var_bbcdbff5, #var_c5dd8620:var_c5dd8620, #name:name};
+    info = {#name:name, #var_c5dd8620:var_c5dd8620, #var_bbcdbff5:var_bbcdbff5};
     level.var_75e93a54[name] = info;
 }
 
@@ -110,7 +110,7 @@ function private function_4dbf2663() {
         /#
             assert(!isdefined(function_d02ffd(var_189d26ca)));
         #/
-        var_6d87ac05 = {#index:level.var_c556bb2e.size, #rounds:[], #name:var_189d26ca};
+        var_6d87ac05 = {#name:var_189d26ca, #rounds:[], #index:level.var_c556bb2e.size};
         level.var_c556bb2e[level.var_c556bb2e.size] = var_6d87ac05;
         do {
             row++;
@@ -132,7 +132,7 @@ function private function_4dbf2663() {
                 round_info = var_6d87ac05.rounds[round_index];
                 challenge_name = tablelookupcolumnforrow(table, row, 5);
                 var_10a28798 = [];
-                array::add(round_info.challenges, {#params:var_10a28798, #row:row, #name:challenge_name});
+                array::add(round_info.challenges, {#name:challenge_name, #row:row, #params:var_10a28798});
                 for (i = 0; i < 8; i++) {
                     param = tablelookupcolumnforrow(table, row, 6 + i);
                     if (isdefined(param) && param != #"") {

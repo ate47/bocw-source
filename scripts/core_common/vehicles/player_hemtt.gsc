@@ -10,14 +10,14 @@
 // Checksum 0x96e1ef0e, Offset: 0x108
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_5b215c4eff8f5759", &function_70a657d8, undefined, undefined, #"player_vehicle");
+    system::register(#"hash_5b215c4eff8f5759", &preinit, undefined, undefined, #"player_vehicle");
 }
 
 // Namespace namespace_6e44b0fa/namespace_6e44b0fa
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdf1feafe, Offset: 0x158
 // Size: 0x2c
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_main_callback("hemtt_wz", &function_7cb966e4);
 }
 

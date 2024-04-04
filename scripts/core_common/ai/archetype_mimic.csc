@@ -15,14 +15,14 @@
 // Checksum 0x83b915d3, Offset: 0x2a8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"archetype_mimic", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"archetype_mimic", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace archetype_mimic/archetype_mimic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x5aaae274, Offset: 0x2f0
 // Size: 0x2ec
-function function_70a657d8() {
+function preinit() {
     if (!isarchetypeloaded(#"mimic")) {
         return;
     }
@@ -58,7 +58,7 @@ function function_ef33ecb7(localclientnum, *oldval, newval, *bnewent, *binitials
     if (!isdefined(self)) {
         return;
     }
-    foreach (bone in [7:"j_tentacle_04_ri", 6:"j_tentacle_04_le", 5:"j_tentacle_03_ri", 4:"j_tentacle_03_le", 3:"j_tentacle_02_ri", 2:"j_tentacle_02_le", 1:"j_tentacle_01_ri", 0:"j_tentacle_01_le"]) {
+    foreach (bone in ["j_tentacle_01_le", "j_tentacle_01_ri", "j_tentacle_02_le", "j_tentacle_02_ri", "j_tentacle_03_le", "j_tentacle_03_ri", "j_tentacle_04_le", "j_tentacle_04_ri"]) {
         self function_d309e55a(bone, bwastimejump);
     }
 }

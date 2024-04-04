@@ -82,17 +82,17 @@ class class_b599a4bc {
 // Checksum 0x4d4bfef2, Offset: 0x3b8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_lockdown_util", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_lockdown_util", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_lockdown_util/zm_lockdown_util
 // Params 0, eflags: 0x6 linked
 // Checksum 0x84a56340, Offset: 0x598
 // Size: 0x130
-function private function_70a657d8() {
+function private preinit() {
     level thread function_b595044c();
     level thread function_ccf7ac87();
-    level.var_492142a5 = [#"lockdown_stub_type_wallbuys":&function_9c7d5271, #"lockdown_stub_type_traps":&function_d2ce5ac1, #"lockdown_stub_type_perks":&function_db989a2a, #"lockdown_stub_type_pap":&function_165e2bd6, #"lockdown_stub_type_magic_box":&function_e6761711, #"lockdown_stub_type_crafting_tables":&function_d0e1d38c, #"lockdown_stub_type_boards":&function_8850974b];
+    level.var_492142a5 = [#"lockdown_stub_type_boards":&function_8850974b, #"lockdown_stub_type_crafting_tables":&function_d0e1d38c, #"lockdown_stub_type_magic_box":&function_e6761711, #"lockdown_stub_type_pap":&function_165e2bd6, #"lockdown_stub_type_perks":&function_db989a2a, #"lockdown_stub_type_traps":&function_d2ce5ac1, #"lockdown_stub_type_wallbuys":&function_9c7d5271];
     level.var_85c076ab = [];
     /#
     #/
@@ -288,7 +288,7 @@ function function_2bdb235d() {
 // Size: 0xe6
 function private function_2bdff7e1(entity, stub, node) {
     var_5bd89846 = groundtrace(node.origin + vectorscale((0, 0, 1), 8), node.origin + vectorscale((0, 0, -1), 100000), 0, entity)[#"position"];
-    var_66694b96 = {#angles:node.angles, #origin:var_5bd89846};
+    var_66694b96 = {#origin:var_5bd89846, #angles:node.angles};
     if (!is_true(stub.var_7c2f9a8b)) {
         stub.var_66694b96 = var_66694b96;
     }
@@ -1121,7 +1121,7 @@ function function_78eae22a(entity, stub, reason, ...) {
             } else if (!isarray(entity.var_d187874c)) {
                 entity.var_d187874c = array(entity.var_d187874c);
             }
-            entity.var_d187874c[entity.var_d187874c.size] = {#args:vararg, #reason:reason, #stub:stub};
+            entity.var_d187874c[entity.var_d187874c.size] = {#stub:stub, #reason:reason, #args:vararg};
         }
     #/
 }
@@ -1215,7 +1215,7 @@ function private function_6351d1c3(entity, registerlotus_right, var_d05e79c8) {
     /#
         foreach (stub in registerlotus_right) {
             dist = distancesquared(entity.origin, stub.origin);
-            if (dist > function_a3f6cdac(var_d05e79c8)) {
+            if (dist > sqr(var_d05e79c8)) {
                 function_78eae22a(entity, stub, 8, sqrt(dist));
             }
         }

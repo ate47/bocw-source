@@ -122,16 +122,16 @@ function hellstorm_deploy(localclientnum, *oldval, newval, *bnewent, *binitialsn
             self useanimtree("generic");
             self setanim(#"hash_21fa3a72d877f87a", 1);
             if (isdefined(level.var_bb1f7e1e.var_1050ff32)) {
-                self.var_7e63022 = util::playfxontag(fieldname, #"hash_75b6b7edc8c8900", self, "tag_origin");
+                self.cloudfx = util::playfxontag(fieldname, #"hash_75b6b7edc8c8900", self, "tag_origin");
             }
         } else {
             self hide();
         }
         return;
     }
-    if (isdefined(self.var_7e63022)) {
-        stopfx(fieldname, self.var_7e63022);
-        self.var_7e63022 = undefined;
+    if (isdefined(self.cloudfx)) {
+        stopfx(fieldname, self.cloudfx);
+        self.cloudfx = undefined;
     }
 }
 
@@ -182,13 +182,13 @@ function missile_fired(localclientnum, *oldval, newval, *bnewent, *binitialsnap,
         localplayer = function_5c10bd79(fieldname);
         owner = self getowner(fieldname);
         if (localplayer hasperk(fieldname, #"specialty_showscorestreakicons") || self.team == localplayer.team) {
-            self.var_7ec0e2d1 = spawn(fieldname, self.origin, "script_model", localplayer getentitynumber(), self.team);
-            self.var_7ec0e2d1 setcompassicon(level.var_bb1f7e1e.var_cb98fbf7);
+            self.iconent = spawn(fieldname, self.origin, "script_model", localplayer getentitynumber(), self.team);
+            self.iconent setcompassicon(level.var_bb1f7e1e.var_cb98fbf7);
             var_b13727dd = getgametypesetting("compassAnchorScorestreakIcons");
-            self.var_7ec0e2d1 function_dce2238(var_b13727dd);
-            self.var_7ec0e2d1 setmodel(#"tag_origin");
-            self.var_7ec0e2d1 linkto(self);
-            self.var_7ec0e2d1 function_5e00861(level.var_bb1f7e1e.var_792e8590);
+            self.iconent function_dce2238(var_b13727dd);
+            self.iconent setmodel(#"tag_origin");
+            self.iconent linkto(self);
+            self.iconent function_5e00861(level.var_bb1f7e1e.var_792e8590);
             self thread function_20fff7ed(level.var_bb1f7e1e.var_792e8590, level.var_bb1f7e1e.var_f99969f1, gettime(), level.var_bb1f7e1e.var_6b2f302f * 1000);
         }
         self thread hud_update(fieldname);
@@ -196,7 +196,7 @@ function missile_fired(localclientnum, *oldval, newval, *bnewent, *binitialsnap,
         return;
     }
     if (bwastimejump == 2) {
-        self.var_7ec0e2d1 delete();
+        self.iconent delete();
         return;
     }
     self function_fd73ab50();
@@ -217,15 +217,15 @@ function private function_298565db() {
 // Size: 0xec
 function function_20fff7ed(startscale, endscale, starttime, duration) {
     self endon(#"death");
-    while (isdefined(self.var_7ec0e2d1) && gettime() < starttime + duration) {
+    while (isdefined(self.iconent) && gettime() < starttime + duration) {
         currtime = gettime();
         ratio = (currtime - starttime) / duration;
         scale = lerpfloat(startscale, endscale, ratio);
-        self.var_7ec0e2d1 function_5e00861(scale);
+        self.iconent function_5e00861(scale);
         wait(0.1);
     }
-    if (isdefined(self.var_7ec0e2d1)) {
-        self.var_7ec0e2d1 function_5e00861(endscale);
+    if (isdefined(self.iconent)) {
+        self.iconent function_5e00861(endscale);
     }
 }
 
@@ -242,17 +242,17 @@ function bomblets_deployed(localclientnum, oldval, newval, bnewent, *binitialsna
         owner = self getowner(bnewent);
         if (localplayer hasperk(bnewent, #"specialty_showscorestreakicons") || self.team == localplayer.team) {
             self function_fd73ab50();
-            self.var_7ec0e2d1 = spawn(bnewent, self.origin, "script_model", localplayer getentitynumber(), self.team);
-            self.var_7ec0e2d1 setcompassicon(level.var_bb1f7e1e.var_cb98fbf7);
+            self.iconent = spawn(bnewent, self.origin, "script_model", localplayer getentitynumber(), self.team);
+            self.iconent setcompassicon(level.var_bb1f7e1e.var_cb98fbf7);
             var_b13727dd = getgametypesetting("compassAnchorScorestreakIcons");
-            self.var_7ec0e2d1 function_dce2238(var_b13727dd);
-            self.var_7ec0e2d1 function_5e00861(level.var_bb1f7e1e.var_c3e4af00);
-            self.var_7ec0e2d1 linkto(self);
+            self.iconent function_dce2238(var_b13727dd);
+            self.iconent function_5e00861(level.var_bb1f7e1e.var_c3e4af00);
+            self.iconent linkto(self);
         }
     } else {
         self function_fd73ab50();
     }
-    ammo_ui_data_model = getuimodel(function_1df4c3b0(bnewent, #"hash_4c3ca831f332d4cc"), "rocketAmmo");
+    ammo_ui_data_model = getuimodel(function_1df4c3b0(bnewent, #"vehicle_info"), "rocketAmmo");
     if (isdefined(ammo_ui_data_model)) {
         setuimodelvalue(ammo_ui_data_model, 0);
     }
@@ -263,8 +263,8 @@ function bomblets_deployed(localclientnum, oldval, newval, bnewent, *binitialsna
 // Checksum 0x2583ea9a, Offset: 0x13a0
 // Size: 0x2c
 function function_fd73ab50() {
-    if (isdefined(self.var_7ec0e2d1)) {
-        self.var_7ec0e2d1 delete();
+    if (isdefined(self.iconent)) {
+        self.iconent delete();
     }
 }
 
@@ -277,9 +277,9 @@ function hud_update(localclientnum) {
     self notify(#"remote_missile_singeton");
     self endon(#"remote_missile_singeton");
     missile = self;
-    altitude_ui_data_model = getuimodel(function_1df4c3b0(localclientnum, #"hash_4c3ca831f332d4cc"), "altitude");
-    speed_ui_data_model = getuimodel(function_1df4c3b0(localclientnum, #"hash_4c3ca831f332d4cc"), "speed");
-    var_2c36f843 = getuimodel(function_1df4c3b0(localclientnum, #"hash_4c3ca831f332d4cc"), "remainingTime");
+    altitude_ui_data_model = getuimodel(function_1df4c3b0(localclientnum, #"vehicle_info"), "altitude");
+    speed_ui_data_model = getuimodel(function_1df4c3b0(localclientnum, #"vehicle_info"), "speed");
+    var_2c36f843 = getuimodel(function_1df4c3b0(localclientnum, #"vehicle_info"), "remainingTime");
     if (!isdefined(altitude_ui_data_model) || !isdefined(speed_ui_data_model) || !isdefined(var_2c36f843)) {
         return;
     }

@@ -12,14 +12,14 @@
 // Checksum 0xe402d0c2, Offset: 0xa8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_use_magicbox", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_use_magicbox", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_use_magicbox/zm_trial_use_magicbox
 // Params 0, eflags: 0x4
 // Checksum 0xfc25bad1, Offset: 0xf0
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

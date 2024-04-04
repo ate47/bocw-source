@@ -44,7 +44,7 @@ function timeshifterupdate(player, origin) {
         return;
     }
     org setmodel("tag_origin");
-    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", clock.origin, 1 | 512 | 8, 245, 60);
+    trigger = namespace_ec06fe4a::spawntrigger("trigger_radius", clock.origin, 1 | 512 | 8, 245, 60);
     if (!isdefined(trigger)) {
         clock delete();
         org delete();
@@ -59,7 +59,7 @@ function timeshifterupdate(player, origin) {
     trigger linkto(clock);
     trigger.opentime = 3000;
     trigger.var_6de1c43b = gettime() + trigger.opentime;
-    trigger.radiussq = function_a3f6cdac(245);
+    trigger.radiussq = sqr(245);
     timetowait = player namespace_1c2a96f9::function_4808b985(20);
     /#
     #/
@@ -102,7 +102,7 @@ function private function_91bc1c0d(trigger) {
     }
     self namespace_83eb6304::turnofffx("timeshift_contact");
     wait(0.75);
-    self asmsetanimationrate(isdefined(self.doa.var_da43a859) ? self.doa.var_da43a859 : 1);
+    self asmsetanimationrate(isdefined(self.doa.anim_rate) ? self.doa.anim_rate : 1);
     self.var_d33de52f = undefined;
 }
 

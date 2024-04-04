@@ -36,14 +36,14 @@
 // Checksum 0x91d1fccd, Offset: 0x340
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_5cb28995c23c44a", &function_70a657d8, &main, undefined, undefined);
+    system::register(#"hash_5cb28995c23c44a", &preinit, &main, undefined, undefined);
 }
 
 // Namespace namespace_98decc78/namespace_98decc78
 // Params 0, eflags: 0x6 linked
 // Checksum 0x141e28e2, Offset: 0x398
 // Size: 0x35c
-function private function_70a657d8() {
+function private preinit() {
     gametype = util::get_game_type();
     if (gametype == #"zsurvival") {
         level.var_9ee73630 = [];
@@ -152,7 +152,7 @@ function private function_42151b1b() {
 // Checksum 0x3309781f, Offset: 0xce0
 // Size: 0x5a
 function function_1bc8ecf1() {
-    self.var_b3c613a7 = [4:1, 3:1, 2:1, 1:1, 0:1];
+    self.var_b3c613a7 = [1, 1, 1, 1, 1];
     self.var_414bc881 = 1;
 }
 
@@ -223,7 +223,7 @@ function private function_853cd0f0(einflictor, eattacker, idamage, idflags, smea
     }
     if (var_fd90b0bb.classname === "script_vehicle" && psoffsettime == "MOD_CRUSH" && isdefined(self.var_5ace757d)) {
         foreach (bundle in self.var_5ace757d) {
-            foreach (hitloc in bundle.var_3d2f9bf0) {
+            foreach (hitloc in bundle.hitlocs) {
                 modelindex = hitloc;
                 if (isdefined(self.var_318a0ac8)) {
                     self [[ self.var_318a0ac8 ]](var_fd90b0bb, vpoint, vdir, shitloc, psoffsettime, damagefromunderneath, undefined, undefined, modelindex, partname);
@@ -252,10 +252,10 @@ function private zombie_gib_on_damage(params) {
 // Checksum 0x7ac16027, Offset: 0x1378
 // Size: 0xc6
 function private function_197fdaee(entity) {
-    if (entity asmgetstatus() != "asm_status_complete" && isdefined(entity.var_376ab36f) && isdefined(entity.var_1087b4ab) && entity isattached(entity.var_376ab36f, entity.var_1087b4ab)) {
-        entity detach(entity.var_376ab36f, entity.var_1087b4ab);
+    if (entity asmgetstatus() != "asm_status_complete" && isdefined(entity.projectile_model) && isdefined(entity.var_1087b4ab) && entity isattached(entity.projectile_model, entity.var_1087b4ab)) {
+        entity detach(entity.projectile_model, entity.var_1087b4ab);
         entity.var_1087b4ab = undefined;
-        entity.var_376ab36f = undefined;
+        entity.projectile_model = undefined;
     }
     entity.var_205ab08b = undefined;
 }
@@ -282,7 +282,7 @@ function private function_c142ffd7(entity) {
 // Size: 0x19c
 function private function_a7d522bd(entity) {
     model = array::random(array("c_t9_gore_chunk_03", "c_t9_gore_chunk_03_a", "c_t9_gore_chunk_03_b", "c_t9_gore_chunk_03_c", "c_t9_gore_chunk_03_d"));
-    entity.var_376ab36f = model;
+    entity.projectile_model = model;
     entity.var_1087b4ab = "tag_weapon_left";
     if (!entity haspart(entity.var_1087b4ab)) {
         entity.var_1087b4ab = "j_indexbase_le";
@@ -293,10 +293,10 @@ function private function_a7d522bd(entity) {
             entity.var_1087b4ab = "j_indexbase_ri";
         }
     }
-    if (entity isattached(entity.var_376ab36f, entity.var_1087b4ab)) {
-        entity detach(entity.var_376ab36f, entity.var_1087b4ab);
+    if (entity isattached(entity.projectile_model, entity.var_1087b4ab)) {
+        entity detach(entity.projectile_model, entity.var_1087b4ab);
     }
-    entity attach(entity.var_376ab36f, entity.var_1087b4ab);
+    entity attach(entity.projectile_model, entity.var_1087b4ab);
 }
 
 // Namespace namespace_98decc78/namespace_98decc78
@@ -314,12 +314,12 @@ function function_be5f206(start_pos, target_pos, var_22041b45) {
     var_e42cca13 = var_1e74aaf8;
     velocity = var_8a263da1 * var_e42cca13;
     if (velocity !== (0, 0, 0)) {
-        var_6c6317b9 = target_pos + velocity * var_22041b45;
-        to_target = var_6c6317b9 - start_pos;
+        predicted_pos = target_pos + velocity * var_22041b45;
+        to_target = predicted_pos - start_pos;
         time = length((to_target[0], to_target[1], 0)) / 700;
         time = min(time, var_22041b45);
-        var_6c6317b9 = target_pos + velocity * time;
-        return var_6c6317b9;
+        predicted_pos = target_pos + velocity * time;
+        return predicted_pos;
     }
 }
 
@@ -328,8 +328,8 @@ function function_be5f206(start_pos, target_pos, var_22041b45) {
 // Checksum 0xd4b98541, Offset: 0x17d8
 // Size: 0x3fa
 function private function_f45f4725(entity) {
-    if (isdefined(entity.var_1087b4ab) && isdefined(entity.var_376ab36f)) {
-        entity detach(entity.var_376ab36f, entity.var_1087b4ab);
+    if (isdefined(entity.var_1087b4ab) && isdefined(entity.projectile_model)) {
+        entity detach(entity.projectile_model, entity.var_1087b4ab);
     }
     if (isdefined(entity.var_1087b4ab) && namespace_85745671::is_player_valid(entity.enemy) && entity haspart(entity.var_1087b4ab) && entity.enemy haspart("j_spine4")) {
         start_pos = entity gettagorigin(entity.var_1087b4ab);
@@ -352,18 +352,18 @@ function private function_f45f4725(entity) {
                 time = length((to_target[0], to_target[1], 0)) / 700;
             }
         }
-        var_813d38fa = (0.5 * getdvarfloat(#"bg_lowgravity", 400) * function_a3f6cdac(time) + to_target[2]) / time;
+        var_813d38fa = (0.5 * getdvarfloat(#"bg_lowgravity", 400) * sqr(time) + to_target[2]) / time;
         to_target = vectornormalize((to_target[0], to_target[1], 0));
         grenade = entity magicgrenademanual(start_pos, (to_target[0] * 700, to_target[1] * 700, var_813d38fa), 6);
         grenade.angles = entity gettagangles(entity.var_1087b4ab);
         grenade thread function_6f78caa9();
-        if (isdefined(entity.var_376ab36f)) {
-            grenade setmodel(entity.var_376ab36f);
+        if (isdefined(entity.projectile_model)) {
+            grenade setmodel(entity.projectile_model);
         }
         entity.var_735e0049 = grenade;
         entity.var_42ecd9f3 = gettime() + int(1.5 * 1000);
     }
-    entity.var_376ab36f = undefined;
+    entity.projectile_model = undefined;
     entity.var_1087b4ab = undefined;
     entity.var_8c4d3e5d = undefined;
 }
@@ -382,7 +382,7 @@ function private function_6f78caa9() {
     if (waitresult._notify == #"projectile_impact_player" && isdefined(waitresult.player)) {
         player = waitresult.player;
         player playsound(#"hash_7531b73b4b99b19d");
-        player dodamage(self.weapon.var_2d276877[0], start_pos, attacker, self);
+        player dodamage(self.weapon.damagevalues[0], start_pos, attacker, self);
         var_622f0175 = player.origin - self.origin;
         var_f1ff3ca1 = vectornormalize((var_622f0175[0], var_622f0175[1], 0));
         player_forward = anglestoforward(player.angles);
@@ -407,12 +407,12 @@ function private function_6f78caa9() {
         vehicles = getentitiesinradius(self.origin, 1, 12);
         foreach (vehicle in vehicles) {
             if (isvehicle(vehicle) && namespace_85745671::function_7243fef2(vehicle)) {
-                vehicle dodamage(self.weapon.var_2d276877[0] * 2, start_pos, attacker, self);
+                vehicle dodamage(self.weapon.damagevalues[0] * 2, start_pos, attacker, self);
             }
         }
     }
     if (isdefined(self)) {
-        self function_cb48cddd();
+        self deletedelay();
     }
 }
 
@@ -440,7 +440,7 @@ function private setup_awareness(entity) {
 // Size: 0x74
 function function_962ec972(entity) {
     entity.fovcosine = 0.5;
-    entity.maxsightdistsqrd = function_a3f6cdac(900);
+    entity.maxsightdistsqrd = sqr(900);
     entity namespace_85745671::function_9758722("walk");
     entity.var_1267fdea = 0;
     awareness::function_9c9d96b5(entity);
@@ -464,7 +464,7 @@ function function_2e07b113(entity) {
 // Size: 0x7c
 function function_18cf0569(entity) {
     self.fovcosine = 0;
-    self.maxsightdistsqrd = function_a3f6cdac(1100);
+    self.maxsightdistsqrd = sqr(1100);
     self.var_1267fdea = 0;
     entity namespace_85745671::function_9758722("run");
     awareness::function_b41f0471(entity);
@@ -496,7 +496,7 @@ function function_60856c6d(entity) {
 // Size: 0x13c
 function function_88586098(entity) {
     self.fovcosine = 0;
-    self.maxsightdistsqrd = function_a3f6cdac(3000);
+    self.maxsightdistsqrd = sqr(3000);
     self.var_1267fdea = 0;
     if (isdefined(self.aat_turned)) {
     } else if (isdefined(self.var_9602c8b2)) {

@@ -14,7 +14,7 @@
 #using scripts\zm_common\zm_customgame.gsc;
 #using scripts\zm_common\zm_contracts.gsc;
 #using scripts\zm_common\zm_audio.gsc;
-#using script_73bd646be3641c07;
+#using scripts\zm_common\zm_ping.gsc;
 #using scripts\zm_common\bb.gsc;
 #using scripts\core_common\ai\zombie_utility.gsc;
 #using scripts\core_common\scene_shared.gsc;
@@ -40,14 +40,14 @@
 // Checksum 0xb4420a90, Offset: 0xaf8
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"zm_blockers", &function_70a657d8, &postinit, undefined, #"zm");
+    system::register(#"zm_blockers", &preinit, &postinit, undefined, #"zm");
 }
 
 // Namespace zm_blockers/zm_blockers
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd18a83f3, Offset: 0xb58
 // Size: 0xb4
-function private function_70a657d8() {
+function private preinit() {
     if (isdefined(level.var_c621179)) {
         thread [[ level.var_c621179 ]]();
     } else {
@@ -84,21 +84,21 @@ function function_ff88a016() {
     foreach (door in self.doors) {
         if (self.script_noteworthy === "electric_door" || self.script_noteworthy === "local_electric_door") {
             if (isdefined(door.target)) {
-                door namespace_5b1144e::function_9e0598bb(5);
+                door zm_ping::function_9e0598bb(5);
             } else {
-                door namespace_5b1144e::function_9e0598bb(4);
+                door zm_ping::function_9e0598bb(4);
             }
             continue;
         }
         if (door.script_string === "dynamite") {
-            door namespace_5b1144e::function_9e0598bb(2);
+            door zm_ping::function_9e0598bb(2);
             continue;
         }
         if (isdefined(door.target)) {
-            door namespace_5b1144e::function_9e0598bb(3);
+            door zm_ping::function_9e0598bb(3);
             continue;
         }
-        door namespace_5b1144e::function_9e0598bb(1);
+        door zm_ping::function_9e0598bb(1);
     }
 }
 
@@ -108,7 +108,7 @@ function function_ff88a016() {
 // Size: 0x90
 function function_7325d8d2() {
     foreach (door in self.doors) {
-        door namespace_5b1144e::function_9e0598bb(2);
+        door zm_ping::function_9e0598bb(2);
     }
 }
 
@@ -443,7 +443,7 @@ function function_5989dd12(a_doors) {
 // Checksum 0x6ea67aa7, Offset: 0x23a8
 // Size: 0x46
 function force_open_door(e_activator) {
-    self notify(#"trigger", {#is_forced:1, #activator:e_activator});
+    self notify(#"trigger", {#activator:e_activator, #is_forced:1});
 }
 
 // Namespace zm_blockers/zm_blockers
@@ -691,7 +691,7 @@ function door_activate(time, open = 1, quick, use_blocker_clip_for_pathing) {
         break;
     }
     if (isdefined(self)) {
-        children = self function_78e3674d();
+        children = self getlinkedchildren();
         foreach (child in children) {
             if (isdefined(child.classname) && child.classname == "grenade") {
                 weaponobjects::waitandfizzleout(child, 0);
@@ -1112,7 +1112,7 @@ function door_opened(cost, quick_close) {
             trig zm_utility::set_hint_string(trig, "default_buy_door", cost);
         }
     }
-    level notify(#"door_opened", {#t_blocker:self, #e_player:self.purchaser});
+    level notify(#"door_opened", {#e_player:self.purchaser, #t_blocker:self});
     if (isplayer(self.purchaser)) {
         self.purchaser playrumbleonentity(#"damage_light");
     }
@@ -1396,7 +1396,7 @@ function debris_think() {
                 }
             }
             zm_utility::play_sound_at_pos("purchase", self.origin);
-            level notify(#"junk purchased", {#t_blocker:self, #e_player:who});
+            level notify(#"junk purchased", {#e_player:who, #t_blocker:self});
             move_ent = undefined;
             a_clip = [];
             for (i = 0; i < junk.size; i++) {
@@ -1670,7 +1670,7 @@ function blocker_init() {
             }
             self.zbarrier = targets[j];
             self.zbarrier function_619a5c20();
-            self.zbarrier namespace_5b1144e::function_550247bd(12);
+            self.zbarrier zm_ping::function_550247bd(12);
             self.zbarrier.chunk_health = [];
             for (i = 0; i < self.zbarrier getnumzbarrierpieces(); i++) {
                 self.zbarrier.chunk_health[i] = 0;
@@ -1980,13 +1980,13 @@ function handle_post_board_repair_rewards(cost, *zbarrier) {
     self.rebuild_barrier_reward = self.rebuild_barrier_reward + zbarrier;
     if (self.var_d1463e1e === 0 && self.rebuild_barrier_reward >= var_fe6ea5a4) {
         self.var_d1463e1e = 1;
-        level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"secure_barrier_round_limit_zm", #attacker:self});
+        level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:self, #scoreevent:"secure_barrier_round_limit_zm"});
         self zm_utility::play_sound_on_ent("purchase");
     } else if (self.rebuild_barrier_reward < var_fe6ea5a4 && !is_true(self.var_d1463e1e)) {
         if (isdefined(self.var_7e008e0c) && self.var_7e008e0c > 0) {
             zbarrier = zbarrier * self.var_7e008e0c;
         }
-        level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"boarded_up_entrance_zm", #attacker:self});
+        level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:self, #scoreevent:"boarded_up_entrance_zm"});
         self zm_utility::play_sound_on_ent("purchase");
     }
     if (isdefined(self.board_repair)) {
@@ -2150,7 +2150,7 @@ function blocker_trigger_think() {
                 break;
             }
             player handle_post_board_repair_rewards(cost, self);
-            level notify(#"board_repaired", {#s_board:self, #player:player});
+            level notify(#"board_repaired", {#player:player, #s_board:self});
             if (zm_utility::all_chunks_intact(self, self.barrier_chunks)) {
                 self notify(#"all_boards_repaired");
                 player increment_window_repaired();
@@ -2942,7 +2942,7 @@ function function_807c87e7() {
 // Size: 0x2e6
 function function_53117870() {
     if (isdefined(self.doors) && self.doors.size == 1) {
-        return [0:self.doors[0]];
+        return [self.doors[0]];
     }
     var_a0878328 = [];
     foreach (door in self.doors) {
@@ -2962,12 +2962,12 @@ function function_53117870() {
     }
     foreach (door in self.doors) {
         if (door.classname === "script_model" && isdefined(door.script_noteworthy) && door.script_noteworthy === "model_clip") {
-            return [0:door];
+            return [door];
         }
     }
     foreach (door in self.doors) {
         if (door.classname === "script_model" && !isdefined(door.script_noteworthy)) {
-            return [0:door];
+            return [door];
         }
     }
     /#

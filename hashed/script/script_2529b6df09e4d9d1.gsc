@@ -37,7 +37,7 @@ class class_d28acd06 : class_9e71c1a2 {
     function _reset(*str_team) {
         if (isdefined(self.var_b5a03b21.last_player)) {
             self.var_b5a03b21.last_player flag::clear("lockpicking");
-            self.var_b5a03b21.last_player val::function_e681e68e(#"lockpicking");
+            self.var_b5a03b21.last_player val::reset_all(#"lockpicking");
             self.var_b5a03b21.last_player function_e0c7d69(1);
             self.var_b5a03b21.last_player notify(#"hash_226f6717c97d10d6");
         }
@@ -52,8 +52,8 @@ class class_d28acd06 : class_9e71c1a2 {
         self.var_7529951f = 1;
         self.var_b4563cfa = #"hash_74dc1865536890ee";
         if (sessionmodeiscampaigngame() && isdefined(level.var_6a7fb742)) {
-            foreach (var_e992b321 in self.var_63e8057) {
-                if (isdefined(var_e992b321.c_door) && isdefined(var_e992b321.c_door.m_e_door)) {
+            foreach (interact_location in self.var_63e8057) {
+                if (isdefined(interact_location.c_door) && isdefined(interact_location.c_door.m_e_door)) {
                     bundle = getscriptbundle(self.m_s_bundle.gameobject);
                     image = undefined;
                     if (isdefined(bundle.objective)) {
@@ -63,11 +63,11 @@ class class_d28acd06 : class_9e71c1a2 {
                         }
                     }
                     var_4d98c3ce = bundle.str_hint;
-                    var_80778410 = rotatepoint(self.var_b5a03b21.origin - var_e992b321.c_door.m_e_door.origin, (0, 0, 0) - var_e992b321.c_door.m_e_door.angles);
+                    var_80778410 = rotatepoint(self.var_b5a03b21.origin - interact_location.c_door.m_e_door.origin, (0, 0, 0) - interact_location.c_door.m_e_door.angles);
                     var_de6f0004 = isdefined(bundle.n_trigger_use_time) ? bundle.n_trigger_use_time : 0;
-                    var_e992b321.c_door.m_e_door.var_645eee83 = self;
-                    var_e992b321.c_door.m_e_door.var_e992b321 = var_e992b321;
-                    var_e992b321.c_door.m_e_door thread [[ level.var_6a7fb742 ]](#"use", {#var_67eb3347:&namespace_e10de4ad::function_eb28f36, #var_c9643122:1, #complete_callback:&namespace_e10de4ad::function_76974d96, #var_531201f1:&namespace_e10de4ad::function_cc2939a2, #var_be77841a:0, #var_de6f0004:var_de6f0004, #var_87c991f3:40, #var_754bedbb:0, #offset:var_80778410, #var_71b9f0c0:200, #image:image, #var_4d98c3ce:var_4d98c3ce});
+                    interact_location.c_door.m_e_door.var_645eee83 = self;
+                    interact_location.c_door.m_e_door.interact_location = interact_location;
+                    interact_location.c_door.m_e_door thread [[ level.var_6a7fb742 ]](#"use", {#var_4d98c3ce:var_4d98c3ce, #image:image, #var_71b9f0c0:200, #offset:var_80778410, #var_754bedbb:0, #var_87c991f3:40, #var_de6f0004:var_de6f0004, #var_be77841a:0, #var_531201f1:&minigame::function_cc2939a2, #complete_callback:&minigame::function_76974d96, #var_c9643122:1, #var_67eb3347:&minigame::function_eb28f36});
                 }
             }
         }
@@ -188,14 +188,14 @@ class class_d28acd06 : class_9e71c1a2 {
 // Size: 0x5c
 function private autoexec __init__system__() {
     level.var_51e24470["minigame_" + "lockpick"] = &function_8d584152;
-    system::register("lockpick", &function_70a657d8);
+    system::register("lockpick", &preinit);
 }
 
 // Namespace lockpick/lockpick
 // Params 0, eflags: 0x6 linked
 // Checksum 0x45e87069, Offset: 0x238
 // Size: 0xcc
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "lockpick_state", 1, 1, "int");
     clientfield::register("toplayer", "lockpick_num_pins", 1, 3, "int");
     clientfield::register("toplayer", "lockpick_lock_index", 1, 1, "int");
@@ -219,7 +219,7 @@ function cancel() {
         assert(isplayer(self), "<unknown string>");
     #/
     if (self.var_97c1c267.last_player === self) {
-        self.var_97c1c267 namespace_e10de4ad::function_c09ff52(undefined, undefined, self);
+        self.var_97c1c267 minigame::function_c09ff52(undefined, undefined, self);
     }
 }
 

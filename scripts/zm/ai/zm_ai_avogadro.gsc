@@ -27,14 +27,14 @@
 // Checksum 0x155f5924, Offset: 0x188
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"zm_ai_avogadro", &function_70a657d8, &postinit, undefined, #"archetype_avogadro");
+    system::register(#"zm_ai_avogadro", &preinit, &postinit, undefined, #"archetype_avogadro");
 }
 
 // Namespace zm_ai_avogadro/zm_ai_avogadro
 // Params 0, eflags: 0x4
 // Checksum 0xd2d4878, Offset: 0x1e8
 // Size: 0x264
-function private function_70a657d8() {
+function private preinit() {
     spawner::add_archetype_spawn_function(#"avogadro", &function_8e4a7133);
     spawner::function_89a2cd87(#"avogadro", &function_c41e67c);
     level.var_c8827250 = &function_dc04aa1a;
@@ -142,7 +142,7 @@ function function_ce2bd83c(params) {
         }
     }
     if (params.smeansofdeath == "MOD_CRUSH") {
-        self function_f59c1777({#jammer:self, #radius:250, #origin:self.origin});
+        self function_f59c1777({#origin:self.origin, #radius:250, #jammer:self});
         if (isdefined(params.einflictor)) {
             params.einflictor dodamage(500, self.origin, self, self, "none", "MOD_UNKNOWN");
         }
@@ -233,16 +233,16 @@ function function_c9791011() {
     }
     s_spawn_locs = [];
     if (isdefined(level.var_4e1942d2)) {
-        var_cd04f695 = [[ level.var_4e1942d2 ]](1);
-        if (isarray(var_cd04f695)) {
-            s_spawn_locs = var_cd04f695;
+        spawn_locs = [[ level.var_4e1942d2 ]](1);
+        if (isarray(spawn_locs)) {
+            s_spawn_locs = spawn_locs;
         } else {
-            array::add(s_spawn_locs, var_cd04f695);
+            array::add(s_spawn_locs, spawn_locs);
         }
     } else {
-        var_cd04f695 = function_d9f5ec34(1);
-        if (isarray(var_cd04f695)) {
-            s_spawn_locs = var_cd04f695;
+        spawn_locs = function_d9f5ec34(1);
+        if (isarray(spawn_locs)) {
+            s_spawn_locs = spawn_locs;
         }
     }
     var_69681a59 = [];
@@ -433,7 +433,7 @@ function function_f53b79b4(*n_round_number) {
 // Checksum 0xddd52bdc, Offset: 0x16c8
 // Size: 0x7c
 function function_7cabed4c(entity) {
-    target = archetype_avogadro::function_bd4a79a(entity);
+    target = archetype_avogadro::get_target_ent(entity);
     if (isdefined(target) && archetype_avogadro::function_d58f8483(entity)) {
         archetype_avogadro::function_de781d41(entity);
         return;

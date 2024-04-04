@@ -518,7 +518,7 @@ function function_e0c53cf(params) {
             var_3b210d82 = self.maxhealth * 0.2;
             break;
         case #"boss":
-        case #"hash_72d4f2ad2e333eb4":
+        case #"elite":
             var_3b210d82 = self.maxhealth * 0.1;
             break;
         default:
@@ -573,7 +573,7 @@ function function_45a520db(params) {
             var_487ba56d = 5;
             playsoundatposition(#"hash_57559c7467fac3a5", self.origin);
             break;
-        case #"hash_72d4f2ad2e333eb4":
+        case #"elite":
             var_487ba56d = 10;
             playsoundatposition(#"hash_612ef6ccaf0effeb", self.origin);
             break;
@@ -623,7 +623,7 @@ function function_261d5f79(params, ai_killed) {
     } else if (isdefined(ai_killed) && !is_true(ai_killed.nuked)) {
         self.var_30c56c16 = 0;
     }
-    self notify(#"zm_arcade_kill", {#params:params, #ai_killed:ai_killed});
+    self notify(#"zm_arcade_kill", {#ai_killed:ai_killed, #params:params});
 }
 
 // Namespace zstandard/zstandard
@@ -1696,8 +1696,8 @@ function onprecachegametype() {
 // Checksum 0x26d182c4, Offset: 0x6798
 // Size: 0x1fc
 function onstartgametype() {
-    zm_behavior::function_70a657d8();
-    zm_cleanup::function_70a657d8();
+    zm_behavior::preinit();
+    zm_cleanup::preinit();
     zm_spawner::init();
     zm_behavior::postinit();
     zm_cleanup::postinit();

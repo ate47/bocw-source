@@ -14,14 +14,14 @@
 // Checksum 0x97319921, Offset: 0x358
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_779f30bffb82a50e", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_779f30bffb82a50e", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_af1ba366/namespace_af1ba366
 // Params 0, eflags: 0x2 linked
 // Checksum 0x6abd0cf3, Offset: 0x3a0
 // Size: 0x55c
-function function_70a657d8() {
+function preinit() {
     if (!zm_utility::is_survival()) {
         return;
     }
@@ -45,7 +45,7 @@ function function_70a657d8() {
     clientfield::register("scriptmover", "" + #"hash_4bedc093642e28f6", 1, 1, "int", &function_1b83f2b2, 0, 0);
     clientfield::register("vehicle", "" + #"hash_7d17014634879c10", 1, 1, "counter", &function_eb56183c, 0, 0);
     clientfield::register("vehicle", "" + #"hash_1e59af4706036a79", 1, 1, "int", &function_858fe85a, 0, 0);
-    clientfield::register("vehicle", "" + #"hash_3178e1dcaee33fd3", 1, 1, "int", &function_1ca3698b, 0, 0);
+    clientfield::register("vehicle", "" + #"hash_3178e1dcaee33fd3", 1, 1, "int", &laser_fx, 0, 0);
     clientfield::register("world", "" + #"hash_3d55940ffed44588", 1, 1, "int", &function_3ec12c82, 0, 0);
     clientfield::register("world", "" + #"end_of_level_corpses", 1, 1, "int", &function_1c47acdc, 0, 0);
     clientfield::register("world", "" + #"end_of_level_exfil_outro_igc_props", 1, 1, "int", &function_e4145df1, 0, 0);
@@ -183,7 +183,7 @@ function private function_29a047dc(localclientnum, *oldval, newval, *bnewent, *b
 // Params 7, eflags: 0x6 linked
 // Checksum 0x73523f6b, Offset: 0x1168
 // Size: 0x204
-function private function_1ca3698b(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function private laser_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         var_4c010185 = self gettagorigin("tag_fx_laser_fire");
         if (isdefined(var_4c010185) && isdefined(self)) {

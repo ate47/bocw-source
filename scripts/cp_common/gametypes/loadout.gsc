@@ -14,14 +14,14 @@
 // Checksum 0x12609083, Offset: 0x200
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"loadout", &function_70a657d8, undefined, undefined, #"load");
+    system::register(#"loadout", &preinit, undefined, undefined, #"load");
 }
 
 // Namespace loadout/loadout
 // Params 0, eflags: 0x6 linked
 // Checksum 0x2e2f2033, Offset: 0x250
 // Size: 0x64
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&function_6fddd9e2);
     callback::on_connect(&on_connect);
     callback::on_disconnect(&function_5890c14e);
@@ -62,16 +62,16 @@ function private init() {
 // Checksum 0x8ce59d6e, Offset: 0x3b8
 // Size: 0x144
 function function_5890c14e() {
-    self savegame::function_6d003cb9("playerClass", undefined);
-    self savegame::function_6d003cb9("altPlayerID", undefined);
-    self savegame::function_6d003cb9("saved_weapon", undefined);
-    self savegame::function_6d003cb9("saved_weapon_attachments", undefined);
-    self savegame::function_6d003cb9("saved_weapondata", undefined);
-    self savegame::function_6d003cb9("lives", undefined);
-    self savegame::function_6d003cb9("saved_rig1", undefined);
-    self savegame::function_6d003cb9("saved_rig1_upgraded", undefined);
-    self savegame::function_6d003cb9("saved_rig2", undefined);
-    self savegame::function_6d003cb9("saved_rig2_upgraded", undefined);
+    self savegame::set_player_data("playerClass", undefined);
+    self savegame::set_player_data("altPlayerID", undefined);
+    self savegame::set_player_data("saved_weapon", undefined);
+    self savegame::set_player_data("saved_weapon_attachments", undefined);
+    self savegame::set_player_data("saved_weapondata", undefined);
+    self savegame::set_player_data("lives", undefined);
+    self savegame::set_player_data("saved_rig1", undefined);
+    self savegame::set_player_data("saved_rig1_upgraded", undefined);
+    self savegame::set_player_data("saved_rig2", undefined);
+    self savegame::set_player_data("saved_rig2_upgraded", undefined);
 }
 
 // Namespace loadout/loadout
@@ -98,7 +98,7 @@ function private function_5536bd9e() {
     }
     self player::function_9080887a(healthtoassign);
     self.maxhealth = healthtoassign;
-    new_health = self.var_66cb03ad < 0 ? self.var_66cb03ad : healthtoassign;
+    new_health = self.var_66cb03ad < 0 ? healthtoassign : self.var_66cb03ad;
     self.health = new_health;
     self.maxarmor = has_specialty_armor ? self.spawnarmor : 0;
     self.armor = has_specialty_armor ? self.spawnarmor : 0;
@@ -110,7 +110,7 @@ function private function_5536bd9e() {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x17e22503, Offset: 0x6b8
 // Size: 0x22e
-function function_2bf96aa3(*team, *weaponclass, *var_d4a479a1) {
+function giveloadout(*team, *weaponclass, *var_d4a479a1) {
     profileNamedStart(#"");
     defaultweapon = getweapon("ar_accurate_t9");
     self takeallweapons();
@@ -144,7 +144,7 @@ function function_2bf96aa3(*team, *weaponclass, *var_d4a479a1) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x939bb00b, Offset: 0x8f0
 // Size: 0x1a
-function function_2e9919bb(newclass) {
+function setclass(newclass) {
     self.curclass = newclass;
 }
 

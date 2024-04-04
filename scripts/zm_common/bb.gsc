@@ -11,14 +11,14 @@
 // Checksum 0xa277cf56, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"bb", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"bb", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace bb/bb
 // Params 0, eflags: 0x6 linked
 // Checksum 0x4ca42c4d, Offset: 0x120
 // Size: 0x14
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
 }
 

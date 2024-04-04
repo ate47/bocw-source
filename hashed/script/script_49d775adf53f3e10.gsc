@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\core_common\postfx_shared.csc;
-#using script_17a9d06bf819b2d3;
+#using scripts\zm_common\zm_ping.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\clientfield_shared.csc;
 
@@ -23,8 +23,8 @@ function init_clientfields() {
     clientfield::register("allplayers", "" + #"hash_31c153af499657fd", 1, 1, "int", &function_4a0e5efb, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_5822132672ad230f", 1, 1, "int", &function_2c087855, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_6219dce209d171ed", 1, 2, "int", &function_fccba5d0, 0, 0);
-    namespace_5b1144e::function_5ae4a10c("p9_zm_gold_jumppads_machine_mod", "gold_jump_pad", #"hash_7f09cfa60a53e5da", undefined, #"hash_78c19a4e1e68d0c4", 1, -20);
-    namespace_5b1144e::function_5ae4a10c("p9_zm_gold_jumppads_machine_sub", "gold_landing_pad", #"hash_5d6fe9e2bb10532d", undefined, #"hash_3a19bc129f8b2b4b");
+    zm_ping::function_5ae4a10c("p9_zm_gold_jumppads_machine_mod", "gold_jump_pad", #"hash_7f09cfa60a53e5da", undefined, #"hash_78c19a4e1e68d0c4", 1, -20);
+    zm_ping::function_5ae4a10c("p9_zm_gold_jumppads_machine_sub", "gold_landing_pad", #"hash_5d6fe9e2bb10532d", undefined, #"hash_3a19bc129f8b2b4b");
 }
 
 // Namespace namespace_47809ab2/namespace_47809ab2

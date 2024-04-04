@@ -15,14 +15,14 @@
 // Checksum 0x6a349822, Offset: 0x178
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_powerup_bonus_points_player", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_powerup_bonus_points_player", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_powerup_bonus_points_player/zm_powerup_bonus_points_player
 // Params 0, eflags: 0x6 linked
 // Checksum 0x44fb5b85, Offset: 0x1c0
 // Size: 0xf4
-function private function_70a657d8() {
+function private preinit() {
     zm_powerups::register_powerup("bonus_points_player", &grab_bonus_points_player);
     zm_powerups::register_powerup("bonus_points_player_shared", &function_ec014d54);
     if (zm_powerups::function_cc33adc8()) {
@@ -85,7 +85,7 @@ function bonus_points_player_powerup(item, player) {
         player zm_utility::function_846eb7dd(#"hash_1d757d99eb407952", item.hint);
     }
     player notify(#"bonus_points_player_grabbed", {#e_powerup:item});
-    level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:isdefined(item.var_df23dc7d) ? item.var_df23dc7d : "bonus_points_powerup_zm", #attacker:player});
+    level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:player, #scoreevent:isdefined(item.var_df23dc7d) ? item.var_df23dc7d : "bonus_points_powerup_zm"});
 }
 
 // Namespace zm_powerup_bonus_points_player/zm_powerup_bonus_points_player
@@ -97,6 +97,6 @@ function function_56784293(item, player) {
         player zm_utility::function_846eb7dd(#"hash_1d757d99eb407952", item.hint);
     }
     player notify(#"bonus_points_player_grabbed", {#e_powerup:item});
-    level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:isdefined(item.var_df23dc7d) ? item.var_df23dc7d : "bonus_points_powerup_zm", #attacker:player});
+    level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:player, #scoreevent:isdefined(item.var_df23dc7d) ? item.var_df23dc7d : "bonus_points_powerup_zm"});
 }
 

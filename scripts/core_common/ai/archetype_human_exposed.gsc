@@ -81,9 +81,9 @@ function autoexec registerbehaviorscriptfunctions() {
     #/
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_30b41b7040b96c68", &function_bb575b62);
     /#
-        assert(isscriptfunctionptr(&function_3a4e776));
+        assert(isscriptfunctionptr(&isusingsidearm));
     #/
-    behaviorstatemachine::registerbsmscriptapiinternal(#"hash_4de6a3a7ccc9d8f6", &function_3a4e776);
+    behaviorstatemachine::registerbsmscriptapiinternal(#"isusingsidearm", &isusingsidearm);
     /#
         assert(isscriptfunctionptr(&outofammo));
     #/
@@ -111,7 +111,7 @@ function function_fa6d93ea(entity) {
                 return true;
             }
             if (isdefined(entity.var_541abeb7) && gettime() - entity.var_541abeb7 < 3000) {
-                if (distancesquared(entity.origin, entity.var_99d0daef) < function_a3f6cdac(32)) {
+                if (distancesquared(entity.origin, entity.var_99d0daef) < sqr(32)) {
                     return true;
                 }
             }
@@ -275,7 +275,7 @@ function private function_bb575b62(*entity) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xcf54783f, Offset: 0xfc8
 // Size: 0x20
-function private function_3a4e776(entity) {
+function private isusingsidearm(entity) {
     return entity.weapon != entity.primaryweapon;
 }
 
@@ -284,17 +284,17 @@ function private function_3a4e776(entity) {
 // Checksum 0x8370e0ec, Offset: 0xff0
 // Size: 0x34
 function private function_ec3ea122(entity) {
-    return !shouldusesidearmpistol(entity, function_a3f6cdac(500));
+    return !shouldusesidearmpistol(entity, sqr(500));
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
 // Params 2, eflags: 0x6 linked
 // Checksum 0x2648cb13, Offset: 0x1030
 // Size: 0x386
-function private shouldusesidearmpistol(entity, checkdistance = function_a3f6cdac(300)) {
+function private shouldusesidearmpistol(entity, checkdistance = sqr(300)) {
     var_64c23a1b = 0;
     if (isdefined(entity.sidearm)) {
-        if (is_true(entity.var_f0ab915e)) {
+        if (is_true(entity.forcesidearm)) {
             var_64c23a1b = 1;
         } else if (is_true(entity.var_742cee23)) {
             if (isdefined(entity.enemy) && distancesquared(entity.origin, entity.enemy.origin) < checkdistance) {
@@ -311,12 +311,12 @@ function private shouldusesidearmpistol(entity, checkdistance = function_a3f6cda
         }
     }
     /#
-        var_f5093b66 = is_true(entity.var_f4e1bacb);
+        var_f5093b66 = is_true(entity.usingsidearm);
         if (var_64c23a1b != var_f5093b66) {
             println("<unknown string>" + entity getentnum() + "<unknown string>" + var_64c23a1b + "<unknown string>");
         }
     #/
-    entity.var_f4e1bacb = var_64c23a1b;
+    entity.usingsidearm = var_64c23a1b;
     return var_64c23a1b;
 }
 

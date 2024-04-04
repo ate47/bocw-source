@@ -69,8 +69,8 @@ function function_cb06f399() {
         }
         self.loot = [];
     }
-    if (isdefined(self.var_f807cf8f)) {
-        foreach (npc in self.var_f807cf8f) {
+    if (isdefined(self.npcs)) {
+        foreach (npc in self.npcs) {
             if (isdefined(npc)) {
                 npc thread namespace_ec06fe4a::function_570729f0(0.1);
             }
@@ -100,7 +100,7 @@ function function_e71841a() {
     self.walldecor = [];
     self.floordecor = [];
     self.loot = [];
-    self.var_f807cf8f = [];
+    self.npcs = [];
     self.wallbuy = [];
     args = strtok(self.targetname, "rg_room_");
     self clientfield::set("dungeon_set_roomID", int(args[0]) + 1);
@@ -157,10 +157,10 @@ function function_e71841a() {
                     ai.var_f906062a = 1;
                     ai.var_76cb41b3 = 1;
                     ai.goalradius = goalradius;
-                    self.var_f807cf8f[self.var_f807cf8f.size] = ai;
+                    self.npcs[self.npcs.size] = ai;
                     ai.room = self;
                     ai.engagementdistance = 1200;
-                    ai.var_a84a3d40 = function_a3f6cdac(ai.engagementdistance);
+                    ai.var_a84a3d40 = sqr(ai.engagementdistance);
                 }
             }
         }
@@ -179,7 +179,7 @@ function function_e71841a() {
             add = 1;
             foreach (door in level.doa.var_a8a563fc) {
                 distsq = distancesquared(var_f6198c5b.origin, door.origin);
-                if (distsq < function_a3f6cdac(512)) {
+                if (distsq < sqr(512)) {
                     add = 0;
                     break;
                 }
@@ -197,7 +197,7 @@ function function_e71841a() {
     }
     var_c9bdb63f = self namespace_f27a9d0d::function_cee62dac("type", "walldecor");
     foreach (var_f6198c5b in var_c9bdb63f) {
-        self.walldecor[self.walldecor.size] = namespace_c004634e::function_6a09928b(var_f6198c5b, #"hash_5e76c2f62c1e1615");
+        self.walldecor[self.walldecor.size] = namespace_c004634e::function_6a09928b(var_f6198c5b, #"wall");
     }
     var_c9bdb63f = self namespace_f27a9d0d::function_cee62dac("type", "wallbuy");
     foreach (var_f6198c5b in var_c9bdb63f) {
@@ -215,7 +215,7 @@ function function_e71841a() {
             width = int(args[1]);
             length = int(args[2]);
             height = int(args[3]);
-            var_5e62902b.trigger = namespace_ec06fe4a::function_b5731057("trigger_box", var_5e62902b.origin, 2, length, height, width);
+            var_5e62902b.trigger = namespace_ec06fe4a::spawntrigger("trigger_box", var_5e62902b.origin, 2, length, height, width);
             /#
                 assert(isdefined(var_f6198c5b.script_noteworthy), "<unknown string>");
             #/

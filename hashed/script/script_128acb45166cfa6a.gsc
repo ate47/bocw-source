@@ -119,7 +119,7 @@ function function_59ee055f(localclientnum) {
 // Checksum 0x2a6131e1, Offset: 0x870
 // Size: 0x76
 function function_c3ae0dcf() {
-    self endon(#"death", #"hash_29b88049dcac8bb3");
+    self endon(#"death", #"entitydeleted");
     while (true) {
         s_result = undefined;
         s_result = self waittill(#"sndambientbreath");
@@ -135,7 +135,7 @@ function function_ce1bd3f2(localclientnum) {
     if (!isdefined(self.var_ce0f9600)) {
         self.var_ce0f9600 = 1;
     }
-    self endon(#"death", #"hash_29b88049dcac8bb3");
+    self endon(#"death", #"entitydeleted");
     var_b240b48 = "inhale";
     suffix = "";
     var_4f50b172 = 0.7;
@@ -176,7 +176,7 @@ function function_b53ee6c9(localclientnum) {
     if (!isdefined(self.var_ce0f9600)) {
         self.var_ce0f9600 = 1;
     }
-    self endon(#"death", #"hash_29b88049dcac8bb3");
+    self endon(#"death", #"entitydeleted");
     var_b240b48 = "inhale";
     suffix = "";
     var_4f50b172 = 0.75;

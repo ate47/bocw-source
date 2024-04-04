@@ -10,11 +10,11 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0x4a301477, Offset: 0x148
 // Size: 0x3c
-function function_70a657d8() {
+function preinit() {
     level.botactions = [];
     level.botweapons = [];
-    namespace_eed5a117::function_70a657d8();
-    namespace_d9f3dd47::function_70a657d8();
+    namespace_eed5a117::preinit();
+    namespace_d9f3dd47::preinit();
 }
 
 // Namespace bot_action/bot_action
@@ -61,7 +61,7 @@ function clear() {
     self.bot.var_f50fa466 = undefined;
     self.bot.var_32d8dabe = undefined;
     self.bot.var_d70788cb = undefined;
-    self.bot.var_a9c00d70 = undefined;
+    self.bot.shoottime = undefined;
     self.bot.var_6bea1d82 = undefined;
     self.bot.var_9cf66413 = undefined;
     self.bot.var_ce28855b = undefined;
@@ -187,12 +187,12 @@ function flashed(actionparams) {
 // Checksum 0x17f8e0d, Offset: 0x698
 // Size: 0xa0
 function function_ebb8205b(actionparams) {
-    if (self function_5673fb61()) {
+    if (self isinexecutionvictim()) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_6ad5723518a9aa59";
         #/
         return true;
-    } else if (self function_2b063e16()) {
+    } else if (self isinexecutionattack()) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_21cc6a6be1e0b67";
         #/
@@ -206,7 +206,7 @@ function function_ebb8205b(actionparams) {
 // Checksum 0xf7e535f5, Offset: 0x740
 // Size: 0x54
 function register_action(name, weightfunc, executefunc) {
-    level.botactions[name] = {#executefunc:executefunc, #weightfunc:weightfunc};
+    level.botactions[name] = {#weightfunc:weightfunc, #executefunc:executefunc};
 }
 
 // Namespace bot_action/bot_action
@@ -218,7 +218,7 @@ function register_weapon(weaponname, weightfunc, executefunc) {
     if (weapon.name == #"none") {
         return;
     }
-    level.botweapons[weapon.name] = {#executefunc:executefunc, #weightfunc:weightfunc};
+    level.botweapons[weapon.name] = {#weightfunc:weightfunc, #executefunc:executefunc};
 }
 
 // Namespace bot_action/bot_action
@@ -238,7 +238,7 @@ function private function_daafd48c(&paramslist) {
         if (isdefined(var_6577f082) && var_6577f082.action == action && var_6577f082.weapon == weapon) {
             actionparams = var_6577f082;
         } else {
-            actionparams = {#weapon:weapon, #action:action};
+            actionparams = {#action:action, #weapon:weapon};
         }
         /#
             actionparams.name = getweaponname(weapon);
@@ -396,9 +396,9 @@ function function_32020adf(delaysec = undefined) {
 // Checksum 0xf394cc87, Offset: 0x1360
 // Size: 0xe2
 function private function_2a2a2cd2(name, action, weapon = undefined) {
-    actionparams = {#weapon:weapon, #action:action};
+    actionparams = {#action:action, #weapon:weapon};
     eye = self.origin + (0, 0, self getplayerviewheight());
-    actionparams.var_94a7f067 = eye + 128 * anglestoforward(self.angles);
+    actionparams.aimorigin = eye + 128 * anglestoforward(self.angles);
     /#
         actionparams.name = name;
         actionparams.weight = "<unknown string>";

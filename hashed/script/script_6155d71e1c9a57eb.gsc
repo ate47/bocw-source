@@ -330,7 +330,7 @@ function function_61eeb910(*e_player, a_enemies) {
     if (n_counter > 0) {
         var_2a7ac8ab = 1;
     }
-    return {#var_9dd94851:var_fb83b33f, #var_b16c3c87:var_50e79c32, #var_8cebd3a9:var_2a7ac8ab};
+    return {#var_8cebd3a9:var_2a7ac8ab, #var_b16c3c87:var_50e79c32, #var_9dd94851:var_fb83b33f};
 }
 
 // Namespace namespace_9b972177/namespace_9b972177
@@ -357,25 +357,25 @@ function set_to_player(var_9c1ed9ea) {
 // Checksum 0xcd96ae69, Offset: 0x1200
 // Size: 0xca
 function function_86df3ee8(str_objective_name) {
-    var_366f09af = undefined;
+    str_override = undefined;
     switch (str_objective_name) {
     case #"holdout":
-        var_366f09af = "survival_objective_hold_0";
+        str_override = "survival_objective_hold_0";
         break;
     case #"secure":
-        var_366f09af = "survival_objective_secure_0";
+        str_override = "survival_objective_secure_0";
         break;
     case #"mq4":
-        var_366f09af = "jellyfish_all_around";
+        str_override = "jellyfish_all_around";
         break;
     default:
-        var_366f09af = undefined;
+        str_override = undefined;
         break;
     }
     if (isdefined(level.var_75b02512)) {
-        var_366f09af = level.var_75b02512;
+        str_override = level.var_75b02512;
     }
-    return var_366f09af;
+    return str_override;
 }
 
 // Namespace namespace_9b972177/namespace_9b972177

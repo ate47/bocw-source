@@ -15,14 +15,14 @@
 // Checksum 0xaa330fb2, Offset: 0x108
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_jump_pad", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_jump_pad", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_jump_pad/zm_jump_pad
 // Params 0, eflags: 0x4
 // Checksum 0x98f34b75, Offset: 0x150
 // Size: 0x1c
-function private function_70a657d8() {
+function private preinit() {
     level jump_pad_init();
 }
 

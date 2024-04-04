@@ -13,14 +13,14 @@
 // Checksum 0x3360a88b, Offset: 0x108
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"recon_car", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"recon_car", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace recon_car/recon_car
 // Params 0, eflags: 0x6 linked
 // Checksum 0x8f550722, Offset: 0x158
 // Size: 0x104
-function private function_70a657d8() {
+function private preinit() {
     if (!is_true(getgametypesetting(#"hash_45aec06707484fef"))) {
         return 0;
     }

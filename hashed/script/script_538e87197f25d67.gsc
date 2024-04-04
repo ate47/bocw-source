@@ -14,17 +14,17 @@
 // Checksum 0xae293541, Offset: 0x108
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_79fe34c9f8a0e44c", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_79fe34c9f8a0e44c", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_82b4c2d1/namespace_82b4c2d1
 // Params 0, eflags: 0x2 linked
 // Checksum 0xd7e80565, Offset: 0x160
 // Size: 0x74
-function function_70a657d8() {
+function preinit() {
     level.var_5df76d0 = sr_perk_machine_choice::register();
     level clientfield::register("scriptmover", "perk_machine_rob", 1, 1, "int", &perk_machine_rob, 0, 0);
-    namespace_52c8f34d::function_70a657d8();
+    namespace_52c8f34d::preinit();
 }
 
 // Namespace namespace_82b4c2d1/namespace_82b4c2d1

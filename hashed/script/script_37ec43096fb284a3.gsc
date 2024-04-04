@@ -13,14 +13,14 @@
 // Checksum 0x999e2327, Offset: 0x1f0
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_d07e35f920d16a8", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_d07e35f920d16a8", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_d0ab5955/namespace_d0ab5955
 // Params 0, eflags: 0x2 linked
 // Checksum 0x643390bb, Offset: 0x248
 // Size: 0x278
-function function_70a657d8() {
+function preinit() {
     clientfield::register("scriptmover", "fogofwarflag", 1, 1, "int", &function_a380fe5, 0, 0);
     clientfield::register("toplayer", "fogofwareffects", 1, 2, "int", undefined, 0, 1);
     clientfield::register("toplayer", "fogofwartimer", 1, 1, "int", &function_947e99a9, 0, 1);
@@ -29,7 +29,7 @@ function function_70a657d8() {
     if (!is_true(getgametypesetting(#"hash_59854c1f30538261"))) {
         return;
     }
-    level.var_7bd7bdc8 = [3:#"hash_54da2f2da5752d99", 2:#"hash_2964f82e2c05c8b8", 1:#"hash_6a04f899ab555f22"];
+    level.var_7bd7bdc8 = [1:#"hash_6a04f899ab555f22", 2:#"hash_2964f82e2c05c8b8", 3:#"hash_54da2f2da5752d99"];
     level.var_6e62d281 = #"hash_289962ed0e76921d";
     var_ac22a760 = struct::get_array(#"hash_3460aae6bb799a99", "content_key");
     for (index = 1; index <= var_ac22a760.size; index++) {

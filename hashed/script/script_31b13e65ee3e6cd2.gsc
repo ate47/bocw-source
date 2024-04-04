@@ -16,14 +16,14 @@
 // Checksum 0xff04e98, Offset: 0x1c8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_37fb21afea61a92a", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_37fb21afea61a92a", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_cdc318b3/namespace_cdc318b3
 // Params 0, eflags: 0x6 linked
 // Checksum 0x7439de07, Offset: 0x210
 // Size: 0x194
-function private function_70a657d8() {
+function private preinit() {
     if (!is_true(getgametypesetting(#"hash_3a1bcecdeb68529a")) && !getdvarint(#"hash_5df55c4b5dbbc9c4", 0)) {
         return;
     }
@@ -67,7 +67,7 @@ function function_5e5224f3(localclientnum) {
     if (!isdefined(level.var_eb731edb[localclientnum])) {
         level.var_eb731edb[localclientnum] = [];
         foreach (s_struct in var_b6b9cd4b) {
-            var_8fe85086 = function_2e532eed(s_struct);
+            var_8fe85086 = structcopy(s_struct);
             level.var_eb731edb[localclientnum][var_8fe85086.script_noteworthy] = var_8fe85086;
             var_8fe85086.var_a6ac630 = util::spawn_model(localclientnum, #"hash_242af0c4149dedf3", var_8fe85086.origin, var_8fe85086.angles);
         }
@@ -109,7 +109,7 @@ function private function_7b3ef3da(localclientnum) {
     }
     if (function_65b9eb0f(localclientnum) || isdefined(self.var_213dd9cc) && self.var_213dd9cc > 1) {
         if (!function_65b9eb0f(localclientnum) && isdefined(self.var_213dd9cc)) {
-            var_2b13c8ad = self stats::get_stat(localclientnum, #"hash_2dd2a2b3580dd409", #"hash_6b6f8a8633e916dd");
+            var_2b13c8ad = self stats::get_stat(localclientnum, #"hash_2dd2a2b3580dd409", #"rarity_upgrade");
             if (self.var_213dd9cc > 5 && var_2b13c8ad < 3 || self.var_213dd9cc > 3 && var_2b13c8ad < 2 || self.var_213dd9cc > 1 && var_2b13c8ad < 1) {
                 var_6370e63e = 1;
                 self flag::clear(#"hash_40c349e8efedd336");

@@ -10,14 +10,14 @@
 // Checksum 0x3a5e43a3, Offset: 0xd0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"supplypod", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"supplypod", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace supplypod/supplypod
 // Params 0, eflags: 0x6 linked
 // Checksum 0x4aab6045, Offset: 0x120
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "supplypod_placed", 1, 1, "int", &supplypod_placed, 0, 0);
 }
 

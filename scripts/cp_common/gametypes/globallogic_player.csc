@@ -9,14 +9,14 @@
 // Checksum 0x29021aa3, Offset: 0xd0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"globallogic_player", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"globallogic_player", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace globallogic_player/globallogic_player
 // Params 0, eflags: 0x6 linked
 // Checksum 0xbaa0dba3, Offset: 0x118
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "player_damage_type", 1, 1, "int", &function_fbe3df5e, 0, 0);
 }
 

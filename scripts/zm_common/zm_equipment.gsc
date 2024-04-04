@@ -27,14 +27,14 @@
 // Checksum 0x9b49f37d, Offset: 0x218
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_equipment", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_equipment", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_equipment/zm_equipment
 // Params 0, eflags: 0x6 linked
 // Checksum 0x7892e54a, Offset: 0x270
 // Size: 0x164
-function private function_70a657d8() {
+function private preinit() {
     level.buildable_piece_count = 24;
     /#
         level.abilities_devgui_add_gadgets_custom = &abilities_devgui_add_gadgets_custom;
@@ -45,7 +45,7 @@ function private function_70a657d8() {
     function_4ae718c3(#"satchel_charge");
     function_4ae718c3(#"eq_slow_grenade");
     function_4ae718c3(#"frag_grenade");
-    function_4ae718c3(#"hash_12f078ddc9b913c3");
+    function_4ae718c3(#"nightingale_zm");
     function_4ae718c3(#"cymbal_monkey");
     function_4ae718c3(#"hash_6a4dd5ed56f6e3f6");
     level.zm_hint_text = zm_hint_text::register();
@@ -102,7 +102,7 @@ function function_f1e8c2f7() {
         var_68b4c58a.var_e9cf20bf = row[10];
         var_68b4c58a.var_867d16a0 = row[11];
         var_68b4c58a.var_e53a0e14 = row[12];
-        var_98decf84 = 0;
+        bonus_damage = 0;
         var_74f162ea = row[2];
         var_81142c5 = row[3];
         var_b08480ed = row[4];
@@ -112,21 +112,21 @@ function function_f1e8c2f7() {
         var_645ded9a = row[8];
         for (i = 1; i <= 55; i++) {
             if (i >= 1 && i <= 10) {
-                var_98decf84 = var_98decf84 + var_74f162ea;
+                bonus_damage = bonus_damage + var_74f162ea;
             } else if (i >= 11 && i <= 16) {
-                var_98decf84 = var_98decf84 + var_81142c5;
+                bonus_damage = bonus_damage + var_81142c5;
             } else if (i >= 16 && i <= 21) {
-                var_98decf84 = var_98decf84 + var_b08480ed;
+                bonus_damage = bonus_damage + var_b08480ed;
             } else if (i >= 21 && i <= 26) {
-                var_98decf84 = var_98decf84 + var_70508332;
+                bonus_damage = bonus_damage + var_70508332;
             } else if (i >= 26 && i <= 31) {
-                var_98decf84 = var_98decf84 + var_43523789;
+                bonus_damage = bonus_damage + var_43523789;
             } else if (i >= 31 && i <= 36) {
-                var_98decf84 = var_98decf84 + var_72cb1191;
+                bonus_damage = bonus_damage + var_72cb1191;
             } else if (i >= 36) {
-                var_98decf84 = var_98decf84 + var_645ded9a;
+                bonus_damage = bonus_damage + var_645ded9a;
             }
-            var_68b4c58a.var_4321cafd[i] = var_98decf84;
+            var_68b4c58a.var_4321cafd[i] = bonus_damage;
         }
         level.var_df2ed8a5[weapon_name] = var_68b4c58a;
         index++;
@@ -290,7 +290,7 @@ function register_slot_watcher_override(str_equipment, func_slot_watcher_overrid
 // Size: 0x62
 function is_included(equipment) {
     if (!isdefined(level.zombie_include_equipment)) {
-        return 0;
+        return false;
     }
     if (isstring(equipment)) {
         equipment = getweapon(equipment);
@@ -943,17 +943,17 @@ function init_player_equipment() {
 // Params 4, eflags: 0x0
 // Checksum 0xadeaed15, Offset: 0x3918
 // Size: 0xfa
-function function_7d948481(n_boss = 0.1, var_5765a72a = 0.25, var_d5866834 = 0.5, n_basic = 1) {
+function function_7d948481(n_boss = 0.1, var_5765a72a = 0.25, n_special = 0.5, n_basic = 1) {
     if (!isdefined(self.var_6f84b820)) {
         return 1;
     }
     switch (self.var_6f84b820) {
     case #"boss":
         return n_boss;
-    case #"hash_72d4f2ad2e333eb4":
+    case #"elite":
         return var_5765a72a;
     case #"special":
-        return var_d5866834;
+        return n_special;
     default:
         return n_basic;
     }
@@ -975,42 +975,42 @@ function function_739fbb72(n_base_damage, weapon, aicategory, maxhealth) {
 function function_379f6b5d(n_base_damage, weapon, aicategory = #"normal", maxhealth) {
     var_b663540c = zm_utility::get_round_number();
     var_5d7b4163 = n_base_damage;
-    var_2d6326df = undefined;
+    damagestruct = undefined;
     if (isdefined(level.var_df2ed8a5[weapon.name])) {
-        var_2d6326df = level.var_df2ed8a5[weapon.name];
+        damagestruct = level.var_df2ed8a5[weapon.name];
     } else if (isdefined(level.var_df2ed8a5[#"default"])) {
-        var_2d6326df = level.var_df2ed8a5[#"default"];
+        damagestruct = level.var_df2ed8a5[#"default"];
     }
-    if (is_true(var_2d6326df.var_909a6c96)) {
+    if (is_true(damagestruct.var_909a6c96)) {
         if (var_b663540c > 1) {
             if (var_b663540c > 55) {
                 var_b663540c = 55;
             }
-            var_98decf84 = var_2d6326df.var_4321cafd[var_b663540c];
-            var_5d7b4163 = var_5d7b4163 + var_98decf84;
+            bonus_damage = damagestruct.var_4321cafd[var_b663540c];
+            var_5d7b4163 = var_5d7b4163 + bonus_damage;
         }
         if (isdefined(maxhealth)) {
             switch (aicategory) {
             case #"normal":
-                var_2f5a8007 = maxhealth * var_2d6326df.var_aff13429 / 100;
+                var_2f5a8007 = maxhealth * damagestruct.var_aff13429 / 100;
                 if (var_5d7b4163 > var_2f5a8007) {
                     var_5d7b4163 = var_2f5a8007;
                 }
                 break;
             case #"special":
-                var_2f5a8007 = maxhealth * var_2d6326df.var_e9cf20bf / 100;
+                var_2f5a8007 = maxhealth * damagestruct.var_e9cf20bf / 100;
                 if (var_5d7b4163 > var_2f5a8007) {
                     var_5d7b4163 = var_2f5a8007;
                 }
                 break;
-            case #"hash_72d4f2ad2e333eb4":
-                var_2f5a8007 = maxhealth * var_2d6326df.var_867d16a0 / 100;
+            case #"elite":
+                var_2f5a8007 = maxhealth * damagestruct.var_867d16a0 / 100;
                 if (var_5d7b4163 > var_2f5a8007) {
                     var_5d7b4163 = var_2f5a8007;
                 }
                 break;
             case #"boss":
-                var_2f5a8007 = maxhealth * var_2d6326df.var_e53a0e14 / 100;
+                var_2f5a8007 = maxhealth * damagestruct.var_e53a0e14 / 100;
                 if (var_5d7b4163 > var_2f5a8007) {
                     var_5d7b4163 = var_2f5a8007;
                 }
@@ -1029,7 +1029,7 @@ function function_76beede2(str_weapon_name, str_means_of_death) {
     if (!isdefined(level.var_1b5a4d1)) {
         level.var_1b5a4d1 = [];
     }
-    var_5ee1b234 = {#str_means_of_death:str_means_of_death, #str_weapon_name:str_weapon_name};
+    var_5ee1b234 = {#str_weapon_name:str_weapon_name, #str_means_of_death:str_means_of_death};
     if (!isdefined(level.var_1b5a4d1)) {
         level.var_1b5a4d1 = [];
     } else if (!isarray(level.var_1b5a4d1)) {

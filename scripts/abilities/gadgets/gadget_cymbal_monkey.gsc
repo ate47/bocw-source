@@ -13,14 +13,14 @@
 // Checksum 0x4d9d43e8, Offset: 0xf0
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"cymbal_monkey", &function_70a657d8, &postinit, &finalize, undefined);
+    system::register(#"cymbal_monkey", &preinit, &postinit, &finalize, undefined);
 }
 
 // Namespace gadget_cymbal_monkey/gadget_cymbal_monkey
 // Params 0, eflags: 0x6 linked
 // Checksum 0xca661bd9, Offset: 0x150
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     level.var_7d95e1ed = [];
     level.var_15e68c97 = [];
     level.var_7c5c96dc = &function_4f90c4c2;
@@ -241,7 +241,7 @@ function function_4f90c4c2() {
 // Checksum 0x6bc4de8b, Offset: 0xdd8
 // Size: 0xaa
 function function_4a5dff80(zombie, var_d2b7321d = 1) {
-    var_2d9e38fc = function_a3f6cdac(var_d2b7321d ? 720 : 3000);
+    var_2d9e38fc = sqr(var_d2b7321d ? 720 : 3000);
     arrayremovevalue(level.var_15e68c97, undefined);
     best_monkey = arraygetclosest(zombie.origin, level.var_15e68c97, var_2d9e38fc);
     return best_monkey;
@@ -255,7 +255,7 @@ function function_948b1eea(zombie) {
     if (isdefined(self.var_9473fdb8)) {
         var_5800c2e0 = undefined;
         for (i = 0; i < self.var_9473fdb8.size; i++) {
-            slot = {#pos:self.var_9473fdb8[i], #zombie:self.var_4dbbbb75[i]};
+            slot = {#zombie:self.var_4dbbbb75[i], #pos:self.var_9473fdb8[i]};
             if (!isdefined(slot.zombie)) {
                 if (!isdefined(var_5800c2e0)) {
                     var_5800c2e0 = i;

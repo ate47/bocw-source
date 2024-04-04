@@ -20,14 +20,14 @@
 // Checksum 0x971daf10, Offset: 0x1a0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"globallogic_score", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"globallogic_score", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace globallogic_score/globallogic_score
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf2f93d65, Offset: 0x1e8
 // Size: 0x9c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&init);
     callback::on_spawned(&playerspawn);
     /#
@@ -652,7 +652,7 @@ function private updatemultikill(inflictor, meansofdeath, victim, attacker, scor
             return;
         }
         if (isdefined(var_25f92d1d.var_90e3cfd7)) {
-            params = {#meansofdeath:meansofdeath, #attackerweapon:attackerweapon, #attacker:attacker};
+            params = {#attacker:attacker, #attackerweapon:attackerweapon, #meansofdeath:meansofdeath};
             [[ var_25f92d1d.var_90e3cfd7 ]](params);
         }
     }
@@ -701,18 +701,18 @@ function function_1f664cea(scoreevents, weapon, victim) {
         if (loadout_slot_index === "primarygrenade" || loadout_slot_index === "secondarygrenade" || loadout_slot_index === "specialgrenade") {
             weaponname = stats::function_3f64434(statweapon);
             self stats::function_622feb0d(weaponname, var_ccec6846, 1);
-            self stats::function_6fb0b113(weaponname, #"hash_37c6a5ea231ad08" + var_ccec6846);
+            self stats::function_6fb0b113(weaponname, #"best_" + var_ccec6846);
             return;
         }
         if (isdefined(level.iskillstreakweapon) && [[ level.iskillstreakweapon ]](statweapon) && isdefined(level.get_killstreak_for_weapon_for_stats)) {
             killstreak = [[ level.get_killstreak_for_weapon_for_stats ]](statweapon);
             self stats::function_8fb23f94(killstreak, var_ccec6846, 1);
-            self stats::function_b04e7184(killstreak, #"hash_37c6a5ea231ad08" + var_ccec6846);
+            self stats::function_b04e7184(killstreak, #"best_" + var_ccec6846);
             victim stats::function_8fb23f94(killstreak, #"deaths", 1);
             return;
         }
         self stats::function_561716e6(statweapon.name, var_ccec6846, 1);
-        self stats::function_80099ca1(statweapon.name, #"hash_37c6a5ea231ad08" + var_ccec6846);
+        self stats::function_80099ca1(statweapon.name, #"best_" + var_ccec6846);
     }
 }
 
@@ -728,17 +728,17 @@ function function_bac4b0de(scoreevents, weapon) {
         if (loadout_slot_index === "primarygrenade" || loadout_slot_index === "secondarygrenade" || loadout_slot_index === "specialgrenade") {
             weaponname = stats::function_3f64434(statweapon);
             self stats::function_622feb0d(weaponname, var_601e335c, 1);
-            self stats::function_6fb0b113(weaponname, #"hash_37c6a5ea231ad08" + var_601e335c);
+            self stats::function_6fb0b113(weaponname, #"best_" + var_601e335c);
             return;
         }
         if (isdefined(level.iskillstreakweapon) && [[ level.iskillstreakweapon ]](statweapon) && isdefined(level.get_killstreak_for_weapon_for_stats)) {
             killstreak = [[ level.get_killstreak_for_weapon_for_stats ]](statweapon);
             self stats::function_8fb23f94(killstreak, var_601e335c, 1);
-            self stats::function_b04e7184(killstreak, #"hash_37c6a5ea231ad08" + var_601e335c);
+            self stats::function_b04e7184(killstreak, #"best_" + var_601e335c);
             return;
         }
         self stats::function_561716e6(statweapon.name, var_601e335c, 1);
-        self stats::function_80099ca1(statweapon.name, #"hash_37c6a5ea231ad08" + var_601e335c);
+        self stats::function_80099ca1(statweapon.name, #"best_" + var_601e335c);
     }
 }
 

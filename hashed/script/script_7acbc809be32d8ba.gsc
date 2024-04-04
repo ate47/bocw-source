@@ -17,14 +17,14 @@
 // Checksum 0x2d608472, Offset: 0x328
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_538411714a272c00", &function_70a657d8, &postinit, undefined, "zm_weapons");
+    system::register(#"hash_538411714a272c00", &preinit, &postinit, undefined, "zm_weapons");
 }
 
 // Namespace namespace_1e7573ec/namespace_1e7573ec
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdd6da868, Offset: 0x380
 // Size: 0x24c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "" + #"hash_4bd7cbe3f7fd44dd", 24000, 2, "int", &function_a1e57b34, 0, 0);
     clientfield::register("missile", "" + #"hash_3ec6598e8ba9406a", 24000, 1, "int", &function_2fa08804, 0, 0);
     clientfield::register("toplayer", "" + #"hash_74134fadeeb8b692", 24000, 1, "counter", &function_61987d28, 0, 0);
@@ -88,11 +88,11 @@ function function_4e818189(var_ee6bcd51) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xd782772a, Offset: 0x9d8
 // Size: 0x154
-function function_af4c580b(localclientnum, *var_a6762160) {
-    if (!isdefined(var_a6762160)) {
+function function_af4c580b(localclientnum, *itementry) {
+    if (!isdefined(itementry)) {
         return 0;
     }
-    data = item_world::function_a7e98a1a(var_a6762160);
+    data = item_world::function_a7e98a1a(itementry);
     if (function_3efc58e4(self namespace_a0d533d1::function_2b83d3ff(data.inventory.items[17 + 1]))) {
         return 1;
     }
@@ -173,8 +173,8 @@ function watch_mega_barrel_mag_throw_notetrack(localclientnum, weapon) {
     while (true) {
         self waittillmatch({#notetrack:"mag_thrown"}, #"notetrack");
         currentammostock = self getweaponammostock(localclientnum, weapon);
-        var_d678ba0b = getweaponammoclip(localclientnum, weapon);
-        totalammo = currentammostock + var_d678ba0b;
+        currentclipammo = getweaponammoclip(localclientnum, weapon);
+        totalammo = currentammostock + currentclipammo;
         clip_size = weapon.clipsize;
         var_a1796c91 = int(ceil(float(totalammo) / float(clip_size) * 5));
         if (var_a1796c91 > 5) {
@@ -382,11 +382,11 @@ function function_a1e57b34(localclientnum, *oldval, newval, *bnewent, *binitials
         return;
     }
     if (bwastimejump == 3) {
-        if (isdefined(self.var_de6c5ff9) && isdefined(self.var_31574a7) && isdefined(self.var_c3467a5d)) {
+        if (isdefined(self.var_de6c5ff9) && isdefined(self.var_31574a7) && isdefined(self.move_dir)) {
             self notify(#"hash_2196551ad754e921");
             self.var_31574a7 unlink();
             self.var_de6c5ff9 unlink();
-            v_target_pos = self.var_31574a7.origin + self.var_c3467a5d * (500 + self.var_843dba81);
+            v_target_pos = self.var_31574a7.origin + self.move_dir * (500 + self.beam_length);
             trace = beamtrace(self.var_31574a7.origin, v_target_pos, 0, self.owner);
             if (trace[#"fraction"] < 1) {
                 v_target_pos = trace[#"position"] - trace[#"normal"];
@@ -419,7 +419,7 @@ function function_c57b04f7(localclientnum) {
     self.var_de6c5ff9 endon(#"death");
     self notify("db1d1a3509841a7");
     self endon("db1d1a3509841a7");
-    self.var_843dba81 = 20;
+    self.beam_length = 20;
     while (isalive(self.owner)) {
         if (self.owner zm_utility::function_f8796df3(localclientnum)) {
             tag_pos = function_8cb7ea7(localclientnum, "tag_flash");
@@ -435,15 +435,15 @@ function function_c57b04f7(localclientnum) {
         }
         self.var_31574a7.origin = tag_pos;
         var_1e65372b = isdefined(self.owner getcampos()) ? self.owner getcampos() : tag_pos;
-        if (self.var_843dba81 < 800) {
-            self.var_843dba81 = self.var_843dba81 + 19.2;
+        if (self.beam_length < 800) {
+            self.beam_length = self.beam_length + 19.2;
         }
-        self.var_c3467a5d = anglestoforward(self.owner getplayerangles());
-        v_target_pos = var_1e65372b + self.var_c3467a5d * self.var_843dba81;
+        self.move_dir = anglestoforward(self.owner getplayerangles());
+        v_target_pos = var_1e65372b + self.move_dir * self.beam_length;
         trace = beamtrace(var_1e65372b, v_target_pos, 0, self.owner);
         if (trace[#"fraction"] < 1) {
             v_target_pos = trace[#"position"] - trace[#"normal"];
-            self.var_843dba81 = distance(v_target_pos, var_1e65372b);
+            self.beam_length = distance(v_target_pos, var_1e65372b);
         }
         self.var_de6c5ff9.origin = v_target_pos;
         self.var_de6c5ff9.angles = vectortoangles(tag_pos - v_target_pos);
@@ -563,7 +563,7 @@ function function_e688ee7c(*localclientnum, *oldval, newval, *bnewent, *binitial
         self function_f6e99a8d(self.var_12b59dee, "j_head");
         self.var_12b59dee = undefined;
     }
-    var_2ddbe94 = [4:#"hash_16d59f099e418f4f", 3:#"hash_16d59f099e418f4f", 2:#"hash_726534103985846c", 1:#"hash_7417f2cd52314463", 0:#"hash_16d59f099e418f4f"];
+    var_2ddbe94 = [#"hash_16d59f099e418f4f", #"hash_7417f2cd52314463", #"hash_726534103985846c", #"hash_16d59f099e418f4f", #"hash_16d59f099e418f4f"];
     if (bwastimejump && bwastimejump < var_2ddbe94.size + 1) {
         self.var_b159952f = var_2ddbe94[bwastimejump - 1];
         self playrenderoverridebundle(self.var_b159952f);

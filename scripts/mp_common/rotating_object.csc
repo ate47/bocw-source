@@ -11,14 +11,14 @@
 // Checksum 0xd418c766, Offset: 0xc8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"rotating_object", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"rotating_object", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace rotating_object/rotating_object
 // Params 0, eflags: 0x6 linked
 // Checksum 0x98a31556, Offset: 0x110
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     callback::on_localclient_connect(&init);
 }
 

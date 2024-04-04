@@ -11,14 +11,14 @@
 // Checksum 0x3d771f33, Offset: 0x1a8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_520d565ef38560b8", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_520d565ef38560b8", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_f0a1fe5c/namespace_f0a1fe5c
 // Params 0, eflags: 0x6 linked
 // Checksum 0xeb99893f, Offset: 0x1f0
 // Size: 0xf4
-function private function_70a657d8() {
+function private preinit() {
     if (is_true(getgametypesetting(#"hash_7e8e34cc69a77e0b")) || getdvarint(#"hash_40bd34b35079cf2e", 0) > 0) {
         zm_powerups::include_zombie_powerup("naughty_or_nice");
         if (zm_powerups::function_cc33adc8()) {

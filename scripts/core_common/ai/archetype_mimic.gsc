@@ -26,14 +26,14 @@
 // Checksum 0xf0635ff9, Offset: 0x3d0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"archetype_mimic", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"archetype_mimic", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace archetype_mimic/archetype_mimic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x63c1e0c3, Offset: 0x418
 // Size: 0x256
-function function_70a657d8() {
+function preinit() {
     profilestart();
     if (!isarchetypeloaded(#"mimic")) {
         profilestop();
@@ -83,14 +83,14 @@ function function_9e93acd1() {
 // Size: 0x24c
 function function_6a99dcd1(*params) {
     level endon(#"game_ended");
-    self endon(#"death", #"hash_29b88049dcac8bb3");
+    self endon(#"death", #"entitydeleted");
     if (is_true(self.var_655fccbb)) {
         return;
     }
     self.var_655fccbb = 1;
     if (self.damagemod === "MOD_CRUSH" && isplayer(self.attacker) && self.attacker isinvehicle()) {
         playfx(#"hash_394bead400fb65a0", self.origin);
-        self function_cb48cddd();
+        self deletedelay();
         return;
     }
     if (self isplayinganimscripted() && !self isragdoll()) {
@@ -100,7 +100,7 @@ function function_6a99dcd1(*params) {
         self animscripted(#"hash_f4dc819c820cb3f", self.origin, self.angles, #"hash_5e5bb6d5393f508e", "normal", undefined, 1, 0.2);
         self waittillmatchtimeout(anim_time, {#notetrack:"end"}, #"hash_5e5bb6d5393f508e");
         if (isdefined(self)) {
-            self function_cb48cddd();
+            self deletedelay();
         }
     }
 }
@@ -320,9 +320,9 @@ function function_ce7cc822(entity) {
         return false;
     }
     var_ff38566a = lengthsquared(enemy getvelocity());
-    var_17c3916f = function_a3f6cdac(100);
-    if (var_ff38566a < function_a3f6cdac(175)) {
-        var_17c3916f = function_a3f6cdac(190);
+    var_17c3916f = sqr(100);
+    if (var_ff38566a < sqr(175)) {
+        var_17c3916f = sqr(190);
     }
     if (!is_true(level.intermission)) {
         if (distancesquared(entity.origin, enemy.origin) > var_17c3916f) {
@@ -341,7 +341,7 @@ function function_ce7cc822(entity) {
 // Checksum 0x2ef855c1, Offset: 0x1bf8
 // Size: 0x6e
 function function_1cd29506(entity) {
-    return !is_true(entity.var_43c4bc66) && is_true(entity.should_hide) && (isdefined(entity.var_a6fe91fd) || mimic_prop_spawn::function_1541ff3a());
+    return !is_true(entity.never_hide) && is_true(entity.should_hide) && (isdefined(entity.var_a6fe91fd) || mimic_prop_spawn::function_1541ff3a());
 }
 
 // Namespace archetype_mimic/archetype_mimic
@@ -396,24 +396,24 @@ function function_5fa4b25d(entity) {
         arrayremovevalue(entity.var_a6fe91fd, undefined, 0);
     }
     props = entity.var_a6fe91fd;
-    var_1386d828 = entity.var_1386d828;
-    var_98b1552 = !isdefined(var_1386d828);
-    if (isdefined(var_1386d828.spawn_loc.lure_prop_type)) {
+    trap_prop = entity.trap_prop;
+    var_98b1552 = !isdefined(trap_prop);
+    if (isdefined(trap_prop.spawn_loc.lure_prop_type)) {
         var_98b1552 = 1;
-        level thread mimic_prop_spawn::function_175bb809(var_1386d828);
-        arrayremovevalue(entity.var_a6fe91fd, var_1386d828);
-        entity.var_1386d828 = undefined;
+        level thread mimic_prop_spawn::clean_up_prop(trap_prop);
+        arrayremovevalue(entity.var_a6fe91fd, trap_prop);
+        entity.trap_prop = undefined;
     }
-    var_9b487a9b = randomintrangeinclusive(3, 5);
+    num_props = randomintrangeinclusive(3, 5);
     if (var_98b1552 && mimic_prop_spawn::function_1541ff3a(1, entity)) {
-        mimic_prop_spawn::function_51012821(entity.origin, entity, undefined, var_9b487a9b);
+        mimic_prop_spawn::function_51012821(entity.origin, entity, undefined, num_props);
         entity.should_hide = 0;
         return;
     }
-    if (isdefined(var_1386d828)) {
-        var_1386d828.origin = entity.origin;
+    if (isdefined(trap_prop)) {
+        trap_prop.origin = entity.origin;
     }
-    mimic_prop_spawn::function_913ecbbc(props, entity, var_1386d828, entity.origin);
+    mimic_prop_spawn::function_913ecbbc(props, entity, trap_prop, entity.origin);
     entity.should_hide = 0;
 }
 
@@ -422,12 +422,12 @@ function function_5fa4b25d(entity) {
 // Checksum 0xd1c87194, Offset: 0x2048
 // Size: 0x42c
 function function_1ef44bfb(params) {
-    prop = self.var_1386d828;
+    prop = self.trap_prop;
     angles = isdefined(prop.angles) ? prop.angles : self.angles;
     origin = isdefined(prop.origin) ? prop.origin : self.origin;
     activator = undefined;
-    if (isdefined(params.var_ef7458f2) && isentity(params.var_ef7458f2[0])) {
-        activator = params.var_ef7458f2[0];
+    if (isdefined(params.activators) && isentity(params.activators[0])) {
+        activator = params.activators[0];
         angles = vectortoangles(activator.origin - origin);
     }
     self forceteleport(self.origin, angles, 1, 1);
@@ -442,16 +442,16 @@ function function_1ef44bfb(params) {
     self.clamptonavmesh = 0;
     self pathmode("move allowed");
     self clientfield::set("mimic_weakpoint_fx", 1);
-    var_629011b4 = 0;
+    dist_sqr = 0;
     if (isdefined(activator)) {
-        var_629011b4 = distancesquared(activator.origin, self.origin);
+        dist_sqr = distancesquared(activator.origin, self.origin);
     }
-    if (isplayer(activator) && var_629011b4 < function_a3f6cdac(96)) {
+    if (isplayer(activator) && dist_sqr < sqr(96)) {
         self.var_34e5b945 = 1;
     } else {
-        self.var_a516906f = {#activator:activator, #angles:(0, angles[1], 0), #origin:origin};
+        self.var_a516906f = {#origin:origin, #angles:(0, angles[1], 0), #activator:activator};
         self.var_a516906f.anim = #"hash_66ffb0e987e7ed06";
-        if (var_629011b4 > function_a3f6cdac(200)) {
+        if (dist_sqr > sqr(200)) {
             if (isentity(activator)) {
                 var_8a9e27f9 = self getcentroid();
                 end_point = var_8a9e27f9 + vectornormalize(activator getcentroid() - var_8a9e27f9) * 200;
@@ -551,7 +551,7 @@ function function_59fd3f1d(entity) {
     if (!isdefined(closest_player) || closest_player isplayinganimscripted() || isdefined(entity.var_f6fd2062) && ![[ entity.var_f6fd2062 ]](closest_player)) {
         return;
     }
-    if (absangleclamp180(self.angles[1] - vectortoangles(closest_player.origin - self.origin)[1]) < 30 && !function_4f401255(entity.origin, entity.angles, #"hash_5cfca059cd6fdb4c", closest_player getmins(), closest_player getmaxs(), [1:closest_player, 0:entity])) {
+    if (absangleclamp180(self.angles[1] - vectortoangles(closest_player.origin - self.origin)[1]) < 30 && !function_4f401255(entity.origin, entity.angles, #"hash_5cfca059cd6fdb4c", closest_player getmins(), closest_player getmaxs(), [entity, closest_player])) {
         self thread function_d291b5a9(closest_player, #"hash_49907200665866a4", 0, #"hash_5cfca059cd6fdb4c");
     }
 }
@@ -568,13 +568,13 @@ function function_cf8f5cca(*entity) {
 // Params 6, eflags: 0x2 linked
 // Checksum 0xe1aa9f3c, Offset: 0x2aa0
 // Size: 0x27c
-function function_4f401255(start_origin, start_angles, var_191562de, mins, maxs, &var_d72e649c) {
+function function_4f401255(start_origin, start_angles, player_anim, mins, maxs, &var_d72e649c) {
     var_cc01fa57 = vectorscale((0, 0, 1), 15);
-    var_f60dbcf6 = getstartorigin(start_origin, start_angles, var_191562de);
-    var_8fccab5b = getstartangles(start_origin, start_angles, var_191562de);
-    var_dece365 = getmovedelta(var_191562de, 0, 0.5);
-    var_dece365 = rotatepoint(var_dece365, var_8fccab5b);
-    var_d26e393f = var_f60dbcf6 + var_dece365;
+    var_f60dbcf6 = getstartorigin(start_origin, start_angles, player_anim);
+    var_8fccab5b = getstartangles(start_origin, start_angles, player_anim);
+    move_delta = getmovedelta(player_anim, 0, 0.5);
+    move_delta = rotatepoint(move_delta, var_8fccab5b);
+    var_d26e393f = var_f60dbcf6 + move_delta;
     var_603d4563 = var_f60dbcf6 + (isdefined(var_cc01fa57) ? var_cc01fa57 : (0, 0, 0));
     /#
         recordstar(var_f60dbcf6, (0, 1, 0), "<unknown string>");
@@ -616,7 +616,7 @@ function function_435d7c54(origin, angles) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x1e9c6a17, Offset: 0x2ea8
 // Size: 0x194
-function function_d291b5a9(player, var_1b024168, var_52a75904, var_191562de) {
+function function_d291b5a9(player, var_1b024168, var_52a75904, player_anim) {
     self endon(#"death");
     level endon(#"game_ended");
     origin = self.origin;
@@ -626,7 +626,7 @@ function function_d291b5a9(player, var_1b024168, var_52a75904, var_191562de) {
         return;
     }
     self animscripted(var_1b024168, origin, angles, var_1b024168, "normal", undefined, 1, var_52a75904);
-    player thread function_224f342a(var_191562de, self, origin, angles);
+    player thread function_224f342a(player_anim, self, origin, angles);
     anim_time = getanimlength(var_1b024168);
     self waittillmatchtimeout(anim_time, {#notetrack:"end"}, var_1b024168);
     if (isplayer(player)) {
@@ -639,7 +639,7 @@ function function_d291b5a9(player, var_1b024168, var_52a75904, var_191562de) {
 // Params 4, eflags: 0x6 linked
 // Checksum 0x11366088, Offset: 0x3048
 // Size: 0x30c
-function private function_224f342a(var_191562de, mimic, origin, angles) {
+function private function_224f342a(player_anim, mimic, origin, angles) {
     self endon(#"death", #"disconnect");
     level endon(#"game_ended");
     if (!isalive(self)) {
@@ -651,17 +651,17 @@ function private function_224f342a(var_191562de, mimic, origin, angles) {
     player val::set(#"hash_43ae43be63a51874", "ignoreme", 1);
     player clientfield::set_to_player("mimic_grab_hit", 1);
     player.var_7342424d = mimic;
-    mimic.var_d6c08ac = player;
-    player animscripted(var_191562de, origin, angles, var_191562de, "normal", undefined, 1, 0.2, 0.3, 0, 1, 1, undefined, 0, "linear", 0);
-    anim_time = getanimlength(var_191562de);
-    player waittillmatchtimeout(anim_time, {#notetrack:"end"}, var_191562de);
+    mimic.grabbed_player = player;
+    player animscripted(player_anim, origin, angles, player_anim, "normal", undefined, 1, 0.2, 0.3, 0, 1, 1, undefined, 0, "linear", 0);
+    anim_time = getanimlength(player_anim);
+    player waittillmatchtimeout(anim_time, {#notetrack:"end"}, player_anim);
     while (isdefined(player) && player isplayinganimscripted()) {
         waitframe(1);
     }
     if (isdefined(player)) {
         callback::callback(#"hash_2745091e63972f13", {#player:player});
         if (isdefined(mimic)) {
-            mimic.var_d6c08ac = undefined;
+            mimic.grabbed_player = undefined;
             to_player = player.origin - origin;
             player applyknockback(200, (to_player[0], to_player[1], 10));
         }
@@ -686,7 +686,7 @@ function function_66eaacd9() {
 // Checksum 0xb70d58c7, Offset: 0x33a8
 // Size: 0x1c4
 function function_d3b009d4(entity) {
-    if (entity.var_6f5b56f6 > gettime() || !isplayer(entity.favoriteenemy) || distancesquared(entity.favoriteenemy.origin, entity.origin) > function_a3f6cdac(96)) {
+    if (entity.var_6f5b56f6 > gettime() || !isplayer(entity.favoriteenemy) || distancesquared(entity.favoriteenemy.origin, entity.origin) > sqr(96)) {
         return false;
     }
     if (isdefined(entity.var_f6fd2062) && ![[ entity.var_f6fd2062 ]](entity.favoriteenemy)) {
@@ -698,7 +698,7 @@ function function_d3b009d4(entity) {
     if (function_435d7c54(entity gettagorigin("j_spine4"), entity.angles)) {
         return false;
     }
-    return !function_4f401255(entity.origin, entity.angles, #"hash_770f46ba71e975e9", entity.favoriteenemy getmins(), entity.favoriteenemy getmaxs(), [1:entity.favoriteenemy, 0:entity]);
+    return !function_4f401255(entity.origin, entity.angles, #"hash_770f46ba71e975e9", entity.favoriteenemy getmins(), entity.favoriteenemy getmaxs(), [entity, entity.favoriteenemy]);
 }
 
 // Namespace archetype_mimic/archetype_mimic
@@ -745,7 +745,7 @@ function function_5f11c5b7(entity, *asmstatename) {
     #/
     if (!isdefined(closest_player) || closest_player isplayinganimscripted() || isdefined(asmstatename.var_f6fd2062) && ![[ asmstatename.var_f6fd2062 ]](closest_player) || !istouching(math::closest_point_on_line(closest_player.origin, var_1ed13caa, var_2ed29acc), closest_player, var_52b615cf) || !istouching(math::closest_point_on_line(closest_player.origin, var_e49586c9, var_a36e995b), closest_player, var_52b615cf)) {
         return 5;
-    } else if (!function_4f401255(asmstatename.origin, asmstatename.angles, #"hash_770f46ba71e975e9", closest_player getmins(), closest_player getmaxs(), [1:closest_player, 0:asmstatename])) {
+    } else if (!function_4f401255(asmstatename.origin, asmstatename.angles, #"hash_770f46ba71e975e9", closest_player getmins(), closest_player getmaxs(), [asmstatename, closest_player])) {
         asmstatename thread function_d291b5a9(closest_player, #"hash_318ef3b5409e6403", 0.2, #"hash_770f46ba71e975e9");
     }
     return 5;
@@ -782,9 +782,9 @@ function function_5eb9b69e(entity) {
 // Checksum 0x61733743, Offset: 0x3b20
 // Size: 0xac
 function function_20d2827d(entity) {
-    if (!is_true(entity.aat_turned) && isplayer(entity.var_d6c08ac)) {
-        entity.var_d6c08ac clientfield::increment_to_player("mimic_bite_hit", 1);
-        entity.var_d6c08ac dodamage(75, entity.origin, entity, entity, "none", "MOD_MELEE", 0);
+    if (!is_true(entity.aat_turned) && isplayer(entity.grabbed_player)) {
+        entity.grabbed_player clientfield::increment_to_player("mimic_bite_hit", 1);
+        entity.grabbed_player dodamage(75, entity.origin, entity, entity, "none", "MOD_MELEE", 0);
     }
 }
 
@@ -814,8 +814,8 @@ function mimic_death_head_explosion(entity) {
 // Checksum 0x5d08d627, Offset: 0x3cf0
 // Size: 0x54
 function private function_cc64096c(entity) {
-    var_bb2182e5 = randomint(2);
-    entity setblackboardattribute("_ranged_attack_variant", var_bb2182e5);
+    decision = randomint(2);
+    entity setblackboardattribute("_ranged_attack_variant", decision);
 }
 
 // Namespace archetype_mimic/archetype_mimic
@@ -823,7 +823,7 @@ function private function_cc64096c(entity) {
 // Checksum 0x94165c47, Offset: 0x3d50
 // Size: 0xe8
 function private function_ee186f54(entity) {
-    if (is_true(entity.var_c588eb) && isdefined(entity.favoriteenemy) && gettime() >= entity.var_8706203c && distancesquared(entity.favoriteenemy.origin, entity.origin) <= function_a3f6cdac(500) && bullettracepassed(entity.favoriteenemy geteyeapprox(), entity geteyeapprox(), 0, undefined)) {
+    if (is_true(entity.var_c588eb) && isdefined(entity.favoriteenemy) && gettime() >= entity.var_8706203c && distancesquared(entity.favoriteenemy.origin, entity.origin) <= sqr(500) && bullettracepassed(entity.favoriteenemy geteyeapprox(), entity geteyeapprox(), 0, undefined)) {
         entity.var_8c4d3e5d = 1;
     }
     return false;
@@ -982,16 +982,16 @@ function function_c5a69992(__index) {
         }
         level endon(#"game_ended");
         spawn_points = get_array("<unknown string>", "<unknown string>");
-        var_7eb6668 = [];
+        scriptbundlenames = [];
         foreach (index, point in spawn_points) {
-            if (isdefined(point.scriptbundlename) && !isinarray(var_7eb6668, point.scriptbundlename)) {
-                var_7eb6668[var_7eb6668.size] = point.scriptbundlename;
+            if (isdefined(point.scriptbundlename) && !isinarray(scriptbundlenames, point.scriptbundlename)) {
+                scriptbundlenames[scriptbundlenames.size] = point.scriptbundlename;
             }
             if (index & 16) {
                 waitframe(1);
             }
         }
-        foreach (name_index, name in var_7eb6668) {
+        foreach (name_index, name in scriptbundlenames) {
             add_debug_command("<unknown string>" + __index + "<unknown string>" + function_9e72a96(name) + "<unknown string>" + name_index + "<unknown string>" + function_9e72a96(name) + "<unknown string>");
         }
     #/
@@ -1005,18 +1005,18 @@ function function_f543fa16() {
     /#
         level.("<unknown string>") = !is_true(level.("<unknown string>"));
         if (!is_true(level.("<unknown string>"))) {
-            level notify(#"hash_7bff198db7bad372" + "<unknown string>");
+            level notify(#"kill_" + "<unknown string>");
             return;
         }
-        level endon(#"hash_7bff198db7bad372" + "<unknown string>");
+        level endon(#"kill_" + "<unknown string>");
         while (true) {
             var_2a1f535d = function_2e8c33f6();
-            foreach (var_1386d828 in var_2a1f535d) {
-                color = is_true(var_1386d828.var_3a3cdab8) ? (1, 0, 0) : (0, 1, 1);
-                debugstar(var_1386d828.origin, 1, color);
-                line(var_1386d828.origin, var_1386d828.origin + vectorscale((0, 0, 1), 900), color);
-                if (is_true(var_1386d828.var_3a3cdab8)) {
-                    print3d(var_1386d828.origin + vectorscale((0, 0, 1), 48), "<unknown string>", color);
+            foreach (trap_prop in var_2a1f535d) {
+                color = is_true(trap_prop.pause_trap) ? (1, 0, 0) : (0, 1, 1);
+                debugstar(trap_prop.origin, 1, color);
+                line(trap_prop.origin, trap_prop.origin + vectorscale((0, 0, 1), 900), color);
+                if (is_true(trap_prop.pause_trap)) {
+                    print3d(trap_prop.origin + vectorscale((0, 0, 1), 48), "<unknown string>", color);
                 }
             }
             waitframe(1);
@@ -1032,10 +1032,10 @@ function function_fa613511() {
     /#
         level.("<unknown string>") = !is_true(level.("<unknown string>"));
         if (!is_true(level.("<unknown string>"))) {
-            level notify(#"hash_7bff198db7bad372" + "<unknown string>");
+            level notify(#"kill_" + "<unknown string>");
             return;
         }
-        level endon(#"hash_7bff198db7bad372" + "<unknown string>");
+        level endon(#"kill_" + "<unknown string>");
         while (true) {
             foreach (prop in level.var_5fafe5ac) {
                 if (is_true(prop.var_3e64167)) {
@@ -1133,7 +1133,7 @@ function function_d312cd2c() {
         trace = function_ea10da3f();
         mimic = spawnactor("<unknown string>", trace[#"position"], vectortoangles(getplayers()[0].origin - trace[#"position"]));
         if (isdefined(mimic)) {
-            mimic.var_43c4bc66 = 1;
+            mimic.never_hide = 1;
         }
     #/
 }
@@ -1146,10 +1146,10 @@ function function_37c34605() {
     /#
         level.("<unknown string>") = !is_true(level.("<unknown string>"));
         if (!is_true(level.("<unknown string>"))) {
-            level notify(#"hash_7bff198db7bad372" + "<unknown string>");
+            level notify(#"kill_" + "<unknown string>");
             return;
         }
-        level endon(#"hash_7bff198db7bad372" + "<unknown string>");
+        level endon(#"kill_" + "<unknown string>");
         while (true) {
             foreach (point in level.var_6e175eb) {
                 debugstar(point.origin, 5, (1, 0, 0));
@@ -1167,10 +1167,10 @@ function function_bc75224c() {
     /#
         level.("<unknown string>") = !is_true(level.("<unknown string>"));
         if (!is_true(level.("<unknown string>"))) {
-            level notify(#"hash_7bff198db7bad372" + "<unknown string>");
+            level notify(#"kill_" + "<unknown string>");
             return;
         }
-        level endon(#"hash_7bff198db7bad372" + "<unknown string>");
+        level endon(#"kill_" + "<unknown string>");
         var_d6d4c388 = int(5 * 1000);
         var_88f244b8 = 0;
         spawn_points = [];
@@ -1197,12 +1197,12 @@ function function_6469c221() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         trace = function_ea10da3f();
-        var_68fc2252 = function_bc29cf28();
-        if (!var_68fc2252.size) {
+        spawn_structs = function_bc29cf28();
+        if (!spawn_structs.size) {
             return;
         }
-        var_4a7254ff = arraygetclosest(trace[#"position"], var_68fc2252);
-        function_b309db61([0:var_4a7254ff]);
+        closest_struct = arraygetclosest(trace[#"position"], spawn_structs);
+        function_b309db61([closest_struct]);
     #/
 }
 
@@ -1214,10 +1214,10 @@ function function_7f6a5e14() {
     /#
         level.("<unknown string>") = !is_true(level.("<unknown string>"));
         if (!is_true(level.("<unknown string>"))) {
-            level notify(#"hash_7bff198db7bad372" + "<unknown string>");
+            level notify(#"kill_" + "<unknown string>");
             return;
         }
-        level endon(#"hash_7bff198db7bad372" + "<unknown string>");
+        level endon(#"kill_" + "<unknown string>");
         var_d4034654 = get_array("<unknown string>", "<unknown string>");
         var_d4034654 = arraycombine(var_d4034654, function_bc29cf28(), 0, 0);
         waitframe(1);
@@ -1263,26 +1263,26 @@ function private function_5ef9a937(point) {
         } else {
             new_origin = groundtrace(point.origin + vectorscale((0, 0, 1), 15) + vectorscale((0, 0, 1), 8), point.origin + vectorscale((0, 0, 1), 15) + vectorscale((0, 0, -1), 100000), 0, undefined)[#"position"];
         }
-        var_540ddeae = {#var_ed56107c:[], #var_60d91344:[], #angles:point.angles, #origin:new_origin};
+        validation_info = {#origin:new_origin, #angles:point.angles, #var_60d91344:[], #var_ed56107c:[]};
         for (i = -180; i < 180; i = i + 15) {
-            var_dece365 = getmovedelta(#"hash_414bef9b5dcae460");
+            move_delta = getmovedelta(#"hash_414bef9b5dcae460");
             angle_delta = getangledelta(#"hash_414bef9b5dcae460");
-            var_dece365 = rotatepoint(var_dece365, point.angles + (0, angle_delta + i, 0));
-            var_feb3dda6 = {#angles:vectortoangles(var_dece365), #origin:new_origin + var_dece365};
+            move_delta = rotatepoint(move_delta, point.angles + (0, angle_delta + i, 0));
+            var_feb3dda6 = {#origin:new_origin + move_delta, #angles:vectortoangles(move_delta)};
             var_f60dbcf6 = getstartorigin(var_feb3dda6.origin, var_feb3dda6.angles, #"hash_5cfca059cd6fdb4c");
             var_8fccab5b = getstartangles(var_feb3dda6.origin, var_feb3dda6.angles, #"hash_5cfca059cd6fdb4c");
-            var_dece365 = getmovedelta(#"hash_5cfca059cd6fdb4c", 0, 0.5);
-            var_dece365 = rotatepoint(var_dece365, var_8fccab5b);
-            var_d26e393f = var_f60dbcf6 + var_dece365;
+            move_delta = getmovedelta(#"hash_5cfca059cd6fdb4c", 0, 0.5);
+            move_delta = rotatepoint(move_delta, var_8fccab5b);
+            var_d26e393f = var_f60dbcf6 + move_delta;
             var_261937fc = groundtrace(var_feb3dda6.origin + vectorscale((0, 0, 1), 15) + vectorscale((0, 0, 1), 8), var_feb3dda6.origin + vectorscale((0, 0, 1), 15) + vectorscale((0, 0, -1), 100000), 0, undefined)[#"position"];
             if (abs(var_261937fc[2] - var_feb3dda6.origin[2]) < 15) {
                 var_feb3dda6.origin = var_261937fc;
             }
-            passed = !function_4f401255(var_feb3dda6.origin, var_feb3dda6.angles, #"hash_5cfca059cd6fdb4c", level.players[0] getmins(), level.players[0] getmaxs(), [0:level.players[0]]);
-            var_ed56107c = {#var_20f2bd48:var_d26e393f, #var_dc11f544:var_f60dbcf6, #var_9f7d6d3b:var_feb3dda6.origin, #passed:passed};
-            var_540ddeae.var_ed56107c[var_540ddeae.var_ed56107c.size] = var_ed56107c;
+            passed = !function_4f401255(var_feb3dda6.origin, var_feb3dda6.angles, #"hash_5cfca059cd6fdb4c", level.players[0] getmins(), level.players[0] getmaxs(), [level.players[0]]);
+            var_ed56107c = {#passed:passed, #var_9f7d6d3b:var_feb3dda6.origin, #var_dc11f544:var_f60dbcf6, #var_20f2bd48:var_d26e393f};
+            validation_info.var_ed56107c[validation_info.var_ed56107c.size] = var_ed56107c;
         }
-        return var_540ddeae;
+        return validation_info;
     #/
 }
 
@@ -1290,9 +1290,9 @@ function private function_5ef9a937(point) {
 // Params 1, eflags: 0x4
 // Checksum 0xd759a16, Offset: 0x60e8
 // Size: 0x130
-function private function_ccc08aea(var_540ddeae) {
+function private function_ccc08aea(validation_info) {
     /#
-        foreach (var_ed56107c in var_540ddeae.var_ed56107c) {
+        foreach (var_ed56107c in validation_info.var_ed56107c) {
             debugstar(var_ed56107c.var_dc11f544, 5, var_ed56107c.passed ? (0, 1, 0) : (1, 0, 0));
             line(var_ed56107c.var_dc11f544, var_ed56107c.var_20f2bd48, var_ed56107c.passed ? (0, 1, 0) : (1, 0, 0), 1, 0, 5);
             line(var_ed56107c.var_9f7d6d3b, var_ed56107c.var_dc11f544, (1, 0, 1), 1, 0, 5);

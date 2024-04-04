@@ -12,14 +12,14 @@
 // Checksum 0x455710df, Offset: 0x110
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"player_heavy_helicopter", &function_70a657d8, undefined, undefined, #"player_vehicle");
+    system::register(#"player_heavy_helicopter", &preinit, undefined, undefined, #"player_vehicle");
 }
 
 // Namespace player_heavy_helicopter/player_heavy_helicopter
 // Params 1, eflags: 0x6 linked
 // Checksum 0x7d2e1a7b, Offset: 0x160
 // Size: 0xc4
-function private function_70a657d8(*localclientnum) {
+function private preinit(*localclientnum) {
     vehicle::add_vehicletype_callback("helicopter_heavy", &function_8220feb0);
     clientfield::register("toplayer", "hind_gunner_postfx_active", 1, 1, "int", &function_44ad5e3e, 0, 1);
     clientfield::register("vehicle", "hind_compass_icon", 1, 2, "int", &hind_compass_icon, 0, 1);

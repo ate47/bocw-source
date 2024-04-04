@@ -101,7 +101,7 @@ function function_82ea8e15(hardpointtype) {
         self namespace_f9b02f80::play_killstreak_start_dialog(hardpointtype, self.team, 1);
         self stats::function_e24eec31(killstreakweapon, #"used", 1);
         level thread popups::displayteammessagetoall(level.killstreaks[hardpointtype].script_bundle.var_667c638e, self);
-        self.pers[#"held_killstreak_clip_count"][killstreakweapon] = killstreakweapon.clipsize < currentammo ? currentammo : killstreakweapon.clipsize;
+        self.pers[#"held_killstreak_clip_count"][killstreakweapon] = killstreakweapon.clipsize < currentammo ? killstreakweapon.clipsize : currentammo;
         if (isfrominventory == 0) {
             if (self.pers[#"killstreak_quantity"][killstreakweapon] > 0) {
                 self.pers[#"held_killstreak_ammo_count"][killstreakweapon] = killstreakweapon.maxammo;
@@ -432,7 +432,7 @@ function onplayerkilled(*einflictor, attacker, *idamage, *smeansofdeath, weapon,
         if (bundle.var_6f079d9a === 1 && deathanimduration.maxammo == ammocount && ammocount > 0) {
             continue;
         }
-        var_a24558f6 = ammocount;
+        ammoondeath = ammocount;
         var_c1265b8d = isdefined(bundle.var_d88d50b8) ? bundle.var_d88d50b8 : 0;
         var_9a1bcbe = int(floor(deathanimduration.maxammo * var_c1265b8d / 100));
         if (ammocount < var_9a1bcbe) {
@@ -446,7 +446,7 @@ function onplayerkilled(*einflictor, attacker, *idamage, *smeansofdeath, weapon,
             ammocount = 0;
         }
         self.pers[#"held_killstreak_ammo_count"][deathanimduration] = ammocount;
-        if (var_a24558f6 > 0 && ammocount == 0) {
+        if (ammoondeath > 0 && ammocount == 0) {
             if (deathanimduration.var_6f41c2a9) {
                 self killstreaks::remove_used_killstreak(killstreaktype);
             }
@@ -454,9 +454,9 @@ function onplayerkilled(*einflictor, attacker, *idamage, *smeansofdeath, weapon,
                 if (isdefined(level.var_1d971504) && self.currentweapon != deathanimduration) {
                     [[ level.var_1d971504 ]](psoffsettime, self, deathanimduration);
                 }
-                var_5b220756 = killstreaks::function_a2c375bb(killstreaktype);
-                if (isdefined(var_5b220756)) {
-                    self function_6bf621ea(#"hash_2e64558432f8b5b2", 2, self getentitynumber(), var_5b220756);
+                killstreakslot = killstreaks::function_a2c375bb(killstreaktype);
+                if (isdefined(killstreakslot)) {
+                    self function_6bf621ea(#"hash_2e64558432f8b5b2", 2, self getentitynumber(), killstreakslot);
                 }
                 self thread function_11a9ad5(killstreaktype, deathanimduration);
             }

@@ -912,7 +912,7 @@ function private function_c2fb1a1e(entity) {
 function private function_aede5c43(entity) {
     if (entity haspath()) {
         disttogoalsq = distancesquared(entity.pathgoalpos, entity.origin);
-        if (disttogoalsq < function_a3f6cdac(150)) {
+        if (disttogoalsq < sqr(150)) {
             return false;
         }
     }
@@ -1024,7 +1024,7 @@ function function_52c3ab28(entity) {
         return true;
     } else if (!isdefined(entity.var_7b1f015a)) {
         return true;
-    } else if (distance2dsquared(entity.var_7b1f015a.pos, entity.var_14b548c5) > function_a3f6cdac(4)) {
+    } else if (distance2dsquared(entity.var_7b1f015a.pos, entity.var_14b548c5) > sqr(4)) {
         return true;
     } else if (abs(entity.var_7b1f015a.angle - entity.var_871c9e86) > 1) {
         return true;

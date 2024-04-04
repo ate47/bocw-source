@@ -9,7 +9,7 @@
 #using scripts\core_common\item_world_cleanup.csc;
 #using scripts\core_common\item_world.csc;
 #using scripts\core_common\item_inventory.csc;
-#using script_20055f2f97341caa;
+#using scripts\core_common\item_drop.csc;
 #using script_644007a8c3885fc;
 #using script_446b64250de153ef;
 #using scripts\core_common\vehicles\driving_fx.csc;

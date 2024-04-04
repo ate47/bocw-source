@@ -9,14 +9,14 @@
 // Checksum 0x3795a9b0, Offset: 0x90
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_survive", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_survive", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_survive/zm_trial_survive
 // Params 0, eflags: 0x4
 // Checksum 0xbcb952cc, Offset: 0xd8
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

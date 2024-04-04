@@ -13,14 +13,14 @@
 // Checksum 0x944709fd, Offset: 0xb0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"character_unlock", &function_70a657d8, undefined, undefined, #"character_unlock_fixup");
+    system::register(#"character_unlock", &preinit, undefined, undefined, #"character_unlock_fixup");
 }
 
 // Namespace character_unlock/character_unlock
 // Params 0, eflags: 0x4
 // Checksum 0x2afbb696, Offset: 0x100
 // Size: 0xfc
-function private function_70a657d8() {
+function private preinit() {
     level.var_b3681acb = isdefined(getgametypesetting(#"hash_50b1121aee76a7e4")) ? getgametypesetting(#"hash_50b1121aee76a7e4") : 1;
     callback::on_item_pickup(&function_6e8037ca);
     callback::add_callback(#"on_drop_inventory", &on_drop_inventory);
@@ -113,11 +113,11 @@ function function_6e8037ca(params) {
     if (level.inprematchperiod) {
         return;
     }
-    var_a6762160 = params.item.var_a6762160;
-    if (!isdefined(var_a6762160)) {
+    itementry = params.item.itementry;
+    if (!isdefined(itementry)) {
         return;
     }
-    if (!isdefined(var_a6762160.unlockableitemref)) {
+    if (!isdefined(itementry.unlockableitemref)) {
         return;
     }
     foreach (unlock_name, var_9ba1646c in level.var_7d8da246) {
@@ -134,7 +134,7 @@ function function_6e8037ca(params) {
             continue;
         }
         item_name = var_9ba1646c.required_item;
-        if (var_a6762160.name === item_name) {
+        if (itementry.name === item_name) {
             if (!isdefined(self.var_c53589da)) {
                 self.var_c53589da = [];
             }
@@ -242,7 +242,7 @@ function function_54fc60f5(player, character) {
     if (isdefined(player) && isplayer(player) && isdefined(character)) {
         player_xuid = player getxuid(1);
         if (isdefined(player_xuid)) {
-            data = {#character:character, #player_xuid:int(player_xuid), #game_time:function_f8d53445()};
+            data = {#game_time:function_f8d53445(), #player_xuid:int(player_xuid), #character:character};
             function_92d1707f(#"hash_17e83c78e2a73ed1", data);
         }
     }

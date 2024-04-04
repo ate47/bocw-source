@@ -13,14 +13,14 @@
 // Checksum 0x118fb9d4, Offset: 0x188
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_662c938bd03bd1ad", &function_70a657d8, undefined, undefined, #"hash_13a43d760497b54d");
+    system::register(#"hash_662c938bd03bd1ad", &preinit, undefined, undefined, #"hash_13a43d760497b54d");
 }
 
 // Namespace namespace_2ab93693/namespace_2ab93693
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf097f399, Offset: 0x1d8
 // Size: 0x1bc
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "" + #"hash_142ed640bf2e09b9", 1, 1, "int", &function_9ab6532, 0, 0);
     clientfield::register("actor", "" + #"hash_717ed5a81b281ebd", 1, 1, "counter", &function_49585088, 0, 0);
     clientfield::register("toplayer", "" + #"hash_717ed5a81b281ebd", 1, 1, "int", &function_1408657d, 0, 0);

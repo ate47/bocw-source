@@ -14,14 +14,14 @@
 // Checksum 0xc380929c, Offset: 0xe0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"spectating", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"spectating", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace spectating/spectating
 // Params 0, eflags: 0x6 linked
 // Checksum 0x3ed30b85, Offset: 0x128
 // Size: 0xa4
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&init);
     callback::on_spawned(&set_permissions);
     callback::on_joined_team(&set_permissions_for_machine);
@@ -599,11 +599,11 @@ function function_7fe9c0d1(*players, attacker) {
 function on_player_killed(params) {
     if (level.spectatetype == 4 || level.spectatetype == 5) {
         self thread function_2b728d67(params.eattacker);
-        if (level.var_1ba484ad == 2 || self namespace_8a203916::function_500047aa(1)) {
-            self namespace_8a203916::function_86df9236();
+        if (level.var_1ba484ad == 2 || self spectate_view::function_500047aa(1)) {
+            self spectate_view::function_86df9236();
             return;
         }
-        self namespace_8a203916::function_888901cb();
+        self spectate_view::function_888901cb();
     }
 }
 

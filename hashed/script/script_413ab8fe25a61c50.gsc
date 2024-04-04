@@ -39,7 +39,7 @@ function function_93e7ee52(challengetype = 0, name) {
     level.doa.var_a77e4601 = [];
     level flag::clear("challenge_round_spawnOverride");
     timestart = gettime();
-    namespace_1e25ad94::function_f5f0c0f8("Challenge (" + name + ") starting at: " + timestart + " RoundNumber: " + level.doa.roundnumber);
+    namespace_1e25ad94::debugmsg("Challenge (" + name + ") starting at: " + timestart + " RoundNumber: " + level.doa.roundnumber);
     waitframe(1);
     var_af104f33 = function_fa798421(name);
     level namespace_a6ddb172::function_7a0e5387(var_af104f33);
@@ -121,8 +121,8 @@ function function_93e7ee52(challengetype = 0, name) {
         level thread function_c6834d32();
         break;
     }
-    var_69d36e5e = struct::get_array(name + "_challenge_loot", "targetname");
-    foreach (loot in var_69d36e5e) {
+    lootstructs = struct::get_array(name + "_challenge_loot", "targetname");
+    foreach (loot in lootstructs) {
         if (isdefined(loot.script_noteworthy)) {
             items = strtok(loot.script_noteworthy, ";");
             item = items[randomint(items.size)];
@@ -132,9 +132,9 @@ function function_93e7ee52(challengetype = 0, name) {
                 if (isdefined(pickup)) {
                     pickup.origin = loot.origin;
                     pickup notify(#"hash_2a866f50cc161ca8");
-                    if (isdefined(pickup.var_6863e853) && pickup.var_6863e853 !== "glow_yellow") {
+                    if (isdefined(pickup.glowfx) && pickup.glowfx !== "glow_yellow") {
                         util::wait_network_frame();
-                        pickup namespace_83eb6304::turnofffx(pickup.var_6863e853);
+                        pickup namespace_83eb6304::turnofffx(pickup.glowfx);
                         pickup namespace_83eb6304::function_3ecfde67("glow_yellow");
                     }
                 }
@@ -388,7 +388,7 @@ function function_29ff6b1() {
 // Checksum 0xf50ed1fc, Offset: 0x1890
 // Size: 0x2ac
 function function_17f47e92() {
-    var_83c583a9 = [[ level.doa.var_39e3fa99 ]]->function_c892290a();
+    maxai = [[ level.doa.var_39e3fa99 ]]->function_c892290a();
     [[ level.doa.var_39e3fa99 ]]->function_6d5262dc(16 + 8 * getplayers().size);
     if (!isdefined(level.doa.var_a77e4601)) {
         level.doa.var_a77e4601 = [];
@@ -411,7 +411,7 @@ function function_17f47e92() {
     if (isdefined(var_f8ff628e)) {
         var_f8ff628e waittill(#"death");
     }
-    [[ level.doa.var_39e3fa99 ]]->function_6d5262dc(var_83c583a9);
+    [[ level.doa.var_39e3fa99 ]]->function_6d5262dc(maxai);
 }
 
 // Namespace namespace_77eccc4f/namespace_77eccc4f
@@ -470,7 +470,7 @@ function function_9f6da3ff() {
 function function_cd4e6a10() {
     level endon(#"arena_completed");
     level endon(#"game_over");
-    var_83c583a9 = [[ level.doa.var_39e3fa99 ]]->function_c892290a();
+    maxai = [[ level.doa.var_39e3fa99 ]]->function_c892290a();
     [[ level.doa.var_39e3fa99 ]]->function_6d5262dc(24);
     var_94f3b914 = doa_enemy::function_251ee3bd("wolf_ghosthound");
     [[ var_94f3b914 ]]->function_7edd7727(6);
@@ -517,7 +517,7 @@ function function_cd4e6a10() {
     }
     namespace_8c04284b::function_c8462f96();
     level namespace_ec06fe4a::function_de70888a();
-    [[ level.doa.var_39e3fa99 ]]->function_6d5262dc(var_83c583a9);
+    [[ level.doa.var_39e3fa99 ]]->function_6d5262dc(maxai);
 }
 
 // Namespace namespace_77eccc4f/namespace_77eccc4f
@@ -527,7 +527,7 @@ function function_cd4e6a10() {
 function function_bd313167() {
     level endon(#"arena_completed");
     level endon(#"game_over");
-    var_83c583a9 = [[ level.doa.var_39e3fa99 ]]->function_c892290a();
+    maxai = [[ level.doa.var_39e3fa99 ]]->function_c892290a();
     [[ level.doa.var_39e3fa99 ]]->function_6d5262dc(28);
     var_94f3b914 = doa_enemy::function_251ee3bd("brutus");
     [[ var_94f3b914 ]]->function_7edd7727(6);
@@ -555,7 +555,7 @@ function function_bd313167() {
         level.doa.var_a77e4601 = array(level.doa.var_a77e4601);
     }
     level.doa.var_a77e4601[level.doa.var_a77e4601.size] = level.doa.var_65a70dc;
-    [[ level.doa.var_39e3fa99 ]]->function_6d5262dc(var_83c583a9);
+    [[ level.doa.var_39e3fa99 ]]->function_6d5262dc(maxai);
 }
 
 // Namespace namespace_77eccc4f/namespace_77eccc4f

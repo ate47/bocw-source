@@ -14,14 +14,14 @@
 // Checksum 0xb2bfe38b, Offset: 0xe0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_4652e389efb9751f", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_4652e389efb9751f", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace abilities/abilities
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1df3778a, Offset: 0x128
 // Size: 0x64
-function private function_70a657d8() {
+function private preinit() {
     /#
         level.abilities_devgui_add_gadgets_custom = &abilities_devgui_add_gadgets_custom;
     #/
@@ -119,7 +119,7 @@ function abilities_devgui_add_gadgets_custom(root, pname, pid, menu_index) {
         menu_index = abilities_devgui_add_power(add_cmd_with_root, pid, menu_index);
         wait(1);
         menu_index = function_2e0162e9(add_cmd_with_root, pid, menu_index);
-        level.var_86734d48 = &function_2bf96aa3;
+        level.var_86734d48 = &giveloadout;
         return menu_index;
     #/
 }

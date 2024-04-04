@@ -54,7 +54,7 @@ function function_61fb9b33(eventstruct) {
 // Size: 0xa4
 function function_2ec27175(var_391ae5) {
     if (isdefined(var_391ae5.var_ee13df27)) {
-        var_c01b1f44 = {#var_bffcadab:isdefined(var_391ae5.var_f4fffb24) ? var_391ae5.var_f4fffb24 : 1, #var_9b95a335:isdefined(var_391ae5.var_6dae19be) ? var_391ae5.var_6dae19be : 1, #var_53e359f7:var_391ae5.var_ee13df27};
+        var_c01b1f44 = {#sound_name:var_391ae5.var_ee13df27, #var_9b95a335:isdefined(var_391ae5.var_6dae19be) ? var_391ae5.var_6dae19be : 1, #var_bffcadab:isdefined(var_391ae5.var_f4fffb24) ? var_391ae5.var_f4fffb24 : 1};
     }
     return var_c01b1f44;
 }
@@ -71,12 +71,12 @@ function function_be87aa71(var_c01b1f44) {
         return;
     }
     while (true) {
-        if (self.var_ade25cfe === var_c01b1f44.var_53e359f7 && isdefined(self.var_6039cf61) && self.var_6039cf61 > getservertime(0)) {
+        if (self.var_ade25cfe === var_c01b1f44.sound_name && isdefined(self.var_6039cf61) && self.var_6039cf61 > getservertime(0)) {
             wait(float(self.var_6039cf61 - getservertime(0)) / 1000);
         }
         var_c9823318 = function_5c10bd79(0);
-        if (isplayer(var_c9823318) && distancesquared(var_c9823318.origin, self.origin) < function_a3f6cdac(1000)) {
-            playsound(0, var_c01b1f44.var_53e359f7, self.origin);
+        if (isplayer(var_c9823318) && distancesquared(var_c9823318.origin, self.origin) < sqr(1000)) {
+            playsound(0, var_c01b1f44.sound_name, self.origin);
             /#
                 if (getdvarint(#"hash_5bbf0a73200999f9", 0)) {
                     debugstar(self.origin, int(62.5), (1, 0, 1));
@@ -85,7 +85,7 @@ function function_be87aa71(var_c01b1f44) {
         }
         wait_time = var_c01b1f44.var_9b95a335 != var_c01b1f44.var_bffcadab ? randomfloatrange(var_c01b1f44.var_9b95a335, var_c01b1f44.var_bffcadab) : var_c01b1f44.var_9b95a335;
         self.var_6039cf61 = getservertime(0) + int(wait_time * 1000);
-        self.var_ade25cfe = var_c01b1f44.var_53e359f7;
+        self.var_ade25cfe = var_c01b1f44.sound_name;
         wait(wait_time);
         self.var_6039cf61 = undefined;
     }
@@ -100,7 +100,7 @@ function function_733e5314() {
     var_25dac1e7 = randomfloatrange(30, 90);
     bundle = function_489009c1(self);
     var_2828eabf = isdefined(bundle.destroyed) ? bundle.destroyed : 0;
-    var_d3b6e91d = isdefined(bundle.var_559007a4) ? bundle.var_559007a4 : 0;
+    var_d3b6e91d = isdefined(bundle.idlestate) ? bundle.idlestate : 0;
     var_60138ede = isdefined(bundle.var_7320b70a) ? bundle.var_7320b70a : 0;
     var_5f94b69b = isdefined(bundle.var_49caaddf) ? bundle.var_49caaddf : 0;
     var_de89d793 = bundle.dynentstates[var_60138ede];
@@ -118,7 +118,7 @@ function function_733e5314() {
     state = 0;
     for (waitresult = undefined; self.health > 0; waitresult = self waittilltimeout(randomfloatrange(3, 5), #"hash_2b397aad1337c105", #"wall_detected")) {
         angles = undefined;
-        var_5430ce52 = var_25dac1e7;
+        turn_rate = var_25dac1e7;
         if (!isdefined(waitresult) || waitresult._notify !== "wall_detected") {
             timeout = getrealtime();
         }
@@ -141,7 +141,7 @@ function function_733e5314() {
                     function_27b5ddff(self);
                 }
                 state = 0;
-                var_da43a859 = 1;
+                anim_rate = 1;
             } else {
                 function_1e23c01f(self, idle_anim);
                 self.var_b18f1e7a = idle_anim;
@@ -166,7 +166,7 @@ function function_733e5314() {
             if (absangleclamp360(angles[1] - self.angles[1]) < 0.001) {
                 angles = (angles[0], angles[1] * -1, angles[2]);
             }
-            var_5430ce52 = 90;
+            turn_rate = 90;
         } else {
             var_21a930c2 = self.origin - waitresult.var_6be223c2;
             angles = vectortoangles(var_21a930c2);
@@ -174,19 +174,19 @@ function function_733e5314() {
                 function_27b5ddff(self);
             }
             state = 1;
-            var_da43a859 = 1;
-            var_5430ce52 = 240;
+            anim_rate = 1;
+            turn_rate = 240;
         }
         if (isdefined(angles)) {
-            if (self.var_b18f1e7a !== var_381de367 || self.var_51b1adce !== var_da43a859) {
-                function_1ef41caa(self, var_381de367, undefined, var_da43a859, var_931fd54a);
+            if (self.var_b18f1e7a !== var_381de367 || self.var_51b1adce !== anim_rate) {
+                function_1ef41caa(self, var_381de367, undefined, anim_rate, var_931fd54a);
                 if (isdefined(var_881752fb)) {
                     self thread function_be87aa71(var_881752fb);
                 }
                 self.var_b18f1e7a = var_381de367;
-                self.var_51b1adce = var_da43a859;
+                self.var_51b1adce = anim_rate;
             }
-            function_64303428(self, angles[1], var_5430ce52);
+            function_64303428(self, angles[1], turn_rate);
         }
         if (waitresult._notify === "wall_detected") {
             wait(1);

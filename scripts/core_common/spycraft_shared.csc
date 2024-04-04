@@ -10,14 +10,14 @@
 // Checksum 0x38dbb241, Offset: 0xc0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"spycraft", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"spycraft", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace spycraft/namespace_1ec2f789
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa0e1a343, Offset: 0x108
 // Size: 0x14
-function private function_70a657d8() {
+function private preinit() {
     register_clientfields();
 }
 

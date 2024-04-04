@@ -121,14 +121,14 @@ class cluielem {
 // Checksum 0xe582cf52, Offset: 0x248
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"lui_shared", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"lui_shared", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace lui/lui_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1f7c4f99, Offset: 0x290
 // Size: 0x74
-function private function_70a657d8() {
+function private preinit() {
     callback::on_spawned(&refresh_menu_values);
     add_luimenu("FullScreenBlack", &full_screen_black::register);
     add_luimenu("InitialBlack", &initial_black::register);
@@ -168,7 +168,7 @@ function function_bb6bcb89(menuname, registrationindex, modelnameindex, modelval
         level thread function_1c4c4975();
     }
     index = level.var_b0d329df.size;
-    level.var_b0d329df[index] = {#sendtospectators:sendtospectators, #modelvalue:modelvalue, #modelnameindex:modelnameindex, #registrationindex:registrationindex, #menuname:menuname, #ent:self};
+    level.var_b0d329df[index] = {#ent:self, #menuname:menuname, #registrationindex:registrationindex, #modelnameindex:modelnameindex, #modelvalue:modelvalue, #sendtospectators:sendtospectators};
     level notify(#"hash_731d5f1e22d23b13");
 }
 
@@ -696,7 +696,7 @@ function private _screen_fade(n_time, n_target_alpha, n_start_alpha, v_color, b_
         s_menu = self.var_59f4be9a;
         lui_menu = s_menu.lui_menu;
         _one_screen_fade_per_network_frame(s_menu);
-        n_start_alpha = lerpfloat(s_menu.n_start_alpha, s_menu.n_target_alpha, s_menu.n_target_time < 0 ? (gettime() - s_menu.n_start_time) / s_menu.n_target_time : 1);
+        n_start_alpha = lerpfloat(s_menu.n_start_alpha, s_menu.n_target_alpha, s_menu.n_target_time < 0 ? 1 : (gettime() - s_menu.n_start_time) / s_menu.n_target_time);
         [[ lui_menu ]]->set_startalpha(self, n_start_alpha);
         [[ lui_menu ]]->set_endalpha(self, n_target_alpha);
         waitframe(1);

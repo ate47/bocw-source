@@ -48,14 +48,14 @@ class class_6e09f777 {
 // Checksum 0xfdab6121, Offset: 0x120
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_4bbb330ecd0b67a8", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_4bbb330ecd0b67a8", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_e85e312c/turret_dead_system
 // Params 0, eflags: 0x6 linked
 // Checksum 0x597e5906, Offset: 0x178
 // Size: 0x34
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_spawn_function_group("turret_dead_system", "script_turret_type", &function_33dd3fda);
 }
 

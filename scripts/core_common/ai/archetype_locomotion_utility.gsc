@@ -440,7 +440,7 @@ function private function_bb046570() {
                 }
             }
             var_ef0e5eed = distance2dsquared(startpoint, endpoint);
-            if (var_ef0e5eed >= function_a3f6cdac(36)) {
+            if (var_ef0e5eed >= sqr(36)) {
                 self.ai.var_4183a6fc.var_60198839 = 1;
                 self.ai.var_4183a6fc.startpos = startpoint;
                 self.ai.var_4183a6fc.endpos = endpoint;
@@ -509,7 +509,7 @@ function private function_37ae0b11() {
         return min(var_48a0209, var_b0a0a668);
     }
     self.ai.var_4183a6fc.var_ba319abd = undefined;
-    return function_d6eaf8b0(var_a0bb1f9c);
+    return length2dsquared(var_a0bb1f9c);
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -540,7 +540,7 @@ function private function_7589776c(behaviortreeentity) {
             }
         #/
         if (self.ai.var_4183a6fc.direction == "staircase_down") {
-            if (var_4226005f <= max(60, function_d6eaf8b0(self getvelocity() * float(function_60d95f53()) / 1000 * 2))) {
+            if (var_4226005f <= max(60, length2dsquared(self getvelocity() * float(function_60d95f53()) / 1000 * 2))) {
                 behaviortreeentity setblackboardattribute("_staircase_direction", self.ai.var_4183a6fc.direction);
                 /#
                     if (behaviortreeentity function_3b027260()) {
@@ -551,11 +551,11 @@ function private function_7589776c(behaviortreeentity) {
             } else {
                 /#
                     if (behaviortreeentity function_3b027260()) {
-                        record3dtext("<unknown string>" + var_4226005f + "<unknown string>" + function_d6eaf8b0(self getvelocity() * float(function_60d95f53()) / 1000 * 2) + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0.5, 0), "<unknown string>", behaviortreeentity);
+                        record3dtext("<unknown string>" + var_4226005f + "<unknown string>" + length2dsquared(self getvelocity() * float(function_60d95f53()) / 1000 * 2) + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0.5, 0), "<unknown string>", behaviortreeentity);
                     }
                 #/
             }
-        } else if (var_4226005f <= max(40, function_d6eaf8b0(self getvelocity() * float(function_60d95f53()) / 1000 * 2))) {
+        } else if (var_4226005f <= max(40, length2dsquared(self getvelocity() * float(function_60d95f53()) / 1000 * 2))) {
             behaviortreeentity setblackboardattribute("_staircase_direction", self.ai.var_4183a6fc.direction);
             /#
                 if (behaviortreeentity function_3b027260()) {
@@ -566,7 +566,7 @@ function private function_7589776c(behaviortreeentity) {
         } else {
             /#
                 if (behaviortreeentity function_3b027260()) {
-                    record3dtext("<unknown string>" + var_4226005f + "<unknown string>" + function_d6eaf8b0(self getvelocity() * float(function_60d95f53()) / 1000 * 2) + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0.5, 0), "<unknown string>", behaviortreeentity);
+                    record3dtext("<unknown string>" + var_4226005f + "<unknown string>" + length2dsquared(self getvelocity() * float(function_60d95f53()) / 1000 * 2) + behaviortreeentity.origin, behaviortreeentity.origin, (1, 0.5, 0), "<unknown string>", behaviortreeentity);
                 }
             #/
         }

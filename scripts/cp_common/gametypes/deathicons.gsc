@@ -11,14 +11,14 @@
 // Checksum 0x40894ff3, Offset: 0xc8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"deathicons", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"deathicons", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace deathicons/deathicons
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc4f7baa8, Offset: 0x110
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&init);
     callback::on_connect(&on_player_connect);
 }

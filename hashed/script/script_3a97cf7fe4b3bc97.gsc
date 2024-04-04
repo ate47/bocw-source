@@ -11,14 +11,14 @@
 // Checksum 0x9ac88b4f, Offset: 0x140
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"sr_demented_echo", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"sr_demented_echo", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_780aaec4/namespace_780aaec4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x7fb0d482, Offset: 0x188
 // Size: 0xfc
-function function_70a657d8() {
+function preinit() {
     if (!zm_utility::is_survival()) {
         return;
     }

@@ -10,7 +10,7 @@
 // Params 2, eflags: 0x0
 // Checksum 0xaacc1647, Offset: 0xf0
 // Size: 0x14
-function function_aec6058a(*ent, *vol) {
+function scalevolume(*ent, *vol) {
     
 }
 
@@ -21,14 +21,14 @@ function function_aec6058a(*ent, *vol) {
 // Checksum 0x185db421, Offset: 0x110
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_299575137124db03", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_299575137124db03", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_6c0cd084/threat_sight
 // Params 0, eflags: 0x6 linked
 // Checksum 0x53fadd63, Offset: 0x158
 // Size: 0x64
-function private function_70a657d8() {
+function private preinit() {
     register_clientfields();
     level.var_6c0cd084 = new class_d0a0a887();
     [[ level.var_6c0cd084 ]]->init(8);
@@ -179,7 +179,7 @@ function private function_ccfdbd44(*localclientnum, msg) {
 function private function_d4ae86f5(localclientnum) {
     self notify(#"hash_433e3a44df358be9");
     self endon(#"hash_433e3a44df358be9");
-    self waittill(#"death", #"hash_29b88049dcac8bb3");
+    self waittill(#"death", #"entitydeleted");
     self thread function_a2d377b5(localclientnum);
 }
 

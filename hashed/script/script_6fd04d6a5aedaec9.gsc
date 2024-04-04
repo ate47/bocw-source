@@ -100,7 +100,7 @@ function private function_5c555bdb(var_8e0e7e97, var_6db1f82a, var_484302b2, a_p
                     if (isdefined(e_attacker) && isdefined(self) && !is_true(self.var_265cb589) && !is_true(level.var_dc60105c) && damagefeedback::dodamagefeedback(w_weapon, e_attacker)) {
                         e_attacker thread damagefeedback::update(waitresult.mod, waitresult.inflictor, undefined, w_weapon, self);
                     }
-                    self thread function_22047429(0);
+                    self thread activate_target(0);
                     if (isdefined(var_484302b2)) {
                         self [[ var_484302b2 ]](e_attacker, a_params);
                     }
@@ -126,7 +126,7 @@ function private init_target(var_698f45e4) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0xbc5a025c, Offset: 0xb80
 // Size: 0x4dc
-function private function_22047429(b_active = 0, n_delay = undefined) {
+function private activate_target(b_active = 0, n_delay = undefined) {
     self notify("66bb767edbc7cc03");
     self endon("66bb767edbc7cc03");
     self endon(#"death");
@@ -203,7 +203,7 @@ function private function_22047429(b_active = 0, n_delay = undefined) {
 // Size: 0x18e
 function function_db3d8ac(mdl_target, var_d8f1c196) {
     mdl_target endon(#"death", #"hash_7eaa0599b7552fad");
-    mdl_target function_22047429(1, var_d8f1c196.delay);
+    mdl_target activate_target(1, var_d8f1c196.delay);
     if (isdefined(var_d8f1c196.target)) {
         var_411cc8d4 = struct::get(var_d8f1c196.target, "targetname");
         /#
@@ -220,7 +220,7 @@ function function_db3d8ac(mdl_target, var_d8f1c196) {
     } else {
         var_381607ae = var_d8f1c196.var_c833bf96;
     }
-    mdl_target function_22047429(0, var_381607ae);
+    mdl_target activate_target(0, var_381607ae);
     if (isdefined(self)) {
         self notify(#"hash_6a9356013dd27e58");
     }
@@ -232,7 +232,7 @@ function function_db3d8ac(mdl_target, var_d8f1c196) {
 // Size: 0xb0
 function function_3018008e(e_player, e_trigger) {
     if (isplayer(e_player)) {
-        level scoreevents::doscoreeventcallback("scoreEventZM", {#enemy:self, #scoreevent:#"hash_93c1524520f5882", #attacker:e_player});
+        level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:e_player, #scoreevent:#"hash_93c1524520f5882", #enemy:self});
     }
     self notify(#"hash_7eaa0599b7552fad");
     e_trigger notify(#"hash_7973087e9bdd4725");
@@ -251,8 +251,8 @@ function function_31183ec4(e_player, var_b3dbe6aa) {
     w_current_weapon = e_player getcurrentweapon();
     e_item = e_player item_inventory::function_230ceec4(w_current_weapon);
     if (isdefined(e_player)) {
-        if (isdefined(e_item.var_a6762160.rarity)) {
-            switch (e_item.var_a6762160.rarity) {
+        if (isdefined(e_item.itementry.rarity)) {
+            switch (e_item.itementry.rarity) {
             case #"legendary":
                 point = function_4ba8fde(#"hash_69a628368f8263f");
                 item_drop::drop_item(0, undefined, 1, 0, point.id, var_b3dbe6aa.origin, var_b3dbe6aa.angles, 2);
@@ -431,7 +431,7 @@ function devgui_cmd(cmd) {
             }
             break;
         case #"hash_138254d067e7c768":
-            if (level get_any([1:#"hash_29f75f50c70f99c5", 0:#"hash_333ae351d01741c7"])) {
+            if (level get_any([#"hash_333ae351d01741c7", #"hash_29f75f50c70f99c5"])) {
                 level set(#"hash_cf267d3414df1a0");
                 level thread function_4149847c();
             } else {
@@ -499,7 +499,7 @@ function function_4149847c() {
     var_356856d6 thread function_5c555bdb("sniper", level.var_d352f703, &function_5eb556a3);
     var_356856d6 thread function_db3d8ac(var_356856d6, var_17aa01a8);
     var_356856d6 thread function_9af0ace6("sniper");
-    level flag::wait_till_any([1:#"hash_29f75f50c70f99c5", 0:#"hash_333ae351d01741c7"]);
+    level flag::wait_till_any([#"hash_333ae351d01741c7", #"hash_29f75f50c70f99c5"]);
     level flag::clear(#"hash_709701a349515bd7");
     waitframe(1);
     if (isdefined(var_356856d6)) {
@@ -528,7 +528,7 @@ function function_5eb556a3(e_player, *a_params) {
     self endon(#"death");
     self notify(#"hash_171ccedffc06b5e");
     self notify(#"hash_7eaa0599b7552fad");
-    level scoreevents::doscoreeventcallback("scoreEventZM", {#enemy:self, #scoreevent:#"hash_93c1524520f5882", #attacker:a_params});
+    level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:a_params, #scoreevent:#"hash_93c1524520f5882", #enemy:self});
     level flag::set(#"hash_4fb85514c23b64ac");
     a_params val::set("shooting_gallery_ignore", "ignoreme", 1);
     b_complete = self function_bc22215d(a_params);
@@ -715,7 +715,7 @@ function function_bc22215d(e_player) {
         foreach (e_target in self.a_targets) {
             if (isdefined(e_target)) {
                 e_target notify(#"hash_7eaa0599b7552fad");
-                e_target thread function_22047429(0);
+                e_target thread activate_target(0);
             }
         }
         wait(0.3);
@@ -812,7 +812,7 @@ function function_386e50d5() {
     var_356856d6 thread function_5c555bdb("smg", level.var_a76f0ecf, &function_95b8c137);
     var_356856d6 thread function_db3d8ac(var_356856d6, var_17aa01a8);
     var_356856d6 thread function_9af0ace6("smg");
-    level flag::wait_till_any([1:#"hash_52f25b6d74f50b3d", 0:#"hash_aa416b9e4b5beaf"]);
+    level flag::wait_till_any([#"hash_aa416b9e4b5beaf", #"hash_52f25b6d74f50b3d"]);
     level flag::clear(#"hash_709701a349515bd7");
     level.var_a76f0ecf val::reset("shooting_gallery_ignore", "ignoreme");
     var_356856d6 notify(#"hash_79917746ae9a28ed");
@@ -844,7 +844,7 @@ function function_95b8c137(e_player, *a_params) {
     if (isdefined(a_params)) {
         self notify(#"hash_171ccedffc06b5e");
         self notify(#"hash_7eaa0599b7552fad");
-        level scoreevents::doscoreeventcallback("scoreEventZM", {#enemy:self, #scoreevent:#"hash_93c1524520f5882", #attacker:a_params});
+        level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:a_params, #scoreevent:#"hash_93c1524520f5882", #enemy:self});
         a_params val::set("shooting_gallery_ignore", "ignoreme", 1);
         wait(3);
         a_params endoncallback(&function_1bdc1402, #"death");
@@ -995,7 +995,7 @@ function function_75dd0e2a(e_player) {
         var_10130e45 = self function_d6ee3b1d(e_player, var_24b25ceb, var_ae876f40, var_eb891a8f, n_round);
         foreach (e_target in self.a_targets) {
             e_target notify(#"hash_7eaa0599b7552fad");
-            e_target thread function_22047429(0);
+            e_target thread activate_target(0);
         }
         wait(0.3);
         foreach (e_target in self.a_targets) {
@@ -1138,7 +1138,7 @@ function function_10079b27(var_24b25ceb, var_be926cd2) {
 function function_74afe29f(mdl_target, var_d8f1c196) {
     mdl_target endon(#"death", #"hash_7eaa0599b7552fad");
     wait(randomintrangeinclusive(0, 3));
-    mdl_target function_22047429(1, var_d8f1c196.delay);
+    mdl_target activate_target(1, var_d8f1c196.delay);
     if (isdefined(var_d8f1c196.target)) {
         var_411cc8d4 = struct::get(var_d8f1c196.target, "targetname");
         /#
@@ -1155,7 +1155,7 @@ function function_74afe29f(mdl_target, var_d8f1c196) {
     } else {
         var_381607ae = var_d8f1c196.var_c833bf96;
     }
-    mdl_target function_22047429(0, var_381607ae);
+    mdl_target activate_target(0, var_381607ae);
     if (isdefined(self)) {
         self notify(#"hash_6a9356013dd27e58");
     }
@@ -1207,7 +1207,7 @@ function function_fcc5783b() {
     var_356856d6 thread function_5c555bdb("pistol", level.var_9c6cf8c, &function_af0fa53c);
     var_356856d6 thread function_db3d8ac(var_356856d6, var_17aa01a8);
     var_356856d6 thread function_9af0ace6("pistol");
-    level flag::wait_till_any([1:#"hash_6930683ef14e9445", 0:#"hash_7f73d56a614ce047"]);
+    level flag::wait_till_any([#"hash_7f73d56a614ce047", #"hash_6930683ef14e9445"]);
     level flag::clear(#"hash_709701a349515bd7");
     var_356856d6 notify(#"hash_79917746ae9a28ed");
     if (isarray(var_356856d6.a_targets)) {
@@ -1237,7 +1237,7 @@ function function_af0fa53c(e_player, *a_params) {
     self endon(#"death");
     self notify(#"hash_171ccedffc06b5e");
     self notify(#"hash_7eaa0599b7552fad");
-    level scoreevents::doscoreeventcallback("scoreEventZM", {#enemy:self, #scoreevent:#"hash_93c1524520f5882", #attacker:a_params});
+    level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:a_params, #scoreevent:#"hash_93c1524520f5882", #enemy:self});
     level flag::set(#"hash_51bc8a36bd7e5d27");
     self flag::set(#"hash_5422d37665a74906");
     a_params val::set("shooting_gallery_ignore", "ignoreme", 1);
@@ -1298,7 +1298,7 @@ function function_1cb31d02(e_player, var_24b25ceb, n_round) {
     var_77ba553d = var_24b25ceb.size;
     var_3d23ecc = 0;
     self.a_targets = [];
-    var_fce1cbd4 = [5:3, 4:2, 3:2, 2:1.5, 1:1, 0:0];
+    var_fce1cbd4 = [0, 1, 1.5, 2, 2, 3];
     var_fce1cbd4 = array::randomize(var_fce1cbd4);
     var_f425a78e = 0;
     /#
@@ -1367,7 +1367,7 @@ function function_c47f596a(e_player) {
         var_10130e45 = self function_1cb31d02(e_player, var_24b25ceb, n_round);
         foreach (e_target in self.a_targets) {
             e_target notify(#"hash_7eaa0599b7552fad");
-            e_target thread function_22047429(0);
+            e_target thread activate_target(0);
         }
         wait(0.3);
         foreach (e_target in self.a_targets) {
@@ -1410,7 +1410,7 @@ function function_44edd841(mdl_target, var_d8f1c196, n_round, *e_player) {
     if (is_true(n_round.var_8404a3cf)) {
         n_round.delay = 4;
     }
-    var_d8f1c196 function_22047429(1, n_round.delay);
+    var_d8f1c196 activate_target(1, n_round.delay);
     if (e_player < 4) {
         var_6b009fa5 = randomfloatrange(0, 0.5);
     } else if (e_player < 6) {
@@ -1434,7 +1434,7 @@ function function_44edd841(mdl_target, var_d8f1c196, n_round, *e_player) {
     } else {
         var_381607ae = n_round.var_c833bf96;
     }
-    var_d8f1c196 function_22047429(0, var_381607ae);
+    var_d8f1c196 activate_target(0, var_381607ae);
     if (isdefined(self)) {
         self notify(#"hash_6a9356013dd27e58");
     }

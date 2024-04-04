@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_1cd690a97dfca36e;
-#using script_3318f11e3a1b2358;
+#using scripts\cp_common\snd.csc;
 
 #namespace snd;
 

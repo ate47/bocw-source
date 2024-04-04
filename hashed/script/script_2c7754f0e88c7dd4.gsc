@@ -120,7 +120,7 @@ function function_d240d5de() {
     self.goalradius = 512;
     self.goalheight = 100;
     self.var_ec0d66ce = 0.5 * (self.settings.engagementdistmin + self.settings.engagementdistmax);
-    self.var_ff6d7c88 = function_a3f6cdac(self.var_ec0d66ce);
+    self.var_ff6d7c88 = sqr(self.var_ec0d66ce);
     self thread vehicle_ai::nudge_collision();
     self.health = 3000;
     self.maxhealth = 3000;
@@ -134,23 +134,23 @@ function function_d240d5de() {
         case #"meatball_large":
             var_64ae47e = "zmb_doa_ai_meatball_lrg_spawn";
             var_9c464736 = "zmb_doa_ai_meatball_lrg_lp";
-            self.var_8de8630 = function_a3f6cdac(50);
+            self.var_8de8630 = sqr(50);
             break;
         case #"meatball_medium":
             var_64ae47e = "zmb_doa_ai_meatball_med_spawn";
             var_9c464736 = "zmb_doa_ai_meatball_med_lp";
-            self.var_8de8630 = function_a3f6cdac(40);
+            self.var_8de8630 = sqr(40);
             break;
         case #"meatball_small":
             var_64ae47e = "zmb_doa_ai_meatball_sml_spawn";
             var_9c464736 = "zmb_doa_ai_meatball_sml_lp";
-            self.var_8de8630 = function_a3f6cdac(30);
+            self.var_8de8630 = sqr(30);
             break;
         }
     }
     self namespace_e32bb68::function_3a59ec34(var_64ae47e);
     self namespace_e32bb68::function_3a59ec34(var_9c464736);
-    self thread function_5212ce3();
+    self thread proximitykill();
     if (isdefined(level.doa.var_a598a835)) {
         self.spawnloc = [[ level.doa.var_a598a835 ]]();
     }
@@ -171,7 +171,7 @@ function function_d240d5de() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x2ae975a, Offset: 0xc78
 // Size: 0xc8
-function function_5212ce3() {
+function proximitykill() {
     self notify("13067ef87ae5514e");
     self endon("13067ef87ae5514e");
     self endon(#"death");

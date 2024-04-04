@@ -2,7 +2,7 @@
 #using scripts\zm_common\zm_stats.gsc;
 #using scripts\zm_common\zm_utility.gsc;
 #using script_19367cd29a4485db;
-#using script_b9d273dc917ee1f;
+#using scripts\zm_common\zm_intel.gsc;
 #using script_34ab99a4ca1a43d;
 #using script_16b1b77a76492c6a;
 #using scripts\core_common\math_shared.gsc;
@@ -13,7 +13,7 @@
 #using scripts\core_common\scoreevents_shared.gsc;
 #using scripts\core_common\array_shared.gsc;
 #using scripts\core_common\util_shared.gsc;
-#using script_7fc996fe8678852;
+#using scripts\core_common\content_manager.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 
 #namespace namespace_12a6a726;
@@ -23,14 +23,14 @@
 // Checksum 0xa5741e3b, Offset: 0x1c0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_72a9f15f4124442", &function_70a657d8, undefined, undefined, #"hash_f81b9dea74f0ee");
+    system::register(#"hash_72a9f15f4124442", &preinit, undefined, undefined, #"content_manager");
 }
 
 // Namespace namespace_12a6a726/namespace_12a6a726
 // Params 0, eflags: 0x2 linked
 // Checksum 0xd423f6, Offset: 0x210
 // Size: 0x11c
-function function_70a657d8() {
+function preinit() {
     if (!zm_utility::is_survival()) {
         return;
     }
@@ -40,7 +40,7 @@ function function_70a657d8() {
     if (!is_true(getgametypesetting(#"hash_49c3a9d150ecbb16")) && !getdvarint(#"hash_730311c63805303a", 0)) {
         return;
     }
-    namespace_8b6a9d79::function_b3464a7c(#"hash_6bbb00324d163e11", &function_8ba92985, 1);
+    content_manager::register_script(#"hash_6bbb00324d163e11", &function_8ba92985, 1);
     clientfield::register("scriptmover", "sr_supply_drop_chest_fx", 1, 2, "int");
 }
 
@@ -53,8 +53,8 @@ function private function_8ba92985(s_instance) {
     level flag::wait_till(#"gameplay_started");
     s_instance flag::clear("cleanup");
     s_instance callback::function_d8abfc3d(#"hash_345e9169ebba28fb", &function_db97f0ee);
-    s_chest = s_instance.var_fe2612fe[#"hash_6b1e5d8f9e70a70e"][0];
-    var_3ba64fe9 = s_instance.var_fe2612fe[#"hash_18c54e641c89f8eb"][0];
+    s_chest = s_instance.contentgroups[#"hash_6b1e5d8f9e70a70e"][0];
+    var_3ba64fe9 = s_instance.contentgroups[#"trigger_spawn"][0];
     s_instance.var_e234ef47 = zm_utility::function_f5a222a8(#"hash_3475619554ec3ac2", s_chest.origin, &function_a1ca0279);
     wait(10);
     if (!isdefined(var_3ba64fe9.height)) {
@@ -155,7 +155,7 @@ function function_9212e29c(s_instance, s_chest) {
     mdl_fx playsound(#"hash_149945a98c1798a6");
     mdl_fx playloopsound(#"hash_3b2e8e212c9bfb8a");
     wait(1);
-    s_chest.scriptmodel = namespace_8b6a9d79::function_f3d93ee9(struct, #"hash_401a47741ffd646f", 1);
+    s_chest.scriptmodel = content_manager::spawn_script_model(struct, #"hash_401a47741ffd646f", 1);
     s_chest.var_422ae63e = #"p9_fxanim_zm_gp_chest_01_lrg_bundle";
     mdl_chest = s_chest.scriptmodel;
     mdl_chest notsolid();
@@ -169,7 +169,7 @@ function function_9212e29c(s_instance, s_chest) {
     mdl_fx stoploopsound();
     mdl_fx playsound(#"hash_6eca5f5eaa236ce3");
     mdl_fx util::deleteaftertime(3);
-    trigger = namespace_8b6a9d79::function_214737c7(s_chest, &function_19490940, #"hash_409a53f32f7cae42", undefined, 96, undefined, undefined, vectorscale((0, 0, 1), 16));
+    trigger = content_manager::spawn_interact(s_chest, &function_19490940, #"hash_409a53f32f7cae42", undefined, 96, undefined, undefined, vectorscale((0, 0, 1), 16));
     trigger.struct = s_chest;
     trigger.var_cc1fb2d0 = namespace_58949729::function_fd5e77fa(#"gold");
     mdl_chest.trigger = trigger;
@@ -227,10 +227,10 @@ function function_19490940(*eventstruct) {
     s_result = undefined;
     s_result = self waittill(#"trigger");
     self thread namespace_58949729::function_8665f666(s_result);
-    level thread namespace_4abf1500::function_20c3dbfd(function_a1ef346b(), mdl_chest.origin, 120, 3);
+    level thread zm_intel::function_20c3dbfd(function_a1ef346b(), mdl_chest.origin, 120, 3);
     mdl_chest thread namespace_58949729::function_1e2500f();
     namespace_58949729::function_a5d57202(instance);
-    level scoreevents::doscoreeventcallback("scoreEventSR", {#location:self.origin, #var_b0a57f8c:5000, #nearbyplayers:1, #scoreevent:"event_complete"});
+    level scoreevents::doscoreeventcallback("scoreEventSR", {#scoreevent:"event_complete", #nearbyplayers:1, #var_b0a57f8c:5000, #location:self.origin});
     players = getplayers();
     foreach (player in players) {
         player zm_stats::function_945c7ce2(#"hash_165462f560a0538c", 1);

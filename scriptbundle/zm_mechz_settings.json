@@ -31,7 +31,7 @@
     ],
     "var_349be1e8": [
         {
-            "type": "#hash_bd108911963a54f",
+            "type": "#cold",
             "weakness": 1
         },
         {
@@ -51,7 +51,7 @@
     "var_628192b0": 1,
     "var_97b22faa": 1,
     "damagescale": 1,
-    "category": "#hash_72d4f2ad2e333eb4",
+    "category": "#elite",
     "var_854eebd": 0.3,
     "stunduration": 1,
     "var_dc706c6c": "#hash_4cfac83b203d343e",

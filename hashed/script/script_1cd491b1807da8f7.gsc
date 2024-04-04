@@ -12,14 +12,14 @@
 // Checksum 0x5af52b67, Offset: 0x128
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"dynent_use", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"dynent_use", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace dynent_use/dynent_use
 // Params 0, eflags: 0x6 linked
 // Checksum 0x57938ab1, Offset: 0x170
 // Size: 0x174
-function private function_70a657d8() {
+function private preinit() {
     if (util::is_frontend_map() || currentsessionmode() == 4 || !(isdefined(getgametypesetting(#"usabledynents")) ? getgametypesetting(#"usabledynents") : 0)) {
         return;
     }
@@ -122,18 +122,18 @@ function private update_loop() {
 function private function_2f394f36() {
     height = self getmaxs()[2];
     bounds = (50, 50, height / 2);
-    var_5ed7231a = self getcentroid();
+    boundsorigin = self getcentroid();
     /#
         debug = self ishost() && getdvarint(#"hash_23e7101285284738", 0);
         if (debug) {
-            box(var_5ed7231a, (0, 0, 0) - bounds, bounds, 0, (0, 0, 1), 1, 0, 5);
+            box(boundsorigin, (0, 0, 0) - bounds, bounds, 0, (0, 0, 1), 1, 0, 5);
         }
     #/
     viewheight = self getplayerviewheight();
     vieworigin = self.origin + (0, 0, viewheight);
     viewangles = self getplayerangles();
     viewforward = anglestoforward(viewangles);
-    var_e86a4d9 = function_db4bc717(var_5ed7231a, bounds);
+    var_e86a4d9 = function_db4bc717(boundsorigin, bounds);
     var_c61b7280 = undefined;
     var_97684497 = undefined;
     bestdot = -1;
@@ -205,7 +205,7 @@ function private function_2f394f36() {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x886475c4, Offset: 0xdd0
 // Size: 0x2f8
-function function_662eb91e(dynent, vieworigin, viewforward, var_7c927bcc = 1) {
+function function_662eb91e(dynent, vieworigin, viewforward, drawframes = 1) {
     if (!isdefined(dynent.var_667629e9) || dynent.var_667629e9.size <= 0) {
         return false;
     }
@@ -213,7 +213,7 @@ function function_662eb91e(dynent, vieworigin, viewforward, var_7c927bcc = 1) {
         if (!isdefined(var_806e6091.owner) || var_806e6091.owner != self || !isdefined(var_806e6091.pickuptrigger)) {
             continue;
         }
-        var_75b2d824 = var_806e6091 function_2c662f72();
+        var_75b2d824 = var_806e6091 getboundsmidpoint();
         var_ed0847f8 = var_806e6091.origin + rotatepoint(var_75b2d824, var_806e6091.angles);
         var_7113bae6 = var_ed0847f8 - vieworigin;
         var_5a188b65 = vectornormalize(var_7113bae6);
@@ -221,14 +221,14 @@ function function_662eb91e(dynent, vieworigin, viewforward, var_7c927bcc = 1) {
         if (var_99957205 <= 0.7 || !bullettracepassed(vieworigin, var_ed0847f8, 0, self, var_806e6091)) {
             continue;
         }
-        var_bfe39478 = var_806e6091 function_2a98d04f();
+        var_bfe39478 = var_806e6091 getboundshalfsize();
         var_594916e6 = length(var_bfe39478);
         var_fcdb3664 = sqrt(1 - var_99957205 * var_99957205);
         lookingat = var_fcdb3664 * length(var_7113bae6) / var_99957205 < var_594916e6;
         /#
             if (getdvarint(#"hash_23e7101285284738", 0)) {
                 var_d8959d2a = lookingat ? (1, 0, 0) : (0, 1, 0);
-                sphere(var_ed0847f8, var_594916e6, var_d8959d2a, 0.75, 0, 10, var_7c927bcc);
+                sphere(var_ed0847f8, var_594916e6, var_d8959d2a, 0.75, 0, 10, drawframes);
             }
         #/
         if (lookingat) {
@@ -380,14 +380,14 @@ function function_7f2040e8() {
 // Params 5, eflags: 0x2 linked
 // Checksum 0xcd8768fa, Offset: 0x17b0
 // Size: 0x340
-function use_dynent(dynent, activator, var_b731b99b, disablegesture = 0, var_c78a0afc = 0) {
+function use_dynent(dynent, activator, overridestate, disablegesture = 0, var_c78a0afc = 0) {
     stateindex = function_ffdbe8c2(dynent);
     bundle = function_489009c1(dynent);
     var_9bdcfcd8 = undefined;
     if (isdefined(bundle) && isdefined(bundle.dynentstates) && isdefined(bundle.dynentstates[stateindex])) {
         state = bundle.dynentstates[stateindex];
-        var_9bdcfcd8 = isdefined(state.var_8a7fcb87) ? state.var_8a7fcb87 : isdefined(var_b731b99b) ? var_b731b99b : 0;
-        if (!isdefined(var_b731b99b) && isdefined(activator)) {
+        var_9bdcfcd8 = isdefined(state.var_8a7fcb87) ? state.var_8a7fcb87 : isdefined(overridestate) ? overridestate : 0;
+        if (!isdefined(overridestate) && isdefined(activator)) {
             var_b4b3af4c = anglestoforward(dynent.angles);
             playerdir = self.origin - activator.origin;
             playerdir = vectornormalize((playerdir[0], playerdir[1], 0));

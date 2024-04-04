@@ -24,14 +24,14 @@
 // Checksum 0x80e622d3, Offset: 0x550
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_410d0d4132d5f263", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_410d0d4132d5f263", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace globallogic_audio/globallogic_audio
 // Params 0, eflags: 0x6 linked
 // Checksum 0x3743865a, Offset: 0x598
 // Size: 0x11c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&init);
     callback::on_joined_team(&on_joined_team);
     if (util::get_gametype_name() === "survival") {

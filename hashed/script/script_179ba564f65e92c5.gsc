@@ -13,14 +13,14 @@
 // Checksum 0x1d4194f0, Offset: 0xe0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_55f568f82a7aea28", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_55f568f82a7aea28", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_abfee9ba/namespace_abfee9ba
 // Params 0, eflags: 0x4
 // Checksum 0xd1a67046, Offset: 0x128
 // Size: 0x8c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "" + #"hash_3220b44880f1807c", 24000, 1, "counter", &function_9eb59632, 0, 0);
     ai::add_archetype_spawn_function(#"tormentor", &function_a5cd9e54);
 }

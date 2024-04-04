@@ -16,14 +16,14 @@
 // Checksum 0xe047bf1a, Offset: 0x158
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"killstreaks", &function_70a657d8, undefined, undefined, #"zm");
+    system::register(#"killstreaks", &preinit, undefined, undefined, #"zm");
 }
 
 // Namespace killstreaks/killstreaks
 // Params 0, eflags: 0x6 linked
 // Checksum 0x40cdd9e5, Offset: 0x1a8
 // Size: 0xac
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
     killstreak_detect::init_shared();
     killstreakrules::init();
@@ -97,9 +97,9 @@ function private on_menu_response(eventstruct) {
         return;
     }
     if (eventstruct.response === "scorestreak_pool_purchase" && level.var_5b544215 === 1) {
-        var_5b220756 = level.var_b84cb28e[eventstruct.intpayload];
-        if (isdefined(var_5b220756)) {
-            if (var_5b220756 == 3) {
+        killstreakslot = level.var_b84cb28e[eventstruct.intpayload];
+        if (isdefined(killstreakslot)) {
+            if (killstreakslot == 3) {
                 if (isdefined(self.pers[#"killstreaks"])) {
                     var_2a5574a6 = self.pers[#"killstreaks"].size - 1;
                     if (var_2a5574a6 >= 0) {
@@ -108,7 +108,7 @@ function private on_menu_response(eventstruct) {
                     }
                 }
             } else if (true) {
-                killstreaktype = get_by_menu_name(self.killstreak[var_5b220756]);
+                killstreaktype = get_by_menu_name(self.killstreak[killstreakslot]);
                 killstreakweapon = get_killstreak_weapon(killstreaktype);
                 self switchtoweapon(killstreakweapon);
             }
@@ -121,8 +121,8 @@ function private on_menu_response(eventstruct) {
         var_b133a8aa = getscriptbundle(var_180d3406[eventstruct.intpayload]);
         killstreakbundle = getscriptbundle(var_b133a8aa.killstreakbundle);
         if (isdefined(killstreakbundle)) {
-            var_18caa97d = getitemindexfromref(var_b133a8aa.unlockableitem);
-            iteminfo = getunlockableiteminfofromindex(var_18caa97d, 0);
+            unlockableindex = getitemindexfromref(var_b133a8aa.unlockableitem);
+            iteminfo = getunlockableiteminfofromindex(unlockableindex, 0);
             if (true) {
                 self give(killstreakbundle.var_d3413870);
                 self switchtoweapon(killstreakbundle.ksweapon);

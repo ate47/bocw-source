@@ -79,7 +79,7 @@ function function_b8e86206() {
     self.should_zigzag = 0;
     self.ai.var_870d0893 = 1;
     self.var_f7c8ccf5 = &function_f7c8ccf5;
-    self.var_b3c613a7 = [4:2, 3:2, 2:1.5, 1:1.5, 0:1];
+    self.var_b3c613a7 = [1, 1.5, 1.5, 2, 2];
     self.var_414bc881 = 0.5;
     self.var_97ca51c7 = 2;
     self.var_5e55975f = &namespace_e292b080::zombieshouldmelee;
@@ -125,7 +125,7 @@ function function_3076443(*params) {
 // Size: 0x314
 function function_8d5f13fa() {
     self.fovcosine = 0.5;
-    self.maxsightdistsqrd = function_a3f6cdac(900);
+    self.maxsightdistsqrd = sqr(900);
     self.has_awareness = 1;
     self.ignorelaststandplayers = 1;
     self.var_1267fdea = 1;
@@ -149,7 +149,7 @@ function function_8d5f13fa() {
 function function_65f28890(entity) {
     entity setblackboardattribute("_locomotion_speed", "locomotion_speed_walk");
     entity.fovcosine = 0.5;
-    entity.maxsightdistsqrd = function_a3f6cdac(1000);
+    entity.maxsightdistsqrd = sqr(1000);
     entity.var_1267fdea = 0;
     awareness::function_9c9d96b5(entity);
 }
@@ -160,7 +160,7 @@ function function_65f28890(entity) {
 // Size: 0x5c
 function function_64072d21(entity) {
     entity.fovcosine = 0;
-    entity.maxsightdistsqrd = function_a3f6cdac(1800);
+    entity.maxsightdistsqrd = sqr(1800);
     entity.var_1267fdea = 0;
     awareness::function_b41f0471(entity);
 }
@@ -187,10 +187,10 @@ function private function_cdbe8d0a(entity) {
 // Size: 0xc4
 function function_43c21e81(entity) {
     entity.fovcosine = 0;
-    entity.maxsightdistsqrd = function_a3f6cdac(3000);
+    entity.maxsightdistsqrd = sqr(3000);
     entity.var_1267fdea = 0;
     entity setblackboardattribute("_locomotion_speed", "locomotion_speed_run");
-    entity.maxsightdistsqrd = function_a3f6cdac(3000);
+    entity.maxsightdistsqrd = sqr(3000);
     entity.var_972b23bb = 1;
     zm_ai_utility::function_4d22f6d1(entity);
     awareness::function_978025e4(entity);
@@ -249,7 +249,7 @@ function function_3715dbff(entity) {
 // Checksum 0xe20f9f68, Offset: 0x1658
 // Size: 0x9c
 function function_dca46c2e(entity) {
-    entity.maxsightdistsqrd = function_a3f6cdac(900);
+    entity.maxsightdistsqrd = sqr(900);
     entity.var_972b23bb = undefined;
     if (isdefined(entity.cluster) && entity.cluster.status === 0) {
         entity callback::callback(#"hash_10ab46b52df7967a");
@@ -272,11 +272,11 @@ function function_3a6dfa8b(entity) {
     var_1f1d655 = vectortoangles(entity.origin - entity.favoriteenemy.origin)[1];
     var_8daf3ac3 = 300;
     var_5c85bc30 = [];
-    var_6f9adfe4 = [1:-30, 0:30];
-    foreach (angle in var_6f9adfe4) {
+    angle_offsets = [30, -30];
+    foreach (angle in angle_offsets) {
         var_43ed722a = absangleclamp360(var_1f1d655 + angle);
-        var_dfa014f8 = anglestoforward((0, var_43ed722a, 0));
-        target_pos = enemy.origin + var_dfa014f8 * var_8daf3ac3;
+        target_vec = anglestoforward((0, var_43ed722a, 0));
+        target_pos = enemy.origin + target_vec * var_8daf3ac3;
         var_c38ec8b1 = getclosestpointonnavmesh(target_pos, 64, entity getpathfindingradius());
         if (isdefined(var_c38ec8b1)) {
             var_5c85bc30[var_5c85bc30.size] = var_c38ec8b1;
@@ -315,9 +315,9 @@ function function_3a6dfa8b(entity) {
         #/
         var_3393a039 = 2147483647;
         foreach (pos in var_5c85bc30) {
-            var_629011b4 = distancesquared(var_ba9c64fa, pos);
-            if (var_629011b4 < var_3393a039) {
-                var_3393a039 = var_629011b4;
+            dist_sqr = distancesquared(var_ba9c64fa, pos);
+            if (dist_sqr < var_3393a039) {
+                var_3393a039 = dist_sqr;
                 var_e3a26bf0 = pos;
             }
         }
@@ -347,7 +347,7 @@ function function_6e7d7d1(entity) {
     if (isdefined(entity.favoriteenemy)) {
         goalinfo = entity function_4794d6a3();
         var_127a38a7 = distancesquared(goalinfo.goalpos, entity.origin);
-        if (!namespace_3444cb7b::mechzisinsafezone(entity) || goalinfo.isatgoal || var_127a38a7 < function_a3f6cdac(64)) {
+        if (!namespace_3444cb7b::mechzisinsafezone(entity) || goalinfo.isatgoal || var_127a38a7 < sqr(64)) {
             awareness::set_state(entity, #"chase");
         }
     }
@@ -410,8 +410,8 @@ function function_d3f3bff7(params) {
 // Size: 0x100
 function function_a84a928b(*params) {
     awareness::resume(self);
-    var_8e1582ca = getentitiesinradius(self.origin, self getpathfindingradius() * 3, 15);
-    foreach (zombie in var_8e1582ca) {
+    nearby_zombies = getentitiesinradius(self.origin, self getpathfindingradius() * 3, 15);
+    foreach (zombie in nearby_zombies) {
         if (zombie.archetype == #"zombie") {
             zombie zombie_utility::setup_zombie_knockdown(self);
         }

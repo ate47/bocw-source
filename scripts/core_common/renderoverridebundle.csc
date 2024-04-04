@@ -13,15 +13,15 @@
 // Checksum 0xc3e2e290, Offset: 0x128
 // Size: 0x34
 function private autoexec __init__system__() {
-    system::register("renderoverridebundle", &function_70a657d8, undefined, undefined, undefined);
+    system::register("renderoverridebundle", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace renderoverridebundle/renderoverridebundle
 // Params 0, eflags: 0x6 linked
 // Checksum 0x789efe5a, Offset: 0x168
 // Size: 0x134
-function private function_70a657d8() {
-    level.renderoverridebundle = {#var_383fe4d6:[], #local_clients:[]};
+function private preinit() {
+    level.renderoverridebundle = {#local_clients:[], #var_383fe4d6:[]};
     callback::on_localclient_connect(&function_d7ae6bbb);
     function_f72f089c(#"hash_ebb37dab2ee0ae3", sessionmodeiscampaigngame() ? #"rob_sonar_set_friendlyequip_cp" : #"rob_sonar_set_friendlyequip_mp", &function_6803f977);
     function_f72f089c(#"hash_2476e7ae62469f70", #"hash_39109749d54991e4", &function_9216f2c3);
@@ -78,7 +78,7 @@ function function_f72f089c(var_166900a8, bundle, validity_func, var_35a2c593, de
             assert(!function_25996839(var_166900a8, bundle, validity_func, var_35a2c593));
         #/
     #/
-    level.renderoverridebundle.var_383fe4d6[var_166900a8] = {#force_kill:force_kill, #default_bundle:default_bundle, #var_1a5b7293:0, #var_35a2c593:var_35a2c593, #validity_func:validity_func, #bundle:bundle};
+    level.renderoverridebundle.var_383fe4d6[var_166900a8] = {#bundle:bundle, #validity_func:validity_func, #var_35a2c593:var_35a2c593, #var_1a5b7293:0, #default_bundle:default_bundle, #force_kill:force_kill};
 }
 
 // Namespace renderoverridebundle/renderoverridebundle

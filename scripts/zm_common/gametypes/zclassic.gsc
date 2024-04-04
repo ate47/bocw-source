@@ -90,9 +90,9 @@ function function_acafdd66() {
         if (!isdefined(self.v_zombie_custom_goal_pos) && !is_true(self.var_674fb2e2)) {
             spawn_point = self.spawn_point;
             if (!isdefined(spawn_point)) {
-                var_ae951ce9 = struct::get_array("spawn_location", "script_noteworthy");
-                if (isdefined(var_ae951ce9)) {
-                    spawn_point = arraygetclosest(self.origin, var_ae951ce9);
+                all_spawn_locations = struct::get_array("spawn_location", "script_noteworthy");
+                if (isdefined(all_spawn_locations)) {
+                    spawn_point = arraygetclosest(self.origin, all_spawn_locations);
                 }
             }
             if (isdefined(spawn_point)) {
@@ -171,8 +171,8 @@ function onprecachegametype() {
 // Checksum 0x7fc2895a, Offset: 0x8a0
 // Size: 0x1a4
 function onstartgametype() {
-    zm_behavior::function_70a657d8();
-    zm_cleanup::function_70a657d8();
+    zm_behavior::preinit();
+    zm_cleanup::preinit();
     zm_spawner::init();
     zm_behavior::postinit();
     zm_cleanup::postinit();
@@ -251,7 +251,7 @@ function private intro_cinematic() {
 function function_a24232f4() {
     level flag::wait_till_all(array(#"gameplay_started"));
     level thread namespace_591b4396::function_5a22584f();
-    foreach (destination in level.var_7d45d0d4.var_d60029a6) {
+    foreach (destination in level.contentmanager.var_d60029a6) {
         level thread namespace_591b4396::function_7c05a985(destination);
     }
 }
@@ -436,9 +436,9 @@ function function_1c2ce6a() {
             player.var_fdf8af77 = player.origin;
             player.var_d386fe5 = gettime();
             var_5a5450d4 = arraygetclosest(player.origin, level.var_9678e62d);
-            var_aed141de = function_d6eaf8b0(player getvelocity()) <= 0 && !ispointonnavmesh(player.origin);
+            var_aed141de = length2dsquared(player getvelocity()) <= 0 && !ispointonnavmesh(player.origin);
             var_f02558eb = var_b1812947 || var_aed141de ? 300 : 50;
-            var_f2587e64 = isdefined(var_5a5450d4) && distancesquared(player.origin, var_5a5450d4) < function_a3f6cdac(var_f02558eb);
+            var_f2587e64 = isdefined(var_5a5450d4) && distancesquared(player.origin, var_5a5450d4) < sqr(var_f02558eb);
             var_10f6803c = getdvarfloat(#"hash_1b38b564a55805d7", 60);
             if (level.var_9678e62d.size > 0) {
                 var_10f6803c = var_10f6803c * 0.5;
@@ -448,7 +448,7 @@ function function_1c2ce6a() {
                     if (!is_true(var_f2587e64)) {
                         level.var_9678e62d[level.var_9678e62d.size] = player.origin;
                     }
-                    telemetry::function_18135b72(#"hash_42d03088c9b0534b", {#spot:player.origin, #player:player});
+                    telemetry::function_18135b72(#"hash_42d03088c9b0534b", {#player:player, #spot:player.origin});
                     closest_point = getclosestpointonnavmesh(player.origin, 100);
                     if (isdefined(closest_point) && zm_utility::check_point_in_playable_area(closest_point)) {
                         player dontinterpolate();

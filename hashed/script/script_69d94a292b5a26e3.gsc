@@ -17,14 +17,14 @@
 // Checksum 0x86b9ce02, Offset: 0x138
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_54149d856843e31a", &function_70a657d8, undefined, &function_4df027f2, undefined);
+    system::register(#"hash_54149d856843e31a", &preinit, undefined, &function_4df027f2, undefined);
 }
 
 // Namespace namespace_cd6bd9f/namespace_cd6bd9f
 // Params 0, eflags: 0x6 linked
 // Checksum 0x44fde4af, Offset: 0x188
 // Size: 0x64
-function private function_70a657d8() {
+function private preinit() {
     spawner::add_archetype_spawn_function(#"hash_7c0d83ac1e845ac2", &function_8efe7666);
     spawner::function_89a2cd87(#"hash_7c0d83ac1e845ac2", &function_37804710);
 }
@@ -57,7 +57,7 @@ function function_8efe7666() {
     } else {
         self.var_813a079f = &function_ccdf9d44;
     }
-    self.var_b3c613a7 = [4:2, 3:2, 2:1.5, 1:1.5, 0:1];
+    self.var_b3c613a7 = [1, 1.5, 1.5, 2, 2];
     self.var_414bc881 = 1;
     self.var_97ca51c7 = 3;
 }
@@ -193,7 +193,7 @@ function private setup_awareness(entity) {
 // Size: 0x5c
 function private function_7cdb2c4c(entity) {
     self.fovcosine = 0.5;
-    self.maxsightdistsqrd = function_a3f6cdac(1000);
+    self.maxsightdistsqrd = sqr(1000);
     self.var_1267fdea = 0;
     awareness::function_9c9d96b5(entity);
 }
@@ -204,7 +204,7 @@ function private function_7cdb2c4c(entity) {
 // Size: 0x5c
 function private function_ba66485e(entity) {
     self.fovcosine = 0;
-    self.maxsightdistsqrd = function_a3f6cdac(1800);
+    self.maxsightdistsqrd = sqr(1800);
     self.var_1267fdea = 0;
     awareness::function_b41f0471(entity);
 }
@@ -215,7 +215,7 @@ function private function_ba66485e(entity) {
 // Size: 0x84
 function private function_1534f0a3(entity) {
     self.fovcosine = 0;
-    self.maxsightdistsqrd = function_a3f6cdac(3000);
+    self.maxsightdistsqrd = sqr(3000);
     self.var_1267fdea = 0;
     self.ai.var_8c8fb85a = 1;
     self thread function_6d368182();

@@ -97,7 +97,7 @@ function private function_329adc0f(dogtag) {
             objective_delete(dogtag.objectiveid);
         }
         if (isdefined(dogtag.var_2581d0d)) {
-            dogtag.var_2581d0d function_cb48cddd();
+            dogtag.var_2581d0d deletedelay();
         }
         dogtag notify(#"deleted");
         dogtag gameobjects::destroy_object(1);
@@ -297,7 +297,7 @@ function onuse(player) {
         if (!util::function_fbce7263(player.team, self.victimteam)) {
             player stats::function_dad108fa(#"killsdenied", 1);
             player recordgameevent("return");
-            level thread telemetry::function_18135b72(#"hash_540cddd637f71a5e", {#eventtype:#"return", #player:player});
+            level thread telemetry::function_18135b72(#"hash_540cddd637f71a5e", {#player:player, #eventtype:#"return"});
             event = "kill_denied";
             if (self.victim == player) {
                 if (self.tacinsert == 0) {
@@ -317,7 +317,7 @@ function onuse(player) {
             }
             player stats::function_dad108fa(#"killsconfirmed", 1);
             player recordgameevent("capture");
-            level thread telemetry::function_18135b72(#"hash_540cddd637f71a5e", {#eventtype:#"capture", #player:player});
+            level thread telemetry::function_18135b72(#"hash_540cddd637f71a5e", {#player:player, #eventtype:#"capture"});
             if (isdefined(self.attacker) && self.attacker != player && !util::function_fbce7263(player.team, self.attacker.team)) {
                 self.attacker onpickup("teammate_kill_confirmed");
             }
@@ -352,7 +352,7 @@ function reset_tags() {
     }
     self clientfield::set("dogtag_flag", 0);
     if (isdefined(self.var_2581d0d)) {
-        self.var_2581d0d function_cb48cddd();
+        self.var_2581d0d deletedelay();
         self.var_2581d0d = undefined;
     }
     if (isdefined(self.objectiveid)) {

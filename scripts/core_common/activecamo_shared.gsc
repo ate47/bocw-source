@@ -13,14 +13,14 @@
 // Checksum 0x895f032d, Offset: 0xf0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"activecamo", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"activecamo", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace activecamo/activecamo_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x3dbfc5b, Offset: 0x138
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_loadout(&on_player_loadout);
     callback::on_weapon_change(&on_weapon_change);
     /#
@@ -150,7 +150,7 @@ function function_8a6ced15(var_f4eb4a50) {
         var_13949c61.istiered = var_f4eb4a50.istiered;
         var_13949c61.var_ed6f91d5 = var_f4eb4a50.var_ed6f91d5;
         var_13949c61.var_bd863267 = var_f4eb4a50.var_bd863267;
-        var_13949c61.var_26c1d493 = var_f4eb4a50.var_26c1d493;
+        var_13949c61.istimer = var_f4eb4a50.istimer;
         var_13949c61.var_fa0465c6 = var_f4eb4a50.var_fa0465c6;
         var_13949c61.var_2034fabe = var_f4eb4a50.var_2034fabe;
         var_13949c61.var_9ae5a2b8 = var_f4eb4a50.var_9ae5a2b8;
@@ -982,7 +982,7 @@ function function_50d79d31(root, index) {
         if (!isdefined(index)) {
             index = 0;
         }
-        stages = [9:9, 8:8, 7:7, 6:6, 5:5, 4:4, 3:3, 2:2, 1:1, 0:0];
+        stages = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
         foreach (stage in stages) {
             cmd = var_82c49718 + stage + "<unknown string>" + stage + "<unknown string>" + index + "<unknown string>";
             thread add_debug_command(cmd);

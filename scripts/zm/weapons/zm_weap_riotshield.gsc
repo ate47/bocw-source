@@ -26,14 +26,14 @@
 // Checksum 0xc067d361, Offset: 0x218
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_equip_riotshield", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_equip_riotshield", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace riotshield/zm_weap_riotshield
 // Params 0, eflags: 0x4
 // Checksum 0x62be2743, Offset: 0x270
 // Size: 0x454
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.weaponriotshield)) {
         level.weaponriotshield = getweapon(#"riotshield");
     }
@@ -529,7 +529,7 @@ function riotshield_get_enemies_in_range(riotshield_knockdown_range, riotshield_
             }
             break;
         case #"special":
-        case #"hash_72d4f2ad2e333eb4":
+        case #"elite":
             if (self hasperk(#"specialty_mod_shield")) {
                 level.riotshield_knockdown_enemies[level.riotshield_knockdown_enemies.size] = e_target;
                 level.riotshield_knockdown_gib[level.riotshield_knockdown_gib.size] = 0;
@@ -593,7 +593,7 @@ function riotshield_melee(*weapon, riotshield_knockdown_range, riotshield_gib_ra
         switch (ai_enemy.var_6f84b820) {
         case #"boss":
         case #"special":
-        case #"hash_72d4f2ad2e333eb4":
+        case #"elite":
             var_d3f92d4d = zombie_utility::function_d2dfacfd(#"hash_bfdf728041b626a");
             break;
         default:

@@ -6,7 +6,7 @@
 #using scripts\core_common\spectating.gsc;
 #using scripts\core_common\player\player_stats.gsc;
 #using scripts\core_common\persistence_shared.gsc;
-#using script_32c8b5b0eb2854f3;
+#using scripts\core_common\gamestate_util.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
 #using scripts\core_common\struct.gsc;
 
@@ -17,14 +17,14 @@
 // Checksum 0x42102778, Offset: 0xf8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"teams", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"teams", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace teams/teams
 // Params 0, eflags: 0x6 linked
 // Checksum 0xbe197cd7, Offset: 0x140
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&init);
     level.getenemyteam = &getenemyteam;
     level.use_team_based_logic_for_locking_on = 1;

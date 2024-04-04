@@ -17,14 +17,14 @@
 // Checksum 0x66dd0d8f, Offset: 0x140
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_grappler", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_grappler", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_grappler/zm_grappler
 // Params 0, eflags: 0x4
 // Checksum 0xad033a47, Offset: 0x198
 // Size: 0xc4
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "grappler_beam_source", 1, getminbitcountfornum(5), "int");
     clientfield::register("scriptmover", "grappler_beam_target", 1, getminbitcountfornum(5), "int");
     level.grapple_ids = [];

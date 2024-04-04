@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_521cab335b496d29;
+#using scripts\cp_common\ui.gsc;
 #using scripts\cp_common\challenges.gsc;
 #using script_32399001bdb550da;
 #using scripts\cp_common\skipto.gsc;
@@ -24,7 +24,7 @@
 // Size: 0x3c
 function private autoexec __init__system__() {
     /#
-        register(#"devgui", &function_70a657d8, undefined, undefined, undefined);
+        register(#"devgui", &preinit, undefined, undefined, undefined);
     #/
 }
 
@@ -32,7 +32,7 @@ function private autoexec __init__system__() {
 // Params 0, eflags: 0x4
 // Checksum 0xc695e607, Offset: 0x148
 // Size: 0x25c
-function private function_70a657d8() {
+function private preinit() {
     /#
         setdvar(#"hash_3171105f4e51bc2f", "<unknown string>");
         setdvar(#"hash_3fbd408cc23e2ec5", "<unknown string>");
@@ -919,14 +919,14 @@ function function_848084d4(var_b0f63180) {
         }
         if (var_aa9cebb1 == 0) {
             iprintlnbold("<unknown string>" + var_b0f63180 + "<unknown string>" + split[0]);
-            var_af5392ee = "<unknown string>";
+            attachmentsstring = "<unknown string>";
             if (currentweapon.supportedattachments.size == 0) {
-                var_af5392ee = var_af5392ee + "<unknown string>";
+                attachmentsstring = attachmentsstring + "<unknown string>";
             }
             foreach (attachment in currentweapon.supportedattachments) {
-                var_af5392ee = var_af5392ee + "<unknown string>" + attachment;
+                attachmentsstring = attachmentsstring + "<unknown string>" + attachment;
             }
-            iprintlnbold(var_af5392ee);
+            iprintlnbold(attachmentsstring);
             return;
         }
         foreach (currentattachment in split) {

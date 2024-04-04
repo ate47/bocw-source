@@ -8,7 +8,7 @@
 // Checksum 0xd74c6d3b, Offset: 0x88
 // Size: 0xf4
 function function_93c5a24() {
-    if (!isdefined(level.var_f804b293)) {
+    if (!isdefined(level.hotzones)) {
         return;
     }
     if (!getdvarint(#"hash_1429e62553e102ab", 0)) {
@@ -19,7 +19,7 @@ function function_93c5a24() {
             return;
         }
     }
-    level.var_2c56b3ec = array::random(level.var_f804b293);
+    level.var_2c56b3ec = array::random(level.hotzones);
     /#
         level thread function_ace23f69(level.var_2c56b3ec.origin);
     #/

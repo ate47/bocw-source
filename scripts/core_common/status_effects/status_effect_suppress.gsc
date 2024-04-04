@@ -11,14 +11,14 @@
 // Checksum 0x7c0783bc, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"status_effect_suppress", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"status_effect_suppress", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace status_effect_suppress/status_effect_suppress
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6d1bf79c, Offset: 0x120
 // Size: 0xc4
-function private function_70a657d8() {
+function private preinit() {
     status_effect::register_status_effect_callback_apply(4, &suppress_apply);
     status_effect::function_5bae5120(4, &registersamanthas_bundle);
     status_effect::function_6f4eaf88(getstatuseffect("suppress"));

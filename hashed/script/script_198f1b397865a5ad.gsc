@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_85cd2e9a28ea8a1;
-#using script_5552bd756afee443;
+#using scripts\cp_common\snd_utility.gsc;
 #using script_3dc93ca9902a9cda;
 #using scripts\core_common\util_shared.gsc;
 #using scripts\core_common\math_shared.gsc;
@@ -35,14 +35,14 @@ function private function_20b6bc92() {
 // Params 12, eflags: 0x0
 // Checksum 0xbdb47914, Offset: 0x230
 // Size: 0x3f0
-function function_b009fcc9(x, y, w, h, target, callbackfunc, callbackdata, var_b1332cff, backgroundcolor, backgroundalpha, var_a2dbe44f, var_6a3d8755) {
-    var_b1332cff = function_ea2f17d1(var_b1332cff, 0);
+function function_b009fcc9(x, y, w, h, target, callbackfunc, callbackdata, isvertical, backgroundcolor, backgroundalpha, var_a2dbe44f, var_6a3d8755) {
+    isvertical = function_ea2f17d1(isvertical, 0);
     backgroundcolor = function_ea2f17d1(backgroundcolor, 0.72974);
     backgroundalpha = function_ea2f17d1(backgroundalpha, 0.72974);
     var_a2dbe44f = function_ea2f17d1(var_a2dbe44f, (0, 1, 0));
     var_6a3d8755 = function_ea2f17d1(var_6a3d8755, 0.72974);
     var_dfd5412c = spawnstruct();
-    var_dfd5412c.var_b1332cff = var_b1332cff;
+    var_dfd5412c.isvertical = isvertical;
     var_dfd5412c.var_36dfeb2e = array(x, y);
     var_dfd5412c.screensize = array(w, h);
     var_dfd5412c.var_ca1ec566 = function_da7b7c0e(array(x, y));
@@ -67,7 +67,7 @@ function function_b009fcc9(x, y, w, h, target, callbackfunc, callbackdata, var_b
         hud setshader(var_fc6c677b, var_dfd5412c.var_708cbe39[0], var_dfd5412c.var_708cbe39[1]);
         var_dfd5412c.var_8c127264 = hud;
     #/
-    var_dfd5412c.var_b06d41c8 = undefined;
+    var_dfd5412c.valuehud = undefined;
     if (!isdefined(level.var_a00c303b)) {
         level.var_a00c303b = spawnstruct();
         level.var_a00c303b.objects = array();
@@ -85,11 +85,11 @@ function function_b009fcc9(x, y, w, h, target, callbackfunc, callbackdata, var_b
 // Size: 0xe0
 function function_9b4ec5ed(var_dfd5412c) {
     arrayremovevalue(level.var_a00c303b.objects, var_dfd5412c, 1);
-    if (isdefined(var_dfd5412c.var_b06d41c8)) {
+    if (isdefined(var_dfd5412c.valuehud)) {
         /#
-            var_dfd5412c.var_b06d41c8 destroy();
+            var_dfd5412c.valuehud destroy();
         #/
-        var_dfd5412c.var_b06d41c8 = undefined;
+        var_dfd5412c.valuehud = undefined;
     }
     if (isdefined(var_dfd5412c.var_8c127264)) {
         /#
@@ -115,17 +115,17 @@ function function_fee448d5(var_dfd5412c, value) {
     value = math::clamp(float(value), 0, 1);
     var_dfd5412c.var_c53c088d = now;
     if (value <= 0) {
-        if (isdefined(var_dfd5412c.var_b06d41c8)) {
+        if (isdefined(var_dfd5412c.valuehud)) {
             /#
-                var_dfd5412c.var_b06d41c8 destroy();
+                var_dfd5412c.valuehud destroy();
             #/
-            var_dfd5412c.var_b06d41c8 = undefined;
+            var_dfd5412c.valuehud = undefined;
         }
         return;
     }
     var_ca1ec566 = array(var_dfd5412c.var_ca1ec566[0] + 1, var_dfd5412c.var_ca1ec566[1] + 1);
     var_708cbe39 = var_dfd5412c.var_708cbe39;
-    if (var_dfd5412c.var_b1332cff == 1) {
+    if (var_dfd5412c.isvertical == 1) {
         height = var_dfd5412c.var_708cbe39[1] - 2;
         height = height * value;
         var_708cbe39 = array(var_dfd5412c.var_708cbe39[0] - 2, int(ceil(height)));
@@ -138,26 +138,26 @@ function function_fee448d5(var_dfd5412c, value) {
     if (var_708cbe39[0] <= 0 || var_708cbe39[1] <= 0) {
         return;
     }
-    if (!isdefined(var_dfd5412c.var_b06d41c8)) {
+    if (!isdefined(var_dfd5412c.valuehud)) {
         /#
             hud = newdebughudelem();
-            var_dfd5412c.var_b06d41c8 = hud;
+            var_dfd5412c.valuehud = hud;
         #/
     }
     /#
-        assert(isdefined(var_dfd5412c.var_b06d41c8));
+        assert(isdefined(var_dfd5412c.valuehud));
     #/
-    if (isdefined(var_dfd5412c.var_b06d41c8)) {
+    if (isdefined(var_dfd5412c.valuehud)) {
         var_fc6c677b = "white";
         /#
-            var_dfd5412c.var_b06d41c8.x = var_ca1ec566[0];
-            var_dfd5412c.var_b06d41c8.y = var_ca1ec566[1];
-            var_dfd5412c.var_b06d41c8.alignx = "<unknown string>";
-            var_dfd5412c.var_b06d41c8.color = var_dfd5412c.var_4a70ec60;
-            var_dfd5412c.var_b06d41c8.alpha = var_dfd5412c.var_e2c0fdcb;
-            var_dfd5412c.var_b06d41c8.foreground = 0;
-            var_dfd5412c.var_b06d41c8.sort = 1;
-            var_dfd5412c.var_b06d41c8 setshader(var_fc6c677b, var_708cbe39[0], var_708cbe39[1]);
+            var_dfd5412c.valuehud.x = var_ca1ec566[0];
+            var_dfd5412c.valuehud.y = var_ca1ec566[1];
+            var_dfd5412c.valuehud.alignx = "<unknown string>";
+            var_dfd5412c.valuehud.color = var_dfd5412c.var_4a70ec60;
+            var_dfd5412c.valuehud.alpha = var_dfd5412c.var_e2c0fdcb;
+            var_dfd5412c.valuehud.foreground = 0;
+            var_dfd5412c.valuehud.sort = 1;
+            var_dfd5412c.valuehud setshader(var_fc6c677b, var_708cbe39[0], var_708cbe39[1]);
         #/
     }
 }
@@ -241,8 +241,8 @@ function private function_2f282ca2(posx, posy, text, color, alpha, scale, durati
     var_38c41a5e = var_1790a507[0];
     var_c13d121d = var_1790a507[1];
     var_60d4d877 = var_38c41a5e / var_c13d121d;
-    var_811b520c = -0.5 * (var_a265fbc6 * var_60d4d877 - var_51d80f45);
-    var_11ea799a = posx / var_38c41a5e * var_51d80f45 + (1 - posx / var_38c41a5e * 0.5) * var_811b520c;
+    widthoffset = -0.5 * (var_a265fbc6 * var_60d4d877 - var_51d80f45);
+    var_11ea799a = posx / var_38c41a5e * var_51d80f45 + (1 - posx / var_38c41a5e * 0.5) * widthoffset;
     var_39fdd05 = posy / var_c13d121d * var_a265fbc6;
     if (isdefined(level.var_9c2f3e27) == 0) {
         level.var_9c2f3e27 = array();
@@ -263,7 +263,7 @@ function private function_2f282ca2(posx, posy, text, color, alpha, scale, durati
         hud.vertalign = "<unknown string>";
         hud.xoffset = 0;
         hud.yoffset = 0;
-        hud.var_531a3195 = 0;
+        hud.xpadding = 0;
         hud.ypadding = 0;
     #/
 }

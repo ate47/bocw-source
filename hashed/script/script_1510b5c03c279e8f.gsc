@@ -87,7 +87,7 @@ function function_66da4f00() {
     self setneargoalnotifydist(40);
     self.goalradius = 60;
     self.goalheight = 128;
-    self.var_651e2d9b = 0.2;
+    self.showdelay = 0.2;
     self setgoal(self.origin, 0, 1);
     self force_get_enemies();
     self.overridevehicledamage = &function_725d9b34;
@@ -318,7 +318,7 @@ function function_aea2bda3() {
                 self vehlookat(self.enemy);
                 self turretsettarget(0, self.enemy);
             }
-            if (distance2dsquared(self.origin, self.enemy.origin) < function_a3f6cdac(self.settings.engagementdistmax * 1.5) && util::iscooldownready("rocket") && self cansee(self.enemy)) {
+            if (distance2dsquared(self.origin, self.enemy.origin) < sqr(self.settings.engagementdistmax * 1.5) && util::iscooldownready("rocket") && self cansee(self.enemy)) {
                 self function_c7208b7d(self.enemy);
                 wait(0.5);
             }
@@ -447,7 +447,7 @@ function function_aebf9e0f(*params) {
         self.foundpath = 0;
         targetpos = function_4417a164();
         if (isdefined(targetpos)) {
-            if (distancesquared(self.origin, targetpos) > function_a3f6cdac(1300) && self isposinclaimedlocation(targetpos)) {
+            if (distancesquared(self.origin, targetpos) > sqr(1300) && self isposinclaimedlocation(targetpos)) {
                 queryresult = positionquery_source_navigation(targetpos, 0, self.settings.max_move_dist, self.settings.max_move_dist, self.radius, self);
                 positionquery_filter_inclaimedlocation(queryresult, self.enemy);
                 best_point = undefined;
@@ -549,7 +549,7 @@ function function_8a699cff() {
             self vehlookat(self.enemy);
             self turretsettarget(0, self.enemy);
         }
-        if (distance2dsquared(self.origin, self.enemy.origin) < function_a3f6cdac(48) && self cansee(self.enemy)) {
+        if (distance2dsquared(self.origin, self.enemy.origin) < sqr(48) && self cansee(self.enemy)) {
             if (bullettracepassed(self.origin + vectorscale((0, 0, 1), 10), self.enemy.origin + vectorscale((0, 0, 1), 20), 0, self, self.enemy, 0, 1)) {
                 self function_f7dc8837(self.enemy);
                 wait(0.5);
@@ -571,7 +571,7 @@ function function_f7dc8837(enemy) {
     timedout = undefined;
     timedout = self waittilltimeout(3, #"hash_30146e30dbd0d26b");
     if (timedout._notify !== #"timeout") {
-        if (isalive(enemy) && distance2dsquared(self.origin, enemy.origin) < function_a3f6cdac(60)) {
+        if (isalive(enemy) && distance2dsquared(self.origin, enemy.origin) < sqr(60)) {
             enemy dodamage(100, self.origin, self, self);
         }
         self vehicle_ai::waittill_asm_complete("melee@stationary", 2);
@@ -591,7 +591,7 @@ function function_e32c6513(*from_state, *to_state, *connection) {
     if (!util::iscooldownready("state_change")) {
         return false;
     }
-    if (isalive(self.enemy) && distance2dsquared(self.origin, self.enemy.origin) > function_a3f6cdac(200)) {
+    if (isalive(self.enemy) && distance2dsquared(self.origin, self.enemy.origin) > sqr(200)) {
         return true;
     }
     if (!isdefined(self.enemy)) {
@@ -613,7 +613,7 @@ function prevent_stuck() {
     count = 0;
     previous_origin = undefined;
     while (true) {
-        if (isdefined(previous_origin) && distancesquared(previous_origin, self.origin) < function_a3f6cdac(0.1)) {
+        if (isdefined(previous_origin) && distancesquared(previous_origin, self.origin) < sqr(0.1)) {
             count++;
         } else {
             previous_origin = self.origin;
@@ -649,20 +649,20 @@ function function_4417a164() {
         if (isdefined(self.enemy) && issentient(self.enemy)) {
             self setpersonalthreatbias(self.enemy, -2000, 5);
         }
-        if (isdefined(self.current_pathto_pos) && distancesquared(self.origin, self.current_pathto_pos) > function_a3f6cdac(60)) {
+        if (isdefined(self.current_pathto_pos) && distancesquared(self.origin, self.current_pathto_pos) > sqr(60)) {
             return self.current_pathto_pos;
         } else {
             return undefined;
         }
     } else if (isdefined(self.enemy) && issentient(self.enemy)) {
-        if (distancesquared(target_pos, target_pos_onnavmesh) > function_a3f6cdac(self.settings.detonation_distance * 0.9)) {
+        if (distancesquared(target_pos, target_pos_onnavmesh) > sqr(self.settings.detonation_distance * 0.9)) {
             self setpersonalthreatbias(self.enemy, -2000, 5);
         }
     }
     if (isdefined(enemy) && isplayer(enemy)) {
         enemy_vel_offset = enemy getvelocity() * 0.5;
         enemy_look_dir_offset = anglestoforward(enemy.angles);
-        if (distance2dsquared(self.origin, enemy.origin) > function_a3f6cdac(500)) {
+        if (distance2dsquared(self.origin, enemy.origin) > sqr(500)) {
             enemy_look_dir_offset = enemy_look_dir_offset * 110;
         } else {
             enemy_look_dir_offset = enemy_look_dir_offset * 35;
@@ -694,19 +694,19 @@ function function_b38859f() {
     wait(0.1);
     while (true) {
         if (isdefined(self.current_pathto_pos)) {
-            if (distance2dsquared(self.current_pathto_pos, self.goalpos) > function_a3f6cdac(self.goalradius)) {
+            if (distance2dsquared(self.current_pathto_pos, self.goalpos) > sqr(self.goalradius)) {
                 wait(0.5);
                 self notify(#"near_goal");
             }
             targetpos = function_4417a164();
             if (isdefined(targetpos)) {
-                if (distancesquared(self.origin, targetpos) > function_a3f6cdac(1000)) {
+                if (distancesquared(self.origin, targetpos) > sqr(1000)) {
                     repath_range = self.settings.repath_range * 2;
                     wait(0.1);
                 } else {
                     repath_range = self.settings.repath_range;
                 }
-                if (distance2dsquared(self.current_pathto_pos, targetpos) > function_a3f6cdac(repath_range)) {
+                if (distance2dsquared(self.current_pathto_pos, targetpos) > sqr(repath_range)) {
                     self notify(#"near_goal");
                 }
             }

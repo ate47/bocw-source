@@ -7,10 +7,10 @@
 // Params 0, eflags: 0x0
 // Checksum 0xb762b4dc, Offset: 0x158
 // Size: 0x154
-function function_724788b2() {
-    level.var_eb58e006 = [];
-    foreach (callback in [3:"_idle_call_idle_func", 2:"_spawner_stealth_default", 1:"_patrol_endon_spotted_flag", 0:"_autosave_stealthcheck"]) {
-        level.var_eb58e006[callback] = &function_ac6b8fd4;
+function init_callbacks() {
+    level.global_callbacks = [];
+    foreach (callback in ["_autosave_stealthcheck", "_patrol_endon_spotted_flag", "_spawner_stealth_default", "_idle_call_idle_func"]) {
+        level.global_callbacks[callback] = &global_empty_callback;
     }
     level flag::init("stealth_spotted");
     level flag::init("stealth_enabled");
@@ -22,7 +22,7 @@ function function_724788b2() {
 // Params 5, eflags: 0x2 linked
 // Checksum 0x89b3110d, Offset: 0x2b8
 // Size: 0x4c
-function function_ac6b8fd4(*var_9b0c6de3, *var_bdadb311, *var_af6e1692, *var_193fea34, *var_b034dbb) {
+function global_empty_callback(*empty1, *empty2, *empty3, *empty4, *empty5) {
     /#
         assertmsg("<unknown string>");
     #/
@@ -32,7 +32,7 @@ function function_ac6b8fd4(*var_9b0c6de3, *var_bdadb311, *var_af6e1692, *var_193
 // Params 1, eflags: 0x2 linked
 // Checksum 0xa40133f7, Offset: 0x310
 // Size: 0xa4
-function function_1462981c(type) {
+function stealth_get_func(type) {
     if (isdefined(self.stealth) && isdefined(self.stealth.funcs) && isdefined(self.stealth.funcs[type])) {
         return self.stealth.funcs[type];
     }
@@ -46,15 +46,15 @@ function function_1462981c(type) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x6acb1ebd, Offset: 0x3c0
 // Size: 0xba
-function function_f96ed339(type, var_1a7f15c1, var_27c5b04e, var_461cecfc) {
-    func = function_1462981c(type);
+function stealth_call(type, parm1, parm2, parm3) {
+    func = stealth_get_func(type);
     if (isdefined(func)) {
-        if (isdefined(var_461cecfc)) {
-            return self [[ func ]](var_1a7f15c1, var_27c5b04e, var_461cecfc);
-        } else if (isdefined(var_27c5b04e)) {
-            return self [[ func ]](var_1a7f15c1, var_27c5b04e);
-        } else if (isdefined(var_1a7f15c1)) {
-            return self [[ func ]](var_1a7f15c1);
+        if (isdefined(parm3)) {
+            return self [[ func ]](parm1, parm2, parm3);
+        } else if (isdefined(parm2)) {
+            return self [[ func ]](parm1, parm2);
+        } else if (isdefined(parm1)) {
+            return self [[ func ]](parm1);
         } else {
             return self [[ func ]]();
         }
@@ -66,15 +66,15 @@ function function_f96ed339(type, var_1a7f15c1, var_27c5b04e, var_461cecfc) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0xbf6c9641, Offset: 0x488
 // Size: 0xba
-function function_d8eafaa4(type, var_1a7f15c1, var_27c5b04e, var_461cecfc) {
-    func = function_1462981c(type);
+function stealth_call_thread(type, parm1, parm2, parm3) {
+    func = stealth_get_func(type);
     if (isdefined(func)) {
-        if (isdefined(var_461cecfc)) {
-            return self thread [[ func ]](var_1a7f15c1, var_27c5b04e, var_461cecfc);
-        } else if (isdefined(var_27c5b04e)) {
-            return self thread [[ func ]](var_1a7f15c1, var_27c5b04e);
-        } else if (isdefined(var_1a7f15c1)) {
-            return self thread [[ func ]](var_1a7f15c1);
+        if (isdefined(parm3)) {
+            return self thread [[ func ]](parm1, parm2, parm3);
+        } else if (isdefined(parm2)) {
+            return self thread [[ func ]](parm1, parm2);
+        } else if (isdefined(parm1)) {
+            return self thread [[ func ]](parm1);
         } else {
             return self thread [[ func ]]();
         }

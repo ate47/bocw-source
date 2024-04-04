@@ -334,7 +334,7 @@ function update_last_held_weapon_timings(newtime, var_d75fdbe3 = self.currentwea
                 weaponpickedup = 1;
             }
             self stats::function_eec52333(var_d75fdbe3, #"timeused", totaltime, self.class_num, weaponpickedup);
-            level thread telemetry::function_18135b72(#"hash_b88b6d2e0028e13", {#weaponpickedup:weaponpickedup, #value:totaltime, #statname:#"timeused", #weapon:var_d75fdbe3, #player:self});
+            level thread telemetry::function_18135b72(#"hash_b88b6d2e0028e13", {#player:self, #weapon:var_d75fdbe3, #statname:#"timeused", #value:totaltime, #weaponpickedup:weaponpickedup});
             self.currentweaponstarttime = newtime;
         }
     }
@@ -594,7 +594,7 @@ function private function_6cf6f3fb(attacker, *sweapon, smeansofdeath, damage, va
             iprintlnbold("<unknown string>" + weapon.name);
         }
     #/
-    self function_9fce8ee7(item, damage, self.angles, weapon, 1, 1, smeansofdeath);
+    self dropweaponfordeathlaunch(item, damage, self.angles, weapon, 1, 1, smeansofdeath);
     drop_limited_weapon(weapon, self, item);
     self.droppeddeathweapon = 1;
     if (!isdefined(item)) {
@@ -640,12 +640,12 @@ function function_d2c66128(origin) {
     var_fbe2cce0 = 0;
     var_9b882d22 = self function_ee839fac();
     if (isdefined(var_9b882d22)) {
-        var_fbe2cce0 = distancesquared(origin, var_9b882d22.origin) < function_a3f6cdac(maxdist);
+        var_fbe2cce0 = distancesquared(origin, var_9b882d22.origin) < sqr(maxdist);
     }
     if (var_fbe2cce0) {
         objstate = 0;
         neardist = util::function_4c1656d5();
-        if (neardist < maxdist && distancesquared(origin, var_9b882d22.origin) > function_a3f6cdac(neardist)) {
+        if (neardist < maxdist && distancesquared(origin, var_9b882d22.origin) > sqr(neardist)) {
             objstate = 1;
         }
         weaponindex = 0;
@@ -851,8 +851,8 @@ function track_fire(curweapon) {
     if (isdefined(self.pickedupweapons) && isdefined(self.pickedupweapons[curweapon])) {
         weaponpickedup = 1;
     } else {
-        level thread telemetry::function_18135b72(#"hash_b88b6d2e0028e13", {#weaponpickedup:weaponpickedup, #value:shotsfired, #statname:#"shots", #weapon:curweapon, #player:self});
-        level thread telemetry::function_18135b72(#"hash_b88b6d2e0028e13", {#weaponpickedup:weaponpickedup, #value:isdefined(self.hits) ? self.hits : 0, #statname:#"hits", #weapon:curweapon, #player:self});
+        level thread telemetry::function_18135b72(#"hash_b88b6d2e0028e13", {#player:self, #weapon:curweapon, #statname:#"shots", #value:shotsfired, #weaponpickedup:weaponpickedup});
+        level thread telemetry::function_18135b72(#"hash_b88b6d2e0028e13", {#player:self, #weapon:curweapon, #statname:#"hits", #value:isdefined(self.hits) ? self.hits : 0, #weaponpickedup:weaponpickedup});
     }
     self trackweaponfirenative(curweapon, shotsfired, isdefined(self.hits) ? self.hits : 0, isdefined(self.headshothits) ? self.headshothits : 0, 1, self.class_num, weaponpickedup);
     if (isdefined(self.var_fd243db7) && isdefined(self.var_fd243db7.var_245ad74)) {
@@ -1067,7 +1067,7 @@ function function_6dafe6d6(grenade, weapon) {
     if (isdefined(weapon) && weapon.name === "eq_hawk") {
         if (isdefined(grenade)) {
             self.throwinggrenade = 0;
-            grenade function_cb48cddd();
+            grenade deletedelay();
             if (isdefined(level.hawk_settings.spawn)) {
                 self thread [[ level.hawk_settings.spawn ]]();
             }
@@ -1111,16 +1111,16 @@ function begin_grenade_tracking() {
     if (grenade util::ishacked()) {
         return;
     }
-    var_e121e24 = #"mpequipmentuses";
+    structname = #"mpequipmentuses";
     eventname = #"hash_7cbbee88c5db5494";
     if (sessionmodeiscampaigngame()) {
-        var_e121e24 = #"cpequipmentuses";
+        structname = #"cpequipmentuses";
         eventname = #"hash_4b0d58055ad60c5a";
     } else if (sessionmodeiszombiesgame()) {
-        var_e121e24 = #"zmequipmentuses";
+        structname = #"zmequipmentuses";
         eventname = #"hash_637ce41bcec9842c";
     }
-    function_92d1707f(eventname, var_e121e24, {#weaponname:weapon.name, #spawnid:getplayerspawnid(self), #gametime:gettime()});
+    function_92d1707f(eventname, structname, {#gametime:gettime(), #spawnid:getplayerspawnid(self), #weaponname:weapon.name});
     cookedtime = gettime() - starttime;
     if (cookedtime > 1000) {
         grenade.iscooked = 1;
@@ -1395,7 +1395,7 @@ function function_c135199b(params) {
 // Size: 0x84
 function on_grenade_fired(params) {
     if (sessionmodeismultiplayergame() || sessionmodeiswarzonegame()) {
-        self stats::function_622feb0d(params.weapon.name, #"hash_7d6781e4032b4aa5", 1);
+        self stats::function_622feb0d(params.weapon.name, #"uses", 1);
     }
     function_c135199b(params);
 }
@@ -2041,20 +2041,20 @@ function function_356292be(owner, origin, radius) {
         potential_targets = arraycombine(potential_targets, function_fd768835(owner_team, origin, radius), 0, 0);
         potential_targets = arraycombine(potential_targets, function_5db5c32(owner_team, origin, radius), 0, 0);
         if (isdefined(radius) && radius > 0) {
-            var_9f393ec1 = [];
+            nearby_targets = [];
             foreach (target in potential_targets) {
-                if (distancesquared(target.origin, origin) <= function_a3f6cdac(radius)) {
-                    if (!isdefined(var_9f393ec1)) {
-                        var_9f393ec1 = [];
-                    } else if (!isarray(var_9f393ec1)) {
-                        var_9f393ec1 = array(var_9f393ec1);
+                if (distancesquared(target.origin, origin) <= sqr(radius)) {
+                    if (!isdefined(nearby_targets)) {
+                        nearby_targets = [];
+                    } else if (!isarray(nearby_targets)) {
+                        nearby_targets = array(nearby_targets);
                     }
-                    if (!isinarray(var_9f393ec1, target)) {
-                        var_9f393ec1[var_9f393ec1.size] = target;
+                    if (!isinarray(nearby_targets, target)) {
+                        nearby_targets[nearby_targets.size] = target;
                     }
                 }
             }
-            potential_targets = var_9f393ec1;
+            potential_targets = nearby_targets;
         }
         if (isdefined(level.missileentities) && level.missileentities.size > 0 && isplayer(owner)) {
             var_f1fe3f3c = owner getentitiesinrange(level.missileentities, int(radius), origin);
@@ -2128,7 +2128,7 @@ function function_830e007d() {
 // Params 7, eflags: 0x2 linked
 // Checksum 0xa6479867, Offset: 0x74b8
 // Size: 0x38c
-function function_9fce8ee7(item, damage, angles, weapon, var_a5baf64e, var_6f02cffb, smeansofdeath) {
+function dropweaponfordeathlaunch(item, damage, angles, weapon, var_a5baf64e, var_6f02cffb, smeansofdeath) {
     if (!isdefined(item)) {
         /#
             println("<unknown string>");
@@ -2153,8 +2153,8 @@ function function_9fce8ee7(item, damage, angles, weapon, var_a5baf64e, var_6f02c
     if (!isdefined(damage)) {
         damage = 0;
     }
-    var_70f5fa56 = math::function_a4184f52(0, 200, damage);
-    var_92043f3a = math::function_f0546652(250 * var_6f02cffb, 320 * var_6f02cffb, var_70f5fa56);
+    normalizeddamage = math::normalize_value(0, 200, damage);
+    var_92043f3a = math::factor_value(250 * var_6f02cffb, 320 * var_6f02cffb, normalizeddamage);
     var_9e5cfd66 = randomfloatrange(40 * var_a5baf64e, 80 * var_a5baf64e);
     var_19a39012 = randomfloatrange(40 * var_a5baf64e, 80 * var_a5baf64e);
     if (math::cointoss()) {

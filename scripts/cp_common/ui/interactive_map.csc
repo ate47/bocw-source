@@ -11,14 +11,14 @@
 // Checksum 0x2950ad4a, Offset: 0x168
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"interactive_map", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"interactive_map", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace interactive_map/interactive_map
 // Params 0, eflags: 0x6 linked
 // Checksum 0xfda5dba2, Offset: 0x1b0
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "toggle_interactive_map", 1, 1, "int", &toggle_interactive_map, 0, 0);
 }
 
@@ -48,7 +48,7 @@ function private function_f4804ac(localclientnum) {
     top = function_fecfab51("y");
     width = function_fecfab51("width");
     height = function_fecfab51("height");
-    var_4a752c11 = (left + width * (isdefined(function_2ff81eb2("x")) ? function_2ff81eb2("x") : 0), top + height * (isdefined(function_2ff81eb2("y")) ? function_2ff81eb2("y") : 0), 0);
+    cursor_pos = (left + width * (isdefined(function_2ff81eb2("x")) ? function_2ff81eb2("x") : 0), top + height * (isdefined(function_2ff81eb2("y")) ? function_2ff81eb2("y") : 0), 0);
     var_75576067 = (0, 0, 0);
     var_8ab7eec6 = height / 1024;
     last_time = float(self getclienttime()) / 1000;
@@ -63,28 +63,28 @@ function private function_f4804ac(localclientnum) {
                 input = self function_b8e6d95c();
                 input[#"look"] = util::function_63320ea1(input[#"look"]);
                 input[#"move"] = util::function_63320ea1(input[#"move"]);
-                if (function_d6eaf8b0(input[#"look"]) > function_d6eaf8b0(input[#"move"]) * 0.5) {
+                if (length2dsquared(input[#"look"]) > length2dsquared(input[#"move"]) * 0.5) {
                     var_75576067 = input[#"look"];
                 } else {
                     var_75576067 = input[#"move"];
                 }
                 var_75576067 = (var_75576067[0], var_75576067[1] * -1, 0) * var_8ab7eec6 * 1024 * (cur_time - last_time);
-                var_75576067 = var_75576067 * ((isdefined(function_2ff81eb2("state")) ? function_2ff81eb2("state") : 0) < 0 ? 0.66 : 1);
-                var_4a752c11 = var_4a752c11 + var_75576067;
+                var_75576067 = var_75576067 * ((isdefined(function_2ff81eb2("state")) ? function_2ff81eb2("state") : 0) < 0 ? 1 : 0.66);
+                cursor_pos = cursor_pos + var_75576067;
             } else {
                 var_75576067 = function_6593be12(localclientnum);
-                var_4a752c11 = var_4a752c11 + var_75576067;
-                var_ecec29b6 = math::clamp(var_4a752c11[0], 0, var_5068885e[0] - var_498c84ce);
-                var_9031f03b = math::clamp(var_4a752c11[1], 0, var_5068885e[1] - var_860de4e5);
-                var_4a752c11 = (var_ecec29b6, var_9031f03b, 0);
+                cursor_pos = cursor_pos + var_75576067;
+                var_ecec29b6 = math::clamp(cursor_pos[0], 0, var_5068885e[0] - var_498c84ce);
+                var_9031f03b = math::clamp(cursor_pos[1], 0, var_5068885e[1] - var_860de4e5);
+                cursor_pos = (var_ecec29b6, var_9031f03b, 0);
             }
-            var_bc1b26be = (var_4a752c11[0] - left) / width;
-            var_39073afc = (var_4a752c11[1] - top) / height;
+            var_bc1b26be = (cursor_pos[0] - left) / width;
+            var_39073afc = (cursor_pos[1] - top) / height;
             if (var_52665581) {
                 var_bc1b26be = math::clamp(var_bc1b26be, 0, 1);
                 var_39073afc = math::clamp(var_39073afc, 0, 1);
             }
-            var_4a752c11 = (left + width * var_bc1b26be, top + height * var_39073afc, 0);
+            cursor_pos = (left + width * var_bc1b26be, top + height * var_39073afc, 0);
             var_e8e314b2 = function_747d0bce("x");
             if (isdefined(var_e8e314b2)) {
                 setuimodelvalue(var_e8e314b2, var_bc1b26be);

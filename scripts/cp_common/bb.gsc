@@ -13,14 +13,14 @@
 // Checksum 0x11d14bb2, Offset: 0x1e0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"bb", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"bb", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace bb/bb
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6fb7dfa1, Offset: 0x228
 // Size: 0x94
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
     callback::on_spawned(&function_3872d0f0);
     callback::on_spawned(&function_70635e9d);
@@ -63,7 +63,7 @@ function private function_70635e9d() {
             if (var_9e578de5 === event.receiver) {
                 continue;
             }
-            var_e081fa2b = [[ level.var_a8072505 ]](var_9e578de5.var_c872a2f);
+            var_e081fa2b = [[ level.var_a8072505 ]](var_9e578de5.alertlevelscript);
             if (var_f5c94561 < var_e081fa2b) {
                 var_f5c94561 = var_e081fa2b;
             }
@@ -86,12 +86,12 @@ function private function_88a4e45c() {
     while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"weapon_switch_started");
-        var_9463444 = self getcurrentweapon();
-        if (waitresult.weapon !== var_9463444) {
-            if (var_9463444.name !== "none") {
-                function_141c945e("stop", var_9463444, self);
-                if (var_9463444.type !== "melee" && self getammocount(var_9463444) == 0) {
-                    function_141c945e("noammo", var_9463444, self);
+        curweap = self getcurrentweapon();
+        if (waitresult.weapon !== curweap) {
+            if (curweap.name !== "none") {
+                function_141c945e("stop", curweap, self);
+                if (curweap.type !== "melee" && self getammocount(curweap) == 0) {
+                    function_141c945e("noammo", curweap, self);
                     function_cd497743("out_of_ammo", self);
                 }
             }
@@ -172,15 +172,15 @@ function function_74cad77c(player) {
     if (isdefined(player.var_c2287847)) {
         playertime = gettime() - player.var_c2287847;
     }
-    var_4a8d1677 = 0;
+    totalshots = 0;
     shotshit = 0;
     if (isdefined(player._bbdata)) {
-        var_4a8d1677 = isdefined(player._bbdata[#"shots"]) ? player._bbdata[#"shots"] : 0;
+        totalshots = isdefined(player._bbdata[#"shots"]) ? player._bbdata[#"shots"] : 0;
         shotshit = isdefined(player._bbdata[#"hits"]) ? player._bbdata[#"hits"] : 0;
     }
     accuracy = 0;
-    if (var_4a8d1677 > 0) {
-        accuracy = shotshit / var_4a8d1677;
+    if (totalshots > 0) {
+        accuracy = shotshit / totalshots;
     }
     var_4f1ec5c = function_56f03b13(player);
     corners = getentarray("minimap_corner", "targetname");
@@ -247,7 +247,7 @@ function function_74cad77c(player) {
     var_2084f739.incaps = incaps;
     var_2084f739.kd = kdratio;
     var_2084f739.shotshit = shotshit;
-    var_2084f739.var_4a8d1677 = var_4a8d1677;
+    var_2084f739.totalshots = totalshots;
     var_2084f739.accuracy = accuracy;
     var_2084f739.assists = assists;
     var_2084f739.score = score;
@@ -308,7 +308,7 @@ function function_47cb52f6(objectivename, player, status) {
     var_2084f739.shotsmissed = player.shotsmissed;
     var_2084f739.suicides = player.suicides;
     var_2084f739.downs = player.downs;
-    var_2084f739.difficulty = level.var_b9451145;
+    var_2084f739.difficulty = level.currentdifficulty;
     function_92d1707f(#"hash_1c8379f2cae4ae9a", var_2084f739);
 }
 
@@ -320,7 +320,7 @@ function logdamage(attacker, victim, weapon, damage, damagetype, hitlocation, vi
     if (!isplayer(victim) || !is_true(victimkilled)) {
         return;
     }
-    var_9636880b = -1;
+    victimid = -1;
     victimname = "";
     victimtype = "";
     victimorigin = (0, 0, 0);
@@ -329,7 +329,7 @@ function logdamage(attacker, victim, weapon, damage, damagetype, hitlocation, vi
     var_4d5bb08b = 0;
     var_f8a2358b = 0;
     var_f3e621df = "";
-    var_c325612c = 0;
+    victimlaststand = 0;
     var_a9d101f1 = 0;
     attackerid = -1;
     attackername = "";
@@ -372,14 +372,14 @@ function logdamage(attacker, victim, weapon, damage, damagetype, hitlocation, vi
     }
     if (isdefined(victim)) {
         if (isplayer(victim)) {
-            var_9636880b = getplayerspawnid(victim);
+            victimid = getplayerspawnid(victim);
             victimtype = "_player";
             victimname = victim.name;
             var_a9d101f1 = victim.downs;
         } else if (isai(victim)) {
             victimtype = "_ai";
             var_e6a5332b = victim.combatmode;
-            var_9636880b = victim.actor_id;
+            victimid = victim.actor_id;
         } else {
             victimtype = "_other";
         }
@@ -391,7 +391,7 @@ function logdamage(attacker, victim, weapon, damage, damagetype, hitlocation, vi
             var_f3e621df = victim.animname;
         }
         if (isdefined(victim.laststand)) {
-            var_c325612c = victim.laststand;
+            victimlaststand = victim.laststand;
         }
     }
     var_2084f739 = function_bb412e85();
@@ -409,7 +409,7 @@ function logdamage(attacker, victim, weapon, damage, damagetype, hitlocation, vi
     var_2084f739.var_e80b2895 = var_e80b2895;
     var_2084f739.var_3b40bee = var_3b40bee;
     var_2084f739.var_2f2881c5 = var_2f2881c5;
-    var_2084f739.var_9636880b = var_9636880b;
+    var_2084f739.victimid = victimid;
     var_2084f739.victimtype = victimtype;
     var_2084f739.victimname = victimname;
     var_2084f739.originx = victimorigin[0];
@@ -421,7 +421,7 @@ function logdamage(attacker, victim, weapon, damage, damagetype, hitlocation, vi
     var_2084f739.var_4d5bb08b = var_4d5bb08b;
     var_2084f739.var_f8a2358b = var_f8a2358b;
     var_2084f739.var_f3e621df = var_f3e621df;
-    var_2084f739.var_c325612c = var_c325612c;
+    var_2084f739.victimlaststand = victimlaststand;
     var_2084f739.damage = damage;
     var_2084f739.damagetype = damagetype;
     var_2084f739.damagelocation = hitlocation;
@@ -448,17 +448,17 @@ function function_cd497743(notificationtype, player = getplayers()[0]) {
         return;
     }
     playerid = -1;
-    var_d28ba0cd = "";
+    playertype = "";
     playerposition = (0, 0, 0);
     playername = "";
     playeryaw = player.angles[1];
     if (isai(player)) {
         playerid = player.actor_id;
-        var_d28ba0cd = "_ai";
+        playertype = "_ai";
         playerposition = player.origin;
     } else if (isplayer(player)) {
         playerid = getplayerspawnid(player);
-        var_d28ba0cd = "_player";
+        playertype = "_player";
         playerposition = player.origin;
         playername = player.name;
     }
@@ -466,7 +466,7 @@ function function_cd497743(notificationtype, player = getplayers()[0]) {
     var_2084f739.notificationtype = notificationtype;
     var_2084f739.spawnid = playerid;
     var_2084f739.username = playername;
-    var_2084f739.spawnidtype = var_d28ba0cd;
+    var_2084f739.spawnidtype = playertype;
     var_2084f739.originx = playerposition[0];
     var_2084f739.originy = playerposition[1];
     var_2084f739.originz = playerposition[2];
@@ -478,12 +478,12 @@ function function_cd497743(notificationtype, player = getplayers()[0]) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xce6632b7, Offset: 0x1ca8
 // Size: 0xdc
-function function_7977c093(scriptbundle, var_aa973631, player) {
+function function_7977c093(scriptbundle, selection, player) {
     if (!isplayer(player)) {
         return;
     }
     var_2084f739 = function_bb412e85();
-    var_2084f739.choice = var_aa973631;
+    var_2084f739.choice = selection;
     var_2084f739.scriptbundle = scriptbundle;
     var_2084f739.originx = player.origin[0];
     var_2084f739.originy = player.origin[1];
@@ -522,7 +522,7 @@ function function_8fca6a2e(event, player) {
         return;
     }
     var_2084f739 = function_bb412e85();
-    var_2084f739.event = isdefined(event.type) ? event.type : isdefined(event.var_dd29a83a) ? event.var_dd29a83a : "<unknown>";
+    var_2084f739.event = isdefined(event.type) ? event.type : isdefined(event.typeorig) ? event.typeorig : "<unknown>";
     var_2084f739.originx = player.origin[0];
     var_2084f739.originy = player.origin[1];
     var_2084f739.originz = player.origin[2];

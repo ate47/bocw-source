@@ -11,14 +11,14 @@
 // Checksum 0xdf421797, Offset: 0x220
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"perks", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"perks", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace perks/perks
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6c2a34bd, Offset: 0x268
 // Size: 0x3fc
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("allplayers", "flying", 1, 1, "int", &flying_callback, 0, 1);
     callback::on_localclient_connect(&on_local_client_connect);
     callback::on_localplayer_spawned(&on_localplayer_spawned);
@@ -150,11 +150,11 @@ function function_92725cf9(local_client_num) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x44c11500, Offset: 0xbc0
 // Size: 0x8e
-function function_67c434(local_client_num, localplayer, var_53227942) {
+function function_67c434(local_client_num, localplayer, spawningplayer) {
     if (!localplayer hasperk(local_client_num, #"specialty_detectnearbyenemies")) {
         return false;
     }
-    if (localplayer.team == var_53227942.team) {
+    if (localplayer.team == spawningplayer.team) {
         return false;
     }
     if (self hasperk(local_client_num, #"specialty_spycraft")) {
@@ -465,7 +465,7 @@ function gettrackerfxposition(local_client_num) {
         if (lengthsquared(fwd) < 1) {
             fwd = anglestoforward(self.angles);
         }
-        positionandrotation = {#fwd:fwd, #pos:pos, #fx:fx};
+        positionandrotation = {#fx:fx, #pos:pos, #fwd:fwd};
         self.tracker_last_pos = self.origin;
         self.trailrightfoot = !is_true(self.trailrightfoot);
     }
@@ -477,7 +477,7 @@ function gettrackerfxposition(local_client_num) {
 // Checksum 0xa64ff43b, Offset: 0x1c10
 // Size: 0x5e
 function function_3edf2cf8(dist_sq, var_73491815, var_47435b6f) {
-    return dist_sq < function_a3f6cdac(var_47435b6f) && function_a3f6cdac(var_47435b6f) < function_a3f6cdac(var_73491815);
+    return dist_sq < sqr(var_47435b6f) && sqr(var_47435b6f) < sqr(var_73491815);
 }
 
 // Namespace perks/perks
@@ -557,7 +557,7 @@ function function_f648816a(local_client_num) {
         }
         localplayeranglestoforward = anglestoforward(playerangles);
         localplayeranglestoright = anglestoright(playerangles);
-        var_46fc4dd6 = [3:0, 2:0, 1:0, 0:0];
+        var_46fc4dd6 = [0, 0, 0, 0];
         var_bb2f1c40 = pow(2, 3);
         for (index = level.nearbyspawns.size - 1; index >= 0; index--) {
             difftime = getservertime(local_client_num) - level.nearbyspawns[index].spawntime;
@@ -717,11 +717,11 @@ function monitor_detectnearbyenemies(local_client_num) {
             distcurrentsq = distance2dsquared(sixthsenseent.origin, localplayer.origin);
             if (!var_7aeac1e7) {
                 if (speed >= bundle.var_293163bd) {
-                    var_b7dddf15 = sixthsenseent getmovementtype();
+                    movement_type = sixthsenseent getmovementtype();
                     if (isplayer(player) && (player isplayerswimming() || player function_d76efdcc())) {
-                        var_b7dddf15 = "";
+                        movement_type = "";
                     }
-                    switch (var_b7dddf15) {
+                    switch (movement_type) {
                     case #"run":
                     case #"walk":
                         if (sixthsenseent isplayerads()) {
@@ -745,7 +745,7 @@ function monitor_detectnearbyenemies(local_client_num) {
                     }
                 } else if (speed <= (isdefined(bundle.var_6cb0467e) ? bundle.var_6cb0467e : 0) && (isdefined(bundle.var_ad484b97) ? bundle.var_ad484b97 : 0) != 0) {
                     var_d6ff0766 = (isdefined(bundle.var_ad484b97) ? bundle.var_ad484b97 : 0) * range;
-                    if (distcurrentsq < function_a3f6cdac(var_d6ff0766)) {
+                    if (distcurrentsq < sqr(var_d6ff0766)) {
                         var_7aeac1e7 = 1;
                     }
                 }
@@ -772,13 +772,13 @@ function monitor_detectnearbyenemies(local_client_num) {
             if (!var_7aeac1e7) {
                 continue;
             }
-            var_482e2661 = function_a3f6cdac(var_d6ff0766);
+            var_482e2661 = sqr(var_d6ff0766);
             detected = var_d6ff0766 == 0 || distcurrentsq < var_482e2661;
             if (detected) {
                 vector = sixthsenseent.origin - localplayer.origin;
                 vectorflat = vectornormalize((vector[0], vector[1], 0));
                 cosangle = vectordot(vectorflat, localplayeranglestoforward);
-                if (distcurrentsq < function_a3f6cdac(range * bundle.var_7c9cab4f)) {
+                if (distcurrentsq < sqr(range * bundle.var_7c9cab4f)) {
                     var_c729e60c = 8;
                 } else {
                     var_c729e60c = 2;

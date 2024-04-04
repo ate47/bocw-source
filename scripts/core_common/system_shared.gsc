@@ -17,10 +17,10 @@ function register(str_name, func_preinit, func_postinit, var_e9137475, reqs) {
     if (!isdefined(level.system_funcs)) {
         level.system_funcs = [];
     }
-    system = {#flags:0, #reqs:reqs, #var_f30a1800:var_e9137475, #postfunc:func_postinit, #prefunc:func_preinit};
-    system.flags = system.flags | (isdefined(func_preinit) ? 2 : 0);
-    system.flags = system.flags | (isdefined(func_postinit) ? 4 : 0);
-    system.flags = system.flags | (isdefined(var_e9137475) ? 8 : 0);
+    system = {#prefunc:func_preinit, #postfunc:func_postinit, #var_f30a1800:var_e9137475, #reqs:reqs, #flags:0};
+    system.flags = system.flags | (isdefined(func_preinit) ? 0 : 2);
+    system.flags = system.flags | (isdefined(func_postinit) ? 0 : 4);
+    system.flags = system.flags | (isdefined(var_e9137475) ? 0 : 8);
     level.system_funcs[str_name] = system;
 }
 

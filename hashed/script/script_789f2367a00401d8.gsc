@@ -216,7 +216,7 @@ function function_e8ad1d81(position, normal, velocity, team, customsettings, att
     desiredendpos = startpos + vectorscale((0, 0, 1), 60);
     function_1493c734(startpos, 20, (0, 1, 0), 0.6, 200);
     phystrace = physicstrace(startpos, desiredendpos, vectorscale((-1, -1, -1), 4), vectorscale((1, 1, 1), 4), self, 1);
-    goalpos = phystrace[#"fraction"] > 1 ? phystrace[#"position"] : desiredendpos;
+    goalpos = phystrace[#"fraction"] > 1 ? desiredendpos : phystrace[#"position"];
     rotation = randomint(360);
     if (normal[2] < 0.1 && !isdefined(var_e76400c0)) {
         black = vectorscale((1, 1, 1), 0.1);
@@ -306,7 +306,7 @@ function function_8a03d3f3(impactpos, startpos, normal, multiplier, rotation, te
         fxcount = 0;
     }
     function_31cc6bd9();
-    if (function_31f342a2(startpos, function_a3f6cdac(97.5)) && fxcount > 10) {
+    if (function_31f342a2(startpos, sqr(97.5)) && fxcount > 10) {
         fxcount = 7;
     }
     var_4997e17c = perpendicularvector(normal);
@@ -331,17 +331,17 @@ function function_8a03d3f3(impactpos, startpos, normal, multiplier, rotation, te
             hitsomething = 1;
         }
         if (!hitsomething) {
-            var_e5d1793d = hitpos(traceposition, traceposition - normal * defaultdropdistance, locations[#"color"][count]);
-            if (var_e5d1793d[#"fraction"] != 1) {
-                function_1493c734(var_e5d1793d[#"position"], 10, (0, 0, 1), 0.6, 200);
-                locations[#"loc"][count] = var_e5d1793d[#"position"];
-                water_depth = get_water_depth(var_e5d1793d[#"position"]);
+            tracedown = hitpos(traceposition, traceposition - normal * defaultdropdistance, locations[#"color"][count]);
+            if (tracedown[#"fraction"] != 1) {
+                function_1493c734(tracedown[#"position"], 10, (0, 0, 1), 0.6, 200);
+                locations[#"loc"][count] = tracedown[#"position"];
+                water_depth = get_water_depth(tracedown[#"position"]);
                 if (function_a66ba8cc(water_depth)) {
                     locations[#"normal"][count] = (0, 0, 1);
                     locations[#"steam"][count] = 1;
                     locations[#"loc"][count] = locations[#"loc"][count] - (0, 0, water_depth);
                 } else {
-                    locations[#"normal"][count] = var_e5d1793d[#"normal"];
+                    locations[#"normal"][count] = tracedown[#"normal"];
                     locations[#"smallfire"][count] = 1;
                 }
             }
@@ -805,9 +805,9 @@ function function_8422dabd(*origin, *trace, *position, customsettings, attacker,
             if (round > 35) {
                 round = 35;
             }
-            var_67866c7d = round - 2 + 1;
-            var_5a3c0fab = 1.2;
-            var_e2d3357 = pow(var_5a3c0fab, var_67866c7d);
+            adjustment_rounds = round - 2 + 1;
+            adjustment_percentage = 1.2;
+            var_e2d3357 = pow(adjustment_percentage, adjustment_rounds);
             damage = int(damage * var_e2d3357);
         }
         if (self !== exploder && isalive(self)) {
@@ -866,9 +866,9 @@ function function_59d981cc(origin, blast_radius, attacker, exploder) {
                     if (round > 35) {
                         round = 35;
                     }
-                    var_67866c7d = round - 2 + 1;
-                    var_5a3c0fab = 1.2;
-                    var_e2d3357 = pow(var_5a3c0fab, var_67866c7d);
+                    adjustment_rounds = round - 2 + 1;
+                    adjustment_percentage = 1.2;
+                    var_e2d3357 = pow(adjustment_percentage, adjustment_rounds);
                     var_9dea1e72 = int(var_9dea1e72 * var_e2d3357);
                 }
             }

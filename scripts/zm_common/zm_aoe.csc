@@ -36,14 +36,14 @@ class class_698343df {
 // Checksum 0x1ad2422a, Offset: 0x1c8
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_aoe", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_aoe", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_aoe/zm_aoe
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1e76deac, Offset: 0x2c8
 // Size: 0xb4
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "aoe_state", 1, getminbitcountfornum(5), "int", &function_dcc24343, 0, 0);
     clientfield::register("scriptmover", "aoe_id", 1, getminbitcountfornum(2), "int", &function_6bcf2a61, 0, 0);
 }
@@ -117,7 +117,7 @@ function function_15dea507(aoeid, type, var_5ff737c1) {
     var_46f1b5eb.endrumble = var_6ec6e01.endrumble;
     var_46f1b5eb.var_a8609f98 = var_6ec6e01.var_a8609f98;
     var_46f1b5eb.earthquakescale = var_6ec6e01.earthquakescale;
-    var_46f1b5eb.var_e4c85a5f = var_6ec6e01.var_e4c85a5f;
+    var_46f1b5eb.earthquakeduration = var_6ec6e01.earthquakeduration;
     var_46f1b5eb.effectradius = var_6ec6e01.effectradius;
     var_46f1b5eb.aoeid = aoeid;
 }
@@ -165,9 +165,9 @@ function private function_dcc24343(localclientnum, *oldval, newval, *bnewent, *b
         if (isdefined(var_46f1b5eb.startsound)) {
             playsound(fieldname, var_46f1b5eb.startsound, self.origin);
         }
-        if (isdefined(var_46f1b5eb.effectradius) && distsq <= function_a3f6cdac(var_46f1b5eb.effectradius)) {
+        if (isdefined(var_46f1b5eb.effectradius) && distsq <= sqr(var_46f1b5eb.effectradius)) {
             if (isdefined(var_46f1b5eb.earthquakescale)) {
-                earthquake(fieldname, var_46f1b5eb.earthquakescale, var_46f1b5eb.var_e4c85a5f, self.origin, var_46f1b5eb.effectradius);
+                earthquake(fieldname, var_46f1b5eb.earthquakescale, var_46f1b5eb.earthquakeduration, self.origin, var_46f1b5eb.effectradius);
             }
             if (isdefined(var_46f1b5eb.startrumble)) {
                 function_36e4ebd4(fieldname, var_46f1b5eb.startrumble);
@@ -204,7 +204,7 @@ function private function_dcc24343(localclientnum, *oldval, newval, *bnewent, *b
         if (isdefined(endsound)) {
             playsound(fieldname, endsound, self.origin);
         }
-        if (isdefined(var_46f1b5eb.effectradius) && distsq <= function_a3f6cdac(var_46f1b5eb.effectradius)) {
+        if (isdefined(var_46f1b5eb.effectradius) && distsq <= sqr(var_46f1b5eb.effectradius)) {
             if (isdefined(var_46f1b5eb.endrumble)) {
                 function_36e4ebd4(fieldname, var_46f1b5eb.endrumble);
             }

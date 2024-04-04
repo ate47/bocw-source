@@ -140,7 +140,7 @@ function private function_ecb58f93(killstreaktype, var_c7502f87) {
         mdl_target [[ var_c7502f87 ]]();
         util::wait_network_frame();
         if (isdefined(mdl_target)) {
-            mdl_target function_cb48cddd();
+            mdl_target deletedelay();
         }
     }
 }

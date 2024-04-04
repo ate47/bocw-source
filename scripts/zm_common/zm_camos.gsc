@@ -13,14 +13,14 @@
 // Checksum 0xd246a47d, Offset: 0xb0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_camos", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_camos", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_camos/zm_camos
 // Params 0, eflags: 0x6 linked
 // Checksum 0x416f9aea, Offset: 0xf8
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     level.var_f06de157 = &function_264bcab7;
     level.var_3993dc8e = &function_4092decc;
     level.var_b219667f = 1;

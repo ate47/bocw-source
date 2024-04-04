@@ -20,14 +20,14 @@
 // Checksum 0x756fba4c, Offset: 0x170
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"nuke", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"nuke", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace nuke/nuke
 // Params 0, eflags: 0x6 linked
 // Checksum 0x96d39c48, Offset: 0x1c0
 // Size: 0x158
-function private function_70a657d8() {
+function private preinit() {
     killstreaks::register_killstreak("killstreak_nuke", &function_41743630);
     clientfield::register("scriptmover", "" + #"hash_494d8af20db4dc73", 1, 1, "int");
     clientfield::register("world", "" + #"hash_6a6a21b8c5e1528e", 1, 1, "int");
@@ -104,7 +104,7 @@ function private function_65cd04d7(killstreak_id) {
         if (isalive(player)) {
             continue;
         }
-        player function_907e4c8f();
+        player forcespawnplayer();
     }
     var_b39c9060 function_176ca790();
 }
@@ -271,7 +271,7 @@ function function_a109b3d3() {
         if (isdefined(var_4bfe0994)) {
             player stoprumble(var_4bfe0994);
         }
-        if (isdefined(gesture) && player function_495bdc7b(gesture)) {
+        if (isdefined(gesture) && player isgestureplaying(gesture)) {
             player stopgestureviewmodel(gesture);
         }
     }
@@ -309,7 +309,7 @@ function function_e3dc00a() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x78fdd45d, Offset: 0x1260
 // Size: 0x138
-function function_907e4c8f() {
+function forcespawnplayer() {
     if (!isplayer(self)) {
         return;
     }

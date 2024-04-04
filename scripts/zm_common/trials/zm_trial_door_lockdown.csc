@@ -13,14 +13,14 @@
 // Checksum 0xc60e6f55, Offset: 0x148
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_door_lockdown", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_door_lockdown", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_door_lockdown/zm_trial_door_lockdown
 // Params 0, eflags: 0x4
 // Checksum 0xd83d849f, Offset: 0x190
 // Size: 0x10c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

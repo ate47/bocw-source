@@ -11,14 +11,14 @@
 // Checksum 0xad96ef64, Offset: 0x180
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"player_tank", &function_70a657d8, undefined, undefined, #"player_vehicle");
+    system::register(#"player_tank", &preinit, undefined, undefined, #"player_vehicle");
 }
 
 // Namespace player_tank/player_tank
 // Params 1, eflags: 0x6 linked
 // Checksum 0x9a438fd4, Offset: 0x1d0
 // Size: 0xc4
-function private function_70a657d8(*localclientnum) {
+function private preinit(*localclientnum) {
     vehicle::add_vehicletype_callback("player_tank", &function_c0f1d81b);
     clientfield::register("scriptmover", "tank_deathfx", 1, 1, "int", &function_de69d, 0, 0);
     clientfield::register("vehicle", "tank_shellejectfx", 1, 1, "int", &function_5c44d585, 0, 0);

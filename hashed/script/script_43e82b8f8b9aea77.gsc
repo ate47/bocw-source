@@ -11,11 +11,11 @@
 #using script_4ae261b2785dda9f;
 #using scripts\cp_common\objectives.gsc;
 #using script_2d443451ce681a;
-#using script_1292451e284848cc;
+#using scripts\cp_common\snd.gsc;
 #using scripts\cp_common\load.gsc;
 #using script_3b82b8c68189025e;
 #using scripts\cp_common\skipto.gsc;
-#using script_263b7f2982258785;
+#using scripts\cp_common\dialogue.gsc;
 #using scripts\core_common\ai_shared.gsc;
 #using scripts\core_common\ai\archetype_utility.gsc;
 #using scripts\core_common\animation_shared.gsc;
@@ -258,7 +258,7 @@ function function_92141ec2() {
 function function_b663575e() {
     function_f7c7ce51();
     level.player = getplayers()[0];
-    level thread scene::init("scene_hub_post_prisoner_flashback_overlook", "overlook_shot", [1:level.var_e2e0716f, 0:level.arash]);
+    level thread scene::init("scene_hub_post_prisoner_flashback_overlook", "overlook_shot", [level.arash, level.var_e2e0716f]);
     level thread scene::init("scene_tkd_hit3_intro_overlook", "overlook_shot", undefined);
     level thread scene::init("scene_tkd_hit3_intro_overlook_enemy4", "overlook_shot", undefined);
 }
@@ -269,7 +269,7 @@ function function_b663575e() {
 // Size: 0x394
 function function_cbd66c4c() {
     setsaveddvar(#"hash_7bf40e4b6a830d11", 0);
-    level.player function_5953bec0("cinematicmotion_handheld_heavy");
+    level.player setcinematicmotionoverride("cinematicmotion_handheld_heavy");
     level.player playrumblelooponentity("chopper_gunner_rumble_intro");
     vehicle::add_spawn_function_group("airport_truck_approach", "targetname", &function_78bc26d5);
     vehicle::simple_spawn("airport_truck_approach");
@@ -279,10 +279,10 @@ function function_cbd66c4c() {
     thread function_82ab6677();
     thread function_f406d0f4();
     vehicle::add_spawn_function_group("af_intro_vehicle", "targetname", &function_78bc26d5);
-    guys = ai::function_e8b6bfec("af_unloader_guy");
+    guys = ai::array_spawn("af_unloader_guy");
     thread function_c6f0c41a(guys);
     level music::setmusicstate("b2.0_recon", undefined, 6);
-    level thread scene::play_from_time("scene_hub_post_prisoner_flashback_overlook", "overlook_shot", [1:level.var_e2e0716f, 0:level.arash]);
+    level thread scene::play_from_time("scene_hub_post_prisoner_flashback_overlook", "overlook_shot", [level.arash, level.var_e2e0716f]);
     level thread scene::play_from_time("scene_tkd_hit3_intro_overlook", "overlook_shot", undefined);
     level thread scene::play_from_time("scene_tkd_hit3_intro_overlook_enemy4", "overlook_shot", undefined);
     level thread util::delay("play_b3.0_iced_mus", undefined, &music::function_edda155f, "b3.0_iced");
@@ -292,7 +292,7 @@ function function_cbd66c4c() {
     level.player val::set(#"hash_50cb2a8c58c8ad4", "ignoreme", 1);
     wait(50);
     level thread namespace_31c67f6d::function_abeb9b2d("white_screen_over", 1, 1, 0, 3);
-    level.arash namespace_a635adb1::queue("vox_cp_sh8_00010_adlr_voweweretherewe_12");
+    level.arash dialogue::queue("vox_cp_sh8_00010_adlr_voweweretherewe_12");
     waitframe(1);
     thread function_cd682321(guys, plane);
     snd::function_7db65a93(#"hash_5c379cf8b486919b");
@@ -312,7 +312,7 @@ function function_f8e379f0() {
 // Size: 0xa4
 function function_82ab6677() {
     level waittill(#"hash_2b4e106c6a717410");
-    level.player function_5953bec0("default_cinematicmotion");
+    level.player setcinematicmotionoverride("default_cinematicmotion");
     level.player stoprumble("chopper_gunner_rumble_intro");
     var_fe4a8480 = getent("intel_dossier", "targetname");
     var_fe4a8480 setmodel("p9_sr_evidence_perseus_bloody_dossier_01a_anim");
@@ -439,7 +439,7 @@ function function_c8381339(plane, var_857b0901) {
 // Checksum 0x4d3678f9, Offset: 0x2d30
 // Size: 0x148
 function function_d804fc99(a_ents) {
-    var_936fb5e7 = [3:"Prop 4", 2:"Prop 3", 1:"Prop 2", 0:"Prop 1"];
+    var_936fb5e7 = ["Prop 1", "Prop 2", "Prop 3", "Prop 4"];
     foreach (prop in var_936fb5e7) {
         if (isdefined(a_ents[prop]) && !isdefined(a_ents[prop].clip)) {
             clip = getent(prop, "script_noteworthy");
@@ -473,17 +473,17 @@ function function_5dd4ff85() {
 // Checksum 0x81679744, Offset: 0x2f48
 // Size: 0x1ec
 function function_f7c7ce51() {
-    level.driver = ai::function_e8b6bfec("driver")[0];
+    level.driver = ai::array_spawn("driver")[0];
     level.driver.var_c681e4c1 = 1;
-    level.arash = ai::function_e8b6bfec("arash")[0];
+    level.arash = ai::array_spawn("arash")[0];
     level.arash.var_c681e4c1 = 1;
-    level.var_518cefe2 = ai::function_e8b6bfec("af_enemy1")[0];
+    level.var_518cefe2 = ai::array_spawn("af_enemy1")[0];
     level.var_518cefe2.var_c681e4c1 = 1;
-    level.var_fac9425c = ai::function_e8b6bfec("af_enemy2")[0];
+    level.var_fac9425c = ai::array_spawn("af_enemy2")[0];
     level.var_fac9425c.var_c681e4c1 = 1;
-    level.af_enemy3 = ai::function_e8b6bfec("af_enemy3")[0];
+    level.af_enemy3 = ai::array_spawn("af_enemy3")[0];
     level.af_enemy3.var_c681e4c1 = 1;
-    level.af_enemy4 = ai::function_e8b6bfec("af_enemy4")[0];
+    level.af_enemy4 = ai::array_spawn("af_enemy4")[0];
     level.af_enemy4.var_c681e4c1 = 1;
     weapon = getweapon(#"hash_7b2fff6ff4ea2c93");
     level.arash aiutility::setprimaryweapon(weapon);
@@ -555,7 +555,7 @@ function function_b96d7941() {
 // Checksum 0x865e9318, Offset: 0x34b8
 // Size: 0x6a
 function function_80996e77() {
-    level.adler namespace_a635adb1::queue("vox_cp_sh8_00010_adlr_weneededtogivey_ee");
+    level.adler dialogue::queue("vox_cp_sh8_00010_adlr_weneededtogivey_ee");
     wait(1);
     level.adler util::dialog_faction_vo("vox_cp_sh8_00010_adlr_simsandibothwan_44", "vox_cp_sh8_00010_adlr_itwasparksideat_fd", "vox_cp_sh8_00010_adlr_hudsonthoughtwe_d6", "vox_cp_sh8_00010_adlr_intheendnospeci_e0");
     wait(1);
@@ -578,7 +578,7 @@ function function_4f7ea045() {
 // Checksum 0x1383aeb3, Offset: 0x3600
 // Size: 0x24
 function function_4af4a400() {
-    level.adler namespace_a635adb1::queue("vox_cp_sh8_00010_adlr_andwewereableto_cd");
+    level.adler dialogue::queue("vox_cp_sh8_00010_adlr_andwewereableto_cd");
 }
 
 // Namespace namespace_fdde5f3d/namespace_db1ba63f
@@ -755,9 +755,9 @@ function function_a53df109() {
 // Size: 0x74
 function function_688ad7f0() {
     level endon(#"hash_7c4cadf8854821e0");
-    level.player thread namespace_a635adb1::radio("vox_cp_sh8_00010_pers_fromthesafetyof_d1_1", undefined, 1);
+    level.player thread dialogue::radio("vox_cp_sh8_00010_pers_fromthesafetyof_d1_1", undefined, 1);
     wait(4);
-    level.player thread namespace_a635adb1::radio("vox_cp_sh8_00010_pers_solovetsky_fb", undefined, 1);
+    level.player thread dialogue::radio("vox_cp_sh8_00010_pers_solovetsky_fb", undefined, 1);
 }
 
 // Namespace namespace_fdde5f3d/namespace_db1ba63f
@@ -833,15 +833,15 @@ function function_f2c15144(str_state) {
 // Size: 0xdc
 function function_3606874a() {
     level waittill(#"hash_53021dd99bc5b45e");
-    level.adler namespace_a635adb1::queue("vox_cp_sh8_00020_adlr_adler_16");
+    level.adler dialogue::queue("vox_cp_sh8_00020_adlr_adler_16");
     wait(3);
-    level.adler namespace_a635adb1::queue("vox_cp_sh8_00020_adlr_right_2c");
+    level.adler dialogue::queue("vox_cp_sh8_00020_adlr_right_2c");
     wait(3);
-    level.adler namespace_a635adb1::queue("Vox_cp_sh8_00020_adlr_yeah_c6");
+    level.adler dialogue::queue("Vox_cp_sh8_00020_adlr_yeah_c6");
     wait(5);
-    level.adler namespace_a635adb1::queue("Vox_cp_sh8_00020_adlr_wellleavewithin_dc");
+    level.adler dialogue::queue("Vox_cp_sh8_00020_adlr_wellleavewithin_dc");
     wait(5);
-    level.adler namespace_a635adb1::queue("Vox_cp_sh8_00020_adlr_wewontletthepre_39");
+    level.adler dialogue::queue("Vox_cp_sh8_00020_adlr_wewontletthepre_39");
 }
 
 // Namespace namespace_fdde5f3d/namespace_db1ba63f
@@ -963,7 +963,7 @@ function function_af3dcba6() {
         if (level flag::get("flag_post_prisoner_radio")) {
             return;
         }
-        e_tag util::function_cf42fd2f("tag_origin", vectorscale((0, 0, 1), 8), #"hash_696adfeed5b67f39");
+        e_tag util::create_cursor_hint("tag_origin", vectorscale((0, 0, 1), 8), #"hash_696adfeed5b67f39");
         level thread function_b93309a5(e_tag, "radio_objective");
         e_tag waittill(#"trigger");
         level.player playrumbleonentity("damage_light");

@@ -14,14 +14,14 @@
 // Checksum 0xd9784dde, Offset: 0xc8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_magicbox_hunt", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_magicbox_hunt", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_magicbox_hunt/zm_trial_magicbox_hunt
 // Params 0, eflags: 0x4
 // Checksum 0x414d0a1c, Offset: 0x110
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

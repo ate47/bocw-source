@@ -18,14 +18,14 @@
 // Checksum 0xd6e44bbe, Offset: 0x158
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"gadget_health_regen", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"gadget_health_regen", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
 // Params 0, eflags: 0x6 linked
 // Checksum 0xed0a190b, Offset: 0x1a0
 // Size: 0x28c
-function private function_70a657d8() {
+function private preinit() {
     ability_player::register_gadget_activation_callbacks(23, &gadget_health_regen_on, &gadget_health_regen_off);
     ability_player::register_gadget_possession_callbacks(23, &gadget_health_regen_on_give, &gadget_health_regen_on_take);
     clientfield::register("toplayer", "healthregen", 1, 1, "int");
@@ -369,16 +369,16 @@ function enable_healing(slot, weapon, player) {
     }
     var_4465ef1e = player [[ level.var_f71267dc ]](var_b16fafc9, weapon);
     if (var_4465ef1e > 0) {
-        var_855cc818 = weapon.heal;
-        if (var_855cc818 <= 0 && isdefined(self.var_66cb03ad)) {
-            var_855cc818 = self.var_66cb03ad;
+        heal_amount = weapon.heal;
+        if (heal_amount <= 0 && isdefined(self.var_66cb03ad)) {
+            heal_amount = self.var_66cb03ad;
         }
-        self.heal.rate = var_855cc818 / float(var_4465ef1e) / 1000;
+        self.heal.rate = heal_amount / float(var_4465ef1e) / 1000;
         var_9c776d17 = self function_4e64ede5();
         if (isfloat(var_9c776d17)) {
             self.heal.rate = self.heal.rate * var_9c776d17;
         }
-        self.heal.var_855cc818 = var_855cc818;
+        self.heal.heal_amount = heal_amount;
         self.heal.var_4e6c244d = weapon.var_db003065;
     } else {
         self.heal.rate = 0;

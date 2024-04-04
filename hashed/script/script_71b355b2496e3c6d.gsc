@@ -8,12 +8,12 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0x2c83979d, Offset: 0xe0
 // Size: 0x15c
-function function_70a657d8() {
+function preinit() {
     if (!isdefined(level.var_38bf45dc)) {
         clientfield::register("scriptmover", "ragdoll_launcher_id", 1, getminbitcountfornum(7), "int", &function_5f224893, 0, 0);
         clientfield::register("scriptmover", "ragdoll_launcher_mag", 1, getminbitcountfornum(4), "int", &function_338ef91c, 0, 0);
         clientfield::register("actor", "ragdoll_launcher_id", 1, getminbitcountfornum(7), "int", &function_e83889f9, 0, 0);
-        level.var_38bf45dc = [3:250, 2:128, 1:64, 0:undefined];
+        level.var_38bf45dc = [undefined, 64, 128, 250];
     }
 }
 
@@ -28,7 +28,7 @@ function function_5f224893(localclientnum, *oldval, newval, *bnewent, *binitials
     if (!isdefined(level.var_30858358[fieldname])) {
         level.var_30858358[fieldname] = [];
     }
-    level.var_30858358[fieldname][bwastimejump] = {#time:getservertime(fieldname), #ent:self};
+    level.var_30858358[fieldname][bwastimejump] = {#ent:self, #time:getservertime(fieldname)};
     self.var_2011737d = bwastimejump;
 }
 
@@ -55,8 +55,8 @@ function function_e83889f9(localclientnum, *oldval, newval, *bnewent, *binitials
     if (!(isdefined(self) && isdefined(level.var_30858358[fieldname][bwastimejump].ent)) || getservertime(fieldname) - level.var_30858358[fieldname][bwastimejump].time > 500) {
         return;
     }
-    var_e7927788 = (self.origin[0], self.origin[1], self.origin[2] + 64);
-    var_3f57677f = var_e7927788 - level.var_30858358[fieldname][bwastimejump].ent.origin;
+    zombieorigin = (self.origin[0], self.origin[1], self.origin[2] + 64);
+    var_3f57677f = zombieorigin - level.var_30858358[fieldname][bwastimejump].ent.origin;
     dist = length(var_3f57677f);
     var_3f57677f = var_3f57677f / dist;
     var_3f57677f = var_3f57677f * level.var_38bf45dc[level.var_30858358[fieldname][bwastimejump].var_3934e676];

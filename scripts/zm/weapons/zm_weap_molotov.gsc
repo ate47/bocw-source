@@ -16,14 +16,14 @@
 // Checksum 0x46b453aa, Offset: 0x110
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"molotov_zm", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"molotov_zm", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf306998c, Offset: 0x158
 // Size: 0xdc
-function private function_70a657d8() {
+function private preinit() {
     level.var_31179876 = &function_16a57018;
     zm_weapons::function_90953640(getweapon(#"molotov_fire"));
     zm_weapons::function_90953640(getweapon(#"eq_molotov"));

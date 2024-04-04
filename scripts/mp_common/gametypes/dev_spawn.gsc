@@ -157,13 +157,13 @@ function function_423a05a4(gametypestr) {
 // Params 4, eflags: 0x0
 // Checksum 0x5f860710, Offset: 0x9c0
 // Size: 0xf4
-function function_5650f4ee(var_7a594c78, var_55a94d2c, actualteam, var_b8543545) {
+function function_5650f4ee(var_7a594c78, var_55a94d2c, actualteam, isstartspawn) {
     /#
         if (var_55a94d2c == "<unknown string>") {
             return 1;
-        } else if (var_55a94d2c == "<unknown string>" && !var_b8543545) {
+        } else if (var_55a94d2c == "<unknown string>" && !isstartspawn) {
             return 0;
-        } else if (var_b8543545 && var_55a94d2c != "<unknown string>") {
+        } else if (isstartspawn && var_55a94d2c != "<unknown string>") {
             return 0;
         } else if (var_55a94d2c == "<unknown string>" && var_7a594c78 != #"any") {
             if (var_7a594c78 == #"neutral" && isdefined(actualteam)) {
@@ -259,7 +259,7 @@ function hidestartspawnpoints() {
 // Params 4, eflags: 0x0
 // Checksum 0xd938423d, Offset: 0xe38
 // Size: 0x4cc
-function function_8beb6f7d(spawn_point, color, height, var_379ac7cc) {
+function drawspawnpoint(spawn_point, color, height, var_379ac7cc) {
     /#
         if (!isdefined(height) || height <= 0) {
             height = get_player_height();

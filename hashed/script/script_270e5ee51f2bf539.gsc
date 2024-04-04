@@ -153,8 +153,8 @@ function default_onspawnspectator(origin, angles) {
     if (isdefined(level.doa.var_39e3fa99)) {
         spawnpoint = [[ level.doa.var_39e3fa99 ]]->getcenter();
     } else {
-        var_422d359d = struct::get_array("arena_center", "targetname");
-        spawnpoint = var_422d359d[0];
+        arenas = struct::get_array("arena_center", "targetname");
+        spawnpoint = arenas[0];
     }
     self spawn(spawnpoint.origin, spawnpoint.angles);
 }

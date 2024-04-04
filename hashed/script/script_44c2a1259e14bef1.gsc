@@ -22,14 +22,14 @@
 // Checksum 0x7ced9899, Offset: 0x228
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_36a2cb0be45d9374", &function_70a657d8, undefined, undefined, #"hash_13a43d760497b54d");
+    system::register(#"hash_36a2cb0be45d9374", &preinit, undefined, undefined, #"hash_13a43d760497b54d");
 }
 
 // Namespace namespace_32e85820/namespace_32e85820
 // Params 0, eflags: 0x6 linked
 // Checksum 0x507d3909, Offset: 0x278
 // Size: 0x304
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "fx_heal_aoe_player_clientfield", 1, 1, "counter");
     clientfield::register("scriptmover", "fx_heal_aoe_pillar_clientfield", 1, 1, "counter");
     clientfield::register("scriptmover", "fx_heal_aoe_bubble_clientfield", 1, 1, "int");
@@ -51,7 +51,7 @@ function private function_70a657d8() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x319b20f8, Offset: 0x588
 // Size: 0x44
-function function_910d332f() {
+function heal_player() {
     self.health = self.var_66cb03ad;
     if (!self scene::is_igc_active()) {
         self clientfield::increment_to_player("fx_heal_aoe_player_clientfield", 1);
@@ -77,11 +77,11 @@ function function_f823ab5e() {
             self zm_stats::increment_challenge_stat(#"hash_3b5e5bb023a2f505");
         }
         if (player.health < player.var_66cb03ad) {
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"healing_aura_heal_zm", #attacker:self});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:self, #scoreevent:"healing_aura_heal_zm"});
             self stats::function_622feb0d(#"hash_7b5a77a85b0ffab7", #"hash_6104ccb8b9cd1659", 1);
             self stats::function_6fb0b113(#"hash_7b5a77a85b0ffab7", #"hash_6b473078d990e6b2");
         }
-        player function_910d332f();
+        player heal_player();
     }
 }
 
@@ -102,7 +102,7 @@ function function_e1dad5f7(var_c886f650 = 0) {
                 self zm_stats::increment_challenge_stat(#"hash_3b5e5bb023a2f505");
             }
             if (player.health < player.var_66cb03ad) {
-                level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"healing_aura_heal_zm", #attacker:self});
+                level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:self, #scoreevent:"healing_aura_heal_zm"});
                 self stats::function_622feb0d(#"hash_7b5a77a85b0ffab7", #"hash_6104ccb8b9cd1659", 1);
                 self stats::function_6fb0b113(#"hash_7b5a77a85b0ffab7", #"hash_6b473078d990e6b2");
             }
@@ -116,7 +116,7 @@ function function_e1dad5f7(var_c886f650 = 0) {
             player thread function_5427514f(var_c886f650);
             player notify(#"hash_4d93608c4b0fd45a");
             player thread zm_laststand::auto_revive(self, undefined, undefined, undefined, 1);
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"healing_aura_revive_zm", #attacker:self});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:self, #scoreevent:"healing_aura_revive_zm"});
             self stats::function_622feb0d(#"hash_7b5a77a85b0ffab7", #"hash_359bbe76d1d24148", 1);
             self zm_stats::increment_challenge_stat(#"hash_5f6b0b87e8f76ae1");
             continue;
@@ -125,11 +125,11 @@ function function_e1dad5f7(var_c886f650 = 0) {
             self zm_stats::increment_challenge_stat(#"hash_3b5e5bb023a2f505");
         }
         if (player.health < player.var_66cb03ad) {
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"healing_aura_heal_zm", #attacker:self});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:self, #scoreevent:"healing_aura_heal_zm"});
             self stats::function_622feb0d(#"hash_7b5a77a85b0ffab7", #"hash_6104ccb8b9cd1659", 1);
             self stats::function_6fb0b113(#"hash_7b5a77a85b0ffab7", #"hash_6b473078d990e6b2");
         }
-        player function_910d332f();
+        player heal_player();
     }
 }
 
@@ -143,7 +143,7 @@ function function_5427514f(var_c886f650 = 0) {
         self.var_177876cb = self.var_ff5d288f;
     }
     self waittill(#"player_revived");
-    self function_910d332f();
+    self heal_player();
     if (var_c886f650) {
         self function_505c95d5();
     }
@@ -167,13 +167,13 @@ function function_505c95d5() {
 // Checksum 0x690a0b34, Offset: 0xd68
 // Size: 0x130
 function function_87d44a60() {
-    var_6c77565b = getentitiesinradius(self.origin, 64, 15);
-    foreach (zombie in var_6c77565b) {
+    nearbyzombies = getentitiesinradius(self.origin, 64, 15);
+    foreach (zombie in nearbyzombies) {
         if (zombie.var_6f84b820 == #"normal") {
             zombie zombie_utility::setup_zombie_knockdown(self.origin);
             continue;
         }
-        if (zombie.var_6f84b820 == #"special" || zombie.var_6f84b820 == #"hash_72d4f2ad2e333eb4") {
+        if (zombie.var_6f84b820 == #"special" || zombie.var_6f84b820 == #"elite") {
             zombie ai::stun(2);
         }
     }
@@ -186,14 +186,14 @@ function function_87d44a60() {
 function function_451de831(var_c360c10f) {
     if (!isdefined(var_c360c10f)) {
         foreach (player in getplayers()) {
-            var_6c77565b = getentitiesinradius(player.origin, 128, 15);
-            foreach (zombie in var_6c77565b) {
-                zombie.var_3f87fe17 = {#player:self, #var_f05cc9a3:gettime()};
+            nearbyzombies = getentitiesinradius(player.origin, 128, 15);
+            foreach (zombie in nearbyzombies) {
+                zombie.var_3f87fe17 = {#stun_time:gettime(), #player:self};
                 if (zombie.var_6f84b820 == #"normal") {
                     zombie zombie_utility::setup_zombie_knockdown(self);
                     continue;
                 }
-                if (zombie.var_6f84b820 == #"special" || zombie.var_6f84b820 == #"hash_72d4f2ad2e333eb4") {
+                if (zombie.var_6f84b820 == #"special" || zombie.var_6f84b820 == #"elite") {
                     zombie ai::stun(2);
                 }
             }

@@ -7,7 +7,7 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8851bcf3, Offset: 0x88
 // Size: 0x24
-function function_70a657d8() {
+function preinit() {
     callback::on_joined_team(&function_e161bc77);
 }
 

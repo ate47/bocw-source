@@ -52,7 +52,7 @@ function function_d28e9b17() {
         leftglove.targetname = "leftglove";
         leftglove setplayercollision(0);
         leftglove linkto(org, "tag_origin", (0, 60, 32), vectorscale((1, 0, 0), 90));
-        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", leftglove.origin, 1 | 512 | 8, 40, 50);
+        trigger = namespace_ec06fe4a::spawntrigger("trigger_radius", leftglove.origin, 1 | 512 | 8, 40, 50);
         if (isdefined(trigger)) {
             trigger.targetname = "leftGlove";
             trigger enablelinkto();
@@ -67,7 +67,7 @@ function function_d28e9b17() {
         rightglove.targetname = "rightGlove";
         rightglove setplayercollision(0);
         rightglove linkto(org, "tag_origin", (0, -60, 32), vectorscale((1, 0, 0), 90));
-        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", rightglove.origin, 1 | 512 | 8, 40, 50);
+        trigger = namespace_ec06fe4a::spawntrigger("trigger_radius", rightglove.origin, 1 | 512 | 8, 40, 50);
         if (isdefined(trigger)) {
             trigger.targetname = "rightGlove";
             trigger enablelinkto();
@@ -92,7 +92,7 @@ function function_d28e9b17() {
 function function_c2d94d61() {
     self namespace_83eb6304::function_3ecfde67("boxing_stars");
     waitresult = undefined;
-    waitresult = self waittilltimeout(2, #"actor_corpse", #"hash_29b88049dcac8bb3");
+    waitresult = self waittilltimeout(2, #"actor_corpse", #"entitydeleted");
     if (isdefined(waitresult.corpse)) {
         waitresult.corpse namespace_83eb6304::function_3ecfde67("boxing_stars");
     }

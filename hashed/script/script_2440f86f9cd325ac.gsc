@@ -61,7 +61,7 @@ function function_98acc465() {
     } else {
         prize = namespace_dfc652ee::function_b8f6a8cd(level.doa.var_9a6327ee, origin, 1, 1, randomfloatrange(1, 3));
     }
-    level notify(#"hash_1ebd993fc32acc25", {#egg:self, #prize:prize});
+    level notify(#"hash_1ebd993fc32acc25", {#prize:prize, #egg:self});
     util::wait_network_frame();
     self.pickup = undefined;
 }
@@ -94,8 +94,8 @@ function function_137dd3d5(type) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xad22dfe0, Offset: 0x550
 // Size: 0x8e
-function function_22c4e231(var_536801d) {
-    if (var_536801d) {
+function function_22c4e231(hop) {
+    if (hop) {
         self physicslaunch(self.origin, (randomintrange(-5, 5), randomintrange(-5, 5), 15));
         self namespace_e32bb68::function_3a59ec34("zmb_egg_shake");
         self.var_860a34b9 = undefined;
@@ -124,9 +124,9 @@ function function_b968c4a9() {
 function function_5160690e() {
     self endon(#"death");
     while (true) {
-        var_4534d463 = array::get_all_closest(self.origin, getaiteamarray("axis"), undefined, 4, 48);
-        for (i = 0; i < var_4534d463.size; i++) {
-            zombie = var_4534d463[i];
+        closezombies = array::get_all_closest(self.origin, getaiteamarray("axis"), undefined, 4, 48);
+        for (i = 0; i < closezombies.size; i++) {
+            zombie = closezombies[i];
             if (is_true(zombie.var_1c8b76d3)) {
                 continue;
             }

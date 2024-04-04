@@ -11,14 +11,14 @@
 // Checksum 0x61c37470, Offset: 0xc0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"missile_turret", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"missile_turret", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace missile_turret/missile_turret
 // Params 0, eflags: 0x6 linked
 // Checksum 0x787f9a41, Offset: 0x108
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
     bundle = getscriptbundle("killstreak_missile_turret");
     killstreak_vehicle::init_killstreak(bundle);

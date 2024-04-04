@@ -4,13 +4,13 @@
             "var_5ed80a9c": "#restart",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_466c2f656cf6e1e6",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#cancel",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#menu/cancel",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         }
     ],
     "var_72ef398b": 1,

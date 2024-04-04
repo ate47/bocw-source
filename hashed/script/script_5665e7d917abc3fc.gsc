@@ -13,16 +13,16 @@
 // Checksum 0xab70601b, Offset: 0x118
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_7da9887a9375293", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_7da9887a9375293", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_dd7e54e3/namespace_dd7e54e3
 // Params 0, eflags: 0x2 linked
 // Checksum 0x852a320e, Offset: 0x170
 // Size: 0x84
-function function_70a657d8() {
+function preinit() {
     level.var_2a994cc0 = sr_armor_menu::register();
-    namespace_52c8f34d::function_70a657d8();
+    namespace_52c8f34d::preinit();
     clientfield::register("scriptmover", "" + #"hash_7dfc37315a4eff0", 1, 1, "int", &function_af3e97c, 0, 0);
 }
 

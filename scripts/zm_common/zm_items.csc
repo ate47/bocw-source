@@ -12,14 +12,14 @@
 // Checksum 0xdb3bc700, Offset: 0xe8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_items", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_items", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_items/zm_items
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6c95e290, Offset: 0x130
 // Size: 0x64
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("item", "highlight_item", 1, 2, "int", &function_39e7c9dd, 0, 0);
     level thread function_f88c74e1();
 }
@@ -30,9 +30,9 @@ function private function_70a657d8() {
 // Size: 0x70
 function private function_f88c74e1() {
     while (isdefined(self)) {
-        var_7f729179 = undefined;
-        var_7f729179 = level waittill(#"hash_25322cbf364d4d5c");
-        function_c79ecd60(var_7f729179.param1, var_7f729179.param2, undefined, undefined, var_7f729179.param3, undefined, undefined, undefined, undefined);
+        wait_result = undefined;
+        wait_result = level waittill(#"hash_25322cbf364d4d5c");
+        function_c79ecd60(wait_result.param1, wait_result.param2, undefined, undefined, wait_result.param3, undefined, undefined, undefined, undefined);
     }
 }
 

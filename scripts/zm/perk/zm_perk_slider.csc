@@ -12,14 +12,14 @@
 // Checksum 0xf75b2cd9, Offset: 0x1b0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_perk_slider", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_perk_slider", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_perk_slider/zm_perk_slider
 // Params 0, eflags: 0x6 linked
 // Checksum 0x4c001ed0, Offset: 0x1f8
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     if (!is_true(getgametypesetting(#"hash_4b8929fb898a9e80"))) {
         return;
     }

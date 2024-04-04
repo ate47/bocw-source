@@ -17,7 +17,7 @@
 // Size: 0x154
 function autoexec init() {
     callback::on_spawned(&function_44b1279a);
-    level.var_65c43c31 = [14:"zone_trans_south_pap_room", 13:"zone_trans_north_pap_room", 12:"zone_trans_south_tunnel", 11:"zone_power_tunnel", 10:"zone_center_lower", 9:"zone_center_upper", 8:"zone_center_upper_north", 7:"zone_center_upper_west", 6:"zone_trans_south", 5:"zone_trans_north", 4:"zone_power_trans_south", 3:"zone_power_trans_north", 2:"zone_power_room_outside", 1:"zone_power_room", 0:"zone_tunnel_interior"];
+    level.var_65c43c31 = ["zone_tunnel_interior", "zone_power_room", "zone_power_room_outside", "zone_power_trans_north", "zone_power_trans_south", "zone_trans_north", "zone_trans_south", "zone_center_upper_west", "zone_center_upper_north", "zone_center_upper", "zone_center_lower", "zone_power_tunnel", "zone_trans_south_tunnel", "zone_trans_north_pap_room", "zone_trans_south_pap_room"];
     level.var_aa3b88c5 = &function_27028b8e;
     level.var_27028b8e = &function_27028b8e;
 }

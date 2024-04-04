@@ -26,14 +26,14 @@
 // Checksum 0xb6256ae3, Offset: 0x2b8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_662c938bd03bd1ad", &function_70a657d8, undefined, undefined, #"hash_13a43d760497b54d");
+    system::register(#"hash_662c938bd03bd1ad", &preinit, undefined, undefined, #"hash_13a43d760497b54d");
 }
 
 // Namespace namespace_2ab93693/namespace_2ab93693
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1af0b525, Offset: 0x308
 // Size: 0x6a4
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "" + #"hash_142ed640bf2e09b9", 1, 1, "int");
     clientfield::register("actor", "" + #"hash_717ed5a81b281ebd", 1, 1, "counter");
     clientfield::register("toplayer", "" + #"hash_717ed5a81b281ebd", 1, 1, "int");
@@ -269,7 +269,7 @@ function private function_64a3f9c6(var_dfbbc9a0 = 0, var_feefd408 = 0, var_cf53a
                     } else {
                         var_c51499f8 = v_dir[0];
                     }
-                    level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:#"hash_56aa82cbbc11009b", #attacker:self.owner});
+                    level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:self.owner, #scoreevent:#"hash_56aa82cbbc11009b"});
                     self.owner stats::function_622feb0d(#"hash_1d9cb9dbd298acba", #"hash_5c5c962a0971316a", 1);
                     if (missile.weapon.name === #"hash_2b47921791da6f0" || missile.weapon.name === #"hash_67307aa00ad6f686") {
                         self.owner zm_stats::increment_challenge_stat(#"hash_370c230dce9e1be6");

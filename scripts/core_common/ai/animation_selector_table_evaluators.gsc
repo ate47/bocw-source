@@ -130,7 +130,7 @@ function private evaluator_checkanimationendpointagainstgeo(entity, animation) {
 function private function_91a832bb(entity, animation) {
     localdeltavector = getmovedelta(animation, 0, 1);
     var_f0ccb726 = lengthsquared(localdeltavector);
-    if (var_f0ccb726 > function_a3f6cdac(entity getpathlength())) {
+    if (var_f0ccb726 > sqr(entity getpathlength())) {
         return false;
     }
     splittime = function_382b0cfb(animation);
@@ -172,15 +172,15 @@ function private evaluator_checkanimationforovershootinggoal(entity, animation) 
         disttogoalsq = distance2dsquared(startpos, goalpos);
         localdeltavector = getmovedelta(animation, 0, 1);
         animdistsq = lengthsquared(localdeltavector);
-        if (entity.traversalstartdist > 0 && animdistsq > function_a3f6cdac(entity.traversalstartdist)) {
+        if (entity.traversalstartdist > 0 && animdistsq > sqr(entity.traversalstartdist)) {
             profileNamedStop();
             return false;
         } else if ((isdefined(entity.var_c4c50a0b) ? entity.var_c4c50a0b : 0) && animdistsq > disttogoalsq) {
             profileNamedStop();
             return false;
         }
-        var_aca7a141 = function_199662d1(animation);
-        localdeltavector = getmovedelta(animation, 0, var_aca7a141);
+        codemovetime = function_199662d1(animation);
+        localdeltavector = getmovedelta(animation, 0, codemovetime);
         animdistsq = lengthsquared(localdeltavector);
         if (entity.isarrivalpending && distance2dsquared(startpos, entity.overridegoalpos) < disttogoalsq) {
             goalpos = entity.overridegoalpos;
@@ -259,7 +259,7 @@ function private function_8bd6d54d(entity, animation) {
         assert(isactor(entity));
     #/
     maxdist = entity getpathfindingradius() * 2;
-    maxdistsq = function_a3f6cdac(maxdist);
+    maxdistsq = sqr(maxdist);
     localdeltavector = getmovedelta(animation, 0, 1);
     endpoint = entity localtoworldcoords(localdeltavector);
     radius = length(localdeltavector) + maxdist;
@@ -312,7 +312,7 @@ function function_50c1352d(entity, animation) {
             return true;
         }
         var_4da2186 = coordtransform(localdeltavector, entity.origin, entity.angles);
-        if (distance2dsquared(goalpos, var_4da2186) < function_a3f6cdac(16) && abs(goalpos[2] - var_4da2186[2]) < 48) {
+        if (distance2dsquared(goalpos, var_4da2186) < sqr(16) && abs(goalpos[2] - var_4da2186[2]) < 48) {
             return true;
         }
     }
@@ -556,15 +556,15 @@ function evaluatehumanexposedarrivalanimations(entity, animations) {
 // Checksum 0x29318062, Offset: 0x2640
 // Size: 0xc4
 function private function_199662d1(animation) {
-    var_aca7a141 = 1;
+    codemovetime = 1;
     if (animhasnotetrack(animation, "code_move")) {
         times = getnotetracktimes(animation, "code_move");
-        var_aca7a141 = times[0];
+        codemovetime = times[0];
     } else if (animhasnotetrack(animation, "mocomp_end")) {
         times = getnotetracktimes(animation, "mocomp_end");
-        var_aca7a141 = times[0];
+        codemovetime = times[0];
     }
-    return var_aca7a141;
+    return codemovetime;
 }
 
 // Namespace animation_selector_table_evaluators/animation_selector_table_evaluators
@@ -662,7 +662,7 @@ function private function_147224(entity, animation) {
     splittime = function_382b0cfb(animation);
     localdeltahalfvector = getmovedelta(animation, 0, splittime);
     var_3f5aa15b = distance2dsquared(entity.origin, midpoint);
-    if (var_3f5aa15b > 0 && var_3f5aa15b < function_d6eaf8b0(localdeltahalfvector)) {
+    if (var_3f5aa15b > 0 && var_3f5aa15b < length2dsquared(localdeltahalfvector)) {
         profileNamedStop();
         return false;
     }
@@ -672,8 +672,8 @@ function private function_147224(entity, animation) {
         /#
             recordline(midpoint, entrypoint, (1, 0.5, 0), "<unknown string>", entity);
         #/
-        var_aca7a141 = function_199662d1(animation);
-        var_16ebe729 = getmovedelta(animation, 0, var_aca7a141);
+        codemovetime = function_199662d1(animation);
+        var_16ebe729 = getmovedelta(animation, 0, codemovetime);
         var_d66f5018 = vectortoangles(midpoint - entrypoint);
         endpoint = coordtransform(var_16ebe729, entrypoint, var_d66f5018);
         endpoint = entity function_fe8e7e36(endpoint);
@@ -703,7 +703,7 @@ function private function_147224(entity, animation) {
 // Size: 0x184
 function private humandeathevaluation(*entity, animations) {
     var_bec12c3d = 0;
-    if ((isdefined(self.var_697c35e6) ? self.var_697c35e6 : 1) == 0 || (isdefined(level.var_d03f21c6) ? level.var_d03f21c6 : 0) > gettime()) {
+    if ((isdefined(self.script_longdeath) ? self.script_longdeath : 1) == 0 || (isdefined(level.var_d03f21c6) ? level.var_d03f21c6 : 0) > gettime()) {
         var_bec12c3d = 1;
     }
     var_f4e2809d = undefined;

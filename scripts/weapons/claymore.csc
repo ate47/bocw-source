@@ -10,14 +10,14 @@
 // Checksum 0x2f9a9279, Offset: 0x98
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"claymore", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"claymore", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace claymore/claymore
 // Params 0, eflags: 0x4
 // Checksum 0xe92a9da4, Offset: 0xe0
 // Size: 0x34
-function private function_70a657d8() {
+function private preinit() {
     callback::add_weapon_type(#"claymore", &claymore_spawned);
 }
 

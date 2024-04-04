@@ -9,7 +9,7 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0x6b27759e, Offset: 0x100
 // Size: 0xe0
-function function_70a657d8() {
+function preinit() {
     if (!isdefined(level.var_30858358)) {
         clientfield::register("scriptmover", "ragdoll_launcher_id", 1, getminbitcountfornum(7), "int");
         clientfield::register("scriptmover", "ragdoll_launcher_mag", 1, getminbitcountfornum(4), "int");
@@ -89,7 +89,7 @@ function private function_12d36686(index) {
     /#
         assert(isentity(level.var_30858358[index]), "<unknown string>");
     #/
-    level.var_30858358[index] function_cb48cddd();
+    level.var_30858358[index] deletedelay();
     level.var_30858358[index] = undefined;
 }
 

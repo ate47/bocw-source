@@ -43,14 +43,14 @@ class ccontainer {
 // Checksum 0x3c920d0, Offset: 0x2c0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"containers", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"containers", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace containers/containers_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd8e31d80, Offset: 0x308
 // Size: 0xce
-function private function_70a657d8() {
+function private preinit() {
     a_containers = struct::get_array("scriptbundle_containers", "classname");
     foreach (s_instance in a_containers) {
         c_container = s_instance init();

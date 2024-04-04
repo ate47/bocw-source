@@ -15,14 +15,14 @@
 // Checksum 0xe3bb7f7c, Offset: 0x140
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_24fe7853d0e9dd01", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_24fe7853d0e9dd01", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_d5a9ff55/namespace_d5a9ff55
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdd3db44, Offset: 0x188
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     level.client_menus = associativearray();
     level.var_a14cc36b = [];
     callback::on_localclient_connect(&on_player_connect);
@@ -122,7 +122,7 @@ function function_f603fc4d(menu_name, target_name, xcam, sub_xcam, xcam_frame = 
     /#
         assert(!isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
     #/
-    level.client_menus[menu_name] = {#var_e57ed98b:[], #lut_index:lut_index, #lerp_time:lerp_time, #var_2c679be0:function_e41243c1(var_2c679be0), #var_1f199068:function_e41243c1(var_1f199068), #xcam_frame:xcam_frame, #sub_xcam:sub_xcam, #xcam:xcam, #target_name:target_name, #menu_name:menu_name};
+    level.client_menus[menu_name] = {#menu_name:menu_name, #target_name:target_name, #xcam:xcam, #sub_xcam:sub_xcam, #xcam_frame:xcam_frame, #var_1f199068:function_e41243c1(var_1f199068), #var_2c679be0:function_e41243c1(var_2c679be0), #lerp_time:lerp_time, #lut_index:lut_index, #var_e57ed98b:[]};
     return level.client_menus[menu_name];
 }
 
@@ -134,7 +134,7 @@ function function_460e6001(menu_name, session_mode, target_name, xcam, sub_xcam,
     /#
         assert(isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
     #/
-    level.client_menus[menu_name].var_e57ed98b[session_mode] = {#lut_index:lut_index, #lerp_time:lerp_time, #xcam_frame:xcam_frame, #sub_xcam:sub_xcam, #xcam:xcam, #target_name:target_name};
+    level.client_menus[menu_name].var_e57ed98b[session_mode] = {#target_name:target_name, #xcam:xcam, #sub_xcam:sub_xcam, #xcam_frame:xcam_frame, #lerp_time:lerp_time, #lut_index:lut_index};
 }
 
 // Namespace namespace_d5a9ff55/namespace_d5a9ff55
@@ -145,7 +145,7 @@ function function_969a2881(menu_name, camera_function, has_state, var_1f199068 =
     /#
         assert(!isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
     #/
-    level.client_menus[menu_name] = {#var_ef0a4d1e:var_ef0a4d1e, #lut_index:lut_index, #var_2c679be0:function_e41243c1(var_2c679be0), #var_1f199068:function_e41243c1(var_1f199068), #has_state:has_state, #camera_function:camera_function, #menu_name:menu_name};
+    level.client_menus[menu_name] = {#menu_name:menu_name, #camera_function:camera_function, #has_state:has_state, #var_1f199068:function_e41243c1(var_1f199068), #var_2c679be0:function_e41243c1(var_2c679be0), #lut_index:lut_index, #var_ef0a4d1e:var_ef0a4d1e};
     return level.client_menus[menu_name];
 }
 
@@ -157,7 +157,7 @@ function function_6425472c(menu_name, str_scene, var_f647c5b2 = undefined, var_5
     /#
         assert(!isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
     #/
-    level.client_menus[menu_name] = {#var_b80d1ad4:[], #states:[], #var_3e7fd594:var_3e7fd594, #var_559c5c3e:var_559c5c3e, #var_f647c5b2:var_f647c5b2, #str_scene:str_scene, #menu_name:menu_name};
+    level.client_menus[menu_name] = {#menu_name:menu_name, #str_scene:str_scene, #var_f647c5b2:var_f647c5b2, #var_559c5c3e:var_559c5c3e, #var_3e7fd594:var_3e7fd594, #states:[], #var_b80d1ad4:[]};
     return level.client_menus[menu_name];
 }
 
@@ -180,7 +180,7 @@ function function_866692f8(menu_name, state, str_scene, var_f647c5b2 = undefined
     /#
         assert(isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
     #/
-    level.client_menus[menu_name].states[state] = {#var_b80d1ad4:[], #var_3e7fd594:var_3e7fd594, #var_559c5c3e:var_559c5c3e, #var_f647c5b2:var_f647c5b2, #str_scene:str_scene, #menu_name:menu_name};
+    level.client_menus[menu_name].states[state] = {#menu_name:menu_name, #str_scene:str_scene, #var_f647c5b2:var_f647c5b2, #var_559c5c3e:var_559c5c3e, #var_3e7fd594:var_3e7fd594, #var_b80d1ad4:[]};
 }
 
 // Namespace namespace_d5a9ff55/namespace_d5a9ff55
@@ -387,7 +387,7 @@ function function_55d56772(var_7271d7d6, var_8176b3c, var_5e806f4a, var_b5964062
     /#
         assert(isdefined(level.client_menus[var_b5964062]), "<unknown string>" + var_b5964062 + "<unknown string>");
     #/
-    var_2e96e768 = {#var_b1e821c5:var_7271d7d6, #var_5e806f4a:var_5e806f4a, #var_8176b3c:var_8176b3c, #var_a62e11c1:var_a62e11c1};
+    var_2e96e768 = {#var_a62e11c1:var_a62e11c1, #var_8176b3c:var_8176b3c, #var_5e806f4a:var_5e806f4a, #var_b1e821c5:var_7271d7d6};
     if (!isdefined(level.client_menus[var_b5964062].var_386948ca)) {
         level.client_menus[var_b5964062].var_386948ca = [];
     } else if (!isarray(level.client_menus[var_b5964062].var_386948ca)) {
@@ -466,8 +466,8 @@ function client_menus(local_client_num) {
             continue;
         }
         if (status === "opened" && !isdefined(menu_index)) {
-            menu_data = {#charactermode:waitresult.mode, #state:state, #menu_name:menu_name};
-            lastmenu = clientmenustack.size < 0 ? clientmenustack[0] : undefined;
+            menu_data = {#menu_name:menu_name, #state:state, #charactermode:waitresult.mode};
+            lastmenu = clientmenustack.size < 0 ? undefined : clientmenustack[0];
             setup_menu(local_client_num, lastmenu, menu_data);
             array::push_front(clientmenustack, menu_data);
             continue;
@@ -482,7 +482,7 @@ function client_menus(local_client_num) {
                 }
             #/
             var_80c09ee8 = clientmenustack[0];
-            clientmenustack[0] = {#charactermode:waitresult.mode, #state:state, #menu_name:menu_name};
+            clientmenustack[0] = {#menu_name:menu_name, #state:state, #charactermode:waitresult.mode};
             setup_menu(local_client_num, var_80c09ee8, clientmenustack[0]);
         }
     }

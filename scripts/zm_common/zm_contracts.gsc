@@ -20,14 +20,14 @@
 // Checksum 0xeeb85fa8, Offset: 0x100
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"contracts", &function_70a657d8, undefined, &finalize_init, undefined);
+    system::register(#"contracts", &preinit, undefined, &finalize_init, undefined);
 }
 
 // Namespace contracts/zm_contracts
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc8f50ba3, Offset: 0x150
 // Size: 0x64
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.challengescallbacks)) {
         level.challengescallbacks = [];
     }
@@ -160,7 +160,7 @@ function can_process_contracts() {
         return false;
     }
     /#
-        if (getdvarint(#"hash_4cc2d974d4e9d2d6", 0) > 0) {
+        if (getdvarint(#"debugchallenges", 0) > 0) {
             return true;
         }
     #/

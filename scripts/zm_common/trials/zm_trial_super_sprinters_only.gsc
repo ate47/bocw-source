@@ -10,14 +10,14 @@
 // Checksum 0x805c8ec1, Offset: 0xa8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_super_sprinters_only", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_super_sprinters_only", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_super_sprinters_only/zm_trial_super_sprinters_only
 // Params 0, eflags: 0x4
 // Checksum 0x1200cca9, Offset: 0xf0
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

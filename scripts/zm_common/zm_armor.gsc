@@ -22,14 +22,14 @@
 // Checksum 0xf40deef, Offset: 0x108
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_armor", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_armor", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_armor/zm_armor
 // Params 0, eflags: 0x6 linked
 // Checksum 0x99742dd1, Offset: 0x150
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     callback::on_connect(&on_connect);
 }
 
@@ -207,7 +207,7 @@ function damage(n_damage, mod_type, e_attacker) {
             continue;
         }
     }
-    self notify(#"damage_armor", {#attacker:e_attacker, #mod:mod_type});
+    self notify(#"damage_armor", {#mod:mod_type, #attacker:e_attacker});
     return 0;
 }
 

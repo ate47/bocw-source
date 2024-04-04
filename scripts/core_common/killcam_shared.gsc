@@ -17,14 +17,14 @@
 // Checksum 0x80068a14, Offset: 0x1c0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"killcam", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"killcam", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace killcam/killcam_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x3954219, Offset: 0x208
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&init);
 }
 
@@ -178,7 +178,7 @@ function function_eb3deeec(spectatorclient, targetentityindex, killcam_entity_in
     if (spectatorclient == -1) {
         spectatorclient = player getentitynumber();
     }
-    player.var_e59bd911 = {#attacker:attacker, #killstreaks:killstreaks, #perks:perks, #targetentityindex:targetentityindex, #killcam_entity_info:killcam_entity_info, #offsettime:offsettime, #deathtimeoffset:deathtimeoffset, #deathtime:deathtime, #meansofdeath:meansofdeath, #weapon:weapon, #spectatorclient:spectatorclient};
+    player.var_e59bd911 = {#spectatorclient:spectatorclient, #weapon:weapon, #meansofdeath:meansofdeath, #deathtime:deathtime, #deathtimeoffset:deathtimeoffset, #offsettime:offsettime, #killcam_entity_info:killcam_entity_info, #targetentityindex:targetentityindex, #perks:perks, #killstreaks:killstreaks, #attacker:attacker};
 }
 
 // Namespace killcam/killcam_shared

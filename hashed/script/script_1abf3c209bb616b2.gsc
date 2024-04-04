@@ -11,10 +11,10 @@
 // Size: 0xbc
 function init() {
     level.var_9a798a88 = spawnstruct();
-    level.var_9a798a88.var_fcf07d79 = struct::get_array("stealth_alarm", "script_noteworthy");
-    level.var_43dbcff1[#"hash_43519b3856d70cf6"] = "vfx/iw7/levels/europa/vfx_eu_bfg_light_redblink.vfx";
-    level.var_43dbcff1[#"hash_53121b07fda44a8d"] = "vfx/core/vehicles/aircraft_light_white_blink.vfx";
-    array::thread_all(level.var_9a798a88.var_fcf07d79, &function_a8f7fa5b);
+    level.var_9a798a88.alarms = struct::get_array("stealth_alarm", "script_noteworthy");
+    level.g_effect[#"hash_43519b3856d70cf6"] = "vfx/iw7/levels/europa/vfx_eu_bfg_light_redblink.vfx";
+    level.g_effect[#"hash_53121b07fda44a8d"] = "vfx/core/vehicles/aircraft_light_white_blink.vfx";
+    array::thread_all(level.var_9a798a88.alarms, &function_a8f7fa5b);
 }
 
 // Namespace namespace_1c7657c/alarm
@@ -22,9 +22,9 @@ function init() {
 // Checksum 0x543e84cd, Offset: 0x240
 // Size: 0xbe
 function function_ea8a5678(targetname, func) {
-    foreach (alarm in level.var_9a798a88.var_fcf07d79) {
+    foreach (alarm in level.var_9a798a88.alarms) {
         if (isdefined(alarm.targetname) && alarm.targetname == targetname) {
-            alarm.var_2c7c74a0 = func;
+            alarm.on_func = func;
         }
     }
 }
@@ -55,10 +55,10 @@ function function_a8f7fa5b() {
         case #"light":
             self.lights[self.lights.size] = ent;
             self.var_bb4a3b9 = ent.model;
-            ent.var_db134263 = spawnfx(level.var_43dbcff1[#"hash_53121b07fda44a8d"], ent.origin);
-            triggerfx(ent.var_db134263);
-            if (isdefined(ent.var_66bf406)) {
-                self.var_c0effb5a = ent.var_66bf406;
+            ent.idle_fx = spawnfx(level.g_effect[#"hash_53121b07fda44a8d"], ent.origin);
+            triggerfx(ent.idle_fx);
+            if (isdefined(ent.script_wtf)) {
+                self.var_c0effb5a = ent.script_wtf;
             }
             break;
         default:
@@ -127,12 +127,12 @@ function function_7e4779a4() {
             self.active = 0;
             self.trigs[#"hack"] delete();
             break;
-        case #"hash_465e1fb9824ac55a":
+        case #"alarm_on":
             if (self.state == "alarm_on") {
                 break;
             }
             self.state = state;
-            self thread function_4de39b62();
+            self thread alarm_on();
             break;
         case #"idle":
             if (self.state == "idle") {
@@ -156,8 +156,8 @@ function function_7e4779a4() {
 // Size: 0x98
 function function_bb67aeb1() {
     foreach (light in self.lights) {
-        if (isdefined(light.var_db134263)) {
-            light.var_db134263 delete();
+        if (isdefined(light.idle_fx)) {
+            light.idle_fx delete();
         }
     }
 }
@@ -166,20 +166,20 @@ function function_bb67aeb1() {
 // Params 0, eflags: 0x0
 // Checksum 0x3ef13a78, Offset: 0xa90
 // Size: 0x12c
-function function_4de39b62() {
+function alarm_on() {
     if (!self.active) {
         return;
     }
     foreach (light in self.lights) {
-        light.var_db134263 delete();
+        light.idle_fx delete();
         if (isdefined(self.var_c0effb5a)) {
             light setmodel(self.var_c0effb5a);
         }
-        light.var_5131ddae = spawnfx(level.var_43dbcff1[#"hash_43519b3856d70cf6"], light.origin);
+        light.var_5131ddae = spawnfx(level.g_effect[#"hash_43519b3856d70cf6"], light.origin);
         triggerfx(light.var_5131ddae);
     }
-    if (isdefined(self.var_2c7c74a0)) {
-        self thread [[ self.var_2c7c74a0 ]]();
+    if (isdefined(self.on_func)) {
+        self thread [[ self.on_func ]]();
     }
 }
 
@@ -207,13 +207,13 @@ function function_f8788a08(alarm) {
         return;
     }
     self endon(#"death");
-    self.var_2caea872 = self.goalradius;
-    self namespace_979752dc::function_adf02a98(32);
+    self.og_goalradius = self.goalradius;
+    self namespace_979752dc::set_goal_radius(32);
     self namespace_979752dc::set_goal(alarm);
     self waittill(#"goal");
     self orientmode("face angle", alarm.angles[1]);
     wait(1.5);
     alarm notify(#"state_change", {#state:"alarm_on"});
-    self namespace_979752dc::function_adf02a98(self.var_2caea872);
+    self namespace_979752dc::set_goal_radius(self.og_goalradius);
 }
 

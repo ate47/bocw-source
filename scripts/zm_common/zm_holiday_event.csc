@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\zm_common\zm_utility.csc;
-#using script_31816d064a53f516;
+#using scripts\core_common\ai\zombie_eye_glow.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\system_shared.csc;
 #using scripts\core_common\math_shared.csc;
@@ -16,14 +16,14 @@
 // Checksum 0xc327070c, Offset: 0xf8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_holiday_event", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_holiday_event", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdd4b0446, Offset: 0x140
 // Size: 0xe4
-function private function_70a657d8() {
+function private preinit() {
     if (is_true(getgametypesetting(#"hash_4751990deae37e66"))) {
         callback::on_localclient_connect(&on_localclient_connect);
         callback::function_675f0963(&function_675f0963);
@@ -43,7 +43,7 @@ function function_675f0963(*localclientnum) {
         case #"tormentor":
         case #"zombie":
         case #"avogadro":
-            self.var_6ffc5953 = array::random([2:#"hash_3b9bcbfd7d34544e", 1:#"hash_3b9bccfd7d345601", 0:#"hash_3b9bc9fd7d3450e8"]);
+            self.var_6ffc5953 = array::random([#"hash_3b9bc9fd7d3450e8", #"hash_3b9bccfd7d345601", #"hash_3b9bcbfd7d34544e"]);
             self.var_dee85a7a = "j_head";
             break;
         case #"zombie_dog":

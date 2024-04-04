@@ -19,14 +19,14 @@
 // Checksum 0x4b7295f5, Offset: 0x1e0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_timeout", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_timeout", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_timeout/zm_trial_timeout
 // Params 0, eflags: 0x4
 // Checksum 0x89d92406, Offset: 0x228
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

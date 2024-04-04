@@ -33,7 +33,7 @@
 function init() {
     level.doa.var_1c58e161 = array(getweapon("zombietron_deathmachine"), getweapon("zombietron_deathmachine_1"), getweapon("zombietron_deathmachine_2"), getweapon("zombietron_shotgun_fullauto_t9"), getweapon("zombietron_shotgun_fullauto_t9_1"), getweapon("zombietron_shotgun_fullauto_t9_2"), getweapon("zombietron_launcher_1"), getweapon("zombietron_launcher_2"));
     level.doa.var_d516e53 = array("MOD_GRENADE", "MOD_GRENADE_SPLASH", "MOD_PROJECTILE", "MOD_PROJECTIVLE_SPLASH", "MOD_EXPLOSIVE");
-    level.doa.var_3d2f9bf0 = array("left_hand", "left_arm_lower", "left_arm_upper", "right_hand", "right_arm_lower", "right_arm_upper");
+    level.doa.hitlocs = array("left_hand", "left_arm_lower", "left_arm_upper", "right_hand", "right_arm_lower", "right_arm_upper");
 }
 
 // Namespace namespace_ed80aead/namespace_ed80aead
@@ -133,7 +133,7 @@ function trygibbinghead(entity, damage, weapon, var_fd90b0bb, hitloc = "head", i
 function trygibbinglimb(entity, damage, weapon, var_fd90b0bb, hitloc, isexplosive = 0) {
     var_c3317960 = gibserverutils::function_de4d9d(weapon, var_fd90b0bb);
     if (!isdefined(hitloc)) {
-        hitloc = level.doa.var_3d2f9bf0[randomint(level.doa.var_3d2f9bf0.size)];
+        hitloc = level.doa.hitlocs[randomint(level.doa.hitlocs.size)];
     }
     if (isexplosive && randomfloatrange(0, 1) <= 0.35) {
         if (entity.health - damage <= 0 && entity.allowdeath && math::cointoss()) {
@@ -178,10 +178,10 @@ function trygibbinglegs(entity, damage, weapon, var_fd90b0bb, hitloc, isexplosiv
         attacker = entity;
     }
     if (!isdefined(hitloc)) {
-        hitloc = level.doa.var_3d2f9bf0[randomint(level.doa.var_3d2f9bf0.size)];
+        hitloc = level.doa.hitlocs[randomint(level.doa.hitlocs.size)];
     }
     cangiblegs = entity.health - damage <= 0 && entity.allowdeath;
-    cangiblegs = cangiblegs || (entity.health - damage) / entity.maxhealth <= 0.25 && distancesquared(entity.origin, attacker.origin) <= function_a3f6cdac(600) && entity.allowdeath;
+    cangiblegs = cangiblegs || (entity.health - damage) / entity.maxhealth <= 0.25 && distancesquared(entity.origin, attacker.origin) <= sqr(600) && entity.allowdeath;
     if (!is_true(entity.boss) && entity.health - damage <= 0 && entity.allowdeath && isexplosive && randomfloatrange(0, 1) <= 0.5) {
         if (!gibserverutils::isgibbed(entity, 384)) {
             gibserverutils::giblegs(entity, var_c3317960);

@@ -10,14 +10,14 @@
 // Checksum 0x59b4e56, Offset: 0x98
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"demo", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"demo", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace demo/demo_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x61796efc, Offset: 0xe0
 // Size: 0x54
-function private function_70a657d8() {
+function private preinit() {
     game.var_e9714926 = #"demo";
     callback::on_start_gametype(&init);
     level thread watch_actor_bookmarks();

@@ -11,26 +11,26 @@
 // Checksum 0x1f8b02d5, Offset: 0x1a8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"friendlyfire", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"friendlyfire", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace friendlyfire/friendlyfire
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd6da836, Offset: 0x1f0
 // Size: 0x124
-function private function_70a657d8() {
+function private preinit() {
     level.var_911cdf6e[#"hash_59886fac445f4c71"] = -5;
     level.var_911cdf6e[#"hash_2cc746fbd4f2a46f"] = 1000;
     level.var_911cdf6e[#"hash_15f7f611338f7f22"] = 250;
-    level.var_911cdf6e[#"hash_c52352989bad12c"] = -5;
+    level.var_911cdf6e[#"friend_kill_points"] = -5;
     level.var_911cdf6e[#"hash_308b6e99638b7c04"] = -5;
     level.var_911cdf6e[#"hash_69a22a048631e673"] = 0.75;
     level.var_edbfa7b = 0.5;
     if (sessionmodeiscampaigngame() && level.gametype !== "coop") {
-        level.var_d3f8fb7 = 0;
+        level.friendlyfiredisabled = 0;
     }
-    if (!isdefined(level.var_d3f8fb7)) {
-        level.var_d3f8fb7 = 0;
+    if (!isdefined(level.friendlyfiredisabled)) {
+        level.friendlyfiredisabled = 0;
     }
     callback::on_connect(&init_player);
 }
@@ -45,9 +45,9 @@ function init_player() {
     #/
     self.participation = 0;
     /#
-        self thread function_9012d418();
+        self thread debug_friendlyfire();
     #/
-    self thread function_6d705b1a();
+    self thread participation_point_flattenovertime();
 }
 
 // Namespace friendlyfire/friendlyfire
@@ -56,7 +56,7 @@ function init_player() {
 // Size: 0xa4
 function function_b943ac72(msg) {
     /#
-        if (getdvarstring(#"hash_2ace0620ca62cf82") == "<unknown string>") {
+        if (getdvarstring(#"debug_friendlyfire") == "<unknown string>") {
             iprintlnbold(msg);
         }
         if (getdvarstring(#"hash_2d7cfd6663c775a7") == "<unknown string>") {
@@ -183,18 +183,18 @@ function private function_25d6cf14() {
 // Params 0, eflags: 0x0
 // Checksum 0x9aca0ae6, Offset: 0x1300
 // Size: 0x498
-function function_9012d418() {
+function debug_friendlyfire() {
     /#
         self endon(#"disconnect", #"hash_1ff2bf35392915");
-        if (getdvarstring(#"hash_2ace0620ca62cf82") == "<unknown string>") {
-            setdvar(#"hash_2ace0620ca62cf82", "<unknown string>");
+        if (getdvarstring(#"debug_friendlyfire") == "<unknown string>") {
+            setdvar(#"debug_friendlyfire", "<unknown string>");
         }
         if (getdvarstring(#"hash_2d7cfd6663c775a7") == "<unknown string>") {
             setdvar(#"hash_2d7cfd6663c775a7", "<unknown string>");
         }
         for (;;) {
             function_25d6cf14();
-            if (getdvarstring(#"hash_2ace0620ca62cf82") == "<unknown string>") {
+            if (getdvarstring(#"debug_friendlyfire") == "<unknown string>") {
                 self.var_d5b6872a.friendly_fire.alpha = 1;
                 self.var_d5b6872a.var_9a2c2205.alpha = 1;
                 self.var_d5b6872a.var_67b2f7ad.alpha = 1;
@@ -255,7 +255,7 @@ function function_1ad87afd(entity, damage, attacker, method, weapon, einflictor)
             return;
         }
     }
-    if (level.var_d3f8fb7) {
+    if (level.friendlyfiredisabled) {
         return;
     }
     if (is_true(entity.nofriendlyfire)) {
@@ -301,13 +301,13 @@ function function_1ad87afd(entity, damage, attacker, method, weapon, einflictor)
         attacker.var_97a2e324 = entity.team;
     }
     killed = damage >= entity.health || var_bee3a418;
-    if (!entity.allowdeath && !function_57dc318d(entity, method)) {
+    if (!entity.allowdeath && !check_grenade(entity, method)) {
         killed = 0;
     }
     if (!var_d3e9a2bd) {
         if (killed) {
             attacker.participation = attacker.participation + level.var_911cdf6e[#"hash_15f7f611338f7f22"];
-            attacker function_73396e9f();
+            attacker participation_point_cap();
             function_b943ac72("Enemy killed: +" + level.var_911cdf6e[#"hash_15f7f611338f7f22"]);
         }
         return;
@@ -327,25 +327,25 @@ function function_1ad87afd(entity, damage, attacker, method, weapon, einflictor)
             attacker.participation = attacker.participation + entity.var_f9a443f6;
             function_b943ac72("Friendly killed with custom penalty: -" + 0 - entity.var_f9a443f6);
         } else {
-            attacker.participation = attacker.participation + level.var_911cdf6e[#"hash_c52352989bad12c"];
-            function_b943ac72("Friendly killed: -" + 0 - level.var_911cdf6e[#"hash_c52352989bad12c"]);
+            attacker.participation = attacker.participation + level.var_911cdf6e[#"friend_kill_points"];
+            function_b943ac72("Friendly killed: -" + 0 - level.var_911cdf6e[#"friend_kill_points"]);
         }
     } else {
         attacker.participation = attacker.participation - 1;
         function_b943ac72("Friendly hurt: -" + damage);
     }
-    attacker function_73396e9f();
-    if (function_57dc318d(entity, method) && function_b893c9c0()) {
+    attacker participation_point_cap();
+    if (check_grenade(entity, method) && savecommit_aftergrenade()) {
         return;
     }
-    attacker function_6ba634c3();
+    attacker friendly_fire_checkpoints();
 }
 
 // Namespace friendlyfire/friendlyfire
 // Params 1, eflags: 0x0
 // Checksum 0xe365e47c, Offset: 0x1e98
 // Size: 0x6c0
-function function_2ef0e170(entity) {
+function friendly_fire_think(entity) {
     level endon(#"hash_fef7dac2cb38596");
     entity endon(#"hash_9cd363fce58b93d");
     if (!isdefined(entity)) {
@@ -363,7 +363,7 @@ function function_2ef0e170(entity) {
         attacker = waitresult.attacker;
         damage = waitresult.amount;
         method = waitresult.mod;
-        if (level.var_d3f8fb7) {
+        if (level.friendlyfiredisabled) {
             continue;
         }
         if (!isdefined(entity)) {
@@ -403,13 +403,13 @@ function function_2ef0e170(entity) {
             attacker.var_97a2e324 = entity.team;
         }
         killed = damage >= entity.health;
-        if (!entity.allowdeath && !function_57dc318d(entity, method)) {
+        if (!entity.allowdeath && !check_grenade(entity, method)) {
             killed = 0;
         }
         if (!var_d3e9a2bd) {
             if (killed) {
                 attacker.participation = attacker.participation + level.var_911cdf6e[#"hash_15f7f611338f7f22"];
-                attacker function_73396e9f();
+                attacker participation_point_cap();
                 function_b943ac72("Enemy killed: +" + level.var_911cdf6e[#"hash_15f7f611338f7f22"]);
             }
             return;
@@ -434,21 +434,21 @@ function function_2ef0e170(entity) {
                 attacker.participation = attacker.participation + entity.var_f9a443f6;
                 function_b943ac72("Friendly killed with custom penalty: -" + 0 - entity.var_f9a443f6);
             } else {
-                attacker.participation = attacker.participation + level.var_911cdf6e[#"hash_c52352989bad12c"];
-                function_b943ac72("Friendly killed: -" + 0 - level.var_911cdf6e[#"hash_c52352989bad12c"]);
+                attacker.participation = attacker.participation + level.var_911cdf6e[#"friend_kill_points"];
+                function_b943ac72("Friendly killed: -" + 0 - level.var_911cdf6e[#"friend_kill_points"]);
             }
         } else {
             attacker.participation = attacker.participation - 1;
             function_b943ac72("Friendly hurt: -" + damage);
         }
-        attacker function_73396e9f();
-        if (function_57dc318d(entity, method) && function_b893c9c0()) {
+        attacker participation_point_cap();
+        if (check_grenade(entity, method) && savecommit_aftergrenade()) {
             if (killed) {
                 return;
             }
             continue;
         }
-        attacker function_6ba634c3();
+        attacker friendly_fire_checkpoints();
     }
 }
 
@@ -456,9 +456,9 @@ function function_2ef0e170(entity) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc9a42d27, Offset: 0x2560
 // Size: 0x3c
-function function_6ba634c3() {
+function friendly_fire_checkpoints() {
     if (self.participation <= level.var_911cdf6e[#"hash_59886fac445f4c71"]) {
-        self thread function_800b98d9();
+        self thread missionfail();
     }
 }
 
@@ -466,7 +466,7 @@ function function_6ba634c3() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xb266a3be, Offset: 0x25a8
 // Size: 0x8e
-function function_57dc318d(entity, method) {
+function check_grenade(entity, method) {
     if (!isdefined(entity)) {
         return 0;
     }
@@ -484,7 +484,7 @@ function function_57dc318d(entity, method) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x896c31c2, Offset: 0x2640
 // Size: 0x44
-function function_b893c9c0() {
+function savecommit_aftergrenade() {
     currenttime = gettime();
     if (currenttime < 4500) {
         /#
@@ -499,7 +499,7 @@ function function_b893c9c0() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x3d3e7964, Offset: 0x2690
 // Size: 0xae
-function function_73396e9f() {
+function participation_point_cap() {
     if (!isdefined(self.participation)) {
         /#
             assertmsg("<unknown string>");
@@ -518,7 +518,7 @@ function function_73396e9f() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x97e34ad9, Offset: 0x2748
 // Size: 0x62
-function function_6d705b1a() {
+function participation_point_flattenovertime() {
     level endon(#"hash_7d1398df3ecfd3bf");
     self endon(#"disconnect");
     for (;;) {
@@ -533,8 +533,8 @@ function function_6d705b1a() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1c8f202b, Offset: 0x27b8
 // Size: 0x10
-function function_1b32e23() {
-    level.var_d3f8fb7 = 0;
+function turnbackon() {
+    level.friendlyfiredisabled = 0;
 }
 
 // Namespace friendlyfire/friendlyfire
@@ -542,14 +542,14 @@ function function_1b32e23() {
 // Checksum 0xebf830c9, Offset: 0x27d0
 // Size: 0x14
 function turnoff() {
-    level.var_d3f8fb7 = 1;
+    level.friendlyfiredisabled = 1;
 }
 
 // Namespace friendlyfire/friendlyfire
 // Params 0, eflags: 0x2 linked
 // Checksum 0xf283b25f, Offset: 0x27f0
 // Size: 0xcc
-function function_800b98d9() {
+function missionfail() {
     self endon(#"death");
     level endon(#"hash_2a5bc3aedd245590");
     self.participation = 0;
@@ -577,7 +577,7 @@ function function_708f45ad() {
 // Params 1, eflags: 0x0
 // Checksum 0xf2ea6818, Offset: 0x2920
 // Size: 0x6c
-function function_c48b1bcc(entity) {
+function notifydamage(entity) {
     level endon(#"hash_fef7dac2cb38596");
     entity endon(#"death");
     for (;;) {
@@ -589,7 +589,7 @@ function function_c48b1bcc(entity) {
 // Params 1, eflags: 0x0
 // Checksum 0xf671e6d5, Offset: 0x2998
 // Size: 0x68
-function function_9eb4b616(entity) {
+function notifydamagenotdone(entity) {
     level endon(#"hash_fef7dac2cb38596");
     waitresult = undefined;
     waitresult = entity waittill(#"damage_notdone");
@@ -601,7 +601,7 @@ function function_9eb4b616(entity) {
 // Params 1, eflags: 0x0
 // Checksum 0x4c8dd734, Offset: 0x2a08
 // Size: 0x68
-function function_2764d268(entity) {
+function notifydeath(entity) {
     level endon(#"hash_fef7dac2cb38596");
     waitresult = undefined;
     waitresult = entity waittill(#"death");

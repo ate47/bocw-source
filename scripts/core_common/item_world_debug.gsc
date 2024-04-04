@@ -16,14 +16,14 @@
 // Checksum 0x57847ac1, Offset: 0xc8
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"item_world_debug", &function_70a657d8, &postinit, undefined, #"item_world");
+    system::register(#"item_world_debug", &preinit, &postinit, undefined, #"item_world");
 }
 
 // Namespace item_world_debug/item_world_debug
 // Params 0, eflags: 0x4
 // Checksum 0x264680ab, Offset: 0x128
 // Size: 0xb4
-function private function_70a657d8() {
+function private preinit() {
     if (!item_world_util::use_item_spawns()) {
         return;
     }
@@ -138,7 +138,7 @@ function private function_2248268e() {
 function private function_99216e10(mapname) {
     /#
         if (mapname === "<unknown string>") {
-            world_items = [12:"<unknown string>", 11:"<unknown string>", 10:"<unknown string>", 9:"<unknown string>", 8:"<unknown string>", 7:"<unknown string>", 6:"<unknown string>", 5:"<unknown string>", 4:"<unknown string>", 3:"<unknown string>", 2:"<unknown string>", 1:"<unknown string>", 0:"<unknown string>"];
+            world_items = ["<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>"];
             return world_items;
         }
     #/
@@ -168,8 +168,8 @@ function private function_10b50848() {
                 the_item = function_2e3efdda(item.origin, undefined, 1, 1, -1, 1);
                 if (the_item.size > 0) {
                     type = "<unknown string>";
-                    if (isdefined(the_item[0].var_a6762160) && isdefined(the_item[0].var_a6762160.itemtype)) {
-                        switch (the_item[0].var_a6762160.itemtype) {
+                    if (isdefined(the_item[0].itementry) && isdefined(the_item[0].itementry.itemtype)) {
+                        switch (the_item[0].itementry.itemtype) {
                         case #"survival_essence":
                             type = "<unknown string>";
                             break;
@@ -211,8 +211,8 @@ function private function_10b50848() {
                             break;
                         }
                     }
-                    if (isdefined(the_item[0].var_a6762160)) {
-                        debug_string = the_item[0].var_a6762160.name + "<unknown string>" + function_9e72a96(the_item[0].targetname) + "<unknown string>" + the_item[0].origin + "<unknown string>" + type + "<unknown string>" + the_item[0].var_a6762160.rarity;
+                    if (isdefined(the_item[0].itementry)) {
+                        debug_string = the_item[0].itementry.name + "<unknown string>" + function_9e72a96(the_item[0].targetname) + "<unknown string>" + the_item[0].origin + "<unknown string>" + type + "<unknown string>" + the_item[0].itementry.rarity;
                         fprintln(file, debug_string);
                         item_count++;
                     }
@@ -250,8 +250,8 @@ function private function_b6ea080() {
                 the_item = function_2e3efdda(item.origin, undefined, 1, 1, -1, 1);
                 if (the_item.size > 0) {
                     type = "<unknown string>";
-                    if (isdefined(the_item[0].var_a6762160) && isdefined(the_item[0].var_a6762160.itemtype)) {
-                        switch (the_item[0].var_a6762160.itemtype) {
+                    if (isdefined(the_item[0].itementry) && isdefined(the_item[0].itementry.itemtype)) {
+                        switch (the_item[0].itementry.itemtype) {
                         case #"ammo":
                             type = "<unknown string>";
                             break;
@@ -296,8 +296,8 @@ function private function_b6ea080() {
                             break;
                         }
                     }
-                    if (isdefined(the_item[0].var_a6762160)) {
-                        debug_string = the_item[0].var_a6762160.name + "<unknown string>" + function_9e72a96(the_item[0].targetname) + "<unknown string>" + the_item[0].origin + "<unknown string>" + type;
+                    if (isdefined(the_item[0].itementry)) {
+                        debug_string = the_item[0].itementry.name + "<unknown string>" + function_9e72a96(the_item[0].targetname) + "<unknown string>" + the_item[0].origin + "<unknown string>" + type;
                         fprintln(file, debug_string);
                         item_count++;
                     }
@@ -355,7 +355,7 @@ function private function_938d798a() {
                 if (distance2d(player.origin, var_31e25ea2) < 8000) {
                     radius = 128;
                     var_84dd2a8b = 4096;
-                    if (distancesquared(player.origin, var_31e25ea2) < function_a3f6cdac(var_84dd2a8b)) {
+                    if (distancesquared(player.origin, var_31e25ea2) < sqr(var_84dd2a8b)) {
                         radius = max(distance(player.origin, var_31e25ea2) / var_84dd2a8b * radius, 1);
                     }
                     sphere(var_31e25ea2, radius, (1, 0, 0), 1, 0, 10, 20);
@@ -527,7 +527,7 @@ function private function_66b45a31(origin) {
         foreach (vehicle in atv_spawn) {
             radius = 128;
             var_84dd2a8b = 4096;
-            if (distancesquared(origin, vehicle.origin) < function_a3f6cdac(var_84dd2a8b)) {
+            if (distancesquared(origin, vehicle.origin) < sqr(var_84dd2a8b)) {
                 radius = max(distance(origin, vehicle.origin) / var_84dd2a8b * radius, 1);
             }
             sphere(vehicle.origin, radius, (1, 0, 0), 1, 0, 10, 20);
@@ -535,7 +535,7 @@ function private function_66b45a31(origin) {
         foreach (vehicle in cargo_truck_spawn) {
             radius = 128;
             var_84dd2a8b = 4096;
-            if (distancesquared(origin, vehicle.origin) < function_a3f6cdac(var_84dd2a8b)) {
+            if (distancesquared(origin, vehicle.origin) < sqr(var_84dd2a8b)) {
                 radius = max(distance(origin, vehicle.origin) / var_84dd2a8b * radius, 1);
             }
             sphere(vehicle.origin, radius, (1, 1, 0), 1, 0, 10, 20);
@@ -543,7 +543,7 @@ function private function_66b45a31(origin) {
         foreach (vehicle in cargo_truck_clearing_spawn) {
             radius = 128;
             var_84dd2a8b = 4096;
-            if (distancesquared(origin, vehicle.origin) < function_a3f6cdac(var_84dd2a8b)) {
+            if (distancesquared(origin, vehicle.origin) < sqr(var_84dd2a8b)) {
                 radius = max(distance(origin, vehicle.origin) / var_84dd2a8b * radius, 1);
             }
             sphere(vehicle.origin, radius, (1, 1, 0), 1, 0, 10, 20);
@@ -551,7 +551,7 @@ function private function_66b45a31(origin) {
         foreach (vehicle in heli_spawn) {
             radius = 128;
             var_84dd2a8b = 4096;
-            if (distancesquared(origin, vehicle.origin) < function_a3f6cdac(var_84dd2a8b)) {
+            if (distancesquared(origin, vehicle.origin) < sqr(var_84dd2a8b)) {
                 radius = max(distance(origin, vehicle.origin) / var_84dd2a8b * radius, 1);
             }
             sphere(vehicle.origin, radius, (1, 0, 1), 1, 0, 10, 20);
@@ -559,7 +559,7 @@ function private function_66b45a31(origin) {
         foreach (vehicle in heli_clearing_spawn) {
             radius = 128;
             var_84dd2a8b = 4096;
-            if (distancesquared(origin, vehicle.origin) < function_a3f6cdac(var_84dd2a8b)) {
+            if (distancesquared(origin, vehicle.origin) < sqr(var_84dd2a8b)) {
                 radius = max(distance(origin, vehicle.origin) / var_84dd2a8b * radius, 1);
             }
             sphere(vehicle.origin, radius, (1, 0, 1), 1, 0, 10, 20);
@@ -567,7 +567,7 @@ function private function_66b45a31(origin) {
         foreach (vehicle in zodiac_spawn) {
             radius = 128;
             var_84dd2a8b = 4096;
-            if (distancesquared(origin, vehicle.origin) < function_a3f6cdac(var_84dd2a8b)) {
+            if (distancesquared(origin, vehicle.origin) < sqr(var_84dd2a8b)) {
                 radius = max(distance(origin, vehicle.origin) / var_84dd2a8b * radius, 1);
             }
             sphere(vehicle.origin, radius, (1, 0.5, 0), 1, 0, 10, 20);
@@ -575,7 +575,7 @@ function private function_66b45a31(origin) {
         foreach (vehicle in var_e8750c36) {
             radius = 128;
             var_84dd2a8b = 4096;
-            if (distancesquared(origin, vehicle.origin) < function_a3f6cdac(var_84dd2a8b)) {
+            if (distancesquared(origin, vehicle.origin) < sqr(var_84dd2a8b)) {
                 radius = max(distance(origin, vehicle.origin) / var_84dd2a8b * radius, 1);
             }
             sphere(vehicle.origin, radius, (1, 0.5, 0), 1, 0, 10, 20);
@@ -583,7 +583,7 @@ function private function_66b45a31(origin) {
         foreach (vehicle in var_1901b1fa) {
             radius = 128;
             var_84dd2a8b = 4096;
-            if (distancesquared(origin, vehicle.origin) < function_a3f6cdac(var_84dd2a8b)) {
+            if (distancesquared(origin, vehicle.origin) < sqr(var_84dd2a8b)) {
                 radius = max(distance(origin, vehicle.origin) / var_84dd2a8b * radius, 1);
             }
             sphere(vehicle.origin, radius, (1, 0.5, 0), 1, 0, 10, 20);
@@ -591,7 +591,7 @@ function private function_66b45a31(origin) {
         foreach (vehicle in var_453c640c) {
             radius = 128;
             var_84dd2a8b = 4096;
-            if (distancesquared(origin, vehicle.origin) < function_a3f6cdac(var_84dd2a8b)) {
+            if (distancesquared(origin, vehicle.origin) < sqr(var_84dd2a8b)) {
                 radius = max(distance(origin, vehicle.origin) / var_84dd2a8b * radius, 1);
             }
             sphere(vehicle.origin, radius, (1, 0.5, 0), 1, 0, 10, 20);
@@ -599,7 +599,7 @@ function private function_66b45a31(origin) {
         foreach (vehicle in var_b351e4a0) {
             radius = 128;
             var_84dd2a8b = 4096;
-            if (distancesquared(origin, vehicle.origin) < function_a3f6cdac(var_84dd2a8b)) {
+            if (distancesquared(origin, vehicle.origin) < sqr(var_84dd2a8b)) {
                 radius = max(distance(origin, vehicle.origin) / var_84dd2a8b * radius, 1);
             }
             sphere(vehicle.origin, radius, (1, 0.5, 0), 1, 0, 10, 20);
@@ -607,7 +607,7 @@ function private function_66b45a31(origin) {
         foreach (vehicle in var_e4dc1e88) {
             radius = 128;
             var_84dd2a8b = 4096;
-            if (distancesquared(origin, vehicle.origin) < function_a3f6cdac(var_84dd2a8b)) {
+            if (distancesquared(origin, vehicle.origin) < sqr(var_84dd2a8b)) {
                 radius = max(distance(origin, vehicle.origin) / var_84dd2a8b * radius, 1);
             }
             sphere(vehicle.origin, radius, (1, 0.5, 0), 1, 0, 10, 20);
@@ -615,7 +615,7 @@ function private function_66b45a31(origin) {
         foreach (vehicle in muscle_car_spawn) {
             radius = 128;
             var_84dd2a8b = 4096;
-            if (distancesquared(origin, vehicle.origin) < function_a3f6cdac(var_84dd2a8b)) {
+            if (distancesquared(origin, vehicle.origin) < sqr(var_84dd2a8b)) {
                 radius = max(distance(origin, vehicle.origin) / var_84dd2a8b * radius, 1);
             }
             sphere(vehicle.origin, radius, (0, 1, 1), 1, 0, 10, 20);
@@ -623,7 +623,7 @@ function private function_66b45a31(origin) {
         foreach (vehicle in suv_spawn) {
             radius = 128;
             var_84dd2a8b = 4096;
-            if (distancesquared(origin, vehicle.origin) < function_a3f6cdac(var_84dd2a8b)) {
+            if (distancesquared(origin, vehicle.origin) < sqr(var_84dd2a8b)) {
                 radius = max(distance(origin, vehicle.origin) / var_84dd2a8b * radius, 1);
             }
             sphere(vehicle.origin, radius, (0, 1, 1), 1, 0, 10, 20);
@@ -631,7 +631,7 @@ function private function_66b45a31(origin) {
         foreach (vehicle in arav_spawn) {
             radius = 128;
             var_84dd2a8b = 4096;
-            if (distancesquared(origin, vehicle.origin) < function_a3f6cdac(var_84dd2a8b)) {
+            if (distancesquared(origin, vehicle.origin) < sqr(var_84dd2a8b)) {
                 radius = max(distance(origin, vehicle.origin) / var_84dd2a8b * radius, 1);
             }
             sphere(vehicle.origin, radius, vectorscale((1, 1, 0), 0.501961), 1, 0, 10, 20);
@@ -639,7 +639,7 @@ function private function_66b45a31(origin) {
         foreach (vehicle in pbr_spawn) {
             radius = 128;
             var_84dd2a8b = 4096;
-            if (distancesquared(origin, vehicle.origin) < function_a3f6cdac(var_84dd2a8b)) {
+            if (distancesquared(origin, vehicle.origin) < sqr(var_84dd2a8b)) {
                 radius = max(distance(origin, vehicle.origin) / var_84dd2a8b * radius, 1);
             }
             sphere(vehicle.origin, radius, (0, 1, 0), 1, 0, 10, 20);
@@ -658,7 +658,7 @@ function private function_f4c71526(origin) {
             color = vectorscale((1, 1, 1), 0.75);
             radius = 128;
             var_84dd2a8b = 4096;
-            if (distancesquared(origin, vehicle.origin) < function_a3f6cdac(var_84dd2a8b)) {
+            if (distancesquared(origin, vehicle.origin) < sqr(var_84dd2a8b)) {
                 radius = max(distance(origin, vehicle.origin) / var_84dd2a8b * radius, 1);
             }
             if (isdefined(vehicle.scriptvehicletype)) {
@@ -914,7 +914,7 @@ function private function_cdd9b388() {
                 var_f4b807cb = function_2e3efdda(origin, undefined, 128, 2000);
                 foreach (item in var_f4b807cb) {
                     hidden = item.hidetime < 0 ? "<unknown string>" : "<unknown string>";
-                    print3d(item.origin + vectorscale((0, 0, 1), 10), "<unknown string>" + item.networkid + hidden + "<unknown string>" + item.var_a6762160.name, (1, 0.5, 0), 1, 0.4);
+                    print3d(item.origin + vectorscale((0, 0, 1), 10), "<unknown string>" + item.networkid + hidden + "<unknown string>" + item.itementry.name, (1, 0.5, 0), 1, 0.4);
                 }
             }
             if (getdvarint(#"hash_52c63fdd1c1d96ac", 0)) {
@@ -931,8 +931,8 @@ function private function_cdd9b388() {
                 } else {
                     var_f4b807cb = function_2e3efdda(origin, undefined, 4000, 30000, -1, 0);
                     foreach (item in var_f4b807cb) {
-                        if (isdefined(item.var_a6762160) && isdefined(item.var_a6762160.rarity)) {
-                            switch (item.var_a6762160.rarity) {
+                        if (isdefined(item.itementry) && isdefined(item.itementry.rarity)) {
+                            switch (item.itementry.rarity) {
                             case #"common":
                                 color = (0, 1, 0);
                                 break;
@@ -954,7 +954,7 @@ function private function_cdd9b388() {
                         }
                         radius = 64;
                         var_84dd2a8b = 2048;
-                        if (distancesquared(origin, item.origin) < function_a3f6cdac(var_84dd2a8b)) {
+                        if (distancesquared(origin, item.origin) < sqr(var_84dd2a8b)) {
                             radius = max(distance(origin, item.origin) / var_84dd2a8b * radius, 1);
                         }
                         switch (itemtype) {
@@ -966,14 +966,14 @@ function private function_cdd9b388() {
                             }
                             break;
                         case 2:
-                            if (isdefined(item.var_a6762160)) {
+                            if (isdefined(item.itementry)) {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                                 if (isdefined(item.targetname)) {
                                     print3d(item.origin + vectorscale((0, 0, 1), 32), function_9e72a96(item.targetname), color, 1, 0.3, 20);
                                 }
                             }
                         case 3:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"survival_ammo") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"survival_ammo") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                                 if (isdefined(item.targetname)) {
                                     print3d(item.origin + vectorscale((0, 0, 1), 32), function_9e72a96(item.targetname), color, 1, 0.3, 20);
@@ -981,44 +981,44 @@ function private function_cdd9b388() {
                             }
                             break;
                         case 4:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"weapon") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"weapon") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 5:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"armor") {
-                                if (item.var_a6762160.name == "<unknown string>") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"armor") {
+                                if (item.itementry.name == "<unknown string>") {
                                     sphere(item.origin, radius, (0, 1, 0), 1, 0, 10, 20);
-                                } else if (item.var_a6762160.name == "<unknown string>") {
+                                } else if (item.itementry.name == "<unknown string>") {
                                     sphere(item.origin, radius, (0, 0, 1), 1, 0, 10, 20);
-                                } else if (item.var_a6762160.name == "<unknown string>") {
+                                } else if (item.itementry.name == "<unknown string>") {
                                     sphere(item.origin, radius, (1, 1, 0), 1, 0, 10, 20);
                                 } else {
                                     sphere(item.origin, radius, color, 1, 0, 10, 20);
                                 }
-                                if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"weapon") {
+                                if (isdefined(item.itementry) && item.itementry.itemtype === #"weapon") {
                                     sphere(item.origin, radius, color, 1, 0, 10, 20);
                                 }
                             }
                             break;
                         case 6:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"equipment") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"equipment") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 7:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"attachment") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"attachment") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 8:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"survival_armor_shard") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"survival_armor_shard") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 9:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"survival_essence") {
-                                if (item.var_a6762160.amount === 1) {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"survival_essence") {
+                                if (item.itementry.amount === 1) {
                                     color = vectorscale((1, 1, 1), 0.75);
                                 } else {
                                     radius = radius * 2;
@@ -1027,8 +1027,8 @@ function private function_cdd9b388() {
                             }
                             break;
                         case 10:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"survival_scrap") {
-                                if (item.var_a6762160.amount === 1) {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"survival_scrap") {
+                                if (item.itementry.amount === 1) {
                                     color = vectorscale((1, 1, 1), 0.75);
                                 } else {
                                     radius = radius * 2;
@@ -1037,32 +1037,32 @@ function private function_cdd9b388() {
                             }
                             break;
                         case 11:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"survival_perk") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"survival_perk") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 12:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"hash_fc797c2a8f4d208") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"hash_fc797c2a8f4d208") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 13:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"generic") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"generic") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 14:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"resource") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"resource") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 16:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"field_upgrade") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"field_upgrade") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 17:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"tactical") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"tactical") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
@@ -1091,7 +1091,7 @@ function private function_cdd9b388() {
                             color = (0, 0, 1);
                             radius = 128;
                             var_84dd2a8b = 4096;
-                            if (distancesquared(origin, point.origin) < function_a3f6cdac(var_84dd2a8b)) {
+                            if (distancesquared(origin, point.origin) < sqr(var_84dd2a8b)) {
                                 radius = max(distance(origin, point.origin) / var_84dd2a8b * radius, 1);
                             }
                             stash_items = function_2e3efdda(point.origin, undefined, 100, 1);
@@ -1117,8 +1117,8 @@ function private function_cdd9b388() {
                 } else {
                     var_f4b807cb = function_2e3efdda(origin, undefined, 4000, 30000, -1, 0);
                     foreach (item in var_f4b807cb) {
-                        if (isdefined(item.var_a6762160) && isdefined(item.var_a6762160.rarity)) {
-                            switch (item.var_a6762160.rarity) {
+                        if (isdefined(item.itementry) && isdefined(item.itementry.rarity)) {
+                            switch (item.itementry.rarity) {
                             case #"common":
                                 color = (0, 1, 0);
                                 break;
@@ -1140,7 +1140,7 @@ function private function_cdd9b388() {
                         }
                         radius = 64;
                         var_84dd2a8b = 2048;
-                        if (distancesquared(origin, item.origin) < function_a3f6cdac(var_84dd2a8b)) {
+                        if (distancesquared(origin, item.origin) < sqr(var_84dd2a8b)) {
                             radius = max(distance(origin, item.origin) / var_84dd2a8b * radius, 1);
                         }
                         switch (itemtype) {
@@ -1152,26 +1152,26 @@ function private function_cdd9b388() {
                             }
                             break;
                         case 2:
-                            if (isdefined(item.var_a6762160)) {
+                            if (isdefined(item.itementry)) {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                         case 3:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"ammo") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"ammo") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 4:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"weapon") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"weapon") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 5:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"health") {
-                                if (item.var_a6762160.name == "<unknown string>") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"health") {
+                                if (item.itementry.name == "<unknown string>") {
                                     sphere(item.origin, radius, (0, 1, 0), 1, 0, 10, 20);
-                                } else if (item.var_a6762160.name == "<unknown string>") {
+                                } else if (item.itementry.name == "<unknown string>") {
                                     sphere(item.origin, radius, (0, 0, 1), 1, 0, 10, 20);
-                                } else if (item.var_a6762160.name == "<unknown string>") {
+                                } else if (item.itementry.name == "<unknown string>") {
                                     sphere(item.origin, radius, (1, 0.5, 0), 1, 0, 10, 20);
                                 } else {
                                     sphere(item.origin, radius, color, 1, 0, 10, 20);
@@ -1179,12 +1179,12 @@ function private function_cdd9b388() {
                             }
                             break;
                         case 6:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"armor") {
-                                if (item.var_a6762160.name == "<unknown string>") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"armor") {
+                                if (item.itementry.name == "<unknown string>") {
                                     sphere(item.origin, radius, (0, 1, 0), 1, 0, 10, 20);
-                                } else if (item.var_a6762160.name == "<unknown string>") {
+                                } else if (item.itementry.name == "<unknown string>") {
                                     sphere(item.origin, radius, (0, 0, 1), 1, 0, 10, 20);
-                                } else if (item.var_a6762160.name == "<unknown string>") {
+                                } else if (item.itementry.name == "<unknown string>") {
                                     sphere(item.origin, radius, (1, 1, 0), 1, 0, 10, 20);
                                 } else {
                                     sphere(item.origin, radius, color, 1, 0, 10, 20);
@@ -1192,52 +1192,52 @@ function private function_cdd9b388() {
                             }
                             break;
                         case 7:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"equipment") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"equipment") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 8:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"backpack") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"backpack") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 9:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"attachment") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"attachment") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 10:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"generic") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"generic") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 11:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"killstreak") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"killstreak") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 12:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"quest") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"quest") {
                                 sphere(item.origin, radius, (1, 0.5, 0), 1, 0, 10, 20);
                             }
                             break;
                         case 13:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"cash") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"cash") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 14:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"resource") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"resource") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 15:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"field_upgrade") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"field_upgrade") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 16:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"tactical") {
+                            if (isdefined(item.itementry) && item.itementry.itemtype === #"tactical") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
@@ -1258,7 +1258,7 @@ function private function_cdd9b388() {
                         if (isdefined(vehicle)) {
                             radius = 64;
                             var_84dd2a8b = 2048;
-                            if (distancesquared(origin, spawnpoint) < function_a3f6cdac(var_84dd2a8b)) {
+                            if (distancesquared(origin, spawnpoint) < sqr(var_84dd2a8b)) {
                                 radius = max(distance(origin, spawnpoint) / var_84dd2a8b * radius, 10);
                             }
                             sphere(spawnpoint, radius, (1, 1, 0), 1, 0, 10, 20);
@@ -1348,8 +1348,8 @@ function function_c07eae4e() {
         itemcount = function_8322cf16();
         for (i = 0; i < itemcount; i++) {
             item = function_b1702735(i);
-            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype == "<unknown string>" && item.var_a6762160.weapon.isprimary) {
-                add(var_6e5bbee1, function_35e06774(item.var_a6762160), 0);
+            if (isdefined(item.itementry) && item.itementry.itemtype == "<unknown string>" && item.itementry.weapon.isprimary) {
+                add(var_6e5bbee1, function_35e06774(item.itementry), 0);
             }
         }
         var_6e5bbee1 = randomize(var_6e5bbee1);
@@ -1401,20 +1401,20 @@ function function_9cc59537() {
                 if (isarray(item_spawn_drops)) {
                     foreach (drop in item_spawn_drops) {
                         if (isdefined(drop) && !is_true(drop.var_49d5e215)) {
-                            if (isdefined(drop.var_a6762160.killstreak)) {
-                                if (!isdefined(var_796ab805[drop.var_a6762160.name])) {
-                                    var_796ab805[drop.var_a6762160.name] = [];
-                                } else if (!isarray(var_796ab805[drop.var_a6762160.name])) {
-                                    var_796ab805[drop.var_a6762160.name] = array(var_796ab805[drop.var_a6762160.name]);
+                            if (isdefined(drop.itementry.killstreak)) {
+                                if (!isdefined(var_796ab805[drop.itementry.name])) {
+                                    var_796ab805[drop.itementry.name] = [];
+                                } else if (!isarray(var_796ab805[drop.itementry.name])) {
+                                    var_796ab805[drop.itementry.name] = array(var_796ab805[drop.itementry.name]);
                                 }
-                                var_796ab805[drop.var_a6762160.name][var_796ab805[drop.var_a6762160.name].size] = drop.var_a6762160.killstreak;
-                            } else if (isdefined(drop.var_a6762160.name) && drop.var_a6762160.name != "<unknown string>") {
-                                if (!isdefined(var_796ab805[drop.var_a6762160.name])) {
-                                    var_796ab805[drop.var_a6762160.name] = [];
-                                } else if (!isarray(var_796ab805[drop.var_a6762160.name])) {
-                                    var_796ab805[drop.var_a6762160.name] = array(var_796ab805[drop.var_a6762160.name]);
+                                var_796ab805[drop.itementry.name][var_796ab805[drop.itementry.name].size] = drop.itementry.killstreak;
+                            } else if (isdefined(drop.itementry.name) && drop.itementry.name != "<unknown string>") {
+                                if (!isdefined(var_796ab805[drop.itementry.name])) {
+                                    var_796ab805[drop.itementry.name] = [];
+                                } else if (!isarray(var_796ab805[drop.itementry.name])) {
+                                    var_796ab805[drop.itementry.name] = array(var_796ab805[drop.itementry.name]);
                                 }
-                                var_796ab805[drop.var_a6762160.name][var_796ab805[drop.var_a6762160.name].size] = drop.var_a6762160.name;
+                                var_796ab805[drop.itementry.name][var_796ab805[drop.itementry.name].size] = drop.itementry.name;
                             }
                             drop.var_49d5e215 = 1;
                         }
@@ -1442,10 +1442,10 @@ function function_9cc59537() {
                 }
                 var_7cb887a8 = [];
                 foreach (group in var_1d9375fc) {
-                    var_b91441dd = getscriptbundle(group.scriptbundlename);
-                    if (!isdefined(var_b91441dd) || is_true(var_b91441dd.vehiclespawner) || group.debug_spawnpoints.size == 0 || !isdefined(group.targetname) || var_b91441dd.name === "<unknown string>" || var_b91441dd.name === "<unknown string>" || var_b91441dd.name === "<unknown string>" || !is_true(var_b91441dd.var_4f220d03) && gametype === "<unknown string>") {
+                    itemlistbundle = getscriptbundle(group.scriptbundlename);
+                    if (!isdefined(itemlistbundle) || is_true(itemlistbundle.vehiclespawner) || group.debug_spawnpoints.size == 0 || !isdefined(group.targetname) || itemlistbundle.name === "<unknown string>" || itemlistbundle.name === "<unknown string>" || itemlistbundle.name === "<unknown string>" || !is_true(itemlistbundle.var_4f220d03) && gametype === "<unknown string>") {
                         continue;
-                    } else if (var_b91441dd.name === "<unknown string>") {
+                    } else if (itemlistbundle.name === "<unknown string>") {
                         var_df1e5fef = arraysortclosest(group.debug_spawnpoints, level.players[0].origin, 85, 1, getdvarint(#"hash_6ac8a75bc45c3633", 10000));
                         foreach (point in var_df1e5fef) {
                             sphere(point.origin, 16, (1, 1, 1), 1, 0, 16, 8);
@@ -1460,7 +1460,7 @@ function function_9cc59537() {
                             if (n_radius > 128) {
                                 n_radius = 128;
                             }
-                            switch (var_b91441dd.name) {
+                            switch (itemlistbundle.name) {
                             case #"hash_102716229ce6474b":
                                 color = (1, 1, 0);
                                 break;
@@ -1479,8 +1479,8 @@ function function_9cc59537() {
                             var_47748885 = 28;
                             var_c5330f11 = 32;
                             v_color = (1, 0, 1);
-                            if (isdefined(var_b91441dd.itemlist[0])) {
-                                if (var_b91441dd.itemlist[0].var_a6762160 === "<unknown string>" || var_b91441dd.itemlist[0].var_a6762160 === "<unknown string>" || var_b91441dd.itemlist[0].var_a6762160 === "<unknown string>" || var_b91441dd.itemlist[0].var_a6762160 === "<unknown string>" || var_b91441dd.itemlist[0].var_a6762160 === "<unknown string>" || var_b91441dd.itemlist[0].var_a6762160 === "<unknown string>") {
+                            if (isdefined(itemlistbundle.itemlist[0])) {
+                                if (itemlistbundle.itemlist[0].itementry === "<unknown string>" || itemlistbundle.itemlist[0].itementry === "<unknown string>" || itemlistbundle.itemlist[0].itementry === "<unknown string>" || itemlistbundle.itemlist[0].itementry === "<unknown string>" || itemlistbundle.itemlist[0].itementry === "<unknown string>" || itemlistbundle.itemlist[0].itementry === "<unknown string>") {
                                     v_color = (1, 1, 0);
                                     var_47748885 = 4;
                                     var_c5330f11 = 4;
@@ -1497,7 +1497,7 @@ function function_9cc59537() {
                                             continue;
                                         }
                                         waitframe(2);
-                                        stash thread function_fd87c780(stash.var_b91441dd.name, stash.available, 3);
+                                        stash thread function_fd87c780(stash.itemlistbundle.name, stash.available, 3);
                                     }
                                     setdvar(#"hash_f6b57eebb5965e6", 0);
                                 }
@@ -1524,15 +1524,15 @@ function function_9cc59537() {
                             v_angles = point.angles;
                             var_c24ea284 = undefined;
                             var_4b82457c = distance2d(point.origin, level.players[0].origin);
-                            var_24b0b1ea = var_b91441dd.var_7fb0967b;
+                            var_24b0b1ea = itemlistbundle.var_7fb0967b;
                             if (isdefined(var_24b0b1ea)) {
                                 if (items.size > 0) {
                                     var_abc7e003 = function_2e3efdda(point.origin, undefined, 20, var_24b0b1ea, -1, 1);
                                     var_abc7e003 = arraysortclosest(var_abc7e003, point.origin, 10, var_47748885);
-                                    foreach (item_type in var_b91441dd.itemlist) {
+                                    foreach (item_type in itemlistbundle.itemlist) {
                                         foreach (var_d76a7255 in var_abc7e003) {
-                                            if (item_type.var_a6762160 === var_d76a7255.var_a6762160.name && var_d76a7255.var_a6762160.name === items[0].var_a6762160.name) {
-                                                print3d(point.origin + vectorscale((0, 0, 1), 18), item_type.var_a6762160 + "<unknown string>" + var_24b0b1ea, (1, 0.5, 0), 1, 0.3, 8);
+                                            if (item_type.itementry === var_d76a7255.itementry.name && var_d76a7255.itementry.name === items[0].itementry.name) {
+                                                print3d(point.origin + vectorscale((0, 0, 1), 18), item_type.itementry + "<unknown string>" + var_24b0b1ea, (1, 0.5, 0), 1, 0.3, 8);
                                                 line(var_d76a7255.origin, point.origin, (1, 0.5, 0), 1, 0, 8);
                                             }
                                         }
@@ -1540,10 +1540,10 @@ function function_9cc59537() {
                                 }
                             }
                             up = vectorscale(anglestoup(v_angles), 16);
-                            if (is_true(var_b91441dd.supplystash)) {
+                            if (is_true(itemlistbundle.supplystash)) {
                                 n_depth = 9;
                                 n_width = 14;
-                                if (var_b91441dd.name === "<unknown string>" || var_b91441dd.name === "<unknown string>" || var_b91441dd.name === "<unknown string>") {
+                                if (itemlistbundle.name === "<unknown string>" || itemlistbundle.name === "<unknown string>" || itemlistbundle.name === "<unknown string>") {
                                     n_depth = 12;
                                     n_width = 48;
                                 }
@@ -1567,7 +1567,7 @@ function function_9cc59537() {
                                     print3d(point.origin + vectorscale((0, 0, 1), 24), sqrt(distancesquared(point.origin, close.origin)), v_color, 1, 0.3, 8);
                                 }
                             }
-                            if (is_true(var_b91441dd.supplystash)) {
+                            if (is_true(itemlistbundle.supplystash)) {
                                 var_47748885 = n_depth;
                                 foreach (i, v_test in var_7cb887a8) {
                                     if (i > 2) {
@@ -1603,7 +1603,7 @@ function function_9cc59537() {
                                 n_radius = 32;
                             }
                             if (var_4b82457c <= 1024) {
-                                if (is_true(var_b91441dd.supplystash) && v_angles !== (0, 0, 0)) {
+                                if (is_true(itemlistbundle.supplystash) && v_angles !== (0, 0, 0)) {
                                     function_47351fa3(point.origin, v_angles, v_color, 8);
                                     box(point.origin + vectorscale(anglestoup(v_angles), 16), (n_depth + 4, n_width, 16) * -1, (n_depth, n_width, 16), v_angles, v_color, 1, 0, 8);
                                 } else {
@@ -1613,7 +1613,7 @@ function function_9cc59537() {
                                     print3d(point.origin + vectorscale((0, 0, 1), 48), function_9e72a96(group.targetname), v_color, 1, 0.3, 8);
                                     print3d(point.origin + vectorscale((0, 0, 1), 42), function_9e72a96(point.targetname), v_color, 1, 0.3, 8);
                                     if (var_4b82457c < 256 && level.players[0] is_player_looking_at(point.origin, 0.87, 0)) {
-                                        print3d(point.origin + vectorscale((0, 0, 1), 36), var_b91441dd.name, v_color, 1, 0.3, 8);
+                                        print3d(point.origin + vectorscale((0, 0, 1), 36), itemlistbundle.name, v_color, 1, 0.3, 8);
                                         print3d(point.origin + vectorscale((0, 0, 1), 30), point.origin, v_color, 1, 0.3, 8);
                                         if (dynents.size > 0) {
                                             var_a1bd87ef = getdynentarray(point.targetname);

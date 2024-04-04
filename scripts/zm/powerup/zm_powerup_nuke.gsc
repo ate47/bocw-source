@@ -18,14 +18,14 @@
 // Checksum 0xd567e0ca, Offset: 0x190
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_powerup_nuke", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_powerup_nuke", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd371e36a, Offset: 0x1d8
 // Size: 0xfc
-function private function_70a657d8() {
+function private preinit() {
     zm_powerups::register_powerup("nuke", &grab_nuke);
     clientfield::register("actor", "zm_nuked", 1, 1, "int");
     clientfield::register("vehicle", "zm_nuked", 1, 1, "int");
@@ -140,7 +140,7 @@ function nuke_powerup(drop_item, player_team, var_264cf1f9) {
             zombies_nuked[i] kill();
         } else if (zombies_nuked[i].var_6f84b820 === #"special") {
             var_c790ea95 = zombies_nuked[i].maxhealth * 0.75;
-        } else if (zombies_nuked[i].var_6f84b820 === #"hash_72d4f2ad2e333eb4") {
+        } else if (zombies_nuked[i].var_6f84b820 === #"elite") {
             var_c790ea95 = zombies_nuked[i].maxhealth * 0.25;
         }
         if (isdefined(var_c790ea95)) {
@@ -149,11 +149,11 @@ function nuke_powerup(drop_item, player_team, var_264cf1f9) {
     }
     level notify(#"nuke_complete");
     if (zm_powerups::function_cfd04802(#"nuke") && isplayer(var_264cf1f9)) {
-        level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"nuke_powerup_zm", #attacker:var_264cf1f9});
+        level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:var_264cf1f9, #scoreevent:"nuke_powerup_zm"});
         return;
     }
     foreach (e_player in level.players) {
-        level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"nuke_powerup_zm", #attacker:e_player});
+        level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:e_player, #scoreevent:"nuke_powerup_zm"});
     }
 }
 

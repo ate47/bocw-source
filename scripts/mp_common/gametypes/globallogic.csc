@@ -23,14 +23,14 @@
 // Checksum 0x266dad23, Offset: 0x490
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"globallogic", &function_70a657d8, undefined, undefined, #"visionset_mgr");
+    system::register(#"globallogic", &preinit, undefined, undefined, #"visionset_mgr");
 }
 
 // Namespace globallogic/globallogic
 // Params 0, eflags: 0x6 linked
 // Checksum 0xaca5bde8, Offset: 0x4e0
 // Size: 0xd6c
-function private function_70a657d8() {
+function private preinit() {
     visionset_mgr::register_visionset_info("mpintro", 1, 31, undefined, "mpintro");
     visionset_mgr::register_visionset_info("crithealth", 1, 25, undefined, "critical_health");
     animation::add_notetrack_func(#"globallogic::play_plant_sound", &play_plant_sound);
@@ -41,12 +41,12 @@ function private function_70a657d8() {
     registerclientfield("playercorpse", "pineapplegun_effect", 1, 1, "int", &pineapplegun_effect_cb, 0);
     registerclientfield("actor", "annihilate_effect", 1, 1, "int", &annihilate_effect_cb, 0);
     registerclientfield("actor", "pineapplegun_effect", 1, 1, "int", &pineapplegun_effect_cb, 0);
-    clientfield::function_5b7d846d("hudItems.team1.roundsWon", #"hash_410fe12a68d6e801", [1:#"roundswon", 0:#"team1"], 1, 4, "int", undefined, 0, 0);
-    clientfield::function_5b7d846d("hudItems.team2.roundsWon", #"hash_410fe12a68d6e801", [1:#"roundswon", 0:#"team2"], 1, 4, "int", undefined, 0, 0);
+    clientfield::function_5b7d846d("hudItems.team1.roundsWon", #"hash_410fe12a68d6e801", [#"team1", #"roundswon"], 1, 4, "int", undefined, 0, 0);
+    clientfield::function_5b7d846d("hudItems.team2.roundsWon", #"hash_410fe12a68d6e801", [#"team2", #"roundswon"], 1, 4, "int", undefined, 0, 0);
     teamcount = getgametypesetting(#"teamcount");
     for (i = 1; i <= teamcount; i++) {
-        clientfield::function_5b7d846d("hudItems.team" + i + ".livesCount", #"hash_410fe12a68d6e801", [1:#"livescount", 0:#"team" + i], 1, 8, "int", undefined, 0, 0);
-        clientfield::function_5b7d846d("hudItems.team" + i + ".noRespawnsLeft", #"hash_410fe12a68d6e801", [1:#"norespawnsleft", 0:#"team" + i], 1, 1, "int", undefined, 0, 0);
+        clientfield::function_5b7d846d("hudItems.team" + i + ".livesCount", #"hash_410fe12a68d6e801", [#"team" + i, #"livescount"], 1, 8, "int", undefined, 0, 0);
+        clientfield::function_5b7d846d("hudItems.team" + i + ".noRespawnsLeft", #"hash_410fe12a68d6e801", [#"team" + i, #"norespawnsleft"], 1, 1, "int", undefined, 0, 0);
     }
     clientfield::register_clientuimodel("hudItems.armorIsOnCooldown", #"hash_6f4b11a0bee9b73d", #"armorisoncooldown", 1, 1, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("hudItems.hideOutcomeUI", #"hash_6f4b11a0bee9b73d", #"hideoutcomeui", 1, 1, "int", undefined, 0, 0);
@@ -90,7 +90,7 @@ function private function_70a657d8() {
     }
     level.var_ac25d260 = getgametypesetting(#"hash_66b6ee89ac1ad152");
     if (is_true(level.var_ac25d260)) {
-        namespace_8f42c328::init();
+        cranked::init();
     }
 }
 

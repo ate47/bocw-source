@@ -23,15 +23,15 @@ function private autoexec __init__system__() {
 function private function_2a159d3e() {
     var_59dc62dc = struct::get_array("ammo_resupply_crate");
     level flag::wait_till("all_players_connected");
-    array::thread_all(var_59dc62dc, &function_342c5412);
+    array::thread_all(var_59dc62dc, &ammo_crate_init);
 }
 
 // Namespace namespace_14a33186/namespace_14a33186
 // Params 0, eflags: 0x2 linked
 // Checksum 0x78cfb2f2, Offset: 0x1c8
 // Size: 0x54
-function function_342c5412() {
-    self util::function_cf42fd2f(undefined, undefined, #"hash_59581ed64841a461", undefined, undefined, &function_3e0940bd, undefined, undefined, undefined, undefined, 1, 0, &function_6014ca4c);
+function ammo_crate_init() {
+    self util::create_cursor_hint(undefined, undefined, #"hash_59581ed64841a461", undefined, undefined, &function_3e0940bd, undefined, undefined, undefined, undefined, 1, 0, &function_6014ca4c);
 }
 
 // Namespace namespace_14a33186/namespace_14a33186

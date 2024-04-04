@@ -11,14 +11,14 @@
 // Checksum 0x3e616653, Offset: 0x108
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"status_effect_dot", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"status_effect_dot", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace status_effect_dot/status_effect_dot
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdf949bae, Offset: 0x150
 // Size: 0xec
-function private function_70a657d8() {
+function private preinit() {
     status_effect::register_status_effect_callback_apply(7, &dot_apply);
     status_effect::function_5bae5120(7, &dot_end);
     status_effect::function_6f4eaf88(getstatuseffect("dot"));

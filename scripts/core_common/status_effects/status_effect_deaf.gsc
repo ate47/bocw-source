@@ -10,14 +10,14 @@
 // Checksum 0x6f9e419f, Offset: 0xa0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"status_effect_deaf", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"status_effect_deaf", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace status_effect_deaf/status_effect_deaf
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa7016ff0, Offset: 0xe8
 // Size: 0x8c
-function private function_70a657d8() {
+function private preinit() {
     status_effect::register_status_effect_callback_apply(0, &deaf_apply);
     status_effect::function_5bae5120(0, &function_c5189bd);
     status_effect::function_6f4eaf88(getstatuseffect("deaf"));

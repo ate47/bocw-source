@@ -26,14 +26,14 @@
 // Checksum 0x5c31b95e, Offset: 0x340
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_7e93e9089f28804f", &function_70a657d8, undefined, undefined, #"actions");
+    system::register(#"hash_7e93e9089f28804f", &preinit, undefined, undefined, #"actions");
 }
 
 // Namespace namespace_9c83b58d/namespace_9c83b58d
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9d19e5cb, Offset: 0x390
 // Size: 0x31c
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.var_c8b4a78a)) {
         /#
             function_5ac4dc99("<unknown string>", "<unknown string>");
@@ -109,7 +109,7 @@ function private function_c30fad9a() {
             player.takedown.var_70354814 = getdvarstring(#"hash_5ec5a0d2ff65ae51", "<unknown string>");
             player thread function_ac7d52ad(player.takedown.debug.var_8dbd3c70);
         #/
-        player.takedown.var_7a95ca29 = getdvarfloat(#"player_useradius");
+        player.takedown.use_radius = getdvarfloat(#"player_useradius");
         player.takedown.ai_corpsesynch = getdvarint(#"ai_corpsesynch", 0);
     }
 }
@@ -120,8 +120,8 @@ function private function_c30fad9a() {
 // Size: 0xa8
 function private function_4cb18218() {
     var_223ffdd1 = getscriptbundlenames("takedown");
-    foreach (var_fc96f513 in var_223ffdd1) {
-        level function_8528a766(var_fc96f513);
+    foreach (bundle_name in var_223ffdd1) {
+        level function_8528a766(bundle_name);
     }
 }
 
@@ -129,8 +129,8 @@ function private function_4cb18218() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x76124292, Offset: 0xae0
 // Size: 0x6dc
-function private function_8528a766(var_fc96f513) {
-    takedown = getscriptbundle(var_fc96f513);
+function private function_8528a766(bundle_name) {
+    takedown = getscriptbundle(bundle_name);
     if (!isdefined(takedown)) {
         return;
     }
@@ -166,8 +166,8 @@ function private function_8528a766(var_fc96f513) {
         }
         var_1d5a6fd3.var_ad61bf60 = isdefined(takedown.yawrange) && takedown.yawrange < 180 ? anglestoforward((0, isdefined(takedown.yaw) ? takedown.yaw : 0, 0)) : undefined;
         var_1d5a6fd3.var_8f4fda5a = isdefined(takedown.yawrange) && takedown.yawrange < 180 ? cos(takedown.yawrange) : undefined;
-        var_1d5a6fd3.var_4c067ed7 = isdefined(takedown.minrange) && takedown.minrange > 0 ? function_a3f6cdac(takedown.minrange) : undefined;
-        var_1d5a6fd3.var_6465622a = isdefined(takedown.maxrange) ? function_a3f6cdac(takedown.maxrange) : undefined;
+        var_1d5a6fd3.var_4c067ed7 = isdefined(takedown.minrange) && takedown.minrange > 0 ? sqr(takedown.minrange) : undefined;
+        var_1d5a6fd3.var_6465622a = isdefined(takedown.maxrange) ? sqr(takedown.maxrange) : undefined;
         var_1d5a6fd3.minheight = isdefined(takedown.minheight) ? takedown.minheight : undefined;
         var_1d5a6fd3.maxheight = isdefined(takedown.maxheight) ? takedown.maxheight : undefined;
         var_1d5a6fd3.trace = is_true(takedown.trace) ? 1 : undefined;
@@ -262,9 +262,9 @@ function function_7395fe24(action, fullbody, victim, scene) {
         self function_7a061b23(0, undefined);
     }
     self.takedown.weapon = self getcurrentweapon();
-    self.takedown.var_e62b225a = self namespace_594b67e::function_1a2a3654();
+    self.takedown.var_e62b225a = self action_utility::function_1a2a3654();
     self.takedown.start_origin = self.origin;
-    self.var_fb9a2c03 = 1;
+    self.in_melee_death = 1;
     self flag::set("in_action");
     self val::set(#"action", "takedamage", 0);
     if (!isalive(victim)) {
@@ -275,23 +275,23 @@ function function_7395fe24(action, fullbody, victim, scene) {
         self.takedown.var_f7557940 = victim;
         victim notify(#"hash_39550364a879e1d4");
         victim.var_310c1596 = victim spawner::function_461ce3e9();
-        victim namespace_594b67e::function_71180c30(1);
-        victim namespace_f48ab2e1::remove(#"melee");
-        victim util::function_dce0e9b9();
-        victim.var_fb9a2c03 = 1;
+        victim action_utility::function_71180c30(1);
+        victim prompts::remove(#"melee");
+        victim util::remove_cursor_hint();
+        victim.in_melee_death = 1;
         if (isdefined(level.var_ab828d57)) {
             victim util::delay(0.1, undefined, level.var_ab828d57);
         }
         victim ai::look_at(undefined, 0);
-        victim util::delay(0.5, "takedown_executed", &namespace_594b67e::function_71180c30, 0);
+        victim util::delay(0.5, "takedown_executed", &action_utility::function_71180c30, 0);
         if (isdefined(level.var_b19e4f0a)) {
             victim util::delay(1, undefined, level.var_b19e4f0a, "ally_damaged", "ally_hurt_peripheral", self, 50, 500);
         }
         victim.animname = "generic";
     }
-    self namespace_594b67e::function_b0190b65(action);
-    self namespace_594b67e::function_c0f7b46e(fullbody, 1);
-    self namespace_594b67e::function_e2fcacb2(10);
+    self action_utility::function_b0190b65(action);
+    self action_utility::function_c0f7b46e(fullbody, 1);
+    self action_utility::function_e2fcacb2(10);
     if (actions::function_1028d928(action.name, "grab")) {
         self.takedown.var_67582ca5 = victim;
         self function_6940d001(action, scene, 0.25, "grab");
@@ -320,7 +320,7 @@ function function_6940d001(action, scene, time, var_9386e7ce) {
     /#
         assert(isalive(victim));
     #/
-    self namespace_594b67e::function_6cd69890(0);
+    self action_utility::allow_weapon(0);
     var_17813638 = victim function_4c0949f2(self, scene);
     var_86b37828 = self.takedown.takedown[action.name].name;
     if (time > 0) {
@@ -329,7 +329,7 @@ function function_6940d001(action, scene, time, var_9386e7ce) {
     self util::delay(0.2, undefined, &function_1c85708e);
     if (self actions::function_ae44e21b(action, "melee")) {
         if (isweapon(self.takedown.var_e62b225a)) {
-            self namespace_594b67e::function_b56ad054();
+            self action_utility::function_b56ad054();
             self actions::function_3af7d065(1, var_9386e7ce);
         }
     }
@@ -340,7 +340,7 @@ function function_6940d001(action, scene, time, var_9386e7ce) {
 // Checksum 0xbcbbd0a4, Offset: 0x1ad0
 // Size: 0x1c
 function function_1c85708e() {
-    self.var_6639d45b namespace_594b67e::function_30b535ff(0);
+    self.var_6639d45b action_utility::function_30b535ff(0);
 }
 
 // Namespace namespace_9c83b58d/namespace_9c83b58d
@@ -422,28 +422,28 @@ function function_e3bc3dc9(action) {
                 var_22a9143 = actions::function_1028d928(action.name, "grab");
                 var_86b37828 = self.takedown.takedown[action.name].name;
                 var_6e051 = self.takedown.takedown[action.name].prompt;
-                self.takedown.victim[action.name] namespace_f48ab2e1::create(#"melee", var_6e051);
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_a4cf2cde({#tag:"j_spine4"});
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_92127496(1);
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_44d7831a(#"melee", 0);
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_8f5eb0a6(#"melee", 0);
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_d03d79d6(#"melee", 0);
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_4cb5d3a1(#"melee", 0);
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_dcf99fad(#"melee", 1);
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_3171730f(#"melee", #"actions");
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_68782902(#"melee", 1000);
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_b95d71cd(#"melee", 180);
-                self.takedown.victim[action.name] namespace_f48ab2e1::create(#"hash_3c5c65155dfb1731", #"hash_4759bc1b8324047c");
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_46df0bc7(#"melee", 5);
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_44d7831a(#"hash_3c5c65155dfb1731", 0);
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_8f5eb0a6(#"hash_3c5c65155dfb1731", 0.1);
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_d03d79d6(#"hash_3c5c65155dfb1731", 0.2);
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_a4a9acfc(#"hash_3c5c65155dfb1731", &function_3cadc363);
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_4cb5d3a1(#"hash_3c5c65155dfb1731", 0);
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_dcf99fad(#"hash_3c5c65155dfb1731", 1);
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_3171730f(#"hash_3c5c65155dfb1731", #"actions");
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_68782902(#"hash_3c5c65155dfb1731", 1000);
-                self.takedown.victim[action.name] namespace_f48ab2e1::function_b95d71cd(#"hash_3c5c65155dfb1731", 180);
+                self.takedown.victim[action.name] prompts::create(#"melee", var_6e051);
+                self.takedown.victim[action.name] prompts::function_a4cf2cde({#tag:"j_spine4"});
+                self.takedown.victim[action.name] prompts::function_92127496(1);
+                self.takedown.victim[action.name] prompts::function_44d7831a(#"melee", 0);
+                self.takedown.victim[action.name] prompts::function_8f5eb0a6(#"melee", 0);
+                self.takedown.victim[action.name] prompts::function_d03d79d6(#"melee", 0);
+                self.takedown.victim[action.name] prompts::function_4cb5d3a1(#"melee", 0);
+                self.takedown.victim[action.name] prompts::function_dcf99fad(#"melee", 1);
+                self.takedown.victim[action.name] prompts::function_3171730f(#"melee", #"actions");
+                self.takedown.victim[action.name] prompts::function_68782902(#"melee", 1000);
+                self.takedown.victim[action.name] prompts::function_b95d71cd(#"melee", 180);
+                self.takedown.victim[action.name] prompts::create(#"hash_3c5c65155dfb1731", #"hash_4759bc1b8324047c");
+                self.takedown.victim[action.name] prompts::function_46df0bc7(#"melee", 5);
+                self.takedown.victim[action.name] prompts::function_44d7831a(#"hash_3c5c65155dfb1731", 0);
+                self.takedown.victim[action.name] prompts::function_8f5eb0a6(#"hash_3c5c65155dfb1731", 0.1);
+                self.takedown.victim[action.name] prompts::function_d03d79d6(#"hash_3c5c65155dfb1731", 0.2);
+                self.takedown.victim[action.name] prompts::function_a4a9acfc(#"hash_3c5c65155dfb1731", &function_3cadc363);
+                self.takedown.victim[action.name] prompts::function_4cb5d3a1(#"hash_3c5c65155dfb1731", 0);
+                self.takedown.victim[action.name] prompts::function_dcf99fad(#"hash_3c5c65155dfb1731", 1);
+                self.takedown.victim[action.name] prompts::function_3171730f(#"hash_3c5c65155dfb1731", #"actions");
+                self.takedown.victim[action.name] prompts::function_68782902(#"hash_3c5c65155dfb1731", 1000);
+                self.takedown.victim[action.name] prompts::function_b95d71cd(#"hash_3c5c65155dfb1731", 180);
                 self thread takedown_prompt_monitor(action, var_86b37828);
                 self.takedown.var_bf0ca7db[action.name] = 1;
             }
@@ -476,7 +476,7 @@ function private function_3cadc363(var_248cbbcf) {
     if (self.var_f467e5b0.enabled[#"body_shield"] === 0) {
         return 0;
     }
-    return isweapon(var_248cbbcf.player namespace_594b67e::function_1a2a3654());
+    return isweapon(var_248cbbcf.player action_utility::function_1a2a3654());
 }
 
 // Namespace namespace_9c83b58d/namespace_9c83b58d
@@ -501,8 +501,8 @@ function takedown_prompt_monitor(action, var_d426470, var_72612ea0) {
     self endon("takedown_prompt_monitor" + (isdefined(var_d426470) ? var_d426470 : "_") + (isdefined(var_72612ea0) ? var_72612ea0 : "_"));
     self endon(action.ender);
     while (true) {
-        if (!isdefined(self.takedown.victim) || self.takedown.victim.size == 0 || is_true(self.var_fb9a2c03)) {
-            self function_db07e398(action.name, undefined, self.var_fb9a2c03);
+        if (!isdefined(self.takedown.victim) || self.takedown.victim.size == 0 || is_true(self.in_melee_death)) {
+            self function_db07e398(action.name, undefined, self.in_melee_death);
             return;
         }
         waitframe(1);
@@ -557,7 +557,7 @@ function function_5ca78f5a(action) {
             }
             var_2dcf841c = function_3c43bd2a(action, enemy, self);
             if (isdefined(enemy.var_7b026ceb)) {
-                if (distance2dsquared(enemy.origin, self.origin) > function_a3f6cdac(enemy.var_7b026ceb)) {
+                if (distance2dsquared(enemy.origin, self.origin) > sqr(enemy.var_7b026ceb)) {
                     continue;
                 }
             }
@@ -573,23 +573,23 @@ function function_5ca78f5a(action) {
                         var_59f39012 = anglestoforward(enemy.angles);
                         var_78662e77 = vectornormalize(self.origin - enemy.origin);
                         dot = vectordot(var_78662e77, var_59f39012);
-                        var_5423715d = #"hash_6a4c1594be34b79f";
+                        useprompt = #"hash_6a4c1594be34b79f";
                         if (enemy.awarenesslevelcurrent != "combat") {
-                            var_5423715d = #"hash_6d8033f0ef3722c9";
+                            useprompt = #"hash_6d8033f0ef3722c9";
                         }
                         if (isdefined(enemy.var_d3f0031c) && dot <= var_ee55055) {
                             var_2dcf841c.scene = enemy.var_d3f0031c;
                             if (isdefined(enemy.var_4f8ed4b2) && isdefined(enemy.var_3e95b88f)) {
-                                var_5423715d = enemy.var_4f8ed4b2;
+                                useprompt = enemy.var_4f8ed4b2;
                             }
                         } else if (isdefined(enemy.var_59212ad0) && dot >= var_ee55055) {
                             var_2dcf841c.scene = enemy.var_59212ad0;
                             if (isdefined(enemy.var_f535b314) && isdefined(enemy.var_3e95b88f)) {
-                                var_5423715d = enemy.var_f535b314;
+                                useprompt = enemy.var_f535b314;
                             }
                         }
-                        if (isdefined(enemy.var_3e95b88f.var_f48ab2e1) && isstruct(enemy.var_3e95b88f.var_f48ab2e1[#"melee"])) {
-                            enemy namespace_f48ab2e1::function_263320e2(#"melee", var_5423715d);
+                        if (isdefined(enemy.var_3e95b88f.prompts) && isstruct(enemy.var_3e95b88f.prompts[#"melee"])) {
+                            enemy prompts::function_263320e2(#"melee", useprompt);
                         }
                     }
                     /#
@@ -597,7 +597,7 @@ function function_5ca78f5a(action) {
                             var_2dcf841c.scene = self.takedown.var_70354814;
                         }
                     #/
-                    result = [2:var_2dcf841c.takedown, 1:var_2dcf841c.scene, 0:enemy];
+                    result = [enemy, var_2dcf841c.scene, var_2dcf841c.takedown];
                 }
             }
         }
@@ -620,8 +620,8 @@ function function_3c43bd2a(action, victim, player) {
     var_bf2073bc = undefined;
     victim function_8c04a084(player);
     foreach (takedown in level.var_c8b4a78a.var_c8b4a78a) {
-        var_6fcfdd59 = player function_be279d34(action, takedown, victim);
-        if (var_6fcfdd59) {
+        validplayer = player function_be279d34(action, takedown, victim);
+        if (validplayer) {
             var_2cd3ac21 = victim function_c943b729(action, takedown, player);
             if (var_2cd3ac21) {
                 var_879156ee = self function_945b4efe(takedown);
@@ -630,7 +630,7 @@ function function_3c43bd2a(action, victim, player) {
             }
         }
     }
-    return {#takedown:var_bf2073bc, #scene:var_879156ee};
+    return {#scene:var_879156ee, #takedown:var_bf2073bc};
 }
 
 // Namespace namespace_9c83b58d/namespace_9c83b58d
@@ -729,7 +729,7 @@ function function_c943b729(*action, takedown, player) {
         var_d96cb66d = anglestoright(self gettagangles("j_head")) * -1;
         var_a15c1f47 = anglestoforward(self.angles);
         var_da1c47f = lerpvector(var_d96cb66d, var_a15c1f47, 0.5);
-        worlddir = rotatepoint(takedown.var_ad61bf60, (0, function_2981bd91(var_da1c47f), 0));
+        worlddir = rotatepoint(takedown.var_ad61bf60, (0, vectortoyaw(var_da1c47f), 0));
         if (vectordot(worlddir, self.var_97e2c0da.var_fe50a481) < takedown.var_8f4fda5a) {
             return false;
         }
@@ -772,12 +772,12 @@ function function_a4e4cef5(*action_name, player) {
     #/
     if (!isdefined(self.var_234d269) || self.var_234d269 != gettime()) {
         self.var_b87cdd12 = 1;
-        var_4df98d7a = anglestoforward(player getplayerangles());
+        playerfwd = anglestoforward(player getplayerangles());
         playereye = player getplayercamerapos();
         delta = self geteye() - playereye;
         var_9354ec35 = math::clamp(distance(self geteye(), playereye) - 30, 0, 120);
         var_da2162f9 = 0.5 + 0.44 * (var_9354ec35 / 150 - 30);
-        if (vectordot(vectornormalize(delta), var_4df98d7a) < var_da2162f9) {
+        if (vectordot(vectornormalize(delta), playerfwd) < var_da2162f9) {
             self.var_b87cdd12 = 0;
         }
         self.var_234d269 = gettime();
@@ -806,16 +806,16 @@ function function_5169db86() {
 // Params 7, eflags: 0x0
 // Checksum 0xd21daa00, Offset: 0x3e80
 // Size: 0x38e
-function function_dce515a6(guy, modelname, var_cf230c0, var_8afc2ef3, var_5f373dfe, var_a18e300c, aitype) {
+function function_dce515a6(guy, modelname, var_cf230c0, attach_tag, var_5f373dfe, var_a18e300c, aitype) {
     /#
         assert(isplayer(self));
     #/
     /#
-        assert(isdefined(var_8afc2ef3) == isdefined(var_cf230c0));
+        assert(isdefined(attach_tag) == isdefined(var_cf230c0));
     #/
-    if (isdefined(var_8afc2ef3)) {
+    if (isdefined(attach_tag)) {
         /#
-            assert(var_8afc2ef3.size == var_cf230c0.size);
+            assert(attach_tag.size == var_cf230c0.size);
         #/
     }
     if (!isdefined(aitype)) {
@@ -823,7 +823,7 @@ function function_dce515a6(guy, modelname, var_cf230c0, var_8afc2ef3, var_5f373d
     }
     if (!is_true(var_a18e300c)) {
         if (isalive(guy) && guy !== self.takedown.body) {
-            if (isdefined(self.takedown.body) && !self.takedown.body namespace_594b67e::function_30b535ff(0)) {
+            if (isdefined(self.takedown.body) && !self.takedown.body action_utility::function_30b535ff(0)) {
                 if (isdefined(self.takedown.body.magic_bullet_shield)) {
                     self.takedown.body util::stop_magic_bullet_shield();
                 }
@@ -844,9 +844,9 @@ function function_dce515a6(guy, modelname, var_cf230c0, var_8afc2ef3, var_5f373d
         bodymodel setmodel(modelname);
         bodymodel.modelname = modelname;
         bodymodel.ai_type = aitype;
-        bodymodel namespace_594b67e::function_77af90aa(var_cf230c0, var_8afc2ef3);
+        bodymodel action_utility::function_77af90aa(var_cf230c0, attach_tag);
         bodymodel useanimtree("generic");
-        bodymodel namespace_594b67e::function_30b535ff(1);
+        bodymodel action_utility::function_30b535ff(1);
         self.takedown.body = bodymodel;
     }
     if (isdefined(var_5f373dfe)) {
@@ -879,7 +879,7 @@ function function_4c0949f2(player, scene) {
     } else if (isdefined(player.takedown.var_b3f41b40[entid])) {
         var_17813638.angles = player.takedown.var_b3f41b40[entid];
     } else {
-        var_17813638.angles = (0, function_2981bd91(var_17813638.origin - player.origin), 0);
+        var_17813638.angles = (0, vectortoyaw(var_17813638.origin - player.origin), 0);
     }
     var_17813638.scriptbundlename = scene;
     var_17813638.script_play_multiple = 1;
@@ -910,46 +910,46 @@ function function_970b3d76(action, scene, player) {
     self notify(#"hash_15ec42f1846ef9d0");
     player flag::set("takedown_active");
     player notify(#"takedown_cleanup");
-    self namespace_f48ab2e1::remove(#"hash_3c5c65155dfb1731");
-    self namespace_f48ab2e1::function_86eedc();
+    self prompts::remove(#"hash_3c5c65155dfb1731");
+    self prompts::function_86eedc();
     waittillframeend();
     player thread actions::function_c004e236("carry_body");
     groundpos = util::ground_position(player.origin, 16, 64, player);
-    player thread takedown_cleanup(action, [1:"takedown_cleanup", 0:action.ender], groundpos, player.takedown.stance[action.name]);
+    player thread takedown_cleanup(action, [action.ender, "takedown_cleanup"], groundpos, player.takedown.stance[action.name]);
     var_17813638 = self function_4c0949f2(player, scene);
     player.var_edbc8698 = self;
-    self.var_93d415f = self.maxsightdistsqrd;
+    self.og_maxsightdistsqrd = self.maxsightdistsqrd;
     self.var_4285accc = self.newenemyreactiondistsq;
     self.var_577bde5e = self.battlechatter;
     self.var_f2c6a60d = self.allowdeath;
-    self.var_13b47e4e = 0;
-    self.var_d2ef9695 = 1;
+    self.allowantigrav = 0;
+    self.dontmelee = 1;
     self.maxsightdistsqrd = 1;
     self.fixednode = 0;
     self.ignoreme = 1;
     self.ignoreall = 1;
     self.newenemyreactiondistsq = 0;
     self.allowdeath = 0;
-    self.a.var_bb441859 = 1;
+    self.a.disablepain = 1;
     self.allowpain = 0;
     self battlechatter::function_2ab9360b(0);
     self.var_e690137d = scene;
-    self.var_39ee0086 = 1;
+    self.remove_from_animloop = 1;
     if (isdefined(level.var_e3f5eafc)) {
         self clientfield::set("spy_camera_remove_highlight", 1);
     }
     self notify(#"takedown_executed");
     if (isdefined(self) || isalive(self)) {
         self util::delay(5, "takedown_cleanup", &function_9e3a2c7f, self);
-        var_17813638 namespace_594b67e::scene_play(scene, player, self);
-        player thread namespace_594b67e::function_d76eed10(action);
+        var_17813638 action_utility::scene_play(scene, player, self);
+        player thread action_utility::function_d76eed10(action);
         function_64852b21(self);
     }
     player notify(#"takedown_cleanup");
     player notify(#"hash_1c024a9ada1dc600");
     waitframe(1);
     player actions::function_942d9213();
-    player namespace_594b67e::function_e2fcacb2(3);
+    player action_utility::function_e2fcacb2(3);
     player flag::clear("in_action");
 }
 
@@ -985,8 +985,8 @@ function function_7a061b23(enabled, action_name) {
     var_b381ae79 = !self.takedown.var_d4da26de;
     self.takedown.allow_melee = var_b381ae79;
     var_32d84328 = var_b381ae79;
-    var_9463444 = self getcurrentweapon();
-    if (var_9463444.name == #"knife_loadout" && is_true(self.var_31df4786)) {
+    curweap = self getcurrentweapon();
+    if (curweap.name == #"knife_loadout" && is_true(self.var_31df4786)) {
         var_32d84328 = 1;
     }
     if (is_true(self.takedown.var_f75c6733) == var_32d84328) {
@@ -1027,7 +1027,7 @@ function function_64852b21(guy) {
     guy.skipdeathanim = 1;
     guy.noragdoll = 1;
     guy pushplayer(0);
-    guy thread namespace_594b67e::function_91639a4c(0);
+    guy thread action_utility::function_91639a4c(0);
     if (isdefined(level.var_ab828d57)) {
         guy util::delay(0.1, undefined, level.var_ab828d57);
     }
@@ -1035,7 +1035,7 @@ function function_64852b21(guy) {
     guy.diequietly = 1;
     guy util::stop_magic_bullet_shield();
     if (isdefined(guy.stealth)) {
-        guy.stealth.var_5f31081e = 60;
+        guy.stealth.override_damage_auto_range = 60;
     }
     if (isalive(guy)) {
         guy kill((0, 0, 0), player, player);
@@ -1059,11 +1059,11 @@ function function_caa295ea(guy) {
             if (corpse isragdoll()) {
                 continue;
             }
-            var_2501cbe2 = corpse.origin;
+            corpseorigin = corpse.origin;
             if (is_true(player.takedown.ai_corpsesynch)) {
-                var_2501cbe2 = corpse function_b9ab269e();
+                corpseorigin = corpse getcorpsephysicsorigin();
             }
-            if (isdefined(var_2501cbe2) && distancesquared(var_2501cbe2, player.takedown.kill_origin) < function_a3f6cdac(60)) {
+            if (isdefined(corpseorigin) && distancesquared(corpseorigin, player.takedown.kill_origin) < sqr(60)) {
                 corpse startragdoll();
                 corpse.var_caa295ea = 1;
             }
@@ -1090,25 +1090,25 @@ function function_8c04a084(player) {
         tag = "tag_origin";
         tagangles = self gettagangles(tag);
         tagpos = self gettagorigin(tag);
-        var_da4521b5 = anglestoright(tagangles);
-        var_a38620f = anglestoforward(tagangles);
+        tagright = anglestoright(tagangles);
+        tagfwd = anglestoforward(tagangles);
         var_b6db82af = player.origin - tagpos;
         var_b6db82af = (var_b6db82af[0], var_b6db82af[1], 0);
         var_b6db82af = vectornormalize(var_b6db82af);
-        var_cc854834 = abs(vectordot(var_a38620f, (0, 0, 1)));
-        if (var_cc854834 > 0.7) {
-            var_a38620f = vectornormalize((var_da4521b5[0], var_da4521b5[1], 0));
+        dotup = abs(vectordot(tagfwd, (0, 0, 1)));
+        if (dotup > 0.7) {
+            tagfwd = vectornormalize((tagright[0], tagright[1], 0));
         } else {
-            var_a38620f = vectornormalize((var_a38620f[0], var_a38620f[1], 0));
+            tagfwd = vectornormalize((tagfwd[0], tagfwd[1], 0));
         }
-        var_e3a10f71 = anglestoforward(self.angles);
-        if (vectordot(var_b6db82af, var_e3a10f71) > vectordot(var_a38620f, var_e3a10f71)) {
-            var_a38620f = var_e3a10f71;
+        entfwd = anglestoforward(self.angles);
+        if (vectordot(var_b6db82af, entfwd) > vectordot(tagfwd, entfwd)) {
+            tagfwd = entfwd;
         }
-        var_da4521b5 = vectorcross(var_a38620f, (0, 0, 1));
+        tagright = vectorcross(tagfwd, (0, 0, 1));
         self.var_97e2c0da.var_fe50a481 = var_b6db82af;
-        self.var_97e2c0da.dot_forward = vectordot(var_a38620f, var_b6db82af);
-        self.var_97e2c0da.dot_right = vectordot(var_da4521b5, var_b6db82af);
+        self.var_97e2c0da.dot_forward = vectordot(tagfwd, var_b6db82af);
+        self.var_97e2c0da.dot_right = vectordot(tagright, var_b6db82af);
         self.var_97e2c0da.height = self.origin[2] - player.origin[2];
         self.var_97e2c0da.var_bd87dbc5 = abs(self.var_97e2c0da.height);
         self.var_97e2c0da.check_origin = self gettagorigin(tag);
@@ -1134,13 +1134,13 @@ function function_945b4efe(takedown, advance) {
             self.takedown.var_d701e48f[takedown.name] = array::randomize(arraycopy(takedown.scenes));
         }
     }
-    var_ab3c9923 = self.takedown.var_d701e48f[takedown.name];
-    if (!isdefined(var_ab3c9923)) {
+    deck = self.takedown.var_d701e48f[takedown.name];
+    if (!isdefined(deck)) {
         return undefined;
     }
-    result = var_ab3c9923[var_ab3c9923.size - 1];
+    result = deck[deck.size - 1];
     if (is_true(advance)) {
-        var_ab3c9923[var_ab3c9923.size - 1] = undefined;
+        deck[deck.size - 1] = undefined;
     }
     return result;
 }
@@ -1157,12 +1157,12 @@ function takedown_cleanup(action, var_949a9f8b, *originalorigin, var_d8ba335a) {
     #/
     if (isdefined(originalorigin)) {
         if (!isarray(originalorigin)) {
-            originalorigin = [0:originalorigin];
+            originalorigin = [originalorigin];
         }
         self waittill(originalorigin);
     }
-    self namespace_594b67e::function_44a46209(var_d8ba335a);
-    self val::function_e681e68e(#"action");
+    self action_utility::function_44a46209(var_d8ba335a);
+    self val::reset_all(#"action");
     var_8bd3d2f2 = self.takedown.var_f7557940;
     if (isalive(var_8bd3d2f2) && isdefined(var_8bd3d2f2.var_310c1596) && !self flag::get("body_shield_active")) {
         var_8bd3d2f2 thread spawner::go_to_node(var_8bd3d2f2.var_310c1596);
@@ -1176,7 +1176,7 @@ function takedown_cleanup(action, var_949a9f8b, *originalorigin, var_d8ba335a) {
     if (isdefined(var_949a9f8b)) {
         self function_945b4efe(self.takedown.takedown[var_949a9f8b.name], 1);
     }
-    self.var_fb9a2c03 = undefined;
+    self.in_melee_death = undefined;
     self flag::clear("takedown_active");
 }
 
@@ -1213,9 +1213,9 @@ function function_7ef965ed(action) {
 // Size: 0x110
 function function_db07e398(action_name, var_1d3e20c8, var_c9453f35) {
     if (isdefined(self.takedown.victim[action_name]) && self.takedown.victim[action_name] !== var_1d3e20c8) {
-        self.takedown.victim[action_name] namespace_f48ab2e1::remove(#"melee");
+        self.takedown.victim[action_name] prompts::remove(#"melee");
         if (!is_true(var_c9453f35)) {
-            self.takedown.victim[action_name] namespace_f48ab2e1::remove(#"hash_3c5c65155dfb1731");
+            self.takedown.victim[action_name] prompts::remove(#"hash_3c5c65155dfb1731");
         }
         self.takedown.var_bf0ca7db[action_name] = 0;
     }
@@ -1266,47 +1266,47 @@ function private function_ac7d52ad(show) {
             return;
         }
         color = (1, 1, 0);
-        var_36abd3 = vectorscale((1, 0, 0), 0.9);
+        found_color = vectorscale((1, 0, 0), 0.9);
         while (true) {
             waitframe(1);
             corpses = [];
-            if (isdefined(level.var_d3a7bebd)) {
-                corpses = [[ level.var_d3a7bebd ]]();
+            if (isdefined(level.fngetcorpsearrayfunc)) {
+                corpses = [[ level.fngetcorpsearrayfunc ]]();
             } else {
                 corpses = getentarraybytype(17);
             }
             guys = getactorteamarray("<unknown string>");
             foreach (corpse in corpses) {
-                var_2501cbe2 = corpse function_b9ab269e();
+                corpseorigin = corpse getcorpsephysicsorigin();
                 var_1157b993 = corpse function_6c7f19df();
                 if (isdefined(level.stealth)) {
-                    if (isdefined(level.stealth.var_df8e6ed1) && isdefined(level.stealth.var_df8e6ed1[self getentitynumber()])) {
-                        var_2501cbe2 = corpse.origin;
+                    if (isdefined(level.stealth.additional_corpse) && isdefined(level.stealth.additional_corpse[self getentitynumber()])) {
+                        corpseorigin = corpse.origin;
                     }
                 }
-                line(corpse.origin, var_2501cbe2);
-                print3d(var_2501cbe2, "<unknown string>", (1, 1, 1), 1, 0.25, 1, 1);
+                line(corpse.origin, corpseorigin);
+                print3d(corpseorigin, "<unknown string>", (1, 1, 1), 1, 0.25, 1, 1);
                 line(corpse.origin, var_1157b993);
                 print3d(var_1157b993, "<unknown string>", (1, 1, 1), 1, 0.25, 1, 1);
                 print3d(corpse.origin + vectorscale((0, 0, 1), 10), "<unknown string>", (1, 1, 1), 1, 0.25, 1, 1);
                 if (isdefined(corpse.found)) {
-                    print3d(var_2501cbe2 + vectorscale((0, 0, 1), 20), "<unknown string>");
+                    print3d(corpseorigin + vectorscale((0, 0, 1), 20), "<unknown string>");
                 }
                 if (isdefined(level.stealth.corpse.dists)) {
                     foreach (guy in guys) {
                         if (!isdefined(guy.stealth)) {
                             continue;
                         }
-                        if (!isdefined(guy.var_1e36e368) || guy [[ guy.var_1e36e368 ]]()) {
+                        if (!isdefined(guy.fnisinstealthcombat) || guy [[ guy.fnisinstealthcombat ]]()) {
                             continue;
                         }
-                        dist = distancesquared(var_2501cbe2, guy.origin);
-                        if (dist < function_a3f6cdac(level.stealth.corpse.dists[#"hash_17048ea9eae820a7"])) {
-                            line(guy.origin, var_2501cbe2, var_36abd3);
+                        dist = distancesquared(corpseorigin, guy.origin);
+                        if (dist < sqr(level.stealth.corpse.dists[#"hash_17048ea9eae820a7"])) {
+                            line(guy.origin, corpseorigin, found_color);
                             continue;
                         }
-                        if (dist < function_a3f6cdac(level.stealth.corpse.dists[#"hash_256cce7120ab0043"])) {
-                            line(guy.origin, var_2501cbe2, color);
+                        if (dist < sqr(level.stealth.corpse.dists[#"hash_256cce7120ab0043"])) {
+                            line(guy.origin, corpseorigin, color);
                         }
                     }
                 }

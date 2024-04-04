@@ -21,14 +21,14 @@
 // Checksum 0xeb23ea57, Offset: 0x110
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_powerup_free_perk", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_powerup_free_perk", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_powerup_free_perk/zm_powerup_free_perk
 // Params 0, eflags: 0x6 linked
 // Checksum 0x394c1005, Offset: 0x158
 // Size: 0x9c
-function private function_70a657d8() {
+function private preinit() {
     zm_powerups::register_powerup("free_perk", &grab_free_perk);
     if (zm_powerups::function_cc33adc8()) {
         str_model = zm_powerups::function_bcfcc27e();

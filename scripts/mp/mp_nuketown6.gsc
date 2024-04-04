@@ -156,7 +156,7 @@ function function_29584e41() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xc555198e, Offset: 0xdc0
 // Size: 0x1ac
-function function_161cff4d(var_da089436) {
+function function_161cff4d(opener) {
     if (getdvarint(#"hash_1a876fc5ed53b321", 1) == 1) {
         n_random = randomint(100);
         if (n_random > 6) {
@@ -164,14 +164,14 @@ function function_161cff4d(var_da089436) {
         }
     }
     var_1abb653e = anglestoright(self.angles);
-    var_84398427 = vectornormalize(var_da089436.origin - self.origin);
+    var_84398427 = vectornormalize(opener.origin - self.origin);
     var_a6336ae5 = vectordot(var_1abb653e, var_84398427);
-    var_23a90bc3 = var_da089436 getplayerangles();
+    var_23a90bc3 = opener getplayerangles();
     var_e920c899 = anglestoforward(var_23a90bc3);
-    var_4cf1d42e = vectornormalize(self.origin - var_da089436.origin);
+    var_4cf1d42e = vectornormalize(self.origin - opener.origin);
     var_4cf02165 = vectordot(var_e920c899, var_4cf1d42e);
     if (var_a6336ae5 < -0.76 && var_4cf02165 > 0.76) {
-        function_dc41f225(var_da089436);
+        function_dc41f225(opener);
     }
 }
 
@@ -196,7 +196,7 @@ function function_dc41f225(player) {
         v_player_angles = (-10, v_player_angles[1], v_player_angles[2]);
     }
     player setplayerangles(v_player_angles);
-    player function_800493d4(1, 0);
+    player capturnrate(1, 0);
     player thread function_93a73f43();
     player playsound(#"hash_212f200772bcb450");
     scene::add_scene_func("p9_fxanim_zm_grab_attack", &function_bea256c, "bite");
@@ -210,7 +210,7 @@ function function_dc41f225(player) {
     }
     if (isdefined(player)) {
         player flag::set("grab_done");
-        player function_800493d4(0, 0);
+        player capturnrate(0, 0);
         player clientfield::set_to_player("" + #"hash_802934d416ac981", 0);
     }
     n_scale = 1;
@@ -231,7 +231,7 @@ function function_dc41f225(player) {
 // Checksum 0xf6375ba5, Offset: 0x13e8
 // Size: 0x28
 function function_bea256c(a_ents) {
-    level.var_578f8cf3 = a_ents[#"hash_71ebc07fdbf9366a"];
+    level.var_578f8cf3 = a_ents[#"zombie_bite"];
 }
 
 // Namespace mp_nuketown6/mp_nuketown6

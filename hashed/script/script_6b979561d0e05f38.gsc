@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_85cd2e9a28ea8a1;
-#using script_5552bd756afee443;
+#using scripts\cp_common\snd_utility.gsc;
 #using script_3dc93ca9902a9cda;
 #using scripts\core_common\util_shared.gsc;
 
@@ -154,7 +154,7 @@ function private function_7814c6ed(player, playerview, playerangles, cosfov, max
         normal = vectornormalize(deltapos);
         playerforward = anglestoforward(playerangles);
         dot = vectordot(playerforward, normal);
-        var_988f1f92 = dot >= cosfov;
+        iswithinfov = dot >= cosfov;
         var_25f190e = level._snd.var_88612b20.dot;
         if (isdefined(player.var_6d42228d) && player.var_6d42228d == self && isdefined(player.var_c84d8d23) && player.var_c84d8d23 != dot) {
             player.var_c84d8d23 = dot;
@@ -164,7 +164,7 @@ function private function_7814c6ed(player, playerview, playerangles, cosfov, max
             player.var_c84d8d23 = dot;
             player.var_6d42228d = self;
         }
-        if (var_988f1f92 == 0) {
+        if (iswithinfov == 0) {
             return -1;
         }
         dist = distance(playerview, origin);
@@ -536,12 +536,12 @@ function private function_94f79425(var_977d0bf3) {
         if (isdefined(var_977d0bf3) == 1 && var_977d0bf3 < 1) {
             return;
         }
-        if (getdvar(#"hash_6d50d75b0b897a7b", "<unknown string>") != "<unknown string>") {
+        if (getdvar(#"createfx", "<unknown string>") != "<unknown string>") {
             if (isdefined(level.var_b7d2deb) == 1 && level.var_b7d2deb.size > 0) {
                 return;
             }
         } else {
-            while (isdefined(level.var_bfab05a7) == 0) {
+            while (isdefined(level.createfx) == 0) {
                 waitframe(1);
             }
         }
@@ -586,7 +586,7 @@ function private function_fcbbe789(key, value) {
             break;
         case #"hash_7bf92664f192f2a2":
         case #"hash_7bf92664f192f2a2":
-            level._snd.var_88612b20.var_628ff174 = int(value);
+            level._snd.var_88612b20.debuglevel = int(value);
             break;
         case #"hash_7f77282fd4f2f35c":
         case #"hash_7f77282fd4f2f35c":
@@ -687,7 +687,7 @@ function private function_926b63ee() {
         }
         waitforplayers();
         level._snd.var_88612b20 = spawnstruct();
-        level._snd.var_88612b20.var_628ff174 = 0;
+        level._snd.var_88612b20.debuglevel = 0;
         level._snd.var_88612b20.filter = "<unknown string>";
         level._snd.var_88612b20.var_2a7875e1 = var_11ea799a;
         level._snd.var_88612b20.var_8ef03ed3 = var_39fdd05;
@@ -702,7 +702,7 @@ function private function_926b63ee() {
         level._snd.var_88612b20.var_77da0ec2 = 0;
         level._snd.var_88612b20.var_4c5d0455 = 0.1;
         level._snd.var_88612b20.var_4b824b64 = 5;
-        init_dvar("<unknown string>", level._snd.var_88612b20.var_628ff174, &function_a3f5c17f);
+        init_dvar("<unknown string>", level._snd.var_88612b20.debuglevel, &function_a3f5c17f);
         init_dvar("<unknown string>", level._snd.var_88612b20.filter, &function_a3f5c17f);
         init_dvar("<unknown string>", level._snd.var_88612b20.var_2a7875e1, &function_a3f5c17f);
         init_dvar("<unknown string>", level._snd.var_88612b20.var_8ef03ed3, &function_a3f5c17f);
@@ -778,9 +778,9 @@ function private function_fa2bfbd1() {
                 surfacetype = trace[#"surfacetype"];
                 dist = distance(pos, eyeorigin);
                 fontscale = 1.5;
-                var_d2376cf8 = "<unknown string>" + pos[0] + "<unknown string>" + pos[1] + "<unknown string>" + pos[2] + "<unknown string>";
+                posstring = "<unknown string>" + pos[0] + "<unknown string>" + pos[1] + "<unknown string>" + pos[2] + "<unknown string>";
                 hoffset = 1 * fontscale * 24;
-                function_65bb0ccd(var_d2376cf8, var_9e35ce44, var_749dfb19 + hoffset, fontscale, "<unknown string>", (1, 1, 1), 0.854248, (0, 0, 0), 0.72974, (1, 1, 1), 0.72974);
+                function_65bb0ccd(posstring, var_9e35ce44, var_749dfb19 + hoffset, fontscale, "<unknown string>", (1, 1, 1), 0.854248, (0, 0, 0), 0.72974, (1, 1, 1), 0.72974);
                 diststring = "<unknown string>" + dist;
                 hoffset = 2 * fontscale * 24;
                 function_65bb0ccd(diststring, var_9e35ce44, var_749dfb19 + hoffset, fontscale, "<unknown string>", (1, 1, 1), 0.854248, (0, 0, 0), 0.72974, (1, 1, 1), 0.72974);
@@ -930,19 +930,19 @@ function private function_40f589b7() {
             var_38c41a5e = var_1790a507[0];
             var_c13d121d = var_1790a507[1];
             pos = (var_38c41a5e * 0.5, var_c13d121d * 0.5, 0);
-            var_4e2d590d = "<unknown string>";
+            txt = "<unknown string>";
             skipto = function_bdd32fcc();
             if (is_true(level._snd.var_8c37ff34)) {
-                var_4e2d590d = "<unknown string>";
+                txt = "<unknown string>";
                 pos = (var_38c41a5e * 0.5, 32 + var_c13d121d * 0.5, 0);
             }
-            var_4e2d590d = var_4e2d590d + "<unknown string>";
-            var_4e2d590d = var_4e2d590d + "<unknown string>";
+            txt = txt + "<unknown string>";
+            txt = txt + "<unknown string>";
             if (isdefined(skipto)) {
-                var_4e2d590d = var_4e2d590d + skipto;
+                txt = txt + skipto;
             }
-            var_4e2d590d = var_4e2d590d + "<unknown string>";
-            function_65bb0ccd(var_4e2d590d, pos[0], pos[1], 1.33333, "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 0.72974, (1, 1, 1), 0.72974, 1);
+            txt = txt + "<unknown string>";
+            function_65bb0ccd(txt, pos[0], pos[1], 1.33333, "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 0.72974, (1, 1, 1), 0.72974, 1);
             waitframe(1);
         }
     #/

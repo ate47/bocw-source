@@ -9,14 +9,14 @@
 // Checksum 0xbfa6031f, Offset: 0xe8
 // Size: 0x34
 function private autoexec __init__system__() {
-    system::register("hint_tutorial", &function_70a657d8, undefined, undefined, undefined);
+    system::register("hint_tutorial", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace hint_tutorial/hint_tutorial
 // Params 0, eflags: 0x6 linked
 // Checksum 0x10f4a4f8, Offset: 0x128
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "hint_pause_state", 1, 1, "int", &function_22315c10, 1, 0);
 }
 

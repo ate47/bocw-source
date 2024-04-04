@@ -5,9 +5,9 @@
 #using scripts\zm\ai\zm_ai_mimic.gsc;
 #using scripts\zm\zm_ai_raz.gsc;
 #using script_64fee205fe8ada38;
-#using script_60d2812480bc5591;
+#using scripts\zm\zm_gold_vo.gsc;
 #using scripts\zm\zm_gold_pap_quest.gsc;
-#using script_1029986e2bc8ca8e;
+#using scripts\zm_common\objective_manager.gsc;
 #using script_58860a35d0555f74;
 #using script_72401f526ba71638;
 #using scripts\core_common\ai\archetype_utility.gsc;
@@ -424,7 +424,7 @@ function function_79ae7b73() {
     level thread zm_gold_pap_quest::function_e7aacbc9();
     level zm_utility::function_9ad5aeb1(0, 0, 1, 0);
     level.var_923e8cb4 = struct::get_array("end_fight_spawn_points");
-    level function_1f97238f(level.var_923e8cb4);
+    level teleport_players(level.var_923e8cb4);
     level.zones[#"zone_radio_room"].is_enabled = 0;
     level.var_d6f059f7 = max(level.round_number, 20);
     level thread function_995832fb();
@@ -438,7 +438,7 @@ function function_79ae7b73() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x4a9167b4, Offset: 0x2398
 // Size: 0x94
-function function_1f97238f(var_a347ab1) {
+function teleport_players(var_a347ab1) {
     a_players = getplayers();
     for (i = 0; i < a_players.size; i++) {
         a_players[i] setorigin(var_a347ab1[i].origin);
@@ -470,7 +470,7 @@ function function_32d60e81(ents) {
     var_57113f74 = int(lerpfloat(100000, 800000, n_percent));
     var_64cfdaf1 = int(lerpfloat(100000, 800000, n_percent));
     var_1bb6c8c4 = int(lerpfloat(100000, 800000, n_percent));
-    level.var_d99f785b thread function_2d524ed([2:var_1bb6c8c4, 1:var_64cfdaf1, 0:var_57113f74]);
+    level.var_d99f785b thread function_2d524ed([var_57113f74, var_64cfdaf1, var_1bb6c8c4]);
     level.var_d99f785b thread function_17836c63();
     level.var_d99f785b thread function_dc466f4e();
     level.var_d99f785b thread function_9ad6d900();
@@ -491,11 +491,11 @@ function function_dc466f4e() {
     level zm_utility::function_9ad5aeb1(0, 1, 0, 0);
     level flag::set(#"main_quest_completed");
     if (isdefined(level.var_7f41d246)) {
-        foreach (var_d0d0dc3b in level.var_7f41d246) {
-            if (zm_utility::is_player_valid(var_d0d0dc3b.player, 0, 1)) {
-                var_d0d0dc3b.player zm_stats::increment_challenge_stat(#"hash_7b482d2a97abe802");
-                var_d0d0dc3b.player zm_challenges::function_d6b32ad3(var_d0d0dc3b.weapon, #"hash_9c59d60380f570a", 3);
-                scoreevents::processscoreevent("hulking_summoner_kia_zm", var_d0d0dc3b.player, level.var_d99f785b, var_d0d0dc3b.weapon);
+        foreach (player_struct in level.var_7f41d246) {
+            if (zm_utility::is_player_valid(player_struct.player, 0, 1)) {
+                player_struct.player zm_stats::increment_challenge_stat(#"hash_7b482d2a97abe802");
+                player_struct.player zm_challenges::function_d6b32ad3(player_struct.weapon, #"hash_9c59d60380f570a", 3);
+                scoreevents::processscoreevent("hulking_summoner_kia_zm", player_struct.player, level.var_d99f785b, player_struct.weapon);
             }
         }
     }
@@ -545,7 +545,7 @@ function function_9ad6d900() {
     while (true) {
         self waittill(#"hash_67f026d74b2aa6d7");
         level flag::set(#"hash_7b2214bd0c40093");
-        level thread namespace_1812c3f4::function_ed7aab5b(#"orda_weakpoint_warning", #"hash_6aa9238eb4e57fd3", 60);
+        level thread zm_gold_vo::function_ed7aab5b(#"orda_weakpoint_warning", #"hash_6aa9238eb4e57fd3", 60);
         wait(8);
         level flag::clear(#"hash_7b2214bd0c40093");
     }
@@ -673,11 +673,11 @@ function function_aa6f0550(str_state, var_a013c644) {
     }
     if (!is_true(var_a013c644)) {
         if (self.var_93706a0d === "launcher" && str_state === "launcher") {
-            str_state = array::random([2:"swarm", 1:"slam", 0:"idle"]);
+            str_state = array::random(["idle", "slam", "swarm"]);
         } else if (self.var_93706a0d === "idle" && str_state === "idle") {
-            str_state = array::random([2:"launcher", 1:"swarm", 0:"slam"]);
+            str_state = array::random(["slam", "swarm", "launcher"]);
         } else if (self.var_93706a0d === "swarm" && str_state === "swarm") {
-            str_state = array::random([2:"launcher", 1:"idle", 0:"slam"]);
+            str_state = array::random(["slam", "idle", "launcher"]);
         }
     }
     /#
@@ -738,7 +738,7 @@ function function_c37dfa52(var_a013c644) {
         if (a_touching.size == 0) {
             return;
         }
-        array::thread_all(a_touching, &namespace_1812c3f4::function_ed7aab5b, #"hash_5ab11d26df1a0595", #"hash_7a66af8196ad9bf6");
+        array::thread_all(a_touching, &zm_gold_vo::function_ed7aab5b, #"hash_5ab11d26df1a0595", #"hash_7a66af8196ad9bf6");
     }
     self thread function_9fc0edc6();
     level scene::play(#"hash_3c473c110c8c0ff6", "arm_slam");
@@ -887,7 +887,7 @@ function function_c9cec280() {
             }
             var_53e3ff82 = s_target.mdl_origin;
         }
-        level thread namespace_1812c3f4::function_ed7aab5b(#"hash_5cdf7cb84bd3af3d", #"hash_5c3326edfaef3e64");
+        level thread zm_gold_vo::function_ed7aab5b(#"hash_5cdf7cb84bd3af3d", #"hash_5c3326edfaef3e64");
         self thread namespace_cc727a3b::function_4b462025(var_53e3ff82, 1);
     }
 }
@@ -973,7 +973,7 @@ function function_b8f5e813(*einflictor, *eattacker, idamage, *idflags, *smeansof
     tagorigin = self gettagorigin("j_neck");
     distsq = distancesquared(imodelindex, tagorigin);
     self.var_1c0ce945 = 0;
-    if (distsq <= function_a3f6cdac(64) && level flag::get(#"hash_7b2214bd0c40093")) {
+    if (distsq <= sqr(64) && level flag::get(#"hash_7b2214bd0c40093")) {
         iboneindex = int(iboneindex * 4);
         self.var_1c0ce945 = 1;
     }
@@ -1016,14 +1016,14 @@ function function_386e82a(var_f6cc9550, var_25febefa) {
             }
             if (isplayer(inflictor) || isplayer(attacker)) {
                 if (meansofdeath === "MOD_HEAD_SHOT" || meansofdeath === "MOD_RIFLE_BULLET" || meansofdeath === "MOD_PISTOL_BULLET") {
-                    var_686ce9bd = int(0.025 * self.maxhealth);
+                    damage_cap = int(0.025 * self.maxhealth);
                 } else if (weapon.guidedmissiletype === "Ballistic") {
-                    var_686ce9bd = int(0.009375 * self.maxhealth);
+                    damage_cap = int(0.009375 * self.maxhealth);
                 } else {
-                    var_686ce9bd = int(0.05 * self.maxhealth);
+                    damage_cap = int(0.05 * self.maxhealth);
                 }
-                if (damage > var_686ce9bd) {
-                    damage = var_686ce9bd;
+                if (damage > damage_cap) {
+                    damage = damage_cap;
                 }
             }
             var_ebcff177 = is_true(self.var_1c0ce945) ? 2 : 1;
@@ -1036,7 +1036,7 @@ function function_386e82a(var_f6cc9550, var_25febefa) {
                 if (!isdefined(level.var_7f41d246)) {
                     level.var_7f41d246 = [];
                 }
-                var_cf7befe9 = {#weapon:weapon, #player:attacker};
+                var_cf7befe9 = {#player:attacker, #weapon:weapon};
                 level.var_7f41d246[attacker getentitynumber()] = var_cf7befe9;
             }
             n_percent = var_245f6f1 / var_f6cc9550;
@@ -1088,10 +1088,10 @@ function get_weapon_damage(inflictor, attacker, damage, flags, meansofdeath, wea
         var_528363fd = self namespace_b61a349a::function_b3496fde(inflictor, attacker, damage, flags, meansofdeath, weapon, vpoint, vdir, shitloc, psoffsettime, boneindex, surfacetype);
         damage = damage + var_528363fd;
         if (meansofdeath != "MOD_MELEE") {
-            var_4d1602de = zm_weapons::function_d85e6c3a(item.var_a6762160);
+            var_4d1602de = zm_weapons::function_d85e6c3a(item.itementry);
             damage = damage * var_4d1602de;
-            if (isdefined(item.var_a8bccf69)) {
-                var_645b8bb = zm_weapons::function_896671d5(item.var_a6762160.weapon, item.var_a8bccf69);
+            if (isdefined(item.paplv)) {
+                var_645b8bb = zm_weapons::function_896671d5(item.itementry.weapon, item.paplv);
                 damage = damage * var_645b8bb;
             }
         }

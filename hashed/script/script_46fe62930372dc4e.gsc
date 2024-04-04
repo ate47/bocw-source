@@ -62,7 +62,7 @@ function function_453254ee() {
 // Size: 0xd2
 function function_dd9efc4() {
     if (!isdefined(level.var_8c5cb77b)) {
-        level.var_8c5cb77b = [2:"assault_round_02", 1:"assault_round_01", 0:"assault_round_00"];
+        level.var_8c5cb77b = ["assault_round_00", "assault_round_01", "assault_round_02"];
         level.var_8c5cb77b = array::randomize(level.var_8c5cb77b);
     }
     level.var_b8089dfc = array::pop_front(level.var_8c5cb77b);

@@ -284,7 +284,7 @@ function private function_a25e421c() {
                 self setorigin(level.warp_portal_vehicles[var_180a7b48].origin);
                 self function_648c1f6(level.warp_portal_vehicles[var_180a7b48], undefined, 0, 180, 180, 180, 180, 0);
                 if (death_circle::is_active()) {
-                    target = death_circle::function_5f1f8728() - self.origin;
+                    target = death_circle::get_next_origin() - self.origin;
                 } else {
                     var_8a2c40d0 = struct::get("warp_zone_look_at", "targetname");
                     target = var_8a2c40d0.origin - self.origin;

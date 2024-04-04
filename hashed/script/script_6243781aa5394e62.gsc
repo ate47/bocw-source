@@ -16,14 +16,14 @@
 // Checksum 0xfc54fbdb, Offset: 0x138
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_4863f776a30a1247", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_4863f776a30a1247", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_ec0691f8/namespace_ec0691f8
 // Params 0, eflags: 0x6 linked
 // Checksum 0xaca864ab, Offset: 0x180
 // Size: 0x10c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "sr_dog_fx", 1, 1, "int", &dog_fx, 0, 0);
     clientfield::register("actor", "sr_dog_spawn_fx", 1, 1, "counter", &dog_spawn_fx, 0, 0);
     clientfield::register("actor", "sr_dog_pre_spawn_fx", 1, 1, "counter", &function_30933ca1, 0, 0);

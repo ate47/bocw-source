@@ -110,11 +110,11 @@ function function_de7fb95(var_c904ca7c, context = 0) {
             /#
                 assert(toks.size > 1, "<unknown string>");
             #/
-            target.var_76d13d03 = int(toks[1]);
+            target.doortype = int(toks[1]);
             /#
-                assert(target.var_76d13d03 >= 1 && target.var_76d13d03 <= 3, "<unknown string>");
+                assert(target.doortype >= 1 && target.doortype <= 3, "<unknown string>");
             #/
-            target.script_model namespace_f63bdb08::function_94c7c0d9(target.var_76d13d03, 8, context);
+            target.script_model namespace_f63bdb08::function_94c7c0d9(target.doortype, 8, context);
         } else if (target.type == 1 || target.type == 3) {
             if (isdefined(target.script_model)) {
                 target.script_model setmovingplatformenabled(1);
@@ -130,9 +130,9 @@ function function_de7fb95(var_c904ca7c, context = 0) {
                     /#
                         assert(isdefined(target.target), "<unknown string>");
                     #/
-                    target.var_33957191 = struct::get_array(target.target, "targetname");
+                    target.lootitems = struct::get_array(target.target, "targetname");
                     /#
-                        assert(target.var_33957191.size, "<unknown string>");
+                        assert(target.lootitems.size, "<unknown string>");
                     #/
                     break;
                 }
@@ -140,15 +140,15 @@ function function_de7fb95(var_c904ca7c, context = 0) {
             if (toks.size > 4) {
                 switch (toks[4]) {
                 case #"hash_6b07679758a7acc":
-                    if (target.var_33957191.size > 1) {
-                        item = target.var_33957191[randomint(target.var_33957191.size)];
-                        target.var_33957191 = [];
-                        if (!isdefined(target.var_33957191)) {
-                            target.var_33957191 = [];
-                        } else if (!isarray(target.var_33957191)) {
-                            target.var_33957191 = array(target.var_33957191);
+                    if (target.lootitems.size > 1) {
+                        item = target.lootitems[randomint(target.lootitems.size)];
+                        target.lootitems = [];
+                        if (!isdefined(target.lootitems)) {
+                            target.lootitems = [];
+                        } else if (!isarray(target.lootitems)) {
+                            target.lootitems = array(target.lootitems);
                         }
-                        target.var_33957191[target.var_33957191.size] = item;
+                        target.lootitems[target.lootitems.size] = item;
                     }
                     break;
                 }
@@ -172,8 +172,8 @@ function function_de7fb95(var_c904ca7c, context = 0) {
 // Size: 0x328
 function function_9592df27() {
     self.script_model endon(#"death");
-    if (isdefined(self.var_33957191)) {
-        foreach (item in self.var_33957191) {
+    if (isdefined(self.lootitems)) {
+        foreach (item in self.lootitems) {
             /#
                 assert(isdefined(item.script_noteworthy), "<unknown string>");
             #/
@@ -236,8 +236,8 @@ function function_1efdf194(var_705bb15a, totaltime, totaldist) {
 // Checksum 0x75dc6723, Offset: 0xe78
 // Size: 0x328
 function function_92bae57c() {
-    if (isdefined(self.var_33957191)) {
-        foreach (item in self.var_33957191) {
+    if (isdefined(self.lootitems)) {
+        foreach (item in self.lootitems) {
             /#
                 assert(isdefined(item.script_noteworthy), "<unknown string>");
             #/

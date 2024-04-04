@@ -13,14 +13,14 @@
 // Checksum 0xb4cdeaa4, Offset: 0x128
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_507ba1ac0432a7e6", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_507ba1ac0432a7e6", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
 // Params 0, eflags: 0x2 linked
 // Checksum 0x5d9dc923, Offset: 0x170
 // Size: 0x1f4
-function function_70a657d8() {
+function preinit() {
     clientfield::register("scriptmover", "" + #"dog_launcher_explode_fx", 16000, 1, "int", &function_9666c7b1, 0, 0);
     clientfield::register("scriptmover", "hs_swarm_state", 1, 1, "counter", &function_440e968, 0, 0);
     clientfield::register("allplayers", "hs_swarm_damage", 1, 1, "counter", &function_64d1f09b, 1, 0);

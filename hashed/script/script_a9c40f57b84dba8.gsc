@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_7c8886f468a029fb;
 #using scripts\zm_common\zm_utility.csc;
-#using script_17a9d06bf819b2d3;
+#using scripts\zm_common\zm_ping.csc;
 #using scripts\core_common\beam_shared.csc;
 #using scripts\core_common\renderoverridebundle.csc;
 #using scripts\core_common\audio_shared.csc;
@@ -19,14 +19,14 @@
 // Checksum 0x9424a653, Offset: 0x288
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_3cd3b81be4386726", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_3cd3b81be4386726", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_1b312da5/namespace_1b312da5
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1c882f3, Offset: 0x2d0
 // Size: 0x4ac
-function function_70a657d8() {
+function preinit() {
     if (!zm_utility::is_survival()) {
         return;
     }
@@ -42,9 +42,9 @@ function function_70a657d8() {
     if (!is_true(getgametypesetting(#"hash_759fe9a9853a9b36")) && !getdvarint(#"hash_730311c63805303a", 0)) {
         level.var_3c3b40c7 = sr_orda_health_bar::register();
     }
-    namespace_5b1144e::function_5ae4a10c(#"sr_ee_hulk_wild_thing", "sr_ee_hulk_wild_thing", undefined, undefined, #"hash_49a2dcb46e6d1d96");
-    namespace_5b1144e::function_5ae4a10c(#"hash_7b7cbb4eb2fd70e3", "sr_ee_hulk_interest", #"hash_c614bf6db74b718", undefined, #"hash_336559c6c8ed5192");
-    namespace_5b1144e::function_5ae4a10c(#"hash_f93e1bf903e219b", "sr_ee_hulk_interest_fake", #"hash_c614bf6db74b718", undefined, #"hash_336559c6c8ed5192");
+    zm_ping::function_5ae4a10c(#"sr_ee_hulk_wild_thing", "sr_ee_hulk_wild_thing", undefined, undefined, #"hash_49a2dcb46e6d1d96");
+    zm_ping::function_5ae4a10c(#"hash_7b7cbb4eb2fd70e3", "sr_ee_hulk_interest", #"hash_c614bf6db74b718", undefined, #"hash_336559c6c8ed5192");
+    zm_ping::function_5ae4a10c(#"hash_f93e1bf903e219b", "sr_ee_hulk_interest_fake", #"hash_c614bf6db74b718", undefined, #"hash_336559c6c8ed5192");
 }
 
 // Namespace namespace_1b312da5/namespace_1b312da5

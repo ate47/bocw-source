@@ -17,14 +17,14 @@
 // Checksum 0x4a53564d, Offset: 0x1e8
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"napalm_strike", &function_70a657d8, undefined, &function_3675de8b, #"killstreaks");
+    system::register(#"napalm_strike", &preinit, undefined, &function_3675de8b, #"killstreaks");
 }
 
 // Namespace napalm_strike/napalm_strike
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1f0fb56b, Offset: 0x248
 // Size: 0x94
-function private function_70a657d8() {
+function private preinit() {
     init_shared("killstreak_napalm_strike" + "_zm", &function_a865cea6);
     clientfield::register("scriptmover", "napalm_strike_marker_on", 1, 2, "int");
     zm_player::register_player_damage_callback(&function_f6ea413);

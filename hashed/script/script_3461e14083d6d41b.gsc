@@ -33,7 +33,7 @@ function function_58ac9d9c(s_loc, n_idx) {
 // Checksum 0xc8140deb, Offset: 0x288
 // Size: 0x3fc
 function function_78d34bcb(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
-    a_locs = [2:3, 1:3, 0:3];
+    a_locs = [3, 3, 3];
     n_bits = getminbitcountfornum(39);
     var_d68544d = (1 << n_bits) - 1;
     /#

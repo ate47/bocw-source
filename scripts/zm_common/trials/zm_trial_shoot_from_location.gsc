@@ -13,14 +13,14 @@
 // Checksum 0x6091ae76, Offset: 0x130
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_shoot_from_location", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_shoot_from_location", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_shoot_from_location/zm_trial_shoot_from_location
 // Params 0, eflags: 0x4
 // Checksum 0xf4b81e0, Offset: 0x178
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

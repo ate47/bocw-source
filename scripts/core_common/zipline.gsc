@@ -17,14 +17,14 @@
 // Checksum 0x2a4cc719, Offset: 0x220
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zipline", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zipline", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zipline/zipline
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdb7ca8b2, Offset: 0x268
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     registerbehaviorscriptfunctions();
     spawner::add_archetype_spawn_function(#"human", &function_c4306be2);
 }
@@ -35,9 +35,9 @@ function private function_70a657d8() {
 // Size: 0x6a4
 function private registerbehaviorscriptfunctions() {
     /#
-        assert(isscriptfunctionptr(&function_e128a831));
+        assert(isscriptfunctionptr(&isziplining));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_4a9c28a0a5de2181", &function_e128a831);
+    behaviortreenetworkutility::registerbehaviortreescriptapi(#"isziplining", &isziplining);
     /#
         assert(!isdefined(&function_8de15fec) || isscriptfunctionptr(&function_8de15fec));
     #/
@@ -108,9 +108,9 @@ function private function_c4306be2() {
 // Checksum 0x5cfdad1b, Offset: 0x998
 // Size: 0x2ac
 function private function_d271a025(*inflictor, *attacker, *damage, *meansofdeath, *weapon, *var_fd90b0bb, vdir, *hitloc, *offsettime) {
-    if (function_e128a831(self) && isdefined(offsettime) && offsettime != (0, 0, 0)) {
+    if (isziplining(self) && isdefined(offsettime) && offsettime != (0, 0, 0)) {
         if (is_true(self.is_ziplining)) {
-            if (isdefined(self.var_b30ec151) && lengthsquared(self.var_b30ec151) > function_a3f6cdac(150)) {
+            if (isdefined(self.var_b30ec151) && lengthsquared(self.var_b30ec151) > sqr(150)) {
                 var_d07dd667 = "ZIPLINE_DEATH_BACK";
                 if (isdefined(self.var_662e279c)) {
                     var_b5785e55 = vectornormalize(anglestoforward(self.angles) * (1, 1, 0));
@@ -148,7 +148,7 @@ function private function_d271a025(*inflictor, *attacker, *damage, *meansofdeath
 // Params 1, eflags: 0x6 linked
 // Checksum 0x636bae4d, Offset: 0xc50
 // Size: 0x44
-function private function_e128a831(entity) {
+function private isziplining(entity) {
     return is_true(entity.is_ziplining) || is_true(entity.var_39601f96);
 }
 
@@ -344,15 +344,15 @@ function private function_8956c060(entity, asmstatename) {
 // Params 3, eflags: 0x6 linked
 // Checksum 0x952f4ca3, Offset: 0x1830
 // Size: 0xc4
-function private function_55f3b1df(var_1948a97, zipline_start, var_3c57e991) {
-    if (var_3c57e991 < 0) {
-        var_3c57e991 = 0;
-    } else if (var_3c57e991 > 1) {
-        var_3c57e991 = 1;
+function private function_55f3b1df(var_1948a97, zipline_start, normalized_distance) {
+    if (normalized_distance < 0) {
+        normalized_distance = 0;
+    } else if (normalized_distance > 1) {
+        normalized_distance = 1;
     }
     var_4be77411 = zipline_start.var_cf56bb8f.var_afbab71e;
     var_a7a79831 = length(var_4be77411.origin - zipline_start.origin);
-    distance = var_a7a79831 * var_3c57e991;
+    distance = var_a7a79831 * normalized_distance;
     var_1948a97 function_ded6dd2e(zipline_start, distance);
 }
 
@@ -517,7 +517,7 @@ function private function_28c69db4(entity, *asmstatename) {
         gravity = vectorscale((0, 0, -1), 980);
         forward = anglestoforward(asmstatename.angles);
         velocity = asmstatename.var_b30ec151 + gravity * float(function_60d95f53()) / 1000;
-        position = asmstatename.origin + asmstatename.var_b30ec151 * float(function_60d95f53()) / 1000 + 0.5 * gravity * function_a3f6cdac(float(function_60d95f53()) / 1000);
+        position = asmstatename.origin + asmstatename.var_b30ec151 * float(function_60d95f53()) / 1000 + 0.5 * gravity * sqr(float(function_60d95f53()) / 1000);
         asmstatename.var_b30ec151 = velocity;
         a_trace = bullettrace(asmstatename.origin, position, 0, asmstatename, 0, 1);
         if (a_trace[#"fraction"] < 1) {
@@ -615,11 +615,11 @@ function function_61418721(point, line_start, line_end) {
 // Params 4, eflags: 0x0
 // Checksum 0x67aa6166, Offset: 0x25f8
 // Size: 0xd8
-function number_b_(var_5c57c958, var_f3e138f3, var_3800dad7, plane_normal) {
+function number_b_(var_5c57c958, var_f3e138f3, plane_point, plane_normal) {
     var_a979e3a2 = vectordot(plane_normal, var_f3e138f3);
     result = undefined;
     if (abs(var_a979e3a2) > 0.001) {
-        var_fa608360 = var_3800dad7 - var_5c57c958;
+        var_fa608360 = plane_point - var_5c57c958;
         var_bc4566f4 = vectordot(var_fa608360, plane_normal);
         hit_time = var_bc4566f4 / var_a979e3a2;
         if (hit_time >= 0) {

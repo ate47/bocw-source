@@ -500,7 +500,7 @@ function civiliancanthrowmolotovgrenade(behaviortreeentity, throwifpossible = 0)
         }
     }
     throw_dist = distance2dsquared(behaviortreeentity.origin, behaviortreeentity lastknownpos(behaviortreeentity.enemy));
-    if (throw_dist < function_a3f6cdac(300) || throw_dist > function_a3f6cdac(1250)) {
+    if (throw_dist < sqr(300) || throw_dist > sqr(1250)) {
         return false;
     }
     arm_offset = archetype_human_cover::temp_get_arm_offset(behaviortreeentity, behaviortreeentity lastknownpos(behaviortreeentity.enemy));

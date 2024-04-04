@@ -243,7 +243,7 @@ function function_23cc7759(localclientnum, *oldval, newval, *bnewent, *binitials
             self stoploopsound(self.var_efc4ca7a);
             self.var_efc4ca7a = undefined;
         }
-        foreach (var_ee6bcd51 in [4:#"hash_74374f80d1d536d6", 3:#"hash_74375080d1d53889", 2:#"hash_74375180d1d53a3c", 1:#"hash_74375280d1d53bef", 0:#"hash_74375380d1d53da2"]) {
+        foreach (var_ee6bcd51 in [#"hash_74375380d1d53da2", #"hash_74375280d1d53bef", #"hash_74375180d1d53a3c", #"hash_74375080d1d53889", #"hash_74374f80d1d536d6"]) {
             if (self function_d2503806(var_ee6bcd51)) {
                 self stoprenderoverridebundle(var_ee6bcd51);
             }
@@ -503,7 +503,7 @@ function function_cd3073f5(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (bwastimejump == 2) {
         if (!isarray(self.var_3d894efb)) {
-            foreach (str_tag in [1:"tag_muzzle_flash_ri", 0:"tag_muzzle_flash_le"]) {
+            foreach (str_tag in ["tag_muzzle_flash_le", "tag_muzzle_flash_ri"]) {
                 if (!isdefined(self.var_3d894efb)) {
                     self.var_3d894efb = [];
                 } else if (!isarray(self.var_3d894efb)) {
@@ -534,7 +534,7 @@ function function_294b258e(localclientnum, var_1280faf3) {
     level.var_75a7d6 notify(#"hash_39be4308f05abd9c");
     level.var_75a7d6 endon(#"hash_39be4308f05abd9c");
     var_1280faf3 endon(#"death");
-    foreach (str_tag in [1:"tag_muzzle_flash_ri", 0:"tag_muzzle_flash_le"]) {
+    foreach (str_tag in ["tag_muzzle_flash_le", "tag_muzzle_flash_ri"]) {
         var_969f45da = undefined;
         var_96ce3194 = undefined;
         for (i = 0; i < 2; i++) {
@@ -767,7 +767,7 @@ function function_3d6afbe8(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump <= 0) {
         level.var_75a7d6 notify(#"hash_308e76fae63e354c");
         if (isdefined(level.var_75a7d6.mdl_body)) {
-            foreach (str_tag in [1:"tag_eye_fx_ri", 0:"tag_eye_fx_le"]) {
+            foreach (str_tag in ["tag_eye_fx_le", "tag_eye_fx_ri"]) {
                 level beam::kill(level.var_75a7d6.mdl_body, str_tag, self, "tag_origin", "beam9_zm_forsaken_eyes_electrical");
             }
         }
@@ -881,7 +881,7 @@ function function_7ebf8c0a(localclientnum, *oldval, newval, *bnewent, *binitials
 // Checksum 0x55c593f7, Offset: 0x49f8
 // Size: 0x78e
 function function_d2fdf8e2(localclientnum, s_start, var_834347de) {
-    foreach (s_beam in [1:var_834347de, 0:s_start]) {
+    foreach (s_beam in [s_start, var_834347de]) {
         while (!isdefined(s_beam.var_e5a9ba3[localclientnum])) {
             s_beam.var_e5a9ba3[localclientnum] = util::spawn_model(localclientnum, #"tag_origin", s_beam.origin, s_beam.angles);
             if (isdefined(s_beam.var_e5a9ba3[localclientnum])) {
@@ -908,7 +908,7 @@ function function_d2fdf8e2(localclientnum, s_start, var_834347de) {
     wait(2);
     for (s_start = var_834347de; isdefined(s_start.target); s_start = s_end) {
         s_end = struct::get(s_start.target);
-        foreach (s_beam in [1:s_end, 0:s_start]) {
+        foreach (s_beam in [s_start, s_end]) {
             while (!isdefined(s_beam.var_e5a9ba3[localclientnum])) {
                 s_beam.var_e5a9ba3[localclientnum] = util::spawn_model(localclientnum, #"tag_origin", s_beam.origin, s_beam.angles);
                 if (isdefined(s_beam.var_e5a9ba3[localclientnum])) {
@@ -948,7 +948,7 @@ function function_1b6ef5b3(localclientnum, start_point, end_point) {
         level.var_269acd85 = [];
     }
     array = level.var_269acd85;
-    array[array.size] = [1:end_point, 0:start_point];
+    array[array.size] = [start_point, end_point];
     var_41a0028b = array[array.size - 1];
     playsound(localclientnum, #"hash_48072d7004fcd081", var_41a0028b[0]);
     soundlineemitter("zmb_mq_boss_endsequence_beam_lp", var_41a0028b[0], var_41a0028b[1]);

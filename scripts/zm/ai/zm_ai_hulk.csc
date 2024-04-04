@@ -15,14 +15,14 @@
 // Checksum 0xa4c3043b, Offset: 0x2e8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_ai_hulk", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_ai_hulk", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_ai_hulk/zm_ai_hulk
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf7f4c830, Offset: 0x330
 // Size: 0x37c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "dog_launcher_explode_fx", 1, 1, "counter", &dog_launcher_explode_fx, 0, 0);
     clientfield::register("scriptmover", "hs_swarm_state", 1, 3, "int", &function_440e968, 0, 0);
     clientfield::register("allplayers", "hs_swarm_damage", 1, 3, "int", &function_64d1f09b, 1, 0);
@@ -34,8 +34,8 @@ function private function_70a657d8() {
     clientfield::register("actor", "hs_stomp_cf", 1, 1, "counter", &function_58f13478, 0, 0);
     clientfield::register("actor", "hs_melee_smash_cf", 1, 1, "counter", &function_dbb5ee92, 0, 0);
     clientfield::register("toplayer", "hulk_melee_shake", 1, 1, "counter", &function_d61b9cf2, 0, 0);
-    footsteps::registeraitypefootstepcb(#"hash_da8fcc11dab30f", &function_fc70d505);
-    ai::add_archetype_spawn_function(#"hash_da8fcc11dab30f", &function_2a4100e7);
+    footsteps::registeraitypefootstepcb(#"hulk", &function_fc70d505);
+    ai::add_archetype_spawn_function(#"hulk", &function_2a4100e7);
 }
 
 // Namespace zm_ai_hulk/zm_ai_hulk
@@ -293,7 +293,7 @@ function private function_58f13478(localclientnum, *oldval, newval, *bnewent, *b
     if (bwastimejump) {
         left_foot = self gettagorigin("j_ball_le");
         right_foot = self gettagorigin("j_ball_ri");
-        var_6aad4414 = left_foot[2] < right_foot[2] ? left_foot : right_foot;
+        var_6aad4414 = left_foot[2] < right_foot[2] ? right_foot : left_foot;
         function_16f54168(fieldname, var_6aad4414, 1500, 1, 0.3, 0.95);
     }
 }
@@ -367,7 +367,7 @@ function function_1b79e37c(localclientnum, start, end) {
     dir = vectornormalize(dir);
     time = int(0.75 * 1000);
     var_199c57d2 = distance2d / time;
-    var_ef97a46c = (end[2] - start[2] + 0.5 * gravity * function_a3f6cdac(time)) / time;
+    var_ef97a46c = (end[2] - start[2] + 0.5 * gravity * sqr(time)) / time;
     vel = (dir[0] * var_199c57d2, dir[1] * var_199c57d2, var_ef97a46c);
     end_time = gettime() + time;
     self.origin = start;
@@ -377,7 +377,7 @@ function function_1b79e37c(localclientnum, start, end) {
     waitframe(1);
     while (gettime() < end_time) {
         time = gettime() - start_time;
-        self.origin = start + vel * time + 0.5 * (0, 0, -1) * gravity * function_a3f6cdac(time);
+        self.origin = start + vel * time + 0.5 * (0, 0, -1) * gravity * sqr(time);
         waitframe(1);
     }
     self.origin = end;

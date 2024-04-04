@@ -153,7 +153,7 @@ function callback_playerconnect() {
     if (isdefined(level.usingscorestreaks) && level.usingscorestreaks && !isdefined(self.pers[#"held_killstreak_ammo_count"])) {
         self.pers[#"held_killstreak_ammo_count"] = [];
     }
-    self.var_e5595d9d = 0;
+    self.prevlastkilltime = 0;
     self.lastkilltime = 0;
     self.cur_death_streak = 0;
     self disabledeathstreak();

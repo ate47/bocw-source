@@ -34,36 +34,36 @@
 function function_8dbbde01(player, origin) {
     var_d98803e1 = namespace_ec06fe4a::function_65ee50ba(origin);
     origin = (origin[0], origin[1], var_d98803e1[2]);
-    var_23141e86 = namespace_ec06fe4a::spawnmodel(origin + vectorscale((0, 0, 1), 36));
-    if (!isdefined(var_23141e86)) {
+    coat = namespace_ec06fe4a::spawnmodel(origin + vectorscale((0, 0, 1), 36));
+    if (!isdefined(coat)) {
         return;
     }
     org = namespace_ec06fe4a::spawnmodel(origin + vectorscale((0, 0, 1), 36), "tag_origin");
     if (!isdefined(org)) {
-        var_23141e86 delete();
+        coat delete();
         return;
     }
-    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", var_23141e86.origin, 1 | 512 | 8, 245, 60);
+    trigger = namespace_ec06fe4a::spawntrigger("trigger_radius", coat.origin, 1 | 512 | 8, 245, 60);
     if (!isdefined(trigger)) {
-        var_23141e86 delete();
+        coat delete();
         org delete();
         return;
     }
-    var_23141e86.targetname = "coat_of_arms";
-    var_23141e86 setmodel("zombietron_coat_of_arms");
-    var_23141e86 setscale(3);
-    var_23141e86.angles = (0, 270, 75);
-    var_23141e86 thread namespace_ec06fe4a::function_1ebe83a7(3, 0.1);
-    var_23141e86 thread namespace_ec06fe4a::function_2d920b3c();
-    var_23141e86 namespace_e32bb68::function_3a59ec34("evt_doa_pickup_coatofarms_active_start");
-    var_23141e86 namespace_e32bb68::function_3a59ec34("evt_doa_pickup_coatofarms_active_lp");
+    coat.targetname = "coat_of_arms";
+    coat setmodel("zombietron_coat_of_arms");
+    coat setscale(3);
+    coat.angles = (0, 270, 75);
+    coat thread namespace_ec06fe4a::function_1ebe83a7(3, 0.1);
+    coat thread namespace_ec06fe4a::function_2d920b3c();
+    coat namespace_e32bb68::function_3a59ec34("evt_doa_pickup_coatofarms_active_start");
+    coat namespace_e32bb68::function_3a59ec34("evt_doa_pickup_coatofarms_active_lp");
     trigger.owner = player;
     trigger.targetname = "timeShifterUpdate";
     trigger enablelinkto();
-    trigger linkto(var_23141e86);
+    trigger linkto(coat);
     trigger.opentime = 3000;
     trigger.var_6de1c43b = gettime() + trigger.opentime;
-    trigger.radiussq = function_a3f6cdac(245);
+    trigger.radiussq = sqr(245);
     timetowait = player namespace_1c2a96f9::function_4808b985(3.1);
     /#
     #/
@@ -72,11 +72,11 @@ function function_8dbbde01(player, origin) {
     waitresult = undefined;
     waitresult = player waittilltimeout(timetowait, #"death", #"entering_last_stand", #"doa_exit_taken", #"disconnect");
     org namespace_83eb6304::turnofffx("teamshift");
-    var_23141e86 namespace_e32bb68::function_ae271c0b("evt_doa_pickup_coatofarms_active_lp");
-    var_23141e86 namespace_e32bb68::function_3a59ec34("evt_doa_pickup_coatofarms_active_end");
+    coat namespace_e32bb68::function_ae271c0b("evt_doa_pickup_coatofarms_active_lp");
+    coat namespace_e32bb68::function_3a59ec34("evt_doa_pickup_coatofarms_active_end");
     wait(1);
-    if (isdefined(var_23141e86)) {
-        var_23141e86 delete();
+    if (isdefined(coat)) {
+        coat delete();
     }
     if (isdefined(trigger)) {
         trigger delete();

@@ -8,14 +8,14 @@
 // Checksum 0xbfa6031f, Offset: 0xa0
 // Size: 0x34
 function private autoexec __init__system__() {
-    system::register("cp_ammo_perks", &function_70a657d8, undefined, undefined, undefined);
+    system::register("cp_ammo_perks", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace ammo/namespace_d4606b05
 // Params 0, eflags: 0x6 linked
 // Checksum 0xab88e2a5, Offset: 0xe0
 // Size: 0x1c
-function private function_70a657d8() {
+function private preinit() {
     level.var_a253061b = &function_d1df9410;
 }
 

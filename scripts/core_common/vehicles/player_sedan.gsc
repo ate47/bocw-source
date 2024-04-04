@@ -11,14 +11,14 @@
 // Checksum 0xdfe747c8, Offset: 0xb0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"player_sedan", &function_70a657d8, undefined, undefined, #"player_vehicle");
+    system::register(#"player_sedan", &preinit, undefined, undefined, #"player_vehicle");
 }
 
 // Namespace player_sedan/player_sedan
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa4791f91, Offset: 0x100
 // Size: 0x2c
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_main_callback("player_sedan", &function_3ca3e81e);
 }
 

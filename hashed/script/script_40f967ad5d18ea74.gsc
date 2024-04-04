@@ -190,18 +190,18 @@ class class_c4926dee {
     // Size: 0x24
     function __destructor() {
         self.var_31d445dc = [];
-        namespace_1e25ad94::function_f5f0c0f8("Generator destructor being called.");
+        namespace_1e25ad94::debugmsg("Generator destructor being called.");
     }
 
     // Namespace namespace_c4926dee/namespace_c85a46fe
     // Params 4, eflags: 0x2 linked
     // Checksum 0xd451df44, Offset: 0x13a0
     // Size: 0x66
-    function function_331fc68(activefx, var_3ac6a87b, spawnfx, var_6d8746ef = 1) {
+    function function_331fc68(activefx, var_3ac6a87b, spawnfx, spawnfxdelay = 1) {
         self.var_1d308eec = activefx;
         self.var_87ef4b13 = var_3ac6a87b;
         self.var_cda957a8 = spawnfx;
-        self.var_24bb61f1 = var_6d8746ef;
+        self.var_24bb61f1 = spawnfxdelay;
     }
 
     // Namespace namespace_c4926dee/namespace_c85a46fe
@@ -220,12 +220,12 @@ class class_c4926dee {
         }
         if (is_true(level.doa.var_318aa67a) && isdefined(shitloc)) {
             distsq = distancesquared(self.origin, shitloc.origin);
-            if (distsq > function_a3f6cdac(1500)) {
+            if (distsq > sqr(1500)) {
                 return 0;
-            } else if (distsq < function_a3f6cdac(300)) {
+            } else if (distsq < sqr(300)) {
                 psoffsettime = psoffsettime;
             } else {
-                lerp = 1 - distsq / function_a3f6cdac(1500);
+                lerp = 1 - distsq / sqr(1500);
                 psoffsettime = int(lerpfloat(0, psoffsettime, lerp));
             }
         }
@@ -346,7 +346,7 @@ class class_c4926dee {
             if (!isalive()) {
                 return;
             }
-            var_d4f1a9a3 = self.m_active;
+            last = self.m_active;
             self.m_active = 0;
             players = getplayers();
             if (function_30a0163e()) {
@@ -378,15 +378,15 @@ class class_c4926dee {
                 }
             }
             self.m_active = self.m_active & function_d8b78bb3();
-            if (var_d4f1a9a3 && !self.m_active) {
+            if (last && !self.m_active) {
                 self.m_model namespace_83eb6304::turnofffx(function_45ee8bad());
                 self.m_model clientfield::set("show_health_bar", 0);
                 self.m_model namespace_c85a46fe::function_a5c8be46();
                 doa_enemy::function_f7086924(self.m_model);
-            } else if (!var_d4f1a9a3 && self.m_active) {
+            } else if (!last && self.m_active) {
                 self.m_model namespace_83eb6304::function_3ecfde67(function_45ee8bad());
                 self.m_model clientfield::set("show_health_bar", 1);
-                self.m_model namespace_c85a46fe::function_9bede6b9();
+                self.m_model namespace_c85a46fe::showonradar();
                 if (isdefined(self.var_5eeaacc8)) {
                     self.m_model namespace_e32bb68::function_3a59ec34(self.var_5eeaacc8);
                 }
@@ -464,7 +464,7 @@ class class_c4926dee {
     // Params 3, eflags: 0x2 linked
     // Checksum 0x226dc556, Offset: 0x1b68
     // Size: 0x108
-    function function_7dff7809(generator, *interval, var_f0fd371f = 300) {
+    function healovertime(generator, *interval, var_f0fd371f = 300) {
         self endon(#"death");
         while (true) {
             wait(1);
@@ -512,7 +512,7 @@ class class_c4926dee {
             var_8a14a619 = [[ self.var_de510cda ]]->function_1296c737();
         }
         if (!function_30a0163e()) {
-            self.var_a3c3a5f4 = namespace_ec06fe4a::function_b5731057("trigger_radius", origin + vectorscale((0, 0, -1), 72), 2 | 16, width, height);
+            self.var_a3c3a5f4 = namespace_ec06fe4a::spawntrigger("trigger_radius", origin + vectorscale((0, 0, -1), 72), 2 | 16, width, height);
             if (!isdefined(self.var_a3c3a5f4)) {
                 return;
             }
@@ -538,10 +538,10 @@ class class_c4926dee {
         self.m_model.var_86a21346 = &function_5576668;
         self.m_model setteam(#"axis");
         self.var_915ae41d = var_8a14a619;
-        self.m_model thread function_7dff7809(self, 1);
+        self.m_model thread healovertime(self, 1);
         self.var_83cb975 = namespace_ec06fe4a::function_7fcca25d("Generator" + [[ self.var_de510cda ]]->function_c1009efb());
-        var_d7f42bb7 = [[ self.var_de510cda ]]->function_910a1ed9();
-        foreach (node in var_d7f42bb7) {
+        spawnnodes = [[ self.var_de510cda ]]->function_910a1ed9();
+        foreach (node in spawnnodes) {
             spawner = spawnstruct();
             spawner.origin = self.m_model.origin + rotatepoint(node.origin, self.m_model.angles);
             spawner.ai_type = node.script_noteworthy;
@@ -573,7 +573,7 @@ class class_c4926dee {
         spawndef = doa_enemy::function_d7c5adee(self.ai_type);
         wait(randomfloat(2));
         while (isdefined(generator) && [[ generator ]]->isalive()) {
-            if ([[ generator ]]->function_e3d90223()) {
+            if ([[ generator ]]->canspawn()) {
                 if (!isdefined(model)) {
                     model = [[ generator ]]->getmodel();
                     spawnfx = [[ generator ]]->function_3038a5ee();
@@ -606,7 +606,7 @@ class class_c4926dee {
     // Params 1, eflags: 0x2 linked
     // Checksum 0xce61670d, Offset: 0x2540
     // Size: 0xe4
-    function function_b3fcddb3(array) {
+    function array_removeundefined(array) {
         removed = array;
         arrayremovevalue(removed, undefined, 1);
         foreach (obj in removed) {
@@ -725,7 +725,7 @@ class class_c4926dee {
     // Params 0, eflags: 0x2 linked
     // Checksum 0x8a544409, Offset: 0x1160
     // Size: 0x6c
-    function function_e3d90223() {
+    function canspawn() {
         return isactive() && isalive() && self.var_71c23335.size < self.var_915ae41d && self.var_c24010e8 == 0 && namespace_250e9486::function_60f6a9e();
     }
 
@@ -855,7 +855,7 @@ function function_5db81c1c() {
             if (isdefined(model.trigger)) {
                 model.trigger delete();
             }
-            namespace_1e25ad94::function_f5f0c0f8("Generator model delete Ent:" + model getentitynumber());
+            namespace_1e25ad94::debugmsg("Generator model delete Ent:" + model getentitynumber());
             model delete();
         }
     }
@@ -961,7 +961,7 @@ function function_ec072c1a(type) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x4edc07cd, Offset: 0x3930
 // Size: 0x124
-function function_9bede6b9() {
+function showonradar() {
     if (!isdefined(self)) {
         return;
     }
@@ -1011,7 +1011,7 @@ function function_a5c8be46() {
 // Size: 0x64
 function function_47c860ff(flag) {
     if (flag) {
-        self function_9bede6b9();
+        self showonradar();
     } else {
         self function_a5c8be46();
     }

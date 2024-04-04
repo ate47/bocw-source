@@ -10,7 +10,7 @@
 #using scripts\core_common\loadout_shared.gsc;
 #using scripts\core_common\globallogic\globallogic_score.gsc;
 #using scripts\core_common\globallogic\globallogic_player.gsc;
-#using script_32c8b5b0eb2854f3;
+#using scripts\core_common\gamestate_util.gsc;
 #using scripts\core_common\gameobjects_shared.gsc;
 #using scripts\core_common\flag_shared.gsc;
 #using scripts\core_common\battlechatter.gsc;
@@ -255,7 +255,7 @@ function callback_vehicledamage(einflictor, eattacker, idamage, idflags, smeanso
             }
         }
     }
-    var_5370b15e = idamage < self.health ? self.health : idamage;
+    var_5370b15e = idamage < self.health ? idamage : self.health;
     self globallogic_player::giveattackerandinflictorownerassist(eattacker, einflictor, var_5370b15e, smeansofdeath, weapon, shitloc);
     if (isplayer(eattacker) && isdefined(level.challenges_callback_vehicledamaged)) {
         self thread [[ level.challenges_callback_vehicledamaged ]](eattacker, eattacker, idamage, weapon, shitloc);
@@ -281,7 +281,7 @@ function callback_vehicledamage(einflictor, eattacker, idamage, idflags, smeanso
             }
             if (isdefined(self.settings.var_45b17e9c) && isdefined(vpoint)) {
                 var_74d40edb = einflictor getvelocity();
-                if (lengthsquared(var_74d40edb) > function_a3f6cdac(50)) {
+                if (lengthsquared(var_74d40edb) > sqr(50)) {
                     var_29edfc10 = vectornormalize(var_74d40edb);
                     playfx(self.settings.var_45b17e9c, vpoint, var_29edfc10);
                 }
@@ -432,24 +432,24 @@ function callback_vehiclekilled(einflictor, eattacker, idamage, smeansofdeath, w
     }
     if (sessionmodeismultiplayergame() || sessionmodeiswarzonegame()) {
         if (isplayer(player)) {
-            var_9abb347b = undefined;
+            vehicleteam = undefined;
             if (isdefined(self.team)) {
                 if (self.team != #"neutral") {
-                    var_9abb347b = self.team;
+                    vehicleteam = self.team;
                 } else if (isdefined(self.var_37f0c900)) {
                     if (self.var_37f0c900.time == gettime()) {
-                        var_9abb347b = self.var_37f0c900.team;
+                        vehicleteam = self.var_37f0c900.team;
                     }
                     self.var_37f0c900 = undefined;
                 }
             }
-            if (isdefined(var_9abb347b) && util::function_fbce7263(var_9abb347b, player.pers[#"team"])) {
+            if (isdefined(vehicleteam) && util::function_fbce7263(vehicleteam, player.pers[#"team"])) {
                 if (self.weapon.var_62c1bfaa !== 1) {
                     player stats::function_a431be09(weapon);
                     if (player isinvehicle()) {
-                        var_284da85d = player getvehicleoccupied();
-                        if (isdefined(var_284da85d.scriptvehicletype)) {
-                            player stats::function_7fd36562(var_284da85d.scriptvehicletype, #"destructions", 1);
+                        attackervehicle = player getvehicleoccupied();
+                        if (isdefined(attackervehicle.scriptvehicletype)) {
+                            player stats::function_7fd36562(attackervehicle.scriptvehicletype, #"destructions", 1);
                         }
                     }
                     if (player function_6c32d092(#"talent_engineer")) {
@@ -489,10 +489,10 @@ function function_621234f9(eattacker, einflictor) {
         forwardvec = vectornormalize(velocity);
         upvec = (0, 0, 1);
         leftvec = vectornormalize(vectorcross(upvec, forwardvec));
-        var_d264a58b = speedscale * randomfloatrange(50, 65);
+        forwardscale = speedscale * randomfloatrange(50, 65);
         upscale = speedscale * randomfloatrange(35, 55);
-        var_175cbf21 = speedscale * randomfloatrange(-25, 25);
-        force = velocity + forwardvec * var_d264a58b + upvec * upscale + leftvec * var_175cbf21;
+        leftscale = speedscale * randomfloatrange(-25, 25);
+        force = velocity + forwardvec * forwardscale + upvec * upscale + leftvec * leftscale;
         var_3e6c815d = length(force);
         force = vectornormalize(force) * math::clamp(var_3e6c815d, 5, 250);
         waitframe(2);

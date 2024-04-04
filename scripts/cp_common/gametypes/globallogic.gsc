@@ -56,14 +56,14 @@
 // Checksum 0x65e101da, Offset: 0x698
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"globallogic", &function_70a657d8, undefined, undefined, #"visionset_mgr");
+    system::register(#"globallogic", &preinit, undefined, undefined, #"visionset_mgr");
 }
 
 // Namespace globallogic/globallogic
 // Params 0, eflags: 0x6 linked
 // Checksum 0x70989f56, Offset: 0x6e8
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     visionset_mgr::register_info("visionset", "crithealth", 1, 4, 25, 1, &visionset_mgr::ramp_in_out_thread_per_player, 0);
 }
 
@@ -899,7 +899,7 @@ function gamehistoryplayerkicked() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x345ee76, Offset: 0x36f0
 // Size: 0x284
-function function_ec721c76(winner, endreasontext) {
+function displayroundend(winner, endreasontext) {
     if (level.displayroundendtext) {
         if (level.teambased) {
             if (winner == "tie") {
@@ -939,7 +939,7 @@ function function_ec721c76(winner, endreasontext) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x3ddc28c6, Offset: 0x3980
 // Size: 0x214
-function function_63671731(*winner, *endreasontext) {
+function displayroundswitch(*winner, *endreasontext) {
     switchtype = level.halftimetype;
     if (switchtype == "halftime") {
         if (isdefined(level.nextroundisovertime) && level.nextroundisovertime) {
@@ -992,11 +992,11 @@ function resetoutcomeforallplayers() {
 // Size: 0x25c
 function function_c2cd8bf7(winner, endreasontext) {
     if (!util::isoneround()) {
-        function_ec721c76(winner, endreasontext);
+        displayroundend(winner, endreasontext);
         globallogic_utils::executepostroundevents();
         if (!util::waslastround()) {
             if (checkroundswitch()) {
-                function_63671731(winner, endreasontext);
+                displayroundswitch(winner, endreasontext);
             }
             if (isdefined(level.nextroundisovertime) && level.nextroundisovertime) {
                 if (!isdefined(game.overtime_round)) {
@@ -1818,7 +1818,7 @@ function callback_startgametype() {
     setmatchflag("game_ended", 0);
     if (!isdefined(game.gamestarted)) {
         if (!isdefined(game.allies)) {
-            game.allies = #"hash_75fde2190cfb2c00";
+            game.allies = #"cia";
         }
         if (!isdefined(game.axis)) {
             game.axis = #"kgb";
@@ -1834,7 +1834,7 @@ function callback_startgametype() {
         #/
         foreach (team, _ in level.teams) {
             if (!isdefined(game.team)) {
-                game.team = #"hash_75fde2190cfb2c00";
+                game.team = #"cia";
             }
         }
         gamestate::set_state(#"playing");

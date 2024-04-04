@@ -2,7 +2,7 @@
 #using scripts\cp_common\objectives.gsc;
 #using script_31e9b35aaacbbd93;
 #using script_3dc93ca9902a9cda;
-#using script_263b7f2982258785;
+#using scripts\cp_common\dialogue.gsc;
 #using scripts\core_common\values_shared.gsc;
 #using script_70b6424f429d140;
 #using scripts\core_common\array_shared.gsc;
@@ -113,7 +113,7 @@ function function_46693791() {
     wait(1);
     objectives::follow("woods_hit1", level.var_664fd741);
     level.var_95a74232 = 1;
-    aiarray = ai::function_e8b6bfec("intro_assault_extra_guys");
+    aiarray = ai::array_spawn("intro_assault_extra_guys");
     aiarray = arraycombine(aiarray, getentarray("intro_enemy_truck_guys", "script_noteworthy"), 1, 0);
     foreach (guy in aiarray) {
         guy.ignoreall = 1;
@@ -166,8 +166,8 @@ function function_c42508f4() {
     while (true) {
         /#
             print3d(self.origin + vectorscale((0, 0, 1), 72), "<unknown string>", (1, 0, 0), 1, 0.5, 1, 1);
-            self.var_a285092d = int((gettime() - start) / 10) / 100;
-            print3d(self.origin + vectorscale((0, 0, 1), 60), "<unknown string>" + self.var_a285092d, (1, 0, 0), 1, 0.5, 1);
+            self.unload_time = int((gettime() - start) / 10) / 100;
+            print3d(self.origin + vectorscale((0, 0, 1), 60), "<unknown string>" + self.unload_time, (1, 0, 0), 1, 0.5, 1);
         #/
         waitframe(1);
     }
@@ -238,7 +238,7 @@ function function_a7dc18f3() {
     level.var_664fd741.ignoreme = 1;
     thread function_83cd8600();
     level flag::wait_till("intro_takeout_target");
-    namespace_a635adb1::radio("vox_cp_tdwn_01300_chp1_notsureithought_5a");
+    dialogue::radio("vox_cp_tdwn_01300_chp1_notsureithought_5a");
     level flag::set("truck_bustout_unload");
     wait(2);
     level flag::set("heli_convoy_aslt_complete");

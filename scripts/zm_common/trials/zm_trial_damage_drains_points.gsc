@@ -13,14 +13,14 @@
 // Checksum 0x5ae93d5c, Offset: 0xb0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_damage_drains_points", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_damage_drains_points", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_damage_drains_points/zm_trial_damage_drains_points
 // Params 0, eflags: 0x6 linked
 // Checksum 0xbcf0cba1, Offset: 0xf8
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }
@@ -66,9 +66,9 @@ function is_active(var_a32bbdd = 0) {
     s_challenge = zm_trial::function_a36e8c38(#"damage_drains_points");
     if (var_a32bbdd) {
         if (isdefined(s_challenge) && is_true(s_challenge.var_ec90b685)) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
     return isdefined(s_challenge);
 }

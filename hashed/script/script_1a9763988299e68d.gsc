@@ -138,25 +138,25 @@ function init() {
     level.doa.var_d7e090f7[#"zombietron_impaler_2"] = &function_bcd45061;
     level.doa.var_5b088fde = getweapon("zombietron_launcher_secondary");
     level.doa.default_weapon = getweapon("zombietron_lmg");
-    var_16e2303b = getweapon("zombietron_impaler");
-    var_16e2303b.var_a8e39382 = 5;
-    var_16e2303b.var_69baf44a = 2;
-    var_16e2303b.var_f9fc5587 = getweapon("zombietron_ray_gun");
-    var_16e2303b = getweapon("zombietron_impaler_1");
-    var_16e2303b.var_a8e39382 = 5;
-    var_16e2303b.var_69baf44a = 2;
-    var_16e2303b.var_f9fc5587 = getweapon("zombietron_ray_gun_1");
-    var_16e2303b = getweapon("zombietron_impaler_2");
-    var_16e2303b.var_a8e39382 = 5;
-    var_16e2303b.var_69baf44a = 2;
-    var_16e2303b.var_f9fc5587 = getweapon("zombietron_ray_gun_2");
+    impaler = getweapon("zombietron_impaler");
+    impaler.var_a8e39382 = 5;
+    impaler.var_69baf44a = 2;
+    impaler.var_f9fc5587 = getweapon("zombietron_ray_gun");
+    impaler = getweapon("zombietron_impaler_1");
+    impaler.var_a8e39382 = 5;
+    impaler.var_69baf44a = 2;
+    impaler.var_f9fc5587 = getweapon("zombietron_ray_gun_1");
+    impaler = getweapon("zombietron_impaler_2");
+    impaler.var_a8e39382 = 5;
+    impaler.var_69baf44a = 2;
+    impaler.var_f9fc5587 = getweapon("zombietron_ray_gun_2");
 }
 
 // Namespace namespace_41cb996/missile_fire
 // Params 1, eflags: 0x20
 // Checksum 0x1fedeedb, Offset: 0xa68
 // Size: 0xbc
-function event_handler[missile_fire] function_55af2576(eventstruct) {
+function event_handler[missile_fire] missilefired(eventstruct) {
     if (isdefined(eventstruct.weapon.var_a8e39382) && isdefined(eventstruct.projectile)) {
         level thread namespace_ec06fe4a::function_bd89b452(eventstruct.weapon.var_a8e39382, eventstruct.projectile);
         return;
@@ -202,7 +202,7 @@ function updateweapon() {
         }
         self namespace_e32bb68::function_3a59ec34("evt_doa_pickup_weapon_downgraded");
         /#
-            function_f5f0c0f8("<unknown string>" + self.name + "<unknown string>" + self.doa.weaponlevel + "<unknown string>" + [[ self.doa.weaponpack ]]->getname());
+            debugmsg("<unknown string>" + self.name + "<unknown string>" + self.doa.weaponlevel + "<unknown string>" + [[ self.doa.weaponpack ]]->getname());
         #/
     }
     if (self.doa.var_fd5fcb75 != self.doa.var_ed8fde10) {
@@ -220,7 +220,7 @@ function function_51e99bc7(amount = 1) {
     if (!isdefined(self.doa.weaponpack)) {
         return;
     }
-    if (is_true(self.doa.var_70c50ae0)) {
+    if (is_true(self.doa.respawning)) {
         return;
     }
     self.doa.var_d8955419 = self.doa.var_d8955419 + int(64 * amount);
@@ -242,7 +242,7 @@ function function_51e99bc7(amount = 1) {
             self function_a5a7bbb7([[ self.doa.weaponpack ]]->function_91c18b19(self.doa.weaponlevel));
             self namespace_e32bb68::function_3a59ec34("evt_doa_pickup_weapon_upgraded");
             /#
-                function_f5f0c0f8("<unknown string>" + self.name + "<unknown string>" + self.doa.weaponlevel + "<unknown string>" + [[ self.doa.weaponpack ]]->getname());
+                debugmsg("<unknown string>" + self.name + "<unknown string>" + self.doa.weaponlevel + "<unknown string>" + [[ self.doa.weaponpack ]]->getname());
             #/
         } else {
             self.doa.var_d8955419 = 1023;
@@ -330,7 +330,7 @@ function function_6c4d9896(var_9de8aead, weaponpickup = 0) {
         self.doa.var_d8955419 = 1023;
     }
     /#
-        function_f5f0c0f8("<unknown string>" + self.name + "<unknown string>" + self.doa.var_fd5fcb75 + "<unknown string>" + (is_true(fill) ? "<unknown string>" : "<unknown string>"));
+        debugmsg("<unknown string>" + self.name + "<unknown string>" + self.doa.var_fd5fcb75 + "<unknown string>" + (is_true(fill) ? "<unknown string>" : "<unknown string>"));
         self thread function_a91422ce();
     #/
     profilestop();
@@ -489,7 +489,7 @@ function function_64adaae3() {
         return;
     }
     target1 = var_742a1b0d[0];
-    target2 = var_742a1b0d.size < 1 ? var_742a1b0d[1] : var_742a1b0d[0];
+    target2 = var_742a1b0d.size < 1 ? var_742a1b0d[0] : var_742a1b0d[1];
     v_spawn = self gettagorigin("tag_flash");
     v_dir = anglestoforward(self.angles) * 50;
     if (!isdefined(v_spawn)) {

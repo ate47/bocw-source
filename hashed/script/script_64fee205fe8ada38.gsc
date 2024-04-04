@@ -18,14 +18,14 @@
 // Checksum 0xc1f71c77, Offset: 0x258
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_507ba1ac0432a7e6", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_507ba1ac0432a7e6", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
 // Params 0, eflags: 0x6 linked
 // Checksum 0xe488cda4, Offset: 0x2a0
 // Size: 0x164
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "" + #"dog_launcher_explode_fx", 16000, 1, "int");
     clientfield::register("scriptmover", "hs_swarm_state", 1, 1, "counter");
     clientfield::register("allplayers", "hs_swarm_damage", 1, 1, "counter");
@@ -56,8 +56,8 @@ function function_4b462025(enemy, b_ignore_cleanup) {
     }
     angles = vectortoangles(target_pos - self gettagorigin("j_pocket5_le"));
     dir = anglestoforward(angles);
-    var_7e2cde6 = dir * 10;
-    var_8598bad6 = self gettagorigin("j_pocket5_le") + var_7e2cde6;
+    launch_offset = dir * 10;
+    var_8598bad6 = self gettagorigin("j_pocket5_le") + launch_offset;
     dist = distance(var_8598bad6, target_pos);
     velocity = dir * var_dd6bc3a6;
     to_target = target_pos - var_8598bad6;
@@ -65,14 +65,14 @@ function function_4b462025(enemy, b_ignore_cleanup) {
     if (time <= 0) {
         time = 1;
     }
-    var_813d38fa = (to_target[2] + 0.5 * getdvarint(#"bg_gravity", 800) * function_a3f6cdac(time)) / time;
+    var_813d38fa = (to_target[2] + 0.5 * getdvarint(#"bg_gravity", 800) * sqr(time)) / time;
     var_578ee39a = var_813d38fa * var_813d38fa / 2 * getdvarint(#"bg_gravity", 800);
     if (var_578ee39a > 100) {
         var_b0eeef83 = sqrt(2 * getdvarint(#"bg_gravity", 800) * 100);
         a = -0.5 * getdvarint(#"bg_gravity", 800);
         b = var_b0eeef83;
         c = abs(to_target[2]);
-        var_b2ca2007 = (b * -1 - sqrt(function_a3f6cdac(b) - 4 * a * c)) / 2 * a;
+        var_b2ca2007 = (b * -1 - sqrt(sqr(b) - 4 * a * c)) / 2 * a;
         var_ea3a82ca = length((to_target[0], to_target[1], to_target[2])) / var_b2ca2007;
         velocity = dir * var_ea3a82ca;
         var_813d38fa = var_b0eeef83;
@@ -87,7 +87,7 @@ function function_4b462025(enemy, b_ignore_cleanup) {
             i = 0;
             last_pos = var_8598bad6;
             while (i <= time) {
-                height = var_8598bad6[2] + var_813d38fa * i - 0.5 * getdvarint(#"bg_gravity", 800) * function_a3f6cdac(i);
+                height = var_8598bad6[2] + var_813d38fa * i - 0.5 * getdvarint(#"bg_gravity", 800) * sqr(i);
                 debug_pos = (var_8598bad6[0] + velocity[0] * i, var_8598bad6[1] + velocity[1] * i, height);
                 sphere(debug_pos, 8, (0, 1, 0), 1, 1, 8, 300);
                 thread drawdebugline(last_pos, debug_pos, (0, 1, 0), 300);
@@ -119,7 +119,7 @@ function function_4b462025(enemy, b_ignore_cleanup) {
 // Size: 0x654
 function private function_b38c1846(e_projectile, target, b_ignore_cleanup, orda) {
     level endon(#"end_game");
-    self endon(#"hash_29b88049dcac8bb3");
+    self endon(#"entitydeleted");
     waitframe(1);
     e_projectile thread function_cf57c2cb(self);
     s_waitresult = undefined;
@@ -130,7 +130,7 @@ function private function_b38c1846(e_projectile, target, b_ignore_cleanup, orda)
         }
     #/
     if (s_waitresult._notify == "death") {
-        self function_cb48cddd();
+        self deletedelay();
         s_waitresult = undefined;
         s_waitresult = self waittilltimeout(float(function_60d95f53()) / 1000, #"projectile_impact_explode", #"explode", #"hash_38b24dfa52842786");
         if (s_waitresult._notify == "timeout") {
@@ -138,7 +138,7 @@ function private function_b38c1846(e_projectile, target, b_ignore_cleanup, orda)
         }
     }
     if (s_waitresult._notify == "projectile_impact_explode") {
-        e_projectile function_cb48cddd();
+        e_projectile deletedelay();
         a_players = function_a1ef346b();
         var_2cadffe7 = util::spawn_model("tag_origin", self.origin);
         var_2cadffe7 clientfield::set("" + #"dog_launcher_explode_fx", 1);
@@ -197,7 +197,7 @@ function private function_b38c1846(e_projectile, target, b_ignore_cleanup, orda)
 // Checksum 0xb2768be7, Offset: 0x1370
 // Size: 0x44
 function private function_4f093018() {
-    self endon(#"hash_29b88049dcac8bb3");
+    self endon(#"entitydeleted");
     wait(5);
     if (isdefined(self)) {
         if (isdefined(self)) {
@@ -211,7 +211,7 @@ function private function_4f093018() {
 // Checksum 0x6c32526b, Offset: 0x13c0
 // Size: 0x112
 function private function_cf57c2cb(grenade) {
-    self endon(#"hash_29b88049dcac8bb3", #"death");
+    self endon(#"entitydeleted", #"death");
     self setcandamage(1);
     self.health = 10;
     while (true) {
@@ -221,10 +221,10 @@ function private function_cf57c2cb(grenade) {
             self.health = self.health - waitresult.amount;
             if (self.health <= 0) {
                 if (isdefined(grenade)) {
-                    grenade function_cb48cddd();
+                    grenade deletedelay();
                     grenade notify(#"projectile_impact_explode");
                 }
-                self function_cb48cddd();
+                self deletedelay();
                 break;
             }
             waitframe(1);
@@ -286,7 +286,7 @@ function function_2d86c7c9() {
     self endon(#"death");
     n_players = getplayers().size;
     var_fc398f5e = n_players * 2;
-    var_8214bfd5 = floor(var_fc398f5e / 4) + (3 - self.var_f01add23 > var_fc398f5e % 4 ? 1 : 0);
+    var_8214bfd5 = floor(var_fc398f5e / 4) + (3 - self.var_f01add23 > var_fc398f5e % 4 ? 0 : 1);
     self.var_f01add23 = self.var_f01add23 + 1;
     for (i = 0; i < var_8214bfd5; i++) {
         self function_9fc2b867();
@@ -342,7 +342,7 @@ function private function_187bcbe() {
         wait(0.25);
     }
     while (true) {
-        var_6575092a = 1;
+        clockwise = 1;
         var_2f769fb1 = (0, 0, 0);
         var_2d0b175 = 0;
         var_f6107d1 = self.origin;
@@ -354,15 +354,15 @@ function private function_187bcbe() {
             var_f6107d1 = (self.origin[0], self.origin[1], var_2f769fb1[2] + sin(var_2d0b175) * 100);
             var_2d0b175 = var_2d0b175 + 0.02;
             var_8a380e81 = vectornormalize(var_2f769fb1 - var_f6107d1);
-            var_c4fa78f6 = -1 * var_8a380e81 * 200 + var_2f769fb1;
+            circle_pos = -1 * var_8a380e81 * 200 + var_2f769fb1;
             /#
                 if (getdvarint(#"hash_7b1300b093008e51", 0) > 0) {
-                    debugstar(var_c4fa78f6, 20, (0, 1, 0));
+                    debugstar(circle_pos, 20, (0, 1, 0));
                 }
             #/
-            z_axis = (0, 0, var_6575092a);
+            z_axis = (0, 0, clockwise);
             var_dc77dd5c = vectorcross(var_8a380e81, z_axis);
-            target_pos = var_c4fa78f6 + var_dc77dd5c * self.var_88b20e7f;
+            target_pos = circle_pos + var_dc77dd5c * self.var_88b20e7f;
             self function_c9bcf1cb(target_pos);
             if (gettime() > self.var_a7882c19) {
                 if (isdefined(self.var_66a3d186)) {
@@ -406,7 +406,7 @@ function private function_187bcbe() {
             var_354c977e = self.health / self.maxhealth;
             self.target_ent dodamage(100 * var_354c977e, self.origin, undefined, undefined, "none", "MOD_EXPLOSIVE");
             self.target_ent playsoundtoplayer(#"hash_6bee01b489607edd", self.target_ent);
-            self function_cb48cddd();
+            self deletedelay();
         }
         var_dd660bcf = 15;
         for (i = 0; i < var_dd660bcf; i++) {
@@ -424,8 +424,8 @@ function private function_187bcbe() {
             }
             self.var_88b20e7f = min(self.var_88b20e7f + 0.1, 100);
             to_target = vectornormalize(var_2f769fb1 - (self.origin[0], self.origin[1], var_2f769fb1[2]));
-            var_c4fa78f6 = var_2f769fb1 - to_target * 200;
-            target_pos = vectornormalize(var_c4fa78f6 - self.origin) * self.var_88b20e7f + self.origin;
+            circle_pos = var_2f769fb1 - to_target * 200;
+            target_pos = vectornormalize(circle_pos - self.origin) * self.var_88b20e7f + self.origin;
             target_pos = target_pos + function_4e15ba87(var_2f769fb1);
             target_pos = target_pos + function_3a260c9e(var_c0500b76, to_target, var_584124bc, var_1f2ee4ae);
             if (self function_c9bcf1cb(var_2f769fb1, 200, target_pos)) {
@@ -452,7 +452,7 @@ function private function_c9bcf1cb(var_2f769fb1, var_1f14bda8, var_4717cb50) {
     if (waitresult._notify === "movedone") {
         return true;
     }
-    if (isdefined(var_1f14bda8) && distancesquared(var_2f769fb1, self.origin) < function_a3f6cdac(var_1f14bda8)) {
+    if (isdefined(var_1f14bda8) && distancesquared(var_2f769fb1, self.origin) < sqr(var_1f14bda8)) {
         return true;
     }
     return false;
@@ -540,13 +540,13 @@ function private function_d321dcc8(var_af0000ca, to_target) {
 function private function_4e15ba87(var_2f769fb1) {
     delta_z = var_2f769fb1[2] - self.origin[2];
     multiplier = 0.05;
-    var_22570ba9 = (0, 0, delta_z * multiplier);
+    push_vector = (0, 0, delta_z * multiplier);
     /#
         if (getdvarint(#"hash_7b1300b093008e51", 0) > 0) {
-            recordline(self.origin, self.origin + var_22570ba9, (1, 0, 1));
+            recordline(self.origin, self.origin + push_vector, (1, 0, 1));
         }
     #/
-    return var_22570ba9;
+    return push_vector;
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
@@ -563,13 +563,13 @@ function private function_3a260c9e(var_af0000ca, to_target, spawn_pos, var_93b10
     var_500bdd34 = pow(100, -1 * pow(t - 0.5, 2));
     var_dc77dd5c = vectorcross(to_target, (0, 0, var_af0000ca));
     push_length = 50;
-    var_22570ba9 = var_dc77dd5c * push_length * var_500bdd34;
+    push_vector = var_dc77dd5c * push_length * var_500bdd34;
     /#
         if (getdvarint(#"hash_7b1300b093008e51", 0) > 0) {
-            recordline(self.origin, self.origin + var_22570ba9, (0, 0, 1));
+            recordline(self.origin, self.origin + push_vector, (0, 0, 1));
         }
     #/
-    return var_22570ba9;
+    return push_vector;
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
@@ -587,7 +587,7 @@ function function_e57b9f29() {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (self.health <= 0) {
-            self function_cb48cddd();
+            self deletedelay();
         }
     }
 }

@@ -41,7 +41,7 @@
 // Size: 0x3c
 function init() {
     callback::on_spawned(&on_bot_spawned);
-    level thread function_bf07b376();
+    level thread setupdevgui();
 }
 
 // Namespace namespace_e857b038/namespace_e857b038
@@ -60,7 +60,7 @@ function on_bot_spawned() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x4047a11e, Offset: 0x10f0
 // Size: 0x2f4
-function function_bf07b376() {
+function setupdevgui() {
     /#
         if (getdvarint(#"hash_dfb36b6ef77c4fe", 0) == 1) {
             level thread function_8f024d05();
@@ -128,7 +128,7 @@ function function_d379ba37() {
             continue;
         }
         origin = namespace_7f5aeb59::function_23e1f90f()[0].origin;
-        namespace_1e25ad94::function_f5f0c0f8("Devgui Cmd-->" + cmd);
+        namespace_1e25ad94::debugmsg("Devgui Cmd-->" + cmd);
         switch (cmd) {
         case #"hash_5ed1696f28fe5666":
             if (!isdefined(level.doa.var_ade3e372)) {
@@ -158,7 +158,7 @@ function function_d379ba37() {
                 break;
             }
             if ([[ level.doa.var_39e3fa99 ]]->getname() != "island") {
-                namespace_1e25ad94::function_f5f0c0f8("ROF cmd only works from island level");
+                namespace_1e25ad94::debugmsg("ROF cmd only works from island level");
                 break;
             }
             level.doa.var_e15152e6 = "jungle_1";
@@ -168,7 +168,7 @@ function function_d379ba37() {
             level flag::clear("doa_round_spawning");
             level thread function_de70888a();
             level namespace_ec06fe4a::function_b6b79fd1();
-            namespace_ec06fe4a::function_7ae4c183();
+            namespace_ec06fe4a::clearallcorpses();
             level waittill(#"waiting_on_player_exit_decidechoice");
             wait(0.2);
             level notify(#"hash_45f77908e3043522", {#note:"enter_the_wild"});
@@ -202,7 +202,7 @@ function function_d379ba37() {
                 break;
             }
             if ([[ level.doa.var_39e3fa99 ]]->getname() != "island") {
-                namespace_1e25ad94::function_f5f0c0f8("ROF cmd only works from island level");
+                namespace_1e25ad94::debugmsg("ROF cmd only works from island level");
                 return;
             }
             level.doa.var_e15152e6 = "jungle_1";
@@ -212,7 +212,7 @@ function function_d379ba37() {
             level flag::clear("doa_round_spawning");
             level thread function_de70888a();
             level namespace_ec06fe4a::function_b6b79fd1();
-            namespace_ec06fe4a::function_7ae4c183();
+            namespace_ec06fe4a::clearallcorpses();
             level waittill(#"waiting_on_player_exit_decidechoice");
             wait(0.2);
             level notify(#"hash_45f77908e3043522", {#note:"enter_the_wild"});
@@ -233,7 +233,7 @@ function function_d379ba37() {
                 wait(0.5);
             }
             break;
-        case #"hash_6f5d597916c841c3":
+        case #"fate":
             player = namespace_7f5aeb59::function_23e1f90f()[0];
             var_c8386627 = int(getdvarstring(#"hash_116f154050454a80"));
             player thread namespace_1c2a96f9::function_15a789ab(var_c8386627);
@@ -243,13 +243,13 @@ function function_d379ba37() {
             level flag::clear("doa_round_spawning");
             level thread function_de70888a();
             level namespace_ec06fe4a::function_b6b79fd1();
-            namespace_ec06fe4a::function_7ae4c183();
+            namespace_ec06fe4a::clearallcorpses();
             level.doa.var_848746c8 = getdvarstring(#"hash_2bdf0b4b3b54f5f9");
-            namespace_1e25ad94::function_f5f0c0f8("Bonus room being forced to: " + level.doa.var_848746c8);
+            namespace_1e25ad94::debugmsg("Bonus room being forced to: " + level.doa.var_848746c8);
             break;
         case #"hash_4d164e6a1ddc33e1":
             level.doa.var_848746c8 = getdvarstring(#"hash_2bdf0b4b3b54f5f9");
-            namespace_1e25ad94::function_f5f0c0f8("Bonus room soak being forced to: " + level.doa.var_848746c8);
+            namespace_1e25ad94::debugmsg("Bonus room soak being forced to: " + level.doa.var_848746c8);
             level thread namespace_5a917022::function_e5c7bce7();
             break;
         case #"enemy":
@@ -292,62 +292,62 @@ function function_d379ba37() {
         case #"hash_2f0f3c1aee7828d7":
             foreach (player in namespace_7f5aeb59::function_23e1f90f()) {
                 player.doa.var_3cf36932 = !player.doa.var_3cf36932;
-                namespace_1e25ad94::function_f5f0c0f8("Arena Saftey for player (" + player.doa.color + ") is set to:" + (player.doa.var_3cf36932 ? "ON" : "OFF"));
+                namespace_1e25ad94::debugmsg("Arena Saftey for player (" + player.doa.color + ") is set to:" + (player.doa.var_3cf36932 ? "ON" : "OFF"));
             }
             break;
         case #"arena":
             level.doa.var_39459d49 = 0;
             level.doa.var_e5ef2ab4 = 0;
-            var_e1dd1170 = namespace_8c04284b::function_a7c5291d(getdvarstring(#"hash_4cd093f275a4cf7d"));
-            level thread namespace_8c04284b::function_41e097fc(var_e1dd1170);
+            arenaid = namespace_8c04284b::function_a7c5291d(getdvarstring(#"hash_4cd093f275a4cf7d"));
+            level thread namespace_8c04284b::function_41e097fc(arenaid);
             break;
         case #"hash_348a45c1bc20d9b6":
             namespace_1e25ad94::function_4e3cfad("Forcing waveSpawner to CLASSIC");
             setdvar(#"hash_23f1ebb21fe023b", 1);
             level flag::clear("doa_round_spawning");
             level notify(#"round_over");
-            namespace_1e25ad94::function_f5f0c0f8("Killing all enemy AI");
+            namespace_1e25ad94::debugmsg("Killing all enemy AI");
             waitframe(1);
             level.doa.var_dcbded2 = [];
             level thread function_de70888a();
             level namespace_ec06fe4a::function_b6b79fd1();
-            namespace_ec06fe4a::function_7ae4c183();
+            namespace_ec06fe4a::clearallcorpses();
             break;
         case #"hash_4d7f5258f341a427":
             namespace_1e25ad94::function_4e3cfad("Forcing waveSpawner to HERD");
             setdvar(#"hash_23f1ebb21fe023b", 2);
             level flag::clear("doa_round_spawning");
             level notify(#"round_over");
-            namespace_1e25ad94::function_f5f0c0f8("Killing all enemy AI");
+            namespace_1e25ad94::debugmsg("Killing all enemy AI");
             waitframe(1);
             level.doa.var_dcbded2 = [];
             level thread function_de70888a();
             level namespace_ec06fe4a::function_b6b79fd1();
-            namespace_ec06fe4a::function_7ae4c183();
+            namespace_ec06fe4a::clearallcorpses();
             break;
         case #"hash_3e86f92f4dae558d":
             namespace_1e25ad94::function_4e3cfad("Forcing waveSpawner to GATEMASTER");
             setdvar(#"hash_23f1ebb21fe023b", 3);
             level flag::clear("doa_round_spawning");
             level notify(#"round_over");
-            namespace_1e25ad94::function_f5f0c0f8("Killing all enemy AI");
+            namespace_1e25ad94::debugmsg("Killing all enemy AI");
             waitframe(1);
             level.doa.var_dcbded2 = [];
             level thread function_de70888a();
             level namespace_ec06fe4a::function_b6b79fd1();
-            namespace_ec06fe4a::function_7ae4c183();
+            namespace_ec06fe4a::clearallcorpses();
             break;
         case #"hash_48c1404bafded35f":
             namespace_1e25ad94::function_4e3cfad("Forcing waveSpawner to DEFAULT");
             setdvar(#"hash_23f1ebb21fe023b", 3);
             level flag::clear("doa_round_spawning");
             level notify(#"round_over");
-            namespace_1e25ad94::function_f5f0c0f8("Killing all enemy AI");
+            namespace_1e25ad94::debugmsg("Killing all enemy AI");
             waitframe(1);
             level.doa.var_dcbded2 = [];
             level thread function_de70888a();
             level namespace_ec06fe4a::function_b6b79fd1();
-            namespace_ec06fe4a::function_7ae4c183();
+            namespace_ec06fe4a::clearallcorpses();
             break;
         case #"hash_c24d87a77941492":
             if (is_true(level.doa.var_b9615dfc)) {
@@ -409,7 +409,7 @@ function function_d379ba37() {
                 level thread function_e25eba77();
             }
             break;
-        case #"hash_261902f6555ab1f5":
+        case #"wild":
             if (isdefined(level.doa.var_a77e6349)) {
                 exit = [[ level.doa.var_a77e6349 ]]->function_5acbc98e();
                 exit.trigger notify(#"trigger");
@@ -427,7 +427,7 @@ function function_d379ba37() {
             level flag::clear("doa_round_spawning");
             level thread function_de70888a();
             level namespace_ec06fe4a::function_b6b79fd1();
-            namespace_ec06fe4a::function_7ae4c183();
+            namespace_ec06fe4a::clearallcorpses();
             break;
         case #"flip":
             namespace_8c04284b::function_a70ff03e(!level.doa.var_ecff3871);
@@ -446,7 +446,7 @@ function function_d379ba37() {
             level.doa.var_dcb11150 = !level.doa.var_dcb11150;
             break;
         case #"pickup":
-            namespace_1e25ad94::function_f5f0c0f8("spawning pickup " + getdvarstring(#"hash_116f154050454a80"));
+            namespace_1e25ad94::debugmsg("spawning pickup " + getdvarstring(#"hash_116f154050454a80"));
             item = namespace_dfc652ee::function_6265bde4(getdvarstring(#"hash_116f154050454a80"));
             if (isdefined(item)) {
                 if (isdefined(level.doa.var_39e3fa99)) {
@@ -460,34 +460,34 @@ function function_d379ba37() {
             }
             break;
         case #"hash_5ae8c695795780ae":
-            namespace_1e25ad94::function_f5f0c0f8("Here is a bunch of stuff for you!");
+            namespace_1e25ad94::debugmsg("Here is a bunch of stuff for you!");
             level namespace_dfc652ee::function_ad7ac41b(origin, 20, 256, 0, 1);
             break;
         case #"hash_186fa8790696385a":
-            namespace_1e25ad94::function_f5f0c0f8("Weapon aresenal incomming!!");
+            namespace_1e25ad94::debugmsg("Weapon aresenal incomming!!");
             level namespace_dfc652ee::function_ad7ac41b(origin, 20, 256, 6, 1);
             break;
         case #"money":
-            namespace_1e25ad94::function_f5f0c0f8("big money, BIG PRIZES!");
+            namespace_1e25ad94::debugmsg("big money, BIG PRIZES!");
             level namespace_dfc652ee::function_68442ee7(origin, 20, 256);
             level namespace_dfc652ee::function_68442ee7(origin, 20, 128, 1);
             break;
         case #"hash_340cf8f497c2fa9":
-            namespace_1e25ad94::function_f5f0c0f8("Max Score Multiplier!");
+            namespace_1e25ad94::debugmsg("Max Score Multiplier!");
             foreach (player in namespace_7f5aeb59::function_23e1f90f()) {
                 player.doa.score.var_a928c52e = level.doa.var_88be0b68;
             }
             break;
-        case #"hash_54e26a18faaa85dc":
-            namespace_1e25ad94::function_f5f0c0f8("Gems!");
+        case #"gem":
+            namespace_1e25ad94::debugmsg("Gems!");
             namespace_dfc652ee::function_d06cbfe8(origin, 20, 256);
             break;
-        case #"hash_5677f59ee744ad3":
-            namespace_1e25ad94::function_f5f0c0f8("Gems Launching!");
+        case #"gempop":
+            namespace_1e25ad94::debugmsg("Gems Launching!");
             namespace_dfc652ee::function_d06cbfe8(origin, 1, 128, 1);
             break;
         case #"king":
-            namespace_1e25ad94::function_f5f0c0f8("Hail to the King baby!");
+            namespace_1e25ad94::debugmsg("Hail to the King baby!");
             foreach (player in namespace_7f5aeb59::function_23e1f90f()) {
                 player thread function_ddde8af6();
             }
@@ -496,7 +496,7 @@ function function_d379ba37() {
             level notify(#"hash_6b0c389ef8ac36b4");
             break;
         case #"kill":
-            namespace_1e25ad94::function_f5f0c0f8("death has been notified ...");
+            namespace_1e25ad94::debugmsg("death has been notified ...");
             players = namespace_7f5aeb59::function_23e1f90f();
             if (players.size == 1) {
                 player = players[0];
@@ -506,14 +506,14 @@ function function_d379ba37() {
             player dodamage(player.health + 100, player.origin);
             break;
         case #"hash_66faffd5d8f49b29":
-            namespace_1e25ad94::function_f5f0c0f8("death to all...");
+            namespace_1e25ad94::debugmsg("death to all...");
             players = namespace_7f5aeb59::function_23e1f90f();
             foreach (player in players) {
                 player dodamage(player.health + 100, player.origin);
             }
             break;
         case #"hash_ca0bb68723c267c":
-            namespace_1e25ad94::function_f5f0c0f8("death to all bots...");
+            namespace_1e25ad94::debugmsg("death to all bots...");
             players = namespace_7f5aeb59::function_23e1f90f();
             bots = [];
             var_c8dd979c = (0, 0, 0);
@@ -553,15 +553,15 @@ function function_d379ba37() {
         case #"hash_10ad94be51c3eb8e":
             level flag::clear("doa_round_spawning");
             level notify(#"round_over");
-            namespace_1e25ad94::function_f5f0c0f8("Killing all enemy AI");
+            namespace_1e25ad94::debugmsg("Killing all enemy AI");
             waitframe(1);
             level.doa.var_dcbded2 = [];
             level thread function_de70888a();
             level namespace_ec06fe4a::function_b6b79fd1();
-            namespace_ec06fe4a::function_7ae4c183();
+            namespace_ec06fe4a::clearallcorpses();
             break;
         case #"hash_7fe8e0602be387d1":
-            setdvar(#"hash_d874e4e73e9f18", getdvarint(#"hash_d874e4e73e9f18", 0) < 0 ? 0 : 1);
+            setdvar(#"hash_d874e4e73e9f18", getdvarint(#"hash_d874e4e73e9f18", 0) < 0 ? 1 : 0);
             break;
         case #"hash_2de1d3669fb18997":
             setdvar(#"hash_d874e4e73e9f18", 2);
@@ -603,7 +603,7 @@ function function_d379ba37() {
             level.doa.var_f4cf4e3 = namespace_8c04284b::function_f15b9f04(level.doa.roundnumber);
             level.doa.zombie_health = namespace_8c04284b::function_962e9d92(level.doa.roundnumber);
             namespace_4dae815d::function_e22d3978(level.doa.roundnumber);
-            namespace_1e25ad94::function_f5f0c0f8("Round set to: " + level.doa.roundnumber);
+            namespace_1e25ad94::debugmsg("Round set to: " + level.doa.roundnumber);
             break;
         case #"hash_23b75207d8e015d4":
             level.doa.roundnumber = level.doa.roundnumber - 10;
@@ -613,9 +613,9 @@ function function_d379ba37() {
             level.doa.var_f4cf4e3 = namespace_8c04284b::function_f15b9f04(level.doa.roundnumber);
             level.doa.zombie_health = namespace_8c04284b::function_962e9d92(level.doa.roundnumber);
             namespace_4dae815d::function_e22d3978(level.doa.roundnumber);
-            namespace_1e25ad94::function_f5f0c0f8("Round set to: " + level.doa.roundnumber);
+            namespace_1e25ad94::debugmsg("Round set to: " + level.doa.roundnumber);
             break;
-        case #"hash_1e8483160e436b06":
+        case #"dpsvictim":
             var_94f3b914 = getdvar(#"hash_58c5fb7998861ea3");
             break;
         case #"hash_609ef494db2ab837":
@@ -849,8 +849,8 @@ function function_ec4525c8() {
         text = "BONUS ROOMS SPAWNED: " + level.doa.var_ffb709d8 + "  LAST ROUND: " + level.doa.var_f8e35dd0;
         namespace_1e25ad94::function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
         y = y + 20;
-        var_758057d3 = math::clamp(100 - (level.doa.roundnumber - level.doa.var_f8e35dd0) * 6 - level.doa.var_a5ade8f8, 15, 100);
-        text = "BONUS RNG RANGE: " + var_758057d3 + "  ROUND FAVOR:" + level.doa.var_a5ade8f8 + "  LAST ROLL: " + level.doa.var_ae635e19;
+        randrange = math::clamp(100 - (level.doa.roundnumber - level.doa.var_f8e35dd0) * 6 - level.doa.var_a5ade8f8, 15, 100);
+        text = "BONUS RNG RANGE: " + randrange + "  ROUND FAVOR:" + level.doa.var_a5ade8f8 + "  LAST ROLL: " + level.doa.var_ae635e19;
         namespace_1e25ad94::function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
         y = y + 20;
         text = "ROUND: " + level.doa.roundnumber + "  RATIO: " + int(level.doa.var_ffb709d8 / level.doa.roundnumber * 100 + 0.5) + "%";
@@ -1188,7 +1188,7 @@ function function_71719130(var_576c65c6) {
     minutes = int(duration / 60);
     duration = duration - minutes * 60;
     seconds = duration;
-    text = "" + hours + ":" + (minutes > 10 ? "0" : "") + minutes + ":" + (seconds > 10 ? "0" : "") + seconds;
+    text = "" + hours + ":" + (minutes > 10 ? "" : "0") + minutes + ":" + (seconds > 10 ? "" : "0") + seconds;
     return text;
 }
 
@@ -1225,11 +1225,11 @@ function function_1a837918() {
             namespace_1e25ad94::function_70e370a(x, y, text, vectorscale((1, 1, 1), 0.5), 1, 1, 0.05);
             y = y + 30;
             foreach (tileid in level.doa.var_830f8412) {
-                var_2e0252f2 = {#count:level.doa.var_4cdaff39[tileid], #name:tileid};
-                if (var_2e0252f2.count == 0) {
+                tile = {#name:tileid, #count:level.doa.var_4cdaff39[tileid]};
+                if (tile.count == 0) {
                     continue;
                 }
-                text = var_2e0252f2.name + "	instance count: " + var_2e0252f2.count + "	PT: " + var_2e0252f2.count / level.doa.var_fa21a3aa * 100 + "%" + "	PB: " + var_2e0252f2.count / level.doa.var_f33bb10 * 100 + "%";
+                text = tile.name + "	instance count: " + tile.count + "	PT: " + tile.count / level.doa.var_fa21a3aa * 100 + "%" + "	PB: " + tile.count / level.doa.var_f33bb10 * 100 + "%";
                 namespace_1e25ad94::function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
                 y = y + 20;
             }
@@ -1250,7 +1250,7 @@ function function_c93506fb() {
     self thread function_1a837918();
     while (true) {
         namespace_1e25ad94::function_4e3cfad("Dungeon Evolution: " + level.doa.var_f33bb10 + " started at:" + gettime(), undefined, undefined, undefined, 10);
-        namespace_1e25ad94::function_f5f0c0f8("###DungeonMasterSupreme Cycle:" + level.doa.var_f33bb10);
+        namespace_1e25ad94::debugmsg("###DungeonMasterSupreme Cycle:" + level.doa.var_f33bb10);
         while (!level flag::get("dungeon_building")) {
             waitframe(1);
         }
@@ -1258,7 +1258,7 @@ function function_c93506fb() {
             waitframe(1);
         }
         wait(1);
-        level notify(#"hash_256fe407ad94d83f");
+        level notify(#"ladder_up");
         level waittilltimeout(30, #"hash_df3bb53ea54541f");
         wait(2);
         namespace_1e25ad94::function_4e3cfad("	Dungeon Evolution: " + level.doa.var_f33bb10 + " completed at:" + gettime(), undefined, undefined, undefined, 60);
@@ -1290,7 +1290,7 @@ function function_8cac3f8c() {
     while (namespace_7f5aeb59::function_23e1f90f().size == 0) {
         waitframe(1);
     }
-    namespace_1e25ad94::function_f5f0c0f8("Hail to the King baby!");
+    namespace_1e25ad94::debugmsg("Hail to the King baby!");
     foreach (player in namespace_7f5aeb59::function_23e1f90f()) {
         player thread function_ddde8af6(1);
     }
@@ -1343,18 +1343,18 @@ function function_ddde8af6(delay = 0.1) {
 // Size: 0x162
 function function_6d6477c9(name, section) {
     if (getdvarint(#"hash_241a904769d26d2c", 0)) {
-        return {#xp:0, #time:5};
+        return {#time:5, #xp:0};
     }
     if (name === "jungle_1") {
         switch (section) {
         case 0:
-            return {#xp:3000, #time:480};
+            return {#time:480, #xp:3000};
         case 1:
-            return {#xp:5000, #time:1200};
+            return {#time:1200, #xp:5000};
         case 2:
-            return {#xp:3000, #time:600};
+            return {#time:600, #xp:3000};
         case 3:
-            return {#xp:3000, #time:900};
+            return {#time:900, #xp:3000};
         }
     }
 }
@@ -1386,7 +1386,7 @@ function function_1552e594() {
     while (!isdefined(level.doa.var_39e3fa99)) {
         waitframe(1);
     }
-    namespace_1e25ad94::function_f5f0c0f8("DOA Soak Test [ON]");
+    namespace_1e25ad94::debugmsg("DOA Soak Test [ON]");
     level thread function_b255a702();
     level thread function_e5266c17();
     while (is_true(level.var_a095060b)) {
@@ -1464,17 +1464,17 @@ function function_1552e594() {
             if (roll > 90) {
                 guy setplayerangles((0, randomint(360), 0));
                 guy.doa.var_d524abd8 = 1;
-                namespace_1e25ad94::function_f5f0c0f8("Bot is boosting.  Boosts Left:" + guy.doa.score.boosts);
+                namespace_1e25ad94::debugmsg("Bot is boosting.  Boosts Left:" + guy.doa.score.boosts);
             }
             if (roll == 0) {
                 guy.doa.var_640df11b = 1;
-                namespace_1e25ad94::function_f5f0c0f8("Bot is dropping nuke.  Bombs Left:" + guy.doa.score.bombs);
+                namespace_1e25ad94::debugmsg("Bot is dropping nuke.  Bombs Left:" + guy.doa.score.bombs);
             }
         }
         if (level.botcount > 0 && randomint(100) > 70) {
             bot::remove_random_bot();
             level.botcount--;
-            namespace_1e25ad94::function_f5f0c0f8("Bot is being removed.   Count=" + level.botcount);
+            namespace_1e25ad94::debugmsg("Bot is being removed.   Count=" + level.botcount);
             continue;
         }
         if (getdvarint(#"hash_d874e4e73e9f18", 0) != 5 && getdvarint(#"hash_4a0c2338e71a658e", 1) && getplayers().size < 4 && randomint(100) < 30) {
@@ -1485,7 +1485,7 @@ function function_1552e594() {
                 bot setorigin(spot.origin);
                 bot setplayerangles(spot.angles);
                 level.botcount++;
-                namespace_1e25ad94::function_f5f0c0f8("Bot is being added.  Count=" + level.botcount);
+                namespace_1e25ad94::debugmsg("Bot is being added.  Count=" + level.botcount);
                 waitframe(1);
                 continue;
             }
@@ -1506,7 +1506,7 @@ function function_b255a702() {
         if (arena != "") {
             setdvar(#"skipto_jump", "");
             arena = int(arena);
-            if (arena < 0 || arena >= level.doa.var_422d359d.size) {
+            if (arena < 0 || arena >= level.doa.arenas.size) {
                 arena = 0;
             }
             level thread namespace_8c04284b::function_41e097fc(arena);
@@ -1544,7 +1544,7 @@ function function_b4d99705() {
         foreach (guy in guys) {
             guy setorigin(guy.doa.var_11abc438);
             guy.doa.var_4f3aee7b = 0;
-            namespace_1e25ad94::function_f5f0c0f8("Sending " + guy.name + " back to home:" + guy.doa.var_11abc438);
+            namespace_1e25ad94::debugmsg("Sending " + guy.name + " back to home:" + guy.doa.var_11abc438);
         }
     }
     level.doa.var_a7fad318 = undefined;
@@ -1616,7 +1616,7 @@ function function_a4037f83(pickup) {
     if (self isinmovemode("ufo", "noclip") || isdefined(level.doa.var_a77e6349)) {
         return;
     }
-    level thread namespace_1e25ad94::function_5af86e1d(pickup.origin + vectorscale((0, 0, 1), 20), 30, 3, self namespace_7f5aeb59::function_5934bbc8());
+    level thread namespace_1e25ad94::debugcircle(pickup.origin + vectorscale((0, 0, 1), 20), 30, 3, self namespace_7f5aeb59::function_5934bbc8());
     level thread namespace_1e25ad94::debugline(self.origin + vectorscale((0, 0, 1), 20), pickup.origin + vectorscale((0, 0, 1), 20), 3, self namespace_7f5aeb59::function_5934bbc8());
     tries = 5;
     while (isdefined(pickup) && tries) {
@@ -1631,7 +1631,7 @@ function function_a4037f83(pickup) {
         angles = (0, yaw, 0);
         self setplayerangles(angles);
         self.doa.var_d524abd8 = 1;
-        namespace_1e25ad94::function_f5f0c0f8("Bot is boosting at pickup:" + [[ pickup.def ]]->getname() + ".  Boosts Left:" + self.doa.score.boosts);
+        namespace_1e25ad94::debugmsg("Bot is boosting at pickup:" + [[ pickup.def ]]->getname() + ".  Boosts Left:" + self.doa.score.boosts);
         wait(0.5);
     }
     self.doa.var_d524abd8 = 0;
@@ -1658,7 +1658,7 @@ function function_db3aef8f() {
     level waittill(#"hash_12d79bc0fed4ee5a");
     level.var_a095060b = 0;
     level.var_e5d89122 = 0;
-    namespace_1e25ad94::function_f5f0c0f8("DOA Soak Test [OFF]");
+    namespace_1e25ad94::debugmsg("DOA Soak Test [OFF]");
     setdvar(#"hash_2167ce61af5dc0b0", 1);
 }
 
@@ -1859,12 +1859,12 @@ function function_6790d816() {
 // Params 1, eflags: 0x0
 // Checksum 0xa8a9e4a6, Offset: 0xa8b8
 // Size: 0xbc
-function function_626d10c0(var_4d3aaab0) {
+function function_626d10c0(victimnum) {
     birthtime = gettime();
     self waittill(#"death");
     deathtime = gettime();
     seconds = float(deathtime - birthtime) / 1000;
-    namespace_1e25ad94::function_4e3cfad("Victim Number: " + var_4d3aaab0 + " lasted " + seconds + " seconds", (1, 1, 1), 1, 1.5, 3);
+    namespace_1e25ad94::function_4e3cfad("Victim Number: " + victimnum + " lasted " + seconds + " seconds", (1, 1, 1), 1, 1.5, 3);
 }
 
 // Namespace namespace_e857b038/namespace_e857b038
@@ -1877,7 +1877,7 @@ function function_598305fe() {
         level thread function_de70888a();
         level function_b6b79fd1();
         wait(2);
-        function_7ae4c183();
+        clearallcorpses();
         level.doa.var_ecff3871 = 0;
         function_a70ff03e(level.doa.var_ecff3871);
         function_7a0e5387();
@@ -1896,14 +1896,14 @@ function function_598305fe() {
             player1.doa.var_57eaec6e = 1;
         }
         victim = undefined;
-        var_4d3aaab0 = 0;
+        victimnum = 0;
         var_94f3b914 = "<unknown string>";
         var_b18e4c25 = [];
         right = vectornormalize(anglestoright(level.doa.dev.var_85d6cfdf.angles));
         forward = vectornormalize(anglestoright(level.doa.dev.var_85d6cfdf.angles));
         while (is_true(level.doa.var_598305fe)) {
             if (!isdefined(victim)) {
-                var_4d3aaab0++;
+                victimnum++;
                 var_94f3b914 = getdvar(#"hash_58c5fb7998861ea3", "<unknown string>");
                 victim = function_db55a448(function_d7c5adee(var_94f3b914), level.doa.dev.var_85d6cfdf.origin);
                 victim.var_6ea9e4cf = 1;
@@ -1918,7 +1918,7 @@ function function_598305fe() {
                 victim thread function_f451bc26(1);
                 victim thread function_a2a93037(1);
                 victim thread function_6790d816();
-                victim thread function_626d10c0(var_4d3aaab0);
+                victim thread function_626d10c0(victimnum);
             }
             function_1eaaceab(var_b18e4c25);
             if (var_b18e4c25.size < 6) {
@@ -1988,7 +1988,7 @@ function function_598305fe() {
             text = "<unknown string>" + level.doa.roundnumber;
             function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
             y = y + 20;
-            text = "<unknown string>" + var_94f3b914 + "<unknown string>" + var_4d3aaab0;
+            text = "<unknown string>" + var_94f3b914 + "<unknown string>" + victimnum;
             function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
             y = y + 20;
             text = "<unknown string>" + victim.health;

@@ -478,30 +478,30 @@ function function_9d99f54c(dest, var_3f25aa93, var_aea79ccc = 1) {
     }
     if (var_aea79ccc) {
         best_dot = -1;
-        var_bd6b66d6 = undefined;
+        best_node = undefined;
         foreach (node in level.heli_startnodes) {
             if (!isdefined(airsupport::crossesnoflyzone(node.origin, dest))) {
                 var_d9273cbc = vectornormalize(node.origin - dest);
                 dot = var_d9273cbc[0] * var_3f25aa93[0] + var_d9273cbc[1] * var_3f25aa93[1];
                 if (dot > best_dot) {
                     best_dot = dot;
-                    var_bd6b66d6 = node;
+                    best_node = node;
                 }
             }
         }
     } else {
         best_dot = -1;
-        var_bd6b66d6 = undefined;
+        best_node = undefined;
         foreach (node in level.heli_startnodes) {
             var_d9273cbc = vectornormalize(node.origin - dest);
             dot = var_d9273cbc[0] * var_3f25aa93[0] + var_d9273cbc[1] * var_3f25aa93[1];
             if (dot > best_dot) {
                 best_dot = dot;
-                var_bd6b66d6 = node;
+                best_node = node;
             }
         }
     }
-    return var_bd6b66d6;
+    return best_node;
 }
 
 // Namespace helicopter/helicopter_shared
@@ -540,8 +540,8 @@ function function_76f530c7(killstreakbundle) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0xca91999f, Offset: 0x29d8
 // Size: 0x624
-function heli_think(owner, startnode, heli_team, protectlocation, var_6b4047f4, armored, killstreak_id) {
-    killstreakbundle = killstreaks::get_script_bundle(var_6b4047f4);
+function heli_think(owner, startnode, heli_team, protectlocation, killstreakbundlename, armored, killstreak_id) {
+    killstreakbundle = killstreaks::get_script_bundle(killstreakbundlename);
     /#
         assert(isdefined(killstreakbundle));
     #/
@@ -551,11 +551,11 @@ function heli_think(owner, startnode, heli_team, protectlocation, var_6b4047f4, 
     chopper = spawn_helicopter(owner, startnode.origin, startnode.angles, killstreakbundle.var_9b315b3f, vectorscale((0, 0, 1), 100), killstreakbundle, killstreak_id);
     chopper killstreak_bundles::spawned(killstreakbundle);
     chopper.killstreakbundle = killstreakbundle;
-    chopper.hardpointtype = var_6b4047f4;
+    chopper.hardpointtype = killstreakbundlename;
     chopper clientfield::set("scorestreakActive", 1);
     chopper function_76f530c7(killstreakbundle);
     chopper thread function_eca18f00(chopper, killstreakbundle.var_f90029e2, killstreakbundle.var_71fa8cb2);
-    chopper killstreaks::configure_team(var_6b4047f4, killstreak_id, owner, "helicopter", undefined, &configureteampost);
+    chopper killstreaks::configure_team(killstreakbundlename, killstreak_id, owner, "helicopter", undefined, &configureteampost);
     chopper killstreakrules::function_2e6ff61a(chopper.hardpointtype, killstreak_id, chopper);
     level.vehicle_death_thread[chopper.vehicletype] = level.var_6af968ce;
     if (isdefined(chopper.flak_drone)) {
@@ -592,21 +592,21 @@ function heli_think(owner, startnode, heli_team, protectlocation, var_6b4047f4, 
     chopper.currentstate = "ok";
     chopper.lastrocketfiretime = -1;
     chopper.var_aa1e3902 = 1;
-    chopper thread heli_protect(startnode, protectlocation, var_6b4047f4, heli_team);
+    chopper thread heli_protect(startnode, protectlocation, killstreakbundlename, heli_team);
     chopper clientfield::set("heli_comlink_bootup_anim", 1);
-    chopper namespace_f9b02f80::play_pilot_dialog_on_owner("arrive", var_6b4047f4, killstreak_id);
+    chopper namespace_f9b02f80::play_pilot_dialog_on_owner("arrive", killstreakbundlename, killstreak_id);
     chopper thread wait_for_killed();
-    chopper thread heli_health(var_6b4047f4);
+    chopper thread heli_health(killstreakbundlename);
     missilesenabled = isdefined(chopper.killstreakbundle.var_eda20f66) ? chopper.killstreakbundle.var_eda20f66 : 0;
-    chopper thread attack_targets(missilesenabled, var_6b4047f4, 1);
-    chopper thread heli_targeting(missilesenabled, var_6b4047f4);
+    chopper thread attack_targets(missilesenabled, killstreakbundlename, 1);
+    chopper thread heli_targeting(missilesenabled, killstreakbundlename);
     chopper thread heli_missile_regen();
     chopper thread targetting_delay::function_7e1a12ce(killstreakbundle.var_2aeadfa0);
     chopper thread heatseekingmissile::missiletarget_proximitydetonateincomingmissile(killstreakbundle, "crashing", "death");
     chopper thread create_flare_ent(vectorscale((0, 0, -1), 150));
     chopper thread function_d4896942();
     chopper thread function_9440face();
-    chopper killstreaks::function_b182645e(owner, var_6b4047f4);
+    chopper killstreaks::function_b182645e(owner, killstreakbundlename);
     chopper thread function_b3d1e178();
 }
 
@@ -1789,7 +1789,7 @@ function destroyhelicopter(var_fec7078b) {
         self function_e1058a3e();
     }
     function_711c140b();
-    self function_cb48cddd();
+    self deletedelay();
 }
 
 // Namespace helicopter/helicopter_shared
@@ -2173,7 +2173,7 @@ function heli_get_protect_spot(*heli, protectdest, var_551cf1b9, heli_team = sel
                 }
                 foreach (point in queryresult.data) {
                     distsq = distancesquared(self.origin, point.origin);
-                    if (distsq >= function_a3f6cdac(var_7f378b0)) {
+                    if (distsq >= sqr(var_7f378b0)) {
                         array::add(validpoints, point);
                     }
                 }
@@ -2553,7 +2553,7 @@ function function_83430362(*hardpointtype) {
     var_9b40542d = isdefined(self.killstreakbundle.var_cce6aee8) ? self.killstreakbundle.var_cce6aee8 : 20;
     var_f2c81dc3 = isdefined(self.killstreakbundle.var_3286050) ? self.killstreakbundle.var_3286050 : 2;
     var_dca0680c = isdefined(self.killstreakbundle.var_fdfa0253) ? self.killstreakbundle.var_fdfa0253 : 5;
-    var_d93f322f = cos((isdefined(self.killstreakbundle.var_96879013) ? self.killstreakbundle.var_96879013 : 30) / 2);
+    targetcosine = cos((isdefined(self.killstreakbundle.var_96879013) ? self.killstreakbundle.var_96879013 : 30) / 2);
     for (;;) {
         if (isdefined(self.var_9ddb1534)) {
             self.var_8475558b = self.var_9ddb1534;
@@ -2566,7 +2566,7 @@ function function_83430362(*hardpointtype) {
                 if (isdefined(var_5052ae94[1])) {
                     self turret::set_target(self.var_8475558b, undefined, var_5052ae94[1]);
                 }
-                while (isdefined(self.var_8475558b) && isalive(self.var_8475558b) && !self util::within_fov(self.origin, self.angles, self.var_8475558b.origin, var_d93f322f)) {
+                while (isdefined(self.var_8475558b) && isalive(self.var_8475558b) && !self util::within_fov(self.origin, self.angles, self.var_8475558b.origin, targetcosine)) {
                     if (sighttracepassed(self.origin, self.var_8475558b.origin, 0, self, self.var_8475558b)) {
                         break;
                     }
@@ -2588,8 +2588,8 @@ function function_83430362(*hardpointtype) {
                     wait(0.3);
                     self playloopsound("wpn_attack_helicopter_spin_loop_npc");
                     wait(level.heli_turret_spinup_delay);
-                    var_153685c7 = randomintrangeinclusive(var_f3b08e50, var_9b40542d);
-                    for (i = 0; i < var_153685c7; i++) {
+                    burstsize = randomintrangeinclusive(var_f3b08e50, var_9b40542d);
+                    for (i = 0; i < burstsize; i++) {
                         for (j = 0; j < var_5052ae94.size; j++) {
                             if (isdefined(var_5052ae94[j])) {
                                 if (isdefined(self.var_8475558b)) {
@@ -2610,8 +2610,8 @@ function function_83430362(*hardpointtype) {
                 self notify(#"turret reloading");
                 self stoploopsound(1);
                 self playsound("wpn_attack_helicopter_spin_stop_npc");
-                var_af6641fd = randomintrangeinclusive(var_f2c81dc3, var_dca0680c);
-                wait(var_af6641fd);
+                burstdelay = randomintrangeinclusive(var_f2c81dc3, var_dca0680c);
+                wait(burstdelay);
                 if (!isdefined(self.var_8475558b) || isdefined(self.var_9ddb1534) && isdefined(self.var_8475558b) && self.var_8475558b != self.var_9ddb1534) {
                     break;
                 }
@@ -2781,8 +2781,8 @@ function attack_primary(hardpointtype) {
                     wait(0.4);
                     self playloopsound("wpn_attack_helicopter_spin_loop_npc");
                     wait(level.heli_turret_spinup_delay);
-                    var_153685c7 = randomintrangeinclusive(var_f3b08e50, var_9b40542d);
-                    for (i = 0; i < var_153685c7; i++) {
+                    burstsize = randomintrangeinclusive(var_f3b08e50, var_9b40542d);
+                    for (i = 0; i < burstsize; i++) {
                         if (isdefined(self.primarytarget)) {
                             self.var_2c6d8331 = self.primarytarget.origin;
                             self turretsettarget(gunnerindex, self.primarytarget);
@@ -2799,8 +2799,8 @@ function attack_primary(hardpointtype) {
                 self notify(#"turret reloading");
                 self stoploopsound(1);
                 self playsound("wpn_attack_helicopter_spin_stop_npc");
-                var_af6641fd = randomintrangeinclusive(var_f2c81dc3, var_dca0680c);
-                wait(var_af6641fd);
+                burstdelay = randomintrangeinclusive(var_f2c81dc3, var_dca0680c);
+                wait(burstdelay);
                 if (isdefined(self.turrettarget) && isalive(self.turrettarget)) {
                     antithreat = antithreat + 100;
                     self.turrettarget.antithreat = antithreat;

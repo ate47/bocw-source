@@ -44,7 +44,7 @@ function function_54819cfd(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_eb074a88 = undefined;
         self.var_27af60a = undefined;
     }
-    self.var_a22abb6f = util::playfxontag(fieldname, #"hash_5cde32c15506b440", self, "j_mainroot");
+    self.explode_fx = util::playfxontag(fieldname, #"hash_5cde32c15506b440", self, "j_mainroot");
     self playsound(0, #"wpn_grenade_explode");
 }
 

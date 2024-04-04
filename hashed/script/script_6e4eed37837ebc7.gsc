@@ -11,14 +11,14 @@
 // Checksum 0x35a22214, Offset: 0x120
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_3dcfc06bf6bfc5f5", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_3dcfc06bf6bfc5f5", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_2d7ccca3/namespace_2d7ccca3
 // Params 0, eflags: 0x6 linked
 // Checksum 0x4bf1cc6e, Offset: 0x168
 // Size: 0x7c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register_clientuimodel("hudItems.ammoCooldowns.fieldUpgrade", 1, 5, "float", 0);
     callback::on_connect(&function_39a250e3);
     clientfield::register("missile", "fieldUpgradeActive", 1, 1, "int");
@@ -162,9 +162,9 @@ function private function_e7085388(weapon, var_e3774219 = 0) {
     } else {
         self.pers[#"hash_13b806f669a6bb82"][#"hash_1f9e227d7c859634"] = undefined;
     }
-    previousweapon = self.pers[#"hash_13b806f669a6bb82"][#"hash_3e6d442adf0713fc"];
+    previousweapon = self.pers[#"hash_13b806f669a6bb82"][#"cooldownweapon"];
     weaponindex = getitemindexfromref(weapon.name);
-    self.pers[#"hash_13b806f669a6bb82"][#"hash_3e6d442adf0713fc"] = weapon;
+    self.pers[#"hash_13b806f669a6bb82"][#"cooldownweapon"] = weapon;
     clipsize = self getweaponammoclipsize(weapon);
     self function_e7f8957a(clipsize);
     cooldown = function_e7967fc8(weapon, var_cdd95e58);
@@ -266,7 +266,7 @@ function private function_62c1bfaa(weapon) {
 // Checksum 0xccfe3498, Offset: 0x1598
 // Size: 0x52
 function private function_e3774219(weapon) {
-    previousweapon = self.pers[#"hash_13b806f669a6bb82"][#"hash_3e6d442adf0713fc"];
+    previousweapon = self.pers[#"hash_13b806f669a6bb82"][#"cooldownweapon"];
     return isdefined(previousweapon) && previousweapon != weapon;
 }
 

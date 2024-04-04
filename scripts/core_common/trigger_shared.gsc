@@ -16,14 +16,14 @@
 // Checksum 0x665afa31, Offset: 0x238
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"trigger", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"trigger", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace trigger/trigger_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6bef66dd, Offset: 0x280
 // Size: 0x3c
-function private function_70a657d8() {
+function private preinit() {
     callback::function_27d9ab8(&trigger_think);
     level.var_53af20e = &set_flag_permissions;
 }
@@ -524,7 +524,7 @@ function _trigger_wait_think(s_tracker, e_entity) {
     self endon(#"death");
     s_tracker endon(#"trigger");
     e_other = _trigger_wait(e_entity);
-    s_tracker notify(#"trigger", {#trigger:self, #activator:e_other});
+    s_tracker notify(#"trigger", {#activator:e_other, #trigger:self});
 }
 
 // Namespace trigger/trigger_shared

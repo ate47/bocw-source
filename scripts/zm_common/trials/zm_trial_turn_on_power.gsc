@@ -12,14 +12,14 @@
 // Checksum 0x771ece15, Offset: 0xa8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_turn_on_power", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_turn_on_power", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_turn_on_power/zm_trial_turn_on_power
 // Params 0, eflags: 0x4
 // Checksum 0x1c1a97b5, Offset: 0xf0
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

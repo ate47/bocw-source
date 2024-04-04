@@ -12,14 +12,14 @@
 // Checksum 0x3ce3d8c3, Offset: 0x130
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"empgrenade", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"empgrenade", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace empgrenade/empgrenade
 // Params 0, eflags: 0x4
 // Checksum 0xf0db4bd3, Offset: 0x178
 // Size: 0x84
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "empd", 1, 1, "int");
     clientfield::register("toplayer", "empd_monitor_distance", 1, 1, "int");
     callback::on_spawned(&on_player_spawned);

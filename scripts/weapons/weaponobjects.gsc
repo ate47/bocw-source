@@ -265,7 +265,7 @@ function deleteweaponobjectinstance() {
         }
         self.minemover delete();
     }
-    self function_cb48cddd();
+    self deletedelay();
 }
 
 // Namespace weaponobjects/weaponobjects
@@ -527,7 +527,7 @@ function addweaponobject(watcher, weapon_instance, weapon) {
 // Size: 0x19c
 function function_6d8aa6a0(player, watcher) {
     self endon(#"death", #"hacked", #"hash_3a9500a4f045d0f3");
-    var_e1d8c33c = [3:"changed_specialist", 2:"disconnect", 1:"joined_spectators", 0:"joined_team"];
+    var_e1d8c33c = ["joined_team", "joined_spectators", "disconnect", "changed_specialist"];
     if (isdefined(watcher.weapon.dieonrespawn) ? watcher.weapon.dieonrespawn : 0) {
         var_e1d8c33c[var_e1d8c33c.size] = "spawned";
     }
@@ -578,11 +578,11 @@ function cleanupwatcherondeath(watcher) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x94614b51, Offset: 0x2138
 // Size: 0xbc
-function weapon_object_timeout(watcher, var_84e5ee08) {
+function weapon_object_timeout(watcher, timeoutoverride) {
     weapon_instance = self;
     weapon_instance endon(#"death", #"cancel_timeout");
-    var_754e514 = isdefined(var_84e5ee08) ? var_84e5ee08 : watcher.timeout;
-    wait(var_754e514);
+    timeoutval = isdefined(timeoutoverride) ? timeoutoverride : watcher.timeout;
+    wait(timeoutval);
     if (isdefined(watcher) && isdefined(watcher.ontimeout)) {
         weapon_instance thread [[ watcher.ontimeout ]]();
         return;
@@ -673,7 +673,7 @@ function weaponobjectdamage(watcher) {
                 continue;
             }
         }
-        if (isdefined(watcher.var_34400f36) && !self [[ watcher.var_34400f36 ]](watcher, attacker, weapon, damage)) {
+        if (isdefined(watcher.isfataldamage) && !self [[ watcher.isfataldamage ]](watcher, attacker, weapon, damage)) {
             continue;
         }
         if (!isvehicle(self) && !damage::friendlyfirecheck(self.owner, attacker)) {
@@ -818,7 +818,7 @@ function isstunned() {
 function weaponobjectfizzleout() {
     self endon(#"death");
     function_f2a06099(self, self.weapon);
-    self function_cb48cddd();
+    self deletedelay();
 }
 
 // Namespace weaponobjects/weaponobjects
@@ -854,7 +854,7 @@ function function_b4793bda(entity, weapon) {
         return;
     }
     customsettings = weapons::function_7a677105(weapon);
-    fx = customsettings.var_aab39cd0;
+    fx = customsettings.detonatefx;
     if (isdefined(fx)) {
         tag = customsettings.var_abd3e497;
         if (isdefined(tag)) {
@@ -864,13 +864,13 @@ function function_b4793bda(entity, weapon) {
         origin = isdefined(origin) ? origin : entity.origin;
         angles = isdefined(angles) ? angles : entity.angles;
         if (isdefined(tag)) {
-            var_bc514cf = anglestoforward(angles);
+            fxforward = anglestoforward(angles);
             fxup = anglestoup(angles);
         } else {
-            var_bc514cf = anglestoup(angles);
+            fxforward = anglestoup(angles);
             fxup = anglestoforward(angles);
         }
-        playfx(fx, origin, var_bc514cf, fxup);
+        playfx(fx, origin, fxforward, fxup);
     }
 }
 
@@ -892,13 +892,13 @@ function function_f2a06099(entity, weapon) {
     origin = isdefined(origin) ? origin : entity.origin;
     angles = isdefined(angles) ? angles : entity.angles;
     if (isdefined(tag)) {
-        var_bc514cf = anglestoforward(angles);
+        fxforward = anglestoforward(angles);
         fxup = anglestoup(angles);
     } else {
-        var_bc514cf = anglestoup(angles);
+        fxforward = anglestoup(angles);
         fxup = anglestoforward(angles);
     }
-    playfx(fx, origin, var_bc514cf, fxup);
+    playfx(fx, origin, fxforward, fxup);
 }
 
 // Namespace weaponobjects/weaponobjects
@@ -1006,7 +1006,7 @@ function private createweaponobjectwatcher(weaponname, ownerteam) {
         weaponobjectwatcher.onstunfinished = undefined;
         weaponobjectwatcher.ondestroyed = undefined;
         weaponobjectwatcher.onfizzleout = &weaponobjectfizzleout;
-        weaponobjectwatcher.var_34400f36 = undefined;
+        weaponobjectwatcher.isfataldamage = undefined;
         weaponobjectwatcher.onsupplementaldetonatecallback = undefined;
         weaponobjectwatcher.ontimeout = undefined;
         weaponobjectwatcher.var_994b472b = undefined;
@@ -1589,12 +1589,12 @@ function hackernotmoving() {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x4eae71d3, Offset: 0x5448
 // Size: 0x5c
-function private set_hint_string(hint_string, var_c1846261) {
+function private set_hint_string(hint_string, default_string) {
     if (isdefined(hint_string) && hint_string != "") {
         self sethintstring(hint_string);
         return;
     }
-    self sethintstring(var_c1846261);
+    self sethintstring(default_string);
 }
 
 // Namespace weaponobjects/weaponobjects
@@ -1677,7 +1677,7 @@ function itemhacked(watcher, player) {
         }
     #/
     self notify(#"hacked", {#player:player});
-    level notify(#"hacked", {#player:player, #target:self});
+    level notify(#"hacked", {#target:self, #player:player});
     if (isdefined(self.camerahead)) {
         self.camerahead notify(#"hacked", {#player:player});
     }
@@ -1685,7 +1685,7 @@ function itemhacked(watcher, player) {
     #/
     waitframe(1);
     if (isdefined(player) && player.sessionstate == "playing") {
-        player notify(#"grenade_fire", {#respawn_from_hack:1, #weapon:self.weapon, #projectile:self});
+        player notify(#"grenade_fire", {#projectile:self, #weapon:self.weapon, #respawn_from_hack:1});
         return;
     }
     watcher thread waitanddetonate(self, 0, undefined, self.weapon);

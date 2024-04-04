@@ -9,14 +9,14 @@
 // Checksum 0x46555eae, Offset: 0x90
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"paintshop", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"paintshop", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace paintshop/paintshop
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd6d37178, Offset: 0xd8
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     if (getdvarint(#"hash_2728dd57f235e6e5", 0)) {
         callback::on_spawned(&on_player_spawned);
     }

@@ -9,14 +9,14 @@
 // Checksum 0xfefe3027, Offset: 0xf0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"teamset_axis", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"teamset_axis", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace teamset_axis/teamset_axis
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6dc4bfac, Offset: 0x138
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.teams[#"axis"])) {
         return;
     }

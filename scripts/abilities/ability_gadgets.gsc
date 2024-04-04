@@ -12,14 +12,14 @@
 // Checksum 0xac77a6ed, Offset: 0x100
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"ability_gadgets", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"ability_gadgets", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace ability_gadgets/ability_gadgets
 // Params 0, eflags: 0x6 linked
 // Checksum 0x170c7ba0, Offset: 0x148
 // Size: 0x94
-function private function_70a657d8() {
+function private preinit() {
     callback::on_connect(&on_player_connect);
     callback::on_spawned(&on_player_spawned);
     clientfield::register_clientuimodel("huditems.abilityHoldToActivate", 1, 2, "int");

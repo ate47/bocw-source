@@ -13,14 +13,14 @@
 // Checksum 0x7761cfa5, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_disable_regen", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_disable_regen", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_disable_regen/zm_trial_disable_regen
 // Params 0, eflags: 0x4
 // Checksum 0x522981, Offset: 0x120
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

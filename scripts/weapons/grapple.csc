@@ -11,14 +11,14 @@
 // Checksum 0xcf6cc4ee, Offset: 0x168
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"grapple", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"grapple", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace grapple/grapple
 // Params 0, eflags: 0x4
 // Checksum 0x9622ff1e, Offset: 0x1b0
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_localplayer_spawned(&player_on_spawned);
     level.var_c3e66138 = &function_bbd7fc60;
     level.var_1b2035de = getscriptbundle("grapple_custom_settings");

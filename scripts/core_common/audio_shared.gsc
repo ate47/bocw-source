@@ -13,14 +13,14 @@
 // Checksum 0x72da57e1, Offset: 0x318
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"audio", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"audio", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace audio/audio_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x40501ff0, Offset: 0x360
 // Size: 0xb4
-function private function_70a657d8() {
+function private preinit() {
     util::registerclientsys("duckCmd");
     callback::on_connect(&on_player_connect);
     callback::on_spawned(&sndresetsoundsettings);

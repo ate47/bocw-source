@@ -21,14 +21,14 @@
 // Checksum 0xa6fa94af, Offset: 0x188
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_attackables", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_attackables", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_attackables/zm_attackables
 // Params 0, eflags: 0x6 linked
 // Checksum 0x4a96f261, Offset: 0x1e0
 // Size: 0x176
-function private function_70a657d8() {
+function private preinit() {
     level.attackablecallback = &attackable_callback;
     level.attackables = struct::get_array("scriptbundle_attackables", "classname");
     foreach (attackable in level.attackables) {

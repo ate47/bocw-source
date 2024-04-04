@@ -27,11 +27,11 @@ function event_handler[level_init] function_9347830c(*eventstruct) {
 // Checksum 0xa068275b, Offset: 0x180
 // Size: 0x4a
 function function_3143d817() {
-    var_65792f8b = map::get_script_bundle();
-    if (!isdefined(var_65792f8b.var_6bb20a3)) {
+    mapbundle = map::get_script_bundle();
+    if (!isdefined(mapbundle.var_6bb20a3)) {
         return undefined;
     }
-    return getscriptbundle(var_65792f8b.var_6bb20a3);
+    return getscriptbundle(mapbundle.var_6bb20a3);
 }
 
 // Namespace namespace_98521e8b/namespace_98521e8b
@@ -59,7 +59,7 @@ function function_d6b2318a() {
         var_abb4b791 = arraycombine(var_abb4b791, getentitiesinradius(level.var_ecb89926, 1000, 14), 0, 0);
         array::run_all(var_abb4b791, &hide);
     }
-    var_46fa8f90 = isdefined(var_4680e491.var_3545b69a) ? var_4680e491.var_3545b69a : 0;
+    var_46fa8f90 = isdefined(var_4680e491.blackscreentime) ? var_4680e491.blackscreentime : 0;
     var_c418a170 = isdefined(var_4680e491.var_73a4076) ? var_4680e491.var_73a4076 : 0;
     level lui::screen_fade_out(0);
     if (isarray(level.var_3eada96b) && level.var_3eada96b.size) {

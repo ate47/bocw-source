@@ -10,7 +10,7 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0x30d4f1cd, Offset: 0xa0
 // Size: 0xac
-function function_70a657d8() {
+function preinit() {
     if (util::is_frontend_map()) {
         return;
     }
@@ -145,7 +145,7 @@ function private dom_start() {
     foreach (team in level.teams) {
         level function_8f96464(team, undefined, #"chase_enemy", #"patrol", undefined);
     }
-    var_654bc2bc = [#"defend":&function_d5bf23f5, #"capture":&function_19d221fa];
+    var_654bc2bc = [#"capture":&function_19d221fa, #"defend":&function_d5bf23f5];
     while (!isdefined(level.domflags) || level.domflags.size <= 0) {
         waitframe(1);
     }
@@ -168,7 +168,7 @@ function private dom_start() {
                 team = objective.team;
                 order = team == ownerteam ? #"defend" : #"capture";
                 if (objective.var_a1980fcb != order) {
-                    level function_80af6d(objective);
+                    level remove_objective(objective);
                     weight = var_654bc2bc[order];
                     level function_8f96464(team, info, order, #"assault", weight);
                 }
@@ -215,7 +215,7 @@ function private function_35d61d4() {
         waitframe(1);
     }
     var_b84a8f51 = function_5f64ef84(level.var_bb695b91);
-    var_9c4aa862 = {#neighborids:var_b84a8f51.neighborids, #var_dd2331cb:var_b84a8f51.var_dd2331cb};
+    var_9c4aa862 = {#var_dd2331cb:var_b84a8f51.var_dd2331cb, #neighborids:var_b84a8f51.neighborids};
     while (true) {
         foreach (team in level.teams) {
             level function_8f96464(team, var_b84a8f51, #"capture", #"assault");
@@ -227,7 +227,7 @@ function private function_35d61d4() {
         carrier = var_b84a8f51.target.carrier;
         var_9c4aa862.target = carrier;
         var_8cc3a02f = carrier.team;
-        level function_8f96464(var_8cc3a02f, var_9c4aa862, #"hash_2fc0534d4a96a7ea", #"hash_35137090e8395dd4", &function_69fcc325);
+        level function_8f96464(var_8cc3a02f, var_9c4aa862, #"hash_2fc0534d4a96a7ea", #"camp", &function_69fcc325);
         level function_8f96464(var_8cc3a02f, var_9c4aa862, #"defend", #"assault", &function_dda40c33);
         foreach (team in level.teams) {
             if (team == var_8cc3a02f) {
@@ -296,7 +296,7 @@ function private function_8d249e99() {
     }
     var_a5e6be6d = {};
     foreach (team in level.teams) {
-        level function_8f96464(team, var_a5e6be6d, #"hash_2fc0534d4a96a7ea", #"hash_35137090e8395dd4", &function_b4c402b);
+        level function_8f96464(team, var_a5e6be6d, #"hash_2fc0534d4a96a7ea", #"camp", &function_b4c402b);
     }
     zoneinfo = undefined;
     while (!isdefined(level.zones) || level.zones.size <= 0 || !isdefined(level.zones[0].gameobject)) {
@@ -548,7 +548,7 @@ function private function_8d2aa32e(regions) {
 // Checksum 0xb25676d4, Offset: 0x23a8
 // Size: 0xdc
 function private function_8f96464(team, info, var_a1980fcb, var_5e99151a, weight) {
-    objective = {#active:1, #weight:weight, #count:0, #var_5e99151a:var_5e99151a, #var_a1980fcb:var_a1980fcb, #info:info, #team:team};
+    objective = {#team:team, #info:info, #var_a1980fcb:var_a1980fcb, #var_5e99151a:var_5e99151a, #count:0, #weight:weight, #active:1};
     objectives = level.var_774ed7e9[team];
     objectives[objectives.size] = objective;
     return objective;
@@ -558,7 +558,7 @@ function private function_8f96464(team, info, var_a1980fcb, var_5e99151a, weight
 // Params 1, eflags: 0x6 linked
 // Checksum 0xdeed110, Offset: 0x2490
 // Size: 0x4c
-function private function_80af6d(objective) {
+function private remove_objective(objective) {
     objective.active = 0;
     objectives = level.var_774ed7e9[objective.team];
     arrayremovevalue(objectives, objective);
@@ -571,7 +571,7 @@ function private function_80af6d(objective) {
 function private function_add82897(info) {
     objectives = function_574923ee(info);
     foreach (objective in objectives) {
-        function_80af6d(objective);
+        remove_objective(objective);
     }
 }
 

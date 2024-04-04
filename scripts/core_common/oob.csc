@@ -11,14 +11,14 @@
 // Checksum 0xa4f42711, Offset: 0xf8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"out_of_bounds", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"out_of_bounds", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace oob/oob
 // Params 0, eflags: 0x6 linked
 // Checksum 0x84b5c5d2, Offset: 0x140
 // Size: 0x2c0
-function private function_70a657d8() {
+function private preinit() {
     if (sessionmodeismultiplayergame()) {
         level.var_dcb68d74 = 1;
         level.oob_timelimit_ms = getdvarint(#"oob_timelimit_ms", 3000);
@@ -52,8 +52,8 @@ function on_localplayer_connect(localclientnum) {
     /#
         if (getdvarstring(#"hash_4e9b02559bacb944", "<unknown string>") == "<unknown string>") {
             oobtriggers = function_29bda34d(localclientnum, "<unknown string>");
-            foreach (var_7a0e76fe in oobtriggers) {
-                var_7a0e76fe function_704c070e(localclientnum);
+            foreach (oobtrigger in oobtriggers) {
+                oobtrigger function_704c070e(localclientnum);
             }
         }
     #/
@@ -124,7 +124,7 @@ function function_2fb8e4d4(*localclientnum, localplayer) {
 function onoutofboundschange(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     localplayer = function_5c10bd79(binitialsnap);
     var_d66b86ee = function_2fb8e4d4(binitialsnap, localplayer);
-    self callback::entity_callback(#"oob", binitialsnap, {#new_val:bwastimejump, #old_val:fieldname});
+    self callback::entity_callback(#"oob", binitialsnap, {#old_val:fieldname, #new_val:bwastimejump});
     if (var_d66b86ee && bwastimejump > 0) {
         if (!isdefined(localplayer.oob_effect_enabled)) {
             function_da2afac6(binitialsnap, localplayer);

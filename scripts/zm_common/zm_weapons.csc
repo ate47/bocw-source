@@ -22,14 +22,14 @@
 // Checksum 0xbef88b90, Offset: 0x210
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_weapons", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_weapons", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_weapons/zm_weapons
 // Params 0, eflags: 0x6 linked
 // Checksum 0x58794312, Offset: 0x268
 // Size: 0x12c
-function private function_70a657d8() {
+function private preinit() {
     level flag::init("weapon_table_loaded");
     callback::on_localclient_connect(&on_player_connect);
     level.weaponnone = getweapon(#"none");
@@ -124,14 +124,14 @@ function function_8389c033(weapon_name, var_b72e8856) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xe7911ef5, Offset: 0xbb0
 // Size: 0x472
-function function_2bcaec6f(localclientnum, var_a6762160) {
-    if (!(isdefined(var_a6762160) && isdefined(var_a6762160.weapon)) || !isdefined(localclientnum)) {
+function function_2bcaec6f(localclientnum, itementry) {
+    if (!(isdefined(itementry) && isdefined(itementry.weapon)) || !isdefined(localclientnum)) {
         return;
     }
     data = item_world::function_a7e98a1a(localclientnum);
     current_weapon = getcurrentweapon(localclientnum);
     current_weapon = get_base_weapon(current_weapon);
-    var_3ccb716f = get_base_weapon(var_a6762160.weapon);
+    var_3ccb716f = get_base_weapon(itementry.weapon);
     weapon1 = data.inventory.items[17 + 1];
     weapon2 = data.inventory.items[17 + 1 + 8 + 1];
     var_5df29481 = data.inventory.items[17 + 1 + 8 + 1 + 8 + 1];
@@ -222,7 +222,7 @@ function private on_player_connect(localclientnum) {
 // Size: 0x36
 function is_weapon_included(weapon) {
     if (!isdefined(level._included_weapons)) {
-        return 0;
+        return false;
     }
     return isdefined(level._included_weapons[weapon.rootweapon]);
 }
@@ -353,7 +353,7 @@ function init_weapons() {
 function function_15827c82(var_904df15f) {
     if (var_904df15f.type === "itemspawnlist") {
         foreach (s_item in var_904df15f.itemlist) {
-            var_89230090 = getscriptbundle(s_item.var_a6762160);
+            var_89230090 = getscriptbundle(s_item.itementry);
             if (var_89230090.type === "itemspawnlist") {
                 function_15827c82(var_89230090);
                 continue;
@@ -450,13 +450,13 @@ function private function_bd6fcf62(var_f8dfa2cf, var_3fbf56c8) {
         return;
     }
     foreach (s_item in var_83b3038e.itemlist) {
-        var_a6762160 = s_item.var_a6762160;
-        if (isdefined(level.var_ee110db8[var_a6762160])) {
-            var_a6762160 = level.var_ee110db8[var_a6762160];
-        } else if (isdefined(level.itemreplacement[var_a6762160])) {
-            var_a6762160 = level.itemreplacement[var_a6762160];
+        itementry = s_item.itementry;
+        if (isdefined(level.var_ee110db8[itementry])) {
+            itementry = level.var_ee110db8[itementry];
+        } else if (isdefined(level.itemreplacement[itementry])) {
+            itementry = level.itemreplacement[itementry];
         }
-        var_89230090 = getscriptbundle(var_a6762160);
+        var_89230090 = getscriptbundle(itementry);
         if (var_89230090.type === "itemspawnlist") {
             function_15827c82(var_89230090);
             continue;

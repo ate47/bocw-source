@@ -142,7 +142,7 @@ function need_to_run() {
     if (ai::getaiattribute(self, "chaseenemyonspawn")) {
         return true;
     }
-    run_dist_squared = function_a3f6cdac(self ai::get_behavior_attribute("min_run_dist"));
+    run_dist_squared = sqr(self ai::get_behavior_attribute("min_run_dist"));
     run_yaw = 20;
     run_pitch = 30;
     run_height = 64;
@@ -315,7 +315,7 @@ function dogtargetservice(behaviortreeentity) {
         locomotion_target = get_locomotion_target(behaviortreeentity);
         if (isdefined(locomotion_target)) {
             repathdist = 16;
-            if (!isdefined(behaviortreeentity.lasttargetposition) || distancesquared(behaviortreeentity.lasttargetposition, locomotion_target) > function_a3f6cdac(repathdist) || !behaviortreeentity haspath()) {
+            if (!isdefined(behaviortreeentity.lasttargetposition) || distancesquared(behaviortreeentity.lasttargetposition, locomotion_target) > sqr(repathdist) || !behaviortreeentity haspath()) {
                 behaviortreeentity function_a57c34b7(locomotion_target);
                 behaviortreeentity.lasttargetposition = locomotion_target;
             }
@@ -333,7 +333,7 @@ function dogshouldmelee(behaviortreeentity) {
     }
     if (!is_true(level.intermission)) {
         meleedist = 72;
-        if (distancesquared(behaviortreeentity.origin, behaviortreeentity.favoriteenemy.origin) < function_a3f6cdac(meleedist) && behaviortreeentity cansee(behaviortreeentity.favoriteenemy)) {
+        if (distancesquared(behaviortreeentity.origin, behaviortreeentity.favoriteenemy.origin) < sqr(meleedist) && behaviortreeentity cansee(behaviortreeentity.favoriteenemy)) {
             return true;
         }
     }

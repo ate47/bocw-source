@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_17a9d06bf819b2d3;
+#using scripts\zm_common\zm_ping.csc;
 #using scripts\zm_common\zm_utility.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\system_shared.csc;
@@ -13,14 +13,14 @@
 // Checksum 0xdc767970, Offset: 0x128
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_fb0b00f613ec7da", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_fb0b00f613ec7da", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_dedc3cb9/namespace_2291eec4
 // Params 0, eflags: 0x2 linked
 // Checksum 0xd05b7ecd, Offset: 0x170
 // Size: 0x16c
-function function_70a657d8() {
+function preinit() {
     if (!zm_utility::is_survival()) {
         return;
     }
@@ -29,8 +29,8 @@ function function_70a657d8() {
     }
     clientfield::register("scriptmover", "supply_drop_parachute_rob", 1, 1, "int", &supply_drop_parachute, 0, 0);
     callback::on_vehicle_spawned(&on_vehicle_spawned);
-    namespace_5b1144e::function_5ae4a10c(undefined, "helicopter_escape_heli", #"hash_5783e6ae1065d00", "pingVehicle");
-    namespace_5b1144e::function_5ae4a10c(#"hash_533e3e6045e2603d", "helicopter_escape_crate", #"hash_12f3d2dc40a1670e", #"hash_49f4ae06ae4af262", #"hash_50bc9e26c4837c85");
+    zm_ping::function_5ae4a10c(undefined, "helicopter_escape_heli", #"hash_5783e6ae1065d00", "pingVehicle");
+    zm_ping::function_5ae4a10c(#"hash_533e3e6045e2603d", "helicopter_escape_crate", #"hash_12f3d2dc40a1670e", #"hash_49f4ae06ae4af262", #"hash_50bc9e26c4837c85");
 }
 
 // Namespace namespace_dedc3cb9/namespace_2291eec4

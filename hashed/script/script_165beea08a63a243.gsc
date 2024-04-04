@@ -15,14 +15,14 @@
 // Checksum 0x3e49e344, Offset: 0xc0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_40a4f03bb2983ee3", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_40a4f03bb2983ee3", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_7da6f8ca/namespace_7da6f8ca
 // Params 0, eflags: 0x4
 // Checksum 0x44fb4c88, Offset: 0x108
 // Size: 0x10
-function private function_70a657d8() {
+function private preinit() {
     level.var_288e4854 = [];
 }
 
@@ -126,17 +126,17 @@ function function_d92e3c5a(attacker, ai_zone, itemlist, var_e927082a = 0, n_powe
         item = items[i];
         if (isdefined(item)) {
             if (is_true(level.var_c64b3b46)) {
-                if (isdefined(item.var_a6762160) && isdefined(ai_zone) && isdefined(ai_zone.item_drops)) {
+                if (isdefined(item.itementry) && isdefined(ai_zone) && isdefined(ai_zone.item_drops)) {
                     if (!isdefined(ai_zone.item_drops[self.archetype])) {
                         ai_zone.item_drops[self.archetype] = [];
                     }
-                    if (!isdefined(ai_zone.item_drops[self.archetype][item.var_a6762160.name])) {
-                        ai_zone.item_drops[self.archetype][item.var_a6762160.name] = {};
+                    if (!isdefined(ai_zone.item_drops[self.archetype][item.itementry.name])) {
+                        ai_zone.item_drops[self.archetype][item.itementry.name] = {};
                     }
-                    if (!isdefined(ai_zone.item_drops[self.archetype][item.var_a6762160.name].count)) {
-                        ai_zone.item_drops[self.archetype][item.var_a6762160.name].count = 0;
+                    if (!isdefined(ai_zone.item_drops[self.archetype][item.itementry.name].count)) {
+                        ai_zone.item_drops[self.archetype][item.itementry.name].count = 0;
                     }
-                    ai_zone.item_drops[self.archetype][item.var_a6762160.name].count++;
+                    ai_zone.item_drops[self.archetype][item.itementry.name].count++;
                 }
             }
             if (isentity(item) && isdefined(item.var_627c698b.attachments) && !isdefined(item.attachments)) {

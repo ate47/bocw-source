@@ -36,7 +36,7 @@ function autoexec registerdefaultnotetrackhandlerfunctions() {
     registernotetrackhandlerfunction("start_ragdoll", &notetrackstartragdoll);
     registernotetrackhandlerfunction("ragdoll_nodeath", &notetrackstartragdollnodeath);
     registernotetrackhandlerfunction("unsync", &notetrackmeleeunsync);
-    registernotetrackhandlerfunction("helmet_pop", &function_f330d212);
+    registernotetrackhandlerfunction("helmet_pop", &notetrackhelmetpop);
     registernotetrackhandlerfunction("drop clip", &function_727744ff);
     registernotetrackhandlerfunction("extract clip left", &function_cd88e2dc);
     registernotetrackhandlerfunction("extract clip right", &function_8982cca0);
@@ -47,7 +47,7 @@ function autoexec registerdefaultnotetrackhandlerfunctions() {
     registernotetrackhandlerfunction("step1", &notetrackstaircasestep1);
     registernotetrackhandlerfunction("step2", &notetrackstaircasestep2);
     registernotetrackhandlerfunction("anim_movement = "stop"", &notetrackanimmovementstop);
-    registernotetrackhandlerfunction("gun_2_back", &function_642462dc);
+    registernotetrackhandlerfunction("gun_2_back", &notetrackguntoback);
     registernotetrackhandlerfunction("gun_2_right", &function_776caa25);
     registernotetrackhandlerfunction("pistol_pickup", &function_f7e95a07);
     registernotetrackhandlerfunction("pistol_putaway", &function_c49db6d);
@@ -63,7 +63,7 @@ function autoexec registerdefaultnotetrackhandlerfunctions() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x70a996f7, Offset: 0xaf8
 // Size: 0x7a
-function private function_642462dc(entity) {
+function private notetrackguntoback(entity) {
     if (!is_true(entity.var_8f33d87a)) {
         ai::gun_remove();
         entity attach(entity.primaryweapon.worldmodel, "tag_stowed_back", 0);
@@ -285,7 +285,7 @@ function private notetrackfirebullet(animationentity) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x9913bb2c, Offset: 0x14d8
 // Size: 0x2c
-function private function_f330d212(animationentity) {
+function private notetrackhelmetpop(animationentity) {
     destructserverutils::function_8475c53a(animationentity, "helmet");
 }
 

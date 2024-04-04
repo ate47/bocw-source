@@ -10,14 +10,14 @@
 // Checksum 0xfd174b5e, Offset: 0x98
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_force_archetypes", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_force_archetypes", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_force_archetypes/zm_trial_force_archetypes
 // Params 0, eflags: 0x4
 // Checksum 0x98e4d814, Offset: 0xe0
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }
@@ -29,7 +29,7 @@ function private function_70a657d8() {
 // Checksum 0xcad7ecbf, Offset: 0x148
 // Size: 0x104
 function private on_begin(var_34259a50, var_1d00ec07, var_10cad39b, var_f9ab255c) {
-    archetypes = [3:var_f9ab255c, 2:var_10cad39b, 1:var_1d00ec07, 0:var_34259a50];
+    archetypes = [var_34259a50, var_1d00ec07, var_10cad39b, var_f9ab255c];
     arrayremovevalue(archetypes, undefined, 0);
     self.var_c54c0d81 = [];
     foreach (archetype in archetypes) {
@@ -52,7 +52,7 @@ function private on_end(*round_reset) {
 function function_ff2a74e7(archetype) {
     challenge = zm_trial::function_a36e8c38(#"force_archetypes");
     if (!isdefined(challenge)) {
-        return 0;
+        return false;
     }
     return isdefined(challenge.var_c54c0d81[archetype]);
 }

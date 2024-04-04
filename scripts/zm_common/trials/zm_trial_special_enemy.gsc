@@ -14,14 +14,14 @@
 // Checksum 0xade61f38, Offset: 0xb8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_special_enemy", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_special_enemy", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_special_enemy/zm_trial_special_enemy
 // Params 0, eflags: 0x6 linked
 // Checksum 0xcec6ab1e, Offset: 0x100
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

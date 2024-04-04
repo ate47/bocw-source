@@ -15,14 +15,14 @@
 // Checksum 0x5fc7e9ef, Offset: 0x278
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_49946b57ce6e712f", &function_70a657d8, undefined, undefined, #"hash_13a43d760497b54d");
+    system::register(#"hash_49946b57ce6e712f", &preinit, undefined, undefined, #"hash_13a43d760497b54d");
 }
 
 // Namespace namespace_ce9594c1/namespace_ce9594c1
 // Params 0, eflags: 0x6 linked
 // Checksum 0x264c2cd9, Offset: 0x2c8
 // Size: 0x94
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("allplayers", "fx_frenzied_guard_player_clientfield", 9000, 1, "int", &function_dfadfc0e, 1, 0);
     clientfield::register("actor", "fx_frenzied_guard_actor_clientfield", 9000, 1, "int", &function_d3b68b9b, 1, 0);
 }

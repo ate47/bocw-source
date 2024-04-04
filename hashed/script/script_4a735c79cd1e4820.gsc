@@ -89,10 +89,10 @@ function function_80d28d77(localclientnum, impactfx, var_4b30f907, var_9cb23c3, 
         var_a6448197 = self function_4b2f0374(playereyepos, playerangles, halffov, culldist);
         if (var_a6448197) {
             for (i = 0; i < var_70bdcaa; i++) {
-                var_40bdbb30 = randomfloatrange(var_d06c0cef, var_d500b38d);
-                var_971867e4 = randomfloatrange(var_740a6a07, var_434f3a56);
+                randx = randomfloatrange(var_d06c0cef, var_d500b38d);
+                randy = randomfloatrange(var_740a6a07, var_434f3a56);
                 var_d13bdc2a = randomfloatrange(var_40f7123c, var_17e9e56c);
-                point = self getpointinbounds(var_40bdbb30, var_971867e4, var_d13bdc2a);
+                point = self getpointinbounds(randx, randy, var_d13bdc2a);
                 start = point - var_1daf2286;
                 end = point + var_1daf2286;
                 trace = bullettrace(start, end, 1, undefined);

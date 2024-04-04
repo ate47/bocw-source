@@ -23,14 +23,14 @@
 // Checksum 0xe08cc77a, Offset: 0x790
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_characters", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_characters", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_characters/zm_characters
 // Params 0, eflags: 0x6 linked
 // Checksum 0x49670886, Offset: 0x7d8
 // Size: 0x7c
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.var_e52a681)) {
         level.var_e52a681 = 0;
     }

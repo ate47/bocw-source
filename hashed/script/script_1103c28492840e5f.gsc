@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_62c72c96978f9b04;
-#using script_311c446e3df6c3fa;
+#using scripts\zm_common\objective_manager.csc;
 #using script_4ed01237ecbd380f;
 #using script_2bdd098a8215ac9f;
 #using script_538e87197f25d67;
@@ -19,14 +19,14 @@
 // Checksum 0xc43e2d53, Offset: 0x158
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_5ff56dba9074b0b4", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_5ff56dba9074b0b4", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_73df937d/namespace_73df937d
 // Params 0, eflags: 0x2 linked
 // Checksum 0xa3c52749, Offset: 0x1a0
 // Size: 0x4c
-function function_70a657d8() {
+function preinit() {
     level clientfield::register("scriptmover", "safehouse_claim_fx", 1, 1, "int", &safehouse_claim_fx, 0, 0);
 }
 

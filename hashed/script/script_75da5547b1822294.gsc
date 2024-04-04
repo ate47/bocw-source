@@ -30,7 +30,7 @@ function get_center(territory = level.territory) {
 // Params 1, eflags: 0x0
 // Checksum 0xb1a9ea4c, Offset: 0x1d0
 // Size: 0x230
-function function_64c37ade(territory = level.territory) {
+function get_radius(territory = level.territory) {
     absmins = [];
     absmaxs = [];
     if (!isstruct(territory) || !isarray(territory.bounds)) {
@@ -59,7 +59,7 @@ function function_64c37ade(territory = level.territory) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x3f260c19, Offset: 0x408
 // Size: 0x18a
-function is_inside(point, var_73362d27 = 0, territory = level.territory) {
+function is_inside(point, ignoreheight = 0, territory = level.territory) {
     if (!function_c0de0601()) {
         return true;
     }
@@ -74,7 +74,7 @@ function is_inside(point, var_73362d27 = 0, territory = level.territory) {
     }
     foreach (boundary in territory.bounds) {
         testpoint = point;
-        if (var_73362d27) {
+        if (ignoreheight) {
             testpoint = (testpoint[0], testpoint[1], boundary.origin[2]);
         }
         if (boundary istouching(testpoint)) {
@@ -99,7 +99,7 @@ function is_valid(object, territory = level.territory) {
 // Params 2, eflags: 0x0
 // Checksum 0xe2440b3c, Offset: 0x618
 // Size: 0x2dc
-function function_b3791221(var_d1373160 = 10, territory = level.territory) {
+function function_b3791221(maxattempts = 10, territory = level.territory) {
     if (!function_c0de0601()) {
         return;
     }
@@ -125,7 +125,7 @@ function function_b3791221(var_d1373160 = 10, territory = level.territory) {
     if (absmins.size <= 0 || absmaxs.size <= 0) {
         return;
     }
-    for (index = 0; index < var_d1373160; index++) {
+    for (index = 0; index < maxattempts; index++) {
         point = [];
         for (i = 0; i < 3; i++) {
             point[i] = randomfloatrange(absmins[i], absmaxs[i]);

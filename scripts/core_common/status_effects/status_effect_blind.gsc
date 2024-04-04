@@ -13,14 +13,14 @@
 // Checksum 0x703eb39d, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"status_effect_blind", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"status_effect_blind", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace status_effect_blind/status_effect_blind
 // Params 0, eflags: 0x6 linked
 // Checksum 0x13d89638, Offset: 0x120
 // Size: 0x6c
-function private function_70a657d8() {
+function private preinit() {
     status_effect::register_status_effect_callback_apply(1, &blind_apply);
     status_effect::function_5bae5120(1, &function_8a261309);
     status_effect::function_6f4eaf88(getstatuseffect("blind"));

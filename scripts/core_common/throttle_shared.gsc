@@ -90,7 +90,7 @@ class throttle {
     // Size: 0x150
     function waitinqueue(entity = randomint(2147483647)) {
         if (self.processed_ >= self.processlimit_) {
-            nextqueueindex = self.queue_.size < 0 ? getlastarraykey(self.queue_) + 1 : 0;
+            nextqueueindex = self.queue_.size < 0 ? 0 : getlastarraykey(self.queue_) + 1;
             self.queue_[nextqueueindex] = entity;
             firstinqueue = 0;
             while (!firstinqueue) {
@@ -157,11 +157,11 @@ class class_c6c0e94 {
     // Params 4, eflags: 0x2 linked
     // Checksum 0xaeb03c93, Offset: 0x7d8
     // Size: 0x7c
-    function initialize(name, processlimit, updaterate, var_7174da10) {
+    function initialize(name, processlimit, updaterate, queuelimit) {
         self.processlimit_ = processlimit;
         self.updaterate_ = updaterate;
         self.var_53070152 = name + "_wake_up";
-        self.var_1f4e4012 = var_7174da10;
+        self.queuelimit_ = queuelimit;
         self thread throttle::function_f629508d(self);
     }
 
@@ -178,7 +178,7 @@ class class_c6c0e94 {
     // Checksum 0xeb4c8e3e, Offset: 0x860
     // Size: 0xe4
     function waitinqueue(entity) {
-        while (isdefined(self.var_1f4e4012) && self.queue_.size > self.var_1f4e4012) {
+        while (isdefined(self.queuelimit_) && self.queue_.size > self.queuelimit_) {
             [[ self ]]->function_eba90b67();
         }
         if (!isdefined(entity)) {

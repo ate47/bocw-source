@@ -5,17 +5,17 @@
 #using scripts\core_common\status_effects\status_effect_util.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
 
-#namespace namespace_e039b91b;
+#namespace sparrow;
 
-// Namespace namespace_e039b91b/namespace_e039b91b
+// Namespace sparrow/sparrow
 // Params 0, eflags: 0x5
 // Checksum 0x434931fe, Offset: 0x138
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_2f57ca5f4826ec5b", &__init__, undefined, undefined, #"killstreaks");
+    system::register(#"sparrow", &__init__, undefined, undefined, #"killstreaks");
 }
 
-// Namespace namespace_e039b91b/namespace_e039b91b
+// Namespace sparrow/sparrow
 // Params 0, eflags: 0x2 linked
 // Checksum 0x7b0fb7e7, Offset: 0x188
 // Size: 0x114
@@ -33,7 +33,7 @@ function __init__() {
     callback::add_weapon_damage(inventoryweapon, &function_8ea68ead);
 }
 
-// Namespace namespace_e039b91b/namespace_e039b91b
+// Namespace sparrow/sparrow
 // Params 5, eflags: 0x2 linked
 // Checksum 0xceb5aab, Offset: 0x2a8
 // Size: 0xe4
@@ -54,7 +54,7 @@ function function_8ea68ead(eattacker, einflictor, weapon, meansofdeath, *damage)
     self status_effect::status_effect_apply(var_8d498080, meansofdeath, einflictor);
 }
 
-// Namespace namespace_e039b91b/missile_fire
+// Namespace sparrow/missile_fire
 // Params 1, eflags: 0x20
 // Checksum 0x32456c82, Offset: 0x398
 // Size: 0x294
@@ -76,9 +76,9 @@ function event_handler[missile_fire] function_8cd77cf6(eventstruct) {
         }
         bundle = killstreaks::get_script_bundle(weapon.name);
         if (isdefined(waitresult.normal)) {
-            var_bc514cf = waitresult.normal;
+            fxforward = waitresult.normal;
         } else {
-            var_bc514cf = vectornormalize(missile.var_59ba00f5) * -1;
+            fxforward = vectornormalize(missile.var_59ba00f5) * -1;
         }
         position = missile.origin;
         if (is_under_water(position)) {
@@ -93,13 +93,13 @@ function event_handler[missile_fire] function_8cd77cf6(eventstruct) {
             explosionfx = bundle.var_b41d3fc0;
         }
         if (isdefined(explosionfx)) {
-            angles = vectortoangles(var_bc514cf);
-            playfx(explosionfx, position, var_bc514cf, anglestoup(angles));
+            angles = vectortoangles(fxforward);
+            playfx(explosionfx, position, fxforward, anglestoup(angles));
         }
     }
 }
 
-// Namespace namespace_e039b91b/namespace_e039b91b
+// Namespace sparrow/sparrow
 // Params 0, eflags: 0x2 linked
 // Checksum 0xa348f48c, Offset: 0x638
 // Size: 0x2e
@@ -109,7 +109,7 @@ function function_1bb4a86d() {
     self notify(#"bow_projectile_deleted");
 }
 
-// Namespace namespace_e039b91b/namespace_e039b91b
+// Namespace sparrow/sparrow
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc0817eb2, Offset: 0x670
 // Size: 0x7a
@@ -121,7 +121,7 @@ function function_be16c377() {
     }
 }
 
-// Namespace namespace_e039b91b/namespace_e039b91b
+// Namespace sparrow/sparrow
 // Params 1, eflags: 0x2 linked
 // Checksum 0xda9cbd30, Offset: 0x6f8
 // Size: 0x42
@@ -130,7 +130,7 @@ function is_under_water(position) {
     return water_depth >= 16;
 }
 
-// Namespace namespace_e039b91b/namespace_e039b91b
+// Namespace sparrow/sparrow
 // Params 1, eflags: 0x6 linked
 // Checksum 0xe12c90b0, Offset: 0x748
 // Size: 0x20

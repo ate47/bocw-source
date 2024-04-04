@@ -15,14 +15,14 @@
 // Checksum 0x8d63904e, Offset: 0xf0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_forced_reload", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_forced_reload", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_forced_reload/zm_trial_forced_reload
 // Params 0, eflags: 0x4
 // Checksum 0xc3246c87, Offset: 0x138
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

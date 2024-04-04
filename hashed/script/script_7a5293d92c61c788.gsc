@@ -20,7 +20,7 @@
 #using scripts\core_common\clientfield_shared.gsc;
 #using scripts\core_common\laststand_shared.gsc;
 #using scripts\core_common\gameobjects_shared.gsc;
-#using script_7d7ac1f663edcdc8;
+#using scripts\zm_common\zm_utility_zsurvival.gsc;
 #using script_3751b21462a54a7d;
 #using scripts\core_common\player\player_shared.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
@@ -28,7 +28,7 @@
 #using scripts\core_common\util_shared.gsc;
 #using scripts\core_common\fx_shared.gsc;
 #using scripts\core_common\flag_shared.gsc;
-#using script_7fc996fe8678852;
+#using scripts\core_common\content_manager.gsc;
 #using scripts\core_common\struct.gsc;
 
 #namespace namespace_dd7e54e3;
@@ -38,24 +38,24 @@
 // Checksum 0xcf023dd9, Offset: 0x2c8
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_7da9887a9375293", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_7da9887a9375293", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_dd7e54e3/namespace_dd7e54e3
 // Params 0, eflags: 0x2 linked
 // Checksum 0x27bef3ad, Offset: 0x320
 // Size: 0x20c
-function function_70a657d8() {
+function preinit() {
     level.var_2a994cc0 = sr_armor_menu::register();
     level.var_ade77b07 = array(#"hash_6c055e078965b4e3", #"armor_item_lv1_t9_sr", #"armor_item_lv2_t9_sr", #"armor_item_lv3_t9_sr");
     level.var_3a2e321c = array(250, 500, 1000, 250);
-    level.var_67a1f481 = array(#"hash_1bce1d027595650f", #"green", #"blue", #"purple", #"orange");
+    level.weaponrarities = array(#"hash_1bce1d027595650f", #"green", #"blue", #"purple", #"orange");
     level.var_9d209b60 = array(250, 500, 1000, 500, 1000);
     level.var_1b95a5be = array(0, 0, 0, 1, 1);
     if (!isdefined(level.var_1b57c9ca)) {
         level.var_1b57c9ca = 0;
     }
-    namespace_52c8f34d::function_70a657d8();
+    namespace_52c8f34d::preinit();
     callback::on_spawned(&function_ef39f61b);
     callback::on_item_pickup(&on_item_pickup);
     clientfield::register("scriptmover", "" + #"hash_7dfc37315a4eff0", 1, 1, "int");
@@ -66,9 +66,9 @@ function function_70a657d8() {
 // Checksum 0x42ee5ac4, Offset: 0x538
 // Size: 0x9c
 function postinit() {
-    var_f5ae494f = struct::get_array(#"hash_313be7fccc870cdd", "variantname");
-    if ((zm_utility::is_classic() || zm_utility::function_c4b020f8()) && isdefined(var_f5ae494f) && var_f5ae494f.size > 0) {
-        level thread function_68649d54(var_f5ae494f[0]);
+    mapdestinations = struct::get_array(#"hash_313be7fccc870cdd", "variantname");
+    if ((zm_utility::is_classic() || zm_utility::function_c4b020f8()) && isdefined(mapdestinations) && mapdestinations.size > 0) {
+        level thread function_68649d54(mapdestinations[0]);
     }
 }
 
@@ -101,7 +101,7 @@ function function_93a99046(struct) {
         model = #"hash_74c59e8a4df12e7f";
         var_c6d25878 = &zm_utility::function_4a4cf79a;
     }
-    scriptmodel = namespace_8b6a9d79::function_f3d93ee9(struct, model, 1);
+    scriptmodel = content_manager::spawn_script_model(struct, model, 1);
     zm_utility::function_ca960904(scriptmodel);
     if (struct.parent.content_script_name !== #"safehouse") {
         objid = [[ var_c6d25878 ]](#"hash_25a19901af9e8467", scriptmodel);
@@ -113,12 +113,12 @@ function function_93a99046(struct) {
     offset = forward * 24;
     offset = (offset[0], offset[1], offset[2] + 50);
     if (scriptmodel.script_noteworthy === "power") {
-        trigger = namespace_8b6a9d79::function_214737c7(struct, &function_fe5f8894, #"zombie/need_power", undefined, 64, 128, undefined, offset);
+        trigger = content_manager::spawn_interact(struct, &function_fe5f8894, #"zombie/need_power", undefined, 64, 128, undefined, offset);
         scriptmodel.var_49d94d8a = &function_38ac8b73;
         scriptmodel.var_7cf0a191 = &function_e255b251;
         scriptmodel thread zm_power::function_da4a8c05(#"hash_614130df578d98f0", struct.script_int);
     } else {
-        trigger = namespace_8b6a9d79::function_214737c7(struct, &function_fe5f8894, #"hash_614130df578d98f0", undefined, 64, 128, undefined, offset);
+        trigger = content_manager::spawn_interact(struct, &function_fe5f8894, #"hash_614130df578d98f0", undefined, 64, 128, undefined, offset);
         scriptmodel function_38ac8b73();
         if (is_true(level.var_53bc31ad)) {
             scriptmodel.var_7cf0a191 = &function_e255b251;
@@ -128,7 +128,7 @@ function function_93a99046(struct) {
     trigger thread function_ab8eee07();
     scriptmodel.trigger = trigger;
     if (zm_utility::is_survival()) {
-        level thread zm_utility::function_232a7f41(scriptmodel);
+        level thread zm_utility::clear_vehicles(scriptmodel);
     }
     scriptmodel clientfield::set("item_machine_spawn_rob", 1);
     if (is_true(level.var_53bc31ad)) {
@@ -333,8 +333,8 @@ function function_1490abe2(weapon) {
     if (weapon == level.weaponnone || weapon == var_78c4a705) {
         return false;
     }
-    if (isdefined(item.var_a6762160.name)) {
-        switch (item.var_a6762160.name) {
+    if (isdefined(item.itementry.name)) {
+        switch (item.itementry.name) {
         case #"ww_ieu_shockwave_t9_upgraded_item_sr":
         case #"ww_ieu_gas_t9_item_sr":
         case #"ww_ieu_plasma_t9_item_sr":
@@ -430,11 +430,11 @@ function function_cb2d9b9b(machine, trigger) {
                     machine playsoundtoplayer(#"uin_default_action_denied", self);
                 }
                 break;
-            case #"hash_652072d835f5b0fa":
+            case #"tier_upgrade":
                 if (!function_1490abe2(weapon) || self isswitchingweapons()) {
                     machine playsoundtoplayer(#"uin_default_action_denied", self);
                 } else {
-                    var_35d31714 = level.var_67a1f481[intpayload];
+                    var_35d31714 = level.weaponrarities[intpayload];
                     var_9b05d455 = level.var_9d209b60[intpayload];
                     var_372067dc = level.var_1b95a5be[intpayload];
                     if (isdefined(var_35d31714) && isdefined(var_9b05d455)) {
@@ -442,8 +442,8 @@ function function_cb2d9b9b(machine, trigger) {
                             if (weapon.weapclass === "melee" || weapon.weapclass === "rocketlauncher" || weapon.weapclass === "grenade" || weapon.name === #"special_ballisticknife_t9_dw" || weapon.name === #"hash_4650af6ac5c9ce80" || weapon.name === #"special_nailgun_t9" || weapon.name === #"hash_1f564f586c2ec416") {
                                 machine playsoundtoplayer(#"uin_default_action_denied", self);
                             } else {
-                                item_weapon = function_44368952(weapon, item.var_a6762160.rarity);
-                                var_79770f09 = function_137f88c6(item.var_a6762160.rarity);
+                                item_weapon = function_44368952(weapon, item.itementry.rarity);
+                                var_79770f09 = function_137f88c6(item.itementry.rarity);
                                 var_3069fe3 = self namespace_2a9f256a::function_c29a8aa1(250);
                                 if (var_3069fe3) {
                                     currentweapon = self getcurrentweapon();
@@ -462,9 +462,9 @@ function function_cb2d9b9b(machine, trigger) {
                                         }
                                         if (isplayer(self)) {
                                             self notify(#"hash_5cd57762f792396b");
-                                            if (isdefined(item.var_a8bccf69)) {
+                                            if (isdefined(item.paplv)) {
                                                 weapon = namespace_a0d533d1::function_2b83d3ff(item);
-                                                self item_inventory::function_d92c6b5b(weapon, undefined, item.var_a8bccf69);
+                                                self item_inventory::function_d92c6b5b(weapon, undefined, item.paplv);
                                             }
                                             self playrumbleonentity(#"zm_interact_rumble");
                                             machine scene::stop("p9_fxanim_zm_gp_armor_station_bundle");
@@ -528,7 +528,7 @@ function function_cb2d9b9b(machine, trigger) {
 // Size: 0xe4
 function function_f3ce6afc(var_cc87b623) {
     if (isplayer(self)) {
-        var_bb1797ae = {#var_500db157:zm_utility::function_e3025ca5(), #var_159283d5:zm_utility::get_round_number(), #var_7d003586:function_f8d53445(), #var_7ebcde3b:hash(var_cc87b623)};
+        var_bb1797ae = {#var_7ebcde3b:hash(var_cc87b623), #var_7d003586:function_f8d53445(), #var_159283d5:zm_utility::get_round_number(), #var_500db157:zm_utility::function_e3025ca5()};
         self function_678f57c8(#"hash_653ddf74d3ce14d0", var_bb1797ae);
     }
 }
@@ -538,7 +538,7 @@ function function_f3ce6afc(var_cc87b623) {
 // Checksum 0xe69694da, Offset: 0x2470
 // Size: 0xb4
 function private on_item_pickup(params) {
-    var_abf29e5c = params.item.var_a6762160.name;
+    var_abf29e5c = params.item.itementry.name;
     if (isplayer(self) && isdefined(var_abf29e5c) && (isinarray(level.var_ade77b07, hash(var_abf29e5c)) || var_abf29e5c === #"armor_shard_item_sr")) {
         self function_f3ce6afc(var_abf29e5c);
     }
@@ -550,10 +550,10 @@ function private on_item_pickup(params) {
 // Size: 0xea
 function give_armor(var_cc87b623) {
     point = function_4ba8fde(var_cc87b623);
-    if (isdefined(point) && isdefined(point.var_a6762160)) {
+    if (isdefined(point) && isdefined(point.itementry)) {
         self function_b2f69241();
         var_fa3df96 = self item_inventory::function_e66dcff5(point);
-        self item_inventory::give_inventory_item(point, 1, point.var_a6762160.amount, var_fa3df96);
+        self item_inventory::give_inventory_item(point, 1, point.itementry.amount, var_fa3df96);
         self item_inventory::equip_armor(point);
         self function_f3ce6afc(var_cc87b623);
     }
@@ -592,7 +592,7 @@ function function_85834b2c(destination) {
     foreach (location in destination.locations) {
         var_55a59069 = location.instances[#"hash_629e563c2ebf707a"];
         if (isdefined(var_55a59069)) {
-            children = namespace_8b6a9d79::function_f703a5a(var_55a59069);
+            children = content_manager::get_children(var_55a59069);
             foreach (child in children) {
                 function_93a99046(child);
             }

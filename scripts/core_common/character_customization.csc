@@ -27,7 +27,7 @@ class class_7da27482 {
         self.var_1d73bad9 = 0;
         self.var_cf55444c = 0;
         self.var_cfe86a3e = 0;
-        self.var_f5c0467b = [7:0, 6:0, 5:0, 4:0, 3:0, 2:0, 1:0, 0:0];
+        self.var_f5c0467b = [0, 0, 0, 0, 0, 0, 0, 0];
         /#
             /#
                 assert(-1);
@@ -113,7 +113,7 @@ class class_7da27482 {
     // Checksum 0xb29d9133, Offset: 0x1640
     // Size: 0xe2
     function private function_c358189(model_name, lod = -1, mip = -1) {
-        index = array::find(self.var_506d3c33, {#mip:mip, #lod:lod, #model:model_name}, &function_1a57b132);
+        index = array::find(self.var_506d3c33, {#model:model_name, #lod:lod, #mip:mip}, &function_1a57b132);
         /#
             /#
                 assert(isdefined(index));
@@ -505,7 +505,7 @@ class class_7da27482 {
     // Checksum 0x1f08031c, Offset: 0x1df8
     // Size: 0xb4
     function function_62dd99d6(model) {
-        render_options = function_aa478513({#outfitoptions:self.var_f5c0467b, #warpaintoutfitindex:self.var_cfe86a3e, #outfitindex:self.var_cf55444c, #characterindex:self.var_1d73bad9, #mode:self._i_mode});
+        render_options = function_aa478513({#mode:self._i_mode, #characterindex:self.var_1d73bad9, #outfitindex:self.var_cf55444c, #warpaintoutfitindex:self.var_cfe86a3e, #outfitoptions:self.var_f5c0467b});
         model function_1fac41e4(render_options);
     }
 
@@ -659,13 +659,13 @@ class class_7da27482 {
         }
         if (is_true(params.var_90d2372c)) {
             base_model = #"hash_2b18a5af849da51b";
-            attached_models = [#"outfit_torso":#"tag_origin", #"outfit_legs":#"tag_origin", #"outfit_headgear":#"tag_origin", #"outfit_head":#"tag_origin"];
+            attached_models = [#"outfit_head":#"tag_origin", #"outfit_headgear":#"tag_origin", #"outfit_legs":#"tag_origin", #"outfit_torso":#"tag_origin"];
         } else if ([[ self ]]->function_bf7bce05()) {
             base_model = [[ self ]]->function_d5e754c6();
-            attached_models = [#"outfit_torso":#"tag_origin", #"outfit_legs":#"tag_origin", #"outfit_headgear":#"tag_origin", #"outfit_head":[[ self ]]->function_8c6b7af7(params)];
+            attached_models = [#"outfit_head":[[ self ]]->function_8c6b7af7(params), #"outfit_headgear":#"tag_origin", #"outfit_legs":#"tag_origin", #"outfit_torso":#"tag_origin"];
         } else {
             base_model = [[ self ]]->function_b06080fb();
-            attached_models = [#"outfit_torso":[[ self ]]->function_d5e754c6(), #"outfit_legs":[[ self ]]->function_cdc02b18(), #"outfit_headgear":[[ self ]]->function_1978bfeb(), #"outfit_head":[[ self ]]->function_8c6b7af7(params)];
+            attached_models = [#"outfit_head":[[ self ]]->function_8c6b7af7(params), #"outfit_headgear":[[ self ]]->function_1978bfeb(), #"outfit_legs":[[ self ]]->function_cdc02b18(), #"outfit_torso":[[ self ]]->function_d5e754c6()];
         }
         var_9e7c4fde = array(base_model);
         self.var_ff2bed36 = util::spawn_model(self.var_f141235b, base_model, self.var_228f64da.origin);
@@ -747,10 +747,10 @@ class class_7da27482 {
                 var_1f170bc0 = function_bd9a67ae(self.var_f141235b, self._i_mode, self.var_1d73bad9, outfit_index, 6);
                 if ([[ self ]]->function_bf7bce05()) {
                     var_867954ad = character_customization::function_6bca50af(&function_92ea4100, self.var_1d73bad9, outfit_index, 0, self._i_mode);
-                    var_89610e9c = [#"outfit_torso":#"tag_origin", #"outfit_legs":#"tag_origin", #"outfit_headgear":#"tag_origin", #"outfit_head":character_customization::function_6bca50af(&function_44a7328f, self.var_1d73bad9, outfit_index, 0, self._i_mode)];
+                    var_89610e9c = [#"outfit_head":character_customization::function_6bca50af(&startquantity, self.var_1d73bad9, outfit_index, 0, self._i_mode), #"outfit_headgear":#"tag_origin", #"outfit_legs":#"tag_origin", #"outfit_torso":#"tag_origin"];
                 } else {
                     var_867954ad = character_customization::function_6bca50af(&function_5d23af5b, self.var_1d73bad9, outfit_index, var_d92aad5c, self._i_mode);
-                    var_89610e9c = [#"outfit_torso":character_customization::function_6bca50af(&function_92ea4100, self.var_1d73bad9, outfit_index, var_1f170bc0, self._i_mode), #"outfit_legs":character_customization::function_6bca50af(&function_cde23658, self.var_1d73bad9, outfit_index, var_173f7170, self._i_mode), #"outfit_headgear":character_customization::function_6bca50af(&function_6b7000e, self.var_1d73bad9, outfit_index, var_cb9bcfe7, self._i_mode), #"outfit_head":character_customization::function_6bca50af(&function_44a7328f, self.var_1d73bad9, outfit_index, var_2f1dcdbb, self._i_mode)];
+                    var_89610e9c = [#"outfit_head":character_customization::function_6bca50af(&startquantity, self.var_1d73bad9, outfit_index, var_2f1dcdbb, self._i_mode), #"outfit_headgear":character_customization::function_6bca50af(&function_6b7000e, self.var_1d73bad9, outfit_index, var_cb9bcfe7, self._i_mode), #"outfit_legs":character_customization::function_6bca50af(&function_cde23658, self.var_1d73bad9, outfit_index, var_173f7170, self._i_mode), #"outfit_torso":character_customization::function_6bca50af(&function_92ea4100, self.var_1d73bad9, outfit_index, var_1f170bc0, self._i_mode)];
                 }
                 var_cf2f5fb7 = array(var_867954ad);
                 foreach (model in var_89610e9c) {
@@ -967,7 +967,7 @@ class class_7da27482 {
         if (![[ self ]]->function_ef6f931f(params)) {
             return #"tag_origin";
         }
-        return character_customization::function_6bca50af(&function_44a7328f, self.var_1d73bad9, self.var_cf55444c, self.var_f5c0467b[2], self._i_mode);
+        return character_customization::function_6bca50af(&startquantity, self.var_1d73bad9, self.var_cf55444c, self.var_f5c0467b[2], self._i_mode);
     }
 
     // Namespace namespace_7da27482/character_customization
@@ -1152,7 +1152,7 @@ class class_7da27482 {
     // Checksum 0xe07d1078, Offset: 0x1798
     // Size: 0xdc
     function private function_b020b858(model_name, lod = -1, mip = -1) {
-        index = array::find(self.var_506d3c33, {#mip:mip, #lod:lod, #model:model_name}, &function_1a57b132);
+        index = array::find(self.var_506d3c33, {#model:model_name, #lod:lod, #mip:mip}, &function_1a57b132);
         if (isdefined(index)) {
             array::pop(self.var_506d3c33, index, 0);
             character_customization::function_247f6628(model_name, lod, mip);
@@ -1245,7 +1245,7 @@ class class_7da27482 {
     // Checksum 0x1661dbf4, Offset: 0x1590
     // Size: 0xa4
     function private force_stream_model(model_name, lod = -1, mip = -1) {
-        array::add(self.var_506d3c33, {#mip:mip, #lod:lod, #model:model_name});
+        array::add(self.var_506d3c33, {#model:model_name, #lod:lod, #mip:mip});
         character_customization::function_221a94ac(model_name, lod, mip);
     }
 
@@ -1475,7 +1475,7 @@ class class_7da27482 {
     // Checksum 0x2405d945, Offset: 0x5038
     // Size: 0x94
     function function_e599283f() {
-        return {#outfititems:self.var_f5c0467b, #warpaintoutfit:self.var_cfe86a3e, #outfit:self.var_cf55444c, #charactertype:self.var_1d73bad9, #charactermode:self._i_mode, #xuid:self._xuid};
+        return {#xuid:self._xuid, #charactermode:self._i_mode, #charactertype:self.var_1d73bad9, #outfit:self.var_cf55444c, #warpaintoutfit:self.var_cfe86a3e, #outfititems:self.var_f5c0467b};
     }
 
     // Namespace namespace_7da27482/character_customization
@@ -1606,7 +1606,7 @@ class class_7da27482 {
 // Checksum 0x34f98f42, Offset: 0x1d0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"character_customization", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"character_customization", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace character_customization/character_customization
@@ -1663,8 +1663,8 @@ function function_bee62aa1(character) {
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc22c86a3, Offset: 0x6818
 // Size: 0xdc
-function private function_70a657d8() {
-    level.model_type_bones = [#"outfit_torso":"", #"outfit_legs":"", #"outfit_headgear":"", #"outfit_head":""];
+function private preinit() {
+    level.model_type_bones = [#"outfit_head":"", #"outfit_headgear":"", #"outfit_legs":"", #"outfit_torso":""];
     if (!isdefined(level.custom_characters)) {
         level.custom_characters = [];
     }
@@ -1811,7 +1811,7 @@ function function_7474681d(local_client_num, session_mode, character_index) {
         var_9b90e15d = itemtype == 7 ? var_17b172ca : outfit_index;
         outfit_items[itemtype] = function_bd9a67ae(local_client_num, session_mode, character_index, var_9b90e15d, itemtype);
     }
-    return {#outfititems:outfit_items, #warpaintoutfit:var_17b172ca, #outfit:outfit_index, #charactertype:character_index, #charactermode:session_mode};
+    return {#charactermode:session_mode, #charactertype:character_index, #outfit:outfit_index, #warpaintoutfit:var_17b172ca, #outfititems:outfit_items};
 }
 
 // Namespace character_customization/character_customization
@@ -1823,7 +1823,7 @@ function function_3f5625f1(mode, character_index = 1) {
     for (itemtype = 0; itemtype < 8; itemtype++) {
         outfit_items[itemtype] = 0;
     }
-    return {#outfititems:outfit_items, #warpaintoutfit:0, #outfit:0, #charactertype:character_index, #charactermode:mode};
+    return {#charactermode:mode, #charactertype:character_index, #outfit:0, #warpaintoutfit:0, #outfititems:outfit_items};
 }
 
 // Namespace character_customization/character_customization
@@ -1856,7 +1856,7 @@ function function_f7a5fba4(align_target, str_scene, model, var_f647c5b2, var_559
                 var_559c5c3e = function_7d2b4e1f(str_scene, var_559c5c3e);
                 align_target = function_bdd0baed(var_bfbc1f4f, align_target);
                 if (isdefined(var_b1e821c5.var_9e6d8a3d)) {
-                    var_cf0b13c3 = {#var_dcfaf6c7:var_b1e821c5.var_dcfaf6c7, #blend:var_b1e821c5.var_9e6d8a3d};
+                    var_cf0b13c3 = {#blend:var_b1e821c5.var_9e6d8a3d, #var_dcfaf6c7:var_b1e821c5.var_dcfaf6c7};
                 }
                 align_target thread scene::play(str_scene, var_559c5c3e, model, undefined, undefined, undefined, isdefined(var_cf0b13c3) ? var_cf0b13c3 : var_b1e821c5);
             }
@@ -1877,7 +1877,7 @@ function function_f7a5fba4(align_target, str_scene, model, var_f647c5b2, var_559
             var_559c5c3e = function_7d2b4e1f(str_scene, var_559c5c3e);
             align_target = function_bdd0baed(var_bfbc1f4f, align_target);
             if (isdefined(var_b1e821c5.var_9e6d8a3d)) {
-                var_cf0b13c3 = {#var_dcfaf6c7:var_b1e821c5.var_dcfaf6c7, #blend:var_b1e821c5.var_9e6d8a3d};
+                var_cf0b13c3 = {#blend:var_b1e821c5.var_9e6d8a3d, #var_dcfaf6c7:var_b1e821c5.var_dcfaf6c7};
             }
             align_target thread scene::play(str_scene, var_559c5c3e, model, undefined, undefined, undefined, isdefined(var_cf0b13c3) ? var_cf0b13c3 : var_b1e821c5);
         }
@@ -1917,7 +1917,7 @@ function function_7d2b4e1f(str_scene, var_559c5c3e) {
 function function_bdd0baed(var_bfbc1f4f = 0, align_target) {
     if (var_bfbc1f4f && [[ self ]]->function_ea4ac9f8()) {
         model = [[ self ]]->function_217b10ed();
-        align_target = {#angles:model.angles, #origin:model.origin};
+        align_target = {#origin:model.origin, #angles:model.angles};
     }
     return align_target;
 }
@@ -2189,7 +2189,7 @@ function private update_model_rotation_for_right_stick(localclientnum, var_d0b01
                     pos = getxcammousecontrol(data_lcn);
                     change = change - pos[#"yaw"];
                 }
-                s_align = {#angles:model.angles, #origin:model.origin};
+                s_align = {#origin:model.origin, #angles:model.angles};
                 if (isdefined(var_cd34be2e.str_scene)) {
                     if (isdefined(var_cd34be2e.var_c76d5a0b) && isdefined(var_cd34be2e.var_e982dc6b) && change < -0.5) {
                         function_3d131a(localclientnum);

@@ -12,14 +12,14 @@
 // Checksum 0xb86e27ed, Offset: 0xa8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_equipment", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_equipment", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_equipment/zm_equipment
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb1591d2f, Offset: 0xf0
 // Size: 0x34
-function private function_70a657d8() {
+function private preinit() {
     level._equip_activated_callbacks = [];
     level.buildable_piece_count = 24;
     zm_hint_text::register();
@@ -101,7 +101,7 @@ function play_fx_for_all_clients(fx, tag, storehandles = 0, forward = undefined)
 // Size: 0x36
 function is_included(equipment) {
     if (!isdefined(level._included_equipment)) {
-        return 0;
+        return false;
     }
     return isdefined(level._included_equipment[equipment.rootweapon]);
 }

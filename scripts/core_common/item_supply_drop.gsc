@@ -19,14 +19,14 @@
 // Checksum 0x3c51522e, Offset: 0x5a8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"item_supply_drop", &function_70a657d8, undefined, undefined, #"item_world");
+    system::register(#"item_supply_drop", &preinit, undefined, undefined, #"item_world");
 }
 
 // Namespace item_supply_drop/item_supply_drop
 // Params 0, eflags: 0x4
 // Checksum 0x3c6cf1a2, Offset: 0x5f8
 // Size: 0x134
-function private function_70a657d8() {
+function private preinit() {
     if (!item_world_util::use_item_spawns() || util::get_game_type() === #"zsurvival") {
         return;
     }
@@ -247,18 +247,18 @@ function private function_9ae8f99e() {
 function private function_13339b58(supplydrop, var_d91c179d, index) {
     self endon(#"death");
     var_13781019 = array(#"hash_51dcbe21849d4df0");
-    var_b91c8539 = array(#"hash_58b756555570c169");
+    idleanimations = array(#"hash_58b756555570c169");
     var_1a8acc15 = array(#"hash_6a42d559c2d990df");
     if (isdefined(var_d91c179d)) {
         switch (var_d91c179d.vehicletype) {
         case #"vehicle_t9_mil_fav_light":
             var_13781019 = array(#"hash_43e87a7d1f494a6e", #"hash_aa76ca9894b87b", #"hash_19296420b7b82e4", #"hash_af5b730d0f9b749");
-            var_b91c8539 = array(#"hash_44a6ed2c48d1a597", #"hash_2230d366d30fca2c", #"hash_126bd9e565a0db35", #"hash_4e468b786b07a70a");
+            idleanimations = array(#"hash_44a6ed2c48d1a597", #"hash_2230d366d30fca2c", #"hash_126bd9e565a0db35", #"hash_4e468b786b07a70a");
             var_1a8acc15 = array(#"hash_5f67889cb298ce95", #"hash_652fc868ed16b8b4", #"hash_1211c06c537d210b", #"hash_2a57c0307d341062");
             break;
         default:
             var_13781019 = array(#"hash_6481b506b1de6549", #"hash_37143952d1dbe3e8", #"hash_3d3b8beecf975e2f", #"hash_1d747853002df86e");
-            var_b91c8539 = array(#"hash_1a22dfd4c582f10a", #"hash_6b21d5f85a66a061", #"hash_68385a0b5c4f0788", #"hash_10834188a34cef97");
+            idleanimations = array(#"hash_1a22dfd4c582f10a", #"hash_6b21d5f85a66a061", #"hash_68385a0b5c4f0788", #"hash_10834188a34cef97");
             var_1a8acc15 = array(#"hash_3e3be065e18be62", #"hash_49edbe5ac4e375c7", #"hash_2362c027dd6f5060", #"hash_38f38672937d7c95");
             break;
         }
@@ -266,7 +266,7 @@ function private function_13339b58(supplydrop, var_d91c179d, index) {
     self animscripted("parachute_open", supplydrop.origin, supplydrop.angles, var_13781019[index], "normal", "root", 1, 0);
     self waittill(#"parachute_open");
     if (!is_true(self.parachute_close)) {
-        self animscripted("parachute_idle", supplydrop.origin, supplydrop.angles, var_b91c8539[index], "normal", "root", 1, 0);
+        self animscripted("parachute_idle", supplydrop.origin, supplydrop.angles, idleanimations[index], "normal", "root", 1, 0);
     }
     self flag::wait_till("parachute_close");
     self unlink();
@@ -387,10 +387,10 @@ function private function_e21ceb1b() {
     extendbounds = vectorscale((1, 1, 1), 10);
     previousorigin = self.origin;
     while (true) {
-        var_3769eb50 = getentitiesinradius(self.origin, 128, 1);
+        closeplayers = getentitiesinradius(self.origin, 128, 1);
         var_15d21979 = abs((previousorigin - self.origin)[2]);
         if (var_15d21979 > 4) {
-            foreach (player in var_3769eb50) {
+            foreach (player in closeplayers) {
                 if (isalive(player) && player istouching(self, extendbounds)) {
                     player dodamage(player.health + 1, player.origin, self, self, "none", "MOD_HIT_BY_OBJECT", 0, getweapon(#"supplydrop"));
                     player playsound("evt_supply_crush");
@@ -450,7 +450,7 @@ function private function_3c597e8d() {
 // Size: 0x10e
 function private function_43e35f94() {
     if (territory::function_c0de0601()) {
-        return territory::function_64c37ade();
+        return territory::get_radius();
     }
     var_6024133d = getentarray("map_corner", "targetname");
     if (var_6024133d.size) {
@@ -466,7 +466,7 @@ function private function_43e35f94() {
 // Checksum 0x7762b91b, Offset: 0x27c8
 // Size: 0x254
 function private function_4daa76d4(supplydrop, var_d91c179d) {
-    var_58a748b4 = [];
+    parachutes = [];
     if (!isdefined(var_d91c179d)) {
         parachute = spawn("script_model", (0, 0, 0));
         parachute.targetname = "supply_drop_chute";
@@ -477,7 +477,7 @@ function private function_4daa76d4(supplydrop, var_d91c179d) {
         parachute clientfield::set("supply_drop_parachute_rob", 1);
         parachute useanimtree("generic");
         parachute linkto(supplydrop, "tag_origin", vectorscale((0, 0, -1), 80));
-        var_58a748b4[var_58a748b4.size] = parachute;
+        parachutes[parachutes.size] = parachute;
     } else {
         var_daf5f046 = 4;
         for (index = 0; index < var_daf5f046; index++) {
@@ -490,10 +490,10 @@ function private function_4daa76d4(supplydrop, var_d91c179d) {
             parachute clientfield::set("supply_drop_parachute_rob", 1);
             parachute useanimtree("generic");
             parachute linkto(supplydrop, "tag_origin", vectorscale((0, 0, -1), 80));
-            var_58a748b4[var_58a748b4.size] = parachute;
+            parachutes[parachutes.size] = parachute;
         }
     }
-    return var_58a748b4;
+    return parachutes;
 }
 
 // Namespace item_supply_drop/item_supply_drop
@@ -792,13 +792,13 @@ function private function_8234217e(var_faa1ea31, vectors) {
 // Params 2, eflags: 0x4
 // Checksum 0xabbdd60f, Offset: 0x3c80
 // Size: 0x102
-function private function_a40836e(angles, var_553ec518 = (1, 0, 0)) {
+function private function_a40836e(angles, worldforward = (1, 0, 0)) {
     axises = [];
     axises[axises.size] = anglestoforward(angles);
     axises[axises.size] = anglestoright(angles);
     axises[axises.size] = anglestoup(angles);
     worldup = (0, 0, 1);
-    newforward = function_8234217e(var_553ec518, axises);
+    newforward = function_8234217e(worldforward, axises);
     newup = function_8234217e(worldup, axises);
     newangles = axistoangles(newforward, newup);
     return newangles;
@@ -808,8 +808,8 @@ function private function_a40836e(angles, var_553ec518 = (1, 0, 0)) {
 // Params 2, eflags: 0x0
 // Checksum 0x476d40fc, Offset: 0x3d90
 // Size: 0x2a
-function function_ee19f0b0(angles, var_553ec518) {
-    return function_a40836e(angles, var_553ec518);
+function function_ee19f0b0(angles, worldforward) {
+    return function_a40836e(angles, worldforward);
 }
 
 // Namespace item_supply_drop/item_supply_drop
@@ -856,12 +856,12 @@ function private function_c2edbefb(path, droppoint, var_86928932 = 1, var_2118f7
     for (pathindex = 1; pathindex < path.size; pathindex++) {
         var_f155e743 = 0;
         if (isdefined(droppoint)) {
-            var_f155e743 = distancesquared(path[pathindex], droppoint) < function_a3f6cdac(128);
+            var_f155e743 = distancesquared(path[pathindex], droppoint) < sqr(128);
         }
         self function_a57c34b7(path[pathindex], var_f155e743 && var_86928932, 0);
         while (true) {
             if (var_f155e743) {
-                if (distancesquared(droppoint, self.origin) < function_a3f6cdac(128)) {
+                if (distancesquared(droppoint, self.origin) < sqr(128)) {
                     if (isdefined(level.var_79f9f7c9) && var_86928932) {
                         wait(level.var_79f9f7c9);
                         if (isdefined(self.supplydrop)) {
@@ -876,7 +876,7 @@ function private function_c2edbefb(path, droppoint, var_86928932 = 1, var_2118f7
                     }
                     break;
                 }
-            } else if (distancesquared(path[pathindex], self.origin) < function_a3f6cdac(1800)) {
+            } else if (distancesquared(path[pathindex], self.origin) < sqr(1800)) {
                 break;
             }
             waitframe(1);
@@ -912,17 +912,17 @@ function private function_261b0e67(spawnpoint, endpoint, droppoint, dropflare = 
     for (pathindex = 1; pathindex < var_47736ddd.size; pathindex++) {
         var_f155e743 = 0;
         if (isdefined(droppoint)) {
-            var_f155e743 = distancesquared(var_47736ddd[pathindex], droppoint) < function_a3f6cdac(128);
+            var_f155e743 = distancesquared(var_47736ddd[pathindex], droppoint) < sqr(128);
         }
         var_7366c0ff function_a57c34b7(var_47736ddd[pathindex], 0, 0);
         while (true) {
             if (var_f155e743) {
-                if (distancesquared(droppoint, var_7366c0ff.origin) < function_a3f6cdac(128)) {
+                if (distancesquared(droppoint, var_7366c0ff.origin) < sqr(128)) {
                     if (dropflare) {
                     }
                     break;
                 }
-            } else if (distancesquared(var_47736ddd[pathindex], var_7366c0ff.origin) < function_a3f6cdac(1800)) {
+            } else if (distancesquared(var_47736ddd[pathindex], var_7366c0ff.origin) < sqr(1800)) {
                 break;
             }
             waitframe(1);
@@ -972,13 +972,13 @@ function function_7d4a448f(var_47d17dcb = 0) {
     exitpoint = function_c7bd0aa8(exitpoint, droppoint);
     var_bb96e272 = vectornormalize(exitpoint - var_8df04549);
     var_142db926 = 5000;
-    var_a2712870 = distance2d(deathcircle.origin, deathcirclecenter);
-    var_6eae2ffb = var_396cbf6e + var_a2712870 + var_142db926;
+    nextcircledistance = distance2d(deathcircle.origin, deathcirclecenter);
+    var_6eae2ffb = var_396cbf6e + nextcircledistance + var_142db926;
     var_429b69c0 = max(var_6eae2ffb, 15000);
-    var_e9e24bda = max(var_396cbf6e, 45000);
+    despawndistance = max(var_396cbf6e, 45000);
     spawnpoint = var_8df04549 - var_bb96e272 * var_429b69c0;
     spawnpoint = function_c7bd0aa8(spawnpoint, droppoint);
-    endpoint = exitpoint + var_bb96e272 * var_e9e24bda;
+    endpoint = exitpoint + var_bb96e272 * despawndistance;
     endpoint = function_c7bd0aa8(endpoint, droppoint);
     level thread function_261b0e67(spawnpoint, endpoint, droppoint, 1);
     angles = vectortoangles(var_bb96e272);
@@ -996,7 +996,7 @@ function function_7d4a448f(var_47d17dcb = 0) {
 // Params 6, eflags: 0x0
 // Checksum 0x7ccad1f6, Offset: 0x4b08
 // Size: 0x5cc
-function function_418e26fe(var_2118f785 = undefined, helicopter = 0, voiceevent = 1, var_541c190b = 0, var_d6388d1 = 0, vehicletype = undefined) {
+function function_418e26fe(var_2118f785 = undefined, helicopter = 0, voiceevent = 1, var_541c190b = 0, vehicledrop = 0, vehicletype = undefined) {
     if (!is_true(level.deathcircle.enabled)) {
         return;
     }
@@ -1048,13 +1048,13 @@ function function_418e26fe(var_2118f785 = undefined, helicopter = 0, voiceevent 
     exitpoint = trace_point(exitpoint, undefined, var_f5f2246e, var_729c4495);
     var_bb96e272 = vectornormalize(exitpoint - var_8df04549);
     var_429b69c0 = max(var_396cbf6e, 15000);
-    var_e9e24bda = max(var_396cbf6e, 45000);
+    despawndistance = max(var_396cbf6e, 45000);
     spawnpoint = var_8df04549 - var_bb96e272 * var_429b69c0;
     spawnpoint = function_c7bd0aa8(spawnpoint, droppoint);
-    endpoint = exitpoint + var_bb96e272 * var_e9e24bda;
+    endpoint = exitpoint + var_bb96e272 * despawndistance;
     endpoint = function_c7bd0aa8(endpoint, droppoint);
     if (helicopter) {
-        var_57e06aea = function_47ec98c4(spawnpoint, endpoint, droppoint, var_d6388d1, vehicletype, var_f5f2246e, var_729c4495);
+        var_57e06aea = function_47ec98c4(spawnpoint, endpoint, droppoint, vehicledrop, vehicletype, var_f5f2246e, var_729c4495);
     } else {
         var_57e06aea = function_b8dd1978(spawnpoint, endpoint, droppoint, var_2118f785, voiceevent);
     }
@@ -1124,7 +1124,7 @@ function function_47ec98c4(startpoint, endpoint, droppoint, var_d91c179d = 0, ve
         return;
     }
     supplydropveh setforcenocull();
-    callback::callback(#"hash_40cd438036ae13df", {#droppoint:droppoint, #vehicletype:vehicletype});
+    callback::callback(#"hash_40cd438036ae13df", {#vehicletype:vehicletype, #droppoint:droppoint});
     supplydropveh.takedamage = 0;
     supplydropveh.goalradius = 128;
     supplydropveh.goalheight = 128;
@@ -1183,7 +1183,7 @@ function function_47ec98c4(startpoint, endpoint, droppoint, var_d91c179d = 0, ve
 // Params 6, eflags: 0x0
 // Checksum 0xa4e982c4, Offset: 0x59c0
 // Size: 0x34e
-function drop_supply_drop(droppoint, helicopter = 0, var_d6388d1 = 0, vehicletype = undefined, var_2118f785 = undefined, dropangles = undefined) {
+function drop_supply_drop(droppoint, helicopter = 0, vehicledrop = 0, vehicletype = undefined, var_2118f785 = undefined, dropangles = undefined) {
     /#
         assert(isvec(droppoint));
     #/
@@ -1216,11 +1216,11 @@ function drop_supply_drop(droppoint, helicopter = 0, var_d6388d1 = 0, vehicletyp
     if (!territory::function_c0de0601()) {
         endpoint = function_c7bd0aa8(endpoint, droppoint) - var_b98da7dd * var_8dc158c7;
     }
-    if (distance2dsquared(spawnpoint, endpoint) <= function_a3f6cdac(100)) {
+    if (distance2dsquared(spawnpoint, endpoint) <= sqr(100)) {
         return;
     }
     if (helicopter) {
-        var_57e06aea = function_47ec98c4(spawnpoint, endpoint, droppoint, var_d6388d1, vehicletype, undefined, undefined, var_2118f785, dropangles);
+        var_57e06aea = function_47ec98c4(spawnpoint, endpoint, droppoint, vehicledrop, vehicletype, undefined, undefined, var_2118f785, dropangles);
         return;
     }
     var_57e06aea = function_b8dd1978(spawnpoint, endpoint, droppoint, var_2118f785);

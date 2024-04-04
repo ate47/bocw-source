@@ -10,14 +10,14 @@
 // Checksum 0x6389fc17, Offset: 0xc8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"status_effect_shock", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"status_effect_shock", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace status_effect_shock/status_effect_shock
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdf406d8d, Offset: 0x110
 // Size: 0x6c
-function private function_70a657d8() {
+function private preinit() {
     status_effect::register_status_effect_callback_apply(5, &shock_apply);
     status_effect::function_5bae5120(5, &shock_end);
     status_effect::function_6f4eaf88(getstatuseffect("shock"));

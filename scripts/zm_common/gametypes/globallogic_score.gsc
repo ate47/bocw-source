@@ -140,7 +140,7 @@ function function_144d0392(event, player, victim, *descvalue, var_dbaa74e2) {
     newscore = victim.pers[#"score"];
     profileNamedStop();
     var_89b2d9e4 = newscore - var_b393387d;
-    var_10d67c1a = {#delta:var_89b2d9e4, #player:victim.name, #type:ishash(player) ? player : hash(player)};
+    var_10d67c1a = {#type:ishash(player) ? player : hash(player), #player:victim.name, #delta:var_89b2d9e4};
     victim stats::function_dad108fa(#"hash_6a861f1323ce4ae9", var_89b2d9e4);
     if (!isdefined(victim.var_42dd3eba)) {
         victim.var_42dd3eba = 0;
@@ -327,7 +327,7 @@ function giveteamscore(event, team, *player, *victim) {
     [[ level.onteamscore ]](player, victim);
     profileNamedStop();
     newscore = game.stat[#"teamscores"][victim];
-    zmteamscores = {#score:newscore, #diff:newscore - teamscore, #team:victim, #event:player, #gametime:function_f8d53445()};
+    zmteamscores = {#gametime:function_f8d53445(), #event:player, #team:victim, #diff:newscore - teamscore, #score:newscore};
     function_92d1707f(#"hash_6823717ff11a304a", zmteamscores);
     if (teamscore == newscore) {
         return;

@@ -117,14 +117,14 @@ class aisquad {
 // Checksum 0x84ab5536, Offset: 0xc8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"ai_squads", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"ai_squads", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace aisquads/ai_squads
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9a3ee5a5, Offset: 0x110
 // Size: 0x6c
-function private function_70a657d8() {
+function private preinit() {
     level._squads = [];
     actorspawnerarray = getactorspawnerteamarray(#"axis");
     array::run_all(actorspawnerarray, &spawner::add_spawn_function, &squadmemberthink);

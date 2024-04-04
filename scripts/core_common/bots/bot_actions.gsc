@@ -9,7 +9,7 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0xe370327e, Offset: 0xb8
 // Size: 0x5a
-function function_70a657d8() {
+function preinit() {
     if (!isdefined(level.gametype)) {
         return;
     }
@@ -347,9 +347,9 @@ function private function_97bc2873(actionparams) {
         return undefined;
     }
     fwd = anglestoforward(self getplayerangles());
-    var_81c3bdc7 = vectornormalize(self.enemy.origin - self.origin);
-    var_34e02165 = vectordot(fwd, var_81c3bdc7);
-    if (var_34e02165 < 0.7) {
+    enemydir = vectornormalize(self.enemy.origin - self.origin);
+    enemydot = vectordot(fwd, enemydir);
+    if (enemydot < 0.7) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_47cdd5472dea843c";
         #/
@@ -473,7 +473,7 @@ function private function_c49cdd53(*actionparams) {
             continue;
         }
         self bottapbutton(3);
-        if (self usebuttonpressed() && !isdefined(crate.useent.var_c56ec411)) {
+        if (self usebuttonpressed() && !isdefined(crate.useent.capturingplayer)) {
             crate useby(self);
         }
     }

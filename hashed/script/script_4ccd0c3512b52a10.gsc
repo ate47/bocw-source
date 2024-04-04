@@ -15,14 +15,14 @@
 // Checksum 0x15e9ed35, Offset: 0x380
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_3ee5d3ee068a8cc", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_3ee5d3ee068a8cc", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_96850e69/namespace_96850e69
 // Params 0, eflags: 0x6 linked
 // Checksum 0x77ccc127, Offset: 0x3c8
 // Size: 0x7c
-function private function_70a657d8() {
+function private preinit() {
     temp = #"hash_147e5fa1e7f7cd06";
     temp = #"hash_850d28553336ed0";
     temp = #"hash_3537e7d6b8dc612b";
@@ -309,7 +309,7 @@ function function_1fe5876a(obj_id) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x145ad8df, Offset: 0x1110
 // Size: 0x6c
-function function_80af6d(obj_id) {
+function remove_objective(obj_id) {
     globallogic_ui::function_6db5e620("_DataSources.cp_objectives_list", obj_id);
     globallogic_ui::function_9ed5232e("hudItems.cpObjectiveUiData.updateList", 1, 1, 1, 0, 0, 1);
     function_bb708c99(obj_id);

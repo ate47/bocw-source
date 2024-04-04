@@ -19,14 +19,14 @@
 // Checksum 0xf102bc48, Offset: 0x3e8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_disable_buys", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_disable_buys", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
 // Params 0, eflags: 0x6 linked
 // Checksum 0x2e4ad78d, Offset: 0x430
 // Size: 0x1f4
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }
@@ -48,7 +48,7 @@ function private on_begin(var_a29299fb) {
         level notify(#"disable_buys");
         function_6fd56055();
         function_a4284cb4();
-        function_47c81160();
+        hide_magicbox();
         zm_trial_util::function_eea26e56();
         level.var_a29299fb = var_a29299fb;
         if (!isdefined(level.var_a29299fb)) {
@@ -70,7 +70,7 @@ function private on_end(round_reset) {
     if (!round_reset) {
         function_fa70c8c4();
         function_c606ef4b();
-        function_d7ee2133();
+        show_magicbox();
         zm_trial_util::function_ef1fce77();
         function_c348adcc();
         zm_trial_util::function_302c6014();
@@ -284,7 +284,7 @@ function private function_610df6d() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb02c1071, Offset: 0x1340
 // Size: 0x74
-function private function_47c81160() {
+function private hide_magicbox() {
     function_4516d298();
     if (level.chest_index != -1) {
         chest = level.chests[level.chest_index];
@@ -297,7 +297,7 @@ function private function_47c81160() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf2b64c9b, Offset: 0x13c0
 // Size: 0x5c
-function private function_d7ee2133() {
+function private show_magicbox() {
     function_4516d298();
     if (level.chest_index != -1) {
         chest = level.chests[level.chest_index];

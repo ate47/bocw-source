@@ -10,14 +10,14 @@
 // Checksum 0xb9ee34d7, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"multi_extracam", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"multi_extracam", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace multi_extracam/multi_extracam
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9245ff0, Offset: 0x120
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     callback::on_localclient_connect(&multi_extracam_init);
 }
 

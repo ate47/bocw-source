@@ -9,14 +9,14 @@
 // Checksum 0x952a970e, Offset: 0xb8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"cheat", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"cheat", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace cheat/cheat
 // Params 0, eflags: 0x4
 // Checksum 0x742ae414, Offset: 0x100
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     level.var_62079b93 = [];
     level.var_6722c38a = [];
     level.var_8c80c829 = [];

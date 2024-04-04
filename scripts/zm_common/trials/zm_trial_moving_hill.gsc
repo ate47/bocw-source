@@ -21,14 +21,14 @@
 // Checksum 0x3a76d787, Offset: 0x150
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_moving_hill", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_moving_hill", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_moving_hill/zm_trial_moving_hill
 // Params 0, eflags: 0x4
 // Checksum 0x893fc18c, Offset: 0x198
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }
@@ -235,7 +235,7 @@ function private function_2191cc5d() {
 function private zone_watcher(challenge, var_2d5ebf67, var_530e040f, timeout) {
     self endon(#"disconnect");
     level endon(#"hash_7646638df88a3656", #"hill_moving", #"host_migration_begin");
-    self.var_356935bb = {#var_530e040f:var_530e040f, #var_2d5ebf67:var_2d5ebf67, #challenge:challenge, #timeout:timeout, #start_time:level.time};
+    self.var_356935bb = {#start_time:level.time, #timeout:timeout, #challenge:challenge, #var_2d5ebf67:var_2d5ebf67, #var_530e040f:var_530e040f};
     self.var_4cb0b91f = 0;
     self zm_utility::function_ba39d198(challenge.var_df62490a, 1);
     self thread start_timer(timeout, var_2d5ebf67);

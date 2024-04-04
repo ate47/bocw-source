@@ -12,14 +12,14 @@
 // Checksum 0xd923dd3a, Offset: 0x198
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"userspawnselection", &function_70a657d8, undefined, &setupspawngroups, undefined);
+    system::register(#"userspawnselection", &preinit, undefined, &setupspawngroups, undefined);
 }
 
 // Namespace userspawnselection/userspawnselection
 // Params 0, eflags: 0x6 linked
 // Checksum 0x48f76181, Offset: 0x1e8
 // Size: 0x54
-function private function_70a657d8() {
+function private preinit() {
     level.next_spawngroup_index = 0;
     level.spawngroups = [];
     level.useteamspecificforwardspawns = getgametypesetting(#"forwardspawnteamspecificspawns");
@@ -33,9 +33,9 @@ function private function_70a657d8() {
 function setupclientfields() {
     for (index = 0; index < 20; index++) {
         basename = "spawngroupStatus_" + index + "_";
-        clientfield::function_5b7d846d(basename + "visStatus", #"hash_5e10ae8c08eeb04b", [1:#"visstatus", 0:hash(isdefined(index) ? "" + index : "")], 1, 1, "int", undefined, 0, 1);
-        clientfield::function_5b7d846d(basename + "useStatus", #"hash_5e10ae8c08eeb04b", [1:#"usestatus", 0:hash(isdefined(index) ? "" + index : "")], 1, 1, "int", undefined, 0, 1);
-        clientfield::function_5b7d846d(basename + "team", #"hash_5e10ae8c08eeb04b", [1:#"team", 0:hash(isdefined(index) ? "" + index : "")], 1, 2, "int", undefined, 0, 1);
+        clientfield::function_5b7d846d(basename + "visStatus", #"hash_5e10ae8c08eeb04b", [hash(isdefined(index) ? "" + index : ""), #"visstatus"], 1, 1, "int", undefined, 0, 1);
+        clientfield::function_5b7d846d(basename + "useStatus", #"hash_5e10ae8c08eeb04b", [hash(isdefined(index) ? "" + index : ""), #"usestatus"], 1, 1, "int", undefined, 0, 1);
+        clientfield::function_5b7d846d(basename + "team", #"hash_5e10ae8c08eeb04b", [hash(isdefined(index) ? "" + index : ""), #"team"], 1, 2, "int", undefined, 0, 1);
     }
     clientfield::register_clientuimodel("hudItems.showSpawnSelect", #"hash_6f4b11a0bee9b73d", #"showspawnselect", 1, 1, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("hudItems.killcamActive", #"hash_6f4b11a0bee9b73d", #"killcamactive", 1, 1, "int", undefined, 0, 0);

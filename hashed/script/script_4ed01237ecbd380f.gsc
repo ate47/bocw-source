@@ -13,17 +13,17 @@
 // Checksum 0x3091b662, Offset: 0xf0
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_794c3bb2e36b3278", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_794c3bb2e36b3278", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc22dbd76, Offset: 0x148
 // Size: 0x74
-function function_70a657d8() {
+function preinit() {
     level.var_2457162c = sr_weapon_upgrade_menu::register();
     clientfield::register("scriptmover", "weapon_machine_fx", 1, 1, "int", &weapon_machine_fx, 0, 0);
-    namespace_52c8f34d::function_70a657d8();
+    namespace_52c8f34d::preinit();
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8

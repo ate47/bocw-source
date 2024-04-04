@@ -8,14 +8,14 @@
 // Checksum 0x4e9e2709, Offset: 0x88
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"classicmode", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"classicmode", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace classicmode/classicmode
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9a77a97b, Offset: 0xd0
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     level.classicmode = getgametypesetting(#"classicmode");
     if (level.classicmode) {
         enableclassicmode();

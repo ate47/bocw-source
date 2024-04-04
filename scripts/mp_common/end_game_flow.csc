@@ -11,14 +11,14 @@
 // Checksum 0xd316ac2c, Offset: 0xa0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"end_game_flow", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"end_game_flow", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace end_game_flow/end_game_flow
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0xe8
 // Size: 0x4
-function private function_70a657d8() {
+function private preinit() {
     
 }
 

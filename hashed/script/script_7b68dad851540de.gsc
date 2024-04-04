@@ -18,14 +18,14 @@
 // Checksum 0xae139212, Offset: 0x208
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"smart_object", &function_70a657d8, undefined, undefined, #"scene");
+    system::register(#"smart_object", &preinit, undefined, undefined, #"scene");
 }
 
 // Namespace smart_object/smart_object
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd884a2d8, Offset: 0x258
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     function_b3ec7529();
     /#
         init_dvar("<unknown string>", 0, &function_5bfb6b3);
@@ -38,15 +38,15 @@ function private function_70a657d8() {
 // Checksum 0xb48dd42a, Offset: 0x2c0
 // Size: 0x334
 function private function_b3ec7529() {
-    level.var_1ccc840f = [];
+    level.smartobjectpoints = [];
     /#
         level.var_49430738 = [];
     #/
-    var_1ccc840f = struct::get_array("smart_object", "variantname");
-    foreach (obj in var_1ccc840f) {
-        obj.var_cd9d7cb = undefined;
+    smartobjectpoints = struct::get_array("smart_object", "variantname");
+    foreach (obj in smartobjectpoints) {
+        obj.nextusetime = undefined;
         obj.var_fbb20a79 = undefined;
-        obj.var_b4c01efd = undefined;
+        obj.hasdeath = undefined;
         obj.scene_reach = undefined;
         /#
             obj.var_175b0e60 = undefined;
@@ -59,24 +59,24 @@ function private function_b3ec7529() {
             obj.var_fbb20a79 = 1;
             continue;
         }
-        var_5d693a1e = obj util::function_7e8ee521();
-        foreach (var_a86822e8 in var_5d693a1e) {
-            if (var_a86822e8 == obj) {
+        linked_structs = obj util::get_linked_structs();
+        foreach (linkedstruct in linked_structs) {
+            if (linkedstruct == obj) {
                 continue;
             }
-            if (!function_b69b2de4(var_a86822e8)) {
+            if (!function_b69b2de4(linkedstruct)) {
                 continue;
             }
-            if (!isdefined(obj.var_eb17b2be)) {
-                obj.var_eb17b2be = [];
+            if (!isdefined(obj.linkedsmartobjects)) {
+                obj.linkedsmartobjects = [];
             }
-            obj.var_eb17b2be[obj.var_eb17b2be.size] = var_a86822e8;
+            obj.linkedsmartobjects[obj.linkedsmartobjects.size] = linkedstruct;
         }
         if (is_true(obj.script_auto_use)) {
             if (!isdefined(obj.var_7087ad5d)) {
                 obj.var_7087ad5d = 0;
             }
-            obj.var_2edb5d76 = function_a3f6cdac(obj.var_7087ad5d);
+            obj.var_2edb5d76 = sqr(obj.var_7087ad5d);
         } else {
             obj.script_auto_use = undefined;
             obj.var_7087ad5d = undefined;
@@ -90,7 +90,7 @@ function private function_b3ec7529() {
         }
         obj thread scene::init();
         obj thread function_6e730e66();
-        level.var_1ccc840f[level.var_1ccc840f.size] = obj;
+        level.smartobjectpoints[level.smartobjectpoints.size] = obj;
     }
 }
 
@@ -120,7 +120,7 @@ function private function_6e730e66() {
             #/
         }
     }
-    self.var_b4c01efd = function_5ff18583(self.shots, "death");
+    self.hasdeath = function_5ff18583(self.shots, "death");
     if (self.var_db740c43.size == 0 && array::contains(self.shots, "main")) {
         intro = self function_3b013edc("main");
         if (isdefined(intro.origin)) {
@@ -162,24 +162,24 @@ function private function_3b013edc(shotname) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xbc56f2dc, Offset: 0x9a0
 // Size: 0x15a
-function private function_27844fc(var_5685d3ec) {
+function private function_27844fc(debounce) {
     /#
         assert(function_1631909f(self));
     #/
     if (!isdefined(self.var_715fc83d)) {
         self.var_715fc83d = -1;
     }
-    self.var_cd9d7cb = isdefined(var_5685d3ec) ? var_5685d3ec : self.var_715fc83d;
-    if (self.var_cd9d7cb > 0) {
-        self.var_cd9d7cb = gettime() + self.var_cd9d7cb * 1000;
+    self.nextusetime = isdefined(debounce) ? debounce : self.var_715fc83d;
+    if (self.nextusetime > 0) {
+        self.nextusetime = gettime() + self.nextusetime * 1000;
     }
-    if (isdefined(self.var_eb17b2be)) {
-        foreach (obj in self.var_eb17b2be) {
-            if (isdefined(obj.var_cd9d7cb)) {
-                obj.var_cd9d7cb = max(obj.var_cd9d7cb, self.var_cd9d7cb);
+    if (isdefined(self.linkedsmartobjects)) {
+        foreach (obj in self.linkedsmartobjects) {
+            if (isdefined(obj.nextusetime)) {
+                obj.nextusetime = max(obj.nextusetime, self.nextusetime);
                 continue;
             }
-            obj.var_cd9d7cb = self.var_cd9d7cb;
+            obj.nextusetime = self.nextusetime;
         }
     }
 }
@@ -215,13 +215,13 @@ function play(ai) {
 // Size: 0x49a
 function function_5e77c231(ai) {
     ai notify(#"hash_274402e2db748171");
-    if (!is_true(self.var_b4c01efd)) {
+    if (!is_true(self.hasdeath)) {
         ai endoncallback(&function_8ffc948d, #"death");
     } else {
         ai val::set(#"smart_object", "skip_death", 1);
         ai val::set(#"smart_object", "skip_scene_death", 1);
     }
-    ai endoncallback(&function_8ffc948d, #"hash_274402e2db748171", #"hash_29b88049dcac8bb3", #"in_action");
+    ai endoncallback(&function_8ffc948d, #"hash_274402e2db748171", #"entitydeleted", #"in_action");
     self endoncallback(&function_8ffc948d, #"hash_274402e2db748171");
     self.script_play_multiple = 1;
     ai.var_c48f9f7d = 1;
@@ -237,7 +237,7 @@ function function_5e77c231(ai) {
             intro = var_36b33936[0];
         }
     }
-    if (!is_true(self.var_6491f35f) && isdefined(intro) && distancesquared(intro.origin, ai.origin) > function_a3f6cdac(4 + 1)) {
+    if (!is_true(self.var_6491f35f) && isdefined(intro) && distancesquared(intro.origin, ai.origin) > sqr(4 + 1)) {
         self thread function_b150ae10(ai);
         self scene::anim_reach(self.scriptbundlename, intro.shot, ai);
         self notify(#"hash_5c09ebcc2e6a88a3");
@@ -315,7 +315,7 @@ function private function_8b855873(&shots, ai, var_ee9cbc26) {
     ai notify("559ca15ca3e188b8");
     ai endon("559ca15ca3e188b8");
     self endon(#"smart_object_ending_normally", #"hash_334d02928f88cfaa");
-    ai endon(#"hash_29b88049dcac8bb3", #"in_action");
+    ai endon(#"entitydeleted", #"in_action");
     ai.var_a965704f = undefined;
     while (true) {
         result = undefined;
@@ -340,14 +340,14 @@ function private function_ca2d3925(&shots, ai, var_ee9cbc26, result) {
             }
             waitframe(1);
             if (isalive(ai)) {
-                var_3657c107 = ai aiutility::bb_actorgetreactyaw();
+                reactyaw = ai aiutility::bb_actorgetreactyaw();
             }
         }
         if (result._notify === "death" || !isalive(ai)) {
             var_68a5d6c0 = "death";
             isdeath = 1;
         }
-        react = function_2e6e8631(shots, var_68a5d6c0, var_3657c107);
+        react = function_2e6e8631(shots, var_68a5d6c0, reactyaw);
         var_fd84bab2 = !isdefined(react) || is_true(var_ee9cbc26.var_fd84bab2);
         if (isdefined(ai)) {
             if ((result._notify == #"damage" || result._notify == #"death") && (var_fd84bab2 || isdefined(ai.var_a965704f))) {
@@ -383,7 +383,7 @@ function private function_ca2d3925(&shots, ai, var_ee9cbc26, result) {
 // Size: 0x20c
 function private function_1ec70779(react, ai, isdeath = 0) {
     ai.var_29133295 = 1;
-    var_f69c35a3 = isdefined(ai.stealth.var_8fb63790) && ai.stealth.var_8fb63790 == "combat" && ai namespace_3d84fa3e::function_47df32b8();
+    var_f69c35a3 = isdefined(ai.stealth.ai_event) && ai.stealth.ai_event == "combat" && ai flashlight::function_47df32b8();
     ai notify(#"hash_274402e2db748171");
     if (isdefined(react)) {
         /#
@@ -394,7 +394,7 @@ function private function_1ec70779(react, ai, isdeath = 0) {
             ai.skipdeath = 1;
         }
         if (var_f69c35a3) {
-            ai namespace_3d84fa3e::light_off();
+            ai flashlight::light_off();
         }
         self scene::play(self.scriptbundlename, react, ai);
         if (isdeath && isdefined(level.var_3ba48663) && isdefined(ai)) {
@@ -404,13 +404,13 @@ function private function_1ec70779(react, ai, isdeath = 0) {
             ai.stealth.var_5cc4aa60 = gettime() + 3000;
         }
         if (var_f69c35a3) {
-            ai namespace_3d84fa3e::function_bfffb3fe();
+            ai flashlight::function_bfffb3fe();
         }
     } else {
         self scene::stop(self.scriptbundlename);
     }
     if (isdefined(ai)) {
-        ai val::function_e681e68e(#"smart_object");
+        ai val::reset_all(#"smart_object");
         /#
             ai thread function_6ab41bf7();
         #/
@@ -465,7 +465,7 @@ function function_a59dc8a8(obj) {
     #/
     if (isdefined(obj.claimer)) {
         if (!is_true(obj.claimer.var_29133295)) {
-            obj.claimer val::function_e681e68e(#"smart_object");
+            obj.claimer val::reset_all(#"smart_object");
         }
         obj.claimer.var_29133295 = undefined;
     }
@@ -494,7 +494,7 @@ function can_use(obj) {
     if (!isdefined(obj)) {
         return false;
     }
-    if (isdefined(obj.var_cd9d7cb) && (obj.var_cd9d7cb < 0 || gettime() < obj.var_cd9d7cb)) {
+    if (isdefined(obj.nextusetime) && (obj.nextusetime < 0 || gettime() < obj.nextusetime)) {
         return false;
     }
     if (is_true(obj.var_fbb20a79)) {
@@ -541,16 +541,16 @@ function function_ab981ed(desiredpos, volume, var_ce60cc2e, var_2889f642 = 0) {
     /#
         assert(issentient(self));
     #/
-    if (!isdefined(level.var_1ccc840f)) {
+    if (!isdefined(level.smartobjectpoints)) {
         return undefined;
     }
     aiprofile_beginentry("GetBestSmartObject");
     var_3424891f = var_ce60cc2e * var_ce60cc2e;
-    var_6debb24 = arraysortclosest(level.var_1ccc840f, desiredpos);
+    var_6debb24 = arraysortclosest(level.smartobjectpoints, desiredpos);
     var_43a2b258 = var_6debb24.size;
-    var_bbfbe34b = undefined;
-    for (var_39f193ea = 0; var_39f193ea < var_43a2b258; var_39f193ea++) {
-        object = var_6debb24[var_39f193ea];
+    smartobject = undefined;
+    for (iobj = 0; iobj < var_43a2b258; iobj++) {
+        object = var_6debb24[iobj];
         if (distancesquared(object.origin, desiredpos) > var_3424891f) {
             break;
         }
@@ -563,11 +563,11 @@ function function_ab981ed(desiredpos, volume, var_ce60cc2e, var_2889f642 = 0) {
         if (!self function_b5ba6914(object, desiredpos, volume, var_2889f642)) {
             continue;
         }
-        var_bbfbe34b = object;
+        smartobject = object;
         break;
     }
     aiprofile_endentry();
-    return var_bbfbe34b;
+    return smartobject;
 }
 
 // Namespace smart_object/smart_object
@@ -610,10 +610,10 @@ function function_b69b2de4(obj) {
 // Size: 0x17e
 function function_b03cc199(obj) {
     radiussq = 1600;
-    var_5d711abc = 4096;
+    zdiffsq = 4096;
     foreach (player in getplayers()) {
-        if (distance2dsquared(obj.origin, player.origin) < radiussq && function_a3f6cdac(obj.origin[2] - player.origin[2]) < var_5d711abc) {
-            var_f9938c4c = function_2981bd91(player.origin - obj.origin);
+        if (distance2dsquared(obj.origin, player.origin) < radiussq && sqr(obj.origin[2] - player.origin[2]) < zdiffsq) {
+            var_f9938c4c = vectortoyaw(player.origin - obj.origin);
             if (abs(angleclamp180(var_f9938c4c - obj.angles[1])) < 90) {
                 return true;
             }
@@ -630,7 +630,7 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
     /#
         assert(issentient(self));
     #/
-    if (!isdefined(level.var_1ccc840f)) {
+    if (!isdefined(level.smartobjectpoints)) {
         return;
     }
     var_d01a742 = 60;
@@ -663,9 +663,9 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
     var_d5260937 = 1.5;
     var_c9b0ff8d = 300000;
     var_fda73bba = 0.001;
-    var_2f882d08 = undefined;
+    bestobj = undefined;
     var_ef1e44f4 = -9999;
-    foreach (obj in region.var_b60f2156) {
+    foreach (obj in region.smart_objects) {
         if (distancesquared(obj.origin, self.origin) < var_62b1322) {
             /#
                 if (var_1d23c510) {
@@ -785,7 +785,7 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
         }
         if (score > var_ef1e44f4) {
             var_ef1e44f4 = score;
-            var_2f882d08 = obj;
+            bestobj = obj;
         }
         /#
             if (var_1d23c510) {
@@ -794,18 +794,18 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
             }
         #/
     }
-    return var_2f882d08;
+    return bestobj;
 }
 
 // Namespace smart_object/smart_object
 // Params 4, eflags: 0x2 linked
 // Checksum 0x6c8884dc, Offset: 0x3100
 // Size: 0x10a
-function function_b5ba6914(obj, var_86fc8c6, volume, *var_2889f642) {
+function function_b5ba6914(obj, optorigin, volume, *var_2889f642) {
     /#
         assert(issentient(self));
     #/
-    if (!is_true(var_86fc8c6.script_auto_use)) {
+    if (!is_true(optorigin.script_auto_use)) {
         return false;
     }
     if (isdefined(volume)) {
@@ -813,11 +813,11 @@ function function_b5ba6914(obj, var_86fc8c6, volume, *var_2889f642) {
     } else {
         pos = self.origin;
     }
-    distsqrd = distancesquared(pos, var_86fc8c6.origin);
-    if (distsqrd > var_86fc8c6.var_2edb5d76) {
+    distsqrd = distancesquared(pos, optorigin.origin);
+    if (distsqrd > optorigin.var_2edb5d76) {
         return false;
     }
-    if (isdefined(var_2889f642) && !var_2889f642 istouching(var_86fc8c6.origin)) {
+    if (isdefined(var_2889f642) && !var_2889f642 istouching(optorigin.origin)) {
         return false;
     }
     return true;
@@ -842,14 +842,14 @@ function set(obj) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x5d7b2e08, Offset: 0x32b0
 // Size: 0x9c
-function function_2677ed08(var_9bf11123) {
+function function_2677ed08(smartobj) {
     self notify("68a833247978732c");
     self endon("68a833247978732c");
     self endon(#"death", #"hash_6b1e2ef3367a9c8b");
-    self.var_bf549417 = self.var_e1b3091b;
-    self.var_e1b3091b = var_9bf11123.var_a15f12c2;
-    self.var_3ed929ba = var_9bf11123.var_a15f12c2;
-    var_9bf11123 waittill(#"hash_3a2c70ba8c45838e");
+    self.var_bf549417 = self.flashlightoverride;
+    self.flashlightoverride = smartobj.var_a15f12c2;
+    self.var_3ed929ba = smartobj.var_a15f12c2;
+    smartobj waittill(#"hash_3a2c70ba8c45838e");
     function_bd54ea4c();
 }
 
@@ -859,7 +859,7 @@ function function_2677ed08(var_9bf11123) {
 // Size: 0x26
 function function_bd54ea4c() {
     if (isdefined(self.var_3ed929ba)) {
-        self.var_e1b3091b = self.var_bf549417;
+        self.flashlightoverride = self.var_bf549417;
         self.var_3ed929ba = undefined;
     }
 }
@@ -872,10 +872,10 @@ function function_feb48f7(*obj) {
     /#
         assert(issentient(self));
     #/
-    if (!isdefined(self.var_d6319e36)) {
+    if (!isdefined(self.script_stealthgroup)) {
         return false;
     }
-    if (isdefined(self.var_cd774402) && isdefined(self.var_678afc31) && !self [[ self.var_cd774402 ]]() && !self [[ self.var_678afc31 ]]()) {
+    if (isdefined(self.fnisinstealthinvestigate) && isdefined(self.fnisinstealthhunt) && !self [[ self.fnisinstealthinvestigate ]]() && !self [[ self.fnisinstealthhunt ]]()) {
         return false;
     }
     return true;
@@ -892,11 +892,11 @@ function function_97a10998(obj) {
     forward = anglestoforward(self.angles);
     normal = vectornormalize(obj.origin - self.origin);
     if (vectordot(forward, normal) >= cos(60)) {
-        var_91d0d82d = 64;
+        strafedist = 64;
     } else {
-        var_91d0d82d = 100;
+        strafedist = 100;
     }
-    if (distancesquared(self.origin, obj.origin) <= var_91d0d82d * var_91d0d82d) {
+    if (distancesquared(self.origin, obj.origin) <= strafedist * strafedist) {
         return false;
     }
     forward = anglestoforward(obj.angles);
@@ -980,7 +980,7 @@ function private function_23eef632() {
         self notify(#"hash_6f64ca444d328bd0");
         self endon(#"hash_6f64ca444d328bd0");
         while (true) {
-            foreach (obj in level.var_1ccc840f) {
+            foreach (obj in level.smartobjectpoints) {
                 scriptbundlename = obj.scriptbundlename;
                 if (ishash(scriptbundlename)) {
                     scriptbundlename = function_9e72a96(scriptbundlename);
@@ -999,10 +999,10 @@ function private function_23eef632() {
                         line(intro.var_93d6832 + (0, 0, 1), obj.origin + (0, 0, 1), (1, 0, 0), 0.5, 1, 1);
                     }
                 }
-                if (isdefined(obj.var_cd9d7cb) && (obj.var_cd9d7cb < 0 || gettime() < obj.var_cd9d7cb)) {
+                if (isdefined(obj.nextusetime) && (obj.nextusetime < 0 || gettime() < obj.nextusetime)) {
                     msg = "<unknown string>";
-                    if (obj.var_cd9d7cb >= 0) {
-                        msg = msg + "<unknown string>" + int(float(obj.var_cd9d7cb - gettime()) / 1000) + 1;
+                    if (obj.nextusetime >= 0) {
+                        msg = msg + "<unknown string>" + int(float(obj.nextusetime - gettime()) / 1000) + 1;
                     }
                     print3d(obj.origin + vectorscale((0, 0, 1), 75), msg, (0.5, 0.3, 0), 1, 0.25, 1, 1);
                 }

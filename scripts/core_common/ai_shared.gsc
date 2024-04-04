@@ -353,7 +353,7 @@ function function_620eeb6b(goalent) {
         self.var_2925fedc = undefined;
     }
     if (isdefined(goalent) && !isvec(goalent) && isdefined(goalent.script_likelyenemy)) {
-        var_4c719501 = struct::get_array(goalent.script_likelyenemy, "script_likelyenemy");
+        linkedstructs = struct::get_array(goalent.script_likelyenemy, "script_likelyenemy");
         targetent = undefined;
         var_b266f03e = "";
         if (self.team == #"allies") {
@@ -361,7 +361,7 @@ function function_620eeb6b(goalent) {
         } else if (self.team == #"axis") {
             var_b266f03e = "ai_likelyenemydir_axis";
         }
-        foreach (struct in var_4c719501) {
+        foreach (struct in linkedstructs) {
             if (struct.variantname === var_b266f03e) {
                 if (isdefined(targetent)) {
                     /#
@@ -376,7 +376,7 @@ function function_620eeb6b(goalent) {
                 targetent = struct;
             }
         }
-        foreach (struct in var_4c719501) {
+        foreach (struct in linkedstructs) {
             if (struct.variantname === "ai_likelyenemydir") {
                 if (isdefined(targetent)) {
                     /#
@@ -392,9 +392,9 @@ function function_620eeb6b(goalent) {
             }
         }
         if (!isdefined(targetent)) {
-            var_de73f9d2 = getentarray(goalent.script_likelyenemy, "script_likelyenemy");
-            var_666dc042 = getnodearray(goalent.script_likelyenemy, "script_likelyenemy");
-            var_d1535971 = arraycombine(arraycombine(var_de73f9d2, var_666dc042), var_4c719501);
+            linkedents = getentarray(goalent.script_likelyenemy, "script_likelyenemy");
+            linkednodes = getnodearray(goalent.script_likelyenemy, "script_likelyenemy");
+            var_d1535971 = arraycombine(arraycombine(linkedents, linkednodes), linkedstructs);
             var_2188535d = array::exclude(var_d1535971, goalent);
             if (var_2188535d.size == 1) {
                 targetent = var_2188535d[0];
@@ -433,7 +433,7 @@ function function_54115a91(goal) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xd5ae4433, Offset: 0x15d0
 // Size: 0x3c
-function function_e09d210c(node) {
+function set_goal_node(node) {
     self setgoal(node);
     self function_54115a91(node);
 }
@@ -442,7 +442,7 @@ function function_e09d210c(node) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xe38b7429, Offset: 0x1618
 // Size: 0x3c
-function function_6fdb87c7(ent) {
+function set_goal_ent(ent) {
     self setgoal(ent);
     self function_54115a91(ent);
 }
@@ -712,7 +712,7 @@ function function_470c0597(center, halfsize, angles) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x4f1eced, Offset: 0x25b0
 // Size: 0x274
-function function_1628d95b(cansee = 0, var_9a21f98d = 1, var_2dd9c403 = self.origin) {
+function function_1628d95b(cansee = 0, var_9a21f98d = 1, overrideorigin = self.origin) {
     var_56203bf4 = function_4d8c71ce(util::get_enemy_team(self.team), #"team3");
     nearesttarget = undefined;
     var_46e1d165 = undefined;
@@ -730,7 +730,7 @@ function function_1628d95b(cansee = 0, var_9a21f98d = 1, var_2dd9c403 = self.ori
                 continue;
             }
         }
-        distsq = distancesquared(var_2dd9c403, target.origin);
+        distsq = distancesquared(overrideorigin, target.origin);
         if (!isdefined(nearesttarget) || distsq < var_46e1d165) {
             nearesttarget = target;
             var_46e1d165 = distsq;
@@ -896,22 +896,22 @@ function function_f6060793() {
 // Params 0, eflags: 0x0
 // Checksum 0x4316bded, Offset: 0x2e18
 // Size: 0x42
-function function_2783d8cb() {
+function enable_careful() {
     /#
         assert(isai(self), "<unknown string>");
     #/
-    self.var_b589f1b1 = 1;
+    self.script_careful = 1;
 }
 
 // Namespace ai/ai_shared
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc5a7a428, Offset: 0x2e68
 // Size: 0x4e
-function function_8eca0691() {
+function disable_careful() {
     /#
         assert(isai(self), "<unknown string>");
     #/
-    self.var_b589f1b1 = 0;
+    self.script_careful = 0;
     self notify(#"hash_365fd8fda5a5a322");
 }
 
@@ -990,7 +990,7 @@ function private function_91692eaa() {
     }
     for (stackindex = 0; stackindex < 4; stackindex++) {
         if (is_true(self.var_8a068c50[stackindex].set)) {
-            self.lookat = function_2e532eed(self.var_8a068c50[stackindex], 1);
+            self.lookat = structcopy(self.var_8a068c50[stackindex], 1);
             return;
         }
     }
@@ -1109,7 +1109,7 @@ function private function_fcd4fcb7() {
 // Size: 0x1be
 function private function_1571b7b6(object, var_dfb8e94b) {
     /#
-        self endon(#"death", #"hash_29b88049dcac8bb3");
+        self endon(#"death", #"entitydeleted");
         self notify("<unknown string>");
         self endon("<unknown string>");
         while (isdefined(object) && function_45ef77da()) {
@@ -1118,8 +1118,8 @@ function private function_1571b7b6(object, var_dfb8e94b) {
             if (!isvec(to) && issentient(to)) {
                 to = to geteye();
             }
-            var_ee0ec31 = anglestoforward(self gettagangles("<unknown string>"));
-            line(from, from + var_ee0ec31 * 500, vectorscale((1, 1, 1), 0.75), 1, 0, 1);
+            looking = anglestoforward(self gettagangles("<unknown string>"));
+            line(from, from + looking * 500, vectorscale((1, 1, 1), 0.75), 1, 0, 1);
             color = (1, 1, 0);
             if (is_true(var_dfb8e94b)) {
                 color = (1, 1, 1);
@@ -1189,9 +1189,9 @@ function function_71915b43(target, tag) {
 // Params 3, eflags: 0x0
 // Checksum 0x95e8dbef, Offset: 0x3cf8
 // Size: 0x60
-function function_21e1cc3(var_dc8b0c0d, firstpoint, var_8fbcda45) {
-    if (isfunctionptr(level.poi.var_705e0648)) {
-        self thread [[ level.poi.var_705e0648 ]](var_dc8b0c0d, firstpoint, var_8fbcda45);
+function poi_enable(shouldenable, firstpoint, var_8fbcda45) {
+    if (isfunctionptr(level.poi.fnenable)) {
+        self thread [[ level.poi.fnenable ]](shouldenable, firstpoint, var_8fbcda45);
     }
 }
 
@@ -1199,9 +1199,9 @@ function function_21e1cc3(var_dc8b0c0d, firstpoint, var_8fbcda45) {
 // Params 6, eflags: 0x0
 // Checksum 0x124cfd4a, Offset: 0x3d60
 // Size: 0x80
-function function_3a5e9945(var_dc8b0c0d, var_411041d2, yawmax, pitchmin, pitchmax, var_8fbcda45) {
+function function_3a5e9945(shouldenable, yawmin, yawmax, pitchmin, pitchmax, var_8fbcda45) {
     if (isfunctionptr(level.poi.var_38974483)) {
-        self thread [[ level.poi.var_38974483 ]](var_dc8b0c0d, var_411041d2, yawmax, pitchmin, pitchmax, var_8fbcda45);
+        self thread [[ level.poi.var_38974483 ]](shouldenable, yawmin, yawmax, pitchmin, pitchmax, var_8fbcda45);
     }
 }
 

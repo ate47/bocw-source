@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_35ae72be7b4fec10;
 #using script_32399001bdb550da;
-#using script_267e1d16ae28392b;
+#using scripts\cp_common\achievements.gsc;
 #using scripts\cp_common\util.gsc;
 #using scripts\core_common\flag_shared.gsc;
 #using scripts\core_common\player\player_stats.gsc;
@@ -19,14 +19,14 @@
 // Checksum 0x4fc13ad9, Offset: 0x1b0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"challenges", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"challenges", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace challenges/challenges
 // Params 0, eflags: 0x6 linked
 // Checksum 0xeb89c95c, Offset: 0x1f8
 // Size: 0x64
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
     callback::on_start_gametype(&start_gametype);
     level.challenges_callback_vehicledamaged = &vehicledamaged;
@@ -377,7 +377,7 @@ function private function_65b0a754() {
             namespace_61e6d095::remove(#"hash_166066a38ca1f36d");
         }
         namespace_61e6d095::create(#"hash_166066a38ca1f36d", #"hash_367f58e18cde1c9e");
-        namespace_61e6d095::function_d3c3e5c3(#"hash_166066a38ca1f36d", [2:#"hash_af16b6b2e499098", 1:#"interactive_map", 0:#"dialog_tree"]);
+        namespace_61e6d095::function_d3c3e5c3(#"hash_166066a38ca1f36d", [#"dialog_tree", #"interactive_map", #"computer"]);
         namespace_61e6d095::function_9ade1d9b(#"hash_166066a38ca1f36d", "text", hash(var_21e736f9));
         namespace_61e6d095::function_9ade1d9b(#"hash_166066a38ca1f36d", "desc", hash(var_3e63e7e4));
         namespace_61e6d095::function_9ade1d9b(#"hash_166066a38ca1f36d", "count", challengexp);
@@ -422,7 +422,7 @@ function function_7b4387e1(*rewardxp, maxval, row, tablenumber, challengetype, i
         break;
     }
     /#
-        if (getdvarint(#"hash_4cc2d974d4e9d2d6", 0) != 0) {
+        if (getdvarint(#"debugchallenges", 0) != 0) {
             var_c4e9517b = tablenumber + 1;
             tablename = #"gamedata/stats/cp/statsmilestones" + var_c4e9517b + "<unknown string>";
             var_eb67c133 = tablelookupcolumnforrow(tablename, row, 5);
@@ -452,11 +452,11 @@ function function_7b4387e1(*rewardxp, maxval, row, tablenumber, challengetype, i
                 challengestring = strreplace(challengestring, "<unknown string>", "<unknown string>" + tiertext);
             }
             msg = var_33b913f5 + "<unknown string>" + challengestring + "<unknown string>" + maxval;
-            if (getdvarint(#"hash_4cc2d974d4e9d2d6", 0) == 1) {
+            if (getdvarint(#"debugchallenges", 0) == 1) {
                 iprintlnbold(msg);
-            } else if (getdvarint(#"hash_4cc2d974d4e9d2d6", 0) == 2) {
+            } else if (getdvarint(#"debugchallenges", 0) == 2) {
                 self iprintlnbold(msg);
-            } else if (getdvarint(#"hash_4cc2d974d4e9d2d6", 0) == 3) {
+            } else if (getdvarint(#"debugchallenges", 0) == 3) {
                 iprintln(msg);
             }
             println(msg);
@@ -489,7 +489,7 @@ function function_18b65152() {
                             var_f220a4fb = "";
                             var_f220a4fb = var_c603a6cc[16];
                             switch (var_f220a4fb) {
-                            case #"hash_353ab2195905975e":
+                            case #"missions":
                                 self stats::function_dad108fa(#"hash_13eb46cb3c4c5613", 1);
                                 break;
                             case #"tott":

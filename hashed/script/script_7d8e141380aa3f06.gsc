@@ -10,14 +10,14 @@
 // Checksum 0x797c6c83, Offset: 0xc0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_5a3be2f74ac4fe03", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_5a3be2f74ac4fe03", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_fa39a5c3/namespace_67dab37c
 // Params 0, eflags: 0x2 linked
 // Checksum 0xf37bb6f8, Offset: 0x108
 // Size: 0x5c
-function function_70a657d8() {
+function preinit() {
     clientfield::register("toplayer", "" + #"hash_69dc133e22a2769f", 16000, 1, "int", &function_6b66a9a3, 0, 0);
 }
 

@@ -22,7 +22,7 @@ function function_a01726dd() {
     self.var_cd4099ea = 0;
     self.var_38800c0 = 1;
     self.var_c82ffc5e = 0;
-    self.var_d0c7bd52 = 380;
+    self.rotor_radius = 380;
     self.var_f3652bd = "tag_main_rotor";
     self setheliheightcap(1);
     callback::function_d8abfc3d(#"hash_666d48a558881a36", &function_1435d6c2);
@@ -42,8 +42,8 @@ function function_a01726dd() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x29fbd810, Offset: 0x448
 // Size: 0x384
-function private function_727338d1(var_7d32de2) {
-    victim = var_7d32de2.activator;
+function private function_727338d1(triggerstruct) {
+    victim = triggerstruct.activator;
     if (!isplayer(victim)) {
         return;
     }
@@ -54,15 +54,15 @@ function private function_727338d1(var_7d32de2) {
     if (!isdefined(vehicle)) {
         return;
     }
-    var_e5b7c28e = victim.origin + (0, 0, 40);
+    victim_origin = victim.origin + (0, 0, 40);
     var_38c235fa = vehicle gettagorigin(vehicle.var_f3652bd);
     /#
         if (getdvarint(#"hash_3b9aedd563f16da4", 0) > 0) {
-            sphere(var_38c235fa, vehicle.var_d0c7bd52, (0, 1, 1), 0.3);
-            sphere(var_e5b7c28e, 40, (1, 1, 0), 0.3);
+            sphere(var_38c235fa, vehicle.rotor_radius, (0, 1, 1), 0.3);
+            sphere(victim_origin, 40, (1, 1, 0), 0.3);
         }
     #/
-    if (distancesquared(var_38c235fa, var_e5b7c28e) > function_a3f6cdac(40 + vehicle.var_d0c7bd52)) {
+    if (distancesquared(var_38c235fa, victim_origin) > sqr(40 + vehicle.rotor_radius)) {
         return;
     }
     var_38609e65 = anglestoup(vehicle getangles());
@@ -71,11 +71,11 @@ function private function_727338d1(var_7d32de2) {
             line(var_38c235fa, var_38c235fa + var_38609e65 * 100, (1, 0, 0));
         }
     #/
-    projected = vectorprojection(var_e5b7c28e - var_38c235fa, var_38609e65);
-    if (lengthsquared(projected) > function_a3f6cdac(40)) {
+    projected = vectorprojection(victim_origin - var_38c235fa, var_38609e65);
+    if (lengthsquared(projected) > sqr(40)) {
         return;
     }
-    trace = bullettrace(var_38c235fa, var_e5b7c28e, 0, vehicle, 1, 1);
+    trace = bullettrace(var_38c235fa, victim_origin, 0, vehicle, 1, 1);
     if (trace[#"fraction"] == 1) {
         killer = isdefined(vehicle getseatoccupant(0)) ? vehicle getseatoccupant(0) : vehicle;
         victim.var_f5dc0dbf = 1;
@@ -90,7 +90,7 @@ function private function_727338d1(var_7d32de2) {
 function private function_b5c0079f() {
     var_38c235fa = self gettagorigin(self.var_f3652bd);
     if (isdefined(var_38c235fa)) {
-        self.var_cb611709 = spawn("trigger_radius", var_38c235fa - (0, 0, self.var_d0c7bd52 * 0.5), 0, self.var_d0c7bd52, self.var_d0c7bd52);
+        self.var_cb611709 = spawn("trigger_radius", var_38c235fa - (0, 0, self.rotor_radius * 0.5), 0, self.rotor_radius, self.rotor_radius);
         driver = self getseatoccupant(0);
         self.var_cb611709 enablelinkto();
         self.var_cb611709 linkto(self, self.var_f3652bd);
@@ -722,10 +722,10 @@ function private function_b515cb89(params) {
             function_d7021cf2();
         }
         if (isdefined(params.player)) {
-            var_d12aad97 = params.eventstruct.seat_index;
-            var_99e74d83 = params.eventstruct.old_seat_index;
-            if (function_9ffa5fd(var_99e74d83, var_d12aad97)) {
-                self function_b1088764(params.player, var_99e74d83, var_d12aad97);
+            enter_seat = params.eventstruct.seat_index;
+            exit_seat = params.eventstruct.old_seat_index;
+            if (function_9ffa5fd(exit_seat, enter_seat)) {
+                self function_b1088764(params.player, exit_seat, enter_seat);
             }
         }
     }
@@ -741,9 +741,9 @@ function private function_1435d6c2(params) {
             function_dce84927();
         }
         if (isdefined(params.player)) {
-            var_d12aad97 = params.eventstruct.seat_index;
-            if (function_9ffa5fd(undefined, var_d12aad97)) {
-                self function_b1088764(params.player, undefined, var_d12aad97);
+            enter_seat = params.eventstruct.seat_index;
+            if (function_9ffa5fd(undefined, enter_seat)) {
+                self function_b1088764(params.player, undefined, enter_seat);
             }
         }
     }

@@ -19,14 +19,14 @@
 // Checksum 0xd8a7ce8, Offset: 0x2a0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"wasp", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"wasp", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace wasp/wasp
 // Params 0, eflags: 0x6 linked
 // Checksum 0x15ee723b, Offset: 0x2e8
 // Size: 0x74
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_main_callback("wasp", &wasp_initialize);
     clientfield::register("vehicle", "rocket_wasp_hijacked", 1, 1, "int");
     level thread wasp_towers_on_load();
@@ -264,14 +264,14 @@ function fall_and_bounce(killonimpact_speed, killonimpact_time, killonimpact = 0
     anglesstablizeinitialscale = 0.6;
     anglesstablizeincrement = 0.2;
     fallstart = gettime();
-    while (bouncedtime < maxbouncetime && lengthsquared(self.velocity) > function_a3f6cdac(10)) {
+    while (bouncedtime < maxbouncetime && lengthsquared(self.velocity) > sqr(10)) {
         waitresult = undefined;
         waitresult = self waittill(#"veh_collision");
         impact_vel = waitresult.velocity;
         normal = waitresult.normal;
         if (killonimpact) {
             self kill();
-        } else if (lengthsquared(impact_vel) > function_a3f6cdac(killonimpact_speed) || util::timesince(fallstart) > killonimpact_time && lengthsquared(impact_vel) > function_a3f6cdac(killonimpact_speed * 0.8)) {
+        } else if (lengthsquared(impact_vel) > sqr(killonimpact_speed) || util::timesince(fallstart) > killonimpact_time && lengthsquared(impact_vel) > sqr(killonimpact_speed * 0.8)) {
             self kill();
         } else if (!isdefined(self.position_before_fall)) {
             self kill();
@@ -287,7 +287,7 @@ function fall_and_bounce(killonimpact_speed, killonimpact_time, killonimpact = 0
         shouldbounce = vectordot(normal, (0, 0, 1)) > 0.76;
         if (shouldbounce) {
             velocitylengthsqr = lengthsquared(newvelocity);
-            stablizescale = mapfloat(function_a3f6cdac(5), function_a3f6cdac(60), 0.1, 1, velocitylengthsqr);
+            stablizescale = mapfloat(sqr(5), sqr(60), 0.1, 1, velocitylengthsqr);
             ang_vel = self getangularvelocity();
             ang_vel = ang_vel * angularvelstablizeparams * stablizescale;
             self setangularvelocity(ang_vel);
@@ -425,7 +425,7 @@ function state_guard_can_enter(*from_state, *to_state, *connection) {
     if (!isdefined(self.enemy) || !self seerecently(self.enemy, 3)) {
         return true;
     }
-    if (distancesquared(self.owner.origin, self.enemy.origin) > function_a3f6cdac(1200) && distancesquared(self.origin, self.enemy.origin) > function_a3f6cdac(300)) {
+    if (distancesquared(self.owner.origin, self.enemy.origin) > sqr(1200) && distancesquared(self.origin, self.enemy.origin) > sqr(300)) {
         return true;
     }
     if (!ispointinnavvolume(self.origin, "navvolume_small")) {
@@ -508,7 +508,7 @@ function state_guard_update(*params) {
     pointindex = 0;
     stuckcount = 0;
     while (true) {
-        if (isdefined(self.enemy) && distancesquared(self.owner.origin, self.enemy.origin) < function_a3f6cdac(1000) && self seerecently(self.enemy, 1) && ispointinnavvolume(self.origin, "navvolume_small")) {
+        if (isdefined(self.enemy) && distancesquared(self.owner.origin, self.enemy.origin) < sqr(1000) && self seerecently(self.enemy, 1) && ispointinnavvolume(self.origin, "navvolume_small")) {
             self vehicle_ai::evaluate_connections();
             wait(1);
             continue;
@@ -537,7 +537,7 @@ function state_guard_update(*params) {
                 getbackpoint = test_get_back_queryresult(queryresult);
             }
             if (isdefined(getbackpoint)) {
-                if (distancesquared(getbackpoint, self.origin) > function_a3f6cdac(20)) {
+                if (distancesquared(getbackpoint, self.origin) > sqr(20)) {
                     self.current_pathto_pos = getbackpoint;
                     usepathfinding = 0;
                     self.vehaircraftcollisionenabled = 0;
@@ -592,10 +592,10 @@ function state_guard_update(*params) {
         }
         if (isdefined(self.current_pathto_pos)) {
             distancetogoalsq = distancesquared(self.current_pathto_pos, self.origin);
-            if (!onnavvolume || distancetogoalsq > function_a3f6cdac(60)) {
-                if (distancetogoalsq > function_a3f6cdac(600)) {
+            if (!onnavvolume || distancetogoalsq > sqr(60)) {
+                if (distancetogoalsq > sqr(600)) {
                     self setspeed(self.settings.defaultmovespeed * 2);
-                } else if (distancetogoalsq < function_a3f6cdac(100)) {
+                } else if (distancetogoalsq < sqr(100)) {
                     self setspeed(self.settings.defaultmovespeed * 0.3);
                 } else {
                     self setspeed(self.settings.defaultmovespeed);
@@ -656,7 +656,7 @@ function turretfireupdate() {
                     drone.favoriteenemy = self.enemy;
                 }
             }
-            if (distancesquared(self.enemy.origin, self.origin) < function_a3f6cdac(0.5 * (self.settings.engagementdistmin + self.settings.engagementdistmax) * 3)) {
+            if (distancesquared(self.enemy.origin, self.origin) < sqr(0.5 * (self.settings.engagementdistmin + self.settings.engagementdistmax) * 3)) {
                 self vehlookat(self.enemy);
                 if (isrockettype) {
                     self turretsettarget(0, self.enemy, self.enemy getvelocity() * 0.3 - vehicle_ai::gettargeteyeoffset(self.enemy) * 0.3);
@@ -717,7 +717,7 @@ function path_update_interrupt() {
     wait(1);
     while (true) {
         if (isdefined(self.current_pathto_pos)) {
-            if (distance2dsquared(self.current_pathto_pos, self.goalpos) > function_a3f6cdac(self.goalradius)) {
+            if (distance2dsquared(self.current_pathto_pos, self.goalpos) > sqr(self.goalradius)) {
                 wait(0.2);
                 self notify(#"near_goal");
             }
@@ -732,7 +732,7 @@ function path_update_interrupt() {
             } else if (self.enemy != old_enemy) {
                 self notify(#"near_goal");
             }
-            if (self cansee(self.enemy) && distance2dsquared(self.origin, self.enemy.origin) < function_a3f6cdac(250)) {
+            if (self cansee(self.enemy) && distance2dsquared(self.origin, self.enemy.origin) < sqr(250)) {
                 self notify(#"near_goal");
             }
         }
@@ -751,7 +751,7 @@ function wait_till_something_happens(timeout) {
     cant_see_count = 0;
     while (time > 0) {
         if (isdefined(self.current_pathto_pos)) {
-            if (distancesquared(self.current_pathto_pos, self.goalpos) > function_a3f6cdac(self.goalradius)) {
+            if (distancesquared(self.current_pathto_pos, self.goalpos) > sqr(self.goalradius)) {
                 break;
             }
         }
@@ -764,7 +764,7 @@ function wait_till_something_happens(timeout) {
             } else {
                 cant_see_count = 0;
             }
-            if (distance2dsquared(self.origin, self.enemy.origin) < function_a3f6cdac(250)) {
+            if (distance2dsquared(self.origin, self.enemy.origin) < sqr(250)) {
                 break;
             }
             goalheight = self.enemy.origin[2] + 0.5 * (self.settings.engagementheightmin + self.settings.engagementheightmax);
@@ -781,7 +781,7 @@ function wait_till_something_happens(timeout) {
             }
         }
         if (isdefined(self.leader) && isdefined(self.leader.current_pathto_pos)) {
-            if (distancesquared(self.origin, self.leader.current_pathto_pos) > function_a3f6cdac(165)) {
+            if (distancesquared(self.origin, self.leader.current_pathto_pos) > sqr(165)) {
                 break;
             }
         }
@@ -827,7 +827,7 @@ function update_leader() {
             if (guy == self) {
                 continue;
             }
-            if (distancesquared(self.origin, guy.origin) > function_a3f6cdac(700)) {
+            if (distancesquared(self.origin, guy.origin) > sqr(700)) {
                 continue;
             }
             if (!isdefined(guy.followers)) {
@@ -851,7 +851,7 @@ function should_fly_forward(distancetogoalsq) {
     if (self.always_face_enemy === 1) {
         return false;
     }
-    if (distancetogoalsq < function_a3f6cdac(250)) {
+    if (distancetogoalsq < sqr(250)) {
         return false;
     }
     if (isdefined(self.enemy)) {
@@ -862,7 +862,7 @@ function should_fly_forward(distancetogoalsq) {
             return false;
         }
     }
-    if (distancetogoalsq > function_a3f6cdac(400)) {
+    if (distancetogoalsq > sqr(400)) {
         return (randomint(100) > 25);
     }
     return randomint(100) > 50;
@@ -989,8 +989,8 @@ function state_combat_update(*params) {
         }
         if (isdefined(self.current_pathto_pos)) {
             distancetogoalsq = distancesquared(self.current_pathto_pos, self.origin);
-            if (!onnavvolume || distancetogoalsq > function_a3f6cdac(75)) {
-                if (distancetogoalsq > function_a3f6cdac(2000)) {
+            if (!onnavvolume || distancetogoalsq > sqr(75)) {
+                if (distancetogoalsq > sqr(2000)) {
                     self setspeed(self.settings.defaultmovespeed * 2);
                 }
                 if (self function_a57c34b7(self.current_pathto_pos, 1, usepathfinding)) {
@@ -1181,7 +1181,7 @@ function getnextmoveposition_tactical() {
             point.score = point.score + (120 - point.disttoorigin2d) * -1.5;
         }
         foreach (location in avoid_locations) {
-            if (distancesquared(point.origin, location) < function_a3f6cdac(avoid_radius)) {
+            if (distancesquared(point.origin, location) < sqr(avoid_radius)) {
                 /#
                     if (!isdefined(point._scoredebug)) {
                         point._scoredebug = [];

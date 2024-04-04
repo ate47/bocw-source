@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_5ef14bd74fdef7c6;
 #using scripts\zm_common\zm_utility.csc;
-#using script_311c446e3df6c3fa;
+#using scripts\zm_common\objective_manager.csc;
 #using script_5458797d0d475250;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\struct.csc;
@@ -17,7 +17,7 @@
 // Checksum 0x95139b51, Offset: 0x938
 // Size: 0x98c
 function init() {
-    clientfield::register("actor", "" + #"hash_4a5eb7837f9fd1ba", 1, 1, "counter", &function_7bb3107e, 0, 0);
+    clientfield::register("actor", "" + #"abom_swallow", 1, 1, "counter", &abom_swallow, 0, 0);
     clientfield::register("actor", "" + #"hash_11839f68b17da97a", 1, 1, "counter", &function_651b7e42, 0, 0);
     clientfield::register("actor", "" + #"hash_3b24d38fe21de8fd", 1, 1, "int", &function_18f73941, 0, 0);
     clientfield::register("actor", "" + #"hash_6f2c45f149dc1e5d", 1, 1, "counter", &function_87208d06, 0, 0);
@@ -74,10 +74,10 @@ function private function_347f52dd(localclientnum) {
             waitframe(1);
             continue;
         }
-        var_9b8a5ad2 = currentplayer clientfield::get_to_player("fogofwareffects");
-        if (var_ef2f4cec.var_e450444f !== var_9b8a5ad2) {
-            var_ef2f4cec function_d45dd62(localclientnum, var_9b8a5ad2, currentplayer);
-            var_ef2f4cec.var_e450444f = var_9b8a5ad2;
+        b_state = currentplayer clientfield::get_to_player("fogofwareffects");
+        if (var_ef2f4cec.var_e450444f !== b_state) {
+            var_ef2f4cec function_d45dd62(localclientnum, b_state, currentplayer);
+            var_ef2f4cec.var_e450444f = b_state;
         }
         waitframe(1);
     }
@@ -87,8 +87,8 @@ function private function_347f52dd(localclientnum) {
 // Params 3, eflags: 0x6 linked
 // Checksum 0xfbd21d83, Offset: 0x1400
 // Size: 0x196
-function private function_d45dd62(localclientnum, var_9b8a5ad2, currentplayer) {
-    if (var_9b8a5ad2 == 1) {
+function private function_d45dd62(localclientnum, b_state, currentplayer) {
+    if (b_state == 1) {
         if (!isdefined(currentplayer.var_103fdf58)) {
             playsound(localclientnum, #"hash_7b5289d48cc02d77", (0, 0, 0));
             currentplayer.var_103fdf58 = currentplayer playloopsound("evt_sr_phase_player_lp");
@@ -251,7 +251,7 @@ function function_bb8c1f5e(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x2 linked
 // Checksum 0x34d97860, Offset: 0x1e20
 // Size: 0xb4
-function function_7bb3107e(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function abom_swallow(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self setanim(#"aib_t9_zm_abom_swallow_crystal_01");
     wait(getanimlength("aib_t9_zm_abom_swallow_crystal_01"));
     if (isalive(self)) {
@@ -586,7 +586,7 @@ function function_e9a10998(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Checksum 0xf72f0559, Offset: 0x3268
 // Size: 0x1c0
 function function_38b121cf(newval) {
-    var_f1f2f161 = [15:"gfx_web_patch_em_gp_i06", 14:"gfx8_fog_slow_lg_anim_lit", 13:"gfx8_fog_slow_lg_anim_em_gp_i06_full_lite", 12:"gfx_lightning_cloud_em_gp_i06", 11:"gfx_lightning_beam_em_pb_i16", 10:"gfx9_elec_lightning_circle_energy_em_gp_i06", 9:"gfx8_smk_md_thick_scatter_anim_lit", 8:"gfx8_smk_md_thick_lobe_anim_lit", 7:"gfx9_fire_sm_base_anim_hdrg_exp_purple", 6:"gfx9_fire_md_lick_dissipate_anim_rof_hdrg", 5:"gfx9_fire_md_lick_deplete_anim_rof_hdrg", 4:"gfx9_fire_md_lick_dissipate_anim_purple_hdrg", 3:"gfx9_fire_md_lick_deplete_anim_purple_hdrg", 2:"gfx9_fire_sm_lick_short_curl_anim_hdrg_exp_purple", 1:"gfx8_shockwave_anim_em_gp_i06", 0:"gfx8_shockwave_elec_anim_em_pb_i16"];
+    var_f1f2f161 = ["gfx8_shockwave_elec_anim_em_pb_i16", "gfx8_shockwave_anim_em_gp_i06", "gfx9_fire_sm_lick_short_curl_anim_hdrg_exp_purple", "gfx9_fire_md_lick_deplete_anim_purple_hdrg", "gfx9_fire_md_lick_dissipate_anim_purple_hdrg", "gfx9_fire_md_lick_deplete_anim_rof_hdrg", "gfx9_fire_md_lick_dissipate_anim_rof_hdrg", "gfx9_fire_sm_base_anim_hdrg_exp_purple", "gfx8_smk_md_thick_lobe_anim_lit", "gfx8_smk_md_thick_scatter_anim_lit", "gfx9_elec_lightning_circle_energy_em_gp_i06", "gfx_lightning_beam_em_pb_i16", "gfx_lightning_cloud_em_gp_i06", "gfx8_fog_slow_lg_anim_em_gp_i06_full_lite", "gfx8_fog_slow_lg_anim_lit", "gfx_web_patch_em_gp_i06"];
     foreach (var_53edfe53 in var_f1f2f161) {
         if (newval) {
             forcestreammaterial(var_53edfe53);

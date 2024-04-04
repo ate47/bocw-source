@@ -23,7 +23,7 @@ function event_handler[level_init] main(*eventstruct) {
 // Checksum 0x1aac2ccc, Offset: 0x168
 // Size: 0x54
 function function_386821d6(*eventstruct) {
-    if (level.var_7d45d0d4.activeobjective.content_script_name === "holdout") {
+    if (level.contentmanager.activeobjective.content_script_name === "holdout") {
         clientfield::set("set_objective_fog", 2);
     }
 }

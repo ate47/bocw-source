@@ -12,14 +12,14 @@
 // Checksum 0xc682091b, Offset: 0xb8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"ai_interactables", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"ai_interactables", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace aiinteractables/ai_interactables
 // Params 0, eflags: 0x6 linked
 // Checksum 0xfbb6b468, Offset: 0x100
 // Size: 0x14c
-function private function_70a657d8() {
+function private preinit() {
     /#
         assert(isscriptfunctionptr(&function_64d25a18));
     #/
@@ -95,7 +95,7 @@ function private function_b4bc7751(entity) {
         var_54d06303 scene::play(entity);
         var_54d06303 notify(#"hash_4d2293524fe1c94c", {#ai_interactable:entity});
         if (isalive(entity)) {
-            entity notify(#"hash_4d2293524fe1c94c", {#var_c17a3b30:entity.node, #var_bad0e17c:var_54d06303});
+            entity notify(#"hash_4d2293524fe1c94c", {#var_bad0e17c:var_54d06303, #var_c17a3b30:entity.node});
         }
     }
 }

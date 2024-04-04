@@ -33,7 +33,7 @@ function init_shared(bundlename, var_b083dcd0) {
     clientfield::register("scriptmover", "" + #"hash_3d8e05debfa62f2d", 1, 1, "int");
     clientfield::register("missile", "" + #"hash_77346335cbe9ecde", 1, 1, "int");
     level.var_ea918548 = scene::get_all_shot_names(#"p9_fxanim_mp_napalm_strike_spin");
-    level.napalmstrike = {#var_2d3611fa:[], #var_9bac810c:[], #var_cf856437:[]};
+    level.napalmstrike = {#var_cf856437:[], #var_9bac810c:[], #affectedplayers:[]};
 }
 
 // Namespace napalm_strike/namespace_b00a727a
@@ -117,7 +117,7 @@ function function_88e2e18a(killstreaktype, location, team, killstreak_id, startd
             height = location.origin[2] + location.height;
         }
         trace = bullettrace(position + vectorscale((0, 0, 1), 10000), position - vectorscale((0, 0, 1), 10000), 0, undefined, 1);
-        targetpoint = trace[#"fraction"] > 1 ? trace[#"position"] : (position[0], position[1], 0);
+        targetpoint = trace[#"fraction"] > 1 ? (position[0], position[1], 0) : trace[#"position"];
         /#
             if (getdvarint(#"hash_2cb865fc68c3cb44", 0)) {
                 sphere(targetpoint, 20, (0, 1, 0), 1, 1, 10, 400);
@@ -126,9 +126,9 @@ function function_88e2e18a(killstreaktype, location, team, killstreak_id, startd
         if (!isdefined(height)) {
             if (sessionmodeiswarzonegame()) {
                 var_b0490eb9 = getheliheightlockheight(position);
-                var_6be9958b = targetpoint[2];
+                groundheight = targetpoint[2];
                 bundle = killstreaks::get_script_bundle(bundlename);
-                height = var_6be9958b + (var_b0490eb9 - var_6be9958b) * (isdefined(level.var_5915ecb1) ? level.var_5915ecb1 : bundle.var_ff73e08c);
+                height = groundheight + (var_b0490eb9 - groundheight) * (isdefined(level.var_5915ecb1) ? level.var_5915ecb1 : bundle.var_ff73e08c);
             } else {
                 height = killstreaks::function_43f4782d();
                 height = height + 3400 + randomfloatrange(-100, 100);
@@ -139,24 +139,24 @@ function function_88e2e18a(killstreaktype, location, team, killstreak_id, startd
     }
     killstreakbundle = killstreaks::get_script_bundle(bundlename);
     planeoffset = killstreakbundle.var_aadafb41 / 2;
-    var_81384d54 = getvehiclenodearray(var_e0d1e239, "targetname");
+    startnodes = getvehiclenodearray(var_e0d1e239, "targetname");
     /#
-        assert(var_81384d54.size, "<unknown string>");
+        assert(startnodes.size, "<unknown string>");
     #/
     pivot = struct::get("napalm_strike_pivot", "targetname");
-    foreach (index, startnode in var_81384d54) {
+    foreach (index, startnode in startnodes) {
         plane = spawnplane(startnode, self, killstreak_id, killstreakbundle, killstreaktype);
-        var_3892c0b0 = 0;
+        dosound = 0;
         if (index == 0) {
             plane clientfield::set("" + #"hash_3d8e05debfa62f2d", 1);
             if (isdefined(killstreak_id)) {
-                plane killstreakrules::function_2e6ff61a(bundlename, killstreak_id, {#team:team, #origin:position});
+                plane killstreakrules::function_2e6ff61a(bundlename, killstreak_id, {#origin:position, #team:team});
             }
             plane namespace_f9b02f80::play_pilot_dialog_on_owner("arrive", bundlename, killstreak_id);
             plane thread function_6f537b95(killstreak_id);
-            var_3892c0b0 = 1;
+            dosound = 1;
         }
-        self thread function_888e0e9f(killstreaktype, killstreak_id, plane, startnode, pivot, location, height, targetpoint, team, var_3892c0b0);
+        self thread function_888e0e9f(killstreaktype, killstreak_id, plane, startnode, pivot, location, height, targetpoint, team, dosound);
     }
     level thread function_e3bc95f2(killstreakbundle);
     location waittill(#"hash_33e766cf85525f6e", #"hash_dce0602346144a3");
@@ -180,12 +180,12 @@ function private spawnplane(startnode, owner, killstreak_id, killstreakbundle, k
     bundlename = sessionmodeiszombiesgame() ? "napalm_strike_zm" : "napalm_strike";
     startposition = startnode.origin;
     angles = startnode.angles;
-    var_94162b64 = spawnvehicle("fake_vehicle", startposition, angles);
+    fakevehicle = spawnvehicle("fake_vehicle", startposition, angles);
     plane = spawn("script_model", startposition);
     plane function_a7d56780(killstreakbundle);
-    plane.var_94162b64 = var_94162b64;
+    plane.fakevehicle = fakevehicle;
     plane.angles = angles;
-    plane linkto(var_94162b64);
+    plane linkto(fakevehicle);
     plane.weapon = getweapon(bundlename);
     plane setweapon(plane.weapon);
     plane setowner(owner);
@@ -198,7 +198,7 @@ function private spawnplane(startnode, owner, killstreak_id, killstreakbundle, k
     plane playsound(#"hash_77c59806b7c6a576");
     plane setmodel(#"hash_8cd82152094d2a0");
     plane setforcenocull();
-    var_94162b64 setforcenocull();
+    fakevehicle setforcenocull();
     /#
         if (getdvarint(#"hash_7c99a42d0ce68a43", 0)) {
             plane setmodel(#"hash_73996bebb80b8515");
@@ -242,21 +242,21 @@ function cleanup(killstreaktype, plane, killstreak_id, team, owner, location) {
 // Params 10, eflags: 0x6 linked
 // Checksum 0x11ac7a49, Offset: 0x12d8
 // Size: 0x10c
-function private function_888e0e9f(killstreaktype, killstreak_id, plane, startnode, pivot, location, height, targetpoint, team, var_3892c0b0) {
-    var_94162b64 = plane.var_94162b64;
-    var_94162b64 thread cleanup(killstreaktype, plane, killstreak_id, team, self, location);
+function private function_888e0e9f(killstreaktype, killstreak_id, plane, startnode, pivot, location, height, targetpoint, team, dosound) {
+    fakevehicle = plane.fakevehicle;
+    fakevehicle thread cleanup(killstreaktype, plane, killstreak_id, team, self, location);
     if (!is_true(level.var_dfdeb3ed)) {
-        var_94162b64 vehicle::function_bb9b43a9(startnode, pivot.origin, pivot.angles, location, height);
+        fakevehicle vehicle::function_bb9b43a9(startnode, pivot.origin, pivot.angles, location, height);
     }
-    var_94162b64 thread vehicle::get_on_and_go_path(startnode);
-    var_94162b64 function_c248485(plane, targetpoint, team, self, var_3892c0b0, location);
+    fakevehicle thread vehicle::get_on_and_go_path(startnode);
+    fakevehicle function_c248485(plane, targetpoint, team, self, dosound, location);
 }
 
 // Namespace napalm_strike/namespace_b00a727a
 // Params 6, eflags: 0x6 linked
 // Checksum 0xc6c6384a, Offset: 0x13f0
 // Size: 0x398
-function private function_c248485(plane, targetpoint, team, owner, var_3892c0b0 = 0, location) {
+function private function_c248485(plane, targetpoint, team, owner, dosound = 0, location) {
     self endon(#"death");
     bundlename = sessionmodeiszombiesgame() ? "napalm_strike_zm" : "napalm_strike";
     killstreakbundle = killstreaks::get_script_bundle(bundlename);
@@ -270,7 +270,7 @@ function private function_c248485(plane, targetpoint, team, owner, var_3892c0b0 
     }
     plane clientfield::set("" + #"hash_72f92383f772d276", 1);
     self waittill(#"drop_bombs");
-    if (var_3892c0b0) {
+    if (dosound) {
         plane playsound(#"hash_699143303b7cad0f");
     }
     var_1d6434c4 = 1;
@@ -290,7 +290,7 @@ function private function_c248485(plane, targetpoint, team, owner, var_3892c0b0 
             }
             continue;
         }
-        if (var_3892c0b0 && i == killstreakbundle.var_2df25e4a / 2) {
+        if (dosound && i == killstreakbundle.var_2df25e4a / 2) {
             playsoundatposition(#"hash_18c79f680760b8c8", targetpoint);
         }
         var_1d6434c4 = var_1d6434c4 - killstreakbundle.var_4bb1a46b;
@@ -308,12 +308,12 @@ function private function_c4cbfac7(plane, team, killstreakbundle, var_8be94730, 
     forwardspeed = bombspeedscale * 4800 * var_1d6434c4;
     angles = (0, plane.angles[1], 0);
     forward = anglestoforward(angles);
-    var_12bba076 = vectorscale(forward, forwardspeed) + (0, 0, killstreakbundle.var_b938e27c * -1 * var_c3aa02d8);
+    bombvelocity = vectorscale(forward, forwardspeed) + (0, 0, killstreakbundle.var_b938e27c * -1 * var_c3aa02d8);
     startposition = plane.origin + vectorscale((0, 0, -1), 40) + var_8be94730;
     weapon = getweapon("napalm_strike");
-    bomb = self magicmissile(weapon, startposition, var_12bba076);
+    bomb = self magicmissile(weapon, startposition, bombvelocity);
     if (!isdefined(bomb)) {
-        var_5496c504 function_cb48cddd();
+        var_5496c504 deletedelay();
         return;
     }
     bomb thread function_4947d695();
@@ -336,10 +336,10 @@ function private function_c4cbfac7(plane, team, killstreakbundle, var_8be94730, 
     killcament unlink();
     killcament linkto(bomb);
     result = undefined;
-    result = bomb waittill(#"projectile_impact_explode", #"hash_29b88049dcac8bb3");
+    result = bomb waittill(#"projectile_impact_explode", #"entitydeleted");
     location notify(#"hash_33e766cf85525f6e");
     if (isdefined(var_5496c504)) {
-        var_5496c504 function_cb48cddd();
+        var_5496c504 deletedelay();
     }
     if (isdefined(bomb)) {
         bomb scene::stop(#"p9_fxanim_mp_napalm_strike_spin");
@@ -372,9 +372,9 @@ function function_a7d56780(killstreakbundle) {
     bundlename = sessionmodeiszombiesgame() ? "napalm_strike_zm" : "napalm_strike";
     self.var_1bb01d48 = [];
     var_7ab8be7d = (self.angles[0] + 30, self.angles[1], self.angles[2]);
-    var_f61b5e7d = anglestoforward(var_7ab8be7d);
+    killcamforward = anglestoforward(var_7ab8be7d);
     for (i = 0; i < killstreakbundle.var_2df25e4a; i++) {
-        killcament = spawn("script_model", self.origin + vectorscale(var_f61b5e7d, -1500));
+        killcament = spawn("script_model", self.origin + vectorscale(killcamforward, -1500));
         killcament setweapon(getweapon(bundlename));
         killcament util::deleteaftertime(killstreakbundle.var_b5f47b94 + 10);
         killcament.starttime = gettime();
@@ -464,14 +464,14 @@ function function_985141f2(owner, startpos, normal, direction, killcament, team,
     }
     var_54715763 = getweapon(#"hash_72c14c150086340c");
     var_b366de9c = getweapon(#"hash_78a35da92bd92644");
-    var_51589eb4 = killstreakbundle.var_b5f47b94;
+    fireduration = killstreakbundle.var_b5f47b94;
     firesound = spawn("script_origin", startpos);
     firesound playloopsound(#"hash_8e00d255f2085d5");
     killcament unlink();
     var_ab1069fa = startpos + vectorscale(anglestoforward(killcament.angles), -500);
     killcament moveto(var_ab1069fa, 4, 0, 1);
-    level thread function_660d94c3(firesound, killcament, var_51589eb4);
-    damageendtime = int(gettime() + var_51589eb4 * 1000);
+    level thread function_660d94c3(firesound, killcament, fireduration);
+    damageendtime = int(gettime() + fireduration * 1000);
     var_b1dd2ca0 = getarraykeys(locations[#"loc"]);
     foreach (lockey in var_b1dd2ca0) {
         position = locations[#"loc"][lockey];
@@ -484,16 +484,16 @@ function function_985141f2(owner, startpos, normal, direction, killcament, team,
         } else {
             var_8866515 = direction;
         }
-        var_d1bb98ed = position + vectorscale(fxnormal, 10);
-        var_acf59456 = {#team:team, #owner:owner, #killcament:killcament, #var_d1bb98ed:var_d1bb98ed, #damageendtime:damageendtime};
+        damageposition = position + vectorscale(fxnormal, 10);
+        var_acf59456 = {#damageendtime:damageendtime, #damageposition:damageposition, #killcament:killcament, #owner:owner, #team:team};
         level.napalmstrike.var_9bac810c[level.napalmstrike.var_9bac810c.size] = var_acf59456;
         /#
             if (getdvarint(#"hash_2cb865fc68c3cb44", 0)) {
-                sphere(var_d1bb98ed, 70, (1, 0, 0), 0.3, 1, 10, 200);
+                sphere(damageposition, 70, (1, 0, 0), 0.3, 1, 10, 200);
             }
         #/
         weapon = locations[#"surfacetype"][lockey] == "water" ? var_b366de9c : var_54715763;
-        spawntimedfx(weapon, position, var_8866515, var_51589eb4, team, 0);
+        spawntimedfx(weapon, position, var_8866515, fireduration, team, 0);
         wait(0.25);
     }
 }
@@ -502,8 +502,8 @@ function function_985141f2(owner, startpos, normal, direction, killcament, team,
 // Params 3, eflags: 0x6 linked
 // Checksum 0xb1aae378, Offset: 0x2850
 // Size: 0x84
-function private function_660d94c3(firesound, killcament, var_51589eb4) {
-    level waittilltimeout(var_51589eb4, #"game_ended");
+function private function_660d94c3(firesound, killcament, fireduration) {
+    level waittilltimeout(fireduration, #"game_ended");
     firesound thread stopfiresound();
     if (isdefined(killcament)) {
         killcament delete();
@@ -555,10 +555,10 @@ function private isunderwater(position) {
 // Checksum 0xfed4828a, Offset: 0x2a78
 // Size: 0x626
 function private function_e3bc95f2(killstreakbundle) {
-    if (is_true(level.napalmstrike.var_f6509520)) {
+    if (is_true(level.napalmstrike.damagewatcher)) {
         return;
     }
-    level.napalmstrike.var_f6509520 = 1;
+    level.napalmstrike.damagewatcher = 1;
     level endon(#"game_ended");
     var_e9c2375d = killstreakbundle.var_95280bcc;
     var_4122ca21 = 0;
@@ -567,7 +567,7 @@ function private function_e3bc95f2(killstreakbundle) {
         var_e5a58a70 = [];
         var_d98685bf = [];
         foreach (var_93057333 in level.napalmstrike.var_9bac810c) {
-            position = var_93057333.var_d1bb98ed;
+            position = var_93057333.damageposition;
             playertargets = level getpotentialtargets(var_93057333, var_e9c2375d);
             foreach (player in playertargets) {
                 trace = bullettrace(position, player getshootatpos(), 0, player);
@@ -593,21 +593,21 @@ function private function_e3bc95f2(killstreakbundle) {
         foreach (entity in var_d98685bf) {
             entity thread function_2f66cd96(var_93057333, var_54715763, killstreakbundle);
         }
-        foreach (entitynumber, player in level.napalmstrike.var_2d3611fa) {
+        foreach (entitynumber, player in level.napalmstrike.affectedplayers) {
             if (!isdefined(var_e5a58a70[entitynumber])) {
                 player function_1db9aa5e();
             }
         }
-        level.napalmstrike.var_2d3611fa = var_e5a58a70;
+        level.napalmstrike.affectedplayers = var_e5a58a70;
         wait(killstreakbundle.var_f5f02f46);
         var_4122ca21 = var_4122ca21 - killstreakbundle.var_f5f02f46;
         level function_f712ec5e();
     }
-    foreach (player in level.napalmstrike.var_2d3611fa) {
+    foreach (player in level.napalmstrike.affectedplayers) {
         player function_1db9aa5e();
     }
-    level.napalmstrike.var_f6509520 = undefined;
-    level.napalmstrike.var_2d3611fa = [];
+    level.napalmstrike.damagewatcher = undefined;
+    level.napalmstrike.affectedplayers = [];
 }
 
 // Namespace napalm_strike/namespace_b00a727a
@@ -637,7 +637,7 @@ function private stopfiresound() {
 // Checksum 0xb5580aee, Offset: 0x3160
 // Size: 0x230
 function private getpotentialtargets(var_93057333, var_e9c2375d) {
-    position = var_93057333.var_d1bb98ed;
+    position = var_93057333.damageposition;
     if (level.friendlyfire) {
         players = function_a1ef346b(undefined, position, var_e9c2375d);
     } else {
@@ -669,7 +669,7 @@ function function_4cf0607d(var_93057333, weapon, killstreakbundle) {
     if (candofiredamage(self, killstreakbundle.var_f5f02f46)) {
         params = getstatuseffect("dot_napalm_strike");
         params.killcament = var_93057333.killcament;
-        self status_effect::status_effect_apply(params, weapon, var_93057333.owner, 0, undefined, undefined, var_93057333.var_d1bb98ed);
+        self status_effect::status_effect_apply(params, weapon, var_93057333.owner, 0, undefined, undefined, var_93057333.damageposition);
         self thread sndfiredamage();
     }
 }

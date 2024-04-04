@@ -140,8 +140,8 @@ function is_falling(position) {
 function function_33141024(vdir, tweentime, var_c69fe125, var_eebc8ec0, var_3cbc1198, var_d7e15204, var_f2499291, var_dda415f2, lookdir, var_a571008b, var_eea7b52e) {
     self endon(#"disconnect", #"hash_eb0317ca3976bf9");
     epsilon = getdvarint(#"hash_7dce5a6d3fbfa376", 2);
-    var_5458e746 = self getplayercamerapos();
-    position = var_5458e746;
+    original_position = self getplayercamerapos();
+    position = original_position;
     angles = self getplayerangles();
     angles = (0, absangleclamp360(angles[1]), absangleclamp360(angles[2]));
     forwarddir = anglestoforward(angles);
@@ -186,7 +186,7 @@ function function_33141024(vdir, tweentime, var_c69fe125, var_eebc8ec0, var_3cbc
         if (!is_true(var_8abc8992)) {
             var_a2384064 = vectorscale(forwardvec, var_3cbc1198);
             var_fdb8844a = length(var_a2384064);
-            var_5b945107 = position - var_5458e746;
+            var_5b945107 = position - original_position;
             var_c028b81a = length((var_5b945107[0], var_5b945107[1], 0));
             if (var_c028b81a + var_fdb8844a >= var_c69fe125) {
                 var_fdb8844a = var_c69fe125 - var_c028b81a;
@@ -202,7 +202,7 @@ function function_33141024(vdir, tweentime, var_c69fe125, var_eebc8ec0, var_3cbc
         }
         if (!is_true(var_39a26763)) {
             var_35187b11 = var_d7e15204;
-            var_d8ef58d1 = abs(var_5458e746[2] - position[2]);
+            var_d8ef58d1 = abs(original_position[2] - position[2]);
             if (var_d8ef58d1 + var_35187b11 >= var_eebc8ec0) {
                 var_35187b11 = var_eebc8ec0 - var_d8ef58d1;
                 var_39a26763 = 1;
@@ -216,8 +216,8 @@ function function_33141024(vdir, tweentime, var_c69fe125, var_eebc8ec0, var_3cbc
             var_39a26763 = 1;
         }
     }
-    if (!function_b7f367ed(var_5458e746, position)) {
-        position = function_26d91402(var_5458e746, position);
+    if (!function_b7f367ed(original_position, position)) {
+        position = function_26d91402(original_position, position);
     }
     self cameraactivate(1);
     is_falling = is_falling(position);
@@ -232,7 +232,7 @@ function function_33141024(vdir, tweentime, var_c69fe125, var_eebc8ec0, var_3cbc
     }
     if (is_true(is_falling)) {
         player_speed = self getvelocity()[2];
-        var_eb5d6347 = length(position - var_5458e746);
+        var_eb5d6347 = length(position - original_position);
         var_40fa243f = var_eb5d6347 * tweentime;
         player_speed = max(player_speed, var_40fa243f);
         var_63bee101 = getdvarint(#"hash_382786cbe040485d", -2000);

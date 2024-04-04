@@ -11,14 +11,14 @@
 // Checksum 0x3540b209, Offset: 0xb8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"killcam", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"killcam", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace killcam/killcam_shared
 // Params 0, eflags: 0x4
 // Checksum 0x55891fcd, Offset: 0x100
 // Size: 0xcc
-function private function_70a657d8() {
+function private preinit() {
     if (sessionmodeiszombiesgame()) {
         return;
     }
@@ -89,8 +89,8 @@ function on_killcam_begin(params) {
         return;
     }
     number = player getentitynumber();
-    var_4163ae0d = getentbynum(params.localclientnum, number);
-    if (var_4163ae0d !== player) {
+    test_player = getentbynum(params.localclientnum, number);
+    if (test_player !== player) {
         return;
     }
     player function_2362a697(params.localclientnum, params.bundle);

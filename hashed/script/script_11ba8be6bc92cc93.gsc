@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_31816d064a53f516;
+#using scripts\core_common\ai\zombie_eye_glow.csc;
 #using scripts\core_common\clientfield_shared.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\footsteps_shared.csc;
@@ -102,7 +102,7 @@ function private function_39053880(localclientnum, *oldval, newval, *bnewent, *b
 function private function_f4b140ab(localclientnum, pos, *surface, *notetrack, *bone) {
     e_player = function_5c10bd79(notetrack);
     n_dist = distancesquared(bone, e_player.origin);
-    var_107019dc = function_a3f6cdac(1000);
+    var_107019dc = sqr(1000);
     n_scale = (var_107019dc - n_dist) / var_107019dc;
     n_scale = n_scale * 0.25;
     if (n_scale <= 0.01) {
@@ -127,7 +127,7 @@ function private function_f4b140ab(localclientnum, pos, *surface, *notetrack, *b
 function private function_e980911c(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     e_player = function_5c10bd79(bwastimejump);
     n_dist = distancesquared(self.origin, e_player.origin);
-    var_107019dc = function_a3f6cdac(500);
+    var_107019dc = sqr(500);
     n_scale = (var_107019dc - n_dist) / var_107019dc;
     n_scale = min(n_scale, 0.75);
     if (n_scale <= 0.01) {

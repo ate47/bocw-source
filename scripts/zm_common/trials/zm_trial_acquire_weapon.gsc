@@ -15,14 +15,14 @@
 // Checksum 0xdfd3f78f, Offset: 0x170
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_acquire_weapon", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_acquire_weapon", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_acquire_weapon/zm_trial_acquire_weapon
 // Params 0, eflags: 0x4
 // Checksum 0xf227a237, Offset: 0x1b8
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

@@ -1,8 +1,8 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_28e27ee9b45fd02d;
-#using script_31671175564a93b7;
+#using scripts\cp_common\snd_utility.csc;
 #using script_1cd690a97dfca36e;
-#using script_3318f11e3a1b2358;
+#using scripts\cp_common\snd.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\system_shared.csc;
 #using scripts\core_common\struct.csc;
@@ -21,14 +21,14 @@
 // Checksum 0xbfa6031f, Offset: 0x2c0
 // Size: 0x34
 function private autoexec __init__system__() {
-    system::register("spy_camera", &function_70a657d8, undefined, undefined, undefined);
+    system::register("spy_camera", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace spy_camera/spy_camera
 // Params 0, eflags: 0x6 linked
 // Checksum 0x864809f4, Offset: 0x300
 // Size: 0x31c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "spy_camera_state", 1, 2, "int", &function_6e0dbd75, 1, 0);
     clientfield::register("toplayer", "binoculars_overlay", 1, 1, "int", &binoculars_overlay, 1, 0);
     clientfield::register("toplayer", "spy_camera_tagging", 1, 1, "int", &function_f31f3835, 1, 0);
@@ -203,7 +203,7 @@ function private function_6e0dbd75(localclientnum, oldval, newval, *bnewent, *bi
                 function_ed62c9c2("cp_binoculars_ads", 0.2);
             }
         }
-        self notify(#"hash_2b753d505c6182c", {#var_600ff81f:0});
+        self notify(#"camera_zoom", {#pct:0});
         break;
     }
 }
@@ -259,7 +259,7 @@ function private function_38401b6f(localclientnum) {
         function_5ac4dc99("<unknown string>", 0);
     #/
     waitframe(1);
-    self namespace_ca99987f::function_136edb11(undefined, 3.5, var_33a13023, #"hash_2de1684e2167ada4", 1, 0);
+    self easing::function_136edb11(undefined, 3.5, var_33a13023, #"hash_2de1684e2167ada4", 1, 0);
     while (true) {
         var_546112ef = self util::function_ca4b4e19(localclientnum, 0)[#"move"];
         var_8c180cda = lerpfloat(var_8c180cda, util::function_b5338ccb(var_546112ef[1], var_b4e0311b), 0.25);
@@ -270,8 +270,8 @@ function private function_38401b6f(localclientnum) {
             } else if (var_73024e3b > 1) {
                 var_73024e3b = 1;
             }
-            self notify(#"hash_2b753d505c6182c", {#var_600ff81f:var_73024e3b});
-            var_cbcfc238 = namespace_ca99987f::function_237ad8ca(14.64, 200, var_73024e3b, 1, 1);
+            self notify(#"camera_zoom", {#pct:var_73024e3b});
+            var_cbcfc238 = easing::ease_cubic(14.64, 200, var_73024e3b, 1, 1);
             self function_49cdf043(var_cbcfc238, 0);
             level.var_14094ff8.var_e78c4b55 = var_cbcfc238;
             if (!var_c846ce25 && abs(var_546112ef[1]) > 0) {
@@ -344,7 +344,7 @@ function private function_38401b6f(localclientnum) {
             var_36df6119 = isdefined(var_33a13023) ? var_33a13023 : var_b0ea9e6d;
             var_58cb5a30 = self getclienttime() + int(var_36df6119 * 1000);
             var_e17c45e2 = var_de79cd4c;
-            self namespace_ca99987f::function_b6f1c993(undefined, var_e17c45e2, var_36df6119, #"back", 0, 1, undefined, var_cdcfe8fe);
+            self easing::function_b6f1c993(undefined, var_e17c45e2, var_36df6119, #"back", 0, 1, undefined, var_cdcfe8fe);
             var_33a13023 = undefined;
         }
         if (!level.var_14094ff8.var_c5c03b2) {
@@ -394,7 +394,7 @@ function private function_48d47618(localclientnum, ent, eye_pos, var_753686d6, v
         var_3300333c = distance(target_pos, eye_pos);
         /#
             if (level.var_f234c5a2[#"hash_3e3f17ce43aad14c"] != 0) {
-                print3d(target_pos + vectorscale((0, 0, 1), 12), "<unknown string>" + int(var_3300333c) + "<unknown string>" + int(var_753686d6), (1, 1, 1), undefined, 0.25, isdefined(var_ff9d26ff) ? 500 : undefined, 1);
+                print3d(target_pos + vectorscale((0, 0, 1), 12), "<unknown string>" + int(var_3300333c) + "<unknown string>" + int(var_753686d6), (1, 1, 1), undefined, 0.25, isdefined(var_ff9d26ff) ? undefined : 500, 1);
             }
         #/
         if (var_3300333c > var_753686d6) {
@@ -444,8 +444,8 @@ function private function_a259ab2b(localclientnum) {
     var_de79cd4c = self function_78bf7752();
     fov = self function_9169401e();
     var_753686d6 = function_b0af17c8(fov);
-    var_1e8c12 = namespace_ca99987f::function_492ef475(100, 500, math::clamp(fov / 64, 0, 1), 0, 1, 1.75);
-    var_1456edd4 = namespace_ca99987f::function_492ef475(100, 500, math::clamp(fov / 64, 0, 1), 1, 0, 1.75);
+    var_1e8c12 = easing::ease_power(100, 500, math::clamp(fov / 64, 0, 1), 0, 1, 1.75);
+    var_1456edd4 = easing::ease_power(100, 500, math::clamp(fov / 64, 0, 1), 1, 0, 1.75);
     foreach (target in targets) {
         if (!isdefined(target) || is_true(target.var_696ee14a) || is_true(target.var_7b755cc0) || target.team === #"allies") {
             continue;
@@ -487,8 +487,8 @@ function private function_c6c2696d(localclientnum) {
     var_de79cd4c = self function_78bf7752();
     fov = self function_9169401e();
     var_753686d6 = function_b0af17c8(fov);
-    var_1e8c12 = namespace_ca99987f::function_492ef475(100, 500, math::clamp(fov / 64, 0, 1), 0, 1, 1.75);
-    var_1456edd4 = namespace_ca99987f::function_492ef475(100, 500, math::clamp(fov / 64, 0, 1), 1, 0, 1.75);
+    var_1e8c12 = easing::ease_power(100, 500, math::clamp(fov / 64, 0, 1), 0, 1, 1.75);
+    var_1456edd4 = easing::ease_power(100, 500, math::clamp(fov / 64, 0, 1), 1, 0, 1.75);
     foreach (var_487cc792 in var_be065286) {
         if (!isdefined(var_487cc792)) {
             continue;

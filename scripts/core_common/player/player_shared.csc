@@ -13,14 +13,14 @@
 // Checksum 0xca2c6911, Offset: 0x148
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"player", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"player", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace player/player_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb51dd468, Offset: 0x190
 // Size: 0x16c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("world", "gameplay_started", 1, 1, "int", &gameplay_started_callback, 0, 1);
     clientfield::register("toplayer", "gameplay_allows_deploy", 1, 1, "int", undefined, 0, 0);
     clientfield::register("toplayer", "player_dof_settings", 1, 2, "int", &function_f9e445ee, 0, 0);

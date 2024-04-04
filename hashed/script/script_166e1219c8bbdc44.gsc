@@ -14,14 +14,14 @@
 // Checksum 0xad6a3d72, Offset: 0x3a8
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_36cdf1547e49b57a", &function_70a657d8, &postinit, undefined, "zm_weapons");
+    system::register(#"hash_36cdf1547e49b57a", &preinit, &postinit, undefined, "zm_weapons");
 }
 
 // Namespace namespace_b376a999/namespace_b376a999
 // Params 0, eflags: 0x6 linked
 // Checksum 0xfd9c3507, Offset: 0x400
 // Size: 0x68c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "" + #"hash_77e641a4db48ad0f", 1, 2, "int", &function_8964c489, 0, 0);
     clientfield::register("allplayers", "" + #"hash_492f4817c4296ddf", 1, 1, "counter", &function_4df1985a, 0, 0);
     clientfield::register("allplayers", "" + #"hash_89386ef1bb99cdf", 1, 2, "int", &function_4264d325, 0, 0);
@@ -88,7 +88,7 @@ function function_8964c489(*localclientnum, *oldval, newval, *bnewent, *binitial
         self function_f6e99a8d(self.var_12b59dee, "j_head");
         self.var_12b59dee = undefined;
     }
-    var_a04a4858 = [2:#"hash_7417f2cd52314463", 1:#"hash_726534103985846c", 0:#"hash_16d59f099e418f4f"];
+    var_a04a4858 = [#"hash_16d59f099e418f4f", #"hash_726534103985846c", #"hash_7417f2cd52314463"];
     if (bwastimejump && bwastimejump < var_a04a4858.size + 1) {
         self.var_da783696 = var_a04a4858[bwastimejump - 1];
         self playrenderoverridebundle(self.var_da783696);
@@ -233,10 +233,10 @@ function function_ba2d251(localclientnum, target, val) {
     fxname = "";
     switch (val) {
     case 1:
-        fxname = distance > 200 ? #"hash_16c7c4d7f14d97a3" : #"hash_4b01f025eb7e47d8";
+        fxname = distance > 200 ? #"hash_4b01f025eb7e47d8" : #"hash_16c7c4d7f14d97a3";
         break;
     case 2:
-        fxname = distance > 200 ? #"hash_4381a516acca3cfa" : #"hash_402f9042dc87f055";
+        fxname = distance > 200 ? #"hash_402f9042dc87f055" : #"hash_4381a516acca3cfa";
         break;
     case 3:
         fxname = #"hash_794f3c866e2f2c33";
@@ -251,9 +251,9 @@ function function_ba2d251(localclientnum, target, val) {
         return;
     }
     self.var_2516545b = util::playfxontag(localclientnum, fxname, self, "tag_orgin");
-    var_28cfe78d = vectornormalize(target_pos - self.origin);
-    self.angles = vectortoangles(var_28cfe78d);
-    var_423ce21a = perpendicularvector(var_28cfe78d);
+    target_dir = vectornormalize(target_pos - self.origin);
+    self.angles = vectortoangles(target_dir);
+    plane_vec = perpendicularvector(target_dir);
     rotation = randomint(360);
     var_7e699c66 = 0.8;
     var_69c56b33 = 1.8;
@@ -263,16 +263,16 @@ function function_ba2d251(localclientnum, target, val) {
         var_69c56b33 = getdvarfloat(#"hash_23bfbcbc77bc48db", 1.8);
         max_speed = getdvarfloat(#"hash_759d15e761e768c", 18);
     #/
-    var_acaba29 = randomfloat(var_7e699c66) * distance / 20;
-    var_68829445 = rotatepointaroundaxis(var_423ce21a, var_28cfe78d, rotation);
+    start_speed = randomfloat(var_7e699c66) * distance / 20;
+    start_dir = rotatepointaroundaxis(plane_vec, target_dir, rotation);
     var_d785526d = 0;
-    var_4f217ff7 = var_acaba29;
+    var_4f217ff7 = start_speed;
     var_725ea2c9 = var_69c56b33;
-    var_a6c0e687 = var_4f217ff7 < 0.0001 ? 2 * var_4f217ff7 / sqrt(2 * distance / var_725ea2c9) : 0;
+    var_a6c0e687 = var_4f217ff7 < 0.0001 ? 0 : 2 * var_4f217ff7 / sqrt(2 * distance / var_725ea2c9);
     while (distance > 8) {
-        var_a33ad5d8 = var_28cfe78d * var_d785526d + var_68829445 * var_4f217ff7;
-        if (length(var_a33ad5d8) < distance) {
-            self moveto(self.origin + var_a33ad5d8, 0.016);
+        move_vec = target_dir * var_d785526d + start_dir * var_4f217ff7;
+        if (length(move_vec) < distance) {
+            self moveto(self.origin + move_vec, 0.016);
         } else {
             self.origin = target_pos;
         }
@@ -289,9 +289,9 @@ function function_ba2d251(localclientnum, target, val) {
             break;
         }
         distance = distance(self.origin, target_pos);
-        var_28cfe78d = vectornormalize(target_pos - self.origin);
-        var_4f217ff7 = var_4f217ff7 < 0 ? var_4f217ff7 - var_a6c0e687 : 0;
-        var_d785526d = var_d785526d > max_speed ? var_d785526d + var_725ea2c9 : max_speed;
+        target_dir = vectornormalize(target_pos - self.origin);
+        var_4f217ff7 = var_4f217ff7 < 0 ? 0 : var_4f217ff7 - var_a6c0e687;
+        var_d785526d = var_d785526d > max_speed ? max_speed : var_d785526d + var_725ea2c9;
     }
     if (isdefined(self.var_2516545b)) {
         stopfx(localclientnum, self.var_2516545b);

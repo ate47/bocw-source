@@ -13,14 +13,14 @@
 // Checksum 0x63e7100e, Offset: 0xb0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_attachments", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_attachments", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_attachments/zm_attachments
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdcecf52a, Offset: 0xf8
 // Size: 0xbc
-function private function_70a657d8() {
+function private preinit() {
     namespace_9ff9f642::register_burn(#"hash_72a155025f3da562", 100, 3);
     namespace_9ff9f642::register_slowdown(#"hash_1c9af7bb427952d", 0.85, 1);
     namespace_9ff9f642::register_slowdown(#"hash_1d07249a2211a81d", 0.9, 1);
@@ -40,7 +40,7 @@ function function_9f8d8c38() {
         case #"special":
             var_3e5502b5 = #"hash_1d07249a2211a81d";
             break;
-        case #"hash_72d4f2ad2e333eb4":
+        case #"elite":
             var_3e5502b5 = #"hash_721bfbe781c0d680";
             break;
         }

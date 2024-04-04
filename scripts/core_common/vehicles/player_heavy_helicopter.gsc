@@ -12,14 +12,14 @@
 // Checksum 0x455710df, Offset: 0x120
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"player_heavy_helicopter", &function_70a657d8, undefined, undefined, #"player_vehicle");
+    system::register(#"player_heavy_helicopter", &preinit, undefined, undefined, #"player_vehicle");
 }
 
 // Namespace player_heavy_helicopter/player_heavy_helicopter
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc2876fe, Offset: 0x170
 // Size: 0x11c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "hind_gunner_postfx_active", 1, 1, "int");
     clientfield::register("vehicle", "hind_compass_icon", 1, 2, "int");
     vehicle::add_main_callback("helicopter_heavy", &function_8220feb0);
@@ -46,9 +46,9 @@ function function_8f37f11(params) {
     self endon(#"death");
     if (isalive(self)) {
         if (isdefined(params.player)) {
-            var_d12aad97 = params.eventstruct.seat_index;
-            if (namespace_c8fb02a7::function_9ffa5fd(undefined, var_d12aad97)) {
-                self function_6ffe1aa7(params.player, undefined, var_d12aad97);
+            enter_seat = params.eventstruct.seat_index;
+            if (namespace_c8fb02a7::function_9ffa5fd(undefined, enter_seat)) {
+                self function_6ffe1aa7(params.player, undefined, enter_seat);
             }
         }
         self thread function_912f52a1();
@@ -72,10 +72,10 @@ function change_seat(params) {
     self endon(#"death");
     if (isalive(self)) {
         if (isdefined(params.player)) {
-            var_d12aad97 = params.eventstruct.seat_index;
-            var_99e74d83 = params.eventstruct.old_seat_index;
-            if (namespace_c8fb02a7::function_9ffa5fd(var_99e74d83, var_d12aad97)) {
-                self function_6ffe1aa7(params.player, var_99e74d83, var_d12aad97);
+            enter_seat = params.eventstruct.seat_index;
+            exit_seat = params.eventstruct.old_seat_index;
+            if (namespace_c8fb02a7::function_9ffa5fd(exit_seat, enter_seat)) {
+                self function_6ffe1aa7(params.player, exit_seat, enter_seat);
             }
         }
         self thread function_912f52a1();

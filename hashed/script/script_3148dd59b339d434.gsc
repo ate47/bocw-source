@@ -3,21 +3,21 @@
 #using scripts\core_common\math_shared.gsc;
 #using scripts\core_common\system_shared.gsc;
 
-#namespace namespace_ac0c0ba8;
+#namespace zombie_horde;
 
-// Namespace namespace_ac0c0ba8/namespace_ac0c0ba8
+// Namespace zombie_horde/zombie_horde
 // Params 0, eflags: 0x5
 // Checksum 0x5a8d9f84, Offset: 0x108
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_770956d673fdbba2", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zombie_horde", &preinit, undefined, undefined, undefined);
 }
 
-// Namespace namespace_ac0c0ba8/namespace_ac0c0ba8
+// Namespace zombie_horde/zombie_horde
 // Params 0, eflags: 0x6 linked
 // Checksum 0x4f8f969a, Offset: 0x150
 // Size: 0x3c
-function private function_70a657d8() {
+function private preinit() {
     level.var_e051b3bc = [];
     thread think();
     /#
@@ -25,7 +25,7 @@ function private function_70a657d8() {
     #/
 }
 
-// Namespace namespace_ac0c0ba8/namespace_ac0c0ba8
+// Namespace zombie_horde/zombie_horde
 // Params 0, eflags: 0x4
 // Checksum 0x57296c83, Offset: 0x198
 // Size: 0x2c2
@@ -42,8 +42,8 @@ function private debug() {
                 if (isdefined(var_31f1a7be.path)) {
                     for (i = 0; i < var_31f1a7be.path.pathpoints.size - 1; i++) {
                         point = var_31f1a7be.path.pathpoints[i];
-                        var_a483a577 = var_31f1a7be.path.pathpoints[i + 1];
-                        recordline(point, var_a483a577, (1, 0, 0), "<unknown string>");
+                        next_point = var_31f1a7be.path.pathpoints[i + 1];
+                        recordline(point, next_point, (1, 0, 0), "<unknown string>");
                         recordcircle(point, 20, (1, 0, 0), "<unknown string>");
                     }
                     point = var_31f1a7be.path.pathpoints[i];
@@ -55,38 +55,38 @@ function private debug() {
     #/
 }
 
-// Namespace namespace_ac0c0ba8/namespace_ac0c0ba8
+// Namespace zombie_horde/zombie_horde
 // Params 4, eflags: 0x2 linked
 // Checksum 0x339a4373, Offset: 0x468
 // Size: 0xa4
 function function_86d29fe1(var_f9289185, origin, angles, radius) {
-    var_31f1a7be = {#at_goal:0, #var_91fc28f4:-1, #path:undefined, #radius:radius, #angles:angles, #origin:origin, #name:var_f9289185};
+    var_31f1a7be = {#name:var_f9289185, #origin:origin, #angles:angles, #radius:radius, #path:undefined, #var_91fc28f4:-1, #at_goal:0};
     return var_31f1a7be;
 }
 
-// Namespace namespace_ac0c0ba8/namespace_ac0c0ba8
+// Namespace zombie_horde/zombie_horde
 // Params 1, eflags: 0x6 linked
 // Checksum 0x936f4279, Offset: 0x518
 // Size: 0x292
 function private function_88b2dd98(numpoints) {
     goal_points = [];
     for (i = 0; i < numpoints; i++) {
-        var_99a3ff38 = 0;
+        point_found = 0;
         attempts = 0;
         var_812bc6e0 = spawnstruct();
-        while (!var_99a3ff38 && attempts < 10) {
+        while (!point_found && attempts < 10) {
             var_61187803 = randomint(360);
             var_e294ac7d = randomfloat(1);
             var_e294ac7d = sqrt(var_e294ac7d);
-            var_9b178666 = int(var_e294ac7d * self.radius);
-            spawnx = self.origin[0] + var_9b178666 * cos(var_61187803);
-            spawny = self.origin[1] + var_9b178666 * sin(var_61187803);
+            spawn_radius = int(var_e294ac7d * self.radius);
+            spawnx = self.origin[0] + spawn_radius * cos(var_61187803);
+            spawny = self.origin[1] + spawn_radius * sin(var_61187803);
             spawnz = self.origin[2];
             var_812bc6e0.origin = (spawnx, spawny, spawnz);
-            var_99a3ff38 = 1;
+            point_found = 1;
             foreach (var_a4e6f42c in goal_points) {
                 if (distance2dsquared(var_812bc6e0.origin, var_a4e6f42c.origin) < 2500) {
-                    var_99a3ff38 = 0;
+                    point_found = 0;
                 }
             }
             attempts++;
@@ -98,7 +98,7 @@ function private function_88b2dd98(numpoints) {
     self.goal_points = goal_points;
 }
 
-// Namespace namespace_ac0c0ba8/namespace_ac0c0ba8
+// Namespace zombie_horde/zombie_horde
 // Params 5, eflags: 0x0
 // Checksum 0x19a8e464, Offset: 0x7b8
 // Size: 0x18c
@@ -117,7 +117,7 @@ function function_11280436(var_f9289185, origin, angles, radius, var_aae3fc82) {
     level.var_e051b3bc[level.var_e051b3bc.size] = var_31f1a7be;
 }
 
-// Namespace namespace_ac0c0ba8/namespace_ac0c0ba8
+// Namespace zombie_horde/zombie_horde
 // Params 0, eflags: 0x6 linked
 // Checksum 0x8de9b978, Offset: 0x950
 // Size: 0x110
@@ -144,7 +144,7 @@ function private think() {
     }
 }
 
-// Namespace namespace_ac0c0ba8/namespace_ac0c0ba8
+// Namespace zombie_horde/zombie_horde
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb51e269d, Offset: 0xa68
 // Size: 0x152
@@ -168,7 +168,7 @@ function private function_3e88b567() {
     self.angles = vectortoangles(var_cdbefa16);
 }
 
-// Namespace namespace_ac0c0ba8/namespace_ac0c0ba8
+// Namespace zombie_horde/zombie_horde
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa7bce9db, Offset: 0xbc8
 // Size: 0x1d0
@@ -192,7 +192,7 @@ function private function_18ca9034() {
     }
 }
 
-// Namespace namespace_ac0c0ba8/namespace_ac0c0ba8
+// Namespace zombie_horde/zombie_horde
 // Params 1, eflags: 0x0
 // Checksum 0x8d98e8bc, Offset: 0xda0
 // Size: 0xd2
@@ -211,7 +211,7 @@ function function_9defb9e0(goal) {
     self.angles = vectortoangles(var_cdbefa16);
 }
 
-// Namespace namespace_ac0c0ba8/namespace_ac0c0ba8
+// Namespace zombie_horde/zombie_horde
 // Params 1, eflags: 0x2 linked
 // Checksum 0x1fce243b, Offset: 0xe80
 // Size: 0xb2
@@ -228,7 +228,7 @@ function function_9758722(speed) {
     }
 }
 
-// Namespace namespace_ac0c0ba8/namespace_ac0c0ba8
+// Namespace zombie_horde/zombie_horde
 // Params 0, eflags: 0x6 linked
 // Checksum 0x82c60b00, Offset: 0xf40
 // Size: 0xac
@@ -242,7 +242,7 @@ function private function_8ac809ae() {
     return false;
 }
 
-// Namespace namespace_ac0c0ba8/namespace_ac0c0ba8
+// Namespace zombie_horde/zombie_horde
 // Params 0, eflags: 0x2 linked
 // Checksum 0x3e277beb, Offset: 0xff8
 // Size: 0x94
@@ -253,7 +253,7 @@ function function_e20d964f() {
     arrayremovevalue(level.var_e051b3bc, self);
 }
 
-// Namespace namespace_ac0c0ba8/namespace_ac0c0ba8
+// Namespace zombie_horde/zombie_horde
 // Params 2, eflags: 0x6 linked
 // Checksum 0xe3affe64, Offset: 0x1098
 // Size: 0x7c
@@ -265,7 +265,7 @@ function private function_d1e55248(id, value) {
     self val::reset(id, "allowoffnavmesh");
 }
 
-// Namespace namespace_ac0c0ba8/namespace_ac0c0ba8
+// Namespace zombie_horde/zombie_horde
 // Params 0, eflags: 0x6 linked
 // Checksum 0xcd42590b, Offset: 0x1120
 // Size: 0x118

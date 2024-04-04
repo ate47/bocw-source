@@ -62,15 +62,15 @@ function perks_register_clientfield() {
 // Size: 0xb9c
 function function_89e748a7() {
     for (i = 0; i < 4; i++) {
-        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".itemIndex", #"hash_5d152bf7cbeda3ad", [1:#"itemindex", 0:hash(isdefined(i) ? "" + i : "")], 1, 5, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".state", #"hash_5d152bf7cbeda3ad", [1:#"state", 0:hash(isdefined(i) ? "" + i : "")], 1, 2, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".progress", #"hash_5d152bf7cbeda3ad", [1:#"progress", 0:hash(isdefined(i) ? "" + i : "")], 1, 5, "float", undefined, 0, 0);
-        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".chargeCount", #"hash_5d152bf7cbeda3ad", [1:#"chargecount", 0:hash(isdefined(i) ? "" + i : "")], 1, 3, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".timerActive", #"hash_5d152bf7cbeda3ad", [1:#"timeractive", 0:hash(isdefined(i) ? "" + i : "")], 1, 1, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".bleedoutOrderIndex", #"hash_5d152bf7cbeda3ad", [1:#"bleedoutorderindex", 0:hash(isdefined(i) ? "" + i : "")], 1, 2, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".bleedoutActive", #"hash_5d152bf7cbeda3ad", [1:#"bleedoutactive", 0:hash(isdefined(i) ? "" + i : "")], 1, 1, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".specialEffectActive", #"hash_5d152bf7cbeda3ad", [1:#"specialeffectactive", 0:hash(isdefined(i) ? "" + i : "")], 1, 1, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".modifierActive", #"hash_5d152bf7cbeda3ad", [1:#"modifieractive", 0:hash(isdefined(i) ? "" + i : "")], 6000, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".itemIndex", #"hash_5d152bf7cbeda3ad", [hash(isdefined(i) ? "" + i : ""), #"itemindex"], 1, 5, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".state", #"hash_5d152bf7cbeda3ad", [hash(isdefined(i) ? "" + i : ""), #"state"], 1, 2, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".progress", #"hash_5d152bf7cbeda3ad", [hash(isdefined(i) ? "" + i : ""), #"progress"], 1, 5, "float", undefined, 0, 0);
+        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".chargeCount", #"hash_5d152bf7cbeda3ad", [hash(isdefined(i) ? "" + i : ""), #"chargecount"], 1, 3, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".timerActive", #"hash_5d152bf7cbeda3ad", [hash(isdefined(i) ? "" + i : ""), #"timeractive"], 1, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".bleedoutOrderIndex", #"hash_5d152bf7cbeda3ad", [hash(isdefined(i) ? "" + i : ""), #"bleedoutorderindex"], 1, 2, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".bleedoutActive", #"hash_5d152bf7cbeda3ad", [hash(isdefined(i) ? "" + i : ""), #"bleedoutactive"], 1, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".specialEffectActive", #"hash_5d152bf7cbeda3ad", [hash(isdefined(i) ? "" + i : ""), #"specialeffectactive"], 1, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("hudItems.perkVapor." + i + ".modifierActive", #"hash_5d152bf7cbeda3ad", [hash(isdefined(i) ? "" + i : ""), #"modifieractive"], 6000, 1, "int", undefined, 0, 0);
     }
     clientfield::register_clientuimodel("hudItems.perkVapor.bleedoutProgress", #"hash_5d152bf7cbeda3ad", #"bleedoutprogress", 9000, 8, "float", undefined, 0, 0);
     for (i = 0; i < 9; i++) {
@@ -78,12 +78,12 @@ function function_89e748a7() {
         if (i >= 4) {
             n_version = 8000;
         }
-        clientfield::register_clientuimodel("hudItems.extraPerkVapor." + i + ".itemIndex", #"hash_77ee4bf4c3af9d1c", [1:#"itemindex", 0:hash(isdefined(i) ? "" + i : "")], n_version, 5, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("hudItems.extraPerkVapor." + i + ".state", #"hash_77ee4bf4c3af9d1c", [1:#"state", 0:hash(isdefined(i) ? "" + i : "")], n_version, 2, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("hudItems.extraPerkVapor." + i + ".progress", #"hash_77ee4bf4c3af9d1c", [1:#"progress", 0:hash(isdefined(i) ? "" + i : "")], n_version, 5, "float", undefined, 0, 0);
-        clientfield::register_clientuimodel("hudItems.extraPerkVapor." + i + ".chargeCount", #"hash_77ee4bf4c3af9d1c", [1:#"chargecount", 0:hash(isdefined(i) ? "" + i : "")], n_version, 3, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("hudItems.extraPerkVapor." + i + ".timerActive", #"hash_77ee4bf4c3af9d1c", [1:#"timeractive", 0:hash(isdefined(i) ? "" + i : "")], n_version, 1, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("hudItems.extraPerkVapor." + i + ".specialEffectActive", #"hash_77ee4bf4c3af9d1c", [1:#"specialeffectactive", 0:hash(isdefined(i) ? "" + i : "")], n_version, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("hudItems.extraPerkVapor." + i + ".itemIndex", #"hash_77ee4bf4c3af9d1c", [hash(isdefined(i) ? "" + i : ""), #"itemindex"], n_version, 5, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("hudItems.extraPerkVapor." + i + ".state", #"hash_77ee4bf4c3af9d1c", [hash(isdefined(i) ? "" + i : ""), #"state"], n_version, 2, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("hudItems.extraPerkVapor." + i + ".progress", #"hash_77ee4bf4c3af9d1c", [hash(isdefined(i) ? "" + i : ""), #"progress"], n_version, 5, "float", undefined, 0, 0);
+        clientfield::register_clientuimodel("hudItems.extraPerkVapor." + i + ".chargeCount", #"hash_77ee4bf4c3af9d1c", [hash(isdefined(i) ? "" + i : ""), #"chargecount"], n_version, 3, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("hudItems.extraPerkVapor." + i + ".timerActive", #"hash_77ee4bf4c3af9d1c", [hash(isdefined(i) ? "" + i : ""), #"timeractive"], n_version, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("hudItems.extraPerkVapor." + i + ".specialEffectActive", #"hash_77ee4bf4c3af9d1c", [hash(isdefined(i) ? "" + i : ""), #"specialeffectactive"], n_version, 1, "int", undefined, 0, 0);
     }
     if (level.var_c3e5c4cd == 2) {
         clientfield::register("world", "" + #"hash_46334db9e3c76275", 1, 1, "int", &function_9b4bc8e7, 0, 0);

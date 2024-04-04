@@ -935,7 +935,7 @@ function function_14b7208c(str_powerup, *powerup_team, *powerup_location, *power
         origin = self.origin;
         badplace_cylinder(name, 0, origin, var_ce95e926, var_f9f778c1, #"allies");
         while (isdefined(self)) {
-            if (distance2dsquared(origin, self.origin) > function_a3f6cdac(var_d2057007)) {
+            if (distance2dsquared(origin, self.origin) > sqr(var_d2057007)) {
                 origin = self.origin;
                 badplace_cylinder(name, 0, origin, var_ce95e926, var_f9f778c1, #"allies");
             }
@@ -1090,7 +1090,7 @@ function powerup_grab(powerup_team) {
     }
     self endon(#"powerup_timedout", #"powerup_grabbed");
     if (isdefined(self.var_5c6f6051)) {
-        range_squared = function_a3f6cdac(self.var_5c6f6051);
+        range_squared = sqr(self.var_5c6f6051);
     } else {
         range_squared = 4096;
     }
@@ -1436,7 +1436,7 @@ function powerup_wobble() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x6aaab628, Offset: 0x5af0
 // Size: 0x4c
-function function_e3f30b() {
+function powerup_hide() {
     if (isdefined(self)) {
         self ghost();
         if (isdefined(self.worldgundw)) {
@@ -1489,7 +1489,7 @@ function powerup_timeout() {
         wait_time = wait_time + 30;
     }
     wait(wait_time);
-    self hide_and_show(&function_e3f30b, &powerup_show);
+    self hide_and_show(&powerup_hide, &powerup_show);
     self notify(#"powerup_timedout");
     bb::logpowerupevent(self, undefined, "_timedout");
     self powerup_delete();
@@ -1600,7 +1600,7 @@ function function_fe6d6eac(player, mod, hit_location, weapon, damage) {
     if (isdefined(player) && isalive(player) && player is_insta_kill_active()) {
         if (self.var_6f84b820 === #"special") {
             damage = damage * 5;
-        } else if (self.var_6f84b820 === #"hash_72d4f2ad2e333eb4") {
+        } else if (self.var_6f84b820 === #"elite") {
             damage = damage * 2.5;
         } else if (self.var_6f84b820 === #"boss") {
             damage = damage * 1.2;

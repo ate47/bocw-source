@@ -14,14 +14,14 @@
 // Checksum 0x97c69511, Offset: 0x108
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"guardian_turret", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"guardian_turret", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace guardian_turret/guardian_turret
 // Params 0, eflags: 0x4
 // Checksum 0xe004addf, Offset: 0x150
 // Size: 0x2c
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_main_callback("microwave_turret", &function_5dfbc20a);
 }
 

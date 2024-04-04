@@ -21,14 +21,14 @@
 // Checksum 0x99c0604d, Offset: 0x1e0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_6f1ab109254f7a8e", &function_70a657d8, undefined, undefined, #"hash_2d064899850813e2");
+    system::register(#"hash_6f1ab109254f7a8e", &preinit, undefined, undefined, #"hash_2d064899850813e2");
 }
 
 // Namespace namespace_7461932d/namespace_7461932d
 // Params 0, eflags: 0x6 linked
 // Checksum 0x640127e9, Offset: 0x230
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     function_485b89e9();
     level.var_8cc294a7 = &function_7486dbf4;
     level.var_bb0b2298 = &function_297a5142;
@@ -84,7 +84,7 @@ function function_485b89e9() {
     zm_perks::register_perk_basic_info(#"hash_47d7a8105237c88", #"perk_juggernog", 2500, #"hash_27b60f868a13cc91", getweapon("zombie_perk_bottle_jugg"), undefined, #"zmperksjuggernaut");
     zm_perks::register_perk_precache_func(#"hash_47d7a8105237c88", &function_166eeafc);
     zm_perks::register_perk_clientfields(#"hash_47d7a8105237c88", &function_370cba1f, &function_a710e34a);
-    zm_perks::register_perk_machine(#"hash_47d7a8105237c88", &function_1ff28887, &function_545fe52d);
+    zm_perks::register_perk_machine(#"hash_47d7a8105237c88", &function_1ff28887, &init_juggernaut);
     zm_perks::register_perk_threads(#"hash_47d7a8105237c88", &function_535de102, &function_8a2f8354);
     zm_perks::register_perk_host_migration_params(#"hash_47d7a8105237c88", "vending_jugg", "jugger_light");
     zm_perks::register_perk_damage_override_func(&function_366a682a);
@@ -94,7 +94,7 @@ function function_485b89e9() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0x5e8
 // Size: 0x4
-function function_545fe52d() {
+function init_juggernaut() {
     
 }
 

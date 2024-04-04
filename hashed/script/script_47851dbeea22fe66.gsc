@@ -58,7 +58,7 @@ function function_c1e0cc87(name, *unused1, *var_5ddf2027, var_f80dfd0d = 0) {
     /#
         assert(!isdefined(level.doa.var_9e132ad0[var_5ddf2027]), "<unknown string>");
     #/
-    level.doa.var_9e132ad0[var_5ddf2027] = {#clear:var_f80dfd0d, #id:var_318e5b78, #name:var_5ddf2027};
+    level.doa.var_9e132ad0[var_5ddf2027] = {#name:var_5ddf2027, #id:var_318e5b78, #clear:var_f80dfd0d};
 }
 
 // Namespace namespace_e32bb68/namespace_e32bb68
@@ -144,7 +144,7 @@ function function_ae271c0b(name) {
         assert(self != level, "<unknown string>" + name);
     #/
     if (!isdefined(level.doa.var_9e132ad0[name])) {
-        namespace_1e25ad94::function_f5f0c0f8("SFX OFF ERROR for entity [" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "] effect UNDFINED--> [" + name + "] ");
+        namespace_1e25ad94::debugmsg("SFX OFF ERROR for entity [" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "] effect UNDFINED--> [" + name + "] ");
         return;
     }
     if (!isdefined(self.var_a045580f)) {
@@ -174,7 +174,7 @@ function function_3a59ec34(name) {
         assert(self != level, "<unknown string>" + name);
     #/
     if (!isdefined(level.doa.var_9e132ad0[name])) {
-        namespace_1e25ad94::function_f5f0c0f8("SFX ON ERROR for entity [" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "] effect UNDFINED--> [" + name + "] ");
+        namespace_1e25ad94::debugmsg("SFX ON ERROR for entity [" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "] effect UNDFINED--> [" + name + "] ");
         return;
     }
     if (!isdefined(self.var_17618ff9)) {

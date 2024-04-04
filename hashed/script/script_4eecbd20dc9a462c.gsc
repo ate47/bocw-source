@@ -10,7 +10,7 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0xbe181d5a, Offset: 0x128
 // Size: 0x1c4
-function function_70a657d8(*bundlename) {
+function preinit(*bundlename) {
     clientfield::register("toplayer", "" + #"hash_7c907650b14abbbe", 1, 1, "int", &function_d3a9eef4, 0, 0);
     clientfield::register("vehicle", "" + #"hash_4ddf67f7aa0f6884", 1, 1, "int", &function_241229f1, 0, 0);
     clientfield::register("vehicle", "" + #"hash_46646871455cab15", 1, 2, "int", &function_1da732e, 0, 0);
@@ -105,7 +105,7 @@ function function_241229f1(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x2dc
 function function_1da732e(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
-        var_b1c1e984 = self gettagorigin("TAG_PROBE_COCKPIT");
+        alarm_sound = self gettagorigin("TAG_PROBE_COCKPIT");
         util::playfxontag(fieldname, level.var_f7dac9d2.var_24b7aa85, self, "tag_body");
         if (isdefined(level.var_bb4264e3)) {
             if (isdefined(level.var_f7dac9d2.var_c6eb2a1d)) {
@@ -114,7 +114,7 @@ function function_1da732e(localclientnum, *oldval, newval, *bnewent, *binitialsn
             level.var_bb4264e3 playsound(fieldname, #"hash_7b6b109a826f44cf");
             waitframe(1);
             if (isdefined(level.var_bb4264e3)) {
-                level.var_bb4264e3 playsound(fieldname, #"hash_733033c981df7144", var_b1c1e984);
+                level.var_bb4264e3 playsound(fieldname, #"hash_733033c981df7144", alarm_sound);
             }
         } else {
             self playsound(fieldname, #"hash_2879bee00b0dbf87");
@@ -122,7 +122,7 @@ function function_1da732e(localclientnum, *oldval, newval, *bnewent, *binitialsn
         return;
     }
     if (bwastimejump == 2) {
-        var_b1c1e984 = self gettagorigin("TAG_PROBE_COCKPIT");
+        alarm_sound = self gettagorigin("TAG_PROBE_COCKPIT");
         util::playfxontag(fieldname, level.var_f7dac9d2.var_8334e8e, self, "tag_body");
         if (isdefined(level.var_bb4264e3)) {
             if (isdefined(level.var_f7dac9d2.var_c6eb2a1d)) {
@@ -131,7 +131,7 @@ function function_1da732e(localclientnum, *oldval, newval, *bnewent, *binitialsn
             level.var_bb4264e3 playsound(fieldname, #"hash_7b6b119a826f4682");
             waitframe(1);
             if (isdefined(level.var_bb4264e3)) {
-                level.var_bb4264e3 playsound(fieldname, #"hash_733036c981df765d", var_b1c1e984);
+                level.var_bb4264e3 playsound(fieldname, #"hash_733036c981df765d", alarm_sound);
             }
             return;
         }

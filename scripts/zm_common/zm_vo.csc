@@ -9,15 +9,15 @@
 // Checksum 0xbee5bffa, Offset: 0xb8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_vo", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_vo", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_vo/zm_vo
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc1106831, Offset: 0x100
 // Size: 0x6c
-function private function_70a657d8() {
-    clientfield::register_clientuimodel("zm_hud.commander_speaking", #"zm_hud", #"hash_6cb85f2adb4c4b10", 1, 5, "int", undefined, 0, 0);
+function private preinit() {
+    clientfield::register_clientuimodel("zm_hud.commander_speaking", #"zm_hud", #"commander_speaking", 1, 5, "int", undefined, 0, 0);
     level.var_4edd846 = &function_d1711916;
 }
 

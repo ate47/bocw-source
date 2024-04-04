@@ -27,14 +27,14 @@
 // Checksum 0x255b04cd, Offset: 0x2e0
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_perk_slider", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_perk_slider", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_perk_slider/zm_perk_slider
 // Params 0, eflags: 0x6 linked
 // Checksum 0x45f29fee, Offset: 0x338
 // Size: 0xb4
-function private function_70a657d8() {
+function private preinit() {
     if (!is_true(getgametypesetting(#"hash_4b8929fb898a9e80"))) {
         return;
     }
@@ -113,7 +113,7 @@ function function_90f58801(*state) {
 // Size: 0x54
 function function_c60d9d72() {
     level endon(#"end_game");
-    self.var_3ee46cbd = &function_5fd3f2ba;
+    self.use_func = &function_5fd3f2ba;
     self clientfield::set("phd_slider_machine_rob_poweron", 1);
 }
 
@@ -198,11 +198,11 @@ function function_d2991c92(v_start_position) {
         n_distance = distance(v_start_position, self.origin);
         self.var_f354086e = self.var_f354086e + n_distance;
         if (self.var_f354086e >= 32) {
-            var_6c77565b = self getenemiesinradius(self.origin, 64);
-            var_6c77565b = arraysortclosest(var_6c77565b, self.origin);
-            if (isarray(var_6c77565b) && var_6c77565b.size >= 1) {
-                if (isalive(var_6c77565b[0])) {
-                    var_b61c0138 = bullettracepassed(self.origin, var_6c77565b[0].origin, 0, var_6c77565b[0]);
+            nearbyzombies = self getenemiesinradius(self.origin, 64);
+            nearbyzombies = arraysortclosest(nearbyzombies, self.origin);
+            if (isarray(nearbyzombies) && nearbyzombies.size >= 1) {
+                if (isalive(nearbyzombies[0])) {
+                    var_b61c0138 = bullettracepassed(self.origin, nearbyzombies[0].origin, 0, nearbyzombies[0]);
                     if (var_b61c0138) {
                         self setvelocity((0, 0, 0));
                         self slide_explosion(self.var_f354086e);
@@ -296,16 +296,16 @@ function function_4d806c6a(var_a25d1f0 = 25, explosion_radius = 64, var_8b77e4de
         if (level.var_eda01097.size != 0) {
             foreach (entity in level.var_eda01097) {
                 if (isvec(entity.origin) && distance2d(self.origin, entity.origin) < explosion_radius && var_8b77e4de) {
-                    entity notify(#"hash_81e93f0d0293b61", {#attacker:self, #damage:var_a25d1f0, #mod:"MOD_EXPLOSIVE"});
+                    entity notify(#"hash_81e93f0d0293b61", {#mod:"MOD_EXPLOSIVE", #damage:var_a25d1f0, #attacker:self});
                 }
             }
         }
     }
-    var_6c77565b = self getenemiesinradius(self.origin, explosion_radius);
-    var_6c77565b = arraysortclosest(var_6c77565b, self.origin);
+    nearbyzombies = self getenemiesinradius(self.origin, explosion_radius);
+    nearbyzombies = arraysortclosest(nearbyzombies, self.origin);
     var_b61c0138 = 1;
-    foreach (i, zombie in var_6c77565b) {
-        if (i > var_6c77565b.size / 2) {
+    foreach (i, zombie in nearbyzombies) {
+        if (i > nearbyzombies.size / 2) {
             if (isalive(zombie) && isvec(zombie.origin) && isvec(self.origin)) {
                 var_b61c0138 = bullettracepassed(self.origin, zombie.origin, 0, zombie);
             }
@@ -335,8 +335,8 @@ function function_4d806c6a(var_a25d1f0 = 25, explosion_radius = 64, var_8b77e4de
         [[ level.var_bc9564f4 ]]->waitinqueue(dummy_struct);
     }
     if (var_8b77e4de) {
-        var_6c77565b = self getenemiesinradius(self.origin, explosion_radius * 2);
-        foreach (zombie in var_6c77565b) {
+        nearbyzombies = self getenemiesinradius(self.origin, explosion_radius * 2);
+        foreach (zombie in nearbyzombies) {
             if (isalive(zombie) && !is_true(zombie.var_390850ac)) {
                 zombie zombie_utility::setup_zombie_knockdown(var_55f73ce6);
             }
@@ -427,7 +427,7 @@ function function_815172d1() {
                 }
             } else if (!isdefined(self getgroundent())) {
             }
-            for (onground = 0; isplayer(self) && !onground && !self function_49b3360c(); onground = 0) {
+            for (onground = 0; isplayer(self) && !onground && !self isparachuting(); onground = 0) {
                 if (!var_be3643e6) {
                     var_be3643e6 = 1;
                     self.var_af850774 = 0;
@@ -446,10 +446,10 @@ function function_815172d1() {
                 if (!isdefined(self getgroundent())) {
                 }
             }
-            if (self function_49b3360c()) {
+            if (self isparachuting()) {
                 var_be3643e6 = 0;
             }
-            if (var_be3643e6 && !self function_49b3360c()) {
+            if (var_be3643e6 && !self isparachuting()) {
                 self.var_e9571d8b = max(0, var_62a70da1 - self.origin[2]);
                 var_be3643e6 = 0;
                 if (self.var_e9571d8b > 128) {

@@ -15,7 +15,7 @@
 // Size: 0x3c
 function private autoexec __init__system__() {
     /#
-        register(#"rat", &function_70a657d8, undefined, undefined, undefined);
+        register(#"rat", &preinit, undefined, undefined, undefined);
     #/
 }
 
@@ -23,7 +23,7 @@ function private autoexec __init__system__() {
 // Params 0, eflags: 0x4
 // Checksum 0x4374c9b2, Offset: 0x100
 // Size: 0xc4
-function private function_70a657d8() {
+function private preinit() {
     /#
         init();
         level.rat.common.gethostplayer = &gethostplayer;
@@ -90,7 +90,7 @@ function testenemy(team) {
             waitframe(1);
         }
         if (level.teambased) {
-            params = {#intpayload:0, #response:level.teams[team], #menu:game.menu[#"menu_team"]};
+            params = {#menu:game.menu[#"menu_team"], #response:level.teams[team], #intpayload:0};
             self notify(#"menuresponse", params);
             self callback(#"menu_response", params);
         }

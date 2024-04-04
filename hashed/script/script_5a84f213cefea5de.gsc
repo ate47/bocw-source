@@ -21,14 +21,14 @@
 // Checksum 0x18052c5a, Offset: 0x138
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_f11f051d1c7994a", &function_70a657d8, undefined, undefined, #"item_world");
+    system::register(#"hash_f11f051d1c7994a", &preinit, undefined, undefined, #"item_world");
 }
 
 // Namespace namespace_1d9319e5/namespace_1d9319e5
 // Params 0, eflags: 0x6 linked
 // Checksum 0x2be22625, Offset: 0x188
 // Size: 0x3c
-function private function_70a657d8() {
+function private preinit() {
     if (!item_inventory::function_7d5553ac()) {
         return;
     }
@@ -53,7 +53,7 @@ function private function_116fd9a7() {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x6e2a20b5, Offset: 0x300
 // Size: 0x154
-function private function_77512b90(killstreakbundle, var_e8992218 = 0) {
+function private function_77512b90(killstreakbundle, hasscorestreak = 0) {
     /#
         assert(isplayer(self));
     #/
@@ -65,7 +65,7 @@ function private function_77512b90(killstreakbundle, var_e8992218 = 0) {
             wait(float(waittime) / 1000);
         }
     }
-    if (var_e8992218) {
+    if (hasscorestreak) {
         wait(1);
     }
     self.var_48590990 = gettime();
@@ -80,7 +80,7 @@ function private function_898628ef(item, player, *networkid, *itemid, itemcount,
     if (itemcount isswitchingweapons()) {
         return var_aec6fa7f;
     }
-    killstreakbundle = getscriptbundle(itemid.var_a6762160.killstreak);
+    killstreakbundle = getscriptbundle(itemid.itementry.killstreak);
     result = 0;
     killstreakname = undefined;
     if (isdefined(killstreakbundle) && isdefined(killstreakbundle.var_fc0c8eae) && isdefined(killstreakbundle.var_fc0c8eae.name)) {
@@ -89,7 +89,7 @@ function private function_898628ef(item, player, *networkid, *itemid, itemcount,
         killstreakname = killstreakbundle.var_d3413870;
     }
     if (isdefined(killstreakname)) {
-        var_e8992218 = 0;
+        hasscorestreak = 0;
         weapons = itemcount getweaponslist();
         foreach (weapon in weapons) {
             var_16f12c31 = item_world_util::function_3531b9ba(weapon.name);
@@ -103,12 +103,12 @@ function private function_898628ef(item, player, *networkid, *itemid, itemcount,
             hasammo = ammo > 0;
             if (hasammo) {
                 itempoint = function_4ba8fde(var_16f12c31);
-                var_390fc2d8 = getscriptbundle(itempoint.var_a6762160.killstreak);
+                var_390fc2d8 = getscriptbundle(itempoint.itementry.killstreak);
                 if (var_390fc2d8.var_fc0c8eae.name == #"inventory_planemortar") {
                     ammo = isdefined(itemcount.pers[#"hash_1aaccfe69e328d6e"][3]) ? itemcount.pers[#"hash_1aaccfe69e328d6e"][3] : 3;
                 }
                 level thread item_drop::drop_item(0, undefined, 1, ammo, itempoint.id, itemcount.origin + anglestoforward(itemcount.angles) * randomfloatrange(10, 30), itemcount.angles, 2);
-                var_e8992218 = 1;
+                hasscorestreak = 1;
             }
             itemcount takeweapon(weapon);
         }
@@ -126,7 +126,7 @@ function private function_898628ef(item, player, *networkid, *itemid, itemcount,
                 itemcount.pers[#"held_killstreak_ammo_count"][killstreakbundle.var_fc0c8eae] = slotid;
             }
         }
-        itemcount thread function_77512b90(killstreakbundle, var_e8992218);
+        itemcount thread function_77512b90(killstreakbundle, hasscorestreak);
     }
     if (result) {
         return (var_aec6fa7f - 1);
@@ -212,9 +212,9 @@ function private function_2eebeff5(item, player, *networkid, *itemid, itemcount,
     heldweapons = var_aec6fa7f getweaponslist();
     weapon = namespace_a0d533d1::function_2b83d3ff(itemcount);
     heldweapon = level.var_34d27b26;
-    if (itemcount.var_a6762160.itemtype == #"equipment") {
+    if (itemcount.itementry.itemtype == #"equipment") {
         heldweapon = isdefined(heldweapons[2]) ? heldweapons[2] : level.var_34d27b26;
-    } else if (itemcount.var_a6762160.itemtype == #"tactical") {
+    } else if (itemcount.itementry.itemtype == #"tactical") {
         heldweapon = isdefined(heldweapons[3]) ? heldweapons[3] : level.var_6388e216;
     } else {
         return slotid;

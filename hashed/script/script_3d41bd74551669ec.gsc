@@ -9,14 +9,14 @@
 // Checksum 0xe1b5fd3a, Offset: 0xc0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"location", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"location", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace location/location
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc351fbb0, Offset: 0x108
 // Size: 0x8c
-function private function_70a657d8() {
+function private preinit() {
     level.var_1383915 = getentarray(0, "location_zone", "targetname");
     level.var_b6d0f0ba = getmapfields().destinationlabellist;
     level.var_d6c4af7f = &function_5f3b1735;

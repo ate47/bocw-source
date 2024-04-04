@@ -12,7 +12,7 @@
 // Size: 0x3c
 function private autoexec __init__system__() {
     /#
-        register(#"debug", &function_70a657d8, undefined, undefined, undefined);
+        register(#"debug", &preinit, undefined, undefined, undefined);
     #/
 }
 
@@ -20,7 +20,7 @@ function private autoexec __init__system__() {
 // Params 0, eflags: 0x4
 // Checksum 0xcb5ef124, Offset: 0xe8
 // Size: 0xac
-function private function_70a657d8() {
+function private preinit() {
     /#
         level thread debug_draw_tuning_sphere();
         level thread devgui_debug_key_value();

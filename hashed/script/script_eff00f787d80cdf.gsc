@@ -9,14 +9,14 @@
 // Checksum 0x930e637f, Offset: 0xb8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"awareness", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"awareness", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace awareness/namespace_df233b8a
 // Params 0, eflags: 0x6 linked
 // Checksum 0x8b1fa4c0, Offset: 0x100
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "sndAwarenessChange", 1, 2, "int", &function_d83b47c4, 0, 0);
 }
 
@@ -98,7 +98,7 @@ function function_3b0ca643(var_c56101e0) {
         default:
             return undefined;
         }
-        return {#v_offset:v_offset, #var_6e38d21c:var_6e38d21c, #var_f6b3e5dd:var_f6b3e5dd, #var_4ec57c29:var_4ec57c29, #var_fd89f5fb:var_fd89f5fb, #var_e31a323c:var_e31a323c, #var_1510a94a:var_1510a94a};
+        return {#var_1510a94a:var_1510a94a, #var_e31a323c:var_e31a323c, #var_fd89f5fb:var_fd89f5fb, #var_4ec57c29:var_4ec57c29, #var_f6b3e5dd:var_f6b3e5dd, #var_6e38d21c:var_6e38d21c, #v_offset:v_offset};
     }
     return undefined;
 }

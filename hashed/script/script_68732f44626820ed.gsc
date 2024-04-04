@@ -14,14 +14,14 @@
 // Checksum 0xfd92f2f, Offset: 0xe8
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_684573a459d68beb", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_684573a459d68beb", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_207ea311/namespace_207ea311
 // Params 0, eflags: 0x4
 // Checksum 0x1ae69bfd, Offset: 0x140
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("allplayers", "" + #"hash_63af42145e260fb5", 1, 2, "int", &function_4fd00e1f, 0, 0);
 }
 

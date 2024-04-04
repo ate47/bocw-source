@@ -20,14 +20,14 @@
 // Checksum 0x5c1d9d88, Offset: 0x128
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"profile_traits", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"profile_traits", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace profile_traits/profile_traits
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6379e107, Offset: 0x170
 // Size: 0x3b4
-function private function_70a657d8() {
+function private preinit() {
     /#
         function_bba23c40("<unknown string>", 0.75);
         function_bba23c40("<unknown string>", 0.75);
@@ -37,11 +37,11 @@ function private function_70a657d8() {
     level.var_e85d5a3f.var_e4f193a3 = [];
     for (i = 0; i < var_1f7a9822.traits.size; i++) {
         if (!is_true(var_1f7a9822.traits[i].disabled)) {
-            var_1f7a9822.traits[i].var_ac9f703d = 1 << i;
+            var_1f7a9822.traits[i].bitflag = 1 << i;
             level.var_e85d5a3f.var_e4f193a3[level.var_e85d5a3f.var_e4f193a3.size] = var_1f7a9822.traits[i];
             continue;
         }
-        if (var_1f7a9822.traits[i].var_9c480844 == "classified") {
+        if (var_1f7a9822.traits[i].ref_name == "classified") {
             level.var_e85d5a3f.var_8651d525 = var_1f7a9822.traits[i];
         }
     }
@@ -90,7 +90,7 @@ function private function_b8f86396(params) {
                     assert(var_e3ffeeb4 < level.var_e85d5a3f.var_e4f193a3.size);
                 #/
                 var_fb7d23d9 = level.var_e85d5a3f.var_e4f193a3[var_e3ffeeb4];
-                player function_18198dfb(var_fb7d23d9.var_ac9f703d);
+                player function_18198dfb(var_fb7d23d9.bitflag);
                 setdvar(#"hash_1d3ff4dcafbd084e", -1);
             }
             return;
@@ -102,7 +102,7 @@ function private function_b8f86396(params) {
                     assert(var_eccea24e < level.var_e85d5a3f.var_e4f193a3.size);
                 #/
                 var_fb7d23d9 = level.var_e85d5a3f.var_e4f193a3[var_eccea24e];
-                player function_1c1fa213(var_fb7d23d9.var_ac9f703d);
+                player function_1c1fa213(var_fb7d23d9.bitflag);
                 setdvar(#"hash_35ef1fad3aba3507", -1);
             }
             return;
@@ -135,7 +135,7 @@ function private function_30a971a4() {
         player endoncallback(&function_6f60cb1e, #"hash_639ee73311ef0e56");
         player.var_adeb44c2 = [];
         for (i = 0; i < level.var_e85d5a3f.var_e4f193a3.size; i++) {
-            var_38b5d833 = level.var_e85d5a3f.var_e4f193a3[i];
+            trait = level.var_e85d5a3f.var_e4f193a3[i];
             hudelem = newdebughudelem(player);
             hudelem.alignx = "<unknown string>";
             hudelem.aligny = "<unknown string>";
@@ -143,7 +143,7 @@ function private function_30a971a4() {
             hudelem.y = 220 + i * 14;
             hudelem.foreground = 1;
             hudelem.fontscale = 1;
-            hudelem settext(var_38b5d833.var_9c480844 + "<unknown string>");
+            hudelem settext(trait.ref_name + "<unknown string>");
             hudelem.var_16021753 = 0;
             hudelem.var_300d73bc = 0;
             hudelem.color = vectorscale((1, 1, 1), 0.75);
@@ -152,11 +152,11 @@ function private function_30a971a4() {
         while (true) {
             wait(0.5);
             for (i = 0; i < level.var_e85d5a3f.var_e4f193a3.size; i++) {
-                var_38b5d833 = level.var_e85d5a3f.var_e4f193a3[i];
-                var_16021753 = function_a996bd5e(var_38b5d833.var_ac9f703d);
+                trait = level.var_e85d5a3f.var_e4f193a3[i];
+                var_16021753 = function_a996bd5e(trait.bitflag);
                 var_300d73bc = -1;
-                if (is_true(var_38b5d833.var_e75fcf1a)) {
-                    if (player hasperk(var_38b5d833.perk_name)) {
+                if (is_true(trait.use_perk)) {
+                    if (player hasperk(trait.perk_name)) {
                         var_300d73bc = 1;
                     } else {
                         var_300d73bc = 0;
@@ -166,7 +166,7 @@ function private function_30a971a4() {
                 if (var_16021753 != hudelem.var_16021753 || var_300d73bc != hudelem.var_300d73bc) {
                     hudelem.var_16021753 = var_16021753;
                     hudelem.var_300d73bc = var_300d73bc;
-                    var_63d9d5cb = var_38b5d833.var_9c480844 + "<unknown string>";
+                    var_63d9d5cb = trait.ref_name + "<unknown string>";
                     if (var_16021753) {
                         var_63d9d5cb = var_63d9d5cb + "<unknown string>";
                         hudelem.color = (0, 1, 0);
@@ -234,9 +234,9 @@ function function_d9b59414(var_f2c93983) {
     if (var_f2c93983 == "classified") {
         return 0;
     }
-    foreach (var_38b5d833 in level.var_e85d5a3f.var_e4f193a3) {
-        if (var_38b5d833.var_9c480844 == var_f2c93983) {
-            return var_38b5d833.var_ac9f703d;
+    foreach (trait in level.var_e85d5a3f.var_e4f193a3) {
+        if (trait.ref_name == var_f2c93983) {
+            return trait.bitflag;
         }
     }
     /#
@@ -265,7 +265,7 @@ function function_a996bd5e(var_f03e5d1b) {
     var_b3903404 = player savegame::function_2ee66e93("savegame_personal_trait_flags", undefined);
     if (!isdefined(var_b3903404)) {
         var_b3903404 = 0;
-        player savegame::function_6d003cb9("savegame_personal_trait_flags", var_b3903404);
+        player savegame::set_player_data("savegame_personal_trait_flags", var_b3903404);
     }
     return var_b3903404 & var_f03e5d1b;
 }
@@ -284,7 +284,7 @@ function function_18198dfb(var_f03e5d1b) {
         var_b3903404 = 0;
     }
     var_b3903404 = var_b3903404 | var_f03e5d1b;
-    player savegame::function_6d003cb9("savegame_personal_trait_flags", var_b3903404);
+    player savegame::set_player_data("savegame_personal_trait_flags", var_b3903404);
     player function_d53bb873();
 }
 
@@ -301,22 +301,22 @@ function function_1c1fa213(var_f03e5d1b) {
     if (!isdefined(var_b3903404)) {
         var_b3903404 = 0;
     }
-    foreach (var_38b5d833 in level.var_e85d5a3f.var_e4f193a3) {
-        if (var_f03e5d1b & var_b3903404 & var_38b5d833.var_ac9f703d) {
-            if (is_true(var_38b5d833.var_e75fcf1a) && player hasperk(var_38b5d833.perk_name)) {
-                player perks::perk_unsetperk(var_38b5d833.perk_name);
-            } else if (var_38b5d833.var_9c480844 == "jugernog") {
+    foreach (trait in level.var_e85d5a3f.var_e4f193a3) {
+        if (var_f03e5d1b & var_b3903404 & trait.bitflag) {
+            if (is_true(trait.use_perk) && player hasperk(trait.perk_name)) {
+                player perks::perk_unsetperk(trait.perk_name);
+            } else if (trait.ref_name == "jugernog") {
                 player player::function_b933de24("jugernog", 0);
             }
             /#
-                println("<unknown string>" + var_38b5d833.var_9c480844 + "<unknown string>");
+                println("<unknown string>" + trait.ref_name + "<unknown string>");
             #/
         }
     }
     if (var_b3903404 & var_f03e5d1b) {
         var_b3903404 = var_b3903404 & ~var_f03e5d1b;
     }
-    player savegame::function_6d003cb9("savegame_personal_trait_flags", var_b3903404);
+    player savegame::set_player_data("savegame_personal_trait_flags", var_b3903404);
     player function_d53bb873();
 }
 
@@ -333,17 +333,17 @@ function function_d53bb873() {
     if (!isdefined(var_b3903404)) {
         return 0;
     }
-    foreach (var_38b5d833 in level.var_e85d5a3f.var_e4f193a3) {
-        if (var_b3903404 & var_38b5d833.var_ac9f703d) {
-            if (is_true(var_38b5d833.var_e75fcf1a) && !player hasperk(var_38b5d833.perk_name)) {
-                player perks::perk_setperk(var_38b5d833.perk_name);
-            } else if (var_38b5d833.var_9c480844 == "jugernog") {
+    foreach (trait in level.var_e85d5a3f.var_e4f193a3) {
+        if (var_b3903404 & trait.bitflag) {
+            if (is_true(trait.use_perk) && !player hasperk(trait.perk_name)) {
+                player perks::perk_setperk(trait.perk_name);
+            } else if (trait.ref_name == "jugernog") {
                 player player::function_2a67df65("jugernog", 25, undefined, 1);
                 player.health = 125;
                 player.maxhealth = 125;
             }
             /#
-                println("<unknown string>" + var_38b5d833.var_9c480844 + "<unknown string>");
+                println("<unknown string>" + trait.ref_name + "<unknown string>");
             #/
         }
     }

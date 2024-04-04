@@ -51,10 +51,10 @@ function init() {
     level.var_43cd3fe5 = doa_keytrade::register();
     clientfield::register("world", "world_state", 1, 3, "int", &function_fefe581c, 0, 0);
     clientfield::register("world", "roundNumber", 1, 10, "int", &function_5b2f0c51, 0, 0);
-    clientfield::function_5b7d846d("DOA_GLOBALUIMODEL_WORLDSTATE", #"hash_365a974a1df27ef4", #"hash_466bb071d800c544", 1, 3, "int", undefined, 0, 0);
-    clientfield::function_5b7d846d("DOA_GLOBALUIMODEL_COUNTDOWN", #"hash_365a974a1df27ef4", #"countdown", 1, 11, "int", undefined, 0, 0);
-    clientfield::function_5b7d846d("DOA_GLOBALUIMODEL_ARENANUMBER", #"hash_365a974a1df27ef4", #"hash_654a301153c05b59", 1, 4, "int", undefined, 0, 0);
-    clientfield::function_5b7d846d("DOA_GLOBALUIMODEL_ROUNDNUMBER", #"hash_365a974a1df27ef4", #"roundnumber", 1, 16, "int", undefined, 0, 0);
+    clientfield::function_5b7d846d("DOA_GLOBALUIMODEL_WORLDSTATE", #"doa_world", #"hash_466bb071d800c544", 1, 3, "int", undefined, 0, 0);
+    clientfield::function_5b7d846d("DOA_GLOBALUIMODEL_COUNTDOWN", #"doa_world", #"countdown", 1, 11, "int", undefined, 0, 0);
+    clientfield::function_5b7d846d("DOA_GLOBALUIMODEL_ARENANUMBER", #"doa_world", #"hash_654a301153c05b59", 1, 4, "int", undefined, 0, 0);
+    clientfield::function_5b7d846d("DOA_GLOBALUIMODEL_ROUNDNUMBER", #"doa_world", #"roundnumber", 1, 16, "int", undefined, 0, 0);
     level.doa.var_99ee4341 = &function_c69e4ad3;
     setsaveddvar(#"cg_disableearthquake", 1);
     setsaveddvar(#"cg_splitscreenletterboxsize", 0);

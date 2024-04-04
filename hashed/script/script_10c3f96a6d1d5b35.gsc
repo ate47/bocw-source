@@ -1,13 +1,13 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\zm\zm_tungsten_main_quest.csc;
-#using script_311c446e3df6c3fa;
+#using scripts\zm_common\objective_manager.csc;
 #using scripts\zm_common\zm_score.csc;
 #using script_5ee86fb478309acf;
 #using scripts\core_common\postfx_shared.csc;
 #using script_40e017336a087343;
 #using scripts\core_common\ai\systems\gib.csc;
 #using scripts\core_common\math_shared.csc;
-#using script_20055f2f97341caa;
+#using scripts\core_common\item_drop.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\struct.csc;
 #using scripts\core_common\scene_shared.csc;

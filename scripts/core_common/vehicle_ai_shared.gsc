@@ -17,14 +17,14 @@
 // Checksum 0xdf8f6aa0, Offset: 0x2d0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"vehicle_ai", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"vehicle_ai", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace vehicle_ai/vehicle_ai_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9257266f, Offset: 0x318
 // Size: 0x2c
-function private function_70a657d8() {
+function private preinit() {
     animation::add_notetrack_func("vehicle_ai::SetRotorSpeedCallback", &function_7ae52016);
 }
 
@@ -165,7 +165,7 @@ function owner_in_line_of_fire() {
         return false;
     }
     dist_squared_to_owner = distancesquared(self.owner.origin, self.origin);
-    line_of_fire_dot = dist_squared_to_owner > 9216 ? 0.866 : 0.9848;
+    line_of_fire_dot = dist_squared_to_owner > 9216 ? 0.9848 : 0.866;
     gun_angles = self gettagangles(isdefined(self.avoid_shooting_owner_ref_tag) ? self.avoid_shooting_owner_ref_tag : "tag_flash");
     if (!isdefined(gun_angles)) {
         return false;
@@ -358,11 +358,11 @@ function javelin_losetargetatrighttimeprojectile(proj, target) {
     while (isdefined(target)) {
         if (proj getvelocity()[2] < -150) {
             distsq = distancesquared(proj.origin, target.origin);
-            if (!isdefined(sound_played) && distsq <= function_a3f6cdac(1400)) {
+            if (!isdefined(sound_played) && distsq <= sqr(1400)) {
                 proj playsound(#"prj_quadtank_javelin_incoming");
                 sound_played = 1;
             }
-            if (distsq < function_a3f6cdac(1200)) {
+            if (distsq < sqr(1200)) {
                 proj missile_settarget(undefined);
                 break;
             }
@@ -773,7 +773,7 @@ function shared_callback_damage(einflictor, eattacker, idamage, *idflags, smeans
     if (should_emp(self, vsurfacenormal, partname, psoffsettime, damagefromunderneath)) {
         minempdowntime = 0.8 * (isdefined(self.settings.empdowntime) ? self.settings.empdowntime : 0);
         maxempdowntime = 1.2 * (isdefined(self.settings.empdowntime) ? self.settings.empdowntime : 1);
-        self notify(#"emped", {#param2:psoffsettime, #param1:damagefromunderneath, #param0:randomfloatrange(minempdowntime, maxempdowntime)});
+        self notify(#"emped", {#param0:randomfloatrange(minempdowntime, maxempdowntime), #param1:damagefromunderneath, #param2:psoffsettime});
     }
     if (should_burn(self, vsurfacenormal, partname, psoffsettime, damagefromunderneath)) {
         self thread burning_thread(damagefromunderneath, psoffsettime);
@@ -1785,7 +1785,7 @@ function positionquery_filter_engagementdist(queryresult, enemy, engagementdista
             point.distawayfromengagementarea = dist_away_from_sweet_line - half_engagement_width;
         }
         too_far_dist = engagementdistancemax * 1.1;
-        too_far_dist_sq = function_a3f6cdac(too_far_dist);
+        too_far_dist_sq = sqr(too_far_dist);
         dist_from_enemy_sq = distance2dsquared(point.origin, enemy_origin);
         if (dist_from_enemy_sq > too_far_dist_sq) {
             ratiosq = dist_from_enemy_sq / too_far_dist_sq;
@@ -1817,7 +1817,7 @@ function positionquery_filter_distawayfromtarget(queryresult, targetarray, dista
             } else if (isentity(target)) {
                 origin = target.origin;
             }
-            if (isdefined(origin) && distance2dsquared(point.origin, origin) < function_a3f6cdac(distance)) {
+            if (isdefined(origin) && distance2dsquared(point.origin, origin) < sqr(distance)) {
                 tooclose = 1;
                 break;
             }
@@ -1989,7 +1989,7 @@ function function_1d436633(...) {
     isatgoal = is_true(goalinfo.isatgoal) || self isapproachinggoal() && isdefined(self.overridegoalpos);
     itsbeenawhile = is_true(goalinfo.isatgoal) && gettime() > self.ai.var_88b0fd29;
     var_48ea0381 = 0;
-    var_2a8c95a5 = forcedgoal && isdefined(self.overridegoalpos) && distancesquared(self.overridegoalpos, goalinfo.goalpos) < function_a3f6cdac(self.radius);
+    var_2a8c95a5 = forcedgoal && isdefined(self.overridegoalpos) && distancesquared(self.overridegoalpos, goalinfo.goalpos) < sqr(self.radius);
     if (isdefined(self.enemy) && !self haspath()) {
         var_48ea0381 = !self seerecently(self.enemy, randomintrange(3, 5));
         if (issentient(self.enemy) || function_ffa5b184(self.enemy)) {
@@ -2012,7 +2012,7 @@ function function_1d436633(...) {
                     if (!self isingoal(goal.origin)) {
                         continue;
                     }
-                    if (isdefined(self.overridegoalpos) && distancesquared(self.overridegoalpos, goal.origin) < function_a3f6cdac(self.radius)) {
+                    if (isdefined(self.overridegoalpos) && distancesquared(self.overridegoalpos, goal.origin) < sqr(self.radius)) {
                         continue;
                     }
                     var_817e8fd0[var_817e8fd0.size] = goal;
@@ -2353,7 +2353,7 @@ function function_b1bd875a() {
                 #/
                 newpos = goalinfo.goalpos;
             }
-            if (distancesquared(self.origin, newpos) < function_a3f6cdac(self.radius * 2)) {
+            if (distancesquared(self.origin, newpos) < sqr(self.radius * 2)) {
                 newpos = undefined;
             }
             self.ai.var_88b0fd29 = currenttime + randomintrange(1000, 2000);

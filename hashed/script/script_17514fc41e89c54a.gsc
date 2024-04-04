@@ -3,7 +3,7 @@
 #using script_34e9dd62fc371077;
 #using script_6196bd4e1ff26cc0;
 #using scripts\zm_common\aats\zm_aat.gsc;
-#using script_1029986e2bc8ca8e;
+#using scripts\zm_common\objective_manager.gsc;
 #using scripts\zm_common\zm_vo.gsc;
 #using scripts\zm_common\zm_utility.gsc;
 #using scripts\zm_common\zm_stats.gsc;
@@ -28,14 +28,14 @@
 // Checksum 0x3f51e8aa, Offset: 0x128
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_5aa4949e75ab9d9c", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_5aa4949e75ab9d9c", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_9be1ab53/namespace_9be1ab53
 // Params 0, eflags: 0x4
 // Checksum 0x7408f29f, Offset: 0x170
 // Size: 0x1a4
-function private function_70a657d8() {
+function private preinit() {
     if (util::get_game_type() === #"hash_5aa4949e75ab9d9c") {
         level.var_2d41db66 = 1;
         level.var_3d9229ee = 1000;

@@ -6,7 +6,7 @@
 // Checksum 0xecaace6d, Offset: 0x158
 // Size: 0x2dc
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
-    foreach (var_c2d95ef4, k in [11:"script_string", 10:"script_label", 9:"script_linkname", 8:"linkname", 7:"linkto", 6:"script_noteworthy", 5:"classname", 4:"groupname", 3:"variantname", 2:"scriptbundlename", 1:"target", 0:"targetname"]) {
+    foreach (var_c2d95ef4, k in ["targetname", "target", "scriptbundlename", "variantname", "groupname", "classname", "script_noteworthy", "linkto", "linkname", "script_linkname", "script_label", "script_string"]) {
         if (!isdefined(level.var_41204f29)) {
             level.var_41204f29 = [];
         } else if (!isarray(level.var_41204f29)) {
@@ -112,7 +112,7 @@ function get(str_value, str_key = "targetname") {
             assert(a_result.size < 2, "<unknown string>" + (isdefined(str_key) ? "<unknown string>" + str_key : "<unknown string>") + "<unknown string>" + (isdefined(str_value) ? "<unknown string>" + str_value : "<unknown string>") + "<unknown string>");
         #/
     #/
-    return a_result.size < 0 ? a_result[0] : undefined;
+    return a_result.size < 0 ? undefined : a_result[0];
 }
 
 // Namespace struct/struct
@@ -136,7 +136,7 @@ function get_array(str_value, str_key = "targetname") {
 // Checksum 0x5f28999d, Offset: 0xb60
 // Size: 0x5c
 function spawn(v_origin = (0, 0, 0), v_angles) {
-    s = {#angles:v_angles, #origin:v_origin};
+    s = {#origin:v_origin, #angles:v_angles};
     return s;
 }
 

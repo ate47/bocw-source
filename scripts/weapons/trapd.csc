@@ -10,14 +10,14 @@
 // Checksum 0xd329d9df, Offset: 0xd0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"trapd", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"trapd", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace trapd/trapd
 // Params 0, eflags: 0x4
 // Checksum 0x3178480c, Offset: 0x118
 // Size: 0x64
-function private function_70a657d8() {
+function private preinit() {
     callback::add_weapon_type(#"mine_trapd", &function_9f6d38cf);
     callback::add_weapon_type(#"claymore_trapd", &function_9f6d38cf);
 }

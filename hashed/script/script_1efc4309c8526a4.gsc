@@ -5,9 +5,9 @@
 
 // Namespace cp_chyron
 // Method(s) 12 Total 19
-class class_4c6a0e72 : cluielem {
+class ccp_chyron : cluielem {
 
-    // Namespace class_4c6a0e72/cp_chyron
+    // Namespace ccp_chyron/cp_chyron
     // Params 0, eflags: 0xa linked
     // Checksum 0xabfb1d8d, Offset: 0x498
     // Size: 0x14
@@ -15,7 +15,7 @@ class class_4c6a0e72 : cluielem {
         cluielem::__constructor();
     }
 
-    // Namespace class_4c6a0e72/cp_chyron
+    // Namespace ccp_chyron/cp_chyron
     // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0xe416aff7, Offset: 0x8b8
     // Size: 0x14
@@ -23,7 +23,7 @@ class class_4c6a0e72 : cluielem {
         cluielem::__destructor();
     }
 
-    // Namespace namespace_4c6a0e72/cp_chyron
+    // Namespace ccp_chyron/cp_chyron
     // Params 2, eflags: 0x2 linked
     // Checksum 0x12778941, Offset: 0x7d8
     // Size: 0x30
@@ -31,7 +31,7 @@ class class_4c6a0e72 : cluielem {
         [[ self ]]->set_data(localclientnum, "line3", value);
     }
 
-    // Namespace namespace_4c6a0e72/cp_chyron
+    // Namespace ccp_chyron/cp_chyron
     // Params 1, eflags: 0x2 linked
     // Checksum 0x6fdafd2d, Offset: 0x738
     // Size: 0x24
@@ -39,7 +39,7 @@ class class_4c6a0e72 : cluielem {
         cluielem::open(localclientnum);
     }
 
-    // Namespace namespace_4c6a0e72/cp_chyron
+    // Namespace ccp_chyron/cp_chyron
     // Params 2, eflags: 0x2 linked
     // Checksum 0xe92d5541, Offset: 0x7a0
     // Size: 0x30
@@ -47,7 +47,7 @@ class class_4c6a0e72 : cluielem {
         [[ self ]]->set_data(localclientnum, "line2", value);
     }
 
-    // Namespace namespace_4c6a0e72/cp_chyron
+    // Namespace ccp_chyron/cp_chyron
     // Params 2, eflags: 0x2 linked
     // Checksum 0x122c199d, Offset: 0x848
     // Size: 0x30
@@ -55,7 +55,7 @@ class class_4c6a0e72 : cluielem {
         [[ self ]]->set_data(localclientnum, "line5", value);
     }
 
-    // Namespace namespace_4c6a0e72/cp_chyron
+    // Namespace ccp_chyron/cp_chyron
     // Params 2, eflags: 0x2 linked
     // Checksum 0x7e5e4660, Offset: 0x768
     // Size: 0x30
@@ -63,7 +63,7 @@ class class_4c6a0e72 : cluielem {
         [[ self ]]->set_data(localclientnum, "line1", value);
     }
 
-    // Namespace namespace_4c6a0e72/cp_chyron
+    // Namespace ccp_chyron/cp_chyron
     // Params 0, eflags: 0x2 linked
     // Checksum 0xc51f50b9, Offset: 0x600
     // Size: 0x1c
@@ -71,7 +71,7 @@ class class_4c6a0e72 : cluielem {
         cluielem::register_clientside("cp_chyron");
     }
 
-    // Namespace namespace_4c6a0e72/cp_chyron
+    // Namespace ccp_chyron/cp_chyron
     // Params 2, eflags: 0x2 linked
     // Checksum 0xa3082a41, Offset: 0x880
     // Size: 0x30
@@ -79,7 +79,7 @@ class class_4c6a0e72 : cluielem {
         [[ self ]]->set_data(localclientnum, "index", value);
     }
 
-    // Namespace namespace_4c6a0e72/cp_chyron
+    // Namespace ccp_chyron/cp_chyron
     // Params 6, eflags: 0x2 linked
     // Checksum 0x8f4bc3b1, Offset: 0x4b8
     // Size: 0x13c
@@ -93,7 +93,7 @@ class class_4c6a0e72 : cluielem {
         cluielem::add_clientfield("index", 1, 4, "int", var_eaf012fc);
     }
 
-    // Namespace namespace_4c6a0e72/cp_chyron
+    // Namespace ccp_chyron/cp_chyron
     // Params 2, eflags: 0x2 linked
     // Checksum 0x7cde0dc1, Offset: 0x810
     // Size: 0x30
@@ -101,7 +101,7 @@ class class_4c6a0e72 : cluielem {
         [[ self ]]->set_data(localclientnum, "line4", value);
     }
 
-    // Namespace namespace_4c6a0e72/cp_chyron
+    // Namespace ccp_chyron/cp_chyron
     // Params 1, eflags: 0x2 linked
     // Checksum 0x65bb909a, Offset: 0x628
     // Size: 0x108
@@ -122,7 +122,7 @@ class class_4c6a0e72 : cluielem {
 // Checksum 0xccbb2989, Offset: 0x110
 // Size: 0x1a6
 function register(var_27185c26, var_9da4cb62, var_865fc474, var_1909e1e7, var_2ff7635c, var_eaf012fc) {
-    elem = new class_4c6a0e72();
+    elem = new ccp_chyron();
     [[ elem ]]->setup_clientfields(var_27185c26, var_9da4cb62, var_865fc474, var_1909e1e7, var_2ff7635c, var_eaf012fc);
     if (!isdefined(level.var_ae746e8f)) {
         level.var_ae746e8f = associativearray();
@@ -143,7 +143,7 @@ function register(var_27185c26, var_9da4cb62, var_865fc474, var_1909e1e7, var_2f
 // Checksum 0x500a6a77, Offset: 0x2c0
 // Size: 0x34
 function register_clientside() {
-    elem = new class_4c6a0e72();
+    elem = new ccp_chyron();
     [[ elem ]]->register_clientside();
     return elem;
 }

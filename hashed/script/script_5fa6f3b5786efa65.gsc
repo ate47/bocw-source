@@ -106,8 +106,8 @@ function function_465aaf09(player, origin) {
     }
     var_c95d22c.org thread namespace_ec06fe4a::function_d55f042c(var_c95d22c, "death");
     var_c95d22c thread namespace_ec06fe4a::function_d55f042c(level, "game_over");
-    var_b411e9f2 = array("slideways", "slideways2", "slideways3", "slideways4", "slideways5");
-    level.doa.var_848746c8 = is_true(level.doa.hardcoremode) ? undefined : var_b411e9f2[randomint(var_b411e9f2.size)];
+    rooms = array("slideways", "slideways2", "slideways3", "slideways4", "slideways5");
+    level.doa.var_848746c8 = is_true(level.doa.hardcoremode) ? undefined : rooms[randomint(rooms.size)];
     level.doa.var_54c5c3e6 = var_c95d22c;
     var_c95d22c namespace_e32bb68::function_3a59ec34("evt_doa_pickup_arcade_active_lp");
     var_c95d22c thread namespace_ec06fe4a::function_2d920b3c(1, 0);

@@ -15,14 +15,14 @@
 // Checksum 0x8f0c4bb3, Offset: 0x128
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register("recon_car", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register("recon_car", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace recon_car/recon_car
 // Params 0, eflags: 0x6 linked
 // Checksum 0x51fac6d4, Offset: 0x170
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     killstreak_detect::init_shared();
     remote_weapons::init_shared();
     killstreaks::function_b5b6ef3e(&init_killstreak);

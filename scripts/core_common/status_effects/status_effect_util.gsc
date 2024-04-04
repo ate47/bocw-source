@@ -148,7 +148,7 @@ function private function_91a9db75(sourcetype, setype, namehash) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x8affa56, Offset: 0x670
 // Size: 0x7fc
-function status_effect_apply(var_756fda07, weapon, applicant, isadditive, var_ab5b905e, var_894859a2, location) {
+function status_effect_apply(var_756fda07, weapon, applicant, isadditive, durationoverride, var_894859a2, location) {
     /#
         assert(isdefined(var_756fda07.setype));
     #/
@@ -161,8 +161,8 @@ function status_effect_apply(var_756fda07, weapon, applicant, isadditive, var_ab
     var_756fda07.applicant = applicant;
     if (isdefined(var_894859a2)) {
         var_756fda07.var_77449e9 = var_756fda07.var_77449e9 * var_894859a2;
-        if (isdefined(var_ab5b905e)) {
-            var_ab5b905e = var_ab5b905e * var_894859a2;
+        if (isdefined(durationoverride)) {
+            durationoverride = durationoverride * var_894859a2;
         }
     }
     register_status_effect(var_756fda07.setype);
@@ -207,9 +207,9 @@ function status_effect_apply(var_756fda07, weapon, applicant, isadditive, var_ab
     }
     if (var_4df0ea83) {
         if (isadditive && var_756fda07.setype != 4) {
-            effect function_57f33b96(var_756fda07, var_b0144580, var_ab5b905e, applicant, var_f8f8abaa, weapon);
+            effect function_57f33b96(var_756fda07, var_b0144580, durationoverride, applicant, var_f8f8abaa, weapon);
         } else {
-            effect update_duration(var_756fda07, var_b0144580, var_ab5b905e, applicant, var_f8f8abaa, weapon);
+            effect update_duration(var_756fda07, var_b0144580, durationoverride, applicant, var_f8f8abaa, weapon);
         }
     }
     maxduration = effect function_f9ca1b6a(var_756fda07);
@@ -500,7 +500,7 @@ function private function_40293e80(status_effect_type, weapon) {
 // Params 6, eflags: 0x6 linked
 // Checksum 0x714c8a87, Offset: 0x1910
 // Size: 0x2be
-function private update_duration(var_756fda07, var_b0144580, var_ab5b905e, applicant, var_f8f8abaa, weapon) {
+function private update_duration(var_756fda07, var_b0144580, durationoverride, applicant, var_f8f8abaa, weapon) {
     setype = var_756fda07.setype;
     resistance = self function_a6613b51(var_756fda07);
     var_fb887b00 = var_b0144580 ? self.owner function_37683813() : 1;
@@ -510,20 +510,20 @@ function private update_duration(var_756fda07, var_b0144580, var_ab5b905e, appli
     if (resistance > 0 && isdefined(applicant) && var_f8f8abaa && var_756fda07.var_42c00474 === 1 && !var_b0144580 && setype !== 0) {
         applicant damagefeedback::update(undefined, undefined, function_40293e80(setype, weapon));
     }
-    var_7a1fa72a = 0;
-    if (isdefined(var_ab5b905e)) {
-        var_7a1fa72a = var_ab5b905e;
+    newduration = 0;
+    if (isdefined(durationoverride)) {
+        newduration = durationoverride;
     } else {
-        var_7a1fa72a = var_756fda07.var_77449e9;
+        newduration = var_756fda07.var_77449e9;
     }
-    var_7a1fa72a = int(var_7a1fa72a * (1 - resistance) * var_fb887b00);
+    newduration = int(newduration * (1 - resistance) * var_fb887b00);
     var_2226e3f0 = self.endtime;
     time = level.time;
     maxduration = self function_f9ca1b6a(var_756fda07);
     if (isdefined(var_2226e3f0)) {
         var_b5051685 = var_2226e3f0 - time;
-        if (var_b5051685 < var_7a1fa72a) {
-            self.duration = var_7a1fa72a;
+        if (var_b5051685 < newduration) {
+            self.duration = newduration;
             if (maxduration && self.duration > maxduration) {
                 self.duration = maxduration;
             }
@@ -531,7 +531,7 @@ function private update_duration(var_756fda07, var_b0144580, var_ab5b905e, appli
         }
         return;
     }
-    self.duration = var_7a1fa72a;
+    self.duration = newduration;
     if (maxduration && self.duration > maxduration) {
         self.duration = maxduration;
     }
@@ -542,7 +542,7 @@ function private update_duration(var_756fda07, var_b0144580, var_ab5b905e, appli
 // Params 6, eflags: 0x6 linked
 // Checksum 0x7b3d1ba5, Offset: 0x1bd8
 // Size: 0x32e
-function private function_57f33b96(var_756fda07, var_b0144580, var_ab5b905e, applicant, var_f8f8abaa, weapon) {
+function private function_57f33b96(var_756fda07, var_b0144580, durationoverride, applicant, var_f8f8abaa, weapon) {
     setype = var_756fda07.setype;
     resistance = self function_a6613b51(var_756fda07);
     if (is_true(var_756fda07.var_857e12ae)) {
@@ -555,36 +555,36 @@ function private function_57f33b96(var_756fda07, var_b0144580, var_ab5b905e, app
     if (resistance > 0 && setype != 0 && setype != 3 && isdefined(applicant) && var_f8f8abaa && var_756fda07.var_42c00474 === 1 && !var_b0144580) {
         applicant damagefeedback::update(undefined, undefined, function_40293e80(setype, weapon), weapon, self.owner);
     }
-    var_7a1fa72a = 0;
-    if (isdefined(var_ab5b905e)) {
-        var_7a1fa72a = var_ab5b905e;
+    newduration = 0;
+    if (isdefined(durationoverride)) {
+        newduration = durationoverride;
     } else {
-        var_7a1fa72a = var_756fda07.var_77449e9;
+        newduration = var_756fda07.var_77449e9;
     }
-    var_7a1fa72a = int(var_7a1fa72a * (1 - resistance) * var_fb887b00);
+    newduration = int(newduration * (1 - resistance) * var_fb887b00);
     time = level.time;
     maxduration = self function_f9ca1b6a(var_756fda07);
     if (isdefined(self.duration)) {
         if (isdefined(self.endtime) && self.endtime > time) {
-            if (maxduration && var_7a1fa72a > maxduration) {
-                var_7a1fa72a = maxduration;
+            if (maxduration && newduration > maxduration) {
+                newduration = maxduration;
             }
-            self.duration = self.duration + var_7a1fa72a;
-            self.endtime = gettime() + var_7a1fa72a;
+            self.duration = self.duration + newduration;
+            self.endtime = gettime() + newduration;
         } else {
-            self.duration = var_7a1fa72a;
+            self.duration = newduration;
             if (maxduration && self.duration > maxduration) {
                 self.duration = maxduration;
             }
-            self.endtime = time + var_7a1fa72a;
+            self.endtime = time + newduration;
         }
         return;
     }
-    self.duration = var_7a1fa72a;
+    self.duration = newduration;
     if (maxduration && self.duration > maxduration) {
         self.duration = maxduration;
     }
-    self.endtime = time + var_7a1fa72a;
+    self.endtime = time + newduration;
 }
 
 // Namespace status_effect/status_effect_util

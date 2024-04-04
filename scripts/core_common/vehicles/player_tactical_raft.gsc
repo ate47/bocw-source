@@ -11,14 +11,14 @@
 // Checksum 0x296be1c5, Offset: 0xd0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"player_tactical_raft", &function_70a657d8, undefined, undefined, #"player_vehicle");
+    system::register(#"player_tactical_raft", &preinit, undefined, undefined, #"player_vehicle");
 }
 
 // Namespace player_tactical_raft/player_tactical_raft
 // Params 0, eflags: 0x6 linked
 // Checksum 0xba46426f, Offset: 0x120
 // Size: 0x54
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_main_callback("tactical_raft_wz", &function_9941dc42);
     setdvar(#"phys_buoyancy", 1);
 }

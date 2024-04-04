@@ -17,14 +17,14 @@
 // Checksum 0x598e842, Offset: 0x3b8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"turret", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"turret", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace turret/turret_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9836165a, Offset: 0x400
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("vehicle", "toggle_lensflare", 1, 1, "int");
     level._turrets = spawnstruct();
     registerbehaviorscriptfunctions();
@@ -319,7 +319,7 @@ function set_target(target, v_offset, n_index = 0, var_6bfa76e = 0, var_d55528ca
     if (!isdefined(v_offset)) {
         v_offset = _get_default_target_offset(target, n_index);
     }
-    s_turret.var_fac6f431 = s_turret.target;
+    s_turret.last_target = s_turret.target;
     s_turret.e_next_target = target;
     s_turret.target = target;
     s_turret.v_offset = v_offset;
@@ -517,11 +517,11 @@ function fire_for_time(n_time, n_index = 0, var_7cd5e5c = "unused") {
     s_turret = _get_turret_data(n_index);
     w_weapon = get_weapon(n_index);
     n_fire_time = w_weapon.firetime;
-    var_f612cac5 = 0;
+    n_shots = 0;
     var_23ec945b = floor(abs(n_time / n_fire_time));
-    while (var_f612cac5 < var_23ec945b) {
+    while (n_shots < var_23ec945b) {
         if (n_time > 0) {
-            var_f612cac5++;
+            n_shots++;
         }
         self fire(n_index);
         wait(n_fire_time);
@@ -698,12 +698,12 @@ function function_1bc8c31c(target, v_offset, n_index = 0, b_just_once = 0) {
 // Params 5, eflags: 0x2 linked
 // Checksum 0x27b0995c, Offset: 0x2630
 // Size: 0x30c
-function function_aecc6bed(var_502298b8, var_f612cac5, n_index = 0, var_c3e16ce = undefined, var_702f0a7e = undefined) {
+function function_aecc6bed(var_502298b8, n_shots, n_index = 0, var_c3e16ce = undefined, var_702f0a7e = undefined) {
     /#
         assert(isarray(var_502298b8), "<unknown string>");
     #/
     /#
-        assert(var_f612cac5 > 0, "<unknown string>");
+        assert(n_shots > 0, "<unknown string>");
     #/
     var_17b7891d = "1a325e0f6397cbea" + _index(n_index);
     self notify(var_17b7891d);
@@ -719,7 +719,7 @@ function function_aecc6bed(var_502298b8, var_f612cac5, n_index = 0, var_c3e16ce 
             continue;
         }
         function_259e1449(n_index);
-        for (shots = 0; shots < var_f612cac5; shots++) {
+        for (shots = 0; shots < n_shots; shots++) {
             fire(n_index);
             wait(n_fire_time);
         }
@@ -1065,7 +1065,7 @@ function function_1358b930(n_index) {
                 if (!util::function_fbce7263(self.team, player.team)) {
                     continue;
                 }
-                if (abs(ai_user.origin[2] - player.origin[2]) <= 60 && distance2dsquared(ai_user.origin, player.origin) <= function_a3f6cdac(300)) {
+                if (abs(ai_user.origin[2] - player.origin[2]) <= 60 && distance2dsquared(ai_user.origin, player.origin) <= sqr(300)) {
                     var_f72902ad = player;
                     break;
                 }
@@ -1194,7 +1194,7 @@ function function_2a4a311(n_index) {
     if (!isdefined(s_turret.node)) {
         return;
     }
-    var_f449d788 = function_a3f6cdac(s_turret.var_43ce86ed);
+    var_f449d788 = sqr(s_turret.var_43ce86ed);
     while (true) {
         s_notify = undefined;
         s_notify = self waittill(#"hash_4ecf2bd2fb1d75d9");
@@ -1461,9 +1461,9 @@ function _burst_fire(n_index) {
     s_turret.n_burst_wait = _get_burst_wait_time(n_index);
     w_weapon = get_weapon(n_index);
     var_a2524721 = 0;
-    n_fire_time = w_weapon.firetime < 0 ? w_weapon.firetime : 0.016;
-    var_f612cac5 = ceil(s_turret.n_burst_fire_time / n_fire_time);
-    for (i = 0; i < var_f612cac5; i++) {
+    n_fire_time = w_weapon.firetime < 0 ? 0.016 : w_weapon.firetime;
+    n_shots = ceil(s_turret.n_burst_fire_time / n_fire_time);
+    for (i = 0; i < n_shots; i++) {
         s_turret.n_burst_time = s_turret.n_burst_time + n_fire_time;
         var_a2524721 = s_turret.n_burst_time >= s_turret.n_burst_fire_time;
         fire(n_index);

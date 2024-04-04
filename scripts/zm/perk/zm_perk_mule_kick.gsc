@@ -38,14 +38,14 @@
 // Checksum 0x4ffde0d, Offset: 0x318
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"zm_perk_mule_kick", &function_70a657d8, undefined, undefined, #"hash_2d064899850813e2");
+    system::register(#"zm_perk_mule_kick", &preinit, undefined, undefined, #"hash_2d064899850813e2");
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc486cbd2, Offset: 0x368
 // Size: 0x64
-function private function_70a657d8() {
+function private preinit() {
     if (!is_true(getgametypesetting(#"hash_616a22c5c1ebe5b8"))) {
         return;
     }
@@ -126,13 +126,13 @@ function function_aee99628(player) {
         foreach (zombie in a_potential_targets) {
             if (isalive(zombie) && zombie.team === level.zombie_team) {
                 var_6e084471 = vectornormalize(zombie.origin - self.origin);
-                var_1006dafa = vectordot(right, var_6e084471);
+                rightdot = vectordot(right, var_6e084471);
                 leftdot = vectordot(left, var_6e084471);
-                if (var_1006dafa <= 0.866025 && var_1006dafa > 0 || leftdot <= 0.866025 && leftdot > 0) {
+                if (rightdot <= 0.866025 && rightdot > 0 || leftdot <= 0.866025 && leftdot > 0) {
                     damage = zm_equipment::function_379f6b5d(150, undefined, zombie.var_6f84b820, zombie.maxhealth);
                     zombie dodamage(damage, zombie.origin, player, player, "torso_upper", "MOD_RIFLE_BULLET");
                     if (damage >= zombie.health) {
-                        level scoreevents::doscoreeventcallback("scoreEventZM", {#enemy:zombie, #scoreevent:#"hash_748d4479ffd0521e", #attacker:player});
+                        level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:player, #scoreevent:#"hash_748d4479ffd0521e", #enemy:zombie});
                     }
                 }
             }
@@ -147,7 +147,7 @@ function function_aee99628(player) {
 // Checksum 0x53302391, Offset: 0xab0
 // Size: 0x3c
 function function_c60d9d72() {
-    self.var_3ee46cbd = &function_5fd3f2ba;
+    self.use_func = &function_5fd3f2ba;
     self clientfield::set("mule_kick_machine_rob", 1);
 }
 

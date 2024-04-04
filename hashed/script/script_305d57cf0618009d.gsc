@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\core_common\util_shared.gsc;
-#using script_d9b5c8b1ad38ef5;
+#using scripts\core_common\territory.gsc;
 #using scripts\core_common\oob.gsc;
 #using scripts\core_common\math_shared.gsc;
 #using scripts\core_common\lui_shared.gsc;
@@ -164,7 +164,7 @@ function private function_3ca86964(var_1d83d08d) {
     mins = vectorscale((-1, -1, 0), 150000);
     maxs = vectorscale((1, 1, 0), 150000);
     if (var_6024133d.size == 0) {
-        return {#end:maxs, #start:mins};
+        return {#start:mins, #end:maxs};
     }
     o_a = var_6024133d[0].origin;
     o_b = var_6024133d[1].origin;
@@ -191,7 +191,7 @@ function private function_9ddb4115(var_1d83d08d) {
         initcircle = level.deathcircles[0];
         newstart = var_1d83d08d.start;
         toend = vectornormalize(var_1d83d08d.end - var_1d83d08d.start);
-        for (var_164fe5c9 = distance2dsquared(newstart, initcircle.origin); var_164fe5c9 > function_a3f6cdac(initcircle.radius); var_164fe5c9 = var_c820832) {
+        for (var_164fe5c9 = distance2dsquared(newstart, initcircle.origin); var_164fe5c9 > sqr(initcircle.radius); var_164fe5c9 = var_c820832) {
             newstart = newstart + toend * 1000;
             var_c820832 = distance2dsquared(newstart, initcircle.origin);
             if (var_c820832 > var_164fe5c9) {
@@ -200,9 +200,9 @@ function private function_9ddb4115(var_1d83d08d) {
         }
         var_1d83d08d.start = newstart;
         var_1b8e09d2 = var_1d83d08d.end;
-        var_6d773f9e = toend * -1;
-        for (var_164fe5c9 = distance2dsquared(var_1b8e09d2, initcircle.origin); var_164fe5c9 > function_a3f6cdac(initcircle.radius); var_164fe5c9 = var_c820832) {
-            var_1b8e09d2 = var_1b8e09d2 + var_6d773f9e * 1000;
+        tostart = toend * -1;
+        for (var_164fe5c9 = distance2dsquared(var_1b8e09d2, initcircle.origin); var_164fe5c9 > sqr(initcircle.radius); var_164fe5c9 = var_c820832) {
+            var_1b8e09d2 = var_1b8e09d2 + tostart * 1000;
             var_c820832 = distance2dsquared(var_1b8e09d2, initcircle.origin);
             if (var_c820832 > var_164fe5c9) {
                 break;
@@ -304,7 +304,7 @@ function function_d53a8c5b(insertion, fly_over_point, var_59526dd5, offset) {
     direction = anglestoforward(var_872f085f);
     direction = vectornormalize(direction);
     var_7c712437 = fly_over_point + anglestoright(var_872f085f) * offset;
-    var_1d83d08d = {#end:var_7c712437 + direction * 150000, #start:var_7c712437 + direction * -150000};
+    var_1d83d08d = {#start:var_7c712437 + direction * -150000, #end:var_7c712437 + direction * 150000};
     result = function_3ca86964(var_1d83d08d);
     var_1d83d08d.start = function_fd3c1bcc(fly_over_point, var_1d83d08d.start, result.start);
     var_1d83d08d.end = function_fd3c1bcc(fly_over_point, var_1d83d08d.end, result.end);
@@ -513,12 +513,12 @@ function function_9ed051a4() {
         return (level.mapcenter[0], level.mapcenter[1], function_70dd0500());
     }
     /#
-        assert(isdefined(level.var_a3b3ad04.var_8faef7b7));
+        assert(isdefined(level.mapbounds.var_8faef7b7));
     #/
     /#
-        assert(isdefined(level.var_a3b3ad04.var_68fd6e0a));
+        assert(isdefined(level.mapbounds.var_68fd6e0a));
     #/
-    map_center = math::find_box_center(level.var_a3b3ad04.var_8faef7b7, level.var_a3b3ad04.var_68fd6e0a);
+    map_center = math::find_box_center(level.mapbounds.var_8faef7b7, level.mapbounds.var_68fd6e0a);
     map_center = map_center + (0, 0, function_70dd0500());
     if (is_true(getgametypesetting(#"wzintersectdeathcircle"))) {
         circleindex = isdefined(getgametypesetting(#"wzintersectdeathcircleindex")) ? getgametypesetting(#"wzintersectdeathcircleindex") : 0;
@@ -533,8 +533,8 @@ function function_9ed051a4() {
             return (var_7ed8b321[0], var_7ed8b321[1], map_center[2]);
         }
     }
-    x = abs(level.var_a3b3ad04.var_68fd6e0a[0] - level.var_a3b3ad04.var_8faef7b7[0]) * 0.5;
-    y = abs(level.var_a3b3ad04.var_68fd6e0a[1] - level.var_a3b3ad04.var_8faef7b7[1]) * 0.5;
+    x = abs(level.mapbounds.var_68fd6e0a[0] - level.mapbounds.var_8faef7b7[0]) * 0.5;
+    y = abs(level.mapbounds.var_68fd6e0a[1] - level.mapbounds.var_8faef7b7[1]) * 0.5;
     ratio_max = math::clamp(level.var_427d6976.("insertionFlyoverBoundsOuterRatio"), 0, 1);
     var_40f8484d = math::clamp(level.var_427d6976.("insertionFlyoverBoundsInnerRatio"), 0, ratio_max);
     var_5017ad06 = (x * (ratio_max - var_40f8484d), y * (ratio_max - var_40f8484d), 0);
@@ -558,8 +558,8 @@ function function_da0c552e() {
             center = level.deathcircles[circleindex].origin;
             if (circleindex > 0) {
                 var_6bf489f1 = level.deathcircles[0].origin;
-                var_1ce870a0 = vectornormalize(center - var_6bf489f1);
-                var_6e3e0ad7 = vectortoangles(var_1ce870a0);
+                tocenter = vectornormalize(center - var_6bf489f1);
+                var_6e3e0ad7 = vectortoangles(tocenter);
                 if (math::cointoss()) {
                     return var_6e3e0ad7[1];
                 }

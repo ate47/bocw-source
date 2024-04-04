@@ -10,14 +10,14 @@
 // Checksum 0x4f4c76da, Offset: 0x130
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_5f19cd68b4607f52", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_5f19cd68b4607f52", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_58949729/namespace_58949729
 // Params 0, eflags: 0x2 linked
 // Checksum 0x48bcc164, Offset: 0x178
 // Size: 0x4c
-function function_70a657d8() {
+function preinit() {
     clientfield::register("scriptmover", "reward_chest_fx", 1, 2, "int", &reward_chest_fx, 0, 0);
 }
 

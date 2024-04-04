@@ -22,14 +22,14 @@
 // Checksum 0x999de237, Offset: 0x130
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_loadout", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_loadout", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_loadout/zm_loadout
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb565f678, Offset: 0x178
 // Size: 0x3c
-function private function_70a657d8() {
+function private preinit() {
     /#
         if (!isdemoplaying()) {
             on_localplayer_spawned(&on_localplayer_spawned);

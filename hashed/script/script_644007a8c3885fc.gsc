@@ -9,7 +9,7 @@
 // Checksum 0x661a1e3d, Offset: 0x90
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_28a40055ae0e64e0", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_28a40055ae0e64e0", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_1c7b37c6/namespace_1c7b37c6
@@ -24,7 +24,7 @@ function autoexec __init() {
 // Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0xf8
 // Size: 0x4
-function private function_70a657d8() {
+function private preinit() {
     
 }
 
@@ -45,12 +45,12 @@ function item_remover(func1, param1) {
 // Params 3, eflags: 0x0
 // Checksum 0xd980b600, Offset: 0x148
 // Size: 0x4a
-function item_replacer(func1, var_f3ef555b, var_e3c89f9) {
-    if (!isdefined(var_f3ef555b) || !isdefined(var_e3c89f9)) {
+function item_replacer(func1, list1, list2) {
+    if (!isdefined(list1) || !isdefined(list2)) {
         return;
     }
     if (isdefined(func1)) {
-        [[ func1 ]](var_f3ef555b, var_e3c89f9);
+        [[ func1 ]](list1, list2);
     }
 }
 

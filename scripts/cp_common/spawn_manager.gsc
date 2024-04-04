@@ -15,21 +15,21 @@
 // Checksum 0xee02b929, Offset: 0x1d8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"spawn_manager", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"spawn_manager", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace spawn_manager/spawn_manager
 // Params 0, eflags: 0x6 linked
 // Checksum 0x944b8e1c, Offset: 0x220
 // Size: 0xe4
-function private function_70a657d8() {
+function private preinit() {
     level.var_7c90ec19 = 0;
     level.var_539b11be = 50;
     level.var_e4fdd7dd = 0;
     level.var_ec8c9d99 = 0;
-    level.var_47f0dbb6 = [];
-    level.var_47f0dbb6 = getentarray("spawn_manager", "classname");
-    array::thread_all(level.var_47f0dbb6, &function_b574e20c);
+    level.spawn_managers = [];
+    level.spawn_managers = getentarray("spawn_manager", "classname");
+    array::thread_all(level.spawn_managers, &function_b574e20c);
     function_edad3267();
     /#
         on_connect(&on_player_connect);
@@ -93,12 +93,12 @@ function function_7051aeac(var_21472c04) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xb6540a4d, Offset: 0x658
 // Size: 0x8c
-function function_92d46b09(var_42ff4dbe) {
+function spawn_manager_spawn(maxdelay) {
     self endon(#"death");
     start = gettime();
     while (true) {
         ai = self spawner::spawn();
-        if (isdefined(ai) || gettime() - start > 1000 * var_42ff4dbe) {
+        if (isdefined(ai) || gettime() - start > 1000 * maxdelay) {
             return ai;
         }
         wait(0.5);
@@ -113,7 +113,7 @@ function function_ae26af62(spawner, var_21472c04) {
     for (i = 0; i < var_21472c04; i++) {
         ai = undefined;
         if (isdefined(spawner) && isdefined(spawner.targetname)) {
-            ai = spawner function_92d46b09(2);
+            ai = spawner spawn_manager_spawn(2);
             if (isdefined(ai)) {
                 ai.sm_id = self.sm_id;
             }
@@ -418,21 +418,21 @@ function function_b574e20c() {
                 var_33440dfa = [];
                 var_76d7ba22 = [];
                 for (i = 0; i < self.spawners.size; i++) {
-                    var_604e13 = self.spawners[i];
-                    if (isdefined(var_604e13)) {
-                        if (var_604e13.var_5ee53e3.size > var_604e13.var_2023678c) {
+                    current_spawner = self.spawners[i];
+                    if (isdefined(current_spawner)) {
+                        if (current_spawner.var_5ee53e3.size > current_spawner.var_2023678c) {
                             continue;
                         }
-                        if (!function_42a4d0d8(var_604e13)) {
+                        if (!function_42a4d0d8(current_spawner)) {
                             continue;
                         }
-                        var_20c0d5a8 = var_604e13.var_b02a42f7 - var_604e13.var_5ee53e3.size;
+                        var_20c0d5a8 = current_spawner.var_b02a42f7 - current_spawner.var_5ee53e3.size;
                         if (var_20c0d5a8 >= self.var_ed3f1bbb) {
-                            if (isdefined(var_604e13.spawnflags) && (var_604e13.spawnflags & 32) == 32) {
-                                var_76d7ba22[var_76d7ba22.size] = var_604e13;
+                            if (isdefined(current_spawner.spawnflags) && (current_spawner.spawnflags & 32) == 32) {
+                                var_76d7ba22[var_76d7ba22.size] = current_spawner;
                                 continue;
                             }
-                            var_33440dfa[var_33440dfa.size] = var_604e13;
+                            var_33440dfa[var_33440dfa.size] = current_spawner;
                         }
                     }
                 }
@@ -458,10 +458,10 @@ function function_b574e20c() {
                 } else {
                     var_7fdb9de8 = 0;
                     for (i = 0; i < self.spawners.size; i++) {
-                        var_604e13 = self.spawners[i];
-                        if (isdefined(var_604e13)) {
-                            if (var_604e13.var_b02a42f7 > var_7fdb9de8) {
-                                var_7fdb9de8 = var_604e13.var_b02a42f7;
+                        current_spawner = self.spawners[i];
+                        if (isdefined(current_spawner)) {
+                            if (current_spawner.var_b02a42f7 > var_7fdb9de8) {
+                                var_7fdb9de8 = current_spawner.var_b02a42f7;
                             }
                         }
                     }
@@ -533,7 +533,7 @@ function function_16231fe() {
         array::wait_till(var_61262c99, "death");
     }
     level flag::set("sm_" + sm_id + "_cleared");
-    arrayremovevalue(level.var_47f0dbb6, undefined);
+    arrayremovevalue(level.spawn_managers, undefined);
 }
 
 // Namespace spawn_manager/spawn_manager
@@ -559,21 +559,21 @@ function function_edad3267(*var_8bfffc1b) {
 function function_aaa872c1(targetname) {
     if (isdefined(targetname)) {
         var_a900263 = [];
-        for (i = 0; i < level.var_47f0dbb6.size; i++) {
-            if (isdefined(level.var_47f0dbb6[i])) {
-                if (level.var_47f0dbb6[i].targetname === targetname || level.var_47f0dbb6[i].name === targetname) {
+        for (i = 0; i < level.spawn_managers.size; i++) {
+            if (isdefined(level.spawn_managers[i])) {
+                if (level.spawn_managers[i].targetname === targetname || level.spawn_managers[i].name === targetname) {
                     if (!isdefined(var_a900263)) {
                         var_a900263 = [];
                     } else if (!isarray(var_a900263)) {
                         var_a900263 = array(var_a900263);
                     }
-                    var_a900263[var_a900263.size] = level.var_47f0dbb6[i];
+                    var_a900263[var_a900263.size] = level.spawn_managers[i];
                 }
             }
         }
         return var_a900263;
     }
-    return level.var_47f0dbb6;
+    return level.spawn_managers;
 }
 
 // Namespace spawn_manager/spawn_manager
@@ -721,7 +721,7 @@ function function_42a4d0d8(spawner) {
         return true;
     }
     foreach (player in players) {
-        if (distancesquared(spawner.origin, player.origin) <= function_a3f6cdac(spawner.var_3717c478)) {
+        if (distancesquared(spawner.origin, player.origin) <= sqr(spawner.var_3717c478)) {
             return false;
         }
     }
@@ -873,7 +873,7 @@ function function_eba7c12(var_368d405d, var_50e34230, var_66d7c971, var_f71154e)
 // Params 8, eflags: 0x0
 // Checksum 0x1a3b4225, Offset: 0x2e20
 // Size: 0xf4
-function function_cf623c0e(var_368d405d, process, ent, var1, var_2c1ca37f, var_7daac69a, var_a2420fcc, var_ac042350) {
+function function_cf623c0e(var_368d405d, process, ent, var1, var2, var3, var4, var5) {
     /#
         assert(isdefined(process), "<unknown string>");
     #/
@@ -881,14 +881,14 @@ function function_cf623c0e(var_368d405d, process, ent, var1, var_2c1ca37f, var_7
         assert(level exists("<unknown string>" + var_368d405d + "<unknown string>"), "<unknown string>" + var_368d405d + "<unknown string>");
     #/
     wait_till_complete(var_368d405d);
-    util::single_func(ent, process, var1, var_2c1ca37f, var_7daac69a, var_a2420fcc, var_ac042350);
+    util::single_func(ent, process, var1, var2, var3, var4, var5);
 }
 
 // Namespace spawn_manager/spawn_manager
 // Params 8, eflags: 0x0
 // Checksum 0xd8f4935, Offset: 0x2f20
 // Size: 0xf4
-function function_685f0f0b(var_368d405d, process, ent, var1, var_2c1ca37f, var_7daac69a, var_a2420fcc, var_ac042350) {
+function function_685f0f0b(var_368d405d, process, ent, var1, var2, var3, var4, var5) {
     /#
         assert(isdefined(process), "<unknown string>");
     #/
@@ -896,14 +896,14 @@ function function_685f0f0b(var_368d405d, process, ent, var1, var_2c1ca37f, var_7
         assert(level exists("<unknown string>" + var_368d405d + "<unknown string>"), "<unknown string>" + var_368d405d + "<unknown string>");
     #/
     wait_till_cleared(var_368d405d);
-    util::single_func(ent, process, var1, var_2c1ca37f, var_7daac69a, var_a2420fcc, var_ac042350);
+    util::single_func(ent, process, var1, var2, var3, var4, var5);
 }
 
 // Namespace spawn_manager/spawn_manager
 // Params 8, eflags: 0x0
 // Checksum 0xc8729dca, Offset: 0x3020
 // Size: 0xf4
-function function_2886c4a9(var_368d405d, process, ent, var1, var_2c1ca37f, var_7daac69a, var_a2420fcc, var_ac042350) {
+function function_2886c4a9(var_368d405d, process, ent, var1, var2, var3, var4, var5) {
     /#
         assert(isdefined(process), "<unknown string>");
     #/
@@ -911,7 +911,7 @@ function function_2886c4a9(var_368d405d, process, ent, var1, var_2c1ca37f, var_7
         assert(level exists("<unknown string>" + var_368d405d + "<unknown string>"), "<unknown string>" + var_368d405d + "<unknown string>");
     #/
     function_58415221(var_368d405d);
-    util::single_func(ent, process, var1, var_2c1ca37f, var_7daac69a, var_a2420fcc, var_ac042350);
+    util::single_func(ent, process, var1, var2, var3, var4, var5);
 }
 
 // Namespace spawn_manager/spawn_manager
@@ -920,7 +920,7 @@ function function_2886c4a9(var_368d405d, process, ent, var1, var_2c1ca37f, var_7
 // Size: 0x12c
 function enable(var_368d405d, var_6ea96389) {
     if (level flag::exists("sm_" + var_368d405d + "_enabled")) {
-        foreach (sm in level.var_47f0dbb6) {
+        foreach (sm in level.spawn_managers) {
             if (isdefined(sm) && sm.sm_id == var_368d405d) {
                 sm notify(#"enable");
                 return;
@@ -941,7 +941,7 @@ function enable(var_368d405d, var_6ea96389) {
 // Size: 0x12c
 function disable(var_368d405d, var_6ea96389) {
     if (level flag::exists("sm_" + var_368d405d + "_enabled")) {
-        foreach (sm in level.var_47f0dbb6) {
+        foreach (sm in level.spawn_managers) {
             if (isdefined(sm) && sm.sm_id == var_368d405d) {
                 sm notify(#"disable");
                 return;
@@ -962,10 +962,10 @@ function disable(var_368d405d, var_6ea96389) {
 // Size: 0x154
 function kill(var_368d405d, var_6ea96389) {
     if (level flag::exists("sm_" + var_368d405d + "_enabled")) {
-        foreach (sm in level.var_47f0dbb6) {
+        foreach (sm in level.spawn_managers) {
             if (isdefined(sm) && sm.sm_id == var_368d405d) {
                 sm delete();
-                arrayremovevalue(level.var_47f0dbb6, undefined);
+                arrayremovevalue(level.spawn_managers, undefined);
                 return;
             }
         }

@@ -69,7 +69,7 @@ function function_f47e494a(localclientnum, team, colorindex) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x402f0724, Offset: 0x418
 // Size: 0xd2
-function function_1f84bb65(localclientnum, team, colorindex) {
+function get_team_color(localclientnum, team, colorindex) {
     if (function_39bce377(localclientnum)) {
         var_216b0054 = function_f47e494a(localclientnum, team, colorindex);
         teamcolor = (var_216b0054[0] / 255, var_216b0054[1] / 255, var_216b0054[2] / 255);
@@ -171,8 +171,8 @@ function private codcaster_monitor_xray_change(localclientnum) {
         var_2db6105b = level.gamestarted;
         var_50b78b20 = function_cd753154(localclientnum);
         var_920aadd7 = is_true(level.isigcactive);
-        var_86a34b38 = function_b3cde530(localclientnum, localplayer getentitynumber());
-        needupdate = team != lastteam || var_52fe6881 != var_f4e066d || var_6f36c5bc != var_fb32b8ee || var_349e9a55 != var_adcf5c30 || var_2db6105b != var_894a233a || var_50b78b20 != var_9c1f6f || var_920aadd7 != var_f0868cc0 || var_86a34b38 != var_22aac170;
+        inexecution = function_b3cde530(localclientnum, localplayer getentitynumber());
+        needupdate = team != lastteam || var_52fe6881 != var_f4e066d || var_6f36c5bc != var_fb32b8ee || var_349e9a55 != var_adcf5c30 || var_2db6105b != var_894a233a || var_50b78b20 != var_9c1f6f || var_920aadd7 != var_f0868cc0 || inexecution != var_22aac170;
         if (needupdate || level.var_6a64742e) {
             level.var_6a64742e = 0;
             lastteam = team;
@@ -182,8 +182,8 @@ function private codcaster_monitor_xray_change(localclientnum) {
             var_894a233a = var_2db6105b;
             var_9c1f6f = var_50b78b20;
             var_f0868cc0 = var_920aadd7;
-            var_22aac170 = var_86a34b38;
-            self function_1cc61419(localclientnum, [2:var_349e9a55, 1:var_6f36c5bc, 0:var_52fe6881]);
+            var_22aac170 = inexecution;
+            self function_1cc61419(localclientnum, [var_52fe6881, var_6f36c5bc, var_349e9a55]);
         }
     }
 }
@@ -200,10 +200,10 @@ function private function_1cc61419(localclientnum, settings) {
             continue;
         }
         if (player is_friendly(localclientnum)) {
-            var_f2a410c9[var_f2a410c9.size] = [3:player.team, 2:#"hash_39109749d54991e4", 1:#"hash_48a9d99bb016fbd3", 0:player];
+            var_f2a410c9[var_f2a410c9.size] = [player, #"hash_48a9d99bb016fbd3", #"hash_39109749d54991e4", player.team];
             continue;
         }
-        var_f2a410c9[var_f2a410c9.size] = [3:player.team, 2:#"hash_39109a49d54996fd", 1:#"hash_2fff175ca0ba28b2", 0:player];
+        var_f2a410c9[var_f2a410c9.size] = [player, #"hash_2fff175ca0ba28b2", #"hash_39109a49d54996fd", player.team];
     }
     ents = getentarraybytype(localclientnum, 15);
     foreach (entity in ents) {
@@ -217,10 +217,10 @@ function private function_1cc61419(localclientnum, settings) {
             continue;
         }
         if (entity is_friendly(localclientnum)) {
-            var_f2a410c9[var_f2a410c9.size] = [3:entity.team, 2:#"hash_39109749d54991e4", 1:#"hash_2476e7ae62469f70", 0:entity];
+            var_f2a410c9[var_f2a410c9.size] = [entity, #"hash_2476e7ae62469f70", #"hash_39109749d54991e4", entity.team];
             continue;
         }
-        var_f2a410c9[var_f2a410c9.size] = [3:entity.team, 2:#"hash_39109a49d54996fd", 1:#"hash_2476eaae6246a489", 0:entity];
+        var_f2a410c9[var_f2a410c9.size] = [entity, #"hash_2476eaae6246a489", #"hash_39109a49d54996fd", entity.team];
     }
     if (isdefined(level.var_e4935474)) {
         ents = level.var_e4935474;
@@ -228,10 +228,10 @@ function private function_1cc61419(localclientnum, settings) {
             ent = getentbynum(localclientnum, entity.var_eec7f99d);
             if (isdefined(ent)) {
                 if (ent is_friendly(localclientnum, entity.var_7c69bb09)) {
-                    var_f2a410c9[var_f2a410c9.size] = [3:entity.var_7c69bb09, 2:#"hash_39109749d54991e4", 1:#"hash_2476e7ae62469f70", 0:ent];
+                    var_f2a410c9[var_f2a410c9.size] = [ent, #"hash_2476e7ae62469f70", #"hash_39109749d54991e4", entity.var_7c69bb09];
                     continue;
                 }
-                var_f2a410c9[var_f2a410c9.size] = [3:entity.var_7c69bb09, 2:#"hash_39109a49d54996fd", 1:#"hash_2476eaae6246a489", 0:ent];
+                var_f2a410c9[var_f2a410c9.size] = [ent, #"hash_2476eaae6246a489", #"hash_39109a49d54996fd", entity.var_7c69bb09];
             }
         }
     }
@@ -311,7 +311,7 @@ function function_89106df8(localclientnum, robkey, rob, var_4724c867, settings) 
     if (!self function_d2503806(rob)) {
         return;
     }
-    teamcolor = function_1f84bb65(localclientnum, team, 3);
+    teamcolor = get_team_color(localclientnum, team, 3);
     var_592b7729 = is_friendly(localclientnum, team) ? "_team1" : "_team2";
     if (self postfx::function_556665f2(#"hash_56c4fdb61b420119" + var_592b7729)) {
         self function_116b95e5(#"hash_56c4fdb61b420119" + var_592b7729, #"color", teamcolor[0], teamcolor[1], teamcolor[2]);
@@ -357,7 +357,7 @@ function function_995e01b6(localclientnum, player) {
     rob = player is_friendly(localclientnum) ? #"hash_17daa1d16cd73cd2" : #"hash_17daa0d16cd73b1f";
     postfx = #"hash_2e3ec8882293a18f" + (player is_friendly(localclientnum) ? "_team1" : "_team2");
     var_1762ffa = util::spawn_model(localclientnum, #"hash_445c4aedaf62d3b9", player.origin, player.angles - vectorscale((1, 0, 0), 90));
-    teamcolor = function_1f84bb65(localclientnum, player.team, 3);
+    teamcolor = get_team_color(localclientnum, player.team, 3);
     if (player function_21c0fa55() && !function_4af9029c(localclientnum)) {
         gradient = getdvarfloat(#"hash_595a2f8a298ab607", 1);
         teamcolor = teamcolor * gradient;
@@ -452,12 +452,12 @@ function function_773f6e31(localclientnum, entity, var_d0ada253, state) {
     var_be6642de = (1, 1, 1);
     var_b76d5d98 = (0, 0, 0);
     if (state == 1) {
-        var_be6642de = function_1f84bb65(localclientnum, #"allies", 3);
+        var_be6642de = get_team_color(localclientnum, #"allies", 3);
     } else if (state == 2) {
-        var_be6642de = function_1f84bb65(localclientnum, #"axis", 3);
+        var_be6642de = get_team_color(localclientnum, #"axis", 3);
     } else if (state == 3) {
-        var_be6642de = function_1f84bb65(localclientnum, #"allies", 3);
-        var_b76d5d98 = function_1f84bb65(localclientnum, #"axis", 3);
+        var_be6642de = get_team_color(localclientnum, #"allies", 3);
+        var_b76d5d98 = get_team_color(localclientnum, #"axis", 3);
     }
     if (isdefined(var_be6642de)) {
         entity function_78233d29(var_d0ada253, "", #"hash_6be0f6c7665077c7", var_be6642de[0]);

@@ -8,14 +8,14 @@
 // Checksum 0x855653e, Offset: 0x88
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"spy_wanted_order", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"spy_wanted_order", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace spy_wanted_order/spy_wanted_order
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0xd8
 // Size: 0x4
-function private function_70a657d8() {
+function private preinit() {
     
 }
 

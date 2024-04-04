@@ -162,7 +162,7 @@ function private function_cf2348e7(model) {
     var_9487f37 = getuimodel(model, #"length");
     var_f76e6210 = getuimodel(model, #"x");
     var_f1cc2bf9 = getuimodel(model, #"y");
-    return {#y:getuimodelvalue(var_f1cc2bf9), #x:getuimodelvalue(var_f76e6210), #length:getuimodelvalue(var_9487f37), #degrees:getuimodelvalue(var_b0672ef2)};
+    return {#degrees:getuimodelvalue(var_b0672ef2), #length:getuimodelvalue(var_9487f37), #x:getuimodelvalue(var_f76e6210), #y:getuimodelvalue(var_f1cc2bf9)};
 }
 
 // Namespace namespace_61e6d095/namespace_61e6d095

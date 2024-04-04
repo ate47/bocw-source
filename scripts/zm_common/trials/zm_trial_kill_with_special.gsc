@@ -11,14 +11,14 @@
 // Checksum 0x1573f0f1, Offset: 0xa0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"kill_with_special", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"kill_with_special", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_kill_with_special/zm_trial_kill_with_special
 // Params 0, eflags: 0x4
 // Checksum 0x81a4ecf7, Offset: 0xe8
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

@@ -21,7 +21,7 @@ function private autoexec __init__system__() {
 // Checksum 0x80e7847b, Offset: 0x120
 // Size: 0x4c
 function init_shared() {
-    killstreaks::register_killstreak("weapon_armor", &function_5bf3c285);
+    killstreaks::register_killstreak("weapon_armor", &use_armor);
     callback::on_player_killed(&on_player_killed);
 }
 
@@ -29,7 +29,7 @@ function init_shared() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xe58e0839, Offset: 0x178
 // Size: 0x206
-function function_5bf3c285(*killstreaktype) {
+function use_armor(*killstreaktype) {
     if (self killstreakrules::iskillstreakallowed("weapon_armor", self.team) == 0) {
         return false;
     }

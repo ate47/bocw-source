@@ -14,14 +14,14 @@
 // Checksum 0x7ced9899, Offset: 0x290
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_36a2cb0be45d9374", &function_70a657d8, undefined, undefined, #"hash_13a43d760497b54d");
+    system::register(#"hash_36a2cb0be45d9374", &preinit, undefined, undefined, #"hash_13a43d760497b54d");
 }
 
 // Namespace namespace_32e85820/namespace_32e85820
 // Params 0, eflags: 0x6 linked
 // Checksum 0x34242d50, Offset: 0x2e0
 // Size: 0xdc
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "fx_heal_aoe_pillar_clientfield", 1, 1, "counter", &function_76b749e1, 1, 0);
     clientfield::register("toplayer", "fx_heal_aoe_player_clientfield", 1, 1, "counter", &function_813dcaec, 1, 0);
     clientfield::register("scriptmover", "fx_heal_aoe_bubble_clientfield", 1, 1, "int", &function_4d38c566, 1, 0);

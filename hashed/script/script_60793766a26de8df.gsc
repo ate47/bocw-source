@@ -16,14 +16,14 @@
 // Checksum 0x7ce67f29, Offset: 0x428
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_338a74f5c94ba66a", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_338a74f5c94ba66a", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_88795f45/namespace_88795f45
 // Params 0, eflags: 0x6 linked
 // Checksum 0x29c8378b, Offset: 0x470
 // Size: 0x25c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "steiner_radiation_bomb_prepare_fire_clientfield", 1, 1, "int", &function_bc28111c, 0, 0);
     clientfield::register("scriptmover", "radiation_bomb_play_landed_fx", 1, 2, "int", &function_8a3fc4ac, 0, 0);
     clientfield::register("missile", "radiation_bomb_trail_fx_clientfield", 1, 1, "int", &function_fc88234b, 0, 0);
@@ -88,7 +88,7 @@ function function_59ee055f(localclientnum) {
 // Checksum 0x75b62a90, Offset: 0x9d8
 // Size: 0x76
 function function_c3ae0dcf() {
-    self endon(#"death", #"hash_29b88049dcac8bb3");
+    self endon(#"death", #"entitydeleted");
     while (true) {
         s_result = undefined;
         s_result = self waittill(#"sndambientbreath");
@@ -104,7 +104,7 @@ function function_ce1bd3f2(localclientnum) {
     if (!isdefined(self.var_ce0f9600)) {
         self.var_ce0f9600 = 1;
     }
-    self endon(#"death", #"hash_29b88049dcac8bb3");
+    self endon(#"death", #"entitydeleted");
     var_b240b48 = "inhale";
     suffix = "";
     var_4f50b172 = 0.7;
@@ -145,7 +145,7 @@ function function_b53ee6c9(localclientnum) {
     if (!isdefined(self.var_ce0f9600)) {
         self.var_ce0f9600 = 1;
     }
-    self endon(#"death", #"hash_29b88049dcac8bb3");
+    self endon(#"death", #"entitydeleted");
     var_b240b48 = "inhale";
     suffix = "";
     var_4f50b172 = 0.75;
@@ -249,7 +249,7 @@ function private function_371c2ab4(startpos, normal) {
     rotation = randomint(360);
     var_4997e17c = perpendicularvector(normal);
     for (count = 0; count < 12; count++) {
-        locations[count] = {#fx:"zm_ai/fx9_steiner_rad_bomb_spot_lg_loop", #normal:(0, 0, 1), #position:(0, 0, 0)};
+        locations[count] = {#position:(0, 0, 0), #normal:(0, 0, 1), #fx:"zm_ai/fx9_steiner_rad_bomb_spot_lg_loop"};
         point = function_523961e2(startpos, normal, var_4997e17c, count, 12, 120, rotation);
         /#
             if (getdvarint(#"hash_65abc910bc611782", 0)) {
@@ -262,14 +262,14 @@ function private function_371c2ab4(startpos, normal) {
         if (trace[#"fraction"] < 0.7) {
             locations[count].position = traceposition;
             locations[count].normal = trace[#"normal"];
-            locations[count].fx = trace[#"fraction"] > 0.2 ? "zm_ai/fx9_steiner_rad_bomb_spot_lg_loop" : "zm_ai/fx9_steiner_rad_bomb_spot_md_loop";
+            locations[count].fx = trace[#"fraction"] > 0.2 ? "zm_ai/fx9_steiner_rad_bomb_spot_md_loop" : "zm_ai/fx9_steiner_rad_bomb_spot_lg_loop";
             hitsomething = 1;
         }
         if (!hitsomething) {
-            var_e5d1793d = bullettrace(traceposition, traceposition - normal * 100, 0, undefined);
-            if (var_e5d1793d[#"fraction"] != 1) {
-                locations[count].position = var_e5d1793d[#"position"];
-                locations[count].normal = var_e5d1793d[#"normal"];
+            tracedown = bullettrace(traceposition, traceposition - normal * 100, 0, undefined);
+            if (tracedown[#"fraction"] != 1) {
+                locations[count].position = tracedown[#"position"];
+                locations[count].normal = tracedown[#"normal"];
                 locations[count].fx = "zm_ai/fx9_steiner_rad_bomb_spot_sm_loop";
             }
         }
@@ -283,11 +283,11 @@ function private function_371c2ab4(startpos, normal) {
             var_9417df90 = bullettrace(offsetpoint, offsetpoint - normal * 90, 0, undefined);
             if (var_9417df90[#"fraction"] != 1) {
                 locindex = count + 12 * (var_ecef2fde + 1);
-                locations[locindex] = {#fx:"zm_ai/fx9_steiner_rad_bomb_spot_lg_loop", #normal:var_9417df90[#"normal"], #position:var_9417df90[#"position"]};
+                locations[locindex] = {#position:var_9417df90[#"position"], #normal:var_9417df90[#"normal"], #fx:"zm_ai/fx9_steiner_rad_bomb_spot_lg_loop"};
             }
         }
     }
-    return arraycombine([1:{#fx:"zm_ai/fx9_steiner_rad_bomb_circle_128", #normal:normal, #position:startpos}, 0:{#fx:"zm_ai/fx9_steiner_rad_bomb_rock_exp", #normal:normal, #position:startpos}], locations);
+    return arraycombine([{#position:startpos, #normal:normal, #fx:"zm_ai/fx9_steiner_rad_bomb_rock_exp"}, {#position:startpos, #normal:normal, #fx:"zm_ai/fx9_steiner_rad_bomb_circle_128"}], locations);
 }
 
 // Namespace namespace_88795f45/namespace_88795f45

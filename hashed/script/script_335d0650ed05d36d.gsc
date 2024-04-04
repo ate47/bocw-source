@@ -32,9 +32,9 @@ function function_d0149d6b() {
     if (!isdefined(level.supportedspawntypes)) {
         level.supportedspawntypes = [];
     }
-    var_65792f8b = map::get_script_bundle();
-    if (isdefined(var_65792f8b) && isdefined(var_65792f8b.var_2feed9e4)) {
-        setdvar(#"spawnsystem_sight_check_max_distance", var_65792f8b.var_2feed9e4);
+    mapbundle = map::get_script_bundle();
+    if (isdefined(mapbundle) && isdefined(mapbundle.var_2feed9e4)) {
+        setdvar(#"spawnsystem_sight_check_max_distance", mapbundle.var_2feed9e4);
     }
 }
 
@@ -129,13 +129,13 @@ function addsupportedspawnpointtype(spawnpointtype, team) {
 // Size: 0xd2
 function function_b404fc61(rawspawns) {
     if (isdefined(level.spawnsystem.var_adbbb58a)) {
-        var_37c06a3d = [];
+        validspawns = [];
         foreach (spawn in rawspawns) {
             if (![[ level.spawnsystem.var_adbbb58a ]](spawn)) {
-                var_37c06a3d[var_37c06a3d.size] = spawn;
+                validspawns[validspawns.size] = spawn;
             }
         }
-        rawspawns = var_37c06a3d;
+        rawspawns = validspawns;
     }
     return rawspawns;
 }

@@ -5,28 +5,28 @@
             "image": "#hash_755ce672bf83ff43",
             "imagelarge": "#hash_822d98a9a3c51dd",
             "displayname": "#hash_1b90e5f0b9cc41af",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "type": "#hash_daeb8129dc8e394",
             "image": "#hash_75ebac3faebfe873",
             "imagelarge": "#hash_4ff090c872aa2a30",
             "displayname": "#hash_5408e6800be6cb27",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "type": "#hash_20ea75a25d912949",
             "image": "#hash_4e8a15ea6670a2d2",
             "imagelarge": "#hash_281eb61c34a89050",
             "displayname": "#hash_185503b5ed146b",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "type": "#artifact",
             "image": "#hash_d3f63f893390ede",
             "imagelarge": "#hash_79ea1d07b299fc8f",
             "displayname": "#hash_430a25752f677909",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         }
     ],
     "var_6bb475c1": 1,

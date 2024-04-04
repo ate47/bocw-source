@@ -4,7 +4,7 @@
 #using script_1883fa4e60abbf9f;
 #using scripts\cp_common\util.gsc;
 #using scripts\core_common\values_shared.gsc;
-#using script_1292451e284848cc;
+#using scripts\cp_common\snd.gsc;
 #using script_31e9b35aaacbbd93;
 #using script_61cfc2ab8e60625;
 #using scripts\cp\cp_takedown_af_hill.gsc;
@@ -33,8 +33,8 @@ function starting(var_d3440450) {
     namespace_b100dd86::function_c8381339(plane, 0);
     exploder::stop_exploder("airfield_assault_lighting_noplane");
     exploder::exploder("airfield_assault_lighting");
-    arash = ai::function_e8b6bfec("arash")[0];
-    level thread scene::skipto_end("scene_tkd_hit3_intro_overlook_arash", "overlook_shot", [0:arash]);
+    arash = ai::array_spawn("arash")[0];
+    level thread scene::skipto_end("scene_tkd_hit3_intro_overlook_arash", "overlook_shot", [arash]);
     arash thread util::delay(0.1, undefined, &delete);
     namespace_b100dd86::function_c8381339(plane, 1);
     setdvar(#"hash_76c0d7e6385ee6de", 0.05);
@@ -42,7 +42,7 @@ function starting(var_d3440450) {
     level thread util::delay(0.2, undefined, &scene::stop, "scene_tkd_hit3_intro_overlook");
     setsaveddvar(#"hash_7bf40e4b6a830d11", 0);
     thread namespace_a052577e::function_4074e9b1();
-    guys = ai::function_e8b6bfec("af_unloader_guy");
+    guys = ai::array_spawn("af_unloader_guy");
     array::thread_all(guys, &namespace_979752dc::function_2324f175, 0);
     level flag::set("af_hill_complete");
     level flag::set("af_tarmac_complete");
@@ -55,7 +55,7 @@ function starting(var_d3440450) {
 // Checksum 0x836e8fb, Offset: 0x7e8
 // Size: 0x4cc
 function main(var_d3440450, *var_50cc0d4f) {
-    level util::delay(0.1, undefined, &namespace_979752dc::function_6891681b);
+    level util::delay(0.1, undefined, &namespace_979752dc::disable_stealth_system);
     level.player = getplayers()[0];
     level.player endon(#"death");
     snd::function_7db65a93(#"hash_1e58e46360c0a83b");
@@ -83,7 +83,7 @@ function main(var_d3440450, *var_50cc0d4f) {
     thread function_b3df3ebf();
     thread function_565588e1();
     level flag::wait_till("woods_to_truck");
-    level.woods thread util::function_27f5f662([2:"vox_cp_tdwn_07200_wood_hurry_3b", 1:"vox_cp_tdwn_07200_wood_quickbeforethep_01", 0:"vox_cp_tdwn_07200_wood_getarash_50"], "woods_to_truck", 2);
+    level.woods thread util::function_27f5f662(["vox_cp_tdwn_07200_wood_getarash_50", "vox_cp_tdwn_07200_wood_quickbeforethep_01", "vox_cp_tdwn_07200_wood_hurry_3b"], "woods_to_truck", 2);
     level flag::wait_till("af_tarmac_complete");
     if (isdefined(var_50cc0d4f)) {
         skipto::function_4e3ab877(var_50cc0d4f);
@@ -163,16 +163,16 @@ function function_565588e1() {
     level endon(#"af_player_get_in_left");
     level endon(#"af_player_get_in_right");
     level flag::wait_till("woods_to_truck");
-    level.woods thread util::delay(3, undefined, &util::function_27f5f662, [1:"vox_cp_tdwn_07200_wood_gettothattruck_5e", 0:"vox_cp_tdwn_07200_adlr_wehavetocatchth_c8"], "forever", 4);
+    level.woods thread util::delay(3, undefined, &util::function_27f5f662, ["vox_cp_tdwn_07200_adlr_wehavetocatchth_c8", "vox_cp_tdwn_07200_wood_gettothattruck_5e"], "forever", 4);
     while (!isdefined(level.var_49a5d2a4)) {
         waitframe(1);
     }
-    level.var_49a5d2a4 scene::play("scene_tkd_hit3_pre_chase", "enter", [0:level.woods]);
+    level.var_49a5d2a4 scene::play("scene_tkd_hit3_pre_chase", "enter", [level.woods]);
     level.woods stopanimscripted();
     level.woods ai::force_goal(level.woods.origin, 0, "never");
     level flag::set("woods_waiting_at_truck");
     level.woods val::set(#"chase", "ignoreall", 1);
-    level.woods.var_29710e76 = 1;
+    level.woods.script_fixednode = 1;
     if (level flag::get("woods_get_in_truck")) {
         level endon(#"hash_6d8d592b136c4266");
     } else {

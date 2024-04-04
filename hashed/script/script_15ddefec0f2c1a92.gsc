@@ -118,11 +118,11 @@ function function_ebb53c52() {
     if (namespace_4dae815d::function_59a9cf1d() != 0) {
         self.var_717a48cb = 0;
         self.var_f506c5cd = 1200;
-        self.var_32d07c96 = function_a3f6cdac(self.var_f506c5cd);
+        self.var_32d07c96 = sqr(self.var_f506c5cd);
         self.var_c8b974fe = self.origin;
     }
     self.var_cc28f8dc = 80;
-    self.var_651e2d9b = 2;
+    self.showdelay = 2;
     self.health = 4000;
     self.var_1c8b76d3 = 1;
     self.no_gib = 1;
@@ -145,19 +145,19 @@ function private function_da4ec7ea(*inflictor, *attacker, damage, *idflags, *mea
         self namespace_e32bb68::function_ae271c0b("zmb_doa_ai_hellhound_vocal_sprint");
         self namespace_ec06fe4a::function_8c808737();
         self notsolid();
-        var_956de39f = namespace_ec06fe4a::spawnmodel(self.origin);
-        if (!isdefined(var_956de39f)) {
+        orb = namespace_ec06fe4a::spawnmodel(self.origin);
+        if (!isdefined(orb)) {
             return modelindex;
         }
-        var_956de39f thread namespace_ec06fe4a::function_52afe5df(0.4);
+        orb thread namespace_ec06fe4a::function_52afe5df(0.4);
         profilestart();
         if (self.script_noteworthy === "wolf_ghosthound") {
-            var_956de39f namespace_83eb6304::function_3ecfde67("ghosthound_death");
-            var_956de39f namespace_83eb6304::function_3ecfde67("electrical_explo");
-            var_956de39f namespace_e32bb68::function_3a59ec34("zmb_doa_ai_ghosthound_explode");
+            orb namespace_83eb6304::function_3ecfde67("ghosthound_death");
+            orb namespace_83eb6304::function_3ecfde67("electrical_explo");
+            orb namespace_e32bb68::function_3a59ec34("zmb_doa_ai_ghosthound_explode");
         } else if (self.script_noteworthy === "wolf_hellhound") {
-            var_956de39f namespace_e32bb68::function_3a59ec34("zmb_doa_ai_hellhound_explode");
-            var_956de39f namespace_83eb6304::function_3ecfde67("hellhound_death");
+            orb namespace_e32bb68::function_3a59ec34("zmb_doa_ai_hellhound_explode");
+            orb namespace_83eb6304::function_3ecfde67("hellhound_death");
         }
         profilestop();
     }
@@ -172,7 +172,7 @@ function function_b4b1df9c(*params) {
     self namespace_e32bb68::function_ae271c0b("zmb_doa_ai_plaguehound_vocal_sprint");
     self namespace_e32bb68::function_3a59ec34("zmb_doa_ai_plaguehound_explode");
     self namespace_83eb6304::function_3ecfde67("nova_crawler_burst");
-    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", self.origin, 2 | 1 | 512, 40, 50);
+    trigger = namespace_ec06fe4a::spawntrigger("trigger_radius", self.origin, 2 | 1 | 512, 40, 50);
     if (isdefined(trigger)) {
         trigger thread namespace_ec06fe4a::function_52afe5df(3);
         trigger thread function_86555fba();
@@ -250,7 +250,7 @@ function function_df18852() {
         }
         self.shouldrun = need_to_run();
         self function_56bb65ac(self.shouldrun ? "RUN" : "WALK");
-        wait(self.doa.var_a706a3a7);
+        wait(self.doa.thinkrate);
     }
 }
 
@@ -317,8 +317,8 @@ function function_2e6b2ca9() {
         self.hasseenfavoriteenemy = 1;
         self thread function_a47b7e79(1);
     } else if (!is_true(self.hasseenfavoriteenemy) && isdefined(self.favoriteenemy)) {
-        var_35c0bfbe = self util::function_ad1eb5da(self.favoriteenemy.origin, 0.8, 1);
-        cansee = var_35c0bfbe && self cansee(self.favoriteenemy);
+        infov = self util::point_in_fov(self.favoriteenemy.origin, 0.8, 1);
+        cansee = infov && self cansee(self.favoriteenemy);
         /#
             if (isdefined(self.favoriteenemy) && isplayer(self.favoriteenemy) && self.favoriteenemy isinmovemode("<unknown string>", "<unknown string>")) {
                 cansee = 0;
@@ -447,7 +447,7 @@ function is_target_valid(dog, target) {
     if (dog.team == target.team) {
         return false;
     }
-    if (isplayer(target) && !namespace_7f5aeb59::function_7df41f60(target)) {
+    if (isplayer(target) && !namespace_7f5aeb59::isplayervalid(target)) {
         return false;
     }
     if (is_true(target.ignoreme)) {
@@ -496,7 +496,7 @@ function function_cf98d4f7(behaviortreeentity) {
         return false;
     }
     meleedist = 72;
-    if (distancesquared(behaviortreeentity.origin, behaviortreeentity.favoriteenemy.origin) < function_a3f6cdac(meleedist) && behaviortreeentity cansee(behaviortreeentity.favoriteenemy)) {
+    if (distancesquared(behaviortreeentity.origin, behaviortreeentity.favoriteenemy.origin) < sqr(meleedist) && behaviortreeentity cansee(behaviortreeentity.favoriteenemy)) {
         return true;
     }
     return false;
@@ -510,7 +510,7 @@ function function_a19ebce9(target) {
     if (!isdefined(target)) {
         return;
     }
-    if (distancesquared(self.origin, target.origin) > function_a3f6cdac(36)) {
+    if (distancesquared(self.origin, target.origin) > sqr(36)) {
         return;
     }
     self.var_96cd28f6 = gettime();

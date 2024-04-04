@@ -65,7 +65,7 @@ function function_a2c4f153(*var_d3440450, *var_50cc0d4f) {
     level flag::wait_till("flag_bamboo_player_on_ground");
     var_3374176b = level.var_b3464ee0;
     level skipto::function_4e3ab877("armada_bamboo_orbit", 0);
-    level skipto::function_51726ac8([0:"armada_bamboo_start_1"], 0, level.player);
+    level skipto::function_51726ac8(["armada_bamboo_start_1"], 0, level.player);
 }
 
 // Namespace namespace_73b34832/namespace_c4929a53
@@ -82,18 +82,18 @@ function function_d921e776() {
     level.var_7466d419 setphysacceleration((0, 0, 0));
     level.var_7466d419 setangularvelocity((0, 0, 0));
     level.var_7466d419 sethoverparams(0);
-    var_6ddb9efe = struct::get("armada_bamboo_lz", "targetname");
-    level.var_7466d419.var_d14539c5 = var_6ddb9efe;
-    level.var_b3464ee0 = var_6ddb9efe;
+    landing_zone = struct::get("armada_bamboo_lz", "targetname");
+    level.var_7466d419.var_d14539c5 = landing_zone;
+    level.var_b3464ee0 = landing_zone;
     var_da00db64 = undefined;
     if (isdefined(level.var_7466d419.var_d14539c5)) {
-        var_5c10784b = (var_6ddb9efe.origin[0], var_6ddb9efe.origin[1], var_6ddb9efe.origin[2] + 600);
+        var_5c10784b = (landing_zone.origin[0], landing_zone.origin[1], landing_zone.origin[2] + 600);
         var_da00db64 = var_5c10784b;
         level.var_7466d419 setspeed(100, 50, 75);
         level.var_7466d419 function_a57c34b7(var_5c10784b, 1);
         level.var_7466d419 sethoverparams(0);
-        level.var_7466d419 settargetyaw((0, var_6ddb9efe.angles[1], 0)[1]);
-        level.var_7466d419 setgoalyaw((0, var_6ddb9efe.angles[1], 0)[1]);
+        level.var_7466d419 settargetyaw((0, landing_zone.angles[1], 0)[1]);
+        level.var_7466d419 setgoalyaw((0, landing_zone.angles[1], 0)[1]);
         level.var_7466d419.var_cb55c804 = 512;
         level.var_7466d419 setneargoalnotifydist(level.var_7466d419.var_cb55c804);
         level.var_7466d419 waittill(#"near_goal");
@@ -124,9 +124,9 @@ function function_d921e776() {
 // Checksum 0xacdfe36d, Offset: 0x1d98
 // Size: 0x1ac
 function function_61ae79dd() {
-    var_6ddb9efe = struct::get("armada_bamboo_lz", "targetname");
+    landing_zone = struct::get("armada_bamboo_lz", "targetname");
     var_da00db64 = undefined;
-    var_5c10784b = (var_6ddb9efe.origin[0], var_6ddb9efe.origin[1], var_6ddb9efe.origin[2] + 600);
+    var_5c10784b = (landing_zone.origin[0], landing_zone.origin[1], landing_zone.origin[2] + 600);
     var_da00db64 = var_5c10784b;
     level flag::set("flag_bamboo_player_on_ground");
     level.var_7466d419 cleargoalyaw();
@@ -164,23 +164,23 @@ function function_8461e1fe() {
     level flag::wait_till("flag_bamboo_begin_search");
     setdvar(#"setsunshadowsplitdistance", "1500");
     if (level.var_3741fc24) {
-        var_a3d82ec9[0] util::function_cf42fd2f(undefined, (0, 0, 0), #"hash_568389f29ccfd09", 100);
+        var_a3d82ec9[0] util::create_cursor_hint(undefined, (0, 0, 0), #"hash_568389f29ccfd09", 100);
         var_a3d82ec9[0] thread function_ff41dacf();
         objectives::complete("armada_obj_bamboo_pickup_adler", var_a3d82ec9[0]);
-        var_a3d82ec9[1] util::function_cf42fd2f(undefined, (0, 0, 0), #"hash_568389f29ccfd09", 100);
+        var_a3d82ec9[1] util::create_cursor_hint(undefined, (0, 0, 0), #"hash_568389f29ccfd09", 100);
         var_a3d82ec9[1] thread function_ff41dacf();
         objectives::complete("armada_obj_bamboo_pickup_adler", var_a3d82ec9[1]);
-        var_a3d82ec9[2] util::function_cf42fd2f(undefined, (0, 0, 0), #"hash_568389f29ccfd09", 100);
+        var_a3d82ec9[2] util::create_cursor_hint(undefined, (0, 0, 0), #"hash_568389f29ccfd09", 100);
         var_a3d82ec9[2] thread function_ff41dacf();
         objectives::complete("armada_obj_bamboo_pickup_adler", var_a3d82ec9[2]);
     }
-    level thread objectives::follow("armada_obj_bamboo_search", level.var_3ff4669d, #"hash_5520a0b3e4ae539c");
+    level thread objectives::follow("armada_obj_bamboo_search", level.buddy, #"hash_5520a0b3e4ae539c");
     level flag::wait_till("flag_bamboo_sims_rescue");
     level thread objectives::goto("armada_obj_bamboo_pickup_adler", var_e4ffaaab, #"hash_5d478b29d713b409");
     waitframe(1);
-    var_1abcec75 util::function_cf42fd2f(undefined, (0, 0, 0), #"hash_752eaf34cc172517", 200);
+    var_1abcec75 util::create_cursor_hint(undefined, (0, 0, 0), #"hash_752eaf34cc172517", 200);
     var_1abcec75 thread function_7a970706();
-    objectives::complete("armada_obj_bamboo_search", level.var_3ff4669d);
+    objectives::complete("armada_obj_bamboo_search", level.buddy);
     level flag::wait_till("flag_bamboo_adler_escort");
     objectives::complete("armada_obj_bamboo_pickup_adler", var_e4ffaaab);
     level thread objectives::goto("armada_obj_bamboo_landingzone", level.var_88a1eb21[level.var_b1fc9b46], #"hash_605a3c5729de1df3");
@@ -198,7 +198,7 @@ function function_aebe91ed() {
     level.var_30e75fdd = getent("obj_bamboo_place_adler", "targetname");
     level flag::wait_till("flag_bamboo_can_place_sims");
     objectives::complete("armada_obj_bamboo_landingzone", level.var_88a1eb21);
-    level.var_30e75fdd util::function_cf42fd2f(undefined, (0, 0, 0), #"hash_3e7cef75b9a01994", 100);
+    level.var_30e75fdd util::create_cursor_hint(undefined, (0, 0, 0), #"hash_3e7cef75b9a01994", 100);
     level.var_30e75fdd thread function_28657862();
 }
 
@@ -214,7 +214,7 @@ function function_ff41dacf() {
         wire delete();
     }
     level.var_37ebce9f = 0;
-    self util::function_dce0e9b9();
+    self util::remove_cursor_hint();
     level flag::set("flag_bamboo_tripwire_defused");
     wait(1);
     level flag::clear("flag_bamboo_tripwire_defused");
@@ -278,7 +278,7 @@ function function_16d1451f() {
     }
     end = struct::get(self.target);
     var_5022064 = distance(level.player.origin, end.origin) / 300;
-    var_884f0a8e = 2;
+    accel_time = 2;
     org = util::spawn_model("tag_origin", level.player.origin, level.player.angles);
     level.player playerlinkto(org, "tag_origin", 180, 180, 180, 180, 180, 0);
     org moveto(end.origin, var_5022064, 0, 0);
@@ -297,15 +297,15 @@ function function_16d1451f() {
 // Checksum 0xf7da5c01, Offset: 0x2b38
 // Size: 0xf4
 function function_4f94f6b3() {
-    var_c9c0a11 = getent("bamboo_buddy_slide_trig", "targetname");
-    var_c9c0a11 waittill(#"trigger");
+    slide_trig = getent("bamboo_buddy_slide_trig", "targetname");
+    slide_trig waittill(#"trigger");
     start_pos = getent("bamboo_start_pos", "targetname");
     end_pos = getent("bamboo_end_pos", "targetname");
     if (!isdefined(start_pos) || !isdefined(end_pos)) {
         iprintlnbold("One of the start points aren't defined.");
         return 0;
     }
-    level.var_3ff4669d forceteleport(start_pos.origin, start_pos.angles);
+    level.buddy forceteleport(start_pos.origin, start_pos.angles);
 }
 
 // Namespace namespace_73b34832/namespace_c4929a53
@@ -415,16 +415,16 @@ function function_42782299() {
         level.vip.goalradius = 8;
     }
     level.var_e76e155b = getent("bamboo_ally_sims", "targetname");
-    namespace_b7cfe907::function_3af72756(level.var_7466d419, level.var_3ff4669d, "crew");
+    namespace_b7cfe907::function_3af72756(level.var_7466d419, level.buddy, "crew");
     namespace_b7cfe907::function_ed68628c(0, level.var_e76e155b);
-    level.var_3ff4669d namespace_b7cfe907::function_1f7fdfdb();
-    level.var_3ff4669d colors::set_force_color("b");
-    level.var_3ff4669d.ignoreall = 1;
-    level.var_3ff4669d.goalradius = 8;
-    level.var_3ff4669d.grenadeammo = 0;
-    level.var_3ff4669d ai::set_behavior_attribute("demeanor", "cqb");
-    level.var_3ff4669d namespace_979752dc::function_96ed1b3f(75);
-    level.var_3ff4669d setgoal(start_node);
+    level.buddy namespace_b7cfe907::function_1f7fdfdb();
+    level.buddy colors::set_force_color("b");
+    level.buddy.ignoreall = 1;
+    level.buddy.goalradius = 8;
+    level.buddy.grenadeammo = 0;
+    level.buddy ai::set_behavior_attribute("demeanor", "cqb");
+    level.buddy namespace_979752dc::set_movement_speed(75);
+    level.buddy setgoal(start_node);
     level thread function_97582a1d();
     level thread function_d0320edf();
     level thread function_cf6ab51b();
@@ -442,10 +442,10 @@ function function_d0320edf() {
     var_392915d9 = getent("bamboo_adler_callout_trig", "targetname");
     var_4aa08ad4 = getent("bamboo_adler_located", "targetname");
     var_392915d9 waittill(#"trigger");
-    level.var_3ff4669d namespace_979752dc::function_96ed1b3f(125);
+    level.buddy namespace_979752dc::set_movement_speed(125);
     var_4aa08ad4 waittill(#"trigger");
-    level.var_3ff4669d ai::set_behavior_attribute("demeanor", "combat");
-    level.var_3ff4669d namespace_979752dc::function_96ed1b3f(200);
+    level.buddy ai::set_behavior_attribute("demeanor", "combat");
+    level.buddy namespace_979752dc::set_movement_speed(200);
 }
 
 // Namespace namespace_73b34832/namespace_c4929a53
@@ -454,11 +454,11 @@ function function_d0320edf() {
 // Size: 0xa6
 function function_5818c90e() {
     var_e76e155b = getent("bamboo_teleport_buddy", "targetname");
-    level.var_3ff4669d forceteleport(var_e76e155b.origin);
+    level.buddy forceteleport(var_e76e155b.origin);
     level.vip.goalradius = 8;
     level.vip.ignoreall = 1;
-    level.var_3ff4669d.goalradius = 8;
-    level.var_3ff4669d.ignoreall = 1;
+    level.buddy.goalradius = 8;
+    level.buddy.ignoreall = 1;
 }
 
 // Namespace namespace_73b34832/namespace_c4929a53
@@ -521,14 +521,14 @@ function function_5a800c65() {
         enemy.grenadeammo = 0;
     }
     var_f2db850c waittill(#"trigger");
-    level.var_3ff4669d ai::set_behavior_attribute("demeanor", "combat");
+    level.buddy ai::set_behavior_attribute("demeanor", "combat");
     level flag::set("flag_bamboo_sims_rescue");
     level flag::wait_till("flag_bamboo_adler_pickup");
     wait(4);
     thread function_311a3bb9();
     foreach (enemy in var_e14ec0eb) {
         enemy.ignoreall = 0;
-        enemy namespace_979752dc::function_96ed1b3f(150);
+        enemy namespace_979752dc::set_movement_speed(150);
         enemy setgoal(var_d9f3194);
     }
     spawner::waittill_ai_group_amount_killed("bamboo_aigroup_ambush", 1, 5);
@@ -728,8 +728,8 @@ function function_5220591a() {
 // Checksum 0xc5374cd7, Offset: 0x4be0
 // Size: 0x3c2
 function function_beb9b824() {
-    var_714adf22 = getentarray("bamboo_blockade_clip", "targetname");
-    var_d3d0483a = getentarray("bamboo_blockade_log", "targetname");
+    clips = getentarray("bamboo_blockade_clip", "targetname");
+    logs = getentarray("bamboo_blockade_log", "targetname");
     var_6d98bf7 = getent("bamboo_exfil_blockade_position_1", "targetname");
     var_fb2c8c87 = getent("bamboo_log_exfil_1", "targetname");
     var_a23fc2c5 = getent("bamboo_exfil_blockade_position_2", "targetname");
@@ -739,10 +739,10 @@ function function_beb9b824() {
     }
     var_fb2c8c87.origin = var_6d98bf7.origin;
     var_7ba40d7c.origin = var_a23fc2c5.origin;
-    foreach (clip in var_714adf22) {
+    foreach (clip in clips) {
         clip delete();
     }
-    foreach (log in var_d3d0483a) {
+    foreach (log in logs) {
         log delete();
     }
     level flag::wait_till("flag_bamboo_first_turret_active");
@@ -888,8 +888,8 @@ function function_cee1a3e8() {
     var_b9864a0f = getent("bamboo_enemy_vol_liftoff", "targetname");
     level flag::wait_till("flag_bamboo_liftoff");
     level.player val::set(#"script_godmode", "takedamage", 0);
-    vehicle::get_in(level.var_3ff4669d, level.var_7466d419, "crew");
-    level.var_3ff4669d namespace_b7cfe907::function_1f7fdfdb(1);
+    vehicle::get_in(level.buddy, level.var_7466d419, "crew");
+    level.buddy namespace_b7cfe907::function_1f7fdfdb(1);
 }
 
 // Namespace namespace_73b34832/namespace_c4929a53
@@ -899,7 +899,7 @@ function function_cee1a3e8() {
 function function_79ff25ba() {
     a_ents = [];
     a_ents[#"player 1"] = level.player;
-    a_ents[#"sims"] = level.var_3ff4669d;
+    a_ents[#"sims"] = level.buddy;
     a_ents[#"hash_6c5af6df35669df2"] = level.gunner;
     a_ents[#"adler"] = level.vip;
     a_ents[#"hash_4972abe0166bbc73"] = level.var_7466d419;
@@ -925,7 +925,7 @@ function function_b8119b75() {
 // Size: 0x54
 function function_14172d3a() {
     a_ents = [];
-    a_ents[#"sims"] = level.var_3ff4669d;
+    a_ents[#"sims"] = level.buddy;
     level scene::play(#"hash_748497a378473ed7", a_ents);
 }
 
@@ -1004,18 +1004,18 @@ function function_19f372aa() {
 function function_7a970706() {
     var_efb94641 = getent("bamboo_adler_pickup_teleport", "targetname");
     self waittill(#"trigger");
-    self util::function_dce0e9b9();
+    self util::remove_cursor_hint();
     level flag::set("flag_bamboo_adler_pickup");
     level thread function_beb9b824();
     level thread namespace_9a981837::function_67987ae7();
     wait(3);
     level.vip.ignoreall = 0;
-    level.vip namespace_979752dc::function_96ed1b3f(200);
-    level.var_3ff4669d.ignoreall = 0;
-    level.var_3ff4669d namespace_979752dc::function_96ed1b3f(200);
+    level.vip namespace_979752dc::set_movement_speed(200);
+    level.buddy.ignoreall = 0;
+    level.buddy namespace_979752dc::set_movement_speed(200);
     level.vip colors::set_force_color("b");
-    level.var_3ff4669d colors::set_force_color("b");
-    level.var_3ff4669d util::magic_bullet_shield();
+    level.buddy colors::set_force_color("b");
+    level.buddy util::magic_bullet_shield();
     var_1ea5d70e = getent("bamboo_teleport_buddy", "targetname");
 }
 
@@ -1056,15 +1056,15 @@ function function_43c14dd6() {
     level flag::set("flag_bamboo_liftoff");
     level.var_7466d419 setseatoccupied(2, 0);
     namespace_b7cfe907::function_d777fe61(2);
-    namespace_b7cfe907::function_3af72756(level.var_7466d419, level.var_3ff4669d, "crew");
+    namespace_b7cfe907::function_3af72756(level.var_7466d419, level.buddy, "crew");
     namespace_b7cfe907::function_3af72756(level.var_7466d419, level.vip, "crew");
-    vehicle::get_in(level.var_3ff4669d, level.var_7466d419, "crew");
-    level.var_3ff4669d namespace_b7cfe907::function_1f7fdfdb(1);
+    vehicle::get_in(level.buddy, level.var_7466d419, "crew");
+    level.buddy namespace_b7cfe907::function_1f7fdfdb(1);
     vehicle::get_in(level.vip, level.var_7466d419, "crew");
-    if (!isdefined(level.var_3ff4669d)) {
+    if (!isdefined(level.buddy)) {
         namespace_b7cfe907::function_ed68628c(0, level.var_e76e155b);
     }
-    level.var_3ff4669d.grenadeammo = 2;
+    level.buddy.grenadeammo = 2;
     wait(1);
     level notify(#"hash_e505e484cb8f99e");
     setdvar(#"setsunshadowsplitdistance", "5000");
@@ -1078,13 +1078,13 @@ function function_43c14dd6() {
     level.var_7466d419 function_d4c687c9();
     var_5829bff7 = getvehiclenode("bamboo_heli_exit_start", "targetname");
     var_ecde2a75 = getvehiclenode("bamboo_heli_exit_to_mortar", "targetname");
-    if (level flag::get_any([3:"armada_mortar_start", 2:"armada_mortar_start_3_completed", 1:"armada_mortar_start_2_completed", 0:"armada_mortar_start_1_completed"])) {
+    if (level flag::get_any(["armada_mortar_start_1_completed", "armada_mortar_start_2_completed", "armada_mortar_start_3_completed", "armada_mortar_start"])) {
         level.var_7466d419 function_a57c34b7(var_ecde2a75.origin, 1);
     } else {
         level.var_7466d419 function_a57c34b7(var_ecde2a75.origin, 1);
     }
     level.var_7466d419 waittill(#"goal", #"near_goal");
-    if (level flag::get_any([3:"armada_mortar_start", 2:"armada_mortar_start_3_completed", 1:"armada_mortar_start_2_completed", 0:"armada_mortar_start_1_completed"])) {
+    if (level flag::get_any(["armada_mortar_start_1_completed", "armada_mortar_start_2_completed", "armada_mortar_start_3_completed", "armada_mortar_start"])) {
         level.var_7466d419 vehicle::get_on_path(var_ecde2a75);
     } else {
         level.var_7466d419 vehicle::get_on_path(var_ecde2a75);
@@ -1118,14 +1118,14 @@ function function_85ddf842() {
         enemy setgoal(player);
     }
     player namespace_486c0593::function_28edaba7();
-    if (!isdefined(level.vip) && !isdefined(level.var_3ff4669d)) {
+    if (!isdefined(level.vip) && !isdefined(level.buddy)) {
         namespace_b7cfe907::function_882e6973(0, var_591da512);
         namespace_b7cfe907::function_ed68628c(0, var_2ad99779);
     }
     level.vip colors::set_force_color("b");
-    level.var_3ff4669d colors::set_force_color("b");
+    level.buddy colors::set_force_color("b");
     level.vip.ignoreall = 1;
-    level.var_3ff4669d.ignoreall = 1;
+    level.buddy.ignoreall = 1;
     iprintlnbold("Throw smoke grenade for chopper support and landing.");
     player namespace_486c0593::function_def737fb();
     player callback::on_grenade_fired(&function_dfdba661);
@@ -1271,7 +1271,7 @@ function function_4eccc114(var_d3440450, *var_50cc0d4f) {
     level thread function_7d2b8848();
     level flag::wait_till("flag_bamboo_main_end");
     level skipto::function_4e3ab877(var_50cc0d4f, 0);
-    level skipto::function_51726ac8([0:"armada_bamboo_end"], 0, level.player);
+    level skipto::function_51726ac8(["armada_bamboo_end"], 0, level.player);
 }
 
 // Namespace namespace_73b34832/namespace_c4929a53
@@ -1292,7 +1292,7 @@ function function_a15d0e63(var_d3440450, *var_50cc0d4f) {
     function_5818c90e();
     level flag::wait_till("flag_bamboo_main_end");
     level skipto::function_4e3ab877(var_50cc0d4f, 0);
-    level skipto::function_51726ac8([0:"armada_bamboo_end"], 0, level.player);
+    level skipto::function_51726ac8(["armada_bamboo_end"], 0, level.player);
 }
 
 // Namespace namespace_73b34832/namespace_c4929a53
@@ -1312,10 +1312,10 @@ function function_ddac4979(var_d3440450, var_50cc0d4f) {
     transient.var_8ffe00b6 = 1;
     namespace_b7cfe907::function_d777fe61(0);
     level skipto::function_4e3ab877(var_d3440450, 0);
-    var_ef3c5ef7 = "armada_fly_bamboo_to_mortar";
+    next_obj = "armada_fly_bamboo_to_mortar";
     if (is_true(transient.var_32839ab6)) {
-        var_ef3c5ef7 = "armada_fly_bamboo_to_firebase";
+        next_obj = "armada_fly_bamboo_to_firebase";
     }
-    level skipto::function_51726ac8([0:var_ef3c5ef7], 0, level.player);
+    level skipto::function_51726ac8([next_obj], 0, level.player);
 }
 

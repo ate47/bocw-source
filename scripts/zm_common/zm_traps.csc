@@ -10,14 +10,14 @@
 // Checksum 0x3c97d619, Offset: 0xb8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_traps", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_traps", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_traps/zm_traps
 // Params 0, eflags: 0x6 linked
 // Checksum 0x62e43719, Offset: 0x100
 // Size: 0xe4
-function private function_70a657d8() {
+function private preinit() {
     s_traps_array = struct::get_array("zm_traps", "targetname");
     a_registered_traps = [];
     foreach (trap in s_traps_array) {

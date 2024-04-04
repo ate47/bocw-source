@@ -21,14 +21,14 @@
 // Checksum 0x18098dfc, Offset: 0x408
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_restrict_loadout", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_restrict_loadout", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_restrict_loadout/zm_trial_restrict_loadout
 // Params 0, eflags: 0x6 linked
 // Checksum 0xfbdec3f2, Offset: 0x450
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }
@@ -39,7 +39,7 @@ function private function_70a657d8() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xeccfdcf9, Offset: 0x4b8
 // Size: 0x1f6
-function private function_14392c6e(weapon) {
+function private is_weapon_allowed(weapon) {
     /#
         assert(weapon != level.weaponnone);
     #/
@@ -83,9 +83,9 @@ function private is_melee_allowed(weapon) {
         return 0;
     }
     if (isdefined(challenge) && challenge.var_e097dc07 != #"melee") {
-        return self function_14392c6e(weapon);
+        return self is_weapon_allowed(weapon);
     }
-    if (self function_14392c6e(weapon)) {
+    if (self is_weapon_allowed(weapon)) {
         return 1;
     }
     return 0;
@@ -112,7 +112,7 @@ function private function_6a8979c9() {
 // Checksum 0x506a8b63, Offset: 0x8f0
 // Size: 0x14c
 function private function_e14e7b75(weapon) {
-    var_9caacad5 = !function_14392c6e(weapon);
+    var_9caacad5 = !is_weapon_allowed(weapon);
     var_b3340a9 = !is_melee_allowed(weapon);
     if (var_9caacad5 || var_b3340a9) {
         if (is_true(weapon.isburstfire) && self getcurrentweapon() == weapon) {
@@ -145,7 +145,7 @@ function private function_33f0ddd3(*eventstruct) {
 function private function_f66032dd() {
     if (isdefined(self._gadgets_player)) {
         for (i = 0; i < 3; i++) {
-            if (isdefined(self._gadgets_player[i]) && self hasweapon(self._gadgets_player[i]) && function_14392c6e(self._gadgets_player[i])) {
+            if (isdefined(self._gadgets_player[i]) && self hasweapon(self._gadgets_player[i]) && is_weapon_allowed(self._gadgets_player[i])) {
                 self gadgetpowerset(i, self._gadgets_player[i].gadget_powermax);
             }
         }
@@ -444,7 +444,7 @@ function function_937e218c() {
 // Size: 0x72
 function is_active(var_1eb3fec6 = 0) {
     if (var_1eb3fec6 && is_true(level.var_869ea5a)) {
-        return 0;
+        return false;
     }
     challenge = zm_trial::function_a36e8c38(#"restrict_loadout");
     return isdefined(challenge);

@@ -14,7 +14,7 @@
 #using scripts\core_common\math_shared.gsc;
 #using scripts\core_common\fx_shared.gsc;
 #using scripts\core_common\flag_shared.gsc;
-#using script_7fc996fe8678852;
+#using scripts\core_common\content_manager.gsc;
 #using scripts\core_common\scene_shared.gsc;
 #using scripts\core_common\array_shared.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
@@ -26,14 +26,14 @@
 // Checksum 0xece1d005, Offset: 0x2c0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_6eb528f341abf64a", &function_70a657d8, undefined, undefined, #"hash_f81b9dea74f0ee");
+    system::register(#"hash_6eb528f341abf64a", &preinit, undefined, undefined, #"content_manager");
 }
 
 // Namespace namespace_181e92ae/world_event_monster_house
 // Params 0, eflags: 0x6 linked
 // Checksum 0x5950bbe2, Offset: 0x310
 // Size: 0xec
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_utility::is_survival()) {
         return;
     }
@@ -43,7 +43,7 @@ function private function_70a657d8() {
     if (!is_true(getgametypesetting(#"hash_50bcc0278b8ff6b2")) && !getdvarint(#"hash_730311c63805303a", 0)) {
         return;
     }
-    namespace_8b6a9d79::function_b3464a7c(#"hash_6eb528f341abf64a", &function_66c8033b, 1);
+    content_manager::register_script(#"hash_6eb528f341abf64a", &function_66c8033b, 1);
 }
 
 // Namespace namespace_181e92ae/world_event_monster_house
@@ -51,7 +51,7 @@ function private function_70a657d8() {
 // Checksum 0x3fa1c84f, Offset: 0x408
 // Size: 0x276
 function function_66c8033b(instance) {
-    s_start = instance.var_fe2612fe[#"hash_4d7f33a283d72002"][0];
+    s_start = instance.contentgroups[#"hash_4d7f33a283d72002"][0];
     instance.var_8b241b32 = s_start.origin;
     mdl_start = function_4b312787(s_start);
     if (mdl_start clientfield::is_registered("perk_death_perception_item_marked_for_rob")) {
@@ -98,7 +98,7 @@ function private function_37eab05b(instance) {
     level thread function_a77f3600(instance);
     level thread function_2d2fade8(instance);
     level thread function_68aac628(instance, "monsterhouse_low");
-    var_d56fdb6 = array::randomize(isdefined(instance.var_fe2612fe[#"hash_1c35d9839ba0d789"]) ? instance.var_fe2612fe[#"hash_1c35d9839ba0d789"] : []);
+    var_d56fdb6 = array::randomize(isdefined(instance.contentgroups[#"hash_1c35d9839ba0d789"]) ? instance.contentgroups[#"hash_1c35d9839ba0d789"] : []);
     instance.var_eb3bf4b1 = [];
     var_90acdb64 = getplayers().size * 2 + 4;
     n_spawned = 0;
@@ -166,7 +166,7 @@ function private function_cdec3a88(*s_result) {
         level thread function_6326cff8();
         self fx::play(#"hash_124c673fd48c8a4", self.origin, self.angles);
         playsoundatposition(#"hash_4359f21da1a5d177", self.origin + vectorscale((0, 0, 1), 25));
-        level scoreevents::doscoreeventcallback("scoreEventSR", {#location:self.origin, #var_b0a57f8c:2000, #nearbyplayers:1, #scoreevent:"event_complete"});
+        level scoreevents::doscoreeventcallback("scoreEventSR", {#scoreevent:"event_complete", #nearbyplayers:1, #var_b0a57f8c:2000, #location:self.origin});
     }
 }
 
@@ -253,7 +253,7 @@ function private function_4b312787(struct) {
         model = #"hash_224a7c9803bf09ee";
         str_scene = "p9_zm_gold_sur_crystal_medium_02_bundle";
     }
-    mdl_crystal = namespace_8b6a9d79::function_f3d93ee9(struct, model);
+    mdl_crystal = content_manager::spawn_script_model(struct, model);
     mdl_crystal setscale(randomfloatrange(0.9, 1.1));
     mdl_crystal val::set(#"hash_3f8039e6e19dc02b", "takedamage", 1);
     mdl_crystal.health = 5;
@@ -314,7 +314,7 @@ function private function_fa4d3a3e(instance) {
             return;
         }
         level endon(#"hash_345e9169ebba28fb");
-        var_d56fdb6 = isdefined(instance.var_fe2612fe[#"hash_1c35d9839ba0d789"]) ? instance.var_fe2612fe[#"hash_1c35d9839ba0d789"] : [];
+        var_d56fdb6 = isdefined(instance.contentgroups[#"hash_1c35d9839ba0d789"]) ? instance.contentgroups[#"hash_1c35d9839ba0d789"] : [];
         while (true) {
             foreach (var_d2ee34ea in var_d56fdb6) {
                 sphere(var_d2ee34ea.origin, 6, (0, 1, 1), 0.75, 0, 7, 10);

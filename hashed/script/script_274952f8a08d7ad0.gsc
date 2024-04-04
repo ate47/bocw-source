@@ -10,14 +10,14 @@
 // Checksum 0x6f9c1da, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"cinematicmotion", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"cinematicmotion", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace cinematicmotion/namespace_345fff71
 // Params 1, eflags: 0x2 linked
 // Checksum 0x19c5a690, Offset: 0x120
 // Size: 0x74
-function function_70a657d8(*localclientnum) {
+function preinit(*localclientnum) {
     n_bits = getminbitcountfornum(11);
     clientfield::register("toplayer", "cinematicMotion", 1, n_bits, "int", &function_877ad7c4, 0, 1);
 }
@@ -91,10 +91,10 @@ function function_8152b11(param) {
         return;
     }
     if (param != "") {
-        self function_5953bec0(param);
+        self setcinematicmotionoverride(param);
         return;
     }
-    self function_5953bec0();
+    self setcinematicmotionoverride();
 }
 
 // Namespace cinematicmotion/namespace_345fff71

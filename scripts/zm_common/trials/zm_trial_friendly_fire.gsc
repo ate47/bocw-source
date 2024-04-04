@@ -34,7 +34,7 @@ function private autoexec __init__system__() {
 // Params 0, eflags: 0x4
 // Checksum 0xe3e953f3, Offset: 0x1a0
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

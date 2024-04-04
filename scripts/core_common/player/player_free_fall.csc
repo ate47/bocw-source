@@ -14,14 +14,14 @@
 // Checksum 0x71b93cb4, Offset: 0xb8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"player_free_fall", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"player_free_fall", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace player_free_fall/player_free_fall
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x100
 // Size: 0x4
-function private function_70a657d8() {
+function private preinit() {
     
 }
 

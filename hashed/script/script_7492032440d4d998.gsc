@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_60d2812480bc5591;
+#using scripts\zm\zm_gold_vo.gsc;
 #using scripts\zm\zm_gold_main_quest.gsc;
-#using script_7d7ac1f663edcdc8;
+#using scripts\zm_common\zm_utility_zsurvival.gsc;
 #using scripts\zm\zm_gold_util.gsc;
 #using scripts\core_common\struct.gsc;
 #using scripts\core_common\util_shared.gsc;
@@ -48,7 +48,7 @@ function private function_26d68622(v_center, var_50721d66) {
     var_91b180f0.info = util::spawn_model("tag_origin", var_91b180f0.entity.origin, var_91b180f0.entity.angles);
     var_91b180f0.info hide();
     var_91b180f0.center = v_center;
-    var_91b180f0.var_3824bcad = var_4fb7e8bb.var_fc656a7;
+    var_91b180f0.half_size = var_4fb7e8bb.var_fc656a7;
     level.terminal.screen = var_91b180f0;
 }
 
@@ -70,9 +70,9 @@ function private function_18e95e2b(var_e9a27711, s_screen) {
 function private function_626826e8(v_center, var_50721d66) {
     var_3277c11d = [];
     n_index = var_50721d66 - 1;
-    var_9e6970bc = [4:[1:(0, 19.6, -2.3), 0:(0, 2.5, 9.5)], 3:[1:(0, 0.6, 8.4), 0:(0, 10.9, -7.7)], 2:[1:(0, -12.4, -7.1), 0:(0, 20, -2.2)], 1:[1:(0, 12.9, -2.3), 0:(0, -13.7, -2.5)], 0:[1:(0, -13.7, -2.5), 0:(0, -15.7, 5.9)]];
+    var_9e6970bc = [[(0, -15.7, 5.9), (0, -13.7, -2.5)], [(0, -13.7, -2.5), (0, 12.9, -2.3)], [(0, 20, -2.2), (0, -12.4, -7.1)], [(0, 10.9, -7.7), (0, 0.6, 8.4)], [(0, 2.5, 9.5), (0, 19.6, -2.3)]];
     foreach (v_offset in var_9e6970bc[n_index]) {
-        var_9da78756 = {#type:2, #origin:v_center + v_offset};
+        var_9da78756 = {#origin:v_center + v_offset, #type:2};
         if (!isdefined(var_3277c11d)) {
             var_3277c11d = [];
         } else if (!isarray(var_3277c11d)) {
@@ -80,9 +80,9 @@ function private function_626826e8(v_center, var_50721d66) {
         }
         var_3277c11d[var_3277c11d.size] = var_9da78756;
     }
-    var_a08fa5bf = [4:[1:(0, -1.1, 1.6), 0:(0, 11.2, 5.8)], 3:[1:(0, 14.8, 5.8), 0:(0, 22.3, -2.5)], 2:[1:(0, 0.6, 0.5), 0:(0, -13.7, 10)], 1:[1:(0, -19.9, 1.8), 0:(0, 0.6, 0.9)], 0:[1:(0, -20.9, -2.3), 0:(0, 0.6, -6.7)]];
+    var_a08fa5bf = [[(0, 0.6, -6.7), (0, -20.9, -2.3)], [(0, 0.6, 0.9), (0, -19.9, 1.8)], [(0, -13.7, 10), (0, 0.6, 0.5)], [(0, 22.3, -2.5), (0, 14.8, 5.8)], [(0, 11.2, 5.8), (0, -1.1, 1.6)]];
     foreach (v_offset in var_a08fa5bf[n_index]) {
-        var_9da78756 = {#type:1, #origin:v_center + v_offset};
+        var_9da78756 = {#origin:v_center + v_offset, #type:1};
         if (!isdefined(var_3277c11d)) {
             var_3277c11d = [];
         } else if (!isarray(var_3277c11d)) {
@@ -90,8 +90,8 @@ function private function_626826e8(v_center, var_50721d66) {
         }
         var_3277c11d[var_3277c11d.size] = var_9da78756;
     }
-    var_19c1ffe7 = [4:(0, -8.3, -8.4), 3:(0, -21.1, 7), 2:(0, -4.7, -4.3), 1:(0, 5.3, -6.4), 0:(0, 5.3, 7)];
-    var_9da78756 = {#type:3, #origin:v_center + var_19c1ffe7[n_index]};
+    var_19c1ffe7 = [(0, 5.3, 7), (0, 5.3, -6.4), (0, -4.7, -4.3), (0, -21.1, 7), (0, -8.3, -8.4)];
+    var_9da78756 = {#origin:v_center + var_19c1ffe7[n_index], #type:3};
     if (!isdefined(var_3277c11d)) {
         var_3277c11d = [];
     } else if (!isarray(var_3277c11d)) {
@@ -127,7 +127,7 @@ function function_902089af(e_player) {
     level.terminal.screen.entity setmodel(#"hash_117b941d47272b4f");
     if (isdefined(e_player)) {
         e_player zm_gold_util::function_b488623(0);
-        e_player val::function_e681e68e(#"hash_20ca625deb016343");
+        e_player val::reset_all(#"hash_20ca625deb016343");
         e_player namespace_553954de::function_548f282();
     }
     return s_result;
@@ -159,7 +159,7 @@ function cleanup() {
 // Size: 0x5c
 function private function_4b648627(var_e9a27711) {
     v_delta = self.origin - var_e9a27711;
-    return function_a3f6cdac(v_delta[1]) + function_a3f6cdac(v_delta[2]) <= 0.25;
+    return sqr(v_delta[1]) + sqr(v_delta[2]) <= 0.25;
 }
 
 // Namespace namespace_2a67e53/namespace_2a67e53
@@ -215,7 +215,7 @@ function function_92c05efb(var_9da78756) {
 // Checksum 0x52c5fc83, Offset: 0x1488
 // Size: 0x13a
 function private function_1e3823bc(var_3f94a5b6) {
-    s_input = {#var_93354cc2:0, #updown:0};
+    s_input = {#updown:0, #var_93354cc2:0};
     if (self buttonbitstate(var_3f94a5b6.var_a666ab6e[0])) {
         s_input.updown = s_input.updown + 1;
     } else if (self buttonbitstate(var_3f94a5b6.var_a666ab6e[1])) {
@@ -348,19 +348,19 @@ function function_f3c47da1(var_3f94a5b6, e_trigger) {
                     level.terminal.screen.entity playsound(#"hash_3a135283f2131a84");
                 } else {
                     level.terminal.screen.entity playsound(#"hash_5fefa13a2bdf38d3");
-                    level thread namespace_1812c3f4::function_8cc97115();
+                    level thread zm_gold_vo::function_8cc97115();
                     wait(0.5);
                     var_982da0b4 = 1;
                 }
                 s_result = {#success:b_success};
                 v_delta = var_3f94a5b6.cursor - var_3f94a5b6.screen.center;
-                s_result.yaw = v_delta[1] / var_3f94a5b6.screen.var_3824bcad[1] + 0.5;
+                s_result.yaw = v_delta[1] / var_3f94a5b6.screen.half_size[1] + 0.5;
                 if (s_result.yaw < 0) {
                     s_result.yaw = 0;
                 } else if (s_result.yaw > 1) {
                     s_result.yaw = 1;
                 }
-                s_result.pitch = v_delta[2] / var_3f94a5b6.screen.var_3824bcad[2] + 0.5;
+                s_result.pitch = v_delta[2] / var_3f94a5b6.screen.half_size[2] + 0.5;
                 if (s_result.pitch < 0) {
                     s_result.pitch = 0;
                 } else if (s_result.pitch > 1) {
@@ -375,7 +375,7 @@ function function_f3c47da1(var_3f94a5b6, e_trigger) {
         s_input = self function_1e3823bc(var_3f94a5b6);
         s_screen = var_3f94a5b6.screen;
         /#
-            box(s_screen.center, s_screen.var_3824bcad * -1, s_screen.var_3824bcad, 0, (1, 0, 0), 1, 0);
+            box(s_screen.center, s_screen.half_size * -1, s_screen.half_size, 0, (1, 0, 0), 1, 0);
             function_b95b9a60(var_3f94a5b6.cursor, 0.2, (1, 0, 0), 1, 0);
             foreach (var_9da78756 in var_3f94a5b6.satellites) {
                 debugstar(var_9da78756.origin, 1, (1, 1, 0), var_9da78756.type, 0.1);
@@ -394,43 +394,43 @@ function function_f3c47da1(var_3f94a5b6, e_trigger) {
                     line(s_screen.center + v_anchor, var_3f94a5b6.cursor, (0, 1, 0), 1, 0);
                     print3d(var_3f94a5b6.cursor + vectorscale((0, 0, 1), 2), n_angle + "<unknown string>" + n_radius, (0, 1, 0), 1, 0.1);
                 #/
-                var_26c827e8 = abs(v_anchor[2] + s_screen.var_3824bcad[2]) / n_radius;
-                a_angles[0] = var_26c827e8 < 1 ? 0 : asin(var_26c827e8);
-                var_c575b928 = abs(v_anchor[1] + s_screen.var_3824bcad[1]) / n_radius;
-                a_angles[1] = var_c575b928 < 1 ? 0 : acos(var_c575b928);
+                var_26c827e8 = abs(v_anchor[2] + s_screen.half_size[2]) / n_radius;
+                a_angles[0] = var_26c827e8 < 1 ? asin(var_26c827e8) : 0;
+                var_c575b928 = abs(v_anchor[1] + s_screen.half_size[1]) / n_radius;
+                a_angles[1] = var_c575b928 < 1 ? acos(var_c575b928) : 0;
                 if (a_angles[0] > a_angles[1]) {
                     var_37503ff5[0] = a_angles[0];
                     /#
-                        var_49f94306 = s_screen.center + (0, v_anchor[1] - n_radius * cos(a_angles[0]), s_screen.var_3824bcad[2] * -1);
+                        v_intersection = s_screen.center + (0, v_anchor[1] - n_radius * cos(a_angles[0]), s_screen.half_size[2] * -1);
                     #/
                 } else {
                     var_37503ff5[0] = a_angles[1];
                     /#
-                        var_49f94306 = s_screen.center + (0, s_screen.var_3824bcad[1] * -1, v_anchor[2] + n_radius * sin(a_angles[1]));
+                        v_intersection = s_screen.center + (0, s_screen.half_size[1] * -1, v_anchor[2] + n_radius * sin(a_angles[1]));
                     #/
                 }
                 /#
-                    line(s_screen.center + v_anchor, var_49f94306, (1, 0, 0), 1, 0);
-                    print3d(var_49f94306, var_37503ff5[0], (0, 1, 0), 1, 0.1);
+                    line(s_screen.center + v_anchor, v_intersection, (1, 0, 0), 1, 0);
+                    print3d(v_intersection, var_37503ff5[0], (0, 1, 0), 1, 0.1);
                 #/
-                var_26c827e8 = abs(v_anchor[2] - s_screen.var_3824bcad[2]) / n_radius;
-                a_angles[0] = var_26c827e8 < 1 ? 90 : asin(var_26c827e8);
-                var_c575b928 = abs(v_anchor[1] - s_screen.var_3824bcad[1]) / n_radius;
-                a_angles[1] = var_c575b928 < 1 ? 90 : acos(var_c575b928);
+                var_26c827e8 = abs(v_anchor[2] - s_screen.half_size[2]) / n_radius;
+                a_angles[0] = var_26c827e8 < 1 ? asin(var_26c827e8) : 90;
+                var_c575b928 = abs(v_anchor[1] - s_screen.half_size[1]) / n_radius;
+                a_angles[1] = var_c575b928 < 1 ? acos(var_c575b928) : 90;
                 if (a_angles[0] < a_angles[1]) {
                     var_37503ff5[1] = a_angles[0];
                     /#
-                        var_49f94306 = s_screen.center + (0, v_anchor[1] - n_radius * cos(a_angles[0]), s_screen.var_3824bcad[2]);
+                        v_intersection = s_screen.center + (0, v_anchor[1] - n_radius * cos(a_angles[0]), s_screen.half_size[2]);
                     #/
                 } else {
                     var_37503ff5[1] = a_angles[1];
                     /#
-                        var_49f94306 = s_screen.center + (0, s_screen.var_3824bcad[1], v_anchor[2] + n_radius * sin(a_angles[1]));
+                        v_intersection = s_screen.center + (0, s_screen.half_size[1], v_anchor[2] + n_radius * sin(a_angles[1]));
                     #/
                 }
                 /#
-                    line(s_screen.center + v_anchor, var_49f94306, (1, 0, 0), 1, 0);
-                    print3d(var_49f94306, var_37503ff5[1], (0, 1, 0), 1, 0.1);
+                    line(s_screen.center + v_anchor, v_intersection, (1, 0, 0), 1, 0);
+                    print3d(v_intersection, var_37503ff5[1], (0, 1, 0), 1, 0.1);
                 #/
                 var_9c66888e = n_angle + s_input.updown * 20 / n_radius;
                 if (var_9c66888e < var_37503ff5[0]) {
@@ -448,43 +448,43 @@ function function_f3c47da1(var_3f94a5b6, e_trigger) {
                     line(s_screen.center + v_anchor, var_3f94a5b6.cursor, (0, 0, 1), 1, 0);
                     print3d(var_3f94a5b6.cursor - vectorscale((0, 0, 1), 2), n_angle + "<unknown string>" + n_radius, (0, 0, 1), 1, 0.1);
                 #/
-                var_c575b928 = abs(v_anchor[2] - s_screen.var_3824bcad[2]) / n_radius;
-                a_angles[0] = var_c575b928 < 1 ? 0 : acos(var_c575b928);
-                var_26c827e8 = abs(v_anchor[1] + s_screen.var_3824bcad[1]) / n_radius;
-                a_angles[1] = var_26c827e8 < 1 ? 0 : asin(var_26c827e8);
+                var_c575b928 = abs(v_anchor[2] - s_screen.half_size[2]) / n_radius;
+                a_angles[0] = var_c575b928 < 1 ? acos(var_c575b928) : 0;
+                var_26c827e8 = abs(v_anchor[1] + s_screen.half_size[1]) / n_radius;
+                a_angles[1] = var_26c827e8 < 1 ? asin(var_26c827e8) : 0;
                 if (a_angles[0] > a_angles[1]) {
                     var_37503ff5[0] = a_angles[0];
                     /#
-                        var_49f94306 = s_screen.center + (0, v_anchor[1] + n_radius * sin(a_angles[0]), s_screen.var_3824bcad[2]);
+                        v_intersection = s_screen.center + (0, v_anchor[1] + n_radius * sin(a_angles[0]), s_screen.half_size[2]);
                     #/
                 } else {
                     var_37503ff5[0] = a_angles[1];
                     /#
-                        var_49f94306 = s_screen.center + (0, s_screen.var_3824bcad[1] * -1, v_anchor[2] + n_radius * cos(a_angles[1]));
+                        v_intersection = s_screen.center + (0, s_screen.half_size[1] * -1, v_anchor[2] + n_radius * cos(a_angles[1]));
                     #/
                 }
                 /#
-                    line(s_screen.center + v_anchor, var_49f94306, (1, 0, 0), 1, 0);
-                    print3d(var_49f94306, var_37503ff5[0], (0, 0, 1), 1, 0.1);
+                    line(s_screen.center + v_anchor, v_intersection, (1, 0, 0), 1, 0);
+                    print3d(v_intersection, var_37503ff5[0], (0, 0, 1), 1, 0.1);
                 #/
-                var_c575b928 = abs(v_anchor[2] + s_screen.var_3824bcad[2]) / n_radius;
-                a_angles[0] = var_c575b928 < 1 ? 90 : acos(var_c575b928);
-                var_26c827e8 = abs(v_anchor[1] - s_screen.var_3824bcad[1]) / n_radius;
-                a_angles[1] = var_26c827e8 < 1 ? 90 : asin(var_26c827e8);
+                var_c575b928 = abs(v_anchor[2] + s_screen.half_size[2]) / n_radius;
+                a_angles[0] = var_c575b928 < 1 ? acos(var_c575b928) : 90;
+                var_26c827e8 = abs(v_anchor[1] - s_screen.half_size[1]) / n_radius;
+                a_angles[1] = var_26c827e8 < 1 ? asin(var_26c827e8) : 90;
                 if (a_angles[0] < a_angles[1]) {
                     var_37503ff5[1] = a_angles[0];
                     /#
-                        var_49f94306 = s_screen.center + (0, v_anchor[1] + n_radius * sin(a_angles[0]), s_screen.var_3824bcad[2] * -1);
+                        v_intersection = s_screen.center + (0, v_anchor[1] + n_radius * sin(a_angles[0]), s_screen.half_size[2] * -1);
                     #/
                 } else {
                     var_37503ff5[1] = a_angles[1];
                     /#
-                        var_49f94306 = s_screen.center + (0, s_screen.var_3824bcad[1], v_anchor[2] + n_radius * cos(a_angles[1]));
+                        v_intersection = s_screen.center + (0, s_screen.half_size[1], v_anchor[2] + n_radius * cos(a_angles[1]));
                     #/
                 }
                 /#
-                    line(s_screen.center + v_anchor, var_49f94306, (1, 0, 0), 1, 0);
-                    print3d(var_49f94306, var_37503ff5[1], (0, 0, 1), 1, 0.1);
+                    line(s_screen.center + v_anchor, v_intersection, (1, 0, 0), 1, 0);
+                    print3d(v_intersection, var_37503ff5[1], (0, 0, 1), 1, 0.1);
                 #/
                 var_9c66888e = n_angle + s_input.var_93354cc2 * 20 / n_radius;
                 if (var_9c66888e < var_37503ff5[0]) {

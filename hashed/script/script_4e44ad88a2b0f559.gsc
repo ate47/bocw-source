@@ -7,7 +7,7 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0xe8
 // Size: 0x4
-function function_70a657d8() {
+function preinit() {
     
 }
 
@@ -17,7 +17,7 @@ function function_70a657d8() {
 // Size: 0x418
 function think() {
     profileNamedStart(#"");
-    if (self function_5673fb61() || self function_2b063e16()) {
+    if (self isinexecutionvictim() || self isinexecutionattack()) {
         profileNamedStop();
         return;
     }
@@ -229,23 +229,23 @@ function private function_58d48e86(ent, dist, tag) {
 // Size: 0xe4
 function private function_466e841e(ent, dist) {
     profileNamedStart(#"");
-    var_c8e8809e = ent gettagorigin("j_spineupper");
-    if (!isdefined(var_c8e8809e)) {
+    defaultorigin = ent gettagorigin("j_spineupper");
+    if (!isdefined(defaultorigin)) {
         profileNamedStop();
         return undefined;
     }
     if (dist >= 250) {
         profileNamedStop();
-        return var_c8e8809e;
+        return defaultorigin;
     }
     var_d7b829fb = ent gettagorigin("j_neck");
     if (!isdefined(var_d7b829fb)) {
         profileNamedStop();
-        return var_c8e8809e;
+        return defaultorigin;
     }
     t = max(dist / 250, 0.25);
     profileNamedStop();
-    return vectorlerp(var_d7b829fb, var_c8e8809e, t);
+    return vectorlerp(var_d7b829fb, defaultorigin, t);
 }
 
 // Namespace namespace_87549638/namespace_87549638
@@ -292,7 +292,7 @@ function private function_35170b35(var_104d463, mindist, var_e125ba43, debugcolo
 // Checksum 0x61a47769, Offset: 0x10f0
 // Size: 0xfc
 function private function_eb94f73e() {
-    movedir = self bot::function_c3467a5d();
+    movedir = self bot::move_dir();
     if (lengthsquared(movedir) > 0.0001) {
         eye = self.origin + (0, 0, self getplayerviewheight());
         var_d9100e0 = eye + vectornormalize(movedir) * 128;

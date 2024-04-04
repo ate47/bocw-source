@@ -2,7 +2,7 @@
 #using script_32399001bdb550da;
 #using scripts\cp_common\util.gsc;
 #using script_3dc93ca9902a9cda;
-#using script_1292451e284848cc;
+#using scripts\cp_common\snd.gsc;
 #using scripts\core_common\struct.gsc;
 #using scripts\core_common\flag_shared.gsc;
 #using scripts\core_common\exploder_shared.gsc;
@@ -112,7 +112,7 @@ function function_33ef1077(var_7589d009, var_cfa5fdd5, var_5021564e, var_79d6c88
 // Checksum 0xfd072317, Offset: 0x6c0
 // Size: 0x124
 function function_9ce08b4(var_4026a1a6, var_7589d009, var_cfa5fdd5, var_5021564e, var_88db8fbc, var_14e7d014, var_845dc708) {
-    level flag::wait_till_any([1:var_5021564e, 0:var_cfa5fdd5]);
+    level flag::wait_till_any([var_cfa5fdd5, var_5021564e]);
     if (isdefined(var_88db8fbc)) {
         level thread exploder::stop_exploder(var_88db8fbc);
     }
@@ -169,7 +169,7 @@ function function_24654660(var_14e7d014) {
         assert(isplayer(self));
     #/
     player = self;
-    player savegame::function_6d003cb9(var_14e7d014, 1);
+    player savegame::set_player_data(var_14e7d014, 1);
 }
 
 // Namespace namespace_78e9b80/namespace_78e9b80

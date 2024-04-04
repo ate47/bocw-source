@@ -14,14 +14,14 @@
 // Checksum 0x3db02067, Offset: 0x1e0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"gadget_jammer", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"gadget_jammer", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace jammer/gadget_jammer_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x98b8c2b9, Offset: 0x228
 // Size: 0x14
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
 }
 
@@ -34,7 +34,7 @@ function init_shared() {
         level.var_578f7c6d = spawnstruct();
     }
     level.var_578f7c6d.weapon = getweapon(#"gadget_jammer");
-    level.var_c20391e9 = getdvarint(#"hash_7f7f1118da837313", level.var_578f7c6d.weapon.explosionradius);
+    level.jammerradius = getdvarint(#"hash_7f7f1118da837313", level.var_578f7c6d.weapon.explosionradius);
     if (!isdefined(level.var_6d8e6535)) {
         level.var_6d8e6535 = [];
     }
@@ -89,15 +89,15 @@ function jammeractive(localclientnum, *oldval, newval, *bnewent, *binitialsnap, 
 // Checksum 0xfca4a6ee, Offset: 0x6b0
 // Size: 0xfc
 function jammerhacked(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    if (!isentity(self.var_7ec0e2d1)) {
+    if (!isentity(self.iconent)) {
         return;
     }
     localplayer = function_5c10bd79(bwastimejump);
     if (util::function_fbce7263(localplayer.team, self.team) && !codcaster::function_b8fe9b52(bwastimejump)) {
-        self.var_7ec0e2d1 setcompassicon("ui_hud_minimap_shroud_flipbook");
+        self.iconent setcompassicon("ui_hud_minimap_shroud_flipbook");
         return;
     }
-    self.var_7ec0e2d1 setcompassicon("ui_hud_minimap_shroud_friendly");
+    self.iconent setcompassicon("ui_hud_minimap_shroud_friendly");
 }
 
 // Namespace jammer/gadget_jammer_shared
@@ -217,25 +217,25 @@ function function_b47f94f(*localclientnum, var_da91b79d) {
 function function_2560e153(localclientnum, bwastimejump) {
     localplayer = function_5c10bd79(localclientnum);
     if (bwastimejump === 1) {
-        if (isdefined(self.var_7ec0e2d1)) {
+        if (isdefined(self.iconent)) {
             return;
         }
-    } else if (isdefined(self.var_7ec0e2d1)) {
-        self.var_7ec0e2d1 delete();
+    } else if (isdefined(self.iconent)) {
+        self.iconent delete();
     }
-    self.var_7ec0e2d1 = spawn(localclientnum, self.origin, "script_model", localplayer getentitynumber(), self.team);
-    self.var_7ec0e2d1 setmodel(#"tag_origin");
-    self.var_7ec0e2d1 linkto(self);
-    self.var_7ec0e2d1 setcompassicon("ui_hud_minimap_shroud_flipbook");
-    self.var_7ec0e2d1 function_a5edb367(#"neutral");
-    self.var_7ec0e2d1 enableonradar();
+    self.iconent = spawn(localclientnum, self.origin, "script_model", localplayer getentitynumber(), self.team);
+    self.iconent setmodel(#"tag_origin");
+    self.iconent linkto(self);
+    self.iconent setcompassicon("ui_hud_minimap_shroud_flipbook");
+    self.iconent function_a5edb367(#"neutral");
+    self.iconent enableonradar();
     if (localplayer.team == self.team || codcaster::function_b8fe9b52(localclientnum)) {
-        self.var_7ec0e2d1 setcompassicon("ui_hud_minimap_shroud_friendly");
+        self.iconent setcompassicon("ui_hud_minimap_shroud_friendly");
     } else {
-        self.var_7ec0e2d1 setcompassicon("ui_hud_minimap_shroud_flipbook");
+        self.iconent setcompassicon("ui_hud_minimap_shroud_flipbook");
     }
     diameter = getdvarint(#"hash_7f7f1118da837313", level.var_578f7c6d.weapon.explosionradius) * 2;
-    self.var_7ec0e2d1 function_5e00861(diameter, 1);
+    self.iconent function_5e00861(diameter, 1);
     self thread function_fc59d60e(localclientnum);
 }
 
@@ -297,8 +297,8 @@ function function_4a82368f(*local_client_num, *oldval, newval, *bnewent, *biniti
 // Size: 0x4c
 function private function_fc59d60e(*localclientnum) {
     self waittill(#"death");
-    if (isdefined(self.var_7ec0e2d1)) {
-        self.var_7ec0e2d1 delete();
+    if (isdefined(self.iconent)) {
+        self.iconent delete();
     }
 }
 

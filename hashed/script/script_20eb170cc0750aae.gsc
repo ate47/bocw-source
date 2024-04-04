@@ -7,7 +7,7 @@
 #using scripts\cp_common\gametypes\globallogic_ui.gsc;
 #using scripts\cp_common\gametypes\globallogic_spawn.gsc;
 #using scripts\cp_common\gametypes\globallogic.gsc;
-#using script_3706d21c449d0d14;
+#using scripts\cp_common\gamedifficulty.gsc;
 #using scripts\cp_common\bb.gsc;
 #using script_44b0b8420eabacad;
 #using scripts\core_common\values_shared.gsc;
@@ -105,9 +105,9 @@ function function_e89f60e2() {
 // Size: 0x1f4
 function function_45b62760() {
     self matchrecordplayerspawned();
-    var_8535acc1 = skipto::function_a002f769();
-    if (var_8535acc1 >= 0) {
-        self matchrecordsetcheckpointstat(var_8535acc1, "checkpoint_restores", 1);
+    skiptoindex = skipto::function_a002f769();
+    if (skiptoindex >= 0) {
+        self matchrecordsetcheckpointstat(skiptoindex, "checkpoint_restores", 1);
     }
     primaryweapon = isdefined(self.primaryweapon) ? self.primaryweapon : level.weaponnone;
     secondaryweapon = isdefined(self.secondaryweapon) ? self.secondaryweapon : level.weaponnone;
@@ -140,7 +140,7 @@ function function_7f1305bc() {
         foreach (player in level.players) {
             player closemenu(game.menu[#"menu_start_menu"]);
             if (player flag::get(#"mobile_armory_in_use")) {
-                player notify(#"menuresponse", {#intpayload:0, #response:"cancel", #menu:"mobile_armory_loadout"});
+                player notify(#"menuresponse", {#menu:"mobile_armory_loadout", #response:"cancel", #intpayload:0});
             }
             player closemenu(game.menu[#"menu_changeclass"]);
             player closemenu(game.menu[#"menu_changeclass_offline"]);
@@ -168,7 +168,7 @@ function function_7f1305bc() {
         player util::function_8b0c9d28(undefined, 5);
         wait(0.4);
         level flag::wait_till(#"gameplay_started");
-        player val::function_e681e68e(#"hash_342acf3710210ee2");
+        player val::reset_all(#"hash_342acf3710210ee2");
         globallogic_ui::function_cdbb5c49(0);
     }
 }
@@ -194,7 +194,7 @@ function onstartgametype() {
     level.spawnmaxs = (0, 0, 0);
     foreach (team in level.playerteams) {
         util::setobjectivetext(team, #"hash_6d9d9822a460249b");
-        util::function_e3353cb6(team, #"hash_6800331814c69e15");
+        util::setobjectivehinttext(team, #"hash_6800331814c69e15");
         util::setobjectivescoretext(team, #"hash_6d9d9822a460249b");
     }
     level.mapcenter = math::find_box_center(level.spawnmins, level.spawnmaxs);
@@ -221,7 +221,7 @@ function function_ddc47ed1() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x71294539, Offset: 0x1428
 // Size: 0x5e
-function private function_337450d2() {
+function private spawnplayer_internal() {
     spawns = skipto::function_ffdc86a2(level.var_cd012e52);
     self spawn(spawns[0].origin, spawns[0].angles);
     self.lastspawntime = gettime();
@@ -234,7 +234,7 @@ function private function_337450d2() {
 function onspawnplayer(*predictedspawn, *question) {
     profileNamedStart(#"");
     self.usingobj = undefined;
-    self function_337450d2();
+    self spawnplayer_internal();
     self thread function_bb5fae75();
     self.var_2869a26a = 1;
     self thread gamedifficulty::function_c6f98249();
@@ -289,9 +289,9 @@ function onplayerkilled(*einflictor, *attacker, *idamage, *smeansofdeath, *weapo
         }
     }
     self player::take_weapons();
-    self savegame::function_6d003cb9("saved_weapon", self._current_weapon.rootweapon.name);
-    self savegame::function_6d003cb9("saved_weapon_attachments", util::function_2146bd83(self._current_weapon));
-    self savegame::function_6d003cb9("saved_weapondata", self._weapons);
+    self savegame::set_player_data("saved_weapon", self._current_weapon.rootweapon.name);
+    self savegame::set_player_data("saved_weapon_attachments", util::function_2146bd83(self._current_weapon));
+    self savegame::set_player_data("saved_weapondata", self._weapons);
     self._weapons = undefined;
     self.gun_removed = undefined;
     if (isdefined(level.var_5be43b2d)) {
@@ -515,7 +515,7 @@ function function_27945f() {
 // Params 0, eflags: 0x0
 // Checksum 0x1891c3e7, Offset: 0x2738
 // Size: 0xc0
-function function_958bdad1() {
+function wait_to_spawn() {
     self notify(#"hash_6baa8d54b54f762e");
     self endon(#"hash_6baa8d54b54f762e");
     if (is_true(level.inprematchperiod) || !isdefined(self.var_56e5037e)) {

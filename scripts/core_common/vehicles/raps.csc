@@ -11,14 +11,14 @@
 // Checksum 0x483fa348, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"raps", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"raps", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace raps/raps
 // Params 0, eflags: 0x4
 // Checksum 0x1f174c2f, Offset: 0x120
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("vehicle", "raps_side_deathfx", 1, 1, "int", &do_side_death_fx, 0, 0);
 }
 

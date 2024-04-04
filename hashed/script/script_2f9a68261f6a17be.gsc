@@ -17,14 +17,14 @@
 // Checksum 0x506e2165, Offset: 0x100
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_41cb195ec280085c", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_41cb195ec280085c", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_b28d86fd/namespace_b28d86fd
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb6da1c97, Offset: 0x148
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }
@@ -50,7 +50,7 @@ function private on_begin() {
     }
     a_ai = getaiteamarray(level.zombie_team);
     foreach (ai in a_ai) {
-        if (isalive(ai) && (ai.var_6f84b820 === #"hash_72d4f2ad2e333eb4" || ai.var_6f84b820 === #"special")) {
+        if (isalive(ai) && (ai.var_6f84b820 === #"elite" || ai.var_6f84b820 === #"special")) {
             ai.takedamage = 1;
             ai.allowdeath = 1;
             ai kill();

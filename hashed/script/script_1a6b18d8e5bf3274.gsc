@@ -14,14 +14,14 @@
 // Checksum 0x622a29e5, Offset: 0x260
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_52556758a0c8acfe", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_52556758a0c8acfe", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_a5ef5769/namespace_a5ef5769
 // Params 0, eflags: 0x6 linked
 // Checksum 0x34267204, Offset: 0x2b8
 // Size: 0x10c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "" + #"hash_47e7d5219a26a786", 16000, 3, "int", &function_dd46bc90, 0, 0);
     clientfield::register("actor", "" + #"hash_3a47820a21ce3170", 16000, 2, "int", &function_219213be, 0, 0);
     clientfield::register("allplayers", "" + #"hash_7508e13e17dd1e3c", 16000, 4, "int", &function_95ad29e7, 0, 0);
@@ -134,7 +134,7 @@ function function_219213be(*localclientnum, *oldval, newval, *bnewent, *binitial
         self function_f6e99a8d(self.var_12b59dee, "j_head");
         self.var_12b59dee = undefined;
     }
-    var_2ddbe94 = [1:#"hash_16d59f099e418f4f", 0:#"hash_1f5f24e8240c291a"];
+    var_2ddbe94 = [#"hash_1f5f24e8240c291a", #"hash_16d59f099e418f4f"];
     if (bwastimejump && bwastimejump < var_2ddbe94.size + 1) {
         self.var_b159952f = var_2ddbe94[bwastimejump - 1];
         self playrenderoverridebundle(self.var_b159952f);

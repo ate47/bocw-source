@@ -22,14 +22,14 @@
 // Checksum 0x8f0c4bb3, Offset: 0x1e8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register("recon_car", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register("recon_car", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace recon_car/recon_car
 // Params 0, eflags: 0x6 linked
 // Checksum 0x8c05ce8, Offset: 0x230
 // Size: 0xf4
-function private function_70a657d8() {
+function private preinit() {
     level.var_bced5d3c = [];
     level.var_85baa7a3 = getweapon(#"hash_3c8b385a76cbfe83");
     if (!is_true(getgametypesetting(#"hash_45aec06707484fef"))) {
@@ -140,7 +140,7 @@ function function_d1661ada() {
 function function_fdcfd41d() {
     self endon(#"death", #"shutdown");
     while (true) {
-        var_d39fdf94 = getaiarchetypearray(#"hash_da8fcc11dab30f");
+        var_d39fdf94 = getaiarchetypearray(#"hulk");
         var_d39fdf94 = arraysortclosest(var_d39fdf94, self.origin, undefined, 0, 1000);
         foreach (ai_hulk in var_d39fdf94) {
             if (isalive(ai_hulk)) {

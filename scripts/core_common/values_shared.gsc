@@ -3,7 +3,7 @@
 #using scripts\core_common\system_shared.gsc;
 #using scripts\core_common\string_shared.gsc;
 #using scripts\core_common\player\player_shared.gsc;
-#using script_32c8b5b0eb2854f3;
+#using scripts\core_common\gamestate_util.gsc;
 #using scripts\core_common\flag_shared.gsc;
 #using scripts\core_common\array_shared.gsc;
 #using scripts\core_common\animation_shared.gsc;
@@ -15,17 +15,17 @@
 // Checksum 0xb9e1966d, Offset: 0x498
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"values", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"values", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace val/values_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd723e8a3, Offset: 0x4e0
 // Size: 0x115c
-function private function_70a657d8() {
+function private preinit() {
     register("takedamage", 1, "$self", &set_takedamage, "$value");
     default_func("takedamage", "$self", &default_takedamage);
-    register("allowdeath", 1, "$self", &function_55b241fa, "$value");
+    register("allowdeath", 1, "$self", &set_allowdeath, "$value");
     default_func("allowdeath", "$self", &default_allowdeath);
     register("magic_bullet_shield", 1, "$self", &function_87a1ac43, "$value");
     default_func("magic_bullet_shield", "$self", &function_aac507e5);
@@ -35,7 +35,7 @@ function private function_70a657d8() {
     default_value("attackeraccuracy", 1);
     register("ignoreme", 1, "$self", &set_ignoreme, "$value");
     default_value("ignoreme", 0);
-    register("ignoreall", 1, "$self", &function_8f7f7a0, "$value");
+    register("ignoreall", 1, "$self", &set_ignoreall, "$value");
     default_value("ignoreall", 0);
     register("take_weapons", 1, "$self", &set_takeweapons, "$value");
     default_value("take_weapons", 0);
@@ -97,7 +97,7 @@ function private function_70a657d8() {
     default_value("allow_melee_victim", 1);
     register("allow_climb", 1, "$self", &function_4f1b1444, "$value");
     default_value("allow_climb", 1);
-    register("allow_mantle", 1, "$self", &function_184ebac0, "$value");
+    register("allow_mantle", 1, "$self", &allowmantle, "$value");
     default_value("allow_mantle", 1);
     register("allow_sprint", 1, "$self", &allowsprint, "$value");
     default_value("allow_sprint", 1);
@@ -105,13 +105,13 @@ function private function_70a657d8() {
     default_value("allow_ads", 1);
     register("allow_stand", 1, "$self", &allowstand, "$value");
     default_value("allow_stand", 1);
-    register("allow_movement", 1, "$self", &function_296136b2, "$value");
+    register("allow_movement", 1, "$self", &allowmovement, "$value");
     default_value("allow_movement", 1);
     register("move_speed_scale", 1, "$self", &setmovespeedscale, "$value");
     default_value("move_speed_scale", 1);
     register("low_ready", 1, "$self", &setlowready, "$value");
     default_value("low_ready", 0);
-    register("goalradius", 2048, "$self", &function_adf02a98, "$value");
+    register("goalradius", 2048, "$self", &set_goal_radius, "$value");
     default_value("goalradius", 2048);
     register("push_player", 1, "$self", &pushplayer, "$value");
     default_value("push_player", 0);
@@ -203,7 +203,7 @@ function default_value(str_name, value) {
 function link(str_name, var_8e7e7e96, func) {
     if (assert_registered(str_name)) {
         s_value = level.values[str_name];
-        s_value.links[var_8e7e7e96] = {#func:func, #name:var_8e7e7e96};
+        s_value.links[var_8e7e7e96] = {#name:var_8e7e7e96, #func:func};
     }
 }
 
@@ -220,8 +220,8 @@ function set(str_id, str_name, value) {
         _set_value(str_name, value);
     }
     if (isarray(level.values[str_name].links)) {
-        foreach (var_3c691af1 in level.values[str_name].links) {
-            set(str_id, var_3c691af1.name, [[ var_3c691af1.func ]](value));
+        foreach (s_link in level.values[str_name].links) {
+            set(str_id, s_link.name, [[ s_link.func ]](value));
         }
     }
 }
@@ -230,7 +230,7 @@ function set(str_id, str_name, value) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x6e5c1ca4, Offset: 0x1b08
 // Size: 0x3c
-function function_3e65ae71(str_name, value) {
+function set_radiant(str_name, value) {
     set(#"radiant", str_name, value);
 }
 
@@ -259,8 +259,8 @@ function reset(str_id, str_name) {
         }
     }
     if (isarray(level.values[str_name].links)) {
-        foreach (var_3c691af1 in level.values[str_name].links) {
-            reset(str_id, var_3c691af1.name);
+        foreach (s_link in level.values[str_name].links) {
+            reset(str_id, s_link.name);
         }
     }
 }
@@ -269,15 +269,15 @@ function reset(str_id, str_name) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xabca1aff, Offset: 0x1d50
 // Size: 0x144
-function function_e681e68e(str_id) {
+function reset_all(str_id) {
     if (!isdefined(self.values)) {
         return;
     }
-    var_bb7c988d = arraycopy(self.values);
-    foreach (var_629dd807, var_ae0593af in var_bb7c988d) {
-        foreach (state in var_ae0593af) {
+    valuescopy = arraycopy(self.values);
+    foreach (valuekey, valuestates in valuescopy) {
+        foreach (state in valuestates) {
             if (state.str_id === str_id) {
-                self reset(str_id, var_629dd807);
+                self reset(str_id, valuekey);
             }
         }
     }
@@ -287,7 +287,7 @@ function function_e681e68e(str_id) {
 // Params 1, eflags: 0x0
 // Checksum 0x50f63b57, Offset: 0x1ea0
 // Size: 0x2c
-function function_ade0d537(str_name) {
+function reset_radiant(str_name) {
     reset(#"radiant", str_name);
 }
 
@@ -312,7 +312,7 @@ function private _push_value(str_id, str_name, value) {
     if (!isdefined(self.values[str_name])) {
         self.values[str_name] = [];
     }
-    arrayinsert(self.values[str_name], {#value:value, #str_id:str_id}, 0);
+    arrayinsert(self.values[str_name], {#str_id:str_id, #value:value}, 0);
 }
 
 // Namespace val/values_shared
@@ -409,7 +409,7 @@ function private default_takedamage() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x8227074c, Offset: 0x23f0
 // Size: 0x2a
-function private function_55b241fa(b_value = 1) {
+function private set_allowdeath(b_value = 1) {
     self.allowdeath = b_value;
 }
 
@@ -546,10 +546,10 @@ function private function_debe5863(b_value = 1) {
 // Size: 0x54
 function private function_15d061e0(b_value = 1) {
     if (b_value) {
-        self function_8348edff();
+        self disableweaponpickup();
         return;
     }
-    self function_a42cc59();
+    self enableweaponpickup();
 }
 
 // Namespace val/values_shared
@@ -615,7 +615,7 @@ function private set_ignoreme(b_value = 1) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xaeec67a2, Offset: 0x2a80
 // Size: 0x2a
-function private function_8f7f7a0(b_value = 1) {
+function private set_ignoreall(b_value = 1) {
     self.ignoreall = b_value;
 }
 
@@ -700,7 +700,7 @@ function private set_ignore_health_regen_delay(b_value = 1) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x1759f0ce, Offset: 0x2cf0
 // Size: 0xa2
-function private function_adf02a98(val) {
+function private set_goal_radius(val) {
     if (isdefined(val)) {
         self.goalradius = val;
         return;

@@ -30,7 +30,7 @@
 // Checksum 0xf8b2311d, Offset: 0x2a0
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"counteruav", &function_70a657d8, undefined, &function_3675de8b, #"killstreaks");
+    system::register(#"counteruav", &preinit, undefined, &function_3675de8b, #"killstreaks");
 }
 
 // Namespace counteruav/counteruav
@@ -48,7 +48,7 @@ function private function_1f11d560() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x14f3409, Offset: 0x338
 // Size: 0x22c
-function private function_70a657d8() {
+function private preinit() {
     level.counter_uav_offsets = buildoffsetlist((0, 0, 0), 3, 450, 450);
     level.activecounteruavs = [];
     level.activeplayercounteruavs = [];
@@ -160,7 +160,7 @@ function private function_eb065a52(ent) {
         return;
     }
     bundle = killstreaks::get_script_bundle("counteruav");
-    var_e96f821a = function_a3f6cdac(isdefined(bundle.var_c23de6e6) ? bundle.var_c23de6e6 : 0);
+    var_e96f821a = sqr(isdefined(bundle.var_c23de6e6) ? bundle.var_c23de6e6 : 0);
     if (1 && isdefined(self.var_f6bf445b)) {
         var_54faa045 = self.var_f6bf445b.origin;
     } else {
@@ -318,8 +318,8 @@ function activatecounteruav(killstreaktype) {
         if (sessionmodeiswarzonegame()) {
             var_b0490eb9 = getheliheightlockheight(self.origin);
             trace = groundtrace((self.origin[0], self.origin[1], var_b0490eb9), self.origin - vectorscale((0, 0, 1), 5000), 0, counteruav);
-            var_6be9958b = trace[#"position"][2];
-            var_5f8c899e = var_6be9958b + (var_b0490eb9 - var_6be9958b) * bundle.var_ff73e08c;
+            groundheight = trace[#"position"][2];
+            var_5f8c899e = groundheight + (var_b0490eb9 - groundheight) * bundle.var_ff73e08c;
             var_5f8c899e = var_5f8c899e - killstreaks::function_43f4782d();
         } else {
             var_5f8c899e = 6000;
@@ -329,7 +329,7 @@ function activatecounteruav(killstreaktype) {
         counteruav.var_f6bf445b clientfield::set("counteruav", 1);
         counteruav.var_f6bf445b setteam(counteruav.team);
     }
-    counteruav killstreakrules::function_2e6ff61a("uav", killstreak_id, {#team:counteruav.team, #origin:counteruav.var_f6bf445b.origin});
+    counteruav killstreakrules::function_2e6ff61a("uav", killstreak_id, {#origin:counteruav.var_f6bf445b.origin, #team:counteruav.team});
     weapon = getweapon("counteruav");
     self namespace_f9b02f80::play_killstreak_start_dialog("counteruav", self.team, killstreak_id);
     counteruav namespace_f9b02f80::play_pilot_dialog_on_owner("arrive", "counteruav", killstreak_id);
@@ -606,13 +606,13 @@ function addactivecounteruav() {
 // Size: 0x7c
 function removeactivecounteruav() {
     cuav = self;
-    if (cuav.var_f52c102f === 1) {
+    if (cuav.alreadyremoved === 1) {
         return;
     }
     profilestart();
     cuav resetactivecounteruav();
     cuav killstreakrules::killstreakstop(cuav.killstreaktype, self.originalteam, self.killstreak_id);
-    cuav.var_f52c102f = 1;
+    cuav.alreadyremoved = 1;
     profilestop();
 }
 

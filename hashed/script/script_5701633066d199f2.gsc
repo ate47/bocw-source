@@ -156,7 +156,7 @@ function registerbehaviorscriptfunctions() {
     /#
         assert(isscriptfunctionptr(&function_b87b3fef));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_679244a65c4ac51f", &function_b87b3fef);
+    behaviortreenetworkutility::registerbehaviortreescriptapi(#"doawaskilledbytesla", &function_b87b3fef);
     /#
         assert(isscriptfunctionptr(&function_e90927b7));
     #/
@@ -318,21 +318,21 @@ function function_52fd55a() {
 // Checksum 0xe2003daa, Offset: 0x1d58
 // Size: 0xf6
 function function_17d3b57() {
-    var_7ada0b88 = namespace_ec06fe4a::function_38de0ce8();
+    curcount = namespace_ec06fe4a::function_38de0ce8();
     if (isdefined(level.doa.var_39e3fa99) && namespace_4dae815d::function_59a9cf1d() == 0) {
-        available = [[ level.doa.var_39e3fa99 ]]->function_c892290a() - var_7ada0b88;
+        available = [[ level.doa.var_39e3fa99 ]]->function_c892290a() - curcount;
         return available;
     }
     if (namespace_4dae815d::function_59a9cf1d() == 5) {
-        return (40 - var_7ada0b88);
+        return (40 - curcount);
     }
     if (namespace_4dae815d::function_59a9cf1d() == 4) {
-        return (40 - var_7ada0b88);
+        return (40 - curcount);
     }
     /#
         assert(0);
     #/
-    return 40 - var_7ada0b88;
+    return 40 - curcount;
 }
 
 // Namespace namespace_250e9486/namespace_250e9486
@@ -385,7 +385,7 @@ function function_252dff4d(name, aitype, var_d240d5de, var_41157a40, unlocklevel
     struct.var_d240d5de = var_d240d5de;
     struct.var_41157a40 = var_41157a40;
     struct.var_c8ceaddf = var_c8ceaddf;
-    struct.var_9f19fcb6 = chance;
+    struct.spawnchance = chance;
     struct.unlocklevel = isdefined(unlocklevel) ? unlocklevel : -1;
     struct.var_71e54e3a = [];
     if (aitype != -1 && aitype <= 29) {
@@ -468,7 +468,7 @@ function function_fce39c7a() {
     self.var_968a296f = 1;
     nextpos = getclosestpointonnavmesh(result.position, 128, self getpathfindingradius());
     if (isdefined(nextpos)) {
-        namespace_1e25ad94::function_f5f0c0f8("Entity " + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + " got a bad path notification going to: " + result.position + ". Redirecting to: " + nextpos + " BP Count = " + self.doa.var_baa2991d);
+        namespace_1e25ad94::debugmsg("Entity " + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + " got a bad path notification going to: " + result.position + ". Redirecting to: " + nextpos + " BP Count = " + self.doa.var_baa2991d);
         self function_41354e51(nextpos, 1);
         self.var_72283e28 = gettime() + 10000;
         result = undefined;
@@ -504,7 +504,7 @@ function function_472bf4() {
 // Checksum 0x2384621a, Offset: 0x27c8
 // Size: 0x394
 function function_d138afd9() {
-    if (self.var_4fb44f2 === #"silverback") {
+    if (self.zombie_type === #"silverback") {
         return;
     }
     self endon(#"hash_717d9188a95b458f");
@@ -569,11 +569,11 @@ function function_db744d28(var_370ac26d = getdvarint(#"hash_4321f22c262c3ad1", 1
 // Params 2, eflags: 0x2 linked
 // Checksum 0x3d341d5a, Offset: 0x2ce0
 // Size: 0x32e
-function function_e1f7a9a0(radius = 1024, baseorigin) {
+function ai_guard(radius = 1024, baseorigin) {
     self notify("64eed2939466a40");
     self endon("64eed2939466a40");
     self endon(#"death", #"hash_232ad18a32353b62");
-    self notify(#"hash_5f3f771e27def805");
+    self notify(#"ai_guard");
     if (!isdefined(baseorigin)) {
         baseorigin = self.origin;
     }
@@ -583,7 +583,7 @@ function function_e1f7a9a0(radius = 1024, baseorigin) {
             baseorigin = base.origin;
         }
     }
-    radiussq = function_a3f6cdac(radius);
+    radiussq = sqr(radius);
     self.engagementdistance = radius;
     self.var_a84a3d40 = radiussq;
     self.var_2dc9f085 = 0;
@@ -595,7 +595,7 @@ function function_e1f7a9a0(radius = 1024, baseorigin) {
     self.var_101082d1 = 0;
     var_92c9a6e = int(self.maxhealth * 0.02);
     var_71110327 = baseorigin;
-    points = function_710ec146(baseorigin, radius >> 1, 32, 30);
+    points = getrandomnavpoints(baseorigin, radius >> 1, 32, 30);
     self thread function_572e5496(radius, baseorigin);
     while (true) {
         wait(1);
@@ -632,12 +632,12 @@ function function_e1f7a9a0(radius = 1024, baseorigin) {
 function function_572e5496(radius, baseorigin) {
     self notify("7bfec1e63f142294");
     self endon("7bfec1e63f142294");
-    self endon(#"death", #"hash_5f3f771e27def805");
+    self endon(#"death", #"ai_guard");
     wait(5);
     maxdist = radius + (radius >> 1);
-    maxdistsq = function_a3f6cdac(maxdist);
+    maxdistsq = sqr(maxdist);
     minhealth = int(self.maxhealth * 0.75);
-    var_9b39fe40 = function_a3f6cdac(256);
+    var_9b39fe40 = sqr(256);
     while (true) {
         wait(1);
         distsq = distancesquared(self.origin, baseorigin);
@@ -663,7 +663,7 @@ function function_572e5496(radius, baseorigin) {
                     self.health = minhealth;
                 }
             }
-            self thread function_e1f7a9a0(radius, baseorigin);
+            self thread ai_guard(radius, baseorigin);
             return;
         }
     }
@@ -734,7 +734,7 @@ function function_25b2c8a9(*spawner, *str_targetname, *force_spawn) {
     self.doa.stunned = 0;
     self.doa.original_origin = self.origin;
     self.doa.var_ab338943 = 0;
-    self.doa.var_a706a3a7 = 0.25;
+    self.doa.thinkrate = 0.25;
     self.ignoreall = 0;
     self.ignoreme = 0;
     self.pacifist = 0;
@@ -742,8 +742,8 @@ function function_25b2c8a9(*spawner, *str_targetname, *force_spawn) {
     self.goalradius = 20;
     self.var_b98d779c = 0.25;
     self.engagementdistance = 2400;
-    self.var_a84a3d40 = function_a3f6cdac(self.engagementdistance);
-    self.var_f578c3a2 = function_a3f6cdac(36);
+    self.var_a84a3d40 = sqr(self.engagementdistance);
+    self.var_f578c3a2 = sqr(36);
     self.shouldspawn = 1;
     self.var_c0bd8c06 = 0;
     self.var_f6b9e96d = 0;
@@ -757,7 +757,7 @@ function function_25b2c8a9(*spawner, *str_targetname, *force_spawn) {
     self.var_1b2af7dc = 1;
     self.entnum = self getentitynumber();
     self.var_f7f65924 = is_true(self.var_d55f22cb) ? 5 : 10;
-    self.zombie_move_speed = is_true(level.doa.hardcoremode) ? isdefined(level.doa.var_13e8f9c9) ? level.doa.var_13e8f9c9 : "walk" : "sprint";
+    self.zombie_move_speed = is_true(level.doa.hardcoremode) ? "sprint" : isdefined(level.doa.var_13e8f9c9) ? level.doa.var_13e8f9c9 : "walk";
     self.var_72283e28 = 0;
     self.health = level.doa.zombie_health;
     self.maxhealth = level.doa.zombie_health;
@@ -765,7 +765,7 @@ function function_25b2c8a9(*spawner, *str_targetname, *force_spawn) {
     self.lastknowntime = 0;
     self.var_2a85c480 = 0;
     self.startposition = self.origin;
-    self.var_4fb44f2 = isdefined(self.spawndef) ? [[ self.spawndef ]]->getname() : "unknown AI";
+    self.zombie_type = isdefined(self.spawndef) ? [[ self.spawndef ]]->getname() : "unknown AI";
     if (isactor(self)) {
         self pathmode("move allowed");
         self collidewithactors(1);
@@ -796,7 +796,7 @@ function function_25b2c8a9(*spawner, *str_targetname, *force_spawn) {
             if (!isdefined(base.radius)) {
                 base.radius = 1024;
             }
-            self thread function_e1f7a9a0(int(base.radius), base.origin);
+            self thread ai_guard(int(base.radius), base.origin);
         }
     }
 }
@@ -882,7 +882,7 @@ function function_c1f37cab() {
     self.var_f9d01c76 = gettime() + 1000;
     dist = distancesquared(self.lastposition, self.origin);
     self.lastposition = self.origin;
-    if (dist < function_a3f6cdac(12)) {
+    if (dist < sqr(12)) {
         self.var_4bd563dd++;
     } else {
         self.var_4bd563dd = 0;
@@ -891,7 +891,7 @@ function function_c1f37cab() {
         distsq = distancesquared(self.origin, self.var_c8b974fe);
         if (distsq > self.var_32d07c96) {
             distsq = distancesquared(self.origin, self.goalpos);
-            if (distsq < function_a3f6cdac(512)) {
+            if (distsq < sqr(512)) {
                 self.var_4bd563dd++;
             } else {
                 self.var_4bd563dd = self.var_f7f65924;
@@ -953,7 +953,7 @@ function function_9ee1ee56() {
     minz = center[2] - 1000;
     while (true) {
         if (self.arena !== level.doa.var_39e3fa99) {
-            namespace_1e25ad94::function_f5f0c0f8("Enemy " + (isdefined(self.aitype) ? self.aitype : self.classname) + " at (" + self.origin + ") was killed for not being in the active arena!", 1);
+            namespace_1e25ad94::debugmsg("Enemy " + (isdefined(self.aitype) ? self.aitype : self.classname) + " at (" + self.origin + ") was killed for not being in the active arena!", 1);
             self.takedamage = 1;
             self.allowdeath = 1;
             self dodamage(self.health + 187, self.origin);
@@ -965,14 +965,14 @@ function function_9ee1ee56() {
                     type = self.spawner.script_noteworthy;
                 }
             }
-            namespace_1e25ad94::function_f5f0c0f8("Enemy " + type + " at (" + self.origin + ") was killed for being beneath the minZ value!", 1);
+            namespace_1e25ad94::debugmsg("Enemy " + type + " at (" + self.origin + ") was killed for being beneath the minZ value!", 1);
             self.takedamage = 1;
             self.allowdeath = 1;
             self dodamage(self.health + 187, self.origin);
         }
         distsq = distancesquared(center, self.origin);
-        if (distsq > function_a3f6cdac(2048)) {
-            namespace_1e25ad94::function_f5f0c0f8("Enemy " + (isdefined(self.aitype) ? self.aitype : self.classname) + " at (" + self.origin + ") was killed for being to far from center (" + center + ") Dist:" + distsq, 1);
+        if (distsq > sqr(2048)) {
+            namespace_1e25ad94::debugmsg("Enemy " + (isdefined(self.aitype) ? self.aitype : self.classname) + " at (" + self.origin + ") was killed for being to far from center (" + center + ") Dist:" + distsq, 1);
             self.takedamage = 1;
             self.allowdeath = 1;
             self dodamage(self.health + 187, self.origin);
@@ -1005,7 +1005,7 @@ function function_8971bbb7() {
         if (self function_cf2c9af()) {
             self function_89c95270();
         }
-        wait(self.doa.var_a706a3a7);
+        wait(self.doa.thinkrate);
     }
 }
 
@@ -1046,7 +1046,7 @@ function function_1bbf4511(origin, *var_f1479aab, context) {
     }
     self setgoal(var_f1479aab);
     distsq = distancesquared(self.origin, var_f1479aab);
-    frac = math::clamp(distsq / function_a3f6cdac(800), 0, 1);
+    frac = math::clamp(distsq / sqr(800), 0, 1);
     if (isdefined(self.zombie_move_speed)) {
         if (self.zombie_move_speed == "walk" || is_true(self.missinglegs)) {
             frac = frac + 0.2;
@@ -1083,9 +1083,9 @@ function function_41354e51(origin, force = 0, context = 0) {
         return;
     }
     distsq = distancesquared(origin, self.origin);
-    if (distsq > function_a3f6cdac(2500)) {
+    if (distsq > sqr(2500)) {
         if (!is_true(self.boss) && !isdefined(self.target)) {
-            level thread namespace_1e25ad94::function_f5f0c0f8("Killing Entity: " + self getentitynumber() + " for trying to path to target distance away: " + int(distance(self.origin, origin)) + " units");
+            level thread namespace_1e25ad94::debugmsg("Killing Entity: " + self getentitynumber() + " for trying to path to target distance away: " + int(distance(self.origin, origin)) + " units");
             self thread namespace_ec06fe4a::function_570729f0(1);
         }
         return;
@@ -1093,7 +1093,7 @@ function function_41354e51(origin, force = 0, context = 0) {
     /#
         if (isdefined(self.spawndef)) {
             distsq = distancesquared(origin, self.spawndef.var_edee94ca.origin);
-            if (distsq < function_a3f6cdac(128)) {
+            if (distsq < sqr(128)) {
                 origin = self.origin;
             }
         }
@@ -1109,7 +1109,7 @@ function function_41354e51(origin, force = 0, context = 0) {
     if (!setpath) {
         distsq = distancesquared(origin, self.goalpos);
         var_5aad8687 = distancesquared(self.origin, self.goalpos);
-        scale = max(1, var_5aad8687 / function_a3f6cdac(256));
+        scale = max(1, var_5aad8687 / sqr(256));
         var_2773df6d = int(self.var_f578c3a2 * scale);
         if (distsq > var_2773df6d) {
             self.var_72283e28 = self.var_72283e28 - 150;
@@ -1125,7 +1125,7 @@ function function_41354e51(origin, force = 0, context = 0) {
 // Size: 0x32a
 function function_622f5b91(var_77cbeb28) {
     i = 8;
-    var_a8bd6ee9 = function_a3f6cdac(128);
+    var_a8bd6ee9 = sqr(128);
     foreach (ally in var_77cbeb28) {
         ally.rank = i * 50;
         if (self.favoriteenemy === ally) {
@@ -1198,7 +1198,7 @@ function function_4b49bf0d() {
         targets = [];
         foreach (target in validtargets) {
             distsq = distancesquared(self.origin, target.origin);
-            if (distsq >= function_a3f6cdac(2500)) {
+            if (distsq >= sqr(2500)) {
                 continue;
             }
             if (!isdefined(level.doa.var_39e3fa99) && distsq >= self.var_a84a3d40) {
@@ -1795,8 +1795,8 @@ function zombietraverseactionterminate(behaviortreeentity, asmstatename) {
 function function_abb6c18a(entity) {
     if (!is_true(entity.var_e5ad72a0)) {
         if (isdefined(entity.var_d1bf288)) {
-            if (!isdefined(entity.var_9bf0b279)) {
-                entity.var_9bf0b279 = gettime() + entity.var_d1bf288;
+            if (!isdefined(entity.despawntimer)) {
+                entity.despawntimer = gettime() + entity.var_d1bf288;
             }
         }
         if (isdefined(entity.var_1038c5e0)) {
@@ -1814,8 +1814,8 @@ function function_abb6c18a(entity) {
 // Checksum 0x3842f9ae, Offset: 0x6d20
 // Size: 0x34
 function function_e5fc1f3c(entity) {
-    if (isdefined(entity.var_9bf0b279)) {
-        if (gettime() < entity.var_9bf0b279) {
+    if (isdefined(entity.despawntimer)) {
+        if (gettime() < entity.despawntimer) {
             return 5;
         }
     }
@@ -1868,7 +1868,7 @@ function function_dab7edc(einflictor, eattacker, idamage, idflags, smeansofdeath
     if (self.team == "allies") {
         idamage = math::clamp(idamage, 100, self.health);
         /#
-            function_f5f0c0f8("<unknown string>" + self.archetype + "<unknown string>" + idamage);
+            debugmsg("<unknown string>" + self.archetype + "<unknown string>" + idamage);
         #/
     }
     if (is_true(self.basic)) {
@@ -1897,7 +1897,7 @@ function function_dab7edc(einflictor, eattacker, idamage, idflags, smeansofdeath
     }
     if (smeansofdeath == "MOD_BURNED") {
         /#
-            function_f5f0c0f8("<unknown string>" + idamage + "<unknown string>" + self.health + (idamage < self.health ? "<unknown string>" : "<unknown string>"));
+            debugmsg("<unknown string>" + idamage + "<unknown string>" + self.health + (idamage < self.health ? "<unknown string>" : "<unknown string>"));
         #/
     }
     if (smeansofdeath == "MOD_CRUSH") {
@@ -1915,8 +1915,8 @@ function function_dab7edc(einflictor, eattacker, idamage, idflags, smeansofdeath
     }
     if (isdefined(self.aioverridedamage)) {
         if (isarray(self.aioverridedamage)) {
-            foreach (var_34fa8ed5 in self.aioverridedamage) {
-                idamage = self [[ var_34fa8ed5 ]](einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, timeoffset, boneindex, modelindex);
+            foreach (cb in self.aioverridedamage) {
+                idamage = self [[ cb ]](einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, timeoffset, boneindex, modelindex);
             }
         } else {
             idamage = self [[ self.aioverridedamage ]](einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, timeoffset, boneindex, modelindex);
@@ -1978,7 +1978,7 @@ function function_dab7edc(einflictor, eattacker, idamage, idflags, smeansofdeath
     }
     /#
         if (is_true(level.doa.var_598305fe)) {
-            function_c9800094(eattacker, vdamageorigin, idamage, idamage < 1000 ? 2 : 1);
+            function_c9800094(eattacker, vdamageorigin, idamage, idamage < 1000 ? 1 : 2);
         }
     #/
     self finishactordamage(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, timeoffset, boneindex, surfacetype, surfacenormal);
@@ -1995,7 +1995,7 @@ function function_9b31d191(einflictor, eattacker, idamage, smeansofdeath, weapon
     self asmsetanimationrate(1);
     if (self.team == "allies") {
         /#
-            function_f5f0c0f8("<unknown string>" + self.archetype);
+            debugmsg("<unknown string>" + self.archetype);
         #/
     }
     if (isdefined(self.fx)) {
@@ -2308,7 +2308,7 @@ function function_3d752709(enemy, var_bd97c6ae) {
     if (gibserverutils::isgibbed(enemy, 384)) {
         return false;
     }
-    if (distancesquared(enemy.origin, var_bd97c6ae.origin) > function_a3f6cdac(60)) {
+    if (distancesquared(enemy.origin, var_bd97c6ae.origin) > sqr(60)) {
         return false;
     }
     facingvec = anglestoforward(var_bd97c6ae.angles);
@@ -2317,8 +2317,8 @@ function function_3d752709(enemy, var_bd97c6ae) {
     var_c2ee8451 = (facingvec[0], facingvec[1], 0);
     var_3e3c8075 = vectornormalize(var_3e3c8075);
     var_c2ee8451 = vectornormalize(var_c2ee8451);
-    var_34e02165 = vectordot(var_c2ee8451, var_3e3c8075);
-    if (var_34e02165 < 0) {
+    enemydot = vectordot(var_c2ee8451, var_3e3c8075);
+    if (enemydot < 0) {
         return false;
     }
     return true;
@@ -2360,7 +2360,7 @@ function function_422fdfd4(*entity, attacker, *weapon, var_5457dc44, hitloc, poi
             }
         }
     }
-    return {#registerzombie_bgb_used_reinforce:registerzombie_bgb_used_reinforce, #var_84ed9a13:var_84ed9a13, #damage_scale:var_b1c1c5cf};
+    return {#damage_scale:var_b1c1c5cf, #var_84ed9a13:var_84ed9a13, #registerzombie_bgb_used_reinforce:registerzombie_bgb_used_reinforce};
 }
 
 // Namespace namespace_250e9486/namespace_250e9486
@@ -2403,7 +2403,7 @@ function function_e10af211(var_a349a77f, trailfx, impactfx = "turret_impact", va
     if (!isdefined(var_a349a77f)) {
         return;
     }
-    self.spawnloc = {#angles:self.angles, #origin:var_a349a77f};
+    self.spawnloc = {#origin:var_a349a77f, #angles:self.angles};
     if (isactor(self)) {
         self forceteleport(var_a349a77f, self.angles);
     } else {
@@ -2449,7 +2449,7 @@ function function_e10af211(var_a349a77f, trailfx, impactfx = "turret_impact", va
 // Size: 0xba
 function function_abec6179(var_5a1d7118, proximity, note, timeout = 5) {
     self endon(#"death");
-    var_b235b0cb = function_a3f6cdac(proximity);
+    var_b235b0cb = sqr(proximity);
     timeout = gettime() + timeout * 1000;
     while (gettime() < timeout) {
         if (distancesquared(self.origin, var_5a1d7118) <= var_b235b0cb) {

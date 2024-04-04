@@ -18,14 +18,14 @@
 // Checksum 0xae9ed411, Offset: 0x4e0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"animation", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"animation", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace animation/animation_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf51ebb, Offset: 0x528
 // Size: 0xf4
-function private function_70a657d8() {
+function private preinit() {
     if (getdvarstring(#"debug_anim_shared", "") == "") {
         setdvar(#"debug_anim_shared", "");
     }
@@ -249,7 +249,7 @@ function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, 
     }
     /#
         self.var_80c69db6 = "<unknown string>";
-        self.var_6c4bb19 = {#var_f4b34dc1:var_f4b34dc1, #v_angles_or_tag:v_angles_or_tag, #v_origin_or_ent:v_origin_or_ent, #animation:animation};
+        self.var_6c4bb19 = {#animation:animation, #v_origin_or_ent:v_origin_or_ent, #v_angles_or_tag:v_angles_or_tag, #var_f4b34dc1:var_f4b34dc1};
         if (level get("<unknown string>")) {
             self thread anim_info_render_thread();
         }
@@ -382,7 +382,7 @@ function function_a23b2a60(animation, var_f9e56773 = 0, var_d7b4a07c = 1) {
     #/
     localdelta = getmovedelta(animation, var_f9e56773, var_d7b4a07c);
     animtime = getanimlength(animation);
-    length = function_3a0a7a8(localdelta);
+    length = length2d(localdelta);
     speed = length / animtime * (var_d7b4a07c - var_f9e56773);
     return speed;
 }
@@ -469,7 +469,7 @@ function _reach(s_tracker, animation, v_origin_or_ent, v_angles_or_tag, b_disabl
 // Checksum 0xad1a6129, Offset: 0x23a0
 // Size: 0x15c
 function function_d7627522(animation, v_goal, radius = 100) {
-    radiussq = function_a3f6cdac(radius);
+    radiussq = sqr(radius);
     var_f11838cd = function_a23b2a60(animation, 0, 0.1);
     if (var_f11838cd <= 1 || var_f11838cd >= 300) {
         return;
@@ -841,7 +841,7 @@ function fire_weapon(str_tag, *var_58b849e) {
             v_start_pos = self gettagorigin(var_58b849e);
             v_start_ang = self gettagangles(var_58b849e);
             v_end_pos = v_start_pos + vectorscale(anglestoforward(v_start_ang), 100);
-            if (isdefined(self.item) && self.item.type === "projectile" && !isinarray([5:"pistol spread", 4:"pistol", 3:"turret", 2:"rocketlauncher", 1:"grenade", 0:"ball"], self.item.weapclass)) {
+            if (isdefined(self.item) && self.item.type === "projectile" && !isinarray(["ball", "grenade", "rocketlauncher", "turret", "pistol", "pistol spread"], self.item.weapclass)) {
                 /#
                     println("<unknown string>" + self.item.name);
                 #/

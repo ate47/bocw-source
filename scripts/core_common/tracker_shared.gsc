@@ -25,9 +25,9 @@ function init_shared() {
     callback::on_spawned(&onplayerspawned);
     callback::on_disconnect(&onplayerdisconnect);
     var_398a0413 = getdvarint(#"hash_3f50d960d95b965a");
-    level.var_398a0413 = var_398a0413 < 0 ? var_398a0413 : 2000;
+    level.var_398a0413 = var_398a0413 < 0 ? 2000 : var_398a0413;
     var_5b162bc3 = getdvarint(#"hash_7ae43b6918bd9bac");
-    level.var_5b162bc3 = var_5b162bc3 < 0 ? var_5b162bc3 : 1000;
+    level.var_5b162bc3 = var_5b162bc3 < 0 ? 1000 : var_5b162bc3;
 }
 
 // Namespace tracker/tracker_shared
@@ -150,9 +150,9 @@ function function_ec3bbe79(data) {
     }
     var_c1a7eb10 = getarraykeys(var_f4776970);
     foreach (var_f6536836 in var_c1a7eb10) {
-        var_a3a21279 = getentbynum(var_f6536836);
-        if (isplayer(var_a3a21279) && var_a3a21279 != self && var_a3a21279.team === self.team) {
-            scoreevents::processscoreevent(#"hash_250eb876852d8525", var_a3a21279, victim);
+        spotter = getentbynum(var_f6536836);
+        if (isplayer(spotter) && spotter != self && spotter.team === self.team) {
+            scoreevents::processscoreevent(#"hash_250eb876852d8525", spotter, victim);
         }
     }
     victim.var_50575fa8 = undefined;

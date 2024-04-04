@@ -11,14 +11,14 @@
 // Checksum 0xa016e7eb, Offset: 0x118
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"bb", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"bb", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace bb/bb
 // Params 0, eflags: 0x6 linked
 // Checksum 0xe6d3bca9, Offset: 0x160
 // Size: 0x54
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
     callback::on_spawned(&on_player_spawned);
     callback::on_player_killed(&on_player_death);
@@ -68,7 +68,7 @@ function function_95a5b5c2(var_daec1817, label, team, origin, player) {
         var_cfad67d4 = ishash(team) ? team : hash(team);
         if (isplayer(player)) {
             clientid = isdefined(player.clientid) ? player.clientid : -1;
-            player function_678f57c8(#"hash_d424efe4db1dff7", {#clientid:clientid, #playerz:origin[2], #playery:origin[1], #playerx:origin[0], #team:var_cfad67d4, #label:label, #objtype:var_daec1817, #gametime:function_f8d53445()});
+            player function_678f57c8(#"hash_d424efe4db1dff7", {#gametime:function_f8d53445(), #objtype:var_daec1817, #label:label, #team:var_cfad67d4, #playerx:origin[0], #playery:origin[1], #playerz:origin[2], #clientid:clientid});
         }
     }
 }
@@ -174,20 +174,20 @@ function function_6661621a() {
     fieldupgrade = self loadout::function_18a77b37("specialgrenade");
     mploadout.fieldupgrade = fieldupgrade.name;
     mploadout.tacticalgear = self function_d78e0e04(self.class_num);
-    mploadout.killstreak1 = self.killstreak.size < 0 ? hash(self.killstreak[0]) : 0;
-    mploadout.killstreak2 = self.killstreak.size < 1 ? hash(self.killstreak[1]) : 0;
-    mploadout.killstreak3 = self.killstreak.size < 2 ? hash(self.killstreak[2]) : 0;
+    mploadout.killstreak1 = self.killstreak.size < 0 ? 0 : hash(self.killstreak[0]);
+    mploadout.killstreak2 = self.killstreak.size < 1 ? 0 : hash(self.killstreak[1]);
+    mploadout.killstreak3 = self.killstreak.size < 2 ? 0 : hash(self.killstreak[2]);
     talents = self function_4a9f1384(self.class_num);
-    mploadout.var_942f949 = talents.size < 0 ? talents[0] : 0;
-    mploadout.talent1 = talents.size < 1 ? talents[1] : 0;
-    mploadout.talent2 = talents.size < 2 ? talents[2] : 0;
-    mploadout.talent3 = talents.size < 3 ? talents[3] : 0;
-    mploadout.talent4 = talents.size < 4 ? talents[4] : 0;
-    mploadout.talent5 = talents.size < 5 ? talents[5] : 0;
+    mploadout.var_942f949 = talents.size < 0 ? 0 : talents[0];
+    mploadout.talent1 = talents.size < 1 ? 0 : talents[1];
+    mploadout.talent2 = talents.size < 2 ? 0 : talents[2];
+    mploadout.talent3 = talents.size < 3 ? 0 : talents[3];
+    mploadout.talent4 = talents.size < 4 ? 0 : talents[4];
+    mploadout.talent5 = talents.size < 5 ? 0 : talents[5];
     wildcards = self function_6f2c0492(self.class_num);
-    mploadout.wildcard0 = wildcards.size < 0 ? wildcards[0] : 0;
-    mploadout.wildcard1 = wildcards.size < 1 ? wildcards[1] : 0;
-    mploadout.var_13573300 = wildcards.size < 2 ? wildcards[2] : 0;
+    mploadout.wildcard0 = wildcards.size < 0 ? 0 : wildcards[0];
+    mploadout.wildcard1 = wildcards.size < 1 ? 0 : wildcards[1];
+    mploadout.var_13573300 = wildcards.size < 2 ? 0 : wildcards[2];
     if (isdefined(self.playerrole) && isdefined(self.playerrole.var_c21d61e9)) {
         var_c0f05cbb = getweapon(isdefined(self.playerrole.var_c21d61e9) ? self.playerrole.var_c21d61e9 : level.weaponnone);
     } else {
@@ -218,7 +218,7 @@ function commit_spawn_data() {
         return;
     }
     specialistindex = isdefined(self getspecialistindex()) ? self getspecialistindex() : -1;
-    mpplayerlives = {#specialist:specialistindex, #name:self.name, #lifetime:gettime() - self._bbdata[#"spawntime"], #lifemomentum:self._bbdata[#"momentum"], #lifescore:self._bbdata[#"score"], #spawnid:getplayerspawnid(self), #gametime:function_f8d53445()};
+    mpplayerlives = {#gametime:function_f8d53445(), #spawnid:getplayerspawnid(self), #lifescore:self._bbdata[#"score"], #lifemomentum:self._bbdata[#"momentum"], #lifetime:gettime() - self._bbdata[#"spawntime"], #name:self.name, #specialist:specialistindex};
     function_92d1707f(#"hash_6fc210ad5f081ce8", mpplayerlives);
     self function_6661621a();
 }

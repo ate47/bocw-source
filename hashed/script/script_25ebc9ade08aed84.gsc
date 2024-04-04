@@ -280,7 +280,7 @@ function function_a23af398() {
 // Checksum 0x32af068e, Offset: 0x14a8
 // Size: 0x104
 function function_c9e3b586(*str_notify) {
-    self val::function_e681e68e(#"fling_player");
+    self val::reset_all(#"fling_player");
     self.is_flung = undefined;
     self.var_16735873 = 0;
     self notify(#"hash_47017b5a7ed2b46b");

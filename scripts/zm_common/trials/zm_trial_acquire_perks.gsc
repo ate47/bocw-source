@@ -12,14 +12,14 @@
 // Checksum 0xb0708385, Offset: 0xb8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_acquire_perks", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_acquire_perks", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_acquire_perks/zm_trial_acquire_perks
 // Params 0, eflags: 0x4
 // Checksum 0xaed72893, Offset: 0x100
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

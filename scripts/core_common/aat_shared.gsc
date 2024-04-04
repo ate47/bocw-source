@@ -18,14 +18,14 @@
 // Checksum 0xc805f809, Offset: 0x1e8
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"aat", &function_70a657d8, &finalize_clientfields, undefined, undefined);
+    system::register(#"aat", &preinit, &finalize_clientfields, undefined, undefined);
 }
 
 // Namespace aat/aat_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x69a37ce3, Offset: 0x240
 // Size: 0x22c
-function private function_70a657d8() {
+function private preinit() {
     if (!is_true(level.aat_in_use)) {
         return;
     }
@@ -265,11 +265,11 @@ function function_42918474(entity) {
 // Checksum 0x30510cea, Offset: 0xfc8
 // Size: 0x150
 function on_ai_damage(params) {
-    var_43cad97a = params.idamage > self.health;
-    aat_response(var_43cad97a, params.einflictor, params.eattacker, params.idamage, params.idflags, params.smeansofdeath, params.weapon, params.var_fd90b0bb, params.vpoint, params.vdir, params.shitloc, params.psoffsettime, params.boneindex, params.surfacetype);
+    b_death = params.idamage > self.health;
+    aat_response(b_death, params.einflictor, params.eattacker, params.idamage, params.idflags, params.smeansofdeath, params.weapon, params.var_fd90b0bb, params.vpoint, params.vdir, params.shitloc, params.psoffsettime, params.boneindex, params.surfacetype);
     name = params.eattacker.aat[function_702fb333(params.weapon)];
-    if (isdefined(name) && var_43cad97a) {
-        if (isdefined(level.aat[name].var_de81baf2) && var_43cad97a) {
+    if (isdefined(name) && b_death) {
+        if (isdefined(level.aat[name].var_de81baf2) && b_death) {
             self thread [[ level.aat[name].var_de81baf2 ]](params.idamage, params.eattacker, params.weapon);
         }
     }
@@ -589,7 +589,7 @@ function register_aat_exemption(weapon) {
 // Size: 0x4e
 function is_exempt_weapon(weapon) {
     if (!is_true(level.aat_in_use)) {
-        return 0;
+        return false;
     }
     weapon = function_702fb333(weapon);
     return isdefined(level.aat_exemptions[weapon]);

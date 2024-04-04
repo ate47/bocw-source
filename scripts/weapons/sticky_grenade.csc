@@ -11,14 +11,14 @@
 // Checksum 0xc6a421a7, Offset: 0x100
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"sticky_grenade", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"sticky_grenade", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace sticky_grenade/sticky_grenade
 // Params 0, eflags: 0x6 linked
 // Checksum 0xabd658a2, Offset: 0x148
 // Size: 0x2a4
-function private function_70a657d8() {
+function private preinit() {
     callback::add_weapon_type(#"sticky_grenade", &spawned);
     callback::add_weapon_type(#"eq_sticky_grenade", &spawned);
     callback::add_weapon_type(#"hash_4b92b1a2aa3037f5", &spawned);

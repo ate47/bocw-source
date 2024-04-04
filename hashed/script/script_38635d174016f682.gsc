@@ -105,9 +105,9 @@ function debugorigin(timesec, size, color) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x81372dc5, Offset: 0x5c8
 // Size: 0x34
-function function_f5f0c0f8(var_4e2d590d) {
+function debugmsg(txt) {
     /#
-        println("<unknown string>" + var_4e2d590d);
+        println("<unknown string>" + txt);
     #/
 }
 

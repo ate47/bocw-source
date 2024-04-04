@@ -11,14 +11,14 @@
 // Checksum 0x406b2b90, Offset: 0x110
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"weapon_shared", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"weapon_shared", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace weapons_shared/weapons_shared
 // Params 0, eflags: 0x4
 // Checksum 0x7ef368bf, Offset: 0x158
 // Size: 0x9c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_spawned(&on_player_spawned);
     level.weaponnone = getweapon(#"none");
     level.weapon_sig_minigun = getweapon(#"sig_minigun");

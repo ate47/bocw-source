@@ -19,14 +19,14 @@
 // Checksum 0x43e0e1f6, Offset: 0x158
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_altbody", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_altbody", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_altbody/zm_altbody
 // Params 0, eflags: 0x4
 // Checksum 0x11023965, Offset: 0x1a0
 // Size: 0x154
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register_clientuimodel("player_lives", #"zm_hud", #"player_lives", 1, 2, "int", undefined, 0, 0);
     clientfield::register("toplayer", "player_mana", 1, 8, "float", &set_player_mana, 0, 1);
     clientfield::register("toplayer", "player_in_afterlife", 1, 1, "int", &toggle_player_altbody, 0, 1);

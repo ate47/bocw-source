@@ -13,14 +13,14 @@
 // Checksum 0x2e9ac02f, Offset: 0x1f0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_magicbox", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_magicbox", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_magicbox/zm_magicbox
 // Params 0, eflags: 0x6 linked
 // Checksum 0x509e41b6, Offset: 0x238
 // Size: 0x4b4
-function private function_70a657d8() {
+function private preinit() {
     level._effect[#"hash_63f729c169af0c3e"] = #"hash_43a26488c9e5ce57";
     level._effect[#"chest_light_closed"] = #"zombie/fx_weapon_box_closed_glow_zmb";
     level._effect[#"hash_19f4dd97cbb87594"] = #"hash_5f376e9395e16666";
@@ -205,7 +205,7 @@ function function_b4b9937(localclientnum, newval, str_state) {
         }
         if (isdefined(self) && str_state == "leave") {
             audio::stoploopat(#"hash_1b59c1bfb1aa5d37", self.origin);
-            var_e5fdeba3 = [2:self zbarriergetpiece(2), 1:self zbarriergetpiece(1), 0:self zbarriergetpiece(0)];
+            var_e5fdeba3 = [self zbarriergetpiece(0), self zbarriergetpiece(1), self zbarriergetpiece(2)];
             foreach (piece in var_e5fdeba3) {
                 ping::function_f4f18dac(localclientnum, piece);
             }

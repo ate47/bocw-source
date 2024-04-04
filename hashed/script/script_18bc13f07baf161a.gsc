@@ -34,50 +34,50 @@ function init(name) {
         return;
     }
     level.var_e1daf6fe[0] = [];
-    level.var_e1daf6fe[1] = array({#orientation:3, #var_fef51edb:"room_1_exit_1024x1024"});
-    level.var_e1daf6fe[2] = array({#orientation:2, #var_fef51edb:"room_1_exit_1024x1024"});
-    level.var_e1daf6fe[4] = array({#orientation:1, #var_fef51edb:"room_1_exit_1024x1024"});
-    level.var_e1daf6fe[8] = array({#orientation:0, #var_fef51edb:"room_1_exit_1024x1024"});
-    level.var_e1daf6fe[10] = array({#orientation:0, #var_fef51edb:"room_2i_exit_1024x1024"});
-    level.var_e1daf6fe[5] = array({#orientation:1, #var_fef51edb:"room_2i_exit_1024x1024"});
-    level.var_e1daf6fe[9] = array({#orientation:3, #var_fef51edb:"room_2l_exit_1024x1024"});
-    level.var_e1daf6fe[3] = array({#orientation:2, #var_fef51edb:"room_2l_exit_1024x1024"});
-    level.var_e1daf6fe[6] = array({#orientation:1, #var_fef51edb:"room_2l_exit_1024x1024"});
-    level.var_e1daf6fe[12] = array({#orientation:0, #var_fef51edb:"room_2l_exit_1024x1024"});
-    level.var_e1daf6fe[11] = array({#orientation:3, #var_fef51edb:"room_3_exit_1024x1024"});
-    level.var_e1daf6fe[7] = array({#orientation:2, #var_fef51edb:"room_3_exit_1024x1024"});
-    level.var_e1daf6fe[14] = array({#orientation:1, #var_fef51edb:"room_3_exit_1024x1024"});
-    level.var_e1daf6fe[13] = array({#orientation:0, #var_fef51edb:"room_3_exit_1024x1024"});
-    level.var_e1daf6fe[15] = array({#orientation:0, #var_fef51edb:"room_4_exit_1024x1024"});
+    level.var_e1daf6fe[1] = array({#var_fef51edb:"room_1_exit_1024x1024", #orientation:3});
+    level.var_e1daf6fe[2] = array({#var_fef51edb:"room_1_exit_1024x1024", #orientation:2});
+    level.var_e1daf6fe[4] = array({#var_fef51edb:"room_1_exit_1024x1024", #orientation:1});
+    level.var_e1daf6fe[8] = array({#var_fef51edb:"room_1_exit_1024x1024", #orientation:0});
+    level.var_e1daf6fe[10] = array({#var_fef51edb:"room_2i_exit_1024x1024", #orientation:0});
+    level.var_e1daf6fe[5] = array({#var_fef51edb:"room_2i_exit_1024x1024", #orientation:1});
+    level.var_e1daf6fe[9] = array({#var_fef51edb:"room_2l_exit_1024x1024", #orientation:3});
+    level.var_e1daf6fe[3] = array({#var_fef51edb:"room_2l_exit_1024x1024", #orientation:2});
+    level.var_e1daf6fe[6] = array({#var_fef51edb:"room_2l_exit_1024x1024", #orientation:1});
+    level.var_e1daf6fe[12] = array({#var_fef51edb:"room_2l_exit_1024x1024", #orientation:0});
+    level.var_e1daf6fe[11] = array({#var_fef51edb:"room_3_exit_1024x1024", #orientation:3});
+    level.var_e1daf6fe[7] = array({#var_fef51edb:"room_3_exit_1024x1024", #orientation:2});
+    level.var_e1daf6fe[14] = array({#var_fef51edb:"room_3_exit_1024x1024", #orientation:1});
+    level.var_e1daf6fe[13] = array({#var_fef51edb:"room_3_exit_1024x1024", #orientation:0});
+    level.var_e1daf6fe[15] = array({#var_fef51edb:"room_4_exit_1024x1024", #orientation:0});
     level.var_86fb599e[0] = [];
-    level.var_86fb599e[1] = array({#orientation:3, #var_fef51edb:"hall_1_exit_1024x1024"});
-    level.var_86fb599e[2] = array({#orientation:2, #var_fef51edb:"hall_1_exit_1024x1024"});
-    level.var_86fb599e[4] = array({#orientation:1, #var_fef51edb:"hall_1_exit_1024x1024"});
-    level.var_86fb599e[8] = array({#orientation:0, #var_fef51edb:"hall_1_exit_1024x1024"});
-    level.var_86fb599e[10] = array({#orientation:0, #var_fef51edb:"hall_2i_exit_1024x1024"});
-    level.var_86fb599e[5] = array({#orientation:1, #var_fef51edb:"hall_2i_exit_1024x1024"});
-    level.var_86fb599e[9] = array({#orientation:3, #var_fef51edb:"hall_2l_exit_1024x1024"});
-    level.var_86fb599e[3] = array({#orientation:2, #var_fef51edb:"hall_2l_exit_1024x1024"});
-    level.var_86fb599e[6] = array({#orientation:1, #var_fef51edb:"hall_2l_exit_1024x1024"});
-    level.var_86fb599e[12] = array({#orientation:0, #var_fef51edb:"hall_2l_exit_1024x1024"});
-    level.var_86fb599e[11] = array({#orientation:3, #var_fef51edb:"hall_3_exit_1024x1024"});
-    level.var_86fb599e[7] = array({#orientation:2, #var_fef51edb:"hall_3_exit_1024x1024"});
-    level.var_86fb599e[14] = array({#orientation:1, #var_fef51edb:"hall_3_exit_1024x1024"});
-    level.var_86fb599e[13] = array({#orientation:0, #var_fef51edb:"hall_3_exit_1024x1024"});
-    level.var_86fb599e[15] = array({#orientation:0, #var_fef51edb:"hall_4_exit_1024x1024"});
+    level.var_86fb599e[1] = array({#var_fef51edb:"hall_1_exit_1024x1024", #orientation:3});
+    level.var_86fb599e[2] = array({#var_fef51edb:"hall_1_exit_1024x1024", #orientation:2});
+    level.var_86fb599e[4] = array({#var_fef51edb:"hall_1_exit_1024x1024", #orientation:1});
+    level.var_86fb599e[8] = array({#var_fef51edb:"hall_1_exit_1024x1024", #orientation:0});
+    level.var_86fb599e[10] = array({#var_fef51edb:"hall_2i_exit_1024x1024", #orientation:0});
+    level.var_86fb599e[5] = array({#var_fef51edb:"hall_2i_exit_1024x1024", #orientation:1});
+    level.var_86fb599e[9] = array({#var_fef51edb:"hall_2l_exit_1024x1024", #orientation:3});
+    level.var_86fb599e[3] = array({#var_fef51edb:"hall_2l_exit_1024x1024", #orientation:2});
+    level.var_86fb599e[6] = array({#var_fef51edb:"hall_2l_exit_1024x1024", #orientation:1});
+    level.var_86fb599e[12] = array({#var_fef51edb:"hall_2l_exit_1024x1024", #orientation:0});
+    level.var_86fb599e[11] = array({#var_fef51edb:"hall_3_exit_1024x1024", #orientation:3});
+    level.var_86fb599e[7] = array({#var_fef51edb:"hall_3_exit_1024x1024", #orientation:2});
+    level.var_86fb599e[14] = array({#var_fef51edb:"hall_3_exit_1024x1024", #orientation:1});
+    level.var_86fb599e[13] = array({#var_fef51edb:"hall_3_exit_1024x1024", #orientation:0});
+    level.var_86fb599e[15] = array({#var_fef51edb:"hall_4_exit_1024x1024", #orientation:0});
 }
 
 // Namespace namespace_95fdc800/namespace_95fdc800
 // Params 3, eflags: 0x6 linked
 // Checksum 0x7343842b, Offset: 0xdb8
 // Size: 0xa4
-function private function_3be17ddc(var_dfb0558b, var_4e8e65e4, north) {
+function private function_3be17ddc(exits, var_4e8e65e4, north) {
     north = isdefined(north) ? north : 0;
     var_4e8e65e4 = isdefined(var_4e8e65e4) ? var_4e8e65e4 : 2;
     if (var_4e8e65e4 == 2) {
-        return namespace_21dd166c::function_b5f93b3b(level.var_86fb599e[var_dfb0558b]);
+        return namespace_21dd166c::function_b5f93b3b(level.var_86fb599e[exits]);
     }
-    return namespace_21dd166c::function_b5f93b3b(level.var_e1daf6fe[var_dfb0558b]);
+    return namespace_21dd166c::function_b5f93b3b(level.var_e1daf6fe[exits]);
 }
 
 // Namespace namespace_95fdc800/namespace_95fdc800
@@ -167,7 +167,7 @@ function private function_5a8d487e(parent, child, var_ea1e2708) {
 // Params 3, eflags: 0x6 linked
 // Checksum 0x75247cca, Offset: 0x12b8
 // Size: 0x44
-function private function_a0da1012(var_565c3878, var_7d4204c7, cost) {
+function private create_door(var_565c3878, var_7d4204c7, cost) {
     if (isdefined(level.var_e1a08718)) {
         return [[ level.var_e1a08718 ]](var_565c3878, var_7d4204c7, cost);
     }
@@ -186,18 +186,18 @@ function private function_fd269801(var_ac850bbc) {
     array::push_front(var_65e05a9d, center);
     while (var_65e05a9d.size > 0) {
         cur = array::pop(var_65e05a9d);
-        var_cbb28d5 = function_3be17ddc(cur.var_dfb0558b, cur.var_4e8e65e4, 0);
+        var_cbb28d5 = function_3be17ddc(cur.exits, cur.var_4e8e65e4, 0);
         foreach (child in cur.children) {
-            var_c3031858 = function_3be17ddc(child.var_dfb0558b, child.var_4e8e65e4, 0);
+            var_c3031858 = function_3be17ddc(child.exits, child.var_4e8e65e4, 0);
             if (child.height == 1) {
-                var_c3031858 = function_3be17ddc(child.var_dfb0558b, 2, 0);
+                var_c3031858 = function_3be17ddc(child.exits, 2, 0);
                 child.room = namespace_f27a9d0d::function_eaad15e2(level.var_49329074, var_c3031858.var_fef51edb, function_5a8d487e(cur, child, var_c3031858));
                 child.room.var_dbb4ff9a = level.var_49329074;
                 level.var_ee250665 = child.room;
             } else {
-                var_8afc2ef3 = cur.room namespace_f27a9d0d::function_5165998("id", function_968ec9e9(cur, child, var_cbb28d5));
-                child.room = namespace_f27a9d0d::function_eaad15e2(var_8afc2ef3, var_c3031858.var_fef51edb, function_5a8d487e(cur, child, var_c3031858));
-                child.room.var_dbb4ff9a = var_8afc2ef3;
+                attach_tag = cur.room namespace_f27a9d0d::function_5165998("id", function_968ec9e9(cur, child, var_cbb28d5));
+                child.room = namespace_f27a9d0d::function_eaad15e2(attach_tag, var_c3031858.var_fef51edb, function_5a8d487e(cur, child, var_c3031858));
+                child.room.var_dbb4ff9a = attach_tag;
             }
             child.room.depth = child.height;
             child.room.var_6ee556b5 = cur.room;
@@ -212,14 +212,14 @@ function private function_fd269801(var_ac850bbc) {
             if (edge.row == center.row - 1 && edge.col == center.row && (edge.dir == 2 || edge.dir == 8)) {
                 continue;
             }
-            start = var_ac850bbc.var_adda5a0[edge.row][edge.col];
+            start = var_ac850bbc.grid[edge.row][edge.col];
             if (edge.dir == 8 || edge.dir == 2) {
-                end = var_ac850bbc.var_adda5a0[edge.row + 1][edge.col];
+                end = var_ac850bbc.grid[edge.row + 1][edge.col];
             } else {
-                end = var_ac850bbc.var_adda5a0[edge.row][edge.col + 1];
+                end = var_ac850bbc.grid[edge.row][edge.col + 1];
             }
-            var_cbb28d5 = function_3be17ddc(start.var_dfb0558b, start.var_4e8e65e4, 0);
-            var_ea1e2708 = function_3be17ddc(end.var_dfb0558b, end.var_4e8e65e4, 0);
+            var_cbb28d5 = function_3be17ddc(start.exits, start.var_4e8e65e4, 0);
+            var_ea1e2708 = function_3be17ddc(end.exits, end.var_4e8e65e4, 0);
             var_724a93b6 = function_968ec9e9(start, end, var_cbb28d5);
             if (isdefined(var_724a93b6) && isdefined(start.room)) {
                 var_565c3878 = start.room namespace_f27a9d0d::function_5165998("id", var_724a93b6);
@@ -229,7 +229,7 @@ function private function_fd269801(var_ac850bbc) {
                 var_7d4204c7 = end.room namespace_f27a9d0d::function_5165998("id", var_1ac37224);
             }
             if (isdefined(var_565c3878) && isdefined(var_7d4204c7)) {
-                function_a0da1012(var_565c3878, var_7d4204c7, 250);
+                create_door(var_565c3878, var_7d4204c7, 250);
             }
             if (!getdvarint(#"hash_55c78475b1ebf3de", 1)) {
                 waitframe(1);
@@ -257,10 +257,10 @@ function function_1bce4bde(name) {
         assert(isdefined(name), "<unknown string>");
     #/
     function_f4b7f348("Generating Map:" + name);
-    var_63a73314 = namespace_f27a9d0d::init(name);
+    startloc = namespace_f27a9d0d::init(name);
     init(name);
     level thread function_9ab6c6c6();
-    return var_63a73314;
+    return startloc;
 }
 
 // Namespace namespace_95fdc800/namespace_95fdc800

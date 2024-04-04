@@ -10,7 +10,7 @@
 #using script_2c6e6e28dd66dcc4;
 #using script_6243781aa5394e62;
 #using scripts\zm_common\zm_fasttravel.csc;
-#using script_2c8fd33ddb45e78b;
+#using scripts\zm_common\zm_intel.csc;
 #using script_68732f44626820ed;
 #using script_60793766a26de8df;
 #using script_5fb8da2731850d9e;
@@ -31,7 +31,7 @@
 function autoexec opt_in() {
     level.aat_in_use = 1;
     level.var_5470be1c = 1;
-    namespace_4abf1500::function_88645994(#"hash_1650c04a5db4ba64", #"hash_69f1546764fcc948", #"hash_44becc3958fa81a2", #"hash_549a6693186d47cc", #"hash_3c7bf14c75b291f9");
+    zm_intel::function_88645994(#"hash_1650c04a5db4ba64", #"hash_69f1546764fcc948", #"hash_44becc3958fa81a2", #"hash_549a6693186d47cc", #"hash_3c7bf14c75b291f9");
 }
 
 // Namespace zm_silver/level_init

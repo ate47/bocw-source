@@ -11,14 +11,14 @@
 // Checksum 0x1ee28a89, Offset: 0xb8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"player_role", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"player_role", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace player_role/player_role
 // Params 0, eflags: 0x6 linked
 // Checksum 0x234514e1, Offset: 0x100
 // Size: 0x20
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(world.playerroles)) {
         world.playerroles = [];
     }
@@ -227,7 +227,7 @@ function function_97d19493(name) {
 function function_2a911680() {
     if (level.var_d1455682.var_67bfde2a === 1) {
         faction = teams::function_20cfd8b5(self.pers[#"team"]);
-        var_cdee2d01 = faction.var_306f8f14;
+        var_cdee2d01 = faction.superfaction;
     }
     character_index = self function_d882da68(var_cdee2d01);
     return character_index;

@@ -14,14 +14,14 @@
 // Checksum 0xc3e2e290, Offset: 0x220
 // Size: 0x34
 function private autoexec __init__system__() {
-    system::register("hint_tutorial", &function_70a657d8, undefined, undefined, undefined);
+    system::register("hint_tutorial", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace hint_tutorial/hint_tutorial
 // Params 0, eflags: 0x6 linked
 // Checksum 0x3824418c, Offset: 0x260
 // Size: 0x34
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "hint_pause_state", 1, 1, "int");
 }
 
@@ -49,7 +49,7 @@ function function_4c2d4fc4(message, title = #"", var_9696a2d = 0, var_db331a85 =
             var_48bf6e66 = #"hash_77649627c20d31b1";
         }
         if (var_ad825676) {
-            level namespace_f48ab2e1::function_86eedc();
+            level prompts::function_86eedc();
         }
         namespace_61e6d095::create(#"hint_tutorial", var_48bf6e66);
         namespace_61e6d095::function_46df0bc7(#"hint_tutorial", 100);
@@ -67,7 +67,7 @@ function function_4c2d4fc4(message, title = #"", var_9696a2d = 0, var_db331a85 =
     if (type == 1) {
         namespace_82bfe441::fade(1, "FadeImmediate");
     }
-    namespace_61e6d095::function_d3c3e5c3(#"hint_tutorial", [2:#"hash_af16b6b2e499098", 1:#"dialog_tree", 0:#"interactive_map"]);
+    namespace_61e6d095::function_d3c3e5c3(#"hint_tutorial", [#"interactive_map", #"dialog_tree", #"computer"]);
     level.var_940e0c3e = type;
     level.var_5f632232 = message;
     if (isdefined(var_c18a5a8b) || isdefined(var_9763e3fa)) {
@@ -90,7 +90,7 @@ function function_f0104b5(var_572eedec, var_86f04d40 = #"", var_71902fbb, var_cb
     } else if (!isarray(var_71902fbb)) {
         var_71902fbb = array(var_71902fbb);
     }
-    var_fab78b18 = {#var_cb93cf14:var_cb93cf14, #var_88c2ece:arraycopy(var_71902fbb), #options:arraycopy(var_572eedec), #title:var_86f04d40};
+    var_fab78b18 = {#title:var_86f04d40, #options:arraycopy(var_572eedec), #var_88c2ece:arraycopy(var_71902fbb), #var_cb93cf14:var_cb93cf14};
     return var_fab78b18;
 }
 
@@ -163,7 +163,7 @@ function function_df08d48(var_72b185dd = 0) {
 // Checksum 0x1808f4d4, Offset: 0xc40
 // Size: 0x49c
 function pause(var_1d470cc4 = #"hash_3c27402259e4c18e", var_63d0d48f = #"hash_3f87d00d07eb799e", var_29fa9286 = 2, var_f191bdbc, var_37e3f2b0, var_415dea5d = 1) {
-    level namespace_f48ab2e1::function_86eedc();
+    level prompts::function_86eedc();
     if (is_true(level.gameended) || is_true(level.missionfailed) || level flag::get("restart_checkpoint") || level flag::get("restart_mission")) {
         return;
     }
@@ -171,8 +171,8 @@ function pause(var_1d470cc4 = #"hash_3c27402259e4c18e", var_63d0d48f = #"hash_3f
     player endon(#"death");
     level endoncallback(&function_18c01825, #"game_ended", #"mission_failed", #"hash_2bb74762daab3cd", #"restart_checkpoint", #"restart_mission");
     if (namespace_61e6d095::exists(#"hint_tutorial")) {
-        var_7d86dbf8 = player gamepadusedlast();
-        setdvar(#"ui_busyblockingamemenu", !var_7d86dbf8);
+        is_gamepad = player gamepadusedlast();
+        setdvar(#"ui_busyblockingamemenu", !is_gamepad);
         namespace_82bfe441::fade(1, "FadeImmediate");
         objectives::function_9dfb43fc();
         namespace_61e6d095::function_73c9a490(#"hint_tutorial", 1);
@@ -194,7 +194,7 @@ function pause(var_1d470cc4 = #"hash_3c27402259e4c18e", var_63d0d48f = #"hash_3f
         }
         namespace_82bfe441::fade(0, "FadeMedium");
         objectives::function_4279fd02();
-        level namespace_f48ab2e1::function_d675f5a4();
+        level prompts::function_d675f5a4();
         player function_9f427d88(0, var_f191bdbc);
         player thread clientfield::set_to_player("hint_pause_state", 0);
         setdvar(#"ui_busyblockingamemenu", 0);
@@ -251,7 +251,7 @@ function function_9f427d88(var_67df10fb = 1, var_f191bdbc) {
     if (level.var_940e0c3e === 1) {
         namespace_82bfe441::fade(0, "FadeMedium");
     }
-    level namespace_f48ab2e1::function_d675f5a4();
+    level prompts::function_d675f5a4();
     self notify(#"hash_79da7f3e8e35f82d", {#message:level.var_5f632232});
     level.var_940e0c3e = undefined;
     level.var_5f632232 = undefined;

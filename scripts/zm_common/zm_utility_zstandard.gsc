@@ -65,7 +65,7 @@ function open_door(a_str_door_names, var_47eb646a = 0, var_91ccb2d7, b_play_audi
             if (is_true(zombie_door.b_opened)) {
                 continue;
             }
-            zombie_door notify(#"trigger", {#is_forced:1, #activator:zombie_door});
+            zombie_door notify(#"trigger", {#activator:zombie_door, #is_forced:1});
             zombie_door.script_flag_wait = undefined;
             zombie_door notify(#"power_on");
             zombie_door.b_opened = 1;
@@ -93,7 +93,7 @@ function function_26a5066b(n_round_number, var_232e4ebc = 1) {
         level.var_26a5066b[n_round_number].var_232e4ebc = level.var_26a5066b[n_round_number].var_232e4ebc + var_232e4ebc;
         return;
     }
-    level.var_26a5066b[n_round_number] = {#var_232e4ebc:var_232e4ebc, #var_6faa5e34:0};
+    level.var_26a5066b[n_round_number] = {#var_6faa5e34:0, #var_232e4ebc:var_232e4ebc};
 }
 
 // Namespace zm_utility/zm_utility_zstandard
@@ -571,7 +571,7 @@ function function_c492c4d6(str_index, var_ed1db1a7, a_str_zones, a_str_next_defe
             assert(isdefined(get(var_ed1db1a7)), "<unknown string>" + var_ed1db1a7 + "<unknown string>");
         #/
     #/
-    level.a_s_defend_areas[str_index] = {#var_9fc5eea1:var_9fc5eea1, #var_c13f5c4b:var_c13f5c4b, #var_39c44288:var_39c44288, #var_16a34df0:var_16a34df0, #a_str_next_defend:a_str_next_defend, #a_str_zones:a_str_zones, #var_ed1db1a7:var_ed1db1a7};
+    level.a_s_defend_areas[str_index] = {#var_ed1db1a7:var_ed1db1a7, #a_str_zones:a_str_zones, #a_str_next_defend:a_str_next_defend, #var_16a34df0:var_16a34df0, #var_39c44288:var_39c44288, #var_c13f5c4b:var_c13f5c4b, #var_9fc5eea1:var_9fc5eea1};
 }
 
 // Namespace zm_utility/zm_utility_zstandard
@@ -946,13 +946,13 @@ function function_d40910b4(*params) {
 // Checksum 0x85d95736, Offset: 0x3ea0
 // Size: 0x16e
 function function_cff5da11(params) {
-    if (self.var_6f84b820 !== #"hash_72d4f2ad2e333eb4" && self.var_6f84b820 !== #"special") {
+    if (self.var_6f84b820 !== #"elite" && self.var_6f84b820 !== #"special") {
         return;
     }
     a_ai_enemies = getaiteamarray(level.zombie_team);
     var_7fcc8528 = 0;
     foreach (ai in a_ai_enemies) {
-        if (ai.var_6f84b820 === #"hash_72d4f2ad2e333eb4" || ai.var_6f84b820 === #"special") {
+        if (ai.var_6f84b820 === #"elite" || ai.var_6f84b820 === #"special") {
             var_7fcc8528++;
         }
     }

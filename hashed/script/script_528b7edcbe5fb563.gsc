@@ -10,14 +10,14 @@
 // Checksum 0x6577d329, Offset: 0xa0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_57d25af0f70db5a0", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_57d25af0f70db5a0", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_7f22227a/namespace_7f22227a
 // Params 0, eflags: 0x6 linked
 // Checksum 0x698fc6a3, Offset: 0xe8
 // Size: 0xbc
-function private function_70a657d8() {
+function private preinit() {
     if (util::is_frontend_map()) {
         return;
     }
@@ -132,14 +132,14 @@ function private function_3d2e4133(loadoutclass, weaponname, attachments, var_c2
 // Params 4, eflags: 0x6 linked
 // Checksum 0x8cebceec, Offset: 0x878
 // Size: 0x6c
-function private function_cbd58d72(loadoutclass, var_31a03cfe, extragrenade, var_632ae174) {
-    if (!isdefined(var_31a03cfe) || isitemrestricted(var_31a03cfe)) {
+function private function_cbd58d72(loadoutclass, grenadename, extragrenade, var_632ae174) {
+    if (!isdefined(grenadename) || isitemrestricted(grenadename)) {
         return;
     }
     if (!isdefined(extragrenade)) {
         extragrenade = 0;
     }
-    self [[ var_632ae174 ]](loadoutclass, var_31a03cfe, extragrenade);
+    self [[ var_632ae174 ]](loadoutclass, grenadename, extragrenade);
 }
 
 // Namespace namespace_7f22227a/namespace_7f22227a
@@ -323,22 +323,22 @@ function private function_fccfb0af(loadoutclass, &var_19546df5, var_38e0e278, co
 // Checksum 0x2aec9d15, Offset: 0x1660
 // Size: 0x72
 function private function_4426827d(loadoutclass, &var_4e165b9c, extragrenade, var_632ae174) {
-    var_31a03cfe = function_ec884214(var_4e165b9c);
-    if (!isdefined(var_31a03cfe)) {
+    grenadename = function_ec884214(var_4e165b9c);
+    if (!isdefined(grenadename)) {
         return;
     }
     if (!isdefined(extragrenade)) {
         extragrenade = 0;
     }
-    self [[ var_632ae174 ]](loadoutclass, var_31a03cfe, extragrenade);
+    self [[ var_632ae174 ]](loadoutclass, grenadename, extragrenade);
 }
 
 // Namespace namespace_7f22227a/namespace_7f22227a
 // Params 4, eflags: 0x6 linked
 // Checksum 0xed540a07, Offset: 0x16e0
 // Size: 0x64
-function private function_db9633ae(loadoutclass, &var_1f96cb8e, itemindex, var_9fe65064) {
-    name = function_ec884214(var_1f96cb8e);
+function private function_db9633ae(loadoutclass, &itemnames, itemindex, var_9fe65064) {
+    name = function_ec884214(itemnames);
     if (!isdefined(name)) {
         return;
     }
@@ -412,7 +412,7 @@ function private function_20d254c4(var_543fda24, statindexoffset, overridedvar =
             itemindex = getitemindexfromref(item.name);
             if (itemindex > 0) {
                 iteminfo = getunlockableiteminfofromindex(itemindex, statindexoffset);
-                if (!is_true(iteminfo.var_134a0917)) {
+                if (!is_true(iteminfo.hideinmenu)) {
                     names[names.size] = item.name;
                 }
             }
@@ -477,7 +477,7 @@ function private function_ef026df8(attachments, overridedvar = undefined) {
 function private function_3dd3f3b6() {
     /#
         level endon(#"game_ended");
-        var_ec9c0769 = [#"killstreak":4, #"bonuscard":3, #"talent":6];
+        var_ec9c0769 = [#"talent":6, #"bonuscard":3, #"killstreak":4];
         while (true) {
             slot = getdvarstring(#"hash_601d0ce91dfa4b22", "<unknown string>");
             if (slot == "<unknown string>") {
@@ -485,25 +485,25 @@ function private function_3dd3f3b6() {
                 continue;
             }
             bots = function_b16926ea();
-            var_3342d7a5 = [];
+            teamcounts = [];
             foreach (bot in bots) {
                 if (!isdefined(level.teams[bot.team])) {
                     continue;
                 }
-                slotcount = var_3342d7a5[bot.team];
+                slotcount = teamcounts[bot.team];
                 if (!isdefined(slotcount)) {
                     slotcount = [];
-                    var_3342d7a5[bot.team] = slotcount;
+                    teamcounts[bot.team] = slotcount;
                 }
                 var_4deb6126 = var_ec9c0769[slot];
                 if (isdefined(var_4deb6126)) {
                     for (i = 1; i <= var_4deb6126; i++) {
-                        var_bed036f1 = slot + i;
-                        itemname = bot function_b958b70d(0, var_bed036f1);
-                        if (!isdefined(slotcount[var_bed036f1][itemname])) {
-                            slotcount[var_bed036f1][itemname] = 0;
+                        slotkey = slot + i;
+                        itemname = bot function_b958b70d(0, slotkey);
+                        if (!isdefined(slotcount[slotkey][itemname])) {
+                            slotcount[slotkey][itemname] = 0;
                         }
-                        slotcount[var_bed036f1][itemname]++;
+                        slotcount[slotkey][itemname]++;
                     }
                     continue;
                 }
@@ -514,16 +514,16 @@ function private function_3dd3f3b6() {
                 slotcount[slot][itemname]++;
             }
             x = 30;
-            foreach (team, slotcount in var_3342d7a5) {
+            foreach (team, slotcount in teamcounts) {
                 y = 30;
                 debug2dtext((x, y, 0), function_9e72a96(team), undefined, undefined, undefined, 1);
                 y = y + 22;
                 x = x + 20;
-                foreach (slot, var_1f96cb8e in slotcount) {
+                foreach (slot, itemnames in slotcount) {
                     debug2dtext((x, y, 0), function_9e72a96(slot), undefined, undefined, undefined, 1);
                     y = y + 22;
                     x = x + 20;
-                    foreach (itemname, count in var_1f96cb8e) {
+                    foreach (itemname, count in itemnames) {
                         debug2dtext((x, y, 0), function_9e72a96(itemname) + "<unknown string>" + count, undefined, undefined, undefined, 1);
                         y = y + 22;
                     }

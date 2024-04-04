@@ -21,14 +21,14 @@
 // Checksum 0x253c859c, Offset: 0x140
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_e87958e045f8b8d", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_e87958e045f8b8d", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_3d98def3/namespace_3d98def3
 // Params 0, eflags: 0x2 linked
 // Checksum 0xa043ff30, Offset: 0x188
 // Size: 0x10c
-function function_70a657d8() {
+function preinit() {
     spawner::add_archetype_spawn_function(#"mimic", &function_76433e31);
     spawner::function_89a2cd87(#"mimic", &function_820e5ac3);
     level.var_f8d5dd16 = &function_bc29cf28;
@@ -47,7 +47,7 @@ function function_76433e31() {
     self.var_1c0eb62a = 180;
     self.var_97ca51c7 = 4;
     self flag::set(#"hash_7b1f9f26f086bf39");
-    self.var_3533970d = &namespace_e292b080::function_e8983bf3;
+    self.melee_distance_check = &namespace_e292b080::function_e8983bf3;
     setup_awareness(self);
     self callback::function_d8abfc3d(#"hash_29cb63a7ebb5d699", &function_5c2b66f6);
     self callback::function_d8abfc3d(#"hash_484127e0cbd8f8cb", &function_7c591227);
@@ -62,7 +62,7 @@ function function_820e5ac3() {
         awareness::set_state(self, #"chase");
         return;
     }
-    if (!isdefined(self.var_43c4bc66) && (!isdefined(self.var_3be4a3b0) || gettime() - self.var_3be4a3b0 > function_60d95f53())) {
+    if (!isdefined(self.never_hide) && (!isdefined(self.reveal_time) || gettime() - self.reveal_time > function_60d95f53())) {
         awareness::set_state(self, #"hidden");
         return;
     }
@@ -74,7 +74,7 @@ function function_820e5ac3() {
 // Checksum 0xfbd7c1a9, Offset: 0x468
 // Size: 0x12
 function private function_21de8113() {
-    self.var_43c4bc66 = 1;
+    self.never_hide = 1;
 }
 
 // Namespace namespace_3d98def3/namespace_3d98def3
@@ -124,7 +124,7 @@ function function_5c2b66f6(*prop) {
 // Size: 0x84
 function function_7c591227(params) {
     awareness::resume(self);
-    var_1be227f1 = array::random(params.var_ef7458f2);
+    var_1be227f1 = array::random(params.activators);
     awareness::function_c241ef9a(self, var_1be227f1, 10);
     awareness::set_state(self, #"chase");
 }
@@ -148,8 +148,8 @@ function function_7c29f2ef(entity) {
 // Size: 0x94
 function function_9853eadb(entity) {
     if (is_true(entity.aat_turned)) {
-        if (is_true(entity.var_2ca2d270) && isdefined(entity.var_1386d828)) {
-            mimic_prop_spawn::function_f021ef67(entity.var_1386d828, []);
+        if (is_true(entity.var_2ca2d270) && isdefined(entity.trap_prop)) {
+            mimic_prop_spawn::transform_spawn(entity.trap_prop, []);
         }
         awareness::set_state(entity, #"chase");
     }
@@ -161,10 +161,10 @@ function function_9853eadb(entity) {
 // Size: 0xc4
 function function_f5ed7704(entity) {
     self.fovcosine = 0;
-    self.maxsightdistsqrd = function_a3f6cdac(3000);
+    self.maxsightdistsqrd = sqr(3000);
     self.var_1267fdea = 0;
     entity setblackboardattribute("_locomotion_speed", "locomotion_speed_run");
-    if (!isdefined(self.var_43c4bc66) && !is_true(self.aat_turned)) {
+    if (!isdefined(self.never_hide) && !is_true(self.aat_turned)) {
         entity.var_78f5fd91 = #"hidden";
     }
     awareness::function_978025e4(entity);
@@ -195,15 +195,15 @@ function function_3ebfec3e(entity) {
 // Checksum 0x7635ffe1, Offset: 0xa98
 // Size: 0x126
 function function_bc29cf28() {
-    var_6be77126 = [4:#"safehouse", 3:#"explore_chests_small", 2:#"explore_chests_large", 1:#"explore_chests", 0:#"ammo_cache"];
-    var_68fc2252 = zm_destination_manager::function_506afb9e(level.var_7d45d0d4.var_49978223, var_6be77126);
-    for (i = 0; i < var_68fc2252.size; i++) {
-        if (!isdefined(var_68fc2252[i].trigger)) {
-            var_68fc2252[i] = "";
+    var_6be77126 = [#"ammo_cache", #"explore_chests", #"explore_chests_large", #"explore_chests_small", #"safehouse"];
+    spawn_structs = zm_destination_manager::function_506afb9e(level.contentmanager.currentdestination, var_6be77126);
+    for (i = 0; i < spawn_structs.size; i++) {
+        if (!isdefined(spawn_structs[i].trigger)) {
+            spawn_structs[i] = "";
         }
     }
-    arrayremovevalue(var_68fc2252, "", 0);
-    return isdefined(var_68fc2252) ? var_68fc2252 : [];
+    arrayremovevalue(spawn_structs, "", 0);
+    return isdefined(spawn_structs) ? spawn_structs : [];
 }
 
 // Namespace namespace_3d98def3/namespace_3d98def3

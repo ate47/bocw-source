@@ -10,14 +10,14 @@
 // Checksum 0x3ad8feef, Offset: 0xc8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"status_effect_wound", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"status_effect_wound", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace status_effect_wound/status_effect_wound
 // Params 0, eflags: 0x6 linked
 // Checksum 0xfaba60c9, Offset: 0x110
 // Size: 0x6c
-function private function_70a657d8() {
+function private preinit() {
     status_effect::register_status_effect_callback_apply(6, &wound_apply);
     status_effect::function_5bae5120(6, &wound_end);
     status_effect::function_6f4eaf88(getstatuseffect("wound"));
@@ -33,14 +33,14 @@ function wound_apply(var_756fda07, *weapon, *applicant) {
     if (!isdefined(applicant.var_752c0834)) {
         return;
     }
-    var_9e04a872 = applicant.var_752c0834;
-    if (self.owner.maxhealth - var_9e04a872 < applicant.var_8ea635df) {
-        var_9e04a872 = self.owner.maxhealth - applicant.var_8ea635df;
+    healthreduction = applicant.var_752c0834;
+    if (self.owner.maxhealth - healthreduction < applicant.var_8ea635df) {
+        healthreduction = self.owner.maxhealth - applicant.var_8ea635df;
     }
     var_da1d7911 = [];
-    var_da1d7911[0] = {#var_b861a047:undefined, #name:"cleanse_buff"};
+    var_da1d7911[0] = {#name:"cleanse_buff", #var_b861a047:undefined};
     if (self.owner.health > 0) {
-        self.owner player::function_2a67df65(self.var_4a3f5865, var_9e04a872 * -1, var_da1d7911);
+        self.owner player::function_2a67df65(self.var_4a3f5865, healthreduction * -1, var_da1d7911);
     }
     self.var_18d16a6b = applicant.var_18d16a6b;
     if (self.owner.health > self.owner.var_66cb03ad) {

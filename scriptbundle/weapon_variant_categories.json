@@ -5,7 +5,7 @@
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#menu/armory",
             "var_1a50db25": "#hash_22427c6a5c97d563",
-            "var_a4f2dd9e": "#none",
+            "actionutility": "#none",
             "var_4e4109db": "#weapon_blueprint_variant_list"
         },
         {
@@ -13,14 +13,14 @@
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_5b7c9ff5b1f9056c",
             "var_1a50db25": "#hash_5784c66ebc5e11a5",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#shop",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_63f20259c07a0c43",
             "var_1a50db25": "#hash_22427c6a5c97d563",
-            "var_a4f2dd9e": "#none",
+            "actionutility": "#none",
             "var_4e4109db": "#weapon_blueprint_shop_variant_list"
         }
     ],

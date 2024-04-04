@@ -13,14 +13,14 @@
 // Checksum 0x1a804e09, Offset: 0x200
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"gadget_tripwire", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"gadget_tripwire", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace gadget_tripwire/gadget_tripwire
 // Params 0, eflags: 0x4
 // Checksum 0xf08b0d8e, Offset: 0x248
 // Size: 0x254
-function private function_70a657d8() {
+function private preinit() {
     callback::on_killcam_begin(&function_330a13a6);
     callback::on_killcam_end(&function_330a13a6);
     callback::add_callback(#"hash_2fc4cfecaed47583", &function_bd054816);
@@ -35,9 +35,9 @@ function private function_70a657d8() {
     if (!isdefined(level.var_77cae643)) {
         level.var_77cae643 = [];
     }
-    level.tripwire = {#localclients:[], #wires:[]};
+    level.tripwire = {#wires:[], #localclients:[]};
     for (i = 0; i < getmaxlocalclients(); i++) {
-        level.tripwire.localclients[i] = {#model:undefined, #previs:0, #beams:[]};
+        level.tripwire.localclients[i] = {#beams:[], #previs:0, #model:undefined};
     }
 }
 

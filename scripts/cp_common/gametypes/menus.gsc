@@ -22,14 +22,14 @@
 // Checksum 0x4f50937a, Offset: 0x440
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"menus", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"menus", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace menus/menus
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1df468ed, Offset: 0x488
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&init);
     callback::on_connect(&on_player_connect);
 }
@@ -127,7 +127,7 @@ function on_menu_response() {
             level flag::set(#"hash_321357f5b78401ef");
             continue;
         }
-        if (response == #"hash_68e27bf0c0ce598a") {
+        if (response == #"restartmission") {
             level function_c35a1bfc();
             continue;
         }
@@ -148,7 +148,7 @@ function on_menu_response() {
             continue;
         }
         if (response == "personnel_profile_closed") {
-            level notify(#"personnel_profile_closed", {#var_ee99e999:intpayload});
+            level notify(#"personnel_profile_closed", {#isconfirmed:intpayload});
             continue;
         }
         if (response == "note_closed") {
@@ -241,23 +241,23 @@ function private function_c35a1bfc() {
     if (is_true(level.level_ending)) {
         return;
     }
-    player savegame::function_6d003cb9("saved_weapon", undefined);
-    player savegame::function_6d003cb9("saved_weapon_attachemnts", undefined);
-    player savegame::function_6d003cb9("saved_weapondata", undefined);
-    player savegame::function_6d003cb9("lives", undefined);
-    player savegame::function_6d003cb9("savegame_score", undefined);
-    player savegame::function_6d003cb9("savegame_kills", undefined);
-    player savegame::function_6d003cb9("savegame_assists", undefined);
-    player savegame::function_6d003cb9("savegame_incaps", undefined);
-    player savegame::function_6d003cb9("savegame_revives", undefined);
+    player savegame::set_player_data("saved_weapon", undefined);
+    player savegame::set_player_data("saved_weapon_attachemnts", undefined);
+    player savegame::set_player_data("saved_weapondata", undefined);
+    player savegame::set_player_data("lives", undefined);
+    player savegame::set_player_data("savegame_score", undefined);
+    player savegame::set_player_data("savegame_kills", undefined);
+    player savegame::set_player_data("savegame_assists", undefined);
+    player savegame::set_player_data("savegame_incaps", undefined);
+    player savegame::set_player_data("savegame_revives", undefined);
     player savegame::function_81534803(#"transient");
     player clearallnoncheckpointdata();
     world.var_b86bf11e = undefined;
     globallogic_ui::function_760546ce();
     missionname = savegame::function_8136eb5a();
-    var_65792f8b = function_2717b55f(missionname);
-    if (isdefined(var_65792f8b) && isdefined(var_65792f8b.var_a04dfce6)) {
-        var_a04dfce6 = var_65792f8b.var_a04dfce6;
+    mapbundle = function_2717b55f(missionname);
+    if (isdefined(mapbundle) && isdefined(mapbundle.var_a04dfce6)) {
+        var_a04dfce6 = mapbundle.var_a04dfce6;
         if (var_a04dfce6 != "") {
             skipto::function_8722a51a(var_a04dfce6, 1);
             map_restart();

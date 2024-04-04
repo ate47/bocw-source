@@ -15,14 +15,14 @@
 // Checksum 0x62ffb14b, Offset: 0x280
 // Size: 0x34
 function private autoexec __init__system__() {
-    system::register("electroball_grenade", &function_70a657d8, undefined, undefined, undefined);
+    system::register("electroball_grenade", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace electroball_grenade/electroball_grenade
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1f6966e6, Offset: 0x2c0
 // Size: 0x1dc
-function function_70a657d8() {
+function preinit() {
     clientfield::register("toplayer", "electroball_tazered", 1, 1, "int", undefined, 0, 0);
     clientfield::register("allplayers", "electroball_shock", 1, 1, "int", &function_7ec61d7a, 0, 0);
     clientfield::register("missile", "electroball_stop_trail", 1, 1, "int", &function_7b605b7b, 0, 0);

@@ -13,14 +13,14 @@
 // Checksum 0x8fdbffdb, Offset: 0xc0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"persistence", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"persistence", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace persistence/persistence_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1c40634d, Offset: 0x108
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&init);
 }
 
@@ -317,7 +317,7 @@ function challenge_complete(eventstruct) {
         self [[ var_c710a35a ]](eventstruct);
     }
     /#
-        if (getdvarint(#"hash_4cc2d974d4e9d2d6", 0) != 0) {
+        if (getdvarint(#"debugchallenges", 0) != 0) {
             challengestring = makelocalizedstring(var_eb67c133);
             tiertext = challengetier + 1;
             var_33b913f5 = "<unknown string>";
@@ -343,11 +343,11 @@ function challenge_complete(eventstruct) {
                 var_fb76383b++;
             }
             msg = var_33b913f5 + "<unknown string>" + challengestring + "<unknown string>" + maxval;
-            if (getdvarint(#"hash_4cc2d974d4e9d2d6", 0) == 1) {
+            if (getdvarint(#"debugchallenges", 0) == 1) {
                 iprintlnbold(msg);
-            } else if (getdvarint(#"hash_4cc2d974d4e9d2d6", 0) == 2) {
+            } else if (getdvarint(#"debugchallenges", 0) == 2) {
                 self iprintlnbold(msg);
-            } else if (getdvarint(#"hash_4cc2d974d4e9d2d6", 0) == 3) {
+            } else if (getdvarint(#"debugchallenges", 0) == 3) {
                 iprintln(msg);
             }
             println(msg);
@@ -369,7 +369,7 @@ function event_handler[player_gunchallengecomplete] codecallback_gunchallengecom
     rankid = eventstruct.rank_id;
     islastrank = eventstruct.is_lastrank;
     if (sessionmodeiscampaigngame()) {
-        self notify(#"gun_level_complete", {#is_last_rank:islastrank, #rank:rankid, #item_index:itemindex, #attachment_index:attachmentindex, #reward_xp:rewardxp});
+        self notify(#"gun_level_complete", {#reward_xp:rewardxp, #attachment_index:attachmentindex, #item_index:itemindex, #rank:rankid, #is_last_rank:islastrank});
         return;
     }
     if (islastrank === 1) {

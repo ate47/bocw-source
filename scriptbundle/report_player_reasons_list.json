@@ -5,42 +5,42 @@
             "description": "#menu/new",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_42955894d6cd9f8c",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#hash_500968c472030a8c",
             "description": "#menu/new",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_530047eeaa2f5363",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#cheating",
             "description": "#hash_60e3c15a99f65706",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_72519b57188045c6",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#boosting",
             "description": "#hash_1f85e8086f061446",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_fe4aa96e0028906",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#hash_51dc68162734e604",
             "description": "#menu/new",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_18d88375db2b77b6",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#hash_b7db942de181dd0",
             "description": "#menu/new",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_395dc56db3f9ec1",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         }
     ],
     "var_88c0037d": 1,

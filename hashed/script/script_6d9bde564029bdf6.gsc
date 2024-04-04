@@ -210,8 +210,8 @@ function event_handler[grenade_stuck] function_de1402a2(eventstruct) {
     if (!isdefined(grenade) || !isdefined(grenade.weapon)) {
         return;
     }
-    var_af6fa544 = function_cdd81094(grenade.weapon);
-    if (!isdefined(var_af6fa544)) {
+    grenadeweaponbundle = function_cdd81094(grenade.weapon);
+    if (!isdefined(grenadeweaponbundle)) {
         return;
     }
     if (!isdefined(eventstruct.hitent) || !isplayer(eventstruct.hitent)) {
@@ -220,15 +220,15 @@ function event_handler[grenade_stuck] function_de1402a2(eventstruct) {
     if (isplayer(self)) {
         var_296bb9e8 = function_e05060f0(self);
         var_89d36f8a = isalive(self) && !self hasperk(#"specialty_quieter");
-        if (isdefined(var_296bb9e8) && isdefined(var_af6fa544.var_488f1315) && var_89d36f8a) {
-            dialogalias = var_296bb9e8 + var_af6fa544.var_488f1315;
+        if (isdefined(var_296bb9e8) && isdefined(grenadeweaponbundle.var_488f1315) && var_89d36f8a) {
+            dialogalias = var_296bb9e8 + grenadeweaponbundle.var_488f1315;
             self thread function_a48c33ff(dialogalias, 6);
         }
     }
     var_cc5e757a = function_e05060f0(eventstruct.hitent);
     var_3fca87ae = isalive(eventstruct.hitent) && !self hasperk(#"specialty_quieter");
-    if (isdefined(var_cc5e757a) && isdefined(var_af6fa544.var_f4196077) && var_3fca87ae) {
-        dialogalias = var_cc5e757a + var_af6fa544.var_f4196077;
+    if (isdefined(var_cc5e757a) && isdefined(grenadeweaponbundle.var_f4196077) && var_3fca87ae) {
+        dialogalias = var_cc5e757a + grenadeweaponbundle.var_f4196077;
         eventstruct.hitent thread function_a48c33ff(dialogalias, 6);
     }
 }
@@ -246,7 +246,7 @@ function private function_1bc99c5e(*attacker, *inflictor, weapon, *mod, killstre
     }
     ally = self get_closest_player_ally(0);
     allyradius = mpdialog_value("killstreakKillAllyRadius", 0);
-    if (isdefined(ally) && distancesquared(self.origin, ally.origin) < function_a3f6cdac(allyradius)) {
+    if (isdefined(ally) && distancesquared(self.origin, ally.origin) < sqr(allyradius)) {
         ally playkillstreakthreat(killstreaktype);
         mod.var_95b0150d = gettime();
     }
@@ -348,11 +348,11 @@ function function_5e1705fa(thrower, projectile, weapon) {
 // Params 3, eflags: 0x6 linked
 // Checksum 0xa31ff658, Offset: 0x17e8
 // Size: 0x44
-function private function_26ab78d1(player, weapon, *var_56dd9d60) {
-    if (!isdefined(var_56dd9d60.var_5c238c21)) {
+function private function_26ab78d1(player, weapon, *weaponinstance) {
+    if (!isdefined(weaponinstance.var_5c238c21)) {
         return;
     }
-    weapon function_26dd1669(var_56dd9d60);
+    weapon function_26dd1669(weaponinstance);
 }
 
 // Namespace battlechatter/namespace_5232fbcc

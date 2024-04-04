@@ -22,14 +22,14 @@
 // Checksum 0x3a3146f, Offset: 0x210
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"zm_perk_deadshot", &function_70a657d8, undefined, undefined, #"hash_2d064899850813e2");
+    system::register(#"zm_perk_deadshot", &preinit, undefined, undefined, #"hash_2d064899850813e2");
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
 // Params 0, eflags: 0x6 linked
 // Checksum 0x5601e3c1, Offset: 0x260
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     enable_deadshot_perk_for_level();
     zm_perks::register_actor_damage_override(#"hash_210097a75bb6c49a", &function_4d088c19);
 }

@@ -12,14 +12,14 @@
 // Checksum 0xea8cbd0f, Offset: 0xc0
 // Size: 0x34
 function private autoexec __init__system__() {
-    system::register("player_decision", &function_70a657d8, undefined, undefined, undefined);
+    system::register("player_decision", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace player_decision/player_decision
 // Params 0, eflags: 0x6 linked
 // Checksum 0x91293c20, Offset: 0x100
 // Size: 0x1b4
-function private function_70a657d8() {
+function private preinit() {
     /#
         if (!isdefined(level.var_cc2922d)) {
             level.var_cc2922d = [];
@@ -83,7 +83,7 @@ function function_d04c220e() {
         return;
     }
     foreach (var_6176a8ab, var_de282b38 in var_6c8b1954.var_6e64bcd) {
-        savegame::function_6d003cb9(var_6176a8ab, var_de282b38);
+        savegame::set_player_data(var_6176a8ab, var_de282b38);
     }
 }
 
@@ -93,7 +93,7 @@ function function_d04c220e() {
 // Size: 0xe4
 function function_ff7e19cb(var_6aeabb95) {
     /#
-        var_2c1ecd1d = [2:2, 1:1, 0:0];
+        var_2c1ecd1d = [0, 1, 2];
         if (!isinarray(var_2c1ecd1d, var_6aeabb95)) {
             /#
                 assertmsg("<unknown string>" + var_6aeabb95);
@@ -116,7 +116,7 @@ function function_1c4fb6d4() {
         if (level.var_cc2922d[#"hash_3c471eb0b4890d28"] >= 0) {
             var_313a5853 = level.var_cc2922d[#"hash_3c471eb0b4890d28"];
         }
-        var_2c1ecd1d = [2:2, 1:1, 0:0];
+        var_2c1ecd1d = [0, 1, 2];
         if (!isinarray(var_2c1ecd1d, var_313a5853)) {
             /#
                 assertmsg("<unknown string>" + var_313a5853);
@@ -132,7 +132,7 @@ function function_1c4fb6d4() {
 // Size: 0x9c
 function function_cde4f4e9(var_fda79bf3) {
     /#
-        var_2c1ecd1d = [1:1, 0:0];
+        var_2c1ecd1d = [0, 1];
         if (!isinarray(var_2c1ecd1d, var_fda79bf3)) {
             /#
                 assertmsg("<unknown string>" + var_fda79bf3);
@@ -152,7 +152,7 @@ function function_d9f060cc() {
         if (level.var_cc2922d[#"hash_1d0ba9436c1b8160"] >= 0) {
             var_fda79bf3 = level.var_cc2922d[#"hash_1d0ba9436c1b8160"];
         }
-        var_2c1ecd1d = [1:1, 0:0];
+        var_2c1ecd1d = [0, 1];
         if (!isinarray(var_2c1ecd1d, var_fda79bf3)) {
             /#
                 assertmsg("<unknown string>" + var_fda79bf3);
@@ -166,8 +166,8 @@ function function_d9f060cc() {
 // Params 1, eflags: 0x0
 // Checksum 0x88448a6e, Offset: 0x8b0
 // Size: 0x2c
-function function_83bb4d9c(var_7c0d9a47) {
-    function_4f0f89(#"hash_78916ab4267af9ff", var_7c0d9a47);
+function function_83bb4d9c(iskilled) {
+    function_4f0f89(#"hash_78916ab4267af9ff", iskilled);
 }
 
 // Namespace player_decision/player_decision
@@ -187,9 +187,9 @@ function function_2da4c32c() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x83ec6796, Offset: 0x958
 // Size: 0x6c
-function function_a029a114(var_7c0d9a47) {
-    function_4f0f89(#"hash_2209b7d4d5e867da", var_7c0d9a47);
-    if (!var_7c0d9a47) {
+function function_a029a114(iskilled) {
+    function_4f0f89(#"hash_2209b7d4d5e867da", iskilled);
+    if (!iskilled) {
         getplayers()[0] stats::function_dad108fa(#"hash_397cbd8ba6842423", 1);
     }
 }
@@ -211,9 +211,9 @@ function function_251a57bb() {
 // Params 1, eflags: 0x0
 // Checksum 0x9d5b3679, Offset: 0xa40
 // Size: 0xa4
-function function_5d2eb7fa(var_7c0d9a47) {
-    function_4f0f89(#"hash_19be69882298b84a", var_7c0d9a47);
-    if (!var_7c0d9a47) {
+function function_5d2eb7fa(iskilled) {
+    function_4f0f89(#"hash_19be69882298b84a", iskilled);
+    if (!iskilled) {
         getplayers()[0] stats::function_dad108fa(#"hash_a8df4bf1b167949", 1);
         return;
     }
@@ -237,8 +237,8 @@ function function_5584c739() {
 // Params 1, eflags: 0x0
 // Checksum 0x915be15, Offset: 0xb60
 // Size: 0x2c
-function function_b95efbcd(var_7c0d9a47) {
-    function_4f0f89(#"hash_2c88ea06da308fcc", var_7c0d9a47);
+function function_b95efbcd(iskilled) {
+    function_4f0f89(#"hash_2c88ea06da308fcc", iskilled);
 }
 
 // Namespace player_decision/player_decision
@@ -275,7 +275,7 @@ function function_e0bd7f7a(var_b8291d8f) {
     /#
         assert(var_b8291d8f <= 3);
     #/
-    savegame::function_6d003cb9(#"hash_ce196830d20c798", var_b8291d8f);
+    savegame::set_player_data(#"hash_ce196830d20c798", var_b8291d8f);
 }
 
 // Namespace player_decision/player_decision
@@ -299,7 +299,7 @@ function function_e40c7d56() {
 // Checksum 0x876ae659, Offset: 0xd50
 // Size: 0x64
 function function_557c31b1() {
-    savegame::function_6d003cb9(#"hash_1353a738ffed49d7", 1);
+    savegame::set_player_data(#"hash_1353a738ffed49d7", 1);
     getplayers()[0] stats::function_dad108fa(#"hash_40fb0ec1661625f4", 1);
 }
 

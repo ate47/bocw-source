@@ -13,14 +13,14 @@
 // Checksum 0xd3759f02, Offset: 0x160
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_3ee5d3ee068a8cc", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_3ee5d3ee068a8cc", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_96850e69/namespace_96850e69
 // Params 0, eflags: 0x6 linked
 // Checksum 0x2291246f, Offset: 0x1a8
 // Size: 0xe4
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "show_objectives", 1, 2, "int", &show_objectives, 0, 0);
     callback::add_callback(#"on_player_spawned", &on_player_spawned);
     /#
@@ -36,7 +36,7 @@ function private function_70a657d8() {
 // Size: 0x6e
 function private show_objectives(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
-        self notify(#"show_objectives", {#var_3094b3d4:bwastimejump});
+        self notify(#"show_objectives", {#showtype:bwastimejump});
     }
 }
 
@@ -68,9 +68,9 @@ function private function_5c67d66(localclientnum) {
         if (is_true(self.var_d52a8a6e)) {
             continue;
         }
-        setuimodelvalue(self.var_f74ea54b, ret.var_3094b3d4 === 1);
-        self thread namespace_ca99987f::function_a037b7c9(localclientnum, self.var_e64f428b, 1, 0, #"linear");
-        self thread function_cd9face2(localclientnum, isdefined(ret.var_3094b3d4));
+        setuimodelvalue(self.var_f74ea54b, ret.showtype === 1);
+        self thread easing::function_a037b7c9(localclientnum, self.var_e64f428b, 1, 0, #"linear");
+        self thread function_cd9face2(localclientnum, isdefined(ret.showtype));
     }
 }
 
@@ -107,7 +107,7 @@ function private function_fd86c6ac(localclientnum) {
         if (self postfx::function_556665f2("pstfx_highlight_objectives")) {
             self thread postfx::stoppostfxbundle("pstfx_highlight_objectives");
         }
-        self thread namespace_ca99987f::function_a037b7c9(localclientnum, self.var_e64f428b, 0, 0, #"linear");
+        self thread easing::function_a037b7c9(localclientnum, self.var_e64f428b, 0, 0, #"linear");
     }
 }
 
@@ -129,7 +129,7 @@ function private function_aa3ed46f(localclientnum, uimodel, var_d17dd25a) {
     /#
         fade_time = getdvarfloat(#"hash_6cdcdf6a45d1f925", fade_time);
     #/
-    self thread namespace_ca99987f::function_a037b7c9(localclientnum, uimodel, 0, fade_time, #"linear");
+    self thread easing::function_a037b7c9(localclientnum, uimodel, 0, fade_time, #"linear");
 }
 
 // Namespace namespace_96850e69/namespace_96850e69

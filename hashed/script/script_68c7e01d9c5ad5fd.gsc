@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_31816d064a53f516;
+#using scripts\core_common\ai\zombie_eye_glow.csc;
 #using scripts\core_common\ai\systems\fx_character.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\system_shared.csc;

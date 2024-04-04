@@ -20,14 +20,14 @@
 // Checksum 0x54102ccf, Offset: 0x478
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"battlechatter", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"battlechatter", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace battlechatter/battlechatter
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6c1a516e, Offset: 0x4c0
 // Size: 0x408
-function private function_70a657d8() {
+function private preinit() {
     /#
         level thread devgui_think();
     #/
@@ -48,7 +48,7 @@ function private function_70a657d8() {
     level.var_3602c1be = &playkillbattlechatter;
     level.allowspecialistdialog = (isdefined(mpdialog.enableherodialog) ? mpdialog.enableherodialog : 0) && is_true(level.allowbattlechatter[#"bc"]);
     level.playstartconversation = (isdefined(mpdialog.enableconversation) ? mpdialog.enableconversation : 0) && is_true(level.allowbattlechatter[#"bc"]);
-    level.var_add8e0f2 = [10:#"trophy_system", 9:#"hash_2b9efbad11308e02", 8:#"hatchet", 7:#"satchel_charge", 6:#"eq_molotov", 5:#"nightingale", 4:#"willy_pete", 3:#"eq_slow_grenade", 2:#"hash_5453c9b880261bcb", 1:#"eq_sticky_grenade", 0:#"frag_grenade"];
+    level.var_add8e0f2 = [#"frag_grenade", #"eq_sticky_grenade", #"hash_5453c9b880261bcb", #"eq_slow_grenade", #"willy_pete", #"nightingale", #"eq_molotov", #"satchel_charge", #"hatchet", #"hash_2b9efbad11308e02", #"trophy_system"];
     level.var_648e79b7 = [];
     level.var_75aa0434 = [];
     level.var_e444d44 = 1;
@@ -256,7 +256,7 @@ function stop_dialog(var_cdaf7797) {
 // Params 6, eflags: 0x2 linked
 // Checksum 0x4e57246, Offset: 0x1398
 // Size: 0x154
-function function_9d4a3d68(var_11317dc8, speakingplayer, var_df336ed3, weapon, startdelay, var_44e63719) {
+function function_9d4a3d68(var_11317dc8, speakingplayer, secondplayer, weapon, startdelay, var_44e63719) {
     level endon(#"game_ended");
     speakingplayer endon(#"disconnect");
     /#
@@ -277,7 +277,7 @@ function function_9d4a3d68(var_11317dc8, speakingplayer, var_df336ed3, weapon, s
             return;
         }
     }
-    speakingplayer function_18aba49d(var_11317dc8, weapon, var_df336ed3);
+    speakingplayer playsoundevent(var_11317dc8, weapon, secondplayer);
     thread wait_dialog_buffer(var_44e63719);
 }
 
@@ -387,14 +387,14 @@ function function_bd715920(var_28b40381, attacker, eventorigin, eventobject, tim
     if ((isdefined(self.var_87b1ba00) ? self.var_87b1ba00 : 0) || (isdefined(eventobject.var_87b1ba00) ? eventobject.var_87b1ba00 : 0) || !isdefined(var_28b40381)) {
         return;
     }
-    var_8e39def3 = function_cdd81094(var_28b40381);
-    if (!isdefined(var_8e39def3)) {
+    weaponbundle = function_cdd81094(var_28b40381);
+    if (!isdefined(weaponbundle)) {
         return;
     }
-    var_4a247dec = isdefined(var_8e39def3.var_2bb73e97) ? var_8e39def3.var_2bb73e97 : 0;
-    var_2f741f8e = isdefined(var_8e39def3.var_9715d1af) ? var_8e39def3.var_9715d1af : 0;
-    var_4e424b8b = isdefined(var_8e39def3.var_c6face5d) ? var_8e39def3.var_c6face5d : 0;
-    var_494ab587 = isdefined(var_8e39def3.var_97a93569) ? var_8e39def3.var_97a93569 : 0;
+    var_4a247dec = isdefined(weaponbundle.var_2bb73e97) ? weaponbundle.var_2bb73e97 : 0;
+    var_2f741f8e = isdefined(weaponbundle.var_9715d1af) ? weaponbundle.var_9715d1af : 0;
+    var_4e424b8b = isdefined(weaponbundle.var_c6face5d) ? weaponbundle.var_c6face5d : 0;
+    var_494ab587 = isdefined(weaponbundle.var_97a93569) ? weaponbundle.var_97a93569 : 0;
     if (isdefined(var_4a247dec) ? var_4a247dec : 0) {
         if (isdefined(attacker) && isplayer(attacker) && !attacker hasperk(#"specialty_quieter")) {
             if (isdefined(var_2f741f8e) ? var_2f741f8e : 0) {
@@ -419,7 +419,7 @@ function function_bd715920(var_28b40381, attacker, eventorigin, eventobject, tim
                 continue;
             }
             if (isdefined(var_4e424b8b) ? var_4e424b8b : 0) {
-                if (distancesquared(eventorigin, player.origin) < function_a3f6cdac(allyradius)) {
+                if (distancesquared(eventorigin, player.origin) < sqr(allyradius)) {
                     if (isdefined(var_494ab587) ? var_494ab587 : 0) {
                         relativepos = vectornormalize(player.origin - eventorigin);
                         dir = anglestoforward(self getplayerangles());
@@ -432,7 +432,7 @@ function function_bd715920(var_28b40381, attacker, eventorigin, eventobject, tim
                     }
                 }
             }
-            if (distancesquared(eventorigin, player.origin) > function_a3f6cdac(enemydistance)) {
+            if (distancesquared(eventorigin, player.origin) > sqr(enemydistance)) {
                 continue;
             }
             eyepoint = player geteye();
@@ -462,14 +462,14 @@ function function_fc82b10(weapon, eventorigin, eventobject) {
     if (!isdefined(weapon)) {
         return;
     }
-    var_8e39def3 = function_cdd81094(weapon);
-    if (!isdefined(var_8e39def3.var_ff5e0d8e)) {
+    weaponbundle = function_cdd81094(weapon);
+    if (!isdefined(weaponbundle.var_ff5e0d8e)) {
         return;
     }
     if (isdefined(eventobject.var_87b1ba00) ? eventobject.var_87b1ba00 : 0) {
         return;
     }
-    var_4e424b8b = isdefined(var_8e39def3.var_c6face5d) ? var_8e39def3.var_c6face5d : 0;
+    var_4e424b8b = isdefined(weaponbundle.var_c6face5d) ? weaponbundle.var_c6face5d : 0;
     if (isdefined(eventorigin)) {
         players = self getenemies();
         if (isdefined(players) && players.size > 0) {
@@ -477,7 +477,7 @@ function function_fc82b10(weapon, eventorigin, eventobject) {
             if (!isdefined(playerbundle.voiceprefix)) {
                 return;
             }
-            dialogkey = playerbundle.voiceprefix + var_8e39def3.var_ff5e0d8e;
+            dialogkey = playerbundle.voiceprefix + weaponbundle.var_ff5e0d8e;
             allyradius = mpdialog_value("enemyContactAllyRadius", 0);
             enemydistance = mpdialog_value("enemyContactDistance", 0);
             foreach (player in players) {
@@ -486,7 +486,7 @@ function function_fc82b10(weapon, eventorigin, eventobject) {
                 }
                 distancetoplayer = distancesquared(eventorigin, player.origin);
                 if (var_4e424b8b) {
-                    if (distancetoplayer < function_a3f6cdac(allyradius)) {
+                    if (distancetoplayer < sqr(allyradius)) {
                         relativepos = vectornormalize(player.origin - eventorigin);
                         dir = anglestoforward(self getplayerangles());
                         dotproduct = vectordot(relativepos, dir);
@@ -495,7 +495,7 @@ function function_fc82b10(weapon, eventorigin, eventobject) {
                         }
                     }
                 }
-                if (distancetoplayer > function_a3f6cdac(enemydistance)) {
+                if (distancetoplayer > sqr(enemydistance)) {
                     continue;
                 }
                 eyepoint = player geteye();
@@ -586,11 +586,11 @@ function function_bafe1ee4(weapon) {
     if (!isdefined(voiceprefix)) {
         return false;
     }
-    var_8e39def3 = function_cdd81094(weapon);
-    if (!isdefined(var_8e39def3)) {
+    weaponbundle = function_cdd81094(weapon);
+    if (!isdefined(weaponbundle)) {
         return false;
     }
-    dialogalias = voiceprefix + var_8e39def3.var_2c07bbf1;
+    dialogalias = voiceprefix + weaponbundle.var_2c07bbf1;
     self thread function_a48c33ff(dialogalias, 6);
     return true;
 }
@@ -1376,7 +1376,7 @@ function event_handler[event_8da88658] function_382adb6c(params) {
     }
     var_eb7a15a5 = dialogbundle.var_329872a2;
     foreach (execution in var_eb7a15a5) {
-        if (execution.var_b4a570f4 === params.var_b4a570f4) {
+        if (execution.executionname === params.executionname) {
             suffix = execution.var_e265e63e;
             delay = execution.var_8e1cee6b;
             break;

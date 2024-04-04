@@ -25,7 +25,7 @@
 // Checksum 0x39d72a81, Offset: 0x6e8
 // Size: 0x23c
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
-    foreach (var_2f758e99, k in [1:"scriptgroup_playscenes", 0:"scriptgroup_initscenes"]) {
+    foreach (var_2f758e99, k in ["scriptgroup_initscenes", "scriptgroup_playscenes"]) {
         if (!isdefined(level.var_41204f29)) {
             level.var_41204f29 = [];
         } else if (!isarray(level.var_41204f29)) {
@@ -53,14 +53,14 @@ function private event_handler[createstruct] function_e0a8e4ba(struct) {
 // Checksum 0x4d97a6bf, Offset: 0x930
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"scene", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"scene", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace scene/scene_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x7f79e331, Offset: 0x988
 // Size: 0x564
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.scene_streamer_ignore)) {
         level.scene_streamer_ignore = [];
     }
@@ -1803,7 +1803,7 @@ function function_1eab8670(obj, str_shot) {
     n_anim_length = 0;
     if (isdefined(obj.shots)) {
         foreach (s_shot in obj.shots) {
-            if (is_true(s_shot.var_51093f2d)) {
+            if (is_true(s_shot.disableshot)) {
                 continue;
             }
             if (s_shot.name === tolower(str_shot) && isdefined(s_shot.entry)) {
@@ -3116,7 +3116,7 @@ function private function_2fd8d9a3(s_tracker, var_cfeeef61, a_ents) {
     if (!isdefined(level.var_25a8c888[var_cfeeef61])) {
         level.var_25a8c888[var_cfeeef61] = [];
         s_bundle = getscriptbundle(var_cfeeef61);
-        foreach (var_15a51335 in s_bundle.var_4ff9da64) {
+        foreach (var_15a51335 in s_bundle.sequencenodes) {
             level.var_25a8c888[var_cfeeef61][var_15a51335.name] = var_15a51335;
         }
     }

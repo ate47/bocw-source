@@ -4,19 +4,19 @@
             "var_5ed80a9c": "#player",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_3519741a75e04d55",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#weapon",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_459a2c89d1bbad12",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#hash_1c5d758624c9b051",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_6dfbac6817e16caa",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         }
     ],
     "var_72ef398b": 1,

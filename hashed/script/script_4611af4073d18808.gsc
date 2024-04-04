@@ -79,7 +79,7 @@ function function_1735c657(forced) {
     self endon("72446a348015a25a");
     self endon(#"disconnect");
     if (!is_true(forced) && !is_true(level.doa.var_318aa67a)) {
-        self namespace_6e90e490::function_55775bbc(4, 0);
+        self namespace_6e90e490::showhint(4, 0);
     }
     self thread function_c724b8f9();
     self thread function_17c3e29f();
@@ -95,14 +95,14 @@ function function_1735c657(forced) {
     angles = (0, angles[1], 0);
     faceangles = isdefined(result.faceangles) ? result.faceangles : angles;
     self notify(#"hash_7893364bd228d63e");
-    self namespace_ec06fe4a::function_a4b3f184(1);
+    self namespace_ec06fe4a::freezeplayercontrols(1);
     if (is_true(self.doa.var_f583234e)) {
         self clientfield::set_to_player("toggleflashlight", 0);
     }
     self thread namespace_7f5aeb59::turnplayershieldon();
     self.topdowncamera = 1;
     self setclientthirdperson(0);
-    if (isalive(self) && !is_true(self.doa.var_70c50ae0)) {
+    if (isalive(self) && !is_true(self.doa.respawning)) {
         self.health = self.maxhealth;
     }
     if (!isdefined(self.vehicle)) {
@@ -111,7 +111,7 @@ function function_1735c657(forced) {
     self clientfield::increment_to_player("exitFPS");
     self.doa.var_21eab413 = gettime() + 2500;
     /#
-        function_f5f0c0f8("<unknown string>" + self.name + "<unknown string>" + gettime());
+        debugmsg("<unknown string>" + self.name + "<unknown string>" + gettime());
     #/
     self.doa.var_3e81d24c = undefined;
     self namespace_7f5aeb59::function_fae39d88();
@@ -134,7 +134,7 @@ function function_1735c657(forced) {
         org delete();
     }
     wait(0.2);
-    self namespace_ec06fe4a::function_a4b3f184(0);
+    self namespace_ec06fe4a::freezeplayercontrols(0);
     self.doa.var_4f3aee7b = 0;
     self namespace_83eb6304::turnofffx("firstPersonMarker");
     if (is_true(self.doa.var_f583234e)) {
@@ -146,7 +146,7 @@ function function_1735c657(forced) {
     self setorigin(self.origin + vectorscale((0, 0, 1), 20));
     self notify(#"hash_5a8ee2526fb3775b");
     /#
-        function_f5f0c0f8("<unknown string>" + self.name + "<unknown string>" + gettime());
+        debugmsg("<unknown string>" + self.name + "<unknown string>" + gettime());
     #/
 }
 
@@ -155,7 +155,7 @@ function function_1735c657(forced) {
 // Checksum 0x385fb497, Offset: 0xaf8
 // Size: 0x61c
 function function_1f704cee(force = 0, faceangles = 1) {
-    namespace_1e25ad94::function_f5f0c0f8("+++++++++++++++++++++++++++++++ PLAYER ENTERING FP : " + self.name);
+    namespace_1e25ad94::debugmsg("+++++++++++++++++++++++++++++++ PLAYER ENTERING FP : " + self.name);
     if (is_true(level.doa.var_318aa67a)) {
         force = 1;
     }
@@ -164,14 +164,14 @@ function function_1f704cee(force = 0, faceangles = 1) {
     }
     self endon(#"disconnect");
     if (is_true(self.doa.var_3e81d24c)) {
-        namespace_1e25ad94::function_f5f0c0f8("+++++++++++++++++++++++++++++++ PLAYER ALREADY IN FP : " + self.name);
+        namespace_1e25ad94::debugmsg("+++++++++++++++++++++++++++++++ PLAYER ALREADY IN FP : " + self.name);
         self thread function_1735c657(force);
         return;
     }
     self notify("7f96f25ab02d6853");
     self endon("7f96f25ab02d6853");
     /#
-        function_f5f0c0f8("<unknown string>" + self.name + "<unknown string>" + gettime());
+        debugmsg("<unknown string>" + self.name + "<unknown string>" + gettime());
     #/
     self.doa.var_3e81d24c = 1;
     self.doa.var_4f3aee7b = force;
@@ -187,12 +187,12 @@ function function_1f704cee(force = 0, faceangles = 1) {
     }
     angles = (0, angles[1], 0);
     /#
-        function_f5f0c0f8("<unknown string>" + angles + "<unknown string>" + v_player_velocity + "<unknown string>" + length(v_player_velocity));
+        debugmsg("<unknown string>" + angles + "<unknown string>" + v_player_velocity + "<unknown string>" + length(v_player_velocity));
     #/
     if (is_true(self.doa.var_f583234e)) {
         self clientfield::set_to_player("toggleflashlight", 0);
     }
-    self namespace_ec06fe4a::function_a4b3f184(1);
+    self namespace_ec06fe4a::freezeplayercontrols(1);
     self clientfield::increment_to_player("goFPS");
     level clientfield::set("doafps", 1);
     util::wait_network_frame(2);
@@ -216,13 +216,13 @@ function function_1f704cee(force = 0, faceangles = 1) {
             self unlink();
             self.doa.var_5d4bd96f delete();
             /#
-                function_f5f0c0f8("<unknown string>" + self.angles);
+                debugmsg("<unknown string>" + self.angles);
             #/
         }
     }
-    self namespace_ec06fe4a::function_a4b3f184(0);
+    self namespace_ec06fe4a::freezeplayercontrols(0);
     self namespace_7f5aeb59::function_fae39d88();
     self thread function_1735c657(force);
-    namespace_1e25ad94::function_f5f0c0f8("+++++++++++++++++++++++++++++++ PLAYER FP SETUP COMPLETE: " + self.name);
+    namespace_1e25ad94::debugmsg("+++++++++++++++++++++++++++++++ PLAYER FP SETUP COMPLETE: " + self.name);
 }
 

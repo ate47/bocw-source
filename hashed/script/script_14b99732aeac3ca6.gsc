@@ -46,7 +46,7 @@ function function_64e04297(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_1f3cb09a = undefined;
         self.var_eb074a88 = undefined;
     }
-    self.var_a22abb6f = util::playfxontag(fieldname, #"hash_5cde32c15506b440", self, "j_mainroot");
+    self.explode_fx = util::playfxontag(fieldname, #"hash_5cde32c15506b440", self, "j_mainroot");
     playsound(fieldname, #"hash_7534e74a4fd1c56d", self.origin);
 }
 

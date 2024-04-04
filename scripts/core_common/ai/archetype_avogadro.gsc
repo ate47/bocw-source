@@ -33,14 +33,14 @@
 // Checksum 0xe5d34efd, Offset: 0x500
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"archetype_avogadro", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"archetype_avogadro", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa299383c, Offset: 0x558
 // Size: 0x214
-function private function_70a657d8() {
+function private preinit() {
     registerbehaviorscriptfunctions();
     clientfield::register("missile", "" + #"hash_699d5bb1a9339a93", 1, 2, "int");
     clientfield::register("actor", "" + #"hash_4466de6137f54b59", 1, 1, "int");
@@ -353,7 +353,7 @@ function function_fe84424f(weapon, var_fd90b0bb, point, var_87a07ff5 = 1) {
     var_19874b3 = [];
     for (i = 0; i < level.gib_tags.size; i++) {
         if (self haspart(level.gib_tags[i])) {
-            var_19874b3[var_19874b3.size] = {#origin:self gettagorigin(level.gib_tags[i]), #tag:level.gib_tags[i]};
+            var_19874b3[var_19874b3.size] = {#tag:level.gib_tags[i], #origin:self gettagorigin(level.gib_tags[i])};
         }
     }
     var_6844367f = arraygetclosest(point, var_19874b3);
@@ -431,14 +431,14 @@ function function_29c1ba76(*einflictor, eattacker, idamage, *idflags, smeansofde
     if (isdefined(level.var_1b01acb4)) {
         vdir = vdir * [[ level.var_1b01acb4 ]](self, psoffsettime, vpoint);
     }
-    return {#var_ebcff177:var_ebcff177, #weakpoint:weakpoint, #damage:vdir};
+    return {#damage:vdir, #weakpoint:weakpoint, #var_ebcff177:var_ebcff177};
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
 // Params 1, eflags: 0x2 linked
 // Checksum 0x36df1611, Offset: 0x2300
 // Size: 0x44
-function function_bd4a79a(entity) {
+function get_target_ent(entity) {
     if (isdefined(entity.attackable)) {
         return entity.attackable;
     }
@@ -465,7 +465,7 @@ function private function_f8e8c129(entity) {
     if (is_false(entity.can_shoot)) {
         return false;
     }
-    enemy = function_bd4a79a(entity);
+    enemy = get_target_ent(entity);
     if (!isdefined(enemy)) {
         return false;
     }
@@ -521,8 +521,8 @@ function private function_aa6fbf56(entity) {
 // Checksum 0xb572ca27, Offset: 0x2780
 // Size: 0x54
 function private function_afa4bed6(entity) {
-    var_bb2182e5 = randomint(2);
-    entity setblackboardattribute("_ranged_attack_variant", var_bb2182e5);
+    decision = randomint(2);
+    entity setblackboardattribute("_ranged_attack_variant", decision);
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
@@ -537,7 +537,7 @@ function private function_7e5905cd(entity) {
         self show();
     }
     var_8706203c = randomintrange(2000, 3000);
-    if (isdefined(entity.var_64099fad) && isdefined(enemy) && distancesquared(entity.origin, enemy.origin) < function_a3f6cdac(entity.var_64099fad)) {
+    if (isdefined(entity.var_64099fad) && isdefined(enemy) && distancesquared(entity.origin, enemy.origin) < sqr(entity.var_64099fad)) {
         var_8706203c = 100;
     }
     blackboard::addblackboardevent(#"hash_27bee30b37f7debe", {#entity:self}, var_8706203c);
@@ -579,10 +579,10 @@ function private function_14e1e2c8(*entity) {
 // Checksum 0xfef28040, Offset: 0x2a80
 // Size: 0x2bc
 function private shoot_bolt_wait(entity) {
-    if (!isdefined(function_bd4a79a(entity))) {
+    if (!isdefined(get_target_ent(entity))) {
         return;
     }
-    enemy = function_bd4a79a(entity);
+    enemy = get_target_ent(entity);
     target_pos = enemy getcentroid();
     if (issentient(enemy)) {
         target_pos = enemy geteye();
@@ -631,7 +631,7 @@ function function_b1b41f33(owner) {
         return;
     }
     if ((waitresult._notify == #"explode" || waitresult._notify == #"projectile_impact_explode") && isdefined(waitresult.position)) {
-        owner callback::callback(#"hash_c1d64b00f1dc607", {#jammer:self, #radius:self.weapon.explosionradius, #origin:waitresult.position});
+        owner callback::callback(#"hash_c1d64b00f1dc607", {#origin:waitresult.position, #radius:self.weapon.explosionradius, #jammer:self});
     }
 }
 
@@ -653,11 +653,11 @@ function function_dec8144d() {
         waitresult = self waittill(#"damage");
         if (waitresult.mod === "MOD_PISTOL_BULLET" || waitresult.mod === "MOD_RIFLE_BULLET" || waitresult.mod === "MOD_PROJECTILE") {
             if (self.health <= 0) {
-                level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"avogadro_projectile_destroyed_zm", #attacker:waitresult.attacker});
+                level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:waitresult.attacker, #scoreevent:"avogadro_projectile_destroyed_zm"});
                 var_5fae82a9 = spawn("script_model", self.origin);
                 var_5fae82a9 setmodel("tag_origin");
                 var_5fae82a9 thread function_5f54a393();
-                self function_cb48cddd();
+                self deletedelay();
             }
         }
     }
@@ -670,7 +670,7 @@ function function_dec8144d() {
 function function_5f54a393() {
     self clientfield::set("" + #"hash_183ef3538fd62563", 1);
     wait(5);
-    self function_cb48cddd();
+    self deletedelay();
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
@@ -745,7 +745,7 @@ function function_205c9932(entity) {
         foreach (ent in array) {
             ent.owner = entity;
         }
-        return {#array:array, #id:index + 1};
+        return {#id:index + 1, #array:array};
     }
 }
 
@@ -843,7 +843,7 @@ function function_2eb165a4(entity) {
     if (isdefined(entity.var_8d847303) && isdefined(entity.var_54fc34a3) && entity.var_8d847303 >= 3 && gettime() < entity.var_54fc34a3 + 18000) {
         return false;
     }
-    target = function_bd4a79a(entity);
+    target = get_target_ent(entity);
     var_c5504ae5 = 1 / 4;
     var_5a8e6bf6 = entity.health / entity.maxhealth;
     if (!isdefined(entity.var_f89ee7ac)) {
@@ -861,10 +861,10 @@ function function_2eb165a4(entity) {
             return false;
         }
         var_bec89360 = distancesquared(entity.favoriteenemy.origin, entity.origin);
-        if (var_bec89360 <= function_a3f6cdac(200)) {
+        if (var_bec89360 <= sqr(200)) {
             return true;
         }
-        if (var_bec89360 >= function_a3f6cdac(entity.var_724ec089)) {
+        if (var_bec89360 >= sqr(entity.var_724ec089)) {
             return true;
         }
         if (target === entity.favoriteenemy && !entity seerecently(entity.favoriteenemy, 1)) {
@@ -880,10 +880,10 @@ function function_2eb165a4(entity) {
     }
     if (isdefined(entity.attackable)) {
         var_bec89360 = distancesquared(entity.attackable.origin, entity.origin);
-        if (var_bec89360 <= function_a3f6cdac(200)) {
+        if (var_bec89360 <= sqr(200)) {
             return true;
         }
-        if (var_bec89360 >= function_a3f6cdac(entity.var_724ec089)) {
+        if (var_bec89360 >= sqr(entity.var_724ec089)) {
             return true;
         }
         var_f5f64fa2 = entity geteye();
@@ -901,7 +901,7 @@ function function_2eb165a4(entity) {
 // Size: 0x8ce
 function function_c3ceb539(entity) {
     test_points = [];
-    target = function_bd4a79a(entity);
+    target = get_target_ent(entity);
     var_5494b2e9 = 0;
     self.can_phase = 0;
     /#
@@ -934,7 +934,7 @@ function function_c3ceb539(entity) {
             var_2fa931bb = 0;
             foreach (test_point in test_points) {
                 dist_sq = distancesquared(test_point, entity.origin);
-                if (dist_sq > function_a3f6cdac(entity.var_42a18a37)) {
+                if (dist_sq > sqr(entity.var_42a18a37)) {
                     test_points[var_2fa931bb] = vectornormalize(test_point - entity.origin) * entity.var_42a18a37 + entity.origin;
                 }
                 var_2fa931bb++;
@@ -1019,7 +1019,7 @@ function function_3d3ee1a4(entity, point, enemy) {
         var_94324c7a = getclosestpointonnavmesh(enemy.origin, 128, entity getpathfindingradius());
         if (isdefined(var_94324c7a)) {
             nextpos = checknavmeshdirection(var_94324c7a, nextpos - var_94324c7a, distance(nextpos, var_94324c7a), entity getpathfindingradius());
-            if (isdefined(entity.favoriteenemy) && distancesquared(var_94324c7a, nextpos) <= function_a3f6cdac(entity.var_946951ef)) {
+            if (isdefined(entity.favoriteenemy) && distancesquared(var_94324c7a, nextpos) <= sqr(entity.var_946951ef)) {
                 /#
                     recordsphere(nextpos, 10, (1, 0, 0), "<unknown string>", entity);
                 #/
@@ -1031,7 +1031,7 @@ function function_3d3ee1a4(entity, point, enemy) {
     if (abs(nextpos[2] - groundpos[2]) > 5) {
         return undefined;
     }
-    if (isdefined(nextpos) && distancesquared(entity.origin, nextpos) < function_a3f6cdac(entity.var_168f9987)) {
+    if (isdefined(nextpos) && distancesquared(entity.origin, nextpos) < sqr(entity.var_168f9987)) {
         return undefined;
     }
     if (isdefined(level.var_c8827250) && ![[ level.var_c8827250 ]](nextpos)) {
@@ -1084,7 +1084,7 @@ function function_b57de57a(entity) {
     entity setentitypaused(1);
     entity dontinterpolate();
     angles = entity.angles;
-    target = function_bd4a79a(entity);
+    target = get_target_ent(entity);
     if (isdefined(target) && isdefined(entity.endpoint)) {
         angles = vectortoangles(target.origin - entity.endpoint);
         var_db2921e1 = zm_utility::is_classic();
@@ -1152,9 +1152,9 @@ function function_1169b184(entity) {
 // Checksum 0xadd86546, Offset: 0x4e30
 // Size: 0x220
 function function_d58f8483(entity) {
-    target = function_bd4a79a(entity);
+    target = get_target_ent(entity);
     var_bd4e4e13 = !isplayer(target) || zm_utility::is_player_valid(target, 1);
-    if (isdefined(target) && distancesquared(entity.origin, target.origin) <= function_a3f6cdac(entity.var_724ec089) && var_bd4e4e13) {
+    if (isdefined(target) && distancesquared(entity.origin, target.origin) <= sqr(entity.var_724ec089) && var_bd4e4e13) {
         /#
             assert(isdefined(entity.var_696e2d53) && isdefined(entity.var_e3b6f14a), "<unknown string>");
         #/
@@ -1180,7 +1180,7 @@ function function_d58f8483(entity) {
 // Size: 0x114
 function function_bc2f2686(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
     mocompduration animmode("normal", 0);
-    target = function_bd4a79a(mocompduration);
+    target = get_target_ent(mocompduration);
     if (isdefined(mocompduration.attackable) && mocompduration.attackable === target) {
         mocompduration orientmode("face point", mocompduration.attackable getcentroid());
         return;
@@ -1204,7 +1204,7 @@ function function_9f3a10a4(entity, mocompanim, *mocompanimblendouttime, *mocompa
         mocompanimflag.var_78dd7804.array[0].origin = mocompanimflag.traversalstartpos;
         mocompanimflag.var_78dd7804.array[1].origin = mocompanimflag.traversalendpos;
     }
-    mocompanimflag.var_d39541c9 = {#var_c970f455:getnotetracktimes(mocompduration, "phase_end")[0], #var_deb95e3f:getnotetracktimes(mocompduration, "phase_start")[0]};
+    mocompanimflag.var_d39541c9 = {#var_deb95e3f:getnotetracktimes(mocompduration, "phase_start")[0], #var_c970f455:getnotetracktimes(mocompduration, "phase_end")[0]};
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
@@ -1330,7 +1330,7 @@ function function_33237109(entity, var_2d449c92, var_c33af938) {
 // Size: 0x76
 function function_9f1d0b0d(entity, position) {
     if (isdefined(entity.var_6ec16f15) && isdefined(entity.var_591c9ab9)) {
-        if (distancesquared(position, entity.var_6ec16f15) > function_a3f6cdac(entity.var_591c9ab9)) {
+        if (distancesquared(position, entity.var_6ec16f15) > sqr(entity.var_591c9ab9)) {
             return false;
         }
     }
@@ -1342,8 +1342,8 @@ function function_9f1d0b0d(entity, position) {
 // Checksum 0xcaba0f35, Offset: 0x5880
 // Size: 0x86
 function function_1ad43460(entity) {
-    var_1f1f9cfa = entity function_4794d6a3();
-    if (isdefined(var_1f1f9cfa.goalpos) && !function_9f1d0b0d(entity, var_1f1f9cfa.goalpos)) {
+    goal_info = entity function_4794d6a3();
+    if (isdefined(goal_info.goalpos) && !function_9f1d0b0d(entity, goal_info.goalpos)) {
         return false;
     }
     if (!btapi_locomotionbehaviorcondition(entity)) {
@@ -1358,7 +1358,7 @@ function function_1ad43460(entity) {
 // Size: 0xf4
 function function_de781d41(entity) {
     if (!isdefined(entity.var_e8a7f45d)) {
-        entity.var_e8a7f45d = {#var_a5afe5a1:gettime(), #state:#"hash_24e69bf779de4940"};
+        entity.var_e8a7f45d = {#state:#"hash_24e69bf779de4940", #var_a5afe5a1:gettime()};
     }
     if (!isdefined(entity.var_e8a7f45d.center_point)) {
         entity.var_e8a7f45d.center_point = entity.origin;
@@ -1367,9 +1367,9 @@ function function_de781d41(entity) {
         return;
     }
     entity.var_e8a7f45d.var_a5afe5a1 = gettime() + 2000;
-    var_1c6ab728 = function_598bf886(self);
-    if (isdefined(var_1c6ab728)) {
-        entity setgoal(var_1c6ab728);
+    strafe_goal = function_598bf886(self);
+    if (isdefined(strafe_goal)) {
+        entity setgoal(strafe_goal);
     }
 }
 
@@ -1395,7 +1395,7 @@ function function_598bf886(entity) {
     default:
         break;
     }
-    target = function_bd4a79a(entity);
+    target = get_target_ent(entity);
     if (nextstate != entity.var_e8a7f45d.state) {
         dirtoenemy = vectornormalize(target.origin - entity.origin);
         angles = vectortoangles(dirtoenemy);

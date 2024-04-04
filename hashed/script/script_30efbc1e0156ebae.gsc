@@ -43,8 +43,8 @@ function init() {
 function function_32d5e898(*localclientnum) {
     level.doa.var_8f6ccf63 = [];
     level.doa.var_938e4f08 = 0;
-    var_b411e9f2 = struct::get_array("zombietron_bonus_room", "targetname");
-    foreach (room in var_b411e9f2) {
+    rooms = struct::get_array("zombietron_bonus_room", "targetname");
+    foreach (room in rooms) {
         if (isdefined(room.script_parameters)) {
             args = strtok(room.script_parameters, ";");
             room.var_899e2128 = int(args[0]);

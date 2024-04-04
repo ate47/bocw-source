@@ -33,14 +33,14 @@
 // Checksum 0x935375cb, Offset: 0x518
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_fasttravel", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_fasttravel", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1240b5fb, Offset: 0x570
 // Size: 0xbc
-function private function_70a657d8() {
+function private preinit() {
     init_clientfields();
     function_44a82004("power_on");
     level flag::init(#"disable_fast_travel");
@@ -362,7 +362,7 @@ function function_b9c7ccbb(var_12230d08, var_829a20a8 = 0) {
     var_f80635c = var_12230d08.script_string;
     self.var_388ee880 = var_f80635c;
     self.var_3011d31c = 0;
-    level notify(var_f80635c + "_start", {#s_unitrigger:var_12230d08, #player:self});
+    level notify(var_f80635c + "_start", {#player:self, #s_unitrigger:var_12230d08});
     var_4500bf3f = var_12230d08.script_noteworthy;
     var_8d5d092c = var_12230d08.var_8d5d092c;
     var_12230d08.used = 1;

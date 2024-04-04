@@ -38,7 +38,7 @@ function init() {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x88adf808, Offset: 0x170
 // Size: 0x94
-function function_5af86e1d(origin, radius, seconds, color) {
+function debugcircle(origin, radius, seconds, color) {
     /#
         if (!isdefined(seconds)) {
             seconds = 1;
@@ -114,13 +114,13 @@ function debugorigin(timesec, size, color) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x996400c2, Offset: 0x608
 // Size: 0xc8
-function function_f5f0c0f8(var_4e2d590d, var_88421d4b = 0) {
+function debugmsg(txt, critical = 0) {
     /#
-        if (var_88421d4b == 0) {
-            println("<unknown string>" + var_4e2d590d);
+        if (critical == 0) {
+            println("<unknown string>" + txt);
             return;
         }
-        text = "<unknown string>" + gettime() + "<unknown string>" + var_4e2d590d;
+        text = "<unknown string>" + gettime() + "<unknown string>" + txt;
         println("<unknown string>" + text);
         level.doa.var_62f60f27[level.doa.var_62f60f27.size] = text;
     #/
@@ -130,7 +130,7 @@ function function_f5f0c0f8(var_4e2d590d, var_88421d4b = 0) {
 // Params 3, eflags: 0x0
 // Checksum 0x1eb2bccc, Offset: 0x6d8
 // Size: 0x9e
-function function_75ebaff2(var_4e2d590d, timesec, entity) {
+function function_75ebaff2(txt, timesec, entity) {
     /#
         end = gettime() + timesec * 1000;
         origin = function_23e1f90f()[0].origin;
@@ -138,7 +138,7 @@ function function_75ebaff2(var_4e2d590d, timesec, entity) {
             if (isdefined(entity)) {
                 origin = entity.origin;
             }
-            print3d(origin, var_4e2d590d);
+            print3d(origin, txt);
             waitframe(1);
         }
     #/
@@ -296,7 +296,7 @@ function function_e8f2d12c(pos, rad, height, var_f491dcf7 = 1, color = (0, 0, 0)
 // Checksum 0xc14ee271, Offset: 0x1130
 // Size: 0x6c
 function function_ee689179() {
-    self.var_633e9e48 = 1;
+    self.fading = 1;
     while (self.alpha > 0) {
         self.alpha = self.alpha - 0.01;
         waitframe(1);
@@ -316,7 +316,7 @@ function function_8f04a649() {
             var_4c600979 = 800;
             time = gettime();
             foreach (line in level.doa.var_3843f782) {
-                if (time > line.expire && !isdefined(line.var_633e9e48)) {
+                if (time > line.expire && !isdefined(line.fading)) {
                     line thread function_ee689179();
                 }
                 line.y = var_4c600979;
@@ -351,12 +351,12 @@ function function_4e3cfad(text, color = (1, 1, 1), alpha = 1, scale = 1, duratio
 // Params 7, eflags: 0x2 linked
 // Checksum 0x160d086f, Offset: 0x14b8
 // Size: 0x10c
-function function_70e370a(posx, posy, text, color = (1, 1, 1), alpha = 1, scale = 1, var_47a8a420 = 3) {
+function function_70e370a(posx, posy, text, color = (1, 1, 1), alpha = 1, scale = 1, durationsec = 3) {
     /#
         if (!isdefined(text) || text == "<unknown string>") {
             return;
         }
-        frames = int(var_47a8a420 * 20);
+        frames = int(durationsec * 20);
         if (frames < 1) {
             frames = 1;
         }

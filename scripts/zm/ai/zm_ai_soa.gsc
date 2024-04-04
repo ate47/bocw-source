@@ -26,14 +26,14 @@
 // Checksum 0x93fc66d3, Offset: 0x1b0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"zm_ai_soa", &function_70a657d8, undefined, undefined, "zm_destination_manager");
+    system::register(#"zm_ai_soa", &preinit, undefined, undefined, "zm_destination_manager");
 }
 
 // Namespace zm_ai_soa/zm_ai_soa
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc312cdd9, Offset: 0x200
 // Size: 0x14c
-function function_70a657d8() {
+function preinit() {
     spawner::add_archetype_spawn_function(#"soa", &function_49bf8a32);
     spawner::function_89a2cd87(#"soa", &function_751146f8);
     zm_round_spawning::register_archetype(#"soa", &function_76a7a9ef, &function_ecce5272, &function_e803632f, 80);
@@ -85,9 +85,9 @@ function function_9310b9ca() {
     if (isdefined(closest_player)) {
         var_debfdbf5 = 10;
         while (var_debfdbf5 > 0 && isalive(closest_player)) {
-            point = function_d040bd9(closest_player.origin, 350);
+            point = getrandomnavpoint(closest_player.origin, 350);
             if (isdefined(point) && zm_utility::check_point_in_playable_area(point)) {
-                angles = (0, function_2981bd91(closest_player.origin - point), 0);
+                angles = (0, vectortoyaw(closest_player.origin - point), 0);
                 self forceteleport(self.origin, angles);
                 self thread namespace_19c99142::function_940cd1d8();
                 waitframe(1);
@@ -157,10 +157,10 @@ function private function_dda06e36(entity) {
         break;
     case #"hash_685254f9ed0ce346":
         if (namespace_19c99142::function_ee1f25af(entity)) {
-            namespace_19c99142::function_708afe1d(entity, #"hash_4ec3ec4f06b9498f");
+            namespace_19c99142::function_708afe1d(entity, #"command_spot");
         }
         break;
-    case #"hash_4ec3ec4f06b9498f":
+    case #"command_spot":
         if (namespace_19c99142::function_89dbf30f(entity) || var_6d4f3481) {
             if (namespace_19c99142::function_47f3f527(entity)) {
                 namespace_19c99142::function_708afe1d(entity, #"hash_685254f9ed0ce346");
@@ -210,7 +210,7 @@ function private function_dda06e36(entity) {
     case #"hash_685254f9ed0ce346":
         entity.favoriteenemy = entity.var_93a62fe;
         break;
-    case #"hash_4ec3ec4f06b9498f":
+    case #"command_spot":
         entity.favoriteenemy = entity.var_93a62fe;
         break;
     case #"hash_110ee879f18b605f":
@@ -225,7 +225,7 @@ function private function_dda06e36(entity) {
             if (!isdefined(level.var_48137965)) {
                 level.var_48137965 = entity.origin;
             }
-            var_1f1f9cfa = entity function_4794d6a3();
+            goal_info = entity function_4794d6a3();
             entity setgoal(level.var_48137965);
         }
     #/
@@ -244,18 +244,18 @@ function private function_7d1d7f3f(entity) {
     var_4d21f369 = namespace_19c99142::function_2905c7db(entity);
     if (var_4d21f369 === #"attacking") {
         if (!isdefined(soa.favoriteenemy) || entity.favoriteenemy !== soa.favoriteenemy) {
-            if (!isdefined(soa.favoriteenemy) || distance2dsquared(soa.origin, entity.origin) > function_a3f6cdac(1000)) {
-                namespace_19c99142::function_c33fb385(entity, #"hash_1f50e1df5bdfdcf8");
+            if (!isdefined(soa.favoriteenemy) || distance2dsquared(soa.origin, entity.origin) > sqr(1000)) {
+                namespace_19c99142::function_c33fb385(entity, #"following");
             }
         }
     }
-    if (var_4d21f369 === #"hash_1f50e1df5bdfdcf8") {
+    if (var_4d21f369 === #"following") {
         if (isdefined(soa.favoriteenemy) && entity cansee(soa.favoriteenemy)) {
             namespace_19c99142::function_c33fb385(entity, #"attacking");
         }
     }
     var_4d21f369 = namespace_19c99142::function_2905c7db(entity);
-    if (var_4d21f369 === #"hash_1f50e1df5bdfdcf8") {
+    if (var_4d21f369 === #"following") {
         goal = namespace_19c99142::function_dd116fa9(entity);
         entity setgoal(goal);
         return;
@@ -284,15 +284,15 @@ function function_e772df94(entity, target_pos) {
         return;
     }
     if (entity flag::get(#"hash_66428e102eda132b")) {
-        return {#dist:0, #angle:0};
+        return {#angle:0, #dist:0};
     }
-    if (isdefined(soa.var_6017b1f7) && distancesquared(soa.var_6017b1f7.origin, entity.origin) > function_a3f6cdac(400)) {
+    if (isdefined(soa.var_6017b1f7) && distancesquared(soa.var_6017b1f7.origin, entity.origin) > sqr(400)) {
         return;
     }
     var_647ddc9d = isdefined(entity.var_bf2dba23) && (entity.var_bf2dba23 & 1) === 0;
     min_angle = -90 + (var_647ddc9d ? 135 : 0);
     max_angle = -45 + (var_647ddc9d ? 135 : 0);
-    angle = function_2981bd91(target_pos - self.origin) + randomfloatrange(min_angle, max_angle);
+    angle = vectortoyaw(target_pos - self.origin) + randomfloatrange(min_angle, max_angle);
     distance = randomfloatrange(128, 196);
     /#
         if (getdvarint(#"hash_20ead0e6e8e713d8", 0) > 0) {
@@ -301,7 +301,7 @@ function function_e772df94(entity, target_pos) {
             record3dtext(self getentitynumber(), goalpos + (0, 0, 80 + (self getentitynumber() - 137) * 20), (1, 0, 0));
         }
     #/
-    return {#dist:distance, #angle:angle};
+    return {#angle:angle, #dist:distance};
 }
 
 // Namespace zm_ai_soa/zm_ai_soa
@@ -353,25 +353,25 @@ function function_4a3e695a(entity, player) {
     }
     var_bac59fe3 = struct::get_array("zipline_start_zm", "script_noteworthy");
     var_bac59fe3 = function_72d3bca6(var_bac59fe3, entity.origin, undefined, 0, 1500);
-    var_79796f1c = [0:var_26352dd8.name];
+    var_79796f1c = [var_26352dd8.name];
     if (isdefined(var_26352dd8.adjacent_zones)) {
         var_79796f1c = arraycombine(var_79796f1c, getarraykeys(var_26352dd8.adjacent_zones));
     }
     foreach (current_zone in var_79796f1c) {
         foreach (zipline in var_bac59fe3) {
-            var_2f9aedc0 = isdefined(zipline.var_9a8166e0) ? zipline.var_9a8166e0 : zm_zonemgr::get_zone_from_position(zipline.origin);
-            if (!isdefined(zipline.var_9a8166e0)) {
-                zipline.var_9a8166e0 = var_2f9aedc0;
+            var_2f9aedc0 = isdefined(zipline.zone_struct) ? zipline.zone_struct : zm_zonemgr::get_zone_from_position(zipline.origin);
+            if (!isdefined(zipline.zone_struct)) {
+                zipline.zone_struct = var_2f9aedc0;
             }
             if (isdefined(var_2f9aedc0) && isdefined(zipline.target) && current_zone === var_2f9aedc0) {
                 var_b4a3c7c5 = struct::get(zipline.target, "targetname");
                 if (player.var_5da09c55 === zipline) {
-                    entity.var_ea989fd2 = {#var_b4a3c7c5:var_b4a3c7c5, #var_827228db:zipline};
+                    entity.var_ea989fd2 = {#var_827228db:zipline, #var_b4a3c7c5:var_b4a3c7c5};
                     return zipline;
                 }
-                var_fd1e4845 = isdefined(var_b4a3c7c5.var_9a8166e0) ? var_b4a3c7c5.var_9a8166e0 : zm_zonemgr::get_zone_from_position(var_b4a3c7c5.origin);
-                if (!isdefined(var_b4a3c7c5.var_9a8166e0)) {
-                    var_b4a3c7c5.var_9a8166e0 = var_fd1e4845;
+                var_fd1e4845 = isdefined(var_b4a3c7c5.zone_struct) ? var_b4a3c7c5.zone_struct : zm_zonemgr::get_zone_from_position(var_b4a3c7c5.origin);
+                if (!isdefined(var_b4a3c7c5.zone_struct)) {
+                    var_b4a3c7c5.zone_struct = var_fd1e4845;
                 }
                 var_c6bd50df = player.cached_zone;
                 if (isdefined(var_fd1e4845) && isdefined(var_c6bd50df) && var_c6bd50df === var_fd1e4845) {
@@ -379,7 +379,7 @@ function function_4a3e695a(entity, player) {
                     if (isdefined(target_zone.a_loc_types[#"zombie_location"]) && isdefined(target_zone.a_loc_types[#"zombie_location"].size <= 0)) {
                         return undefined;
                     }
-                    entity.var_ea989fd2 = {#var_b4a3c7c5:var_b4a3c7c5, #var_827228db:zipline};
+                    entity.var_ea989fd2 = {#var_827228db:zipline, #var_b4a3c7c5:var_b4a3c7c5};
                     return zipline;
                 }
             }

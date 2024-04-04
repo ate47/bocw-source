@@ -15,13 +15,13 @@
 #using script_478fc2f0b6421a32;
 #using script_12a07c0a6ec3b0e;
 #using script_5ef14bd74fdef7c6;
-#using script_17a9d06bf819b2d3;
+#using scripts\zm_common\zm_ping.csc;
 #using scripts\zm_common\zm_weapons.csc;
 #using scripts\zm_common\zm_wallbuy.csc;
 #using scripts\zm_common\zm_utility.csc;
 #using scripts\zm_common\zm_ui_inventory.csc;
 #using scripts\zm_common\zm_pack_a_punch.csc;
-#using script_2c8fd33ddb45e78b;
+#using scripts\zm_common\zm_intel.csc;
 #using script_2c5f2d4e7aa698c4;
 #using scripts\zm_common\zm.csc;
 #using scripts\core_common\load_shared.csc;
@@ -46,14 +46,14 @@ function autoexec opt_in() {
 // Checksum 0x6e36b1a6, Offset: 0x770
 // Size: 0xf04
 function event_handler[level_init] main(*eventstruct) {
-    namespace_5b1144e::function_5ae4a10c("p9_zm_gold_teleporter_b", "tungsten_portal_obj", #"hash_7df7e1092633642e", #"hash_5b20033c44a4321f", #"hash_651bd0a238dd47d5");
-    namespace_5b1144e::function_5ae4a10c("p9_zm_gold_teleporter_dmg", "tungsten_portal_obj", #"hash_7df7e1092633642e", #"hash_5b20033c44a4321f", #"hash_651bd0a238dd47d5");
-    namespace_5b1144e::function_5ae4a10c("p9_fxp_zm_portal_aether_modular_dest_amerika_to_observation_from_under", "tungsten_portal_obj", #"hash_7df7e1092633642e", #"hash_5b20033c44a4321f", #"hash_651bd0a238dd47d5");
-    namespace_5b1144e::function_5ae4a10c(undefined, "platinum_rappel_obj", #"hash_337db80f69d05548", #"hash_5b20033c44a4321f", #"hash_2f664e8e6f88f16");
-    namespace_5b1144e::function_5ae4a10c(undefined, "platinum_zipline_obj", #"hash_6d0057fa066d6733", #"hash_5b20033c44a4321f", #"hash_2f664e8e6f88f16");
-    namespace_5b1144e::function_5ae4a10c("p9_fxanim_zm_platinum_rappel_mod", "platinum_rappel_door_obj", #"hash_50ac7af2c5bc8257", #"hash_5f3108a8ed351288", #"hash_74b8c57369bfb24b");
-    namespace_5b1144e::function_5ae4a10c("p9_fxanim_zm_platinum_zipline_mod", "platinum_zipline_door_obj", #"hash_59bd96ed40a5975e", undefined, #"hash_6e7ff1a0f66deab4");
-    namespace_5b1144e::function_5ae4a10c("p8_zm_off_trap_switch_box", "tungsten_hind_trap_switch_obj", #"hash_3fe2d338feb5f7b4", #"hash_5b20033c44a4321f", #"hash_2eabbc031eb54dc2");
+    zm_ping::function_5ae4a10c("p9_zm_gold_teleporter_b", "tungsten_portal_obj", #"hash_7df7e1092633642e", #"hash_5b20033c44a4321f", #"hash_651bd0a238dd47d5");
+    zm_ping::function_5ae4a10c("p9_zm_gold_teleporter_dmg", "tungsten_portal_obj", #"hash_7df7e1092633642e", #"hash_5b20033c44a4321f", #"hash_651bd0a238dd47d5");
+    zm_ping::function_5ae4a10c("p9_fxp_zm_portal_aether_modular_dest_amerika_to_observation_from_under", "tungsten_portal_obj", #"hash_7df7e1092633642e", #"hash_5b20033c44a4321f", #"hash_651bd0a238dd47d5");
+    zm_ping::function_5ae4a10c(undefined, "platinum_rappel_obj", #"hash_337db80f69d05548", #"hash_5b20033c44a4321f", #"hash_2f664e8e6f88f16");
+    zm_ping::function_5ae4a10c(undefined, "platinum_zipline_obj", #"hash_6d0057fa066d6733", #"hash_5b20033c44a4321f", #"hash_2f664e8e6f88f16");
+    zm_ping::function_5ae4a10c("p9_fxanim_zm_platinum_rappel_mod", "platinum_rappel_door_obj", #"hash_50ac7af2c5bc8257", #"hash_5f3108a8ed351288", #"hash_74b8c57369bfb24b");
+    zm_ping::function_5ae4a10c("p9_fxanim_zm_platinum_zipline_mod", "platinum_zipline_door_obj", #"hash_59bd96ed40a5975e", undefined, #"hash_6e7ff1a0f66deab4");
+    zm_ping::function_5ae4a10c("p8_zm_off_trap_switch_box", "tungsten_hind_trap_switch_obj", #"hash_3fe2d338feb5f7b4", #"hash_5b20033c44a4321f", #"hash_2eabbc031eb54dc2");
     clientfield::register_clientuimodel("player_lives", #"zm_hud", #"player_lives", 1, 2, "int", undefined, 0, 0);
     clientfield::register("toplayer", "" + #"hash_464e0cd19b3b8c12", 1, 1, "int", &function_c2858d41, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_16e5e4d2ea0716b7", 1, 2, "int", &function_2879e60b, 0, 0);
@@ -91,7 +91,7 @@ function event_handler[level_init] main(*eventstruct) {
     level.setupcustomcharacterexerts = &setup_personality_character_exerts;
     level.var_d0ab70a2 = #"hash_415d2f1314ea548a";
     level.var_c2964bec = 400;
-    namespace_4abf1500::function_88645994(#"hash_2315f92412308649");
+    zm_intel::function_88645994(#"hash_2315f92412308649");
     load::main();
     namespace_297ae820::init();
     namespace_ff7e490::init();

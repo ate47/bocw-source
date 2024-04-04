@@ -10,14 +10,14 @@
 // Checksum 0xae1414ff, Offset: 0x98
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"globallogic_vehicle", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"globallogic_vehicle", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace vehicles/globallogic_vehicle
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0xe0
 // Size: 0x4
-function private function_70a657d8() {
+function private preinit() {
     
 }
 

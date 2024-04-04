@@ -21,14 +21,14 @@
 // Checksum 0x4e2d4e74, Offset: 0x120
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_weapon_rotation", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_weapon_rotation", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_weapon_rotation/zm_trial_weapon_rotation
 // Params 0, eflags: 0x4
 // Checksum 0x8cb308a2, Offset: 0x168
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

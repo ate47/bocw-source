@@ -8,7 +8,7 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0x61475db6, Offset: 0xf8
 // Size: 0x2c
-function function_70a657d8() {
+function preinit() {
     /#
         level.var_51a0bf0 = [];
         level thread function_7e6af638();
@@ -133,7 +133,7 @@ function think() {
         profileNamedStop();
         return;
     }
-    if (is_true(self.bot.var_6bea1d82) || self.bot.flashed || self function_5673fb61() || self function_2b063e16() || self isplayinganimscripted() || self arecontrolsfrozen() || self function_5972c3cf()) {
+    if (is_true(self.bot.var_6bea1d82) || self.bot.flashed || self isinexecutionvictim() || self isinexecutionattack() || self isplayinganimscripted() || self arecontrolsfrozen() || self function_5972c3cf()) {
         if (!is_true(info.var_9e404264)) {
             self set_position(self.origin, #"hold");
         }
@@ -412,17 +412,17 @@ function private function_7d01d83b(info) {
 // Size: 0x1b8
 function private function_7b48fb52(info) {
     points = undefined;
-    var_27c6a11e = self.enemy;
-    if (!issentient(var_27c6a11e)) {
-        var_27c6a11e = var_27c6a11e getcentroid();
+    enemytarget = self.enemy;
+    if (!issentient(enemytarget)) {
+        enemytarget = enemytarget getcentroid();
     }
     if (isdefined(info.regionid)) {
-        points = tacticalquery(#"hash_74a4ccc745696184", info.regionid, self, var_27c6a11e);
+        points = tacticalquery(#"hash_74a4ccc745696184", info.regionid, self, enemytarget);
     } else if (isdefined(info.goalvolume)) {
-        points = tacticalquery(#"hash_187dca4a1ed267ab", info.goalvolume, self, var_27c6a11e);
+        points = tacticalquery(#"hash_187dca4a1ed267ab", info.goalvolume, self, enemytarget);
     } else {
         center = ai::t_cylinder(info.goalpos, info.goalradius, info.goalheight);
-        points = tacticalquery(#"hash_187dca4a1ed267ab", center, self, var_27c6a11e);
+        points = tacticalquery(#"hash_187dca4a1ed267ab", center, self, enemytarget);
     }
     /#
         if (points.size > 0) {
@@ -503,7 +503,7 @@ function private function_7e6af638() {
 function private function_8a8380d0(end) {
     /#
         failures = level.var_51a0bf0;
-        failures[failures.size] = {#end:end, #start:self.origin};
+        failures[failures.size] = {#start:self.origin, #end:end};
         if (failures.size > 100) {
             arrayremoveindex(failures, 0);
         }

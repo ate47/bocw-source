@@ -27,10 +27,10 @@ function init() {
     namespace_cf4aa5f0::function_6dbaba52("bunny_club_window_light_on_4", "lgt_env_bunny_club_window_4", undefined, undefined, undefined);
     namespace_cf4aa5f0::function_6dbaba52("bunny_club_window_light_on_5", "lgt_env_bunny_club_window_5", undefined, undefined, undefined);
     namespace_cf4aa5f0::function_6dbaba52("bunny_club_window_light_on_6", "lgt_env_bunny_club_window_6", undefined, undefined, undefined);
-    namespace_cf4aa5f0::function_6dbaba52("bunny_battle_light_off", undefined, undefined, undefined, [4:"lgt_bny_club_slow", 3:"lgt_bny_club_env", 2:"lgt_bny_club_ball", 1:"lgt_bny_club_booth", 0:"lgt_bny_club_stage"]);
-    namespace_cf4aa5f0::function_6dbaba52("bunny_battle_light_booth", [2:"lgt_bny_club_slow", 1:"lgt_bny_club_env", 0:"lgt_bny_club_booth"], undefined, "lgt_bny_club_ball", undefined);
-    namespace_cf4aa5f0::function_6dbaba52("bunny_battle_light_ball", "lgt_bny_club_ball", undefined, [1:"lgt_bny_club_slow", 0:"lgt_bny_club_booth"], undefined);
-    namespace_cf4aa5f0::function_6dbaba52("bunny_battle_light_stage", [2:"lgt_bny_club_slow", 1:"lgt_bny_club_env", 0:"lgt_bny_club_stage"], undefined, [1:"lgt_bny_club_booth", 0:"lgt_bny_club_ball"], undefined);
+    namespace_cf4aa5f0::function_6dbaba52("bunny_battle_light_off", undefined, undefined, undefined, ["lgt_bny_club_stage", "lgt_bny_club_booth", "lgt_bny_club_ball", "lgt_bny_club_env", "lgt_bny_club_slow"]);
+    namespace_cf4aa5f0::function_6dbaba52("bunny_battle_light_booth", ["lgt_bny_club_booth", "lgt_bny_club_env", "lgt_bny_club_slow"], undefined, "lgt_bny_club_ball", undefined);
+    namespace_cf4aa5f0::function_6dbaba52("bunny_battle_light_ball", "lgt_bny_club_ball", undefined, ["lgt_bny_club_booth", "lgt_bny_club_slow"], undefined);
+    namespace_cf4aa5f0::function_6dbaba52("bunny_battle_light_stage", ["lgt_bny_club_stage", "lgt_bny_club_env", "lgt_bny_club_slow"], undefined, ["lgt_bny_club_ball", "lgt_bny_club_booth"], undefined);
     namespace_cf4aa5f0::function_6dbaba52("failed_open_power_light_on", "lgt_env_fail_power_on", undefined, undefined, undefined);
     namespace_cf4aa5f0::function_6dbaba52("failed_open_power_light_off", undefined, undefined, "lgt_env_fail_power_on", undefined);
     namespace_cf4aa5f0::function_6dbaba52("lgt_env_fx_moths_on", var_f81ee838, undefined, undefined, undefined);

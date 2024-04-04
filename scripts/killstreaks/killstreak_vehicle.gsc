@@ -426,11 +426,11 @@ function watch_shutdown(driver, *killstreaktype) {
         vehicle notify(#"remote_weapon_shutdown");
         vehicle function_11fa7e00(bundle.var_d3413870, vehicle.originalteam, vehicle.killstreak_id, 0);
         vehicle function_1f46c433();
-        vehicle function_cb48cddd();
+        vehicle deletedelay();
     } else if (level.gameended === 1) {
         vehicle function_11fa7e00(bundle.var_d3413870, vehicle.originalteam, vehicle.killstreak_id);
         if (isdefined(vehicle)) {
-            vehicle function_cb48cddd();
+            vehicle deletedelay();
         }
     } else {
         if (isdefined(vehicle.var_c1524340)) {
@@ -780,8 +780,8 @@ function function_b4682bd6(origin, *angles) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xabf5a172, Offset: 0x2de0
 // Size: 0xfa
-function function_d4896942(bundle, killstreakname, var_9be50a25) {
-    self endon(#"death", var_9be50a25);
+function function_d4896942(bundle, killstreakname, customendon) {
+    self endon(#"death", customendon);
     self.var_7132bbb7 = undefined;
     while (true) {
         self waittill(#"flare_deployed");
@@ -798,8 +798,8 @@ function function_d4896942(bundle, killstreakname, var_9be50a25) {
 // Params 5, eflags: 0x2 linked
 // Checksum 0x339ed086, Offset: 0x2ee8
 // Size: 0xd0
-function function_31f9c728(bundle, killstreakname, var_61bbac7a, var_2f984f68, var_9be50a25) {
-    self endon(#"death", var_9be50a25);
+function function_31f9c728(bundle, killstreakname, var_61bbac7a, var_2f984f68, customendon) {
+    self endon(#"death", customendon);
     while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"stinger_fired_at_me");
@@ -832,8 +832,8 @@ function function_849819e9(missile, bundle, killstreakname, var_61bbac7a) {
     while (isdefined(self.owner) && self.owner util::function_63d27d4e(killstreakname)) {
         dist = distance(missile.origin, self.origin);
         velocity = missile getvelocity();
-        var_d794a748 = vectornormalize(velocity);
-        missile_speed = vectordot(var_d794a748, velocity);
+        missile_dir = vectornormalize(velocity);
+        missile_speed = vectordot(missile_dir, velocity);
         if (missile_speed > 0) {
             if (dist < missile_speed * var_d1fb4ef3) {
                 self playsoundtoplayer(var_61bbac7a, self.owner);

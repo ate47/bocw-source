@@ -18,14 +18,14 @@
 // Checksum 0x9ec49c01, Offset: 0x108
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_775f993ac537d970", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_775f993ac537d970", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_b61a349a/namespace_b61a349a
 // Params 0, eflags: 0x6 linked
 // Checksum 0xaefc58f0, Offset: 0x160
 // Size: 0x3c
-function private function_70a657d8() {
+function private preinit() {
     /#
         level.var_6aa829ef = &function_6aa829ef;
     #/
@@ -327,7 +327,7 @@ function function_b3496fde(*inflictor, attacker, damage, *flags, meansofdeath, w
             case 1:
             case 2:
             case 3:
-                if (self.var_6f84b820 === #"special" || self.var_6f84b820 === #"hash_72d4f2ad2e333eb4") {
+                if (self.var_6f84b820 === #"special" || self.var_6f84b820 === #"elite") {
                     n_damage = function_1fd0807c(0.1, n_base_damage);
                     shitloc function_8a6ccd14(surfacetype, n_tier, n_damage);
                     return n_damage;
@@ -335,7 +335,7 @@ function function_b3496fde(*inflictor, attacker, damage, *flags, meansofdeath, w
                 break;
             case 4:
             case 5:
-                if (self.var_6f84b820 === #"special" || self.var_6f84b820 === #"hash_72d4f2ad2e333eb4") {
+                if (self.var_6f84b820 === #"special" || self.var_6f84b820 === #"elite") {
                     n_damage = function_1fd0807c(0.25, n_base_damage);
                     shitloc function_8a6ccd14(surfacetype, n_tier, n_damage);
                     return n_damage;
@@ -511,7 +511,7 @@ function function_8a6ccd14(weapon, n_tier, var_570564b8 = 0, var_497316dc = 0) {
         if (!isdefined(n_tier)) {
             return;
         }
-        var_5e90992c = {#armor_damage:int(var_497316dc), #var_98decf84:int(var_570564b8), #tier:n_tier, #weapon:weapon.name};
+        var_5e90992c = {#weapon:weapon.name, #tier:n_tier, #bonus_damage:int(var_570564b8), #armor_damage:int(var_497316dc)};
         self function_678f57c8(#"hash_5384f0bdf7f1eb1c", var_5e90992c);
     }
 }

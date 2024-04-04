@@ -11,14 +11,14 @@
 // Checksum 0x8d63a055, Offset: 0xc8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"turret", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"turret", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace turret/turret_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0xe97704ba, Offset: 0x110
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("vehicle", "toggle_lensflare", 1, 1, "int", &field_toggle_lensflare, 0, 0);
 }
 

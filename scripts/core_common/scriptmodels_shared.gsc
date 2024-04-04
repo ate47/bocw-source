@@ -9,14 +9,14 @@
 // Checksum 0x43c3f332, Offset: 0xc0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"scriptmodels", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"scriptmodels", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace scriptmodels/scriptmodels_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1d828a56, Offset: 0x108
 // Size: 0xa8
-function private function_70a657d8() {
+function private preinit() {
     a_script_models = getentarraybytype(6);
     foreach (model in a_script_models) {
         function_9abee270(model);

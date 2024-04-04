@@ -303,8 +303,8 @@ function private function_a021023d(rotator, angle, radius, var_b468418b, var_93e
     anglevector = vectornormalize((xoffset, yoffset, 0));
     anglevector = anglevector * radius;
     anglevector = (anglevector[0], anglevector[1], 0);
-    var_24af7a37 = 90 * (var_93e44bb3 > 0 ? -1 : 1);
-    self linkto(rotator, "tag_origin", anglevector, (0, angle + var_24af7a37, roll));
+    angle_offset = 90 * (var_93e44bb3 > 0 ? 1 : -1);
+    self linkto(rotator, "tag_origin", anglevector, (0, angle + angle_offset, roll));
 }
 
 // Namespace killstreaks/killstreaks_util
@@ -353,7 +353,7 @@ function function_f3875fb0(var_d22c85cf, height_offset, var_b6417305, var_93e44b
 function function_1ddb2653(seconds, direction) {
     self endon(#"death");
     for (;;) {
-        self rotateyaw(360 * (direction > 0 ? -1 : 1), seconds);
+        self rotateyaw(360 * (direction > 0 ? 1 : -1), seconds);
         wait(seconds);
     }
 }
@@ -469,7 +469,7 @@ function function_eb52ba7(killstreaktype, team, killstreak_id) {
     if (isdefined(self.var_9fa3bd36[killstreak_id]) || isdefined(self.var_63fa6458[var_88dc634d])) {
         return;
     }
-    session = {#var_6e1d768e:#"", #var_e72137e8:#"hash_49690d3b97372410", #kills:0, #team:team, #endtime:0, #starttime:function_f8d53445(), #name:var_88dc634d, #spawnid:getplayerspawnid(self)};
+    session = {#spawnid:getplayerspawnid(self), #name:var_88dc634d, #starttime:function_f8d53445(), #endtime:0, #team:team, #kills:0, #var_e72137e8:#"hash_49690d3b97372410", #var_6e1d768e:#""};
     weapon = get_killstreak_weapon(killstreaktype);
     if (weapon.iscarriedkillstreak === 1) {
         if (!isdefined(self.var_63fa6458)) {
@@ -495,7 +495,7 @@ function function_fda235cf(killstreaktype, killstreak_id, var_e72137e8) {
     } else {
         var_4fbb4b53 = &function_79e49b15;
     }
-    params = {#var_e72137e8:var_e72137e8, #killstreak_id:killstreak_id, #killstreaktype:var_571c684};
+    params = {#killstreaktype:var_571c684, #killstreak_id:killstreak_id, #var_e72137e8:var_e72137e8};
     [[ var_4fbb4b53 ]](params);
 }
 

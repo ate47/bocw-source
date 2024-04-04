@@ -442,9 +442,9 @@ function function_23901270(localclientnum, ramptime, var_cd141ca2, var_9f153e5b,
         }
         var_a2f77259 = 1 - percent;
         var_3a331087 = var_a3c5be40 * percent + var_9f153e5b * var_a2f77259;
-        var_90dafe5 = var_484d4e48 && var_3a331087 > 0 && var_9cdbd967[#"opacity"] == 0;
+        send_notify = var_484d4e48 && var_3a331087 > 0 && var_9cdbd967[#"opacity"] == 0;
         var_9cdbd967[#"opacity"] = var_3a331087;
-        if (var_90dafe5) {
+        if (send_notify) {
             level notify(#"splatters_active");
             var_e04a3690 = 1;
         }
@@ -494,10 +494,10 @@ function function_90064049(localclientnum, ramptime, var_cd141ca2, var_9f153e5b,
         var_a2f77259 = 1 - percent;
         var_3a331087 = var_a3c5be40 * percent + var_9f153e5b * var_a2f77259;
         var_85322688 = var_b19159d7 * percent + var_1f06be44 * var_a2f77259;
-        var_90dafe5 = var_484d4e48 && (var_3a331087 > 0 && var_9cdbd967[#"opacity"] == 0 || var_85322688 > 0 && var_9cdbd967[#"blur amount"] == 0);
+        send_notify = var_484d4e48 && (var_3a331087 > 0 && var_9cdbd967[#"opacity"] == 0 || var_85322688 > 0 && var_9cdbd967[#"blur amount"] == 0);
         var_9cdbd967[#"opacity"] = var_3a331087;
         var_9cdbd967[#"blur amount"] = var_85322688;
-        if (var_90dafe5) {
+        if (send_notify) {
             level notify(#"splatters_active");
             var_e04a3690 = 1;
         }
@@ -805,7 +805,7 @@ function private function_9a8dc0ec(localclientnum, playerhealth, priorplayerheal
     }
     self update_lightbar(localclientnum, new_blood_stage, prior_blood_stage);
     if (new_blood_stage != prior_blood_stage || forceupdate) {
-        ramptime = prior_blood_stage < new_blood_stage ? level.blood.var_49774f1 : level.blood.var_587ce5b0;
+        ramptime = prior_blood_stage < new_blood_stage ? level.blood.var_587ce5b0 : level.blood.var_49774f1;
         self thread function_8fe966f4(localclientnum, prior_blood_stage, new_blood_stage, ramptime, self.pstfx_blood);
         if (is_true(self.blood_enabled)) {
             self function_116b95e5(self.pstfx_blood, #"hash_3886e6a5c0c3df4c", level.blood.blood_boost[new_blood_stage]);

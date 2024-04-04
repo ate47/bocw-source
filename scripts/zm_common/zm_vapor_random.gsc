@@ -36,14 +36,14 @@
 // Checksum 0x9e48a7b0, Offset: 0x258
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"zm_vapor_random", &function_70a657d8, undefined, undefined, #"load");
+    system::register(#"zm_vapor_random", &preinit, undefined, undefined, #"load");
 }
 
 // Namespace zm_vapor_random/zm_vapor_random
 // Params 0, eflags: 0x4
 // Checksum 0x69ba4a98, Offset: 0x2a8
 // Size: 0x64
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "random_vapor_altar_available", 1, 1, "int");
     /#
         level thread function_5d55ce5f();

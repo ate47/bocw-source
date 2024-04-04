@@ -9,7 +9,7 @@
 // Size: 0x3c
 function private autoexec __init__system__() {
     /#
-        register(#"radiant_live_update", &function_70a657d8, undefined, undefined, undefined);
+        register(#"radiant_live_update", &preinit, undefined, undefined, undefined);
     #/
 }
 
@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 // Params 0, eflags: 0x4
 // Checksum 0x3c153ba0, Offset: 0xd0
 // Size: 0x1c
-function private function_70a657d8() {
+function private preinit() {
     /#
         thread scriptstruct_debug_render();
     #/

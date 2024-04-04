@@ -93,7 +93,7 @@ function function_e71841a() {
     }
     var_c9bdb63f = self namespace_f27a9d0d::function_cee62dac("type", "walldecor");
     foreach (var_f6198c5b in var_c9bdb63f) {
-        self.walldecor[self.walldecor.size] = namespace_c004634e::function_6a09928b(var_f6198c5b, #"hash_5e76c2f62c1e1615");
+        self.walldecor[self.walldecor.size] = namespace_c004634e::function_6a09928b(var_f6198c5b, #"wall");
     }
 }
 

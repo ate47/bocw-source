@@ -11,14 +11,14 @@
 // Checksum 0x45295b7f, Offset: 0x110
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"perks", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"perks", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace perks/perks
 // Params 0, eflags: 0x6 linked
 // Checksum 0x101bb13a, Offset: 0x158
 // Size: 0x84
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("allplayers", "flying", 1, 1, "int");
     callback::on_spawned(&on_player_spawned);
     callback::on_loadout(&on_loadout);

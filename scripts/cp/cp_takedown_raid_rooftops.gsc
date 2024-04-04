@@ -12,7 +12,7 @@
 #using scripts\cp\cp_takedown_raid_bar.gsc;
 #using scripts\cp_common\util.gsc;
 #using script_1478fbd17fe393cf;
-#using script_263b7f2982258785;
+#using scripts\cp_common\dialogue.gsc;
 #using scripts\core_common\struct.gsc;
 #using scripts\cp_common\objectives.gsc;
 #using scripts\core_common\gameobjects_shared.gsc;
@@ -99,7 +99,7 @@ function main(var_d3440450, var_50cc0d4f) {
     level thread function_fb0dffdf();
     level thread function_92d25894();
     thread namespace_a052577e::function_38a8c5b0();
-    self util::function_3b6593e4(0.85, 1);
+    self util::blend_movespeedscale(0.85, 1);
     level flag::wait_till("raid_roof_complete");
     if (isdefined(var_d3440450)) {
         skipto::function_4e3ab877(var_d3440450);
@@ -120,10 +120,10 @@ function function_f7dbd7e1() {
     player playgestureviewmodel(#"hash_320d152af1fadd63", undefined, 1, 1, 0, 1, 1);
     wait(1.25);
     player stopanimscripted();
-    var_9f4d9e27 = [0:hint_tutorial::function_f0104b5([1:#"hash_46b1d4bb698b8298", 0:#"hash_5f8c7ca0a178e810"])];
+    var_9f4d9e27 = [hint_tutorial::function_f0104b5([#"hash_5f8c7ca0a178e810", #"hash_46b1d4bb698b8298"])];
     hint_tutorial::function_4c2d4fc4(#"hash_e67c810a4c45083", #"hash_4f8907e75463e084", undefined, undefined, undefined, undefined, undefined, 1, var_9f4d9e27);
     hint_tutorial::pause("+melee_zoom;+melee", #"hash_2b84cc72687b168a");
-    player val::function_e681e68e(#"hash_145f61f7ef6685a5");
+    player val::reset_all(#"hash_145f61f7ef6685a5");
     victim = player.takedown.var_b020d18d[0];
     if (isdefined(victim)) {
         victim.takedamage = 1;
@@ -201,7 +201,7 @@ function function_fb0dffdf() {
     level flag::wait_till("flag_enemy_before_rooftop");
     ai_spawned = spawner::simple_spawn_single("dude_before_roof");
     ai_spawned.var_c681e4c1 = 1;
-    var_23811abd = snd::play("vox_cp_tdwn_04200_irg2_fuckingamerican_9b", [1:"j_head", 0:ai_spawned]);
+    var_23811abd = snd::play("vox_cp_tdwn_04200_irg2_fuckingamerican_9b", [ai_spawned, "j_head"]);
     slide_guy1 = getspawnerarray("slide_guy1", "script_noteworthy");
     array::run_all(slide_guy1, &spawner::add_spawn_function, &function_4ae05934);
     slide_guy2 = getspawnerarray("slide_guy2", "script_noteworthy");
@@ -213,11 +213,11 @@ function function_fb0dffdf() {
     level flag::wait_till("flag_start_rooftop_combat");
     level.adler ai::set_behavior_attribute("demeanor", "combat");
     level.woods ai::set_behavior_attribute("demeanor", "combat");
-    var_8c129dc2 = function_baa0011d("initial_rooftop_guys");
+    var_8c129dc2 = array_spawn_targetname("initial_rooftop_guys");
     level thread function_8ddafa22(var_8c129dc2, "trig_rooftop_combat", undefined);
     level flag::wait_till("flag_rooftop_combat_wave2");
     savegame::checkpoint_save(0);
-    var_3d1b4310 = function_baa0011d("rootop_ledge_guys");
+    var_3d1b4310 = array_spawn_targetname("rootop_ledge_guys");
     foreach (guy in var_3d1b4310) {
         guy.ignoresuppression = 1;
     }
@@ -225,7 +225,7 @@ function function_fb0dffdf() {
     level flag::wait_till("flag_rooftop_combat_wave3");
     savegame::checkpoint_save(0);
     wait(2);
-    var_158599d4 = function_baa0011d("rootop_wave3_guys");
+    var_158599d4 = array_spawn_targetname("rootop_wave3_guys");
     foreach (guy in var_158599d4) {
         guy.ignoresuppression = 1;
     }
@@ -234,7 +234,7 @@ function function_fb0dffdf() {
     level thread function_29f2624a("rooftop_wave3b", "trig_colors_roof3b", undefined, 1);
     level flag::wait_till("flag_colors_roof3b");
     wait(2);
-    var_70b55036 = function_baa0011d("rootop_wave4_guys");
+    var_70b55036 = array_spawn_targetname("rootop_wave4_guys");
     foreach (guy in var_70b55036) {
         guy.ignoresuppression = 1;
     }
@@ -255,7 +255,7 @@ function function_4ae05934() {
     self.skipdeath = 1;
     self.skipdeathanim = 1;
     self.noragdoll = 1;
-    var_ea0ede96 = [2:"scene_t9_tkd_hit2_roof_chase_enemy01_slide_death_03", 1:"scene_t9_tkd_hit2_roof_chase_enemy01_slide_death_02", 0:"scene_t9_tkd_hit2_roof_chase_enemy01_slide_death_01"];
+    var_ea0ede96 = ["scene_t9_tkd_hit2_roof_chase_enemy01_slide_death_01", "scene_t9_tkd_hit2_roof_chase_enemy01_slide_death_02", "scene_t9_tkd_hit2_roof_chase_enemy01_slide_death_03"];
     level thread scene::play("scene_tkd_hit2_roof_chase_enemy_spawn_01", "Shot 1");
     self thread function_9bfd5b8f("vol_first_roof");
     self waittill(#"damage");
@@ -282,7 +282,7 @@ function function_5d9afea9() {
     self.skipdeath = 1;
     self.skipdeathanim = 1;
     self.noragdoll = 1;
-    var_ea0ede96 = [2:"scene_t9_tkd_hit2_roof_chase_enemy02_slide_death_03", 1:"scene_t9_tkd_hit2_roof_chase_enemy02_slide_death_02", 0:"scene_t9_tkd_hit2_roof_chase_enemy02_slide_death_01"];
+    var_ea0ede96 = ["scene_t9_tkd_hit2_roof_chase_enemy02_slide_death_01", "scene_t9_tkd_hit2_roof_chase_enemy02_slide_death_02", "scene_t9_tkd_hit2_roof_chase_enemy02_slide_death_03"];
     level thread scene::play("scene_tkd_hit2_roof_chase_enemy_spawn_02", "Shot 1");
     self thread function_9bfd5b8f("vol_last_roof");
     self waittill(#"damage");
@@ -334,7 +334,7 @@ function function_90288964() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x8c7edb02, Offset: 0x2460
 // Size: 0x5a
-function function_baa0011d(targetname) {
+function array_spawn_targetname(targetname) {
     spawners = getspawnerarray(targetname, "targetname");
     ai = spawner::simple_spawn(spawners);
     return ai;
@@ -348,23 +348,23 @@ function function_a1d9cae0() {
     self thread namespace_b100dd86::function_a0f1fa27();
     level notify(#"hash_530a04ce72c2c9");
     objectives::follow("obj_takedown_qasim", self, undefined, undefined, 0, #"hash_29f1e9a2d045faaf");
-    self val::set(#"hash_97fd9bb5b75dbc6", "ignoreall", 1);
-    self val::set(#"hash_97fd9bb5b75dbc6", "ignoreme", 1);
+    self val::set(#"qasim", "ignoreall", 1);
+    self val::set(#"qasim", "ignoreme", 1);
     self.forcesprint = 1;
     self disableaimassist();
     lmg = getweapon(#"lmg_light_t9");
     self setweapon(lmg);
-    self val::function_e681e68e(#"hash_97fd9bb5b75dbc6");
+    self val::reset_all(#"qasim");
     self.script_accuracy = 0.2;
     level flag::wait_till("flag_qasim_flees_last_roof");
     self val::set(#"hash_1a1aed5c6944bf9c", "ignoreall", 1);
     self val::set(#"hash_1a1aed5c6944bf9c", "ignoreme", 1);
     self.forcesprint = 1;
     level thread scene::play("scene_tkd_hit2_qasim_vault", "Vault");
-    self waittill(#"hash_49e6b2675defe779");
+    self waittill(#"end_vault");
     objectives::remove("obj_takedown_qasim");
     self notify(#"hash_637416a1c8f37fe3");
-    self function_cb48cddd();
+    self deletedelay();
     level thread namespace_b100dd86::function_a3c6d04c();
     level thread namespace_b100dd86::function_c212022b(180);
 }
@@ -424,15 +424,15 @@ function function_29f2624a(aigroup, trigger, var_cc856f8d, var_c550e48f, delay) 
 function function_92d25894() {
     level thread function_6d063272();
     level flag::wait_till("flag_qasim_is_fast");
-    level.adler namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_theresqasim_a2");
+    level.adler dialogue::queue("vox_cp_tdwn_03800_adlr_theresqasim_a2");
     wait(1);
-    level.adler namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_movequicklyweca_64");
+    level.adler dialogue::queue("vox_cp_tdwn_03800_adlr_movequicklyweca_64");
     level flag::wait_till("flag_rooftop_combat_wave3");
     wait(5);
     level flag::wait_till("flag_colors_roof3b");
     wait(7);
-    level.adler namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_watchitwoodswen_b4");
-    level.woods namespace_a635adb1::queue("vox_cp_tdwn_03800_wood_youworrytoomuch_0d");
+    level.adler dialogue::queue("vox_cp_tdwn_03800_adlr_watchitwoodswen_b4");
+    level.woods dialogue::queue("vox_cp_tdwn_03800_wood_youworrytoomuch_0d");
 }
 
 // Namespace tkdn_raid_roof/namespace_ea349ecc
@@ -443,15 +443,15 @@ function function_6d063272() {
     level endon(#"hash_5f84172c70d1eb4c");
     while (true) {
         wait(randomintrange(8, 10));
-        level.adler namespace_a635adb1::queue("vox_cp_tdwn_04100_adlr_movemove_9d");
+        level.adler dialogue::queue("vox_cp_tdwn_04100_adlr_movemove_9d");
         wait(randomintrange(8, 10));
-        level.adler namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_gogo_f9");
+        level.adler dialogue::queue("vox_cp_tdwn_03800_adlr_gogo_f9");
         wait(randomintrange(11, 14));
-        level.adler namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_hurryup_40");
+        level.adler dialogue::queue("vox_cp_tdwn_03800_adlr_hurryup_40");
         wait(randomintrange(8, 10));
-        level.adler namespace_a635adb1::queue("vox_cp_tdwn_04100_adlr_letsgocomeon_86");
+        level.adler dialogue::queue("vox_cp_tdwn_04100_adlr_letsgocomeon_86");
         wait(randomintrange(11, 14));
-        level.adler namespace_a635adb1::queue("vox_cp_tdwn_04100_adlr_qasimcantescape_7b");
+        level.adler dialogue::queue("vox_cp_tdwn_04100_adlr_qasimcantescape_7b");
         wait(randomintrange(8, 10));
     }
 }

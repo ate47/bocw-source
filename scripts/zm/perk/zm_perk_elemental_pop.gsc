@@ -24,14 +24,14 @@
 // Checksum 0x20cf8b4, Offset: 0x360
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"zm_perk_elemental_pop", &function_70a657d8, undefined, undefined, #"hash_2d064899850813e2");
+    system::register(#"zm_perk_elemental_pop", &preinit, undefined, undefined, #"hash_2d064899850813e2");
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
 // Params 0, eflags: 0x6 linked
 // Checksum 0xed380ff5, Offset: 0x3b0
 // Size: 0x14
-function private function_70a657d8() {
+function private preinit() {
     function_27473e44();
 }
 
@@ -102,7 +102,7 @@ function perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision)
     if (isdefined(collision)) {
         collision.script_string = "elemental_perk";
     }
-    bump_trigger.var_3ee46cbd = &function_290b5aa8;
+    bump_trigger.use_func = &function_290b5aa8;
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
@@ -113,7 +113,7 @@ function function_abddd809(inflictor, attacker, damage, flags, meansofdeath, wea
     if (weapon === "MOD_AAT") {
         return flags;
     }
-    if (isplayer(damage) && !(self.var_6f84b820 === #"hash_72d4f2ad2e333eb4") && !(self.var_6f84b820 === #"boss")) {
+    if (isplayer(damage) && !(self.var_6f84b820 === #"elite") && !(self.var_6f84b820 === #"boss")) {
         if (damage namespace_e86ffa8::function_cd6787b()) {
             if (isvehicle(attacker) && !damage namespace_e86ffa8::function_cd6787b(1)) {
                 return flags;
@@ -122,26 +122,26 @@ function function_abddd809(inflictor, attacker, damage, flags, meansofdeath, wea
                 damage.var_4caed594 = 0;
             }
             if (math::cointoss(5) && flags > 1 && damage is_valid_weapon(var_fd90b0bb) && damage.var_4caed594 + int(15 * 1000) < gettime()) {
-                var_43cad97a = flags > self.health;
+                b_death = flags > self.health;
                 str_name = damage.aat[aat::function_702fb333(var_fd90b0bb)];
-                var_3d46284b = getarraykeys(level.var_e44e90d6);
-                arrayremovevalue(var_3d46284b, "ammomod_electriccherry");
-                var_1bfeafad = array::random(var_3d46284b);
+                a_aat = getarraykeys(level.var_e44e90d6);
+                arrayremovevalue(a_aat, "ammomod_electriccherry");
+                str_choice = array::random(a_aat);
                 damage.var_2defbefd = 1;
                 var_1799ae59 = getweapon(#"hash_2b2738038b4c33be");
                 var_bebe15e1 = 0;
                 weapon = "MOD_PISTOL_BULLET";
                 if (damage namespace_e86ffa8::function_cd6787b(3)) {
-                    n_tier = damage zm_aat::function_14ccd92a(var_1bfeafad);
+                    n_tier = damage zm_aat::function_14ccd92a(str_choice);
                     if (!isdefined(n_tier)) {
                         n_tier = 0;
                     }
-                    var_1bfeafad = n_tier < 0 ? var_1bfeafad + "_" + n_tier : var_1bfeafad;
+                    str_choice = n_tier < 0 ? str_choice : str_choice + "_" + n_tier;
                 }
-                damage.aat[var_1799ae59] = var_1bfeafad;
+                damage.aat[var_1799ae59] = str_choice;
                 if (self.var_6f84b820 === #"normal" || self.var_6f84b820 === #"special" && isdefined(n_tier) && n_tier > 3) {
                     damage clientfield::increment_to_player("" + #"hash_12c6e46c315cd43b", 1);
-                    aat::aat_response(var_43cad97a, attacker, damage, flags, meansofdeath, weapon, var_1799ae59, var_bebe15e1, vpoint, vdir, shitloc, psoffsettime, boneindex, surfacetype);
+                    aat::aat_response(b_death, attacker, damage, flags, meansofdeath, weapon, var_1799ae59, var_bebe15e1, vpoint, vdir, shitloc, psoffsettime, boneindex, surfacetype);
                     damage.var_4caed594 = gettime();
                 }
                 damage thread function_751b9d86(var_1799ae59);
@@ -397,7 +397,7 @@ function function_c262b70e(player) {
         #/
         return;
     }
-    if (self.var_6f84b820 === #"special" || self.var_6f84b820 === #"hash_72d4f2ad2e333eb4" || self.var_6f84b820 === #"boss") {
+    if (self.var_6f84b820 === #"special" || self.var_6f84b820 === #"elite" || self.var_6f84b820 === #"boss") {
         return;
     }
     self ai::stun(4);

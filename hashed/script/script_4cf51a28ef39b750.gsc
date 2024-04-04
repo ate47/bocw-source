@@ -21,14 +21,14 @@
 // Checksum 0x9db6497f, Offset: 0x248
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_3c412421c33b7764", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_3c412421c33b7764", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_9d3ef6c5/namespace_9d3ef6c5
 // Params 0, eflags: 0x2 linked
 // Checksum 0xabe341f2, Offset: 0x290
 // Size: 0x17c
-function function_70a657d8() {
+function preinit() {
     level.var_7ac95f85 = 1;
     level.var_a5a050c1 = 30;
     level.var_ce0f67cf = 5;
@@ -272,9 +272,9 @@ function function_12f1a9dd() {
         level.var_1cffd28c = 0;
     }
     if (level.var_5a953d3d === 1) {
-        var_2bebcf7a = getent("script_truck_collision", "targetname");
-        var_2bebcf7a disconnectpaths();
-        var_2bebcf7a solid();
+        truckcollision = getent("script_truck_collision", "targetname");
+        truckcollision disconnectpaths();
+        truckcollision solid();
         level scene::play(#"hash_3b239490a05b582e", "drop");
         level.var_5a953d3d = 0;
     }

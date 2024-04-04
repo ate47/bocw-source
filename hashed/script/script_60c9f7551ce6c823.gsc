@@ -49,14 +49,14 @@ function function_215e1efb() {
     self.var_9760b617 = 1;
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
         arrayremovevalue(level.doa.var_7a2db350, self);
-        namespace_1e25ad94::function_f5f0c0f8("Deleting Pole trap permenently at:" + self.origin);
+        namespace_1e25ad94::debugmsg("Deleting Pole trap permenently at:" + self.origin);
     }
-    if (isdefined(self.var_759f42bf)) {
-        arrayremovevalue(self.var_759f42bf, undefined);
-        foreach (model in self.var_759f42bf) {
+    if (isdefined(self.script_models)) {
+        arrayremovevalue(self.script_models, undefined);
+        foreach (model in self.script_models) {
             model notify(#"hash_3e251384a5400dce");
         }
-        foreach (model in self.var_759f42bf) {
+        foreach (model in self.script_models) {
             if (isdefined(model.trigger)) {
                 model.trigger namespace_268747c0::function_54f185a();
                 model.trigger = undefined;
@@ -66,12 +66,12 @@ function function_215e1efb() {
             model namespace_83eb6304::turnofffx("hazard_electric_trap_green");
             model namespace_83eb6304::turnofffx("hazard_electric_trap_active");
         }
-        foreach (model in self.var_759f42bf) {
+        foreach (model in self.script_models) {
             model namespace_83eb6304::function_8a1f8325();
             util::wait_network_frame();
             model delete();
         }
-        self.var_759f42bf = undefined;
+        self.script_models = undefined;
     }
     self.var_9760b617 = undefined;
 }
@@ -91,15 +91,15 @@ function function_3bea16f1(trap, var_7c56394 = 0, origin = trap.origin) {
         hazard solid();
         hazard thread function_4eec8432();
         if (isdefined(trap)) {
-            if (!isdefined(trap.var_759f42bf)) {
-                trap.var_759f42bf = [];
+            if (!isdefined(trap.script_models)) {
+                trap.script_models = [];
             }
-            if (!isdefined(trap.var_759f42bf)) {
-                trap.var_759f42bf = [];
-            } else if (!isarray(trap.var_759f42bf)) {
-                trap.var_759f42bf = array(trap.var_759f42bf);
+            if (!isdefined(trap.script_models)) {
+                trap.script_models = [];
+            } else if (!isarray(trap.script_models)) {
+                trap.script_models = array(trap.script_models);
             }
-            trap.var_759f42bf[trap.var_759f42bf.size] = hazard;
+            trap.script_models[trap.script_models.size] = hazard;
         }
     } else {
         return;
@@ -304,11 +304,11 @@ function function_16abf3d3() {
                 continue;
             }
             trap.var_eb9d64bb = time + 2000 + randomint(600);
-            if (!isdefined(trap.var_759f42bf)) {
+            if (!isdefined(trap.script_models)) {
                 activate = 0;
                 if (isdefined(trap.var_f8660931)) {
                     distsq = distancesquared(trap.origin, trap.var_f8660931.origin);
-                    if (distsq < function_a3f6cdac(3200)) {
+                    if (distsq < sqr(3200)) {
                         activate = 1;
                     }
                 }
@@ -326,14 +326,14 @@ function function_16abf3d3() {
                 if (activate && !is_true(trap.var_9760b617)) {
                     function_3bea16f1(trap, 1);
                     trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
-                    namespace_1e25ad94::function_f5f0c0f8("Paging IN pole trap at:" + trap.origin);
+                    namespace_1e25ad94::debugmsg("Paging IN pole trap at:" + trap.origin);
                 }
                 continue;
             }
             trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 1800);
             if (!isdefined(trap.var_f8660931)) {
                 trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
-                namespace_1e25ad94::function_f5f0c0f8("Paging out pole trap at:" + trap.origin);
+                namespace_1e25ad94::debugmsg("Paging out pole trap at:" + trap.origin);
             }
         }
     }
@@ -370,7 +370,7 @@ function function_a971a62f(origin, var_5c526bd9 = origin, var_c705f304 = 85) {
         }
     }
     dist_squared = distancesquared(origin, var_5c526bd9);
-    if (dist_squared > function_a3f6cdac(var_c705f304)) {
+    if (dist_squared > sqr(var_c705f304)) {
         return undefined;
     }
     trace = worldtrace(origin + vectorscale((0, 0, 1), 32), origin + (48, 0, 32));

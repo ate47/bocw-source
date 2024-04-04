@@ -11,14 +11,14 @@
 // Checksum 0x271b4096, Offset: 0xc8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"nightingale", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"nightingale", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace nightingale/nightingale
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1151853b, Offset: 0x110
 // Size: 0x154
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "" + #"hash_7cc71113338444c4", 1, 1, "int", &function_17982c67, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_7c2ee5bfa7cad803", 1, 1, "int", &function_52240d18, 0, 0);
     if (!isdefined(level.var_17d9f80)) {

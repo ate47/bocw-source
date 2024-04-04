@@ -15,14 +15,14 @@
 // Checksum 0x40d69170, Offset: 0x368
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_fasttravel", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_fasttravel", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_fasttravel/zm_fasttravel
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6ac2c0e, Offset: 0x3b0
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     init_clientfields();
     init_fx();
 }

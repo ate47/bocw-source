@@ -16,14 +16,14 @@
 // Checksum 0xa36d6535, Offset: 0xc8
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_7b30b3878fc15536", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_7b30b3878fc15536", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_77bd50da/namespace_77bd50da
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc1910128, Offset: 0x120
 // Size: 0x64
-function function_70a657d8() {
+function preinit() {
     level.var_90456892 = sr_message_box::register();
     if (!isdefined(level.var_31028c5d)) {
         level.var_31028c5d = prototype_hud::register();

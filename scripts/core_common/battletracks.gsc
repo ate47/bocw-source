@@ -2,25 +2,25 @@
 #using scripts\core_common\clientfield_shared.gsc;
 #using scripts\core_common\system_shared.gsc;
 
-#namespace namespace_43f477a6;
+#namespace battletracks;
 
-// Namespace namespace_43f477a6/namespace_43f477a6
+// Namespace battletracks/battletracks
 // Params 0, eflags: 0x5
 // Checksum 0x3994545d, Offset: 0xd0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_58dfb3361d45bdcf", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"battletracks", &preinit, undefined, undefined, undefined);
 }
 
-// Namespace namespace_43f477a6/namespace_43f477a6
+// Namespace battletracks/battletracks
 // Params 0, eflags: 0x6 linked
 // Checksum 0x632f519, Offset: 0x118
 // Size: 0x34
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("vehicle", "battletrack_active", 1, 1, "int");
 }
 
-// Namespace namespace_43f477a6/enter_vehicle
+// Namespace battletracks/enter_vehicle
 // Params 1, eflags: 0x24
 // Checksum 0x898433b9, Offset: 0x158
 // Size: 0xac
@@ -34,7 +34,7 @@ function private event_handler[enter_vehicle] function_860f46d6(eventstruct) {
     }
 }
 
-// Namespace namespace_43f477a6/exit_vehicle
+// Namespace battletracks/exit_vehicle
 // Params 1, eflags: 0x24
 // Checksum 0x35e4c3da, Offset: 0x210
 // Size: 0x8c
@@ -46,7 +46,7 @@ function private event_handler[exit_vehicle] function_c8e0f88d(eventstruct) {
     }
 }
 
-// Namespace namespace_43f477a6/change_seat
+// Namespace battletracks/change_seat
 // Params 1, eflags: 0x24
 // Checksum 0x65362d09, Offset: 0x2a8
 // Size: 0x1ac
@@ -67,7 +67,7 @@ function private event_handler[change_seat] function_63d4043f(eventstruct) {
     }
 }
 
-// Namespace namespace_43f477a6/vehicle_killed
+// Namespace battletracks/vehicle_killed
 // Params 1, eflags: 0x24
 // Checksum 0x4b554a66, Offset: 0x460
 // Size: 0x24
@@ -75,7 +75,7 @@ function private event_handler[vehicle_killed] function_c5f9a554(*eventstruct) {
     self function_fe45d0ae();
 }
 
-// Namespace namespace_43f477a6/event_35559816
+// Namespace battletracks/event_35559816
 // Params 1, eflags: 0x24
 // Checksum 0x705376e6, Offset: 0x490
 // Size: 0x74
@@ -89,7 +89,7 @@ function private event_handler[event_35559816] function_35559816(eventstruct) {
     }
 }
 
-// Namespace namespace_43f477a6/event_29e6e4b2
+// Namespace battletracks/event_29e6e4b2
 // Params 1, eflags: 0x24
 // Checksum 0xf5f14192, Offset: 0x510
 // Size: 0x44
@@ -99,7 +99,7 @@ function private event_handler[event_29e6e4b2] function_29e6e4b2(eventstruct) {
     }
 }
 
-// Namespace namespace_43f477a6/namespace_43f477a6
+// Namespace battletracks/battletracks
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb5b06c88, Offset: 0x560
 // Size: 0xae
@@ -116,7 +116,7 @@ function private function_982d5b1() {
     }
 }
 
-// Namespace namespace_43f477a6/namespace_43f477a6
+// Namespace battletracks/battletracks
 // Params 0, eflags: 0x2 linked
 // Checksum 0x820a0774, Offset: 0x618
 // Size: 0x7e
@@ -131,7 +131,7 @@ function function_fe45d0ae() {
     }
 }
 
-// Namespace namespace_43f477a6/namespace_43f477a6
+// Namespace battletracks/battletracks
 // Params 1, eflags: 0x6 linked
 // Checksum 0x4d2f6162, Offset: 0x6a0
 // Size: 0x1ac

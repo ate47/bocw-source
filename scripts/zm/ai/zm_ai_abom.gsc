@@ -23,14 +23,14 @@
 // Checksum 0x6c6fc83b, Offset: 0x170
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"zm_ai_abom", &function_70a657d8, undefined, undefined, "zm_destination_manager");
+    system::register(#"zm_ai_abom", &preinit, undefined, undefined, "zm_destination_manager");
 }
 
 // Namespace zm_ai_abom/zm_ai_abom
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc90e6c11, Offset: 0x1c0
 // Size: 0x10c
-function function_70a657d8() {
+function preinit() {
     zm_round_spawning::register_archetype(#"abom", &function_48924a80, &round_spawn, undefined, 100);
     zm_round_spawning::function_306ce518(#"abom", &function_9282dcac);
     spawner::add_archetype_spawn_function(#"abom", &function_b82e0a5d);
@@ -378,10 +378,10 @@ function private function_3ec01d7a() {
             if (ispointonnavmesh(self.origin, self)) {
                 continue;
             }
-            if (!isdefined(last_pos) || distancesquared(self.origin, last_pos) > function_a3f6cdac(self getpathfindingradius())) {
+            if (!isdefined(last_pos) || distancesquared(self.origin, last_pos) > sqr(self getpathfindingradius())) {
                 last_pos = self.origin;
                 var_37c90cfe = 0;
-            } else if (distancesquared(self.origin, last_pos) < function_a3f6cdac(self getpathfindingradius())) {
+            } else if (distancesquared(self.origin, last_pos) < sqr(self getpathfindingradius())) {
                 var_37c90cfe++;
                 if (var_37c90cfe >= 15) {
                     var_c84ba99b = 1;

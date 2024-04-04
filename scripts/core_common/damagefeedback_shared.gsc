@@ -14,7 +14,7 @@
 // Size: 0x3c
 function private autoexec __init__system__() {
     /#
-        register(#"damagefeedback", &function_70a657d8, undefined, undefined, undefined);
+        register(#"damagefeedback", &preinit, undefined, undefined, undefined);
     #/
 }
 
@@ -22,7 +22,7 @@ function private autoexec __init__system__() {
 // Params 0, eflags: 0x4
 // Checksum 0xed3224e1, Offset: 0x230
 // Size: 0x2c
-function private function_70a657d8() {
+function private preinit() {
     /#
         on_connect(&on_player_connect);
     #/

@@ -9,14 +9,14 @@
 // Checksum 0x148abff9, Offset: 0x90
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_2e174447c1bc5bd6", &function_70a657d8, undefined, undefined, #"zm_weapons");
+    system::register(#"hash_2e174447c1bc5bd6", &preinit, undefined, undefined, #"zm_weapons");
 }
 
 // Namespace namespace_543dc48f/namespace_543dc48f
 // Params 0, eflags: 0x6 linked
 // Checksum 0xe75dadd5, Offset: 0xe0
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     level.var_5714f442 = 25;
     level.var_a77fcfbe = &function_dafd9cd;
     callback::on_connect(&on_connect);
@@ -48,7 +48,7 @@ function private function_afade0d0() {
     callback::function_52ac9652(#"done_healing", &function_afade0d0);
     if (isdefined(self.var_f7500d42)) {
         self.var_c2b7641c = self.health - self.var_f7500d42;
-        self notify(#"hash_18e59631bf777496", {#var_855cc818:self.var_c2b7641c});
+        self notify(#"hash_18e59631bf777496", {#heal_amount:self.var_c2b7641c});
     }
     self.ignore_health_regen_delay = 0;
 }

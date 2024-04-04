@@ -96,8 +96,8 @@ function function_1cdbb1e5(owner, weapon) {
         var_bd5f5c6c = !is_under_water(waitresult.position);
         if (var_bd5f5c6c) {
             normal = waitresult.normal;
-            var_a0148c55 = bullettrace(self.origin, self.origin - vectorscale(normal, 4), 1, self);
-            if (isplayer(var_a0148c55[#"entity"]) || isactor(var_a0148c55[#"entity"])) {
+            playertrace = bullettrace(self.origin, self.origin - vectorscale(normal, 4), 1, self);
+            if (isplayer(playertrace[#"entity"]) || isactor(playertrace[#"entity"])) {
                 explosionfx = #"hash_76c34cde560cd085";
                 var_cb4f434e = 1;
             } else {
@@ -269,7 +269,7 @@ function function_e8ad1d81(position, owner, normal, velocity, killcament, team, 
     desiredendpos = startpos + vectorscale((0, 0, 1), 60);
     function_1493c734(startpos, 20, (0, 1, 0), 0.6, 200);
     phystrace = physicstrace(startpos, desiredendpos, vectorscale((-1, -1, -1), 4), vectorscale((1, 1, 1), 4), self, 1);
-    goalpos = phystrace[#"fraction"] > 1 ? phystrace[#"position"] : desiredendpos;
+    goalpos = phystrace[#"fraction"] > 1 ? desiredendpos : phystrace[#"position"];
     if (isdefined(killcament)) {
         killcament moveto(goalpos, 0.5);
     }
@@ -362,7 +362,7 @@ function function_8a03d3f3(owner, impactpos, startpos, normal, multiplier, rotat
         fxcount = 0;
     }
     function_31cc6bd9();
-    if (function_31f342a2(startpos, function_a3f6cdac(customsettings.var_6193a41b * 1.5)) && fxcount > 10) {
+    if (function_31f342a2(startpos, sqr(customsettings.var_6193a41b * 1.5)) && fxcount > 10) {
         fxcount = 7;
     }
     var_4997e17c = perpendicularvector(normal);
@@ -387,17 +387,17 @@ function function_8a03d3f3(owner, impactpos, startpos, normal, multiplier, rotat
             hitsomething = 1;
         }
         if (!hitsomething) {
-            var_e5d1793d = hitpos(traceposition, traceposition - normal * defaultdropdistance, locations[#"color"][count]);
-            if (var_e5d1793d[#"fraction"] != 1) {
-                function_1493c734(var_e5d1793d[#"position"], 10, (0, 0, 1), 0.6, 200);
-                locations[#"loc"][count] = var_e5d1793d[#"position"];
-                water_depth = get_water_depth(var_e5d1793d[#"position"]);
+            tracedown = hitpos(traceposition, traceposition - normal * defaultdropdistance, locations[#"color"][count]);
+            if (tracedown[#"fraction"] != 1) {
+                function_1493c734(tracedown[#"position"], 10, (0, 0, 1), 0.6, 200);
+                locations[#"loc"][count] = tracedown[#"position"];
+                water_depth = get_water_depth(tracedown[#"position"]);
                 if (function_a66ba8cc(water_depth)) {
                     locations[#"normal"][count] = (0, 0, 1);
                     locations[#"steam"][count] = 1;
                     locations[#"loc"][count] = locations[#"loc"][count] - (0, 0, water_depth);
                 } else {
-                    locations[#"normal"][count] = var_e5d1793d[#"normal"];
+                    locations[#"normal"][count] = tracedown[#"normal"];
                     locations[#"smallfire"][count] = 1;
                 }
             }
@@ -559,14 +559,14 @@ function private damageeffectarea(owner, position, killcament, *normal, weapon, 
             self trytoapplyfiredamage(target, position, killcament, fireeffectarea, var_289a74bc, normal, weapon, customsettings);
         }
         if (isdefined(position)) {
-            var_2d3611fa = position.var_52dceca.size;
-            if (var_2d3611fa > 0 && burntime < gettime()) {
-                scoreevents::processscoreevent(#"hash_1343f5418bd52c6c", position, undefined, weapon, var_2d3611fa);
+            affectedplayers = position.var_52dceca.size;
+            if (affectedplayers > 0 && burntime < gettime()) {
+                scoreevents::processscoreevent(#"hash_1343f5418bd52c6c", position, undefined, weapon, affectedplayers);
                 burntime = gettime() + int(customsettings.var_5c06ec56 * 1000);
             }
             if (var_d0603aba) {
                 var_9194a036 = battlechatter::mpdialog_value("molotovSuccessLineCount", 0);
-                if (var_2d3611fa >= (isdefined(var_9194a036) ? var_9194a036 : 3)) {
+                if (affectedplayers >= (isdefined(var_9194a036) ? var_9194a036 : 3)) {
                     position battlechatter::play_gadget_success(weapon);
                 }
             }
@@ -836,8 +836,8 @@ function private function_8422dabd(killcament, weapon, customsettings, owner) {
         self dodamage(var_341dfe48, self.origin, owner, weapon, "none", "MOD_BURNED", 0, weapon);
         /#
             time = gettime();
-            var_4b6c578e = self getentitynumber();
-            println("<unknown string>" + var_4b6c578e + "<unknown string>" + string(var_341dfe48) + "<unknown string>" + time);
+            ent_num = self getentitynumber();
+            println("<unknown string>" + ent_num + "<unknown string>" + string(var_341dfe48) + "<unknown string>" + time);
         #/
         self.var_ae639436 = var_4dd4e6ee;
     }

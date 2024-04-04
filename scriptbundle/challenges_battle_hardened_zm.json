@@ -4,31 +4,31 @@
             "var_5ed80a9c": "#hunter",
             "type": "#none",
             "displayname": "#hash_6b31d6069443fefe",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#hash_246907adaab2599e",
             "type": "#none",
             "displayname": "#hash_2fd02d3d51d83c3",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#hash_2b6df6d5b5bad35f",
             "type": "#none",
             "displayname": "#hash_5a4e4455c695a8d0",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
-            "var_5ed80a9c": "#hash_565c393743c4316a",
+            "var_5ed80a9c": "#expedition",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_6e603ebfa753eb9a",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#stalker",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_6007f08af9f3095d",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         }
     ],
     "var_72ef398b": 1,

@@ -12,14 +12,14 @@
 // Checksum 0xb0e45c56, Offset: 0x150
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"recon_plane", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"recon_plane", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace recon_plane/recon_plane
 // Params 0, eflags: 0x6 linked
 // Checksum 0x7eba145a, Offset: 0x1a0
 // Size: 0x160
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "recon_plane", 1, 1, "int", &function_1f842f91, 0, 0);
     clientfield::register("scriptmover", "recon_plane_reveal", 1, 1, "int", &recon_plane_reveal, 0, 0);
     clientfield::register("scriptmover", "recon_plane_damage_fx", 1, 2, "int", &recon_plane_damage_fx, 0, 0);
@@ -130,7 +130,7 @@ function recon_plane_reveal(localclientnum, *oldval, newval, *bnewent, *binitial
 function private function_6f689c85(localclientnum) {
     self notify("2af01c1ea30ce119");
     self endon("2af01c1ea30ce119");
-    var_c2b8dfe0 = function_a3f6cdac((isdefined(level.var_d9ef3e7c.var_e77ca4a1) ? level.var_d9ef3e7c.var_e77ca4a1 : 0) / 2);
+    var_c2b8dfe0 = sqr((isdefined(level.var_d9ef3e7c.var_e77ca4a1) ? level.var_d9ef3e7c.var_e77ca4a1 : 0) / 2);
     arrayremovevalue(level.var_d84f0c02, undefined);
     while (level.var_d84f0c02.size) {
         player = function_27673a7(localclientnum);

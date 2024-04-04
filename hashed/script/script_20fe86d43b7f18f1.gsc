@@ -39,8 +39,8 @@ function function_54d0d2d1(localclientnum) {
 // Size: 0xf8
 function private function_b439ef43(localclientnum, model, tag, animname) {
     tag_origin = self gettagorigin(tag);
-    var_77f55611 = self gettagangles(tag);
-    zombie = util::spawn_model(localclientnum, model, tag_origin, var_77f55611);
+    tag_angles = self gettagangles(tag);
+    zombie = util::spawn_model(localclientnum, model, tag_origin, tag_angles);
     zombie linkto(self, tag);
     zombie useanimtree("zm_ai_hulk");
     zombie setanim(animname, 1, 0, 1);

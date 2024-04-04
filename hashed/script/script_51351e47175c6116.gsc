@@ -57,7 +57,7 @@ function function_32160152(player, modelname, origin, angles, scale = 1) {
                     continue;
                 }
                 distsq = distancesquared(player.doa.vehicle.origin, spawnorigin);
-                if (distsq < function_a3f6cdac(64)) {
+                if (distsq < sqr(64)) {
                     namespace_dfc652ee::function_ad7ac41b(spawnorigin, 1, 32, 27, 1);
                     return;
                 }

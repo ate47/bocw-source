@@ -17,14 +17,14 @@
 // Checksum 0x268eb7e9, Offset: 0x240
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"amws", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"amws", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace amws/amws
 // Params 0, eflags: 0x4
 // Checksum 0xc75e0a62, Offset: 0x288
 // Size: 0x34
-function private function_70a657d8() {
+function private preinit() {
     spawner::add_archetype_spawn_function(#"amws", &amws_initialize);
 }
 
@@ -248,7 +248,7 @@ function state_stationary_update(*params) {
         if (isdefined(self.enemy)) {
             distsqr = distancesquared(self.enemy.origin, self.origin);
             if (util::timesince(starttime) > mintime) {
-                if (transformwhenenemyclose && distsqr < function_a3f6cdac(200)) {
+                if (transformwhenenemyclose && distsqr < sqr(200)) {
                     break;
                 }
                 if (!self seerecently(self.enemy, losepatienttime)) {
@@ -259,7 +259,7 @@ function state_stationary_update(*params) {
                 if (function_64609aab(self, self.enemy) !== 1) {
                     break;
                 }
-                if (distsqr < function_a3f6cdac(self.settings.engagementdistmax * 3)) {
+                if (distsqr < sqr(self.settings.engagementdistmax * 3)) {
                     self turretsettarget(0, self.enemy, vectorscale((0, 0, -1), 5));
                     self turretsettarget(1, self.enemy, vectorscale((0, 0, -1), 5));
                     if (util::iscooldownready("rocket") && self.turretontarget && self.gib_rocket !== 1 && !is_true(self.var_a8c60b0e)) {
@@ -348,7 +348,7 @@ function turretfireupdate() {
                 continue;
             }
         }
-        if (isalive(self) && isdefined(self.enemy) && self cansee(self.enemy) && distancesquared(self.enemy.origin, self.origin) < function_a3f6cdac(self.settings.engagementdistmax * 3)) {
+        if (isalive(self) && isdefined(self.enemy) && self cansee(self.enemy) && distancesquared(self.enemy.origin, self.origin) < sqr(self.settings.engagementdistmax * 3)) {
             self turretsettarget(var_6d08d874, self.enemy);
             self vehlookat(self.enemy);
             if (self is_ai_using_minigun()) {
@@ -398,7 +398,7 @@ function state_combat_update(*params) {
         }
         if (isdefined(self.enemy) && util::iscooldownready("cobra_up") && self.lock_evading == 0) {
             var_7e7717c8 = distancesquared(self.enemy.origin, self.origin);
-            if (var_7e7717c8 > function_a3f6cdac(200) && var_7e7717c8 < function_a3f6cdac(self.settings.engagementdistmax * 2)) {
+            if (var_7e7717c8 > sqr(200) && var_7e7717c8 < sqr(self.settings.engagementdistmax * 2)) {
                 if (function_64609aab(self, self.enemy) === 1) {
                     self vehicle_ai::evaluate_connections();
                 }
@@ -941,13 +941,13 @@ function path_update_interrupt() {
     wait(1);
     while (true) {
         if (isdefined(self.current_pathto_pos)) {
-            if (distance2dsquared(self.current_pathto_pos, self.goalpos) > function_a3f6cdac(self.goalradius)) {
+            if (distance2dsquared(self.current_pathto_pos, self.goalpos) > sqr(self.goalradius)) {
                 wait(0.2);
                 self notify(#"near_goal");
             }
         }
         if (isdefined(self.enemy)) {
-            if (self cansee(self.enemy) && distance2dsquared(self.origin, self.enemy.origin) < function_a3f6cdac(0.4 * (self.settings.engagementdistmin + self.settings.engagementdistmax))) {
+            if (self cansee(self.enemy) && distance2dsquared(self.origin, self.enemy.origin) < sqr(0.4 * (self.settings.engagementdistmin + self.settings.engagementdistmax))) {
                 self notify(#"near_goal");
             }
             if (util::iscooldownready("rocket") && util::iscooldownready("rocket_launcher_check")) {

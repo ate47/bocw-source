@@ -61,7 +61,7 @@
 // Size: 0x4c
 function private autoexec __init__system__() {
     /#
-        register(#"zm_devqui", &function_70a657d8, &postinit, undefined, undefined);
+        register(#"zm_devqui", &preinit, &postinit, undefined, undefined);
     #/
 }
 
@@ -69,7 +69,7 @@ function private autoexec __init__system__() {
 // Params 0, eflags: 0x4
 // Checksum 0xe1042ba9, Offset: 0x280
 // Size: 0x234
-function private function_70a657d8() {
+function private preinit() {
     /#
         setdvar(#"zombie_devgui", "<unknown string>");
         setdvar(#"scr_force_weapon", "<unknown string>");
@@ -129,8 +129,8 @@ function function_a4eebdf3() {
             self.start_inert = 1;
             var_c5de9c31 = 0;
             if (isdefined(self.spawn_funcs)) {
-                foreach (var_103b2564 in self.spawn_funcs) {
-                    if (var_103b2564[#"function"] === &function_d63f6426) {
+                foreach (pair in self.spawn_funcs) {
+                    if (pair[#"function"] === &function_d63f6426) {
                         var_c5de9c31 = 1;
                         break;
                     }
@@ -1417,7 +1417,7 @@ function zombie_devgui_think() {
                 players = getplayers();
                 thread_all(players, &zombie_devgui_give_money);
                 break;
-            case #"hash_568103fb62eae412":
+            case #"scrap":
                 players = getplayers();
                 thread_all(players, &function_6de15bb7);
                 break;
@@ -1872,8 +1872,8 @@ function zombie_devgui_think() {
                 break;
             case #"chest":
                 if (isdefined(level.zombie_weapons[getweapon(getdvarstring(#"scr_force_weapon"))])) {
-                    if (isdefined(level.zombie_weapons[getweapon(getdvarstring(#"scr_force_weapon"))].var_9d17fab9)) {
-                        level.var_f83c8dc2 = level.zombie_weapons[getweapon(getdvarstring(#"scr_force_weapon"))].var_9d17fab9;
+                    if (isdefined(level.zombie_weapons[getweapon(getdvarstring(#"scr_force_weapon"))].item_entry)) {
+                        level.var_f83c8dc2 = level.zombie_weapons[getweapon(getdvarstring(#"scr_force_weapon"))].item_entry;
                     }
                 }
                 break;
@@ -2115,7 +2115,7 @@ function zombie_devgui_think() {
             case #"hash_7883eb109c3e6a94":
                 thread_all(function_a1ef346b(), &function_1bb72156);
                 break;
-            case #"hash_1d82cb8bcfe16540":
+            case #"draw_wallbuy":
                 function_2f0c6f91();
                 break;
             case #"hash_320b004253fe00b8":
@@ -2618,22 +2618,22 @@ function function_4bb7eb36() {
         forward = anglestoforward(chest.zbarrier.angles);
         right = anglestoright(chest.zbarrier.angles);
         var_21f5823e = vectortoangles(right);
-        var_916d3dfe = origin - 48 * right;
+        plorigin = origin - 48 * right;
         switch (entnum) {
         case 0:
-            var_916d3dfe = var_916d3dfe + 16 * right;
+            plorigin = plorigin + 16 * right;
             break;
         case 1:
-            var_916d3dfe = var_916d3dfe + 16 * forward;
+            plorigin = plorigin + 16 * forward;
             break;
         case 2:
-            var_916d3dfe = var_916d3dfe - 16 * right;
+            plorigin = plorigin - 16 * right;
             break;
         case 3:
-            var_916d3dfe = var_916d3dfe - 16 * forward;
+            plorigin = plorigin - 16 * forward;
             break;
         }
-        self setorigin(var_916d3dfe);
+        self setorigin(plorigin);
         self setplayerangles(var_21f5823e);
     #/
 }
@@ -2654,22 +2654,22 @@ function function_84f0a909() {
         forward = anglestoforward(pap.angles);
         right = anglestoright(pap.angles);
         var_21f5823e = vectortoangles(right * -1);
-        var_916d3dfe = origin + 72 * right;
+        plorigin = origin + 72 * right;
         switch (entnum) {
         case 0:
-            var_916d3dfe = var_916d3dfe - 16 * right;
+            plorigin = plorigin - 16 * right;
             break;
         case 1:
-            var_916d3dfe = var_916d3dfe + 16 * forward;
+            plorigin = plorigin + 16 * forward;
             break;
         case 2:
-            var_916d3dfe = var_916d3dfe + 16 * right;
+            plorigin = plorigin + 16 * right;
             break;
         case 3:
-            var_916d3dfe = var_916d3dfe - 16 * forward;
+            plorigin = plorigin - 16 * forward;
             break;
         }
-        self setorigin(var_916d3dfe);
+        self setorigin(plorigin);
         self setplayerangles(var_21f5823e);
     #/
 }
@@ -3577,9 +3577,9 @@ function zombie_devgui_pack_current_weapon() {
                     players[i] function_73ae3380(item, 1);
                     continue;
                 }
-                if (isdefined(item.var_a8bccf69) && item.var_a8bccf69 < 4) {
-                    var_9be8d39f = item.var_a8bccf69 + 1;
-                    players[i] function_73ae3380(item, var_9be8d39f);
+                if (isdefined(item.paplv) && item.paplv < 4) {
+                    paplevel = item.paplv + 1;
+                    players[i] function_73ae3380(item, paplevel);
                 }
             }
         }
@@ -3598,9 +3598,9 @@ function zombie_devgui_repack_current_weapon() {
             if (!players[i] player_is_in_laststand() && players[i].sessionstate !== "<unknown string>") {
                 weap = players[i] getcurrentweapon();
                 item = players[i] function_230ceec4(weap);
-                if (isdefined(item.var_a8bccf69) && item.var_a8bccf69 < 4) {
-                    var_9be8d39f = item.var_a8bccf69 + 1;
-                    players[i] function_73ae3380(item, var_9be8d39f);
+                if (isdefined(item.paplv) && item.paplv < 4) {
+                    paplevel = item.paplv + 1;
+                    players[i] function_73ae3380(item, paplevel);
                 }
             }
         }
@@ -3619,13 +3619,13 @@ function zombie_devgui_unpack_current_weapon() {
             if (!players[i] player_is_in_laststand() && players[i].sessionstate !== "<unknown string>") {
                 weap = players[i] getcurrentweapon();
                 item = players[i] function_230ceec4(weap);
-                if (isdefined(item.var_a8bccf69) && item.var_a8bccf69 > 1) {
-                    var_9be8d39f = item.var_a8bccf69 - 1;
-                    players[i] function_73ae3380(item, var_9be8d39f);
+                if (isdefined(item.paplv) && item.paplv > 1) {
+                    paplevel = item.paplv - 1;
+                    players[i] function_73ae3380(item, paplevel);
                     continue;
                 }
-                if (isdefined(item.var_a6762160) && isdefined(item.var_a6762160.rarity)) {
-                    rarity = item.var_a6762160.rarity;
+                if (isdefined(item.itementry) && isdefined(item.itementry.rarity)) {
+                    rarity = item.itementry.rarity;
                 }
                 weapon = self function_251ec78c(weap, 1);
                 players[i] weapon_take(weap);
@@ -4942,10 +4942,10 @@ function function_1a4752d0() {
         if (!isdefined(level.var_d13a2c74)) {
             level.var_d13a2c74 = 0;
         }
-        foreach (location in level.var_7d45d0d4.locations) {
+        foreach (location in level.contentmanager.locations) {
             if (isdefined(location.instances[#"wallbuy"])) {
-                if (isarray(location.instances[#"wallbuy"].var_fe2612fe[#"wallbuy_chalk"])) {
-                    var_d82a99e8 = location.instances[#"wallbuy"].var_fe2612fe[#"wallbuy_chalk"][level.var_d13a2c74];
+                if (isarray(location.instances[#"wallbuy"].contentgroups[#"wallbuy_chalk"])) {
+                    var_d82a99e8 = location.instances[#"wallbuy"].contentgroups[#"wallbuy_chalk"][level.var_d13a2c74];
                     player = getplayers()[0];
                     forward = anglestoright(var_d82a99e8.angles);
                     forward = vectornormalize(forward);
@@ -4953,8 +4953,8 @@ function function_1a4752d0() {
                     var_92f819ac = var_d82a99e8.origin + forward;
                     player setorigin(var_92f819ac);
                     level.var_d13a2c74++;
-                    if (level.var_d13a2c74 >= location.instances[#"wallbuy"].var_fe2612fe[#"wallbuy_chalk"].size) {
-                        level.var_d13a2c74 = level.var_d13a2c74 >= location.instances[#"wallbuy"].var_fe2612fe[#"wallbuy_chalk"].size - 1;
+                    if (level.var_d13a2c74 >= location.instances[#"wallbuy"].contentgroups[#"wallbuy_chalk"].size) {
+                        level.var_d13a2c74 = level.var_d13a2c74 >= location.instances[#"wallbuy"].contentgroups[#"wallbuy_chalk"].size - 1;
                     }
                 }
             }
@@ -4970,10 +4970,10 @@ function function_5ec967f7() {
     /#
         level endon(#"hash_21adc62fc2f5bc32");
         while (true) {
-            foreach (location in level.var_7d45d0d4.locations) {
+            foreach (location in level.contentmanager.locations) {
                 if (isdefined(location.instances[#"wallbuy"])) {
-                    if (isarray(location.instances[#"wallbuy"].var_fe2612fe[#"wallbuy_chalk"])) {
-                        foreach (wallbuy in location.instances[#"wallbuy"].var_fe2612fe[#"wallbuy_chalk"]) {
+                    if (isarray(location.instances[#"wallbuy"].contentgroups[#"wallbuy_chalk"])) {
+                        foreach (wallbuy in location.instances[#"wallbuy"].contentgroups[#"wallbuy_chalk"]) {
                             player = getplayers()[0];
                             if (player is_looking_at(wallbuy.origin)) {
                                 sphere(wallbuy.origin, 32, (1, 0, 0), 1, 0, 10, 10);

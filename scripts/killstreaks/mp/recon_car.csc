@@ -12,14 +12,14 @@
 // Checksum 0x50c3c48d, Offset: 0xc0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"recon_car", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"recon_car", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace recon_car/recon_car
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6f53ebb6, Offset: 0x110
 // Size: 0x84
-function private function_70a657d8() {
+function private preinit() {
     killstreak_detect::init_shared();
     bundle = getscriptbundle("killstreak_recon_car");
     level.var_af161ca6 = bundle;

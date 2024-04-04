@@ -11,14 +11,14 @@
 // Checksum 0x14185f67, Offset: 0x2d0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"killstreaks", &function_70a657d8, undefined, undefined, #"renderoverridebundle");
+    system::register(#"killstreaks", &preinit, undefined, undefined, #"renderoverridebundle");
 }
 
 // Namespace killstreaks/killstreaks
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb2e0c8c, Offset: 0x320
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
     killstreak_detect::init_shared();
     function_f1707039();
@@ -72,13 +72,13 @@ function private function_f1707039() {
     level.var_4b42d599 = [];
     for (i = 0; i < 4; i++) {
         level.var_4b42d599[i] = "killstreaks.killstreak" + i + ".inUse";
-        clientfield::register_clientuimodel(level.var_4b42d599[i], #"hash_38b7a28901866ae4", [1:#"inuse", 0:#"killstreak" + (isdefined(i) ? "" + i : "")], 1, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel(level.var_4b42d599[i], #"hash_38b7a28901866ae4", [#"killstreak" + (isdefined(i) ? "" + i : ""), #"inuse"], 1, 1, "int", undefined, 0, 0);
     }
     level.var_46b33f90[i] = [];
     level.var_173b8ed7 = max(8, 4);
     for (i = 0; i < level.var_173b8ed7; i++) {
         level.var_46b33f90[i] = "killstreaks.killstreak" + i + ".spaceFull";
-        clientfield::register_clientuimodel(level.var_46b33f90[i], #"hash_38b7a28901866ae4", [1:#"hash_3bbe3fe57a438e3c", 0:#"killstreak" + (isdefined(i) ? "" + i : "")], 1, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel(level.var_46b33f90[i], #"hash_38b7a28901866ae4", [#"killstreak" + (isdefined(i) ? "" + i : ""), #"hash_3bbe3fe57a438e3c"], 1, 1, "int", undefined, 0, 0);
     }
 }
 

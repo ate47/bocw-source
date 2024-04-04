@@ -10,14 +10,14 @@
 // Checksum 0x39680516, Offset: 0x248
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"helicopter_sounds", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"helicopter_sounds", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb7bb9c78, Offset: 0x290
 // Size: 0x5cc
-function private function_70a657d8() {
+function private preinit() {
     level._entityshutdowncbfunc = &heli_linkto_sound_ents_delete;
     level.helisoundvalues = [];
     init_heli_sound_values("cobra", "turbine", 65, 0.6, 0.8, 65, 1, 1.1);

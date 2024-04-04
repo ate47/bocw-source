@@ -35,11 +35,11 @@ function event_handler[level_init] function_9347830c(*eventstruct) {
 // Checksum 0x5cf22620, Offset: 0x260
 // Size: 0x5a
 function function_6681bbf6() {
-    var_65792f8b = map::get_script_bundle();
-    if (!isdefined(var_65792f8b) || !isdefined(var_65792f8b.var_f9631c9d)) {
+    mapbundle = map::get_script_bundle();
+    if (!isdefined(mapbundle) || !isdefined(mapbundle.var_f9631c9d)) {
         return undefined;
     }
-    return getscriptbundle(var_65792f8b.var_f9631c9d);
+    return getscriptbundle(mapbundle.var_f9631c9d);
 }
 
 // Namespace namespace_66d6aa44/namespace_66d6aa44

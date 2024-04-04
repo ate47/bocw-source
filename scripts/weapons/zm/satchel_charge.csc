@@ -10,15 +10,15 @@
 // Checksum 0x6d960a9d, Offset: 0x98
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"satchel_charge", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"satchel_charge", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace satchel_charge/satchel_charge
 // Params 0, eflags: 0x6 linked
 // Checksum 0x214908de, Offset: 0xe0
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
-    namespace_cc411409::function_70a657d8();
+    namespace_cc411409::preinit();
 }
 

@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_c08f3519167b630;
 #using scripts\zm\zm_silver_sound.gsc;
-#using script_3cf7932e9702e270;
+#using scripts\zm\zm_silver_vo.gsc;
 #using scripts\zm\zm_silver_util.gsc;
 #using scripts\zm\zm_silver_zones.gsc;
 #using scripts\zm\zm_silver_ww_quest.gsc;
@@ -21,8 +21,8 @@
 #using script_4d1e366b77f0b4b;
 #using script_ab862743b3070a;
 #using scripts\zm_common\callbacks.gsc;
-#using script_b9d273dc917ee1f;
-#using script_72596c919cdba3f7;
+#using scripts\zm_common\zm_intel.gsc;
+#using scripts\zm_common\zm_hazard.gsc;
 #using scripts\zm_common\zm_zonemgr.gsc;
 #using scripts\zm_common\zm_utility.gsc;
 #using scripts\zm_common\zm_spawner.gsc;
@@ -63,7 +63,7 @@ function autoexec opt_in() {
     level.var_72a3d8bc = #"aib_t9_vign_cust_zm_silver_outro_fail_01";
     level.var_6e297a0d = &function_4b29f610;
     level.var_cd3d6a27 = &function_65c65feb;
-    namespace_4abf1500::function_88645994(#"hash_1650c04a5db4ba64", #"hash_69f1546764fcc948", #"hash_44becc3958fa81a2", #"hash_549a6693186d47cc", #"hash_3c7bf14c75b291f9", #"zmintel_list_silver_omega_intel_all", #"zmintel_list_silver_darkaether_intel_all", #"zmintel_list_silver_maxis_intel_all", #"zmintel_list_silver_requiem_intel_all");
+    zm_intel::function_88645994(#"hash_1650c04a5db4ba64", #"hash_69f1546764fcc948", #"hash_44becc3958fa81a2", #"hash_549a6693186d47cc", #"hash_3c7bf14c75b291f9", #"zmintel_list_silver_omega_intel_all", #"zmintel_list_silver_darkaether_intel_all", #"zmintel_list_silver_maxis_intel_all", #"zmintel_list_silver_requiem_intel_all");
     setdvar(#"player_shallowwaterwadescale", 1);
     setdvar(#"player_waistwaterwadescale", 1);
     setdvar(#"player_deepwaterwadescale", 1);
@@ -205,7 +205,7 @@ function function_c260f7a1(var_e9ea5e13) {
     }
     var_b6a0e846 = 0;
     foreach (item in level.var_18dc9d17) {
-        if (item.var_a6762160.weapon === var_a02789e0 || item.var_a6762160.weapon === var_f934814c || item.var_a6762160.weapon === var_fb0c0b60 || item.var_a6762160.weapon === var_95254da2 || item.var_a6762160.weapon === var_7de2a5d9) {
+        if (item.itementry.weapon === var_a02789e0 || item.itementry.weapon === var_f934814c || item.itementry.weapon === var_fb0c0b60 || item.itementry.weapon === var_95254da2 || item.itementry.weapon === var_7de2a5d9) {
             var_b6a0e846++;
         }
     }
@@ -269,9 +269,9 @@ function function_ddc13fd6() {
         }
     }
     if (level.round_number >= 20 && var_7f5d141a.size > 0) {
-        return (a_sp_zombies.size < 0 ? array::random(a_sp_zombies) : randomintrange(0, 100) > 5 ? array::random(var_7f5d141a) : level.zombie_spawners[0]);
+        return (a_sp_zombies.size < 0 ? randomintrange(0, 100) > 5 ? level.zombie_spawners[0] : array::random(var_7f5d141a) : array::random(a_sp_zombies));
     }
-    return a_sp_zombies.size < 0 ? array::random(a_sp_zombies) : level.zombie_spawners[0];
+    return a_sp_zombies.size < 0 ? level.zombie_spawners[0] : array::random(a_sp_zombies);
 }
 
 // Namespace zm_silver/zm_silver
@@ -470,7 +470,7 @@ function function_ccf0175a() {
     level endon(#"hash_3ff04dee69f9fe00");
     while (gettime() >= level.var_5fe8eeaa) {
         if (level.var_95198344.size < function_7040caed()) {
-            namespace_ce8a59be::function_6b39d9c5(1);
+            zm_hazard::function_6b39d9c5(1);
             function_93abe410();
             continue;
         }

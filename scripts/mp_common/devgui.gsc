@@ -22,7 +22,7 @@
 // Size: 0x4c
 function private autoexec __init__system__() {
     /#
-        register(#"devgui", &function_70a657d8, undefined, undefined, #"load");
+        register(#"devgui", &preinit, undefined, undefined, #"load");
     #/
 }
 
@@ -30,7 +30,7 @@ function private autoexec __init__system__() {
 // Params 0, eflags: 0x4
 // Checksum 0x4f190e57, Offset: 0x148
 // Size: 0x3ec
-function private function_70a657d8() {
+function private preinit() {
     /#
         level.var_f9f04b00 = register();
         function_5ac4dc99("<unknown string>", "<unknown string>");
@@ -178,9 +178,9 @@ function function_d14c2698() {
         game.var_67f8923f = 1;
         setdvar(#"hash_57f1a3b4775bec24", "<unknown string>");
         var_81fd4bd0 = function_72eeb31d();
-        foreach (item_hash, var_6d949755 in var_81fd4bd0) {
+        foreach (item_hash, callouts in var_81fd4bd0) {
             item_root = player_devgui_base + function_9e72a96(item_hash) + "<unknown string>";
-            foreach (callout in var_6d949755) {
+            foreach (callout in callouts) {
                 add_devgui(item_root + function_9e72a96(callout), "<unknown string>" + "<unknown string>" + "<unknown string>" + function_9e72a96(callout));
             }
             waitframe(1);
@@ -276,8 +276,8 @@ function function_f9e5168a() {
                 setdvar(#"hash_61dac11dea7f8b8d", 1);
                 players = getplayers();
                 foreach (player in players) {
-                    player function_225eab37();
-                    player function_49dc736a(hash(execution));
+                    player clearexecution();
+                    player giveexecution(hash(execution));
                 }
                 setdvar(#"hash_874c8b63573fc42", "<unknown string>");
                 setdvar(#"hash_13d12c0b5b9b9738", execution);
@@ -1088,7 +1088,7 @@ function function_be0f9897() {
             if (isplayer(player)) {
                 if (damage <= 0) {
                     heal = damage * -1;
-                    var_66cb03ad = player.var_66cb03ad < 0 ? player.var_66cb03ad : player.maxhealth;
+                    var_66cb03ad = player.var_66cb03ad < 0 ? player.maxhealth : player.var_66cb03ad;
                     if (!isdefined(var_66cb03ad)) {
                         var_66cb03ad = 100;
                     }

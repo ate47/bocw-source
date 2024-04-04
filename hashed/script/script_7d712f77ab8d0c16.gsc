@@ -116,41 +116,41 @@ function function_48a6b85() {
             level.var_94f4ca81.dataset = [];
             var_975467b9 = "<unknown string>";
             function_25e7711a("<unknown string>", #"none", var_975467b9, "<unknown string>");
-            foreach (team, var_725641f6 in level.teams) {
-                function_25e7711a("<unknown string>", team, var_975467b9, var_725641f6);
+            foreach (team, team_name in level.teams) {
+                function_25e7711a("<unknown string>", team, var_975467b9, team_name);
             }
             var_96a18257 = "<unknown string>";
-            foreach (team, var_725641f6 in level.teams) {
-                function_25e7711a("<unknown string>", team, var_96a18257, var_725641f6);
+            foreach (team, team_name in level.teams) {
+                function_25e7711a("<unknown string>", team, var_96a18257, team_name);
             }
             if (isdefined(level.var_c99a6ece)) {
                 [[ level.var_c99a6ece ]]();
             }
         }
-        level.var_94f4ca81.var_89266507 = "<unknown string>";
-        level.var_94f4ca81.var_1fde6598 = 0;
-        level.var_94f4ca81.var_64799f7 = 0;
+        level.var_94f4ca81.teamfilter = "<unknown string>";
+        level.var_94f4ca81.currentsetindex = 0;
+        level.var_94f4ca81.currentspawnindex = 0;
         var_f94a23 = 0;
         while (true) {
             self setactionslot(3, "<unknown string>");
             self setactionslot(4, "<unknown string>");
             if (!dpad_up && (self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>"))) {
-                level.var_94f4ca81.var_1fde6598++;
-                if (level.var_94f4ca81.var_1fde6598 >= level.var_94f4ca81.dataset.size) {
-                    level.var_94f4ca81.var_1fde6598 = 0;
+                level.var_94f4ca81.currentsetindex++;
+                if (level.var_94f4ca81.currentsetindex >= level.var_94f4ca81.dataset.size) {
+                    level.var_94f4ca81.currentsetindex = 0;
                 }
-                level.var_94f4ca81.var_64799f7 = 0;
+                level.var_94f4ca81.currentspawnindex = 0;
                 dpad_up = 1;
                 var_f94a23 = 1;
             } else if (!self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>")) {
                 dpad_up = 0;
             }
             if (!dpad_down && (self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>"))) {
-                level.var_94f4ca81.var_1fde6598--;
-                if (level.var_94f4ca81.var_1fde6598 < 0) {
-                    level.var_94f4ca81.var_1fde6598 = level.var_94f4ca81.dataset.size - 1;
+                level.var_94f4ca81.currentsetindex--;
+                if (level.var_94f4ca81.currentsetindex < 0) {
+                    level.var_94f4ca81.currentsetindex = level.var_94f4ca81.dataset.size - 1;
                 }
-                level.var_94f4ca81.var_64799f7 = 0;
+                level.var_94f4ca81.currentspawnindex = 0;
                 var_f94a23 = 1;
                 dpad_down = 1;
             } else if (!self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>")) {
@@ -158,11 +158,11 @@ function function_48a6b85() {
             }
             if (!dpad_left && (self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>"))) {
                 while (true) {
-                    level.var_94f4ca81.var_64799f7--;
-                    if (level.var_94f4ca81.var_64799f7 < 0) {
-                        level.var_94f4ca81.var_64799f7 = level.var_94f4ca81.dataset[level.var_94f4ca81.var_1fde6598].spawns.size - 1;
+                    level.var_94f4ca81.currentspawnindex--;
+                    if (level.var_94f4ca81.currentspawnindex < 0) {
+                        level.var_94f4ca81.currentspawnindex = level.var_94f4ca81.dataset[level.var_94f4ca81.currentsetindex].spawns.size - 1;
                     }
-                    if (!is_true(level.var_94f4ca81.dataset[level.var_94f4ca81.var_1fde6598].spawns[level.var_94f4ca81.var_64799f7].ct)) {
+                    if (!is_true(level.var_94f4ca81.dataset[level.var_94f4ca81.currentsetindex].spawns[level.var_94f4ca81.currentspawnindex].ct)) {
                         break;
                     }
                 }
@@ -173,11 +173,11 @@ function function_48a6b85() {
             }
             if (!dpad_right && (self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>"))) {
                 while (true) {
-                    level.var_94f4ca81.var_64799f7++;
-                    if (level.var_94f4ca81.var_64799f7 >= level.var_94f4ca81.dataset[level.var_94f4ca81.var_1fde6598].spawns.size) {
-                        level.var_94f4ca81.var_64799f7 = 0;
+                    level.var_94f4ca81.currentspawnindex++;
+                    if (level.var_94f4ca81.currentspawnindex >= level.var_94f4ca81.dataset[level.var_94f4ca81.currentsetindex].spawns.size) {
+                        level.var_94f4ca81.currentspawnindex = 0;
                     }
-                    if (!is_true(level.var_94f4ca81.dataset[level.var_94f4ca81.var_1fde6598].spawns[level.var_94f4ca81.var_64799f7].ct)) {
+                    if (!is_true(level.var_94f4ca81.dataset[level.var_94f4ca81.currentsetindex].spawns[level.var_94f4ca81.currentspawnindex].ct)) {
                         break;
                     }
                 }
@@ -186,16 +186,16 @@ function function_48a6b85() {
             } else if (!self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>")) {
                 dpad_right = 0;
             }
-            if (var_f94a23 && level.var_94f4ca81.dataset[level.var_94f4ca81.var_1fde6598].spawns.size > 0) {
-                origin = level.var_94f4ca81.dataset[level.var_94f4ca81.var_1fde6598].spawns[level.var_94f4ca81.var_64799f7].origin;
-                angles = level.var_94f4ca81.dataset[level.var_94f4ca81.var_1fde6598].spawns[level.var_94f4ca81.var_64799f7].angles;
-                println("<unknown string>" + level.var_94f4ca81.dataset[level.var_94f4ca81.var_1fde6598].name);
+            if (var_f94a23 && level.var_94f4ca81.dataset[level.var_94f4ca81.currentsetindex].spawns.size > 0) {
+                origin = level.var_94f4ca81.dataset[level.var_94f4ca81.currentsetindex].spawns[level.var_94f4ca81.currentspawnindex].origin;
+                angles = level.var_94f4ca81.dataset[level.var_94f4ca81.currentsetindex].spawns[level.var_94f4ca81.currentspawnindex].angles;
+                println("<unknown string>" + level.var_94f4ca81.dataset[level.var_94f4ca81.currentsetindex].name);
                 self setorigin(origin);
                 self setplayerangles(angles);
                 var_f94a23 = 0;
             }
-            debug2dtext((100, 750, 0), "<unknown string>" + level.var_94f4ca81.dataset[level.var_94f4ca81.var_1fde6598].name, (1, 0, 0));
-            debug2dtext((100, 800, 0), "<unknown string>" + string(level.var_94f4ca81.var_64799f7) + "<unknown string>" + string(level.var_94f4ca81.dataset[level.var_94f4ca81.var_1fde6598].spawns.size), (1, 0, 0));
+            debug2dtext((100, 750, 0), "<unknown string>" + level.var_94f4ca81.dataset[level.var_94f4ca81.currentsetindex].name, (1, 0, 0));
+            debug2dtext((100, 800, 0), "<unknown string>" + string(level.var_94f4ca81.currentspawnindex) + "<unknown string>" + string(level.var_94f4ca81.dataset[level.var_94f4ca81.currentsetindex].spawns.size), (1, 0, 0));
             waitframe(1);
         }
     #/

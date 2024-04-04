@@ -29,14 +29,14 @@
 // Checksum 0x40923e11, Offset: 0x508
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"challenges_shared", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"challenges_shared", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace challenges/challenges_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x66216f62, Offset: 0x550
 // Size: 0x1c
-function private function_70a657d8() {
+function private preinit() {
     level thread function_57d8515c();
 }
 
@@ -158,7 +158,7 @@ function addflyswatterstat(weapon, aircraft) {
 // Size: 0xa0
 function canprocesschallenges() {
     /#
-        if (getdvarint(#"hash_4cc2d974d4e9d2d6", 0) > 0) {
+        if (getdvarint(#"debugchallenges", 0) > 0) {
             return true;
         }
     #/
@@ -931,16 +931,16 @@ function function_57d8515c() {
     level waittill(#"game_playing");
     for (;;) {
         wait(level.var_df437ed2);
-        var_a3b5975e = 0;
+        playerschecked = 0;
         players = getplayers();
         foreach (player in players) {
             if (!isdefined(player) || !isplayer(player) || isbot(player)) {
                 continue;
             }
             if (player controllerparticipationcheck()) {
-                var_a3b5975e++;
+                playerschecked++;
             }
-            if (12 <= var_a3b5975e) {
+            if (12 <= playerschecked) {
                 waitframe(1);
             }
         }
@@ -1153,7 +1153,7 @@ function function_783313d8(player) {
     player.var_7998aa31 = undefined;
     if (player isinvehicle()) {
         vehicle = player getvehicleoccupied();
-        vehicledriver = isdefined(vehicle player_vehicle::function_ab6c0861()) ? vehicle player_vehicle::function_ab6c0861() : vehicle.var_735382e;
+        vehicledriver = isdefined(vehicle player_vehicle::get_vehicle_driver()) ? vehicle player_vehicle::get_vehicle_driver() : vehicle.var_735382e;
     } else {
         vehicledriver = player.var_c0f5ab51;
     }
@@ -1194,17 +1194,17 @@ function capturedobjective(capturetime, objective) {
     }
     if (level.var_9bb99713 === 1) {
         friendlyplayers = getfriendlyplayers(self.team);
-        foreach (var_fe5159d6 in friendlyplayers) {
-            if (!isplayer(var_fe5159d6)) {
+        foreach (friendlyplayer in friendlyplayers) {
+            if (!isplayer(friendlyplayer)) {
                 continue;
             }
-            if (var_fe5159d6 == self) {
+            if (friendlyplayer == self) {
                 continue;
             }
-            if (!isdefined(var_fe5159d6.var_e0e2e070)) {
+            if (!isdefined(friendlyplayer.var_e0e2e070)) {
                 continue;
             }
-            foreach (var_96138b54 in var_fe5159d6.var_e0e2e070) {
+            foreach (var_96138b54 in friendlyplayer.var_e0e2e070) {
                 if (!isdefined(var_96138b54)) {
                     continue;
                 }
@@ -1212,7 +1212,7 @@ function capturedobjective(capturetime, objective) {
                     continue;
                 }
                 if (distancesquared(var_96138b54.position, self.origin) < 57600) {
-                    var_fe5159d6 stats::function_622feb0d(#"willy_pete", #"hash_52fbd3f855752244", 1);
+                    friendlyplayer stats::function_622feb0d(#"willy_pete", #"hash_52fbd3f855752244", 1);
                     break;
                 }
             }
@@ -1250,7 +1250,7 @@ function capturedobjective(capturetime, objective) {
     }
     self stats::function_dad108fa(#"hash_46a88cf34bc4309f", 1);
     self stats::function_dad108fa(#"hash_46a88bf34bc42eec", 1);
-    self notify(#"capturedobjective", {#var_eced93f5:objective, #capturetime:capturetime});
+    self notify(#"capturedobjective", {#capturetime:capturetime, #var_eced93f5:objective});
 }
 
 // Namespace challenges/challenges_shared
@@ -1890,8 +1890,8 @@ function playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, shit
             if (isdefined(effect.var_4f6b79a4)) {
                 struct.var_2e4a8800 = effect.var_4f6b79a4.var_2e4a8800;
                 struct.var_b5bddaea = spawnstruct();
-                struct.var_b5bddaea.ishacked = effect.var_4f6b79a4.var_3fc27996.ishacked;
-                struct.var_b5bddaea.owner = effect.var_4f6b79a4.var_3fc27996.owner;
+                struct.var_b5bddaea.ishacked = effect.var_4f6b79a4.sourceent.ishacked;
+                struct.var_b5bddaea.owner = effect.var_4f6b79a4.sourceent.owner;
             }
             struct.var_4b22e697 = effect.var_4b22e697;
             struct.var_3d1ed4bd = effect.var_3d1ed4bd;
@@ -1973,10 +1973,10 @@ function playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, shit
     }
     data.var_f91a4dd6 = victim.recentkillcountsameweapon;
     data.var_8e5d0c71 = victim issprinting();
-    data.var_5a900b8f = victim function_49b3360c();
-    data.var_ae515dc9 = victim function_b9c43317();
+    data.var_5a900b8f = victim isparachuting();
+    data.var_ae515dc9 = victim isskydiving();
     data.var_b4e7eecb = victim isonladder();
-    data.var_fb4d11c6 = victim function_e128a831();
+    data.var_fb4d11c6 = victim isziplining();
     data.var_c496a910 = victim function_b4813488();
     data.victim_jump_begin = victim.challenge_jump_begin;
     data.victim_jump_end = victim.challenge_jump_end;
@@ -2011,7 +2011,7 @@ function playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, shit
     }
     data.var_a99236f2 = victim.var_ead9cdbf;
     if (isstruct(victim.var_14e48fb5)) {
-        data.var_9ef7e31 = function_2e532eed(victim.var_14e48fb5);
+        data.var_9ef7e31 = structcopy(victim.var_14e48fb5);
     }
     if (isplayer(attacker)) {
         data.attackerorigin = attacker.origin;
@@ -2041,7 +2041,7 @@ function playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, shit
         data.attackerlastfastreloadtime = attacker.lastfastreloadtime;
         data.attackerwassliding = attacker issliding();
         data.attackerwassprinting = attacker issprinting();
-        data.var_b0985dfc = attacker function_b2c75e62();
+        data.var_b0985dfc = attacker isholdingbreath();
         data.attackerstance = attacker getstance();
         data.var_351dc5f = attacker geteye();
         data.var_911b9b40 = attacker isremotecontrolling();
@@ -2059,7 +2059,7 @@ function playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, shit
         data.var_117e9294 = attacker.var_99d26a94;
         data.var_26aed950 = attacker function_65776b07();
         if (isdefined(attacker.attackerdamage[victim.clientid])) {
-            data.var_1452c652 = function_2e532eed(attacker.attackerdamage[victim.clientid]);
+            data.var_1452c652 = structcopy(attacker.attackerdamage[victim.clientid]);
         }
         if (isdefined(level.var_d92c4db3)) {
             data.var_84f2a49b = attacker [[ level.var_d92c4db3 ]]();
@@ -2083,7 +2083,7 @@ function playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, shit
             var_f09a5f22 = 0;
             switch (data.var_525172df.name) {
             case #"listening_device":
-                var_5e93fb70 = function_a3f6cdac(isdefined(level.var_8ddf6d3d.var_151e2c9b) ? level.var_8ddf6d3d.var_151e2c9b : 512);
+                var_5e93fb70 = sqr(isdefined(level.var_8ddf6d3d.var_151e2c9b) ? level.var_8ddf6d3d.var_151e2c9b : 512);
                 var_f09a5f22 = 1;
                 break;
             case #"gadget_jammer":
@@ -2091,11 +2091,11 @@ function playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, shit
                 var_f09a5f22 = 1;
                 break;
             case #"missile_turret":
-                var_5e93fb70 = function_a3f6cdac(512);
+                var_5e93fb70 = sqr(512);
                 var_f09a5f22 = 1;
                 break;
             case #"gadget_supplypod":
-                var_5e93fb70 = function_a3f6cdac(isdefined(level.var_934fb97.bundle.var_366f43e9) ? level.var_934fb97.bundle.var_366f43e9 : 512);
+                var_5e93fb70 = sqr(isdefined(level.var_934fb97.bundle.var_366f43e9) ? level.var_934fb97.bundle.var_366f43e9 : 512);
                 var_f09a5f22 = 1;
                 break;
             case #"trophy_system":
@@ -2110,7 +2110,7 @@ function playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, shit
                 if (isdefined(watcher.objectarray)) {
                     foreach (field_upgrade in watcher.objectarray) {
                         if (field_upgrade.owner === attacker) {
-                            if (isdefined(field_upgrade.origin) && distancesquared(field_upgrade.origin, attacker.origin) <= (isdefined(var_5e93fb70) ? var_5e93fb70 : function_a3f6cdac(512))) {
+                            if (isdefined(field_upgrade.origin) && distancesquared(field_upgrade.origin, attacker.origin) <= (isdefined(var_5e93fb70) ? var_5e93fb70 : sqr(512))) {
                                 data.var_2e1b3ac1 = 1;
                                 break;
                             }
@@ -2132,33 +2132,33 @@ function playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, shit
             data.var_9c16cd22 = victim.var_bb20a522;
             data.var_5d9be0a1 = victim.var_8c3b7f1a;
         }
-        var_284da85d = isdefined(attacker getvehicleoccupied()) ? attacker getvehicleoccupied() : attacker.var_156bf46e;
-        if (isentity(var_284da85d) && !isdefined(getentbynum(var_284da85d getentitynumber()))) {
-            var_284da85d = undefined;
+        attackervehicle = isdefined(attacker getvehicleoccupied()) ? attacker getvehicleoccupied() : attacker.var_156bf46e;
+        if (isentity(attackervehicle) && !isdefined(getentbynum(attackervehicle getentitynumber()))) {
+            attackervehicle = undefined;
         }
-        if (isdefined(var_284da85d) && !isvehicle(var_284da85d)) {
-            var_284da85d = undefined;
+        if (isdefined(attackervehicle) && !isvehicle(attackervehicle)) {
+            attackervehicle = undefined;
         }
-        if (isdefined(var_284da85d)) {
-            if (!var_284da85d isremotecontrol() && !(var_284da85d.vehicleclass === "artillery")) {
-                data.var_284da85d = var_284da85d;
+        if (isdefined(attackervehicle)) {
+            if (!attackervehicle isremotecontrol() && !(attackervehicle.vehicleclass === "artillery")) {
+                data.attackervehicle = attackervehicle;
             }
             data.var_4e8a56b1 = 1;
-            data.var_ee70dcab = isairborne(var_284da85d);
-            data.var_1ebff6a5 = var_284da85d getoccupantseat(attacker);
-            data.var_123eada = data.var_1ebff6a5 === var_284da85d.var_260e3593;
-            data.var_b840fc2a = var_284da85d.scriptvehicletype;
+            data.var_ee70dcab = isairborne(attackervehicle);
+            data.var_1ebff6a5 = attackervehicle getoccupantseat(attacker);
+            data.var_123eada = data.var_1ebff6a5 === attackervehicle.var_260e3593;
+            data.var_b840fc2a = attackervehicle.scriptvehicletype;
         }
-        if (!isdefined(var_284da85d)) {
+        if (!isdefined(attackervehicle)) {
             groundent = attacker getgroundent();
             if (isvehicle(groundent)) {
-                var_284da85d = groundent;
+                attackervehicle = groundent;
                 data.var_3f8dd192 = 1;
             }
         }
-        if (isdefined(var_284da85d)) {
-            data.var_8badc7f8 = var_284da85d.isphysicsvehicle;
-            data.var_adb68654 = var_284da85d player_vehicle::function_ab6c0861();
+        if (isdefined(attackervehicle)) {
+            data.var_8badc7f8 = attackervehicle.isphysicsvehicle;
+            data.var_adb68654 = attackervehicle player_vehicle::get_vehicle_driver();
         }
         if (isdefined(weaponclass)) {
             if (isdefined(attacker.var_e846bafa[weaponclass])) {
@@ -2209,7 +2209,7 @@ function playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, shit
         } else {
             data.inflictorplayerhasengineerperk = 0;
         }
-        if (isdefined(attacker.var_f1863e67) && einflictor.var_e2131267[attacker getentitynumber()] === attacker.var_f1863e67) {
+        if (isdefined(attacker.connect_time) && einflictor.var_e2131267[attacker getentitynumber()] === attacker.connect_time) {
             data.var_9e818622 = 1;
         } else {
             data.var_9e818622 = 0;
@@ -2523,7 +2523,7 @@ function function_45615fac(var_32220397, var_25e55131) {
 // Checksum 0x5e657640, Offset: 0x9db8
 // Size: 0x16a
 function function_b3e4bd8(var_32220397, var_25e55131) {
-    var_326177c1 = tablelookuprownum(var_32220397, 1, #"hash_2057dd9771655b71");
+    var_326177c1 = tablelookuprownum(var_32220397, 1, #"expert");
     if (isint(var_326177c1) && var_326177c1 != -1 && ishash(var_25e55131.namehash)) {
         row_info = tablelookuprow(var_32220397, var_326177c1);
         var_39cd8305 = row_info[10] === 1;
@@ -2669,15 +2669,15 @@ function function_a66bed3e() {
 // Checksum 0x89de3a8b, Offset: 0xa6b0
 // Size: 0x88
 function function_c9e4f73f(target_value, var_55b913da, var_6ccd331f) {
-    var_ed567283 = self.pers;
-    if (!isdefined(var_ed567283[var_6ccd331f])) {
-        var_ed567283[var_6ccd331f] = 1;
+    player_pers = self.pers;
+    if (!isdefined(player_pers[var_6ccd331f])) {
+        player_pers[var_6ccd331f] = 1;
     } else {
-        var_ed567283[var_6ccd331f]++;
+        player_pers[var_6ccd331f]++;
     }
-    if (var_ed567283[var_6ccd331f] >= target_value) {
-        var_ed567283[var_55b913da] = 1;
-        var_ed567283[var_6ccd331f] = undefined;
+    if (player_pers[var_6ccd331f] >= target_value) {
+        player_pers[var_55b913da] = 1;
+        player_pers[var_6ccd331f] = undefined;
         return true;
     }
     return false;

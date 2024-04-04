@@ -12,14 +12,14 @@
 // Checksum 0xce0fba31, Offset: 0x100
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_5fe7a854b630ef02", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_5fe7a854b630ef02", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_7c1d0bac/namespace_7c1d0bac
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf4a5b64b, Offset: 0x148
 // Size: 0x94
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "player_hit_freezing_snowball", 9000, 1, "int", undefined, 0, 0);
     clientfield::register("toplayer", "player_hit_snowball_direction", 9000, 4, "int", undefined, 0, 0);
     callback::on_localclient_connect(&on_localclient_connect);

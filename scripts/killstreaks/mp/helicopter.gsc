@@ -19,14 +19,14 @@
 // Checksum 0x24368298, Offset: 0x1a8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"helicopter", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"helicopter", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace helicopter/helicopter
 // Params 0, eflags: 0x6 linked
 // Checksum 0x60697b1a, Offset: 0x1f8
 // Size: 0x144
-function private function_70a657d8() {
+function private preinit() {
     level.var_34f03cda = &function_34f03cda;
     level.var_4d5e1035 = &function_4d5e1035;
     level.var_6af968ce = &function_6af968ce;

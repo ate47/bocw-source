@@ -12,14 +12,14 @@
 // Checksum 0x9b9228a7, Offset: 0x208
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"player_vehicle", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"player_vehicle", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace player_vehicle/player_vehicle
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc7f39d8f, Offset: 0x250
 // Size: 0x1f4
-function private function_70a657d8() {
+function private preinit() {
     callback::on_vehicle_spawned(&on_vehicle_spawned);
     clientfield::register("vehicle", "overheat_fx", 1, 1, "int", &function_ed50d3e0, 0, 0);
     clientfield::register("vehicle", "overheat_fx1", 1, 1, "int", &function_b7f86930, 0, 0);

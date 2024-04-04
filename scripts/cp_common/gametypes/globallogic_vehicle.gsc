@@ -25,14 +25,14 @@
 // Checksum 0x1b522ce2, Offset: 0x130
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"globallogic_vehicle", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"globallogic_vehicle", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace vehicles/globallogic_vehicle
 // Params 0, eflags: 0x6 linked
 // Checksum 0x476d1fa6, Offset: 0x178
 // Size: 0x64
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(world.var_f6fb45f7)) {
         world.var_f6fb45f7 = [];
     }

@@ -83,8 +83,8 @@ function function_e95b2776() {
             }
             var_6731520b = vectornormalize(var_6731520b);
             n_angle = acos(var_6731520b[2]) - 90;
-            a_safe = [1:n_angle + 160, 0:n_angle + 50];
-            var_19e2c116 = [1:a_safe[1] - self.angles[0], 0:self.angles[0] - a_safe[0]];
+            a_safe = [n_angle + 50, n_angle + 160];
+            var_19e2c116 = [self.angles[0] - a_safe[0], a_safe[1] - self.angles[0]];
             /#
                 if (getdvarint(#"hash_4bdc3028494aedcb", 0)) {
                     line(waitresult.position, waitresult.position + waitresult.normal * 10, (1, 0, 0), 1, 0, 100);
@@ -105,7 +105,7 @@ function function_e95b2776() {
                 }
             #/
             if (var_19e2c116[0] * var_19e2c116[1] < 0) {
-                n_pitch = absangleclamp180(var_19e2c116[0]) > absangleclamp180(var_19e2c116[1]) ? a_safe[0] : a_safe[1];
+                n_pitch = absangleclamp180(var_19e2c116[0]) > absangleclamp180(var_19e2c116[1]) ? a_safe[1] : a_safe[0];
                 self.angles = (n_pitch, self.angles[1], self.angles[2]);
             }
             break;

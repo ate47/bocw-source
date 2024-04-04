@@ -12,14 +12,14 @@
 // Checksum 0x29a0d620, Offset: 0xd8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"player_motorcycle_2wd", &function_70a657d8, undefined, undefined, #"player_vehicle");
+    system::register(#"player_motorcycle_2wd", &preinit, undefined, undefined, #"player_vehicle");
 }
 
 // Namespace player_motorcycle_2wd/player_motorcycle_2wd
 // Params 0, eflags: 0x6 linked
 // Checksum 0xffccdefb, Offset: 0x128
 // Size: 0x2c
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_main_callback("player_motorcycle_2wd", &function_9835edf5);
 }
 
@@ -47,7 +47,7 @@ function private function_e1f72671(params) {
     occupants = self getvehoccupants();
     if (!isdefined(occupants) || occupants.size == 0) {
         self notify(#"hash_7d134b21d3606f90");
-        if (lengthsquared(self.velocity) > function_a3f6cdac(200)) {
+        if (lengthsquared(self.velocity) > sqr(200)) {
             var_6ceae60 = vectorscale((0, -1, 0), 5);
             var_99d6b963 = rotatepoint(var_6ceae60, self.angles);
             var_63c1fd8 = (-25 + randomfloat(30), 0, -22 + randomfloat(5));
@@ -109,7 +109,7 @@ function private function_8892a46e() {
 // Checksum 0xfcda4c12, Offset: 0x5d0
 // Size: 0x6c
 function private function_164c8246() {
-    if (lengthsquared(self.velocity) > function_a3f6cdac(200)) {
+    if (lengthsquared(self.velocity) > sqr(200)) {
         self thread function_45cb4291();
         return;
     }
@@ -127,7 +127,7 @@ function private function_45cb4291() {
     while (true) {
         wait(1);
         if (isalive(self)) {
-            if (lengthsquared(self.velocity) <= function_a3f6cdac(200)) {
+            if (lengthsquared(self.velocity) <= sqr(200)) {
                 self vehicle::toggle_control_bone_group(1, 1);
                 return;
             }

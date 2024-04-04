@@ -13,14 +13,14 @@
 // Checksum 0x4e3e21ae, Offset: 0x130
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_zod_companion", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_zod_companion", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zodcompanionclientutils/archetype_zod_companion
 // Params 0, eflags: 0x4
 // Checksum 0x48197ae, Offset: 0x178
 // Size: 0x124
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("allplayers", "" + #"being_robot_revived", 24000, 1, "int", &play_revival_fx, 0, 0);
     ai::add_archetype_spawn_function(#"zod_companion", &zodcompanionspawnsetup);
     level._effect[#"fx_dest_robot_head_sparks"] = "destruct/fx_dest_robot_head_sparks";

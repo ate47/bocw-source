@@ -23,7 +23,7 @@
 #using script_340a2e805e35f7a2;
 #using script_471b31bd963b388e;
 #using scripts\core_common\item_drop.gsc;
-#using script_7fc996fe8678852;
+#using scripts\core_common\content_manager.gsc;
 #using scripts\core_common\util_shared.gsc;
 #using scripts\core_common\system_shared.gsc;
 #using scripts\core_common\gameobjects_shared.gsc;
@@ -39,14 +39,14 @@
 // Checksum 0xfd92f2f, Offset: 0x1c0
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_684573a459d68beb", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_684573a459d68beb", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_207ea311/namespace_207ea311
 // Params 0, eflags: 0x4
 // Checksum 0x2c89461a, Offset: 0x218
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("allplayers", "" + #"hash_63af42145e260fb5", 1, 2, "int");
 }
 

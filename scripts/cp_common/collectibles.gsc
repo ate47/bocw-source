@@ -14,14 +14,14 @@
 // Checksum 0x2a7ecdab, Offset: 0xb8
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"collectibles", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"collectibles", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace collectibles/collectibles
 // Params 0, eflags: 0x6 linked
 // Checksum 0x76e7e5a, Offset: 0x110
 // Size: 0x10
-function private function_70a657d8() {
+function private preinit() {
     level.var_4ac1758e = [];
 }
 
@@ -383,8 +383,8 @@ function function_5d5166dd(var_d13a0347) {
 // Checksum 0xdb34a017, Offset: 0x1588
 // Size: 0x44
 function function_d06c5a39() {
-    self namespace_f48ab2e1::set_text(#"hash_209c49282fbf4594");
-    self namespace_f48ab2e1::function_309bf7c2(#"hash_1ca962038953ec7a");
+    self prompts::set_text(#"hash_209c49282fbf4594");
+    self prompts::function_309bf7c2(#"hash_1ca962038953ec7a");
 }
 
 // Namespace collectibles/collectibles

@@ -13,17 +13,17 @@
 // Checksum 0xb3000e82, Offset: 0x118
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_49e3cc2797ad6fbc", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_49e3cc2797ad6fbc", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_1cc7b406/namespace_1cc7b406
 // Params 0, eflags: 0x2 linked
 // Checksum 0x4f6fd33c, Offset: 0x170
 // Size: 0x74
-function function_70a657d8() {
+function preinit() {
     clientfield::register("scriptmover", "crafting_Table_spawn_fx", 1, 1, "int", &crafting_table_spawn_fx, 0, 0);
     level.var_3ed9fd33 = sr_crafting_table_menu::register();
-    namespace_52c8f34d::function_70a657d8();
+    namespace_52c8f34d::preinit();
 }
 
 // Namespace namespace_1cc7b406/namespace_1cc7b406

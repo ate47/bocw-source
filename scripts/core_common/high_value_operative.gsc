@@ -11,14 +11,14 @@
 // Checksum 0x1820431a, Offset: 0xb8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"high_value_operative", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"high_value_operative", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace hvo/high_value_operative
 // Params 0, eflags: 0x4
 // Checksum 0x41f52482, Offset: 0x100
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     setdvar(#"hash_35dbebb08d656926", 0);
     callback::on_spawned(&function_59d3154f);
 }
@@ -206,12 +206,12 @@ function function_323c6715() {
                     break;
                 case #"highestkillstreak":
                     if (is_true(stat.var_233a23b6)) {
-                        score = player.pers[#"cur_kill_streak"] < player.pers[#"best_kill_streak"] ? player.pers[#"cur_kill_streak"] : player.pers[#"best_kill_streak"];
+                        score = player.pers[#"cur_kill_streak"] < player.pers[#"best_kill_streak"] ? player.pers[#"best_kill_streak"] : player.pers[#"cur_kill_streak"];
                     } else {
                         if (!isdefined(player.pers[#"hvo"][var_9b4eeccc][stat.stattype])) {
                             player.pers[#"hvo"][var_9b4eeccc][stat.stattype] = 0;
                         }
-                        score = player.pers[#"cur_kill_streak"] < player.pers[#"hvo"][var_9b4eeccc][stat.stattype] ? player.pers[#"cur_kill_streak"] : player.pers[#"hvo"][var_9b4eeccc][stat.stattype];
+                        score = player.pers[#"cur_kill_streak"] < player.pers[#"hvo"][var_9b4eeccc][stat.stattype] ? player.pers[#"hvo"][var_9b4eeccc][stat.stattype] : player.pers[#"cur_kill_streak"];
                     }
                     break;
                 case #"highestmultikill":

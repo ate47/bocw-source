@@ -15,14 +15,14 @@
 // Checksum 0x57959bce, Offset: 0x4b8
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"zm_wallbuy", &function_70a657d8, &postinit, undefined, #"zm");
+    system::register(#"zm_wallbuy", &preinit, &postinit, undefined, #"zm");
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd57cf030, Offset: 0x518
 // Size: 0x184
-function private function_70a657d8() {
+function private preinit() {
     if (!is_true(getgametypesetting(#"zmwallbuysenabled"))) {
         return;
     }

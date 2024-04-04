@@ -11,14 +11,14 @@
 // Checksum 0x82ecc64b, Offset: 0x100
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_1555c697c02263a7", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_1555c697c02263a7", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_33c196c8/namespace_33c196c8
 // Params 0, eflags: 0x6 linked
 // Checksum 0x992def2b, Offset: 0x148
 // Size: 0x74
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "" + #"hash_547dd74a97b1fdba", 24000, 2, "int", &function_28f9f58c, 0, 0);
     level.var_75653eb2 = &function_288ebce4;
 }
@@ -27,13 +27,13 @@ function private function_70a657d8() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xfd0a76dd, Offset: 0x1c8
 // Size: 0xb0
-function function_288ebce4(localclientnum, var_a6762160) {
-    if (!(isdefined(var_a6762160) && isdefined(var_a6762160.weapon)) || !isdefined(localclientnum)) {
+function function_288ebce4(localclientnum, itementry) {
+    if (!(isdefined(itementry) && isdefined(itementry.weapon)) || !isdefined(localclientnum)) {
         return false;
     }
     data = item_world::function_a7e98a1a(localclientnum);
     tactical = data.inventory.items[13];
-    if (tactical.var_a6762160.name === #"hash_7ada82abc5dad90e") {
+    if (tactical.itementry.name === #"hash_7ada82abc5dad90e") {
         return false;
     }
     return true;

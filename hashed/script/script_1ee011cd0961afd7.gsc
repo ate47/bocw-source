@@ -54,7 +54,7 @@ function function_4060ccb4(name, *unused1, var_f80dfd0d, *var_5ddf2027, *var_26f
     /#
         assert(!isdefined(level.doa.var_11c4dca4[var_5ddf2027]), "<unknown string>");
     #/
-    level.doa.var_11c4dca4[var_5ddf2027] = {#clear:var_26f1324c, #id:var_318e5b78, #name:var_5ddf2027};
+    level.doa.var_11c4dca4[var_5ddf2027] = {#name:var_5ddf2027, #id:var_318e5b78, #clear:var_26f1324c};
 }
 
 // Namespace namespace_83eb6304/namespace_83eb6304
@@ -158,10 +158,10 @@ function turnofffx(name) {
         return;
     }
     if (!isdefined(level.doa.var_11c4dca4[name])) {
-        namespace_1e25ad94::function_f5f0c0f8("FX OFF ERROR for entity [" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "] effect UNDFINED--> [" + name + "] ");
+        namespace_1e25ad94::debugmsg("FX OFF ERROR for entity [" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "] effect UNDFINED--> [" + name + "] ");
         return;
     }
-    fxcmd = {#flag:"stop_fx", #fx:level.doa.var_11c4dca4[name]};
+    fxcmd = {#fx:level.doa.var_11c4dca4[name], #flag:"stop_fx"};
     if (!isdefined(self.var_93d7fb93)) {
         self thread function_dd47bd22(fxcmd);
     } else {
@@ -186,10 +186,10 @@ function function_3ecfde67(name) {
         return;
     }
     if (!isdefined(level.doa.var_11c4dca4[name])) {
-        namespace_1e25ad94::function_f5f0c0f8("FX ON ERROR for entity [" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "] effect UNDFINED--> [" + name + "] ");
+        namespace_1e25ad94::debugmsg("FX ON ERROR for entity [" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "] effect UNDFINED--> [" + name + "] ");
         return;
     }
-    fxcmd = {#flag:"play_fx", #fx:level.doa.var_11c4dca4[name]};
+    fxcmd = {#fx:level.doa.var_11c4dca4[name], #flag:"play_fx"};
     if (!isdefined(self.var_93d7fb93)) {
         self thread function_dd47bd22(fxcmd);
     } else {
@@ -204,7 +204,7 @@ function function_3ecfde67(name) {
         if (self.var_93d7fb93.size >= 60) {
             i = 1;
             foreach (var_9e787c74 in self.var_93d7fb93) {
-                function_f5f0c0f8("<unknown string>" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "<unknown string>" + i + "<unknown string>" + var_9e787c74.fx.name + "<unknown string>");
+                debugmsg("<unknown string>" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "<unknown string>" + i + "<unknown string>" + var_9e787c74.fx.name + "<unknown string>");
                 i++;
             }
         }

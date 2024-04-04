@@ -29,20 +29,20 @@ function on_localplayer_spawned(localclientnum) {
 // Checksum 0x44ba0747, Offset: 0x120
 // Size: 0xba
 function function_9ea44286() {
-    var_65792f8b = map::get_script_bundle();
-    if (!isdefined(var_65792f8b)) {
+    mapbundle = map::get_script_bundle();
+    if (!isdefined(mapbundle)) {
         return undefined;
     }
     str_gametype = util::get_game_type();
     if (str_gametype === #"zsurvival") {
-        if (isdefined(var_65792f8b.var_b74bbf7)) {
-            return getscriptbundle(var_65792f8b.var_b74bbf7);
+        if (isdefined(mapbundle.var_b74bbf7)) {
+            return getscriptbundle(mapbundle.var_b74bbf7);
         }
     }
-    if (!isdefined(var_65792f8b.var_e13ec3f3)) {
+    if (!isdefined(mapbundle.var_e13ec3f3)) {
         return undefined;
     }
-    return getscriptbundle(var_65792f8b.var_e13ec3f3);
+    return getscriptbundle(mapbundle.var_e13ec3f3);
 }
 
 // Namespace namespace_1a4edaec/namespace_1a4edaec

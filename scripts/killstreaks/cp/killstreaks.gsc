@@ -11,14 +11,14 @@
 // Checksum 0x38df8766, Offset: 0xa0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"killstreaks", &function_70a657d8, undefined, undefined, #"weapons");
+    system::register(#"killstreaks", &preinit, undefined, undefined, #"weapons");
 }
 
 // Namespace killstreaks/killstreaks
 // Params 0, eflags: 0x6 linked
 // Checksum 0x427e6b5, Offset: 0xf0
 // Size: 0x34
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
     callback::on_start_gametype(&init);
 }

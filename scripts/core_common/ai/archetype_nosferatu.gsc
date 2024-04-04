@@ -390,7 +390,7 @@ function private function_a41a5aea(entity) {
         return false;
     }
     distancesq = distancesquared(entity.origin, entity.enemy.origin);
-    if (distancesq >= function_a3f6cdac(96)) {
+    if (distancesq >= sqr(96)) {
         return false;
     }
     if (!entity cansee(entity.enemy)) {
@@ -474,10 +474,10 @@ function private function_e9819a23(entity) {
             predictedenemypos = predictedenemypos + vectorscale(velocity, 0.25);
         }
         distancesq = distancesquared(entity.origin, predictedenemypos);
-        if (distancesq <= function_a3f6cdac(128)) {
+        if (distancesq <= sqr(128)) {
             return false;
         }
-        if (distancesq >= function_a3f6cdac(100)) {
+        if (distancesq >= sqr(100)) {
             if (entity.enemy issprinting()) {
                 enemyvelocity = vectornormalize(entity.enemy getvelocity());
                 var_7a61ad67 = vectornormalize(entity getvelocity());
@@ -531,10 +531,10 @@ function private function_85d8b15d(entity) {
             predictedenemypos = predictedenemypos + vectorscale(velocity, 0.25);
         }
         distancesq = distancesquared(entity.origin, predictedenemypos);
-        if (distancesq <= function_a3f6cdac(128)) {
+        if (distancesq <= sqr(128)) {
             return false;
         }
-        if (distancesq >= function_a3f6cdac(100)) {
+        if (distancesq >= sqr(100)) {
             if (entity.enemy issprinting()) {
                 enemyvelocity = vectornormalize(entity.enemy getvelocity());
                 var_7a61ad67 = vectornormalize(entity getvelocity());
@@ -631,7 +631,7 @@ function private function_7ffbbff(entity) {
     if (abs(entity.origin[2] - entity.enemy.origin[2]) > 64) {
         return false;
     }
-    if (distancesquared(entity.origin, entity.enemy.origin) > function_a3f6cdac(80)) {
+    if (distancesquared(entity.origin, entity.enemy.origin) > sqr(80)) {
         return false;
     }
     yawtoenemy = angleclamp180(entity.angles[1] - vectortoangles(entity.enemy.origin - entity.origin)[1]);
@@ -810,12 +810,12 @@ function function_3511ecd1(entity, mocompanim, *mocompanimblendouttime, *mocompa
                 record3dtext("<unknown string>", mocompanimflag.origin + vectorscale((0, 0, 1), 60), (1, 0, 0), "<unknown string>");
             #/
             mocompanimflag.meleeinfo.var_425c4c8b = 0;
-        } else if (var_cf699df5 > var_65cbfb52 && var_776ddabf >= function_a3f6cdac(130)) {
+        } else if (var_cf699df5 > var_65cbfb52 && var_776ddabf >= sqr(130)) {
             /#
                 record3dtext("<unknown string>", mocompanimflag.origin + vectorscale((0, 0, 1), 60), (1, 0, 0), "<unknown string>");
             #/
             mocompanimflag.meleeinfo.var_425c4c8b = 0;
-        } else if (var_65cbfb52 >= function_a3f6cdac(450)) {
+        } else if (var_65cbfb52 >= sqr(450)) {
             /#
                 record3dtext("<unknown string>", mocompanimflag.origin + vectorscale((0, 0, 1), 60), (1, 0, 0), "<unknown string>");
             #/
@@ -829,16 +829,16 @@ function function_3511ecd1(entity, mocompanim, *mocompanimblendouttime, *mocompa
         }
         if (mocompanimflag.meleeinfo.var_425c4c8b) {
             var_776ddabf = distancesquared(mocompanimflag.meleeinfo.var_cb28f380, mocompanimflag.meleeinfo.adjustedendpos);
-            var_beabc994 = anglestoforward(mocompanimflag.angles);
+            myforward = anglestoforward(mocompanimflag.angles);
             var_1c3641f2 = (mocompanimflag.enemy.origin[0], mocompanimflag.enemy.origin[1], mocompanimflag.origin[2]);
             dirtoenemy = vectornormalize(var_1c3641f2 - mocompanimflag.origin);
             zdiff = mocompanimflag.meleeinfo.var_cb28f380[2] - mocompanimflag.enemy.origin[2];
-            var_6738a702 = abs(zdiff) <= 64;
-            withinfov = vectordot(var_beabc994, dirtoenemy) > cos(50);
-            var_7948b2f3 = var_6738a702 && withinfov;
+            withinzrange = abs(zdiff) <= 64;
+            withinfov = vectordot(myforward, dirtoenemy) > cos(50);
+            var_7948b2f3 = withinzrange && withinfov;
             var_425c4c8b = (isvisible || var_535d098c) && var_7948b2f3;
             /#
-                reasons = "<unknown string>" + isvisible + "<unknown string>" + var_6738a702 + "<unknown string>" + withinfov;
+                reasons = "<unknown string>" + isvisible + "<unknown string>" + withinzrange + "<unknown string>" + withinfov;
                 if (var_425c4c8b) {
                     record3dtext(reasons, mocompanimflag.origin + vectorscale((0, 0, 1), 60), (0, 1, 0), "<unknown string>");
                 } else {

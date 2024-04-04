@@ -40,7 +40,7 @@ function function_124c1a34(player, model, note) {
     blade setplayercollision(0);
     blade enablelinkto();
     blade linkto(self, undefined, vectorscale((0, -1, 0), 70));
-    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", blade.origin, 1 | 512 | 8, 30, 50);
+    trigger = namespace_ec06fe4a::spawntrigger("trigger_radius", blade.origin, 1 | 512 | 8, 30, 50);
     if (!isdefined(trigger)) {
         blade delete();
         return false;
@@ -95,8 +95,8 @@ function sawbladeupdate(model = "zombietron_sawblade") {
 // Params 2, eflags: 0x6 linked
 // Checksum 0xfaa6d6fb, Offset: 0x628
 // Size: 0x2a8
-function private function_7daf5356(player, var_58be1fc5) {
-    player endon(var_58be1fc5);
+function private function_7daf5356(player, endnote) {
+    player endon(endnote);
     if (isplayer(player)) {
         player endon(#"disconnect");
     }
@@ -134,8 +134,8 @@ function private function_7daf5356(player, var_58be1fc5) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0xac128985, Offset: 0x8d8
 // Size: 0xd6
-function private function_40fc311d(*org, var_58be1fc5) {
-    self endon(var_58be1fc5);
+function private function_40fc311d(*org, endnote) {
+    self endon(endnote);
     if (isplayer(self)) {
         self endon(#"disconnect");
     }
@@ -144,17 +144,17 @@ function private function_40fc311d(*org, var_58be1fc5) {
         waitframe(1);
     }
     wait(timeout);
-    self notify(var_58be1fc5);
+    self notify(endnote);
 }
 
 // Namespace namespace_52ba5a8a/namespace_2c7d0af1
 // Params 2, eflags: 0x6 linked
 // Checksum 0xc899a5f5, Offset: 0x9b8
 // Size: 0x214
-function private function_20139eee(org, var_58be1fc5) {
-    self waittill(var_58be1fc5, #"player_died", #"hash_77af89fb2b44942f", #"disconnect", #"death", #"enter_vehicle", #"hash_df25520ab279dff", #"clone_shutdown");
+function private function_20139eee(org, endnote) {
+    self waittill(endnote, #"player_died", #"hash_77af89fb2b44942f", #"disconnect", #"death", #"enter_vehicle", #"hash_df25520ab279dff", #"clone_shutdown");
     if (isdefined(self)) {
-        self notify(var_58be1fc5);
+        self notify(endnote);
     }
     util::wait_network_frame();
     if (isdefined(org.trigger)) {

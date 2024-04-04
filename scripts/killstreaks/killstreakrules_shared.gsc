@@ -118,7 +118,7 @@ function killstreakstart(hardpointtype, team, hacked, displayteammessage) {
             level.killstreakrules[key].curteam[team]++;
         }
     }
-    level notify(#"killstreak_started", {#attacker:self, #team:team, #killstreaktype:hardpointtype});
+    level notify(#"killstreak_started", {#killstreaktype:hardpointtype, #team:team, #attacker:self});
     if (isdefined(level.var_4d062db3)) {
         self [[ level.var_4d062db3 ]]({#hardpointtype:hardpointtype});
     }
@@ -134,7 +134,7 @@ function killstreakstart(hardpointtype, team, hacked, displayteammessage) {
     level.killstreaks_triggered[killstreak_id] = var_5c07b36e;
     if (!sessionmodeiscampaigngame()) {
         if (!sessionmodeiszombiesgame()) {
-            stats::function_8fb23f94(killstreaks::function_73b4659(hardpointtype), #"hash_7d6781e4032b4aa5", 1);
+            stats::function_8fb23f94(killstreaks::function_73b4659(hardpointtype), #"uses", 1);
         }
         killstreaks::function_eb52ba7(hardpointtype, team, killstreak_id);
     }
@@ -288,14 +288,14 @@ function killstreakstop(hardpointtype, team, id, var_2921b547 = 1) {
         #/
         if (sessionmodeismultiplayergame() || sessionmodeiswarzonegame() || sessionmodeiszombiesgame()) {
             var_8756d70f = killstreaks::function_cb0594d5();
-            function_92d1707f(var_8756d70f, {#team:team, #name:hardpointtype, #endtime:gettime(), #starttime:0});
+            function_92d1707f(var_8756d70f, {#starttime:0, #endtime:gettime(), #name:hardpointtype, #team:team});
         }
         return;
     }
     level.killstreaks_triggered[id][#"endtime"] = gettime();
     totalkillswiththiskillstreak = level.matchrecorderkillstreakkills[id];
     if (sessionmodeismultiplayergame() || sessionmodeiswarzonegame() || sessionmodeiszombiesgame()) {
-        mpkillstreakuses = {#team:team, #name:hardpointtype, #spawnid:level.killstreaks_triggered[id][#"spawnid"], #endtime:level.killstreaks_triggered[id][#"endtime"], #starttime:level.killstreaks_triggered[id][#"starttime"]};
+        mpkillstreakuses = {#starttime:level.killstreaks_triggered[id][#"starttime"], #endtime:level.killstreaks_triggered[id][#"endtime"], #spawnid:level.killstreaks_triggered[id][#"spawnid"], #name:hardpointtype, #team:team};
         var_8756d70f = killstreaks::function_cb0594d5();
         function_92d1707f(var_8756d70f, mpkillstreakuses);
         player = self;
@@ -364,8 +364,8 @@ function function_9f635a5(cooldowntime = 0, killstreaktype) {
     if (!isdefined(killstreaktype)) {
         return;
     }
-    var_5b220756 = self killstreaks::function_a2c375bb(killstreaktype);
-    if (!isdefined(var_5b220756) || var_5b220756 === 3) {
+    killstreakslot = self killstreaks::function_a2c375bb(killstreaktype);
+    if (!isdefined(killstreakslot) || killstreakslot === 3) {
         return;
     }
     if (util::function_7f7a77ab()) {
@@ -374,7 +374,7 @@ function function_9f635a5(cooldowntime = 0, killstreaktype) {
             if (is_true(level.var_e80a117f)) {
                 var_e5e81b59 = int((currenttime + cooldowntime) * 1000);
                 self.var_8b9b1bba[killstreaktype] = var_e5e81b59;
-                self killstreaks::function_b3185041(var_5b220756, var_e5e81b59);
+                self killstreaks::function_b3185041(killstreakslot, var_e5e81b59);
             } else {
                 cooldowntime = cooldowntime - float(gettime()) / 1000 - currenttime;
             }
@@ -411,8 +411,8 @@ function function_9f635a5(cooldowntime = 0, killstreaktype) {
 function function_40451ab0(killstreaktype) {
     if (isdefined(killstreaktype)) {
         momentum = self.pers[#"momentum"];
-        var_36f2d8a2 = self function_dceb5542(level.killstreaks[killstreaktype].itemindex);
-        if (isdefined(momentum) && isdefined(var_36f2d8a2) && momentum >= var_36f2d8a2) {
+        streakcost = self function_dceb5542(level.killstreaks[killstreaktype].itemindex);
+        if (isdefined(momentum) && isdefined(streakcost) && momentum >= streakcost) {
             return true;
         }
     }
@@ -436,11 +436,11 @@ function private function_3859ee41(killstreaktype) {
         self.var_9e10e827 = undefined;
         return;
     }
-    var_5b220756 = self killstreaks::function_a2c375bb(killstreaktype);
-    if (!isdefined(var_5b220756)) {
+    killstreakslot = self killstreaks::function_a2c375bb(killstreaktype);
+    if (!isdefined(killstreakslot)) {
         return;
     }
-    if (var_5b220756 == 3) {
+    if (killstreakslot == 3) {
         return;
     }
     killstreakweapon = killstreaks::get_killstreak_weapon(killstreaktype);
@@ -455,8 +455,8 @@ function private function_3859ee41(killstreaktype) {
     }
     var_e5e81b59 = gettime() + int(var_f66fab06 * 1000);
     self.var_8b9b1bba[killstreaktype] = var_e5e81b59;
-    self killstreaks::function_a831f92c(var_5b220756, var_f66fab06, 1);
-    self killstreaks::function_b3185041(var_5b220756, var_e5e81b59);
+    self killstreaks::function_a831f92c(killstreakslot, var_f66fab06, 1);
+    self killstreaks::function_b3185041(killstreakslot, var_e5e81b59);
     return var_f66fab06;
 }
 
@@ -520,7 +520,7 @@ function iskillstreakallowed(hardpointtype, team, var_1d8339ae, var_91419d5) {
         }
         if (isdefined(rule.var_11c5ecfd) && rule.var_11c5ecfd != 0) {
             playerorigin = self.origin;
-            radiussq = function_a3f6cdac(rule.var_11c5ecfd);
+            radiussq = sqr(rule.var_11c5ecfd);
             var_9a9cdff6 = 0;
             var_6eeac690 = 0;
             foreach (var_69e8e774 in rule.var_8c2bb724) {

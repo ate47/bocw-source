@@ -8,14 +8,14 @@
 // Checksum 0xe419824f, Offset: 0x98
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"art", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"art", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace art/art
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd875660a, Offset: 0xe0
 // Size: 0xfc
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.dofdefault)) {
         level.dofdefault[#"nearstart"] = 0;
         level.dofdefault[#"nearend"] = 1;

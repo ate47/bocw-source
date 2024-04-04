@@ -14,14 +14,14 @@
 // Checksum 0x58051e98, Offset: 0x1e8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_perk_tombstone", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_perk_tombstone", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa70618f4, Offset: 0x230
 // Size: 0xb4
-function private function_70a657d8() {
+function private preinit() {
     function_27473e44();
     clientfield::register_clientuimodel("hud_items.tombstonePerkAvailable", #"hash_6f4b11a0bee9b73d", #"hash_3031b17444967abf", 1, 3, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("hud_items.tombstoneReviveTimerShorten", #"hash_6f4b11a0bee9b73d", #"hash_5c596a46083394e3", 1, 1, "int", undefined, 0, 0);
@@ -186,9 +186,9 @@ function private function_222efb26(*localclientnum) {
 function function_2f3a5c2(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
     self util::waittill_dobj(fieldname);
-    if (isdefined(self.var_8cc03782)) {
-        deletefx(fieldname, self.var_8cc03782, 1);
-        self.var_8cc03782 = undefined;
+    if (isdefined(self.eye_fx)) {
+        deletefx(fieldname, self.eye_fx, 1);
+        self.eye_fx = undefined;
     }
     if (isdefined(self.var_212f2fe0)) {
         self stoploopsound(self.var_212f2fe0);
@@ -211,7 +211,7 @@ function function_2f3a5c2(localclientnum, *oldval, newval, *bnewent, *binitialsn
             str_fx = #"hash_749676da3b26efc8";
             break;
         }
-        self.var_8cc03782 = util::playfxontag(fieldname, str_fx, self, "tag_origin");
+        self.eye_fx = util::playfxontag(fieldname, str_fx, self, "tag_origin");
         self playsound(fieldname, #"hash_584010eeca733f75");
         self.var_212f2fe0 = self playloopsound(#"hash_4bf005ee9faa6c5a");
     }
@@ -223,17 +223,17 @@ function function_2f3a5c2(localclientnum, *oldval, newval, *bnewent, *binitialsn
 // Size: 0x12a
 function function_e2f686a3(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self util::waittill_dobj(fieldname);
-    if (isdefined(self.var_87f7f912)) {
-        deletefx(fieldname, self.var_87f7f912, 0);
-        self.var_87f7f912 = undefined;
+    if (isdefined(self.smoke_fx)) {
+        deletefx(fieldname, self.smoke_fx, 0);
+        self.smoke_fx = undefined;
     }
-    if (isdefined(self.var_54cf4ad1)) {
-        self stoploopsound(self.var_54cf4ad1);
-        self.var_54cf4ad1 = undefined;
+    if (isdefined(self.smoke_sfx)) {
+        self stoploopsound(self.smoke_sfx);
+        self.smoke_sfx = undefined;
     }
     if (bwastimejump && isdefined(self)) {
-        self.var_87f7f912 = util::playfxontag(fieldname, #"hash_75c8e387ce756315", self, "tag_origin");
-        self.var_54cf4ad1 = self playloopsound(#"hash_3d5c6d04514fbbcd");
+        self.smoke_fx = util::playfxontag(fieldname, #"hash_75c8e387ce756315", self, "tag_origin");
+        self.smoke_sfx = self playloopsound(#"hash_3d5c6d04514fbbcd");
     }
 }
 

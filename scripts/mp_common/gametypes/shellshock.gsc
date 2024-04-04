@@ -12,14 +12,14 @@
 // Checksum 0x594ec9db, Offset: 0x128
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"shellshock", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"shellshock", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace shellshock/shellshock
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc0fff3e8, Offset: 0x170
 // Size: 0x3c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&init);
     level.shellshockonplayerdamage = &on_damage;
 }

@@ -16,14 +16,14 @@
 // Checksum 0xa80b36d6, Offset: 0xd8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"cwl_contracts", &function_70a657d8, undefined, &finalize_init, undefined);
+    system::register(#"cwl_contracts", &preinit, undefined, &finalize_init, undefined);
 }
 
 // Namespace contracts/cwl_contracts
 // Params 0, eflags: 0x6 linked
 // Checksum 0x5843d42d, Offset: 0x128
 // Size: 0x34
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.challengescallbacks)) {
         level.challengescallbacks = [];
     }

@@ -108,7 +108,7 @@ function function_d63aa49b(local_client_num, *bundle) {
         if (self function_4add50a7()) {
             return false;
         }
-        if (!function_97980fde(bundle, self)) {
+        if (!isvehicleoccupied(bundle, self)) {
             return false;
         }
     }

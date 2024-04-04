@@ -29,14 +29,14 @@
 // Checksum 0x6b170032, Offset: 0x5c8
 // Size: 0x64
 function private autoexec __init__system__() {
-    system::register(#"straferun", &function_70a657d8, &postinit, &function_3675de8b, #"killstreaks");
+    system::register(#"straferun", &preinit, &postinit, &function_3675de8b, #"killstreaks");
 }
 
 // Namespace straferun/straferun
 // Params 0, eflags: 0x6 linked
 // Checksum 0x242a2228, Offset: 0x638
 // Size: 0x22c
-function private function_70a657d8() {
+function private preinit() {
     level.straferunnumrockets = 2;
     level.var_e8d7c111 = 8;
     level.straferunrocketdelay = 0.35;
@@ -50,11 +50,11 @@ function private function_70a657d8() {
     level.straferunshellshockradius = 512;
     level.straferunkillsbeforeexit = 10;
     level.straferunnumkillcams = 5;
-    level.var_95b9b85f = "veh_t6_air_a10f";
+    level.straferunmodel = "veh_t6_air_a10f";
     level.straferunmodelenemy = #"hash_771795fd7b9b3033";
     level.straferunvehicle = "vehicle_straferun_mp";
     level.straferungunweapon = getweapon(#"straferun_gun");
-    level.var_831bdf5d = "wpn_a10_shot_loop_npc";
+    level.straferungunsound = "wpn_a10_shot_loop_npc";
     level.straferunrocketweapon = getweapon(#"straferun_rockets");
     level.straferunrockettags = [];
     level.straferunrockettags[0] = "tag_attach_hardpoint_1";
@@ -72,12 +72,12 @@ function private function_70a657d8() {
 // Checksum 0xe06f73c3, Offset: 0x870
 // Size: 0x1c4
 function private postinit() {
-    var_fc96f513 = killstreaks::function_e2c3bda3("straferun", "killstreak_straferun");
-    killstreaks::register_killstreak(var_fc96f513, &usekillstreakstraferun);
+    bundle_name = killstreaks::function_e2c3bda3("straferun", "killstreak_straferun");
+    killstreaks::register_killstreak(bundle_name, &usekillstreakstraferun);
     level.var_14fa3231 = [];
     var_99f22d3c = level.var_14fa3231;
-    var_99f22d3c[var_99f22d3c.size] = {#var_4c13f1ac:"inventory_helicopter_comlink", #var_d3413870:"helicopter_comlink", #targetname:"chopper"};
-    var_99f22d3c[var_99f22d3c.size] = {#var_4c13f1ac:"inventory_supply_drop", #var_d3413870:"supply_drop", #targetname:"chopper"};
+    var_99f22d3c[var_99f22d3c.size] = {#targetname:"chopper", #var_d3413870:"helicopter_comlink", #var_4c13f1ac:"inventory_helicopter_comlink"};
+    var_99f22d3c[var_99f22d3c.size] = {#targetname:"chopper", #var_d3413870:"supply_drop", #var_4c13f1ac:"inventory_supply_drop"};
     var_99f22d3c[var_99f22d3c.size] = {#targetname:"chopper_gunner"};
     var_99f22d3c[var_99f22d3c.size] = {#targetname:"napalm_strike"};
     var_99f22d3c[var_99f22d3c.size] = {#targetname:"uav"};
@@ -160,17 +160,17 @@ function function_db619336(hardpointtype, killstreak_id, location) {
     if (sessionmodeiswarzonegame()) {
         position = location.origin;
         trace = bullettrace(position + vectorscale((0, 0, 1), 10000), position - vectorscale((0, 0, 1), 10000), 0, undefined);
-        targetpoint = trace[#"fraction"] > 1 ? trace[#"position"] : (position[0], position[1], 0);
+        targetpoint = trace[#"fraction"] > 1 ? (position[0], position[1], 0) : trace[#"position"];
         var_b0490eb9 = getheliheightlockheight(position);
-        var_6be9958b = trace[#"position"][2];
+        groundheight = trace[#"position"][2];
         bundle = killstreaks::get_script_bundle("straferun");
-        var_8cdd01c7 = var_6be9958b + (var_b0490eb9 - var_6be9958b) * bundle.var_ff73e08c;
+        heightoverride = groundheight + (var_b0490eb9 - groundheight) * bundle.var_ff73e08c;
     }
-    planea = function_1e30e51e(hardpointtype, killstreak_id, location, #"hash_1dfff61be0d43f2d", "warthog_strafe1_a_start", "warthog_strafe1_pivot_a", (0, 0, 0), var_8cdd01c7);
+    planea = function_1e30e51e(hardpointtype, killstreak_id, location, #"hash_1dfff61be0d43f2d", "warthog_strafe1_a_start", "warthog_strafe1_pivot_a", (0, 0, 0), heightoverride);
     if (!isdefined(planea)) {
         return false;
     }
-    planeb = function_1e30e51e(hardpointtype, killstreak_id, location, #"hash_1dfff31be0d43a14", "warthog_strafe1_b_start", "warthog_strafe1_pivot_b", (200, 200, 50), var_8cdd01c7);
+    planeb = function_1e30e51e(hardpointtype, killstreak_id, location, #"hash_1dfff31be0d43a14", "warthog_strafe1_b_start", "warthog_strafe1_pivot_b", (200, 200, 50), heightoverride);
     if (!isdefined(planeb)) {
         planea thread explode();
         return false;
@@ -199,8 +199,8 @@ function function_db619336(hardpointtype, killstreak_id, location) {
 // Params 8, eflags: 0x2 linked
 // Checksum 0x96240419, Offset: 0x10d0
 // Size: 0x8c0
-function function_1e30e51e(hardpointtype, killstreak_id, location, var_a6b1bda0, var_f655986d, var_9c00e6d8, var_49d19de7, var_e4c839a6) {
-    startnode = getvehiclenode(var_f655986d, "targetname");
+function function_1e30e51e(hardpointtype, killstreak_id, location, var_a6b1bda0, start_node_name, var_9c00e6d8, var_49d19de7, var_e4c839a6) {
+    startnode = getvehiclenode(start_node_name, "targetname");
     if (!isdefined(startnode)) {
         startnode = getvehiclenode("warthog_start", "targetname");
     }
@@ -280,7 +280,7 @@ function function_1e30e51e(hardpointtype, killstreak_id, location, var_a6b1bda0,
     if (!isdefined(var_dda93e6c)) {
         var_dda93e6c = vectorscale((0, 1, 0), 90);
     }
-    var_b818f98a = function_2e532eed(location);
+    var_b818f98a = structcopy(location);
     var_b818f98a.origin = var_b818f98a.origin + var_49d19de7;
     plane vehicle::function_bb9b43a9(startnode, var_1c847d0f, var_dda93e6c, var_b818f98a, var_e4c839a6);
     plane.killbox = [];
@@ -291,7 +291,7 @@ function function_1e30e51e(hardpointtype, killstreak_id, location, var_a6b1bda0,
     plane thread watchforownerexit(self);
     plane thread targetting_delay::function_7e1a12ce(12000);
     if (var_6f0661aa) {
-        plane killstreakrules::function_2e6ff61a(hardpointtype, killstreak_id, {#team:plane.team, #origin:var_b818f98a.origin});
+        plane killstreakrules::function_2e6ff61a(hardpointtype, killstreak_id, {#origin:var_b818f98a.origin, #team:plane.team});
         util::function_a3f7de13(21, self.team, self getentitynumber(), level.killstreaks[#"straferun"].uiname);
     }
     aiutility::addaioverridedamagecallback(plane, &function_16abaea4);
@@ -965,7 +965,7 @@ function function_f7055dec() {
     }
     var_e0345575 = level.var_53bed697[self.killstreakid];
     now = gettime();
-    var_6a3a9bb1 = function_a3f6cdac(8000);
+    var_6a3a9bb1 = sqr(8000);
     foreach (var_e53a042f in level.var_14fa3231) {
         var_61203702 = getentarray(var_e53a042f.targetname, "targetname");
         if (var_61203702.size == 0) {

@@ -10,14 +10,14 @@
 // Checksum 0x8819e156, Offset: 0xc8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"dynent_use", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"dynent_use", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace dynent_use/dynent_use
 // Params 0, eflags: 0x6 linked
 // Checksum 0x660fb8bc, Offset: 0x110
 // Size: 0xbc
-function private function_70a657d8() {
+function private preinit() {
     if (util::is_frontend_map() || !(isdefined(getgametypesetting(#"usabledynents")) ? getgametypesetting(#"usabledynents") : 0)) {
         return;
     }

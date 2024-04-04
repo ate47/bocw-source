@@ -66,9 +66,9 @@ function function_7cafeca(hud_name) {
         if (!isdefined(level.hud_array[hud_name])) {
             return;
         }
-        var_9131f83f = level.hud_array[hud_name];
-        for (i = 0; i < var_9131f83f.size; i++) {
-            function_2a064f4f(var_9131f83f[i]);
+        huds = level.hud_array[hud_name];
+        for (i = 0; i < huds.size; i++) {
+            function_2a064f4f(huds[i]);
         }
         level.hud_array[hud_name] = undefined;
     #/

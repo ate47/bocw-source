@@ -10,14 +10,14 @@
 // Checksum 0x7bc3a17e, Offset: 0x160
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_2af3fdb587243686", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_2af3fdb587243686", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace perks/perks
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb7924b4f, Offset: 0x1a8
 // Size: 0x8c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register_clientuimodel("hudItems.ammoCooldowns.equipment.tactical", 1, 5, "float", 0);
     clientfield::register_clientuimodel("hudItems.ammoCooldowns.equipment.lethal", 1, 5, "float", 0);
     callback::on_spawned(&on_player_spawned);
@@ -107,15 +107,15 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
             return;
         }
         var_acddd81e = isdefined(weapon.var_7d4c12af) && weapon.var_7d4c12af != "None";
-        var_e0ca50e9 = {#var_acddd81e:var_acddd81e, #weapon:weapon, #slot:weapon.offhandslot};
+        var_e0ca50e9 = {#slot:weapon.offhandslot, #weapon:weapon, #var_acddd81e:var_acddd81e};
         if (!isdefined(self.var_7cedc725)) {
             self.var_7cedc725 = [];
         } else if (!isarray(self.var_7cedc725)) {
             self.var_7cedc725 = array(self.var_7cedc725);
         }
         self.var_7cedc725[self.var_7cedc725.size] = var_e0ca50e9;
-        var_2b9b7c0f = var_e0ca50e9.slot == "Lethal grenade" ? "hudItems.ammoCooldowns.equipment.lethal" : "hudItems.ammoCooldowns.equipment.tactical";
-        self clientfield::set_player_uimodel(var_2b9b7c0f, 0);
+        cf = var_e0ca50e9.slot == "Lethal grenade" ? "hudItems.ammoCooldowns.equipment.lethal" : "hudItems.ammoCooldowns.equipment.tactical";
+        self clientfield::set_player_uimodel(cf, 0);
         if (self.var_7cedc725.size == 1) {
             self thread function_78976b52();
         }
@@ -136,15 +136,15 @@ function private event_handler[gadget_on] function_7d697841(eventstruct) {
         return;
     }
     if (isplayer(player) && player hasperk("specialty_equipmentrecharge") && weapon.name == #"hash_364914e1708cb629") {
-        var_e0ca50e9 = {#var_acddd81e:0, #weapon:weapon, #slot:weapon.offhandslot};
+        var_e0ca50e9 = {#slot:weapon.offhandslot, #weapon:weapon, #var_acddd81e:0};
         if (!isdefined(player.var_7cedc725)) {
             player.var_7cedc725 = [];
         } else if (!isarray(player.var_7cedc725)) {
             player.var_7cedc725 = array(player.var_7cedc725);
         }
         player.var_7cedc725[player.var_7cedc725.size] = var_e0ca50e9;
-        var_2b9b7c0f = var_e0ca50e9.slot == "Lethal grenade" ? "hudItems.ammoCooldowns.equipment.lethal" : "hudItems.ammoCooldowns.equipment.tactical";
-        player clientfield::set_player_uimodel(var_2b9b7c0f, 0);
+        cf = var_e0ca50e9.slot == "Lethal grenade" ? "hudItems.ammoCooldowns.equipment.lethal" : "hudItems.ammoCooldowns.equipment.tactical";
+        player clientfield::set_player_uimodel(cf, 0);
         if (player.var_7cedc725.size == 1) {
             player thread function_78976b52();
         }
@@ -179,8 +179,8 @@ function private function_78976b52() {
     self endoncallback(&function_4ed3bc25, #"death", #"resupply");
     offhandslot = self.var_7cedc725[0].slot;
     weapon = self.var_7cedc725[0].weapon;
-    var_2b9b7c0f = offhandslot == "Lethal grenade" ? "hudItems.ammoCooldowns.equipment.lethal" : "hudItems.ammoCooldowns.equipment.tactical";
-    success = self function_691948bf(var_2b9b7c0f);
+    cf = offhandslot == "Lethal grenade" ? "hudItems.ammoCooldowns.equipment.lethal" : "hudItems.ammoCooldowns.equipment.tactical";
+    success = self function_691948bf(cf);
     if (is_true(success)) {
         arrayremoveindex(self.var_7cedc725, 0);
         if (self hasweapon(weapon)) {
@@ -202,7 +202,7 @@ function private function_78976b52() {
             }
         }
     }
-    self clientfield::set_player_uimodel(var_2b9b7c0f, 0);
+    self clientfield::set_player_uimodel(cf, 0);
     if (self.var_7cedc725.size) {
         self thread function_78976b52();
         return;
@@ -214,13 +214,13 @@ function private function_78976b52() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x1f9df55e, Offset: 0xd08
 // Size: 0x100
-function private function_e5f5216f(var_2b9b7c0f) {
+function private function_e5f5216f(cf) {
     var_ac922159 = getdvarint(#"hash_72fe00ba2b98e139", 11);
     elapsedtime = 0;
     starttime = gettime();
     while (elapsedtime < var_ac922159) {
         progress = elapsedtime / var_ac922159;
-        self clientfield::set_player_uimodel(var_2b9b7c0f, progress);
+        self clientfield::set_player_uimodel(cf, progress);
         waitframe(1);
         elapsedtime = float(gettime() - starttime) / 1000;
     }
@@ -233,21 +233,21 @@ function private function_e5f5216f(var_2b9b7c0f) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x26a9f7c8, Offset: 0xe10
 // Size: 0x150
-function private function_691948bf(var_2b9b7c0f) {
+function private function_691948bf(cf) {
     self endon(#"hash_5c998eb8e3fcffe5");
     var_ac922159 = getdvarint(#"hash_3d104eb411be9f06", 25);
     elapsedtime = 0;
     starttime = gettime();
     while (elapsedtime < var_ac922159) {
         progress = elapsedtime / var_ac922159;
-        self clientfield::set_player_uimodel(var_2b9b7c0f, progress);
+        self clientfield::set_player_uimodel(cf, progress);
         waitframe(1);
         elapsedtime = gettime() - starttime;
         elapsedtime = float(elapsedtime) / 1000;
     }
-    sound = var_2b9b7c0f == "hudItems.ammoCooldowns.equipment.lethal" ? #"hash_6d4b6b0490117874" : #"hash_23df0ddc8d4048a2";
+    sound = cf == "hudItems.ammoCooldowns.equipment.lethal" ? #"hash_6d4b6b0490117874" : #"hash_23df0ddc8d4048a2";
     self playsoundtoplayer(sound, self);
-    self clientfield::set_player_uimodel(var_2b9b7c0f, 1);
+    self clientfield::set_player_uimodel(cf, 1);
     return true;
 }
 
@@ -284,8 +284,8 @@ function private function_b8e083d0(weapon) {
 function private function_4ed3bc25(*notifyhash) {
     offhandslot = self.var_7cedc725[0].slot;
     if (isdefined(offhandslot)) {
-        var_2b9b7c0f = offhandslot == "Lethal grenade" ? "hudItems.ammoCooldowns.equipment.lethal" : "hudItems.ammoCooldowns.equipment.tactical";
-        self clientfield::set_player_uimodel(var_2b9b7c0f, 0);
+        cf = offhandslot == "Lethal grenade" ? "hudItems.ammoCooldowns.equipment.lethal" : "hudItems.ammoCooldowns.equipment.tactical";
+        self clientfield::set_player_uimodel(cf, 0);
     } else {
         self clientfield::set_player_uimodel("hudItems.ammoCooldowns.equipment.lethal", 0);
         self clientfield::set_player_uimodel("hudItems.ammoCooldowns.equipment.tactical", 0);

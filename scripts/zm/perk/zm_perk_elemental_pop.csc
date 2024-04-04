@@ -12,14 +12,14 @@
 // Checksum 0x746df9a9, Offset: 0x1b8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_perk_elemental_pop", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_perk_elemental_pop", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
 // Params 0, eflags: 0x6 linked
 // Checksum 0x64192226, Offset: 0x200
 // Size: 0x14
-function private function_70a657d8() {
+function private preinit() {
     function_27473e44();
 }
 

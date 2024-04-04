@@ -20,14 +20,14 @@
 // Checksum 0xcec9cd49, Offset: 0xe8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"abilities", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"abilities", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace abilities/abilities
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x130
 // Size: 0x4
-function private function_70a657d8() {
+function private preinit() {
     
 }
 

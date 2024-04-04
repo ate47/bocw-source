@@ -46,14 +46,14 @@
 // Checksum 0xd2a5e181, Offset: 0x558
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_laststand", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_laststand", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_laststand/zm_laststand
 // Params 0, eflags: 0x6 linked
 // Checksum 0x568e65ca, Offset: 0x5a0
 // Size: 0x30c
-function private function_70a657d8() {
+function private preinit() {
     level flag::init("solo_revive");
     level.revive_hud = revive_hud::register();
     level.var_ff482f76 = zm_laststand_client::register();
@@ -224,7 +224,7 @@ function playerlaststand(einflictor, attacker, idamage, smeansofdeath, weapon, *
     level notify(#"hash_18a0e5282b038637");
     self notify(#"entering_last_stand");
     callback::callback(#"entering_last_stand");
-    if (self function_b9c43317()) {
+    if (self isskydiving()) {
         self function_8cf53a19();
     }
     self disableweaponcycling();
@@ -1473,7 +1473,7 @@ function can_revive(e_revivee, ignore_sight_checks = 0, ignore_touch_checks = 0)
     if (is_true(e_revivee.var_d1e03242)) {
         return false;
     }
-    if (isdefined(e_revivee.owner) && (e_revivee.owner function_b4813488() || e_revivee.owner function_e128a831())) {
+    if (isdefined(e_revivee.owner) && (e_revivee.owner function_b4813488() || e_revivee.owner isziplining())) {
         return false;
     }
     return true;
@@ -1620,7 +1620,7 @@ function function_2cc9a315(revivetime) {
 // Checksum 0x2186b2e2, Offset: 0x66d8
 // Size: 0x72
 function function_7165ead0() {
-    self endon(#"player_being_revived", #"player_revived", #"disconnect", #"hash_29b88049dcac8bb3");
+    self endon(#"player_being_revived", #"player_revived", #"disconnect", #"entitydeleted");
     self waittill(#"bled_out");
     if (isdefined(self.var_6fc48a11)) {
         self.var_6fc48a11 = 0;
@@ -1675,7 +1675,7 @@ function auto_revive(reviver, b_track_stats = 1, var_c0ab6a65, var_3f8e593d = 0,
         self zm_stats::increment_challenge_stat(#"hash_5f6b0b87e8f76ae1");
         if (is_true(var_c0ab6a65)) {
             self contracts::increment_zm_contract(#"hash_15ceac9a2c2c1a18");
-            self stats::function_8fb23f94(#"self_revive", #"hash_7d6781e4032b4aa5", 1);
+            self stats::function_8fb23f94(#"self_revive", #"uses", 1);
             self.var_9cd2c51d.var_3ca3137f = gettime();
         }
     }
@@ -1749,11 +1749,11 @@ function private revive_internal(reviver, b_track_stats, var_c0ab6a65 = 0, var_5
         level thread popups::displayteammessagetoteam(#"hash_abc7d6b5c944b2", reviver, reviver.team, undefined, self.entnum);
         if (self !== reviver) {
             if (is_true(reviver.var_b1164fd0)) {
-                level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"aether_shroud_revive_zm", #attacker:reviver});
+                level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:reviver, #scoreevent:"aether_shroud_revive_zm"});
                 reviver stats::function_622feb0d(#"hash_2d88b4c5217c7e7c", #"hash_13a923231c746585", 1);
                 reviver zm_stats::increment_challenge_stat(#"hash_2cbe744ecd9ac482");
             } else {
-                level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"revived_teammate_zm", #attacker:reviver});
+                level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:reviver, #scoreevent:"revived_teammate_zm"});
             }
         }
         if (!is_true(level.isresetting_grief) && is_true(b_track_stats) && reviver != self) {
@@ -1769,7 +1769,7 @@ function private revive_internal(reviver, b_track_stats, var_c0ab6a65 = 0, var_5
             potm::bookmark(#"zm_player_revived", gettime(), reviver, self);
         }
     }
-    self notify(#"player_revived", {#var_a4916eac:self.var_84280a99, #reviver:reviver});
+    self notify(#"player_revived", {#reviver:reviver, #var_a4916eac:self.var_84280a99});
     s_params = spawnstruct();
     s_params.e_revivee = self;
     s_params.e_reviver = reviver;
@@ -1803,7 +1803,7 @@ function xp_revive_once_per_round(player_being_revived) {
         self.number_revives_per_round[player_being_revived.characterindex] = 0;
     }
     if (self != player_being_revived && self.number_revives_per_round[player_being_revived.characterindex] == 0) {
-        level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"revive_an_ally", #attacker:self});
+        level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:self, #scoreevent:"revive_an_ally"});
     }
     self.number_revives_per_round[player_being_revived.characterindex]++;
 }
@@ -1891,7 +1891,7 @@ function check_for_sacrifice() {
 function check_for_failed_revive(e_revivee) {
     self notify(#"checking_for_failed_revive");
     self endon(#"disconnect", #"checking_for_failed_revive");
-    e_revivee endon(#"disconnect", #"player_revived", #"hash_29b88049dcac8bb3");
+    e_revivee endon(#"disconnect", #"player_revived", #"entitydeleted");
     e_revivee waittill(#"bled_out");
     self zm_stats::increment_client_stat("failed_revives");
     self zm_stats::increment_player_stat("failed_revives");
@@ -2025,8 +2025,8 @@ function on_ai_killed(s_params) {
 // Size: 0x84
 function on_item_pickup(s_params) {
     item = s_params.item;
-    var_a6762160 = item.var_a6762160;
-    if (var_a6762160.name === #"self_revive_sr_item") {
+    itementry = item.itementry;
+    if (itementry.name === #"self_revive_sr_item") {
         if (self function_618fd37e() < 1) {
             self function_3a00302e(1);
         }
@@ -2046,7 +2046,7 @@ function on_player_killed(*s_params) {
 // Checksum 0xda8821f3, Offset: 0x7fb8
 // Size: 0x3e
 function function_94cd8c0f() {
-    if (self function_495bdc7b(self gestures::function_c77349d4("gestable_t9_stimshot_last_stand"))) {
+    if (self isgestureplaying(self gestures::function_c77349d4("gestable_t9_stimshot_last_stand"))) {
         return true;
     }
     return false;

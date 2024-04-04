@@ -9,14 +9,14 @@
 // Checksum 0x779385d7, Offset: 0x90
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"antipersonnel_guidance", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"antipersonnel_guidance", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace antipersonnel_guidance/antipersonnelguidance
 // Params 0, eflags: 0x6 linked
 // Checksum 0xbc1de109, Offset: 0xd8
 // Size: 0x1c
-function private function_70a657d8() {
+function private preinit() {
     level thread player_init();
 }
 

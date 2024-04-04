@@ -13,7 +13,7 @@
 // Params 0, eflags: 0x4
 // Checksum 0x2604dd58, Offset: 0x368
 // Size: 0x20c
-function private function_70a657d8() {
+function private preinit() {
     level init_spawn_system();
     level.recently_deceased = [];
     foreach (team, _ in level.teams) {
@@ -511,7 +511,7 @@ function get_best_spawnpoint(point_team, influencer_team, player, predictedspawn
     }
     spawn_point = getbestspawnpoint(point_team, influencer_team, vis_team_mask, player, predictedspawn);
     if (!predictedspawn) {
-        var_48eba3a3 = {#z:spawn_point[#"origin"][2], #y:spawn_point[#"origin"][1], #x:spawn_point[#"origin"][0], #var_c734ddf2:getplayerspawnid(player), #reason:"point used"};
+        var_48eba3a3 = {#reason:"point used", #var_c734ddf2:getplayerspawnid(player), #x:spawn_point[#"origin"][0], #y:spawn_point[#"origin"][1], #z:spawn_point[#"origin"][2]};
         function_92d1707f(#"hash_263d9506f7e11fdd", var_48eba3a3);
     }
     return spawn_point;

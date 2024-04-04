@@ -75,22 +75,22 @@ function function_bda720e2(*localclientnum, *oldval, newval, *bnewent, *binitial
         self function_9298adaf(n_time);
         break;
     case 2:
-        self namespace_ca99987f::function_f95cb457(undefined, 22, var_31f0ff13, #"linear");
+        self easing::function_f95cb457(undefined, 22, var_31f0ff13, #"linear");
         break;
     case 3:
-        self namespace_ca99987f::function_f95cb457(undefined, 22, 0, #"linear");
+        self easing::function_f95cb457(undefined, 22, 0, #"linear");
         break;
     case 4:
-        self namespace_ca99987f::function_f95cb457(undefined, 20, n_time, #"linear");
+        self easing::function_f95cb457(undefined, 20, n_time, #"linear");
         break;
     case 5:
-        self namespace_ca99987f::function_f95cb457(undefined, 25, n_time, #"linear");
+        self easing::function_f95cb457(undefined, 25, n_time, #"linear");
         break;
     case 6:
-        self namespace_ca99987f::function_f95cb457(undefined, 30, n_time, #"linear");
+        self easing::function_f95cb457(undefined, 30, n_time, #"linear");
         break;
     case 7:
-        self namespace_ca99987f::function_f95cb457(undefined, 17.2, 0, #"linear");
+        self easing::function_f95cb457(undefined, 17.2, 0, #"linear");
         break;
     }
 }
@@ -187,13 +187,13 @@ function function_75789681(*localclientnum, *oldval, newval, *bnewent, *binitial
     case 28:
         break;
     case 1:
-        self namespace_ca99987f::function_b6f1c993(undefined, 5000, var_a0497201, #"linear");
-        self namespace_ca99987f::function_136edb11(undefined, 50, var_a0497201, #"linear");
+        self easing::function_b6f1c993(undefined, 5000, var_a0497201, #"linear");
+        self easing::function_136edb11(undefined, 50, var_a0497201, #"linear");
         break;
     case 2:
         var_d298ff03 = self getcamangles();
-        self namespace_ca99987f::ease_camera_position(level.var_420bb8d1, var_67367725, var_a0497201, #"hash_2080bcb1cad7945c");
-        self namespace_ca99987f::ease_camera_angles((angleclamp180(var_d298ff03[0]), angleclamp180(var_d298ff03[1]), angleclamp180(var_d298ff03[2])), var_8939da60, var_a0497201, #"hash_2080bcb1cad7945c");
+        self easing::ease_camera_position(level.var_420bb8d1, var_67367725, var_a0497201, #"hash_2080bcb1cad7945c");
+        self easing::ease_camera_angles((angleclamp180(var_d298ff03[0]), angleclamp180(var_d298ff03[1]), angleclamp180(var_d298ff03[2])), var_8939da60, var_a0497201, #"hash_2080bcb1cad7945c");
         break;
     }
 }

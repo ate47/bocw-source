@@ -31,7 +31,7 @@
 #using scripts\core_common\system_shared.gsc;
 #using scripts\core_common\item_world.gsc;
 #using scripts\core_common\item_inventory.gsc;
-#using script_32c8b5b0eb2854f3;
+#using scripts\core_common\gamestate_util.gsc;
 #using scripts\core_common\flag_shared.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
@@ -46,14 +46,14 @@
 // Checksum 0xfe37101b, Offset: 0x468
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_loadout", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_loadout", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_loadout/zm_loadout
 // Params 0, eflags: 0x6 linked
 // Checksum 0xaa2ddafa, Offset: 0x4b0
 // Size: 0x46c
-function private function_70a657d8() {
+function private preinit() {
     level.var_928a7cf1 = 1;
     callback::on_connect(&on_player_connect);
     callback::on_spawned(&on_player_spawned);
@@ -311,7 +311,7 @@ function function_e884e095(slot, weapon) {
 // Size: 0x60
 function function_59b0ef71(slot, weapon) {
     if (!isdefined(weapon) || !isdefined(level.var_d5f9c1d2) || !isdefined(level.var_d5f9c1d2[slot])) {
-        return 0;
+        return false;
     }
     return isdefined(level.var_d5f9c1d2[slot][weapon]);
 }
@@ -360,7 +360,7 @@ function function_6519eea8(slot, weapon) {
         weapon = level.weaponnone;
     }
     old_weapon = self function_8f85096(slot);
-    self notify(#"hash_4078956b159dd0f3", {#weapon:weapon, #slot:slot});
+    self notify(#"hash_4078956b159dd0f3", {#slot:slot, #weapon:weapon});
     self notify("new_" + slot, {#weapon:weapon});
     self.slot_weapons[slot] = level.weaponnone;
     if (old_weapon != level.weaponnone && old_weapon != weapon) {
@@ -773,7 +773,7 @@ function give_start_weapon(b_switch_weapon) {
     }
     s_weapon = getunlockableiteminfofromindex(primary_weapon.statindex, 1);
     if (isdefined(s_weapon) && isdefined(s_weapon.namehash) && zm_custom::function_bce642a1(s_weapon) && zm_custom::function_901b751c(#"zmstartingweaponenabled")) {
-        var_9e4954fa = (isdefined(self.var_3b511a7c) ? self.var_3b511a7c : 0) < 0 ? 1 : 0;
+        var_9e4954fa = (isdefined(self.var_3b511a7c) ? self.var_3b511a7c : 0) < 0 ? 0 : 1;
         if (zm_utility::is_survival()) {
             var_88cf3317 = isdefined(self.is_hotjoining) || !namespace_cf6efd05::function_99df13e0(self);
         } else {
@@ -808,7 +808,7 @@ function give_start_weapon(b_switch_weapon) {
         }
         return;
     }
-    var_9e4954fa = (isdefined(self.var_3b511a7c) ? self.var_3b511a7c : 0) < 0 ? 1 : 0;
+    var_9e4954fa = (isdefined(self.var_3b511a7c) ? self.var_3b511a7c : 0) < 0 ? 0 : 1;
     var_88cf3317 = isdefined(self.is_hotjoining) || !namespace_cf6efd05::function_99df13e0(self);
     if (var_9e4954fa || var_88cf3317) {
         var_91f1878f = var_9e4954fa || var_88cf3317;
@@ -1062,10 +1062,10 @@ function private load_default_loadout(weaponclass, classnum) {
 // Size: 0x364
 function give_loadout() {
     if (loadout::function_87bcb1b()) {
-        var_34e46d5c = getdvarint(#"hash_449fa75f87a4b5b4", 0) < 0 ? "ping_callouts" : "flourish_callouts";
-        self setactionslot(3, var_34e46d5c);
-        var_7e297fe5 = getdvarint(#"hash_23270ec9008cb656", 0) < 0 ? "sprays_boasts" : "scorestreak_wheel";
-        self setactionslot(4, var_7e297fe5);
+        actionslot3 = getdvarint(#"hash_449fa75f87a4b5b4", 0) < 0 ? "flourish_callouts" : "ping_callouts";
+        self setactionslot(3, actionslot3);
+        actionslot4 = getdvarint(#"hash_23270ec9008cb656", 0) < 0 ? "scorestreak_wheel" : "sprays_boasts";
+        self setactionslot(4, actionslot4);
     }
     if (namespace_cf6efd05::function_85b812c9() && namespace_cf6efd05::function_99df13e0(self) && !is_true(self.uspawn_already_spawned)) {
         return;

@@ -53,7 +53,7 @@ class class_d5e68311 {
     // Checksum 0xfd215644, Offset: 0xb38
     // Size: 0x34
     function function_13f1dc62() {
-        return {#max:self.var_e7fdf736, #enabled:self.var_ec13f56d};
+        return {#enabled:self.var_ec13f56d, #max:self.var_e7fdf736};
     }
 
     // Namespace namespace_d5e68311/namespace_a9076ee3
@@ -271,7 +271,7 @@ class class_d5e68311 {
     // Checksum 0x7095c50d, Offset: 0xae0
     // Size: 0x4c
     function function_fbdfd5f9() {
-        return {#var_8d3781b5:self.var_89c30c57, #var_71fe4b43:self.var_b228f30, #enabled:self.var_76c10824};
+        return {#enabled:self.var_76c10824, #var_71fe4b43:self.var_b228f30, #var_8d3781b5:self.var_89c30c57};
     }
 
 }
@@ -281,7 +281,7 @@ class class_d5e68311 {
 // Checksum 0x6fa2a466, Offset: 0xb8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_19a39574bfda1b56", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_19a39574bfda1b56", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_a9076ee3/namespace_a9076ee3
@@ -307,7 +307,7 @@ function function_5128ed40(var_56c2f5d3) {
 // Params 0, eflags: 0x6 linked
 // Checksum 0xabc7ee7, Offset: 0x10d8
 // Size: 0x54
-function private function_70a657d8() {
+function private preinit() {
     var_5d7dbefc = new class_d5e68311();
     level.var_5d7dbefc = var_5d7dbefc;
     callback::on_localclient_connect(&on_localclient_connect);
@@ -436,7 +436,7 @@ function private function_58df12d3(localclientnum) {
 function private function_78e6ae5d() {
     while (isdefined(self)) {
         result = undefined;
-        result = level waittill(#"hash_68828ba5cef2341e");
+        result = level waittill(#"collectiblezoom");
         if (isdefined(result.param1)) {
             player = function_5c10bd79([[ self ]]->function_7c6cd9d());
             player.var_5b9b8e89 = int(result.param1);
@@ -473,9 +473,9 @@ function private function_aab851cf() {
             var_1b56e5cf = function_5fb947f1(local_client_num);
             if (var_1b56e5cf != (0, 0, 0)) {
                 var_dbceb0e1 = 1;
-                var_24af7a37 = var_1b56e5cf * 60 * delta_time;
-                yaw = var_24af7a37[0];
-                pitch = var_24af7a37[1];
+                angle_offset = var_1b56e5cf * 60 * delta_time;
+                yaw = angle_offset[0];
+                pitch = angle_offset[1];
                 v_angle = v_angle + (pitch, yaw, 0);
                 var_3faba1b8 = v_angle[1];
                 clamped_pitch = v_angle[0];

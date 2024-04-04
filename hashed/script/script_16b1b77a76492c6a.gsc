@@ -47,8 +47,8 @@ function function_5e62ed5c() {
             level.var_f535b5f0 = 480;
         }
         level.var_49f4fe8e = undefined;
-        var_7f729179 = undefined;
-        var_7f729179 = level waittilltimeout(randomfloatrange(level.var_cf15d540, level.var_f535b5f0), #"start_ambush", #"objective_locked");
+        wait_result = undefined;
+        wait_result = level waittilltimeout(randomfloatrange(level.var_cf15d540, level.var_f535b5f0), #"start_ambush", #"objective_locked");
         if (level flag::get("objective_locked")) {
             level flag::wait_till_clear("objective_locked");
             continue;
@@ -57,20 +57,20 @@ function function_5e62ed5c() {
         a_ai_zombies = getaiarray();
         var_571f5454 = undefined;
         e_target = undefined;
-        if (var_7f729179._notify === "start_ambush") {
+        if (wait_result._notify === "start_ambush") {
             if (!isdefined(level.var_49f4fe8e)) {
                 level.var_49f4fe8e = 1;
             }
-            if (isdefined(var_7f729179.player)) {
-                e_target = var_7f729179.player;
+            if (isdefined(wait_result.player)) {
+                e_target = wait_result.player;
                 var_571f5454 = e_target.origin;
-            } else if (isdefined(var_7f729179.location)) {
-                var_571f5454 = var_7f729179.location;
+            } else if (isdefined(wait_result.location)) {
+                var_571f5454 = wait_result.location;
                 if (a_players.size > 0) {
                     e_target = arraygetclosest(var_571f5454, a_players);
                 }
             }
-            var_30ff34e3 = var_7f729179.var_30ff34e3;
+            var_30ff34e3 = wait_result.var_30ff34e3;
         } else if (getdvarint(#"hash_21e1866f0c677ab8", 1)) {
             return;
         }
@@ -89,7 +89,7 @@ function function_5e62ed5c() {
         }
         if (isdefined(var_571f5454)) {
             foreach (safehouse in struct::get_array("safehouse", "content_script_name")) {
-                if (isdefined(safehouse.origin) && distance2dsquared(var_571f5454, safehouse.origin) <= function_a3f6cdac(2000)) {
+                if (isdefined(safehouse.origin) && distance2dsquared(var_571f5454, safehouse.origin) <= sqr(2000)) {
                     var_571f5454 = undefined;
                     break;
                 }
@@ -132,11 +132,11 @@ function function_be6ec6c(var_2b43a4c4, var_30ff34e3 = 1) {
         return;
     }
     if (isplayer(var_2b43a4c4)) {
-        level notify(#"start_ambush", {#var_30ff34e3:var_30ff34e3, #player:var_2b43a4c4});
+        level notify(#"start_ambush", {#player:var_2b43a4c4, #var_30ff34e3:var_30ff34e3});
         return;
     }
     if (isvec(var_2b43a4c4)) {
-        level notify(#"start_ambush", {#var_30ff34e3:var_30ff34e3, #location:var_2b43a4c4});
+        level notify(#"start_ambush", {#location:var_2b43a4c4, #var_30ff34e3:var_30ff34e3});
     }
 }
 
@@ -390,7 +390,7 @@ function function_39ee3b21(eventstruct, a_spawns) {
         self callback::remove_on_trigger(&function_39ee3b21);
         str_bundle = "default_zombies_realm_" + level.realm;
         if ((!isdefined(a_spawns) || !a_spawns.size) && isdefined(self.spawn_struct)) {
-            if (isalive(self.vehicle) && self.var_ed5e226b === self.vehicle.origin) {
+            if (isalive(self.vehicle) && self.vehicle_position === self.vehicle.origin) {
                 a_spawns = array(self.spawn_struct);
             } else {
                 self delete();
@@ -551,8 +551,8 @@ function function_986ead58() {
 function function_10c88d2e() {
     /#
         spawns = [];
-        if (isdefined(level.var_7d45d0d4.var_49978223)) {
-            destination = level.var_7d45d0d4.var_49978223;
+        if (isdefined(level.contentmanager.currentdestination)) {
+            destination = level.contentmanager.currentdestination;
             a_triggers = getentarray("<unknown string>", "<unknown string>");
             foreach (trigger in a_triggers) {
                 if (trigger.destination === destination.targetname) {

@@ -19,14 +19,14 @@
 // Checksum 0x3f228cfe, Offset: 0x210
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"save", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"save", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace savegame/save
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa91d8e39, Offset: 0x258
 // Size: 0x334
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(world.loadout)) {
         world.loadout = [];
     }
@@ -38,25 +38,25 @@ function private function_70a657d8() {
     }
     level.var_9d48137b = &function_81534803;
     level.var_8fe8980a = &function_9797184c;
-    var_ee7471ce = function_8136eb5a();
-    if (!isdefined(world.mapdata[var_ee7471ce][#"persistent"])) {
-        world.mapdata[var_ee7471ce][#"persistent"] = spawnstruct();
+    missionid = function_8136eb5a();
+    if (!isdefined(world.mapdata[missionid][#"persistent"])) {
+        world.mapdata[missionid][#"persistent"] = spawnstruct();
     }
-    if (!isdefined(world.mapdata[var_ee7471ce][#"transient"])) {
-        world.mapdata[var_ee7471ce][#"transient"] = spawnstruct();
+    if (!isdefined(world.mapdata[missionid][#"transient"])) {
+        world.mapdata[missionid][#"transient"] = spawnstruct();
     }
     var_316f308b = savegame_getsavedmap();
-    if (!isdefined(var_316f308b) || var_316f308b.size == 0 || getrootmapname(var_ee7471ce) !== getrootmapname(var_316f308b)) {
-        function_6d003cb9("previous_mission", "");
-        function_6d003cb9("previous_safehouse", "");
+    if (!isdefined(var_316f308b) || var_316f308b.size == 0 || getrootmapname(missionid) !== getrootmapname(var_316f308b)) {
+        set_player_data("previous_mission", "");
+        set_player_data("previous_safehouse", "");
     }
     sv_savegameskipto = getdvar(#"sv_savegameskipto", "");
-    if (!isdefined(sv_savegameskipto) || sv_savegameskipto.size == 0 || sv_savegameskipto == skipto::function_5011fee2(var_ee7471ce)) {
+    if (!isdefined(sv_savegameskipto) || sv_savegameskipto.size == 0 || sv_savegameskipto == skipto::function_5011fee2(missionid)) {
         function_81534803(#"transient");
     }
     foreach (trig in trigger::get_all()) {
         if (is_true(trig.var_544e29)) {
-            trig thread function_f10a2f68();
+            trig thread checkpoint_trigger();
         }
     }
     level.var_a1cfeb5a = [];
@@ -77,8 +77,8 @@ function save(var_116ab377, var_296c7056) {
     if (var_2466c81f) {
         return;
     }
-    var_65792f8b = function_2717b55f(var_116ab377);
-    if (!isdefined(var_296c7056) && isdefined(var_65792f8b) && is_true(var_65792f8b.issafehouse)) {
+    mapbundle = function_2717b55f(var_116ab377);
+    if (!isdefined(var_296c7056) && isdefined(mapbundle) && is_true(mapbundle.issafehouse)) {
         transient = function_6440b06b(#"transient");
         if (is_true(transient.var_16e4161b)) {
             var_296c7056 = skipto::function_547ca7d2(var_116ab377);
@@ -89,8 +89,8 @@ function save(var_116ab377, var_296c7056) {
     if (!isdefined(player)) {
         return;
     }
-    var_8670e6a3 = function_6440b06b(#"persistent", var_116ab377);
-    var_8670e6a3.unlocked = 1;
+    missiondata = function_6440b06b(#"persistent", var_116ab377);
+    missiondata.unlocked = 1;
     player stats::set_stat(#"mapdata", var_116ab377, #"unlocked", 1);
     var_116ab377 = function_8136eb5a();
     player stats::set_stat(#"hash_19d9ddd673699368", hash(var_116ab377));
@@ -104,8 +104,8 @@ function save(var_116ab377, var_296c7056) {
 // Checksum 0xd75d31d6, Offset: 0x820
 // Size: 0x52
 function function_ac15668a(missionname) {
-    var_8670e6a3 = function_6440b06b(#"persistent", missionname);
-    return is_true(var_8670e6a3.complete);
+    missiondata = function_6440b06b(#"persistent", missionname);
+    return is_true(missiondata.complete);
 }
 
 // Namespace savegame/save
@@ -113,8 +113,8 @@ function function_ac15668a(missionname) {
 // Checksum 0x6dcfc77c, Offset: 0x880
 // Size: 0x52
 function function_1b212e67(missionname) {
-    var_8670e6a3 = function_6440b06b(#"persistent", missionname);
-    return is_true(var_8670e6a3.unlocked);
+    missiondata = function_6440b06b(#"persistent", missionname);
+    return is_true(missiondata.unlocked);
 }
 
 // Namespace savegame/save
@@ -205,7 +205,7 @@ function function_7e0e735b() {
     level.var_d6bcee66 = [];
     if (isdefined(world.mapdata[missionname])) {
         foreach (dataname, value in world.mapdata[missionname]) {
-            level.var_d6bcee66[dataname] = function_2e532eed(world.mapdata[missionname][dataname], 1);
+            level.var_d6bcee66[dataname] = structcopy(world.mapdata[missionname][dataname], 1);
         }
     }
 }
@@ -218,7 +218,7 @@ function function_9797184c() {
     missionname = function_8136eb5a();
     if (isdefined(level.var_d6bcee66)) {
         foreach (dataname, value in level.var_d6bcee66) {
-            world.mapdata[missionname][dataname] = function_2e532eed(level.var_d6bcee66[dataname], 1);
+            world.mapdata[missionname][dataname] = structcopy(level.var_d6bcee66[dataname], 1);
         }
     }
 }
@@ -228,29 +228,29 @@ function function_9797184c() {
 // Checksum 0xdf6e64c4, Offset: 0xe20
 // Size: 0x4de
 function function_379f84b3() {
-    var_ee7471ce = function_8136eb5a();
-    world.mapdata[var_ee7471ce][#"transient"].var_2e7c022f = [];
+    missionid = function_8136eb5a();
+    world.mapdata[missionid][#"transient"].var_2e7c022f = [];
     player = getplayers()[0];
     a_weapon_list = player getweaponslist();
     current_weapon = player getcurrentweapon();
-    world.mapdata[var_ee7471ce][#"transient"].var_37017d9 = current_weapon.name;
+    world.mapdata[missionid][#"transient"].var_37017d9 = current_weapon.name;
     foreach (weapon in a_weapon_list) {
         if (isdefined(weapon.name)) {
-            if (!isdefined(world.mapdata[var_ee7471ce][#"transient"].var_2e7c022f)) {
-                world.mapdata[var_ee7471ce][#"transient"].var_2e7c022f = [];
-            } else if (!isarray(world.mapdata[var_ee7471ce][#"transient"].var_2e7c022f)) {
-                world.mapdata[var_ee7471ce][#"transient"].var_2e7c022f = array(world.mapdata[var_ee7471ce][#"transient"].var_2e7c022f);
+            if (!isdefined(world.mapdata[missionid][#"transient"].var_2e7c022f)) {
+                world.mapdata[missionid][#"transient"].var_2e7c022f = [];
+            } else if (!isarray(world.mapdata[missionid][#"transient"].var_2e7c022f)) {
+                world.mapdata[missionid][#"transient"].var_2e7c022f = array(world.mapdata[missionid][#"transient"].var_2e7c022f);
             }
-            world.mapdata[var_ee7471ce][#"transient"].var_2e7c022f[world.mapdata[var_ee7471ce][#"transient"].var_2e7c022f.size] = weapon.name;
+            world.mapdata[missionid][#"transient"].var_2e7c022f[world.mapdata[missionid][#"transient"].var_2e7c022f.size] = weapon.name;
             if (isdefined(weapon.attachments) && weapon.attachments.size > 0) {
-                world.mapdata[var_ee7471ce][#"transient"].var_ba4d1bad[weapon.name] = [];
+                world.mapdata[missionid][#"transient"].var_ba4d1bad[weapon.name] = [];
                 foreach (attachment in weapon.attachments) {
-                    if (!isdefined(world.mapdata[var_ee7471ce][#"transient"].var_ba4d1bad[weapon.name])) {
-                        world.mapdata[var_ee7471ce][#"transient"].var_ba4d1bad[weapon.name] = [];
-                    } else if (!isarray(world.mapdata[var_ee7471ce][#"transient"].var_ba4d1bad[weapon.name])) {
-                        world.mapdata[var_ee7471ce][#"transient"].var_ba4d1bad[weapon.name] = array(world.mapdata[var_ee7471ce][#"transient"].var_ba4d1bad[weapon.name]);
+                    if (!isdefined(world.mapdata[missionid][#"transient"].var_ba4d1bad[weapon.name])) {
+                        world.mapdata[missionid][#"transient"].var_ba4d1bad[weapon.name] = [];
+                    } else if (!isarray(world.mapdata[missionid][#"transient"].var_ba4d1bad[weapon.name])) {
+                        world.mapdata[missionid][#"transient"].var_ba4d1bad[weapon.name] = array(world.mapdata[missionid][#"transient"].var_ba4d1bad[weapon.name]);
                     }
-                    world.mapdata[var_ee7471ce][#"transient"].var_ba4d1bad[weapon.name][world.mapdata[var_ee7471ce][#"transient"].var_ba4d1bad[weapon.name].size] = attachment;
+                    world.mapdata[missionid][#"transient"].var_ba4d1bad[weapon.name][world.mapdata[missionid][#"transient"].var_ba4d1bad[weapon.name].size] = attachment;
                 }
             }
         }
@@ -262,14 +262,14 @@ function function_379f84b3() {
 // Checksum 0x8f5515d1, Offset: 0x1308
 // Size: 0x29c
 function function_7396472d() {
-    var_ee7471ce = function_8136eb5a();
+    missionid = function_8136eb5a();
     player = getplayers()[0];
-    if (isdefined(world.mapdata[var_ee7471ce][#"transient"].var_2e7c022f)) {
+    if (isdefined(world.mapdata[missionid][#"transient"].var_2e7c022f)) {
         player takeallweapons();
-        foreach (weapon_name in world.mapdata[var_ee7471ce][#"transient"].var_2e7c022f) {
+        foreach (weapon_name in world.mapdata[missionid][#"transient"].var_2e7c022f) {
             if (isdefined(weapon_name)) {
-                if (isdefined(world.mapdata[var_ee7471ce][#"transient"].var_ba4d1bad[weapon_name])) {
-                    weapon = getweapon(weapon_name, world.mapdata[var_ee7471ce][#"transient"].var_ba4d1bad[weapon_name]);
+                if (isdefined(world.mapdata[missionid][#"transient"].var_ba4d1bad[weapon_name])) {
+                    weapon = getweapon(weapon_name, world.mapdata[missionid][#"transient"].var_ba4d1bad[weapon_name]);
                 } else {
                     weapon = getweapon(weapon_name);
                 }
@@ -278,9 +278,9 @@ function function_7396472d() {
                 }
             }
         }
-        if (isdefined(world.mapdata[var_ee7471ce][#"transient"].var_37017d9)) {
+        if (isdefined(world.mapdata[missionid][#"transient"].var_37017d9)) {
             current_weapon = player getcurrentweapon();
-            var_fc1c4650 = getweapon(world.mapdata[var_ee7471ce][#"transient"].var_37017d9);
+            var_fc1c4650 = getweapon(world.mapdata[missionid][#"transient"].var_37017d9);
             if (isdefined(current_weapon) && isdefined(var_fc1c4650) && current_weapon != var_fc1c4650) {
                 if (player hasweapon(var_fc1c4650)) {
                     player switchtoweaponimmediate(var_fc1c4650);
@@ -294,7 +294,7 @@ function function_7396472d() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x9da997bc, Offset: 0x15b0
 // Size: 0x7e
-function function_6d003cb9(name, value) {
+function set_player_data(name, value) {
     campaignmode = "CP";
     if (!isdefined(world.playerdata)) {
         world.playerdata = [];
@@ -309,12 +309,12 @@ function function_6d003cb9(name, value) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xe7e785d, Offset: 0x1638
 // Size: 0x54
-function function_2ee66e93(name, var_d5308097) {
+function function_2ee66e93(name, defval) {
     campaignmode = "CP";
     if (isdefined(world.playerdata[campaignmode][name])) {
         return world.playerdata[campaignmode][name];
     }
-    return var_d5308097;
+    return defval;
 }
 
 // Namespace savegame/save
@@ -373,7 +373,7 @@ function private function_396464b(var_62a2ec8e = 0) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8806f3f3, Offset: 0x1920
 // Size: 0x3c
-function function_f10a2f68() {
+function checkpoint_trigger() {
     self endon(#"death");
     self waittill(#"trigger");
     checkpoint_save();
@@ -383,8 +383,8 @@ function function_f10a2f68() {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x6092ca96, Offset: 0x1968
 // Size: 0x44
-function checkpoint_save(var_62a2ec8e = 0, var_a8976c31, var_2f0cfe38) {
-    level thread function_655f1326(var_62a2ec8e, var_a8976c31, var_2f0cfe38);
+function checkpoint_save(var_62a2ec8e = 0, var_a8976c31, stealth_check) {
+    level thread function_655f1326(var_62a2ec8e, var_a8976c31, stealth_check);
 }
 
 // Namespace savegame/save
@@ -421,25 +421,25 @@ function private function_680b78aa(var_62a2ec8e = 1, delay = 1.5) {
         wait(0.2);
         foreach (player in level.players) {
             player player::generate_weapon_data();
-            player function_6d003cb9("saved_weapon", player._generated_current_weapon.rootweapon.name);
-            player function_6d003cb9("saved_weapon_attachments", util::function_2146bd83(player._generated_current_weapon));
-            player function_6d003cb9("saved_weapondata", player._generated_weapons);
-            player function_6d003cb9("lives", player.lives);
+            player set_player_data("saved_weapon", player._generated_current_weapon.rootweapon.name);
+            player set_player_data("saved_weapon_attachments", util::function_2146bd83(player._generated_current_weapon));
+            player set_player_data("saved_weapondata", player._generated_weapons);
+            player set_player_data("lives", player.lives);
             player._generated_current_weapon = undefined;
             player._generated_weapons = undefined;
         }
         player = util::gethostplayer();
         if (isdefined(player)) {
-            player function_6d003cb9("savegame_score", player.pers[#"score"]);
-            player function_6d003cb9("savegame_kills", player.pers[#"kills"]);
-            player function_6d003cb9("savegame_assists", player.pers[#"assists"]);
-            player function_6d003cb9("savegame_incaps", player.pers[#"incaps"]);
-            player function_6d003cb9("savegame_revives", player.pers[#"revives"]);
+            player set_player_data("savegame_score", player.pers[#"score"]);
+            player set_player_data("savegame_kills", player.pers[#"kills"]);
+            player set_player_data("savegame_assists", player.pers[#"assists"]);
+            player set_player_data("savegame_incaps", player.pers[#"incaps"]);
+            player set_player_data("savegame_revives", player.pers[#"revives"]);
         }
         save();
         wait(delay);
         var_56528c9b = skipto::function_5a61e21a()[0];
-        function_6d003cb9("last_saved_skipto", var_56528c9b);
+        set_player_data("last_saved_skipto", var_56528c9b);
         if (isdefined(player) && is_true(var_62a2ec8e)) {
             player util::function_b9dfcfb7();
         }
@@ -482,12 +482,12 @@ function function_68cfab84() {
 // Params 3, eflags: 0x6 linked
 // Checksum 0xb279e4d3, Offset: 0x1fc8
 // Size: 0x15c
-function private function_655f1326(var_62a2ec8e, var_a8976c31, var_2f0cfe38) {
+function private function_655f1326(var_62a2ec8e, var_a8976c31, stealth_check) {
     level notify(#"hash_7608fe484d0bea80");
     level endon(#"hash_7608fe484d0bea80", #"hash_75b4a2cae07690ff", #"save_restore");
     wait(0.1);
     while (true) {
-        if (function_51c242e9(var_a8976c31, var_2f0cfe38)) {
+        if (function_51c242e9(var_a8976c31, stealth_check)) {
             wait(0.1);
             checkpointcreate();
             wait(6);
@@ -515,7 +515,7 @@ function private function_655f1326(var_62a2ec8e, var_a8976c31, var_2f0cfe38) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x84591d86, Offset: 0x2130
 // Size: 0x272
-function function_51c242e9(var_a8976c31 = 0, var_2f0cfe38 = 1) {
+function function_51c242e9(var_a8976c31 = 0, stealth_check = 1) {
     if (!var_a8976c31) {
         if (is_true(level.var_815395f5)) {
             return false;
@@ -550,7 +550,7 @@ function function_51c242e9(var_a8976c31 = 0, var_2f0cfe38 = 1) {
             }
         }
     }
-    if (var_2f0cfe38 && isdefined(level.var_8bca2033)) {
+    if (stealth_check && isdefined(level.var_8bca2033)) {
         if (![[ level.var_8bca2033 ]]()) {
             return false;
         }

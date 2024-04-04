@@ -89,7 +89,7 @@ function function_c1e0cc87(name, looping, fadeout = 0, *unused = 0.5) {
     /#
         assert(var_318e5b78 < 256, "<unknown string>");
     #/
-    level.var_9e132ad0[var_318e5b78] = {#fadeout:unused, #looping:fadeout, #name:looping};
+    level.var_9e132ad0[var_318e5b78] = {#name:looping, #looping:fadeout, #fadeout:unused};
 }
 
 // Namespace namespace_e32bb68/namespace_e32bb68

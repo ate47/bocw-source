@@ -13,14 +13,14 @@
 // Checksum 0xa51cc7d3, Offset: 0x330
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"orbit", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"orbit", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace orbit/namespace_8518c3a5
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1eb3e9dd, Offset: 0x378
 // Size: 0x64
-function function_70a657d8() {
+function preinit() {
     level flag::init("flag_orbit_chopper_complete");
     level flag::init(" flag_orbit_chopper_landing_requested");
     level flag::init("flag_orbit_chopper_shifting");
@@ -201,12 +201,12 @@ function function_76a96530(start_node) {
     current_node = start_node;
     while (true) {
         var_59291c74[index] = current_node;
-        var_cf47fb9 = current_node;
-        if (isarray(var_cf47fb9)) {
-            var_cf47fb9 = current_node[0];
+        check_node = current_node;
+        if (isarray(check_node)) {
+            check_node = current_node[0];
         }
-        if (isdefined(var_cf47fb9.target)) {
-            target = getvehiclenode(var_cf47fb9.target, "targetname");
+        if (isdefined(check_node.target)) {
+            target = getvehiclenode(check_node.target, "targetname");
             if (!isdefined(target)) {
                 break;
             }
@@ -473,9 +473,9 @@ function function_5f7a4f66(var_23b6164f, var_e883a73e, var_794dcc13 = 0, var_c38
         }
     }
     if (!level.var_e3e3a045) {
-        var_32413a7c = arraygetclosest(chopper.origin, level.var_a5a07145);
-        if (isdefined(var_32413a7c) && isdefined(var_32413a7c.linkto)) {
-            chopper.var_d14539c5 = struct::get(var_32413a7c.linkto, "linkname");
+        closest_node = arraygetclosest(chopper.origin, level.var_a5a07145);
+        if (isdefined(closest_node) && isdefined(closest_node.linkto)) {
+            chopper.var_d14539c5 = struct::get(closest_node.linkto, "linkname");
         } else {
             var_b3463e05 = struct::get_array("orbit_lz", "script_noteworthy");
             if (isdefined(var_b3463e05) && var_b3463e05.size > 0) {
@@ -654,22 +654,22 @@ function function_529c71d2(angles) {
 // Size: 0xd4
 function function_c87f2d48() {
     chopper = self;
-    var_41b10d2 = chopper.var_66016ac4 + chopper.var_cfc7d95a;
-    if (var_41b10d2 < 0) {
+    next_index = chopper.var_66016ac4 + chopper.var_cfc7d95a;
+    if (next_index < 0) {
         if (level.var_d6cb97e) {
-            var_41b10d2 = level.var_a5a07145.size - 1;
+            next_index = level.var_a5a07145.size - 1;
         } else {
-            var_41b10d2 = 0;
+            next_index = 0;
         }
     }
-    if (var_41b10d2 > level.var_34599e02) {
+    if (next_index > level.var_34599e02) {
         if (level.var_d6cb97e) {
-            var_41b10d2 = level.var_e3b1e2dc;
+            next_index = level.var_e3b1e2dc;
         } else {
-            var_41b10d2 = level.var_34599e02;
+            next_index = level.var_34599e02;
         }
     }
-    chopper.var_e998ed14 = var_41b10d2;
+    chopper.var_e998ed14 = next_index;
     /#
         iprintln("<unknown string>" + chopper.var_e998ed14);
     #/
@@ -715,7 +715,7 @@ function function_5cf12924() {
 // Params 2, eflags: 0x0
 // Checksum 0x252d8862, Offset: 0x32a8
 // Size: 0x5a
-function function_de823ea2(origin = self.origin, angles = self.angles) {
+function spawn_tag_origin(origin = self.origin, angles = self.angles) {
     return util::spawn_model("tag_origin", origin, angles);
 }
 

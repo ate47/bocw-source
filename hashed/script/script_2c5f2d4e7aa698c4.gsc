@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\zm_common\zm_utility.csc;
-#using script_2c8fd33ddb45e78b;
+#using scripts\zm_common\zm_intel.csc;
 #using script_d5fbb947291463c;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\system_shared.csc;
@@ -13,14 +13,14 @@
 // Checksum 0xbeae344c, Offset: 0x128
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_1c32fc6c324d3e66", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_1c32fc6c324d3e66", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_f0b43eb5/namespace_f0b43eb5
 // Params 0, eflags: 0x2 linked
 // Checksum 0x83979b4b, Offset: 0x170
 // Size: 0x294
-function function_70a657d8() {
+function preinit() {
     if (!zm_utility::function_36e7b4a2()) {
         return;
     }
@@ -183,8 +183,8 @@ function function_b5557b14(localclientnum, *oldval, newval, *bnewent, *binitials
         str_model = #"hash_51840445e2753066";
         break;
     case 5:
-        var_d5fa8477 = self namespace_4abf1500::function_2bcfd899(fieldname, #"hash_71c51f24f7f3037d");
-        str_model = namespace_4abf1500::function_12e3769(var_d5fa8477);
+        var_d5fa8477 = self zm_intel::function_2bcfd899(fieldname, #"hash_71c51f24f7f3037d");
+        str_model = zm_intel::function_12e3769(var_d5fa8477);
         str_model = isdefined(str_model) ? str_model : #"hash_51840445e2753066";
         /#
             iprintlnbold("<unknown string>");
@@ -194,8 +194,8 @@ function function_b5557b14(localclientnum, *oldval, newval, *bnewent, *binitials
         str_model = #"hash_75170f904e96e8ef";
         break;
     case 7:
-        var_d5fa8477 = self namespace_4abf1500::function_2bcfd899(fieldname, #"hash_71c51f24f7f3037d", #"audiolog");
-        str_model = namespace_4abf1500::function_12e3769(var_d5fa8477);
+        var_d5fa8477 = self zm_intel::function_2bcfd899(fieldname, #"hash_71c51f24f7f3037d", #"audiolog");
+        str_model = zm_intel::function_12e3769(var_d5fa8477);
         str_model = isdefined(str_model) ? str_model : #"hash_4042063c893f7f3a";
         /#
             iprintlnbold("<unknown string>");
@@ -205,8 +205,8 @@ function function_b5557b14(localclientnum, *oldval, newval, *bnewent, *binitials
         str_model = #"hash_26ea0b5ffb8178c6";
         break;
     case 9:
-        var_d5fa8477 = self namespace_4abf1500::function_2bcfd899(fieldname, #"hash_71c51f24f7f3037d");
-        str_model = namespace_4abf1500::function_12e3769(var_d5fa8477);
+        var_d5fa8477 = self zm_intel::function_2bcfd899(fieldname, #"hash_71c51f24f7f3037d");
+        str_model = zm_intel::function_12e3769(var_d5fa8477);
         str_model = isdefined(str_model) ? str_model : #"hash_30acea553928ba42";
         /#
             iprintlnbold("<unknown string>");

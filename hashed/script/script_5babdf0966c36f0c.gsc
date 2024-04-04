@@ -12,14 +12,14 @@
 // Checksum 0x4d1bca76, Offset: 0x100
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_24e8e2e7c9881782", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_24e8e2e7c9881782", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace world_event_black_chest/world_event_black_chest
 // Params 0, eflags: 0x2 linked
 // Checksum 0x5ac45588, Offset: 0x148
 // Size: 0x144
-function function_70a657d8() {
+function preinit() {
     if (!zm_utility::is_survival()) {
         return;
     }

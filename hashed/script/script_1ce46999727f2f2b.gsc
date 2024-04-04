@@ -68,7 +68,7 @@ function function_4c9d8712(var_49838c63) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x11cacfd1, Offset: 0x528
 // Size: 0x78
-function function_6afc9118() {
+function initplayer() {
     profilestart();
     self.doa.score = spawnstruct();
     self.doa.var_e46a9e57 = spawnstruct();

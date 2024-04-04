@@ -11,7 +11,7 @@
 // Size: 0x4c
 function private autoexec __init__system__() {
     /#
-        register(#"hash_7b2d0df8fb9099a8", &function_70a657d8, undefined, undefined, #"radiation");
+        register(#"hash_7b2d0df8fb9099a8", &preinit, undefined, undefined, #"radiation");
     #/
 }
 
@@ -19,7 +19,7 @@ function private autoexec __init__system__() {
 // Params 0, eflags: 0x4
 // Checksum 0x1cdfa5e, Offset: 0xf0
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     /#
         if (!function_ab99e60c()) {
             return;

@@ -20,14 +20,14 @@
 // Checksum 0x159e3634, Offset: 0x310
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_zonemgr", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_zonemgr", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
 // Params 0, eflags: 0x6 linked
 // Checksum 0x5d60afa2, Offset: 0x358
 // Size: 0xec
-function private function_70a657d8() {
+function private preinit() {
     /#
         println("<unknown string>");
     #/
@@ -488,7 +488,7 @@ function zone_init(zone_name, zone_tag) {
                 case #"spawn_location":
                 case #"riser_location":
                 case #"faller_location":
-                    spot.var_d51f4e2d = gettime();
+                    spot.spawned_timestamp = gettime();
                     if (!isdefined(zone.a_loc_types[#"zombie_location"])) {
                         zone.a_loc_types[#"zombie_location"] = [];
                     } else if (!isarray(zone.a_loc_types[#"zombie_location"])) {
@@ -886,7 +886,7 @@ function function_8a130a46(door, player) {
         var_c6bd50df = hash(var_c6bd50df);
         var_4a122652 = [[ level.var_27028b8e ]](var_c6bd50df);
         var_35457dfd = undefined;
-        var_dead3909 = [0:var_c6bd50df];
+        var_dead3909 = [var_c6bd50df];
         zone_queue = [];
         do {
             var_34eb3246 = undefined;

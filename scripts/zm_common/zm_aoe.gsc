@@ -61,14 +61,14 @@ class class_698343df {
 // Checksum 0x8dda802d, Offset: 0x118
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_aoe", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_aoe", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_aoe/zm_aoe
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf64ba1d4, Offset: 0x2f0
 // Size: 0x84
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "aoe_state", 1, getminbitcountfornum(5), "int");
     clientfield::register("scriptmover", "aoe_id", 1, getminbitcountfornum(2), "int");
 }
@@ -377,7 +377,7 @@ function private function_bea2e288(type) {
             if (withinrange && var_c0af03ae) {
                 damage = mapfloat(0, var_46f1b5eb.radius, var_46f1b5eb.damagemin, var_46f1b5eb.damagemax, dist);
                 player dodamage(damage, aoe.entity.origin);
-                player notify(#"aoe_damage", {#origin:aoe.entity.origin, #var_159100b7:aoe.type});
+                player notify(#"aoe_damage", {#var_159100b7:aoe.type, #origin:aoe.entity.origin});
             }
         }
     }

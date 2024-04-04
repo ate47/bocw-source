@@ -21,7 +21,7 @@
 #using scripts\core_common\math_shared.gsc;
 #using scripts\core_common\item_drop.gsc;
 #using scripts\core_common\flag_shared.gsc;
-#using script_7fc996fe8678852;
+#using scripts\core_common\content_manager.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
 #using scripts\core_common\array_shared.gsc;
@@ -34,14 +34,14 @@
 // Checksum 0x2d6d3f6d, Offset: 0x3a0
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"zm_holiday_event", &function_70a657d8, &postinit, undefined, #"zm_loadout");
+    system::register(#"zm_holiday_event", &preinit, &postinit, undefined, #"zm_loadout");
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
 // Params 0, eflags: 0x6 linked
 // Checksum 0x2a6fa0af, Offset: 0x400
 // Size: 0x10c
-function private function_70a657d8() {
+function private preinit() {
     if (is_true(getgametypesetting(#"hash_4751990deae37e66"))) {
         callback::on_ai_spawned(&function_3ba5772b);
         callback::on_ai_killed(&function_7d47c6f7);
@@ -77,12 +77,12 @@ function function_5837bf72() {
         level.var_e0b4bcdf = [];
     }
     if (zm_utility::is_survival()) {
-        level flag::wait_till_all([2:"intro_scene_done", 1:"start_zombie_round_logic", 0:#"hash_5aca8d24a1f56ee1"]);
+        level flag::wait_till_all([#"hash_5aca8d24a1f56ee1", "start_zombie_round_logic", "intro_scene_done"]);
         util::wait_network_frame();
         var_f79418e = [];
-        if (isdefined(level.var_7d45d0d4.var_49978223)) {
-            foreach (location in level.var_7d45d0d4.var_49978223.locations) {
-                instances = array::randomize(namespace_8b6a9d79::function_f703a5a(location));
+        if (isdefined(level.contentmanager.currentdestination)) {
+            foreach (location in level.contentmanager.currentdestination.locations) {
+                instances = array::randomize(content_manager::get_children(location));
                 foreach (instance in instances) {
                     if (instance.content_script_name === "explore_chests_large") {
                         if (!isdefined(var_f79418e)) {
@@ -97,7 +97,7 @@ function function_5837bf72() {
                 }
             }
             foreach (instance in var_f79418e) {
-                var_842cdacd = instance.var_fe2612fe[#"hash_6b1e5d8f9e70a70e"];
+                var_842cdacd = instance.contentgroups[#"hash_6b1e5d8f9e70a70e"];
                 if (isarray(var_842cdacd)) {
                     level.var_e0b4bcdf = arraycombine(level.var_e0b4bcdf, var_842cdacd);
                 }
@@ -135,7 +135,7 @@ function function_5837bf72() {
         if (!level.var_e0b4bcdf.size) {
             a_s_player_spawns = zm_gametype::get_player_spawns_for_gametype();
             foreach (var_6f531d9b in a_s_player_spawns) {
-                var_49089e5b = {#str_zone:var_6f531d9b.script_noteworthy, #angles:var_6f531d9b.angles, #origin:groundtrace(var_6f531d9b.origin + vectorscale((0, 0, 1), 8), var_6f531d9b.origin + vectorscale((0, 0, -1), 100000), 0, undefined)[#"position"]};
+                var_49089e5b = {#origin:groundtrace(var_6f531d9b.origin + vectorscale((0, 0, 1), 8), var_6f531d9b.origin + vectorscale((0, 0, -1), 100000), 0, undefined)[#"position"], #angles:var_6f531d9b.angles, #str_zone:var_6f531d9b.script_noteworthy};
                 if (ispointonnavmesh(var_49089e5b.origin, 50)) {
                     if (!isdefined(level.var_e0b4bcdf)) {
                         level.var_e0b4bcdf = [];
@@ -290,7 +290,7 @@ function private function_cb059f82(inflictor, attacker, damage, flags, meansofde
         self.var_4356b0bd = undefined;
         self clientfield::increment("" + #"hash_477ed992854f5645");
         if (isplayer(attacker)) {
-            level thread scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"haunting_destroyed_pumpkin", #attacker:attacker});
+            level thread scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:attacker, #scoreevent:"haunting_destroyed_pumpkin"});
             attacker zm_stats::function_17ee4529(#"hash_513bce963a91dd34", 1, #"hash_735ace6b22542a65");
         }
         if (damage >= self.health) {
@@ -347,8 +347,8 @@ function private function_7d47c6f7(params) {
 function private function_5da12481(params) {
     item = params.item;
     if (isplayer(self)) {
-        if (isdefined(item.var_a6762160.name)) {
-            switch (item.var_a6762160.name) {
+        if (isdefined(item.itementry.name)) {
+            switch (item.itementry.name) {
             case #"item_zm_ltm_halloween_jackolantern_01":
                 if (math::cointoss(15) || level flag::get(#"hash_6ef5c2fd97dfb8ba")) {
                     ai_mimic = spawnactor(#"spawner_bo5_mimic", item.origin, item.angles, "mimic_jackolantern_spawn", 1);

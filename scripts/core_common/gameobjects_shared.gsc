@@ -291,7 +291,7 @@ class cinteractobj {
         for (var_fb20e730 = getplayers(self.m_str_team); var_fb20e730.size; var_fb20e730 = getplayers(self.m_str_team)) {
             foreach (e_player in var_fb20e730) {
                 if (function_aa070e6f(e_player) && !isinarray(self.var_2854e7f7, e_player.team) && !e_player isinvehicle()) {
-                    voiceparams = {#targetname:self.e_object.var_f66cebb1, #side:var_9c2f0815, #team:self.m_str_team};
+                    voiceparams = {#team:self.m_str_team, #side:var_9c2f0815, #targetname:self.e_object.var_f66cebb1};
                     array::add(self.var_2854e7f7, e_player.team);
                     break;
                 }
@@ -333,7 +333,7 @@ class cinteractobj {
     // Size: 0xde
     function function_aa070e6f(e_player) {
         if (isdefined(self.e_object) && isdefined(self.e_object.mdl_gameobject) && isdefined(e_player) && is_true(self.e_object.mdl_gameobject.b_enabled)) {
-            return (distance2dsquared(self.e_object.origin, e_player.origin) < function_a3f6cdac(675) && e_player util::is_player_looking_at(self.e_object.origin));
+            return (distance2dsquared(self.e_object.origin, e_player.origin) < sqr(675) && e_player util::is_player_looking_at(self.e_object.origin));
         }
         return 0;
     }
@@ -345,7 +345,7 @@ class cinteractobj {
 // Checksum 0x367bcf3c, Offset: 0x470
 // Size: 0x23c
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
-    foreach (var_d335d6ef, k in [1:"script_paired_gameobject", 0:"script_carry_object_key_target"]) {
+    foreach (var_d335d6ef, k in ["script_carry_object_key_target", "script_paired_gameobject"]) {
         if (!isdefined(level.var_41204f29)) {
             level.var_41204f29 = [];
         } else if (!isarray(level.var_41204f29)) {
@@ -371,14 +371,14 @@ function private event_handler[createstruct] function_e0a8e4ba(struct) {
 // Checksum 0xf7fa38f3, Offset: 0x6b8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"gameobjects", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"gameobjects", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace gameobjects/gameobjects_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9c6570f5, Offset: 0x700
 // Size: 0xe4
-function private function_70a657d8() {
+function private preinit() {
     level.numgametypereservedobjectives = 1;
     level.releasedobjectives = [];
     level.a_gameobjects = [];
@@ -704,7 +704,7 @@ function function_2e028a0e() {
                 continue;
             }
             if (isdefined(s_lock.var_4cd30731)) {
-                s_lock notify(#"hash_58b8542ed702b2a5", {#player:self.mdl_gameobject.carrier, #var_36c9fd16:1});
+                s_lock notify(#"hash_58b8542ed702b2a5", {#var_36c9fd16:1, #player:self.mdl_gameobject.carrier});
                 s_lock.var_459e9174 = 1;
             }
         }
@@ -2210,7 +2210,7 @@ function function_e7e3d146(b_enable = 1) {
 function function_f4ccb04c(e_player, var_5098afd6 = 0) {
     mdl_gameobject = self function_fd4a5f2f();
     e_player.var_17bc9194 = 1;
-    mdl_gameobject.trigger notify(#"trigger", {#forced:var_5098afd6, #activator:e_player});
+    mdl_gameobject.trigger notify(#"trigger", {#activator:e_player, #forced:var_5098afd6});
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -3213,7 +3213,7 @@ function continue_hold_think_loop(player, waitforweapon, timedout, usetime) {
     if (!player usebuttonpressed()) {
         return false;
     }
-    if (player function_5673fb61()) {
+    if (player isinexecutionvictim()) {
         return false;
     }
     if (player function_f75eb1ae()) {

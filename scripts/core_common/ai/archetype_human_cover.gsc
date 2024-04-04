@@ -273,7 +273,7 @@ function function_9d8b22d8(entity, throwifpossible = 0, var_f06df42 = 1) {
         }
     }
     throw_dist = distance2dsquared(entity.origin, var_4748f6aa);
-    if (throw_dist < function_a3f6cdac(500) || throw_dist > function_a3f6cdac(1250)) {
+    if (throw_dist < sqr(500) || throw_dist > sqr(1250)) {
         return false;
     }
     arm_offset = undefined;

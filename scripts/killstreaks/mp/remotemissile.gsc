@@ -11,14 +11,14 @@
 // Checksum 0x81c2de74, Offset: 0x108
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"remotemissile", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"remotemissile", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace remotemissile/remotemissile
 // Params 0, eflags: 0x6 linked
 // Checksum 0x39b9f59d, Offset: 0x158
 // Size: 0x9c
-function private function_70a657d8() {
+function private preinit() {
     bundlename = "killstreak_remote_missile";
     if (sessionmodeiswarzonegame()) {
         bundlename = bundlename + "_wz";

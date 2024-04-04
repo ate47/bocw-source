@@ -11,14 +11,14 @@
 // Checksum 0xfc14cd32, Offset: 0x188
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"visionset_mgr", &function_70a657d8, &finalize_initialization, undefined, undefined);
+    system::register(#"visionset_mgr", &preinit, &finalize_initialization, undefined, undefined);
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x30d54903, Offset: 0x1e0
 // Size: 0x1fc
-function private function_70a657d8() {
+function private preinit() {
     level.vsmgr_initializing = 1;
     level.vsmgr_default_info_name = "__none";
     level.vsmgr = [];

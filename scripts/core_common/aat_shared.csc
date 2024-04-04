@@ -11,14 +11,14 @@
 // Checksum 0xe82f5c6, Offset: 0x188
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"aat", &function_70a657d8, &finalize_clientfields, undefined, undefined);
+    system::register(#"aat", &preinit, &finalize_clientfields, undefined, undefined);
 }
 
 // Namespace aat/aat_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0xe6b04ce5, Offset: 0x1e0
 // Size: 0xfc
-function private function_70a657d8() {
+function private preinit() {
     if (!is_true(level.aat_in_use)) {
         return;
     }

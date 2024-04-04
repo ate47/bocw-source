@@ -20,8 +20,8 @@ function private autoexec __init__system__() {
 // Checksum 0x8f8a8322, Offset: 0x118
 // Size: 0x5c
 function autoexec postinit() {
-    var_4c520d72 = getentarray("window_trigger", "targetname");
-    array::thread_all(var_4c520d72, &callback::on_trigger, &function_82c985d1);
+    window_triggers = getentarray("window_trigger", "targetname");
+    array::thread_all(window_triggers, &callback::on_trigger, &function_82c985d1);
 }
 
 // Namespace namespace_d3c2ca3/namespace_d3c2ca3
@@ -29,17 +29,17 @@ function autoexec postinit() {
 // Checksum 0xc7b6785e, Offset: 0x180
 // Size: 0xc6
 function function_82c985d1(*var_1482c45a) {
-    if (!isdefined(self.var_92a0a0fb)) {
-        self.var_92a0a0fb = 0;
+    if (!isdefined(self.busy)) {
+        self.busy = 0;
     }
-    if (is_false(self.var_92a0a0fb)) {
+    if (is_false(self.busy)) {
         level endon(#"game_ended");
         if (!isdefined(self.scene)) {
             self.scene = struct::get(self.target);
         }
-        self.var_92a0a0fb = 1;
+        self.busy = 1;
         self.scene scene::play(self.scene.scriptbundlename, "gust");
-        self.var_92a0a0fb = 0;
+        self.busy = 0;
     }
 }
 

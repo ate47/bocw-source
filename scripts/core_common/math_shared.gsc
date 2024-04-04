@@ -88,15 +88,15 @@ function expand_maxs(maxs, point) {
 // Params 4, eflags: 0x0
 // Checksum 0xf3452e1f, Offset: 0x3b8
 // Size: 0x134
-function function_fe4f9da3(point, center, var_3824bcad, forward_angles) {
+function function_fe4f9da3(point, center, half_size, forward_angles) {
     var_812741a5 = point - center;
     result = center;
     var_11288466 = anglestoaxis(forward_angles);
-    var_eaee1b51 = [2:var_11288466.up, 1:var_11288466.right, 0:var_11288466.forward];
+    axis_vecs = [var_11288466.forward, var_11288466.right, var_11288466.up];
     for (i = 0; i <= 2; i++) {
-        dist = vectordot(var_eaee1b51[i], var_812741a5);
-        dist = clamp(dist, var_3824bcad[i] * -1, var_3824bcad[i]);
-        result = result + dist * var_eaee1b51[i];
+        dist = vectordot(axis_vecs[i], var_812741a5);
+        dist = clamp(dist, half_size[i] * -1, half_size[i]);
+        result = result + dist * axis_vecs[i];
     }
     return result;
 }
@@ -362,7 +362,7 @@ function point_on_sphere_even_distribution(pitchrange, index, numberofpoints) {
     golden_angle = 180 * (3 - sqrt(5));
     theta = index * golden_angle;
     z = mapfloat(0, numberofpoints - 1, 1, zrange, index);
-    r = sqrt(1 - function_a3f6cdac(z));
+    r = sqrt(1 - sqr(z));
     dir = (r * cos(theta), r * sin(theta), z);
     return dir;
 }
@@ -397,7 +397,7 @@ function function_8dd4c3c5(linestart, lineend, point) {
     var_eb2bcaa0 = distancesquared(lineend, point);
     lengthsq = lengthsquared(lineend - linestart);
     if (var_6dbcbbd > lengthsq || var_eb2bcaa0 > lengthsq) {
-        point = var_6dbcbbd > var_eb2bcaa0 ? linestart : lineend;
+        point = var_6dbcbbd > var_eb2bcaa0 ? lineend : linestart;
     }
     return point;
 }
@@ -453,7 +453,7 @@ function function_f16fbd66(var_17a1aca9, var_9522f5ec, var_e5dbc91e, var_815dce6
         pointa = function_8dd4c3c5(var_17a1aca9, var_9522f5ec, pointa);
         pointb = function_8dd4c3c5(var_e5dbc91e, var_815dce62, pointb);
     }
-    pointstruct = {#pointb:pointb, #pointa:pointa};
+    pointstruct = {#pointa:pointa, #pointb:pointb};
     return pointstruct;
 }
 
@@ -516,29 +516,29 @@ function function_b1820790(a, b, c, var_2bff268f) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xa1e1e73f, Offset: 0x1a68
 // Size: 0xc2
-function function_a4184f52(var_71129b42, var_83593fcf, var_7e18701b) {
-    if (var_71129b42 > var_83593fcf) {
-        upper = var_71129b42;
-        var_71129b42 = var_83593fcf;
-        var_83593fcf = upper;
+function normalize_value(clamp_a, clamp_b, var_7e18701b) {
+    if (clamp_a > clamp_b) {
+        upper = clamp_a;
+        clamp_a = clamp_b;
+        clamp_b = upper;
     }
-    if (var_7e18701b > var_83593fcf) {
+    if (var_7e18701b > clamp_b) {
         return 1;
-    } else if (var_7e18701b < var_71129b42) {
+    } else if (var_7e18701b < clamp_a) {
         return 0;
-    } else if (var_71129b42 == var_83593fcf) {
+    } else if (clamp_a == clamp_b) {
         /#
-            assertmsg("<unknown string>" + var_71129b42 + "<unknown string>" + var_83593fcf + "<unknown string>");
+            assertmsg("<unknown string>" + clamp_a + "<unknown string>" + clamp_b + "<unknown string>");
         #/
     }
-    return (var_7e18701b - var_71129b42) / (var_83593fcf - var_71129b42);
+    return (var_7e18701b - clamp_a) / (clamp_b - clamp_a);
 }
 
 // Namespace math/math_shared
 // Params 3, eflags: 0x2 linked
 // Checksum 0x43c70c53, Offset: 0x1b38
 // Size: 0x34
-function function_f0546652(var_36119b66, max_val, var_d3fd1d40) {
-    return max_val * var_d3fd1d40 + var_36119b66 * (1 - var_d3fd1d40);
+function factor_value(min_val, max_val, factor_val) {
+    return max_val * factor_val + min_val * (1 - factor_val);
 }
 

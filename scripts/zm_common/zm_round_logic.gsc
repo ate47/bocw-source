@@ -68,14 +68,14 @@
 // Checksum 0x40bba6a9, Offset: 0x498
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_round_logic", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_round_logic", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_round_logic/zm_round_logic
 // Params 0, eflags: 0x6 linked
 // Checksum 0x38dbc989, Offset: 0x4e0
 // Size: 0x114
-function private function_70a657d8() {
+function private preinit() {
     level flag::init("round_reset");
     level flag::init(#"trial_failed");
     level flag::init("enable_round_timeout");
@@ -353,7 +353,7 @@ function function_4e8157cd(var_404e4288, var_8dd554ee) {
             var_3cafeff5 = 1;
         }
     }
-    return {#var_3cafeff5:var_3cafeff5, #ai_spawned:ai};
+    return {#ai_spawned:ai, #var_3cafeff5:var_3cafeff5};
 }
 
 // Namespace zm_round_logic/zm_round_logic
@@ -894,7 +894,7 @@ function round_think(restart = 0) {
                 } else if (score_number > 20) {
                     score_number = 20;
                 }
-                level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"alive_at_round_end_" + score_number, #attacker:player});
+                level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:player, #scoreevent:"alive_at_round_end_" + score_number});
             }
         }
         level.round_number = get_round_number();

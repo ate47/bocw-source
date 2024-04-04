@@ -14,14 +14,14 @@
 // Checksum 0x2264e251, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_random_teleport", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_random_teleport", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_random_teleport/zm_trial_random_teleport
 // Params 0, eflags: 0x4
 // Checksum 0xc9903967, Offset: 0x120
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

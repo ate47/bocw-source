@@ -146,14 +146,14 @@ class cbarricade : cdoor {
 // Checksum 0xba520186, Offset: 0x150
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"barricades", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"barricades", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace barricades/barricades_shared
 // Params 0, eflags: 0x4
 // Checksum 0x40854415, Offset: 0x1a8
 // Size: 0xee
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.a_s_barricades)) {
         level.a_s_barricades = [];
     }

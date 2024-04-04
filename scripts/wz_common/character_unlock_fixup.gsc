@@ -11,14 +11,14 @@
 // Checksum 0x8f8d426c, Offset: 0xb8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"character_unlock_fixup", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"character_unlock_fixup", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace character_unlock_fixup/character_unlock_fixup
 // Params 0, eflags: 0x4
 // Checksum 0xabd2b192, Offset: 0x100
 // Size: 0x10
-function private function_70a657d8() {
+function private preinit() {
     level.var_7d8da246 = [];
 }
 
@@ -30,7 +30,7 @@ function register_character_unlock(unlock_name, unlock_stat, item, var_f27097cc,
     /#
         assert(vararg.size > 0, "<unknown string>");
     #/
-    var_9ba1646c = {#activation_func:undefined, #var_849d923d:var_f27097cc, #var_3845495:[], #required_item:item, #var_2b469a7d:unlock_stat};
+    var_9ba1646c = {#var_2b469a7d:unlock_stat, #required_item:item, #var_3845495:[], #var_849d923d:var_f27097cc, #activation_func:undefined};
     for (i = 0; i < vararg.size; i++) {
         if (!isdefined(var_9ba1646c.var_3845495)) {
             var_9ba1646c.var_3845495 = [];
@@ -149,8 +149,8 @@ function function_c67a5089() {
         }
         if (!enabled) {
             item_name = var_9ba1646c.required_item;
-            var_a6762160 = getscriptbundle(item_name);
-            if (isdefined(var_a6762160)) {
+            itementry = getscriptbundle(item_name);
+            if (isdefined(itementry)) {
                 item_world_fixup::remove_item(item_name);
             }
         }

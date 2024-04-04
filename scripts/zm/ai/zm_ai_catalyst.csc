@@ -14,14 +14,14 @@
 // Checksum 0x684dfa44, Offset: 0x448
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_ai_catalyst", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_ai_catalyst", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_ai_catalyst/zm_ai_catalyst
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9bc4c7c9, Offset: 0x490
 // Size: 0x184
-function private function_70a657d8() {
+function private preinit() {
     if (!isarchetypeloaded(#"catalyst")) {
         return;
     }

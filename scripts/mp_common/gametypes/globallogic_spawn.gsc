@@ -31,7 +31,7 @@
 #using scripts\core_common\hud_message_shared.gsc;
 #using scripts\core_common\hostmigration_shared.gsc;
 #using scripts\core_common\globallogic\globallogic_player.gsc;
-#using script_32c8b5b0eb2854f3;
+#using scripts\core_common\gamestate_util.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
 #using scripts\core_common\array_shared.gsc;
@@ -43,14 +43,14 @@
 // Checksum 0x127e64e3, Offset: 0x388
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"globallogic_spawn", &function_70a657d8, undefined, undefined, #"gamestate");
+    system::register(#"globallogic_spawn", &preinit, undefined, undefined, #"gamestate");
 }
 
 // Namespace globallogic_spawn/globallogic_spawn
 // Params 0, eflags: 0x6 linked
 // Checksum 0x88a892ae, Offset: 0x3d8
 // Size: 0xb4
-function private function_70a657d8() {
+function private preinit() {
     level.var_b3c4b7b7 = getgametypesetting(#"hash_4bf99a809542e4ea");
     level.spawnsystem.var_3709dc53 = 0;
     level.var_1113eb30 = &mayspawn;
@@ -350,7 +350,7 @@ function function_baf09253() {
         self thread spawnplayer();
         return;
     }
-    level.spawn_manager.queue[self getentitynumber()] = {#time:gettime(), #player:self};
+    level.spawn_manager.queue[self getentitynumber()] = {#player:self, #time:gettime()};
     level notify(#"hash_45860a1cc533c675");
 }
 
@@ -1066,13 +1066,13 @@ function waitandspawnclient(timealreadypassed) {
         spawnedasspectator = 1;
         self notify(#"waitingtospawn", {#timeuntilspawn:timeuntilspawn});
         while (true) {
-            var_d4dbe16 = gettime();
+            waitstarttime = gettime();
             if (level.basegametype == "koth" && util::function_7f7a77ab()) {
                 self function_1a12c7a1(timeuntilspawn);
             } else {
                 self waittilltimeout(timeuntilspawn, #"force_spawn", #"hash_33713849648e651d");
             }
-            timealreadypassed = float(gettime() - var_d4dbe16) / 1000 + timealreadypassed;
+            timealreadypassed = float(gettime() - waitstarttime) / 1000 + timealreadypassed;
             if (timealreadypassed >= timeuntilspawn) {
                 self.var_c04d33cd = 1;
             }

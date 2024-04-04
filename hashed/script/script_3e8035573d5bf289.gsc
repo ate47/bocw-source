@@ -20,14 +20,14 @@
 // Checksum 0xf02d6aa, Offset: 0xe8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_6119ea2d427fdf8a", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_6119ea2d427fdf8a", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_e7b06f1b/namespace_e7b06f1b
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x130
 // Size: 0x4
-function private function_70a657d8() {
+function private preinit() {
     
 }
 

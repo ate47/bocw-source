@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\zm_common\zm_utility.gsc;
-#using script_73bd646be3641c07;
+#using scripts\zm_common\zm_ping.gsc;
 #using scripts\zm_common\zm_blockers.gsc;
 #using scripts\core_common\ai\zombie_utility.gsc;
 #using script_1cc417743d7c262d;
@@ -11,7 +11,7 @@
 #using scripts\core_common\item_inventory.gsc;
 #using scripts\core_common\struct.gsc;
 #using scripts\core_common\flag_shared.gsc;
-#using script_7fc996fe8678852;
+#using scripts\core_common\content_manager.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
 #using scripts\core_common\array_shared.gsc;
@@ -59,7 +59,7 @@ function function_14354831() {
                 var_d298ff03 = self.angles;
                 self.origin = s_part.origin;
                 self.angles = s_part.angles;
-                self.e_barricade = namespace_8b6a9d79::function_94974eef(self, "zbarrier_" + self.zbarrier);
+                self.e_barricade = content_manager::spawn_zbarrier(self, "zbarrier_" + self.zbarrier);
                 self.e_barricade.targetname = str_target;
                 self.origin = var_721fe4cf;
                 self.angles = var_d298ff03;
@@ -86,7 +86,7 @@ function function_14354831() {
             }
             self.zbarrier = targets[j];
             self.zbarrier function_619a5c20();
-            self.zbarrier namespace_5b1144e::function_550247bd(12);
+            self.zbarrier zm_ping::function_550247bd(12);
             self.zbarrier.chunk_health = [];
             for (i = 0; i < self.zbarrier getnumzbarrierpieces(); i++) {
                 self.zbarrier.chunk_health[i] = 0;

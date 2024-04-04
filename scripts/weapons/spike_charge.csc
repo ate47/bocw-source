@@ -12,14 +12,14 @@
 // Checksum 0xa664af82, Offset: 0xc8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"spike_charge", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"spike_charge", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace sticky_grenade/spike_charge
 // Params 0, eflags: 0x6 linked
 // Checksum 0xebcf4b9a, Offset: 0x110
 // Size: 0xbc
-function private function_70a657d8() {
+function private preinit() {
     level._effect[#"spike_light"] = #"weapon/fx_light_spike_launcher";
     callback::add_weapon_type(#"spike_launcher", &spawned);
     callback::add_weapon_type(#"spike_launcher_cpzm", &spawned);
@@ -91,10 +91,10 @@ function spike_detonation(localclientnum) {
     if (!isigcactive(localclientnum)) {
         player = function_5c10bd79(localclientnum);
         explosion_distance = distancesquared(spike_position, player.origin);
-        if (explosion_distance <= function_a3f6cdac(450)) {
+        if (explosion_distance <= sqr(450)) {
             player thread postfx::playpostfxbundle(#"pstfx_dust_chalk");
         }
-        if (explosion_distance <= function_a3f6cdac(300)) {
+        if (explosion_distance <= sqr(300)) {
             player thread postfx::playpostfxbundle(#"pstfx_dust_concrete");
         }
     }

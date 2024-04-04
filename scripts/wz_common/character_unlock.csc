@@ -11,14 +11,14 @@
 // Checksum 0x944709fd, Offset: 0xa0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"character_unlock", &function_70a657d8, undefined, undefined, #"character_unlock_fixup");
+    system::register(#"character_unlock", &preinit, undefined, undefined, #"character_unlock_fixup");
 }
 
 // Namespace character_unlock/character_unlock
 // Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0xf0
 // Size: 0x4
-function private function_70a657d8() {
+function private preinit() {
     
 }
 

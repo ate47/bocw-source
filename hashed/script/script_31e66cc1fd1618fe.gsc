@@ -4,27 +4,27 @@
 #using scripts\core_common\system_shared.csc;
 #using scripts\core_common\clientfield_shared.csc;
 
-#namespace namespace_594b67e;
+#namespace action_utility;
 
-// Namespace namespace_594b67e/namespace_594b67e
+// Namespace action_utility/action_utility
 // Params 0, eflags: 0x5
 // Checksum 0xcdbb6c0f, Offset: 0x100
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_208cc96e397aed88", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"action_utility", &preinit, undefined, undefined, undefined);
 }
 
-// Namespace namespace_594b67e/namespace_594b67e
+// Namespace action_utility/action_utility
 // Params 0, eflags: 0x6 linked
 // Checksum 0xfd85a0ea, Offset: 0x148
 // Size: 0xdc
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "link_to_camera", 1, 2, "int", &link_to_camera, 0, 0);
     clientfield::register("actor", "link_to_camera", 1, 2, "int", &link_to_camera, 0, 0);
     clientfield::register("toplayer", "fake_ads", 1, 1, "int", &fake_ads, 0, 0);
 }
 
-// Namespace namespace_594b67e/namespace_594b67e
+// Namespace action_utility/action_utility
 // Params 7, eflags: 0x6 linked
 // Checksum 0xe710e11d, Offset: 0x230
 // Size: 0xb4
@@ -38,7 +38,7 @@ function private link_to_camera(localclientnum, oldval, newval, *bnewent, *binit
     self function_a052b638();
 }
 
-// Namespace namespace_594b67e/namespace_594b67e
+// Namespace action_utility/action_utility
 // Params 7, eflags: 0x6 linked
 // Checksum 0x4e47e452, Offset: 0x2f0
 // Size: 0x14c
@@ -46,11 +46,11 @@ function private fake_ads(localclientnum, oldval, newval, *bnewent, *binitialsna
     self notify("2e682ee9f9b29c84");
     self endon("2e682ee9f9b29c84");
     if (bwastimejump && bwastimejump != fieldname) {
-        self namespace_ca99987f::function_f95cb457(undefined, 20.64, 0.2, #"sine");
+        self easing::function_f95cb457(undefined, 20.64, 0.2, #"sine");
         return;
     }
     if (!bwastimejump && bwastimejump != fieldname) {
-        self namespace_ca99987f::function_f95cb457(undefined, 14.64, 0.2, #"sine");
+        self easing::function_f95cb457(undefined, 14.64, 0.2, #"sine");
         while (true) {
             result = undefined;
             result = self waittill(#"hash_133229f708f5d10");
@@ -62,7 +62,7 @@ function private fake_ads(localclientnum, oldval, newval, *bnewent, *binitialsna
     }
 }
 
-// Namespace namespace_594b67e/namespace_594b67e
+// Namespace action_utility/action_utility
 // Params 2, eflags: 0x6 linked
 // Checksum 0x223fb46b, Offset: 0x448
 // Size: 0x124
@@ -77,7 +77,7 @@ function private function_bd9c7275(oldtype, newtype) {
     } else {
         self linktocamera(4, vectorscale((0, 0, -1), 60));
     }
-    self waittill(#"death", #"hash_29b88049dcac8bb3");
+    self waittill(#"death", #"entitydeleted");
     self function_a052b638();
 }
 

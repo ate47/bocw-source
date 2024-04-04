@@ -28,7 +28,7 @@ function event_handler[level_init] main(*eventstruct) {
     init_clientfields();
     level._effect[#"hash_12368454c367c6fc"] = #"hash_41db1a73a41027b";
     load::main();
-    level thread namespace_72b0499b::function_4be4dcc5();
+    level thread namespace_72b0499b::init_audio();
     util::waitforclient(0);
     level thread function_578ff07e();
     players = getlocalplayers();
@@ -96,10 +96,10 @@ function lerp_fov(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *f
 // Params 0, eflags: 0x0
 // Checksum 0x48ed328b, Offset: 0xe40
 // Size: 0x1ee
-function function_c4ad9641() {
+function dof_enable_autofocus() {
     self endoncallback(&function_26826144, #"death", #"hash_b2522f6440eb5d5");
     self function_9e574055(1);
-    self namespace_ca99987f::function_136edb11(undefined, 5.6, 1, #"linear");
+    self easing::function_136edb11(undefined, 5.6, 1, #"linear");
     while (true) {
         v_eye = self geteye();
         v_fwd = anglestoforward(self getcamangles());
@@ -119,7 +119,7 @@ function function_c4ad9641() {
 // Params 0, eflags: 0x0
 // Checksum 0xb5deeffa, Offset: 0x1038
 // Size: 0x16
-function function_6bc306e1() {
+function dof_disable_autofocus() {
     self notify(#"hash_b2522f6440eb5d5");
 }
 
@@ -140,12 +140,12 @@ function function_26826144(*str_notify) {
 function function_98d73c30(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self function_9e574055(2);
-        self namespace_ca99987f::function_b6f1c993(undefined, 60, 1, #"linear");
-        self namespace_ca99987f::function_136edb11(undefined, 1, 1, #"linear");
+        self easing::function_b6f1c993(undefined, 60, 1, #"linear");
+        self easing::function_136edb11(undefined, 1, 1, #"linear");
         return;
     }
-    self namespace_ca99987f::function_b6f1c993(undefined, 10000, 2, #"linear");
-    self namespace_ca99987f::function_136edb11(undefined, 50, 2, #"linear");
+    self easing::function_b6f1c993(undefined, 10000, 2, #"linear");
+    self easing::function_136edb11(undefined, 50, 2, #"linear");
 }
 
 // Namespace cp_nam_armada/cp_nam_armada

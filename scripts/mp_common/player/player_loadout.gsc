@@ -476,7 +476,7 @@ function give_killstreaks() {
     if (level.usingmomentum === 1) {
         for (sortindex = 0; sortindex < sortedkillstreaks.size && sortindex < var_2e1bd530.size; sortindex++) {
             if (sortedkillstreaks[sortindex].weapon != level.weaponnone) {
-                self function_d9b9c4c6(var_2e1bd530[sortindex], sortedkillstreaks[sortindex].weapon);
+                self setkillstreakweapon(var_2e1bd530[sortindex], sortedkillstreaks[sortindex].weapon);
             }
         }
     }
@@ -495,21 +495,21 @@ function function_6573eeeb() {
     }
     var_e3096d6e = getdvarstring(#"hash_466a4b312707e780", "");
     if (var_e3096d6e != "" && self function_3a054f03(hash(var_e3096d6e))) {
-        self function_49dc736a(hash(var_e3096d6e));
+        self giveexecution(hash(var_e3096d6e));
         return;
     }
     var_71575725 = self function_7683b07();
     if (var_71575725 != "") {
-        self function_49dc736a(var_71575725);
+        self giveexecution(var_71575725);
         return;
     }
     /#
         if (getdvarstring(#"hash_13d12c0b5b9b9738") != "<unknown string>") {
-            self function_49dc736a(hash(getdvarstring(#"hash_13d12c0b5b9b9738")));
+            self giveexecution(hash(getdvarstring(#"hash_13d12c0b5b9b9738")));
             return;
         }
     #/
-    self function_225eab37();
+    self clearexecution();
 }
 
 // Namespace loadout/player_loadout
@@ -1098,7 +1098,7 @@ function function_5536bd9e() {
     }
     self player::function_9080887a(healthtoassign);
     self.maxhealth = healthtoassign + (isdefined(level.var_90bb9821) ? level.var_90bb9821 : 0);
-    new_health = self.var_66cb03ad < 0 ? self.var_66cb03ad : healthtoassign;
+    new_health = self.var_66cb03ad < 0 ? healthtoassign : self.var_66cb03ad;
     give_armor = has_specialty_armor && (!isdefined(self.var_a06951b7) || self.var_a06951b7 < gettime());
     armor = give_armor ? self.spawnarmor : 0;
     self.health = new_health;
@@ -1124,7 +1124,7 @@ function private function_8e961216(slot, *previous_weapon) {
     primaryoffhand = level.weaponnone;
     primaryoffhandcount = 0;
     primaryoffhandname = self function_b958b70d(self.class_num, "primarygrenade");
-    if (primaryoffhandname == "default_specialist_equipment" && isdefined(self.playerrole) && isdefined(self.playerrole.var_a7e7cb46)) {
+    if (primaryoffhandname == "default_specialist_equipment" && isdefined(self.playerrole) && isdefined(self.playerrole.primaryequipment)) {
         primaryoffhandname = #"weapon_null";
     }
     if (primaryoffhandname != #"" && primaryoffhandname != #"weapon_null") {
@@ -1181,8 +1181,8 @@ function function_c3448ab0(slot, *previous_weapon, force_give_gadget_health_rege
     secondaryoffhand = level.weaponnone;
     secondaryoffhandcount = 0;
     if (getdvarint(#"equipmentasgadgets", 0) == 1) {
-        if (isdefined(self.playerrole) && isdefined(self.playerrole.var_743dc11d)) {
-            secondaryoffhand = self.playerrole.var_743dc11d;
+        if (isdefined(self.playerrole) && isdefined(self.playerrole.secondaryequipment)) {
+            secondaryoffhand = self.playerrole.secondaryequipment;
             secondaryoffhandcount = secondaryoffhand.startammo;
         }
     } else {
@@ -1259,7 +1259,7 @@ function private give_special_offhand(slot, *previous_weapon) {
     if (var_d07d57b2 != #"" && var_d07d57b2 != #"weapon_null") {
         specialoffhand = getweapon(var_d07d57b2);
         var_4ee2888b = self getloadoutitem(self.class_num, "specialgrenadecount");
-        specialoffhandcount = var_4ee2888b < 0 ? 2 : 1;
+        specialoffhandcount = var_4ee2888b < 0 ? 1 : 2;
         if (isdefined(self.pers[#"specialgrenadecount"]) && self.pers[#"specialgrenadecount"] < specialoffhandcount && isdefined(self.pers[#"held_gadgets_power"]) && isdefined(self.pers[#"held_gadgets_power"][specialoffhand])) {
             self.pers[#"held_gadgets_power"][specialoffhand] = self.pers[#"held_gadgets_power"][specialoffhand] * self.pers[#"specialgrenadecount"] / specialoffhandcount;
         }
@@ -1381,10 +1381,10 @@ function give_loadout(*team, weaponclass, var_e0f216b9) {
         if (current_weapon == level.weaponnone && isdefined(self.class_num)) {
             current_weapon = self getloadoutweapon(self.class_num, "primary");
         }
-        var_34e46d5c = getdvarint(#"hash_449fa75f87a4b5b4", 0) < 0 ? "ping_callouts" : "flourish_callouts";
-        self setactionslot(3, var_34e46d5c);
-        var_7e297fe5 = getdvarint(#"hash_23270ec9008cb656", 0) < 0 ? "sprays_boasts" : "scorestreak_wheel";
-        self setactionslot(4, var_7e297fe5);
+        actionslot3 = getdvarint(#"hash_449fa75f87a4b5b4", 0) < 0 ? "flourish_callouts" : "ping_callouts";
+        self setactionslot(3, actionslot3);
+        actionslot4 = getdvarint(#"hash_23270ec9008cb656", 0) < 0 ? "scorestreak_wheel" : "sprays_boasts";
+        self setactionslot(4, actionslot4);
         if (isdefined(level.givecustomloadout)) {
             spawn_weapon = self [[ level.givecustomloadout ]]();
             if (isdefined(spawn_weapon)) {

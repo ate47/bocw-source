@@ -15,14 +15,14 @@
 // Checksum 0xf0eeee99, Offset: 0xa90
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"vehicle_shared", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"vehicle_shared", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace vehicle/vehicle_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdeebb5e4, Offset: 0xad8
 // Size: 0x1204
-function private function_70a657d8() {
+function private preinit() {
     level._customvehiclecbfunc = &spawned_callback;
     level.var_e583fd9b = &function_2f2a656a;
     level.var_8e36d09b = &function_cc71cf1a;
@@ -63,25 +63,25 @@ function private function_70a657d8() {
     clientfield::register("vehicle", "stunned", 1, 1, "int", &callback::callback_stunned, 0, 0);
     clientfield::register("vehicle", "rocket_damage_rumble", 1, 1, "counter", &function_f8e7ae58, 0, 0);
     if (!is_true(level.var_7b05c4b5)) {
-        clientfield::register_clientuimodel("vehicle.ammoCount", #"hash_4c3ca831f332d4cc", #"ammocount", 1, 10, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("vehicle.ammoReloading", #"hash_4c3ca831f332d4cc", #"ammoreloading", 1, 1, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("vehicle.ammoLow", #"hash_4c3ca831f332d4cc", #"ammolow", 1, 1, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("vehicle.rocketAmmo", #"hash_4c3ca831f332d4cc", #"rocketammo", 1, 2, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("vehicle.ammo2Count", #"hash_4c3ca831f332d4cc", #"ammo2count", 1, 10, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("vehicle.ammo2Reloading", #"hash_4c3ca831f332d4cc", #"ammo2reloading", 1, 1, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("vehicle.ammo2Low", #"hash_4c3ca831f332d4cc", #"ammo2low", 1, 1, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("vehicle.collisionWarning", #"hash_4c3ca831f332d4cc", #"collisionwarning", 1, 2, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("vehicle.enemyInReticle", #"hash_4c3ca831f332d4cc", #"enemyinreticle", 1, 1, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("vehicle.missileRepulsed", #"hash_4c3ca831f332d4cc", #"missilerepulsed", 1, 1, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("vehicle.incomingMissile", #"hash_4c3ca831f332d4cc", #"incomingmissile", 1, 1, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("vehicle.missileLock", #"hash_4c3ca831f332d4cc", #"missilelock", 1, 2, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("vehicle.malfunction", #"hash_4c3ca831f332d4cc", #"malfunction", 1, 2, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("vehicle.showHoldToExitPrompt", #"hash_4c3ca831f332d4cc", #"showholdtoexitprompt", 1, 1, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("vehicle.holdToExitProgress", #"hash_4c3ca831f332d4cc", #"holdtoexitprogress", 1, 5, "float", undefined, 0, 0);
-        clientfield::register_clientuimodel("vehicle.vehicleAttackMode", #"hash_4c3ca831f332d4cc", #"vehicleattackmode", 1, 3, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("vehicle.invalidLanding", #"hash_4c3ca831f332d4cc", #"invalidlanding", 1, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("vehicle.ammoCount", #"vehicle_info", #"ammocount", 1, 10, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("vehicle.ammoReloading", #"vehicle_info", #"ammoreloading", 1, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("vehicle.ammoLow", #"vehicle_info", #"ammolow", 1, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("vehicle.rocketAmmo", #"vehicle_info", #"rocketammo", 1, 2, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("vehicle.ammo2Count", #"vehicle_info", #"ammo2count", 1, 10, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("vehicle.ammo2Reloading", #"vehicle_info", #"ammo2reloading", 1, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("vehicle.ammo2Low", #"vehicle_info", #"ammo2low", 1, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("vehicle.collisionWarning", #"vehicle_info", #"collisionwarning", 1, 2, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("vehicle.enemyInReticle", #"vehicle_info", #"enemyinreticle", 1, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("vehicle.missileRepulsed", #"vehicle_info", #"missilerepulsed", 1, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("vehicle.incomingMissile", #"vehicle_info", #"incomingmissile", 1, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("vehicle.missileLock", #"vehicle_info", #"missilelock", 1, 2, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("vehicle.malfunction", #"vehicle_info", #"malfunction", 1, 2, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("vehicle.showHoldToExitPrompt", #"vehicle_info", #"showholdtoexitprompt", 1, 1, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("vehicle.holdToExitProgress", #"vehicle_info", #"holdtoexitprogress", 1, 5, "float", undefined, 0, 0);
+        clientfield::register_clientuimodel("vehicle.vehicleAttackMode", #"vehicle_info", #"vehicleattackmode", 1, 3, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("vehicle.invalidLanding", #"vehicle_info", #"invalidlanding", 1, 1, "int", undefined, 0, 0);
         for (i = 0; i < 3; i++) {
-            clientfield::register_clientuimodel("vehicle.bindingCooldown" + i + ".cooldown", #"hash_4c3ca831f332d4cc", [1:#"cooldown", 0:#"bindingcooldown" + (isdefined(i) ? "" + i : "")], 1, 5, "float", undefined, 0, 0);
+            clientfield::register_clientuimodel("vehicle.bindingCooldown" + i + ".cooldown", #"vehicle_info", [#"bindingcooldown" + (isdefined(i) ? "" + i : ""), #"cooldown"], 1, 5, "float", undefined, 0, 0);
         }
     }
     clientfield::register("toplayer", "toggle_dnidamagefx", 1, 1, "int", &field_toggle_dnidamagefx, 0, 0);
@@ -472,14 +472,14 @@ function aircraft_dustkick() {
         }
         trace = bullettrace(self.origin, self.origin - (0, 0, 700 * 2), 0, self, 1);
         distsqr = distancesquared(self.origin, trace[#"position"]);
-        if (trace[#"fraction"] < 0.01 || distsqr < function_a3f6cdac(0)) {
+        if (trace[#"fraction"] < 0.01 || distsqr < sqr(0)) {
             wait(0.2);
             continue;
-        } else if (trace[#"fraction"] >= 1 || distsqr > function_a3f6cdac(700)) {
+        } else if (trace[#"fraction"] >= 1 || distsqr > sqr(700)) {
             wait(1);
             continue;
         }
-        if (function_a3f6cdac(0) < distsqr && distsqr < function_a3f6cdac(700)) {
+        if (sqr(0) < distsqr && distsqr < sqr(700)) {
             surfacetype = trace[#"surfacetype"];
             if (!isdefined(surfacetype)) {
                 surfacetype = "dirt";
@@ -1532,7 +1532,7 @@ function field_do_deathfx(localclientnum, oldval, newval, bnewent, binitialsnap,
     self endon(#"death");
     if (newval) {
         self stop_stun_fx(localclientnum);
-        self notify(#"hash_440a08f9070a44c1");
+        self notify(#"vehicle_death_fx");
     }
     if (newval == 2) {
         self field_do_empdeathfx(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump);

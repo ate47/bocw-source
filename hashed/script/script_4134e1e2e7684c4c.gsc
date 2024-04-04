@@ -17,9 +17,9 @@ function function_eea42dd9(var_f873ed0b, var_e3ec46f0) {
     }
     namespace_61e6d095::create(#"hash_15363747d8cbf71f", var_f873ed0b);
     namespace_61e6d095::function_b1e6d7a8(#"hash_15363747d8cbf71f", 0, 1);
-    namespace_61e6d095::function_d3c3e5c3(#"hash_15363747d8cbf71f", [1:#"interactive_map", 0:#"dialog_tree"]);
+    namespace_61e6d095::function_d3c3e5c3(#"hash_15363747d8cbf71f", [#"dialog_tree", #"interactive_map"]);
     if (is_true(var_e3ec46f0)) {
-        namespace_61e6d095::function_28027c42(#"hash_af16b6b2e499098", #"hash_15363747d8cbf71f");
+        namespace_61e6d095::function_28027c42(#"computer", #"hash_15363747d8cbf71f");
     }
 }
 
@@ -38,8 +38,8 @@ function function_487b4340(var_e1ab1198, var_5130c92a = 1, var_907c1dab) {
     if (var_5130c92a) {
         function_f99d2e8a();
         level.var_deff0f73 = var_deff0f73.var_df2d0a90;
-        var_48ff4b02 = level.var_deff0f73.size;
-        for (i = 0; i < var_48ff4b02; i++) {
+        len = level.var_deff0f73.size;
+        for (i = 0; i < len; i++) {
             linenum = i + 1;
             var_c1deb575 = level.var_deff0f73[i];
             function_66b8c40f(var_c1deb575, linenum);
@@ -274,7 +274,7 @@ function function_b2911127(delay = 2) {
             wait(delay);
         }
         namespace_61e6d095::remove(#"hash_15363747d8cbf71f");
-        namespace_61e6d095::function_4279fd02(#"hash_af16b6b2e499098");
+        namespace_61e6d095::function_4279fd02(#"computer");
     }
 }
 

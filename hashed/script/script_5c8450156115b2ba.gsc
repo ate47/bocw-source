@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_113dd7f0ea2a1d4f;
-#using script_1029986e2bc8ca8e;
+#using scripts\zm_common\objective_manager.gsc;
 #using scripts\zm_common\zm_sq.gsc;
 #using scripts\zm_common\zm_zonemgr.gsc;
 #using scripts\zm_common\zm_utility.gsc;
@@ -218,7 +218,7 @@ function function_a70fa155(var_74fbad21, var_af6496cd, var_54829af, var_32281137
             if (isdefined(var_e3c700bd)) {
                 if (array::function_460f3c24(var_e3c700bd, var_54829af)) {
                     if (isdefined(level.var_7899bc18[e_player.playernum])) {
-                        e_player zm_sq::function_53d0d99(var_af6496cd);
+                        e_player zm_sq::objective_complete(var_af6496cd);
                         level.var_7899bc18[e_player.playernum] = undefined;
                     }
                     if (!isdefined(level.var_c1bfcfe0[e_player.playernum])) {
@@ -232,7 +232,7 @@ function function_a70fa155(var_74fbad21, var_af6496cd, var_54829af, var_32281137
                     }
                     if (isdefined(level.var_7899bc18[e_player.playernum])) {
                         if (!array::function_460f3c24(level.var_7899bc18[e_player.playernum], var_e3c700bd)) {
-                            e_player zm_sq::function_53d0d99(var_af6496cd, level.var_7899bc18[e_player.playernum]);
+                            e_player zm_sq::objective_complete(var_af6496cd, level.var_7899bc18[e_player.playernum]);
                             e_player zm_sq::function_266d66eb(var_af6496cd, var_e3c700bd, undefined, undefined, undefined, 96);
                             level.var_7899bc18[e_player.playernum] = var_e3c700bd;
                         }
@@ -251,7 +251,7 @@ function function_a70fa155(var_74fbad21, var_af6496cd, var_54829af, var_32281137
                 level.var_c1bfcfe0[e_player.playernum] = undefined;
             }
             if (isdefined(level.var_7899bc18[e_player.playernum])) {
-                e_player zm_sq::function_53d0d99(var_af6496cd);
+                e_player zm_sq::objective_complete(var_af6496cd);
                 level.var_7899bc18[e_player.playernum] = undefined;
             }
         }
@@ -265,7 +265,7 @@ function function_a70fa155(var_74fbad21, var_af6496cd, var_54829af, var_32281137
 function private function_c8901681(var_b09af3eb) {
     foreach (e_player in getplayers()) {
         if (isdefined(level.var_7899bc18[e_player.playernum])) {
-            e_player zm_sq::function_53d0d99(level.var_2918dbdf);
+            e_player zm_sq::objective_complete(level.var_2918dbdf);
             level.var_7899bc18[e_player.playernum] = undefined;
         }
         if (isdefined(level.var_c1bfcfe0[e_player.playernum])) {
@@ -275,7 +275,7 @@ function private function_c8901681(var_b09af3eb) {
     if (var_b09af3eb == #"hash_419cb6aea3c6771e") {
         if (isdefined(level.var_474108be)) {
             if (ishash(level.var_474108be) || isstring(level.var_474108be)) {
-                level zm_sq::function_53d0d99(level.var_474108be);
+                level zm_sq::objective_complete(level.var_474108be);
                 return;
             }
             if (isint(level.var_474108be)) {
@@ -326,7 +326,7 @@ function function_10ff2c34(var_54829af, var_32281137) {
     if (self zm_zonemgr::is_player_in_zone(level.var_dc2ca204)) {
         if (array::function_460f3c24(var_32281137, level.var_dc2ca204)) {
             return var_54829af;
-        } else if (array::function_460f3c24(var_32281137, [0:"zone_observation"])) {
+        } else if (array::function_460f3c24(var_32281137, ["zone_observation"])) {
             if (level flag::get("power_on1")) {
                 return struct::get_array("helipads_to_observation", "script_string");
             } else if (level flag::get(#"hash_67685d2c51bd61db")) {
@@ -352,7 +352,7 @@ function function_10ff2c34(var_54829af, var_32281137) {
             return var_54829af;
         } else if (array::function_460f3c24(var_32281137, level.var_dc2ca204)) {
             return struct::get_array("main_street_to_helipads", "script_string");
-        } else if (array::function_460f3c24(var_32281137, [0:"zone_observation"])) {
+        } else if (array::function_460f3c24(var_32281137, ["zone_observation"])) {
             if (level flag::get("power_on1")) {
                 return var_54829af;
             } else if (level flag::get(#"hash_67685d2c51bd61db")) {
@@ -374,7 +374,7 @@ function function_10ff2c34(var_54829af, var_32281137) {
             return struct::get_array("anytown_usa_to_main_street", "script_string");
         } else if (array::function_460f3c24(var_32281137, level.var_dc2ca204)) {
             return struct::get_array("anytown_usa_to_main_street", "script_string");
-        } else if (array::function_460f3c24(var_32281137, [0:"zone_observation"])) {
+        } else if (array::function_460f3c24(var_32281137, ["zone_observation"])) {
             if (level flag::get("power_on1")) {
                 return var_54829af;
             } else if (level flag::get(#"hash_67685d2c51bd61db")) {
@@ -398,13 +398,13 @@ function function_10ff2c34(var_54829af, var_32281137) {
             } else {
                 return struct::get_array("bunker_to_anytown_usa", "script_string");
             }
-        } else if (array::function_460f3c24(var_32281137, [0:"zone_observation"])) {
+        } else if (array::function_460f3c24(var_32281137, ["zone_observation"])) {
             if (level flag::get(#"hash_67685d2c51bd61db")) {
                 return struct::get_array("bunker_to_observation", "script_string");
             }
         }
-    } else if (self zm_zonemgr::is_player_in_zone([0:"zone_observation"])) {
-        if (array::function_460f3c24(var_32281137, [0:"zone_observation"])) {
+    } else if (self zm_zonemgr::is_player_in_zone(["zone_observation"])) {
+        if (array::function_460f3c24(var_32281137, ["zone_observation"])) {
             return var_54829af;
         } else if (array::function_460f3c24(var_32281137, level.var_65c43c31)) {
             return struct::get_array("observation_to_bunker", "script_string");
@@ -445,8 +445,8 @@ function function_e1579dc4() {
         return level.var_2f941a56;
     } else if (function_5996e591(str_target_zone, level.var_65c43c31)) {
         return level.var_65c43c31;
-    } else if (function_5996e591(str_target_zone, [0:"zone_observation"])) {
-        return [0:"zone_observation"];
+    } else if (function_5996e591(str_target_zone, ["zone_observation"])) {
+        return ["zone_observation"];
     }
     return undefined;
 }
@@ -469,7 +469,7 @@ function private function_5996e591(str_target_zone, a_str_zones) {
 // Checksum 0xc1f5be41, Offset: 0x2240
 // Size: 0xdc
 function private function_ee59489c(var_331b7cc3, origin, instance) {
-    namespace_f3a74bbc::function_9751c453(var_331b7cc3, origin, instance);
+    objective_manager::function_9751c453(var_331b7cc3, origin, instance);
     level flag::set(#"hash_419cb6aea3c6771e");
     zm_sq::function_97aa577f();
     while (!isdefined(level.var_117d5f10)) {

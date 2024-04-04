@@ -127,13 +127,13 @@ function function_77af9e81() {
         if (isdefined(self.var_d7e0da8b)) {
             self [[ self.var_d7e0da8b ]]();
         }
-        foreach (var_956de39f in level.doa.var_537a3e29) {
-            if (!isdefined(var_956de39f)) {
+        foreach (orb in level.doa.var_537a3e29) {
+            if (!isdefined(orb)) {
                 continue;
             }
-            distsq = distancesquared(var_956de39f.origin, self.origin);
-            if (distsq < getdvarint(#"hash_5f8a3b48d8ebee04", function_a3f6cdac(400))) {
-                self.attractors[self.attractors.size] = var_956de39f;
+            distsq = distancesquared(orb.origin, self.origin);
+            if (distsq < getdvarint(#"hash_5f8a3b48d8ebee04", sqr(400))) {
+                self.attractors[self.attractors.size] = orb;
             }
         }
         waitframe(1);
@@ -155,7 +155,7 @@ function function_9ded1b6c(type) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x63c27b47, Offset: 0x968
 // Size: 0x3b2
-function private function_68126677(var_624b8d02 = getdvarint(#"hash_5f8a3b48d8ebee04", function_a3f6cdac(400))) {
+function private function_68126677(var_624b8d02 = getdvarint(#"hash_5f8a3b48d8ebee04", sqr(400))) {
     self notify(#"hash_2d37cb44b7f0c612");
     self endon(#"hash_2d37cb44b7f0c612");
     self endon(#"picked_up");

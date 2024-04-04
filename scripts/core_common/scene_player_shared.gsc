@@ -953,8 +953,8 @@ class csceneplayer : csceneobject {
     // Checksum 0x9b6a2246, Offset: 0x7580
     // Size: 0x5c
     function function_7d78187b() {
-        var_ccb32fad = isdefined(self.var_55b4f21e.var_9503db49) ? self.var_55b4f21e.var_9503db49 : self._s.var_9503db49;
-        return isdefined(var_ccb32fad) ? !var_ccb32fad : 1;
+        show_player = isdefined(self.var_55b4f21e.var_9503db49) ? self.var_55b4f21e.var_9503db49 : self._s.var_9503db49;
+        return isdefined(show_player) ? !show_player : 1;
     }
 
     // Namespace csceneplayer/scene_player_shared
@@ -967,7 +967,7 @@ class csceneplayer : csceneobject {
         }
         player.player_anim_look_enabled = !is_true(self._s.lockview);
         player.var_6f570bef = isdefined(self._s.var_a8972ec6) ? self._s.var_a8972ec6 : 0;
-        player.var_fcbf7c5a = isdefined(self._s.var_e8846003) ? self._s.var_e8846003 : 0;
+        player.var_fcbf7c5a = isdefined(self._s.autocenter) ? self._s.autocenter : 0;
         player.player_anim_clamp_right = isdefined(isdefined(self.var_55b4f21e.viewclampright) ? self.var_55b4f21e.viewclampright : self._s.viewclampright) ? isdefined(self.var_55b4f21e.viewclampright) ? self.var_55b4f21e.viewclampright : self._s.viewclampright : 0;
         player.player_anim_clamp_left = isdefined(isdefined(self.var_55b4f21e.viewclampleft) ? self.var_55b4f21e.viewclampleft : self._s.viewclampleft) ? isdefined(self.var_55b4f21e.viewclampleft) ? self.var_55b4f21e.viewclampleft : self._s.viewclampleft : 0;
         player.player_anim_clamp_top = isdefined(isdefined(self.var_55b4f21e.viewclamptop) ? self.var_55b4f21e.viewclamptop : self._s.viewclamptop) ? isdefined(self.var_55b4f21e.viewclamptop) ? self.var_55b4f21e.viewclamptop : self._s.viewclamptop : 0;
@@ -1236,7 +1236,7 @@ class csceneplayer : csceneobject {
         if (player flag::get(#"mobile_armory_in_use") && isplayer(player)) {
             player flag::set(#"cancel_mobile_armory");
             player closemenu("mobile_armory_loadout");
-            params = {#intpayload:0, #response:"cancel", #menu:"mobile_armory_loadout"};
+            params = {#menu:"mobile_armory_loadout", #response:"cancel", #intpayload:0};
             player notify(#"menuresponse", params);
             player callback::callback(#"menu_response", params);
         }
@@ -1653,8 +1653,8 @@ class csceneplayer : csceneobject {
     // Checksum 0x7a7af14, Offset: 0x7648
     // Size: 0x5c
     function function_e1ac7b9a() {
-        var_ccb32fad = isdefined(self.var_55b4f21e.var_6454a5aa) ? self.var_55b4f21e.var_6454a5aa : self._s.var_6454a5aa;
-        return isdefined(var_ccb32fad) ? !var_ccb32fad : 1;
+        show_player = isdefined(self.var_55b4f21e.var_6454a5aa) ? self.var_55b4f21e.var_6454a5aa : self._s.var_6454a5aa;
+        return isdefined(show_player) ? !show_player : 1;
     }
 
     // Namespace csceneplayer/scene_player_shared

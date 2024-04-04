@@ -35,6 +35,6 @@ function init() {
 function private function_6def98d8(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
     self util::waittill_dobj(fieldname);
-    self.var_9673febe = bwastimejump;
+    self.loottype = bwastimejump;
 }
 

@@ -13,14 +13,14 @@
 // Checksum 0xe1165967, Offset: 0xc0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_upgrade_multiple", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_upgrade_multiple", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_upgrade_multiple/zm_trial_upgrade_multiple
 // Params 0, eflags: 0x4
 // Checksum 0xb5a736bc, Offset: 0x108
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

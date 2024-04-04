@@ -286,7 +286,7 @@ function private archetypezombieonanimscriptedcallback(entity) {
 // Checksum 0x8ac788d8, Offset: 0x1f08
 // Size: 0x1b4
 function function_eb55349f() {
-    var_1690db4a = [4:#"hash_502c60e0a94ba04b", 3:#"hash_ef041655f01ad34", 2:#"hash_50fdc172aee097e6", 1:#"hash_16837b6c9b7a1881", 0:#"hash_48eda005db2cbdcd"];
+    var_1690db4a = [#"hash_48eda005db2cbdcd", #"hash_16837b6c9b7a1881", #"hash_50fdc172aee097e6", #"hash_ef041655f01ad34", #"hash_502c60e0a94ba04b"];
     if (self.model === #"hash_6aa75847e285712b" || isdefined(self.model) && isinarray(var_1690db4a, self.model)) {
         self clientfield::set("pustule_pulse_cf", 1);
         self callback::function_d8abfc3d(#"on_ai_killed", &function_5b8201e0);
@@ -592,8 +592,8 @@ function zombienotetrackmeleefire(entity) {
     entity.melee_cooldown = gettime() + getdvarfloat(#"scr_zombiemeleecooldown", 1) * 1000 * (isdefined(entity.var_ce2dd587) ? entity.var_ce2dd587 : 1);
     if (is_true(entity.aat_turned)) {
         if (isdefined(entity.enemy) && isalive(entity.enemy) && !isplayer(entity.enemy)) {
-            if (isdefined(entity.var_3533970d)) {
-                if (!entity [[ entity.var_3533970d ]](entity.enemy)) {
+            if (isdefined(entity.melee_distance_check)) {
+                if (!entity [[ entity.melee_distance_check ]](entity.enemy)) {
                     return;
                 }
             }
@@ -728,11 +728,11 @@ function zombieupdatezigzaggoal() {
     if (!shouldrepath && isdefined(self.favoriteenemy)) {
         if (!isdefined(self.nextgoalupdate) || self.nextgoalupdate <= gettime()) {
             shouldrepath = 1;
-        } else if (distancesquared(self.origin, self.favoriteenemy.origin) <= function_a3f6cdac(250)) {
+        } else if (distancesquared(self.origin, self.favoriteenemy.origin) <= sqr(250)) {
             shouldrepath = 1;
         } else if (isdefined(self.pathgoalpos)) {
             distancetogoalsqr = distancesquared(self.origin, self.pathgoalpos);
-            shouldrepath = distancetogoalsqr < function_a3f6cdac(72);
+            shouldrepath = distancetogoalsqr < sqr(72);
         }
     }
     if (is_true(self.keep_moving)) {
@@ -746,7 +746,7 @@ function zombieupdatezigzaggoal() {
             goalpos = self.favoriteenemy.last_valid_position;
         }
         self setgoal(goalpos);
-        if (distancesquared(self.origin, goalpos) > function_a3f6cdac(250)) {
+        if (distancesquared(self.origin, goalpos) > sqr(250)) {
             self.keep_moving = 1;
             self.keep_moving_time = gettime() + 250;
             path = self calcapproximatepathtoposition(goalpos, 0);
@@ -914,22 +914,22 @@ function function_997f1224(entity) {
     var_565fd664 = 0;
     if (isdefined(entity.var_46fc9994.time) && gettime() - self.var_46fc9994.time < int(3 * 1000)) {
         var_ac8727d2 = !isdefined(entity.var_46fc9994.hit_ent);
-        var_b0027f10 = isdefined(entity.var_46fc9994.var_7befcf25) && entity.var_46fc9994.var_7befcf25 > function_a3f6cdac(entity.meleeweapon.aimeleerange);
-        var_565fd664 = isdefined(entity.var_46fc9994.position) && distance2dsquared(entity.origin, entity.var_46fc9994.position) < function_a3f6cdac(entity getpathfindingradius());
+        var_b0027f10 = isdefined(entity.var_46fc9994.var_7befcf25) && entity.var_46fc9994.var_7befcf25 > sqr(entity.meleeweapon.aimeleerange);
+        var_565fd664 = isdefined(entity.var_46fc9994.position) && distance2dsquared(entity.origin, entity.var_46fc9994.position) < sqr(entity getpathfindingradius());
     }
     if (entity.archetype == #"zombie" && !isdefined(entity.var_9fde8624) && !is_true(self.missinglegs) && !(var_ac8727d2 && var_b0027f10 && var_565fd664)) {
         if (entity.zombie_move_speed == "walk") {
-            return function_a3f6cdac(100);
+            return sqr(100);
         } else if (entity.zombie_move_speed == "run") {
-            return function_a3f6cdac(120);
+            return sqr(120);
         }
-        return function_a3f6cdac(90);
+        return sqr(90);
     }
     if (isdefined(entity.meleeweapon) && entity.meleeweapon !== level.weaponnone) {
         meleedistsq = entity.meleeweapon.aimeleerange * entity.meleeweapon.aimeleerange;
     }
     if (!isdefined(meleedistsq)) {
-        return function_a3f6cdac(100);
+        return sqr(100);
     }
     return meleedistsq;
 }
@@ -973,7 +973,7 @@ function zombieshouldmeleecondition(entity) {
     if (!entity cansee(entity.enemy)) {
         return false;
     }
-    if (distancesquared(entity.origin, entity.enemy.origin) < function_a3f6cdac(40)) {
+    if (distancesquared(entity.origin, entity.enemy.origin) < sqr(40)) {
         return true;
     }
     if (!tracepassedonnavmesh(entity.origin, isdefined(entity.enemy.last_valid_position) ? entity.enemy.last_valid_position : entity.enemy.origin, entity.enemy getpathfindingradius())) {
@@ -1708,7 +1708,7 @@ function function_22762653() {
     if (util::get_game_type() === #"zsurvival" && getdvar(#"hash_fb0f3afcdafbdf3", 1)) {
         if (!isdefined(self.var_1f2c0ce1)) {
             self.var_1f2c0ce1 = self.origin;
-        } else if (distancesquared(self.var_1f2c0ce1, self.origin) < function_a3f6cdac(self getpathfindingradius())) {
+        } else if (distancesquared(self.var_1f2c0ce1, self.origin) < sqr(self getpathfindingradius())) {
             self clearpath();
             self.var_1f2c0ce1 = undefined;
         } else {
@@ -1825,7 +1825,7 @@ function private zombiegibkilledanhilateoverride(inflictor, attacker, damage, me
     if (isdefined(offsettime.weapclass) && offsettime.weapclass == "turret") {
         if (isdefined(weapon)) {
             isdirectexplosive = isinarray(array("MOD_GRENADE", "MOD_GRENADE_SPLASH", "MOD_PROJECTILE", "MOD_PROJECTILE_SPLASH", "MOD_EXPLOSIVE"), hitloc);
-            iscloseexplosive = distancesquared(weapon.origin, self.origin) <= function_a3f6cdac(60);
+            iscloseexplosive = distancesquared(weapon.origin, self.origin) <= sqr(60);
             if (isdirectexplosive && iscloseexplosive) {
                 self zombie_utility::gib_random_parts();
                 gibserverutils::annihilate(self);

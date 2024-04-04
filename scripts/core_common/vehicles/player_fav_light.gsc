@@ -12,14 +12,14 @@
 // Checksum 0x1df06417, Offset: 0xc0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"player_fav_light", &function_70a657d8, undefined, undefined, #"player_vehicle");
+    system::register(#"player_fav_light", &preinit, undefined, undefined, #"player_vehicle");
 }
 
 // Namespace player_fav_light/player_fav_light
 // Params 0, eflags: 0x6 linked
 // Checksum 0x744f94f3, Offset: 0x110
 // Size: 0x2c
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_main_callback("player_fav_light", &function_6e6e0d52);
 }
 

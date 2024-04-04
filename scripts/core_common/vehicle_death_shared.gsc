@@ -18,7 +18,7 @@
 // Checksum 0x3df22b96, Offset: 0x2c8
 // Size: 0x22c
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
-    foreach (var_74ab9700, k in [0:"script_crashpath_scene"]) {
+    foreach (var_74ab9700, k in ["script_crashpath_scene"]) {
         if (!isdefined(level.var_41204f29)) {
             level.var_41204f29 = [];
         } else if (!isarray(level.var_41204f29)) {
@@ -44,14 +44,14 @@ function private event_handler[createstruct] function_e0a8e4ba(struct) {
 // Checksum 0x121cd725, Offset: 0x500
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"vehicle_death", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"vehicle_death", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace vehicle_death/vehicle_death_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0xce52ce4c, Offset: 0x548
 // Size: 0x6c
-function private function_70a657d8() {
+function private preinit() {
     setdvar(#"debug_crash_type", -1);
     callback::on_vehicle_damage(&on_vehicle_damage);
     callback::on_vehicle_killed(&on_vehicle_killed);
@@ -351,7 +351,7 @@ function aircraft_crash(point, dir) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x335bd8b8, Offset: 0x12b8
 // Size: 0x84
-function helicopter_crash(point, dir, var_339fe9dc) {
+function helicopter_crash(point, dir, explosiondelay) {
     self.crashing = 1;
     self thread play_crashing_loop();
     if (isdefined(self.unloading)) {
@@ -362,14 +362,14 @@ function helicopter_crash(point, dir, var_339fe9dc) {
     if (!isdefined(self)) {
         return;
     }
-    self thread helicopter_crash_movement(point, dir, var_339fe9dc);
+    self thread helicopter_crash_movement(point, dir, explosiondelay);
 }
 
 // Namespace vehicle_death/vehicle_death_shared
 // Params 3, eflags: 0x2 linked
 // Checksum 0xcf1ac719, Offset: 0x1348
 // Size: 0x41e
-function helicopter_crash_movement(point, dir, var_339fe9dc) {
+function helicopter_crash_movement(point, dir, explosiondelay) {
     self endon(#"crash_done");
     self cancelaimove();
     self function_d4c687c9();
@@ -422,7 +422,7 @@ function helicopter_crash_movement(point, dir, var_339fe9dc) {
             self [[ self.var_ae052a1c ]]();
             profilestop();
         }
-        self thread wait_and_explode(var_339fe9dc);
+        self thread wait_and_explode(explosiondelay);
     }
     self thread crash_collision_test();
     wait(15);
@@ -755,7 +755,7 @@ function boat_crash_movement(point, dir) {
     ang_vel = self getangularvelocity();
     ang_vel = (0, 0, 0);
     self setangularvelocity(ang_vel);
-    torque = (randomintrange(-5, -3), 0, randomintrange(0, 100) > 50 ? -5 : 5);
+    torque = (randomintrange(-5, -3), 0, randomintrange(0, 100) > 50 ? 5 : -5);
     self thread boat_crash_monitor(point, dir, 4);
     while (true) {
         ang_vel = self getangularvelocity();
@@ -840,9 +840,9 @@ function crash_collision_test() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xafc0ecf3, Offset: 0x3318
 // Size: 0x4c
-function wait_and_explode(var_339fe9dc = 2) {
+function wait_and_explode(explosiondelay = 2) {
     self endon(#"death");
-    wait(var_339fe9dc);
+    wait(explosiondelay);
     self helicopter_explode();
 }
 
@@ -1335,7 +1335,7 @@ function ground_vehicle_explode(b_delete_me = 0) {
     self endon(#"death");
     self vehicle::do_death_fx();
     if (b_delete_me) {
-        self function_cb48cddd();
+        self deletedelay();
         return;
     }
     self thread set_death_model(self.deathmodel, self.modelswapdelay);

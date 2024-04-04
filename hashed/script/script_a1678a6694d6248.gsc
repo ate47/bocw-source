@@ -17,14 +17,14 @@
 // Checksum 0x2b3c126d, Offset: 0x2f8
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_4c62174ea005e84e", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_4c62174ea005e84e", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_6fc19861/namespace_6fc19861
 // Params 0, eflags: 0x6 linked
 // Checksum 0x4e8772f5, Offset: 0x350
 // Size: 0x55c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "" + #"hash_d1d4ed99da50a4b", 28000, 1, "int", &function_72dbb6b0, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_403f172f69819024", 28000, 1, "int", &function_c4b67b53, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_2b223a333ab436cd", 28000, 1, "int", &function_3a8acde0, 0, 0);
@@ -274,13 +274,13 @@ function function_cb96958d(localclientnum, weapon) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xf591d04e, Offset: 0x1300
 // Size: 0x238
-function function_6247981b(localclientnum, var_a6762160) {
+function function_6247981b(localclientnum, itementry) {
     if (!isdefined(localclientnum)) {
         return 0;
     }
     data = item_world::function_a7e98a1a(localclientnum);
     var_b84949d0 = undefined;
-    var_cb5aea38 = [2:17 + 1 + 8 + 1 + 8 + 1, 1:17 + 1 + 8 + 1, 0:17 + 1];
+    var_cb5aea38 = [17 + 1, 17 + 1 + 8 + 1, 17 + 1 + 8 + 1 + 8 + 1];
     foreach (slot in var_cb5aea38) {
         slot_item = data.inventory.items[slot];
         if (!isdefined(slot_item)) {
@@ -293,7 +293,7 @@ function function_6247981b(localclientnum, var_a6762160) {
         }
     }
     if (isdefined(var_b84949d0)) {
-        if (var_a6762160.name === #"axe_gun_energetic_shard_item_t9") {
+        if (itementry.name === #"axe_gun_energetic_shard_item_t9") {
             if (isdefined(self.var_c926b4fc) && self.var_c926b4fc >= 5) {
                 return 4194304;
             } else {

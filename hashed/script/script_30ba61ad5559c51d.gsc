@@ -12,14 +12,14 @@
 // Checksum 0x1bbe4339, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_53a5a75770adb550", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_53a5a75770adb550", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_11abec5a/namespace_11abec5a
 // Params 0, eflags: 0x4
 // Checksum 0xe9af8e46, Offset: 0x120
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }
@@ -137,9 +137,9 @@ function is_active(var_a75461b4) {
     s_challenge = zm_trial::function_a36e8c38(#"hash_53a5a75770adb550");
     if (isdefined(var_a75461b4)) {
         if (isdefined(s_challenge) && isarray(level.var_692c062e) && isinarray(level.var_692c062e, var_a75461b4)) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
     return isdefined(s_challenge);
 }

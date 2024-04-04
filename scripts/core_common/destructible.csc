@@ -9,14 +9,14 @@
 // Checksum 0x8c96576, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"destructible", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"destructible", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace destructible/destructible
 // Params 0, eflags: 0x6 linked
 // Checksum 0x5fe614b5, Offset: 0x120
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "start_destructible_explosion", 1, 10, "int", &doexplosion, 0, 0);
 }
 

@@ -10,14 +10,14 @@
 // Checksum 0x7bd1de8a, Offset: 0xe0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"molotov_zm", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"molotov_zm", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov
 // Params 0, eflags: 0x6 linked
 // Checksum 0x149220a2, Offset: 0x128
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "molotov_zm_fire_fx", 1, 1, "int", &molotov_zm_fire_fx, 0, 0);
 }
 

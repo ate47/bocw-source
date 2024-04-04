@@ -17,14 +17,14 @@
 // Checksum 0xe70f088, Offset: 0xd0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_disable_perks", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_disable_perks", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_disable_perks/zm_trial_disable_perks
 // Params 0, eflags: 0x6 linked
 // Checksum 0x13d5c902, Offset: 0x118
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }
@@ -79,7 +79,7 @@ function private on_end(round_reset) {
 // Size: 0x7a
 function is_active(var_34f09024 = 0) {
     if (var_34f09024 && zm_trial::function_48736df9(#"disable_perks")) {
-        return 1;
+        return true;
     }
     challenge = zm_trial::function_a36e8c38(#"disable_perks");
     return isdefined(challenge);

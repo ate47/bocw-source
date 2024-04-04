@@ -13,14 +13,14 @@
 // Checksum 0xbd491b1f, Offset: 0x118
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"wz_perk_paranoia", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"wz_perk_paranoia", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace wz_perk_paranoia/wz_perk_paranoia
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80a3effc, Offset: 0x160
 // Size: 0x64
-function private function_70a657d8() {
+function private preinit() {
     callback::function_930e5d42(&function_930e5d42);
     callback::on_spawned(&on_player_spawned);
     callback::on_killcam_begin(&on_killcam_begin);
@@ -172,7 +172,7 @@ function private function_3e9077b(localclientnum) {
             var_2cb75b52 = self function_c9d3a835();
             to_self = var_2cb75b52 - player_eye_pos;
             var_2c01c01e = lengthsquared(to_self);
-            if (var_2c01c01e > function_a3f6cdac(21600)) {
+            if (var_2c01c01e > sqr(21600)) {
                 continue;
             }
             player_angles = player getplayerangles();
@@ -181,9 +181,9 @@ function private function_3e9077b(localclientnum) {
             if (vectordot(player_forward, var_e1a2a16a) < var_81f254ba) {
                 continue;
             }
-            var_2f138f98 = self function_dbd63244();
-            var_7cd3af52 = angleclamp180(function_8a514e3b(var_2f138f98 + (0, 0, 20) - player_eye_pos));
-            var_e909bde9 = angleclamp180(function_8a514e3b(self.origin - (0, 0, 10) - player_eye_pos));
+            self_eye = self function_dbd63244();
+            var_7cd3af52 = angleclamp180(vectortopitch(self_eye + (0, 0, 20) - player_eye_pos));
+            var_e909bde9 = angleclamp180(vectortopitch(self.origin - (0, 0, 10) - player_eye_pos));
             var_9a06bf54 = player_angles[0];
             var_6958d5cc = var_7cd3af52 <= var_9a06bf54 && var_9a06bf54 <= var_e909bde9;
             if (!var_6958d5cc) {
@@ -221,11 +221,11 @@ function private function_3e9077b(localclientnum) {
                 #/
             }
             if (var_448a2e21 !== 1) {
-                trace = bullettrace(player_eye_pos, var_2f138f98, 1, player);
+                trace = bullettrace(player_eye_pos, self_eye, 1, player);
                 if (trace[#"fraction"] === 1) {
                     var_448a2e21 = 1;
                     /#
-                        debug_line(player_eye_pos, var_2f138f98, (0, 1, 0));
+                        debug_line(player_eye_pos, self_eye, (0, 1, 0));
                     #/
                 } else {
                     /#
@@ -244,7 +244,7 @@ function private function_3e9077b(localclientnum) {
         }
         if (getdvarint(#"hash_50e84a29a7fc192e", 0) == 0) {
             if (isdefined(var_7cefa3dc) && isdefined(player)) {
-                if (var_2c01c01e >= function_a3f6cdac(800) && var_1b477698) {
+                if (var_2c01c01e >= sqr(800) && var_1b477698) {
                     if (!isdefined(player.var_a25a6a6)) {
                         player.var_a25a6a6 = 0;
                     }

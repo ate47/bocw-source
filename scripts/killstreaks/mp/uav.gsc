@@ -28,7 +28,7 @@
 // Checksum 0x5a752267, Offset: 0x278
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"uav", &function_70a657d8, undefined, &function_1c601b99, #"killstreaks");
+    system::register(#"uav", &preinit, undefined, &function_1c601b99, #"killstreaks");
 }
 
 // Namespace uav/uav
@@ -46,7 +46,7 @@ function private function_6fe2ffad() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa9c69498, Offset: 0x310
 // Size: 0x24c
-function private function_70a657d8() {
+function private preinit() {
     level.activeuavs = [];
     level.activeplayeruavs = [];
     level.spawneduavs = [];
@@ -269,8 +269,8 @@ function activateuav(killstreaktype) {
         if (sessionmodeiswarzonegame()) {
             var_b0490eb9 = getheliheightlockheight(self.origin);
             trace = groundtrace((self.origin[0], self.origin[1], var_b0490eb9), self.origin - vectorscale((0, 0, 1), 5000), 0, uav);
-            var_6be9958b = trace[#"position"][2];
-            var_5f8c899e = var_6be9958b + (var_b0490eb9 - var_6be9958b) * bundle.var_ff73e08c;
+            groundheight = trace[#"position"][2];
+            var_5f8c899e = groundheight + (var_b0490eb9 - groundheight) * bundle.var_ff73e08c;
             var_5f8c899e = var_5f8c899e - killstreaks::function_43f4782d();
         } else {
             var_5f8c899e = 5000;
@@ -280,7 +280,7 @@ function activateuav(killstreaktype) {
         uav.var_b59e7114 clientfield::set("uav", 1);
         uav.var_b59e7114 setteam(uav.team);
     }
-    uav killstreakrules::function_2e6ff61a("uav", killstreak_id, {#team:uav.team, #origin:uav.var_b59e7114.origin});
+    uav killstreakrules::function_2e6ff61a("uav", killstreak_id, {#origin:uav.var_b59e7114.origin, #team:uav.team});
     self stats::function_e24eec31(getweapon("uav"), #"used", 1);
     uav thread killstreaks::waitfortimeout("uav", 30000, &ontimeout, "delete", "death", "crashing");
     uav thread killstreaks::waitfortimecheck(30000 / 2, &ontimecheck, "delete", "death", "crashing");
@@ -317,7 +317,7 @@ function function_457c378e(ent) {
         return;
     }
     bundle = killstreaks::get_script_bundle("uav");
-    var_b2231ba3 = function_a3f6cdac((isdefined(bundle.var_dd0e1146) ? bundle.var_dd0e1146 : 0) / 2);
+    var_b2231ba3 = sqr((isdefined(bundle.var_dd0e1146) ? bundle.var_dd0e1146 : 0) / 2);
     if (1 && isdefined(self.var_b59e7114)) {
         var_59848c4e = self.var_b59e7114.origin;
     } else {
@@ -411,9 +411,9 @@ function function_781f1bf2() {
     if (!isdefined(self.team)) {
         return false;
     }
-    var_a70c469f = self.team;
+    friendlyteam = self.team;
     foreach (team in level.teams) {
-        if (team == var_a70c469f) {
+        if (team == friendlyteam) {
             continue;
         }
         if (isdefined(level.activeuavs[team]) && level.activeuavs[team] > 0) {

@@ -16,14 +16,14 @@
 // Checksum 0x8ec15bf2, Offset: 0x178
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_6c156e681484d01a", &function_70a657d8, undefined, undefined, #"hash_13a43d760497b54d");
+    system::register(#"hash_6c156e681484d01a", &preinit, undefined, undefined, #"hash_13a43d760497b54d");
 }
 
 // Namespace namespace_9111e6ab/namespace_9111e6ab
 // Params 0, eflags: 0x6 linked
 // Checksum 0xcb009d53, Offset: 0x1c8
 // Size: 0xd4
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("allplayers", "" + #"hash_1668fcf85f7c231", 1, 2, "int", &function_1e0fa475, 0, 0);
     clientfield::register("actor", "" + #"hash_70a85ea8b0e1b09c", 1, 2, "int", &function_9db3514d, 0, 0);
     callback::on_spawned(&on_spawned);
@@ -40,7 +40,7 @@ function function_1e0fa475(localclientnum, oldval, newval, *bnewent, *binitialsn
         level.var_9ec7691e = [];
     }
     if (!isdefined(level.var_9ec7691e)) {
-        level.var_9ec7691e = [0:binitialsnap];
+        level.var_9ec7691e = [binitialsnap];
     }
     var_47c85523 = self getentitynumber();
     if (!isdefined(level.var_9ec7691e[binitialsnap][var_47c85523])) {

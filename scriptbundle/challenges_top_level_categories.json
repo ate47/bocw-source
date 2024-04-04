@@ -5,21 +5,21 @@
             "type": "#mode_invalid",
             "displayname": "#hash_366847baebb3a887",
             "var_1a50db25": "#hash_d16d8ff3df0bba",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#legacy",
             "type": "#mode_invalid",
             "displayname": "#menu/legacy",
             "var_1a50db25": "#hash_d16d8ff3df0bba",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#mp",
             "type": "#mode_multiplayer",
             "displayname": "#menu/multiplayer",
             "var_1a50db25": "#hash_67eaaf0e0d940eb0",
-            "var_a4f2dd9e": "#none",
+            "actionutility": "#none",
             "var_4e4109db": "#challenges_tabs_multiplayer"
         },
         {
@@ -27,7 +27,7 @@
             "type": "#mode_zombies",
             "displayname": "#menu/zombies",
             "var_1a50db25": "#hash_67eaaf0e0d940eb0",
-            "var_a4f2dd9e": "#none",
+            "actionutility": "#none",
             "var_4e4109db": "#challenges_tabs_zombies"
         },
         {
@@ -35,7 +35,7 @@
             "type": "#mode_campaign",
             "displayname": "#menu/campaign",
             "var_1a50db25": "#hash_67eaaf0e0d940eb0",
-            "var_a4f2dd9e": "#none",
+            "actionutility": "#none",
             "var_4e4109db": "#challenges_tabs_campaign"
         },
         {
@@ -43,14 +43,14 @@
             "type": "#mode_invalid",
             "displayname": "#hash_3fa9a50d99707d2f",
             "var_1a50db25": "#hash_644cc6de3de43dd2",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#hash_1790b416e6ed10b2",
             "type": "#mode_invalid",
             "displayname": "#hash_48925aa882720171",
             "var_1a50db25": "#hash_197730ac668bb045",
-            "var_a4f2dd9e": "#none",
+            "actionutility": "#none",
             "var_4e4109db": "#challenges_tabs_tournament"
         }
     ],
@@ -60,7 +60,7 @@
     "var_d7f79634": 1,
     "var_922067c4": "SCRIPTBUNDLE",
     "var_e19b7aba": 1,
-    "var_a77ed948": "#hash_115ea6605dc15d80",
+    "var_a77ed948": "#enum",
     "type": "datasourcelist",
     "var_5497949f": 1,
     "name": "challenges_top_level_categories",

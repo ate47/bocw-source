@@ -172,7 +172,7 @@ function function_e9608fd3() {
     self disableaimassist();
     self.goalradius = 60;
     self.animrate = 1.2;
-    self.meleedistsq = function_a3f6cdac(100);
+    self.meleedistsq = sqr(100);
     self.var_3adc3f4a = 0;
     self.disableammodrop = 1;
     self.no_gib = 1;
@@ -231,16 +231,16 @@ function private function_b4c86753(entity) {
         if (distsq < 20736) {
             if (!isgodmode(player)) {
                 if (is_true(player.hasriotshield)) {
-                    var_858b478a = 0;
-                    var_bfed4d02 = player.origin - self.origin;
+                    damageshield = 0;
+                    attackdir = player.origin - self.origin;
                     if (is_true(player.hasriotshieldequipped)) {
-                        if (player function_6337506a(var_bfed4d02, 0.2)) {
-                            var_858b478a = 1;
+                        if (player function_6337506a(attackdir, 0.2)) {
+                            damageshield = 1;
                         }
-                    } else if (player function_6337506a(var_bfed4d02, 0.2, 0)) {
-                        var_858b478a = 1;
+                    } else if (player function_6337506a(attackdir, 0.2, 0)) {
+                        damageshield = 1;
                     }
-                    if (var_858b478a) {
+                    if (damageshield) {
                         self clientfield::increment("margwa_smash");
                         shield_damage = level.weaponriotshield.weaponstarthitpoints;
                         if (isdefined(player.weaponriotshield)) {
@@ -330,7 +330,7 @@ function margwashouldswipeattack(entity) {
 function private margwashouldshowpain(entity) {
     if (isdefined(entity.headdestroyed)) {
         headinfo = entity.head[entity.headdestroyed];
-        switch (headinfo.var_2b9b7c0f) {
+        switch (headinfo.cf) {
         case #"margwa_head_left":
             self setblackboardattribute("_margwa_head", "left");
             break;
@@ -591,7 +591,7 @@ function function_729da05c() {
     spot = self.origin + forward * 100;
     groundpos = namespace_ec06fe4a::function_65ee50ba(spot);
     self radiusdamage(groundpos, 55, 2000, 500, self, "MOD_MELEE");
-    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", groundpos, 2 | 1 | 512, 72, 60);
+    trigger = namespace_ec06fe4a::spawntrigger("trigger_radius", groundpos, 2 | 1 | 512, 72, 60);
     if (isdefined(trigger)) {
         trigger thread namespace_ec06fe4a::function_52afe5df(10);
         trigger thread namespace_f6712ec9::function_86555fba();
@@ -705,34 +705,34 @@ function private function_195ee8be(headmodel, var_755136c1) {
     self.head[model].candamage = 0;
     self.head[model].open = 1;
     self.head[model].closed = 2;
-    self.head[model].var_e08e3957 = 3;
+    self.head[model].smash = 3;
     switch (headmodel) {
     case #"c_zom_margwa_chunks_le":
-        self.head[model].var_2b9b7c0f = "margwa_head_left";
+        self.head[model].cf = "margwa_head_left";
         self.head[model].var_2d048cdf = "margwa_head_left_hit";
-        self.head[model].var_a74031e = "c_zom_margwa_gore_le";
+        self.head[model].gore = "c_zom_margwa_gore_le";
         if (isdefined(var_ac8fb879)) {
-            self.head[model].var_a74031e = var_ac8fb879;
+            self.head[model].gore = var_ac8fb879;
         }
         self.head[model].var_d3879c8e = 1;
         self.var_94be3b8e = model;
         break;
     case #"c_zom_margwa_chunks_mid":
-        self.head[model].var_2b9b7c0f = "margwa_head_mid";
+        self.head[model].cf = "margwa_head_mid";
         self.head[model].var_2d048cdf = "margwa_head_mid_hit";
-        self.head[model].var_a74031e = "c_zom_margwa_gore_mid";
+        self.head[model].gore = "c_zom_margwa_gore_mid";
         if (isdefined(var_ac8fb879)) {
-            self.head[model].var_a74031e = var_ac8fb879;
+            self.head[model].gore = var_ac8fb879;
         }
         self.head[model].var_d3879c8e = 2;
         self.var_a0986652 = model;
         break;
     case #"c_zom_margwa_chunks_ri":
-        self.head[model].var_2b9b7c0f = "margwa_head_right";
+        self.head[model].cf = "margwa_head_right";
         self.head[model].var_2d048cdf = "margwa_head_right_hit";
-        self.head[model].var_a74031e = "c_zom_margwa_gore_ri";
+        self.head[model].gore = "c_zom_margwa_gore_ri";
         if (isdefined(var_ac8fb879)) {
-            self.head[model].var_a74031e = var_ac8fb879;
+            self.head[model].gore = var_ac8fb879;
         }
         self.head[model].var_d3879c8e = 3;
         self.var_a285d7da = model;
@@ -804,7 +804,7 @@ function private function_81b6b294(headinfo) {
             continue;
         }
         self function_efe04de1(headinfo, 1);
-        self clientfield::set(headinfo.var_2b9b7c0f, headinfo.open);
+        self clientfield::set(headinfo.cf, headinfo.open);
         if (namespace_ec06fe4a::function_a8975c67()) {
             self playsoundontag("zmb_vocals_margwa_ambient", headinfo.tag);
         }
@@ -821,7 +821,7 @@ function private function_81b6b294(headinfo) {
             continue;
         }
         self function_efe04de1(headinfo, 0);
-        self clientfield::set(headinfo.var_2b9b7c0f, headinfo.closed);
+        self clientfield::set(headinfo.cf, headinfo.closed);
     }
 }
 
@@ -852,7 +852,7 @@ function private function_59b4caf4() {
     foreach (head in var_f04f8dd5) {
         if (!open) {
             head.candamage = 1;
-            self clientfield::set(head.var_2b9b7c0f, head.var_e08e3957);
+            self clientfield::set(head.cf, head.smash);
             open = 1;
             continue;
         }
@@ -866,7 +866,7 @@ function private function_59b4caf4() {
 // Size: 0x3c
 function private function_c6899c2b(headinfo) {
     headinfo.candamage = 0;
-    self clientfield::set(headinfo.var_2b9b7c0f, headinfo.closed);
+    self clientfield::set(headinfo.cf, headinfo.closed);
 }
 
 // Namespace namespace_a204c0f4/namespace_a204c0f4
@@ -910,7 +910,7 @@ function function_a6af900e(var_71938d68, attacker) {
     self function_e140363d();
     self clientfield::set("margwa_head_killed", headinfo.var_d3879c8e);
     self detach(headinfo.model);
-    self attach(headinfo.var_a74031e);
+    self attach(headinfo.gore);
     self.var_887aaf49--;
     if (self.var_887aaf49 <= 0) {
         self.var_f2bf0700 = attacker;

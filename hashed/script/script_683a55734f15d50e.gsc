@@ -81,7 +81,7 @@ function function_f9bfcf6f(type, weight) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x64ed5b08, Offset: 0xbc8
 // Size: 0x186
-function function_3af37a2(array, weights) {
+function random_weighted(array, weights) {
     /#
         assert(array.size == weights.size);
     #/
@@ -109,25 +109,25 @@ function function_3af37a2(array, weights) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x5c1c0016, Offset: 0xd58
 // Size: 0x164
-function function_60eeb02c(var_3f97a9a6) {
-    self setmodel(var_3f97a9a6.modelname);
+function function_60eeb02c(spawninfo) {
+    self setmodel(spawninfo.modelname);
     self solid();
     self disconnectpaths();
-    self.modelname = var_3f97a9a6.modelname;
-    self.angles = var_3f97a9a6.angles;
-    self.targetname = var_3f97a9a6.targetname;
-    self.script_noteworthy = var_3f97a9a6.script_noteworthy;
-    self.var_d6118311 = var_3f97a9a6.var_d6118311;
-    self.var_9673febe = var_3f97a9a6.var_9673febe;
-    self.data = var_3f97a9a6.data;
-    self.locked = var_3f97a9a6.locked;
-    self.var_8cbdb71 = var_3f97a9a6.var_8cbdb71;
-    self.radius = var_3f97a9a6.radius;
-    self.context = var_3f97a9a6.context;
-    self.var_cbff4088 = var_3f97a9a6.var_cbff4088;
-    self.var_e254c3ed = var_3f97a9a6.var_e254c3ed;
-    self.var_3f97a9a6 = var_3f97a9a6;
-    var_3f97a9a6.script_model = self;
+    self.modelname = spawninfo.modelname;
+    self.angles = spawninfo.angles;
+    self.targetname = spawninfo.targetname;
+    self.script_noteworthy = spawninfo.script_noteworthy;
+    self.var_d6118311 = spawninfo.var_d6118311;
+    self.loottype = spawninfo.loottype;
+    self.data = spawninfo.data;
+    self.locked = spawninfo.locked;
+    self.defname = spawninfo.defname;
+    self.radius = spawninfo.radius;
+    self.context = spawninfo.context;
+    self.var_cbff4088 = spawninfo.var_cbff4088;
+    self.var_e254c3ed = spawninfo.var_e254c3ed;
+    self.spawninfo = spawninfo;
+    spawninfo.script_model = self;
     if (isdefined(self.var_e254c3ed)) {
         self [[ self.var_e254c3ed ]]();
     }
@@ -137,8 +137,8 @@ function function_60eeb02c(var_3f97a9a6) {
 // Params 5, eflags: 0x2 linked
 // Checksum 0xbeb33d03, Offset: 0xec8
 // Size: 0x338
-function function_cd388232(origin, angles, var_1360e692, radius, context) {
-    if (var_1360e692 === #"hash_6f5d597916c841c3") {
+function spawnlootitem(origin, angles, lootname, radius, context) {
+    if (lootname === #"fate") {
         if (context != 2) {
             return;
         }
@@ -146,21 +146,21 @@ function function_cd388232(origin, angles, var_1360e692, radius, context) {
         if (!isdefined(var_7f2666c4)) {
             return;
         }
-        def = {#var_d6118311:4, #name:#"hash_6f5d597916c841c3", #locked:0, #data:var_7f2666c4, #type:7, #modelname:var_7f2666c4.model};
+        def = {#modelname:var_7f2666c4.model, #type:7, #data:var_7f2666c4, #locked:0, #name:#"fate", #var_d6118311:4};
     } else {
-        def = function_9acb7d7a(var_1360e692);
+        def = function_9acb7d7a(lootname);
     }
     /#
         assert(isdefined(def), "extraLife");
     #/
-    namespace_1e25ad94::function_f5f0c0f8("Spawning Loot (" + def.modelname + ") at " + origin);
+    namespace_1e25ad94::debugmsg("Spawning Loot (" + def.modelname + ") at " + origin);
     var_a1f88ae1 = namespace_ec06fe4a::spawnmodel(origin, def.modelname);
     if (!isdefined(var_a1f88ae1)) {
         return;
     }
-    initinfo = {#var_e254c3ed:def.var_e254c3ed, #var_cbff4088:def.var_cbff4088, #context:context, #radius:radius, #var_8cbdb71:def.name, #locked:def.locked, #data:def.data, #var_9673febe:def.type, #var_d6118311:def.var_d6118311, #script_noteworthy:"world_loot", #targetname:namespace_ec06fe4a::function_3390402b(), #origin:origin, #angles:angles, #modelname:def.modelname};
+    initinfo = {#modelname:def.modelname, #angles:angles, #origin:origin, #targetname:namespace_ec06fe4a::function_3390402b(), #script_noteworthy:"world_loot", #var_d6118311:def.var_d6118311, #loottype:def.type, #data:def.data, #locked:def.locked, #defname:def.name, #radius:radius, #context:context, #var_cbff4088:def.var_cbff4088, #var_e254c3ed:def.var_e254c3ed};
     var_a1f88ae1 function_60eeb02c(initinfo);
-    level.doa.var_b8ef1466[level.doa.var_b8ef1466.size] = var_a1f88ae1.var_3f97a9a6;
+    level.doa.var_b8ef1466[level.doa.var_b8ef1466.size] = var_a1f88ae1.spawninfo;
     return var_a1f88ae1;
 }
 
@@ -266,8 +266,8 @@ function function_5fd93de5(name, type, modelname, var_e254c3ed, var_ecdc444, loc
 // Checksum 0x254a50f3, Offset: 0x1818
 // Size: 0x76
 function function_4d27013d(item) {
-    namespace_1e25ad94::function_f5f0c0f8("Loot Opened");
-    var_2f0b512f = function_dcd8be88(item.var_9673febe);
+    namespace_1e25ad94::debugmsg("Loot Opened");
+    var_2f0b512f = function_dcd8be88(item.loottype);
     /#
         assert(isdefined(var_2f0b512f), "<unknown string>");
     #/
@@ -279,15 +279,15 @@ function function_4d27013d(item) {
 // Checksum 0xe2b1fd2b, Offset: 0x1898
 // Size: 0x342
 function function_7df596c3(item) {
-    switch (item.var_9673febe) {
+    switch (item.loottype) {
     case 11:
-        var_b411e9f2 = array("slideways", "slideways2", "slideways3", "slideways4", "slideways5");
-        room = namespace_5a917022::function_c8892b0f(var_b411e9f2[randomint(var_b411e9f2.size)]);
+        rooms = array("slideways", "slideways2", "slideways3", "slideways4", "slideways5");
+        room = namespace_5a917022::function_c8892b0f(rooms[randomint(rooms.size)]);
         var_4200bfbf = [];
-        var_4200bfbf[0] = {#angles:item.angles + vectorscale((0, 1, 0), 270), #origin:item.origin};
-        var_4200bfbf[1] = {#angles:var_4200bfbf[0].angles, #origin:var_4200bfbf[0].origin + vectorscale((1, 0, 0), 30)};
-        var_4200bfbf[2] = {#angles:var_4200bfbf[0].angles, #origin:var_4200bfbf[0].origin + vectorscale((-1, 0, 0), 30)};
-        var_4200bfbf[3] = {#angles:var_4200bfbf[0].angles, #origin:var_4200bfbf[0].origin + vectorscale((0, 1, 0), 30)};
+        var_4200bfbf[0] = {#origin:item.origin, #angles:item.angles + vectorscale((0, 1, 0), 270)};
+        var_4200bfbf[1] = {#origin:var_4200bfbf[0].origin + vectorscale((1, 0, 0), 30), #angles:var_4200bfbf[0].angles};
+        var_4200bfbf[2] = {#origin:var_4200bfbf[0].origin + vectorscale((-1, 0, 0), 30), #angles:var_4200bfbf[0].angles};
+        var_4200bfbf[3] = {#origin:var_4200bfbf[0].origin + vectorscale((0, 1, 0), 30), #angles:var_4200bfbf[0].angles};
         idx = 0;
         foreach (player in getplayers()) {
             player setorigin(var_4200bfbf[idx].origin);
@@ -310,39 +310,39 @@ function function_7df596c3(item) {
 // Checksum 0x65047d16, Offset: 0x1be8
 // Size: 0x224
 function function_650efe1c(item) {
-    switch (item.var_9673febe) {
+    switch (item.loottype) {
     case 1:
-        namespace_1e25ad94::function_f5f0c0f8("Loot Opened - Large Bronze");
+        namespace_1e25ad94::debugmsg("Loot Opened - Large Bronze");
         break;
     case 2:
-        namespace_1e25ad94::function_f5f0c0f8("Loot Opened - Large Golden");
+        namespace_1e25ad94::debugmsg("Loot Opened - Large Golden");
         break;
     case 3:
-        namespace_1e25ad94::function_f5f0c0f8("Loot Opened - Large Stone");
+        namespace_1e25ad94::debugmsg("Loot Opened - Large Stone");
         break;
     case 4:
-        namespace_1e25ad94::function_f5f0c0f8("Loot Opened - Medium Bronze");
+        namespace_1e25ad94::debugmsg("Loot Opened - Medium Bronze");
         break;
     case 5:
-        namespace_1e25ad94::function_f5f0c0f8("Loot Opened - XL Golden");
+        namespace_1e25ad94::debugmsg("Loot Opened - XL Golden");
         break;
     case 6:
-        namespace_1e25ad94::function_f5f0c0f8("Loot Opened - Basket");
+        namespace_1e25ad94::debugmsg("Loot Opened - Basket");
         break;
     case 12:
-        namespace_1e25ad94::function_f5f0c0f8("Loot Opened - Crate");
+        namespace_1e25ad94::debugmsg("Loot Opened - Crate");
         break;
     case 8:
-        namespace_1e25ad94::function_f5f0c0f8("Loot Opened - Gift Box");
+        namespace_1e25ad94::debugmsg("Loot Opened - Gift Box");
         break;
     case 9:
-        namespace_1e25ad94::function_f5f0c0f8("Loot Opened - ROF ORB");
+        namespace_1e25ad94::debugmsg("Loot Opened - ROF ORB");
         break;
     case 10:
-        namespace_1e25ad94::function_f5f0c0f8("Loot Opened - TRINKET BOX");
+        namespace_1e25ad94::debugmsg("Loot Opened - TRINKET BOX");
         break;
     }
-    level thread function_389aad25(item, item.var_9673febe);
+    level thread function_389aad25(item, item.loottype);
 }
 
 // Namespace namespace_41f5b853/namespace_41f5b853
@@ -549,10 +549,10 @@ function function_8534e7be() {
         result = undefined;
         result = self waittill(#"damage");
         if (result.amount > self.health) {
-            if (isdefined(self.var_3f97a9a6)) {
-                self.var_3f97a9a6.activated = 1;
-                arrayremovevalue(level.doa.var_b8ef1466, self.var_3f97a9a6);
-                level.doa.var_c793b1bb[level.doa.var_c793b1bb.size] = self.var_3f97a9a6;
+            if (isdefined(self.spawninfo)) {
+                self.spawninfo.activated = 1;
+                arrayremovevalue(level.doa.var_b8ef1466, self.spawninfo);
+                level.doa.var_c793b1bb[level.doa.var_c793b1bb.size] = self.spawninfo;
             }
             self.health = self.health + result.amount;
             self thread basketexplo(is_true(self.crate));
@@ -566,13 +566,13 @@ function function_8534e7be() {
 // Checksum 0xae0154ed, Offset: 0x2d00
 // Size: 0x164
 function function_e2b14b6(origin, angles) {
-    type = function_3af37a2(level.doa.var_b1f49ea1, level.doa.var_4a9603d0);
+    type = random_weighted(level.doa.var_b1f49ea1, level.doa.var_4a9603d0);
     if (!isdefined(type) || type == 0) {
         return;
     }
     while (!isdefined(type) || type == 42 && !isdefined(level.doa.var_182fb75a)) {
         waitframe(1);
-        type = function_3af37a2(level.doa.var_b1f49ea1, level.doa.var_4a9603d0);
+        type = random_weighted(level.doa.var_b1f49ea1, level.doa.var_4a9603d0);
     }
     def = namespace_dfc652ee::function_57160cba(type);
     if (type == 13) {

@@ -26,14 +26,14 @@
 // Checksum 0xaa11578f, Offset: 0x280
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"zm_perk_quick_revive", &function_70a657d8, undefined, undefined, #"hash_2d064899850813e2");
+    system::register(#"zm_perk_quick_revive", &preinit, undefined, undefined, #"hash_2d064899850813e2");
 }
 
 // Namespace zm_perk_quick_revive/zm_perk_quick_revive
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd183f364, Offset: 0x2d0
 // Size: 0x54
-function private function_70a657d8() {
+function private preinit() {
     enable_quick_revive_perk_for_level();
     zm_perks::register_lost_perk_override(&function_5a52e778);
     zm_laststand::register_revive_override(&function_d5c9a81);

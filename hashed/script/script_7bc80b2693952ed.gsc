@@ -451,9 +451,9 @@ function function_441ef0ca(*currenttime, elapsedtime, localclientnum, duration, 
     if (!isdefined(splatter.splatters[var_cd141ca2][key])) {
         splatter.splatters[var_cd141ca2][key] = 0;
     }
-    var_90dafe5 = amount > 0 && splatter.splatters[var_cd141ca2][key] == 0;
+    send_notify = amount > 0 && splatter.splatters[var_cd141ca2][key] == 0;
     splatter.splatters[var_cd141ca2][key] = amount;
-    if (var_90dafe5) {
+    if (send_notify) {
         level notify(#"splatters_active");
     }
 }
@@ -578,7 +578,7 @@ function private function_8d8880(localclientnum) {
 // Checksum 0xfcc9f05a, Offset: 0x29d0
 // Size: 0x9c
 function private function_493a8fbc(localclientnum) {
-    self endon(#"hash_29b88049dcac8bb3");
+    self endon(#"entitydeleted");
     self waittill(#"death", #"hash_6bf3273fdaffc859");
     self function_436ee4c2(localclientnum, self.pstfx_blood);
     waittillframeend();
@@ -591,7 +591,7 @@ function private function_493a8fbc(localclientnum) {
 // Checksum 0x74769d2a, Offset: 0x2a78
 // Size: 0x27c
 function private function_163791a7(localclientnum) {
-    self endon(#"dead", #"hash_29b88049dcac8bb3");
+    self endon(#"dead", #"entitydeleted");
     self.var_a3b3e5cc = 1;
     var_3d2a4b86 = 4;
     self codeplaypostfxbundle(self.pstfx_blood);
@@ -613,7 +613,7 @@ function private function_163791a7(localclientnum) {
 // Checksum 0x48e35cd0, Offset: 0x2d00
 // Size: 0x54
 function private function_2a16507(localclientnum) {
-    self endon(#"hash_29b88049dcac8bb3");
+    self endon(#"entitydeleted");
     self notify(#"dead");
     self function_436ee4c2(localclientnum, self.pstfx_blood);
 }
@@ -772,7 +772,7 @@ function private function_9a8dc0ec(localclientnum, playerhealth, forceupdate) {
     }
     self update_lightbar(localclientnum, new_blood_stage, prior_blood_stage);
     if (new_blood_stage != prior_blood_stage || forceupdate) {
-        ramptime = prior_blood_stage < new_blood_stage ? level.blood.var_49774f1 : level.blood.var_587ce5b0;
+        ramptime = prior_blood_stage < new_blood_stage ? level.blood.var_587ce5b0 : level.blood.var_49774f1;
         self thread function_8fe966f4(localclientnum, prior_blood_stage, new_blood_stage, ramptime, self.pstfx_blood);
         if (is_true(self.blood_enabled)) {
             self function_116b95e5(self.pstfx_blood, #"hash_3886e6a5c0c3df4c", level.blood.blood_boost[new_blood_stage]);

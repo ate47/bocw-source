@@ -174,31 +174,31 @@ function function_914016fe(var_75e87d7f) {
     case #"arena":
         min = 0;
         max = 8;
-        var_69836136 = "arena_0";
+        str_prefix = "arena_0";
         break;
     case #"overworld":
         min = 0;
         max = 2;
-        var_69836136 = "overworld_0";
+        str_prefix = "overworld_0";
         break;
     case #"dungeon":
         min = 0;
         max = 2;
-        var_69836136 = "dungeon_0";
+        str_prefix = "dungeon_0";
         break;
     case #"bossfight":
         min = 0;
         max = 0;
-        var_69836136 = "bossfight_0";
+        str_prefix = "bossfight_0";
         break;
     case #"bonusroom":
         min = 0;
         max = 1;
-        var_69836136 = "bonusroom_0";
+        str_prefix = "bonusroom_0";
         break;
     }
     for (i = min; i < max + 1; i++) {
-        level.var_402c5b0e[var_75e87d7f][i] = var_69836136 + i;
+        level.var_402c5b0e[var_75e87d7f][i] = str_prefix + i;
     }
     level.var_402c5b0e[var_75e87d7f] = array::randomize(level.var_402c5b0e[var_75e87d7f]);
 }
@@ -236,7 +236,7 @@ function sndisnetworksafe() {
 // Checksum 0x354df962, Offset: 0xb40
 // Size: 0x8c
 function function_ba33d23d(var_78c0dedd, var_8871bfcd, var_43d8daa2) {
-    self.var_2b45c795 = {#death:var_43d8daa2, #var_71846889:var_8871bfcd, #var_6ceeee01:var_78c0dedd};
+    self.var_2b45c795 = {#var_6ceeee01:var_78c0dedd, #var_71846889:var_8871bfcd, #death:var_43d8daa2};
     self thread function_7e8995ce();
     self thread function_55aa8bb7();
 }

@@ -10,14 +10,14 @@
 // Checksum 0x4323bbdc, Offset: 0x98
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_26dee29e21290041", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_26dee29e21290041", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace animation/animation_debug_shared
 // Params 0, eflags: 0x2 linked
 // Checksum 0x169ade, Offset: 0xe0
 // Size: 0x1c
-function function_70a657d8() {
+function preinit() {
     /#
         thread init();
     #/
@@ -32,7 +32,7 @@ function init() {
         init_dvar(#"anim_debug");
         init_dvar(#"anim_debug_pause");
         for (;;) {
-            level wait_till_any([1:#"anim_debug_pause", 0:#"anim_debug"]);
+            level wait_till_any([#"anim_debug", #"anim_debug_pause"]);
             a_players = getlocalplayers();
             foreach (player in a_players) {
                 var_16f8cca9 = player getlocalclientnumber();
@@ -41,7 +41,7 @@ function init() {
                     ent thread anim_info_render_thread();
                 }
             }
-            level wait_till_clear_all([1:#"anim_debug_pause", 0:#"anim_debug"]);
+            level wait_till_clear_all([#"anim_debug", #"anim_debug_pause"]);
             level notify(#"kill_anim_debug");
         }
     #/

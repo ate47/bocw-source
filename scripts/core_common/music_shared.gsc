@@ -10,14 +10,14 @@
 // Checksum 0x4a701397, Offset: 0xe0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"music", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"music", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace music/music_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x73041d1f, Offset: 0x128
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     level.musicstate = "";
     util::registerclientsys("musicCmd");
     if (sessionmodeiscampaigngame()) {

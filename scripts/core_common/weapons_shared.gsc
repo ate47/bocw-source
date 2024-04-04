@@ -13,14 +13,14 @@
 // Checksum 0x20fc735e, Offset: 0x190
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"weapons_shared", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"weapons_shared", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace weapons/weapons_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x633318f5, Offset: 0x1d8
 // Size: 0x64
-function private function_70a657d8() {
+function private preinit() {
     callback::on_spawned(&on_player_spawned);
     callback::on_disconnect(&function_430e844a);
     callback::on_player_killed(&function_430e844a);

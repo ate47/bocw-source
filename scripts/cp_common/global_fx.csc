@@ -10,14 +10,14 @@
 // Checksum 0x2a6fa748, Offset: 0x98
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"global_fx", &function_70a657d8, &main, undefined, undefined);
+    system::register(#"global_fx", &preinit, &main, undefined, undefined);
 }
 
 // Namespace global_fx/global_fx
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0xf0
 // Size: 0x4
-function private function_70a657d8() {
+function private preinit() {
     
 }
 

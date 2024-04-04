@@ -14,7 +14,7 @@
 // Checksum 0x8d9d8a5c, Offset: 0x1a8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"spycraft", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"spycraft", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_1ec2f789/player_disconnect
@@ -40,7 +40,7 @@ function getscriptbundle() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x8764fca5, Offset: 0x2c0
 // Size: 0xb4
-function private function_70a657d8() {
+function private preinit() {
     register_clientfields();
     var_f4452fa1 = getscriptbundle();
     if (!isdefined(var_f4452fa1)) {
@@ -158,7 +158,7 @@ function private function_808efdee(hacker, entity) {
     if (is_true(entity.canthack)) {
         return false;
     }
-    if (!entityweapon.var_18608bfe) {
+    if (!entityweapon.ishackable) {
         return false;
     }
     return true;
@@ -260,8 +260,8 @@ function function_dce89a3e(entityweapon, targetentity, var_288da8b5) {
     }
     playerentnum = var_288da8b5 getentitynumber();
     var_b1e8c44 = targetentity.var_e2131267[playerentnum];
-    if (var_b1e8c44 !== var_288da8b5.var_f1863e67) {
-        targetentity.var_e2131267[playerentnum] = var_288da8b5.var_f1863e67;
+    if (var_b1e8c44 !== var_288da8b5.connect_time) {
+        targetentity.var_e2131267[playerentnum] = var_288da8b5.connect_time;
         scoreevents::processscoreevent(#"hash_51f891de58ee2281", var_288da8b5, undefined, entityweapon);
         var_288da8b5 contracts::increment_contract(#"hash_43530a1351ecbed6");
     }

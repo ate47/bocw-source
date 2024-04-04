@@ -77,7 +77,7 @@ function init_clientfields() {
 // Size: 0xb4
 function function_d1d298b9(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
-        level namespace_ca99987f::function_86ac55c5(fieldname, "runtime_time_scale", 0, 0.5, 0.1, #"linear");
+        level easing::ease_dvar(fieldname, "runtime_time_scale", 0, 0.5, 0.1, #"linear");
         return;
     }
     setdvar(#"runtime_time_scale", 1);
@@ -299,20 +299,20 @@ function function_d93be6d9(*localclientnum, *oldval, *newval, *bnewent, *binitia
 function lerp_fov(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     switch (bwasdemojump) {
     case 1:
-        self namespace_ca99987f::function_f95cb457(undefined, 15.5, 0.5, #"linear");
+        self easing::function_f95cb457(undefined, 15.5, 0.5, #"linear");
         break;
     case 2:
-        self namespace_ca99987f::function_f95cb457(undefined, 20.2, 1.8, #"linear");
+        self easing::function_f95cb457(undefined, 20.2, 1.8, #"linear");
         self function_9e574055(0);
         self function_3c54e2b8(1);
         break;
     case 3:
         self function_9e574055(2);
-        self namespace_ca99987f::function_136edb11(undefined, 3, 0.1, #"linear", 1, 1);
+        self easing::function_136edb11(undefined, 3, 0.1, #"linear", 1, 1);
         self function_d7be9a9f(15, 0.1);
         break;
     case 5:
-        self namespace_ca99987f::function_136edb11(undefined, 5.6, 2, #"linear", 1, 1);
+        self easing::function_136edb11(undefined, 5.6, 2, #"linear", 1, 1);
         break;
     case 0:
         self function_9e574055(0);
@@ -321,12 +321,12 @@ function lerp_fov(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fi
         self function_9298adaf(2);
         break;
     case 6:
-        self namespace_ca99987f::function_f95cb457(undefined, 17.2, 2, #"linear");
+        self easing::function_f95cb457(undefined, 17.2, 2, #"linear");
         self function_9e574055(0);
         self function_3c54e2b8(1);
         break;
     case 7:
-        self namespace_ca99987f::function_f95cb457(undefined, 20.2, 1.8, #"linear");
+        self easing::function_f95cb457(undefined, 20.2, 1.8, #"linear");
         self function_9e574055(0);
         self function_3c54e2b8(1);
         break;
@@ -337,10 +337,10 @@ function lerp_fov(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fi
 // Params 0, eflags: 0x0
 // Checksum 0x671cef28, Offset: 0x1ba8
 // Size: 0x1ee
-function function_c4ad9641() {
+function dof_enable_autofocus() {
     self endoncallback(&function_26826144, #"death", #"hash_b2522f6440eb5d5");
     self function_9e574055(1);
-    self namespace_ca99987f::function_136edb11(undefined, 5.6, 1, #"linear");
+    self easing::function_136edb11(undefined, 5.6, 1, #"linear");
     while (true) {
         v_eye = self geteye();
         v_fwd = anglestoforward(self getcamangles());
@@ -360,7 +360,7 @@ function function_c4ad9641() {
 // Params 0, eflags: 0x0
 // Checksum 0x440bc574, Offset: 0x1da0
 // Size: 0x16
-function function_6bc306e1() {
+function dof_disable_autofocus() {
     self notify(#"hash_b2522f6440eb5d5");
 }
 

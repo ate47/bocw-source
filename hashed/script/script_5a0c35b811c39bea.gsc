@@ -34,14 +34,14 @@
 // Checksum 0xfe461728, Offset: 0x2b8
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"wz_ai_avogadro", &function_70a657d8, undefined, &function_4df027f2, #"archetype_avogadro");
+    system::register(#"wz_ai_avogadro", &preinit, undefined, &function_4df027f2, #"archetype_avogadro");
 }
 
 // Namespace namespace_9f3d3e9/namespace_9f3d3e9
 // Params 0, eflags: 0x6 linked
 // Checksum 0x2e976368, Offset: 0x318
 // Size: 0x204
-function private function_70a657d8() {
+function private preinit() {
     spawner::add_archetype_spawn_function(#"avogadro", &function_f34df3c);
     spawner::function_89a2cd87(#"avogadro", &function_c41e67c);
     level.var_8791f7c5 = &function_ac94df05;
@@ -94,7 +94,7 @@ function private function_f34df3c() {
     self.var_e9c62827 = 1;
     self.ai.var_870d0893 = 1;
     self.no_powerups = 1;
-    self.var_b3c613a7 = [4:1, 3:1, 2:1, 1:1, 0:1];
+    self.var_b3c613a7 = [1, 1, 1, 1, 1];
     self.var_414bc881 = 1;
     self.var_97ca51c7 = 1;
     self namespace_85745671::function_9758722("walk");
@@ -159,7 +159,7 @@ function function_9c573bc6() {
     if (is_true(self.allowoffnavmesh) && is_true(level.var_5e8121a) && is_true(self.var_35eedf58)) {
         self.var_ef59b90 = 5;
         return;
-    } else if (self.aistate === 3 && is_true(self.var_5a8f690)) {
+    } else if (self.aistate === 3 && is_true(self.canseeplayer)) {
         if (isdefined(self.favoriteenemy) && is_true(self.var_de6e22f7) && !self.var_13138acf) {
             self.var_ef59b90 = 6;
             return;
@@ -180,7 +180,7 @@ function function_99cad91e() {
     self.has_awareness = 1;
     self.ignorelaststandplayers = 1;
     self.fovcosine = 0.2;
-    self.maxsightdistsqrd = function_a3f6cdac(1000);
+    self.maxsightdistsqrd = sqr(1000);
     self.var_1267fdea = 1;
     self callback::function_d8abfc3d(#"on_ai_damage", &awareness::function_5f511313);
     awareness::register_state(self, #"wander", &function_83e04f3c, &awareness::function_4ebe4a6d, &awareness::function_b264a0bc, undefined, &awareness::function_555d960b);
@@ -196,7 +196,7 @@ function function_99cad91e() {
 // Size: 0x7c
 function function_83e04f3c(entity) {
     self.fovcosine = 0.2;
-    self.maxsightdistsqrd = function_a3f6cdac(1000);
+    self.maxsightdistsqrd = sqr(1000);
     self.var_1267fdea = 0;
     entity namespace_85745671::function_9758722("walk");
     awareness::function_9c9d96b5(entity);
@@ -208,7 +208,7 @@ function function_83e04f3c(entity) {
 // Size: 0x5c
 function function_92c28840(entity) {
     self.fovcosine = 0;
-    self.maxsightdistsqrd = function_a3f6cdac(1800);
+    self.maxsightdistsqrd = sqr(1800);
     self.var_1267fdea = 0;
     awareness::function_b41f0471(entity);
 }
@@ -219,10 +219,10 @@ function function_92c28840(entity) {
 // Size: 0x94
 function function_b28bc84e(entity) {
     self.fovcosine = 0;
-    self.maxsightdistsqrd = function_a3f6cdac(3000);
+    self.maxsightdistsqrd = sqr(3000);
     self.var_1267fdea = 0;
     entity namespace_85745671::function_9758722("run");
-    entity.maxsightdistsqrd = function_a3f6cdac(2000);
+    entity.maxsightdistsqrd = sqr(2000);
     awareness::function_978025e4(entity);
 }
 
@@ -236,7 +236,7 @@ function function_f8aa7ab9(entity) {
         function_a756bd8e(entity);
         return;
     }
-    target = archetype_avogadro::function_bd4a79a(entity);
+    target = archetype_avogadro::get_target_ent(entity);
     if (isdefined(target) && archetype_avogadro::function_d58f8483(entity)) {
         entity namespace_85745671::function_9758722("run");
         archetype_avogadro::function_de781d41(entity);
@@ -266,7 +266,7 @@ function function_cea6c5e9(entity) {
         entity callback::callback(#"hash_10ab46b52df7967a");
         return;
     }
-    entity.maxsightdistsqrd = function_a3f6cdac(1000);
+    entity.maxsightdistsqrd = sqr(1000);
     awareness::function_b9f81e8b(entity);
 }
 
@@ -400,7 +400,7 @@ function function_5871bcf8(entity) {
     angularvelocity = vehicle getangularvelocity();
     var_b03d2fe7 = abs(angularvelocity[2]);
     var_c27adf49 = mapfloat(0, 2.6, 300, 800, var_b03d2fe7);
-    rightoffset = right * var_c27adf49 * (angularvelocity[2] > 0 ? 1 : -1);
+    rightoffset = right * var_c27adf49 * (angularvelocity[2] > 0 ? -1 : 1);
     var_ff89cc4c = max(speed * 2, 1500);
     forwardoffset = direction * var_ff89cc4c;
     var_2ca243fc = rightoffset + forwardoffset;
@@ -416,14 +416,14 @@ function function_5871bcf8(entity) {
         return;
     }
     nextpos = checknavmeshdirection(var_37cf85c7, var_2ca243fc, var_9d75e0da, entity getpathfindingradius() * 1.2);
-    if (distancesquared(vehicle.origin, nextpos) < function_a3f6cdac(1500)) {
+    if (distancesquared(vehicle.origin, nextpos) < sqr(1500)) {
         archetype_avogadro::function_c6e09354(entity.var_78dd7804);
         entity.var_78dd7804 = undefined;
         return;
     }
     points = array(nextpos + vectorscale((1, 0, 0), 150), nextpos + vectorscale((1, 0, 0), 300), nextpos - vectorscale((1, 0, 0), 150), nextpos - vectorscale((1, 0, 0), 300), nextpos + vectorscale((0, 1, 0), 150), nextpos + vectorscale((0, 1, 0), 300), nextpos - vectorscale((0, 1, 0), 150), nextpos - vectorscale((0, 1, 0), 300));
     bestpoint = undefined;
-    var_fa442d4c = entity function_6a9ae71();
+    traceheightoffset = entity function_6a9ae71();
     points = array::randomize(points);
     foreach (point in points) {
         nextpos = groundtrace(point + vectorscale((0, 0, 1), 500) + vectorscale((0, 0, 1), 8), point + vectorscale((0, 0, 1), 500) + vectorscale((0, 0, -1), 100000), 0, entity)[#"position"];
@@ -433,7 +433,7 @@ function function_5871bcf8(entity) {
             #/
             continue;
         }
-        if (bullettracepassed(nextpos + (0, 0, var_fa442d4c), vehicle.origin + (0, 0, var_fa442d4c), 0, vehicle)) {
+        if (bullettracepassed(nextpos + (0, 0, traceheightoffset), vehicle.origin + (0, 0, traceheightoffset), 0, vehicle)) {
             bestpoint = nextpos;
             break;
         }
@@ -479,7 +479,7 @@ function function_ce2bd83c(params) {
         }
     }
     if (params.smeansofdeath == "MOD_CRUSH") {
-        self function_f59c1777({#jammer:self, #radius:250, #origin:self.origin});
+        self function_f59c1777({#origin:self.origin, #radius:250, #jammer:self});
         if (isdefined(params.einflictor)) {
             params.einflictor dodamage(500, self.origin, self, self, "none", "MOD_UNKNOWN");
         }

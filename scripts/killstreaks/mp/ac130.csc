@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_79917113c7593edd;
+#using scripts\killstreaks\ac130_shared.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\system_shared.csc;
 #using scripts\core_common\struct.csc;
@@ -15,14 +15,14 @@
 // Checksum 0x2036efc4, Offset: 0xe0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"ac130", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"ac130", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace ac130/ac130
 // Params 0, eflags: 0x6 linked
 // Checksum 0xbe576fdb, Offset: 0x130
 // Size: 0x7c
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
     clientfield::register("toplayer", "inAC130", 1, 1, "int", &function_555656fe, 0, 1);
     callback::function_74f5faf8(&function_74f5faf8);

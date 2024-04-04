@@ -75,14 +75,14 @@ class class_7b5e0861 {
 // Checksum 0x9eb0b2e8, Offset: 0x290
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"traps_deployable", &function_70a657d8, undefined, undefined, #"load");
+    system::register(#"traps_deployable", &preinit, undefined, undefined, #"load");
 }
 
 // Namespace traps_deployable/traps_deployable
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc5f0c1cb, Offset: 0x2e0
 // Size: 0x34
-function private function_70a657d8() {
+function private preinit() {
     callback::on_spawned(&on_player_spawned);
     thread init_traps();
 }

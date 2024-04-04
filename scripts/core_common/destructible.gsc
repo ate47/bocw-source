@@ -11,14 +11,14 @@
 // Checksum 0x8c96576, Offset: 0x290
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"destructible", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"destructible", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace destructible/destructible
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1d6dba0c, Offset: 0x2d8
 // Size: 0x13c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "start_destructible_explosion", 1, 10, "int");
     level.destructible_callbacks = [];
     destructibles = getentarray("destructible", "targetname");
@@ -404,7 +404,7 @@ function car_fire_think(attacker) {
 function event_handler[destructible] codecallback_destructibleevent(eventstruct) {
     if (eventstruct.event == "broken") {
         event_callback(eventstruct.notify_type, eventstruct.attacker, eventstruct.weapon, eventstruct.piece, eventstruct.point, eventstruct.dir, eventstruct.mod);
-        self notify(eventstruct.event, {#attacker:eventstruct.attacker, #type:eventstruct.notify_type});
+        self notify(eventstruct.event, {#type:eventstruct.notify_type, #attacker:eventstruct.attacker});
         return;
     }
     if (eventstruct.event == "breakafter") {

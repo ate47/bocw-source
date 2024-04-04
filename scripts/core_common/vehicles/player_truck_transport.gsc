@@ -12,14 +12,14 @@
 // Checksum 0xc7c6ac84, Offset: 0xc8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"player_truck_transport", &function_70a657d8, undefined, undefined, #"player_vehicle");
+    system::register(#"player_truck_transport", &preinit, undefined, undefined, #"player_vehicle");
 }
 
 // Namespace player_truck_transport/player_truck_transport
 // Params 0, eflags: 0x6 linked
 // Checksum 0x5a2b2842, Offset: 0x118
 // Size: 0x2c
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_main_callback("player_truck_transport", &function_3391a69f);
 }
 
@@ -37,7 +37,7 @@ function private function_3391a69f() {
     self.var_d6691161 = 175;
     self.var_5d662124 = 2;
     callback::function_d8abfc3d(#"hash_666d48a558881a36", &player_enter);
-    callback::function_d8abfc3d(#"hash_55f29e0747697500", &function_b9fc945f);
+    callback::function_d8abfc3d(#"hash_55f29e0747697500", &player_exit);
     callback::function_d8abfc3d(#"hash_2c1cafe2a67dfef8", &function_379a71bd);
     callback::function_d8abfc3d(#"hash_551381cffdc79048", &player_vehicle::function_948f0984);
     self vehicle::toggle_control_bone_group(1, 1);
@@ -109,7 +109,7 @@ function private player_enter(params) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x8ee41fcb, Offset: 0x488
 // Size: 0xb2
-function private function_b9fc945f(params) {
+function private player_exit(params) {
     eventstruct = params.eventstruct;
     player = params.player;
     if (isdefined(eventstruct.seat_index)) {

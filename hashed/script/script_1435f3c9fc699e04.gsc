@@ -30,7 +30,7 @@ function function_818d69ee(user) {
         self.users[user] = {};
     }
     if (!isdefined(self.users[user].touching)) {
-        self.users[user].touching = {#players:[], #rate:0, #num:0};
+        self.users[user].touching = {#num:0, #rate:0, #players:[]};
     }
 }
 
@@ -59,7 +59,7 @@ function function_a1839d6b(user, player, key) {
         assert(isdefined(self.users[user].contributors));
     #/
     if (!isdefined(self.users[user].contributors[key])) {
-        contribution = {#contribution:0, #player:player};
+        contribution = {#player:player, #contribution:0};
         self.users[user].contributors[key] = contribution;
     } else {
         contribution = self.users[user].contributors[key];
@@ -325,8 +325,8 @@ function function_21db7d02(numclaimants = 0, numother = 0) {
     if (numclaimants == numother || numclaimants < 0 || numother < 0) {
         return 0;
     }
-    var_c4acb8a5 = abs(numclaimants - numother);
-    return self function_ce47d61c(var_c4acb8a5);
+    advantage = abs(numclaimants - numother);
+    return self function_ce47d61c(advantage);
 }
 
 // Namespace gameobjects/namespace_87a60c47
@@ -371,7 +371,7 @@ function function_fdf87288(user, player, var_8a3ae0a0, var_5717fa0c) {
     /#
         assert(isdefined(self.users[user].touching));
     #/
-    self.users[user].touching.players[var_5717fa0c] = {#starttime:gettime(), #rate:var_8a3ae0a0, #player:player};
+    self.users[user].touching.players[var_5717fa0c] = {#player:player, #rate:var_8a3ae0a0, #starttime:gettime()};
 }
 
 // Namespace gameobjects/namespace_87a60c47

@@ -8,14 +8,14 @@
 // Checksum 0x6eda1875, Offset: 0xa0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"tweakables", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"tweakables", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace tweakables/tweakables_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x863ea3f0, Offset: 0xe8
 // Size: 0x67c
-function private function_70a657d8() {
+function private preinit() {
     level.clienttweakables = [];
     level.tweakablesinitialized = 1;
     level.rules = [];

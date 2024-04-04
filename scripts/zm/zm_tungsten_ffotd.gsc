@@ -12,14 +12,14 @@
 // Checksum 0xf4d32c52, Offset: 0x1f8
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_tungsten_ffotd", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_tungsten_ffotd", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_tungsten_ffotd/zm_tungsten_ffotd
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x250
 // Size: 0x4
-function private function_70a657d8() {
+function private preinit() {
     
 }
 

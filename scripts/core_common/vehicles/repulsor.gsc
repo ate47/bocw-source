@@ -8,17 +8,17 @@
 #using scripts\core_common\math_shared.gsc;
 #using scripts\core_common\struct.gsc;
 
-#namespace namespace_71e6f25;
+#namespace repulsor;
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 0, eflags: 0x5
 // Checksum 0x6ca6b2b4, Offset: 0x1f0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_1052c2bf3e49b03", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"repulsor", &preinit, undefined, undefined, undefined);
 }
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 1, eflags: 0x2 linked
 // Checksum 0xf358fe7, Offset: 0x238
 // Size: 0x3c
@@ -27,16 +27,16 @@ function guard(target) {
     self vehicle_ai::airfollow(target);
 }
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 0, eflags: 0x6 linked
 // Checksum 0x8ff61b22, Offset: 0x280
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_main_callback("repulsor_drone", &function_e170252c);
     clientfield::register("vehicle", "pulse_fx", 1, 1, "counter");
 }
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x2a087d1f, Offset: 0x2e8
 // Size: 0x1e4
@@ -69,7 +69,7 @@ function function_e170252c() {
     defaultrole();
 }
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x52a6771d, Offset: 0x4d8
 // Size: 0x9c
@@ -80,7 +80,7 @@ function defaultrole() {
     vehicle_ai::startinitialstate("combat");
 }
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x9100c691, Offset: 0x580
 // Size: 0x3bc
@@ -142,7 +142,7 @@ function state_death_update(params) {
     vehicle_ai::defaultstate_death_update(params);
 }
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 0, eflags: 0x0
 // Checksum 0xfe446ed1, Offset: 0x948
 // Size: 0x10a
@@ -166,7 +166,7 @@ function guard_points_debug() {
     #/
 }
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 1, eflags: 0x0
 // Checksum 0x313ce784, Offset: 0xa60
 // Size: 0x332
@@ -204,7 +204,7 @@ function get_guard_points(owner) {
     return points_array;
 }
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8ec53fdc, Offset: 0xda0
 // Size: 0x144
@@ -216,7 +216,7 @@ function function_4e26188c() {
     aiarray = arraysort(aiarray, self.origin, 1);
     for (i = 0; i < aiarray.size; i++) {
         friend = aiarray[i];
-        if (friend !== self && !vehicle_ai::entityisarchetype(friend, #"hash_1052c2bf3e49b03") && isalive(friend)) {
+        if (friend !== self && !vehicle_ai::entityisarchetype(friend, #"repulsor") && isalive(friend)) {
             if (self cansee(friend)) {
                 guard(friend);
                 break;
@@ -228,7 +228,7 @@ function function_4e26188c() {
     }
 }
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x11cd9446, Offset: 0xef0
 // Size: 0x64
@@ -242,7 +242,7 @@ function test_get_back_point(point) {
     return -1;
 }
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x79862dd0, Offset: 0xf60
 // Size: 0xe4
@@ -260,7 +260,7 @@ function test_get_back_queryresult(queryresult) {
     return undefined;
 }
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x399ff5d7, Offset: 0x1050
 // Size: 0x6d4
@@ -293,7 +293,7 @@ function state_guard_update(*params) {
                 getbackpoint = test_get_back_queryresult(queryresult);
             }
             if (isdefined(getbackpoint)) {
-                if (distancesquared(getbackpoint, self.origin) > function_a3f6cdac(20)) {
+                if (distancesquared(getbackpoint, self.origin) > sqr(20)) {
                     self.current_pathto_pos = getbackpoint;
                     usepathfinding = 0;
                     self.vehaircraftcollisionenabled = 0;
@@ -346,8 +346,8 @@ function state_guard_update(*params) {
         }
         if (isdefined(self.current_pathto_pos)) {
             distancetogoalsq = distancesquared(self.current_pathto_pos, self.origin);
-            if (!onnavvolume || distancetogoalsq > function_a3f6cdac(60)) {
-                if (distancetogoalsq > function_a3f6cdac(500)) {
+            if (!onnavvolume || distancetogoalsq > sqr(60)) {
+                if (distancetogoalsq > sqr(500)) {
                     self setspeed(self.settings.defaultmovespeed * 2);
                 } else {
                     self setspeed(self.settings.defaultmovespeed);
@@ -376,7 +376,7 @@ function state_guard_update(*params) {
     }
 }
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x51efaae, Offset: 0x1730
 // Size: 0xe8
@@ -393,7 +393,7 @@ function function_92975fec() {
     }
 }
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 0, eflags: 0x2 linked
 // Checksum 0xec647947, Offset: 0x1820
 // Size: 0x54
@@ -404,7 +404,7 @@ function function_4796ca19() {
     self thread function_92975fec();
 }
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1da7b31b, Offset: 0x1880
 // Size: 0x46
@@ -416,7 +416,7 @@ function function_35800122() {
     self notify(#"hash_5d0727c5729a6b80");
 }
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 15, eflags: 0x2 linked
 // Checksum 0xf74640d6, Offset: 0x18d0
 // Size: 0x15e
@@ -429,18 +429,18 @@ function drone_callback_damage(einflictor, eattacker, idamage, idflags, smeansof
     return idamage;
 }
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 4, eflags: 0x2 linked
 // Checksum 0xd74743c2, Offset: 0x1a38
 // Size: 0x86
 function drone_allowfriendlyfiredamage(*einflictor, eattacker, smeansofdeath, *weapon) {
-    if (isdefined(smeansofdeath) && isdefined(smeansofdeath.archetype) && isdefined(weapon) && smeansofdeath.archetype == #"hash_1052c2bf3e49b03" && weapon == "MOD_EXPLOSIVE") {
+    if (isdefined(smeansofdeath) && isdefined(smeansofdeath.archetype) && isdefined(weapon) && smeansofdeath.archetype == #"repulsor" && weapon == "MOD_EXPLOSIVE") {
         return true;
     }
     return false;
 }
 
-// Namespace namespace_71e6f25/namespace_71e6f25
+// Namespace repulsor/repulsor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x1377275f, Offset: 0x1ac8
 // Size: 0x40e

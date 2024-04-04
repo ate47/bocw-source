@@ -12,17 +12,17 @@
 // Checksum 0x90c3e8d7, Offset: 0x178
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hoverjet", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"hoverjet", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace hoverjet/hoverjet
 // Params 0, eflags: 0x6 linked
 // Checksum 0x7a062220, Offset: 0x1c8
 // Size: 0x2c4
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "" + #"hash_312f8015c2d5dff", 1, 1, "int", &function_84c254b5, 0, 1);
     clientfield::register("toplayer", "" + #"hash_1a4b729551097abf", 1, 1, "int", &function_274341d, 0, 1);
-    clientfield::register("vehicle", "" + #"hash_439f90e3ce348074", 1, 1, "int", &function_14ba47a8, 0, 0);
+    clientfield::register("vehicle", "" + #"hoverjet_crash", 1, 1, "int", &function_14ba47a8, 0, 0);
     clientfield::register("vehicle", "" + #"hash_623d35a1d3211bdb", 1, 2, "int", &function_bccb03b1, 0, 0);
     clientfield::register("vehicle", "" + #"hash_48b649c323ba0f95", 1, 1, "int", &function_ef49742c, 0, 1);
     clientfield::register("vehicle", "" + #"hash_228ec5a218e1d2f1", 1, 1, "int", &function_dd10e132, 0, 1);

@@ -26,14 +26,14 @@
 // Checksum 0xb2c1a37d, Offset: 0x250
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_power", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_power", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_power/zm_power
 // Params 0, eflags: 0x6 linked
 // Checksum 0x903e964f, Offset: 0x2a8
 // Size: 0x1c
-function private function_70a657d8() {
+function private preinit() {
     level.powered_items = [];
     level.local_power = [];
 }
@@ -172,7 +172,7 @@ function electric_switch() {
         }
         if (!isdefined(self.script_noteworthy) || self.script_noteworthy != "allow_power_off") {
             self triggerenable(0);
-            self function_cb48cddd();
+            self deletedelay();
             return;
         }
         if (isdefined(master_switch) && isdefined(master_switch.script_noteworthy)) {

@@ -29,14 +29,14 @@
 // Checksum 0x62c199c0, Offset: 0x288
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"recon_plane", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"recon_plane", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace recon_plane/recon_plane
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa7f9bdae, Offset: 0x2d8
 // Size: 0x2d4
-function private function_70a657d8() {
+function private preinit() {
     if (level.teambased) {
         foreach (team, _ in level.teams) {
             level.var_eb10c6a7[team] = 0;
@@ -97,7 +97,7 @@ function function_769ed4e8(ent) {
         return false;
     }
     bundle = killstreaks::get_script_bundle("recon_plane");
-    var_b2231ba3 = function_a3f6cdac((isdefined(bundle.var_e77ca4a1) ? bundle.var_e77ca4a1 : 0) / 2);
+    var_b2231ba3 = sqr((isdefined(bundle.var_e77ca4a1) ? bundle.var_e77ca4a1 : 0) / 2);
     return distance2dsquared(ent.origin, self.var_23cd2a2f.origin) <= var_b2231ba3;
 }
 
@@ -149,9 +149,9 @@ function function_4dc67281() {
     if (!isdefined(self.team)) {
         return false;
     }
-    var_a70c469f = self.team;
+    friendlyteam = self.team;
     foreach (team in level.teams) {
-        if (team == var_a70c469f) {
+        if (team == friendlyteam) {
             continue;
         }
         if (isdefined(level.var_eb10c6a7[team]) && level.var_eb10c6a7[team] > 0) {
@@ -305,8 +305,8 @@ function function_98e60435(var_d44b8c3e, bundle) {
                 maxheight = var_59a518e1[var_59a518e1.size - 1];
                 var_35637e22 = maxheight - var_59a518e1[0];
                 trace = groundtrace((var_d44b8c3e[0], var_d44b8c3e[1], maxheight), var_d44b8c3e - vectorscale((0, 0, 1), 5000), 0, undefined);
-                var_6be9958b = trace[#"position"][2];
-                var_6b1fb8d9 = var_6be9958b + (maxheight - var_6be9958b) * bundle.var_ff73e08c;
+                groundheight = trace[#"position"][2];
+                var_6b1fb8d9 = groundheight + (maxheight - groundheight) * bundle.var_ff73e08c;
                 endposition = var_90aa61b + vectorscale(forward, var_12306a94 * 2);
                 if (var_35637e22 < 2000) {
                     adjustedpath[#"startposition"] = (var_90aa61b[0], var_90aa61b[1], var_6b1fb8d9);
@@ -482,7 +482,7 @@ function function_e55922df(attacker, weapon) {
         self.var_23cd2a2f delete();
     }
     arrayremovevalue(level.var_d952ba86, self);
-    self function_cb48cddd();
+    self deletedelay();
     profilestop();
 }
 

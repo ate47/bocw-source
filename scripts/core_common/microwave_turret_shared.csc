@@ -227,8 +227,8 @@ function microwavefxhash(trace, origin, name) {
     hash = 0;
     counter = 2;
     for (i = 0; i < 5; i++) {
-        endofhalffxsq = function_a3f6cdac(i * 150 + 125);
-        endoffullfxsq = function_a3f6cdac(i * 150 + 200);
+        endofhalffxsq = sqr(i * 150 + 125);
+        endoffullfxsq = sqr(i * 150 + 200);
         tracedistsq = distancesquared(origin, trace[#"position"]);
         if (tracedistsq >= endofhalffxsq || i == 0) {
             if (tracedistsq < endoffullfxsq) {
@@ -326,11 +326,11 @@ function stop_or_start_fx(localclientnum, fxname, tag, start) {
 // Size: 0x542
 function playmicrowavefx(localclientnum, trace, traceright, traceleft, origin) {
     for (i = 0; i < 5; i++) {
-        endofhalffxsq = function_a3f6cdac(i * 150 + 125);
-        endoffullfxsq = function_a3f6cdac(i * 150 + 200);
+        endofhalffxsq = sqr(i * 150 + 125);
+        endoffullfxsq = sqr(i * 150 + 200);
         tracedistsq = distancesquared(origin, trace[#"position"]);
         startfx = tracedistsq >= endofhalffxsq || i == 0;
-        fxname = tracedistsq > endoffullfxsq ? "killstreaks/fx_sg_distortion_cone_ash_sm" : "killstreaks/fx_sg_distortion_cone_ash";
+        fxname = tracedistsq > endoffullfxsq ? "killstreaks/fx_sg_distortion_cone_ash" : "killstreaks/fx_sg_distortion_cone_ash_sm";
         switch (i) {
         case 0:
             self play_fx_on_tag(localclientnum, fxname, "tag_fx11");
@@ -350,7 +350,7 @@ function playmicrowavefx(localclientnum, trace, traceright, traceleft, origin) {
         }
         tracedistsq = distancesquared(origin, traceleft[#"position"]);
         startfx = tracedistsq >= endofhalffxsq;
-        fxname = tracedistsq > endoffullfxsq ? "killstreaks/fx_sg_distortion_cone_ash_sm" : "killstreaks/fx_sg_distortion_cone_ash";
+        fxname = tracedistsq > endoffullfxsq ? "killstreaks/fx_sg_distortion_cone_ash" : "killstreaks/fx_sg_distortion_cone_ash_sm";
         switch (i) {
         case 0:
             break;
@@ -370,7 +370,7 @@ function playmicrowavefx(localclientnum, trace, traceright, traceleft, origin) {
         }
         tracedistsq = distancesquared(origin, traceright[#"position"]);
         startfx = tracedistsq >= endofhalffxsq;
-        fxname = tracedistsq > endoffullfxsq ? "killstreaks/fx_sg_distortion_cone_ash_sm" : "killstreaks/fx_sg_distortion_cone_ash";
+        fxname = tracedistsq > endoffullfxsq ? "killstreaks/fx_sg_distortion_cone_ash" : "killstreaks/fx_sg_distortion_cone_ash_sm";
         switch (i) {
         case 0:
             break;

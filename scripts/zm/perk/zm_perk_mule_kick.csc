@@ -14,14 +14,14 @@
 // Checksum 0xd1defade, Offset: 0x158
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_perk_mule_kick", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_perk_mule_kick", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
 // Params 0, eflags: 0x6 linked
 // Checksum 0x7ddf2a28, Offset: 0x1a0
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     if (!is_true(getgametypesetting(#"hash_616a22c5c1ebe5b8"))) {
         return;
     }

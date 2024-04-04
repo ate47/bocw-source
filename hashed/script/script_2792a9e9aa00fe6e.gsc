@@ -8,11 +8,11 @@
 #using script_3a266261121385ee;
 #using script_433016448b3d07bc;
 #using scripts\zm\archetype\archetype_zod_companion.csc;
-#using script_17a9d06bf819b2d3;
+#using scripts\zm_common\zm_ping.csc;
 #using script_2c5f2d4e7aa698c4;
 #using scripts\zm_common\zm_fasttravel.csc;
 #using scripts\zm_common\zm_utility.csc;
-#using script_2c8fd33ddb45e78b;
+#using scripts\zm_common\zm_intel.csc;
 #using script_68732f44626820ed;
 #using scripts\core_common\postfx_shared.csc;
 #using scripts\core_common\load_shared.csc;

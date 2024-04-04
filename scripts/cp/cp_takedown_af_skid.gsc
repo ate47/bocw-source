@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_3dc93ca9902a9cda;
-#using script_1292451e284848cc;
+#using scripts\cp_common\snd.gsc;
 #using script_7cf3e180e994d17f;
 #using scripts\cp_common\gametypes\globallogic_ui.gsc;
 #using scripts\cp_common\skipto.gsc;
@@ -55,7 +55,7 @@ function main(var_d3440450, *var_50cc0d4f) {
     setdvar(#"hash_3d9a09e7ecea2271", 0);
     level clientfield::set("crash_models", 1);
     var_c3025e74 = getvehiclearray();
-    function_def1eb14([2:"crash_veh_r", 1:"crash_veh_l", 0:"smash_veh"]);
+    function_def1eb14(["smash_veh", "crash_veh_l", "crash_veh_r"]);
     wait(0.1);
     level flag::set("af_doing_crash");
     thread function_243c9d46(player);
@@ -124,7 +124,7 @@ function function_def1eb14(var_178982c8) {
 function function_c5eaa394() {
     wait(0.1);
     if (self.targetname == "smash_veh") {
-        self waittill(#"hash_6ab6b3b7c4a8667e");
+        self waittill(#"turn_on_lights");
     }
     self vehicle::lights_on();
     self vehicle::toggle_force_driver_taillights(1);
@@ -149,25 +149,25 @@ function function_243c9d46(player) {
     plane = getent("cargo_plane", "targetname");
     plane unlink();
     level.adler unlink();
-    util::function_3d955ac5(1);
+    util::nvidiaansel_scriptdisable(1);
     actors = level.var_515a88e0;
-    level.var_38ac20b2 = util::spawn_player_clone(level.player);
-    level.var_38ac20b2.targetname = "FakePlayer";
-    actors[#"fakeplayer"] = level.var_38ac20b2;
-    level.var_38ac20b2 hide();
+    level.fake_player = util::spawn_player_clone(level.player);
+    level.fake_player.targetname = "FakePlayer";
+    actors[#"fakeplayer"] = level.fake_player;
+    level.fake_player hide();
     level thread scene::play_from_time("scene_tkd_hit3_planecrash_intro", "crash_fakeplayer", actors, 0.8, 0, 1);
     waitframe(1);
-    level.var_38ac20b2 hide();
-    level.var_38ac20b2 setinvisibletoall();
-    player playerlinktodelta(level.var_38ac20b2, "tag_player", 1, 180, 180, 180, 180, 1, 0, 1);
+    level.fake_player hide();
+    level.fake_player setinvisibletoall();
+    player playerlinktodelta(level.fake_player, "tag_player", 1, 180, 180, 180, 180, 1, 0, 1);
     level waittill(#"hash_2d945658a781d296");
     namespace_82bfe441::fade(1, "FadeImmediate");
-    player playerlinktoblend(level.var_38ac20b2, "tag_player", 0.2, 0, 0, 0.2, 0, 0, 1);
+    player playerlinktoblend(level.fake_player, "tag_player", 0.2, 0, 0, 0.2, 0, 0, 1);
     wait(0.2);
-    level.var_38ac20b2 show();
-    level.var_38ac20b2 setvisibletoall();
+    level.fake_player show();
+    level.fake_player setvisibletoall();
     player val::set("crash", "disable_weapons", 2);
-    player playerlinktodelta(level.var_38ac20b2, "tag_player", 1, 0, 0, 0, 0, 1, 0, 1);
+    player playerlinktodelta(level.fake_player, "tag_player", 1, 0, 0, 0, 0, 1, 0, 1);
     level waittill(#"hash_360943c8eac07426");
     waitframe(1);
     level.var_49a5d2a4 vehicle::lights_off();
@@ -178,12 +178,12 @@ function function_243c9d46(player) {
     level flag::set("af_skid_complete");
     snd::function_7db65a93("af_skid_complete");
     player unlink();
-    level.var_38ac20b2 delete();
+    level.fake_player delete();
     player val::reset("crash", "disable_weapons");
     player val::reset("crash", "allow_crouch");
     player val::reset("crash", "allow_prone");
     player val::reset(#"chase", "allowdeath");
-    util::function_3d955ac5(0);
+    util::nvidiaansel_scriptdisable(0);
 }
 
 // Namespace tkdn_af_skid/namespace_f74d9fde

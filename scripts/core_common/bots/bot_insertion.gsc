@@ -13,14 +13,14 @@
 // Checksum 0x38dfff6f, Offset: 0xc8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"bot_insertion", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"bot_insertion", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace bot_insertion/bot_insertion
 // Params 0, eflags: 0x6 linked
 // Checksum 0xfa7ae8d6, Offset: 0x110
 // Size: 0x34
-function private function_70a657d8() {
+function private preinit() {
     callback::add_callback(#"freefall", &function_c9a18304);
 }
 
@@ -80,7 +80,7 @@ function function_a4f516ef() {
         }
     #/
     if (!self flag::get(#"hash_287397edba8966f9")) {
-        var_f9664338 = [1:#"hash_224cb97b8f682317", 0:#"hash_287397edba8966f9"];
+        var_f9664338 = [#"hash_287397edba8966f9", #"hash_224cb97b8f682317"];
         self flag::wait_till_any(var_f9664338);
     }
     if (function_58a44f22()) {

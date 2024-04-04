@@ -11,14 +11,14 @@
 // Checksum 0xb1d67853, Offset: 0x178
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"weapon_cache", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"weapon_cache", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace weapon_cache/weapon_cache
 // Params 0, eflags: 0x6 linked
 // Checksum 0x463f6420, Offset: 0x1c0
 // Size: 0x17c
-function private function_70a657d8() {
+function private preinit() {
     if (!is_true(getgametypesetting(#"hash_6143c4e1e18f08fd"))) {
         return;
     }
@@ -87,7 +87,7 @@ function private function_ce75a340(localclientnum, *oldval, newval, *bnewent, *b
             } else {
                 objective_setstate(fieldname, weapon_cache.var_1563bf09, "active");
             }
-            weapon_cache thread function_366dfc57(fieldname, weapon_cache.var_1563bf09, 60);
+            weapon_cache thread updateprogress(fieldname, weapon_cache.var_1563bf09, 60);
             continue;
         }
         if (isdefined(weapon_cache.var_1563bf09)) {
@@ -102,7 +102,7 @@ function private function_ce75a340(localclientnum, *oldval, newval, *bnewent, *b
 // Params 3, eflags: 0x2 linked
 // Checksum 0x86ebc60, Offset: 0x750
 // Size: 0xfc
-function function_366dfc57(localclientnum, obj_id, cooldowntime) {
+function updateprogress(localclientnum, obj_id, cooldowntime) {
     self endon(#"hash_21d2c3e2020a95a3");
     level endon(#"disconnect", #"game_ended");
     endtime = cooldowntime - 4;
@@ -139,7 +139,7 @@ function private weapon_cache_cac_cooldown(localclientnum, *oldval, newval, *bne
             } else {
                 objective_setstate(fieldname, weapon_cache.var_decd4745, "active");
             }
-            weapon_cache thread function_366dfc57(fieldname, weapon_cache.var_decd4745, 120);
+            weapon_cache thread updateprogress(fieldname, weapon_cache.var_decd4745, 120);
             continue;
         }
         if (isdefined(weapon_cache.var_decd4745)) {
@@ -204,7 +204,7 @@ function private function_2cf636b5(localclientnum) {
         if (!isdefined(weapon_cache)) {
             continue;
         }
-        if (distance2dsquared(playerorigin, weapon_cache.origin) > function_a3f6cdac(96) || abs(playerorigin[2] - weapon_cache.origin[2]) > 96) {
+        if (distance2dsquared(playerorigin, weapon_cache.origin) > sqr(96) || abs(playerorigin[2] - weapon_cache.origin[2]) > 96) {
             continue;
         }
         return weapon_cache;

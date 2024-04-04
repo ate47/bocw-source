@@ -21,14 +21,14 @@
 // Checksum 0x3f16378e, Offset: 0x230
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_520d565ef38560b8", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_520d565ef38560b8", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_f0a1fe5c/namespace_f0a1fe5c
 // Params 0, eflags: 0x6 linked
 // Checksum 0xcdce3836, Offset: 0x278
 // Size: 0x2ac
-function private function_70a657d8() {
+function private preinit() {
     if (is_true(getgametypesetting(#"hash_7e8e34cc69a77e0b")) || getdvarint(#"hash_40bd34b35079cf2e", 0) > 0) {
         zombie_utility::set_zombie_var(#"hash_176c7387fb0b8e84", 0, 0, 1);
         zombie_utility::set_zombie_var(#"zombie_powerup_naughty_or_nice_on", 0, 0, 1);
@@ -200,8 +200,8 @@ function function_b1c6ca30(var_d13d4980) {
         n_count = 3;
         break;
     }
-    var_2858caa2 = {#var_738dfc81:n_count, #angles:scriptmodel.angles, #origin:reward_origin};
-    a_items = var_2858caa2 namespace_65181344::function_fd87c780(#"zm_ltm1_powerup_drop_list", n_count, 2);
+    dropstruct = {#origin:reward_origin, #angles:scriptmodel.angles, #var_738dfc81:n_count};
+    a_items = dropstruct namespace_65181344::function_fd87c780(#"zm_ltm1_powerup_drop_list", n_count, 2);
     if (a_items.size > 1) {
         var_b7d0c0a8 = randomint(a_items.size);
     } else {

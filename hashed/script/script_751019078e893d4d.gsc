@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_28e27ee9b45fd02d;
-#using script_31671175564a93b7;
+#using scripts\cp_common\snd_utility.csc;
 #using script_1cd690a97dfca36e;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\math_shared.csc;
@@ -21,7 +21,7 @@ function private function_8f9218ba(hud) {
             if (isdefined(value) && value > 0) {
                 insize = hud.var_708cbe39 + (-2 * 2, -2 * 2, 0);
                 inpos = hud.var_ca1ec566 + (2, 2, 0);
-                if (hud.var_b1332cff == 1) {
+                if (hud.isvertical == 1) {
                     inpos = hud.var_ca1ec566 + (2, 2 + insize[1], 0);
                     insize = (insize[0], insize[1] * value, insize[2]);
                     inpos = inpos - (0, insize[1], 0);
@@ -64,14 +64,14 @@ function private function_20b6bc92() {
 // Params 12, eflags: 0x0
 // Checksum 0x7b0e6508, Offset: 0x430
 // Size: 0x2d8
-function function_b009fcc9(x, y, w, h, target, callbackfunc, callbackdata, var_b1332cff, backgroundcolor, backgroundalpha, var_a2dbe44f, var_6a3d8755) {
-    var_b1332cff = function_ea2f17d1(var_b1332cff, 0);
+function function_b009fcc9(x, y, w, h, target, callbackfunc, callbackdata, isvertical, backgroundcolor, backgroundalpha, var_a2dbe44f, var_6a3d8755) {
+    isvertical = function_ea2f17d1(isvertical, 0);
     backgroundcolor = function_ea2f17d1(backgroundcolor, vectorscale((1, 1, 1), 0.72974));
     backgroundalpha = function_ea2f17d1(backgroundalpha, 0.72974);
     var_a2dbe44f = function_ea2f17d1(var_a2dbe44f, (0, 1, 0));
     var_6a3d8755 = function_ea2f17d1(var_6a3d8755, 0.72974);
     var_dfd5412c = spawnstruct();
-    var_dfd5412c.var_b1332cff = var_b1332cff;
+    var_dfd5412c.isvertical = isvertical;
     var_dfd5412c.var_36dfeb2e = array(x, y);
     var_dfd5412c.screensize = array(w, h);
     var_dfd5412c.var_ca1ec566 = (x, y, 0);
@@ -89,7 +89,7 @@ function function_b009fcc9(x, y, w, h, target, callbackfunc, callbackdata, var_b
         hud = undefined;
         var_dfd5412c.var_8c127264 = hud;
     #/
-    var_dfd5412c.var_b06d41c8 = undefined;
+    var_dfd5412c.valuehud = undefined;
     if (!isdefined(level.var_a00c303b)) {
         level.var_a00c303b = spawnstruct();
         level.var_a00c303b.objects = array();
@@ -107,8 +107,8 @@ function function_b009fcc9(x, y, w, h, target, callbackfunc, callbackdata, var_b
 // Size: 0xa0
 function function_9b4ec5ed(var_dfd5412c) {
     arrayremovevalue(level.var_a00c303b.objects, var_dfd5412c, 1);
-    if (isdefined(var_dfd5412c.var_b06d41c8)) {
-        var_dfd5412c.var_b06d41c8 = undefined;
+    if (isdefined(var_dfd5412c.valuehud)) {
+        var_dfd5412c.valuehud = undefined;
     }
     if (isdefined(var_dfd5412c.var_8c127264)) {
         var_dfd5412c.var_8c127264 = undefined;
@@ -132,8 +132,8 @@ function function_fee448d5(var_dfd5412c, value) {
     var_dfd5412c.var_c53c088d = now;
     var_dfd5412c.value = value;
     if (value <= 0) {
-        if (isdefined(var_dfd5412c.var_b06d41c8)) {
-            var_dfd5412c.var_b06d41c8 = undefined;
+        if (isdefined(var_dfd5412c.valuehud)) {
+            var_dfd5412c.valuehud = undefined;
         }
         return;
     }

@@ -21,14 +21,14 @@
 // Checksum 0xc91a2223, Offset: 0x238
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"draft", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"draft", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace draft/draft
 // Params 0, eflags: 0x6 linked
 // Checksum 0x41646830, Offset: 0x280
 // Size: 0x17c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("world", "draft", 1, 3, "int");
     clientfield::register_clientuimodel("PositionDraft.stage", 1, 4, "int");
     clientfield::register_clientuimodel("PositionDraft.autoSelected", 1, 1, "int");

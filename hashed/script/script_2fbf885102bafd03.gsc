@@ -247,7 +247,7 @@ function function_778aa85f(localclientnum, *oldval, newval, *bnewent, *binitials
         var_8d552f67.delay = 2;
         var_8d552f67.scale = 0.6;
         var_c4241d08 = spawnstruct();
-        var_c4241d08.text = #"hash_5ac4e544985e273d";
+        var_c4241d08.text = #"doa/or";
         /#
             assert(isdefined(var_c4241d08.text));
         #/
@@ -292,10 +292,10 @@ function function_778aa85f(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         var_aa7fba18 = 4 - level.doa.roundnumber % 4;
         if (var_aa7fba18 == 1) {
-            var_4e2d590d = #"hash_20cec1153efec555";
+            txt = #"hash_20cec1153efec555";
             var_aa7fba18 = undefined;
         } else {
-            var_4e2d590d = #"hash_6547ed675c5dca52";
+            txt = #"hash_6547ed675c5dca52";
         }
     case 11:
         if (!isdefined(level.doa.roundnumber)) {
@@ -313,7 +313,7 @@ function function_778aa85f(localclientnum, *oldval, newval, *bnewent, *binitials
             var_d6bac235.color = (1, 0.84, 0);
         }
         var_8d552f67 = spawnstruct();
-        var_8d552f67.text = bwastimejump == 11 ? #"hash_f123d93fac4c288" : var_4e2d590d;
+        var_8d552f67.text = bwastimejump == 11 ? #"hash_f123d93fac4c288" : txt;
         /#
             assert(isdefined(var_8d552f67.text));
         #/
@@ -1030,27 +1030,27 @@ function function_3ce17e62(localclientnum, var_ab7c878c, var_393b2936, durations
 // Params 4, eflags: 0x2 linked
 // Checksum 0x5aaa1b5d, Offset: 0x3df8
 // Size: 0x19e
-function function_c11d702b(localclientnum, durationseconds, var_2e87f66a, var_bcf48181) {
+function function_c11d702b(localclientnum, durationseconds, lowalpha, highalpha) {
     /#
         assert(localclientnum >= 0 && localclientnum <= 1);
     #/
     var_8fc81e63 = gettime();
     n_time_end = gettime() + int(durationseconds * 1000);
     n_timer = var_8fc81e63;
-    var_fc4d0311 = var_2e87f66a;
-    startalpha = var_bcf48181;
+    targetalpha = lowalpha;
+    startalpha = highalpha;
     while (isdefined(self) && [[ self ]]->is_open(localclientnum)) {
         n_timer = gettime();
         if (n_timer >= n_time_end) {
-            [[ self ]]->set_alpha(localclientnum, var_fc4d0311);
+            [[ self ]]->set_alpha(localclientnum, targetalpha);
             var_8fc81e63 = gettime();
             n_time_end = gettime() + int(durationseconds * 1000);
             n_timer = var_8fc81e63;
             temp = startalpha;
-            startalpha = var_fc4d0311;
-            var_fc4d0311 = temp;
+            startalpha = targetalpha;
+            targetalpha = temp;
         } else {
-            var_5db054c7 = mapfloat(var_8fc81e63, n_time_end, startalpha, var_fc4d0311, n_timer);
+            var_5db054c7 = mapfloat(var_8fc81e63, n_time_end, startalpha, targetalpha, n_timer);
             [[ self ]]->set_alpha(localclientnum, var_5db054c7);
         }
         waitframe(1);

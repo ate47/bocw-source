@@ -73,8 +73,8 @@ function function_2c3d65c4(platform) {
         platform.duration = int(toks[1]);
         target = struct::get(platform.target, "targetname");
         if (platform.type == 0) {
-            var_146bc1e6 = target.origin[2] - platform.origin[2];
-            platform.destination = platform.origin + (0, 0, var_146bc1e6);
+            diffz = target.origin[2] - platform.origin[2];
+            platform.destination = platform.origin + (0, 0, diffz);
         } else if (platform.type == 1) {
             var_ffc8189f = target.origin[0] - platform.origin[0];
             var_289dea4a = target.origin[1] - platform.origin[1];

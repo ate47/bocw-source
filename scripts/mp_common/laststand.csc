@@ -13,17 +13,17 @@
 // Checksum 0x20fd7ed7, Offset: 0x2a8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"laststand", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"laststand", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace laststand/laststand
 // Params 0, eflags: 0x4
 // Checksum 0x9fd180b4, Offset: 0x2f0
 // Size: 0x384
-function private function_70a657d8() {
+function private preinit() {
     function_349ff038();
     clientfield::register_clientuimodel("hudItems.laststand.progress", #"last_stand", #"progress", 1, 5, "float", &laststand_postfx, 0, 0);
-    clientfield::register_clientuimodel("hudItems.laststand.beingRevived", #"last_stand", #"beingrevived", 1, 1, "int", &function_72338e50, 0, 1);
+    clientfield::register_clientuimodel("hudItems.laststand.beingRevived", #"last_stand", #"beingrevived", 1, 1, "int", &being_revived, 0, 1);
     clientfield::register_clientuimodel("hudItems.laststand.cowardsWayBleedOut", #"last_stand", #"hash_a48b4657908bd19", 1, 1, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("hudItems.laststand.revivingClientNum", #"last_stand", #"revivingclientnum", 1, 7, "int", &function_6159e216, 0, 0);
     clientfield::register_clientuimodel("hudItems.laststand.reviveProgress", #"last_stand", #"reviveprogress", 1, 5, "float", undefined, 0, 0);
@@ -101,7 +101,7 @@ function laststand_postfx(localclientnum, oldval, newval, *bnewent, *binitialsna
 // Params 7, eflags: 0x0
 // Checksum 0xf0ca453b, Offset: 0x9c0
 // Size: 0x6c
-function function_72338e50(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function being_revived(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     var_4f6e7690 = bwastimejump != 0;
     function_766ed49(fieldname, var_4f6e7690);
 }

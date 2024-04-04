@@ -11,14 +11,14 @@
 // Checksum 0xd9657131, Offset: 0x198
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"weapon_customization_icon", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"weapon_customization_icon", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace weapon_customization_icon/weapon_customization_icon
 // Params 0, eflags: 0x6 linked
 // Checksum 0x99f99e45, Offset: 0x1e0
 // Size: 0x64
-function private function_70a657d8() {
+function private preinit() {
     level.extra_cam_wc_paintjob_icon = [];
     level.extra_cam_wc_variant_icon = [];
     level.extra_cam_render_wc_paintjobicon_func_callback = &process_wc_paintjobicon_extracam_request;

@@ -366,7 +366,7 @@ function _fire(killstreaktype, player, team, killstreak_id) {
         waitframe(1);
         if (isdefined(rocket)) {
             rocket notify(#"death");
-            rocket function_cb48cddd();
+            rocket deletedelay();
         }
         if (isdefined(veh)) {
             veh delete();
@@ -510,17 +510,17 @@ function watch_missile_kill_z() {
 // Size: 0x156
 function watch_missile_death(rocket, team, killstreak_id, killstreaktype, var_99178ae6) {
     self endon(#"remotemissle_killstreak_done");
-    var_6c90b45c = rocket.var_ae685ec9;
-    var_bae2d0ff = rocket.var_8039026b;
+    r1 = rocket.var_ae685ec9;
+    r2 = rocket.var_8039026b;
     rocket waittill(#"death");
-    if (isdefined(var_6c90b45c)) {
-        var_6c90b45c function_cb48cddd();
+    if (isdefined(r1)) {
+        r1 deletedelay();
         if (isdefined(rocket.var_ae685ec9)) {
             rocket.var_ae685ec9 = undefined;
         }
     }
-    if (isdefined(var_bae2d0ff)) {
-        var_bae2d0ff function_cb48cddd();
+    if (isdefined(r2)) {
+        r2 deletedelay();
         if (isdefined(rocket.var_8039026b)) {
             rocket.var_8039026b = undefined;
         }
@@ -667,13 +667,13 @@ function function_97f822ec(rocket, performplayerkillstreakend, unlink, team, kil
     if (isdefined(rocket)) {
         rocket influencers::remove_influencers();
         rocket clientfield::set("remote_missile_fired", 0);
-        rocket function_cb48cddd();
+        rocket deletedelay();
         if (isdefined(rocket.var_ae685ec9)) {
-            rocket.var_ae685ec9 function_cb48cddd();
+            rocket.var_ae685ec9 deletedelay();
             rocket.var_ae685ec9 = undefined;
         }
         if (isdefined(rocket.var_8039026b)) {
-            rocket.var_8039026b function_cb48cddd();
+            rocket.var_8039026b deletedelay();
             rocket.var_8039026b = undefined;
         }
     }
@@ -735,7 +735,7 @@ function missile_brake_timeout_watch() {
 function stopondeath(snd) {
     self waittill(#"death");
     if (isdefined(snd)) {
-        snd function_cb48cddd();
+        snd deletedelay();
     }
 }
 

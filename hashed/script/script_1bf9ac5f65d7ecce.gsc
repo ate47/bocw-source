@@ -1,8 +1,8 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_28e27ee9b45fd02d;
-#using script_31671175564a93b7;
+#using scripts\cp_common\snd_utility.csc;
 #using script_1cd690a97dfca36e;
-#using script_3318f11e3a1b2358;
+#using scripts\cp_common\snd.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\struct.csc;
 #using scripts\core_common\music_shared.csc;
@@ -19,7 +19,7 @@
 function event_handler[level_preinit] function_b489bb7b(*eventstruct) {
     snd::function_d4ec748e(&function_f2a2832d);
     snd::function_ce78b33b(&function_32ab045);
-    snd::function_a1961886(&_trigger);
+    snd::trigger_init(&_trigger);
     snd::function_5e69f468(&function_887ac605);
 }
 
@@ -289,7 +289,7 @@ function private function_887ac605(objective) {
 // Checksum 0x3049388, Offset: 0x1620
 // Size: 0x94
 function function_b4de7637() {
-    var_997ec4ec = [0:[3:1800, 2:[1:21, 0:14], 1:(-64, -200, 60), 0:"emt_thunder_int_cp_ger_hub"]];
+    var_997ec4ec = [["emt_thunder_int_cp_ger_hub", (-64, -200, 60), [14, 21], 1800]];
     snd::function_b4de7637("thunder_int", var_997ec4ec);
 }
 
@@ -300,45 +300,45 @@ function function_b4de7637() {
 function function_8cb75a6() {
     if (!isarray(level.var_2de628a1)) {
         level.var_2de628a1 = [];
-        level.var_2de628a1[#"adler"][#"default"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"lazar"][#"default"] = [1:[1:"sneaker", 0:"footwear"], 0:[1:"casual", 0:"attire"]];
-        level.var_2de628a1[#"park"][#"default"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"sims"][#"default"] = [1:[1:"combat_boot", 0:"footwear"], 0:[1:"tactical", 0:"attire"]];
-        level.var_2de628a1[#"hudson"][#"default"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"woods"][#"default"] = [1:[1:"combat_boot", 0:"footwear"], 0:[1:"tactical", 0:"attire"]];
-        level.var_2de628a1[#"mason"][#"default"] = [1:[1:"combat_boot", 0:"footwear"], 0:[1:"tactical", 0:"attire"]];
-        level.var_2de628a1[#"adler"][#"hash_de0a71f1b8beaa7"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"lazar"][#"hash_de0a71f1b8beaa7"] = [1:[1:"sneaker", 0:"footwear"], 0:[1:"casual", 0:"attire"]];
-        level.var_2de628a1[#"park"][#"hash_de0a71f1b8beaa7"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"sims"][#"hash_de0a71f1b8beaa7"] = [1:[1:"combat_boot", 0:"footwear"], 0:[1:"tactical", 0:"attire"]];
-        level.var_2de628a1[#"hudson"][#"hash_de0a71f1b8beaa7"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"adler"][#"post_armada"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"lazar"][#"post_armada"] = [1:[1:"cowboy_boot", 0:"footwear"], 0:[1:"winter", 0:"attire"]];
-        level.var_2de628a1[#"park"][#"post_armada"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"sims"][#"post_armada"] = [1:[1:"combat_boot", 0:"footwear"], 0:[1:"tactical", 0:"attire"]];
-        level.var_2de628a1[#"hudson"][#"post_armada"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"adler"][#"post_yamantau"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"lazar"][#"post_yamantau"] = [1:[1:"cowboy_boot", 0:"footwear"], 0:[1:"winter", 0:"attire"]];
-        level.var_2de628a1[#"park"][#"post_yamantau"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"sims"][#"post_yamantau"] = [1:[1:"combat_boot", 0:"footwear"], 0:[1:"tactical", 0:"attire"]];
-        level.var_2de628a1[#"hudson"][#"post_yamantau"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"adler"][#"post_kgb"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"lazar"][#"post_kgb"] = [1:[1:"cowboy_boot", 0:"footwear"], 0:[1:"winter", 0:"attire"]];
-        level.var_2de628a1[#"park"][#"post_kgb"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"sims"][#"post_kgb"] = [1:[1:"combat_boot", 0:"footwear"], 0:[1:"tactical", 0:"attire"]];
-        level.var_2de628a1[#"hudson"][#"post_kgb"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"woods"][#"post_kgb"] = [1:[1:"combat_boot", 0:"footwear"], 0:[1:"casual", 0:"attire"]];
-        level.var_2de628a1[#"mason"][#"post_kgb"] = [1:[1:"combat_boot", 0:"footwear"], 0:[1:"casual", 0:"attire"]];
-        level.var_2de628a1[#"adler"][#"post_cuba"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"lazar"][#"post_cuba"] = [1:[1:"cowboy_boot", 0:"footwear"], 0:[1:"tactical", 0:"attire"]];
-        level.var_2de628a1[#"park"][#"post_cuba"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"sims"][#"post_cuba"] = [1:[1:"combat_boot", 0:"footwear"], 0:[1:"tactical", 0:"attire"]];
-        level.var_2de628a1[#"hudson"][#"post_cuba"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"adler"][#"hash_4738825a1fd6beb8"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"lazar"][#"hash_4738825a1fd6beb8"] = [1:[1:"cowboy_boot", 0:"footwear"], 0:[1:"winter", 0:"attire"]];
-        level.var_2de628a1[#"park"][#"hash_4738825a1fd6beb8"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
-        level.var_2de628a1[#"sims"][#"hash_4738825a1fd6beb8"] = [1:[1:"combat_boot", 0:"footwear"], 0:[1:"tactical", 0:"attire"]];
-        level.var_2de628a1[#"hudson"][#"hash_4738825a1fd6beb8"] = [1:[1:"dress_shoe", 0:"footwear"], 0:[1:"leather", 0:"attire"]];
+        level.var_2de628a1[#"adler"][#"default"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"lazar"][#"default"] = [["attire", "casual"], ["footwear", "sneaker"]];
+        level.var_2de628a1[#"park"][#"default"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"sims"][#"default"] = [["attire", "tactical"], ["footwear", "combat_boot"]];
+        level.var_2de628a1[#"hudson"][#"default"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"woods"][#"default"] = [["attire", "tactical"], ["footwear", "combat_boot"]];
+        level.var_2de628a1[#"mason"][#"default"] = [["attire", "tactical"], ["footwear", "combat_boot"]];
+        level.var_2de628a1[#"adler"][#"hash_de0a71f1b8beaa7"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"lazar"][#"hash_de0a71f1b8beaa7"] = [["attire", "casual"], ["footwear", "sneaker"]];
+        level.var_2de628a1[#"park"][#"hash_de0a71f1b8beaa7"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"sims"][#"hash_de0a71f1b8beaa7"] = [["attire", "tactical"], ["footwear", "combat_boot"]];
+        level.var_2de628a1[#"hudson"][#"hash_de0a71f1b8beaa7"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"adler"][#"post_armada"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"lazar"][#"post_armada"] = [["attire", "winter"], ["footwear", "cowboy_boot"]];
+        level.var_2de628a1[#"park"][#"post_armada"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"sims"][#"post_armada"] = [["attire", "tactical"], ["footwear", "combat_boot"]];
+        level.var_2de628a1[#"hudson"][#"post_armada"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"adler"][#"post_yamantau"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"lazar"][#"post_yamantau"] = [["attire", "winter"], ["footwear", "cowboy_boot"]];
+        level.var_2de628a1[#"park"][#"post_yamantau"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"sims"][#"post_yamantau"] = [["attire", "tactical"], ["footwear", "combat_boot"]];
+        level.var_2de628a1[#"hudson"][#"post_yamantau"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"adler"][#"post_kgb"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"lazar"][#"post_kgb"] = [["attire", "winter"], ["footwear", "cowboy_boot"]];
+        level.var_2de628a1[#"park"][#"post_kgb"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"sims"][#"post_kgb"] = [["attire", "tactical"], ["footwear", "combat_boot"]];
+        level.var_2de628a1[#"hudson"][#"post_kgb"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"woods"][#"post_kgb"] = [["attire", "casual"], ["footwear", "combat_boot"]];
+        level.var_2de628a1[#"mason"][#"post_kgb"] = [["attire", "casual"], ["footwear", "combat_boot"]];
+        level.var_2de628a1[#"adler"][#"post_cuba"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"lazar"][#"post_cuba"] = [["attire", "tactical"], ["footwear", "cowboy_boot"]];
+        level.var_2de628a1[#"park"][#"post_cuba"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"sims"][#"post_cuba"] = [["attire", "tactical"], ["footwear", "combat_boot"]];
+        level.var_2de628a1[#"hudson"][#"post_cuba"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"adler"][#"hash_4738825a1fd6beb8"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"lazar"][#"hash_4738825a1fd6beb8"] = [["attire", "winter"], ["footwear", "cowboy_boot"]];
+        level.var_2de628a1[#"park"][#"hash_4738825a1fd6beb8"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"sims"][#"hash_4738825a1fd6beb8"] = [["attire", "tactical"], ["footwear", "combat_boot"]];
+        level.var_2de628a1[#"hudson"][#"hash_4738825a1fd6beb8"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
     }
     level.var_dafd41b2 = [];
     snd::waitforplayers();
@@ -389,8 +389,8 @@ function function_952e21e3(ent, name) {
 function function_a269371b() {
     function_8cb75a6();
     if (isarray(level.var_dafd41b2)) {
-        foreach (var_42b8e940, ally in level.var_dafd41b2) {
-            ally thread function_952e21e3(ally, var_42b8e940);
+        foreach (ally_name, ally in level.var_dafd41b2) {
+            ally thread function_952e21e3(ally, ally_name);
         }
     }
 }
@@ -511,10 +511,10 @@ function function_5af45515() {
     snd::play("emt_generator_room_tone_cp_ger_hub_lp", (-362, 463, -80));
     snd::play("emt_fan_industrial_cp_ger_hub_lp", (-257, 415, 145));
     snd::play("emt_safehouse_night_crickets_lp", (302, -395, 72));
-    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:15, 0:14]);
-    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:15, 0:14]);
-    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:17, 0:16]);
-    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [14, 15, 8, 14]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [14, 15, 8, 17]);
+    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [16, 17, 9, 16]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [14, 15, 10, 18]);
 }
 
 // Namespace namespace_4ed3ce47/namespace_9d055984
@@ -537,10 +537,10 @@ function function_f4c3ff4f() {
     snd::play("emt_rain_metal_door_closed_int_lp", (-228, -1532, 54));
     snd::play("evt_fan_portable_idle_armada_lp", (73, 61, 54));
     snd::play("evt_fan_portable_idle_armada_lp", (94, 567, 56));
-    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:15, 0:14]);
-    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:15, 0:14]);
-    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:17, 0:16]);
-    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [14, 15, 8, 14]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [14, 15, 8, 17]);
+    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [16, 17, 9, 16]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [14, 15, 10, 18]);
 }
 
 // Namespace namespace_4ed3ce47/namespace_9d055984
@@ -554,10 +554,10 @@ function function_d701d197() {
     snd::play("evt_fan_portable_idle_armada_lp", (94, 567, 56));
     snd::play("evt_fridge_hum_low", (-63, 177, 10));
     snd::play("emt_safehouse_morning_birds_lp", (302, -395, 72));
-    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:30, 0:27]);
-    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:30, 0:27]);
-    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:30, 0:27]);
-    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:30, 0:27]);
+    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [27, 30, 8, 14]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [27, 30, 8, 17]);
+    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [27, 30, 9, 16]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [27, 30, 10, 18]);
 }
 
 // Namespace namespace_4ed3ce47/namespace_9d055984
@@ -572,10 +572,10 @@ function function_91962847() {
     snd::play("evt_fluorescent_light", (-240, -810, 118));
     snd::play("evt_fluorescent_light", (-81, -577, 145));
     snd::play("emt_projector_idle_lp", (72, 261, 46));
-    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:15, 0:14]);
-    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:15, 0:14]);
-    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:17, 0:16]);
-    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [14, 15, 8, 14]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [14, 15, 8, 17]);
+    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [16, 17, 9, 16]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [14, 15, 10, 18]);
 }
 
 // Namespace namespace_4ed3ce47/namespace_9d055984
@@ -591,10 +591,10 @@ function function_351d940() {
     snd::play("evt_fluorescent_light", (-81, -577, 145));
     snd::play("evt_fluorescent_light", (76, -580, 146));
     snd::play("evt_fridge_hum_low", (-63, 177, 10));
-    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:15, 0:14]);
-    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:15, 0:14]);
-    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:17, 0:16]);
-    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [14, 15, 8, 14]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [14, 15, 8, 17]);
+    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [16, 17, 9, 16]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [14, 15, 10, 18]);
 }
 
 // Namespace namespace_4ed3ce47/namespace_9d055984
@@ -617,10 +617,10 @@ function function_ef8c9b18() {
     snd::play("emt_fire_messageboard_hvy_01_lp", (42, 90, 15));
     snd::play("emt_fire_wood_hvy_01_lp", (-395, -275, 14));
     snd::play("emt_fire_wood_med_01_lp", (-281, 100, 47));
-    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:15, 0:14]);
-    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:15, 0:14]);
-    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:17, 0:16]);
-    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [14, 15, 8, 14]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [14, 15, 8, 17]);
+    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [16, 17, 9, 16]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [14, 15, 10, 18]);
 }
 
 // Namespace namespace_4ed3ce47/namespace_9d055984
@@ -638,10 +638,10 @@ function function_cb00a128() {
 // Checksum 0x3df45a10, Offset: 0x4478
 // Size: 0xdc
 function function_755bfc95() {
-    var_17888610 = snd::play("emt_tkd_walla_plane_workers_temp", [1:"tag_origin", 0:level.var_a7c3bf6d]);
-    loaders = snd::play("emt_tkd_cargo_loading_vehicles_lp", [1:"tag_origin", 0:level.var_a7c3bf6d]);
+    walla = snd::play("emt_tkd_walla_plane_workers_temp", [level.var_a7c3bf6d, "tag_origin"]);
+    loaders = snd::play("emt_tkd_cargo_loading_vehicles_lp", [level.var_a7c3bf6d, "tag_origin"]);
     level waittill(#"hash_1e58e46360c0a83b");
-    snd::stop(var_17888610, 2);
+    snd::stop(walla, 2);
     snd::stop(loaders, 2);
 }
 
@@ -660,7 +660,7 @@ function function_913d2991() {
 // Size: 0x6c
 function function_955f4842() {
     wait(5);
-    start = snd::play("veh_tkd_af_cargo_plane_start", [1:"tag_origin", 0:level.var_a7c3bf6d]);
+    start = snd::play("veh_tkd_af_cargo_plane_start", [level.var_a7c3bf6d, "tag_origin"]);
     thread function_2d8bbe54(2);
 }
 
@@ -670,7 +670,7 @@ function function_955f4842() {
 // Size: 0x134
 function function_2d8bbe54(wait_time) {
     wait_time = snd::function_ea2f17d1(wait_time, 0.5);
-    level.var_abe3f688 = snd::play("veh_tkd_af_cargo_plane_idle_lp", [1:"tag_origin", 0:level.var_a7c3bf6d]);
+    level.var_abe3f688 = snd::play("veh_tkd_af_cargo_plane_idle_lp", [level.var_a7c3bf6d, "tag_origin"]);
     snd::function_db78159d(level.var_abe3f688, 0);
     snd::function_964c3a03(level.var_abe3f688, 1);
     thread function_755bfc95();
@@ -687,6 +687,6 @@ function function_2d8bbe54(wait_time) {
 // Size: 0x7c
 function function_e9cf99c1() {
     snd::function_964c3a03(level.var_abe3f688, snd::function_d8b24901(8), 1);
-    snd::play("veh_tkd_af_cargo_plane_accelerate", [1:"tag_origin", 0:level.var_a7c3bf6d]);
+    snd::play("veh_tkd_af_cargo_plane_accelerate", [level.var_a7c3bf6d, "tag_origin"]);
 }
 

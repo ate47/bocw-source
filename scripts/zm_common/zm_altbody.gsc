@@ -29,14 +29,14 @@
 // Checksum 0x5170e509, Offset: 0x250
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_altbody", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_altbody", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_altbody/zm_altbody
 // Params 0, eflags: 0x4
 // Checksum 0x9704af44, Offset: 0x298
 // Size: 0xdc
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.var_28f2d2b1)) {
         level.var_28f2d2b1 = [];
     }

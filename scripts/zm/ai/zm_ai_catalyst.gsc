@@ -42,14 +42,14 @@
 // Checksum 0x7addfebb, Offset: 0x670
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_ai_catalyst", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_ai_catalyst", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_ai_catalyst/zm_ai_catalyst
 // Params 0, eflags: 0x6 linked
 // Checksum 0xe0af2f87, Offset: 0x6b8
 // Size: 0x4e4
-function private function_70a657d8() {
+function private preinit() {
     registerbehaviorscriptfunctions();
     if (!isarchetypeloaded(#"catalyst")) {
         return;
@@ -344,7 +344,7 @@ function private function_f4e7fd8f(behaviortreeentity) {
     if (is_true(behaviortreeentity.ignoremelee)) {
         return true;
     }
-    if (distancesquared(behaviortreeentity.origin, behaviortreeentity.enemy.origin) > function_a3f6cdac(behaviortreeentity ai::function_9139c839().var_c9e47b3f)) {
+    if (distancesquared(behaviortreeentity.origin, behaviortreeentity.enemy.origin) > sqr(behaviortreeentity ai::function_9139c839().var_c9e47b3f)) {
         return true;
     }
     yawtoenemy = angleclamp180(behaviortreeentity.angles[1] - vectortoangles(behaviortreeentity.enemy.origin - behaviortreeentity.origin)[1]);
@@ -508,7 +508,7 @@ function private function_e13aa91c() {
     while (true) {
         trigger_midpoint = self.origin + (0, 0, self ai::function_9139c839().var_2a523c14 / 2);
         foreach (player in level.players) {
-            if (isalive(player) && !is_true(player.var_a0a1475c) && !player scene::is_igc_active() && distancesquared(player.origin, self.origin) <= function_a3f6cdac(self ai::function_9139c839().var_f3af70e6) && (abs(player.origin[2] - trigger_midpoint[2]) <= self ai::function_9139c839().var_2a523c14 / 2 || abs(player geteye()[2] - trigger_midpoint[2]) <= self ai::function_9139c839().var_2a523c14 / 2)) {
+            if (isalive(player) && !is_true(player.var_a0a1475c) && !player scene::is_igc_active() && distancesquared(player.origin, self.origin) <= sqr(self ai::function_9139c839().var_f3af70e6) && (abs(player.origin[2] - trigger_midpoint[2]) <= self ai::function_9139c839().var_2a523c14 / 2 || abs(player geteye()[2] - trigger_midpoint[2]) <= self ai::function_9139c839().var_2a523c14 / 2)) {
                 player status_effect::status_effect_apply(var_7a79774b, undefined, self, 0);
                 player thread zm_audio::create_and_play_dialog(#"hash_50660c7d730b03a1", #"react");
             }
@@ -577,7 +577,7 @@ function private function_787ce068(behaviortreeentity) {
         if (player scene::is_igc_active()) {
             continue;
         }
-        if (distancesquared(player.origin, behaviortreeentity.origin) > function_a3f6cdac(self ai::function_9139c839().var_cbf14156)) {
+        if (distancesquared(player.origin, behaviortreeentity.origin) > sqr(self ai::function_9139c839().var_cbf14156)) {
             continue;
         }
         if (player sightconetrace(behaviortreeentity.origin, behaviortreeentity, anglestoforward(behaviortreeentity.angles), self ai::function_9139c839().var_95922bb3)) {
@@ -618,7 +618,7 @@ function private function_d697a1e3() {
             if (player scene::is_igc_active()) {
                 continue;
             }
-            if (distancesquared(player.origin, self.origin) > function_a3f6cdac(self ai::function_9139c839().var_cbf14156)) {
+            if (distancesquared(player.origin, self.origin) > sqr(self ai::function_9139c839().var_cbf14156)) {
                 continue;
             }
             if (player sightconetrace(self.origin, self, anglestoforward(self.angles), self ai::function_9139c839().var_95922bb3)) {
@@ -757,7 +757,7 @@ function private function_dec8327a(behaviortreeentity) {
         if (is_true(player.bgb_in_plain_sight_active)) {
             continue;
         }
-        if (distancesquared(player.origin, behaviortreeentity.origin) <= function_a3f6cdac(behaviortreeentity ai::function_9139c839().var_febbf56f)) {
+        if (distancesquared(player.origin, behaviortreeentity.origin) <= sqr(behaviortreeentity ai::function_9139c839().var_febbf56f)) {
             return true;
         }
     }
@@ -819,7 +819,7 @@ function private function_3b07d86e() {
     var_f152d0cc = function_de076722(self);
     self clientfield::set("plasma_catalyst_blast", 1);
     v_blast_origin = self.origin;
-    var_84dd3dd = function_a3f6cdac(self ai::function_9139c839().var_c30a9dc5);
+    var_84dd3dd = sqr(self ai::function_9139c839().var_c30a9dc5);
     var_2ffdfebc = self ai::function_9139c839().var_35692434;
     level notify(#"hash_528115ad9eebc84f");
     if (!self isragdoll()) {
@@ -998,7 +998,7 @@ function private function_75070c6() {
     self endon(#"death");
     while (true) {
         trigger_height = self ai::function_9139c839().var_1803b87d;
-        var_a00ff069 = function_a3f6cdac(self ai::function_9139c839().var_baa0ac60);
+        var_a00ff069 = sqr(self ai::function_9139c839().var_baa0ac60);
         foreach (zombie in zombie_utility::get_round_enemy_array()) {
             if (isalive(zombie) && is_true(zombie.var_d53c2370) && !is_true(zombie.var_5c8ac43e)) {
                 if (zombie.origin[2] >= self.origin[2] && abs(zombie.origin[2] - self.origin[2]) <= trigger_height && distancesquared(zombie.origin, self.origin) <= var_a00ff069) {
@@ -1304,7 +1304,7 @@ function function_3f664506(e_catalyst, player, v_loc) {
         var_103da188 = self.maxhealth * 0.5;
         b_stun = 1;
         break;
-    case #"hash_72d4f2ad2e333eb4":
+    case #"elite":
         var_103da188 = self.maxhealth * 0.2;
         b_stun = 1;
         break;

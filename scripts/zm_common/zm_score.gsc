@@ -26,14 +26,14 @@
 // Checksum 0x494c25ba, Offset: 0x320
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_score", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_score", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_score/zm_score
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb9e25f17, Offset: 0x378
 // Size: 0x200
-function private function_70a657d8() {
+function private preinit() {
     level.var_697c8943 = array(90, 80, 70, 60, 50, 40, 30, 20, 10);
     level.var_d6031813 = 1;
     foreach (subdivision in level.var_697c8943) {
@@ -97,8 +97,8 @@ function function_e5d6e6dd(str_archetype, n_score) {
 // Checksum 0x33062cdc, Offset: 0x6d8
 // Size: 0x110
 function function_e5ca5733() {
-    if (isdefined(self.var_716c0cc9[#"kill"]) && isdefined(level.scoreinfo[self.var_716c0cc9[#"kill"]][#"sp"]) && level.scoreinfo[self.var_716c0cc9[#"kill"]][#"sp"] > 0) {
-        return level.scoreinfo[self.var_716c0cc9[#"kill"]][#"sp"];
+    if (isdefined(self.score_events[#"kill"]) && isdefined(level.scoreinfo[self.score_events[#"kill"]][#"sp"]) && level.scoreinfo[self.score_events[#"kill"]][#"sp"] > 0) {
+        return level.scoreinfo[self.score_events[#"kill"]][#"sp"];
     } else if (isdefined(self.archetype) && isdefined(level.var_c44113ca[self.archetype])) {
         return level.var_c44113ca[self.archetype];
     }
@@ -266,7 +266,7 @@ function player_add_points(event, mod, hit_location, e_target, zombie_team, dama
         player_points = player_points - split_player_points;
     }
     if (event === "rebuild_board") {
-        level notify(#"rebuild_board", {#points:player_points, #player:self});
+        level notify(#"rebuild_board", {#player:self, #points:player_points});
     }
     self add_to_player_score(player_points, 1, event, var_e6e61503);
     if (var_e6e61503 || is_true(level.var_894a83d8) || function_e31cf9d5(event)) {
@@ -453,7 +453,7 @@ function add_to_player_score(points, b_add_to_total = 1, str_awarded_by = "", va
     self incrementplayerstat("scoreEarned", n_points_to_add_to_currency);
     self zm_stats::function_301c4be2("boas_scoreEarned", n_points_to_add_to_currency);
     self zm_stats::function_c0c6ab19(#"zearned", n_points_to_add_to_currency, 1);
-    level notify(#"earned_points", {#points:points, #player:self});
+    level notify(#"earned_points", {#player:self, #points:points});
     self contracts::increment_zm_contract(#"contract_zm_points", n_points_to_add_to_currency, #"zstandard");
     self stats::function_dad108fa(#"hash_6a861f1323ce4ae9", n_points_to_add_to_currency);
     self zm_stats::function_fbce465a(#"hash_76bf5af08a08d8fe", n_points_to_add_to_currency);
@@ -486,7 +486,7 @@ function add_to_player_score(points, b_add_to_total = 1, str_awarded_by = "", va
         self.var_2e139723 = 0;
         self zm_stats::function_fbce465a(#"hash_3a26c1202d86e50e");
     }
-    self notify(#"earned_points", {#str_awarded_by:str_awarded_by, #n_points:points});
+    self notify(#"earned_points", {#n_points:points, #str_awarded_by:str_awarded_by});
 }
 
 // Namespace zm_score/zm_score
@@ -515,7 +515,7 @@ function minus_to_player_score(points, b_forced = 0) {
     self.pers[#"score"] = self.score;
     self incrementplayerstat("scoreSpent", points);
     self zm_stats::function_301c4be2("boas_scoreSpent", points);
-    level notify(#"spent_points", {#points:points, #player:self});
+    level notify(#"spent_points", {#player:self, #points:points});
     self notify(#"spent_points", {#points:points});
 }
 
@@ -588,23 +588,23 @@ function can_player_purchase(n_cost, var_1c65f833 = 0) {
 // Checksum 0x6ce37c85, Offset: 0x2388
 // Size: 0x1b2
 function on_item_pickup(s_params) {
-    var_a6762160 = s_params.item.var_a6762160;
-    if (var_a6762160.itemtype === #"survival_essence") {
+    itementry = s_params.item.itementry;
+    if (itementry.itemtype === #"survival_essence") {
         if (isplayer(self)) {
             e_player = self;
         } else {
             e_player = s_params.player;
         }
-        switch (var_a6762160.name) {
+        switch (itementry.name) {
         case #"resource_item_medium_harvesting_sr":
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"essence_pickup_medium", #attacker:e_player});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:e_player, #scoreevent:"essence_pickup_medium"});
             break;
         case #"resource_item_harvesting_sr":
         case #"hash_69a628368f8263f":
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"essence_pickup_large", #attacker:e_player});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:e_player, #scoreevent:"essence_pickup_large"});
             break;
         default:
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"essence_pickup_small", #attacker:e_player});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:e_player, #scoreevent:"essence_pickup_small"});
             break;
         }
     }
@@ -615,7 +615,7 @@ function on_item_pickup(s_params) {
 // Checksum 0xa2f3d65c, Offset: 0x2548
 // Size: 0x98
 function function_5f41330c() {
-    return isdefined(self.var_716c0cc9[#"assist"]) && isdefined(level.scoreinfo[self.var_716c0cc9[#"assist"]][#"sp"]) && level.scoreinfo[self.var_716c0cc9[#"assist"]][#"sp"] > 0;
+    return isdefined(self.score_events[#"assist"]) && isdefined(level.scoreinfo[self.score_events[#"assist"]][#"sp"]) && level.scoreinfo[self.score_events[#"assist"]][#"sp"] > 0;
 }
 
 // Namespace zm_score/zm_score

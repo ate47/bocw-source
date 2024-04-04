@@ -71,7 +71,7 @@ function function_6f3ad355(localclientnum) {
     if (isdefined(self.var_f3b82c6d)) {
         self.var_f3b82c6d delete();
     }
-    namespace_1e25ad94::function_f5f0c0f8("Initializing dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin);
+    namespace_1e25ad94::debugmsg("Initializing dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin);
     self.var_f3b82c6d = spawn(localclientnum, self.origin, "script_model");
     self.var_f3b82c6d setmodel("zombietron_dragonhead_trap");
     self.var_f3b82c6d.angles = self.angles;
@@ -88,7 +88,7 @@ function dragontrapstate(localclientnum, *oldval, newval, *bnewent, *binitialsna
         if (isdefined(self.var_f3b82c6d)) {
             self.var_f3b82c6d delete();
         }
-        namespace_1e25ad94::function_f5f0c0f8("Destroying dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin);
+        namespace_1e25ad94::debugmsg("Destroying dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin);
         break;
     case 1:
         self function_6f3ad355(fieldname);
@@ -103,7 +103,7 @@ function dragontrapstate(localclientnum, *oldval, newval, *bnewent, *binitialsna
         self.var_f3b82c6d setmodel("zombietron_dragonhead_trap");
         stopforcestreamingxmodel(#"zombietron_dragonhead_trap");
         forcestreamxmodel(#"zombietron_dragonhead_trap_active");
-        namespace_1e25ad94::function_f5f0c0f8("Setting dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin + " to model zombietron_dragonhead_trap");
+        namespace_1e25ad94::debugmsg("Setting dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin + " to model zombietron_dragonhead_trap");
         self.var_f3b82c6d thread namespace_83eb6304::function_8b1a4e9c(fieldname, "dragonTrap");
         break;
     case 3:
@@ -116,7 +116,7 @@ function dragontrapstate(localclientnum, *oldval, newval, *bnewent, *binitialsna
         self.var_f3b82c6d setmodel("zombietron_dragonhead_trap_active");
         stopforcestreamingxmodel(#"zombietron_dragonhead_trap_active");
         forcestreamxmodel(#"zombietron_dragonhead_trap");
-        namespace_1e25ad94::function_f5f0c0f8("Setting dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin + " to model zombietron_dragonhead_trap_active");
+        namespace_1e25ad94::debugmsg("Setting dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin + " to model zombietron_dragonhead_trap_active");
         wait(1);
         if (isdefined(self.var_f3b82c6d)) {
             self.var_f3b82c6d thread namespace_83eb6304::function_f58618d7(fieldname, "dragonTrap", "tag_mouth_fx_anim");

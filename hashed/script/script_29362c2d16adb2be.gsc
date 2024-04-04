@@ -145,7 +145,7 @@ function function_fee48e9e() {
         return;
     }
     self notify(#"hash_77af89fb2b44942f");
-    self notify(#"hash_5dfedd8a04f2551a");
+    self notify(#"kill_chickens");
     util::wait_network_frame();
 }
 

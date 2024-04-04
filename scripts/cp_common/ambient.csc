@@ -12,14 +12,14 @@
 // Checksum 0x3879036, Offset: 0x2c0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"ambient", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"ambient", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace ambient/ambient
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd1bd23b, Offset: 0x308
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     callback::on_localclient_connect(&on_player_connect);
 }
 

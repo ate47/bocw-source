@@ -19,14 +19,14 @@
 // Checksum 0xcc3a549e, Offset: 0x168
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_5a3be2f74ac4fe03", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_5a3be2f74ac4fe03", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_fa39a5c3/namespace_67dab37c
 // Params 0, eflags: 0x2 linked
 // Checksum 0x380dd6af, Offset: 0x1b0
 // Size: 0xfc
-function function_70a657d8() {
+function preinit() {
     clientfield::register("toplayer", "" + #"hash_69dc133e22a2769f", 16000, 1, "int");
     level.var_5bfd847e = #"hash_3b7ec2c707912dd9";
     level.var_e9737821 = &function_c52e8ba;
@@ -166,7 +166,7 @@ function function_bce9fcbe() {
     level endon(#"end_game");
     self endon(#"disconnect", #"death");
     while (true) {
-        var_e8178f0 = self zm_zonemgr::is_player_in_zone([2:"zone_firebase3", 1:"zone_firebase2", 0:"zone_portal_transfer"]);
+        var_e8178f0 = self zm_zonemgr::is_player_in_zone(["zone_portal_transfer", "zone_firebase2", "zone_firebase3"]);
         self clientfield::set_to_player("" + #"hash_69dc133e22a2769f", var_e8178f0);
         self waittill(#"zone_change");
     }

@@ -17,14 +17,14 @@
 // Checksum 0xbb386636, Offset: 0xf0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"healthoverlay", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"healthoverlay", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace healthoverlay/healthoverlay
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb48e2840, Offset: 0x138
 // Size: 0x1d4
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&init);
     level.new_health_model = getdvarint(#"new_health_model", 1) > 0;
     level.var_a7985066 = getdvarint(#"hash_1b8e30b9cc6b8dbc", 50);
@@ -270,7 +270,7 @@ function private function_df99db2() {
 // Params 2, eflags: 0x6 linked
 // Checksum 0xe924fb9b, Offset: 0xae8
 // Size: 0xa8
-function private function_f09367a0(var_dc77251f, regen_delay) {
+function private should_heal(var_dc77251f, regen_delay) {
     if (is_true(self.disable_health_regen_delay)) {
         var_dc77251f.var_ba47a7a3 = 1;
     }
@@ -298,8 +298,8 @@ function private function_53964fa3(var_bc840360, var_dc77251f) {
     if (regen_rate <= 0) {
         return 0;
     }
-    var_855cc818 = self.heal.var_855cc818;
-    if (!isdefined(var_855cc818) || var_855cc818 <= 0) {
+    heal_amount = self.heal.heal_amount;
+    if (!isdefined(heal_amount) || heal_amount <= 0) {
         return 0;
     }
     if (!isdefined(var_dc77251f.time_now)) {
@@ -308,11 +308,11 @@ function private function_53964fa3(var_bc840360, var_dc77251f) {
     if (!isdefined(self.heal.var_fa57541f)) {
         self.heal.var_fa57541f = self.health;
     }
-    var_c59b0d1e = var_855cc818 / regen_rate;
-    var_1e6952fb = float(var_dc77251f.time_now - (isdefined(self.heal.var_f37a08a8) ? self.heal.var_f37a08a8 : var_dc77251f.time_now)) / 1000 / var_c59b0d1e;
+    var_c59b0d1e = heal_amount / regen_rate;
+    nt = float(var_dc77251f.time_now - (isdefined(self.heal.var_f37a08a8) ? self.heal.var_f37a08a8 : var_dc77251f.time_now)) / 1000 / var_c59b0d1e;
     exp = isdefined(self.heal.var_4e6c244d) ? self.heal.var_4e6c244d : 1;
-    if (var_1e6952fb != 1) {
-        var_6f934ab = self.heal.var_fa57541f + var_bc840360 * 1 / (1 + pow(var_1e6952fb / (1 - var_1e6952fb), exp * -1));
+    if (nt != 1) {
+        var_6f934ab = self.heal.var_fa57541f + var_bc840360 * 1 / (1 + pow(nt / (1 - nt), exp * -1));
     } else {
         var_6f934ab = self.heal.var_fa57541f + var_bc840360;
     }
@@ -381,7 +381,7 @@ function private heal(var_dc77251f) {
             regen_delay = int(regen_delay / getdvarfloat(#"perk_healthregenmultiplier", 0));
         }
     }
-    if (!function_f09367a0(var_dc77251f, regen_delay)) {
+    if (!should_heal(var_dc77251f, regen_delay)) {
         return;
     }
     if (var_dc77251f.time_now - var_dc77251f.var_7cb44c56 > regen_delay) {
@@ -439,7 +439,7 @@ function private heal(var_dc77251f) {
 // Size: 0x9e
 function private check_max_health(var_dc77251f) {
     player = self;
-    var_66cb03ad = player.var_66cb03ad < 0 ? player.var_66cb03ad : player.maxhealth;
+    var_66cb03ad = player.var_66cb03ad < 0 ? player.maxhealth : player.var_66cb03ad;
     if (player.health >= var_66cb03ad) {
         if (isdefined(self.atbrinkofdeath)) {
             self notify(#"challenge_survived_from_death");
@@ -479,7 +479,7 @@ function player_health_regen() {
     player = self;
     player.var_4d9b2bc3 = 1;
     player.breathingstoptime = -10000;
-    player.var_dc77251f = {#var_d1e06a5f:gettime(), #var_7cb44c56:0, #old_health:player.health, #var_dae4d7ea:0, #var_215539de:0, #var_e65dca8d:0, #var_ec8863bf:0, #ratio:0, #time_elapsed:0, #time_now:0, #var_ba47a7a3:0};
+    player.var_dc77251f = {#var_ba47a7a3:0, #time_now:0, #time_elapsed:0, #ratio:0, #var_ec8863bf:0, #var_e65dca8d:0, #var_215539de:0, #var_dae4d7ea:0, #old_health:player.health, #var_7cb44c56:0, #var_d1e06a5f:gettime()};
     player function_df115fb1();
 }
 

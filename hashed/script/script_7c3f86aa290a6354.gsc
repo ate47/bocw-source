@@ -30,7 +30,7 @@ function __init__() {
     clientfield::register("scriptmover", "" + #"hash_1f232116f775fa91", 1, 1, "counter");
     clientfield::register("scriptmover", "" + #"hash_4719ef7fda616f3a", 1, 1, "counter");
     clientfield::register_clientuimodel("hudItems.reinforcing", 1, 1, "int", 0);
-    level thread function_d186cb81();
+    level thread init_doors();
     level thread function_e5d01ba1();
     level.var_dd9a04c9 = 0;
     callback::on_player_killed(&on_player_killed);
@@ -56,7 +56,7 @@ function function_3dfeef3b(var_da2c0964 = 0) {
 // Params 0, eflags: 0x0
 // Checksum 0x89f077ea, Offset: 0x590
 // Size: 0x400
-function function_d186cb81() {
+function init_doors() {
     var_51eefac8 = array("p9_sr_barricade_01_window_01", "p9_sr_barricade_01_window_01", "p9_sr_barricade_01_window_01", "p9_sr_barricade_01_window_01_dmg_a", "p9_sr_barricade_01_window_01_dmg_a", "p9_sr_barricade_01_window_01_dmg_a", "p9_sr_barricade_01_window_01_dmg_b", "p9_sr_barricade_01_window_01_dmg_b", "p9_sr_barricade_01_window_01_dmg_b");
     var_57652081 = struct::get_array("survival_door");
     foreach (var_2b02295f in var_57652081) {
@@ -83,7 +83,7 @@ function function_d186cb81() {
         var_56d14168.var_1c553fa4 = 1;
         var_56d14168.damage_level = 0;
         var_56d14168.var_27a45076 = 0;
-        var_56d14168.var_9420d4b4 = 0;
+        var_56d14168.reinforced = 0;
         var_2b02295f.trigger = use_trigger;
         var_2b02295f.door = var_56d14168;
         use_trigger.parent_struct = var_2b02295f;
@@ -121,7 +121,7 @@ function function_6a3e8a89() {
                 var_b9fbcc94 = 0;
             }
             if (isdefined(n_resource) && n_resource >= var_b9fbcc94 && elapsed_time > 0.1) {
-                if (!isdefined(door) || isdefined(door.damage_level) && door.damage_level > 0 || !is_true(door.var_9420d4b4)) {
+                if (!isdefined(door) || isdefined(door.damage_level) && door.damage_level > 0 || !is_true(door.reinforced)) {
                     player clientfield::set_player_uimodel("hudItems.dynentUseHoldProgress", progress);
                     player function_3dfeef3b(1);
                     if (isdefined(self.parent_struct.trigger)) {
@@ -156,12 +156,12 @@ function function_6a3e8a89() {
             continue;
         }
         if (self.parent_struct.door.var_27a45076 === -1 || self.parent_struct.door.var_27a45076 === 1) {
-            if (!is_true(self.parent_struct.door.var_9420d4b4)) {
+            if (!is_true(self.parent_struct.door.reinforced)) {
                 self.parent_struct.trigger sethintstring(#"hash_3197c6dc91249ca2");
             }
             continue;
         }
-        if (!is_true(self.parent_struct.door.var_9420d4b4)) {
+        if (!is_true(self.parent_struct.door.reinforced)) {
             self.parent_struct.trigger sethintstring(#"hash_e0e56e669b6a886");
         }
     }
@@ -175,20 +175,20 @@ function private door_think(eventstruct) {
     player = eventstruct.activator;
     parent_struct = self.parent_struct;
     door = self.parent_struct.door;
-    if (isdefined(door) && is_true(door.var_9420d4b4)) {
+    if (isdefined(door) && is_true(door.reinforced)) {
         self thread function_48a16d8d(player, &door_think);
         return;
     }
     if (isdefined(door)) {
-        var_cbd0719e = door.angles;
-        var_f6f828b2 = vectorscale((0, 1, 0), 90) + var_cbd0719e;
-        var_bc7389e4 = vectorscale((0, -1, 0), 90) + var_cbd0719e;
+        current_angles = door.angles;
+        var_f6f828b2 = vectorscale((0, 1, 0), 90) + current_angles;
+        var_bc7389e4 = vectorscale((0, -1, 0), 90) + current_angles;
         var_1be3aa53 = vectordot(player.origin - door.origin, anglestoforward(door.angles)) > 0;
         if (door.var_27a45076 == 0 && var_1be3aa53) {
             door rotateto(var_f6f828b2, 0.5);
             door.var_27a45076 = 1;
             function_be2c24a3(parent_struct.target, 1);
-            if (!is_true(door.var_9420d4b4)) {
+            if (!is_true(door.reinforced)) {
                 self sethintstring(#"hash_3197c6dc91249ca2");
             } else {
                 self sethintstring(#"hash_3df5eb7de3fa5e80");
@@ -197,7 +197,7 @@ function private door_think(eventstruct) {
             door rotateto(var_bc7389e4, 0.5);
             door.var_27a45076 = -1;
             function_be2c24a3(parent_struct.target, 1);
-            if (!is_true(door.var_9420d4b4)) {
+            if (!is_true(door.reinforced)) {
                 self sethintstring(#"hash_3197c6dc91249ca2");
             } else {
                 self sethintstring(#"hash_3df5eb7de3fa5e80");
@@ -206,14 +206,14 @@ function private door_think(eventstruct) {
             door rotateto(var_bc7389e4, 0.5);
             door.var_27a45076 = 0;
             function_be2c24a3(parent_struct.target, 0);
-            if (!is_true(door.var_9420d4b4)) {
+            if (!is_true(door.reinforced)) {
                 self sethintstring(#"hash_e0e56e669b6a886");
             }
         } else if (door.var_27a45076 == -1) {
             door rotateto(var_f6f828b2, 0.5);
             door.var_27a45076 = 0;
             function_be2c24a3(parent_struct.target, 0);
-            if (!is_true(door.var_9420d4b4)) {
+            if (!is_true(door.reinforced)) {
                 self sethintstring(#"hash_e0e56e669b6a886");
             }
         }
@@ -269,13 +269,13 @@ function function_ae47792b(eventstruct) {
         self.parent_struct.fx_org.angles = self.angles;
         waitframe(1);
     }
-    if (self.damage_level > 8 || !self.var_9420d4b4 && self.damage_level > 4) {
+    if (self.damage_level > 8 || !self.reinforced && self.damage_level > 4) {
         self.parent_struct.fx_org clientfield::increment("" + #"hash_6d9aa5215e695ca2");
         if (level flag::get("obj_defend_start") && !level flag::get("obj_defend_complete") && level.var_dd9a04c9 < 3) {
             level thread globallogic_audio::leader_dialog("objectiveDefendBarrierBroken");
             level.var_dd9a04c9++;
         }
-        if (!self.var_9420d4b4) {
+        if (!self.reinforced) {
             self playsound(#"hash_75beb5fd873ee815");
         } else {
             self playsound(#"hash_15d3a67feb395a2a");
@@ -286,7 +286,7 @@ function function_ae47792b(eventstruct) {
         self delete();
         return;
     }
-    if (self.var_9420d4b4) {
+    if (self.reinforced) {
         if (self.model != parent_struct.var_a7417bea[self.damage_level]) {
             self.parent_struct.fx_org clientfield::increment("" + #"hash_322ed89801938bb9");
         }
@@ -327,7 +327,7 @@ function function_55859752() {
         self.door = door;
         door.parent_struct = self;
         function_be2c24a3(self.target, 0);
-    } else if (door.var_9420d4b4 && door.damage_level <= 0 || door.var_27a45076 != 0) {
+    } else if (door.reinforced && door.damage_level <= 0 || door.var_27a45076 != 0) {
         return false;
     }
     door.damage_level = 0;
@@ -335,7 +335,7 @@ function function_55859752() {
     door setmodel(self.var_a7417bea[door.damage_level]);
     door.origin = self.s_boards.origin;
     door setscale(self.s_boards.modelscale);
-    door.var_9420d4b4 = 1;
+    door.reinforced = 1;
     namespace_85745671::function_1ede0cd3(self.target, self.door);
     door playsound(#"hash_4ef96dfa0f645331");
     return true;
@@ -547,10 +547,10 @@ function private function_be2c24a3(var_6de4a710, value) {
         var_e86e150a = getnode(var_6de4a710, "targetname");
     }
     if (isdefined(var_e86e150a)) {
-        var_c88f4455 = namespace_85745671::function_5a4a952a(var_e86e150a);
+        other_node = namespace_85745671::function_5a4a952a(var_e86e150a);
         function_dc0a8e61(var_e86e150a, value);
-        if (isdefined(var_c88f4455)) {
-            function_dc0a8e61(var_c88f4455, value);
+        if (isdefined(other_node)) {
+            function_dc0a8e61(other_node, value);
         }
     }
 }

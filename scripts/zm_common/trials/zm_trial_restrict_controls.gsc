@@ -17,14 +17,14 @@
 // Checksum 0x9cd6a8a7, Offset: 0x118
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_restrict_controls", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_restrict_controls", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_restrict_controls/zm_trial_restrict_controls
 // Params 0, eflags: 0x4
 // Checksum 0xd7ad8933, Offset: 0x160
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

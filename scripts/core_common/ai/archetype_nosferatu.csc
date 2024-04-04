@@ -9,7 +9,7 @@
 // Checksum 0x3f43c7af, Offset: 0xe0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"nosferatu", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"nosferatu", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace archetype_nosferatu/archetype_nosferatu
@@ -24,7 +24,7 @@ function autoexec precache() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x814a8cd3, Offset: 0x138
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "nfrtu_leap_melee_rumb", 8000, 1, "counter", &function_5b1f1713, 0, 0);
 }
 
@@ -35,7 +35,7 @@ function private function_70a657d8() {
 function function_5b1f1713(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     e_player = function_5c10bd79(bwasdemojump);
     n_dist = distancesquared(self.origin, e_player.origin);
-    var_56cb57e3 = function_a3f6cdac(200);
+    var_56cb57e3 = sqr(200);
     n_scale = (var_56cb57e3 - n_dist) / var_56cb57e3;
     n_scale = n_scale * 0.75;
     if (n_scale > 0.01) {

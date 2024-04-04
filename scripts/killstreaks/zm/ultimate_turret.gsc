@@ -20,14 +20,14 @@
 // Checksum 0x6e9c99ef, Offset: 0x118
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"ultimate_turret", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"ultimate_turret", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace ultimate_turret/ultimate_turret
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdadf6f7a, Offset: 0x168
 // Size: 0x16c
-function private function_70a657d8() {
+function private preinit() {
     level.var_729a0937 = &function_4b645b3f;
     level.var_bbc796bf = &turret_destroyed;
     level.var_a3ec798a = &turretscanning;
@@ -107,11 +107,11 @@ function turretscanning() {
     veh playsound(#"mpl_turret_startup");
     veh playloopsound(#"hash_69240c6db92da5bf");
     s_bundle = killstreaks::get_script_bundle("ultimate_turret");
-    veh.maxsightdistsqrd = function_a3f6cdac(isdefined(s_bundle.var_2aeadfa0) ? s_bundle.var_2aeadfa0 : 3500);
+    veh.maxsightdistsqrd = sqr(isdefined(s_bundle.var_2aeadfa0) ? s_bundle.var_2aeadfa0 : 3500);
     veh thread function_9d831b2f();
     while (true) {
         /#
-            veh.maxsightdistsqrd = function_a3f6cdac(isdefined(s_bundle.var_2aeadfa0) ? s_bundle.var_2aeadfa0 : 3500);
+            veh.maxsightdistsqrd = sqr(isdefined(s_bundle.var_2aeadfa0) ? s_bundle.var_2aeadfa0 : 3500);
         #/
         if (self.isjammed === 1 || self.isstunned === 1) {
             waitframe(1);

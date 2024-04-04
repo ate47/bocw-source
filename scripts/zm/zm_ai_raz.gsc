@@ -23,14 +23,14 @@
 // Checksum 0x50b3294f, Offset: 0x158
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_a3abc3650bdd35", &function_70a657d8, undefined, &function_4df027f2, undefined);
+    system::register(#"hash_a3abc3650bdd35", &preinit, undefined, &function_4df027f2, undefined);
 }
 
 // Namespace namespace_ac4eb28f/namespace_ac4eb28f
 // Params 0, eflags: 0x4
 // Checksum 0xb03ee39a, Offset: 0x1a8
 // Size: 0xdc
-function private function_70a657d8() {
+function private preinit() {
     spawner::add_archetype_spawn_function(#"raz", &function_3113cf8f);
     zm_round_spawning::register_archetype(#"raz", &function_d4f11e3c, &round_spawn, undefined, 25);
     zm_round_spawning::function_306ce518(#"raz", &function_f1355240);
@@ -51,7 +51,7 @@ function function_4df027f2() {
 // Size: 0x32
 function function_3113cf8f() {
     self.closest_player_override = &zm_utility::function_3d70ba7a;
-    self.var_3533970d = &namespace_e292b080::function_e8983bf3;
+    self.melee_distance_check = &namespace_e292b080::function_e8983bf3;
 }
 
 // Namespace namespace_ac4eb28f/namespace_ac4eb28f

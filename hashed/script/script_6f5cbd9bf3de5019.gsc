@@ -17,14 +17,14 @@
 // Checksum 0x57763388, Offset: 0x330
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_2838d085012cb7f", &function_70a657d8, undefined, undefined, #"player_vehicle");
+    system::register(#"hash_2838d085012cb7f", &preinit, undefined, undefined, #"player_vehicle");
 }
 
 // Namespace namespace_f36ad2eb/namespace_f36ad2eb
 // Params 0, eflags: 0x6 linked
 // Checksum 0x218d9fc5, Offset: 0x380
 // Size: 0x74
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_main_callback("player_large_helicopter_armada", &function_38ae4287);
     clientfield::register("scriptmover", "armada_chopper_deathfx", 1, 1, "int");
     /#

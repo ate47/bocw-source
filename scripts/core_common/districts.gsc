@@ -14,14 +14,14 @@
 // Checksum 0x29b09891, Offset: 0xf8
 // Size: 0x34
 function private autoexec __init__system__() {
-    system::register("cp_districts_system", &function_70a657d8, undefined, undefined, undefined);
+    system::register("cp_districts_system", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace districts/districts
 // Params 0, eflags: 0x6 linked
 // Checksum 0x2ff4a8b, Offset: 0x138
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("world", "district_bitfield", 1, 20, "int");
     namespace_aff1f617::function_41e5864f();
 }

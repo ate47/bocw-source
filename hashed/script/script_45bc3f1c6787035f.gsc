@@ -32,14 +32,14 @@ function on_player_connect() {
 // Checksum 0x8c4c5157, Offset: 0x158
 // Size: 0xb4
 function on_item_pickup(s_params) {
-    var_a6762160 = s_params.item.var_a6762160;
-    if (var_a6762160.itemtype === #"survival_essence") {
+    itementry = s_params.item.itementry;
+    if (itementry.itemtype === #"survival_essence") {
         if (isplayer(self)) {
             e_player = self;
         } else {
             e_player = s_params.player;
         }
-        var_b25755cf = 50 * var_a6762160.amount;
+        var_b25755cf = 50 * itementry.amount;
         e_player thread function_d9365a20(var_b25755cf, 0);
     }
 }

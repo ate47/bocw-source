@@ -5,13 +5,13 @@
             "description": "#hash_3800b92ff4e8ebfb",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_6e4cfa49f1645aa0",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "description": "#hash_2c79ea24ab1a2ba",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_2c79ea24ab1a2ba",
-            "var_a4f2dd9e": "#none",
+            "actionutility": "#none",
             "var_e1c44b36": "#hash_1b282d4928263311"
         },
         {
@@ -19,7 +19,7 @@
             "description": "#hash_2c79ea24ab1a2ba",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_12f3b87297f26fa7",
-            "var_a4f2dd9e": "#none",
+            "actionutility": "#none",
             "var_e1c44b36": "#hash_5fc22d40016c6911"
         }
     ],

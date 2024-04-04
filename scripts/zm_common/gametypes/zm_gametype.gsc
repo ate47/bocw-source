@@ -29,7 +29,7 @@
 #using scripts\core_common\lui_shared.gsc;
 #using scripts\core_common\laststand_shared.gsc;
 #using scripts\core_common\hud_shared.gsc;
-#using script_32c8b5b0eb2854f3;
+#using scripts\core_common\gamestate_util.gsc;
 #using scripts\core_common\gameobjects_shared.gsc;
 #using scripts\core_common\flag_shared.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
@@ -44,14 +44,14 @@
 // Checksum 0x8c00b81e, Offset: 0x5f8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_gametype", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_gametype", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_gametype/zm_gametype
 // Params 0, eflags: 0x6 linked
 // Checksum 0x8c241de9, Offset: 0x640
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     callback::on_connecting(&menu_onplayerconnect);
 }
 
@@ -753,7 +753,7 @@ function onplayerconnect_check_for_hotjoin() {
         if (level flag::get("start_zombie_round_logic")) {
             music::setmusicstate("none", self);
         }
-        if (isdefined(level.var_7d45d0d4.activeobjective)) {
+        if (isdefined(level.contentmanager.activeobjective)) {
             self thread player_hotjoin();
         }
         return;

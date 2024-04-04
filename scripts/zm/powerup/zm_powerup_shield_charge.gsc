@@ -12,14 +12,14 @@
 // Checksum 0x8b350de1, Offset: 0xd0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_powerup_shield_charge", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_powerup_shield_charge", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_powerup_shield_charge/zm_powerup_shield_charge
 // Params 0, eflags: 0x4
 // Checksum 0xc2a1e7ef, Offset: 0x118
 // Size: 0xfc
-function private function_70a657d8() {
+function private preinit() {
     zm_powerups::register_powerup("shield_charge", &grab_shield_charge);
     if (zm_powerups::function_cc33adc8()) {
         zm_powerups::add_zombie_powerup("shield_charge", "p8_wz_armor_scrap", #"hash_3f5e4aa38f9aeba5", &func_drop_when_players_own, 1, 0, 0);
@@ -61,7 +61,7 @@ function shield_charge_powerup(*item, player) {
     var_2cacdde7 = 50;
     inventoryitem = player.inventory.items[6];
     if (isdefined(inventoryitem)) {
-        var_2cacdde7 = isdefined(inventoryitem.var_a6762160.var_a3aa1ca2) ? inventoryitem.var_a6762160.var_a3aa1ca2 : 50;
+        var_2cacdde7 = isdefined(inventoryitem.itementry.var_a3aa1ca2) ? inventoryitem.itementry.var_a3aa1ca2 : 50;
         if (var_2cacdde7 == 0) {
             var_2cacdde7 = 50;
         }

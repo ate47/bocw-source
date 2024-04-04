@@ -10,14 +10,14 @@
 // Checksum 0xe74e7474, Offset: 0xc8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_ai_utility", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_ai_utility", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_ai_utility/zm_ai_utility
 // Params 0, eflags: 0x6 linked
 // Checksum 0x4a7e8393, Offset: 0x110
 // Size: 0x6c
-function private function_70a657d8() {
+function private preinit() {
     ai::add_ai_spawn_function(&function_f3a051c6);
     clientfield::register("actor", "actor_enable_on_radar", 1, 1, "int", &function_4a09edeb, 0, 0);
 }

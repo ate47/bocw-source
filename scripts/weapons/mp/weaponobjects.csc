@@ -14,14 +14,14 @@
 // Checksum 0xe7ff0b14, Offset: 0x140
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"weaponobjects", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"weaponobjects", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace weaponobjects/weaponobjects
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdfdd32c0, Offset: 0x188
 // Size: 0x84
-function private function_70a657d8() {
+function private preinit() {
     init_shared(sessionmodeiscampaigngame() ? #"rob_sonar_set_friendlyequip_cp" : #"rob_sonar_set_friendlyequip_mp", #"rob_sonar_set_enemyequip");
     level setupscriptmovercompassicons();
     level setupmissilecompassicons();

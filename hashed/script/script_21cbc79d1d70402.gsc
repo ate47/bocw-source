@@ -11,7 +11,7 @@
 // Params 2, eflags: 0x0
 // Checksum 0xf6c5bdf6, Offset: 0x208
 // Size: 0x14
-function function_aec6058a(*ent, *vol) {
+function scalevolume(*ent, *vol) {
     
 }
 
@@ -28,16 +28,16 @@ function main() {
     self endon(#"death");
     self endon(#"hash_6de499574267aed9");
     self.stealth = spawnstruct();
-    self.stealth.var_103386e8 = self namespace_979752dc::function_3c827c8f("stealth_spotted");
+    self.stealth.var_103386e8 = self namespace_979752dc::group_flag_init("stealth_spotted");
     self flag::init("stealth_enabled");
     self flag::set("stealth_enabled");
     self flag::init("stealth_use_real_lighting");
     self flag::set("stealth_use_real_lighting");
-    self.stealth.var_2055753 = [];
-    self namespace_979752dc::function_cc94df6e();
-    self thread function_a5a4f7fc();
+    self.stealth.spotted_list = [];
+    self namespace_979752dc::group_add();
+    self thread maxvisibility_thread();
     if (sessionmodeiscampaigngame()) {
-        self thread function_985c93ef();
+        self thread stealthhints_thread();
     }
     /#
         self childthread debug_player();
@@ -48,12 +48,12 @@ function main() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x516c00af, Offset: 0x3a8
 // Size: 0x6c
-function function_a5a4f7fc() {
+function maxvisibility_thread() {
     self endon(#"death");
     self endon(#"disconnect");
     while (true) {
-        if (self function_96ce44c4()) {
-            self.maxvisibledist = self function_5fee4f6();
+        if (self maxvisibility_shouldupdate()) {
+            self.maxvisibledist = self get_detect_range();
         }
         waitframe(1);
     }
@@ -63,8 +63,8 @@ function function_a5a4f7fc() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0xaf03cc80, Offset: 0x420
 // Size: 0x8a
-function function_96ce44c4() {
-    if (is_true(self.var_9ee586cf)) {
+function maxvisibility_shouldupdate() {
+    if (is_true(self.maxvisibiltyupdate_disabled)) {
         return false;
     }
     if (!self flag::get("stealth_enabled")) {
@@ -73,7 +73,7 @@ function function_96ce44c4() {
     if (self flag::get("stealth_in_shadow")) {
         return true;
     }
-    if (isdefined(self.var_df48dfb) && gettime() < self.var_df48dfb) {
+    if (isdefined(self.lightmeterdelay) && gettime() < self.lightmeterdelay) {
         return false;
     }
     return true;
@@ -83,17 +83,17 @@ function function_96ce44c4() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x9fe9ffbd, Offset: 0x4b8
 // Size: 0x18a
-function function_5fee4f6() {
+function get_detect_range() {
     stance = self getstance();
-    if (self namespace_979752dc::function_48fc612d()) {
-        var_334eb858 = "spotted";
+    if (self namespace_979752dc::group_spotted_flag()) {
+        detection = "spotted";
     } else {
-        var_334eb858 = "hidden";
+        detection = "hidden";
     }
-    range = level.stealth.var_33b5cf8f.range[var_334eb858][stance];
+    range = level.stealth.detect.range[detection][stance];
     if (self flag::get("stealth_in_shadow")) {
-        range = range * level.stealth.var_33b5cf8f.range[var_334eb858][#"shadow"];
-        range = max(range, level.stealth.var_33b5cf8f.var_67773281[var_334eb858][stance]);
+        range = range * level.stealth.detect.range[detection][#"shadow"];
+        range = max(range, level.stealth.detect.minrangedarkness[detection][stance]);
     }
     if (isdefined(self.stealth.var_f6c2537d) && self.stealth.var_f6c2537d.size > 0) {
         range = max(range, isdefined(self.var_1c936867) ? self.var_1c936867 : 850);
@@ -105,7 +105,7 @@ function function_5fee4f6() {
 // Params 1, eflags: 0x0
 // Checksum 0x4637e280, Offset: 0x650
 // Size: 0x688
-function function_74d32108(enabled = 1) {
+function combatstate_thread(enabled = 1) {
     if (!enabled) {
         self notify(#"hash_4330b0368e7f1373");
         self.stealth.combatstate = undefined;
@@ -117,12 +117,12 @@ function function_74d32108(enabled = 1) {
     self endon(#"hash_6de499574267aed9");
     self endon(#"hash_4330b0368e7f1373");
     self endon(#"disconnect");
-    self childthread function_815ac3de();
-    self childthread function_56229e27();
+    self childthread playerattackedmonitor();
+    self childthread combatstate_updatethread();
     self.stealth.combatstate = spawnstruct();
     self.stealth.combatstate.name = "stealth";
     self.stealth.combatstate.type = "idle";
-    self.stealth.combatstate.var_a0445fac = [];
+    self.stealth.combatstate.updatefuncs = [];
     var_e8c14f37 = [];
     var_41b7c5cb = [];
     while (true) {
@@ -131,10 +131,10 @@ function function_74d32108(enabled = 1) {
         function_1eaaceab(var_e8c14f37);
         arrayremovevalue(var_41b7c5cb, undefined);
         function_1eaaceab(var_41b7c5cb);
-        var_2034f2e1 = [];
-        var_a1a15b6c = [];
+        combatenemies = [];
+        huntenemies = [];
         var_a01740d6 = 0;
-        if (isdefined(self.var_19962bb4) && !util::function_33e5d0ac(self.var_19962bb4, 10)) {
+        if (isdefined(self.lastattackedtime) && !util::time_has_passed(self.lastattackedtime, 10)) {
             var_a01740d6 = 1;
         }
         foreach (enemy in getactorteamarray("axis")) {
@@ -149,15 +149,15 @@ function function_74d32108(enabled = 1) {
                     continue;
                 }
             }
-            if (!isdefined(enemy.var_1e36e368) || enemy [[ enemy.var_1e36e368 ]]()) {
-                if (isdefined(self.stealth.combatstate.var_df83ea38)) {
-                    dist = self.stealth.combatstate.var_df83ea38;
-                    if (distancesquared(self.origin, enemy.origin) > function_a3f6cdac(dist)) {
-                        var_a1a15b6c[var_a1a15b6c.size] = enemy;
+            if (!isdefined(enemy.fnisinstealthcombat) || enemy [[ enemy.fnisinstealthcombat ]]()) {
+                if (isdefined(self.stealth.combatstate.maxcombatdist)) {
+                    dist = self.stealth.combatstate.maxcombatdist;
+                    if (distancesquared(self.origin, enemy.origin) > sqr(dist)) {
+                        huntenemies[huntenemies.size] = enemy;
                         continue;
                     }
                 }
-                var_2034f2e1[var_2034f2e1.size] = enemy;
+                combatenemies[combatenemies.size] = enemy;
                 if (var_a01740d6) {
                     continue;
                 }
@@ -169,44 +169,44 @@ function function_74d32108(enabled = 1) {
                 }
                 continue;
             }
-            if (enemy [[ enemy.var_678afc31 ]]()) {
-                var_a1a15b6c[var_a1a15b6c.size] = enemy;
+            if (enemy [[ enemy.fnisinstealthhunt ]]()) {
+                huntenemies[huntenemies.size] = enemy;
             }
         }
         lastname = self.stealth.combatstate.name;
-        var_832d48d3 = self.stealth.combatstate.type;
+        lasttype = self.stealth.combatstate.type;
         name = lastname;
         type = undefined;
         if (lastname == "combat") {
-            if (var_2034f2e1.size == 0) {
+            if (combatenemies.size == 0) {
                 name = "stealth";
-                if (arrayintersect(var_e8c14f37, var_a1a15b6c).size > 0) {
+                if (arrayintersect(var_e8c14f37, huntenemies).size > 0) {
                     type = "hunt";
-                } else if (var_a1a15b6c.size == 0) {
+                } else if (huntenemies.size == 0) {
                     type = "all_clear";
                 } else {
                     type = "combat_clear";
                 }
-            } else if (var_832d48d3 === "unaware" && var_a01740d6) {
+            } else if (lasttype === "unaware" && var_a01740d6) {
                 type = "aware";
             }
-        } else if (var_2034f2e1.size > 0) {
+        } else if (combatenemies.size > 0) {
             name = "combat";
             if (var_a01740d6) {
                 type = "aware";
             } else {
                 type = "unaware";
             }
-        } else if (var_832d48d3 === "hunt" && var_a1a15b6c.size == 0) {
+        } else if (lasttype === "hunt" && huntenemies.size == 0) {
             type = "all_clear";
         }
-        if (name != lastname || isdefined(type) && type !== var_832d48d3) {
+        if (name != lastname || isdefined(type) && type !== lasttype) {
             self.stealth.combatstate.name = name;
             self.stealth.combatstate.type = type;
-            self notify(#"hash_ec8c1a398bebc57", {#type:type, #name:name});
+            self notify(#"hash_ec8c1a398bebc57", {#name:name, #type:type});
         }
-        var_e8c14f37 = var_2034f2e1;
-        var_41b7c5cb = var_a1a15b6c;
+        var_e8c14f37 = combatenemies;
+        var_41b7c5cb = huntenemies;
         waitframe(1);
     }
 }
@@ -215,11 +215,11 @@ function function_74d32108(enabled = 1) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x44863108, Offset: 0xce0
 // Size: 0xd6
-function function_56229e27() {
+function combatstate_updatethread() {
     while (true) {
         result = undefined;
         result = self waittill(#"hash_ec8c1a398bebc57");
-        foreach (func in self.stealth.combatstate.var_a0445fac) {
+        foreach (func in self.stealth.combatstate.updatefuncs) {
             self thread [[ func ]](result.name, result.type);
         }
     }
@@ -229,7 +229,7 @@ function function_56229e27() {
 // Params 2, eflags: 0x0
 // Checksum 0x1f23a016, Offset: 0xdc0
 // Size: 0x110
-function function_7db1ec36(key, func) {
+function combatstate_addupdatefunc(key, func) {
     /#
         assert(isplayer(self));
     #/
@@ -243,16 +243,16 @@ function function_7db1ec36(key, func) {
         assert(isdefined(key), "<unknown string>");
     #/
     /#
-        assert(!isdefined(self.stealth.combatstate.var_a0445fac[key]), "<unknown string>" + key + "<unknown string>");
+        assert(!isdefined(self.stealth.combatstate.updatefuncs[key]), "<unknown string>" + key + "<unknown string>");
     #/
-    self.stealth.combatstate.var_a0445fac[key] = func;
+    self.stealth.combatstate.updatefuncs[key] = func;
 }
 
 // Namespace namespace_7a865494/player
 // Params 1, eflags: 0x0
 // Checksum 0x79252853, Offset: 0xed8
 // Size: 0x100
-function function_1d29945c(key) {
+function combatstate_removeupdatefunc(key) {
     /#
         assert(isplayer(self));
     #/
@@ -266,19 +266,19 @@ function function_1d29945c(key) {
         assert(isdefined(key), "<unknown string>");
     #/
     /#
-        assert(isdefined(self.stealth.combatstate.var_a0445fac[key]), "<unknown string>" + key + "<unknown string>");
+        assert(isdefined(self.stealth.combatstate.updatefuncs[key]), "<unknown string>" + key + "<unknown string>");
     #/
-    self.stealth.combatstate.var_a0445fac[key] = undefined;
+    self.stealth.combatstate.updatefuncs[key] = undefined;
 }
 
 // Namespace namespace_7a865494/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0x3c38066c, Offset: 0xfe0
 // Size: 0x42
-function function_815ac3de() {
+function playerattackedmonitor() {
     while (true) {
         level waittill(#"hash_58d740afedebc182", #"hash_58419cfa256da59b");
-        self.var_19962bb4 = gettime();
+        self.lastattackedtime = gettime();
     }
 }
 
@@ -286,32 +286,32 @@ function function_815ac3de() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0xeaeb71ba, Offset: 0x1030
 // Size: 0x154
-function function_985c93ef() {
+function stealthhints_thread() {
     self endon(#"hash_6de499574267aed9");
-    self.stealth.var_92b57f62 = spawnstruct();
-    self.stealth.var_92b57f62.var_9d72f2de = undefined;
-    self.stealth.var_92b57f62.var_74def2f9 = [];
-    self.stealth.var_92b57f62.var_d8c2c54d[#"footstep_sprint"] = 6;
-    self.stealth.var_92b57f62.var_d8c2c54d[#"gunshot"] = 8;
-    self.stealth.var_92b57f62.var_d8c2c54d[#"proximity_speed"] = 16;
-    self.stealth.var_92b57f62.var_d8c2c54d[#"sight_standing"] = 19;
-    self childthread function_171246a9();
-    self childthread function_5b410730();
-    self childthread function_da7489b6();
+    self.stealth.hints = spawnstruct();
+    self.stealth.hints.causeofdeath = undefined;
+    self.stealth.hints.investigators = [];
+    self.stealth.hints.deathhints[#"footstep_sprint"] = 6;
+    self.stealth.hints.deathhints[#"gunshot"] = 8;
+    self.stealth.hints.deathhints[#"proximity_speed"] = 16;
+    self.stealth.hints.deathhints[#"sight_standing"] = 19;
+    self childthread stealthhints_eventmonitor();
+    self childthread stealthhints_deathmonitor();
+    self childthread stealthhints_combatmonitor();
 }
 
 // Namespace namespace_7a865494/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0x52293d8, Offset: 0x1190
 // Size: 0x410
-function function_171246a9() {
+function stealthhints_eventmonitor() {
     self endon(#"death");
     while (true) {
         self flag::wait_till("stealth_enabled");
-        var_7f729179 = undefined;
-        var_7f729179 = level waittill(#"hash_733d7b56ac978e53");
-        event = var_7f729179.event;
-        receiver = var_7f729179.receiver;
+        wait_result = undefined;
+        wait_result = level waittill(#"hash_733d7b56ac978e53");
+        event = wait_result.event;
+        receiver = wait_result.receiver;
         if (!isalive(receiver)) {
             continue;
         }
@@ -319,11 +319,11 @@ function function_171246a9() {
             continue;
         }
         if (!self flag::get("stealth_enabled")) {
-            self.stealth.var_92b57f62.var_9d72f2de = undefined;
-            self.stealth.var_92b57f62.var_74def2f9 = [];
+            self.stealth.hints.causeofdeath = undefined;
+            self.stealth.hints.investigators = [];
             continue;
         }
-        if (namespace_979752dc::function_e26ebe76()) {
+        if (namespace_979752dc::any_groups_in_combat()) {
             if (event.type != "combat") {
                 continue;
             }
@@ -332,7 +332,7 @@ function function_171246a9() {
                 if (guy == receiver) {
                     continue;
                 }
-                if (!isdefined(guy.var_1e36e368) || guy [[ guy.var_1e36e368 ]]()) {
+                if (!isdefined(guy.fnisinstealthcombat) || guy [[ guy.fnisinstealthcombat ]]()) {
                     var_f2013641 = 1;
                     break;
                 }
@@ -341,8 +341,8 @@ function function_171246a9() {
                 continue;
             }
         }
-        eventtype = event.var_dd29a83a;
-        if (eventtype == "gunshot" && !is_true(level.var_e01e8892)) {
+        eventtype = event.typeorig;
+        if (eventtype == "gunshot" && !is_true(level.hassuppressedweapons)) {
             continue;
         }
         if ((eventtype == "sight" || eventtype == "proximity") && self issprinting()) {
@@ -352,13 +352,13 @@ function function_171246a9() {
         } else if (eventtype == "sight" && self getstance() == "stand") {
             eventtype = "sight_standing";
         }
-        if (!isdefined(self.stealth.var_92b57f62.var_d8c2c54d[eventtype])) {
+        if (!isdefined(self.stealth.hints.deathhints[eventtype])) {
             continue;
         }
-        if (array::contains(self.stealth.var_92b57f62.var_74def2f9, receiver)) {
+        if (array::contains(self.stealth.hints.investigators, receiver)) {
             continue;
         }
-        self childthread function_b8244ec0(receiver, eventtype);
+        self childthread stealthhints_aimonitor(receiver, eventtype);
     }
 }
 
@@ -366,22 +366,22 @@ function function_171246a9() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xeec863f4, Offset: 0x15a8
 // Size: 0x216
-function function_b8244ec0(ai, eventtype) {
+function stealthhints_aimonitor(ai, eventtype) {
     self endon(#"combat_started");
     self endon(#"stealth_enabled");
-    self.stealth.var_92b57f62.var_74def2f9[self.stealth.var_92b57f62.var_74def2f9.size] = ai;
-    if (ai [[ ai.var_678afc31 ]]()) {
-        ai util::delay(10, array("combat_started", "stealth_enabled"), &util::function_90dafe5, "stealthHints_timeout");
+    self.stealth.hints.investigators[self.stealth.hints.investigators.size] = ai;
+    if (ai [[ ai.fnisinstealthhunt ]]()) {
+        ai util::delay(10, array("combat_started", "stealth_enabled"), &util::send_notify, "stealthHints_timeout");
         ai waittill(#"stealth_combat", #"death", #"stealthhints_timeout");
-    } else if (ai [[ ai.var_cd774402 ]]()) {
+    } else if (ai [[ ai.fnisinstealthinvestigate ]]()) {
         ai waittill(#"stealth_idle", #"stealth_combat", #"death");
     }
-    arrayremovevalue(self.stealth.var_92b57f62.var_74def2f9, ai);
-    if (!isalive(ai) || isdefined(ai.var_1e36e368) && !ai [[ ai.var_1e36e368 ]]()) {
+    arrayremovevalue(self.stealth.hints.investigators, ai);
+    if (!isalive(ai) || isdefined(ai.fnisinstealthcombat) && !ai [[ ai.fnisinstealthcombat ]]()) {
         return;
     }
-    self.stealth.var_92b57f62.var_9d72f2de = eventtype;
-    self.stealth.var_92b57f62.var_74def2f9 = [];
+    self.stealth.hints.causeofdeath = eventtype;
+    self.stealth.hints.investigators = [];
     self notify(#"combat_started");
 }
 
@@ -389,35 +389,35 @@ function function_b8244ec0(ai, eventtype) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x6f5c4af, Offset: 0x17c8
 // Size: 0xa8
-function function_5b410730() {
+function stealthhints_deathmonitor() {
     self waittill(#"death");
     if (!self flag::get("stealth_enabled")) {
         return;
     }
-    if (isdefined(level.var_cfb03f56)) {
+    if (isdefined(level.custom_death_quote)) {
         return;
     }
-    if (!isdefined(self.stealth.var_92b57f62.var_9d72f2de)) {
+    if (!isdefined(self.stealth.hints.causeofdeath)) {
         return;
     }
-    level.var_cfb03f56 = self.stealth.var_92b57f62.var_d8c2c54d[self.stealth.var_92b57f62.var_9d72f2de];
+    level.custom_death_quote = self.stealth.hints.deathhints[self.stealth.hints.causeofdeath];
 }
 
 // Namespace namespace_7a865494/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0x28f58967, Offset: 0x1878
 // Size: 0x9a
-function function_da7489b6() {
+function stealthhints_combatmonitor() {
     self endon(#"death");
     while (true) {
         self flag::wait_till("stealth_enabled");
-        while (!isdefined(self.stealth.var_92b57f62.var_9d72f2de)) {
+        while (!isdefined(self.stealth.hints.causeofdeath)) {
             waitframe(1);
         }
-        while (namespace_979752dc::function_e26ebe76()) {
+        while (namespace_979752dc::any_groups_in_combat()) {
             waitframe(1);
         }
-        self.stealth.var_92b57f62.var_9d72f2de = undefined;
+        self.stealth.hints.causeofdeath = undefined;
     }
 }
 

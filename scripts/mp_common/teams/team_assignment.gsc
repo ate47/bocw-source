@@ -15,14 +15,14 @@
 // Checksum 0x82a01445, Offset: 0xe0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"team_assignment", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"team_assignment", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace teams/team_assignment
 // Params 0, eflags: 0x6 linked
 // Checksum 0x8ad773a0, Offset: 0x128
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.var_a3e209ba)) {
         level.var_a3e209ba = &function_321f8eb5;
     }
@@ -90,9 +90,9 @@ function function_efe5a681(team) {
     if (!max_players) {
         return true;
     }
-    var_fa810454 = function_ee150fcc(team_players);
+    available_spots = function_ee150fcc(team_players);
     party = self getparty();
-    if (party.var_a15e4438 > var_fa810454) {
+    if (party.var_a15e4438 > available_spots) {
         return false;
     }
     /#
@@ -635,10 +635,10 @@ function private function_5e84fc28(var_68253610) {
 // Checksum 0x58f4a3ce, Offset: 0x2120
 // Size: 0xf6
 function private function_8c162ba0(var_8de04fca, var_68253610) {
-    var_5002c793 = function_5e84fc28(var_68253610);
+    new_team = function_5e84fc28(var_68253610);
     players = function_c65231e2(var_8de04fca);
     foreach (player in players) {
-        player function_dc7eaabd(var_5002c793);
+        player function_dc7eaabd(new_team);
         player squads::function_ff3321ee(var_68253610);
     }
     return players.size;

@@ -25,8 +25,8 @@
 // Size: 0x14c
 function autoexec init() {
     callback::on_spawned(&function_44b1279a);
-    level.var_28a7d418 = [2:"zone_american_sector_left_building", 1:"zone_american_sector_right_building", 0:"zone_american_sector_street"];
-    level.var_57c0b4c1 = [8:"zone_power_substation", 7:"zone_secret_spy_tunnel", 6:"zone_sewers_and_escape_tunnel", 5:"zone_no_mans_land_3", 4:"zone_no_mans_land_2", 3:"zone_no_mans_land_1", 2:"zone_american_sector_left_building", 1:"zone_american_sector_right_building", 0:"zone_american_sector_street"];
+    level.var_28a7d418 = ["zone_american_sector_street", "zone_american_sector_right_building", "zone_american_sector_left_building"];
+    level.var_57c0b4c1 = ["zone_american_sector_street", "zone_american_sector_right_building", "zone_american_sector_left_building", "zone_no_mans_land_1", "zone_no_mans_land_2", "zone_no_mans_land_3", "zone_sewers_and_escape_tunnel", "zone_secret_spy_tunnel", "zone_power_substation"];
     level.var_27028b8e = &function_27028b8e;
     level.var_aa3b88c5 = &function_27028b8e;
     level.var_662dc783 = &function_6e486b1;
@@ -120,9 +120,9 @@ function zone_init() {
     level thread function_6453e9bd();
     level thread function_89bc492d();
     level thread function_3bc94680();
-    level.var_feaba1ca = struct::get_array("zm_ascend_begin", "script_noteworthy");
-    if (isdefined(level.var_feaba1ca)) {
-        array::thread_all(level.var_feaba1ca, &function_8aecc4f0);
+    level.ascendstarts = struct::get_array("zm_ascend_begin", "script_noteworthy");
+    if (isdefined(level.ascendstarts)) {
+        array::thread_all(level.ascendstarts, &function_8aecc4f0);
     }
     level thread function_2d8fd70b();
     namespace_f0b43eb5::create_challenge(#"hash_6f756be1d18c8aa2", 90, "zone_market", undefined, #"hash_374955e0c82d6aa4", "s_obj_challenge_zone_market", &namespace_f0b43eb5::function_f51adffa, &namespace_f0b43eb5::function_9742c28f);

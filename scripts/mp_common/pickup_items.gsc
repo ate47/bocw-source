@@ -13,14 +13,14 @@
 // Checksum 0x7877646f, Offset: 0x1a8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"pickup_items", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"pickup_items", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace pickup_items/pickup_items
 // Params 0, eflags: 0x4
 // Checksum 0x2a04c43c, Offset: 0x1f0
 // Size: 0x90
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&start_gametype);
     level.nullprimaryoffhand = getweapon(#"null_offhand_primary");
     level.nullsecondaryoffhand = getweapon(#"null_offhand_secondary");

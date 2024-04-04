@@ -22,14 +22,14 @@
 // Checksum 0x316d7b6, Offset: 0x148
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_defend_area", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_defend_area", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_defend_area/zm_trial_defend_area
 // Params 0, eflags: 0x4
 // Checksum 0x105c8237, Offset: 0x190
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }
@@ -42,7 +42,7 @@ function private function_70a657d8() {
 // Size: 0x36c
 function private on_begin(var_7720abf7, var_2d5ebf67, var_530e040f, zone1, zone2, zone3, zone4, zone5) {
     callback::add_callback(#"on_host_migration_end", &function_ff66b979);
-    zones = [4:zone5, 3:zone4, 2:zone3, 1:zone2, 0:zone1];
+    zones = [zone1, zone2, zone3, zone4, zone5];
     arrayremovevalue(zones, undefined, 0);
     level.var_c8b84806 = [];
     foreach (zone in zones) {
@@ -162,7 +162,7 @@ function private function_2191cc5d() {
 function private function_1802ad1e(challenge, var_2d5ebf67, var_530e040f, timeout) {
     self endon(#"disconnect");
     level endon(#"hash_7646638df88a3656", #"host_migration_begin");
-    self.var_e5cde66 = {#var_530e040f:var_530e040f, #var_2d5ebf67:var_2d5ebf67, #challenge:challenge, #timeout:timeout, #start_time:level.time};
+    self.var_e5cde66 = {#start_time:level.time, #timeout:timeout, #challenge:challenge, #var_2d5ebf67:var_2d5ebf67, #var_530e040f:var_530e040f};
     self start_timer(timeout, var_2d5ebf67);
     var_2bf2b5dd = level.time + timeout * 1000;
     while (true) {

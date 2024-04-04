@@ -11,14 +11,14 @@
 // Checksum 0x19db5c21, Offset: 0x150
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_6f7d2657f403b90d", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_6f7d2657f403b90d", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_e0966e1e/namespace_e0966e1e
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd5777840, Offset: 0x198
 // Size: 0x10c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "" + #"hash_452045cf5cb8bc4c", 16000, 2, "int", &function_830c306e, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_7833487f87cacad1", 16000, 1, "int", &function_aa0ed712, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_1e3fecb02ce56163", 16000, 1, "int", &function_6a360cde, 0, 0);

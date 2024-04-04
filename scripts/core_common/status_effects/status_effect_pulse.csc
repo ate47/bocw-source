@@ -10,14 +10,14 @@
 // Checksum 0xf0728b50, Offset: 0xd0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"status_effect_pulse", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"status_effect_pulse", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace status_effect_pulse/status_effect_pulse
 // Params 0, eflags: 0x6 linked
 // Checksum 0x756efefa, Offset: 0x118
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "pulsed", 1, 1, "int", &on_pulsed_change, 0, 0);
 }
 

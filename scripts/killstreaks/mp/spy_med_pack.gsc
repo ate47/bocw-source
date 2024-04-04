@@ -29,14 +29,14 @@
 // Checksum 0xb2d3b7ee, Offset: 0x200
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"spy_med_pack", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"spy_med_pack", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace spy_med_pack/spy_med_pack
 // Params 0, eflags: 0x4
 // Checksum 0x3d0728ab, Offset: 0x250
 // Size: 0x174
-function private function_70a657d8() {
+function private preinit() {
     killstreaks::register_killstreak("killstreak_spy_med_pack", &function_12db55ec);
     level.var_c9404b0a = spawnstruct();
     level.var_c9404b0a.var_8e10bc5d = [];
@@ -127,7 +127,7 @@ function function_cc39bcf1(watcher, owner) {
         self waittilltimeout(10, #"stationary");
         if (!owner deployable::function_f8fe102f()) {
             owner setriotshieldfailhint();
-            self function_cb48cddd();
+            self deletedelay();
             return;
         }
         self deployable::function_dd266e08(owner);
@@ -141,7 +141,7 @@ function function_cc39bcf1(watcher, owner) {
 // Params 0, eflags: 0x0
 // Checksum 0x75f078fb, Offset: 0x828
 // Size: 0x5c
-function function_40e2df4b() {
+function playdeathfx() {
     weaponobjects::function_b4793bda(self, level.var_c9404b0a.weapon);
     self playsound(level.var_c9404b0a.bundle.var_b3756378);
 }
@@ -170,8 +170,8 @@ function function_4e22b9e6(origin, *angles, player) {
         if (id == player.clientid) {
             continue;
         }
-        var_45a89cfb = level.var_c9404b0a.var_8e10bc5d[id];
-        foreach (medpack in var_45a89cfb) {
+        packs = level.var_c9404b0a.var_8e10bc5d[id];
+        foreach (medpack in packs) {
             if (!isdefined(medpack)) {
                 continue;
             }
@@ -269,7 +269,7 @@ function function_cb436f32(object) {
     medpack.victimsoundmod = "vehicle";
     medpack.weapon = level.var_c9404b0a.weapon;
     medpack setweapon(medpack.weapon);
-    medpack.var_57022ab8 = isdefined(level.var_c9404b0a.bundle.var_5a0d87e0) ? level.var_c9404b0a.bundle.var_5a0d87e0 : 3;
+    medpack.maxusecount = isdefined(level.var_c9404b0a.bundle.var_5a0d87e0) ? level.var_c9404b0a.bundle.var_5a0d87e0 : 3;
     medpack.usecount = 0;
     medpack.objectiveid = gameobjects::get_next_obj_id();
     level.var_c9404b0a.medpacks[medpack.objectiveid] = medpack;
@@ -384,7 +384,7 @@ function private function_a1434496(*team, player, result) {
                 }
             }
         }
-        if (medpack.usecount == medpack.var_57022ab8) {
+        if (medpack.usecount == medpack.maxusecount) {
             medpack thread function_e6d37a78(0);
         }
     }
@@ -496,7 +496,7 @@ function function_897b13a9() {
     if (self.var_8d834202 === 1) {
         function_263be969();
     } else {
-        function_40e2df4b();
+        playdeathfx();
     }
     if (isdefined(level.var_c9404b0a.bundle.var_bb6c29b4) && isdefined(self.var_d02ddb8e) && self.var_d02ddb8e == getweapon(#"shock_rifle")) {
         playfx(level.var_c9404b0a.bundle.var_bb6c29b4, self.origin);
@@ -507,24 +507,24 @@ function function_897b13a9() {
     }
     self stoploopsound();
     self notify(#"hash_5f25f60b7159ac0f");
-    self function_cb48cddd();
+    self deletedelay();
 }
 
 // Namespace spy_med_pack/spy_med_pack
 // Params 1, eflags: 0x0
 // Checksum 0x730cf7c0, Offset: 0x2010
 // Size: 0xc4
-function function_d7cd849c(var_cb0f3959) {
-    if (!isdefined(var_cb0f3959)) {
+function function_d7cd849c(soundbank) {
+    if (!isdefined(soundbank)) {
         return;
     }
-    if (!isdefined(level.var_c9404b0a.var_d741a6a4[var_cb0f3959])) {
-        level.var_c9404b0a.var_d741a6a4[var_cb0f3959] = 0;
+    if (!isdefined(level.var_c9404b0a.var_d741a6a4[soundbank])) {
+        level.var_c9404b0a.var_d741a6a4[soundbank] = 0;
     }
-    var_ad7969ca = level.var_c9404b0a.var_d741a6a4[var_cb0f3959];
+    var_ad7969ca = level.var_c9404b0a.var_d741a6a4[soundbank];
     if (var_ad7969ca != 0 && gettime() < int(5 * 1000) + var_ad7969ca) {
         return;
     }
-    level.var_c9404b0a.var_d741a6a4[var_cb0f3959] = gettime();
+    level.var_c9404b0a.var_d741a6a4[soundbank] = gettime();
 }
 

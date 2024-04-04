@@ -228,9 +228,9 @@ function private function_624ec357(localclientnum, *oldvalue, newvalue, *bnewent
         if (isdefined(self.var_edad38d7)) {
             self clearanim(self.var_edad38d7, 0.2);
         }
-        var_fba1a1d5 = level.var_bfb097e0[wasdemojump];
-        self setanim(var_fba1a1d5, 1, 0.2, 1);
-        self.var_edad38d7 = var_fba1a1d5;
+        faceanim = level.var_bfb097e0[wasdemojump];
+        self setanim(faceanim, 1, 0.2, 1);
+        self.var_edad38d7 = faceanim;
     }
 }
 

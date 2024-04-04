@@ -50,7 +50,7 @@ function function_81853592() {
     result = self waittill(#"hash_3e251384a5400dce");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
         arrayremovevalue(level.doa.var_18f8e489, self);
-        namespace_1e25ad94::function_f5f0c0f8("Deleting Flogger trap permenently at:" + self.origin);
+        namespace_1e25ad94::debugmsg("Deleting Flogger trap permenently at:" + self.origin);
     }
     if (isdefined(self.trigger)) {
         triggers = arraycopy(self.trigger);
@@ -147,7 +147,7 @@ function function_9d10940b() {
                 activate = 0;
                 if (isdefined(trap.var_f8660931)) {
                     distsq = distancesquared(trap.origin, trap.var_f8660931.origin);
-                    if (distsq < function_a3f6cdac(3200)) {
+                    if (distsq < sqr(3200)) {
                         activate = 1;
                     }
                 }
@@ -165,13 +165,13 @@ function function_9d10940b() {
                 if (activate) {
                     function_ecfc6c75(trap, 1);
                     trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
-                    namespace_1e25ad94::function_f5f0c0f8("Paging IN flogger trap at:" + trap.origin);
+                    namespace_1e25ad94::debugmsg("Paging IN flogger trap at:" + trap.origin);
                 }
                 continue;
             }
             trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
             if (!isdefined(trap.var_f8660931)) {
-                namespace_1e25ad94::function_f5f0c0f8("Paging out flogger trap at:" + trap.origin);
+                namespace_1e25ad94::debugmsg("Paging out flogger trap at:" + trap.origin);
                 trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
             }
         }

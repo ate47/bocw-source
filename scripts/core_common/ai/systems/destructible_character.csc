@@ -12,14 +12,14 @@
 // Checksum 0x760a7a7, Offset: 0x1d8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"destructible_character", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"destructible_character", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace destructclientutils/destructible_character
 // Params 0, eflags: 0x6 linked
 // Checksum 0x2dc53bd2, Offset: 0x220
 // Size: 0x610
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "destructible_character_state", 1, 21, "int", &_destructhandler, 0, 0);
     destructibles = getscriptbundles("destructiblecharacterdef");
     processedbundles = [];

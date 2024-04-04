@@ -34,34 +34,34 @@ function on_player_connect() {
 // Checksum 0x2eedfb67, Offset: 0x168
 // Size: 0x1ec
 function on_item_pickup(s_params) {
-    var_a6762160 = s_params.item.var_a6762160;
-    if (var_a6762160.itemtype === #"survival_scrap") {
+    itementry = s_params.item.itementry;
+    if (itementry.itemtype === #"survival_scrap") {
         if (isplayer(self)) {
             e_player = self;
         } else {
             e_player = s_params.player;
         }
-        rarity = var_a6762160.rarity;
-        if (var_a6762160.name === #"scrap_legendary_item_sr") {
-            var_595a11bc = 25 * var_a6762160.amount;
+        rarity = itementry.rarity;
+        if (itementry.name === #"scrap_legendary_item_sr") {
+            var_595a11bc = 25 * itementry.amount;
             e_player function_a6d4221f(var_595a11bc);
             return;
         }
-        if (var_a6762160.name === #"scrap_epic_item_sr") {
-            var_595a11bc = 300 * var_a6762160.amount;
+        if (itementry.name === #"scrap_epic_item_sr") {
+            var_595a11bc = 300 * itementry.amount;
             e_player function_afab250a(var_595a11bc);
             return;
         }
         if (rarity === #"rare") {
-            var_595a11bc = 10 * var_a6762160.amount;
+            var_595a11bc = 10 * itementry.amount;
             e_player function_a6d4221f(var_595a11bc);
             return;
         }
-        if (var_a6762160.name === #"scrap_item_harvesting_sr") {
+        if (itementry.name === #"scrap_item_harvesting_sr") {
             e_player function_afab250a(200);
             return;
         }
-        var_595a11bc = 50 * var_a6762160.amount;
+        var_595a11bc = 50 * itementry.amount;
         e_player function_afab250a(var_595a11bc);
     }
 }
@@ -170,8 +170,8 @@ function function_30398155(var_595a11bc) {
 // Size: 0x54
 function function_c29a8aa1(cost) {
     var_88daa75e = self function_6f3fd157();
-    var_ee2422c5 = var_88daa75e - cost;
-    if (var_ee2422c5 >= 0) {
+    leftover = var_88daa75e - cost;
+    if (leftover >= 0) {
         return true;
     }
     return false;
@@ -183,8 +183,8 @@ function function_c29a8aa1(cost) {
 // Size: 0x54
 function function_415b1e(cost) {
     var_88daa75e = self function_efd1d093();
-    var_ee2422c5 = var_88daa75e - cost;
-    if (var_ee2422c5 >= 0) {
+    leftover = var_88daa75e - cost;
+    if (leftover >= 0) {
         return true;
     }
     return false;

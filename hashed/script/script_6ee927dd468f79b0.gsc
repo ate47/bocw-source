@@ -50,7 +50,7 @@ function function_cddc7db1() {
     result = self waittill(#"hash_3e251384a5400dce");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
         arrayremovevalue(level.doa.var_a8a43931, self);
-        namespace_1e25ad94::function_f5f0c0f8("Deleting Fireball trap permenently at:" + self.origin);
+        namespace_1e25ad94::debugmsg("Deleting Fireball trap permenently at:" + self.origin);
     }
     util::wait_network_frame();
     if (isdefined(self.script_model)) {
@@ -75,10 +75,10 @@ function function_b9c75c0(trap, var_7c56394 = 0) {
             }
         }
         if (toks.size > 1) {
-            trap.var_dc3a5332 = int(toks[1]);
+            trap.minround = int(toks[1]);
         }
         if (toks.size > 2) {
-            trap.var_bf0d44fb = int(toks[2]);
+            trap.hidemodel = int(toks[2]);
         }
         if (toks.size > 3) {
             trap.var_5a546472 = int(toks[3]) ? 1 : 0;
@@ -106,7 +106,7 @@ function function_b9c75c0(trap, var_7c56394 = 0) {
             trap.maxrounds = int(toks[9]);
         }
     }
-    if (isdefined(trap.var_dc3a5332) && level.doa.roundnumber < trap.var_dc3a5332) {
+    if (isdefined(trap.minround) && level.doa.roundnumber < trap.minround) {
         return;
     }
     hazard = namespace_ec06fe4a::spawnmodel(trap.origin, "zombietron_fireball_trap");
@@ -115,7 +115,7 @@ function function_b9c75c0(trap, var_7c56394 = 0) {
         hazard.var_fd5301f9 = "fireball";
         hazard.angles = trap.angles;
         hazard.team = "axis";
-        if (is_true(trap.var_bf0d44fb)) {
+        if (is_true(trap.hidemodel)) {
             hazard hide();
         }
     }
@@ -172,7 +172,7 @@ function function_d4a86caf() {
                 activate = 0;
                 if (isdefined(trap.var_f8660931)) {
                     distsq = distancesquared(trap.origin, trap.var_f8660931.origin);
-                    if (distsq < function_a3f6cdac(3200)) {
+                    if (distsq < sqr(3200)) {
                         activate = 1;
                     }
                 }
@@ -190,14 +190,14 @@ function function_d4a86caf() {
                 if (activate) {
                     function_b9c75c0(trap, 1);
                     trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
-                    namespace_1e25ad94::function_f5f0c0f8("Paging IN fireball trap at:" + trap.origin);
+                    namespace_1e25ad94::debugmsg("Paging IN fireball trap at:" + trap.origin);
                 }
                 continue;
             }
             trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
             if (!isdefined(trap.var_f8660931)) {
                 trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
-                namespace_1e25ad94::function_f5f0c0f8("Paging out fireball trap at:" + trap.origin);
+                namespace_1e25ad94::debugmsg("Paging out fireball trap at:" + trap.origin);
             }
         }
     }

@@ -2,7 +2,7 @@
 #using scripts\cp_common\hms_util.gsc;
 #using scripts\core_common\ai\archetype_utility.gsc;
 #using scripts\cp_common\util.gsc;
-#using script_1292451e284848cc;
+#using scripts\cp_common\snd.gsc;
 #using scripts\cp_common\objectives.gsc;
 #using script_4ccd0c3512b52a10;
 #using script_7cf3e180e994d17f;
@@ -84,7 +84,7 @@ function function_b61ea696() {
 // Checksum 0x226fb145, Offset: 0x770
 // Size: 0x44
 function function_ea49bc9() {
-    level.var_341657e7 = self;
+    level.wife = self;
     self.radius = 32;
     self.ignoreall = 1;
     level thread util::magic_bullet_shield(self);
@@ -112,11 +112,11 @@ function function_170c5fef() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x89b88d1e, Offset: 0x810
 // Size: 0x44
-function function_f82142f8(notify_str, var_ee7067ec) {
+function function_f82142f8(notify_str, body_model) {
     if (isdefined(notify_str)) {
         level waittill(notify_str);
     }
-    self setmodel(var_ee7067ec);
+    self setmodel(body_model);
 }
 
 // Namespace namespace_b100dd86/namespace_5713a15b
@@ -146,8 +146,8 @@ function function_6578b894() {
     level notify(#"hash_530a04ce72c2c9");
     self thread function_a0f1fa27();
     objectives::follow("obj_takedown_qasim", self, undefined, undefined, 0, #"hash_29f1e9a2d045faaf");
-    self val::set(#"hash_97fd9bb5b75dbc6", "ignoreall", 1);
-    self val::set(#"hash_97fd9bb5b75dbc6", "ignoreme", 1);
+    self val::set(#"qasim", "ignoreall", 1);
+    self val::set(#"qasim", "ignoreme", 1);
     self.var_c681e4c1 = 1;
     self.forcesprint = 1;
     self disableaimassist();
@@ -155,13 +155,13 @@ function function_6578b894() {
     self setdesiredspeed(260);
     lmg = getweapon(#"lmg_light_t9");
     self setweapon(lmg);
-    self thread function_8f7f7a0();
+    self thread set_ignoreall();
     self thread function_b1518d0e();
     self waittill(#"reached_path_end");
     objectives::remove("obj_takedown_qasim");
     level thread function_c212022b(180);
     self notify(#"hash_637416a1c8f37fe3");
-    self function_cb48cddd();
+    self deletedelay();
 }
 
 // Namespace namespace_b100dd86/namespace_5713a15b
@@ -171,7 +171,7 @@ function function_6578b894() {
 function function_c212022b(seconds) {
     level endon(#"hash_530a04ce72c2c9");
     wait(seconds);
-    util::function_2fd0ed09(#"hash_556f31329ba0db54");
+    util::missionfailedwrapper(#"hash_556f31329ba0db54");
 }
 
 // Namespace namespace_b100dd86/namespace_5713a15b
@@ -188,10 +188,10 @@ function function_a66feb27() {
     self disableaimassist();
     self ai::set_behavior_attribute("sprint", 1);
     level thread scene::play("scene_tkd_hit2_qasim_vault", "Vault", self);
-    self waittill(#"hash_49e6b2675defe779");
+    self waittill(#"end_vault");
     objectives::hide("obj_takedown_qasim");
     self notify(#"hash_637416a1c8f37fe3");
-    self function_cb48cddd();
+    self deletedelay();
     level thread function_a3c6d04c();
 }
 
@@ -200,9 +200,9 @@ function function_a66feb27() {
 // Checksum 0xf0ceabcd, Offset: 0xcf0
 // Size: 0xc4
 function function_a3c6d04c() {
-    var_9343fe71 = struct::get("obj_jump", "targetname");
+    objloc = struct::get("obj_jump", "targetname");
     objectives::complete("follow_adler", level.adler);
-    objectives::follow("obj_rooftop_jump", var_9343fe71.origin, undefined, undefined, 0, #"hash_579ea815337d21d3");
+    objectives::follow("obj_rooftop_jump", objloc.origin, undefined, undefined, 0, #"hash_579ea815337d21d3");
     level flag::wait_till("flag_start_roof_slide");
     objectives::remove("obj_rooftop_jump");
 }
@@ -214,17 +214,17 @@ function function_a3c6d04c() {
 function function_b1518d0e() {
     self endon(#"death");
     self flag::wait_till("ignoreall_false");
-    self val::reset(#"hash_97fd9bb5b75dbc6", "ignoreall");
+    self val::reset(#"qasim", "ignoreall");
 }
 
 // Namespace namespace_b100dd86/namespace_5713a15b
 // Params 0, eflags: 0x2 linked
 // Checksum 0xf7a6ec3e, Offset: 0xe28
 // Size: 0x64
-function function_8f7f7a0() {
+function set_ignoreall() {
     self endon(#"death");
     self flag::wait_till("ignoreall_true");
-    self val::set(#"hash_97fd9bb5b75dbc6", "ignoreall", 1);
+    self val::set(#"qasim", "ignoreall", 1);
 }
 
 // Namespace namespace_b100dd86/namespace_5713a15b
@@ -234,7 +234,7 @@ function function_8f7f7a0() {
 function function_a0f1fa27() {
     self endon(#"hash_637416a1c8f37fe3");
     self waittill(#"death");
-    util::function_2fd0ed09(#"hash_acfc290b8145de6");
+    util::missionfailedwrapper(#"hash_acfc290b8145de6");
 }
 
 // Namespace namespace_b100dd86/namespace_5713a15b
@@ -260,7 +260,7 @@ function function_3e6a0d68(str_aigroup) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xe9f5456, Offset: 0x1038
 // Size: 0x142
-function function_e8b6bfec(name, key) {
+function array_spawn(name, key) {
     var_523ed269 = getspawnerarray(name, key);
     aiarray = array();
     foreach (spawner in var_523ed269) {
@@ -307,7 +307,7 @@ function function_5431431d() {
     plane thread scene::init("scene_tkd_hit3_chase_plane");
     thread function_d60a1c78(plane);
     level.af_plane = plane;
-    thread scene::init("scene_tkd_hit3_intro_overlook_arash", [0:level.af_plane]);
+    thread scene::init("scene_tkd_hit3_intro_overlook_arash", [level.af_plane]);
     level.var_c7b3a621 = util::spawn_model("tag_origin", plane.origin - (200, 0, 175), plane.angles);
     level.var_c7b3a621 linkto(plane);
     return plane;
@@ -318,7 +318,7 @@ function function_5431431d() {
 // Checksum 0x2f0a6dd4, Offset: 0x14f0
 // Size: 0x148
 function function_d804fc99(a_ents) {
-    var_936fb5e7 = [3:"Prop 4", 2:"Prop 3", 1:"Prop 2", 0:"Prop 1"];
+    var_936fb5e7 = ["Prop 1", "Prop 2", "Prop 3", "Prop 4"];
     foreach (prop in var_936fb5e7) {
         if (isdefined(a_ents[prop]) && !isdefined(a_ents[prop].clip)) {
             clip = getent(prop, "script_noteworthy");

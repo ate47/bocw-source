@@ -15,14 +15,14 @@
 // Checksum 0xaaad38a5, Offset: 0xc0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_6c9de9db7f3e44a3", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_6c9de9db7f3e44a3", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_5f342394/namespace_5f342394
 // Params 0, eflags: 0x4
 // Checksum 0x3e7a24a3, Offset: 0x108
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }
@@ -34,7 +34,7 @@ function private function_70a657d8() {
 // Checksum 0x6f5c8ad7, Offset: 0x170
 // Size: 0x25c
 function private on_begin(var_a84ac7c8, *str_archetype, n_kill_count, *str_destination, str_zone1, str_zone2, var_588808b1, var_91e2fb66, var_84245fe9) {
-    str_zones = [4:var_84245fe9, 3:var_91e2fb66, 2:var_588808b1, 1:str_zone2, 0:str_zone1];
+    str_zones = [str_zone1, str_zone2, var_588808b1, var_91e2fb66, var_84245fe9];
     arrayremovevalue(str_zones, undefined, 0);
     level.var_8c6f70d0 = [];
     foreach (str_zone in str_zones) {

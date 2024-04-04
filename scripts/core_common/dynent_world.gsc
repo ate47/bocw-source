@@ -8,14 +8,14 @@
 // Checksum 0xb422e4fe, Offset: 0x88
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"dynent_world", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"dynent_world", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace dynent_world/dynent_world
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1e72bfa1, Offset: 0xd0
 // Size: 0x1c
-function private function_70a657d8() {
+function private preinit() {
     /#
         level thread devgui_loop();
     #/
@@ -55,8 +55,8 @@ function private event_handler[event_9673dc9a] function_3981d015(eventstruct) {
                 playsoundatposition(newstate.var_55c3fa1, dynent.origin);
             }
         }
-        if (isdefined(newstate.var_c7ae60e8)) {
-            add_helico(dynent, newstate.var_c7ae60e8);
+        if (isdefined(newstate.overridemodel)) {
+            add_helico(dynent, newstate.overridemodel);
         }
         if (isdefined(newstate.stateanim)) {
             starttime = 0;

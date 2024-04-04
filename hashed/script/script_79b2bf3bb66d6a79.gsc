@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_31671175564a93b7;
+#using scripts\cp_common\snd_utility.csc;
 #using script_1cd690a97dfca36e;
-#using script_3318f11e3a1b2358;
+#using scripts\cp_common\snd.csc;
 #using scripts\core_common\audio_shared.csc;
 #using scripts\core_common\struct.csc;
 #using scripts\core_common\math_shared.csc;
@@ -34,13 +34,13 @@ function private function_f64316de() {
     level.var_be173d94 = array(#"hash_6475991c6b5d94bb", #"hash_64759b1c6b5d9821", #"hash_64759c1c6b5d99d4");
     level.var_6356fe3b = [];
     var_b16d80e2 = struct::get_array("side_cam_start", "script_noteworthy");
-    foreach (var_89944ce9 in var_b16d80e2) {
+    foreach (start_struct in var_b16d80e2) {
         var_c238a0b7 = undefined;
-        var_ed9fe069 = struct::get(var_89944ce9.target);
-        if (isdefined(var_ed9fe069)) {
-            var_c238a0b7 = struct::get(var_ed9fe069.target);
+        end_struct = struct::get(start_struct.target);
+        if (isdefined(end_struct)) {
+            var_c238a0b7 = struct::get(end_struct.target);
         }
-        var_b76e0f10 = {#var_82267185:var_c238a0b7, #end:var_ed9fe069, #start:var_89944ce9};
+        var_b76e0f10 = {#start:start_struct, #end:end_struct, #var_82267185:var_c238a0b7};
         if (!isdefined(level.var_6356fe3b)) {
             level.var_6356fe3b = [];
         } else if (!isarray(level.var_6356fe3b)) {
@@ -114,11 +114,11 @@ function private function_51f065c3(parms) {
             while (frame_count < 6000) {
                 sphere(side_cam_start.origin, 4, (0.2, 1, 0.2), 1, 0, 24, 1);
                 sphere(var_52c1d392.origin, 4, (0.2, 1, 0.2), 1, 0, 24, 1);
-                var_c3df7dfc = parms.var_b21e26bd;
+                focus_pos = parms.var_b21e26bd;
                 if (isdefined(var_61437df7)) {
-                    var_c3df7dfc = var_61437df7.origin;
+                    focus_pos = var_61437df7.origin;
                 }
-                sphere(var_c3df7dfc, 4, (1, 0.2, 0.2), 1, 0, 24, 1);
+                sphere(focus_pos, 4, (1, 0.2, 0.2), 1, 0, 24, 1);
                 frame_count++;
                 waitframe(1);
             }
@@ -143,7 +143,7 @@ function private function_7f8d6723(localclientnum, victim, var_d21483a5) {
     thread function_ff6d0f8b(localclientnum, parms, bullet);
     util::playfxontag(localclientnum, "maps/cp_takedown/fx9_hit3_sniper_trail", bullet, "tag_bullet_fx");
     playmaincamxcam(localclientnum, #"hash_5c6d1cccae8395ba", 10, undefined, undefined, var_ef954e24);
-    level namespace_ca99987f::function_86ac55c5(localclientnum, "runtime_time_scale", 0, 0.5, 0.1, #"linear");
+    level easing::ease_dvar(localclientnum, "runtime_time_scale", 0, 0.5, 0.1, #"linear");
     var_cbcfc238 = self function_82f1cbd2();
     var_1cb86e4a = parms.time - 0.5 * parms.timescale;
     if (var_1cb86e4a > 0) {
@@ -151,7 +151,7 @@ function private function_7f8d6723(localclientnum, victim, var_d21483a5) {
     }
     var_b487436a = 1.3 * 0.1;
     if (parms.var_684cf08c - var_b487436a > 0) {
-        level util::delay(parms.var_684cf08c - var_b487436a, undefined, &namespace_ca99987f::function_86ac55c5, localclientnum, "runtime_time_scale", 0, 0.1, 0.1, #"linear");
+        level util::delay(parms.var_684cf08c - var_b487436a, undefined, &easing::ease_dvar, localclientnum, "runtime_time_scale", 0, 0.1, 0.1, #"linear");
     }
     bullet util::delay(parms.time, undefined, &hide);
     if (var_d21483a5 != 2) {
@@ -162,8 +162,8 @@ function private function_7f8d6723(localclientnum, victim, var_d21483a5) {
     self thread function_a2717a3e(0.1);
     if (var_d21483a5 == 3 || var_d21483a5 == 2 || var_d21483a5 == 4) {
         stopmaincamxcam(localclientnum);
-        var_da5ce8d6 = function_a3f6cdac(100);
-        var_14ba017f = function_a3f6cdac(200);
+        var_da5ce8d6 = sqr(100);
+        var_14ba017f = sqr(200);
         var_53db73e1 = var_14ba017f + 1;
         side_cam_start = undefined;
         var_61437df7 = undefined;
@@ -179,11 +179,11 @@ function private function_7f8d6723(localclientnum, victim, var_d21483a5) {
         }
         if (isdefined(side_cam_start)) {
             var_fa3c8b18 = side_cam_start.origin;
-            var_c3df7dfc = parms.var_b21e26bd;
+            focus_pos = parms.var_b21e26bd;
             if (isdefined(var_61437df7)) {
-                var_c3df7dfc = var_61437df7.origin;
+                focus_pos = var_61437df7.origin;
             }
-            var_6de66f1f = var_c3df7dfc - var_fa3c8b18;
+            var_6de66f1f = focus_pos - var_fa3c8b18;
             if (lengthsquared(var_6de66f1f) > 0) {
                 var_6de66f1f = vectornormalize(var_6de66f1f);
                 var_a4607150 = vectortoangles(var_6de66f1f);
@@ -206,9 +206,9 @@ function private function_7f8d6723(localclientnum, victim, var_d21483a5) {
             var_ac259dff moveto(var_52c1d392.origin, 0.8);
             if (var_d21483a5 == 2 || var_d21483a5 == 4) {
                 /#
-                    assert(isdefined(var_c3df7dfc));
+                    assert(isdefined(focus_pos));
                 #/
-                var_6de66f1f = var_c3df7dfc - var_52c1d392.origin;
+                var_6de66f1f = focus_pos - var_52c1d392.origin;
                 if (lengthsquared(var_6de66f1f) > 0) {
                     var_6de66f1f = vectornormalize(var_6de66f1f);
                     var_1042ef32 = vectortoangles(var_6de66f1f);
@@ -240,7 +240,7 @@ function private function_7f8d6723(localclientnum, victim, var_d21483a5) {
             self function_c2856ebd(0.05);
         }
     } else {
-        level thread namespace_ca99987f::function_86ac55c5(localclientnum, "runtime_time_scale", 0, 1, 0.05, #"linear");
+        level thread easing::ease_dvar(localclientnum, "runtime_time_scale", 0, 1, 0.05, #"linear");
         wait(parms.var_6051349d);
         var_d41b03f9 = 0.1;
         var_6d8b2bec = parms.forward * vectordot(self getcampos() - var_ef954e24.origin, parms.forward);
@@ -316,8 +316,8 @@ function private function_63a2faff(startval, endval, lerptime) {
 // Checksum 0xd02ecbff, Offset: 0x1928
 // Size: 0x12c
 function private function_3992911(localclientnum, parms) {
-    var_433df30c = level.var_be173d94[randomint(level.var_be173d94.size)];
-    parms.victim function_8e5138f0(localclientnum, var_433df30c);
+    death_face = level.var_be173d94[randomint(level.var_be173d94.size)];
+    parms.victim function_8e5138f0(localclientnum, death_face);
     parms.victim._currentfacestate = "death";
     headpos = parms.victim gettagorigin("j_head");
     playfx(localclientnum, "impacts/fx9_bul_blood_head_fatal", headpos, parms.forward * -1);
@@ -353,7 +353,7 @@ function function_ff6d0f8b(*localclientnum, parms, bullet) {
     level notify(#"hash_15798afdb00a8f94", parms);
     snd::stop(var_6ea8f898, 0.05);
     wait(0.05);
-    snd::play(var_bd1ad3a6, [1:"j_head", 0:parms.victim]);
+    snd::play(var_bd1ad3a6, [parms.victim, "j_head"]);
     level waittill(#"hash_615d2d7ba347572b");
     function_ed62c9c2(var_f828a846, 0.15);
 }

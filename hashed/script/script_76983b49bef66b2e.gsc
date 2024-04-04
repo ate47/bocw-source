@@ -80,7 +80,7 @@ function function_9b8a196a() {
     ball enablelinkto();
     ball.targetname = "teslaBall";
     ball thread function_453dcc55();
-    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", ball.origin, 1 | 512 | 8, 18, 50);
+    trigger = namespace_ec06fe4a::spawntrigger("trigger_radius", ball.origin, 1 | 512 | 8, 18, 50);
     if (!isdefined(trigger)) {
         ball delete();
         return;
@@ -234,11 +234,11 @@ function function_8d45f3be(guy, attacker) {
     if (!isdefined(guy)) {
         return;
     }
-    if (isdefined(guy.var_44824562) && guy.var_44824562 == "tesla" || is_true(guy.tesla_death)) {
+    if (isdefined(guy.damagedby) && guy.damagedby == "tesla" || is_true(guy.tesla_death)) {
         return 0;
     }
     if (function_5d21013(attacker)) {
-        guy.var_44824562 = "tesla";
+        guy.damagedby = "tesla";
         guy thread function_957d23cc(attacker);
         return 1;
     }
@@ -456,16 +456,16 @@ function tesla_play_arc_fx(target) {
     origin = self gettagorigin(tag);
     target_origin = target gettagorigin(target_tag);
     distsq = distancesquared(origin, target_origin);
-    var_1a24eda0 = distsq / function_a3f6cdac(128);
-    var_1c220176 = var_1a24eda0 * getdvarfloat(#"hash_d68c28b3c93b18f", 0.05);
-    if (var_1c220176 < 0.2) {
-        var_1c220176 = 0.2;
+    var_1a24eda0 = distsq / sqr(128);
+    timemove = var_1a24eda0 * getdvarfloat(#"hash_d68c28b3c93b18f", 0.05);
+    if (timemove < 0.2) {
+        timemove = 0.2;
     }
     fxorg = namespace_ec06fe4a::spawnmodel(origin, "tag_origin", undefined, "doa_tesla_fxOrg");
     if (isdefined(fxorg)) {
         fxorg namespace_83eb6304::function_3ecfde67("tesla_trail");
-        fxorg moveto(target_origin, var_1c220176);
-        fxorg waittilltimeout(var_1c220176 + 1, #"movedone");
+        fxorg moveto(target_origin, timemove);
+        fxorg waittilltimeout(timemove + 1, #"movedone");
         fxorg delete();
     }
 }

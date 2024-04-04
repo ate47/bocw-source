@@ -135,7 +135,7 @@ function function_1b3fc8e4() {
     self.health = self.maxhealth;
     self.var_1c8b76d3 = 1;
     self.no_gib = 1;
-    self.meleedistsq = function_a3f6cdac(72);
+    self.meleedistsq = sqr(72);
     self.goalradius = 68;
     self setblackboardattribute("_gegenees_shield", "shield_down");
     self setblackboardattribute("_locomotion_speed", "locomotion_speed_walk");
@@ -193,8 +193,8 @@ function private function_697a9b7f(entity, minrange, maxrange) {
     if (!isdefined(maxrange)) {
         maxrange = 1000;
     }
-    withinrange = distancesquared(entity.origin, entity.favoriteenemy.origin) <= function_a3f6cdac(maxrange);
-    withinrange = entity isatgoal() || withinrange && distancesquared(entity.origin, entity.favoriteenemy.origin) >= function_a3f6cdac(minrange);
+    withinrange = distancesquared(entity.origin, entity.favoriteenemy.origin) <= sqr(maxrange);
+    withinrange = entity isatgoal() || withinrange && distancesquared(entity.origin, entity.favoriteenemy.origin) >= sqr(minrange);
     return withinrange;
 }
 
@@ -274,7 +274,7 @@ function function_7fe60e9e(entity) {
     targetpos = entity.favoriteenemy.origin;
     launchpos = entity gettagorigin("tag_inhand");
     var_ad804014 = 5;
-    if (distancesquared(targetpos, entity.origin) > function_a3f6cdac(250)) {
+    if (distancesquared(targetpos, entity.origin) > sqr(250)) {
         velocity = entity.favoriteenemy getvelocity();
         velocity = (velocity[0], velocity[1], 0);
         targetpos = targetpos + velocity * 0.25;
@@ -693,7 +693,7 @@ function private function_3d752709(enemy, target) {
     if (gibserverutils::isgibbed(enemy, 384)) {
         return false;
     }
-    if (distancesquared(enemy.origin, target.origin) > function_a3f6cdac(self ai::function_9139c839().var_ef908ac8)) {
+    if (distancesquared(enemy.origin, target.origin) > sqr(self ai::function_9139c839().var_ef908ac8)) {
         return false;
     }
     facingvec = anglestoforward(target.angles);
@@ -702,8 +702,8 @@ function private function_3d752709(enemy, target) {
     var_c2ee8451 = (facingvec[0], facingvec[1], 0);
     var_3e3c8075 = vectornormalize(var_3e3c8075);
     var_c2ee8451 = vectornormalize(var_c2ee8451);
-    var_34e02165 = vectordot(var_c2ee8451, var_3e3c8075);
-    if (var_34e02165 < 0) {
+    enemydot = vectordot(var_c2ee8451, var_3e3c8075);
+    if (enemydot < 0) {
         return false;
     }
     return true;

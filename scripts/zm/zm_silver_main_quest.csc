@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\core_common\beam_shared.csc;
 #using scripts\zm_common\zm_utility.csc;
-#using script_17a9d06bf819b2d3;
+#using scripts\zm_common\zm_ping.csc;
 #using scripts\core_common\struct.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\clientfield_shared.csc;
@@ -14,8 +14,8 @@
 // Checksum 0x68a21737, Offset: 0x4f8
 // Size: 0x6d4
 function init() {
-    namespace_5b1144e::function_5ae4a10c(#"hash_2bbbae913b9e2f69", "workbench", #"hash_d670b6f3d8c2841", undefined, undefined, 1);
-    namespace_5b1144e::function_5ae4a10c(#"hash_3aa098c2d5540aac", "medbay_computer", undefined, #"hash_5b20033c44a4321f", undefined, 1);
+    zm_ping::function_5ae4a10c(#"hash_2bbbae913b9e2f69", "workbench", #"hash_d670b6f3d8c2841", undefined, undefined, 1);
+    zm_ping::function_5ae4a10c(#"hash_3aa098c2d5540aac", "medbay_computer", undefined, #"hash_5b20033c44a4321f", undefined, 1);
     if (!zm_utility::is_ee_enabled()) {
         return;
     }

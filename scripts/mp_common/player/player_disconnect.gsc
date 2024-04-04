@@ -4,7 +4,7 @@
 #using scripts\mp_common\player\player_record.gsc;
 #using scripts\core_common\util_shared.gsc;
 #using scripts\mp_common\gametypes\globallogic.gsc;
-#using script_32c8b5b0eb2854f3;
+#using scripts\core_common\gamestate_util.gsc;
 
 #namespace player;
 

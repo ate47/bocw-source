@@ -13,14 +13,14 @@
 // Checksum 0x7ef18940, Offset: 0xd8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_607f0336b64df630", &function_70a657d8, undefined, undefined, #"hash_13a43d760497b54d");
+    system::register(#"hash_607f0336b64df630", &preinit, undefined, undefined, #"hash_13a43d760497b54d");
 }
 
 // Namespace namespace_797fe2e7/namespace_797fe2e7
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb46299a3, Offset: 0x128
 // Size: 0xb4
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("missile", "" + #"hash_36112e7cad541b66", 1, 2, "int", &function_9cb928dc, 1, 0);
     clientfield::register("missile", "" + #"hash_2d55ead1309349bc", 1, 3, "int", &function_6bd975fa, 1, 0);
 }

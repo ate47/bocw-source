@@ -13,11 +13,11 @@
 #using script_179ba564f65e92c5;
 #using script_42fe6daed87beaf5;
 #using scripts\zm\archetype\archetype_zod_companion.csc;
-#using script_17a9d06bf819b2d3;
+#using scripts\zm_common\zm_ping.csc;
 #using script_2c5f2d4e7aa698c4;
 #using scripts\zm_common\zm_fasttravel.csc;
 #using scripts\zm_common\zm_utility.csc;
-#using script_2c8fd33ddb45e78b;
+#using scripts\zm_common\zm_intel.csc;
 #using script_68732f44626820ed;
 #using scripts\core_common\postfx_shared.csc;
 #using scripts\core_common\load_shared.csc;
@@ -43,14 +43,14 @@ function autoexec opt_in() {
 // Checksum 0x7e41d335, Offset: 0x930
 // Size: 0xd8a
 function event_handler[level_init] main(*eventstruct) {
-    namespace_5b1144e::function_5ae4a10c(undefined, "platinum_rappel_obj", #"hash_337db80f69d05548", #"hash_5b20033c44a4321f", #"hash_2f664e8e6f88f16");
-    namespace_5b1144e::function_5ae4a10c(undefined, "platinum_zipline_obj", #"hash_6d0057fa066d6733", #"hash_5b20033c44a4321f", #"hash_2f664e8e6f88f16");
-    namespace_5b1144e::function_5ae4a10c("p9_zm_platinum_radio_call_boxes_on", "platinum_klaus_radio_obj", #"hash_5c2213d2d79e1e90", #"hash_5b20033c44a4321f", #"hash_5f505b6863b30787");
-    namespace_5b1144e::function_5ae4a10c("p9_zm_platinum_radio_call_boxes_off", "platinum_klaus_radio_obj", #"hash_5c2213d2d79e1e90", #"hash_5b20033c44a4321f", #"hash_5f505b6863b30787");
-    namespace_5b1144e::function_5ae4a10c("p9_fxanim_zm_platinum_zipline_cable_mod", "platinum_rappel_cable_obj", #"hash_337db80f69d05548", undefined, #"hash_2f664e8e6f88f16", undefined, -800);
-    namespace_5b1144e::function_5ae4a10c("p9_fxanim_zm_platinum_zipline_mod", "platinum_zipline_door_obj", #"hash_50ac7af2c5bc8257", #"hash_5f3108a8ed351288", #"hash_74b8c57369bfb24b");
-    namespace_5b1144e::function_5ae4a10c("p9_fxanim_zm_platinum_rappel_mod", "platinum_rappel_door_obj", #"hash_59bd96ed40a5975e", undefined, #"hash_6e7ff1a0f66deab4");
-    namespace_5b1144e::function_5ae4a10c("p9_zm_platinum_collider_device_skeleton", "platinum_ur_device_obj", #"hash_73929fe92df91172", #"hash_5b20033c44a4321f", #"hash_e7905885b49ce78", 0, 0);
+    zm_ping::function_5ae4a10c(undefined, "platinum_rappel_obj", #"hash_337db80f69d05548", #"hash_5b20033c44a4321f", #"hash_2f664e8e6f88f16");
+    zm_ping::function_5ae4a10c(undefined, "platinum_zipline_obj", #"hash_6d0057fa066d6733", #"hash_5b20033c44a4321f", #"hash_2f664e8e6f88f16");
+    zm_ping::function_5ae4a10c("p9_zm_platinum_radio_call_boxes_on", "platinum_klaus_radio_obj", #"hash_5c2213d2d79e1e90", #"hash_5b20033c44a4321f", #"hash_5f505b6863b30787");
+    zm_ping::function_5ae4a10c("p9_zm_platinum_radio_call_boxes_off", "platinum_klaus_radio_obj", #"hash_5c2213d2d79e1e90", #"hash_5b20033c44a4321f", #"hash_5f505b6863b30787");
+    zm_ping::function_5ae4a10c("p9_fxanim_zm_platinum_zipline_cable_mod", "platinum_rappel_cable_obj", #"hash_337db80f69d05548", undefined, #"hash_2f664e8e6f88f16", undefined, -800);
+    zm_ping::function_5ae4a10c("p9_fxanim_zm_platinum_zipline_mod", "platinum_zipline_door_obj", #"hash_50ac7af2c5bc8257", #"hash_5f3108a8ed351288", #"hash_74b8c57369bfb24b");
+    zm_ping::function_5ae4a10c("p9_fxanim_zm_platinum_rappel_mod", "platinum_rappel_door_obj", #"hash_59bd96ed40a5975e", undefined, #"hash_6e7ff1a0f66deab4");
+    zm_ping::function_5ae4a10c("p9_zm_platinum_collider_device_skeleton", "platinum_ur_device_obj", #"hash_73929fe92df91172", #"hash_5b20033c44a4321f", #"hash_e7905885b49ce78", 0, 0);
     clientfield::register_clientuimodel("player_lives", #"zm_hud", #"player_lives", 1, 2, "int", undefined, 0, 0);
     clientfield::register("toplayer", "" + #"hash_7c5d3ac35353f95c", 24000, 1, "int", &function_949d138a, 0, 0);
     clientfield::register("toplayer", "" + #"hash_3c8a07f3b4eaf129", 1, 1, "int", &function_184a5cfd, 0, 0);
@@ -89,7 +89,7 @@ function event_handler[level_init] main(*eventstruct) {
     setdvar(#"hash_2d56e13848a82d14", 0);
     setdvar(#"hash_384191a42356d34", 1);
     setdvar(#"hash_5e3c0f05d2935beb", 1);
-    namespace_4abf1500::function_88645994(#"hash_4eeb1c7447479151", #"hash_5efbc7b901eeb16c", undefined, undefined, #"hash_62c9a6dffc5a51c2");
+    zm_intel::function_88645994(#"hash_4eeb1c7447479151", #"hash_5efbc7b901eeb16c", undefined, undefined, #"hash_62c9a6dffc5a51c2");
     load::main();
     namespace_958b287a::init();
     namespace_b574e135::init();
@@ -567,10 +567,10 @@ function private function_347f52dd(localclientnum) {
             waitframe(1);
             continue;
         }
-        var_9b8a5ad2 = currentplayer clientfield::get_to_player("fogofwareffects");
-        if (var_ef2f4cec.var_e450444f !== var_9b8a5ad2) {
-            var_ef2f4cec function_d45dd62(localclientnum, var_9b8a5ad2, currentplayer);
-            var_ef2f4cec.var_e450444f = var_9b8a5ad2;
+        b_state = currentplayer clientfield::get_to_player("fogofwareffects");
+        if (var_ef2f4cec.var_e450444f !== b_state) {
+            var_ef2f4cec function_d45dd62(localclientnum, b_state, currentplayer);
+            var_ef2f4cec.var_e450444f = b_state;
         }
         waitframe(1);
     }
@@ -580,8 +580,8 @@ function private function_347f52dd(localclientnum) {
 // Params 3, eflags: 0x6 linked
 // Checksum 0x1c3dcb13, Offset: 0x3768
 // Size: 0x2de
-function private function_d45dd62(localclientnum, var_9b8a5ad2, currentplayer) {
-    if (var_9b8a5ad2 == 1) {
+function private function_d45dd62(localclientnum, b_state, currentplayer) {
+    if (b_state == 1) {
         if (!isdefined(currentplayer.var_103fdf58)) {
             playsound(localclientnum, #"hash_7b5289d48cc02d77", (0, 0, 0));
             currentplayer.var_103fdf58 = currentplayer playloopsound("evt_sr_phase_player_lp");
@@ -595,7 +595,7 @@ function private function_d45dd62(localclientnum, var_9b8a5ad2, currentplayer) {
         }
         return;
     }
-    if (var_9b8a5ad2 == 2) {
+    if (b_state == 2) {
         if (isdefined(currentplayer.var_103fdf58)) {
             playsound(localclientnum, #"hash_37b1613c2cb4c8f3", (0, 0, 0));
             currentplayer stoploopsound(currentplayer.var_103fdf58);

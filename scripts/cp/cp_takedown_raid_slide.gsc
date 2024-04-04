@@ -16,7 +16,7 @@
 #using script_4ccd0c3512b52a10;
 #using scripts\cp_common\util.gsc;
 #using scripts\cp\cp_takedown_raid_bar.gsc;
-#using script_263b7f2982258785;
+#using scripts\cp_common\dialogue.gsc;
 #using scripts\core_common\array_shared.gsc;
 #using scripts\core_common\ai_shared.gsc;
 #using script_61cfc2ab8e60625;
@@ -88,7 +88,7 @@ function main(var_d3440450, var_50cc0d4f) {
     var_1fbc6848[0] spawner::add_spawn_function(&function_b8018dce);
     level endon(#"hash_7d9928c92b67b6b2");
     level battlechatter::function_2ab9360b(0);
-    player util::function_3b6593e4(0.87, 1);
+    player util::blend_movespeedscale(0.87, 1);
     level.adler ai::set_behavior_attribute("demeanor", "combat");
     level.woods ai::set_behavior_attribute("demeanor", "combat");
     var_5ca6956f = getweapon(#"ar_accurate_t9");
@@ -125,17 +125,17 @@ function main(var_d3440450, var_50cc0d4f) {
     weapon = getweapon(#"pistol_semiauto_t9");
     level.adler aiutility::setprimaryweapon(weapon);
     level.adler ai::gun_switchto(weapon, "right");
-    var_38ac20b2 = util::spawn_player_clone(player);
-    var_38ac20b2.targetname = "FakePlayer";
-    var_38ac20b2 hide();
-    var_38ac20b2 setinvisibletoall();
+    fake_player = util::spawn_player_clone(player);
+    fake_player.targetname = "FakePlayer";
+    fake_player hide();
+    fake_player setinvisibletoall();
     player thread function_79b1e578();
     level thread function_4b1afed9();
     level scene::add_scene_func("scene_tkd_hit2_rooftop_slide", &function_c5d4fec8);
-    level thread scene::play("scene_tkd_hit2_rooftop_slide", "Shot 1", [0:var_38ac20b2]);
-    level.slide_enemy1 thread scene::play("scene_tkd_hit2_rooftop_slide_enemy1", "Shot 1", [0:level.slide_enemy1]);
-    level.slide_enemy2 thread scene::play("scene_tkd_hit2_rooftop_slide_enemy2", "Shot 1", [0:level.slide_enemy2]);
-    level.slide_enemy3 thread scene::play("scene_tkd_hit2_rooftop_slide_enemy3", "Shot 1", [0:level.slide_enemy3]);
+    level thread scene::play("scene_tkd_hit2_rooftop_slide", "Shot 1", [fake_player]);
+    level.slide_enemy1 thread scene::play("scene_tkd_hit2_rooftop_slide_enemy1", "Shot 1", [level.slide_enemy1]);
+    level.slide_enemy2 thread scene::play("scene_tkd_hit2_rooftop_slide_enemy2", "Shot 1", [level.slide_enemy2]);
+    level.slide_enemy3 thread scene::play("scene_tkd_hit2_rooftop_slide_enemy3", "Shot 1", [level.slide_enemy3]);
     level.slide_enemy1 thread function_83cb8fb7();
     level.slide_enemy3 thread function_83cb8fb7();
     level.slide_enemy3 thread function_d6825a2e();
@@ -144,24 +144,24 @@ function main(var_d3440450, var_50cc0d4f) {
     level.var_2fef04d8 thread namespace_b100dd86::swap_head("qasim_punched", "c_t9_cp_ira_militant_vip_qasim_head_nohat_injured");
     level.var_2fef04d8 thread namespace_b100dd86::function_f82142f8(undefined, "c_t9_cp_ira_militant_vip_qasim_tkd_body");
     level.adler thread util::delay(1, undefined, &namespace_b100dd86::function_f82142f8, undefined, "c_t9_usa_hero_adler_civ_amsterdam_body_no_coat");
-    player playerlinktoblend(var_38ac20b2, "tag_player", 0.3);
+    player playerlinktoblend(fake_player, "tag_player", 0.3);
     player playgestureviewmodel(#"hash_629a852e56700e02", undefined, 1, 0.2, 0, 1, 1);
     wait(0.3);
-    var_38ac20b2 show();
-    util::function_3d955ac5(1);
-    player playerlinktoabsolute(var_38ac20b2, "tag_player");
+    fake_player show();
+    util::nvidiaansel_scriptdisable(1);
+    player playerlinktoabsolute(fake_player, "tag_player");
     level waittill(#"hash_4e822471ad1c2857");
     level notify(#"hash_707e3fbcbfc9b954");
-    player thread function_5cba6f63();
+    player thread give_player_max_ammo();
     player thread function_85757fc8();
-    player playerlinktodelta(var_38ac20b2, "tag_player", 0.2, 35, 30, 45, 6, 1, 0, 1);
+    player playerlinktodelta(fake_player, "tag_player", 0.2, 35, 30, 45, 6, 1, 0, 1);
     setslowmotion(1, 0.2, 0.25, 1, 1);
     player perks::perk_setperk("specialty_fastads");
     wait(0.1);
     player enableweapons();
     level waittill(#"hash_78624492cc89d4dd");
     player disableweapons();
-    player playerlinktoblend(var_38ac20b2, "tag_player", 0.2, 0, 0, 0.2, 0, 0, 1);
+    player playerlinktoblend(fake_player, "tag_player", 0.2, 0, 0, 0.2, 0, 0, 1);
     setslowmotion(0.1, 1, 0.5, 1, 1);
     level waittill(#"hash_35a786f9d88a2e60");
     level thread function_58b2cc80();
@@ -169,11 +169,11 @@ function main(var_d3440450, var_50cc0d4f) {
     player val::reset("slide", "allow_crouch");
     player val::reset("slide", "allow_prone");
     player unlink();
-    var_38ac20b2 delete();
-    util::function_3d955ac5(0);
+    fake_player delete();
+    util::nvidiaansel_scriptdisable(0);
     player util::function_749362d7(1);
     player enableweapons();
-    player util::function_3b6593e4(0.5, 1);
+    player util::blend_movespeedscale(0.5, 1);
     if (isdefined(var_d3440450)) {
         skipto::function_4e3ab877(var_d3440450);
     }
@@ -204,9 +204,9 @@ function function_58b2cc80() {
     level waittill(#"hash_11a7d299dcf3358");
     while (true) {
         wait(5);
-        level.adler namespace_a635adb1::queue("vox_cp_tdwn_05100_adlr_masonqasimwants_ff");
+        level.adler dialogue::queue("vox_cp_tdwn_05100_adlr_masonqasimwants_ff");
         wait(5);
-        level.woods namespace_a635adb1::queue("vox_cp_tdwn_05100_wood_comeonmasondoit_15");
+        level.woods dialogue::queue("vox_cp_tdwn_05100_wood_comeonmasondoit_15");
     }
 }
 
@@ -224,7 +224,7 @@ function function_85757fc8() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0xdd9bc427, Offset: 0x1a90
 // Size: 0xe8
-function function_5cba6f63() {
+function give_player_max_ammo() {
     var_fd5bc72c = self getweaponslistprimaries();
     foreach (weap in var_fd5bc72c) {
         self givemaxammo(weap);
@@ -325,13 +325,13 @@ function function_79b1e578() {
 function function_1f6d0353() {
     level notify(#"hash_5f84172c70d1eb4c");
     wait(4);
-    level.adler namespace_a635adb1::queue("vox_cp_tdwn_04100_adlr_hesboltingkeepo_86");
+    level.adler dialogue::queue("vox_cp_tdwn_04100_adlr_hesboltingkeepo_86");
     wait(0.5);
-    level.woods namespace_a635adb1::queue("vox_cp_tdwn_04100_wood_jesusthisguyisf_42");
+    level.woods dialogue::queue("vox_cp_tdwn_04100_wood_jesusthisguyisf_42");
     wait(3.5);
-    level.adler namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_gogo_f9");
+    level.adler dialogue::queue("vox_cp_tdwn_03800_adlr_gogo_f9");
     wait(3);
-    level.adler namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_hurryup_40");
+    level.adler dialogue::queue("vox_cp_tdwn_03800_adlr_hurryup_40");
 }
 
 // Namespace tkdn_raid_slide/namespace_7747d072

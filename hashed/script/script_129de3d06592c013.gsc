@@ -233,11 +233,11 @@ function function_d993c135() {
     self endon("53dba4f7fa8e966f");
     level endon(#"game_ended");
     pass = 0;
-    var_af989ae4 = function_a3f6cdac(level.var_8ddf6d3d.var_293163bd);
-    var_84dbcde7 = function_a3f6cdac(level.var_96492769.var_293163bd);
+    var_af989ae4 = sqr(level.var_8ddf6d3d.var_293163bd);
+    var_84dbcde7 = sqr(level.var_96492769.var_293163bd);
     var_24fcb2d = min(var_af989ae4, var_84dbcde7);
-    var_24bfde42 = function_a3f6cdac(level.var_8ddf6d3d.var_9b69c823);
-    var_46638976 = function_a3f6cdac(level.var_96492769.var_9b69c823);
+    var_24bfde42 = sqr(level.var_8ddf6d3d.var_9b69c823);
+    var_46638976 = sqr(level.var_96492769.var_9b69c823);
     var_3d369b0c = min(var_af989ae4, var_84dbcde7);
     while (true) {
         now = gettime();
@@ -252,7 +252,7 @@ function function_d993c135() {
             if (!isalive(player)) {
                 continue;
             }
-            var_92c9c085 = function_d6eaf8b0(player getvelocity());
+            var_92c9c085 = length2dsquared(player getvelocity());
             if (player isplayerswimming() && !player isplayerunderwater()) {
                 if (var_92c9c085 < var_3d369b0c) {
                     continue;
@@ -326,7 +326,7 @@ function function_f38fc2a8(data) {
         bundle = var_c394e130;
     }
     range = bundle.var_151e2c9b + 30;
-    rangesq = function_a3f6cdac(range);
+    rangesq = sqr(range);
     var_d6ff0766 = 0;
     if (!isdefined(data.var_a73da413)) {
         data.var_a73da413 = 0;
@@ -367,7 +367,7 @@ function function_f38fc2a8(data) {
     if (!isdefined(var_a8d3770f)) {
         var_a8d3770f = data.victimorigin;
     }
-    var_8463af9d = function_a3f6cdac(var_d6ff0766);
+    var_8463af9d = sqr(var_d6ff0766);
     var_7f4e7212 = [];
     var_7a6cbc93 = [];
     foreach (var_48b7953 in var_bf170232) {

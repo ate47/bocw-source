@@ -12,9 +12,9 @@
 #using script_50a657242c20890c;
 #using scripts\zm\zm_gold_pap_quest.csc;
 #using script_791ecf7869b6b24f;
-#using script_17a9d06bf819b2d3;
+#using scripts\zm_common\zm_ping.csc;
 #using scripts\zm_common\zm_utility.csc;
-#using script_2c8fd33ddb45e78b;
+#using scripts\zm_common\zm_intel.csc;
 #using script_68732f44626820ed;
 #using scripts\core_common\load_shared.csc;
 #using scripts\core_common\system_shared.csc;
@@ -31,7 +31,7 @@
 function autoexec opt_in() {
     level.aat_in_use = 1;
     system::ignore(#"hash_36cdf1547e49b57a");
-    namespace_4abf1500::function_88645994(#"hash_1367b294390f3ba9", #"hash_6aeeb56daf9669c5", #"hash_483da168d7c978d9", #"hash_7ad762022f44fb97", #"hash_37b19a33841ec0fa");
+    zm_intel::function_88645994(#"hash_1367b294390f3ba9", #"hash_6aeeb56daf9669c5", #"hash_483da168d7c978d9", #"hash_7ad762022f44fb97", #"hash_37b19a33841ec0fa");
 }
 
 // Namespace zm_gold/level_init
@@ -64,8 +64,8 @@ function event_handler[level_init] main(*eventstruct) {
     util::waitforclient(0);
     setsoundcontext("dark_aether", "inactive");
     namespace_8dac58da::function_dcf22669();
-    namespace_5b1144e::function_5ae4a10c(#"hash_1625d9b97f824726", "orda_end_boss_gold", #"hash_5df52c0e133d3e52", #"hash_73fd41d7b25c7854", undefined, undefined, -700);
-    namespace_5b1144e::function_5ae4a10c(#"hash_3a0f3a6dbef0284a", "orda_assault_boss_gold", #"hash_5df52c0e133d3e52", #"hash_73fd41d7b25c7854", undefined, undefined, -50);
+    zm_ping::function_5ae4a10c(#"hash_1625d9b97f824726", "orda_end_boss_gold", #"hash_5df52c0e133d3e52", #"hash_73fd41d7b25c7854", undefined, undefined, -700);
+    zm_ping::function_5ae4a10c(#"hash_3a0f3a6dbef0284a", "orda_assault_boss_gold", #"hash_5df52c0e133d3e52", #"hash_73fd41d7b25c7854", undefined, undefined, -50);
     level thread function_1493eabf();
 }
 

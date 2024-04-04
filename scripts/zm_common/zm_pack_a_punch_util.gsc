@@ -378,7 +378,7 @@ function function_b81da3fd(weapon) {
         return false;
     }
     item = self item_inventory::function_230ceec4(weapon);
-    if (isdefined(item.var_a8bccf69) && item.var_a8bccf69 > 1) {
+    if (isdefined(item.paplv) && item.paplv > 1) {
         return true;
     }
     return false;
@@ -393,8 +393,8 @@ function function_2a196eff(weapon) {
         return;
     }
     item = self item_inventory::function_230ceec4(weapon);
-    if (isdefined(item.var_a8bccf69)) {
-        return item.var_a8bccf69;
+    if (isdefined(item.paplv)) {
+        return item.paplv;
     }
 }
 
@@ -404,7 +404,7 @@ function function_2a196eff(weapon) {
 // Size: 0x5a
 function function_7352d8cc(weapon) {
     item = self item_inventory::function_230ceec4(weapon);
-    if (isdefined(item.var_a8bccf69) && item.var_a8bccf69 >= 3) {
+    if (isdefined(item.paplv) && item.paplv >= 3) {
         return true;
     }
     return false;

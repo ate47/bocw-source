@@ -51,7 +51,7 @@ function function_28632638() {
     self setneargoalnotifydist(40);
     self.fovcosine = 0.5;
     self.fovcosinebusy = 0.5;
-    self.maxsightdistsqrd = function_a3f6cdac(10000);
+    self.maxsightdistsqrd = sqr(10000);
     /#
         assert(isdefined(self.scriptbundlesettings));
     #/
@@ -177,7 +177,7 @@ function state_death_update(params) {
     self turretsettargetangles(1, (0, 0, 0));
     self turretsettargetangles(2, (0, 0, 0));
     self asmrequestsubstate(#"death@stationary");
-    self waittill(#"hash_689707d6ed13e238");
+    self waittill(#"model_swap");
     self vehicle_death::set_death_model(self.deathmodel, self.modelswapdelay);
     self vehicle::do_death_dynents();
     self vehicle_death::death_radius_damage();
@@ -379,7 +379,7 @@ function function_ce40686c() {
     self.jump.linkent thread function_fba89ed6(self);
     self.jump.var_a3fc817e = 0;
     self.jump.var_f2204696 = struct::get_array("balcony_point");
-    self.jump.var_6a753c2c = struct::get_array("ground_point");
+    self.jump.groundpoints = struct::get_array("ground_point");
 }
 
 // Namespace siegebot/siegebot
@@ -510,7 +510,7 @@ function function_aa1e85d2(params) {
     self radiusdamage(self.origin + vectorscale((0, 0, 1), 15), self.radiusdamageradius, self.radiusdamagemax, self.radiusdamagemin, self, "MOD_EXPLOSIVE");
     foreach (player in level.players) {
         player val::reset(#"hash_1199035500d4ef6a", "takedamage");
-        if (distance2dsquared(self.origin, player.origin) < function_a3f6cdac(200)) {
+        if (distance2dsquared(self.origin, player.origin) < sqr(200)) {
             direction = ((player.origin - self.origin)[0], (player.origin - self.origin)[1], 0);
             if (abs(direction[0]) < 0.01 && abs(direction[1]) < 0.01) {
                 direction = (randomfloatrange(1, 2), randomfloatrange(1, 2), 0);
@@ -549,7 +549,7 @@ function function_288b2c07(*params) {
 // Size: 0xbc
 function state_combat_update(*params) {
     self endon(#"death", #"change_state");
-    self thread function_d6642451();
+    self thread movement_thread();
     self thread function_e3489f4e();
     self thread function_20b4a129();
     if (is_true(self.var_dc23ac4b)) {
@@ -608,7 +608,7 @@ function waittill_pathing_done(maxtime = 15) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8e37429, Offset: 0x2940
 // Size: 0x2fc
-function function_d6642451() {
+function movement_thread() {
     self endon(#"death", #"change_state");
     self notify(#"end_movement_thread");
     self endon(#"end_movement_thread");
@@ -875,7 +875,7 @@ function function_73fc60dc() {
                         continue;
                     }
                 }
-                if (distance2dsquared(self.origin, enemy.origin) < function_a3f6cdac(300)) {
+                if (distance2dsquared(self.origin, enemy.origin) < sqr(300)) {
                     continue;
                 }
                 self thread vehicle_ai::javelin_losetargetatrighttime(enemy, 2);
@@ -908,7 +908,7 @@ function function_af52eeea(einflictor, eattacker, idamage, *idflags, smeansofdea
     if (vehicle_ai::should_emp(self, vsurfacenormal, partname, psoffsettime, damagefromunderneath)) {
         minempdowntime = 0.8 * self.settings.empdowntime;
         maxempdowntime = 1.2 * self.settings.empdowntime;
-        self notify(#"emped", {#param2:psoffsettime, #param1:damagefromunderneath, #param0:randomfloatrange(minempdowntime, maxempdowntime)});
+        self notify(#"emped", {#param0:randomfloatrange(minempdowntime, maxempdowntime), #param1:damagefromunderneath, #param2:psoffsettime});
     }
     if (!isdefined(self.damagelevel)) {
         self.damagelevel = 0;

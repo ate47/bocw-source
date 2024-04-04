@@ -203,7 +203,7 @@ function throwweapon(weapon, positiontag, scavenger, deleteweaponafterdropping) 
     if (!getdvarint(#"hash_6b1268d7e44b1a20", 0) && (positiontag == "tag_weapon_right" || positiontag == "tag_weapon_left")) {
         throwweapon = self dropweapon(weapon, positiontag);
         if (isdefined(throwweapon)) {
-            self weapons::function_9fce8ee7(throwweapon, 50, self.angles, weapon, 0.5, 0.15);
+            self weapons::dropweaponfordeathlaunch(throwweapon, 50, self.angles, weapon, 0.5, 0.15);
         }
         if (deleteweaponafterdropping) {
             throwweapon thread function_403d795c();

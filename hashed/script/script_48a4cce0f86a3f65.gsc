@@ -21,7 +21,7 @@ function add(name, team = 1) {
             team = 1;
         }
     }
-    level.var_479cdca1[self getentitynumber()] = {#team:team, #name:name};
+    level.var_479cdca1[self getentitynumber()] = {#name:name, #team:team};
     if (var_b40f1dcd) {
         thread function_7d76b3ac();
     }
@@ -90,18 +90,18 @@ function private function_7d76b3ac() {
     namespace_61e6d095::set_state(#"entname", team);
     while (isdefined(level.var_479cdca1)) {
         new_name = #"";
-        var_5002c793 = 0;
+        new_team = 0;
         if (isdefined(player.lookatent) && distancesquared(player.origin, player.lookatent.origin) <= level.var_435c3a22[#"hash_71b8f2363319bff4"]) {
-            var_4b6c578e = player.lookatent getentitynumber();
-            ent_name = level.var_479cdca1[var_4b6c578e];
+            ent_num = player.lookatent getentitynumber();
+            ent_name = level.var_479cdca1[ent_num];
             if (isdefined(ent_name)) {
                 new_name = ent_name.name;
-                var_5002c793 = ent_name.team;
+                new_team = ent_name.team;
             }
         }
         if (name != new_name) {
             name = new_name;
-            team = var_5002c793;
+            team = new_team;
             namespace_61e6d095::set_text(#"entname", name);
             namespace_61e6d095::set_state(#"entname", team);
         }

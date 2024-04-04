@@ -295,8 +295,8 @@ function private function_e26728bc(entity) {
     target_pos = var_3e3a3402 + (var_736d384, var_6b1c9b42, 0);
     dir = vectortoangles(target_pos - entity.origin);
     dir = anglestoforward(dir);
-    var_7e2cde6 = dir * 5;
-    var_8598bad6 = entity gettagorigin("tag_gun_barrel2") + var_7e2cde6;
+    launch_offset = dir * 5;
+    var_8598bad6 = entity gettagorigin("tag_gun_barrel2") + launch_offset;
     dist = distance(var_8598bad6, target_pos);
     velocity = dir * dist;
     velocity = velocity + vectorscale((0, 0, 1), 120);
@@ -421,12 +421,12 @@ function private function_424646a8(grenade, mechz) {
 function private mechzberserkknockdownservice(entity) {
     velocity = entity getvelocity();
     var_b98d779c = 0.3;
-    var_6c6317b9 = entity.origin + velocity * var_b98d779c;
-    move_dist_sq = distancesquared(var_6c6317b9, entity.origin);
+    predicted_pos = entity.origin + velocity * var_b98d779c;
+    move_dist_sq = distancesquared(predicted_pos, entity.origin);
     speed = move_dist_sq / var_b98d779c;
     if (speed >= 10) {
         a_zombies = getentitiesinradius(entity.origin, 48, 15);
-        var_eb2cabb5 = array::filter(a_zombies, 0, &function_c01bcef, entity, var_6c6317b9);
+        var_eb2cabb5 = array::filter(a_zombies, 0, &function_c01bcef, entity, predicted_pos);
         if (var_eb2cabb5.size > 0) {
             foreach (zombie in var_eb2cabb5) {
                 zombie.knockdown = 1;
@@ -469,8 +469,8 @@ function private mechzberserkknockdownservice(entity) {
 // Params 3, eflags: 0x6 linked
 // Checksum 0xee263f28, Offset: 0x28b8
 // Size: 0x178
-function private function_c01bcef(zombie, mechz, *var_6c6317b9) {
-    if (!isdefined(mechz) || !isdefined(var_6c6317b9)) {
+function private function_c01bcef(zombie, mechz, *predicted_pos) {
+    if (!isdefined(mechz) || !isdefined(predicted_pos)) {
         return false;
     }
     if (mechz.knockdown === 1) {
@@ -482,15 +482,15 @@ function private function_c01bcef(zombie, mechz, *var_6c6317b9) {
     if (mechz.var_33fb0350 === 1) {
         return false;
     }
-    origin = var_6c6317b9.origin;
-    var_3c08a493 = anglestoforward(var_6c6317b9.angles);
-    var_e14511cb = mechz.origin - origin;
-    var_660d1fec = (var_e14511cb[0], var_e14511cb[1], 0);
-    var_58877074 = (var_3c08a493[0], var_3c08a493[1], 0);
+    origin = predicted_pos.origin;
+    facing_vec = anglestoforward(predicted_pos.angles);
+    enemy_vec = mechz.origin - origin;
+    var_660d1fec = (enemy_vec[0], enemy_vec[1], 0);
+    var_58877074 = (facing_vec[0], facing_vec[1], 0);
     var_660d1fec = vectornormalize(var_660d1fec);
     var_58877074 = vectornormalize(var_58877074);
-    var_704c3d16 = vectordot(var_58877074, var_660d1fec);
-    if (var_704c3d16 < 0) {
+    enemy_dot = vectordot(var_58877074, var_660d1fec);
+    if (enemy_dot < 0) {
         return false;
     }
     return true;
@@ -563,7 +563,7 @@ function private mechzenemynotinaim(entity) {
 // Checksum 0xc3c255b, Offset: 0x2bd8
 // Size: 0x21e
 function mechzshouldshootgrenade(entity) {
-    if (entity.var_72d96058 === 1) {
+    if (entity.berserk === 1) {
         return false;
     }
     if (entity.var_d03c4664 !== 1) {
@@ -621,7 +621,7 @@ function mechzshouldshootflame(entity) {
             return true;
         }
     #/
-    if (entity.var_72d96058 === 1) {
+    if (entity.berserk === 1) {
         return false;
     }
     if (is_true(entity.var_492622ad) && gettime() < entity.var_b25ccf7) {
@@ -659,7 +659,7 @@ function mechzshouldshootflame(entity) {
 // Checksum 0x2d381b2f, Offset: 0x30c8
 // Size: 0xb4
 function private mechzshouldshootflamesweep(entity) {
-    if (entity.var_72d96058 === 1) {
+    if (entity.berserk === 1) {
         return false;
     }
     if (!mechzshouldshootflame(entity)) {
@@ -681,10 +681,10 @@ function private mechzshouldshootflamesweep(entity) {
 // Checksum 0x8237d02c, Offset: 0x3188
 // Size: 0xa2
 function private mechzshouldturnberserk(entity) {
-    if (entity.var_72d96058 === 1 && entity.var_5eca4346 !== 1) {
+    if (entity.berserk === 1 && entity.var_5eca4346 !== 1) {
         return true;
     }
-    if (is_true(entity.var_10552fac) && !is_true(entity.var_72d96058) && !is_true(entity.var_5eca4346)) {
+    if (is_true(entity.var_10552fac) && !is_true(entity.berserk) && !is_true(entity.var_5eca4346)) {
         return true;
     }
     return false;
@@ -799,7 +799,7 @@ function function_5a7ad15e(entity, asmstatename) {
 // Checksum 0xa8639e74, Offset: 0x3530
 // Size: 0x128
 function function_a3c24f6a(entity, *asmstatename) {
-    if (is_true(asmstatename.var_72d96058)) {
+    if (is_true(asmstatename.berserk)) {
         mechzstopflame(asmstatename);
         return 4;
     }
@@ -995,12 +995,12 @@ function function_5afe5280(mechz) {
 function function_fd99ea48(mechz) {
     self endon(#"death");
     self endon(#"disconnect");
-    var_4004985c = 0.25;
+    tick_rate = 0.25;
     if (!is_true(self.is_burning)) {
         self.is_burning = 1;
-        for (percentage = 0; percentage <= 1; percentage = percentage + var_4004985c) {
-            self dodamage(250 * var_4004985c, self.origin, mechz, undefined, undefined, "MOD_BURNED", 0);
-            wait(1.5 * var_4004985c);
+        for (percentage = 0; percentage <= 1; percentage = percentage + tick_rate) {
+            self dodamage(250 * tick_rate, self.origin, mechz, undefined, undefined, "MOD_BURNED", 0);
+            wait(1.5 * tick_rate);
         }
         self.is_burning = 0;
     }
@@ -1028,8 +1028,8 @@ function function_34d763b5() {
     entity = self;
     g_time = gettime();
     entity.var_c109fa4b = g_time + 10000;
-    if (entity.var_72d96058 !== 1) {
-        entity.var_72d96058 = 1;
+    if (entity.berserk !== 1) {
+        entity.berserk = 1;
         entity thread function_9e135033();
         entity setblackboardattribute("_locomotion_speed", "locomotion_speed_sprint");
     }
@@ -1050,9 +1050,9 @@ function private mechzplayedberserkintro(entity) {
 function private function_9e135033() {
     self endon(#"death");
     self endon(#"disconnect");
-    while (self.var_72d96058 === 1) {
+    while (self.berserk === 1) {
         if (gettime() >= self.var_c109fa4b) {
-            self.var_72d96058 = 0;
+            self.berserk = 0;
             self.var_5eca4346 = 0;
             if (!isdefined(self.var_19ec2cc3)) {
                 self asmsetanimationrate(1);
@@ -1242,11 +1242,11 @@ function function_679ee5b3(inflictor, attacker, damage, dflags, mod, weapon, *va
     }
     if (self flag::get("kill_hvt_teleporting")) {
         weakpoint = namespace_81245006::function_3131f5dd(self, hitloc, 1);
-        self.var_6936b30b = {#var_ebcff177:4, #weakpoint:weakpoint};
+        self.var_6936b30b = {#weakpoint:weakpoint, #var_ebcff177:4};
         return 0;
     }
     if (is_true(self.stumble)) {
-        if (self.var_57fca545 < gettime() && !is_true(self.var_72d96058)) {
+        if (self.var_57fca545 < gettime() && !is_true(self.berserk)) {
             self [[ level.var_df70a9a7 ]](attacker, damage, dflags, mod, weapon, var_fd90b0bb, point, dir, hitloc, offsettime, boneindex, modelindex);
         }
     }
@@ -1328,7 +1328,7 @@ function function_679ee5b3(inflictor, attacker, damage, dflags, mod, weapon, *va
     if (killstreaks::is_killstreak_weapon(var_fd90b0bb)) {
         damage_type = 1;
     }
-    self.var_6936b30b = {#var_ebcff177:damage_type, #weakpoint:weakpoint};
+    self.var_6936b30b = {#weakpoint:weakpoint, #var_ebcff177:damage_type};
     return dflags;
 }
 
@@ -1348,7 +1348,7 @@ function private function_669e8e27(entity, weakpoint, attacker, damage, weapon, 
                 entity function_39d47bef(attacker, weapon, mod, inflictor);
             }
         }
-        level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"hit_weak_point_zm", #attacker:attacker});
+        level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:attacker, #scoreevent:"hit_weak_point_zm"});
     } else if (weakpoint.type === #"armor") {
         var_6dd5345c = 3;
         damage_mod = 1;
@@ -1370,7 +1370,7 @@ function private function_669e8e27(entity, weakpoint, attacker, damage, weapon, 
             if (weakpoint.var_f371ebb0 == "power_core_cover") {
                 entity function_3ebf4258();
             }
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:scoreevent, #attacker:attacker});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:attacker, #scoreevent:scoreevent});
         }
     }
     return var_6dd5345c;
@@ -1493,21 +1493,21 @@ function function_923942a7(var_a460aef2, aim_tag, var_40f25562 = 0.5) {
         var_b7ff6051 = anglestoright(angles);
         origin = origin + var_b7ff6051 * var_a460aef2;
     }
-    var_3c08a493 = anglestoforward(angles);
+    facing_vec = anglestoforward(angles);
     enemy = is_true(self.var_1fa24724) ? self.enemy : self.favoriteenemy;
     if (!isdefined(enemy)) {
         return false;
     }
-    var_e14511cb = enemy.origin - origin;
-    var_660d1fec = (var_e14511cb[0], var_e14511cb[1], 0);
-    var_58877074 = (var_3c08a493[0], var_3c08a493[1], 0);
+    enemy_vec = enemy.origin - origin;
+    var_660d1fec = (enemy_vec[0], enemy_vec[1], 0);
+    var_58877074 = (facing_vec[0], facing_vec[1], 0);
     var_660d1fec = vectornormalize(var_660d1fec);
     var_58877074 = vectornormalize(var_58877074);
-    var_704c3d16 = vectordot(var_58877074, var_660d1fec);
-    if (var_704c3d16 < var_40f25562) {
+    enemy_dot = vectordot(var_58877074, var_660d1fec);
+    if (enemy_dot < var_40f25562) {
         return false;
     }
-    var_529624a4 = vectortoangles(var_e14511cb);
+    var_529624a4 = vectortoangles(enemy_vec);
     if (!is_true(self.var_1fa24724) && abs(angleclamp180(var_529624a4[0])) > 60) {
         return false;
     }
@@ -1602,7 +1602,7 @@ function function_fb451f53() {
     while (true) {
         min_wait = 2;
         max_wait = 5;
-        if (is_true(self.var_72d96058) || is_true(self.var_e8f3d773)) {
+        if (is_true(self.berserk) || is_true(self.var_e8f3d773)) {
             str_notify = "ambient_enraged";
         } else if (isdefined(self.zombie_move_speed) && self.zombie_move_speed === "run") {
             str_notify = "ambient_enraged";

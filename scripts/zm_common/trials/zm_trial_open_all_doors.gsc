@@ -11,14 +11,14 @@
 // Checksum 0xa41c624c, Offset: 0xd0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_open_all_doors", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_open_all_doors", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_open_all_doors/zm_trial_open_all_doors
 // Params 0, eflags: 0x4
 // Checksum 0x5822d58f, Offset: 0x118
 // Size: 0xec
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

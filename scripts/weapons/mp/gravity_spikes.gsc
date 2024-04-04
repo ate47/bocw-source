@@ -11,14 +11,14 @@
 // Checksum 0x4bb679e0, Offset: 0xd0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"gravity_spikes", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"gravity_spikes", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace gravity_spikes/gravity_spikes
 // Params 0, eflags: 0x4
 // Checksum 0x5cce3fc2, Offset: 0x118
 // Size: 0x34
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
     ability_player::register_gadget_activation_callbacks(7, &function_20bb376d, undefined);
 }

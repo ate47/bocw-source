@@ -24,14 +24,14 @@
 // Checksum 0x5e081a74, Offset: 0x150
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"spawning_shared", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"spawning_shared", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace spawning/spawning_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1f347f2a, Offset: 0x198
 // Size: 0x2ac
-function private function_70a657d8() {
+function private preinit() {
     if (util::is_frontend_map()) {
         return;
     }
@@ -186,7 +186,7 @@ function onspawnplayer(predictedspawn = 0) {
         }
         if (squad_spawn::function_d072f205()) {
             if (squad_spawn::function_61e7d9a8(self)) {
-                squad_spawn::function_4e197db9(self);
+                squad_spawn::spawninvehicle(self);
             }
             squad_spawn::function_bb63189b(self);
         }
@@ -209,12 +209,12 @@ function function_d62887a1(predictedspawn) {
 function function_89116a1e(predictedspawn) {
     /#
         if (isdefined(self.devguilockspawn) && self.devguilockspawn) {
-            return {#angles:self.resurrect_angles, #origin:self.resurrect_origin};
+            return {#origin:self.resurrect_origin, #angles:self.resurrect_angles};
         }
     #/
     if (isdefined(level.resurrect_override_spawn)) {
         if (self [[ level.resurrect_override_spawn ]](predictedspawn)) {
-            return {#angles:self.resurrect_angles, #origin:self.resurrect_origin};
+            return {#origin:self.resurrect_origin, #angles:self.resurrect_angles};
         }
     }
     if (isdefined(self.var_b7cc4567)) {
@@ -309,7 +309,7 @@ function private function_99ca1277(player, predictedspawn) {
         spawn_point = function_594e5666();
     }
     if (!predictedspawn && sessionmodeismultiplayergame()) {
-        mpspawnpointsused = {#var_50641dd5:0, #z:spawn_point[#"origin"][2], #y:spawn_point[#"origin"][1], #x:spawn_point[#"origin"][0], #var_c734ddf2:getplayerspawnid(player), #reason:"point used"};
+        mpspawnpointsused = {#reason:"point used", #var_c734ddf2:getplayerspawnid(player), #x:spawn_point[#"origin"][0], #y:spawn_point[#"origin"][1], #z:spawn_point[#"origin"][2], #var_50641dd5:0};
         function_92d1707f(#"hash_608dde355fff78f5", mpspawnpointsused);
     }
     spawn = spawnstruct();
@@ -328,7 +328,7 @@ function on_player_spawned() {
     var_f8e6b703 = self match_record::get_player_stat(#"hash_ec4aea1a8bbd82");
     if (isdefined(self.spawn.var_a9914487)) {
         if (isdefined(var_f8e6b703)) {
-            self match_record::set_stat(#"lives", var_f8e6b703, #"hash_10446f528c34382d", self.spawn.var_a9914487);
+            self match_record::set_stat(#"lives", var_f8e6b703, #"spawn_type", self.spawn.var_a9914487);
         }
     }
     if (isdefined(self.spawn.var_4db23b)) {

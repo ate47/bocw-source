@@ -14,14 +14,14 @@
 // Checksum 0x5b761cf4, Offset: 0x1d0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"player_tank", &function_70a657d8, undefined, undefined, #"player_vehicle");
+    system::register(#"player_tank", &preinit, undefined, undefined, #"player_vehicle");
 }
 
 // Namespace player_tank/player_tank
 // Params 0, eflags: 0x6 linked
 // Checksum 0x280fb573, Offset: 0x220
 // Size: 0x8c
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_main_callback("player_tank", &function_c0f1d81b);
     clientfield::register("scriptmover", "tank_deathfx", 1, 1, "int");
     clientfield::register("vehicle", "tank_shellejectfx", 1, 1, "int");
@@ -57,15 +57,15 @@ function private function_b61c27bb(einflictor, eattacker, idamage, *idflags, sme
             if (isplayer(occupant) && !isbot(occupant)) {
                 damagepct = modelindex / self.maxhealth;
                 damagepct = int(max(damagepct, 3));
-                var_17308f26 = undefined;
+                damagedirection = undefined;
                 if (isdefined(damagefromunderneath) || isdefined(psoffsettime)) {
                     if (isdefined(psoffsettime) && (partname === "MOD_RIFLE_BULLET" || partname === "MOD_PISTOL_BULLET")) {
-                        var_17308f26 = vectornormalize(occupant.origin - psoffsettime.origin);
+                        damagedirection = vectornormalize(occupant.origin - psoffsettime.origin);
                     } else {
-                        var_17308f26 = vsurfacenormal;
+                        damagedirection = vsurfacenormal;
                     }
                 }
-                occupant addtodamageindicator(damagepct, var_17308f26);
+                occupant addtodamageindicator(damagepct, damagedirection);
                 break;
             }
         }
@@ -87,11 +87,11 @@ function function_4366bf50(params) {
     deathmodel.angles = self function_bc2f1cb8(0);
     side_offset = getdvarint(#"hash_2163abe439abdd44", 5);
     var_a460aef2 = randomintrange(side_offset * -1, side_offset);
-    var_a20a7474 = getdvarint(#"hash_3ad1ffe3739de420", 10);
+    forward_offset = getdvarint(#"hash_3ad1ffe3739de420", 10);
     forward = anglestoforward(deathmodel.angles);
     right = anglestoright(deathmodel.angles);
     contact_point = deathmodel.origin;
-    contact_point = contact_point + forward * var_a20a7474;
+    contact_point = contact_point + forward * forward_offset;
     contact_point = contact_point + right * var_a460aef2;
     var_f0436c8a = getdvarint(#"hash_7a9d06ee19067d4f", 150);
     var_da0636d8 = getdvarint(#"hash_7a81f4ee18ef9701", 180);
@@ -100,7 +100,7 @@ function function_4366bf50(params) {
     deathmodel clientfield::set("tank_deathfx", 1);
     deathmodel waittilltimeout(20, #"death");
     if (isdefined(deathmodel)) {
-        deathmodel function_cb48cddd();
+        deathmodel deletedelay();
     }
 }
 

@@ -11,14 +11,14 @@
 // Checksum 0x5cc8c6d7, Offset: 0x178
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"vortex", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"vortex", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zombie_vortex/zombie_vortex
 // Params 0, eflags: 0x6 linked
 // Checksum 0x59e5afb4, Offset: 0x1c0
 // Size: 0x114
-function private function_70a657d8() {
+function private preinit() {
     visionset_mgr::register_visionset_info("zm_idgun_vortex" + "_visionset", 1, 30, undefined, "zm_idgun_vortex");
     visionset_mgr::register_overlay_info_style_speed_blur("zm_idgun_vortex" + "_blur", 1, 1, 0.08, 0.75, 0.9);
     clientfield::register("scriptmover", "vortex_start", 1, 2, "counter", &start_vortex, 0, 0);

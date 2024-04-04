@@ -13,14 +13,14 @@
 // Checksum 0x483ca67, Offset: 0x110
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"player_free_fall", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"player_free_fall", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace player_free_fall/player_free_fall
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb1a7dd1d, Offset: 0x158
 // Size: 0x134
-function private function_70a657d8() {
+function private preinit() {
     level.var_7abaaef1 = getdvarint(#"player_freefall", 0);
     if (is_true(level.var_7abaaef1)) {
         function_7c19fac2();
@@ -87,21 +87,21 @@ function function_18e58cf4(*var_23c2e47f) {
 // Params 1, eflags: 0x0
 // Checksum 0xf7cf23e0, Offset: 0x558
 // Size: 0xc4
-function function_d5f0ecba(bool) {
-    if (!isdefined(self.var_86a2020d)) {
-        self.var_86a2020d = 0;
+function allow_player_basejumping(bool) {
+    if (!isdefined(self.enabledbasejumping)) {
+        self.enabledbasejumping = 0;
     }
     if (bool) {
-        self.var_86a2020d++;
+        self.enabledbasejumping++;
         self function_8b8a321a(1);
         self function_8a945c0e(1);
         return;
     }
-    self.var_86a2020d--;
-    if (self.var_86a2020d < 0) {
-        self.var_86a2020d = 0;
+    self.enabledbasejumping--;
+    if (self.enabledbasejumping < 0) {
+        self.enabledbasejumping = 0;
     }
-    if (!self.var_86a2020d) {
+    if (!self.enabledbasejumping) {
         self function_8b8a321a(0);
         self function_8a945c0e(0);
     }
@@ -149,7 +149,7 @@ function function_7705a7fc(fall_time, velocity) {
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x7c0
 // Size: 0x4
-function function_31736192() {
+function parachutemidairdeathwatcher() {
     
 }
 
@@ -160,11 +160,11 @@ function function_31736192() {
 function function_a1fa2219() {
     self endon(#"death", #"disconnect");
     self thread function_2979b1be(3);
-    self waittill(#"hash_7112ac0140b1ac11");
+    self waittill(#"skydive_deployparachute");
     self function_8a945c0e(0);
     self notify(#"hash_6296a62cf6a8a8c4");
-    if (!is_true(level.var_7b83f898) && isdefined(level.var_39e04b4d)) {
-        self [[ level.var_39e04b4d ]]();
+    if (!is_true(level.dontshootwhileparachuting) && isdefined(level.parachuteopencb)) {
+        self [[ level.parachuteopencb ]]();
     }
     self thread function_156d91ef();
 }
@@ -180,17 +180,17 @@ function function_156d91ef() {
     }
     self waittill(#"hash_171443902e2a22ee");
     waitframe(1);
-    if (isdefined(level.var_20f7f790)) {
-        self [[ level.var_20f7f790 ]]();
+    if (isdefined(level.parachuterestoreweaponscb)) {
+        self [[ level.parachuterestoreweaponscb ]]();
     }
-    if (is_true(level.var_7b83f898) && isdefined(level.var_1912e4a4)) {
-        self [[ level.var_1912e4a4 ]]();
+    if (is_true(level.dontshootwhileparachuting) && isdefined(level.parachutecompletecb)) {
+        self [[ level.parachutecompletecb ]]();
     }
     self notify(#"hash_56c07a749ce0f359");
     self function_41170420(0);
     self notify(#"hash_4dbf3de1e862e186");
-    if (isdefined(level.var_d11b139b)) {
-        self [[ level.var_d11b139b ]](self);
+    if (isdefined(level.onfirstlandcallback)) {
+        self [[ level.onfirstlandcallback ]](self);
     }
 }
 

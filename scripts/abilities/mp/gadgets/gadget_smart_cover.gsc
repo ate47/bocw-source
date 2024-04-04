@@ -14,14 +14,14 @@
 // Checksum 0xa34d3656, Offset: 0xb8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"gadget_smart_cover", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"gadget_smart_cover", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace smart_cover/gadget_smart_cover
 // Params 0, eflags: 0x6 linked
 // Checksum 0x35915a90, Offset: 0x100
 // Size: 0x6c
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
     function_649f8cbe(&onsmartcoverplaced);
     function_a9427b5c(&function_a430cceb);
@@ -34,7 +34,7 @@ function private function_70a657d8() {
 // Size: 0x84
 function onsmartcoverplaced(smartcover) {
     self battlechatter::function_fc82b10(smartcover.weapon, smartcover.origin, smartcover);
-    self callback::callback(#"hash_70eeb7d813f149b2", {#cover:smartcover.smartcover, #owner:self});
+    self callback::callback(#"hash_70eeb7d813f149b2", {#owner:self, #cover:smartcover.smartcover});
 }
 
 // Namespace smart_cover/gadget_smart_cover
@@ -50,7 +50,7 @@ function function_a430cceb(attacker, weapon) {
         attacker stats::function_e24eec31(weapon, #"hash_1c9da51ed1906285", 1);
         killstreaks::function_e729ccee(attacker, weapon);
     }
-    self callback::callback(#"hash_15858698313c5f32", {#cover:self, #owner:self.owner});
+    self callback::callback(#"hash_15858698313c5f32", {#owner:self.owner, #cover:self});
 }
 
 // Namespace smart_cover/gadget_smart_cover
@@ -59,7 +59,7 @@ function function_a430cceb(attacker, weapon) {
 // Size: 0x14a
 function function_9a2b3318(origin, *angles, *player) {
     if (isdefined(level.smartcoversettings.bundle.var_bc78f60e)) {
-        length2 = function_a3f6cdac(level.smartcoversettings.bundle.var_bc78f60e + level.smartcoversettings.bundle.maxwidth);
+        length2 = sqr(level.smartcoversettings.bundle.var_bc78f60e + level.smartcoversettings.bundle.maxwidth);
         foreach (protectedzone in level.smartcoversettings.var_d6a27a84) {
             if (isdefined(protectedzone)) {
                 dist2 = distance2dsquared(player, protectedzone.origin);

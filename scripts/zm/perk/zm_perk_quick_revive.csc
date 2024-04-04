@@ -12,14 +12,14 @@
 // Checksum 0x33ee9ceb, Offset: 0xf8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_perk_quick_revive", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_perk_quick_revive", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_perk_quick_revive/zm_perk_quick_revive
 // Params 0, eflags: 0x6 linked
 // Checksum 0x24762576, Offset: 0x140
 // Size: 0x14
-function private function_70a657d8() {
+function private preinit() {
     enable_quick_revive_perk_for_level();
 }
 

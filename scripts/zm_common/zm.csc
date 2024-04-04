@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\zm_common\zm_holiday_event.csc;
 #using scripts\zm_common\zm_vo.csc;
-#using script_311c446e3df6c3fa;
+#using scripts\zm_common\objective_manager.csc;
 #using script_4ed01237ecbd380f;
 #using script_538e87197f25d67;
 #using script_2bdd098a8215ac9f;
@@ -22,13 +22,13 @@
 #using scripts\zm_common\zm_zdraw.csc;
 #using scripts\zm_common\zm_weapons.csc;
 #using scripts\zm_common\zm_wallbuy.csc;
-#using script_460d54ff48daf1f7;
+#using scripts\zm_common\zm_vote.csc;
 #using scripts\zm_common\zm_utility.csc;
 #using scripts\zm_common\zm_powerups.csc;
-#using script_17a9d06bf819b2d3;
+#using scripts\zm_common\zm_ping.csc;
 #using scripts\zm_common\zm_perks.csc;
 #using scripts\zm_common\zm_laststand.csc;
-#using script_2c8fd33ddb45e78b;
+#using scripts\zm_common\zm_intel.csc;
 #using scripts\zm_common\zm_hud.csc;
 #using scripts\zm_common\zm_ffotd.csc;
 #using scripts\zm_common\zm_equipment.csc;
@@ -38,7 +38,7 @@
 #using scripts\zm_common\zm_bgb.csc;
 #using scripts\zm_common\zm_audio.csc;
 #using scripts\zm_common\load.csc;
-#using script_31816d064a53f516;
+#using scripts\core_common\ai\zombie_eye_glow.csc;
 #using scripts\core_common\visionset_mgr_shared.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\system_shared.csc;
@@ -93,14 +93,14 @@ function autoexec ignore_systems() {
 // Checksum 0x562794a2, Offset: 0x870
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"zm", &function_70a657d8, undefined, undefined, "renderoverridebundle");
+    system::register(#"zm", &preinit, undefined, undefined, "renderoverridebundle");
 }
 
 // Namespace zm/zm
 // Params 0, eflags: 0x6 linked
 // Checksum 0xac47f41b, Offset: 0x8c0
 // Size: 0x328
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.zombie_vars)) {
         level.zombie_vars = [];
     }
@@ -276,28 +276,28 @@ function function_7b19219a(*localclientnum) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xffd6f25a, Offset: 0x1580
 // Size: 0x1ea
-function function_218c0417(localclientnum, var_a6762160) {
-    if (var_a6762160.itemtype === #"equipment" || var_a6762160.itemtype === #"tactical") {
+function function_218c0417(localclientnum, itementry) {
+    if (itementry.itemtype === #"equipment" || itementry.itemtype === #"tactical") {
         data = item_world::function_a7e98a1a(localclientnum);
         lethal = data.inventory.items[7];
         tactical = data.inventory.items[13];
-        if (var_a6762160.itemtype == #"equipment" && lethal.networkid != 32767) {
-            if (lethal.var_a6762160.name === var_a6762160.name && lethal.count >= var_a6762160.stackcount) {
+        if (itementry.itemtype == #"equipment" && lethal.networkid != 32767) {
+            if (lethal.itementry.name === itementry.name && lethal.count >= itementry.stackcount) {
                 return 0;
             }
-        } else if (var_a6762160.itemtype == #"tactical" && tactical.networkid != 32767) {
-            if (tactical.var_a6762160.name === var_a6762160.name && tactical.count >= var_a6762160.stackcount) {
+        } else if (itementry.itemtype == #"tactical" && tactical.networkid != 32767) {
+            if (tactical.itementry.name === itementry.name && tactical.count >= itementry.stackcount) {
                 return 0;
             }
         }
     }
-    if (var_a6762160.itemtype == #"quest") {
+    if (itementry.itemtype == #"quest") {
         return 1;
     }
     if (item_inventory::function_7d5553ac()) {
         return 1;
     }
-    return item_inventory::function_ad4c6116(localclientnum, var_a6762160);
+    return item_inventory::function_ad4c6116(localclientnum, itementry);
 }
 
 // Namespace zm/zm
@@ -323,7 +323,7 @@ function init() {
     init_clientfields();
     zm_perks::init();
     zm_powerups::init();
-    namespace_af5c1c0c::init();
+    zm_vote::init();
     init_blocker_fx();
     init_riser_fx();
     init_zombie_explode_fx();
@@ -1506,11 +1506,11 @@ function function_6ee4a2c(*localclientnum) {
 // Checksum 0x8c6ce220, Offset: 0x57e8
 // Size: 0x1fc
 function function_f73c3352() {
-    var_65792f8b = function_2717b55f();
-    if (!isdefined(var_65792f8b.var_c5d172c6)) {
+    mapbundle = function_2717b55f();
+    if (!isdefined(mapbundle.var_c5d172c6)) {
         return;
     }
-    var_5caa3d5b = getscriptbundle(var_65792f8b.var_c5d172c6);
+    var_5caa3d5b = getscriptbundle(mapbundle.var_c5d172c6);
     if (!isdefined(var_5caa3d5b)) {
         return;
     }
@@ -1525,7 +1525,7 @@ function function_f73c3352() {
         default:
             /#
                 /#
-                    assert(0, "<unknown string>" + var_65792f8b.var_a4d41b30 + "<unknown string>" + struct.asset + "<unknown string>");
+                    assert(0, "<unknown string>" + mapbundle.var_a4d41b30 + "<unknown string>" + struct.asset + "<unknown string>");
                 #/
             #/
             var_2d9402be = undefined;

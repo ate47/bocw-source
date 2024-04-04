@@ -78,7 +78,7 @@ function timeuntilspawn(includeteamkilldelay) {
             respawndelay = respawndelay + level.teamkilledspawndelay;
         }
         if (includeteamkilldelay && is_true(self.teamkillpunish)) {
-            respawndelay = respawndelay + globallogic_player::function_e577c1e();
+            respawndelay = respawndelay + globallogic_player::teamkilldelay();
         }
         if (isdefined(self.bleedout_time) && isdefined(self.var_84c0402e)) {
             /#
@@ -231,7 +231,7 @@ function spawnplayer() {
     /#
         assert(isvalidclass(self.curclass) || isbot(self));
     #/
-    self loadout::function_2e9919bb(self.curclass);
+    self loadout::setclass(self.curclass);
     var_db3f2906 = self savegame::function_2ee66e93("altPlayerID", undefined);
     var_d4a479a1 = undefined;
     if (isdefined(var_db3f2906)) {
@@ -242,10 +242,10 @@ function spawnplayer() {
             }
         }
         if (!isdefined(var_d4a479a1)) {
-            self savegame::function_6d003cb9("altPlayerID", undefined);
+            self savegame::set_player_data("altPlayerID", undefined);
         }
     }
-    self thread loadout::function_2bf96aa3(self.team, self.curclass, var_d4a479a1);
+    self thread loadout::giveloadout(self.team, self.curclass, var_d4a479a1);
     if (is_true(self.var_c071a13e)) {
         self.var_c071a13e = undefined;
     } else {
@@ -287,7 +287,7 @@ function spawnplayer() {
     self notify(#"spawned_player");
     if (!getdvarint(#"art_review", 0)) {
         self.var_913d3fca = 0;
-        self.var_a1653258 = 0;
+        self.last_damaged_time = 0;
         self.var_63a30c1 = 0;
         self.var_7e008e0c = 0;
         callback::callback(#"on_player_spawned");
@@ -660,19 +660,19 @@ function waitandspawnclient(timealreadypassed) {
         }
     }
     if (is_true(self.teamkillpunish)) {
-        var_e577c1e = globallogic_player::function_e577c1e();
-        if (var_e577c1e > timealreadypassed) {
-            var_e577c1e = var_e577c1e - timealreadypassed;
+        teamkilldelay = globallogic_player::teamkilldelay();
+        if (teamkilldelay > timealreadypassed) {
+            teamkilldelay = teamkilldelay - timealreadypassed;
             timealreadypassed = 0;
         } else {
-            timealreadypassed = timealreadypassed - var_e577c1e;
-            var_e577c1e = 0;
+            timealreadypassed = timealreadypassed - teamkilldelay;
+            teamkilldelay = 0;
         }
-        if (var_e577c1e > 0) {
-            hud_message::setlowermessage(#"hash_7d1a0e5bd191fce", var_e577c1e);
+        if (teamkilldelay > 0) {
+            hud_message::setlowermessage(#"hash_7d1a0e5bd191fce", teamkilldelay);
             self thread respawn_asspectator(self.origin + vectorscale((0, 0, 1), 60), self.angles);
             spawnedasspectator = 1;
-            wait(var_e577c1e);
+            wait(teamkilldelay);
         }
         self.teamkillpunish = 0;
     }

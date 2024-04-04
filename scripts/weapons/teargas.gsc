@@ -24,9 +24,9 @@
 function init_shared() {
     level.var_2ee59975 = [];
     level.var_29115f03 = [];
-    level.var_29115f03[1] = {#var_18c0a09d:#"hash_42b275f8ad52e92d", #slow:#"hash_8a5fd5a0a3d0325"};
-    level.var_29115f03[2] = {#var_18c0a09d:#"hash_42b272f8ad52e414", #slow:#"hash_8a5fa5a0a3cfe0c"};
-    level.var_29115f03[3] = {#var_18c0a09d:#"hash_42b273f8ad52e5c7", #slow:#"hash_8a5fb5a0a3cffbf"};
+    level.var_29115f03[1] = {#slow:#"hash_8a5fd5a0a3d0325", #var_18c0a09d:#"hash_42b275f8ad52e92d"};
+    level.var_29115f03[2] = {#slow:#"hash_8a5fa5a0a3cfe0c", #var_18c0a09d:#"hash_42b272f8ad52e414"};
+    level.var_29115f03[3] = {#slow:#"hash_8a5fb5a0a3cffbf", #var_18c0a09d:#"hash_42b273f8ad52e5c7"};
     weapon = getweapon(#"tear_gas");
     clientfield::register("toplayer", "in_tear_gas", 1, 2, "int");
     weaponobjects::function_e6400478(#"tear_gas", &function_db9e3adb, 0);
@@ -345,7 +345,7 @@ function private function_78d7002(var_7e6e7f9f, owner, grenadeent) {
         dot = getstatuseffect(#"hash_69c2a47bf2322b6b");
     }
     dot.killcament = grenadeent.killcament;
-    dot.var_3fc27996 = grenadeent;
+    dot.sourceent = grenadeent;
     self thread status_effect::status_effect_apply(dot, var_7e6e7f9f, owner, 0, undefined, undefined, grenadeent.origin);
     self playsoundtoplayer(#"hash_569fa11d8a4005ba", self);
     foreach (stage, var_c62d6d34 in level.var_29115f03) {

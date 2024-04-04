@@ -173,7 +173,7 @@ function private function_3bda3c55(entity) {
     if (abs(entity.origin[2] - entity.favoriteenemy.origin[2]) > 72) {
         return false;
     }
-    if (distance2dsquared(entity.origin, entity.favoriteenemy.origin) > function_a3f6cdac(200)) {
+    if (distance2dsquared(entity.origin, entity.favoriteenemy.origin) > sqr(200)) {
         return false;
     }
     return true;
@@ -196,7 +196,7 @@ function private function_85e8940a(entity) {
     players = getplayers(#"all", entity.origin, var_aa6baab8);
     entity clientfield::increment("brutus_shock_attack", 1);
     foreach (player in players) {
-        if (!namespace_7f5aeb59::function_7df41f60(player)) {
+        if (!namespace_7f5aeb59::isplayervalid(player)) {
             continue;
         }
         if (player.origin[2] - entity.origin[2] < -32) {

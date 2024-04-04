@@ -116,7 +116,7 @@ function arc_damage(source_enemy, player, arc_num, params = level.default_lightn
 // Checksum 0x9ef95fb8, Offset: 0x910
 // Size: 0x74
 function arc_damage_ent(player, arc_num, params = level.default_lightning_chain_params) {
-    lc_flag_hit(self, 1, params.var_871d3454);
+    lc_flag_hit(self, 1, params.stun_duration);
     self thread lc_do_damage(self, arc_num, player, params);
 }
 
@@ -198,13 +198,13 @@ function private lc_get_enemies_in_area(origin, distance, player) {
 // Params 3, eflags: 0x6 linked
 // Checksum 0x40d2459e, Offset: 0xc98
 // Size: 0xf4
-function private lc_flag_hit(enemy, hit, var_ab5b905e) {
+function private lc_flag_hit(enemy, hit, durationoverride) {
     if (isdefined(enemy)) {
         if (isarray(enemy)) {
             for (i = 0; i < enemy.size; i++) {
                 if (isdefined(enemy[i])) {
                     if (hit) {
-                        enemy[i] ai::stun(var_ab5b905e);
+                        enemy[i] ai::stun(durationoverride);
                         continue;
                     }
                     enemy[i] ai::clear_stun();
@@ -214,7 +214,7 @@ function private lc_flag_hit(enemy, hit, var_ab5b905e) {
         }
         if (isdefined(enemy)) {
             if (hit) {
-                enemy ai::stun(var_ab5b905e);
+                enemy ai::stun(durationoverride);
                 return;
             }
             enemy ai::clear_stun();

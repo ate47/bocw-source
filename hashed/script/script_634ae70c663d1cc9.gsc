@@ -164,7 +164,7 @@ function main() {
 // Checksum 0x6341dd74, Offset: 0xd30
 // Size: 0x1f8
 function function_3111b4b2(var_d748f8af, triggertype = "trigger_box", var_bacb72c4, height, width, var_7946c1f6 = 0) {
-    trigger = namespace_ec06fe4a::function_b5731057(triggertype, (0, 0, 0), 1 | 2 | 4 | 4096 | 512 | var_7946c1f6, var_bacb72c4, height, width);
+    trigger = namespace_ec06fe4a::spawntrigger(triggertype, (0, 0, 0), 1 | 2 | 4 | 4096 | 512 | var_7946c1f6, var_bacb72c4, height, width);
     if (isdefined(trigger)) {
         trigger enablelinkto();
         trigger.type = var_d748f8af;
@@ -199,8 +199,8 @@ function function_e8bbd3ad(var_d748f8af) {
 // Params 5, eflags: 0x2 linked
 // Checksum 0x1e9771e7, Offset: 0xfd8
 // Size: 0x3a8
-function function_5bfa98c9(type, var_2e120d02, var_a3ea8b6f = 1024, flush = 0, var_6c21387b = 1024) {
-    if (!isdefined(namespace_ec06fe4a::function_f3eab80e(var_2e120d02, var_a3ea8b6f))) {
+function function_5bfa98c9(type, myorigin, var_a3ea8b6f = 1024, flush = 0, var_6c21387b = 1024) {
+    if (!isdefined(namespace_ec06fe4a::function_f3eab80e(myorigin, var_a3ea8b6f))) {
         return;
     }
     var_8bc05e55 = type + "_avail";
@@ -375,7 +375,7 @@ function function_7f6a807c() {
             entnum = self.owner.script_model getentitynumber();
             origin = self.owner.script_model.origin;
         }
-        namespace_1e25ad94::function_f5f0c0f8("Trap (" + entnum + ") at origin:" + origin + " lost its trigger.  Type:" + self.owner.script_noteworthy);
+        namespace_1e25ad94::debugmsg("Trap (" + entnum + ") at origin:" + origin + " lost its trigger.  Type:" + self.owner.script_noteworthy);
     }
     self.owner = undefined;
     self triggerenable(0);

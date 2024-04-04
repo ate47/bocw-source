@@ -120,7 +120,7 @@ function register(name, step_name, var_e788cdd7, setup_func, cleanup_func, var_d
         self._ee = [];
     }
     if (!isdefined(self._ee[name])) {
-        self._ee[name] = {#skip_to_step:-1, #owner:self, #started:0, #current_step:0, #steps:[], #completed:0, #name:name};
+        self._ee[name] = {#name:name, #completed:0, #steps:[], #current_step:0, #started:0, #owner:self, #skip_to_step:-1};
         /#
             if (getdvarint(#"zm_debug_ee", 0)) {
                 thread function_28aee167(name);
@@ -134,7 +134,7 @@ function register(name, step_name, var_e788cdd7, setup_func, cleanup_func, var_d
     if (!isdefined(ee.var_35ccab99)) {
         ee.var_35ccab99 = var_27465eb4;
     }
-    new_step = {#var_441061cd:var_441061cd, #a_targets:a_targets, #var_6cc77d4e:var_6cc77d4e, #cleaned_up:0, #completed:0, #started:0, #cleanup_func:cleanup_func, #setup_func:setup_func, #var_e788cdd7:var_e788cdd7, #ee:ee, #name:step_name};
+    new_step = {#name:step_name, #ee:ee, #var_e788cdd7:var_e788cdd7, #setup_func:setup_func, #cleanup_func:cleanup_func, #started:0, #completed:0, #cleaned_up:0, #var_6cc77d4e:var_6cc77d4e, #a_targets:a_targets, #var_441061cd:var_441061cd};
     previous_step = ee.steps[self._ee[name].steps.size - 1];
     if (isdefined(previous_step)) {
         previous_step.next_step = new_step;
@@ -368,7 +368,7 @@ function private function_3f795dc3(*ee, step, var_5ea5c94d) {
     [[ step.setup_func ]](var_5ea5c94d);
     step.completed = 1;
     if (isdefined(step.var_6cc77d4e)) {
-        level function_53d0d99(step.var_6cc77d4e, step.a_targets);
+        level objective_complete(step.var_6cc77d4e, step.a_targets);
     }
     self notify(step.var_e788cdd7 + "_setup_completed");
 }
@@ -386,7 +386,7 @@ function private function_df365859(*notifyhash) {
     #/
     self.completed = 1;
     if (isdefined(self.var_6cc77d4e)) {
-        level function_53d0d99(self.var_6cc77d4e, self.a_targets);
+        level objective_complete(self.var_6cc77d4e, self.a_targets);
     }
     waittillframeend();
     self.ee.owner notify(self.var_e788cdd7 + "_ended_early");
@@ -583,7 +583,7 @@ function sndonoverride_eye_(n_progress) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xedf79a6d, Offset: 0x2988
 // Size: 0xa44
-function function_53d0d99(var_7f440703, a_targets) {
+function objective_complete(var_7f440703, a_targets) {
     var_6261674 = [];
     if (isplayer(self)) {
         a_players = array(self);
@@ -699,8 +699,8 @@ function function_53d0d99(var_7f440703, a_targets) {
 // Size: 0x64
 function private function_8a11442f(str_objective) {
     self endon(#"deleted", "complete_objective_" + str_objective);
-    self waittill(#"death", #"hash_26d74c393e63d809");
-    thread function_53d0d99(str_objective, self);
+    self waittill(#"death", #"remove_objective");
+    thread objective_complete(str_objective, self);
 }
 
 // Namespace zm_sq/zm_sq

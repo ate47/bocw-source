@@ -9,7 +9,7 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0x50bb43a7, Offset: 0x218
 // Size: 0x74
-function function_70a657d8() {
+function preinit() {
     function_ce850bf4();
     function_c50262c4();
     function_ece9035a();
@@ -64,12 +64,12 @@ function private function_c50262c4() {
     bot_action::register_weapon(#"knife_loadout", &function_97bc2873, &function_5f7cac29);
     bot_action::register_weapon(#"launcher_freefire_t9", &function_3929fa65, &use_launcher);
     bot_action::register_weapon(#"launcher_standard_t9", &function_3929fa65, &use_launcher);
-    bot_action::register_weapon(#"pistol_burst_t9", &function_6aa40bb4, &function_3f4d56d1);
-    bot_action::register_weapon(#"pistol_burst_t9" + "_dw", &function_6aa40bb4, &function_3f4d56d1);
-    bot_action::register_weapon(#"pistol_revolver_t9", &function_6aa40bb4, &function_3f4d56d1);
-    bot_action::register_weapon(#"pistol_revolver_t9" + "_dw", &function_6aa40bb4, &function_3f4d56d1);
-    bot_action::register_weapon(#"pistol_semiauto_t9", &function_6aa40bb4, &function_3f4d56d1);
-    bot_action::register_weapon(#"pistol_semiauto_t9" + "_dw", &function_6aa40bb4, &function_3f4d56d1);
+    bot_action::register_weapon(#"pistol_burst_t9", &function_6aa40bb4, &use_pistol);
+    bot_action::register_weapon(#"pistol_burst_t9" + "_dw", &function_6aa40bb4, &use_pistol);
+    bot_action::register_weapon(#"pistol_revolver_t9", &function_6aa40bb4, &use_pistol);
+    bot_action::register_weapon(#"pistol_revolver_t9" + "_dw", &function_6aa40bb4, &use_pistol);
+    bot_action::register_weapon(#"pistol_semiauto_t9", &function_6aa40bb4, &use_pistol);
+    bot_action::register_weapon(#"pistol_semiauto_t9" + "_dw", &function_6aa40bb4, &use_pistol);
     bot_action::register_weapon(#"shotgun_fullauto_t9", &function_408f0f07, &function_78135f4c);
     bot_action::register_weapon(#"shotgun_pump_t9", &function_408f0f07, &function_78135f4c);
     bot_action::register_weapon(#"shotgun_semiauto_t9", &function_408f0f07, &function_78135f4c);
@@ -124,7 +124,7 @@ function private function_1f3281d9() {
     bot_action::register_weapon(#"hash_37986bd5b6da9ab1", &function_66e1fe37, &function_de73a533);
     bot_action::register_weapon(#"hash_37986cd5b6da9c64", &function_66e1fe37, &function_de73a533);
     bot_action::register_weapon(#"hash_37986dd5b6da9e17", &function_66e1fe37, &function_de73a533);
-    bot_action::register_weapon(#"hash_41adc0ca9daf6e9d", &function_66e1fe37, &function_de73a533);
+    bot_action::register_weapon(#"energy_mine", &function_66e1fe37, &function_de73a533);
     bot_action::register_weapon(#"energy_mine_1", &function_66e1fe37, &function_de73a533);
     bot_action::register_weapon(#"energy_mine_2", &function_66e1fe37, &function_de73a533);
     bot_action::register_weapon(#"energy_mine_3", &function_66e1fe37, &function_de73a533);
@@ -219,7 +219,7 @@ function private function_d4db3361() {
 // Size: 0x64
 function private function_a79f6dfb() {
     if (level.gametype == #"dropkick") {
-        bot_action::register_weapon(#"hash_29ab150f9f8964f", &function_6aa40bb4, &function_3f4d56d1);
+        bot_action::register_weapon(#"hash_29ab150f9f8964f", &function_6aa40bb4, &use_pistol);
     }
 }
 
@@ -465,7 +465,7 @@ function private function_6aa40bb4(actionparams) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x6d92a2dd, Offset: 0x36b8
 // Size: 0x1ae
-function private function_3f4d56d1(actionparams) {
+function private use_pistol(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
@@ -1104,7 +1104,7 @@ function private function_d0cdb00e(actionparams) {
     }
     location = targetlocations[randomint(targetlocations.size)];
     location = location + (randomfloatrange(500 * -1, 500), randomfloatrange(500 * -1, 500), 0);
-    self notify(#"confirm_location", {#yaw:0, #position:location});
+    self notify(#"confirm_location", {#position:location, #yaw:0});
     while (!self function_a39f313c() || self getcurrentweapon() == level.weaponnone) {
         self waittill(#"hash_77f2882ff9140e86");
     }
@@ -1126,11 +1126,11 @@ function private function_8d7445b8(actionparams) {
     }
     targetfound = 0;
     time = gettime();
-    foreach (var_c5d9db8a in level.var_500867a0) {
-        if (!isarray(var_c5d9db8a)) {
+    foreach (streaks in level.var_500867a0) {
+        if (!isarray(streaks)) {
             continue;
         }
-        foreach (streak in var_c5d9db8a) {
+        foreach (streak in streaks) {
             if (!isdefined(streak) || self.team == streak.team) {
                 continue;
             }
@@ -1200,7 +1200,7 @@ function private napalm_strike(actionparams) {
     } else {
         target = self function_d19a634f();
     }
-    self notify(#"confirm_location", {#yaw:randomint(360), #position:target});
+    self notify(#"confirm_location", {#position:target, #yaw:randomint(360)});
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -1243,7 +1243,7 @@ function private planemortar(actionparams) {
     }
     for (i = 0; i < 3; i++) {
         position = target + (randomfloatrange(-250, 250), randomfloatrange(-250, 250), 0);
-        self notify(#"confirm_location", {#yaw:0, #position:position});
+        self notify(#"confirm_location", {#position:position, #yaw:0});
         wait(0.5);
     }
 }
@@ -1471,7 +1471,7 @@ function private straferun(actionparams) {
     } else {
         target = self function_d19a634f();
     }
-    self notify(#"confirm_location", {#yaw:randomint(360), #position:target});
+    self notify(#"confirm_location", {#position:target, #yaw:randomint(360)});
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -1620,10 +1620,10 @@ function private function_86ce2c(actionparams) {
     if (!self function_303bbccf(actionparams)) {
         return undefined;
     }
-    var_4bfc0588 = self function_e8e1d88e();
-    if (var_4bfc0588 > 0) {
+    goldenammo = self function_e8e1d88e();
+    if (goldenammo > 0) {
         /#
-            actionparams.debug[actionparams.debug.size] = #"hash_51e16bdecd933178" + var_4bfc0588;
+            actionparams.debug[actionparams.debug.size] = #"hash_51e16bdecd933178" + goldenammo;
         #/
         return undefined;
     }
@@ -1943,7 +1943,7 @@ function private function_82350d4c(actionparams) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x5d92ed0e, Offset: 0x89c0
 // Size: 0x178
-function private function_4e17fb37(actionparams, var_b7fbe51b) {
+function private function_4e17fb37(actionparams, hitradius) {
     weapon = actionparams.weapon;
     aimpoint = actionparams.aimpoint;
     if (!isdefined(aimpoint)) {
@@ -1960,7 +1960,7 @@ function private function_4e17fb37(actionparams, var_b7fbe51b) {
         return false;
     }
     trace = self function_6e8a2d86(weapon, aimangles.var_478aeacd);
-    dist = distance2d(self.origin, aimpoint) - var_b7fbe51b;
+    dist = distance2d(self.origin, aimpoint) - hitradius;
     if (!function_e63ee3e8(trace, dist)) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_50c1f0722206aaa8";
@@ -2043,9 +2043,9 @@ function private function_6b54ab21(weapon) {
 // Checksum 0xe41a27, Offset: 0x8df0
 // Size: 0x74
 function private min_damage(weapon) {
-    var_2d276877 = weapon.var_2d276877;
+    damagevalues = weapon.damagevalues;
     var_89a5bdab = weapon.var_72960e43;
-    damage = var_2d276877[var_2d276877.size - 1];
+    damage = damagevalues[damagevalues.size - 1];
     multishotbasedamage = var_89a5bdab[var_89a5bdab.size - 1];
     return multishotbasedamage + damage;
 }
@@ -2055,7 +2055,7 @@ function private min_damage(weapon) {
 // Checksum 0x1a1f5b7e, Offset: 0x8e70
 // Size: 0x4e
 function private max_damage(weapon) {
-    damage = weapon.var_2d276877[0];
+    damage = weapon.damagevalues[0];
     multishotbasedamage = weapon.var_72960e43[0];
     return multishotbasedamage + damage * weapon.shotcount;
 }
@@ -2087,9 +2087,9 @@ function private function_4b1db2f8(actionparams, var_f97fefd9, var_f7b379b8, var
 // Checksum 0xf3dfa445, Offset: 0x8fb0
 // Size: 0x132
 function private function_67ca228b() {
-    var_8f5e3947 = function_f6f34851(self.team);
+    aliveenemies = function_f6f34851(self.team);
     enemies = [];
-    foreach (enemy in var_8f5e3947) {
+    foreach (enemy in aliveenemies) {
         if (enemy hasperk(#"hash_59dc70c4ee13d1b6")) {
             continue;
         }
@@ -2201,7 +2201,7 @@ function private fire_weapon(weapon) {
         if (weapon.firetype == #"single shot") {
             self.bot.var_51cee2ad = gettime() + int((isdefined(self.bot.difficulty.var_b489efb7) ? self.bot.difficulty.var_b489efb7 : 0) * 1000);
         } else if (weapon.firetype == #"burst") {
-            self.bot.var_51cee2ad = gettime() + int((isdefined(self.bot.difficulty.var_af6641fd) ? self.bot.difficulty.var_af6641fd : 0) * 1000);
+            self.bot.var_51cee2ad = gettime() + int((isdefined(self.bot.difficulty.burstdelay) ? self.bot.difficulty.burstdelay : 0) * 1000);
         }
     }
     self bottapbutton(0);
@@ -2314,13 +2314,13 @@ function private function_bbef6e21() {
 // Checksum 0xd8af9aca, Offset: 0x9bc0
 // Size: 0x2aa
 function private function_411e397e() {
-    var_a9c00d70 = isdefined(self.bot.difficulty.var_a9c00d70) ? self.bot.difficulty.var_a9c00d70 : 0;
-    if (var_a9c00d70 <= 0) {
+    shoottime = isdefined(self.bot.difficulty.shoottime) ? self.bot.difficulty.shoottime : 0;
+    if (shoottime <= 0) {
         return;
     }
     if (isdefined(self.enemy) && self.bot.lastenemy !== self.enemy) {
         self.bot.var_d70788cb = undefined;
-        self.bot.var_a9c00d70 = undefined;
+        self.bot.shoottime = undefined;
         self.bot.var_32d8dabe = undefined;
     }
     if (!self.bot.var_9931c7dc || !self.bot.enemyvisible) {
@@ -2329,10 +2329,10 @@ function private function_411e397e() {
     if (!isdefined(self.bot.var_32d8dabe)) {
         self function_e1e3b64c(1);
     }
-    if (!(!isdefined(self.bot.var_a9c00d70) || self.bot.var_a9c00d70 <= gettime()) || !(self botgetlookdot() >= 0.766)) {
+    if (!(!isdefined(self.bot.shoottime) || self.bot.shoottime <= gettime()) || !(self botgetlookdot() >= 0.766)) {
         return;
     }
-    if (isdefined(self.bot.var_a9c00d70)) {
+    if (isdefined(self.bot.shoottime)) {
         self function_e1e3b64c(1);
     }
     delaytime = isdefined(self.bot.difficulty.var_d70788cb) ? self.bot.difficulty.var_d70788cb : 0;
@@ -2340,9 +2340,9 @@ function private function_411e397e() {
     if (var_8a2cf681 >= 2.5 || !(self.bot.enemydist <= var_8a2cf681 * 500)) {
         delaytime = delaytime + self function_957aa281();
     }
-    totaltime = delaytime + var_a9c00d70;
+    totaltime = delaytime + shoottime;
     self.bot.var_d70788cb = gettime() + int(delaytime * 1000);
-    self.bot.var_a9c00d70 = gettime() + int(totaltime * 1000);
+    self.bot.shoottime = gettime() + int(totaltime * 1000);
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -2350,10 +2350,10 @@ function private function_411e397e() {
 // Checksum 0xa1148ea4, Offset: 0x9e78
 // Size: 0xac
 function private function_d8b388a6() {
-    if ((isdefined(self.bot.difficulty.var_a9c00d70) ? self.bot.difficulty.var_a9c00d70 : 0) <= 0) {
+    if ((isdefined(self.bot.difficulty.shoottime) ? self.bot.difficulty.shoottime : 0) <= 0) {
         return true;
     }
-    return (!isdefined(self.bot.var_d70788cb) || self.bot.var_d70788cb <= gettime()) && !(!isdefined(self.bot.var_a9c00d70) || self.bot.var_a9c00d70 <= gettime());
+    return (!isdefined(self.bot.var_d70788cb) || self.bot.var_d70788cb <= gettime()) && !(!isdefined(self.bot.shoottime) || self.bot.shoottime <= gettime());
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -2361,9 +2361,9 @@ function private function_d8b388a6() {
 // Checksum 0x89a2ea0a, Offset: 0x9f30
 // Size: 0x19c
 function private function_e1e3b64c(currentweapon) {
-    var_6fdbcf34 = -10;
-    var_8a5f8d43 = 10;
-    var_776afa50 = -10;
+    ymin = -10;
+    ymax = 10;
+    zmin = -10;
     zmax = 10;
     if (self function_9160a207(currentweapon)) {
         if (self.bot.enemyvisible && self function_e3b275f0(self.enemy, "j_head")) {
@@ -2374,17 +2374,17 @@ function private function_e1e3b64c(currentweapon) {
     } else {
         self.bot.var_2d563ebf = undefined;
         if (randomint(2) > 0) {
-            var_6fdbcf34 = 18;
-            var_8a5f8d43 = 30;
+            ymin = 18;
+            ymax = 30;
         } else {
-            var_6fdbcf34 = -30;
-            var_8a5f8d43 = -18;
+            ymin = -30;
+            ymax = -18;
         }
-        var_776afa50 = 10;
+        zmin = 10;
         zmax = 20;
     }
-    y = randomfloatrange(var_6fdbcf34, var_8a5f8d43);
-    z = randomfloatrange(var_776afa50, zmax);
+    y = randomfloatrange(ymin, ymax);
+    z = randomfloatrange(zmin, zmax);
     self.bot.var_32d8dabe = (0, y, z);
     self namespace_87549638::think();
 }

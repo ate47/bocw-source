@@ -32,6 +32,6 @@ function remove() {
     if (namespace_61e6d095::exists(#"hash_767355dc5e1cddfb")) {
         namespace_61e6d095::remove(#"hash_767355dc5e1cddfb");
     }
-    getplayers()[0] val::function_e681e68e();
+    getplayers()[0] val::reset_all();
 }
 

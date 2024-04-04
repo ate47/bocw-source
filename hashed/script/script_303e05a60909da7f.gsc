@@ -14,14 +14,14 @@
 // Checksum 0xf8831da, Offset: 0xd0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"high_value_target", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"high_value_target", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace high_value_target/high_value_target
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdb8a236d, Offset: 0x118
 // Size: 0xdc
-function private function_70a657d8() {
+function private preinit() {
     level.var_8d51c9b1 = getgametypesetting(#"hash_6141cddd96ac214e");
     callback::on_spawned(&onplayerspawned);
     player::function_cf3aa03d(&onplayerkilled);
@@ -39,15 +39,15 @@ function private function_70a657d8() {
 function onplayerspawned() {
     killstreakcount = isdefined(self.pers[#"cur_kill_streak"]) ? self.pers[#"cur_kill_streak"] : 0;
     if (killstreakcount < level.var_8d51c9b1) {
-        if (self.var_366e280d !== 0) {
+        if (self.ishvt !== 0) {
             self clientfield::set("high_value_target", 0);
-            self.var_366e280d = 0;
+            self.ishvt = 0;
         }
         return;
     }
-    if (self.var_366e280d !== 1) {
+    if (self.ishvt !== 1) {
         self clientfield::set("high_value_target", 1);
-        self.var_366e280d = 1;
+        self.ishvt = 1;
     }
 }
 
@@ -60,10 +60,10 @@ function onplayerkilled(*einflictor, attacker, *idamage, *smeansofdeath, weapon,
         var_f5d993e3 = isdefined(psoffsettime.pers[#"cur_kill_streak"]) ? psoffsettime.pers[#"cur_kill_streak"] : 0;
         if (var_f5d993e3 >= level.var_8d51c9b1 && psoffsettime clientfield::get("high_value_target") !== 1) {
             psoffsettime clientfield::set("high_value_target", 1);
-            psoffsettime.var_366e280d = 1;
+            psoffsettime.ishvt = 1;
         }
     }
-    if (isdefined(self) && self.var_366e280d === 1) {
+    if (isdefined(self) && self.ishvt === 1) {
         if (isdefined(psoffsettime) && isplayer(psoffsettime) && psoffsettime hasperk(#"hash_1c40ade36b54ff8") && psoffsettime != self && psoffsettime.team != self.team) {
             var_13f7eb29 = self.pers[#"kill_streak_before_death"];
             if (!isdefined(var_13f7eb29) || var_13f7eb29 < level.var_8d51c9b1) {

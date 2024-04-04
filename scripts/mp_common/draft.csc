@@ -18,14 +18,14 @@
 // Checksum 0xb8a140b4, Offset: 0x2738
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"draft", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"draft", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace draft/draft
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6086c7a6, Offset: 0x2780
 // Size: 0xa48
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("world", "draft", 1, 3, "int", &handledraftstage, 0, 0);
     clientfield::register_clientuimodel("PositionDraft.stage", #"hash_6797d4cd7534952f", #"stage", 1, 4, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("PositionDraft.autoSelected", #"hash_6797d4cd7534952f", #"autoselected", 1, 1, "int", undefined, 0, 0);
@@ -97,7 +97,7 @@ function private function_70a657d8() {
         }
     }
     level.var_8c099032 = getgametypesetting(#"draftenabled") && !getroundsplayed(0);
-    level.var_f35699bc = [#"special_ballisticknife_t8_dw_dw":"melee_alt", #"special_ballisticknife_t8_dw":"melee_alt", #"melee_cutlass_t8":"melee_alt", #"melee_club_t8":"melee_alt", #"melee_demohammer_t8":"melee_alt", #"melee_coinbag_t8":"melee_alt", #"melee_secretsanta_t8":"melee_alt", #"melee_slaybell_t8":"melee_alt"];
+    level.var_f35699bc = [#"melee_slaybell_t8":"melee_alt", #"melee_secretsanta_t8":"melee_alt", #"melee_coinbag_t8":"melee_alt", #"melee_demohammer_t8":"melee_alt", #"melee_club_t8":"melee_alt", #"melee_cutlass_t8":"melee_alt", #"special_ballisticknife_t8_dw":"melee_alt", #"special_ballisticknife_t8_dw_dw":"melee_alt"];
 }
 
 // Namespace draft/draft
@@ -364,7 +364,7 @@ function function_bb0565d0(var_de58f286) {
 // Checksum 0x36da8c0c, Offset: 0x5608
 // Size: 0x3f6
 function function_6b532f83(localclientnum, var_de58f286, sessionmode) {
-    var_7eb5dfe9 = var_de58f286.positionindex;
+    posindex = var_de58f286.positionindex;
     anim_intro_name = undefined;
     anim_name = undefined;
     weapongroupanim = function_bb0565d0(var_de58f286);
@@ -385,9 +385,9 @@ function function_6b532f83(localclientnum, var_de58f286, sessionmode) {
         if (var_de58f286.var_91065a59 != var_de58f286.var_3afd181d) {
             if (var_de58f286.var_91065a59) {
                 var_ca1716fe = weapongroupanim[#"ready"][gender];
-                anim_intro_name = var_ca1716fe[var_7eb5dfe9 % var_ca1716fe.size];
+                anim_intro_name = var_ca1716fe[posindex % var_ca1716fe.size];
                 var_177782dd = weapongroupanim[#"readyidle"][gender];
-                anim_name = var_177782dd[var_7eb5dfe9 % var_177782dd.size];
+                anim_name = var_177782dd[posindex % var_177782dd.size];
             }
             var_de58f286.var_3afd181d = var_de58f286.var_91065a59;
         } else if (player_role::is_valid(var_de58f286.focusedcharacterindex)) {
@@ -398,21 +398,21 @@ function function_6b532f83(localclientnum, var_de58f286, sessionmode) {
             anim_name = weapongroupanim[#"select"][gender];
         } else {
             if (!var_de58f286.var_91065a59) {
-                if (var_7eb5dfe9 == 1 && !codcaster::function_b8fe9b52(localclientnum)) {
+                if (posindex == 1 && !codcaster::function_b8fe9b52(localclientnum)) {
                     anim_intro_name = weapongroupanim[#"hash_6eaac8719751cb14"][gender];
                 }
                 var_b793aad = weapongroupanim[#"preready"][gender];
-                anim_name = var_b793aad[var_7eb5dfe9 % var_b793aad.size];
+                anim_name = var_b793aad[posindex % var_b793aad.size];
             } else {
                 var_ca1716fe = weapongroupanim[#"ready"][gender];
-                anim_intro_name = var_ca1716fe[var_7eb5dfe9 % var_ca1716fe.size];
+                anim_intro_name = var_ca1716fe[posindex % var_ca1716fe.size];
                 var_177782dd = weapongroupanim[#"readyidle"][gender];
-                anim_name = var_177782dd[var_7eb5dfe9 % var_177782dd.size];
+                anim_name = var_177782dd[posindex % var_177782dd.size];
             }
             var_de58f286.selected = 1;
         }
     } else {
-        anim_name = array("pb_rifle_male_draft_preready_1", "pb_rifle_male_draft_preready_2", "pb_rifle_male_draft_preready_3", "pb_rifle_male_draft_preready_4", "pb_rifle_male_draft_preready_5")[var_7eb5dfe9 % array("pb_rifle_male_draft_preready_1", "pb_rifle_male_draft_preready_2", "pb_rifle_male_draft_preready_3", "pb_rifle_male_draft_preready_4", "pb_rifle_male_draft_preready_5").size];
+        anim_name = array("pb_rifle_male_draft_preready_1", "pb_rifle_male_draft_preready_2", "pb_rifle_male_draft_preready_3", "pb_rifle_male_draft_preready_4", "pb_rifle_male_draft_preready_5")[posindex % array("pb_rifle_male_draft_preready_1", "pb_rifle_male_draft_preready_2", "pb_rifle_male_draft_preready_3", "pb_rifle_male_draft_preready_4", "pb_rifle_male_draft_preready_5").size];
     }
     var_de58f286.params.anim_intro_name = anim_intro_name;
     var_de58f286.params.anim_name = anim_name;

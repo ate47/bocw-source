@@ -71,7 +71,7 @@ function private function_7825ee37(var_31d7501a) {
     var_2ce7727b = 0;
     var_b4ce0d8c = 0;
     var_16aebd94 = 250;
-    player childthread namespace_61e6d095::block_kbm_pause_menu([1:#"hash_542efe3d2dcb6459", 0:#"exit"]);
+    player childthread namespace_61e6d095::block_kbm_pause_menu([#"exit", #"hash_542efe3d2dcb6459"]);
     while (true) {
         if (player namespace_61e6d095::function_70217795()) {
             function_838e9ba9();
@@ -86,7 +86,7 @@ function private function_7825ee37(var_31d7501a) {
         if (time - var_b4ce0d8c > 250) {
             var_8bdd94a8 = 0;
         }
-        var_cf705cb2 = {#y:0, #x:0};
+        var_cf705cb2 = {#x:0, #y:0};
         if (player gamepadusedlast()) {
             var_ad8317c6 = player namespace_61e6d095::function_9c365c3b();
             var_89c3fd26 = player namespace_61e6d095::function_6cbc939b();

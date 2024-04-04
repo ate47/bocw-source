@@ -14,14 +14,14 @@
 // Checksum 0x116aff17, Offset: 0x230
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"vortex_shared", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"vortex_shared", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zombie_vortex/zombie_vortex
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1434af33, Offset: 0x288
 // Size: 0x1ac
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.vsmgr_prio_visionset_zombie_vortex)) {
         level.vsmgr_prio_visionset_zombie_vortex = 23;
     }

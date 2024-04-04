@@ -11,14 +11,14 @@
 // Checksum 0x4217fc03, Offset: 0xe8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"rcxd", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"rcxd", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace rcxd/rcxd
 // Params 0, eflags: 0x4
 // Checksum 0xa7714acb, Offset: 0x130
 // Size: 0x2c
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_main_callback("rcxd", &function_91ea9492);
 }
 

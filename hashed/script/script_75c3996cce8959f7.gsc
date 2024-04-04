@@ -42,7 +42,7 @@ function function_f3143608(localclientnum) {
     self.doa.var_903d75b1 = undefined;
     self namespace_ac2a80f5::function_278f20a3(vectorscale((1, 0, 0), 75), namespace_ac2a80f5::function_ccf8a968(self.doa.cameramode));
     self.doa.var_25f4de97 = 0;
-    self.var_e2a1a19e = undefined;
+    self.skits = undefined;
     self.doa.var_3e81d24c = 0;
     self.entnum = self getentitynumber();
     self.var_88a2ff29 = level.var_30df1fad;
@@ -72,16 +72,16 @@ function function_f3143608(localclientnum) {
     name = self getplayername();
     switch (self getentitynumber()) {
     case 0:
-        setuimodelvalue(getuimodel(getuimodel(function_5f72e972(#"hash_365a974a1df27ef4"), "player1"), "playerName"), name);
+        setuimodelvalue(getuimodel(getuimodel(function_5f72e972(#"doa_world"), "player1"), "playerName"), name);
         break;
     case 1:
-        setuimodelvalue(getuimodel(getuimodel(function_5f72e972(#"hash_365a974a1df27ef4"), "player2"), "playerName"), name);
+        setuimodelvalue(getuimodel(getuimodel(function_5f72e972(#"doa_world"), "player2"), "playerName"), name);
         break;
     case 2:
-        setuimodelvalue(getuimodel(getuimodel(function_5f72e972(#"hash_365a974a1df27ef4"), "player3"), "playerName"), name);
+        setuimodelvalue(getuimodel(getuimodel(function_5f72e972(#"doa_world"), "player3"), "playerName"), name);
         break;
     case 3:
-        setuimodelvalue(getuimodel(getuimodel(function_5f72e972(#"hash_365a974a1df27ef4"), "player4"), "playerName"), name);
+        setuimodelvalue(getuimodel(getuimodel(function_5f72e972(#"doa_world"), "player4"), "playerName"), name);
         break;
     }
     name = "player_trail_" + function_7b9bc9ff(self.entnum);
@@ -245,7 +245,7 @@ function function_fcc90081(localclientnum) {
             self.fxorigin thread namespace_ec06fe4a::function_73d79e7d(self, vectorscale((0, 0, 1), 6));
         }
     }
-    self.var_e2a1a19e = undefined;
+    self.skits = undefined;
     self.doa.cameramode = 1;
     self.doa.var_71122e79 = 0;
     self.doa.var_903d75b1 = undefined;
@@ -259,20 +259,20 @@ function function_fcc90081(localclientnum) {
 // Size: 0x14c
 function function_4d692cc4(localclientnum, mapping = "zombietron") {
     /#
-        function_f5f0c0f8("<unknown string>" + (isdefined(self.name) ? self.name : "<unknown string>") + "<unknown string>" + mapping + "<unknown string>" + (islocalplayer(self) ? "<unknown string>" : "<unknown string>"));
+        debugmsg("<unknown string>" + (isdefined(self.name) ? self.name : "<unknown string>") + "<unknown string>" + mapping + "<unknown string>" + (islocalplayer(self) ? "<unknown string>" : "<unknown string>"));
     #/
     if (is_true(level.doa.var_318aa67a)) {
         mapping = "default";
     }
     if (islocalplayer(self)) {
         /#
-            function_f5f0c0f8("<unknown string>" + localclientnum);
+            debugmsg("<unknown string>" + localclientnum);
         #/
         forcegamemodemappings(localclientnum, mapping);
         return;
     }
     /#
-        function_f5f0c0f8("<unknown string>");
+        debugmsg("<unknown string>");
     #/
 }
 

@@ -1,8 +1,8 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_28e27ee9b45fd02d;
-#using script_31671175564a93b7;
+#using scripts\cp_common\snd_utility.csc;
 #using script_1cd690a97dfca36e;
-#using script_3318f11e3a1b2358;
+#using scripts\cp_common\snd.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\struct.csc;
 #using scripts\core_common\music_shared.csc;
@@ -16,7 +16,7 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0xea5cba02, Offset: 0x208
 // Size: 0xdc
-function function_4be4dcc5() {
+function init_audio() {
     function_b6407dd4(0);
     snd::function_d4ec748e(&function_f2a2832d);
     function_5ea2c6e3("cp_nam_armada_intro", 0, 1);

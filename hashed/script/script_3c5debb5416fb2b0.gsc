@@ -11,14 +11,14 @@
 // Checksum 0x6065b674, Offset: 0xa0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_7811e7ce71e374d0", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_7811e7ce71e374d0", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 0, eflags: 0x2 linked
 // Checksum 0xe2acc168, Offset: 0xe8
 // Size: 0xe4
-function function_70a657d8() {
+function preinit() {
     if (!zm_utility::is_survival()) {
         return;
     }

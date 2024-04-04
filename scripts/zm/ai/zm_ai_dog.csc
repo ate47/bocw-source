@@ -13,14 +13,14 @@
 // Checksum 0x5b6c6de3, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_ai_dog", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_ai_dog", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_ai_dog/zm_ai_dog
 // Params 0, eflags: 0x6 linked
 // Checksum 0x63163aba, Offset: 0x120
 // Size: 0x7c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "ZombieDogVocals", 1, 2, "int", &zombiedogvocals, 0, 0);
     ai::add_archetype_spawn_function(#"zombie_dog", &function_3b0e8b8b);
 }

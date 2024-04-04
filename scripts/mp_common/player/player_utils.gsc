@@ -126,7 +126,7 @@ function function_c49fc862(team) {
 // Checksum 0x5102e86, Offset: 0x7a8
 // Size: 0x64
 function function_cf3aa03d(func, threaded = 1) {
-    array::add(level.var_da2045d0, {#threaded:threaded, #callback:func});
+    array::add(level.var_da2045d0, {#callback:func, #threaded:threaded});
 }
 
 // Namespace player/player_utils
@@ -134,6 +134,6 @@ function function_cf3aa03d(func, threaded = 1) {
 // Checksum 0xee84ef1a, Offset: 0x818
 // Size: 0x64
 function function_3c5cc656(func, threaded = 1) {
-    array::add(level.var_fa66fada, {#threaded:threaded, #callback:func});
+    array::add(level.var_fa66fada, {#callback:func, #threaded:threaded});
 }
 

@@ -9,14 +9,14 @@
 // Checksum 0xaaca5b8f, Offset: 0x118
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"bowie_knife", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"bowie_knife", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_weap_bowie/zm_weap_bowie
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x170
 // Size: 0x4
-function private function_70a657d8() {
+function private preinit() {
     
 }
 

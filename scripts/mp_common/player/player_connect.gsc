@@ -26,7 +26,7 @@
 #using script_67ce8e728d8f37ba;
 #using scripts\core_common\hostmigration_shared.gsc;
 #using scripts\core_common\high_value_operative.gsc;
-#using script_32c8b5b0eb2854f3;
+#using scripts\core_common\gamestate_util.gsc;
 #using scripts\core_common\flag_shared.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
 #using scripts\core_common\bb_shared.gsc;
@@ -102,7 +102,7 @@ function callback_playerconnect() {
     } else {
         self thread globallogic_audio::set_music_on_player("none", 1.5);
     }
-    self.var_e5595d9d = 0;
+    self.prevlastkilltime = 0;
     self.lastkilltime = 0;
     self.cur_death_streak = 0;
     self.cur_kill_streak = 0;
@@ -495,9 +495,9 @@ function private init_character_index() {
                 if (!isdefined(rf) || !function_f4bf7e3f(i, currentsessionmode())) {
                     continue;
                 }
-                if (isdefined(teamfaction) && isdefined(teamfaction.var_306f8f14)) {
-                    var_2b9b7c0f = getcharacterfields(i, currentsessionmode());
-                    if (!isdefined(var_2b9b7c0f.var_306f8f14) || var_2b9b7c0f.var_306f8f14 != teamfaction.var_306f8f14) {
+                if (isdefined(teamfaction) && isdefined(teamfaction.superfaction)) {
+                    cf = getcharacterfields(i, currentsessionmode());
+                    if (!isdefined(cf.superfaction) || cf.superfaction != teamfaction.superfaction) {
                         continue;
                     }
                 }

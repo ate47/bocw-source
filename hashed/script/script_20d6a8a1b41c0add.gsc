@@ -42,7 +42,7 @@ function function_3d1b6aa8(*localclientnum, *oldval, *newval, *bnewent, *binitia
     if (!isdefined(level.doa.var_5d21548e)) {
         return;
     }
-    namespace_1e25ad94::function_f5f0c0f8("Destroying Dungeon! Index: " + level.doa.var_5d21548e);
+    namespace_1e25ad94::debugmsg("Destroying Dungeon! Index: " + level.doa.var_5d21548e);
     level thread namespace_95fdc800::function_b1989480();
     level notify(#"dungeon_destroyed");
 }
@@ -52,7 +52,7 @@ function function_3d1b6aa8(*localclientnum, *oldval, *newval, *bnewent, *binitia
 // Checksum 0x32ba9c36, Offset: 0x438
 // Size: 0x72
 function function_10d7a147(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    namespace_1e25ad94::function_f5f0c0f8("Setting a new Dungeon! Index: " + bwastimejump);
+    namespace_1e25ad94::debugmsg("Setting a new Dungeon! Index: " + bwastimejump);
     level.doa.var_5d21548e = bwastimejump;
 }
 

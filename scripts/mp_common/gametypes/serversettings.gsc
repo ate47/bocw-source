@@ -10,14 +10,14 @@
 // Checksum 0x8e03e5b, Offset: 0xd0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"serversettings", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"serversettings", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace serversettings/serversettings
 // Params 0, eflags: 0x6 linked
 // Checksum 0x88791186, Offset: 0x118
 // Size: 0x34
-function private function_70a657d8() {
+function private preinit() {
     init();
     callback::on_start_gametype(&on_start_gametype);
 }

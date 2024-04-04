@@ -29,7 +29,7 @@ function __init__() {
 // Checksum 0xdc58a804, Offset: 0x168
 // Size: 0x80
 function initialize() {
-    level.infection = {#var_c4b373ef:[], #team:#"none", #offhand_weapon:undefined, #primary_weapon:undefined, #bodies:[], #perks:[]};
+    level.infection = {#perks:[], #bodies:[], #primary_weapon:undefined, #offhand_weapon:undefined, #team:#"none", #var_c4b373ef:[]};
 }
 
 // Namespace infection/infection

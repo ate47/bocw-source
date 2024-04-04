@@ -170,7 +170,7 @@ function setup_player_contracts(max_contract_slots, var_1b3f5772) {
         if (isdefined(level.var_c3e2bb05) && isdefined(var_5ceb23d0.var_c3e2bb05) && level.var_c3e2bb05 != var_5ceb23d0.var_c3e2bb05 && var_5ceb23d0.var_c3e2bb05 != 5) {
             continue;
         }
-        player.pers[#"contracts"][var_38280f2f] = {#var_59cb904f:var_5ceb23d0.var_59cb904f, #target_value:var_5ceb23d0.target_value};
+        player.pers[#"contracts"][var_38280f2f] = {#target_value:var_5ceb23d0.target_value, #var_59cb904f:var_5ceb23d0.var_59cb904f};
     }
 }
 

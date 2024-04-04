@@ -11,14 +11,14 @@
 // Checksum 0x64e48f7c, Offset: 0x148
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_equip_shield", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_equip_shield", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_equip_shield/zm_weap_riotshield
 // Params 0, eflags: 0x4
 // Checksum 0xe7f3a07a, Offset: 0x190
 // Size: 0x104
-function private function_70a657d8() {
+function private preinit() {
     callback::on_spawned(&player_on_spawned);
     clientfield::register("toplayer", "zm_shield_damage_rumble", 1, 1, "counter", &zm_shield_damage_rumble, 0, 0);
     clientfield::register("toplayer", "zm_shield_break_rumble", 1, 1, "counter", &zm_shield_break_rumble, 0, 0);

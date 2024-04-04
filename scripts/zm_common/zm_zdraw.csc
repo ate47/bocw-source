@@ -18,7 +18,7 @@
 // Size: 0x4c
 function private autoexec __init__system__() {
     /#
-        register(#"zdraw", &function_70a657d8, &postinit, undefined, undefined);
+        register(#"zdraw", &preinit, &postinit, undefined, undefined);
     #/
 }
 
@@ -26,7 +26,7 @@ function private autoexec __init__system__() {
 // Params 0, eflags: 0x4
 // Checksum 0xdc258f57, Offset: 0x128
 // Size: 0x94
-function private function_70a657d8() {
+function private preinit() {
     /#
         setdvar(#"zdraw", "<unknown string>");
         level.zdraw = spawnstruct();

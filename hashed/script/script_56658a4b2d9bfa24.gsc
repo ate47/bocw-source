@@ -15,14 +15,14 @@
 // Checksum 0xdee51b52, Offset: 0x598
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_6540387fe939dd65", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_6540387fe939dd65", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
 // Params 0, eflags: 0x6 linked
 // Checksum 0xcd3bc0eb, Offset: 0x5e0
 // Size: 0x164
-function private function_70a657d8() {
+function private preinit() {
     if (util::is_frontend_map()) {
         return;
     }
@@ -176,7 +176,7 @@ function private function_40dbe923(dvarstr) {
             break;
         }
     }
-    level notify(#"devgui_bot", {#args:args, #host:host});
+    level notify(#"devgui_bot", {#host:host, #args:args});
 }
 
 // Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
@@ -206,7 +206,7 @@ function private function_9a819607(host, botarg) {
     if (strisnumber(botarg)) {
         ent = getentbynum(int(botarg));
         if (isbot(ent)) {
-            return [0:ent];
+            return [ent];
         }
         return [];
     }
@@ -593,14 +593,14 @@ function private function_881d3aa(host, botarg) {
     if (isdefined(level.teams[botarg])) {
         return level.teams[botarg];
     }
-    var_a70c469f = #"allies";
+    friendlyteam = #"allies";
     if (isdefined(host) && host.team != #"spectator") {
-        var_a70c469f = host.team;
+        friendlyteam = host.team;
     }
     if (botarg == "friendly") {
-        return var_a70c469f;
+        return friendlyteam;
     }
-    return function_8dbb49c0(var_a70c469f);
+    return function_8dbb49c0(friendlyteam);
 }
 
 // Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
@@ -696,7 +696,7 @@ function private devgui_goal(botarg, cmdarg) {
         self function_93996ae6(botarg);
         return;
     case #"me":
-        self function_6fdb87c7(botarg, self);
+        self set_goal_ent(botarg, self);
         return;
     case #"clear":
         self function_be8f790e(botarg);
@@ -769,7 +769,7 @@ function private function_417ef9e7(botarg) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x3ac237f1, Offset: 0x3690
 // Size: 0x160
-function private function_6fdb87c7(botarg, ent) {
+function private set_goal_ent(botarg, ent) {
     bots = function_9a819607(self, botarg);
     foreach (bot in bots) {
         bot notify(#"hash_7597caa242064632");

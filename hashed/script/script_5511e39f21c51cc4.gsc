@@ -18,14 +18,14 @@
 // Checksum 0x1e5c1a04, Offset: 0x158
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"helicopter_guard", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"helicopter_guard", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace helicopter/helicopter_guard
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa2aad656, Offset: 0x1a8
 // Size: 0x104
-function private function_70a657d8() {
+function private preinit() {
     level.var_34f03cda = &function_34f03cda;
     level.var_4d5e1035 = &function_4d5e1035;
     level.var_6af968ce = &function_6af968ce;

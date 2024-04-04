@@ -20,14 +20,14 @@
 // Checksum 0xa773a395, Offset: 0xf0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"callback", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"callback", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace callback/callbacks
 // Params 0, eflags: 0x6 linked
 // Checksum 0xcbe596e4, Offset: 0x138
 // Size: 0x14
-function private function_70a657d8() {
+function private preinit() {
     set_default_callbacks();
 }
 

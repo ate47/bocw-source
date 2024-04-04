@@ -20,14 +20,14 @@
 // Checksum 0xc110c6d4, Offset: 0x218
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hostmigration", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hostmigration", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace hostmigration/hostmigration
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa4cba52c, Offset: 0x260
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     callback::on_connect(&on_connect);
 }
 

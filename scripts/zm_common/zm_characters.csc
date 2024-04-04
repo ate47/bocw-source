@@ -13,14 +13,14 @@
 // Checksum 0x514b6b23, Offset: 0xf30
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_characters", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_characters", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_characters/zm_characters
 // Params 0, eflags: 0x4
 // Checksum 0x85593e01, Offset: 0xf78
 // Size: 0x1c
-function private function_70a657d8() {
+function private preinit() {
     level.setupcustomcharacterexerts = &setup_personality_character_exerts;
 }
 

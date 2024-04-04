@@ -10,14 +10,14 @@
 // Checksum 0x77cd4a97, Offset: 0x110
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"counteruav", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"counteruav", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace counteruav/counteruav
 // Params 0, eflags: 0x6 linked
 // Checksum 0x7f558bd5, Offset: 0x160
 // Size: 0xd8
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "counteruav", 1, 1, "int", &enabled, 0, 0);
     clientfield::register("scriptmover", "counteruav_fx", 1, 1, "int", &function_5a528883, 0, 0);
     level.var_8c4291cb = [];

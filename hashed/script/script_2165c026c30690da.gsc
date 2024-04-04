@@ -22,14 +22,14 @@
 // Checksum 0x24a203ed, Offset: 0x110
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_2bb3180ae90516b3", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_2bb3180ae90516b3", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_5665d8db/namespace_5665d8db
 // Params 0, eflags: 0x2 linked
 // Checksum 0xdbb5456d, Offset: 0x158
 // Size: 0x64
-function function_70a657d8() {
+function preinit() {
     spawner::add_archetype_spawn_function(#"abom", &function_b82e0a5d);
     spawner::function_89a2cd87(#"abom", &function_545f669b);
 }

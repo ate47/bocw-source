@@ -30,7 +30,7 @@ function init() {
             shot.var_411d90d0 = float(args[1]);
             shot.var_3e552258 = float(args[2]);
             shot.var_1c75c5b0 = int(args[3]);
-            shot.var_cdf089b4 = struct::get(shot.target, "targetname");
+            shot.targetstruct = struct::get(shot.target, "targetname");
             if (!isdefined(level.doa.var_258d537d.var_a6b0949b)) {
                 level.doa.var_258d537d.var_a6b0949b = [];
             } else if (!isarray(level.doa.var_258d537d.var_a6b0949b)) {
@@ -87,9 +87,9 @@ function function_8d4cb2b(localclientnum) {
             if (shot.var_3e552258 == 0) {
                 traveltime = traveltime - 0.5;
             }
-            if (isdefined(shot.var_cdf089b4)) {
-                var_3dbe949b moveto(shot.var_cdf089b4.origin, shot.var_411d90d0);
-                var_3dbe949b rotateto(shot.var_cdf089b4.angles, shot.var_411d90d0);
+            if (isdefined(shot.targetstruct)) {
+                var_3dbe949b moveto(shot.targetstruct.origin, shot.var_411d90d0);
+                var_3dbe949b rotateto(shot.targetstruct.angles, shot.var_411d90d0);
             }
             wait(traveltime);
             if (shot.var_3e552258 > 0) {

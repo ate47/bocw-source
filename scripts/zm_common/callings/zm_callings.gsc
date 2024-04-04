@@ -15,14 +15,14 @@
 // Checksum 0xb02d1f35, Offset: 0xc0
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_callings", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_callings", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_callings/zm_callings
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd8fe2101, Offset: 0x118
 // Size: 0x18a
-function private function_70a657d8() {
+function private preinit() {
     level.var_314051a1 = getscriptbundle(#"t8_callings_settings");
     if (isdefined(level.var_314051a1.var_2e61f0ce)) {
         for (i = 0; i < level.var_314051a1.var_2e61f0ce.size; i++) {
@@ -62,7 +62,7 @@ function private function_c3be3572(var_9c939fff, var_27426b47, target, xp, var_b
             if (!isdefined(self.var_96d6f6d1)) {
                 self.var_96d6f6d1 = array();
             }
-            var_d1017f27 = {#var_949f9254:var_7b2027fe, #var_52ac6e9c:var_b68d50cb, #var_4a01cb77:self.var_96d6f6d1.size, #var_30c47a21:var_27426b47, #var_de86e878:var_341c004b, #n_xp:xp, #var_ad971622:var_1eb89301.callingtask, #var_e226ec4f:target};
+            var_d1017f27 = {#var_e226ec4f:target, #var_ad971622:var_1eb89301.callingtask, #n_xp:xp, #var_de86e878:var_341c004b, #var_30c47a21:var_27426b47, #var_4a01cb77:self.var_96d6f6d1.size, #var_52ac6e9c:var_b68d50cb, #var_949f9254:var_7b2027fe};
             if (!isdefined(self.var_96d6f6d1)) {
                 self.var_96d6f6d1 = [];
             } else if (!isarray(self.var_96d6f6d1)) {

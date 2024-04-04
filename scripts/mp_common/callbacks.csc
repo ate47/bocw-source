@@ -15,14 +15,14 @@
 // Checksum 0xd291a86c, Offset: 0x158
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"callback", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"callback", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace callback/callbacks
 // Params 0, eflags: 0x6 linked
 // Checksum 0x74e19437, Offset: 0x1a0
 // Size: 0x1c
-function private function_70a657d8() {
+function private preinit() {
     level thread set_default_callbacks();
 }
 

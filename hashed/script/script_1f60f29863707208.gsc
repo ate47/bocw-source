@@ -1003,18 +1003,18 @@ function function_5a35f1c4(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x132
 function function_8507bd06(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump == 0) {
-        if (isdefined(self.var_87f7f912)) {
-            stopfx(fieldname, self.var_87f7f912);
-            self.var_87f7f912 = undefined;
+        if (isdefined(self.smoke_fx)) {
+            stopfx(fieldname, self.smoke_fx);
+            self.smoke_fx = undefined;
         }
-        if (isdefined(self.var_54cf4ad1)) {
-            self stoploopsound(self.var_54cf4ad1);
-            self.var_54cf4ad1 = undefined;
+        if (isdefined(self.smoke_sfx)) {
+            self stoploopsound(self.smoke_sfx);
+            self.smoke_sfx = undefined;
         }
     }
     if (bwasdemojump == 1) {
-        self.var_87f7f912 = playfx(fieldname, #"hash_27265ab68f59e1c4", self.origin + vectorscale((0, 0, 1), 32), (0, 0, 1), (1, 0, 0));
-        self.var_54cf4ad1 = self playloopsound(#"hash_6caa04f1e36c6d2a");
+        self.smoke_fx = playfx(fieldname, #"hash_27265ab68f59e1c4", self.origin + vectorscale((0, 0, 1), 32), (0, 0, 1), (1, 0, 0));
+        self.smoke_sfx = self playloopsound(#"hash_6caa04f1e36c6d2a");
     }
 }
 

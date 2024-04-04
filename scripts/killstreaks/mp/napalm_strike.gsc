@@ -10,14 +10,14 @@
 // Checksum 0x567e5dfe, Offset: 0xb8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"napalm_strike", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"napalm_strike", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace napalm_strike/napalm_strike
 // Params 0, eflags: 0x6 linked
 // Checksum 0x34cea211, Offset: 0x108
 // Size: 0x1c
-function private function_70a657d8() {
+function private preinit() {
     init_shared("killstreak_napalm_strike");
 }
 

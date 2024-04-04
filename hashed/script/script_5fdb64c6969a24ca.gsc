@@ -14,14 +14,14 @@
 // Checksum 0x62ffb14b, Offset: 0x128
 // Size: 0x34
 function private autoexec __init__system__() {
-    system::register("dialog_tree", &function_70a657d8, undefined, undefined, undefined);
+    system::register("dialog_tree", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace dialog_tree/dialog_tree
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9aa74bcc, Offset: 0x168
 // Size: 0xdc
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("toplayer", "dt_set_fov", 1, 3, "int", &function_63175268, 0, 0);
     clientfield::register("toplayer", "dt_set_dof", 1, 3, "int", &function_3564ce29, 0, 0);
     clientfield::register("toplayer", "dt_set_hide_reticle_dot", 1, 1, "int", &function_356192f3, 0, 0);
@@ -38,16 +38,16 @@ function function_63175268(*localclientnum, *oldval, newval, *bnewent, *binitial
         self function_9298adaf(1);
         break;
     case 2:
-        self namespace_ca99987f::function_f95cb457(undefined, 17, n_time, #"linear");
+        self easing::function_f95cb457(undefined, 17, n_time, #"linear");
         break;
     case 3:
-        self namespace_ca99987f::function_f95cb457(undefined, 20, n_time, #"linear");
+        self easing::function_f95cb457(undefined, 20, n_time, #"linear");
         break;
     case 4:
-        self namespace_ca99987f::function_f95cb457(undefined, 25, n_time, #"linear");
+        self easing::function_f95cb457(undefined, 25, n_time, #"linear");
         break;
     case 5:
-        self namespace_ca99987f::function_f95cb457(undefined, 30, n_time, #"linear");
+        self easing::function_f95cb457(undefined, 30, n_time, #"linear");
         break;
     }
 }

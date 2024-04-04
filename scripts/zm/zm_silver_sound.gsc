@@ -23,7 +23,7 @@ function init() {
 // Checksum 0x3de974cc, Offset: 0x1b8
 // Size: 0xcc
 function function_c1db8d1a() {
-    level waittill(#"hash_3537191335625c");
+    level waittill(#"bfm");
     var_581d3017 = getent("audio_bfm", "targetname");
     playsoundatposition(#"hash_4ec7d60ade69984c", var_581d3017.origin);
     wait(1);

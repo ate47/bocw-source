@@ -11,14 +11,14 @@
 // Checksum 0x5ed2167e, Offset: 0xa0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_trial_disable_bgbs", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_trial_disable_bgbs", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_trial_disable_bgbs/zm_trial_disable_bgbs
 // Params 0, eflags: 0x6 linked
 // Checksum 0x84e0cf04, Offset: 0xe8
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     if (!zm_trial::is_trial_mode()) {
         return;
     }

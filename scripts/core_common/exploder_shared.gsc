@@ -12,14 +12,14 @@
 // Checksum 0x6b9380c9, Offset: 0x1a0
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"exploder", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"exploder", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace exploder/exploder_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x77fa6fce, Offset: 0x1f8
 // Size: 0x1c
-function private function_70a657d8() {
+function private preinit() {
     level._client_exploders = [];
     level._client_exploder_ids = [];
 }

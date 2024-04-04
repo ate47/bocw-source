@@ -642,8 +642,8 @@ function vending_trigger_think() {
         player playsoundtoplayer(#"hash_70f9bc3fce59c959", player);
         player playrumbleonentity(#"zm_interact_rumble");
         machine thread namespace_791d0451::function_3e9d8a8e(perk);
-        if (isdefined(machine.var_3ee46cbd)) {
-            machine thread [[ machine.var_3ee46cbd ]](player);
+        if (isdefined(machine.use_func)) {
+            machine thread [[ machine.use_func ]](player);
         }
         self thread vending_trigger_post_think(player, perk);
     }
@@ -1697,7 +1697,7 @@ function check_for_change() {
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
         if (player getstance() == "prone") {
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"loose_change_zm", #attacker:player});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:player, #scoreevent:"loose_change_zm"});
             zm_utility::play_sound_at_pos("purchase", player.origin);
             player playrumbleonentity(#"zm_interact_rumble");
             break;
@@ -2455,7 +2455,7 @@ function function_b2ac6ee7() {
 function function_9bdf581f(perk, n_slot, b_bought = 0) {
     self endon(#"player_downed", #"disconnect", #"perk_abort_drinking");
     level endon(#"end_game");
-    level notify(#"hash_4e566c83cdfabe44", {#perk:perk, #e_player:self});
+    level notify(#"hash_4e566c83cdfabe44", {#e_player:self, #perk:perk});
     self perks::perk_setperk(perk);
     if (isdefined(level._custom_perks[perk].var_658e2856)) {
         if (isarray(level._custom_perks[perk].var_658e2856)) {
@@ -2468,7 +2468,7 @@ function function_9bdf581f(perk, n_slot, b_bought = 0) {
     }
     if (is_true(b_bought)) {
         self thread give_perk_presentation(perk);
-        self notify(#"perk_bought", {#n_slot:n_slot, #var_16c042b8:perk});
+        self notify(#"perk_bought", {#var_16c042b8:perk, #n_slot:n_slot});
         self zm_stats::increment_challenge_stat(#"survivalist_buy_perk");
         self zm_stats::function_c0c6ab19(#"perks_used");
         if (zm_utility::is_standard()) {
@@ -3267,7 +3267,7 @@ function function_28ac0614(var_bbb2c705, *var_613b7621) {
 // Checksum 0x9eb65fae, Offset: 0xc6f8
 // Size: 0x1f0
 function function_50691178() {
-    var_750eac69 = [5:#"hash_59dbe8f72baaa2a3", 4:#"hash_59dbe7f72baaa0f0", 3:#"hash_59dbeef72baaacd5", 2:#"hash_59dbedf72baaab22", 1:#"hash_59dbecf72baaa96f", 0:#"hash_38c08136902fd553"];
+    var_750eac69 = [#"hash_38c08136902fd553", #"hash_59dbecf72baaa96f", #"hash_59dbedf72baaab22", #"hash_59dbeef72baaacd5", #"hash_59dbe7f72baaa0f0", #"hash_59dbe8f72baaa2a3"];
     foreach (talent in self.var_7341f980) {
         if (isinarray(var_750eac69, talent)) {
             arrayremovevalue(self.var_7341f980, talent);

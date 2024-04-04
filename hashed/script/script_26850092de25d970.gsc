@@ -14,7 +14,7 @@
 #using scripts\cp\cp_takedown.gsc;
 #using scripts\cp\cp_takedown_raid_apt.gsc;
 #using scripts\cp\cp_takedown_raid_bar.gsc;
-#using script_263b7f2982258785;
+#using scripts\cp_common\dialogue.gsc;
 #using scripts\core_common\array_shared.gsc;
 #using scripts\core_common\ai_shared.gsc;
 #using script_61cfc2ab8e60625;
@@ -69,7 +69,7 @@ function main(var_d3440450, var_50cc0d4f) {
         objectives::scripted("obj_takedown_capture", undefined, #"hash_49c1d860c97e3792");
         objectives::follow("follow_adler", level.adler, undefined, 0, 0);
         level.raid_car = getent("raid_car", "targetname");
-        level thread scene::play("scene_tkd_hit2_intro_bar_v2", "Adler_part_3", [0:level.raid_car]);
+        level thread scene::play("scene_tkd_hit2_intro_bar_v2", "Adler_part_3", [level.raid_car]);
         if (isdefined(level.var_d7d201ba)) {
             player flag::set(level.var_d7d201ba);
         }
@@ -82,7 +82,7 @@ function main(var_d3440450, var_50cc0d4f) {
     foreach (e_w in var_4f2ba130) {
         player takeweapon(e_w);
     }
-    player util::function_3b6593e4(0.5, 2);
+    player util::blend_movespeedscale(0.5, 2);
     level scene::init("scene_tkd_hit2_alley_civilians");
     thread namespace_a052577e::function_6591463();
     level thread function_4bc3dba();
@@ -99,7 +99,7 @@ function main(var_d3440450, var_50cc0d4f) {
     level thread function_b7d7ba47();
     level thread function_709cb1b3();
     level thread tkdn::function_7ea0ce5f();
-    player util::function_3b6593e4(0.45, 2);
+    player util::blend_movespeedscale(0.45, 2);
     level thread function_c05edfd0();
     namespace_a052577e::function_b26ed576();
     level thread scene::init_streamer(#"scene_tkd_hit2_bar_alley", getplayers());
@@ -123,11 +123,11 @@ function main(var_d3440450, var_50cc0d4f) {
 // Checksum 0x54e9e0b1, Offset: 0xf70
 // Size: 0x7c
 function function_3f65ad3b(a_ents) {
-    if (isdefined(a_ents[#"hash_28cd827c95aea4fd"])) {
-        a_ents[#"hash_28cd827c95aea4fd"] thread function_5424b11();
+    if (isdefined(a_ents[#"civ_1"])) {
+        a_ents[#"civ_1"] thread function_5424b11();
     }
-    if (isdefined(a_ents[#"hash_28cd7f7c95ae9fe4"])) {
-        a_ents[#"hash_28cd7f7c95ae9fe4"] thread function_5424b11();
+    if (isdefined(a_ents[#"civ_2"])) {
+        a_ents[#"civ_2"] thread function_5424b11();
     }
 }
 
@@ -138,7 +138,7 @@ function function_3f65ad3b(a_ents) {
 function function_5424b11() {
     self waittill(#"hash_630282df563251d6");
     wait(1);
-    self function_cb48cddd();
+    self deletedelay();
 }
 
 // Namespace namespace_c9f7b6af/namespace_414c4954
@@ -173,20 +173,20 @@ function function_d5cc022() {
     level flag::wait_till("flag_apt_approach_guard_vo");
     org = getent("org_bodyguard_alleyway_vo", "targetname");
     while (true) {
-        var_e8cccaf8 = snd::play("vox_cp_tdwn_03500_irg3_yellinggroan_7c_1", org.origin);
-        snd::function_2fdc4fb(var_e8cccaf8);
-        var_e8cccaf8 = snd::play("vox_cp_tdwn_03500_irg3_celebratoryyell_c3", org.origin);
-        snd::function_2fdc4fb(var_e8cccaf8);
-        var_e8cccaf8 = snd::play("vox_cp_tdwn_03500_irg3_celebratoryyell_c3_1", org.origin);
-        snd::function_2fdc4fb(var_e8cccaf8);
-        var_e8cccaf8 = snd::play("vox_cp_tdwn_03500_irg3_celebratoryyell_c3", org.origin);
-        snd::function_2fdc4fb(var_e8cccaf8);
-        var_e8cccaf8 = snd::play("vox_cp_tdwn_03500_irg2_celebratoryyell_c3_1", org.origin);
-        snd::function_2fdc4fb(var_e8cccaf8);
-        var_e8cccaf8 = snd::play("vox_cp_tdwn_03500_irg3_yellinggroan_7c", org.origin);
-        snd::function_2fdc4fb(var_e8cccaf8);
-        var_e8cccaf8 = snd::play("vox_cp_tdwn_03500_irg1_yellinggroan_7c_1", org.origin);
-        snd::function_2fdc4fb(var_e8cccaf8);
+        voline = snd::play("vox_cp_tdwn_03500_irg3_yellinggroan_7c_1", org.origin);
+        snd::function_2fdc4fb(voline);
+        voline = snd::play("vox_cp_tdwn_03500_irg3_celebratoryyell_c3", org.origin);
+        snd::function_2fdc4fb(voline);
+        voline = snd::play("vox_cp_tdwn_03500_irg3_celebratoryyell_c3_1", org.origin);
+        snd::function_2fdc4fb(voline);
+        voline = snd::play("vox_cp_tdwn_03500_irg3_celebratoryyell_c3", org.origin);
+        snd::function_2fdc4fb(voline);
+        voline = snd::play("vox_cp_tdwn_03500_irg2_celebratoryyell_c3_1", org.origin);
+        snd::function_2fdc4fb(voline);
+        voline = snd::play("vox_cp_tdwn_03500_irg3_yellinggroan_7c", org.origin);
+        snd::function_2fdc4fb(voline);
+        voline = snd::play("vox_cp_tdwn_03500_irg1_yellinggroan_7c_1", org.origin);
+        snd::function_2fdc4fb(voline);
     }
 }
 

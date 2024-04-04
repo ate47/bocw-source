@@ -1529,7 +1529,7 @@ function round_spawn_failsafe() {
                     if (!is_true(self.nuked) && !is_true(self.marked_for_death) && !is_true(self.isscreecher) && !is_true(self.missinglegs)) {
                         level.zombie_total++;
                         level.zombie_total_subtract++;
-                        var_1a8c05ae = {#var_e0d660f6:self.var_e0d660f6, #n_health:self.health};
+                        var_1a8c05ae = {#n_health:self.health, #var_e0d660f6:self.var_e0d660f6};
                         if (!isdefined(level.var_fc73bad4[self.archetype])) {
                             level.var_fc73bad4[self.archetype] = [];
                         } else if (!isarray(level.var_fc73bad4[self.archetype])) {
@@ -2045,7 +2045,7 @@ function zombie_gib(amount, attacker, *direction_vec, point, type, *tagname, *mo
         }
         if (is_true(self.missinglegs) && self.health > 0) {
             b_gibbed = 1;
-            level notify(#"crawler_created", {#weapon:weapon, #player:tagname, #zombie:self});
+            level notify(#"crawler_created", {#zombie:self, #player:tagname, #weapon:weapon});
             self allowedstances("crouch");
             self setphysparams(15, 0, 24);
             self allowpitchangle(1);
@@ -2362,7 +2362,7 @@ function derive_damage_refs(weapon, var_fd90b0bb, point, var_87a07ff5 = 1) {
     var_19874b3 = [];
     for (i = 0; i < level.gib_tags.size; i++) {
         if (self haspart(level.gib_tags[i])) {
-            var_19874b3[var_19874b3.size] = {#origin:self gettagorigin(level.gib_tags[i]), #tag:level.gib_tags[i]};
+            var_19874b3[var_19874b3.size] = {#tag:level.gib_tags[i], #origin:self gettagorigin(level.gib_tags[i])};
         }
     }
     var_6844367f = arraygetclosest(point, var_19874b3);

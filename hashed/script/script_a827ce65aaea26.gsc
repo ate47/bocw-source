@@ -5,7 +5,7 @@
 #using scripts\zm_common\zm_round_logic.gsc;
 #using scripts\zm_common\zm_zonemgr.gsc;
 #using script_4421226bbc54b398;
-#using script_669400ff5aadcc83;
+#using scripts\zm_common\zm_vote.gsc;
 #using scripts\zm_common\zm_vo.gsc;
 #using scripts\zm_common\zm_stats.gsc;
 #using scripts\zm_common\zm_score.gsc;
@@ -13,7 +13,7 @@
 #using scripts\zm_common\zm_cleanup_mgr.gsc;
 #using script_3411bb48d41bd3b;
 #using script_3357acf79ce92f4b;
-#using script_1029986e2bc8ca8e;
+#using scripts\zm_common\objective_manager.gsc;
 #using scripts\zm_common\callbacks.gsc;
 #using script_27347f09888ad15;
 #using scripts\killstreaks\helicopter_shared.gsc;
@@ -32,7 +32,7 @@
 #using scripts\core_common\gameobjects_shared.gsc;
 #using scripts\core_common\fx_shared.gsc;
 #using scripts\core_common\flag_shared.gsc;
-#using script_7fc996fe8678852;
+#using scripts\core_common\content_manager.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
 #using scripts\core_common\struct.gsc;
@@ -66,7 +66,7 @@ function function_d5ab66bf() {
     level.var_44064cc6 = 20;
     var_155f12e4 = struct::get("round_accelerant");
     if (isdefined(var_155f12e4)) {
-        var_87f8ede0 = namespace_8b6a9d79::function_f3d93ee9(var_155f12e4, #"hash_c4ab57344c6af29", 0, 1);
+        var_87f8ede0 = content_manager::spawn_script_model(var_155f12e4, #"hash_c4ab57344c6af29", 0, 1);
         var_87f8ede0 playloopsound(#"hash_350fcc9c7101d9b5");
         var_87f8ede0 clientfield::set("zm_round_accelerant_fx", 1);
         level.var_b03d5c95 = spawn("trigger_radius_use", var_155f12e4.origin, 0, 100);
@@ -102,11 +102,11 @@ function onuse(player) {
     }
     if (getgametypesetting(#"hash_704e4a94667cfe72")) {
         if (level.var_41eb9e50) {
-            var_8e862768 = namespace_af5c1c0c::function_c65468ef(player, 4, #"hash_2b158e2ae2571717", 1);
+            b_passed = zm_vote::function_c65468ef(player, 4, #"hash_2b158e2ae2571717", 1);
         } else {
-            var_8e862768 = namespace_af5c1c0c::function_c65468ef(player, 3, #"hash_2b158e2ae2571717", 1);
+            b_passed = zm_vote::function_c65468ef(player, 3, #"hash_2b158e2ae2571717", 1);
         }
-        if (!var_8e862768) {
+        if (!b_passed) {
             return;
         }
         level.var_b03d5c95.var_51c14c0b stoploopsound();

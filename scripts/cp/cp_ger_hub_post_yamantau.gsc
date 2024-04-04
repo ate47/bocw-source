@@ -2,7 +2,7 @@
 #using script_4052585f7ae90f3a;
 #using script_19971192452f4209;
 #using script_2a4a480476a0184f;
-#using script_263b7f2982258785;
+#using scripts\cp_common\dialogue.gsc;
 #using script_3b82b8c68189025e;
 #using script_5513c8efed5ff300;
 #using scripts\cp_common\skipto.gsc;
@@ -94,11 +94,11 @@ function function_4a614026() {
 // Size: 0x7bc
 function function_d16e71e6() {
     self.var_ba1eee16 = spawnstruct();
-    self.var_ba1eee16.var_c5c9acca[0] = [2:0.5, 1:0.5, 0:"vox_cp_sh5_05300_adlr_whatsonyourmind_f5"];
-    self.var_ba1eee16.var_c5c9acca[1] = [2:0.5, 1:0.5, 0:"vox_cp_sh5_05300_adlr_youreadytodothi_7f"];
-    self.var_ba1eee16.var_c5c9acca[2] = [2:0.5, 1:0.5, 0:"vox_cp_sh5_05300_adlr_somethingelse_b6"];
-    self.var_ba1eee16.var_962cbf19[0] = [1:0.5, 0:"vox_cp_sh5_05300_adlr_checkouttheboar_63"];
-    self.var_ba1eee16.var_962cbf19[1] = [1:0.5, 0:"vox_cp_sh5_05300_adlr_finishuphereand_e9"];
+    self.var_ba1eee16.var_c5c9acca[0] = ["vox_cp_sh5_05300_adlr_whatsonyourmind_f5", 0.5, 0.5];
+    self.var_ba1eee16.var_c5c9acca[1] = ["vox_cp_sh5_05300_adlr_youreadytodothi_7f", 0.5, 0.5];
+    self.var_ba1eee16.var_c5c9acca[2] = ["vox_cp_sh5_05300_adlr_somethingelse_b6", 0.5, 0.5];
+    self.var_ba1eee16.var_962cbf19[0] = ["vox_cp_sh5_05300_adlr_checkouttheboar_63", 0.5];
+    self.var_ba1eee16.var_962cbf19[1] = ["vox_cp_sh5_05300_adlr_finishuphereand_e9", 0.5];
     self.var_ba1eee16.var_f2190d3d = "scene_hub_" + (isdefined(level.var_f5552371) ? level.var_f5552371 : "") + "_dialog_" + self.animname;
     self.var_ba1eee16.s_tree = dialog_tree::function_82b16606(&function_958c2188, &function_1bc95f5c, 1, 1, self.var_ba1eee16.var_f2190d3d);
     self.var_ba1eee16.s_tree dialog_tree::function_58d27b23(#"hash_50b51e6e500b3071", undefined, "dt_1a", "waiting_idle", undefined, "adler_one_questioned");
@@ -108,17 +108,17 @@ function function_d16e71e6() {
     self.var_ba1eee16.s_tree dialog_tree::function_9e36808(#"hash_1cc6bd71f87a9e84", undefined, "dt_3a_3", "waiting_idle", undefined, "adler_one_questioned");
     switch (randomint(3)) {
     case 0:
-        self.var_ba1eee16.s_tree dialog_tree::function_6bbbf87("adler_one_questioned", #"hash_50b51b6e500b2b58", undefined, [1:"dt_1b_end1", 0:"dt_1b"], "waiting_idle");
+        self.var_ba1eee16.s_tree dialog_tree::function_6bbbf87("adler_one_questioned", #"hash_50b51b6e500b2b58", undefined, ["dt_1b", "dt_1b_end1"], "waiting_idle");
         break;
     case 1:
-        self.var_ba1eee16.s_tree dialog_tree::function_6bbbf87("adler_one_questioned", #"hash_50b51b6e500b2b58", undefined, [1:"dt_1b_end2", 0:"dt_1b"], "waiting_idle");
+        self.var_ba1eee16.s_tree dialog_tree::function_6bbbf87("adler_one_questioned", #"hash_50b51b6e500b2b58", undefined, ["dt_1b", "dt_1b_end2"], "waiting_idle");
         break;
     case 2:
-        self.var_ba1eee16.s_tree dialog_tree::function_6bbbf87("adler_one_questioned", #"hash_50b51b6e500b2b58", undefined, [1:"dt_1b_end3", 0:"dt_1b"], "waiting_idle");
+        self.var_ba1eee16.s_tree dialog_tree::function_6bbbf87("adler_one_questioned", #"hash_50b51b6e500b2b58", undefined, ["dt_1b", "dt_1b_end3"], "waiting_idle");
         break;
     }
     self.var_ba1eee16.var_cb67e512 = self.var_ba1eee16.s_tree dialog_tree::function_7fe78745(1, "adler_convo_exit", 1, #"hash_18589726ffc5a631", undefined, undefined, undefined, 1, "flag_dialog_nevermind", "forever");
-    self.var_ba1eee16.s_tree dialog_tree::function_6bbbf87("adler_convo_exit", #"hash_31876661817f34", [1:"vox_cp_sh5_05300_adlr_alright_f9", 0:"vox_cp_sh5_05300_adlr_okay_c2"], undefined, "waiting_idle", 1, undefined, "forever");
+    self.var_ba1eee16.s_tree dialog_tree::function_6bbbf87("adler_convo_exit", #"hash_31876661817f34", ["vox_cp_sh5_05300_adlr_okay_c2", "vox_cp_sh5_05300_adlr_alright_f9"], undefined, "waiting_idle", 1, undefined, "forever");
     self.var_ba1eee16.s_tree dialog_tree::function_46f25b65();
     level.var_7256f687 = dialog_tree::function_82b16606(undefined, undefined, 1, 1, self.var_ba1eee16.var_f2190d3d);
     level.var_7256f687 dialog_tree::function_58d27b23(#"hash_248fd071fca3dd09", undefined, "dt_2a_1", "waiting_idle", 1, undefined, undefined, &function_70185d79);
@@ -182,11 +182,11 @@ function function_70185d79() {
 function function_f5cec8cd() {
     self setmodel(#"hash_1609907785128df0");
     self.var_ba1eee16 = spawnstruct();
-    self.var_ba1eee16.var_c5c9acca[0] = [1:0.5, 0:"vox_cp_sh5_05300_park_bellididntexpec_6b"];
-    self.var_ba1eee16.var_c5c9acca[1] = [1:0.5, 0:"vox_cp_sh5_05300_park_yes_70"];
-    self.var_ba1eee16.var_c5c9acca[2] = [1:0.5, 0:"vox_cp_sh5_05300_park_somethingonyour_a1"];
-    self.var_ba1eee16.var_962cbf19[0] = [1:0.5, 0:"vox_cp_sh5_05300_park_staysafeoutther_3e"];
-    self.var_ba1eee16.var_962cbf19[1] = [1:0.5, 0:"vox_cp_sh5_05300_park_comebacktousino_ed"];
+    self.var_ba1eee16.var_c5c9acca[0] = ["vox_cp_sh5_05300_park_bellididntexpec_6b", 0.5];
+    self.var_ba1eee16.var_c5c9acca[1] = ["vox_cp_sh5_05300_park_yes_70", 0.5];
+    self.var_ba1eee16.var_c5c9acca[2] = ["vox_cp_sh5_05300_park_somethingonyour_a1", 0.5];
+    self.var_ba1eee16.var_962cbf19[0] = ["vox_cp_sh5_05300_park_staysafeoutther_3e", 0.5];
+    self.var_ba1eee16.var_962cbf19[1] = ["vox_cp_sh5_05300_park_comebacktousino_ed", 0.5];
     self.var_ba1eee16.var_f2190d3d = "scene_hub_" + (isdefined(level.var_f5552371) ? level.var_f5552371 : "") + "_dialog_" + self.animname;
     self.var_ba1eee16.s_tree = dialog_tree::function_82b16606(&function_f09c19a, &function_62d9689d, 1, 1, self.var_ba1eee16.var_f2190d3d);
     self.var_ba1eee16.s_tree dialog_tree::function_58d27b23(#"hash_93b9019659132a1", undefined, "dt_1a", "waiting_idle");
@@ -200,7 +200,7 @@ function function_f5cec8cd() {
         self.var_ba1eee16.s_tree dialog_tree::function_58d27b23(#"hash_93b8e1965912f3b", undefined, "dt_1c", "waiting_idle", 1, "ask_about_parks_scar", undefined, &function_42091602);
     }
     self.var_ba1eee16.var_cb67e512 = self.var_ba1eee16.s_tree dialog_tree::function_7fe78745(1, "park_convo_exit", 1, #"hash_18589726ffc5a631", undefined, undefined, undefined, 1, "flag_dialog_nevermind", "forever");
-    self.var_ba1eee16.s_tree dialog_tree::function_6bbbf87("park_convo_exit", #"hash_7e58f4ac9998f844", [1:"vox_cp_sh5_05300_park_verywell_a8", 0:"vox_cp_sh5_05300_park_illbehereifyoun_0f"], undefined, "waiting_idle", 1, undefined, "forever");
+    self.var_ba1eee16.s_tree dialog_tree::function_6bbbf87("park_convo_exit", #"hash_7e58f4ac9998f844", ["vox_cp_sh5_05300_park_illbehereifyoun_0f", "vox_cp_sh5_05300_park_verywell_a8"], undefined, "waiting_idle", 1, undefined, "forever");
     self.var_ba1eee16.s_tree dialog_tree::function_46f25b65();
     level.var_b91aa91b = dialog_tree::function_82b16606(undefined, undefined, 1, 1, level.park.var_ba1eee16.var_f2190d3d);
     level.var_b91aa91b dialog_tree::function_58d27b23(#"hash_3991c627918429b9", undefined, "dt_2a_strength", "waiting_idle", 1, undefined, undefined, &function_93672bfc);
@@ -269,10 +269,10 @@ function function_eb65bc98() {
     self setmodel(#"hash_1c333f0270f01215");
     namespace_31c67f6d::function_a0abc8d3(#"hash_11c590d92c5473d5");
     self.var_ba1eee16 = spawnstruct();
-    self.var_ba1eee16.var_962cbf19[0] = [1:0.5, 0:"vox_cp_sh5_05300_sims_nope_c0"];
-    self.var_ba1eee16.var_962cbf19[1] = [1:0.5, 0:"vox_cp_sh5_05400_sims_donttouchmylegs_d2"];
-    self.var_ba1eee16.var_962cbf19[2] = [1:0.5, 0:"vox_cp_sh5_05300_sims_youboredorwhat_7d"];
-    self.var_ba1eee16.var_962cbf19[3] = [1:0.5, 0:"vox_cp_sh5_05300_sims_guysbellslonely_aa"];
+    self.var_ba1eee16.var_962cbf19[0] = ["vox_cp_sh5_05300_sims_nope_c0", 0.5];
+    self.var_ba1eee16.var_962cbf19[1] = ["vox_cp_sh5_05400_sims_donttouchmylegs_d2", 0.5];
+    self.var_ba1eee16.var_962cbf19[2] = ["vox_cp_sh5_05300_sims_youboredorwhat_7d", 0.5];
+    self.var_ba1eee16.var_962cbf19[3] = ["vox_cp_sh5_05300_sims_guysbellslonely_aa", 0.5];
     self.var_ba1eee16.s_tree = dialog_tree::function_82b16606(&namespace_31c67f6d::function_282ccb63, &namespace_31c67f6d::function_7b9b6d21, 1, 1, self.var_ba1eee16.var_f2190d3d);
     self.var_ba1eee16.var_890ce7a8 = 1;
     self.var_ba1eee16.var_18674cfa = 0;
@@ -289,25 +289,25 @@ function function_eb65bc98() {
 function function_db46f2d7() {
     self setmodel(#"hash_7bc6d7eff92fbe14");
     self.var_ba1eee16 = spawnstruct();
-    self.var_ba1eee16.var_c5c9acca[0] = [2:1, 1:0.5, 0:"vox_cp_sh5_05300_lazr_timetobreakouty_1c_1"];
-    self.var_ba1eee16.var_c5c9acca[1] = [2:1, 1:0.5, 0:"vox_cp_sh5_05300_lazr_yougonnakeepmak_3c_1"];
-    self.var_ba1eee16.var_c5c9acca[2] = [2:1, 1:0.5, 0:"vox_cp_sh5_05300_lazr_andyoureback_41_1"];
-    self.var_ba1eee16.var_c5c9acca[3] = [1:0.5, 0:"vox_cp_sh5_05300_lazr_yeah_c6_1"];
-    self.var_ba1eee16.var_962cbf19[0] = [1:0.5, 0:"vox_cp_sh5_05300_lazr_ithinkadlerwant_68_1"];
-    self.var_ba1eee16.var_962cbf19[1] = [1:0.5, 0:"vox_cp_sh5_05300_lazr_welltalkmoreont_c6_1"];
+    self.var_ba1eee16.var_c5c9acca[0] = ["vox_cp_sh5_05300_lazr_timetobreakouty_1c_1", 0.5, 1];
+    self.var_ba1eee16.var_c5c9acca[1] = ["vox_cp_sh5_05300_lazr_yougonnakeepmak_3c_1", 0.5, 1];
+    self.var_ba1eee16.var_c5c9acca[2] = ["vox_cp_sh5_05300_lazr_andyoureback_41_1", 0.5, 1];
+    self.var_ba1eee16.var_c5c9acca[3] = ["vox_cp_sh5_05300_lazr_yeah_c6_1", 0.5];
+    self.var_ba1eee16.var_962cbf19[0] = ["vox_cp_sh5_05300_lazr_ithinkadlerwant_68_1", 0.5];
+    self.var_ba1eee16.var_962cbf19[1] = ["vox_cp_sh5_05300_lazr_welltalkmoreont_c6_1", 0.5];
     self.var_ba1eee16.var_f2190d3d = "scene_hub_" + (isdefined(level.var_f5552371) ? level.var_f5552371 : "") + "_dialog_" + self.animname;
     self.var_ba1eee16.s_tree = dialog_tree::function_82b16606(&function_53d6abef, &function_bac07041, 1, 1, self.var_ba1eee16.var_f2190d3d);
     self.var_ba1eee16.s_tree dialog_tree::function_58d27b23(#"hash_fae37590b46fe81", undefined, "dt_1a", "waiting_idle");
     if (level.player namespace_70eba6e6::function_b6a02677() != 3) {
         self.var_ba1eee16.s_tree dialog_tree::function_58d27b23(#"hash_fae34590b46f968", undefined, "dt_1b", "waiting_idle");
     } else {
-        self.var_ba1eee16.s_tree dialog_tree::function_58d27b23(#"hash_fae34590b46f968", undefined, [1:"dt_1b_if_kgb", 0:"dt_1b"], "waiting_idle", 1, "lazar_question", undefined, &function_708ca96d);
+        self.var_ba1eee16.s_tree dialog_tree::function_58d27b23(#"hash_fae34590b46f968", undefined, ["dt_1b", "dt_1b_if_kgb"], "waiting_idle", 1, "lazar_question", undefined, &function_708ca96d);
         level.var_ba909cc8 = dialog_tree::function_82b16606(undefined, undefined, 1, 1, level.lazar.var_ba1eee16.var_f2190d3d);
         level.var_ba909cc8 dialog_tree::function_58d27b23(#"hash_faa0f590b42d1b2", undefined, "dt_2a", "waiting_idle", 1, undefined, undefined, &function_67105bb3);
         level.var_ba909cc8 dialog_tree::function_58d27b23(#"hash_faa0e590b42cfff", undefined, "dt_2a", "waiting_idle", 1, undefined, undefined, &function_67105bb3);
     }
     self.var_ba1eee16.var_cb67e512 = self.var_ba1eee16.s_tree dialog_tree::function_7fe78745(1, "lazar_convo_exit", 1, #"hash_18589726ffc5a631", undefined, undefined, undefined, 1, "flag_dialog_nevermind", "forever");
-    self.var_ba1eee16.s_tree dialog_tree::function_6bbbf87("lazar_convo_exit", #"hash_4aa1bc3224a18ea4", [1:"vox_cp_sh5_05300_lazr_bell_ad_1", 0:"vox_cp_sh5_05300_lazr_yepitsalongwayt_32_1"], undefined, "waiting_idle", 1, undefined, "forever");
+    self.var_ba1eee16.s_tree dialog_tree::function_6bbbf87("lazar_convo_exit", #"hash_4aa1bc3224a18ea4", ["vox_cp_sh5_05300_lazr_yepitsalongwayt_32_1", "vox_cp_sh5_05300_lazr_bell_ad_1"], undefined, "waiting_idle", 1, undefined, "forever");
     self.var_ba1eee16.s_tree dialog_tree::function_46f25b65();
     self.var_ba1eee16.str_location = "car";
     self.var_ba1eee16.var_17b38a0e = undefined;
@@ -368,11 +368,11 @@ function function_67105bb3() {
 // Size: 0x5ec
 function function_72ecde0e() {
     self.var_ba1eee16 = spawnstruct();
-    self.var_ba1eee16.var_c5c9acca[0] = [1:0.5, 0:"vox_cp_sh5_05300_hdsn_haveyoucometoco_4e"];
-    self.var_ba1eee16.var_c5c9acca[1] = [1:0.5, 0:"vox_cp_sh5_05300_hdsn_yeah_c6"];
-    self.var_ba1eee16.var_c5c9acca[2] = [1:0.5, 0:"vox_cp_sh5_05300_hdsn_yougotsomething_f6"];
-    self.var_ba1eee16.var_962cbf19[0] = [1:0.5, 0:"vox_cp_sh5_05300_hdsn_isnttheresometh_ca"];
-    self.var_ba1eee16.var_962cbf19[1] = [1:0.5, 0:"vox_cp_sh5_05300_hdsn_movealong_f6"];
+    self.var_ba1eee16.var_c5c9acca[0] = ["vox_cp_sh5_05300_hdsn_haveyoucometoco_4e", 0.5];
+    self.var_ba1eee16.var_c5c9acca[1] = ["vox_cp_sh5_05300_hdsn_yeah_c6", 0.5];
+    self.var_ba1eee16.var_c5c9acca[2] = ["vox_cp_sh5_05300_hdsn_yougotsomething_f6", 0.5];
+    self.var_ba1eee16.var_962cbf19[0] = ["vox_cp_sh5_05300_hdsn_isnttheresometh_ca", 0.5];
+    self.var_ba1eee16.var_962cbf19[1] = ["vox_cp_sh5_05300_hdsn_movealong_f6", 0.5];
     self.var_ba1eee16.var_f2190d3d = "scene_hub_" + (isdefined(level.var_f5552371) ? level.var_f5552371 : "") + "_dialog_" + self.animname;
     self.var_ba1eee16.s_tree = dialog_tree::function_82b16606(&namespace_31c67f6d::function_282ccb63, &namespace_31c67f6d::function_7b9b6d21, 1, 1, self.var_ba1eee16.var_f2190d3d);
     self.var_ba1eee16.s_tree dialog_tree::function_7fe78745(1, "hudson_intro_over", 0, #"hash_527bd51edfa7c532", undefined, "dt_1a", "waiting_idle", undefined, "hudson_intro_over");
@@ -383,7 +383,7 @@ function function_72ecde0e() {
     self.var_ba1eee16.s_tree dialog_tree::function_6bbbf87("hudson_intro_over", #"hash_527ffb1edfabee9b", undefined, "dt_2c", "waiting_idle");
     self.var_ba1eee16.s_tree dialog_tree::function_9e36808(#"hash_5b665f7611268ade", undefined, "dt_2c_1", "waiting_idle");
     self.var_ba1eee16.var_cb67e512 = self.var_ba1eee16.s_tree dialog_tree::function_7fe78745(1, "hudson_convo_exit", 1, #"hash_18589726ffc5a631", undefined, undefined, undefined, 1, "flag_dialog_nevermind", "forever");
-    self.var_ba1eee16.s_tree dialog_tree::function_6bbbf87("hudson_convo_exit", #"hash_2914a53aab8d4627", [2:"vox_cp_sh5_05300_hdsn_godspeedsoldier_97", 1:"vox_cp_sh5_05300_hdsn_thankyou_a1", 0:"vox_cp_sh5_05300_hdsn_anexcellentprop_a7"], undefined, "waiting_idle", 1, undefined, "forever");
+    self.var_ba1eee16.s_tree dialog_tree::function_6bbbf87("hudson_convo_exit", #"hash_2914a53aab8d4627", ["vox_cp_sh5_05300_hdsn_anexcellentprop_a7", "vox_cp_sh5_05300_hdsn_thankyou_a1", "vox_cp_sh5_05300_hdsn_godspeedsoldier_97"], undefined, "waiting_idle", 1, undefined, "forever");
     self.var_ba1eee16.s_tree dialog_tree::function_46f25b65();
     self.var_ba1eee16.str_location = "clerk_desk";
     self.var_ba1eee16.var_17b38a0e = undefined;
@@ -466,11 +466,11 @@ function function_bbf2586d() {
 function function_fa0444c9() {
     a_str_vo = spawnstruct();
     a_str_vo.sims = spawnstruct();
-    a_str_vo.sims.dialog[0] = [0:"vox_cp_sh5_05300_sims_whistling_2a"];
-    a_str_vo.sims.dialog[1] = [0:"vox_cp_sh5_05300_sims_goddammit_c4"];
-    a_str_vo.sims.dialog[2] = [0:"vox_cp_sh5_05300_sims_therewego_18"];
-    a_str_vo.sims.dialog[3] = [0:"vox_cp_sh5_05300_sims_whistling_2a_1"];
-    a_str_vo.sims.dialog[5] = [0:"vox_cp_sh5_05300_sims_singlewhistle_f3"];
+    a_str_vo.sims.dialog[0] = ["vox_cp_sh5_05300_sims_whistling_2a"];
+    a_str_vo.sims.dialog[1] = ["vox_cp_sh5_05300_sims_goddammit_c4"];
+    a_str_vo.sims.dialog[2] = ["vox_cp_sh5_05300_sims_therewego_18"];
+    a_str_vo.sims.dialog[3] = ["vox_cp_sh5_05300_sims_whistling_2a_1"];
+    a_str_vo.sims.dialog[5] = ["vox_cp_sh5_05300_sims_singlewhistle_f3"];
     level.sims thread namespace_31c67f6d::function_5bd9de0f(a_str_vo.sims.dialog, "notify_sims_speak", "flag_in_briefing", "flag_player_using_evidence_board");
 }
 

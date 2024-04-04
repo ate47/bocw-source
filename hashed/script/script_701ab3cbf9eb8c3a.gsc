@@ -7,11 +7,11 @@
 #using script_3626f1b2cf51a99c;
 #using scripts\cp_common\util.gsc;
 #using scripts\cp_common\objectives.gsc;
-#using script_1292451e284848cc;
+#using scripts\cp_common\snd.gsc;
 #using scripts\cp_common\spawn_manager.gsc;
 #using scripts\cp_common\skipto.gsc;
 #using script_4937c6974f43bb71;
-#using script_263b7f2982258785;
+#using scripts\cp_common\dialogue.gsc;
 #using script_7475f917e6d3bed9;
 #using script_32399001bdb550da;
 #using scripts\core_common\ai\archetype_utility.gsc;
@@ -52,11 +52,11 @@ function function_945def6e(var_d3440450, var_50cc0d4f) {
     if (isdefined(level.pilot)) {
         a_ents[#"pilot"] = level.pilot;
     }
-    if (isdefined(level.var_93e4979e)) {
-        a_ents[#"hash_2113d2745d706ce3"] = level.var_93e4979e;
+    if (isdefined(level.copilot)) {
+        a_ents[#"copilot"] = level.copilot;
     }
-    if (isdefined(level.var_3ff4669d)) {
-        a_ents[#"hash_54d53de2803e4e43"] = level.var_3ff4669d;
+    if (isdefined(level.buddy)) {
+        a_ents[#"buddy"] = level.buddy;
     }
     if (isdefined(level.vip)) {
         a_ents[#"vip"] = level.vip;
@@ -105,8 +105,8 @@ function function_9eecfef5(*name, starting, *direct, *player) {
     if (isdefined(level.vip)) {
         level.vip val::reset(#"hash_3bb822ac59ad80", "take_weapons");
     }
-    if (isdefined(level.var_3ff4669d)) {
-        level.var_3ff4669d val::reset(#"hash_3bb822ac59ad80", "take_weapons");
+    if (isdefined(level.buddy)) {
+        level.buddy val::reset(#"hash_3bb822ac59ad80", "take_weapons");
     }
     level clientfield::set("" + #"hash_4ee03d623b77b0c2", 0);
     level clientfield::set("" + #"hash_16a1381cc22da440", 0);
@@ -165,9 +165,9 @@ function function_58ef8b05(*str_objective, var_50cc0d4f) {
         level.pilot util::stop_magic_bullet_shield();
         level.pilot delete();
     }
-    if (isdefined(level.var_93e4979e)) {
-        level.var_93e4979e util::stop_magic_bullet_shield();
-        level.var_93e4979e delete();
+    if (isdefined(level.copilot)) {
+        level.copilot util::stop_magic_bullet_shield();
+        level.copilot delete();
     }
     util::delay(15, undefined, &function_bbcf495);
     util::delay(20, undefined, &objectives::scripted, #"last_stand", undefined, #"hash_512f51804b601599", 1);
@@ -196,7 +196,7 @@ function function_58ef8b05(*str_objective, var_50cc0d4f) {
     var_cbfab426 delete();
     skipto::function_4e3ab877("armada_crash_part_1_gunner");
     level.player flag::clear("no_deaths_door_warning");
-    level skipto::function_51726ac8([0:"armada_crash_part_4_laststand"], 0);
+    level skipto::function_51726ac8(["armada_crash_part_4_laststand"], 0);
 }
 
 // Namespace armada_crash/namespace_5243a812
@@ -237,7 +237,7 @@ function function_5477c29() {
 function function_bbcf495() {
     a_spawners = getspawnerarray("crash_turret_enemies", "targetname");
     foreach (sp in a_spawners) {
-        sp thread function_9e2396e0();
+        sp thread spawn_ai();
     }
 }
 
@@ -245,7 +245,7 @@ function function_bbcf495() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8293d2d7, Offset: 0x1618
 // Size: 0xf6
-function function_9e2396e0() {
+function spawn_ai() {
     self endon(#"death");
     b_first = 1;
     while (self.count > 0) {
@@ -317,11 +317,11 @@ function function_a337b00e() {
 // Size: 0xb4
 function function_c1b1ec5e() {
     pistol = getweapon(#"pistol_semiauto_t9");
-    level.var_3ff4669d aiutility::setprimaryweapon(pistol);
-    level.var_3ff4669d ai::gun_switchto(pistol, "right");
-    level.var_3ff4669d.grenadeammo = 0;
-    level.var_3ff4669d.canbemeleed = 0;
-    level.var_3ff4669d namespace_b7cfe907::function_1f7fdfdb();
+    level.buddy aiutility::setprimaryweapon(pistol);
+    level.buddy ai::gun_switchto(pistol, "right");
+    level.buddy.grenadeammo = 0;
+    level.buddy.canbemeleed = 0;
+    level.buddy namespace_b7cfe907::function_1f7fdfdb();
 }
 
 // Namespace armada_crash/namespace_5243a812
@@ -381,7 +381,7 @@ function function_cd3c6f53(*str_objective, var_50cc0d4f) {
     level.vip flag::wait_till_clear(#"scene");
     wait(10);
     level flag::set("last_stand_beat_1");
-    level.vip thread namespace_a635adb1::queue("vox_cp_armd_00008_adlr_whereisthatairs_c1");
+    level.vip thread dialogue::queue("vox_cp_armd_00008_adlr_whereisthatairs_c1");
     wait(8);
     function_88a1aa83();
     level.var_dfdeb3ed = 1;
@@ -390,16 +390,16 @@ function function_cd3c6f53(*str_objective, var_50cc0d4f) {
     var_8852f35a = struct::get("napalm_target_flyby_3");
     level.player thread napalm_strike::function_88e2e18a("napalm_strike", var_6ad63861, #"allies", undefined, 0, "napalm_flyby_start_node_1");
     level.player napalm_strike::function_88e2e18a("napalm_strike", var_5d1b9cec, #"allies", undefined, 0, "napalm_flyby_start_node_2");
-    level.vip util::delay(1, undefined, &namespace_a635adb1::queue, "vox_cp_armd_00008_sims_fuckdidtheymiss_d8");
-    level.player thread function_86f3197e();
+    level.vip util::delay(1, undefined, &dialogue::queue, "vox_cp_armd_00008_sims_fuckdidtheymiss_d8");
+    level.player thread safe_trigger();
     spawn_manager::enable("last_stand_spawn_manager2");
     wait(6);
     level thread function_25d5fbb();
     wait(9);
     battlechatter::function_2ab9360b(0);
-    level.vip thread namespace_a635adb1::queue("vox_cp_armd_00008_adlr_wait_1f");
+    level.vip thread dialogue::queue("vox_cp_armd_00008_adlr_wait_1f");
     wait(1.5);
-    level.vip thread namespace_a635adb1::queue("vox_cp_armd_00008_adlr_hereitcomes_d9");
+    level.vip thread dialogue::queue("vox_cp_armd_00008_adlr_hereitcomes_d9");
     level notify(#"hash_6290710bbbe1a88e");
     function_313a56fa();
     wait(2.5);
@@ -411,7 +411,7 @@ function function_cd3c6f53(*str_objective, var_50cc0d4f) {
             ai function_be831785();
         }
     }
-    level.player namespace_594b67e::function_396e2076();
+    level.player action_utility::function_396e2076();
     level.player flag::set("no_deaths_door_warning");
     function_7081d8a6();
     namespace_72b0499b::music("deactivate_13.0_last_stand");
@@ -422,7 +422,7 @@ function function_cd3c6f53(*str_objective, var_50cc0d4f) {
     level.player takeallweapons();
     level.player scene::play(#"hash_67af97042f453b2b");
     level notify(#"hash_73a21eed3846c3a9");
-    array::run_all(getactorarray(), &function_8743d1d3);
+    array::run_all(getactorarray(), &delete_ai);
     wait(2);
     level thread function_caa27b0b();
     util::function_3e65fe0b(1);
@@ -489,14 +489,14 @@ function function_caa27b0b() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x562d3cd7, Offset: 0x2858
 // Size: 0x74
-function function_8743d1d3() {
-    if (self === level.vip || self === level.var_3ff4669d) {
+function delete_ai() {
+    if (self === level.vip || self === level.buddy) {
         return;
     }
     if (is_true(self.magic_bullet_shield)) {
         util::stop_magic_bullet_shield();
     }
-    self function_cb48cddd();
+    self deletedelay();
 }
 
 // Namespace armada_crash/namespace_5243a812
@@ -529,8 +529,8 @@ function function_7081d8a6() {
     if (!isdefined(s_source)) {
         s_source = arraysortclosest(var_5afb6488, s_dest.origin)[0];
     }
-    var_d3cfb81e = magicbullet(getweapon("launcher_freefire_t9"), s_source.origin, s_dest.origin);
-    var_d3cfb81e waittilltimeout(3, #"death");
+    rpg = magicbullet(getweapon("launcher_freefire_t9"), s_source.origin, s_dest.origin);
+    rpg waittilltimeout(3, #"death");
     playfx(#"hash_347ec3991abdca5f", level.player getplayercamerapos() + anglestoforward(level.player getplayerangles()) * 20);
     function_313a56fa(1);
     wait(0.2);
@@ -540,7 +540,7 @@ function function_7081d8a6() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0xfca581d3, Offset: 0x2cb0
 // Size: 0xce
-function function_86f3197e() {
+function safe_trigger() {
     self endon(#"death");
     var_73f57f25 = getent("last_stand_safe_trigger", "targetname", 1);
     while (true) {
@@ -588,7 +588,7 @@ function function_25d5fbb() {
     }
     magicbullet(getweapon("launcher_freefire_t9"), s_src.origin, s_dest.origin);
     wait(0.1);
-    level.vip thread namespace_a635adb1::queue("vox_cp_armd_00008_adlr_rpg_0a");
+    level.vip thread dialogue::queue("vox_cp_armd_00008_adlr_rpg_0a");
     wait(1);
     while (true) {
         s_src = array::random(var_bd1e2865);
@@ -608,11 +608,11 @@ function function_313a56fa(var_af75d221 = 0) {
         ai.grenadeammo = 0;
     }
     foreach (ent in getentarraybytype(3)) {
-        ent function_cb48cddd();
+        ent deletedelay();
     }
     if (var_af75d221) {
         foreach (ent in getentarraybytype(4)) {
-            ent function_cb48cddd();
+            ent deletedelay();
         }
     }
 }
@@ -661,7 +661,7 @@ function autoexec function_cc7bef21() {
     namespace_b7cfe907::function_abeb9b2d(1, 4);
     snd::function_7db65a93(#"hash_51446351b2ec1bdc");
     wait(6);
-    level.vip thread namespace_a635adb1::queue("vox_cp_armd_00009_adlr_somehowperseusk_d2");
+    level.vip thread dialogue::queue("vox_cp_armd_00009_adlr_somehowperseusk_d2");
     level flag::set("crash_fade_to_white");
 }
 

@@ -9,15 +9,15 @@
 // Checksum 0x80e41a09, Offset: 0xe8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_3dcfc06bf6bfc5f5", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_3dcfc06bf6bfc5f5", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_2d7ccca3/namespace_2d7ccca3
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd9fb9dd8, Offset: 0x130
 // Size: 0xbc
-function private function_70a657d8() {
-    clientfield::register_clientuimodel("hudItems.ammoCooldowns.fieldUpgrade", #"hash_6f4b11a0bee9b73d", [1:#"fieldupgrade", 0:#"hash_2f126bd99a74de8b"], 1, 5, "float", undefined, 0, 0);
+function private preinit() {
+    clientfield::register_clientuimodel("hudItems.ammoCooldowns.fieldUpgrade", #"hash_6f4b11a0bee9b73d", [#"hash_2f126bd99a74de8b", #"fieldupgrade"], 1, 5, "float", undefined, 0, 0);
     clientfield::register("missile", "fieldUpgradeActive", 1, 1, "int", &function_5fbd38e2, 0, 0);
 }
 

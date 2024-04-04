@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_556e19065f09f8a2;
+#using scripts\core_common\ai\zombie_eye_glow.gsc;
 #using scripts\core_common\values_shared.gsc;
 #using scripts\core_common\system_shared.gsc;
 #using scripts\core_common\scene_shared.gsc;
@@ -17,7 +17,7 @@
 // Params 0, eflags: 0x0
 // Checksum 0xf1e005ca, Offset: 0x170
 // Size: 0xd4
-function function_70a657d8() {
+function preinit() {
     level.var_b175714d = [];
     level thread update();
     clientfield::register("actor", "transformation_spawn", 1, 1, "int");
@@ -126,7 +126,7 @@ function function_cfca77a7(var_42de336c, id, condition_func, cooldown_time, intr
             return;
         }
     #/
-    level.var_b175714d[id] = {#var_2939a01a:[], #var_33e393a7:0, #var_ebaa8de9:0, #cooldown_time:cooldown_time, #var_99fca475:var_99fca475, #var_44c5827d:var_44c5827d, #var_accb1c92:var_accb1c92, #outro_func:outro_func, #intro_func:intro_func, #condition:condition_func};
+    level.var_b175714d[id] = {#condition:condition_func, #intro_func:intro_func, #outro_func:outro_func, #var_accb1c92:var_accb1c92, #var_44c5827d:var_44c5827d, #var_99fca475:var_99fca475, #cooldown_time:cooldown_time, #var_ebaa8de9:0, #var_33e393a7:0, #var_2939a01a:[]};
     if (isentity(var_42de336c)) {
         level.var_b175714d[id].spawner = var_42de336c;
         return;
@@ -143,17 +143,17 @@ function function_cfca77a7(var_42de336c, id, condition_func, cooldown_time, intr
 // Size: 0x106
 function function_abf1dcb4(id) {
     if (level.var_ebccd551.size >= 10) {
-        return 1;
+        return true;
     }
     if (isdefined(level.var_88de5053) && level.var_ebccd551.size >= level.var_88de5053) {
-        return 1;
+        return true;
     }
     if (isdefined(level.var_b175714d[id]) && isdefined(level.var_b175714d[id].spawner)) {
         return isdefined(level.var_b175714d[id].spawner.var_ab46c56);
     } else if (isdefined(level.var_b175714d[id]) && isdefined(level.var_b175714d[id].aitype)) {
         return isdefined(level.var_170852dc[level.var_b175714d[id].aitype]);
     }
-    return 0;
+    return false;
 }
 
 // Namespace zm_transform/zm_transformation
@@ -404,7 +404,7 @@ function private transform(id, var_c2a69066, var_2cf708f4 = 1) {
     }
     var_167b5341 = level.var_b175714d[id];
     function_4e679db4(id, var_167b5341);
-    var_e236d061 = {#var_1a90140:self, #id:id};
+    var_e236d061 = {#id:id, #var_1a90140:self};
     if (!isdefined(level.var_ebccd551)) {
         level.var_ebccd551 = [];
     } else if (!isarray(level.var_ebccd551)) {
@@ -456,7 +456,7 @@ function private transform(id, var_c2a69066, var_2cf708f4 = 1) {
             thread [[ var_c2a69066 ]](new_ai);
         }
     } else {
-        script_origin = {#angles:self.angles, #origin:self.origin};
+        script_origin = {#origin:self.origin, #angles:self.angles};
         self val::set(#"zm_transformation", "ignoreall");
         a_ents = undefined;
         a_ents = array(self);
@@ -533,7 +533,7 @@ function private transform(id, var_c2a69066, var_2cf708f4 = 1) {
     }
     new_ai.var_e236d061 = undefined;
     arrayremovevalue(level.var_ebccd551, var_e236d061);
-    level notify(#"transformation_complete", {#data:var_e3920264, #id:id, #new_ai:array(new_ai)});
+    level notify(#"transformation_complete", {#new_ai:array(new_ai), #id:id, #data:var_e3920264});
     if (isdefined(var_c2a69066)) {
         thread [[ var_c2a69066 ]](new_ai);
     }
@@ -869,7 +869,7 @@ function private setup_status() {
         } else if (!isarray(level.var_deb567a8)) {
             level.var_deb567a8 = array(level.var_deb567a8);
         }
-        level.var_deb567a8[level.var_deb567a8.size] = {#var_735311f0:var_735311f0, #var_b99573ec:var_f4676cb4, #var_d189697d:var_af5fbf35, #title:var_e859a426};
+        level.var_deb567a8[level.var_deb567a8.size] = {#title:var_e859a426, #var_d189697d:var_af5fbf35, #var_b99573ec:var_f4676cb4, #var_735311f0:var_735311f0};
         i = 0;
         foreach (id, transformation in level.var_b175714d) {
             y = y + 10;
@@ -891,7 +891,7 @@ function private setup_status() {
             } else if (!isarray(level.var_deb567a8)) {
                 level.var_deb567a8 = array(level.var_deb567a8);
             }
-            level.var_deb567a8[level.var_deb567a8.size] = {#color:current_color, #id:id, #var_b99573ec:var_82f71158, #var_d189697d:var_83db7237, #title:id_elem};
+            level.var_deb567a8[level.var_deb567a8.size] = {#title:id_elem, #var_d189697d:var_83db7237, #var_b99573ec:var_82f71158, #id:id, #color:current_color};
             i++;
         }
     #/

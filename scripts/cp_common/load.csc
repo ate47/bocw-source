@@ -6,7 +6,7 @@
 #using scripts\cp_common\skipto.csc;
 #using scripts\cp_common\rotating_object.csc;
 #using scripts\cp_common\oed.csc;
-#using script_6c15b80dfa790b53;
+#using scripts\cp_common\hazard.csc;
 #using scripts\cp_common\global_fx.csc;
 #using scripts\cp_common\ambient.csc;
 #using scripts\core_common\vehicles\driving_fx.csc;

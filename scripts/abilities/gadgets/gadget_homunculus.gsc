@@ -14,14 +14,14 @@
 // Checksum 0x92cec633, Offset: 0xf8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"homunculus", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"homunculus", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace gadget_homunculus/gadget_homunculus
 // Params 0, eflags: 0x4
 // Checksum 0xd17258ac, Offset: 0x140
 // Size: 0xc4
-function private function_70a657d8() {
+function private preinit() {
     level.var_2da60c10 = [];
     if (is_true(getgametypesetting(#"wzenablehomunculus"))) {
         level.var_cc310d06 = &function_7bfc867f;
@@ -325,7 +325,7 @@ function function_7bfc867f() {
 // Checksum 0x5b2b481b, Offset: 0x14b8
 // Size: 0x144
 function function_bd59a592(zombie) {
-    var_2d9e38fc = function_a3f6cdac(360);
+    var_2d9e38fc = sqr(360);
     var_128c12c9 = undefined;
     var_b26b6492 = undefined;
     foreach (homunculus in level.var_2da60c10) {

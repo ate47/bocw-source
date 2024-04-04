@@ -11,14 +11,14 @@
 // Checksum 0xeda93d86, Offset: 0xf0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"spawnlogic", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"spawnlogic", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace spawnlogic/spawnlogic
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa1f37cdd, Offset: 0x138
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&main);
 }
 
@@ -804,8 +804,8 @@ function getallotherplayers() {
         if (player.sessionstate != "playing" || player == self) {
             continue;
         }
-        if (isdefined(level.var_764e1cfd)) {
-            if (![[ level.var_764e1cfd ]](player)) {
+        if (isdefined(level.customalivecheck)) {
+            if (![[ level.customalivecheck ]](player)) {
                 continue;
             }
         }
@@ -833,8 +833,8 @@ function getallalliedandenemyplayers(obj) {
             if (player.sessionstate != "playing" || player == self) {
                 continue;
             }
-            if (isdefined(level.var_764e1cfd)) {
-                if (![[ level.var_764e1cfd ]](player)) {
+            if (isdefined(level.customalivecheck)) {
+                if (![[ level.customalivecheck ]](player)) {
                     continue;
                 }
             }
@@ -886,8 +886,8 @@ function spawnpointupdate_zm(spawnpoint) {
         if (player.sessionstate != "playing") {
             continue;
         }
-        if (isdefined(level.var_764e1cfd)) {
-            if (![[ level.var_764e1cfd ]](player)) {
+        if (isdefined(level.customalivecheck)) {
+            if (![[ level.customalivecheck ]](player)) {
                 continue;
             }
         }

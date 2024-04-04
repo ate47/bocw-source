@@ -8,14 +8,14 @@
 // Checksum 0x4d9b9bc6, Offset: 0x228
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_gold_ffotd", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_gold_ffotd", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_gold_ffotd/zm_gold_ffotd
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x280
 // Size: 0x4
-function private function_70a657d8() {
+function private preinit() {
     
 }
 

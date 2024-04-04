@@ -12,15 +12,15 @@
 // Checksum 0x42f9558a, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_7d755ebddd333af6", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_7d755ebddd333af6", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_45b55437/namespace_45b55437
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8778dd60, Offset: 0x120
 // Size: 0x7c
-function function_70a657d8() {
-    ai::add_archetype_spawn_function(#"hash_da8fcc11dab30f", &function_6f88ed29);
+function preinit() {
+    ai::add_archetype_spawn_function(#"hulk", &function_6f88ed29);
     clientfield::register("scriptmover", "hs_heal_station_cf", 1, 1, "int", &function_41cca91a, 0, 0);
 }
 

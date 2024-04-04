@@ -151,7 +151,7 @@ class cluielem {
             if (!isdefined(level.var_a706401b[hash(self.var_d5213cbb)][self.var_bf9c8c95].data[local_client_num])) {
                 level.var_a706401b[hash(self.var_d5213cbb)][self.var_bf9c8c95].data[local_client_num] = [];
             }
-            level.var_a706401b[hash(self.var_d5213cbb)][self.var_bf9c8c95].data[local_client_num][field] = {#value:value, #field:field};
+            level.var_a706401b[hash(self.var_d5213cbb)][self.var_bf9c8c95].data[local_client_num][field] = {#field:field, #value:value};
         }
     }
 
@@ -225,14 +225,14 @@ class cluielem {
 // Checksum 0x46d567f4, Offset: 0x100
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"lui_shared", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"lui_shared", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace lui/lui_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf2238664, Offset: 0x148
 // Size: 0x70
-function private function_70a657d8() {
+function private preinit() {
     full_screen_black::register();
     initial_black::register();
     level.localclients = [];

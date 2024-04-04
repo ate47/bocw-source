@@ -13,14 +13,14 @@
 // Checksum 0xd68230bc, Offset: 0x128
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_perk_deadshot", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_perk_deadshot", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc1c52156, Offset: 0x170
 // Size: 0x14
-function private function_70a657d8() {
+function private preinit() {
     enable_deadshot_perk_for_level();
 }
 

@@ -26,7 +26,7 @@
 #using scripts\core_common\ai\archetype_locomotion_utility.gsc;
 #using script_3819e7a1427df6d2;
 #using scripts\core_common\ai\archetype_utility.gsc;
-#using script_556e19065f09f8a2;
+#using scripts\core_common\ai\zombie_eye_glow.gsc;
 #using scripts\core_common\ai\systems\destructible_character.gsc;
 #using scripts\core_common\values_shared.gsc;
 #using scripts\core_common\util_shared.gsc;
@@ -471,16 +471,16 @@ function function_13f886a2(entity) {
     if (!self.has_left_arm || !self.has_right_arm) {
         return false;
     }
-    var_17c3916f = function_a3f6cdac(128);
+    var_17c3916f = sqr(128);
     if (self.var_9fde8624 == #"gladiator_marauder") {
         if (gettime() < entity.next_leap_time) {
             return false;
         }
         enemy_dist_sq = distancesquared(entity.origin, entity.favoriteenemy.origin);
-        if (enemy_dist_sq < function_a3f6cdac(128)) {
+        if (enemy_dist_sq < sqr(128)) {
             return false;
         }
-        var_17c3916f = function_a3f6cdac(240);
+        var_17c3916f = sqr(240);
         z_diff = abs(entity.origin[2] - entity.favoriteenemy.origin[2]);
         if (z_diff > 72) {
             return false;
@@ -522,9 +522,9 @@ function function_61e7d5f5(entity) {
         return false;
     }
     var_ff38566a = lengthsquared(entity.favoriteenemy getvelocity());
-    var_17c3916f = function_a3f6cdac(100);
-    if (var_ff38566a < function_a3f6cdac(175)) {
-        var_17c3916f = function_a3f6cdac(190);
+    var_17c3916f = sqr(100);
+    if (var_ff38566a < sqr(175)) {
+        var_17c3916f = sqr(190);
     }
     if (distancesquared(entity.origin, entity.favoriteenemy.origin) > var_17c3916f) {
         return false;
@@ -748,7 +748,7 @@ function registerhud_message_electricity_(entity, mocompanim, *mocompanimblendou
         var_e397f54c = getmovedelta(mocompduration, 0, 1);
         self.meleeinfo.var_cb28f380 = mocompanimflag localtoworldcoords(var_e397f54c);
     }
-    namespace_1e25ad94::function_f5f0c0f8("mocompGladiatorLeapStart entNum:" + self getentitynumber());
+    namespace_1e25ad94::debugmsg("mocompGladiatorLeapStart entNum:" + self getentitynumber());
 }
 
 // Namespace namespace_146875e/namespace_146875e
@@ -779,22 +779,22 @@ function function_3f15e557(entity, mocompanim, *mocompanimblendouttime, *mocompa
         self.meleeinfo.adjustedendpos = var_1efb2395;
         var_776ddabf = distancesquared(self.meleeinfo.var_cb28f380, self.meleeinfo.adjustedendpos);
         var_65cbfb52 = distancesquared(self.meleeinfo.var_9bfa8497, self.meleeinfo.adjustedendpos);
-        if (var_776ddabf <= function_a3f6cdac(20)) {
+        if (var_776ddabf <= sqr(20)) {
             self.meleeinfo.var_425c4c8b = 0;
-        } else if (var_65cbfb52 <= function_a3f6cdac(90)) {
+        } else if (var_65cbfb52 <= sqr(90)) {
             self.meleeinfo.var_425c4c8b = 0;
-        } else if (var_65cbfb52 >= function_a3f6cdac(400)) {
+        } else if (var_65cbfb52 >= sqr(400)) {
             self.meleeinfo.var_425c4c8b = 0;
         }
         if (self.meleeinfo.var_425c4c8b) {
             var_776ddabf = distancesquared(self.meleeinfo.var_cb28f380, self.meleeinfo.adjustedendpos);
-            var_beabc994 = anglestoforward(self.angles);
+            myforward = anglestoforward(self.angles);
             var_1c3641f2 = (mocompanimflag.favoriteenemy.origin[0], mocompanimflag.favoriteenemy.origin[1], mocompanimflag.origin[2]);
             dirtoenemy = vectornormalize(var_1c3641f2 - mocompanimflag.origin);
             zdiff = self.meleeinfo.var_cb28f380[2] - mocompanimflag.favoriteenemy.origin[2];
-            var_6738a702 = abs(zdiff) <= 45;
-            withinfov = vectordot(var_beabc994, dirtoenemy) > cos(30);
-            var_7948b2f3 = var_6738a702 && withinfov;
+            withinzrange = abs(zdiff) <= 45;
+            withinfov = vectordot(myforward, dirtoenemy) > cos(30);
+            var_7948b2f3 = withinzrange && withinfov;
             isvisible = bullettracepassed(mocompanimflag.origin, mocompanimflag.favoriteenemy.origin, 0, self);
             var_425c4c8b = isvisible && var_7948b2f3;
             if (var_425c4c8b) {
@@ -829,7 +829,7 @@ function function_3f15e557(entity, mocompanim, *mocompanimblendouttime, *mocompa
 // Checksum 0x533abe0f, Offset: 0x3670
 // Size: 0xe6
 function function_96f1cbf6(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
-    namespace_1e25ad94::function_f5f0c0f8("mocompGladiatorLeapEnd entNum:" + self getentitynumber());
+    namespace_1e25ad94::debugmsg("mocompGladiatorLeapEnd entNum:" + self getentitynumber());
     mocompduration.blockingpain = 0;
     mocompduration.var_5dd07a80 = undefined;
     mocompduration.var_c2986b66 = undefined;
@@ -889,7 +889,7 @@ function function_37d33f09(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 // Size: 0xbc
 function function_3f7c46a(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
     if (isdefined(mocompduration.favoriteenemy)) {
-        if (distancesquared(mocompduration.origin, mocompduration.favoriteenemy.origin) <= function_a3f6cdac(50)) {
+        if (distancesquared(mocompduration.origin, mocompduration.favoriteenemy.origin) <= sqr(50)) {
             mocompduration animmode("angle deltas");
             return;
         }
@@ -1069,9 +1069,9 @@ function private function_75f32da6(inflictor, attacker, damage, idflags, meansof
     if (!isdefined(var_dd54fdb1)) {
         weakpoints = namespace_81245006::function_fab3ee3e(self);
         if (isdefined(weakpoints)) {
-            foreach (var_3a1904d3 in weakpoints) {
-                if (namespace_81245006::function_f29756fe(var_3a1904d3) === 1 && var_3a1904d3.type === #"armor") {
-                    var_dd54fdb1 = var_3a1904d3;
+            foreach (pointinfo in weakpoints) {
+                if (namespace_81245006::function_f29756fe(pointinfo) === 1 && pointinfo.type === #"armor") {
+                    var_dd54fdb1 = pointinfo;
                     var_88e794fb = 1;
                     break;
                 }
@@ -1088,11 +1088,11 @@ function private function_75f32da6(inflictor, attacker, damage, idflags, meansof
             namespace_81245006::function_ef87b7e8(var_dd54fdb1, adjusted_damage);
             if (namespace_81245006::function_f29756fe(var_dd54fdb1) === 3) {
                 var_a7d0fdac = 0;
-                if (var_dd54fdb1.var_3d2f9bf0[0] == "left_arm_lower" || var_dd54fdb1.var_3d2f9bf0[0] == "right_arm_lower") {
+                if (var_dd54fdb1.hitlocs[0] == "left_arm_lower" || var_dd54fdb1.hitlocs[0] == "right_arm_lower") {
                     var_a7d0fdac = 1;
-                    self.damage_info = {#modelindex:modelindex, #boneindex:boneindex, #offsettime:offsettime, #hitloc:var_dd54fdb1.var_3d2f9bf0[0], #dir:dir, #point:point, #var_fd90b0bb:var_fd90b0bb, #weapon:weapon, #meansofdeath:meansofdeath, #idflags:idflags, #damage:damage, #attacker:attacker, #inflictor:inflictor};
+                    self.damage_info = {#inflictor:inflictor, #attacker:attacker, #damage:damage, #idflags:idflags, #meansofdeath:meansofdeath, #weapon:weapon, #var_fd90b0bb:var_fd90b0bb, #point:point, #dir:dir, #hitloc:var_dd54fdb1.hitlocs[0], #offsettime:offsettime, #boneindex:boneindex, #modelindex:modelindex};
                 }
-                self destructserverutils::handledamage(inflictor, attacker, damage, idflags, meansofdeath, weapon, var_fd90b0bb, point, dir, var_dd54fdb1.var_3d2f9bf0[0], offsettime, boneindex, modelindex);
+                self destructserverutils::handledamage(inflictor, attacker, damage, idflags, meansofdeath, weapon, var_fd90b0bb, point, dir, var_dd54fdb1.hitlocs[0], offsettime, boneindex, modelindex);
                 self.gibbed = 1;
                 if (isdefined(level.var_36fff581) && !var_a7d0fdac) {
                     self [[ level.var_36fff581 ]](attacker);
@@ -1102,16 +1102,16 @@ function private function_75f32da6(inflictor, attacker, damage, idflags, meansof
                         }
                     }
                 }
-                if (var_dd54fdb1.var_3d2f9bf0[0] == "helmet") {
+                if (var_dd54fdb1.hitlocs[0] == "helmet") {
                     var_465efe42 = namespace_81245006::function_37e3f011(self, "j_head", 2);
                     namespace_81245006::function_6c64ebd3(var_465efe42, 1);
                     self.var_9b959f19 = 1;
                     self setblackboardattribute("_gladiator_weakpoint", "head");
-                } else if (var_dd54fdb1.var_3d2f9bf0[0] == "left_arm_upper") {
+                } else if (var_dd54fdb1.hitlocs[0] == "left_arm_upper") {
                     var_449bfcd3 = namespace_81245006::function_37e3f011(self, "j_shoulder_le");
-                } else if (var_dd54fdb1.var_3d2f9bf0[0] == "right_arm_upper") {
+                } else if (var_dd54fdb1.hitlocs[0] == "right_arm_upper") {
                     var_449bfcd3 = namespace_81245006::function_37e3f011(self, "j_shoulder_ri");
-                } else if (var_dd54fdb1.var_3d2f9bf0[0] == "left_arm_lower") {
+                } else if (var_dd54fdb1.hitlocs[0] == "left_arm_lower") {
                     self.has_left_arm = 0;
                     if (!gibserverutils::isgibbed(self, 32)) {
                         gibserverutils::gibleftarm(self, 0);
@@ -1129,7 +1129,7 @@ function private function_75f32da6(inflictor, attacker, damage, idflags, meansof
                     self clientfield::set("gladiator_arm_effect", 1);
                     self setblackboardattribute("_gladiator_weakpoint", "left_arm");
                     self ai::set_behavior_attribute("run", 1);
-                } else if (var_dd54fdb1.var_3d2f9bf0[0] == "right_arm_lower") {
+                } else if (var_dd54fdb1.hitlocs[0] == "right_arm_lower") {
                     self.has_right_arm = 0;
                     if (!gibserverutils::isgibbed(self, 16)) {
                         gibserverutils::gibrightarm(self, 0);
@@ -1290,7 +1290,7 @@ function private function_88d65504(axe, *var_7900b267, move_pos) {
     trace = physicstrace(var_7900b267.origin, move_pos, (-16, -16, -12), (16, 16, 12), self);
     if (trace[#"fraction"] < 1) {
         hit_ent = trace[#"entity"];
-        level notify(#"hash_435816ec8f13c19b", {#hit_ent:hit_ent, #mdl_axe:var_7900b267, #ai_gladiator:self, #var_f1445bd6:trace});
+        level notify(#"hash_435816ec8f13c19b", {#var_f1445bd6:trace, #ai_gladiator:self, #mdl_axe:var_7900b267, #hit_ent:hit_ent});
         if (isdefined(hit_ent)) {
             if (isplayer(hit_ent)) {
                 if (is_true(hit_ent.hasriotshield)) {

@@ -13,14 +13,14 @@
 // Checksum 0x29021aa3, Offset: 0xb0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"globallogic_player", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"globallogic_player", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace globallogic_player/globallogic_player
 // Params 0, eflags: 0x6 linked
 // Checksum 0x14dd5bf1, Offset: 0xf8
 // Size: 0x3c
-function private function_70a657d8() {
+function private preinit() {
     level.var_aadc08f8 = &function_4b7bb02c;
     callback::on_disconnect(&on_player_disconnect);
 }

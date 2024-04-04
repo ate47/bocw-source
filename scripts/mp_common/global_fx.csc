@@ -8,14 +8,14 @@
 // Checksum 0x7956c6ac, Offset: 0xa0
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"global_fx", &function_70a657d8, &main, undefined, undefined);
+    system::register(#"global_fx", &preinit, &main, undefined, undefined);
 }
 
 // Namespace global_fx/global_fx
 // Params 0, eflags: 0x6 linked
 // Checksum 0x600d7bf5, Offset: 0xf8
 // Size: 0xe4
-function private function_70a657d8() {
+function private preinit() {
     if (isdefined(getgametypesetting(#"hash_7e6ef41f5c3db213")) ? getgametypesetting(#"hash_7e6ef41f5c3db213") : 0) {
         function_414dfa79(#"hash_d1294b74c50a865", #"hash_d1294b74c50a865");
         function_5aeb01e6(#"hash_659a504a8160a9ac", #"hash_659a504a8160a9ac");

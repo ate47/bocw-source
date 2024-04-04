@@ -6,7 +6,7 @@
             "imagelarge": "#hash_29b2887ccdb289e",
             "displayname": "#challenge/career",
             "var_1a50db25": "#hash_5e7e1736f89fd8c5",
-            "var_a4f2dd9e": "#none",
+            "actionutility": "#none",
             "var_4e4109db": "#challenges_career_zm",
             "var_e1c44b36": "#hash_4e5ebb949ff0cdad"
         },
@@ -16,7 +16,7 @@
             "imagelarge": "#hash_1cfe26f76ead4b75",
             "displayname": "#hash_26a53e7ac5368811",
             "var_1a50db25": "#hash_5e7e1736f89fd8c5",
-            "var_a4f2dd9e": "#none",
+            "actionutility": "#none",
             "var_4e4109db": "#challenges_battle_hardened_zm",
             "var_e1c44b36": "#hash_4e5ebb949ff0cdad"
         },
@@ -26,7 +26,7 @@
             "imagelarge": "#hash_4d29cb0d7d1af6fd",
             "displayname": "#hash_59993614a753316a",
             "var_1a50db25": "#hash_5e7e1736f89fd8c5",
-            "var_a4f2dd9e": "#none",
+            "actionutility": "#none",
             "var_4e4109db": "#challenges_seasons_zm",
             "var_e1c44b36": "#hash_4e5ebb949ff0cdad"
         },
@@ -36,7 +36,7 @@
             "imagelarge": "#ui_icon_challenges_mpdarkops_large",
             "displayname": "#challenge/darkops",
             "var_1a50db25": "#hash_4a8cef046ae0d4c1",
-            "var_a4f2dd9e": "#none",
+            "actionutility": "#none",
             "var_4e4109db": "#challenges_dark_ops_zm",
             "var_e1c44b36": "#hash_66da4dc773b6c67f"
         }

@@ -10,14 +10,14 @@
 // Checksum 0x85884eac, Offset: 0x98
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"clientids", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"clientids", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace clientids/clientids
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdb903754, Offset: 0xe0
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&init);
     callback::on_connect(&on_player_connect);
 }

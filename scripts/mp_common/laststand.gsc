@@ -35,14 +35,14 @@
 // Checksum 0x42fba7b3, Offset: 0x500
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"laststand_mp", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"laststand_mp", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace laststand_mp/laststand
 // Params 0, eflags: 0x4
 // Checksum 0xb9ec70b, Offset: 0x548
 // Size: 0x6fc
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.skiplaststand)) {
         level.skiplaststand = 0;
     }
@@ -130,12 +130,12 @@ function function_349ff038() {
     if (sessionmodeiswarzonegame()) {
         var_f6784858 = 4;
     }
-    var_f48ab2e1 = [];
+    prompts = [];
     for (i = 0; i < var_f6784858; i++) {
-        var_c4d0fe29 = i + 1;
-        var_f48ab2e1[i] = mp_revive_prompt::register();
+        promptid = i + 1;
+        prompts[i] = mp_revive_prompt::register();
     }
-    level.mp_revive_prompt = var_f48ab2e1;
+    level.mp_revive_prompt = prompts;
 }
 
 // Namespace laststand_mp/laststand
@@ -167,7 +167,7 @@ function function_eb8c0e47(callbackfunc) {
 // Checksum 0x62616cf, Offset: 0xda0
 // Size: 0x64
 function function_414115a0(time, health) {
-    tier = {#health:health, #time:time};
+    tier = {#time:time, #health:health};
     level.var_e86679bd[level.var_e86679bd.size] = tier;
 }
 
@@ -589,9 +589,9 @@ function private function_5ffabd64(vehicle, player) {
 // Checksum 0x86f47811, Offset: 0x2820
 // Size: 0x100
 function private function_61c14ebf(vehicle, player) {
-    var_9a7618f2 = vehicle function_212db732(player);
-    traceorigin = isdefined(var_9a7618f2) ? var_9a7618f2 : player.origin;
-    ignoreent = isdefined(var_9a7618f2) ? undefined : vehicle;
+    exitposition = vehicle function_212db732(player);
+    traceorigin = isdefined(exitposition) ? exitposition : player.origin;
+    ignoreent = isdefined(exitposition) ? undefined : vehicle;
     trace = groundtrace(traceorigin, traceorigin - vectorscale((0, 0, 1), 500), 0, ignoreent, 1);
     if (trace[#"fraction"] >= 1 || oob::chr_party(trace[#"position"])) {
         return true;
@@ -800,7 +800,7 @@ function laststand_clean_up_on_interrupt(playerbeingrevived) {
         if (self == playerbeingrevived) {
             self clientfield::set_to_player("isSelfReviving", 0);
         }
-        if (playerbeingrevived function_495bdc7b("ges_t9_self_revive_last_stand")) {
+        if (playerbeingrevived isgestureplaying("ges_t9_self_revive_last_stand")) {
             playerbeingrevived stopgestureviewmodel("ges_t9_self_revive_last_stand");
         }
     }
@@ -836,7 +836,7 @@ function laststand_bleedout_damage() {
             self.bleedout_time = 0;
             self.var_1cc38de0 = 1;
             vattacker = isdefined(waitresult.eattacker) ? waitresult.eattacker : self;
-            self.var_a1d415ee = {#matchtime:function_f8d53445(), #shitloc:waitresult.shitloc, #vdir:waitresult.vdir, #var_fd90b0bb:waitresult.var_fd90b0bb, #weapon:waitresult.weapon, #smeansofdeath:waitresult.smeansofdeath, #idamage:waitresult.idamage, #var_83634238:isplayer(vattacker) ? vattacker getplayerangles() : vattacker.angles, #attackerorigin:vattacker.origin, #attacker:waitresult.eattacker, #einflictor:waitresult.einflictor};
+            self.var_a1d415ee = {#einflictor:waitresult.einflictor, #attacker:waitresult.eattacker, #attackerorigin:vattacker.origin, #var_83634238:isplayer(vattacker) ? vattacker getplayerangles() : vattacker.angles, #idamage:waitresult.idamage, #smeansofdeath:waitresult.smeansofdeath, #weapon:waitresult.weapon, #var_fd90b0bb:waitresult.var_fd90b0bb, #vdir:waitresult.vdir, #shitloc:waitresult.shitloc, #matchtime:function_f8d53445()};
         }
         if (isdefined(self.var_d75a6ff5)) {
             self.var_d75a6ff5.damage = self.var_d75a6ff5.damage + int(waitresult.idamage);
@@ -906,7 +906,7 @@ function laststand_bleedout(bleedouttime, var_969fabf4) {
         }
         var_7c962084 = undefined;
         var_9da219f5 = gettime();
-        while (self.bleedout_time > 0 || self function_5673fb61() && !is_true(self.var_1cc38de0)) {
+        while (self.bleedout_time > 0 || self isinexecutionvictim() && !is_true(self.var_1cc38de0)) {
             time = gettime();
             if (is_true(level.var_5bf4f34b) && var_cebeb781 && self usebuttonpressed() && !self is_being_revived() && !self function_72e0c544()) {
                 if (!isdefined(var_7c962084)) {
@@ -980,7 +980,7 @@ function function_6da86ae() {
 // Size: 0x4c
 function function_64df6095() {
     self endon(#"death");
-    while (self function_5673fb61()) {
+    while (self isinexecutionvictim()) {
         waitframe(1);
     }
     self bleed_out();
@@ -1028,7 +1028,7 @@ function bleed_out() {
     self val::reset(#"hash_4cddba4e2cb5f525", "disable_weapon_cycling");
     self val::reset(#"hash_4cddba4e2cb5f525", "disable_offhand_weapons");
     self val::reset(#"hash_4cddba4e2cb5f525", "disable_offhand_special");
-    if (self function_5673fb61() && isdefined(self.var_a1d415ee)) {
+    if (self isinexecutionvictim() && isdefined(self.var_a1d415ee)) {
         self bledout(self.var_a1d415ee.einflictor, self.laststandparams.attacker, self.var_a1d415ee.idamage, self.var_a1d415ee.smeansofdeath, self.laststandparams.weapon, self.laststandparams.var_fd90b0bb, self.laststandparams.vdir, self.laststandparams.shitloc);
     } else if (isdefined(self.laststandparams)) {
         self bledout(self.laststandparams.einflictor, self.laststandparams.attacker, self.laststandparams.idamage, self.laststandparams.smeansofdeath, self.laststandparams.weapon, self.laststandparams.var_fd90b0bb, self.laststandparams.vdir, self.laststandparams.shitloc);
@@ -1147,7 +1147,7 @@ function revive_trigger_think() {
                 continue;
             }
             var_6525e39a = reviver gestures::function_c77349d4("gestable_t9_stimshot_last_stand");
-            if (reviver function_495bdc7b(var_6525e39a)) {
+            if (reviver isgestureplaying(var_6525e39a)) {
                 reviver stopgestureviewmodel(var_6525e39a, 0, 1);
             }
             reviver gestures::function_56e00fbf("gestable_t9_stimshot_last_stand");
@@ -1294,7 +1294,7 @@ function function_fab0e07e(finisher) {
     finisher endon(#"disconnect");
     waitframe(1);
     if (isdefined(self) && isdefined(finisher) && isalive(self) && isalive(finisher)) {
-        self.laststandparams.var_3f57b6a0 = self.origin;
+        self.laststandparams.savedorigin = self.origin;
         self.laststandparams.savedangles = self.angles;
         self playerlinkto(finisher, "tag_sync");
     }
@@ -1308,7 +1308,7 @@ function function_516a3bef(replace) {
     if (isalive(self) && function_feb3e91d()) {
         self unlink();
         if (replace) {
-            self setorigin(self.laststandparams.var_3f57b6a0);
+            self setorigin(self.laststandparams.savedorigin);
         }
     }
 }
@@ -1406,7 +1406,7 @@ function can_revive(revivee, ignore_touch_checks = 0, height = undefined) {
     if (self laststand::player_is_in_laststand()) {
         return false;
     }
-    if (self function_5673fb61() || revivee function_5673fb61()) {
+    if (self isinexecutionvictim() || revivee isinexecutionvictim()) {
         return false;
     }
     if (isdefined(level.can_revive) && ![[ level.can_revive ]](revivee)) {
@@ -1435,7 +1435,7 @@ function can_revive(revivee, ignore_touch_checks = 0, height = undefined) {
     if (!self laststand::is_facing(revivee, 0.8)) {
         return false;
     }
-    if (distancesquared(revivee.origin, self.origin) > function_a3f6cdac(140)) {
+    if (distancesquared(revivee.origin, self.origin) > sqr(140)) {
         return false;
     }
     if (!sighttracepassed(self.origin + vectorscale((0, 0, 1), 50), revivee.origin + vectorscale((0, 0, 1), 30), 0, undefined)) {
@@ -1505,7 +1505,7 @@ function revive_do_revive(playerbeingrevived) {
     self.reviving_player = playerbeingrevived;
     self clientfield::set_player_uimodel("hudItems.laststand.revivingClientNum", playerbeingrevived getentitynumber());
     while (self is_reviving(playerbeingrevived)) {
-        if (self laststand::player_is_in_laststand() || self function_5673fb61() || playerbeingrevived function_5673fb61()) {
+        if (self laststand::player_is_in_laststand() || self isinexecutionvictim() || playerbeingrevived isinexecutionvictim()) {
             playerbeingrevived.reviveprogress = 0;
             break;
         }
@@ -1569,7 +1569,7 @@ function function_d20a7e12() {
 function function_8e3d5c84() {
     self endon(#"player_revived", #"disconnect", #"death");
     while (isalive(self) && self laststand::player_is_in_laststand()) {
-        if (self function_d20a7e12() && !self function_5673fb61()) {
+        if (self function_d20a7e12() && !self isinexecutionvictim()) {
             success = self function_73d6c609();
             if (success) {
                 self clientfield::set_player_uimodel("hud_items.selfReviveAvailable", 0);
@@ -1627,7 +1627,7 @@ function function_73d6c609() {
     self.reviving_player = self;
     self clientfield::set_player_uimodel("hudItems.laststand.revivingClientNum", self getentitynumber());
     while (isalive(self) && self laststand::player_is_in_laststand() && (self function_d20a7e12() || isbot(self))) {
-        if (self function_5673fb61()) {
+        if (self isinexecutionvictim()) {
             self.reviveprogress = 0;
             break;
         }
@@ -1729,7 +1729,7 @@ function revive_success(reviver, b_track_stats = 1) {
         self notify(#"player_revived", {#reviver:reviver});
         return;
     }
-    if (self function_495bdc7b("ges_t9_self_revive_last_stand")) {
+    if (self isgestureplaying("ges_t9_self_revive_last_stand")) {
         self stopgestureviewmodel("ges_t9_self_revive_last_stand");
     }
     self function_102748f8();
@@ -1748,7 +1748,7 @@ function revive_success(reviver, b_track_stats = 1) {
     self notify(#"player_revived", {#reviver:reviver});
     self reviveplayer();
     self.var_d887a4ad = undefined;
-    health = getgametypesetting(#"hash_2e756f25094a5b3c");
+    health = getgametypesetting(#"laststandrevivehealth");
     if (isdefined(reviver)) {
         var_e705e073 = reviver function_15098882();
         if (var_e705e073 > 0) {
@@ -1830,7 +1830,7 @@ function function_ecdd4b27() {
     if (!isplayer(self) || isdefined(self.var_d75a6ff5)) {
         return;
     }
-    self.var_d75a6ff5 = {#var_35b89428:0, #var_d733f8d7:0, #var_d10f3b9a:0, #bleed_out:0, #death:0, #damage:0, #end_time:0, #start_time:gettime(), #player_xuid:int(self getxuid(1))};
+    self.var_d75a6ff5 = {#player_xuid:int(self getxuid(1)), #start_time:gettime(), #end_time:0, #damage:0, #death:0, #bleed_out:0, #var_d10f3b9a:0, #var_d733f8d7:0, #var_35b89428:0};
 }
 
 // Namespace laststand_mp/laststand

@@ -16,14 +16,14 @@
 // Checksum 0x4b369126, Offset: 0xf8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"player_monitor", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"player_monitor", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace player_monitor/player_monitor
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc542b240, Offset: 0x140
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     callback::on_player_killed(&on_player_killed);
     callback::on_end_game(&on_end_game);
 }
@@ -209,7 +209,7 @@ function private breadcrumbs() {
     }
     while (true) {
         if (isalive(self)) {
-            lifeindex = isdefined(self.pers[#"telemetry"].life.var_2824e826) ? self.pers[#"telemetry"].life.var_2824e826 : -1;
+            lifeindex = isdefined(self.pers[#"telemetry"].life.life_index) ? self.pers[#"telemetry"].life.life_index : -1;
             recordbreadcrumbdataforplayer(self, lifeindex);
         }
         wait(waittime);

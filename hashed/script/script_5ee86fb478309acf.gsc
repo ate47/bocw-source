@@ -11,14 +11,14 @@
 // Checksum 0x38501b9b, Offset: 0x110
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_74761c506cae8855", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_74761c506cae8855", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_85745671/namespace_85745671
 // Params 0, eflags: 0x6 linked
 // Checksum 0x3b8fce9c, Offset: 0x158
 // Size: 0x29c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "zombie_teleport", 1, 1, "counter", &function_65829e59, 0, 0);
     clientfield::register("toplayer", "zombie_vehicle_shake", 1, 1, "counter", &function_3acc8ce4, 0, 0);
     clientfield::register("toplayer", "zombie_melee_shake", 1, 1, "counter", &function_6c13a7f0, 0, 0);

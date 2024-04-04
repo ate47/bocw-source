@@ -37,14 +37,14 @@
 // Checksum 0x3cb6201b, Offset: 0x1f0
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"bgb_pack", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"bgb_pack", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace bgb_pack/zm_bgb_pack
 // Params 0, eflags: 0x6 linked
 // Checksum 0xbb744626, Offset: 0x248
 // Size: 0x9c
-function private function_70a657d8() {
+function private preinit() {
     /#
         function_72ffe91();
     #/

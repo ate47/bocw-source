@@ -11,14 +11,14 @@
 // Checksum 0xfeb5455, Offset: 0xe8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"wasp", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"wasp", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace wasp/wasp
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc543dc18, Offset: 0x130
 // Size: 0xac
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("vehicle", "rocket_wasp_hijacked", 1, 1, "int", &handle_lod_display_for_driver, 0, 0);
     level.sentinelbundle = getscriptbundle("killstreak_sentinel");
     if (isdefined(level.sentinelbundle)) {

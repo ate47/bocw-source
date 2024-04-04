@@ -1507,7 +1507,7 @@ function event_handler[event_fa673889] function_54972fb6(eventstruct) {
 // Params 1, eflags: 0x20
 // Checksum 0x8893b147, Offset: 0x3b40
 // Size: 0x2c
-function event_handler[event_f4737734] function_70953f30(eventstruct) {
+function event_handler[event_f4737734] objective_update(eventstruct) {
     self callback(#"hash_34e39ee0c9fa0092", eventstruct);
 }
 

@@ -14,14 +14,14 @@
 // Checksum 0xd01c0f89, Offset: 0xe8
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_crafting", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_crafting", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_crafting/zm_crafting
 // Params 0, eflags: 0x6 linked
 // Checksum 0xe2d800ee, Offset: 0x140
 // Size: 0x1c
-function private function_70a657d8() {
+function private preinit() {
     level.var_5df2581a = [];
     level.crafting_components = [];
 }

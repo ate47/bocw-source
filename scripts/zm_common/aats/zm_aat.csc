@@ -1,10 +1,10 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_66a886d540066b5b;
-#using script_767fdceb6d7ef024;
-#using script_1f38e4dd404966a1;
-#using script_14cc8298d95c14a3;
-#using script_53e6e796bb019ba1;
-#using script_473313f86f37e854;
+#using scripts\zm_common\aats\ammomods\ammomod_shatterblast.csc;
+#using scripts\zm_common\aats\ammomods\ammomod_electriccherry.csc;
+#using scripts\zm_common\aats\ammomods\ammomod_deadwire.csc;
+#using scripts\zm_common\aats\ammomods\ammomod_brainrot.csc;
+#using scripts\zm_common\aats\ammomods\ammomod_napalmburst.csc;
+#using scripts\zm_common\aats\ammomods\ammomod_cryofreeze.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\clientfield_shared.csc;
 #using scripts\core_common\system_shared.csc;
@@ -17,24 +17,24 @@
 // Checksum 0xc00b0dc6, Offset: 0x378
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_aat", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_aat", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_aat/zm_aat
 // Params 0, eflags: 0x6 linked
 // Checksum 0x18c79513, Offset: 0x3c0
 // Size: 0x2fc
-function private function_70a657d8() {
+function private preinit() {
     if (!is_true(level.aat_in_use)) {
         return;
     }
     level.aat_initializing = 1;
-    level aat::function_571fceb("ammomod_brainrot", &ammomod_brainrot::function_9384b521);
-    level aat::function_571fceb("ammomod_cryofreeze", &ammomod_cryofreeze::function_ab6c8a0b);
-    level aat::function_571fceb("ammomod_deadwire", &ammomod_deadwire::function_af1f180);
-    level aat::function_571fceb("ammomod_napalmburst", &ammomod_napalmburst::function_4e4244c1);
-    level aat::function_571fceb("ammomod_electriccherry", &ammomod_electriccherry::function_4b66248d);
-    level aat::function_571fceb("ammomod_shatterblast", &ammomod_shatterblast::function_4e14a881);
+    level aat::function_571fceb("ammomod_brainrot", &ammomod_brainrot::init_brainrot);
+    level aat::function_571fceb("ammomod_cryofreeze", &ammomod_cryofreeze::init_cryofreeze);
+    level aat::function_571fceb("ammomod_deadwire", &ammomod_deadwire::init_deadwire);
+    level aat::function_571fceb("ammomod_napalmburst", &ammomod_napalmburst::init_napalmburst);
+    level aat::function_571fceb("ammomod_electriccherry", &ammomod_electriccherry::init_electriccherry);
+    level aat::function_571fceb("ammomod_shatterblast", &ammomod_shatterblast::init_shatterblast);
     clientfield::register("toplayer", "" + #"hash_10f9eacd143d57ae", 1, 1, "int", &function_6ab142a9, 1, 0);
     clientfield::register("toplayer", "ammomod_play_rob_tier", 15000, 3, "int", &function_cc40e7e2, 1, 0);
     clientfield::register("toplayer", "ammomod_cryofreeze_idle", 1, 1, "int", &function_c62bfdf2, 1, 0);

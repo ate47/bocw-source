@@ -235,7 +235,7 @@ function function_84d33874() {
                 var_4c3e77ea = var_4c3e77ea + var_14ff2ad5;
                 var_2932eb0b = 1;
             }
-            if (isdefined(var_d43dd174) && function_d6eaf8b0(var_4c3e77ea) > function_d6eaf8b0(var_d43dd174)) {
+            if (isdefined(var_d43dd174) && length2dsquared(var_4c3e77ea) > length2dsquared(var_d43dd174)) {
                 var_4c3e77ea = target;
             } else {
                 var_4c3e77ea = var_4c3e77ea + player.origin;

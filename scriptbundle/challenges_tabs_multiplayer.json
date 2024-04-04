@@ -6,7 +6,7 @@
             "imagelarge": "#ui_icon_challenges_mpcareer_large",
             "displayname": "#challenge/career",
             "var_1a50db25": "#hash_5e7e1736f89fd8c5",
-            "var_a4f2dd9e": "#none",
+            "actionutility": "#none",
             "var_4e4109db": "#career_tabs_mp",
             "var_e1c44b36": "#hash_4e5ebb949ff0cdad"
         },
@@ -16,7 +16,7 @@
             "imagelarge": "#hash_4d29cb0d7d1af6fd",
             "displayname": "#hash_a8eacfc7218e6f8",
             "var_1a50db25": "#hash_5e7e1736f89fd8c5",
-            "var_a4f2dd9e": "#none",
+            "actionutility": "#none",
             "var_4e4109db": "#battle_hardened_tabs_mp",
             "var_e1c44b36": "#hash_4e5ebb949ff0cdad"
         },
@@ -26,7 +26,7 @@
             "imagelarge": "#ui_icon_challenges_mpdarkops_large",
             "displayname": "#challenge/darkops",
             "var_1a50db25": "#hash_4a8cef046ae0d4c1",
-            "var_a4f2dd9e": "#none",
+            "actionutility": "#none",
             "var_e1c44b36": "#hash_66da4dc773b6c67f"
         }
     ],

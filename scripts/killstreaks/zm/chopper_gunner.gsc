@@ -22,14 +22,14 @@
 // Checksum 0x735b9946, Offset: 0x1c0
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"chopper_gunner", &function_70a657d8, undefined, &function_3675de8b, #"killstreaks");
+    system::register(#"chopper_gunner", &preinit, undefined, &function_3675de8b, #"killstreaks");
 }
 
 // Namespace chopper_gunner/chopper_gunner
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1ac8b633, Offset: 0x220
 // Size: 0x15e
-function private function_70a657d8() {
+function private preinit() {
     profilestart();
     clientfield::register("vehicle", "" + #"hash_164696e86d29988d", 1, 1, "int");
     clientfield::register("toplayer", "" + #"hash_dae8b06d746fac5", 8000, 1, "int");
@@ -37,7 +37,7 @@ function private function_70a657d8() {
     level.var_80f71aee = &function_425e60e5;
     level.var_399dc69a = &function_6c2b8199;
     level.var_fcad39fb = int(30 * 1000);
-    namespace_e8c18978::function_70a657d8("killstreak_chopper_gunner" + "_zm");
+    namespace_e8c18978::preinit("killstreak_chopper_gunner" + "_zm");
     zm_player::register_player_damage_callback(&function_728f72a5);
     callback::on_ai_killed(&on_ai_killed);
     profilestop();
@@ -301,9 +301,9 @@ function function_25d9a09f(vehicle) {
     while (self isremotecontrolling()) {
         enemies = getaiteamarray(level.zombie_team);
         enemies = array::randomize(enemies);
-        foreach (var_607bb54c in enemies) {
-            if (isalive(var_607bb54c)) {
-                enemy = var_607bb54c;
+        foreach (potentialenemy in enemies) {
+            if (isalive(potentialenemy)) {
+                enemy = potentialenemy;
                 break;
             }
         }

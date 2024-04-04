@@ -61,8 +61,8 @@ function init() {
     level.doa.var_abd5eb1e = &function_d41688e3;
     level.doa.var_99ee4341 = &function_ce7e12de;
     level.doa.var_3bc55386 = &namespace_6e90e490::function_3332c6a1;
-    level.doa.var_d0b39b1a = &namespace_eccff4fb::function_6afc9118;
-    level.doa.var_502e9288 = &namespace_d2efac9a::function_6afc9118;
+    level.doa.var_d0b39b1a = &namespace_eccff4fb::initplayer;
+    level.doa.var_502e9288 = &namespace_d2efac9a::initplayer;
     level.doa.var_318aa67a = getdvarint(#"hash_670ddb067d311f3d", 0);
     level.doa.hardcoremode = getdvarint(#"hash_47849a8681a67ce7", 0);
     namespace_13fefac0::init();
@@ -101,7 +101,7 @@ function function_76322483(player) {
     if (is_true(level.var_bc0ddd7d)) {
         return;
     }
-    namespace_1e25ad94::function_f5f0c0f8("=========================================== DOA END =============================================");
+    namespace_1e25ad94::debugmsg("=========================================== DOA END =============================================");
     level.var_bc0ddd7d = 1;
     level notify(#"end_game");
     level notify(#"exit_level");
@@ -112,7 +112,7 @@ function function_76322483(player) {
     level namespace_d2efac9a::function_47498d07(1);
     level namespace_d2efac9a::function_ca76d4a();
     level namespace_d2efac9a::upload_leaderboards();
-    namespace_1e25ad94::function_f5f0c0f8("=========================================== EXIT LEVEL CALLED =============================================");
+    namespace_1e25ad94::debugmsg("=========================================== EXIT LEVEL CALLED =============================================");
     exitlevel(0);
     wait(666);
 }
@@ -321,7 +321,7 @@ function function_21cd3890(state) {
 // Size: 0x2a4
 function function_d05d0fa() {
     if (level.doa.var_be74bf2c > 0) {
-        namespace_1e25ad94::function_f5f0c0f8("DOA Game Reset:" + level.doa.var_be74bf2c);
+        namespace_1e25ad94::debugmsg("DOA Game Reset:" + level.doa.var_be74bf2c);
     }
     level notify(#"hash_6cb87c02c41363b7");
     level.doa.var_c420eee9 = 1;
@@ -334,7 +334,7 @@ function function_d05d0fa() {
     namespace_491fa2b2::main();
     namespace_a6056a45::main();
     namespace_ec06fe4a::function_de70888a();
-    namespace_ec06fe4a::function_7ae4c183();
+    namespace_ec06fe4a::clearallcorpses();
     function_21cd3890(0);
     function_e22d3978();
     namespace_a6ddb172::function_7a0e5387();
@@ -471,7 +471,7 @@ function function_a511c7c4() {
         return false;
     }
     player endon(#"disconnect");
-    player.doa.var_70c50ae0 = 0;
+    player.doa.respawning = 0;
     var_4b98f072 = spawnstruct();
     var_4b98f072.var_917afa01 = 0;
     var_4b98f072.result = 0;
@@ -518,8 +518,8 @@ function function_a511c7c4() {
 function function_49592bf9(var_4b98f072) {
     level endon(#"hash_47730e778d03543b");
     self endon(#"disconnect");
-    var_7d86dbf8 = self gamepadusedlast();
-    setdvar(#"ui_busyblockingamemenu", !var_7d86dbf8);
+    is_gamepad = self gamepadusedlast();
+    setdvar(#"ui_busyblockingamemenu", !is_gamepad);
     while (true) {
         waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
@@ -576,8 +576,8 @@ function function_295c3381(var_4b98f072) {
             }
             var_7ce1e87 = 0;
         }
-        var_7d86dbf8 = self gamepadusedlast();
-        if (var_7d86dbf8 && self fragbuttonpressed() || !var_7d86dbf8 && self meleebuttonpressed()) {
+        is_gamepad = self gamepadusedlast();
+        if (is_gamepad && self fragbuttonpressed() || !is_gamepad && self meleebuttonpressed()) {
             var_44294245 = 1;
         } else {
             if (var_44294245) {

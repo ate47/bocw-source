@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_31671175564a93b7;
+#using scripts\cp_common\snd_utility.csc;
 #using script_1cd690a97dfca36e;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\math_shared.csc;
@@ -408,8 +408,8 @@ function function_31d6fc52(var_9632a625, color, depthtest, duration, offset) {
 // Size: 0x404
 function function_a787fe30(origin, angles, extents, color, alpha, depthtest, duration) {
     /#
-        var_4afb2363 = extents * 0.5;
-        var_95483828 = (var_4afb2363, var_4afb2363, var_4afb2363);
+        half = extents * 0.5;
+        var_95483828 = (half, half, half);
         mins = origin - var_95483828;
         maxs = origin + var_95483828;
         var_c9c13776[0] = (maxs[0], maxs[1], maxs[2]);
@@ -472,10 +472,10 @@ function function_81183b3(origin, size, angles, color, alpha, depthtest, duratio
             right = anglestoright(angles) * -1;
             up = anglestoup(angles);
         }
-        var_4afb2363 = size * 0.5;
-        forward = forward * var_4afb2363;
-        right = right * var_4afb2363;
-        up = up * var_4afb2363;
+        half = size * 0.5;
+        forward = forward * half;
+        right = right * half;
+        up = up * half;
         var_d805968e = 0.333;
         var_ec1abeec = (var_d805968e, var_d805968e, var_d805968e);
         var_b278259c = color * var_ec1abeec + (1, 0, 0);

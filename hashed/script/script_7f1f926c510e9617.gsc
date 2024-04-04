@@ -12,7 +12,7 @@
 // Checksum 0xca93948a, Offset: 0xb8
 // Size: 0x74
 function function_41e5864f(var_e3087505 = 1) {
-    level.var_59cd6d34 = {#first_time:1, #var_846147d7:1, #var_cd7d2e9f:0};
+    level.var_59cd6d34 = {#var_cd7d2e9f:0, #var_846147d7:1, #first_time:1};
     function_77051d2b(var_e3087505);
 }
 

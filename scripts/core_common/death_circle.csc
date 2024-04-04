@@ -11,24 +11,24 @@
 // Checksum 0x25cc1343, Offset: 0x240
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"death_circle", &function_70a657d8, undefined, &function_4df027f2, undefined);
+    system::register(#"death_circle", &preinit, undefined, &function_4df027f2, undefined);
 }
 
 // Namespace death_circle/death_circle
 // Params 0, eflags: 0x6 linked
 // Checksum 0x71130b0, Offset: 0x290
 // Size: 0x348
-function private function_70a657d8() {
+function private preinit() {
     level.deathcircle = {#enabled:currentsessionmode() != 4 && is_true(getgametypesetting(#"deathcircle"))};
     if (util::is_frontend_map() || !level.deathcircle.enabled) {
         return;
     }
-    level.var_ef215639 = [3:"evt_death_circle_strong", 2:#"hash_5b96bc3a1c23c571", 1:#"hash_1483048e184df991"];
+    level.var_ef215639 = [1:#"hash_1483048e184df991", 2:#"hash_5b96bc3a1c23c571", 3:"evt_death_circle_strong"];
     level.var_cb450873 = #"hash_313f1d0b4ff27caa";
     if (isdefined(level.var_7bd7bdc8)) {
         level.var_f6795a59 = level.var_7bd7bdc8;
     } else {
-        level.var_f6795a59 = [3:#"hash_3fc5123369b4c59f", 2:#"hash_5c64e89ab323857a", 1:#"hash_7c7ea03189fe65d8"];
+        level.var_f6795a59 = [1:#"hash_7c7ea03189fe65d8", 2:#"hash_5c64e89ab323857a", 3:#"hash_3fc5123369b4c59f"];
     }
     clientfield::register("scriptmover", "deathcircleflag", 1, 1, "int", &function_a380fe5, 0, 0);
     clientfield::register("allplayers", "deathcircleopacityflag", 1, 1, "counter", &function_1a4228a5, 0, 0);
@@ -273,8 +273,8 @@ function private function_32f7227c(deathcircle, currentradius, localclientnum) {
         toplayervec = vectornormalize(endpos - startpos) * currentradius;
         eyepos = localplayer geteyeapprox();
     }
-    var_ba5c9ce6 = deathcircle.origin + toplayervec;
-    return (var_ba5c9ce6[0], var_ba5c9ce6[1], eyepos[2]);
+    returnvec = deathcircle.origin + toplayervec;
+    return (returnvec[0], returnvec[1], eyepos[2]);
 }
 
 // Namespace death_circle/death_circle

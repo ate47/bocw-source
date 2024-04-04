@@ -9,14 +9,14 @@
 // Checksum 0x3f8d15e0, Offset: 0x90
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"medals", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"medals", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace medals/medals_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x11c7c33d, Offset: 0xd8
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&init);
 }
 
@@ -28,7 +28,7 @@ function init() {
     level.medalinfo = [];
     level.medalcallbacks = [];
     level.numkills = 0;
-    level.var_e5595d9d = 0;
+    level.prevlastkilltime = 0;
     level.lastkilltime = 0;
     callback::on_connect(&on_player_connect);
 }

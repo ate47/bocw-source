@@ -15,14 +15,14 @@
 // Checksum 0xc934263d, Offset: 0x330
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"animation", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"animation", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace animation/animation_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x8d763856, Offset: 0x378
 // Size: 0xc4
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("scriptmover", "cracks_on", 1, getminbitcountfornum(4), "int", &cf_cracks_on, 0, 0);
     clientfield::register("scriptmover", "cracks_off", 1, getminbitcountfornum(4), "int", &cf_cracks_off, 0, 0);
     setup_notetracks();
@@ -99,7 +99,7 @@ function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, 
     }
     /#
         self.var_80c69db6 = "<unknown string>";
-        self.var_6c4bb19 = {#v_angles_or_tag:n_blend_in, #v_origin_or_ent:n_rate, #animation:v_angles_or_tag};
+        self.var_6c4bb19 = {#animation:v_angles_or_tag, #v_origin_or_ent:n_rate, #v_angles_or_tag:n_blend_in};
         if (level get("<unknown string>")) {
             self thread anim_info_render_thread();
         }

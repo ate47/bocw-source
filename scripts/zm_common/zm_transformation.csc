@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_31816d064a53f516;
+#using scripts\core_common\ai\zombie_eye_glow.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\system_shared.csc;
 #using scripts\core_common\clientfield_shared.csc;
@@ -11,7 +11,7 @@
 // Params 0, eflags: 0x4
 // Checksum 0xb56b8b3b, Offset: 0xf0
 // Size: 0x94
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "transformation_spawn", 1, 1, "int", &function_201c2cb7, 0, 0);
     clientfield::register("actor", "transformation_stream_split", 1, 1, "int", &function_341e5a97, 0, 0);
 }

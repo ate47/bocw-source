@@ -12,14 +12,14 @@
 // Checksum 0xa1bdea9e, Offset: 0xa8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"sprint_boost_grenade", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"sprint_boost_grenade", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace sprint_boost_grenade/sprint_boost_grenade
 // Params 0, eflags: 0x4
 // Checksum 0x9b6635bd, Offset: 0xf0
 // Size: 0x8c
-function private function_70a657d8() {
+function private preinit() {
     level._effect[#"satchel_charge_enemy_light"] = #"weapon/fx_c4_light_orng";
     level._effect[#"satchel_charge_friendly_light"] = #"weapon/fx_c4_light_blue";
     weaponobjects::function_e6400478(#"sprint_boost_grenade", &create_grenade_watcher, 1);
@@ -91,7 +91,7 @@ function apply_sprint_boost_to_players(owner, origin, radius, duration) {
     if (!isdefined(origin)) {
         return;
     }
-    radiussq = function_a3f6cdac(isdefined(radius) ? radius : 150);
+    radiussq = sqr(isdefined(radius) ? radius : 150);
     foreach (player in level.players) {
         if (!isplayer(player)) {
             continue;

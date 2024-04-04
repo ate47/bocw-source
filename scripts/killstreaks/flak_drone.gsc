@@ -131,7 +131,7 @@ function updateflakdronespeed() {
     if (isdefined(self.parent)) {
         parentspeed = self.parent getspeed();
         desiredspeed = parentspeed * 0.9;
-        if (distance2dsquared(self.parent.origin, self.origin) > function_a3f6cdac(36)) {
+        if (distance2dsquared(self.parent.origin, self.origin) > sqr(36)) {
             if (isdefined(self.current_pathto_pos)) {
                 flakdronedistancetogoalsquared = distance2dsquared(self.origin, self.current_pathto_pos);
                 parentdistancetogoalsquared = distance2dsquared(self.parent.origin, self.current_pathto_pos);
@@ -206,7 +206,7 @@ function spawnflakrocket(missile, spawnpos, parent) {
             parentpredictedlocation = parent.origin + parentvelocity * 0.05;
             missilevelocity = missile getvelocity();
             missilepredictedlocation = missile.origin + missilevelocity * 0.05;
-            if (distancesquared(parentpredictedlocation, missilepredictedlocation) < function_a3f6cdac(1000) || distancesquared(parent.origin, missilepredictedlocation) < function_a3f6cdac(1000)) {
+            if (distancesquared(parentpredictedlocation, missilepredictedlocation) < sqr(1000) || distancesquared(parent.origin, missilepredictedlocation) < sqr(1000)) {
                 tooclosetopredictedparent = 1;
             }
         }

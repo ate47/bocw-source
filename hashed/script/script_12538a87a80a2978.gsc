@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_4ce7b4190a2fa70;
-#using script_7d7ac1f663edcdc8;
+#using scripts\zm_common\zm_utility_zsurvival.gsc;
 #using scripts\zm_common\zm_utility.gsc;
 #using scripts\zm_common\zm_score.gsc;
 #using script_18077945bb84ede7;
@@ -16,7 +16,7 @@
 #using scripts\core_common\laststand_shared.gsc;
 #using scripts\core_common\gameobjects_shared.gsc;
 #using scripts\core_common\fx_shared.gsc;
-#using script_7fc996fe8678852;
+#using scripts\core_common\content_manager.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 
 #namespace namespace_cda50904;
@@ -26,14 +26,14 @@
 // Checksum 0xd0008ec3, Offset: 0x350
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"hash_57d1b71f57332413", &function_70a657d8, undefined, &finalize, #"hash_f81b9dea74f0ee");
+    system::register(#"hash_57d1b71f57332413", &preinit, undefined, &finalize, #"content_manager");
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
 // Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0x3b0
 // Size: 0x4
-function function_70a657d8() {
+function preinit() {
     
 }
 
@@ -55,34 +55,34 @@ function function_a92a93e9(v_location, v_angles, var_75b5cef0 = 0, n_delay = 1) 
     foreach (player in getplayers()) {
         switch (level.var_b48509f9) {
         default:
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_1", #attacker:player});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:player, #scoreevent:"objective_complete_capsule_1"});
             break;
         case 2:
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_2", #attacker:player});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:player, #scoreevent:"objective_complete_capsule_2"});
             break;
         case 3:
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_3", #attacker:player});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:player, #scoreevent:"objective_complete_capsule_3"});
             break;
         case 4:
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_4", #attacker:player});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:player, #scoreevent:"objective_complete_capsule_4"});
             break;
         case 5:
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_5", #attacker:player});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:player, #scoreevent:"objective_complete_capsule_5"});
             break;
         case 6:
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_6", #attacker:player});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:player, #scoreevent:"objective_complete_capsule_6"});
             break;
         case 7:
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_7", #attacker:player});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:player, #scoreevent:"objective_complete_capsule_7"});
             break;
         case 8:
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_8", #attacker:player});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:player, #scoreevent:"objective_complete_capsule_8"});
             break;
         case 9:
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_9", #attacker:player});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:player, #scoreevent:"objective_complete_capsule_9"});
             break;
         case 10:
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_10", #attacker:player});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:player, #scoreevent:"objective_complete_capsule_10"});
             break;
         }
     }
@@ -93,7 +93,7 @@ function function_a92a93e9(v_location, v_angles, var_75b5cef0 = 0, n_delay = 1) 
 // Checksum 0x2e01c121, Offset: 0xa80
 // Size: 0x38c
 function function_bdd95292(struct) {
-    struct.scriptmodel = namespace_8b6a9d79::function_f3d93ee9(struct, "p8_fxanim_wz_supply_stash_01_glow_mod", 1);
+    struct.scriptmodel = content_manager::spawn_script_model(struct, "p8_fxanim_wz_supply_stash_01_glow_mod", 1);
     struct.var_422ae63e = #"hash_5657ee89257b06fe";
     struct.scriptmodel fx::play("sr/fx9_chest_objective_amb", struct.origin, struct.angles, "death");
     struct.state = 0;
@@ -107,7 +107,7 @@ function function_bdd95292(struct) {
         if (!isdefined(player.var_524f43cb)) {
             player.var_524f43cb = [];
         }
-        trigger = namespace_8b6a9d79::function_214737c7(struct, &function_b4f2a34e, #"hash_4703982104472957", undefined, 200);
+        trigger = content_manager::spawn_interact(struct, &function_b4f2a34e, #"hash_4703982104472957", undefined, 200);
         trigger.struct = struct;
         trigger.origin = trigger.origin + vectorscale((0, 0, 1), 16);
         objid = zm_utility::function_f5a222a8(#"hash_52547cde15854dbf", struct.scriptmodel);
@@ -205,15 +205,15 @@ function function_39340834(struct, trigger) {
             }
             index1 = 0;
             index2 = 1;
-            var_d6a6fb08 = 2;
+            index3 = 2;
             if (isdefined(struct.var_f0f92268[playerindex][1]) && isdefined(struct.var_f0f92268[playerindex][0]) && isdefined(struct.var_f0f92268[playerindex][2])) {
                 index1 = struct.var_f0f92268[playerindex][0];
                 index2 = struct.var_f0f92268[playerindex][1];
-                var_d6a6fb08 = struct.var_f0f92268[playerindex][2];
+                index3 = struct.var_f0f92268[playerindex][2];
             }
             gunindex1 = function_219cb8bb(index1);
             gunindex2 = function_219cb8bb(index2);
-            gunindex3 = function_219cb8bb(var_d6a6fb08);
+            gunindex3 = function_219cb8bb(index3);
             level.var_30197c60 sr_objective_reward_menu::function_43ba5f0e(self, gunindex1);
             level.var_30197c60 sr_objective_reward_menu::function_2d7f3298(self, gunindex2);
             level.var_30197c60 sr_objective_reward_menu::function_ada8b2f1(self, gunindex3);
@@ -235,7 +235,7 @@ function function_621d45bc(list, struct) {
         item1 = function_410c380(list.itemlist);
         var_ff082c28 = function_410c380(list.itemlist, item1);
         var_d3ac88d = function_410c380(list.itemlist, item1, var_ff082c28);
-        var_c4aee6b4 = [2:var_d3ac88d, 1:var_ff082c28, 0:item1];
+        var_c4aee6b4 = [item1, var_ff082c28, var_d3ac88d];
         if (!isdefined(struct.var_f0f92268)) {
             struct.var_f0f92268 = [];
         } else if (!isarray(struct.var_f0f92268)) {
@@ -275,7 +275,7 @@ function private function_410c380(list, var_523adf97, var_5fe37ae8) {
     foreach (i, weight in var_abe6284f) {
         if (var_34e28de6 < weight) {
             if (isdefined(var_523adf97) && isdefined(var_5fe37ae8)) {
-                if (list[i].var_a6762160 != var_523adf97 && list[i].var_a6762160 != var_5fe37ae8) {
+                if (list[i].itementry != var_523adf97 && list[i].itementry != var_5fe37ae8) {
                     if (!isdefined(var_f00ca053)) {
                         var_f00ca053 = [];
                     } else if (!isarray(var_f00ca053)) {
@@ -288,7 +288,7 @@ function private function_410c380(list, var_523adf97, var_5fe37ae8) {
                 continue;
             }
             if (isdefined(var_523adf97)) {
-                if (list[i].var_a6762160 != var_523adf97) {
+                if (list[i].itementry != var_523adf97) {
                     if (!isdefined(var_f00ca053)) {
                         var_f00ca053 = [];
                     } else if (!isarray(var_f00ca053)) {
@@ -313,19 +313,19 @@ function private function_410c380(list, var_523adf97, var_5fe37ae8) {
     if (var_f00ca053.size >= 1) {
         random_index = randomint(var_f00ca053.size);
         item_index = var_f00ca053[random_index];
-        return list[item_index].var_a6762160;
+        return list[item_index].itementry;
     }
     if (isdefined(var_523adf97) && isdefined(var_5fe37ae8)) {
         new_list = [];
         foreach (item in list) {
-            if (item.var_a6762160 != var_523adf97 && item.var_a6762160 != var_5fe37ae8) {
+            if (item.itementry != var_523adf97 && item.itementry != var_5fe37ae8) {
                 if (!isdefined(new_list)) {
                     new_list = [];
                 } else if (!isarray(new_list)) {
                     new_list = array(new_list);
                 }
-                if (!isinarray(new_list, item.var_a6762160)) {
-                    new_list[new_list.size] = item.var_a6762160;
+                if (!isinarray(new_list, item.itementry)) {
+                    new_list[new_list.size] = item.itementry;
                 }
             }
         }
@@ -335,14 +335,14 @@ function private function_410c380(list, var_523adf97, var_5fe37ae8) {
     if (isdefined(var_523adf97)) {
         new_list = [];
         foreach (item in list) {
-            if (item.var_a6762160 != var_523adf97) {
+            if (item.itementry != var_523adf97) {
                 if (!isdefined(new_list)) {
                     new_list = [];
                 } else if (!isarray(new_list)) {
                     new_list = array(new_list);
                 }
-                if (!isinarray(new_list, item.var_a6762160)) {
-                    new_list[new_list.size] = item.var_a6762160;
+                if (!isinarray(new_list, item.itementry)) {
+                    new_list[new_list.size] = item.itementry;
                 }
             }
         }
@@ -350,15 +350,15 @@ function private function_410c380(list, var_523adf97, var_5fe37ae8) {
         return new_list[random_index];
     }
     random_index = randomint(list.size);
-    return list[random_index].var_a6762160;
+    return list[random_index].itementry;
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
 // Params 1, eflags: 0x6 linked
 // Checksum 0xb014b1f0, Offset: 0x1c68
 // Size: 0x27a
-function private function_219cb8bb(var_a6762160) {
-    switch (var_a6762160) {
+function private function_219cb8bb(itementry) {
+    switch (itementry) {
     case #"ar_accurate_t9_orange_item_sr":
     case #"ar_accurate_t9_item_sr":
     case #"hash_5b2d331d596e0292":

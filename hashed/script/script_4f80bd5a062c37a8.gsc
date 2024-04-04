@@ -109,12 +109,12 @@ function function_229ed59f() {
         if (isdefined(self.favoriteenemy)) {
             distsq = distancesquared(self.origin, self.favoriteenemy.origin);
         }
-        if (!isdefined(distsq) || distsq > function_a3f6cdac(200)) {
+        if (!isdefined(distsq) || distsq > sqr(200)) {
             lastenemy = self.favoriteenemy;
-            if (isdefined(self.owner) && distancesquared(self.origin, self.owner.origin) < function_a3f6cdac(700)) {
-                self.favoriteenemy = self.owner namespace_ec06fe4a::function_36d6caea();
+            if (isdefined(self.owner) && distancesquared(self.origin, self.owner.origin) < sqr(700)) {
+                self.favoriteenemy = self.owner namespace_ec06fe4a::getclosestenemy();
             } else {
-                self.favoriteenemy = namespace_ec06fe4a::function_36d6caea();
+                self.favoriteenemy = namespace_ec06fe4a::getclosestenemy();
             }
         }
         if (lastenemy !== self.favoriteenemy) {
@@ -154,11 +154,11 @@ function function_5945a362() {
             enemyorigin = (self.favoriteenemy.origin[0], self.favoriteenemy.origin[1], v_origin[2]);
             if (!is_true(self.ismissile)) {
                 distsq = distancesquared(enemyorigin, v_origin);
-                if (distsq > function_a3f6cdac(512)) {
+                if (distsq > sqr(512)) {
                     dotrange = 0.96;
-                } else if (distsq > function_a3f6cdac(256)) {
+                } else if (distsq > sqr(256)) {
                     dotrange = 0.93;
-                } else if (distsq > function_a3f6cdac(128)) {
+                } else if (distsq > sqr(128)) {
                     dotrange = 0.9;
                 } else {
                     dotrange = 0.8;

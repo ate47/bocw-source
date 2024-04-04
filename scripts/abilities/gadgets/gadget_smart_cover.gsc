@@ -202,9 +202,9 @@ function function_a9427b5c(func) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xde7401c1, Offset: 0x1130
 // Size: 0xac
-function function_b397b517(var_84e5ee08) {
+function function_b397b517(timeoutoverride) {
     self endon(#"death", #"cancel_timeout");
-    timeouttime = isdefined(var_84e5ee08) ? var_84e5ee08 : level.smartcoversettings.bundle.timeout;
+    timeouttime = isdefined(timeoutoverride) ? timeoutoverride : level.smartcoversettings.bundle.timeout;
     if ((isdefined(timeouttime) ? timeouttime : 0) == 0) {
         return;
     }
@@ -361,11 +361,11 @@ function function_a47ce1c2(player) {
         var_9e596670 = function_bf4c81d2(var_b43e8dc2.origin, level.smartcoversettings.var_ff1a491d);
     }
     var_2b68b641 = function_54267517(var_b43e8dc2.origin);
-    var_1e5ed37a = isdefined(var_b43e8dc2) && var_b43e8dc2.isvalid && !var_9e596670 && !var_2b68b641;
-    if (var_1e5ed37a && (isdefined(var_b43e8dc2.width) ? var_b43e8dc2.width : 0) >= level.smartcoversettings.bundle.maxwidth) {
-        player function_bf191832(var_1e5ed37a, var_b43e8dc2.origin, var_b43e8dc2.angles);
+    candeploy = isdefined(var_b43e8dc2) && var_b43e8dc2.isvalid && !var_9e596670 && !var_2b68b641;
+    if (candeploy && (isdefined(var_b43e8dc2.width) ? var_b43e8dc2.width : 0) >= level.smartcoversettings.bundle.maxwidth) {
+        player function_bf191832(candeploy, var_b43e8dc2.origin, var_b43e8dc2.angles);
     } else {
-        player function_bf191832(var_1e5ed37a, (0, 0, 0), (0, 0, 0));
+        player function_bf191832(candeploy, (0, 0, 0), (0, 0, 0));
     }
     return var_b43e8dc2;
 }
@@ -399,10 +399,10 @@ function function_548a710a(traceresults) {
     var_b80b6889 = distance2d(traceresults.origin, traceresults.var_c0e006dc);
     var_65ea35de = distance2d(traceresults.origin, traceresults.var_44cf251d);
     if (traceresults.var_e2543923 && traceresults.var_e18fd6c3) {
-        var_a5b1e71f = traceresults.var_c0e006dc;
+        pointright = traceresults.var_c0e006dc;
         pointleft = traceresults.var_44cf251d;
     } else if (traceresults.var_e2543923 && var_b80b6889 < halfwidth) {
-        var_a5b1e71f = traceresults.var_c0e006dc;
+        pointright = traceresults.var_c0e006dc;
         directionleft = vectornormalize(traceresults.var_44cf251d - traceresults.var_c0e006dc);
         pointleft = traceresults.var_c0e006dc + level.smartcoversettings.bundle.maxwidth * directionleft;
     } else if (traceresults.var_e2543923 && var_b80b6889 >= halfwidth) {
@@ -410,11 +410,11 @@ function function_548a710a(traceresults) {
     } else if (traceresults.var_e18fd6c3 && var_65ea35de < halfwidth) {
         pointleft = traceresults.var_44cf251d;
         directionright = vectornormalize(traceresults.var_c0e006dc - traceresults.var_44cf251d);
-        var_a5b1e71f = traceresults.var_44cf251d + level.smartcoversettings.bundle.maxwidth * directionright;
+        pointright = traceresults.var_44cf251d + level.smartcoversettings.bundle.maxwidth * directionright;
     } else if (traceresults.var_e18fd6c3 && var_65ea35de >= halfwidth) {
         return traceresults.origin;
     }
-    direction = vectornormalize(var_a5b1e71f - pointleft);
+    direction = vectornormalize(pointright - pointleft);
     origin = (pointleft[0], pointleft[1], traceresults.origin[2]) + level.smartcoversettings.bundle.maxwidth * 0.5 * direction;
     return origin;
 }
@@ -606,7 +606,7 @@ function function_2a494565(isselfdestruct) {
     if (isdefined(smartcover.var_2d045452)) {
         smartcover.var_2d045452 delete();
     }
-    smartcover function_cb48cddd();
+    smartcover deletedelay();
 }
 
 // Namespace smart_cover/gadget_smart_cover
@@ -696,8 +696,8 @@ function private function_9813d292() {
 // Size: 0x11c
 function private function_d2d0a813(var_24e0878b) {
     var_3b0688ef = "smart_cover_badplace" + self getentitynumber();
-    var_2c0980ab = self.origin + self function_2c662f72();
-    var_e5afa076 = self function_2a98d04f();
+    var_2c0980ab = self.origin + self getboundsmidpoint();
+    var_e5afa076 = self getboundshalfsize();
     var_921c5821 = max(var_e5afa076[0], var_e5afa076[1]) + 5;
     var_e5afa076 = (var_921c5821, var_921c5821, var_e5afa076[2]);
     if (var_24e0878b === 1) {

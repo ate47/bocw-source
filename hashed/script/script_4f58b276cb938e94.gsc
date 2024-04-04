@@ -16,19 +16,19 @@ function main() {
     if (isdefined(self.stealth)) {
         return;
     }
-    self namespace_f1f700ac::function_43959107();
-    self.var_7c1df16b = 1;
+    self namespace_f1f700ac::init_settings();
+    self.neutralsenses = 1;
     self namespace_f1f700ac::init_flags();
-    namespace_3fc78cb6::function_573416a4(self.var_d6319e36, self);
-    self namespace_f1f700ac::function_2ce66982();
-    self namespace_cf88f507::function_b1459a4();
-    self thread namespace_f1f700ac::function_cf839c4b(level.stealth.var_7e461f07, level.stealth.var_1e02c672);
+    stealth_group::addtogroup(self.script_stealthgroup, self);
+    self namespace_f1f700ac::setpatrolstyle_base();
+    self namespace_cf88f507::event_init_entity();
+    self thread namespace_f1f700ac::monitor_damage_thread(level.stealth.damage_auto_range, level.stealth.damage_sight_range);
     /#
-        self thread function_8c76fdc5();
+        self thread debug_enemy();
     #/
-    self namespace_f1f700ac::function_b82b38b("reset");
-    self namespace_f1f700ac::function_52839330("idle");
-    self namespace_f1f700ac::function_c934ed8c();
+    self namespace_f1f700ac::set_alert_level("reset");
+    self namespace_f1f700ac::bt_set_stealth_state("idle");
+    self namespace_f1f700ac::stealth_init_goal_radius();
     self thread function_130f4a75();
 }
 
@@ -42,7 +42,7 @@ function function_130f4a75() {
         self flag::wait_till("stealth_enabled");
         level flag::wait_till_clear("stealth_spotted");
         if (is_true(self.var_22f5613a)) {
-            self namespace_77fd5d41::function_d768e482(self);
+            self namespace_77fd5d41::stealth_neutral_updateeveryframe(self);
         }
         waitframe(1);
     }

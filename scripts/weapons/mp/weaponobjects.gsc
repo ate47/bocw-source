@@ -17,14 +17,14 @@
 // Checksum 0xe7ff0b14, Offset: 0xd0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"weaponobjects", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"weaponobjects", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace weaponobjects/weaponobjects
 // Params 0, eflags: 0x6 linked
 // Checksum 0x20c87620, Offset: 0x118
 // Size: 0x34
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
     callback::on_start_gametype(&start_gametype);
 }

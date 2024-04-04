@@ -9,14 +9,14 @@
 // Checksum 0x48d71400, Offset: 0x90
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"gadget_other", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"gadget_other", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace gadget_other/gadget_other
 // Params 0, eflags: 0x6 linked
 // Checksum 0x81f38d4a, Offset: 0xd8
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     ability_player::register_gadget_is_inuse_callbacks(1, &gadget_other_is_inuse);
     ability_player::register_gadget_is_flickering_callbacks(1, &gadget_other_is_flickering);
 }

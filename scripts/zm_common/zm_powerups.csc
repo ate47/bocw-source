@@ -82,8 +82,8 @@ function add_zombie_powerup(powerup_name, client_field_name, clientfield_version
     if (isdefined(client_field_name)) {
         var_4e6e65fa = "hudItems.zmPowerUps." + client_field_name + ".state";
         var_d75767cb = "hudItems.zmPowerUps." + client_field_name + ".timeRemaining";
-        clientfield::register_clientuimodel(var_4e6e65fa, #"hash_6bba1b88c856cfdf", [1:#"state", 0:hash(client_field_name)], clientfield_version, 2, "int", &powerup_state_callback, 0, 1);
-        clientfield::register_clientuimodel(var_d75767cb, #"hash_6bba1b88c856cfdf", [1:#"timeremaining", 0:hash(client_field_name)], clientfield_version, 8, "int", undefined, 0, 1);
+        clientfield::register_clientuimodel(var_4e6e65fa, #"hash_6bba1b88c856cfdf", [hash(client_field_name), #"state"], clientfield_version, 2, "int", &powerup_state_callback, 0, 1);
+        clientfield::register_clientuimodel(var_d75767cb, #"hash_6bba1b88c856cfdf", [hash(client_field_name), #"timeremaining"], clientfield_version, 8, "int", undefined, 0, 1);
         struct.client_field_name = var_4e6e65fa;
         struct.var_b79536ad = var_d75767cb;
     }
@@ -105,7 +105,7 @@ function include_zombie_powerup(powerup_name) {
 // Checksum 0x92d47d1a, Offset: 0x880
 // Size: 0x76
 function powerup_state_callback(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, fieldname, *bwastimejump) {
-    self notify(#"powerup", {#state:fieldname, #powerup:bwastimejump});
+    self notify(#"powerup", {#powerup:bwastimejump, #state:fieldname});
 }
 
 // Namespace zm_powerups/zm_powerups

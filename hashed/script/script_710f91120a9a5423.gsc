@@ -9,14 +9,14 @@
 // Checksum 0x18ab9179, Offset: 0xb8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_7bd5e0fb2a57c52f", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"hash_7bd5e0fb2a57c52f", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace namespace_5e75c551/namespace_5e75c551
 // Params 0, eflags: 0x2 linked
 // Checksum 0xa3ad9dc3, Offset: 0x108
 // Size: 0x44
-function function_70a657d8() {
+function preinit() {
     if (isdefined(level.killstreakrules[#"hero_weapons"])) {
         killstreakrules::addkillstreaktorule("napalm_strike_zm", "hero_weapons", 0, 0);
     }

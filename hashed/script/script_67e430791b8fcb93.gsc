@@ -2,9 +2,9 @@
 #using scripts\core_common\system_shared.csc;
 #using scripts\core_common\clientfield_shared.csc;
 
-#namespace namespace_8f42c328;
+#namespace cranked;
 
-// Namespace namespace_8f42c328/namespace_8f42c328
+// Namespace cranked/cranked
 // Params 0, eflags: 0x2 linked
 // Checksum 0x39dc319, Offset: 0x180
 // Size: 0x1f4

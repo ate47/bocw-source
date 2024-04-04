@@ -12,14 +12,14 @@
 // Checksum 0x61c37470, Offset: 0xc8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"missile_turret", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"missile_turret", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace missile_turret/missile_turret
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd817326a, Offset: 0x110
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     level.var_1c5940ad = &function_4b645b3f;
     level.var_2958ac6c = &turret_destroyed;
     init_shared();

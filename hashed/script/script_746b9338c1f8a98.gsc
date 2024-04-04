@@ -6,8 +6,8 @@
 // Checksum 0x9cafa9ff, Offset: 0x80
 // Size: 0x4e
 function private function_7b29177a() {
-    var_65792f8b = function_2717b55f();
-    var_fc0caf4 = var_65792f8b.var_39cc9e65;
+    mapbundle = function_2717b55f();
+    var_fc0caf4 = mapbundle.var_39cc9e65;
     if (isdefined(var_fc0caf4)) {
         return getscriptbundle(var_fc0caf4);
     }

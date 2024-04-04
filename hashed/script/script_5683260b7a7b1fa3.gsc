@@ -2,7 +2,7 @@
 #using script_193d6fcd3b319d05;
 #using script_34e9dd62fc371077;
 #using scripts\zm_common\aats\zm_aat.gsc;
-#using script_1029986e2bc8ca8e;
+#using scripts\zm_common\objective_manager.gsc;
 #using scripts\zm_common\zm_vo.gsc;
 #using scripts\zm_common\zm_utility.gsc;
 #using scripts\zm_common\zm_stats.gsc;
@@ -27,14 +27,14 @@
 // Checksum 0xa150bccc, Offset: 0x270
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_1aecd78b7244ff81", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_1aecd78b7244ff81", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_e6fea84d/namespace_e6fea84d
 // Params 0, eflags: 0x4
 // Checksum 0xa9c0fd5d, Offset: 0x2b8
 // Size: 0x1a4
-function private function_70a657d8() {
+function private preinit() {
     if (util::get_game_type() === #"hash_1aecd78b7244ff81") {
         callback::add_callback(#"hash_7852c3cae4d4082a", &function_2d9abf0f);
         callback::add_callback(#"hash_75d9baf9eed8610b", &function_4e9f972a);
@@ -108,8 +108,8 @@ function function_4e9f972a(var_4d2ad93e) {
         level.onslaught_hud onslaught_hud::function_71fd1345(player, 1);
         player clientfield::set_player_uimodel("hudItems.onslaught.lottoloadouts_rarity", function_4bac897(var_4d2ad93e));
     }
-    namespace_f3a74bbc::stop_timer();
-    namespace_f3a74bbc::start_timer(5);
+    objective_manager::stop_timer();
+    objective_manager::start_timer(5);
     foreach (player in getplayers()) {
         player thread function_e3871553(var_4d2ad93e);
         player playlocalsound(#"hash_6ff6896abbcdb20e");
@@ -209,38 +209,38 @@ function function_e3871553(var_4d2ad93e) {
         str_item_name = isdefined(level.var_29d88fe5[str_weapon_name][#"purple"]) ? level.var_29d88fe5[str_weapon_name][#"purple"] : level.var_ec04a8a4[str_weapon_name][#"purple"];
         n_rarity = 2;
         var_27751b99 = 2;
-        str_aat = array::random([4:"ammomod_shatterblast", 3:"ammomod_napalmburst", 2:"ammomod_deadwire", 1:"ammomod_cryofreeze", 0:"ammomod_brainrot"]);
+        str_aat = array::random(["ammomod_brainrot", "ammomod_cryofreeze", "ammomod_deadwire", "ammomod_napalmburst", "ammomod_shatterblast"]);
         break;
     case 8:
     default:
         str_item_name = isdefined(level.var_29d88fe5[str_weapon_name][#"orange"]) ? level.var_29d88fe5[str_weapon_name][#"orange"] : level.var_ec04a8a4[str_weapon_name][#"orange"];
         n_rarity = 3;
         var_27751b99 = 3;
-        str_aat = array::random([4:"ammomod_shatterblast", 3:"ammomod_napalmburst", 2:"ammomod_deadwire", 1:"ammomod_cryofreeze", 0:"ammomod_brainrot"]);
+        str_aat = array::random(["ammomod_brainrot", "ammomod_cryofreeze", "ammomod_deadwire", "ammomod_napalmburst", "ammomod_shatterblast"]);
         break;
     }
     if (isdefined(str_item_name)) {
         point = function_4ba8fde(str_item_name);
-        if (isdefined(point.var_a6762160) && var_27751b99 > 0 && isdefined(level.var_fee1eaaf)) {
-            var_a53e9db0 = point.var_a6762160.var_a53e9db0;
-            var_d0e99a2a = point.var_a6762160.var_d0e99a2a;
-            var_8e212f46 = point.var_a6762160.var_8e212f46;
-            var_3e805062 = point.var_a6762160.var_3e805062;
+        if (isdefined(point.itementry) && var_27751b99 > 0 && isdefined(level.var_fee1eaaf)) {
+            var_a53e9db0 = point.itementry.var_a53e9db0;
+            var_d0e99a2a = point.itementry.var_d0e99a2a;
+            var_8e212f46 = point.itementry.var_8e212f46;
+            var_3e805062 = point.itementry.var_3e805062;
             new_item = [[ level.var_fee1eaaf ]](point);
             if (isdefined(new_item)) {
                 point = new_item;
-                point.var_a8bccf69 = var_27751b99;
-                point.var_a6762160.var_a53e9db0 = var_a53e9db0;
-                point.var_a6762160.var_d0e99a2a = var_d0e99a2a;
-                point.var_a6762160.var_8e212f46 = var_8e212f46;
-                point.var_a6762160.var_3e805062 = var_3e805062;
+                point.paplv = var_27751b99;
+                point.itementry.var_a53e9db0 = var_a53e9db0;
+                point.itementry.var_d0e99a2a = var_d0e99a2a;
+                point.itementry.var_8e212f46 = var_8e212f46;
+                point.itementry.var_3e805062 = var_3e805062;
             }
         }
         if (isdefined(point) && isdefined(str_aat)) {
             point.aat = str_aat;
         }
-        if (isdefined(point.var_a6762160.var_a53e9db0)) {
-            weapon = namespace_65181344::function_67456242(point.var_a6762160);
+        if (isdefined(point.itementry.var_a53e9db0)) {
+            weapon = namespace_65181344::function_67456242(point.itementry);
             dropitem = item_drop::drop_item(0, weapon, 1, weapon.maxammo, point.id, self.origin, self.angles);
             dropitem.hidetime = 1;
             dropitem hide();
@@ -259,7 +259,7 @@ function function_e3871553(var_4d2ad93e) {
     }
     if (isdefined(self.currentweapon)) {
         weapon = zm_weapons::get_base_weapon(self.currentweapon);
-        if ((weapon.weapclass === "melee" || is_true(weapon.issniperweapon) || weapon.weapclass === #"pistol") && (level.var_50c8366e % 3 == 0 || level.var_50c8366e >= 6) || is_true(weapon.islauncher) && var_27751b99 == 0 || weapon.name === #"special_crossbow_t9" && level.var_50c8366e >= 3) {
+        if ((weapon.weapclass === "melee" || is_true(weapon.issniperweapon) || weapon.weapclass === #"pistol") && (level.wave_number % 3 == 0 || level.wave_number >= 6) || is_true(weapon.islauncher) && var_27751b99 == 0 || weapon.name === #"special_crossbow_t9" && level.wave_number >= 3) {
             self thread zm_vo::function_8abe0568(#"game_over");
         }
     }
@@ -276,11 +276,11 @@ function function_e3871553(var_4d2ad93e) {
         var_a781b3e1 = item_inventory::get_inventory_item(networkid);
         weapon = item_inventory::get_current_weapon();
         if (var_27751b99 > 0) {
-            var_a781b3e1.var_a8bccf69 = var_27751b99;
+            var_a781b3e1.paplv = var_27751b99;
         }
         var_a781b3e1.aat = str_aat;
-        if (isdefined(var_a781b3e1.var_a8bccf69)) {
-            self clientfield::set_player_uimodel("pap_current", var_a781b3e1.var_a8bccf69);
+        if (isdefined(var_a781b3e1.paplv)) {
+            self clientfield::set_player_uimodel("pap_current", var_a781b3e1.paplv);
         } else {
             self clientfield::set_player_uimodel("pap_current", 0);
         }

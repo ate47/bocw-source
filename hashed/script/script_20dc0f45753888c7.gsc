@@ -109,9 +109,9 @@ function function_659d1778(attacker) {
         }
         all_targets = [];
         var_739bcc52 = function_72d3bca6(var_739bcc52, self.origin, undefined, undefined, 120);
-        var_98d232c6 = getentitiesinradius(self.origin, 110, 15);
-        var_98d232c6 = arraycombine(var_739bcc52, var_98d232c6, 0, 0);
-        foreach (ai in var_98d232c6) {
+        ai_targets = getentitiesinradius(self.origin, 110, 15);
+        ai_targets = arraycombine(var_739bcc52, ai_targets, 0, 0);
+        foreach (ai in ai_targets) {
             waitframe(1);
             if (isalive(ai) && ai.var_9fde8624 !== #"hash_2a5479b83161cb35") {
                 damage = 3;
@@ -120,14 +120,14 @@ function function_659d1778(attacker) {
                     if (round > 35) {
                         round = 35;
                     }
-                    var_67866c7d = round - 2 + 1;
-                    var_5a3c0fab = 1.2;
-                    var_e2d3357 = pow(var_5a3c0fab, var_67866c7d);
+                    adjustment_rounds = round - 2 + 1;
+                    adjustment_percentage = 1.2;
+                    var_e2d3357 = pow(adjustment_percentage, adjustment_rounds);
                     damage = int(damage * var_e2d3357);
                 }
                 if (isvehicle(ai) && isdefined(ai.maxhealth)) {
-                    var_686ce9bd = ai.maxhealth * 0.025;
-                    damage = int(min(damage, var_686ce9bd));
+                    damage_cap = ai.maxhealth * 0.025;
+                    damage = int(min(damage, damage_cap));
                 }
                 if (isalive(ai)) {
                     if (damage >= ai.health && !is_true(ai.var_b70158b5)) {
@@ -142,7 +142,7 @@ function function_659d1778(attacker) {
                     }
                     if (isplayer(attacker)) {
                         point = aiutility::function_cb552839(ai);
-                        hud::function_c9800094(attacker, point, damage, 1, self namespace_42457a0::function_1b3815a7(#"hash_16b5c37d8feae38c"));
+                        hud::function_c9800094(attacker, point, damage, 1, self namespace_42457a0::function_1b3815a7(#"toxic"));
                     }
                 }
             }

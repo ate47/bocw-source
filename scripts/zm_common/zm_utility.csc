@@ -18,18 +18,18 @@
 // Checksum 0x64f2a5a9, Offset: 0x298
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_utility", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_utility", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_utility/zm_utility
 // Params 0, eflags: 0x6 linked
 // Checksum 0x76c15218, Offset: 0x2f0
 // Size: 0x4a4
-function private function_70a657d8() {
+function private preinit() {
     level._effect[#"zm_zone_edge_marker"] = #"hash_3002526b7ff53cbf";
     clientfield::register_clientuimodel("hudItems.armorType", #"hash_6f4b11a0bee9b73d", #"armortype", 1, 2, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("hudItems.armorPercent", #"hash_6f4b11a0bee9b73d", #"armorpercent", 1, 7, "float", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.scrap", #"hash_6f4b11a0bee9b73d", #"hash_568103fb62eae412", 1, 16, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.scrap", #"hash_6f4b11a0bee9b73d", #"scrap", 1, 16, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("hudItems.rareScrap", #"hash_6f4b11a0bee9b73d", #"hash_d6fdfc12ead24ba", 1, 16, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("pap_current", #"zm_hud", #"hash_64f2ff2ddddbe9c7", 1, 2, "int", undefined, 0, 0);
     clientfield::register("toplayer", "zm_zone_out_of_bounds", 1, 1, "int", &zm_zone_out_of_bounds, 0, 0);
@@ -39,8 +39,8 @@ function private function_70a657d8() {
     clientfield::register("scriptmover", "force_stream", 1, 1, "int", &force_stream_changed, 0, 0);
     callback::on_localclient_connect(&on_localclient_connect);
     for (i = 0; i < 5; i++) {
-        clientfield::function_5b7d846d("PlayerList.client" + i + ".playerIsDowned", #"hash_97df1852304b867", [1:#"playerisdowned", 0:hash(isdefined(i) ? "" + i : "")], 1, 1, "int", undefined, 0, 0);
-        clientfield::function_5b7d846d("PlayerList.client" + i + ".self_revives", #"hash_97df1852304b867", [1:#"self_revives", 0:hash(isdefined(i) ? "" + i : "")], 1, 8, "int", undefined, 0, 0);
+        clientfield::function_5b7d846d("PlayerList.client" + i + ".playerIsDowned", #"hash_97df1852304b867", [hash(isdefined(i) ? "" + i : ""), #"playerisdowned"], 1, 1, "int", undefined, 0, 0);
+        clientfield::function_5b7d846d("PlayerList.client" + i + ".self_revives", #"hash_97df1852304b867", [hash(isdefined(i) ? "" + i : ""), #"self_revives"], 1, 8, "int", undefined, 0, 0);
     }
 }
 
@@ -125,13 +125,13 @@ function halve_score(n_score) {
 // Params 7, eflags: 0x0
 // Checksum 0x9dc63562, Offset: 0x950
 // Size: 0xe0
-function spawn_weapon_model(localclientnum, weapon, model = weapon.worldmodel, origin, angles, var_57fe74e5, var_fd90b0bb) {
+function spawn_weapon_model(localclientnum, weapon, model = weapon.worldmodel, origin, angles, renderoptionsweapon, var_fd90b0bb) {
     weapon_model = spawn(localclientnum, origin, "script_model");
     if (isdefined(angles)) {
         weapon_model.angles = angles;
     }
-    if (isdefined(var_57fe74e5) || isdefined(var_fd90b0bb)) {
-        weapon_model useweaponmodel(weapon, model, var_57fe74e5, var_fd90b0bb);
+    if (isdefined(renderoptionsweapon) || isdefined(var_fd90b0bb)) {
+        weapon_model useweaponmodel(weapon, model, renderoptionsweapon, var_fd90b0bb);
     } else {
         weapon_model useweaponmodel(weapon, model);
     }

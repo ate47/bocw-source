@@ -15,14 +15,14 @@
 // Checksum 0x309785b6, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"bouncingbetty", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"bouncingbetty", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace bouncingbetty/zm_weap_bouncingbetty
 // Params 0, eflags: 0x4
 // Checksum 0xcacdcac7, Offset: 0x120
 // Size: 0x114
-function private function_70a657d8() {
+function private preinit() {
     level._proximityweaponobjectdetonation_override = &proximityweaponobjectdetonation_override;
     init_shared();
     zm_placeable_mine::add_mine_type("bouncingbetty", #"zombie/betty_pickup");

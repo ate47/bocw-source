@@ -18,14 +18,14 @@
 // Checksum 0x266f03d0, Offset: 0x190
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_60e9e594b4389b03", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_60e9e594b4389b03", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_77b8863/namespace_77b8863
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd4852f0a, Offset: 0x1d8
 // Size: 0x8c
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_main_callback(#"dust_ball", &function_c346ef73);
     clientfield::register("scriptmover", "towers_boss_dust_ball_fx", 1, getminbitcountfornum(4), "int");
     /#
@@ -232,7 +232,7 @@ function function_ef0bfb9d() {
         alltargets = arraycombine(zombiesarray, alltargets, 0, 0);
         foreach (target in alltargets) {
             distsqtotarget = distancesquared(target.origin, self function_d3a9800e());
-            if (distsqtotarget <= function_a3f6cdac(self.settings.damage_radius)) {
+            if (distsqtotarget <= sqr(self.settings.damage_radius)) {
                 if (isdefined(target.archetype)) {
                     target zombie_utility::setup_zombie_knockdown(self);
                     target.knockdown_type = "knockdown_shoved";
@@ -316,11 +316,11 @@ function function_419f8ccb() {
         }
         if (isdefined(self.favoriteenemy)) {
             distfromplayer = distancesquared(self.origin, self.favoriteenemy.origin);
-            if (distfromplayer < function_a3f6cdac(self.settings.var_2c001f55) && !is_true(self.var_8d5279eb)) {
+            if (distfromplayer < sqr(self.settings.var_2c001f55) && !is_true(self.var_8d5279eb)) {
                 self.fxent clientfield::set("towers_boss_dust_ball_fx", 2);
                 self.var_8d5279eb = 1;
             }
-            if (distfromplayer < function_a3f6cdac(self.settings.var_7e3165c1)) {
+            if (distfromplayer < sqr(self.settings.var_7e3165c1)) {
                 self vehicle_ai::set_state("death");
             }
         }

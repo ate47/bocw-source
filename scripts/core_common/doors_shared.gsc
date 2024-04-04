@@ -78,21 +78,21 @@ class cdoor {
     // Params 1, eflags: 0x2 linked
     // Checksum 0x6234a0da, Offset: 0x11b0
     // Size: 0x1a0
-    function open(var_da089436) {
+    function open(opener) {
         if (self.m_str_type === "breach" && !is_true(self.var_9bc2acd6)) {
             self notify(#"hash_722c5466076f75cf");
             self.var_9bc2acd6 = 1;
         } else {
-            set_player_who_opened(var_da089436);
+            set_player_who_opened(opener);
             if (self flag::get("open") && self flag::get("door_pushable") && is_true(self.var_c4c3fa39)) {
-                self namespace_64f6ea7a::function_dbcccc08(self.var_22fae777, 1);
+                self namespace_64f6ea7a::push_door(self.var_22fae777, 1);
             } else {
                 self flag::set("open");
             }
         }
         if (isdefined(self.var_d1c4f848) && self.var_d1c4f848.c_door flag::get("open") == 0) {
             self.var_d1c4f848.c_door.var_c4c3fa39 = self.var_c4c3fa39;
-            thread [[ self.var_d1c4f848.c_door ]]->open(var_da089436);
+            thread [[ self.var_d1c4f848.c_door ]]->open(opener);
         }
     }
 
@@ -286,25 +286,25 @@ class cdoor {
     // Params 1, eflags: 0x2 linked
     // Checksum 0xeff5114d, Offset: 0x2dd8
     // Size: 0x1b2
-    function function_61d3d3da(var_da089436) {
+    function function_61d3d3da(opener) {
         var_cd167873 = 1;
         if (sessionmodeiscampaigngame()) {
-            if (!isdefined(var_da089436)) {
-                var_da089436 = getplayers()[0];
+            if (!isdefined(opener)) {
+                opener = getplayers()[0];
             }
         }
-        if (isdefined(var_da089436)) {
+        if (isdefined(opener)) {
             v_player_forward = undefined;
-            if (isactor(var_da089436)) {
-                v_velocity = var_da089436 getvelocity();
+            if (isactor(opener)) {
+                v_velocity = opener getvelocity();
                 v_velocity = (v_velocity[0], v_velocity[1], 0);
-                if (function_d6eaf8b0(v_velocity) == 0) {
-                    v_player_forward = anglestoforward(var_da089436.angles);
+                if (length2dsquared(v_velocity) == 0) {
+                    v_player_forward = anglestoforward(opener.angles);
                 } else {
                     v_player_forward = vectornormalize(v_velocity);
                 }
             } else {
-                v_player_angles = var_da089436 getplayerangles();
+                v_player_angles = opener getplayerangles();
                 v_player_forward = anglestoforward((0, v_player_angles[1], 0));
             }
             var_7a69da4c = anglestoforward(self.m_e_door.angles);
@@ -513,7 +513,7 @@ class cdoor {
         self.m_e_door notify(#"door_opened");
         if (!var_478039b9) {
             if (is_true(self.m_s_bundle.b_loop_sound)) {
-                sndent function_cb48cddd();
+                sndent deletedelay();
             }
         }
         if (var_f10e2163) {
@@ -523,7 +523,7 @@ class cdoor {
             self flag::set("door_second_interact");
             self function_f584b243(1);
             var_da3e0b97 = isdefined(self.var_9b9642be) && isplayer(self.var_9b9642be);
-            self thread namespace_64f6ea7a::function_ecae2d5a(var_da3e0b97);
+            self thread namespace_64f6ea7a::suspicious_door_stealth_check(var_da3e0b97);
             if (self namespace_64f6ea7a::function_9d109db6()) {
                 self flag::set("door_pushable");
             }
@@ -787,7 +787,7 @@ class cdoor {
         self.var_85f2454d.origin = self.m_e_door.origin;
         self.var_85f2454d.angles = self.m_e_door.angles;
         self.var_85f2454d.var_c4269c41 = self doors::function_eea7cdb4();
-        self.var_85f2454d.var_91e5d49f = self doors::function_5869e01();
+        self.var_85f2454d.doorbottomcenter = self doors::get_door_bottom_center();
         self.m_e_door thread doors::function_fa74d5cd(self);
         if (isdefined(s_door_instance.linkname)) {
             self.var_e1477b7c = getentarray(s_door_instance.linkname, "linkto");
@@ -1340,14 +1340,14 @@ class cdoor {
 // Checksum 0xa8f79900, Offset: 0x6140
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"doors", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"doors", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace doors/doors_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x7f0c093, Offset: 0x6198
 // Size: 0xe4
-function private function_70a657d8() {
+function private preinit() {
     level.var_1def7d37 = [];
     util::init_dvar("scr_door_bash_requires_use", 0, &function_bae7ed2e);
     util::init_dvar("scr_door_player_gestures", 1, &function_bae7ed2e);
@@ -1355,7 +1355,7 @@ function private function_70a657d8() {
     /#
         init_dvar("<unknown string>", 0, &function_bae7ed2e);
     #/
-    callback::on_spawned(&function_49d51d56);
+    callback::on_spawned(&bash_monitor);
 }
 
 // Namespace doors/doors_shared
@@ -1517,11 +1517,11 @@ function init() {
     if (!isdefined(self.angles)) {
         self.angles = (0, 0, 0);
     }
-    var_fc96f513 = isdefined(self.var_e87a94f3) ? self.var_e87a94f3 : self.scriptbundlename;
-    if (!isdefined(var_fc96f513)) {
+    bundle_name = isdefined(self.var_e87a94f3) ? self.var_e87a94f3 : self.scriptbundlename;
+    if (!isdefined(bundle_name)) {
         return;
     }
-    s_door_bundle = getscriptbundle(var_fc96f513);
+    s_door_bundle = getscriptbundle(bundle_name);
     c_door = new cdoor();
     return setup_door_info(s_door_bundle, self, c_door);
 }
@@ -1664,7 +1664,7 @@ function setup_door_info(s_door_bundle, s_door_instance, c_door) {
     [[ c_door ]]->init_door_model(e_or_str_door_model, s_door_instance);
     [[ c_door ]]->init_trigger(v_trigger_offset, n_trigger_radius, c_door.m_s_bundle);
     c_door function_d374e3dd(0);
-    c_door thread namespace_64f6ea7a::function_868158();
+    c_door thread namespace_64f6ea7a::init_max_yaws();
     [[ c_door ]]->init_player_spawns();
     thread [[ c_door ]]->run_lock_fx();
     [[ c_door ]]->init_movement(str_slide_dir, n_slide_amount);
@@ -1700,15 +1700,15 @@ function debug_draw() {
     /#
         if (isdefined(self.m_e_door)) {
             self.m_e_door endon(#"death");
-            var_4b6c578e = self.m_e_door getentitynumber();
+            ent_num = self.m_e_door getentitynumber();
             while (true) {
                 var_9599e270 = level.var_1def7d37[#"hash_5171254138328d84"];
                 if (var_9599e270 <= 0) {
                     level waittill(#"hash_5171254138328d84");
                     continue;
                 }
-                if (var_9599e270 == 1 || var_9599e270 == var_4b6c578e) {
-                    self function_75697b7d(var_4b6c578e);
+                if (var_9599e270 == 1 || var_9599e270 == ent_num) {
+                    self function_75697b7d(ent_num);
                 }
                 waitframe(1);
             }
@@ -1720,7 +1720,7 @@ function debug_draw() {
 // Params 1, eflags: 0x0
 // Checksum 0x44356b1a, Offset: 0x7928
 // Size: 0xaf4
-function function_75697b7d(var_4b6c578e) {
+function function_75697b7d(ent_num) {
     /#
         /#
             assert(isdefined(self.m_e_door));
@@ -1732,8 +1732,8 @@ function function_75697b7d(var_4b6c578e) {
         start = self.m_e_door.origin + vectorscale((0, 0, 1), 20);
         line(start, start + var_ed80ebc4 * 5, (0, 1, 0), 1);
         line(start, start + var_5e92800d * 5, (1, 0, 0), 1);
-        print3d(self.m_e_door.origin + vectorscale((0, 0, -1), 5), "<unknown string>" + self.m_s_bundle.name + "<unknown string>" + var_4b6c578e, (1, 1, 1), 1, 0.1);
-        center = self function_810b782f(1);
+        print3d(self.m_e_door.origin + vectorscale((0, 0, -1), 5), "<unknown string>" + self.m_s_bundle.name + "<unknown string>" + ent_num, (1, 1, 1), 1, 0.1);
+        center = self get_door_center(1);
         center = center + vectorscale((0, 0, -1), 5);
         if (is_true(self.var_d587661f)) {
             print3d(center + vectorscale((0, 0, -1), 5), "<unknown string>" + self.var_d587661f, (1, 0, 0), 1, 0.1);
@@ -1797,20 +1797,20 @@ function function_75697b7d(var_4b6c578e) {
         } else if (isdefined(self.m_e_door.mdl_gameobject) && isdefined(self.m_e_door.mdl_gameobject.trigger)) {
             debugstar(self.m_e_door.mdl_gameobject.trigger.origin, 1, var_a011b978, "<unknown string>" + self.m_e_door.mdl_gameobject getentitynumber() + "<unknown string>" + self.m_e_door.mdl_gameobject.trigger getentitynumber() + var_6143a8d8, 0.1);
         } else {
-            print3d(self.m_e_door.origin, "<unknown string>" + var_4b6c578e + var_6143a8d8, var_a011b978, 1, 0.1, 1);
+            print3d(self.m_e_door.origin, "<unknown string>" + ent_num + var_6143a8d8, var_a011b978, 1, 0.1, 1);
         }
         if (isdefined(self.m_s_bundle) && (self.m_s_bundle.door_open_method == "<unknown string>" || self.m_s_bundle.door_open_method == "<unknown string>")) {
             if (isdefined(self.var_15695d13)) {
-                self thread function_169d561(1);
+                self thread draw_max_yaw(1);
             }
             if (isdefined(self.var_ca91d615)) {
-                self thread function_169d561(0);
+                self thread draw_max_yaw(0);
             }
         }
-        if (var_4b6c578e === level.var_8e7ad5cb) {
+        if (ent_num === level.var_8e7ad5cb) {
             before = level.var_1def7d37[#"hash_5171254138328d84"];
             level.var_1def7d37[#"hash_5171254138328d84"] = 2;
-            self function_868158();
+            self init_max_yaws();
             level.var_8e7ad5cb = undefined;
             level.var_1def7d37[#"hash_5171254138328d84"] = before;
         }
@@ -2160,7 +2160,7 @@ function function_5db0cee5(c_door) {
     }
     thread [[ c_door ]]->open_internal();
     if (c_door namespace_64f6ea7a::function_9d109db6()) {
-        c_door thread namespace_64f6ea7a::function_eee2b839();
+        c_door thread namespace_64f6ea7a::monitor_door_push();
     }
 }
 
@@ -2218,7 +2218,7 @@ function function_dc98f943(c_door) {
         e_door util::function_5d36c37a();
     }
     target_set(e_door);
-    level notify(#"hash_9db88375ef038b", {#player:waitresult.player, #c_door:c_door});
+    level notify(#"hash_9db88375ef038b", {#c_door:c_door, #player:waitresult.player});
     e_door val::set(#"hash_25bedd86747e41e1", "takedamage", 1);
     e_door val::set(#"hash_25bedd86747e41e1", "allowdeath", 1);
     if (isdefined(c_door.m_s_bundle.registersidestepshouldstun)) {
@@ -2956,11 +2956,11 @@ function function_c2758350() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x789ea5ec, Offset: 0xc088
 // Size: 0xe6
-function function_810b782f(var_225a57cd = 0) {
+function get_door_center(var_225a57cd = 0) {
     if (var_225a57cd && isdefined(self.var_48f481cb)) {
         return (self.var_48f481cb + vectorscale((0, 0, 1), 55));
     }
-    angles = self function_d38f4479(var_225a57cd);
+    angles = self get_door_angles(var_225a57cd);
     var_9ba2a2c = getxmodelcenteroffset(self.m_e_door.model, 1);
     var_9998d3ec = rotatepoint(var_9ba2a2c, angles);
     return self.m_e_door.origin + (var_9998d3ec[0], var_9998d3ec[1], 55);
@@ -2970,7 +2970,7 @@ function function_810b782f(var_225a57cd = 0) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x5d88ae3d, Offset: 0xc178
 // Size: 0xe2
-function function_5869e01(var_225a57cd = 0) {
+function get_door_bottom_center(var_225a57cd = 0) {
     if (var_225a57cd == 0) {
         point = self.m_e_door.origin + self function_eea7cdb4() * self.var_e9da41b9 * 0.5;
         return point;
@@ -2978,7 +2978,7 @@ function function_5869e01(var_225a57cd = 0) {
     if (isdefined(self.var_48f481cb)) {
         return self.var_48f481cb;
     }
-    self.var_48f481cb = self function_810b782f();
+    self.var_48f481cb = self get_door_center();
     self.var_48f481cb = (self.var_48f481cb[0], self.var_48f481cb[1], self.m_e_door.origin[2]);
     return self.var_48f481cb;
 }
@@ -2987,7 +2987,7 @@ function function_5869e01(var_225a57cd = 0) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x2c34936c, Offset: 0xc268
 // Size: 0x58
-function function_d38f4479(var_225a57cd = 0) {
+function get_door_angles(var_225a57cd = 0) {
     if (isdefined(self.m_e_door) && !var_225a57cd) {
         return self.m_e_door.angles;
     }
@@ -2998,22 +2998,22 @@ function function_d38f4479(var_225a57cd = 0) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x1224fbcb, Offset: 0xc2c8
 // Size: 0x286
-function private function_d47ab921(player) {
+function private door_bashable_by_player(player) {
     if (is_true(self.var_d587661f) || is_true(self.var_14382d8d) || !self flag::get("door_pushable") && (is_true(self flag::get("door_fully_open")) || is_true(self.var_c4c3fa39))) {
         /#
-            self.var_41b735b8 = "<unknown string>";
+            self.debug_activity = "<unknown string>";
         #/
         return false;
     }
     if (player getcurrentweapon() == level.weaponnone) {
         return false;
     }
-    var_9c77e513 = anglestoforward((0, self.m_e_door.angles[1], 0));
+    doorfwd = anglestoforward((0, self.m_e_door.angles[1], 0));
     var_7636f9c2 = anglestoforward((0, self.var_85f2454d.angles[1], 0));
-    if (vectordot(var_9c77e513, var_7636f9c2) < 0.5) {
+    if (vectordot(doorfwd, var_7636f9c2) < 0.5) {
         return false;
     }
-    var_e5959a30 = self function_5869e01();
+    var_e5959a30 = self get_door_bottom_center();
     var_e5959a30 = (var_e5959a30[0], var_e5959a30[1], player.origin[2]);
     if (util::within_fov(player.origin, player function_c2758350(), var_e5959a30, 0.77)) {
         return true;
@@ -3038,14 +3038,14 @@ function private function_c177702e() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xf8eb3d8d, Offset: 0xc598
 // Size: 0x1dc
-function private function_5622c3c1(player) {
+function private should_bash_open(player) {
     /#
-        self thread function_e02f357a(1);
+        self thread bash_debug(1);
     #/
-    if (function_d47ab921(player)) {
+    if (door_bashable_by_player(player)) {
         if (player ismeleeing()) {
             /#
-                self thread function_e02f357a(1000);
+                self thread bash_debug(1000);
             #/
             return true;
         }
@@ -3057,18 +3057,18 @@ function private function_5622c3c1(player) {
                 return false;
             }
         }
-        var_a0621713 = length(player getvelocity());
-        if (var_a0621713 < 50) {
+        playerspeed = length(player getvelocity());
+        if (playerspeed < 50) {
             return false;
         }
-        vec = vectornormalize(player getplayercamerapos() - self function_810b782f());
+        vec = vectornormalize(player getplayercamerapos() - self get_door_center());
         var_ed80ebc4 = self function_fb354714();
         var_9bd4d937 = vectordot(vec, var_ed80ebc4);
         if (abs(var_9bd4d937) < 0.4) {
             return false;
         }
         /#
-            self thread function_e02f357a(1000);
+            self thread bash_debug(1000);
         #/
         return true;
     }
@@ -3079,16 +3079,16 @@ function private function_5622c3c1(player) {
 // Params 1, eflags: 0x4
 // Checksum 0x76fc2f69, Offset: 0xc780
 // Size: 0x394
-function private function_e02f357a(duration) {
+function private bash_debug(duration) {
     /#
         if (level.var_1def7d37[#"hash_5171254138328d84"]) {
             var_1a23fa7 = [];
             var_c03beac5 = [];
-            var_1a23fa7[0] = self function_5869e01();
+            var_1a23fa7[0] = self get_door_bottom_center();
             var_c03beac5[0] = 0.77;
             var_1a23fa7[1] = self function_c177702e();
             var_c03beac5[1] = 0.866;
-            center = self function_810b782f();
+            center = self get_door_center();
             player = level.players[0];
             line(player.origin, center, (1, 1, 1), 1, 0, duration);
             line(player.origin, player.origin + anglestoforward(player getplayerangles()) * 32, (1, 0.5, 0), 1, 0, duration);
@@ -3115,7 +3115,7 @@ function private function_e02f357a(duration) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x4aa3e020, Offset: 0xcb20
 // Size: 0x122
-function private function_4cd0aad(velocity) {
+function private bashed_locked_door(velocity) {
     velocity = velocity;
     player = self.var_22fae777;
     player endon(#"death");
@@ -3123,9 +3123,9 @@ function private function_4cd0aad(velocity) {
         return;
     }
     self.var_85a57869 = 1;
-    thread function_a555eafd();
+    thread bashed_locked_door_sfx();
     self notify(#"hash_55f12a31ee0b246e");
-    player viewkick(10, self function_810b782f());
+    player viewkick(10, self get_door_center());
     earthquake(1, 0.3, player.origin, 75);
     player playrumbleonentity("damage_heavy");
     while (player ismeleeing()) {
@@ -3138,7 +3138,7 @@ function private function_4cd0aad(velocity) {
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd4ddceac, Offset: 0xcc50
 // Size: 0x154
-function private function_a555eafd() {
+function private bashed_locked_door_sfx() {
     player = self.var_22fae777;
     if (isdefined(self.m_s_bundle.var_7240cb7d)) {
         playfx(self.m_s_bundle.var_7240cb7d, self.m_e_door.origin + vectorscale((0, 0, 1), 42));
@@ -3150,7 +3150,7 @@ function private function_a555eafd() {
         org = spawn("script_origin", self.m_e_door.origin + vectorscale((0, 0, 1), 42));
         org playsoundwithnotify(self.m_s_bundle.var_8c3db964, "sounddone");
         org waittill(#"sounddone");
-        org function_cb48cddd();
+        org deletedelay();
     }
 }
 
@@ -3158,7 +3158,7 @@ function private function_a555eafd() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x4ec980b6, Offset: 0xcdb0
 // Size: 0x1ba
-function private function_49d51d56() {
+function private bash_monitor() {
     self endon(#"death");
     while (true) {
         ents = getentitiesinradius(self.origin, 60, 6);
@@ -3166,8 +3166,8 @@ function private function_49d51d56() {
             if (isdefined(ent.c_door)) {
                 c_door = ent.c_door;
                 if ((c_door flag::get("door_pushable") || !c_door flag::get("open")) && !c_door flag::get("locked") && !c_door flag::get("animating")) {
-                    if (c_door function_dd965dab(self) && c_door function_5622c3c1(self)) {
-                        c_door thread function_b29052a(self);
+                    if (c_door bash_door_isplayerclose(self) && c_door should_bash_open(self)) {
+                        c_door thread door_bash_open(self);
                     }
                 }
             }
@@ -3180,10 +3180,10 @@ function private function_49d51d56() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x178d3906, Offset: 0xcf78
 // Size: 0x104
-function function_dd965dab(player) {
+function bash_door_isplayerclose(player) {
     z = abs(player.origin[2] - self.m_e_door.origin[2]);
     if (z < 35) {
-        endpoint = self function_5869e01();
+        endpoint = self get_door_bottom_center();
         if (!isdefined(endpoint)) {
             endpoint = self.m_e_door.origin;
         }
@@ -3200,16 +3200,16 @@ function function_dd965dab(player) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xd8cf52d8, Offset: 0xd088
 // Size: 0x16c
-function function_b29052a(var_84e2c431, var_a6028302 = 0, var_d14527df) {
-    self endon(#"hash_29b88049dcac8bb3");
+function door_bash_open(var_84e2c431, var_a6028302 = 0, var_d14527df) {
+    self endon(#"entitydeleted");
     self.var_22fae777 = var_84e2c431;
     if (self flag::get("locked") && isinarray(level.players, var_84e2c431)) {
-        self function_4cd0aad(var_84e2c431 getvelocity());
+        self bashed_locked_door(var_84e2c431 getvelocity());
         return;
     }
     if (isplayer(var_84e2c431)) {
         if (!var_a6028302) {
-            self function_b0935b06(var_84e2c431);
+            self door_bash_presentation(var_84e2c431);
         }
         var_84e2c431 notify(#"hash_5676dcd12f1089f9", self);
         level thread function_df978de8(450, "door_bash", var_84e2c431, var_d14527df);
@@ -3239,7 +3239,7 @@ function private function_14c2fe40(player) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x5db41676, Offset: 0xd2e0
 // Size: 0xf4
-function private function_b0935b06(player) {
+function private door_bash_presentation(player) {
     if (player meleebuttonpressed() && !player issprinting()) {
         if (function_14c2fe40(player)) {
             player thread function_b391c0a0("ges_door_bash", undefined);
@@ -3271,7 +3271,7 @@ function private function_df978de8(radius, event, var_84e2c431, var_d14527df) {
 // Checksum 0x914f7c1b, Offset: 0xd530
 // Size: 0x2c
 function private function_65028b88(var_248cbbcf) {
-    self.c_door thread function_b29052a(var_248cbbcf.player);
+    self.c_door thread door_bash_open(var_248cbbcf.player);
 }
 
 // Namespace doors/doors_shared
@@ -3286,7 +3286,7 @@ function private function_8d016934(var_248cbbcf) {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x21cd5d7a, Offset: 0xd598
 // Size: 0x44
-function private function_38746391() {
+function private should_do_gesture() {
     if (level.var_1def7d37[#"scr_door_player_gestures"] == 0) {
         return false;
     }
@@ -3307,9 +3307,9 @@ function private player_door_gesture(gesture) {
         return;
     }
     target = util::spawn_model("tag_origin", self.origin, self function_c2758350());
-    if (self function_38746391()) {
+    if (self should_do_gesture()) {
         self function_b391c0a0(gesture, target);
-        time = self function_64f4c271(gesture);
+        time = self getgestureanimlength(gesture);
         wait(time);
     }
     if (isdefined(target)) {
@@ -3356,7 +3356,7 @@ function private function_1e18148c() {
     var_69ede289 = vectortoangles(var_3d88b74f);
     var_80778410 = (var_33468886.var_e9da41b9 - 5) * function_98d85e14(var_33468886.var_b25124c7, (0, 0, 0)) + vectorscale((0, 0, 1), 47);
     var_fdd44597 = rotatepoint(var_80778410, var_69ede289);
-    level namespace_e10de4ad::function_63673f23(s_minigame, "lockpick");
+    level minigame::function_63673f23(s_minigame, "lockpick");
     s_minigame.angles = self.angles;
     s_minigame.classname = "scriptbundle_minigame_lockpick";
     s_minigame.modelscale = 1;
@@ -3364,7 +3364,7 @@ function private function_1e18148c() {
     s_minigame.require_look_at = 1;
     s_minigame.var_4e0f62f3 = "Exclusive";
     s_minigame.script_delete = 1;
-    s_minigame.var_730d113a = self.var_730d113a;
+    s_minigame.script_difficulty = self.script_difficulty;
     s_minigame.script_enable_on_start = 1;
     s_minigame.var_42c5101 = self.var_42c5101;
     s_minigame.var_5ebe1cc1 = 0;
@@ -3409,7 +3409,7 @@ function function_191c5a63() {
         offset = (isdefined(self.m_s_bundle.door_triggeroffsetx) ? self.m_s_bundle.door_triggeroffsetx : 0, isdefined(self.m_s_bundle.door_triggeroffsety) ? self.m_s_bundle.door_triggeroffsety : 0, max(isdefined(self.m_s_bundle.door_triggeroffsetz) ? self.m_s_bundle.door_triggeroffsetz : 0, 0));
     }
     var_754bedbb = offset[2] <= 0;
-    var_c29308f4 = {#var_531201f1:&function_82f0f91b, #groups:#"doors", #var_9a27c4ee:1, #var_8ce60046:1, #var_be77841a:0, #var_3c8a8153:1, #var_5e83875a:30, #var_71b9f0c0:240};
+    var_c29308f4 = {#var_71b9f0c0:240, #var_5e83875a:30, #var_3c8a8153:1, #var_be77841a:0, #var_8ce60046:1, #var_9a27c4ee:1, #groups:#"doors", #var_531201f1:&function_82f0f91b};
     if (isdefined(self.var_d1c4f848.c_door.m_e_door)) {
         var_c29308f4.var_27a7ecaa = self.var_d1c4f848.c_door.m_e_door;
         var_c29308f4.var_1e4cbecf = self.var_d1c4f848.c_door.m_e_door;
@@ -3442,7 +3442,7 @@ function function_191c5a63() {
         }
     }
     if (isdefined(level.var_a29d8d23)) {
-        self.m_e_door thread [[ level.var_a29d8d23 ]]({#var_754bedbb:var_754bedbb, #offset:offset});
+        self.m_e_door thread [[ level.var_a29d8d23 ]]({#offset:offset, #var_754bedbb:var_754bedbb});
     }
 }
 
@@ -3451,9 +3451,9 @@ function function_191c5a63() {
 // Checksum 0xb2477f4a, Offset: 0xe1c8
 // Size: 0xea
 function private function_cd4bfc24(var_248cbbcf) {
-    result = !is_true(self.c_door.var_d587661f) && !is_true(self.c_door.var_c4c3fa39) && self.c_door function_d47ab921(var_248cbbcf.player);
+    result = !is_true(self.c_door.var_d587661f) && !is_true(self.c_door.var_c4c3fa39) && self.c_door door_bashable_by_player(var_248cbbcf.player);
     if (!result && isdefined(self.c_door.var_d1c4f848.c_door)) {
-        result = self.c_door.var_d1c4f848.c_door function_d47ab921(var_248cbbcf.player);
+        result = self.c_door.var_d1c4f848.c_door door_bashable_by_player(var_248cbbcf.player);
     }
     return result;
 }

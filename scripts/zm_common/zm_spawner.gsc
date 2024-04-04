@@ -1286,7 +1286,7 @@ function zombie_death_event(zombie) {
     }
     if (isdefined(attacker) && isplayer(attacker) && attacker player_can_score_from_zombies()) {
         if (isdefined(zombie.script_parameters)) {
-            attacker notify(#"zombie_death_params", {#var_3ef38c68:is_true(zombie.completed_emerging_into_playable_area), #params:zombie.script_parameters});
+            attacker notify(#"zombie_death_params", {#params:zombie.script_parameters, #var_3ef38c68:is_true(zombie.completed_emerging_into_playable_area)});
         }
         if (isdefined(zombie.b_widows_wine_cocoon) && isdefined(zombie.e_widows_wine_player)) {
             attacker notify(#"widows_wine_kill", {#player:zombie.e_widows_wine_player});
@@ -1329,7 +1329,7 @@ function zombie_death_event(zombie) {
                 println("<unknown string>");
             #/
         }
-        if (zombie.var_6f84b820 === #"hash_72d4f2ad2e333eb4") {
+        if (zombie.var_6f84b820 === #"elite") {
             var_a8dede81 = 1;
             if (isarray(zombie.var_e293f8ac)) {
                 function_1eaaceab(zombie.var_e293f8ac);
@@ -1369,7 +1369,7 @@ function zombie_death_event(zombie) {
             attacker thread activecamo::function_896ac347(zombie.damageweapon, #"kills", 1);
             attacker zm_camos::function_7b29c2d2(zombie.damageweapon);
             attacker zm_stats::function_ef7d5199(zombie, zombie.damageweapon);
-            level thread telemetry::function_18135b72(#"hash_b88b6d2e0028e13", {#value:1, #statname:#"kills", #weapon:zombie.damageweapon, #player:attacker});
+            level thread telemetry::function_18135b72(#"hash_b88b6d2e0028e13", {#player:attacker, #weapon:zombie.damageweapon, #statname:#"kills", #value:1});
             if (zombie.damageweapon.statname === #"planemortar") {
                 if (!isdefined(attacker.planemortarbda)) {
                     attacker.planemortarbda = 0;
@@ -1546,7 +1546,7 @@ function function_dce9f1a6(spots) {
         if (!isdefined(current_zone)) {
             current_zone = player zm_utility::get_current_zone(1);
         }
-        var_1cb510f7[player getentitynumber()] = {#zone:current_zone, #valid:zombie_utility::is_player_valid(player, 1, 1), #count:0, #player:player};
+        var_1cb510f7[player getentitynumber()] = {#player:player, #count:0, #valid:zombie_utility::is_player_valid(player, 1, 1), #zone:current_zone};
     }
     zombies = getaiteamarray(level.zombie_team);
     arrayremovevalue(zombies, undefined);
@@ -1601,7 +1601,7 @@ function function_dce9f1a6(spots) {
         if (lengthsquared(v_player_dir) > 0) {
             zones = zm_quick_spawning::function_f1ec5df(player_info.player, v_player_dir, 1);
             for (i = 0; i < spots.size; i++) {
-                if (isdefined(spots[i].var_d51f4e2d) && gettime() - spots[i].var_d51f4e2d < 3000) {
+                if (isdefined(spots[i].spawned_timestamp) && gettime() - spots[i].spawned_timestamp < 3000) {
                     continue;
                 }
                 if (isdefined(player_info.zone) && spots[i].zone_name === player_info.zone.name) {
@@ -1653,7 +1653,7 @@ function function_dce9f1a6(spots) {
     if (isdefined(player_info)) {
         player = player_info.player;
     }
-    return {#player:player, #spot:array::random(a_candidates)};
+    return {#spot:array::random(a_candidates), #player:player};
 }
 
 // Namespace zm_spawner/zm_spawner
@@ -1772,7 +1772,7 @@ function do_zombie_spawn() {
         }
     }
     spot = function_20e7d186(spots);
-    spot.var_d51f4e2d = gettime();
+    spot.spawned_timestamp = gettime();
     self.spawn_point = spot;
     if (is_true(spot.var_15dd654e)) {
         self thread function_e28b5830(spot);
@@ -1834,7 +1834,7 @@ function function_20e7d186(var_493c4730) {
 // Size: 0xc0
 function function_65439499(spawn_points, var_12af83a0 = 5000) {
     foreach (point in spawn_points) {
-        if (isdefined(point.var_d51f4e2d) && gettime() - point.var_d51f4e2d > var_12af83a0) {
+        if (isdefined(point.spawned_timestamp) && gettime() - point.spawned_timestamp > var_12af83a0) {
             return point;
         }
     }

@@ -19,14 +19,14 @@
 // Checksum 0x58dc71bf, Offset: 0x1f8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"spawner", &function_70a657d8, undefined, &finalize, undefined);
+    system::register(#"spawner", &preinit, undefined, &finalize, undefined);
 }
 
 // Namespace spawner/spawner_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x7d906fef, Offset: 0x248
 // Size: 0x294
-function private function_70a657d8() {
+function private preinit() {
     level._ai_group = [];
     level.missionfailed = 0;
     level.deathflags = [];
@@ -38,7 +38,7 @@ function private function_70a657d8() {
     level.var_aa384fe2[#"node"] = &get_target_nodes;
     level.var_aa384fe2[#"struct"] = &get_target_structs;
     level.var_c4e6faf2[#"origin"] = &go_to_node_set_goal_pos;
-    level.var_c4e6faf2[#"ent"] = &function_ff965d89;
+    level.var_c4e6faf2[#"ent"] = &go_to_node_set_goal_ent;
     level.var_c4e6faf2[#"struct"] = &function_890856aa;
     level.var_c4e6faf2[#"node"] = &go_to_node_set_goal_node;
     spawners = getspawnerarray();
@@ -315,13 +315,13 @@ function spawn_think_action(spawner) {
         /#
             assert(self.script_ignoreme == 1, "<unknown string>");
         #/
-        self val::function_3e65ae71("ignoreme", 1);
+        self val::set_radiant("ignoreme", 1);
     }
     if (isdefined(self.script_ignoreall)) {
         /#
             assert(self.script_ignoreall == 1, "<unknown string>");
         #/
-        self val::function_3e65ae71("ignoreall", 1);
+        self val::set_radiant("ignoreall", 1);
     }
     if (isdefined(self.script_grenades)) {
         self.grenadeammo = self.script_grenades;
@@ -338,8 +338,8 @@ function spawn_think_action(spawner) {
     if (isdefined(self.var_1d78e529)) {
         self.delete_on_path_end = 1;
     }
-    if (isdefined(spawner.var_49138d27)) {
-        self.var_49138d27 = spawner.var_49138d27;
+    if (isdefined(spawner.script_demeanor)) {
+        self.script_demeanor = spawner.script_demeanor;
     }
     if (isdefined(spawner.var_b1d64777)) {
         self function_c0aa3e93(1);
@@ -507,7 +507,7 @@ function private function_b6317f7e(node) {
     }
     targetnode = getnode(node.target, "targetname");
     if (isdefined(targetnode) && node_has_radius(targetnode)) {
-        if (distancesquared(node.origin, targetnode.origin) < function_a3f6cdac(targetnode.radius)) {
+        if (distancesquared(node.origin, targetnode.origin) < sqr(targetnode.radius)) {
             return true;
         }
     }
@@ -672,7 +672,7 @@ function private go_to_node_using_funcs(node, optional_arrived_at_node_func, req
     }
     self notify(#"reached_path_end");
     if (isdefined(self.delete_on_path_end)) {
-        self function_cb48cddd();
+        self deletedelay();
     }
     self function_e63d4581();
 }
@@ -776,8 +776,8 @@ function private go_to_node_wait_for_player(node, get_target_func, dist) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x4d4de307, Offset: 0x2a70
 // Size: 0x24
-function private function_ff965d89(ent) {
-    self ai::function_6fdb87c7(ent);
+function private go_to_node_set_goal_ent(ent) {
+    self ai::set_goal_ent(ent);
 }
 
 // Namespace spawner/spawner_shared
@@ -811,7 +811,7 @@ function private function_890856aa(struct) {
 // Checksum 0x13dcde6f, Offset: 0x2bd0
 // Size: 0x24
 function private go_to_node_set_goal_node(node) {
-    self ai::function_e09d210c(node);
+    self ai::set_goal_node(node);
 }
 
 // Namespace spawner/spawner_shared
@@ -1108,7 +1108,7 @@ function set_ai_group_cleared_flag(tracker) {
 // Size: 0x24
 function trigger_requires_player(trigger) {
     if (!isdefined(trigger)) {
-        return 0;
+        return false;
     }
     return isdefined(trigger.script_requires_player);
 }
@@ -1758,9 +1758,9 @@ function simple_spawn(name_or_spawners, spawn_func, ...) {
         spawners = name_or_spawners;
     }
     a_spawned = [];
-    var_64190a32 = vararg[5];
+    bforcespawn = vararg[5];
     foreach (sp in spawners) {
-        e_spawned = sp spawn(var_64190a32);
+        e_spawned = sp spawn(bforcespawn);
         if (isdefined(e_spawned)) {
             if (isdefined(spawn_func)) {
                 util::single_thread_argarray(e_spawned, spawn_func, vararg);

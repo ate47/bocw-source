@@ -16,14 +16,14 @@
 // Checksum 0xa8e77d80, Offset: 0x4e8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_2f2eba883d5db256", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_2f2eba883d5db256", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
 // Params 0, eflags: 0x2 linked
 // Checksum 0x72066877, Offset: 0x530
 // Size: 0x2dc
-function function_70a657d8() {
+function preinit() {
     if (!isarchetypeloaded(#"soa")) {
         return;
     }
@@ -79,16 +79,16 @@ function function_e3c02e96(var_a6027132) {
 function function_911f421(localclientnum, entity) {
     fx = "zm_ai/fx9_soo_amb_torso";
     if (!is_true(entity.turned)) {
-        if (entity.var_58d5a6c8 === 1) {
+        if (entity.health_state === 1) {
             fx = "zm_ai/fx9_soo_amb_torso_health_md";
-        } else if (entity.var_58d5a6c8 === 2) {
+        } else if (entity.health_state === 2) {
             fx = "zm_ai/fx9_soo_amb_torso_health_low";
         }
     } else {
         fx = "zm_ai/fx9_soo_amb_torso_brain_rot";
-        if (entity.var_58d5a6c8 === 1) {
+        if (entity.health_state === 1) {
             fx = "zm_ai/fx9_soo_amb_torso_health_md_brain_rot";
-        } else if (entity.var_58d5a6c8 === 2) {
+        } else if (entity.health_state === 2) {
             fx = "zm_ai/fx9_soo_amb_torso_health_low_brain_rot";
         }
     }
@@ -147,7 +147,7 @@ function function_911b2ccd(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x6c
 function function_56f7804f(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
-        self.var_58d5a6c8 = bwastimejump;
+        self.health_state = bwastimejump;
         function_911f421(fieldname, self);
     }
 }
@@ -314,7 +314,7 @@ function function_537e9ae2(localclientnum, *oldval, newval, *bnewent, *binitials
             }
             var_8e463967 = level.var_65331992 beam::launch(level.var_65331992, "tag_fx_hand_ri_palm", var_ae236771, target_tag, var_f63cd008, 1);
             var_ca8291ac = level.var_65331992 beam::launch(level.var_65331992, "tag_fx_hand_ri_palm", var_ae236771, target_tag, var_b3c64082, 1);
-            var_6a339072 = {#target_ent:var_ae236771, #var_cff90d98:level.var_65331992, #secondary:var_ca8291ac, #primary:var_8e463967};
+            var_6a339072 = {#primary:var_8e463967, #secondary:var_ca8291ac, #var_cff90d98:level.var_65331992, #target_ent:var_ae236771};
             var_ae236771.var_89b07175[var_ae236771.var_89b07175.size] = var_6a339072;
             level.var_65331992.var_74fefd81 = var_6a339072;
         }

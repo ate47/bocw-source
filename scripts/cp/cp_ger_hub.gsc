@@ -11,7 +11,7 @@
 #using scripts\core_common\lui_shared.gsc;
 #using scripts\core_common\load_shared.gsc;
 #using scripts\core_common\animation_shared.gsc;
-#using script_272c4fcff156116d;
+#using scripts\core_common\activities_util.gsc;
 
 #namespace cp_ger_hub;
 
@@ -33,19 +33,19 @@ function event_handler[level_init] main(*eventstruct) {
 // Checksum 0x2c3629b7, Offset: 0x340
 // Size: 0x53c
 function function_5b503df2() {
-    skipto::add("chapter_selection", &namespace_31c67f6d::function_13fc27ea, &namespace_31c67f6d::function_4613fab8, "lab_start", undefined, [0:"safehouse"]);
-    skipto::add("character_creation", &namespace_31c67f6d::function_58f8a0d8, &namespace_31c67f6d::function_b438df4d, "lab_start", undefined, [1:"lab", 0:"safehouse"]);
-    skipto::add("post_takedown", &hub_post_takedown::main, &hub_post_takedown::starting, "safehouse_start", &hub_post_takedown::cleanup, [0:"safehouse"]);
-    skipto::add("post_takedown_skip_briefing", &hub_post_takedown::function_e695c6d4, &hub_post_takedown::function_e937a9b, "safehouse_start", undefined, [0:"safehouse"]);
-    skipto::add("post_takedown_skip_ambient", &hub_post_takedown::function_7fb12c66, &hub_post_takedown::function_c6fd7841, "safehouse_start", undefined, [0:"safehouse"]);
+    skipto::add("chapter_selection", &namespace_31c67f6d::function_13fc27ea, &namespace_31c67f6d::function_4613fab8, "lab_start", undefined, ["safehouse"]);
+    skipto::add("character_creation", &namespace_31c67f6d::function_58f8a0d8, &namespace_31c67f6d::function_b438df4d, "lab_start", undefined, ["safehouse", "lab"]);
+    skipto::add("post_takedown", &hub_post_takedown::main, &hub_post_takedown::starting, "safehouse_start", &hub_post_takedown::cleanup, ["safehouse"]);
+    skipto::add("post_takedown_skip_briefing", &hub_post_takedown::function_e695c6d4, &hub_post_takedown::function_e937a9b, "safehouse_start", undefined, ["safehouse"]);
+    skipto::add("post_takedown_skip_ambient", &hub_post_takedown::function_7fb12c66, &hub_post_takedown::function_c6fd7841, "safehouse_start", undefined, ["safehouse"]);
     skipto::add("post_armada", &hub_post_armada::main, &hub_post_armada::starting);
-    skipto::add("post_armada_skip_briefing", &hub_post_armada::function_428d9889, &hub_post_armada::function_7e4e7cf4, "safehouse_start", undefined, [0:"safehouse"]);
-    skipto::add("post_armada_skip_ambient", &hub_post_armada::function_d3875afa, &hub_post_armada::function_5ae6f952, "safehouse_start", undefined, [0:"safehouse"]);
-    skipto::add("post_yamantau", &hub_post_yamantau::main, &hub_post_yamantau::starting, "safehouse_start", undefined, [0:"safehouse"]);
-    skipto::add("post_yamantau_skip_briefing", &hub_post_yamantau::function_29390787, &hub_post_yamantau::function_6b03a78e, "safehouse_start", undefined, [0:"safehouse"]);
-    skipto::add("post_kgb", &hub_post_kgb::main, &hub_post_kgb::starting, "safehouse_start", undefined, [0:"safehouse"]);
-    skipto::add("post_kgb_skip_briefing", &hub_post_kgb::function_223f05aa, &hub_post_kgb::function_b58272a1, "safehouse_start", undefined, [0:"safehouse"]);
-    skipto::add("post_cuba", &hub_post_cuba::main, &hub_post_cuba::starting, "safehouse_start", undefined, [0:"safehouse"]);
+    skipto::add("post_armada_skip_briefing", &hub_post_armada::function_428d9889, &hub_post_armada::function_7e4e7cf4, "safehouse_start", undefined, ["safehouse"]);
+    skipto::add("post_armada_skip_ambient", &hub_post_armada::function_d3875afa, &hub_post_armada::function_5ae6f952, "safehouse_start", undefined, ["safehouse"]);
+    skipto::add("post_yamantau", &hub_post_yamantau::main, &hub_post_yamantau::starting, "safehouse_start", undefined, ["safehouse"]);
+    skipto::add("post_yamantau_skip_briefing", &hub_post_yamantau::function_29390787, &hub_post_yamantau::function_6b03a78e, "safehouse_start", undefined, ["safehouse"]);
+    skipto::add("post_kgb", &hub_post_kgb::main, &hub_post_kgb::starting, "safehouse_start", undefined, ["safehouse"]);
+    skipto::add("post_kgb_skip_briefing", &hub_post_kgb::function_223f05aa, &hub_post_kgb::function_b58272a1, "safehouse_start", undefined, ["safehouse"]);
+    skipto::add("post_cuba", &hub_post_cuba::main, &hub_post_cuba::starting, "safehouse_start", undefined, ["safehouse"]);
     /#
         function_67843f17("<unknown string>", &main, &starting, "<unknown string>");
         function_67843f17("<unknown string>", &main, &starting, "<unknown string>");
@@ -73,7 +73,7 @@ function function_b0bc875b() {
         } else if (var_93fe9edf >= skipto::function_3a4ee594(skipto::function_5011fee2("cp_ger_hub"))) {
             missionname = "cp_ger_hub";
         }
-        namespace_643f86fe::function_b73af3c(missionname);
+        activities::function_b73af3c(missionname);
         savegame::function_87dafd45(missionname);
         if (var_93fe9edf == skipto::function_3a4ee594(skipto::function_5011fee2(missionname))) {
             savegame::function_81534803(#"transient");

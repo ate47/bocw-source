@@ -49,7 +49,7 @@ function init() {
 function function_5a423724() {
     self endon(#"death");
     self.var_d9c5a0f9 = 0;
-    var_7756d233 = function_a3f6cdac(1500);
+    var_7756d233 = sqr(1500);
     while (true) {
         var_638f5ee0 = var_7756d233;
         if (isdefined(self.enemy)) {
@@ -98,7 +98,7 @@ function function_3b9ddd99() {
     self.goalradius = 2048;
     self.goalheight = 100;
     self.var_ec0d66ce = 0.5 * (self.settings.engagementdistmin + self.settings.engagementdistmax);
-    self.var_ff6d7c88 = function_a3f6cdac(self.var_ec0d66ce);
+    self.var_ff6d7c88 = sqr(self.var_ec0d66ce);
     self thread vehicle_ai::nudge_collision();
     self.health = 1000;
     self.maxhealth = 1000;
@@ -355,7 +355,7 @@ function function_1c4cd527(origin, owner, innerradius, outerradius, halfheight, 
         foreach (bat in level.doa.var_b95a5b86) {
             if (isdefined(bat.var_c8c5a7d3)) {
                 distsq = distancesquared(point.origin, bat.var_c8c5a7d3);
-                if (distsq <= function_a3f6cdac(300)) {
+                if (distsq <= sqr(300)) {
                     /#
                         if (!isdefined(point._scoredebug)) {
                             point._scoredebug = [];

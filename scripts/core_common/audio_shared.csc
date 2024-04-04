@@ -16,14 +16,14 @@
 // Checksum 0x72da57e1, Offset: 0x5d0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"audio", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"audio", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace audio/audio_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x3f51ca34, Offset: 0x618
 // Size: 0x184
-function private function_70a657d8() {
+function private preinit() {
     snd_snapshot_init();
     callback::on_localclient_connect(&player_init);
     callback::on_localplayer_spawned(&local_player_spawn);
@@ -1629,9 +1629,9 @@ function function_350920b9() {
 // Params 1, eflags: 0x0
 // Checksum 0x767f9a75, Offset: 0x5148
 // Size: 0x164
-function function_31468a30(var_c75c63c) {
+function function_31468a30(scriptstruct) {
     /#
-        soundloop = var_c75c63c.var_b6ce262a;
+        soundloop = scriptstruct.var_b6ce262a;
         if (isdefined(level.loopers)) {
             for (i = 0; i < level.loopers.size; i++) {
                 if (!isdefined(level.loopers[i].script_sound)) {
@@ -1654,11 +1654,11 @@ function function_31468a30(var_c75c63c) {
 // Params 1, eflags: 0x20
 // Checksum 0xfd855e30, Offset: 0x52b8
 // Size: 0xc2
-function event_handler[event_2df6ae0f] function_5470fa95(var_c75c63c) {
+function event_handler[event_2df6ae0f] function_5470fa95(scriptstruct) {
     /#
-        soundloop = var_c75c63c.var_b6ce262a;
+        soundloop = scriptstruct.var_b6ce262a;
         if (isdefined(level.loopers)) {
-            index = var_c75c63c.index;
+            index = scriptstruct.index;
             if (index >= 0 && index < level.loopers.size) {
                 soundstoploopemitter(soundloop.script_sound, soundloop.origin);
                 level.loopers[index].origin = (0, 0, 0);
@@ -1672,20 +1672,20 @@ function event_handler[event_2df6ae0f] function_5470fa95(var_c75c63c) {
 // Params 1, eflags: 0x20
 // Checksum 0xe31b484d, Offset: 0x5388
 // Size: 0x15c
-function event_handler[event_7a92af95] function_3fda4bf4(var_c75c63c) {
+function event_handler[event_7a92af95] function_3fda4bf4(scriptstruct) {
     /#
-        soundloop = var_c75c63c.var_b6ce262a;
-        if (isdefined(level.loopers) && isdefined(soundloop) && isdefined(soundloop.script_sound) && isdefined(soundloop.var_3868f387)) {
-            index = var_c75c63c.index;
+        soundloop = scriptstruct.var_b6ce262a;
+        if (isdefined(level.loopers) && isdefined(soundloop) && isdefined(soundloop.script_sound) && isdefined(soundloop.script_looping)) {
+            index = scriptstruct.index;
             if (index >= 0 && index < level.loopers.size) {
                 level.loopers[index].origin = soundloop.origin;
                 level.loopers[index].script_sound = soundloop.script_sound;
-                level.loopers[index].var_3868f387 = soundloop.var_3868f387;
+                level.loopers[index].script_looping = soundloop.script_looping;
                 function_f03b7c11(index, level.loopers[index].script_sound, level.loopers[index].origin);
                 return;
             }
             if (index == -2) {
-                function_31468a30(var_c75c63c);
+                function_31468a30(scriptstruct);
             }
         }
     #/
@@ -1695,9 +1695,9 @@ function event_handler[event_7a92af95] function_3fda4bf4(var_c75c63c) {
 // Params 1, eflags: 0x20
 // Checksum 0x73358492, Offset: 0x54f0
 // Size: 0xb2
-function event_handler[event_5295e5ef] function_882b5910(var_c75c63c) {
+function event_handler[event_5295e5ef] function_882b5910(scriptstruct) {
     /#
-        soundloop = var_c75c63c.var_b6ce262a;
+        soundloop = scriptstruct.var_b6ce262a;
         level.var_7acea05a = -1;
         if (isdefined(level.loopers)) {
             for (i = 0; i < level.loopers.size; i++) {
@@ -1714,9 +1714,9 @@ function event_handler[event_5295e5ef] function_882b5910(var_c75c63c) {
 // Params 1, eflags: 0x0
 // Checksum 0x54dd102a, Offset: 0x55b0
 // Size: 0x184
-function function_4fb7ec9c(var_c75c63c) {
+function function_4fb7ec9c(scriptstruct) {
     /#
-        var_2f7118b0 = var_c75c63c.var_b6ce262a;
+        var_2f7118b0 = scriptstruct.var_b6ce262a;
         if (isdefined(level.lineemitters)) {
             for (i = 0; i < level.lineemitters.size; i++) {
                 if (!isdefined(level.lineemitters[i].script_sound)) {
@@ -1740,11 +1740,11 @@ function function_4fb7ec9c(var_c75c63c) {
 // Params 1, eflags: 0x20
 // Checksum 0x3b194690, Offset: 0x5740
 // Size: 0x122
-function event_handler[event_f61e7d0a] function_bbc6b84a(var_c75c63c) {
+function event_handler[event_f61e7d0a] function_bbc6b84a(scriptstruct) {
     /#
-        var_2f7118b0 = var_c75c63c.var_b6ce262a;
+        var_2f7118b0 = scriptstruct.var_b6ce262a;
         if (isdefined(level.lineemitters)) {
-            index = var_c75c63c.index;
+            index = scriptstruct.index;
             if (index >= 0 && index < level.lineemitters.size) {
                 target = get(level.lineemitters[index].target, "<unknown string>");
                 soundstoplineemitter(level.lineemitters[index].script_sound, level.lineemitters[index].origin, target.origin);
@@ -1759,11 +1759,11 @@ function event_handler[event_f61e7d0a] function_bbc6b84a(var_c75c63c) {
 // Params 1, eflags: 0x20
 // Checksum 0xa377d04d, Offset: 0x5870
 // Size: 0x184
-function event_handler[event_70cd2720] function_4910c05b(var_c75c63c) {
+function event_handler[event_70cd2720] function_4910c05b(scriptstruct) {
     /#
-        var_2f7118b0 = var_c75c63c.var_b6ce262a;
+        var_2f7118b0 = scriptstruct.var_b6ce262a;
         if (isdefined(level.lineemitters) && isdefined(var_2f7118b0)) {
-            index = var_c75c63c.index;
+            index = scriptstruct.index;
             if (index >= 0 && index < level.lineemitters.size) {
                 level.lineemitters[index].origin = var_2f7118b0.origin;
                 level.lineemitters[index].script_sound = var_2f7118b0.script_sound;
@@ -1775,7 +1775,7 @@ function event_handler[event_70cd2720] function_4910c05b(var_c75c63c) {
                 return;
             }
             if (index == -2) {
-                function_4fb7ec9c(var_c75c63c);
+                function_4fb7ec9c(scriptstruct);
             }
         }
     #/
@@ -1785,9 +1785,9 @@ function event_handler[event_70cd2720] function_4910c05b(var_c75c63c) {
 // Params 1, eflags: 0x20
 // Checksum 0x1f6085c6, Offset: 0x5a00
 // Size: 0xb2
-function event_handler[event_edffbf97] function_ee6f0c88(var_c75c63c) {
+function event_handler[event_edffbf97] function_ee6f0c88(scriptstruct) {
     /#
-        var_2f7118b0 = var_c75c63c.var_b6ce262a;
+        var_2f7118b0 = scriptstruct.var_b6ce262a;
         level.var_7acea05a = -1;
         if (isdefined(level.lineemitters)) {
             for (i = 0; i < level.lineemitters.size; i++) {
@@ -1804,9 +1804,9 @@ function event_handler[event_edffbf97] function_ee6f0c88(var_c75c63c) {
 // Params 1, eflags: 0x0
 // Checksum 0xe8df8ec1, Offset: 0x5ac0
 // Size: 0x184
-function function_abd4ca1(var_c75c63c) {
+function function_abd4ca1(scriptstruct) {
     /#
-        soundrandom = var_c75c63c.var_b6ce262a;
+        soundrandom = scriptstruct.var_b6ce262a;
         if (isdefined(level.randoms)) {
             for (i = 0; i < level.randoms.size; i++) {
                 if (!isdefined(level.randoms[i].script_sound)) {
@@ -1829,11 +1829,11 @@ function function_abd4ca1(var_c75c63c) {
 // Params 1, eflags: 0x20
 // Checksum 0xf243ba63, Offset: 0x5c50
 // Size: 0xce
-function event_handler[event_bfb86175] function_464598c8(var_c75c63c) {
+function event_handler[event_bfb86175] function_464598c8(scriptstruct) {
     /#
-        soundrandom = var_c75c63c.var_b6ce262a;
+        soundrandom = scriptstruct.var_b6ce262a;
         if (isdefined(level.randoms)) {
-            index = var_c75c63c.index;
+            index = scriptstruct.index;
             if (index >= 0 && index < level.randoms.size) {
                 function_dac8758d(level.randoms[index].origin);
                 level.randoms[index].origin = (0, 0, 0);
@@ -1847,12 +1847,12 @@ function event_handler[event_bfb86175] function_464598c8(var_c75c63c) {
 // Params 1, eflags: 0x20
 // Checksum 0x149e7471, Offset: 0x5d28
 // Size: 0x1b4
-function event_handler[event_43494658] function_12dface6(var_c75c63c) {
+function event_handler[event_43494658] function_12dface6(scriptstruct) {
     /#
-        soundrandom = var_c75c63c.var_b6ce262a;
+        soundrandom = scriptstruct.var_b6ce262a;
         if (isdefined(level.randoms)) {
-            index = var_c75c63c.index;
-            neworigin = var_c75c63c.neworigin;
+            index = scriptstruct.index;
+            neworigin = scriptstruct.neworigin;
             if (index >= 0 && index < level.randoms.size) {
                 if (isdefined(soundrandom.script_wait_min)) {
                     level.randoms[index].script_wait_min = soundrandom.script_wait_min;
@@ -1866,8 +1866,8 @@ function event_handler[event_43494658] function_12dface6(var_c75c63c) {
                 return;
             }
             if (index == -2) {
-                var_c75c63c.var_b6ce262a.origin = neworigin;
-                function_abd4ca1(var_c75c63c);
+                scriptstruct.var_b6ce262a.origin = neworigin;
+                function_abd4ca1(scriptstruct);
             }
         }
     #/
@@ -1877,9 +1877,9 @@ function event_handler[event_43494658] function_12dface6(var_c75c63c) {
 // Params 1, eflags: 0x20
 // Checksum 0x64139384, Offset: 0x5ee8
 // Size: 0xb2
-function event_handler[event_8c00f89] function_8673317e(var_c75c63c) {
+function event_handler[event_8c00f89] function_8673317e(scriptstruct) {
     /#
-        soundrandom = var_c75c63c.var_b6ce262a;
+        soundrandom = scriptstruct.var_b6ce262a;
         level.var_7acea05a = -1;
         if (isdefined(level.randoms)) {
             for (i = 0; i < level.randoms.size; i++) {

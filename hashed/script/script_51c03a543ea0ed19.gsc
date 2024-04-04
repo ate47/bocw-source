@@ -3,7 +3,7 @@
 #using script_31e9b35aaacbbd93;
 #using script_3dc93ca9902a9cda;
 #using scripts\core_common\callbacks_shared.gsc;
-#using script_263b7f2982258785;
+#using scripts\cp_common\dialogue.gsc;
 #using script_70b6424f429d140;
 #using scripts\core_common\values_shared.gsc;
 #using scripts\core_common\ai_shared.gsc;
@@ -103,7 +103,7 @@ function bustout(var_d3440450, var_50cc0d4f) {
             level.var_9a3944f4 = level.var_40b02b72[0];
             level.var_9a3944f4 setmodel("veh_t8_mil_helicopter_uh1d_cp_takedown");
             level.var_9a3944f4 thread tkdn_heli_intro::function_fbb0d73f();
-            thread tkdn_heli_intro::function_efa33b5b(level.var_9a3944f4, "ally_heli_spot_light_bustout", "tag_glass_front_left_lower_d0", (-20, 12, 0), level.var_9a3944f4, 0, 1);
+            thread tkdn_heli_intro::heli_light(level.var_9a3944f4, "ally_heli_spot_light_bustout", "tag_glass_front_left_lower_d0", (-20, 12, 0), level.var_9a3944f4, 0, 1);
             level.var_9a3944f4 util::delay_notify(0.2, "lights_on");
             thread function_f9d1756b();
         }
@@ -137,16 +137,16 @@ function function_f9d1756b() {
 // Size: 0x14c
 function function_aed2b350(woods) {
     level flag::wait_till("bustout_start_shooting_house_vo");
-    woods namespace_a635adb1::queue("vox_cp_tdwn_01300_wood_cleanhouseforus_c4");
-    thread namespace_a635adb1::radio("vox_cp_tdwn_01300_chp1_rogerthat_fe");
+    woods dialogue::queue("vox_cp_tdwn_01300_wood_cleanhouseforus_c4");
+    thread dialogue::radio("vox_cp_tdwn_01300_chp1_rogerthat_fe");
     level flag::set("bustout_start_shooting_house");
     wait(4);
-    namespace_a635adb1::radio("vox_cp_tdwn_01300_chp1_ifanyonesalivei_5c");
+    dialogue::radio("vox_cp_tdwn_01300_chp1_ifanyonesalivei_5c");
     thread namespace_a052577e::function_ec4a61d9();
     level flag::wait_till("bustout_house_shotup");
     level.var_664fd741 ai::set_behavior_attribute("demeanor", "cqb");
     level flag::wait_till("bustout_movement_mid_house");
-    namespace_a635adb1::radio("vox_cp_tdwn_01500_chp1_wegotmovementin_7c");
+    dialogue::radio("vox_cp_tdwn_01500_chp1_wegotmovementin_7c");
     function_a76cb757(woods);
 }
 
@@ -157,7 +157,7 @@ function function_aed2b350(woods) {
 function function_a76cb757(woods) {
     level flag::wait_till("bustout_player_start");
     wait(1);
-    woods namespace_a635adb1::queue("vox_cp_tdwn_01600_wood_takeoutthedrive_2b");
+    woods dialogue::queue("vox_cp_tdwn_01600_wood_takeoutthedrive_2b");
 }
 
 // Namespace namespace_29b42773/namespace_d92ad9f3
@@ -262,13 +262,13 @@ function function_c000638d() {
     level flag::set("woods_goto_crash");
     level flag::wait_till_timeout(4, "woods_at_crash");
     level flag::set("woods_at_crash");
-    level.var_664fd741 namespace_a635adb1::queue("vox_cp_tdwn_01700_wood_targetidentifie_ca");
+    level.var_664fd741 dialogue::queue("vox_cp_tdwn_01700_wood_targetidentifie_ca");
     wait(1);
     if (is_true(level.var_95a74232)) {
         objectives::complete("woods_hit1");
     }
     objectives::complete("hit1");
-    level.var_664fd741 namespace_a635adb1::queue("vox_cp_tdwn_01700_wood_adlerhamidisdow_d0");
+    level.var_664fd741 dialogue::queue("vox_cp_tdwn_01700_wood_adlerhamidisdow_d0");
     wait(3);
     level flag::set("heli_target_complete");
 }
@@ -285,7 +285,7 @@ function function_b4a74554(var_dd0a1cc3) {
         level.var_9a3944f4 setmodel("veh_t8_mil_helicopter_uh1d_cp_takedown");
         level.var_9a3944f4 thread tkdn_heli_intro::function_fbb0d73f();
         level.var_9a3944f4 thread tkdn_heli_intro::function_3cebcd1b();
-        thread tkdn_heli_intro::function_efa33b5b(level.var_9a3944f4, "ally_heli_spot_light_bustout", "tag_glass_front_left_lower_d0", (-20, 12, 0), level.var_9a3944f4, 0, 1);
+        thread tkdn_heli_intro::heli_light(level.var_9a3944f4, "ally_heli_spot_light_bustout", "tag_glass_front_left_lower_d0", (-20, 12, 0), level.var_9a3944f4, 0, 1);
         level.var_9a3944f4 util::delay_notify(0.2, "lights_on");
     } else {
         level.var_9a3944f4 thread tkdn_heli_intro::function_cbe25a41(var_dd0a1cc3, "tag_glass_front_left_lower_d0");
@@ -314,7 +314,7 @@ function function_69da7d8e(heli) {
     heli turretsettarget(var_8132076f, mover);
     level flag::delay_set(11, "bustout_house_shotup");
     thread function_ea5db7ae();
-    var_af2a1727 = [1:vectorscale((-1, -1, -1), 128), 0:vectorscale((0, 0, 1), 128)];
+    var_af2a1727 = [vectorscale((0, 0, 1), 128), vectorscale((-1, -1, -1), 128)];
     while (!level flag::get("bustout_house_shotup")) {
         heli fireweapon(var_8132076f);
         waitframe(1);
@@ -338,16 +338,16 @@ function function_69da7d8e(heli) {
 // Size: 0x1ec
 function function_76ce7c85() {
     level.var_664fd741 notify(#"hash_26d0e9e370348b6a");
-    level thread scene::play("scene_tkd_hit1_bullethouse", "init", [0:level.var_664fd741]);
+    level thread scene::play("scene_tkd_hit1_bullethouse", "init", [level.var_664fd741]);
     level flag::wait_till("bustout_woods_enter_house");
-    level.var_664fd741 thread namespace_a635adb1::queue("vox_cp_tdwn_01400_wood_breaching_a4");
-    level thread scene::play("scene_tkd_hit1_bullethouse", "walk01", [0:level.var_664fd741]);
+    level.var_664fd741 thread dialogue::queue("vox_cp_tdwn_01400_wood_breaching_a4");
+    level thread scene::play("scene_tkd_hit1_bullethouse", "walk01", [level.var_664fd741]);
     level.var_664fd741 waittill(#"hash_278a01b961e328f0");
     level flag::wait_till("bustout_movement_mid_house");
-    level thread scene::play("scene_tkd_hit1_bullethouse", "walk02", [0:level.var_664fd741]);
+    level thread scene::play("scene_tkd_hit1_bullethouse", "walk02", [level.var_664fd741]);
     level.var_664fd741 waittill(#"hash_278a01b961e328f0");
     level flag::wait_till("bustout_movement_rear_house");
-    level thread scene::play("scene_tkd_hit1_bullethouse", "walk03", [0:level.var_664fd741]);
+    level thread scene::play("scene_tkd_hit1_bullethouse", "walk03", [level.var_664fd741]);
     level flag::wait_till("bustout_pre_player_start");
     level thread scene::stop("scene_tkd_hit1_bullethouse");
 }
@@ -381,12 +381,12 @@ function function_17162917() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x6ef241d3, Offset: 0x1fb0
 // Size: 0xaa
-function function_ba2c935e(mover, var_a44bbc63) {
+function function_ba2c935e(mover, next_target) {
     level endon(#"bustout_house_shotup");
     while (true) {
-        mover moveto(var_a44bbc63.origin, 1.5, 1.5 * 0.33, 1.5 * 0.33);
+        mover moveto(next_target.origin, 1.5, 1.5 * 0.33, 1.5 * 0.33);
         wait(1.5);
-        var_a44bbc63 = struct::get(var_a44bbc63.target, "targetname");
+        next_target = struct::get(next_target.target, "targetname");
     }
 }
 

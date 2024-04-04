@@ -12,14 +12,14 @@
 // Checksum 0x4ad92999, Offset: 0xc8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"ultimate_turret", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"ultimate_turret", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace ultimate_turret/ultimate_turret
 // Params 0, eflags: 0x6 linked
 // Checksum 0x54b07498, Offset: 0x118
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     level.var_729a0937 = &function_4b645b3f;
     level.var_bbc796bf = &turret_destroyed;
     init_shared();

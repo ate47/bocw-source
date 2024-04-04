@@ -10,7 +10,7 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0x921f23b2, Offset: 0xc0
 // Size: 0x1a8
-function function_70a657d8() {
+function preinit() {
     if (util::is_frontend_map()) {
         return;
     }
@@ -25,9 +25,9 @@ function function_70a657d8() {
         }
     }
     foreach (team, teamstr in level.teams) {
-        var_77e770bb = getgametypesetting(#"hash_43e6eb8f9fd14f92" + teamstr, 0);
-        level.var_8a530af5[team] = var_77e770bb;
-        count = getdvarint(#"hash_4d18019bc69bcf53" + teamstr, 0);
+        autofill = getgametypesetting(#"hash_43e6eb8f9fd14f92" + teamstr, 0);
+        level.var_8a530af5[team] = autofill;
+        count = getdvarint(#"bot_" + teamstr, 0);
         level.var_f5c1fb9d[team] = count;
     }
 }

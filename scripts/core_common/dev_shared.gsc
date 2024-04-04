@@ -426,7 +426,7 @@ function body_customization_populate(mode, var_ef4940a5) {
     /#
         bodies = getallcharacterbodies(mode);
         body_customization_devgui_base = "<unknown string>" + "<unknown string>";
-        level.var_1a409216 = [7:{#field:"<unknown string>", #path:"<unknown string>"}, 6:{#field:"<unknown string>", #path:"<unknown string>"}, 5:{#field:"<unknown string>", #path:"<unknown string>"}, 4:{#field:"<unknown string>", #path:"<unknown string>"}, 3:{#field:"<unknown string>", #path:"<unknown string>"}, 2:{#field:"<unknown string>", #path:"<unknown string>"}, 1:{#field:"<unknown string>", #path:"<unknown string>"}, 0:{#field:"<unknown string>", #path:"<unknown string>"}];
+        level.var_1a409216 = [{#path:"<unknown string>", #field:"<unknown string>"}, {#path:"<unknown string>", #field:"<unknown string>"}, {#path:"<unknown string>", #field:"<unknown string>"}, {#path:"<unknown string>", #field:"<unknown string>"}, {#path:"<unknown string>", #field:"<unknown string>"}, {#path:"<unknown string>", #field:"<unknown string>"}, {#path:"<unknown string>", #field:"<unknown string>"}, {#path:"<unknown string>", #field:"<unknown string>"}];
         foreach (playerbodytype in bodies) {
             body_name = function_2c6232e5(makelocalizedstring(getcharacterdisplayname(playerbodytype, mode))) + "<unknown string>" + function_9e72a96(getcharacterassetname(playerbodytype, mode));
             if (isdefined(var_ef4940a5) && var_ef4940a5 != body_name) {
@@ -512,7 +512,7 @@ function function_986c93f0() {
 // Params 1, eflags: 0x0
 // Checksum 0xaa32da6, Offset: 0x29b8
 // Size: 0x104
-function function_6d793eb9(var_78ab4739) {
+function function_6d793eb9(hornindex) {
     /#
         players = getplayers();
         if (players.size <= 0) {
@@ -527,7 +527,7 @@ function function_6d793eb9(var_78ab4739) {
         if (!isalive(vehicle)) {
             return;
         }
-        var_a0e911e = var_e2bbb439[var_78ab4739];
+        var_a0e911e = var_e2bbb439[hornindex];
         if (!isdefined(var_a0e911e)) {
             return;
         }
@@ -864,7 +864,7 @@ function dev_get_point_pair() {
 // Size: 0xc6
 function function_adde34ed(var_b008e583, var_d7016d06, a, b, c, radius, spacing) {
     /#
-        return {#spacing:spacing, #radius:radius, #c:c, #b:b, #a:a, #angle:0, #var_3d4f78fb:var_d7016d06, #start_origin:var_b008e583};
+        return {#start_origin:var_b008e583, #start_angle:var_d7016d06, #angle:0, #a:a, #b:b, #c:c, #radius:radius, #spacing:spacing};
     #/
 }
 
@@ -901,7 +901,7 @@ function function_df0b6f84(spiral) {
 // Size: 0x66
 function function_7de15c85(spiral) {
     /#
-        var_17e94d83 = rotatepointaroundaxis((spiral.radius, 0, 0), (0, 0, 1), spiral.angle + spiral.var_3d4f78fb);
+        var_17e94d83 = rotatepointaroundaxis((spiral.radius, 0, 0), (0, 0, 1), spiral.angle + spiral.start_angle);
         return var_17e94d83 + spiral.start_origin;
     #/
 }
@@ -924,7 +924,7 @@ function function_98c05766(spiral) {
 // Size: 0x26
 function function_4783f10c(spiral) {
     /#
-        return spiral.angle + spiral.var_3d4f78fb;
+        return spiral.angle + spiral.start_angle;
     #/
 }
 

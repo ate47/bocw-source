@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_31671175564a93b7;
+#using scripts\cp_common\snd_utility.csc;
 #using script_1cd690a97dfca36e;
-#using script_3318f11e3a1b2358;
+#using scripts\cp_common\snd.csc;
 #using script_dfd475a961626c7;
 #using scripts\core_common\postfx_shared.csc;
 #using scripts\core_common\vehicle_shared.csc;
@@ -236,23 +236,23 @@ function private function_49365e3b(localclientnum, oldval, newval, bnewent, bini
 // Size: 0x164
 function private function_ad43fc89(localclientnum) {
     self notify(#"hash_23f28ccc6f5f0d8d");
-    var_201ef63e = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_takedown_pcrash_cargo_spark_loop_start", self, "tag_gate_flap_01");
-    var_ae4d929d = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_takedown_pcrash_cargo_spark_loop_start", self, "tag_gate_flap_02");
+    fxid1 = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_takedown_pcrash_cargo_spark_loop_start", self, "tag_gate_flap_01");
+    fxid2 = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_takedown_pcrash_cargo_spark_loop_start", self, "tag_gate_flap_02");
     var_929f5b4d = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_takedown_pcrash_cargo_spark_loop_start", self, "tag_gate_flap_03");
     var_a06276d3 = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_takedown_pcrash_cargo_spark_loop_start", self, "tag_gate_flap_04");
     var_d76364c8 = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_hit3_chase_prop_mist", self, "tag_engine_right_01_null");
     var_84e2bfd4 = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_hit3_chase_prop_mist", self, "tag_engine_left_02_null");
-    self thread function_9b722964(localclientnum, var_201ef63e, var_ae4d929d, var_929f5b4d, var_a06276d3, var_d76364c8, var_84e2bfd4);
+    self thread function_9b722964(localclientnum, fxid1, fxid2, var_929f5b4d, var_a06276d3, var_d76364c8, var_84e2bfd4);
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
 // Params 7, eflags: 0x6 linked
 // Checksum 0x6d30c257, Offset: 0x1868
 // Size: 0x104
-function private function_9b722964(localclientnum, var_201ef63e, var_ae4d929d, var_929f5b4d, var_a06276d3, var_d76364c8, var_84e2bfd4) {
+function private function_9b722964(localclientnum, fxid1, fxid2, var_929f5b4d, var_a06276d3, var_d76364c8, var_84e2bfd4) {
     self waittill(#"death", #"hash_23f28ccc6f5f0d8d", #"hash_3d54cb0fcf6b56fa");
-    stopfx(localclientnum, var_201ef63e);
-    stopfx(localclientnum, var_ae4d929d);
+    stopfx(localclientnum, fxid1);
+    stopfx(localclientnum, fxid2);
     stopfx(localclientnum, var_929f5b4d);
     stopfx(localclientnum, var_a06276d3);
     stopfx(localclientnum, var_d76364c8);
@@ -418,8 +418,8 @@ function private function_7dc13ec9(localclientnum) {
     self endon("4486f93a90fd6e7");
     self endon(#"death", #"fx_death", #"hash_28344e38d8947eea");
     if (isdefined(level._fx.cargo_plane)) {
-        var_3b16b806 = function_a3f6cdac(400);
-        var_87c1e213 = function_a3f6cdac(2500);
+        var_3b16b806 = sqr(400);
+        var_87c1e213 = sqr(2500);
         while (true) {
             distsqr = distance2dsquared(self.origin, level._fx.cargo_plane.origin);
             self.fx_interval = (distsqr - var_3b16b806) / (var_87c1e213 - var_3b16b806);
@@ -429,7 +429,7 @@ function private function_7dc13ec9(localclientnum) {
             util::server_wait(localclientnum, var_b2b52cb5);
             fxid = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_td_rc_light_red", self, "tag_fx_light_rear");
             self thread function_d4cb569b(localclientnum, fxid, "stop_blink_fx");
-            snd::play("wpn_tkd_rcxd_detonate_timer", [1:"tag_fx_light_rear", 0:self]);
+            snd::play("wpn_tkd_rcxd_detonate_timer", [self, "tag_fx_light_rear"]);
             util::server_wait(localclientnum, var_b2b52cb5);
         }
     }
@@ -449,7 +449,7 @@ function private function_3383f5e2(localclientnum, state) {
         #/
         fxid = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_td_rc_light_green", self, "tag_fx_light_rear");
         self thread function_d4cb569b(localclientnum, fxid, "stop_proximity_fx");
-        self.var_2aa68449 = snd::play("wpn_tkd_rcxd_detonate_timer_ready", [1:"tag_fx_light_rear", 0:self]);
+        self.var_2aa68449 = snd::play("wpn_tkd_rcxd_detonate_timer_ready", [self, "tag_fx_light_rear"]);
         return;
     }
     /#
@@ -701,8 +701,8 @@ function private function_23f6671d() {
             self postfx::function_c8b5f318("pstfx_rain_loop_tkdn_rccar", "Origin X", screenpos[0] + var_69954662);
             self postfx::function_c8b5f318("pstfx_rain_loop_tkdn_rccar", "Origin Y", screenpos[1]);
         }
-        self postfx::function_c8b5f318("pstfx_speedblur", "Blur", 0.05 * function_a3f6cdac(scalar));
-        self postfx::function_c8b5f318("pstfx_rain_loop_tkdn_rccar", "Sprite Count Squash", function_a3f6cdac(var_75128a58));
+        self postfx::function_c8b5f318("pstfx_speedblur", "Blur", 0.05 * sqr(scalar));
+        self postfx::function_c8b5f318("pstfx_rain_loop_tkdn_rccar", "Sprite Count Squash", sqr(var_75128a58));
         waitframe(1);
     }
 }

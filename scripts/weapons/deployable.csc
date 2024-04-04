@@ -9,14 +9,14 @@
 // Checksum 0xd5c02352, Offset: 0x110
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"deployable", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"deployable", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace deployable/deployable
 // Params 0, eflags: 0x6 linked
 // Checksum 0x754d13f, Offset: 0x158
 // Size: 0x6c
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level._deployable_weapons)) {
         level._deployable_weapons = [];
     }
@@ -75,7 +75,7 @@ function function_35d1c69f(localclientnum, player, weapon) {
         var_7ed1816f = var_10c45189.isvalid || isdefined(level._deployable_weapons[weapon.statindex]) && (isdefined(level._deployable_weapons[weapon.statindex].var_7ec218c6) ? level._deployable_weapons[weapon.statindex].var_7ec218c6 : 0);
     } else {
         var_7ed1816f = 1;
-        var_10c45189 = {#angles:player.angles, #origin:player.origin, #isvalid:1};
+        var_10c45189 = {#isvalid:1, #origin:player.origin, #angles:player.angles};
     }
     var_c3743e82 = !level.var_1765ad79 || function_e0d90bc8(localclientnum) || is_true(weapon.var_33d50507);
     gameplay_allows_deploy = player clientfield::get_to_player("gameplay_allows_deploy");

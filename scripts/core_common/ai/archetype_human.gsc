@@ -112,8 +112,8 @@ function private archetypehumaninit() {
     entity setblackboardattribute("_human_locomotion_variation", var_1818b7d9);
     entity trackblackboardattribute("_traversal_type");
     entity finalizetrackedblackboardattributes();
-    if (isdefined(entity.var_49138d27)) {
-        entity ai::set_behavior_attribute("demeanor", tolower(self.var_49138d27));
+    if (isdefined(entity.script_demeanor)) {
+        entity ai::set_behavior_attribute("demeanor", tolower(self.script_demeanor));
     }
 }
 
@@ -176,13 +176,13 @@ function private humangibkilledoverride(inflictor, attacker, damage, meansofdeat
         forcegibbing = 1;
         if (isdefined(damage)) {
             isdirectexplosive = isinarray(array("MOD_GRENADE", "MOD_GRENADE_SPLASH", "MOD_PROJECTILE", "MOD_PROJECTILE_SPLASH", "MOD_EXPLOSIVE"), var_fd90b0bb);
-            iscloseexplosive = distancesquared(damage.origin, entity.origin) <= function_a3f6cdac(60);
+            iscloseexplosive = distancesquared(damage.origin, entity.origin) <= sqr(60);
             if (isdirectexplosive && iscloseexplosive) {
                 gibserverutils::annihilate(entity);
             }
         }
     }
-    if (forcegibbing || isexplosive || isdefined(level.__ai_forcegibs) && level.__ai_forcegibs || dir.dogibbing && attackerdistance <= function_a3f6cdac(dir.maxgibdistance)) {
+    if (forcegibbing || isexplosive || isdefined(level.__ai_forcegibs) && level.__ai_forcegibs || dir.dogibbing && attackerdistance <= sqr(dir.maxgibdistance)) {
         gibserverutils::togglespawngibs(entity, 1);
         destructserverutils::togglespawngibs(entity, 1);
         trygibbinglimb(entity, weapon, dir, hitloc, offsettime, isexplosive || forcegibbing);
@@ -493,7 +493,7 @@ function private function_51074ea9(entity) {
         if (isdefined(entity.var_e7ea517e) && !entity.var_e7ea517e) {
             return false;
         }
-        if (is_true(entity.var_73e3e2aa) || isdefined(entity.ai.var_4183a6fc.startpos) && distance2dsquared(entity.origin, entity.ai.var_4183a6fc.startpos) < function_a3f6cdac(120)) {
+        if (is_true(entity.var_73e3e2aa) || isdefined(entity.ai.var_4183a6fc.startpos) && distance2dsquared(entity.origin, entity.ai.var_4183a6fc.startpos) < sqr(120)) {
             return false;
         }
         if (function_f7392d4f(entity)) {
@@ -721,8 +721,8 @@ function private function_fbc6c789() {
 // Size: 0x80
 function private function_d5f8b410(entity) {
     if (entity haspath()) {
-        var_6b5a0de3 = function_d6eaf8b0(entity getvelocity());
-        if (var_6b5a0de3 >= function_a3f6cdac(80)) {
+        speedsqr = length2dsquared(entity getvelocity());
+        if (speedsqr >= sqr(80)) {
             return true;
         }
     }

@@ -16,14 +16,14 @@
 // Checksum 0xf5eb05e5, Offset: 0x238
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_6d3c5317001d4fc6", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_6d3c5317001d4fc6", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_8eb9bc0a/namespace_8eb9bc0a
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6cfcd2d4, Offset: 0x280
 // Size: 0x104
-function private function_70a657d8() {
+function private preinit() {
     setdvar(#"hash_6d3c5317001d4fc6", 0);
     /#
         adddebugcommand("<unknown string>");
@@ -172,7 +172,7 @@ function function_57bf0556() {
     level.var_a095060b = 1;
     setdvar(#"hash_2167ce61af5dc0b0", 0);
     setdvar(#"zm_instajoin", 1);
-    function_f5f0c0f8("Soak Test [ON]");
+    debugmsg("Soak Test [ON]");
     level thread function_e5266c17();
     while (level.var_a095060b) {
         if (getdvarint(#"hash_2fe8fa3077b74221", 1) > 1) {
@@ -183,7 +183,7 @@ function function_57bf0556() {
         if (level.botcount > 0 && randomint(100) > 70) {
             bot::remove_random_bot();
             level.botcount--;
-            function_f5f0c0f8("Bot is being removed.   Count=" + level.botcount);
+            debugmsg("Bot is being removed.   Count=" + level.botcount);
             continue;
         }
         if (getdvarint(#"hash_4a501e2ed929dd5b", 1) && getplayers().size < 4 && randomint(100) < 30) {
@@ -192,7 +192,7 @@ function function_57bf0556() {
                 plr = getplayers()[0];
                 bot setorigin(plr.origin);
                 level.botcount++;
-                function_f5f0c0f8("Bot is being added.  Count=" + level.botcount);
+                debugmsg("Bot is being added.  Count=" + level.botcount);
             }
         }
     }
@@ -219,7 +219,7 @@ function function_db3aef8f() {
     self endon("6279a9a0d225fe67");
     level waittill(#"hash_12d79bc0fed4ee5a");
     level.var_a095060b = 0;
-    function_f5f0c0f8("DOA Soak Test [OFF]");
+    debugmsg("DOA Soak Test [OFF]");
     setdvar(#"hash_2167ce61af5dc0b0", 1);
     setdvar(#"zm_instajoin", 0);
 }
@@ -228,9 +228,9 @@ function function_db3aef8f() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xbb9a586, Offset: 0xf68
 // Size: 0x34
-function function_f5f0c0f8(var_4e2d590d) {
+function debugmsg(txt) {
     /#
-        println("<unknown string>" + var_4e2d590d);
+        println("<unknown string>" + txt);
     #/
 }
 

@@ -14,14 +14,14 @@
 // Checksum 0x88bd0608, Offset: 0xf8
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_512409f8a5de10e4", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_512409f8a5de10e4", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_68a80213/namespace_68a80213
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc2c585f3, Offset: 0x150
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "" + #"hash_c5d06ae18fde4c0", 1, 1, "int", &function_870656e3, 0, 0);
 }
 

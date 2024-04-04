@@ -11,14 +11,14 @@
 // Checksum 0xcd494324, Offset: 0x160
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"item_supply_drop", &function_70a657d8, undefined, undefined, #"item_world");
+    system::register(#"item_supply_drop", &preinit, undefined, undefined, #"item_world");
 }
 
 // Namespace item_supply_drop/item_supply_drop
 // Params 0, eflags: 0x4
 // Checksum 0xd82717c3, Offset: 0x1b0
 // Size: 0x164
-function private function_70a657d8() {
+function private preinit() {
     if (!item_world_util::use_item_spawns() || util::get_game_type() === #"zsurvival") {
         return;
     }

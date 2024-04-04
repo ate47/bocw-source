@@ -370,9 +370,9 @@ function function_ac2a1e0f() {
         var_98425e00--;
         spawner::global_spawn_throttle();
         spot = var_b7b96881.origin + (randomintrange(-256, 256), randomintrange(-256, 256), 0);
-        var_5c737b77 = namespace_dfc652ee::function_b8f6a8cd(undefined, spot, 1, 1, randomfloatrange(0.75, 2.2));
-        if (isdefined(var_5c737b77)) {
-            var_5c737b77 notify(#"hash_2a866f50cc161ca8");
+        gem = namespace_dfc652ee::function_b8f6a8cd(undefined, spot, 1, 1, randomfloatrange(0.75, 2.2));
+        if (isdefined(gem)) {
+            gem notify(#"hash_2a866f50cc161ca8");
         }
     }
 }

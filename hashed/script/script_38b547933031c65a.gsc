@@ -11,14 +11,14 @@
 // Checksum 0xd62f9f82, Offset: 0xf0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"nuke", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"nuke", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace nuke/nuke
 // Params 0, eflags: 0x6 linked
 // Checksum 0x833e3a16, Offset: 0x140
 // Size: 0x1a4
-function private function_70a657d8() {
+function private preinit() {
     level.var_bdab9ccd = getscriptbundle("killstreak_nuke");
     clientfield::register("scriptmover", "" + #"hash_494d8af20db4dc73", 1, 1, "int", &function_fd98ff7f, 0, 0);
     clientfield::register("world", "" + #"hash_6a6a21b8c5e1528e", 1, 1, "int", &function_977aa020, 0, 0);

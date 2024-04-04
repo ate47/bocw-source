@@ -47,7 +47,7 @@ function function_174651ce(bird) {
     bird endon(#"death");
     bird useanimtree("generic");
     curanim = "a_chicken_react_up_down";
-    var_63ad8013 = "a_chicken_idle_peck";
+    lastanim = "a_chicken_idle_peck";
     while (isdefined(bird)) {
         if (is_true(self.var_89dad306)) {
             curanim = "a_chicken_react_up_down";
@@ -65,7 +65,7 @@ function function_174651ce(bird) {
         bird.angles = self.angles;
         bird thread animation::play(curanim);
         wait(animlength);
-        var_63ad8013 = curanim;
+        lastanim = curanim;
         switch (randomint(3)) {
         case 0:
             curanim = "a_chicken_idle_peck";
@@ -101,67 +101,67 @@ function add_a_chicken(model, scale, var_56fa7962, *var_706dd25e) {
     if (!namespace_ec06fe4a::function_a8975c67()) {
         return;
     }
-    var_956de39f = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, 0, 1), 30), "tag_origin", self.angles);
-    if (isdefined(var_956de39f)) {
-        var_956de39f.targetname = "add_a_chicken";
-        var_956de39f enablelinkto();
-        var_956de39f notsolid();
+    orb = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, 0, 1), 30), "tag_origin", self.angles);
+    if (isdefined(orb)) {
+        orb.targetname = "add_a_chicken";
+        orb enablelinkto();
+        orb notsolid();
     } else {
         return;
     }
-    bird = namespace_ec06fe4a::spawnmodel(var_956de39f.origin, scale, self.angles);
+    bird = namespace_ec06fe4a::spawnmodel(orb.origin, scale, self.angles);
     if (isdefined(bird)) {
         bird.targetname = "chicken";
-        bird linkto(var_956de39f, "tag_origin");
+        bird linkto(orb, "tag_origin");
         bird notsolid();
         bird setscale(var_56fa7962);
     } else {
-        var_956de39f delete();
+        orb delete();
         return;
     }
-    var_956de39f.basescale = var_56fa7962;
-    var_956de39f.bird = bird;
-    bird.var_956de39f = var_956de39f;
-    var_956de39f.player = self;
-    var_956de39f.owner = self;
+    orb.basescale = var_56fa7962;
+    orb.bird = bird;
+    bird.orb = orb;
+    orb.player = self;
+    orb.owner = self;
     bird.owner = self;
     bird.var_7b9e42c2 = 1;
     bird.killcount = 0;
     bird.team = self.team;
     bird.donotdamageowner = 1;
-    var_956de39f.team = self.team;
-    var_956de39f.special = var_706dd25e;
-    var_956de39f.var_3e3b0c6e = 0;
-    var_956de39f.var_7d2d343c = 0;
+    orb.team = self.team;
+    orb.special = var_706dd25e;
+    orb.var_3e3b0c6e = 0;
+    orb.var_7d2d343c = 0;
     arrayremovevalue(self.doa.var_20c63763, undefined);
-    var_956de39f.var_ce3eecd4 = self.doa.var_20c63763.size == 0 ? self : self.doa.var_20c63763[self.doa.var_20c63763.size - 1];
-    var_956de39f thread function_174651ce(bird);
-    if (is_true(var_956de39f.special) && self.doa.var_20c63763.size > 0) {
-        arrayinsert(self.doa.var_20c63763, var_956de39f, 0);
+    orb.var_ce3eecd4 = self.doa.var_20c63763.size == 0 ? self : self.doa.var_20c63763[self.doa.var_20c63763.size - 1];
+    orb thread function_174651ce(bird);
+    if (is_true(orb.special) && self.doa.var_20c63763.size > 0) {
+        arrayinsert(self.doa.var_20c63763, orb, 0);
         var_62d4927b = self;
         foreach (chicken in self.doa.var_20c63763) {
             chicken.var_ce3eecd4 = var_62d4927b;
             var_62d4927b = chicken;
         }
     } else {
-        self.doa.var_20c63763[self.doa.var_20c63763.size] = var_956de39f;
+        self.doa.var_20c63763[self.doa.var_20c63763.size] = orb;
     }
     function_e67a092e(self);
     if (self.doa.var_20c63763.size > 5) {
         self function_fde39570();
     }
-    var_956de39f thread function_a083a332(self);
-    var_956de39f thread function_1284a4d7(self);
-    var_956de39f thread function_723d0c4c(self);
-    var_956de39f thread function_26d43617(self);
-    var_956de39f thread function_a5d7e43d();
-    var_956de39f thread function_e4dfa7dc();
-    var_956de39f thread function_9d0fe581(self);
-    var_956de39f thread function_5d7057fa();
+    orb thread function_a083a332(self);
+    orb thread function_1284a4d7(self);
+    orb thread function_723d0c4c(self);
+    orb thread function_26d43617(self);
+    orb thread function_a5d7e43d();
+    orb thread function_e4dfa7dc();
+    orb thread function_9d0fe581(self);
+    orb thread function_5d7057fa();
     if (is_true(var_706dd25e)) {
-        var_956de39f thread function_8f7ae651();
+        orb thread function_8f7ae651();
     }
-    return var_956de39f;
+    return orb;
 }
 
 // Namespace namespace_4ff32993/namespace_11d7d604
@@ -278,8 +278,8 @@ function function_1284a4d7(player) {
             var_45263d51 = 1;
             self rotateto(self.angles + vectorscale((0, 1, 0), 180), var_45263d51);
             for (var_44f689f3 = var_45263d51; var_44f689f3 > 0; var_44f689f3 = var_44f689f3 - interval) {
-                var_c2546554 = self function_ecec052c(player, weapon);
-                interval = firetime + var_c2546554;
+                extrawait = self function_ecec052c(player, weapon);
+                interval = firetime + extrawait;
                 wait(interval);
             }
             self.var_4d2a40eb = self.var_4d2a40eb - var_45263d51;
@@ -313,7 +313,7 @@ function function_a46136b9(leader) {
     waitframe(1);
     var_ad847a7d = self.origin;
     while (isdefined(leader)) {
-        if (distance2dsquared(leader.origin, var_ad847a7d) > function_a3f6cdac(5)) {
+        if (distance2dsquared(leader.origin, var_ad847a7d) > sqr(5)) {
             var_ad847a7d = leader.origin;
             if (var_f07c128e) {
                 if (is_true(leader.doa.var_3e81d24c) || isdefined(self.var_706dd25e)) {
@@ -346,7 +346,7 @@ function function_9d0fe581(player) {
     self.var_ce3eecd4.var_85f8774c = 1;
     force = 0;
     var_ff7dfde4 = 0;
-    var_afc473d1 = function_a3f6cdac(72);
+    var_afc473d1 = sqr(72);
     while (isdefined(self.var_ce3eecd4)) {
         if (is_true(self.var_ce3eecd4.var_85f8774c)) {
             self.var_f8b35ef5 = [];
@@ -378,11 +378,11 @@ function function_9d0fe581(player) {
             arrayremoveindex(self.var_f8b35ef5, 0);
             self.movetime = 0.05;
             if (isplayer(self.var_ce3eecd4)) {
-                self.var_eaa613ef = function_3a0a7a8(player getnormalizedmovement());
+                self.var_eaa613ef = length2d(player getnormalizedmovement());
                 behind = self.var_f8b35ef5.size - 5;
                 magnitude = math::clamp(self.var_eaa613ef + behind * 0.2, 0, 1);
                 self.movetime = mapfloat(0, 1, 0.05, 0.2, 1 - magnitude);
-                namespace_1e25ad94::function_f5f0c0f8("Movement: " + self.var_eaa613ef + "  Magnitude:" + magnitude + "  Move time:" + self.movetime + " Behind by:" + behind);
+                namespace_1e25ad94::debugmsg("Movement: " + self.var_eaa613ef + "  Magnitude:" + magnitude + "  Move time:" + self.movetime + " Behind by:" + behind);
             } else if (isdefined(self.var_ce3eecd4.var_eaa613ef)) {
                 self.var_eaa613ef = self.var_ce3eecd4.var_eaa613ef;
                 behind = self.var_f8b35ef5.size - 5;
@@ -506,10 +506,10 @@ function function_26d43617(player) {
             continue;
         }
         weapon = self function_26c8b67(player, self.special);
-        var_c2546554 = self function_ecec052c(player, weapon);
-        var_c2546554 = var_c2546554 + weapon.firetime - 0.05;
-        if (var_c2546554 > 0) {
-            wait(var_c2546554);
+        extrawait = self function_ecec052c(player, weapon);
+        extrawait = extrawait + weapon.firetime - 0.05;
+        if (extrawait > 0) {
+            wait(extrawait);
         }
     }
 }
@@ -519,7 +519,7 @@ function function_26d43617(player) {
 // Checksum 0xb699228c, Offset: 0x2010
 // Size: 0x37e
 function private function_ecec052c(player, weapon) {
-    var_c2546554 = 0;
+    extrawait = 0;
     owner = self.bird;
     angles = (self.angles[0], self.angles[1], 0);
     if (isdefined(player)) {
@@ -554,18 +554,18 @@ function private function_ecec052c(player, weapon) {
             if (namespace_ec06fe4a::function_a8975c67(16)) {
                 projectile = magicbullet(weapon, start, start + forward * 1000, owner);
             } else {
-                var_c2546554 = 0.2;
+                extrawait = 0.2;
             }
         } else if (namespace_ec06fe4a::function_a8975c67()) {
             projectile = magicbullet(weapon, start, start + forward * 1000, owner);
         } else {
-            var_c2546554 = 0.2;
+            extrawait = 0.2;
         }
         if (isdefined(projectile)) {
             projectile.chicken = owner;
         }
     }
-    return var_c2546554;
+    return extrawait;
 }
 
 // Namespace namespace_4ff32993/namespace_11d7d604

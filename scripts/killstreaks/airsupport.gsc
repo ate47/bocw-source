@@ -484,7 +484,7 @@ function function_fabf8bc5(goalorigin) {
     self endon(#"death", #"hash_41aaa8d75d168e0a");
     distthresholdsq = 10000;
     if (isdefined(self.var_f766e12d)) {
-        distthresholdsq = function_a3f6cdac(self.var_f766e12d);
+        distthresholdsq = sqr(self.var_f766e12d);
     }
     while (true) {
         distsq = distancesquared(self.origin, goalorigin);
@@ -1299,7 +1299,7 @@ function function_deb91ef4() {
                 return;
             }
             if (response == "player_location") {
-                self notify(#"confirm_location", {#yaw:0, #position:self.origin});
+                self notify(#"confirm_location", {#position:self.origin, #yaw:0});
                 return;
             }
             if (response == "take_control") {
@@ -1309,13 +1309,13 @@ function function_deb91ef4() {
             objid = waitresult.intpayload;
             foreach (point in level.var_51368c39) {
                 if (point.objectiveid == objid) {
-                    self notify(#"confirm_location", {#yaw:point.yaw, #position:point.origin});
+                    self notify(#"confirm_location", {#position:point.origin, #yaw:point.yaw});
                     return;
                 }
             }
             objpos = function_cc3ada06(objid);
             if (isdefined(objpos)) {
-                self notify(#"confirm_location", {#yaw:0, #position:objpos});
+                self notify(#"confirm_location", {#position:objpos, #yaw:0});
                 return;
             }
         }

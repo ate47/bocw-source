@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\zm\zm_tungsten_main_quest.csc;
-#using script_311c446e3df6c3fa;
+#using scripts\zm_common\objective_manager.csc;
 #using scripts\zm_common\zm_score.csc;
 #using script_5ee86fb478309acf;
 #using scripts\core_common\postfx_shared.csc;
@@ -8,7 +8,7 @@
 #using script_40e017336a087343;
 #using scripts\core_common\ai\systems\gib.csc;
 #using scripts\core_common\math_shared.csc;
-#using script_20055f2f97341caa;
+#using scripts\core_common\item_drop.csc;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\struct.csc;
 #using scripts\core_common\scene_shared.csc;
@@ -628,7 +628,7 @@ function function_3cfac49e(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump) {
         if (!isdefined(self.var_8dc5c1c3)) {
             self.var_8dc5c1c3 = util::spawn_model(fieldname, "tag_origin", self.origin, self.angles);
-            self.var_8cc03782 = util::playfxontag(fieldname, #"hash_76394ace7e94981f", self.var_8dc5c1c3, "tag_origin");
+            self.eye_fx = util::playfxontag(fieldname, #"hash_76394ace7e94981f", self.var_8dc5c1c3, "tag_origin");
             self.var_8dc5c1c3 linkto(self);
             self playsound(fieldname, #"hash_2c4dfc38f6bf9d69");
             self.var_8dc5c1c3 playloopsound(#"hash_b3b9bf3b225b9ae");
@@ -636,10 +636,10 @@ function function_3cfac49e(localclientnum, *oldval, newval, *bnewent, *binitials
         return;
     }
     self playsound(fieldname, #"hash_4dc12b2e2af084a8");
-    if (isdefined(self.var_8dc5c1c3) && isdefined(self.var_8cc03782)) {
+    if (isdefined(self.var_8dc5c1c3) && isdefined(self.eye_fx)) {
         self.var_8dc5c1c3 unlink();
-        stopfx(fieldname, self.var_8cc03782);
-        self.var_8cc03782 = undefined;
+        stopfx(fieldname, self.eye_fx);
+        self.eye_fx = undefined;
         self.var_8dc5c1c3 delete();
         self.var_8dc5c1c3 = undefined;
     }

@@ -23,14 +23,14 @@
 // Checksum 0x11b43278, Offset: 0x1d8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"spawn_beacon", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"spawn_beacon", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace spawn_beacon/spawnbeacon
 // Params 0, eflags: 0x6 linked
 // Checksum 0x3d44d610, Offset: 0x228
 // Size: 0x214
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
     level.var_9fa5aeb4 = &function_b42580a6;
     level.var_34c482f2 = &function_fa81d248;

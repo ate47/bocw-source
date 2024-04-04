@@ -16,14 +16,14 @@
 // Checksum 0x27eae31c, Offset: 0x180
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"trophy_system_spy", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"trophy_system_spy", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace trophy_system/trophy_system_spy
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf063e7b8, Offset: 0x1c8
 // Size: 0x1a4
-function private function_70a657d8() {
+function private preinit() {
     level.trophydetonationfx = #"hash_7e2c1749cc5fcfb9";
     level.fx_trophy_radius_indicator = #"weapon/fx_trophy_radius_indicator";
     trophydeployanim = "p8_fxanim_mp_eqp_trophy_system_world_anim";

@@ -14,14 +14,14 @@
 // Checksum 0x21e2ed1e, Offset: 0x258
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"archetype_avogadro", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"archetype_avogadro", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
 // Params 0, eflags: 0x6 linked
 // Checksum 0x3096fd76, Offset: 0x2b0
 // Size: 0x1ec
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("missile", "" + #"hash_699d5bb1a9339a93", 1, 2, "int", &function_9452b8f1, 0, 0);
     clientfield::register("actor", "" + #"hash_4466de6137f54b59", 1, 1, "int", &function_1d2d070c, 0, 0);
     clientfield::register("actor", "" + #"hash_2eec8fc21495a18c", 1, 2, "int", &function_ae4cd3d4, 0, 0);
@@ -140,22 +140,22 @@ function private function_ae4cd3d4(localclientnum, *oldval, newval, *bnewent, *b
     if (!isdefined(self)) {
         return;
     }
-    if (bwastimejump == 1 && self.var_58d5a6c8 !== 1) {
+    if (bwastimejump == 1 && self.health_state !== 1) {
         self function_df8ae699(fieldname);
         fxclientutils::playfxbundle(fieldname, self, "fxd9_zm_char_avogadro_elec_health_low");
-        self.var_58d5a6c8 = 1;
+        self.health_state = 1;
         return;
     }
-    if (bwastimejump == 2 && self.var_58d5a6c8 !== 2) {
+    if (bwastimejump == 2 && self.health_state !== 2) {
         self function_df8ae699(fieldname);
         fxclientutils::playfxbundle(fieldname, self, "fxd9_zm_char_avogadro_elec_health_med");
-        self.var_58d5a6c8 = 2;
+        self.health_state = 2;
         return;
     }
-    if (bwastimejump == 3 && self.var_58d5a6c8 !== 3) {
+    if (bwastimejump == 3 && self.health_state !== 3) {
         self function_df8ae699(fieldname);
         fxclientutils::playfxbundle(fieldname, self, "fxd9_zm_char_avogadro_elec_health_high");
-        self.var_58d5a6c8 = 3;
+        self.health_state = 3;
     }
 }
 

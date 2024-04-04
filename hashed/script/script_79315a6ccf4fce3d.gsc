@@ -53,7 +53,7 @@ function function_dcb0d632(damaged = 0, var_3463bd5c) {
     }
     if (isdefined(var_3463bd5c) && is_true(var_3463bd5c.var_7c56394) && (is_true(result.var_760a0807) || damaged)) {
         arrayremovevalue(level.doa.var_d1534e45, self);
-        namespace_1e25ad94::function_f5f0c0f8("Deleting barrel trap permenently at:" + self.origin);
+        namespace_1e25ad94::debugmsg("Deleting barrel trap permenently at:" + self.origin);
     }
     self namespace_ec06fe4a::function_8c808737();
     self namespace_e32bb68::function_ae271c0b("barrel_ignite");
@@ -102,12 +102,12 @@ function function_7e0f72a5() {
         result = undefined;
         result = level waittill(#"hash_c1cceae4479f2e5");
         distsq = distancesquared(self.origin, result.origin);
-        if (distsq < function_a3f6cdac(256)) {
+        if (distsq < sqr(256)) {
             dir = vectornormalize(self.origin - result.origin);
             impulse = dir + vectorscale((0, 0, 1), 10);
             impulse = vectorscale(dir, 60);
             self physicslaunch(self.origin, impulse);
-            if (distsq < function_a3f6cdac(128) && !is_true(self.var_7523fd8b)) {
+            if (distsq < sqr(128) && !is_true(self.fuselit)) {
                 self.takedamage = 1;
                 self dodamage(10, self.origin);
             }
@@ -125,13 +125,13 @@ function function_ed0bfdae() {
         result = undefined;
         result = level waittill(#"hash_50be6fd0db982086");
         distsq = distancesquared(self.origin, result.origin);
-        if (distsq < function_a3f6cdac(72)) {
+        if (distsq < sqr(72)) {
             dir = vectornormalize(self.origin - result.origin);
             impulse = dir + vectorscale((0, 0, 1), 15);
             impulse = dir + vectorscale((0, 0, 1), 15);
             impulse = vectorscale(impulse, 5);
             self physicslaunch(self.origin, impulse);
-            if (!is_true(self.var_7523fd8b)) {
+            if (!is_true(self.fuselit)) {
                 self.takedamage = 1;
                 self dodamage(1, self.origin);
             }
@@ -151,7 +151,7 @@ function function_d971ecbd(time) {
     self namespace_e32bb68::function_3a59ec34("evt_doa_hazard_redbarrel_ignite");
     self namespace_e32bb68::function_3a59ec34("evt_doa_hazard_redbarrel_fuse_lp");
     detonationtime = gettime() + time * 1000;
-    var_f83baa7c = detonationtime - 4500;
+    stage1 = detonationtime - 4500;
     var_38ec2561 = 0;
     while (true) {
         time = gettime();
@@ -161,12 +161,12 @@ function function_d971ecbd(time) {
         result = undefined;
         result = self waittilltimeout(0.5, #"damage");
         if (result._notify == #"damage") {
-            namespace_1e25ad94::function_f5f0c0f8("Barrel (" + self getentitynumber() + ") took damage of: " + result.amount + " Health left: " + self.health);
-            self.var_7523fd8b = 1;
+            namespace_1e25ad94::debugmsg("Barrel (" + self getentitynumber() + ") took damage of: " + result.amount + " Health left: " + self.health);
+            self.fuselit = 1;
             detonationtime = detonationtime - 2000;
-            var_f83baa7c = var_f83baa7c - 2000;
+            stage1 = stage1 - 2000;
         }
-        if (!var_38ec2561 && time > var_f83baa7c) {
+        if (!var_38ec2561 && time > stage1) {
             var_38ec2561 = 1;
             self namespace_83eb6304::function_3ecfde67("explo_warning_light");
             self namespace_e32bb68::function_3a59ec34("evt_doa_hazard_redbarrel_warning");
@@ -295,11 +295,11 @@ function function_2b60f30() {
                 continue;
             }
             trap.var_eb9d64bb = time + 2000 + randomint(600);
-            if (!isdefined(trap.var_759f42bf)) {
+            if (!isdefined(trap.script_models)) {
                 activate = 0;
                 if (isdefined(trap.var_f8660931)) {
                     distsq = distancesquared(trap.origin, trap.var_f8660931.origin);
-                    if (distsq < function_a3f6cdac(3200)) {
+                    if (distsq < sqr(3200)) {
                         activate = 1;
                     }
                 }
@@ -317,14 +317,14 @@ function function_2b60f30() {
                 if (activate) {
                     function_647017bd(trap, 1);
                     trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
-                    namespace_1e25ad94::function_f5f0c0f8("Paging IN barrel trap at:" + trap.origin);
+                    namespace_1e25ad94::debugmsg("Paging IN barrel trap at:" + trap.origin);
                 }
                 continue;
             }
             trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 1800);
             if (!isdefined(trap.var_f8660931)) {
                 trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
-                namespace_1e25ad94::function_f5f0c0f8("Paging out barrel trap at:" + trap.origin);
+                namespace_1e25ad94::debugmsg("Paging out barrel trap at:" + trap.origin);
             }
         }
     }

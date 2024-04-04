@@ -15,14 +15,14 @@
 // Checksum 0xf85d261d, Offset: 0x128
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_40da084132aa904b", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_40da084132aa904b", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace globallogic_audio/globallogic_audio
 // Params 0, eflags: 0x6 linked
 // Checksum 0x5763e1bc, Offset: 0x170
 // Size: 0x7c
-function private function_70a657d8() {
+function private preinit() {
     if (zm_utility::is_survival()) {
         level.var_bc01f047 = "srtaacom";
         level.var_7ee6af9f = "srcommander";

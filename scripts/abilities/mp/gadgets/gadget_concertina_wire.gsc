@@ -12,14 +12,14 @@
 // Checksum 0x69eb9160, Offset: 0xf0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"gadget_concertina_wire", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"gadget_concertina_wire", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace concertina_wire/gadget_concertina_wire
 // Params 0, eflags: 0x6 linked
 // Checksum 0x73705bca, Offset: 0x138
 // Size: 0xc4
-function private function_70a657d8() {
+function private preinit() {
     if (getgametypesetting(#"competitivesettings") === 1) {
         init_shared("concertina_wire_custom_settings_comp");
     } else {
@@ -59,7 +59,7 @@ function function_806b0f85(attacker, weapon) {
 // Size: 0x14a
 function function_6190ae9e(origin, *angles, *player) {
     if (isdefined(level.var_87226c31.bundle.var_bc78f60e)) {
-        length2 = function_a3f6cdac(level.var_87226c31.bundle.var_bc78f60e + level.var_87226c31.bundle.maxwidth);
+        length2 = sqr(level.var_87226c31.bundle.var_bc78f60e + level.var_87226c31.bundle.maxwidth);
         foreach (protectedzone in level.var_87226c31.var_d6a27a84) {
             if (isdefined(protectedzone)) {
                 dist2 = distance2dsquared(player, protectedzone.origin);

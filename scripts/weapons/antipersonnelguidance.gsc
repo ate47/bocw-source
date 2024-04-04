@@ -10,14 +10,14 @@
 // Checksum 0x1b961633, Offset: 0xd0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"singlelockap_guidance", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"singlelockap_guidance", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace singlelockap_guidance/antipersonnelguidance
 // Params 0, eflags: 0x6 linked
 // Checksum 0x73787166, Offset: 0x118
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     callback::on_spawned(&on_player_spawned);
 }
 
@@ -83,7 +83,7 @@ function event_handler[missile_fire] function_dc710809(eventstruct) {
     if (weapon.lockontype == "AP Single") {
         foreach (target in self.multilocklist) {
             if (isdefined(target.aptarget) && target.aplockfinalized) {
-                target.aptarget notify(#"stinger_fired_at_me", {#attacker:self, #weapon:weapon, #projectile:missile});
+                target.aptarget notify(#"stinger_fired_at_me", {#projectile:missile, #weapon:weapon, #attacker:self});
             }
         }
     }
@@ -167,7 +167,7 @@ function aplockloop(weapon) {
                     target.aplockpending = 0;
                     self weaponlockfinalize(target.aptarget, i);
                     self thread seekersound(weapon.lockonseekerlockedsound, weapon.lockonseekerlockedsoundloops, target.apsoundid);
-                    target.aptarget notify(#"missile_lock", {#weapon:weapon, #attacker:self});
+                    target.aptarget notify(#"missile_lock", {#attacker:self, #weapon:weapon});
                 }
             }
         } while (!done);

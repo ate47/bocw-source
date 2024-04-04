@@ -18,14 +18,14 @@
 // Checksum 0xc815cd49, Offset: 0xe8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_fd2ea50703c7073", &function_70a657d8, undefined, undefined, #"item_world");
+    system::register(#"hash_fd2ea50703c7073", &preinit, undefined, undefined, #"item_world");
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
 // Params 0, eflags: 0x6 linked
 // Checksum 0x97f38e17, Offset: 0x138
 // Size: 0x2c
-function private function_70a657d8() {
+function private preinit() {
     if (item_inventory::function_7d5553ac()) {
         return;
     }
@@ -65,14 +65,14 @@ function private function_116fd9a7() {
 // Checksum 0x75ab8c7f, Offset: 0x570
 // Size: 0x122
 function private function_d045e83b(item, player, *networkid, itemid, *itemcount, var_aec6fa7f, *slot) {
-    if (itemid.var_a6762160.itemtype !== #"ammo") {
+    if (itemid.itementry.itemtype !== #"ammo") {
         /#
             assertmsg("<unknown string>" + itemid.name + "<unknown string>");
         #/
         return 0;
     }
     if (!self item_inventory::can_pickup_ammo(itemid)) {
-        return (isdefined(itemid.var_a6762160.amount) ? itemid.var_a6762160.amount : isdefined(slot) ? slot : 1);
+        return (isdefined(itemid.itementry.amount) ? itemid.itementry.amount : isdefined(slot) ? slot : 1);
     }
     itemcount function_b00db06(8, var_aec6fa7f);
     return itemcount item_inventory::equip_ammo(itemid, slot);
@@ -87,36 +87,36 @@ function private function_2e5b5858(item, player, *networkid, *itemid, itemcount,
     var_3d1f9df4 = 0;
     var_b0938bd7 = undefined;
     var_381f3b39 = 0;
-    var_77e61fc6 = 0;
-    if (networkid.var_a6762160.var_4a1a4613 === #"armor_swap") {
+    remainingitems = 0;
+    if (networkid.itementry.var_4a1a4613 === #"armor_swap") {
         if (itemid armor::has_armor()) {
             inventoryitem = itemid.inventory.items[6];
             if (inventoryitem.networkid != 32767) {
-                droppeditem = inventoryitem.var_a6762160;
+                droppeditem = inventoryitem.itementry;
                 var_3d1f9df4 = droppeditem.amount;
             }
         }
         itemid item_inventory::drop_armor();
-        var_77e61fc6 = itemid item_inventory::give_inventory_item(networkid, 1, var_aec6fa7f, slotid);
-        if (var_77e61fc6 < itemcount) {
+        remainingitems = itemid item_inventory::give_inventory_item(networkid, 1, var_aec6fa7f, slotid);
+        if (remainingitems < itemcount) {
             if (isdefined(networkid.networkid) && item_world_util::function_db35e94f(networkid.networkid)) {
                 networkid = item_inventory::get_inventory_item(networkid.networkid);
             }
             if (itemid item_inventory::function_fba4a353(networkid)) {
                 itemid item_inventory::equip_armor(networkid);
-                var_b0938bd7 = networkid.var_a6762160;
-                var_381f3b39 = networkid.var_a6762160.amount;
+                var_b0938bd7 = networkid.itementry;
+                var_381f3b39 = networkid.itementry.amount;
             }
         }
-    } else if (networkid.var_a6762160.var_4a1a4613 === #"armor_heal") {
-        var_ffd5d55f = 1;
+    } else if (networkid.itementry.var_4a1a4613 === #"armor_heal") {
+        noarmor = 1;
         if (itemid.armortier > 0) {
-            if (networkid.var_a6762160.armortier > itemid.armortier) {
+            if (networkid.itementry.armortier > itemid.armortier) {
                 inventoryitem = itemid.inventory.items[6];
                 itemid thread function_bcaf2ad1(inventoryitem.networkid);
-                var_ffd5d55f = 1;
+                noarmor = 1;
             } else {
-                var_ffd5d55f = 0;
+                noarmor = 0;
                 if (isdefined(itemid.armor) && isdefined(itemid.maxarmor)) {
                     inventoryitem = itemid.inventory.items[6];
                     inventoryitem.amount = itemid.maxarmor;
@@ -124,20 +124,20 @@ function private function_2e5b5858(item, player, *networkid, *itemid, itemcount,
                 }
             }
         }
-        if (var_ffd5d55f) {
+        if (noarmor) {
             itemid item_inventory::give_inventory_item(networkid, 1, var_aec6fa7f, slotid);
             if (isdefined(networkid.networkid) && item_world_util::function_db35e94f(networkid.networkid)) {
                 networkid = item_inventory::get_inventory_item(networkid.networkid);
             }
             if (itemid item_inventory::function_fba4a353(networkid)) {
                 itemid item_inventory::equip_armor(networkid);
-                var_b0938bd7 = networkid.var_a6762160;
-                var_381f3b39 = networkid.var_a6762160.amount;
+                var_b0938bd7 = networkid.itementry;
+                var_381f3b39 = networkid.itementry.amount;
             }
         }
     }
     item_world::function_1a46c8ae(itemid, droppeditem, var_3d1f9df4, var_b0938bd7, var_381f3b39);
-    return var_77e61fc6;
+    return remainingitems;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -154,9 +154,9 @@ function function_bcaf2ad1(var_6ead57c0) {
 // Checksum 0x2368a4e1, Offset: 0xad0
 // Size: 0x80
 function private function_cb9b4dd7(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, slotid) {
-    var_77e61fc6 = itemcount item_inventory::give_inventory_item(itemid, var_aec6fa7f, undefined, slotid);
+    remainingitems = itemcount item_inventory::give_inventory_item(itemid, var_aec6fa7f, undefined, slotid);
     itemcount item_inventory::function_3d113bfb();
-    return var_77e61fc6;
+    return remainingitems;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -165,18 +165,18 @@ function private function_cb9b4dd7(item, player, *networkid, *itemid, itemcount,
 // Size: 0x168
 function private function_14b2eddf(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, slotid) {
     var_f0dc4e93 = itemcount item_inventory::function_ec087745();
-    var_4838b749 = undefined;
+    weaponslotid = undefined;
     if (isdefined(var_f0dc4e93) && var_f0dc4e93 != 32767) {
-        var_4838b749 = itemcount item_inventory::function_b246c573(var_f0dc4e93);
+        weaponslotid = itemcount item_inventory::function_b246c573(var_f0dc4e93);
     }
-    var_77e61fc6 = itemcount item_inventory::give_inventory_item(itemid, var_aec6fa7f, undefined, slotid);
-    if (isdefined(var_4838b749) && isdefined(slotid) && namespace_a0d533d1::function_398b9770(var_4838b749, slotid)) {
+    remainingitems = itemcount item_inventory::give_inventory_item(itemid, var_aec6fa7f, undefined, slotid);
+    if (isdefined(weaponslotid) && isdefined(slotid) && namespace_a0d533d1::function_398b9770(weaponslotid, slotid)) {
         if (isdefined(itemid.networkid) && item_world_util::function_db35e94f(itemid.networkid)) {
             itemid = item_inventory::get_inventory_item(itemid.networkid);
         }
         itemcount item_inventory::equip_attachment(itemid, var_f0dc4e93, undefined, 0);
     }
-    return var_77e61fc6;
+    return remainingitems;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -187,14 +187,14 @@ function private function_42ffe9b2(item, player, *networkid, *itemid, itemcount,
     if (itemcount item_inventory::function_fba4a353(itemid)) {
         slotid = 8;
     }
-    var_77e61fc6 = itemcount item_inventory::give_inventory_item(itemid, var_aec6fa7f, undefined, slotid);
-    if (var_77e61fc6 < var_aec6fa7f && slotid === 8) {
+    remainingitems = itemcount item_inventory::give_inventory_item(itemid, var_aec6fa7f, undefined, slotid);
+    if (remainingitems < var_aec6fa7f && slotid === 8) {
         if (isdefined(itemid.networkid) && item_world_util::function_db35e94f(itemid.networkid)) {
             itemid = item_inventory::get_inventory_item(itemid.networkid);
         }
         itemcount item_inventory::equip_backpack(itemid);
     }
-    return var_77e61fc6;
+    return remainingitems;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -202,8 +202,8 @@ function private function_42ffe9b2(item, player, *networkid, *itemid, itemcount,
 // Checksum 0x14976da6, Offset: 0xdd8
 // Size: 0xe8
 function private function_2eebeff5(item, player, *networkid, *itemid, itemcount, var_aec6fa7f, slotid) {
-    var_77e61fc6 = itemid item_inventory::give_inventory_item(networkid, itemcount, var_aec6fa7f, slotid);
-    if (var_77e61fc6 < itemcount) {
+    remainingitems = itemid item_inventory::give_inventory_item(networkid, itemcount, var_aec6fa7f, slotid);
+    if (remainingitems < itemcount) {
         if (isdefined(networkid.networkid) && item_world_util::function_db35e94f(networkid.networkid)) {
             networkid = item_inventory::get_inventory_item(networkid.networkid);
         }
@@ -211,7 +211,7 @@ function private function_2eebeff5(item, player, *networkid, *itemid, itemcount,
             itemid thread item_inventory::equip_equipment(networkid);
         }
     }
-    return var_77e61fc6;
+    return remainingitems;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -219,8 +219,8 @@ function private function_2eebeff5(item, player, *networkid, *itemid, itemcount,
 // Checksum 0x1e76710d, Offset: 0xec8
 // Size: 0xe8
 function private function_349d4c26(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, slotid) {
-    var_77e61fc6 = itemcount item_inventory::give_inventory_item(itemid, var_aec6fa7f, undefined, slotid);
-    if (var_77e61fc6 < var_aec6fa7f) {
+    remainingitems = itemcount item_inventory::give_inventory_item(itemid, var_aec6fa7f, undefined, slotid);
+    if (remainingitems < var_aec6fa7f) {
         if (isdefined(itemid.networkid) && item_world_util::function_db35e94f(itemid.networkid)) {
             itemid = item_inventory::get_inventory_item(itemid.networkid);
         }
@@ -228,7 +228,7 @@ function private function_349d4c26(item, player, *networkid, *itemid, itemcount,
             itemcount thread item_inventory::equip_health(itemid);
         }
     }
-    return var_77e61fc6;
+    return remainingitems;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -236,8 +236,8 @@ function private function_349d4c26(item, player, *networkid, *itemid, itemcount,
 // Checksum 0xe85b93bc, Offset: 0xfb8
 // Size: 0x6a
 function private function_670cce3f(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, slotid) {
-    var_77e61fc6 = itemcount item_inventory::give_inventory_item(itemid, var_aec6fa7f, undefined, slotid);
-    return var_77e61fc6;
+    remainingitems = itemcount item_inventory::give_inventory_item(itemid, var_aec6fa7f, undefined, slotid);
+    return remainingitems;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -245,8 +245,8 @@ function private function_670cce3f(item, player, *networkid, *itemid, itemcount,
 // Checksum 0x34390122, Offset: 0x1030
 // Size: 0x6a
 function private function_41a52251(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, slotid) {
-    var_77e61fc6 = itemcount item_inventory::give_inventory_item(itemid, var_aec6fa7f, undefined, slotid);
-    return var_77e61fc6;
+    remainingitems = itemcount item_inventory::give_inventory_item(itemid, var_aec6fa7f, undefined, slotid);
+    return remainingitems;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -254,9 +254,9 @@ function private function_41a52251(item, player, *networkid, *itemid, itemcount,
 // Checksum 0xf6c50fcc, Offset: 0x10a8
 // Size: 0x90
 function private function_2b2e9302(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, slotid) {
-    var_77e61fc6 = itemcount item_inventory::give_inventory_item(itemid, var_aec6fa7f, undefined, slotid);
+    remainingitems = itemcount item_inventory::give_inventory_item(itemid, var_aec6fa7f, undefined, slotid);
     itemcount callback::callback(#"hash_3b891b6daa75c782", itemid);
-    return var_77e61fc6;
+    return remainingitems;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -264,8 +264,8 @@ function private function_2b2e9302(item, player, *networkid, *itemid, itemcount,
 // Checksum 0xbb4ae33c, Offset: 0x1140
 // Size: 0xe8
 function private function_7de52ecc(item, player, *networkid, *itemid, itemcount, var_aec6fa7f, slotid) {
-    var_77e61fc6 = itemid item_inventory::give_inventory_item(networkid, itemcount, var_aec6fa7f, slotid);
-    if (var_77e61fc6 < itemcount) {
+    remainingitems = itemid item_inventory::give_inventory_item(networkid, itemcount, var_aec6fa7f, slotid);
+    if (remainingitems < itemcount) {
         if (isdefined(networkid.networkid) && item_world_util::function_db35e94f(networkid.networkid)) {
             networkid = item_inventory::get_inventory_item(networkid.networkid);
         }
@@ -273,7 +273,7 @@ function private function_7de52ecc(item, player, *networkid, *itemid, itemcount,
             itemid thread item_inventory::function_854cf2c3(networkid);
         }
     }
-    return var_77e61fc6;
+    return remainingitems;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -281,9 +281,9 @@ function private function_7de52ecc(item, player, *networkid, *itemid, itemcount,
 // Checksum 0xfd1c9a2c, Offset: 0x1230
 // Size: 0x100
 function private function_898628ef(item, player, *networkid, *itemid, itemcount, var_aec6fa7f, slotid) {
-    var_77e61fc6 = itemid item_inventory::give_inventory_item(networkid, itemcount, var_aec6fa7f, slotid);
+    remainingitems = itemid item_inventory::give_inventory_item(networkid, itemcount, var_aec6fa7f, slotid);
     stockammo = networkid.stockammo;
-    if (var_77e61fc6 < itemcount) {
+    if (remainingitems < itemcount) {
         if (isdefined(networkid.networkid) && item_world_util::function_db35e94f(networkid.networkid)) {
             networkid = item_inventory::get_inventory_item(networkid.networkid);
         }
@@ -291,7 +291,7 @@ function private function_898628ef(item, player, *networkid, *itemid, itemcount,
             itemid thread item_inventory::function_1ac37022(networkid, stockammo);
         }
     }
-    return var_77e61fc6;
+    return remainingitems;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -299,8 +299,8 @@ function private function_898628ef(item, player, *networkid, *itemid, itemcount,
 // Checksum 0xa558853a, Offset: 0x1338
 // Size: 0x6a
 function private function_a240798a(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, slotid) {
-    var_77e61fc6 = itemcount item_inventory::give_inventory_item(itemid, var_aec6fa7f, undefined, slotid);
-    return var_77e61fc6;
+    remainingitems = itemcount item_inventory::give_inventory_item(itemid, var_aec6fa7f, undefined, slotid);
+    return remainingitems;
 }
 
 // Namespace namespace_efff98ec/namespace_efff98ec
@@ -324,7 +324,7 @@ function private function_c3f4d281(item, *player, *networkid, *itemid, *itemcoun
     foreach (weaponslot in namespace_a0d533d1::function_4905dddf()) {
         inventoryweapon = self namespace_a0d533d1::function_2b83d3ff(self item_inventory::function_2e711614(weaponslot));
         if (isdefined(inventoryweapon) && inventoryweapon != nullweapon && inventoryweapon != var_f945fa92 && inventoryweapon.weapclass != "melee" && inventoryweapon.rootweapon != var_f934814c && inventoryweapon.rootweapon != var_92587dd3) {
-            var_1326fcc7 = isdefined(slotid.var_a6762160.amount) ? slotid.var_a6762160.amount : 20;
+            var_1326fcc7 = isdefined(slotid.itementry.amount) ? slotid.itementry.amount : 20;
             maxammo = inventoryweapon.maxammo;
             var_e6527384 = maxammo * var_1326fcc7 / 100;
             currentammostock = self getweaponammostock(inventoryweapon);
@@ -382,7 +382,7 @@ function private function_2650d5c6(*item, player, *networkid, *itemid, *itemcoun
     var_2cacdde7 = 50;
     inventoryitem = slotid.inventory.items[6];
     if (isdefined(inventoryitem)) {
-        var_2cacdde7 = isdefined(inventoryitem.var_a6762160.var_a3aa1ca2) ? inventoryitem.var_a6762160.var_a3aa1ca2 : 50;
+        var_2cacdde7 = isdefined(inventoryitem.itementry.var_a3aa1ca2) ? inventoryitem.itementry.var_a3aa1ca2 : 50;
         if (isdefined(level.var_8cc294a7)) {
             var_2cacdde7 = [[ level.var_8cc294a7 ]](var_2cacdde7);
         }
@@ -404,8 +404,8 @@ function private function_a712496a(item, player, *networkid, *itemid, itemcount,
         assert(isplayer(self));
     #/
     stockammo = networkid.stockammo;
-    if (isdefined(networkid.var_69d30864)) {
-        foreach (attachment in networkid.var_69d30864.attachments) {
+    if (isdefined(networkid.weaponoverride)) {
+        foreach (attachment in networkid.weaponoverride.attachments) {
             attachmentname = item_world_util::function_6a0ee21a(attachment);
             if (!isdefined(attachmentname)) {
                 continue;
@@ -427,18 +427,18 @@ function private function_a712496a(item, player, *networkid, *itemid, itemcount,
             itemid item_inventory::drop_inventory_item(weaponitem.networkid, stashitem, itemid.origin, isdefined(networkid.targetnamehash) ? networkid.targetnamehash : networkid.targetname, undefined, 1);
         }
     }
-    var_77e61fc6 = itemid item_inventory::give_inventory_item(networkid, itemcount, var_aec6fa7f, slotid);
-    if (var_77e61fc6 < itemcount) {
+    remainingitems = itemid item_inventory::give_inventory_item(networkid, itemcount, var_aec6fa7f, slotid);
+    if (remainingitems < itemcount) {
         if (isdefined(networkid.networkid) && item_world_util::function_db35e94f(networkid.networkid)) {
             networkid = item_inventory::get_inventory_item(networkid.networkid);
         }
-        if (isdefined(networkid.var_a6762160.var_b079a6e6)) {
-            itemid item_inventory::function_b579540e(networkid, networkid.var_a6762160.var_b079a6e6);
+        if (isdefined(networkid.itementry.ammomodname)) {
+            itemid item_inventory::function_b579540e(networkid, networkid.itementry.ammomodname);
             weapon = namespace_a0d533d1::function_2b83d3ff(networkid);
-            itemid aat::acquire(weapon, networkid.var_a6762160.var_b079a6e6);
+            itemid aat::acquire(weapon, networkid.itementry.ammomodname);
         }
         itemid item_inventory::equip_weapon(networkid, 1, 1, 0, 1, stockammo);
     }
-    return var_77e61fc6;
+    return remainingitems;
 }
 

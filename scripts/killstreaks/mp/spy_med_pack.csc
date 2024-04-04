@@ -10,14 +10,14 @@
 // Checksum 0xa3072fd3, Offset: 0x98
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"spy_med_pack", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"spy_med_pack", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace spy_med_pack/spy_med_pack
 // Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0xe8
 // Size: 0x4
-function private function_70a657d8() {
+function private preinit() {
     
 }
 

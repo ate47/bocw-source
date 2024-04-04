@@ -14,14 +14,14 @@
 // Checksum 0xb919e64, Offset: 0xb8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"grapple", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"grapple", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace grapple/grapple
 // Params 0, eflags: 0x4
 // Checksum 0x4209c952, Offset: 0x100
 // Size: 0xa4
-function private function_70a657d8() {
+function private preinit() {
     ability_player::register_gadget_activation_callbacks(20, undefined, &gadget_grapple_off);
     globallogic_score::register_kill_callback(getweapon(#"eq_grapple"), &function_d79e9bb5);
     weaponobjects::function_e6400478(#"eq_grapple", &function_422f24cc, 1);

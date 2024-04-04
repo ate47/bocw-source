@@ -7,20 +7,20 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0xda3fc878, Offset: 0xe0
 // Size: 0x304
-function function_70a657d8() {
+function preinit() {
     level.var_774ed7e9 = [];
     foreach (team in level.teams) {
         level.var_774ed7e9[team] = [];
     }
     level.var_d3b9615b = function_b6e6a59b();
     level.var_4b98dc10 = [];
-    level register_state(#"assault", &function_2fe359ab, &function_3eff1293, &function_6a672c6d);
+    level register_state(#"assault", &function_2fe359ab, &assault_start, &function_6a672c6d);
     level register_state(#"capture", &function_bcd00fa7, &capture_start, &function_423ecbc1);
     level register_state(#"defend", &function_1ba5e803, &defend_start, &function_72084729);
     level register_state(#"chase_enemy", &function_7c479af0, &function_6790cfd3, &function_63b3aa81);
     level register_state(#"hash_2fc0534d4a96a7ea", &function_199c516, &function_36d63786, &function_91d9d948);
-    level register_state(#"hash_35137090e8395dd4", &function_c5686e54, &function_c35b807e, &function_17d77980);
-    level register_state(#"patrol", &function_82c1a3e9, &function_e98a6aae, &function_a6dcd348);
+    level register_state(#"camp", &function_c5686e54, &function_c35b807e, &function_17d77980);
+    level register_state(#"patrol", &function_82c1a3e9, &patrol_start, &patrol_think);
     /#
         level thread function_7a7ab1a2();
     #/
@@ -138,7 +138,7 @@ function private function_4b2723cf(order, objective) {
 // Checksum 0xb8533100, Offset: 0x908
 // Size: 0x88
 function private register_state(order, var_47dfc5f2, var_20ef4046, var_7b441679) {
-    state = {#think:var_7b441679, #start:var_20ef4046, #ready:var_47dfc5f2, #order:order};
+    state = {#order:order, #ready:var_47dfc5f2, #start:var_20ef4046, #think:var_7b441679};
     level.var_4b98dc10[order] = state;
 }
 
@@ -173,16 +173,16 @@ function private function_82c1a3e9(*objective) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x54df5853, Offset: 0xa98
 // Size: 0x88
-function private function_e98a6aae(*objective) {
+function private patrol_start(*objective) {
     id = self function_e559e4d5();
     if (!isdefined(id)) {
         return false;
     }
-    var_24e30bb8 = self function_89751246(id);
-    if (var_24e30bb8.size <= 0) {
+    route = self function_89751246(id);
+    if (route.size <= 0) {
         return false;
     }
-    self function_fd78dbc(var_24e30bb8);
+    self function_fd78dbc(route);
     return true;
 }
 
@@ -190,7 +190,7 @@ function private function_e98a6aae(*objective) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xc4113dd0, Offset: 0xb28
 // Size: 0x54
-function private function_a6dcd348(*objective) {
+function private patrol_think(*objective) {
     self function_db3a19e8();
     if (!self function_28557cd1()) {
         self clear();
@@ -246,11 +246,11 @@ function private function_6790cfd3(*objective) {
     if (!isdefined(bot.var_494658cd)) {
         return false;
     }
-    var_24e30bb8 = self function_89751246(bot.var_494658cd.region);
-    if (var_24e30bb8.size <= 0) {
+    route = self function_89751246(bot.var_494658cd.region);
+    if (route.size <= 0) {
         return false;
     }
-    self function_fd78dbc(var_24e30bb8);
+    self function_fd78dbc(route);
     return true;
 }
 
@@ -270,9 +270,9 @@ function private function_63b3aa81(*objective) {
     bot = self.bot;
     if (self.bot.enemyvisible && isdefined(bot.var_494658cd) && isdefined(bot.tpoint) && bot.var_494658cd.region != bot.tpoint.region) {
         if (!self function_28557cd1() || bot.var_494658cd.region != self function_f25530e3()) {
-            var_24e30bb8 = self function_89751246(bot.var_494658cd.region);
-            if (var_24e30bb8.size > 0) {
-                self function_fd78dbc(var_24e30bb8);
+            route = self function_89751246(bot.var_494658cd.region);
+            if (route.size > 0) {
+                self function_fd78dbc(route);
             }
         }
     }
@@ -432,7 +432,7 @@ function private function_2fe359ab(objective) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x4ec4eaf, Offset: 0x1888
 // Size: 0x22
-function private function_3eff1293(objective) {
+function private assault_start(objective) {
     return self function_c3253ef(objective);
 }
 
@@ -469,11 +469,11 @@ function private function_c35b807e(*objective) {
     if (var_f1120f81.tacpoints.size < 15 || var_f1120f81.neighbors.size < 2) {
         return false;
     }
-    var_24e30bb8 = self function_89751246(var_de0b3c66);
-    if (var_24e30bb8.size <= 0) {
+    route = self function_89751246(var_de0b3c66);
+    if (route.size <= 0) {
         return false;
     }
-    self function_fd78dbc(var_24e30bb8);
+    self function_fd78dbc(route);
     return true;
 }
 
@@ -522,11 +522,11 @@ function private function_c3253ef(objective) {
         return false;
     }
     id = objective.info.var_dd2331cb[randomint(objective.info.var_dd2331cb.size)];
-    var_24e30bb8 = self function_89751246(id);
-    if (var_24e30bb8.size <= 0) {
+    route = self function_89751246(id);
+    if (route.size <= 0) {
         return false;
     }
-    self function_fd78dbc(var_24e30bb8);
+    self function_fd78dbc(route);
     return true;
 }
 
@@ -538,8 +538,8 @@ function private function_99dcd0bd(objective) {
     if (!self function_28557cd1()) {
         return 0;
     }
-    endindex = self.bot.var_24e30bb8.size - 1;
-    var_69c6b167 = self.bot.var_24e30bb8[endindex];
+    endindex = self.bot.route.size - 1;
+    var_69c6b167 = self.bot.route[endindex];
     return isinarray(objective.info.var_dd2331cb, var_69c6b167);
 }
 
@@ -607,8 +607,8 @@ function private function_ca06456b(start, end, bounds, var_cdea01dc) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x67e3292a, Offset: 0x22b8
 // Size: 0x2e
-function private function_fd78dbc(var_24e30bb8) {
-    self.bot.var_24e30bb8 = var_24e30bb8;
+function private function_fd78dbc(route) {
+    self.bot.route = route;
     self.bot.var_e923c16d = 0;
 }
 
@@ -617,7 +617,7 @@ function private function_fd78dbc(var_24e30bb8) {
 // Checksum 0xd53e91f3, Offset: 0x22f0
 // Size: 0x22
 function private function_9392d2c9() {
-    self.bot.var_24e30bb8 = undefined;
+    self.bot.route = undefined;
     self.bot.var_e923c16d = undefined;
 }
 
@@ -626,7 +626,7 @@ function private function_9392d2c9() {
 // Checksum 0xfaa9a4d6, Offset: 0x2320
 // Size: 0x14
 function private function_28557cd1() {
-    return isdefined(self.bot.var_24e30bb8);
+    return isdefined(self.bot.route);
 }
 
 // Namespace bot_orders/bot_orders
@@ -634,11 +634,11 @@ function private function_28557cd1() {
 // Checksum 0x62c9b1c5, Offset: 0x2340
 // Size: 0x3a
 function private function_f25530e3() {
-    var_24e30bb8 = self.bot.var_24e30bb8;
-    if (!isdefined(var_24e30bb8)) {
+    route = self.bot.route;
+    if (!isdefined(route)) {
         return undefined;
     }
-    return var_24e30bb8[var_24e30bb8.size - 1];
+    return route[route.size - 1];
 }
 
 // Namespace bot_orders/bot_orders
@@ -652,20 +652,20 @@ function private function_db3a19e8() {
         return;
     }
     bot = self.bot;
-    if (!isarray(bot.var_24e30bb8) || bot.var_24e30bb8.size <= 0) {
+    if (!isarray(bot.route) || bot.route.size <= 0) {
         profileNamedStop();
         return;
     }
-    id = bot.var_24e30bb8[bot.var_e923c16d];
-    if (bot.var_24e30bb8.size == 1) {
+    id = bot.route[bot.var_e923c16d];
+    if (bot.route.size == 1) {
         self setgoal(id);
-        self function_fdd00c49();
+        self forceupdategoalpos();
         self function_9392d2c9();
     } else if (isdefined(bot.tpoint) && bot.tpoint.region == id) {
         bot.var_e923c16d++;
-        if (bot.var_e923c16d < bot.var_24e30bb8.size) {
-            self setgoal(bot.var_24e30bb8[bot.var_e923c16d]);
-            self function_fdd00c49();
+        if (bot.var_e923c16d < bot.route.size) {
+            self setgoal(bot.route[bot.var_e923c16d]);
+            self forceupdategoalpos();
         } else {
             self function_9392d2c9();
         }
@@ -673,7 +673,7 @@ function private function_db3a19e8() {
         info = self function_4794d6a3();
         if (!isdefined(info.regionid) || info.regionid != id) {
             self setgoal(id);
-            self function_fdd00c49();
+            self forceupdategoalpos();
         }
     }
     profileNamedStop();
@@ -832,13 +832,13 @@ function private function_26b3a2f() {
 // Size: 0x1be
 function private function_d966fb1c() {
     /#
-        var_24e30bb8 = self.bot.var_24e30bb8;
-        if (!isdefined(var_24e30bb8)) {
+        route = self.bot.route;
+        if (!isdefined(route)) {
             return;
         }
         var_e923c16d = self.bot.var_e923c16d;
         lastorigin = undefined;
-        foreach (i, id in var_24e30bb8) {
+        foreach (i, id in route) {
             info = function_b507a336(id);
             color = (0, 1, 0);
             if (i > var_e923c16d) {

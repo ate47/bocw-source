@@ -12,14 +12,14 @@
 // Checksum 0x3730805e, Offset: 0x140
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_11b091d0ce567b82", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_11b091d0ce567b82", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_4aff7b6b/namespace_4aff7b6b
 // Params 0, eflags: 0x6 linked
 // Checksum 0x29931df4, Offset: 0x198
 // Size: 0xb4
-function private function_70a657d8() {
+function private preinit() {
     if (!isarchetypeloaded(#"mimic")) {
         return;
     }
@@ -71,7 +71,7 @@ function private function_62708cfa(localclientnum, *oldval, newval, *bnewent, *b
     }
     var_a194b407 = 1;
     if (isdefined(self.model)) {
-        var_e2a65b72 = [3:#"hash_8dc57f1c51e6875", 2:#"hash_f93e1bf903e219b", 1:#"hash_7b7cbb4eb2fd70e3", 0:#"sr_ee_hulk_wild_thing"];
+        var_e2a65b72 = [#"sr_ee_hulk_wild_thing", #"hash_7b7cbb4eb2fd70e3", #"hash_f93e1bf903e219b", #"hash_8dc57f1c51e6875"];
         if (isinarray(var_e2a65b72, self.model)) {
             var_a194b407 = 0;
         }

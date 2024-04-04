@@ -22,14 +22,14 @@
 // Checksum 0x84f24ce, Offset: 0x180
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_powerup_weapon_minigun", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_powerup_weapon_minigun", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_powerup_weapon_minigun/zm_powerup_weapon_minigun
 // Params 0, eflags: 0x4
 // Checksum 0xa5415754, Offset: 0x1c8
 // Size: 0x174
-function private function_70a657d8() {
+function private preinit() {
     zm_powerups::register_powerup("minigun", &grab_minigun);
     zm_powerups::register_powerup_weapon("minigun", &minigun_countdown);
     zm_powerups::powerup_set_prevent_pick_up_if_drinking("minigun", 1);

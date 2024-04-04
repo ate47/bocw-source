@@ -13,7 +13,7 @@
 #using script_1b01e95a6b5270fd;
 #using script_17dcb1172e441bf6;
 #using scripts\core_common\util_shared.gsc;
-#using script_556e19065f09f8a2;
+#using scripts\core_common\ai\zombie_eye_glow.gsc;
 #using scripts\core_common\math_shared.gsc;
 #using scripts\core_common\flag_shared.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
@@ -86,7 +86,7 @@ function registerbehaviorscriptfunctions() {
     /#
         assert(isscriptfunctionptr(&zombietraversalservice));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_4367922f0295c370", &zombietraversalservice);
+    behaviortreenetworkutility::registerbehaviortreescriptapi(#"doazombietraversalservice", &zombietraversalservice);
     /#
         assert(isscriptfunctionptr(&function_f637b05d));
     #/
@@ -150,7 +150,7 @@ function function_a4b27d0e() {
     self.shouldspawn = 1;
     self.ignorevortices = 0;
     self asmsetanimationrate(1.1);
-    self.zombie_arms_position = randomint(100) < 50 ? "up" : "down";
+    self.zombie_arms_position = randomint(100) < 50 ? "down" : "up";
     self.zombie_move_speed = isdefined(level.doa.var_13e8f9c9) ? level.doa.var_13e8f9c9 : "run";
     if (isdefined(level.doa.var_a598a835)) {
         self.spawnloc = [[ level.doa.var_a598a835 ]]();
@@ -403,11 +403,11 @@ function function_a86c6bf8(*einflictor, *eattacker, idamage, *idflags, *smeansof
         self namespace_ec06fe4a::function_4f72130c();
         self.takedamage = 0;
         self.aioverridedamage = undefined;
-        var_956de39f = namespace_ec06fe4a::spawnmodel(self.origin);
-        if (isdefined(var_956de39f)) {
-            var_956de39f thread namespace_ec06fe4a::function_52afe5df(0.4);
-            var_956de39f namespace_83eb6304::function_3ecfde67("shadow_die");
-            var_956de39f namespace_e32bb68::function_3a59ec34("zmb_doa_ai_smokeman_death");
+        orb = namespace_ec06fe4a::spawnmodel(self.origin);
+        if (isdefined(orb)) {
+            orb thread namespace_ec06fe4a::function_52afe5df(0.4);
+            orb namespace_83eb6304::function_3ecfde67("shadow_die");
+            orb namespace_e32bb68::function_3a59ec34("zmb_doa_ai_smokeman_death");
         }
     }
     return surfacenormal;

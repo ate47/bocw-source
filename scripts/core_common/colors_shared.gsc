@@ -16,14 +16,14 @@
 // Checksum 0xcf03e250, Offset: 0x1b8
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"colors", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"colors", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace colors/colors_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc6fda811, Offset: 0x210
 // Size: 0xaec
-function private function_70a657d8() {
+function private preinit() {
     nodes = getallnodes();
     level flag::init("player_looks_away_from_spawner");
     level flag::init("friendly_spawner_locked");
@@ -448,22 +448,22 @@ function goto_current_colorindex() {
     if (!has_color()) {
         return;
     }
-    var_32697ae9 = undefined;
+    selectednode = undefined;
     if (nodes.size >= 1 && isdefined(nodes[0].classname) && nodes[0].classname == "info_volume") {
-        var_32697ae9 = nodes[randomint(nodes.size)];
+        selectednode = nodes[randomint(nodes.size)];
     } else {
         for (i = 0; i < nodes.size; i++) {
             node = nodes[i];
             if (isalive(node.color_user) && !isplayer(node.color_user)) {
                 continue;
             }
-            var_32697ae9 = node;
+            selectednode = node;
             break;
         }
     }
-    if (isdefined(var_32697ae9)) {
-        self thread ai_sets_goal_with_delay(var_32697ae9);
-        thread decrementcolorusers(var_32697ae9);
+    if (isdefined(selectednode)) {
+        self thread ai_sets_goal_with_delay(selectednode);
+        thread decrementcolorusers(selectednode);
         return;
     }
     /#
@@ -771,7 +771,7 @@ function get_prioritized_colorcoded_nodes(team, colorcode, *color) {
     }
     if (isdefined(level.colorcoded_volumes[colorcode][color])) {
         if (!isarray(level.colorcoded_volumes[colorcode][color])) {
-            return [0:level.colorcoded_volumes[colorcode][color]];
+            return [level.colorcoded_volumes[colorcode][color]];
         } else {
             return level.colorcoded_volumes[colorcode][color];
         }
@@ -810,7 +810,7 @@ function issue_leave_node_order_to_ai_and_get_ai(colorcode, color, team) {
 // Size: 0x2ec
 function issue_color_order_to_ai(colorcode, color, team, ai) {
     original_ai_array = ai;
-    stack = isdefined(self.var_a4fc3c5f);
+    stack = isdefined(self.script_stack);
     if (!stack) {
         prioritize_colorcoded_nodes(team, colorcode, color);
     }
@@ -977,7 +977,7 @@ function ai_sets_goal_with_delay(node) {
 function ai_sets_goal(node) {
     self notify(#"stop_going_to_node");
     set_goal_and_volume(node);
-    if (is_true(self.var_b589f1b1)) {
+    if (is_true(self.script_careful)) {
         volume = level.colorcoded_volumes[self.team][self.currentcolorcode];
         self thread function_e4e541a8(node, volume);
     }
@@ -1000,18 +1000,18 @@ function set_goal_and_volume(node) {
     if (is_true(node.script_forcegoal)) {
         self thread color_force_goal(node);
     } else {
-        self ai::function_e09d210c(node);
+        self ai::set_goal_node(node);
     }
     volume = level.colorcoded_volumes[self.team][self.currentcolorcode];
     if (isdefined(volume)) {
-        self ai::function_6fdb87c7(volume);
+        self ai::set_goal_ent(volume);
     }
     if (isdefined(node.fixednodesaferadius)) {
         self.fixednodesaferadius = node.fixednodesaferadius;
         return;
     }
-    if (isdefined(level.var_4b03c2b4)) {
-        self.fixednodesaferadius = level.var_4b03c2b4;
+    if (isdefined(level.fixednodesaferadius_default)) {
+        self.fixednodesaferadius = level.fixednodesaferadius_default;
         return;
     }
     self.fixednodesaferadius = 64;
@@ -1888,9 +1888,9 @@ function private function_e4e541a8(node, volume) {
     if (!isdefined(self.var_69acdce1)) {
         self.var_69acdce1 = self.fixednode;
     }
-    thread function_7d3d646d(node);
+    thread recover_from_careful_disable(node);
     for (;;) {
-        function_7759aedb(node, volume);
+        wait_until_an_enemy_is_in_safe_area(node, volume);
         function_7960438b(node, volume);
         function_39d66928(node, volume);
         self.fixednode = self.var_69acdce1;
@@ -1902,7 +1902,7 @@ function private function_e4e541a8(node, volume) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x9a5c655a, Offset: 0x61a8
 // Size: 0x6c
-function private function_7d3d646d(node) {
+function private recover_from_careful_disable(node) {
     self endon(#"death", #"stop_going_to_node");
     self waittill(#"hash_365fd8fda5a5a322");
     self.fixednode = self.var_69acdce1;
@@ -1928,7 +1928,7 @@ function private function_7960438b(*node, *volume) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x1e853ac3, Offset: 0x62a0
 // Size: 0x3a
-function private function_7759aedb(node, volume) {
+function private wait_until_an_enemy_is_in_safe_area(node, volume) {
     for (;;) {
         if (function_c73b2e00(node, volume)) {
             return;

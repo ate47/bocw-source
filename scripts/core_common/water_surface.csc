@@ -10,14 +10,14 @@
 // Checksum 0x2815a55d, Offset: 0xc8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"water_surface", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"water_surface", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace water_surface/water_surface
 // Params 0, eflags: 0x6 linked
 // Checksum 0x32c56510, Offset: 0x110
 // Size: 0x94
-function private function_70a657d8() {
+function private preinit() {
     level._effect[#"water_player_jump_out"] = #"player/fx_plyr_water_jump_out_splash_1p";
     level._effect[#"hash_1e7095084eda811c"] = #"hash_123c2521c68b2167";
     if (is_true(level.disablewatersurfacefx)) {

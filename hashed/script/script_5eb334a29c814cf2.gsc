@@ -24,14 +24,14 @@
 // Checksum 0x6762a12d, Offset: 0x248
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_217942543a3e669b", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_217942543a3e669b", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_ca8676a3/namespace_ca8676a3
 // Params 0, eflags: 0x4
 // Checksum 0xba0e223f, Offset: 0x290
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     spawner::add_archetype_spawn_function(#"zod_companion", &function_10c92445);
     /#
         function_851f409b();
@@ -65,7 +65,7 @@ function private function_10c92445() {
     self.noplayermeleeblood = 1;
     self.var_ba00404c = 1;
     self.var_674fb2e2 = 1;
-    self val::set(#"hash_5efbc4a59aaed545", "prioritize_target_near_leader", 1);
+    self val::set(#"klaus", "prioritize_target_near_leader", 1);
     self callback::function_d8abfc3d(#"hash_49bf4815e9501d2", &zodcompanionutility::function_ae69d4a5);
     self setblackboardattribute("_locomotion_speed", "locomotion_speed_walk");
     /#
@@ -167,7 +167,7 @@ function function_87d77748() {
 // Params 2, eflags: 0x0
 // Checksum 0xd8c753ae, Offset: 0x870
 // Size: 0x24c
-function function_8996b315(var_ac5f535, var_dd1f78d1) {
+function function_8996b315(var_ac5f535, bomb_model) {
     self zodcompanionutility::function_34179e9a();
     self zodcompanionutility::function_60dcf99d(var_ac5f535);
     if (is_true(var_ac5f535)) {
@@ -178,8 +178,8 @@ function function_8996b315(var_ac5f535, var_dd1f78d1) {
             self.last_weapon_name = self.weapon.name;
             self val::set(#"hash_12fe84721f8b0c30", "take_weapons", 1);
         }
-        if (isdefined(var_dd1f78d1)) {
-            self attach(var_dd1f78d1, "tag_weapon_right");
+        if (isdefined(bomb_model)) {
+            self attach(bomb_model, "tag_weapon_right");
         }
         return;
     }
@@ -191,8 +191,8 @@ function function_8996b315(var_ac5f535, var_dd1f78d1) {
         self function_260dfa95(self.last_weapon_name);
         self.last_weapon_name = undefined;
     }
-    if (isdefined(var_dd1f78d1)) {
-        self detach(var_dd1f78d1, "tag_weapon_right");
+    if (isdefined(bomb_model)) {
+        self detach(bomb_model, "tag_weapon_right");
     }
 }
 

@@ -11,7 +11,7 @@
 #using scripts\core_common\scoreevents_shared.gsc;
 #using scripts\core_common\player\player_shared.gsc;
 #using scripts\core_common\globallogic\globallogic_player.gsc;
-#using script_32c8b5b0eb2854f3;
+#using scripts\core_common\gamestate_util.gsc;
 #using scripts\core_common\damagefeedback_shared.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 #using scripts\core_common\challenges_shared.gsc;
@@ -131,7 +131,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
                     idamage = 1;
                 }
                 self.lastdamagewasfromenemy = 0;
-                var_5370b15e = idamage < self.health ? self.health : idamage;
+                var_5370b15e = idamage < self.health ? idamage : self.health;
                 self globallogic_player::giveattackerandinflictorownerassist(eattacker, einflictor, var_5370b15e, smeansofdeath, weapon, shitloc);
                 params.idamage = idamage;
                 self callback::callback(#"on_ai_damage", params);
@@ -145,7 +145,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
                     idamage = 1;
                 }
                 self.lastdamagewasfromenemy = 0;
-                var_5370b15e = idamage < self.health ? self.health : idamage;
+                var_5370b15e = idamage < self.health ? idamage : self.health;
                 self globallogic_player::giveattackerandinflictorownerassist(eattacker, einflictor, var_5370b15e, smeansofdeath, weapon, shitloc);
                 params.idamage = idamage;
                 self callback::callback(#"on_ai_damage", params);
@@ -169,7 +169,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
                 self.wascooked = undefined;
             }
             self.lastdamagewasfromenemy = isdefined(eattacker) && eattacker != self;
-            var_5370b15e = idamage < self.health ? self.health : idamage;
+            var_5370b15e = idamage < self.health ? idamage : self.health;
             self globallogic_player::giveattackerandinflictorownerassist(eattacker, einflictor, var_5370b15e, smeansofdeath, weapon, shitloc);
             params.idamage = idamage;
             self callback::callback(#"on_ai_damage", params);

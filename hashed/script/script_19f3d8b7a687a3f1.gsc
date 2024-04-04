@@ -7,7 +7,7 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0x907fc036, Offset: 0xb8
 // Size: 0x6c
-function function_70a657d8() {
+function preinit() {
     if (isdefined(level.var_6b33db60)) {
         return;
     }

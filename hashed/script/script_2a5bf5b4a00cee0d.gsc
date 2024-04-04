@@ -60,7 +60,7 @@ function function_8ff7f92c(myteam = "allies") {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x786046b, Offset: 0x448
 // Size: 0x8c
-function function_36d6caea(myteam = "allies") {
+function getclosestenemy(myteam = "allies") {
     team = util::getotherteam(myteam);
     enemy = getaiteamarray(team);
     guys = arraysortclosest(enemy, self.origin);
@@ -80,11 +80,11 @@ function addpoi(ent) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xd46a1ba1, Offset: 0x548
 // Size: 0x19e
-function function_ff7594d7(origin, var_5e23c42a = function_a3f6cdac(200)) {
+function function_ff7594d7(origin, var_5e23c42a = sqr(200)) {
     arrayremovevalue(level.doa.var_af6d47dd, undefined);
     if (level.doa.var_af6d47dd.size > 0) {
-        var_23912d23 = arraysortclosest(level.doa.var_af6d47dd, origin);
-        foreach (poi in var_23912d23) {
+        pois = arraysortclosest(level.doa.var_af6d47dd, origin);
+        foreach (poi in pois) {
             var_5e23c42a = isdefined(poi.var_7f3187c5) ? poi.var_7f3187c5 : var_5e23c42a;
             distsq = distancesquared(poi.origin, origin);
             if (distsq < var_5e23c42a) {
@@ -156,7 +156,7 @@ function function_bd89b452(time, other) {
     if (isdefined(other.trigger)) {
         other.trigger delete();
     }
-    other function_cb48cddd();
+    other deletedelay();
 }
 
 // Namespace namespace_ec06fe4a/namespace_ec06fe4a
@@ -190,7 +190,7 @@ function function_52afe5df(time) {
     if (isdefined(self.trigger)) {
         self.trigger delete();
     }
-    self function_cb48cddd();
+    self deletedelay();
 }
 
 // Namespace namespace_ec06fe4a/namespace_ec06fe4a
@@ -287,7 +287,7 @@ function function_de70888a(bosskills = 1, var_f906062a = 0) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x9569c526, Offset: 0xf60
 // Size: 0x44
-function function_a4b3f184(frozen = 1) {
+function freezeplayercontrols(frozen = 1) {
     self.doa.var_a5eb0385 = frozen;
     self freezecontrols(frozen);
 }
@@ -299,7 +299,7 @@ function function_a4b3f184(frozen = 1) {
 function function_445bad70(frozen = 1) {
     players = namespace_7f5aeb59::function_23e1f90f();
     foreach (player in players) {
-        player function_a4b3f184(frozen);
+        player freezeplayercontrols(frozen);
         player setlowready(frozen);
     }
 }
@@ -328,7 +328,7 @@ function function_2552a0a0(minwait = 90) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xd17c45c3, Offset: 0x1158
 // Size: 0x1a4
-function function_aef7e3f6(minwait = 10, var_6ee47b60 = 30) {
+function function_aef7e3f6(minwait = 10, fails = 30) {
     self endon(#"death", #"hash_71199e509f750629");
     while (flag::get("doa_round_spawning")) {
         wait(1);
@@ -339,17 +339,17 @@ function function_aef7e3f6(minwait = 10, var_6ee47b60 = 30) {
     if (minwait > 0) {
         wait(minwait);
     }
-    reset = var_6ee47b60;
-    while (var_6ee47b60) {
+    reset = fails;
+    while (fails) {
         pos = (self.origin[0], self.origin[1], 0);
         wait(1);
         newpos = (self.origin[0], self.origin[1], 0);
         distsq = distancesquared(newpos, pos);
-        if (distsq < function_a3f6cdac(12)) {
-            var_6ee47b60--;
+        if (distsq < sqr(12)) {
+            fails--;
             continue;
         }
-        var_6ee47b60 = reset;
+        fails = reset;
     }
     self.takedamage = 1;
     self.allowdeath = 1;
@@ -493,7 +493,7 @@ function function_592e0d6b() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x19266d09, Offset: 0x1908
 // Size: 0xdc
-function function_7ae4c183(num = 99) {
+function clearallcorpses(num = 99) {
     level thread function_592e0d6b();
     corpse_array = getcorpsearray();
     if (num == 99) {
@@ -657,9 +657,9 @@ function function_f506b4c7(time = 4) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x80e99b75, Offset: 0x1f48
 // Size: 0xce
-function function_2d920b3c(var_bf710acd = 0.6, var_6575092a = 1) {
+function function_2d920b3c(var_bf710acd = 0.6, clockwise = 1) {
     self endon(#"death", #"hash_7bf2519960a3852a");
-    angle = var_6575092a ? vectorscale((0, 1, 0), 180) : vectorscale((0, -1, 0), 180);
+    angle = clockwise ? vectorscale((0, 1, 0), 180) : vectorscale((0, -1, 0), 180);
     while (isdefined(self)) {
         self.var_c9f66f0d = self.angles + angle;
         self rotateto(self.var_c9f66f0d, var_bf710acd);
@@ -875,7 +875,7 @@ function getcovernodeyawtoorigin(org) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x9ca10c6a, Offset: 0x2910
 // Size: 0x98
-function function_f1e8ce76(vector, angle) {
+function rotatevec(vector, angle) {
     return (vector[0] * cos(angle) - vector[1] * sin(angle), vector[0] * sin(angle) + vector[1] * cos(angle), vector[2]);
 }
 
@@ -904,8 +904,8 @@ function function_1a117d29(location, timesec = 1) {
     }
     frame = 1000 / function_60d95f53();
     increment = (self.origin - location) / timesec * 20;
-    var_5b560b0d = gettime() + timesec * 1000;
-    while (gettime() < var_5b560b0d) {
+    targettime = gettime() + timesec * 1000;
+    while (gettime() < targettime) {
         self.origin = self.origin - increment;
         waitframe(1);
     }
@@ -925,7 +925,7 @@ function function_ecec1794() {
         waitframe(1);
         var_bcb6ea2 = lengthsquared(lastangles - self.angles);
         var_4d6917c7 = distancesquared(lastorigin, self.origin);
-        if (var_4d6917c7 < function_a3f6cdac(4) && var_bcb6ea2 < 0.1) {
+        if (var_4d6917c7 < sqr(4) && var_bcb6ea2 < 0.1) {
             sticks++;
             continue;
         }
@@ -995,12 +995,12 @@ function function_f3eab80e(origin, dist = 1024) {
 // Params 5, eflags: 0x2 linked
 // Checksum 0x9a470f16, Offset: 0x2eb8
 // Size: 0x9c
-function function_87612422(spot, angles, priority = 1, lifetime = 3, var_9045aedc = 0) {
+function function_87612422(spot, angles, priority = 1, lifetime = 3, lightstate = 0) {
     /#
         assert(isdefined(spot));
     #/
     if (isdefined(spot)) {
-        level util::create_streamer_hint(spot, angles, priority, lifetime, var_9045aedc);
+        level util::create_streamer_hint(spot, angles, priority, lifetime, lightstate);
     }
 }
 
@@ -1073,7 +1073,7 @@ function spawnmodel(origin, modelname = "tag_origin", angles, targetname) {
 // Params 6, eflags: 0x2 linked
 // Checksum 0xb2e0d2d6, Offset: 0x3288
 // Size: 0x118
-function function_b5731057(triggertype, origin, flags = 1, var_bacb72c4, height, width) {
+function spawntrigger(triggertype, origin, flags = 1, var_bacb72c4, height, width) {
     if (!mayspawnfakeentity()) {
         return;
     }

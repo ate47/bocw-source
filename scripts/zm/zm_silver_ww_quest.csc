@@ -102,12 +102,12 @@ function function_c4793fe5(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x16c
 function function_408232a7(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump == 1) {
-        self.var_87f7f912 = playfx(fieldname, #"zm_ai/fx9_hound_plague_dth_aoe", self.origin + vectorscale((0, 0, 1), 20));
+        self.smoke_fx = playfx(fieldname, #"zm_ai/fx9_hound_plague_dth_aoe", self.origin + vectorscale((0, 0, 1), 20));
         playsound(fieldname, #"hash_11a2fa9d6a695f96", self.origin + vectorscale((0, 0, 1), 20));
         audio::playloopat(#"hash_155791cb3cba6094", self.origin + vectorscale((0, 0, 1), 20));
         wait(2);
-        if (isdefined(self.var_87f7f912)) {
-            stopfx(fieldname, self.var_87f7f912);
+        if (isdefined(self.smoke_fx)) {
+            stopfx(fieldname, self.smoke_fx);
         }
         if (isdefined(self)) {
             audio::stoploopat(#"hash_155791cb3cba6094", self.origin + vectorscale((0, 0, 1), 20));

@@ -9,14 +9,14 @@
 // Checksum 0x8e0289cd, Offset: 0xc0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"cinematicmotion", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"cinematicmotion", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace cinematicmotion/namespace_345fff71
 // Params 0, eflags: 0x2 linked
 // Checksum 0x3d1d7efd, Offset: 0x108
 // Size: 0x54
-function function_70a657d8() {
+function preinit() {
     n_bits = getminbitcountfornum(11);
     clientfield::register("toplayer", "cinematicMotion", 1, n_bits, "int");
 }
@@ -33,10 +33,10 @@ function function_92dd9a20(param) {
     case #"hash_5a4e4aa2a78f38a5":
         self clientfield::set_to_player("cinematicMotion", 0);
         break;
-    case #"hash_5a4e49a2a78f36f2":
+    case #"min1":
         self clientfield::set_to_player("cinematicMotion", 1);
         break;
-    case #"hash_5a4e48a2a78f353f":
+    case #"min2":
         self clientfield::set_to_player("cinematicMotion", 2);
         break;
     case #"hash_5a4e47a2a78f338c":
@@ -51,10 +51,10 @@ function function_92dd9a20(param) {
     case #"hash_1f2696a2ce6d028b":
         self clientfield::set_to_player("cinematicMotion", 6);
         break;
-    case #"hash_1f2695a2ce6d00d8":
+    case #"max1":
         self clientfield::set_to_player("cinematicMotion", 7);
         break;
-    case #"hash_1f2698a2ce6d05f1":
+    case #"max2":
         self clientfield::set_to_player("cinematicMotion", 8);
         break;
     case #"hash_1f2697a2ce6d043e":
@@ -80,9 +80,9 @@ function function_bbf6e778(param) {
         return;
     }
     if (param != "") {
-        self function_5953bec0(param);
+        self setcinematicmotionoverride(param);
         return;
     }
-    self function_5953bec0();
+    self setcinematicmotionoverride();
 }
 

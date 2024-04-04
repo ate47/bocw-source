@@ -4,37 +4,37 @@
             "var_5ed80a9c": "#zm_tungsten",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_6e439a9e3820f679",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#zm_platinum",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_4b54a214b3b33171",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#zm_gold",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_787ef2505473c3b7",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#hash_1515dc70f4e1041e",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_27561de03d38d8db",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#hash_37d54a9181d3a53e",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_2005d7250fd7d04f",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         },
         {
             "var_5ed80a9c": "#hash_7b48091c3d08eba5",
             "type": "#hash_798212a6fd4ab166",
             "displayname": "#hash_4668be3ee82650fc",
-            "var_a4f2dd9e": "#none"
+            "actionutility": "#none"
         }
     ],
     "var_72ef398b": 1,

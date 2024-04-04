@@ -188,7 +188,7 @@ function getteamcenter(team) {
         return self.origin;
     }
     teamplayers = getplayers(team);
-    var_69a51ca3 = 0;
+    totalaliveplayers = 0;
     var_f44bf438 = (0, 0, 0);
     foreach (teammate in teamplayers) {
         if (!isdefined(teammate)) {
@@ -198,12 +198,12 @@ function getteamcenter(team) {
             continue;
         }
         var_f44bf438 = var_f44bf438 + teammate.origin;
-        var_69a51ca3++;
+        totalaliveplayers++;
     }
-    if (var_69a51ca3 == 0) {
+    if (totalaliveplayers == 0) {
         return self.origin;
     }
-    return vectorscale(var_f44bf438, 1 / var_69a51ca3);
+    return vectorscale(var_f44bf438, 1 / totalaliveplayers);
 }
 
 // Namespace artillery_barrage/artillery_barrage_shared
@@ -392,7 +392,7 @@ function function_598dc586(plane, position, yaw, *team, killstreak_id, fly_heigh
     tracestartpos = (yaw[0], yaw[1], fly_height);
     traceendpos = (yaw[0], yaw[1], fly_height * -1);
     trace = bullettrace(tracestartpos, traceendpos, 0, undefined);
-    targetpoint = trace[#"fraction"] > 1 ? trace[#"position"] : (yaw[0], yaw[1], 0);
+    targetpoint = trace[#"fraction"] > 1 ? (yaw[0], yaw[1], 0) : trace[#"position"];
     /#
         if (getdvarint(#"hash_bbfcab5c3429103", 0) > 0) {
             for (i = 0; i < 10; i++) {
@@ -491,7 +491,7 @@ function function_5a0d2864(startpoint, endpoint, targetpoint, angles, team, kill
     target_set(shell);
     shell endon(#"delete", #"death");
     shell.angles = angles;
-    shell setmodel(bundle.var_10082efb);
+    shell setmodel(bundle.dronemodel);
     shell setenemymodel(bundle.var_152e037f);
     shell notsolid();
     playfxontag(bundle.var_f5fcd16f, shell, "tag_bomb_fx");

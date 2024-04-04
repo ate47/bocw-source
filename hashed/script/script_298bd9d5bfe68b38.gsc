@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\core_common\util_shared.gsc;
 #using script_75da5547b1822294;
-#using script_d9b5c8b1ad38ef5;
+#using scripts\core_common\territory.gsc;
 #using scripts\core_common\system_shared.gsc;
 #using scripts\core_common\scene_shared.gsc;
 #using scripts\core_common\player\player_loadout.gsc;
@@ -17,14 +17,14 @@
 // Checksum 0xf1d5cf45, Offset: 0x1d8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"weapon_cache", &function_70a657d8, undefined, &finalize, undefined);
+    system::register(#"weapon_cache", &preinit, undefined, &finalize, undefined);
 }
 
 // Namespace weapon_cache/weapon_cache
 // Params 0, eflags: 0x6 linked
 // Checksum 0x84585ae8, Offset: 0x228
 // Size: 0x128
-function private function_70a657d8() {
+function private preinit() {
     if (!is_true(getgametypesetting(#"hash_6143c4e1e18f08fd"))) {
         return;
     }

@@ -213,7 +213,7 @@ function private function_e48aca4d(type, bundle, weapon, vehicle, killstreak_use
     case #"none":
         level.killstreaks[type].teamkillpenaltyscale = 0;
         break;
-    case #"hash_5a6d83d54a8fb299":
+    case #"reduced":
         level.killstreaks[type].teamkillpenaltyscale = level.teamkillreducedpenalty;
         break;
     case #"default":
@@ -657,7 +657,7 @@ function remove_oldest() {
                 self switchtoweapon(primaries[0]);
             }
         }
-        self notify(#"oldest_killstreak_removed", {#id:self.pers[#"killstreak_unique_id"][0], #type:self.pers[#"killstreaks"][0]});
+        self notify(#"oldest_killstreak_removed", {#type:self.pers[#"killstreaks"][0], #id:self.pers[#"killstreak_unique_id"][0]});
         self remove_used_killstreak(self.pers[#"killstreaks"][0], self.pers[#"killstreak_unique_id"][0], 0);
     }
 }
@@ -779,13 +779,13 @@ function add_to_notification_queue(menuname, *streakcount, hardpointtype, nonoti
         return;
     }
     informdialog = namespace_f9b02f80::get_killstreak_inform_dialog(hardpointtype);
-    var_5b220756 = function_a2c375bb(hardpointtype);
+    killstreakslot = function_a2c375bb(hardpointtype);
     self thread namespace_f9b02f80::play_killstreak_ready_dialog(hardpointtype, 2.4);
     self thread play_killstreak_ready_sfx(hardpointtype);
     self luinotifyevent(#"killstreak_received", 3, killstreaktablenumber, informdialog, var_af825242);
     self function_8ba40d2f(#"killstreak_received", 3, killstreaktablenumber, informdialog, var_af825242);
-    if (isdefined(var_5b220756)) {
-        self function_6bf621ea(#"hash_6a9cb800ad0ef395", 2, self getentitynumber(), var_5b220756);
+    if (isdefined(killstreakslot)) {
+        self function_6bf621ea(#"hash_6a9cb800ad0ef395", 2, self getentitynumber(), killstreakslot);
     }
 }
 
@@ -1133,7 +1133,7 @@ function remove_when_done(killstreaktype, *haskillstreakbeenused, isfrominventor
     }
     waittillframeend();
     killstreak_weapon = get_killstreak_weapon(haskillstreakbeenused);
-    if (killstreak_weapon.var_7d24272c) {
+    if (killstreak_weapon.isgestureweapon) {
         if ((!is_true(level.usingmomentum) || is_true(isfrominventory)) && waitresult.is_successful) {
             activate_next();
         }
@@ -1183,7 +1183,7 @@ function function_aa56f6a0(killstreaktype, isfrominventory) {
         self recordkillstreakbegindirect(killstreaktype, recordstreakindex);
     }
     if (is_true(level.usingscorestreaks)) {
-        var_ad8ae78f = {#activatedby:getplayerspawnid(self), #killstreak:killstreaktype, #gametime:function_f8d53445()};
+        var_ad8ae78f = {#gametime:function_f8d53445(), #killstreak:killstreaktype, #activatedby:getplayerspawnid(self)};
         function_92d1707f(#"hash_1aa07f199266e0c7", var_ad8ae78f);
         if (is_true(isfrominventory)) {
             remove_used_killstreak(killstreaktype);
@@ -1206,11 +1206,11 @@ function function_aa56f6a0(killstreaktype, isfrominventory) {
     if (!is_true(level.usingmomentum)) {
         self setactionslot(4, "");
     }
-    var_5b220756 = function_a2c375bb(killstreaktype);
-    if (isdefined(var_5b220756)) {
-        self function_6bf621ea(#"hash_2e64558432f8b5b2", 2, self getentitynumber(), var_5b220756);
+    killstreakslot = function_a2c375bb(killstreaktype);
+    if (isdefined(killstreakslot)) {
+        self function_6bf621ea(#"hash_2e64558432f8b5b2", 2, self getentitynumber(), killstreakslot);
     }
-    callback::callback(#"hash_4a1cdf56005f9fb3", {#killstreaktype:killstreaktype, #player:self});
+    callback::callback(#"hash_4a1cdf56005f9fb3", {#player:self, #killstreaktype:killstreaktype});
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -1433,7 +1433,7 @@ function function_4167ea4e(params) {
             return;
         }
     }
-    if (self function_e128a831()) {
+    if (self isziplining()) {
         if (var_783deeed && !weapon.iscarriedkillstreak || weapon === level.weaponnone) {
             self switch_to_last_non_killstreak_weapon();
             return;
@@ -1626,7 +1626,7 @@ function trigger_killstreak(killstreaktype, isfrominventory) {
         if (is_true(success)) {
             if (isdefined(self)) {
                 self notify(#"killstreak_used", killstreaktype);
-                self notify(#"killstreak_done", {#var_d3413870:killstreaktype, #is_successful:1});
+                self notify(#"killstreak_done", {#is_successful:1, #var_d3413870:killstreaktype});
                 self.usingkillstreakfrominventory = undefined;
                 self contracts::player_contract_event(#"hash_4da59ed3dbeca8c7", killstreaktype);
             }
@@ -1635,7 +1635,7 @@ function trigger_killstreak(killstreaktype, isfrominventory) {
     }
     if (isdefined(self)) {
         self.usingkillstreakfrominventory = undefined;
-        self notify(#"killstreak_done", {#var_d3413870:killstreaktype, #is_successful:0});
+        self notify(#"killstreak_done", {#is_successful:0, #var_d3413870:killstreaktype});
     }
 }
 
@@ -2038,7 +2038,7 @@ function monitordamage(killstreak_ref, max_health, destroyed_callback, low_healt
                 bundle = get_script_bundle(killstreak_ref);
                 if (isdefined(bundle.var_888a5ff7) && isdefined(waitresult.position)) {
                     var_74d40edb = inflictor getvelocity();
-                    if (lengthsquared(var_74d40edb) > function_a3f6cdac(50)) {
+                    if (lengthsquared(var_74d40edb) > sqr(50)) {
                         var_29edfc10 = vectornormalize(var_74d40edb);
                         playfx(bundle.var_888a5ff7, waitresult.position, var_29edfc10, undefined, undefined, self.team);
                     }
@@ -2398,7 +2398,7 @@ function private init_ride_killstreak_internal(streak, always_allow) {
     if (isdefined(streak)) {
         laptopwait = "timeout";
         bundle = get_script_bundle(streak);
-        var_41b6747e = bundle.var_15b39264;
+        start_delay = bundle.var_15b39264;
         var_58330f68 = bundle.var_daafb2f7;
         postfxbundle = bundle.var_bda68f72;
     } else {
@@ -2406,8 +2406,8 @@ function private init_ride_killstreak_internal(streak, always_allow) {
         laptopwait = self waittilltimeout(0.2, #"disconnect", #"death", #"weapon_switch_started");
         laptopwait = laptopwait._notify;
     }
-    if (!isdefined(var_41b6747e)) {
-        var_41b6747e = 0.2;
+    if (!isdefined(start_delay)) {
+        start_delay = 0.2;
     }
     if (!isdefined(var_58330f68)) {
         var_58330f68 = 0.2;
@@ -2432,13 +2432,13 @@ function private init_ride_killstreak_internal(streak, always_allow) {
         return "fail";
     }
     if (isdefined(postfxbundle)) {
-        self thread function_cfa9cec5(var_41b6747e);
+        self thread function_cfa9cec5(start_delay);
     } else {
-        self thread hud::fade_to_black_for_x_sec(var_41b6747e, var_58330f68, 0.1, 0.1);
+        self thread hud::fade_to_black_for_x_sec(start_delay, var_58330f68, 0.1, 0.1);
     }
     self thread watch_for_remove_remote_weapon();
     var_c3d5a8a9 = undefined;
-    var_c3d5a8a9 = self waittilltimeout(var_41b6747e + var_58330f68, #"disconnect", #"death", #"endwatchforremoveremoteweapon");
+    var_c3d5a8a9 = self waittilltimeout(start_delay + var_58330f68, #"disconnect", #"death", #"endwatchforremoveremoteweapon");
     self notify(#"endwatchforremoveremoteweapon");
     hostmigration::waittillhostmigrationdone();
     if (self isinvehicle() === 1) {
@@ -2460,7 +2460,7 @@ function private init_ride_killstreak_internal(streak, always_allow) {
             return "success";
         }
     }
-    if (self isonladder() || self function_b4813488() || self function_e128a831()) {
+    if (self isonladder() || self function_b4813488() || self isziplining()) {
         return "fail";
     }
     if (!isalive(self)) {
@@ -2674,15 +2674,15 @@ function trackactivekillstreak(killstreak) {
     if (isdefined(self) && isdefined(self.pers) && isdefined(killstreakindex)) {
         self endon(#"disconnect");
         self.pers[#"activekillstreaks"][killstreakindex] = killstreak;
-        var_5b220756 = function_a2c375bb(killstreak.killstreaktype);
-        if (isdefined(var_5b220756)) {
-            killstreak.var_5b220756 = var_5b220756;
-            self clientfield::set_player_uimodel(level.var_4b42d599[var_5b220756], 1);
+        killstreakslot = function_a2c375bb(killstreak.killstreaktype);
+        if (isdefined(killstreakslot)) {
+            killstreak.killstreakslot = killstreakslot;
+            self clientfield::set_player_uimodel(level.var_4b42d599[killstreakslot], 1);
         }
         killstreak waittill(#"killstreak_hacked", #"death");
         if (isdefined(self)) {
-            if (isdefined(var_5b220756)) {
-                self clientfield::set_player_uimodel(level.var_4b42d599[var_5b220756], 0);
+            if (isdefined(killstreakslot)) {
+                self clientfield::set_player_uimodel(level.var_4b42d599[killstreakslot], 0);
             }
             self.pers[#"activekillstreaks"][killstreakindex] = undefined;
         }
@@ -2901,7 +2901,7 @@ function waitfortimeout(killstreak, duration, callback, endcondition1, endcondit
 // Params 7, eflags: 0x2 linked
 // Checksum 0x83303142, Offset: 0xa500
 // Size: 0x374
-function function_b86397ae(killstreak, duration, var_c94af1de, callback, endcondition1, endcondition2, endcondition3) {
+function function_b86397ae(killstreak, duration, starttimeoverride, callback, endcondition1, endcondition2, endcondition3) {
     /#
         if (should_not_timeout(killstreak)) {
             return;
@@ -2919,8 +2919,8 @@ function function_b86397ae(killstreak, duration, var_c94af1de, callback, endcond
     }
     self thread waitfortimeouthacked(killstreak, callback, endcondition1, endcondition2, endcondition3);
     killstreakbundle = get_script_bundle(killstreak);
-    if (isdefined(var_c94af1de)) {
-        self.killstreakendtime = var_c94af1de + duration;
+    if (isdefined(starttimeoverride)) {
+        self.killstreakendtime = starttimeoverride + duration;
         waittime = self.killstreakendtime - gettime();
     } else {
         self.killstreakendtime = gettime() + duration;
@@ -2930,9 +2930,9 @@ function function_b86397ae(killstreak, duration, var_c94af1de, callback, endcond
     if (util::function_7f7a77ab()) {
         self thread function_47492133();
     }
-    if (isdefined(self.owner) && isplayer(self.owner) && isdefined(self.var_5b220756) && self.var_ec8ef668 !== 1) {
-        self.owner function_a831f92c(self.var_5b220756, int(ceil(float(duration) / 1000)), 0);
-        self.owner function_b3185041(self.var_5b220756, self.killstreakendtime);
+    if (isdefined(self.owner) && isplayer(self.owner) && isdefined(self.killstreakslot) && self.var_ec8ef668 !== 1) {
+        self.owner function_a831f92c(self.killstreakslot, int(ceil(float(duration) / 1000)), 0);
+        self.owner function_b3185041(self.killstreakslot, self.killstreakendtime);
     }
     if (isdefined(killstreakbundle) && isdefined(killstreakbundle.kstimeoutbeepduration)) {
         self function_b00e94e0(killstreakbundle, waittime);
@@ -2944,8 +2944,8 @@ function function_b86397ae(killstreak, duration, var_c94af1de, callback, endcond
         self.killstreaktimedout = 1;
         self.killstreakendtime = 0;
     }
-    if (isdefined(self.owner) && isplayer(self.owner) && isdefined(self.var_5b220756)) {
-        self.owner function_b3185041(self.var_5b220756, 0);
+    if (isdefined(self.owner) && isplayer(self.owner) && isdefined(self.killstreakslot)) {
+        self.owner function_b3185041(self.killstreakslot, 0);
     }
     self notify(#"timed_out");
     if (isdefined(self)) {
@@ -3106,7 +3106,7 @@ function add_ricochet_protection(killstreak_id, owner, origin, ricochet_distance
     }
     owner.ricochet_protection[killstreak_id] = spawnstruct();
     owner.ricochet_protection[killstreak_id].origin = origin;
-    owner.ricochet_protection[killstreak_id].distancesq = function_a3f6cdac(ricochet_distance);
+    owner.ricochet_protection[killstreak_id].distancesq = sqr(ricochet_distance);
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -3188,22 +3188,22 @@ function get_script_bundle(type) {
 // Checksum 0x11ea0e83, Offset: 0xb180
 // Size: 0x44
 function function_e2c3bda3(killstreaktype, var_dee4d012) {
-    var_fc96f513 = level.var_8c83a621[killstreaktype];
-    if (!isdefined(var_fc96f513)) {
-        var_fc96f513 = var_dee4d012;
+    bundle_name = level.var_8c83a621[killstreaktype];
+    if (!isdefined(bundle_name)) {
+        bundle_name = var_dee4d012;
     }
-    return var_fc96f513;
+    return bundle_name;
 }
 
 // Namespace killstreaks/killstreaks_shared
 // Params 2, eflags: 0x0
 // Checksum 0x64cbc8dc, Offset: 0xb1d0
 // Size: 0x40
-function function_8c83a621(killstreaktype, var_fc96f513) {
+function function_8c83a621(killstreaktype, bundle_name) {
     if (!isdefined(level.var_8c83a621)) {
         level.var_8c83a621 = [];
     }
-    level.var_8c83a621[killstreaktype] = var_fc96f513;
+    level.var_8c83a621[killstreaktype] = bundle_name;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -3223,21 +3223,21 @@ function function_257a5f13(killstreaktype, var_ba5a6782) {
 // Size: 0x184
 function function_b182645e(player, hardpointtype) {
     if (isdefined(level.var_257a5f13[hardpointtype])) {
-        var_5b220756 = 3;
+        killstreakslot = 3;
         var_1abcfdda = getarraykeys(player.killstreak);
         foreach (key in var_1abcfdda) {
             if (!isdefined(player.killstreak[key])) {
                 continue;
             }
             if (player.killstreak[key] == hardpointtype) {
-                var_5b220756 = key;
+                killstreakslot = key;
                 break;
             }
         }
         duration = level.var_257a5f13[hardpointtype];
-        player function_a831f92c(var_5b220756, duration, 0);
+        player function_a831f92c(killstreakslot, duration, 0);
         self.killstreakendtime = gettime() + int(duration * 1000);
-        player function_b3185041(var_5b220756, self.killstreakendtime);
+        player function_b3185041(killstreakslot, self.killstreakendtime);
     }
 }
 
@@ -3260,29 +3260,29 @@ function function_f964dc1c() {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xf210784c, Offset: 0xb560
 // Size: 0xfc
-function function_a831f92c(var_5b220756, duration, var_f63114ce) {
+function function_a831f92c(killstreakslot, duration, var_f63114ce) {
     if (!isdefined(self.pers[#"hash_6ae564fce4d70aff"])) {
         self.pers[#"hash_6ae564fce4d70aff"] = [];
     }
     if (!isdefined(self.pers[#"hash_7b0ebc5ef8a8b896"])) {
         self.pers[#"hash_7b0ebc5ef8a8b896"] = [];
     }
-    self.pers[#"hash_6ae564fce4d70aff"][var_5b220756] = duration;
-    self function_5249e8b8(var_5b220756, duration);
-    self.pers[#"hash_7b0ebc5ef8a8b896"][var_5b220756] = var_f63114ce;
-    self function_d5d8e662(var_5b220756, var_f63114ce);
+    self.pers[#"hash_6ae564fce4d70aff"][killstreakslot] = duration;
+    self function_5249e8b8(killstreakslot, duration);
+    self.pers[#"hash_7b0ebc5ef8a8b896"][killstreakslot] = var_f63114ce;
+    self function_d5d8e662(killstreakslot, var_f63114ce);
 }
 
 // Namespace killstreaks/killstreaks_shared
 // Params 2, eflags: 0x2 linked
 // Checksum 0x80060ff6, Offset: 0xb668
 // Size: 0x84
-function function_b3185041(var_5b220756, endtime) {
+function function_b3185041(killstreakslot, endtime) {
     if (!isdefined(self.pers[#"hash_754e08b82fb3a121"])) {
         self.pers[#"hash_754e08b82fb3a121"] = [];
     }
-    self.pers[#"hash_754e08b82fb3a121"][var_5b220756] = endtime;
-    self function_4051d1c6(var_5b220756, endtime);
+    self.pers[#"hash_754e08b82fb3a121"][killstreakslot] = endtime;
+    self function_4051d1c6(killstreakslot, endtime);
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -3394,7 +3394,7 @@ function function_fc82c544(killstreaktype) {
     var_64df9ac6 = gettime();
     if (!sessionmodeiscampaigngame()) {
         if (!sessionmodeiszombiesgame()) {
-            stats::function_8fb23f94(function_73b4659(killstreaktype), #"hash_7d6781e4032b4aa5", 1);
+            stats::function_8fb23f94(function_73b4659(killstreaktype), #"uses", 1);
         }
         player function_eb52ba7(killstreaktype, player getteam(), -1);
     }
@@ -3428,7 +3428,7 @@ function function_fc82c544(killstreaktype) {
             return 0;
         }
         if (sessionmodeismultiplayergame() || sessionmodeiswarzonegame() || sessionmodeiszombiesgame()) {
-            mpkillstreakuses = {#team:player getteam(), #name:killstreaktype, #spawnid:-1, #endtime:gettime(), #starttime:var_64df9ac6};
+            mpkillstreakuses = {#starttime:var_64df9ac6, #endtime:gettime(), #spawnid:-1, #name:killstreaktype, #team:player getteam()};
             var_8756d70f = function_cb0594d5();
             function_92d1707f(var_8756d70f, mpkillstreakuses);
             if (result._notify === #"death") {
@@ -3496,9 +3496,9 @@ function function_edde22a8() {
         self luinotifyevent(#"killstreak_received", 3, killstreaktablenumber, informdialog, 1);
         self function_8ba40d2f(#"killstreak_received", 3, killstreaktablenumber, informdialog, 1);
     }
-    var_5b220756 = 3;
-    if (isdefined(var_5b220756)) {
-        self function_6bf621ea(#"hash_6a9cb800ad0ef395", 2, self getentitynumber(), var_5b220756);
+    killstreakslot = 3;
+    if (isdefined(killstreakslot)) {
+        self function_6bf621ea(#"hash_6a9cb800ad0ef395", 2, self getentitynumber(), killstreakslot);
     }
     self playsound("mpl_d_hard_nuke_obtain");
 }
@@ -3546,9 +3546,9 @@ function debug_ricochet_protection() {
 // Checksum 0xdbf884e9, Offset: 0xc5d0
 // Size: 0x6c
 function function_e24443d0(killstreaktype) {
-    var_5b220756 = function_a2c375bb(killstreaktype);
-    if (isdefined(var_5b220756)) {
-        self function_6bf621ea(#"hash_1d8e470838fb6dd3", 2, self getentitynumber(), var_5b220756);
+    killstreakslot = function_a2c375bb(killstreaktype);
+    if (isdefined(killstreakslot)) {
+        self function_6bf621ea(#"hash_1d8e470838fb6dd3", 2, self getentitynumber(), killstreakslot);
     }
 }
 

@@ -12,14 +12,14 @@
 // Checksum 0x642fb689, Offset: 0x388
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"player_insertion", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"player_insertion", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace player_insertion/player_insertion
 // Params 0, eflags: 0x4
 // Checksum 0xfb44279d, Offset: 0x3d0
 // Size: 0x114
-function private function_70a657d8() {
+function private preinit() {
     if (level.var_f2814a96 !== 0 && level.var_f2814a96 !== 2) {
         return;
     }

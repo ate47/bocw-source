@@ -24,14 +24,14 @@
 // Checksum 0xd2009e09, Offset: 0xb20
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"archetype_utility", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"archetype_utility", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace aiutility/archetype_utility
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd3e37742, Offset: 0xb68
 // Size: 0x14
-function private function_70a657d8() {
+function private preinit() {
     registerbehaviorscriptfunctions();
 }
 
@@ -97,9 +97,9 @@ function private registerbehaviorscriptfunctions() {
     #/
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"shouldonlyfireaccurately", &shouldonlyfireaccurately);
     /#
-        assert(isscriptfunctionptr(&function_621492eb));
+        assert(isscriptfunctionptr(&canblindfire));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_601e1361b7dfc738", &function_621492eb);
+    behaviortreenetworkutility::registerbehaviortreescriptapi(#"canblindfire", &canblindfire);
     /#
         assert(isscriptfunctionptr(&shouldreacttonewenemy));
     #/
@@ -469,7 +469,7 @@ function function_7a62f47d() {
     /#
         assert(isscriptfunctionptr(&function_8f12f910));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_5f3c00483459c378", &function_8f12f910);
+    behaviortreenetworkutility::registerbehaviortreescriptapi(#"ifinstealth", &function_8f12f910);
     /#
         assert(isscriptfunctionptr(&function_8f12f910));
     #/
@@ -493,7 +493,7 @@ function function_7a62f47d() {
     /#
         assert(isscriptfunctionptr(&function_8f12f910));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_633fe012fe30aba5", &function_8f12f910);
+    behaviortreenetworkutility::registerbehaviortreescriptapi(#"stealth_enemy_updateeveryframe", &function_8f12f910);
     /#
         assert(isscriptfunctionptr(&function_8f12f910));
     #/
@@ -525,7 +525,7 @@ function function_7a62f47d() {
     /#
         assert(isscriptfunctionptr(&function_8f12f910));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_1d3cecb203b9a825", &function_8f12f910);
+    behaviortreenetworkutility::registerbehaviortreescriptapi(#"stealth_shouldinvestigate", &function_8f12f910);
     /#
         assert(isscriptfunctionptr(&function_8f12f910));
     #/
@@ -561,7 +561,7 @@ function function_7a62f47d() {
     /#
         assert(isscriptfunctionptr(&function_8f12f910));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_610c4deee847d19f", &function_8f12f910);
+    behaviortreenetworkutility::registerbehaviortreescriptapi(#"stealth_shouldhunt", &function_8f12f910);
     /#
         assert(isscriptfunctionptr(&function_8f12f910));
     #/
@@ -645,7 +645,7 @@ function function_7a62f47d() {
     /#
         assert(isscriptfunctionptr(&function_8f12f910));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_64d84841245dba70", &function_8f12f910);
+    behaviortreenetworkutility::registerbehaviortreescriptapi(#"stealth_neutral_updateeveryframe", &function_8f12f910);
     /#
         assert(isscriptfunctionptr(&function_8f12f910));
     #/
@@ -653,15 +653,15 @@ function function_7a62f47d() {
     /#
         assert(isscriptfunctionptr(&function_8f12f910));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_48b4c7a3eb9dd8a6", &function_8f12f910);
+    behaviortreenetworkutility::registerbehaviortreescriptapi(#"ifshoulddosmartobject", &function_8f12f910);
     /#
         assert(isscriptfunctionptr(&function_8f12f910));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_40d0812fa810f282", &function_8f12f910);
+    behaviortreenetworkutility::registerbehaviortreescriptapi(#"dosmartobject", &function_8f12f910);
     /#
         assert(isscriptfunctionptr(&function_8f12f910));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_7b0c1b70990ee011", &function_8f12f910);
+    behaviortreenetworkutility::registerbehaviortreescriptapi(#"dosmartobject_init", &function_8f12f910);
     /#
         assert(isscriptfunctionptr(&function_8f12f910));
     #/
@@ -1142,10 +1142,10 @@ function bb_getyawtocovernode() {
     }
     disttonodesqr = distance2dsquared(self getnodeoffsetposition(self.node), self.origin);
     if (is_true(self.keepclaimednode)) {
-        if (disttonodesqr > function_a3f6cdac(64)) {
+        if (disttonodesqr > sqr(64)) {
             return 0;
         }
-    } else if (disttonodesqr > function_a3f6cdac(24)) {
+    } else if (disttonodesqr > sqr(24)) {
         return 0;
     }
     angletonode = ceil(angleclamp180(self.angles[1] - self getnodeoffsetangles(self.node)[1]));
@@ -1211,7 +1211,7 @@ function bb_getcoverconcealed() {
 // Checksum 0xb786d947, Offset: 0x6b28
 // Size: 0x7a
 function bb_getcurrentlocationcovernodetype() {
-    if (isdefined(self.node) && distancesquared(self.origin, self.node.origin) < function_a3f6cdac(24)) {
+    if (isdefined(self.node) && distancesquared(self.origin, self.node.origin) < sqr(24)) {
         return bb_getcurrentcovernodetype();
     }
     return bb_getpreviouscovernodetype();
@@ -1222,7 +1222,7 @@ function bb_getcurrentlocationcovernodetype() {
 // Checksum 0xc2782b53, Offset: 0x6bb0
 // Size: 0x92
 function function_8493bd6a() {
-    if (isdefined(self.node) && distancesquared(self.origin, self.node.origin) < function_a3f6cdac(24)) {
+    if (isdefined(self.node) && distancesquared(self.origin, self.node.origin) < sqr(24)) {
         return self gethighestnodestance(self.node);
     }
     return self gethighestnodestance(self.prevnode);
@@ -1234,7 +1234,7 @@ function function_8493bd6a() {
 // Size: 0xbe
 function function_7f1ff852() {
     var_c6e68bb4 = self.prevnode;
-    if (isdefined(self.node) && distancesquared(self.origin, self.node.origin) < function_a3f6cdac(24)) {
+    if (isdefined(self.node) && distancesquared(self.origin, self.node.origin) < sqr(24)) {
         var_c6e68bb4 = self.node;
     }
     if (isdefined(var_c6e68bb4)) {
@@ -1395,7 +1395,7 @@ function bb_actorhasenemy() {
 // Checksum 0x62fa0703, Offset: 0x7100
 // Size: 0x6c
 function function_b3f35a07() {
-    c_door = self.ai.var_e8cb3a15;
+    c_door = self.ai.doortoopen;
     if (!isdefined(c_door)) {
         return "door_will_open_no";
     }
@@ -1421,11 +1421,11 @@ function function_7970d18b() {
 // Checksum 0x58d522d, Offset: 0x71c0
 // Size: 0x162
 function function_19574f85() {
-    c_door = self.ai.var_e8cb3a15;
+    c_door = self.ai.doortoopen;
     if (!isdefined(c_door)) {
         return 999999;
     }
-    var_203b2da1 = c_door.var_85f2454d.var_91e5d49f;
+    var_203b2da1 = c_door.var_85f2454d.doorbottomcenter;
     if (!isdefined(var_203b2da1)) {
         var_203b2da1 = c_door.origin;
     }
@@ -1509,8 +1509,8 @@ function bb_actorgetperfectenemyyaw() {
 // Size: 0xb4
 function function_caea19a8() {
     result = self.angles[1];
-    if (isdefined(self.stealth.var_11765032) && isdefined(self.stealth) && isdefined(self.stealth.var_367dd3b3) && gettime() - self.stealth.var_367dd3b3 < 2000) {
-        deltaorigin = self.stealth.var_11765032 - self.origin;
+    if (isdefined(self.stealth.patrol_react_pos) && isdefined(self.stealth) && isdefined(self.stealth.patrol_react_time) && gettime() - self.stealth.patrol_react_time < 2000) {
+        deltaorigin = self.stealth.patrol_react_pos - self.origin;
         result = vectortoangles(deltaorigin)[1];
     }
     return result;
@@ -1756,7 +1756,7 @@ function bb_actorgettrackingturnyaw() {
         if (self cansee(self.enemy)) {
             var_71a0045b = self.enemy.origin;
         } else if (issentient(self.enemy)) {
-            if (self.highlyawareradius && distance2dsquared(self.enemy.origin, self.origin) < function_a3f6cdac(self.highlyawareradius)) {
+            if (self.highlyawareradius && distance2dsquared(self.enemy.origin, self.origin) < sqr(self.highlyawareradius)) {
                 var_71a0045b = self.enemy.origin;
             } else {
                 var_71a0045b = self function_c709ce88();
@@ -2225,7 +2225,7 @@ function private function_106ea3ab(entity, origin) {
 // Checksum 0xb88a8767, Offset: 0x9b48
 // Size: 0x140
 function private function_97d5dde9(entity, currentenemy) {
-    entity endon(#"death", #"hash_29b88049dcac8bb3");
+    entity endon(#"death", #"entitydeleted");
     self notify("676a46e517cf5043");
     self endon("676a46e517cf5043");
     while (true) {
@@ -2318,12 +2318,12 @@ function issafefromgrenades(entity) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x66cc3b26, Offset: 0x9ed0
 // Size: 0x96
-function function_f557fb8b(entity, var_7a033306) {
-    if (isdefined(var_7a033306)) {
-        if (!entity function_e8448790(var_7a033306)) {
+function function_f557fb8b(entity, optionalorigin) {
+    if (isdefined(optionalorigin)) {
+        if (!entity function_e8448790(optionalorigin)) {
             return false;
         }
-        if (entity function_3f7004eb(var_7a033306)) {
+        if (entity function_3f7004eb(optionalorigin)) {
             return false;
         }
     } else {
@@ -2363,7 +2363,7 @@ function shouldonlyfireaccurately(entity) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xb1958575, Offset: 0xa000
 // Size: 0x2e
-function function_621492eb(entity) {
+function canblindfire(entity) {
     if (is_true(entity.var_57314c74)) {
         return true;
     }
@@ -2565,8 +2565,8 @@ function private sensenearbyplayers(entity) {
     }
     var_821a7a87 = getplayers();
     if (entity.team === #"allies") {
-        var_b1d2e312 = getaiarray();
-        foreach (ai in var_b1d2e312) {
+        allai = getaiarray();
+        foreach (ai in allai) {
             if (ai.team === #"axis") {
                 array::add(var_821a7a87, ai);
             }
@@ -2576,16 +2576,16 @@ function private sensenearbyplayers(entity) {
         distancesq = distancesquared(target.origin, entity.origin);
         if (isdefined(entity.ai.var_5a4e769f)) {
             var_89f8daa2 = entity.ai.var_5a4e769f;
-            var_f7df3136 = function_a3f6cdac(var_89f8daa2);
+            var_f7df3136 = sqr(var_89f8daa2);
         } else {
             var_89f8daa2 = 360;
-            var_f7df3136 = function_a3f6cdac(360);
+            var_f7df3136 = sqr(360);
         }
         if (distancesq <= var_f7df3136) {
             distancetotarget = sqrt(distancesq);
-            var_cc4a6ff8 = 1 - distancetotarget / var_89f8daa2;
+            randchance = 1 - distancetotarget / var_89f8daa2;
             var_56e2d5dc = randomfloat(1);
-            if (var_56e2d5dc < var_cc4a6ff8) {
+            if (var_56e2d5dc < randchance) {
                 entity getperfectinfo(target);
             }
         }
@@ -2834,16 +2834,16 @@ function gethighestnodestance(node) {
             }
         }
         msg2 = msg2 + "<unknown string>";
-        var_251bd303 = "<unknown string>";
+        msg3 = "<unknown string>";
         if (var_58cb7691.size == 0) {
-            var_251bd303 = var_251bd303 + "<unknown string>";
+            msg3 = msg3 + "<unknown string>";
         } else {
             foreach (stance in var_58cb7691) {
-                var_251bd303 = var_251bd303 + "<unknown string>" + stance + "<unknown string>";
+                msg3 = msg3 + "<unknown string>" + stance + "<unknown string>";
             }
         }
-        var_251bd303 = var_251bd303 + "<unknown string>";
-        errormsg("<unknown string>" + msg1 + "<unknown string>" + msg2 + "<unknown string>" + var_251bd303);
+        msg3 = msg3 + "<unknown string>";
+        errormsg("<unknown string>" + msg1 + "<unknown string>" + msg2 + "<unknown string>" + msg3);
     #/
     if (node.type == #"cover crouch" || node.type == #"cover crouch window" || node.type == #"conceal crouch") {
         return "crouch";
@@ -3271,7 +3271,7 @@ function isbalconydeath(entity) {
         return false;
     }
     distsq = distancesquared(entity.origin, entity.node.origin);
-    if (distsq > function_a3f6cdac(64)) {
+    if (distsq > sqr(64)) {
         return false;
     }
     anglediff = math::angle_dif(int(entity.node.angles[1]), int(entity.angles[1]));
@@ -3300,7 +3300,7 @@ function function_c104a10e(entity) {
         return false;
     }
     distsq = distancesquared(entity.origin, entity.node.origin);
-    if (distsq > function_a3f6cdac(64)) {
+    if (distsq > sqr(64)) {
         return false;
     }
     anglediff = math::angle_dif(int(entity.node.angles[1]), int(entity.angles[1]));
@@ -3352,16 +3352,16 @@ function function_7bbe1407(ai) {
     ai endon(#"death");
     sniper_glint = #"lensflares/fx9_lf_sniper_glint";
     var_910f361 = ai.weapon;
-    var_48aba1a9 = [5:"tag_eye", 4:"tag_flash", 3:"tag_barrel", 2:"tag_scope", 1:"tag_scope_rear_lid_animate", 0:"tag_sights"];
+    fx_tags = ["tag_sights", "tag_scope_rear_lid_animate", "tag_scope", "tag_barrel", "tag_flash", "tag_eye"];
     while (true) {
         ai waittill(#"about_to_fire");
         if (ai.weapon != var_910f361) {
             continue;
         }
-        for (i = 0; i < var_48aba1a9.size; i++) {
-            tag = var_48aba1a9[i];
-            var_bebdb1d0 = isdefined(ai gettagorigin(tag));
-            if (var_bebdb1d0) {
+        for (i = 0; i < fx_tags.size; i++) {
+            tag = fx_tags[i];
+            has_tag = isdefined(ai gettagorigin(tag));
+            if (has_tag) {
                 playfxontag(sniper_glint, ai, tag);
                 break;
             }
@@ -3694,7 +3694,7 @@ function private function_331e64bd(entity) {
 // Checksum 0xeb380048, Offset: 0xdda8
 // Size: 0xce
 function function_493e5914(smeansofdeath) {
-    var_62ea2e0c = [8:"MOD_IMPACT", 7:"MOD_HEAD_SHOT", 6:"MOD_MELEE_ASSASSINATE", 5:"MOD_MELEE_WEAPON_BUTT", 4:"MOD_MELEE", 3:"MOD_PROJECTILE", 2:"MOD_GRENADE", 1:"MOD_RIFLE_BULLET", 0:"MOD_PISTOL_BULLET"];
+    var_62ea2e0c = ["MOD_PISTOL_BULLET", "MOD_RIFLE_BULLET", "MOD_GRENADE", "MOD_PROJECTILE", "MOD_MELEE", "MOD_MELEE_WEAPON_BUTT", "MOD_MELEE_ASSASSINATE", "MOD_HEAD_SHOT", "MOD_IMPACT"];
     if (isinarray(var_62ea2e0c, smeansofdeath)) {
         return true;
     }
@@ -3739,7 +3739,7 @@ function private function_69c2d36f(weapon, smeansofdeath) {
     if (isdefined(weapon) && weapon.var_349c3324 <= 1) {
         return false;
     }
-    var_4e9743c0 = [4:"MOD_MELEE_ASSASSINATE", 3:"MOD_MELEE_WEAPON_BUTT", 2:"MOD_MELEE", 1:"MOD_PROJECTILE_SPLASH", 0:"MOD_GRENADE"];
+    var_4e9743c0 = ["MOD_GRENADE", "MOD_PROJECTILE_SPLASH", "MOD_MELEE", "MOD_MELEE_WEAPON_BUTT", "MOD_MELEE_ASSASSINATE"];
     if (isinarray(var_4e9743c0, smeansofdeath)) {
         return false;
     }

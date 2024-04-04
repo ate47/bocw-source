@@ -100,10 +100,10 @@ function function_4814ed2e(*params) {
     }
     if (isdefined(drop.var_d8b51b9f) && randomfloat(1) < drop.var_d8b51b9f) {
         origin = self.origin + vectorscale((0, 0, 1), 30);
-        var_20b210c2 = function_cdd56b7c(drop, origin);
-        var_20b210c2.multiplier = self function_fbd43d2f();
-        level.var_96d850f9[level.var_96d850f9.size] = var_20b210c2;
-        var_20b210c2 thread function_31747e4e();
+        newdrop = function_cdd56b7c(drop, origin);
+        newdrop.multiplier = self function_fbd43d2f();
+        level.var_96d850f9[level.var_96d850f9.size] = newdrop;
+        newdrop thread function_31747e4e();
     }
 }
 
@@ -139,9 +139,9 @@ function function_1a93b6b0() {
             drop = array::random(level.item_drops);
             if (isdefined(drop.spawnpoints)) {
                 origin = array::random(drop.spawnpoints);
-                var_20b210c2 = function_cdd56b7c(drop, origin);
-                level.var_96d850f9[level.var_96d850f9.size] = var_20b210c2;
-                var_20b210c2 thread function_31747e4e();
+                newdrop = function_cdd56b7c(drop, origin);
+                level.var_96d850f9[level.var_96d850f9.size] = newdrop;
+                newdrop thread function_31747e4e();
             }
         }
     }

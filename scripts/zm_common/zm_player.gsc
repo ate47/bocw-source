@@ -27,7 +27,7 @@
 #using scripts\zm_common\gametypes\zm_gametype.gsc;
 #using scripts\zm_common\scoreevents.gsc;
 #using scripts\core_common\ai\zombie_utility.gsc;
-#using script_32c8b5b0eb2854f3;
+#using scripts\core_common\gamestate_util.gsc;
 #using scripts\core_common\ai\systems\gib.gsc;
 #using scripts\weapons\weapon_utils.gsc;
 #using scripts\zm_common\gametypes\globallogic.gsc;
@@ -67,14 +67,14 @@
 // Checksum 0x1b77ae37, Offset: 0x708
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_player", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_player", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_player/zm_player
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf9232718, Offset: 0x750
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     callback::on_spawned(&function_34c2aeb5);
 }
 
@@ -497,7 +497,7 @@ function function_182d09fd(eattacker, idamage) {
     if (eattacker.archetype === #"zombie" && isdefined(level.var_c739ead9)) {
         idamage = idamage * level.var_c739ead9;
     }
-    if (eattacker.var_6f84b820 === #"hash_72d4f2ad2e333eb4" && isdefined(level.var_5a59b382)) {
+    if (eattacker.var_6f84b820 === #"elite" && isdefined(level.var_5a59b382)) {
         idamage = idamage * level.var_5a59b382;
     }
     if (eattacker.var_6f84b820 === #"special" && isdefined(level.var_cfbc34ae)) {
@@ -813,7 +813,7 @@ function function_b01adf41() {
     }
     if (isplayer(self)) {
         var_6e618382 = item_inventory::function_2e711614(13);
-        if (var_6e618382.var_a6762160.name === #"stimshot_t9_item_sr") {
+        if (var_6e618382.itementry.name === #"stimshot_t9_item_sr") {
             return true;
         }
     }
@@ -2243,10 +2243,10 @@ function private function_fe7a7d5b(*str_notify) {
 // Params 5, eflags: 0x2 linked
 // Checksum 0xc9f06601, Offset: 0x85c8
 // Size: 0x164
-function function_74b6d714(attacker, effectname, var_894859a2, var_ab5b905e, weapon) {
+function function_74b6d714(attacker, effectname, var_894859a2, durationoverride, weapon) {
     var_20df3f41 = function_1115bceb(effectname);
-    if (isdefined(var_ab5b905e) && var_ab5b905e > 0) {
-        duration = var_ab5b905e;
+    if (isdefined(durationoverride) && durationoverride > 0) {
+        duration = durationoverride;
     } else {
         duration = undefined;
     }

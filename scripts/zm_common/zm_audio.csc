@@ -14,14 +14,14 @@
 // Checksum 0x7e371201, Offset: 0x2a0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_audio", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_audio", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_audio/zm_audio
 // Params 0, eflags: 0x6 linked
 // Checksum 0x4fe2810d, Offset: 0x2e8
 // Size: 0x1e4
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("allplayers", "charindex", 1, 4, "int", &charindex_cb, 0, 1);
     clientfield::register("toplayer", "isspeaking", 1, 1, "int", &isspeaking_cb, 0, 1);
     if (!isdefined(level.exert_sounds)) {

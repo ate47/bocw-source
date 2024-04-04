@@ -21,7 +21,7 @@
 // Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0xf8
 // Size: 0x4
-function private function_70a657d8() {
+function private preinit() {
     
 }
 

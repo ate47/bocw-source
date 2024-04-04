@@ -14,14 +14,14 @@
 // Checksum 0xe669d923, Offset: 0x160
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zombie_dog_util", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zombie_dog_util", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zombie_dog_util/ai_dog_util
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9da40a51, Offset: 0x1a8
 // Size: 0xa4
-function private function_70a657d8() {
+function private preinit() {
     init_dog_fx();
     clientfield::register("actor", "dog_fx", 1, 1, "int", &dog_fx, 0, 0);
     clientfield::register("world", "dog_round_fog_bank", 1, 1, "int", &dog_round_fog_bank, 0, 0);

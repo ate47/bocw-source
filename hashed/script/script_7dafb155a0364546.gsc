@@ -10,14 +10,14 @@
 // Checksum 0xce7f31f8, Offset: 0x98
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_5903f7e85045920f", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_5903f7e85045920f", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_e3815316/namespace_e3815316
 // Params 0, eflags: 0x6 linked
 // Checksum 0xfd8d35fd, Offset: 0xe0
 // Size: 0x6c
-function private function_70a657d8() {
+function private preinit() {
     /#
         function_5ac4dc99("<unknown string>", "<unknown string>");
         function_cd140ee9("<unknown string>", &function_538c9c9b);
@@ -41,14 +41,14 @@ function private function_538c9c9b(params) {
         if (exists(#"hash_5903f7e85045920f")) {
             return;
         }
-        var_c4b99a18 = strtok(params.value, "<unknown string>");
+        paramarray = strtok(params.value, "<unknown string>");
         /#
-            assert(var_c4b99a18.size == 2);
+            assert(paramarray.size == 2);
         #/
-        notetype = var_c4b99a18[0];
-        var_ae85e32 = var_c4b99a18[1];
+        notetype = paramarray[0];
+        noteid = paramarray[1];
         player = getplayers()[0];
-        player thread function_32402e29(notetype, var_ae85e32);
+        player thread function_32402e29(notetype, noteid);
     #/
 }
 
@@ -56,7 +56,7 @@ function private function_538c9c9b(params) {
 // Params 2, eflags: 0x4
 // Checksum 0x8d358aa7, Offset: 0x2b0
 // Size: 0x14c
-function private function_32402e29(*notetype, *var_ae85e32) {
+function private function_32402e29(*notetype, *noteid) {
     player = self;
     if (namespace_61e6d095::exists(#"hash_5903f7e85045920f")) {
         /#
@@ -68,7 +68,7 @@ function private function_32402e29(*notetype, *var_ae85e32) {
     namespace_61e6d095::function_28027c42(#"hash_5903f7e85045920f", #"hash_5903f7e85045920f");
     namespace_c8e236da::function_ebf737f8(#"hash_1aefb4de625039be");
     level waittill(#"note_closed");
-    namespace_c8e236da::function_c27f93d5();
+    namespace_c8e236da::removelist();
     namespace_61e6d095::remove(#"hash_5903f7e85045920f");
     namespace_61e6d095::function_4279fd02(#"hash_5903f7e85045920f");
 }

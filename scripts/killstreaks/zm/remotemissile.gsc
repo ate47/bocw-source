@@ -15,14 +15,14 @@
 // Checksum 0xe2e13402, Offset: 0x160
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"remotemissile", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"remotemissile", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace remotemissile/remotemissile
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa6fae1e1, Offset: 0x1b0
 // Size: 0x164
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("world", "" + #"hash_59ec82b1a72deb72", 1, 1, "int");
     clientfield::register("toplayer", "" + #"hash_7bdbbf163a28169", 6000, 1, "int");
     clientfield::register("toplayer", "" + #"hash_4241f7b51f8c144", 8000, 1, "int");

@@ -41,14 +41,14 @@
 // Checksum 0xd9835aa0, Offset: 0x1d8
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_4d539cc8af850be5", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_4d539cc8af850be5", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_6f90aa12/namespace_6f90aa12
 // Params 0, eflags: 0x0
 // Checksum 0xdb041621, Offset: 0x230
 // Size: 0x10c
-function function_70a657d8() {
+function preinit() {
     zm_round_spawning::register_archetype(#"mechz", &function_13043824, &round_spawn, undefined, 100);
     zm_round_spawning::function_306ce518(#"mechz", &function_5e8a178a);
     spawner::add_archetype_spawn_function(#"mechz", &function_3b8b6e80);
@@ -101,7 +101,7 @@ function function_5d873f78() {
 // Size: 0xa4
 function private function_7f405e5e(entity) {
     e_enemy = entity.favoriteenemy;
-    if (isplayer(e_enemy) && e_enemy flag::get_any([1:#"hash_1b361b950317ecb5", 0:#"hash_686d5709e1566aa6"])) {
+    if (isplayer(e_enemy) && e_enemy flag::get_any([#"hash_686d5709e1566aa6", #"hash_1b361b950317ecb5"])) {
         return;
     }
     entity zm_behavior::zombiefindflesh(entity);
@@ -138,16 +138,16 @@ function function_66247c2() {
     }
     s_spawn_locs = [];
     if (isdefined(level.var_e333bf92)) {
-        var_cd04f695 = [[ level.var_e333bf92 ]](1);
-        if (isarray(var_cd04f695)) {
-            s_spawn_locs = var_cd04f695;
+        spawn_locs = [[ level.var_e333bf92 ]](1);
+        if (isarray(spawn_locs)) {
+            s_spawn_locs = spawn_locs;
         } else {
-            array::add(s_spawn_locs, var_cd04f695);
+            array::add(s_spawn_locs, spawn_locs);
         }
     } else {
-        var_cd04f695 = function_65c98960(1);
-        if (isarray(var_cd04f695)) {
-            s_spawn_locs = var_cd04f695;
+        spawn_locs = function_65c98960(1);
+        if (isarray(spawn_locs)) {
+            s_spawn_locs = spawn_locs;
         }
     }
     var_69681a59 = [];
@@ -384,14 +384,14 @@ function function_6bf0d9e0(*zone_path, player) {
     if (!self function_1064536d(player.origin)) {
         if (isdefined(self.var_a61b4e17)) {
             if (distancesquared(self.var_a61b4e17.var_b1fc2f78, player.origin) < 1024) {
-                return {#origin:self.var_a61b4e17.point, #var_ec8356c8:1};
+                return {#var_ec8356c8:1, #origin:self.var_a61b4e17.point};
             }
         }
-        points = function_710ec146(player.origin, 128, 20, self getpathfindingradius());
+        points = getrandomnavpoints(player.origin, 128, 20, self getpathfindingradius());
         foreach (point in points) {
             if (self function_1064536d(point)) {
-                self.var_a61b4e17 = {#var_b1fc2f78:player.origin, #point:point};
-                return {#origin:point, #var_ec8356c8:1};
+                self.var_a61b4e17 = {#point:point, #var_b1fc2f78:player.origin};
+                return {#var_ec8356c8:1, #origin:point};
             }
         }
     }
@@ -399,13 +399,13 @@ function function_6bf0d9e0(*zone_path, player) {
     if (isdefined(var_2a4e3502)) {
         if (isdefined(self.var_a61b4e17)) {
             if (distancesquared(self.var_a61b4e17.var_b1fc2f78, player.origin) < 1024) {
-                return {#origin:self.var_a61b4e17.point, #var_ec8356c8:1};
+                return {#var_ec8356c8:1, #origin:self.var_a61b4e17.point};
             }
         }
-        goal = getclosestpointonnavmesh(var_2a4e3502.var_2d8730f7, var_2a4e3502.var_b9e9cdf3, self getpathfindingradius() * 1.2);
+        goal = getclosestpointonnavmesh(var_2a4e3502.goal_origin, var_2a4e3502.var_b9e9cdf3, self getpathfindingradius() * 1.2);
         if (isdefined(goal)) {
-            self.var_a61b4e17 = {#var_b1fc2f78:player.origin, #point:goal};
-            return {#origin:goal, #var_ec8356c8:1};
+            self.var_a61b4e17 = {#point:goal, #var_b1fc2f78:player.origin};
+            return {#var_ec8356c8:1, #origin:goal};
         }
     }
     return player;
@@ -417,7 +417,7 @@ function function_6bf0d9e0(*zone_path, player) {
 // Size: 0x10a
 function function_c103f91d() {
     if (!self function_1064536d(self.origin)) {
-        points = function_710ec146(self.origin, 128, 20, self getpathfindingradius());
+        points = getrandomnavpoints(self.origin, 128, 20, self getpathfindingradius());
         foreach (point in points) {
             if (self function_1064536d(point)) {
                 self forceteleport(point, self.angles);

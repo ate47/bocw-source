@@ -16,14 +16,14 @@
 // Checksum 0xed575d6c, Offset: 0x240
 // Size: 0x34
 function private autoexec __init__system__() {
-    system::register("electroball_grenade", &function_70a657d8, undefined, undefined, undefined);
+    system::register("electroball_grenade", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace electroball_grenade/electroball_grenade
 // Params 0, eflags: 0x2 linked
 // Checksum 0x70b105fd, Offset: 0x280
 // Size: 0x1fc
-function function_70a657d8() {
+function preinit() {
     level.proximitygrenadedetectionradius = getdvarint(#"scr_proximitygrenadedetectionradius", 180);
     level.proximitygrenadegraceperiod = getdvarfloat(#"scr_proximitygrenadegraceperiod", 0.05);
     level.proximitygrenadedotdamageamount = getdvarint(#"scr_proximitygrenadedotdamageamount", 1);

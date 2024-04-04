@@ -59,7 +59,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
         self.attackerdamage = [];
     }
     var_d3e9a2bd = isdefined(eattacker) && (self.team === eattacker.team || util::function_9b7092ef(self.team, eattacker.team));
-    if (isdefined(level.var_d3f8fb7) && !level.var_d3f8fb7) {
+    if (isdefined(level.friendlyfiredisabled) && !level.friendlyfiredisabled) {
         if (isdefined(level.var_edbfa7b)) {
             if (isplayer(eattacker) && var_d3e9a2bd) {
                 idamage = int(idamage * level.var_edbfa7b);
@@ -241,7 +241,7 @@ function callback_actorkilled(einflictor, eattacker, idamage, smeansofdeath, wea
         }
     }
     if (isdefined(player) && isplayer(player)) {
-        player notify(#"hash_629056f40d06c7", {#weapon:weapon, #mod:smeansofdeath, #victim:self});
+        player notify(#"hash_629056f40d06c7", {#victim:self, #mod:smeansofdeath, #weapon:weapon});
         if (smeansofdeath == "MOD_MELEE" || smeansofdeath == "MOD_MELEE_ASSASSINATE" || smeansofdeath == "MOD_MELEE_WEAPON_BUTT") {
             player.var_4b6c9aa0++;
         }

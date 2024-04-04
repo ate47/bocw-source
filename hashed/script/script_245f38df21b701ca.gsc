@@ -41,11 +41,11 @@ function init() {
 // Checksum 0x64a4f49b, Offset: 0x270
 // Size: 0x2be
 function function_32d5e898(*localclientnum) {
-    level.doa.var_422d359d = [];
+    level.doa.arenas = [];
     level.doa.var_72b899ad = undefined;
-    var_422d359d = struct::get_array("arena_center", "targetname");
+    arenas = struct::get_array("arena_center", "targetname");
     var_7f6c6c04 = [];
-    foreach (arena in var_422d359d) {
+    foreach (arena in arenas) {
         args = strtok(arena.script_parameters, ";");
         order = int(args[0]);
         if (args.size > 1) {
@@ -63,13 +63,13 @@ function function_32d5e898(*localclientnum) {
     for (index = 0; index < 100; index++) {
         if (isdefined(var_7f6c6c04[index])) {
             var_7f6c6c04[index].id = id;
-            level.doa.var_422d359d[id] = var_7f6c6c04[index];
+            level.doa.arenas[id] = var_7f6c6c04[index];
             id++;
         }
     }
-    level.doa.var_72b899ad = level.doa.var_422d359d[0];
-    level.doa.var_422d359d[3].var_eea7f12e = 1000;
-    level.doa.var_422d359d[14].var_eea7f12e = 1100;
+    level.doa.var_72b899ad = level.doa.arenas[0];
+    level.doa.arenas[3].camera_max_height = 1000;
+    level.doa.arenas[14].camera_max_height = 1100;
 }
 
 // Namespace namespace_8c04284b/namespace_8c04284b
@@ -80,9 +80,9 @@ function setarena(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fi
     cleanupspawneddynents();
     level.doa.var_72b899ad = undefined;
     if (bwastimejump != 32 - 1) {
-        level.doa.var_72b899ad = level.doa.var_422d359d[bwastimejump];
+        level.doa.var_72b899ad = level.doa.arenas[bwastimejump];
         /#
-            function_f5f0c0f8("<unknown string>" + level.doa.var_72b899ad.script_noteworthy);
+            debugmsg("<unknown string>" + level.doa.var_72b899ad.script_noteworthy);
         #/
     }
     var_129a290 = 1;
@@ -131,11 +131,11 @@ function settod(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *field
         break;
     }
     /#
-        function_f5f0c0f8("<unknown string>" + level.doa.var_72b899ad.script_noteworthy + "<unknown string>" + level.doa.var_3303cb0d);
+        debugmsg("<unknown string>" + level.doa.var_72b899ad.script_noteworthy + "<unknown string>" + level.doa.var_3303cb0d);
     #/
     level.doa.var_1fc44fbc = "fxexp_" + level.doa.var_72b899ad.script_noteworthy + "_" + level.doa.var_3303cb0d;
     /#
-        function_f5f0c0f8("<unknown string>" + level.doa.var_1fc44fbc + "<unknown string>" + fieldname);
+        debugmsg("<unknown string>" + level.doa.var_1fc44fbc + "<unknown string>" + fieldname);
     #/
     playradiantexploder(fieldname, level.doa.var_1fc44fbc);
 }

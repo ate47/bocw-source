@@ -12,14 +12,14 @@
 // Checksum 0xc834af3c, Offset: 0xa8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"wz_ai_avogadro", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"wz_ai_avogadro", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_9f3d3e9/namespace_9f3d3e9
 // Params 0, eflags: 0x2 linked
 // Checksum 0x87380bd0, Offset: 0xf0
 // Size: 0x34
-function function_70a657d8() {
+function preinit() {
     ai::add_archetype_spawn_function(#"avogadro", &function_1caf705e);
 }
 

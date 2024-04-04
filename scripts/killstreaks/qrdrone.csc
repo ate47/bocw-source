@@ -161,7 +161,7 @@ function final_blink(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, 
 // Checksum 0x8253e2ef, Offset: 0x940
 // Size: 0x9c
 function out_of_range_update(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    model = getuimodel(function_1df4c3b0(fieldname, #"hash_4c3ca831f332d4cc"), "outOfRange");
+    model = getuimodel(function_1df4c3b0(fieldname, #"vehicle_info"), "outOfRange");
     if (isdefined(model)) {
         setuimodelvalue(model, bwastimejump);
     }

@@ -8,14 +8,14 @@
 // Checksum 0xca818da3, Offset: 0x88
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hud_message", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hud_message", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace hud_message/hud_message_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0xd0
 // Size: 0x4
-function private function_70a657d8() {
+function private preinit() {
     
 }
 
@@ -40,10 +40,10 @@ function function_65299180(localclientnum, var_e69b15f0, arglist) {
 // Size: 0xac
 function setlowermessage(localclientnum, text, time) {
     if (isdefined(time) && time > 0) {
-        function_65299180(localclientnum, #"hash_424b9c54c8bf7a82", [1:int(time), 0:text]);
+        function_65299180(localclientnum, #"hash_424b9c54c8bf7a82", [text, int(time)]);
         return;
     }
-    function_65299180(localclientnum, #"hash_424b9c54c8bf7a82", [0:text]);
+    function_65299180(localclientnum, #"hash_424b9c54c8bf7a82", [text]);
 }
 
 // Namespace hud_message/hud_message_shared

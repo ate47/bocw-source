@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_3dc93ca9902a9cda;
-#using script_1292451e284848cc;
+#using scripts\cp_common\snd.gsc;
 #using scripts\core_common\array_shared.gsc;
 #using scripts\core_common\scene_shared.gsc;
 #using scripts\cp\cp_takedown_af_wreck.gsc;
@@ -54,7 +54,7 @@ function event_handler[level_init] main(*eventstruct) {
     level thread lui::add_luimenu("full_screen_movie", &full_screen_movie::register);
     load::main();
     function_22b7fffd();
-    function_724788b2();
+    init_callbacks();
     thread function_7ea0ce5f();
     level thread tkdn_af_wreck::function_70dd6f0e();
     level.player = getplayers()[0];
@@ -72,23 +72,23 @@ function event_handler[level_init] main(*eventstruct) {
 // Checksum 0x8b9f969b, Offset: 0x688
 // Size: 0x6d4
 function function_37dfd679() {
-    skipto::function_eb91535d("tkdn_raid_bar", &tkdn_raid_bar::main, &tkdn_raid_bar::starting, "Hit 2: Bar", &tkdn_raid_bar::cleanup, [0:"amsterdam_intro"]);
-    skipto::function_eb91535d("tkdn_raid_gearup", &namespace_c9f7b6af::main, &namespace_c9f7b6af::starting, "Hit 2: Gear Up", &namespace_c9f7b6af::cleanup, [1:"amsterdam_main", 0:"amsterdam_intro"]);
-    skipto::function_eb91535d("tkdn_raid_apt", &tkdn_raid_apt::main, &tkdn_raid_apt::starting, "Hit 2: Apartment", &tkdn_raid_apt::cleanup, [1:"amsterdam_main", 0:"amsterdam_intro"]);
-    skipto::function_eb91535d("tkdn_raid_rooftops", &tkdn_raid_roof::main, &tkdn_raid_roof::starting, "Hit 2: Rooftops", &tkdn_raid_roof::cleanup, [0:"amsterdam_main"]);
-    skipto::function_eb91535d("tkdn_raid_slide", &tkdn_raid_slide::main, &tkdn_raid_slide::starting, "Hit 2: Slide", &tkdn_raid_slide::cleanup, [0:"amsterdam_main"]);
-    skipto::function_eb91535d("tkdn_raid_capture", &tkdn_raid_capture::main, &tkdn_raid_capture::starting, "Hit 2: Capture", &tkdn_raid_capture::cleanup, [0:"amsterdam_main"]);
-    skipto::function_eb91535d("tkdn_af_intro", &tkdn_af_intro::main, &tkdn_af_intro::starting, "Hit 3: Intro", &tkdn_af_intro::cleanup, [1:"airfield_base", 0:"airfield_intro"]);
-    skipto::function_eb91535d("tkdn_af_hill", &tkdn_af_hill::main, &tkdn_af_hill::starting, "Hit 3: Hill", &tkdn_af_hill::cleanup, [1:"airfield_base", 0:"airfield_intro"]);
-    skipto::add("tkdn_af_tarmac", &tkdn_af_tarmac::main, &tkdn_af_tarmac::starting, "Hit 3: Tarmac", &tkdn_af_tarmac::cleanup, [1:"airfield_base", 0:"airfield_intro"]);
-    skipto::function_eb91535d("tkdn_af_chase", &tkdn_af_chase::main, &tkdn_af_chase::starting, "Hit 3: Chase", &tkdn_af_chase::cleanup, [1:"airfield_base", 0:"airfield_intro"]);
-    skipto::function_eb91535d("tkdn_af_rc_chase", &tkdn_af_chase::function_2ccc781e, &tkdn_af_chase::function_614083bb, "Hit 3: RC Chase", &tkdn_af_chase::function_cca97e77, [0:"airfield_base"]);
-    skipto::add("tkdn_af_skid", &tkdn_af_skid::main, &tkdn_af_skid::starting, "Hit 3: Skid", &tkdn_af_skid::cleanup, [0:"airfield_base"]);
-    skipto::function_eb91535d("tkdn_af_wreck", &tkdn_af_wreck::main, &tkdn_af_wreck::starting, "Hit 3: Wreck", &tkdn_af_wreck::cleanup, [0:"airfield_base"]);
+    skipto::function_eb91535d("tkdn_raid_bar", &tkdn_raid_bar::main, &tkdn_raid_bar::starting, "Hit 2: Bar", &tkdn_raid_bar::cleanup, ["amsterdam_intro"]);
+    skipto::function_eb91535d("tkdn_raid_gearup", &namespace_c9f7b6af::main, &namespace_c9f7b6af::starting, "Hit 2: Gear Up", &namespace_c9f7b6af::cleanup, ["amsterdam_intro", "amsterdam_main"]);
+    skipto::function_eb91535d("tkdn_raid_apt", &tkdn_raid_apt::main, &tkdn_raid_apt::starting, "Hit 2: Apartment", &tkdn_raid_apt::cleanup, ["amsterdam_intro", "amsterdam_main"]);
+    skipto::function_eb91535d("tkdn_raid_rooftops", &tkdn_raid_roof::main, &tkdn_raid_roof::starting, "Hit 2: Rooftops", &tkdn_raid_roof::cleanup, ["amsterdam_main"]);
+    skipto::function_eb91535d("tkdn_raid_slide", &tkdn_raid_slide::main, &tkdn_raid_slide::starting, "Hit 2: Slide", &tkdn_raid_slide::cleanup, ["amsterdam_main"]);
+    skipto::function_eb91535d("tkdn_raid_capture", &tkdn_raid_capture::main, &tkdn_raid_capture::starting, "Hit 2: Capture", &tkdn_raid_capture::cleanup, ["amsterdam_main"]);
+    skipto::function_eb91535d("tkdn_af_intro", &tkdn_af_intro::main, &tkdn_af_intro::starting, "Hit 3: Intro", &tkdn_af_intro::cleanup, ["airfield_intro", "airfield_base"]);
+    skipto::function_eb91535d("tkdn_af_hill", &tkdn_af_hill::main, &tkdn_af_hill::starting, "Hit 3: Hill", &tkdn_af_hill::cleanup, ["airfield_intro", "airfield_base"]);
+    skipto::add("tkdn_af_tarmac", &tkdn_af_tarmac::main, &tkdn_af_tarmac::starting, "Hit 3: Tarmac", &tkdn_af_tarmac::cleanup, ["airfield_intro", "airfield_base"]);
+    skipto::function_eb91535d("tkdn_af_chase", &tkdn_af_chase::main, &tkdn_af_chase::starting, "Hit 3: Chase", &tkdn_af_chase::cleanup, ["airfield_intro", "airfield_base"]);
+    skipto::function_eb91535d("tkdn_af_rc_chase", &tkdn_af_chase::function_2ccc781e, &tkdn_af_chase::function_614083bb, "Hit 3: RC Chase", &tkdn_af_chase::function_cca97e77, ["airfield_base"]);
+    skipto::add("tkdn_af_skid", &tkdn_af_skid::main, &tkdn_af_skid::starting, "Hit 3: Skid", &tkdn_af_skid::cleanup, ["airfield_base"]);
+    skipto::function_eb91535d("tkdn_af_wreck", &tkdn_af_wreck::main, &tkdn_af_wreck::starting, "Hit 3: Wreck", &tkdn_af_wreck::cleanup, ["airfield_base"]);
     /#
-        function_67843f17("<unknown string>", &main, &starting, "<unknown string>", &cleanup, undefined, undefined, [0:"<unknown string>"]);
-        function_67843f17("<unknown string>", &main, &starting, "<unknown string>", &cleanup, undefined, undefined, [3:"<unknown string>", 2:"<unknown string>", 1:"<unknown string>", 0:"<unknown string>"]);
-        function_67843f17("<unknown string>", &main, &starting, "<unknown string>", &cleanup, undefined, undefined, [0:"<unknown string>"]);
+        function_67843f17("<unknown string>", &main, &starting, "<unknown string>", &cleanup, undefined, undefined, ["<unknown string>"]);
+        function_67843f17("<unknown string>", &main, &starting, "<unknown string>", &cleanup, undefined, undefined, ["<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>"]);
+        function_67843f17("<unknown string>", &main, &starting, "<unknown string>", &cleanup, undefined, undefined, ["<unknown string>"]);
         function_67843f17("<unknown string>", &function_5bef74d0);
     #/
 }
@@ -164,7 +164,7 @@ function function_22b7fffd() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0xf37f5f02, Offset: 0x1008
 // Size: 0x44
-function function_724788b2() {
+function init_callbacks() {
     callback::on_spawned(&function_8106e2e1);
     callback::on_connect(&on_player_connect);
 }
@@ -340,7 +340,7 @@ function function_acddd8f1() {
 // Size: 0x5c
 function function_7ea0ce5f() {
     level flag::wait_till("oob_fail");
-    level util::function_2fd0ed09(#"hash_32ab03edc2a4077d");
+    level util::missionfailedwrapper(#"hash_32ab03edc2a4077d");
     level waittill(#"forever");
 }
 

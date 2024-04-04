@@ -6,7 +6,7 @@
             "imagelarge": "#hash_76caa17d5c801fd7",
             "displayname": "#hash_4ef0cad8f0ab07ed",
             "var_1a50db25": "#hash_5e7e1736f89fd8c5",
-            "var_a4f2dd9e": "#none",
+            "actionutility": "#none",
             "var_4e4109db": "#story_tabs_cp",
             "var_e1c44b36": "#hash_4e5ebb949ff0cdad"
         },
@@ -16,7 +16,7 @@
             "imagelarge": "#ui_icon_challenges_mpdarkops_large",
             "displayname": "#hash_5393241bf09acb00",
             "var_1a50db25": "#hash_4a8cef046ae0d4c1",
-            "var_a4f2dd9e": "#none",
+            "actionutility": "#none",
             "var_e1c44b36": "#hash_66da4dc773b6c67f"
         }
     ],

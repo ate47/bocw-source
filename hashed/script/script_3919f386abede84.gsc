@@ -48,14 +48,14 @@ class class_e500a966 : cdoor {
 // Checksum 0x96fb215, Offset: 0x158
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"windows", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"windows", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace windows/namespace_23507db6
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6a8cd357, Offset: 0x1b0
 // Size: 0x20
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.var_e97fadd5)) {
         level.var_e97fadd5 = [];
     }
@@ -65,7 +65,7 @@ function private function_70a657d8() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x7c38e691, Offset: 0x1d8
 // Size: 0x6e
-function function_b35628d5() {
+function init_window() {
     if (isdefined(self.scriptbundlename)) {
         var_82b05767 = getscriptbundle(self.scriptbundlename);
     }
@@ -82,7 +82,7 @@ function private postinit() {
     level flag::wait_till("radiant_gameobjects_initialized");
     level.var_e97fadd5 = struct::get_array("scriptbundle_windows", "classname");
     foreach (s_instance in level.var_e97fadd5) {
-        c_door = s_instance function_b35628d5();
+        c_door = s_instance init_window();
         if (isdefined(c_door)) {
             s_instance.c_door = c_door;
         }

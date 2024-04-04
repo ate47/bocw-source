@@ -11,7 +11,7 @@
 #using scripts\core_common\clientfield_shared.gsc;
 #using scripts\core_common\scene_shared.gsc;
 #using script_1cf46b33555422b7;
-#using script_1029986e2bc8ca8e;
+#using scripts\zm_common\objective_manager.gsc;
 #using scripts\core_common\item_drop.gsc;
 #using scripts\core_common\util_shared.gsc;
 #using scripts\core_common\flag_shared.gsc;
@@ -63,21 +63,21 @@ function init_quests() {
 function on_item_pickup(params) {
     item = params.item;
     player_zone = zm_zonemgr::get_zone_from_position(self.origin);
-    if (isplayer(self) && player_zone === "zone_pizza_kitchen" && item.var_a6762160.name === #"ray_gun_item_sr") {
+    if (isplayer(self) && player_zone === "zone_pizza_kitchen" && item.itementry.name === #"ray_gun_item_sr") {
         var_a998408b = self.inventory.items[17 + 1];
-        if (var_a998408b.var_a6762160.name === #"ray_gun_item_sr") {
+        if (var_a998408b.itementry.name === #"ray_gun_item_sr") {
             self setweaponammoclip(var_a998408b.var_627c698b, 20);
             self setweaponammostock(var_a998408b.var_627c698b, 80);
             return;
         }
         var_bf5e6c17 = self.inventory.items[17 + 1 + 8 + 1];
-        if (var_bf5e6c17.var_a6762160.name === #"ray_gun_item_sr") {
+        if (var_bf5e6c17.itementry.name === #"ray_gun_item_sr") {
             self setweaponammoclip(var_bf5e6c17.var_627c698b, 20);
             self setweaponammostock(var_bf5e6c17.var_627c698b, 80);
             return;
         }
         var_8e20899c = self.inventory.items[17 + 1 + 8 + 1 + 8 + 1];
-        if (var_8e20899c.var_a6762160.name === #"ray_gun_item_sr") {
+        if (var_8e20899c.itementry.name === #"ray_gun_item_sr") {
             self setweaponammoclip(var_8e20899c.var_627c698b, 20);
             self setweaponammostock(var_8e20899c.var_627c698b, 80);
             return;
@@ -210,7 +210,7 @@ function function_51989322(n_time) {
     if (level.var_55fd9380 luielemtext::is_open(self)) {
         level.var_55fd9380 luielemtext::close(self);
     }
-    self thread namespace_f3a74bbc::function_a809e69a();
+    self thread objective_manager::function_a809e69a();
 }
 
 // Namespace namespace_60bf0cf2/namespace_60bf0cf2
@@ -227,7 +227,7 @@ function function_626741e8(n_time) {
     level.var_55fd9380 luielemtext::set_color(self, 1, 1, 1);
     level.var_55fd9380 luielemtext::set_alpha(self, 1);
     level.var_55fd9380 luielemtext::set_horizontal_alignment(self, 1);
-    self thread namespace_f3a74bbc::function_b8278876(n_time, "pizza_delivery");
+    self thread objective_manager::function_b8278876(n_time, "pizza_delivery");
 }
 
 // Namespace namespace_60bf0cf2/namespace_60bf0cf2
@@ -241,7 +241,7 @@ function function_63cb47df() {
     if (level.var_55fd9380 luielemtext::is_open(self)) {
         level.var_55fd9380 luielemtext::close(self);
     }
-    self thread namespace_f3a74bbc::function_a809e69a();
+    self thread objective_manager::function_a809e69a();
 }
 
 // Namespace namespace_60bf0cf2/namespace_60bf0cf2
@@ -256,7 +256,7 @@ function function_667bc5b7() {
     if (level.var_55fd9380 luielemtext::is_open(self)) {
         level.var_55fd9380 luielemtext::close(self);
     }
-    self thread namespace_f3a74bbc::function_a809e69a();
+    self thread objective_manager::function_a809e69a();
     self waittill(#"fasttravel_over");
     self thread function_51989322(int(float(self.n_time_left) / 1000) + 1);
 }
@@ -517,29 +517,29 @@ function function_a42c42c2() {
     if (var_e083ecbd <= 30) {
         if (var_e083ecbd <= 10) {
             if (function_f23f302d()) {
-                var_e05f8872 = #"self_revive_sr_item";
+                str_item = #"self_revive_sr_item";
             } else {
-                var_e05f8872 = #"armor_item_lv1_t9_sr";
+                str_item = #"armor_item_lv1_t9_sr";
             }
         } else if (var_e083ecbd <= 20) {
-            var_e05f8872 = "full_ammo";
+            str_item = "full_ammo";
             self.var_87eb8981 = 1;
         } else {
-            var_e05f8872 = "double_points";
+            str_item = "double_points";
             self.var_87eb8981 = 1;
         }
     } else if (var_e083ecbd <= 65) {
         if (var_e083ecbd <= 55) {
-            var_e05f8872 = #"scrap_epic_item_sr";
+            str_item = #"scrap_epic_item_sr";
         } else {
-            var_e05f8872 = #"scrap_legendary_item_sr";
+            str_item = #"scrap_legendary_item_sr";
         }
     } else if (var_e083ecbd <= 95) {
-        var_e05f8872 = #"hash_69a628368f8263f";
+        str_item = #"hash_69a628368f8263f";
     } else {
-        var_e05f8872 = #"ray_gun_item_sr";
+        str_item = #"ray_gun_item_sr";
     }
-    return var_e05f8872;
+    return str_item;
 }
 
 // Namespace namespace_60bf0cf2/namespace_60bf0cf2

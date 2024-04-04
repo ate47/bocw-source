@@ -37,7 +37,7 @@
 #using scripts\core_common\hud_shared.gsc;
 #using scripts\core_common\healthoverlay.gsc;
 #using scripts\core_common\gametype_shared.gsc;
-#using script_32c8b5b0eb2854f3;
+#using scripts\core_common\gamestate_util.gsc;
 #using scripts\core_common\gamestate.gsc;
 #using scripts\core_common\gameobjects_shared.gsc;
 #using scripts\core_common\flag_shared.gsc;
@@ -53,14 +53,14 @@
 // Checksum 0x81c77e14, Offset: 0x500
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"globallogic", &function_70a657d8, undefined, undefined, #"visionset_mgr");
+    system::register(#"globallogic", &preinit, undefined, undefined, #"visionset_mgr");
 }
 
 // Namespace globallogic/globallogic
 // Params 0, eflags: 0x6 linked
 // Checksum 0xfd0f2693, Offset: 0x550
 // Size: 0xbc
-function private function_70a657d8() {
+function private preinit() {
     visionset_mgr::register_info("visionset", "crithealth", 1, 4, 25, 1, &visionset_mgr::ramp_in_out_thread_per_player, 0);
     clientfield::register_clientuimodel("hudItems.armorIsOnCooldown", 1, 1, "int");
     clientfield::function_91cd7763("string", "hudItems.cursorHintZMPurchaseInvalidText", 1, 0);
@@ -610,8 +610,8 @@ function function_8da685e9() {
     while (true) {
         foreach (player in level.players) {
             shouldshow = 1;
-            for (var_3c0cc784 = 0; var_3c0cc784 < level.var_75433ec1.size; var_3c0cc784++) {
-                if (player == level.var_75433ec1[var_3c0cc784]) {
+            for (playeridx = 0; playeridx < level.var_75433ec1.size; playeridx++) {
+                if (player == level.var_75433ec1[playeridx]) {
                     shouldshow = 0;
                 }
             }
@@ -650,8 +650,8 @@ function matchstarttimer(counttime) {
             var_b9ef7eae = [];
             foreach (player in level.players) {
                 shouldplaysound = 1;
-                for (var_3c0cc784 = 0; var_3c0cc784 < var_b9ef7eae.size; var_3c0cc784++) {
-                    if (player isplayeronsamemachine(var_b9ef7eae[var_3c0cc784])) {
+                for (playeridx = 0; playeridx < var_b9ef7eae.size; playeridx++) {
+                    if (player isplayeronsamemachine(var_b9ef7eae[playeridx])) {
                         shouldplaysound = 0;
                     }
                 }

@@ -254,7 +254,7 @@ function private function_7a007bbf(skeleton, entity) {
 function function_7d1989aa(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
     mocompduration orientmode("face enemy");
     mocompduration animmode("zonly physics");
-    if (isdefined(mocompduration.enemy) && distancesquared(mocompduration.enemy.origin, mocompduration.origin) < function_a3f6cdac(60)) {
+    if (isdefined(mocompduration.enemy) && distancesquared(mocompduration.enemy.origin, mocompduration.origin) < sqr(60)) {
         mocompduration animmode("angle deltas");
     }
 }
@@ -266,7 +266,7 @@ function function_7d1989aa(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 function function_5ff8994e(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
     mocompduration orientmode("face enemy");
     mocompduration animmode("zonly physics");
-    if (isdefined(mocompduration.enemy) && distancesquared(mocompduration.enemy.origin, mocompduration.origin) < function_a3f6cdac(60)) {
+    if (isdefined(mocompduration.enemy) && distancesquared(mocompduration.enemy.origin, mocompduration.origin) < sqr(60)) {
         mocompduration animmode("angle deltas");
     }
 }
@@ -324,7 +324,7 @@ function private function_7ef4937e(entity) {
         return false;
     }
     if (is_true(self.is_charging)) {
-        if (distance2dsquared(self.enemy.origin, entity.origin) >= function_a3f6cdac(1000) || gettime() >= self.var_a2691e6b) {
+        if (distance2dsquared(self.enemy.origin, entity.origin) >= sqr(1000) || gettime() >= self.var_a2691e6b) {
             function_9f7eb359(entity);
         }
         return false;
@@ -343,7 +343,7 @@ function private function_7ef4937e(entity) {
     if (isdefined(level.var_64800a5a) && ![[ level.var_64800a5a ]](self)) {
         return false;
     }
-    if (distance2dsquared(self.enemy.origin, entity.origin) < function_a3f6cdac(400)) {
+    if (distance2dsquared(self.enemy.origin, entity.origin) < sqr(400)) {
         if (!util::within_fov(entity.enemy.origin, entity.enemy.angles, self.origin, cos(90))) {
             return false;
         }

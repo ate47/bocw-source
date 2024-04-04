@@ -199,8 +199,8 @@ function function_e8aa75b8(gadgetweapon) {
 // Checksum 0x32ff0169, Offset: 0x8e0
 // Size: 0xa4
 function function_46b37314(fill_power) {
-    if (isdefined(self.playerrole) && isdefined(self.playerrole.var_a7e7cb46)) {
-        gadget_weapon = getweapon(self.playerrole.var_a7e7cb46);
+    if (isdefined(self.playerrole) && isdefined(self.playerrole.primaryequipment)) {
+        gadget_weapon = getweapon(self.playerrole.primaryequipment);
         if (isdefined(gadget_weapon)) {
             self function_1a38f0b0(gadget_weapon);
             if (is_true(fill_power)) {
@@ -247,8 +247,8 @@ function function_b6d7e7e0(fill_power) {
 // Checksum 0xb9239480, Offset: 0xaf0
 // Size: 0x6c
 function function_e5c7425d() {
-    if (isdefined(self.playerrole) && isdefined(self.playerrole.var_a7e7cb46)) {
-        gadget_weapon = getweapon(self.playerrole.var_a7e7cb46);
+    if (isdefined(self.playerrole) && isdefined(self.playerrole.primaryequipment)) {
+        gadget_weapon = getweapon(self.playerrole.primaryequipment);
         if (isdefined(gadget_weapon)) {
             self function_e8aa75b8(gadget_weapon);
         }

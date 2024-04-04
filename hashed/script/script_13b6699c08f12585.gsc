@@ -13,14 +13,14 @@
 // Checksum 0xa66e2282, Offset: 0x1a0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_2838d085012cb7f", &function_70a657d8, undefined, undefined, #"player_vehicle");
+    system::register(#"hash_2838d085012cb7f", &preinit, undefined, undefined, #"player_vehicle");
 }
 
 // Namespace namespace_f36ad2eb/namespace_f36ad2eb
 // Params 0, eflags: 0x6 linked
 // Checksum 0xfa6b5d4e, Offset: 0x1f0
 // Size: 0x74
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_vehicletype_callback("player_large_helicopter_armada", &function_38ae4287);
     clientfield::register("scriptmover", "armada_chopper_deathfx", 1, 1, "int", &field_do_deathfx, 0, 0);
 }
@@ -205,13 +205,13 @@ function private function_732976d8(localclientnum, vehicle) {
     self endon("464688c098446c3e");
     self endon(#"death");
     self endon(#"disconnect");
-    var_26408b5d = function_a3f6cdac(210);
+    var_26408b5d = sqr(210);
     offsetorigin = (0, 0, 210 * 2);
     while (true) {
         if (!isdefined(vehicle) || !isinvehicle(localclientnum, vehicle)) {
             break;
         }
-        if (!vehicle function_973c841f(self) && self function_21c0fa55()) {
+        if (!vehicle isdrivingvehicle(self) && self function_21c0fa55()) {
             self function_d1731820(localclientnum);
             wait(1);
             continue;

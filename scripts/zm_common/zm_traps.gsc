@@ -31,14 +31,14 @@
 // Checksum 0xa4f10021, Offset: 0x400
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"zm_traps", &function_70a657d8, &postinit, &init, undefined);
+    system::register(#"zm_traps", &preinit, &postinit, &init, undefined);
 }
 
 // Namespace zm_traps/zm_traps
 // Params 0, eflags: 0x6 linked
 // Checksum 0x769ee324, Offset: 0x460
 // Size: 0x38
-function private function_70a657d8() {
+function private preinit() {
     level.trap_kills = 0;
     if (!isdefined(level._custom_traps)) {
         level._custom_traps = [];
@@ -303,7 +303,7 @@ function trap_activate(trap, who) {
         if (isdefined(trap._trap_type)) {
             who zm_audio::create_and_play_dialog(#"trap_activate", trap._trap_type);
         }
-        level notify(#"trap_activated", {#trap:trap, #trap_activator:who});
+        level notify(#"trap_activated", {#trap_activator:who, #trap:trap});
     }
     if (isarray(trap._trap_switches) && trap._trap_switches.size) {
         trap thread trap_move_switches();
@@ -575,7 +575,7 @@ function trap_damage() {
 function function_783361ed(e_trap) {
     self endon(#"disconnect");
     self.var_acc576f0 = 1;
-    level notify(#"trap_downed_player", {#e_trap:e_trap, #e_victim:self});
+    level notify(#"trap_downed_player", {#e_victim:self, #e_trap:e_trap});
     while (isalive(self) && self laststand::player_is_in_laststand()) {
         waitframe(1);
     }
@@ -684,7 +684,7 @@ function zombie_trap_death(e_trap, param) {
         if (isdefined(self.var_5475b4ad)) {
             self [[ self.var_5475b4ad ]](e_trap);
         } else {
-            level notify(#"trap_kill", {#e_trap:e_trap, #e_victim:self});
+            level notify(#"trap_kill", {#e_victim:self, #e_trap:e_trap});
             self dodamage(self.health + 666, self.origin, e_trap);
         }
         break;
@@ -695,7 +695,7 @@ function zombie_trap_death(e_trap, param) {
         if (isdefined(self.var_d89f2f98)) {
             self [[ self.var_d89f2f98 ]](e_trap);
         }
-        level notify(#"trap_kill", {#e_trap:e_trap, #e_victim:self});
+        level notify(#"trap_kill", {#e_victim:self, #e_trap:e_trap});
         self startragdoll();
         self launchragdoll(direction_vec);
         util::wait_network_frame();

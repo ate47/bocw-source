@@ -242,7 +242,7 @@ function hunt_enemy() {
     foundpath = 0;
     targetpos = function_dcecac3c();
     if (isdefined(targetpos)) {
-        if (distancesquared(self.origin, targetpos) > function_a3f6cdac(400) && self isposinclaimedlocation(targetpos)) {
+        if (distancesquared(self.origin, targetpos) > sqr(400) && self isposinclaimedlocation(targetpos)) {
             profileNamedStart(#"");
             queryresult = positionquery_source_navigation(targetpos, 0, self.settings.max_move_dist, self.settings.max_move_dist, self.radius, self);
             profileNamedStop();
@@ -323,7 +323,7 @@ function prevent_stuck() {
     count = 0;
     previous_origin = undefined;
     while (true) {
-        if (isdefined(previous_origin) && distancesquared(previous_origin, self.origin) < function_a3f6cdac(0.1) && !is_true(level.bzm_worldpaused)) {
+        if (isdefined(previous_origin) && distancesquared(previous_origin, self.origin) < sqr(0.1) && !is_true(level.bzm_worldpaused)) {
             count++;
         } else {
             previous_origin = self.origin;
@@ -344,7 +344,7 @@ function check_detonation_dist(origin, enemy) {
     if (isdefined(enemy) && isalive(enemy)) {
         enemy_look_dir_offst = anglestoforward(enemy.angles) * 30;
         targetpoint = enemy.origin + enemy_look_dir_offst;
-        if (distance2dsquared(targetpoint, origin) < function_a3f6cdac(self.settings.detonation_distance) && (abs(targetpoint[2] - origin[2]) < self.settings.detonation_distance || abs(targetpoint[2] - self.settings.jump_height - origin[2]) < self.settings.detonation_distance)) {
+        if (distance2dsquared(targetpoint, origin) < sqr(self.settings.detonation_distance) && (abs(targetpoint[2] - origin[2]) < self.settings.detonation_distance || abs(targetpoint[2] - self.settings.jump_height - origin[2]) < self.settings.detonation_distance)) {
             return true;
         }
     }
@@ -443,23 +443,23 @@ function function_ded83def(lastenemy) {
             enemy_origin = enemy_vehicle.origin;
         }
         disttoenemysquared = distancesquared(self.origin, enemy_origin);
-        if (disttoenemysquared < function_a3f6cdac(250)) {
-            if (lastdisttoenemysquared > function_a3f6cdac(250) && !is_true(self.servershortout) && isdefined(self.sndalias[#"vehclose250"])) {
+        if (disttoenemysquared < sqr(250)) {
+            if (lastdisttoenemysquared > sqr(250) && !is_true(self.servershortout) && isdefined(self.sndalias[#"vehclose250"])) {
                 self playsoundtoplayer(self.sndalias[#"vehclose250"], self.enemy);
             }
-        } else if (disttoenemysquared < function_a3f6cdac(750)) {
-            if (lastdisttoenemysquared > function_a3f6cdac(750) && !is_true(self.servershortout) && isdefined(self.sndalias[#"vehtargeting"])) {
+        } else if (disttoenemysquared < sqr(750)) {
+            if (lastdisttoenemysquared > sqr(750) && !is_true(self.servershortout) && isdefined(self.sndalias[#"vehtargeting"])) {
                 self playsoundtoplayer(self.sndalias[#"vehtargeting"], self.enemy);
             }
-        } else if (disttoenemysquared < function_a3f6cdac(1500)) {
-            if (lastdisttoenemysquared > function_a3f6cdac(1500) && !is_true(self.servershortout) && isdefined(self.sndalias[#"vehclose1500"])) {
+        } else if (disttoenemysquared < sqr(1500)) {
+            if (lastdisttoenemysquared > sqr(1500) && !is_true(self.servershortout) && isdefined(self.sndalias[#"vehclose1500"])) {
                 self playsoundtoplayer(self.sndalias[#"vehclose1500"], self.enemy);
             }
         }
         if (disttoenemysquared < lastdisttoenemysquared) {
             lastdisttoenemysquared = disttoenemysquared;
         }
-        lastdisttoenemysquared = lastdisttoenemysquared + function_a3f6cdac(10);
+        lastdisttoenemysquared = lastdisttoenemysquared + sqr(10);
     }
 }
 
@@ -569,14 +569,14 @@ function function_dcecac3c() {
             return self.current_pathto_pos;
         }
     } else if (isdefined(self.enemy) && issentient(self.enemy)) {
-        if (distancesquared(target_pos, target_pos_onnavmesh) > function_a3f6cdac(self.settings.detonation_distance * 0.9)) {
+        if (distancesquared(target_pos, target_pos_onnavmesh) > sqr(self.settings.detonation_distance * 0.9)) {
             self setpersonalthreatbias(self.enemy, -2000, 5);
         }
     }
     if (isdefined(enemy) && isplayer(enemy)) {
         enemy_vel_offset = enemy getvelocity() * 0.5;
         enemy_look_dir_offset = anglestoforward(enemy.angles);
-        if (distance2dsquared(self.origin, enemy.origin) > function_a3f6cdac(500)) {
+        if (distance2dsquared(self.origin, enemy.origin) > sqr(500)) {
             enemy_look_dir_offset = enemy_look_dir_offset * 110;
         } else {
             enemy_look_dir_offset = enemy_look_dir_offset * 35;
@@ -605,19 +605,19 @@ function path_update_interrupt() {
     wait(0.1);
     while (true) {
         if (isdefined(self.current_pathto_pos)) {
-            if (distance2dsquared(self.current_pathto_pos, self.goalpos) > function_a3f6cdac(self.goalradius)) {
+            if (distance2dsquared(self.current_pathto_pos, self.goalpos) > sqr(self.goalradius)) {
                 wait(0.5);
                 self notify(#"near_goal");
             }
             targetpos = function_dcecac3c();
             if (isdefined(targetpos)) {
-                if (distancesquared(self.origin, targetpos) > function_a3f6cdac(400)) {
+                if (distancesquared(self.origin, targetpos) > sqr(400)) {
                     repath_range = self.settings.repath_range * 2;
                     wait(0.1);
                 } else {
                     repath_range = self.settings.repath_range;
                 }
-                if (distance2dsquared(self.current_pathto_pos, targetpos) > function_a3f6cdac(repath_range)) {
+                if (distance2dsquared(self.current_pathto_pos, targetpos) > sqr(repath_range)) {
                     if (isdefined(self.sndalias) && isdefined(self.sndalias[#"direction"])) {
                         self playsound(self.sndalias[#"direction"]);
                     }
@@ -690,7 +690,7 @@ function function_ec8d8bbc(einflictor, eattacker, idamage, *idflags, smeansofdea
     if (vehicle_ai::should_emp(self, partname, modelindex, vdamageorigin, psoffsettime)) {
         minempdowntime = 0.8 * self.settings.empdowntime;
         maxempdowntime = 1.2 * self.settings.empdowntime;
-        self notify(#"emped", {#pararm2:vdamageorigin, #param1:psoffsettime, #param0:randomfloatrange(minempdowntime, maxempdowntime)});
+        self notify(#"emped", {#param0:randomfloatrange(minempdowntime, maxempdowntime), #param1:psoffsettime, #pararm2:vdamageorigin});
     }
     if (vehicle_ai::should_burn(self, partname, modelindex, vdamageorigin, psoffsettime)) {
         self thread vehicle_ai::burning_thread(psoffsettime, vdamageorigin);

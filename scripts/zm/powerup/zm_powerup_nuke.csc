@@ -12,14 +12,14 @@
 // Checksum 0x5d4455f7, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_powerup_nuke", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_powerup_nuke", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
 // Params 0, eflags: 0x6 linked
 // Checksum 0x63dde1ef, Offset: 0x120
 // Size: 0xc4
-function private function_70a657d8() {
+function private preinit() {
     zm_powerups::include_zombie_powerup("nuke");
     zm_powerups::add_zombie_powerup("nuke");
     clientfield::register("actor", "zm_nuked", 1, 1, "int", &zombie_nuked, 0, 0);

@@ -21,14 +21,14 @@
 // Checksum 0xfb2c5250, Offset: 0x288
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"gadget_jammer", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"gadget_jammer", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace jammer/gadget_jammer_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x4ca42c4d, Offset: 0x2d0
 // Size: 0x14
-function private function_70a657d8() {
+function private preinit() {
     init_shared();
 }
 
@@ -40,8 +40,8 @@ function init_shared() {
     if (!isdefined(level.var_578f7c6d)) {
         level.var_578f7c6d = spawnstruct();
     }
-    if (!isdefined(level.var_578f7c6d.var_1728e736)) {
-        level.var_578f7c6d.var_1728e736 = [];
+    if (!isdefined(level.var_578f7c6d.weapontypeoverrides)) {
+        level.var_578f7c6d.weapontypeoverrides = [];
     }
     if (!isdefined(level.var_578f7c6d.var_240161c3)) {
         level.var_578f7c6d.var_240161c3 = [];
@@ -53,7 +53,7 @@ function init_shared() {
     }
     level.var_578f7c6d.customsettings = getscriptbundle(level.var_578f7c6d.weapon.customsettings);
     weaponobjects::function_e6400478(#"gadget_jammer", &function_1a50ce7b, 1);
-    level.var_578f7c6d.radiussqr = function_a3f6cdac(level.var_578f7c6d.weapon.explosionradius);
+    level.var_578f7c6d.radiussqr = sqr(level.var_578f7c6d.weapon.explosionradius);
     level.var_578f7c6d.var_18b294e4 = int(level.var_578f7c6d.customsettings.var_647be42c * 1000);
     level.var_578f7c6d.var_b164e007 = [];
     level.var_578f7c6d.var_14cb9b30 = [];
@@ -192,7 +192,7 @@ function register(entity, var_448f97f2) {
 // Checksum 0x87a2a6c1, Offset: 0xcd0
 // Size: 0x30
 function function_4e7e56a8(weapon, callbackfunction) {
-    level.var_578f7c6d.var_1728e736[weapon.name] = callbackfunction;
+    level.var_578f7c6d.weapontypeoverrides[weapon.name] = callbackfunction;
 }
 
 // Namespace jammer/gadget_jammer_shared
@@ -357,7 +357,7 @@ function function_af165064() {
             continue;
         }
         var_f7bd3349 = level.var_578f7c6d.var_5c3f49c1[key];
-        entity clientfield::set("isHiddenByFriendlyJammer", var_f7bd3349 < 0 ? 1 : 0);
+        entity clientfield::set("isHiddenByFriendlyJammer", var_f7bd3349 < 0 ? 0 : 1);
     }
     arrayremovevalue(level.var_578f7c6d.var_5c3f49c1, undefined, 1);
 }
@@ -418,8 +418,8 @@ function private function_93491e83(entity) {
         entity resetmissiledetonationtime(500);
     }
     weapon = isdefined(entity.identifier_weapon) ? entity.identifier_weapon : entity.weapon;
-    if (isdefined(weapon) && isdefined(level.var_578f7c6d.var_1728e736[weapon.name])) {
-        thread [[ level.var_578f7c6d.var_1728e736[weapon.name] ]](entity);
+    if (isdefined(weapon) && isdefined(level.var_578f7c6d.weapontypeoverrides[weapon.name])) {
+        thread [[ level.var_578f7c6d.weapontypeoverrides[weapon.name] ]](entity);
     }
     function_1c430dad(entity, 1);
     return true;

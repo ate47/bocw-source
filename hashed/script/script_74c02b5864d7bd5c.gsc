@@ -14,14 +14,14 @@
 // Checksum 0xb9d3ccae, Offset: 0x1a0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"spy_wanted_order", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"spy_wanted_order", &preinit, undefined, undefined, #"killstreaks");
 }
 
 // Namespace spy_wanted_order/spy_wanted_order
 // Params 0, eflags: 0x6 linked
 // Checksum 0xe7bf5175, Offset: 0x1f0
 // Size: 0x58
-function private function_70a657d8() {
+function private preinit() {
     killstreaks::register_killstreak("killstreak_spy_wanted_order", &function_cd089b2e);
     callback::on_weapon_change(&on_weapon_change);
     level.var_e9e1396f = {};
@@ -50,7 +50,7 @@ function function_cd089b2e(*killstreaktype) {
     player allowmelee(0);
     player disableweaponfire();
     player disableoffhandweapons();
-    player function_296136b2(0);
+    player allowmovement(0);
     player function_fe89725a(1);
     player function_205350ab();
     player disableweaponcycling();
@@ -86,7 +86,7 @@ function function_cd089b2e(*killstreaktype) {
     player allowmelee(1);
     player enableweaponfire();
     player enableoffhandweapons();
-    player function_296136b2(1);
+    player allowmovement(1);
     player function_fe89725a(0);
     player function_6e1804bd();
     player enableweaponcycling();

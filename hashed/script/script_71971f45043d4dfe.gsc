@@ -107,12 +107,12 @@ function function_a485d734() {
     self.ai.var_b13e6817 = 0;
     self.ai.var_76786d9c = 0;
     self.ai.var_fad877bf = 0;
-    self.ai.var_2642a09b = 0;
+    self.ai.currentskill = 0;
     self.ai.var_a29f9a91 = 0;
     self.ai.var_e93366a = 0;
     self.ai.var_3dbed9a0 = 0;
     self.var_3a001247 = 1;
-    self.ai.var_9d91cfcc = 0;
+    self.ai.issplit = 0;
     self.ai.var_b90dccd6 = 0;
     self.ai.var_62741bfb = 0;
     if (is_true(self.var_22b8f534) && !isdefined(level.var_879dbfb8)) {
@@ -335,7 +335,7 @@ function private can_see_enemy() {
 // Checksum 0xcd1e583, Offset: 0x1b38
 // Size: 0x16
 function private function_880fad96() {
-    return self.ai.var_2642a09b != 0;
+    return self.ai.currentskill != 0;
 }
 
 // Namespace namespace_6479037a/namespace_6479037a
@@ -346,7 +346,7 @@ function private function_1da02b50(var_b268a2ed) {
     /#
         assert(var_b268a2ed >= 0 && var_b268a2ed <= 3);
     #/
-    self.ai.var_2642a09b = var_b268a2ed;
+    self.ai.currentskill = var_b268a2ed;
 }
 
 // Namespace namespace_6479037a/namespace_6479037a
@@ -354,7 +354,7 @@ function private function_1da02b50(var_b268a2ed) {
 // Checksum 0xf2bda0cb, Offset: 0x1bb0
 // Size: 0x56
 function private function_9ee55afa() {
-    self.ai.var_2642a09b = 0;
+    self.ai.currentskill = 0;
     self.var_fcca372 = gettime() + int(3 * 1000);
     self notify(#"hash_58f0b0e23afeccb9");
 }
@@ -421,7 +421,7 @@ function private function_fe1e617c(entity) {
 // Size: 0x23c
 function private function_3aa93442(entity) {
     level endon(#"end_game");
-    entity endon(#"death", #"hash_29b88049dcac8bb3");
+    entity endon(#"death", #"entitydeleted");
     weapon = getweapon(#"hash_2124b6f8fa3f7f43");
     count = randomint(3) + 1;
     enemy = entity get_enemy();
@@ -805,7 +805,7 @@ function private function_a767bb1c(spawner_name, var_5c583e69) {
 // Size: 0x34c
 function private function_ac56fb75() {
     level endon(#"end_game");
-    self endon(#"death", #"hash_29b88049dcac8bb3");
+    self endon(#"death", #"entitydeleted");
     if (is_true(self.var_8576e0be) || is_true(self.var_9b474709)) {
         return;
     }
@@ -908,7 +908,7 @@ function private function_380fc4a5(entity) {
 // Checksum 0xc6a7993e, Offset: 0x36d8
 // Size: 0x3c
 function private function_1dcf9f45(entity) {
-    if (is_true(entity.ai.var_9d91cfcc)) {
+    if (is_true(entity.ai.issplit)) {
         return 0;
     }
     return 1;
@@ -927,7 +927,7 @@ function private function_bc86ecfb(*entity) {
 // Checksum 0xac874f5, Offset: 0x3738
 // Size: 0x22
 function private function_d94a4d59(entity) {
-    entity.ai.var_9d91cfcc = 1;
+    entity.ai.issplit = 1;
 }
 
 // Namespace namespace_6479037a/namespace_6479037a
@@ -1063,10 +1063,10 @@ function private function_21746f2d(var_eab3f54a) {
     var_533af8f8 = !is_true(self.ai.var_e93366a) && var_eab3f54a > 722500;
     isrunning = self.zombie_move_speed == "run";
     if (var_533af8f8 && !isrunning) {
-        if (!isdefined(self.ai.var_775c2bfe)) {
-            self.ai.var_775c2bfe = gettime() + randomintrange(1000, 2000);
+        if (!isdefined(self.ai.rundelay)) {
+            self.ai.rundelay = gettime() + randomintrange(1000, 2000);
         }
-        if (self.ai.var_775c2bfe > gettime()) {
+        if (self.ai.rundelay > gettime()) {
             var_533af8f8 = 0;
         }
     }
@@ -1077,7 +1077,7 @@ function private function_21746f2d(var_eab3f54a) {
             if (!isrunning || currentspeed > 0) {
                 self.ai.var_3dbed9a0 = gettime() + 2000;
                 self.zombie_move_speed = "run";
-                self.ai.var_775c2bfe = undefined;
+                self.ai.rundelay = undefined;
             }
             return;
         }
@@ -1177,7 +1177,7 @@ function private function_42d0830a(entity) {
 function private function_aed09e18(var_2fa3c4c9, location) {
     foreach (split in var_2fa3c4c9) {
         split hide();
-        split function_cb48cddd();
+        split deletedelay();
     }
     steiner = doa_enemy::function_db55a448(level.doa.steiner, location, undefined);
     if (isdefined(steiner)) {

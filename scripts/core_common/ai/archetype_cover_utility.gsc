@@ -207,7 +207,7 @@ function private function_6c5a8f1e(entity) {
 // Size: 0x3c
 function private supportspeekcovercondition(entity) {
     if (entity ai::get_behavior_attribute("disablepeek")) {
-        return 0;
+        return false;
     }
     return isdefined(entity.node);
 }
@@ -548,7 +548,7 @@ function private coveridleterminate(entity) {
 // Size: 0x128
 function isatcrouchnode(entity) {
     if (isdefined(entity.node) && (entity.node.type == #"exposed" || entity.node.type == #"guard" || entity.node.type == #"path")) {
-        if (distancesquared(entity.origin, entity.node.origin) <= function_a3f6cdac(24)) {
+        if (distancesquared(entity.origin, entity.node.origin) <= sqr(24)) {
             return (!entity function_c97b59f8("stand", entity.node) && entity function_c97b59f8("crouch", entity.node));
         }
     }
@@ -561,7 +561,7 @@ function isatcrouchnode(entity) {
 // Size: 0x158
 function function_1d3ee45b(entity) {
     if (isdefined(entity.node) && (entity.node.type == #"exposed" || entity.node.type == #"guard" || entity.node.type == #"path")) {
-        if (distancesquared(entity.origin, entity.node.origin) <= function_a3f6cdac(24)) {
+        if (distancesquared(entity.origin, entity.node.origin) <= sqr(24)) {
             return (!entity function_c97b59f8("stand", entity.node) && !entity function_c97b59f8("crouch", entity.node) && entity function_c97b59f8("prone", entity.node));
         }
     }
@@ -602,7 +602,7 @@ function private function_94bbbfa3(entity) {
                 return true;
             }
             if (isdefined(entity.var_f13fb34f) && gettime() - entity.var_f13fb34f < 3000) {
-                if (distancesquared(entity.origin, entity.var_39226de1) < function_a3f6cdac(32)) {
+                if (distancesquared(entity.origin, entity.var_39226de1) < sqr(32)) {
                     return true;
                 }
             }
@@ -764,7 +764,7 @@ function function_f6d48a6a(entity) {
         }
         return "cover_left_direction";
     } else {
-        return array::random([1:"cover_right_direction", 0:"cover_left_direction"]);
+        return array::random(["cover_left_direction", "cover_right_direction"]);
     }
     return "cover_left_direction";
 }

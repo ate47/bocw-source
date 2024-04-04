@@ -17,14 +17,14 @@
 // Checksum 0xb673d4d3, Offset: 0x228
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_1709188dc9925075", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_1709188dc9925075", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace hind/namespace_d7cff0a5
 // Params 0, eflags: 0x6 linked
 // Checksum 0x2af4b1f5, Offset: 0x270
 // Size: 0x2c
-function private function_70a657d8() {
+function private preinit() {
     vehicle::add_main_callback("armada_hind", &function_1f03ae98);
 }
 
@@ -33,25 +33,25 @@ function private function_70a657d8() {
 // Checksum 0x934a1b1d, Offset: 0x2a8
 // Size: 0x160
 function function_a6337662() {
-    self.var_a6252c84 = [];
-    if (!isdefined(self.var_a6252c84)) {
-        self.var_a6252c84 = [];
-    } else if (!isarray(self.var_a6252c84)) {
-        self.var_a6252c84 = array(self.var_a6252c84);
+    self.missiletags = [];
+    if (!isdefined(self.missiletags)) {
+        self.missiletags = [];
+    } else if (!isarray(self.missiletags)) {
+        self.missiletags = array(self.missiletags);
     }
-    self.var_a6252c84[self.var_a6252c84.size] = "tag_flash1";
-    if (!isdefined(self.var_a6252c84)) {
-        self.var_a6252c84 = [];
-    } else if (!isarray(self.var_a6252c84)) {
-        self.var_a6252c84 = array(self.var_a6252c84);
+    self.missiletags[self.missiletags.size] = "tag_flash1";
+    if (!isdefined(self.missiletags)) {
+        self.missiletags = [];
+    } else if (!isarray(self.missiletags)) {
+        self.missiletags = array(self.missiletags);
     }
-    self.var_a6252c84[self.var_a6252c84.size] = "tag_flash3";
-    if (!isdefined(self.var_a6252c84)) {
-        self.var_a6252c84 = [];
-    } else if (!isarray(self.var_a6252c84)) {
-        self.var_a6252c84 = array(self.var_a6252c84);
+    self.missiletags[self.missiletags.size] = "tag_flash3";
+    if (!isdefined(self.missiletags)) {
+        self.missiletags = [];
+    } else if (!isarray(self.missiletags)) {
+        self.missiletags = array(self.missiletags);
     }
-    self.var_a6252c84[self.var_a6252c84.size] = "tag_flash2";
+    self.missiletags[self.missiletags.size] = "tag_flash2";
 }
 
 // Namespace hind/namespace_d7cff0a5
@@ -74,7 +74,7 @@ function function_1f03ae98() {
     self.original_vehicle_type = self.vehicletype;
     self.settings = getscriptbundle(self.scriptbundlesettings);
     self.var_ec0d66ce = 0.5 * (self.settings.engagementdistmin + self.settings.engagementdistmax);
-    self.var_ff6d7c88 = function_a3f6cdac(self.var_ec0d66ce);
+    self.var_ff6d7c88 = sqr(self.var_ec0d66ce);
     accel = self getdefaultacceleration();
     self.var_442fce01 = 1 * accel;
     self.var_f13adcf8 = 1 * self.settings.defaultmovespeed;
@@ -484,14 +484,14 @@ function function_b9e0d497(turret_index, target, offset, enemy) {
     if (!isdefined(offset)) {
         offset = (0, 0, 0);
     }
-    self.var_a6252c84[2] = "tag_flash2";
-    self.var_a6252c84[3] = "tag_flash3";
-    var_1903c9f6 = self.var_a6252c84[turret_index];
-    origin = self gettagorigin(var_1903c9f6);
-    angles = self gettagangles(var_1903c9f6);
+    self.missiletags[2] = "tag_flash2";
+    self.missiletags[3] = "tag_flash3";
+    spawntag = self.missiletags[turret_index];
+    origin = self gettagorigin(spawntag);
+    angles = self gettagangles(spawntag);
     forward = anglestoforward(angles);
     up = anglestoup(angles);
-    if (isdefined(var_1903c9f6) && isdefined(target)) {
+    if (isdefined(spawntag) && isdefined(target)) {
         weapon = getweapon("gunship_missile_armada");
         v_dir = vectornormalize(enemy.origin - origin);
         var_a64609fe = v_dir * 3500;
@@ -503,7 +503,7 @@ function function_b9e0d497(turret_index, target, offset, enemy) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xb91f7660, Offset: 0x2008
 // Size: 0xf2
-function function_61761fcf(var_5b4afbaa, var_8f1da61b) {
+function getenemyarray(var_5b4afbaa, var_8f1da61b) {
     enemyarray = [];
     enemy_team = #"allies";
     if (is_true(var_5b4afbaa)) {
@@ -511,8 +511,8 @@ function function_61761fcf(var_5b4afbaa, var_8f1da61b) {
         enemyarray = arraycombine(enemyarray, aiarray, 0, 0);
     }
     if (is_true(var_8f1da61b)) {
-        var_81da476c = getplayers(enemy_team);
-        enemyarray = arraycombine(enemyarray, var_81da476c, 0, 0);
+        playerarray = getplayers(enemy_team);
+        enemyarray = arraycombine(enemyarray, playerarray, 0, 0);
     }
     return enemyarray;
 }
@@ -525,14 +525,14 @@ function function_1617c55(point, do_trace) {
     if (!isdefined(point)) {
         return 0;
     }
-    var_66c9931 = self.var_4fb57092;
-    var_dea85591 = point - var_66c9931.origin;
-    var_79bbbf1c = lengthsquared(var_dea85591) <= function_a3f6cdac(10000);
+    scanner = self.var_4fb57092;
+    var_dea85591 = point - scanner.origin;
+    var_79bbbf1c = lengthsquared(var_dea85591) <= sqr(10000);
     if (var_79bbbf1c) {
-        var_79bbbf1c = util::within_fov(var_66c9931.origin, var_66c9931.angles, point, cos(190));
+        var_79bbbf1c = util::within_fov(scanner.origin, scanner.angles, point, cos(190));
     }
     if (var_79bbbf1c && is_true(do_trace) && isdefined(self.enemy)) {
-        var_79bbbf1c = sighttracepassed(var_66c9931.origin, point, 0, self.enemy);
+        var_79bbbf1c = sighttracepassed(scanner.origin, point, 0, self.enemy);
     }
     return var_79bbbf1c;
 }
@@ -559,7 +559,7 @@ function is_valid_target(target, do_trace) {
 // Size: 0x112
 function function_6492fc4b(do_trace) {
     var_13ca872b = [];
-    enemyarray = function_61761fcf(1, 1);
+    enemyarray = getenemyarray(1, 1);
     foreach (enemy in enemyarray) {
         if (is_valid_target(enemy, do_trace)) {
             if (!isdefined(var_13ca872b)) {
@@ -671,8 +671,8 @@ function function_14a42022() {
     driver = self getseatoccupant(0);
     while (true) {
         if (driver jumpbuttonpressed()) {
-            var_32d09ad1 = self.var_a6252c84[0];
-            var_977d6429 = self.var_a6252c84[1];
+            var_32d09ad1 = self.missiletags[0];
+            var_977d6429 = self.missiletags[1];
             origin0 = self gettagorigin(var_32d09ad1);
             origin1 = self gettagorigin(var_977d6429);
             target = self turretgettarget(0);

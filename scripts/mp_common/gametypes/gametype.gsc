@@ -13,7 +13,7 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0x43b808ac, Offset: 0xb8
 // Size: 0xfc
-function function_3ea7ac99() {
+function init_mp() {
     if (!isdefined(level.var_d1455682)) {
         level.var_d1455682 = function_302bd0b9();
     }

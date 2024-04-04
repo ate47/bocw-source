@@ -14,14 +14,14 @@
 // Checksum 0x431fa130, Offset: 0x100
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_7fd3c8de50685459", &function_70a657d8, undefined, undefined, #"hash_13a43d760497b54d");
+    system::register(#"hash_7fd3c8de50685459", &preinit, undefined, undefined, #"hash_13a43d760497b54d");
 }
 
 // Namespace namespace_1fd59e39/namespace_1fd59e39
 // Params 0, eflags: 0x6 linked
 // Checksum 0x5d0b5494, Offset: 0x150
 // Size: 0x7c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("allplayers", "" + #"hash_59400ab6cbfaec5d", 1, 1, "int", &function_3d1947be, 0, 0);
     callback::on_spawned(&on_spawned);
 }
@@ -37,7 +37,7 @@ function function_3d1947be(localclientnum, *oldval, newval, *bnewent, *binitials
         level.var_119220bf = [];
     }
     if (!isdefined(level.var_119220bf)) {
-        level.var_119220bf = [0:fieldname];
+        level.var_119220bf = [fieldname];
     }
     var_47c85523 = self getentitynumber();
     if (!isdefined(level.var_119220bf[fieldname][var_47c85523])) {

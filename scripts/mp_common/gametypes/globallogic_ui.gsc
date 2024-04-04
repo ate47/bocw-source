@@ -18,7 +18,7 @@
 #using scripts\core_common\player\player_loadout.gsc;
 #using scripts\core_common\hud_util_shared.gsc;
 #using scripts\core_common\hud_message_shared.gsc;
-#using script_32c8b5b0eb2854f3;
+#using scripts\core_common\gamestate_util.gsc;
 
 #namespace globallogic_ui;
 
@@ -101,11 +101,11 @@ function freegameplayhudelems() {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x1b7e1966, Offset: 0x500
 // Size: 0x100
-function private function_34a60b2f(original_team, var_5002c793) {
-    if (!isdefined(original_team) || original_team == #"spectator" || !isdefined(var_5002c793)) {
+function private function_34a60b2f(original_team, new_team) {
+    if (!isdefined(original_team) || original_team == #"spectator" || !isdefined(new_team)) {
         return;
     }
-    if (isdefined(game.everexisted) && is_true(game.everexisted[original_team]) && !is_true(game.everexisted[var_5002c793]) && is_true(level.playerlives[original_team])) {
+    if (isdefined(game.everexisted) && is_true(game.everexisted[original_team]) && !is_true(game.everexisted[new_team]) && is_true(level.playerlives[original_team])) {
         game.everexisted[original_team] = 0;
         level.everexisted[original_team] = 0;
         level.teameliminated[original_team] = 0;

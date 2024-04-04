@@ -14,14 +14,14 @@
 // Checksum 0x40c0b6af, Offset: 0x1f0
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"bgb", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"bgb", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace bgb/zm_bgb
 // Params 0, eflags: 0x6 linked
 // Checksum 0x603c0162, Offset: 0x248
 // Size: 0x2dc
-function private function_70a657d8() {
+function private preinit() {
     if (!is_true(level.bgb_in_use)) {
         return;
     }

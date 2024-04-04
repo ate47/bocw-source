@@ -24,7 +24,7 @@ function function_3e0d8ba2() {
         return level.var_ba243d66;
     }
     if (level.var_70e5d775 === 1) {
-        var_c2ad857a = [3:#"hash_214a1f87c6212231", 2:#"hash_214a2087c62123e4", 1:#"hash_214a2187c6212597", 0:#"hash_214a2287c621274a"];
+        var_c2ad857a = [#"hash_214a2287c621274a", #"hash_214a2187c6212597", #"hash_214a2087c62123e4", #"hash_214a1f87c6212231"];
         return var_c2ad857a[randomint(var_c2ad857a.size)];
     }
 }
@@ -41,7 +41,7 @@ function function_319c73b1(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (bwastimejump == 0) {
         self function_81431153(fieldname);
-        self function_79c2b094(fieldname);
+        self delete_objective(fieldname);
         return;
     }
     if (!isdefined(self.objectiveid) && util::get_game_type() !== #"spy") {
@@ -93,7 +93,7 @@ function function_81431153(localclientnum) {
 // Params 1, eflags: 0x0
 // Checksum 0x494f2300, Offset: 0x720
 // Size: 0x5e
-function function_79c2b094(localclientnum) {
+function delete_objective(localclientnum) {
     if (isdefined(self.objectiveid)) {
         objective_delete(localclientnum, self.objectiveid);
         util::releaseobjid(localclientnum, self.objectiveid);
@@ -108,7 +108,7 @@ function function_79c2b094(localclientnum) {
 function function_bcb88fb7(localclientnum) {
     self waittill(#"death");
     self function_81431153(localclientnum);
-    self function_79c2b094(localclientnum);
+    self delete_objective(localclientnum);
     if (isdefined(self.var_47b256ef)) {
         self.var_47b256ef delete();
         self.var_47b256ef = undefined;

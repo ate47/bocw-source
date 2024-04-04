@@ -21,14 +21,14 @@
 // Checksum 0x63ce5aad, Offset: 0x378
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_6750752a31e788e2", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_6750752a31e788e2", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_d4ecbbf0/namespace_d4ecbbf0
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa7014598, Offset: 0x3c0
 // Size: 0x12c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_item_pickup(&on_item_pickup);
     callback::add_callback(#"objective_ended", &function_37c1c391);
     callback::on_connect(&_on_player_connect);
@@ -134,7 +134,7 @@ function function_e439076f(var_5937b8ee) {
     level endon(#"game_ended");
     self endon(#"death");
     wait(5);
-    level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:var_5937b8ee, #attacker:self});
+    level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:self, #scoreevent:var_5937b8ee});
     /#
         /#
             assert(isdefined(level.scoreinfo[var_5937b8ee][#"xp"]), "<unknown string>");
@@ -244,7 +244,7 @@ function function_74f5b460(amount = 1, var_8e592166 = 1) {
 // Checksum 0x5c6755e9, Offset: 0x1098
 // Size: 0xf0
 function function_37c1c391(eventstruct) {
-    if (level.var_fdcaf3a6 === level.var_7d45d0d4.var_1d9d92ba) {
+    if (level.var_fdcaf3a6 === level.contentmanager.var_1d9d92ba) {
         return;
     }
     if (!is_true(eventstruct.completed)) {
@@ -906,7 +906,7 @@ function function_73cddc69(var_8e592166 = 1) {
         return;
     }
     self thread function_7b6ac8d5(2, round);
-    var_ad186e6c = level.round_number / 5;
+    milestones = level.round_number / 5;
     self function_88beee50(round);
     if (round >= 10) {
         amount = int(round / 10) - 1;
@@ -1019,10 +1019,10 @@ function function_88beee50(round) {
 function on_item_pickup(params) {
     item = params.item;
     if (isplayer(self)) {
-        if (isdefined(item.var_a6762160)) {
-            if (item.var_a6762160.itemtype === #"hash_6a8c9b279aa1c2c5") {
-                if (isdefined(item.var_a6762160.rarity)) {
-                    switch (item.var_a6762160.rarity) {
+        if (isdefined(item.itementry)) {
+            if (item.itementry.itemtype === #"hash_6a8c9b279aa1c2c5") {
+                if (isdefined(item.itementry.rarity)) {
+                    switch (item.itementry.rarity) {
                     case #"rare":
                         self function_d59d7b74();
                         break;
@@ -1046,14 +1046,14 @@ function on_item_pickup(params) {
 function function_14defa19() {
     /#
         setdvar(#"hash_45e7c4e448c5fdd3", "<unknown string>");
-        var_5084d761 = [2:"<unknown string>", 1:"<unknown string>", 0:"<unknown string>"];
-        var_d2d49534 = [6:100, 5:50, 4:20, 3:10, 2:5, 1:2, 0:1];
+        var_5084d761 = ["<unknown string>", "<unknown string>", "<unknown string>"];
+        var_d2d49534 = [1, 2, 5, 10, 20, 50, 100];
         for (var_19c3d01e = 0; var_19c3d01e < var_5084d761.size; var_19c3d01e++) {
             rarity = var_5084d761[var_19c3d01e];
             for (var_6665791e = 0; var_6665791e < var_d2d49534.size; var_6665791e++) {
                 amount = var_d2d49534[var_6665791e];
-                var_8220ca34 = "<unknown string>" + rarity + "<unknown string>" + (isdefined(var_19c3d01e) ? "<unknown string>" + var_19c3d01e : "<unknown string>") + "<unknown string>" + (isdefined(amount) ? "<unknown string>" + amount : "<unknown string>") + "<unknown string>" + (isdefined(var_6665791e) ? "<unknown string>" + var_6665791e : "<unknown string>") + "<unknown string>" + rarity + "<unknown string>" + (isdefined(amount) ? "<unknown string>" + amount : "<unknown string>") + "<unknown string>";
-                adddebugcommand(var_8220ca34);
+                cmdstring = "<unknown string>" + rarity + "<unknown string>" + (isdefined(var_19c3d01e) ? "<unknown string>" + var_19c3d01e : "<unknown string>") + "<unknown string>" + (isdefined(amount) ? "<unknown string>" + amount : "<unknown string>") + "<unknown string>" + (isdefined(var_6665791e) ? "<unknown string>" + var_6665791e : "<unknown string>") + "<unknown string>" + rarity + "<unknown string>" + (isdefined(amount) ? "<unknown string>" + amount : "<unknown string>") + "<unknown string>";
+                adddebugcommand(cmdstring);
             }
         }
     #/
@@ -1073,7 +1073,7 @@ function function_868c9a6e() {
                     arr = strtok(str, "<unknown string>");
                     var_a4a3ca3a = arr[0];
                     amount = arr[1];
-                    var_e1f0e492 = [1:hash(var_a4a3ca3a), 0:#"hash_65febbdf3f1ab4d7"];
+                    var_e1f0e492 = [#"hash_65febbdf3f1ab4d7", hash(var_a4a3ca3a)];
                     players = getplayers();
                     foreach (player in players) {
                         player function_2ea9419c(hash(var_a4a3ca3a), int(amount));

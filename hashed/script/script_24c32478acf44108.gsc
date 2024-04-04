@@ -11,14 +11,14 @@
 // Checksum 0x4f4696a7, Offset: 0xd0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_308dff40d53a7287", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_308dff40d53a7287", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_9ff9f642/namespace_9ff9f642
 // Params 0, eflags: 0x6 linked
 // Checksum 0x2b2ca369, Offset: 0x118
 // Size: 0x44
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("actor", "" + #"hash_419c1c8da4dc53a9", 1, 1, "int");
 }
 
@@ -37,7 +37,7 @@ function register_burn(str_type, n_dps, n_duration, var_f472bfc, var_5713c703) {
     } else if (!isarray(level.var_981dd9cf[#"burn"])) {
         level.var_981dd9cf[#"burn"] = array(level.var_981dd9cf[#"burn"]);
     }
-    level.var_981dd9cf[#"burn"][str_type] = {#var_5713c703:var_5713c703, #var_f472bfc:var_f472bfc, #n_duration:n_duration, #n_dps:n_dps};
+    level.var_981dd9cf[#"burn"][str_type] = {#n_dps:n_dps, #n_duration:n_duration, #var_f472bfc:var_f472bfc, #var_5713c703:var_5713c703};
 }
 
 // Namespace namespace_9ff9f642/namespace_9ff9f642
@@ -65,7 +65,7 @@ function burn(str_type, e_attacker, weapon, var_477abb8f) {
     }
     s_burn = level.var_981dd9cf[#"burn"][str_type];
     if (!isdefined(self.var_88421cc2[str_type])) {
-        self.var_88421cc2[str_type] = {#var_477abb8f:var_477abb8f, #weapon:weapon, #e_owner:e_attacker, #n_time_remaining:s_burn.n_duration};
+        self.var_88421cc2[str_type] = {#n_time_remaining:s_burn.n_duration, #e_owner:e_attacker, #weapon:weapon, #var_477abb8f:var_477abb8f};
     } else {
         if (self.var_88421cc2[str_type].n_time_remaining < s_burn.n_duration) {
             self.var_88421cc2[str_type].n_time_remaining = s_burn.n_duration;
@@ -188,7 +188,7 @@ function freeze() {
     if (isdefined(self.var_b030dabb)) {
         self.var_b030dabb.n_count++;
     } else {
-        self.var_b030dabb = {#var_dbcf9b4b:self.is_inert, #b_ignore_cleanup:self.b_ignore_cleanup, #n_count:1};
+        self.var_b030dabb = {#n_count:1, #b_ignore_cleanup:self.b_ignore_cleanup, #var_dbcf9b4b:self.is_inert};
     }
     self thread function_bf97ba95();
     self setentitypaused(1);
@@ -259,8 +259,8 @@ function function_865a83f8(zombie, target, predictedpos, var_95342913) {
     var_c2ee8451 = (facingvec[0], facingvec[1], 0);
     var_3e3c8075 = vectornormalize(var_3e3c8075);
     var_c2ee8451 = vectornormalize(var_c2ee8451);
-    var_34e02165 = vectordot(var_c2ee8451, var_3e3c8075);
-    if (var_34e02165 < 0) {
+    enemydot = vectordot(var_c2ee8451, var_3e3c8075);
+    if (enemydot < 0) {
         return false;
     }
     return true;
@@ -281,7 +281,7 @@ function register_slowdown(str_type, n_rate, n_duration = -1) {
     } else if (!isarray(level.var_981dd9cf[#"slow"])) {
         level.var_981dd9cf[#"slow"] = array(level.var_981dd9cf[#"slow"]);
     }
-    level.var_981dd9cf[#"slow"][str_type] = {#n_duration:n_duration, #n_rate:n_rate};
+    level.var_981dd9cf[#"slow"][str_type] = {#n_rate:n_rate, #n_duration:n_duration};
 }
 
 // Namespace namespace_9ff9f642/namespace_9ff9f642
@@ -313,7 +313,7 @@ function slowdown(str_type, var_a47cf2b2, callback) {
     n_time = gettime();
     n_timeout = n_time + int(s_slowdown.n_duration * 1000);
     if (!isdefined(self.a_n_slowdown_timeouts[str_type]) || self.a_n_slowdown_timeouts[str_type].timeout < n_timeout) {
-        self.a_n_slowdown_timeouts[str_type] = {#callback:callback, #timeout:n_timeout};
+        self.a_n_slowdown_timeouts[str_type] = {#timeout:n_timeout, #callback:callback};
     }
     for (n_slowdowns = self.a_n_slowdown_timeouts.size; n_slowdowns; n_slowdowns = self.a_n_slowdown_timeouts.size) {
         str_lowest_type = undefined;

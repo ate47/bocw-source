@@ -15,14 +15,14 @@
 // Checksum 0x895f032d, Offset: 0x190
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"activecamo", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"activecamo", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace activecamo/activecamo_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1b6bf8bd, Offset: 0x1d8
 // Size: 0xd4
-function private function_70a657d8() {
+function private preinit() {
     callback::add_callback(#"updateactivecamo", &updateactivecamo);
     callback::on_spawned(&on_player_spawned);
     callback::on_weapon_change(&on_weapon_change);
@@ -153,7 +153,7 @@ function private function_130e0542(localclientnum, weapon, camoindex) {
 // Size: 0x74
 function private updateactivecamo(localclientnum, eventstruct) {
     stagenum = getactivecamostage(eventstruct.camooptions);
-    self function_350f0d(localclientnum, eventstruct.weapon, eventstruct.tagname, stagenum, eventstruct.var_e3bc8e0a, eventstruct.camooptions);
+    self function_350f0d(localclientnum, eventstruct.weapon, eventstruct.tagname, stagenum, eventstruct.skiptransition, eventstruct.camooptions);
 }
 
 // Namespace activecamo/activecamo_shared

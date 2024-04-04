@@ -38,8 +38,8 @@ function onprecachegametype() {
 // Checksum 0x68eb4475, Offset: 0x1d8
 // Size: 0x1a4
 function onstartgametype() {
-    zm_behavior::function_70a657d8();
-    zm_cleanup::function_70a657d8();
+    zm_behavior::preinit();
+    zm_cleanup::preinit();
     zm_spawner::init();
     zm_behavior::postinit();
     zm_cleanup::postinit();

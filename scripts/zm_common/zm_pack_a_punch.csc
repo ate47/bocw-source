@@ -20,14 +20,14 @@
 // Checksum 0x4e36ebe, Offset: 0x168
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_pack_a_punch", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_pack_a_punch", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_pack_a_punch/zm_pack_a_punch
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9d15bba6, Offset: 0x1b0
 // Size: 0x154
-function private function_70a657d8() {
+function private preinit() {
     level._effect[#"hash_2ab769386115d75c"] = #"hash_669f8d1e3151a677";
     clientfield::register("zbarrier", "pap_working_fx", 1, 1, "int", &pap_working_fx_handler, 0, 0);
     clientfield::register("zbarrier", "pap_idle_fx", 1, 1, "int", &function_2a80c24d, 0, 0);

@@ -13,14 +13,14 @@
 // Checksum 0xa7b6e459, Offset: 0x138
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"raps", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"raps", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace raps/raps
 // Params 0, eflags: 0x4
 // Checksum 0xa2371884, Offset: 0x180
 // Size: 0xa4
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("vehicle", "raps_side_deathfx", 1, 1, "int");
     vehicle::add_main_callback("raps", &raps_initialize);
     slow_triggers = getentarray("raps_slow", "targetname");

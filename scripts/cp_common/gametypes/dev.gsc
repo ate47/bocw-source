@@ -20,7 +20,7 @@
 // Size: 0x4c
 function private autoexec __init__system__() {
     /#
-        register(#"dev", &function_70a657d8, undefined, undefined, #"spawning_shared");
+        register(#"dev", &preinit, undefined, undefined, #"spawning_shared");
     #/
 }
 
@@ -28,7 +28,7 @@ function private autoexec __init__system__() {
 // Params 0, eflags: 0x4
 // Checksum 0x1ff2225, Offset: 0x138
 // Size: 0x2c
-function private function_70a657d8() {
+function private preinit() {
     /#
         on_start_gametype(&init);
     #/
@@ -469,7 +469,7 @@ function updatedevsettings() {
                     continue;
                 }
                 player function_e6f9e3cd();
-                player function_2bf96aa3(player.team, player.curclass);
+                player giveloadout(player.team, player.curclass);
             }
             setdvar(#"scr_givetalent", "<unknown string>");
         }
@@ -483,7 +483,7 @@ function updatedevsettings() {
                     continue;
                 }
                 player function_b5feff95(var_2fe3f7e3);
-                player function_2bf96aa3(player.team, player.curclass);
+                player giveloadout(player.team, player.curclass);
             }
             setdvar(#"scr_givetalent", "<unknown string>");
         }

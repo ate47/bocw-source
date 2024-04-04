@@ -76,7 +76,7 @@ function function_1d298e01(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Checksum 0x9bd555e9, Offset: 0x6e8
 // Size: 0x134
 function function_19a36115(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    var_42795d7f = array::random([5:"arm02_01_jnt", 4:"arm02_03_jnt", 3:"arm02_04_jnt", 2:"arm01_03_jnt", 1:"arm01_04_jnt", 0:"arm01_05_jnt"]);
+    var_42795d7f = array::random(["arm01_05_jnt", "arm01_04_jnt", "arm01_03_jnt", "arm02_04_jnt", "arm02_03_jnt", "arm02_01_jnt"]);
     util::playfxontag(bwastimejump, #"hash_36fe3341c3cc6826", self, var_42795d7f);
     playsound(bwastimejump, #"hash_1ddeb8af5a217a6e", self.origin + vectorscale((0, 0, 1), 50));
     self thread function_75f0fe2c();

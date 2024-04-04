@@ -20,14 +20,14 @@
 // Checksum 0x61af58aa, Offset: 0x118
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_7576c66086ab62aa", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"hash_7576c66086ab62aa", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace namespace_e38c57c1/namespace_e38c57c1
 // Params 0, eflags: 0x6 linked
 // Checksum 0x7b1f219a, Offset: 0x170
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     /#
         if (getdvarint(#"hash_4894e3a42dd84dfa", 0)) {
             on_connect(&on_player_connect);

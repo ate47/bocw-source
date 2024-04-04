@@ -10,14 +10,14 @@
 // Checksum 0x48d520ea, Offset: 0xb0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"postfx_bundle", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"postfx_bundle", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace postfx/postfx_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa0bd99a6, Offset: 0xf8
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     callback::on_localplayer_spawned(&localplayer_postfx_bundle_init);
 }
 

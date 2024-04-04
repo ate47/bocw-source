@@ -32,7 +32,7 @@
 // Size: 0x4c
 function private autoexec __init__system__() {
     /#
-        register(#"dev", &function_70a657d8, undefined, undefined, #"spawning_shared");
+        register(#"dev", &preinit, undefined, undefined, #"spawning_shared");
     #/
 }
 
@@ -40,7 +40,7 @@ function private autoexec __init__system__() {
 // Params 0, eflags: 0x4
 // Checksum 0x4cbd484f, Offset: 0x198
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&init);
     callback::on_connect(&on_player_connected);
     /#

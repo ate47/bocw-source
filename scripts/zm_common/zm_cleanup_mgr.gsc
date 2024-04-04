@@ -12,7 +12,7 @@
 // Params 0, eflags: 0x0
 // Checksum 0x7f951653, Offset: 0xd8
 // Size: 0x40
-function function_70a657d8() {
+function preinit() {
     level.n_cleanups_processed_this_frame = 0;
     level.var_2125984b = 0;
     level.cleanup_zombie_func = &delete_zombie_noone_looking;
@@ -515,7 +515,7 @@ function function_23621259(var_3a145c54 = 0) {
             self.maxhealth = self.health;
         }
         if (self.health < self.maxhealth || is_true(self.var_bd2c55ef)) {
-            var_1a8c05ae = {#var_e0d660f6:self.var_e0d660f6, #n_health:self.health};
+            var_1a8c05ae = {#n_health:self.health, #var_e0d660f6:self.var_e0d660f6};
             if (!isdefined(level.var_fc73bad4[self.archetype])) {
                 level.var_fc73bad4[self.archetype] = [];
             } else if (!isarray(level.var_fc73bad4[self.archetype])) {

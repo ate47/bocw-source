@@ -75,7 +75,7 @@ function clearirtarget() {
 // Checksum 0x3602974, Offset: 0x4c8
 // Size: 0x84
 function function_5e6cd0ab(weapon, attacker) {
-    params = {#attacker:attacker, #weapon:weapon};
+    params = {#weapon:weapon, #attacker:attacker};
     self notify(#"missile_lock", params);
     self callback::callback(#"missile_lock", params);
 }
@@ -85,7 +85,7 @@ function function_5e6cd0ab(weapon, attacker) {
 // Checksum 0xe743c6ae, Offset: 0x558
 // Size: 0x9c
 function function_a439ae56(missile, weapon, attacker) {
-    params = {#attacker:attacker, #weapon:weapon, #projectile:missile};
+    params = {#projectile:missile, #weapon:weapon, #attacker:attacker};
     self notify(#"stinger_fired_at_me", params);
     self callback::callback(#"hash_1a32e0fdeb70a76b", params);
 }
@@ -381,7 +381,7 @@ function targetwithinrangeofplayspace(target) {
             level.playspacecenter = util::getplayspacecenter();
         }
         if (!isdefined(level.missilelockplayspacecheckradiussqr)) {
-            level.missilelockplayspacecheckradiussqr = function_a3f6cdac(util::getplayspacemaxwidth() * 0.5 + level.missilelockplayspacecheckextraradius);
+            level.missilelockplayspacecheckradiussqr = sqr(util::getplayspacemaxwidth() * 0.5 + level.missilelockplayspacecheckextraradius);
         }
         if (distance2dsquared(target.origin, level.playspacecenter) > level.missilelockplayspacecheckradiussqr) {
             return false;
@@ -1254,7 +1254,7 @@ function _missiledetonate(attacker, weapon, range, mindamage, maxdamage, allowdi
         if (is_true(self.var_30dc969d)) {
             var_5289435c = 1;
         } else if (allowdirectdamage === 1) {
-            mindistsq = isdefined(target.locked_missile_min_distsq) ? target.locked_missile_min_distsq : function_a3f6cdac(range);
+            mindistsq = isdefined(target.locked_missile_min_distsq) ? target.locked_missile_min_distsq : sqr(range);
             distsq = distancesquared(self.origin, target.origin);
             if (distsq < mindistsq) {
                 var_5289435c = 1;

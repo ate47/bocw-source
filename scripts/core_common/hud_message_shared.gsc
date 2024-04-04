@@ -10,14 +10,14 @@
 // Checksum 0xc1dff94, Offset: 0xb0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hud_message", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hud_message", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace hud_message/hud_message_shared
 // Params 0, eflags: 0x6 linked
 // Checksum 0x5946675c, Offset: 0xf8
 // Size: 0x24
-function private function_70a657d8() {
+function private preinit() {
     callback::on_start_gametype(&init);
 }
 

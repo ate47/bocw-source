@@ -24,14 +24,14 @@
 // Checksum 0x4ab3ec91, Offset: 0x4e8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_63ef0cf11243d45a", &function_70a657d8, undefined, undefined, #"hash_7ee44bf733d7a7ac");
+    system::register(#"hash_63ef0cf11243d45a", &preinit, undefined, undefined, #"hash_7ee44bf733d7a7ac");
 }
 
 // Namespace namespace_e1cd3aae/namespace_e1cd3aae
 // Params 0, eflags: 0x6 linked
 // Checksum 0x74f12823, Offset: 0x538
 // Size: 0x254
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.body_shield.var_30c92ca9)) {
         level.body_shield.var_30c92ca9 = 1;
         animation::add_global_notetrack_handler("contact", &function_faf4a34d, 0);
@@ -146,9 +146,9 @@ function function_dec110ef(*guy) {
     if (player.var_2cb06cc6.name == "body_shield_grenade") {
         return;
     }
-    level.var_1f89855a = &function_5c01c962;
+    level.fnasmsoldiergetpainweaponsize = &function_5c01c962;
     player util::function_5045bb33(4, 0.25);
-    level.var_1f89855a = undefined;
+    level.fnasmsoldiergetpainweaponsize = undefined;
 }
 
 // Namespace namespace_e1cd3aae/namespace_e1cd3aae
@@ -165,7 +165,7 @@ function function_5c01c962(*size) {
 // Size: 0x44
 function function_85d6c09b(*guy) {
     player = getplayers()[0];
-    player namespace_594b67e::function_76e2ec80();
+    player action_utility::function_76e2ec80();
 }
 
 // Namespace namespace_e1cd3aae/namespace_e1cd3aae
@@ -179,11 +179,11 @@ function function_d521a78f() {
     var_248cbbcf.var_de6f0004 = 0;
     var_248cbbcf.var_531201f1 = &function_d2cf74ab;
     var_248cbbcf.var_be77841a = 0;
-    var_248cbbcf.groups = [0:#"actions"];
-    self namespace_f48ab2e1::function_c97a48c7(#"stance", var_248cbbcf);
-    self namespace_f48ab2e1::function_263320e2(#"stance", #"hash_738e0cc280f3474f");
-    self namespace_f48ab2e1::function_c97a48c7(#"frag", var_248cbbcf);
-    self namespace_f48ab2e1::function_263320e2(#"frag", #"hash_4ac43752337031be");
+    var_248cbbcf.groups = [#"actions"];
+    self prompts::function_c97a48c7(#"stance", var_248cbbcf);
+    self prompts::function_263320e2(#"stance", #"hash_738e0cc280f3474f");
+    self prompts::function_c97a48c7(#"frag", var_248cbbcf);
+    self prompts::function_263320e2(#"frag", #"hash_4ac43752337031be");
     setdvar(#"scr_door_player_gestures", 0);
 }
 
@@ -208,9 +208,9 @@ function function_5ebe8eba(action_name) {
     if (self.takedown.body_shield.health > 0) {
         switch (action_name) {
         case #"body_shield_kill":
-            return self namespace_594b67e::function_fdff1cf3();
+            return self action_utility::function_fdff1cf3();
         case #"body_shield_grenade":
-            return (self namespace_594b67e::function_fdff1cf3() && self function_a02c0e4f(self.var_edbc8698));
+            return (self action_utility::function_fdff1cf3() && self function_a02c0e4f(self.var_edbc8698));
         }
     }
     return 0;
@@ -242,7 +242,7 @@ function function_a02c0e4f(*victim) {
 // Size: 0x3c
 function function_ecd2291d() {
     if (isdefined(self.takedown.gesture)) {
-        self namespace_594b67e::function_e4d5a38c(self.takedown.gesture);
+        self action_utility::gesture_stop(self.takedown.gesture);
     }
 }
 
@@ -275,15 +275,15 @@ function function_849bed38(*link_ents, *var_e4df1bec, *var_cee46280) {
 function function_5e89af5d(*action, *victim, var_17fee02c, var_dfce6e2d, var_f510f19d) {
     self.takedown.var_b8302c5e = self.takedown.gesture;
     self util::function_5f1df718(#"hash_6c1bcea3b5d8f78f");
-    self namespace_594b67e::function_6cd69890(0, undefined, var_17fee02c, var_dfce6e2d);
+    self action_utility::allow_weapon(0, undefined, var_17fee02c, var_dfce6e2d);
     self val::set(#"action", "freezecontrols", 1);
-    level namespace_f48ab2e1::function_86eedc();
+    level prompts::function_86eedc();
     self util::delay(0.2, undefined, &val::set, #"action", "takedamage", 0);
-    self function_849bed38([1:self.takedown.body, 0:self.var_6639d45b], undefined);
-    self namespace_594b67e::function_2795d678(0);
+    self function_849bed38([self.var_6639d45b, self.takedown.body], undefined);
+    self action_utility::function_2795d678(0);
     self util::delay(0.2, undefined, &function_ecd2291d);
     if (!is_true(var_f510f19d)) {
-        self namespace_594b67e::function_9d7828b0(0.5);
+        self action_utility::function_9d7828b0(0.5);
     }
     self.takedown.var_198a4d10 = self.takedown.body_shield.actor;
 }
@@ -293,12 +293,12 @@ function function_5e89af5d(*action, *victim, var_17fee02c, var_dfce6e2d, var_f51
 // Checksum 0x9621d285, Offset: 0x1490
 // Size: 0x8e
 function function_8ba805b3() {
-    self val::function_e681e68e(#"action");
-    level namespace_f48ab2e1::function_d675f5a4();
-    self namespace_594b67e::function_6cd69890(1);
+    self val::reset_all(#"action");
+    level prompts::function_d675f5a4();
+    self action_utility::allow_weapon(1);
     self.var_d3b4e4f4 = undefined;
     self.var_852e84c9 = undefined;
-    namespace_f48ab2e1::function_398ab9eb();
+    prompts::function_398ab9eb();
     self notify(#"hash_2a87a221154d292");
 }
 
@@ -309,7 +309,7 @@ function function_8ba805b3() {
 function function_5053f358(action, body) {
     self function_5e89af5d(action, body, undefined, 1);
     bb::function_cd497743("bodyshield_grenade", self);
-    scene = array::random([1:"td_scene_bodyshield_grenade_b", 0:"td_scene_bodyshield_grenade_a"]);
+    scene = array::random(["td_scene_bodyshield_grenade_a", "td_scene_bodyshield_grenade_b"]);
     animation = function_11b042fc(scene, "victim");
     body thread function_17414a13(body);
     var_ae5fe668 = 4;
@@ -360,7 +360,7 @@ function function_58980558(victim) {
         self thread function_ae4d480a(victim);
     }
     while (isdefined(victim)) {
-        self.takedown.var_e5b7c28e = victim function_b9ab269e() + (0, 0, 1);
+        self.takedown.victim_origin = victim getcorpsephysicsorigin() + (0, 0, 1);
         waitframe(1);
     }
 }
@@ -370,7 +370,7 @@ function function_58980558(victim) {
 // Checksum 0x790c0895, Offset: 0x1950
 // Size: 0x64
 function function_ae4d480a(victim) {
-    victim endon(#"hash_29b88049dcac8bb3");
+    victim endon(#"entitydeleted");
     result = undefined;
     result = victim waittill(#"actor_corpse");
     self thread function_58980558(result.corpse);
@@ -386,13 +386,13 @@ function function_7ead73b1(*action, *body, *var_d1b14335, scene, gesture) {
     #/
     waittillframeend();
     player = self;
-    self namespace_f48ab2e1::function_ee7adae5(#"actions");
+    self prompts::function_ee7adae5(#"actions");
     player.var_ca6b6423 = undefined;
     setdvar(#"scr_door_player_gestures", 1);
     var_17813638 = spawnstruct();
     var_17813638.origin = self.origin;
     var_17813638.angles = self.angles;
-    if (!self namespace_594b67e::function_fdff1cf3()) {
+    if (!self action_utility::function_fdff1cf3()) {
         offset = vectorscale((0, 0, 1), 8);
         var_17813638.origin = playerphysicstrace(self.origin + offset, self.origin + anglestoforward(self.angles) * -15 + offset);
         var_17813638.origin = playerphysicstrace(var_17813638.origin, var_17813638.origin - offset);
@@ -404,7 +404,7 @@ function function_7ead73b1(*action, *body, *var_d1b14335, scene, gesture) {
     self.takedown.body_shield.actor forceteleport(var_17813638.origin, var_17813638.angles);
     self.takedown.body_shield.actor.health = int(max(1, self.takedown.body_shield.health));
     self.takedown.body_shield.actor.var_c681e4c1 = 1;
-    self.takedown.body_shield.actor namespace_594b67e::function_35d0bd11(0);
+    self.takedown.body_shield.actor action_utility::function_35d0bd11(0);
     self.takedown.body_shield.actor notsolid();
     ai::setaiattribute(self.takedown.body_shield.actor, "useGrenades", 0);
     self thread function_58980558(self.takedown.body_shield.actor);
@@ -413,16 +413,16 @@ function function_7ead73b1(*action, *body, *var_d1b14335, scene, gesture) {
     self.takedown.body_shield.actor.var_1a1dd1a0 = notes[0];
     if (isdefined(gesture)) {
         self.var_621f8539 = gesture;
-        self thread namespace_594b67e::function_3ceda691(gesture);
+        self thread action_utility::function_3ceda691(gesture);
     }
-    self util::delay(float(function_60d95f53()) / 1000, undefined, &namespace_594b67e::function_76e2ec80);
-    var_17813638 namespace_594b67e::scene_play(scene, self, self.takedown.body_shield.actor);
-    self.takedown.body_shield.actor namespace_594b67e::function_b82cae8f(0, 0);
-    self namespace_594b67e::function_76e2ec80();
+    self util::delay(float(function_60d95f53()) / 1000, undefined, &action_utility::function_76e2ec80);
+    var_17813638 action_utility::scene_play(scene, self, self.takedown.body_shield.actor);
+    self.takedown.body_shield.actor action_utility::function_b82cae8f(0, 0);
+    self action_utility::function_76e2ec80();
     if (isalive(self.takedown.body_shield.actor)) {
         self.takedown.body_shield.actor solid();
     }
-    self namespace_594b67e::function_2795d678(0);
+    self action_utility::function_2795d678(0);
     self actions::function_942d9213();
     self flag::clear("in_action");
 }
@@ -431,8 +431,8 @@ function function_7ead73b1(*action, *body, *var_d1b14335, scene, gesture) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x1734a334, Offset: 0x1f80
 // Size: 0x140
-function function_11b042fc(var_2e4886d4, objectname, shot = 0, var_dd00fdae = 0) {
-    scene = getscriptbundle(var_2e4886d4);
+function function_11b042fc(scenename, objectname, shot = 0, var_dd00fdae = 0) {
+    scene = getscriptbundle(scenename);
     if (isdefined(scene.objects)) {
         var_61da41d8 = tolower(objectname);
         foreach (obj in scene.objects) {
@@ -473,11 +473,11 @@ function function_17414a13(guy) {
 function function_30e6300b(var_5fb1bd74) {
     if (isdefined(var_5fb1bd74.var_54163419) && isdefined(var_5fb1bd74.var_bc2602c8) && !is_true(var_5fb1bd74.var_54163419.dropped)) {
         var_5fb1bd74.var_54163419.dropped = 1;
-        var_3245f13d = var_5fb1bd74.var_bc2602c8 * 2;
-        var_3245f13d = var_3245f13d + (randomfloatrange(-0.5, 0.5), randomfloatrange(-0.5, 0.5), randomfloatrange(-0.5, 0.5));
-        var_3245f13d = vectornormalize(var_3245f13d) * 0.1;
+        launchforce = var_5fb1bd74.var_bc2602c8 * 2;
+        launchforce = launchforce + (randomfloatrange(-0.5, 0.5), randomfloatrange(-0.5, 0.5), randomfloatrange(-0.5, 0.5));
+        launchforce = vectornormalize(launchforce) * 0.1;
         var_5fb1bd74.var_54163419 unlink();
-        var_5fb1bd74.var_54163419 physicslaunch(var_5fb1bd74.var_54163419.origin - vectorscale((0, 0, 1), 3), var_3245f13d);
+        var_5fb1bd74.var_54163419 physicslaunch(var_5fb1bd74.var_54163419.origin - vectorscale((0, 0, 1), 3), launchforce);
         var_5fb1bd74.var_54163419 thread grenade_explode(var_5fb1bd74, 2);
     }
 }
@@ -529,11 +529,11 @@ function function_6794cd13(params) {
 // Size: 0xa4
 function function_a3d6cc6(*params) {
     if (isplayer(self) && isdefined(self.takedown.body_shield.actor)) {
-        self.takedown.body_shield.actor namespace_594b67e::function_b82cae8f(0, 0);
+        self.takedown.body_shield.actor action_utility::function_b82cae8f(0, 0);
         return;
     }
     if (isactor(self)) {
-        self namespace_594b67e::function_b82cae8f(0, 0);
+        self action_utility::function_b82cae8f(0, 0);
     }
 }
 
@@ -574,7 +574,7 @@ function function_13841987() {
         self.allowpain = 1;
         self.ignoreme = 0;
         self.var_f6639ad8 = undefined;
-        self.var_fb9a2c03 = undefined;
+        self.in_melee_death = undefined;
     }
 }
 
@@ -634,7 +634,7 @@ function function_bae5ad1b() {
         return;
     }
     if (self.primaryweapon.name === "#none" || isdefined(player.takedown.body_shield) && is_true(player.takedown.body_shield.var_13356219)) {
-        self.var_b9378c91 = 1;
+        self.forceragdollimmediate = 1;
         self kill(self.origin, player, player);
     }
 }
@@ -658,14 +658,14 @@ function function_306feb88(*guy) {
     var_29fbf4b0 = max(60, max(80, 32));
     while (true) {
         waitframe(1);
-        var_dece365 = self.origin - last_position;
-        var_dece365 = (var_dece365[0], var_dece365[1], 0);
+        move_delta = self.origin - last_position;
+        move_delta = (move_delta[0], move_delta[1], 0);
         last_position = self.origin;
-        if (lengthsquared(var_dece365) < 0.01) {
+        if (lengthsquared(move_delta) < 0.01) {
             continue;
         }
-        var_e02d3434 = getentitiesinradius(self.origin, var_29fbf4b0);
-        foreach (interact in var_e02d3434) {
+        interactables = getentitiesinradius(self.origin, var_29fbf4b0);
+        foreach (interact in interactables) {
             if (interact === self) {
                 continue;
             }
@@ -677,8 +677,8 @@ function function_306feb88(*guy) {
             }
             dir = interact.origin - self.origin;
             dir = vectornormalize((dir[0], dir[1], 0));
-            var_c3467a5d = vectornormalize(var_dece365);
-            dot = vectordot(var_c3467a5d, dir);
+            move_dir = vectornormalize(move_delta);
+            dot = vectordot(move_dir, dir);
             if (dot < 0) {
                 continue;
             }
@@ -693,11 +693,11 @@ function function_306feb88(*guy) {
                     continue;
                 }
                 if (dot > cos(30) && !is_true(interact.var_bb317c90)) {
-                    dot_right = vectordot(vectorcross(var_c3467a5d, (0, 0, 1)), dir);
+                    dot_right = vectordot(vectorcross(move_dir, (0, 0, 1)), dir);
                     if (dot_right > 0) {
-                        dir = rotatepoint(var_c3467a5d, vectorscale((0, -1, 0), 45));
+                        dir = rotatepoint(move_dir, vectorscale((0, -1, 0), 45));
                     } else {
-                        dir = rotatepoint(var_c3467a5d, vectorscale((0, 1, 0), 45));
+                        dir = rotatepoint(move_dir, vectorscale((0, 1, 0), 45));
                     }
                     var_ba580a85 = "body_shield_push" + "_push_" + randomintrange(1, 5);
                     interact.var_f6639ad8 = level.var_f467e5b0.anims[#"generic"][var_ba580a85];
@@ -716,24 +716,24 @@ function function_306feb88(*guy) {
                 if (distancesquared(self.origin, interact.origin) > 60 * 60) {
                     continue;
                 }
-                interact.c_door thread doors::function_b29052a(player, 1, self.origin);
+                interact.c_door thread doors::door_bash_open(player, 1, self.origin);
                 continue;
             }
             if (interact.classname === "script_model" && is_true(interact.allowdeath) && !isdefined(destroyed[interact getentitynumber()])) {
                 if (dot > cos(45)) {
-                    var_6bd2eb91 = rotatepoint(var_c3467a5d, (0, 0, 0) - interact.angles) * -1;
-                    test_point = interact getpointinbounds(var_6bd2eb91[0], var_6bd2eb91[1], var_6bd2eb91[2]);
+                    pt = rotatepoint(move_dir, (0, 0, 0) - interact.angles) * -1;
+                    test_point = interact getpointinbounds(pt[0], pt[1], pt[2]);
                     if (distance2dsquared(self.origin, test_point) < 32 * 32) {
-                        var_51587dff = interact.origin + vectorscale((0, 0, 1), 15);
-                        var_51587dff = var_51587dff + vectornormalize(self.origin - interact.origin) * 10;
-                        radiusdamage(var_51587dff, 16, interact.health + 1, interact.health, self, "MOD_IMPACT");
+                        impactpoint = interact.origin + vectorscale((0, 0, 1), 15);
+                        impactpoint = impactpoint + vectornormalize(self.origin - interact.origin) * 10;
+                        radiusdamage(impactpoint, 16, interact.health + 1, interact.health, self, "MOD_IMPACT");
                         destroyed[interact getentitynumber()] = interact;
                     }
                 }
             }
         }
-        var_c3548f43 = var_dece365 * 3;
-        var_858fa287 = var_dece365 * 5;
+        var_c3548f43 = move_delta * 3;
+        var_858fa287 = move_delta * 5;
         zoffset = vectorscale((0, 0, 1), 16);
         boundsmin = vectorscale((-1, -1, 0), 16);
         boundsmax = (16, 16, 40);
@@ -742,14 +742,14 @@ function function_306feb88(*guy) {
         traceend = tracestart + var_c3548f43;
         var_ddac030a = tracestart + var_858fa287;
         trace = physicstrace(tracestart, traceend, boundsmin, boundsmax, self, mask);
-        movedir = vectornormalize(var_dece365);
+        movedir = vectornormalize(move_delta);
         facingdir = anglestoforward(self.angles);
         facingdir = vectornormalize((facingdir[0], facingdir[1], 0));
         var_53c12a4 = vectordot(facingdir, movedir);
         self.var_bc2602c8 = movedir;
         anim_name = undefined;
         if (!isdefined(trace[#"entity"]) && trace[#"fraction"] < 1) {
-            anim_name = "body_shield_push" + (var_53c12a4 < 0 ? "_bounce_front_" : "_bounce_back_") + randomintrange(1, 3);
+            anim_name = "body_shield_push" + (var_53c12a4 < 0 ? "_bounce_back_" : "_bounce_front_") + randomintrange(1, 3);
         } else if (trace[#"fraction"] >= 1) {
             trace = physicstrace(traceend, var_ddac030a, boundsmin, boundsmax, self, mask);
             if (trace[#"fraction"] >= 1) {
@@ -757,12 +757,12 @@ function function_306feb88(*guy) {
                 traceend = tracestart + zoffset * -3;
                 trace = physicstrace(tracestart, traceend, boundsmin, boundsmax, self, mask);
                 if (trace[#"fraction"] >= 1) {
-                    anim_name = "body_shield_push" + (var_53c12a4 < 0 ? "_fall_front" : "_fall_back");
-                    var_92d26b7c = 1;
+                    anim_name = "body_shield_push" + (var_53c12a4 < 0 ? "_fall_back" : "_fall_front");
+                    dokill = 1;
                     if (abs(var_53c12a4) < 0.7) {
                         right = vectorcross(movedir, (0, 0, 1));
-                        var_11edc9c7 = vectordot(facingdir, right);
-                        anim_name = "body_shield_push" + (var_11edc9c7 > 0 ? "_fall_left" : "_fall_right");
+                        dotright = vectordot(facingdir, right);
+                        anim_name = "body_shield_push" + (dotright > 0 ? "_fall_right" : "_fall_left");
                     }
                 }
             }

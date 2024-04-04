@@ -52,9 +52,9 @@ function function_da7439a2() {
         if (isdefined(loot.item.var_c8386627)) {
             namespace_1c2a96f9::function_85da1646(loot.item.var_c8386627);
         }
-        if (isdefined(loot.var_3f97a9a6)) {
-            arrayremovevalue(level.doa.var_b8ef1466, loot.item.var_3f97a9a6);
-            loot.var_3f97a9a6 = undefined;
+        if (isdefined(loot.spawninfo)) {
+            arrayremovevalue(level.doa.var_b8ef1466, loot.item.spawninfo);
+            loot.spawninfo = undefined;
         }
         if (isdefined(loot.item)) {
             loot.item delete();
@@ -88,20 +88,20 @@ function function_417fd9b() {
                     activate = 1;
                 }
                 if (activate) {
-                    if (!isdefined(loot.var_3f97a9a6)) {
-                        loot.item = namespace_41f5b853::function_cd388232(loot.origin, loot.angles, loot.script_string, loot.radius, 2);
+                    if (!isdefined(loot.spawninfo)) {
+                        loot.item = namespace_41f5b853::spawnlootitem(loot.origin, loot.angles, loot.script_string, loot.radius, 2);
                     } else {
-                        loot.item = namespace_ec06fe4a::spawnmodel(loot.var_3f97a9a6.origin, loot.var_3f97a9a6.modelname);
+                        loot.item = namespace_ec06fe4a::spawnmodel(loot.spawninfo.origin, loot.spawninfo.modelname);
                         if (!isdefined(loot.item)) {
-                            namespace_1e25ad94::function_f5f0c0f8("FAILED TO SPAWN MODEL (" + loot.var_3f97a9a6.modelname + ") at " + loot.var_3f97a9a6.origin);
+                            namespace_1e25ad94::debugmsg("FAILED TO SPAWN MODEL (" + loot.spawninfo.modelname + ") at " + loot.spawninfo.origin);
                             continue;
                         }
-                        loot.item namespace_41f5b853::function_60eeb02c(loot.var_3f97a9a6);
+                        loot.item namespace_41f5b853::function_60eeb02c(loot.spawninfo);
                     }
                     if (isdefined(loot.item)) {
-                        loot.var_3f97a9a6 = loot.item.var_3f97a9a6;
+                        loot.spawninfo = loot.item.spawninfo;
                         loot.item.owner = loot;
-                        namespace_1e25ad94::function_f5f0c0f8("Paging IN loot at:" + loot.origin);
+                        namespace_1e25ad94::debugmsg("Paging IN loot at:" + loot.origin);
                     }
                     loot.var_eb9d64bb = loot.var_eb9d64bb + 5000;
                 }
@@ -110,13 +110,13 @@ function function_417fd9b() {
             loot.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(loot.origin, 1800);
             if (!isdefined(loot.var_f8660931)) {
                 if (!isdefined(loot.script_string)) {
-                    loot.script_string = loot.item.var_8cbdb71;
+                    loot.script_string = loot.item.defname;
                 }
                 if (isdefined(loot.item.var_c8386627)) {
                     namespace_1c2a96f9::function_85da1646(loot.item.var_c8386627);
                 }
                 loot.item delete();
-                namespace_1e25ad94::function_f5f0c0f8("Paging OUT loot at:" + loot.origin);
+                namespace_1e25ad94::debugmsg("Paging OUT loot at:" + loot.origin);
             }
         }
     }

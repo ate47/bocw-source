@@ -21,14 +21,14 @@
 // Checksum 0x6ccc7e79, Offset: 0x118
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"zm_items", &function_70a657d8, &postinit, undefined, undefined);
+    system::register(#"zm_items", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace zm_items/zm_items
 // Params 0, eflags: 0x6 linked
 // Checksum 0x2c4d6c0b, Offset: 0x170
 // Size: 0xe4
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.var_ddfee332)) {
         level.var_ddfee332 = 0;
     }
@@ -209,8 +209,8 @@ function player_pick_up(player, w_item) {
         }
         holder.item_slot_inventory[w_item.var_df0f9ce9] = w_item;
     }
-    level notify(#"component_collected", {#holder:holder, #component:w_item});
-    player notify(#"component_collected", {#holder:holder, #component:w_item});
+    level notify(#"component_collected", {#component:w_item, #holder:holder});
+    player notify(#"component_collected", {#component:w_item, #holder:holder});
     if (isdefined(level.item_callbacks[w_item])) {
         foreach (callback in level.item_callbacks[w_item]) {
             player [[ callback ]](holder, w_item);
@@ -256,8 +256,8 @@ function function_ab3bb6bf(holder, w_item) {
     if (w_item.var_df0f9ce9) {
         holder.item_slot_inventory[w_item.var_df0f9ce9] = undefined;
     }
-    level notify(#"component_lost", {#holder:holder, #component:w_item});
-    self notify(#"component_lost", {#holder:holder, #component:w_item});
+    level notify(#"component_lost", {#component:w_item, #holder:holder});
+    self notify(#"component_lost", {#component:w_item, #holder:holder});
     if (self hasweapon(w_item)) {
         self takeweapon(w_item);
     }

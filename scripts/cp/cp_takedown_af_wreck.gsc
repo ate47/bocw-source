@@ -1,9 +1,9 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_85cd2e9a28ea8a1;
 #using script_54412fb3a6fab34c;
-#using script_5552bd756afee443;
+#using scripts\cp_common\snd_utility.gsc;
 #using script_3dc93ca9902a9cda;
-#using script_1292451e284848cc;
+#using scripts\cp_common\snd.gsc;
 #using script_61cfc2ab8e60625;
 #using script_31e9b35aaacbbd93;
 #using script_1883fa4e60abbf9f;
@@ -17,7 +17,7 @@
 #using scripts\core_common\lui_shared.gsc;
 #using scripts\core_common\exploder_shared.gsc;
 #using scripts\cp_common\objectives.gsc;
-#using script_263b7f2982258785;
+#using scripts\cp_common\dialogue.gsc;
 #using scripts\core_common\util_shared.gsc;
 #using scripts\core_common\struct.gsc;
 #using scripts\core_common\spawner_shared.gsc;
@@ -61,7 +61,7 @@ function main(var_d3440450, var_50cc0d4f) {
     foreach (thing in var_853687bd) {
         thing delete();
     }
-    probes = [8:"cargo_probe_9", 7:"cargo_probe_8", 6:"cargo_probe_7", 5:"cargo_probe_6", 4:"cargo_probe_5", 3:"cargo_probe_4", 2:"cargo_probe_3", 1:"cargo_probe_2", 0:"cargo_probe_1"];
+    probes = ["cargo_probe_1", "cargo_probe_2", "cargo_probe_3", "cargo_probe_4", "cargo_probe_5", "cargo_probe_6", "cargo_probe_7", "cargo_probe_8", "cargo_probe_9"];
     foreach (probe in probes) {
         probe = getent(probe, "targetname");
         if (isdefined(probe)) {
@@ -81,7 +81,7 @@ function main(var_d3440450, var_50cc0d4f) {
     arash = getactorarray("arash", "targetname")[0];
     arash.var_c681e4c1 = 1;
     music::setmusicstate("b7.0_aftermath");
-    level thread scene::play("scene_tkd_hit3_outro_interrogation", [0:arash]);
+    level thread scene::play("scene_tkd_hit3_outro_interrogation", [arash]);
     level thread function_ea2f2e25(var_50cc0d4f);
     level waittill(#"hash_285b0696c88c644a");
     thread namespace_a052577e::function_4788a209();
@@ -99,10 +99,10 @@ function main(var_d3440450, var_50cc0d4f) {
     function_91d49d23(level.arash);
     guys = getaiarray();
     array::delete_all(guys);
-    player val::set(#"hash_3a075a8a47144f76", "disable_weapon_cycling", 1);
-    player val::set(#"hash_3a075a8a47144f76", "disable_weapons", 1);
-    player val::set(#"hash_3a075a8a47144f76", "allow_jump", 0);
-    player val::set(#"hash_3a075a8a47144f76", "allow_sprint", 0);
+    player val::set(#"ending", "disable_weapon_cycling", 1);
+    player val::set(#"ending", "disable_weapons", 1);
+    player val::set(#"ending", "allow_jump", 0);
+    player val::set(#"ending", "allow_sprint", 0);
     level lui::screen_fade_out(0);
     player_decision::function_430ebd4b(3, 1);
     player_decision::function_8c0836dd(0);

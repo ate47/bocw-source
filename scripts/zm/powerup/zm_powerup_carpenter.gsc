@@ -19,14 +19,14 @@
 // Checksum 0x8b91c3b, Offset: 0x198
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"zm_powerup_carpenter", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"zm_powerup_carpenter", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace zm_powerup_carpenter/zm_powerup_carpenter
 // Params 0, eflags: 0x6 linked
 // Checksum 0x38571a92, Offset: 0x1e0
 // Size: 0x8c
-function private function_70a657d8() {
+function private preinit() {
     zm_powerups::register_powerup("carpenter", &grab_carpenter);
     if (zm_powerups::function_cc33adc8()) {
         zm_powerups::add_zombie_powerup("carpenter", #"p7_zm_power_up_carpenter", #"hash_7ee3cb05607f53f3", &func_should_drop_carpenter, 0, 0, 0);
@@ -41,7 +41,7 @@ function grab_carpenter(e_player) {
     var_ea1d8f06 = 1;
     if (zm_utility::is_standard()) {
         var_ea1d8f06 = 0;
-        level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"carpenter_powerup_zm", #attacker:e_player});
+        level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:e_player, #scoreevent:"carpenter_powerup_zm"});
     }
     level thread start_carpenter(e_player, var_ea1d8f06);
     e_player thread zm_powerups::powerup_vo("carpenter");
@@ -153,14 +153,14 @@ function start_carpenter(var_264cf1f9, var_ea1d8f06 = 1) {
     carp_ent waittill(#"sound_done");
     if (var_ea1d8f06) {
         if (zm_powerups::function_cfd04802(#"carpenter") && isplayer(var_264cf1f9)) {
-            level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"carpenter_powerup_zm", #attacker:var_264cf1f9});
+            level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:var_264cf1f9, #scoreevent:"carpenter_powerup_zm"});
         } else {
             foreach (e_player in level.players) {
-                level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"carpenter_powerup_zm", #attacker:e_player});
+                level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:e_player, #scoreevent:"carpenter_powerup_zm"});
             }
         }
     }
-    carp_ent function_cb48cddd();
+    carp_ent deletedelay();
     level notify(#"carpenter_finished");
     level.carpenter_powerup_active = undefined;
 }

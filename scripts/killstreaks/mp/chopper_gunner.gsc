@@ -14,18 +14,18 @@
 // Checksum 0x3cb1918b, Offset: 0xd8
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"chopper_gunner", &function_70a657d8, undefined, &function_3675de8b, #"killstreaks");
+    system::register(#"chopper_gunner", &preinit, undefined, &function_3675de8b, #"killstreaks");
 }
 
 // Namespace chopper_gunner/chopper_gunner
 // Params 0, eflags: 0x6 linked
 // Checksum 0x828f0ac6, Offset: 0x138
 // Size: 0x5e
-function private function_70a657d8() {
+function private preinit() {
     profilestart();
     player::function_cf3aa03d(&function_d45a1f8d, 1);
     level.var_2d4792e7 = &function_5160bb1e;
-    namespace_e8c18978::function_70a657d8("killstreak_chopper_gunner");
+    namespace_e8c18978::preinit("killstreak_chopper_gunner");
     profilestop();
 }
 
@@ -81,9 +81,9 @@ function function_25d9a09f(vehicle) {
         enemy = undefined;
         enemies = self teams::getenemyplayers();
         enemies = array::randomize(enemies);
-        foreach (var_607bb54c in enemies) {
-            if (isalive(var_607bb54c)) {
-                enemy = var_607bb54c;
+        foreach (potentialenemy in enemies) {
+            if (isalive(potentialenemy)) {
+                enemy = potentialenemy;
                 break;
             }
         }

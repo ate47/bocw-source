@@ -2,7 +2,7 @@
 #using scripts\core_common\popups_shared.gsc;
 #using script_45fdb6cec5580007;
 #using scripts\core_common\system_shared.gsc;
-#using script_3dfd071e58d0071f;
+#using scripts\core_common\ping_shared.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
 #using scripts\core_common\battlechatter.gsc;
 #using scripts\core_common\array_shared.gsc;
@@ -26,7 +26,7 @@ function private postinit() {
     if (!getdvarint(#"hash_449fa75f87a4b5b4", 0)) {
         return;
     }
-    level.ping = {#durations:[12:15, 11:15, 10:level.var_142ecedc, 9:25, 8:25, 7:15, 6:15, 5:30, 4:20, 3:15, 2:10, 1:60, 0:60], #var_92963150:[], #count:0, #players:[]};
+    level.ping = {#players:[], #count:0, #pings:[], #durations:[60, 60, 10, 15, 20, 30, 15, 15, 25, 25, level.var_142ecedc, 15, 15]};
     /#
         assert(level.ping.durations.size == 13);
     #/
@@ -72,18 +72,18 @@ function private function_9c9adcf1() {
     if (isdefined(level.var_75bb902f)) {
         return [[ level.var_75bb902f ]]();
     }
-    var_cf1b84d3 = undefined;
+    pingplayers = undefined;
     if (squads::function_a9758423() && isdefined(self.squad)) {
-        var_cf1b84d3 = function_c65231e2(self.squad);
+        pingplayers = function_c65231e2(self.squad);
     } else if (isdefined(self.team)) {
-        var_cf1b84d3 = getfriendlyplayers(self.team);
+        pingplayers = getfriendlyplayers(self.team);
     }
-    if (!isdefined(var_cf1b84d3)) {
-        var_cf1b84d3 = [];
-    } else if (!isarray(var_cf1b84d3)) {
-        var_cf1b84d3 = array(var_cf1b84d3);
+    if (!isdefined(pingplayers)) {
+        pingplayers = [];
+    } else if (!isarray(pingplayers)) {
+        pingplayers = array(pingplayers);
     }
-    return var_cf1b84d3;
+    return pingplayers;
 }
 
 // Namespace ping/ping
@@ -91,10 +91,10 @@ function private function_9c9adcf1() {
 // Checksum 0xc4f7e4a1, Offset: 0x510
 // Size: 0x14c
 function private function_68ee7643() {
-    var_92963150 = self function_77d2f4f5();
+    pings = self function_77d2f4f5();
     entnum = self getentitynumber();
-    if (isdefined(var_92963150)) {
-        foreach (ping in level.ping.var_92963150) {
+    if (isdefined(pings)) {
+        foreach (ping in level.ping.pings) {
             if (entnum == ping.playerentnum) {
                 function_aa50d3e4(ping);
             }
@@ -109,7 +109,7 @@ function private function_68ee7643() {
 // Checksum 0x168bae95, Offset: 0x668
 // Size: 0xf0
 function private clear_all_pings() {
-    foreach (ping in level.ping.var_92963150) {
+    foreach (ping in level.ping.pings) {
         ping.player function_b56144ae(ping.player function_9c9adcf1(), ping.eventtype, 1, ping.location, ping.param, ping.id);
         function_aa50d3e4(ping);
     }
@@ -120,8 +120,8 @@ function private clear_all_pings() {
 // Checksum 0xa12fee56, Offset: 0x760
 // Size: 0x44
 function on_player_spawn() {
-    var_92963150 = self function_77d2f4f5();
-    if (!isdefined(var_92963150)) {
+    pings = self function_77d2f4f5();
+    if (!isdefined(pings)) {
         self function_76fbd527();
     }
 }
@@ -157,7 +157,7 @@ function on_end_game() {
 // Size: 0x1c8
 function function_d58bf295(*params) {
     entnum = isentity(self) ? self getentitynumber() : -1;
-    foreach (ping in level.ping.var_92963150) {
+    foreach (ping in level.ping.pings) {
         if (ping.eventtype != 2 && ping.eventtype != 3 && ping.eventtype != 10) {
             continue;
         }
@@ -177,11 +177,11 @@ function function_d58bf295(*params) {
 // Checksum 0x623e33cf, Offset: 0xa10
 // Size: 0x1b8
 function function_9455917d(entity) {
-    if (!isdefined(level.ping.var_92963150)) {
+    if (!isdefined(level.ping.pings)) {
         return;
     }
     entnum = isentity(entity) ? entity getentitynumber() : -1;
-    foreach (ping in level.ping.var_92963150) {
+    foreach (ping in level.ping.pings) {
         if (ping.eventtype != 2 && ping.eventtype != 3 && ping.eventtype != 10 && ping.eventtype != 8) {
             continue;
         }
@@ -203,7 +203,7 @@ function private function_c5f0d88f(player, eventtype, location, param) {
     ping.player = player;
     ping.playerentnum = player getentitynumber();
     ping.eventtype = eventtype;
-    ping.var_a1e081ad = pool;
+    ping.pooltype = pool;
     ping.location = location;
     ping.param = param;
     /#
@@ -225,12 +225,12 @@ function private function_c5f0d88f(player, eventtype, location, param) {
         function_aa50d3e4(var_6e071234[pool][0]);
     }
     /#
-        assert(!isdefined(level.ping.var_92963150[ping.id]));
+        assert(!isdefined(level.ping.pings[ping.id]));
     #/
-    if (isdefined(level.ping.var_92963150[ping.id])) {
-        function_aa50d3e4(level.ping.var_92963150[ping.id]);
+    if (isdefined(level.ping.pings[ping.id])) {
+        function_aa50d3e4(level.ping.pings[ping.id]);
     }
-    level.ping.var_92963150[ping.id] = ping;
+    level.ping.pings[ping.id] = ping;
     level.ping.count++;
     if (level.ping.count >= 16384) {
         level.ping.count = 0;
@@ -249,11 +249,11 @@ function private function_c5f0d88f(player, eventtype, location, param) {
 // Checksum 0x5f838c45, Offset: 0xf30
 // Size: 0x15c
 function function_bbe2694a(networkid) {
-    if (!isdefined(level.ping.var_92963150)) {
+    if (!isdefined(level.ping.pings)) {
         return;
     }
-    foreach (ping in level.ping.var_92963150) {
-        if (ping.var_a1e081ad == 4 && ping.param == networkid) {
+    foreach (ping in level.ping.pings) {
+        if (ping.pooltype == 4 && ping.param == networkid) {
             if (isplayer(ping.player)) {
                 ping.player function_b56144ae(ping.player function_9c9adcf1(), ping.eventtype, 1, ping.location, ping.param, ping.id);
             }
@@ -269,13 +269,13 @@ function function_bbe2694a(networkid) {
 // Size: 0x16c
 function private function_aa50d3e4(ping) {
     /#
-        assert(isdefined(level.ping.var_92963150[ping.id]));
+        assert(isdefined(level.ping.pings[ping.id]));
     #/
-    level.ping.var_92963150[ping.id] = undefined;
+    level.ping.pings[ping.id] = undefined;
     /#
-        assert(isdefined(level.ping.players[ping.playerentnum][ping.var_a1e081ad]));
+        assert(isdefined(level.ping.players[ping.playerentnum][ping.pooltype]));
     #/
-    var_2d64756e = level.ping.players[ping.playerentnum][ping.var_a1e081ad];
+    var_2d64756e = level.ping.players[ping.playerentnum][ping.pooltype];
     if (!isdefined(var_2d64756e)) {
         return;
     }
@@ -284,7 +284,7 @@ function private function_aa50d3e4(ping) {
         assert(isdefined(index));
     #/
     if (var_2d64756e.size == 1) {
-        level.ping.players[ping.playerentnum][ping.var_a1e081ad] = undefined;
+        level.ping.players[ping.playerentnum][ping.pooltype] = undefined;
         return;
     }
     if (isdefined(index)) {
@@ -356,7 +356,7 @@ function private function_94eab4fb(params) {
 function private update() {
     while (true) {
         time = gettime();
-        foreach (ping in level.ping.var_92963150) {
+        foreach (ping in level.ping.pings) {
             if (isdefined(ping.expiration) && ping.expiration < time) {
                 targets = ping.player function_9c9adcf1();
                 if (isdefined(level.var_75bb902f)) {

@@ -92,14 +92,14 @@ class class_8e39177 {
 // Checksum 0x73aa3abd, Offset: 0x208
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register("wave_manager", &function_70a657d8, &postinit, undefined, undefined);
+    system::register("wave_manager", &preinit, &postinit, undefined, undefined);
 }
 
 // Namespace wave_manager_sys/wave_manager
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf27362f9, Offset: 0x408
 // Size: 0x5c
-function private function_70a657d8() {
+function private preinit() {
     level.var_ca74a4bc = [];
     level.a_s_wave_managers = [];
     /#
@@ -570,7 +570,7 @@ function private start_internal(s_wave_manager_struct, str_team, b_looping, str_
             var_dcd6c23.var_27eacb34 = s_wave_manager_struct.target;
         }
         var_dcd6c23.m_str_team = util::get_team_mapping(s_wave_manager_struct.script_team);
-        var_dcd6c23.var_f68bc980 = is_true(s_wave_manager_struct.var_3868f387);
+        var_dcd6c23.var_f68bc980 = is_true(s_wave_manager_struct.script_looping);
         var_dcd6c23.var_a709a080 = is_true(s_wave_manager_struct.script_auto_delete);
         if (isdefined(s_wave_manager_struct.var_a69f424f)) {
             foreach (var_7635207b in s_wave_manager_struct.var_a69f424f) {
@@ -1167,7 +1167,7 @@ function private function_ed819a97(var_a2b4b991) {
         foreach (s_spawn_type in var_a2b4b991.spawntypes) {
             if (isdefined(s_spawn_type.variant)) {
                 var_2f2d7675 = isdefined(s_spawn_type.var_34ceb858) ? s_spawn_type.var_34ceb858 : 0;
-                var_40b0c36 = {#name:s_spawn_type.variant, #var_a33f2319:[], #var_2f2d7675:var_2f2d7675};
+                var_40b0c36 = {#var_2f2d7675:var_2f2d7675, #var_a33f2319:[], #name:s_spawn_type.variant};
                 var_c165240a[s_spawn_type.variant] = var_40b0c36;
             }
         }
@@ -1450,7 +1450,7 @@ function is_looping() {
         return is_true(var_dcd6c23.var_f68bc980);
     }
     if (wave_manager_sys::function_5b3b889f(self)) {
-        return is_true(self.var_3868f387);
+        return is_true(self.script_looping);
     }
     return 0;
 }

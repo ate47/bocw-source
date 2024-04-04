@@ -6,26 +6,26 @@
 #using scripts\core_common\callbacks_shared.csc;
 #using scripts\core_common\audio_shared.csc;
 
-#namespace namespace_8a203916;
+#namespace spectate_view;
 
-// Namespace namespace_8a203916/namespace_8a203916
+// Namespace spectate_view/spectate_view
 // Params 0, eflags: 0x5
 // Checksum 0x9139301, Offset: 0xe0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_62a9656d2aaa46aa", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"spectate_view", &preinit, undefined, undefined, undefined);
 }
 
-// Namespace namespace_8a203916/namespace_8a203916
+// Namespace spectate_view/spectate_view
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1d0073e5, Offset: 0x128
 // Size: 0x54
-function private function_70a657d8() {
+function private preinit() {
     callback::add_callback(#"territory", &function_59941838);
     callback::function_a880899e(&function_a880899e);
 }
 
-// Namespace namespace_8a203916/namespace_8a203916
+// Namespace spectate_view/spectate_view
 // Params 2, eflags: 0x6 linked
 // Checksum 0xebd73744, Offset: 0x188
 // Size: 0x34
@@ -33,7 +33,7 @@ function private function_59941838(*local_client_num, *eventstruct) {
     namespace_99c84a33::function_bb3bbc2c("overhead_spectate_cam", 64);
 }
 
-// Namespace namespace_8a203916/namespace_8a203916
+// Namespace spectate_view/spectate_view
 // Params 1, eflags: 0x2 linked
 // Checksum 0xcdfa11c7, Offset: 0x1c8
 // Size: 0x7c

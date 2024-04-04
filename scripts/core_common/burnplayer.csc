@@ -12,14 +12,14 @@
 // Checksum 0x243fbc50, Offset: 0x128
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"burnplayer", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"burnplayer", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace burnplayer/burnplayer
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9e0ab47b, Offset: 0x170
 // Size: 0x12c
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register("allplayers", "burn", 1, 1, "int", &burning_callback, 0, 1);
     clientfield::register("allplayers", "burn_fx_3p", 11001, 1, "int", &function_3caf53f1, 0, 1);
     clientfield::register("playercorpse", "burned_effect", 1, 1, "int", &burning_corpse_callback, 0, 1);

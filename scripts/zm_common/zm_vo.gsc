@@ -29,14 +29,14 @@
 // Checksum 0xcf8f8c59, Offset: 0x210
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"zm_vo", &function_70a657d8, &postinit, undefined, #"killstreaks");
+    system::register(#"zm_vo", &preinit, &postinit, undefined, #"killstreaks");
 }
 
 // Namespace zm_vo/zm_vo
 // Params 0, eflags: 0x6 linked
 // Checksum 0xabab74a5, Offset: 0x270
 // Size: 0x248
-function private function_70a657d8() {
+function private preinit() {
     level.var_98eae67a = [];
     level.var_5388c8f9 = [];
     level.var_62281818 = [];
@@ -130,7 +130,7 @@ function function_318f41b6() {
     function_2cf4b07f(#"bonus_points_player_shared", #"hash_78c9bfab1a9278bd");
     function_2cf4b07f(#"hero_weapon_power", #"hash_3228b9bb6d91f7c6");
     function_2cf4b07f(#"free_perk", #"hash_796989b8ef666e16");
-    function_2cf4b07f(#"hash_4f352102512cc494", #"hash_69fb2ede79df7f3a");
+    function_2cf4b07f(#"ammo_mod", #"hash_69fb2ede79df7f3a");
     function_2cf4b07f(#"dogstart", #"hash_28b132dc4f25cf4c");
     function_2cf4b07f(#"boxmove", #"hash_69675122993fc5ca");
     function_2cf4b07f(#"game_over", #"hash_3f1eca72dab56b29");
@@ -256,10 +256,10 @@ function private on_item_pickup(params) {
         return;
     }
     weapon = namespace_a0d533d1::function_2b83d3ff(item);
-    if (item.var_a6762160.name === #"self_revive_sr_item" && is_true(item.var_14948fd)) {
+    if (item.itementry.name === #"self_revive_sr_item" && is_true(item.var_14948fd)) {
         var_64edfc97 = #"hash_761fd0a07d2e04f";
     } else if (isdefined(item) && isdefined(weapon)) {
-        switch (item.var_a6762160.itemtype) {
+        switch (item.itementry.itemtype) {
         case #"scorestreak":
             if (is_true(item.var_14948fd)) {
                 if (weapon.name == #"chopper_gunner" || weapon.name == #"inventory_napalm_strike_zm") {
@@ -1016,7 +1016,7 @@ function function_8abe0568(str_type, n_delay, str_sound, b_wait_if_busy = 0, var
             player playlocalsound(str_sound);
             wait(n_wait);
             player.zmannouncertalking = undefined;
-            player notify(#"hash_26a44682c9fd6f62", {#str_sound:str_sound, #str_type:str_type});
+            player notify(#"hash_26a44682c9fd6f62", {#str_type:str_type, #str_sound:str_sound});
         }
         arrayremovevalue(player.var_85ea4daf, str_sound);
         return;
@@ -1336,7 +1336,7 @@ function function_7622cb70(var_b58a6345, n_delay, b_wait_if_busy = 1, var_54c38d
                 player.dontspeak = 1;
             }
             self thread _end_vo_say_commander_line(str_vo_alias, var_b4dd2e62, a_players, var_2690dae);
-            array::wait_till(a_players, [1:#"hash_73f839d8939452ad", 0:"death"], var_2690dae);
+            array::wait_till(a_players, ["death", #"hash_73f839d8939452ad"], var_2690dae);
             foreach (player in a_players) {
                 if (isdefined(player)) {
                     arrayremovevalue(player.var_671911e9, str_vo_alias);
@@ -1355,10 +1355,10 @@ function function_7622cb70(var_b58a6345, n_delay, b_wait_if_busy = 1, var_54c38d
         str_bundle = isdefined(level.var_e2f95698) ? level.var_e2f95698 : getplayers()[0].pers[level.var_7ee6af9f];
     }
     var_a6e45682 = getscriptbundle(str_bundle);
-    if (isarray(var_a6e45682.var_3c28bed9)) {
-        foreach (var_395a2c28 in var_a6e45682.var_3c28bed9) {
-            if (var_395a2c28.var_f34d52cb === var_b58a6345) {
-                var_d8d8b84c = var_395a2c28;
+    if (isarray(var_a6e45682.conversations)) {
+        foreach (s_conversation in var_a6e45682.conversations) {
+            if (s_conversation.conversationname === var_b58a6345) {
+                var_d8d8b84c = s_conversation;
                 break;
             }
         }

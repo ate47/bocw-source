@@ -11,14 +11,14 @@
 // Checksum 0xc9128b00, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"multilockap_guidance", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"multilockap_guidance", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace multilockap_guidance/multilockapguidance
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd676ba10, Offset: 0x120
 // Size: 0x4c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_spawned(&on_player_spawned);
     setdvar(#"scr_max_simlocks", 3);
 }

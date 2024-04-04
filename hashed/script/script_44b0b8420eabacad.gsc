@@ -28,9 +28,9 @@ function calculate_map_center() {
     var_7465f696 = function_92f03095("auto_normal");
     level.spawnmins = var_7465f696[#"mins"];
     level.spawnmaxs = var_7465f696[#"maxs"];
-    level.var_a3b3ad04.var_1d694d71 = var_7465f696[#"mins"];
-    level.var_a3b3ad04.var_a13a9915 = var_7465f696[#"maxs"];
-    level.var_a3b3ad04.center = var_7465f696[#"center"];
+    level.mapbounds.var_1d694d71 = var_7465f696[#"mins"];
+    level.mapbounds.var_a13a9915 = var_7465f696[#"maxs"];
+    level.mapbounds.center = var_7465f696[#"center"];
     level.mapcenter = var_7465f696[#"center"];
     setmapcenter(level.mapcenter);
 }
@@ -357,7 +357,7 @@ function is_spawn_trapped(team) {
 function function_e1a7c3d9(spawn_origin, spawn_angles) {
     var_50747a19 = spawn_origin + vectorscale((0, 0, 1), 60);
     self predictspawnpoint(var_50747a19, spawn_angles);
-    self.predicted_spawn_point = {#angles:spawn_angles, #origin:var_50747a19};
+    self.predicted_spawn_point = {#origin:var_50747a19, #angles:spawn_angles};
 }
 
 // Namespace spawning/namespace_48f955ce

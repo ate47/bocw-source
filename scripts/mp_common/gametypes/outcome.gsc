@@ -11,8 +11,8 @@
 // Checksum 0x46dd2da3, Offset: 0xc8
 // Size: 0x94
 function autoexec main() {
-    level.var_9b671c3c[#"tie"] = {#code_flag:1, #flag:"tie"};
-    level.var_9b671c3c[#"overtime"] = {#code_flag:2, #flag:"overtime"};
+    level.var_9b671c3c[#"tie"] = {#flag:"tie", #code_flag:1};
+    level.var_9b671c3c[#"overtime"] = {#flag:"overtime", #code_flag:2};
 }
 
 // Namespace outcome/outcome
@@ -25,7 +25,7 @@ function function_a1a81955() {
     outcome.var_c1e98979 = 0;
     outcome.team = #"none";
     outcome.players = [];
-    outcome.var_f79c6bfc = [];
+    outcome.players_score = [];
     return outcome;
 }
 

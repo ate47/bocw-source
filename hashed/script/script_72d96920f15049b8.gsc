@@ -28,7 +28,7 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0xcfd3078, Offset: 0x380
 // Size: 0x14e
-function function_70a657d8(bundlename) {
+function preinit(bundlename) {
     profilestart();
     level.var_b3e433ae = [];
     clientfield::register("toplayer", "" + #"hash_7c907650b14abbbe", 1, 1, "int");
@@ -145,16 +145,16 @@ function function_5160bb1e(killstreaktype) {
         /#
             assert(isdefined(self.chopper_zone), "<unknown string>");
         #/
-        var_6b3ce0fa = getvehiclenodearray("chopper_gunner_path_start_multi", "targetname");
-        foreach (node in var_6b3ce0fa) {
+        a_startnodes = getvehiclenodearray("chopper_gunner_path_start_multi", "targetname");
+        foreach (node in a_startnodes) {
             if (node.script_noteworthy === self.chopper_zone) {
                 startnode = node;
                 break;
             }
         }
     } else if (sessionmodeiszombiesgame() && !isdefined(level.var_97e461d4) && util::get_game_type() === #"zsurvival") {
-        var_6b3ce0fa = getvehiclenodearray("chopper_gunner_path_start_multi", "targetname");
-        foreach (node in var_6b3ce0fa) {
+        a_startnodes = getvehiclenodearray("chopper_gunner_path_start_multi", "targetname");
+        foreach (node in a_startnodes) {
             if (issubstr(node.script_noteworthy, "defend")) {
                 startnode = node;
                 break;
@@ -170,15 +170,15 @@ function function_5160bb1e(killstreaktype) {
         if (sessionmodeiszombiesgame()) {
             height = isdefined(level.var_1beaaeca) ? level.var_1beaaeca : 3500;
             height = height + (isdefined(level.var_fba637a5) ? level.var_fba637a5 : 0);
-            var_24af7a37 = isdefined(level.var_32e48553) ? level.var_32e48553 : vectorscale((0, 1, 0), 45);
+            angle_offset = isdefined(level.var_32e48553) ? level.var_32e48553 : vectorscale((0, 1, 0), 45);
             var_77e38a57 = level.var_981cf9cf;
             position = self.origin;
             if (self.origin[2] < 1000) {
                 position = (self.origin[0], self.origin[1], 1000);
             }
-            yaw = function_26e7fb55(position, height, var_24af7a37);
-            var_24af7a37 = (var_24af7a37[0], yaw, var_24af7a37[2]);
-            level.chopper_gunner vehicle::function_3f76e204(startnode, position, self.angles, height, var_24af7a37, var_77e38a57);
+            yaw = function_26e7fb55(position, height, angle_offset);
+            angle_offset = (angle_offset[0], yaw, angle_offset[2]);
+            level.chopper_gunner vehicle::function_3f76e204(startnode, position, self.angles, height, angle_offset, var_77e38a57);
             var_e31d6cb1 = position;
         } else {
             position = self.origin;
@@ -192,8 +192,8 @@ function function_5160bb1e(killstreaktype) {
             if (clampdistance) {
                 var_ceaada96 = distance2d(position, level.mapcenter);
                 if (var_ceaada96 > clampdistance) {
-                    var_1ce870a0 = vectornormalize(level.mapcenter - position);
-                    var_1ce870a0 = (var_1ce870a0[0], var_1ce870a0[1], 0);
+                    tocenter = vectornormalize(level.mapcenter - position);
+                    tocenter = (tocenter[0], tocenter[1], 0);
                     var_a338f16a = isdefined(level.var_782b91f2) ? level.var_782b91f2 : 1;
                     /#
                         var_bd2c37fd = getdvarint(#"hash_11189a015da61a14", 0);
@@ -201,17 +201,17 @@ function function_5160bb1e(killstreaktype) {
                             var_a338f16a = var_bd2c37fd;
                         }
                     #/
-                    position = position + vectorscale(var_1ce870a0, var_ceaada96 * var_a338f16a);
+                    position = position + vectorscale(tocenter, var_ceaada96 * var_a338f16a);
                 }
             }
             trace = bullettrace(position + vectorscale((0, 0, 1), 10000), position - vectorscale((0, 0, 1), 10000), 0, undefined);
-            targetpoint = trace[#"fraction"] > 1 ? trace[#"position"] : (position[0], position[1], 0);
+            targetpoint = trace[#"fraction"] > 1 ? (position[0], position[1], 0) : trace[#"position"];
             var_b0490eb9 = getheliheightlockheight(position);
-            var_6be9958b = targetpoint[2];
-            height = var_6be9958b + (var_b0490eb9 - var_6be9958b) * bundle.var_ff73e08c;
+            groundheight = targetpoint[2];
+            height = groundheight + (var_b0490eb9 - groundheight) * bundle.var_ff73e08c;
             pivot = struct::get("chopper_gunner_pivot", "targetname");
             yaw = function_26e7fb55(position, var_b0490eb9, self.angles);
-            location = {#yaw:yaw, #origin:position};
+            location = {#origin:position, #yaw:yaw};
             level.chopper_gunner vehicle::function_bb9b43a9(startnode, pivot.origin, pivot.angles, location, height);
             var_e31d6cb1 = position;
         }
@@ -219,14 +219,14 @@ function function_5160bb1e(killstreaktype) {
         var_e31d6cb1 = level.mapcenter;
     }
     /#
-        var_8cdd01c7 = getdvarint(#"hash_4536100039d07f70", 0);
-        if (var_8cdd01c7 > 0) {
-            level.chopper_gunner pathmove(startnode, (startnode.origin[0], startnode.origin[1], var_8cdd01c7), startnode.angles);
+        heightoverride = getdvarint(#"hash_4536100039d07f70", 0);
+        if (heightoverride > 0) {
+            level.chopper_gunner pathmove(startnode, (startnode.origin[0], startnode.origin[1], heightoverride), startnode.angles);
         }
     #/
     level.chopper_gunner thread vehicle::get_on_and_go_path(startnode);
     level.chopper_gunner thread function_696b3380();
-    level.chopper_gunner killstreakrules::function_2e6ff61a("chopper_gunner", killstreak_id, {#team:level.chopper_gunner.team, #origin:var_e31d6cb1});
+    level.chopper_gunner killstreakrules::function_2e6ff61a("chopper_gunner", killstreak_id, {#origin:var_e31d6cb1, #team:level.chopper_gunner.team});
     if (level.gameended === 1) {
         return 0;
     }
@@ -308,8 +308,8 @@ function function_dede0607(*isowner, killstreaktype) {
     if (result != "success") {
         if (result != "disconnect") {
             self killstreaks::clear_using_remote();
-            var_5b220756 = self killstreaks::function_a2c375bb(killstreaktype);
-            self killstreaks::function_a831f92c(var_5b220756, 0, 0);
+            killstreakslot = self killstreaks::function_a2c375bb(killstreaktype);
+            self killstreaks::function_a831f92c(killstreakslot, 0, 0);
         }
         choppergunner.failed2enter = 1;
         choppergunner function_71c46904(0);
@@ -376,7 +376,7 @@ function private function_9bdafd36(var_8d7be67c = 1.5) {
 // Checksum 0x6653ed66, Offset: 0x2028
 // Size: 0xae
 function function_294e90d4(ents) {
-    ents[#"gunner"] function_2ac7114f(level.chopper_gunner.owner);
+    ents[#"gunner"] hidefromplayer(level.chopper_gunner.owner);
     ents[#"fakearms"] hide();
     ents[#"fakearms"] showtoplayer(level.chopper_gunner.owner);
     level.chopper_gunner.gunner = ents[#"gunner"];
@@ -503,7 +503,7 @@ function function_bc344300() {
         self.gunner delete();
     }
     self helicopter::function_711c140b();
-    self function_cb48cddd();
+    self deletedelay();
 }
 
 // Namespace namespace_e8c18978/namespace_e8c18978
@@ -752,14 +752,14 @@ function function_77784598(einflictor, eattacker, idamage, idflags, smeansofdeat
             bundle = killstreaks::get_script_bundle("chopper_gunner");
             if (isdefined(bundle.var_888a5ff7) && isdefined(shitloc)) {
                 var_74d40edb = idamage getvelocity();
-                if (lengthsquared(var_74d40edb) > function_a3f6cdac(50)) {
+                if (lengthsquared(var_74d40edb) > sqr(50)) {
                     var_29edfc10 = vectornormalize(var_74d40edb);
                     playfx(bundle.var_888a5ff7, shitloc, var_29edfc10, undefined, undefined, self.team);
                 }
             }
         }
         self.var_d02ddb8e = vdir;
-        params = {#partname:vsurfacenormal, #modelindex:partname, #damagefromunderneath:modelindex, #psoffsettime:damagefromunderneath, #shitloc:psoffsettime, #vdir:vdamageorigin, #vpoint:shitloc, #weapon:vdir, #smeansofdeath:vpoint, #idflags:weapon, #idamage:smeansofdeath, #eattacker:idflags, #einflictor:idamage};
+        params = {#einflictor:idamage, #eattacker:idflags, #idamage:smeansofdeath, #idflags:weapon, #smeansofdeath:vpoint, #weapon:vdir, #vpoint:shitloc, #vdir:vdamageorigin, #shitloc:psoffsettime, #psoffsettime:damagefromunderneath, #damagefromunderneath:modelindex, #modelindex:partname, #partname:vsurfacenormal};
         self callback::callback(#"on_vehicle_damage", params);
         self thread function_80ae938e(shitloc, vdamageorigin);
         return 0;

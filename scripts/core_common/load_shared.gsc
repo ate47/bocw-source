@@ -21,7 +21,7 @@
 // Checksum 0xc93e092c, Offset: 0x280
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"load", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"load", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace load/load_shared
@@ -60,7 +60,7 @@ function first_frame() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0xe694fd04, Offset: 0x3b8
 // Size: 0x3a4
-function private function_70a657d8() {
+function private preinit() {
     if (!isdefined(level.animation)) {
         level.animation = spawnstruct();
     }
@@ -141,7 +141,7 @@ function level_notify_listener() {
             if (val != "<unknown string>") {
                 toks = strtok(val, "<unknown string>");
                 if (toks.size == 3) {
-                    level notify(toks[0], {#param2:toks[2], #param1:toks[1]});
+                    level notify(toks[0], {#param1:toks[1], #param2:toks[2]});
                 } else if (toks.size == 2) {
                     level notify(toks[0], {#param1:toks[1]});
                 } else {

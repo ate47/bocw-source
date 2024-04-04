@@ -174,7 +174,7 @@ function function_fd2b858e(localclientnum) {
         waitframe(1);
         [[ level.var_49883c7 ]]->waitinqueue(self);
         localclient = function_5c10bd79(localclientnum);
-        if (isdefined(localclient) && gibclientutils::isundamaged(localclientnum, self) && distancesquared(localclient.origin, self.origin) < function_a3f6cdac(700) && vectordot(anglestoforward(localclient.angles), self.origin - localclient.origin) > 0) {
+        if (isdefined(localclient) && gibclientutils::isundamaged(localclientnum, self) && distancesquared(localclient.origin, self.origin) < sqr(700) && vectordot(anglestoforward(localclient.angles), self.origin - localclient.origin) > 0) {
             if (!self.var_e22ea2fc) {
                 self.var_e22ea2fc = 1;
                 function_a846c43c(self);
@@ -220,7 +220,7 @@ function function_a17af3df(localclientnum, *oldval, newval, *bnewent, *binitials
         return;
     }
     if (bwastimejump === 1) {
-        var_1690db4a = [4:#"hash_502c60e0a94ba04b", 3:#"hash_ef041655f01ad34", 2:#"hash_50fdc172aee097e6", 1:#"hash_16837b6c9b7a1881", 0:#"hash_48eda005db2cbdcd"];
+        var_1690db4a = [#"hash_48eda005db2cbdcd", #"hash_16837b6c9b7a1881", #"hash_50fdc172aee097e6", #"hash_ef041655f01ad34", #"hash_502c60e0a94ba04b"];
         self stoprenderoverridebundle(#"hash_61ce0b7cea532e77");
         if (self.model === #"hash_6aa75847e285712b") {
             self playrenderoverridebundle(#"hash_882e5d8c59f40a3");

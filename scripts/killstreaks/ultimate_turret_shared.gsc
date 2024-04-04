@@ -79,12 +79,12 @@ function function_a385666(slot) {
     if (!isdefined(self.pers[#"hash_55c15f9af76e4e68"][slot])) {
         return false;
     }
-    var_9415f2bd = self.pers[#"hash_55c15f9af76e4e68"][slot];
-    if (var_9415f2bd == 0) {
+    used_time = self.pers[#"hash_55c15f9af76e4e68"][slot];
+    if (used_time == 0) {
         return false;
     }
     bundle = killstreaks::get_script_bundle("ultimate_turret");
-    return var_9415f2bd < bundle.ksduration;
+    return used_time < bundle.ksduration;
 }
 
 // Namespace ultimate_turret/ultimate_turret_shared
@@ -358,13 +358,13 @@ function function_3be2d17f(watcher, player) {
     self deployable::function_dd266e08(player);
     self.origin = self.origin + vectorscale((0, 0, 1), 2);
     player onplaceturret(self);
-    var_5b220756 = self.vehicle.var_5b220756;
-    self.var_5b220756 = var_5b220756;
-    var_34a76f8d = player.pers[#"hash_55c15f9af76e4e68"][var_5b220756];
-    if (!isdefined(var_34a76f8d) || var_34a76f8d <= 0) {
+    killstreakslot = self.vehicle.killstreakslot;
+    self.killstreakslot = killstreakslot;
+    usedtime = player.pers[#"hash_55c15f9af76e4e68"][killstreakslot];
+    if (!isdefined(usedtime) || usedtime <= 0) {
         player stats::function_e24eec31(getweapon("ultimate_turret"), #"used", 1);
     }
-    player.pers[#"hash_55c15f9af76e4e68"][var_5b220756] = 0;
+    player.pers[#"hash_55c15f9af76e4e68"][killstreakslot] = 0;
     player stats::function_e24eec31(self.weapon, #"used", 1);
     player notify(#"ultimate_turret_deployed", {#turret:self});
     if (var_83ed455 && isdefined(player)) {
@@ -454,8 +454,8 @@ function private function_9813d292() {
 // Size: 0x11c
 function private function_d2d0a813(var_24e0878b) {
     var_3b0688ef = "ultimate_turret_badplace" + self getentitynumber();
-    var_2c0980ab = self.origin + self function_2c662f72();
-    var_e5afa076 = self function_2a98d04f();
+    var_2c0980ab = self.origin + self getboundsmidpoint();
+    var_e5afa076 = self getboundshalfsize();
     var_921c5821 = max(var_e5afa076[0], var_e5afa076[1]) + 10;
     var_e5afa076 = (var_921c5821, var_921c5821, var_e5afa076[2]);
     if (var_24e0878b === 1) {
@@ -513,13 +513,13 @@ function onplaceturret(turret) {
         turret.vehicle.ignore_vehicle_underneath_splash_scalar = 1;
         turret.vehicle killstreaks::configure_team("ultimate_turret", turret.killstreakid, player, undefined);
         turret.vehicle killstreak_hacking::enable_hacking("ultimate_turret", &hackedcallbackpre, &hackedcallbackpost);
-        if (!isdefined(turret.vehicle.var_5b220756)) {
-            turret.vehicle.var_5b220756 = 3;
+        if (!isdefined(turret.vehicle.killstreakslot)) {
+            turret.vehicle.killstreakslot = 3;
         }
-        var_42f0dc61 = player.pers[#"hash_38fcd8992f6cb9dc"][turret.vehicle.var_5b220756];
+        var_42f0dc61 = player.pers[#"hash_38fcd8992f6cb9dc"][turret.vehicle.killstreakslot];
         if (isdefined(var_42f0dc61) && var_42f0dc61 > 0) {
             turret.vehicle dodamage(var_42f0dc61, self.origin);
-            player.pers[#"hash_38fcd8992f6cb9dc"][turret.vehicle.var_5b220756] = 0;
+            player.pers[#"hash_38fcd8992f6cb9dc"][turret.vehicle.killstreakslot] = 0;
         }
         turret.vehicle thread turret_watch_owner_events();
         turret.vehicle thread turret_laser_watch();
@@ -536,17 +536,17 @@ function onplaceturret(turret) {
         turret.vehicle.var_aac73d6c = 1;
         player namespace_f9b02f80::play_killstreak_start_dialog("ultimate_turret", player.pers[#"team"], turret.killstreakid);
         level thread popups::displaykillstreakteammessagetoall("ultimate_turret", player);
-        var_34a76f8d = isdefined(player.pers[#"hash_55c15f9af76e4e68"][turret.vehicle.var_5b220756]) ? player.pers[#"hash_55c15f9af76e4e68"][turret.vehicle.var_5b220756] : 0;
-        if (var_34a76f8d <= 0) {
+        usedtime = isdefined(player.pers[#"hash_55c15f9af76e4e68"][turret.vehicle.killstreakslot]) ? player.pers[#"hash_55c15f9af76e4e68"][turret.vehicle.killstreakslot] : 0;
+        if (usedtime <= 0) {
             player stats::function_e24eec31(getweapon("ultimate_turret"), #"used", 1);
         }
         bundle = killstreaks::get_script_bundle("ultimate_turret");
         turret.vehicle.killstreak_duration = bundle.ksduration + 5000;
-        var_c94af1de = gettime() - var_34a76f8d;
-        turret.vehicle.killstreak_end_time = var_c94af1de + turret.vehicle.killstreak_duration;
-        turret.vehicle thread killstreaks::function_b86397ae("ultimate_turret", turret.vehicle.killstreak_duration, var_c94af1de, &function_be04d904, "delete", "death");
+        starttimeoverride = gettime() - usedtime;
+        turret.vehicle.killstreak_end_time = starttimeoverride + turret.vehicle.killstreak_duration;
+        turret.vehicle thread killstreaks::function_b86397ae("ultimate_turret", turret.vehicle.killstreak_duration, starttimeoverride, &function_be04d904, "delete", "death");
         turret.vehicle.maxsightdistsqrd = 1;
-        callback::callback(#"hash_6d9bdacc6c29cfa5", {#owner:self, #turret:turret});
+        callback::callback(#"hash_6d9bdacc6c29cfa5", {#turret:turret, #owner:self});
     }
     player deployable::function_6ec9ee30(turret.vehicle, getweapon("ultimate_turret"));
     turret.vehicle playloopsound(#"hash_69240c6db92da5bf", 0.25);
@@ -558,8 +558,8 @@ function onplaceturret(turret) {
     turret.vehicle unlink();
     turret.vehicle.var_4dc2eebb = &function_4dc2eebb;
     turret.vehicle function_d2d0a813();
-    var_f0aebbbf = turret.origin + vectorscale((0, 0, 1), 15);
-    trigger = spawn("trigger_radius_use", var_f0aebbbf, 0, 85, 85);
+    trigger_origin = turret.origin + vectorscale((0, 0, 1), 15);
+    trigger = spawn("trigger_radius_use", trigger_origin, 0, 85, 85);
     trigger.str_hint = #"hash_2c90cbfdfac140bf";
     trigger setteamfortrigger(self.team);
     trigger setinvisibletoall();
@@ -626,10 +626,10 @@ function function_ff9ee951(player) {
     if (!isdefined(vehicle)) {
         return;
     }
-    slot = vehicle.var_5b220756;
+    slot = vehicle.killstreakslot;
     if (!isdefined(slot)) {
         slot = 3;
-        vehicle.var_5b220756 = slot;
+        vehicle.killstreakslot = slot;
     }
     elapsedtime = gettime() - vehicle.killstreak_end_time + vehicle.killstreak_duration;
     player killstreaks::function_a831f92c(slot, 0, 0);
@@ -1069,7 +1069,7 @@ function function_9d86d74c(enemy) {
     shoot_at_pos = enemy getshootatpos(self);
     var_6551f24e = anglestoforward(fire_angles);
     target_offset = shoot_at_pos - fire_origin;
-    if (lengthsquared(target_offset) < function_a3f6cdac(22) && vectordot(var_6551f24e, target_offset) < 0) {
+    if (lengthsquared(target_offset) < sqr(22) && vectordot(var_6551f24e, target_offset) < 0) {
         return true;
     }
     return false;
@@ -1080,7 +1080,7 @@ function function_9d86d74c(enemy) {
 // Checksum 0x2077a65d, Offset: 0x4bc8
 // Size: 0x150
 function function_2034705c(bundle) {
-    var_351b3c55 = isdefined(self.enemy) ? 0 : max(isdefined(self.enemylastseentime) ? self.enemylastseentime : 0, isdefined(self.var_c8072bcc) ? self.var_c8072bcc : 0);
+    var_351b3c55 = isdefined(self.enemy) ? max(isdefined(self.enemylastseentime) ? self.enemylastseentime : 0, isdefined(self.var_c8072bcc) ? self.var_c8072bcc : 0) : 0;
     var_c112caa0 = int((isdefined(bundle.var_fa38350a) ? bundle.var_fa38350a : 1) * 1000);
     if (isdefined(self.enemy) && self.var_7eb3ebd5[self.enemy getentitynumber()] === #"damage") {
         var_c112caa0 = int((isdefined(bundle.var_33561c46) ? bundle.var_33561c46 : 3) * 1000);
@@ -1320,11 +1320,11 @@ function function_16ccb771(e_target) {
     var_f8ba3204 = s_bundle.ksburstfiredelaymaxtime;
     var_108a39a1 = s_bundle.ksburstfireenabled;
     if (var_108a39a1) {
-        n_fire_time = var_b009f4df > var_b72152c3 ? randomfloatrange(var_b009f4df, var_b72152c3) : var_b009f4df;
+        n_fire_time = var_b009f4df > var_b72152c3 ? var_b009f4df : randomfloatrange(var_b009f4df, var_b72152c3);
         self vehicle_ai::fire_for_time(n_fire_time, 0, e_target);
         var_2da97dc2 = !isdefined(e_target) || !isalive(e_target);
         if (var_1d860ae4 > 0 && !var_2da97dc2) {
-            var_91d9f057 = var_1d860ae4 > var_f8ba3204 ? randomfloatrange(var_1d860ae4, var_f8ba3204) : var_1d860ae4;
+            var_91d9f057 = var_1d860ae4 > var_f8ba3204 ? var_1d860ae4 : randomfloatrange(var_1d860ae4, var_f8ba3204);
             waitresult = undefined;
             waitresult = e_target waittilltimeout(var_91d9f057, #"death", #"disconnect");
             var_2da97dc2 = waitresult._notify === "death";
@@ -1394,11 +1394,11 @@ function turretscanning() {
     veh playsound(#"mpl_turret_startup");
     veh playloopsound(#"hash_69240c6db92da5bf");
     s_bundle = killstreaks::get_script_bundle("ultimate_turret");
-    veh.maxsightdistsqrd = function_a3f6cdac(isdefined(s_bundle.var_2aeadfa0) ? s_bundle.var_2aeadfa0 : 3500);
+    veh.maxsightdistsqrd = sqr(isdefined(s_bundle.var_2aeadfa0) ? s_bundle.var_2aeadfa0 : 3500);
     veh thread function_9d831b2f();
     while (true) {
         /#
-            veh.maxsightdistsqrd = function_a3f6cdac(isdefined(s_bundle.var_2aeadfa0) ? s_bundle.var_2aeadfa0 : 3500);
+            veh.maxsightdistsqrd = sqr(isdefined(s_bundle.var_2aeadfa0) ? s_bundle.var_2aeadfa0 : 3500);
         #/
         if (self.isjammed === 1 || self.isstunned === 1) {
             waitframe(1);
@@ -1427,7 +1427,7 @@ function turretshutdown(killstreakid, team, killstreaktype) {
         turret.shuttingdown = 1;
     }
     if (isdefined(self.owner)) {
-        slot = self.var_5b220756;
+        slot = self.killstreakslot;
         self.owner function_d5d8e662(slot, 0);
         self.owner killstreaks::function_b3185041(slot, 0);
         var_2fd00bf4 = isdefined(self.owner.pers[#"hash_55c15f9af76e4e68"][slot]) ? self.owner.pers[#"hash_55c15f9af76e4e68"][slot] : 0;

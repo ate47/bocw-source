@@ -11,14 +11,14 @@
 // Checksum 0xc2c0d8a, Offset: 0x100
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_7aac5c09cf9461e3", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hash_7aac5c09cf9461e3", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace namespace_2ed67032/namespace_2ed67032
 // Params 0, eflags: 0x4
 // Checksum 0xf9ed58b, Offset: 0x148
 // Size: 0x190
-function private function_70a657d8() {
+function private preinit() {
     clientfield::register_clientuimodel("hudItems.armorPlateCount", #"hash_6f4b11a0bee9b73d", #"hash_7c65108f5dcd93ef", 1, 4, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("hudItems.armorPlateMaxCarry", #"hash_6f4b11a0bee9b73d", #"hash_6260c609342f556d", 1, 4, "int", undefined, 0, 0);
     level.var_a05cd64e = &function_a05cd64e;
@@ -109,7 +109,7 @@ function private function_86b9a404() {
         #/
         return false;
     }
-    if (isonturret(localclientnum) || self function_94ba7a2e() || self function_9a0edd92() || self isinfreefall() || self inlaststand() || self function_b9c43317()) {
+    if (isonturret(localclientnum) || self function_94ba7a2e() || self function_9a0edd92() || self isinfreefall() || self inlaststand() || self isskydiving()) {
         /#
             function_ad64a47("<unknown string>");
         #/
@@ -154,10 +154,10 @@ function event_handler[event_647adea6] function_465c8646(eventstruct) {
 // Params 1, eflags: 0x0
 // Checksum 0x7230b3cc, Offset: 0x890
 // Size: 0x44
-function function_ad64a47(var_456ff370) {
+function function_ad64a47(reasonstring) {
     /#
         if (level.var_a2ef9587 === 1) {
-            println("<unknown string>" + var_456ff370);
+            println("<unknown string>" + reasonstring);
         }
     #/
 }

@@ -13,14 +13,14 @@
 // Checksum 0x12688f2b, Offset: 0x128
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"drown", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"drown", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace drown/drown
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc0bd8fcb, Offset: 0x170
 // Size: 0x11c
-function private function_70a657d8() {
+function private preinit() {
     callback::on_spawned(&function_27777812);
     callback::on_player_killed(&function_1ef50162);
     callback::add_callback(#"on_end_game", &function_c621d98c);

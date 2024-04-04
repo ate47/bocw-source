@@ -66,8 +66,8 @@ function main() {
     if (isdefined(level.doa.var_182fb75a)) {
         level thread function_8790b64a();
     }
-    foreach (var_6788869b in level.doa.var_43cb2d40) {
-        var_6788869b delete();
+    foreach (topper in level.doa.var_43cb2d40) {
+        topper delete();
     }
     level.doa.var_43cb2d40 = [];
     level.doa.var_c93506fb = undefined;
@@ -101,7 +101,7 @@ function function_470f56e6(origin, ignore, var_fcfb8b8d = 1) {
         if (player === ignore) {
             continue;
         }
-        if (!isalive(player) || is_true(player.doa.var_70c50ae0)) {
+        if (!isalive(player) || is_true(player.doa.respawning)) {
             player namespace_7f5aeb59::function_513831e1();
         }
         player notify(#"hash_279998c5df86c04d");
@@ -135,7 +135,7 @@ function function_ec0b503f(var_499e2f80) {
     /#
         assert(isdefined(idx), "<unknown string>");
     #/
-    var_6788869b = struct::get(var_499e2f80 + "_topper", "targetname");
+    topper = struct::get(var_499e2f80 + "_topper", "targetname");
     var_8f13e4c5 = getent(var_499e2f80 + "_WaitVolume", "targetname");
     startnode = struct::get(var_499e2f80, "targetname");
     /#
@@ -180,14 +180,14 @@ function function_ec0b503f(var_499e2f80) {
     if (is_true(level.doa.var_c93506fb)) {
         self thread function_ec0b503f(var_499e2f80);
     }
-    if (!is_true(level.doa.var_c93506fb) && isdefined(var_6788869b)) {
-        if (isdefined(var_6788869b.script_noteworthy)) {
-            var_2436e1b = namespace_ec06fe4a::spawnmodel(var_6788869b.origin, var_6788869b.script_noteworthy);
+    if (!is_true(level.doa.var_c93506fb) && isdefined(topper)) {
+        if (isdefined(topper.script_noteworthy)) {
+            var_2436e1b = namespace_ec06fe4a::spawnmodel(topper.origin, topper.script_noteworthy);
             if (isdefined(var_2436e1b)) {
-                var_2436e1b.angles = var_6788869b.angles;
+                var_2436e1b.angles = topper.angles;
                 var_2436e1b solid();
                 level.doa.var_43cb2d40[level.doa.var_43cb2d40.size] = var_2436e1b;
-                self.var_6788869b = var_2436e1b;
+                self.topper = var_2436e1b;
                 var_2436e1b namespace_83eb6304::function_3ecfde67("explode_lg");
             }
         }
@@ -195,7 +195,7 @@ function function_ec0b503f(var_499e2f80) {
     foreach (player in getplayers()) {
         player thread function_fe17d41e();
         if (!isdefined(level.doa.var_6f3d327)) {
-            player namespace_6e90e490::function_55775bbc(8);
+            player namespace_6e90e490::showhint(8);
             level.doa.var_dfe4682++;
         }
         player clientfield::increment_to_player("hardResetCamera");
@@ -314,22 +314,22 @@ function function_4be92bcc(idx, seconds) {
     var_80d530a9.name = function_56bd9d70(idx);
     var_80d530a9.buildtime = seconds;
     var_80d530a9.tiles = level.var_c97eeeb4.size;
-    var_80d530a9.var_b411e9f2 = level.var_d5561d56;
+    var_80d530a9.rooms = level.var_d5561d56;
     var_80d530a9.halls = level.var_5d40e975;
     var_80d530a9.players = namespace_7f5aeb59::function_f08b75c1();
     var_80d530a9.var_a98f4fd2 = [];
     foreach (tileid in level.doa.var_830f8412) {
-        var_2e0252f2 = {#count:level.doa.var_4cdaff39[tileid], #name:tileid};
+        tile = {#name:tileid, #count:level.doa.var_4cdaff39[tileid]};
         if (!isdefined(var_80d530a9.var_a98f4fd2)) {
             var_80d530a9.var_a98f4fd2 = [];
         } else if (!isarray(var_80d530a9.var_a98f4fd2)) {
             var_80d530a9.var_a98f4fd2 = array(var_80d530a9.var_a98f4fd2);
         }
-        var_80d530a9.var_a98f4fd2[var_80d530a9.var_a98f4fd2.size] = var_2e0252f2;
+        var_80d530a9.var_a98f4fd2[var_80d530a9.var_a98f4fd2.size] = tile;
     }
     level.doa.var_fa21a3aa = level.doa.var_fa21a3aa + var_80d530a9.tiles;
     level.doa.var_f23e2931 = level.doa.var_f23e2931 + var_80d530a9.halls;
-    level.doa.var_f5f2b4e8 = level.doa.var_f5f2b4e8 + var_80d530a9.var_b411e9f2;
+    level.doa.var_f5f2b4e8 = level.doa.var_f5f2b4e8 + var_80d530a9.rooms;
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
@@ -354,7 +354,7 @@ function function_c88b8726(index) {
     level.doa.var_182fb75a = index;
     profilestop();
     namespace_ec06fe4a::function_de70888a();
-    namespace_1e25ad94::function_f5f0c0f8("Creating a new Dungeon! Instance# " + level.doa.var_a354a42f);
+    namespace_1e25ad94::debugmsg("Creating a new Dungeon! Instance# " + level.doa.var_a354a42f);
     level.doa.var_a354a42f++;
     level clientfield::set("world_dungeon_set", index);
     util::wait_network_frame();
@@ -486,7 +486,7 @@ function function_600ea4f() {
     retval = level waittilltimeout(30, #"hash_db5742cf48f5e5");
     if (retval._notify == #"timeout") {
         namespace_1e25ad94::function_4e3cfad("	Dungeon creation timeout!", (1, 0, 0), undefined, 1.5, 1000);
-        namespace_1e25ad94::function_f5f0c0f8("Dungeon creation timeout!", 1);
+        namespace_1e25ad94::debugmsg("Dungeon creation timeout!", 1);
     }
     if (level.doa.var_c2648383.size > 0) {
         if (isdefined(level.doa.var_187ed224)) {
@@ -565,7 +565,7 @@ function function_10d89d49() {
     while (isdefined(level.doa.var_182fb75a)) {
         basez = level.doa.var_187ed224.origin[2] - 256;
         if (self.origin[2] <= basez) {
-            namespace_1e25ad94::function_f5f0c0f8("Player " + self.name + " FELL out of the active dungeon at location: " + self.origin + "  Failsafe warp to start point: " + level.doa.var_187ed224.origin, 1);
+            namespace_1e25ad94::debugmsg("Player " + self.name + " FELL out of the active dungeon at location: " + self.origin + "  Failsafe warp to start point: " + level.doa.var_187ed224.origin, 1);
             self setorigin(level.doa.var_187ed224.origin);
         }
         wait(1);
@@ -582,8 +582,8 @@ function function_73730269(var_f3c8eb3) {
     level endon(#"game_over");
     level thread namespace_ec06fe4a::function_87612422(level.doa.var_e84586f1.origin, level.doa.var_e84586f1.angles, 0.5, 999999999, level.var_564dda4);
     result = undefined;
-    result = level waittill(#"hash_256fe407ad94d83f", #"game_over");
-    if (result._notify == #"hash_256fe407ad94d83f" && result.pickup === var_f3c8eb3) {
+    result = level waittill(#"ladder_up", #"game_over");
+    if (result._notify == #"ladder_up" && result.pickup === var_f3c8eb3) {
         namespace_7f5aeb59::function_f8645db3(getdvarint(#"hash_2a014ab8179901f4", 500));
         foreach (player in namespace_7f5aeb59::function_23e1f90f()) {
             player giveachievement(#"doa_achievement_dungeondiver");

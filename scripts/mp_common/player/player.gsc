@@ -6,7 +6,7 @@
 #using script_44b0b8420eabacad;
 #using scripts\core_common\hud_shared.gsc;
 #using scripts\core_common\hud_message_shared.gsc;
-#using script_32c8b5b0eb2854f3;
+#using scripts\core_common\gamestate_util.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
 #using scripts\core_common\flag_shared.gsc;
@@ -183,13 +183,13 @@ function last_valid_position() {
             continue;
         }
         playerradius = self getpathfindingradius();
-        if (distance2dsquared(origin, self.last_valid_position) < function_a3f6cdac(playerradius) && function_a3f6cdac(origin[2] - self.last_valid_position[2]) < function_a3f6cdac(16)) {
+        if (distance2dsquared(origin, self.last_valid_position) < sqr(playerradius) && sqr(origin[2] - self.last_valid_position[2]) < sqr(16)) {
             wait(0.1);
             continue;
         }
         if (ispointonnavmesh(origin, self)) {
             self.last_valid_position = origin;
-        } else if (!ispointonnavmesh(origin, self) && ispointonnavmesh(self.last_valid_position, self) && distance2dsquared(origin, self.last_valid_position) < function_a3f6cdac(32)) {
+        } else if (!ispointonnavmesh(origin, self) && ispointonnavmesh(self.last_valid_position, self) && distance2dsquared(origin, self.last_valid_position) < sqr(32)) {
             wait(0.1);
             continue;
         } else {

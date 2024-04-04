@@ -13,14 +13,14 @@
 // Checksum 0x45032d4c, Offset: 0x120
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"objectives", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"objectives", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace objectives/objectives
 // Params 0, eflags: 0x6 linked
 // Checksum 0x3f210ab0, Offset: 0x168
 // Size: 0x1c
-function private function_70a657d8() {
+function private preinit() {
     mission.var_c68f10d0 = [];
     mission.var_ac8e2ff9 = [];
 }
@@ -29,7 +29,7 @@ function private function_70a657d8() {
 // Params 8, eflags: 0x2 linked
 // Checksum 0x7d62791b, Offset: 0x190
 // Size: 0x514
-function set(str_objective, a_targets, var_8c7ec5ce, var_4cfa0710 = str_objective, var_690561dc, var_87dc4de8 = 1, show_waypoint = 1, var_bfcac307) {
+function set(str_objective, a_targets, var_8c7ec5ce, var_4cfa0710 = str_objective, var_690561dc, show_splash = 1, show_waypoint = 1, var_bfcac307) {
     level flag::wait_till(#"gameplay_started");
     if (isdefined(a_targets)) {
         if (!isdefined(a_targets)) {
@@ -38,7 +38,7 @@ function set(str_objective, a_targets, var_8c7ec5ce, var_4cfa0710 = str_objectiv
             a_targets = array(a_targets);
         }
         if (a_targets.size > 1) {
-            scripted(var_4cfa0710, undefined, var_690561dc, var_87dc4de8, var_bfcac307);
+            scripted(var_4cfa0710, undefined, var_690561dc, show_splash, var_bfcac307);
             function_1de88d60(var_4cfa0710, undefined, 0, a_targets.size);
         }
         foreach (target in a_targets) {
@@ -93,7 +93,7 @@ function set(str_objective, a_targets, var_8c7ec5ce, var_4cfa0710 = str_objectiv
         namespace_96850e69::function_572778b9(n_obj_id, 0);
         namespace_96850e69::function_6a43edf3(n_obj_id, 0);
     }
-    if (var_87dc4de8 && isdefined(var_690561dc)) {
+    if (show_splash && isdefined(var_690561dc)) {
         thread namespace_96850e69::function_8d9f9a22(n_obj_id);
         thread namespace_96850e69::function_1c6b4aeb();
     }
@@ -107,24 +107,24 @@ function set(str_objective, a_targets, var_8c7ec5ce, var_4cfa0710 = str_objectiv
 // Params 6, eflags: 0x2 linked
 // Checksum 0x9edd800b, Offset: 0x6b0
 // Size: 0x84
-function follow(var_4cfa0710, var_b3177bd9, var_690561dc, var_87dc4de8, show_waypoint = 0, var_c3056ba3 = #"hash_f71affaf9c403ac") {
-    set(var_c3056ba3, var_b3177bd9, 1, var_4cfa0710, var_690561dc, var_87dc4de8, show_waypoint);
+function follow(var_4cfa0710, var_b3177bd9, var_690561dc, show_splash, show_waypoint = 0, var_c3056ba3 = #"hash_f71affaf9c403ac") {
+    set(var_c3056ba3, var_b3177bd9, 1, var_4cfa0710, var_690561dc, show_splash, show_waypoint);
 }
 
 // Namespace objectives/objectives
 // Params 7, eflags: 0x2 linked
 // Checksum 0xed2b57a0, Offset: 0x740
 // Size: 0x7c
-function kill(var_4cfa0710, var_3829dccf, var_690561dc, var_87dc4de8, show_waypoint, var_bfcac307, var_c3056ba3 = #"hash_5c90265e62b1f975") {
-    set(var_c3056ba3, var_3829dccf, 1, var_4cfa0710, var_690561dc, var_87dc4de8, show_waypoint, var_bfcac307);
+function kill(var_4cfa0710, var_3829dccf, var_690561dc, show_splash, show_waypoint, var_bfcac307, var_c3056ba3 = #"hash_5c90265e62b1f975") {
+    set(var_c3056ba3, var_3829dccf, 1, var_4cfa0710, var_690561dc, show_splash, show_waypoint, var_bfcac307);
 }
 
 // Namespace objectives/objectives
 // Params 8, eflags: 0x0
 // Checksum 0xe90c45c8, Offset: 0x7c8
 // Size: 0xf4
-function area(var_4cfa0710, var_8343acf6, radius, var_690561dc, var_87dc4de8, show_waypoint, var_bfcac307, var_c3056ba3 = #"hash_4a026a0a4473d478") {
-    set(var_c3056ba3, undefined, 0, var_4cfa0710, var_690561dc, var_87dc4de8, show_waypoint, var_bfcac307);
+function area(var_4cfa0710, var_8343acf6, radius, var_690561dc, show_splash, show_waypoint, var_bfcac307, var_c3056ba3 = #"hash_4a026a0a4473d478") {
+    set(var_c3056ba3, undefined, 0, var_4cfa0710, var_690561dc, show_splash, show_waypoint, var_bfcac307);
     if (isentity(var_8343acf6)) {
         function_60645c02(var_4cfa0710, var_8343acf6.origin);
     } else {
@@ -137,28 +137,28 @@ function area(var_4cfa0710, var_8343acf6, radius, var_690561dc, var_87dc4de8, sh
 // Params 6, eflags: 0x2 linked
 // Checksum 0xea58e9f9, Offset: 0x8c8
 // Size: 0xa4
-function goto(var_4cfa0710, position, var_690561dc, var_87dc4de8, show_waypoint, var_c3056ba3 = #"hash_7057d3992f70bf08") {
+function goto(var_4cfa0710, position, var_690561dc, show_splash, show_waypoint, var_c3056ba3 = #"hash_7057d3992f70bf08") {
     if (isdefined(mission.var_c68f10d0[var_4cfa0710])) {
         function_60645c02(var_4cfa0710, position);
         return;
     }
-    set(var_c3056ba3, position, 0, var_4cfa0710, var_690561dc, var_87dc4de8, show_waypoint);
+    set(var_c3056ba3, position, 0, var_4cfa0710, var_690561dc, show_splash, show_waypoint);
 }
 
 // Namespace objectives/objectives
 // Params 6, eflags: 0x2 linked
 // Checksum 0x5590638, Offset: 0x978
 // Size: 0x6c
-function function_4eb5c04a(var_4cfa0710, position, var_690561dc, var_87dc4de8, show_waypoint, var_c3056ba3 = #"hash_6d05b1cec06f98c") {
-    goto(var_4cfa0710, position, var_690561dc, var_87dc4de8, show_waypoint, var_c3056ba3);
+function function_4eb5c04a(var_4cfa0710, position, var_690561dc, show_splash, show_waypoint, var_c3056ba3 = #"hash_6d05b1cec06f98c") {
+    goto(var_4cfa0710, position, var_690561dc, show_splash, show_waypoint, var_c3056ba3);
 }
 
 // Namespace objectives/objectives
 // Params 5, eflags: 0x2 linked
 // Checksum 0xc7ea85f8, Offset: 0x9f0
 // Size: 0x64
-function scripted(var_4cfa0710, a_ents, var_690561dc, var_87dc4de8, var_bfcac307) {
-    set(#"hash_75de14e1b11e62fd", a_ents, 1, var_4cfa0710, var_690561dc, var_87dc4de8, 0, var_bfcac307);
+function scripted(var_4cfa0710, a_ents, var_690561dc, show_splash, var_bfcac307) {
+    set(#"hash_75de14e1b11e62fd", a_ents, 1, var_4cfa0710, var_690561dc, show_splash, 0, var_bfcac307);
 }
 
 // Namespace objectives/objectives
@@ -186,7 +186,7 @@ function remove(str_objective, a_targets) {
             if (target function_31679256(str_objective)) {
                 n_obj_id = target.a_n_objective_ids[str_objective];
                 target.a_n_objective_ids[str_objective] = undefined;
-                namespace_96850e69::function_80af6d(n_obj_id);
+                namespace_96850e69::remove_objective(n_obj_id);
                 objective_delete(n_obj_id);
                 gameobjects::release_obj_id(n_obj_id);
             }
@@ -196,7 +196,7 @@ function remove(str_objective, a_targets) {
     if (isdefined(mission.var_c68f10d0[str_objective])) {
         n_obj_id = mission.var_c68f10d0[str_objective];
         mission.var_c68f10d0[str_objective] = undefined;
-        namespace_96850e69::function_80af6d(n_obj_id);
+        namespace_96850e69::remove_objective(n_obj_id);
         objective_delete(n_obj_id);
         gameobjects::release_obj_id(n_obj_id);
     }
@@ -306,7 +306,7 @@ function complete(str_objective, a_targets, var_834e72f6 = 0) {
 // Size: 0x6c
 function function_aa8c2bb2(str_objective, *a_targets) {
     self endon(#"deleted", "complete_objective_" + a_targets);
-    self waittill(#"death", #"hash_26d74c393e63d809");
+    self waittill(#"death", #"remove_objective");
     thread complete(a_targets, self);
 }
 
@@ -430,7 +430,7 @@ function function_3595a59d(str_objective) {
 // Params 4, eflags: 0x0
 // Checksum 0xfde51020, Offset: 0x1978
 // Size: 0xe0
-function function_c00bea3b(str_objective, a_targets, var_9922f839, n_value) {
+function set_value(str_objective, a_targets, var_9922f839, n_value) {
     a_n_objective_ids = function_d849bbf2(str_objective, a_targets);
     foreach (n_objective_id in a_n_objective_ids) {
         objective_setuimodelvalue(n_objective_id, var_9922f839, n_value);

@@ -13,7 +13,7 @@
 // Checksum 0x8781ce26, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"load", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"load", &preinit, undefined, undefined, undefined);
 }
 
 // Namespace load/load_shared
@@ -31,7 +31,7 @@ function main() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc69033f6, Offset: 0x160
 // Size: 0x8c
-function private function_70a657d8() {
+function private preinit() {
     if (sessionmodeiscampaigngame()) {
         level.game_mode_suffix = "_cp";
     } else if (sessionmodeiszombiesgame()) {

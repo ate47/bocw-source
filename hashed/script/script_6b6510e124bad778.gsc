@@ -215,7 +215,7 @@ function function_7f7a069d() {
     var_20367411 = self.doa.score.var_98425e00 - self.doa.score.var_6ec1ad9d;
     var_fd0181fe = self.doa.score.var_e49e3de7 - self.doa.score.var_6ec1ad9d;
     level clientfield::set_world_uimodel(self.doa.score.var_16ec5307, var_20367411 / var_fd0181fe);
-    if (is_true(self.doa.var_70c50ae0)) {
+    if (is_true(self.doa.respawning)) {
         var_2e0e9ad1 = self.doa.var_ac8a92d4 / self.doa.var_22e62f63;
         var_a40917f6 = (1 - var_2e0e9ad1) * self.doa.var_22e62f63 / 1000;
         level clientfield::set_world_uimodel(self.doa.score.var_5cb9ca20, 1 - var_2e0e9ad1);
@@ -247,7 +247,7 @@ function function_9aff0a25(var_9ba84610) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xef772df9, Offset: 0x1c88
 // Size: 0xd4
-function function_55775bbc(var_9ba84610, set = 1) {
+function showhint(var_9ba84610, set = 1) {
     level.doa.var_25f4de97 = level.doa.var_25f4de97 | 1 << var_9ba84610;
     if (set && isdefined(self.doa)) {
         if (!isdefined(self.doa.var_25f4de97)) {
@@ -268,7 +268,7 @@ function function_c28bc3eb(var_9ba84610, set = 1, delay = 0) {
         wait(delay);
     }
     foreach (player in getplayers()) {
-        player function_55775bbc(var_9ba84610, set);
+        player showhint(var_9ba84610, set);
     }
 }
 
