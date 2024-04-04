@@ -284,14 +284,13 @@ function function_516794d8(grenadeent, var_7e6e7f9f) {
     grenadeteam = grenadeent.team;
     owner = grenadeent.owner;
     while (true) {
-        waitresult = undefined;
         waitresult = var_160d2855 waittilltimeout(0.2, #"death");
         playertargets = grenadeent getpotentialtargets(owner, grenadeteam, var_7e6e7f9f);
         foreach (player in playertargets) {
             if (player hasperk(#"hash_5fef46715b368a6e")) {
                 continue;
             }
-            if (waitresult._notify == #"timeout" && isdefined(var_160d2855) && player istouching(var_160d2855) && bullettracepassed(grenadeent.origin, player.origin + vectorscale((0, 0, 1), 12), 0, player)) {
+            if (waitresult._notify == #"timeout" && isdefined(var_160d2855) && player istouching(var_160d2855) && bullettracepassed(grenadeent.origin, player.origin + (0, 0, 12), 0, player)) {
                 if (!isdefined(player.var_2ee59975)) {
                     player.var_2ee59975 = [];
                 } else if (!isarray(player.var_2ee59975)) {

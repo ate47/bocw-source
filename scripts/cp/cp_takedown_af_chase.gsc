@@ -270,7 +270,7 @@ function function_2ccc781e(var_d3440450, var_50cc0d4f) {
     waitframe(1);
     org = getent("rpg_guy_plane_spot", "script_noteworthy");
     level.plane_rpg_guy = spawner::simple_spawn_single("plane_rpg_guy");
-    level.plane_rpg_guy linkto(org, undefined, (0, 0, 0), vectorscale((0, 1, 0), 180));
+    level.plane_rpg_guy linkto(org, undefined, (0, 0, 0), (0, 180, 0));
     level.plane_rpg_guy val::set(#"af_chase", "ignoreall", 1);
     level waittill(#"hash_3b760cd442251b37");
     level thread dialogue::radio("vox_cp_tdwn_07400_masn_ontheground_ee", undefined, 1);
@@ -499,22 +499,22 @@ function function_9555ada1() {
     level thread function_2205d3f9();
     level flag::wait_till("af_chase_fire_rpg");
     weapon = getweapon("launcher_standard_t9_takedown_chase");
-    org = level.af_plane gettagorigin("tag_body_ramp_rear_lower_animate") + vectorscale((0, 0, 1), 60);
+    org = level.af_plane gettagorigin("tag_body_ramp_rear_lower_animate") + (0, 0, 60);
     trucks = getvehiclearray("af_enemy_chase_veh_l", "script_noteworthy");
     truck = array::get_all_closest(level.player.origin, trucks, undefined, 1, 5000)[0];
     if (isdefined(truck)) {
         /#
             debugaxis(truck.origin, truck.angles, 36);
         #/
-        var_d5843701 = vectornormalize(truck.origin + vectorscale((0, 0, 1), 200) - org);
+        var_d5843701 = vectornormalize(truck.origin + (0, 0, 200) - org);
         var_9441d79a = anglestoforward(truck.angles);
         missile = level.player magicmissile(weapon, org, var_d5843701);
-        missile missile_settarget(truck, vectorscale((0, 0, 1), 30));
+        missile missile_settarget(truck, (0, 0, 30));
     }
     level flag::wait_till("af_start_rc_car");
     while (!flag::get("af_start_crash")) {
-        org = level.af_plane gettagorigin("tag_body_ramp_rear_lower_animate") + vectorscale((0, 0, 1), 60);
-        var_d5843701 = vectornormalize(level.player.origin + vectorscale((0, 0, 1), 100) - org);
+        org = level.af_plane gettagorigin("tag_body_ramp_rear_lower_animate") + (0, 0, 60);
+        var_d5843701 = vectornormalize(level.player.origin + (0, 0, 100) - org);
         missile = level.player magicmissile(weapon, org, var_d5843701);
         wait(randomfloatrange(3, 5));
     }
@@ -820,7 +820,7 @@ function function_d9fae56b() {
     waitframe(1);
     var_87816bd7 = getent("bronco_probe", "targetname");
     if (isdefined(var_87816bd7)) {
-        var_87816bd7 linkto(level.var_49a5d2a4, "tag_body_animate", vectorscale((0, 0, 1), 44), (0, 0, 0));
+        var_87816bd7 linkto(level.var_49a5d2a4, "tag_body_animate", (0, 0, 44), (0, 0, 0));
     }
     var_c4042c90 = getent("bronco_bed_probe", "targetname");
     if (isdefined(var_c4042c90)) {
@@ -841,7 +841,7 @@ function function_b90ebd9a() {
     util::magic_bullet_shield(level.woods);
     level.woods thread util::function_27f5f662(["vox_cp_tdwn_07200_wood_letsgomoveit_7f", "vox_cp_tdwn_07200_wood_hopin_3f", "vox_cp_tdwn_07200_wood_getinwecancatch_96"], "af_player_start_ride", 3);
     level objectives::complete("af_follow_adler", level.adler);
-    objectives::function_4eb5c04a("af_get_in_truck", level.var_49a5d2a4 gettagorigin("tag_bed") + vectorscale((0, 0, 1), 24));
+    objectives::function_4eb5c04a("af_get_in_truck", level.var_49a5d2a4 gettagorigin("tag_bed") + (0, 0, 24));
     level flag::wait_till_any(["af_player_get_in_back", "af_player_get_in_left", "af_player_get_in_right"]);
     level.player thread actions::function_202ab848(0);
     level.player thread actions::function_b0868791("takedown", 0);
@@ -1042,7 +1042,7 @@ function function_d4dfd1df() {
     self endon(#"death");
     /#
         while (true) {
-            debug_line(self.origin, self.origin + vectorscale((0, 0, 1), 5000), (0, 1, 0), undefined, undefined, 1);
+            debug_line(self.origin, self.origin + (0, 0, 5000), (0, 1, 0), undefined, undefined, 1);
             waitframe(1);
         }
     #/
@@ -1133,7 +1133,6 @@ function function_35bf824f() {
     var_ea3f660f = 0;
     var_fb6cba84 = 0;
     while (true) {
-        ret = undefined;
         ret = level waittill(#"hash_23db14c35403da49");
         wait(randomfloatrange(3, 6));
         if (isdefined(ret.veh) && isalive(ret.veh)) {
@@ -1202,7 +1201,7 @@ function function_ba23e9b(*player, var_b8ef2e) {
     wait(0.1);
     right_vec = anglestoright(self.angles);
     var_a7ccb4c1 = anglestoforward(self.angles);
-    var_43939108 = vectorscale((-1, 0, 0), 6);
+    var_43939108 = (-6, 0, 0);
     var_5fb21670 = (0, 0, 0);
     if (!var_b8ef2e) {
         var_43939108 = var_43939108 + right_vec * 24;
@@ -1261,7 +1260,6 @@ function function_b5d668a4(passenger) {
     passenger notify(#"new_death_anim");
     self thread function_868edfac(passenger);
     while (passenger.health > 1) {
-        ret = undefined;
         ret = passenger waittill(#"damage");
         if (passenger.health > 1) {
             level.player playhitmarker(undefined, 5, undefined, 0, 0, 0);
@@ -1436,7 +1434,7 @@ function function_3c7a908d(var_50cc0d4f) {
     level.rc_car makevehicleusable();
     waitframe(1);
     level.player val::set(#"hash_11ec473621277f18", "freezecontrols", 1);
-    var_a00e7b18 = level.var_49a5d2a4.angles - vectorscale((0, 1, 0), 3);
+    var_a00e7b18 = level.var_49a5d2a4.angles - (0, 3, 0);
     level.rc_car.angles = var_a00e7b18;
     push = 42;
     if (var_50cc0d4f) {
@@ -1544,7 +1542,7 @@ function function_e652a247() {
         clip.angles = var_ca688dc9.angles;
         level waittill(#"starting_crash_seq");
         var_ca688dc9 delete();
-        clip.origin = clip.origin - vectorscale((0, 0, 1), 20);
+        clip.origin = clip.origin - (0, 0, 20);
     }
 }
 
@@ -1849,7 +1847,7 @@ function function_149a7584(var_ba735fae) {
                 self resumespeed(5);
             }
             v_goal = self.origin + anglestoforward(self.angles + (0, n_modifier * 35, 0)) * 600;
-            a_trace = physicstraceex(v_goal + vectorscale((0, 0, 1), 200), v_goal - vectorscale((0, 0, 1), 1000));
+            a_trace = physicstraceex(v_goal + (0, 0, 200), v_goal - (0, 0, 1000));
             n_set_speed = n_current_speed * 3;
             self setspeed(n_set_speed, n_set_speed / 2);
             self function_a57c34b7(a_trace[#"position"], 0);
@@ -1871,7 +1869,6 @@ function function_326abc48() {
     var_1d542590 = 1;
     level.var_e37c1d1 = 0;
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"chase_walla");
         if (level.var_e37c1d1 < var_8bd12fb4) {
             waitresult.enemy thread function_e4f900a2(var_1d542590);
@@ -1964,7 +1961,7 @@ function function_b9613eb(right = 1, speed_pct = 1, var_4c7dbda9 = 10, var_6466f
     self vehicle::detach_path();
     n_current_speed = self getspeedmph();
     v_goal = self.origin + anglestoforward(self.angles + (0, n_modifier * var_4c7dbda9, 0)) * var_6466f659;
-    a_trace = physicstraceex(v_goal + vectorscale((0, 0, 1), 200), v_goal - vectorscale((0, 0, 1), 200));
+    a_trace = physicstraceex(v_goal + (0, 0, 200), v_goal - (0, 0, 200));
     self setspeed(n_current_speed * speed_pct);
     /#
     #/
@@ -2025,7 +2022,6 @@ function function_e90d5c1() {
     level.var_89cb0a79 = gettime();
     tag_time = 10;
     for (var_c500345d = player function_ab88cc4(); var_c500345d > 0; var_c500345d = player function_ab88cc4()) {
-        ret = undefined;
         ret = player waittilltimeout(tag_time, #"weapon_fired");
         if (ret._notify == #"timeout") {
             guys = getaiarray("af_vh_enemy", "targetname");

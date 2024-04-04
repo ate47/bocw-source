@@ -43,7 +43,7 @@ function private preinit() {
 function function_65829e59(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (self hasdobj(bwastimejump)) {
         function_239993de(bwastimejump, #"hash_3028e4dc03a28071", self, "j_spine4");
-        playsound(bwastimejump, #"hash_74d089a256aab94", self.origin + vectorscale((0, 0, 1), 35));
+        playsound(bwastimejump, #"hash_74d089a256aab94", self.origin + (0, 0, 35));
     }
 }
 

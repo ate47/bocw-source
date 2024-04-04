@@ -35,9 +35,7 @@ function function_a8a4341(watcher) {
     }
     if (isdefined(watcher.weapon.customsettings)) {
         var_6f1c6122 = getscriptbundle(watcher.weapon.customsettings);
-        /#
-            assert(isdefined(var_6f1c6122));
-        #/
+        assert(isdefined(var_6f1c6122));
         level.var_ac78d00e.var_a74161cc = var_6f1c6122;
     }
     watcher.altdetonate = 1;
@@ -172,9 +170,7 @@ function function_acc500c4(watcher) {
         var_1911997c = level.var_ac78d00e.var_a74161cc.var_e26881f;
         if (isdefined(var_1911997c)) {
             var_5d0f385a = isdefined(level.var_ac78d00e.var_a74161cc.var_c932e2b0) ? level.var_ac78d00e.var_a74161cc.var_c932e2b0 : 0;
-            /#
-                assert(var_5d0f385a <= self.weapon.fusetime);
-            #/
+            assert(var_5d0f385a <= self.weapon.fusetime);
             var_d3839360 = float(self.weapon.fusetime) / 1000 - var_5d0f385a;
             wait(var_d3839360);
             if (isdefined(level.var_ac78d00e.var_a74161cc.var_28f86309)) {

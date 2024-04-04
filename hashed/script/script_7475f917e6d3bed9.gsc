@@ -25,9 +25,7 @@
 // Checksum 0xb4dc9451, Offset: 0x280
 // Size: 0x1a0
 function init_shared(bundlename, var_b083dcd0) {
-    /#
-        assert(!isdefined(var_b083dcd0) || isfunctionptr(var_b083dcd0));
-    #/
+    assert(!isdefined(var_b083dcd0) || isfunctionptr(var_b083dcd0));
     killstreaks::register_killstreak(bundlename, isdefined(var_b083dcd0) ? var_b083dcd0 : &function_aad649e1);
     clientfield::register("scriptmover", "" + #"hash_72f92383f772d276", 1, 1, "int");
     clientfield::register("scriptmover", "" + #"hash_3d8e05debfa62f2d", 1, 1, "int");
@@ -116,7 +114,7 @@ function function_88e2e18a(killstreaktype, location, team, killstreak_id, startd
         if (isdefined(location.height)) {
             height = location.origin[2] + location.height;
         }
-        trace = bullettrace(position + vectorscale((0, 0, 1), 10000), position - vectorscale((0, 0, 1), 10000), 0, undefined, 1);
+        trace = bullettrace(position + (0, 0, 10000), position - (0, 0, 10000), 0, undefined, 1);
         targetpoint = trace[#"fraction"] > 1 ? (position[0], position[1], 0) : trace[#"position"];
         /#
             if (getdvarint(#"hash_2cb865fc68c3cb44", 0)) {
@@ -140,9 +138,7 @@ function function_88e2e18a(killstreaktype, location, team, killstreak_id, startd
     killstreakbundle = killstreaks::get_script_bundle(bundlename);
     planeoffset = killstreakbundle.var_aadafb41 / 2;
     startnodes = getvehiclenodearray(var_e0d1e239, "targetname");
-    /#
-        assert(startnodes.size, "<unknown string>");
-    #/
+    assert(startnodes.size, "<unknown string>");
     pivot = struct::get("napalm_strike_pivot", "targetname");
     foreach (index, startnode in startnodes) {
         plane = spawnplane(startnode, self, killstreak_id, killstreakbundle, killstreaktype);
@@ -309,7 +305,7 @@ function private function_c4cbfac7(plane, team, killstreakbundle, var_8be94730, 
     angles = (0, plane.angles[1], 0);
     forward = anglestoforward(angles);
     bombvelocity = vectorscale(forward, forwardspeed) + (0, 0, killstreakbundle.var_b938e27c * -1 * var_c3aa02d8);
-    startposition = plane.origin + vectorscale((0, 0, -1), 40) + var_8be94730;
+    startposition = plane.origin + (0, 0, -40) + var_8be94730;
     weapon = getweapon("napalm_strike");
     bomb = self magicmissile(weapon, startposition, bombvelocity);
     if (!isdefined(bomb)) {
@@ -335,7 +331,6 @@ function private function_c4cbfac7(plane, team, killstreakbundle, var_8be94730, 
     bomb thread scene::play(#"p9_fxanim_mp_napalm_strike_spin", shot, array(var_5496c504));
     killcament unlink();
     killcament linkto(bomb);
-    result = undefined;
     result = bomb waittill(#"projectile_impact_explode", #"entitydeleted");
     location notify(#"hash_33e766cf85525f6e");
     if (isdefined(var_5496c504)) {
@@ -396,8 +391,8 @@ function private function_77ba1651(position, owner, normal, direction, killcamen
     var_8a11dbc7 = killstreakbundle.var_36ae071d / 2;
     if (normal[2] < 0.5) {
         var_36c22d1d = position + vectorscale(var_493d36f9, 2);
-        var_8ae62b02 = var_36c22d1d - vectorscale((0, 0, 1), 20);
-        var_69d15ad0 = physicstrace(var_36c22d1d, var_8ae62b02, vectorscale((-1, -1, -1), 0.5), vectorscale((1, 1, 1), 0.5), self, 1 | 4);
+        var_8ae62b02 = var_36c22d1d - (0, 0, 20);
+        var_69d15ad0 = physicstrace(var_36c22d1d, var_8ae62b02, (-0.5, -0.5, -0.5), (0.5, 0.5, 0.5), self, 1 | 4);
         if (var_69d15ad0[#"fraction"] < 1) {
             position = var_36c22d1d;
             if (var_69d15ad0[#"fraction"] > 0) {
@@ -411,7 +406,7 @@ function private function_77ba1651(position, owner, normal, direction, killcamen
         wall_normal = normal;
         var_36c22d1d = originalposition + vectorscale(var_493d36f9, 8);
         var_8ae62b02 = var_36c22d1d - (0, 0, var_8a11dbc7);
-        var_69d15ad0 = physicstrace(var_36c22d1d, var_8ae62b02, vectorscale((-1, -1, -1), 3), vectorscale((1, 1, 1), 3), self, 1 | 4);
+        var_69d15ad0 = physicstrace(var_36c22d1d, var_8ae62b02, (-3, -3, -3), (3, 3, 3), self, 1 | 4);
         var_693f108f = var_69d15ad0[#"fraction"] * var_8a11dbc7;
         if (var_693f108f > 10) {
             var_e76400c0 = originalposition;
@@ -439,7 +434,7 @@ function function_985141f2(owner, startpos, normal, direction, killcament, team,
     colorarray[colorarray.size] = (0.9, 0.2, 0.2);
     colorarray[colorarray.size] = (0.2, 0.9, 0.2);
     colorarray[colorarray.size] = (0.2, 0.2, 0.9);
-    colorarray[colorarray.size] = vectorscale((1, 1, 1), 0.9);
+    colorarray[colorarray.size] = (0.9, 0.9, 0.9);
     locations = [];
     locations[#"loc"] = [];
     locations[#"normal"] = [];

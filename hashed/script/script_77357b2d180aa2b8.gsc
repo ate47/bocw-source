@@ -62,7 +62,7 @@ function function_2a1e5c1f(origin, angles, modelname, type = 1, var_5653e2ee = 2
     var_56d14168.angles = angles;
     var_56d14168 function_94c7c0d9(type, var_5653e2ee, context);
     if (type === 4) {
-        var_56d14168.trigger_offset = vectorscale((0, 0, -1), 128);
+        var_56d14168.trigger_offset = (0, 0, -128);
     }
     if (isdefined(var_fc5f2aa0)) {
         args = strtok(var_fc5f2aa0, ";");

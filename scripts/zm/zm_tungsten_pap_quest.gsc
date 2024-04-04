@@ -702,7 +702,6 @@ function function_2a795365(*e_player) {
 function function_1446ef30() {
     level endon(#"end_game", #"hash_219a3f198a6aa63");
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"crafting_started");
         player = waitresult.activator;
         if (waitresult.unitrigger.stub.blueprint.name === "zblueprint_tungsten_damaged_teleporter") {
@@ -818,7 +817,7 @@ function function_4710b248(b_skipped) {
     level scene::init(#"hash_2db28dd555f08d92", "targetname");
     wait(0.5);
     level scene::play(#"hash_2db28dd555f08d92", "targetname");
-    playsoundatposition(#"hash_52aaa9a4a2e71c73", level.ai_abomination.origin + vectorscale((0, 0, 1), 40));
+    playsoundatposition(#"hash_52aaa9a4a2e71c73", level.ai_abomination.origin + (0, 0, 40));
     level flag::set(#"hash_820c83920af16b7");
     level flag::set("pause_round_timeout");
     if (!level flag::get(#"hash_419cb6aea3c6771e")) {
@@ -1084,7 +1083,6 @@ function function_b279c743() {
     self endon(#"death");
     s_interact = struct::get("lock_down_button");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         activator = waitresult.activator;
         if (isplayer(activator)) {

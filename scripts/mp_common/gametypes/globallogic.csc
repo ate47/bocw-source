@@ -155,7 +155,7 @@ function annihilate_effect_cb(localclientnum, oldval, newval, *bnewent, *binitia
                 where = self gettagorigin("J_SpineLower");
                 if (!isdefined(where)) {
                     where = self.origin;
-                    where = where + vectorscale((0, 0, 1), 40);
+                    where = where + (0, 0, 40);
                 }
                 playfx(binitialsnap, fields.fullbodyexplosion, where);
             }
@@ -173,7 +173,7 @@ function pineapplegun_effect_cb(localclientnum, oldval, newval, *bnewent, *binit
             where = self gettagorigin("J_SpineLower");
             if (!isdefined(where)) {
                 where = self.origin;
-                where = where + vectorscale((0, 0, 1), 40);
+                where = where + (0, 0, 40);
             }
             playfx(binitialsnap, level._effect[#"pineapplegun_explosion"], where);
         }

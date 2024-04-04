@@ -28,9 +28,7 @@ function private preinit() {
 // Checksum 0x5f4b5b9c, Offset: 0x1b8
 // Size: 0x154
 function private function_9abee270(model) {
-    /#
-        assert(isdefined(model));
-    #/
+    assert(isdefined(model));
     if (model.classname != "script_model" && model.classname != "script_brushmodel") {
         return;
     }

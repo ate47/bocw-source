@@ -99,17 +99,17 @@ function function_bd34685d(origin, angles, var_91e0802f) {
     startangles = [];
     testangles = [];
     testangles[0] = (0, 0, 0);
-    testangles[1] = vectorscale((0, -1, 0), 30);
-    testangles[2] = vectorscale((0, 1, 0), 30);
-    testangles[3] = vectorscale((0, -1, 0), 60);
-    testangles[4] = vectorscale((0, 1, 0), 60);
-    testangles[5] = vectorscale((0, 1, 0), 90);
-    testangles[6] = vectorscale((0, -1, 0), 90);
-    testangles[7] = vectorscale((0, 1, 0), 120);
-    testangles[8] = vectorscale((0, -1, 0), 120);
-    testangles[9] = vectorscale((0, 1, 0), 150);
-    testangles[10] = vectorscale((0, -1, 0), 150);
-    testangles[11] = vectorscale((0, 1, 0), 180);
+    testangles[1] = (0, -30, 0);
+    testangles[2] = (0, 30, 0);
+    testangles[3] = (0, -60, 0);
+    testangles[4] = (0, 60, 0);
+    testangles[5] = (0, 90, 0);
+    testangles[6] = (0, -90, 0);
+    testangles[7] = (0, 120, 0);
+    testangles[8] = (0, -120, 0);
+    testangles[9] = (0, 150, 0);
+    testangles[10] = (0, -150, 0);
+    testangles[11] = (0, 180, 0);
     validspawns = spawnstruct();
     validpositions = [];
     var_e9fa8058 = [];
@@ -171,9 +171,7 @@ function function_4e0fa155(clone) {
             break;
         }
     }
-    /#
-        assert(var_329388c);
-    #/
+    assert(var_329388c);
 }
 
 // Namespace namespace_5d515bd5/namespace_515a5054
@@ -198,9 +196,7 @@ function function_34038097(clone) {
 // Checksum 0xd4a8aa42, Offset: 0xcc8
 // Size: 0x1cc
 function function_56d29b42() {
-    /#
-        assert(level.doa.clones.size == 12);
-    #/
+    assert(level.doa.clones.size == 12);
     var_c81221ac = undefined;
     for (i = 0; i < 12; i++) {
         if (!isdefined(var_c81221ac) && isdefined(level.doa.clones[i])) {
@@ -408,7 +404,6 @@ function private function_5d01145(clone, player, forward, spawntime) {
     }
     clone namespace_ec06fe4a::function_8c808737();
     clone thread function_d1b2df66(spawntime, player);
-    result = undefined;
     result = clone waittilltimeout(spawntime + 0.5, #"hash_21a476934a4bd2ba", #"clone_shutdown", #"death");
     if (result._notify != #"clone_shutdown") {
         _configurecloneteam(clone, player, 0);

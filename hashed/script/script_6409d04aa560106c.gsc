@@ -8,22 +8,6 @@
 class czm_laststand_client : cluielem {
 
     // Namespace czm_laststand_client/zm_laststand_client
-    // Params 0, eflags: 0x8
-    // Checksum 0x179b1bf4, Offset: 0x3f8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace czm_laststand_client/zm_laststand_client
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xa858f513, Offset: 0x660
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace czm_laststand_client/zm_laststand_client
     // Params 1, eflags: 0x0
     // Checksum 0xf1deb3eb, Offset: 0x588
     // Size: 0x24
@@ -44,7 +28,7 @@ class czm_laststand_client : cluielem {
     // Checksum 0xfe2d9a2f, Offset: 0x628
     // Size: 0x30
     function set_num_downs(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "num_downs", value);
+        set_data(localclientnum, "num_downs", value);
     }
 
     // Namespace czm_laststand_client/zm_laststand_client
@@ -52,7 +36,7 @@ class czm_laststand_client : cluielem {
     // Checksum 0x3567927f, Offset: 0x5b8
     // Size: 0x30
     function set_bleedout_progress(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "bleedout_progress", value);
+        set_data(localclientnum, "bleedout_progress", value);
     }
 
     // Namespace czm_laststand_client/zm_laststand_client
@@ -71,7 +55,7 @@ class czm_laststand_client : cluielem {
     // Checksum 0x3ce0f577, Offset: 0x5f0
     // Size: 0x30
     function set_revive_progress(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "revive_progress", value);
+        set_data(localclientnum, "revive_progress", value);
     }
 
     // Namespace czm_laststand_client/zm_laststand_client
@@ -80,9 +64,9 @@ class czm_laststand_client : cluielem {
     // Size: 0x88
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "bleedout_progress", 0);
-        [[ self ]]->set_data(localclientnum, "revive_progress", 0);
-        [[ self ]]->set_data(localclientnum, "num_downs", 0);
+        set_data(localclientnum, "bleedout_progress", 0);
+        set_data(localclientnum, "revive_progress", 0);
+        set_data(localclientnum, "num_downs", 0);
     }
 
 }

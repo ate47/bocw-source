@@ -33,9 +33,7 @@ function function_b73af3c(name) {
 // Checksum 0x29132605, Offset: 0x168
 // Size: 0x144
 function function_59e67711(objective) {
-    /#
-        assert(!issubstr(objective, "<unknown string>"), "<unknown string>");
-    #/
+    assert(!issubstr(objective, "<unknown string>"), "<unknown string>");
     if (isdefined(level.activities.levelname)) {
         clientsyssetstate(level.activities.var_7e507488, "0," + objective + "," + level.gameskill + "," + level.var_1c5d2bf4 + "," + level.activities.levelname);
         level.activities.levelname = undefined;

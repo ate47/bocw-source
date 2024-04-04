@@ -34,11 +34,11 @@
 function timeshifterupdate(player, origin) {
     var_d98803e1 = namespace_ec06fe4a::function_65ee50ba(origin);
     origin = (origin[0], origin[1], var_d98803e1[2]);
-    clock = namespace_ec06fe4a::spawnmodel(origin + vectorscale((0, 0, 1), 12));
+    clock = namespace_ec06fe4a::spawnmodel(origin + (0, 0, 12));
     if (!isdefined(clock)) {
         return;
     }
-    org = namespace_ec06fe4a::spawnmodel(origin + vectorscale((0, 0, 1), 12), "tag_origin");
+    org = namespace_ec06fe4a::spawnmodel(origin + (0, 0, 12), "tag_origin");
     if (!isdefined(org)) {
         clock delete();
         return;
@@ -66,7 +66,6 @@ function timeshifterupdate(player, origin) {
     org namespace_83eb6304::function_3ecfde67("timeshift");
     clock thread namespace_ec06fe4a::function_2d920b3c(0.6, 0);
     trigger thread function_dd66aa61();
-    waitresult = undefined;
     waitresult = player waittilltimeout(timetowait, #"death", #"entering_last_stand", #"doa_exit_taken", #"disconnect");
     org namespace_83eb6304::turnofffx("timeshift");
     org namespace_83eb6304::function_3ecfde67("timeshift_fade");
@@ -113,7 +112,6 @@ function private function_91bc1c0d(trigger) {
 function private function_dd66aa61() {
     self endon(#"death");
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         guy = result.activator;
         if (is_true(guy.var_d33de52f)) {

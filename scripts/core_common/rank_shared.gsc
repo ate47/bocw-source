@@ -190,9 +190,7 @@ function getscoreinfovalue(type) {
         n_score = isdefined(level.scoreinfo[type][#"sp"]) ? level.scoreinfo[type][#"sp"] : 0;
         if (isdefined(level.scoremodifiercallback) && isdefined(n_score)) {
             n_score = [[ level.scoremodifiercallback ]](type, n_score);
-            /#
-                assert(isint(n_score));
-            #/
+            assert(isint(n_score));
         }
         /#
             var_1eb7c454 = getdvarfloat(#"hash_eae9a8ee387705d", 1);
@@ -332,9 +330,7 @@ function getarenapointsstat() {
 // Checksum 0x7e9f32ee, Offset: 0x1488
 // Size: 0x7c
 function getrankxp() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (isplayer(self)) {
         xp = self function_2f2051c9();
         if (!isdefined(xp)) {
@@ -350,9 +346,7 @@ function getrankxp() {
 // Checksum 0x17955094, Offset: 0x1510
 // Size: 0x84
 function function_5b197def(var_9169ac47) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (isplayer(self)) {
         xp = self function_2f2051c9(var_9169ac47);
         if (!isdefined(xp)) {
@@ -368,9 +362,7 @@ function function_5b197def(var_9169ac47) {
 // Checksum 0x861a3ba4, Offset: 0x15a0
 // Size: 0x6e
 function getrank() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (isplayer(self)) {
         return getrankforxp(getrankxp());
     }
@@ -382,9 +374,7 @@ function getrank() {
 // Checksum 0xd66e0ef7, Offset: 0x1618
 // Size: 0x6e
 function getprestige() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (isplayer(self)) {
         return function_a470b201(getrankxp());
     }
@@ -526,9 +516,7 @@ function event_handler[player_rankup] codecallback_rankup(eventstruct) {
 // Size: 0x68
 function getitemindex(refstring) {
     itemindex = getitemindexfromref(refstring);
-    /#
-        assert(itemindex > 0, "<unknown string>" + refstring + "<unknown string>" + itemindex);
-    #/
+    assert(itemindex > 0, "<unknown string>" + refstring + "<unknown string>" + itemindex);
     return itemindex;
 }
 

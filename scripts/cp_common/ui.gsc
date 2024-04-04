@@ -242,9 +242,7 @@ function private function_ba6cfb59(var_3b192471, b_enable = 1, var_96dc7504 = 1)
 function function_b4e596c2(var_3b192471, n_time, str_notify) {
     level endon("destroy_ui_countdown_timer_" + var_3b192471);
     self endon(var_3b192471 + "_complete");
-    /#
-        assert(isdefined(level.var_ef4974d7[var_3b192471]), "<unknown string>" + var_3b192471);
-    #/
+    assert(isdefined(level.var_ef4974d7[var_3b192471]), "<unknown string>" + var_3b192471);
     while (level.var_ef4974d7[var_3b192471].n_time_left > n_time) {
         waitframe(1);
     }
@@ -312,9 +310,7 @@ function function_7ec9d70a(var_3b192471 = "mission_fail_timer") {
 // Checksum 0xc3fdc5ac, Offset: 0x13c8
 // Size: 0x72
 function function_7856e5e0(var_3b192471 = "mission_fail_timer") {
-    /#
-        assert(isdefined(level.var_ef4974d7[var_3b192471]), "<unknown string>" + var_3b192471 + "<unknown string>");
-    #/
+    assert(isdefined(level.var_ef4974d7[var_3b192471]), "<unknown string>" + var_3b192471 + "<unknown string>");
     return level.var_ef4974d7[var_3b192471].n_time_left;
 }
 

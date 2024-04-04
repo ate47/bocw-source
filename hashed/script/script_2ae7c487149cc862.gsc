@@ -35,14 +35,14 @@ function event_handler[level_init] main(*eventstruct) {
 // Size: 0x33c
 function function_94fa6eb5(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
-        self.var_40433812 = playfx(fieldname, "sr/fx9_obj_orda_spawn_portal", self.origin + vectorscale((0, 0, 1), 7500), anglestoforward(self.angles), anglestoup(self.angles));
+        self.var_40433812 = playfx(fieldname, "sr/fx9_obj_orda_spawn_portal", self.origin + (0, 0, 7500), anglestoforward(self.angles), anglestoup(self.angles));
         self.var_3e3964d7 = playfx(fieldname, "sr/fx9_orda_aether_portal_beam", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
         if (!isdefined(self.var_d416b1e7)) {
-            playsound(fieldname, #"hash_70ed741814a290fd", self.origin + vectorscale((0, 0, 1), 3000));
-            self.var_d416b1e7 = self playloopsound(#"hash_53739f99da95c943", undefined, vectorscale((0, 0, 1), 3000));
+            playsound(fieldname, #"hash_70ed741814a290fd", self.origin + (0, 0, 3000));
+            self.var_d416b1e7 = self playloopsound(#"hash_53739f99da95c943", undefined, (0, 0, 3000));
         }
         if (!isdefined(self.var_1f2ef20a)) {
-            self.var_1f2ef20a = self playloopsound(#"hash_48fab12b9bb60979", undefined, vectorscale((0, 0, 1), 500));
+            self.var_1f2ef20a = self playloopsound(#"hash_48fab12b9bb60979", undefined, (0, 0, 500));
         }
         return;
     }
@@ -55,7 +55,7 @@ function function_94fa6eb5(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_3e3964d7 = undefined;
     }
     if (isdefined(self.var_d416b1e7)) {
-        playsound(fieldname, #"hash_1442f26e3f7ba2c4", self.origin + vectorscale((0, 0, 1), 3000));
+        playsound(fieldname, #"hash_1442f26e3f7ba2c4", self.origin + (0, 0, 3000));
         self stoploopsound(self.var_d416b1e7);
         self.var_d416b1e7 = undefined;
     }
@@ -73,8 +73,8 @@ function function_94fa6eb5(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x1c6
 function function_7999ed44(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
-        self.var_a5ded638 = playfx(fieldname, "zombie/fx9_aether_crystal_lg_obj_holdout", self.origin + vectorscale((0, 0, 1), 32), anglestoforward(self.angles), anglestoup(self.angles));
-        self.var_1181af89 = playfx(fieldname, "sr/fx9_obj_holdout_env_signifier", self.origin + vectorscale((0, 0, 1), 32), anglestoforward(self.angles), anglestoup(self.angles));
+        self.var_a5ded638 = playfx(fieldname, "zombie/fx9_aether_crystal_lg_obj_holdout", self.origin + (0, 0, 32), anglestoforward(self.angles), anglestoup(self.angles));
+        self.var_1181af89 = playfx(fieldname, "sr/fx9_obj_holdout_env_signifier", self.origin + (0, 0, 32), anglestoforward(self.angles), anglestoup(self.angles));
         return;
     }
     if (isdefined(self.var_a5ded638)) {
@@ -320,13 +320,13 @@ function function_bd2b40f5(localclientnum, *oldval, newval, *bnewent, *binitials
 // Checksum 0x927c99f1, Offset: 0x1d40
 // Size: 0x1c4
 function function_9609c8b9(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    playfx(bwastimejump, "sr/fx9_obj_holdout_crystal_bomb", self.origin + vectorscale((0, 0, 1), 128), anglestoforward(self.angles), anglestoup(self.angles));
+    playfx(bwastimejump, "sr/fx9_obj_holdout_crystal_bomb", self.origin + (0, 0, 128), anglestoforward(self.angles), anglestoup(self.angles));
     playsound(bwastimejump, #"hash_219637e3c93b9531", self.origin);
     wait(2.5);
-    playfx(bwastimejump, "sr/fx9_obj_holdout_crystal_shockwave_blast", self.origin + vectorscale((0, 0, 1), 128), anglestoforward(self.angles), anglestoup(self.angles));
-    playsound(bwastimejump, #"hash_716354440fd93185", self.origin + vectorscale((0, 0, 1), 128));
+    playfx(bwastimejump, "sr/fx9_obj_holdout_crystal_shockwave_blast", self.origin + (0, 0, 128), anglestoforward(self.angles), anglestoup(self.angles));
+    playsound(bwastimejump, #"hash_716354440fd93185", self.origin + (0, 0, 128));
     self playrumbleonentity(bwastimejump, "sr_payload_portal_final_rumble");
-    earthquake(bwastimejump, 0.25, 1.5, self.origin + vectorscale((0, 0, 1), 128), 4000);
+    earthquake(bwastimejump, 0.25, 1.5, self.origin + (0, 0, 128), 4000);
 }
 
 // Namespace namespace_4db53432/namespace_4db53432
@@ -334,7 +334,7 @@ function function_9609c8b9(localclientnum, *oldval, *newval, *bnewent, *binitial
 // Checksum 0x1bac738c, Offset: 0x1f10
 // Size: 0xcc
 function function_6a4e64d1(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    self.var_fec2778b = playfx(bwastimejump, "sr/fx9_obj_holdout_crystal_pulse", self.origin + vectorscale((0, 0, 1), 32), anglestoforward(self.angles), anglestoup(self.angles));
+    self.var_fec2778b = playfx(bwastimejump, "sr/fx9_obj_holdout_crystal_pulse", self.origin + (0, 0, 32), anglestoforward(self.angles), anglestoup(self.angles));
     self playsound(bwastimejump, #"hash_39e7c67ba77ef8cc");
 }
 

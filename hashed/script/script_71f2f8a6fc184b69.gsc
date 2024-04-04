@@ -8,22 +8,6 @@
 class cinsertion_passenger_count : cluielem {
 
     // Namespace cinsertion_passenger_count/insertion_passenger_count
-    // Params 0, eflags: 0x8
-    // Checksum 0x5e50a76d, Offset: 0x350
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cinsertion_passenger_count/insertion_passenger_count
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x339de60f, Offset: 0x4a0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cinsertion_passenger_count/insertion_passenger_count
     // Params 1, eflags: 0x0
     // Checksum 0x417f4cce, Offset: 0x438
     // Size: 0x24
@@ -53,7 +37,7 @@ class cinsertion_passenger_count : cluielem {
     // Checksum 0xb58457c0, Offset: 0x468
     // Size: 0x30
     function set_count(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "count", value);
+        set_data(localclientnum, "count", value);
     }
 
     // Namespace cinsertion_passenger_count/insertion_passenger_count
@@ -62,7 +46,7 @@ class cinsertion_passenger_count : cluielem {
     // Size: 0x40
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "count", 0);
+        set_data(localclientnum, "count", 0);
     }
 
 }

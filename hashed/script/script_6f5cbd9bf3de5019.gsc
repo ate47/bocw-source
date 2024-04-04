@@ -99,7 +99,6 @@ function private function_b985a0f1(player) {
 function function_fcc7ca52() {
     self endon(#"death", #"pilot_exit");
     while (true) {
-        params = undefined;
         params = self waittill(#"gunner_weapon_fired");
         if (params.gunner_index == 3) {
             wait(0.05);
@@ -406,7 +405,7 @@ function private function_6ed31d89(params) {
 function function_200c3bd0(*params) {
     self setvehvelocity((0, 0, 0));
     self setangularvelocity((0, 0, 0));
-    self setphysacceleration(vectorscale((0, 0, -1), 386));
+    self setphysacceleration((0, 0, -386));
 }
 
 // Namespace namespace_f36ad2eb/namespace_f36ad2eb
@@ -509,12 +508,8 @@ function function_7db28345(*params) {
 // Size: 0x65a
 function private function_479389f3() {
     height = self.height;
-    /#
-        assert(isdefined(self.radius));
-    #/
-    /#
-        assert(isdefined(self.height));
-    #/
+    assert(isdefined(self.radius));
+    assert(isdefined(self.height));
     var_33a206d0 = [];
     var_33a206d0[#"leftrear"] = self gettagorigin("tag_ground_contact_left_rear");
     var_33a206d0[#"leftmiddle"] = self gettagorigin("tag_ground_contact_left_middle");
@@ -528,14 +523,14 @@ function private function_479389f3() {
         if (!isdefined(origin)) {
             return false;
         }
-        var_df47b913[tag] = physicstrace(origin + vectorscale((0, 0, 1), 25), origin - vectorscale((0, 0, 1), 75), (0, 0, 0), (0, 0, 0), self, 2);
+        var_df47b913[tag] = physicstrace(origin + (0, 0, 25), origin - (0, 0, 75), (0, 0, 0), (0, 0, 0), self, 2);
     }
     var_dc8469e2 = [];
     foreach (tag, origin in var_8fc02d3b) {
         if (!isdefined(origin)) {
             return false;
         }
-        var_dc8469e2[tag] = physicstrace(origin + vectorscale((0, 0, 1), 25), origin - vectorscale((0, 0, 1), 75), (0, 0, 0), (0, 0, 0), self, 2);
+        var_dc8469e2[tag] = physicstrace(origin + (0, 0, 25), origin - (0, 0, 75), (0, 0, 0), (0, 0, 0), self, 2);
     }
     var_d643c4fc = 0;
     var_e10b67f7 = [];
@@ -734,7 +729,7 @@ function private function_f4d358df() {
 function private function_d929b41() {
     self.var_4dab0a63 = 0;
     speed = self getspeedmph();
-    heighttrace = physicstrace(self.origin, self.origin - vectorscale((0, 0, 1), 1536), (0, 0, 0), (0, 0, 0), self, 2);
+    heighttrace = physicstrace(self.origin, self.origin - (0, 0, 1536), (0, 0, 0), (0, 0, 0), self, 2);
     if (speed < 15 && heighttrace[#"fraction"] < 0.260417) {
         self.var_4dab0a63 = 1;
         self.var_c1764af8 = 1;

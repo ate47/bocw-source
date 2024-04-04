@@ -63,9 +63,9 @@ function starting(*var_d3440450) {
     level flag::set("flag_qasim_ready_for_interrogation");
     level scene::init("scene_tkd_hit2_rooftop");
     level thread function_daaa52d5();
-    level.var_2fef04d8 = getactorarray("raid_qasim", "targetname")[0];
-    level.var_2fef04d8 thread namespace_b100dd86::swap_head(undefined, "c_t9_cp_ira_militant_vip_qasim_head_nohat_injured");
-    level.var_2fef04d8 thread namespace_b100dd86::function_f82142f8(undefined, "c_t9_cp_ira_militant_vip_qasim_tkd_body");
+    level.qasim = getactorarray("raid_qasim", "targetname")[0];
+    level.qasim thread namespace_b100dd86::swap_head(undefined, "c_t9_cp_ira_militant_vip_qasim_head_nohat_injured");
+    level.qasim thread namespace_b100dd86::function_f82142f8(undefined, "c_t9_cp_ira_militant_vip_qasim_tkd_body");
     level thread scene::skipto_end("scene_tkd_hit2_rooftop_slide_enemy2", "Shot 1", undefined, 1, 0);
     player util::delay(1, undefined, &util::function_749362d7, 1);
 }
@@ -204,18 +204,18 @@ function function_c0b643d5() {
 // Checksum 0x570b37c1, Offset: 0x1668
 // Size: 0x14c
 function function_26e6230d() {
-    if (!isdefined(level.var_2fef04d8)) {
-        level.var_2fef04d8 = getactorarray("raid_qasim", "targetname")[0];
+    if (!isdefined(level.qasim)) {
+        level.qasim = getactorarray("raid_qasim", "targetname")[0];
     }
-    level.var_2fef04d8 endon(#"death");
-    level.var_2fef04d8.var_c681e4c1 = 1;
-    level.var_2fef04d8.ignoreall = 1;
+    level.qasim endon(#"death");
+    level.qasim.var_c681e4c1 = 1;
+    level.qasim.ignoreall = 1;
     level.raid_adler = level.adler;
     level.raid_woods = level.woods;
-    level.raid_qasim = level.var_2fef04d8;
+    level.raid_qasim = level.qasim;
     level flag::wait_till("flag_qasim_ready_for_interrogation");
-    level.var_2fef04d8 thread dialog_tree::function_cfa96cee(level.var_27da2f39, undefined, undefined, undefined, 100, 200, 15, vectorscale((0, 0, 1), 6), 1);
-    level.var_2fef04d8 prompts::function_2557566(#"use", 5);
+    level.qasim thread dialog_tree::function_cfa96cee(level.var_27da2f39, undefined, undefined, undefined, 100, 200, 15, (0, 0, 6), 1);
+    level.qasim prompts::function_2557566(#"use", 5);
 }
 
 // Namespace tkdn_raid_capture/namespace_9b20efbd
@@ -251,8 +251,8 @@ function function_6c1a4c01(a_ents, *str_shot) {
 // Size: 0x15c
 function function_44f8874() {
     level notify(#"hash_5737131f700cbdb");
-    level.var_2fef04d8 stopsounds();
-    level.var_2fef04d8 dialogue::function_47b06180();
+    level.qasim stopsounds();
+    level.qasim dialogue::function_47b06180();
     if (isdefined(level.var_30fc6630)) {
         level.var_30fc6630 delete();
     }
@@ -306,7 +306,7 @@ function function_3dafee47() {
 function function_86b6bafa() {
     level thread namespace_a052577e::function_e88f8edb();
     self waittill(#"hash_12324459eb2bc76d");
-    level.var_58759087 thread dialog_tree::run(level.var_2fef04d8);
+    level.var_58759087 thread dialog_tree::run(level.qasim);
     level districts::function_a7d79fcb(["airfield_intro", "airfield_base"]);
     level thread slide_enemy2_clip();
     if (isdefined(level.raid_adler.model) && level.raid_adler.model != #"c_t9_usa_hero_adler_civ_amsterdam_body") {
@@ -405,7 +405,7 @@ function function_ba74fe83() {
 // Size: 0x3c
 function function_58efdf6d() {
     self waittill(#"hash_12324459eb2bc76d");
-    level.var_4a3df400 thread dialog_tree::run(level.var_2fef04d8);
+    level.var_4a3df400 thread dialog_tree::run(level.qasim);
 }
 
 // Namespace tkdn_raid_capture/namespace_9b20efbd
@@ -415,7 +415,7 @@ function function_58efdf6d() {
 function function_6321f3d1() {
     self waittill(#"hash_12324459eb2bc76d");
     collectibles::function_6cd091d2(1, 0);
-    level.var_cb1375a9 thread dialog_tree::run(level.var_2fef04d8);
+    level.var_cb1375a9 thread dialog_tree::run(level.qasim);
 }
 
 // Namespace tkdn_raid_capture/namespace_9b20efbd
@@ -469,7 +469,7 @@ function function_4f4627e4() {
     util::delay(1, undefined, &dialogue::function_96171f6d, "vox_cp_tdwn_05100_masn_thereyougo_99");
     level thread scene::play("scene_tkd_hit2_rooftop", "dt_5_res");
     self thread function_95707bc7();
-    level.var_2fef04d8 thread function_f48f4f4f();
+    level.qasim thread function_f48f4f4f();
     player = getplayers()[0];
     player util::delay(2, undefined, &util::function_749362d7, 0);
     player waittillmatch({#notetrack:"end"}, #"hash_576c5aac6ddaa60a");
@@ -494,20 +494,19 @@ function function_f48f4f4f() {
 function function_95707bc7() {
     player = getplayers()[0];
     level endon(#"hash_19e8d79db3b9786a");
-    level.var_2fef04d8 thread function_fa343ac7();
-    aiutility::addaioverridedamagecallback(level.var_2fef04d8, &function_c5881277);
-    waitresult = undefined;
-    waitresult = level.var_2fef04d8 waittill(#"damage", #"dt_5_res_over");
+    level.qasim thread function_fa343ac7();
+    aiutility::addaioverridedamagecallback(level.qasim, &function_c5881277);
+    waitresult = level.qasim waittill(#"damage", #"dt_5_res_over");
     if (waitresult._notify == "dt_5_res_over") {
         level thread scene::play("scene_tkd_hit2_rooftop", "dt_5_res_idle");
         level thread function_2ed341fb();
-        level.var_2fef04d8 waittill(#"damage");
-        level.var_2fef04d8 stopsounds();
+        level.qasim waittill(#"damage");
+        level.qasim stopsounds();
     }
     player player_decision::function_a029a114(1);
     player_decision::function_8c0836dd(1);
     level notify(#"hash_2871e831466dfa03");
-    level.var_2fef04d8 dialogue::function_47b06180();
+    level.qasim dialogue::function_47b06180();
     level scene::play("scene_tkd_hit2_rooftop", "dt_end_3_playershoots");
 }
 
@@ -516,8 +515,8 @@ function function_95707bc7() {
 // Checksum 0xa4cbb07f, Offset: 0x2d08
 // Size: 0x34
 function function_e65b6174() {
-    level.var_2fef04d8 thread function_230fc686();
-    level.var_2fef04d8 thread function_c5f7e209();
+    level.qasim thread function_230fc686();
+    level.qasim thread function_c5f7e209();
 }
 
 // Namespace tkdn_raid_capture/namespace_9b20efbd
@@ -543,13 +542,13 @@ function function_c5f7e209() {
 // Checksum 0xc0f2cd82, Offset: 0x2dd8
 // Size: 0x136
 function function_c5881277(*inflictor, *attacker, damage, *idflags, *meansofdeath, *weapon, *var_fd90b0bb, *point, *dir, hitloc, *vdamageorigin, *psoffsettime, *damagefromunderneath, *modelindex, *partname, *vsurfacenormal) {
-    aiutility::removeaioverridedamagecallback(level.var_2fef04d8, &function_c5881277);
+    aiutility::removeaioverridedamagecallback(level.qasim, &function_c5881277);
     level endon(#"hash_19e8d79db3b9786a");
     if (vsurfacenormal === "helmet" || vsurfacenormal === "head") {
-        level.var_2fef04d8 thread function_230fc686();
+        level.qasim thread function_230fc686();
         return partname;
     } else {
-        level.var_2fef04d8 thread function_c5f7e209();
+        level.qasim thread function_c5f7e209();
         return partname;
     }
     return partname;
@@ -587,7 +586,7 @@ function function_2ed341fb() {
     level endon(#"hash_2871e831466dfa03");
     wait(6);
     level notify(#"hash_19e8d79db3b9786a");
-    aiutility::removeaioverridedamagecallback(level.var_2fef04d8, &function_c5881277);
+    aiutility::removeaioverridedamagecallback(level.qasim, &function_c5881277);
     player player_decision::function_a029a114(1);
     player_decision::function_8c0836dd(1);
     level scene::play("scene_tkd_hit2_rooftop", "dt_end_4_Adlershoots");
@@ -684,7 +683,7 @@ function function_2d0aefe0(*height, time = 3) {
     self disableweapons();
     struct = struct::get("raid_zoom_out_pos", "targetname");
     namespace_a052577e::function_60c0a46b();
-    var_4449f5d0 = spawn("script_model", self.origin + vectorscale((0, 0, 1), 120));
+    var_4449f5d0 = spawn("script_model", self.origin + (0, 0, 120));
     var_4449f5d0.angles = struct.angles;
     var_4449f5d0 setmodel("tag_origin");
     self playerlinktoblend(var_4449f5d0, "tag_origin", 0.5, 0, 0, 0.5, 0, 0, 1);

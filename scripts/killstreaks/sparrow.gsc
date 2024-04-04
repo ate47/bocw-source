@@ -69,7 +69,6 @@ function event_handler[missile_fire] function_8cd77cf6(eventstruct) {
     if (function_119a2a90(weapon)) {
         missile.soundmod = "player";
         missile thread weapons::check_stuck_to_player(1, 0, weapon);
-        waitresult = undefined;
         waitresult = missile waittill(#"projectile_impact_explode", #"projectile_impact_player", #"bow_projectile_deleted");
         if (waitresult._notify == "bow_projectile_deleted") {
             return;

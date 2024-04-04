@@ -8,22 +8,6 @@
 class cdoa_overworld : cluielem {
 
     // Namespace cdoa_overworld/doa_overworld
-    // Params 0, eflags: 0x8
-    // Checksum 0xf58476ea, Offset: 0x2f8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cdoa_overworld/doa_overworld
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x9604ee4a, Offset: 0x3c8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cdoa_overworld/doa_overworld
     // Params 1, eflags: 0x0
     // Checksum 0xe9672f07, Offset: 0x398
     // Size: 0x24

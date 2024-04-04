@@ -403,7 +403,7 @@ function function_690312e5(type) {
         timer = gettime() + 5000;
         while (gettime() < timer) {
             wait(0.05);
-            print3d(self.origin + vectorscale((0, 0, 1), 72), msg, color, 1, 3);
+            print3d(self.origin + (0, 0, 72), msg, color, 1, 3);
         }
     #/
 }
@@ -434,7 +434,7 @@ function function_314b7255(text, color, alpha, scale, offset, life) {
             return;
         }
         if (!isdefined(offset)) {
-            offset = vectorscale((0, 0, 1), 92);
+            offset = (0, 0, 92);
         }
         if (!isdefined(scale)) {
             scale = 0.5;
@@ -598,8 +598,8 @@ function function_d0c3b413() {
         if (isdefined(self.shootposoverride)) {
             line(self geteye(), self.shootposoverride, (1, 1, 0));
         }
-        facingstart = self.origin + vectorscale((0, 0, 1), 8);
-        facingend = self.origin + vectorscale((0, 0, 1), 8) + anglestoforward(self.angles) * 36;
+        facingstart = self.origin + (0, 0, 8);
+        facingend = self.origin + (0, 0, 8) + anglestoforward(self.angles) * 36;
         line(facingstart, facingend, (0, 0, 1));
     #/
 }
@@ -628,9 +628,7 @@ function function_3e6e06ae(baseangles, angle, angleidx) {
 // Size: 0x16c
 function function_391d248f(origin, startangle, endangle, baseangles, len, angleidx, var_6246c419, color) {
     /#
-        /#
-            assert(startangle < endangle);
-        #/
+        assert(startangle < endangle);
         prevpt = origin + len * function_3e6e06ae(baseangles, startangle, angleidx);
         nextpt = prevpt;
         line(origin, prevpt, color);
@@ -677,7 +675,7 @@ function draw_fov() {
             function_391d248f(start, -1 * fov_pitch, fov_pitch, (eye_pitch, eye_yaw, 0), viewdist, 0, var_16d2c066, color);
         }
         var_346c7ea3 = acos(self.fovcosineperiph);
-        function_391d248f(start, -1 * var_346c7ea3, var_346c7ea3, (0, eye_yaw, 0), sqrt(self.fovcosineperiphmaxdistsq), 1, var_16d2c066, vectorscale((1, 1, 0), 0.5));
+        function_391d248f(start, -1 * var_346c7ea3, var_346c7ea3, (0, eye_yaw, 0), sqrt(self.fovcosineperiphmaxdistsq), 1, var_16d2c066, (0.5, 0.5, 0));
         if (is_true(self.flashlight.on)) {
             start = self gettagorigin(self.flashlight.tag);
             yaw = self gettagangles(self.flashlight.tag)[1];
@@ -808,9 +806,7 @@ function function_65b21ab8(speaker, line) {
         } else {
             stealth.var_42d9f5df++;
         }
-        /#
-            assert(stealth.var_42d9f5df <= 16);
-        #/
+        assert(stealth.var_42d9f5df <= 16);
     #/
 }
 
@@ -827,7 +823,7 @@ function function_bd9767df(message, duration) {
             duration = 5;
         }
         for (time = 0; time < duration * 20; time++) {
-            print3d(self.origin + vectorscale((0, 0, 1), 45), message, (0.48, 9.4, 0.76), 0.85);
+            print3d(self.origin + (0, 0, 45), message, (0.48, 9.4, 0.76), 0.85);
             wait(0.05);
         }
     #/
@@ -864,7 +860,7 @@ function function_613009e2() {
         }
         colorgreen = (0.5, 0.7, 0.5);
         colorred = (0.7, 0.1, 0.1);
-        colorgray = vectorscale((1, 1, 1), 0.7);
+        colorgray = (0.7, 0.7, 0.7);
         foreach (obj in level.smartobjectpoints) {
             angles = (0, 0, 0);
             if (isdefined(obj.angles)) {
@@ -879,17 +875,17 @@ function function_613009e2() {
                 color = colorred;
             }
             draw_axis(obj.origin, angles, 12);
-            print3d(obj.origin - vectorscale((0, 0, 1), 12), function_9e72a96(obj.scriptbundlename), color, 1, 0.3, 1);
+            print3d(obj.origin - (0, 0, 12), function_9e72a96(obj.scriptbundlename), color, 1, 0.3, 1);
             if (!canuse) {
-                print3d(obj.origin - vectorscale((0, 0, 1), 20), "<unknown string>" + obj.nextusetime - gettime(), color, 1, 0.3, 1);
+                print3d(obj.origin - (0, 0, 20), "<unknown string>" + obj.nextusetime - gettime(), color, 1, 0.3, 1);
             }
-            print3d(obj.origin - vectorscale((0, 0, 1), 28), "<unknown string>" + obj.var_dd0284ce, color, 1, 0.3, 1);
+            print3d(obj.origin - (0, 0, 28), "<unknown string>" + obj.var_dd0284ce, color, 1, 0.3, 1);
             if (isdefined(obj.var_2edb5d76) && canuse) {
                 r = sqrt(obj.var_2edb5d76);
                 function_391d248f(obj.origin, 0, 360, angles, r, 1, 8, color);
             }
             if (claimed) {
-                print3d(obj.origin - vectorscale((0, 0, 1), 18), "<unknown string>" + obj.claimer getentitynumber(), color, 1, 0.3, 1);
+                print3d(obj.origin - (0, 0, 18), "<unknown string>" + obj.claimer getentitynumber(), color, 1, 0.3, 1);
                 line(obj.origin, obj.claimer.origin, color, 1, 0, 1);
             }
         }
@@ -918,14 +914,14 @@ function function_6a467cff() {
                 for (i = 1; i < region.route_points.size; i++) {
                     p0 = region.route_points[i - 1];
                     p1 = region.route_points[i];
-                    line(p0.origin, p1.origin, vectorscale((0, 1, 0), 0.7), 1, 0, 1);
+                    line(p0.origin, p1.origin, (0, 0.7, 0), 1, 0, 1);
                 }
                 foreach (smart_object in region.smart_objects) {
-                    function_391d248f(smart_object.origin, 0, 360, smart_object.angles, 10, 1, 3, vectorscale((1, 0, 0), 0.7));
+                    function_391d248f(smart_object.origin, 0, 360, smart_object.angles, 10, 1, 3, (0.7, 0, 0));
                 }
                 foreach (point in region.transition_points) {
                     foreach (transition_point in point.transitions) {
-                        line(point.origin, transition_point.origin, vectorscale((1, 1, 0), 0.7), 1, 0, 1);
+                        line(point.origin, transition_point.origin, (0.7, 0.7, 0), 1, 0, 1);
                     }
                 }
             }
@@ -953,9 +949,7 @@ function function_5a47b49c() {
             }
             var_7010df74 = [];
             foreach (region in group_data.hunt_regions) {
-                /#
-                    assert(isdefined(region.approx_location));
-                #/
+                assert(isdefined(region.approx_location));
                 space = 10;
                 count = 0;
                 size = 0.5;
@@ -978,7 +972,7 @@ function function_5a47b49c() {
             foreach (region in group_data.hunt_regions) {
                 foreach (link in region.region_links) {
                     toregion = link.region;
-                    line(region.approx_location, toregion.approx_location, vectorscale((0, 0, 1), 0.7), 1, 0, 1);
+                    line(region.approx_location, toregion.approx_location, (0, 0, 0.7), 1, 0, 1);
                 }
             }
         }

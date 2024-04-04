@@ -13,22 +13,6 @@
 // Method(s) 2 Total 2
 class class_698343df {
 
-    // Namespace class_698343df/zm_aoe
-    // Params 0, eflags: 0x1a linked
-    // Checksum 0x80f724d1, Offset: 0x220
-    // Size: 0x4
-    __constructor() {
-        
-    }
-
-    // Namespace class_698343df/zm_aoe
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x80f724d1, Offset: 0x230
-    // Size: 0x4
-    __destructor() {
-        
-    }
-
 }
 
 // Namespace zm_aoe/zm_aoe
@@ -69,16 +53,12 @@ function private postinit() {
 // Checksum 0x3b886474, Offset: 0x4f8
 // Size: 0xfc
 function private function_e969e75(aoeid) {
-    /#
-        assert(isdefined(level.var_400ae143));
-    #/
+    assert(isdefined(level.var_400ae143));
     if (!isdefined(level.var_400ae143)) {
         level.var_400ae143 = [];
     }
     foreach (var_46f1b5eb in level.var_400ae143) {
-        /#
-            assert(isdefined(var_46f1b5eb.aoeid));
-        #/
+        assert(isdefined(var_46f1b5eb.aoeid));
         if (var_46f1b5eb.aoeid == aoeid) {
             return var_46f1b5eb;
         }
@@ -91,9 +71,7 @@ function private function_e969e75(aoeid) {
 // Checksum 0xe49c6cd, Offset: 0x600
 // Size: 0x1d6
 function function_15dea507(aoeid, type, var_5ff737c1) {
-    /#
-        assert(isdefined(var_5ff737c1));
-    #/
+    assert(isdefined(var_5ff737c1));
     var_6ec6e01 = getscriptbundle(var_5ff737c1);
     if (!isdefined(var_6ec6e01)) {
         return;
@@ -102,9 +80,7 @@ function function_15dea507(aoeid, type, var_5ff737c1) {
         level.var_400ae143 = [];
     }
     arraykeys = getarraykeys(level.var_400ae143);
-    /#
-        assert(!isinarray(arraykeys, hash(type)));
-    #/
+    assert(!isinarray(arraykeys, hash(type)));
     var_46f1b5eb = new class_698343df();
     level.var_400ae143[type] = var_46f1b5eb;
     var_46f1b5eb.startfx = var_6ec6e01.start_effect;
@@ -127,9 +103,7 @@ function function_15dea507(aoeid, type, var_5ff737c1) {
 // Checksum 0x9844b945, Offset: 0x7e0
 // Size: 0xae
 function function_1b06433(type, var_2badd710) {
-    /#
-        assert(isdefined(var_2badd710));
-    #/
+    assert(isdefined(var_2badd710));
     var_3d910b11 = getscriptbundle(var_2badd710);
     if (!isdefined(var_3d910b11)) {
         return;

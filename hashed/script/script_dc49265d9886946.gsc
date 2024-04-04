@@ -314,7 +314,7 @@ function function_b6b75a5c(params) {
         player setorigin(s_teleport.origin);
         player setplayerangles(s_teleport.angles);
         player function_c6775cf9("boast_zm_final_quest_interact");
-        player.var_aa980bc4 = util::spawn_model(#"hash_74ae399683f5d585", v_origin + vectorscale((0, 0, 1), 30));
+        player.var_aa980bc4 = util::spawn_model(#"hash_74ae399683f5d585", v_origin + (0, 0, 30));
         player.var_aa980bc4 ghost();
         wait(7);
         if (!isdefined(var_6a25fa7)) {

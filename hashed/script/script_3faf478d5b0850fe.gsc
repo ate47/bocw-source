@@ -50,9 +50,7 @@ function announce(id, var_971e1071 = 15) {
     if (!isdefined(id)) {
         return;
     }
-    /#
-        assert(id >= 0 && id <= 72, "<unknown string>");
-    #/
+    assert(id >= 0 && id <= 72, "<unknown string>");
     payload = (id << 4) + var_971e1071;
     level clientfield::set("doa_announce", payload);
     util::wait_network_frame();

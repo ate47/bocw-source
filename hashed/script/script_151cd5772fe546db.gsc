@@ -8,22 +8,6 @@
 class czm_arcade_timer : cluielem {
 
     // Namespace czm_arcade_timer/zm_arcade_timer
-    // Params 0, eflags: 0x8
-    // Checksum 0x742d7204, Offset: 0x420
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace czm_arcade_timer/zm_arcade_timer
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x113a0025, Offset: 0x710
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace czm_arcade_timer/zm_arcade_timer
     // Params 1, eflags: 0x0
     // Checksum 0x4f3abc8e, Offset: 0x600
     // Size: 0x24
@@ -36,7 +20,7 @@ class czm_arcade_timer : cluielem {
     // Checksum 0xbee36a78, Offset: 0x6a0
     // Size: 0x30
     function set_minutes(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "minutes", value);
+        set_data(localclientnum, "minutes", value);
     }
 
     // Namespace czm_arcade_timer/zm_arcade_timer
@@ -44,7 +28,7 @@ class czm_arcade_timer : cluielem {
     // Checksum 0x4a3464a4, Offset: 0x6d8
     // Size: 0x30
     function set_title(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "title", value);
+        set_data(localclientnum, "title", value);
     }
 
     // Namespace czm_arcade_timer/zm_arcade_timer
@@ -60,7 +44,7 @@ class czm_arcade_timer : cluielem {
     // Checksum 0x9997bc27, Offset: 0x630
     // Size: 0x30
     function set_showzero(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "showzero", value);
+        set_data(localclientnum, "showzero", value);
     }
 
     // Namespace czm_arcade_timer/zm_arcade_timer
@@ -80,7 +64,7 @@ class czm_arcade_timer : cluielem {
     // Checksum 0x512bdfed, Offset: 0x668
     // Size: 0x30
     function set_seconds(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "seconds", value);
+        set_data(localclientnum, "seconds", value);
     }
 
     // Namespace czm_arcade_timer/zm_arcade_timer
@@ -89,10 +73,10 @@ class czm_arcade_timer : cluielem {
     // Size: 0xa4
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "showzero", 0);
-        [[ self ]]->set_data(localclientnum, "seconds", 0);
-        [[ self ]]->set_data(localclientnum, "minutes", 0);
-        [[ self ]]->set_data(localclientnum, "title", #"");
+        set_data(localclientnum, "showzero", 0);
+        set_data(localclientnum, "seconds", 0);
+        set_data(localclientnum, "minutes", 0);
+        set_data(localclientnum, "title", #"");
     }
 
 }

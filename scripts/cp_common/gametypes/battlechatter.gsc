@@ -116,9 +116,7 @@ function private function_2346ea47(event) {
 // Checksum 0x9d560087, Offset: 0x788
 // Size: 0x112
 function function_4a19b47a() {
-    /#
-        assert(isdefined(self.voiceprefix));
-    #/
+    assert(isdefined(self.voiceprefix));
     if (is_hero(self)) {
         self.var_3d0026c9 = "";
         return;
@@ -169,7 +167,6 @@ function function_b791d0e4() {
 function private function_158cbf3() {
     self endon(#"death");
     while (true) {
-        result = undefined;
         result = self waittill(#"asm_notify");
         if (self function_2346ea47(result.param)) {
             self function_bd51deb1(result.param);
@@ -184,7 +181,6 @@ function private function_158cbf3() {
 function function_e1c920f9() {
     self endon(#"death");
     while (true) {
-        result = undefined;
         result = self waittill(#"damage");
         if (isplayer(result.attacker) && damage_is_valid_for_friendlyfire_warning(result.mod)) {
             self function_bd51deb1("friendlyfire");
@@ -419,7 +415,6 @@ function event_handler[grenade_stuck] function_2a82bb92(eventstruct) {
 // Size: 0xdc
 function function_e0d850d2() {
     self endon(#"disconnect");
-    waitresult = undefined;
     waitresult = self waittill(#"death");
     attacker = waitresult.attacker;
     meansofdeath = waitresult.mod;
@@ -550,9 +545,7 @@ function function_9cb2c120(ai, line, var_7488e05b, category, var_954826ad, var_a
     }
     ai endon(#"death", #"disconnect");
     if (isdefined(var_7488e05b)) {
-        /#
-            assert(!isdefined(var_a8bd89dd));
-        #/
+        assert(!isdefined(var_a8bd89dd));
         var_a8bd89dd = [line + "_response"];
     }
     if (!isdefined(ai.voiceprefix) || !isdefined(ai.var_3d0026c9)) {
@@ -602,7 +595,7 @@ function function_7e56a9a1(soundalias, var_954826ad, var_a8bd89dd, category, var
         if (soundexists(soundalias)) {
             /#
                 if (getdvarint(#"hash_2abde9f4bcb01a86")) {
-                    print3d(self.origin + vectorscale((0, 0, 1), 60), soundalias, (0, 1, 0), 1, 1, 100);
+                    print3d(self.origin + (0, 0, 60), soundalias, (0, 1, 0), 1, 1, 100);
                 }
             #/
             if (isalive(self) && isactor(self) && self.archetype !== #"zombie_dog" && self.archetype !== #"mp_dog") {
@@ -611,7 +604,6 @@ function function_7e56a9a1(soundalias, var_954826ad, var_a8bd89dd, category, var
                 self playsound(soundalias);
             }
             self thread wait_playback_time(soundalias);
-            result = undefined;
             result = self waittill(soundalias, #"death", #"disconnect", #"bc_interrupt");
             if (isdefined(self)) {
                 if (result._notify == soundalias) {
@@ -633,7 +625,7 @@ function function_7e56a9a1(soundalias, var_954826ad, var_a8bd89dd, category, var
         }
         /#
             if (getdvarint(#"hash_2abde9f4bcb01a86")) {
-                print3d(self.origin + vectorscale((0, 0, 1), 60), soundalias, (1, 0, 0), 1, 1, 100);
+                print3d(self.origin + (0, 0, 60), soundalias, (1, 0, 0), 1, 1, 100);
             }
         #/
     }
@@ -711,7 +703,6 @@ function function_a0ec1dc0(suffix) {
 function pain_vox() {
     self endon(#"death", #"disconnect");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"hash_3ac4241a987b394f");
         if (randomintrange(0, 100) <= 100) {
             if (isalive(self)) {
@@ -851,9 +842,7 @@ function function_c9f7a37c(team, object, maxdist) {
 // Checksum 0x61bd141f, Offset: 0x2e40
 // Size: 0x54
 function function_2ab9360b(b_allow, str_category = "bc") {
-    /#
-        assert(isdefined(b_allow), "<unknown string>");
-    #/
+    assert(isdefined(b_allow), "<unknown string>");
     self.allowbattlechatter[str_category] = b_allow;
 }
 

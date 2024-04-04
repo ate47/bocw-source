@@ -75,7 +75,7 @@ function function_c2924276(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump) {
         v_pos = self.origin;
         playfx(fieldname, #"hash_5cde32c15506b440", v_pos);
-        playsound(fieldname, #"hash_2f340670f6ec30cb", v_pos + vectorscale((0, 0, 1), 25));
+        playsound(fieldname, #"hash_2f340670f6ec30cb", v_pos + (0, 0, 25));
     }
 }
 
@@ -85,7 +85,7 @@ function function_c2924276(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x9c
 function function_95190421(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     playfx(bwastimejump, #"zombie/fx9_onslaught_spawn_sm", self.origin);
-    playsound(bwastimejump, #"hash_58611db3b1d6494e", self.origin + vectorscale((0, 0, 1), 35));
+    playsound(bwastimejump, #"hash_58611db3b1d6494e", self.origin + (0, 0, 35));
 }
 
 // Namespace namespace_958b287a/namespace_958b287a

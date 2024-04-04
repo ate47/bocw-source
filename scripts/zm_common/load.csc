@@ -81,9 +81,7 @@ function warnmissilefired(*localclientnum, *set) {
 // Checksum 0xed3ab1bd, Offset: 0x2a0
 // Size: 0x3c
 function function_aeb1baea() {
-    /#
-        assert(!isdefined(level.var_f18a6bd6));
-    #/
+    assert(!isdefined(level.var_f18a6bd6));
     level.var_f18a6bd6 = &function_5e443ed1;
 }
 
@@ -92,11 +90,7 @@ function function_aeb1baea() {
 // Checksum 0x977bdf92, Offset: 0x2e8
 // Size: 0x114
 function function_5e443ed1() {
-    /#
-        /#
-            assert(isdefined(level.first_frame), "<unknown string>");
-        #/
-    #/
+    assert(isdefined(level.first_frame), "<unknown string>");
     zm::init();
     level thread util::init_utility();
     util::register_system(#"levelnotify", &levelnotifyhandler);

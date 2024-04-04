@@ -473,9 +473,7 @@ function private init_activecamo(var_f4eb4a50, forceupdate) {
         }
         activecamo = self.var_9413f8b4[var_f4eb4a50.name];
         activecamo.var_13949c61 = function_8a6ced15(var_f4eb4a50, forceupdate);
-        /#
-            assert(isdefined(activecamo.var_13949c61));
-        #/
+        assert(isdefined(activecamo.var_13949c61));
         return activecamo;
     }
     return undefined;
@@ -650,7 +648,6 @@ function function_12e53b2d() {
         self endon("<unknown string>");
         while (true) {
             var_f4eb4a50 = undefined;
-            waitresult = undefined;
             waitresult = level waittill(#"liveupdate");
             if (!isdefined(level.activecamoinfo)) {
                 continue;

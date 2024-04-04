@@ -53,9 +53,7 @@ function function_5a395617() {
                 collectible.var_430d1d6a = var_eeb11904.var_8ca1d4a;
                 collectible.index = k;
                 if (collectible.index >= 10) {
-                    /#
-                        assert(0, "<unknown string>" + function_9e72a96(collectible.var_430d1d6a) + "<unknown string>" + 10);
-                    #/
+                    assert(0, "<unknown string>" + function_9e72a96(collectible.var_430d1d6a) + "<unknown string>" + 10);
                 }
                 if (!isdefined(var_bdf7b99d[collectible.var_1d226975])) {
                     var_bdf7b99d[collectible.var_1d226975] = [];
@@ -72,9 +70,7 @@ function function_5a395617() {
                     continue;
                 }
                 if (collectible.var_1d226975 == 1 || collectible.var_1d226975 == 2) {
-                    /#
-                        assert(isdefined(collectible.var_ed968ffd));
-                    #/
+                    assert(isdefined(collectible.var_ed968ffd));
                     if (!isdefined(var_bdf7b99d[collectible.var_1d226975][collectible.var_ed968ffd])) {
                         var_bdf7b99d[collectible.var_1d226975][collectible.var_ed968ffd] = [];
                     } else if (!isarray(var_bdf7b99d[collectible.var_1d226975][collectible.var_ed968ffd])) {
@@ -86,25 +82,17 @@ function function_5a395617() {
                     continue;
                 }
                 if (collectible.var_1d226975 === 3) {
-                    /#
-                        assert(isdefined(collectible.var_f3575c58));
-                    #/
-                    /#
-                        assert(isdefined(collectible.var_ed968ffd));
-                    #/
+                    assert(isdefined(collectible.var_f3575c58));
+                    assert(isdefined(collectible.var_ed968ffd));
                     if (collectible.var_f3575c58 > 6) {
-                        /#
-                            assert(0, "<unknown string>" + function_9e72a96(collectible.var_ed968ffd) + "<unknown string>" + 6);
-                        #/
+                        assert(0, "<unknown string>" + function_9e72a96(collectible.var_ed968ffd) + "<unknown string>" + 6);
                     }
                     if (isdefined(collectible.var_f3575c58) && isdefined(collectible.var_ed968ffd)) {
                         if (!isdefined(var_7bb83649[collectible.var_f3575c58])) {
                             var_7bb83649[collectible.var_f3575c58] = collectible;
                         } else {
                             var_91783c0f = var_7bb83649[collectible.var_f3575c58].name;
-                            /#
-                                assert(0, "<unknown string>" + function_9e72a96(collectible.var_ed968ffd) + "<unknown string>" + collectible.var_f3575c58 + "<unknown string>" + function_9e72a96(collectible.name) + "<unknown string>" + function_9e72a96(var_91783c0f));
-                            #/
+                            assert(0, "<unknown string>" + function_9e72a96(collectible.var_ed968ffd) + "<unknown string>" + collectible.var_f3575c58 + "<unknown string>" + function_9e72a96(collectible.name) + "<unknown string>" + function_9e72a96(var_91783c0f));
                         }
                         if (!isdefined(var_bdf7b99d[collectible.var_1d226975][collectible.var_f3575c58])) {
                             var_bdf7b99d[collectible.var_1d226975][collectible.var_f3575c58] = [];
@@ -164,13 +152,9 @@ function function_293d81b4(var_1d226975 = 0, key) {
 // Checksum 0xd3974fa7, Offset: 0xa58
 // Size: 0xd4
 function function_c57acbc9(var_2a51713, value = 1) {
-    /#
-        assert(isdefined(var_2a51713));
-    #/
+    assert(isdefined(var_2a51713));
     player = getplayers()[0];
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player stats::set_stat(#"collectibles", var_2a51713 - 1, value);
     uploadstats(player);
 }
@@ -180,13 +164,9 @@ function function_c57acbc9(var_2a51713, value = 1) {
 // Checksum 0x5b82c720, Offset: 0xb38
 // Size: 0xde
 function function_ab921f3d(var_2a51713) {
-    /#
-        assert(isdefined(var_2a51713));
-    #/
+    assert(isdefined(var_2a51713));
     player = getplayers()[0];
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     if (isplayer(player)) {
         isunlocked = is_true(player stats::get_stat(#"collectibles", var_2a51713 - 1));
         return isunlocked;
@@ -199,16 +179,10 @@ function function_ab921f3d(var_2a51713) {
 // Checksum 0xc500a089, Offset: 0xc20
 // Size: 0x15c
 function function_316c48a3(var_d13a0347, var_28c9f917, var_bfb1faa4 = 1) {
-    /#
-        assert(isdefined(var_d13a0347));
-    #/
-    /#
-        assert(isdefined(var_28c9f917));
-    #/
+    assert(isdefined(var_d13a0347));
+    assert(isdefined(var_28c9f917));
     player = getplayers()[0];
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     if (var_bfb1faa4 == function_1fe63475(var_d13a0347, var_28c9f917)) {
         return;
     }
@@ -222,16 +196,10 @@ function function_316c48a3(var_d13a0347, var_28c9f917, var_bfb1faa4 = 1) {
 // Checksum 0x6802e2c1, Offset: 0xd88
 // Size: 0xea
 function function_1fe63475(var_d13a0347, var_28c9f917) {
-    /#
-        assert(isdefined(var_d13a0347));
-    #/
-    /#
-        assert(isdefined(var_28c9f917));
-    #/
+    assert(isdefined(var_d13a0347));
+    assert(isdefined(var_28c9f917));
     player = getplayers()[0];
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     isunlocked = is_true(player stats::get_stat(#"mapdata", var_d13a0347, #"evidence", var_28c9f917));
     return isunlocked;
 }
@@ -241,16 +209,10 @@ function function_1fe63475(var_d13a0347, var_28c9f917) {
 // Checksum 0x84979bf3, Offset: 0xe80
 // Size: 0xea
 function function_ee216b9e(var_d13a0347, var_28c9f917) {
-    /#
-        assert(isdefined(var_d13a0347));
-    #/
-    /#
-        assert(isdefined(var_28c9f917));
-    #/
+    assert(isdefined(var_d13a0347));
+    assert(isdefined(var_28c9f917));
     player = getplayers()[0];
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     isnew = is_true(player stats::get_stat(#"mapdata", var_d13a0347, #"hash_42b984266100b32", var_28c9f917));
     return isnew;
 }
@@ -260,16 +222,10 @@ function function_ee216b9e(var_d13a0347, var_28c9f917) {
 // Checksum 0xe2a32421, Offset: 0xf78
 // Size: 0xfc
 function function_55fb73ea(var_d13a0347, var_28c9f917) {
-    /#
-        assert(isdefined(var_d13a0347));
-    #/
-    /#
-        assert(isdefined(var_28c9f917));
-    #/
+    assert(isdefined(var_d13a0347));
+    assert(isdefined(var_28c9f917));
     player = getplayers()[0];
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     if (!function_ee216b9e(var_d13a0347, var_28c9f917)) {
         return;
     }

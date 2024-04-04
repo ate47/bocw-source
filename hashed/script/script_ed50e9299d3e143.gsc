@@ -52,49 +52,25 @@ function private function_93a22b64() {
 // Checksum 0xb1abca8a, Offset: 0x370
 // Size: 0x534
 function private function_cb019e1f() {
-    /#
-        assert(isscriptfunctionptr(&aileapgoalservice));
-    #/
+    assert(isscriptfunctionptr(&aileapgoalservice));
     behaviortreenetworkutility::registerbehaviortreescriptapi("aiLeapGoalService", &aileapgoalservice, 1);
-    /#
-        assert(isscriptfunctionptr(&aishouldleap));
-    #/
+    assert(isscriptfunctionptr(&aishouldleap));
     behaviortreenetworkutility::registerbehaviortreescriptapi("aiShouldLeap", &aishouldleap);
-    /#
-        assert(isscriptfunctionptr(&aiisleaping));
-    #/
+    assert(isscriptfunctionptr(&aiisleaping));
     behaviortreenetworkutility::registerbehaviortreescriptapi("aiIsLeaping", &aiisleaping);
-    /#
-        assert(isscriptfunctionptr(&aishouldleapfollowpath));
-    #/
+    assert(isscriptfunctionptr(&aishouldleapfollowpath));
     behaviortreenetworkutility::registerbehaviortreescriptapi("aiShouldLeapFollowPath", &aishouldleapfollowpath);
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(&function_b12119f0) || isscriptfunctionptr(&function_b12119f0));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(&function_b12119f0) || isscriptfunctionptr(&function_b12119f0));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
     behaviortreenetworkutility::registerbehaviortreeaction("aiLeapLoop", undefined, &function_b12119f0, undefined);
-    /#
-        assert(!isdefined(&function_21a9aefd) || isscriptfunctionptr(&function_21a9aefd));
-    #/
-    /#
-        assert(!isdefined(&function_3cc9b7f6) || isscriptfunctionptr(&function_3cc9b7f6));
-    #/
-    /#
-        assert(!isdefined(&function_9952445c) || isscriptfunctionptr(&function_9952445c));
-    #/
+    assert(!isdefined(&function_21a9aefd) || isscriptfunctionptr(&function_21a9aefd));
+    assert(!isdefined(&function_3cc9b7f6) || isscriptfunctionptr(&function_3cc9b7f6));
+    assert(!isdefined(&function_9952445c) || isscriptfunctionptr(&function_9952445c));
     behaviortreenetworkutility::registerbehaviortreeaction("aiLeapPathLoop", &function_21a9aefd, &function_3cc9b7f6, &function_9952445c);
-    /#
-        assert(isscriptfunctionptr(&aileapstart));
-    #/
+    assert(isscriptfunctionptr(&aileapstart));
     behaviortreenetworkutility::registerbehaviortreescriptapi("aiLeapStart", &aileapstart);
-    /#
-        assert(isscriptfunctionptr(&aileapterminate));
-    #/
+    assert(isscriptfunctionptr(&aileapterminate));
     behaviortreenetworkutility::registerbehaviortreescriptapi("aiLeapTerminate", &aileapterminate);
     animationstatenetwork::registeranimationmocomp("mocomp_ai_leap", &function_92a98e31, &function_f14ad812, &function_a8ad5ef0);
     animationstatenetwork::registeranimationmocomp("mocomp_ai_leap_face_goal", &function_f4e094cf, undefined, &function_4e828c3b);
@@ -692,11 +668,7 @@ function private function_3e83b6c5(targetpos) {
             if (isdefined(self.var_60d1126a)) {
                 struct = [[ self.var_60d1126a ]](self, targetpos);
                 if (isdefined(struct)) {
-                    /#
-                        /#
-                            assert(isdefined(struct.angle) && isdefined(struct.dist), "<unknown string>");
-                        #/
-                    #/
+                    assert(isdefined(struct.angle) && isdefined(struct.dist), "<unknown string>");
                     angle = struct.angle;
                     distance = struct.dist;
                 }
@@ -734,7 +706,6 @@ function private function_b3069b6c(target) {
         self function_fe23c655(var_8787728e, var_427872c2);
     }
     while (true) {
-        waitresult = undefined;
         waitresult = target waittill(#"zone_change");
         if (!isdefined(waitresult.zone_name) || waitresult.zone_name === var_427872c2) {
             continue;
@@ -876,7 +847,7 @@ function private function_1c7692a4(var_441e6fcc, var_22043f8e) {
     var_7c2880c0 = self function_ca7b4071(var_441e6fcc);
     var_380469b1 = self function_ca7b4071(var_22043f8e);
     if (isdefined(var_7c2880c0) && isdefined(var_380469b1)) {
-        v_ground = groundtrace(var_7c2880c0 + vectorscale((0, 0, 1), 8), var_7c2880c0 + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
+        v_ground = groundtrace(var_7c2880c0 + (0, 0, 8), var_7c2880c0 + (0, 0, -100000), 0, self)[#"position"];
         if (isdefined(v_ground)) {
             self.var_bfd4c4c4 = var_380469b1;
             self.v_zombie_custom_goal_pos = v_ground;
@@ -976,7 +947,7 @@ function private function_236cda12() {
 // Checksum 0x304169a4, Offset: 0x3ef8
 // Size: 0x198
 function private function_18867744(navmeshpoint, var_7d6b86d8) {
-    v_ground = groundtrace(navmeshpoint + vectorscale((0, 0, 1), 8), navmeshpoint + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
+    v_ground = groundtrace(navmeshpoint + (0, 0, 8), navmeshpoint + (0, 0, -100000), 0, self)[#"position"];
     if (isdefined(v_ground)) {
         /#
             if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
@@ -1094,9 +1065,7 @@ function function_470c9a51(var_178aa03b) {
         if (var_148ad4cc.size == 0) {
             continue;
         }
-        /#
-            assert(var_148ad4cc.size == 2);
-        #/
+        assert(var_148ad4cc.size == 2);
         var_31bcbe75 = struct::get(var_148ad4cc[0].target, "targetname");
         var_1f7e19f8 = struct::get(var_148ad4cc[1].target, "targetname");
         if (!isdefined(var_31bcbe75) || !isdefined(var_1f7e19f8)) {
@@ -1125,12 +1094,8 @@ function private function_84f4a6c7(var_e1117576) {
 // Size: 0x11c
 function private function_d21249bf() {
     var_182df905 = self.var_c7f5b6e1[0];
-    /#
-        assert(var_182df905.type == "<unknown string>");
-    #/
-    /#
-        assert(isdefined(var_182df905.var_7d6b86d8));
-    #/
+    assert(var_182df905.type == "<unknown string>");
+    assert(isdefined(var_182df905.var_7d6b86d8));
     var_f55b98ef = struct::get(var_182df905.var_7d6b86d8.target, "targetname");
     if (isdefined(var_f55b98ef.origin)) {
         navmesh_pos = self function_ca7b4071(var_f55b98ef.origin);

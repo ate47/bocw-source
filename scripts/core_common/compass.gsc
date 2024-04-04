@@ -15,9 +15,7 @@ function setupminimap(material, *zone = "") {
         corners = territory::function_1deaf019("minimap_corner", "targetname", "");
     }
     if (corners.size != 2) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
     function_d6cba2e9(zone, corners[0].origin[0], corners[0].origin[1], corners[1].origin[0], corners[1].origin[1]);
@@ -70,9 +68,7 @@ function function_d6cba2e9(material = "", var_56a8cb79, var_47612cea, var_49fcbf
 function setupminimapzone(zone) {
     corners = getentarray("zone_0" + zone + "_corner", "targetname");
     if (corners.size != 2) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
     corner0 = (corners[0].origin[0], corners[0].origin[1], 0);

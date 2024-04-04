@@ -78,9 +78,7 @@ function private event_handler[createstruct] function_e0a8e4ba(struct) {
 // Checksum 0xc18072e0, Offset: 0x5e0
 // Size: 0x3c
 function autoexec function_aeb1baea() {
-    /#
-        assert(!isdefined(level.var_f18a6bd6));
-    #/
+    assert(!isdefined(level.var_f18a6bd6));
     level.var_f18a6bd6 = &function_5e443ed1;
 }
 
@@ -89,11 +87,7 @@ function autoexec function_aeb1baea() {
 // Checksum 0x3702db1c, Offset: 0x628
 // Size: 0x36c
 function function_5e443ed1() {
-    /#
-        /#
-            assert(isdefined(level.first_frame), "<unknown string>");
-        #/
-    #/
+    assert(isdefined(level.first_frame), "<unknown string>");
     if (is_true(level._loadstarted)) {
         return;
     }
@@ -365,9 +359,7 @@ function player_intermission(var_1ed3b46b = 1) {
     if (!isdefined(points) || points.size == 0) {
         points = getentarray("info_intermission", "classname");
         if (points.size < 1) {
-            /#
-                println("<unknown string>");
-            #/
+            println("<unknown string>");
             return;
         }
     }
@@ -381,7 +373,7 @@ function player_intermission(var_1ed3b46b = 1) {
             }
             if (isdefined(points[i].target)) {
                 if (!isdefined(org)) {
-                    org = spawn("script_model", self.origin + vectorscale((0, 0, -1), 60));
+                    org = spawn("script_model", self.origin + (0, 0, -60));
                     org setmodel(#"tag_origin");
                 }
                 org.origin = points[i].origin;

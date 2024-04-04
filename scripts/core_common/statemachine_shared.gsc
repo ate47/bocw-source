@@ -141,9 +141,7 @@ function set_state(name, state_params) {
         return;
     }
     if (!isdefined(state)) {
-        /#
-            assertmsg("<unknown string>" + name + "<unknown string>" + self.name);
-        #/
+        assertmsg("<unknown string>" + name + "<unknown string>" + self.name);
         return;
     }
     reenter = self.current_state === state;
@@ -185,9 +183,7 @@ function set_state(name, state_params) {
 function threadnotifyconnections(state) {
     self notify(#"_cancel_connections");
     foreach (connection in state.connections_notify) {
-        /#
-            assert(connection.type == 0);
-        #/
+        assert(connection.type == 0);
         self.owner thread connection_on_notify(self, connection.on_notify, connection);
     }
 }
@@ -200,7 +196,6 @@ function connection_on_notify(state_machine, notify_name, connection) {
     self endon(#"death", #"disconnect", state_machine.change_note);
     state_machine endon(#"_cancel_connections");
     while (true) {
-        params = undefined;
         params = self waittill(notify_name);
         connectionvalid = 1;
         if (isdefined(connection.checkfunc)) {
@@ -217,17 +212,13 @@ function connection_on_notify(state_machine, notify_name, connection) {
 // Checksum 0x341826c1, Offset: 0xb50
 // Size: 0x294
 function evaluate_connections(eval_func, params) {
-    /#
-        assert(isdefined(self.current_state));
-    #/
+    assert(isdefined(self.current_state));
     connectionarray = [];
     scorearray = [];
     best_connection = undefined;
     best_score = -1;
     foreach (connection in self.current_state.connections_utility) {
-        /#
-            assert(connection.type == 1);
-        #/
+        assert(connection.type == 1);
         score = connection.score;
         if (isdefined(connection.checkfunc)) {
             score = self.owner [[ connection.checkfunc ]](self.current_state.name, connection.to_state.name, connection);

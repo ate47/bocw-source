@@ -8,21 +8,8 @@
 // Method(s) 8 Total 15
 class class_fbe341f : cluielem {
 
-    // Namespace class_fbe341f/dirtybomb_usebar
-    // Params 0, eflags: 0x8
-    // Checksum 0x85a85551, Offset: 0x270
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_fbe341f/dirtybomb_usebar
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xadc9cff0, Offset: 0x688
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class class_fbe341f : cluielem {
     // Checksum 0x2374c59, Offset: 0x638
     // Size: 0x44
     function function_4aa46834(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "activatorCount", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "activatorCount", value);
     }
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
@@ -65,38 +52,34 @@ class class_fbe341f : cluielem {
     // Size: 0x234
     function set_state(player, state_name) {
         if (#"defaultstate" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 0);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 0);
             return;
         }
         if (#"detonating" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 1);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 1);
             return;
         }
         if (#"hash_1a2812055c330ee0" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 2);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 2);
             return;
         }
         if (#"hash_59e0e869fbae7705" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 3);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 3);
             return;
         }
         if (#"hash_b86ebfb5a93f57f" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 4);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 4);
             return;
         }
         if (#"hash_4ff55a42344e567e" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 5);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 5);
             return;
         }
         if (#"hash_288548f3fca8b603" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 6);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 6);
             return;
         }
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
     }
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
@@ -104,7 +87,7 @@ class class_fbe341f : cluielem {
     // Checksum 0xde35d2b3, Offset: 0x5e8
     // Size: 0x44
     function function_f0df5702(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "progressFrac", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "progressFrac", value);
     }
 
 }

@@ -30,7 +30,6 @@ function private preinit() {
 // Size: 0x70
 function private function_f88c74e1() {
     while (isdefined(self)) {
-        wait_result = undefined;
         wait_result = level waittill(#"hash_25322cbf364d4d5c");
         function_c79ecd60(wait_result.param1, wait_result.param2, undefined, undefined, wait_result.param3, undefined, undefined, undefined, undefined);
     }

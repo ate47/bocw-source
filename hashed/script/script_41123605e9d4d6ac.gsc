@@ -35,7 +35,7 @@ function preinit() {
 // Size: 0x106
 function function_9666c7b1(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
-        self.fx = playfx(fieldname, #"hash_1a93b9b31b5d1d3b", self.origin + vectorscale((0, 0, 1), 18), anglestoup(self.angles));
+        self.fx = playfx(fieldname, #"hash_1a93b9b31b5d1d3b", self.origin + (0, 0, 18), anglestoup(self.angles));
         self playsound(fieldname, #"hash_6a76932cce379c66");
         return;
     }
@@ -107,7 +107,7 @@ function private function_64d1f09b(localclientnum, *oldval, newval, *bnewent, *b
 // Size: 0xbc
 function private function_ea257a5f(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     level endon(#"end_game");
-    fx = playfx(bwastimejump, #"hash_840483659ea54c4", self.origin + vectorscale((0, 0, 1), 10));
+    fx = playfx(bwastimejump, #"hash_840483659ea54c4", self.origin + (0, 0, 10));
     wait(7);
     if (isdefined(fx)) {
         stopfx(bwastimejump, fx);

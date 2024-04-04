@@ -258,15 +258,11 @@ function function_2bcfd899(localclientnum, var_f84ece9f, *var_2b372cf6) {
         var_bf0df48d = level.var_b131552c;
         break;
     default:
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         return;
     }
     if (!isdefined(var_bf0df48d)) {
-        /#
-            println("<unknown string>" + var_2b372cf6);
-        #/
+        println("<unknown string>" + var_2b372cf6);
         return;
     }
     var_71b26808 = getscriptbundle(var_bf0df48d);

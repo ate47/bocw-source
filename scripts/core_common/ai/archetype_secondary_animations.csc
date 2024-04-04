@@ -96,9 +96,7 @@ function private on_entity_shutdown(localclientnum) {
 // Checksum 0x1e16c20, Offset: 0x520
 // Size: 0x8c8
 function buildandvalidatefacialanimationlist(localclientnum) {
-    /#
-        assert(!isdefined(level.__facialanimationslist));
-    #/
+    assert(!isdefined(level.__facialanimationslist));
     level.__facialanimationslist = [];
     level.__facialanimationslist[#"human"] = [];
     level.__facialanimationslist[#"human"][#"combat"] = array(#"ai_t8_face_hero_generic_idle_1", #"ai_t8_face_hero_generic_idle_2", #"ai_t8_face_hero_generic_idle_3");
@@ -133,9 +131,7 @@ function buildandvalidatefacialanimationlist(localclientnum) {
         array::add(deathanims, animation);
     }
     foreach (deathanim in deathanims) {
-        /#
-            assert(!isanimlooping(localclientnum, deathanim), "<unknown string>" + deathanim + "<unknown string>");
-        #/
+        assert(!isanimlooping(localclientnum, deathanim), "<unknown string>" + deathanim + "<unknown string>");
     }
 }
 
@@ -220,7 +216,6 @@ function private function_9d9508f(localclientnum) {
     self endon(#"death");
     self endon(#"stopfacialthread");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"hash_f88532a558ad684", #"vox");
         if (waitresult._notify == #"vox") {
             self.var_74a451af++;
@@ -358,18 +353,14 @@ function private function_909a3089(localclientnum) {
             }
             self._currentfacestate = nextfacestate;
         } else if (currfacestate == "inactive" || currfacestate != nextfacestate || forcenewanim) {
-            /#
-                assert(isdefined(level.__facialanimationslist[self.archetype][nextfacestate]));
-            #/
+            assert(isdefined(level.__facialanimationslist[self.archetype][nextfacestate]));
             clearoncompletion = 0;
             if (nextfacestate == "death") {
             }
             animtoplay = array::random(level.__facialanimationslist[self.archetype][nextfacestate]);
             if (isdefined(animoverride)) {
                 animtoplay = animoverride;
-                /#
-                    assert(nextfacestate != "<unknown string>" || !isanimlooping(localclientnum, animtoplay), "<unknown string>" + animtoplay + "<unknown string>");
-                #/
+                assert(nextfacestate != "<unknown string>" || !isanimlooping(localclientnum, animtoplay), "<unknown string>" + animtoplay + "<unknown string>");
             }
             applynewfaceanim(localclientnum, animtoplay, clearoncompletion);
             self._currentfacestate = nextfacestate;

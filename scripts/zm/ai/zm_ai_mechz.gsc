@@ -447,7 +447,6 @@ function private function_ea7b33b6() {
     var_686cf729 = undefined;
     last_pos = undefined;
     while (true) {
-        waitresult = undefined;
         waitresult = self waittilltimeout(2, #"bad_path");
         if (self isplayinganimscripted()) {
             continue;
@@ -476,9 +475,7 @@ function private function_ea7b33b6() {
             }
         }
         if (is_true(var_c84ba99b)) {
-            /#
-                println("<unknown string>" + self.origin + "<unknown string>");
-            #/
+            println("<unknown string>" + self.origin + "<unknown string>");
             var_201abbfd = 0;
             var_37c90cfe = 0;
             self function_66247c2();

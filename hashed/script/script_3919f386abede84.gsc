@@ -14,21 +14,16 @@
 // Method(s) 3 Total 52
 class class_e500a966 : cdoor {
 
+    var m_s_bundle;
+    var m_str_type;
+    var var_a2f96f78;
+
     // Namespace class_e500a966/namespace_23507db6
     // Params 0, eflags: 0xa linked
     // Checksum 0xad8092bd, Offset: 0x428
     // Size: 0x22
-    __constructor() {
-        cdoor::__constructor();
-        self.m_str_type = "window";
-    }
-
-    // Namespace namespace_e500a966/namespace_23507db6
-    // Params 0, eflags: 0x82 linked class_linked
-    // Checksum 0x35ddced0, Offset: 0x458
-    // Size: 0x14
-    function __destructor() {
-        cdoor::__destructor();
+    constructor() {
+        m_str_type = "window";
     }
 
     // Namespace namespace_e500a966/namespace_23507db6
@@ -36,9 +31,9 @@ class class_e500a966 : cdoor {
     // Checksum 0x9ec7d900, Offset: 0x478
     // Size: 0x52
     function init(var_82b05767, s_instance) {
-        self.m_s_bundle = var_82b05767;
-        self.var_a2f96f78 = s_instance;
-        s_instance.c_door = doors::setup_door_info(self.m_s_bundle, s_instance, self);
+        m_s_bundle = var_82b05767;
+        var_a2f96f78 = s_instance;
+        s_instance.c_door = doors::setup_door_info(m_s_bundle, s_instance, self);
     }
 
 }

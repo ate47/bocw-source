@@ -340,7 +340,7 @@ function function_4a8d5852(params) {
         }
         var_bf135e90 = spawn("script_model", player.origin);
         var_6af41078 = spawn("script_model", (player.origin[0], player.origin[1], player.origin[2] + 10));
-        var_6af41078.angles = vectorscale((1, 0, 0), 270);
+        var_6af41078.angles = (270, 0, 0);
         var_bf135e90 setmodel("tag_origin");
         var_6af41078 setmodel("tag_origin");
         var_bf135e90 clientfield::set("fx_heal_aoe_bubble_clientfield", 1);

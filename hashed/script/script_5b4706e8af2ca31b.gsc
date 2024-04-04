@@ -240,7 +240,7 @@ function function_c487f6c0(ascendstart) {
     if (!isdefined(ascendstart.radius)) {
         ascendstart.radius = 128;
     }
-    var_3d783ef7 = spawn("trigger_radius_use", ascendstart.origin + vectorscale((0, 0, 1), 16), 0, ascendstart.radius, 128);
+    var_3d783ef7 = spawn("trigger_radius_use", ascendstart.origin + (0, 0, 16), 0, ascendstart.radius, 128);
     var_3d783ef7.ascendstart = ascendstart;
     var_3d783ef7 triggerignoreteam();
     var_3d783ef7 setvisibletoall();
@@ -280,7 +280,7 @@ function function_731b9325(struct, dir) {
             struct.clip = getent(struct.script_string, "targetname");
         }
     }
-    struct.exitangle = struct.angles + vectorscale((0, 1, 0), 180);
+    struct.exitangle = struct.angles + (0, 180, 0);
     struct.startangle = struct.angles;
     struct.dir = dir;
     struct.trigger = function_c487f6c0(struct);
@@ -342,11 +342,7 @@ function private function_2f037a69(ascender) {
 // Size: 0x9c
 function private function_28a2f589(inuse) {
     self.inuse = self.inuse + (inuse ? 1 : -1);
-    /#
-        /#
-            assert(self.inuse >= 0 && self.inuse <= 4);
-        #/
-    #/
+    assert(self.inuse >= 0 && self.inuse <= 4);
     array::thread_all(getplayers(), &function_2f037a69, self);
 }
 
@@ -477,7 +473,7 @@ function function_efab52ae() {
             waitframe(1);
             foreach (rappel in level.ascendstarts) {
                 var_86660d95 = rappel.origin;
-                print3d(var_86660d95 + vectorscale((0, 0, 1), 16), rappel.targetname, (0, 1, 0));
+                print3d(var_86660d95 + (0, 0, 16), rappel.targetname, (0, 1, 0));
                 sphere(var_86660d95, 4, (0, 1, 0));
                 circle(var_86660d95, 24, (0, 1, 0), 1, 1);
                 line(var_86660d95, rappel.ascendstructend.origin, (0, 1, 0));

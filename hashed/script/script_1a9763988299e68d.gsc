@@ -31,22 +31,19 @@
 // Method(s) 7 Total 7
 class class_9b9784aa {
 
+    var m_type;
+    var var_3b56e950;
+    var var_ce5a8850;
+    var var_f7688f8b;
+
     // Namespace class_9b9784aa/namespace_41cb996
     // Params 0, eflags: 0xa linked
     // Checksum 0xb1b3989f, Offset: 0x318
     // Size: 0x2a
-    __constructor() {
-        self.var_f7688f8b = "";
-        self.var_3b56e950 = undefined;
-        self.var_ce5a8850 = [];
-    }
-
-    // Namespace namespace_9b9784aa/namespace_41cb996
-    // Params 0, eflags: 0x82 linked class_linked
-    // Checksum 0x80f724d1, Offset: 0x350
-    // Size: 0x4
-    function __destructor() {
-        
+    constructor() {
+        var_f7688f8b = "";
+        var_3b56e950 = undefined;
+        var_ce5a8850 = [];
     }
 
     // Namespace namespace_9b9784aa/namespace_41cb996
@@ -54,7 +51,7 @@ class class_9b9784aa {
     // Checksum 0xccb0d59b, Offset: 0x518
     // Size: 0xa
     function getname() {
-        return self.var_f7688f8b;
+        return var_f7688f8b;
     }
 
     // Namespace namespace_9b9784aa/namespace_41cb996
@@ -62,7 +59,7 @@ class class_9b9784aa {
     // Checksum 0x89fa9fcb, Offset: 0x530
     // Size: 0xa
     function function_4db878e1() {
-        return self.var_3b56e950;
+        return var_3b56e950;
     }
 
     // Namespace namespace_9b9784aa/namespace_41cb996
@@ -70,7 +67,7 @@ class class_9b9784aa {
     // Checksum 0x99c11c30, Offset: 0x500
     // Size: 0xa
     function gettype() {
-        return self.m_type;
+        return m_type;
     }
 
     // Namespace namespace_9b9784aa/namespace_41cb996
@@ -78,10 +75,8 @@ class class_9b9784aa {
     // Checksum 0x4c6f1928, Offset: 0x548
     // Size: 0x50
     function function_91c18b19(weaponlevel) {
-        /#
-            assert(weaponlevel >= 0 && weaponlevel <= 2, "<unknown string>");
-        #/
-        return self.var_ce5a8850[weaponlevel];
+        assert(weaponlevel >= 0 && weaponlevel <= 2, "<unknown string>");
+        return var_ce5a8850[weaponlevel];
     }
 
     // Namespace namespace_9b9784aa/namespace_41cb996
@@ -89,17 +84,15 @@ class class_9b9784aa {
     // Checksum 0x505abbe4, Offset: 0x360
     // Size: 0x198
     function init(var_49d95ac1, type, var_985105b) {
-        self.var_f7688f8b = var_49d95ac1;
-        self.m_type = type;
-        self.var_3b56e950 = var_985105b;
-        self.var_ce5a8850[self.var_ce5a8850.size] = getweapon(self.var_f7688f8b);
-        /#
-            assert(isdefined(self.var_ce5a8850[0]));
-        #/
-        self.var_ce5a8850[self.var_ce5a8850.size] = getweapon(self.var_f7688f8b + "_1");
-        self.var_ce5a8850[self.var_ce5a8850.size] = getweapon(self.var_f7688f8b + "_2");
-        self.var_ce5a8850[1] = self.var_ce5a8850[1] != level.weaponnone ? self.var_ce5a8850[1] : self.var_ce5a8850[0];
-        self.var_ce5a8850[2] = self.var_ce5a8850[2] != level.weaponnone ? self.var_ce5a8850[2] : self.var_ce5a8850[1];
+        var_f7688f8b = var_49d95ac1;
+        m_type = type;
+        var_3b56e950 = var_985105b;
+        var_ce5a8850[var_ce5a8850.size] = getweapon(var_f7688f8b);
+        assert(isdefined(var_ce5a8850[0]));
+        var_ce5a8850[var_ce5a8850.size] = getweapon(var_f7688f8b + "_1");
+        var_ce5a8850[var_ce5a8850.size] = getweapon(var_f7688f8b + "_2");
+        var_ce5a8850[1] = var_ce5a8850[1] != level.weaponnone ? var_ce5a8850[1] : var_ce5a8850[0];
+        var_ce5a8850[2] = var_ce5a8850[2] != level.weaponnone ? var_ce5a8850[2] : var_ce5a8850[1];
     }
 
 }
@@ -395,7 +388,6 @@ function function_a91422ce() {
     self notify(#"hash_36ad2ac26d17068a");
     self endon(#"hash_36ad2ac26d17068a");
     self endon(#"disconnect");
-    results = undefined;
     results = self waittill(#"weapon_fired");
     /#
     #/
@@ -411,7 +403,6 @@ function function_6b6cc0a8() {
     self endon(#"disconnect");
     self endon(#"hash_6edec00b6bae610a");
     while (true) {
-        result = undefined;
         result = self waittill(#"missile_fire");
         if (isdefined(result.weapon) && result.weapon.name === #"zombietron_launcher_2") {
             self thread function_64adaae3();
@@ -495,7 +486,7 @@ function function_64adaae3() {
     if (!isdefined(v_spawn)) {
         v_spawn = self.origin;
     }
-    var_ce35a286 = v_spawn + v_dir + vectorscale((0, 0, 1), 50);
+    var_ce35a286 = v_spawn + v_dir + (0, 0, 50);
     self thread function_eae80c2(v_spawn, var_ce35a286, target1);
     waitframe(1);
     self thread function_eae80c2(v_spawn, var_ce35a286, target2);
@@ -510,7 +501,6 @@ function function_eae80c2(origin, var_ce35a286, target, var_7aea2f21 = 0.1) {
     self endon(#"death");
     if (namespace_ec06fe4a::function_a8975c67(32)) {
         magicbullet(level.doa.var_5b088fde, origin, var_ce35a286, self);
-        result = undefined;
         result = self waittill(#"missile_fire");
         wait(var_7aea2f21);
         if (isdefined(target) && isdefined(result.projectile)) {
@@ -543,7 +533,6 @@ function function_a0a68431() {
     util::wait_network_frame();
     self namespace_83eb6304::function_3ecfde67("ammo_unlimited");
     while (isdefined(self) && self.doa.var_909a4dd5 > gettime()) {
-        result = undefined;
         result = self waittilltimeout(0.25, #"hash_6edec00b6bae610a", #"player_died");
         if (result._notify === "timeout") {
             continue;

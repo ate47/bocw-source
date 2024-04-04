@@ -144,11 +144,11 @@ function function_1525bc35(params) {
                 if (!isdefined(var_b4392330)) {
                     return;
                 }
-                var_9917b0be = var_b4392330 + vectorscale((0, 0, 1), 14);
+                var_9917b0be = var_b4392330 + (0, 0, 14);
                 var_bba58955 = function_4ba8fde(#"hash_5e770ca79b0e5aa4");
-                item = item_drop::drop_item(0, undefined, 1, 0, var_bba58955.id, self.origin + vectorscale((0, 0, 1), 40), self.angles + vectorscale((0, 0, 1), 90), 0);
+                item = item_drop::drop_item(0, undefined, 1, 0, var_bba58955.id, self.origin + (0, 0, 40), self.angles + (0, 0, 90), 0);
                 item.var_dd21aec2 = 1 | 16;
-                n_power = length(self.origin + vectorscale((0, 0, 1), 40) - var_9917b0be) * 2;
+                n_power = length(self.origin + (0, 0, 40) - var_9917b0be) * 2;
                 var_4e2c4d20 = item zm_utility::fake_physicslaunch(var_9917b0be, n_power);
                 item.itementry.var_4cd830a = 1;
                 level.var_d3bc5b54++;
@@ -194,7 +194,7 @@ function on_player_spawn() {
 function function_aff8caac(n_count, item) {
     if (n_count < 0) {
         self zm_stats::increment_challenge_stat(#"hash_59ec774113410688");
-        playsoundatposition(#"hash_15f62ef7540518b4", self.origin + vectorscale((0, 0, 1), 20));
+        playsoundatposition(#"hash_15f62ef7540518b4", self.origin + (0, 0, 20));
     }
     if (n_count > 0) {
         n_value = 1;
@@ -273,7 +273,7 @@ function teleport_players(var_e07fc3c5, var_cdf41f72 = 1) {
     wait(2.7 - var_935d4278);
     if (isdefined(self)) {
         if (!isdefined(self.var_cad5a451)) {
-            self.var_cad5a451 = util::spawn_model("tag_origin", self.origin + vectorscale((0, 0, 1), 30), self.angles);
+            self.var_cad5a451 = util::spawn_model("tag_origin", self.origin + (0, 0, 30), self.angles);
         }
         if (var_cdf41f72) {
             self thread function_cb0821d3();
@@ -401,7 +401,6 @@ function function_39cf3d5e() {
     level endon(#"end_game");
     self thread function_6de827b0();
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         activator = waitresult.activator;
         if (isplayer(activator) && activator zm_score::can_player_purchase(10000) && level flag::get(#"hash_3814c5c6793e2b2d") && !level flag::get(#"hash_50d40a20b859977f")) {
@@ -422,7 +421,6 @@ function function_6de827b0() {
     self endon(#"death");
     s_machine = struct::get("arc_tok_machine");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"touch");
         entity = waitresult.entity;
         n_dot = entity math::get_dot_forward(s_machine.origin);
@@ -462,7 +460,6 @@ function function_98645ab3() {
     self endon(#"death");
     self thread function_ae0e44d6();
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         attacker = waitresult.attacker;
         if (isplayer(attacker) && waitresult.mod === "MOD_MELEE" && !level flag::get(#"hash_50d40a20b859977f")) {
@@ -508,9 +505,7 @@ function function_521d48eb() {
 // Checksum 0x1594375e, Offset: 0x29b8
 // Size: 0x13c
 function function_586afc1e(player) {
-    /#
-        assert(isplayer(player), "soul_capture_zombie");
-    #/
+    assert(isplayer(player), "soul_capture_zombie");
     if (self.stub.var_36d60c16 !== 1 && player getstance() === "prone" && distancesquared(self.origin, player.origin) < 9216) {
         self.stub.var_36d60c16 = 1;
         level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:player, #scoreevent:"loose_change_zm"});
@@ -690,7 +685,6 @@ function function_70c1775c(e_player) {
 function function_77c58cc5() {
     level endon(#"end_game");
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         if (level flag::get(#"hash_549a957b8f4d551f") || level flag::get(#"hash_1b8228b2efbf4022") || !level flag::get(#"hash_3814c5c6793e2b2d") || level flag::get(#"hash_6de3a0458517d4ad")) {
             continue;
@@ -1122,7 +1116,6 @@ function function_542f231(e_player) {
 function function_73943beb() {
     level endon(#"end_game");
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         if (level flag::get(#"hash_62300d1a6a6d537e") || !level flag::get(#"hash_3814c5c6793e2b2d") || level flag::get(#"hash_6de3a0458517d4ad")) {
             continue;
@@ -1430,10 +1423,10 @@ function function_e59b491c() {
     level.var_1e9363ae val::set(#"hash_3e8d5ff226b374f8", "allowdeath", 0);
     level.var_1055c733 val::set(#"hash_3e8d5ff226b374f8", "allowdeath", 0);
     level.var_a17bab7 val::set(#"hash_3e8d5ff226b374f8", "allowdeath", 0);
-    level.var_b0e98854 thread function_984d18(level.var_b0e98854.origin, level.var_b0e98854.origin + vectorscale((0, 0, -1), 60), 2.5);
-    level.var_1e9363ae thread function_984d18(level.var_1e9363ae.origin, level.var_1e9363ae.origin + vectorscale((0, 0, 1), 53), 4);
-    level.var_1055c733 thread function_984d18(level.var_1055c733.origin, level.var_1055c733.origin + vectorscale((0, -1, 0), 110), 6);
-    level.var_a17bab7 thread function_984d18(level.var_a17bab7.origin, level.var_a17bab7.origin + vectorscale((0, 1, 0), 110), 6);
+    level.var_b0e98854 thread function_984d18(level.var_b0e98854.origin, level.var_b0e98854.origin + (0, 0, -60), 2.5);
+    level.var_1e9363ae thread function_984d18(level.var_1e9363ae.origin, level.var_1e9363ae.origin + (0, 0, 53), 4);
+    level.var_1055c733 thread function_984d18(level.var_1055c733.origin, level.var_1055c733.origin + (0, -110, 0), 6);
+    level.var_a17bab7 thread function_984d18(level.var_a17bab7.origin, level.var_a17bab7.origin + (0, 110, 0), 6);
     level.var_b0e98854 thread function_27745ace(level.var_b0e98854.origin);
     level.var_1e9363ae thread function_27745ace(level.var_1e9363ae.origin);
     level.var_1055c733 thread function_27745ace(level.var_1055c733.origin);
@@ -1566,7 +1559,6 @@ function function_7991969e(e_player) {
 function function_cf9c86a2() {
     level endon(#"end_game");
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         if (level flag::get(#"hash_480a4ce872938116") || !level flag::get(#"hash_3814c5c6793e2b2d") || level flag::get(#"hash_6de3a0458517d4ad")) {
             continue;
@@ -1771,7 +1763,7 @@ function function_bf19d77a() {
                 level thread function_f9a67ba4(2);
                 level notify(#"hash_67be133ca877da79");
                 if (isdefined(level.var_743ac5c7)) {
-                    level.var_743ac5c7 moveto(level.var_743ac5c7.origin + vectorscale((0, 0, 1), 300), 35);
+                    level.var_743ac5c7 moveto(level.var_743ac5c7.origin + (0, 0, 300), 35);
                 }
                 wait(30);
                 if (isdefined(level.mdl_chest)) {
@@ -2016,7 +2008,7 @@ function function_c0f95bf4(var_e503dc79) {
         break;
     case 1:
         wait(1);
-        drop_pos = self.origin + vectorscale((0, 0, -1), 10);
+        drop_pos = self.origin + (0, 0, -10);
         weapon = function_4ba8fde("tr_precisionsemi_t9_item_zm_tungsten_side_quest");
         item = item_drop::drop_item(0, undefined, 1, 0, weapon.id, self.origin, self.angles + (0, 0, 0), 0);
         item.var_dd21aec2 = 1 | 16;

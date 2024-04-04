@@ -119,7 +119,6 @@ function watchspikelauncheritemcountchanged(watcher) {
     self endon(#"death");
     lastitemcount = undefined;
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"weapon_change");
         for (weapon = waitresult.weapon; weapon.name == #"spike_launcher"; weapon = self getcurrentweapon()) {
             currentitemcount = getspikelauncheractivespikecount(watcher);
@@ -204,7 +203,7 @@ function function_f0e307a2(watcher, player) {
 // Checksum 0xc6a86631, Offset: 0x960
 // Size: 0xc4
 function function_b70eb3a9(*watcher, player) {
-    pos = self.origin + vectorscale((0, 0, 1), 15);
+    pos = self.origin + (0, 0, 15);
     self.ammo_trigger = spawn("trigger_radius", pos, 0, 50, 50);
     self.ammo_trigger setteamfortrigger(player.team);
     self.ammo_trigger.owner = player;
@@ -222,12 +221,9 @@ function function_5742754c() {
     if (!isdefined(station.ammo_resupplies_given)) {
         station.ammo_resupplies_given = 0;
     }
-    /#
-        assert(isdefined(station.ammo_trigger));
-    #/
+    assert(isdefined(station.ammo_trigger));
     trigger = station.ammo_trigger;
     while (isdefined(trigger)) {
-        waitresult = undefined;
         waitresult = trigger waittill(#"touch");
         player = waitresult.entity;
         if (!isplayer(player)) {

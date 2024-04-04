@@ -142,7 +142,7 @@ function spawn_dog_tag(victim, attacker, on_use_function, objectives_for_attacke
         dogtag = function_bf06b7aa(victim, attacker, on_use_function, var_f75dca66, var_78bc5595);
     }
     dogtag gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
-    baseoffset = vectorscale((0, 0, 1), 14);
+    baseoffset = (0, 0, 14);
     pos = victim.origin + baseoffset;
     if (isvec(posoffset)) {
         pos = pos + posoffset;
@@ -343,8 +343,8 @@ function reset_tags() {
     self.attacker = undefined;
     self.unreachable = 1;
     self notify(#"reset");
-    self.curorigin = vectorscale((0, 0, 1), 5000);
-    self.trigger.origin = vectorscale((0, 0, 1), 5000);
+    self.curorigin = (0, 0, 5000);
+    self.trigger.origin = (0, 0, 5000);
     self.tacinsert = 0;
     self gameobjects::allow_use(#"hash_161f03feaadc9b8f");
     if (level.var_70e5d775 === 1) {

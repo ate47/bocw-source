@@ -58,12 +58,8 @@ function function_30b535ff(inuse) {
 function function_77af90aa(var_cf230c0, attach_tag) {
     self detachall();
     if (isdefined(var_cf230c0)) {
-        /#
-            assert(isdefined(attach_tag));
-        #/
-        /#
-            assert(var_cf230c0.size == attach_tag.size);
-        #/
+        assert(isdefined(attach_tag));
+        assert(var_cf230c0.size == attach_tag.size);
         for (i = 0; i < var_cf230c0.size; i++) {
             self attach(var_cf230c0[i], attach_tag[i], 1);
         }
@@ -75,9 +71,7 @@ function function_77af90aa(var_cf230c0, attach_tag) {
 // Checksum 0xc7c1736d, Offset: 0x740
 // Size: 0x2b4
 function function_865196a6(link_ents, var_e4df1bec) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     pitch = abs(angleclamp180(self getplayerangles()[0]));
     if (pitch > 0) {
         var_2bec8e32 = util::spawn_model("tag_origin", self.origin, self.angles);
@@ -139,9 +133,7 @@ function become_corpse() {
 // Checksum 0xddb37e5d, Offset: 0xc18
 // Size: 0x52
 function function_2e55c59e(var_f68ce314) {
-    /#
-        assert(isdefined(var_f68ce314) && isfloat(var_f68ce314));
-    #/
+    assert(isdefined(var_f68ce314) && isfloat(var_f68ce314));
     level.var_f467e5b0.var_671420ae = var_f68ce314;
 }
 
@@ -169,9 +161,7 @@ function function_e46cbbf7() {
 // Checksum 0x682cbe5c, Offset: 0xcf0
 // Size: 0x354
 function function_31df4786(var_165b239b = 1, allow_ads = 1) {
-    /#
-        assert(!isdefined(self.var_31df4786));
-    #/
+    assert(!isdefined(self.var_31df4786));
     self.var_31df4786 = 1;
     self val::set(#"hash_681a4eb9df49482f", "disable_weapon_cycling", 1);
     self val::set(#"hash_681a4eb9df49482f", "disable_weapon_reload", 1);
@@ -212,9 +202,7 @@ function function_9123bbf0() {
 // Size: 0x616
 function function_2795d678(encumbered, var_165b239b, var_37e68004, allow_ads, var_6a87e928) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     pistol = undefined;
     if (!isdefined(var_165b239b)) {
         var_165b239b = 1;
@@ -288,9 +276,7 @@ function function_2795d678(encumbered, var_165b239b, var_37e68004, allow_ads, va
 // Size: 0x184
 function function_854fc491(var_6a87e928) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player endon(#"death");
     self notify("74e9614dd06b695a");
     self endon("74e9614dd06b695a");
@@ -347,9 +333,7 @@ function function_c4e06b5a() {
 // Checksum 0x9dfcb0e2, Offset: 0x1900
 // Size: 0x184
 function function_eef2dca9(guys) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     var_17813638 = spawnstruct();
     var_17813638.angles = self.angles;
     var_17813638.origin = self.origin + self getvelocity() * float(function_60d95f53()) / 1000;
@@ -371,7 +355,7 @@ function function_eef2dca9(guys) {
 // Checksum 0xb2f7c5ab, Offset: 0x1a90
 // Size: 0x266
 function function_b82cae8f(linktype, var_5596253c = 1) {
-    offset = vectorscale((0, 0, -1), 60);
+    offset = (0, 0, -60);
     player = getplayers()[0];
     if (self.var_47f0a724 === 2) {
         offset = (0, 0, 0);
@@ -408,9 +392,7 @@ function function_b82cae8f(linktype, var_5596253c = 1) {
 // Size: 0x68
 function function_bda1ed48() {
     var_9d19b745 = 400;
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     return lengthsquared(self getvelocity()) > var_9d19b745;
 }
 
@@ -576,9 +558,7 @@ function function_3f4de57b(var_d1b14335, blendtime = isdefined(level.var_f467e5b
     self function_1e132b9f(blendtime, var_df65246e);
     self endon(#"death", #"entitydeleted", #"hash_23e6132220ac0e4d");
     animplay = level.var_f467e5b0.anims[self.animname][var_d1b14335];
-    /#
-        assert(isdefined(animplay));
-    #/
+    assert(isdefined(animplay));
     self thread animation::play(animplay, self.origin, self.angles, 1, blendtime, blendtime);
     self.var_3f4de57b = animplay;
     wait(getanimlength(animplay));
@@ -634,9 +614,7 @@ function function_47ffa6b8(var_b56433f8) {
 // Checksum 0xf33eba97, Offset: 0x2b58
 // Size: 0x27a
 function function_462c34d0(action, var_17813638, anim_name, victim, phase) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     key = actions::function_4e61a046(action.name, phase);
     var_b3d30f5f = undefined;
     if (isdefined(victim) && isdefined(victim.var_9d46265b) && isdefined(victim.var_9d46265b[key])) {
@@ -672,12 +650,8 @@ function function_462c34d0(action, var_17813638, anim_name, victim, phase) {
 // Checksum 0x812b9011, Offset: 0x2de0
 // Size: 0x1f4
 function function_4cbb6ca7(anim_name, var_f09f326c) {
-    /#
-        assert(isplayer(self));
-    #/
-    /#
-        assert(isdefined(self.var_6639d45b));
-    #/
+    assert(isplayer(self));
+    assert(isdefined(self.var_6639d45b));
     var_4c384fa8 = self.var_6639d45b;
     if (!isarray(var_f09f326c)) {
         var_d89d1589 = [];
@@ -724,7 +698,6 @@ function function_1c2992ed(enabled) {
 function function_6e8e5902(ender) {
     self notify(#"hash_420f563c810c5f2c");
     self endon(#"hash_420f563c810c5f2c");
-    result = undefined;
     result = self waittill(ender, #"hash_4a7c2a6c1d3c2382", #"level_restarting");
     if (result._notify !== "level_restarting") {
         self thread function_1c2992ed(0);
@@ -771,9 +744,7 @@ function function_98f117ad(var_36a368e3, type = "") {
 // Checksum 0x53e2967e, Offset: 0x33d8
 // Size: 0x20e
 function function_35d0bd11(var_4b5540a0) {
-    /#
-        assert(isai(self));
-    #/
+    assert(isai(self));
     self flag::clear("stealth_enabled");
     if (is_true(var_4b5540a0)) {
         self.ignoreall = 1;
@@ -813,9 +784,7 @@ function function_e9aef609() {
 // Checksum 0x234f1e54, Offset: 0x3648
 // Size: 0x2c2
 function function_c0f7b46e(fullbody, *var_df65246e, linktype = 1) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!isdefined(self.var_6639d45b)) {
         self.var_6639d45b = spawn("script_model", self.origin);
         if (isdefined(self.var_6639d45b)) {
@@ -853,9 +822,7 @@ function function_c0f7b46e(fullbody, *var_df65246e, linktype = 1) {
 // Checksum 0xcc8ed727, Offset: 0x3918
 // Size: 0x94
 function function_464d0412(fullbody, var_4c384fa8, var_df65246e, linktype) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self function_c0f7b46e(fullbody, var_df65246e, linktype);
     if (!isdefined(var_4c384fa8)) {
         var_4c384fa8 = self.var_6639d45b;
@@ -870,9 +837,7 @@ function function_464d0412(fullbody, var_4c384fa8, var_df65246e, linktype) {
 // Checksum 0xd91c5cf4, Offset: 0x39b8
 // Size: 0x7c
 function function_76e2ec80(var_4c384fa8) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!isdefined(var_4c384fa8)) {
         var_4c384fa8 = self.var_6639d45b;
     }
@@ -887,9 +852,7 @@ function function_76e2ec80(var_4c384fa8) {
 // Checksum 0x2e3b4dc2, Offset: 0x3a40
 // Size: 0x174
 function function_b0190b65(action) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self.takedown.var_84ade654 = 1;
     curweap = self getcurrentweapon();
     if (isdefined(curweap) && curweap.name !== #"none") {
@@ -929,9 +892,7 @@ function function_5faaaecd() {
 // Checksum 0x71e54e9e, Offset: 0x3ca0
 // Size: 0xfc
 function function_44a46209(var_d8ba335a) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self val::reset_all(#"hash_16b14161e87e9ac4");
     if (!is_true(self.takedown.var_84ade654)) {
         return;
@@ -975,9 +936,7 @@ function function_b56ad054() {
 function private function_6f3e9127(gesture, target, var_584fcd3e, *blendtime, starttime, var_8021ec1b, stopall) {
     self notify("39ccfd1ac8ddccb");
     self endon("39ccfd1ac8ddccb");
-    /#
-        assert(isgesture(target));
-    #/
+    assert(isgesture(target));
     self endon(target + "_stop");
     var_66f0ae81 = undefined;
     if (is_true(self.takedown.var_adad6efa)) {
@@ -1064,9 +1023,7 @@ function function_71180c30(isolated) {
     if (!isdefined(self)) {
         return;
     }
-    /#
-        assert(isactor(self));
-    #/
+    assert(isactor(self));
     victim = self;
     if (is_true(isolated) && !isdefined(victim.var_419b4b2)) {
         victim flag::set("in_action");
@@ -1132,9 +1089,7 @@ function function_71180c30(isolated) {
 // Checksum 0x44250224, Offset: 0x4768
 // Size: 0x174
 function function_1a2a3654() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     currentweapon = self getcurrentweapon();
     if (!function_a06867b0(currentweapon)) {
         return currentweapon;
@@ -1216,9 +1171,7 @@ function function_396e2076(var_860605de = 1, var_4170b151 = 1, do_wait = 0) {
     e_player = getplayers()[0];
     if (is_true(var_860605de) && e_player flag::get("body_shield_active")) {
         result = 1;
-        /#
-            assert(isdefined(e_player.takedown.body_shield.actor) && isai(e_player.takedown.body_shield.actor), "<unknown string>");
-        #/
+        assert(isdefined(e_player.takedown.body_shield.actor) && isai(e_player.takedown.body_shield.actor), "<unknown string>");
         e_player.takedown.body_shield.actor delete();
         if (do_wait) {
             wait(2.75);
@@ -1248,9 +1201,7 @@ function function_e2fcacb2(time = 3) {
 function private function_cc15d11(time) {
     self notify("9aa41f49060e5fb");
     self endon("9aa41f49060e5fb");
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self endon(#"death");
     if (time > 0) {
         self val::set(#"hash_1ac08695042a6154", "disablegadgets", 1);
@@ -1264,9 +1215,7 @@ function private function_cc15d11(time) {
 // Checksum 0x96b422c3, Offset: 0x4e10
 // Size: 0x82
 function function_29fd0abd() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     curweap = self getcurrentweapon();
     if (!is_true(curweap.aimdownsight)) {
         return 0;
@@ -1279,9 +1228,7 @@ function function_29fd0abd() {
 // Checksum 0x809cbf74, Offset: 0x4ea0
 // Size: 0x274
 function function_d76eed10(action) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     step = 10;
     trace_pos = playerphysicstrace(self.origin + (0, 0, 1), self.origin);
     if (trace_pos != self.origin) {
@@ -1308,9 +1255,7 @@ function function_d76eed10(action) {
 // Checksum 0xd39bf7b4, Offset: 0x5120
 // Size: 0x228
 function function_fdff1cf3(forwarddist = 30) {
-    /#
-        assert(isdefined(self.takedown));
-    #/
+    assert(isdefined(self.takedown));
     if (!isdefined(self.takedown.var_b44d4135)) {
         self.takedown.var_b44d4135 = [];
     }
@@ -1320,7 +1265,7 @@ function function_fdff1cf3(forwarddist = 30) {
     if (isdefined(self.takedown.var_b44d4135[forwarddist]) && gettime() == self.takedown.var_b44d4135[forwarddist]) {
         return self.takedown.var_b187389a[forwarddist];
     }
-    zoffset = vectorscale((0, 0, 1), 8);
+    zoffset = (0, 0, 8);
     start = self.origin + zoffset;
     end = start + anglestoforward(self.angles) * forwarddist + zoffset;
     self.takedown.var_b187389a[forwarddist] = 0;

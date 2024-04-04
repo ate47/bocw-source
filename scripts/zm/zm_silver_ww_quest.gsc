@@ -130,7 +130,6 @@ function function_aee47035() {
 function function_284b43aa() {
     level endon(#"game_ended");
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"hash_7e3660d8d125a63a");
         if (zm_utility::check_point_in_playable_area(waitresult.position)) {
             point = function_4ba8fde(#"hash_37f8e99ab49c109");
@@ -166,7 +165,7 @@ function function_5adab0a2() {
         e_activator clientfield::increment_to_player("" + #"hash_6696d96a08b9701d");
     }
     var_493bf9de = util::spawn_model(#"hash_57b2f3d240186aa8", struct::get("zm_chip_ins").origin, struct::get("zm_chip_ins").angles);
-    var_493bf9de moveto(var_493bf9de.origin + vectorscale((0, -1, 0), 8), 1, 0.25, 0.25);
+    var_493bf9de moveto(var_493bf9de.origin + (0, -8, 0), 1, 0.25, 0.25);
     var_493bf9de playsound(#"hash_25944d8316921ce3");
     var_493bf9de waittill(#"movedone");
     var_4fe610e9 = struct::get("zm_dw_re");
@@ -174,7 +173,7 @@ function function_5adab0a2() {
     var_c4667a11 = item_drop::drop_item(0, undefined, 1, 0, point.id, var_4fe610e9.origin, var_4fe610e9.angles, 0);
     var_c4667a11.var_dd21aec2 = 1 | 16;
     var_c4667a11 linkto(drawer);
-    drawer moveto(drawer.origin + vectorscale((0, 1, 0), 15), 2, 0.5, 0.5);
+    drawer moveto(drawer.origin + (0, 15, 0), 2, 0.5, 0.5);
     foreach (player in getplayers()) {
         if (isalive(player) && distancesquared(player.origin, drawer.origin) <= 16384) {
             player clientfield::set_to_player("" + #"hash_115529ffa902a895", 1);
@@ -258,7 +257,6 @@ function function_eb0fb7fc(duration, cooldown) {
     while (true) {
         var_f769654e setvisibletoall();
         var_f769654e sethintstring(#"hash_14c27f71630de2a6");
-        waitresult = undefined;
         waitresult = var_f769654e waittill(#"trigger");
         if (isplayer(waitresult.activator)) {
             waitresult.activator clientfield::increment_to_player("" + #"hash_6696d96a08b9701d");
@@ -272,7 +270,7 @@ function function_eb0fb7fc(duration, cooldown) {
         level notify(#"hash_41f5f07f48f61c32");
         var_f769654e setinvisibletoall();
         level notify(#"hash_3a8ba71d0dfe9582");
-        level.var_75a20fe3 = util::spawn_model("tag_origin", var_410e2bb5.origin + (25, -33, 80), var_410e2bb5.angles + vectorscale((0, 1, 0), 90));
+        level.var_75a20fe3 = util::spawn_model("tag_origin", var_410e2bb5.origin + (25, -33, 80), var_410e2bb5.angles + (0, 90, 0));
         level.var_75a20fe3 clientfield::set("" + #"hash_7159facf785aad53", 1);
         level clientfield::set("" + #"hash_31ddead700f0e24c", 1);
         if (var_7ee5c5e3 == 1) {
@@ -470,7 +468,7 @@ function function_2f6cb9bc(var_479e219c) {
 function function_2bb91770(var_479e219c) {
     level endon(var_479e219c + "_enable", var_479e219c + #"hash_166bff2e664c55b5");
     level flag::wait_till(#"hash_15f3e07d50195cb9");
-    self zm_unitrigger::function_fac87205(#"hash_12843f9a6f78954f", vectorscale((1, 1, 1), 96));
+    self zm_unitrigger::function_fac87205(#"hash_12843f9a6f78954f", (96, 96, 96));
     level notify(var_479e219c + "_crate_hint");
     level flag::set(var_479e219c + #"hash_b3e1b646a8ad825");
 }
@@ -497,7 +495,6 @@ function function_c436fc75() {
     var_811ae6d7 = getent("zm_fun_dmg", "script_noteworthy");
     var_811ae6d7 enablegrenadetouchdamage();
     while (true) {
-        waitresult = undefined;
         waitresult = var_811ae6d7 waittill(#"damage");
         if (isdefined(waitresult.attacker) && waitresult.attacker.archetype === #"hash_7c0d83ac1e845ac2") {
             var_127d143e clientfield::set("" + #"hash_21ba194bb9030d0c", 1);
@@ -538,7 +535,6 @@ function function_c436fc75() {
     level notify(#"hash_3395a609db7462e7");
     var_1a3ee7c1 setvisibletoall();
     var_1a3ee7c1 sethintstring(#"hash_235cdbad8044e4c2");
-    waitresult = undefined;
     waitresult = var_1a3ee7c1 waittill(#"trigger");
     if (isplayer(waitresult.activator)) {
         waitresult.activator clientfield::increment_to_player("" + #"hash_6696d96a08b9701d");
@@ -573,7 +569,6 @@ function function_8fa801ac() {
     var_6954c829 = spawn("trigger_damage", var_6dad8de0.origin, 0, 64, 64);
     var_b14c0d6c = struct::get("zm_nit_box_po");
     while (true) {
-        waitresult = undefined;
         waitresult = var_6954c829 waittill(#"damage");
         if (isplayer(waitresult.attacker) && !is_true(waitresult.var_98e101b0)) {
             if (isdefined(waitresult.weapon) && namespace_b376a999::function_7c292369(waitresult.weapon)) {
@@ -601,9 +596,7 @@ function function_8fa801ac() {
 // Checksum 0x1bbd4db1, Offset: 0x3f48
 // Size: 0x18c
 function private function_c801979a(*s_params) {
-    /#
-        assert(isdefined(level.var_3789aef6));
-    #/
+    assert(isdefined(level.var_3789aef6));
     if (self.var_9fde8624 === #"hash_2a5479b83161cb35" && !level flag::get("container_filled_with_gas")) {
         waittillframeend();
         if (!is_true(self.var_270befd2) && isdefined(self) && isdefined(level.var_3789aef6) && self istouching(level.var_3789aef6)) {
@@ -635,8 +628,8 @@ function private function_beb0f79f() {
     if (!isdefined(self)) {
         return;
     }
-    center = self.origin + vectorscale((0, 0, 1), 10);
-    playfx(#"hash_5f0e97a0faf57056", self.origin + vectorscale((0, 0, 1), 18), anglestoup(self.angles));
+    center = self.origin + (0, 0, 10);
+    playfx(#"hash_5f0e97a0faf57056", self.origin + (0, 0, 18), anglestoup(self.angles));
     if (isdefined(self)) {
         self delete();
     }
@@ -686,7 +679,7 @@ function function_17329c15() {
     level.var_3789aef6 = getent(container.target, "targetname");
     callback::on_ai_killed(&function_c801979a);
     level flag::wait_till("player_got_the_canister");
-    e_activator = container zm_unitrigger::function_fac87205(#"hash_1b64b8622366a804", vectorscale((1, 1, 1), 64));
+    e_activator = container zm_unitrigger::function_fac87205(#"hash_1b64b8622366a804", (64, 64, 64));
     if (isplayer(e_activator)) {
         e_activator clientfield::increment_to_player("" + #"hash_6696d96a08b9701d");
     }
@@ -695,7 +688,7 @@ function function_17329c15() {
     level flag::wait_till("container_filled_with_gas");
     callback::remove_on_ai_killed(&function_c801979a);
     var_504be1e4 = getent("zm_con_wrn", "targetname");
-    var_504be1e4 rotateto(var_504be1e4.angles + vectorscale((-1, 0, 0), 90), 0.5, 0.25, 0.25);
+    var_504be1e4 rotateto(var_504be1e4.angles + (-90, 0, 0), 0.5, 0.25, 0.25);
     container clientfield::set("" + #"hash_20066374c799cb61", 0);
     var_5ac7d534 playsound(#"hash_4900d3acf7b69f98");
     /#
@@ -710,14 +703,13 @@ function function_17329c15() {
     level flag::wait_till("full_canister_picked_up");
     level.var_74ec088f zm_unitrigger::unregister_unitrigger(level.var_74ec088f.s_unitrigger);
     level notify(#"hash_6570f3a0ec272ff0");
-    e_activator = level.var_74ec088f zm_unitrigger::function_fac87205(#"hash_4e599abcf42324d0", vectorscale((1, 1, 1), 96));
+    e_activator = level.var_74ec088f zm_unitrigger::function_fac87205(#"hash_4e599abcf42324d0", (96, 96, 96));
     if (isplayer(e_activator)) {
         e_activator clientfield::increment_to_player("" + #"hash_6696d96a08b9701d");
     }
     var_b04e724c = util::spawn_model(#"hash_5995b3cc741a38e", struct::get("zm_can_box").origin);
     t_damage = spawn("trigger_damage", var_b04e724c.origin, 0, 32, 32);
     while (true) {
-        waitresult = undefined;
         waitresult = t_damage waittill(#"damage");
         if (isdefined(waitresult) && isplayer(waitresult.attacker)) {
             break;
@@ -750,13 +742,12 @@ function function_dc2acb90() {
     canister.var_dd21aec2 = 1 | 16;
     var_56bd59dc = getent("zm_can_dmg", "script_noteworthy");
     var_56bd59dc.var_22cea3da = &function_72c756bc;
-    waitresult = undefined;
     waitresult = var_56bd59dc waittill(#"hash_31c03401c377e12b");
     if (isdefined(waitresult.player) && isdefined(canister)) {
         if (isdefined(var_56bd59dc)) {
             var_56bd59dc delete();
         }
-        canister zm_utility::fake_physicslaunch(waitresult.player.origin + vectorscale((0, 0, 1), 35), 400);
+        canister zm_utility::fake_physicslaunch(waitresult.player.origin + (0, 0, 35), 400);
         canister playsound(#"hash_58520f136e1f89f9");
     }
     var_99bf2e73 = struct::get("zmintel_silver_maxis_audiolog_3", "scriptbundlename");
@@ -1028,7 +1019,7 @@ function function_78d3b53b() {
 // Checksum 0x5f7cfe0d, Offset: 0x61c0
 // Size: 0x1c0
 function function_ead1edac(cutter) {
-    e_activator = self zm_unitrigger::function_fac87205(&function_95913408, vectorscale((1, 1, 1), 96));
+    e_activator = self zm_unitrigger::function_fac87205(&function_95913408, (96, 96, 96));
     level flag::set("ww_plasma_dark_crate_unfolded");
     if (isplayer(e_activator)) {
         e_activator clientfield::increment_to_player("" + #"hash_6696d96a08b9701d");
@@ -1067,7 +1058,6 @@ function function_59642e27(a_ents) {
     var_fcb6d06e = a_ents[#"hash_15081fa69fd97eda"];
     var_11a6696e = spawn("trigger_damage", var_fcb6d06e.origin, 0, 96, 96);
     while (true) {
-        waitresult = undefined;
         waitresult = var_11a6696e waittill(#"damage");
         if (isplayer(waitresult.attacker) && isdefined(waitresult.weapon) && is_true(waitresult.weapon.isbulletweapon)) {
             point = function_4ba8fde(#"hash_70dc74e571a35a75");
@@ -1227,7 +1217,6 @@ function function_fbce146e(var_db089991) {
     self flag::wait_till("crystal_active");
     self clientfield::set("crystal_energy_fx", 1);
     var_db089991.var_22cea3da = &function_971d0ec8;
-    waitresult = undefined;
     waitresult = var_db089991 waittill(#"hash_33fac1f6f3a6dcc");
     self.player = waitresult.player;
     self.player.crystal = self;
@@ -1259,7 +1248,6 @@ function function_f5eebd57() {
     self endon(#"disconnect");
     var_105682f = 0;
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"weapon_fired", #"weapon_change");
         if (waitresult._notify === "weapon_fired" && namespace_b376a999::function_5fef4201(waitresult.weapon)) {
             var_105682f = 1;
@@ -1319,7 +1307,7 @@ function function_e0e08fa2(*e_player) {
 function function_43073640(crate, num) {
     level endon(#"game_ended");
     var_15f88bee = getent(crate.target, "targetname");
-    t_damage = spawn("trigger_damage", crate.origin + vectorscale((0, 0, 1), 12), 0, 64, 48);
+    t_damage = spawn("trigger_damage", crate.origin + (0, 0, 12), 0, 64, 48);
     t_damage enablegrenadetouchdamage();
     flag = function_27f2ef17(t_damage);
     function_4e3bb793(t_damage, flag & ~512);
@@ -1336,9 +1324,7 @@ function function_746a64df(var_15f88bee, t_damage, num) {
     level endon(#"game_ended", "receptacle_" + num + "_powered");
     while (true) {
         self waittill(#"hash_33fac1f6f3a6dcc");
-        /#
-            assert(isdefined(self.player));
-        #/
+        assert(isdefined(self.player));
         var_15f88bee setvisibletoplayer(self.player);
         var_15f88bee sethintstringforplayer(self.player, #"hash_9a36cd75f8acaee");
         t_damage thread function_ef55bb22(self, num);
@@ -1360,7 +1346,6 @@ function function_ef55bb22(var_53f12789, num) {
         iprintlnbold("<unknown string>" + num + "<unknown string>");
     #/
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (waitresult.attacker === var_53f12789.player && waitresult.attacker flag::get("hold_crystal_energy")) {
             if (isdefined(waitresult.weapon) && namespace_b376a999::function_5fef4201(waitresult.weapon) && !is_true(waitresult.var_98e101b0)) {
@@ -1394,7 +1379,6 @@ function function_ef55bb22(var_53f12789, num) {
 function function_b39ee43f(a_ents) {
     var_bf71a40b = a_ents[#"weapon_crate"];
     while (true) {
-        flag_return = undefined;
         flag_return = level waittill(#"receptacle_1_powered", #"receptacle_2_powered", #"receptacle_3_powered");
         switch (flag_return._notify) {
         case #"receptacle_1_powered":
@@ -1424,32 +1408,31 @@ function function_8d9ddc22(var_e7772c37) {
     case #"nitrogen":
         var_6bdde8a3 = getweapon(#"ww_ieu_acid_t9");
         var_39023436 = getweapon(#"hash_189ef2dafffe1f4c");
-        var_339168c3 = self zm_unitrigger::create(&function_91807eb1, vectorscale((1, 1, 1), 128));
+        var_339168c3 = self zm_unitrigger::create(&function_91807eb1, (128, 128, 128));
         self.var_37023f0e = "cryo";
         break;
     case #"gas":
         var_6bdde8a3 = getweapon(#"ww_ieu_gas_t9");
         var_39023436 = getweapon(#"hash_941005e056449b4");
-        var_339168c3 = self zm_unitrigger::create(&function_4d97eda3, vectorscale((1, 1, 1), 128));
+        var_339168c3 = self zm_unitrigger::create(&function_4d97eda3, (128, 128, 128));
         self.var_37023f0e = "gas";
         break;
     case #"plasma":
         var_6bdde8a3 = getweapon(#"ww_ieu_plasma_t9");
         var_39023436 = getweapon(#"hash_11363c24185fecdb");
-        var_339168c3 = self zm_unitrigger::create(&function_b75d50b5, vectorscale((1, 1, 1), 128));
+        var_339168c3 = self zm_unitrigger::create(&function_b75d50b5, (128, 128, 128));
         self.var_37023f0e = "rust";
         break;
     case #"beam":
         var_6bdde8a3 = getweapon(#"ww_ieu_electric_t9");
         var_39023436 = getweapon(#"hash_4ee16eb0581e4646");
-        var_339168c3 = self zm_unitrigger::create(&function_8a172c28, vectorscale((1, 1, 1), 128));
+        var_339168c3 = self zm_unitrigger::create(&function_8a172c28, (128, 128, 128));
         self.var_37023f0e = "electric";
         break;
     }
     zm_unitrigger::unitrigger_force_per_player_triggers(var_339168c3, 1);
     scene::add_scene_func(#"hash_340eb7e983e34e72" + self.var_37023f0e + "_bundle", &function_217a625a, "open");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger_activated");
         player = waitresult.e_who;
         if (isplayer(player)) {
@@ -1514,7 +1497,6 @@ function function_8d9ddc22(var_e7772c37) {
                     self.var_14bfe1d6 disconnectpaths();
                     continue;
                 }
-                result = undefined;
                 result = player waittilltimeout(5, #"death", #"weapon_change_complete", #"entering_last_stand");
                 if (result._notify == #"timeout" || player getcurrentweapon() != var_d5c2e187) {
                     player notify(#"hash_6a9e5d5a03df7e27");
@@ -1548,11 +1530,7 @@ function function_8d9ddc22(var_e7772c37) {
                     var_981d2438.itementry = var_3383cd4e.itementry;
                     var_981d2438.id = var_3383cd4e.id;
                 } else {
-                    /#
-                        /#
-                            assertmsg("<unknown string>" + var_963f7bc9.name);
-                        #/
-                    #/
+                    assertmsg("<unknown string>" + var_963f7bc9.name);
                 }
             }
             level notify(#"hash_685e9797cabb8ed");
@@ -1671,8 +1649,7 @@ function function_217a625a(a_ents) {
         var_bf71a40b clientfield::set("" + #"hash_7aeee79e85f9273c", 4);
         break;
     }
-    var_2faa8624 linkto(var_bf71a40b, "tag_tank", (0, 0, 0), vectorscale((-1, 0, 0), 28));
-    waitresult = undefined;
+    var_2faa8624 linkto(var_bf71a40b, "tag_tank", (0, 0, 0), (-28, 0, 0));
     waitresult = level waittill(#"silver_weapon_crate_closed", #"hash_685e9797cabb8ed", #"hash_142e9131e668557d");
     var_2faa8624 unlink();
     if (isdefined(var_2faa8624)) {

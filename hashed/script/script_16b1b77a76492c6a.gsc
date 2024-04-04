@@ -47,7 +47,6 @@ function function_5e62ed5c() {
             level.var_f535b5f0 = 480;
         }
         level.var_49f4fe8e = undefined;
-        wait_result = undefined;
         wait_result = level waittilltimeout(randomfloatrange(level.var_cf15d540, level.var_f535b5f0), #"start_ambush", #"objective_locked");
         if (level flag::get("objective_locked")) {
             level flag::wait_till_clear("objective_locked");

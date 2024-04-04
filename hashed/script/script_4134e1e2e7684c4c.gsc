@@ -29,9 +29,7 @@ function function_eea42dd9(var_f873ed0b, var_e3ec46f0) {
 // Size: 0x1b4
 function function_487b4340(var_e1ab1198, var_5130c92a = 1, var_907c1dab) {
     var_deff0f73 = getscriptbundle(var_e1ab1198);
-    /#
-        assert(isdefined(var_deff0f73), "<unknown string>" + var_e1ab1198);
-    #/
+    assert(isdefined(var_deff0f73), "<unknown string>" + var_e1ab1198);
     if (!isdefined(var_907c1dab)) {
         var_907c1dab = 0;
     }
@@ -57,9 +55,7 @@ function function_487b4340(var_e1ab1198, var_5130c92a = 1, var_907c1dab) {
 // Checksum 0xe7e90577, Offset: 0x5a0
 // Size: 0x7c
 function function_93dd719c(var_9d391884, var_80d5359e = 0) {
-    /#
-        assert(ishash(var_9d391884), "<unknown string>");
-    #/
+    assert(ishash(var_9d391884), "<unknown string>");
     namespace_61e6d095::function_bfdab223(#"hash_15363747d8cbf71f", var_9d391884, var_80d5359e);
 }
 
@@ -68,9 +64,7 @@ function function_93dd719c(var_9d391884, var_80d5359e = 0) {
 // Checksum 0xe5e477ae, Offset: 0x628
 // Size: 0x5c
 function function_14291ddf(var_c51f6b35) {
-    /#
-        assert(ishash(var_c51f6b35), "<unknown string>");
-    #/
+    assert(ishash(var_c51f6b35), "<unknown string>");
     namespace_61e6d095::function_309bf7c2(#"hash_15363747d8cbf71f", var_c51f6b35);
 }
 
@@ -87,9 +81,7 @@ function function_ca5c7f26(var_b8f68f4, value) {
 // Checksum 0x589f8149, Offset: 0x6d8
 // Size: 0x8c
 function function_314087bb(line) {
-    /#
-        assert(isdefined(level.var_deff0f73) && line > 0 && line <= level.var_deff0f73.size);
-    #/
+    assert(isdefined(level.var_deff0f73) && line > 0 && line <= level.var_deff0f73.size);
     var_307d638e = level.var_deff0f73[line - 1];
     function_66b8c40f(var_307d638e, line);
 }

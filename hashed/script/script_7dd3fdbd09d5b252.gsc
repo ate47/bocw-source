@@ -8,22 +8,6 @@
 class cdeath_zone : cluielem {
 
     // Namespace cdeath_zone/death_zone
-    // Params 0, eflags: 0x8
-    // Checksum 0x5e50a76d, Offset: 0x348
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cdeath_zone/death_zone
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x339de60f, Offset: 0x498
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cdeath_zone/death_zone
     // Params 1, eflags: 0x0
     // Checksum 0x417f4cce, Offset: 0x430
     // Size: 0x24
@@ -36,7 +20,7 @@ class cdeath_zone : cluielem {
     // Checksum 0x4bca4dda, Offset: 0x460
     // Size: 0x30
     function set_shutdown_sec(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "shutdown_sec", value);
+        set_data(localclientnum, "shutdown_sec", value);
     }
 
     // Namespace cdeath_zone/death_zone
@@ -62,7 +46,7 @@ class cdeath_zone : cluielem {
     // Size: 0x40
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "shutdown_sec", 0);
+        set_data(localclientnum, "shutdown_sec", 0);
     }
 
 }

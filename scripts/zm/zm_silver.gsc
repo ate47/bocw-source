@@ -155,8 +155,8 @@ function event_handler[level_init] main(*eventstruct) {
     setdvar(#"hkai_pathfinditerationlimit", 1050);
     level.missileremotelaunchvert = 9000;
     level.missileremotelaunchhorz = 4000;
-    level.var_eb6a7fa3 = vectorscale((0, 1, 0), 90);
-    level.var_2743a7e2 = level.mapcenter + vectorscale((0, 1, 0), 500);
+    level.var_eb6a7fa3 = (0, 90, 0);
+    level.var_2743a7e2 = level.mapcenter + (0, 500, 0);
     callback::add_callback(#"hash_41e282f5ec98e877", &function_44ed971);
     zm_utility::function_89dbd679((484, 13, -516), 70, 50, (540.786, -3.57566, -544.107), 128);
     zm_utility::function_89dbd679((458, 476, -355), 35, 50, (475.61, 445.689, -385.375), 128);
@@ -397,7 +397,6 @@ function function_cd3a65e0() {
 function private function_360fb84d() {
     level endon(#"end_game");
     for (var_d1ae80e1 = undefined; true; var_d1ae80e1 = level.round_number + 2) {
-        s_waitresult = undefined;
         s_waitresult = level waittill(#"start_of_round", #"pap_quest_completed");
         n_players = zm_utility::function_a2541519(getplayers().size);
         if (!zm_round_spawning::function_fab464c4(level.round_number) && (n_players == 1 && level.round_number >= 15 || n_players > 1 && level.round_number >= 13 || isdefined(var_d1ae80e1) && level.round_number >= var_d1ae80e1)) {

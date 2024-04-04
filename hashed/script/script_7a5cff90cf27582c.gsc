@@ -8,21 +8,8 @@
 // Method(s) 6 Total 13
 class class_6b831806 : cluielem {
 
-    // Namespace class_6b831806/blackseajetskideployprompt
-    // Params 0, eflags: 0x8
-    // Checksum 0xdd162454, Offset: 0x1f8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_6b831806/blackseajetskideployprompt
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x5dca77cc, Offset: 0x330
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_6b831806/blackseajetskideployprompt
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class class_6b831806 : cluielem {
     // Checksum 0x8dbab234, Offset: 0x2e0
     // Size: 0x44
     function function_26d9350e(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "deployProgress", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "deployProgress", value);
     }
 
     // Namespace namespace_6b831806/blackseajetskideployprompt

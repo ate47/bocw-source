@@ -111,7 +111,6 @@ function private function_acc36c55(watcher) {
     self.var_20a0f018.maxhealth = 100000;
     self.var_20a0f018.health = self.var_20a0f018.maxhealth;
     while (true) {
-        waitresult = undefined;
         waitresult = self.var_20a0f018 waittill(#"damage");
         attacker = waitresult.attacker;
         weapon = waitresult.weapon;
@@ -285,7 +284,7 @@ function private function_400826e(*zombie) {
     if (isdefined(self.var_acdc8d71)) {
         return self.var_acdc8d71;
     }
-    return groundtrace(self.origin + vectorscale((0, 0, 1), 8), self.origin + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
+    return groundtrace(self.origin + (0, 0, 8), self.origin + (0, 0, -100000), 0, self)[#"position"];
 }
 
 // Namespace nightingale/nightingale
@@ -296,7 +295,7 @@ function private function_65ee50ba() {
     check_dist = 10;
     var_1a055edd = [];
     basepos = self.origin;
-    var_2eefd050 = groundtrace(basepos + vectorscale((0, 0, 1), 8), basepos + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
+    var_2eefd050 = groundtrace(basepos + (0, 0, 8), basepos + (0, 0, -100000), 0, self)[#"position"];
     if (!isdefined(var_1a055edd)) {
         var_1a055edd = [];
     } else if (!isarray(var_1a055edd)) {
@@ -306,7 +305,7 @@ function private function_65ee50ba() {
     for (xoffset = -1; xoffset <= 1; xoffset = xoffset + 2) {
         for (yoffset = -1; yoffset <= 1; yoffset = yoffset + 2) {
             checkpos = basepos + (xoffset * check_dist, yoffset * check_dist, 0);
-            groundpos = groundtrace(checkpos + vectorscale((0, 0, 1), 8), checkpos + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
+            groundpos = groundtrace(checkpos + (0, 0, 8), checkpos + (0, 0, -100000), 0, self)[#"position"];
             if (!isdefined(var_1a055edd)) {
                 var_1a055edd = [];
             } else if (!isarray(var_1a055edd)) {
@@ -321,7 +320,7 @@ function private function_65ee50ba() {
     }
     /#
         debugstar(farthest, 30, (1, 1, 1));
-        recordline(self.origin, farthest, vectorscale((1, 1, 1), 0.1));
+        recordline(self.origin, farthest, (0.1, 0.1, 0.1));
     #/
     return getclosestpointonnavmesh(farthest, 420, 15.1875);
 }

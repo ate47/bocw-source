@@ -40,10 +40,10 @@ function function_f3143608(localclientnum) {
     self.doa.cameramode = 1;
     self.doa.var_71122e79 = 0;
     self.doa.var_903d75b1 = undefined;
-    self namespace_ac2a80f5::function_278f20a3(vectorscale((1, 0, 0), 75), namespace_ac2a80f5::function_ccf8a968(self.doa.cameramode));
+    self namespace_ac2a80f5::function_278f20a3((75, 0, 0), namespace_ac2a80f5::function_ccf8a968(self.doa.cameramode));
     self.doa.var_25f4de97 = 0;
     self.skits = undefined;
-    self.doa.var_3e81d24c = 0;
+    self.doa.infps = 0;
     self.entnum = self getentitynumber();
     self.var_88a2ff29 = level.var_30df1fad;
     self cameraforcedisablescriptcam(0);
@@ -56,7 +56,7 @@ function function_f3143608(localclientnum) {
     self.fxorigin = namespace_ec06fe4a::spawnmodel(localclientnum, self.origin, undefined, undefined, "playerfxOrigin");
     if (isdefined(self.fxorigin)) {
         self.fxorigin thread namespace_ec06fe4a::function_d55f042c(self, "disconnect");
-        self.fxorigin thread namespace_ec06fe4a::function_73d79e7d(self, vectorscale((0, 0, 1), 6));
+        self.fxorigin thread namespace_ec06fe4a::function_73d79e7d(self, (0, 0, 6));
     }
     self util::waittill_dobj(localclientnum);
     if (!isdefined(self)) {
@@ -242,7 +242,7 @@ function function_fcc90081(localclientnum) {
         self.fxorigin = namespace_ec06fe4a::spawnmodel(localclientnum, self.origin, undefined, undefined, "playerfxOrigin");
         if (isdefined(self.fxorigin)) {
             self.fxorigin thread namespace_ec06fe4a::function_d55f042c(self, "disconnect");
-            self.fxorigin thread namespace_ec06fe4a::function_73d79e7d(self, vectorscale((0, 0, 1), 6));
+            self.fxorigin thread namespace_ec06fe4a::function_73d79e7d(self, (0, 0, 6));
         }
     }
     self.skits = undefined;
@@ -281,9 +281,7 @@ function function_4d692cc4(localclientnum, mapping = "zombietron") {
 // Checksum 0xda863456, Offset: 0x10b8
 // Size: 0x52
 function islocalplayer(player) {
-    /#
-        assert(isdefined(player), "<unknown string>");
-    #/
+    assert(isdefined(player), "<unknown string>");
     return isinarray(getlocalplayers(), player);
 }
 

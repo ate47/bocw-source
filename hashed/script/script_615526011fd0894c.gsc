@@ -8,22 +8,6 @@
 class csr_objective_secure_hud : cluielem {
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x7de0b810, Offset: 0x428
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace csr_objective_secure_hud/sr_objective_secure_hud
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x6cfcadaa, Offset: 0x678
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace csr_objective_secure_hud/sr_objective_secure_hud
     // Params 1, eflags: 0x2 linked
     // Checksum 0x40220c7f, Offset: 0x568
     // Size: 0x24
@@ -36,7 +20,7 @@ class csr_objective_secure_hud : cluielem {
     // Checksum 0x4ccc11ed, Offset: 0x598
     // Size: 0x30
     function function_3b1f1b69(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "progFracA", value);
+        set_data(localclientnum, "progFracA", value);
     }
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
@@ -60,7 +44,7 @@ class csr_objective_secure_hud : cluielem {
     // Checksum 0xe59c0345, Offset: 0x5d0
     // Size: 0x30
     function function_a1cd68d0(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "progFracB", value);
+        set_data(localclientnum, "progFracB", value);
     }
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
@@ -68,7 +52,7 @@ class csr_objective_secure_hud : cluielem {
     // Checksum 0x9306c77a, Offset: 0x608
     // Size: 0x30
     function function_d2f341fe(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "objectiveWhiteA", value);
+        set_data(localclientnum, "objectiveWhiteA", value);
     }
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
@@ -76,7 +60,7 @@ class csr_objective_secure_hud : cluielem {
     // Checksum 0x3fa1af64, Offset: 0x640
     // Size: 0x30
     function function_e4a4e561(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "objectiveWhiteB", value);
+        set_data(localclientnum, "objectiveWhiteB", value);
     }
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
@@ -85,10 +69,10 @@ class csr_objective_secure_hud : cluielem {
     // Size: 0xa4
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "progFracA", 0);
-        [[ self ]]->set_data(localclientnum, "progFracB", 0);
-        [[ self ]]->set_data(localclientnum, "objectiveWhiteA", 0);
-        [[ self ]]->set_data(localclientnum, "objectiveWhiteB", 0);
+        set_data(localclientnum, "progFracA", 0);
+        set_data(localclientnum, "progFracB", 0);
+        set_data(localclientnum, "objectiveWhiteA", 0);
+        set_data(localclientnum, "objectiveWhiteB", 0);
     }
 
 }

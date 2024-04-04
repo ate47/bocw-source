@@ -7,22 +7,6 @@
 // Method(s) 7 Total 14
 class class_51e5626e : cluielem {
 
-    // Namespace class_51e5626e/sr_message_box
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x4d8cce20, Offset: 0x348
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_51e5626e/sr_message_box
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x8e54a456, Offset: 0x4a8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_51e5626e/sr_message_box
     // Params 1, eflags: 0x2 linked
     // Checksum 0xfa7dd94a, Offset: 0x440
@@ -44,7 +28,7 @@ class class_51e5626e : cluielem {
     // Checksum 0xc655dbc9, Offset: 0x470
     // Size: 0x30
     function function_7a690474(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "messagebox", value);
+        set_data(localclientnum, "messagebox", value);
     }
 
     // Namespace namespace_51e5626e/sr_message_box
@@ -62,7 +46,7 @@ class class_51e5626e : cluielem {
     // Size: 0x4c
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "messagebox", #"");
+        set_data(localclientnum, "messagebox", #"");
     }
 
 }

@@ -165,9 +165,7 @@ function function_455048d8() {
 // Checksum 0x6668d303, Offset: 0x918
 // Size: 0x5c
 function function_24654660(var_14e7d014) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     player = self;
     player savegame::set_player_data(var_14e7d014, 1);
 }
@@ -177,9 +175,7 @@ function function_24654660(var_14e7d014) {
 // Checksum 0x5d7e39f6, Offset: 0x980
 // Size: 0x7a
 function function_e538e340(var_14e7d014) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     player = self;
     var_393a392a = int(player savegame::function_2ee66e93(var_14e7d014, 0));
     return var_393a392a;

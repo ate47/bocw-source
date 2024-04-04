@@ -273,9 +273,7 @@ function on_round_end() {
             player.var_8d41c907 = player.var_8d41c907 - var_370ac26d;
         }
         if (!isdefined(player.var_a160c21d) || player.var_a160c21d === 0) {
-            /#
-                println("<unknown string>" + player getentitynumber() + "<unknown string>");
-            #/
+            println("<unknown string>" + player getentitynumber() + "<unknown string>");
             player.var_a160c21d = 0;
         }
         player.var_8d41c907 = player.var_8d41c907 + player zm_round_logic::function_f4c57bbe();

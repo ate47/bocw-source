@@ -74,7 +74,7 @@ function function_9717930f(localclientnum, *oldval, *newval, *bnewent, *binitial
     util::playfxontag(bwastimejump, #"hash_35c5a29b4a86b5fb", self, "tag_origin");
     util::playfxontag(bwastimejump, #"hash_250adc9af94491d1", self, "tag_origin");
     util::playfxontag(bwastimejump, #"hash_4bbd9da4b24f7552", self, "tag_origin");
-    playsound(bwastimejump, #"hash_67d6791052a84d2a", self.origin + vectorscale((0, 0, 1), 75));
+    playsound(bwastimejump, #"hash_67d6791052a84d2a", self.origin + (0, 0, 75));
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop

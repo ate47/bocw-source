@@ -52,9 +52,7 @@ function postinit() {
 // Checksum 0x5db187a8, Offset: 0x2c0
 // Size: 0x2d0
 function function_9ed7339b(struct) {
-    /#
-        assert(isstruct(struct), "<unknown string>");
-    #/
+    assert(isstruct(struct), "<unknown string>");
     spawn_points = struct.contentgroups[#"hash_6873efb1dfa0ebea"];
     foreach (point in spawn_points) {
         spawn_struct = point;
@@ -360,9 +358,7 @@ function function_ef9d58d0(item) {
 function function_e4ff673(eventstruct) {
     player = eventstruct.activator;
     model = self.scriptmodel;
-    /#
-        assert(isdefined(model), "<unknown string>");
-    #/
+    assert(isdefined(model), "<unknown string>");
     if (isplayer(player)) {
         nullweapon = getweapon(#"none");
         var_f945fa92 = getweapon(#"bare_hands");

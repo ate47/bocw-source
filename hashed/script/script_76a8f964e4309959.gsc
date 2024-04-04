@@ -287,7 +287,7 @@ function function_a58fe5b7(var_199d73cc = undefined) {
             if (isdefined(var_199d73cc) && var_a2105b2a < 15) {
                 var_bf1cc8e2 = var_9769213d.origin + var_ef8e1e71 * anglestoforward((0, var_199d73cc.angles[1], 0));
                 var_bf1cc8e2 = var_bf1cc8e2 + var_9d7713d9 / 4 * array::random([-1, 1]) * anglestoright((0, var_199d73cc.angles[1], 0));
-                traceresult = groundtrace(var_bf1cc8e2, var_bf1cc8e2 + vectorscale((0, 0, -1), 100), 0, 0);
+                traceresult = groundtrace(var_bf1cc8e2, var_bf1cc8e2 + (0, 0, -100), 0, 0);
                 if (isdefined(traceresult[#"position"])) {
                     var_bf1cc8e2 = traceresult[#"position"];
                 }
@@ -300,7 +300,7 @@ function function_a58fe5b7(var_199d73cc = undefined) {
                 } else {
                     var_a2105b2a++;
                 }
-                traceresult = groundtrace(var_bf1cc8e2, var_bf1cc8e2 + vectorscale((0, 0, -1), 100), 0, 0);
+                traceresult = groundtrace(var_bf1cc8e2, var_bf1cc8e2 + (0, 0, -100), 0, 0);
                 if (isdefined(traceresult[#"position"])) {
                     var_bf1cc8e2 = traceresult[#"position"];
                 }

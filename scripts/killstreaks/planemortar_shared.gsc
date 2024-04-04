@@ -37,9 +37,7 @@ function init_shared() {
 // Checksum 0xba77339d, Offset: 0x368
 // Size: 0x80
 function function_a385666(slot) {
-    /#
-        assert(slot != 3);
-    #/
+    assert(slot != 3);
     var_127d1ed1 = isdefined(self.pers[#"hash_1aaccfe69e328d6e"][slot]) ? self.pers[#"hash_1aaccfe69e328d6e"][slot] : 0;
     return var_127d1ed1 > 0;
 }
@@ -65,7 +63,6 @@ function usekillstreakplanemortar(hardpointtype) {
 // Size: 0x56
 function waittill_confirm_location() {
     self endon(#"emp_jammed", #"emp_grenaded");
-    waitresult = undefined;
     waitresult = self waittill(#"confirm_location");
     return waitresult.position;
 }
@@ -238,7 +235,6 @@ function function_16f87e96(predelay) {
 // Checksum 0x7e19d77a, Offset: 0x1040
 // Size: 0x11c
 function function_5f89ffc2(hardpointtype, isfrominventory = 0, slot) {
-    result = undefined;
     result = self waittill(#"death", #"killstreak_used");
     if (isdefined(self) && result._notify == "death") {
         if (!is_true(getgametypesetting(#"hash_7647d0e9a45eeca6"))) {
@@ -290,7 +286,7 @@ function private function_ac3ad2f8(ents) {
     killcament thread function_6ffdbd95(var_5496c504);
     var_5496c504 waittill(#"magic_missile");
     if (isdefined(self.owner)) {
-        bomb = self.owner magicmissile(weapon, self.origin + vectorscale((0, 0, 1), 100), vectorscale((0, 0, -1), 5000));
+        bomb = self.owner magicmissile(weapon, self.origin + (0, 0, 100), (0, 0, -5000));
         bomb.killstreakid = self.killstreakid;
         bomb.killcament = killcament;
     }
@@ -384,14 +380,14 @@ function function_4ef32baf(position, yaw, team) {
     plane clientfield::set("enemyvehicle", 1);
     plane playsound(#"mpl_lightning_flyover_boom");
     plane setdrawinfrared(1);
-    plane.killcament = spawn("script_model", plane.origin + vectorscale((0, 0, 1), 700) + vectorscale(direction, -1500));
+    plane.killcament = spawn("script_model", plane.origin + (0, 0, 700) + vectorscale(direction, -1500));
     plane.killcament util::deleteaftertime(2 * 3);
     plane.killcament.angles = (15, yaw, 0);
     plane.killcament.starttime = gettime();
     plane.killcament linkto(plane);
     start = (position[0], position[1], plane.origin[2]);
     playsoundatposition(#"hash_5a17b7541482a04f", plane.origin);
-    impact = bullettrace(start, start + vectorscale((0, 0, -1), 100000), 1, plane);
+    impact = bullettrace(start, start + (0, 0, -100000), 1, plane);
     plane moveto(endpoint, 2 * 5 / 4, 0, 0);
     plane.killcament thread followbomb(plane, position, direction, impact, player);
     wait(2 / 2);
@@ -410,7 +406,7 @@ function followbomb(plane, *position, direction, impact, player) {
     player endon(#"emp_jammed");
     wait(2 * 5 / 12);
     position.killcament unlink();
-    position.killcament moveto(impact[#"position"] + vectorscale((0, 0, 1), 1000) + vectorscale(direction, -600), 0.8, 0, 0.2);
+    position.killcament moveto(impact[#"position"] + (0, 0, 1000) + vectorscale(direction, -600), 0.8, 0, 0.2);
 }
 
 // Namespace planemortar/planemortar_shared
@@ -431,7 +427,6 @@ function lookatexplosion(bomb) {
 // Size: 0x94
 function planewatchforemp(*owner) {
     self endon(#"delete", #"death");
-    waitresult = undefined;
     waitresult = self waittill(#"emp_deployed");
     if (isdefined(level.planeawardscoreevent)) {
         thread [[ level.planeawardscoreevent ]](waitresult.attacker, self);
@@ -466,7 +461,7 @@ function dropbomb(plane, bombposition) {
         }
     }
     bombposition = (bombposition[0], bombposition[1], z - 100);
-    bomb = self magicmissile(getweapon("planemortar"), bombposition, vectorscale((0, 0, -1), 5000));
+    bomb = self magicmissile(getweapon("planemortar"), bombposition, (0, 0, -5000));
     bomb.soundmod = "heli";
     bomb playsound(#"mpl_lightning_bomb_incoming");
     bomb.killcament = plane.killcament;

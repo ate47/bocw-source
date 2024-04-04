@@ -47,9 +47,7 @@ function function_2e7c81f6(var_6ec87b1c, var_1bf8e54c, var_67e93cde, var_1608158
 // Checksum 0xcd2bf9b, Offset: 0x6f8
 // Size: 0xfc
 function function_82c1c712(var_7e50d895, var_3f0c288b = 1, var_908ce45b = 0) {
-    /#
-        assert(ishash(var_7e50d895) || isweapon(var_7e50d895), "glass");
-    #/
+    assert(ishash(var_7e50d895) || isweapon(var_7e50d895), "glass");
     w_weapon = get_weapon(var_7e50d895);
     self giveweapon(w_weapon);
     if (var_3f0c288b) {
@@ -65,9 +63,7 @@ function function_82c1c712(var_7e50d895, var_3f0c288b = 1, var_908ce45b = 0) {
 // Checksum 0xf53d956, Offset: 0x800
 // Size: 0xdc
 function function_2c192b72(var_7e50d895, var_3f0c288b = 1) {
-    /#
-        assert(isstring(var_7e50d895) || ishash(var_7e50d895) || isweapon(var_7e50d895), "<unknown string>");
-    #/
+    assert(isstring(var_7e50d895) || ishash(var_7e50d895) || isweapon(var_7e50d895), "<unknown string>");
     w_weapon = get_weapon(var_7e50d895);
     self giveweapon(w_weapon);
     if (var_3f0c288b) {
@@ -87,9 +83,7 @@ function private get_weapon(var_7e50d895) {
     if (isweapon(w_weapon)) {
         return w_weapon;
     }
-    /#
-        errormsg("<unknown string>");
-    #/
+    errormsg("<unknown string>");
 }
 
 // Namespace hms_util/hms_util
@@ -97,16 +91,10 @@ function private get_weapon(var_7e50d895) {
 // Checksum 0x9f3b3b, Offset: 0x980
 // Size: 0x124
 function function_d2913eb6(str_value, str_key = "targetname") {
-    /#
-        assert(isstring(str_value), "<unknown string>");
-    #/
-    /#
-        assert(isstring(str_key), "<unknown string>");
-    #/
+    assert(isstring(str_value), "<unknown string>");
+    assert(isstring(str_key), "<unknown string>");
     var_39a8d367 = struct::get(str_value, str_key);
-    /#
-        assert(isdefined(var_39a8d367), "<unknown string>" + str_key + "<unknown string>" + str_value + "<unknown string>");
-    #/
+    assert(isdefined(var_39a8d367), "<unknown string>" + str_key + "<unknown string>" + str_value + "<unknown string>");
     self setorigin(var_39a8d367.origin);
     self setplayerangles(var_39a8d367.angles);
 }
@@ -203,7 +191,7 @@ function function_5056f90d() {
         var_747bfbeb = function_eb59c79() / level.player.maxhealth;
         while (isdefined(level.player)) {
             var_3d30d8a4 = int(level.player.health * var_747bfbeb);
-            debug2dtext(vectorscale((0, 1, 0), 1008), "<unknown string>" + var_3d30d8a4, (1, 1, 0), undefined, undefined, 0.5, 1.5, 1);
+            debug2dtext((0, 1008, 0), "<unknown string>" + var_3d30d8a4, (1, 1, 0), undefined, undefined, 0.5, 1.5, 1);
             waitframe(1);
         }
     #/
@@ -255,9 +243,7 @@ function dialogue(var_8a9a3456, var_e7ee33b4, str_team_override, var_ee658ea4) {
 // Size: 0x33c
 function function_4fbbdb3a(var_8a9a3456) {
     /#
-        /#
-            assert(isdefined(self.var_e18a578d));
-        #/
+        assert(isdefined(self.var_e18a578d));
         level notify(#"hash_c994d2af0329db3");
         var_1a057205 = newdebughudelem();
         var_1a057205 thread function_3b240a04();
@@ -284,9 +270,7 @@ function function_4fbbdb3a(var_8a9a3456) {
         } else if (self.var_e18a578d == "<unknown string>") {
             str_name = "<unknown string>";
         } else {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            assertmsg("<unknown string>");
         }
         if (self.var_e18a578d == "<unknown string>") {
             var_ac6f8704 = "<unknown string>";
@@ -295,9 +279,7 @@ function function_4fbbdb3a(var_8a9a3456) {
         } else if (self.var_e18a578d == "<unknown string>") {
             var_ac6f8704 = "<unknown string>";
         } else {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            assertmsg("<unknown string>");
         }
         var_1a057205 settext(var_ac6f8704 + str_name + "<unknown string>" + "<unknown string>" + var_8a9a3456);
         var_69ddbb87 = 2 + var_8a9a3456.size * 0.05;
@@ -365,9 +347,7 @@ function function_52f38f72() {
 // Checksum 0xefe905b1, Offset: 0x1798
 // Size: 0x24a
 function function_ee1d1df6(var_98b4b8a9, var_4aac0a03, var_243c68ce, var_715f6e03, var_58d5c920, var_3383cd4e, var_5207b7a8) {
-    /#
-        assert(isdefined(var_98b4b8a9), "<unknown string>");
-    #/
+    assert(isdefined(var_98b4b8a9), "<unknown string>");
     str_targetname = isdefined(var_58d5c920) ? var_58d5c920 : var_98b4b8a9;
     ai = spawn_targetname(str_targetname);
     ai.animname = var_98b4b8a9;
@@ -431,9 +411,7 @@ function set_demeanor(var_5207b7a8) {
         self ai::set_behavior_attribute("_human_demeanor", var_5207b7a8);
         break;
     default:
-        /#
-            assertmsg("<unknown string>" + var_5207b7a8 + "<unknown string>");
-        #/
+        assertmsg("<unknown string>" + var_5207b7a8 + "<unknown string>");
         break;
     }
 }
@@ -477,12 +455,8 @@ function function_d291d5c2(var_ebc9fa6c = 0) {
 // Checksum 0xa85212c8, Offset: 0x1d98
 // Size: 0xae
 function function_e1449992(e_speaker, var_8a9a3456, var_cb47fc62) {
-    /#
-        assert(isdefined(e_speaker));
-    #/
-    /#
-        assert(isdefined(var_8a9a3456) || isdefined(var_cb47fc62));
-    #/
+    assert(isdefined(e_speaker));
+    assert(isdefined(var_8a9a3456) || isdefined(var_cb47fc62));
     s = spawnstruct();
     s.e_speaker = e_speaker;
     if (isdefined(var_8a9a3456)) {
@@ -598,9 +572,7 @@ function vo_knockout_manager_get_random(a_s) {
 // Checksum 0x6d349184, Offset: 0x23d8
 // Size: 0xc2
 function function_3ab6b4b0(var_fa4801bb, n_min, n_max, str_endon) {
-    /#
-        assert(n_min > 0, "<unknown string>");
-    #/
+    assert(n_min > 0, "<unknown string>");
     self endon(str_endon);
     b_randomize = n_min != n_max;
     n_wait = 0;
@@ -795,14 +767,13 @@ function function_d370236e(target, var_7b23aa51 = 500, var_e544dc47 = 400, tacqu
             self.avoid_cover = undefined;
             self setgoal(target.origin, 0, var_e544dc47);
             self notify(#"hash_3ff11304576a123a");
-            result = undefined;
             result = self waittill(#"hash_4f2aaaef2327c2a9", #"hash_1c5b621b87bcbdc6");
             /#
                 if (getdvarint(#"hash_7f1fd7271ba70c67", 0) == 1) {
                     if (result._notify == #"hash_4f2aaaef2327c2a9") {
-                        record3dtext("<unknown string>", self.origin + vectorscale((0, 0, 1), 32), (1, 1, 1));
+                        record3dtext("<unknown string>", self.origin + (0, 0, 32), (1, 1, 1));
                     } else if (result._notify == #"hash_1c5b621b87bcbdc6") {
-                        record3dtext("<unknown string>", self.origin + vectorscale((0, 0, 1), 32), (1, 1, 1));
+                        record3dtext("<unknown string>", self.origin + (0, 0, 32), (1, 1, 1));
                     }
                 }
             #/
@@ -850,14 +821,13 @@ function function_d370236e(target, var_7b23aa51 = 500, var_e544dc47 = 400, tacqu
                     self setgoal(pickedpoint, 1);
                     self childthread function_8b562a1(target, pickedpoint);
                 }
-                result = undefined;
                 result = self waittill(#"hash_4f2aaaef2327c2a9", #"hash_1c5b621b87bcbdc6");
                 /#
                     if (getdvarint(#"hash_7f1fd7271ba70c67", 0) == 1) {
                         if (result._notify == #"hash_4f2aaaef2327c2a9") {
-                            record3dtext("<unknown string>", self.origin + vectorscale((0, 0, 1), 32), (1, 1, 1));
+                            record3dtext("<unknown string>", self.origin + (0, 0, 32), (1, 1, 1));
                         } else if (result._notify == #"hash_1c5b621b87bcbdc6") {
-                            record3dtext("<unknown string>", self.origin + vectorscale((0, 0, 1), 32), (1, 1, 1));
+                            record3dtext("<unknown string>", self.origin + (0, 0, 32), (1, 1, 1));
                         }
                     }
                 #/
@@ -976,9 +946,7 @@ function function_b649cf93() {
 // Checksum 0xcac7a402, Offset: 0x3a58
 // Size: 0x4a
 function function_23271c2f(str_team) {
-    /#
-        assert(isai(self), "<unknown string>");
-    #/
+    assert(isai(self), "<unknown string>");
     self.team = str_team;
 }
 
@@ -993,9 +961,7 @@ function function_477de16b(var_b5311063, name_or_spawners, spawn_func, ...) {
     spawners = [];
     if (isstring(name_or_spawners)) {
         spawners = getspawnerarray(name_or_spawners, "targetname");
-        /#
-            assert(spawners.size, "<unknown string>" + name_or_spawners + "<unknown string>");
-        #/
+        assert(spawners.size, "<unknown string>" + name_or_spawners + "<unknown string>");
     } else {
         if (!isdefined(name_or_spawners)) {
             name_or_spawners = [];
@@ -1059,9 +1025,7 @@ function function_7051ec77(var_adbdb929, value) {
 function function_a7607f(var_b6423927, str_key) {
     a_new = [];
     foreach (thing in var_b6423927) {
-        /#
-            assert(isdefined(thing.(str_key)), "<unknown string>" + str_key);
-        #/
+        assert(isdefined(thing.(str_key)), "<unknown string>" + str_key);
         a_new[thing.(str_key)] = thing;
     }
     return a_new;
@@ -1139,9 +1103,7 @@ function function_2f50100e(var_ce6e52bd, var_c412903e, var_b7925ab5 = "shutoff_a
         var_e5ba320e = 250;
         break;
     default:
-        /#
-            assert(1, "<unknown string>");
-        #/
+        assert(1, "<unknown string>");
         break;
     }
     var_2431c996 = 0;
@@ -1215,9 +1177,7 @@ function private function_3f51d85c(*notifyhash) {
 // Checksum 0x28911894, Offset: 0x4630
 // Size: 0x8c
 function function_65d14a19(weapon) {
-    /#
-        assert(weapon != level.weaponnone, "<unknown string>");
-    #/
+    assert(weapon != level.weaponnone, "<unknown string>");
     self aiutility::setprimaryweapon(weapon);
     self ai::gun_remove();
     self ai::gun_switchto(weapon, "right");
@@ -1228,12 +1188,8 @@ function function_65d14a19(weapon) {
 // Checksum 0xef392f18, Offset: 0x46c8
 // Size: 0x1dc
 function throw_grenade(v_target, var_9ff6ef8f = 0) {
-    /#
-        assert(isai(self), "<unknown string>");
-    #/
-    /#
-        assert(isvec(v_target), "<unknown string>");
-    #/
+    assert(isai(self), "<unknown string>");
+    assert(isvec(v_target), "<unknown string>");
     self endon(#"death");
     if (self flag::get(#"hash_4f3df395433095a1")) {
         /#
@@ -1251,7 +1207,6 @@ function throw_grenade(v_target, var_9ff6ef8f = 0) {
     if (self.grenadeammo != 0) {
         self.var_38754eac = v_target;
         while (true) {
-            var_29b8f3d0 = undefined;
             var_29b8f3d0 = self waittill(#"bhtn_action_terminate");
             if (var_29b8f3d0.action === #"grenade") {
                 break;
@@ -1324,9 +1279,7 @@ function function_b064d2a4(var_6bb4ec43, var_c412903e, var_b7925ab5 = "shutoff_p
         var_d67a7d0a = 365;
         break;
     default:
-        /#
-            assert(1, "<unknown string>");
-        #/
+        assert(1, "<unknown string>");
         break;
     }
     var_ab3e25a2 = e_player getmovespeedscale();
@@ -1409,9 +1362,7 @@ function function_40e4ae8e(str_hint, var_3d455c82) {
 // Checksum 0x4cba8ecb, Offset: 0x5020
 // Size: 0x122
 function function_17fe30b7() {
-    /#
-        assert(isweapon(self), "<unknown string>");
-    #/
+    assert(isweapon(self), "<unknown string>");
     var_3f2655c9 = array(getweapon(#"hash_165cf52ce418f5a1"), getweapon(#"hash_40a11ca4961bb778"), getweapon(#"hash_40a11da4961bb92b"), getweapon(#"hash_40a122a4961bc1aa"), getweapon(#"hash_40a123a4961bc35d"), getweapon(#"hash_40a120a4961bbe44"));
     return array::contains(var_3f2655c9, self);
 }
@@ -1490,10 +1441,10 @@ function function_a3bb1e9c(var_300847ca, var_a5a6c25b = "at_player", var_94e307c
 // Size: 0x1a4
 function function_7b8ccc06() {
     level flag::wait_till("flg_amk_player_spawned");
-    var_467de2d4 = vectorscale((0, 0, 1), 5);
+    var_467de2d4 = (0, 0, 5);
     self turret::enable(0, 0, var_467de2d4);
     self turret::set_burst_parameters(5, 10, 0.2, 0.4, 0);
-    self turret::set_target(level.player, vectorscale((0, 0, 1), 5), 0);
+    self turret::set_target(level.player, (0, 0, 5), 0);
     self turret::function_49c3b892(level.player, 0);
     self turret::function_41c79ce4(0, 0);
     self turret::set_ignore_line_of_sight(1, 0);
@@ -1529,7 +1480,7 @@ function function_c21ef1d8(var_a5a6c25b = "shoot_player", target = undefined) {
         self turret::function_14223170(0);
         break;
     case #"suspend":
-        self turret::set_target(level.player, vectorscale((0, 0, 1), 5), 0, 1);
+        self turret::set_target(level.player, (0, 0, 5), 0, 1);
         self turret::function_49c3b892(level.player, 0);
         self turret::set_on_target_angle(0.5, 0);
         self turret::set_ignore_line_of_sight(1, 0);
@@ -1539,7 +1490,7 @@ function function_c21ef1d8(var_a5a6c25b = "shoot_player", target = undefined) {
         self turret::function_14223170(0);
         break;
     case #"hash_263828d1b73f1c88":
-        self turret::set_target(level.var_9ee055a8, vectorscale((0, 0, 1), 96), 0, 1);
+        self turret::set_target(level.var_9ee055a8, (0, 0, 96), 0, 1);
         self turret::function_49c3b892(level.player, 0);
         self turret::function_41c79ce4(0, 0);
         self turret::set_on_target_angle(3, 0);
@@ -1550,7 +1501,7 @@ function function_c21ef1d8(var_a5a6c25b = "shoot_player", target = undefined) {
         self turret::function_14223170(0);
         break;
     case #"hash_5dd6ef287ce43edd":
-        self turret::set_target(level.var_9ee055a8, vectorscale((0, 0, 1), 96), 0, 1);
+        self turret::set_target(level.var_9ee055a8, (0, 0, 96), 0, 1);
         self turret::function_49c3b892(level.player, 0);
         self turret::function_41c79ce4(0, 0);
         self turret::set_on_target_angle(2, 0);
@@ -1561,7 +1512,7 @@ function function_c21ef1d8(var_a5a6c25b = "shoot_player", target = undefined) {
         self turret::function_14223170(0);
         break;
     case #"miss_player":
-        self turret::set_target(level.player, vectorscale((0, 0, 1), 5), 0, 1);
+        self turret::set_target(level.player, (0, 0, 5), 0, 1);
         self turret::function_49c3b892(level.player, 0);
         self turret::function_41c79ce4(0, 0);
         self turret::set_on_target_angle(2.5, 0);
@@ -1572,7 +1523,7 @@ function function_c21ef1d8(var_a5a6c25b = "shoot_player", target = undefined) {
         self turret::function_14223170(0);
         break;
     case #"kill_player":
-        self turret::set_target(level.player, vectorscale((0, 0, 1), 5), 0, 1);
+        self turret::set_target(level.player, (0, 0, 5), 0, 1);
         self turret::function_49c3b892(level.player, 0);
         self turret::function_41c79ce4(1, 0);
         self turret::set_on_target_angle(0.5, 0);
@@ -1583,7 +1534,7 @@ function function_c21ef1d8(var_a5a6c25b = "shoot_player", target = undefined) {
         self turret::function_14223170(0);
         break;
     case #"hash_481e638762e002ff":
-        self turret::set_target(level.player, vectorscale((0, 0, 1), 5), 0, 1);
+        self turret::set_target(level.player, (0, 0, 5), 0, 1);
         self turret::function_49c3b892(level.player, 0);
         self turret::function_41c79ce4(0, 0);
         self turret::set_on_target_angle(1.5, 0);
@@ -1595,7 +1546,7 @@ function function_c21ef1d8(var_a5a6c25b = "shoot_player", target = undefined) {
         break;
     case #"shoot_player":
     default:
-        self turret::set_target(level.player, vectorscale((0, 0, 1), 5), 0, 1);
+        self turret::set_target(level.player, (0, 0, 5), 0, 1);
         self turret::function_49c3b892(level.player, 0);
         self turret::function_41c79ce4(0, 0);
         self turret::set_on_target_angle(1, 0);
@@ -1606,9 +1557,7 @@ function function_c21ef1d8(var_a5a6c25b = "shoot_player", target = undefined) {
         self turret::function_14223170(0);
         break;
     }
-    /#
-        println("<unknown string>" + var_a5a6c25b);
-    #/
+    println("<unknown string>" + var_a5a6c25b);
 }
 
 // Namespace hms_util/hms_util
@@ -1640,7 +1589,7 @@ function function_52791e07(var_a5a6c25b = "default") {
             continue;
         }
         for (i = 0; i < var_23058d7f; i++) {
-            var_1c8839e = self gettagorigin(var_c197f9aa) + vectorscale((0, 0, 1), 32);
+            var_1c8839e = self gettagorigin(var_c197f9aa) + (0, 0, 32);
             var_a6be6a4f = undefined;
             var_64c006fe = sighttracepassed(var_1c8839e, level.player getplayercamerapos(), 0, undefined);
             var_41e56412 = math::clamp(var_41e56412 + function_a1bfd89d(var_64c006fe), var_34175fc3 * -1, var_34175fc3);
@@ -1652,9 +1601,7 @@ function function_52791e07(var_a5a6c25b = "default") {
                 wait(0.5);
                 continue;
             }
-            /#
-                assert(isdefined(var_a6be6a4f), "<unknown string>");
-            #/
+            assert(isdefined(var_a6be6a4f), "<unknown string>");
             self function_b5da96ca(var_a6be6a4f, 0);
             wait(var_4bc3c7b8);
         }

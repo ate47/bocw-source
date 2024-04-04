@@ -20,17 +20,11 @@ function private autoexec __init__system__() {
 // Checksum 0xfbb6b468, Offset: 0x100
 // Size: 0x14c
 function private preinit() {
-    /#
-        assert(isscriptfunctionptr(&function_64d25a18));
-    #/
+    assert(isscriptfunctionptr(&function_64d25a18));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_57181cf80bd4059f", &function_64d25a18);
-    /#
-        assert(isscriptfunctionptr(&function_64d25a18));
-    #/
+    assert(isscriptfunctionptr(&function_64d25a18));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_57181cf80bd4059f", &function_64d25a18);
-    /#
-        assert(isscriptfunctionptr(&function_b4bc7751));
-    #/
+    assert(isscriptfunctionptr(&function_b4bc7751));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_6ef372b4649a577e", &function_b4bc7751);
     thread function_2f0f1b62();
 }
@@ -85,9 +79,7 @@ function function_64d25a18(entity) {
 // Checksum 0x87baae47, Offset: 0x448
 // Size: 0x158
 function private function_b4bc7751(entity) {
-    /#
-        assert(!is_true(entity.node.var_31c05612));
-    #/
+    assert(!is_true(entity.node.var_31c05612));
     if (isdefined(entity.node.target)) {
         entity pathmode("move delayed", 8);
         entity.node.var_31c05612 = 1;

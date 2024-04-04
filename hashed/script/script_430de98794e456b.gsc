@@ -46,7 +46,7 @@ function function_9f1f304b(localclientnum, *oldval, newval, *bnewent, *binitials
         break;
     }
     s_loc = struct::get(str_loc);
-    level.var_e2a95e85 = playfx(fieldname, #"hash_530080cfd8b5d707", s_loc.origin, anglestoup(s_loc.angles + vectorscale((1, 0, 0), 90)));
+    level.var_e2a95e85 = playfx(fieldname, #"hash_530080cfd8b5d707", s_loc.origin, anglestoup(s_loc.angles + (90, 0, 0)));
 }
 
 // Namespace namespace_e5d0906e/namespace_b7a7e548
@@ -56,7 +56,7 @@ function function_9f1f304b(localclientnum, *oldval, newval, *bnewent, *binitials
 function private function_ea74c7dc(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self playsound(fieldname, #"hash_44071fbabf0a1211");
-        level.var_66477fdf = playfx(fieldname, #"zm_ai/fx9_orda_spawn_portal_c", self.origin + vectorscale((0, 0, 1), 7000), anglestoforward(self.angles), anglestoup(self.angles + vectorscale((1, 0, 0), 90)));
+        level.var_66477fdf = playfx(fieldname, #"zm_ai/fx9_orda_spawn_portal_c", self.origin + (0, 0, 7000), anglestoforward(self.angles), anglestoup(self.angles + (90, 0, 0)));
         level.var_636214dd = playfx(fieldname, #"sr/fx9_orda_aether_portal_beam", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
         return;
     }
@@ -90,7 +90,7 @@ function function_773a9730(localclientnum, *oldval, newval, *bnewent, *binitials
     if (!isdefined(s_origin)) {
         return;
     }
-    level.var_c05f7f6 = util::spawn_model(fieldname, #"tag_origin", s_origin.origin + vectorscale((0, 0, 1), 96));
+    level.var_c05f7f6 = util::spawn_model(fieldname, #"tag_origin", s_origin.origin + (0, 0, 96));
     beam::launch(level.var_c05f7f6, "tag_origin", self, "j_head_mouth_scale", "beam9_zm_control_point_orda_attack", 1);
 }
 

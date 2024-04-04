@@ -9,7 +9,7 @@
 // Checksum 0xacb5107f, Offset: 0xb0
 // Size: 0x8a
 function function_d15dd929(*radius, origin) {
-    result = function_9cc082d2(origin + vectorscale((0, 0, 1), 100), 200);
+    result = function_9cc082d2(origin + (0, 0, 100), 200);
     if (isdefined(result) && isdefined(result[#"materialflags"]) && result[#"materialflags"] & 2) {
         return false;
     }

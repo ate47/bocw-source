@@ -303,11 +303,7 @@ function private function_bfde165(localclientnum, entity) {
 // Checksum 0x5f13ff9e, Offset: 0x1ce0
 // Size: 0x1f4
 function private function_187b10a5(localclientnum, var_c7821f8) {
-    /#
-        /#
-            assert(isdefined(level.var_cfc8a231), "<unknown string>");
-        #/
-    #/
+    assert(isdefined(level.var_cfc8a231), "<unknown string>");
     if (!isdefined(level.var_f9fd59d1)) {
         level.var_f9fd59d1 = [];
     }

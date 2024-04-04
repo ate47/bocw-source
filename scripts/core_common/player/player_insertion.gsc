@@ -49,9 +49,7 @@ function private preinit() {
     #/
     level.insertions = [];
     var_3bc28449 = max(isdefined(getgametypesetting(#"hash_731988b03dc6ee17")) ? getgametypesetting(#"hash_731988b03dc6ee17") : 1, 1);
-    /#
-        assert(var_3bc28449 > 0 && var_3bc28449 <= 2);
-    #/
+    assert(var_3bc28449 > 0 && var_3bc28449 <= 2);
     for (index = 0; index < var_3bc28449; index++) {
         insertion = {#index:index, #allowed:1, #spawnpoints:var_1194a9a5, #players:[]};
         level.insertions[level.insertions.size] = insertion;
@@ -98,9 +96,7 @@ function private on_finalize_initialization() {
         level.var_c7f8ccf6 = getdvarfloat(#"hash_51db9b26f6097296", level.var_c7f8ccf6);
     #/
     insertion = self;
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     waitframe(1);
     /#
         if (getdvarint(#"scr_disable_infiltration", 0)) {
@@ -187,9 +183,7 @@ function function_3354a054() {
 // Checksum 0xbda604d0, Offset: 0x1490
 // Size: 0x170
 function private function_bc824660(insertion) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     foreach (heli in insertion.var_41091905) {
         if (isdefined(heli)) {
             heli setspeedimmediate(level.var_c7f8ccf6 + 20);
@@ -207,9 +201,7 @@ function private function_bc824660(insertion) {
 // Checksum 0xf9430452, Offset: 0x1608
 // Size: 0xe0
 function function_948ac812(insertion, freezecontrols) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     function_a5fd9aa8(insertion);
     foreach (player in insertion.players) {
         player function_abd3bc1a(insertion, freezecontrols);
@@ -221,9 +213,7 @@ function function_948ac812(insertion, freezecontrols) {
 // Checksum 0x47f09c61, Offset: 0x16f0
 // Size: 0x31c
 function function_8dcd8623() {
-    /#
-        assert(isarray(level.insertions));
-    #/
+    assert(isarray(level.insertions));
     /#
         if (getdvarint(#"scr_disable_infiltration", 0)) {
             level.var_bde3d03 = undefined;
@@ -294,9 +284,7 @@ function function_daaba5b0(insertion, var_3e6673cb, var_cf46aa72) {
 // Checksum 0xee8fe39c, Offset: 0x1c78
 // Size: 0x5c
 function function_82c73974(insertion) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     function_daaba5b0(insertion, &function_e59d879f, 1);
 }
 
@@ -305,9 +293,7 @@ function function_82c73974(insertion) {
 // Checksum 0xa714a4ed, Offset: 0x1ce0
 // Size: 0x54
 function function_51b480e0(insertion) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     function_daaba5b0(insertion, &function_7341cc88, 0);
 }
 
@@ -316,9 +302,7 @@ function function_51b480e0(insertion) {
 // Checksum 0xc1babd1f, Offset: 0x1d40
 // Size: 0x470
 function function_35742117(insertion) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     function_a21d9dc(insertion);
     fadeouttime = level.var_8367fa0f;
     foreach (player in insertion.players) {
@@ -368,9 +352,7 @@ function function_bcde1e07() {
 // Checksum 0x85bd92ee, Offset: 0x21f8
 // Size: 0x194
 function private function_c62b5591(insertion) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     if (!isdefined(insertion.cameraent)) {
         insertion.cameraent = [];
     }
@@ -407,9 +389,7 @@ function function_57fe9b21(*insertion, origin) {
 // Checksum 0xd432c3e9, Offset: 0x2400
 // Size: 0xa04
 function function_ca5b6591(insertion, *startorigin, endorigin, var_872f085f) {
-    /#
-        assert(isstruct(startorigin));
-    #/
+    assert(isstruct(startorigin));
     self notify("7bc1bb0ca243e89f");
     self endon("7bc1bb0ca243e89f");
     startorigin.cameraent = [];
@@ -427,7 +407,7 @@ function function_ca5b6591(insertion, *startorigin, endorigin, var_872f085f) {
         if (isdefined(startorigin.cameraent[index])) {
             startorigin.cameraent[index] delete();
         }
-        var_c5f933e4 = plane.origin + vectorscale(var_21e6b5ae, -400) + vectorscale((0, 0, 1), 225);
+        var_c5f933e4 = plane.origin + vectorscale(var_21e6b5ae, -400) + (0, 0, 225);
         startorigin.cameraent[index] = function_57fe9b21(startorigin, var_c5f933e4);
         startorigin.cameraent[index].angles = var_8b5e86f4;
         startorigin.cameraent[index] clientfield::set("infiltration_camera", function_1e4302d0(2, startorigin.index));
@@ -446,7 +426,7 @@ function function_ca5b6591(insertion, *startorigin, endorigin, var_872f085f) {
         if (!isdefined(plane)) {
             plane = startorigin.var_41091905[0];
         }
-        finaltargetpos = endorigin + vectorscale(var_21e6b5ae, -400) + vectorscale((0, 0, 1), 225);
+        finaltargetpos = endorigin + vectorscale(var_21e6b5ae, -400) + (0, 0, 225);
         timetotarget = distance(finaltargetpos, var_c5f933e4) / level.var_c7f8ccf6 * 17.6;
         if (isdefined(startorigin.cameraent[index])) {
             startorigin.cameraent[index] moveto(finaltargetpos, timetotarget);
@@ -515,7 +495,7 @@ function function_77132caf() {
         radius = 500;
     }
     spawn_point = rotatepoint((radius, 0, 0), (0, randomint(360), 0));
-    self setorigin(center + spawn_point + vectorscale((0, 0, 1), 30000));
+    self setorigin(center + spawn_point + (0, 0, 30000));
     self start_freefall((0, 0, 0), 0);
 }
 
@@ -524,9 +504,7 @@ function function_77132caf() {
 // Checksum 0x79776351, Offset: 0x2f50
 // Size: 0xb0
 function function_c4f5c468(insertion) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     teammask = getteammask(self.team);
     for (teamindex = 0; teammask > 1; teamindex++) {
         teammask = teammask >> 1;
@@ -540,9 +518,7 @@ function function_c4f5c468(insertion) {
 // Checksum 0x3ccfed9d, Offset: 0x3008
 // Size: 0x3e4
 function function_f795bf83(insertion, vehicle, yaw) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     if (!isdefined(self) || !isentity(self)) {
         return;
     }
@@ -551,9 +527,7 @@ function function_f795bf83(insertion, vehicle, yaw) {
         self function_77132caf();
         return;
     }
-    /#
-        println("<unknown string>" + self.name);
-    #/
+    println("<unknown string>" + self.name);
     self notify(#"insertion_starting");
     if (!isdefined(insertion.passengercount)) {
         insertion.passengercount = 0;
@@ -658,9 +632,7 @@ function function_80c60f66(player) {
         return;
     }
     insertion = self;
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     for (index = 0; index < level.insertions.size; index++) {
         var_18310f7e = level.insertions[index];
         if (insertion == var_18310f7e) {
@@ -707,9 +679,7 @@ function function_88c53de8() {
 // Checksum 0x7c7f741e, Offset: 0x3ad8
 // Size: 0x900
 function private function_e59d879f(insertion, var_cf46aa72) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     /#
         if (function_88c53de8()) {
             return;
@@ -824,9 +794,7 @@ function private function_e59d879f(insertion, var_cf46aa72) {
 // Checksum 0x3b8645ae, Offset: 0x43e0
 // Size: 0x4c0
 function private function_7341cc88(insertion, *var_cf46aa72) {
-    /#
-        assert(isstruct(var_cf46aa72));
-    #/
+    assert(isstruct(var_cf46aa72));
     /#
         if (function_88c53de8()) {
             return;
@@ -905,28 +873,28 @@ function function_43cc81fc() {
 // Size: 0xa76
 function function_d9dfa25() {
     a_formations = [];
-    s_formation = {#var_c85ebc15:5, #var_f5cff63:array("vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t9_mil_helicopter_care_package"), #var_86cb4eb8:array((2750, -550, 0), (2000, -1200, 0), (1500, 750, 0), (500, 1500, 0), (-900, -700, 0)), #hoverparams:array(vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192), (0, 24, 128)), #var_86255b48:array(2, 2, 2, 2, 2), #var_84f704f:4, #alignment:"left"};
+    s_formation = {#var_c85ebc15:5, #var_f5cff63:array("vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t9_mil_helicopter_care_package"), #var_86cb4eb8:array((2750, -550, 0), (2000, -1200, 0), (1500, 750, 0), (500, 1500, 0), (-900, -700, 0)), #hoverparams:array((192, 192, 192), (192, 192, 192), (192, 192, 192), (192, 192, 192), (0, 24, 128)), #var_86255b48:array(2, 2, 2, 2, 2), #var_84f704f:4, #alignment:"left"};
     if (!isdefined(a_formations)) {
         a_formations = [];
     } else if (!isarray(a_formations)) {
         a_formations = array(a_formations);
     }
     a_formations[a_formations.size] = s_formation;
-    s_formation = {#var_c85ebc15:5, #var_f5cff63:array("vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t9_mil_helicopter_care_package"), #var_86cb4eb8:array((2750, 550, 0), (2000, 1200, 0), (1500, -750, 0), (500, -1500, 0), (-900, 700, 0)), #hoverparams:array(vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192), (0, 24, 128)), #var_86255b48:array(2, 2, 2, 2, 2), #var_84f704f:4, #alignment:"right"};
+    s_formation = {#var_c85ebc15:5, #var_f5cff63:array("vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t9_mil_helicopter_care_package"), #var_86cb4eb8:array((2750, 550, 0), (2000, 1200, 0), (1500, -750, 0), (500, -1500, 0), (-900, 700, 0)), #hoverparams:array((192, 192, 192), (192, 192, 192), (192, 192, 192), (192, 192, 192), (0, 24, 128)), #var_86255b48:array(2, 2, 2, 2, 2), #var_84f704f:4, #alignment:"right"};
     if (!isdefined(a_formations)) {
         a_formations = [];
     } else if (!isarray(a_formations)) {
         a_formations = array(a_formations);
     }
     a_formations[a_formations.size] = s_formation;
-    s_formation = {#var_c85ebc15:5, #var_f5cff63:array("vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t9_mil_helicopter_care_package"), #var_86cb4eb8:array((2750, -900, 0), (2000, 100, 0), (1250, 1100, 0), (500, 2100, 0), (-900, -700, 0)), #hoverparams:array(vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192), (0, 24, 128)), #var_86255b48:array(2, 2, 2, 2, 2), #var_84f704f:4, #alignment:"left"};
+    s_formation = {#var_c85ebc15:5, #var_f5cff63:array("vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t9_mil_helicopter_care_package"), #var_86cb4eb8:array((2750, -900, 0), (2000, 100, 0), (1250, 1100, 0), (500, 2100, 0), (-900, -700, 0)), #hoverparams:array((192, 192, 192), (192, 192, 192), (192, 192, 192), (192, 192, 192), (0, 24, 128)), #var_86255b48:array(2, 2, 2, 2, 2), #var_84f704f:4, #alignment:"left"};
     if (!isdefined(a_formations)) {
         a_formations = [];
     } else if (!isarray(a_formations)) {
         a_formations = array(a_formations);
     }
     a_formations[a_formations.size] = s_formation;
-    s_formation = {#var_c85ebc15:5, #var_f5cff63:array("vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t9_mil_helicopter_care_package"), #var_86cb4eb8:array((2750, 900, 0), (2000, -100, 0), (1500, -1100, 0), (500, -2100, 0), (-900, 700, 0)), #hoverparams:array(vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192), (0, 24, 128)), #var_86255b48:array(2, 2, 2, 2, 2), #var_84f704f:4, #alignment:"right"};
+    s_formation = {#var_c85ebc15:5, #var_f5cff63:array("vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t9_mil_helicopter_care_package"), #var_86cb4eb8:array((2750, 900, 0), (2000, -100, 0), (1500, -1100, 0), (500, -2100, 0), (-900, 700, 0)), #hoverparams:array((192, 192, 192), (192, 192, 192), (192, 192, 192), (192, 192, 192), (0, 24, 128)), #var_86255b48:array(2, 2, 2, 2, 2), #var_84f704f:4, #alignment:"right"};
     if (!isdefined(a_formations)) {
         a_formations = [];
     } else if (!isarray(a_formations)) {
@@ -943,7 +911,7 @@ function function_d9dfa25() {
     #/
     var_86cb4eb8[#"left"] = array((1200, -2300, 0), (-200, -2300, 0), (-1600, -2300, 0), (-3000, -2300, 0));
     var_86cb4eb8[#"right"] = array((1200, 2300, 0), (-200, 2300, 0), (-1600, 2300, 0), (-3000, 2300, 0));
-    var_5637e595 = {#var_c85ebc15:4, #var_f5cff63:array("vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration"), #hoverparams:array(vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192)), #var_86255b48:array(2, 2, 2, 2)};
+    var_5637e595 = {#var_c85ebc15:4, #var_f5cff63:array("vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration"), #hoverparams:array((192, 192, 192), (192, 192, 192), (192, 192, 192), (192, 192, 192)), #var_86255b48:array(2, 2, 2, 2)};
     s_formation = array::random(a_formations);
     s_formation.var_c85ebc15 = s_formation.var_c85ebc15 + var_5637e595.var_c85ebc15;
     s_formation.var_f5cff63 = arraycombine(s_formation.var_f5cff63, var_5637e595.var_f5cff63, 1, 0);
@@ -959,14 +927,12 @@ function function_d9dfa25() {
 // Size: 0x206
 function function_45b56b0a(insertion, startpoint, endpoint, var_872f085f, vehiclespawns) {
     offset = (500, -50, 600);
-    goaloffset = vectorscale((0, 0, -1), 400);
+    goaloffset = (0, 0, -400);
     rotatedstart = startpoint + rotatepoint(offset, var_872f085f);
     var_31e5487a = vehiclespawns[#"vehicle_t8_mil_helicopter_light_transport_wz_infil"];
     insertion.var_933bdcf2 = spawnvehicle(var_31e5487a, rotatedstart, var_872f085f, "insertion_presentation");
     if (!isdefined(insertion.var_933bdcf2)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     insertion.var_933bdcf2.startorigin = rotatedstart;
@@ -1131,9 +1097,7 @@ function private function_63793dbe() {
 // Checksum 0x6438f3fe, Offset: 0x6100
 // Size: 0x5e4
 function private function_afdad0c8(insertion, plane, startpoint, endpoint, var_671fc488) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     self notify("12cd32edea55e5e1");
     self endon("12cd32edea55e5e1");
     plane endon(#"death");
@@ -1144,15 +1108,9 @@ function private function_afdad0c8(insertion, plane, startpoint, endpoint, var_6
     var_5d59bc67 = 17.6 * level.var_c7f8ccf6;
     var_5e24c814 = 5 * var_5d59bc67;
     total_distance = distance(startpoint, endpoint);
-    /#
-        assert(total_distance > var_671fc488);
-    #/
-    /#
-        assert(var_671fc488 - var_5e24c814 > 0);
-    #/
-    /#
-        assert(total_distance > var_671fc488 - var_5e24c814);
-    #/
+    assert(total_distance > var_671fc488);
+    assert(var_671fc488 - var_5e24c814 > 0);
+    assert(total_distance > var_671fc488 - var_5e24c814);
     var_f26cf241 = (var_671fc488 - var_5e24c814) / total_distance;
     end_t = var_671fc488 / total_distance;
     /#
@@ -1209,24 +1167,16 @@ function private function_afdad0c8(insertion, plane, startpoint, endpoint, var_6
 // Checksum 0x8e6e76e3, Offset: 0x66f0
 // Size: 0x2ec
 function private function_6da3daa0(insertion, plane, startpoint, endpoint, var_6a694ed8) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     self notify("d73fbb706358d7f");
     self endon("d73fbb706358d7f");
     plane endon(#"death");
     var_5d59bc67 = 17.6 * level.var_c7f8ccf6;
     var_7cd0d619 = 0.6 * var_5d59bc67;
     total_distance = distance(startpoint, endpoint);
-    /#
-        assert(total_distance > var_6a694ed8);
-    #/
-    /#
-        assert(var_6a694ed8 - var_7cd0d619 > 0);
-    #/
-    /#
-        assert(total_distance > var_6a694ed8 - var_7cd0d619);
-    #/
+    assert(total_distance > var_6a694ed8);
+    assert(var_6a694ed8 - var_7cd0d619 > 0);
+    assert(total_distance > var_6a694ed8 - var_7cd0d619);
     cargo_t = (var_6a694ed8 - var_7cd0d619) / total_distance;
     start_t = var_6a694ed8 / total_distance;
     plane function_85635daf(startpoint, total_distance, cargo_t);
@@ -1251,9 +1201,7 @@ function private function_6da3daa0(insertion, plane, startpoint, endpoint, var_6
 // Checksum 0xfe87f1be, Offset: 0x69e8
 // Size: 0x118
 function function_bc16f3b4(insertion) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     self clientfield::set("infiltration_transport", 1);
     function_a5fd9aa8(insertion);
     foreach (player in insertion.players) {
@@ -1268,9 +1216,7 @@ function function_bc16f3b4(insertion) {
 // Checksum 0xe3b77d21, Offset: 0x6b08
 // Size: 0x218
 function function_d11a5f0c(insertion) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     function_a5fd9aa8(insertion);
     foreach (player in insertion.players) {
         player.var_97b0977 = 0;
@@ -1339,13 +1285,10 @@ function function_25facefd(count, *ignore_player) {
 // Checksum 0xc12bbf78, Offset: 0x7070
 // Size: 0xcc
 function function_2e54d73e(insertion, passenger, vehicle) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     if (isdefined(vehicle)) {
         vehicle endon(#"death");
     }
-    waitresult = undefined;
     waitresult = passenger waittill(#"disconnect", #"player_jumped");
     if (isdefined(insertion.passengercount)) {
         insertion.passengercount--;
@@ -1462,7 +1405,7 @@ function function_598b7862(aircraft) {
     self playsoundtoplayer(#"hash_214da797e3f63ec5", self);
     self.var_df1a9210 animation::play(anim, aircraft, "tag_player_spawn");
     self unlink();
-    self setorigin(self.var_df1a9210.origin - vectorscale((0, 0, 1), 215));
+    self setorigin(self.var_df1a9210.origin - (0, 0, 215));
     self show();
     self solid();
     self.var_df1a9210 delete();
@@ -1687,9 +1630,7 @@ function hide_postfx() {
 // Size: 0x2a0
 function private function_943c98fb(insertion) {
     /#
-        /#
-            assert(isstruct(insertion));
-        #/
+        assert(isstruct(insertion));
         mapname = get_map_name();
         adddebugcommand("<unknown string>" + mapname + "<unknown string>");
         waitframe(1);
@@ -1822,9 +1763,7 @@ function function_ed4c9a32(falltime, popinstant, var_921a1f7e, startingvelocity,
             if (player.ffsm_state != 5) {
                 player.ffsm_state = 3;
             } else {
-                /#
-                    assert(player.ffsm_state == 5);
-                #/
+                assert(player.ffsm_state == 5);
                 player.ffsm_state = 6;
             }
         }

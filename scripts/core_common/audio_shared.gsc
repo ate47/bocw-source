@@ -167,9 +167,7 @@ function playtargetmissilesound(alias, looping) {
 // Checksum 0xb4e547e3, Offset: 0xb68
 // Size: 0xce
 function on_missile_lock(params) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!flag::get("playing_stinger_fired_at_me")) {
         self thread playtargetmissilesound(params.weapon.lockontargetlockedsound, params.weapon.lockontargetlockedsoundloops);
         self waittill(#"stinger_fired_at_me", #"missile_unlocked", #"death");
@@ -182,9 +180,7 @@ function on_missile_lock(params) {
 // Checksum 0xf4ac4b3f, Offset: 0xc40
 // Size: 0x10c
 function function_c25f7d1(params) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self endon(#"death", #"disconnect");
     self flag::set("playing_stinger_fired_at_me");
     self thread playtargetmissilesound(params.weapon.lockontargetfiredonsound, params.weapon.lockontargetfiredonsoundloops);

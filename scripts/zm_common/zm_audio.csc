@@ -145,7 +145,6 @@ function sndvonotifyplain(localclientnum, var_3d2dc382) {
     self endon("40aeb1ec9ae5d129");
     self endon(#"death");
     while (true) {
-        s_result = undefined;
         s_result = self waittill(var_3d2dc382);
         if (is_true(self.is_player_zombie)) {
             continue;

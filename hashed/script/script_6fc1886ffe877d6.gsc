@@ -754,7 +754,6 @@ function function_8265e656(var_37180a9f) {
     var_37180a9f endon(#"death");
     var_37180a9f callback::function_d8abfc3d(#"hash_5f0caa4b2d44fedf", &function_1cabf2e9);
     while (isdefined(var_37180a9f) && var_37180a9f.health > 0) {
-        s_result = undefined;
         s_result = var_37180a9f waittill(#"damage", #"death");
         if (isplayer(s_result.attacker) && isalive(s_result.attacker)) {
             s_result.attacker util::show_hit_marker();
@@ -825,7 +824,6 @@ function loot_pod(instance) {
 // Checksum 0x46f5fc59, Offset: 0x4640
 // Size: 0x234
 function function_f5087df2() {
-    s_result = undefined;
     s_result = self waittill(#"objective_ended", #"hash_8202877a3aadac8");
     objective_manager::stop_timer();
     level flag::clear(#"in_dark_side");
@@ -929,14 +927,13 @@ function function_90725ab1() {
         mdl_charge ghost();
     }
     objective_setinvisibletoall(self.var_e55c8b4e);
-    n_objective_id = zm_utility::function_f5a222a8(#"hash_12475c4fdd2e51cb", self.var_cf24b789.origin + vectorscale((0, 0, 1), 32));
+    n_objective_id = zm_utility::function_f5a222a8(#"hash_12475c4fdd2e51cb", self.var_cf24b789.origin + (0, 0, 32));
     var_23e96cb3 = spawn("trigger_radius_use", self.origin, 0, 240, 96, 1);
     var_23e96cb3 triggerignoreteam();
     var_23e96cb3 setcursorhint("HINT_NOICON");
     var_23e96cb3 sethintstring(#"hash_b044f24a01e8b24");
     var_23e96cb3 usetriggerrequirelookat(1);
     self.var_cf24b789 zm_utility::function_747180ea(n_objective_id, undefined, var_23e96cb3);
-    s_result = undefined;
     s_result = var_23e96cb3 waittill(#"trigger");
     level.var_b54157cf = 1;
     var_23e96cb3 delete();
@@ -1199,7 +1196,7 @@ function function_561fd5f5() {
 function function_9a090a4f() {
     self endon(#"objective_ended", #"hash_8202877a3aadac8");
     s_pt = array::random(self.var_75bfdd78);
-    self.var_15dd1523 = util::spawn_model("tag_origin", s_pt.origin + vectorscale((0, 0, 1), 2000));
+    self.var_15dd1523 = util::spawn_model("tag_origin", s_pt.origin + (0, 0, 2000));
     self waittill(#"hash_36719991d2a7edc6");
     self.var_15dd1523 playsound(#"hash_237c57212810b7ec");
     wait(0.25);
@@ -1267,7 +1264,7 @@ function function_cd1515dc() {
     a_doors = [];
     foreach (barrier in self.a_s_barriers) {
         if (barrier.model === "barrier_door_single" || barrier.model === "barrier_door_double") {
-            doors = function_c3d68575(barrier.origin, vectorscale((1, 1, 1), 20));
+            doors = function_c3d68575(barrier.origin, (20, 20, 20));
             foreach (door in doors) {
                 if (door.script_noteworthy === #"hash_4d1fb8524fdfd254") {
                     a_doors[a_doors.size] = door;
@@ -1696,7 +1693,6 @@ function function_1c798ee9() {
         var_520491cd = getent(str_trigger, "targetname");
         level.var_e6689780 = var_520491cd;
         while (true) {
-            s_result = undefined;
             s_result = var_520491cd waittill(#"trigger");
             if (is_true(s_result.activator.var_98f1f37c)) {
                 s_result.activator.var_98f1f37c = undefined;
@@ -1853,7 +1849,6 @@ function function_b2bc128b() {
 // Size: 0xfc
 function function_953aa05e() {
     self endon(#"objective_ended", #"hash_36719991d2a7edc6");
-    s_result = undefined;
     s_result = self waittilltimeout(15, #"hash_7729c6e7911b801d");
     wait(2);
     playsoundatposition(#"hash_c05e2aae1de0567", (0, 0, 0));
@@ -2204,7 +2199,7 @@ function function_5f3c406e() {
             var_1cde429c.var_b30a9f82 = vehicle::spawn(undefined, "jellyfish_small", "fake_vehicle", var_1cde429c.origin, var_1cde429c.angles);
             waitframe(1);
             if (isdefined(var_1cde429c.var_b30a9f82)) {
-                var_1cde429c linkto(var_1cde429c.var_b30a9f82, "tag_origin", (0, 0, 0), vectorscale((0, 1, 0), 180));
+                var_1cde429c linkto(var_1cde429c.var_b30a9f82, "tag_origin", (0, 0, 0), (0, 180, 0));
                 var_1cde429c clientfield::increment("" + #"hash_442f708f2ae92ef6");
                 var_1cde429c thread function_35559739(self);
             }

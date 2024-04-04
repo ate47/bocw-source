@@ -7,22 +7,6 @@
 // Method(s) 5 Total 12
 class class_8ebbf51b : cluielem {
 
-    // Namespace class_8ebbf51b/sr_armor_menu
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x26ea4e8b, Offset: 0x198
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_8ebbf51b/sr_armor_menu
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x95bbd3fc, Offset: 0x258
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_8ebbf51b/sr_armor_menu
     // Params 2, eflags: 0x2 linked
     // Checksum 0x8efc0dc, Offset: 0x1e0

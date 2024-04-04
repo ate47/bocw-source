@@ -42,21 +42,16 @@
 // Method(s) 2 Total 2
 class class_970c2a7e {
 
+    var adjustmentstarted;
+    var var_425c4c8b;
+
     // Namespace class_970c2a7e/zm_ai_dog
     // Params 0, eflags: 0xa linked
     // Checksum 0x9cfd8e2d, Offset: 0x7760
     // Size: 0x1a
-    __constructor() {
-        self.adjustmentstarted = 0;
-        self.var_425c4c8b = 1;
-    }
-
-    // Namespace class_970c2a7e/zm_ai_dog
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x80f724d1, Offset: 0x7788
-    // Size: 0x4
-    __destructor() {
-        
+    constructor() {
+        adjustmentstarted = 0;
+        var_425c4c8b = 1;
     }
 
 }
@@ -210,137 +205,71 @@ function private function_d4dbfd41(*origin, angles, *spawn_anim) {
 // Size: 0xea4
 function registerbehaviorscriptfunctions() {
     spawner::add_archetype_spawn_function(#"zombie_dog", &archetypezombiedogblackboardinit);
-    /#
-        assert(isscriptfunctionptr(&zombiedogtargetservice));
-    #/
+    assert(isscriptfunctionptr(&zombiedogtargetservice));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"zombiedogtargetservice", &zombiedogtargetservice, 1);
-    /#
-        assert(isscriptfunctionptr(&function_5e50d260));
-    #/
+    assert(isscriptfunctionptr(&function_5e50d260));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_29b43f0d0b6bd4e2", &function_5e50d260, 2);
-    /#
-        assert(isscriptfunctionptr(&function_cb259df5));
-    #/
+    assert(isscriptfunctionptr(&function_cb259df5));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_6a3b7cd3d64a9e0e", &function_cb259df5);
-    /#
-        assert(isscriptfunctionptr(&function_2cf71b2));
-    #/
+    assert(isscriptfunctionptr(&function_2cf71b2));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_a662462addf3d75", &function_2cf71b2);
-    /#
-        assert(isscriptfunctionptr(&zombiedogshouldmelee));
-    #/
+    assert(isscriptfunctionptr(&zombiedogshouldmelee));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"zombiedogshouldmelee", &zombiedogshouldmelee);
-    /#
-        assert(isscriptfunctionptr(&zombiedogshouldwalk));
-    #/
+    assert(isscriptfunctionptr(&zombiedogshouldwalk));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"zombiedogshouldwalk", &zombiedogshouldwalk);
-    /#
-        assert(isscriptfunctionptr(&zombiedogshouldwalk));
-    #/
+    assert(isscriptfunctionptr(&zombiedogshouldwalk));
     behaviorstatemachine::registerbsmscriptapiinternal(#"zombiedogshouldwalk", &zombiedogshouldwalk);
-    /#
-        assert(isscriptfunctionptr(&zombiedogshouldrun));
-    #/
+    assert(isscriptfunctionptr(&zombiedogshouldrun));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"zombiedogshouldrun", &zombiedogshouldrun);
-    /#
-        assert(isscriptfunctionptr(&zombiedogshouldrun));
-    #/
+    assert(isscriptfunctionptr(&zombiedogshouldrun));
     behaviorstatemachine::registerbsmscriptapiinternal(#"zombiedogshouldrun", &zombiedogshouldrun);
-    /#
-        assert(isscriptfunctionptr(&function_9c2fe7e6));
-    #/
+    assert(isscriptfunctionptr(&function_9c2fe7e6));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_32d317d9aed4eaeb", &function_9c2fe7e6);
-    /#
-        assert(isscriptfunctionptr(&function_9c2fe7e6));
-    #/
+    assert(isscriptfunctionptr(&function_9c2fe7e6));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_32d317d9aed4eaeb", &function_9c2fe7e6);
-    /#
-        assert(isscriptfunctionptr(&function_77b7ec2d));
-    #/
+    assert(isscriptfunctionptr(&function_77b7ec2d));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_1a882594c3f18ac5", &function_77b7ec2d);
-    /#
-        assert(isscriptfunctionptr(&function_77b7ec2d));
-    #/
+    assert(isscriptfunctionptr(&function_77b7ec2d));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_1a882594c3f18ac5", &function_77b7ec2d);
-    /#
-        assert(isscriptfunctionptr(&function_1a2ec6cf));
-    #/
+    assert(isscriptfunctionptr(&function_1a2ec6cf));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_302c63f6e1cadacc", &function_1a2ec6cf);
-    /#
-        assert(isscriptfunctionptr(&function_731939c2));
-    #/
+    assert(isscriptfunctionptr(&function_731939c2));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_6f309052a6def471", &function_731939c2);
-    /#
-        assert(isscriptfunctionptr(&function_82f55309));
-    #/
+    assert(isscriptfunctionptr(&function_82f55309));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_17f565e0da36a81f", &function_82f55309);
-    /#
-        assert(isscriptfunctionptr(&function_2d500a7e));
-    #/
+    assert(isscriptfunctionptr(&function_2d500a7e));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_5723c9d68fe69d54", &function_2d500a7e);
-    /#
-        assert(isscriptfunctionptr(&function_a82712bc));
-    #/
+    assert(isscriptfunctionptr(&function_a82712bc));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_366544d16d423e37", &function_a82712bc);
-    /#
-        assert(isscriptfunctionptr(&function_4a7e2ba0));
-    #/
+    assert(isscriptfunctionptr(&function_4a7e2ba0));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_545a7d19924edd47", &function_4a7e2ba0);
-    /#
-        assert(isscriptfunctionptr(&function_c13b6bae));
-    #/
+    assert(isscriptfunctionptr(&function_c13b6bae));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_76e6e7abd3fe046a", &function_c13b6bae);
-    /#
-        assert(!isdefined(&zombiedogmeleeaction) || isscriptfunctionptr(&zombiedogmeleeaction));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(&zombiedogmeleeactionterminate) || isscriptfunctionptr(&zombiedogmeleeactionterminate));
-    #/
+    assert(!isdefined(&zombiedogmeleeaction) || isscriptfunctionptr(&zombiedogmeleeaction));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(&zombiedogmeleeactionterminate) || isscriptfunctionptr(&zombiedogmeleeactionterminate));
     behaviortreenetworkutility::registerbehaviortreeaction("zombieDogMeleeAction", &zombiedogmeleeaction, undefined, &zombiedogmeleeactionterminate);
     animationstatenetwork::registernotetrackhandlerfunction("zombie_dog_explode", &function_7ee905fc);
     animationstatenetwork::registernotetrackhandlerfunction("zombie_dog_suicide", &function_7ee905fc);
     animationstatenetwork::registeranimationmocomp("mocomp_zombie_dog_juke", &function_bdd562d7, &function_5c3d4c42, &function_826afb7e);
     animationstatenetwork::registeranimationmocomp("mocomp_zombie_dog_leap_attack", &function_fba7325a, &function_b1b9da60, &function_9280d53b);
-    /#
-        assert(!isdefined(&function_856447f6) || isscriptfunctionptr(&function_856447f6));
-    #/
-    /#
-        assert(!isdefined(&function_e87d4fff) || isscriptfunctionptr(&function_e87d4fff));
-    #/
-    /#
-        assert(!isdefined(&function_81758b93) || isscriptfunctionptr(&function_81758b93));
-    #/
+    assert(!isdefined(&function_856447f6) || isscriptfunctionptr(&function_856447f6));
+    assert(!isdefined(&function_e87d4fff) || isscriptfunctionptr(&function_e87d4fff));
+    assert(!isdefined(&function_81758b93) || isscriptfunctionptr(&function_81758b93));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_1765abc5cdc24867", &function_856447f6, &function_e87d4fff, &function_81758b93);
-    /#
-        assert(isscriptfunctionptr(&function_82df49dc));
-    #/
+    assert(isscriptfunctionptr(&function_82df49dc));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_1e70520bdbcffd27", &function_82df49dc);
-    /#
-        assert(isscriptfunctionptr(&function_2e0abd15));
-    #/
+    assert(isscriptfunctionptr(&function_2e0abd15));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_286661abebb905a2", &function_2e0abd15);
-    /#
-        assert(isscriptfunctionptr(&function_70daebd0));
-    #/
+    assert(isscriptfunctionptr(&function_70daebd0));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_480dc00bc877ad26", &function_70daebd0);
-    /#
-        assert(isscriptfunctionptr(&function_70daebd0));
-    #/
+    assert(isscriptfunctionptr(&function_70daebd0));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_480dc00bc877ad26", &function_70daebd0);
-    /#
-        assert(isscriptfunctionptr(&function_9baf0ee8));
-    #/
+    assert(isscriptfunctionptr(&function_9baf0ee8));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_7828fc2e61d3b060", &function_9baf0ee8);
-    /#
-        assert(isscriptfunctionptr(&function_f0beb97c));
-    #/
+    assert(isscriptfunctionptr(&function_f0beb97c));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_76f5c00a30cdfd69", &function_f0beb97c);
-    /#
-        assert(isscriptfunctionptr(&function_45cf2e16));
-    #/
+    assert(isscriptfunctionptr(&function_45cf2e16));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_61b99f3b97bfe943", &function_45cf2e16);
     animationstatenetwork::registernotetrackhandlerfunction("pounce", &function_8ee8d380);
     zm_ai_dog_interface::registerzombiedoginterfaceattributes();
@@ -414,9 +343,7 @@ function getyaw(org) {
 // Checksum 0x1678cc29, Offset: 0x2030
 // Size: 0x92
 function absyawtoenemy() {
-    /#
-        assert(isdefined(self.enemy));
-    #/
+    assert(isdefined(self.enemy));
     yaw = self.angles[1] - getyaw(self.enemy.origin);
     yaw = angleclamp180(yaw);
     if (yaw < 0) {
@@ -962,9 +889,7 @@ function private function_b077b73d(*time) {
         context = self getblackboardattribute("_context");
         if (isdefined(context) && (context == "low" || context == "high")) {
             self ai::stun();
-            /#
-                println("<unknown string>");
-            #/
+            println("<unknown string>");
         }
     }
 }
@@ -1047,7 +972,7 @@ function function_77b7ec2d(entity) {
     if (disttoenemysq < sqr(1800) && disttoenemysq >= sqr(400)) {
         if (util::within_fov(entity.origin, entity.angles, entity.favoriteenemy.origin, cos(30))) {
             /#
-                record3dtext("<unknown string>", entity.origin + vectorscale((0, 0, 1), 10), (0, 1, 0), "<unknown string>");
+                record3dtext("<unknown string>", entity.origin + (0, 0, 10), (0, 1, 0), "<unknown string>");
             #/
             return true;
         }
@@ -1465,7 +1390,7 @@ function private function_2cf71b2(entity) {
                     return;
                 } else {
                     /#
-                        record3dtext("<unknown string>" + entity.favoriteenemy.origin, entity.origin + vectorscale((0, 0, 1), 20), (1, 0, 0));
+                        record3dtext("<unknown string>" + entity.favoriteenemy.origin, entity.origin + (0, 0, 20), (1, 0, 0));
                     #/
                 }
             }
@@ -1565,7 +1490,7 @@ function private function_5212a796(entity) {
         entity function_a57c34b7(entity.var_94d159ee);
         entity.var_5372f2b4 = 1;
         /#
-            record3dtext("<unknown string>" + yaw, entity.origin + vectorscale((0, 0, 1), 20), (0, 1, 1));
+            record3dtext("<unknown string>" + yaw, entity.origin + (0, 0, 20), (0, 1, 1));
         #/
     }
 }
@@ -1633,7 +1558,7 @@ function private function_c1de0139(entity) {
             entity.var_d873b994 = 0;
             entity.var_eb166a17 = 1;
             /#
-                record3dtext("<unknown string>", entity.origin + vectorscale((0, 0, 1), 10), (0, 1, 1));
+                record3dtext("<unknown string>", entity.origin + (0, 0, 10), (0, 1, 1));
             #/
         }
         function_5212a796(entity);
@@ -1766,14 +1691,14 @@ function private function_a168099() {
             var_10eeca9c = player.var_f056b7dd + 10000;
             if (gettime() > var_10eeca9c) {
                 /#
-                    record3dtext("<unknown string>", self.origin + vectorscale((0, 0, 1), 30), (0, 1, 0));
+                    record3dtext("<unknown string>", self.origin + (0, 0, 30), (0, 1, 0));
                 #/
                 player.var_d31a4da6 = 0;
                 player.var_500fbd91 = undefined;
                 return false;
             }
             /#
-                record3dtext("<unknown string>", self.origin + vectorscale((0, 0, 1), 30), (1, 0, 0));
+                record3dtext("<unknown string>", self.origin + (0, 0, 30), (1, 0, 0));
             #/
             return true;
         }
@@ -2034,9 +1959,7 @@ function function_fba7325a(entity, mocompanim, *mocompanimblendouttime, *mocompa
 // Checksum 0xcaf15324, Offset: 0x7d40
 // Size: 0xa34
 function function_b1b9da60(entity, mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
-    /#
-        assert(isdefined(self.meleeinfo));
-    #/
+    assert(isdefined(self.meleeinfo));
     currentanimtime = mocompanimflag getanimtime(mocompduration);
     if (isdefined(self.var_ce44ec9f) && currentanimtime >= self.var_ce44ec9f && currentanimtime <= self.minigun_killstreak_minigun_inbound) {
         self.var_47c91780 = 1;
@@ -2058,17 +1981,17 @@ function function_b1b9da60(entity, mocompanim, *mocompanimblendouttime, *mocompa
         var_65cbfb52 = distancesquared(self.meleeinfo.var_9bfa8497, self.meleeinfo.adjustedendpos);
         if (var_776ddabf <= sqr(35)) {
             /#
-                record3dtext("<unknown string>", mocompanimflag.origin + vectorscale((0, 0, 1), 60), (1, 0, 0), "<unknown string>");
+                record3dtext("<unknown string>", mocompanimflag.origin + (0, 0, 60), (1, 0, 0), "<unknown string>");
             #/
             self.meleeinfo.var_425c4c8b = 0;
         } else if (var_65cbfb52 <= sqr(200)) {
             /#
-                record3dtext("<unknown string>", mocompanimflag.origin + vectorscale((0, 0, 1), 60), (1, 0, 0), "<unknown string>");
+                record3dtext("<unknown string>", mocompanimflag.origin + (0, 0, 60), (1, 0, 0), "<unknown string>");
             #/
             self.meleeinfo.var_425c4c8b = 0;
         } else if (var_65cbfb52 >= sqr(250)) {
             /#
-                record3dtext("<unknown string>", mocompanimflag.origin + vectorscale((0, 0, 1), 60), (1, 0, 0), "<unknown string>");
+                record3dtext("<unknown string>", mocompanimflag.origin + (0, 0, 60), (1, 0, 0), "<unknown string>");
             #/
             self.meleeinfo.var_425c4c8b = 0;
         }
@@ -2086,9 +2009,9 @@ function function_b1b9da60(entity, mocompanim, *mocompanimblendouttime, *mocompa
             /#
                 reasons = "<unknown string>" + isvisible + "<unknown string>" + withinzrange + "<unknown string>" + withinfov;
                 if (var_425c4c8b) {
-                    record3dtext(reasons, mocompanimflag.origin + vectorscale((0, 0, 1), 60), (0, 1, 0), "<unknown string>");
+                    record3dtext(reasons, mocompanimflag.origin + (0, 0, 60), (0, 1, 0), "<unknown string>");
                 } else {
-                    record3dtext(reasons, mocompanimflag.origin + vectorscale((0, 0, 1), 60), (1, 0, 0), "<unknown string>");
+                    record3dtext(reasons, mocompanimflag.origin + (0, 0, 60), (1, 0, 0), "<unknown string>");
                 }
             #/
             if (var_425c4c8b) {
@@ -2112,9 +2035,7 @@ function function_b1b9da60(entity, mocompanim, *mocompanimblendouttime, *mocompa
         }
     }
     if (self.meleeinfo.adjustmentstarted && currentanimtime <= self.meleeinfo.var_6392c3a2) {
-        /#
-            assert(isdefined(self.meleeinfo.var_10b8b6d1) && isdefined(self.meleeinfo.var_8b9a15a6));
-        #/
+        assert(isdefined(self.meleeinfo.var_10b8b6d1) && isdefined(self.meleeinfo.var_8b9a15a6));
         /#
             recordsphere(self.meleeinfo.var_cb28f380, 3, (0, 1, 0), "<unknown string>");
             recordsphere(self.meleeinfo.adjustedendpos, 3, (0, 0, 1), "<unknown string>");
@@ -2188,7 +2109,7 @@ function function_5295d194(eye_pos, enemy_eye_pos) {
             enemy_eye_pos = self.favoriteenemy util::get_eye();
         }
     }
-    trace = physicstrace(eye_pos, enemy_eye_pos, vectorscale((-1, -1, -1), 15), vectorscale((1, 1, 1), 15), self);
+    trace = physicstrace(eye_pos, enemy_eye_pos, (-15, -15, -15), (15, 15, 15), self);
     if (trace[#"fraction"] < 1) {
         self.hit_ent = trace[#"entity"];
     }
@@ -2264,7 +2185,7 @@ function function_f7d44ebf() {
             if (isplayer(closestplayer)) {
                 self setgoal(closestplayer.origin, 1);
             }
-            usetrigger = spawn("trigger_radius_use", self.origin + vectorscale((0, 0, 1), 32), 0, 128, 128, 1);
+            usetrigger = spawn("trigger_radius_use", self.origin + (0, 0, 32), 0, 128, 128, 1);
             usetrigger triggerignoreteam();
             usetrigger setcursorhint("HINT_NOICON");
             usetrigger sethintstring(#"hash_c0744e442e94c14");
@@ -2357,7 +2278,7 @@ function function_d442eca6() {
     self endon(#"death");
     self.dog endon(#"death");
     while (true) {
-        self.origin = self.dog.origin + vectorscale((0, 0, 1), 32);
+        self.origin = self.dog.origin + (0, 0, 32);
         self.dog function_9454fb2d();
         if (!is_true(self.dog.var_bb8bba59) && !self.dog function_dd070839()) {
             foreach (player in function_a1ef346b(undefined, self.origin, 512)) {

@@ -201,9 +201,7 @@ function function_fdf195f2(watcher) {
     watcher.hackertooltimems = level.equipmenthackertooltimems;
     if (isdefined(watcher.weapon.customsettings)) {
         var_e6fbac16 = getscriptbundle(watcher.weapon.customsettings);
-        /#
-            assert(isdefined(var_e6fbac16));
-        #/
+        assert(isdefined(var_e6fbac16));
         level.var_6964d56c.customsettings = var_e6fbac16;
     }
 }
@@ -240,7 +238,7 @@ function function_3be2d17f(watcher, player) {
     }
     self waittill(#"stationary");
     self deployable::function_dd266e08(player);
-    self.origin = self.origin + vectorscale((0, 0, 1), 2);
+    self.origin = self.origin + (0, 0, 2);
     player onplaceturret(self);
     killstreakslot = self.vehicle.killstreakslot;
     usedtime = player.pers[#"hash_55c15f9af76e4e68"][killstreakslot];
@@ -351,9 +349,7 @@ function private function_3e06504d(var_49bc4623) {
 // Size: 0x938
 function onplaceturret(turret) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     weapon = getweapon("missile_turret");
     if (isdefined(turret.vehicle)) {
         turret.vehicle.origin = turret.origin;
@@ -446,9 +442,7 @@ function onplaceturret(turret) {
 function function_ff9ee951(player) {
     turret = self.turret;
     vehicle = turret.vehicle;
-    /#
-        assert(isdefined(vehicle));
-    #/
+    assert(isdefined(vehicle));
     slot = vehicle.killstreakslot;
     if (!isdefined(slot)) {
         slot = 3;
@@ -638,9 +632,7 @@ function function_ad4037ec() {
 // Checksum 0x976b9fda, Offset: 0x33d8
 // Size: 0x116
 function function_a13e4d16(e_target) {
-    /#
-        assert(isdefined(e_target), "<unknown string>");
-    #/
+    assert(isdefined(e_target), "<unknown string>");
     if (!isdefined(self.var_6a62f08)) {
         self.var_6a62f08 = [];
     }
@@ -667,9 +659,7 @@ function function_a13e4d16(e_target) {
 // Checksum 0xe2e4e04f, Offset: 0x34f8
 // Size: 0xa0
 function function_ad8b366c(var_2d51cbbc) {
-    /#
-        assert(isdefined(var_2d51cbbc));
-    #/
+    assert(isdefined(var_2d51cbbc));
     var_93b994e6 = isinarray(level.var_6964d56c.var_1543185c, var_2d51cbbc.killstreaktype);
     /#
         if (!var_93b994e6) {
@@ -714,9 +704,7 @@ function function_baa22b40(str_id) {
 // Checksum 0xdf310d80, Offset: 0x36a8
 // Size: 0x98
 function function_a51316b2(e_target) {
-    /#
-        assert(isdefined(e_target));
-    #/
+    assert(isdefined(e_target));
     var_3f7c79aa = util::function_fbce7263(self.team, e_target.team);
     /#
         if (!var_3f7c79aa) {
@@ -772,9 +760,7 @@ function function_2aa33bf1(e_target) {
 // Checksum 0xa7c37930, Offset: 0x39b8
 // Size: 0x1a8
 function function_b70b3595(e_target) {
-    /#
-        assert(isdefined(e_target));
-    #/
+    assert(isdefined(e_target));
     var_e30e452 = function_a13e4d16(e_target);
     var_a1eca4f3 = function_3276039d(e_target);
     should_fire = var_a1eca4f3 - var_e30e452.var_d8796b87 > 0;
@@ -901,9 +887,7 @@ function function_422fb6dd() {
 // Checksum 0xda2c629f, Offset: 0x42c8
 // Size: 0x16e
 function function_42bacd5b() {
-    /#
-        assert(isdefined(self.var_c27dadc8), "<unknown string>");
-    #/
+    assert(isdefined(self.var_c27dadc8), "<unknown string>");
     /#
         function_600ab97b("<unknown string>" + self.var_c27dadc8 getentitynumber());
     #/
@@ -1121,7 +1105,6 @@ function function_9d831b2f() {
             self turretsettargetangles(0, (-10, -360, 0));
             self.var_942bf052 = "left";
         }
-        waitresult = undefined;
         waitresult = self waittilltimeout(3.5, #"missile_turret_potential_target_acquired");
         if (waitresult._notify == "missile_turret_potential_target_acquired") {
             self waittill(#"hash_1f6056bfa3098e59");
@@ -1172,7 +1155,7 @@ function function_31477582() {
             wait(1);
             continue;
         }
-        trace = physicstrace(self.origin + vectorscale((0, 0, 1), 15), self.origin + vectorscale((0, 0, -1), 10), (-3, -3, -1), (3, 3, 1), self.turret, 1 | 16);
+        trace = physicstrace(self.origin + (0, 0, 15), self.origin + (0, 0, -10), (-3, -3, -1), (3, 3, 1), self.turret, 1 | 16);
         if (trace[#"fraction"] > 0) {
             new_origin = trace[#"position"];
             self.origin = (new_origin[0], new_origin[1], self.origin[2] - min(max_delta, self.origin[2] - new_origin[2]));
@@ -1363,9 +1346,7 @@ function function_600ab97b(str_text, var_3f1d5c63) {
         if (!isdefined(var_3f1d5c63)) {
             var_3f1d5c63 = 2;
         }
-        /#
-            assert(var_3f1d5c63 >= 2);
-        #/
+        assert(var_3f1d5c63 >= 2);
         if (getdvarint(#"hash_7a06f4366ad184cb", 0) >= var_3f1d5c63) {
             println("<unknown string>" + self getentitynumber() + "<unknown string>" + str_text);
         }

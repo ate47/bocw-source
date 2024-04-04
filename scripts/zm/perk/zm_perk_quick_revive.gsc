@@ -246,7 +246,7 @@ function turn_revive_on() {
                     continue;
                 }
                 machine[i] setmodel(level.machine_assets[#"hash_7f98b3dd3cce95aa"].on_model);
-                machine[i] vibrate(vectorscale((0, -1, 0), 100), 0.3, 0.4, 3);
+                machine[i] vibrate((0, -100, 0), 0.3, 0.4, 3);
                 if (!isdefined(machine[i].n_obj_id)) {
                     machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_366d84a7a7556fa4", machine[i]);
                 }
@@ -271,7 +271,6 @@ function turn_revive_on() {
         if (isdefined(machine_model)) {
             machine_model.ishidden = 0;
         }
-        notify_str = undefined;
         notify_str = level waittill(#"revive_off", #"revive_hide", #"stop_quickrevive_logic");
         should_hide = 0;
         if (notify_str._notify == "revive_hide") {
@@ -340,7 +339,7 @@ function unhide_quickrevive() {
             }
             level.quick_revive_machine.origin = org;
         }
-        level.quick_revive_machine vibrate(vectorscale((0, -1, 0), 100), 0.3, 0.4, 3);
+        level.quick_revive_machine vibrate((0, -100, 0), 0.3, 0.4, 3);
     }
     if (isdefined(level.quick_revive_linked_ent)) {
         level.quick_revive_machine linkto(level.quick_revive_linked_ent);

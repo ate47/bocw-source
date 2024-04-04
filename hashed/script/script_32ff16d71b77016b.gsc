@@ -17,9 +17,7 @@
 // Size: 0x60
 function event_handler[event_7d801d3e] function_2f02dc73(eventstruct) {
     function_3475cd5c();
-    /#
-        assert(isdefined(level.var_279714e8), "<unknown string>");
-    #/
+    assert(isdefined(level.var_279714e8), "<unknown string>");
     self [[ level.var_279714e8 ]](eventstruct.entity);
 }
 
@@ -132,7 +130,6 @@ function private function_eefa18e(str) {
 // Size: 0x34c
 function private function_beea5074() {
     self endon(#"entitydeleted");
-    results = undefined;
     results = self waittill(#"damage");
     eattacker = results.attacker;
     einflictor = results.inflictor;
@@ -613,12 +610,8 @@ function private function_54f05251() {
     self.node = undefined;
     wait(0.05);
     path = self function_7bce6b25(self.target, self.origin);
-    /#
-        assert(isdefined(path));
-    #/
-    /#
-        assert(isdefined(path[0]));
-    #/
+    assert(isdefined(path));
+    assert(isdefined(path[0]));
     function_f89df05b();
     path_index = 0;
     var_38c05d54 = 0;
@@ -628,12 +621,8 @@ function private function_54f05251() {
     var_23273fef = 0;
     self.drone.var_544c8017 = path[path_index][#"origin"];
     while (path_index < path.size) {
-        /#
-            assert(isdefined(path[path_index]));
-        #/
-        /#
-            assert(isdefined(path[path_index][#"dist"]));
-        #/
+        assert(isdefined(path[path_index]));
+        assert(isdefined(path[path_index][#"dist"]));
         destination = path[path_index][#"origin"];
         if (self.drone.var_6f219852 > 0) {
             var_792c52e4 = self.origin;
@@ -709,12 +698,8 @@ function private function_35b3aa66(angle, duration, delay) {
 // Checksum 0x57eb0e09, Offset: 0x29b8
 // Size: 0x2c6
 function private function_7bce6b25(var_3d70749c, var_a3375299) {
-    /#
-        assert(isdefined(var_3d70749c));
-    #/
-    /#
-        assert(isdefined(var_a3375299));
-    #/
+    assert(isdefined(var_3d70749c));
+    assert(isdefined(var_a3375299));
     hasnextnode = 0;
     index = 0;
     nodes = [];

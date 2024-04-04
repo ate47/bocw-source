@@ -165,9 +165,7 @@ function function_d519e318() {
 // Checksum 0x4bbc81a0, Offset: 0xbd0
 // Size: 0x586
 function initplayer() {
-    /#
-        assert(isdefined(self.doa));
-    #/
+    assert(isdefined(self.doa));
     profilestart();
     self.score = 0;
     self.kills = 0;
@@ -869,9 +867,7 @@ function commitstats(*gameover) {
         self stats::set_stat(#"hash_4e2b235aab294a3a", #"generic", 0, var_98285479);
         self.doa.score.var_96798a01 = 0;
         namespace_1e25ad94::debugmsg("Progress towards doa_darkops_score = " + var_c35ec960);
-        /#
-            assert(isdefined(self.var_248bd83));
-        #/
+        assert(isdefined(self.var_248bd83));
         if (!isdefined(self.var_248bd83)) {
             self.var_248bd83 = 1;
         }
@@ -903,9 +899,7 @@ function commitstats(*gameover) {
             var_f0ac2041 = self stats::get_stat(#"hash_64fd75a9ce18b89f", #"hash_264b2ce1e929e63");
             if (level.doa.roundnumber > var_f0ac2041) {
                 self stats::set_stat(#"hash_64fd75a9ce18b89f", #"hash_264b2ce1e929e63", level.doa.roundnumber);
-                /#
-                    assert(isdefined(self.doa.var_48021422));
-                #/
+                assert(isdefined(self.doa.var_48021422));
                 if (isdefined(self.doa.var_48021422)) {
                     self stats::set_stat(#"hash_64fd75a9ce18b89f", #"hash_6c97ca81659454e4", gettime() - self.doa.var_48021422);
                 }
@@ -913,9 +907,7 @@ function commitstats(*gameover) {
             highscore = self stats::get_stat(#"hash_64fd75a9ce18b89f", #"hash_783086b558e2dc6d");
             if (self.doa.score.points > highscore) {
                 self stats::set_stat(#"hash_64fd75a9ce18b89f", #"hash_783086b558e2dc6d", self.doa.score.points);
-                /#
-                    assert(isdefined(self.doa.var_48021422));
-                #/
+                assert(isdefined(self.doa.var_48021422));
                 if (isdefined(self.doa.var_48021422)) {
                     self stats::set_stat(#"hash_64fd75a9ce18b89f", #"hash_504d11817d1d551e", gettime() - self.doa.var_48021422);
                 }
@@ -923,9 +915,7 @@ function commitstats(*gameover) {
             var_f0ac2041 = self stats::get_stat(self.doa.var_bcfd90a5, idx, #"hash_1ba322b9218ca4e8");
             if (level.doa.roundnumber > var_f0ac2041) {
                 self stats::set_stat(self.doa.var_bcfd90a5, idx, #"hash_1ba322b9218ca4e8", level.doa.roundnumber);
-                /#
-                    assert(isdefined(self.doa.var_48021422));
-                #/
+                assert(isdefined(self.doa.var_48021422));
                 if (isdefined(self.doa.var_48021422)) {
                     self stats::set_stat(self.doa.var_bcfd90a5, idx, #"hash_30b1d9e3c997a7e9", gettime() - self.doa.var_48021422);
                 }
@@ -933,9 +923,7 @@ function commitstats(*gameover) {
             highscore = self stats::get_stat(self.doa.var_bcfd90a5, idx, #"highest_score");
             if (self.doa.score.points > highscore) {
                 self stats::set_stat(self.doa.var_bcfd90a5, idx, #"highest_score", self.doa.score.points);
-                /#
-                    assert(isdefined(self.doa.var_48021422));
-                #/
+                assert(isdefined(self.doa.var_48021422));
                 if (isdefined(self.doa.var_48021422)) {
                     self stats::set_stat(self.doa.var_bcfd90a5, idx, #"hash_15ec68fc61006a73", gettime() - self.doa.var_48021422);
                 }

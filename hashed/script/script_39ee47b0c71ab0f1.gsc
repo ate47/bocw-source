@@ -8,29 +8,13 @@
 class czm_trial_weapon_locked : cluielem {
 
     // Namespace czm_trial_weapon_locked/zm_trial_weapon_locked
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x50d4a747, Offset: 0x348
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace czm_trial_weapon_locked/zm_trial_weapon_locked
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x7059fdb2, Offset: 0x4d8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace czm_trial_weapon_locked/zm_trial_weapon_locked
     // Params 1, eflags: 0x2 linked
     // Checksum 0x73c8bdb9, Offset: 0x460
     // Size: 0x6c
     function function_1e74977(localclientnum) {
-        current_val = [[ self ]]->get_data(localclientnum, "show_icon");
+        current_val = get_data(localclientnum, "show_icon");
         new_val = (current_val + 1) % 2;
-        [[ self ]]->set_data(localclientnum, "show_icon", new_val);
+        set_data(localclientnum, "show_icon", new_val);
     }
 
     // Namespace czm_trial_weapon_locked/zm_trial_weapon_locked
@@ -64,7 +48,7 @@ class czm_trial_weapon_locked : cluielem {
     // Size: 0x40
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "show_icon", 0);
+        set_data(localclientnum, "show_icon", 0);
     }
 
 }

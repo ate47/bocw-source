@@ -8,21 +8,8 @@
 // Method(s) 7 Total 14
 class class_5813c56a : cluielem {
 
-    // Namespace class_5813c56a/zm_silver_hud
-    // Params 0, eflags: 0x8
-    // Checksum 0xb6920732, Offset: 0x228
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_5813c56a/zm_silver_hud
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x529e41af, Offset: 0x3d8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_5813c56a/zm_silver_hud
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class class_5813c56a : cluielem {
     // Checksum 0x79f1778c, Offset: 0x388
     // Size: 0x44
     function function_39ee9107(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "showPhoto", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "showPhoto", value);
     }
 
     // Namespace namespace_5813c56a/zm_silver_hud
@@ -63,7 +50,7 @@ class class_5813c56a : cluielem {
     // Checksum 0x82c3e1b5, Offset: 0x338
     // Size: 0x44
     function function_9efecfd1(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "aetherscopeStatus", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "aetherscopeStatus", value);
     }
 
 }

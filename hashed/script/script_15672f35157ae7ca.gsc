@@ -7,22 +7,6 @@
 // Method(s) 14 Total 21
 class class_276088fe : cluielem {
 
-    // Namespace class_276088fe/luielem_entity_bar
-    // Params 0, eflags: 0x8
-    // Checksum 0x27e5fb57, Offset: 0x660
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_276088fe/luielem_entity_bar
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x488d6986, Offset: 0xc88
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_276088fe/luielem_entity_bar
     // Params 1, eflags: 0x0
     // Checksum 0x8b284b85, Offset: 0x970
@@ -36,7 +20,7 @@ class class_276088fe : cluielem {
     // Checksum 0xe4560bed, Offset: 0xba8
     // Size: 0x30
     function function_4f6e830d(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "offset_y", value);
+        set_data(localclientnum, "offset_y", value);
     }
 
     // Namespace namespace_276088fe/luielem_entity_bar
@@ -52,7 +36,7 @@ class class_276088fe : cluielem {
     // Checksum 0xa9bce67c, Offset: 0xb70
     // Size: 0x30
     function function_61312692(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "offset_x", value);
+        set_data(localclientnum, "offset_x", value);
     }
 
     // Namespace namespace_276088fe/luielem_entity_bar
@@ -60,7 +44,7 @@ class class_276088fe : cluielem {
     // Checksum 0x5ded8a6a, Offset: 0xbe0
     // Size: 0x30
     function function_7ddfdfef(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "offset_z", value);
+        set_data(localclientnum, "offset_z", value);
     }
 
     // Namespace namespace_276088fe/luielem_entity_bar
@@ -84,7 +68,7 @@ class class_276088fe : cluielem {
     // Checksum 0x30081a44, Offset: 0xc50
     // Size: 0x30
     function function_a9793a65(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "entityScale", value);
+        set_data(localclientnum, "entityScale", value);
     }
 
     // Namespace namespace_276088fe/luielem_entity_bar
@@ -92,7 +76,7 @@ class class_276088fe : cluielem {
     // Checksum 0x57f89024, Offset: 0xb38
     // Size: 0x30
     function set_entnum(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "entnum", value);
+        set_data(localclientnum, "entnum", value);
     }
 
     // Namespace namespace_276088fe/luielem_entity_bar
@@ -101,30 +85,26 @@ class class_276088fe : cluielem {
     // Size: 0x154
     function set_state(localclientnum, state_name) {
         if (#"defaultstate" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 0);
+            set_data(localclientnum, "_state", 0);
             return;
         }
         if (#"friendlyblue" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 1);
+            set_data(localclientnum, "_state", 1);
             return;
         }
         if (#"green" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 2);
+            set_data(localclientnum, "_state", 2);
             return;
         }
         if (#"yellow" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 3);
+            set_data(localclientnum, "_state", 3);
             return;
         }
         if (#"red" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 4);
+            set_data(localclientnum, "_state", 4);
             return;
         }
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
     }
 
     // Namespace namespace_276088fe/luielem_entity_bar
@@ -132,7 +112,7 @@ class class_276088fe : cluielem {
     // Checksum 0x2be0de5a, Offset: 0xc18
     // Size: 0x30
     function function_dfed4b05(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "entityClamp", value);
+        set_data(localclientnum, "entityClamp", value);
     }
 
     // Namespace namespace_276088fe/luielem_entity_bar
@@ -140,7 +120,7 @@ class class_276088fe : cluielem {
     // Checksum 0x2f38e616, Offset: 0xb00
     // Size: 0x30
     function function_ecacbaa5(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "progress_percent", value);
+        set_data(localclientnum, "progress_percent", value);
     }
 
     // Namespace namespace_276088fe/luielem_entity_bar
@@ -149,14 +129,14 @@ class class_276088fe : cluielem {
     // Size: 0x110
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_state(localclientnum, #"defaultstate");
-        [[ self ]]->set_data(localclientnum, "progress_percent", 0);
-        [[ self ]]->set_data(localclientnum, "entnum", 0);
-        [[ self ]]->set_data(localclientnum, "offset_x", 0);
-        [[ self ]]->set_data(localclientnum, "offset_y", 0);
-        [[ self ]]->set_data(localclientnum, "offset_z", 0);
-        [[ self ]]->set_data(localclientnum, "entityClamp", 0);
-        [[ self ]]->set_data(localclientnum, "entityScale", 0);
+        set_state(localclientnum, #"defaultstate");
+        set_data(localclientnum, "progress_percent", 0);
+        set_data(localclientnum, "entnum", 0);
+        set_data(localclientnum, "offset_x", 0);
+        set_data(localclientnum, "offset_y", 0);
+        set_data(localclientnum, "offset_z", 0);
+        set_data(localclientnum, "entityClamp", 0);
+        set_data(localclientnum, "entityScale", 0);
     }
 
 }

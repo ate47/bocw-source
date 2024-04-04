@@ -185,7 +185,7 @@ function function_b1c6ca30(var_d13d4980) {
     if (isdefined(var_a7bd1c53)) {
         var_7580ce3e.origin = var_a7bd1c53;
     } else {
-        var_7580ce3e.origin = var_d13d4980.origin - vectorscale((0, 0, 1), 42);
+        var_7580ce3e.origin = var_d13d4980.origin - (0, 0, 42);
     }
     scriptmodel = var_7580ce3e.scriptmodel;
     reward_origin = var_7580ce3e.origin;

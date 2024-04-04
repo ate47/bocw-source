@@ -119,7 +119,7 @@ function private function_ca26e871(entity) {
 // Checksum 0x9e15570f, Offset: 0xc08
 // Size: 0x704
 function private function_1cbc22b0(weapon, n_radius) {
-    var_d71041e1 = groundtrace(self.origin + vectorscale((0, 0, 1), 16) + vectorscale((0, 0, 1), 8), self.origin + vectorscale((0, 0, 1), 16) + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
+    var_d71041e1 = groundtrace(self.origin + (0, 0, 16) + (0, 0, 8), self.origin + (0, 0, 16) + (0, 0, -100000), 0, self)[#"position"];
     var_3889eb68 = util::spawn_model("tag_origin", var_d71041e1);
     var_3889eb68.owner = self;
     var_3889eb68.n_radius = n_radius;

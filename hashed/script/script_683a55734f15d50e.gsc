@@ -82,9 +82,7 @@ function function_f9bfcf6f(type, weight) {
 // Checksum 0x64ed5b08, Offset: 0xbc8
 // Size: 0x186
 function random_weighted(array, weights) {
-    /#
-        assert(array.size == weights.size);
-    #/
+    assert(array.size == weights.size);
     if (array.size > 0) {
         var_766a145f = 0;
         keys = getarraykeys(array);
@@ -99,9 +97,7 @@ function random_weighted(array, weights) {
         }
         return array[var_da00fb33];
     }
-    /#
-        assert(0);
-    #/
+    assert(0);
     return 0;
 }
 
@@ -142,17 +138,15 @@ function spawnlootitem(origin, angles, lootname, radius, context) {
         if (context != 2) {
             return;
         }
-        var_7f2666c4 = namespace_1c2a96f9::function_1324dc3b();
-        if (!isdefined(var_7f2666c4)) {
+        fate = namespace_1c2a96f9::function_1324dc3b();
+        if (!isdefined(fate)) {
             return;
         }
-        def = {#modelname:var_7f2666c4.model, #type:7, #data:var_7f2666c4, #locked:0, #name:#"fate", #var_d6118311:4};
+        def = {#modelname:fate.model, #type:7, #data:fate, #locked:0, #name:#"fate", #var_d6118311:4};
     } else {
         def = function_9acb7d7a(lootname);
     }
-    /#
-        assert(isdefined(def), "extraLife");
-    #/
+    assert(isdefined(def), "extraLife");
     namespace_1e25ad94::debugmsg("Spawning Loot (" + def.modelname + ") at " + origin);
     var_a1f88ae1 = namespace_ec06fe4a::spawnmodel(origin, def.modelname);
     if (!isdefined(var_a1f88ae1)) {
@@ -268,9 +262,7 @@ function function_5fd93de5(name, type, modelname, var_e254c3ed, var_ecdc444, loc
 function function_4d27013d(item) {
     namespace_1e25ad94::debugmsg("Loot Opened");
     var_2f0b512f = function_dcd8be88(item.loottype);
-    /#
-        assert(isdefined(var_2f0b512f), "<unknown string>");
-    #/
+    assert(isdefined(var_2f0b512f), "<unknown string>");
     level thread [[ var_2f0b512f ]](item);
 }
 
@@ -284,10 +276,10 @@ function function_7df596c3(item) {
         rooms = array("slideways", "slideways2", "slideways3", "slideways4", "slideways5");
         room = namespace_5a917022::function_c8892b0f(rooms[randomint(rooms.size)]);
         var_4200bfbf = [];
-        var_4200bfbf[0] = {#origin:item.origin, #angles:item.angles + vectorscale((0, 1, 0), 270)};
-        var_4200bfbf[1] = {#origin:var_4200bfbf[0].origin + vectorscale((1, 0, 0), 30), #angles:var_4200bfbf[0].angles};
-        var_4200bfbf[2] = {#origin:var_4200bfbf[0].origin + vectorscale((-1, 0, 0), 30), #angles:var_4200bfbf[0].angles};
-        var_4200bfbf[3] = {#origin:var_4200bfbf[0].origin + vectorscale((0, 1, 0), 30), #angles:var_4200bfbf[0].angles};
+        var_4200bfbf[0] = {#origin:item.origin, #angles:item.angles + (0, 270, 0)};
+        var_4200bfbf[1] = {#origin:var_4200bfbf[0].origin + (30, 0, 0), #angles:var_4200bfbf[0].angles};
+        var_4200bfbf[2] = {#origin:var_4200bfbf[0].origin + (-30, 0, 0), #angles:var_4200bfbf[0].angles};
+        var_4200bfbf[3] = {#origin:var_4200bfbf[0].origin + (0, 30, 0), #angles:var_4200bfbf[0].angles};
         idx = 0;
         foreach (player in getplayers()) {
             player setorigin(var_4200bfbf[idx].origin);
@@ -298,9 +290,7 @@ function function_7df596c3(item) {
         level waittill(#"hash_1b322de3d2e3e781");
         break;
     default:
-        /#
-            assert(0);
-        #/
+        assert(0);
         break;
     }
 }
@@ -546,7 +536,6 @@ function function_b3f8d2d5(*def) {
 function function_8534e7be() {
     self endon(#"death");
     while (self.health > 0) {
-        result = undefined;
         result = self waittill(#"damage");
         if (result.amount > self.health) {
             if (isdefined(self.spawninfo)) {

@@ -95,7 +95,7 @@ function function_cc21ae2e() {
     }
     self.vol_fling = getent("flinger_vol" + self.script_int, "targetname");
     var_948355ad = self zm_unitrigger::create(&function_679a29cd, 100, &function_23ef27c);
-    var_948355ad.origin = self.origin + vectorscale((0, 0, 1), 30);
+    var_948355ad.origin = self.origin + (0, 0, 30);
     var_948355ad.cost = 500;
     var_948355ad.var_90ddceac = self;
     var_948355ad.var_b555f02e = self.var_b555f02e;
@@ -182,7 +182,6 @@ function function_679a29cd(player) {
 function function_23ef27c() {
     level endon(#"end_game");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
         if (!is_true(self.stub.var_90ddceac.var_37db5cf)) {
@@ -394,7 +393,7 @@ function function_a5df8834(player) {
 }
 
 // Namespace namespace_47809ab2/namespace_47809ab2
-// Params b, eflags: 0x2 linked
+// Params 11, eflags: 0x2 linked
 // Checksum 0xb54e598e, Offset: 0x1d88
 // Size: 0x84
 function function_6f03042(*einflictor, *eattacker, *idamage, *idflags, *smeansofdeath, *weapon, *vpoint, *vdir, *shitloc, *psoffsettime, *boneindex) {

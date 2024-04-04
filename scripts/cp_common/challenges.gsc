@@ -94,9 +94,7 @@ function function_6219dcd5(data, *time) {
 function function_fc664fc6(challengestat, var_2c59fe94, var_21bccb49 = 1, var_cab0fdf5 = 1) {
     self notify("1989758cddd563a9");
     self endon("1989758cddd563a9");
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self endon(#"death");
     if (!isdefined(self.var_75b0a52c)) {
         self.var_75b0a52c = [];
@@ -359,9 +357,7 @@ function private function_9635f1e6(challengeindex) {
 // Checksum 0xe3a4ab91, Offset: 0x10e8
 // Size: 0x384
 function private function_65b0a754() {
-    /#
-        assert(isdefined(level.var_464843f));
-    #/
+    assert(isdefined(level.var_464843f));
     if (level flag::get(#"hash_4c113937297760d8")) {
         return;
     }

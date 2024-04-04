@@ -70,7 +70,6 @@ function private function_c7ab4997(*localclientnum) {
     self notify("8869c86eaf915ab");
     self endon("8869c86eaf915ab");
     while (true) {
-        result = undefined;
         result = level waittill(#"updategamerprofile", #"hash_ce3d6cba382b09e", #"hash_5f3b1ae5d64be652");
         namespace_1e25ad94::debugmsg("profileWatch just intercepted notify-->" + result._notify);
         local_player = function_5c10bd79(result.localclientnum);
@@ -126,9 +125,7 @@ function function_e7a44fda(localclientnum, *oldval, *newval, *bnewent, *binitial
 // Size: 0x6c
 function on_player_spawned(localclientnum) {
     setsoundcontext("doa_1stperson", "inactive");
-    /#
-        assert(!isdefined(self.doa), "<unknown string>");
-    #/
+    assert(!isdefined(self.doa), "<unknown string>");
     self thread namespace_7f5aeb59::function_f3143608(localclientnum);
 }
 
@@ -152,7 +149,7 @@ function function_c75159ad(localclientnum, *oldval, newval, *bnewent, *binitials
     if (!isdefined(bomb)) {
         return;
     }
-    bomb.angles = vectorscale((1, 0, 0), 90);
+    bomb.angles = (90, 0, 0);
     bomb moveto(var_7def0a05, 0.3, 0, 0);
     playsound(0, "evt_doa_powerup_nuke_activate", self.origin);
     bomb waittill(#"movedone");
@@ -184,7 +181,7 @@ function function_43ae94e0(localclientnum, *oldval, *newval, *bnewent, *binitial
         var_de738228 = self namespace_ac2a80f5::function_f7736714(bwastimejump, var_de738228);
     }
     lastmode = isdefined(var_de738228) ? var_de738228 : 1;
-    level.doa.var_b73cc08.origin = self.origin + vectorscale((0, 0, 1), 72);
+    level.doa.var_b73cc08.origin = self.origin + (0, 0, 72);
     level.doa.var_b73cc08.angles = self.angles;
     waitframe(1);
     if (isdefined(self.var_ca14ee83)) {
@@ -195,15 +192,13 @@ function function_43ae94e0(localclientnum, *oldval, *newval, *bnewent, *binitial
     level.doa.var_b73cc08 waittilltimeout(0.16, #"movedone");
     self cameraforcedisablescriptcam(0);
     self.doa.cameramode = lastmode;
-    /#
-        assert(self.doa.cameramode != 6);
-    #/
+    assert(self.doa.cameramode != 6);
     if (getlocalplayers().size > 1) {
         self.doa.cameramode = 4;
     }
     self namespace_ac2a80f5::changecamera(self.doa.cameramode);
     self.topdowncamera = 1;
-    self.doa.var_3e81d24c = 0;
+    self.doa.infps = 0;
     if (isdefined(self.var_1489535e)) {
         killfx(bwastimejump, self.var_1489535e);
         self.var_1489535e = undefined;
@@ -233,15 +228,15 @@ function function_f32984d0(localclientnum, oldval, newval, bnewent, binitialsnap
     if (is_true(level.doa.var_318aa67a)) {
         self.doa.cameramode = 6;
         self.topdowncamera = 0;
-        self.doa.var_3e81d24c = 1;
+        self.doa.infps = 1;
         return;
     }
     origin = self.origin;
     if (!isdefined(self.var_45c6f27d)) {
-        self.var_45c6f27d = self.origin + vectorscale((0, 0, 1), 1000);
+        self.var_45c6f27d = self.origin + (0, 0, 1000);
     }
     if (!isdefined(self.var_ca14ee83)) {
-        self.var_ca14ee83 = vectorscale((1, 0, 0), 75);
+        self.var_ca14ee83 = (75, 0, 0);
     }
     if (localclientnum > 0 && level.localplayers.size > 1) {
         self.var_45c6f27d = level.localplayers[0].var_45c6f27d;
@@ -250,7 +245,7 @@ function function_f32984d0(localclientnum, oldval, newval, bnewent, binitialsnap
     self.doa.cameramode = 7;
     level.doa.var_b73cc08.origin = self.var_45c6f27d;
     level.doa.var_b73cc08.angles = self.var_ca14ee83;
-    level.doa.var_b73cc08 moveto(origin + vectorscale((0, 0, 1), 72), 0.3);
+    level.doa.var_b73cc08 moveto(origin + (0, 0, 72), 0.3);
     wait(0.2);
     if (isdefined(self)) {
         playfx(localclientnum, level._effect[#"explode_lg"], origin);
@@ -261,7 +256,7 @@ function function_f32984d0(localclientnum, oldval, newval, bnewent, binitialsnap
     if (isdefined(self)) {
         self.doa.cameramode = 6;
         self.topdowncamera = 0;
-        self.doa.var_3e81d24c = 1;
+        self.doa.infps = 1;
         self thread namespace_7f5aeb59::function_4d692cc4(localclientnum, self.var_88a2ff29);
         self thread namespace_6e90e490::function_b5afa57f(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump);
         self notify(#"infps");
@@ -278,7 +273,7 @@ function function_505038df() {
         if (!isdefined(player)) {
             continue;
         }
-        if (is_true(player.doa.var_3e81d24c)) {
+        if (is_true(player.doa.infps)) {
             return true;
         }
     }
@@ -443,17 +438,15 @@ function setcameradown(*localclientnum, *oldval, newval, *bnewent, *binitialsnap
         return;
     }
     if (level.doa.world_state == 0) {
-        /#
-            assert(isdefined(isdefined(level.doa.var_72b899ad)));
-        #/
+        assert(isdefined(isdefined(level.doa.var_72b899ad)));
         normalangle = level.doa.var_72b899ad.var_13ea8aea;
         var_1d83376c = level.doa.var_72b899ad.var_46f3a17d;
         if (!isdefined(normalangle) || !isdefined(var_1d83376c)) {
-            normalangle = vectorscale((1, 0, 0), 75);
+            normalangle = (75, 0, 0);
             var_1d83376c = (75, 180, 0);
         }
     } else {
-        normalangle = vectorscale((1, 0, 0), 75);
+        normalangle = (75, 0, 0);
         var_1d83376c = (75, 180, 0);
     }
     if (bwastimejump) {
@@ -524,13 +517,11 @@ function function_9917e07(*localclientnum, value) {
         namespace_4dae815d::function_b6e8ef46();
     }
     if (level.doa.world_state == 0) {
-        /#
-            assert(isdefined(isdefined(level.doa.var_72b899ad)));
-        #/
+        assert(isdefined(isdefined(level.doa.var_72b899ad)));
         normalangle = level.doa.var_72b899ad.var_13ea8aea;
         var_1d83376c = level.doa.var_72b899ad.var_46f3a17d;
     } else {
-        normalangle = vectorscale((1, 0, 0), 75);
+        normalangle = (75, 0, 0);
         var_1d83376c = (75, 180, 0);
     }
     if (self.doa.cameramode == 0) {
@@ -711,7 +702,7 @@ function function_7df2149d(*localclientnum, orientation) {
         normalangle = level.doa.var_72b899ad.var_13ea8aea;
         var_1d83376c = level.doa.var_72b899ad.var_46f3a17d;
     } else {
-        normalangle = vectorscale((1, 0, 0), 75);
+        normalangle = (75, 0, 0);
         var_1d83376c = (75, 180, 0);
     }
     switch (orientation) {

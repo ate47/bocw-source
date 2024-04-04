@@ -118,9 +118,7 @@ function function_e913c7a3(start_node, var_212b9b37, var_2747d300) {
     if (!isdefined(chopper)) {
         chopper = spawn_chopper(start_node);
         if (!isdefined(chopper)) {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            assertmsg("<unknown string>");
         }
         level.var_fb14fd3b = chopper;
     } else if (isdefined(start_node)) {
@@ -433,7 +431,6 @@ function function_41d2eebc(params, chopper) {
     }
     self notify(#"hash_6ecb3e04f5d25eea");
     grenade = params.projectile;
-    waitresult = undefined;
     waitresult = grenade waittill(#"explode", #"death");
     if (waitresult._notify === #"explode") {
         chopper.var_94e122a8 = grenade.origin;
@@ -713,9 +710,7 @@ function function_1c4791e0(targets) {
     highest = 0;
     var_95525e25 = undefined;
     for (idx = 0; idx < targets.size; idx++) {
-        /#
-            assert(isdefined(targets[idx].threatlevel), "<unknown string>");
-        #/
+        assert(isdefined(targets[idx].threatlevel), "<unknown string>");
         if (targets[idx].threatlevel >= highest) {
             highest = targets[idx].threatlevel;
             var_95525e25 = targets[idx];
@@ -784,7 +779,7 @@ function isvalidtarget(guy) {
 // Checksum 0xf33078d6, Offset: 0x32e8
 // Size: 0x244
 function function_e943de0c(guy) {
-    heli_centroid = self.origin + vectorscale((0, 0, -1), 64);
+    heli_centroid = self.origin + (0, 0, -64);
     var_40784873 = 1;
     var_545a1f9b = 1;
     var_7271b9b5 = 85;
@@ -864,9 +859,7 @@ function function_79c4d29d() {
         loop = level.var_462eb982[var_b202465d].var_5943fcff;
         if (isdefined(currentnode) && var_b202465d == int(currentnode.script_noteworthy)) {
             var_6cfa3712 = util::get_array(currentnode.target, "targetname");
-            /#
-                assert(isdefined(var_6cfa3712), "<unknown string>");
-            #/
+            assert(isdefined(var_6cfa3712), "<unknown string>");
             nextnode = var_6cfa3712[0];
             if (vectordot(nextnode.origin - self.origin, self getvelocity()) < 0) {
                 var_904ef016 = array::find(loop, currentnode);

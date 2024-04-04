@@ -104,7 +104,6 @@ function function_23c31b4e() {
         } else {
             self childthread function_3ba2978d();
         }
-        waitresult = undefined;
         waitresult = level waittill(#"dark_aether_active", #"power_on");
         if (waitresult._notify == "power_on") {
             wait(5);

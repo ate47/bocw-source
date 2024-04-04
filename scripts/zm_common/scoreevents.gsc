@@ -145,11 +145,7 @@ function function_af57ad40() {
 // Checksum 0x5413b970, Offset: 0x3620
 // Size: 0xdc
 function function_9451b95c(equipment_name, var_92746e82, var_f3af4e17, var_5ef88cf) {
-    /#
-        /#
-            assert(!isdefined(level.var_4bcd94b[equipment_name]), "artillery_strike_kill_zm" + (ishash(equipment_name) ? function_9e72a96(equipment_name) : equipment_name));
-        #/
-    #/
+    assert(!isdefined(level.var_4bcd94b[equipment_name]), "artillery_strike_kill_zm" + (ishash(equipment_name) ? function_9e72a96(equipment_name) : equipment_name));
     level.var_4bcd94b[equipment_name] = {#var_fd2db56a:var_92746e82, #special_event:var_f3af4e17, #var_9b275351:var_5ef88cf};
 }
 

@@ -8,21 +8,8 @@
 // Method(s) 9 Total 16
 class czm_arcade_timer : cluielem {
 
-    // Namespace czm_arcade_timer/zm_arcade_timer
-    // Params 0, eflags: 0x8
-    // Checksum 0xf3fc2445, Offset: 0x838
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace czm_arcade_timer/zm_arcade_timer
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xfb1dbb61, Offset: 0xad8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace czm_arcade_timer/zm_arcade_timer
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class czm_arcade_timer : cluielem {
     // Checksum 0x2ddf93aa, Offset: 0xa38
     // Size: 0x44
     function set_minutes(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "minutes", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "minutes", value);
     }
 
     // Namespace czm_arcade_timer/zm_arcade_timer
@@ -45,7 +32,7 @@ class czm_arcade_timer : cluielem {
     // Checksum 0x55583ba4, Offset: 0xa88
     // Size: 0x44
     function set_title(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "title", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "title", value);
     }
 
     // Namespace czm_arcade_timer/zm_arcade_timer
@@ -61,7 +48,7 @@ class czm_arcade_timer : cluielem {
     // Checksum 0x87c7680, Offset: 0x998
     // Size: 0x44
     function set_showzero(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "showzero", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "showzero", value);
     }
 
     // Namespace czm_arcade_timer/zm_arcade_timer
@@ -81,7 +68,7 @@ class czm_arcade_timer : cluielem {
     // Checksum 0xdeeb2d09, Offset: 0x9e8
     // Size: 0x44
     function set_seconds(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "seconds", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "seconds", value);
     }
 
 }

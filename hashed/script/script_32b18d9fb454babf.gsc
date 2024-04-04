@@ -380,9 +380,7 @@ function private function_d4de820e() {
             instance = struct::get(var_13f49a56[i]);
             location = struct::get(instance.target);
             destination = struct::get(location.target);
-            /#
-                assert(destination.variantname == #"hash_313be7fccc870cdd");
-            #/
+            assert(destination.variantname == #"hash_313be7fccc870cdd");
             script = content_manager::get_script(instance.content_script_name);
             category = script.objectivecategory;
             destination.var_e859e591 = [];
@@ -464,9 +462,7 @@ function function_a6f84bf(s_destination) {
 // Checksum 0x8ac97522, Offset: 0x1f80
 // Size: 0xec
 function function_8e64a2b1(var_6e542c1a, var_a3b3f1b, var_8f08f2fe = #"") {
-    /#
-        assert(isdefined(var_6e542c1a) && isdefined(var_a3b3f1b), "<unknown string>");
-    #/
+    assert(isdefined(var_6e542c1a) && isdefined(var_a3b3f1b), "<unknown string>");
     level.var_3d1ef3ae = var_6e542c1a;
     level.var_edb2bb69 = ishash(var_a3b3f1b) ? var_a3b3f1b : hash(var_a3b3f1b);
     level.var_1b2466fe = ishash(var_8f08f2fe) ? var_8f08f2fe : hash(var_8f08f2fe);
@@ -593,9 +589,7 @@ function function_369007bb() {
             }
             level.contentmanager.var_407236bf.index = (level.contentmanager.var_407236bf.index + 1) % level.contentmanager.var_407236bf.list.size;
         }
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         if (isdefined(var_6d9b3bf9)) {
             var_8b66998e = level.contentmanager.var_9614b1d2[var_6d9b3bf9];
             if (isdefined(var_8b66998e)) {

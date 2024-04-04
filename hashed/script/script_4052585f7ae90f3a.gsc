@@ -190,7 +190,6 @@ function function_9b8a74e0(otherent, string1, string2, string3, string4, string5
     if (isdefined(otherent)) {
         otherent thread util::waittill_string("death", ent);
     }
-    waitresult = undefined;
     waitresult = ent waittill(#"returned");
     ent notify(#"die");
     return waitresult.msg;
@@ -238,9 +237,7 @@ function private function_887ac605(objective) {
 // Checksum 0xd1ea00db, Offset: 0x1378
 // Size: 0x9c
 function private event_handler[runnotetrackhandler] runnotetrackhandler(eventstruct) {
-    /#
-        assert(isarray(eventstruct.notetracks));
-    #/
+    assert(isarray(eventstruct.notetracks));
     for (index = 0; index < eventstruct.notetracks.size; index++) {
         ent = eventstruct.entity;
         notetrack = eventstruct.notetracks[index];

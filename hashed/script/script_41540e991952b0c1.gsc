@@ -7,22 +7,6 @@
 // Method(s) 17 Total 24
 class class_1bec696c : cluielem {
 
-    // Namespace class_1bec696c/doa_bannerelement
-    // Params 0, eflags: 0x8
-    // Checksum 0x92a38acd, Offset: 0x8a8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_1bec696c/doa_bannerelement
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x1c3a9dd0, Offset: 0xf58
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_1bec696c/doa_bannerelement
     // Params 1, eflags: 0x0
     // Checksum 0xc4b3847b, Offset: 0xcc0
@@ -36,7 +20,7 @@ class class_1bec696c : cluielem {
     // Checksum 0xf3e41105, Offset: 0xee8
     // Size: 0x30
     function set_horizontal_alignment(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "horizontal_alignment", value);
+        set_data(localclientnum, "horizontal_alignment", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -44,7 +28,7 @@ class class_1bec696c : cluielem {
     // Checksum 0xaf8e6741, Offset: 0xe40
     // Size: 0x30
     function set_green(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "green", value);
+        set_data(localclientnum, "green", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -52,7 +36,7 @@ class class_1bec696c : cluielem {
     // Checksum 0xa1ace05e, Offset: 0xd98
     // Size: 0x30
     function set_fadeovertime(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "fadeOverTime", value);
+        set_data(localclientnum, "fadeOverTime", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -68,7 +52,7 @@ class class_1bec696c : cluielem {
     // Checksum 0xbd29c85f, Offset: 0xd60
     // Size: 0x30
     function set_height(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "height", value);
+        set_data(localclientnum, "height", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -76,11 +60,11 @@ class class_1bec696c : cluielem {
     // Checksum 0xc5ddd315, Offset: 0xe78
     // Size: 0x30
     function set_blue(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "blue", value);
+        set_data(localclientnum, "blue", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
-    // Params 11, eflags: 0x0
+    // Params b, eflags: 0x0
     // Checksum 0xa7fe1ed2, Offset: 0x8c8
     // Size: 0x22c
     function setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, *textcallback, horizontal_alignmentcallback, var_766e2bbb) {
@@ -103,7 +87,7 @@ class class_1bec696c : cluielem {
     // Checksum 0xb408ae44, Offset: 0xd28
     // Size: 0x30
     function set_y(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "y", value);
+        set_data(localclientnum, "y", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -111,7 +95,7 @@ class class_1bec696c : cluielem {
     // Checksum 0xffd5411a, Offset: 0xdd0
     // Size: 0x30
     function set_alpha(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "alpha", value);
+        set_data(localclientnum, "alpha", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -119,7 +103,7 @@ class class_1bec696c : cluielem {
     // Checksum 0xf5330a6, Offset: 0xf20
     // Size: 0x30
     function set_scale(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "scale", value);
+        set_data(localclientnum, "scale", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -127,7 +111,7 @@ class class_1bec696c : cluielem {
     // Checksum 0xc686ef89, Offset: 0xcf0
     // Size: 0x30
     function set_x(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "x", value);
+        set_data(localclientnum, "x", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -135,7 +119,7 @@ class class_1bec696c : cluielem {
     // Checksum 0xd9030d66, Offset: 0xeb0
     // Size: 0x30
     function set_text(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "text", value);
+        set_data(localclientnum, "text", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -143,7 +127,7 @@ class class_1bec696c : cluielem {
     // Checksum 0xc9a0df10, Offset: 0xe08
     // Size: 0x30
     function set_red(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "red", value);
+        set_data(localclientnum, "red", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -152,17 +136,17 @@ class class_1bec696c : cluielem {
     // Size: 0x18c
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "x", 0);
-        [[ self ]]->set_data(localclientnum, "y", 0);
-        [[ self ]]->set_data(localclientnum, "height", 0);
-        [[ self ]]->set_data(localclientnum, "fadeOverTime", 0);
-        [[ self ]]->set_data(localclientnum, "alpha", 0);
-        [[ self ]]->set_data(localclientnum, "red", 0);
-        [[ self ]]->set_data(localclientnum, "green", 0);
-        [[ self ]]->set_data(localclientnum, "blue", 0);
-        [[ self ]]->set_data(localclientnum, "text", #"");
-        [[ self ]]->set_data(localclientnum, "horizontal_alignment", 0);
-        [[ self ]]->set_data(localclientnum, "scale", 0);
+        set_data(localclientnum, "x", 0);
+        set_data(localclientnum, "y", 0);
+        set_data(localclientnum, "height", 0);
+        set_data(localclientnum, "fadeOverTime", 0);
+        set_data(localclientnum, "alpha", 0);
+        set_data(localclientnum, "red", 0);
+        set_data(localclientnum, "green", 0);
+        set_data(localclientnum, "blue", 0);
+        set_data(localclientnum, "text", #"");
+        set_data(localclientnum, "horizontal_alignment", 0);
+        set_data(localclientnum, "scale", 0);
     }
 
 }

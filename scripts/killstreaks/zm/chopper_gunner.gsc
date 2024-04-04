@@ -109,9 +109,7 @@ function private function_5160bb1e(killstreaktype) {
     player = self;
     player endon(#"disconnect");
     level endon(#"end_game");
-    /#
-        assert(!isdefined(level.chopper_gunner));
-    #/
+    assert(!isdefined(level.chopper_gunner));
     if (!player killstreakrules::function_71e94a3b()) {
         player.var_baf4657c = 1;
         player killstreakrules::function_65739e7b("chopper_gunner");
@@ -252,7 +250,6 @@ function function_48170f5e() {
     level endon(#"end_game");
     self endon(#"disconnect", #"hash_44a9bac1e035f9a3");
     self waittill(#"using_remote");
-    waitresult = undefined;
     waitresult = self waittilltimeout(0, #"gunner_left");
     if (waitresult._notify != "timeout") {
         return;
@@ -314,7 +311,7 @@ function function_25d9a09f(vehicle) {
             vehicle vehicle_ai::fire_for_time(2 + randomfloat(0.8), 0, enemy);
             vehicle vehicle_ai::fire_for_rounds(1, 1, enemy);
             vehicle turretcleartarget(0);
-            vehicle turretsettargetangles(0, vectorscale((1, 0, 0), 15));
+            vehicle turretsettargetangles(0, (15, 0, 0));
             if (isdefined(enemy)) {
                 wait(2 + randomfloat(0.5));
             }

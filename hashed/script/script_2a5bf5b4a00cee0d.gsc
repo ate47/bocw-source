@@ -31,15 +31,9 @@
 // Checksum 0x8465ac5e, Offset: 0x310
 // Size: 0xcc
 function function_ae010bb4(player) {
-    /#
-        assert(isdefined(self), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(player), "<unknown string>");
-    #/
-    /#
-        assert(isplayer(player), "<unknown string>");
-    #/
+    assert(isdefined(self), "<unknown string>");
+    assert(isdefined(player), "<unknown string>");
+    assert(isplayer(player), "<unknown string>");
     self endon(#"death");
     player waittill(#"disconnect");
     if (isdefined(self)) {
@@ -361,9 +355,7 @@ function function_aef7e3f6(minwait = 10, fails = 30) {
 // Checksum 0xda9ae67d, Offset: 0x1308
 // Size: 0x184
 function function_570729f0(time = 0, attacker, mod = "MOD_UNKNOWN", weapon) {
-    /#
-        assert(!isplayer(self));
-    #/
+    assert(!isplayer(self));
     if (!isdefined(self)) {
         return;
     }
@@ -423,9 +415,7 @@ function function_4adce635(dir, var_594fccd3 = 100) {
 // Size: 0x68
 function function_22d11b92() {
     if (is_true(self.marked_for_death)) {
-        /#
-            assert(isdefined(self.var_ef7cd97));
-        #/
+        assert(isdefined(self.var_ef7cd97));
         if (isdefined(self.var_ef7cd97) && gettime() - self.var_ef7cd97 < 1500) {
             return true;
         }
@@ -454,9 +444,7 @@ function function_1811d978(timesec) {
 // Checksum 0xa111f35, Offset: 0x16f0
 // Size: 0x104
 function function_b4ff2191(dir, var_594fccd3, *unused = 100, attacker) {
-    /#
-        assert(!isplayer(self));
-    #/
+    assert(!isplayer(self));
     if (!isdefined(self)) {
         return;
     }
@@ -659,7 +647,7 @@ function function_f506b4c7(time = 4) {
 // Size: 0xce
 function function_2d920b3c(var_bf710acd = 0.6, clockwise = 1) {
     self endon(#"death", #"hash_7bf2519960a3852a");
-    angle = clockwise ? vectorscale((0, 1, 0), 180) : vectorscale((0, -1, 0), 180);
+    angle = clockwise ? (0, 180, 0) : (0, -180, 0);
     while (isdefined(self)) {
         self.var_c9f66f0d = self.angles + angle;
         self rotateto(self.var_c9f66f0d, var_bf710acd);
@@ -769,9 +757,7 @@ function getyaw2d(org) {
 // Checksum 0x520e7dc7, Offset: 0x2498
 // Size: 0xa2
 function absyawtoenemy() {
-    /#
-        assert(isvalidenemy(self.enemy));
-    #/
+    assert(isvalidenemy(self.enemy));
     yaw = self.angles[1] - getyaw(self.enemy.origin);
     yaw = angleclamp180(yaw);
     if (yaw < 0) {
@@ -785,9 +771,7 @@ function absyawtoenemy() {
 // Checksum 0x8c5882d9, Offset: 0x2548
 // Size: 0xa2
 function absyawtoenemy2d() {
-    /#
-        assert(isvalidenemy(self.enemy));
-    #/
+    assert(isvalidenemy(self.enemy));
     yaw = self.angles[1] - getyaw2d(self.enemy.origin);
     yaw = angleclamp180(yaw);
     if (yaw < 0) {
@@ -996,9 +980,7 @@ function function_f3eab80e(origin, dist = 1024) {
 // Checksum 0x9a470f16, Offset: 0x2eb8
 // Size: 0x9c
 function function_87612422(spot, angles, priority = 1, lifetime = 3, lightstate = 0) {
-    /#
-        assert(isdefined(spot));
-    #/
+    assert(isdefined(spot));
     if (isdefined(spot)) {
         level util::create_streamer_hint(spot, angles, priority, lifetime, lightstate);
     }
@@ -1085,9 +1067,7 @@ function spawntrigger(triggertype, origin, flags = 1, var_bacb72c4, height, widt
     } else if (triggertype == "trigger_box") {
         trigger = spawn(triggertype, origin, flags, var_bacb72c4, width, height);
     } else {
-        /#
-            assert(0, "<unknown string>");
-        #/
+        assert(0, "<unknown string>");
     }
     return trigger;
 }
@@ -1127,9 +1107,7 @@ function is_explosive_damage(mod) {
 // Checksum 0x59c4050f, Offset: 0x3560
 // Size: 0x16a
 function function_2017393e(array, weights) {
-    /#
-        assert(array.size == weights.size);
-    #/
+    assert(array.size == weights.size);
     if (array.size > 0) {
         var_766a145f = 0;
         keys = getarraykeys(array);

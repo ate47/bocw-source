@@ -96,9 +96,7 @@ function function_f479a2ff(weapon) {
 // Checksum 0xaa6487f8, Offset: 0x670
 // Size: 0x8c
 function function_e3a30c69(weapon) {
-    /#
-        assert(isdefined(isdefined(level.killstreakweapons[weapon])));
-    #/
+    assert(isdefined(isdefined(level.killstreakweapons[weapon])));
     killstreak = level.killstreaks[level.killstreakweapons[weapon]];
     return isdefined(killstreak.script_bundle.var_a82b593f) ? killstreak.script_bundle.var_a82b593f : 0;
 }
@@ -128,9 +126,7 @@ function get_killstreak_weapon(killstreak) {
     if (!isdefined(killstreak)) {
         return level.weaponnone;
     }
-    /#
-        assert(isdefined(level.killstreaks[killstreak]));
-    #/
+    assert(isdefined(level.killstreaks[killstreak]));
     return level.killstreaks[killstreak].weapon;
 }
 
@@ -241,19 +237,11 @@ function function_a2c375bb(killstreaktype) {
 // Checksum 0xf84c267, Offset: 0xba8
 // Size: 0xca
 function function_fde227c6(weapon, var_1ee97554) {
-    /#
-        assert(weapon.iscarriedkillstreak);
-    #/
-    /#
-        assert(var_1ee97554.iscarriedkillstreak);
-    #/
+    assert(weapon.iscarriedkillstreak);
+    assert(var_1ee97554.iscarriedkillstreak);
     if (weapon.var_6f41c2a9) {
-        /#
-            assert(isdefined(level.var_6110cb51[var_1ee97554]));
-        #/
-        /#
-            assert(level.var_6110cb51[var_1ee97554] != level.weaponnone);
-        #/
+        assert(isdefined(level.var_6110cb51[var_1ee97554]));
+        assert(level.var_6110cb51[var_1ee97554] != level.weaponnone);
         return level.var_6110cb51[var_1ee97554];
     }
     return var_1ee97554;
@@ -281,9 +269,7 @@ function function_43f4782d() {
     if (isdefined(airsupport_height)) {
         height = airsupport_height.origin[2];
     } else {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         height = 1000;
         if (isdefined(level.mapcenter)) {
             height = height + level.mapcenter[2];
@@ -336,7 +322,7 @@ function function_f3875fb0(var_d22c85cf, height_offset, var_b6417305, var_93e44b
     var_564cfb64 = (isdefined(var_d22c85cf[0]) ? var_d22c85cf[0] : level.mapcenter[0], isdefined(var_d22c85cf[1]) ? var_d22c85cf[1] : level.mapcenter[1], height);
     rotator = spawn("script_model", var_564cfb64);
     rotator setmodel(#"tag_origin");
-    rotator.angles = vectorscale((0, 1, 0), 115);
+    rotator.angles = (0, 115, 0);
     rotator hide();
     rotator thread function_1ddb2653(var_b6417305, var_93e44bb3);
     if (var_e690ed4e) {

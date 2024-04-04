@@ -91,9 +91,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
     if (idflags & 8192 && idamage < unmodified) {
         idamage = unmodified;
     }
-    /#
-        assert(isdefined(idamage), "<unknown string>");
-    #/
+    assert(isdefined(idamage), "<unknown string>");
     if (!isdefined(vdir)) {
         idflags = idflags | 4;
     }
@@ -120,9 +118,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
             eattacker = eattacker.driver;
         }
         if (isplayer(eattacker)) {
-            /#
-                println("<unknown string>" + weapon.name + "<unknown string>" + smeansofdeath);
-            #/
+            println("<unknown string>" + weapon.name + "<unknown string>" + smeansofdeath);
             if (!var_d3e9a2bd) {
                 if (smeansofdeath == "MOD_MELEE") {
                     eattacker notify(#"melee_kill");

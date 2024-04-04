@@ -7,22 +7,6 @@
 // Method(s) 8 Total 15
 class class_b201538a : cluielem {
 
-    // Namespace class_b201538a/namespace_85157ebf
-    // Params 0, eflags: 0x8
-    // Checksum 0xc127d46, Offset: 0x3b0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_b201538a/namespace_85157ebf
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x85fe121, Offset: 0x640
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_b201538a/namespace_85157ebf
     // Params 1, eflags: 0x0
     // Checksum 0xefe9524a, Offset: 0x4e8
@@ -54,7 +38,7 @@ class class_b201538a : cluielem {
     // Checksum 0xa091f39f, Offset: 0x608
     // Size: 0x30
     function function_97bf49cb(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "download_progress", value);
+        set_data(localclientnum, "download_progress", value);
     }
 
     // Namespace namespace_b201538a/namespace_85157ebf
@@ -63,22 +47,18 @@ class class_b201538a : cluielem {
     // Size: 0xe4
     function set_state(localclientnum, state_name) {
         if (#"defaultstate" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 0);
+            set_data(localclientnum, "_state", 0);
             return;
         }
         if (#"paused" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 1);
+            set_data(localclientnum, "_state", 1);
             return;
         }
         if (#"finished" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 2);
+            set_data(localclientnum, "_state", 2);
             return;
         }
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
     }
 
     // Namespace namespace_b201538a/namespace_85157ebf
@@ -87,8 +67,8 @@ class class_b201538a : cluielem {
     // Size: 0x68
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_state(localclientnum, #"defaultstate");
-        [[ self ]]->set_data(localclientnum, "download_progress", 0);
+        set_state(localclientnum, #"defaultstate");
+        set_data(localclientnum, "download_progress", 0);
     }
 
 }

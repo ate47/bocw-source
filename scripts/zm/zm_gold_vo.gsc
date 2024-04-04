@@ -39,19 +39,16 @@ function init() {
 function on_player_spawn() {
     self endoncallback(&function_b5b9317a, #"death");
     while (true) {
-        s_waitresult = undefined;
         s_waitresult = self waittill(#"hash_360ecb13f668ae0f", #"hash_52a52b5007f36141");
         if (s_waitresult._notify === #"hash_360ecb13f668ae0f") {
             self.var_9c1a4644 = #"cdp_taacom";
             while (true) {
-                s_waitresult = undefined;
                 s_waitresult = self waittill(#"hash_360ecb13f668ae0f", #"hash_52a52b5007f36141", #"killstreak_done");
                 if (s_waitresult._notify === #"hash_360ecb13f668ae0f") {
                     continue;
                 }
                 if (s_waitresult._notify === #"killstreak_done") {
                     if (is_true(s_waitresult.is_successful)) {
-                        s_waitresult = undefined;
                         s_waitresult = self waittilltimeout(20, #"hash_360ecb13f668ae0f", #"hash_52a52b5007f36141");
                     }
                     if (s_waitresult._notify !== #"hash_360ecb13f668ae0f") {
@@ -258,7 +255,6 @@ function function_20df51b5() {
     self notify("4691fb805f755f3f");
     self endon("4691fb805f755f3f");
     while (true) {
-        s_waitresult = undefined;
         s_waitresult = self waittill(#"hash_5db01607981fb0ea", #"hash_5db01507981faf37", #"hash_5db01407981fad84", #"hash_5db01307981fabd1");
         switch (s_waitresult._notify) {
         case #"hash_5db01607981fb0ea":
@@ -506,7 +502,6 @@ function function_78cc0d39(str_vo_alias, b_wait_if_busy = 1) {
 function private function_543f9e02() {
     level endon(#"end_game");
     while (true) {
-        s_waitresult = undefined;
         s_waitresult = level waittill(#"hash_6d7ff9f9ff07619c");
         switch (level.var_85422c0e) {
         case #"strauss":

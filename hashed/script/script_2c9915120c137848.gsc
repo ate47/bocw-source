@@ -75,13 +75,9 @@ function function_de7fb95(var_c904ca7c, context = 0) {
     var_7b8ab46d = arraycombine(var_8f43e5f8, var_baf628cc);
     foreach (target in var_7b8ab46d) {
         action = 0;
-        /#
-            assert(isdefined(target.script_parameters) && isdefined("<unknown string>"));
-        #/
+        assert(isdefined(target.script_parameters) && isdefined("<unknown string>"));
         toks = strtok(target.script_parameters, ";");
-        /#
-            assert(toks.size > 0);
-        #/
+        assert(toks.size > 0);
         switch (toks[0]) {
         case #"hash_4803a23362395345":
             action = 3;
@@ -107,33 +103,23 @@ function function_de7fb95(var_c904ca7c, context = 0) {
             target.script_model = namespace_ec06fe4a::spawnmodel(target.origin, target.model, target.angles, "pressure_plate_object");
         }
         if (target.type == 2) {
-            /#
-                assert(toks.size > 1, "<unknown string>");
-            #/
+            assert(toks.size > 1, "<unknown string>");
             target.doortype = int(toks[1]);
-            /#
-                assert(target.doortype >= 1 && target.doortype <= 3, "<unknown string>");
-            #/
+            assert(target.doortype >= 1 && target.doortype <= 3, "<unknown string>");
             target.script_model namespace_f63bdb08::function_94c7c0d9(target.doortype, 8, context);
         } else if (target.type == 1 || target.type == 3) {
             if (isdefined(target.script_model)) {
                 target.script_model setmovingplatformenabled(1);
             }
-            /#
-                assert(toks.size > 2, "<unknown string>");
-            #/
+            assert(toks.size > 2, "<unknown string>");
             target.verticaldistance = int(toks[1]);
             target.var_edf3aca7 = int(toks[2]);
             if (toks.size > 3) {
                 switch (toks[3]) {
                 case #"loot":
-                    /#
-                        assert(isdefined(target.target), "<unknown string>");
-                    #/
+                    assert(isdefined(target.target), "<unknown string>");
                     target.lootitems = struct::get_array(target.target, "targetname");
-                    /#
-                        assert(target.lootitems.size, "<unknown string>");
-                    #/
+                    assert(target.lootitems.size, "<unknown string>");
                     break;
                 }
             }
@@ -174,24 +160,18 @@ function function_9592df27() {
     self.script_model endon(#"death");
     if (isdefined(self.lootitems)) {
         foreach (item in self.lootitems) {
-            /#
-                assert(isdefined(item.script_noteworthy), "<unknown string>");
-            #/
+            assert(isdefined(item.script_noteworthy), "<unknown string>");
             switch (item.script_noteworthy) {
             case #"pickup_item":
                 if (!isdefined(self.var_152b081b)) {
                     self.var_152b081b = [];
                 }
-                /#
-                    assert(isdefined(item.script_parameters), "<unknown string>");
-                #/
+                assert(isdefined(item.script_parameters), "<unknown string>");
                 def = namespace_dfc652ee::function_6265bde4(item.script_parameters);
-                /#
-                    assert(isdefined(def), "<unknown string>");
-                #/
+                assert(isdefined(def), "<unknown string>");
                 pickupitem = namespace_dfc652ee::itemspawn(def, item.origin, item.angles, undefined, 1);
                 if (isdefined(pickupitem)) {
-                    pickupitem thread namespace_ec06fe4a::function_73d79e7d(self.script_model, 1, vectorscale((0, 0, 1), 20));
+                    pickupitem thread namespace_ec06fe4a::function_73d79e7d(self.script_model, 1, (0, 0, 20));
                     pickupitem notify(#"hash_2a866f50cc161ca8");
                     if (!isdefined(self.var_152b081b)) {
                         self.var_152b081b = [];
@@ -238,24 +218,18 @@ function function_1efdf194(var_705bb15a, totaltime, totaldist) {
 function function_92bae57c() {
     if (isdefined(self.lootitems)) {
         foreach (item in self.lootitems) {
-            /#
-                assert(isdefined(item.script_noteworthy), "<unknown string>");
-            #/
+            assert(isdefined(item.script_noteworthy), "<unknown string>");
             switch (item.script_noteworthy) {
             case #"pickup_item":
                 if (!isdefined(self.var_152b081b)) {
                     self.var_152b081b = [];
                 }
-                /#
-                    assert(isdefined(item.script_parameters), "<unknown string>");
-                #/
+                assert(isdefined(item.script_parameters), "<unknown string>");
                 def = namespace_dfc652ee::function_6265bde4(item.script_parameters);
-                /#
-                    assert(isdefined(def), "<unknown string>");
-                #/
+                assert(isdefined(def), "<unknown string>");
                 pickupitem = namespace_dfc652ee::itemspawn(def, item.origin, item.angles, undefined, 1);
                 if (isdefined(pickupitem)) {
-                    pickupitem thread namespace_ec06fe4a::function_73d79e7d(self, 1, vectorscale((0, 0, 1), 20));
+                    pickupitem thread namespace_ec06fe4a::function_73d79e7d(self, 1, (0, 0, 20));
                     pickupitem notify(#"hash_2a866f50cc161ca8");
                     if (!isdefined(self.var_152b081b)) {
                         self.var_152b081b = [];

@@ -42,79 +42,37 @@ function init() {
 // Checksum 0xdbaa4671, Offset: 0x6e0
 // Size: 0x8b4
 function registerbehaviorscriptfunctions() {
-    /#
-        assert(isscriptfunctionptr(&function_7ea2ce80));
-    #/
+    assert(isscriptfunctionptr(&function_7ea2ce80));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_13a7c5f0e3443c41", &function_7ea2ce80);
-    /#
-        assert(isscriptfunctionptr(&function_5ea59a34));
-    #/
+    assert(isscriptfunctionptr(&function_5ea59a34));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2e4df6a195ecfec9", &function_5ea59a34);
-    /#
-        assert(isscriptfunctionptr(&function_f23c95c0));
-    #/
+    assert(isscriptfunctionptr(&function_f23c95c0));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_5842fe16f70c7666", &function_f23c95c0);
-    /#
-        assert(isscriptfunctionptr(&function_57a2b7f5));
-    #/
+    assert(isscriptfunctionptr(&function_57a2b7f5));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_4d98d9c9ffa44e4a", &function_57a2b7f5);
-    /#
-        assert(isscriptfunctionptr(&function_393e6415));
-    #/
+    assert(isscriptfunctionptr(&function_393e6415));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_5e697a4c27f75b89", &function_393e6415);
-    /#
-        assert(isscriptfunctionptr(&function_300bba8c));
-    #/
+    assert(isscriptfunctionptr(&function_300bba8c));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_54f2476b821b6122", &function_300bba8c);
-    /#
-        assert(!isdefined(&function_33d8ef00) || isscriptfunctionptr(&function_33d8ef00));
-    #/
-    /#
-        assert(!isdefined(&function_3e4a0d4f) || isscriptfunctionptr(&function_3e4a0d4f));
-    #/
-    /#
-        assert(!isdefined(&function_a0e76e3c) || isscriptfunctionptr(&function_a0e76e3c));
-    #/
+    assert(!isdefined(&function_33d8ef00) || isscriptfunctionptr(&function_33d8ef00));
+    assert(!isdefined(&function_3e4a0d4f) || isscriptfunctionptr(&function_3e4a0d4f));
+    assert(!isdefined(&function_a0e76e3c) || isscriptfunctionptr(&function_a0e76e3c));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_40d132fce22a5e1f", &function_33d8ef00, &function_3e4a0d4f, &function_a0e76e3c);
-    /#
-        assert(!isdefined(&function_6d8dd464) || isscriptfunctionptr(&function_6d8dd464));
-    #/
-    /#
-        assert(!isdefined(&function_3eb8351a) || isscriptfunctionptr(&function_3eb8351a));
-    #/
-    /#
-        assert(!isdefined(&function_fcbe1c10) || isscriptfunctionptr(&function_fcbe1c10));
-    #/
+    assert(!isdefined(&function_6d8dd464) || isscriptfunctionptr(&function_6d8dd464));
+    assert(!isdefined(&function_3eb8351a) || isscriptfunctionptr(&function_3eb8351a));
+    assert(!isdefined(&function_fcbe1c10) || isscriptfunctionptr(&function_fcbe1c10));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_2154c6eadedb4030", &function_6d8dd464, &function_3eb8351a, &function_fcbe1c10);
-    /#
-        assert(!isdefined(&function_a1f4593d) || isscriptfunctionptr(&function_a1f4593d));
-    #/
-    /#
-        assert(!isdefined(&function_78e41d77) || isscriptfunctionptr(&function_78e41d77));
-    #/
-    /#
-        assert(!isdefined(&function_aacc3221) || isscriptfunctionptr(&function_aacc3221));
-    #/
+    assert(!isdefined(&function_a1f4593d) || isscriptfunctionptr(&function_a1f4593d));
+    assert(!isdefined(&function_78e41d77) || isscriptfunctionptr(&function_78e41d77));
+    assert(!isdefined(&function_aacc3221) || isscriptfunctionptr(&function_aacc3221));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_3f09038802c74759", &function_a1f4593d, &function_78e41d77, &function_aacc3221);
-    /#
-        assert(!isdefined(&function_ea163d5b) || isscriptfunctionptr(&function_ea163d5b));
-    #/
-    /#
-        assert(!isdefined(&function_cea06112) || isscriptfunctionptr(&function_cea06112));
-    #/
-    /#
-        assert(!isdefined(&function_ebaf98e0) || isscriptfunctionptr(&function_ebaf98e0));
-    #/
+    assert(!isdefined(&function_ea163d5b) || isscriptfunctionptr(&function_ea163d5b));
+    assert(!isdefined(&function_cea06112) || isscriptfunctionptr(&function_cea06112));
+    assert(!isdefined(&function_ebaf98e0) || isscriptfunctionptr(&function_ebaf98e0));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_507d2a221b595a43", &function_ea163d5b, &function_cea06112, &function_ebaf98e0);
-    /#
-        assert(!isdefined(&function_77e73b0) || isscriptfunctionptr(&function_77e73b0));
-    #/
-    /#
-        assert(!isdefined(&function_ae656597) || isscriptfunctionptr(&function_ae656597));
-    #/
-    /#
-        assert(!isdefined(&function_3a5a0b29) || isscriptfunctionptr(&function_3a5a0b29));
-    #/
+    assert(!isdefined(&function_77e73b0) || isscriptfunctionptr(&function_77e73b0));
+    assert(!isdefined(&function_ae656597) || isscriptfunctionptr(&function_ae656597));
+    assert(!isdefined(&function_3a5a0b29) || isscriptfunctionptr(&function_3a5a0b29));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_32d2aabab53b4ba6", &function_77e73b0, &function_ae656597, &function_3a5a0b29);
 }
 
@@ -433,9 +391,7 @@ function function_31f34cee() {
 // Checksum 0xa5fe030b, Offset: 0x21b0
 // Size: 0x17c
 function function_27adf2ff(on = 1, var_a53a6d94 = 1) {
-    /#
-        assert(isdefined(self.trigger));
-    #/
+    assert(isdefined(self.trigger));
     if (isdefined(self.trigger)) {
         self.trigger endon(#"death");
     }
@@ -462,7 +418,6 @@ function function_27adf2ff(on = 1, var_a53a6d94 = 1) {
 function function_f87ac23b(owner) {
     self endon(#"death");
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         if (isdefined(result.activator)) {
             if (result.activator.team == #"allies") {
@@ -624,9 +579,7 @@ function function_6ae08d6c(origin, raygun = 0) {
 // Checksum 0x18aeb6a9, Offset: 0x2be0
 // Size: 0x3b4
 function function_571bb3ac() {
-    /#
-        assert(isdefined(level.doa.var_39e3fa99));
-    #/
+    assert(isdefined(level.doa.var_39e3fa99));
     sides = array("top", "bottom", "left", "right");
     center = [[ level.doa.var_39e3fa99 ]]->function_ffcf1d1();
     spot = [[ level.doa.var_39e3fa99 ]]->function_635991ca();
@@ -638,7 +591,6 @@ function function_571bb3ac() {
         silverback.var_6ea9e4cf = 1;
         silverback.goalradius = 16;
         silverback thread function_2c4249ed(sqr(28));
-        result = undefined;
         result = level waittilltimeout(60, #"damage", #"doa_exit_taken", #"hash_72523790f36bd2a8", #"teleporter_taken", #"enter_the_wild", #"hash_7270a59e1f502d96");
         silverback notify(#"hash_72523790f36bd2a8");
         silverback.var_6ea9e4cf = undefined;
@@ -649,7 +601,6 @@ function function_571bb3ac() {
             silverback function_add8c81a("run");
             silverback thread namespace_6e90e490::function_47e11416(6);
             silverback.var_6e5b38d9 = gettime() + 11000;
-            result = undefined;
             result = level waittilltimeout(10, #"doa_exit_taken", #"teleporter_taken", #"enter_the_wild", #"hash_7270a59e1f502d96", #"hash_72523790f36bd2a8");
         }
         silverback thread namespace_6e90e490::function_47e11416(6);
@@ -781,7 +732,6 @@ function function_89406011() {
             timeout = 20;
             while (timeout > 0 && isdefined(currenttarget) && !is_true(currenttarget.pickedup)) {
                 lastorigin = self.origin;
-                result = undefined;
                 result = self waittilltimeout(0.5, #"near_goal", #"picked_up");
                 if (result._notify == #"timeout") {
                     timeout--;
@@ -817,8 +767,8 @@ function function_bf037906(origin) {
     self notify("6437725e824ab0d3");
     self endon("6437725e824ab0d3");
     while (is_true(self.var_6ea9e4cf)) {
-        level thread namespace_1e25ad94::debugcircle(origin + vectorscale((0, 0, 1), 20), 30, 0.05, (1, 0, 0));
-        level thread namespace_1e25ad94::debugline(self.origin + vectorscale((0, 0, 1), 20), origin + vectorscale((0, 0, 1), 20), 0.05, (1, 0, 0));
+        level thread namespace_1e25ad94::debugcircle(origin + (0, 0, 20), 30, 0.05, (1, 0, 0));
+        level thread namespace_1e25ad94::debugline(self.origin + (0, 0, 20), origin + (0, 0, 20), 0.05, (1, 0, 0));
         waitframe(1);
     }
 }
@@ -878,7 +828,6 @@ function function_5dfb821d() {
     self endon("d4299be5a7cb9e7");
     self endon(#"death");
     self.var_ba88972 = 1;
-    result = undefined;
     result = self waittilltimeout(2, #"hash_73d8763ded66b7c9", #"end");
     self.var_ba88972 = undefined;
 }
@@ -961,14 +910,14 @@ function function_396fbf53(var_febfd0, numattacks = 1) {
         dist = distance(targetorigin, self.origin) + 256;
         forward = anglestoforward(var_febfd0.angles);
         var_49e4e4be = var_febfd0.origin + forward * dist;
-        trace = groundtrace(var_febfd0.origin + vectorscale((0, 0, 1), 30), var_49e4e4be + vectorscale((0, 0, 1), 30), 0, self);
+        trace = groundtrace(var_febfd0.origin + (0, 0, 30), var_49e4e4be + (0, 0, 30), 0, self);
         var_49e4e4be = trace[#"position"] + forward * -64;
         distsq = distancesquared(var_febfd0.origin, var_49e4e4be);
         var_e1f43424 = math::clamp(int(distsq / var_accea2d5), 1, 9999);
         traveltime = math::clamp(var_e1f43424 * 0.005, 0, 0.7);
         if (getdvarint(#"hash_370090a969cdbc39", 0)) {
-            level thread namespace_1e25ad94::debugcircle(var_49e4e4be + vectorscale((0, 0, 1), 20), 30, 3, (1, 0, 0));
-            level thread namespace_1e25ad94::debugline(var_49e4e4be + vectorscale((0, 0, 1), 20), self.origin + vectorscale((0, 0, 1), 20), 3, (1, 0, 0));
+            level thread namespace_1e25ad94::debugcircle(var_49e4e4be + (0, 0, 20), 30, 3, (1, 0, 0));
+            level thread namespace_1e25ad94::debugline(var_49e4e4be + (0, 0, 20), self.origin + (0, 0, 20), 3, (1, 0, 0));
             var_febfd0 thread namespace_1e25ad94::debugorigin(3, 20, (1, 0, 0));
         }
         var_febfd0 thread function_51226983(self.enemy);
@@ -1112,7 +1061,7 @@ function function_de1c2fc3(var_febfd0, numattacks = 1) {
         var_febfd0.origin = self.origin;
         self linkto(var_febfd0);
         if (getdvarint(#"hash_225943d24ee71d", 0)) {
-            level thread namespace_1e25ad94::debugcircle(targetpos + vectorscale((0, 0, 1), 20), 30, 3, (1, 0, 0));
+            level thread namespace_1e25ad94::debugcircle(targetpos + (0, 0, 20), 30, 3, (1, 0, 0));
             var_febfd0 thread namespace_1e25ad94::debugorigin(3, 20, (1, 0, 0));
         }
         var_febfd0 thread function_51226983(self.enemy);
@@ -1378,7 +1327,6 @@ function private function_d70f65d0() {
     self endon(#"death");
     self playloopsound("zmb_doa_ai_silverback_banana_gas_lp");
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         if (isplayer(result.activator)) {
             if (!isdefined(result.activator.var_76eebaf0) || gettime() > result.activator.var_76eebaf0) {

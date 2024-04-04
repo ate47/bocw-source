@@ -249,21 +249,15 @@ function function_327e6270(players, var_22b78352, var_89bd5332) {
     }
     player = function_18b8b7e4(players, self.origin);
     if (isdefined(player)) {
-        /#
-            println("<unknown string>" + [[ var_22b78352 ]](player) + "<unknown string>" + self.name + "<unknown string>" + [[ var_22b78352 ]](self) + "<unknown string>" + player.name + "<unknown string>");
-        #/
+        println("<unknown string>" + [[ var_22b78352 ]](player) + "<unknown string>" + self.name + "<unknown string>" + [[ var_22b78352 ]](self) + "<unknown string>" + player.name + "<unknown string>");
         return player;
     }
     player = function_9c5853f5(players, var_22b78352, var_89bd5332);
     if (isdefined(player)) {
-        /#
-            println("<unknown string>" + [[ var_22b78352 ]](player) + "<unknown string>" + self.name + "<unknown string>" + [[ var_22b78352 ]](self) + "<unknown string>" + player.name + "<unknown string>");
-        #/
+        println("<unknown string>" + [[ var_22b78352 ]](player) + "<unknown string>" + self.name + "<unknown string>" + [[ var_22b78352 ]](self) + "<unknown string>" + player.name + "<unknown string>");
         return player;
     }
-    /#
-        println("<unknown string>" + [[ var_22b78352 ]](self) + "<unknown string>" + self.name + "<unknown string>");
-    #/
+    println("<unknown string>" + [[ var_22b78352 ]](self) + "<unknown string>" + self.name + "<unknown string>");
     return self;
 }
 
@@ -493,9 +487,7 @@ function function_e34c084d(*players, attacker) {
 // Checksum 0x57a2544b, Offset: 0x19e8
 // Size: 0xd2
 function private function_770d7902() {
-    /#
-        assert(level.spectatetype == 4 || level.spectatetype == 5);
-    #/
+    assert(level.spectatetype == 4 || level.spectatetype == 5);
     switch (level.spectatetype) {
     case 5:
         players = function_a1cff525(self.squad);

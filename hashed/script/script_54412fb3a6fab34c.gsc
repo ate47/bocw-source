@@ -33,9 +33,7 @@ function private function_b9014159(*userdata) {
     player = level.player;
     now = gettime();
     if (isdefined(self.var_404d1644.time) == 1 && self.var_404d1644.time == now) {
-        /#
-            assert(isdefined(self.var_404d1644.distanceattenuation) == 1);
-        #/
+        assert(isdefined(self.var_404d1644.distanceattenuation) == 1);
         return self.var_404d1644.distanceattenuation;
     }
     var_5d8f50b0 = self.var_404d1644.var_5d8f50b0;
@@ -69,9 +67,7 @@ function private function_b9014159(*userdata) {
 function private function_e2782c4a(*inputvalue, userdata) {
     player = userdata;
     foreach (var_f828a846, var_79162eff in level.var_28778381) {
-        /#
-            assert(isdefined(var_f828a846) == 1);
-        #/
+        assert(isdefined(var_f828a846) == 1);
         var_ab57c0be = 0;
         foreach (var_453b3fb3 in var_79162eff) {
             if (function_3132f113(var_453b3fb3) == 1) {
@@ -139,12 +135,8 @@ function private function_77a1c8ae(*userdata) {
 // Size: 0x26e
 function private function_bfea3a77(var_f828a846, var_d89a17f3, var_5d8f50b0, var_28128153, var_16fc9737) {
     var_5a696c5d = self;
-    /#
-        assert(isdefined(var_5a696c5d) == 1, "<unknown string>");
-    #/
-    /#
-        assert(isdefined(var_f828a846) == 1, "<unknown string>");
-    #/
+    assert(isdefined(var_5a696c5d) == 1, "<unknown string>");
+    assert(isdefined(var_f828a846) == 1, "<unknown string>");
     if (isdefined(var_d89a17f3) == 0) {
         var_d89a17f3 = 1;
     }
@@ -241,21 +233,11 @@ function private function_44a0fc4(var_af8e391e, var_48a9b1c9, var_a3fbfa71) {
         var_5491c04c = isbuttonpressed;
         var_b00eae99 = undefined;
         var_b053696b = 0;
-        /#
-            assert(isdefined(var_c8c21635));
-        #/
-        /#
-            assert(isdefined(var_9b9a42b1));
-        #/
-        /#
-            assert(isdefined(var_af8e391e));
-        #/
-        /#
-            assert(isdefined(var_c1ed6f8));
-        #/
-        /#
-            assert(isdefined(var_48a9b1c9));
-        #/
+        assert(isdefined(var_c8c21635));
+        assert(isdefined(var_9b9a42b1));
+        assert(isdefined(var_af8e391e));
+        assert(isdefined(var_c1ed6f8));
+        assert(isdefined(var_48a9b1c9));
         while (true) {
             volume = getdvarfloat(var_749178c6);
             var_5cbd7bfa = 0;
@@ -428,9 +410,7 @@ function function_ab26d4b7(label, point1, point2) {
     if (!isdefined(level.var_77a389b2)) {
         level.var_77a389b2 = [];
     }
-    /#
-        assert(!isdefined(level.var_77a389b2[label]), "<unknown string>" + label + "<unknown string>");
-    #/
+    assert(!isdefined(level.var_77a389b2[label]), "<unknown string>" + label + "<unknown string>");
     level.var_77a389b2[label] = [point1, vectornormalize(point2 - point1), distance(point1, point2), point2];
     self thread function_17b9cb33(label);
     self thread function_a0414d75(label);
@@ -443,9 +423,7 @@ function function_ab26d4b7(label, point1, point2) {
 function private function_17b9cb33(label) {
     self endon(#"death");
     self endon(label + "_line_ent_stop");
-    /#
-        assert(isdefined(self) == 1);
-    #/
+    assert(isdefined(self) == 1);
     update_rate = 0.1;
     while (true) {
         var_874f5aad = level.player.origin - level.var_77a389b2[label][0];
@@ -477,9 +455,7 @@ function function_65485047(label, point1, point2, time) {
     self endon(#"death");
     self endon(#"sounddone");
     self endon(label + "_line_ent_stop");
-    /#
-        assert(isdefined(level.var_77a389b2[label]), "<unknown string>" + label + "<unknown string>");
-    #/
+    assert(isdefined(level.var_77a389b2[label]), "<unknown string>" + label + "<unknown string>");
     self thread function_6cec2fa9(label, point1, point2, time);
 }
 
@@ -534,9 +510,7 @@ function function_4f3aa5d6(*var_f828a846, attack, hold, *release, var_2ce83612, 
     if (!isdefined(var_cc2c9bdb)) {
         var_cc2c9bdb = level.player.origin;
     }
-    /#
-        assert(isdefined(var_b0791d84), "<unknown string>");
-    #/
+    assert(isdefined(var_b0791d84), "<unknown string>");
     if (!isdefined(var_2ce83612)) {
         var_2ce83612 = 0;
     }
@@ -804,9 +778,7 @@ function function_da704a02(alias, var_f828a846, scale, attack, release, radio) {
     if (!isdefined(scale)) {
         scale = 0.5;
     }
-    /#
-        assert(scale >= 0 && scale <= 1, "<unknown string>");
-    #/
+    assert(scale >= 0 && scale <= 1, "<unknown string>");
     if (!isdefined(attack)) {
         attack = 0.5 * scale;
     }
@@ -886,9 +858,7 @@ function function_9299618(var_16ae04ab, var_5b2df2a0, endons) {
     }
     self.var_2de4672c = 0;
     self.lastsaytime = gettime();
-    /#
-        assert(isdefined(self.lastsaytime) == 1);
-    #/
+    assert(isdefined(self.lastsaytime) == 1);
     while (function_3132f113(self) == 0) {
         if (isdefined(level._snd.var_91ff3ae4)) {
             var_8969a580 = level._snd.var_91ff3ae4;
@@ -924,10 +894,10 @@ function function_9299618(var_16ae04ab, var_5b2df2a0, endons) {
             if (function_95c9af4b() > 1) {
                 var_20768eda = self gettagorigin("<unknown string>");
                 if (!isdefined(var_20768eda)) {
-                    var_20768eda = self.origin + vectorscale((0, 0, 1), 72);
+                    var_20768eda = self.origin + (0, 0, 72);
                 }
                 org = var_20768eda;
-                org = org + vectorscale((0, 0, 1), 9);
+                org = org + (0, 0, 9);
                 var_a8dca3b9 = "<unknown string>";
                 if (self.var_2de4672c > 0) {
                     nexttime = self.var_2de4672c / 1000 - now / 1000;
@@ -935,7 +905,7 @@ function function_9299618(var_16ae04ab, var_5b2df2a0, endons) {
                 }
                 var_ed98e4bb = "<unknown string>";
                 var_479b18b2 = "<unknown string>" + var_a8dca3b9 + "<unknown string>" + deltaseconds;
-                function_ac033c46(var_ed98e4bb, org, 0.125, "<unknown string>", vectorscale((1, 1, 1), 180), 0.72974, (0, 0, 0), 0.72974, (1, 1, 1), 0.72974);
+                function_ac033c46(var_ed98e4bb, org, 0.125, "<unknown string>", (180, 180, 180), 0.72974, (0, 0, 0), 0.72974, (1, 1, 1), 0.72974);
                 function_ac033c46(var_479b18b2, org, 0.125, "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 0.72974, (1, 1, 1), 0.72974);
             }
         #/
@@ -992,9 +962,7 @@ function function_c9ebfa2(xanim, *notetrack, *var_596cbb65) {
     info = function_643b5581(var_596cbb65);
     animname = info[#"animname"];
     anime = info[#"anime"];
-    /#
-        assert(isdefined(anime), "<unknown string>");
-    #/
+    assert(isdefined(anime), "<unknown string>");
 }
 
 // Namespace snd/namespace_93606de4
@@ -1023,9 +991,7 @@ function private function_643b5581(xanim) {
 // Checksum 0x80ef9a6c, Offset: 0x3f48
 // Size: 0x8e
 function private function_be27bceb() {
-    /#
-        assert(isdefined(self) == 1);
-    #/
+    assert(isdefined(self) == 1);
     if (isdefined(self.var_3ce724aa) == 1) {
         self waittill(#"hash_3a117b23d7bfa071");
         if (isdefined(self.var_3ce724aa.soundent) == 1) {
@@ -1040,15 +1006,9 @@ function private function_be27bceb() {
 // Checksum 0xccf68f0b, Offset: 0x3fe0
 // Size: 0x346
 function private function_250787e2(totaltime, var_a426158d, var_f22c6e0, var_453be1d, var_4947439b, var_ede9da4b, endcallback) {
-    /#
-        assert(isdefined(self) == 1);
-    #/
-    /#
-        assert(isdefined(self.var_3ce724aa) == 1);
-    #/
-    /#
-        assert(isdefined(var_a426158d) == 1);
-    #/
+    assert(isdefined(self) == 1);
+    assert(isdefined(self.var_3ce724aa) == 1);
+    assert(isdefined(var_a426158d) == 1);
     if (isdefined(var_f22c6e0) == 0) {
         var_f22c6e0 = var_a426158d;
     }
@@ -1087,9 +1047,7 @@ function private function_250787e2(totaltime, var_a426158d, var_f22c6e0, var_453
                 self.var_3ce724aa.soundent playsound(var_f22c6e0);
                 self.var_3ce724aa.var_a713936b = 1;
             }
-            /#
-                assert(isdefined(self.var_3ce724aa.soundent) == 1);
-            #/
+            assert(isdefined(self.var_3ce724aa.soundent) == 1);
             var_3939aafb = mapfloat(0, totaltime, var_4947439b, var_453be1d, remainingtime);
             function_964c3a03(self.var_3ce724aa.soundent, var_3939aafb, 0.05, var_ede9da4b);
             /#
@@ -1118,12 +1076,8 @@ function function_68fc9c9b() {
 // Checksum 0x5fda40cd, Offset: 0x4360
 // Size: 0x1a4
 function function_d4be5d9(totaltime, var_a426158d, var_f22c6e0, *var_5f5e464a, var_453be1d, var_4947439b, var_ede9da4b, endcallback) {
-    /#
-        assert(isdefined(self) == 1);
-    #/
-    /#
-        assert(isdefined(var_f22c6e0) == 1);
-    #/
+    assert(isdefined(self) == 1);
+    assert(isdefined(var_f22c6e0) == 1);
     if (isdefined(self.var_3ce724aa) == 1) {
         self function_68fc9c9b();
     }
@@ -1147,9 +1101,7 @@ function private function_c71c2a61(var_5229451c) {
     level endon(#"hash_1fc826e0acca152f");
     var_bb25ac71 = [];
     var_ad5f1285 = [];
-    /#
-        assert(isarray(level.var_cfbd198a) == 1);
-    #/
+    assert(isarray(level.var_cfbd198a) == 1);
     waitforplayers();
     while (true) {
         waittime = function_f4127447(var_5229451c);
@@ -1247,7 +1199,7 @@ function private function_b5c66198() {
         x = 960 - 96 * scale;
         y = 540 - 112 * scale;
         var_97b12dd2 = 16 * scale;
-        var_94de442b = vectorscale((1, 1, 1), 0.72974);
+        var_94de442b = (0.72974, 0.72974, 0.72974);
         while (true) {
             yy = y;
             state = function_ea2f17d1(level.stealth.detect.state, "<unknown string>");
@@ -1264,13 +1216,13 @@ function private function_b5c66198() {
                 var_27dc744f = (1, 0.25, 0.25);
             }
             alpha = 1;
-            function_669c57bc(x, yy, "<unknown string>", vectorscale((1, 1, 1), 0.72974), alpha, scale);
+            function_669c57bc(x, yy, "<unknown string>", (0.72974, 0.72974, 0.72974), alpha, scale);
             function_669c57bc(x, yy, "<unknown string>" + state, var_27dc744f, alpha, scale);
             yy = yy + var_97b12dd2;
-            function_669c57bc(x, yy, "<unknown string>", vectorscale((1, 1, 1), 0.72974), alpha, scale);
+            function_669c57bc(x, yy, "<unknown string>", (0.72974, 0.72974, 0.72974), alpha, scale);
             function_669c57bc(x, yy, "<unknown string>" + maxthreat + "<unknown string>" + delta + "<unknown string>", var_27dc744f, alpha, scale);
             yy = yy + var_97b12dd2;
-            function_669c57bc(x, yy, "<unknown string>", vectorscale((1, 1, 1), 0.72974), alpha, scale);
+            function_669c57bc(x, yy, "<unknown string>", (0.72974, 0.72974, 0.72974), alpha, scale);
             function_669c57bc(x, yy, "<unknown string>" + var_ddb580ee, var_27dc744f, alpha, scale);
             waitframe(1);
         }

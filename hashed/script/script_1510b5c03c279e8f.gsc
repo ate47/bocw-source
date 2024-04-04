@@ -74,9 +74,7 @@ function function_66da4f00() {
     self.var_bba2883e = 1;
     self useanimtree("generic");
     self vehicle::friendly_fire_shield();
-    /#
-        assert(isdefined(self.scriptbundlesettings));
-    #/
+    assert(isdefined(self.scriptbundlesettings));
     self.settings = getscriptbundle(self.scriptbundlesettings);
     self enableaimassist();
     self turretsetontargettolerance(0, 3);
@@ -354,7 +352,6 @@ function function_c7208b7d(enemy) {
         enemy thread function_f7d9bc34();
         wait(0.75);
         self asmrequestsubstate("fire@stationary");
-        timedout = undefined;
         timedout = self waittilltimeout(5, #"hash_89a861e8c0ab929");
         if (timedout._notify !== #"timeout") {
             self fireweapon();
@@ -550,7 +547,7 @@ function function_8a699cff() {
             self turretsettarget(0, self.enemy);
         }
         if (distance2dsquared(self.origin, self.enemy.origin) < sqr(48) && self cansee(self.enemy)) {
-            if (bullettracepassed(self.origin + vectorscale((0, 0, 1), 10), self.enemy.origin + vectorscale((0, 0, 1), 20), 0, self, self.enemy, 0, 1)) {
+            if (bullettracepassed(self.origin + (0, 0, 10), self.enemy.origin + (0, 0, 20), 0, self, self.enemy, 0, 1)) {
                 self function_f7dc8837(self.enemy);
                 wait(0.5);
             }
@@ -568,7 +565,6 @@ function function_f7dc8837(enemy) {
     self vehicle_ai::clearallmovement(1);
     self.dont_move = 1;
     self asmrequestsubstate("melee@stationary");
-    timedout = undefined;
     timedout = self waittilltimeout(3, #"hash_30146e30dbd0d26b");
     if (timedout._notify !== #"timeout") {
         if (isalive(enemy) && distance2dsquared(self.origin, enemy.origin) < sqr(60)) {
@@ -740,7 +736,6 @@ function nudge_collision() {
     self notify(#"end_nudge_collision");
     self endon(#"end_nudge_collision");
     while (true) {
-        result = undefined;
         result = self waittill(#"veh_collision");
         ang_vel = self getangularvelocity() * 0.8;
         self setangularvelocity(ang_vel);

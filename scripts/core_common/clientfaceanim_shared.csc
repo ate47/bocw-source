@@ -86,9 +86,7 @@ function buildandvalidatefacialanimationlist(localclientnum) {
         level.__clientfacialanimationslist[#"wallrunning"] = array(#"mp_t8_face_hero_wall_run_1");
         deathanims = level.__clientfacialanimationslist[#"death"];
         foreach (deathanim in deathanims) {
-            /#
-                assert(!isanimlooping(localclientnum, deathanim), "<unknown string>" + deathanim + "<unknown string>");
-            #/
+            assert(!isanimlooping(localclientnum, deathanim), "<unknown string>" + deathanim + "<unknown string>");
         }
     }
 }
@@ -222,9 +220,7 @@ function private updatefacialanimforplayer(localclientnum, player) {
         nextfacestate = #"combat";
     }
     if (player._currentfacestate == "inactive" || currfacestate != nextfacestate) {
-        /#
-            assert(isdefined(level.__clientfacialanimationslist[nextfacestate]));
-        #/
+        assert(isdefined(level.__clientfacialanimationslist[nextfacestate]));
         player applynewfaceanim(localclientnum, array::random(level.__clientfacialanimationslist[nextfacestate]));
         player._currentfacestate = nextfacestate;
     }

@@ -68,7 +68,6 @@ function function_a5680385(e_player) {
 function function_5b0907b8() {
     level endon(#"end_game");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
         if (!is_true(self.stub.var_98b970a9.activate) && level flag::get("power_on" + self.stub.var_98b970a9.script_int)) {

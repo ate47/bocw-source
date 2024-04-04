@@ -341,7 +341,7 @@ function function_fcc90081(var_45b95f80 = 0) {
         namespace_1e25ad94::debugmsg("PLAYER FULL INITIALIZE");
         self.doa.entnum = self getentitynumber();
         self.topdowncamera = 1;
-        self.doa.var_3e81d24c = undefined;
+        self.doa.infps = undefined;
         self.doa.var_370ac26d = 0;
         self.doa.var_e940d370 = 0;
         self.doa.camera_yaw = 0;
@@ -414,9 +414,7 @@ function function_fcc90081(var_45b95f80 = 0) {
         self thread function_c5f9ea85();
         self thread function_bb0408ca();
     }
-    /#
-        assert(isdefined(self.doa.entnum), "<unknown string>");
-    #/
+    assert(isdefined(self.doa.entnum), "<unknown string>");
     self.ignoreme = 0;
     self.ignoremelee = 0;
     self.laststand = 0;
@@ -471,15 +469,15 @@ function function_fae39d88() {
     if (!is_true(level.var_fdf900b7)) {
         self disableweaponcycling();
     }
-    self allowjump(is_true(self.doa.var_3e81d24c));
+    self allowjump(is_true(self.doa.infps));
     self allowcrouch(0);
     self allowprone(0);
-    self allowslide(is_true(self.doa.var_3e81d24c));
+    self allowslide(is_true(self.doa.infps));
     self allowdoublejump(0);
     self allowwallrun(0);
     self allowmantle(0);
-    self allowsprint(is_true(self.doa.var_3e81d24c));
-    self allowads(is_true(self.doa.var_3e81d24c));
+    self allowsprint(is_true(self.doa.infps));
+    self allowads(is_true(self.doa.infps));
     self setstance("stand");
     self function_205350ab();
     self solid();
@@ -519,9 +517,7 @@ function function_83fe843d(player) {
     case 3:
         return "yellow";
     default:
-        /#
-            assert(0, "<unknown string>");
-        #/
+        assert(0, "<unknown string>");
         break;
     }
 }
@@ -867,7 +863,6 @@ function function_19f387a(player, var_ca85cba1, thresh, boosting = 0) {
     self thread function_e93fae6f(player);
     self.player = player;
     while (isdefined(player)) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         if (self.activetime < gettime()) {
             continue;
@@ -927,10 +922,8 @@ function function_19f387a(player, var_ca85cba1, thresh, boosting = 0) {
                         namespace_ed80aead::trygibbinglimb(guy, 5000);
                         namespace_ed80aead::trygibbinglegs(guy, 5000, undefined, undefined, undefined, 1, player);
                     }
-                    /#
-                        assert(!is_true(guy.boss));
-                    #/
-                    guy thread namespace_ec06fe4a::function_b4ff2191(vectorscale((0, 0, 1), 220), 180, 0.3, player);
+                    assert(!is_true(guy.boss));
+                    guy thread namespace_ec06fe4a::function_b4ff2191((0, 0, 220), 180, 0.3, player);
                     guy namespace_e32bb68::function_3a59ec34("zmb_ragdoll_launched");
                 } else {
                     guy.annihilate = 1;
@@ -977,7 +970,7 @@ function function_a8b57c52(var_2784b779, angles, ignore, var_b498e4b0) {
     }
     wait(0.2);
     players = getplayers();
-    offset = vectorscale((1, -1, 0), 8);
+    offset = (8, -8, 0);
     foreach (player in players) {
         player thread turnplayershieldon(0);
         if (isdefined(ignore)) {
@@ -1085,9 +1078,7 @@ function function_c0310e2a() {
 // Checksum 0x8858981d, Offset: 0x4640
 // Size: 0x31e
 function function_5ed5daa7() {
-    /#
-        assert(isdefined(self.doa));
-    #/
+    assert(isdefined(self.doa));
     if (self namespace_1c2a96f9::function_d17f9bcb()) {
         self.doa.score.boosts = int(max(self.doa.score.boosts, 2));
     } else if (!is_true(level.doa.hardcoremode)) {
@@ -1159,9 +1150,7 @@ function function_513831e1(var_c4b5b87c = 0, spot = undefined) {
     if (!isdefined(self)) {
         return;
     }
-    /#
-        assert(isdefined(self.doa));
-    #/
+    assert(isdefined(self.doa));
     namespace_1e25ad94::debugmsg("player respawning now");
     self.doa.respawning = 0;
     self namespace_ec06fe4a::function_4f72130c();
@@ -1375,7 +1364,6 @@ function private function_f83ea3c(var_832465bf = 0, timeout = 30) {
     self notify("71224d58adf53617");
     self endon("71224d58adf53617");
     self endon(#"disconnect");
-    result = undefined;
     result = self waittilltimeout(timeout, #"speed_change", #"entering_last_stand", #"hash_eda603acd32c6ca");
     if (!var_832465bf) {
         self.doa.fast_feet = undefined;
@@ -1490,8 +1478,8 @@ function laststand_enable_player_weapons() {
 function function_884143e(attacker) {
     /#
         if (isdefined(attacker)) {
-            level thread debugcircle(attacker.origin + vectorscale((0, 0, 1), 12), 40, 10, (1, 0, 0));
-            level thread debugline(self.origin + vectorscale((0, 0, 1), 12), attacker.origin + vectorscale((0, 0, 1), 12), 10, (1, 0, 0));
+            level thread debugcircle(attacker.origin + (0, 0, 12), 40, 10, (1, 0, 0));
+            level thread debugline(self.origin + (0, 0, 12), attacker.origin + (0, 0, 12), 10, (1, 0, 0));
             attacker thread debugorigin(10, 24, (1, 0, 0));
             if (isdefined(attacker.zombie_type)) {
                 text = attacker.zombie_type;
@@ -1705,7 +1693,7 @@ function function_8fef418b() {
                 return;
             }
         }
-        ground_pos = groundtrace(origin + vectorscale((0, 0, 1), 8), origin + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
+        ground_pos = groundtrace(origin + (0, 0, 8), origin + (0, 0, -100000), 0, self)[#"position"];
         if (!isdefined(ground_pos)) {
             return;
         }

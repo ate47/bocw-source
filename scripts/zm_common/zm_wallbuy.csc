@@ -144,17 +144,11 @@ function is_wallbuy(w_to_check) {
 // Size: 0x2b8
 function wallbuy_player_connect(localclientnum) {
     keys = getarraykeys(level._active_wallbuys);
-    /#
-        println("tag_origin" + localclientnum);
-    #/
+    println("tag_origin" + localclientnum);
     for (i = 0; i < keys.size; i++) {
         wallbuy = level._active_wallbuys[keys[i]];
         if (wallbuy.weapon == level.weaponnone) {
-            /#
-                /#
-                    assertmsg("<unknown string>" + wallbuy.zombie_weapon_upgrade);
-                #/
-            #/
+            assertmsg("<unknown string>" + wallbuy.zombie_weapon_upgrade);
             continue;
         }
         fx = level._effect[#"870mcs_zm_fx"];
@@ -386,9 +380,7 @@ function private function_86b59fcc(chalk_model) {
         type = "lmg_slowfire_t9";
         break;
     default:
-        /#
-            println("<unknown string>" + chalk_model);
-        #/
+        println("<unknown string>" + chalk_model);
         type = 0;
         break;
     }
@@ -555,15 +547,9 @@ function wallbuy_callback(localclientnum, *oldval, newval, *bnewent, binitialsna
         }
     }
     struct = level._active_wallbuys[bwastimejump];
-    /#
-        println("<unknown string>" + bnewent);
-    #/
+    println("<unknown string>" + bnewent);
     if (!isdefined(struct) || !isdefined(struct.models[bnewent]) || !isdefined(struct.models[bnewent].parent_struct)) {
-        /#
-            /#
-                assertmsg("<unknown string>" + bwastimejump);
-            #/
-        #/
+        assertmsg("<unknown string>" + bwastimejump);
         return;
     }
     switch (binitialsnap) {

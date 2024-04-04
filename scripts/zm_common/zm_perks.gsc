@@ -266,7 +266,7 @@ function perk_machine_think(str_key, s_custom_perk) {
         }
         for (i = 0; i < machine.size; i++) {
             machine[i] setmodel(level.machine_assets[str_key].on_model);
-            machine[i] vibrate(vectorscale((0, -1, 0), 100), 0.3, 0.4, 3);
+            machine[i] vibrate((0, -100, 0), 0.3, 0.4, 3);
             machine[i] thread perk_fx(s_custom_perk.machine_light_effect);
             machine[i] thread play_loop_on_machine();
         }
@@ -310,9 +310,7 @@ function do_initial_power_off_callback(machine_array, perkname) {
         }
     }
     if (!isdefined(level.machine_assets[perkname])) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
     if (!isdefined(level.machine_assets[perkname].power_off_callback)) {
@@ -371,7 +369,7 @@ function play_loop_on_machine() {
     if (isdefined(level.var_29a12b0)) {
         return;
     }
-    sound_ent = spawn("script_origin", self.origin + vectorscale((0, 0, 1), 50));
+    sound_ent = spawn("script_origin", self.origin + (0, 0, 50));
     sound_ent playsound(#"hash_1ac5c65e0bb6f52e");
     sound_ent playloopsound(#"zmb_perkmachine_power_on_lp");
     sound_ent linkto(self);
@@ -576,7 +574,6 @@ function vending_trigger_think() {
     cost = self.stub.cost;
     n_slot = self.stub.script_int;
     for (;;) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
         var_f2a92d5e = 0;
@@ -656,7 +653,6 @@ function vending_trigger_think() {
 function vending_trigger_post_think(player, perk) {
     player endon(#"disconnect", #"end_game", #"perk_abort_drinking");
     player perk_give_bottle_begin(perk);
-    evt = undefined;
     evt = player waittilltimeout(3.5, #"fake_death", #"death", #"player_downed", #"offhand_end", #"perk_abort_drinking", #"disconnect");
     if (evt._notify == "offhand_end" || evt._notify == #"timeout") {
         var_11868f5d = player namespace_791d0451::function_b852953c(perk);
@@ -778,7 +774,6 @@ function vending_set_hintstring(perk) {
 function perk_think(perk) {
     self endon(#"disconnect");
     perk_str = perk + "_stop";
-    result = undefined;
     result = self waittill(#"fake_death", #"death", #"player_downed", perk_str);
     result = result._notify;
     self perks::perk_unsetperk(perk);
@@ -836,9 +831,7 @@ function perk_give_bottle_begin(str_perk) {
 // Size: 0xca
 function get_perk_weapon(str_perk) {
     weapon = "";
-    /#
-        assert(isdefined(str_perk), "<unknown string>");
-    #/
+    assert(isdefined(str_perk), "<unknown string>");
     if (!isdefined(str_perk)) {
         return weapon;
     }
@@ -859,12 +852,8 @@ function get_perk_weapon(str_perk) {
 function get_perk_weapon_model(str_perk) {
     weapon = get_perk_weapon(str_perk);
     /#
-        /#
-            assert(isdefined(weapon), "<unknown string>" + function_9e72a96(str_perk));
-        #/
-        /#
-            assert(isdefined(weapon.worldmodel), "<unknown string>" + function_9e72a96(str_perk));
-        #/
+        assert(isdefined(weapon), "<unknown string>" + function_9e72a96(str_perk));
+        assert(isdefined(weapon.worldmodel), "<unknown string>" + function_9e72a96(str_perk));
     #/
     if (isdefined(weapon)) {
         return weapon.worldmodel;
@@ -997,9 +986,7 @@ function perk_pause(perk) {
             if (isdefined(level._custom_perks[perk]) && isdefined(level._custom_perks[perk].player_thread_take)) {
                 player thread [[ level._custom_perks[perk].player_thread_take ]](1, undefined, undefined, -1);
             }
-            /#
-                println("<unknown string>" + player.name + "<unknown string>" + perk + "<unknown string>");
-            #/
+            println("<unknown string>" + player.name + "<unknown string>" + perk + "<unknown string>");
         }
     }
 }
@@ -1031,9 +1018,7 @@ function perk_unpause(perk) {
                     perks::perk_setperk(level._custom_perks[perk].var_658e2856);
                 }
             }
-            /#
-                println("<unknown string>" + player.name + "<unknown string>" + perk + "<unknown string>");
-            #/
+            println("<unknown string>" + player.name + "<unknown string>" + perk + "<unknown string>");
             player zm_utility::set_max_health();
             if (isdefined(level._custom_perks[perk]) && isdefined(level._custom_perks[perk].player_thread_give)) {
                 player thread [[ level._custom_perks[perk].player_thread_give ]]();
@@ -1274,7 +1259,7 @@ function perk_machine_spawn_init() {
             if (is_true(level._no_vending_machine_bump_trigs)) {
                 bump_trigger = undefined;
             } else {
-                bump_trigger = spawn("trigger_radius", s_spawn_pos.origin + vectorscale((0, 0, 1), 30), 0, 40, 80, 1);
+                bump_trigger = spawn("trigger_radius", s_spawn_pos.origin + (0, 0, 30), 0, 40, 80, 1);
                 bump_trigger.script_activated = 1;
                 bump_trigger.script_sound = "zmb_perks_bump_bottle";
                 bump_trigger.targetname = "audio_bump_trigger";
@@ -1412,9 +1397,7 @@ function get_perk_machine_start_state(perk) {
         return 1;
     }
     if (perk == #"hash_7f98b3dd3cce95aa") {
-        /#
-            assert(isdefined(level.revive_machine_is_solo));
-        #/
+        assert(isdefined(level.revive_machine_is_solo));
         return level.revive_machine_is_solo;
     }
     return 0;
@@ -1483,9 +1466,7 @@ function function_ad1814a1(n_index, var_b0ab4cec) {
     if (isdefined(n_index) && n_index >= 0 && n_index < 9) {
         return true;
     }
-    /#
-        println("<unknown string>" + function_9e72a96(var_b0ab4cec) + "<unknown string>");
-    #/
+    println("<unknown string>" + function_9e72a96(var_b0ab4cec) + "<unknown string>");
     return false;
 }
 
@@ -1516,9 +1497,7 @@ function function_2ac7579(var_481d50cb, *var_dc149467, var_b0ab4cec) {
 // Checksum 0x7a79e9a, Offset: 0x6160
 // Size: 0x11e
 function function_13880aa5(var_481d50cb, var_87eb3522 = 0, var_b0ab4cec) {
-    /#
-        assert(isdefined(var_481d50cb), "<unknown string>");
-    #/
+    assert(isdefined(var_481d50cb), "<unknown string>");
     if (!isdefined(var_481d50cb)) {
         return;
     }
@@ -1544,9 +1523,7 @@ function function_13880aa5(var_481d50cb, var_87eb3522 = 0, var_b0ab4cec) {
 // Checksum 0xad73bef3, Offset: 0x6288
 // Size: 0x8a
 function function_f2ff97a6(var_481d50cb, *var_c3d1c893, var_b0ab4cec) {
-    /#
-        assert(isdefined(var_c3d1c893), "<unknown string>");
-    #/
+    assert(isdefined(var_c3d1c893), "<unknown string>");
     if (!isdefined(var_c3d1c893)) {
         return;
     }
@@ -1561,9 +1538,7 @@ function function_f2ff97a6(var_481d50cb, *var_c3d1c893, var_b0ab4cec) {
 // Checksum 0x99f1c162, Offset: 0x6320
 // Size: 0x8a
 function function_f0ac059f(var_481d50cb, *b_active, var_b0ab4cec) {
-    /#
-        assert(isdefined(b_active), "<unknown string>");
-    #/
+    assert(isdefined(b_active), "<unknown string>");
     if (!isdefined(b_active)) {
         return;
     }
@@ -1578,9 +1553,7 @@ function function_f0ac059f(var_481d50cb, *b_active, var_b0ab4cec) {
 // Checksum 0x6e0c4130, Offset: 0x63b8
 // Size: 0x8a
 function function_c8c7bc5(var_481d50cb, *b_active, var_b0ab4cec) {
-    /#
-        assert(isdefined(b_active), "<unknown string>");
-    #/
+    assert(isdefined(b_active), "<unknown string>");
     if (!isdefined(b_active)) {
         return;
     }
@@ -1693,7 +1666,6 @@ function spare_change(str_trigger = "audio_bump_trigger", str_sound = "zmb_perks
 function check_for_change() {
     self endon(#"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
         if (player getstance() == "prone") {
@@ -1739,21 +1711,11 @@ function register_revive_success_perk_func(revive_func) {
 // Checksum 0xdc76e317, Offset: 0x6c28
 // Size: 0x330
 function register_perk_basic_info(str_perk, str_alias, n_perk_cost, str_hint_string, w_perk_bottle_weapon, var_1408cd4c, *var_6334ae50) {
-    /#
-        assert(isdefined(str_alias), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(n_perk_cost), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(str_hint_string), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(w_perk_bottle_weapon), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(var_1408cd4c), "<unknown string>");
-    #/
+    assert(isdefined(str_alias), "<unknown string>");
+    assert(isdefined(n_perk_cost), "<unknown string>");
+    assert(isdefined(str_hint_string), "<unknown string>");
+    assert(isdefined(w_perk_bottle_weapon), "<unknown string>");
+    assert(isdefined(var_1408cd4c), "<unknown string>");
     _register_undefined_perk(str_alias);
     level._custom_perks[str_alias].alias = n_perk_cost;
     level._custom_perks[str_alias].cost = 2500;
@@ -1794,18 +1756,10 @@ function register_perk_basic_info(str_perk, str_alias, n_perk_cost, str_hint_str
 // Checksum 0x7b7b82bf, Offset: 0x6f60
 // Size: 0x17c
 function register_perk_mod_basic_info(str_perk, str_alias, var_771fabd4, var_5a736864, n_cost) {
-    /#
-        assert(isdefined(str_perk), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(str_alias), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(var_5a736864), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(n_cost), "<unknown string>");
-    #/
+    assert(isdefined(str_perk), "<unknown string>");
+    assert(isdefined(str_alias), "<unknown string>");
+    assert(isdefined(var_5a736864), "<unknown string>");
+    assert(isdefined(n_cost), "<unknown string>");
     _register_undefined_perk(str_perk);
     level._custom_perks[str_perk].alias = str_alias;
     level._custom_perks[str_perk].var_60e3692f = var_771fabd4;
@@ -1823,12 +1777,8 @@ function register_perk_mod_basic_info(str_perk, str_alias, var_771fabd4, var_5a7
 // Checksum 0x761d807f, Offset: 0x70e8
 // Size: 0xd6
 function register_perk_machine(str_perk, func_perk_machine_setup, func_perk_machine_thread, var_4a48be24) {
-    /#
-        assert(isdefined(str_perk), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(func_perk_machine_setup), "<unknown string>");
-    #/
+    assert(isdefined(str_perk), "<unknown string>");
+    assert(isdefined(func_perk_machine_setup), "<unknown string>");
     _register_undefined_perk(str_perk);
     level._custom_perks[str_perk].perk_machine_set_kvps = func_perk_machine_setup;
     if (isdefined(func_perk_machine_thread)) {
@@ -1844,12 +1794,8 @@ function register_perk_machine(str_perk, func_perk_machine_setup, func_perk_mach
 // Checksum 0xfe330aa3, Offset: 0x71c8
 // Size: 0x8e
 function register_perk_machine_power_override(str_perk, func_perk_machine_power_override) {
-    /#
-        assert(isdefined(str_perk), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(func_perk_machine_power_override), "<unknown string>");
-    #/
+    assert(isdefined(str_perk), "<unknown string>");
+    assert(isdefined(func_perk_machine_power_override), "<unknown string>");
     _register_undefined_perk(str_perk);
     if (isdefined(func_perk_machine_power_override)) {
         level._custom_perks[str_perk].perk_machine_power_override_thread = func_perk_machine_power_override;
@@ -1861,12 +1807,8 @@ function register_perk_machine_power_override(str_perk, func_perk_machine_power_
 // Checksum 0x4a7e1d24, Offset: 0x7260
 // Size: 0x86
 function register_perk_precache_func(str_perk, func_precache) {
-    /#
-        assert(isdefined(str_perk), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(func_precache), "<unknown string>");
-    #/
+    assert(isdefined(str_perk), "<unknown string>");
+    assert(isdefined(func_precache), "<unknown string>");
     _register_undefined_perk(str_perk);
     level._custom_perks[str_perk].precache_func = func_precache;
 }
@@ -1876,12 +1818,8 @@ function register_perk_precache_func(str_perk, func_precache) {
 // Checksum 0x2402653f, Offset: 0x72f0
 // Size: 0xce
 function register_perk_threads(str_perk, func_give_player_perk, func_take_player_perk, var_9a0b6a21) {
-    /#
-        assert(isdefined(str_perk), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(func_give_player_perk), "<unknown string>");
-    #/
+    assert(isdefined(str_perk), "<unknown string>");
+    assert(isdefined(func_give_player_perk), "<unknown string>");
     _register_undefined_perk(str_perk);
     level._custom_perks[str_perk].player_thread_give = func_give_player_perk;
     level._custom_perks[str_perk].player_thread_take = func_take_player_perk;
@@ -1895,15 +1833,9 @@ function register_perk_threads(str_perk, func_give_player_perk, func_take_player
 // Checksum 0xc807711b, Offset: 0x73c8
 // Size: 0xc6
 function register_perk_clientfields(str_perk, func_clientfield_register, func_clientfield_set) {
-    /#
-        assert(isdefined(str_perk), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(func_clientfield_register), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(func_clientfield_set), "<unknown string>");
-    #/
+    assert(isdefined(str_perk), "<unknown string>");
+    assert(isdefined(func_clientfield_register), "<unknown string>");
+    assert(isdefined(func_clientfield_set), "<unknown string>");
     _register_undefined_perk(str_perk);
     level._custom_perks[str_perk].clientfield_register = func_clientfield_register;
     level._custom_perks[str_perk].clientfield_set = func_clientfield_set;
@@ -1914,15 +1846,9 @@ function register_perk_clientfields(str_perk, func_clientfield_register, func_cl
 // Checksum 0x97c982c5, Offset: 0x7498
 // Size: 0xc6
 function register_perk_host_migration_params(str_perk, str_radiant_name, str_effect_name) {
-    /#
-        assert(isdefined(str_perk), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(str_radiant_name), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(str_effect_name), "<unknown string>");
-    #/
+    assert(isdefined(str_perk), "<unknown string>");
+    assert(isdefined(str_radiant_name), "<unknown string>");
+    assert(isdefined(str_effect_name), "<unknown string>");
     _register_undefined_perk(str_perk);
     level._custom_perks[str_perk].radiant_machine_name = str_radiant_name;
     level._custom_perks[str_perk].machine_light_effect = str_effect_name;
@@ -1946,9 +1872,7 @@ function _register_undefined_perk(str_perk) {
 // Checksum 0xd49200d5, Offset: 0x75d0
 // Size: 0x6c
 function register_perk_damage_override_func(func_damage_override) {
-    /#
-        assert(isdefined(func_damage_override), "<unknown string>");
-    #/
+    assert(isdefined(func_damage_override), "<unknown string>");
     if (!isdefined(level.perk_damage_override)) {
         level.perk_damage_override = [];
     }
@@ -1960,12 +1884,8 @@ function register_perk_damage_override_func(func_damage_override) {
 // Checksum 0xe302d41b, Offset: 0x7648
 // Size: 0x86
 function function_2ae97a14(str_perk, var_feae8586) {
-    /#
-        assert(isdefined(str_perk), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(var_feae8586), "<unknown string>");
-    #/
+    assert(isdefined(str_perk), "<unknown string>");
+    assert(isdefined(var_feae8586), "<unknown string>");
     _register_undefined_perk(str_perk);
     level._custom_perks[str_perk].var_658e2856 = var_feae8586;
 }
@@ -2062,7 +1982,7 @@ function perk_vapor_altar_init() {
             if (is_true(level._no_vending_machine_bump_trigs)) {
                 bump_trigger = undefined;
             } else {
-                bump_trigger = spawn("trigger_radius", s_spawn_pos.origin + vectorscale((0, 0, 1), 30), 0, 40, 80, 1);
+                bump_trigger = spawn("trigger_radius", s_spawn_pos.origin + (0, 0, 30), 0, 40, 80, 1);
                 bump_trigger.script_activated = 1;
                 bump_trigger.script_sound = "zmb_perks_bump_bottle";
                 bump_trigger.targetname = "audio_bump_trigger";
@@ -2235,7 +2155,6 @@ function function_f5da744e() {
     n_slot = self.stub.script_int;
     n_cost = self.stub.cost;
     for (;;) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
         if (self.stub.var_3468124.var_2977c27 != "on") {
@@ -2301,16 +2220,12 @@ function function_f5da744e() {
             perkhash = level._custom_perks[perk].alias;
         }
         if (!ishash(perkhash)) {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            assertmsg("<unknown string>");
             perkhash = -1;
         }
         n_round_number = level.round_number;
         if (!isint(n_round_number)) {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            assertmsg("<unknown string>");
             n_round_number = 0;
         }
         player recordmapevent(29, gettime(), self.origin, n_round_number, perkhash);
@@ -2332,7 +2247,6 @@ function taking_cover_tanks_(player, perk, n_slot, var_3468124) {
     player function_fb633f9d(n_slot, 5);
     var_3468124 thread function_e9df56d1();
     player perk_give_bottle_begin(perk);
-    evt = undefined;
     evt = player waittilltimeout(3, #"fake_death", #"death", #"player_downed", #"offhand_fire", #"perk_abort_drinking", #"disconnect");
     player.perk_purchased = undefined;
     if (is_true(player.intermission)) {
@@ -2545,9 +2459,7 @@ function function_9bdf581f(perk, n_slot, b_bought = 0) {
             if (isstring(var_7bc3cbfd)) {
                 var_7bc3cbfd = hash(var_7bc3cbfd);
             }
-            /#
-                assert(isdefined(var_f53f24dd), "<unknown string>" + function_9e72a96(var_7bc3cbfd));
-            #/
+            assert(isdefined(var_f53f24dd), "<unknown string>" + function_9e72a96(var_7bc3cbfd));
         #/
         if (isdefined(var_f53f24dd) && !isinarray(self.var_466b927f, var_f53f24dd)) {
             self notify(#"hash_13948ef3726b968f", {#var_f53f24dd:var_f53f24dd});
@@ -2587,7 +2499,6 @@ function function_329ae65e(perk, n_slot) {
     self endon(#"disconnect");
     perk_str = perk + "_stop";
     do {
-        s_result = undefined;
         s_result = self waittill(perk_str);
         result = s_result._notify;
     } while (!is_true(s_result.var_613b7621) && self lost_perk_override(perk));
@@ -2688,9 +2599,7 @@ function function_9829d4a9(n_slot) {
 // Size: 0x244
 function function_59fb56ff(b_show) {
     if (is_true(b_show)) {
-        /#
-            assert(isdefined(self.var_3468124), "<unknown string>");
-        #/
+        assert(isdefined(self.var_3468124), "<unknown string>");
         self.var_e80aca0a = 0;
         if (isdefined(self.var_3468124.mdl_altar)) {
             self.var_3468124.mdl_altar show();
@@ -2706,9 +2615,7 @@ function function_59fb56ff(b_show) {
         }
         return;
     }
-    /#
-        assert(isdefined(self.var_3468124), "<unknown string>");
-    #/
+    assert(isdefined(self.var_3468124), "<unknown string>");
     self.var_e80aca0a = 1;
     if (isdefined(self.var_3468124.mdl_altar)) {
         self.var_3468124.mdl_altar ghost();
@@ -2758,7 +2665,6 @@ function function_29387491(var_16c042b8, n_slot) {
         }
     }
     self perk_give_bottle_begin(var_16c042b8);
-    s_result = undefined;
     s_result = self waittilltimeout(3, #"offhand_fire");
     if (isdefined(n_slot)) {
         if (is_true(var_ddd879da)) {
@@ -2956,9 +2862,7 @@ function function_a30c73b9(str_state) {
                 }
             }
         }
-        /#
-            assert(isdefined(var_1d373a09), "<unknown string>");
-        #/
+        assert(isdefined(var_1d373a09), "<unknown string>");
         self.mdl_altar = util::spawn_model(var_1d373a09, s_statue.origin, s_statue.angles);
         if (is_true(var_30a7cd8c)) {
             waitframe(1);
@@ -3062,9 +2966,7 @@ function function_adc671f5(n_slot) {
             return 0;
         }
     }
-    /#
-        assertmsg("<unknown string>" + n_slot);
-    #/
+    assertmsg("<unknown string>" + n_slot);
 }
 
 // Namespace zm_perks/zm_perks
@@ -3389,7 +3291,6 @@ function function_b2dfd295(perk, var_8c7df7fc) {
     if (var_c3f41835 === 4) {
         return;
     }
-    waitresult = undefined;
     waitresult = self waittill(#"player_revived");
     e_reviver = waitresult.reviver;
     var_84280a99 = waitresult.var_a4916eac;

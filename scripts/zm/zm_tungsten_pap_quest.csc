@@ -183,6 +183,6 @@ function private function_1f88d6(localclientnum, e_portal) {
 // Size: 0x9c
 function function_95190421(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     playfx(bwastimejump, #"zombie/fx9_onslaught_spawn_sm", self.origin);
-    playsound(bwastimejump, #"hash_10605de886d51283", self.origin + vectorscale((0, 0, 1), 35));
+    playsound(bwastimejump, #"hash_10605de886d51283", self.origin + (0, 0, 35));
 }
 

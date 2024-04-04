@@ -13,189 +13,97 @@
 // Checksum 0x8b5b12fc, Offset: 0x240
 // Size: 0x12b4
 function autoexec registerbehaviorscriptfunctions() {
-    /#
-        assert(isscriptfunctionptr(&prepareformovement));
-    #/
+    assert(isscriptfunctionptr(&prepareformovement));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"prepareformovement", &prepareformovement);
-    /#
-        assert(isscriptfunctionptr(&prepareformovement));
-    #/
+    assert(isscriptfunctionptr(&prepareformovement));
     behaviorstatemachine::registerbsmscriptapiinternal(#"prepareformovement", &prepareformovement);
-    /#
-        assert(isscriptfunctionptr(&shouldtacticalarrivecondition));
-    #/
+    assert(isscriptfunctionptr(&shouldtacticalarrivecondition));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"shouldtacticalarrive", &shouldtacticalarrivecondition);
-    /#
-        assert(isscriptfunctionptr(&planhumanarrivalatcover));
-    #/
+    assert(isscriptfunctionptr(&planhumanarrivalatcover));
     behaviorstatemachine::registerbsmscriptapiinternal(#"planhumanarrivalatcover", &planhumanarrivalatcover);
-    /#
-        assert(isscriptfunctionptr(&shouldplanarrivalintocover));
-    #/
+    assert(isscriptfunctionptr(&shouldplanarrivalintocover));
     behaviorstatemachine::registerbsmscriptapiinternal(#"shouldplanarrivalintocover", &shouldplanarrivalintocover);
-    /#
-        assert(iscodefunctionptr(&btapi_shouldarriveexposed));
-    #/
+    assert(iscodefunctionptr(&btapi_shouldarriveexposed));
     behaviorstatemachine::registerbsmscriptapiinternal(#"btapi_shouldarriveexposed", &btapi_shouldarriveexposed);
-    /#
-        assert(isscriptfunctionptr(&function_d68785cf));
-    #/
+    assert(isscriptfunctionptr(&function_d68785cf));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_68e2b8b69e5739d0", &function_d68785cf);
-    /#
-        assert(iscodefunctionptr(&btapi_humannoncombatlocomotionupdate));
-    #/
+    assert(iscodefunctionptr(&btapi_humannoncombatlocomotionupdate));
     behaviorstatemachine::registerbsmscriptapiinternal(#"btapi_humannoncombatlocomotionupdate", &btapi_humannoncombatlocomotionupdate);
-    /#
-        assert(isscriptfunctionptr(&combatlocomotionstart));
-    #/
+    assert(isscriptfunctionptr(&combatlocomotionstart));
     behaviorstatemachine::registerbsmscriptapiinternal(#"combatlocomotionstart", &combatlocomotionstart);
-    /#
-        assert(isscriptfunctionptr(&function_52950d3d));
-    #/
+    assert(isscriptfunctionptr(&function_52950d3d));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_6b12744ac88be28f", &function_52950d3d);
-    /#
-        assert(isscriptfunctionptr(&function_4937d436));
-    #/
+    assert(isscriptfunctionptr(&function_4937d436));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_5ff9dd2b25d5c185", &function_4937d436);
-    /#
-        assert(isscriptfunctionptr(&function_145df88b));
-    #/
+    assert(isscriptfunctionptr(&function_145df88b));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_57981ededd43a0de", &function_145df88b);
-    /#
-        assert(isscriptfunctionptr(&function_2985b5fa));
-    #/
+    assert(isscriptfunctionptr(&function_2985b5fa));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_4caa5fa7a97f83ea", &function_2985b5fa);
-    /#
-        assert(isscriptfunctionptr(&function_31a6aada));
-    #/
+    assert(isscriptfunctionptr(&function_31a6aada));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_341f9ccd69da418c", &function_31a6aada);
-    /#
-        assert(isscriptfunctionptr(&function_41ae663f));
-    #/
+    assert(isscriptfunctionptr(&function_41ae663f));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_cf6fb7a59d64171", &function_41ae663f);
-    /#
-        assert(isscriptfunctionptr(&function_76ff98aa));
-    #/
+    assert(isscriptfunctionptr(&function_76ff98aa));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_1fa0b1eca87bd7ef", &function_76ff98aa);
-    /#
-        assert(isscriptfunctionptr(&function_e20dbfa4));
-    #/
+    assert(isscriptfunctionptr(&function_e20dbfa4));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_66f99f9da0a69762", &function_e20dbfa4);
-    /#
-        assert(isscriptfunctionptr(&function_888d9ea5));
-    #/
+    assert(isscriptfunctionptr(&function_888d9ea5));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_58eba240a42bbdcd", &function_888d9ea5);
-    /#
-        assert(isscriptfunctionptr(&function_e20dbfa4));
-    #/
+    assert(isscriptfunctionptr(&function_e20dbfa4));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_66f99f9da0a69762", &function_e20dbfa4);
-    /#
-        assert(isscriptfunctionptr(&function_888d9ea5));
-    #/
+    assert(isscriptfunctionptr(&function_888d9ea5));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_58eba240a42bbdcd", &function_888d9ea5);
-    /#
-        assert(isscriptfunctionptr(&function_45d8f364));
-    #/
+    assert(isscriptfunctionptr(&function_45d8f364));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_4160e8b3456ab234", &function_45d8f364);
-    /#
-        assert(isscriptfunctionptr(&function_27c368b1));
-    #/
+    assert(isscriptfunctionptr(&function_27c368b1));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_6c5516f89d4ff0c7", &function_27c368b1);
-    /#
-        assert(isscriptfunctionptr(&function_45d8f364));
-    #/
+    assert(isscriptfunctionptr(&function_45d8f364));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_4160e8b3456ab234", &function_45d8f364);
-    /#
-        assert(isscriptfunctionptr(&function_27c368b1));
-    #/
+    assert(isscriptfunctionptr(&function_27c368b1));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_6c5516f89d4ff0c7", &function_27c368b1);
-    /#
-        assert(iscodefunctionptr(&btapi_combatlocomotionupdate));
-    #/
+    assert(iscodefunctionptr(&btapi_combatlocomotionupdate));
     behaviorstatemachine::registerbsmscriptapiinternal(#"btapi_combatlocomotionupdate", &btapi_combatlocomotionupdate);
-    /#
-        assert(iscodefunctionptr(&btapi_humannoncombatlocomotioncondition));
-    #/
+    assert(iscodefunctionptr(&btapi_humannoncombatlocomotioncondition));
     behaviorstatemachine::registerbsmscriptapiinternal(#"btapi_humannoncombatlocomotioncondition", &btapi_humannoncombatlocomotioncondition);
-    /#
-        assert(iscodefunctionptr(&btapi_humancombatlocomotioncondition));
-    #/
+    assert(iscodefunctionptr(&btapi_humancombatlocomotioncondition));
     behaviorstatemachine::registerbsmscriptapiinternal(#"btapi_humancombatlocomotioncondition", &btapi_humancombatlocomotioncondition);
-    /#
-        assert(isscriptfunctionptr(&preparetostopnearenemy));
-    #/
+    assert(isscriptfunctionptr(&preparetostopnearenemy));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"preparetostopnearenemy", &preparetostopnearenemy);
-    /#
-        assert(isscriptfunctionptr(&preparetostopnearenemy));
-    #/
+    assert(isscriptfunctionptr(&preparetostopnearenemy));
     behaviorstatemachine::registerbsmscriptapiinternal(#"preparetostopnearenemy", &preparetostopnearenemy);
-    /#
-        assert(isscriptfunctionptr(&preparetomoveawayfromnearbyenemy));
-    #/
+    assert(isscriptfunctionptr(&preparetomoveawayfromnearbyenemy));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"preparetomoveawayfromnearbyenemy", &preparetomoveawayfromnearbyenemy);
-    /#
-        assert(isscriptfunctionptr(&shouldtacticalwalkpain));
-    #/
+    assert(isscriptfunctionptr(&shouldtacticalwalkpain));
     behaviorstatemachine::registerbsmscriptapiinternal(#"shouldtacticalwalkpain", &shouldtacticalwalkpain);
-    /#
-        assert(isscriptfunctionptr(&begintacticalwalkpain));
-    #/
+    assert(isscriptfunctionptr(&begintacticalwalkpain));
     behaviorstatemachine::registerbsmscriptapiinternal(#"begintacticalwalkpain", &begintacticalwalkpain);
-    /#
-        assert(isscriptfunctionptr(&shouldcontinuetacticalwalkpain));
-    #/
+    assert(isscriptfunctionptr(&shouldcontinuetacticalwalkpain));
     behaviorstatemachine::registerbsmscriptapiinternal(#"shouldcontinuetacticalwalkpain", &shouldcontinuetacticalwalkpain);
-    /#
-        assert(isscriptfunctionptr(&bsmlocomotionhasvalidpaininterrupt));
-    #/
+    assert(isscriptfunctionptr(&bsmlocomotionhasvalidpaininterrupt));
     behaviorstatemachine::registerbsmscriptapiinternal(#"bsmlocomotionhasvalidpaininterrupt", &bsmlocomotionhasvalidpaininterrupt);
-    /#
-        assert(isscriptfunctionptr(&function_1972c057));
-    #/
+    assert(isscriptfunctionptr(&function_1972c057));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_61aa304b516f76a7", &function_1972c057);
-    /#
-        assert(isscriptfunctionptr(&function_968efd1f));
-    #/
+    assert(isscriptfunctionptr(&function_968efd1f));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_17b044df7de84a21", &function_968efd1f);
-    /#
-        assert(isscriptfunctionptr(&function_80c579d8));
-    #/
+    assert(isscriptfunctionptr(&function_80c579d8));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_2a9f4015fc6217df", &function_80c579d8);
-    /#
-        assert(iscodefunctionptr(&function_2da76de));
-    #/
+    assert(iscodefunctionptr(&function_2da76de));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_34f3c9eb834c01fb", &function_2da76de);
-    /#
-        assert(iscodefunctionptr(&function_2da76de));
-    #/
+    assert(iscodefunctionptr(&function_2da76de));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_34f3c9eb834c01fb", &function_2da76de);
-    /#
-        assert(isscriptfunctionptr(&function_c34dd9f8));
-    #/
+    assert(isscriptfunctionptr(&function_c34dd9f8));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_2746da0437b7aaf9", &function_c34dd9f8);
-    /#
-        assert(isscriptfunctionptr(&function_f2c9142));
-    #/
+    assert(isscriptfunctionptr(&function_f2c9142));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_77f68c7d2552ba09", &function_f2c9142);
-    /#
-        assert(isscriptfunctionptr(&function_d8a81861));
-    #/
+    assert(isscriptfunctionptr(&function_d8a81861));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_3d48a4a68d62f9b2", &function_d8a81861);
-    /#
-        assert(isscriptfunctionptr(&function_ab6f96b6));
-    #/
+    assert(isscriptfunctionptr(&function_ab6f96b6));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_25898377b0649f0e", &function_ab6f96b6);
-    /#
-        assert(isscriptfunctionptr(&function_7ba867a8));
-    #/
+    assert(isscriptfunctionptr(&function_7ba867a8));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_631ad7fc5b704ad", &function_7ba867a8);
-    /#
-        assert(isscriptfunctionptr(&function_52c3ab28));
-    #/
+    assert(isscriptfunctionptr(&function_52c3ab28));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_799d1239ee7780df", &function_52c3ab28);
-    /#
-        assert(isscriptfunctionptr(&function_b1092561));
-    #/
+    assert(isscriptfunctionptr(&function_b1092561));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_7a0baaf803e988e1", &function_b1092561);
 }
 
@@ -673,9 +581,9 @@ function private planhumanarrivalatcover(behaviortreeentity, arrivalanim) {
                 var_a358ca3 = vectorscale(rightdir, var_f0dd8bc8[1]);
                 var_6e775fcc = nodeoffsetposition - var_85e98eb9 + var_a358ca3;
                 coverenterpos = var_6e775fcc - var_fb34812f + var_944b0150;
-                var_5fd77fe1 = var_6e775fcc + vectorscale((0, 0, 1), 8);
-                var_c7c8e445 = nodeoffsetposition + vectorscale((0, 0, 1), 8);
-                var_6c21c197 = coverenterpos + vectorscale((0, 0, 1), 8);
+                var_5fd77fe1 = var_6e775fcc + (0, 0, 8);
+                var_c7c8e445 = nodeoffsetposition + (0, 0, 8);
+                var_6c21c197 = coverenterpos + (0, 0, 8);
                 /#
                     recordline(var_5fd77fe1, var_c7c8e445, (1, 0.5, 0), "<unknown string>");
                     record3dtext("<unknown string>", var_5fd77fe1, (1, 0.5, 0), "<unknown string>");
@@ -692,8 +600,8 @@ function private planhumanarrivalatcover(behaviortreeentity, arrivalanim) {
                 forward = vectorscale(forwarddir, var_ff177acc[0]);
                 right = vectorscale(rightdir, var_ff177acc[1]);
                 coverenterpos = nodeoffsetposition - forward + right;
-                var_c7c8e445 = nodeoffsetposition + vectorscale((0, 0, 1), 8);
-                var_6c21c197 = coverenterpos + vectorscale((0, 0, 1), 8);
+                var_c7c8e445 = nodeoffsetposition + (0, 0, 8);
+                var_6c21c197 = coverenterpos + (0, 0, 8);
                 /#
                     recordline(var_6c21c197, var_c7c8e445, (1, 0.5, 0), "<unknown string>");
                     record3dtext("<unknown string>", var_6c21c197, (1, 0.5, 0), "<unknown string>");
@@ -729,14 +637,14 @@ function private checkcoverarrivalconditions(coverenterpos, coverpos) {
     if (!awayfromenterpos) {
         return false;
     }
-    trace = groundtrace(coverenterpos + vectorscale((0, 0, 1), 72), coverenterpos + vectorscale((0, 0, -1), 72), 0, 0, 0);
+    trace = groundtrace(coverenterpos + (0, 0, 72), coverenterpos + (0, 0, -72), 0, 0, 0);
     if (isdefined(trace[#"position"]) && abs(trace[#"position"][2] - coverpos[2]) > 30) {
         /#
             if (getdvarint(#"ai_debugarrivals", 0)) {
                 recordcircle(coverenterpos, 1, (1, 0, 0), "<unknown string>");
                 record3dtext("<unknown string>", coverenterpos, (1, 0, 0), "<unknown string>", undefined, 0.4);
                 recordcircle(trace[#"position"], 1, (1, 0, 0), "<unknown string>");
-                record3dtext("<unknown string>" + int(abs(trace[#"position"][2] - coverpos[2])), trace[#"position"] + vectorscale((0, 0, 1), 5), (1, 0, 0), "<unknown string>", undefined, 0.4);
+                record3dtext("<unknown string>" + int(abs(trace[#"position"][2] - coverpos[2])), trace[#"position"] + (0, 0, 5), (1, 0, 0), "<unknown string>", undefined, 0.4);
                 record3dtext("<unknown string>" + 30, trace[#"position"], (1, 0, 0), "<unknown string>", undefined, 0.4);
                 recordline(coverenterpos, trace[#"position"], (1, 0, 0), "<unknown string>");
             }
@@ -760,9 +668,7 @@ function private getarrivalsplittime(arrivalanim) {
     bestsplit = -1;
     if (animhasnotetrack(arrivalanim, "corner")) {
         times = getnotetracktimes(arrivalanim, "corner");
-        /#
-            assert(times.size == 1, "<unknown string>" + function_9e72a96(arrivalanim) + "<unknown string>" + "<unknown string>" + "<unknown string>");
-        #/
+        assert(times.size == 1, "<unknown string>" + function_9e72a96(arrivalanim) + "<unknown string>" + "<unknown string>" + "<unknown string>");
         bestsplit = times[0];
     } else {
         /#
@@ -770,9 +676,7 @@ function private getarrivalsplittime(arrivalanim) {
             var_ccd34262 = issubstr(var_1e582813, "<unknown string>") || issubstr(var_1e582813, "<unknown string>") || issubstr(var_1e582813, "<unknown string>");
             var_ffc4381b = issubstr(var_1e582813, "<unknown string>");
             if (var_ccd34262 && !var_ffc4381b && self.archetype == #"human") {
-                /#
-                    assertmsg("<unknown string>" + var_1e582813 + "<unknown string>" + "<unknown string>" + "<unknown string>");
-                #/
+                assertmsg("<unknown string>" + var_1e582813 + "<unknown string>" + "<unknown string>" + "<unknown string>");
             }
         #/
     }
@@ -795,9 +699,7 @@ function private deltarotate(delta, yaw) {
 // Checksum 0x6cd999a9, Offset: 0x3270
 // Size: 0x72
 function private function_e7f9cf11() {
-    /#
-        assert(self.archetype == #"human" || self.archetype == #"civilian");
-    #/
+    assert(self.archetype == #"human" || self.archetype == #"civilian");
     speed = self function_28e7d252();
     return speed;
 }
@@ -807,9 +709,7 @@ function private function_e7f9cf11() {
 // Checksum 0x32e7145d, Offset: 0x32f0
 // Size: 0x5a
 function private function_3298688b() {
-    /#
-        assert(self.archetype == #"human");
-    #/
+    assert(self.archetype == #"human");
     speed = self function_359fd121();
     return speed;
 }
@@ -819,9 +719,7 @@ function private function_3298688b() {
 // Checksum 0xecd79f3c, Offset: 0x3358
 // Size: 0x3a
 function private function_eb731440() {
-    /#
-        assert(self.archetype == #"human");
-    #/
+    assert(self.archetype == #"human");
     return self.var_55a3f1d3;
 }
 
@@ -830,9 +728,7 @@ function private function_eb731440() {
 // Checksum 0xd46fe5b5, Offset: 0x33a0
 // Size: 0x5e
 function private function_631d7179() {
-    /#
-        assert(self.archetype == #"human");
-    #/
+    assert(self.archetype == #"human");
     if (is_true(self.var_dd1cd771)) {
         return self.var_31162969;
     }
@@ -1043,9 +939,7 @@ function function_b1092561(entity) {
         splittime = 0.5;
         if (animhasnotetrack(entity.var_7b1f015a.animation, "corner")) {
             times = getnotetracktimes(entity.var_7b1f015a.animation, "corner");
-            /#
-                assert(times.size == 1, "<unknown string>" + function_9e72a96(entity.var_7b1f015a.animation) + "<unknown string>" + "<unknown string>" + "<unknown string>");
-            #/
+            assert(times.size == 1, "<unknown string>" + function_9e72a96(entity.var_7b1f015a.animation) + "<unknown string>" + "<unknown string>" + "<unknown string>");
             splittime = times[0];
         }
         localdeltahalfvector = getmovedelta(entity.var_7b1f015a.animation, 0, splittime);

@@ -126,11 +126,9 @@ function main(var_d3440450, *var_50cc0d4f) {
     thread function_4bc0b384(player);
     thread function_7a77e3be(player);
     thread function_84d4429e(player);
-    res = undefined;
     res = player waittilltimeout(10, #"end_binocs", #"weapon_change", #"weapon_fired");
     if (res._notify != #"timeout") {
         if (res._notify != #"weapon_fired") {
-            res = undefined;
             res = player waittilltimeout(10, #"weapon_fired");
         }
     }
@@ -139,7 +137,6 @@ function main(var_d3440450, *var_50cc0d4f) {
     if (res._notify != #"timeout") {
         level music::setmusicstate("none");
         level music::function_edda155f("b4.2_shot");
-        var_7810080a = undefined;
         var_7810080a = level.arash waittilltimeout(0.5, #"hash_ae39942308147bf", #"damage");
     }
     level notify(#"hash_1a8ccb31e7a09c0e");
@@ -625,7 +622,7 @@ function function_d75e55a1(targets, lines, fov = 2, var_dc8ec980 = 5) {
 function function_e779ff3c(player, eye_pos, var_8067795d, var_dd9a54cd, *var_a74a4e75, *fov) {
     level endon(#"hash_63e5acd07208c35d");
     self endon(#"death");
-    target_pos = self.origin + vectorscale((0, 0, 1), 30);
+    target_pos = self.origin + (0, 0, 30);
     if (var_8067795d getcurrentweapon().name != "eq_binoculars" || !var_8067795d adsbuttonpressed()) {
         return false;
     }
@@ -642,7 +639,6 @@ function function_e779ff3c(player, eye_pos, var_8067795d, var_dd9a54cd, *var_a74
 function function_b12fabe5(player) {
     player endon(#"death");
     while (true) {
-        result = undefined;
         result = player waittill(#"weapon_fired");
         if (level flag::get("end_binocs")) {
             level flag::set("player_fired_at_arash");
@@ -758,7 +754,7 @@ function function_a2015343(var_d3440450) {
 function function_61f33d07() {
     car = vehicle::simple_spawn("airport_truck_approach")[0];
     targ = getent("car_look_point", "targetname");
-    targ linkto(car, "tag_origin", vectorscale((0, 0, 1), 50));
+    targ linkto(car, "tag_origin", (0, 0, 50));
     level waittill(#"hash_186d95ebb54fca9f");
     car vehicle::lights_on();
     car vehicle::toggle_force_driver_taillights(1);
@@ -769,11 +765,11 @@ function function_61f33d07() {
     playfxontag("vehicle/fx9_light_ru_truck_light_head_source", car, "tag_fx_headlight_left");
     light = getent("light_head_arash_truck_r", "targetname");
     if (isdefined(light)) {
-        light linkto(car, "tag_fx_headlight_right", vectorscale((-1, 0, 0), 0.5), vectorscale((1, 0, 0), 15));
+        light linkto(car, "tag_fx_headlight_right", (-0.5, 0, 0), (15, 0, 0));
     }
     light = getent("light_head_arash_truck_l", "targetname");
     if (isdefined(light)) {
-        light linkto(car, "tag_fx_headlight_left", vectorscale((-1, 0, 0), 0.5), vectorscale((1, 0, 0), 15));
+        light linkto(car, "tag_fx_headlight_left", (-0.5, 0, 0), (15, 0, 0));
     }
 }
 

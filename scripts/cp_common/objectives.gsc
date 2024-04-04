@@ -246,9 +246,7 @@ function function_64eaa790(str_objective, var_8343acf6, radius, var_4003470b = 1
             thread function_37cf9b17(str_objective, var_8343acf6, radius, var_4003470b);
             return;
         }
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
     }
 }
 

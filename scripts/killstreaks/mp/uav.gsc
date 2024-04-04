@@ -217,9 +217,7 @@ function function_f724cfe4(health) {
 // Checksum 0x3817096c, Offset: 0xcc8
 // Size: 0x930
 function activateuav(killstreaktype) {
-    /#
-        assert(isdefined(level.players));
-    #/
+    assert(isdefined(level.players));
     if (self killstreakrules::iskillstreakallowed("uav", self.team) == 0) {
         return false;
     }
@@ -268,7 +266,7 @@ function activateuav(killstreaktype) {
     } else {
         if (sessionmodeiswarzonegame()) {
             var_b0490eb9 = getheliheightlockheight(self.origin);
-            trace = groundtrace((self.origin[0], self.origin[1], var_b0490eb9), self.origin - vectorscale((0, 0, 1), 5000), 0, uav);
+            trace = groundtrace((self.origin[0], self.origin[1], var_b0490eb9), self.origin - (0, 0, 5000), 0, uav);
             groundheight = trace[#"position"][2];
             var_5f8c899e = groundheight + (var_b0490eb9 - groundheight) * bundle.var_ff73e08c;
             var_5f8c899e = var_5f8c899e - killstreaks::function_43f4782d();
@@ -532,9 +530,7 @@ function hasuav(team) {
 // Checksum 0x6584f482, Offset: 0x22c0
 // Size: 0xac
 function addactiveuav() {
-    /#
-        assert(isdefined(self.team));
-    #/
+    assert(isdefined(self.team));
     if (!isdefined(level.activeuavs[self.team])) {
         level.activeuavs[self.team] = 0;
     }
@@ -565,17 +561,13 @@ function resetactiveuav() {
         return;
     }
     level.activeuavs[self.team]--;
-    /#
-        assert(level.activeuavs[self.team] >= 0);
-    #/
+    assert(level.activeuavs[self.team] >= 0);
     if (level.activeuavs[self.team] <= 0) {
         level.activeuavs[self.team] = undefined;
     }
     if (isdefined(self.owner) && isdefined(level.activeplayeruavs[self.ownerentnum])) {
         level.activeplayeruavs[self.ownerentnum]--;
-        /#
-            assert(level.activeplayeruavs[self.ownerentnum] >= 0);
-        #/
+        assert(level.activeplayeruavs[self.ownerentnum] >= 0);
         if (level.activeplayeruavs[self.ownerentnum] <= 0) {
             level.activeplayeruavs[self.ownerentnum] = undefined;
         }

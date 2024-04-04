@@ -27,9 +27,7 @@
 // Checksum 0x346af2c3, Offset: 0x170
 // Size: 0x3c
 function autoexec function_aeb1baea() {
-    /#
-        assert(!isdefined(level.var_f18a6bd6));
-    #/
+    assert(!isdefined(level.var_f18a6bd6));
     level.var_f18a6bd6 = &function_5e443ed1;
 }
 
@@ -38,9 +36,7 @@ function autoexec function_aeb1baea() {
 // Checksum 0xfbeffda5, Offset: 0x1b8
 // Size: 0x12c
 function function_5e443ed1() {
-    /#
-        assert(isdefined(level.first_frame), "<unknown string>");
-    #/
+    assert(isdefined(level.first_frame), "<unknown string>");
     level._loadstarted = 1;
     /#
         check_art_mode();

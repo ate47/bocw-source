@@ -96,9 +96,7 @@ function play_on_tag(alias, tag, ends_on_death, var_50bba55f, *radio_dialog) {
     #/
     org playsoundwithnotify(tag, "sounddone");
     if (isdefined(var_50bba55f)) {
-        /#
-            assert(var_50bba55f, "<unknown string>");
-        #/
+        assert(var_50bba55f, "<unknown string>");
         if (!isdefined(wait_for_sounddone_or_death(org))) {
             org stopsounds();
         }
@@ -213,9 +211,7 @@ function delete_on_death_wait(ent, *sounddone) {
 // Checksum 0x7ccd5af3, Offset: 0x9b0
 // Size: 0x174
 function play_on_players(sound, team) {
-    /#
-        assert(isdefined(level.players));
-    #/
+    assert(isdefined(level.players));
     if (level.splitscreen) {
         if (isdefined(level.players[0])) {
             level.players[0] playlocalsound(sound);

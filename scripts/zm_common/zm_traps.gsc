@@ -254,7 +254,6 @@ function function_783f63e9(var_1c9c3123 = 1) {
 // Size: 0x148
 function trap_use_think(trap) {
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         e_player = waitresult.activator;
         if (!zm_utility::can_use(e_player)) {
@@ -518,7 +517,6 @@ function trap_audio_fx(trap) {
 function trap_damage() {
     self endon(#"trap_done");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         ent = waitresult.activator;
         if (isplayer(ent)) {
@@ -534,7 +532,7 @@ function trap_damage() {
                     break;
                 case #"rotating":
                     if (ent getstance() == "stand") {
-                        ent dodamage(50, ent.origin + vectorscale((0, 0, 1), 20));
+                        ent dodamage(50, ent.origin + (0, 0, 20));
                         ent setstance("crouch");
                     }
                     break;
@@ -1016,15 +1014,9 @@ function is_trap_registered(a_registered_traps) {
 // Checksum 0xc341a07d, Offset: 0x3c08
 // Size: 0xc6
 function register_trap_basic_info(str_trap, func_activate, func_audio) {
-    /#
-        assert(isdefined(str_trap), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(func_activate), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(func_audio), "<unknown string>");
-    #/
+    assert(isdefined(str_trap), "<unknown string>");
+    assert(isdefined(func_activate), "<unknown string>");
+    assert(isdefined(func_audio), "<unknown string>");
     _register_undefined_trap(str_trap);
     level._custom_traps[str_trap].activate = func_activate;
     level._custom_traps[str_trap].audio = func_audio;
@@ -1048,9 +1040,7 @@ function _register_undefined_trap(str_trap) {
 // Checksum 0x8fcbba9e, Offset: 0x3d40
 // Size: 0x86
 function register_trap_damage(str_trap, func_player_damage, func_damage) {
-    /#
-        assert(isdefined(str_trap), "<unknown string>");
-    #/
+    assert(isdefined(str_trap), "<unknown string>");
     _register_undefined_trap(str_trap);
     level._custom_traps[str_trap].player_damage = func_player_damage;
     level._custom_traps[str_trap].damage = func_damage;
@@ -1061,9 +1051,7 @@ function register_trap_damage(str_trap, func_player_damage, func_damage) {
 // Checksum 0xe937375f, Offset: 0x3dd0
 // Size: 0x86
 function function_60d9e800(str_trap, var_75734507, var_53d35f37) {
-    /#
-        assert(isdefined(str_trap), "<unknown string>");
-    #/
+    assert(isdefined(str_trap), "<unknown string>");
     _register_undefined_trap(str_trap);
     level._custom_traps[str_trap].var_75734507 = var_75734507;
     level._custom_traps[str_trap].var_53d35f37 = var_53d35f37;

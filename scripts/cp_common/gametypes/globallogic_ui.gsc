@@ -62,9 +62,7 @@ function on_player_spawn() {
     if (!is_true(level.var_2ca580c2) || isbot(self)) {
         self function_251fa54a();
     }
-    /#
-        assert(isdefined(level.gameskill));
-    #/
+    assert(isdefined(level.gameskill));
     self clientfield::set_player_uimodel("hudItems.serverDifficulty", level.gameskill);
     self setclientuivisibilityflag("radar_client", 1);
 }
@@ -265,7 +263,6 @@ function function_4e49c51d(title = #"", description = #"", var_c7f36d1c = 0, var
     function_e299661a(hash("InGameConfirmOverlay"));
     function_2ec075a9("cp_confirm_overlay");
     do {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         response = waitresult.response;
@@ -289,9 +286,7 @@ function function_4e49c51d(title = #"", description = #"", var_c7f36d1c = 0, var
 // Checksum 0x28110552, Offset: 0x1a58
 // Size: 0x64
 function function_e299661a(var_8e4097ab) {
-    /#
-        assert(ishash(var_8e4097ab));
-    #/
+    assert(ishash(var_8e4097ab));
     function_9ed5232e("ScriptedWidgetData.overlay", var_8e4097ab);
     function_2ec075a9("ScriptedWidgetData.overlay");
 }
@@ -608,9 +603,7 @@ function closemenus() {
 // Checksum 0xdf8f256a, Offset: 0x2b30
 // Size: 0x3b4
 function beginclasschoice() {
-    /#
-        assert(isdefined(level.teams[self.pers[#"team"]]));
-    #/
+    assert(isdefined(level.teams[self.pers[#"team"]]));
     team = self.pers[#"team"];
     self closemenu(game.menu[#"menu_start_menu"]);
     if (isbot(self)) {
@@ -795,9 +788,7 @@ function function_894987d3() {
 // Checksum 0x8146a239, Offset: 0x38b0
 // Size: 0x9c
 function showmainmenuforteam() {
-    /#
-        assert(isdefined(level.teams[self.pers[#"team"]]));
-    #/
+    assert(isdefined(level.teams[self.pers[#"team"]]));
     team = self.pers[#"team"];
     self openmenu(game.menu["menu_changeclass_" + level.teams[team]]);
 }
@@ -893,7 +884,6 @@ function removespawnmessageshortly(delay) {
 function function_b4057fae(var_426fecc3) {
     self endon(#"death", #"hash_5aa439133f7cf591");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"hash_1fb77fec1c54b437");
         bonename = waitresult.bone_name;
         event = waitresult.event;
@@ -1007,12 +997,8 @@ function private function_36e939c(var_4146002e = 1, var_d76d90ac = 0) {
     self endon("641c2040237d352a");
     self flag::set(#"chyron_menu_open");
     level flag::wait_till(#"hash_60361de05624e591");
-    /#
-        assert(var_d76d90ac >= 0);
-    #/
-    /#
-        assert(var_d76d90ac <= 15);
-    #/
+    assert(var_d76d90ac >= 0);
+    assert(var_d76d90ac <= 15);
     cp_chyron = lui::get_luimenu("cpChyron");
     cp_chyron cp_chyron::function_90bde5d3(self, var_d76d90ac);
     cp_chyron cp_chyron::close(self);

@@ -11,23 +11,28 @@
 // Method(s) 13 Total 13
 class cluielem {
 
+    var var_47d8642e;
+    var var_779239b4;
+    var var_bf9c8c95;
+    var var_d5213cbb;
+
     // Namespace cluielem/lui_shared
     // Params 0, eflags: 0xa linked
     // Checksum 0x8b91af5d, Offset: 0x778
     // Size: 0x2a
-    __constructor() {
-        self.var_d5213cbb = "";
-        self.var_bf9c8c95 = undefined;
-        self.var_779239b4 = 0;
+    constructor() {
+        var_d5213cbb = "";
+        var_bf9c8c95 = undefined;
+        var_779239b4 = 0;
     }
 
     // Namespace cluielem/lui_shared
     // Params 0, eflags: 0x82 linked class_linked
     // Checksum 0x7a7fe23c, Offset: 0x7b0
     // Size: 0x96
-    function __destructor() {
-        if (lui::function_4206783a() && isdefined(self.var_d5213cbb) && self.var_d5213cbb != "" && isdefined(level.var_a706401b[hash(self.var_d5213cbb)][self.var_bf9c8c95])) {
-            level.var_a706401b[hash(self.var_d5213cbb)][self.var_bf9c8c95] = undefined;
+    function destructor() {
+        if (lui::function_4206783a() && isdefined(var_d5213cbb) && var_d5213cbb != "" && isdefined(level.var_a706401b[hash(var_d5213cbb)][var_bf9c8c95])) {
+            level.var_a706401b[hash(var_d5213cbb)][var_bf9c8c95] = undefined;
         }
     }
 
@@ -36,12 +41,10 @@ class cluielem {
     // Checksum 0x42ca241f, Offset: 0xed8
     // Size: 0x82
     function open(local_client_num) {
-        /#
-            assert(self.var_47d8642e, "<unknown string>");
-        #/
-        openluielem(local_client_num, hash(self.var_d5213cbb), self.var_bf9c8c95);
-        [[ self ]]->function_fa582112(local_client_num);
-        self.var_779239b4 = 1;
+        assert(var_47d8642e, "<unknown string>");
+        openluielem(local_client_num, hash(var_d5213cbb), var_bf9c8c95);
+        function_fa582112(local_client_num);
+        var_779239b4 = 1;
     }
 
     // Namespace cluielem/lui_shared
@@ -49,11 +52,9 @@ class cluielem {
     // Checksum 0x94e4b8d, Offset: 0xfd8
     // Size: 0x6e
     function close(local_client_num) {
-        /#
-            assert(self.var_47d8642e, "<unknown string>");
-        #/
-        closeluielem(local_client_num, hash(self.var_d5213cbb), self.var_bf9c8c95);
-        self.var_779239b4 = 0;
+        assert(var_47d8642e, "<unknown string>");
+        closeluielem(local_client_num, hash(var_d5213cbb), var_bf9c8c95);
+        var_779239b4 = 0;
     }
 
     // Namespace cluielem/lui_shared
@@ -67,10 +68,10 @@ class cluielem {
         if (!isdefined(level.var_c6881a61[hash(menu_name)])) {
             level.var_c6881a61[hash(menu_name)] = 0;
         }
-        self.var_d5213cbb = menu_name;
-        self.var_bf9c8c95 = level.var_c6881a61[hash(menu_name)];
+        var_d5213cbb = menu_name;
+        var_bf9c8c95 = level.var_c6881a61[hash(menu_name)];
         level.var_c6881a61[hash(menu_name)]++;
-        self.var_47d8642e = 1;
+        var_47d8642e = 1;
         if (lui::function_4206783a()) {
             if (!isdefined(level.var_a706401b)) {
                 level.var_a706401b = associativearray();
@@ -78,7 +79,7 @@ class cluielem {
             if (!isdefined(level.var_a706401b[hash(menu_name)])) {
                 level.var_a706401b[hash(menu_name)] = [];
             }
-            level.var_a706401b[hash(menu_name)][self.var_bf9c8c95] = {#var_34327e5a:self};
+            level.var_a706401b[hash(menu_name)][var_bf9c8c95] = {#var_34327e5a:self};
         }
     }
 
@@ -93,10 +94,10 @@ class cluielem {
         if (!isdefined(level.var_f70b6db[hash(menu_name)])) {
             level.var_f70b6db[hash(menu_name)] = 0;
         }
-        self.var_d5213cbb = menu_name;
-        self.var_bf9c8c95 = level.var_f70b6db[hash(menu_name)];
+        var_d5213cbb = menu_name;
+        var_bf9c8c95 = level.var_f70b6db[hash(menu_name)];
         level.var_f70b6db[hash(menu_name)]++;
-        self.var_47d8642e = 0;
+        var_47d8642e = 0;
     }
 
     // Namespace cluielem/lui_shared
@@ -104,10 +105,8 @@ class cluielem {
     // Checksum 0x3f5326c1, Offset: 0x1280
     // Size: 0x6a
     function get_data(local_client_num, field) {
-        /#
-            assert(self.var_47d8642e, "<unknown string>");
-        #/
-        return function_88759655(local_client_num, hash(self.var_d5213cbb), self.var_bf9c8c95, field);
+        assert(var_47d8642e, "<unknown string>");
+        return function_88759655(local_client_num, hash(var_d5213cbb), var_bf9c8c95, field);
     }
 
     // Namespace cluielem/lui_shared
@@ -115,20 +114,20 @@ class cluielem {
     // Checksum 0x795b5e4e, Offset: 0x12f8
     // Size: 0x26c
     function function_cbca32d8(local_client_num) {
-        if (lui::function_4206783a() && isdefined(level.var_a706401b[hash(self.var_d5213cbb)][self.var_bf9c8c95])) {
-            data = level.var_a706401b[hash(self.var_d5213cbb)][self.var_bf9c8c95].data;
+        if (lui::function_4206783a() && isdefined(level.var_a706401b[hash(var_d5213cbb)][var_bf9c8c95])) {
+            data = level.var_a706401b[hash(var_d5213cbb)][var_bf9c8c95].data;
             if (isdefined(data)) {
                 if (isdefined(local_client_num)) {
                     if (isdefined(data[local_client_num])) {
                         foreach (kvp in data[local_client_num]) {
-                            function_bcc2134a(local_client_num, hash(self.var_d5213cbb), self.var_bf9c8c95, kvp.field, kvp.value);
+                            function_bcc2134a(local_client_num, hash(var_d5213cbb), var_bf9c8c95, kvp.field, kvp.value);
                         }
                     }
                     return;
                 }
                 foreach (local_client_num in data) {
                     foreach (kvp in data[local_client_num]) {
-                        function_bcc2134a(local_client_num, hash(self.var_d5213cbb), self.var_bf9c8c95, kvp.field, kvp.value);
+                        function_bcc2134a(local_client_num, hash(var_d5213cbb), var_bf9c8c95, kvp.field, kvp.value);
                     }
                 }
             }
@@ -140,18 +139,16 @@ class cluielem {
     // Checksum 0xd2c4c68a, Offset: 0x1050
     // Size: 0x222
     function set_data(local_client_num, field, value) {
-        /#
-            assert(self.var_47d8642e, "<unknown string>");
-        #/
-        function_bcc2134a(local_client_num, hash(self.var_d5213cbb), self.var_bf9c8c95, field, value);
-        if (lui::function_4206783a() && !level flag::get(#"hash_31f7d14ea61c9b88") && isdefined(level.var_a706401b[hash(self.var_d5213cbb)][self.var_bf9c8c95])) {
-            if (!isdefined(level.var_a706401b[hash(self.var_d5213cbb)][self.var_bf9c8c95].data)) {
-                level.var_a706401b[hash(self.var_d5213cbb)][self.var_bf9c8c95].data = [];
+        assert(var_47d8642e, "<unknown string>");
+        function_bcc2134a(local_client_num, hash(var_d5213cbb), var_bf9c8c95, field, value);
+        if (lui::function_4206783a() && !level flag::get(#"hash_31f7d14ea61c9b88") && isdefined(level.var_a706401b[hash(var_d5213cbb)][var_bf9c8c95])) {
+            if (!isdefined(level.var_a706401b[hash(var_d5213cbb)][var_bf9c8c95].data)) {
+                level.var_a706401b[hash(var_d5213cbb)][var_bf9c8c95].data = [];
             }
-            if (!isdefined(level.var_a706401b[hash(self.var_d5213cbb)][self.var_bf9c8c95].data[local_client_num])) {
-                level.var_a706401b[hash(self.var_d5213cbb)][self.var_bf9c8c95].data[local_client_num] = [];
+            if (!isdefined(level.var_a706401b[hash(var_d5213cbb)][var_bf9c8c95].data[local_client_num])) {
+                level.var_a706401b[hash(var_d5213cbb)][var_bf9c8c95].data[local_client_num] = [];
             }
-            level.var_a706401b[hash(self.var_d5213cbb)][self.var_bf9c8c95].data[local_client_num][field] = {#field:field, #value:value};
+            level.var_a706401b[hash(var_d5213cbb)][var_bf9c8c95].data[local_client_num][field] = {#field:field, #value:value};
         }
     }
 
@@ -160,10 +157,8 @@ class cluielem {
     // Checksum 0xb66aa312, Offset: 0xf68
     // Size: 0x62
     function is_open(local_client_num) {
-        /#
-            assert(self.var_47d8642e, "<unknown string>");
-        #/
-        return isluielemopen(local_client_num, hash(self.var_d5213cbb), self.var_bf9c8c95);
+        assert(var_47d8642e, "<unknown string>");
+        return isluielemopen(local_client_num, hash(var_d5213cbb), var_bf9c8c95);
     }
 
     // Namespace cluielem/lui_shared
@@ -171,9 +166,7 @@ class cluielem {
     // Checksum 0x48b8a43a, Offset: 0x938
     // Size: 0x1e4
     function add_clientfield(field_name, version, bits, type, callback) {
-        /#
-            assert(!self.var_47d8642e, "<unknown string>");
-        #/
+        assert(!var_47d8642e, "<unknown string>");
         var_8e016f22 = strtok(field_name, ".");
         var_2637b994 = [];
         foreach (field in var_8e016f22) {
@@ -184,7 +177,7 @@ class cluielem {
             }
             var_2637b994[var_2637b994.size] = hash(field);
         }
-        clientfield::register_luielem("luielement." + self.var_d5213cbb + "." + (isdefined(self.var_bf9c8c95) ? "" + self.var_bf9c8c95 : "") + field_name, hash(self.var_d5213cbb), self.var_bf9c8c95, var_2637b994, version, bits, type, callback, 0, 0);
+        clientfield::register_luielem("luielement." + var_d5213cbb + "." + (isdefined(var_bf9c8c95) ? "" + var_bf9c8c95 : "") + field_name, hash(var_d5213cbb), var_bf9c8c95, var_2637b994, version, bits, type, callback, 0, 0);
     }
 
     // Namespace cluielem/lui_shared
@@ -192,9 +185,7 @@ class cluielem {
     // Checksum 0xfb34fbb2, Offset: 0xb28
     // Size: 0x1cc
     function function_dcb34c80(var_2a0de052, field_name, version) {
-        /#
-            assert(!self.var_47d8642e, "<unknown string>");
-        #/
+        assert(!var_47d8642e, "<unknown string>");
         var_8e016f22 = strtok(field_name, ".");
         var_2637b994 = [];
         foreach (field in var_8e016f22) {
@@ -205,7 +196,7 @@ class cluielem {
             }
             var_2637b994[var_2637b994.size] = hash(field);
         }
-        clientfield::function_b63c5dfe(var_2a0de052, "luielement." + self.var_d5213cbb + "." + (isdefined(self.var_bf9c8c95) ? "" + self.var_bf9c8c95 : "") + field_name, hash(self.var_d5213cbb), self.var_bf9c8c95, var_2637b994, version, undefined, 0, 0);
+        clientfield::function_b63c5dfe(var_2a0de052, "luielement." + var_d5213cbb + "." + (isdefined(var_bf9c8c95) ? "" + var_bf9c8c95 : "") + field_name, hash(var_d5213cbb), var_bf9c8c95, var_2637b994, version, undefined, 0, 0);
     }
 
     // Namespace cluielem/lui_shared
@@ -213,9 +204,7 @@ class cluielem {
     // Checksum 0x75bad5e2, Offset: 0xe98
     // Size: 0x34
     function function_fa582112(*local_client_num) {
-        /#
-            assert(self.var_47d8642e, "<unknown string>");
-        #/
+        assert(var_47d8642e, "<unknown string>");
     }
 
 }
@@ -309,9 +298,7 @@ function private _screen_fade(localclientnum, n_time, n_target_alpha, n_start_al
             v_color = (1, 1, 1);
             break;
         default:
-            /#
-                assertmsg("<unknown string>");
-            #/
+            assertmsg("<unknown string>");
             break;
         }
     }

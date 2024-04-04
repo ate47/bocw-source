@@ -782,7 +782,7 @@ function function_3d6afbe8(localclientnum, *oldval, newval, *bnewent, *binitials
         if (isdefined(self.var_b0b9013f)) {
             self stoploopsound(self.var_b0b9013f);
             self.var_b0b9013f = undefined;
-            soundstoploopemitter("zmb_mq_boss_eyebeam_loop", level.var_75a7d6.mdl_body.origin + vectorscale((0, 0, 1), 200));
+            soundstoploopemitter("zmb_mq_boss_eyebeam_loop", level.var_75a7d6.mdl_body.origin + (0, 0, 200));
         }
         self stoprumble(fieldname, #"hash_4ae42716eaebc67e");
         return;
@@ -802,7 +802,7 @@ function function_3d6afbe8(localclientnum, *oldval, newval, *bnewent, *binitials
             self playrumblelooponentity(fieldname, #"hash_4ae42716eaebc67e");
             if (!isdefined(self.var_b0b9013f)) {
                 self.var_b0b9013f = self playloopsound(#"hash_288ef8a977bff14e");
-                soundloopemitter("zmb_mq_boss_eyebeam_loop", level.var_75a7d6.mdl_body.origin + vectorscale((0, 0, 1), 200));
+                soundloopemitter("zmb_mq_boss_eyebeam_loop", level.var_75a7d6.mdl_body.origin + (0, 0, 200));
             }
             return;
         }
@@ -836,7 +836,7 @@ function function_20193edf(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_292dd2b3 = undefined;
     }
     self stoprumble(fieldname, #"hash_6a557ef73676fea");
-    playfx(fieldname, #"hash_2452dd6eef500ad9", self.origin - vectorscale((0, 0, 1), 80), anglestoforward(vectorscale((1, 0, 0), 270)), anglestoup(vectorscale((1, 0, 0), 270)));
+    playfx(fieldname, #"hash_2452dd6eef500ad9", self.origin - (0, 0, 80), anglestoforward((270, 0, 0)), anglestoup((270, 0, 0)));
     self.var_292dd2b3 = playfx(fieldname, #"maps/zm_tungsten/fx9_zm_dark_crystals_ambient", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
 }
 
@@ -972,11 +972,11 @@ function function_381bdf6a(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (bwastimejump) {
         playsound(fieldname, #"hash_2a56b00d8e86a0f4", (0, 0, 0));
-        soundloopemitter("zmb_mq_boss_phase_player_lp", vectorscale((1, 1, 1), 7));
+        soundloopemitter("zmb_mq_boss_phase_player_lp", (7, 7, 7));
         return;
     }
     playsound(fieldname, #"hash_1ea3bc9a4a37d9a", (0, 0, 0));
-    soundstoploopemitter("zmb_mq_boss_phase_player_lp", vectorscale((1, 1, 1), 7));
+    soundstoploopemitter("zmb_mq_boss_phase_player_lp", (7, 7, 7));
 }
 
 // Namespace namespace_95c839d1/namespace_95c839d1

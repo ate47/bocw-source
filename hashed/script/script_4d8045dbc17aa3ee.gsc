@@ -227,9 +227,9 @@ function function_d379ba37() {
             var_28979c91 = array::randomize(level.doa.var_fe92efd8);
             i = 0;
             foreach (player in getplayers()) {
-                var_7f2666c4 = var_28979c91[i];
+                fate = var_28979c91[i];
                 i++;
-                player thread namespace_1c2a96f9::function_15a789ab(var_7f2666c4.var_c8386627);
+                player thread namespace_1c2a96f9::function_15a789ab(fate.var_c8386627);
                 wait(0.5);
             }
             break;
@@ -276,7 +276,7 @@ function function_d379ba37() {
         case #"fly":
             /#
                 player = function_23e1f90f()[0];
-                if (!is_true(player.doa.var_3e81d24c)) {
+                if (!is_true(player.doa.infps)) {
                     player thread function_1f704cee(1);
                     adddebugcommand(" MODELS ALIVE: ");
                     setsaveddvar(#"hash_7aa67f68d1a1b28d", 10);
@@ -520,7 +520,7 @@ function function_d379ba37() {
             targetplayer = players[randomint(players.size)];
             foreach (player in players) {
                 if (player == targetplayer) {
-                    var_c8dd979c = player.origin + vectorscale((0, 0, 1), 20);
+                    var_c8dd979c = player.origin + (0, 0, 20);
                     player dodamage(player.health + 100, player.origin);
                     continue;
                 }
@@ -1209,27 +1209,27 @@ function function_1a837918() {
             text = "Total Builds: " + level.doa.var_f33bb10;
             namespace_1e25ad94::function_70e370a(x, y, text, (0.439216, 0.501961, 0.564706), 1, 1, 0.05);
             y = y + 20;
-            text = "Total Tiles:" + level.doa.var_fa21a3aa + "	Avg Tile Count:" + level.doa.var_fa21a3aa / level.doa.var_f33bb10;
+            text = "Total Tiles:" + level.doa.var_fa21a3aa + "\tAvg Tile Count:" + level.doa.var_fa21a3aa / level.doa.var_f33bb10;
             namespace_1e25ad94::function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
             y = y + 20;
-            text = "Total Rooms:" + level.doa.var_f5f2b4e8 + "	Avg Room Count:" + level.doa.var_f5f2b4e8 / level.doa.var_f33bb10;
+            text = "Total Rooms:" + level.doa.var_f5f2b4e8 + "\tAvg Room Count:" + level.doa.var_f5f2b4e8 / level.doa.var_f33bb10;
             namespace_1e25ad94::function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
             y = y + 20;
-            text = "Total Halls:" + level.doa.var_f23e2931 + "	Avg Hall Count:" + level.doa.var_f23e2931 / level.doa.var_f33bb10;
+            text = "Total Halls:" + level.doa.var_f23e2931 + "\tAvg Hall Count:" + level.doa.var_f23e2931 / level.doa.var_f33bb10;
             namespace_1e25ad94::function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
             y = y + 20;
             text = "PT = percentage of tiles";
-            namespace_1e25ad94::function_70e370a(x, y, text, vectorscale((1, 1, 1), 0.5), 1, 1, 0.05);
+            namespace_1e25ad94::function_70e370a(x, y, text, (0.5, 0.5, 0.5), 1, 1, 0.05);
             y = y + 20;
             text = "PB = percentage of builds";
-            namespace_1e25ad94::function_70e370a(x, y, text, vectorscale((1, 1, 1), 0.5), 1, 1, 0.05);
+            namespace_1e25ad94::function_70e370a(x, y, text, (0.5, 0.5, 0.5), 1, 1, 0.05);
             y = y + 30;
             foreach (tileid in level.doa.var_830f8412) {
                 tile = {#name:tileid, #count:level.doa.var_4cdaff39[tileid]};
                 if (tile.count == 0) {
                     continue;
                 }
-                text = tile.name + "	instance count: " + tile.count + "	PT: " + tile.count / level.doa.var_fa21a3aa * 100 + "%" + "	PB: " + tile.count / level.doa.var_f33bb10 * 100 + "%";
+                text = tile.name + "\tinstance count: " + tile.count + "\tPT: " + tile.count / level.doa.var_fa21a3aa * 100 + "%" + "\tPB: " + tile.count / level.doa.var_f33bb10 * 100 + "%";
                 namespace_1e25ad94::function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
                 y = y + 20;
             }
@@ -1261,7 +1261,7 @@ function function_c93506fb() {
         level notify(#"ladder_up");
         level waittilltimeout(30, #"hash_df3bb53ea54541f");
         wait(2);
-        namespace_1e25ad94::function_4e3cfad("	Dungeon Evolution: " + level.doa.var_f33bb10 + " completed at:" + gettime(), undefined, undefined, undefined, 60);
+        namespace_1e25ad94::function_4e3cfad("\tDungeon Evolution: " + level.doa.var_f33bb10 + " completed at:" + gettime(), undefined, undefined, undefined, 60);
         foreach (player in getplayers()) {
             player setorigin(level.doa.var_8823e378);
         }
@@ -1379,7 +1379,7 @@ function function_1552e594() {
             continue;
         }
         foreach (guy in guys) {
-            guy.doa.var_11abc438 = guy.origin + vectorscale((0, 0, 1), 34);
+            guy.doa.var_11abc438 = guy.origin + (0, 0, 34);
         }
         break;
     }
@@ -1402,8 +1402,7 @@ function function_1552e594() {
             }
         }
         if (isdefined(level.doa.var_9ae7e5e6)) {
-            guys[0] setorigin(level.doa.var_9ae7e5e6.origin + vectorscale((0, 0, 1), 32));
-            result = undefined;
+            guys[0] setorigin(level.doa.var_9ae7e5e6.origin + (0, 0, 32));
             result = level waittill(#"hash_5c97c4241ba01be4");
             name = [[ level.doa.var_a77e6349 ]]->getname();
             section = [[ level.doa.var_a77e6349 ]]->function_7c246362();
@@ -1416,7 +1415,6 @@ function function_1552e594() {
                     guy.doa.var_d524abd8 = 0;
                 }
                 level thread namespace_6e90e490::function_c937e51f(estimate.time);
-                result = undefined;
                 result = level waittilltimeout(estimate.time, #"hash_7626a6770055d63c");
                 level thread namespace_6e90e490::function_fa6f7ba7();
                 if (result._notify == #"timeout") {
@@ -1427,7 +1425,7 @@ function function_1552e594() {
                         if (name === "jungle_1" && section.id === 2) {
                             loc = getent("room_of_fate_shaft_trigger", "targetname").origin;
                             guys = namespace_7f5aeb59::function_23e1f90f();
-                            guys[0] setorigin(loc + vectorscale((0, 0, 1), 32));
+                            guys[0] setorigin(loc + (0, 0, 32));
                         } else {
                             [[ level.doa.var_a77e6349 ]]->function_411b63ca();
                         }
@@ -1436,7 +1434,7 @@ function function_1552e594() {
                 }
             }
         } else if (isdefined(level.doa.teleporter) && randomint(5) == 0) {
-            guys[0] setorigin(level.doa.teleporter.origin + vectorscale((0, 0, 1), 32));
+            guys[0] setorigin(level.doa.teleporter.origin + (0, 0, 32));
         }
         if (level flag::get("doa_round_spawning")) {
             if (is_true(level.var_e5d89122)) {
@@ -1453,7 +1451,7 @@ function function_1552e594() {
                 continue;
             }
             if (isdefined(level.doa.teleporter) && randomint(100) > 97) {
-                guy setorigin(level.doa.teleporter.origin + vectorscale((0, 0, 1), 24));
+                guy setorigin(level.doa.teleporter.origin + (0, 0, 24));
             }
             guy thread function_be602f7c();
             if (guy isinmovemode("ufo", "noclip")) {
@@ -1616,8 +1614,8 @@ function function_a4037f83(pickup) {
     if (self isinmovemode("ufo", "noclip") || isdefined(level.doa.var_a77e6349)) {
         return;
     }
-    level thread namespace_1e25ad94::debugcircle(pickup.origin + vectorscale((0, 0, 1), 20), 30, 3, self namespace_7f5aeb59::function_5934bbc8());
-    level thread namespace_1e25ad94::debugline(self.origin + vectorscale((0, 0, 1), 20), pickup.origin + vectorscale((0, 0, 1), 20), 3, self namespace_7f5aeb59::function_5934bbc8());
+    level thread namespace_1e25ad94::debugcircle(pickup.origin + (0, 0, 20), 30, 3, self namespace_7f5aeb59::function_5934bbc8());
+    level thread namespace_1e25ad94::debugline(self.origin + (0, 0, 20), pickup.origin + (0, 0, 20), 3, self namespace_7f5aeb59::function_5934bbc8());
     tries = 5;
     while (isdefined(pickup) && tries) {
         tries--;
@@ -1706,7 +1704,7 @@ function function_61b604bf() {
                 }
                 label = label + toks[i];
             }
-            cmdline = "[ " + name + "	PB: ";
+            cmdline = "[ " + name + "\tPB: ";
             add_devgui(label, cmdline);
         }
         var_663588d = " back to home:";
@@ -1723,7 +1721,7 @@ function function_61b604bf() {
                 }
                 label = label + toks[i];
             }
-            cmdline = "[ " + name + "	PB: ";
+            cmdline = "[ " + name + "\tPB: ";
             add_devgui(label, cmdline);
         }
         var_663588d = "<unknown string>";
@@ -1740,7 +1738,7 @@ function function_61b604bf() {
                 }
                 label = label + toks[i];
             }
-            cmdline = "[ " + name + "	PB: ";
+            cmdline = "[ " + name + "\tPB: ";
             add_devgui(label, cmdline);
         }
     #/

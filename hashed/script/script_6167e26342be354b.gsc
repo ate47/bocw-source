@@ -104,19 +104,19 @@ function init() {
         level.var_f0257219 = 0;
     }
     if (!isdefined(level.var_97b04ad0)) {
-        level.var_97b04ad0 = vectorscale((-1, -1, -1), 4);
+        level.var_97b04ad0 = (-4, -4, -4);
     }
     if (!isdefined(level.var_1dc6484c)) {
-        level.var_1dc6484c = vectorscale((1, 1, 1), 4);
+        level.var_1dc6484c = (4, 4, 4);
     }
     if (!isdefined(level.var_64a19c03)) {
         level.var_64a19c03 = 4;
     }
     if (!isdefined(level.var_4f091b08)) {
-        level.var_4f091b08 = vectorscale((-1, -1, -1), 4);
+        level.var_4f091b08 = (-4, -4, -4);
     }
     if (!isdefined(level.var_7d121ad7)) {
-        level.var_7d121ad7 = vectorscale((1, 1, 1), 4);
+        level.var_7d121ad7 = (4, 4, 4);
     }
     if (!isdefined(level.var_10f21cf8)) {
         level.var_10f21cf8 = [];
@@ -705,9 +705,7 @@ function filter_spawn_points(targetplayer, &points) {
     }
     if (isdefined(level.var_38743886)) {
         validpoints = [[ level.var_38743886 ]](targetplayer, validpoints);
-        /#
-            assert(isarray(validpoints));
-        #/
+        assert(isarray(validpoints));
     }
     return validpoints;
 }
@@ -729,7 +727,7 @@ function private function_e1997588(targetplayer, &points) {
         point = points[pointindex];
         canbeseen = 0;
         for (playerindex = 0; playerindex < nearbyplayers.size; playerindex++) {
-            if (sighttracepassed(nearbyplayers[playerindex].origin + vectorscale((0, 0, 1), 72), point + vectorscale((0, 0, 1), 72), 0, undefined)) {
+            if (sighttracepassed(nearbyplayers[playerindex].origin + (0, 0, 72), point + (0, 0, 72), 0, undefined)) {
                 canbeseen = 1;
                 break;
             }
@@ -753,9 +751,9 @@ function private function_32843fc9(startpoint, endpoint) {
         groundtrace = groundtrace(startpoint, endpoint, 0, undefined, 0);
         if (groundtrace[#"fraction"] <= 0 || groundtrace[#"startsolid"]) {
             if (startpoint[2] > endpoint[2]) {
-                startpoint = startpoint + vectorscale((0, 0, 1), 64);
+                startpoint = startpoint + (0, 0, 64);
             } else {
-                endpoint = endpoint + vectorscale((0, 0, 1), 64);
+                endpoint = endpoint + (0, 0, 64);
             }
             continue;
         }
@@ -798,7 +796,7 @@ function function_e402b74e(spawningplayer, targetplayer) {
                 return undefined;
             }
         }
-        groundtrace = function_32843fc9(var_8b889046 + vectorscale((0, 0, 1), 64), var_8b889046 - vectorscale((0, 0, 1), 64));
+        groundtrace = function_32843fc9(var_8b889046 + (0, 0, 64), var_8b889046 - (0, 0, 64));
         if (groundtrace[#"fraction"] < 1) {
             var_8b889046 = groundtrace[#"position"];
         }
@@ -810,7 +808,7 @@ function function_e402b74e(spawningplayer, targetplayer) {
     if (!isdefined(spawn_point)) {
         return undefined;
     }
-    trace = physicstrace(spawn_point.origin + vectorscale((0, 0, 1), 30), spawn_point.origin - vectorscale((0, 0, 1), 1000), (0, 0, 0), (0, 0, 0), self, 32);
+    trace = physicstrace(spawn_point.origin + (0, 0, 30), spawn_point.origin - (0, 0, 1000), (0, 0, 0), (0, 0, 0), self, 32);
     if (trace[#"fraction"] == 1) {
         function_426b6bde(spawn_point.origin, #"underground");
     }
@@ -854,7 +852,7 @@ function function_70c0ae61(spawningplayer, objectiveposition) {
         var_8b889046 = objectiveposition;
         spawningplayer.var_59baee6 = 1;
     }
-    groundtrace = function_32843fc9(var_8b889046 + vectorscale((0, 0, 1), 64), var_8b889046 - vectorscale((0, 0, 1), 64));
+    groundtrace = function_32843fc9(var_8b889046 + (0, 0, 64), var_8b889046 - (0, 0, 64));
     if (groundtrace[#"fraction"] < 1) {
         var_8b889046 = groundtrace[#"position"];
     }
@@ -866,7 +864,7 @@ function function_70c0ae61(spawningplayer, objectiveposition) {
     if (!isdefined(spawn_point)) {
         return undefined;
     }
-    trace = physicstrace(spawn_point.origin + vectorscale((0, 0, 1), 30), spawn_point.origin - vectorscale((0, 0, 1), 1000), (0, 0, 0), (0, 0, 0), self, 32);
+    trace = physicstrace(spawn_point.origin + (0, 0, 30), spawn_point.origin - (0, 0, 1000), (0, 0, 0), (0, 0, 0), self, 32);
     if (trace[#"fraction"] == 1) {
         function_426b6bde(spawn_point.origin, #"underground");
     }
@@ -895,14 +893,14 @@ function function_d66eb9cd(targetorigin, targetangles) {
                 continue;
             }
             navmeshposition = pointinfo[#"point"];
-            trace = function_32843fc9(navmeshposition + vectorscale((0, 0, 1), 500), navmeshposition - vectorscale((0, 0, 1), 500));
+            trace = function_32843fc9(navmeshposition + (0, 0, 500), navmeshposition - (0, 0, 500));
             if (trace[#"fraction"] == 1) {
                 continue;
             }
             if (!isdefined(var_27b2878f)) {
                 var_27b2878f = trace[#"position"];
             }
-            if (sighttracepassed(var_27b2878f + vectorscale((0, 0, 1), 72), targetorigin + vectorscale((0, 0, 1), 72), 0, undefined)) {
+            if (sighttracepassed(var_27b2878f + (0, 0, 72), targetorigin + (0, 0, 72), 0, undefined)) {
                 return var_27b2878f;
             }
         }
@@ -934,14 +932,14 @@ function function_d072f205() {
 // Checksum 0xc5a32b85, Offset: 0x36d8
 // Size: 0x556
 function function_d95ba61f(origin, angles, var_92d9ac4b) {
-    var_6e8e0d1a = var_92d9ac4b + vectorscale((0, 0, 1), 72) - origin;
+    var_6e8e0d1a = var_92d9ac4b + (0, 0, 72) - origin;
     var_5bc46b67 = lengthsquared(var_6e8e0d1a);
     var_b8a577cc = vectornormalize(var_6e8e0d1a);
     forward = var_b8a577cc;
     var_8792667 = (0, 0, 1);
     if (var_5bc46b67 <= sqr(700)) {
-        if (sighttracepassed(origin + vectorscale((0, 0, 1), 72), var_92d9ac4b + vectorscale((0, 0, 1), 72), 0, undefined)) {
-            trace = function_32843fc9(origin + vectorscale((0, 0, 1), 72), origin - vectorscale((0, 0, 1), 72));
+        if (sighttracepassed(origin + (0, 0, 72), var_92d9ac4b + (0, 0, 72), 0, undefined)) {
+            trace = function_32843fc9(origin + (0, 0, 72), origin - (0, 0, 72));
             if (trace[#"fraction"] != 1) {
                 var_8792667 = trace[#"normal"];
             }
@@ -953,7 +951,7 @@ function function_d95ba61f(origin, angles, var_92d9ac4b) {
     } else {
         var_8788f2da = angles;
     }
-    tracestart = origin + vectorscale((0, 0, 1), 72);
+    tracestart = origin + (0, 0, 72);
     forwardpoint = tracestart + forward * 200;
     var_a5a53f73 = physicstrace(tracestart, forwardpoint);
     if (var_a5a53f73[#"fraction"] == 1) {

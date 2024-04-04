@@ -157,9 +157,7 @@ function get_armor() {
 // Checksum 0x17bcfe74, Offset: 0x7c8
 // Size: 0x26e
 function set_armor(amount, max_armor, armortier, var_2274e560 = 1, var_cdeeec29 = 1, var_5164d2e2 = 1, var_e6683a43 = 1, var_22c3ab38 = 1, var_9f307988 = 1, var_7a80f06e = 1, explosive_damage_scale = 1, var_35e3563e = 1, var_4aad1e44 = undefined) {
-    /#
-        assert(isdefined(amount));
-    #/
+    assert(isdefined(amount));
     self.var_d6f11c60 = undefined;
     self.var_e6c1bab8 = undefined;
     self.var_59a874a7.var_2274e560 = var_2274e560;

@@ -147,7 +147,6 @@ function function_89a0bd84(e_player) {
 function function_91f37293() {
     level endon(#"end_game");
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         owner = result.activator;
         if (!level flag::get("power_on") || self.stub.var_4326facc.var_37db5cf) {
@@ -157,7 +156,7 @@ function function_91f37293() {
             owner thread zm_score::minus_to_player_score(self.stub.var_4326facc.var_c1b23abb);
             self.stub.var_4326facc.var_37db5cf = 1;
             self.stub.var_4326facc playsound(#"hash_33440052dad5d98b");
-            self.stub.var_4326facc.var_fdec2822 rotateto(self.angles + vectorscale((1, 0, 0), 179), 0.3);
+            self.stub.var_4326facc.var_fdec2822 rotateto(self.angles + (179, 0, 0), 0.3);
             self.stub.var_4326facc.var_fdec2822 waittill(#"rotatedone");
             self.stub.var_4326facc function_7265ebeb(1);
             self.stub.var_4326facc playsound(#"hash_43dad678bc35ddb7");
@@ -204,7 +203,7 @@ function function_ae0208d3(s_params) {
 function function_f86fba0f() {
     level endon(#"end_game");
     wait(30);
-    self.var_fdec2822 rotateto(self.angles + vectorscale((1, 0, 0), 90), 0.3);
+    self.var_fdec2822 rotateto(self.angles + (90, 0, 0), 0.3);
     self playsound(#"hash_33440052dad5d98b");
     wait(0.3);
     self playsound(#"hash_43dad678bc35ddb7");
@@ -326,7 +325,7 @@ function function_f35a7c49(*target) {
     var_af682a83 = struct::get(self.var_d61fef93.target, "targetname");
     while (isdefined(self.target_enemy)) {
         playsoundatposition(#"hash_28fd24537d849f13", var_af682a83.origin);
-        magicbullet(weapon, var_af682a83.origin, self.target_enemy.origin + vectorscale((0, 0, 1), 40), self);
+        magicbullet(weapon, var_af682a83.origin, self.target_enemy.origin + (0, 0, 40), self);
         wait(level.var_9040138a);
     }
     /#
@@ -410,7 +409,7 @@ function function_fef32ab1(var_74bebc57) {
                 /#
                     if (is_true(level.var_e973a238)) {
                         var_abdb3f07 = anglestoforward(self.var_6b71116f.angles);
-                        line(self.var_6b71116f.origin, self.var_6b71116f.origin + var_abdb3f07 * 1000, vectorscale((1, 0, 0), 255), 1, 0, 100);
+                        line(self.var_6b71116f.origin, self.var_6b71116f.origin + var_abdb3f07 * 1000, (255, 0, 0), 1, 0, 100);
                     }
                 #/
                 if (self is_valid_target(entity, var_81e5de51, var_74bebc57)) {
@@ -456,11 +455,11 @@ function function_c46f0aa(var_edfffb43, target_entity, var_bb839e1, cone_angle, 
     if (!isdefined(target_entity)) {
         return false;
     }
-    var_d5da08f6 = vectortoangles(target_entity.origin + vectorscale((0, 0, 1), 2) - var_edfffb43);
+    var_d5da08f6 = vectortoangles(target_entity.origin + (0, 0, 2) - var_edfffb43);
     var_ccde70d2 = length(var_bb839e1 - var_d5da08f6);
     if (var_ccde70d2 < cone_angle) {
         if (var_a11fa31c) {
-            b_passed = bullettracepassed(var_edfffb43, target_entity.origin + vectorscale((0, 0, 1), 2), 1, self, undefined);
+            b_passed = bullettracepassed(var_edfffb43, target_entity.origin + (0, 0, 2), 1, self, undefined);
             if (b_passed) {
                 return true;
             }
@@ -515,7 +514,7 @@ function function_6ecaca22() {
             var_a739460a = vectortoangles(self.var_2268588c.var_9dc0b96f.origin - self.var_2268588c.origin);
             /#
                 if (is_true(level.var_e973a238)) {
-                    line(self.var_2268588c.origin, self.var_2268588c.origin + anglestoforward(var_a739460a) * 1000, vectorscale((1, 1, 0), 255), 1, 0, 100);
+                    line(self.var_2268588c.origin, self.var_2268588c.origin + anglestoforward(var_a739460a) * 1000, (255, 255, 0), 1, 0, 100);
                 }
             #/
         }
@@ -678,7 +677,6 @@ function function_9d831b2f() {
             self turretsettargetangles(0, (-10, -40, 0));
             self.var_942bf052 = "left";
         }
-        waitresult = undefined;
         waitresult = self waittilltimeout(3.5, #"ultimate_turret_potential_target_acquired");
         if (waitresult._notify == "ultimate_turret_potential_target_acquired") {
             while (isdefined(self.var_c27dadc8) || isdefined(self.e_current_target)) {
@@ -713,7 +711,6 @@ function function_16ccb771(var_e110fa82, e_target) {
         var_2da97dc2 = !isdefined(e_target) || !isalive(e_target);
         if (var_1d860ae4 > 0 && !var_2da97dc2) {
             var_91d9f057 = var_1d860ae4 > var_f8ba3204 ? var_1d860ae4 : randomfloatrange(var_1d860ae4, var_f8ba3204);
-            waitresult = undefined;
             waitresult = e_target waittilltimeout(var_91d9f057, #"death", #"disconnect");
             var_2da97dc2 = waitresult._notify === "death";
         }

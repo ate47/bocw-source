@@ -67,9 +67,7 @@ function private function_4c75a19(dvar) {
 // Checksum 0x458ef145, Offset: 0x550
 // Size: 0x260
 function threat_sight_set_enabled(enabled) {
-    /#
-        assert(isdefined(level.stealth));
-    #/
+    assert(isdefined(level.stealth));
     wasenabled = isdefined(level.stealth.threat_sight_enabled) && level.stealth.threat_sight_enabled;
     level.stealth.threat_sight_enabled = enabled;
     threat_sight_set_dvar(enabled);
@@ -194,12 +192,8 @@ function threat_sight_set_state(statename) {
 // Checksum 0x64cbc1d, Offset: 0xc70
 // Size: 0x70
 function threat_sight_set_state_parameters(statename) {
-    /#
-        assert(isdefined(level.stealth));
-    #/
-    /#
-        assert(isdefined(level.stealth.fnthreatsightsetstateparameters));
-    #/
+    assert(isdefined(level.stealth));
+    assert(isdefined(level.stealth.fnthreatsightsetstateparameters));
     self [[ level.stealth.fnthreatsightsetstateparameters ]](statename);
 }
 
@@ -404,12 +398,8 @@ function function_740f4859(player) {
 function threat_sight_sighted(player) {
     self endon(#"death", #"stealth_idle");
     player endon(#"death");
-    /#
-        assert(isdefined(player.stealth));
-    #/
-    /#
-        assert(isdefined(player.stealth.threat_sighted));
-    #/
+    assert(isdefined(player.stealth));
+    assert(isdefined(player.stealth.threat_sighted));
     entid = self getentitynumber();
     if (self [[ self.fnisinstealthhunt ]]()) {
         self getenemyinfo(player);

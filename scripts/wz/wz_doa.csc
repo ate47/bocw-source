@@ -19,9 +19,7 @@ function event_handler[level_init] main(*eventstruct) {
     serverfield::register("crab_behavior", 1, 1, "int");
     full_screen_movie::register();
     function_1001f0ac();
-    /#
-        assert(isdefined(level.var_f18a6bd6), "<unknown string>");
-    #/
+    assert(isdefined(level.var_f18a6bd6), "<unknown string>");
     load::main();
     util::waitforclient(0);
 }

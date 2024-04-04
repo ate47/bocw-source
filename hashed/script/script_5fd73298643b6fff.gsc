@@ -250,7 +250,6 @@ function function_ab5e8b7e() {
     n_cost = mdl_support_machine.n_cost;
     var_d9726d35 = mdl_support_machine.var_d9726d35;
     while (true) {
-        s_waitresult = undefined;
         s_waitresult = self waittill(#"trigger");
         e_player = s_waitresult.activator;
         if (zm_utility::is_player_valid(e_player)) {
@@ -349,7 +348,6 @@ function function_7942f4b8(var_32f76af8, mdl_support_machine) {
     zm_sq::function_266d66eb(#"hash_35ca48ad08bd82a2", mdl_support_machine, undefined, undefined, #"hash_3e7926c5aefe4406", undefined, &zm_gold_util::function_13ebb331, "vol_player_in_firebase");
     level.var_f0fc72bc = 600;
     while (true) {
-        s_waitresult = undefined;
         s_waitresult = mdl_support_machine waittill(#"damage");
         e_attacker = s_waitresult.attacker;
         if (!isplayer(e_attacker) && !is_true(e_attacker.var_d23661ba)) {
@@ -1195,7 +1193,6 @@ function function_de620e56(var_32f76af8, n_round, n_players, var_2a69785e = 0) {
     level.var_92d7e973 = 0;
     level flag::clear(#"hash_39c8ad7b5b87265b");
     if (var_2a69785e) {
-        s_waitresult = undefined;
         s_waitresult = level waittilltimeout(30, #"hash_3eb4c19472384f5b");
         if (s_waitresult._notify == #"hash_3eb4c19472384f5b") {
             wait(10);
@@ -1898,7 +1895,6 @@ function function_2ba1b59e(control_point) {
 // Size: 0xe0
 function function_9837b56d() {
     level endon(#"end_game");
-    s_waitresult = undefined;
     s_waitresult = level waittill(#"hash_20426ed2f2666c50", #"hash_2815bf32fb443bc3", #"hash_a88cb65d3952bc4", #"hash_6bd174fa0d5006f4");
     if (s_waitresult._notify === #"hash_20426ed2f2666c50") {
         wait(3);
@@ -1948,7 +1944,7 @@ function function_f239fa6c(a_ents) {
         var_6abf3e9f val::set(#"hash_3a45f029189c53ed", "allowdeath", 0);
         var_6abf3e9f.ignore_enemy_count = 1;
         var_6abf3e9f.var_2df02a0c = 1;
-        var_6abf3e9f linkto(level.orda, "j_head", vectorscale((1, 0, 0), 50));
+        var_6abf3e9f linkto(level.orda, "j_head", (50, 0, 0));
         if (isdefined(level.orda_indicator)) {
             level.orda_indicator delete();
         }
@@ -2048,7 +2044,6 @@ function function_6da6ae01(*var_ce68958a) {
         level.var_7dbadc8c zm_control_point_hud::function_a59aefa6(e_player, 1);
     }
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (waitresult.amount > 0 && isplayer(waitresult.attacker) && waitresult.mod !== "MOD_AAT") {
             damage = waitresult.amount;
@@ -2316,7 +2311,6 @@ function private function_59f665f9() {
 function private function_e4462869() {
     self notify("43af3a08180eb562");
     self endon("43af3a08180eb562");
-    s_waitresult = undefined;
     s_waitresult = level waittill(#"hash_220b65870e0506f0", #"hash_76814119df7d7c65");
     if (s_waitresult._notify == #"hash_220b65870e0506f0") {
         level flag::set(#"hash_16edadbaf047de80");
@@ -2508,8 +2502,8 @@ function private function_e3c34a39() {
     var_d19b6fbf = spawncollision(#"collision_clip_64x64x256", "collider", self gettagorigin("j_ball_le"), self gettagangles("j_ball_le"));
     var_141146d5 setscale(2);
     var_d19b6fbf setscale(2);
-    var_141146d5 linkto(self, "j_ball_ri", vectorscale((1, 0, 0), 30), vectorscale((0, 0, 1), 90));
-    var_d19b6fbf linkto(self, "j_ball_le", vectorscale((-1, 0, 0), 30), vectorscale((0, 0, 1), 90));
+    var_141146d5 linkto(self, "j_ball_ri", (30, 0, 0), (0, 0, 90));
+    var_d19b6fbf linkto(self, "j_ball_le", (-30, 0, 0), (0, 0, 90));
     level waittill(#"hash_2815bf32fb443bc3", #"hash_a88cb65d3952bc4");
     if (isdefined(var_141146d5)) {
         var_141146d5 delete();

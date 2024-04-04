@@ -308,7 +308,6 @@ function private lc_do_damage(source_enemy, arc_num, player, params) {
 // Size: 0x150
 function private function_915d4fec(params, v_origin, player) {
     if (isdefined(params.var_a9255d36)) {
-        s_waitresult = undefined;
         s_waitresult = self waittill(params.var_a9255d36, #"death");
     }
     weapon = isdefined(params.weapon) ? params.weapon : level.weaponnone;

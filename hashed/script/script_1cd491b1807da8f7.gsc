@@ -73,7 +73,7 @@ function private on_player_killed(*params) {
 // Checksum 0x7faa1f34, Offset: 0x3e0
 // Size: 0x1a0
 function private create_use_trigger() {
-    usetrigger = spawn("trigger_radius_use", vectorscale((0, 0, -1), 10000), 0, 128, 64, 1);
+    usetrigger = spawn("trigger_radius_use", (0, 0, -10000), 0, 128, 64, 1);
     usetrigger.targetname = "dynent_use";
     usetrigger triggerignoreteam();
     usetrigger setinvisibletoall();

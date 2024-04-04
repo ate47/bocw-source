@@ -7,22 +7,6 @@
 // Method(s) 6 Total 13
 class class_a5d10b03 : cluielem {
 
-    // Namespace class_a5d10b03/cp_killcam
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x32030c36, Offset: 0x2f8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_a5d10b03/cp_killcam
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xf8ec7c3a, Offset: 0x3c8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_a5d10b03/cp_killcam
     // Params 1, eflags: 0x2 linked
     // Checksum 0x986df31b, Offset: 0x398

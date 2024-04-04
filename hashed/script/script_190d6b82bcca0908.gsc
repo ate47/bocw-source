@@ -8,21 +8,8 @@
 // Method(s) 7 Total 14
 class czm_game_over : cluielem {
 
-    // Namespace czm_game_over/zm_game_over
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x1ffdef9e, Offset: 0x218
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace czm_game_over/zm_game_over
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xafb307a7, Offset: 0x4e0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace czm_game_over/zm_game_over
     // Params 2, eflags: 0x2 linked
@@ -55,7 +42,7 @@ class czm_game_over : cluielem {
     // Checksum 0xbc8d2565, Offset: 0x490
     // Size: 0x44
     function set_rounds(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "rounds", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "rounds", value);
     }
 
     // Namespace czm_game_over/zm_game_over
@@ -64,26 +51,22 @@ class czm_game_over : cluielem {
     // Size: 0x15c
     function set_state(player, state_name) {
         if (#"defaultstate" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 0);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 0);
             return;
         }
         if (#"hash_4677c7e6d02d1a65" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 1);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 1);
             return;
         }
         if (#"hash_5f1b73095bbb3a7a" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 2);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 2);
             return;
         }
         if (#"hash_6893db9b6c7b5a58" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 3);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 3);
             return;
         }
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
     }
 
 }

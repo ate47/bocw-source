@@ -23,9 +23,7 @@ function init_callbacks() {
 // Checksum 0x89b3110d, Offset: 0x2b8
 // Size: 0x4c
 function global_empty_callback(*empty1, *empty2, *empty3, *empty4, *empty5) {
-    /#
-        assertmsg("<unknown string>");
-    #/
+    assertmsg("<unknown string>");
 }
 
 // Namespace namespace_b2b86d39/callbacks

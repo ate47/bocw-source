@@ -34,18 +34,14 @@ function function_a18ae88f(x, y) {
 // Size: 0xf8
 function function_efda2d6d() {
     player = self;
-    /#
-        assert(function_e3a36342(self));
-    #/
+    assert(function_e3a36342(self));
     vieworigin = undefined;
     if (isscriptfunctionptr(level._snd._callbacks[#"player_view"])) {
         vieworigin = player [[ level._snd._callbacks[#"player_view"] ]]();
     } else {
         vieworigin = player geteye();
     }
-    /#
-        assert(isvec(vieworigin));
-    #/
+    assert(isvec(vieworigin));
     return vieworigin;
 }
 
@@ -55,18 +51,14 @@ function function_efda2d6d() {
 // Size: 0xf8
 function function_3d31768f() {
     player = self;
-    /#
-        assert(function_e3a36342(self));
-    #/
+    assert(function_e3a36342(self));
     viewangles = undefined;
     if (isscriptfunctionptr(level._snd._callbacks[#"player_angles"])) {
         viewangles = player [[ level._snd._callbacks[#"player_angles"] ]]();
     } else {
         viewangles = player getplayerangles();
     }
-    /#
-        assert(isvec(viewangles));
-    #/
+    assert(isvec(viewangles));
     return viewangles;
 }
 
@@ -76,21 +68,15 @@ function function_3d31768f() {
 // Size: 0x130
 function function_731299e5() {
     player = self;
-    /#
-        assert(function_e3a36342(self));
-    #/
+    assert(function_e3a36342(self));
     fov = undefined;
     if (isscriptfunctionptr(level._snd._callbacks[#"player_fov"])) {
         fov = player [[ level._snd._callbacks[#"player_fov"] ]]();
     } else {
         fov = getdvarfloat(#"cg_fov", 65);
     }
-    /#
-        assert(isfloat(fov));
-    #/
-    /#
-        assert(fov <= 180);
-    #/
+    assert(isfloat(fov));
+    assert(fov <= 180);
     return fov;
 }
 
@@ -102,11 +88,7 @@ function function_ea2f17d1(variable, value) {
     if (isdefined(variable) == 1) {
         return variable;
     }
-    /#
-        /#
-            assert(isdefined(value) == 1);
-        #/
-    #/
+    assert(isdefined(value) == 1);
     return value;
 }
 
@@ -123,9 +105,7 @@ function function_154caeff(v) {
         avg = avg / 3;
         return avg;
     }
-    /#
-        assert(isarray(v) == 1, "dprior");
-    #/
+    assert(isarray(v) == 1, "dprior");
     avg = (0, 0, 0);
     if (v.size == 0) {
         return avg;
@@ -186,9 +166,7 @@ function function_f4127447(value) {
                 max = min;
                 min = temp;
             }
-            /#
-                assert(max >= min);
-            #/
+            assert(max >= min);
             randomrange = randomfloatrange(min, max);
             return randomrange;
         } else if (value.size == 1) {
@@ -240,9 +218,7 @@ function function_84fc754d(range, var_5d61faa6) {
     } else {
         randomrange = range;
     }
-    /#
-        assert(isdefined(randomrange) == 1, "<unknown string>");
-    #/
+    assert(isdefined(randomrange) == 1, "<unknown string>");
     return float(randomrange);
 }
 
@@ -270,11 +246,7 @@ function function_f218bff5(v) {
     } else {
         return array(v);
     }
-    /#
-        /#
-            assert(isarray(v) == 1);
-        #/
-    #/
+    assert(isarray(v) == 1);
     return v;
 }
 
@@ -455,13 +427,9 @@ function function_7284a22a(thing) {
     } else if (isvec(thing) == 1) {
         position = thing;
     } else {
-        /#
-            assert(0);
-        #/
+        assert(0);
     }
-    /#
-        assert(isvec(position) == 1, "<unknown string>");
-    #/
+    assert(isvec(position) == 1, "<unknown string>");
     return position;
 }
 
@@ -470,17 +438,13 @@ function function_7284a22a(thing) {
 // Checksum 0x8d93bdd4, Offset: 0x1948
 // Size: 0xd2
 function function_322e32be(array) {
-    /#
-        assert(isarray(array) == 1, "<unknown string>");
-    #/
+    assert(isarray(array) == 1, "<unknown string>");
     if (array.size == 1) {
         return array[0];
     }
     randomindex = randomintrange(1, array.size);
     randomindex = randomindex - 1;
-    /#
-        assert(randomindex >= 0 && randomindex < array.size - 1);
-    #/
+    assert(randomindex >= 0 && randomindex < array.size - 1);
     randomelement = array[randomindex];
     return randomelement;
 }
@@ -558,9 +522,7 @@ function function_6ecb085(value, midvalue, var_2c789a2) {
 // Checksum 0x61a1a9c0, Offset: 0x1cd8
 // Size: 0x6e
 function function_8f8470eb() {
-    /#
-        assert(isdefined(self) == 1);
-    #/
+    assert(isdefined(self) == 1);
     while (function_3132f113(self) == 0) {
         self waittill(#"death", #"disconnect");
     }
@@ -576,20 +538,14 @@ function function_69fd73ba(target, range) {
     var_5f3e2817 = undefined;
     var_9d415208 = undefined;
     if (isarray(range)) {
-        /#
-            assert(range.size == 2);
-        #/
+        assert(range.size == 2);
         var_5f3e2817 = float(range[0]);
         var_9d415208 = float(range[1]);
-        /#
-            assert(var_9d415208 >= var_5f3e2817);
-        #/
+        assert(var_9d415208 >= var_5f3e2817);
     } else if (isnumber(range)) {
         var_5f3e2817 = float(range);
     }
-    /#
-        assert(isfloat(var_5f3e2817));
-    #/
+    assert(isfloat(var_5f3e2817));
     var_39e18923 = abs(var_5f3e2817);
     while (isdefined(src) && isdefined(target)) {
         var_99f43abf = function_7284a22a(src);
@@ -624,7 +580,7 @@ function function_69fd73ba(target, range) {
                 if (var_39e18923 > 0) {
                     function_b95b9a60(var_727198c5, var_39e18923, var_c8cfc057, 1, 1);
                 }
-                function_ac033c46(var_597aa60f, var_727198c5 + vectorscale((0, 0, 1), 4), -0.75, "<unknown string>", var_c8cfc057, 1, (0, 0, 0), 0.72974, (1, 1, 1), 0.72974);
+                function_ac033c46(var_597aa60f, var_727198c5 + (0, 0, 4), -0.75, "<unknown string>", var_c8cfc057, 1, (0, 0, 0), 0.72974, (1, 1, 1), 0.72974);
             }
         #/
         waitframe(1);
@@ -741,9 +697,7 @@ function function_41df60ba(framecount, var_5bc3280a) {
     }
     waittime = frametime + var_5bc3280a;
     if (waittime <= 0) {
-        /#
-            println("<unknown string>" + waittime + "<unknown string>");
-        #/
+        println("<unknown string>" + waittime + "<unknown string>");
         return;
     }
     wait(waittime);
@@ -769,12 +723,8 @@ function function_a0a15145(var_20694abe, var_4bbb9191, var_79a551f0, var_50c632d
 // Checksum 0xe5f518d9, Offset: 0x2740
 // Size: 0x80
 function private function_e17840b5(vector, scale) {
-    /#
-        assert(isvec(vector));
-    #/
-    /#
-        assert(isnumber(scale));
-    #/
+    assert(isvec(vector));
+    assert(isnumber(scale));
     var_7dd54c4 = vector * (scale, scale, scale);
     return var_7dd54c4;
 }
@@ -841,11 +791,7 @@ function function_2677a7e2(vector, scale) {
 // Checksum 0x2448aa6, Offset: 0x2a40
 // Size: 0x6c
 function function_27c74b9d(inches) {
-    /#
-        /#
-            assert(isnumber(inches) == 1, "<unknown string>");
-        #/
-    #/
+    assert(isnumber(inches) == 1, "<unknown string>");
     return float(inches) * 0.0833333;
 }
 
@@ -854,11 +800,7 @@ function function_27c74b9d(inches) {
 // Checksum 0x4badd599, Offset: 0x2ab8
 // Size: 0x6c
 function function_5a06b6bd(inches) {
-    /#
-        /#
-            assert(isnumber(inches) == 1, "<unknown string>");
-        #/
-    #/
+    assert(isnumber(inches) == 1, "<unknown string>");
     return float(inches) * 0.0254;
 }
 
@@ -913,9 +855,7 @@ function function_bf7c949(var_aaa97ea4) {
     if (isdefined(tagorigin) == 1) {
         tagname = tolower(var_aaa97ea4);
     }
-    /#
-        assert(isdefined(tagname) == 1, "<unknown string>");
-    #/
+    assert(isdefined(tagname) == 1, "<unknown string>");
     return tagname;
 }
 
@@ -1190,15 +1130,9 @@ function dvar(dvar, value, callback) {
 // Checksum 0x61875585, Offset: 0x3db8
 // Size: 0x206
 function private function_98a0f33(callbackfunc, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) {
-    /#
-        assert(isdefined(self) == 1);
-    #/
-    /#
-        assert(isdefined(callbackfunc) == 1);
-    #/
-    /#
-        assert(isscriptfunctionptr(callbackfunc) == 1);
-    #/
+    assert(isdefined(self) == 1);
+    assert(isdefined(callbackfunc) == 1);
+    assert(isscriptfunctionptr(callbackfunc) == 1);
     if (isdefined(arg9)) {
         self [[ callbackfunc ]](arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
     }
@@ -1237,15 +1171,9 @@ function private function_98a0f33(callbackfunc, arg1, arg2, arg3, arg4, arg5, ar
 // Checksum 0x84212b73, Offset: 0x3fc8
 // Size: 0x1fe
 function private function_8a64a4ec(callbackfunc, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) {
-    /#
-        assert(isdefined(self) == 1);
-    #/
-    /#
-        assert(isdefined(callbackfunc) == 1);
-    #/
-    /#
-        assert(iscodefunctionptr(callbackfunc) == 0);
-    #/
+    assert(isdefined(self) == 1);
+    assert(isdefined(callbackfunc) == 1);
+    assert(iscodefunctionptr(callbackfunc) == 0);
     if (isdefined(arg9)) {
         self [[ callbackfunc ]](arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
     }
@@ -1284,12 +1212,8 @@ function private function_8a64a4ec(callbackfunc, arg1, arg2, arg3, arg4, arg5, a
 // Checksum 0x8c58c6c0, Offset: 0x41d0
 // Size: 0x124
 function function_df40860c(callbackfunc, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) {
-    /#
-        assert(isdefined(self) == 1);
-    #/
-    /#
-        assert(isdefined(callbackfunc) == 1);
-    #/
+    assert(isdefined(self) == 1);
+    assert(isdefined(callbackfunc) == 1);
     if (isscriptfunctionptr(callbackfunc) == 1) {
         self function_98a0f33(callbackfunc, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
         return;

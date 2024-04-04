@@ -143,7 +143,7 @@ function debug_draw_tuning_sphere() {
                     v_text_position = players[0].origin + vforward * n_sphere_radius;
                     sides = int(10 * (1 + int(n_text_scale) % 100));
                     sphere(v_text_position, n_text_scale, (1, 0, 0), 1, 1, sides, 16);
-                    print3d(v_text_position + vectorscale((0, 0, 1), 20), n_sphere_radius, (1, 0, 0), 1, n_text_scale / 14, 16);
+                    print3d(v_text_position + (0, 0, 20), n_sphere_radius, (1, 0, 0), 1, n_text_scale / 14, 16);
                 }
                 waitframe(1);
             }
@@ -300,7 +300,7 @@ function function_e7321799(params) {
         target = self;
         smeansofdeath = params.smeansofdeath;
         if (smeansofdeath == "<unknown string>" || smeansofdeath == "<unknown string>") {
-            location = self.origin + vectorscale((0, 0, 1), 60);
+            location = self.origin + (0, 0, 60);
         }
         if (damage) {
             thread function_2cde0af9("<unknown string>" + damage, (1, 1, 1), location, (randomfloatrange(-1, 1), randomfloatrange(-1, 1), 2), 30);

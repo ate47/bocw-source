@@ -18,9 +18,7 @@ function init() {
 // Checksum 0x5b875fb3, Offset: 0x118
 // Size: 0x62
 function init_leave(var_edc20efd) {
-    /#
-        assert(isdefined(self.ai));
-    #/
+    assert(isdefined(self.ai));
     self.ai.leave = {#state:0, #var_edc20efd:var_edc20efd};
 }
 

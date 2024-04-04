@@ -165,9 +165,7 @@ function private function_21a32a4d(localclientnum, player) {
     }
     function_865bd624(self.var_378658bb);
     function_865bd624(self.var_8c564d0c);
-    /#
-        assert(isarray(self.var_378658bb) || isarray(self.var_8c564d0c), "<unknown string>");
-    #/
+    assert(isarray(self.var_378658bb) || isarray(self.var_8c564d0c), "<unknown string>");
     var_5571852a = 0;
     while (true) {
         if (isigcactive(localclientnum)) {
@@ -305,9 +303,7 @@ function function_218c0417(localclientnum, itementry) {
 // Checksum 0x42b18427, Offset: 0x1778
 // Size: 0x42c
 function init() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     level thread zm_ffotd::main_start();
     level.onlinegame = sessionmodeisonlinegame();
     level.swimmingfeature = 0;
@@ -317,9 +313,7 @@ function init() {
     level.clientvoicesetup = &zm_audio::clientvoicesetup;
     level.playerfalldamagesound = &zm_audio::playerfalldamagesound;
     zm_game_over::register();
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     init_clientfields();
     zm_perks::init();
     zm_powerups::init();
@@ -457,9 +451,7 @@ function init_riser_fx() {
 // Checksum 0xb021524b, Offset: 0x1f18
 // Size: 0x54c
 function init_clientfields() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     clientfield::register("actor", "zombie_riser_fx", 1, 1, "int", &handle_zombie_risers, 1, 1);
     if (is_true(level.use_water_risers)) {
         clientfield::register("actor", "zombie_riser_fx_water", 1, 1, "int", &handle_zombie_risers_water, 1, 1);
@@ -1279,9 +1271,7 @@ function rise_dust_fx(clientnum, type, billow_fx, burst_fx) {
 // Checksum 0xe138898b, Offset: 0x4cc8
 // Size: 0x34
 function on_player_laststand(localclientnum) {
-    /#
-        println("<unknown string>" + localclientnum);
-    #/
+    println("<unknown string>" + localclientnum);
 }
 
 // Namespace zm/zm
@@ -1290,13 +1280,9 @@ function on_player_laststand(localclientnum) {
 // Size: 0x8c
 function end_last_stand(clientnum) {
     self waittill(#"laststandend");
-    /#
-        println("<unknown string>" + clientnum);
-    #/
+    println("<unknown string>" + clientnum);
     wait(0.7);
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     playsound(clientnum, #"revive_gasp");
 }
 
@@ -1307,9 +1293,7 @@ function end_last_stand(clientnum) {
 function last_stand_thread(clientnum) {
     self thread end_last_stand(clientnum);
     self endon(#"laststandend");
-    /#
-        println("<unknown string>" + clientnum);
-    #/
+    println("<unknown string>" + clientnum);
     pause = 0.5;
     for (vol = 0.5; true; vol = 1) {
         id = playsound(clientnum, #"chr_heart_beat");
@@ -1523,11 +1507,7 @@ function function_f73c3352() {
             var_2d9402be = &forcestreamxmodel;
             break;
         default:
-            /#
-                /#
-                    assert(0, "<unknown string>" + mapbundle.var_a4d41b30 + "<unknown string>" + struct.asset + "<unknown string>");
-                #/
-            #/
+            assert(0, "<unknown string>" + mapbundle.var_a4d41b30 + "<unknown string>" + struct.asset + "<unknown string>");
             var_2d9402be = undefined;
             break;
         }

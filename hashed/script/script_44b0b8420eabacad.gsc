@@ -134,9 +134,7 @@ function get_random_intermission_point() {
     if (!spawnpoints.size) {
         spawnpoints = get_spawnpoint_array("info_player_start");
     }
-    /#
-        assert(spawnpoints.size);
-    #/
+    assert(spawnpoints.size);
     spawnpoint = get_spawnpoint_random(spawnpoints, undefined, 1);
     return spawnpoint;
 }
@@ -214,9 +212,7 @@ function get_spawnpoint_array(classname, include_disabled = 0) {
 function drop_spawn_points(spawnpointname) {
     spawnpoints = get_spawnpoint_array(spawnpointname);
     if (!spawnpoints.size) {
-        /#
-            println("<unknown string>" + spawnpointname + "<unknown string>");
-        #/
+        println("<unknown string>" + spawnpointname + "<unknown string>");
         return;
     }
     for (index = 0; index < spawnpoints.size; index++) {
@@ -325,9 +321,7 @@ function function_82ca1565(spawnpoint, gametype) {
     case #"spy":
         return is_true(spawnpoint.spy);
     default:
-        /#
-            assertmsg("<unknown string>" + gametype + "<unknown string>" + spawnpoint.origin[0] + "<unknown string>" + spawnpoint.origin[1] + "<unknown string>" + spawnpoint.origin[2]);
-        #/
+        assertmsg("<unknown string>" + gametype + "<unknown string>" + spawnpoint.origin[0] + "<unknown string>" + spawnpoint.origin[1] + "<unknown string>" + spawnpoint.origin[2]);
         break;
     }
     return 0;
@@ -355,7 +349,7 @@ function is_spawn_trapped(team) {
 // Checksum 0x82c4822, Offset: 0x1580
 // Size: 0x7e
 function function_e1a7c3d9(spawn_origin, spawn_angles) {
-    var_50747a19 = spawn_origin + vectorscale((0, 0, 1), 60);
+    var_50747a19 = spawn_origin + (0, 0, 60);
     self predictspawnpoint(var_50747a19, spawn_angles);
     self.predicted_spawn_point = {#origin:var_50747a19, #angles:spawn_angles};
 }
@@ -376,9 +370,7 @@ function function_754c78a6(func_callback) {
 // Checksum 0xeace7b25, Offset: 0x1658
 // Size: 0xe2
 function function_4c00b132(func_callback) {
-    /#
-        assert(isdefined(level.var_811300ad) && level.var_811300ad.size, "<unknown string>");
-    #/
+    assert(isdefined(level.var_811300ad) && level.var_811300ad.size, "<unknown string>");
     foreach (index, func in level.var_811300ad) {
         if (func == func_callback) {
             arrayremoveindex(level.var_811300ad, index, 0);

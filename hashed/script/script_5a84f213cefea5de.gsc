@@ -54,9 +54,7 @@ function private function_116fd9a7() {
 // Checksum 0x6e2a20b5, Offset: 0x300
 // Size: 0x154
 function private function_77512b90(killstreakbundle, hasscorestreak = 0) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self notify(#"hash_5cd53481d07fa89c");
     self endon(#"death", #"disconnect", #"hash_5cd53481d07fa89c");
     if (isdefined(self.var_48590990)) {
@@ -152,9 +150,7 @@ function private function_a712496a(item, player, *networkid, *itemid, itemcount,
     }
     var_4f3ed40 = function_9f1cc9a9(primaryweapon) != 0;
     var_8b94e68d = function_9f1cc9a9(stowedweapon) != 0;
-    /#
-        assert(!(var_4f3ed40 && var_8b94e68d));
-    #/
+    assert(!(var_4f3ed40 && var_8b94e68d));
     weapon = namespace_a0d533d1::function_2b83d3ff(itemcount);
     if (var_4f3ed40 || !var_8b94e68d) {
         weapon = function_eeddea9a(weapon, 1);

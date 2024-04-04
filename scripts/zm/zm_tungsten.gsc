@@ -296,7 +296,6 @@ function function_9a17632d() {
 function function_88a42ff9() {
     level endon(#"end_game");
     while (true) {
-        s_waitresult = undefined;
         s_waitresult = level waittill(#"hash_e39eca74fa250b4");
         s_magic_box = s_waitresult.s_magic_box;
         if (!isdefined(s_magic_box.script_noteworthy)) {
@@ -1402,7 +1401,6 @@ function function_9f46dbde() {
     function_6b214340(8);
     level thread function_ecf00b5(var_fdb8ea91, var_99963ba3);
     while (level.var_a4642f0a < var_99963ba3) {
-        s_waitresult = undefined;
         s_waitresult = level waittill(#"hash_6d7ff9f9ff07619c");
         level.var_a4642f0a = level.var_a4642f0a + 1;
         var_93bd7be9 = s_waitresult.ai_mimic;
@@ -1522,9 +1520,7 @@ function function_6b214340(var_d3329483) {
             wait(0.5);
             continue;
         }
-        /#
-            println("targetname");
-        #/
+        println("targetname");
     }
 }
 
@@ -1901,7 +1897,7 @@ function function_bf14bffe() {
     while (true) {
         var_1e8cb595 = undefined;
         if (self zm_zonemgr::is_player_in_zone(level.var_dc2ca204, 1)) {
-            var_1e8cb595 = bullettracepassed(self.origin, self.origin + vectorscale((0, 0, 1), 10000), 0, self);
+            var_1e8cb595 = bullettracepassed(self.origin, self.origin + (0, 0, 10000), 0, self);
         }
         if (is_true(var_1e8cb595) && !self flag::get(#"hash_1561f2d74277f5a1") && !is_true(self.var_16735873)) {
             self flag::set(#"hash_1561f2d74277f5a1");
@@ -2528,7 +2524,6 @@ function run_step(ee, step, var_5ea5c94d) {
         step.started = 1;
         self thread function_3f795dc3(ee, step, var_5ea5c94d);
         if (!step.completed) {
-            waitresult = undefined;
             waitresult = self waittill(step.var_e788cdd7 + "<unknown string>", step.var_e788cdd7 + "<unknown string>");
         }
         if (game.state === #"postgame") {
@@ -2609,7 +2604,6 @@ function function_23031ae8(ee_name, var_f2c264bb) {
         if (function_284985a5(ee_name, step.name)) {
             if (!step.started) {
                 wait_time = 10 * ee.steps.size;
-                waitresult = undefined;
                 waitresult = self waittilltimeout(wait_time, step.var_e788cdd7 + "<unknown string>");
                 if (waitresult._notify == #"timeout") {
                     /#
@@ -2886,7 +2880,7 @@ function function_d4738f46() {
                         }
                     }
                     if (b_safe) {
-                        player setorigin(s_loc.origin + vectorscale((0, 0, 1), 32));
+                        player setorigin(s_loc.origin + (0, 0, 32));
                         player setvelocity((0, 0, 0));
                         break;
                     }

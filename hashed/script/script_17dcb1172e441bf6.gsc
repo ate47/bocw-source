@@ -240,7 +240,7 @@ function function_72f01f3f(origin, radius, time, color = (0, 1, 0)) {
             players = getplayers();
             angletoplayer = vectortoangles(origin - players[0].origin);
             for (i = 0; i < circleres; i++) {
-                plotpoints[plotpoints.size] = origin + vectorscale(anglestoforward(angletoplayer + (rad, 90, 0)), radius) + vectorscale((0, 0, 1), 12);
+                plotpoints[plotpoints.size] = origin + vectorscale(anglestoforward(angletoplayer + (rad, 90, 0)), radius) + (0, 0, 12);
                 rad = rad + circleinc;
             }
             function_f8c6064(plotpoints, color, var_264789d0);

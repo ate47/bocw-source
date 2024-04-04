@@ -348,7 +348,7 @@ function function_a1a1d2(weapon_name, var_e9040287, item_name, chalk_model, inde
     v_center = chalk_model getcentroid();
     var_8bda2b44 = v_center[1] - chalk_model.origin[1];
     trigger = self content_manager::function_22e120bc(self, &function_ab0340bb, hint, weapon.displayname, 25, var_7f9f4eb, 32, (0, var_8bda2b44, 0), cost);
-    trigger.angles = chalk_model.angles + vectorscale((0, 1, 0), 90);
+    trigger.angles = chalk_model.angles + (0, 90, 0);
     v_forward = anglestoforward(trigger.angles) * 10;
     trigger.origin = trigger.origin - v_forward;
     trigger.weapon = weapon;
@@ -837,15 +837,11 @@ function add_dynamic_wallbuy(weapon, wallbuy, pristine) {
         }
     }
     if (!isdefined(spawned_wallbuy)) {
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         return;
     }
     if (isdefined(spawned_wallbuy.trigger_stub)) {
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         return;
     }
     target_struct = struct::get(wallbuy, "targetname");
@@ -1127,7 +1123,6 @@ function weapon_spawn_think() {
         }
     }
     for (;;) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
         currentweapon = player getcurrentweapon();

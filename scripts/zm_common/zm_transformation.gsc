@@ -35,9 +35,7 @@ function preinit() {
 // Checksum 0x62a4d46c, Offset: 0x250
 // Size: 0x100
 function function_4da8230b(var_736940b3) {
-    /#
-        assert(ishash(var_736940b3), "<unknown string>");
-    #/
+    assert(ishash(var_736940b3), "<unknown string>");
     if (!isdefined(level.var_50f7dbd5)) {
         level.var_50f7dbd5 = [];
     } else if (!isarray(level.var_50f7dbd5)) {
@@ -55,9 +53,7 @@ function function_4da8230b(var_736940b3) {
 // Checksum 0xf7134306, Offset: 0x358
 // Size: 0x12c
 function function_6b183c78(var_736940b3) {
-    /#
-        assert(ishash(var_736940b3), "<unknown string>");
-    #/
+    assert(ishash(var_736940b3), "<unknown string>");
     foreach (index, name_hash in level.var_50f7dbd5) {
         if (name_hash == var_736940b3) {
             var_689205d = index;
@@ -86,9 +82,7 @@ function function_770908a2() {
 // Checksum 0x58a6e574, Offset: 0x4c0
 // Size: 0x49c
 function function_cfca77a7(var_42de336c, id, condition_func, cooldown_time, intro_func, outro_func, var_44c5827d, var_99fca475, var_accb1c92) {
-    /#
-        assert(!isdefined(level.var_b175714d[id]));
-    #/
+    assert(!isdefined(level.var_b175714d[id]));
     /#
         if (!isdefined(var_42de336c)) {
             println("<unknown string>" + id + "<unknown string>");
@@ -205,9 +199,7 @@ function function_bdd8aba6(id) {
 // Checksum 0x6fcbf87c, Offset: 0xc70
 // Size: 0x58
 function function_3f502557(id) {
-    /#
-        assert(level.var_b175714d[id].var_33e393a7 > 0);
-    #/
+    assert(level.var_b175714d[id].var_33e393a7 > 0);
     level.var_b175714d[id].var_33e393a7--;
 }
 
@@ -216,15 +208,9 @@ function function_3f502557(id) {
 // Checksum 0x6e54c1e3, Offset: 0xcd0
 // Size: 0x1a4
 function function_d2374144(entity, id) {
-    /#
-        assert(!is_true(entity.var_69a981e6));
-    #/
-    /#
-        assert(!isinarray(level.var_b175714d[id].var_2939a01a, entity));
-    #/
-    /#
-        assert(!is_true(entity.var_d41ca76d));
-    #/
+    assert(!is_true(entity.var_69a981e6));
+    assert(!isinarray(level.var_b175714d[id].var_2939a01a, entity));
+    assert(!is_true(entity.var_d41ca76d));
     entity.var_d41ca76d = id;
     if (!isdefined(level.var_b175714d[id].var_2939a01a)) {
         level.var_b175714d[id].var_2939a01a = [];
@@ -240,12 +226,8 @@ function function_d2374144(entity, id) {
 // Checksum 0x409961a0, Offset: 0xe80
 // Size: 0x80
 function function_1afce5aa(entity) {
-    /#
-        assert(isdefined(entity.var_d41ca76d));
-    #/
-    /#
-        assert(isinarray(level.var_b175714d[entity.var_d41ca76d].var_2939a01a, entity));
-    #/
+    assert(isdefined(entity.var_d41ca76d));
+    assert(isinarray(level.var_b175714d[entity.var_d41ca76d].var_2939a01a, entity));
     entity notify(#"hash_610e5a8c0ec1a4b6");
 }
 
@@ -335,7 +317,6 @@ function function_a261938f(entity) {
 // Checksum 0xee093562, Offset: 0x1300
 // Size: 0xb6
 function private function_525526be(id) {
-    waitresult = undefined;
     waitresult = self waittill(#"death", #"transformation_started", #"hash_610e5a8c0ec1a4b6");
     if (waitresult._notify != "death") {
         self.var_d41ca76d = undefined;
@@ -366,16 +347,12 @@ function private function_4e679db4(id, def) {
 // Size: 0xc8
 function private function_c81eb299(id, def) {
     if (isdefined(def.spawner)) {
-        /#
-            assert(def.spawner.var_ab46c56 == id, "<unknown string>");
-        #/
+        assert(def.spawner.var_ab46c56 == id, "<unknown string>");
         def.spawner.var_ab46c56 = undefined;
         return;
     }
     if (isdefined(def.aitype)) {
-        /#
-            assert(level.var_170852dc[def.aitype] == id, "<unknown string>");
-        #/
+        assert(level.var_170852dc[def.aitype] == id, "<unknown string>");
         level.var_170852dc[def.aitype] = undefined;
     }
 }
@@ -768,7 +745,7 @@ function function_3f433f41() {
         if (!isdefined(zombie)) {
             return;
         }
-        zombie forceteleport(trace[#"position"], player.angles + vectorscale((0, 1, 0), 180));
+        zombie forceteleport(trace[#"position"], player.angles + (0, 180, 0));
         return zombie;
     #/
 }

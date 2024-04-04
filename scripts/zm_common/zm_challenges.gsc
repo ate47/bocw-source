@@ -1559,7 +1559,6 @@ function function_4281b2f1(*params) {
 function spent_points_tracking() {
     level endon(#"end_game");
     while (true) {
-        result = undefined;
         result = level waittill(#"spent_points");
         player = result.player;
         n_points = result.points;
@@ -1589,7 +1588,6 @@ function function_73696786() {
     self endon(#"disconnect");
     var_c0e0819a = 1;
     while (true) {
-        s_result = undefined;
         s_result = self waittill(#"hash_13948ef3726b968f");
         if (is_true(var_c0e0819a)) {
             /#
@@ -1614,7 +1612,6 @@ function function_5bec2304() {
     self.var_bd0352a9 = [];
     self.var_c0e11f30 = {#time:gettime(), #count:0};
     while (true) {
-        s_result = undefined;
         s_result = self waittill(#"perk_acquired");
         if (self.var_c0e11f30.time > gettime() - 6000) {
             self.var_c0e11f30 = {#time:gettime(), #count:self.var_c0e11f30.count + 1};
@@ -1721,7 +1718,6 @@ function function_5bec2304() {
 function function_e365b5ab() {
     self endon(#"disconnect");
     while (true) {
-        s_result = undefined;
         s_result = self waittill(#"hash_4de2d5115dc310e2");
         self.var_152810ff[6] = 0;
         self function_4281b2f1();
@@ -1735,7 +1731,6 @@ function function_e365b5ab() {
 function function_169107a0() {
     self endon(#"disconnect");
     while (true) {
-        s_result = undefined;
         s_result = self waittill(#"hash_75ec9942d2d5fd0f");
         self.var_152810ff[6] = 0;
         self function_4281b2f1();
@@ -1749,7 +1744,6 @@ function function_169107a0() {
 function function_d61cb0eb() {
     self endon(#"disconnect");
     while (true) {
-        s_result = undefined;
         s_result = level waittill(#"hash_159f5d1e1b511031");
         self.var_152810ff[6] = 0;
         if (s_result.player === self) {
@@ -1788,7 +1782,6 @@ function function_b3862180() {
     function_5bce3615();
     self.var_55f98899 = [];
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"zone_change");
         if (is_true(level.var_92c52eed)) {
             if (!isdefined(self.var_55f98899)) {
@@ -1848,9 +1841,7 @@ function function_b3862180() {
 // Checksum 0x3692183f, Offset: 0x9588
 // Size: 0x1c4
 function function_3e8babbf(str_map_name) {
-    /#
-        assert(isdefined(str_map_name), "<unknown string>");
-    #/
+    assert(isdefined(str_map_name), "<unknown string>");
     if (str_map_name === #"zm_tungsten") {
         var_d3f0948b = #"hash_307ac432179b93ba";
     } else if (str_map_name === #"zm_platinum") {
@@ -1934,7 +1925,6 @@ function function_f6cfe355() {
 function function_4f4a3c59() {
     self endon(#"disconnect");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"hash_18e59631bf777496");
         if (isdefined(waitresult.heal_amount) && waitresult.heal_amount > 0 && isdefined(self.var_9cd2c51d.var_43797ec0) && self.var_9cd2c51d.var_43797ec0.statname === #"hash_364914e1708cb629") {
             if (waitresult.heal_amount > 100) {
@@ -1986,7 +1976,6 @@ function function_874334a5() {
 function function_79deb4a0() {
     self endon(#"disconnect");
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"hash_4fbe4720f6f13107", #"hash_383cbd169f8d0938");
         if (waitresult.b_success === 1) {
             players = function_a1ef346b();
@@ -2073,7 +2062,6 @@ function function_82383b3e() {
 function function_12a35616() {
     self endon(#"disconnect");
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"blueprint_completed");
         if (isdefined(waitresult.produced) && is_true(waitresult.produced.isriotshield)) {
             /#
@@ -2499,9 +2487,7 @@ function function_bc7f70a4() {
 // Checksum 0xae2683ef, Offset: 0xc338
 // Size: 0x13a
 function function_dc7c4fb9(...) {
-    /#
-        assert(vararg.size > 1);
-    #/
+    assert(vararg.size > 1);
     if (vararg.size <= 1) {
         return 0;
     }
@@ -2510,9 +2496,7 @@ function function_dc7c4fb9(...) {
     }
     result = 0;
     if (isdefined(self)) {
-        /#
-            assert(isplayer(self), "<unknown string>");
-        #/
+        assert(isplayer(self), "<unknown string>");
         value = vararg[vararg.size - 1];
         arrayremoveindex(vararg, vararg.size - 1);
         result = self writestat(2, vararg, value);

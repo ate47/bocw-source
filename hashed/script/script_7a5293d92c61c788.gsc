@@ -87,9 +87,7 @@ function function_1cbc3614(var_beee4994) {
 // Checksum 0xb1bbb7f8, Offset: 0x678
 // Size: 0x43c
 function function_93a99046(struct) {
-    /#
-        assert(isstruct(struct), "<unknown string>");
-    #/
+    assert(isstruct(struct), "<unknown string>");
     if (zm_utility::is_survival() || is_true(level.var_1b57c9ca)) {
         model = #"hash_6847db4bdfca2dc8";
         if (zm_utility::is_survival()) {
@@ -182,9 +180,7 @@ function function_e255b251() {
 function function_fe5f8894(eventstruct) {
     player = eventstruct.activator;
     machine = self.scriptmodel;
-    /#
-        assert(isdefined(machine), "<unknown string>");
-    #/
+    assert(isdefined(machine), "<unknown string>");
     if (isplayer(player)) {
         if (!level.var_2a994cc0 sr_armor_menu::is_open(player) && !player clientfield::get_player_uimodel("hudItems.srOverlayOpen") && machine.script_noteworthy !== "power") {
             player notify(#"hash_5f178db4550eeae9");
@@ -387,7 +383,6 @@ function function_cb2d9b9b(machine, trigger) {
         while (isplayer(self) && self isswitchingweapons() || isplayer(self) && self getcurrentweapon() == level.weaponnone) {
             waitframe(1);
         }
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         response = waitresult.response;

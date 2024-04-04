@@ -7,22 +7,6 @@
 // Method(s) 13 Total 20
 class class_fb1bfa12 : cluielem {
 
-    // Namespace class_fb1bfa12/namespace_8f760a1e
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x8037b073, Offset: 0x528
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_fb1bfa12/namespace_8f760a1e
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x291be1e8, Offset: 0x9c0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_fb1bfa12/namespace_8f760a1e
     // Params 1, eflags: 0x2 linked
     // Checksum 0x18c5b0d0, Offset: 0x808
@@ -36,7 +20,7 @@ class class_fb1bfa12 : cluielem {
     // Checksum 0x1ac9397e, Offset: 0x918
     // Size: 0x30
     function function_10415bce(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "lvlDescriptionShort", value);
+        set_data(localclientnum, "lvlDescriptionShort", value);
     }
 
     // Namespace namespace_fb1bfa12/namespace_8f760a1e
@@ -44,7 +28,7 @@ class class_fb1bfa12 : cluielem {
     // Checksum 0x5e687928, Offset: 0x950
     // Size: 0x30
     function function_275127c2(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "lvlDescriptionLong", value);
+        set_data(localclientnum, "lvlDescriptionLong", value);
     }
 
     // Namespace namespace_fb1bfa12/namespace_8f760a1e
@@ -52,7 +36,7 @@ class class_fb1bfa12 : cluielem {
     // Checksum 0xb8f77b3e, Offset: 0x988
     // Size: 0x30
     function function_3d5ae5d4(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "lvlProgress", value);
+        set_data(localclientnum, "lvlProgress", value);
     }
 
     // Namespace namespace_fb1bfa12/namespace_8f760a1e
@@ -60,7 +44,7 @@ class class_fb1bfa12 : cluielem {
     // Checksum 0xf0d3f5ae, Offset: 0x870
     // Size: 0x30
     function function_57d3362b(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "activeState", value);
+        set_data(localclientnum, "activeState", value);
     }
 
     // Namespace namespace_fb1bfa12/namespace_8f760a1e
@@ -91,7 +75,7 @@ class class_fb1bfa12 : cluielem {
     // Checksum 0x9384dc91, Offset: 0x8e0
     // Size: 0x30
     function function_c063a71c(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "lvlName", value);
+        set_data(localclientnum, "lvlName", value);
     }
 
     // Namespace namespace_fb1bfa12/namespace_8f760a1e
@@ -99,7 +83,7 @@ class class_fb1bfa12 : cluielem {
     // Checksum 0x9c4d499, Offset: 0x8a8
     // Size: 0x30
     function function_c2c6a8c3(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "lvlYear", value);
+        set_data(localclientnum, "lvlYear", value);
     }
 
     // Namespace namespace_fb1bfa12/namespace_8f760a1e
@@ -107,7 +91,7 @@ class class_fb1bfa12 : cluielem {
     // Checksum 0xf598fb24, Offset: 0x838
     // Size: 0x30
     function set_entnum(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "entNum", value);
+        set_data(localclientnum, "entNum", value);
     }
 
     // Namespace namespace_fb1bfa12/namespace_8f760a1e
@@ -116,13 +100,13 @@ class class_fb1bfa12 : cluielem {
     // Size: 0x118
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "entNum", 0);
-        [[ self ]]->set_data(localclientnum, "activeState", 0);
-        [[ self ]]->set_data(localclientnum, "lvlYear", 0);
-        [[ self ]]->set_data(localclientnum, "lvlName", #"");
-        [[ self ]]->set_data(localclientnum, "lvlDescriptionShort", #"");
-        [[ self ]]->set_data(localclientnum, "lvlDescriptionLong", #"");
-        [[ self ]]->set_data(localclientnum, "lvlProgress", 0);
+        set_data(localclientnum, "entNum", 0);
+        set_data(localclientnum, "activeState", 0);
+        set_data(localclientnum, "lvlYear", 0);
+        set_data(localclientnum, "lvlName", #"");
+        set_data(localclientnum, "lvlDescriptionShort", #"");
+        set_data(localclientnum, "lvlDescriptionLong", #"");
+        set_data(localclientnum, "lvlProgress", 0);
     }
 
 }

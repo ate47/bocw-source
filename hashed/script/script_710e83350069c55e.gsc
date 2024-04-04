@@ -8,21 +8,8 @@
 // Method(s) 13 Total 20
 class class_276088fe : cluielem {
 
-    // Namespace class_276088fe/luielem_entity_bar
-    // Params 0, eflags: 0x8
-    // Checksum 0xc5aa3cdb, Offset: 0x3a0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_276088fe/luielem_entity_bar
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x7f9354a3, Offset: 0x980
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_276088fe/luielem_entity_bar
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class class_276088fe : cluielem {
     // Checksum 0x7f66e25d, Offset: 0x840
     // Size: 0x44
     function function_4f6e830d(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "offset_y", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "offset_y", value);
     }
 
     // Namespace namespace_276088fe/luielem_entity_bar
@@ -53,7 +40,7 @@ class class_276088fe : cluielem {
     // Checksum 0xe56d87b3, Offset: 0x7f0
     // Size: 0x44
     function function_61312692(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "offset_x", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "offset_x", value);
     }
 
     // Namespace namespace_276088fe/luielem_entity_bar
@@ -61,7 +48,7 @@ class class_276088fe : cluielem {
     // Checksum 0x35a5b43e, Offset: 0x890
     // Size: 0x44
     function function_7ddfdfef(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "offset_z", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "offset_z", value);
     }
 
     // Namespace namespace_276088fe/luielem_entity_bar
@@ -85,7 +72,7 @@ class class_276088fe : cluielem {
     // Checksum 0x9f301ec0, Offset: 0x930
     // Size: 0x44
     function function_a9793a65(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "entityScale", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "entityScale", value);
     }
 
     // Namespace namespace_276088fe/luielem_entity_bar
@@ -93,7 +80,7 @@ class class_276088fe : cluielem {
     // Checksum 0x12dea6ee, Offset: 0x7a0
     // Size: 0x44
     function set_entnum(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "entnum", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "entnum", value);
     }
 
     // Namespace namespace_276088fe/luielem_entity_bar
@@ -102,30 +89,26 @@ class class_276088fe : cluielem {
     // Size: 0x1a4
     function set_state(player, state_name) {
         if (#"defaultstate" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 0);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 0);
             return;
         }
         if (#"friendlyblue" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 1);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 1);
             return;
         }
         if (#"green" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 2);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 2);
             return;
         }
         if (#"yellow" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 3);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 3);
             return;
         }
         if (#"red" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 4);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 4);
             return;
         }
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
     }
 
     // Namespace namespace_276088fe/luielem_entity_bar
@@ -133,7 +116,7 @@ class class_276088fe : cluielem {
     // Checksum 0x53ccca41, Offset: 0x8e0
     // Size: 0x44
     function function_dfed4b05(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "entityClamp", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "entityClamp", value);
     }
 
     // Namespace namespace_276088fe/luielem_entity_bar
@@ -141,7 +124,7 @@ class class_276088fe : cluielem {
     // Checksum 0xd85dda57, Offset: 0x750
     // Size: 0x44
     function function_ecacbaa5(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "progress_percent", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "progress_percent", value);
     }
 
 }

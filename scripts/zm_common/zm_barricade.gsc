@@ -72,7 +72,7 @@ function function_14354831() {
     if (!isdefined(str_target)) {
         return;
     }
-    pos = zm_utility::groundpos(self.origin) + vectorscale((0, 0, 1), 8);
+    pos = zm_utility::groundpos(self.origin) + (0, 0, 8);
     if (isdefined(pos)) {
         self.origin = pos;
     }
@@ -148,7 +148,6 @@ function private function_d58c97c8() {
 function private function_348283c9() {
     level endon(#"stop_blocker_think");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"zombie_board_tear", #"hash_5cfbbb6ee8378665");
         if (waitresult._notify === #"hash_5cfbbb6ee8378665") {
             chunks = zm_utility::get_non_destroyed_chunks(self, self.barrier_chunks);
@@ -173,7 +172,6 @@ function private function_348283c9() {
 function private function_55ce3493() {
     level endon(#"stop_blocker_think");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"hash_1748b3e6967cf7aa", #"hash_45aa77702fef26f4");
         var_1b8b64ca = self.attack_spots_taken.size;
         var_6195506c = 0;

@@ -173,21 +173,15 @@ function play() {
     level.player flag::set(#"hash_6b3b32a84fb4bd01");
     function_eee069b6(1);
     var_cffbeaae = struct::get(#"hash_23c049910e1e4a97");
-    /#
-        assert(isdefined(var_cffbeaae));
-    #/
-    /#
-        assert(isdefined(self.target));
-    #/
+    assert(isdefined(var_cffbeaae));
+    assert(isdefined(self.target));
     var_f35de83 = struct::get(self.target);
     self function_8de07df8(var_cffbeaae, var_f35de83);
     if (isdefined(self.script_noteworthy)) {
         function_7718419d(self.script_noteworthy);
         if (isdefined(var_f35de83.target)) {
             var_ca4dc1d1 = getdynentarray(var_f35de83.target, 1);
-            /#
-                assert(var_ca4dc1d1.size == 1);
-            #/
+            assert(var_ca4dc1d1.size == 1);
             level.player thread function_939f5cad(var_ca4dc1d1[0]);
         }
     }
@@ -202,7 +196,6 @@ function private function_939f5cad(machine) {
     self endon("77bacd1333d8cd85");
     self endon(#"death", #"hash_763ad9ddb7081df4");
     do {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         response = waitresult.response;
@@ -222,19 +215,13 @@ function exit() {
         level.player = getplayers()[0];
     }
     var_cffbeaae = struct::get(#"hash_23c049910e1e4a97");
-    /#
-        assert(isdefined(var_cffbeaae));
-    #/
-    /#
-        assert(isdefined(self.target));
-    #/
+    assert(isdefined(var_cffbeaae));
+    assert(isdefined(self.target));
     var_f35de83 = struct::get(self.target);
     function_b2669077();
     if (isdefined(var_f35de83.target)) {
         var_ca4dc1d1 = getdynentarray(struct::get(self.target).target, 1);
-        /#
-            assert(var_ca4dc1d1.size == 1);
-        #/
+        assert(var_ca4dc1d1.size == 1);
         function_e2a06860(var_ca4dc1d1[0], 0);
     }
     level.player function_44d63ecd(1, 0.6);

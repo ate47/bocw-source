@@ -50,7 +50,7 @@ function event_handler[level_init] main(*eventstruct) {
     hidemiscmodels("exfil_border");
     var_bbdb0dfe = getent("exfil_heli_slick", "targetname");
     if (isdefined(var_bbdb0dfe)) {
-        var_bbdb0dfe moveto(var_bbdb0dfe.origin + vectorscale((0, 0, -1), 100), 0.1);
+        var_bbdb0dfe moveto(var_bbdb0dfe.origin + (0, 0, -100), 0.1);
         var_bbdb0dfe notsolid();
     }
     if (zm_utility::is_classic()) {
@@ -167,9 +167,9 @@ function function_c70a47c(var_3ec7083c) {
     }
     level thread function_3919ed28();
     level flag::set("exfil_heli_arrived");
-    objective_setposition(level.var_fdcaf3a6.var_e55c8b4e, self.origin + vectorscale((0, 0, -1), 48));
+    objective_setposition(level.var_fdcaf3a6.var_e55c8b4e, self.origin + (0, 0, -48));
     objective_onentity(level.var_fdcaf3a6.var_e55c8b4e, self);
-    self pathvariableoffset(vectorscale((1, 1, 0), 5), 1);
+    self pathvariableoffset((5, 5, 0), 1);
     self sethoverparams(30, 50, 50);
     level flag::wait_till_any(array(#"hash_81da36e4389f10a", #"exfil_cleared"));
     if (level flag::get(#"exfil_cleared")) {
@@ -197,7 +197,7 @@ function function_c70a47c(var_3ec7083c) {
             self vehicle::get_off_path();
             self makevehicleunusable();
             self sethoverparams(3, 5, 10);
-            self pathvariableoffset(vectorscale((1, 1, 0), 5), 1);
+            self pathvariableoffset((5, 5, 0), 1);
         }
         level thread function_595332df();
         level thread function_aee71618(var_3ec7083c);
@@ -314,13 +314,9 @@ function function_60c104b6(instance, var_eece1f6a) {
 // Checksum 0xeebdcf52, Offset: 0x1730
 // Size: 0xd4
 function private function_3eef60e4(helicopter) {
-    /#
-        assert(!isdefined(helicopter.rope));
-    #/
+    assert(!isdefined(helicopter.rope));
     helicopter.rope = util::spawn_anim_model(#"hash_508e38dfaf48d104", helicopter.origin);
-    /#
-        assert(isdefined(helicopter.rope));
-    #/
+    assert(isdefined(helicopter.rope));
     helicopter.rope notsolid();
     helicopter.rope linkto(helicopter, "tag_origin_animate");
     helicopter.rope hide();
@@ -331,9 +327,7 @@ function private function_3eef60e4(helicopter) {
 // Checksum 0xdcdeb636, Offset: 0x1810
 // Size: 0x104
 function private function_7082507b(helicopter) {
-    /#
-        assert(isdefined(helicopter.rope));
-    #/
+    assert(isdefined(helicopter.rope));
     helicopter endon(#"death", #"hash_4c9df8896f727a2e");
     helicopter.rope endon(#"death");
     helicopter.rope show();
@@ -347,9 +341,7 @@ function private function_7082507b(helicopter) {
 // Checksum 0x3f116ef4, Offset: 0x1920
 // Size: 0x88
 function private function_89baf3(helicopter) {
-    /#
-        assert(isdefined(helicopter.rope));
-    #/
+    assert(isdefined(helicopter.rope));
     while (true) {
         helicopter.rope animation::play(#"hash_79f7c6405bc5958e", helicopter, "tag_origin_animate", 1, 0.1, 0.1, undefined, undefined, undefined, 0);
     }
@@ -364,7 +356,7 @@ function function_1913632(helicopter) {
     wait(1.5);
     helicopter thread function_7082507b(helicopter);
     helicopter waittill(#"hash_13b3aacf002f7c8f");
-    var_4adc70ee = vectorscale((0, 0, 1), 825);
+    var_4adc70ee = (0, 0, 825);
     var_e442adb8 = helicopter.rope gettagorigin("carabiner_jnt") + var_4adc70ee;
     level.var_fdcaf3a6.trigger = spawn("trigger_radius_use", var_e442adb8, 0, 80, 100);
     level.var_fdcaf3a6.trigger setcursorhint("HINT_NOICON");
@@ -429,7 +421,7 @@ function function_93ef48b(vip, helicopter) {
     var_867f5d0 dontinterpolate();
     vip playerlinkto(var_867f5d0, undefined, 0, 0, 0, 0, 0);
     var_2bf4050a = 0.6;
-    var_d892ba80 = helicopter.rope gettagorigin("carabiner_jnt") + vectorscale((0, 0, 1), 825);
+    var_d892ba80 = helicopter.rope gettagorigin("carabiner_jnt") + (0, 0, 825);
     var_de324c05 = 5;
     var_867f5d0 function_3b897a2(vip, var_d892ba80, var_de324c05, var_2bf4050a);
     waittillframeend();
@@ -445,7 +437,7 @@ function function_93ef48b(vip, helicopter) {
     while (isdefined(var_867f5d0) && isalive(vip) && var_867f5d0.origin[2] < var_a080de98 && isdefined(helicopter.rope)) {
         var_443bf2ea = vip gettagorigin("j_spineupper");
         var_70f8d8e1 = vip.origin - var_443bf2ea + var_de324c05 * anglestoforward(vip.angles);
-        var_867f5d0.origin = helicopter.rope gettagorigin("carabiner_jnt") + var_70f8d8e1 + vectorscale((0, 0, 1), 825);
+        var_867f5d0.origin = helicopter.rope gettagorigin("carabiner_jnt") + var_70f8d8e1 + (0, 0, 825);
         waitframe(1);
     }
     if (!isdefined(vip) || !isalive(vip) || !isdefined(var_867f5d0)) {
@@ -767,7 +759,6 @@ function function_31125f54() {
             level thread scene::init_streamer(level.var_72a3d8bc, getplayers(), 0, 0);
         }
     }
-    waitresult = undefined;
     waitresult = level waittill(#"hash_4fbe4720f6f13107");
     level.var_117d5f10 makevehicleunusable();
     if (isdefined(level.var_ae2fe3bd)) {
@@ -969,7 +960,7 @@ function onbeginuse(player) {
     player playerlinkto(level.var_a5030fa0, undefined, 0, 0, 0, 0, 0);
     player function_66f3a713();
     var_a35cd71 = min(-14, playerangles[0]);
-    lookat = isdefined(self.helicopter.rope) ? self.helicopter.rope gettagorigin("carabiner_jnt") + vectorscale((0, 0, 1), 825) : self.origin;
+    lookat = isdefined(self.helicopter.rope) ? self.helicopter.rope gettagorigin("carabiner_jnt") + (0, 0, 825) : self.origin;
     goalyaw = vectortoyaw(lookat - player getplayercamerapos());
     var_8eef4f81 = absangleclamp180(playerangles[0] - var_a35cd71);
     var_9756b1d4 = absangleclamp180(playerangles[1] - goalyaw);
@@ -1048,7 +1039,7 @@ function function_17f88f7c(var_68cc0f1f) {
             }
             /#
                 if (getdvarint(#"hash_33b0be96bf3cd69a", 0) || getdvarint(#"hash_7466f1c38ea3ceab", 0)) {
-                    cylinder(v_spawn, v_spawn + vectorscale((0, 0, 1), 5000), 500, (1, 0, 0), 0, 10000);
+                    cylinder(v_spawn, v_spawn + (0, 0, 5000), 500, (1, 0, 0), 0, 10000);
                 }
             #/
             player thread function_64df57fc(v_spawn, var_62455b3e);
@@ -1089,7 +1080,6 @@ function function_5ddbfe57(var_68cc0f1f) {
     }
     var_196e22fd = spawn("trigger_radius", v_origin, 0, n_radius, n_height);
     while (!level flag::get(#"exfil_cleared")) {
-        s_result = undefined;
         s_result = var_196e22fd waittill(#"trigger");
         level flag::set(#"hash_58df1e8b20eb71d2");
         if (isplayer(s_result.activator)) {
@@ -1241,7 +1231,6 @@ function function_4b115eba(struct) {
     struct.spawn_radius = int(struct.spawn_radius);
     struct.var_48d0f926 = int(struct.var_48d0f926);
     trigger = spawn("trigger_radius", struct.origin - (0, 0, struct.height), 0, struct.radius, struct.height * 2);
-    s_result = undefined;
     s_result = trigger waittill(#"trigger");
     trigger delete();
     str_bundle = "default_zombies_realm_" + level.realm;
@@ -1762,7 +1751,6 @@ function function_7c05a985(destination) {
         if (isdefined(exfil)) {
             content_manager::spawn_instance(exfil);
         }
-        s_result = undefined;
         s_result = level waittill(#"objective_ended");
     }
     if (isdefined(level.contentmanager.var_14f09b99)) {
@@ -1833,7 +1821,6 @@ function function_5a957da0(destination) {
 function private function_39eec401(instance) {
     script = content_manager::get_script(instance.content_script_name);
     if (!getdvarint(#"hash_33b0be96bf3cd69a", 0)) {
-        s_result = undefined;
         s_result = level waittill(#"hash_345e9169ebba28fb", #"hash_3e765c26047c9f54");
     }
     if (s_result._notify === #"hash_3e765c26047c9f54" || getdvarint(#"hash_33b0be96bf3cd69a", 0)) {
@@ -1863,7 +1850,7 @@ function function_595332df() {
     if (isdefined(var_bbdb0dfe)) {
         zombie_utility::clear_all_corpses();
         var_bbdb0dfe solid();
-        var_bbdb0dfe moveto(var_bbdb0dfe.origin + vectorscale((0, 0, 1), 100), 3);
+        var_bbdb0dfe moveto(var_bbdb0dfe.origin + (0, 0, 100), 3);
     }
 }
 
@@ -2137,9 +2124,7 @@ function private delete_zombie_noone_looking() {
 // Size: 0xcc
 function cleanup_zombie() {
     if (!isalive(self)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
     self zombie_utility::reset_attack_spot();

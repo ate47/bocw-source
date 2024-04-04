@@ -107,9 +107,7 @@ function function_cb9d309b(var_beee4994) {
 // Checksum 0xd89c797a, Offset: 0x8d8
 // Size: 0x29c
 function function_e0069640(struct) {
-    /#
-        assert(isstruct(struct), "<unknown string>");
-    #/
+    assert(isstruct(struct), "<unknown string>");
     if (zm_utility::is_survival()) {
         var_c6d25878 = &zm_utility::function_f5a222a8;
     } else {
@@ -165,7 +163,6 @@ function function_f15be4f1() {
     self val::set("pap", "takedamage", 1);
     self.health = 1000000;
     while (true) {
-        s_result = undefined;
         s_result = self waittill(#"damage");
         self.health = self.health + s_result.amount;
         if (isplayer(s_result.attacker) && s_result.mod == "MOD_MELEE") {
@@ -190,9 +187,7 @@ function function_5b75a557(eventstruct) {
     machine = self.scriptmodel;
     player endon(#"death");
     self endon(#"death");
-    /#
-        assert(isdefined(machine), "<unknown string>");
-    #/
+    assert(isdefined(machine), "<unknown string>");
     if (isplayer(player)) {
         while (player isswitchingweapons()) {
             waitframe(1);
@@ -271,7 +266,6 @@ function function_e3af0084() {
             self clientfield::set_player_uimodel("pap_current", 0);
         }
         self zm_aat::function_ec7953fa();
-        waitresult = undefined;
         waitresult = self waittill(#"weapon_change", #"hash_4de2d5115dc310e2", #"hash_75ec9942d2d5fd0f", #"hash_5cd57762f792396b", #"hash_3713641b67661d30");
     }
 }
@@ -485,7 +479,6 @@ function function_4609e67c(machine, trigger) {
         while (self isswitchingweapons() || self getcurrentweapon() == level.weaponnone || is_true(self.var_c685a4c6)) {
             waitframe(1);
         }
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         response = waitresult.response;

@@ -84,15 +84,9 @@ function function_7dddb953(var_beee4994, *hint_string, *model) {
 // Checksum 0x685fc79b, Offset: 0x508
 // Size: 0x39c
 function function_db05041b(struct, hint_string, callbackfunction) {
-    /#
-        assert(isstruct(struct), "<unknown string>");
-    #/
-    /#
-        assert(isfunctionptr(callbackfunction), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(hint_string), "<unknown string>");
-    #/
+    assert(isstruct(struct), "<unknown string>");
+    assert(isfunctionptr(callbackfunction), "<unknown string>");
+    assert(isdefined(hint_string), "<unknown string>");
     if (zm_utility::is_survival() || is_true(level.var_76e8fb05)) {
         model = #"hash_15f88361c2fa15c";
         if (zm_utility::is_survival()) {
@@ -140,9 +134,7 @@ function function_e3ad9f54(eventstruct) {
     }
     player = eventstruct.activator;
     machine = self.scriptmodel;
-    /#
-        assert(isdefined(machine), "<unknown string>");
-    #/
+    assert(isdefined(machine), "<unknown string>");
     if (isplayer(player)) {
         if (!isdefined(player.var_1a69e47f)) {
             player.var_1a69e47f = [];
@@ -199,7 +191,7 @@ function function_366ba7f6() {
     }
     if (!self.var_496b54df) {
         self.var_496b54df = 1;
-        playsoundatposition(#"hash_12cfa31c1fb4a04", self.origin + vectorscale((0, 0, 1), 50));
+        playsoundatposition(#"hash_12cfa31c1fb4a04", self.origin + (0, 0, 50));
         return;
     }
     wait(30);
@@ -373,7 +365,6 @@ function function_4b23ad31(machine, trigger) {
     self endoncallback(&function_6c71e778, #"death");
     self thread function_a4aa10f4(machine, trigger);
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         if (is_true(self.var_486e4bcd)) {
             continue;

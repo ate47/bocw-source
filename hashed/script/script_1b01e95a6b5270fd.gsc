@@ -31,25 +31,28 @@
 // Method(s) 17 Total 17
 class class_3593c7e6 {
 
+    var m_name;
+    var m_type;
+    var var_24544f42;
+    var var_89dfe89b;
+    var var_9d95490b;
+    var var_b1b82dc;
+    var var_c0503cf7;
+    var var_c23bfa1e;
+    var var_edee94ca;
+    var var_fde25292;
+
     // Namespace class_3593c7e6/doa_enemy
     // Params 0, eflags: 0xa linked
     // Checksum 0xa7db2f15, Offset: 0x298
     // Size: 0x4e
-    __constructor() {
-        self.m_name = "";
-        self.var_edee94ca = undefined;
-        self.var_9d95490b = [];
-        self.var_24544f42 = 100;
-        self.var_c23bfa1e = undefined;
-        self.m_type = -1;
-    }
-
-    // Namespace namespace_3593c7e6/doa_enemy
-    // Params 0, eflags: 0x82 linked class_linked
-    // Checksum 0x80f724d1, Offset: 0x2f0
-    // Size: 0x4
-    function __destructor() {
-        
+    constructor() {
+        m_name = "";
+        var_edee94ca = undefined;
+        var_9d95490b = [];
+        var_24544f42 = 100;
+        var_c23bfa1e = undefined;
+        m_type = -1;
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
@@ -57,7 +60,7 @@ class class_3593c7e6 {
     // Checksum 0x27eb6f26, Offset: 0x408
     // Size: 0xa
     function function_10c2bd8() {
-        return self.var_c0503cf7;
+        return var_c0503cf7;
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
@@ -65,7 +68,7 @@ class class_3593c7e6 {
     // Checksum 0x2d99a4a5, Offset: 0x420
     // Size: 0xa
     function function_744739a() {
-        return self.var_89dfe89b;
+        return var_89dfe89b;
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
@@ -73,7 +76,7 @@ class class_3593c7e6 {
     // Checksum 0xc5cba342, Offset: 0x4a0
     // Size: 0xa
     function function_17454656() {
-        return self.var_24544f42;
+        return var_24544f42;
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
@@ -81,7 +84,7 @@ class class_3593c7e6 {
     // Checksum 0xd385d756, Offset: 0x3f0
     // Size: 0xa
     function getspawner() {
-        return self.var_edee94ca;
+        return var_edee94ca;
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
@@ -89,7 +92,7 @@ class class_3593c7e6 {
     // Checksum 0xf76129d5, Offset: 0x3a8
     // Size: 0xa
     function getname() {
-        return self.m_name;
+        return m_name;
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
@@ -97,7 +100,7 @@ class class_3593c7e6 {
     // Checksum 0x56a222ca, Offset: 0x450
     // Size: 0x1a
     function function_3262a6e9(var_c940cca) {
-        self.var_fde25292 = var_c940cca;
+        var_fde25292 = var_c940cca;
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
@@ -105,7 +108,7 @@ class class_3593c7e6 {
     // Checksum 0xb564f1d8, Offset: 0x538
     // Size: 0x24
     function function_36573e6c(name) {
-        self.var_9d95490b[self.var_9d95490b.size] = name;
+        var_9d95490b[var_9d95490b.size] = name;
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
@@ -113,7 +116,7 @@ class class_3593c7e6 {
     // Checksum 0x1fb8884b, Offset: 0x438
     // Size: 0xa
     function function_4a15d1dd() {
-        return self.var_fde25292;
+        return var_fde25292;
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
@@ -121,7 +124,7 @@ class class_3593c7e6 {
     // Checksum 0x4a32cce3, Offset: 0x3c0
     // Size: 0xa
     function gettype() {
-        return self.m_type;
+        return m_type;
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
@@ -129,7 +132,7 @@ class class_3593c7e6 {
     // Checksum 0x6f4b0899, Offset: 0x478
     // Size: 0x1a
     function function_7edd7727(val) {
-        self.var_24544f42 = val;
+        var_24544f42 = val;
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
@@ -137,7 +140,7 @@ class class_3593c7e6 {
     // Checksum 0xd1ba831, Offset: 0x4f0
     // Size: 0x3c
     function function_7f3e577e(range = 100) {
-        return randomint(range) < self.var_24544f42;
+        return randomint(range) < var_24544f42;
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
@@ -145,14 +148,14 @@ class class_3593c7e6 {
     // Checksum 0xbe7c7cb2, Offset: 0x300
     // Size: 0x9e
     function init(spawner, name, type, init_func, think_func, var_af7a3d7c) {
-        self.m_name = name;
-        self.m_type = type;
-        self.var_b1b82dc = 1 << type;
-        self.var_edee94ca = spawner;
-        self.var_c0503cf7 = init_func;
-        self.var_89dfe89b = think_func;
-        self.var_c23bfa1e = var_af7a3d7c;
-        self.var_fde25292 = undefined;
+        m_name = name;
+        m_type = type;
+        var_b1b82dc = 1 << type;
+        var_edee94ca = spawner;
+        var_c0503cf7 = init_func;
+        var_89dfe89b = think_func;
+        var_c23bfa1e = var_af7a3d7c;
+        var_fde25292 = undefined;
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
@@ -160,7 +163,7 @@ class class_3593c7e6 {
     // Checksum 0x900c76cc, Offset: 0x3d8
     // Size: 0xa
     function function_b8c8dfea() {
-        return self.var_b1b82dc;
+        return var_b1b82dc;
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
@@ -168,7 +171,7 @@ class class_3593c7e6 {
     // Checksum 0x3a6105fd, Offset: 0x568
     // Size: 0x22
     function function_baae6c9d(name) {
-        return isinarray(self.var_9d95490b, name);
+        return isinarray(var_9d95490b, name);
     }
 
     // Namespace namespace_3593c7e6/doa_enemy
@@ -176,8 +179,8 @@ class class_3593c7e6 {
     // Checksum 0xfd63a4bb, Offset: 0x4b8
     // Size: 0x2a
     function canspawn() {
-        if (isdefined(self.var_c23bfa1e)) {
-            return [[ self.var_c23bfa1e ]]();
+        if (isdefined(var_c23bfa1e)) {
+            return [[ var_c23bfa1e ]]();
         }
         return 1;
     }
@@ -469,9 +472,7 @@ function function_a6b807ea(spawndef, count = 10, targetpoint, radius = 0, genera
             return;
         }
     }
-    /#
-        assert(level.doa.var_dcbded2.size < 500, "<unknown string>");
-    #/
+    assert(level.doa.var_dcbded2.size < 500, "<unknown string>");
     queueitem = function_5982ca9d(spawndef, count, targetpoint, radius, generator, enemy, var_294cccb7, arena, groupid, expiresat);
     if (!var_1be0f060) {
         level.doa.var_dcbded2[level.doa.var_dcbded2.size] = queueitem;
@@ -717,7 +718,7 @@ function function_4b2f19cb() {
     angle = randomint(360);
     vec = (distance, 0, 0);
     rotated = namespace_ec06fe4a::rotatevec(vec, angle);
-    groundpos = groundtrace(self.var_c8b974fe + rotated + vectorscale((0, 0, 1), 1024) + vectorscale((0, 0, 1), 8), self.var_c8b974fe + rotated + vectorscale((0, 0, 1), 1024) + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
+    groundpos = groundtrace(self.var_c8b974fe + rotated + (0, 0, 1024) + (0, 0, 8), self.var_c8b974fe + rotated + (0, 0, 1024) + (0, 0, -100000), 0, self)[#"position"];
     return getclosestpointonnavmesh(groundpos, 10000);
 }
 

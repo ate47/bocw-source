@@ -142,8 +142,8 @@ function function_ca842288() {
         return;
     }
     array::run_all(level.var_f654fb0f, &function_e1dd6a53, #"off");
-    var_f255c928 = level.var_107cca82 zm_unitrigger::create(&function_5586b077, vectorscale((1, 1, 1), 80), &function_6d69e771);
-    var_f255c928.origin = var_f255c928.origin + vectorscale((0, 0, 1), 40);
+    var_f255c928 = level.var_107cca82 zm_unitrigger::create(&function_5586b077, (80, 80, 80), &function_6d69e771);
+    var_f255c928.origin = var_f255c928.origin + (0, 0, 40);
     if (isdefined(level.var_6b3764b5)) {
         var_f255c928.origin = var_f255c928.origin + anglestoforward(level.var_107cca82.angles) * level.var_6b3764b5;
     }
@@ -219,15 +219,11 @@ function function_1296cf27(instance) {
     var_f1646bb = instance.contentgroups[#"dac_trial_computer"][0];
     var_d690f2be = isdefined(instance.contentgroups[#"hash_3b68487ef7d135d7"]) ? instance.contentgroups[#"hash_3b68487ef7d135d7"] : [];
     if (!isdefined(var_f1646bb)) {
-        /#
-            assertmsg("<unknown string>" + instance.targetname);
-        #/
+        assertmsg("<unknown string>" + instance.targetname);
         return;
     }
     if (!isarray(var_d690f2be) || var_d690f2be.size < 4) {
-        /#
-            assertmsg("<unknown string>" + 4 + "<unknown string>" + instance.targetname);
-        #/
+        assertmsg("<unknown string>" + 4 + "<unknown string>" + instance.targetname);
         return;
     }
     level.var_107cca82 = content_manager::spawn_script_model(var_f1646bb, var_f1646bb.model, 1, 1);
@@ -486,14 +482,10 @@ function function_662458e() {
     }
     var_3cbf62f9 = level.var_f654fb0f[n_index];
     if (!isdefined(var_3cbf62f9)) {
-        /#
-            println("<unknown string>" + n_index + "<unknown string>");
-        #/
+        println("<unknown string>" + n_index + "<unknown string>");
         var_3cbf62f9 = level.var_f654fb0f[3];
         if (!isdefined(var_3cbf62f9)) {
-            /#
-                assertmsg("<unknown string>" + n_index + "<unknown string>" + level.script + "<unknown string>" + 4 + "<unknown string>");
-            #/
+            assertmsg("<unknown string>" + n_index + "<unknown string>" + level.script + "<unknown string>" + 4 + "<unknown string>");
             return;
         }
     }
@@ -839,7 +831,6 @@ function function_5586b077(e_player) {
 function function_6d69e771() {
     self endon(#"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         e_player = waitresult.activator;
         if (!zm_utility::can_use(e_player, 0)) {
@@ -1081,9 +1072,7 @@ function function_f51adffa() {
     }
     level.var_4427ebb1 = level.s_active_challenge.var_ad12d5bf[0];
     vol_override = getent("dac_trial_volume_" + level.var_4427ebb1, "targetname");
-    /#
-        assert(isdefined(level.var_aa3b88c5), "<unknown string>");
-    #/
+    assert(isdefined(level.var_aa3b88c5), "<unknown string>");
     level.var_2c5f83d = [[ level.var_aa3b88c5 ]](level.var_4427ebb1);
     /#
         iprintlnbold("<unknown string>");
@@ -1175,7 +1164,6 @@ function function_9c1479ad() {
         player thread function_9ffc76ea([#"glass_smash", #"hash_34928429a0070510"]);
     }
     while (true) {
-        s_waitresult = undefined;
         s_waitresult = level waittill(#"glass_smash");
         closest_player = arraygetclosest(s_waitresult.position, function_a1ef346b(), 128);
         if (isplayer(closest_player) && (closest_player ismantling() || closest_player issprinting() || closest_player issliding() || closest_player zm_utility::is_jumping())) {
@@ -1213,9 +1201,7 @@ function function_1d60215() {
         level.s_active_challenge.var_ad12d5bf = array(level.s_active_challenge.var_ad12d5bf);
     }
     level.var_4427ebb1 = level.s_active_challenge.var_ad12d5bf[0];
-    /#
-        assert(isdefined(level.var_aa3b88c5), "<unknown string>");
-    #/
+    assert(isdefined(level.var_aa3b88c5), "<unknown string>");
     level.var_2c5f83d = [[ level.var_aa3b88c5 ]](level.s_active_challenge.var_4427ebb1);
     vol_override = getent("dac_trial_volume_" + level.var_4427ebb1, "targetname");
     foreach (player in getplayers()) {
@@ -1262,9 +1248,7 @@ function function_5e882c6f(e_player, var_2b625b6e) {
         return;
     }
     if (isdefined(str_zone)) {
-        /#
-            assert(isdefined(level.var_aa3b88c5), "<unknown string>");
-        #/
+        assert(isdefined(level.var_aa3b88c5), "<unknown string>");
         var_c8470518 = [[ level.var_aa3b88c5 ]](str_zone);
         if (level.var_2c5f83d === var_c8470518) {
             e_player namespace_f999c142::function_53a333a8(level.s_active_challenge.str_name);
@@ -1351,7 +1335,6 @@ function function_9ffc76ea(str_notify) {
         self endon(#"disconnect");
     }
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(str_notify);
         if (isplayer(self)) {
             e_player = self;

@@ -274,7 +274,6 @@ function buildoffsetlist(startoffset, depth, offset_x, offset_y) {
 // Size: 0x6c
 function function_af281272() {
     self endon(#"delete");
-    waitresult = undefined;
     waitresult = self waittill(#"death");
     if (!isdefined(self)) {
         return;
@@ -317,7 +316,7 @@ function activatecounteruav(killstreaktype) {
     } else {
         if (sessionmodeiswarzonegame()) {
             var_b0490eb9 = getheliheightlockheight(self.origin);
-            trace = groundtrace((self.origin[0], self.origin[1], var_b0490eb9), self.origin - vectorscale((0, 0, 1), 5000), 0, counteruav);
+            trace = groundtrace((self.origin[0], self.origin[1], var_b0490eb9), self.origin - (0, 0, 5000), 0, counteruav);
             groundheight = trace[#"position"][2];
             var_5f8c899e = groundheight + (var_b0490eb9 - groundheight) * bundle.var_ff73e08c;
             var_5f8c899e = var_5f8c899e - killstreaks::function_43f4782d();
@@ -625,17 +624,13 @@ function resetactivecounteruav() {
         return;
     }
     level.activecounteruavs[self.team]--;
-    /#
-        assert(level.activecounteruavs[self.team] >= 0);
-    #/
+    assert(level.activecounteruavs[self.team] >= 0);
     if (level.activecounteruavs[self.team] <= 0) {
         level.activecounteruavs[self.team] = undefined;
     }
     if (isdefined(level.activeplayercounteruavs[self.ownerentnum])) {
         level.activeplayercounteruavs[self.ownerentnum]--;
-        /#
-            assert(level.activeplayercounteruavs[self.ownerentnum] >= 0);
-        #/
+        assert(level.activeplayercounteruavs[self.ownerentnum] >= 0);
         if (level.activeplayercounteruavs[self.ownerentnum] <= 0) {
             level.activeplayercounteruavs[self.ownerentnum] = undefined;
         }

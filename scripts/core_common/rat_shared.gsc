@@ -118,15 +118,9 @@ function addratscriptcmd(commandname, functioncallback) {
 function event_handler[rat_scriptcommand] codecallback_ratscriptcommand(params) {
     /#
         init();
-        /#
-            assert(isdefined(params._cmd));
-        #/
-        /#
-            assert(isdefined(params._id));
-        #/
-        /#
-            assert(isdefined(level.rat.script_command_list[params._cmd]), "<unknown string>" + params._cmd);
-        #/
+        assert(isdefined(params._cmd));
+        assert(isdefined(params._id));
+        assert(isdefined(level.rat.script_command_list[params._cmd]), "<unknown string>" + params._cmd);
         callback = level.rat.script_command_list[params._cmd];
         ret = level [[ callback ]](params);
         ratreportcommandresult(params._id, 1, ret);
@@ -640,9 +634,7 @@ function function_d1b632ff(*params) {
 function rscsimulatescripterror(params) {
     /#
         if (params.errorlevel == "<unknown string>") {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            assertmsg("<unknown string>");
             return;
         }
         thisdoesntexist.orthis = 0;

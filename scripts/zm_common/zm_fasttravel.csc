@@ -232,7 +232,7 @@ function play_fasttravel_end_fx(localclientnum, var_b8763ebc = "fasttravel_end")
     level endon(#"end_game");
     self endon(#"bled_out", #"disconnect");
     if (self != function_5c10bd79(localclientnum)) {
-        v_angles = combineangles(self.angles, vectorscale((-1, 0, 0), 90));
+        v_angles = combineangles(self.angles, (-90, 0, 0));
         mdl_fx = util::spawn_model(localclientnum, "tag_origin", self.origin, v_angles);
         waitframe(1);
         util::playfxontag(localclientnum, level._effect[var_b8763ebc], mdl_fx, "tag_origin");
@@ -349,8 +349,8 @@ function function_7287c2e4(localclientnum, *oldval, newval, *bnewent, *binitials
             self.var_4a2dac48 = util::playfxontag(fieldname, #"hash_ee42b8ead6d79d1", self, "j_spine4");
         }
         if (!isdefined(self.var_efa99dd5)) {
-            self playsound(fieldname, #"hash_525507bf80e4399", self.origin + vectorscale((0, 0, 1), 75));
-            self.var_efa99dd5 = self playloopsound(#"hash_8cab833a49210df", undefined, vectorscale((0, 0, 1), 75));
+            self playsound(fieldname, #"hash_525507bf80e4399", self.origin + (0, 0, 75));
+            self.var_efa99dd5 = self playloopsound(#"hash_8cab833a49210df", undefined, (0, 0, 75));
         }
         return;
     }
@@ -377,7 +377,7 @@ function function_7287c2e4(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_4a2dac48 = undefined;
     }
     if (isdefined(self.var_efa99dd5)) {
-        self playsound(fieldname, #"hash_4025d3c0c7607b08", self.origin + vectorscale((0, 0, 1), 75));
+        self playsound(fieldname, #"hash_4025d3c0c7607b08", self.origin + (0, 0, 75));
         self stoploopsound(self.var_efa99dd5);
         self.var_efa99dd5 = undefined;
     }

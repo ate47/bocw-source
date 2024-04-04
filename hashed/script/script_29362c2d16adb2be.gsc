@@ -50,7 +50,7 @@ function function_ee81f2ca(origin, player) {
         return;
     }
     if (!is_true(level.doa.var_318aa67a)) {
-        if (is_true(player.doa.var_3e81d24c)) {
+        if (is_true(player.doa.infps)) {
             player notify(#"hash_7893364bd228d63e");
             waitframe(1);
             timeout = gettime() + 1000;
@@ -65,8 +65,8 @@ function function_ee81f2ca(origin, player) {
     player.doa.var_36cc2d9a = 1;
     player namespace_7f5aeb59::function_77785447(1);
     player function_fee48e9e();
-    level.doa.pickups.var_4480248f.origin = origin + vectorscale((0, 0, 1), 64);
-    hind = level.doa.pickups.var_4480248f spawner::spawn(1, "zombietron_hind_spawner", origin + vectorscale((0, 0, 1), 64), player.angles);
+    level.doa.pickups.var_4480248f.origin = origin + (0, 0, 64);
+    hind = level.doa.pickups.var_4480248f spawner::spawn(1, "zombietron_hind_spawner", origin + (0, 0, 64), player.angles);
     hind thread namespace_ec06fe4a::function_ae010bb4(player);
     player.doa.var_36cc2d9a = undefined;
     player.doa.vehicle = hind;
@@ -94,7 +94,7 @@ function function_ee81f2ca(origin, player) {
     hind thread function_c45d8312(player, timeout);
     player namespace_83eb6304::turnofffx("player_trail_" + player.doa.color);
     player waittill(#"hash_279998c5df86c04d");
-    if (!is_true(self.doa.var_3e81d24c)) {
+    if (!is_true(self.doa.infps)) {
         player namespace_83eb6304::function_3ecfde67("player_trail_" + player.doa.color);
     }
     player namespace_7f5aeb59::function_77785447(0, 1);

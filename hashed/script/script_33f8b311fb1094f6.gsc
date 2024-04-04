@@ -7,22 +7,6 @@
 // Method(s) 8 Total 15
 class class_302a48fc : cluielem {
 
-    // Namespace class_302a48fc/vip_notify_text
-    // Params 0, eflags: 0x8
-    // Checksum 0x1960c899, Offset: 0x398
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_302a48fc/vip_notify_text
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xc81af1f5, Offset: 0x580
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_302a48fc/vip_notify_text
     // Params 1, eflags: 0x0
     // Checksum 0x1be3ff26, Offset: 0x4e0
@@ -54,7 +38,7 @@ class class_302a48fc : cluielem {
     // Checksum 0x335075bd, Offset: 0x548
     // Size: 0x30
     function set_alpha(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "alpha", value);
+        set_data(localclientnum, "alpha", value);
     }
 
     // Namespace namespace_302a48fc/vip_notify_text
@@ -62,7 +46,7 @@ class class_302a48fc : cluielem {
     // Checksum 0x9ce4921c, Offset: 0x510
     // Size: 0x30
     function function_d01a102c(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "vipmessage", value);
+        set_data(localclientnum, "vipmessage", value);
     }
 
     // Namespace namespace_302a48fc/vip_notify_text
@@ -71,8 +55,8 @@ class class_302a48fc : cluielem {
     // Size: 0x70
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "vipmessage", #"");
-        [[ self ]]->set_data(localclientnum, "alpha", 0);
+        set_data(localclientnum, "vipmessage", #"");
+        set_data(localclientnum, "alpha", 0);
     }
 
 }

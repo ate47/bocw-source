@@ -38,9 +38,7 @@ function function_5f224893(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0xd2
 function function_338ef91c(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (!(isdefined(self.var_2011737d) && isdefined(level.var_30858358[fieldname][self.var_2011737d])) || level.var_30858358[fieldname][self.var_2011737d].ent !== self) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
     level.var_30858358[fieldname][self.var_2011737d].var_3934e676 = bwastimejump;

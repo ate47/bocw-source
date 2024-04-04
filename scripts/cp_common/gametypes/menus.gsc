@@ -69,7 +69,6 @@ function on_player_connect() {
 function on_menu_response() {
     self endon(#"disconnect");
     for (;;) {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         response = waitresult.response;

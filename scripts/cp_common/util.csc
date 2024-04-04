@@ -150,9 +150,7 @@ function function_70df4eb1(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Checksum 0x84a70dfa, Offset: 0x7a8
 // Size: 0x1ba
 function force_stream_weapons(localclientnum, weaponarray) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self notify("1fa5700010347000");
     self endon("1fa5700010347000");
     self endon(#"death");

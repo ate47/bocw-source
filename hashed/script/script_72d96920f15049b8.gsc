@@ -48,9 +48,7 @@ function function_3675de8b() {
     scene::add_scene_func(#"chopper_gunner_door_open", &function_294e90d4, "play");
     scene::add_scene_func(#"chopper_gunner_door_open", &function_4e4267e0, "done");
     bundle = killstreaks::get_script_bundle("chopper_gunner");
-    /#
-        assert(isdefined(bundle));
-    #/
+    assert(isdefined(bundle));
 }
 
 // Namespace namespace_e8c18978/namespace_e8c18978
@@ -73,9 +71,7 @@ function function_d887d24d(var_e7230502) {
 // Checksum 0xcc11049e, Offset: 0x648
 // Size: 0x1072
 function function_5160bb1e(killstreaktype) {
-    /#
-        assert(!isdefined(level.chopper_gunner));
-    #/
+    assert(!isdefined(level.chopper_gunner));
     profilestart();
     if (is_true(self.isplanting) || is_true(self.isdefusing) || self util::isusingremote() || self iswallrunning() || self oob::isoutofbounds()) {
         profilestop();
@@ -87,9 +83,7 @@ function function_5160bb1e(killstreaktype) {
         return 0;
     }
     bundle = killstreaks::get_script_bundle("chopper_gunner");
-    /#
-        assert(isdefined(bundle));
-    #/
+    assert(isdefined(bundle));
     spawnpos = level.mapcenter + (0, bundle.var_42d6fcc1, bundle.var_4325e427);
     level.chopper_gunner = spawnvehicle(bundle.ksvehicle, spawnpos, (0, 0, 0), "chopper_gunner");
     level.chopper_gunner.identifier_weapon = getweapon("chopper_gunner");
@@ -118,11 +112,11 @@ function function_5160bb1e(killstreaktype) {
     level.chopper_gunner.damagestate = 0;
     level.chopper_gunner helicopter::function_76f530c7(bundle);
     level.chopper_gunner setcandamage(1);
-    target_set(level.chopper_gunner, vectorscale((0, 0, -1), 100));
+    target_set(level.chopper_gunner, (0, 0, -100));
     target_setallowhighsteering(level.chopper_gunner, 1);
     level.chopper_gunner.numflares = 1;
     level.chopper_gunner.fx_flare = bundle.var_22ab738b;
-    level.chopper_gunner helicopter::create_flare_ent(vectorscale((0, 0, -1), 150));
+    level.chopper_gunner helicopter::create_flare_ent((0, 0, -150));
     level.chopper_gunner thread heatseekingmissile::missiletarget_proximitydetonateincomingmissile(bundle, "death");
     level.chopper_gunner.is_still_valid_target_for_stinger_override = &function_c2bfa7e1;
     level.chopper_gunner thread killstreak_vehicle::function_d4896942(bundle, "chopper_gunner");
@@ -142,9 +136,7 @@ function function_5160bb1e(killstreaktype) {
     self clientfield::set_to_player("" + #"hash_7c907650b14abbbe", 1);
     profilestop();
     if (sessionmodeiszombiesgame() && is_true(level.var_68e3cf24) && !is_true(level.var_d5ad2e35)) {
-        /#
-            assert(isdefined(self.chopper_zone), "<unknown string>");
-        #/
+        assert(isdefined(self.chopper_zone), "<unknown string>");
         a_startnodes = getvehiclenodearray("chopper_gunner_path_start_multi", "targetname");
         foreach (node in a_startnodes) {
             if (node.script_noteworthy === self.chopper_zone) {
@@ -163,14 +155,12 @@ function function_5160bb1e(killstreaktype) {
     } else {
         startnode = getvehiclenode("chopper_gunner_path_start", "targetname");
     }
-    /#
-        assert(isdefined(startnode), "<unknown string>");
-    #/
+    assert(isdefined(startnode), "<unknown string>");
     if (sessionmodeiswarzonegame() && !is_true(level.var_29cfe9dd) || is_true(level.var_d5ad2e35)) {
         if (sessionmodeiszombiesgame()) {
             height = isdefined(level.var_1beaaeca) ? level.var_1beaaeca : 3500;
             height = height + (isdefined(level.var_fba637a5) ? level.var_fba637a5 : 0);
-            angle_offset = isdefined(level.var_32e48553) ? level.var_32e48553 : vectorscale((0, 1, 0), 45);
+            angle_offset = isdefined(level.var_32e48553) ? level.var_32e48553 : (0, 45, 0);
             var_77e38a57 = level.var_981cf9cf;
             position = self.origin;
             if (self.origin[2] < 1000) {
@@ -204,7 +194,7 @@ function function_5160bb1e(killstreaktype) {
                     position = position + vectorscale(tocenter, var_ceaada96 * var_a338f16a);
                 }
             }
-            trace = bullettrace(position + vectorscale((0, 0, 1), 10000), position - vectorscale((0, 0, 1), 10000), 0, undefined);
+            trace = bullettrace(position + (0, 0, 10000), position - (0, 0, 10000), 0, undefined);
             targetpoint = trace[#"fraction"] > 1 ? (position[0], position[1], 0) : trace[#"position"];
             var_b0490eb9 = getheliheightlockheight(position);
             groundheight = targetpoint[2];
@@ -278,7 +268,7 @@ function function_696b3380() {
     while (true) {
         if (!var_c6ac5940 && randomint(100) < 10) {
             offsettime = 0.5;
-            self pathvariableoffset(vectorscale((0, 0, 1), 90), offsettime);
+            self pathvariableoffset((0, 0, 90), offsettime);
             wait(offsettime - 0.1);
             var_c6ac5940 = 1;
             continue;
@@ -297,9 +287,7 @@ function function_696b3380() {
 // Checksum 0x9dbb998, Offset: 0x19d8
 // Size: 0x5b8
 function function_dede0607(*isowner, killstreaktype) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     choppergunner = level.chopper_gunner;
     self forcestreambundle(#"chopper_gunner_door_open");
     streamermodelhint(choppergunner.model, 7);
@@ -321,13 +309,10 @@ function function_dede0607(*isowner, killstreaktype) {
     }
     self.var_5c5fca5 = 1;
     bundle = killstreaks::get_script_bundle("chopper_gunner");
-    /#
-        assert(isdefined(bundle));
-    #/
+    assert(isdefined(bundle));
     choppergunner clientfield::set("" + #"hash_4ddf67f7aa0f6884", 1);
     choppergunner thread scene::play(#"chopper_gunner_door_open");
     choppergunner setanim(#"hash_7483c325182bab52");
-    var_df4a5052 = undefined;
     var_df4a5052 = choppergunner waittilltimeout(getanimlength(#"hash_7483c325182bab52") - float(function_60d95f53()) / 1000, #"hash_623a20b6b2608171");
     choppergunner clearanim(#"hash_7483c325182bab52", 0.2);
     choppergunner clientfield::set("" + #"hash_4ddf67f7aa0f6884", 0);
@@ -485,9 +470,7 @@ function function_f1d43cb2(doexplosion) {
         self helicopter::function_e1058a3e();
         self notify(#"crash_done");
     }
-    /#
-        assert(self.var_957d409b === 1);
-    #/
+    assert(self.var_957d409b === 1);
     self function_bc344300();
 }
 
@@ -551,9 +534,7 @@ function function_c2bfa7e1(ent, *weapon) {
 function watchplayerteamchangethread(choppergunner) {
     choppergunner notify(#"hash_1c0d4b0d44e3517");
     choppergunner endon(#"hash_1c0d4b0d44e3517", #"death");
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     player = self;
     player endon(#"gunner_left");
     player waittill(#"joined_team", #"disconnect", #"joined_spectators");
@@ -568,9 +549,7 @@ function watchplayerteamchangethread(choppergunner) {
 function watchplayerexitrequestthread(player) {
     player notify(#"watchplayerexitrequestthread_singleton");
     player endon(#"watchplayerexitrequestthread_singleton");
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     level endon(#"game_ended");
     player endon(#"disconnect", #"gunner_left");
     self endon(#"death");

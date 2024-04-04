@@ -129,15 +129,9 @@ function create(prompt = #"use", var_4d98c3ce, complete_callback, var_531201f1, 
 // Checksum 0x9b79eb7a, Offset: 0x14b0
 // Size: 0x644
 function function_c97a48c7(prompt, var_248cbbcf) {
-    /#
-        assert(isdefined(prompt), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(level.prompts[prompt]), "<unknown string>");
-    #/
-    /#
-        assert(isentity(self) || isstruct(self) && isdefined(self.origin) && isdefined(self.angles), "<unknown string>");
-    #/
+    assert(isdefined(prompt), "<unknown string>");
+    assert(isdefined(level.prompts[prompt]), "<unknown string>");
+    assert(isentity(self) || isstruct(self) && isdefined(self.origin) && isdefined(self.angles), "<unknown string>");
     self remove(prompt, 1);
     var_a23c5e1 = !isdefined(self.var_3e95b88f);
     if (!isdefined(self.var_3e95b88f)) {
@@ -224,14 +218,8 @@ function function_c97a48c7(prompt, var_248cbbcf) {
 // Checksum 0x5f4c5232, Offset: 0x1b00
 // Size: 0x132
 function function_46df0bc7(prompt, priority) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     priority = int(priority * 10);
     arrayremoveindex(self.var_3e95b88f.var_294a441e, prompt, 1);
     while (isinarray(self.var_3e95b88f.var_294a441e, priority)) {
@@ -246,9 +234,7 @@ function function_46df0bc7(prompt, priority) {
 // Checksum 0xad6fe64e, Offset: 0x1c40
 // Size: 0x1ce
 function function_a4cf2cde(var_50c32acd) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
     var_68131ee = 0;
     offset = (0, 0, 0);
     if (!self function_5a11b8f6()) {
@@ -285,9 +271,7 @@ function function_a4cf2cde(var_50c32acd) {
 // Checksum 0x15cd3d9d, Offset: 0x1e18
 // Size: 0x8e
 function function_92127496(var_80534db1, var_a5ce465f = 0) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
     if (!isplayer(self)) {
         self.var_3e95b88f.hud = var_80534db1;
         self.var_3e95b88f.var_a5ce465f = var_a5ce465f;
@@ -299,9 +283,7 @@ function function_92127496(var_80534db1, var_a5ce465f = 0) {
 // Checksum 0x1585639f, Offset: 0x1eb0
 // Size: 0x7c
 function set_text(text) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
     self.var_3e95b88f.text = text;
     if (isdefined(self.var_3e95b88f.uid)) {
         namespace_61e6d095::set_text(self.var_3e95b88f.uid, text);
@@ -313,9 +295,7 @@ function set_text(text) {
 // Checksum 0xac0332e7, Offset: 0x1f38
 // Size: 0x7c
 function function_309bf7c2(image) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
     self.var_3e95b88f.image = image;
     if (isdefined(self.var_3e95b88f.uid)) {
         namespace_61e6d095::function_309bf7c2(self.var_3e95b88f.uid, image);
@@ -327,9 +307,7 @@ function function_309bf7c2(image) {
 // Checksum 0xd16d037a, Offset: 0x1fc0
 // Size: 0x9c
 function function_82cf95d9(image) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
     self.var_3e95b88f.namespace_image = image;
     if (isdefined(self.var_3e95b88f.uid)) {
         namespace_61e6d095::function_9ade1d9b(self.var_3e95b88f.uid, "namespace_image", image);
@@ -342,9 +320,7 @@ function function_82cf95d9(image) {
 // Checksum 0x9c959ac5, Offset: 0x2068
 // Size: 0x94
 function function_b1cfa4bc(progress) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
     self.var_3e95b88f.var_fc01e65d = progress;
     if (isdefined(self.var_3e95b88f.uid)) {
         namespace_61e6d095::function_b1e6d7a8(self.var_3e95b88f.uid, progress);
@@ -357,9 +333,7 @@ function function_b1cfa4bc(progress) {
 // Checksum 0x8beca35a, Offset: 0x2108
 // Size: 0xc4
 function function_dade5b1a(name, team) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
     self.var_3e95b88f.display_name = name;
     self.var_3e95b88f.team = util::getteamindex(isdefined(team) ? team : self getteam());
     if (isdefined(self.var_3e95b88f.uid)) {
@@ -372,9 +346,7 @@ function function_dade5b1a(name, team) {
 // Checksum 0xd3b2ccd, Offset: 0x21d8
 // Size: 0xf4
 function set_objective(str_objective) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
     if (!isdefined(self.var_3e95b88f)) {
         return;
     }
@@ -396,14 +368,8 @@ function set_objective(str_objective) {
 // Checksum 0x6bad0d14, Offset: 0x22d8
 // Size: 0x22c
 function function_263320e2(prompt, var_4d98c3ce) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     if (self.var_3e95b88f.prompts[prompt].var_4d98c3ce === var_4d98c3ce) {
         return;
     }
@@ -423,14 +389,8 @@ function function_263320e2(prompt, var_4d98c3ce) {
 // Checksum 0x6159ad1f, Offset: 0x2510
 // Size: 0xb2
 function function_75d5e526(prompt, complete_callback) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     self.var_3e95b88f.prompts[prompt].complete_callback = complete_callback;
 }
 
@@ -439,14 +399,8 @@ function function_75d5e526(prompt, complete_callback) {
 // Checksum 0x8a5c1b7a, Offset: 0x25d0
 // Size: 0xb2
 function function_a4a9acfc(prompt, var_531201f1) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     self.var_3e95b88f.prompts[prompt].var_531201f1 = var_531201f1;
 }
 
@@ -455,14 +409,8 @@ function function_a4a9acfc(prompt, var_531201f1) {
 // Checksum 0xbc4117b3, Offset: 0x2690
 // Size: 0xb2
 function function_cd2391cb(prompt, notify_string) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     self.var_3e95b88f.prompts[prompt].notify_string = notify_string;
 }
 
@@ -479,9 +427,7 @@ function set_offset(offset, tag, var_754bedbb, var_51f93e19) {
 // Checksum 0x4b2a8134, Offset: 0x27d8
 // Size: 0x62
 function function_46f198(uid, var_db58523e) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
     self.var_3e95b88f.uid = uid;
     self.var_3e95b88f.var_db58523e = var_db58523e;
 }
@@ -545,14 +491,8 @@ function function_4b556f63(prompt, flags, var_cca4e0db = 0) {
 // Checksum 0x972d9ffd, Offset: 0x2d20
 // Size: 0xfa
 function function_d03d79d6(prompt, var_de6f0004) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     self.var_3e95b88f.prompts[prompt].var_de6f0004 = var_de6f0004;
     if (self.var_3e95b88f.prompts[prompt].var_de6f0004 === 0.25) {
         self.var_3e95b88f.prompts[prompt].var_de6f0004 = undefined;
@@ -564,14 +504,8 @@ function function_d03d79d6(prompt, var_de6f0004) {
 // Checksum 0xb8379bbd, Offset: 0x2e28
 // Size: 0xfa
 function function_8f5eb0a6(prompt, var_4ac77177) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     self.var_3e95b88f.prompts[prompt].var_4ac77177 = var_4ac77177;
     if (self.var_3e95b88f.prompts[prompt].var_4ac77177 === 0.1) {
         self.var_3e95b88f.prompts[prompt].var_4ac77177 = undefined;
@@ -583,14 +517,8 @@ function function_8f5eb0a6(prompt, var_4ac77177) {
 // Checksum 0xe790d4bc, Offset: 0x2f30
 // Size: 0xf6
 function function_5fe46a16(prompt, var_71b9f0c0) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     self.var_3e95b88f.prompts[prompt].var_71b9f0c0 = var_71b9f0c0;
     if (self.var_3e95b88f.prompts[prompt].var_71b9f0c0 === 240) {
         self.var_3e95b88f.prompts[prompt].var_71b9f0c0 = undefined;
@@ -602,14 +530,8 @@ function function_5fe46a16(prompt, var_71b9f0c0) {
 // Checksum 0xec9fca28, Offset: 0x3030
 // Size: 0xf6
 function function_cf884581(prompt, var_79a4cbfc) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     self.var_3e95b88f.prompts[prompt].var_9c89c587 = var_79a4cbfc;
     if (self.var_3e95b88f.prompts[prompt].var_9c89c587 === 0) {
         self.var_3e95b88f.prompts[prompt].var_9c89c587 = undefined;
@@ -621,14 +543,8 @@ function function_cf884581(prompt, var_79a4cbfc) {
 // Checksum 0xc934c777, Offset: 0x3130
 // Size: 0xf6
 function function_5698d1c9(prompt, var_5f57572a) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     self.var_3e95b88f.prompts[prompt].var_f17a78a7 = var_5f57572a;
     if (self.var_3e95b88f.prompts[prompt].var_f17a78a7 === 180) {
         self.var_3e95b88f.prompts[prompt].var_f17a78a7 = undefined;
@@ -640,14 +556,8 @@ function function_5698d1c9(prompt, var_5f57572a) {
 // Checksum 0x379374d, Offset: 0x3230
 // Size: 0xfa
 function function_68782902(prompt, var_87c991f3) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     self.var_3e95b88f.prompts[prompt].var_87c991f3 = var_87c991f3;
     if (self.var_3e95b88f.prompts[prompt].var_87c991f3 === 85) {
         self.var_3e95b88f.prompts[prompt].var_87c991f3 = undefined;
@@ -659,14 +569,8 @@ function function_68782902(prompt, var_87c991f3) {
 // Checksum 0x1a42d5c1, Offset: 0x3338
 // Size: 0xfa
 function function_2557566(prompt, var_7faab93d) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     self.var_3e95b88f.prompts[prompt].var_7faab93d = var_7faab93d;
     if (self.var_3e95b88f.prompts[prompt].var_7faab93d === 1) {
         self.var_3e95b88f.prompts[prompt].var_7faab93d = undefined;
@@ -678,14 +582,8 @@ function function_2557566(prompt, var_7faab93d) {
 // Checksum 0x65baa031, Offset: 0x3440
 // Size: 0xfa
 function function_b95d71cd(prompt, var_5e83875a) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     self.var_3e95b88f.prompts[prompt].var_5e83875a = var_5e83875a;
     if (self.var_3e95b88f.prompts[prompt].var_5e83875a === 30) {
         self.var_3e95b88f.prompts[prompt].var_5e83875a = undefined;
@@ -697,14 +595,8 @@ function function_b95d71cd(prompt, var_5e83875a) {
 // Checksum 0xe82eae4, Offset: 0x3548
 // Size: 0xda
 function function_1a5e1da6(prompt, var_3c8a8153, var_c8a53909) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     self.var_3e95b88f.prompts[prompt].var_3c8a8153 = var_3c8a8153;
     self.var_3e95b88f.prompts[prompt].var_88ceabd = var_c8a53909;
 }
@@ -714,14 +606,8 @@ function function_1a5e1da6(prompt, var_3c8a8153, var_c8a53909) {
 // Checksum 0x61e16508, Offset: 0x3630
 // Size: 0xf6
 function function_4cb5d3a1(prompt, var_8ce60046) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     self.var_3e95b88f.prompts[prompt].var_8ce60046 = var_8ce60046;
     if (self.var_3e95b88f.prompts[prompt].var_8ce60046 === 1) {
         self.var_3e95b88f.prompts[prompt].var_8ce60046 = undefined;
@@ -733,14 +619,8 @@ function function_4cb5d3a1(prompt, var_8ce60046) {
 // Checksum 0x78fff92, Offset: 0x3730
 // Size: 0x11e
 function function_dcf99fad(prompt, var_9a27c4ee, ignore_ent) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     self.var_3e95b88f.prompts[prompt].var_9a27c4ee = var_9a27c4ee;
     self.var_3e95b88f.prompts[prompt].var_1e4cbecf = ignore_ent;
     if (self.var_3e95b88f.prompts[prompt].var_9a27c4ee === 1) {
@@ -753,14 +633,8 @@ function function_dcf99fad(prompt, var_9a27c4ee, ignore_ent) {
 // Checksum 0x4cb8e8f3, Offset: 0x3858
 // Size: 0xf6
 function function_2bd2431a(prompt, var_be77841a) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     self.var_3e95b88f.prompts[prompt].var_be77841a = var_be77841a;
     if (self.var_3e95b88f.prompts[prompt].var_be77841a === 1) {
         self.var_3e95b88f.prompts[prompt].var_be77841a = undefined;
@@ -772,14 +646,8 @@ function function_2bd2431a(prompt, var_be77841a) {
 // Checksum 0x96964fcf, Offset: 0x3958
 // Size: 0xf6
 function function_3171730f(prompt, groups) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     if (!isdefined(groups)) {
         groups = [];
     } else if (!isarray(groups)) {
@@ -814,14 +682,8 @@ function function_398ab9eb() {
 // Checksum 0x2222985d, Offset: 0x3ad8
 // Size: 0xb2
 function function_2e6d74f5(prompt, pause) {
-    /#
-        assert(isdefined(self.var_3e95b88f), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.var_3e95b88f), "<unknown string>");
+    assert(isdefined(self.var_3e95b88f.prompts[prompt]), "<unknown string>" + function_9e72a96(prompt) + "<unknown string>");
     self.var_3e95b88f.prompts[prompt].var_f14d06ca = pause;
 }
 
@@ -903,7 +765,7 @@ function function_334e020() {
             if (isdefined(self.var_3e95b88f.tag)) {
                 var_393b6e18 = self gettagorigin(self.var_3e95b88f.tag);
             } else if (iscorpse(self)) {
-                var_393b6e18 = self getcorpsephysicsorigin() + vectorscale((0, 0, 1), 6);
+                var_393b6e18 = self getcorpsephysicsorigin() + (0, 0, 6);
             } else if (is_true(self.var_3e95b88f.var_754bedbb)) {
                 var_393b6e18 = var_393b6e18 + rotatepoint(self getboundsmidpoint(), self.angles);
             }
@@ -1125,31 +987,15 @@ function private function_eee54dd8(var_248cbbcf) {
     default:
         model = undefined;
         if (var_248cbbcf.player gamepadusedlast()) {
-            /#
-                /#
-                    assert(isdefined(level.prompts[var_248cbbcf.prompt].var_a4594058), "<unknown string>" + function_9e72a96(var_248cbbcf.prompt));
-                #/
-            #/
+            assert(isdefined(level.prompts[var_248cbbcf.prompt].var_a4594058), "<unknown string>" + function_9e72a96(var_248cbbcf.prompt));
             var_d75b2384 = function_90d058e8(#"buttons");
             model = getuimodel(var_d75b2384, string(level.prompts[var_248cbbcf.prompt].var_a4594058));
-            /#
-                /#
-                    assert(isdefined(model), "<unknown string>" + level.prompts[var_248cbbcf.prompt].var_a4594058 + "<unknown string>" + function_9e72a96(var_248cbbcf.prompt));
-                #/
-            #/
+            assert(isdefined(model), "<unknown string>" + level.prompts[var_248cbbcf.prompt].var_a4594058 + "<unknown string>" + function_9e72a96(var_248cbbcf.prompt));
         } else {
-            /#
-                /#
-                    assert(isdefined(level.prompts[var_248cbbcf.prompt].var_b35ba5c), "<unknown string>" + function_9e72a96(var_248cbbcf.prompt));
-                #/
-            #/
+            assert(isdefined(level.prompts[var_248cbbcf.prompt].var_b35ba5c), "<unknown string>" + function_9e72a96(var_248cbbcf.prompt));
             var_31a34837 = function_90d058e8(#"hash_48b37823078b5999");
             model = getuimodel(var_31a34837, level.prompts[var_248cbbcf.prompt].var_b35ba5c);
-            /#
-                /#
-                    assert(isdefined(model), "<unknown string>" + level.prompts[var_248cbbcf.prompt].var_b35ba5c + "<unknown string>" + function_9e72a96(var_248cbbcf.prompt));
-                #/
-            #/
+            assert(isdefined(model), "<unknown string>" + level.prompts[var_248cbbcf.prompt].var_b35ba5c + "<unknown string>" + function_9e72a96(var_248cbbcf.prompt));
         }
         return (getuimodelvalue(model) > 0);
     }
@@ -1907,7 +1753,6 @@ function private function_17533001(uid) {
         actor_name = undefined;
     }
     while (true) {
-        ret = undefined;
         ret = self waittill(#"hash_5ede0284920c4c56");
         if (ret.interactable || isdefined(self.var_3e95b88f.var_fc01e65d)) {
             if (isdefined(self.var_3e95b88f.namespace_image)) {

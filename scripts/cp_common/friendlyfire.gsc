@@ -40,9 +40,7 @@ function private preinit() {
 // Checksum 0x8b204d33, Offset: 0x320
 // Size: 0x5c
 function init_player() {
-    /#
-        assert(isdefined(self), "<unknown string>");
-    #/
+    assert(isdefined(self), "<unknown string>");
     self.participation = 0;
     /#
         self thread debug_friendlyfire();
@@ -117,7 +115,7 @@ function private function_25d6cf14() {
             self.var_d5b6872a.var_ce0ada2c.sort = 1;
             self.var_d5b6872a.var_ce0ada2c.alpha = 1;
             self.var_d5b6872a.var_ce0ada2c.foreground = 1;
-            self.var_d5b6872a.var_ce0ada2c.color = vectorscale((1, 1, 1), 0.4);
+            self.var_d5b6872a.var_ce0ada2c.color = (0.4, 0.4, 0.4);
             self.var_d5b6872a.var_ce0ada2c setshader(#"white", self.var_d5b6872a.var_fc4521dc, 9);
         }
         if (!isdefined(self.var_d5b6872a.debug_health_bar)) {
@@ -129,7 +127,7 @@ function private function_25d6cf14() {
             self.var_d5b6872a.debug_health_bar.sort = 4;
             self.var_d5b6872a.debug_health_bar.alpha = 1;
             self.var_d5b6872a.debug_health_bar.foreground = 1;
-            self.var_d5b6872a.debug_health_bar.color = vectorscale((0, 0, 1), 0.9);
+            self.var_d5b6872a.debug_health_bar.color = (0, 0, 0.9);
             self.var_d5b6872a.debug_health_bar setshader(#"white", 4, 15);
         }
         if (!isdefined(self.var_d5b6872a.var_704a4d3b)) {
@@ -358,7 +356,6 @@ function friendly_fire_think(entity) {
         if (!isdefined(entity)) {
             return;
         }
-        waitresult = undefined;
         waitresult = entity waittill(#"damage");
         attacker = waitresult.attacker;
         damage = waitresult.amount;
@@ -487,9 +484,7 @@ function check_grenade(entity, method) {
 function savecommit_aftergrenade() {
     currenttime = gettime();
     if (currenttime < 4500) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return true;
     }
     return false;
@@ -501,9 +496,7 @@ function savecommit_aftergrenade() {
 // Size: 0xae
 function participation_point_cap() {
     if (!isdefined(self.participation)) {
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         return;
     }
     if (self.participation > level.var_911cdf6e[#"hash_2cc746fbd4f2a46f"]) {
@@ -591,7 +584,6 @@ function notifydamage(entity) {
 // Size: 0x68
 function notifydamagenotdone(entity) {
     level endon(#"hash_fef7dac2cb38596");
-    waitresult = undefined;
     waitresult = entity waittill(#"damage_notdone");
     waitresult.amount = -1;
     entity notify(#"hash_7a17f022e00869c2", waitresult);
@@ -603,7 +595,6 @@ function notifydamagenotdone(entity) {
 // Size: 0x68
 function notifydeath(entity) {
     level endon(#"hash_fef7dac2cb38596");
-    waitresult = undefined;
     waitresult = entity waittill(#"death");
     waitresult.amount = -1;
     entity notify(#"hash_7a17f022e00869c2", waitresult);

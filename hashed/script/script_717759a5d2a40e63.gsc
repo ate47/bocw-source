@@ -52,7 +52,7 @@ function function_eeb092f5(entity) {
         }
         level.doa.var_537a3e29[level.doa.var_537a3e29.size] = var_c980e593;
         var_c980e593 enablelinkto();
-        var_c980e593 linkto(entity, undefined, vectorscale((0, 0, 1), 60));
+        var_c980e593 linkto(entity, undefined, (0, 0, 60));
         var_c980e593 namespace_83eb6304::function_3ecfde67("magnet_on");
         var_c980e593 namespace_e32bb68::function_3a59ec34("evt_doa_pickup_magnet_active_lp");
         var_c980e593 thread function_85cdc313(entity);
@@ -165,8 +165,8 @@ function private function_68126677(var_624b8d02 = getdvarint(#"hash_5f8a3b48d8eb
         waitframe(1);
         if (self.attractors.size == 0 && is_true(self.var_e48718a6)) {
             if (self.origin[0] != self.var_76d7c415[0] || self.origin[1] != self.var_76d7c415[1]) {
-                trace = bullettrace(self.origin, self.origin + vectorscale((0, 0, -1), 500), 0, undefined);
-                self.groundpos = namespace_ec06fe4a::function_65ee50ba(self.origin) + vectorscale((0, 0, 1), 32);
+                trace = bullettrace(self.origin, self.origin + (0, 0, -500), 0, undefined);
+                self.groundpos = namespace_ec06fe4a::function_65ee50ba(self.origin) + (0, 0, 32);
                 self moveto(self.groundpos, 1);
                 self waittilltimeout(1.1, #"movedone", #"picked_up", #"hash_2d37cb44b7f0c612", #"death");
                 self.var_76d7c415 = self.origin;

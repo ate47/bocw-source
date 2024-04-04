@@ -460,12 +460,8 @@ function spawnplayer() {
         draft::assign_remaining_players(self);
     }
     role = self player_role::get();
-    /#
-        assert(!function_87bcb1b() || isvalidclass(self.curclass));
-    #/
-    /#
-        assert(is_valid(role));
-    #/
+    assert(!function_87bcb1b() || isvalidclass(self.curclass));
+    assert(is_valid(role));
     self.pers[#"momentum_at_spawn_or_game_end"] = isdefined(self.pers[#"momentum"]) ? self.pers[#"momentum"] : 0;
     if (loadout::function_87bcb1b()) {
         self loadout::function_53b62db1(self.curclass);
@@ -557,9 +553,7 @@ function spawnplayer() {
     #/
     setdvar(#"scr_selecting_location", "");
     if (gamestate::is_game_over()) {
-        /#
-            assert(!level.intermission);
-        #/
+        assert(!level.intermission);
         self player::freeze_player_for_round_end();
     }
     self util::set_lighting_state();
@@ -603,18 +597,14 @@ function function_3ee5119e() {
         spectating::set_permissions();
         var_74578e76 = function_c65231e2(self.squad);
         player = spectating::function_327e6270(var_74578e76, &spectating::function_44d43a69, #"invalid");
-        /#
-            assert(isdefined(player));
-        #/
+        assert(isdefined(player));
         self.var_ba35b2d2 = player.squad;
     }
     if (self.pers[#"team"] != #"spectator" && level.spectatetype == 4 && self.spectatorteam == #"invalid") {
         spectating::set_permissions();
         team_players = getplayers(self.team);
         player = spectating::function_327e6270(team_players, &spectating::spectator_team, #"invalid");
-        /#
-            assert(isdefined(player));
-        #/
+        assert(isdefined(player));
         if (is_true(level.var_db91e97c)) {
             player = spectating::function_836ee9ed(player);
         }
@@ -947,17 +937,13 @@ function showspawnmessage() {
 // Size: 0x1be
 function spawnclient(timealreadypassed) {
     profileNamedStart(#"");
-    /#
-        assert(isdefined(self.team));
-    #/
-    /#
-        assert(!function_87bcb1b() || isvalidclass(self.curclass));
-    #/
+    assert(isdefined(self.team));
+    assert(!function_87bcb1b() || isvalidclass(self.curclass));
     if (!self mayspawn() && !is_true(self.usedresurrect)) {
         currentorigin = self.origin;
         currentangles = self.angles;
         self showspawnmessage();
-        self thread [[ level.spawnspectator ]](currentorigin + vectorscale((0, 0, 1), 60), currentangles);
+        self thread [[ level.spawnspectator ]](currentorigin + (0, 0, 60), currentangles);
         profileNamedStop();
         return;
     }
@@ -1008,7 +994,7 @@ function waitandspawnclient(timealreadypassed) {
     userespawntime = isdefined(timealreadypassed) ? 1 : 0;
     if (squad_spawn::function_d072f205()) {
         thread squad_spawn::function_5f24fd47(self, userespawntime);
-        self thread respawn_asspectator(self.origin + vectorscale((0, 0, 1), 60), self.angles);
+        self thread respawn_asspectator(self.origin + (0, 0, 60), self.angles);
         spawnedasspectator = 1;
     }
     if (!isdefined(timealreadypassed)) {
@@ -1023,7 +1009,7 @@ function waitandspawnclient(timealreadypassed) {
         }
         if (var_821200bb > 0) {
             hud_message::setlowermessage(#"hash_7d1a0e5bd191fce", var_821200bb);
-            self thread respawn_asspectator(self.origin + vectorscale((0, 0, 1), 60), self.angles);
+            self thread respawn_asspectator(self.origin + (0, 0, 60), self.angles);
             spawnedasspectator = 1;
             wait(var_821200bb);
         }
@@ -1052,7 +1038,7 @@ function waitandspawnclient(timealreadypassed) {
             }
         }
         if (!spawnedasspectator) {
-            spawnorigin = self.origin + vectorscale((0, 0, 1), 60);
+            spawnorigin = self.origin + (0, 0, 60);
             spawnangles = self.angles;
             if (isdefined(level.useintermissionpointsonwavespawn) && [[ level.useintermissionpointsonwavespawn ]]() == 1) {
                 spawnpoint = spawning::get_random_intermission_point();
@@ -1112,7 +1098,7 @@ function waitandspawnclient(timealreadypassed) {
             hud_message::setlowermessage(game.strings[#"press_to_spawn"]);
         }
         if (!spawnedasspectator) {
-            self thread respawn_asspectator(self.origin + vectorscale((0, 0, 1), 60), self.angles);
+            self thread respawn_asspectator(self.origin + (0, 0, 60), self.angles);
         }
         spawnedasspectator = 1;
         self waitrespawnorsafespawnbutton();

@@ -48,15 +48,9 @@ function private preinit() {
 // Size: 0x94
 function private zombie_force_char(n_char) {
     /#
-        /#
-            assert(isdefined(self));
-        #/
-        /#
-            assert(isplayer(self));
-        #/
-        /#
-            assert(isalive(self));
-        #/
+        assert(isdefined(self));
+        assert(isplayer(self));
+        assert(isalive(self));
         set_character(n_char);
     #/
 }
@@ -268,9 +262,7 @@ function function_9004475c(character) {
             return i;
         }
     }
-    /#
-        assertmsg("<unknown string>");
-    #/
+    assertmsg("<unknown string>");
     return 0;
 }
 
@@ -317,9 +309,7 @@ function function_dc232a80(character) {
                 return 0;
             }
         }
-        /#
-            assertmsg("<unknown string>" + characterindex);
-        #/
+        assertmsg("<unknown string>" + characterindex);
     }
     return 0;
 }
@@ -329,9 +319,7 @@ function function_dc232a80(character) {
 // Checksum 0x9238e7, Offset: 0x1b80
 // Size: 0xe6
 function is_character(character) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (isdefined(self) && isplayer(self)) {
         characterindex = player_role::get();
         if (player_role::is_valid(characterindex)) {

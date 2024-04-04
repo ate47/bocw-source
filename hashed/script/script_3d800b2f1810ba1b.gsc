@@ -76,15 +76,13 @@ function private function_5a46c509(var_2fe0d693) {
 function private function_7d76b3ac() {
     self endon(#"death", #"deleted", #"hash_44a5d69960a8b32c", #"hash_7cc4a540f68c1e3f");
     if (!isdefined(self.var_1e5d913d)) {
-        /#
-            println("<unknown string>" + self.origin[0] + "<unknown string>" + self.origin[1] + "<unknown string>" + self.origin[2]);
-        #/
+        println("<unknown string>" + self.origin[0] + "<unknown string>" + self.origin[1] + "<unknown string>" + self.origin[2]);
         return;
     }
     data = spawnstruct();
     self setcandamage(1);
     if (!isdefined(self.var_ac2c4043)) {
-        self.var_ac2c4043 = vectorscale((1, 1, 1), 0.75);
+        self.var_ac2c4043 = (0.75, 0.75, 0.75);
     } else if (!isvec(self.var_ac2c4043)) {
         self.var_ac2c4043 = (self.var_ac2c4043, self.var_ac2c4043, self.var_ac2c4043);
     }
@@ -114,7 +112,6 @@ function private function_7d76b3ac() {
     self thread function_8f050823();
     while (true) {
         self.health = 999999;
-        damage_data = undefined;
         damage_data = self waittill(#"damage");
         self function_2138c62(self.var_1e5d913d, damage_data);
     }

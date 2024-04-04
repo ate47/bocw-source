@@ -8,21 +8,8 @@
 // Method(s) 10 Total 17
 class class_d4941e5e : cluielem {
 
-    // Namespace class_d4941e5e/stealth_meter_display
-    // Params 0, eflags: 0x8
-    // Checksum 0xe84c05f, Offset: 0x2f0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_d4941e5e/stealth_meter_display
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xabf2e285, Offset: 0x608
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_d4941e5e/stealth_meter_display
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class class_d4941e5e : cluielem {
     // Checksum 0x6f6c2e, Offset: 0x568
     // Size: 0x44
     function function_18066380(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "direction", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "direction", value);
     }
 
     // Namespace namespace_d4941e5e/stealth_meter_display
@@ -45,7 +32,7 @@ class class_d4941e5e : cluielem {
     // Checksum 0x75f67276, Offset: 0x4c8
     // Size: 0x44
     function function_4d628707(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "awarenessState", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "awarenessState", value);
     }
 
     // Namespace namespace_d4941e5e/stealth_meter_display
@@ -61,7 +48,7 @@ class class_d4941e5e : cluielem {
     // Checksum 0x4a3982c8, Offset: 0x518
     // Size: 0x44
     function function_7425637b(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "awarenessProgress", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "awarenessProgress", value);
     }
 
     // Namespace namespace_d4941e5e/stealth_meter_display
@@ -82,7 +69,7 @@ class class_d4941e5e : cluielem {
     // Checksum 0x6f09793d, Offset: 0x478
     // Size: 0x44
     function set_entnum(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "entNum", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "entNum", value);
     }
 
     // Namespace namespace_d4941e5e/stealth_meter_display
@@ -90,7 +77,7 @@ class class_d4941e5e : cluielem {
     // Checksum 0xb641a3dc, Offset: 0x5b8
     // Size: 0x44
     function function_fae2a569(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "clamped", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "clamped", value);
     }
 
 }

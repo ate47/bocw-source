@@ -82,7 +82,7 @@ function function_4366bf50(params) {
     if (isdefined(self.team) && isdefined(eattacker.team) && self.team != #"neutral" && util::function_fbce7263(self.team, eattacker.team) && self getvehoccupants().size > 0) {
         scoreevents::processscoreevent(#"hash_218ad43ea7de500d", eattacker, undefined, weapon);
     }
-    deathmodel = spawn("script_model", self.origin + vectorscale((0, 0, 1), 80));
+    deathmodel = spawn("script_model", self.origin + (0, 0, 80));
     deathmodel setmodel(#"hash_311c24b6407eaa02");
     deathmodel.angles = self function_bc2f1cb8(0);
     side_offset = getdvarint(#"hash_2163abe439abdd44", 5);

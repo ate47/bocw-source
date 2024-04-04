@@ -110,9 +110,7 @@ function function_5e18416d(var_f90fc07b) {
 // Size: 0x19a
 function function_802adb65(var_f90fc07b) {
     if (!isarray(var_f90fc07b)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     arrayremovevalue(var_f90fc07b, undefined);
@@ -206,9 +204,7 @@ function function_218b23a0(var_f90fc07b) {
 // Size: 0x28c
 function function_d298702c(var_f90fc07b) {
     if (!isarray(var_f90fc07b)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     arrayremovevalue(var_f90fc07b, undefined);
@@ -217,9 +213,7 @@ function function_d298702c(var_f90fc07b) {
         if (isdefined(level.var_40225902)) {
             arrayremovevalue(level.var_40225902, undefined);
             foreach (vehicle in level.var_40225902) {
-                /#
-                    assert(isvehicle(vehicle), "<unknown string>");
-                #/
+                assert(isvehicle(vehicle), "<unknown string>");
                 if (isalive(vehicle)) {
                     player = vehicle getseatoccupant(0);
                     if (!isdefined(player) || !isplayer(player)) {
@@ -231,9 +225,7 @@ function function_d298702c(var_f90fc07b) {
                 } else {
                     continue;
                 }
-                /#
-                    assert(isdefined(player));
-                #/
+                assert(isdefined(player));
                 if (player function_65b20()) {
                     continue;
                 }
@@ -373,7 +365,7 @@ function chr_party(point, var_b158c6d8 = (0, 0, 0)) {
 // Checksum 0x82c049d, Offset: 0x1530
 // Size: 0x32
 function function_1a0f9f54(point) {
-    return chr_party(point, vectorscale((1, 1, 1), 15));
+    return chr_party(point, (15, 15, 15));
 }
 
 // Namespace oob/oob

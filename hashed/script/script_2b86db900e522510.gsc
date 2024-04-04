@@ -8,21 +8,8 @@
 // Method(s) 8 Total 15
 class class_ba33e0c1 : cluielem {
 
-    // Namespace class_ba33e0c1/encodedradio_usebar
-    // Params 0, eflags: 0x8
-    // Checksum 0x651807dd, Offset: 0x270
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_ba33e0c1/encodedradio_usebar
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xf2117300, Offset: 0x520
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_ba33e0c1/encodedradio_usebar
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class class_ba33e0c1 : cluielem {
     // Checksum 0x2c7b2ee3, Offset: 0x4d0
     // Size: 0x44
     function function_4aa46834(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "activatorCount", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "activatorCount", value);
     }
 
     // Namespace namespace_ba33e0c1/encodedradio_usebar
@@ -65,18 +52,14 @@ class class_ba33e0c1 : cluielem {
     // Size: 0xcc
     function set_state(player, state_name) {
         if (#"defaultstate" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 0);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 0);
             return;
         }
         if (#"hash_5fba3d476e0b33f8" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 1);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 1);
             return;
         }
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
     }
 
     // Namespace namespace_ba33e0c1/encodedradio_usebar
@@ -84,7 +67,7 @@ class class_ba33e0c1 : cluielem {
     // Checksum 0xaebf3322, Offset: 0x480
     // Size: 0x44
     function function_f0df5702(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "progressFrac", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "progressFrac", value);
     }
 
 }

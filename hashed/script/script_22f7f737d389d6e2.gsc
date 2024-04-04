@@ -34,11 +34,11 @@
 function function_8dbbde01(player, origin) {
     var_d98803e1 = namespace_ec06fe4a::function_65ee50ba(origin);
     origin = (origin[0], origin[1], var_d98803e1[2]);
-    coat = namespace_ec06fe4a::spawnmodel(origin + vectorscale((0, 0, 1), 36));
+    coat = namespace_ec06fe4a::spawnmodel(origin + (0, 0, 36));
     if (!isdefined(coat)) {
         return;
     }
-    org = namespace_ec06fe4a::spawnmodel(origin + vectorscale((0, 0, 1), 36), "tag_origin");
+    org = namespace_ec06fe4a::spawnmodel(origin + (0, 0, 36), "tag_origin");
     if (!isdefined(org)) {
         coat delete();
         return;
@@ -69,7 +69,6 @@ function function_8dbbde01(player, origin) {
     #/
     org namespace_83eb6304::function_3ecfde67("teamshift");
     trigger thread function_7649c09d();
-    waitresult = undefined;
     waitresult = player waittilltimeout(timetowait, #"death", #"entering_last_stand", #"doa_exit_taken", #"disconnect");
     org namespace_83eb6304::turnofffx("teamshift");
     coat namespace_e32bb68::function_ae271c0b("evt_doa_pickup_coatofarms_active_lp");
@@ -110,7 +109,6 @@ function private function_8ff2eaf3(trigger) {
     self clearenemy();
     timeleft = gettime() + 20000;
     while (gettime() < timeleft) {
-        result = undefined;
         result = self waittilltimeout(1, #"damage");
         if (isdefined(result.attacker) && isplayer(result.attacker)) {
             break;
@@ -133,7 +131,6 @@ function private function_8ff2eaf3(trigger) {
 function private function_7649c09d() {
     self endon(#"death");
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         guy = result.activator;
         if (is_true(guy.var_d55daa7c)) {

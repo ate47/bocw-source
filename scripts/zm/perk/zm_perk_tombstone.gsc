@@ -209,7 +209,7 @@ function function_716834ed() {
                         var_c6dd36cf.var_7fa2b50b = self getweaponammoclip(weapon2.dualwieldweapon);
                     }
                 }
-                var_42045b62 = {#armor:self.armor, #var_6032cf15:self.armortier, #var_5a4917d4:isdefined(self.var_595a11bc) ? self.var_595a11bc : 0, #var_c7f20631:isdefined(self.var_72d64cfd) ? self.var_72d64cfd : 0, #scorestreak:var_16f12c31, #tactical:var_fe58c446, #lethal:var_312d49ec, #weapon1:var_61bf1830, #weapon2:var_c6dd36cf};
+                var_42045b62 = {#armor:self.armor, #var_6032cf15:self.armortier, #scrap:isdefined(self.var_595a11bc) ? self.var_595a11bc : 0, #var_c7f20631:isdefined(self.var_72d64cfd) ? self.var_72d64cfd : 0, #scorestreak:var_16f12c31, #tactical:var_fe58c446, #lethal:var_312d49ec, #weapon1:var_61bf1830, #weapon2:var_c6dd36cf};
                 var_42045b62 = function_314e7dbf(var_42045b62);
                 if (!isdefined(self.var_7d3caa9)) {
                     self.var_7d3caa9 = [];
@@ -361,7 +361,7 @@ function function_c1ae3843() {
 // Size: 0x170
 function spawn_corpse() {
     trace_start = self.origin;
-    trace_end = self.origin + vectorscale((0, 0, -1), 500);
+    trace_end = self.origin + (0, 0, -500);
     var_5716a6f5 = playerphysicstrace(trace_start, trace_end);
     playfx(#"hash_7338c45a04f946da", self.origin);
     corpse = util::spawn_player_clone(self, #"hash_7258182255087552", undefined, 0);
@@ -382,7 +382,7 @@ function function_cf07c32a() {
     self endon(#"death");
     while (true) {
         wait(1);
-        var_3ab39d83 = self.origin + vectorscale((0, 0, 1), 30);
+        var_3ab39d83 = self.origin + (0, 0, 30);
         var_9568b0fc = anglestoforward(self.angles);
         var_9568b0fc = vectornormalize(var_9568b0fc);
         v_behind = var_9568b0fc * -1;
@@ -622,9 +622,7 @@ function function_88575fbe() {
 // Size: 0x2b4
 function function_9ebf012d() {
     self endon(#"disconnect");
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     spawnpoint = zm_gametype::onfindvalidspawnpoint();
     origin = spawnpoint.origin;
     angles = spawnpoint.angles;
@@ -729,7 +727,6 @@ function function_eedd0275() {
 // Checksum 0xe3d77461, Offset: 0x30d8
 // Size: 0x74
 function private function_3c87c880() {
-    s_waitresult = undefined;
     s_waitresult = self waittill(#"scene_igc_shot_started", #"player_revived");
     if (s_waitresult._notify === "scene_igc_shot_started" && isdefined(self.var_dc4f101)) {
         self function_6cc3fb63();
@@ -832,10 +829,10 @@ function on_disconnect() {
 function function_8fddd50e() {
     var_a97ca678 = isdefined(self.var_dc4f101) ? self.var_dc4f101.origin : self.origin;
     trace_start = var_a97ca678;
-    trace_end = var_a97ca678 + vectorscale((0, 0, -1), 100);
+    trace_end = var_a97ca678 + (0, 0, -100);
     var_dfa8eaa5 = playerphysicstrace(trace_start, trace_end);
     a_str_models = [#"hash_4bee36a9434de051", #"hash_4bee33a9434ddb38", #"hash_4bee34a9434ddceb", #"hash_4bee39a9434de56a"];
-    stash = util::spawn_model(a_str_models[self.entity_num], var_dfa8eaa5 + vectorscale((0, 0, 1), 15));
+    stash = util::spawn_model(a_str_models[self.entity_num], var_dfa8eaa5 + (0, 0, 15));
     stash function_619a5c20();
     stash clientfield::set("" + #"hash_2897f04212a28873", 1);
     stash.owner = self;
@@ -869,7 +866,6 @@ function function_330c66cc() {
 function function_cde4678f() {
     self endon(#"kill_trigger");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
         player playsound(#"hash_5ba85bd7ec71cb6c");
@@ -969,8 +965,8 @@ function function_8bc73ff9() {
     if (!isdefined(self.var_72d64cfd)) {
         self.var_72d64cfd = 0;
     }
-    if (isdefined(var_12a9e30a.var_5a4917d4)) {
-        self.var_595a11bc = self.var_595a11bc + var_12a9e30a.var_5a4917d4;
+    if (isdefined(var_12a9e30a.scrap)) {
+        self.var_595a11bc = self.var_595a11bc + var_12a9e30a.scrap;
     }
     if (isdefined(var_12a9e30a.var_c7f20631)) {
         self.var_72d64cfd = self.var_72d64cfd + var_12a9e30a.var_c7f20631;

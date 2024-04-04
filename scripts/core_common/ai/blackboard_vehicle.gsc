@@ -6,9 +6,7 @@
 // Checksum 0xa1e91aee, Offset: 0x80
 // Size: 0x34
 function registervehicleblackboardattributes() {
-    /#
-        assert(isvehicle(self), "<unknown string>");
-    #/
+    assert(isvehicle(self), "<unknown string>");
 }
 
 // Namespace blackboard/blackboard_vehicle

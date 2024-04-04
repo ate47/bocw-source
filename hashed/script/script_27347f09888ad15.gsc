@@ -19,13 +19,9 @@ function function_3ba2f5dd(var_693839ad, var_bc631e23) {
 // Checksum 0x453603f1, Offset: 0xd0
 // Size: 0x1ec
 function function_77be8a83(var_e98de867) {
-    /#
-        assert(isdefined(var_e98de867), "<unknown string>");
-    #/
+    assert(isdefined(var_e98de867), "<unknown string>");
     bundle = getscriptbundle(var_e98de867);
-    /#
-        assert(isdefined(bundle), "<unknown string>" + (ishash(var_e98de867) ? function_9e72a96(var_e98de867) : var_e98de867));
-    #/
+    assert(isdefined(bundle), "<unknown string>" + (ishash(var_e98de867) ? function_9e72a96(var_e98de867) : var_e98de867));
     var_89592ba7 = {#var_7c88c117:[], #var_b0abb10e:isdefined(bundle.var_d961aeb3) ? bundle.var_d961aeb3 : 0};
     foreach (index, var_c1d870ac in bundle.var_210a8489) {
         var_89592ba7.var_7c88c117[index] = {#name:isdefined(level.var_ce15b8c9[var_c1d870ac.entryname]) ? level.var_ce15b8c9[var_c1d870ac.entryname] : var_c1d870ac.entryname, #spawned:0, #var_cffbc08:var_c1d870ac.var_a949845f};
@@ -38,14 +34,10 @@ function function_77be8a83(var_e98de867) {
 // Checksum 0x8a4d4aa3, Offset: 0x2c8
 // Size: 0x10c
 function function_ca209564(var_e98de867, var_ddb02c2b) {
-    /#
-        assert(isdefined(var_e98de867), "<unknown string>");
-    #/
+    assert(isdefined(var_e98de867), "<unknown string>");
     if (isdefined(var_e98de867)) {
         var_3561dd4b = getscriptbundle(var_e98de867);
-        /#
-            assert(isdefined(var_3561dd4b), "<unknown string>" + (ishash(var_e98de867) ? function_9e72a96(var_e98de867) : var_e98de867));
-        #/
+        assert(isdefined(var_3561dd4b), "<unknown string>" + (ishash(var_e98de867) ? function_9e72a96(var_e98de867) : var_e98de867));
         if (isdefined(var_ddb02c2b)) {
             return function_15541865(var_3561dd4b.var_210a8489, var_ddb02c2b.var_7c88c117, 1, var_ddb02c2b.var_b0abb10e);
         }
@@ -58,13 +50,9 @@ function function_ca209564(var_e98de867, var_ddb02c2b) {
 // Checksum 0x54933674, Offset: 0x3e0
 // Size: 0xd0
 function function_3e7317ca(var_e98de867) {
-    /#
-        assert(isdefined(var_e98de867), "<unknown string>");
-    #/
+    assert(isdefined(var_e98de867), "<unknown string>");
     var_3561dd4b = getscriptbundle(var_e98de867);
-    /#
-        assert(isdefined(var_3561dd4b), "<unknown string>" + (ishash(var_e98de867) ? function_9e72a96(var_e98de867) : var_e98de867));
-    #/
+    assert(isdefined(var_3561dd4b), "<unknown string>" + (ishash(var_e98de867) ? function_9e72a96(var_e98de867) : var_e98de867));
     var_29556c1a = [];
     function_cbafbbab(var_3561dd4b.var_210a8489, var_29556c1a);
     return var_29556c1a;
@@ -164,9 +152,7 @@ function private function_cbafbbab(&var_8def964, &var_bcaf6518) {
         }
         var_74142af1 = getscriptbundle(var_8452bcb9);
         if (var_74142af1.type === #"survivalailistentry") {
-            /#
-                assert(isdefined(var_74142af1.var_5fa96b51) && var_74142af1.var_5fa96b51.size > 0, "<unknown string>");
-            #/
+            assert(isdefined(var_74142af1.var_5fa96b51) && var_74142af1.var_5fa96b51.size > 0, "<unknown string>");
             foreach (aitype in var_74142af1.var_5fa96b51) {
                 name = aitype.var_1b48d0fc;
                 array::add(var_bcaf6518, name, 0);

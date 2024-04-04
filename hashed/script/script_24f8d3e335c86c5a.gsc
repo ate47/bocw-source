@@ -29,7 +29,7 @@ function init() {
 function function_6b0f6eb8(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump == 1) {
         playfx(fieldname, #"hash_54b4d40f53a3f69c", self.origin);
-        playsound(fieldname, #"hash_3882c488b58f4b4", self.origin + vectorscale((0, 0, 1), 25));
+        playsound(fieldname, #"hash_3882c488b58f4b4", self.origin + (0, 0, 25));
     }
 }
 
@@ -78,7 +78,7 @@ function function_1d298e01(*localclientnum, *oldval, newval, *bnewent, *binitial
 function function_19a36115(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     var_42795d7f = array::random(["arm01_05_jnt", "arm01_04_jnt", "arm01_03_jnt", "arm02_04_jnt", "arm02_03_jnt", "arm02_01_jnt"]);
     util::playfxontag(bwastimejump, #"hash_36fe3341c3cc6826", self, var_42795d7f);
-    playsound(bwastimejump, #"hash_1ddeb8af5a217a6e", self.origin + vectorscale((0, 0, 1), 50));
+    playsound(bwastimejump, #"hash_1ddeb8af5a217a6e", self.origin + (0, 0, 50));
     self thread function_75f0fe2c();
 }
 
@@ -90,7 +90,7 @@ function function_75f0fe2c() {
     self notify("79ac0524aeb02124");
     self endon("79ac0524aeb02124");
     if (!isdefined(self.var_6631a14f)) {
-        self.var_6631a14f = self playloopsound(#"hash_13e3f89e22beb505", undefined, vectorscale((0, 0, 1), 50));
+        self.var_6631a14f = self playloopsound(#"hash_13e3f89e22beb505", undefined, (0, 0, 50));
     }
     wait(5);
     if (isdefined(self.var_6631a14f)) {
@@ -116,7 +116,7 @@ function function_ccffa08c(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_d66a6869(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump == 1) {
         playfx(fieldname, #"hash_2a291b035fc8a73d", self.origin, anglestoforward(self.angles), (0, 0, 1));
-        playsound(fieldname, #"hash_365b0a050b295dc8", self.origin + vectorscale((0, 0, 1), 25));
+        playsound(fieldname, #"hash_365b0a050b295dc8", self.origin + (0, 0, 25));
     }
 }
 

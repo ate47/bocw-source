@@ -45,16 +45,10 @@ function private finalize() {
 // Checksum 0xf3220530, Offset: 0x210
 // Size: 0x1fa
 function register_script(scriptname, spawncallback, var_99021fa0 = 0) {
-    /#
-        assert(isstring(scriptname) || ishash(scriptname));
-    #/
-    /#
-        assert(isfunctionptr(spawncallback));
-    #/
+    assert(isstring(scriptname) || ishash(scriptname));
+    assert(isfunctionptr(spawncallback));
     registeredscripts = level.contentmanager.registeredscripts;
-    /#
-        assert(!isdefined(registeredscripts[scriptname]));
-    #/
+    assert(!isdefined(registeredscripts[scriptname]));
     script = {#scriptname:scriptname, #spawncallback:spawncallback};
     registeredscripts[scriptname] = script;
     if (var_99021fa0) {
@@ -75,9 +69,7 @@ function register_script(scriptname, spawncallback, var_99021fa0 = 0) {
 // Checksum 0x2a3dfe27, Offset: 0x418
 // Size: 0x64
 function get_script(scriptname) {
-    /#
-        assert(isstring(scriptname) || ishash(scriptname));
-    #/
+    assert(isstring(scriptname) || ishash(scriptname));
     return level.contentmanager.registeredscripts[scriptname];
 }
 
@@ -86,9 +78,7 @@ function get_script(scriptname) {
 // Checksum 0x2fcacc6, Offset: 0x488
 // Size: 0x62
 function function_4485ab6d(key, value) {
-    /#
-        assert(isstring(key));
-    #/
+    assert(isstring(key));
     return function_7b8e26b3(level.contentmanager.registeredscripts, value, key);
 }
 
@@ -123,12 +113,8 @@ function private setup_destinations() {
     destinations = [];
     level.contentmanager.destinations = destinations;
     foreach (destination in mapdestinations) {
-        /#
-            assert(isdefined(destination.targetname));
-        #/
-        /#
-            assert(!isdefined(destinations[destination.targetname]));
-        #/
+        assert(isdefined(destination.targetname));
+        assert(!isdefined(destinations[destination.targetname]));
         destinations[destination.targetname] = destination;
         function_656a32f0(destination);
         locations = [];
@@ -138,12 +124,8 @@ function private setup_destinations() {
             if (child.variantname != #"hash_4807866fcc400c90") {
                 continue;
             }
-            /#
-                assert(isdefined(child.targetname));
-            #/
-            /#
-                assert(!isdefined(locations[child.targetname]));
-            #/
+            assert(isdefined(child.targetname));
+            assert(!isdefined(locations[child.targetname]));
             locations[child.targetname] = child;
         }
     }
@@ -155,9 +137,7 @@ function private setup_destinations() {
                 continue;
             }
             enabled = getgametypesetting(destination.var_7774bfaf);
-            /#
-                assert(isdefined(enabled), "<unknown string>" + destination.var_7774bfaf + "<unknown string>");
-            #/
+            assert(isdefined(enabled), "<unknown string>" + destination.var_7774bfaf + "<unknown string>");
             if (is_false(enabled)) {
                 arrayremovevalue(destinations, struct::get(destination.targetname));
             }
@@ -171,15 +151,11 @@ function private setup_destinations() {
 // Checksum 0x55b9f96c, Offset: 0xaf8
 // Size: 0x144
 function function_316bd0e6(str_destination, var_2d26f85c) {
-    /#
-        assert(isdefined(level.contentmanager.destinations[str_destination]) && isdefined("<unknown string>" + str_destination));
-    #/
+    assert(isdefined(level.contentmanager.destinations[str_destination]) && isdefined("<unknown string>" + str_destination));
     i = 0;
     foreach (var_fc091632 in var_2d26f85c) {
         adjacency = struct::get(var_fc091632);
-        /#
-            assert(isdefined(adjacency) && isdefined("<unknown string>" + var_fc091632));
-        #/
+        assert(isdefined(adjacency) && isdefined("<unknown string>" + var_fc091632));
         level.contentmanager.destinations[str_destination].adjacencies[i] = adjacency;
         i++;
     }
@@ -190,12 +166,8 @@ function function_316bd0e6(str_destination, var_2d26f85c) {
 // Checksum 0xc5b4c34d, Offset: 0xc48
 // Size: 0x9e
 function function_fe9fb6fd(location) {
-    /#
-        assert(isstruct(location));
-    #/
-    /#
-        assert(location.variantname == #"hash_4807866fcc400c90");
-    #/
+    assert(isstruct(location));
+    assert(location.variantname == #"hash_4807866fcc400c90");
     spawned_instances = isarray(location.spawnedinstances) && location.spawnedinstances.size > 0;
     return spawned_instances;
 }
@@ -209,12 +181,8 @@ function private setup_locations() {
     locations = [];
     level.contentmanager.locations = locations;
     foreach (location in maplocations) {
-        /#
-            assert(isdefined(location.targetname));
-        #/
-        /#
-            assert(!isdefined(locations[location.targetname]));
-        #/
+        assert(isdefined(location.targetname));
+        assert(!isdefined(locations[location.targetname]));
         locations[location.targetname] = location;
         if (isdefined(location.target)) {
             parent = struct::get(location.target);
@@ -230,12 +198,8 @@ function private setup_locations() {
             if (child.variantname != #"hash_60feba77d317eb4") {
                 continue;
             }
-            /#
-                assert(isdefined(child.content_script_name));
-            #/
-            /#
-                assert(!isdefined(instances[child.content_script_name]));
-            #/
+            assert(isdefined(child.content_script_name));
+            assert(!isdefined(instances[child.content_script_name]));
             instances[child.content_script_name] = child;
             child.location = location;
         }
@@ -247,18 +211,10 @@ function private setup_locations() {
 // Checksum 0xd710ecc7, Offset: 0xfb8
 // Size: 0x164
 function spawn_instance(instance) {
-    /#
-        assert(isstruct(instance));
-    #/
-    /#
-        assert(instance.variantname == #"hash_60feba77d317eb4");
-    #/
-    /#
-        assert(isstring(instance.content_script_name) || ishash(instance.content_script_name));
-    #/
-    /#
-        assert(isstruct(instance.location));
-    #/
+    assert(isstruct(instance));
+    assert(instance.variantname == #"hash_60feba77d317eb4");
+    assert(isstring(instance.content_script_name) || ishash(instance.content_script_name));
+    assert(isstruct(instance.location));
     function_656a32f0(instance);
     script = level.contentmanager.registeredscripts[instance.content_script_name];
     if (isdefined(script.spawncallback)) {
@@ -272,18 +228,10 @@ function spawn_instance(instance) {
 // Checksum 0xe6d18c74, Offset: 0x1128
 // Size: 0xfc
 function function_1c78a45d(instance) {
-    /#
-        assert(isstruct(instance));
-    #/
-    /#
-        assert(instance.variantname == #"hash_60feba77d317eb4");
-    #/
-    /#
-        assert(isstring(instance.content_script_name) || ishash(instance.content_script_name));
-    #/
-    /#
-        assert(isstruct(instance.location));
-    #/
+    assert(isstruct(instance));
+    assert(instance.variantname == #"hash_60feba77d317eb4");
+    assert(isstring(instance.content_script_name) || ishash(instance.content_script_name));
+    assert(isstruct(instance.location));
     return !function_fe9fb6fd(instance.location);
 }
 
@@ -292,9 +240,7 @@ function function_1c78a45d(instance) {
 // Checksum 0x85aa9335, Offset: 0x1230
 // Size: 0xfe
 function private function_130f0da3(instance) {
-    /#
-        assert(isarray(level.contentmanager.spawnedinstances));
-    #/
+    assert(isarray(level.contentmanager.spawnedinstances));
     if (!isdefined(instance.location.spawnedinstances)) {
         instance.location.spawnedinstances = [];
     }
@@ -312,15 +258,9 @@ function private function_130f0da3(instance) {
 // Checksum 0x63316990, Offset: 0x1338
 // Size: 0x152
 function function_76c93f39(contentstructs, usecallback, hintstring, radius) {
-    /#
-        assert(isarray(contentstructs));
-    #/
-    /#
-        assert(isfunctionptr(usecallback));
-    #/
-    /#
-        assert(ishash(hintstring));
-    #/
+    assert(isarray(contentstructs));
+    assert(isfunctionptr(usecallback));
+    assert(ishash(hintstring));
     triggers = [];
     foreach (struct in contentstructs) {
         trigger = spawn_interact(struct, usecallback, hintstring, undefined, radius);
@@ -334,15 +274,9 @@ function function_76c93f39(contentstructs, usecallback, hintstring, radius) {
 // Checksum 0x30a0a7ba, Offset: 0x1498
 // Size: 0x24e
 function spawn_interact(struct, usecallback, hintstring, var_e0355bdc, radius = 64, height = 128, centered = 1, offset = (0, 0, 0), var_499de507) {
-    /#
-        assert(isstruct(struct));
-    #/
-    /#
-        assert(isfunctionptr(usecallback));
-    #/
-    /#
-        assert(ishash(hintstring));
-    #/
+    assert(isstruct(struct));
+    assert(isfunctionptr(usecallback));
+    assert(ishash(hintstring));
     if (isdefined(struct.radius)) {
         radius = struct.radius;
     }
@@ -367,15 +301,9 @@ function spawn_interact(struct, usecallback, hintstring, var_e0355bdc, radius = 
 // Checksum 0x9e82365a, Offset: 0x16f0
 // Size: 0x22e
 function function_22e120bc(struct, usecallback, hintstring, var_e0355bdc, n_width = 64, n_length = 64, n_height = 64, offset = (0, 0, 0), var_499de507) {
-    /#
-        assert(isstruct(struct));
-    #/
-    /#
-        assert(isfunctionptr(usecallback));
-    #/
-    /#
-        assert(ishash(hintstring));
-    #/
+    assert(isstruct(struct));
+    assert(isfunctionptr(usecallback));
+    assert(ishash(hintstring));
     usetrigger = spawn("trigger_box_use", struct.origin + offset, 0, n_width, n_length, n_height);
     usetrigger triggerignoreteam();
     usetrigger setcursorhint("HINT_NOICON");

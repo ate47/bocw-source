@@ -515,7 +515,6 @@ function function_af235cd2() {
                         break;
                     }
                     if (!ispc()) {
-                        ret = undefined;
                         ret = player waittill(#"ui_confirm", #"hash_3c27402259e4c18e");
                         if (ret._notify === #"ui_confirm") {
                             namespace_6f1d35e1::function_6ed8776d(1, 1, 1);
@@ -555,7 +554,6 @@ function function_af235cd2() {
                                 break;
                             }
                             if (!ispc()) {
-                                ret = undefined;
                                 ret = player waittill(#"ui_confirm", #"hash_3c27402259e4c18e");
                                 if (ret._notify === #"ui_confirm") {
                                     namespace_6f1d35e1::function_6ed8776d(2, 1, 1);
@@ -576,7 +574,6 @@ function function_af235cd2() {
                     namespace_6f1d35e1::function_7bc9391e(3, 1);
                     namespace_6f1d35e1::function_635c370c(3, 0);
                     namespace_c8e236da::function_abdf062(0, #"hash_1e1dd49ffc599897");
-                    ret = undefined;
                     ret = player waittill(#"ui_confirm", #"hash_3c27402259e4c18e");
                     player playsound(#"hash_4bf3fb6e8fee5573");
                     namespace_c8e236da::function_bf642b41(0);
@@ -585,7 +582,6 @@ function function_af235cd2() {
                         namespace_6f1d35e1::function_635c370c(3, 1);
                         wait(0.1);
                         player globallogic_ui::function_9ed5232e("OperationChaos.floppyEntry.authenticate", 1, undefined, 1, undefined, undefined, 1);
-                        result = undefined;
                         result = player waittillmatch({#menu:#"hash_20ed03061e0850f3", #response:#"authentication"}, #"menuresponse");
                         if (result.intpayload == 0) {
                             player playsound(#"hash_3582a6ca8d3b7d86");
@@ -668,7 +664,6 @@ function private function_5b15c4b3() {
     }
     namespace_61e6d095::function_73c9a490(#"dialog_tree", 1);
     namespace_6f1d35e1::function_f6fbe41(2, #"");
-    selected = undefined;
     selected = level waittill(#"dialog_tree_option_selected");
     self globallogic_ui::function_9ed5232e("OperationChaos.floppyEntry.selectedPassphraseIndex", selected.var_70b35161);
     namespace_6f1d35e1::function_f6fbe41(2, var_9487875.var_a417e28e[selected.var_70b35161].var_d0354c50);

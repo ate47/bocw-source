@@ -352,7 +352,6 @@ function private function_3ec01d7a() {
     var_686cf729 = undefined;
     last_pos = undefined;
     while (true) {
-        waitresult = undefined;
         waitresult = self waittilltimeout(2, #"bad_path");
         if (self isplayinganimscripted()) {
             continue;

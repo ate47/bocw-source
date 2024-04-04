@@ -18,9 +18,7 @@ function function_a037b7c9(localclientnum, ui_model, value, time, ease_type, eas
 // Checksum 0x68839d3c, Offset: 0x298
 // Size: 0xec
 function ease_camera_position(start, target, time, ease_type, ease_in, ease_out, var_33ce6852) {
-    /#
-        assert(self isplayer());
-    #/
+    assert(self isplayer());
     if (!isdefined(start)) {
         start = self getcampos();
     }
@@ -33,9 +31,7 @@ function ease_camera_position(start, target, time, ease_type, ease_in, ease_out,
 // Checksum 0xab47aab8, Offset: 0x390
 // Size: 0x124
 function ease_camera_angles(start, target, time, ease_type, ease_in, ease_out, var_33ce6852) {
-    /#
-        assert(self isplayer());
-    #/
+    assert(self isplayer());
     if (!isdefined(start)) {
         start = self getcamangles();
     }
@@ -50,12 +46,8 @@ function ease_camera_angles(start, target, time, ease_type, ease_in, ease_out, v
 // Checksum 0x743c2eb9, Offset: 0x4c0
 // Size: 0x264
 function function_f95cb457(start, target, time, ease_type, ease_in, ease_out, var_33ce6852, min, max) {
-    /#
-        assert(self isplayer());
-    #/
-    /#
-        assert(target > 0);
-    #/
+    assert(self isplayer());
+    assert(target > 0);
     if (!isdefined(start) && ease_type == #"linear") {
         self function_49cdf043(math::clamp(target, isdefined(min) ? min : 1e-05, isdefined(max) ? max : 2147483647), time);
         return;
@@ -80,12 +72,8 @@ function function_f95cb457(start, target, time, ease_type, ease_in, ease_out, va
 // Checksum 0xf67fbaea, Offset: 0x730
 // Size: 0x134
 function function_b6f1c993(start, target, time, ease_type, ease_in, ease_out, var_33ce6852, min, max) {
-    /#
-        assert(self isplayer());
-    #/
-    /#
-        assert(target > 0);
-    #/
+    assert(self isplayer());
+    assert(target > 0);
     if (!isdefined(start)) {
         start = self function_78bf7752();
     }
@@ -98,12 +86,8 @@ function function_b6f1c993(start, target, time, ease_type, ease_in, ease_out, va
 // Checksum 0x405abe27, Offset: 0x870
 // Size: 0x134
 function function_136edb11(start, target, time, ease_type, ease_in, ease_out, var_33ce6852, min, max) {
-    /#
-        assert(self isplayer());
-    #/
-    /#
-        assert(target > 0);
-    #/
+    assert(self isplayer());
+    assert(target > 0);
     if (!isdefined(start)) {
         start = self function_28aef982();
     }
@@ -124,9 +108,7 @@ function ease_dvar(localclientnum, dvar, var_c7ec7d60, value, time, ease_type, e
 // Checksum 0x268c1db2, Offset: 0xa70
 // Size: 0x194
 function ease_origin(localclientnum, target, time, ease_type, axis, additive, ease_in, ease_out, var_33ce6852) {
-    /#
-        assert(self != level);
-    #/
+    assert(self != level);
     endons = undefined;
     callback = &function_54354e4e;
     start_value = self.origin;
@@ -136,9 +118,7 @@ function ease_origin(localclientnum, target, time, ease_type, axis, additive, ea
         endons = ["ease_origin", "ease_origin_x", "ease_origin_y", "ease_origin_z"];
     }
     if (isdefined(axis)) {
-        /#
-            assert(axis >= 0 && axis <= 2);
-        #/
+        assert(axis >= 0 && axis <= 2);
         start_value = start_value[axis];
     } else {
         axis = -1;
@@ -151,9 +131,7 @@ function ease_origin(localclientnum, target, time, ease_type, axis, additive, ea
 // Checksum 0xb5ec1658, Offset: 0xc10
 // Size: 0x194
 function ease_angles(localclientnum, target, time, ease_type, axis, additive, ease_in, ease_out, var_33ce6852) {
-    /#
-        assert(self != level);
-    #/
+    assert(self != level);
     endons = undefined;
     callback = &function_3b3f9801;
     start_value = self.angles;
@@ -163,9 +141,7 @@ function ease_angles(localclientnum, target, time, ease_type, axis, additive, ea
         endons = ["ease_angles", "ease_pitch", "ease_yaw", "ease_roll"];
     }
     if (isdefined(axis)) {
-        /#
-            assert(axis >= 0 && axis <= 2);
-        #/
+        assert(axis >= 0 && axis <= 2);
         start_value = start_value[axis];
     } else {
         axis = -1;
@@ -178,12 +154,8 @@ function ease_angles(localclientnum, target, time, ease_type, axis, additive, ea
 // Checksum 0x9aa330e6, Offset: 0xdb0
 // Size: 0x5be
 function function_d4a4a726(localclientnum, start_value, target_value, time, var_f71e2d8f, ease_type = #"linear", notifies, endons, ease_in, ease_out, var_33ce6852, ...) {
-    /#
-        assert(isdefined(level.ease_funcs));
-    #/
-    /#
-        assert(isdefined(level.ease_funcs[ease_type]));
-    #/
+    assert(isdefined(level.ease_funcs));
+    assert(isdefined(level.ease_funcs[ease_type]));
     localplayer = function_5c10bd79(localclientnum);
     if (!isdefined(localplayer)) {
         return;

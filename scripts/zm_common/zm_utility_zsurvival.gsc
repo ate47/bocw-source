@@ -78,9 +78,7 @@ function function_8e066676() {
 // Checksum 0xc6e4e21a, Offset: 0x468
 // Size: 0x18c
 function function_7c97e961(var_661691aa) {
-    /#
-        assert(isdefined(var_661691aa), "<unknown string>");
-    #/
+    assert(isdefined(var_661691aa), "<unknown string>");
     level.var_b48509f9 = var_661691aa;
     setroundsplayed(var_661691aa);
     switch (level.var_b48509f9) {

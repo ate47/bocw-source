@@ -66,19 +66,19 @@ function function_a1fa260e(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_8c61edee(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self.var_660dd3dd = util::playfxontag(fieldname, "sr/fx9_harvester_extraction_charge", self, "tag_origin");
-        playsound(fieldname, #"hash_117e07746b74905a", self.origin + vectorscale((0, 0, 1), 25));
+        playsound(fieldname, #"hash_117e07746b74905a", self.origin + (0, 0, 25));
         var_b2632866 = struct::get_array("vortex", "targetname");
         if (isdefined(var_b2632866)) {
             var_f3133091 = arraygetclosest(self.origin, var_b2632866);
         }
         v_up = vectornormalize(anglestoup(self.angles)) * 40 + self.origin;
         if (isdefined(var_f3133091) && isdefined(v_up)) {
-            self.var_8cf2f35b = util::spawn_model(fieldname, "tag_origin", var_f3133091.origin + vectorscale((0, 0, 1), 50));
+            self.var_8cf2f35b = util::spawn_model(fieldname, "tag_origin", var_f3133091.origin + (0, 0, 50));
             self.var_b5bdd2b9 = util::spawn_model(fieldname, "tag_origin", v_up);
         }
         wait(0.1);
         if (isdefined(self) && isdefined(self.var_8cf2f35b) && isdefined(self.var_b5bdd2b9)) {
-            self.var_b5bdd2b9.angles = vectorscale((-1, 0, 0), 90);
+            self.var_b5bdd2b9.angles = (-90, 0, 0);
             if (bwastimejump == 1) {
                 self.var_40433812 = util::playfxontag(fieldname, "sr/fx9_harvester_extraction_source_01", self.var_8cf2f35b, "tag_origin");
                 self.var_221b7b06 = util::playfxontag(fieldname, "sr/fx9_harvester_extraction_target_01", self.var_b5bdd2b9, "tag_origin");
@@ -120,7 +120,7 @@ function function_8c61edee(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_5bdf2437(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self.var_e794d6cd = util::playfxontag(fieldname, "sr/fx9_obj_dark_aether_tornado_prompt", self, "tag_origin");
-        playsound(fieldname, #"hash_cc9ea7c69058a60", self.origin + vectorscale((0, 0, 1), 25));
+        playsound(fieldname, #"hash_cc9ea7c69058a60", self.origin + (0, 0, 25));
         if (isdefined(self gettagorigin("tag_body"))) {
             self.var_4ff7bf25 = util::playfxontag(fieldname, "vehicle/fx9_vdest_emp_ru_transport_truck", self, "tag_origin");
         }
@@ -144,7 +144,7 @@ function function_3f561fa0(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump === 1) {
         self.var_3c825826 = util::playfxontag(fieldname, "sr/fx9_obj_dark_aether_tornado_stage_01", self, "tag_origin");
         self.var_f2e155e9 = util::playfxontag(fieldname, "sr/fx9_obj_dark_aether_tornado_range", self, "tag_origin");
-        playsound(fieldname, #"hash_1675f638be9b3ef2", self.origin + vectorscale((0, 0, 1), 25));
+        playsound(fieldname, #"hash_1675f638be9b3ef2", self.origin + (0, 0, 25));
         self.var_6ca1bf85 = self playloopsound(#"hash_2bd7c24a8903f88d");
         return;
     }
@@ -159,7 +159,7 @@ function function_3f561fa0(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         if (isdefined(self)) {
             self.var_3c825826 = util::playfxontag(fieldname, "sr/fx9_obj_dark_aether_tornado_stage_02", self, "tag_origin");
-            playsound(fieldname, #"hash_1675f638be9b3ef2", self.origin + vectorscale((0, 0, 1), 25));
+            playsound(fieldname, #"hash_1675f638be9b3ef2", self.origin + (0, 0, 25));
             self.var_6ca1bf85 = self playloopsound(#"hash_2bd7bf4a8903f374");
         }
         wait(10);
@@ -173,7 +173,7 @@ function function_3f561fa0(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         if (isdefined(self)) {
             self.var_3c825826 = util::playfxontag(fieldname, "sr/fx9_obj_dark_aether_tornado_stage_03", self, "tag_origin");
-            playsound(fieldname, #"hash_1675f638be9b3ef2", self.origin + vectorscale((0, 0, 1), 25));
+            playsound(fieldname, #"hash_1675f638be9b3ef2", self.origin + (0, 0, 25));
             self.var_6ca1bf85 = self playloopsound(#"hash_2bd7c04a8903f527");
         }
         return;
@@ -190,7 +190,7 @@ function function_3f561fa0(localclientnum, *oldval, newval, *bnewent, *binitials
         self stoploopsound(self.var_6ca1bf85);
         self.var_6ca1bf85 = undefined;
     }
-    playsound(fieldname, #"hash_266828a54f3b3f36", self.origin + vectorscale((0, 0, 1), 25));
+    playsound(fieldname, #"hash_266828a54f3b3f36", self.origin + (0, 0, 25));
     util::playfxontag(fieldname, "sr/fx9_obj_dark_aether_tornado_ending", self, "tag_origin");
 }
 

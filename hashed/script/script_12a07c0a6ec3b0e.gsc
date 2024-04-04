@@ -110,7 +110,7 @@ function function_80fdd2aa(array, n_idx) {
 function function_dc99662d(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     self endon(#"death");
     if (bwasdemojump) {
-        playsound(fieldname, #"hash_707397ff94e45605", self.origin + vectorscale((0, 0, 1), 30));
+        playsound(fieldname, #"hash_707397ff94e45605", self.origin + (0, 0, 30));
         self.var_f11dc183 = playfx(fieldname, #"hash_4e0a101bea0199df", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
     }
 }
@@ -152,7 +152,7 @@ function function_4aa76e8d(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwasdemojump) {
         self.var_b8719b00 = playfx(fieldname, #"hash_79820377ac325c2b", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
         self.var_1aebf0ec = util::playfxontag(fieldname, #"hash_91d61544c778dbe", self, "tag_mouth");
-        playsound(fieldname, #"hash_161fceda8dd44ee3", self.origin + vectorscale((0, 0, 1), 40));
+        playsound(fieldname, #"hash_161fceda8dd44ee3", self.origin + (0, 0, 40));
         return;
     }
     if (isdefined(self.var_b8719b00)) {
@@ -230,11 +230,11 @@ function function_b6ea5740(localclientnum, *oldval, *newval, *bnewent, *binitial
     util::playfxontag(bwasdemojump, #"hash_61e3c7a179d7cdfb", e_fx, "tag_origin");
     e_fx playsound(bwasdemojump, #"hash_14182939d9e547b2");
     e_fx.var_1398d03 = e_fx playloopsound(#"hash_20b1d2b1a7ca4646");
-    e_fx moveto(e_fx.origin + vectorscale((0, 0, 1), 40), 0.8);
+    e_fx moveto(e_fx.origin + (0, 0, 40), 0.8);
     wait(0.75);
     var_5f90c92a = struct::get("side_quest_gp_machine_screen");
     n_time = distance(e_fx.origin, var_5f90c92a.origin) / 400;
-    e_fx moveto(var_5f90c92a.origin + vectorscale((0, 0, 1), 32), n_time);
+    e_fx moveto(var_5f90c92a.origin + (0, 0, 32), n_time);
     e_fx waittill(#"movedone");
     e_fx playsound(bwasdemojump, #"hash_282ba4e04a5fa817");
     e_fx stoploopsound(e_fx.var_1398d03);
@@ -373,7 +373,7 @@ function function_30aa821d(localclientnum, *oldval, newval, *bnewent, *binitials
                 var_2b30e4c7.fx_tag = util::spawn_model(fieldname, "tag_origin", var_2b30e4c7.origin, var_2b30e4c7.angles);
                 var_2b30e4c7.fx_tag.var_a3701ec9 = util::playfxontag(fieldname, #"hash_860f2d43123c954", var_2b30e4c7.fx_tag, "tag_origin");
             }
-            playsound(fieldname, #"hash_5147e3b5f415d707", var_2b30e4c7.origin + vectorscale((0, 0, 1), 20));
+            playsound(fieldname, #"hash_5147e3b5f415d707", var_2b30e4c7.origin + (0, 0, 20));
         }
     }
     if (bwastimejump == 2) {
@@ -383,7 +383,7 @@ function function_30aa821d(localclientnum, *oldval, newval, *bnewent, *binitials
                 var_2b30e4c7.fx_tag = util::spawn_model(fieldname, "tag_origin", var_2b30e4c7.origin, var_2b30e4c7.angles);
                 var_2b30e4c7.fx_tag.var_a3701ec9 = util::playfxontag(fieldname, #"hash_860f2d43123c954", var_2b30e4c7.fx_tag, "tag_origin");
             }
-            playsound(fieldname, #"hash_5147e3b5f415d707", var_2b30e4c7.origin + vectorscale((0, 0, 1), 20));
+            playsound(fieldname, #"hash_5147e3b5f415d707", var_2b30e4c7.origin + (0, 0, 20));
         }
     }
     if (bwastimejump == 3) {
@@ -393,7 +393,7 @@ function function_30aa821d(localclientnum, *oldval, newval, *bnewent, *binitials
                 var_2b30e4c7.fx_tag = util::spawn_model(fieldname, "tag_origin", var_2b30e4c7.origin, var_2b30e4c7.angles);
             }
             var_2b30e4c7.fx_tag.var_a3701ec9 = util::playfxontag(fieldname, #"hash_43eb5c945959b06f", var_2b30e4c7.fx_tag, "tag_origin");
-            playsound(fieldname, #"hash_1b4eb6b7b24acdaf", var_2b30e4c7.origin + vectorscale((0, 0, 1), 20));
+            playsound(fieldname, #"hash_1b4eb6b7b24acdaf", var_2b30e4c7.origin + (0, 0, 20));
         }
     }
     if (bwastimejump == 4) {
@@ -558,7 +558,7 @@ function function_69ffb9e7(localclientnum, e_vehicle, var_e15e9f2a) {
     speed = 420;
     threshold = speed * 0.016;
     while (dist > threshold) {
-        var_2b1dc7a6 = var_11e5eff8 + vectorscale((0, 0, 1), 16);
+        var_2b1dc7a6 = var_11e5eff8 + (0, 0, 16);
         self moveto(var_2b1dc7a6, max(dist / speed, 0.016));
         waitframe(1);
         dist = distance(self.origin, var_2b1dc7a6);
@@ -602,7 +602,7 @@ function function_58ef33dd(localclientnum, *oldval, newval, *bnewent, *binitials
             return;
         }
         if (!isdefined(self.fx_tag) && !isdefined(self.var_66eb3636)) {
-            self.fx_tag = util::spawn_model(fieldname, "tag_origin", self.origin + vectorscale((0, 0, 1), 40), self.angles);
+            self.fx_tag = util::spawn_model(fieldname, "tag_origin", self.origin + (0, 0, 40), self.angles);
             self.var_66eb3636 = util::playfxontag(fieldname, #"hash_61e3c7a179d7cdfb", self.fx_tag, "tag_origin");
             self.fx_tag linkto(self);
         }

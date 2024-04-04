@@ -8,22 +8,6 @@
 class cplayer_insertion_choice : cluielem {
 
     // Namespace cplayer_insertion_choice/player_insertion_choice
-    // Params 0, eflags: 0x8
-    // Checksum 0x84c849b3, Offset: 0x348
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cplayer_insertion_choice/player_insertion_choice
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xecb0395, Offset: 0x588
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cplayer_insertion_choice/player_insertion_choice
     // Params 1, eflags: 0x0
     // Checksum 0x6b5dc6e2, Offset: 0x430
     // Size: 0x24
@@ -54,26 +38,22 @@ class cplayer_insertion_choice : cluielem {
     // Size: 0x11c
     function set_state(localclientnum, state_name) {
         if (#"defaultstate" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 0);
+            set_data(localclientnum, "_state", 0);
             return;
         }
         if (#"groundvehicle" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 1);
+            set_data(localclientnum, "_state", 1);
             return;
         }
         if (#"halojump" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 2);
+            set_data(localclientnum, "_state", 2);
             return;
         }
         if (#"heli" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 3);
+            set_data(localclientnum, "_state", 3);
             return;
         }
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
     }
 
     // Namespace cplayer_insertion_choice/player_insertion_choice
@@ -82,7 +62,7 @@ class cplayer_insertion_choice : cluielem {
     // Size: 0x44
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_state(localclientnum, #"defaultstate");
+        set_state(localclientnum, #"defaultstate");
     }
 
 }

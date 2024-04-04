@@ -59,9 +59,7 @@ function function_53e50b40(action) {
 // Checksum 0x479eb473, Offset: 0x5b0
 // Size: 0x694
 function function_e3e4c03c(action, body) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!isdefined(action)) {
         action = level.var_f467e5b0.actions[#"body_shield"];
     }
@@ -136,9 +134,7 @@ function function_e3e4c03c(action, body) {
 // Checksum 0x6a0807cc, Offset: 0xc50
 // Size: 0x12c
 function private function_40622d99() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self endon(#"death", #"disconnect");
     var_62ba1300 = self action_utility::function_1a2a3654();
     if (var_62ba1300 !== self getcurrentweapon()) {
@@ -178,9 +174,7 @@ function function_fc288808(*quick) {
 // Size: 0x34c
 function function_a8501d78(action) {
     self endon(action.ender);
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self flag::clear("body_shield_gun_up");
     self action_utility::function_e2fcacb2(3);
     achievements::function_533e57d6(self, 1);
@@ -195,7 +189,7 @@ function function_a8501d78(action) {
     self action_utility::function_2795d678(1, 1, 0, 0, ["cinematicmotion_body_shield", "cinematicmotion_body_shield_ads"]);
     self.takedown.body_shield.actor action_utility::function_35d0bd11(1);
     self.takedown.body show();
-    self.takedown.body linkto(self, "tag_origin", vectorscale((-1, 0, 0), 1000), (0, 0, 0));
+    self.takedown.body linkto(self, "tag_origin", (-1000, 0, 0), (0, 0, 0));
     self.takedown.body action_utility::function_b82cae8f(1);
     self thread function_756e29bb(action, isdefined(override.anim_name) ? override.anim_name : action.anim_name);
     self.takedown.var_17813638 = undefined;
@@ -518,7 +512,6 @@ function function_7acc6ae7(action) {
 function function_c13ab5c7(action) {
     self endon(action.ender, #"hash_2d036a7855e382b1");
     while (true) {
-        result = undefined;
         result = self waittill(#"body_shield_damage");
         min_time = 2;
         var_365d33af = 300;
@@ -553,7 +546,6 @@ function function_e98922fb(action) {
     self endon(action.ender, #"hash_2d036a7855e382b1");
     wait(5);
     while (true) {
-        result = undefined;
         result = self waittilltimeout(1, #"body_shield_damage");
         if (result._notify != "body_shield_damage") {
             self.takedown.body_shield.health = self.takedown.body_shield.health - 7;
@@ -573,9 +565,7 @@ function function_e98922fb(action) {
 // Checksum 0xdd69c08, Offset: 0x25b0
 // Size: 0x9a
 function function_bec58af5() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (isdefined(self.takedown.body_shield) && isdefined(self.takedown.body_shield.actor)) {
         self.takedown.body_shield.actor delete();
         self.takedown.body_shield.actor = undefined;
@@ -587,9 +577,7 @@ function function_bec58af5() {
 // Checksum 0x2178f060, Offset: 0x2658
 // Size: 0xaa
 function function_9fa1a484() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!isdefined(self.takedown.body_shield.actor)) {
         return;
     }
@@ -605,9 +593,7 @@ function function_9fa1a484() {
 // Checksum 0x93d0c0c6, Offset: 0x2710
 // Size: 0xfc
 function function_b25119b6(action) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!isdefined(self.takedown.body_shield)) {
         return;
     }

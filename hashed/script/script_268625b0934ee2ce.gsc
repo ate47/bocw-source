@@ -32,9 +32,7 @@ function stealth_noteworthy_thread(enabled, callouts) {
         return;
     }
     self endoncallback(&function_19d52da4, #"stealth_noteworthy_thread", #"disconnect");
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     while (!isdefined(self.stealth)) {
         wait(1);
     }
@@ -138,9 +136,7 @@ function private stealth_noteworthy_init() {
 // Checksum 0x303f37ee, Offset: 0xaa8
 // Size: 0x340
 function private stealth_noteworthy_kill_monitor() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     var_a57f6402 = 0;
     kills = undefined;
     while (true) {
@@ -152,7 +148,6 @@ function private stealth_noteworthy_kill_monitor() {
         lastkilltime = gettime();
         level flag::wait_till("stealth_enabled");
         level flag::wait_till_clear("stealth_spotted");
-        wait_result = undefined;
         wait_result = level waittill(#"ai_killed");
         victim = wait_result.evictim;
         attacker = wait_result.eattacker;
@@ -312,7 +307,6 @@ function private stealth_noteworthy_priority(eventname) {
 function private function_1e099116() {
     /#
         while (true) {
-            wait_result = undefined;
             wait_result = getplayers()[0] waittill("<unknown string>");
             eventname = wait_result.event;
             var_e6eef508 = wait_result.targets;
@@ -521,7 +515,7 @@ function private stealth_noteworthy_visible(other, var_5958f865) {
 // Checksum 0x6ce671d2, Offset: 0x2510
 // Size: 0x8a
 function private stealth_noteworthy_get_eye() {
-    eye = self.origin + vectorscale((0, 0, 1), 50);
+    eye = self.origin + (0, 0, 50);
     if (isplayer(self)) {
         eye = self getplayercamerapos();
     } else if (issentient(self)) {
@@ -548,9 +542,7 @@ function private stealth_noteworthy_trace(start, end, ignore_ent) {
 // Checksum 0x768763e4, Offset: 0x2650
 // Size: 0x27a
 function ambient_player_thread(var_bfd9f922, var_ececce87, var_d572c578, var_4fb611ad) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self notify(#"ambient_player_thread");
     self endon(#"ambient_player_thread", #"disconnect");
     if (!isdefined(var_bfd9f922)) {

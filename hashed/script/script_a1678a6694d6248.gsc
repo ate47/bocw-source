@@ -322,7 +322,7 @@ function function_72dbb6b0(localclientnum, *oldval, newval, *bnewent, *binitials
         self playrenderoverridebundle(#"hash_20021a924b743e3e");
         if (!isdefined(self.var_97928c44)) {
             self playsound(fieldname, #"hash_3376f5f8d417f9f1");
-            self.var_97928c44 = self playloopsound(#"hash_42793df46bf25c17", undefined, vectorscale((0, 0, 1), 40));
+            self.var_97928c44 = self playloopsound(#"hash_42793df46bf25c17", undefined, (0, 0, 40));
         }
         return;
     }
@@ -332,7 +332,7 @@ function function_72dbb6b0(localclientnum, *oldval, newval, *bnewent, *binitials
         self stoploopsound(self.var_97928c44);
         self.var_97928c44 = undefined;
     }
-    playsound(fieldname, #"hash_7c352e97b08234f4", self.origin + vectorscale((0, 0, 1), 40));
+    playsound(fieldname, #"hash_7c352e97b08234f4", self.origin + (0, 0, 40));
     self stoprenderoverridebundle(#"hash_20021a924b743e3e");
     self thread function_82a54d90(fieldname);
     self hide();
@@ -449,7 +449,7 @@ function function_3a8acde0(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x9c
 function function_6f0e3ec(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     util::playfxontag(bwastimejump, #"hash_16217ad682d25c31", self, "J_Spine4");
-    playsound(bwastimejump, #"hash_54b94d7ce3b3829a", self.origin + vectorscale((0, 0, 1), 25));
+    playsound(bwastimejump, #"hash_54b94d7ce3b3829a", self.origin + (0, 0, 25));
 }
 
 // Namespace namespace_6fc19861/namespace_6fc19861
@@ -458,7 +458,7 @@ function function_6f0e3ec(localclientnum, *oldval, *newval, *bnewent, *binitials
 // Size: 0x9c
 function function_21f99cd2(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     util::playfxontag(bwastimejump, #"hash_5b7fecd9069a79a2", self, "J_Spine4");
-    playsound(bwastimejump, #"hash_54b94d7ce3b3829a", self.origin + vectorscale((0, 0, 1), 25));
+    playsound(bwastimejump, #"hash_54b94d7ce3b3829a", self.origin + (0, 0, 25));
 }
 
 // Namespace namespace_6fc19861/namespace_6fc19861
@@ -471,11 +471,11 @@ function function_f564024f(*localclientnum, *oldval, newval, *bnewent, *binitial
         self.var_bab1a4cb = undefined;
     }
     if (bwastimejump == 1) {
-        self.var_bab1a4cb = self playloopsound(#"hash_4166b3feb34a26ae", undefined, vectorscale((0, 0, 1), 50));
+        self.var_bab1a4cb = self playloopsound(#"hash_4166b3feb34a26ae", undefined, (0, 0, 50));
         return;
     }
     if (bwastimejump == 2) {
-        self.var_bab1a4cb = self playloopsound(#"hash_2204d8749b6a599b", undefined, vectorscale((0, 0, 1), 50));
+        self.var_bab1a4cb = self playloopsound(#"hash_2204d8749b6a599b", undefined, (0, 0, 50));
     }
 }
 

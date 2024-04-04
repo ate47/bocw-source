@@ -8,21 +8,8 @@
 // Method(s) 9 Total 16
 class class_ab111f2c : cluielem {
 
-    // Namespace class_ab111f2c/cp_hint_text
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x13757890, Offset: 0x298
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_ab111f2c/cp_hint_text
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x35ffacb5, Offset: 0x520
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_ab111f2c/cp_hint_text
     // Params 2, eflags: 0x2 linked
@@ -37,7 +24,7 @@ class class_ab111f2c : cluielem {
     // Checksum 0xf8d275ef, Offset: 0x490
     // Size: 0x3c
     function function_1c78fe1e(player) {
-        player clientfield::function_bb878fc3(self.var_d5213cbb, self.var_bf9c8c95, "fadeout");
+        player clientfield::function_bb878fc3(var_d5213cbb, var_bf9c8c95, "fadeout");
     }
 
     // Namespace namespace_ab111f2c/cp_hint_text
@@ -53,7 +40,7 @@ class class_ab111f2c : cluielem {
     // Checksum 0xddfcef73, Offset: 0x448
     // Size: 0x3c
     function function_64d95cad(player) {
-        player clientfield::function_bb878fc3(self.var_d5213cbb, self.var_bf9c8c95, "display_blink");
+        player clientfield::function_bb878fc3(var_d5213cbb, var_bf9c8c95, "display_blink");
     }
 
     // Namespace namespace_ab111f2c/cp_hint_text
@@ -73,7 +60,7 @@ class class_ab111f2c : cluielem {
     // Checksum 0xbcb3e4a1, Offset: 0x3f8
     // Size: 0x44
     function function_a16f86c1(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "hint_text", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "hint_text", value);
     }
 
     // Namespace namespace_ab111f2c/cp_hint_text
@@ -81,7 +68,7 @@ class class_ab111f2c : cluielem {
     // Checksum 0x41bae714, Offset: 0x4d8
     // Size: 0x3c
     function function_a981d6b6(player) {
-        player clientfield::function_bb878fc3(self.var_d5213cbb, self.var_bf9c8c95, "display_noblink");
+        player clientfield::function_bb878fc3(var_d5213cbb, var_bf9c8c95, "display_noblink");
     }
 
 }

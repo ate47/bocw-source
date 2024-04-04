@@ -222,7 +222,6 @@ function function_3dda2db1(var_50cc0d4f = 0) {
 function function_5477c29() {
     self endon(#"death");
     while (true) {
-        s = undefined;
         s = self waittill(#"damage");
         if (math::cointoss(60)) {
             level.player dodamage(s.amount * 0.6, level.player.origin, s.attacker, s.inflictor, "head", s.mod, 0, s.weapon);

@@ -134,9 +134,7 @@ function function_685a8288(instance) {
     level endon(#"end_game");
     instance.var_422ae63e = #"p9_fxanim_mp_care_package_bundle";
     var_28bf3706 = instance.contentgroups[#"heli_spawn"][0];
-    /#
-        assert(isdefined(var_28bf3706.target), "<unknown string>");
-    #/
+    assert(isdefined(var_28bf3706.target), "<unknown string>");
     nd_start = getvehiclenode(var_28bf3706.target, "targetname");
     do {
         vh_heli = vehicle::spawn(undefined, "helicopter_escape_heli", #"hash_669d01ea5db4e10c", nd_start.origin, nd_start.angles);
@@ -411,7 +409,7 @@ function drop_crate(instance, var_f9972216, var_f16f4b37) {
     self playsound(#"veh_supply_drop");
     mask = 1 | 4;
     radius = 30;
-    trace = physicstrace(self.e_crate.origin + vectorscale((0, 0, -1), 100), self.e_crate.origin + vectorscale((0, 0, -1), 10000), (radius * -1, radius * -1, 0), (radius, radius, 2 * radius), undefined, mask);
+    trace = physicstrace(self.e_crate.origin + (0, 0, -100), self.e_crate.origin + (0, 0, -10000), (radius * -1, radius * -1, 0), (radius, radius, 2 * radius), undefined, mask);
     v_target_location = trace[#"position"];
     var_3a68f655 = distance(self.e_crate.origin, v_target_location);
     n_drop_time = mapfloat(0, 1000, 1, 10, var_3a68f655);
@@ -469,7 +467,7 @@ function cratecontrolleddrop(instance, v_target_location, n_drop_time = 10, var_
         }
     }
     if (isdefined(params.var_827e3209)) {
-        trace = groundtrace(crate.origin + vectorscale((0, 0, 1), 70), crate.origin + vectorscale((0, 0, -1), 100), 0, crate);
+        trace = groundtrace(crate.origin + (0, 0, 70), crate.origin + (0, 0, -100), 0, crate);
         var_2122d2eb = crate getfxfromsurfacetable(params.var_827e3209, trace[#"surfacetype"]);
         if (isdefined(var_2122d2eb)) {
             fxforward = trace[#"normal"];
@@ -520,7 +518,7 @@ function cratephysics(instance) {
 // Size: 0x74
 function function_f7155f4f(params) {
     e_crate = self.struct.scriptmodel;
-    e_crate.var_11428995 = vectorscale((0, 1, 0), 90);
+    e_crate.var_11428995 = (0, 90, 0);
     self namespace_58949729::function_8665f666(params);
     e_crate thread function_960ea519(params.activator);
 }
@@ -556,7 +554,7 @@ function function_960ea519(owner) {
 function function_345ada65(attacker) {
     bundle = getscriptbundle(#"killstreak_supply_drop_zm");
     if (isdefined(bundle.var_b768b86b)) {
-        trace = groundtrace(self.origin + vectorscale((0, 0, 1), 10), self.origin + vectorscale((0, 0, -1), 10), 0, self);
+        trace = groundtrace(self.origin + (0, 0, 10), self.origin + (0, 0, -10), 0, self);
         explosionfx = self getfxfromsurfacetable(bundle.var_b768b86b, trace[#"surfacetype"]);
         if (isdefined(explosionfx)) {
             playfx(explosionfx, self.origin, anglestoup(self.angles), anglestoright(self.angles));
@@ -773,7 +771,7 @@ function is_touching_crate() {
     foreach (vehicle in vehicles) {
         if (isvehicle(vehicle)) {
             if (isdefined(vehicle.archetype) && vehicle.archetype == "wasp") {
-                if (crate istouching(vehicle, vectorscale((1, 1, 1), 2))) {
+                if (crate istouching(vehicle, (2, 2, 2))) {
                     vehicle notify(#"sentinel_shutdown");
                 }
             }
@@ -789,7 +787,7 @@ function is_clone_touching_crate() {
     if (!isdefined(self)) {
         return;
     }
-    extraboundary = vectorscale((1, 1, 1), 10);
+    extraboundary = (10, 10, 10);
     actors = getactorarray();
     for (i = 0; i < actors.size; i++) {
         if (isdefined(actors[i]) && isdefined(actors[i].isaiclone) && isalive(actors[i]) && actors[i].origin[2] < self.origin[2] && self istouching(actors[i], extraboundary)) {
@@ -817,7 +815,7 @@ function is_equipment_touching_crate() {
         if (!isalive(entity)) {
             continue;
         }
-        if (!entity istouching(self, vectorscale((1, 1, 1), 10))) {
+        if (!entity istouching(self, (10, 10, 10))) {
             continue;
         }
         if (isdefined(entity.detonated)) {

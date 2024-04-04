@@ -394,7 +394,7 @@ function private function_48d47618(localclientnum, ent, eye_pos, var_753686d6, v
         var_3300333c = distance(target_pos, eye_pos);
         /#
             if (level.var_f234c5a2[#"hash_3e3f17ce43aad14c"] != 0) {
-                print3d(target_pos + vectorscale((0, 0, 1), 12), "<unknown string>" + int(var_3300333c) + "<unknown string>" + int(var_753686d6), (1, 1, 1), undefined, 0.25, isdefined(var_ff9d26ff) ? undefined : 500, 1);
+                print3d(target_pos + (0, 0, 12), "<unknown string>" + int(var_3300333c) + "<unknown string>" + int(var_753686d6), (1, 1, 1), undefined, 0.25, isdefined(var_ff9d26ff) ? undefined : 500, 1);
             }
         #/
         if (var_3300333c > var_753686d6) {

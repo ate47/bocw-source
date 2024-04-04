@@ -8,21 +8,8 @@
 // Method(s) 18 Total 25
 class class_df106b1 : cluielem {
 
-    // Namespace class_df106b1/doa_textelement
-    // Params 0, eflags: 0x8
-    // Checksum 0xab22e647, Offset: 0x758
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_df106b1/doa_textelement
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x9f6d7ff9, Offset: 0xe30
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_df106b1/doa_textelement
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class class_df106b1 : cluielem {
     // Checksum 0xfc2ca79b, Offset: 0xd90
     // Size: 0x44
     function function_1a98dac6(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "textpayload", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "textpayload", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -45,7 +32,7 @@ class class_df106b1 : cluielem {
     // Checksum 0xe92f88d3, Offset: 0xcf0
     // Size: 0x44
     function set_horizontal_alignment(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "horizontal_alignment", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "horizontal_alignment", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -53,7 +40,7 @@ class class_df106b1 : cluielem {
     // Checksum 0xf1f13967, Offset: 0xc00
     // Size: 0x44
     function set_green(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "green", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "green", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -61,7 +48,7 @@ class class_df106b1 : cluielem {
     // Checksum 0x70e4b1f2, Offset: 0xb10
     // Size: 0x44
     function set_fadeovertime(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "fadeOverTime", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "fadeOverTime", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -77,7 +64,7 @@ class class_df106b1 : cluielem {
     // Checksum 0x3f535e55, Offset: 0xac0
     // Size: 0x44
     function set_height(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "height", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "height", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -85,7 +72,7 @@ class class_df106b1 : cluielem {
     // Checksum 0x36cd8910, Offset: 0xc50
     // Size: 0x44
     function set_blue(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "blue", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "blue", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -114,7 +101,7 @@ class class_df106b1 : cluielem {
     // Checksum 0xb576fea1, Offset: 0xa70
     // Size: 0x44
     function set_y(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "y", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "y", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -122,7 +109,7 @@ class class_df106b1 : cluielem {
     // Checksum 0x83d001a8, Offset: 0xd40
     // Size: 0x44
     function function_9e089af4(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "intpayload", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "intpayload", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -130,7 +117,7 @@ class class_df106b1 : cluielem {
     // Checksum 0x46329d7e, Offset: 0xb60
     // Size: 0x44
     function set_alpha(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "alpha", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "alpha", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -138,7 +125,7 @@ class class_df106b1 : cluielem {
     // Checksum 0x4b14e63f, Offset: 0xde0
     // Size: 0x44
     function set_scale(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "scale", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "scale", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -146,7 +133,7 @@ class class_df106b1 : cluielem {
     // Checksum 0xeb69ae3f, Offset: 0xa20
     // Size: 0x44
     function set_x(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "x", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "x", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -154,7 +141,7 @@ class class_df106b1 : cluielem {
     // Checksum 0x850e74d7, Offset: 0xca0
     // Size: 0x44
     function set_text(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "text", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "text", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -162,7 +149,7 @@ class class_df106b1 : cluielem {
     // Checksum 0xafb8c1b8, Offset: 0xbb0
     // Size: 0x44
     function set_red(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "red", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "red", value);
     }
 
 }

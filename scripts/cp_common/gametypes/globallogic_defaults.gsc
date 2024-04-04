@@ -49,12 +49,8 @@ function default_onforfeit(team) {
         setdvar(#"ui_text_endreason", endreason);
         winner = getwinningteamfromloser(team);
     } else {
-        /#
-            assert(isdefined(team), "<unknown string>");
-        #/
-        /#
-            assert(0, "<unknown string>" + team + "<unknown string>");
-        #/
+        assert(isdefined(team), "<unknown string>");
+        assert(0, "<unknown string>" + team + "<unknown string>");
         winner = "tie";
     }
     level.forcedend = 1;
@@ -124,9 +120,7 @@ function function_b8fe203b(team) {
         return true;
     }
     if (level.playercount[team] == 1 && function_a1ef346b(team).size == 1) {
-        /#
-            assert(function_a1ef346b(team).size == 1);
-        #/
+        assert(function_a1ef346b(team).size == 1);
         if (function_a1ef346b(team)[0].lives > 0) {
             return true;
         }
@@ -232,16 +226,10 @@ function default_onspawnspectator(origin, angles) {
     }
     spawnpointname = "cp_global_intermission";
     spawnpoints = struct::get_array(spawnpointname, "targetname");
-    /#
-        assert(spawnpoints.size, "<unknown string>" + spawnpointname + "<unknown string>");
-    #/
+    assert(spawnpoints.size, "<unknown string>" + spawnpointname + "<unknown string>");
     spawnpoint = spawning::get_spawnpoint_random(spawnpoints);
-    /#
-        assert(isdefined(spawnpoint.origin), "<unknown string>" + spawnpointname + "<unknown string>");
-    #/
-    /#
-        assert(isdefined(spawnpoint.angles), "<unknown string>" + spawnpointname + "<unknown string>" + spawnpoint.origin + "<unknown string>");
-    #/
+    assert(isdefined(spawnpoint.origin), "<unknown string>" + spawnpointname + "<unknown string>");
+    assert(isdefined(spawnpoint.angles), "<unknown string>" + spawnpointname + "<unknown string>" + spawnpoint.origin + "<unknown string>");
     self spawn(spawnpoint.origin, spawnpoint.angles);
 }
 

@@ -65,9 +65,7 @@ function init_clientfields() {
 // Checksum 0xa3b5324f, Offset: 0x928
 // Size: 0x1cc
 function function_20cba65e(player) {
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     if (!isdefined(player)) {
         return 0;
     }
@@ -303,9 +301,7 @@ function function_cbe63de1(localclientnum, *delta_t) {
     }
     focuspos = level.var_88a92c26.origin;
     focusangles = level.var_88a92c26.angles;
-    /#
-        assert(isdefined(focusangles), "<unknown string>");
-    #/
+    assert(isdefined(focusangles), "<unknown string>");
     if (!isdefined(focusangles)) {
         focusangles = player getcamangles();
         if (!isdefined(focusangles)) {

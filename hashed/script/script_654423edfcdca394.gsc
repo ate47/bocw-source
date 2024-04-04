@@ -156,7 +156,7 @@ function function_72e17baf() {
             v_loc = anglestoforward(self.var_ff72be84.angles) * 20 + v_pos;
             v_pt = anglestoright(self.var_ff72be84.angles) * -18 + v_loc;
             self.var_da3c0f01[1] moveto(v_pt, 0.05);
-            self.var_da3c0f01[1].angles = self.var_ff72be84 gettagangles("tag_cargo_latch_right") + vectorscale((0, 0, -1), 90);
+            self.var_da3c0f01[1].angles = self.var_ff72be84 gettagangles("tag_cargo_latch_right") + (0, 0, -90);
             wait(0.1);
             self.var_da3c0f01[1] linkto(self.var_ff72be84);
             continue;
@@ -165,7 +165,7 @@ function function_72e17baf() {
         v_loc = anglestoforward(self.var_ff72be84.angles) * 20 + v_pos;
         v_pt = anglestoright(self.var_ff72be84.angles) * 18 + v_loc;
         self.var_da3c0f01[0] moveto(v_pt, 0.05);
-        self.var_da3c0f01[0].angles = self.var_ff72be84 gettagangles("tag_cargo_latch_left") + vectorscale((0, 0, 1), 90);
+        self.var_da3c0f01[0].angles = self.var_ff72be84 gettagangles("tag_cargo_latch_left") + (0, 0, 90);
         wait(0.1);
         self.var_da3c0f01[0] linkto(self.var_ff72be84);
     }
@@ -311,7 +311,6 @@ function truck_setup(instance) {
     self.var_3ba4dc68 ghost();
     self vehicle::get_on_path(self.var_803b49ee);
     self makevehicleunusable();
-    s_result = undefined;
     s_result = self waittill(#"enter_vehicle");
     self vehicle::get_off_path();
     self.var_3ba4dc68 delete();
@@ -724,7 +723,7 @@ function function_6d122cef() {
     self endon(#"death");
     v_forward = vectornormalize(anglestoforward(self.angles)) * 3000 + self.origin;
     if (isdefined(v_forward)) {
-        v_ground = groundtrace(v_forward + vectorscale((0, 0, 1), 1000), v_forward + vectorscale((0, 0, -1), 1000), 0, self)[#"position"];
+        v_ground = groundtrace(v_forward + (0, 0, 1000), v_forward + (0, 0, -1000), 0, self)[#"position"];
     }
     if (isdefined(v_ground)) {
         return v_ground;
@@ -1092,7 +1091,7 @@ function function_913f0e5a() {
 // Checksum 0xc43eb8c6, Offset: 0x4fa0
 // Size: 0x1ac
 function function_1ab4264a(instance, n_index) {
-    self.var_776aca17 = util::spawn_model("tag_origin", self.origin + vectorscale((0, 0, 1), 100));
+    self.var_776aca17 = util::spawn_model("tag_origin", self.origin + (0, 0, 100));
     self.var_776aca17 clientfield::set("" + #"hash_bd6060c10031f98", 1);
     if (n_index == 1) {
         var_291fc0f7 = instance.var_c8c31c6e;
@@ -1134,7 +1133,7 @@ function function_6abe3eb2(v_org) {
     self endon(#"death");
     if (isdefined(self) && self.var_6f84b820 === #"normal") {
         v_dir = vectornormalize(self.origin - v_org);
-        v_launch = v_dir * randomintrange(100, 150) + vectorscale((0, 0, 1), 150);
+        v_launch = v_dir * randomintrange(100, 150) + (0, 0, 150);
         self.allowdeath = 1;
         if (isalive(self) && !self isragdoll()) {
             if (zm_utility::is_magic_bullet_shield_enabled(self)) {
@@ -1650,7 +1649,6 @@ function function_c561af6e(instance) {
     instance endon(#"objective_ended");
     self thread function_2fa04222(instance);
     while (true) {
-        s_result = undefined;
         s_result = self waittill(#"enter_vehicle");
         self.prev_health = instance.var_67ed7be7;
         if (isdefined(self) && s_result.seat_index === 0) {
@@ -1850,7 +1848,7 @@ function turn_off() {
     self vehicle::toggle_force_driver_taillights(0);
     self vehicle_ai::turnoffallambientanims();
     if (isairborne(self)) {
-        self setphysacceleration(vectorscale((0, 0, -1), 300));
+        self setphysacceleration((0, 0, -300));
         self setrotorspeed(0);
     }
     self.var_52e23e90 = undefined;
@@ -2043,7 +2041,7 @@ function function_d1a72932(instance) {
     canister.b_pickedup = 0;
     canister.var_2e5efdc7 = 0;
     canister.var_a325551c = 0;
-    canister.var_3aee78d5 = spawn("trigger_radius_use", canister.origin + vectorscale((0, 0, 1), 8), 0, 96, 96, 1);
+    canister.var_3aee78d5 = spawn("trigger_radius_use", canister.origin + (0, 0, 8), 0, 96, 96, 1);
     canister.var_3aee78d5 triggerignoreteam();
     canister.var_3aee78d5 setcursorhint("HINT_NOICON");
     canister.var_3aee78d5 sethintstring(#"hash_c90fb1f338973f7");
@@ -2105,7 +2103,6 @@ function function_57d4f7c0(instance) {
     self endon(#"installed", #"death");
     instance endon(#"objective_ended");
     while (true) {
-        s_result = undefined;
         s_result = self.var_3aee78d5 waittill(#"trigger");
         player = s_result.activator;
         self clientfield::set("" + #"hash_7e6957dfc36e2214", 0);
@@ -2123,7 +2120,7 @@ function function_57d4f7c0(instance) {
             self notify(#"picked_up");
             self.var_3aee78d5 notify(#"picked_up");
             self.var_3aee78d5 setvisibletoall();
-            playsoundatposition(#"hash_1105191492bc5a15", self.origin + vectorscale((0, 0, 1), 25));
+            playsoundatposition(#"hash_1105191492bc5a15", self.origin + (0, 0, 25));
             if (isdefined(player)) {
                 player playrumbleonentity("damage_heavy");
             }
@@ -2156,9 +2153,9 @@ function function_57d4f7c0(instance) {
             player.var_67aa3392 = self;
             waitframe(1);
             if (isdefined(tagname)) {
-                self linkto(player, tagname, (8, 5, -4), vectorscale((1, 0, 0), 270));
+                self linkto(player, tagname, (8, 5, -4), (270, 0, 0));
             } else {
-                self linkto(player, undefined, (-12, 0, 45), vectorscale((-1, 0, 0), 5));
+                self linkto(player, undefined, (-12, 0, 45), (-5, 0, 0));
             }
             waitframe(1);
             self clientfield::set("" + #"hash_7e6957dfc36e2214", 1);
@@ -2379,7 +2376,7 @@ function function_912eedf3(zombie) {
     zombie endon(#"death");
     if (isalive(zombie)) {
         v_dir = vectornormalize(zombie.origin - self.origin);
-        v_launch = v_dir * randomintrange(80, 100) + vectorscale((0, 0, 1), 150);
+        v_launch = v_dir * randomintrange(80, 100) + (0, 0, 150);
         zombie.allowdeath = 1;
         if (namespace_7589cf5c::function_82e262cf(zombie.aitype)) {
             if (isdefined(zombie.var_320199e9)) {
@@ -2510,11 +2507,11 @@ function function_6fd7f323() {
     }
     v_point = getclosestpointonnavmesh(v_org, 120, 16);
     if (isdefined(v_point)) {
-        v_ground = groundtrace(v_point + vectorscale((0, 0, 1), 50), v_point + vectorscale((0, 0, -1), 15000), 1, self.e_owner)[#"position"];
+        v_ground = groundtrace(v_point + (0, 0, 50), v_point + (0, 0, -15000), 1, self.e_owner)[#"position"];
     }
     if (!isdefined(v_ground)) {
         v_pos = self.e_owner.origin;
-        v_ground = groundtrace(v_pos + vectorscale((0, 0, 1), 50), v_pos + vectorscale((0, 0, -1), 15000), 1, self.e_owner)[#"position"];
+        v_ground = groundtrace(v_pos + (0, 0, 50), v_pos + (0, 0, -15000), 1, self.e_owner)[#"position"];
     }
     self.e_owner = undefined;
     self clientfield::set("" + #"hash_7e6957dfc36e2214", 0);
@@ -2533,7 +2530,7 @@ function function_6fd7f323() {
         self.var_3aee78d5 usetriggerrequirelookat(1);
         self.var_3aee78d5 sethintstring(#"hash_c90fb1f338973f7");
     }
-    playsoundatposition(#"hash_3047775b10faeffc", self.origin + vectorscale((0, 0, 1), 25));
+    playsoundatposition(#"hash_3047775b10faeffc", self.origin + (0, 0, 25));
     self clientfield::set("" + #"hash_7e6957dfc36e2214", 1);
     if (isdefined(self.var_f71b7261)) {
         objective_setinvisibletoall(self.var_f71b7261);
@@ -2684,7 +2681,6 @@ function function_9181f7b3(instance) {
     self endon("4c194f534c984edf");
     self endon(#"disconnect", #"hash_6d2d12b8afe43c8e");
     instance endon(#"objective_ended");
-    s_result = undefined;
     s_result = self waittill(#"enter_vehicle");
     if (isdefined(s_result.vehicle)) {
         s_result.vehicle thread function_eb9a0f67();
@@ -2973,7 +2969,6 @@ function function_7b99a9c7() {
         return;
     }
     while (true) {
-        s_result = undefined;
         s_result = var_ca65e8bc waittill(#"trigger");
         if (s_result.activator === self.var_ff72be84) {
             wait(0.5);

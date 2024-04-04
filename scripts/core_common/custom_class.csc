@@ -526,7 +526,6 @@ function custom_class_start_threads(localclientnum) {
     while (true) {
         level thread custom_class_update(localclientnum);
         level thread custom_class_closed(localclientnum);
-        s_waitresult = undefined;
         s_waitresult = level waittill("CustomClass_update" + localclientnum, "CustomClass_closed" + localclientnum);
     }
 }
@@ -554,7 +553,6 @@ function function_b4e01020(weapon) {
 function function_13c748a(localclientnum) {
     level endon(#"disconnect");
     while (true) {
-        wait_result = undefined;
         wait_result = level waittill(#"hash_6e24a55f8db9dad9");
         function_bfa844a3(localclientnum, wait_result.classindex);
     }
@@ -1210,7 +1208,6 @@ function function_df656039(localclientnum) {
 // Size: 0xb2c
 function custom_class_update(localclientnum) {
     level endon(#"disconnect", "CustomClass_closed" + localclientnum);
-    waitresult = undefined;
     waitresult = level waittill("CustomClass_update" + localclientnum);
     base_weapon_slot = waitresult.base_weapon_slot;
     level.var_3f5552f9[localclientnum] = base_weapon_slot;
@@ -1643,11 +1640,7 @@ function function_d39cd2b5(var_8a4ba442 = "", str_weapon, var_cc6c0ec0 = 0, var_
             var_23f6420e = "wrist_accessories";
             break;
         default:
-            /#
-                /#
-                    assertmsg("perk2" + function_9e72a96(var_c6abe208) + "specialty" + var_8a4ba442);
-                #/
-            #/
+            assertmsg("perk2" + function_9e72a96(var_c6abe208) + "specialty" + var_8a4ba442);
             break;
         }
     }
@@ -1777,7 +1770,6 @@ function toggle_locked_weapon_shader(localclientnum, is_item_unlocked = 1, var_8
 // Size: 0xbc
 function custom_class_closed(localclientnum) {
     level endon(#"disconnect", "CustomClass_update" + localclientnum);
-    params = undefined;
     params = level waittill(#"customclass_closed");
     if (params.param1 == localclientnum) {
         enablefrontendlockedweaponoverlay(localclientnum, 0);
@@ -2203,12 +2195,8 @@ function function_1f5168a3(localclientnum, weapon, var_4d32a086, var_9d7ee952, v
 // Size: 0x8fc
 function update_weapon_script_model(localclientnum, newweaponstring, var_f020955, *should_update_weapon_options, is_item_unlocked = 1, xmodel_scale = 1, xmodel_name = #"", var_8a4ba442 = #"primary", var_e81ceea) {
     /#
-        /#
-            assert(isdefined(var_f020955), "<unknown string>");
-        #/
-        /#
-            assert(isdefined(should_update_weapon_options), "<unknown string>");
-        #/
+        assert(isdefined(var_f020955), "<unknown string>");
+        assert(isdefined(should_update_weapon_options), "<unknown string>");
     #/
     level.last_weapon_name[newweaponstring] = isdefined(var_f020955) ? var_f020955 : #"ar_accurate_t9";
     level.var_8ad413c[newweaponstring] = isdefined(should_update_weapon_options) ? should_update_weapon_options : "";

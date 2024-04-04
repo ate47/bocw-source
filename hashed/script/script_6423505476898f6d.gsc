@@ -69,16 +69,12 @@ function private get_max_yaw(var_b6cc4c20) {
     var_533884d6 = math::sign(self.m_s_bundle.door_swing_angle);
     if (var_b6cc4c20) {
         if (isdefined(self.var_a2f96f78.var_bed36372)) {
-            /#
-                assert(self.var_a2f96f78.var_bed36372 > 0, "<unknown string>" + self.m_e_door.origin + "<unknown string>");
-            #/
+            assert(self.var_a2f96f78.var_bed36372 > 0, "<unknown string>" + self.m_e_door.origin + "<unknown string>");
             self.var_15695d13 = self.var_a2f96f78.var_bed36372 * var_533884d6;
             return;
         }
     } else if (isdefined(self.var_a2f96f78.var_f3a85f58)) {
-        /#
-            assert(self.var_a2f96f78.var_f3a85f58 > 0, "<unknown string>" + self.m_e_door.origin + "<unknown string>");
-        #/
+        assert(self.var_a2f96f78.var_f3a85f58 > 0, "<unknown string>" + self.m_e_door.origin + "<unknown string>");
         self.var_ca91d615 = self.var_a2f96f78.var_f3a85f58 * var_533884d6 * -1;
         return;
     }
@@ -129,9 +125,7 @@ function private get_max_yaw_internal(test_yaw, increment, var_b6cc4c20) {
             wait(0.05);
         }
     }
-    /#
-        assert(test_yaw >= 0);
-    #/
+    assert(test_yaw >= 0);
     return test_yaw;
 }
 
@@ -140,7 +134,7 @@ function private get_max_yaw_internal(test_yaw, increment, var_b6cc4c20) {
 // Checksum 0x29688e17, Offset: 0x608
 // Size: 0x6be
 function private yaw_collision_check(yaw, var_b6cc4c20, *var_43119537) {
-    var_3b412bef = vectorscale((0, 0, 1), 10);
+    var_3b412bef = (0, 0, 10);
     basestart = self.var_85f2454d.origin + var_3b412bef;
     if (var_43119537) {
         trace_angles = [[ self ]]->function_d36318ad(0, 1, 0, self.m_s_bundle.var_16a4e229, self.m_s_bundle.var_16e3e29b, var_b6cc4c20, 1);
@@ -150,7 +144,7 @@ function private yaw_collision_check(yaw, var_b6cc4c20, *var_43119537) {
     var_39764a55 = max(self.var_e9da41b9 * 0.2, 16);
     start = basestart + self doors::function_eea7cdb4(trace_angles) * var_39764a55;
     end = basestart + self doors::function_eea7cdb4(1) * self.var_e9da41b9;
-    mins = vectorscale((-1, -1, 0), 6);
+    mins = (-6, -6, 0);
     maxs = (6, 6, 40);
     var_84a65cf6 = physicstrace(start, end, mins, maxs, self.m_e_door, 1 | 8);
     var_fe34498d = distance2d(start, var_84a65cf6[#"position"]);
@@ -496,9 +490,7 @@ function private door_is_half_open() {
 // Checksum 0x43f7190d, Offset: 0x1c98
 // Size: 0xea
 function door_is_open_at_least(checkangle) {
-    /#
-        assert(checkangle >= 0, "<unknown string>" + checkangle + "<unknown string>");
-    #/
+    assert(checkangle >= 0, "<unknown string>" + checkangle + "<unknown string>");
     var_e17e8d14 = self doors::get_door_angles() - self doors::get_door_angles(1);
     var_e17e8d14 = angleclamp180(var_e17e8d14);
     angle_diff = var_e17e8d14[0] + var_e17e8d14[1] + var_e17e8d14[2];
@@ -589,9 +581,7 @@ function private angle_diff(value1, value2) {
 // Checksum 0x675829d2, Offset: 0x2088
 // Size: 0x402
 function function_9670a4a4(var_f700d5eb, b_reverse, var_d6cc2350, var_58c4c830, var_b0a715f2) {
-    /#
-        assert(!isdefined(var_d6cc2350) || var_d6cc2350 > 0, "<unknown string>");
-    #/
+    assert(!isdefined(var_d6cc2350) || var_d6cc2350 > 0, "<unknown string>");
     var_f626de4 = undefined;
     var_672b7d83 = undefined;
     var_e6d945ba = 0;

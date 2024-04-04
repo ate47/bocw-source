@@ -133,9 +133,7 @@ function function_fa31c391() {
 // Size: 0x9c
 function function_87dafd45(name) {
     if (isdefined(level.var_3a8f95b4) && level.var_3a8f95b4 != name && level.script != "cp_ger_hub") {
-        /#
-            errormsg("<unknown string>" + level.var_3a8f95b4 + "<unknown string>" + name + "<unknown string>");
-        #/
+        errormsg("<unknown string>" + level.var_3a8f95b4 + "<unknown string>" + name + "<unknown string>");
     }
     level.var_3a8f95b4 = name;
 }

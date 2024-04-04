@@ -90,22 +90,20 @@ function function_f2390c61(localclientnum) {
 // Checksum 0xf563dd47, Offset: 0x3d0
 // Size: 0x132
 function private function_dbd63244() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (self function_21c0fa55()) {
         return self geteye();
     }
     stance = self getstance();
     switch (stance) {
     case #"prone":
-        return (self.origin + vectorscale((0, 0, 1), 11));
+        return (self.origin + (0, 0, 11));
     case #"crouch":
-        return (self.origin + vectorscale((0, 0, 1), 40));
+        return (self.origin + (0, 0, 40));
     case #"stand":
-        return (self.origin + vectorscale((0, 0, 1), 60));
+        return (self.origin + (0, 0, 60));
     default:
-        return (self.origin + vectorscale((0, 0, 1), 60));
+        return (self.origin + (0, 0, 60));
     }
 }
 
@@ -114,7 +112,7 @@ function private function_dbd63244() {
 // Checksum 0xcd983022, Offset: 0x510
 // Size: 0x1a
 function private function_c9d3a835() {
-    return self.origin + vectorscale((0, 0, 1), 36);
+    return self.origin + (0, 0, 36);
 }
 
 // Namespace wz_perk_paranoia/wz_perk_paranoia

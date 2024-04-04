@@ -42,7 +42,6 @@ function function_be14ecd2() {
     self notify("5634ec87c8202e49");
     self endon("5634ec87c8202e49");
     self thread namespace_268747c0::function_978c05b5();
-    result = undefined;
     result = self waittill(#"hash_3e251384a5400dce");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
         arrayremovevalue(level.doa.var_f9d893a7, self);
@@ -237,7 +236,6 @@ function function_1e690b43(movetime, lifetime) {
             }
         }
         if (isdefined(self.trigger)) {
-            result = undefined;
             result = self.trigger waittilltimeout(0.25, #"trigger");
             guy = result.activator;
             if (isdefined(guy) && isalive(guy)) {

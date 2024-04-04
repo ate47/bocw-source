@@ -19,9 +19,7 @@ function function_6b885d72(destination) {
     if (!getdvarint(#"hash_7f960fed9c1533f", 1)) {
         return;
     }
-    /#
-        assert(!isdefined(level.hotzones));
-    #/
+    assert(!isdefined(level.hotzones));
     if (!isdefined(level.hotzones)) {
         level.hotzones = [];
     }
@@ -71,9 +69,7 @@ function function_61f56bb6(hotzones) {
     foreach (group in var_c6d0eb25) {
         group = array::randomize(group);
         var_7e24bb5a = group[0].var_d3455e4;
-        /#
-            assert(var_7e24bb5a <= group.size);
-        #/
+        assert(var_7e24bb5a <= group.size);
         for (i = 0; i < var_7e24bb5a; i++) {
             var_be6053fa[var_be6053fa.size] = array::pop_front(group, 0);
         }
@@ -234,12 +230,8 @@ function deactivate_hotzones(params) {
     level notify(#"hash_1a8453d57fb3fe48");
     level flag::wait_till_clear("update_hotzone_states");
     level flag::set("deactivate_hotzones");
-    /#
-        assert(isdefined(params.destination), "<unknown string>");
-    #/
-    /#
-        assert(isarray(params.destination.locations), "<unknown string>");
-    #/
+    assert(isdefined(params.destination), "<unknown string>");
+    assert(isarray(params.destination.locations), "<unknown string>");
     foreach (s_location in params.destination.locations) {
         hotzones = struct::get_array(s_location.targetname, "target");
         hotzones = function_7b8e26b3(hotzones, "variantname", "hotzone");
@@ -311,9 +303,7 @@ function function_3c977c4f(hotzone, state) {
 // Size: 0x10e
 function function_fac3e87c() {
     if (!isdefined(level.hotzones)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return [];
     }
     spawns = [];
@@ -534,9 +524,7 @@ function function_6b51cc65(&var_e592e473, var_8437e990, aitype) {
             if (getplayers(undefined, spawn_point.origin, 256).size) {
                 continue;
             }
-            /#
-                assert(isdefined(spawn_point));
-            #/
+            assert(isdefined(spawn_point));
             return spawn_point;
         }
     }
@@ -555,9 +543,7 @@ function function_1e745fc0(&var_e592e473, var_8437e990, archetype) {
             if (getplayers(undefined, spawn_point.origin, 256).size) {
                 continue;
             }
-            /#
-                assert(isdefined(spawn_point));
-            #/
+            assert(isdefined(spawn_point));
             return spawn_point;
         }
     }
@@ -585,9 +571,7 @@ function function_89116a1e(&var_e592e473, var_8437e990, aitype) {
         if (getplayers(undefined, spawn_point.origin, 256).size || isdefined(aitype) && isdefined(spawn_point.var_90d0c0ff) && !function_ee71d10f(aitype, spawn_point.var_90d0c0ff)) {
             continue;
         }
-        /#
-            assert(isdefined(spawn_point));
-        #/
+        assert(isdefined(spawn_point));
         return spawn_point;
     }
     if (isdefined(var_8437e990.var_b4481bdb) && isdefined(var_8437e990.var_3ad2f505) && var_8437e990.var_b4481bdb.size) {
@@ -827,9 +811,7 @@ function function_9e0aba37() {
         foreach (hotzone in level.var_3b4ee947) {
             instance = hotzone.instance;
             if (!isdefined(instance)) {
-                /#
-                    println("<unknown string>");
-                #/
+                println("<unknown string>");
                 continue;
             }
             if (is_true(hotzone.instance.var_4188d7c8)) {
@@ -886,9 +868,7 @@ function function_9e0aba37() {
 // Checksum 0xbe0dee86, Offset: 0x3b00
 // Size: 0x532
 function spawn_ai(hotzone) {
-    /#
-        assert(hotzone.instance.current_state == 1 || hotzone.instance.current_state == 2, "<unknown string>");
-    #/
+    assert(hotzone.instance.current_state == 1 || hotzone.instance.current_state == 2, "<unknown string>");
     instance = hotzone.instance;
     list_name = function_47ae367f(hotzone, instance.tier, instance.current_state);
     var_e592e473 = function_6d39329f(hotzone, instance.current_state);
@@ -1130,7 +1110,6 @@ function function_8967ab54() {
     self endon("2bc9ca8e8a5059b9");
     self endon(#"death", #"deleted");
     level endon(#"game_ended");
-    waitresult = undefined;
     waitresult = self waittill(#"hash_151828d1d5e024ee");
     self function_11efa003(self.hotzone, waitresult.enemy);
 }
@@ -1506,7 +1485,7 @@ function function_3de1c8ac(var_2da12984) {
             if (is_true(options.var_bf84a5e9)) {
                 scale = 0.85;
                 offset = 75;
-                debug2dtext((105, offset * scale, 0), "<unknown string>" + level.var_71c1e90a, (1, 1, 0), undefined, vectorscale((1, 1, 1), 0.4), 0.9, scale);
+                debug2dtext((105, offset * scale, 0), "<unknown string>" + level.var_71c1e90a, (1, 1, 0), undefined, (0.4, 0.4, 0.4), 0.9, scale);
                 offset = offset + 22;
             }
         }
@@ -1526,7 +1505,7 @@ function function_a5ea005d(hotzone, array_index, scale) {
             index = function_af798ce8(index, scale, 1, var_a7c842b3, array_index, hotzone);
             return;
         }
-        line(hotzone.origin, hotzone.origin + vectorscale((0, 0, 1), 300), var_a7c842b3, 1);
+        line(hotzone.origin, hotzone.origin + (0, 0, 300), var_a7c842b3, 1);
     #/
 }
 
@@ -1577,7 +1556,7 @@ function function_1a530376(hotzone, array_index, scale) {
         }
         if (is_true(options.var_b3795227)) {
             if (hotzone.instance.current_state !== 0) {
-                function_59a41525(hotzone.origin, 4000, hotzone.height, vectorscale((1, 1, 1), 0.4), 1);
+                function_59a41525(hotzone.origin, 4000, hotzone.height, (0.4, 0.4, 0.4), 1);
             }
         }
         if (is_true(options.var_3eef4d41) && !is_true(hotzone.var_19e89e4e)) {
@@ -1597,7 +1576,7 @@ function function_1a530376(hotzone, array_index, scale) {
 function function_af798ce8(index, scale, alpha, color, var_5ab1a705, hotzone) {
     /#
         if (!hotzone.instance.priority) {
-            line(hotzone.origin, hotzone.origin + vectorscale((0, 0, 1), 300), color);
+            line(hotzone.origin, hotzone.origin + (0, 0, 300), color);
             return index;
         }
         print3d(hotzone.origin + (0, 0, index), "<unknown string>" + hotzone.instance.priority, color, alpha, scale * 1, 1);
@@ -1728,7 +1707,7 @@ function function_6320ae1d(hotzone, options) {
         case 2:
             return (1, 0.5, 0);
         default:
-            return vectorscale((1, 1, 1), 0.3);
+            return (0.3, 0.3, 0.3);
         }
     #/
 }
@@ -1825,12 +1804,12 @@ function function_774fd83c(spawn_point, color, index, scale, alpha) {
 // Size: 0x1fc
 function function_af647be2(player) {
     /#
-        line(player.origin + vectorscale((0, 0, 1), 72), player.origin + vectorscale((0, 0, 1), 572), (0, 1, 1));
+        line(player.origin + (0, 0, 72), player.origin + (0, 0, 572), (0, 1, 1));
         draw_box(player.origin, player.angles, 32, 32, 72, (0, 1, 1));
-        var_9029dbde = rotatepointaroundaxis(vectorscale((1, 0, 0), 256), (0, 0, 1), angleclamp180(player.angles[1] + 45));
+        var_9029dbde = rotatepointaroundaxis((256, 0, 0), (0, 0, 1), angleclamp180(player.angles[1] + 45));
         var_9029dbde = var_9029dbde + player.origin;
         line(player.origin, var_9029dbde, (1, 0.5, 0));
-        var_a9e71ad4 = rotatepointaroundaxis(vectorscale((1, 0, 0), 256), (0, 0, 1), angleclamp180(player.angles[1] - 45));
+        var_a9e71ad4 = rotatepointaroundaxis((256, 0, 0), (0, 0, 1), angleclamp180(player.angles[1] - 45));
         var_a9e71ad4 = var_a9e71ad4 + player.origin;
         line(player.origin, var_a9e71ad4, (1, 0.5, 0));
         line(player.origin, player.origin + anglestoforward(player.angles) * 256, (1, 1, 0));

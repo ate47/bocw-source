@@ -65,13 +65,9 @@ function private postinit() {
 // Size: 0xda
 function function_610e9242(event, player, *victim, *descvalue, *weapon, *var_36f23f1f) {
     score = var_36f23f1f rank::getscoreinfovalue(weapon);
-    /#
-        assert(isdefined(score));
-    #/
+    assert(isdefined(score));
     xp = var_36f23f1f rank::getscoreinfoxp(weapon);
-    /#
-        assert(isdefined(xp));
-    #/
+    assert(isdefined(xp));
     label = rank::getscoreinfolabel(weapon);
     return score;
 }
@@ -250,9 +246,7 @@ function player_add_points(event, mod, hit_location, e_target, zombie_team, dama
             player_points = zombie_utility::function_d2dfacfd(#"hash_68aa9b4c8de33261");
             break;
         default:
-            /#
-                assert(0, "<unknown string>");
-            #/
+            assert(0, "<unknown string>");
             break;
         }
     }
@@ -413,9 +407,7 @@ function player_reduce_points(event, n_amount) {
         points = n_amount;
         break;
     default:
-        /#
-            assert(0, "<unknown string>");
-        #/
+        assert(0, "<unknown string>");
         break;
     }
     points = self.score - zm_utility::round_up_to_ten(int(points));
@@ -437,9 +429,7 @@ function add_to_player_score(points, b_add_to_total = 1, str_awarded_by = "", va
     if (!isdefined(points) || level.intermission || !is_true(level.var_d6031813)) {
         return;
     }
-    /#
-        assert(isplayer(self), "<unknown string>");
-    #/
+    assert(isplayer(self), "<unknown string>");
     points = zm_utility::round_up_score(points);
     if (is_true(level.var_894a83d8) || var_e6e61503 || function_e31cf9d5(str_awarded_by)) {
         return;
@@ -560,9 +550,7 @@ function player_died_penalty() {
 // Checksum 0x3b861228, Offset: 0x22a0
 // Size: 0x44
 function player_downed_penalty() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     self player_reduce_points("downed");
 }
 
@@ -628,9 +616,7 @@ function function_82732ced() {
     } else {
         var_7afe66bc = self function_e5ca5733();
         if (!var_7afe66bc && !self function_5f41330c()) {
-            /#
-                assert(var_7afe66bc, "<unknown string>" + function_9e72a96(self.archetype) + "<unknown string>");
-            #/
+            assert(var_7afe66bc, "<unknown string>" + function_9e72a96(self.archetype) + "<unknown string>");
         }
     }
     self.var_f256a4d9 = var_7afe66bc;

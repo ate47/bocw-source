@@ -325,9 +325,9 @@ function function_82ab6677() {
 function function_f406d0f4() {
     level.player val::set("intro_player_anim", "takedamage", 1);
     level waittill(#"hash_5f328340bea67520");
-    level.player dodamage(20, level.player.origin + vectorscale((0, 0, 1), 60));
+    level.player dodamage(20, level.player.origin + (0, 0, 60));
     level waittill(#"hash_5f328340bea67520");
-    level.player dodamage(20, level.player.origin + vectorscale((0, 0, 1), 60));
+    level.player dodamage(20, level.player.origin + (0, 0, 60));
 }
 
 // Namespace namespace_fdde5f3d/namespace_db1ba63f
@@ -396,7 +396,7 @@ function function_5431431d() {
 function function_c8381339(plane, var_857b0901) {
     probe = getent("cargo_probe_1", "targetname");
     if (isdefined(probe)) {
-        probe linkto(plane, "tag_body_animate", vectorscale((-1, 0, 1), 24), (0, 0, 0));
+        probe linkto(plane, "tag_body_animate", (-24, 0, 24), (0, 0, 0));
     }
     probe = getent("cargo_probe_2", "targetname");
     if (isdefined(probe)) {
@@ -952,7 +952,7 @@ function function_af3dcba6() {
         var_e7a55046 delete();
     }
     struct = struct::get("struct_obj_radio", "targetname");
-    objectives::function_4eb5c04a("radio_objective", struct.origin + vectorscale((0, 0, 1), 8), #"hash_6d27d69a4d24a684", 1, undefined, #"hash_5099fd7b8025bec5");
+    objectives::function_4eb5c04a("radio_objective", struct.origin + (0, 0, 8), #"hash_6d27d69a4d24a684", 1, undefined, #"hash_5099fd7b8025bec5");
     objectives::function_6a43edf3("radio_objective");
     namespace_96850e69::function_49dec5b("radio_objective", undefined, #"hash_696adfeed5b67f39");
     waitframe(1);
@@ -963,7 +963,7 @@ function function_af3dcba6() {
         if (level flag::get("flag_post_prisoner_radio")) {
             return;
         }
-        e_tag util::create_cursor_hint("tag_origin", vectorscale((0, 0, 1), 8), #"hash_696adfeed5b67f39");
+        e_tag util::create_cursor_hint("tag_origin", (0, 0, 8), #"hash_696adfeed5b67f39");
         level thread function_b93309a5(e_tag, "radio_objective");
         e_tag waittill(#"trigger");
         level.player playrumbleonentity("damage_light");

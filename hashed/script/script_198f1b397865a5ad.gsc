@@ -14,9 +14,7 @@
 // Checksum 0x39dd4352, Offset: 0xc8
 // Size: 0x15a
 function private function_20b6bc92() {
-    /#
-        assert(isdefined(level.var_a00c303b), "<unknown string>");
-    #/
+    assert(isdefined(level.var_a00c303b), "<unknown string>");
     level endon(#"hash_20f3988ee2416a3d");
     level.var_a00c303b.mainthread = 1;
     while (isdefined(level.var_a00c303b)) {
@@ -144,9 +142,7 @@ function function_fee448d5(var_dfd5412c, value) {
             var_dfd5412c.valuehud = hud;
         #/
     }
-    /#
-        assert(isdefined(var_dfd5412c.valuehud));
-    #/
+    assert(isdefined(var_dfd5412c.valuehud));
     if (isdefined(var_dfd5412c.valuehud)) {
         var_fc6c677b = "white";
         /#
@@ -176,9 +172,7 @@ function private function_ef6f1667() {
             now = gettime();
             var_4359175b = array();
             foreach (hud in level.var_9c2f3e27) {
-                /#
-                    assert(function_3132f113(hud) == 0);
-                #/
+                assert(function_3132f113(hud) == 0);
                 if (hud.duration > 0) {
                     var_4359175b[var_4359175b.size] = hud;
                     if (hud.time == now) {
@@ -209,9 +203,7 @@ function private function_b506ee85(duration) {
     var_1119082e = duration * 50;
     /#
         foreach (hud in level.var_9c2f3e27) {
-            /#
-                assert(function_3132f113(hud) == 0);
-            #/
+            assert(function_3132f113(hud) == 0);
             if (now >= hud.var_1119082e) {
                 hud.time = now;
                 hud.var_1119082e = now + var_1119082e;

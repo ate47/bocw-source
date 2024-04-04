@@ -8,22 +8,6 @@
 class cluielemtext : cluielem {
 
     // Namespace cluielemtext/luielemtext
-    // Params 0, eflags: 0xa linked
-    // Checksum 0xcb39ae69, Offset: 0x5b8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cluielemtext/luielemtext
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x1800ad65, Offset: 0xbd8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cluielemtext/luielemtext
     // Params 1, eflags: 0x2 linked
     // Checksum 0x64cf93d3, Offset: 0x978
     // Size: 0x24
@@ -36,7 +20,7 @@ class cluielemtext : cluielem {
     // Checksum 0xfc1471ec, Offset: 0xba0
     // Size: 0x30
     function set_horizontal_alignment(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "horizontal_alignment", value);
+        set_data(localclientnum, "horizontal_alignment", value);
     }
 
     // Namespace cluielemtext/luielemtext
@@ -44,7 +28,7 @@ class cluielemtext : cluielem {
     // Checksum 0x9eae093b, Offset: 0xaf8
     // Size: 0x30
     function set_green(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "green", value);
+        set_data(localclientnum, "green", value);
     }
 
     // Namespace cluielemtext/luielemtext
@@ -52,7 +36,7 @@ class cluielemtext : cluielem {
     // Checksum 0x380800c4, Offset: 0xa50
     // Size: 0x30
     function set_fadeovertime(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "fadeOverTime", value);
+        set_data(localclientnum, "fadeOverTime", value);
     }
 
     // Namespace cluielemtext/luielemtext
@@ -68,7 +52,7 @@ class cluielemtext : cluielem {
     // Checksum 0xfcbe7350, Offset: 0xa18
     // Size: 0x30
     function set_height(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "height", value);
+        set_data(localclientnum, "height", value);
     }
 
     // Namespace cluielemtext/luielemtext
@@ -76,11 +60,11 @@ class cluielemtext : cluielem {
     // Checksum 0x4bb35cd, Offset: 0xb30
     // Size: 0x30
     function set_blue(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "blue", value);
+        set_data(localclientnum, "blue", value);
     }
 
     // Namespace cluielemtext/luielemtext
-    // Params 10, eflags: 0x2 linked
+    // Params a, eflags: 0x2 linked
     // Checksum 0xb23feb96, Offset: 0x5d8
     // Size: 0x1fc
     function setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, *textcallback, horizontal_alignmentcallback) {
@@ -102,7 +86,7 @@ class cluielemtext : cluielem {
     // Checksum 0x51a768af, Offset: 0x9e0
     // Size: 0x30
     function set_y(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "y", value);
+        set_data(localclientnum, "y", value);
     }
 
     // Namespace cluielemtext/luielemtext
@@ -110,7 +94,7 @@ class cluielemtext : cluielem {
     // Checksum 0xe979e188, Offset: 0xa88
     // Size: 0x30
     function set_alpha(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "alpha", value);
+        set_data(localclientnum, "alpha", value);
     }
 
     // Namespace cluielemtext/luielemtext
@@ -118,7 +102,7 @@ class cluielemtext : cluielem {
     // Checksum 0x5bd53fc8, Offset: 0x9a8
     // Size: 0x30
     function set_x(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "x", value);
+        set_data(localclientnum, "x", value);
     }
 
     // Namespace cluielemtext/luielemtext
@@ -126,7 +110,7 @@ class cluielemtext : cluielem {
     // Checksum 0x514fb6bc, Offset: 0xb68
     // Size: 0x30
     function set_text(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "text", value);
+        set_data(localclientnum, "text", value);
     }
 
     // Namespace cluielemtext/luielemtext
@@ -134,7 +118,7 @@ class cluielemtext : cluielem {
     // Checksum 0x4ff7d1eb, Offset: 0xac0
     // Size: 0x30
     function set_red(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "red", value);
+        set_data(localclientnum, "red", value);
     }
 
     // Namespace cluielemtext/luielemtext
@@ -143,16 +127,16 @@ class cluielemtext : cluielem {
     // Size: 0x168
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "x", 0);
-        [[ self ]]->set_data(localclientnum, "y", 0);
-        [[ self ]]->set_data(localclientnum, "height", 0);
-        [[ self ]]->set_data(localclientnum, "fadeOverTime", 0);
-        [[ self ]]->set_data(localclientnum, "alpha", 0);
-        [[ self ]]->set_data(localclientnum, "red", 0);
-        [[ self ]]->set_data(localclientnum, "green", 0);
-        [[ self ]]->set_data(localclientnum, "blue", 0);
-        [[ self ]]->set_data(localclientnum, "text", #"");
-        [[ self ]]->set_data(localclientnum, "horizontal_alignment", 0);
+        set_data(localclientnum, "x", 0);
+        set_data(localclientnum, "y", 0);
+        set_data(localclientnum, "height", 0);
+        set_data(localclientnum, "fadeOverTime", 0);
+        set_data(localclientnum, "alpha", 0);
+        set_data(localclientnum, "red", 0);
+        set_data(localclientnum, "green", 0);
+        set_data(localclientnum, "blue", 0);
+        set_data(localclientnum, "text", #"");
+        set_data(localclientnum, "horizontal_alignment", 0);
     }
 
 }

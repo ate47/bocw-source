@@ -7,22 +7,6 @@
 // Method(s) 6 Total 13
 class class_eaf2482a : cluielem {
 
-    // Namespace class_eaf2482a/zm_gold_align_satellite_hud
-    // Params 0, eflags: 0x8
-    // Checksum 0xdc4084e4, Offset: 0x308
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_eaf2482a/zm_gold_align_satellite_hud
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xcb392d6d, Offset: 0x3d8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_eaf2482a/zm_gold_align_satellite_hud
     // Params 1, eflags: 0x0
     // Checksum 0x6bbe1073, Offset: 0x3a8

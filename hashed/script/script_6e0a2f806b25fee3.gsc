@@ -7,22 +7,6 @@
 // Method(s) 7 Total 14
 class class_44eccfcc : cluielem {
 
-    // Namespace class_44eccfcc/stim_count
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x5e50a76d, Offset: 0x338
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_44eccfcc/stim_count
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x339de60f, Offset: 0x488
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_44eccfcc/stim_count
     // Params 1, eflags: 0x2 linked
     // Checksum 0x417f4cce, Offset: 0x420
@@ -44,7 +28,7 @@ class class_44eccfcc : cluielem {
     // Checksum 0x112f9112, Offset: 0x450
     // Size: 0x30
     function function_6eef7f4f(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "stim_count", value);
+        set_data(localclientnum, "stim_count", value);
     }
 
     // Namespace namespace_44eccfcc/stim_count
@@ -62,7 +46,7 @@ class class_44eccfcc : cluielem {
     // Size: 0x40
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "stim_count", 0);
+        set_data(localclientnum, "stim_count", 0);
     }
 
 }

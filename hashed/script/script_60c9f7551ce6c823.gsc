@@ -44,7 +44,6 @@ function function_215e1efb() {
     self endon("181e2a51f4b6bc73");
     self thread namespace_268747c0::function_978c05b5();
     self thread namespace_268747c0::function_5418a00f();
-    result = undefined;
     result = self waittill(#"hash_3e251384a5400dce");
     self.var_9760b617 = 1;
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
@@ -148,9 +147,7 @@ function function_4eec8432() {
 function function_a0fe5f28() {
     self endon(#"death", #"hash_3e251384a5400dce");
     var_5fdeec29 = 8500;
-    /#
-        assert(!isdefined(self.trigger));
-    #/
+    assert(!isdefined(self.trigger));
     while (isdefined(self) && is_true(self.active)) {
         if (!isdefined(self.trigger)) {
             self.trigger = namespace_268747c0::function_5bfa98c9("pole", self.origin, 512, 1, 700);
@@ -160,7 +157,6 @@ function function_a0fe5f28() {
             }
         }
         if (isdefined(self.trigger)) {
-            result = undefined;
             result = self.trigger waittilltimeout(0.25, #"trigger");
             if (result._notify == #"timeout") {
                 continue;
@@ -373,22 +369,22 @@ function function_a971a62f(origin, var_5c526bd9 = origin, var_c705f304 = 85) {
     if (dist_squared > sqr(var_c705f304)) {
         return undefined;
     }
-    trace = worldtrace(origin + vectorscale((0, 0, 1), 32), origin + (48, 0, 32));
+    trace = worldtrace(origin + (0, 0, 32), origin + (48, 0, 32));
     var_cb85c7c9 = trace[#"fraction"] == 1 && trace[#"surfacetype"] == "none";
     if (!var_cb85c7c9) {
         return undefined;
     }
-    trace = worldtrace(origin + vectorscale((0, 0, 1), 32), origin + (-48, 0, 32));
+    trace = worldtrace(origin + (0, 0, 32), origin + (-48, 0, 32));
     var_cb85c7c9 = trace[#"fraction"] == 1 && trace[#"surfacetype"] == "none";
     if (!var_cb85c7c9) {
         return undefined;
     }
-    trace = worldtrace(origin + vectorscale((0, 0, 1), 32), origin + (0, 48, 32));
+    trace = worldtrace(origin + (0, 0, 32), origin + (0, 48, 32));
     var_cb85c7c9 = trace[#"fraction"] == 1 && trace[#"surfacetype"] == "none";
     if (!var_cb85c7c9) {
         return undefined;
     }
-    trace = worldtrace(origin + vectorscale((0, 0, 1), 32), origin + (0, -48, 32));
+    trace = worldtrace(origin + (0, 0, 32), origin + (0, -48, 32));
     var_cb85c7c9 = trace[#"fraction"] == 1 && trace[#"surfacetype"] == "none";
     if (!var_cb85c7c9) {
         return undefined;

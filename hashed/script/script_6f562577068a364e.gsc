@@ -92,7 +92,7 @@ function function_d3b68b9b(localclientnum, *oldval, newval, *bnewent, *binitials
                 break;
             }
         }
-        self.var_cd26d88f = self playloopsound(#"hash_58ee9d9df63d0294", undefined, vectorscale((0, 0, 1), 30));
+        self.var_cd26d88f = self playloopsound(#"hash_58ee9d9df63d0294", undefined, (0, 0, 30));
         return;
     }
     if (isdefined(self.var_d1ed81ee)) {

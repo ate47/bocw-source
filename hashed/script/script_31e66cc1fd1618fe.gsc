@@ -52,7 +52,6 @@ function private fake_ads(localclientnum, oldval, newval, *bnewent, *binitialsna
     if (!bwastimejump && bwastimejump != fieldname) {
         self easing::function_f95cb457(undefined, 14.64, 0.2, #"sine");
         while (true) {
-            result = undefined;
             result = self waittill(#"hash_133229f708f5d10");
             if (result.target_value === 14.64) {
                 self function_9298adaf(binitialsnap);
@@ -75,7 +74,7 @@ function private function_bd9c7275(oldtype, newtype) {
     if ((isdefined(newtype) ? newtype : 1) == 2) {
         self linktocamera(4, (0, 0, 0));
     } else {
-        self linktocamera(4, vectorscale((0, 0, -1), 60));
+        self linktocamera(4, (0, 0, -60));
     }
     self waittill(#"death", #"entitydeleted");
     self function_a052b638();

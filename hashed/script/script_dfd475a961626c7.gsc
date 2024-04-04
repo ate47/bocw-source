@@ -360,7 +360,7 @@ function function_5f2fe011() {
                         if (isvec(velocity)) {
                             speed = length(velocity);
                             txt = "<unknown string>" + function_d6053a8f(speed, 1);
-                            pos = var_15df3e17.origin + vectorscale((0, 0, 1), 6);
+                            pos = var_15df3e17.origin + (0, 0, 6);
                             function_ac033c46(txt, pos, 0.333, "<unknown string>");
                         }
                     }
@@ -466,7 +466,6 @@ function function_9c9fad4e() {
     function_5ea2c6e3("cp_tkdn_af_hill_binoculars", 0, 0);
     setsoundcontext("vehicle", "interior");
     while (true) {
-        camera_zoom = undefined;
         camera_zoom = player waittill(#"camera_zoom");
         function_672403ca("cp_tkdn_af_hill_binoculars", float(player function_8e4cd43b()) / 1000, camera_zoom.pct);
     }
@@ -694,7 +693,7 @@ function function_b233d29e(wait_time = 1, fade_time = 0) {
 function function_7142e76c(veh) {
     level endon(#"hash_2b1ea816682de37d");
     while (isentity(veh)) {
-        snd::play("veh_tkd_chase_npc_jeeps_skid_stop", [veh, vectorscale((0, 0, 1), 9)]);
+        snd::play("veh_tkd_chase_npc_jeeps_skid_stop", [veh, (0, 0, 9)]);
         wait(1);
     }
 }

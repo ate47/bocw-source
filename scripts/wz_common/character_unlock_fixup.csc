@@ -27,9 +27,7 @@ function private preinit() {
 // Checksum 0x3eb5fb09, Offset: 0x118
 // Size: 0x1e8
 function register_character_unlock(unlock_name, unlock_stat, item, var_f27097cc, ...) {
-    /#
-        assert(vararg.size > 0, "<unknown string>");
-    #/
+    assert(vararg.size > 0, "<unknown string>");
     var_9ba1646c = {#var_2b469a7d:unlock_stat, #required_item:item, #var_3845495:[], #var_849d923d:var_f27097cc, #activation_func:undefined};
     for (i = 0; i < vararg.size; i++) {
         if (!isdefined(var_9ba1646c.var_3845495)) {
@@ -55,19 +53,11 @@ function register_character_unlock(unlock_name, unlock_stat, item, var_f27097cc,
 function function_90ee7a97(unlock_name, activation_func) {
     var_9ba1646c = level.var_7d8da246[unlock_name];
     if (!isdefined(var_9ba1646c)) {
-        /#
-            /#
-                assertmsg("<unknown string>" + function_9e72a96(unlock_name) + "<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>" + function_9e72a96(unlock_name) + "<unknown string>");
         return;
     }
     if (!isdefined(activation_func)) {
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
         return;
     }
     var_9ba1646c.activation_func = activation_func;

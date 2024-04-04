@@ -170,7 +170,7 @@ function private function_808efdee(hacker, entity) {
 // Size: 0x48c
 function function_3e9e9071(player, var_f4452fa1) {
     if (!isdefined(player.var_c1e0dff3)) {
-        player.var_c1e0dff3 = spawn("trigger_radius_use", vectorscale((0, 0, -1), 10000), 0, var_f4452fa1.var_b19ab876, var_f4452fa1.var_b19ab876, 1);
+        player.var_c1e0dff3 = spawn("trigger_radius_use", (0, 0, -10000), 0, var_f4452fa1.var_b19ab876, var_f4452fa1.var_b19ab876, 1);
         player.var_c1e0dff3.objid = gameobjects::get_next_obj_id();
         objective_add(player.var_c1e0dff3.objid, "invisible", player.var_c1e0dff3.origin, "spycraft_progress_bar");
         objective_setinvisibletoall(player.var_c1e0dff3.objid);
@@ -202,7 +202,7 @@ function function_3e9e9071(player, var_f4452fa1) {
     }
     if (player.var_c1e0dff3.targetentity !== var_dd56041e && player.var_8f044438 !== 1) {
         player.var_c1e0dff3 triggerenable(1);
-        player.var_c1e0dff3.origin = var_dd56041e.origin + vectorscale((0, 0, 1), 50);
+        player.var_c1e0dff3.origin = var_dd56041e.origin + (0, 0, 50);
         player.var_c1e0dff3.targetentity = var_dd56041e;
         player.var_c1e0dff3 setinvisibletoall();
         player.var_c1e0dff3 setvisibletoplayer(player);

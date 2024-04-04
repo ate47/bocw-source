@@ -33,9 +33,7 @@ function init(str_flag, b_val = 0) {
     }
     /#
         if (!isdefined(level.first_frame)) {
-            /#
-                assert(!isdefined(self.flag[str_flag]), "<unknown string>" + str_flag + "<unknown string>");
-            #/
+            assert(!isdefined(self.flag[str_flag]), "<unknown string>" + str_flag + "<unknown string>");
         }
     #/
     self.flag[str_flag] = b_val;
@@ -105,9 +103,7 @@ function set(str_flag) {
 // Checksum 0x32f1e047, Offset: 0x3e8
 // Size: 0x6c
 function set_val(str_flag, b_val) {
-    /#
-        assert(isdefined(b_val), "<unknown string>");
-    #/
+    assert(isdefined(b_val), "<unknown string>");
     if (b_val) {
         set(str_flag);
         return;
@@ -135,9 +131,7 @@ function increment(str_flag) {
 // Checksum 0x4194833c, Offset: 0x4d8
 // Size: 0x94
 function decrement(str_flag) {
-    /#
-        assert(isdefined(self.flag_count[str_flag]) && self.flag_count[str_flag] > 0, "<unknown string>");
-    #/
+    assert(isdefined(self.flag_count[str_flag]) && self.flag_count[str_flag] > 0, "<unknown string>");
     self.flag_count[str_flag]--;
     if (self.flag_count[str_flag] == 0) {
         clear(str_flag);
@@ -382,7 +376,6 @@ function function_4bf6d64f(var_5d544245, var_44bd221) {
         var_c50f1f7b[var_c50f1f7b.size] = hash(flag);
     }
     while (true) {
-        result = undefined;
         result = self waittill(var_b1f5a9d1);
         flag = result._notify;
         if (isinarray(var_36b86152, flag) && get(flag)) {

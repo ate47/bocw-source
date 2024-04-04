@@ -29,8 +29,6 @@ function private preinit() {
         }
         return;
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 

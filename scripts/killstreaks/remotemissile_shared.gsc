@@ -32,9 +32,7 @@ function init_shared(bundlename, var_bbc86faf) {
         airsupport::init_shared();
         level.rockets = [];
         killstreak_detect::init_shared();
-        /#
-            assert(!isdefined(var_bbc86faf) || isfunctionptr(var_bbc86faf));
-        #/
+        assert(!isdefined(var_bbc86faf) || isfunctionptr(var_bbc86faf));
         if (!isdefined(bundlename)) {
             bundlename = "killstreak_remote_missile";
         }
@@ -312,7 +310,7 @@ function _fire(killstreaktype, player, team, killstreak_id) {
     player function_66b6e720(#"p9_fxanim_mp_remote_missile_bundle");
     var_99178ae6 = player util::create_streamer_hint(player.origin, player.angles, 1, undefined, 0, 0);
     if (isdefined(cam)) {
-        startpos = cam.origin - vectorscale((0, 0, 1), 100);
+        startpos = cam.origin - (0, 0, 100);
     } else {
         startpos = var_77689551;
     }
@@ -460,7 +458,7 @@ function function_af29fe57(remotemissilespawnpoints) {
     foreach (spawnpoint in remotemissilespawnpoints) {
         foreach (player in spawnpoint.validplayers) {
             spawnpoint.spawnscore = spawnpoint.spawnscore + 1;
-            if (bullettracepassed(player.origin + vectorscale((0, 0, 1), 32), spawnpoint.origin, 0, player)) {
+            if (bullettracepassed(player.origin + (0, 0, 32), spawnpoint.origin, 0, player)) {
                 spawnpoint.spawnscore = spawnpoint.spawnscore + 3;
             }
             if (spawnpoint.spawnscore > bestspawn.spawnscore) {
@@ -901,7 +899,7 @@ function getvalidtargets(rocket, trace, max_targets) {
             if (trace) {
                 tracedistance = min(distance(enemy.origin, campos), 2000);
                 traceend = enemy.origin - vectorscale(vectornormalize(dir), tracedistance);
-                if (bullettracepassed(enemy.origin + vectorscale((0, 0, 1), 60), traceend, 0, enemy, rocket)) {
+                if (bullettracepassed(enemy.origin + (0, 0, 60), traceend, 0, enemy, rocket)) {
                     targets[entnum] = enemy;
                 }
             } else {
@@ -956,7 +954,7 @@ function gettarget(rocket, trace) {
         if (dist2 < best_dist2) {
             tracedistance = min(distance(target.origin, campos), 2000);
             traceend = target.origin - vectorscale(vectornormalize(dir), tracedistance);
-            if (trace && !bullettracepassed(target.origin + vectorscale((0, 0, 1), 60), traceend, 0, target, rocket)) {
+            if (trace && !bullettracepassed(target.origin + (0, 0, 60), traceend, 0, target, rocket)) {
                 continue;
             }
             best_target = target;
@@ -1101,9 +1099,7 @@ function targeting_hud_think(rocket) {
                     level.remote_missile_targets remote_missile_targets::set_extra_target_2(self, target getentitynumber());
                     continue;
                 }
-                /#
-                    assertmsg("<unknown string>");
-                #/
+                assertmsg("<unknown string>");
             }
         }
         foreach (lockonindex, var_8712c5b8 in player.var_bbe80eed) {
@@ -1221,7 +1217,7 @@ function missile_deploy(rocket, hacked) {
 function function_2c190692(rocket, target) {
     var_6aece548 = getweapon(#"remote_missile_bomblet");
     origin = rocket.origin;
-    targetorigin = target.origin + vectorscale((0, 0, 1), 50);
+    targetorigin = target.origin + (0, 0, 50);
     if (isdefined(rocket)) {
         origin = rocket.origin;
     }
@@ -1233,7 +1229,7 @@ function function_2c190692(rocket, target) {
     } else {
         origin = origin + (-70, 100, 0);
     }
-    var_67ee15f2 = magicbullet(var_6aece548, origin, targetorigin, self, target, vectorscale((0, 0, 1), 30));
+    var_67ee15f2 = magicbullet(var_6aece548, origin, targetorigin, self, target, (0, 0, 30));
     if (isdefined(rocket.var_ae685ec9)) {
         rocket.var_ae685ec9 delete();
         rocket.var_ae685ec9 = undefined;
@@ -1322,7 +1318,7 @@ function setup_bomblet(bomb) {
 // Size: 0x184
 function fire_bomblet(weapon, rocket, target, waitframes) {
     origin = rocket.origin;
-    targetorigin = target.origin + vectorscale((0, 0, 1), 50);
+    targetorigin = target.origin + (0, 0, 50);
     waitframe(waitframes);
     if (isdefined(rocket)) {
         origin = rocket.origin;
@@ -1330,7 +1326,7 @@ function fire_bomblet(weapon, rocket, target, waitframes) {
     if (!isdefined(self) || !isdefined(target)) {
         return;
     }
-    bomb = magicbullet(weapon, origin, targetorigin, self, target, vectorscale((0, 0, 1), 30));
+    bomb = magicbullet(weapon, origin, targetorigin, self, target, (0, 0, 30));
     if (isdefined(rocket) && isdefined(bomb)) {
         if (!isdefined(rocket.bomblets)) {
             rocket.bomblets = [];

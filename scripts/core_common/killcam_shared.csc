@@ -62,7 +62,7 @@ function function_549a01b9(localclientnum) {
     }
     if (function_56e2eaa8(self) && isdefined(level.killcam[localclientnum]) && game.state !== #"pregame") {
         level.killcam[localclientnum].var_57426003 = util::getnextobjid(localclientnum);
-        objective_add(localclientnum, level.killcam[localclientnum].var_57426003, "active", #"hash_e8ccf98fcea7a36", vectorscale((0, 0, -1), 10000));
+        objective_add(localclientnum, level.killcam[localclientnum].var_57426003, "active", #"hash_e8ccf98fcea7a36", (0, 0, -10000));
         objective_onentity(localclientnum, level.killcam[localclientnum].var_57426003, self, 0, 0, 0);
     }
 }

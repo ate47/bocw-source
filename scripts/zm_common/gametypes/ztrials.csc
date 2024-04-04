@@ -20,9 +20,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     level._zombie_gamemodeprecache = &onprecachegametype;
     level._zombie_gamemodemain = &onstartgametype;
     level flag::init(#"ztrial", 1);
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace ztrials/ztrials
@@ -30,9 +28,7 @@ function event_handler[gametype_init] main(*eventstruct) {
 // Checksum 0xf6806555, Offset: 0x160
 // Size: 0x24
 function onprecachegametype() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace ztrials/ztrials
@@ -40,9 +36,7 @@ function onprecachegametype() {
 // Checksum 0xc27454c6, Offset: 0x190
 // Size: 0x24
 function onstartgametype() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace ztrials/event_b72c1844

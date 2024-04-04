@@ -64,9 +64,9 @@ function function_6526f34b() {
 // Size: 0x1cc
 function function_13b9705e() {
     level endon(#"game_ended");
-    var_f7336730 = spawncollision("collision_clip_wall_512x512x10", "collider", (4489, 6969, 156), vectorscale((0, 1, 0), 270));
-    var_84e50295 = spawncollision("collision_clip_wall_512x512x10", "collider", (3977, 6969, 156), vectorscale((0, 1, 0), 270));
-    var_a30d3edd = spawncollision("collision_clip_wall_512x512x10", "collider", (3788, 6969, 156), vectorscale((0, 1, 0), 270));
+    var_f7336730 = spawncollision("collision_clip_wall_512x512x10", "collider", (4489, 6969, 156), (0, 270, 0));
+    var_84e50295 = spawncollision("collision_clip_wall_512x512x10", "collider", (3977, 6969, 156), (0, 270, 0));
+    var_a30d3edd = spawncollision("collision_clip_wall_512x512x10", "collider", (3788, 6969, 156), (0, 270, 0));
     var_ae7355a9 = spawncollision("collision_clip_wall_512x512x10", "collider", (3537, 6708, 156), (0, 0, 0));
     level flag::wait_till("connect_diner");
     if (isdefined(var_f7336730)) {

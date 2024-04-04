@@ -35,21 +35,13 @@ function private preinit() {
 // Checksum 0x65f3e2f, Offset: 0x468
 // Size: 0x1a4
 function private registerbehaviorscriptfunctions() {
-    /#
-        assert(isscriptfunctionptr(&function_2c6be6cd));
-    #/
+    assert(isscriptfunctionptr(&function_2c6be6cd));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_4da9c87ccb6a9163", &function_2c6be6cd);
-    /#
-        assert(isscriptfunctionptr(&function_90e78f70));
-    #/
+    assert(isscriptfunctionptr(&function_90e78f70));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_38b92465454460ba", &function_90e78f70);
-    /#
-        assert(isscriptfunctionptr(&function_38388863));
-    #/
+    assert(isscriptfunctionptr(&function_38388863));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_400342bceb3fa64e", &function_38388863);
-    /#
-        assert(isscriptfunctionptr(&function_3628f3da));
-    #/
+    assert(isscriptfunctionptr(&function_3628f3da));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2eef1e8d94fa0609", &function_3628f3da);
 }
 
@@ -157,7 +149,6 @@ function emp_watcher(n_index) {
     self notify(#"emp_thread_stop");
     self endon(#"emp_thread_stop", #"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (waitresult.weapon.isemp) {
             if (is_true(self.emped)) {
@@ -471,9 +462,7 @@ function function_3e5395(n_seconds, n_index = 0) {
 // Checksum 0x626a8104, Offset: 0x1770
 // Size: 0x82
 function function_30a9811a(n_scale, n_index = 0) {
-    /#
-        assert(isdefined(n_scale) && n_scale > 0, "<unknown string>");
-    #/
+    assert(isdefined(n_scale) && n_scale > 0, "<unknown string>");
     s_turret = _get_turret_data(n_index);
     s_turret.var_72f4d1b7 = n_scale;
 }
@@ -484,9 +473,7 @@ function function_30a9811a(n_scale, n_index = 0) {
 // Size: 0x19e
 function fire(n_index) {
     s_turret = _get_turret_data(n_index);
-    /#
-        assert(isdefined(n_index) && n_index >= 0, "<unknown string>");
-    #/
+    assert(isdefined(n_index) && n_index >= 0, "<unknown string>");
     e_target = isentity(s_turret.target) ? s_turret.target : undefined;
     self.forcefire = is_true(s_turret.var_d55528ca);
     self.var_742d1a8f = is_true(s_turret.var_2890139c);
@@ -684,9 +671,7 @@ function handle_rider_death(ai_rider, n_index = 0) {
 // Checksum 0xe539ac86, Offset: 0x24d0
 // Size: 0x154
 function function_1bc8c31c(target, v_offset, n_index = 0, b_just_once = 0) {
-    /#
-        assert(isdefined(target), "<unknown string>");
-    #/
+    assert(isdefined(target), "<unknown string>");
     function_9c04d437(1, n_index);
     self endon(#"drone_death", #"death", "_stop_turret" + _index(n_index), "turret_disabled" + _index(n_index), #"terminate_all_turrets_firing", #"exit_vehicle", "turret manual" + _index(n_index));
     function_14223170(n_index);
@@ -699,12 +684,8 @@ function function_1bc8c31c(target, v_offset, n_index = 0, b_just_once = 0) {
 // Checksum 0x27b0995c, Offset: 0x2630
 // Size: 0x30c
 function function_aecc6bed(var_502298b8, n_shots, n_index = 0, var_c3e16ce = undefined, var_702f0a7e = undefined) {
-    /#
-        assert(isarray(var_502298b8), "<unknown string>");
-    #/
-    /#
-        assert(n_shots > 0, "<unknown string>");
-    #/
+    assert(isarray(var_502298b8), "<unknown string>");
+    assert(n_shots > 0, "<unknown string>");
     var_17b7891d = "1a325e0f6397cbea" + _index(n_index);
     self notify(var_17b7891d);
     self endon(var_17b7891d);
@@ -735,9 +716,7 @@ function function_aecc6bed(var_502298b8, n_shots, n_index = 0, var_c3e16ce = und
 // Checksum 0xda4b5ec6, Offset: 0x2948
 // Size: 0x204
 function function_d1ba6eb6(v_start, v_end, n_index = 0) {
-    /#
-        assert(isdefined(v_start) && isdefined(v_end), "<unknown string>");
-    #/
+    assert(isdefined(v_start) && isdefined(v_end), "<unknown string>");
     var_17b7891d = "286c7a50de00885f" + _index(n_index);
     self notify(var_17b7891d);
     self endon(var_17b7891d);
@@ -1023,7 +1002,6 @@ function _turret_health_monitor(n_index) {
 function _turret_health_monitor_loop(n_index) {
     self endon(#"death", "turret_disabled" + _index(n_index));
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"broken");
         if (waitresult.type === "turret_destroyed_" + n_index) {
             return;
@@ -1095,7 +1073,6 @@ function _listen_for_damage_on_actor(ai_user, n_index) {
     ai_user endon(#"death");
     self endon("turret_disabled" + _index(n_index), "_turret_think" + _index(n_index), #"exit_vehicle");
     while (true) {
-        waitresult = undefined;
         waitresult = ai_user waittill(#"damage");
         s_turret = _get_turret_data(n_index);
         if (isdefined(s_turret)) {
@@ -1196,7 +1173,6 @@ function function_2a4a311(n_index) {
     }
     var_f449d788 = sqr(s_turret.var_43ce86ed);
     while (true) {
-        s_notify = undefined;
         s_notify = self waittill(#"hash_4ecf2bd2fb1d75d9");
         var_34b21e8e = s_notify.entity;
         if (isalive(var_34b21e8e) && !var_34b21e8e flag::get(#"hash_1b89f498c2647e6")) {
@@ -1226,7 +1202,7 @@ function _debug_turret_think(n_index) {
         self endon(#"death", "<unknown string>" + _index(n_index), "<unknown string>" + _index(n_index));
         s_turret = _get_turret_data(n_index);
         var_34c31abc = (1, 1, 0);
-        n_spacing = vectorscale((0, 0, -1), 7);
+        n_spacing = (0, 0, -7);
         while (true) {
             if (!getdvarint(#"g_debugturrets", 0)) {
                 wait(0.2);
@@ -1346,9 +1322,7 @@ function _init_turret(n_index = 0) {
     self endon(#"death");
     w_weapon = get_weapon(n_index);
     if (w_weapon.name == #"none") {
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         return;
     }
     util::waittill_asset_loaded("xmodel", self.model);
@@ -1396,9 +1370,7 @@ function _init_turret(n_index = 0) {
 // Checksum 0xe5a5c691, Offset: 0x50f0
 // Size: 0x220
 function _init_vehicle_turret(n_index) {
-    /#
-        assert(isdefined(n_index) && n_index >= 0, "<unknown string>");
-    #/
+    assert(isdefined(n_index) && n_index >= 0, "<unknown string>");
     s_turret = spawnstruct();
     switch (n_index) {
     case 0:
@@ -1730,9 +1702,7 @@ function _get_gunner_tag_for_turret_index(n_index) {
     case 4:
         return "tag_gunner4";
     default:
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         break;
     }
 }

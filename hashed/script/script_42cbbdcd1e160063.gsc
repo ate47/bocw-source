@@ -215,7 +215,7 @@ function init() {
     level.gibmaxcount = 3;
     level.gibtimer = 0;
     level.gibcount = 0;
-    level.var_45fa1b3d = vectorscale((0, 0, 1), 4);
+    level.var_45fa1b3d = (0, 0, 4);
     level.var_e696e731 = 3;
     level.var_be2bb100 = 2;
     level.var_49fcf1d9 = 0.5;
@@ -354,9 +354,7 @@ function stop_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fiel
 // Size: 0x11c
 function function_4060ccb4(name, tag, *unused1 = "tag_origin", forcestream = 0, var_23a371c9 = 0) {
     var_318e5b78 = level.var_11c4dca4.size;
-    /#
-        assert(var_318e5b78 < 256, "zombie/fx_magnet_ring_zdo");
-    #/
+    assert(var_318e5b78 < 256, "zombie/fx_magnet_ring_zdo");
     level.var_11c4dca4[var_318e5b78] = {#name:tag, #tag:unused1, #id:var_318e5b78, #unique:var_23a371c9};
     if (forcestream) {
         function_3385d776(level._effect[tag]);
@@ -381,9 +379,7 @@ function function_ede08af4(name) {
 // Checksum 0x98d81fa4, Offset: 0x3a50
 // Size: 0x52
 function function_43755017(type) {
-    /#
-        assert(isdefined(level.var_11c4dca4[type]), "player/fx_plyr_clone_reaper_appear");
-    #/
+    assert(isdefined(level.var_11c4dca4[type]), "player/fx_plyr_clone_reaper_appear");
     return level.var_11c4dca4[type].name;
 }
 
@@ -392,9 +388,7 @@ function function_43755017(type) {
 // Checksum 0xb88e19d9, Offset: 0x3ab0
 // Size: 0x52
 function function_a3682ae2(type) {
-    /#
-        assert(isdefined(level.var_11c4dca4[type]), "player/fx_plyr_clone_reaper_appear");
-    #/
+    assert(isdefined(level.var_11c4dca4[type]), "player/fx_plyr_clone_reaper_appear");
     return level.var_11c4dca4[type].tag;
 }
 
@@ -403,9 +397,7 @@ function function_a3682ae2(type) {
 // Checksum 0xdec3aca1, Offset: 0x3b10
 // Size: 0x52
 function function_7450c5f4(type) {
-    /#
-        assert(isdefined(level.var_11c4dca4[type]), "player/fx_plyr_clone_reaper_appear");
-    #/
+    assert(isdefined(level.var_11c4dca4[type]), "player/fx_plyr_clone_reaper_appear");
     return level.var_11c4dca4[type].unique;
 }
 
@@ -512,7 +504,6 @@ function function_f58618d7(localclientnum, name, tag, var_fc8ee72b = 0) {
 function function_a65eebe3(localclientnum) {
     self notify("65618fc845e4916b");
     self endon("65618fc845e4916b");
-    result = undefined;
     result = self waittill(#"entityshutdown", #"death", #"disconnect");
     if (isdefined(self.var_a7bcf699)) {
         foreach (var_4212fdee in self.var_a7bcf699) {
@@ -597,8 +588,8 @@ function function_d8c789b8(localclientnum, name, *tag) {
             }
         }
         self.var_a7bcf699[tag] = [];
-        self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = playfx(name, level._effect[tag], self.origin + vectorscale((0, 0, 1), 100));
-        self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = playfx(name, level._effect[#"hash_4c83639bb82942d8"], self.origin + vectorscale((0, 0, 1), 124));
+        self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = playfx(name, level._effect[tag], self.origin + (0, 0, 100));
+        self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = playfx(name, level._effect[#"hash_4c83639bb82942d8"], self.origin + (0, 0, 124));
         break;
     case #"hazard_electric_trap_red":
     case #"hazard_electric_trap_green":
@@ -608,7 +599,7 @@ function function_d8c789b8(localclientnum, name, *tag) {
             }
         }
         self.var_a7bcf699[tag] = [];
-        self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = playfx(name, level._effect[tag], self.origin + vectorscale((0, 0, 1), 124));
+        self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = playfx(name, level._effect[tag], self.origin + (0, 0, 124));
         break;
     case #"skel_stomp_impact":
         if (isdefined(self.var_a7bcf699[tag])) {
@@ -627,8 +618,8 @@ function function_d8c789b8(localclientnum, name, *tag) {
         }
         self.var_a7bcf699[tag] = [];
         if (!isdefined(self.var_8d26e38d)) {
-            self.var_8d26e38d = self.origin + vectorscale((1, 0, 0), 16) + anglestoforward(self.angles) * 16;
-            self.var_f5ec511d = anglestoforward(self.angles + vectorscale((0, -1, 0), 135));
+            self.var_8d26e38d = self.origin + (16, 0, 0) + anglestoforward(self.angles) * 16;
+            self.var_f5ec511d = anglestoforward(self.angles + (0, -135, 0));
         }
         self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = playfx(name, level._effect[tag], self.var_8d26e38d, self.var_f5ec511d);
         break;

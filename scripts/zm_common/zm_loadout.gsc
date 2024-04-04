@@ -192,9 +192,7 @@ function function_54cb37a4(weapon) {
     primaryweapons = self getweaponslistprimaries();
     initial_current_weapon = self getcurrentweapon();
     current_weapon = self zm_weapons::switch_from_alt_weapon(initial_current_weapon);
-    /#
-        assert(self player_can_use_content(weapon));
-    #/
+    assert(self player_can_use_content(weapon));
     weapon_limit = zm_utility::get_player_weapon_limit(self);
     if (is_true(weapon.craftitem)) {
         zm_items::player_pick_up(self, weapon);
@@ -859,9 +857,7 @@ function function_439b009a(slot) {
 // Checksum 0x27efc7da, Offset: 0x2c90
 // Size: 0x228
 function get_class_num(weaponclass) {
-    /#
-        assert(isdefined(weaponclass));
-    #/
+    assert(isdefined(weaponclass));
     prefixstring = "CLASS_CUSTOM";
     var_8bba14bc = self getcustomclasscount();
     var_8bba14bc = max(var_8bba14bc, 0);
@@ -873,15 +869,11 @@ function get_class_num(weaponclass) {
         if (class_num == -1) {
             class_num = var_8bba14bc;
         }
-        /#
-            assert(isdefined(class_num));
-        #/
+        assert(isdefined(class_num));
         if (class_num < 0 || class_num > var_8bba14bc) {
             class_num = 0;
         }
-        /#
-            assert(class_num >= 0 && class_num <= var_8bba14bc);
-        #/
+        assert(class_num >= 0 && class_num <= var_8bba14bc);
     } else {
         class_num = level.classtoclassnum[weaponclass];
     }
@@ -891,9 +883,7 @@ function get_class_num(weaponclass) {
             class_num = 0;
         }
     }
-    /#
-        assert(isdefined(class_num));
-    #/
+    assert(isdefined(class_num));
     return class_num;
 }
 
@@ -927,9 +917,7 @@ function function_d7c205b9(newclass, var_eead10f0 = #"unspecified") {
 // Checksum 0x6c815ca, Offset: 0x3080
 // Size: 0x44
 function function_97d216fa(response) {
-    /#
-        assert(isdefined(level.classmap[response]));
-    #/
+    assert(isdefined(level.classmap[response]));
     return level.classmap[response];
 }
 
@@ -1077,9 +1065,7 @@ function give_loadout() {
         return;
     }
     if (loadout::function_87bcb1b()) {
-        /#
-            assert(isdefined(self.curclass));
-        #/
+        assert(isdefined(self.curclass));
         self function_d7c205b9(self.curclass, #"give_loadout");
         if (isdefined(level.givecustomloadout)) {
             self [[ level.givecustomloadout ]]();
@@ -1124,9 +1110,7 @@ function function_f436358b(weaponclass) {
         profileNamedStop();
     } else {
         profileNamedStart(#"");
-        /#
-            assert(isdefined(self.pers[#"class"]), "<unknown string>");
-        #/
+        assert(isdefined(self.pers[#"class"]), "<unknown string>");
         self.class_num_for_global_weapons = 0;
         profileNamedStop();
     }

@@ -272,7 +272,6 @@ function function_98341f7d(n_index) {
     var_b1d0b377 = spawn("trigger_radius", var_d238f3be.origin, 0, 64, 88);
     var_b1d0b377.var_d238f3be = var_d238f3be;
     while (isdefined(var_b1d0b377)) {
-        var_10d5f200 = undefined;
         var_10d5f200 = var_b1d0b377 waittill(#"trigger");
         var_b1d0b377 function_50485659(var_10d5f200);
         wait(0.05);

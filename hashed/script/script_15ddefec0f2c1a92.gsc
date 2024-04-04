@@ -48,35 +48,19 @@ function init() {
 // Checksum 0xe482a028, Offset: 0x550
 // Size: 0x31c
 function registerbehaviorscriptfunctions() {
-    /#
-        assert(isscriptfunctionptr(&function_52fd1aa8));
-    #/
+    assert(isscriptfunctionptr(&function_52fd1aa8));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_347361909496bb67", &function_52fd1aa8);
-    /#
-        assert(isscriptfunctionptr(&function_ee68dfca));
-    #/
+    assert(isscriptfunctionptr(&function_ee68dfca));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_589814e7ae852fb7", &function_ee68dfca);
-    /#
-        assert(isscriptfunctionptr(&function_86104a92));
-    #/
+    assert(isscriptfunctionptr(&function_86104a92));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2c51dac6b31ae16e", &function_86104a92);
-    /#
-        assert(isscriptfunctionptr(&function_cf98d4f7));
-    #/
+    assert(isscriptfunctionptr(&function_cf98d4f7));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_4d690a74a315c5c3", &function_cf98d4f7);
-    /#
-        assert(isscriptfunctionptr(&function_ad163d5a));
-    #/
+    assert(isscriptfunctionptr(&function_ad163d5a));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_4c13ee431006ea01", &function_ad163d5a);
-    /#
-        assert(!isdefined(&wolfmeleeaction) || isscriptfunctionptr(&wolfmeleeaction));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(&function_8d42c979) || isscriptfunctionptr(&function_8d42c979));
-    #/
+    assert(!isdefined(&wolfmeleeaction) || isscriptfunctionptr(&wolfmeleeaction));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(&function_8d42c979) || isscriptfunctionptr(&function_8d42c979));
     behaviortreenetworkutility::registerbehaviortreeaction("wolfMeleeAction", &wolfmeleeaction, undefined, &function_8d42c979);
 }
 
@@ -203,7 +187,6 @@ function function_86555fba() {
         org thread function_1c24aba3();
     }
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         if (isdefined(org)) {
             org namespace_83eb6304::function_3ecfde67("nova_crawler_burst");
@@ -222,7 +205,6 @@ function damagewatch() {
     self notify("54541a049aceddf6");
     self endon("54541a049aceddf6");
     self endon(#"death");
-    result = undefined;
     result = self waittill(#"damage");
     if (isdefined(result.attacker) && issentient(result.attacker)) {
         self.favoriteenemy = result.attacker;
@@ -540,7 +522,6 @@ function function_a19ebce9(target) {
 function function_92312127() {
     self endon(#"death");
     while (true) {
-        result = undefined;
         result = self waittill(#"dog_melee");
         self namespace_e32bb68::function_3a59ec34("zmb_doa_ai_hound_bite");
         self function_a19ebce9(self.enemy);

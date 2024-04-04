@@ -7,21 +7,8 @@
 // Method(s) 6 Total 13
 class class_e1dc992f : cluielem {
 
-    // Namespace class_e1dc992f/sr_crafting_table_menu
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x7db406ec, Offset: 0x1d0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_e1dc992f/sr_crafting_table_menu
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xa04904e3, Offset: 0x2e8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_e1dc992f/sr_crafting_table_menu
     // Params 2, eflags: 0x2 linked
@@ -44,7 +31,7 @@ class class_e1dc992f : cluielem {
     // Checksum 0xd8246ab, Offset: 0x290
     // Size: 0x4c
     function function_8ec20f82(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 1, value, 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 1, value, 0);
     }
 
     // Namespace namespace_e1dc992f/sr_crafting_table_menu

@@ -57,11 +57,7 @@ function private mpl_heatwave_fx(ent, event, params) {
                 continue;
             }
             callback = callback_fields[0];
-            /#
-                /#
-                    assert(isfunctionptr(callback), "<unknown string>" + "<unknown string>");
-                #/
-            #/
+            assert(isfunctionptr(callback), "<unknown string>" + "<unknown string>");
             if (!isfunctionptr(callback)) {
                 return;
             }
@@ -112,17 +108,11 @@ function private function_2b653c00(ent, event, func, obj, a_params) {
     if (!isdefined(ent)) {
         return;
     }
-    /#
-        /#
-            assert(isfunctionptr(func), "<unknown string>" + "<unknown string>");
-        #/
-    #/
+    assert(isfunctionptr(func), "<unknown string>" + "<unknown string>");
     if (!isfunctionptr(func)) {
         return;
     }
-    /#
-        assert(isdefined(event), "<unknown string>");
-    #/
+    assert(isdefined(event), "<unknown string>");
     if (!(isdefined(ent._callbacks) && isdefined(ent._callbacks[event]))) {
         ent._callbacks[event] = [];
     }
@@ -182,9 +172,7 @@ function private function_3f5f097e(ent, event, func, obj, instant) {
     if (!isdefined(ent._callbacks)) {
         return;
     }
-    /#
-        assert(isdefined(event), "<unknown string>");
-    #/
+    assert(isdefined(event), "<unknown string>");
     if (func === "all") {
         ent._callbacks[event] = [];
         return;
@@ -1289,9 +1277,7 @@ function event_handler[player_disconnect] codecallback_playerdisconnect(*eventst
 // Checksum 0xf804c9db, Offset: 0x3120
 // Size: 0x34
 function event_handler[hostmigration_setupgametype] codecallback_migration_setupgametype() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     simple_hostmigration::migration_setupgametype();
 }
 
@@ -1300,9 +1286,7 @@ function event_handler[hostmigration_setupgametype] codecallback_migration_setup
 // Checksum 0xf086e62a, Offset: 0x3160
 // Size: 0x3c
 function event_handler[hostmigration] codecallback_hostmigration(*eventstruct) {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     [[ level.callbackhostmigration ]]();
 }
 
@@ -1311,9 +1295,7 @@ function event_handler[hostmigration] codecallback_hostmigration(*eventstruct) {
 // Checksum 0xe7dd07b4, Offset: 0x31a8
 // Size: 0x3c
 function event_handler[hostmigration_save] codecallback_hostmigrationsave(*eventstruct) {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     [[ level.callbackhostmigrationsave ]]();
 }
 
@@ -1322,9 +1304,7 @@ function event_handler[hostmigration_save] codecallback_hostmigrationsave(*event
 // Checksum 0xa849e82a, Offset: 0x31f0
 // Size: 0x3c
 function event_handler[hostmigration_premigrationsave] codecallback_prehostmigrationsave(*eventstruct) {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     [[ level.callbackprehostmigrationsave ]]();
 }
 
@@ -1333,9 +1313,7 @@ function event_handler[hostmigration_premigrationsave] codecallback_prehostmigra
 // Checksum 0x28781e7e, Offset: 0x3238
 // Size: 0x3c
 function event_handler[hostmigration_playermigrated] codecallback_playermigrated(*eventstruct) {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     [[ level.callbackplayermigrated ]]();
 }
 

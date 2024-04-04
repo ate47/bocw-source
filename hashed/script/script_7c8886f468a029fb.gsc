@@ -7,22 +7,6 @@
 // Method(s) 8 Total 15
 class class_90c2e4ec : cluielem {
 
-    // Namespace class_90c2e4ec/sr_orda_health_bar
-    // Params 0, eflags: 0xa linked
-    // Checksum 0xca423627, Offset: 0x398
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_90c2e4ec/sr_orda_health_bar
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x7e4fe106, Offset: 0x578
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_90c2e4ec/sr_orda_health_bar
     // Params 1, eflags: 0x2 linked
     // Checksum 0xd9aa372b, Offset: 0x4d8
@@ -54,7 +38,7 @@ class class_90c2e4ec : cluielem {
     // Checksum 0x7ffd40de, Offset: 0x540
     // Size: 0x30
     function function_dff51e54(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "is_beast", value);
+        set_data(localclientnum, "is_beast", value);
     }
 
     // Namespace namespace_90c2e4ec/sr_orda_health_bar
@@ -62,7 +46,7 @@ class class_90c2e4ec : cluielem {
     // Checksum 0x70d100b4, Offset: 0x508
     // Size: 0x30
     function set_health(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "health", value);
+        set_data(localclientnum, "health", value);
     }
 
     // Namespace namespace_90c2e4ec/sr_orda_health_bar
@@ -71,8 +55,8 @@ class class_90c2e4ec : cluielem {
     // Size: 0x64
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "health", 0);
-        [[ self ]]->set_data(localclientnum, "is_beast", 0);
+        set_data(localclientnum, "health", 0);
+        set_data(localclientnum, "is_beast", 0);
     }
 
 }

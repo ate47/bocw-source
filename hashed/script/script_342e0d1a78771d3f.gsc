@@ -7,21 +7,8 @@
 // Method(s) 10 Total 17
 class cremote_missile_target_lockon : cluielem {
 
-    // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
-    // Params 0, eflags: 0x8
-    // Checksum 0x4ed14d0e, Offset: 0x298
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xf3461fef, Offset: 0x510
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
     // Params 2, eflags: 0x0
@@ -36,7 +23,7 @@ class cremote_missile_target_lockon : cluielem {
     // Checksum 0xc24ca9e, Offset: 0x3b0
     // Size: 0x4c
     function set_target_locked(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 2, value, 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 2, value, 0);
     }
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
@@ -44,7 +31,7 @@ class cremote_missile_target_lockon : cluielem {
     // Checksum 0xeba581ae, Offset: 0x358
     // Size: 0x4c
     function set_clientnum(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 1, value, 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 1, value, 0);
     }
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
@@ -52,7 +39,7 @@ class cremote_missile_target_lockon : cluielem {
     // Checksum 0x65d80c31, Offset: 0x408
     // Size: 0x4c
     function set_ishawktag(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 3, value, 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 3, value, 0);
     }
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
@@ -68,7 +55,7 @@ class cremote_missile_target_lockon : cluielem {
     // Checksum 0x900360b8, Offset: 0x4b8
     // Size: 0x4c
     function function_7c227f6d(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 5, value, 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 5, value, 0);
     }
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
@@ -84,7 +71,7 @@ class cremote_missile_target_lockon : cluielem {
     // Checksum 0x890e8632, Offset: 0x460
     // Size: 0x4c
     function set_killed(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 4, value, 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 4, value, 0);
     }
 
 }

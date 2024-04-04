@@ -373,9 +373,7 @@ function stealth_enemy_updateeveryframe(behaviortreeentity) {
     if (var_e8c7dd7e) {
         entnum = self getentitynumber();
         frametime = level.frameduration;
-        /#
-            assert(isdefined(frametime));
-        #/
+        assert(isdefined(frametime));
         if (gettime() / frametime % 5 == entnum % 5) {
             namespace_979752dc::update_light_meter();
         }
@@ -775,9 +773,7 @@ function idle_updatecurious(*behaviortreeentity) {
 // Checksum 0x756da4e6, Offset: 0x2270
 // Size: 0x1b4
 function updatesightstate(sightstate) {
-    /#
-        assert(!iscombating());
-    #/
+    assert(!iscombating());
     if (level flag::get("stealth_spotted")) {
         sightstate = "hunt";
     }
@@ -1013,9 +1009,7 @@ function investigate_getinitialpos() {
         var_5f25f38e = level.stealth.investigate_volumes[self.script_stealthgroup];
         groupdata = stealth_group::getgroup(self.script_stealthgroup);
         pod = stealth_group::group_findpod(groupdata, self);
-        /#
-            assert(isdefined(pod));
-        #/
+        assert(isdefined(pod));
         var_ca361e0e = 0;
         var_f6fb36e9 = 0;
         var_d5379974 = 0;
@@ -1178,9 +1172,7 @@ function function_d004e2c7(event) {
 // Checksum 0x6810dc32, Offset: 0x3aa0
 // Size: 0x1dc
 function investigate_init() {
-    /#
-        assert(isdefined(self.stealth.investigateevent));
-    #/
+    assert(isdefined(self.stealth.investigateevent));
     event = self.stealth.investigateevent;
     self.stealth.investigate_severity = event.type;
     self.stealth.investigate_entity = event.entity;
@@ -1329,9 +1321,7 @@ function investigate_move_init(behaviortreeentity) {
 // Checksum 0x17ffa9e8, Offset: 0x43a8
 // Size: 0xc6
 function investigate_move_setaimtarget(instancedata, targetpos, eventtype) {
-    /#
-        assert(isdefined(targetpos));
-    #/
+    assert(isdefined(targetpos));
     t = 5000;
     if (isdefined(eventtype)) {
         switch (eventtype) {
@@ -1440,9 +1430,7 @@ function updaterandomlooktarget(instancedata, targetdist) {
     var_51efeda2 = 20;
     facingdir = anglestoforward(self.angles);
     curtime = gettime();
-    /#
-        assert(isdefined(instancedata.cqbtwitchstate));
-    #/
+    assert(isdefined(instancedata.cqbtwitchstate));
     switch (instancedata.cqbtwitchstate) {
     case 0:
         t = (instancedata.cqbtwitchend - curtime) / var_c43fd60f;
@@ -1558,9 +1546,7 @@ function function_36915a04(behaviortreeentity) {
     if (!isdefined(self.stealth)) {
         return true;
     }
-    /#
-        assert(!isdefined(self.bt.var_98919459));
-    #/
+    assert(!isdefined(self.bt.var_98919459));
     self.bt.var_98919459 = behaviortreeentity gettaskid(1, "move");
     self.bt.instancedata[self.bt.var_98919459] = self.stealth.bsmstate;
     function_d6c9b118();
@@ -1581,9 +1567,7 @@ function function_7653ca27(behaviortreeentity) {
         namespace_2dd2c4d8::function_3b9e6ead(behaviortreeentity, "turn@stealth");
         return 1;
     }
-    /#
-        assert(isdefined(self.bt.var_98919459));
-    #/
+    assert(isdefined(self.bt.var_98919459));
     if (self.bt.instancedata[self.bt.var_98919459] != self.stealth.bsmstate) {
         [[ level.stealth.var_f67fe42c[self.bt.instancedata[self.bt.var_98919459]][2] ]](behaviortreeentity);
         [[ level.stealth.var_f67fe42c[self.stealth.bsmstate][0] ]](behaviortreeentity);
@@ -1606,9 +1590,7 @@ function function_bf263c90(behaviortreeentity) {
         behaviortreeentity ai::function_f6060793();
         return true;
     }
-    /#
-        assert(isdefined(self.bt.var_98919459));
-    #/
+    assert(isdefined(self.bt.var_98919459));
     [[ level.stealth.var_f67fe42c[self.bt.instancedata[self.bt.var_98919459]][2] ]](behaviortreeentity);
     self.bt.instancedata[self.bt.var_98919459] = undefined;
     self.bt.var_98919459 = undefined;
@@ -1647,9 +1629,7 @@ function investigate_move(behaviortreeentity) {
     instancedata = self.bt.instancedata[taskid];
     groupdata = stealth_group::getgroup(self.script_stealthgroup);
     pod = stealth_group::group_findpod(groupdata, self);
-    /#
-        assert(isdefined(pod));
-    #/
+    assert(isdefined(pod));
     if (isdefined(pod.needsupdate) && array::contains(pod.needsupdate, self)) {
         goalpos = investigate_getuninvestigatedpos();
         goalorigin = goalpos;
@@ -1702,10 +1682,8 @@ function investigate_move(behaviortreeentity) {
     if (isalive(getplayers()[0])) {
         target = getplayers()[0];
         if (self cansee(target)) {
-            /#
-                assert(issentient(target));
-            #/
-            investigate_move_setaimtarget(instancedata, self lastknownpos(target) + vectorscale((0, 0, 1), 32), "sight");
+            assert(issentient(target));
+            investigate_move_setaimtarget(instancedata, self lastknownpos(target) + (0, 0, 32), "sight");
         }
     }
     investigate_move_updateaimtarget(instancedata);
@@ -1930,9 +1908,7 @@ function hunt_updateregiontoclear() {
         cleardata.prevregion[1] = region;
         cleardata.isinregion = 0;
         self namespace_5cd4acd8::huntassigntoregion(region);
-        /#
-            assert(isdefined(region.route_points));
-        #/
+        assert(isdefined(region.route_points));
         cleardata.curroutepoint = self namespace_5cd4acd8::findcurposonroute(self.origin, region.route_points);
         cleardata.brouteforward = 1;
     }
@@ -1973,9 +1949,7 @@ function hunt_finddoorbetween(var_c27b6fd6, var_b034cb49) {
 // Checksum 0x3774e213, Offset: 0x6a70
 // Size: 0x5a0
 function hunt_getnextclearpos() {
-    /#
-        assert(isdefined(self.stealth.cleardata));
-    #/
+    assert(isdefined(self.stealth.cleardata));
     cleardata = structcopy(self.stealth.cleardata);
     var_355a0ab5 = cleardata.curroutepoint;
     var_22016eea = structcopy(self.stealth.cleardata.curregion);
@@ -2115,13 +2089,9 @@ function hunt_init() {
     self.last_set_goalent = undefined;
     groupdata = stealth_group::getgroup(self.script_stealthgroup);
     pod = stealth_group::group_findpod(groupdata, self);
-    /#
-        assert(isdefined(pod));
-    #/
+    assert(isdefined(pod));
     if (isdefined(pod.borigininvolume) && !pod.borigininvolume) {
-        /#
-            assert(isdefined(level.stealth.hunt_volumes[self.script_stealthgroup]));
-        #/
+        assert(isdefined(level.stealth.hunt_volumes[self.script_stealthgroup]));
         self namespace_979752dc::set_goal(level.stealth.hunt_volumes[self.script_stealthgroup]);
         if (isdefined(self.script_combatmode)) {
             self.combatmode = self.script_combatmode;
@@ -2210,9 +2180,7 @@ function hunt_cqbtargetupdate(instancedata) {
 function hunt_shouldhunker(*behaviortreeentity) {
     groupdata = stealth_group::getgroup(self.script_stealthgroup);
     pod = stealth_group::group_findpod(groupdata, self);
-    /#
-        assert(isdefined(pod));
-    #/
+    assert(isdefined(pod));
     if (is_true(pod.bhunkering)) {
         return true;
     }
@@ -2336,9 +2304,7 @@ function hunt_hunker_terminate(behaviortreeentity) {
 // Size: 0x68
 function hunt_hunker_shouldexpose(*behaviortreeentity) {
     var_f877c541 = 5000;
-    /#
-        assert(isdefined(self.stealth.hunthunkerlastexposetime));
-    #/
+    assert(isdefined(self.stealth.hunthunkerlastexposetime));
     if (gettime() > self.stealth.hunthunkerlastexposetime + var_f877c541) {
         return true;
     }
@@ -2485,7 +2451,7 @@ function hunt_sidechecks(instancedata) {
                     if (debug_enabled()) {
                         var_861ee216 = anglestoforward(node.angles);
                         circle(lookaheadpos, var_bea9b15e, (0, 1, 0), 1, 0, 1);
-                        box(node.origin, vectorscale((-1, -1, 0), 16), (16, 16, 8), node.angles[1], (1, 1, 0), 1, 0, 1);
+                        box(node.origin, (-16, -16, 0), (16, 16, 8), node.angles[1], (1, 1, 0), 1, 0, 1);
                         line(lookaheadpos, lookaheadpos + var_861ee216 * var_2be49714, (0, 1, 1), 1, 0, 1);
                     }
                 #/
@@ -2505,7 +2471,7 @@ function hunt_sidechecks(instancedata) {
         cornerchecknode = instancedata.cornerchecknode;
         /#
             if (debug_enabled()) {
-                box(cornerchecknode.origin, vectorscale((-1, -1, 0), 16), (16, 16, 8), cornerchecknode.angles[1], (1, 1, 0), 1, 0, 1);
+                box(cornerchecknode.origin, (-16, -16, 0), (16, 16, 8), cornerchecknode.angles[1], (1, 1, 0), 1, 0, 1);
             }
         #/
         checkpos = undefined;
@@ -2520,7 +2486,7 @@ function hunt_sidechecks(instancedata) {
         if (vectordot(var_3dcee9ed, var_e531995e) < var_f74021a7) {
             checkpos = var_e96b9b;
         } else {
-            checkpos = self.origin + rotatepoint(vectorscale((1, 0, 0), 128), cornerchecknode.angles);
+            checkpos = self.origin + rotatepoint((128, 0, 0), cornerchecknode.angles);
         }
         /#
             if (debug_enabled()) {
@@ -2560,7 +2526,7 @@ function hunt_move(behaviortreeentity) {
     }
     if (isdefined(self.pathgoalpos) && var_13e10c61 && self getpathlength() < 56) {
         smartobj = self.smart_object;
-        self aimatposik(smartobj.origin + rotatepoint(vectorscale((1, 0, 0), 128), smartobj.angles));
+        self aimatposik(smartobj.origin + rotatepoint((128, 0, 0), smartobj.angles));
     } else {
         self hunt_sidechecks(instancedata);
     }

@@ -40,31 +40,17 @@ function private function_ef4b81af() {
 // Checksum 0x9c62bc43, Offset: 0x370
 // Size: 0x294
 function registerbehaviorscriptfunctions() {
-    /#
-        assert(isscriptfunctionptr(&dogtargetservice));
-    #/
+    assert(isscriptfunctionptr(&dogtargetservice));
     behaviortreenetworkutility::registerbehaviortreescriptapi("dogTargetService", &dogtargetservice);
-    /#
-        assert(isscriptfunctionptr(&dogshouldmelee));
-    #/
+    assert(isscriptfunctionptr(&dogshouldmelee));
     behaviortreenetworkutility::registerbehaviortreescriptapi("dogShouldMelee", &dogshouldmelee);
-    /#
-        assert(isscriptfunctionptr(&dogshouldwalk));
-    #/
+    assert(isscriptfunctionptr(&dogshouldwalk));
     behaviortreenetworkutility::registerbehaviortreescriptapi("dogShouldWalk", &dogshouldwalk);
-    /#
-        assert(isscriptfunctionptr(&dogshouldrun));
-    #/
+    assert(isscriptfunctionptr(&dogshouldrun));
     behaviortreenetworkutility::registerbehaviortreescriptapi("dogShouldRun", &dogshouldrun);
-    /#
-        assert(!isdefined(&dogmeleeaction) || isscriptfunctionptr(&dogmeleeaction));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(&function_303397b0) || isscriptfunctionptr(&function_303397b0));
-    #/
+    assert(!isdefined(&dogmeleeaction) || isscriptfunctionptr(&dogmeleeaction));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(&function_303397b0) || isscriptfunctionptr(&function_303397b0));
     behaviortreenetworkutility::registerbehaviortreeaction("dogMeleeAction", &dogmeleeaction, undefined, &function_303397b0);
 }
 
@@ -123,9 +109,7 @@ function getyaw(org) {
 // Checksum 0xded20b9a, Offset: 0x7a0
 // Size: 0x92
 function absyawtoenemy() {
-    /#
-        assert(isdefined(self.enemy));
-    #/
+    assert(isdefined(self.enemy));
     yaw = self.angles[1] - getyaw(self.enemy.origin);
     yaw = angleclamp180(yaw);
     if (yaw < 0) {

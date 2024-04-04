@@ -46,7 +46,6 @@ function dropaiammo() {
 // Size: 0x624
 function ammo_pouch_think() {
     self endon(#"death");
-    waitresult = undefined;
     waitresult = self waittill(#"scavenger");
     player = waitresult.player;
     if (isdefined(level.var_a253061b)) {

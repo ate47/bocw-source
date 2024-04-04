@@ -8,28 +8,15 @@
 // Method(s) 12 Total 19
 class cfull_screen_black : cluielem {
 
-    // Namespace cfull_screen_black/full_screen_black
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x6705ddd1, Offset: 0x350
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cfull_screen_black/full_screen_black
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x7f62fe24, Offset: 0x758
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace cfull_screen_black/full_screen_black
     // Params 2, eflags: 0x2 linked
     // Checksum 0x378f7aed, Offset: 0x6b8
     // Size: 0x44
     function set_endalpha(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "endAlpha", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "endAlpha", value);
     }
 
     // Namespace cfull_screen_black/full_screen_black
@@ -45,7 +32,7 @@ class cfull_screen_black : cluielem {
     // Checksum 0xaa01aed1, Offset: 0x578
     // Size: 0x44
     function set_green(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "green", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "green", value);
     }
 
     // Namespace cfull_screen_black/full_screen_black
@@ -53,7 +40,7 @@ class cfull_screen_black : cluielem {
     // Checksum 0xa10b3e86, Offset: 0x618
     // Size: 0x44
     function set_fadeovertime(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "fadeOverTime", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "fadeOverTime", value);
     }
 
     // Namespace cfull_screen_black/full_screen_black
@@ -69,7 +56,7 @@ class cfull_screen_black : cluielem {
     // Checksum 0x72aca967, Offset: 0x5c8
     // Size: 0x44
     function set_blue(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "blue", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "blue", value);
     }
 
     // Namespace cfull_screen_black/full_screen_black
@@ -92,7 +79,7 @@ class cfull_screen_black : cluielem {
     // Checksum 0xa5a7b5b3, Offset: 0x668
     // Size: 0x44
     function set_startalpha(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "startAlpha", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "startAlpha", value);
     }
 
     // Namespace cfull_screen_black/full_screen_black
@@ -100,7 +87,7 @@ class cfull_screen_black : cluielem {
     // Checksum 0x7927a9e6, Offset: 0x708
     // Size: 0x44
     function set_drawhud(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "drawHUD", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "drawHUD", value);
     }
 
     // Namespace cfull_screen_black/full_screen_black
@@ -108,7 +95,7 @@ class cfull_screen_black : cluielem {
     // Checksum 0x27557248, Offset: 0x528
     // Size: 0x44
     function set_red(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "red", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "red", value);
     }
 
 }

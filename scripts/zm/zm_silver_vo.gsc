@@ -178,7 +178,6 @@ function private function_40466d11() {
         }
     }
     if (!is_true(level.var_8fff3192)) {
-        s_waitresult = undefined;
         s_waitresult = self waittill(#"spawned_split_ai", #"death");
         if (s_waitresult._notify == "spawned_split_ai") {
             level.var_8fff3192 = 1;
@@ -449,7 +448,6 @@ function function_835805bb() {
 function function_19c1718a() {
     level endon(#"end_game", #"game_ended");
     while (true) {
-        s_notify = undefined;
         s_notify = level waittill(#"hash_a470078be6bce8d", #"hash_175cf405da429202", #"hash_76081eebc1e70e5", #"hash_11d2dc6f056764da");
         switch (s_notify._notify) {
         case #"hash_a470078be6bce8d":
@@ -744,7 +742,6 @@ function function_ddb84db5() {
 function function_952f3605() {
     level endon(#"end_game", #"game_ended");
     while (true) {
-        s_notify = undefined;
         s_notify = level waittill(#"hash_64a65262c4492d98", #"hash_360f9258b1f19bcb", #"hash_c28b252525633da", #"hash_147d728c7bf9fa75", #"hash_695a92826c9198a4", #"hash_3bc9b27c09d93ae7", #"hash_6500b270bf5a1596", #"hash_196792ac246fbe91", #"hash_6f1392a5c4774e60");
         switch (s_notify._notify) {
         case #"hash_64a65262c4492d98":
@@ -784,7 +781,6 @@ function function_952f3605() {
 // Size: 0x78
 function function_c7ca9f21() {
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"hash_7e3660d8d125a63a");
         if (waitresult.aitype === #"hash_53f4e0daa341a161") {
             level function_14a92dc6(#"hash_898a2ece2e63db5");
@@ -903,7 +899,6 @@ function function_71299b6e() {
 function function_ee2c526b() {
     level endon(#"end_game", #"game_ended", #"hash_321aa1bcb0bb18bd");
     while (true) {
-        s_notify = undefined;
         s_notify = level waittill(#"hash_5734ddadf0546dc3", #"hash_4337abdaab1fc730", #"hash_3f9e5836a14975bc", #"hash_395eb3958f40a0cd");
         switch (s_notify._notify) {
         case #"hash_5734ddadf0546dc3":

@@ -253,9 +253,7 @@ function function_d6e32b1b() {
 // Checksum 0x3b54a465, Offset: 0x19a0
 // Size: 0xa0
 function function_1bce4bde(name) {
-    /#
-        assert(isdefined(name), "<unknown string>");
-    #/
+    assert(isdefined(name), "<unknown string>");
     function_f4b7f348("Generating Map:" + name);
     startloc = namespace_f27a9d0d::init(name);
     init(name);
@@ -288,8 +286,6 @@ function function_b1989480() {
 // Checksum 0x592c4e28, Offset: 0x1b48
 // Size: 0x34
 function function_f4b7f348(text) {
-    /#
-        println("<unknown string>" + text);
-    #/
+    println("<unknown string>" + text);
 }
 

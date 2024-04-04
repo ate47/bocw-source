@@ -266,9 +266,7 @@ function function_3a6dfa8b(entity) {
     function_43c21e81(entity);
     entity setblackboardattribute("_locomotion_speed", "locomotion_speed_run");
     enemy = entity.favoriteenemy;
-    /#
-        assert(isdefined(enemy));
-    #/
+    assert(isdefined(enemy));
     var_1f1d655 = vectortoangles(entity.origin - entity.favoriteenemy.origin)[1];
     var_8daf3ac3 = 300;
     var_5c85bc30 = [];
@@ -302,7 +300,7 @@ function function_3a6dfa8b(entity) {
         var_e1aa7e8 = dot;
         /#
             recordsphere(pos, 10, (1, 0, 0), "<unknown string>");
-            record3dtext("<unknown string>" + dot, pos + vectorscale((0, 0, -1), 10), (1, 0, 0));
+            record3dtext("<unknown string>" + dot, pos + (0, 0, -10), (1, 0, 0));
         #/
     }
     if (var_9da770d9) {
@@ -338,7 +336,7 @@ function function_3a6dfa8b(entity) {
 // Size: 0x14c
 function function_6e7d7d1(entity) {
     /#
-        record3dtext("<unknown string>", entity.origin + vectorscale((0, 1, 0), 20), (0, 0, 1));
+        record3dtext("<unknown string>", entity.origin + (0, 20, 0), (0, 0, 1));
     #/
     if (is_true(entity.var_1fa24724)) {
         awareness::set_state(entity, #"chase");

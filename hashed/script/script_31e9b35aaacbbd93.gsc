@@ -124,9 +124,7 @@ function function_5e7cc862(*key, value) {
         level notify(#"hash_63850bb43dbc38de");
         players = function_da785aa8();
         player = players[0];
-        /#
-            assert(isplayer(player));
-        #/
+        assert(isplayer(player));
         view_origin = player function_efda2d6d();
         var_839b8d61 = getentitiesinradius(view_origin, 16384, 15);
         var_97d10723 = function_b6dd763(view_origin, 16384);
@@ -174,9 +172,7 @@ function function_a20133bd() {
     if (!snd::function_e3a36342(player)) {
         players = snd::function_da785aa8();
         player = players[0];
-        /#
-            assert(isplayer(player));
-        #/
+        assert(isplayer(player));
     }
     player notify(#"hash_7ad75056b30c451a");
     player endon(#"hash_7ad75056b30c451a", #"death", #"disconnect");

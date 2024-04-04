@@ -100,9 +100,9 @@ function private function_6856257d(localclientnum) {
         return;
     }
     if (!squad_spawn::function_21b773d5(localclientnum)) {
-        self.var_67899e33[localclientnum] = playfx(localclientnum, "wz/fx9_dirtybomb_radiation_zone", self.origin + vectorscale((0, 0, 1), 80));
+        self.var_67899e33[localclientnum] = playfx(localclientnum, "wz/fx9_dirtybomb_radiation_zone", self.origin + (0, 0, 80));
     } else {
-        self.var_67899e33[localclientnum] = playfx(localclientnum, "wz/fx9_dirtybomb_radiation_zone_spawn", self.origin + vectorscale((0, 0, 1), 80));
+        self.var_67899e33[localclientnum] = playfx(localclientnum, "wz/fx9_dirtybomb_radiation_zone_spawn", self.origin + (0, 0, 80));
     }
     if (!isdefined(level.var_53b9c763[localclientnum])) {
         level.var_53b9c763[localclientnum] = [];

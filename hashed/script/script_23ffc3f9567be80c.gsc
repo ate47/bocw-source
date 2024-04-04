@@ -65,18 +65,10 @@ function function_1142ba4a(var_beee4994, *hint_string, *model) {
 // Checksum 0xc51c4cd0, Offset: 0x3e0
 // Size: 0x25c
 function function_5be7e51b(struct, modelname, hint_string, callbackfunction) {
-    /#
-        assert(isstruct(struct), "<unknown string>");
-    #/
-    /#
-        assert(isfunctionptr(callbackfunction), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(modelname), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(hint_string), "<unknown string>");
-    #/
+    assert(isstruct(struct), "<unknown string>");
+    assert(isfunctionptr(callbackfunction), "<unknown string>");
+    assert(isdefined(modelname), "<unknown string>");
+    assert(isdefined(hint_string), "<unknown string>");
     scriptmodel = content_manager::spawn_script_model(struct, modelname);
     objid = zm_utility::function_f5a222a8(#"hash_3632525bd692cfc8", scriptmodel);
     struct.objectiveid = objid;
@@ -87,7 +79,7 @@ function function_5be7e51b(struct, modelname, hint_string, callbackfunction) {
         level.var_6bf8ee58 = array(level.var_6bf8ee58);
     }
     level.var_6bf8ee58[level.var_6bf8ee58.size] = objid;
-    trigger = content_manager::spawn_interact(struct, callbackfunction, hint_string, undefined, 128, 128, undefined, vectorscale((0, 0, 1), 50));
+    trigger = content_manager::spawn_interact(struct, callbackfunction, hint_string, undefined, 128, 128, undefined, (0, 0, 50));
     trigger.scriptmodel = scriptmodel;
     scriptmodel.trigger = trigger;
     scriptmodel clientfield::set("item_machine_spawn_rob", 1);

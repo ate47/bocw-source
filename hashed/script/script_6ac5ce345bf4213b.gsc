@@ -7,22 +7,6 @@
 // Method(s) 11 Total 18
 class class_42946372 : cluielem {
 
-    // Namespace class_42946372/doa_textbubble_playername
-    // Params 0, eflags: 0x8
-    // Checksum 0x28e5b85, Offset: 0x4d8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_42946372/doa_textbubble_playername
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xab36cb97, Offset: 0x770
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_42946372/doa_textbubble_playername
     // Params 1, eflags: 0x0
     // Checksum 0x4870b950, Offset: 0x628
@@ -36,7 +20,7 @@ class class_42946372 : cluielem {
     // Checksum 0x97290f15, Offset: 0x690
     // Size: 0x30
     function set_clientnum(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "clientnum", value);
+        set_data(localclientnum, "clientnum", value);
     }
 
     // Namespace namespace_42946372/doa_textbubble_playername
@@ -44,7 +28,7 @@ class class_42946372 : cluielem {
     // Checksum 0x7b5396b0, Offset: 0x700
     // Size: 0x30
     function function_4f6e830d(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "offset_y", value);
+        set_data(localclientnum, "offset_y", value);
     }
 
     // Namespace namespace_42946372/doa_textbubble_playername
@@ -60,7 +44,7 @@ class class_42946372 : cluielem {
     // Checksum 0xfe901489, Offset: 0x6c8
     // Size: 0x30
     function function_61312692(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "offset_x", value);
+        set_data(localclientnum, "offset_x", value);
     }
 
     // Namespace namespace_42946372/doa_textbubble_playername
@@ -68,7 +52,7 @@ class class_42946372 : cluielem {
     // Checksum 0x6b68fc44, Offset: 0x738
     // Size: 0x30
     function function_7ddfdfef(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "offset_z", value);
+        set_data(localclientnum, "offset_z", value);
     }
 
     // Namespace namespace_42946372/doa_textbubble_playername
@@ -84,7 +68,7 @@ class class_42946372 : cluielem {
     // Checksum 0x17471f4a, Offset: 0x658
     // Size: 0x30
     function set_entnum(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "entnum", value);
+        set_data(localclientnum, "entnum", value);
     }
 
     // Namespace namespace_42946372/doa_textbubble_playername
@@ -93,11 +77,11 @@ class class_42946372 : cluielem {
     // Size: 0xb0
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "entnum", 0);
-        [[ self ]]->set_data(localclientnum, "clientnum", 0);
-        [[ self ]]->set_data(localclientnum, "offset_x", 0);
-        [[ self ]]->set_data(localclientnum, "offset_y", 0);
-        [[ self ]]->set_data(localclientnum, "offset_z", 0);
+        set_data(localclientnum, "entnum", 0);
+        set_data(localclientnum, "clientnum", 0);
+        set_data(localclientnum, "offset_x", 0);
+        set_data(localclientnum, "offset_y", 0);
+        set_data(localclientnum, "offset_z", 0);
     }
 
 }

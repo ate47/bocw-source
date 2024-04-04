@@ -7,22 +7,6 @@
 // Method(s) 19 Total 26
 class class_df106b1 : cluielem {
 
-    // Namespace class_df106b1/doa_textelement
-    // Params 0, eflags: 0x8
-    // Checksum 0x2cc7b056, Offset: 0x970
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_df106b1/doa_textelement
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xc75c1851, Offset: 0x1130
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_df106b1/doa_textelement
     // Params 1, eflags: 0x0
     // Checksum 0x39e4ef96, Offset: 0xe28
@@ -36,7 +20,7 @@ class class_df106b1 : cluielem {
     // Checksum 0x245c6ec6, Offset: 0x10c0
     // Size: 0x30
     function function_1a98dac6(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "textpayload", value);
+        set_data(localclientnum, "textpayload", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -44,7 +28,7 @@ class class_df106b1 : cluielem {
     // Checksum 0xc5d31e39, Offset: 0x1050
     // Size: 0x30
     function set_horizontal_alignment(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "horizontal_alignment", value);
+        set_data(localclientnum, "horizontal_alignment", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -52,7 +36,7 @@ class class_df106b1 : cluielem {
     // Checksum 0xc5f628a9, Offset: 0xfa8
     // Size: 0x30
     function set_green(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "green", value);
+        set_data(localclientnum, "green", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -60,7 +44,7 @@ class class_df106b1 : cluielem {
     // Checksum 0x21f7ac51, Offset: 0xf00
     // Size: 0x30
     function set_fadeovertime(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "fadeOverTime", value);
+        set_data(localclientnum, "fadeOverTime", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -76,7 +60,7 @@ class class_df106b1 : cluielem {
     // Checksum 0x70bf5e2a, Offset: 0xec8
     // Size: 0x30
     function set_height(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "height", value);
+        set_data(localclientnum, "height", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -84,11 +68,11 @@ class class_df106b1 : cluielem {
     // Checksum 0x19e2af80, Offset: 0xfe0
     // Size: 0x30
     function set_blue(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "blue", value);
+        set_data(localclientnum, "blue", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
-    // Params 13, eflags: 0x0
+    // Params d, eflags: 0x0
     // Checksum 0xb7169364, Offset: 0x990
     // Size: 0x28c
     function setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, *textcallback, horizontal_alignmentcallback, var_9194fd72, *var_3d17213, var_766e2bbb) {
@@ -113,7 +97,7 @@ class class_df106b1 : cluielem {
     // Checksum 0xa4b8cb92, Offset: 0xe90
     // Size: 0x30
     function set_y(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "y", value);
+        set_data(localclientnum, "y", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -121,7 +105,7 @@ class class_df106b1 : cluielem {
     // Checksum 0x3840030d, Offset: 0x1088
     // Size: 0x30
     function function_9e089af4(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "intpayload", value);
+        set_data(localclientnum, "intpayload", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -129,7 +113,7 @@ class class_df106b1 : cluielem {
     // Checksum 0xe2bf531a, Offset: 0xf38
     // Size: 0x30
     function set_alpha(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "alpha", value);
+        set_data(localclientnum, "alpha", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -137,7 +121,7 @@ class class_df106b1 : cluielem {
     // Checksum 0xb8a88d12, Offset: 0x10f8
     // Size: 0x30
     function set_scale(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "scale", value);
+        set_data(localclientnum, "scale", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -145,7 +129,7 @@ class class_df106b1 : cluielem {
     // Checksum 0x673e00c5, Offset: 0xe58
     // Size: 0x30
     function set_x(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "x", value);
+        set_data(localclientnum, "x", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -153,7 +137,7 @@ class class_df106b1 : cluielem {
     // Checksum 0x6bee85a7, Offset: 0x1018
     // Size: 0x30
     function set_text(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "text", value);
+        set_data(localclientnum, "text", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -161,7 +145,7 @@ class class_df106b1 : cluielem {
     // Checksum 0xb5951329, Offset: 0xf70
     // Size: 0x30
     function set_red(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "red", value);
+        set_data(localclientnum, "red", value);
     }
 
     // Namespace namespace_df106b1/doa_textelement
@@ -170,19 +154,19 @@ class class_df106b1 : cluielem {
     // Size: 0x1d0
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "x", 0);
-        [[ self ]]->set_data(localclientnum, "y", 0);
-        [[ self ]]->set_data(localclientnum, "height", 0);
-        [[ self ]]->set_data(localclientnum, "fadeOverTime", 0);
-        [[ self ]]->set_data(localclientnum, "alpha", 0);
-        [[ self ]]->set_data(localclientnum, "red", 0);
-        [[ self ]]->set_data(localclientnum, "green", 0);
-        [[ self ]]->set_data(localclientnum, "blue", 0);
-        [[ self ]]->set_data(localclientnum, "text", #"");
-        [[ self ]]->set_data(localclientnum, "horizontal_alignment", 0);
-        [[ self ]]->set_data(localclientnum, "intpayload", 0);
-        [[ self ]]->set_data(localclientnum, "textpayload", #"");
-        [[ self ]]->set_data(localclientnum, "scale", 0);
+        set_data(localclientnum, "x", 0);
+        set_data(localclientnum, "y", 0);
+        set_data(localclientnum, "height", 0);
+        set_data(localclientnum, "fadeOverTime", 0);
+        set_data(localclientnum, "alpha", 0);
+        set_data(localclientnum, "red", 0);
+        set_data(localclientnum, "green", 0);
+        set_data(localclientnum, "blue", 0);
+        set_data(localclientnum, "text", #"");
+        set_data(localclientnum, "horizontal_alignment", 0);
+        set_data(localclientnum, "intpayload", 0);
+        set_data(localclientnum, "textpayload", #"");
+        set_data(localclientnum, "scale", 0);
     }
 
 }

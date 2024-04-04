@@ -82,11 +82,7 @@ function set(str_field_name, n_value) {
 // Size: 0x10c
 function _set(str_field_name, n_value) {
     if (!isdefined(str_field_name)) {
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
         return;
     }
     if (!level flag::get(#"hash_4f4b65226250fc99")) {
@@ -131,11 +127,7 @@ function can_set(*str_field_name, *n_value) {
 // Checksum 0x74e85e15, Offset: 0x618
 // Size: 0x84
 function set_to_player(str_field_name, n_value) {
-    /#
-        /#
-            assert(isplayer(self), "<unknown string>");
-        #/
-    #/
+    assert(isplayer(self), "<unknown string>");
     if (isplayer(self)) {
         codesetplayerstateclientfield(self, str_field_name, n_value);
     }
@@ -251,9 +243,7 @@ function private _increment(str_field_name, n_increment_count = 1) {
             codeincrementworldclientfield(str_field_name);
             continue;
         }
-        /#
-            assert(isdefined(level.var_58bc5d04));
-        #/
+        assert(isdefined(level.var_58bc5d04));
         if (isdefined(self.birthtime) && self.birthtime >= level.var_58bc5d04) {
             util::wait_network_frame();
         }

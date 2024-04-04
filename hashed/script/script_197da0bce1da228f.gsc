@@ -110,9 +110,9 @@ function function_81c73263(localclientnum, rob) {
 // Checksum 0x42f794a, Offset: 0x660
 // Size: 0xfc
 function function_f0e03255(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    trace_result = physicstrace(self.origin + vectorscale((0, 0, 1), 64), self.origin + vectorscale((0, 0, -1), 64), (0, 0, 0), (0, 0, 0), self);
+    trace_result = physicstrace(self.origin + (0, 0, 64), self.origin + (0, 0, -64), (0, 0, 0), (0, 0, 0), self);
     var_ab1d2284 = trace_result[#"position"];
     playfx(bwastimejump, "zm_ai/fx9_mimic_prop_shake", var_ab1d2284);
-    playsound(bwastimejump, #"hash_76bf07d326e705c0", var_ab1d2284 + vectorscale((0, 0, 1), 20));
+    playsound(bwastimejump, #"hash_76bf07d326e705c0", var_ab1d2284 + (0, 0, 20));
 }
 

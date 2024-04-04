@@ -492,7 +492,7 @@ function function_b9b06e2(e_target, weapon, *var_6cd541c6 = level.weaponnone, v_
     if (!isdefined(weapon.var_6f84b820)) {
         return;
     }
-    damage_location = weapon.origin + vectornormalize(self.origin - weapon.origin) * 10 + vectorscale((0, 0, 1), 60);
+    damage_location = weapon.origin + vectornormalize(self.origin - weapon.origin) * 10 + (0, 0, 60);
     weapon dodamage(n_damage, damage_location, self, self, "none", "MOD_MELEE", 0, var_6cd541c6);
     self playsound(#"hash_4b89009623a94842");
     if (isactor(weapon)) {
@@ -773,7 +773,7 @@ function function_f8986ee9(start_pos, end_pos, var_e7b59cda) {
 // Checksum 0xec5b5d08, Offset: 0x32d0
 // Size: 0xca
 function function_24e9dbc2(position, array, var_e7b59cda) {
-    var_7914206d = position - vectorscale((0, 0, 1), 50);
+    var_7914206d = position - (0, 0, 50);
     ground_trace = groundtrace(position, var_7914206d, 0, self);
     if (ground_trace[#"fraction"] > 0.01 && ground_trace[#"fraction"] < 1) {
         var_7914206d = ground_trace[#"position"];

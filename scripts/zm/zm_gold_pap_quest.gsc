@@ -69,7 +69,6 @@ function function_34427db() {
     hidemiscmodels("mdl_env_omega_defence_03");
     level thread function_1ff92a8e();
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"power_on1", #"power_on2", #"power_on3");
         switch (waitresult._notify) {
         case #"power_on1":
@@ -152,7 +151,6 @@ function function_31abb662() {
     level flag::wait_till("match_start_vo_done");
     level thread function_63193c65();
     if (level.round_number == 1) {
-        s_waitresult = undefined;
         s_waitresult = level waittill(#"end_of_round", #"hash_5cdcf4e238ae5f1f");
     }
     level.ravenov scene::stop(level.ravenov.current_scene);

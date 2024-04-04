@@ -204,7 +204,6 @@ function private function_13a420b1(localclientnum) {
     clientdata = item_world::function_a7e98a1a(localclientnum);
     var_6e77adc6 = "inventory_craft" + localclientnum;
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(var_6e77adc6);
         if (waitresult._notify === var_6e77adc6) {
             item = waitresult.item;

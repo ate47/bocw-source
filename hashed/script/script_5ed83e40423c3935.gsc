@@ -8,22 +8,6 @@
 class cwz_revive_prompt : cluielem {
 
     // Namespace cwz_revive_prompt/wz_revive_prompt
-    // Params 0, eflags: 0x8
-    // Checksum 0x8645e56, Offset: 0x440
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cwz_revive_prompt/wz_revive_prompt
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x215c2f00, Offset: 0x740
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cwz_revive_prompt/wz_revive_prompt
     // Params 1, eflags: 0x0
     // Checksum 0x47fe5f82, Offset: 0x630
     // Size: 0x24
@@ -36,7 +20,7 @@ class cwz_revive_prompt : cluielem {
     // Checksum 0x2908b57c, Offset: 0x660
     // Size: 0x30
     function set_clientnum(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "clientnum", value);
+        set_data(localclientnum, "clientnum", value);
     }
 
     // Namespace cwz_revive_prompt/wz_revive_prompt
@@ -44,7 +28,7 @@ class cwz_revive_prompt : cluielem {
     // Checksum 0x305a4353, Offset: 0x6d0
     // Size: 0x30
     function set_reviveprogress(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "reviveProgress", value);
+        set_data(localclientnum, "reviveProgress", value);
     }
 
     // Namespace cwz_revive_prompt/wz_revive_prompt
@@ -72,7 +56,7 @@ class cwz_revive_prompt : cluielem {
     // Checksum 0xd4cddf6f, Offset: 0x698
     // Size: 0x30
     function set_progress(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "progress", value);
+        set_data(localclientnum, "progress", value);
     }
 
     // Namespace cwz_revive_prompt/wz_revive_prompt
@@ -80,7 +64,7 @@ class cwz_revive_prompt : cluielem {
     // Checksum 0xc89fa6b3, Offset: 0x708
     // Size: 0x30
     function set_cowardsway(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "cowardsWay", value);
+        set_data(localclientnum, "cowardsWay", value);
     }
 
     // Namespace cwz_revive_prompt/wz_revive_prompt
@@ -89,10 +73,10 @@ class cwz_revive_prompt : cluielem {
     // Size: 0xa4
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "clientnum", 0);
-        [[ self ]]->set_data(localclientnum, "progress", 0);
-        [[ self ]]->set_data(localclientnum, "reviveProgress", 0);
-        [[ self ]]->set_data(localclientnum, "cowardsWay", 0);
+        set_data(localclientnum, "clientnum", 0);
+        set_data(localclientnum, "progress", 0);
+        set_data(localclientnum, "reviveProgress", 0);
+        set_data(localclientnum, "cowardsWay", 0);
     }
 
 }

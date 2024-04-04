@@ -52,12 +52,8 @@ function private finalize() {
 // Checksum 0x2c4024c5, Offset: 0x238
 // Size: 0x7a
 function function_123b048f(var_8a952bed) {
-    /#
-        assert(isdefined(var_8a952bed), "<unknown string>");
-    #/
-    /#
-        assert(var_8a952bed.variantname == #"hash_313be7fccc870cdd", "<unknown string>");
-    #/
+    assert(isdefined(var_8a952bed), "<unknown string>");
+    assert(var_8a952bed.variantname == #"hash_313be7fccc870cdd", "<unknown string>");
     level.contentmanager.var_5f2429b1 = var_8a952bed;
 }
 
@@ -219,7 +215,6 @@ function function_786a9f4d(destinations) {
     while (destinations.size) {
         foreach (destination in destinations) {
             level thread activate(destination);
-            s_result = undefined;
             s_result = level waittill(#"objective_ended");
             if (s_result.completed === 0) {
                 if (isdefined(level.contentmanager.var_4824f1b9) && [[ level.contentmanager.var_4824f1b9 ]]()) {

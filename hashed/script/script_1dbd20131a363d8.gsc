@@ -7,21 +7,8 @@
 // Method(s) 9 Total 16
 class csr_objective_secure_hud : cluielem {
 
-    // Namespace csr_objective_secure_hud/sr_objective_secure_hud
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x8e032608, Offset: 0x260
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace csr_objective_secure_hud/sr_objective_secure_hud
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x9165dc1f, Offset: 0x4c0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
     // Params 2, eflags: 0x2 linked
@@ -36,7 +23,7 @@ class csr_objective_secure_hud : cluielem {
     // Checksum 0x9b1feb38, Offset: 0x320
     // Size: 0x6c
     function function_3b1f1b69(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 1, int(value * (128 - 1)), 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 1, int(value * (128 - 1)), 0);
     }
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
@@ -60,7 +47,7 @@ class csr_objective_secure_hud : cluielem {
     // Checksum 0x2a6a109, Offset: 0x398
     // Size: 0x6c
     function function_a1cd68d0(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 2, int(value * (128 - 1)), 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 2, int(value * (128 - 1)), 0);
     }
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
@@ -68,7 +55,7 @@ class csr_objective_secure_hud : cluielem {
     // Checksum 0xc83e637b, Offset: 0x410
     // Size: 0x4c
     function function_d2f341fe(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 3, value, 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 3, value, 0);
     }
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
@@ -76,7 +63,7 @@ class csr_objective_secure_hud : cluielem {
     // Checksum 0xd0372b18, Offset: 0x468
     // Size: 0x4c
     function function_e4a4e561(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 4, value, 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 4, value, 0);
     }
 
 }

@@ -455,9 +455,7 @@ function function_c0ec19cd() {
 // Checksum 0x8f67ddbc, Offset: 0x1e18
 // Size: 0x1ee
 function function_78d8cf9b(player) {
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     friendlies = [];
     if (!isplayer(player)) {
         return friendlies;
@@ -577,7 +575,7 @@ function function_b1158c52(attacker, idamage, smeansofdeath, var_4cf51823) {
 // Checksum 0x62fa516a, Offset: 0x2798
 // Size: 0x7c
 function private function_5ffabd64(vehicle, player) {
-    trace = groundtrace(player.origin, player.origin - vectorscale((0, 0, 1), 300), 0, vehicle);
+    trace = groundtrace(player.origin, player.origin - (0, 0, 300), 0, vehicle);
     if (trace[#"fraction"] >= 1) {
         return true;
     }
@@ -592,7 +590,7 @@ function private function_61c14ebf(vehicle, player) {
     exitposition = vehicle function_212db732(player);
     traceorigin = isdefined(exitposition) ? exitposition : player.origin;
     ignoreent = isdefined(exitposition) ? undefined : vehicle;
-    trace = groundtrace(traceorigin, traceorigin - vectorscale((0, 0, 1), 500), 0, ignoreent, 1);
+    trace = groundtrace(traceorigin, traceorigin - (0, 0, 500), 0, ignoreent, 1);
     if (trace[#"fraction"] >= 1 || oob::chr_party(trace[#"position"])) {
         return true;
     }
@@ -822,7 +820,6 @@ function laststand_bleedout_damage() {
     level endon(#"game_ended");
     self endon(#"player_revived", #"disconnect", #"bled_out");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"laststand_damage");
         if (self.var_d887a4ad === 1) {
             return;
@@ -1010,9 +1007,7 @@ function bleed_out() {
     self undolaststand();
     self.uselaststandparams = 1;
     self function_6da86ae();
-    /#
-        assert(isdefined(self.laststandparams));
-    #/
+    assert(isdefined(self.laststandparams));
     if (!isdefined(self.laststandparams)) {
         return;
     }
@@ -1207,9 +1202,7 @@ function function_356caede(team) {
         }
         finisher increment_finishing();
         bundle_index = randomintrange(1, level.var_91c33dcb.finishers.size - 1);
-        /#
-            assert(level.var_91c33dcb.finishers.size >= bundle_index);
-        #/
+        assert(level.var_91c33dcb.finishers.size >= bundle_index);
         var_abdbed5a = level.var_91c33dcb.finishers[bundle_index].("finisherbundle");
         var_d1d9820d = getscriptbundle(var_abdbed5a);
         if (isdefined(var_d1d9820d.("attacker_gesture"))) {
@@ -1320,7 +1313,6 @@ function function_516a3bef(replace) {
 function function_c82a14d1(finisher) {
     self endon(#"death", #"disconnect", #"finish_abort");
     finisher endon(#"death", #"disconnect");
-    waitresult = undefined;
     waitresult = self waittill(#"contact");
     self flag::set(#"hash_40e3b09bdbcdac81");
     self notify(#"player_finished");
@@ -1377,9 +1369,7 @@ function function_92bfddb4() {
 // Checksum 0x7d2f988e, Offset: 0x6058
 // Size: 0xa6
 function function_c3249e8c() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     players = getplayers(self.team);
     for (index = 0; index < players.size; index++) {
         if (players[index] == self) {
@@ -1438,10 +1428,10 @@ function can_revive(revivee, ignore_touch_checks = 0, height = undefined) {
     if (distancesquared(revivee.origin, self.origin) > sqr(140)) {
         return false;
     }
-    if (!sighttracepassed(self.origin + vectorscale((0, 0, 1), 50), revivee.origin + vectorscale((0, 0, 1), 30), 0, undefined)) {
+    if (!sighttracepassed(self.origin + (0, 0, 50), revivee.origin + (0, 0, 30), 0, undefined)) {
         return false;
     }
-    if (!bullettracepassed(self.origin + vectorscale((0, 0, 1), 50), revivee.origin + vectorscale((0, 0, 1), 30), 0, undefined)) {
+    if (!bullettracepassed(self.origin + (0, 0, 50), revivee.origin + (0, 0, 30), 0, undefined)) {
         return false;
     }
     return true;
@@ -1481,9 +1471,7 @@ function revive_do_revive(playerbeingrevived) {
     if (!isdefined(playerbeingrevived)) {
         return 0;
     }
-    /#
-        assert(self is_reviving(playerbeingrevived));
-    #/
+    assert(self is_reviving(playerbeingrevived));
     revivetime = getdvarfloat(#"g_revivetime", 3) * self function_bd85bc2f();
     timer = 0;
     revived = 0;
@@ -1678,7 +1666,6 @@ function function_73d6c609() {
 // Size: 0x74
 function auto_revive_on_notify() {
     self endon(#"death", #"disconnect", #"player_revived");
-    waitresult = undefined;
     waitresult = self waittill(#"auto_revive");
     auto_revive(waitresult.reviver);
 }
@@ -1986,9 +1973,7 @@ function function_7e980623(reviver, victim) {
 // Size: 0x42
 function function_7e714b6a() {
     if (!isplayer(self)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     self.laststandcount = 0;

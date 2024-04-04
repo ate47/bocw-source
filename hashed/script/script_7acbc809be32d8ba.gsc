@@ -427,9 +427,7 @@ function function_c57b04f7(localclientnum) {
             tag_pos = self.owner gettagorigin("tag_flash");
         }
         if (!isdefined(tag_pos)) {
-            /#
-                println("<unknown string>");
-            #/
+            println("<unknown string>");
             waitframe(1);
             continue;
         }

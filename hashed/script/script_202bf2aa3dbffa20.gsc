@@ -31,7 +31,7 @@ function __init__() {
 // Size: 0xa4
 function function_de8dd244(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
-        playfx(fieldname, "destruct/fx9_dmg_window_wood_wz", self.origin, anglestoforward(self.angles) + vectorscale((0, 1, 0), 90), anglestoup(self.angles));
+        playfx(fieldname, "destruct/fx9_dmg_window_wood_wz", self.origin, anglestoforward(self.angles) + (0, 90, 0), anglestoup(self.angles));
     }
 }
 
@@ -41,7 +41,7 @@ function function_de8dd244(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0xa4
 function function_b6000359(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
-        playfx(fieldname, "destruct/fx9_dest_window_wood_wz", self.origin, anglestoforward(self.angles) + vectorscale((0, 1, 0), 90), anglestoup(self.angles));
+        playfx(fieldname, "destruct/fx9_dest_window_wood_wz", self.origin, anglestoforward(self.angles) + (0, 90, 0), anglestoup(self.angles));
     }
 }
 
@@ -51,7 +51,7 @@ function function_b6000359(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0xa4
 function function_40fcb7b0(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
-        playfx(fieldname, "destruct/fx9_dmg_door_metal_wz", self.origin, anglestoforward(self.angles) + vectorscale((0, 1, 0), 90), anglestoup(self.angles));
+        playfx(fieldname, "destruct/fx9_dmg_door_metal_wz", self.origin, anglestoforward(self.angles) + (0, 90, 0), anglestoup(self.angles));
     }
 }
 
@@ -61,7 +61,7 @@ function function_40fcb7b0(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0xa4
 function function_65502dee(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
-        playfx(fieldname, "destruct/fx9_dest_door_metal_wz", self.origin, anglestoforward(self.angles) + vectorscale((0, 1, 0), 90), anglestoup(self.angles));
+        playfx(fieldname, "destruct/fx9_dest_door_metal_wz", self.origin, anglestoforward(self.angles) + (0, 90, 0), anglestoup(self.angles));
     }
 }
 

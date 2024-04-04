@@ -159,9 +159,7 @@ function function_135acc2d(var_e2bc3a9f, update_rate) {
         var_92c4d936 = var_92c4d936 % players.size;
         for (player_index = 0; player_index < players.size; player_index++) {
             var_1896e17 = (player_index + var_92c4d936) % players.size;
-            /#
-                assert(var_1896e17 < players.size);
-            #/
+            assert(var_1896e17 < players.size);
             player = players[var_1896e17];
             if (player.sessionstate != "playing") {
                 continue;
@@ -216,7 +214,7 @@ function function_8fef418b() {
                 return;
             }
         }
-        ground_pos = groundtrace(self.origin + vectorscale((0, 0, 1), 8), self.origin + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
+        ground_pos = groundtrace(self.origin + (0, 0, 8), self.origin + (0, 0, -100000), 0, self)[#"position"];
         if (!isdefined(ground_pos)) {
             return;
         }
@@ -238,8 +236,8 @@ function function_8fef418b() {
     position = getclosestpointonnavmesh(self.origin, 100, var_946a4954);
     if (isdefined(position)) {
         if (is_true(level.var_2386648b) || function_352d316e(self)) {
-            player_position = self.origin + vectorscale((0, 0, 1), 20);
-            var_f5df51f2 = position + vectorscale((0, 0, 1), 20);
+            player_position = self.origin + (0, 0, 20);
+            var_f5df51f2 = position + (0, 0, 20);
             ignore_ent = undefined;
             if (self isinvehicle()) {
                 ignore_ent = self getvehicleoccupied();
@@ -863,9 +861,7 @@ function figure_out_attacker(eattacker) {
             eattacker = eattacker.owner;
         }
         if (is_true(eattacker.var_97f1b32a) && isdefined(level.var_6ed50229)) {
-            /#
-                assert(isvehicle(eattacker));
-            #/
+            assert(isvehicle(eattacker));
             if (isvehicle(eattacker) && isdefined(eattacker.var_735382e) && isdefined(eattacker.var_a816f2cd)) {
                 driver = eattacker getseatoccupant(0);
                 if (!isdefined(driver)) {
@@ -907,9 +903,7 @@ function function_803e2c82(weapon) {
 // Checksum 0xad446410, Offset: 0x3568
 // Size: 0x58
 function function_4ca4d8c6(string, value) {
-    /#
-        assert(isdefined(string), "<unknown string>");
-    #/
+    assert(isdefined(string), "<unknown string>");
     if (isdefined(self) && isdefined(self.pers)) {
         self.pers[string] = value;
     }
@@ -920,9 +914,7 @@ function function_4ca4d8c6(string, value) {
 // Checksum 0xa72832aa, Offset: 0x35c8
 // Size: 0x78
 function function_2abc116(string, defaultval) {
-    /#
-        assert(isdefined(string), "<unknown string>");
-    #/
+    assert(isdefined(string), "<unknown string>");
     if (isdefined(self) && isdefined(self.pers) && isdefined(self.pers[string])) {
         return self.pers[string];
     }
@@ -964,9 +956,7 @@ function function_3d288f14() {
 // Size: 0xf8
 function function_d36b6597() {
     max_clients = getdvarint(#"com_maxclients", 0);
-    /#
-        assert(max_clients != 0);
-    #/
+    assert(max_clients != 0);
     if (!isdefined(level.maxteamplayers)) {
         level.maxteamplayers = 0;
     }
@@ -988,9 +978,7 @@ function function_d36b6597() {
 // Size: 0x96
 function private function_c70c4c93(party) {
     max_players = function_d36b6597();
-    /#
-        assert(max_players == 0 || party.var_a15e4438 <= max_players);
-    #/
+    assert(max_players == 0 || party.var_a15e4438 <= max_players);
     if (isdefined(level.var_7d3ed2bf) && level.var_7d3ed2bf && !party.fill) {
         return max_players;
     }

@@ -29,9 +29,7 @@ function function_d92cb558(result, vararg) {
 // Checksum 0xe8d8728d, Offset: 0x200
 // Size: 0xc0
 function function_f94325d3() {
-    /#
-        assert(isplayer(self), "<unknown string>");
-    #/
+    assert(isplayer(self), "<unknown string>");
     if (sessionmodeiscampaigngame()) {
         return true;
     }
@@ -74,17 +72,13 @@ function function_8921af36() {
 // Checksum 0xc8a466ea, Offset: 0x358
 // Size: 0xce
 function get_stat(...) {
-    /#
-        assert(vararg.size > 0);
-    #/
+    assert(vararg.size > 0);
     if (vararg.size == 0) {
         return 0;
     }
     result = 0;
     if (isdefined(self)) {
-        /#
-            assert(isplayer(self), "<unknown string>");
-        #/
+        assert(isplayer(self), "<unknown string>");
         result = self readstat(0, vararg);
         /#
             function_d92cb558(result, vararg);
@@ -101,17 +95,13 @@ function get_stat(...) {
 // Checksum 0x211a12ff, Offset: 0x430
 // Size: 0xce
 function function_e3eb9a8b(...) {
-    /#
-        assert(vararg.size > 0);
-    #/
+    assert(vararg.size > 0);
     if (vararg.size == 0) {
         return 0;
     }
     result = 0;
     if (isdefined(self)) {
-        /#
-            assert(isplayer(self), "<unknown string>");
-        #/
+        assert(isplayer(self), "<unknown string>");
         result = self readstat(1, vararg);
         /#
             function_d92cb558(result, vararg);
@@ -128,17 +118,13 @@ function function_e3eb9a8b(...) {
 // Checksum 0xdbb8b10, Offset: 0x508
 // Size: 0xce
 function function_1bb1c57c(...) {
-    /#
-        assert(vararg.size > 0);
-    #/
+    assert(vararg.size > 0);
     if (vararg.size == 0) {
         return 0;
     }
     result = 0;
     if (isdefined(self)) {
-        /#
-            assert(isplayer(self), "<unknown string>");
-        #/
+        assert(isplayer(self), "<unknown string>");
         result = self readstat(2, vararg);
         /#
             function_d92cb558(result, vararg);
@@ -155,17 +141,13 @@ function function_1bb1c57c(...) {
 // Checksum 0x4739b23a, Offset: 0x5e0
 // Size: 0xc0
 function function_6d50f14b(...) {
-    /#
-        assert(vararg.size > 0);
-    #/
+    assert(vararg.size > 0);
     if (vararg.size == 0) {
         return 0;
     }
     result = 0;
     if (isdefined(self)) {
-        /#
-            assert(isplayer(self), "<unknown string>");
-        #/
+        assert(isplayer(self), "<unknown string>");
         result = self readstat(3, vararg);
         /#
             function_d92cb558(result, vararg);
@@ -179,17 +161,13 @@ function function_6d50f14b(...) {
 // Checksum 0xc552f0cd, Offset: 0x6a8
 // Size: 0xc0
 function function_ff8f4f17(...) {
-    /#
-        assert(vararg.size > 0);
-    #/
+    assert(vararg.size > 0);
     if (vararg.size == 0) {
         return 0;
     }
     result = 0;
     if (isdefined(self)) {
-        /#
-            assert(isplayer(self), "<unknown string>");
-        #/
+        assert(isplayer(self), "<unknown string>");
         result = self readstat(4, vararg);
         /#
             function_d92cb558(result, vararg);
@@ -203,12 +181,8 @@ function function_ff8f4f17(...) {
 // Checksum 0x4e638b49, Offset: 0x770
 // Size: 0x16a
 function set_stat(...) {
-    /#
-        assert(!is_true(level.var_87d7c3ab));
-    #/
-    /#
-        assert(vararg.size > 1);
-    #/
+    assert(!is_true(level.var_87d7c3ab));
+    assert(vararg.size > 1);
     if (vararg.size <= 1) {
         return 0;
     }
@@ -217,9 +191,7 @@ function set_stat(...) {
     }
     result = 0;
     if (isdefined(self)) {
-        /#
-            assert(isplayer(self), "<unknown string>");
-        #/
+        assert(isplayer(self), "<unknown string>");
         value = vararg[vararg.size - 1];
         arrayremoveindex(vararg, vararg.size - 1);
         result = self writestat(0, vararg, value);
@@ -235,12 +207,8 @@ function set_stat(...) {
 // Checksum 0xe0bec7f3, Offset: 0x8e8
 // Size: 0x16a
 function function_505387a6(...) {
-    /#
-        assert(!is_true(level.var_87d7c3ab));
-    #/
-    /#
-        assert(vararg.size > 1);
-    #/
+    assert(!is_true(level.var_87d7c3ab));
+    assert(vararg.size > 1);
     if (vararg.size <= 1) {
         return 0;
     }
@@ -249,9 +217,7 @@ function function_505387a6(...) {
     }
     result = 0;
     if (isdefined(self)) {
-        /#
-            assert(isplayer(self), "<unknown string>");
-        #/
+        assert(isplayer(self), "<unknown string>");
         value = vararg[vararg.size - 1];
         arrayremoveindex(vararg, vararg.size - 1);
         result = self writestat(1, vararg, value);
@@ -267,21 +233,15 @@ function function_505387a6(...) {
 // Checksum 0xe65f30c0, Offset: 0xa60
 // Size: 0x172
 function inc_stat(...) {
-    /#
-        assert(!is_true(level.var_87d7c3ab));
-    #/
-    /#
-        assert(vararg.size > 1);
-    #/
+    assert(!is_true(level.var_87d7c3ab));
+    assert(vararg.size > 1);
     if (vararg.size <= 1) {
         return;
     }
     if (!function_f94325d3()) {
         return;
     }
-    /#
-        assert(isplayer(self), "<unknown string>");
-    #/
+    assert(isplayer(self), "<unknown string>");
     if (!isplayer(self)) {
         return;
     }
@@ -299,12 +259,8 @@ function inc_stat(...) {
 // Checksum 0xbbe877c2, Offset: 0xbe0
 // Size: 0x18a
 function function_f5859f81(...) {
-    /#
-        assert(!is_true(level.var_87d7c3ab));
-    #/
-    /#
-        assert(vararg.size > 1);
-    #/
+    assert(!is_true(level.var_87d7c3ab));
+    assert(vararg.size > 1);
     if (vararg.size <= 1) {
         return;
     }
@@ -312,9 +268,7 @@ function function_f5859f81(...) {
         return;
     }
     player = self;
-    /#
-        assert(isplayer(player), "<unknown string>");
-    #/
+    assert(isplayer(player), "<unknown string>");
     if (!isdefined(player) || !isplayer(player)) {
         return;
     }
@@ -783,9 +737,7 @@ function function_c5453ed4(statname, value) {
     if (!function_f94325d3()) {
         return 0;
     }
-    /#
-        assert(!sessionmodeiscampaigngame());
-    #/
+    assert(!sessionmodeiscampaigngame());
     return self function_505387a6(#"playerstatslist", statname, #"statvalue", value);
 }
 
@@ -794,9 +746,7 @@ function function_c5453ed4(statname, value) {
 // Checksum 0xca0b75d8, Offset: 0x2518
 // Size: 0x62
 function function_927be59d(statname) {
-    /#
-        assert(!sessionmodeiscampaigngame());
-    #/
+    assert(!sessionmodeiscampaigngame());
     return self function_e3eb9a8b(#"playerstatslist", statname, #"statvalue");
 }
 
@@ -868,9 +818,7 @@ function function_42277145(statname, value) {
     if (!function_f94325d3()) {
         return 0;
     }
-    /#
-        assert(!sessionmodeiscampaigngame());
-    #/
+    assert(!sessionmodeiscampaigngame());
     return self function_f5859f81(#"playerstatslist", statname, #"statvalue", value);
 }
 

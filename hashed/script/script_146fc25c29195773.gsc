@@ -10,9 +10,7 @@
 // Checksum 0x9a89e929, Offset: 0x198
 // Size: 0x39c
 function function_912776e6(var_f03e723e) {
-    /#
-        assert(ishash(var_f03e723e));
-    #/
+    assert(ishash(var_f03e723e));
     var_1e80d435 = getscriptbundle(var_f03e723e);
     var_272aa18c = var_1e80d435.var_ca65c53;
     level.var_9cc7e850 = 0;
@@ -22,9 +20,7 @@ function function_912776e6(var_f03e723e) {
     if (!isdefined(level.var_91d22c7d)) {
         level.var_91d22c7d = [];
     }
-    /#
-        assert(var_272aa18c.size > 0);
-    #/
+    assert(var_272aa18c.size > 0);
     if (namespace_61e6d095::exists(#"hash_3b32288cc17c7c50")) {
         namespace_61e6d095::remove(#"hash_3b32288cc17c7c50");
     }

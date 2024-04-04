@@ -8,21 +8,8 @@
 // Method(s) 7 Total 14
 class class_90c2e4ec : cluielem {
 
-    // Namespace class_90c2e4ec/sr_orda_health_bar
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x65b0f98c, Offset: 0x230
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_90c2e4ec/sr_orda_health_bar
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xab499cbf, Offset: 0x3e0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_90c2e4ec/sr_orda_health_bar
     // Params 2, eflags: 0x2 linked
@@ -55,7 +42,7 @@ class class_90c2e4ec : cluielem {
     // Checksum 0xb230ff97, Offset: 0x390
     // Size: 0x44
     function function_dff51e54(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "is_beast", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "is_beast", value);
     }
 
     // Namespace namespace_90c2e4ec/sr_orda_health_bar
@@ -63,7 +50,7 @@ class class_90c2e4ec : cluielem {
     // Checksum 0x6ce0eb4c, Offset: 0x340
     // Size: 0x44
     function set_health(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "health", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "health", value);
     }
 
 }

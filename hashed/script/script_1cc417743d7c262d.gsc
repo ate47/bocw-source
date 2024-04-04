@@ -457,9 +457,7 @@ function function_30f16f29(soundevent, var_8a6b001a, weapon) {
 // Checksum 0x154301ff, Offset: 0x1938
 // Size: 0xf0
 function leader_dialog_for_other_teams(dialogkey, skipteam, objectivekey, killstreakid, dialogbufferkey, skippable, var_6ad14004) {
-    /#
-        assert(isdefined(skipteam));
-    #/
+    assert(isdefined(skipteam));
     foreach (team, _ in level.teams) {
         if (team != skipteam) {
             leader_dialog(dialogkey, team, objectivekey, killstreakid, dialogbufferkey, skippable, var_6ad14004);
@@ -472,9 +470,7 @@ function leader_dialog_for_other_teams(dialogkey, skipteam, objectivekey, killst
 // Checksum 0xd5e84c2, Offset: 0x1a30
 // Size: 0xf0
 function function_61e17de0(dialogkey, players, objectivekey, killstreakid, dialogbufferkey, dialogalias, skippable, var_6ad14004) {
-    /#
-        assert(isdefined(players));
-    #/
+    assert(isdefined(players));
     foreach (player in players) {
         player leader_dialog_on_player(dialogkey, objectivekey, killstreakid, dialogbufferkey, undefined, dialogalias, skippable, var_6ad14004);
     }
@@ -485,12 +481,8 @@ function function_61e17de0(dialogkey, players, objectivekey, killstreakid, dialo
 // Checksum 0x99c40b7a, Offset: 0x1b28
 // Size: 0xec
 function function_248fc9f7(dialogkey, team, excludelist, objectivekey, killstreakid, dialogbufferkey, skippable, var_6ad14004) {
-    /#
-        assert(isdefined(excludelist));
-    #/
-    /#
-        assert(isdefined(level.players));
-    #/
+    assert(isdefined(excludelist));
+    assert(isdefined(level.players));
     players = isdefined(team) ? getplayers(team) : level.players;
     players = array::exclude(players, excludelist);
     function_61e17de0(dialogkey, players, objectivekey, killstreakid, dialogbufferkey, skippable, var_6ad14004);
@@ -501,12 +493,8 @@ function function_248fc9f7(dialogkey, team, excludelist, objectivekey, killstrea
 // Checksum 0xff311d0e, Offset: 0x1c20
 // Size: 0xec
 function function_b4319f8e(dialogkey, team, exclude, objectivekey, killstreakid, dialogbufferkey, skippable, var_6ad14004) {
-    /#
-        assert(isdefined(exclude));
-    #/
-    /#
-        assert(isdefined(level.players));
-    #/
+    assert(isdefined(exclude));
+    assert(isdefined(level.players));
     players = isdefined(team) ? getplayers(team) : level.players;
     arrayremovevalue(players, exclude);
     function_61e17de0(dialogkey, players, objectivekey, killstreakid, dialogbufferkey, skippable, var_6ad14004);
@@ -981,9 +969,7 @@ function on_end_game() {
 // Checksum 0x80f2a3b2, Offset: 0x34f8
 // Size: 0x190
 function set_music_on_team(state, team = "both", wait_time = 0, save_state = 0, return_state = 0) {
-    /#
-        assert(isdefined(level.players));
-    #/
+    assert(isdefined(level.players));
     foreach (player in level.players) {
         if (team == "both") {
             player thread set_music_on_player(state, wait_time, save_state, return_state);
@@ -1000,9 +986,7 @@ function set_music_on_team(state, team = "both", wait_time = 0, save_state = 0, 
 // Checksum 0x49e73d71, Offset: 0x3690
 // Size: 0x160
 function function_89fe8163(state, team = "both", wait_time = 0, save_state = 0, return_state = 0) {
-    /#
-        assert(isdefined(level.players));
-    #/
+    assert(isdefined(level.players));
     foreach (player in level.players) {
         if (isdefined(player.pers[#"team"]) && player.pers[#"team"] != team) {
             player thread set_music_on_player(state, wait_time, save_state, return_state);
@@ -1016,9 +1000,7 @@ function function_89fe8163(state, team = "both", wait_time = 0, save_state = 0, 
 // Size: 0x134
 function set_music_on_player(state, wait_time, *save_state, *return_state = 0) {
     self endon(#"disconnect");
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!isdefined(save_state)) {
         return;
     }
@@ -1077,9 +1059,7 @@ function function_85818e24(var_9c1ed9ea, team) {
 // Checksum 0xf2ccac72, Offset: 0x3ba8
 // Size: 0x8c
 function function_c246758e(str_state, n_delay = 0) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!isdefined(str_state)) {
         return;
     }

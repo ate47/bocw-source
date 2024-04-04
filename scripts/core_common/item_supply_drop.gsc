@@ -168,18 +168,12 @@ function private debug_supply_drop() {
 // Checksum 0x4df78f65, Offset: 0x10f0
 // Size: 0x424
 function private function_c7bd0aa8(point, startpoint) {
-    /#
-        assert(isvec(point));
-    #/
-    /#
-        assert(isvec(startpoint));
-    #/
+    assert(isvec(point));
+    assert(isvec(startpoint));
     if (function_16bbdd8b(point)) {
         return point;
     }
-    /#
-        assert(function_16bbdd8b(startpoint));
-    #/
+    assert(function_16bbdd8b(startpoint));
     if (territory::function_c0de0601()) {
         var_bb96e272 = vectornormalize(startpoint - point);
         pathlength = distance2d(startpoint, point);
@@ -198,31 +192,23 @@ function private function_c7bd0aa8(point, startpoint) {
     var_49e5fac9 = (startpoint[0], startpoint[1], 0);
     if (var_1ccbeeaa[0] < min[0]) {
         toend = vectornormalize(var_1ccbeeaa - var_49e5fac9);
-        /#
-            assert(toend[0] != 0);
-        #/
+        assert(toend[0] != 0);
         t = (min[0] - var_49e5fac9[0]) / toend[0];
         var_1ccbeeaa = var_49e5fac9 + toend * t;
     } else if (var_1ccbeeaa[0] > max[0]) {
         toend = vectornormalize(var_1ccbeeaa - var_49e5fac9);
-        /#
-            assert(toend[0] != 0);
-        #/
+        assert(toend[0] != 0);
         t = (max[0] - var_49e5fac9[0]) / toend[0];
         var_1ccbeeaa = var_49e5fac9 + toend * t;
     }
     if (var_1ccbeeaa[1] < min[1]) {
         toend = vectornormalize(var_1ccbeeaa - var_49e5fac9);
-        /#
-            assert(toend[1] != 0);
-        #/
+        assert(toend[1] != 0);
         t = (min[1] - var_49e5fac9[1]) / toend[1];
         var_1ccbeeaa = var_49e5fac9 + toend * t;
     } else if (var_1ccbeeaa[1] > max[1]) {
         toend = vectornormalize(var_1ccbeeaa - var_49e5fac9);
-        /#
-            assert(toend[1] != 0);
-        #/
+        assert(toend[1] != 0);
         t = (max[1] - var_49e5fac9[1]) / toend[1];
         var_1ccbeeaa = var_49e5fac9 + toend * t;
     }
@@ -336,7 +322,7 @@ function private function_500a6615(itemspawnlist = #"t9_supply_drop_stash_parent
         endpoint = (supplydrop.origin[0], supplydrop.origin[1], -32000);
         travelspeed = is_true(supplydrop.var_abd32694) ? 400 : 200;
         groundoffset = is_true(supplydrop.var_abd32694) ? 200 : 60;
-        groundtrace = physicstraceex(startpoint, endpoint, vectorscale((-1, -1, -1), 0.5), vectorscale((1, 1, 1), 0.5), supplydrop, 32);
+        groundtrace = physicstraceex(startpoint, endpoint, (-0.5, -0.5, -0.5), (0.5, 0.5, 0.5), supplydrop, 32);
         groundpoint = groundtrace[#"position"] + (0, 0, groundoffset);
         traveldistance = startpoint - groundpoint;
         movetime = traveldistance[2] / travelspeed;
@@ -384,7 +370,7 @@ function private function_500a6615(itemspawnlist = #"t9_supply_drop_stash_parent
 // Size: 0x1fc
 function private function_e21ceb1b() {
     self endon(#"death", #"movedone");
-    extendbounds = vectorscale((1, 1, 1), 10);
+    extendbounds = (10, 10, 10);
     previousorigin = self.origin;
     while (true) {
         closeplayers = getentitiesinradius(self.origin, 128, 1);
@@ -476,7 +462,7 @@ function private function_4daa76d4(supplydrop, var_d91c179d) {
         parachute setmodel("p9_fxanim_wz_parachute_supplydrop_01_mod");
         parachute clientfield::set("supply_drop_parachute_rob", 1);
         parachute useanimtree("generic");
-        parachute linkto(supplydrop, "tag_origin", vectorscale((0, 0, -1), 80));
+        parachute linkto(supplydrop, "tag_origin", (0, 0, -80));
         parachutes[parachutes.size] = parachute;
     } else {
         var_daf5f046 = 4;
@@ -489,7 +475,7 @@ function private function_4daa76d4(supplydrop, var_d91c179d) {
             parachute setmodel("p9_fxanim_wz_parachute_supplydrop_veh_mod");
             parachute clientfield::set("supply_drop_parachute_rob", 1);
             parachute useanimtree("generic");
-            parachute linkto(supplydrop, "tag_origin", vectorscale((0, 0, -1), 80));
+            parachute linkto(supplydrop, "tag_origin", (0, 0, -80));
             parachutes[parachutes.size] = parachute;
         }
     }
@@ -571,7 +557,7 @@ function private function_546afbb6() {
 // Checksum 0xf15481c5, Offset: 0x2e38
 // Size: 0x254
 function private function_a3832aa0(var_d91c179d, vehicletype, dropangles, vehicleangles) {
-    supplydrop = spawn("script_model", vectorscale((0, 0, -1), 64000));
+    supplydrop = spawn("script_model", (0, 0, -64000));
     supplydrop setmodel("tag_origin");
     supplydrop useanimtree("generic");
     supplydrop.supplydropveh = var_d91c179d;
@@ -583,7 +569,7 @@ function private function_a3832aa0(var_d91c179d, vehicletype, dropangles, vehicl
     if (!isdefined(dropangles)) {
         dropangles = (0, 0, 0);
     }
-    var_da7d45d1 = vectorscale((0, 1, 0), 90);
+    var_da7d45d1 = (0, 90, 0);
     dropangles = dropangles - vehicleangles + var_da7d45d1;
     var_d5552131 linkto(supplydrop, "tag_origin", (0, 0, 0), dropangles);
     var_d5552131.var_b9b5403c = var_d5552131.health * 0.5;
@@ -760,7 +746,7 @@ function private trace_point(point, var_5fd22b95 = 1, maxheight = 20000, minheig
         }
     }
     if (isdefined(trace[#"position"])) {
-        return (trace[#"position"] + vectorscale((0, 0, 1), 2000));
+        return (trace[#"position"] + (0, 0, 2000));
     }
     return startpoint;
 }
@@ -770,9 +756,7 @@ function private trace_point(point, var_5fd22b95 = 1, maxheight = 20000, minheig
 // Checksum 0x146dbca5, Offset: 0x3b70
 // Size: 0x104
 function private function_8234217e(var_faa1ea31, vectors) {
-    /#
-        assert(vectors.size > 0);
-    #/
+    assert(vectors.size > 0);
     var_54b25053 = vectors[0];
     bestdot = vectordot(var_54b25053, var_faa1ea31);
     for (index = 1; index < vectors.size; index++) {
@@ -817,11 +801,9 @@ function function_ee19f0b0(angles, worldforward) {
 // Checksum 0x9d89b0b0, Offset: 0x3dc8
 // Size: 0x1a4
 function private function_924a11ff(itemspawnlist, var_93fe96a6 = 0, s_instance) {
-    /#
-        assert(isdefined(itemspawnlist));
-    #/
+    assert(isdefined(itemspawnlist));
     self endon(#"death");
-    self thread item_drop::function_10ececeb(1, 80, 24, vectorscale((-1, -1, 0), 25), (25, 25, 50));
+    self thread item_drop::function_10ececeb(1, 80, 24, (-25, -25, 0), (25, 25, 50));
     self waittill(#"stationary");
     if (isdefined(level.var_a16ff74d)) {
         self thread [[ level.var_a16ff74d ]](var_93fe96a6, s_instance);
@@ -830,7 +812,7 @@ function private function_924a11ff(itemspawnlist, var_93fe96a6 = 0, s_instance) 
     var_e68facee = isdefined(self getlinkedent());
     self clientfield::set("supply_drop_fx", 1);
     self setmodel("wpn_t9_streak_care_package_friendly_world_nosight");
-    self.anglesoffset = vectorscale((0, 1, 0), 90);
+    self.anglesoffset = (0, 90, 0);
     items = self namespace_65181344::function_5eada592(itemspawnlist, 1);
     wait(60);
     if (isdefined(self)) {
@@ -1091,7 +1073,7 @@ function function_b8dd1978(startpoint, endpoint, droppoint, var_2118f785 = undef
     if (!isdefined(supplydropveh)) {
         return;
     }
-    supplydrop linkto(supplydropveh, "tag_origin", vectorscale((0, 0, -1), 120));
+    supplydrop linkto(supplydropveh, "tag_origin", (0, 0, -120));
     supplydropveh.supplydrop = supplydrop;
     supplydropveh thread function_c2edbefb(var_57e06aea, droppoint, 0, var_2118f785);
     supplydropveh thread function_9e8348e4();
@@ -1108,9 +1090,7 @@ function function_47ec98c4(startpoint, endpoint, droppoint, var_d91c179d = 0, ve
         return;
     }
     var_57e06aea = function_eafcba42(startpoint, endpoint, droppoint, maxheight, minheight);
-    /#
-        assert(var_57e06aea.size >= 2);
-    #/
+    assert(var_57e06aea.size >= 2);
     startpoint = var_57e06aea[0];
     endpoint = var_57e06aea[var_57e06aea.size - 1];
     toendpoint = endpoint - startpoint;
@@ -1146,7 +1126,7 @@ function function_47ec98c4(startpoint, endpoint, droppoint, var_d91c179d = 0, ve
         supplydrop = function_67d7d040(supplydropveh);
     }
     if (isdefined(harness)) {
-        harness linkto(supplydropveh, "tag_cargo_attach", vectorscale((0, 0, -1), 90));
+        harness linkto(supplydropveh, "tag_cargo_attach", (0, 0, -90));
         var_6fe5490e = #"hash_7b1793df2c9b8245";
         attachtag = "tag_care_package";
         if (isdefined(supplydrop.var_d5552131)) {
@@ -1160,10 +1140,10 @@ function function_47ec98c4(startpoint, endpoint, droppoint, var_d91c179d = 0, ve
                 break;
             }
         }
-        supplydrop linkto(harness, attachtag, (0, 0, 0), vectorscale((0, -1, 0), 90));
+        supplydrop linkto(harness, attachtag, (0, 0, 0), (0, -90, 0));
         harness animscripted("harness_idle", supplydropveh.origin, supplydropveh.angles, var_6fe5490e, "normal", "root", 1, 0);
     } else {
-        supplydrop linkto(supplydropveh, "tag_cargo_attach", vectorscale((0, 0, -1), 45));
+        supplydrop linkto(supplydropveh, "tag_cargo_attach", (0, 0, -45));
     }
     supplydropveh.harness = harness;
     supplydropveh.supplydrop = supplydrop;
@@ -1184,9 +1164,7 @@ function function_47ec98c4(startpoint, endpoint, droppoint, var_d91c179d = 0, ve
 // Checksum 0xa4e982c4, Offset: 0x59c0
 // Size: 0x34e
 function drop_supply_drop(droppoint, helicopter = 0, vehicledrop = 0, vehicletype = undefined, var_2118f785 = undefined, dropangles = undefined) {
-    /#
-        assert(isvec(droppoint));
-    #/
+    assert(isvec(droppoint));
     if (!function_16bbdd8b(droppoint)) {
         return;
     }

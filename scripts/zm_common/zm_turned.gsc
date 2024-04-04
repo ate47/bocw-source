@@ -243,12 +243,8 @@ function deletezombiesinradius(origin) {
 // Checksum 0x1e477df9, Offset: 0x12d8
 // Size: 0x16c
 function turned_give_melee_weapon() {
-    /#
-        assert(isdefined(self.weaponzmturnedmelee));
-    #/
-    /#
-        assert(self.weaponzmturnedmelee != level.weaponnone);
-    #/
+    assert(isdefined(self.weaponzmturnedmelee));
+    assert(self.weaponzmturnedmelee != level.weaponnone);
     self.turned_had_knife = self hasweapon(level.weaponbasemelee);
     if (is_true(self.turned_had_knife)) {
         self takeweapon(level.weaponbasemelee);

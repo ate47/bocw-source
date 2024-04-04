@@ -95,7 +95,6 @@ function private function_510ce803(player) {
     }
     self endon(#"death");
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         guy = result.activator;
         if (!isdefined(guy) || !isdefined(guy.doa)) {

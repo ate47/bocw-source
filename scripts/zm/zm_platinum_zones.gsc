@@ -198,7 +198,6 @@ function function_44b1279a() {
             self.var_ed2e19c8 = 0;
             self clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 0);
         }
-        s_waitresult = undefined;
         s_waitresult = self waittill(#"zone_change");
     }
 }

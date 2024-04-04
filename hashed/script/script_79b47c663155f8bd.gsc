@@ -70,9 +70,7 @@ function private function_8958c312() {
 function private function_ba1ef25b(maxplayers) {
     if (level.teambased) {
         teamsize = maxplayers / level.teams.size;
-        /#
-            assert(teamsize - int(teamsize) == 0);
-        #/
+        assert(teamsize - int(teamsize) == 0);
         foreach (team in level.teams) {
             level.var_f5c1fb9d[team] = teamsize;
             level.var_8a530af5[team] = 1;

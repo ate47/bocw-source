@@ -7,22 +7,6 @@
 // Method(s) 12 Total 19
 class class_51a06b68 : cluielem {
 
-    // Namespace class_51a06b68/sr_objective_reward_menu
-    // Params 0, eflags: 0xa linked
-    // Checksum 0xaba64e4c, Offset: 0x4b0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_51a06b68/sr_objective_reward_menu
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x1be81c92, Offset: 0x988
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_51a06b68/sr_objective_reward_menu
     // Params 1, eflags: 0x2 linked
     // Checksum 0xf7dd9dc8, Offset: 0x718
@@ -36,7 +20,7 @@ class class_51a06b68 : cluielem {
     // Checksum 0xd7220277, Offset: 0x8e0
     // Size: 0x30
     function function_2d7f3298(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "gunindex2", value);
+        set_data(localclientnum, "gunindex2", value);
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
@@ -44,7 +28,7 @@ class class_51a06b68 : cluielem {
     // Checksum 0xad50e81a, Offset: 0x8a8
     // Size: 0x30
     function function_43ba5f0e(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "gunIndex1", value);
+        set_data(localclientnum, "gunIndex1", value);
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
@@ -74,7 +58,7 @@ class class_51a06b68 : cluielem {
     // Checksum 0xd7eea3a5, Offset: 0x950
     // Size: 0x30
     function set_color(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "color", value);
+        set_data(localclientnum, "color", value);
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
@@ -82,7 +66,7 @@ class class_51a06b68 : cluielem {
     // Checksum 0x89512ffb, Offset: 0x918
     // Size: 0x30
     function function_ada8b2f1(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "gunindex3", value);
+        set_data(localclientnum, "gunindex3", value);
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
@@ -90,7 +74,7 @@ class class_51a06b68 : cluielem {
     // Checksum 0x19a0d88, Offset: 0x870
     // Size: 0x30
     function function_b94196b8(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "promptProgress", value);
+        set_data(localclientnum, "promptProgress", value);
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
@@ -99,26 +83,22 @@ class class_51a06b68 : cluielem {
     // Size: 0x11c
     function set_state(localclientnum, state_name) {
         if (#"defaultstate" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 0);
+            set_data(localclientnum, "_state", 0);
             return;
         }
         if (#"gun1selected" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 1);
+            set_data(localclientnum, "_state", 1);
             return;
         }
         if (#"gun2selected" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 2);
+            set_data(localclientnum, "_state", 2);
             return;
         }
         if (#"gun3selected" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 3);
+            set_data(localclientnum, "_state", 3);
             return;
         }
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
@@ -127,12 +107,12 @@ class class_51a06b68 : cluielem {
     // Size: 0xd8
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_state(localclientnum, #"defaultstate");
-        [[ self ]]->set_data(localclientnum, "promptProgress", 0);
-        [[ self ]]->set_data(localclientnum, "gunIndex1", 0);
-        [[ self ]]->set_data(localclientnum, "gunindex2", 0);
-        [[ self ]]->set_data(localclientnum, "gunindex3", 0);
-        [[ self ]]->set_data(localclientnum, "color", 0);
+        set_state(localclientnum, #"defaultstate");
+        set_data(localclientnum, "promptProgress", 0);
+        set_data(localclientnum, "gunIndex1", 0);
+        set_data(localclientnum, "gunindex2", 0);
+        set_data(localclientnum, "gunindex3", 0);
+        set_data(localclientnum, "color", 0);
     }
 
 }

@@ -75,13 +75,13 @@ function function_30933ca1(localclientnum, *oldval, *newval, *bnewent, *binitial
         return;
     }
     if (self.var_9fde8624 === #"hash_2a5479b83161cb35") {
-        var_d1dc644a = playfx(bwastimejump, #"hash_baef237a01b261a", self.origin + vectorscale((0, 0, 1), 36), anglestoup(self.angles));
-        playsound(bwastimejump, #"hash_6b6572c7d66929d", self.origin + vectorscale((0, 0, 1), 36));
+        var_d1dc644a = playfx(bwastimejump, #"hash_baef237a01b261a", self.origin + (0, 0, 36), anglestoup(self.angles));
+        playsound(bwastimejump, #"hash_6b6572c7d66929d", self.origin + (0, 0, 36));
     } else if (self.var_9fde8624 === #"hash_28e36e7b7d5421f") {
-        var_d1dc644a = playfx(bwastimejump, #"hash_2de6c1300bec68cd", self.origin + vectorscale((0, 0, 1), 36), anglestoup(self.angles));
-        playsound(bwastimejump, #"hash_3731f907ac5beb1", self.origin + vectorscale((0, 0, 1), 36));
+        var_d1dc644a = playfx(bwastimejump, #"hash_2de6c1300bec68cd", self.origin + (0, 0, 36), anglestoup(self.angles));
+        playsound(bwastimejump, #"hash_3731f907ac5beb1", self.origin + (0, 0, 36));
     } else {
-        playsound(bwastimejump, #"hash_1b702e745dd73148", self.origin + vectorscale((0, 0, 1), 36));
+        playsound(bwastimejump, #"hash_1b702e745dd73148", self.origin + (0, 0, 36));
     }
     wait(1);
     if (isdefined(var_d1dc644a)) {
@@ -96,13 +96,13 @@ function function_30933ca1(localclientnum, *oldval, *newval, *bnewent, *binitial
 function dog_spawn_fx(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (self.var_9fde8624 === #"hash_2a5479b83161cb35") {
         util::playfxontag(bwasdemojump, #"hash_784a8bc7b9b17876", self, "j_spine2");
-        playsound(bwasdemojump, #"hash_6ba18f5ab09d3e00", self.origin + vectorscale((0, 0, 1), 36));
+        playsound(bwasdemojump, #"hash_6ba18f5ab09d3e00", self.origin + (0, 0, 36));
     } else if (self.var_9fde8624 === #"hash_28e36e7b7d5421f") {
         util::playfxontag(bwasdemojump, #"hash_44214bf58f0e6d87", self, "j_spine2");
-        playsound(bwasdemojump, #"hash_6a7f1f4ef6078e4", self.origin + vectorscale((0, 0, 1), 36));
+        playsound(bwasdemojump, #"hash_6a7f1f4ef6078e4", self.origin + (0, 0, 36));
     } else {
         util::playfxontag(bwasdemojump, level._effect[#"lightning_dog_spawn"], self, "j_spine2");
-        playsound(bwasdemojump, #"hash_342202bccfe632e3", self.origin + vectorscale((0, 0, 1), 36));
+        playsound(bwasdemojump, #"hash_342202bccfe632e3", self.origin + (0, 0, 36));
     }
     fxclientutils::playfxbundle(bwasdemojump, self, self.fxdef);
 }

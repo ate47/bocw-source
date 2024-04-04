@@ -385,9 +385,7 @@ function function_46d74bb7(var_70150641) {
         if (!isdefined(player)) {
             continue;
         }
-        /#
-            assert(isdefined(player.clientid));
-        #/
+        assert(isdefined(player.clientid));
         if (!isdefined(player.clientid)) {
             continue;
         }
@@ -414,9 +412,7 @@ function function_46d74bb7(var_70150641) {
 // Checksum 0xd2a327b0, Offset: 0x1a88
 // Size: 0x66
 function supplypod_on(*slot, playerweapon) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self notify(#"start_killstreak", {#weapon:playerweapon});
 }
 
@@ -586,7 +582,6 @@ function watchfordeath() {
     level endon(#"game_ended");
     self.owner endon(#"disconnect", #"joined_team", #"changed_specialist");
     self endon(#"hash_523ddcbd662010e5");
-    waitresult = undefined;
     waitresult = self waittill(#"death");
     if (!isdefined(self)) {
         return;
@@ -619,7 +614,6 @@ function watchfordamage() {
     supplypod.health = level.var_934fb97.bundle.kshealth;
     startinghealth = supplypod.health;
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         if ((isdefined(level.var_934fb97.bundle.var_4f845dc4) ? level.var_934fb97.bundle.var_4f845dc4 : 0) && isdefined(waitresult.attacker) && isplayer(waitresult.attacker)) {
             var_fd03ecd9 = supplypod.health / startinghealth;
@@ -859,7 +853,6 @@ function canuseobject(user) {
 function function_18f999b5(waittime) {
     self notify(#"hash_10cd6a20d4e45365");
     self endon(#"hash_10cd6a20d4e45365", #"disconnect");
-    result = undefined;
     result = self waittilltimeout(waittime, #"death");
     if (result._notify == #"timeout") {
         self function_46d74bb7(1);

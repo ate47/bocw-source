@@ -8,21 +8,8 @@
 // Method(s) 12 Total 19
 class class_fb1bfa12 : cluielem {
 
-    // Namespace class_fb1bfa12/namespace_8f760a1e
-    // Params 0, eflags: 0x8
-    // Checksum 0x5550228f, Offset: 0x3c8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_fb1bfa12/namespace_8f760a1e
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xf55cf60, Offset: 0x7d0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_fb1bfa12/namespace_8f760a1e
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class class_fb1bfa12 : cluielem {
     // Checksum 0x3972053b, Offset: 0x6e0
     // Size: 0x44
     function function_10415bce(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "lvlDescriptionShort", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "lvlDescriptionShort", value);
     }
 
     // Namespace namespace_fb1bfa12/namespace_8f760a1e
@@ -45,7 +32,7 @@ class class_fb1bfa12 : cluielem {
     // Checksum 0xc710c33e, Offset: 0x730
     // Size: 0x44
     function function_275127c2(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "lvlDescriptionLong", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "lvlDescriptionLong", value);
     }
 
     // Namespace namespace_fb1bfa12/namespace_8f760a1e
@@ -53,7 +40,7 @@ class class_fb1bfa12 : cluielem {
     // Checksum 0x68389c78, Offset: 0x780
     // Size: 0x44
     function function_3d5ae5d4(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "lvlProgress", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "lvlProgress", value);
     }
 
     // Namespace namespace_fb1bfa12/namespace_8f760a1e
@@ -61,7 +48,7 @@ class class_fb1bfa12 : cluielem {
     // Checksum 0x29a3dc03, Offset: 0x5f0
     // Size: 0x44
     function function_57d3362b(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "activeState", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "activeState", value);
     }
 
     // Namespace namespace_fb1bfa12/namespace_8f760a1e
@@ -92,7 +79,7 @@ class class_fb1bfa12 : cluielem {
     // Checksum 0x415cfe1f, Offset: 0x690
     // Size: 0x44
     function function_c063a71c(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "lvlName", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "lvlName", value);
     }
 
     // Namespace namespace_fb1bfa12/namespace_8f760a1e
@@ -100,7 +87,7 @@ class class_fb1bfa12 : cluielem {
     // Checksum 0x1096abcc, Offset: 0x640
     // Size: 0x44
     function function_c2c6a8c3(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "lvlYear", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "lvlYear", value);
     }
 
     // Namespace namespace_fb1bfa12/namespace_8f760a1e
@@ -108,7 +95,7 @@ class class_fb1bfa12 : cluielem {
     // Checksum 0x1cad3e8d, Offset: 0x5a0
     // Size: 0x44
     function set_entnum(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "entNum", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "entNum", value);
     }
 
 }

@@ -93,9 +93,7 @@ function onallplayersready() {
                 player_count_actual++;
             }
         }
-        /#
-            println("<unknown string>" + getnumconnectedplayers() + "<unknown string>" + getnumexpectedplayers(1));
-        #/
+        println("<unknown string>" + getnumconnectedplayers() + "<unknown string>" + getnumexpectedplayers(1));
         wait(0.1);
     }
     setinitialplayersconnected();

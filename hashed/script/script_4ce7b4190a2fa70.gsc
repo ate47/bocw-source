@@ -8,21 +8,8 @@
 // Method(s) 11 Total 18
 class class_51a06b68 : cluielem {
 
-    // Namespace class_51a06b68/sr_objective_reward_menu
-    // Params 0, eflags: 0xa linked
-    // Checksum 0xb32238a4, Offset: 0x328
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_51a06b68/sr_objective_reward_menu
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x2df6ea90, Offset: 0x7d0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
     // Params 2, eflags: 0x2 linked
@@ -37,7 +24,7 @@ class class_51a06b68 : cluielem {
     // Checksum 0xd0056079, Offset: 0x6e0
     // Size: 0x44
     function function_2d7f3298(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "gunindex2", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "gunindex2", value);
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
@@ -45,7 +32,7 @@ class class_51a06b68 : cluielem {
     // Checksum 0x4127ac74, Offset: 0x690
     // Size: 0x44
     function function_43ba5f0e(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "gunIndex1", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "gunIndex1", value);
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
@@ -75,7 +62,7 @@ class class_51a06b68 : cluielem {
     // Checksum 0x15a3303f, Offset: 0x780
     // Size: 0x44
     function set_color(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "color", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "color", value);
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
@@ -83,7 +70,7 @@ class class_51a06b68 : cluielem {
     // Checksum 0xb6e5963f, Offset: 0x730
     // Size: 0x44
     function function_ada8b2f1(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "gunindex3", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "gunindex3", value);
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
@@ -91,7 +78,7 @@ class class_51a06b68 : cluielem {
     // Checksum 0xdeb07104, Offset: 0x640
     // Size: 0x44
     function function_b94196b8(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "promptProgress", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "promptProgress", value);
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
@@ -100,26 +87,22 @@ class class_51a06b68 : cluielem {
     // Size: 0x15c
     function set_state(player, state_name) {
         if (#"defaultstate" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 0);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 0);
             return;
         }
         if (#"gun1selected" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 1);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 1);
             return;
         }
         if (#"gun2selected" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 2);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 2);
             return;
         }
         if (#"gun3selected" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 3);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 3);
             return;
         }
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
     }
 
 }

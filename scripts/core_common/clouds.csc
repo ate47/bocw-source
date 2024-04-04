@@ -55,9 +55,7 @@ function private function_f99c2453(eventstruct) {
 // Checksum 0x72a20993, Offset: 0x298
 // Size: 0x9c
 function function_f75dd8e0(name, min_height, fx) {
-    /#
-        assert(!isdefined(level.clouds.layers[name]));
-    #/
+    assert(!isdefined(level.clouds.layers[name]));
     level.clouds.layers[name] = {#name:name, #min_height:min_height, #fx:fx};
 }
 

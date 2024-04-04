@@ -143,7 +143,7 @@ function state_death_update(params) {
     self endon(#"death");
     playfxontag(#"hash_6ca050a42ba76baa", self, "tag_body");
     playfxontag(#"hash_1a0d6a6745ac6af", self, "tag_body");
-    self setphysacceleration(vectorscale((0, 0, -1), 300));
+    self setphysacceleration((0, 0, -300));
     self.vehcheckforpredictedcrash = 1;
     forward = anglestoforward(self.angles);
     forward_mag = randomfloatrange(0, 300);
@@ -222,7 +222,6 @@ function state_combat_enter(*params) {
 function function_24ec919c() {
     self endon(#"death");
     while (true) {
-        struct = undefined;
         struct = self waittill(#"gunner_weapon_fired");
         if (struct.gunner_index == 2 || struct.gunner_index == 3) {
             struct.projectiles[0] thread function_abdb5689(self.enemy);
@@ -578,7 +577,6 @@ function function_6492fc4b(do_trace) {
 // Checksum 0x8cb8aa5e, Offset: 0x2458
 // Size: 0x10c
 function function_2d59fe25() {
-    waitresult = undefined;
     waitresult = self waittill(#"exit_vehicle");
     waitresult.player val::reset(#"hunter", "ignoreme");
     waitresult.player val::reset(#"hunter", "takedamage");
@@ -691,7 +689,6 @@ function function_14a42022() {
 function function_e9e5bd0() {
     self endon(#"change_state", #"crash_done", #"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"veh_collision");
         velocity = waitresult.velocity;
         normal = waitresult.normal;
@@ -806,17 +803,13 @@ function function_9dd28496(einflictor, eattacker, idamage, *idflags, smeansofdea
 // Checksum 0xf0c259e8, Offset: 0x3340
 // Size: 0x588
 function function_b1bd875a() {
-    /#
-        assert(isdefined(self.ai));
-    #/
+    assert(isdefined(self.ai));
     if (!isdefined(self.ai.var_88b0fd29)) {
         self.ai.var_88b0fd29 = gettime() + 1000;
         return;
     }
     goalinfo = self function_4794d6a3();
-    /#
-        assert(isdefined(goalinfo.goalpos));
-    #/
+    assert(isdefined(goalinfo.goalpos));
     var_12cb92c6 = 0;
     newpos = undefined;
     point = undefined;
@@ -860,7 +853,7 @@ function function_b1bd875a() {
             }
             if (!isdefined(newpos)) {
                 /#
-                    record3dtext("<unknown string>" + goalinfo.goalpos + "<unknown string>" + goalinfo.goalradius + "<unknown string>" + goalinfo.goalheight, self.origin + vectorscale((0, 0, 1), 8), (1, 0, 0));
+                    record3dtext("<unknown string>" + goalinfo.goalpos + "<unknown string>" + goalinfo.goalradius + "<unknown string>" + goalinfo.goalheight, self.origin + (0, 0, 8), (1, 0, 0));
                     recordline(self.origin, goalinfo.goalpos, (1, 0, 0));
                 #/
                 newpos = goalinfo.goalpos;

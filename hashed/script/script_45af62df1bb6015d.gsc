@@ -130,9 +130,7 @@ function private function_64609828() {
     self.minigame.complete = 0;
     self.minigame.rootmodel = function_80847fa6(self.localclientnum);
     self.minigame.var_c393c6bc = getscriptbundle("minigame_lockpick");
-    /#
-        assert(self.minigame.difficulty > 0 && self.minigame.difficulty <= 5);
-    #/
+    assert(self.minigame.difficulty > 0 && self.minigame.difficulty <= 5);
     self.minigame.var_b263f6a2 = getscriptbundle(self.minigame.var_c393c6bc.var_b263f6a2);
     self.minigame.scratch = spawnstruct();
     self.minigame.var_e9d52f77 = self.minigame.var_b263f6a2.var_b263f6a2[self.minigame.var_843d0b2b].minigame;
@@ -463,9 +461,7 @@ function private function_35d8ea7() {
 // Checksum 0xe8927141, Offset: 0x2850
 // Size: 0x11e
 function private function_b3ef69ee() {
-    /#
-        assert(self.minigame.complete);
-    #/
+    assert(self.minigame.complete);
     self endoncallback(&function_9b9eaf7e, #"death", #"disconnect");
     self.minigame.running = 0;
     self function_35d8ea7();
@@ -536,9 +532,7 @@ function private function_ef02d214(localclientnum, active) {
 // Checksum 0x3133d4c4, Offset: 0x2bb0
 // Size: 0x94
 function private function_90b8720(localclientnum, var_83e465eb) {
-    /#
-        assert(var_83e465eb > 0 && var_83e465eb <= 5);
-    #/
+    assert(var_83e465eb > 0 && var_83e465eb <= 5);
     rootmodel = function_80847fa6(localclientnum);
     setuimodelvalue(getuimodel(rootmodel, "numPins"), var_83e465eb);
 }
@@ -642,9 +636,7 @@ function private function_ef54083f(localclientnum, unlocked) {
 // Checksum 0x61d192fa, Offset: 0x3300
 // Size: 0x9a
 function private function_5a89af80(localclientnum, pin) {
-    /#
-        assert(pin > 0 && pin <= 5);
-    #/
+    assert(pin > 0 && pin <= 5);
     rootmodel = function_80847fa6(localclientnum);
     var_8ec71e64 = getuimodel(rootmodel, "pin" + pin);
     return var_8ec71e64;

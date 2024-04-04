@@ -35,79 +35,41 @@ function autoexec main() {
 function registerbehaviorscriptfunctions() {
     spawner::add_archetype_spawn_function(#"civilian", &civilianblackboardinit);
     spawner::add_archetype_spawn_function(#"civilian", &civilianinit);
-    /#
-        assert(!isdefined(&civilianmoveactioninitialize) || isscriptfunctionptr(&civilianmoveactioninitialize));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(&civilianmoveactionfinalize) || isscriptfunctionptr(&civilianmoveactionfinalize));
-    #/
+    assert(!isdefined(&civilianmoveactioninitialize) || isscriptfunctionptr(&civilianmoveactioninitialize));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(&civilianmoveactionfinalize) || isscriptfunctionptr(&civilianmoveactionfinalize));
     behaviortreenetworkutility::registerbehaviortreeaction("civilianMoveAction", &civilianmoveactioninitialize, undefined, &civilianmoveactionfinalize);
-    /#
-        assert(isscriptfunctionptr(&civilianwanderservice));
-    #/
+    assert(isscriptfunctionptr(&civilianwanderservice));
     behaviortreenetworkutility::registerbehaviortreescriptapi("civilianWanderService", &civilianwanderservice, 1);
-    /#
-        assert(isscriptfunctionptr(&civilianpanicescapechooseposition));
-    #/
+    assert(isscriptfunctionptr(&civilianpanicescapechooseposition));
     behaviortreenetworkutility::registerbehaviortreescriptapi("civilianPanicEscapeChoosePosition", &civilianpanicescapechooseposition, 1);
-    /#
-        assert(isscriptfunctionptr(&rioterchoosepositionservice));
-    #/
+    assert(isscriptfunctionptr(&rioterchoosepositionservice));
     behaviortreenetworkutility::registerbehaviortreescriptapi("rioterChoosePositionService", &rioterchoosepositionservice, 1);
-    /#
-        assert(isscriptfunctionptr(&civilianfollowservice));
-    #/
+    assert(isscriptfunctionptr(&civilianfollowservice));
     behaviortreenetworkutility::registerbehaviortreescriptapi("civilianFollowService", &civilianfollowservice, 1);
-    /#
-        assert(isscriptfunctionptr(&civiliancanthrowmolotovgrenade));
-    #/
+    assert(isscriptfunctionptr(&civiliancanthrowmolotovgrenade));
     behaviortreenetworkutility::registerbehaviortreescriptapi("civilianCanThrowMolotovGrenade", &civiliancanthrowmolotovgrenade);
-    /#
-        assert(isscriptfunctionptr(&civilianpreparetothrowgrenade));
-    #/
+    assert(isscriptfunctionptr(&civilianpreparetothrowgrenade));
     behaviortreenetworkutility::registerbehaviortreescriptapi("civilianPrepareToThrowGrenade", &civilianpreparetothrowgrenade);
-    /#
-        assert(isscriptfunctionptr(&civiliancleanuptothrowgrenade));
-    #/
+    assert(isscriptfunctionptr(&civiliancleanuptothrowgrenade));
     behaviortreenetworkutility::registerbehaviortreescriptapi("civilianCleanUpToThrowGrenade", &civiliancleanuptothrowgrenade);
-    /#
-        assert(isscriptfunctionptr(&civilianispanicked));
-    #/
+    assert(isscriptfunctionptr(&civilianispanicked));
     behaviortreenetworkutility::registerbehaviortreescriptapi("civilianIsPanicked", &civilianispanicked);
-    /#
-        assert(isscriptfunctionptr(&civilianarrivalallowed));
-    #/
+    assert(isscriptfunctionptr(&civilianarrivalallowed));
     behaviorstatemachine::registerbsmscriptapiinternal("civilianArrivalAllowed", &civilianarrivalallowed);
-    /#
-        assert(isscriptfunctionptr(&civilianareturnsallowed));
-    #/
+    assert(isscriptfunctionptr(&civilianareturnsallowed));
     behaviorstatemachine::registerbsmscriptapiinternal("civilianAreTurnsAllowed", &civilianareturnsallowed);
-    /#
-        assert(isscriptfunctionptr(&civilianisrioter));
-    #/
+    assert(isscriptfunctionptr(&civilianisrioter));
     behaviorstatemachine::registerbsmscriptapiinternal("civilianIsRioter", &civilianisrioter);
-    /#
-        assert(isscriptfunctionptr(&civilianisrioter));
-    #/
+    assert(isscriptfunctionptr(&civilianisrioter));
     behaviortreenetworkutility::registerbehaviortreescriptapi("civilianIsRioter", &civilianisrioter);
-    /#
-        assert(isscriptfunctionptr(&rioterreaquireservice));
-    #/
+    assert(isscriptfunctionptr(&rioterreaquireservice));
     behaviortreenetworkutility::registerbehaviortreescriptapi("rioterReaquireService", &rioterreaquireservice);
-    /#
-        assert(isscriptfunctionptr(&function_91a0507));
-    #/
+    assert(isscriptfunctionptr(&function_91a0507));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_9d096baef09c4d3", &function_91a0507);
-    /#
-        assert(isscriptfunctionptr(&function_c93e1821));
-    #/
+    assert(isscriptfunctionptr(&function_c93e1821));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_199c583edcee4a40", &function_c93e1821);
-    /#
-        assert(isscriptfunctionptr(&function_4f13d157));
-    #/
+    assert(isscriptfunctionptr(&function_4f13d157));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_7b00798f103c87e8", &function_4f13d157);
 }
 
@@ -126,9 +88,7 @@ function private civilianblackboardinit() {
 // Checksum 0x9a8ebf95, Offset: 0xc78
 // Size: 0x6c
 function function_49d80e54(civilian, *attribute, *oldvalue, value) {
-    /#
-        assert(issentient(oldvalue));
-    #/
+    assert(issentient(oldvalue));
     oldvalue setblackboardattribute("follow", value);
 }
 
@@ -197,9 +157,7 @@ function private rioterchoosepositionservice(entity) {
         return false;
     }
     if (forcedgoal) {
-        /#
-            assert(isdefined(goalinfo.goalpos));
-        #/
+        assert(isdefined(goalinfo.goalpos));
         entity function_a57c34b7(goalinfo.goalpos);
         aiutility::setnextfindbestcovertime(entity);
         return true;
@@ -288,9 +246,7 @@ function private civilianwanderservice(entity) {
         return false;
     }
     if (forcedgoal) {
-        /#
-            assert(isdefined(goalinfo.goalpos));
-        #/
+        assert(isdefined(goalinfo.goalpos));
         entity function_a57c34b7(goalinfo.goalpos);
         aiutility::setnextfindbestcovertime(entity);
         return true;

@@ -7,22 +7,6 @@
 // Method(s) 7 Total 14
 class class_d49eac9b : cluielem {
 
-    // Namespace class_d49eac9b/scream_deathmatch_timer
-    // Params 0, eflags: 0x8
-    // Checksum 0x4d8cce20, Offset: 0x358
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_d49eac9b/scream_deathmatch_timer
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x672a1259, Offset: 0x4a8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_d49eac9b/scream_deathmatch_timer
     // Params 1, eflags: 0x0
     // Checksum 0xa7ba79ea, Offset: 0x440
@@ -36,7 +20,7 @@ class class_d49eac9b : cluielem {
     // Checksum 0x4ee0d118, Offset: 0x470
     // Size: 0x30
     function function_302c4b81(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "slasherCountDownTime", value);
+        set_data(localclientnum, "slasherCountDownTime", value);
     }
 
     // Namespace namespace_d49eac9b/scream_deathmatch_timer
@@ -62,7 +46,7 @@ class class_d49eac9b : cluielem {
     // Size: 0x40
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "slasherCountDownTime", 0);
+        set_data(localclientnum, "slasherCountDownTime", 0);
     }
 
 }

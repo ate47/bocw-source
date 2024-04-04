@@ -28,9 +28,7 @@ function main() {
 // Checksum 0xeb0f0497, Offset: 0x1b8
 // Size: 0x12e
 function init_settings() {
-    /#
-        assert(!isdefined(self.stealth), "<unknown string>");
-    #/
+    assert(!isdefined(self.stealth), "<unknown string>");
     self.stealth = spawnstruct();
     self.stealth.spotted_list = [];
     self.stealth.funcs = [];
@@ -88,9 +86,7 @@ function state_hidden() {
 // Checksum 0x27b2365e, Offset: 0x520
 // Size: 0xec
 function state_spotted() {
-    /#
-        assert(!isplayer(self));
-    #/
+    assert(!isplayer(self));
     self thread namespace_979752dc::setbattlechatter(1);
     if (isdefined(self.stealth.oldgrenadeammo)) {
         self.grenadeammo = self.stealth.oldgrenadeammo;

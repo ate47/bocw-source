@@ -102,15 +102,15 @@ function function_c4793fe5(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x16c
 function function_408232a7(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump == 1) {
-        self.smoke_fx = playfx(fieldname, #"zm_ai/fx9_hound_plague_dth_aoe", self.origin + vectorscale((0, 0, 1), 20));
-        playsound(fieldname, #"hash_11a2fa9d6a695f96", self.origin + vectorscale((0, 0, 1), 20));
-        audio::playloopat(#"hash_155791cb3cba6094", self.origin + vectorscale((0, 0, 1), 20));
+        self.smoke_fx = playfx(fieldname, #"zm_ai/fx9_hound_plague_dth_aoe", self.origin + (0, 0, 20));
+        playsound(fieldname, #"hash_11a2fa9d6a695f96", self.origin + (0, 0, 20));
+        audio::playloopat(#"hash_155791cb3cba6094", self.origin + (0, 0, 20));
         wait(2);
         if (isdefined(self.smoke_fx)) {
             stopfx(fieldname, self.smoke_fx);
         }
         if (isdefined(self)) {
-            audio::stoploopat(#"hash_155791cb3cba6094", self.origin + vectorscale((0, 0, 1), 20));
+            audio::stoploopat(#"hash_155791cb3cba6094", self.origin + (0, 0, 20));
         }
     }
 }
@@ -256,7 +256,7 @@ function function_f875612b(localclientnum, *oldval, newval, *bnewent, *binitials
         mdl_fx = util::spawn_model(fieldname, "tag_origin", self.origin);
         playsound(fieldname, #"hash_58583b7b5bcacbbc", (-85, -408, 79));
         wait(1);
-        mdl_fx moveto(mdl_fx.origin + vectorscale((1, 0, 0), 270), 0.5);
+        mdl_fx moveto(mdl_fx.origin + (270, 0, 0), 0.5);
         util::playfxontag(fieldname, #"hash_47d98c0644ec2ecd", mdl_fx, "tag_origin");
         mdl_fx waittill(#"movedone");
         if (isdefined(mdl_fx)) {
@@ -320,7 +320,7 @@ function ww_vacuum_crystal_fx(localclientnum, *oldval, newval, *bnewent, *biniti
             return;
         }
         level.var_37d7e267[var_47c85523] = util::playfxontag(fieldname, #"hash_2421d7984fb8e652", self, "tag_flash");
-        level.var_cca24823[var_47c85523] = self playloopsound(#"hash_4f03b4341d714c53", undefined, vectorscale((0, 0, 1), 50));
+        level.var_cca24823[var_47c85523] = self playloopsound(#"hash_4f03b4341d714c53", undefined, (0, 0, 50));
     }
 }
 
@@ -368,7 +368,6 @@ function function_a6b2453b(localclientnum, var_9b6b8f9a, var_a4f83274) {
     w_current = self function_d2c2b168();
     function_9dd39fc8(localclientnum, var_9b6b8f9a, var_a4f83274);
     while (isdefined(self)) {
-        waitresult = undefined;
         waitresult = self waittill(#"weapon_change");
         w_current = waitresult.weapon;
         w_previous = waitresult.last_weapon;

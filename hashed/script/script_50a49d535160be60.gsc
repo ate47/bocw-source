@@ -8,22 +8,6 @@
 class czm_hint_text : cluielem {
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 0, eflags: 0xa linked
-    // Checksum 0xe4b0dd50, Offset: 0x3d8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace czm_hint_text/zm_hint_text
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xa796518f, Offset: 0x650
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace czm_hint_text/zm_hint_text
     // Params 1, eflags: 0x2 linked
     // Checksum 0xc32853f4, Offset: 0x578
     // Size: 0x24
@@ -55,7 +39,7 @@ class czm_hint_text : cluielem {
     // Checksum 0x31e1fb11, Offset: 0x5a8
     // Size: 0x30
     function set_text(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "text", value);
+        set_data(localclientnum, "text", value);
     }
 
     // Namespace czm_hint_text/zm_hint_text
@@ -63,7 +47,7 @@ class czm_hint_text : cluielem {
     // Checksum 0x1fa9bcf, Offset: 0x5e0
     // Size: 0x30
     function set_visible(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "visible", value);
+        set_data(localclientnum, "visible", value);
     }
 
     // Namespace czm_hint_text/zm_hint_text
@@ -71,7 +55,7 @@ class czm_hint_text : cluielem {
     // Checksum 0x3c1ebfe7, Offset: 0x618
     // Size: 0x30
     function function_f2cb39c0(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "textGpad", value);
+        set_data(localclientnum, "textGpad", value);
     }
 
     // Namespace czm_hint_text/zm_hint_text
@@ -80,9 +64,9 @@ class czm_hint_text : cluielem {
     // Size: 0x94
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "text", #"");
-        [[ self ]]->set_data(localclientnum, "visible", 0);
-        [[ self ]]->set_data(localclientnum, "textGpad", #"");
+        set_data(localclientnum, "text", #"");
+        set_data(localclientnum, "visible", 0);
+        set_data(localclientnum, "textGpad", #"");
     }
 
 }

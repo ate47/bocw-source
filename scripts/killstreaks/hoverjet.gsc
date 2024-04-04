@@ -101,9 +101,7 @@ function function_747544ed(var_6ecb961c, var_46cd15af, var_f3828812, var_2a587e8
 function function_5398ca85(position, yaw, *team, killstreak_id, killstreaktype) {
     self endon(#"emp_jammed", #"joined_team", #"joined_spectators", #"disconnect");
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     playerentnum = player.entnum;
     bundle = killstreaks::get_script_bundle("hoverjet");
     mapcenter = isdefined(level.mapcenter) ? level.mapcenter : player.origin;
@@ -316,7 +314,6 @@ function function_c077f369(weapon) {
     self endon(#"death", #"disconnect", #"stinger_irt_off");
     player = self;
     for (;;) {
-        waitresult = undefined;
         waitresult = player waittill(#"missile_fire");
         if (waitresult.weapon === weapon) {
             player heatseekingmissile::clearirtarget();
@@ -511,9 +508,7 @@ function function_7725894b() {
             self.alarm_snd_ent delete();
             self.alarm_snd_ent = undefined;
         }
-        /#
-            assert(isdefined(self.destroyfunc));
-        #/
+        assert(isdefined(self.destroyfunc));
         self [[ self.destroyfunc ]]();
     }
 }
@@ -524,9 +519,7 @@ function function_7725894b() {
 // Size: 0x3e4
 function function_80586c75(jet) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     if (!jet.is_shutting_down) {
         var_f3443f81 = 40;
         jet.angles = (var_f3443f81, vectortoyaw(jet.var_ced649a0 - jet.origin), 0);

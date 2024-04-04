@@ -176,7 +176,7 @@ function function_650cdcc9() {
     self.var_ba1eee16.s_tree dialog_tree::function_6bbbf87("park_convo_exit", #"hash_68ad7b6266d64986", ["vox_cp_sh2p_00500_park_mypleasure_75", "vox_cp_sh2p_00500_park_bell_ad", "vox_cp_sh2p_00500_park_ofcourse_94"], undefined, "waiting_idle", 1, undefined, "forever");
     self.var_ba1eee16.s_tree dialog_tree::function_46f25b65();
     self.var_ba1eee16.str_location = "comms";
-    self.var_ba1eee16.v_offset = vectorscale((0, 0, -1), 2);
+    self.var_ba1eee16.v_offset = (0, 0, -2);
     self.var_ba1eee16.var_17b38a0e = undefined;
     self.var_ba1eee16.var_e1eebb0b = 3;
     self.var_ba1eee16.var_142355f9 = undefined;
@@ -203,7 +203,6 @@ function function_d675c2b1() {
 function function_7b83d7d() {
     thread scene::play("scene_hub_post_armada_dialog_mixer", "stop_playing");
     while (true) {
-        var_c564fe97 = undefined;
         var_c564fe97 = level waittill(#"hash_30451ffd810d851f", #"hash_e6d697106a775c1", #"hash_2cdf7b0897751c59", #"hash_17bbd82ec0523a61");
         thread scene::stop();
         switch (var_c564fe97._notify) {

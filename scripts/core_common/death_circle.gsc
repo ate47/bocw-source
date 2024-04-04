@@ -136,12 +136,8 @@ function private function_130c92ab(var_8e3c3c5b) {
         return;
     }
     var_32607106 = var_f20eaa57[randomint(var_f20eaa57.size)];
-    /#
-        assert(isdefined(var_32607106.width), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(var_32607106.height), "<unknown string>");
-    #/
+    assert(isdefined(var_32607106.width), "<unknown string>");
+    assert(isdefined(var_32607106.height), "<unknown string>");
     if (!isdefined(var_8e3c3c5b.defaultorigin)) {
         var_8e3c3c5b.defaultorigin = var_8e3c3c5b.var_3b9f4abf;
         var_8e3c3c5b.defaultwidth = var_8e3c3c5b.mapwidth;
@@ -254,9 +250,7 @@ function function_8978c48a(damage, origin) {
 // Checksum 0x92d31e70, Offset: 0x1070
 // Size: 0x6e
 function function_d81873aa(delaysec) {
-    /#
-        assert(delaysec >= 0, "<unknown string>" + "<unknown string>");
-    #/
+    assert(delaysec >= 0, "<unknown string>" + "<unknown string>");
     delaysec = delaysec * level.deathcircle.var_473f2707;
     level.deathcircle.delaysec = delaysec;
 }
@@ -266,9 +260,7 @@ function function_d81873aa(delaysec) {
 // Checksum 0x13748b31, Offset: 0x10e8
 // Size: 0x6e
 function function_114f128a(delaysec) {
-    /#
-        assert(delaysec >= 0, "<unknown string>" + "<unknown string>");
-    #/
+    assert(delaysec >= 0, "<unknown string>" + "<unknown string>");
     delaysec = delaysec * level.deathcircle.var_473f2707;
     level.deathcircle.var_672f2d98 = delaysec;
 }
@@ -289,9 +281,7 @@ function function_c156630d() {
 // Checksum 0x7f02057, Offset: 0x11a0
 // Size: 0x2b8
 function add_circle(var_3b9f4abf, mapwidth = 0, mapheight = 0, radius = 0, damage = 0, damageinterval = 0, waitsec = 0, scalesec = 0, var_55ad5e4 = 0, var_c3bf31b = 0, var_18fa918d = 0) {
-    /#
-        assert(radius <= 150000, "<unknown string>" + "<unknown string>" + radius + "<unknown string>" + 150000);
-    #/
+    assert(radius <= 150000, "<unknown string>" + "<unknown string>" + radius + "<unknown string>" + 150000);
     var_55ad5e4 = int(var_55ad5e4 * 1000);
     var_c3bf31b = int(var_c3bf31b * 1000);
     waitsec = waitsec * level.deathcircle.var_4b31458;
@@ -361,7 +351,7 @@ function private function_9bae34b3(var_b0b91d4, var_8e3c3c5b) {
                 continue;
             }
         }
-        trace = groundtrace(origin + vectorscale((0, 0, 1), 20000), origin + vectorscale((0, 0, -1), 10000), 0, undefined);
+        trace = groundtrace(origin + (0, 0, 20000), origin + (0, 0, -10000), 0, undefined);
         tracepos = trace[#"position"];
         if (trace[#"fraction"] >= 1 || trace[#"surfacetype"] == #"water" || trace[#"surfacetype"] == #"watershallow" || !_second_compass_map_mp_ruins(origin)) {
             /#
@@ -435,7 +425,7 @@ function private function_a84cfbd0(var_b0b91d4, circle, nextcircle) {
         }
         circle.origin = origin;
         /#
-            trace = groundtrace(origin + vectorscale((0, 0, 1), 20000), origin + vectorscale((0, 0, -1), 10000), 0, undefined);
+            trace = groundtrace(origin + (0, 0, 20000), origin + (0, 0, -10000), 0, undefined);
             circle.tracepos = trace[#"position"];
         #/
         return true;
@@ -1124,9 +1114,7 @@ function function_27d5d349() {
         return;
     }
     for (i = 0; i < level.deathcircles.size; i++) {
-        /#
-            assert(i < 14, "<unknown string>");
-        #/
+        assert(i < 14, "<unknown string>");
         circle = level.deathcircles[i];
         match_record::function_7a93acec(#"death_circle", i, #"origin", circle.origin);
         match_record::set_stat(#"death_circle", i, #"radius", int(circle.radius));
@@ -1311,13 +1299,13 @@ function private debug_loop() {
                     var_c3685153 = function_507ec82a(host, origin, 500);
                     sphere(origin, 16 * var_c3685153, (0, 1, 1));
                     print3d(origin, "<unknown string>", (1, 1, 1), 1, var_c3685153, 1, 1);
-                    line(origin2d + vectorscale((0, 0, 1), 20000), origin2d + vectorscale((0, 0, -1), 10000), (0, 1, 1));
+                    line(origin2d + (0, 0, 20000), origin2d + (0, 0, -10000), (0, 1, 1));
                 }
                 foreach (center in level.var_47947565) {
-                    line(center, center + vectorscale((0, 0, 1), 500), (1, 0, 1));
+                    line(center, center + (0, 0, 500), (1, 0, 1));
                 }
                 foreach (origin in level.var_475c53d7) {
-                    line(origin, origin + vectorscale((0, 0, 1), 10000), (1, 0, 0));
+                    line(origin, origin + (0, 0, 10000), (1, 0, 0));
                 }
             }
             if (getdvarint(#"hash_4c1be22e9ad0498b", 1)) {
@@ -1338,8 +1326,8 @@ function private debug_loop() {
                     }
                     pos = trace[#"position"];
                     textscale = function_507ec82a(host, pos, 750);
-                    line(pos, pos + vectorscale((0, 0, 1), 5000), var_95341914);
-                    print3d(pos + vectorscale((0, 0, 1), 8), label, (1, 1, 1), 1, textscale, 1, 1);
+                    line(pos, pos + (0, 0, 5000), var_95341914);
+                    print3d(pos + (0, 0, 8), label, (1, 1, 1), 1, textscale, 1, 1);
                 }
             }
             if (getdvarint(#"hash_4ad1e4d0877ddaa3", 0)) {
@@ -1472,9 +1460,7 @@ function private simulate(var_1baf9723) {
     /#
         sim_count = 1000;
         var_9a165bb5 = 100;
-        /#
-            assert(var_1baf9723);
-        #/
+        assert(var_1baf9723);
         var_f3ca456b = [];
         for (i = 0; i < sim_count; i++) {
             devgui_shuffle();
@@ -1509,7 +1495,7 @@ function private simulate(var_1baf9723) {
 function private draw_circle(circle, index, color, groundtrace) {
     /#
         origin = groundtrace ? isdefined(circle.tracepos) ? circle.tracepos : circle.origin : circle.origin;
-        printorigin = origin + vectorscale((0, 0, 1), 2000);
+        printorigin = origin + (0, 0, 2000);
         var_6970fc75 = string(index);
         var_6970fc75 = var_6970fc75 + "<unknown string>" + (isdefined(circle.attempts) ? circle.attempts : "<unknown string>");
         var_6970fc75 = var_6970fc75 + "<unknown string>" + circle.radius;

@@ -68,14 +68,14 @@ function function_58bee038(var_743c45a5, spawn_ai, max_ai, var_93847faa, var_b9c
                 }
                 if (isdefined(level.var_362ad52e) && level.var_2db12862[i] == level.var_362ad52e) {
                     if (!level.var_2db12862[i].enable) {
-                        level.var_472721ed[i].color = vectorscale((0, 1, 0), 0.4);
+                        level.var_472721ed[i].color = (0, 0.4, 0);
                     } else {
                         level.var_472721ed[i].color = (0, 1, 0);
                     }
                 } else if (level.var_2db12862[i].enable) {
                     level.var_472721ed[i].color = (1, 1, 1);
                 } else {
-                    level.var_472721ed[i].color = vectorscale((1, 1, 1), 0.4);
+                    level.var_472721ed[i].color = (0.4, 0.4, 0.4);
                 }
                 text = "<unknown string>" + level.var_2db12862[i].sm_id + "<unknown string>";
                 text = text + "<unknown string>" + level.var_2db12862[i].spawncount;
@@ -206,8 +206,8 @@ function function_258a6c7() {
                         current_spawner = spawn_manager.spawners[i];
                         if (isdefined(current_spawner) && current_spawner.count > 0) {
                             var_20c0d5a8 = current_spawner.var_7600cd86 - current_spawner.var_5ee53e3.size;
-                            print3d(current_spawner.origin + vectorscale((0, 0, 1), 65), "<unknown string>" + current_spawner.count, (0, 1, 0), 1, 1.25, 2);
-                            print3d(current_spawner.origin + vectorscale((0, 0, 1), 85), "<unknown string>" + current_spawner.var_5ee53e3.size + "<unknown string>" + var_20c0d5a8 + "<unknown string>" + current_spawner.var_7600cd86, (0, 1, 0), 1, 1.25, 2);
+                            print3d(current_spawner.origin + (0, 0, 65), "<unknown string>" + current_spawner.count, (0, 1, 0), 1, 1.25, 2);
+                            print3d(current_spawner.origin + (0, 0, 85), "<unknown string>" + current_spawner.var_5ee53e3.size + "<unknown string>" + var_20c0d5a8 + "<unknown string>" + current_spawner.var_7600cd86, (0, 1, 0), 1, 1.25, 2);
                         }
                     }
                 }
@@ -226,7 +226,7 @@ function function_faf13f8e(text) {
     /#
         self endon(#"death");
         while (true) {
-            print3d(self.origin + vectorscale((0, 0, 1), 65), text, (0.48, 9.4, 0.76), 1, 1);
+            print3d(self.origin + (0, 0, 65), text, (0.48, 9.4, 0.76), 1, 1);
             waitframe(1);
         }
     #/
@@ -549,24 +549,12 @@ function function_2973e587() {
             self.var_7600cd86 = randomintrange(self.var_2023678c, self.var_b02a42f7 + 1);
         }
         self.spawners = self function_bf4a387a();
-        /#
-            assert(self.count >= self.var_e7162da5);
-        #/
-        /#
-            assert(self.count <= self.var_af7f3520);
-        #/
-        /#
-            assert(self.var_7600cd86 >= self.var_2023678c);
-        #/
-        /#
-            assert(self.var_7600cd86 <= self.var_b02a42f7);
-        #/
-        /#
-            assert(self.var_ff71eda6 <= self.var_7600cd86);
-        #/
-        /#
-            assert(self.var_3ea8113 <= self.var_7600cd86);
-        #/
+        assert(self.count >= self.var_e7162da5);
+        assert(self.count <= self.var_af7f3520);
+        assert(self.var_7600cd86 >= self.var_2023678c);
+        assert(self.var_7600cd86 <= self.var_b02a42f7);
+        assert(self.var_ff71eda6 <= self.var_7600cd86);
+        assert(self.var_3ea8113 <= self.var_7600cd86);
     #/
 }
 

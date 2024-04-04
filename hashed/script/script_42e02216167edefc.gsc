@@ -32,9 +32,7 @@ function function_b5f93b3b(&array) {
 // Checksum 0xf4dced4e, Offset: 0x470
 // Size: 0x16a
 function function_72c2ebdd(array, weights) {
-    /#
-        assert(array.size == weights.size);
-    #/
+    assert(array.size == weights.size);
     if (array.size > 0) {
         var_766a145f = 0;
         keys = getarraykeys(array);
@@ -241,9 +239,7 @@ function private function_f27dcbdb(var_ac850bbc) {
         for (var_8d2452c7 = mins.row; var_8d2452c7 + 3 - 1 <= maxs.row; var_8d2452c7++) {
             var_dab090bb = 3;
             var_45f39b76 = grid[var_8d2452c7 + 1][var_155fb1e0 + 2];
-            /#
-                assert(isdefined(var_45f39b76));
-            #/
+            assert(isdefined(var_45f39b76));
             if (!isdefined(var_45f39b76.exits) || isdefined(var_45f39b76.var_4e8e65e4) && var_45f39b76.var_4e8e65e4 != 2) {
                 continue;
             }
@@ -771,16 +767,16 @@ function private function_edc68cbd(grid) {
                 return;
             }
             for (i = 0; i < 25; i++) {
-                line(grid[i][0].origin + vectorscale((-1, 1, 0), 512), grid[i][24].origin + vectorscale((1, 1, 0), 512), boxcolor);
+                line(grid[i][0].origin + (-512, 512, 0), grid[i][24].origin + (512, 512, 0), boxcolor);
             }
-            line(grid[24][0].origin + vectorscale((-1, -1, 0), 512), grid[24][24].origin + vectorscale((1, -1, 0), 512), boxcolor);
+            line(grid[24][0].origin + (-512, -512, 0), grid[24][24].origin + (512, -512, 0), boxcolor);
             for (j = 0; j < 25; j++) {
-                line(grid[0][j].origin + vectorscale((-1, 1, 0), 512), grid[24][j].origin + vectorscale((-1, -1, 0), 512), boxcolor);
+                line(grid[0][j].origin + (-512, 512, 0), grid[24][j].origin + (-512, -512, 0), boxcolor);
             }
-            line(grid[0][24].origin + vectorscale((1, 1, 0), 512), grid[24][24].origin + vectorscale((1, -1, 0), 512), boxcolor);
+            line(grid[0][24].origin + (512, 512, 0), grid[24][24].origin + (512, -512, 0), boxcolor);
             for (i = 0; i < 25; i++) {
                 for (j = 0; j < 25; j++) {
-                    print3d(grid[i][j].origin + vectorscale((0, 0, 1), 12), "<unknown string>" + i + "<unknown string>" + j + "<unknown string>", boxcolor, 1, 5);
+                    print3d(grid[i][j].origin + (0, 0, 12), "<unknown string>" + i + "<unknown string>" + j + "<unknown string>", boxcolor, 1, 5);
                 }
             }
             waitframe(1);

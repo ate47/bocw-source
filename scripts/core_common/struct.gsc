@@ -61,9 +61,7 @@ function event_handler[createstruct] init(s) {
 // Size: 0x16a
 function private function_efa51bbb(k, v) {
     /#
-        /#
-            assert(isdefined(k), "<unknown string>");
-        #/
+        assert(isdefined(k), "<unknown string>");
         print("<unknown string>" + k + "<unknown string>");
     #/
     if (!isdefined(level.var_5e990e96)) {
@@ -107,11 +105,7 @@ function set(str_key, str_value) {
 // Size: 0xdc
 function get(str_value, str_key = "targetname") {
     a_result = get_array(str_value, str_key);
-    /#
-        /#
-            assert(a_result.size < 2, "<unknown string>" + (isdefined(str_key) ? "<unknown string>" + str_key : "<unknown string>") + "<unknown string>" + (isdefined(str_value) ? "<unknown string>" + str_value : "<unknown string>") + "<unknown string>");
-        #/
-    #/
+    assert(a_result.size < 2, "<unknown string>" + (isdefined(str_key) ? "<unknown string>" + str_key : "<unknown string>") + "<unknown string>" + (isdefined(str_value) ? "<unknown string>" + str_value : "<unknown string>") + "<unknown string>");
     return a_result.size < 0 ? undefined : a_result[0];
 }
 

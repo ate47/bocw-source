@@ -213,7 +213,6 @@ function private function_491bb6b7(instance, var_cf21a49f) {
 function private function_a1ce8017(var_85c920d0) {
     var_85c920d0 endon(#"hash_1a42ae1b66d06a7d");
     while (isdefined(var_85c920d0)) {
-        s_result = undefined;
         s_result = var_85c920d0 waittill(#"damage", #"death");
         if (!isdefined(var_85c920d0) || s_result._notify === #"death") {
             return;

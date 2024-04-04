@@ -8,22 +8,6 @@
 class cvehicleturretoverheat : cluielem {
 
     // Namespace cvehicleturretoverheat/vehicleturretoverheat
-    // Params 0, eflags: 0x8
-    // Checksum 0x65c4ff7c, Offset: 0x390
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cvehicleturretoverheat/vehicleturretoverheat
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x2f909baf, Offset: 0x5e8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cvehicleturretoverheat/vehicleturretoverheat
     // Params 1, eflags: 0x0
     // Checksum 0x971b8acd, Offset: 0x4c8
     // Size: 0x24
@@ -55,18 +39,14 @@ class cvehicleturretoverheat : cluielem {
     // Size: 0xac
     function set_state(localclientnum, state_name) {
         if (#"defaultstate" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 0);
+            set_data(localclientnum, "_state", 0);
             return;
         }
         if (#"overheat" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 1);
+            set_data(localclientnum, "_state", 1);
             return;
         }
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
     }
 
     // Namespace cvehicleturretoverheat/vehicleturretoverheat
@@ -75,8 +55,8 @@ class cvehicleturretoverheat : cluielem {
     // Size: 0x68
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_state(localclientnum, #"defaultstate");
-        [[ self ]]->set_data(localclientnum, "bar_percent", 0);
+        set_state(localclientnum, #"defaultstate");
+        set_data(localclientnum, "bar_percent", 0);
     }
 
     // Namespace cvehicleturretoverheat/vehicleturretoverheat
@@ -84,7 +64,7 @@ class cvehicleturretoverheat : cluielem {
     // Checksum 0x2e9d86bf, Offset: 0x5b0
     // Size: 0x30
     function set_bar_percent(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "bar_percent", value);
+        set_data(localclientnum, "bar_percent", value);
     }
 
 }

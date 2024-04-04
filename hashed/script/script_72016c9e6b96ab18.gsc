@@ -86,9 +86,7 @@ function private function_b8f86396(params) {
         if (params.name == "<unknown string>") {
             var_e3ffeeb4 = params.value;
             if (var_e3ffeeb4 > -1) {
-                /#
-                    assert(var_e3ffeeb4 < level.var_e85d5a3f.var_e4f193a3.size);
-                #/
+                assert(var_e3ffeeb4 < level.var_e85d5a3f.var_e4f193a3.size);
                 var_fb7d23d9 = level.var_e85d5a3f.var_e4f193a3[var_e3ffeeb4];
                 player function_18198dfb(var_fb7d23d9.bitflag);
                 setdvar(#"hash_1d3ff4dcafbd084e", -1);
@@ -98,9 +96,7 @@ function private function_b8f86396(params) {
         if (params.name == "<unknown string>") {
             var_eccea24e = params.value;
             if (var_eccea24e > -1) {
-                /#
-                    assert(var_eccea24e < level.var_e85d5a3f.var_e4f193a3.size);
-                #/
+                assert(var_eccea24e < level.var_e85d5a3f.var_e4f193a3.size);
                 var_fb7d23d9 = level.var_e85d5a3f.var_e4f193a3[var_eccea24e];
                 player function_1c1fa213(var_fb7d23d9.bitflag);
                 setdvar(#"hash_35ef1fad3aba3507", -1);
@@ -146,7 +142,7 @@ function private function_30a971a4() {
             hudelem settext(trait.ref_name + "<unknown string>");
             hudelem.var_16021753 = 0;
             hudelem.var_300d73bc = 0;
-            hudelem.color = vectorscale((1, 1, 1), 0.75);
+            hudelem.color = (0.75, 0.75, 0.75);
             player.var_adeb44c2[i] = hudelem;
         }
         while (true) {
@@ -172,7 +168,7 @@ function private function_30a971a4() {
                         hudelem.color = (0, 1, 0);
                     } else {
                         var_63d9d5cb = var_63d9d5cb + "<unknown string>";
-                        hudelem.color = vectorscale((1, 1, 1), 0.75);
+                        hudelem.color = (0.75, 0.75, 0.75);
                     }
                     if (var_300d73bc == -1) {
                         var_63d9d5cb = var_63d9d5cb + "<unknown string>";
@@ -239,9 +235,7 @@ function function_d9b59414(var_f2c93983) {
             return trait.bitflag;
         }
     }
-    /#
-        assertmsg("<unknown string>" + var_f2c93983 + "<unknown string>");
-    #/
+    assertmsg("<unknown string>" + var_f2c93983 + "<unknown string>");
 }
 
 // Namespace profile_traits/profile_traits
@@ -258,9 +252,7 @@ function function_56266435() {
 // Checksum 0xa898f2de, Offset: 0xdf8
 // Size: 0xa2
 function function_a996bd5e(var_f03e5d1b) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     player = self;
     var_b3903404 = player savegame::function_2ee66e93("savegame_personal_trait_flags", undefined);
     if (!isdefined(var_b3903404)) {
@@ -275,9 +267,7 @@ function function_a996bd5e(var_f03e5d1b) {
 // Checksum 0x66fcf477, Offset: 0xea8
 // Size: 0xbc
 function function_18198dfb(var_f03e5d1b) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     player = self;
     var_b3903404 = player savegame::function_2ee66e93("savegame_personal_trait_flags", undefined);
     if (!isdefined(var_b3903404)) {
@@ -293,9 +283,7 @@ function function_18198dfb(var_f03e5d1b) {
 // Checksum 0xb617d7c4, Offset: 0xf70
 // Size: 0x21c
 function function_1c1fa213(var_f03e5d1b) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     player = self;
     var_b3903404 = player savegame::function_2ee66e93("savegame_personal_trait_flags", undefined);
     if (!isdefined(var_b3903404)) {
@@ -308,9 +296,7 @@ function function_1c1fa213(var_f03e5d1b) {
             } else if (trait.ref_name == "jugernog") {
                 player player::function_b933de24("jugernog", 0);
             }
-            /#
-                println("<unknown string>" + trait.ref_name + "<unknown string>");
-            #/
+            println("<unknown string>" + trait.ref_name + "<unknown string>");
         }
     }
     if (var_b3903404 & var_f03e5d1b) {
@@ -325,9 +311,7 @@ function function_1c1fa213(var_f03e5d1b) {
 // Checksum 0x7c4b5843, Offset: 0x1198
 // Size: 0x1e8
 function function_d53bb873() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     player = self;
     var_b3903404 = player savegame::function_2ee66e93("savegame_personal_trait_flags", undefined);
     if (!isdefined(var_b3903404)) {
@@ -342,9 +326,7 @@ function function_d53bb873() {
                 player.health = 125;
                 player.maxhealth = 125;
             }
-            /#
-                println("<unknown string>" + trait.ref_name + "<unknown string>");
-            #/
+            println("<unknown string>" + trait.ref_name + "<unknown string>");
         }
     }
 }

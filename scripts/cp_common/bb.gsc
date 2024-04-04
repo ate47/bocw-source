@@ -55,7 +55,6 @@ function private function_70635e9d() {
     self endon("757ff94f2b51b3cb");
     waitframe(1);
     while (isdefined(level.var_a8072505)) {
-        event = undefined;
         event = self waittill(#"hash_543e034b500f035d");
         enemies = getaiteamarray("axis");
         var_f5c94561 = -1;
@@ -84,7 +83,6 @@ function private function_88a4e45c() {
     self notify("51e343fcfe3f702b");
     self endon("51e343fcfe3f702b");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"weapon_switch_started");
         curweap = self getcurrentweapon();
         if (waitresult.weapon !== curweap) {

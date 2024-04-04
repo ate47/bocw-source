@@ -40,7 +40,7 @@ function function_9c4c4f14(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_f9e742c3 = util::playfxontag(fieldname, "sr/fx9_obj_secure_rocket_hatch_glow", self, "tag_origin");
         self.var_e8d3ed49 = util::playfxontag(fieldname, "sr/fx9_obj_secure_rocket_hatch_glow_cracks", self, "tag_origin");
         wait(2.5);
-        playfx(fieldname, "zombie/fx9_player_shockwave_retrieval", self.origin + vectorscale((0, 0, 1), 40), anglestoforward(self.angles));
+        playfx(fieldname, "zombie/fx9_player_shockwave_retrieval", self.origin + (0, 0, 40), anglestoforward(self.angles));
         self playsound(fieldname, #"hash_76f535e311924a02");
         wait(0.5);
         if (isdefined(self.var_e8d3ed49)) {

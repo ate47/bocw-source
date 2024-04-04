@@ -89,28 +89,20 @@ function private give_item(weapon_name) {
 // Size: 0x284
 function give_weapon(weaponname, attachmentnames) {
     if (!isplayer(self)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     if (!isstring(weaponname) && !ishash(weaponname)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     if (isdefined(attachmentnames) && !isarray(attachmentnames)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     weapon = item_world_util::function_49ce7663(weaponname);
     if (!isdefined(weapon)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     var_fa3df96 = self item_inventory::function_e66dcff5(weapon);
@@ -118,9 +110,7 @@ function give_weapon(weaponname, attachmentnames) {
         weapon.attachments = [];
         foreach (attachmentname in attachmentnames) {
             if (!isstring(attachmentname) && !ishash(attachmentname)) {
-                /#
-                    assert(0);
-                #/
+                assert(0);
                 return;
             }
             attachment = item_world_util::function_49ce7663(attachmentname + "_t9_item");
@@ -137,15 +127,11 @@ function give_weapon(weaponname, attachmentnames) {
 // Size: 0x44c
 function function_e97afe1(player, class_num, var_66b7a94e = undefined) {
     if (!isplayer(player)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     if (!isint(class_num)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     function_8c49355e();

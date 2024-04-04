@@ -25,9 +25,7 @@ function private preinit() {
 // Checksum 0x8c74cf3, Offset: 0x138
 // Size: 0x84
 function function_98fbeac1(e_player, steps) {
-    /#
-        assert(8 - 1 >= steps);
-    #/
+    assert(8 - 1 >= steps);
     var_4b635559 = int(steps * (8 - 1));
     e_player serverfield::set("minigame_progress", var_4b635559);
 }

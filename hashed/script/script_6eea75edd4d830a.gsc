@@ -18,9 +18,7 @@ function ease_dvar(dvar, var_c7ec7d60, value, time, ease_type, ease_in, ease_out
 // Checksum 0xd0722e04, Offset: 0x1d0
 // Size: 0x18c
 function ease_origin(target, time, ease_type, axis, additive, ease_in, ease_out, var_33ce6852) {
-    /#
-        assert(self != level);
-    #/
+    assert(self != level);
     endons = undefined;
     callback = &function_54354e4e;
     start_value = self.origin;
@@ -30,9 +28,7 @@ function ease_origin(target, time, ease_type, axis, additive, ease_in, ease_out,
         endons = ["ease_origin", "ease_origin_x", "ease_origin_y", "ease_origin_z"];
     }
     if (isdefined(axis)) {
-        /#
-            assert(axis >= 0 && axis <= 2);
-        #/
+        assert(axis >= 0 && axis <= 2);
         start_value = start_value[axis];
     } else {
         axis = -1;
@@ -45,9 +41,7 @@ function ease_origin(target, time, ease_type, axis, additive, ease_in, ease_out,
 // Checksum 0x65315644, Offset: 0x368
 // Size: 0x18c
 function ease_angles(target, time, ease_type, axis, additive, ease_in, ease_out, var_33ce6852) {
-    /#
-        assert(self != level);
-    #/
+    assert(self != level);
     endons = undefined;
     callback = &function_3b3f9801;
     start_value = self.angles;
@@ -57,9 +51,7 @@ function ease_angles(target, time, ease_type, axis, additive, ease_in, ease_out,
         endons = ["ease_angles", "ease_pitch", "ease_yaw", "ease_roll"];
     }
     if (isdefined(axis)) {
-        /#
-            assert(axis >= 0 && axis <= 2);
-        #/
+        assert(axis >= 0 && axis <= 2);
         start_value = start_value[axis];
     } else {
         axis = -1;
@@ -72,12 +64,8 @@ function ease_angles(target, time, ease_type, axis, additive, ease_in, ease_out,
 // Checksum 0x9adf1b30, Offset: 0x500
 // Size: 0x4fe
 function function_d4a4a726(start_value, target_value, time, var_f71e2d8f, ease_type = #"linear", notifies, endons, ease_in, ease_out, var_33ce6852, ...) {
-    /#
-        assert(isdefined(level.ease_funcs));
-    #/
-    /#
-        assert(isdefined(level.ease_funcs[ease_type]));
-    #/
+    assert(isdefined(level.ease_funcs));
+    assert(isdefined(level.ease_funcs[ease_type]));
     if (!isdefined(notifies)) {
         notifies = [];
     } else if (!isarray(notifies)) {

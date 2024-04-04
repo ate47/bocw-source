@@ -534,7 +534,7 @@ function function_8f0687e(prop) {
     if (!isdefined(loc)) {
         return;
     }
-    var_8b84b3ce = groundtrace(loc.origin + vectorscale((0, 0, 1), 32) + vectorscale((0, 0, 1), 8), loc.origin + vectorscale((0, 0, 1), 32) + vectorscale((0, 0, -1), 100000), 0, undefined)[#"position"];
+    var_8b84b3ce = groundtrace(loc.origin + (0, 0, 32) + (0, 0, 8), loc.origin + (0, 0, 32) + (0, 0, -100000), 0, undefined)[#"position"];
     var_8d3beb7f = #"hash_1f82e1c70fdc8f38";
     model2 = #"hash_70a7cdb502d88088";
     var_d661f9f1 = util::spawn_model(array::random([var_8d3beb7f, model2]), var_8b84b3ce, (0, 0, 0));
@@ -549,9 +549,7 @@ function function_8f0687e(prop) {
 // Checksum 0x761bdd85, Offset: 0x2310
 // Size: 0xac
 function function_55657fb4(mimic, trap_prop, &var_a6fe91fd, var_d56229a9) {
-    /#
-        assert(isinarray(var_a6fe91fd, trap_prop), "<unknown string>");
-    #/
+    assert(isinarray(var_a6fe91fd, trap_prop), "<unknown string>");
     function_b714128e(trap_prop, var_a6fe91fd);
     if (isdefined(mimic)) {
         function_4540d40c(mimic, trap_prop);
@@ -564,7 +562,7 @@ function function_55657fb4(mimic, trap_prop, &var_a6fe91fd, var_d56229a9) {
 // Checksum 0x9021c45b, Offset: 0x23c8
 // Size: 0x4e0
 function function_708fe162() {
-    prop_height = vectorscale((0, 0, 1), 64);
+    prop_height = (0, 0, 64);
     players = arraysortclosest(getplayers(undefined, self.origin, 400), self.origin);
     if (players.size) {
         foreach (player in players) {
@@ -603,14 +601,14 @@ function function_708fe162() {
                     continue;
                 }
             }
-            traceresult = physicstraceex(self.origin + vectorscale((0, 0, 1), 23), player.origin + vectorscale((0, 0, 1), 36), vectorscale((-1, -1, -1), 15), vectorscale((1, 1, 1), 15), [self, player]);
+            traceresult = physicstraceex(self.origin + (0, 0, 23), player.origin + (0, 0, 36), (-15, -15, -15), (15, 15, 15), [self, player]);
             if (traceresult[#"fraction"] >= 1) {
                 self notify(#"hash_7fb506f40bcf5962");
                 return player;
             }
             /#
                 if (is_true(level.var_72a9fe4c)) {
-                    line(self.origin + vectorscale((0, 0, 1), 8), player.origin + vectorscale((0, 0, 1), 8), (1, 0, 0), 1, 0, 1);
+                    line(self.origin + (0, 0, 8), player.origin + (0, 0, 8), (1, 0, 0), 1, 0, 1);
                     sphere(traceresult[#"position"], 4, (1, 0, 0), 1, 0, 10, 1);
                 }
             #/
@@ -626,7 +624,7 @@ function trap_thread(&var_a6fe91fd, condition_func) {
     self endon(#"death", #"hash_4b5f92d76d4a73a3");
     level endon(#"game_ended");
     if (!isdefined(self.zone_name)) {
-        self.zone_name = zm_zonemgr::get_zone_from_position(self.origin + vectorscale((0, 0, 1), 15), 1);
+        self.zone_name = zm_zonemgr::get_zone_from_position(self.origin + (0, 0, 15), 1);
     }
     if (isdefined(self.zone_name)) {
         self.pause_trap = 1;
@@ -634,7 +632,6 @@ function trap_thread(&var_a6fe91fd, condition_func) {
         self.pause_trap = undefined;
     }
     while (true) {
-        waitresult = undefined;
         waitresult = level waittilltimeout(float(function_60d95f53()) / 1000, #"hash_7fd40fb3202e52db");
         if (is_true(self.pause_trap)) {
             continue;
@@ -765,7 +762,6 @@ function function_82305ba4(model_owner) {
     level endon(#"game_ended");
     var_d4d62b3e = self;
     while (isdefined(var_d4d62b3e)) {
-        waitresult = undefined;
         waitresult = var_d4d62b3e waittill(#"damage");
         var_d4d62b3e.health = isdefined(model_owner.var_a0009315) ? model_owner.var_a0009315 : 50000;
         model_owner dodamage(waitresult.amount, waitresult.position, waitresult.attacker, waitresult.inflictor, undefined, waitresult.mod, waitresult.flags, waitresult.weapon);
@@ -818,9 +814,7 @@ function transform_spawn(prop, &activators, activation_info) {
                 }
             }
         } else {
-            /#
-                println("<unknown string>");
-            #/
+            println("<unknown string>");
         }
     }
     if (!isdefined(prop)) {
@@ -845,9 +839,7 @@ function transform_spawn(prop, &activators, activation_info) {
 // Checksum 0x9bf5e16b, Offset: 0x35c8
 // Size: 0x1b8
 function function_4540d40c(entity, prop) {
-    /#
-        assert(!is_true(entity.var_2ca2d270), "<unknown string>");
-    #/
+    assert(!is_true(entity.var_2ca2d270), "<unknown string>");
     entity.trap_prop = prop;
     entity.var_83fa6083 = 1;
     entity val::set(#"hash_263a780666aef25", "hide", 2);
@@ -1039,7 +1031,6 @@ function function_95f8029e(var_657f8150) {
 // Checksum 0x896d300f, Offset: 0x4078
 // Size: 0x3e
 function function_204a610e(*params) {
-    waitresult = undefined;
     waitresult = self waittill(#"hash_1e8aabc2641542e");
     return waitresult.activator;
 }

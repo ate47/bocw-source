@@ -48,7 +48,6 @@ function private function_80238885() {
     level endon(#"hash_3d8aca70026bca9e");
     self endon(#"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"enter_vehicle");
         var_80730518 = waitresult.vehicle;
         self.var_80730518 = var_80730518;
@@ -75,7 +74,6 @@ function private function_80238885() {
 function private function_d521a2c1() {
     self endon(#"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"exit_vehicle");
         var_80730518 = waitresult.vehicle;
         self.canbemeleed = 1;

@@ -77,9 +77,7 @@ function event_handler[level_init] main(*eventstruct) {
     level.var_fb6c6113 = 0;
     serverfield::register("crab_behavior", 1, 1, "int", &function_bfd9c561);
     level callback::add_callback(#"on_host_migration_end", &hostmigration);
-    /#
-        assert(isdefined(level.var_f18a6bd6), "arena_hold_banner_presentation");
-    #/
+    assert(isdefined(level.var_f18a6bd6), "arena_hold_banner_presentation");
     load::main();
     level.callbackvehicleradiusdamage = &globallogic_vehicle::callback_vehicleradiusdamage;
     level.var_2511b5f1 = 1;
@@ -128,12 +126,12 @@ function function_725dd341() {
         [[ arena ]]->function_b6954aba(entry.activation);
         [[ arena ]]->function_774497ee(entry.shutdown);
     }
-    var_46058269 = doa_wild::function_d5e7454f("jungle_1");
-    [[ var_46058269 ]]->function_b6954aba(&function_89315f8a);
-    [[ var_46058269 ]]->function_774497ee(&function_1f77ea0e);
+    wild = doa_wild::function_d5e7454f("jungle_1");
+    [[ wild ]]->function_b6954aba(&function_89315f8a);
+    [[ wild ]]->function_774497ee(&function_1f77ea0e);
     arena = namespace_8c04284b::function_85c7d70e("island");
     hintpos = [[ arena ]]->function_ffcf1d1();
-    level thread namespace_ec06fe4a::function_87612422(hintpos, vectorscale((0, 1, 0), 180), 100, 20, [[ var_46058269 ]]->function_c8fbcc3f(0));
+    level thread namespace_ec06fe4a::function_87612422(hintpos, (0, 180, 0), 100, 20, [[ wild ]]->function_c8fbcc3f(0));
 }
 
 // Namespace wz_doa/wz_doa
@@ -187,12 +185,10 @@ function function_7957254c() {
     self function_df3a1348();
     self disconnectpaths(0, 0);
     while (true) {
-        result = undefined;
         result = self waittill(#"enter_vehicle", #"exit_vehicle");
         if (result._notify === #"exit_vehicle") {
             disconnect = 1;
             while (self getspeed() > 1) {
-                result = undefined;
                 result = self waittilltimeout(float(function_60d95f53()) / 1000, #"enter_vehicle");
                 if (result._notify === #"enter_vehicle") {
                     disconnect = 0;
@@ -215,9 +211,7 @@ function function_7957254c() {
 // Checksum 0x98d3bc52, Offset: 0x2030
 // Size: 0x16c
 function function_89315f8a(section) {
-    /#
-        assert(level.doa.var_16411829.size == 0);
-    #/
+    assert(level.doa.var_16411829.size == 0);
     level thread function_d85a809b(section);
     if (section.id == 2) {
         objective_setstate(12, "invisible");
@@ -227,7 +221,6 @@ function function_89315f8a(section) {
         if (isdefined(trig)) {
             trig thread function_4b556c52();
         }
-        result = undefined;
         result = level waittill(#"hash_245c04a2fa4ed1d0");
         var_d8e073bd = result.ai;
         var_4c610a3f = getent("giant_skeleton_throne", "targetname");
@@ -243,14 +236,11 @@ function function_4b556c52() {
     self notify("17c0ce2e85a669f2");
     self endon("17c0ce2e85a669f2");
     self endon(#"death");
-    result = undefined;
     result = self waittill(#"trigger");
     if (isplayer(result.activator)) {
         i = 0;
         var_876d2ae2 = struct::get_array("skeleton_cave_warp_spot", "targetname");
-        /#
-            assert(var_876d2ae2.size >= 3);
-        #/
+        assert(var_876d2ae2.size >= 3);
         foreach (player in getplayers()) {
             if (player === result.activator) {
                 continue;
@@ -287,7 +277,6 @@ function function_43cc18d2() {
         if (var_27d6c1c7.size != 2) {
             break;
         }
-        result = undefined;
         result = self waittilltimeout(1, #"damage");
         if (result._notify != #"timeout") {
             break;
@@ -316,7 +305,6 @@ function function_4ab4dc9f(var_d8e073bd, var_4c610a3f) {
         var_d8e073bd forceteleport(tagorigin, tagangles);
         while (true) {
             var_d8e073bd animscripted(var_73eec401, tagorigin, tagangles, var_73eec401, "normal", undefined, 1, 0.2);
-            result = undefined;
             result = var_d8e073bd waittill(var_73eec401, #"hash_324ed30049158b16");
             if (result._notify == #"hash_324ed30049158b16") {
                 namespace_9fc66ac::function_5e3127a5(undefined, "bossfight_00");
@@ -380,24 +368,22 @@ function function_9dbdc114() {
     var_7f432780 = array::randomize(struct::get_array("island_fate_rock_loc", "targetname"));
     var_fe92efd8 = array::randomize(level.doa.var_fe92efd8);
     for (i = 0; i < var_7f432780.size; i++) {
-        /#
-            assert(i < var_fe92efd8.size);
-        #/
-        var_7f2666c4 = var_fe92efd8[i];
-        model = var_7f2666c4.model;
-        var_ea5e17f4 = namespace_ec06fe4a::spawnmodel(var_7f432780[i].origin + vectorscale((0, 0, 1), 1500), model);
+        assert(i < var_fe92efd8.size);
+        fate = var_fe92efd8[i];
+        model = fate.model;
+        var_ea5e17f4 = namespace_ec06fe4a::spawnmodel(var_7f432780[i].origin + (0, 0, 1500), model);
         if (isdefined(var_ea5e17f4)) {
             var_ea5e17f4 solid();
-            var_ea5e17f4.data = var_7f2666c4;
+            var_ea5e17f4.data = fate;
             var_ea5e17f4.context = 1;
             var_ea5e17f4.dest = var_7f432780[i].origin;
-            var_ea5e17f4.angles = var_7f2666c4.var_d75b5b21 + (0, randomint(180), 0);
+            var_ea5e17f4.angles = fate.var_d75b5b21 + (0, randomint(180), 0);
             var_ea5e17f4.objectiveid = 14 + i;
-            var_ea5e17f4 thread namespace_1c2a96f9::function_e4867f1d(var_7f2666c4);
+            var_ea5e17f4 thread namespace_1c2a96f9::function_e4867f1d(fate);
             var_7f432780[i].model = var_ea5e17f4;
             objective_onentity(var_ea5e17f4.objectiveid, var_ea5e17f4);
             objective_setstate(var_ea5e17f4.objectiveid, "active");
-            namespace_1e25ad94::debugmsg("$$$ ROCK " + i + " set to model: " + model + " and assigned to fate: " + var_7f2666c4.var_c8386627);
+            namespace_1e25ad94::debugmsg("$$$ ROCK " + i + " set to model: " + model + " and assigned to fate: " + fate.var_c8386627);
         }
     }
     timeout = 45000 + gettime();
@@ -431,7 +417,7 @@ function function_9dbdc114() {
             var_7f432780[i].model.trigger delete();
         }
         if (isdefined(var_7f432780[i].model)) {
-            var_7f432780[i].model moveto(var_7f432780[i].model.origin + vectorscale((0, 0, 1), 1500), 1);
+            var_7f432780[i].model moveto(var_7f432780[i].model.origin + (0, 0, 1500), 1);
             wait(0.2);
             if (isdefined(var_7f432780[i].model)) {
                 var_7f432780[i].model delete();
@@ -522,9 +508,9 @@ function function_863ffeba() {
         }
         if (level.doa.roundnumber == 4) {
             changeadvertisedstatus(0, 1);
-            var_46058269 = doa_wild::function_d5e7454f("jungle_1");
-            hintpos = [[ var_46058269 ]]->function_70111aa4(0);
-            level thread namespace_ec06fe4a::function_87612422(hintpos.origin, hintpos.angles, 0.25, 9999999, [[ var_46058269 ]]->function_c8fbcc3f(0));
+            wild = doa_wild::function_d5e7454f("jungle_1");
+            hintpos = [[ wild ]]->function_70111aa4(0);
+            level thread namespace_ec06fe4a::function_87612422(hintpos.origin, hintpos.angles, 0.25, 9999999, [[ wild ]]->function_c8fbcc3f(0));
             if (isdefined(level.doa.var_39e3fa99) && !is_true(level.doa.var_318aa67a)) {
                 var_65bccf6 = namespace_dfc652ee::function_57160cba(3);
                 [[ var_65bccf6 ]]->function_772950ea(1);
@@ -601,9 +587,9 @@ function function_863ffeba() {
                 if (!is_true(level.var_e5d89122)) {
                     level thread function_dc41b38();
                     level waittill(#"hash_5579b42bba29dd0f");
-                    var_46058269 = doa_wild::function_d5e7454f("jungle_1");
-                    hintpos = [[ var_46058269 ]]->function_70111aa4(0);
-                    level thread namespace_ec06fe4a::function_87612422(hintpos.origin, hintpos.angles, 0.5, 999999, [[ var_46058269 ]]->function_c8fbcc3f(0));
+                    wild = doa_wild::function_d5e7454f("jungle_1");
+                    hintpos = [[ wild ]]->function_70111aa4(0);
+                    level thread namespace_ec06fe4a::function_87612422(hintpos.origin, hintpos.angles, 0.5, 999999, [[ wild ]]->function_c8fbcc3f(0));
                 }
             }
         }
@@ -692,7 +678,6 @@ function function_b11eca29() {
     var_750f1960 = struct::get("rof_keyspawn_loc", "targetname");
     while (isdefined(level.doa.var_a77e6349)) {
         while (true) {
-            result = undefined;
             result = level waittilltimeout(1, #"hash_3bbf4237ccea5dd5");
             if (result._notify == #"hash_3bbf4237ccea5dd5") {
                 return;
@@ -750,11 +735,10 @@ function function_d723726a() {
         [[ level.doa.var_39e3fa99 ]]->function_68400720(1);
     } else {
         level.doa.var_6b57e2f = &function_9e356c78;
-        var_46058269 = doa_wild::function_d5e7454f("jungle_1");
-        hintpos = [[ var_46058269 ]]->function_70111aa4(2);
-        level thread namespace_ec06fe4a::function_87612422(hintpos.origin, hintpos.angles, 0.1, 999999, [[ var_46058269 ]]->function_c8fbcc3f(2));
+        wild = doa_wild::function_d5e7454f("jungle_1");
+        hintpos = [[ wild ]]->function_70111aa4(2);
+        level thread namespace_ec06fe4a::function_87612422(hintpos.origin, hintpos.angles, 0.1, 999999, [[ wild ]]->function_c8fbcc3f(2));
     }
-    result = undefined;
     result = level waittill(#"waiting_on_player_exit_teleporteronly", #"waiting_on_player_exit_decidechoice");
     foreach (player in namespace_7f5aeb59::function_23e1f90f()) {
         player notify(#"hash_279998c5df86c04d");
@@ -762,9 +746,7 @@ function function_d723726a() {
     if (!is_true(level.var_e5d89122)) {
         if (var_72bee225) {
             level waittill(#"hash_62332fcf2ebc16d1", #"hash_2a3cff0bb22ed26d");
-            /#
-                assert(isdefined(level.doa.var_a77e6349));
-            #/
+            assert(isdefined(level.doa.var_a77e6349));
             if (isdefined(level.doa.var_a77e6349)) {
                 [[ level.doa.var_a77e6349 ]]->function_1137c8bb();
             }
@@ -806,7 +788,7 @@ function function_96372153() {
     }
     blocker = getent("ROF_backblocker", "targetname");
     startloc = blocker.origin;
-    blocker.origin = blocker.origin + vectorscale((0, 0, 1), 160);
+    blocker.origin = blocker.origin + (0, 0, 160);
     blocker solid();
     blocker disconnectpaths();
     level waittill(#"game_over");
@@ -899,7 +881,6 @@ function function_231e7cd8(fxname, *type, min = 0.6, max = 2, stop = 1, delay = 
         delay = randomfloatrange(min, max);
         /#
         #/
-        result = undefined;
         result = self waittilltimeout(delay, #"stop_fx");
         if (stop || result._notify == #"stop_fx") {
             if (isdefined(var_47242ffa)) {
@@ -962,7 +943,6 @@ function function_821f3d71() {
         foreach (fxloc in var_3a602ebe) {
             fxloc.var_f3b82c6d thread function_231e7cd8("water_geyser_sm", "warn", 2, 4);
         }
-        result = undefined;
         result = level waittilltimeout(randomintrange(10, 16), #"hash_2282d796a1f7533a");
         if (result._notify === #"hash_2282d796a1f7533a") {
             continue;
@@ -1053,7 +1033,6 @@ function function_4eaa5cb4() {
         setsaveddvar(#"hash_70e9b7babe37bd", 0.8);
         setsaveddvar(#"hash_49d79caf54cdbf0e", 20);
         setsaveddvar(#"hash_334540b72330f0d0", 60);
-        result = undefined;
         result = level waittill(#"hash_7270a59e1f502d96");
         setsaveddvar(#"hash_70e9b7babe37bd", var_736dd93a);
         setsaveddvar(#"hash_49d79caf54cdbf0e", var_b2f4c996);
@@ -1096,9 +1075,7 @@ function function_cd588c9f() {
 // Size: 0xe2
 function function_b5abde0c() {
     [[ level.doa.var_39e3fa99 ]]->function_6d5262dc(32 + (getplayers().size - 1) * getdvarint(#"hash_f59b123b8f7c868", 4) + level.doa.var_6c58d51 * 8);
-    /#
-        assert(level.doa.var_65a70dc != function_d7c5adee("zombietron_extra_life"), "wolf_hellhound");
-    #/
+    assert(level.doa.var_65a70dc != function_d7c5adee("zombietron_extra_life"), "wolf_hellhound");
     level.doa.var_65a70dc = doa_enemy::function_d7c5adee("basic_zombie");
 }
 
@@ -1134,9 +1111,7 @@ function function_a80babc3() {
     [[ level.doa.var_39e3fa99 ]]->function_6d5262dc(28 + (getplayers().size - 1) * getdvarint(#"hash_f59b123b8f7c868", 4) + level.doa.var_6c58d51 * 8);
     var_36a503f5 = struct::get_array("frontyard_mowers");
     foreach (var_30f23074 in var_36a503f5) {
-        /#
-            assert(!isdefined(var_30f23074.var_92595434), "face enemy");
-        #/
+        assert(!isdefined(var_30f23074.var_92595434), "face enemy");
         if (isdefined(var_30f23074.var_92595434)) {
             continue;
         }
@@ -1178,7 +1153,6 @@ function function_a80babc3() {
 function function_577f978a() {
     self endon(#"death");
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         guy = result.activator;
         if (!isdefined(guy)) {
@@ -1211,7 +1185,7 @@ function function_577f978a() {
         }
         if (!is_true(guy.var_e66cd6fb)) {
             guy.launched = 1;
-            guy thread namespace_ec06fe4a::function_b4ff2191(vectorscale((0, 0, 1), 220), 180);
+            guy thread namespace_ec06fe4a::function_b4ff2191((0, 0, 220), 180);
             guy namespace_e32bb68::function_3a59ec34("zmb_ragdoll_launched");
             continue;
         }
@@ -1235,7 +1209,7 @@ function function_2d612a87() {
             self.trigger triggerenable(0);
             self namespace_83eb6304::turnofffx("lawn_mower");
             wait(1);
-            self rotateto(self.angles + vectorscale((0, 1, 0), 180), 4);
+            self rotateto(self.angles + (0, 180, 0), 4);
             self waittill(#"rotatedone");
             target = struct::get(target.target);
         }
@@ -1275,12 +1249,11 @@ function function_c32a6622() {
         [[ level.doa.var_39e3fa99 ]]->setwild(undefined);
         [[ level.doa.var_39e3fa99 ]]->function_68400720(1);
     }
-    result = undefined;
     result = level waittill(#"waiting_on_player_exit_teleporteronly", #"waiting_on_player_exit_decidechoice");
     if (result._notify == "waiting_on_player_exit_DecideChoice") {
-        var_46058269 = doa_wild::function_d5e7454f("jungle_1");
-        hintpos = [[ var_46058269 ]]->function_70111aa4(3);
-        level thread namespace_ec06fe4a::function_87612422(hintpos.origin, hintpos.angles, 0.1, 999999, [[ var_46058269 ]]->function_c8fbcc3f(3));
+        wild = doa_wild::function_d5e7454f("jungle_1");
+        hintpos = [[ wild ]]->function_70111aa4(3);
+        level thread namespace_ec06fe4a::function_87612422(hintpos.origin, hintpos.angles, 0.1, 999999, [[ wild ]]->function_c8fbcc3f(3));
     }
 }
 
@@ -1299,7 +1272,7 @@ function function_a9f65217() {
 // Size: 0x154
 function function_86431fee(var_2c7cecea) {
     self endon(#"death");
-    var_4c5fe7c6 = var_2c7cecea.origin + vectorscale((0, 0, 1), 450);
+    var_4c5fe7c6 = var_2c7cecea.origin + (0, 0, 450);
     anchor = namespace_ec06fe4a::spawnmodel(var_2c7cecea.origin);
     anchor enablelinkto();
     anchor thread namespace_ec06fe4a::function_d55f042c(self, "death");
@@ -1533,7 +1506,6 @@ function function_99072b0f(var_ae0093c9) {
     self notify("6978784ee8a00cdb");
     self endon("6978784ee8a00cdb");
     level endon(#"game_over");
-    result = undefined;
     result = level waittill(#"hash_1ebd993fc32acc25");
     if (result.egg !== var_ae0093c9) {
         level thread function_99072b0f(var_ae0093c9);
@@ -1622,7 +1594,7 @@ function function_89106e27(var_f1280ed2 = 2) {
         if (isdefined(sword)) {
             var_9958214e enablelinkto();
             sword thread namespace_ec06fe4a::function_d55f042c(var_9958214e, "death");
-            sword linkto(var_9958214e, "tag_crab_animate", (23, -26, -12), vectorscale((0, -1, 0), 12));
+            sword linkto(var_9958214e, "tag_crab_animate", (23, -26, -12), (0, -12, 0));
         }
     }
     wait(var_f1280ed2);
@@ -1851,7 +1823,7 @@ function function_249cea33(var_8028986b = 1) {
         if (!function_520814d5(player, var_8028986b)) {
             continue;
         }
-        if (is_true(player.doa.var_3e81d24c) == 0) {
+        if (is_true(player.doa.infps) == 0) {
             continue;
         }
         if (!util::within_fov(player.origin, player.angles, self.origin, 0.7)) {
@@ -2171,7 +2143,6 @@ function function_ec356b51() {
 // Checksum 0x14d58924, Offset: 0x9f58
 // Size: 0x1e8
 function function_dc41b38() {
-    result = undefined;
     result = level waittill(#"hash_3004b3af4b0e5aa0");
     teleporter = result.teleporter;
     teleporter endon(#"death");
@@ -2190,7 +2161,6 @@ function function_dc41b38() {
             waitframe(1);
             continue;
         }
-        result = undefined;
         result = teleporter.trigger waittill(#"trigger");
         if (isdefined(result.activator)) {
             player = result.activator;
@@ -2285,7 +2255,7 @@ function function_ae378de8() {
         wait(1.25);
     }
     if (isdefined(silverback)) {
-        var_26e4879c = [[ level.doa.var_39e3fa99 ]]->function_ffcf1d1() + vectorscale((0, 0, 1), 20);
+        var_26e4879c = [[ level.doa.var_39e3fa99 ]]->function_ffcf1d1() + (0, 0, 20);
         bombmodel = namespace_ec06fe4a::spawnmodel(silverback gettagorigin("j_wrist_le"), "zombietron_silverback_bomb", (0, 0, 0), "zombietron_silverback_bomb");
         v1 = 0.77;
         zup = 440;
@@ -2333,14 +2303,14 @@ function function_ae378de8() {
         silverback.var_febfd0.angles = silverback.angles;
         silverback.var_febfd0.origin = silverback.origin;
         silverback linkto(silverback.var_febfd0);
-        destination = silverback.var_febfd0.origin + vectorscale((0, 0, -1), 400);
+        destination = silverback.var_febfd0.origin + (0, 0, -400);
         silverback.var_febfd0 thread function_dbe90b58();
         silverback.var_febfd0 moveto(destination, 5, 4);
     }
     if (isdefined(fxorg)) {
         fxorg.targetname = "tesla_trail";
         fxorg namespace_83eb6304::function_3ecfde67("tesla_trail");
-        fxorg moveto(bombmodel.origin + vectorscale((0, 0, 1), 42), 0.6);
+        fxorg moveto(bombmodel.origin + (0, 0, 42), 0.6);
         fxorg waittilltimeout(0.6, #"movedone");
         fxorg namespace_83eb6304::function_3ecfde67("hazard_electric");
         bombmodel namespace_83eb6304::function_3ecfde67("bombFuse");

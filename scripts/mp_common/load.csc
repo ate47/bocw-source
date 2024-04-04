@@ -38,9 +38,7 @@ function levelnotifyhandler(clientnum, state, *oldstate) {
 // Checksum 0x14dcc720, Offset: 0x1d0
 // Size: 0x3c
 function autoexec function_aeb1baea() {
-    /#
-        assert(!isdefined(level.var_f18a6bd6));
-    #/
+    assert(!isdefined(level.var_f18a6bd6));
     level.var_f18a6bd6 = &function_5e443ed1;
 }
 
@@ -49,9 +47,7 @@ function autoexec function_aeb1baea() {
 // Checksum 0xb203bc8b, Offset: 0x218
 // Size: 0x14c
 function function_5e443ed1() {
-    /#
-        assert(isdefined(level.first_frame), "<unknown string>");
-    #/
+    assert(isdefined(level.first_frame), "<unknown string>");
     level thread util::init_utility();
     util::registersystem("levelNotify", &levelnotifyhandler);
     register_clientfields();

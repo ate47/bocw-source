@@ -37,9 +37,7 @@ function function_6e4ec2c4(slot, weapon, maxtargets, var_e08793c0, var_efb1ea62,
     if (!isdefined(maxtargets)) {
         maxtargets = getdvarint(#"scr_max_simlocks", 3);
     }
-    /#
-        assert(maxtargets <= 5, "<unknown string>");
-    #/
+    assert(maxtargets <= 5, "<unknown string>");
     self thread function_4b7f8060(slot, weapon, maxtargets, var_e08793c0, var_efb1ea62, var_8ff7e677);
 }
 
@@ -63,7 +61,6 @@ function function_8c4799(weapon) {
     self endon(#"death");
     self notify(#"hash_fd27c03c2898a7b");
     self endon(#"hash_fd27c03c2898a7b", #"hash_28f4b4a3d8b7ffae");
-    waitresult = undefined;
     waitresult = self waittill(#"gadget_forced_off");
     if (weapon == waitresult.weapon) {
         self function_6af99b2e(weapon);

@@ -8,21 +8,8 @@
 // Method(s) 16 Total 23
 class class_1bec696c : cluielem {
 
-    // Namespace class_1bec696c/doa_bannerelement
-    // Params 0, eflags: 0x8
-    // Checksum 0x89fa7a67, Offset: 0x6e0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_1bec696c/doa_bannerelement
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x37905b26, Offset: 0xcc8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_1bec696c/doa_bannerelement
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class class_1bec696c : cluielem {
     // Checksum 0x43eb9d60, Offset: 0xc28
     // Size: 0x44
     function set_horizontal_alignment(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "horizontal_alignment", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "horizontal_alignment", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -45,7 +32,7 @@ class class_1bec696c : cluielem {
     // Checksum 0xa7026f86, Offset: 0xb38
     // Size: 0x44
     function set_green(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "green", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "green", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -53,7 +40,7 @@ class class_1bec696c : cluielem {
     // Checksum 0xf69c5f61, Offset: 0xa48
     // Size: 0x44
     function set_fadeovertime(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "fadeOverTime", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "fadeOverTime", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -69,7 +56,7 @@ class class_1bec696c : cluielem {
     // Checksum 0x6e929b53, Offset: 0x9f8
     // Size: 0x44
     function set_height(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "height", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "height", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -77,7 +64,7 @@ class class_1bec696c : cluielem {
     // Checksum 0xb4469ea0, Offset: 0xb88
     // Size: 0x44
     function set_blue(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "blue", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "blue", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -104,7 +91,7 @@ class class_1bec696c : cluielem {
     // Checksum 0x4921e8a, Offset: 0x9a8
     // Size: 0x44
     function set_y(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "y", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "y", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -112,7 +99,7 @@ class class_1bec696c : cluielem {
     // Checksum 0xefaa3725, Offset: 0xa98
     // Size: 0x44
     function set_alpha(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "alpha", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "alpha", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -120,7 +107,7 @@ class class_1bec696c : cluielem {
     // Checksum 0x301ad6b, Offset: 0xc78
     // Size: 0x44
     function set_scale(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "scale", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "scale", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -128,7 +115,7 @@ class class_1bec696c : cluielem {
     // Checksum 0x18b06992, Offset: 0x958
     // Size: 0x44
     function set_x(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "x", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "x", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -136,7 +123,7 @@ class class_1bec696c : cluielem {
     // Checksum 0xdb2005fc, Offset: 0xbd8
     // Size: 0x44
     function set_text(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "text", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "text", value);
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
@@ -144,7 +131,7 @@ class class_1bec696c : cluielem {
     // Checksum 0x457e9091, Offset: 0xae8
     // Size: 0x44
     function set_red(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "red", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "red", value);
     }
 
 }

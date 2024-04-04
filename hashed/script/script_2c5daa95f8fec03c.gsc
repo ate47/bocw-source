@@ -103,9 +103,7 @@ function function_bd0bd9f4(entity, &var_426069a) {
         entity.var_5ace757d[var_8cc382e6.weakpoint - 1].var_ee8794bf = "" + #"hash_1474b2823ab7e9f3" + clientfield_index;
         entity.var_5ace757d[var_8cc382e6.weakpoint - 1].var_98634dc5 = "" + #"hash_855297c2add300" + clientfield_index;
         clientfield_index++;
-        /#
-            assert(clientfield_index <= 6, "<unknown string>");
-        #/
+        assert(clientfield_index <= 6, "<unknown string>");
     }
 }
 

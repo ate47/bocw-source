@@ -344,7 +344,7 @@ function private weight_actions(&paramslist) {
                 arrayinsert(sortedlist, actionparams, i);
             }
             foreach (actionparams in sortedlist) {
-                color = vectorscale((1, 1, 1), 0.75);
+                color = (0.75, 0.75, 0.75);
                 headerstr = "<unknown string>";
                 recordweight = "<unknown string>";
                 if (isdefined(actionparams.weight)) {

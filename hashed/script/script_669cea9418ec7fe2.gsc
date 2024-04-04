@@ -7,22 +7,6 @@
 // Method(s) 9 Total 16
 class class_c982469d : cluielem {
 
-    // Namespace class_c982469d/zm_corrupted_health_bar
-    // Params 0, eflags: 0x8
-    // Checksum 0xea43070e, Offset: 0x3e0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_c982469d/zm_corrupted_health_bar
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x72f03cdc, Offset: 0x648
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_c982469d/zm_corrupted_health_bar
     // Params 1, eflags: 0x0
     // Checksum 0x44299abf, Offset: 0x570
@@ -44,7 +28,7 @@ class class_c982469d : cluielem {
     // Checksum 0xa8cd27ea, Offset: 0x610
     // Size: 0x30
     function function_74adcd8a(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "armor_vis", value);
+        set_data(localclientnum, "armor_vis", value);
     }
 
     // Namespace namespace_c982469d/zm_corrupted_health_bar
@@ -63,7 +47,7 @@ class class_c982469d : cluielem {
     // Checksum 0xb569f4a0, Offset: 0x5d8
     // Size: 0x30
     function set_armor(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "armor", value);
+        set_data(localclientnum, "armor", value);
     }
 
     // Namespace namespace_c982469d/zm_corrupted_health_bar
@@ -71,7 +55,7 @@ class class_c982469d : cluielem {
     // Checksum 0x52782d7f, Offset: 0x5a0
     // Size: 0x30
     function set_health(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "health", value);
+        set_data(localclientnum, "health", value);
     }
 
     // Namespace namespace_c982469d/zm_corrupted_health_bar
@@ -80,9 +64,9 @@ class class_c982469d : cluielem {
     // Size: 0x88
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "health", 0);
-        [[ self ]]->set_data(localclientnum, "armor", 0);
-        [[ self ]]->set_data(localclientnum, "armor_vis", 0);
+        set_data(localclientnum, "health", 0);
+        set_data(localclientnum, "armor", 0);
+        set_data(localclientnum, "armor_vis", 0);
     }
 
 }

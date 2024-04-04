@@ -168,7 +168,7 @@ function function_c2ba61dd(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0xac
 function function_c3ed4d53(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump == 1) {
-        playfx(fieldname, #"hash_c4e9d4360d7d918", self gettagorigin("tag_origin"), anglestoforward(self.angles + vectorscale((0, 1, 0), 130)));
+        playfx(fieldname, #"hash_c4e9d4360d7d918", self gettagorigin("tag_origin"), anglestoforward(self.angles + (0, 130, 0)));
     }
 }
 
@@ -224,7 +224,7 @@ function function_46350cca(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump == 1) {
         var_4b5cb559 = struct::get_array("mq_br_dr_fx_loc", "targetname");
         foreach (loc in var_4b5cb559) {
-            fx = playfx(fieldname, #"hash_3c35f2b980313a63", loc.origin + vectorscale((0, 0, -1), 50), anglestoforward(loc.angles));
+            fx = playfx(fieldname, #"hash_3c35f2b980313a63", loc.origin + (0, 0, -50), anglestoforward(loc.angles));
             if (!isdefined(level.var_536ac4bb)) {
                 level.var_536ac4bb = [];
             } else if (!isarray(level.var_536ac4bb)) {

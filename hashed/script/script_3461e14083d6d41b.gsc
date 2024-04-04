@@ -36,19 +36,13 @@ function function_78d34bcb(localclientnum, *oldval, *newval, *bnewent, *binitial
     a_locs = [3, 3, 3];
     n_bits = getminbitcountfornum(39);
     var_d68544d = (1 << n_bits) - 1;
-    /#
-        assert(-1);
-    #/
+    assert(-1);
     for (i = 0; i < 3; i++) {
         data = int(self.origin[i]);
         number = data & var_d68544d;
-        /#
-            assert(number >= 0 && number < 40);
-        #/
+        assert(number >= 0 && number < 40);
         location = data >> n_bits;
-        /#
-            assert(location >= 0 && location < a_locs[i]);
-        #/
+        assert(location >= 0 && location < a_locs[i]);
         var_a0933ff7 = struct::get_array("hidden_number_loc" + i, "targetname");
         a_decals = array::filter(var_a0933ff7, 0, &function_58ac9d9c, location);
         n_tens = int(number / 10);
@@ -177,7 +171,7 @@ function function_1d9bbc33(localclientnum, player) {
             self function_d04b4b2c();
         }
         /#
-            print3d(self.origin + vectorscale((0, 0, 1), 12), "<unknown string>" + self.threshold + "<unknown string>" + sqrt(dist), (1, 1, 1), 1, 0.25, 1);
+            print3d(self.origin + (0, 0, 12), "<unknown string>" + self.threshold + "<unknown string>" + sqrt(dist), (1, 1, 1), 1, 0.25, 1);
         #/
         waitframe(1);
     }

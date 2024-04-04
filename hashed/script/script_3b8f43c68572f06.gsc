@@ -8,22 +8,6 @@
 class crevive_hud : cluielem {
 
     // Namespace crevive_hud/revive_hud
-    // Params 0, eflags: 0x8
-    // Checksum 0xe4b0dd50, Offset: 0x3d8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace crevive_hud/revive_hud
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x96368ab0, Offset: 0x640
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace crevive_hud/revive_hud
     // Params 1, eflags: 0x0
     // Checksum 0x5edb62ad, Offset: 0x568
     // Size: 0x24
@@ -36,7 +20,7 @@ class crevive_hud : cluielem {
     // Checksum 0x53958265, Offset: 0x608
     // Size: 0x30
     function set_fadetime(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "fadeTime", value);
+        set_data(localclientnum, "fadeTime", value);
     }
 
     // Namespace crevive_hud/revive_hud
@@ -44,7 +28,7 @@ class crevive_hud : cluielem {
     // Checksum 0x746a578d, Offset: 0x5d0
     // Size: 0x30
     function set_clientnum(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "clientNum", value);
+        set_data(localclientnum, "clientNum", value);
     }
 
     // Namespace crevive_hud/revive_hud
@@ -71,7 +55,7 @@ class crevive_hud : cluielem {
     // Checksum 0x7c76aa5b, Offset: 0x598
     // Size: 0x30
     function set_text(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "text", value);
+        set_data(localclientnum, "text", value);
     }
 
     // Namespace crevive_hud/revive_hud
@@ -80,9 +64,9 @@ class crevive_hud : cluielem {
     // Size: 0x84
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "text", #"");
-        [[ self ]]->set_data(localclientnum, "clientNum", 0);
-        [[ self ]]->set_data(localclientnum, "fadeTime", 0);
+        set_data(localclientnum, "text", #"");
+        set_data(localclientnum, "clientNum", 0);
+        set_data(localclientnum, "fadeTime", 0);
     }
 
 }

@@ -132,11 +132,7 @@ function function_6661621a() {
     if (isbot(self)) {
         return;
     }
-    /#
-        /#
-            assert(isdefined(self._bbdata));
-        #/
-    #/
+    assert(isdefined(self._bbdata));
     if (!isdefined(self.class_num)) {
         return;
     }
@@ -206,11 +202,7 @@ function commit_spawn_data() {
     if (isbot(self)) {
         return;
     }
-    /#
-        /#
-            assert(isdefined(self._bbdata));
-        #/
-    #/
+    assert(isdefined(self._bbdata));
     if (!isdefined(self._bbdata)) {
         return;
     }

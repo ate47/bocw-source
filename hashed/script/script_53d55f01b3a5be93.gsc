@@ -42,12 +42,12 @@ function private function_41cca91a(localclientnum, *oldval, newval, *bnewent, *b
     }
     if (bwastimejump) {
         self.fx = playfx(fieldname, #"hash_5e283544fff6e3d0", self.origin);
-        soundloopemitter(#"hash_50ad83fb3ade2891", self.origin + vectorscale((0, 0, 1), 20));
+        soundloopemitter(#"hash_50ad83fb3ade2891", self.origin + (0, 0, 20));
         return;
     }
     if (isdefined(self.fx)) {
         stopfx(fieldname, self.fx);
     }
-    soundstoploopemitter(#"hash_50ad83fb3ade2891", self.origin + vectorscale((0, 0, 1), 20));
+    soundstoploopemitter(#"hash_50ad83fb3ade2891", self.origin + (0, 0, 20));
 }
 

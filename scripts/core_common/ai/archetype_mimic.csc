@@ -83,7 +83,7 @@ function function_807a046(localclientnum, *oldval, *newval, *bnewent, *binitials
     var_e50d2931 = self.origin;
     var_675c08c1 = anglestoforward(self.angles);
     playfx(bwastimejump, "zm_ai/fx9_mimic_emerge_base", var_e50d2931, var_675c08c1);
-    playsound(bwastimejump, #"hash_4f37c259b7d6bd76", var_e50d2931 + vectorscale((0, 0, 1), 20));
+    playsound(bwastimejump, #"hash_4f37c259b7d6bd76", var_e50d2931 + (0, 0, 20));
     playsound(bwastimejump, #"hash_10d33a1d9ba04133", var_e50d2931);
 }
 

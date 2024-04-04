@@ -133,9 +133,7 @@ function assertproperplacement() {
                         player = level.placement[#"all"][j];
                         println("<unknown string>" + j + "<unknown string>" + player.name + "<unknown string>" + player.score);
                     }
-                    /#
-                        assertmsg("<unknown string>");
-                    #/
+                    assertmsg("<unknown string>");
                     break;
                 }
             }
@@ -148,9 +146,7 @@ function assertproperplacement() {
                     player = level.placement[#"all"][j];
                     println("<unknown string>" + j + "<unknown string>" + player.name + "<unknown string>" + player.pointstowin);
                 }
-                /#
-                    assertmsg("<unknown string>");
-                #/
+                assertmsg("<unknown string>");
                 break;
             }
         }
@@ -392,9 +388,7 @@ function waitfortimeornotifynoartillery(time, notifyname) {
     self endon(notifyname);
     wait(time);
     while (isdefined(level.artilleryinprogress)) {
-        /#
-            assert(level.artilleryinprogress);
-        #/
+        assert(level.artilleryinprogress);
         wait(0.25);
     }
 }
@@ -460,12 +454,8 @@ function function_4aa8d809(index, string) {
 // Size: 0x23c
 function function_8d61a6c2(var_c1e98979) {
     /#
-        /#
-            assert(isdefined(var_c1e98979));
-        #/
-        /#
-            assert(isdefined(level.var_336c35f1[var_c1e98979]));
-        #/
+        assert(isdefined(var_c1e98979));
+        assert(isdefined(level.var_336c35f1[var_c1e98979]));
         log_string = level.var_336c35f1[var_c1e98979];
         winner = get_winner();
         if (isplayer(winner)) {

@@ -51,13 +51,13 @@ function function_f1dc3a2c(localclientnum, *oldval, newval, *bnewent, *binitials
         return;
     }
     if (bwastimejump == 2) {
-        playsound(fieldname, #"hash_265dc7bbebe2c9a5", self.origin + vectorscale((0, 0, 1), 20));
+        playsound(fieldname, #"hash_265dc7bbebe2c9a5", self.origin + (0, 0, 20));
         if (isdefined(self.var_4b0f392d)) {
             self stoploopsound(self.var_4b0f392d);
             self.var_4b0f392d = undefined;
         }
         self.var_3dec4e8f = self playloopsound(#"hash_7391c95dbcf9cfc2");
-        playsound(fieldname, #"hash_779a84be63566050", self.origin + vectorscale((0, 0, 1), 20));
+        playsound(fieldname, #"hash_779a84be63566050", self.origin + (0, 0, 20));
         self.var_65297126 = function_239993de(fieldname, #"hash_27ce04be3dbc0401", self, "tag_origin");
         self.var_6a713ba5 = function_239993de(fieldname, #"hash_27ce02be3dbc009b", self, "tag_origin");
         self.var_29313552 = function_239993de(fieldname, #"hash_27ce03be3dbc024e", self, "tag_origin");
@@ -67,13 +67,13 @@ function function_f1dc3a2c(localclientnum, *oldval, newval, *bnewent, *binitials
         if (isdefined(self.var_65297126)) {
             killfx(fieldname, self.var_65297126);
             self.var_65297126 = undefined;
-            playsound(fieldname, #"hash_1cd1dad84277f521", self.origin + vectorscale((0, 0, 1), 20));
+            playsound(fieldname, #"hash_1cd1dad84277f521", self.origin + (0, 0, 20));
             return;
         }
         if (isdefined(self.var_6a713ba5)) {
             killfx(fieldname, self.var_6a713ba5);
             self.var_6a713ba5 = undefined;
-            playsound(fieldname, #"hash_1cd1d7d84277f008", self.origin + vectorscale((0, 0, 1), 20));
+            playsound(fieldname, #"hash_1cd1d7d84277f008", self.origin + (0, 0, 20));
             return;
         }
         if (isdefined(self.var_29313552)) {

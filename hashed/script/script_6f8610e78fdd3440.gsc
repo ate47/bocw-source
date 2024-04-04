@@ -16,9 +16,7 @@ function init_hunt_regions() {
         inithuntregiondata();
     }
     if (isdefined(level.stealth)) {
-        /#
-            assert(isdefined(level.hunt_region_load) && isdefined(level.hunt_region_load.hunt_stealth_group_region_sets));
-        #/
+        assert(isdefined(level.hunt_region_load) && isdefined(level.hunt_region_load.hunt_stealth_group_region_sets));
         level.stealth.hunt_stealth_group_region_sets = level.hunt_region_load.hunt_stealth_group_region_sets;
         level.hunt_region_load = undefined;
     }
@@ -109,9 +107,7 @@ function findcurposonroute(curpos, route) {
     if (var_5a1a59a4 >= 0) {
         var_747c2571 = var_5a1a59a4;
     }
-    /#
-        assert(var_747c2571 >= 0);
-    #/
+    assert(var_747c2571 >= 0);
     return var_747c2571;
 }
 
@@ -188,9 +184,7 @@ function function_28ec085c() {
 function gethuntstealthgroups(var_bbf5d56f) {
     var_9e7c8581 = [];
     foreach (volume in var_bbf5d56f) {
-        /#
-            assert(isdefined(volume.script_stealth_region_group), "<unknown string>");
-        #/
+        assert(isdefined(volume.script_stealth_region_group), "<unknown string>");
         var_86fb4fc6 = strtok(volume.script_stealth_region_group, " ");
         foreach (str in var_86fb4fc6) {
             var_9e7c8581[var_9e7c8581.size] = str;
@@ -417,9 +411,7 @@ function inithuntregiondata() {
                 }
             }
             if (region.route_points.size == 0) {
-                /#
-                    assertmsg("<unknown string>");
-                #/
+                assertmsg("<unknown string>");
             }
             region.smart_objects = [];
             foreach (smart_object in level.smartobjectpoints) {
@@ -442,9 +434,7 @@ function inithuntregiondata() {
                 if (!isdefined(targetname)) {
                     if (startnode != -1) {
                         orig = point.origin;
-                        /#
-                            assertmsg("<unknown string>" + orig[0] + "<unknown string>" + orig[1] + "<unknown string>" + orig[2] + "<unknown string>");
-                        #/
+                        assertmsg("<unknown string>" + orig[0] + "<unknown string>" + orig[1] + "<unknown string>" + orig[2] + "<unknown string>");
                     }
                     startnode = i;
                     continue;
@@ -457,9 +447,7 @@ function inithuntregiondata() {
                 }
                 if (!isdefined(var_8bacc3fa)) {
                     if (startnode != -1) {
-                        /#
-                            assertmsg("<unknown string>" + targetname + "<unknown string>");
-                        #/
+                        assertmsg("<unknown string>" + targetname + "<unknown string>");
                     }
                     startnode = i;
                 }
@@ -485,9 +473,7 @@ function inithuntregiondata() {
                     j++;
                 }
                 if (!isdefined(var_e1c83c67)) {
-                    /#
-                        assertmsg("<unknown string>");
-                    #/
+                    assertmsg("<unknown string>");
                 }
                 buffer[i] = var_e1c83c67;
                 curidx = j;
@@ -498,9 +484,7 @@ function inithuntregiondata() {
     var_b8850d25 = undefined;
     foreach (var_371132fe in var_23471399) {
         if (!isdefined(var_371132fe.containing_regions)) {
-            /#
-                assertmsg("<unknown string>" + var_371132fe.origin + "<unknown string>");
-            #/
+            assertmsg("<unknown string>" + var_371132fe.origin + "<unknown string>");
         }
     }
     buildhuntstealthgrouptransitiondata();
@@ -616,9 +600,7 @@ function huntincaiassignment(region) {
 // Checksum 0xaa5c3ab9, Offset: 0x2ce8
 // Size: 0xb6
 function huntdecaiassignment(region) {
-    /#
-        assert(region.shared_data.bfs_assigned != 0, "<unknown string>");
-    #/
+    assert(region.shared_data.bfs_assigned != 0, "<unknown string>");
     region.shared_data.bfs_assigned = region.shared_data.bfs_assigned - 1;
     self hunttrytoexitregionvolume(region);
     if (region.shared_data.in_region == 0) {
@@ -632,9 +614,7 @@ function huntdecaiassignment(region) {
 // Size: 0x13a
 function hunttrytoenterregionvolume(region) {
     if (!self.stealth.cleardata.isinregion && region.volume istouching(self.origin)) {
-        /#
-            assert(self.stealth.cleardata.curregion == region, "<unknown string>" + region.index + "<unknown string>");
-        #/
+        assert(self.stealth.cleardata.curregion == region, "<unknown string>" + region.index + "<unknown string>");
         region.shared_data.in_region = region.shared_data.in_region + 1;
         self.stealth.cleardata.isinregion = 1;
         if (region.shared_data.player_in_region && region.shared_data.in_region == 1) {
@@ -649,9 +629,7 @@ function hunttrytoenterregionvolume(region) {
 // Checksum 0x36974a85, Offset: 0x2ef0
 // Size: 0xb6
 function hunttrytoexitregionvolume(region) {
-    /#
-        assert(self.stealth.cleardata.curregion == region, "<unknown string>" + region.index + "<unknown string>");
-    #/
+    assert(self.stealth.cleardata.curregion == region, "<unknown string>" + region.index + "<unknown string>");
     if (self.stealth.cleardata.isinregion) {
         region.shared_data.in_region = region.shared_data.in_region - 1;
         self.stealth.cleardata.isinregion = 0;

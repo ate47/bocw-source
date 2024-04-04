@@ -273,22 +273,22 @@ function function_4d806c6a(var_a25d1f0 = 25, explosion_radius = 64, var_8b77e4de
     switch (explosion_radius) {
     case 64:
         playfx(#"hash_7d2bc89d5f26531", var_55f73ce6, forward, (0, 0, 1));
-        playsoundatposition(#"hash_e74488608c9e54b", var_55f73ce6 + vectorscale((0, 0, 1), 30));
+        playsoundatposition(#"hash_e74488608c9e54b", var_55f73ce6 + (0, 0, 30));
         break;
     case 96:
         var_c37cb40 = 2;
         playfx(#"hash_7dd3089d5fb7ed2", var_55f73ce6, forward, (0, 0, 1));
-        playsoundatposition(#"hash_20bca686136afed1", var_55f73ce6 + vectorscale((0, 0, 1), 30));
+        playsoundatposition(#"hash_20bca686136afed1", var_55f73ce6 + (0, 0, 30));
         break;
     case 128:
         var_c37cb40 = 2;
         playfx(#"hash_7e74089d603ee87", var_55f73ce6, forward, (0, 0, 1));
-        playsoundatposition(#"hash_20bca686136afed1", var_55f73ce6 + vectorscale((0, 0, 1), 30));
+        playsoundatposition(#"hash_20bca686136afed1", var_55f73ce6 + (0, 0, 30));
         break;
     case 256:
         var_c37cb40 = 2;
         playfx(#"hash_2cf4993681bf5b51", var_55f73ce6, forward, (0, 0, 1));
-        playsoundatposition(#"hash_2b37bc8619de96ec", var_55f73ce6 + vectorscale((0, 0, 1), 30));
+        playsoundatposition(#"hash_2b37bc8619de96ec", var_55f73ce6 + (0, 0, 30));
         break;
     }
     if (isarray(level.var_eda01097)) {

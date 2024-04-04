@@ -8,27 +8,11 @@
 class czm_dac_challenges_hud : cluielem {
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x3aaa5013, Offset: 0x650
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x8614c338, Offset: 0xd30
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
     // Params 2, eflags: 0x2 linked
     // Checksum 0x224122f1, Offset: 0xaf8
     // Size: 0x30
     function set_binlocation(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "bInLocation", value);
+        set_data(localclientnum, "bInLocation", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -44,7 +28,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0xeeee84f6, Offset: 0xcf8
     // Size: 0x30
     function function_1097decc(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "showChallenge", value);
+        set_data(localclientnum, "showChallenge", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -52,7 +36,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0xee0aad98, Offset: 0xa88
     // Size: 0x30
     function set_challengetext(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "challengeText", value);
+        set_data(localclientnum, "challengeText", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -60,7 +44,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0x4480cd71, Offset: 0xac0
     // Size: 0x30
     function set_bottomtext(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "bottomText", value);
+        set_data(localclientnum, "bottomText", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -68,7 +52,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0xc55702d6, Offset: 0xbe0
     // Size: 0x30
     function set_rewardhidden(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "rewardHidden", value);
+        set_data(localclientnum, "rewardHidden", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -103,9 +87,9 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0x6e342b61, Offset: 0xb30
     // Size: 0x6c
     function increment_progress(localclientnum) {
-        current_val = [[ self ]]->get_data(localclientnum, "progress");
+        current_val = get_data(localclientnum, "progress");
         new_val = (current_val + 1) % 2;
-        [[ self ]]->set_data(localclientnum, "progress", new_val);
+        set_data(localclientnum, "progress", new_val);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -113,7 +97,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0xf5b9ad06, Offset: 0xba8
     // Size: 0x30
     function set_tributeavailable(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "tributeAvailable", value);
+        set_data(localclientnum, "tributeAvailable", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -121,7 +105,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0x721f54eb, Offset: 0xc88
     // Size: 0x30
     function function_c079b98b(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "challengeTypeText", value);
+        set_data(localclientnum, "challengeTypeText", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -129,7 +113,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0x75119e12, Offset: 0xcc0
     // Size: 0x30
     function function_c21d733d(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "showIntelRewardText", value);
+        set_data(localclientnum, "showIntelRewardText", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -137,7 +121,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0x480b95ed, Offset: 0xc18
     // Size: 0x30
     function set_challengefailing(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "challengeFailing", value);
+        set_data(localclientnum, "challengeFailing", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -145,7 +129,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0x9cd84bdb, Offset: 0xc50
     // Size: 0x30
     function function_f63ec96b(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "rewardText", value);
+        set_data(localclientnum, "rewardText", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -154,17 +138,17 @@ class czm_dac_challenges_hud : cluielem {
     // Size: 0x180
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "challengeText", #"");
-        [[ self ]]->set_data(localclientnum, "bottomText", #"");
-        [[ self ]]->set_data(localclientnum, "bInLocation", 0);
-        [[ self ]]->set_data(localclientnum, "progress", 0);
-        [[ self ]]->set_data(localclientnum, "tributeAvailable", 0);
-        [[ self ]]->set_data(localclientnum, "rewardHidden", 0);
-        [[ self ]]->set_data(localclientnum, "challengeFailing", 0);
-        [[ self ]]->set_data(localclientnum, "rewardText", #"");
-        [[ self ]]->set_data(localclientnum, "challengeTypeText", 0);
-        [[ self ]]->set_data(localclientnum, "showIntelRewardText", 0);
-        [[ self ]]->set_data(localclientnum, "showChallenge", 0);
+        set_data(localclientnum, "challengeText", #"");
+        set_data(localclientnum, "bottomText", #"");
+        set_data(localclientnum, "bInLocation", 0);
+        set_data(localclientnum, "progress", 0);
+        set_data(localclientnum, "tributeAvailable", 0);
+        set_data(localclientnum, "rewardHidden", 0);
+        set_data(localclientnum, "challengeFailing", 0);
+        set_data(localclientnum, "rewardText", #"");
+        set_data(localclientnum, "challengeTypeText", 0);
+        set_data(localclientnum, "showIntelRewardText", 0);
+        set_data(localclientnum, "showChallenge", 0);
     }
 
 }

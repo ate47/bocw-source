@@ -142,9 +142,7 @@ function private spawn_vehicle(vehicletype, spawnpos, spawnangles, index, callba
     } else {
         vehicle = spawnvehicle(vehicletype, spawnpos, spawnangles);
     }
-    /#
-        assert(isdefined(vehicle));
-    #/
+    assert(isdefined(vehicle));
     if (isdefined(vehicle)) {
         if (isdefined(callback)) {
             [[ callback ]](vehicle, params);
@@ -337,15 +335,9 @@ function function_7955100c() {
 // Size: 0xca
 function function_2265d46b(deathmodel) {
     if (isdefined(self.spawnindex)) {
-        /#
-            assert(isdefined(level.var_9fd4b8f));
-        #/
-        /#
-            assert(isdefined(level.var_9fd4b8f.vehicles));
-        #/
-        /#
-            assert(isdefined(level.var_9fd4b8f.vehicles[self.spawnindex]));
-        #/
+        assert(isdefined(level.var_9fd4b8f));
+        assert(isdefined(level.var_9fd4b8f.vehicles));
+        assert(isdefined(level.var_9fd4b8f.vehicles[self.spawnindex]));
         deathmodel.spawnindex = self.spawnindex;
         level.var_9fd4b8f.vehicles[self.spawnindex].vehicle = deathmodel;
     }
@@ -419,9 +411,7 @@ function private function_e674d71a(vehicle) {
             break;
         }
     }
-    /#
-        assert(isdefined(respawntime));
-    #/
+    assert(isdefined(respawntime));
     return int(respawntime * 1000);
 }
 
@@ -498,9 +488,7 @@ function private function_f77a9b1b(vehicle) {
             break;
         }
     }
-    /#
-        assert(isdefined(respawntime));
-    #/
+    assert(isdefined(respawntime));
     return int(respawntime * 1000);
 }
 

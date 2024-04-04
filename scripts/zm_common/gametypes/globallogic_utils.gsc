@@ -114,9 +114,7 @@ function assertproperplacement() {
                         player = level.placement[#"all"][i];
                         println("<unknown string>" + i + "<unknown string>" + player.name + "<unknown string>" + player.score);
                     }
-                    /#
-                        assertmsg("<unknown string>");
-                    #/
+                    assertmsg("<unknown string>");
                     break;
                 }
             }
@@ -233,9 +231,7 @@ function resumetimer() {
 // Checksum 0xf88daf1e, Offset: 0x8e8
 // Size: 0x9e
 function getscoreremaining(team) {
-    /#
-        assert(isplayer(self) || isdefined(team));
-    #/
+    assert(isplayer(self) || isdefined(team));
     scorelimit = level.scorelimit;
     if (isplayer(self)) {
         return (scorelimit - globallogic_score::_getplayerscore(self));
@@ -248,9 +244,7 @@ function getscoreremaining(team) {
 // Checksum 0xca6985f5, Offset: 0x990
 // Size: 0xea
 function getscoreperminute(team) {
-    /#
-        assert(isplayer(self) || isdefined(team));
-    #/
+    assert(isplayer(self) || isdefined(team));
     scorelimit = level.scorelimit;
     timelimit = level.timelimit;
     minutespassed = gettimepassed() / 60000 + 0.0001;
@@ -265,9 +259,7 @@ function getscoreperminute(team) {
 // Checksum 0x71eb87c5, Offset: 0xa88
 // Size: 0x96
 function getestimatedtimeuntilscorelimit(team) {
-    /#
-        assert(isplayer(self) || isdefined(team));
-    #/
+    assert(isplayer(self) || isdefined(team));
     scoreperminute = self getscoreperminute(team);
     scoreremaining = self getscoreremaining(team);
     if (!scoreperminute) {
@@ -305,9 +297,7 @@ function waitfortimeornotifynoartillery(time, notifyname) {
     self endon(notifyname);
     wait(time);
     while (isdefined(level.artilleryinprogress)) {
-        /#
-            assert(level.artilleryinprogress);
-        #/
+        assert(level.artilleryinprogress);
         wait(0.25);
     }
 }

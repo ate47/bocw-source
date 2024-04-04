@@ -93,7 +93,6 @@ function clearhackertarget(weapon, successfulhack, spawned) {
 function watchhackertoolfired() {
     self endon(#"disconnect", #"death", #"killhackermonitor");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"hacker_tool_fired");
         hackertooltarget = waitresult.target;
         weapon = waitresult.weapon;
@@ -156,11 +155,7 @@ function watchhackertoolfired() {
             if (getdvarint(#"player_sustainammo", 0) == 0) {
                 clip_ammo = self getweaponammoclip(weapon);
                 clip_ammo--;
-                /#
-                    /#
-                        assert(clip_ammo >= 0);
-                    #/
-                #/
+                assert(clip_ammo >= 0);
                 self setweaponammoclip(weapon, clip_ammo);
             }
         #/
@@ -196,7 +191,6 @@ function event_handler[grenade_pullback] function_f4068d35(eventstruct) {
 function watchhackertoolinterrupt(weapon) {
     self endon(#"disconnect", #"hacker_tool_fired", #"death", #"weapon_change", #"grenade_fire");
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"use_interrupt");
         if (self.hackertooltarget == waitresult.target) {
             clearhackertarget(weapon, 0, 0);
@@ -224,7 +218,6 @@ function watchhackertoolend(weapon) {
 function watchforgrenadefire(*weapon) {
     self endon(#"disconnect", #"hacker_tool_fired", #"weapon_change", #"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"grenade_fire");
         grenade_instance = waitresult.projectile;
         grenade_weapon = waitresult.weapon;
@@ -347,9 +340,7 @@ function hackertooltargetloop(weapon) {
             if (self.hackertoollocktimeelapsed < lockontime) {
                 continue;
             }
-            /#
-                assert(isdefined(self.hackertooltarget));
-            #/
+            assert(isdefined(self.hackertooltarget));
             self notify(#"stop_lockon_sound");
             self.hackertoollockfinalized = 1;
             self weaponlockfinalize(self.hackertooltarget);
@@ -419,7 +410,6 @@ function watchtargetentityupdate(besttarget) {
     self notify(#"watchtargetentityupdate");
     self endon(#"watchtargetentityupdate", #"clearhackertarget");
     besttarget endon(#"death");
-    waitresult = undefined;
     waitresult = besttarget waittill(#"hackertool_update_ent");
     heatseekingmissile::initlockfield(waitresult.entity);
     self.hackertooltarget = waitresult.entity;
@@ -530,9 +520,7 @@ function hackingtimescale(target) {
             if (hackertooldebugtext) {
                 print3d(target.origin, "<unknown string>" + scale + "<unknown string>" + radiusinner + "<unknown string>" + radiusouter, (0, 0, 0), 1, hackertooldebugtext, 2);
             }
-            /#
-                assert(hacktime > 0);
-            #/
+            assert(hacktime > 0);
         #/
         hackratio = gethacktime(target) / hacktime;
         if (!isdefined(hackratio)) {
@@ -549,11 +537,7 @@ function hackingtimescale(target) {
 function hackingtimenolineofsightscale(target) {
     hackratio = 1;
     if (isdefined(target.killstreakhacklostlineofsighttimems) && target.killstreakhacklostlineofsighttimems > 0) {
-        /#
-            /#
-                assert(target.killstreakhacklostlineofsighttimems > 0);
-            #/
-        #/
+        assert(target.killstreakhacklostlineofsighttimems > 0);
         hackratio = 1000 / target.killstreakhacklostlineofsighttimems;
     }
     return hackratio;
@@ -570,12 +554,8 @@ function isentityhackableweaponobject(entity) {
             if (isdefined(watcher)) {
                 if (watcher.hackable) {
                     /#
-                        /#
-                            assert(isdefined(watcher.hackertoolradius));
-                        #/
-                        /#
-                            assert(isdefined(watcher.hackertooltimems));
-                        #/
+                        assert(isdefined(watcher.hackertoolradius));
+                        assert(isdefined(watcher.hackertooltimems));
                     #/
                     return true;
                 }
@@ -591,21 +571,13 @@ function isentityhackableweaponobject(entity) {
 // Size: 0xc6
 function getweaponobjecthackerradius(entity) {
     /#
-        /#
-            assert(isdefined(entity.classname));
-        #/
-        /#
-            assert(isdefined(entity.weapon));
-        #/
+        assert(isdefined(entity.classname));
+        assert(isdefined(entity.weapon));
     #/
     watcher = weaponobjects::getweaponobjectwatcherbyweapon(entity.weapon);
     /#
-        /#
-            assert(watcher.hackable);
-        #/
-        /#
-            assert(isdefined(watcher.hackertoolradius));
-        #/
+        assert(watcher.hackable);
+        assert(isdefined(watcher.hackertoolradius));
     #/
     return watcher.hackertoolradius;
 }
@@ -616,21 +588,13 @@ function getweaponobjecthackerradius(entity) {
 // Size: 0xc6
 function getweaponobjecthacktimems(entity) {
     /#
-        /#
-            assert(isdefined(entity.classname));
-        #/
-        /#
-            assert(isdefined(entity.weapon));
-        #/
+        assert(isdefined(entity.classname));
+        assert(isdefined(entity.weapon));
     #/
     watcher = weaponobjects::getweaponobjectwatcherbyweapon(entity.weapon);
     /#
-        /#
-            assert(watcher.hackable);
-        #/
-        /#
-            assert(isdefined(watcher.hackertooltimems));
-        #/
+        assert(watcher.hackable);
+        assert(isdefined(watcher.hackertooltimems));
     #/
     return watcher.hackertooltimems;
 }
@@ -753,11 +717,7 @@ function watchhackableentitydeath() {
 function gethackertoolinnerradius(target) {
     radius = level.hackertoollockonradius;
     if (isentityhackablecarepackage(target)) {
-        /#
-            /#
-                assert(isdefined(target.hackertoolradius));
-            #/
-        #/
+        assert(isdefined(target.hackertoolradius));
         radius = target.hackertoolradius;
     } else if (isentityhackableweaponobject(target)) {
         radius = getweaponobjecthackerradius(target);
@@ -776,11 +736,7 @@ function gethackertoolinnerradius(target) {
 function gethackertoolouterradius(target) {
     radius = level.hackertoollockonradius;
     if (isentityhackablecarepackage(target)) {
-        /#
-            /#
-                assert(isdefined(target.hackertoolradius));
-            #/
-        #/
+        assert(isdefined(target.hackertoolradius));
         radius = target.hackertoolradius;
     } else if (isentityhackableweaponobject(target)) {
         radius = getweaponobjecthackerradius(target);
@@ -799,11 +755,7 @@ function gethackertoolouterradius(target) {
 function gethacktime(target) {
     time = 500;
     if (isentityhackablecarepackage(target)) {
-        /#
-            /#
-                assert(isdefined(target.hackertooltimems));
-            #/
-        #/
+        assert(isdefined(target.hackertooltimems));
         if (isdefined(target.owner) && target.owner == self) {
             time = level.carepackageownerhackertooltimems;
         } else if (isdefined(target.owner) && target.owner.team == self.team) {
@@ -828,11 +780,7 @@ function gethacktime(target) {
 function gethackoutertime(target) {
     time = 500;
     if (isentityhackablecarepackage(target)) {
-        /#
-            /#
-                assert(isdefined(target.hackertooltimems));
-            #/
-        #/
+        assert(isdefined(target.hackertooltimems));
         if (isdefined(target.owner) && target.owner == self) {
             time = level.carepackageownerhackertooltimems;
         } else if (isdefined(target.owner) && target.owner.team == self.team) {

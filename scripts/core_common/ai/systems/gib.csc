@@ -30,9 +30,7 @@ function private function_3aa023f1(name) {
     }
     definition = getscriptbundle(name);
     if (!isdefined(definition)) {
-        /#
-            assertmsg("<unknown string>" + name);
-        #/
+        assertmsg("<unknown string>" + name);
         return undefined;
     }
     gibpiecelookup = [];
@@ -45,9 +43,7 @@ function private function_3aa023f1(name) {
     gibpieces = [];
     foreach (gibflag, gibpiece in gibpiecelookup) {
         if (!isdefined(gibpiece)) {
-            /#
-                assertmsg("<unknown string>" + gibflag);
-            #/
+            assertmsg("<unknown string>" + gibflag);
             continue;
         }
         gibstruct = spawnstruct();
@@ -82,9 +78,7 @@ function private function_9fe14ca3(entity, gibflag, var_c3317960) {
     }
     name = entity getplayergibdef(part, var_c3317960);
     if (!isdefined(name)) {
-        /#
-            assertmsg("<unknown string>" + gibflag);
-        #/
+        assertmsg("<unknown string>" + gibflag);
         return undefined;
     }
     gibdef = level.var_ad0f5efa[name];
@@ -93,9 +87,7 @@ function private function_9fe14ca3(entity, gibflag, var_c3317960) {
     }
     definition = getscriptbundle(name);
     if (!isdefined(definition)) {
-        /#
-            assertmsg("<unknown string>" + name);
-        #/
+        assertmsg("<unknown string>" + name);
         return undefined;
     }
     gibpiecelookup = [];
@@ -178,7 +170,6 @@ function private function_69db754(entity, gibflag, var_c3317960) {
 // Size: 0x230
 function private _annihilatecorpse() {
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"corpse_explode");
         localclientnum = waitresult.localclientnum;
         body = waitresult.body;
@@ -268,9 +259,7 @@ function private _getgibextramodel(*localclientnumm, entity, gibflag) {
     if (gibflag == 8) {
         return (isdefined(entity.gib_data) ? entity.gib_data.head : entity.head);
     }
-    /#
-        assertmsg("<unknown string>");
-    #/
+    assertmsg("<unknown string>");
 }
 
 // Namespace gibclientutils/gib
@@ -673,9 +662,7 @@ function _playgibsound(localclientnum, entity, soundalias) {
 // Checksum 0x6dd4ea22, Offset: 0x28b0
 // Size: 0xc0
 function addgibcallback(*localclientnum, entity, gibflag, callbackfunction) {
-    /#
-        assert(isfunctionptr(callbackfunction));
-    #/
+    assert(isfunctionptr(callbackfunction));
     if (!isdefined(entity._gibcallbacks)) {
         entity._gibcallbacks = [];
     }

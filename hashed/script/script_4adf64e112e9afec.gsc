@@ -430,7 +430,7 @@ function function_80317cee() {
     if (isdefined(self gettagorigin("tag_eye"))) {
         return (0, 0, 0);
     }
-    return vectorscale((0, 0, 1), 24);
+    return (0, 0, 24);
 }
 
 // Namespace namespace_6e90e490/namespace_6e90e490
@@ -438,9 +438,7 @@ function function_80317cee() {
 // Checksum 0x684f5dd1, Offset: 0x45e0
 // Size: 0x1c8
 function function_15158f84(localclientnum) {
-    /#
-        assert(!isdefined(self.var_de98eb73));
-    #/
+    assert(!isdefined(self.var_de98eb73));
     namespace_1e25ad94::debugmsg("Entity requesting a textBubble");
     if (!isdefined(self.entnum)) {
         self.entnum = self getentitynumber();
@@ -478,7 +476,7 @@ function function_fd71fef3(localclientnum, *oldval, newval, *bnewent, *binitials
         return;
     }
     if (self isplayer()) {
-        if (is_true(self.doa.var_3e81d24c) || is_true(level.doa.var_318aa67a)) {
+        if (is_true(self.doa.infps) || is_true(level.doa.var_318aa67a)) {
             if (isdefined(self.var_de98eb73)) {
                 function_5f71ab96(fieldname, self.entnum);
                 self.var_de98eb73 = undefined;
@@ -617,9 +615,7 @@ function function_651f262d(localclientnum, entitynum) {
 // Checksum 0xd570950e, Offset: 0x5068
 // Size: 0x228
 function function_8394bc71(localclientnum) {
-    /#
-        assert(!isdefined(self.var_7488bfe4));
-    #/
+    assert(!isdefined(self.var_7488bfe4));
     namespace_1e25ad94::debugmsg("Entity requesting a nameBubble");
     if (!isdefined(self.entnum)) {
         self.entnum = self getentitynumber();
@@ -1066,7 +1062,7 @@ function function_b5afa57f(localclientnum, *oldval, *newval, *bnewent, *binitial
     if (!namespace_7f5aeb59::islocalplayer(self)) {
         value = 0;
     } else {
-        value = is_true(self.doa.var_3e81d24c) || level.doa.world_state >= 4 || isdefined(level.doa.var_182fb75a);
+        value = is_true(self.doa.infps) || level.doa.world_state >= 4 || isdefined(level.doa.var_182fb75a);
         if (level.doa.var_938e4f08 != 0) {
             value = value & level.doa.var_938e4f08 == 8;
         }

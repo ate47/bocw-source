@@ -41,9 +41,7 @@ function testfunction(*entity, animations) {
 // Size: 0x162
 function private function_aa7530df(entity, animation) {
     profileNamedStart(#"");
-    /#
-        assert(isactor(entity));
-    #/
+    assert(isactor(entity));
     forwarddir = anglestoforward(entity.angles);
     localdeltavector = getmovedelta(animation, 0, 1);
     endpoint = entity localtoworldcoords(localdeltavector);
@@ -76,9 +74,7 @@ function private evaluatejukeblockedanimations(entity, animations) {
 // Size: 0x222
 function private evaluator_checkanimationagainstgeo(entity, animation) {
     profileNamedStart(#"");
-    /#
-        assert(isactor(entity));
-    #/
+    assert(isactor(entity));
     splittime = function_382b0cfb(animation);
     localdeltahalfvector = getmovedelta(animation, 0, splittime);
     midpoint = entity localtoworldcoords(localdeltahalfvector);
@@ -108,9 +104,7 @@ function private evaluator_checkanimationagainstgeo(entity, animation) {
 // Size: 0x11a
 function private evaluator_checkanimationendpointagainstgeo(entity, animation) {
     profileNamedStart(#"");
-    /#
-        assert(isactor(entity));
-    #/
+    assert(isactor(entity));
     localdeltavector = getmovedelta(animation, 0, 1);
     var_e21fa5a4 = entity.angles + (0, entity function_144f21ef(), 0);
     endpoint = coordtransform(localdeltavector, entity.origin, var_e21fa5a4);
@@ -160,15 +154,11 @@ function private function_3c7d2020(entity, animation) {
 // Size: 0x348
 function private evaluator_checkanimationforovershootinggoal(entity, animation) {
     profileNamedStart(#"");
-    /#
-        assert(isactor(entity));
-    #/
+    assert(isactor(entity));
     if (entity haspath()) {
         startpos = entity.origin;
         goalpos = entity.var_14b548c5;
-        /#
-            assert(isdefined(goalpos));
-        #/
+        assert(isdefined(goalpos));
         disttogoalsq = distance2dsquared(startpos, goalpos);
         localdeltavector = getmovedelta(animation, 0, 1);
         animdistsq = lengthsquared(localdeltavector);
@@ -208,9 +198,7 @@ function private evaluator_checkanimationforovershootinggoal(entity, animation) 
 // Size: 0x1a6
 function private function_da29fa63(entity, animation) {
     pixbeginevent(#"hash_4de9b510d8b94b2c");
-    /#
-        assert(isactor(entity));
-    #/
+    assert(isactor(entity));
     if (isdefined(entity.node)) {
         if (entity haspath()) {
             startpos = entity.origin;
@@ -236,9 +224,7 @@ function private function_da29fa63(entity, animation) {
 // Checksum 0xc784fe0e, Offset: 0x11f0
 // Size: 0xfe
 function private function_89b21ba9(entity, animation) {
-    /#
-        assert(isactor(entity));
-    #/
+    assert(isactor(entity));
     localdeltavector = getmovedelta(animation, 0, 1);
     endpoint = coordtransform(localdeltavector, entity.origin, entity.angles);
     if (!ispointonstairs(endpoint)) {
@@ -255,9 +241,7 @@ function private function_89b21ba9(entity, animation) {
 // Checksum 0xd83e7b95, Offset: 0x12f8
 // Size: 0x218
 function private function_8bd6d54d(entity, animation) {
-    /#
-        assert(isactor(entity));
-    #/
+    assert(isactor(entity));
     maxdist = entity getpathfindingradius() * 2;
     maxdistsq = sqr(maxdist);
     localdeltavector = getmovedelta(animation, 0, 1);
@@ -283,9 +267,7 @@ function private function_8bd6d54d(entity, animation) {
 // Checksum 0x612df2e3, Offset: 0x1518
 // Size: 0x126
 function private evaluator_checkanimationagainstnavmesh(entity, animation) {
-    /#
-        assert(isactor(entity));
-    #/
+    assert(isactor(entity));
     localdeltavector = getmovedelta(animation, 0, 1);
     var_e21fa5a4 = entity.angles + (0, entity function_144f21ef(), 0);
     endpoint = coordtransform(localdeltavector, entity.origin, var_e21fa5a4);
@@ -324,12 +306,8 @@ function function_50c1352d(entity, animation) {
 // Checksum 0x6051e46d, Offset: 0x17f0
 // Size: 0x1aa
 function evaluator_findfirstvalidanimation(entity, animations, tests) {
-    /#
-        assert(isarray(animations), "<unknown string>");
-    #/
-    /#
-        assert(isarray(tests), "<unknown string>");
-    #/
+    assert(isarray(animations), "<unknown string>");
+    assert(isarray(tests), "<unknown string>");
     foreach (aliasanimations in animations) {
         if (aliasanimations.size > 0) {
             valid = 1;
@@ -575,9 +553,7 @@ function private function_382b0cfb(animation) {
     splittime = 0.5;
     if (animhasnotetrack(animation, "corner")) {
         times = getnotetracktimes(animation, "corner");
-        /#
-            assert(times.size == 1, "<unknown string>" + function_9e72a96(animation) + "<unknown string>" + "<unknown string>" + "<unknown string>");
-        #/
+        assert(times.size == 1, "<unknown string>" + function_9e72a96(animation) + "<unknown string>" + "<unknown string>" + "<unknown string>");
         splittime = times[0];
     }
     return splittime;
@@ -642,7 +618,7 @@ function private planhumanturnanimations(entity, animations) {
 // Size: 0xc6
 function private function_fe8e7e36(point) {
     if (abs(self.pathgoalpos[2] - self.origin[2]) > 0.5) {
-        trace = groundtrace(point + vectorscale((0, 0, 1), 72), point + vectorscale((0, 0, -1), 72), 0, 0, 0);
+        trace = groundtrace(point + (0, 0, 72), point + (0, 0, -72), 0, 0, 0);
         point = (point[0], point[1], trace[#"position"][2] + 6);
     }
     return point;
@@ -654,9 +630,7 @@ function private function_fe8e7e36(point) {
 // Size: 0x368
 function private function_147224(entity, animation) {
     profileNamedStart(#"");
-    /#
-        assert(isactor(entity));
-    #/
+    assert(isactor(entity));
     midpoint = (entity.var_14b548c5[0], entity.var_14b548c5[1], entity.origin[2] + 6);
     midpoint = entity function_fe8e7e36(midpoint);
     splittime = function_382b0cfb(animation);

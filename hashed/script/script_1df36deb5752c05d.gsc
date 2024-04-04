@@ -8,21 +8,8 @@
 // Method(s) 11 Total 18
 class class_a0b518ca : cluielem {
 
-    // Namespace class_a0b518ca/zm_control_point_hud
-    // Params 0, eflags: 0x8
-    // Checksum 0xb32238a4, Offset: 0x328
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_a0b518ca/zm_control_point_hud
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x58b225b1, Offset: 0x6b8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_a0b518ca/zm_control_point_hud
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class class_a0b518ca : cluielem {
     // Checksum 0x832e6da3, Offset: 0x668
     // Size: 0x44
     function function_338d48a0(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "hasDamage", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "hasDamage", value);
     }
 
     // Namespace namespace_a0b518ca/zm_control_point_hud
@@ -53,7 +40,7 @@ class class_a0b518ca : cluielem {
     // Checksum 0xe01c8bb1, Offset: 0x4d8
     // Size: 0x44
     function function_62264c81(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "chargePct", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "chargePct", value);
     }
 
     // Namespace namespace_a0b518ca/zm_control_point_hud
@@ -61,7 +48,7 @@ class class_a0b518ca : cluielem {
     // Checksum 0x456dad00, Offset: 0x618
     // Size: 0x44
     function function_751f7270(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "hasCharge", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "hasCharge", value);
     }
 
     // Namespace namespace_a0b518ca/zm_control_point_hud
@@ -83,7 +70,7 @@ class class_a0b518ca : cluielem {
     // Checksum 0xd2b03b1f, Offset: 0x528
     // Size: 0x44
     function function_a04ff29a(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "damagePct", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "damagePct", value);
     }
 
     // Namespace namespace_a0b518ca/zm_control_point_hud
@@ -91,7 +78,7 @@ class class_a0b518ca : cluielem {
     // Checksum 0x52f11e48, Offset: 0x578
     // Size: 0x44
     function function_a59aefa6(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "ordaHealthPct", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "ordaHealthPct", value);
     }
 
     // Namespace namespace_a0b518ca/zm_control_point_hud
@@ -99,7 +86,7 @@ class class_a0b518ca : cluielem {
     // Checksum 0xe7b9ea6a, Offset: 0x5c8
     // Size: 0x44
     function function_a95c34f3(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "hasOrda", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "hasOrda", value);
     }
 
 }

@@ -62,7 +62,7 @@ function function_9ed71eeb(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_9c32107c = undefined;
     }
     if (!isdefined(self.v_pos)) {
-        self.v_pos = self.origin + vectorscale((0, 0, -1), 20);
+        self.v_pos = self.origin + (0, 0, -20);
         self.v_up = (0, 0, 1);
         self.v_forward = anglestoforward(self.angles);
     }

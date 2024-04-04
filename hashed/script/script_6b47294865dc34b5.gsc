@@ -165,9 +165,9 @@ function function_c42508f4() {
     start = gettime();
     while (true) {
         /#
-            print3d(self.origin + vectorscale((0, 0, 1), 72), "<unknown string>", (1, 0, 0), 1, 0.5, 1, 1);
+            print3d(self.origin + (0, 0, 72), "<unknown string>", (1, 0, 0), 1, 0.5, 1, 1);
             self.unload_time = int((gettime() - start) / 10) / 100;
-            print3d(self.origin + vectorscale((0, 0, 1), 60), "<unknown string>" + self.unload_time, (1, 0, 0), 1, 0.5, 1);
+            print3d(self.origin + (0, 0, 60), "<unknown string>" + self.unload_time, (1, 0, 0), 1, 0.5, 1);
         #/
         waitframe(1);
     }

@@ -611,7 +611,6 @@ function function_bb5fae75() {
     self notify(#"hash_1d6b9f8f1e2663d9");
     self endon(#"death", #"hash_1d6b9f8f1e2663d9");
     for (var_543d6995 = 0; true; var_543d6995 = 0) {
-        waitresult = undefined;
         waitresult = self waittill(#"weapon_change");
         if (isdefined(waitresult.weapon)) {
             if (is_true(waitresult.weapon.isheavyweapon)) {
@@ -637,7 +636,6 @@ function function_bb5fae75() {
 function function_b296ed1c() {
     self endon(#"death", #"hash_6afb6967ed216cca");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"weapon_fired");
         if (is_true(waitresult.weapon.isheavyweapon)) {
             self.var_83f25fdb++;

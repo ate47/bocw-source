@@ -98,7 +98,7 @@ function function_5aeaf7bc(watcher, owner) {
 function setupkillcament() {
     self endon(#"death");
     self util::waittillnotmoving();
-    self.killcament = spawn("script_model", self.origin + vectorscale((0, 0, 1), 8));
+    self.killcament = spawn("script_model", self.origin + (0, 0, 8));
     self thread cleanupkillcamentondeath();
 }
 
@@ -127,7 +127,6 @@ function watchproximitygrenadehitplayer(owner) {
     self endon(#"death");
     self setteam(owner.team);
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"grenade_bounce");
         if (isdefined(waitresult.ent) && isplayer(waitresult.ent) && waitresult.surface != "riotshield") {
             if (level.teambased && waitresult.ent.team == self.owner.team) {

@@ -164,7 +164,6 @@ function function_287ce935(var_8b9e1fe4, var_e058812d = 0) {
     self clientfield::set_player_uimodel("sr_vote_prompt.status", var_f4f8379d);
     self clientfield::set_player_uimodel("sr_vote_prompt.show", var_8b9e1fe4.var_ac9c0ee1);
     while (var_f4f8379d == 0) {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         response = waitresult.response;
         if (response === #"hash_4555ff5843fd0c43") {

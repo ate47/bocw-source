@@ -36,9 +36,7 @@ function private preinit() {
     callback::on_killcam_end(&function_2dd58893);
     level.ping = spawnstruct();
     level.ping.types = [{#sound:#"hash_1a0de47f7204a9d6", #objective:#"teammate_waypoint"}, {#sound:#"hash_1a0de47f7204a9d6", #objective:#"enemy_waypoint"}, {#sound:#"hash_3cd7abefb7adef5b", #objective:#"enemy_waypoint"}, {#sound:#"hash_3cd7abefb7adef5b", #objective:#"hash_6ee59c4b375ac2ae"}, {#sound:#"hash_1a0de47f7204a9d6", #objective:#"hash_614502911ac7d29"}, {#sound:#"hash_1a0de47f7204a9d6"}, {#sound:#"hash_3cd7abefb7adef5b", #objective:#"hash_4aacdcc1899f9c59"}, {#sound:#"hash_3cd7abefb7adef5b", #objective:#"hash_4aacdcc1899f9c59"}, {#sound:#"hash_1a0de47f7204a9d6", #objective:#"hash_19b425c37cb9f718"}, {#sound:#"hash_1a0de47f7204a9d6", #objective:#"hash_19b425c37cb9f718"}, {#sound:#"hash_3cd7abefb7adef5b", #objective:#"hash_6618dbd21e3a5068"}, {#sound:#"hash_3cd7abefb7adef5b", #objective:#"hash_4aacdcc1899f9c59"}, {#sound:#"hash_1a0de47f7204a9d6", #objective:#"teammate_waypoint"}];
-    /#
-        assert(level.ping.types.size == 13);
-    #/
+    assert(level.ping.types.size == 13);
     level.ping.var_19e1f40d = isdefined(getgametypesetting(#"hash_196e997a082443a9")) ? getgametypesetting(#"hash_196e997a082443a9") : 0;
     level.ping.var_1220e585 = isdefined(getgametypesetting(#"hash_3ccd8e1bf3864fa1")) ? getgametypesetting(#"hash_3ccd8e1bf3864fa1") : 0;
     level.ping.var_ea98b5ff = getgametypesetting(#"hash_5462586bdce0346e");
@@ -81,7 +79,6 @@ function private function_2dd58893(params) {
 function private function_c81ef836() {
     level endon(#"disconnect");
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"minimap_waypoint", #"clear_all_pings");
         local_client_num = waitresult.localclientnum;
         if (waitresult._notify == "minimap_waypoint") {
@@ -155,9 +152,7 @@ function private function_94eab4fb(params) {
     remove = 0;
     danger = params.var_42ad7eb4 || params.doubletap;
     pingdata = level.ping.var_bef12f79[local_client_num];
-    /#
-        assert(isdefined(pingdata));
-    #/
+    assert(isdefined(pingdata));
     pingdata.count++;
     if (isdefined(level.var_38c7030b)) {
         shoulddisable = [[ level.var_38c7030b ]](local_client_num);
@@ -259,9 +254,7 @@ function private function_94eab4fb(params) {
             event_type = 5;
             handled = 1;
         } else {
-            /#
-                println("<unknown string>");
-            #/
+            println("<unknown string>");
             return;
         }
     }
@@ -539,9 +532,7 @@ function private function_9be72061(local_client_num, obj_id, ent, n_seconds) {
 // Checksum 0x7750a9dc, Offset: 0x2a48
 // Size: 0xf4
 function function_bcb7d0e7(local_client_num, var_ec31db0f, ping) {
-    /#
-        assert(isdefined(ping));
-    #/
+    assert(isdefined(ping));
     if (ping.event_type != 5 && ping.obj_id >= 64) {
         clientobjid = ping.obj_id - 64;
         level notify(clientobjid + "_removed");
@@ -759,7 +750,7 @@ function private function_3e306e80(local_client_num, unique_id, event_type, loca
             ent = getentbynum(local_client_num, var_d4f0ac6e);
             if (isdefined(ent)) {
                 follow_ent = ent;
-                location = ent.origin + vectorscale((0, 0, 1), 40);
+                location = ent.origin + (0, 0, 40);
             }
             if (var_56bcf423 !== ent) {
                 var_52c78c2c = "pingLocation";
@@ -825,9 +816,7 @@ function private function_effa0b37(local_client_num, unique_id, event_type, loca
     } else {
         function_807b75f0(local_client_num, var_ec31db0f, event_type);
         dynent = function_8608b8fd(var_d4f0ac6e);
-        /#
-            assert(isdefined(dynent.itemlistbundle));
-        #/
+        assert(isdefined(dynent.itemlistbundle));
         name = dynent.displayname;
         location = dynent.origin;
         image = dynent.itemlistbundle.var_c95558ce;
@@ -1026,11 +1015,7 @@ function private function_652f5160(local_client_num, ent) {
 // Checksum 0x81e109be, Offset: 0x4e00
 // Size: 0x168
 function private function_577f2e87(*local_client_num, ent, var_54a4cedc) {
-    /#
-        /#
-            assert(isdefined(var_54a4cedc), "<unknown string>");
-        #/
-    #/
+    assert(isdefined(var_54a4cedc), "<unknown string>");
     var_fe241f9b = level.var_907386c0.size;
     if (!isdefined(ent)) {
         ent = self;
@@ -1061,9 +1046,7 @@ function private function_b7306aa(local_client_num, unique_id, event_type, locat
         function_807b75f0(local_client_num, var_ec31db0f, event_type);
         ent = getentbynum(local_client_num, var_d4f0ac6e);
         if (!isdefined(ent)) {
-            /#
-                println("<unknown string>");
-            #/
+            println("<unknown string>");
             return;
         }
         location = ent.origin;

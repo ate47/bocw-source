@@ -93,18 +93,10 @@ function event_init_level() {
 // Checksum 0x64645d3, Offset: 0xa18
 // Size: 0xfe
 function event_severity_compare(var_86dfea16, var_3ec8d9e9) {
-    /#
-        assert(isdefined(level.stealth));
-    #/
-    /#
-        assert(isdefined(level.stealth.event_priority));
-    #/
-    /#
-        assert(isdefined(level.stealth.event_priority[var_86dfea16]));
-    #/
-    /#
-        assert(isdefined(level.stealth.event_priority[var_3ec8d9e9]));
-    #/
+    assert(isdefined(level.stealth));
+    assert(isdefined(level.stealth.event_priority));
+    assert(isdefined(level.stealth.event_priority[var_86dfea16]));
+    assert(isdefined(level.stealth.event_priority[var_3ec8d9e9]));
     result = level.stealth.event_priority[var_86dfea16] - level.stealth.event_priority[var_3ec8d9e9];
     return result;
 }
@@ -114,15 +106,9 @@ function event_severity_compare(var_86dfea16, var_3ec8d9e9) {
 // Checksum 0x90e63f74, Offset: 0xb20
 // Size: 0x142
 function event_severity_shift(severity, direction) {
-    /#
-        assert(isdefined(level.stealth));
-    #/
-    /#
-        assert(isdefined(level.stealth.event_priority));
-    #/
-    /#
-        assert(isdefined(level.stealth.event_priority[severity]));
-    #/
+    assert(isdefined(level.stealth));
+    assert(isdefined(level.stealth.event_priority));
+    assert(isdefined(level.stealth.event_priority[severity]));
     priority = level.stealth.event_priority[severity] + direction;
     foreach (var_64cba2ea, priorityval in level.stealth.event_priority) {
         if (priorityval == priority) {
@@ -137,12 +123,8 @@ function event_severity_shift(severity, direction) {
 // Checksum 0x139bafe, Offset: 0xc70
 // Size: 0x1ac
 function event_severity_set(severity, eventname, escalation, var_4cca9730, var_af2ae264) {
-    /#
-        assert(!(severity == "<unknown string>" && isdefined(var_af2ae264)));
-    #/
-    /#
-        assert(!(severity == "<unknown string>" && isdefined(escalation)));
-    #/
+    assert(!(severity == "<unknown string>" && isdefined(var_af2ae264)));
+    assert(!(severity == "<unknown string>" && isdefined(escalation)));
     if (!isdefined(escalation)) {
         escalation = 0;
     }
@@ -172,9 +154,7 @@ function event_severity_set(severity, eventname, escalation, var_4cca9730, var_a
 // Checksum 0x39659000, Offset: 0xe28
 // Size: 0x4c
 function event_severity_get(eventname) {
-    /#
-        assert(isdefined(level.stealth.event_severity));
-    #/
+    assert(isdefined(level.stealth.event_severity));
     return level.stealth.event_severity[eventname];
 }
 
@@ -183,9 +163,7 @@ function event_severity_get(eventname) {
 // Checksum 0xa67f879, Offset: 0xe80
 // Size: 0x4c
 function event_escalation_get(eventname) {
-    /#
-        assert(isdefined(level.stealth.event_escalation));
-    #/
+    assert(isdefined(level.stealth.event_escalation));
     return level.stealth.event_escalation[eventname];
 }
 
@@ -194,9 +172,7 @@ function event_escalation_get(eventname) {
 // Checksum 0xbe325a2c, Offset: 0xed8
 // Size: 0x4c
 function event_escalation_scalar_get(eventname) {
-    /#
-        assert(isdefined(level.stealth.event_escalation_scalars));
-    #/
+    assert(isdefined(level.stealth.event_escalation_scalars));
     return level.stealth.event_escalation_scalars[eventname];
 }
 
@@ -205,9 +181,7 @@ function event_escalation_scalar_get(eventname) {
 // Checksum 0xeabce533, Offset: 0xf30
 // Size: 0x4c
 function event_escalation_to_combat_get(eventname) {
-    /#
-        assert(isdefined(level.stealth.event_escalation_to_combat));
-    #/
+    assert(isdefined(level.stealth.event_escalation_to_combat));
     return level.stealth.event_escalation_to_combat[eventname];
 }
 
@@ -230,7 +204,6 @@ function event_listener_thread() {
     self endon(#"death");
     while (true) {
         self flag::wait_till("stealth_enabled");
-        wait_result = undefined;
         wait_result = self waittill(#"ai_events");
         waittillframeend();
         if (!self flag::get("stealth_enabled")) {
@@ -305,7 +278,7 @@ function event_listener_thread() {
                 if (isdefined(eventhandled) && !eventhandled) {
                     event_str = event_str + "<unknown string>";
                 }
-                self thread function_314b7255(event_str, (1, 1, 1), 1, 0.5, vectorscale((0, 0, 1), 40), 4);
+                self thread function_314b7255(event_str, (1, 1, 1), 1, 0.5, (0, 0, 40), 4);
                 self.stealth.ai_event = event.type;
             #/
         }
@@ -482,9 +455,7 @@ function event_broadcast_axis_by_sight_thread(eventtype, enemy, eventposition, e
 // Checksum 0x62277780, Offset: 0x1ff8
 // Size: 0xc0
 function function_961c59a4(event) {
-    /#
-        assert(event.type == "<unknown string>");
-    #/
+    assert(event.type == "<unknown string>");
     if (!isdefined(event.entity.item.name)) {
         return false;
     }

@@ -27,11 +27,7 @@ function private preinit() {
 // Checksum 0x35db924e, Offset: 0x1a8
 // Size: 0x8c
 function function_9e0598bb(id) {
-    /#
-        /#
-            assert(isentity(self), "<unknown string>");
-        #/
-    #/
+    assert(isentity(self), "<unknown string>");
     if (!isentity(self)) {
         return;
     }
@@ -43,11 +39,7 @@ function function_9e0598bb(id) {
 // Checksum 0xbe744457, Offset: 0x240
 // Size: 0x54
 function function_550247bd(id) {
-    /#
-        /#
-            assert(id > 10, "<unknown string>");
-        #/
-    #/
+    assert(id > 10, "<unknown string>");
     function_9e0598bb(id - 10);
 }
 

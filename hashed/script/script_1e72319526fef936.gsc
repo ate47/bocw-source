@@ -51,7 +51,7 @@ function function_ea2db6a9(instance) {
     var_d4f4d124 = isdefined(instance.contentgroups[#"hash_1381b446e6ab7a37"]) ? instance.contentgroups[#"hash_1381b446e6ab7a37"] : [];
     instance.var_75bfdd78 = isdefined(instance.contentgroups[#"teleport"]) ? instance.contentgroups[#"teleport"] : [];
     instance.a_triggers = [];
-    v_offset = vectorscale((0, 0, -1), 32);
+    v_offset = (0, 0, -32);
     level.var_ff7bf48c = [];
     foreach (var_2b357ce9 in var_d4f4d124) {
         mdl_portal = content_manager::spawn_script_model(var_2b357ce9, "tag_origin");
@@ -148,7 +148,7 @@ function function_1c5803d9(eventstruct) {
         s_teleport.v_launch = (1250, 0, 300);
     }
     self thread function_a41c43bd(var_2b357ce9, mdl_portal, vehicle);
-    v_trigger_offset = vectorscale((0, 0, -1), 32);
+    v_trigger_offset = (0, 0, -32);
     if (isdefined(vehicle)) {
         vehicle hide();
         vehicle val::set(#"hash_2ff0859bce056c66", "takedamage", 0);

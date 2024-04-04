@@ -36,11 +36,11 @@ function function_922745a1(player) {
     self endon(#"hash_1e744934a54fe4bc");
     player endon(#"disconnect");
     weapon = getweapon("zombietron_sprinkler_grenade");
-    top = self.origin + vectorscale((0, 0, 1), 32);
+    top = self.origin + (0, 0, 32);
     while (true) {
-        self rotateto(self.angles + vectorscale((0, 1, 0), 15), 0.2);
+        self rotateto(self.angles + (0, 15, 0), 0.2);
         wait(0.2);
-        forward = anglestoforward(self.angles + vectorscale((0, 0, 1), 500));
+        forward = anglestoforward(self.angles + (0, 0, 500));
         velocity = forward * (getdvarint(#"hash_6e23b1c0ac2fdd38", 150) + randomintrange(-50, 50));
         boost = sin(self.angles[1]);
         if (boost < 0) {
@@ -57,7 +57,7 @@ function function_922745a1(player) {
 // Checksum 0x5f95795c, Offset: 0x418
 // Size: 0x2d4
 function function_d275f769(player, origin) {
-    var_497e327b = origin + vectorscale((0, 0, 1), 800);
+    var_497e327b = origin + (0, 0, 800);
     sprinkler = namespace_ec06fe4a::spawnmodel(var_497e327b, "zombietron_sprinkler");
     if (!isdefined(sprinkler)) {
         return;
@@ -68,7 +68,7 @@ function function_d275f769(player, origin) {
     if (isdefined(player.doa.vehicle)) {
         target = namespace_ec06fe4a::function_65ee50ba(player.origin);
     }
-    mark = target + vectorscale((0, 0, 1), 12);
+    mark = target + (0, 0, 12);
     sprinkler moveto(mark, 0.5);
     sprinkler waittilltimeout(1, #"movedone");
     sprinkler namespace_e32bb68::function_3a59ec34("evt_doa_pickup_sprinkler_land");

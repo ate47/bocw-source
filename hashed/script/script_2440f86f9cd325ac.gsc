@@ -33,7 +33,7 @@
 // Size: 0x2ce
 function function_98acc465() {
     self endon(#"death");
-    self physicslaunch(self.origin, vectorscale((0, 0, 1), 10));
+    self physicslaunch(self.origin, (0, 0, 10));
     self.health = 500 + level.doa.var_6c58d51 * 500;
     if (self.type === 33) {
         self.health = self.health + 1250;
@@ -55,7 +55,7 @@ function function_98acc465() {
     } else {
         prize = namespace_dfc652ee::function_2c9923d7(function_137dd3d5(self.type));
     }
-    origin = namespace_ec06fe4a::function_65ee50ba(self.origin, 10) + vectorscale((0, 0, 1), 12);
+    origin = namespace_ec06fe4a::function_65ee50ba(self.origin, 10) + (0, 0, 12);
     if ([[ prize ]]->gettype() != 13) {
         prize = namespace_dfc652ee::itemspawn(prize, origin, undefined, 1, 1);
     } else {
@@ -110,9 +110,8 @@ function function_b968c4a9() {
     self notify("e69adfe87a2f27d");
     self endon("e69adfe87a2f27d");
     self endon(#"death");
-    result = undefined;
     result = level waittill(#"hash_c1cceae4479f2e5");
-    var_831e477b = vectorscale(vectornormalize(self.origin - result.origin + vectorscale((0, 0, 1), 1000)), 80);
+    var_831e477b = vectorscale(vectornormalize(self.origin - result.origin + (0, 0, 1000)), 80);
     self physicslaunch(self.origin, var_831e477b);
     self thread function_b968c4a9();
 }

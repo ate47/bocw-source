@@ -99,9 +99,7 @@ function private function_b5c0079f() {
         self.var_cb611709 callback::on_trigger(&function_727338d1);
         return;
     }
-    /#
-        println("<unknown string>" + self.var_f3652bd + "<unknown string>");
-    #/
+    println("<unknown string>" + self.var_f3652bd + "<unknown string>");
 }
 
 // Namespace namespace_c8fb02a7/namespace_c8fb02a7
@@ -979,12 +977,8 @@ function private function_479389f3() {
         return false;
     }
     height = self.height;
-    /#
-        assert(isdefined(self.radius));
-    #/
-    /#
-        assert(isdefined(self.height));
-    #/
+    assert(isdefined(self.radius));
+    assert(isdefined(self.height));
     var_33a206d0 = [];
     var_33a206d0[#"leftrear"] = self gettagorigin("tag_ground_contact_left_rear");
     var_33a206d0[#"leftmiddle"] = self gettagorigin("tag_ground_contact_left_middle");
@@ -998,14 +992,14 @@ function private function_479389f3() {
         if (!isdefined(origin)) {
             return false;
         }
-        var_df47b913[tag] = physicstrace(origin + vectorscale((0, 0, 1), 25), origin - vectorscale((0, 0, 1), 75), (0, 0, 0), (0, 0, 0), self, 2);
+        var_df47b913[tag] = physicstrace(origin + (0, 0, 25), origin - (0, 0, 75), (0, 0, 0), (0, 0, 0), self, 2);
     }
     var_dc8469e2 = [];
     foreach (tag, origin in var_8fc02d3b) {
         if (!isdefined(origin)) {
             return false;
         }
-        var_dc8469e2[tag] = physicstrace(origin + vectorscale((0, 0, 1), 25), origin - vectorscale((0, 0, 1), 75), (0, 0, 0), (0, 0, 0), self, 2);
+        var_dc8469e2[tag] = physicstrace(origin + (0, 0, 25), origin - (0, 0, 75), (0, 0, 0), (0, 0, 0), self, 2);
     }
     var_d643c4fc = 0;
     var_e10b67f7 = [];

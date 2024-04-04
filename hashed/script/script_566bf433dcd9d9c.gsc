@@ -177,9 +177,7 @@ function private opendooratreasonabletime_waitforabort() {
 // Checksum 0x73b05b5, Offset: 0x708
 // Size: 0x54
 function private closedoorifnecessary(door) {
-    /#
-        assert(isdefined(self.fndoorneedstoclose));
-    #/
+    assert(isdefined(self.fndoorneedstoclose));
     if (self [[ self.fndoorneedstoclose ]](door)) {
         self [[ self.fndoorclose ]](door);
     }
@@ -246,9 +244,7 @@ function private waitfordooropen(var_91fea62e) {
                 self thread closedoorifnecessary(door);
                 framedurationseconds = function_60d95f53() / 1000;
                 if (is_true(var_91fea62e) || var_56f2236d < var_70e679e1 - targetspeed * 2 * framedurationseconds) {
-                    /#
-                        assert(isdefined(self.fndooropen));
-                    #/
+                    assert(isdefined(self.fndooropen));
                     t = self opendooratreasonabletime();
                     if (isdefined(t)) {
                         self thread opendooratreasonabletime_waitforabort();

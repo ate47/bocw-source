@@ -592,9 +592,7 @@ function function_e94b8e1a(var_66cbfaf2, *var_2a832857) {
             wait(float(var_526ef4a1) / 1000);
         }
     }
-    /#
-        println("<unknown string>" + gettime());
-    #/
+    println("<unknown string>" + gettime());
 }
 
 // Namespace namespace_66d6aa44/namespace_66d6aa44

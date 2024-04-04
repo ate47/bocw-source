@@ -84,165 +84,83 @@ function finalize() {
 // Checksum 0x6d31a3e7, Offset: 0xd18
 // Size: 0x100c
 function private function_eebf86a4() {
-    /#
-        assert(isscriptfunctionptr(&mechztargetservice));
-    #/
+    assert(isscriptfunctionptr(&mechztargetservice));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzTargetService", &mechztargetservice);
-    /#
-        assert(isscriptfunctionptr(&mechzgrenadeservice));
-    #/
+    assert(isscriptfunctionptr(&mechzgrenadeservice));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzGrenadeService", &mechzgrenadeservice);
-    /#
-        assert(isscriptfunctionptr(&mechzberserkknockdownservice));
-    #/
+    assert(isscriptfunctionptr(&mechzberserkknockdownservice));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzBerserkKnockdownService", &mechzberserkknockdownservice);
-    /#
-        assert(isscriptfunctionptr(&mechzshouldmelee));
-    #/
+    assert(isscriptfunctionptr(&mechzshouldmelee));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldMelee", &mechzshouldmelee);
-    /#
-        assert(isscriptfunctionptr(&mechzshouldshowpain));
-    #/
+    assert(isscriptfunctionptr(&mechzshouldshowpain));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldShowPain", &mechzshouldshowpain);
-    /#
-        assert(isscriptfunctionptr(&mechzshouldshowjetpackpain));
-    #/
+    assert(isscriptfunctionptr(&mechzshouldshowjetpackpain));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldShowJetpackPain", &mechzshouldshowjetpackpain);
-    /#
-        assert(isscriptfunctionptr(&mechzenemyinaim));
-    #/
+    assert(isscriptfunctionptr(&mechzenemyinaim));
     behaviorstatemachine::registerbsmscriptapiinternal("mechzEnemyInAim", &mechzenemyinaim);
-    /#
-        assert(isscriptfunctionptr(&mechzenemynotinaim));
-    #/
+    assert(isscriptfunctionptr(&mechzenemynotinaim));
     behaviorstatemachine::registerbsmscriptapiinternal("mechzEnemyNotInAim", &mechzenemynotinaim);
-    /#
-        assert(isscriptfunctionptr(&mechzshouldshootgrenade));
-    #/
+    assert(isscriptfunctionptr(&mechzshouldshootgrenade));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldShootGrenade", &mechzshouldshootgrenade);
-    /#
-        assert(isscriptfunctionptr(&mechzshouldshootflame));
-    #/
+    assert(isscriptfunctionptr(&mechzshouldshootflame));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldShootFlame", &mechzshouldshootflame);
-    /#
-        assert(isscriptfunctionptr(&mechzshouldshootflamesweep));
-    #/
+    assert(isscriptfunctionptr(&mechzshouldshootflamesweep));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldShootFlameSweep", &mechzshouldshootflamesweep);
-    /#
-        assert(isscriptfunctionptr(&mechzshouldturnberserk));
-    #/
+    assert(isscriptfunctionptr(&mechzshouldturnberserk));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldTurnBerserk", &mechzshouldturnberserk);
-    /#
-        assert(isscriptfunctionptr(&mechzshouldstumble));
-    #/
+    assert(isscriptfunctionptr(&mechzshouldstumble));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldStumble", &mechzshouldstumble);
-    /#
-        assert(isscriptfunctionptr(&mechzisinsafezone));
-    #/
+    assert(isscriptfunctionptr(&mechzisinsafezone));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzIsInSafeZone", &mechzisinsafezone);
-    /#
-        assert(isscriptfunctionptr(&mechzshouldturninplacebeforeidle));
-    #/
+    assert(isscriptfunctionptr(&mechzshouldturninplacebeforeidle));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldTurnInPlaceBeforeIdle", &mechzshouldturninplacebeforeidle);
-    /#
-        assert(!isdefined(&function_db525b31) || isscriptfunctionptr(&function_db525b31));
-    #/
-    /#
-        assert(!isdefined(&function_c21030e3) || isscriptfunctionptr(&function_c21030e3));
-    #/
-    /#
-        assert(!isdefined(&function_c13b8a0c) || isscriptfunctionptr(&function_c13b8a0c));
-    #/
+    assert(!isdefined(&function_db525b31) || isscriptfunctionptr(&function_db525b31));
+    assert(!isdefined(&function_c21030e3) || isscriptfunctionptr(&function_c21030e3));
+    assert(!isdefined(&function_c13b8a0c) || isscriptfunctionptr(&function_c13b8a0c));
     behaviortreenetworkutility::registerbehaviortreeaction("mechzStumbleLoop", &function_db525b31, &function_c21030e3, &function_c13b8a0c);
-    /#
-        assert(!isdefined(&function_5a7ad15e) || isscriptfunctionptr(&function_5a7ad15e));
-    #/
-    /#
-        assert(!isdefined(&function_a3c24f6a) || isscriptfunctionptr(&function_a3c24f6a));
-    #/
-    /#
-        assert(!isdefined(&function_d58e0db5) || isscriptfunctionptr(&function_d58e0db5));
-    #/
+    assert(!isdefined(&function_5a7ad15e) || isscriptfunctionptr(&function_5a7ad15e));
+    assert(!isdefined(&function_a3c24f6a) || isscriptfunctionptr(&function_a3c24f6a));
+    assert(!isdefined(&function_d58e0db5) || isscriptfunctionptr(&function_d58e0db5));
     behaviortreenetworkutility::registerbehaviortreeaction("mechzShootFlameAction", &function_5a7ad15e, &function_a3c24f6a, &function_d58e0db5);
-    /#
-        assert(isscriptfunctionptr(&mechzpreptoshootgrenadestart));
-    #/
+    assert(isscriptfunctionptr(&mechzpreptoshootgrenadestart));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzPrepToShootGrenadeStart", &mechzpreptoshootgrenadestart);
-    /#
-        assert(isscriptfunctionptr(&mechzpreptoshootgrenadestart));
-    #/
+    assert(isscriptfunctionptr(&mechzpreptoshootgrenadestart));
     behaviorstatemachine::registerbsmscriptapiinternal("mechzPrepToShootGrenadeStart", &mechzpreptoshootgrenadestart);
-    /#
-        assert(isscriptfunctionptr(&mechzpreptoshootgrenadesterminate));
-    #/
+    assert(isscriptfunctionptr(&mechzpreptoshootgrenadesterminate));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzPrepToShootGrenadesTerminate", &mechzpreptoshootgrenadesterminate);
-    /#
-        assert(isscriptfunctionptr(&mechzpreptoshootgrenadesterminate));
-    #/
+    assert(isscriptfunctionptr(&mechzpreptoshootgrenadesterminate));
     behaviorstatemachine::registerbsmscriptapiinternal("mechzPrepToShootGrenadesTerminate", &mechzpreptoshootgrenadesterminate);
-    /#
-        assert(isscriptfunctionptr(&mechzshootgrenadestart));
-    #/
+    assert(isscriptfunctionptr(&mechzshootgrenadestart));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShootGrenadeStart", &mechzshootgrenadestart);
-    /#
-        assert(isscriptfunctionptr(&mechzshootgrenadestart));
-    #/
+    assert(isscriptfunctionptr(&mechzshootgrenadestart));
     behaviorstatemachine::registerbsmscriptapiinternal("mechzShootGrenadeStart", &mechzshootgrenadestart);
-    /#
-        assert(isscriptfunctionptr(&mechzshootgrenadeterminate));
-    #/
+    assert(isscriptfunctionptr(&mechzshootgrenadeterminate));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShootGrenadeTerminate", &mechzshootgrenadeterminate);
-    /#
-        assert(isscriptfunctionptr(&mechzshootgrenadeterminate));
-    #/
+    assert(isscriptfunctionptr(&mechzshootgrenadeterminate));
     behaviorstatemachine::registerbsmscriptapiinternal("mechzShootGrenadeTerminate", &mechzshootgrenadeterminate);
-    /#
-        assert(isscriptfunctionptr(&mechzsetspeedwalk));
-    #/
+    assert(isscriptfunctionptr(&mechzsetspeedwalk));
     behaviorstatemachine::registerbsmscriptapiinternal("mechzSetSpeedWalk", &mechzsetspeedwalk);
-    /#
-        assert(isscriptfunctionptr(&mechzsetspeedrun));
-    #/
+    assert(isscriptfunctionptr(&mechzsetspeedrun));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzSetSpeedRun", &mechzsetspeedrun);
-    /#
-        assert(isscriptfunctionptr(&mechzshootflame));
-    #/
+    assert(isscriptfunctionptr(&mechzshootflame));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShootFlame", &mechzshootflame);
-    /#
-        assert(isscriptfunctionptr(&mechzupdateflame));
-    #/
+    assert(isscriptfunctionptr(&mechzupdateflame));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzUpdateFlame", &mechzupdateflame);
-    /#
-        assert(isscriptfunctionptr(&mechzstopflame));
-    #/
+    assert(isscriptfunctionptr(&mechzstopflame));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzStopFlame", &mechzstopflame);
-    /#
-        assert(isscriptfunctionptr(&mechzplayedberserkintro));
-    #/
+    assert(isscriptfunctionptr(&mechzplayedberserkintro));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzPlayedBerserkIntro", &mechzplayedberserkintro);
-    /#
-        assert(isscriptfunctionptr(&mechzattackstart));
-    #/
+    assert(isscriptfunctionptr(&mechzattackstart));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzAttackStart", &mechzattackstart);
-    /#
-        assert(isscriptfunctionptr(&mechzdeathstart));
-    #/
+    assert(isscriptfunctionptr(&mechzdeathstart));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzDeathStart", &mechzdeathstart);
-    /#
-        assert(isscriptfunctionptr(&mechzidlestart));
-    #/
+    assert(isscriptfunctionptr(&mechzidlestart));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzIdleStart", &mechzidlestart);
-    /#
-        assert(isscriptfunctionptr(&mechzpainstart));
-    #/
+    assert(isscriptfunctionptr(&mechzpainstart));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzPainStart", &mechzpainstart);
-    /#
-        assert(isscriptfunctionptr(&mechzpainterminate));
-    #/
+    assert(isscriptfunctionptr(&mechzpainterminate));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzPainTerminate", &mechzpainterminate);
-    /#
-        assert(isscriptfunctionptr(&mechzjetpackpainterminate));
-    #/
+    assert(isscriptfunctionptr(&mechzjetpackpainterminate));
     behaviortreenetworkutility::registerbehaviortreescriptapi("mechzJetpackPainTerminate", &mechzjetpackpainterminate);
     animationstatenetwork::registernotetrackhandlerfunction("melee_soldat", &function_d9de8431);
     animationstatenetwork::registernotetrackhandlerfunction("fire_chaingun", &function_e26728bc);
@@ -299,7 +217,7 @@ function private function_e26728bc(entity) {
     var_8598bad6 = entity gettagorigin("tag_gun_barrel2") + launch_offset;
     dist = distance(var_8598bad6, target_pos);
     velocity = dir * dist;
-    velocity = velocity + vectorscale((0, 0, 1), 120);
+    velocity = velocity + (0, 0, 120);
     val = 1;
     oldval = entity clientfield::get("mechz_115_gun_firing");
     if (oldval === val) {
@@ -646,7 +564,7 @@ function mechzshouldshootflame(entity) {
         return false;
     }
     in_vehicle = isplayer(enemy) && enemy isinvehicle();
-    can_see = bullettracepassed(entity.origin + vectorscale((0, 0, 1), 36), enemy.origin + vectorscale((0, 0, 1), 36), 0, undefined);
+    can_see = bullettracepassed(entity.origin + (0, 0, 36), enemy.origin + (0, 0, 36), 0, undefined);
     if (!can_see && !in_vehicle) {
         entity.var_e05f2c0a = gettime() + 2500;
         return false;
@@ -1149,7 +1067,7 @@ function private function_3b8b6e80() {
     self.pers[#"team"] = self.team;
     self destructserverutils::togglespawngibs(self, 1);
     self.var_28621cf4 = "j_neck";
-    self.var_e5365d8a = vectorscale((0, 0, 1), 6);
+    self.var_e5365d8a = (0, 0, 6);
     aiutility::addaioverridedamagecallback(self, &function_679ee5b3);
     self thread function_fe2419fc();
     self namespace_47c5b560::function_904442b2();
@@ -1472,7 +1390,7 @@ function function_4c489c31(attacker) {
     if (isplayer(attacker)) {
         attacker.var_6de2953f = gettime();
     }
-    self radiusdamage(self.origin + vectorscale((0, 0, 1), 36), 128, 150, 95, attacker, "MOD_EXPLOSIVE");
+    self radiusdamage(self.origin + (0, 0, 36), 128, 150, 95, attacker, "MOD_EXPLOSIVE");
     if (isdefined(self.var_bacf9a1a)) {
         self thread [[ self.var_bacf9a1a ]](attacker);
     }

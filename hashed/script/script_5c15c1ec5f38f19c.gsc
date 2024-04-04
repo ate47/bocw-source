@@ -92,25 +92,19 @@ function private generate_solution(reset) {
             var_4abd20f4[var_4abd20f4.size] = var_7df2d0a6;
         }
     }
-    /#
-        assert(var_4abd20f4.size > var_8c5afe89.size);
-    #/
+    assert(var_4abd20f4.size > var_8c5afe89.size);
     randresult = function_cd12badd(seed, getarraykeys(var_8c5afe89));
     seed = randresult.seed;
     var_74a258da = randresult.scrambled;
     randresult = function_cd12badd(seed, var_687f51a8);
     seed = randresult.seed;
     var_9b5a7338 = randresult.scrambled;
-    /#
-        assert(var_9b5a7338.size >= 9);
-    #/
+    assert(var_9b5a7338.size >= 9);
     for (i = 0; i < 3; i++) {
         var_c7696383 = var_74a258da[i];
         agent = var_8c5afe89[var_c7696383];
         agent.var_11faa37b = i;
-        /#
-            assert(agent.var_11faa37b < level.var_60eee92e.agents.size);
-        #/
+        assert(agent.var_11faa37b < level.var_60eee92e.agents.size);
         var_e380d76b = var_9b5a7338[i * 2];
         function_3029b4d5(agent, var_e380d76b);
         var_1edddb3d = var_9b5a7338[i * 2 + 1];
@@ -176,9 +170,7 @@ function private function_68b722e5() {
             var_9af06a57.gender = 0;
         }
     }
-    /#
-        assert(32 >= level.var_60eee92e.locations.size);
-    #/
+    assert(32 >= level.var_60eee92e.locations.size);
 }
 
 // Namespace namespace_46c3c08e/namespace_46c3c08e
@@ -255,9 +247,7 @@ function function_eadf5d0b(var_fc34020f) {
     }
     namespace_61e6d095::create(#"hash_34f10865afcf9af7", #"hash_71e7e2f7f0dd39e");
     namespace_61e6d095::function_d3c3e5c3(#"hash_34f10865afcf9af7", #"interactive_map");
-    /#
-        assert(isdefined(level.var_60eee92e));
-    #/
+    assert(isdefined(level.var_60eee92e));
     var_2b322539 = level.var_60eee92e.var_c363cb12;
     var_8c78fd5a = level.var_60eee92e.locations;
     namespace_61e6d095::function_9ade1d9b(#"hash_34f10865afcf9af7", "SuspectName", #"");
@@ -507,15 +497,11 @@ function private function_c83dffcf() {
                     keyinfo.var_45f26a8c = var_b7a77c7e.var_2f94fe81;
                     continue;
                 }
-                /#
-                    assert(!isdefined(keyinfo.var_ae185984));
-                #/
+                assert(!isdefined(keyinfo.var_ae185984));
                 keyinfo.var_ae185984 = var_b7a77c7e.var_2f94fe81;
             }
         }
-        /#
-            assert(!isdefined(var_9bd695ca[var_9af06a57.var_11faa37b]));
-        #/
+        assert(!isdefined(var_9bd695ca[var_9af06a57.var_11faa37b]));
         var_9bd695ca[var_9af06a57.var_11faa37b] = keyinfo;
     }
     return var_9bd695ca;
@@ -646,9 +632,7 @@ function private function_5909fc47() {
             }
             if (isdefined(var_9af06a57.var_5e0151b9)) {
                 var_401f3c2b = level.var_60eee92e.var_c363cb12[var_9af06a57.var_5e0151b9];
-                /#
-                    assert(isdefined(var_401f3c2b.var_11faa37b));
-                #/
+                assert(isdefined(var_401f3c2b.var_11faa37b));
                 alias = level.var_60eee92e.agents[var_401f3c2b.var_11faa37b].alias;
                 println("<unknown string>" + makelocalizedstring(alias) + "<unknown string>");
             }
@@ -713,9 +697,7 @@ function private function_ce468ae0() {
                         }
                     }
                     if (var_b960cd6c[0] == var_bf580ad5[0] && var_b960cd6c[1] == var_bf580ad5[1]) {
-                        /#
-                            assertmsg("<unknown string>" + var_49d3a37d + "<unknown string>" + var_d977e4b9 + "<unknown string>");
-                        #/
+                        assertmsg("<unknown string>" + var_49d3a37d + "<unknown string>" + var_d977e4b9 + "<unknown string>");
                     }
                 }
             }

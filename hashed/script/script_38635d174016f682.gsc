@@ -106,8 +106,6 @@ function debugorigin(timesec, size, color) {
 // Checksum 0x81372dc5, Offset: 0x5c8
 // Size: 0x34
 function debugmsg(txt) {
-    /#
-        println("<unknown string>" + txt);
-    #/
+    println("<unknown string>" + txt);
 }
 

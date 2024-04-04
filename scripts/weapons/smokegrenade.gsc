@@ -87,12 +87,11 @@ function watchsmokegrenadedetonation(owner, statweapon, smokeweapon, duration, t
     if (isplayer(owner)) {
         owner stats::function_e24eec31(statweapon, #"used", 1);
     }
-    waitresult = undefined;
     waitresult = self waittill(#"explode", #"death");
     if (waitresult._notify != "explode") {
         return;
     }
-    onefoot = vectorscale((0, 0, 1), 12);
+    onefoot = (0, 0, 12);
     startpos = waitresult.position + onefoot;
     smokedetonate(owner, statweapon, smokeweapon, waitresult.position, function_79d42bea(smokeweapon), totaltime, duration);
     damageeffectarea(owner, startpos, smokeweapon.explosionradius, level.willypetedamageheight);
@@ -406,7 +405,6 @@ function function_87d0a127(grenadeent, *smokeweapon) {
     grenadeteam = smokeweapon.team;
     owner = smokeweapon.smoketrigger.owner;
     while (true) {
-        waitresult = undefined;
         waitresult = smokeweapon waittilltimeout(0.15, #"death");
         if (isdefined(owner)) {
             if (isdefined(smokeweapon.smoketrigger) && owner istouching(smokeweapon.smoketrigger) && waitresult._notify == #"timeout") {
@@ -431,7 +429,6 @@ function function_8b6ddd71(grenadeent, smokeweapon) {
     }
     grenadeteam = grenadeent.team;
     while (true) {
-        waitresult = undefined;
         waitresult = grenadeent waittilltimeout(0.15, #"death");
         foreach (player in level.players) {
             if (!isdefined(player)) {
@@ -499,7 +496,6 @@ function event_handler[grenade_fire] function_debb0d4e(eventstruct) {
         return;
     }
     grenade thread watchsmokegrenadedetonation(self, weapon_smoke, weapon_smoke, duration, totaltime);
-    waitresult = undefined;
     waitresult = grenade waittill(#"stationary", #"death");
     if (waitresult._notify == "stationary") {
         playfx(#"hash_4ca8a1df731cf6a1", grenade.origin, (0, 0, 1), (1, 0, 0));

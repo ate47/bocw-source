@@ -138,31 +138,21 @@ function function_d519e318() {
     matchend.star_level = isdefined(level.var_b48509f9) ? level.var_b48509f9 : 0;
     if (isdefined(game.telemetry.var_dc73ada2)) {
         time_seconds = utc - game.telemetry.var_dc73ada2;
-        /#
-            println("<unknown string>" + time_seconds);
-        #/
+        println("<unknown string>" + time_seconds);
         matchend.var_dc73ada2 = game.telemetry.var_dc73ada2;
     }
     match_duration = function_f8d53445() / 1000;
-    /#
-        println("<unknown string>" + match_duration);
-    #/
+    println("<unknown string>" + match_duration);
     if (isdefined(game.telemetry.player_count)) {
-        /#
-            println("<unknown string>" + game.telemetry.player_count);
-        #/
+        println("<unknown string>" + game.telemetry.player_count);
         matchend.player_count = game.telemetry.player_count;
     }
     if (isdefined(game.telemetry.life_count)) {
-        /#
-            println("<unknown string>" + game.telemetry.life_count);
-        #/
+        println("<unknown string>" + game.telemetry.life_count);
         matchend.life_count = game.telemetry.life_count;
     }
     function_92d1707f(#"hash_572d4a196995ede6", matchend);
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
@@ -383,18 +373,12 @@ function on_player_connect(*data) {
         if (isdefined(game.telemetry.player_count)) {
             self.pers[#"telemetry"].var_6ba64843 = game.telemetry.player_count;
             game.telemetry.player_count++;
-            /#
-                println("<unknown string>" + game.telemetry.player_count);
-            #/
+            println("<unknown string>" + game.telemetry.player_count);
         } else {
-            /#
-                println("<unknown string>");
-            #/
+            println("<unknown string>");
             return;
         }
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         playerdata = {};
         playerdata.utc_connect_time_s = self.pers[#"telemetry"].utc_connect_time_s;
         playerdata.var_6ba64843 = isdefined(self.pers[#"telemetry"].var_6ba64843) ? self.pers[#"telemetry"].var_6ba64843 : 0;
@@ -515,9 +499,7 @@ function on_player_spawned() {
             println("<unknown string>" + game.telemetry.life_count);
         #/
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace namespace_8d0ae0b4/namespace_8d0ae0b4
@@ -525,9 +507,7 @@ function on_player_spawned() {
 // Checksum 0xfde597, Offset: 0x38a0
 // Size: 0xd4
 function private function_3f08a12b(data) {
-    /#
-        assert(isdefined(data.weapon), "<unknown string>");
-    #/
+    assert(isdefined(data.weapon), "<unknown string>");
     var_abb39438 = {};
     var_abb39438.wallbuy_weapon = data.weapon.statname;
     var_abb39438.weapon_rarity = hash(data.rarity);

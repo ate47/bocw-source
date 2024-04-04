@@ -34,9 +34,7 @@ function function_669c57bc(posx, posy, text, color, alpha, scale, duration) {
 // Size: 0x134
 function function_9f4eb444(text, scale) {
     /#
-        /#
-            assert(isdefined(text));
-        #/
+        assert(isdefined(text));
         if (isdefined(scale) == 0) {
             scale = 1;
         }
@@ -86,9 +84,7 @@ function private function_ac3c5285(posx, posy, text, color, scale, var_24ea4e17,
         if (isarray(level.var_89c4a5f0) == 0) {
             level.var_89c4a5f0 = array();
         }
-        /#
-            assert(isarray(level.var_89c4a5f0));
-        #/
+        assert(isarray(level.var_89c4a5f0));
         if (level.var_89c4a5f0.size > 0) {
             foreach (row in level.var_89c4a5f0) {
                 if (isinarray(level.var_89c4a5f0, posy) == 1) {
@@ -130,9 +126,7 @@ function private function_ac3c5285(posx, posy, text, color, scale, var_24ea4e17,
 // Size: 0x1a4
 function function_3ba3cecb(text, posx, posy, color, scale, var_24ea4e17, var_45b08b81) {
     /#
-        /#
-            assert(isdefined(text) == 1);
-        #/
+        assert(isdefined(text) == 1);
         color = function_ea2f17d1(color, (1, 0.5, 0.5));
         scale = function_ea2f17d1(scale, 1.75);
         var_24ea4e17 = function_ea2f17d1(var_24ea4e17, 4);
@@ -345,15 +339,9 @@ function private function_bfdce45f(color, depthtest, var_5c8bd7d0, offset) {
 // Size: 0x1fa
 function private function_6ee9efa7(color, depthtest, duration, offset) {
     /#
-        /#
-            assert(isdefined(self.origin) == 1, "<unknown string>");
-        #/
-        /#
-            assert(isvec(color) == 1, "<unknown string>");
-        #/
-        /#
-            assert(isdefined(duration) == 1, "<unknown string>");
-        #/
+        assert(isdefined(self.origin) == 1, "<unknown string>");
+        assert(isvec(color) == 1, "<unknown string>");
+        assert(isdefined(duration) == 1, "<unknown string>");
         framecount = 0;
         var_5c8bd7d0 = array();
         var_5c8bd7d0[0] = self.origin;
@@ -395,9 +383,7 @@ function function_31d6fc52(var_9632a625, color, depthtest, duration, offset) {
         } else {
             duration = int(20 * duration);
         }
-        /#
-            assert(duration > 2, "<unknown string>");
-        #/
+        assert(duration > 2, "<unknown string>");
         var_9632a625 thread function_6ee9efa7(color, depthtest, duration, offset);
     #/
 }
@@ -493,12 +479,8 @@ function function_81183b3(origin, size, angles, color, alpha, depthtest, duratio
 // Size: 0x384
 function function_8aaa798e(origin, angles, length, var_e3c3c3d9, color, alpha, depthtest, duration) {
     /#
-        /#
-            assert(isvec(origin));
-        #/
-        /#
-            assert(isvec(angles));
-        #/
+        assert(isvec(origin));
+        assert(isvec(angles));
         length = function_ea2f17d1(length, 12);
         var_e3c3c3d9 = function_ea2f17d1(var_e3c3c3d9, 4);
         color = function_ea2f17d1(color, (1, 1, 1));

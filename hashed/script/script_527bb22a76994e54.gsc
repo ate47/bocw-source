@@ -64,7 +64,7 @@ function function_49ddbbf1(player, var_f587343a) {
     var_f587343a.var_82d1fb6b = getentarray("hub_hidden_mdl", "targetname");
     s_pos = struct::get("evidence_board_player_pos", "targetname");
     if (!isdefined(var_f587343a.var_bb194ec6)) {
-        var_f587343a.var_bb194ec6 = util::spawn_model("tag_origin", s_pos.origin + vectorscale((0, 0, -1), 60), s_pos.angles);
+        var_f587343a.var_bb194ec6 = util::spawn_model("tag_origin", s_pos.origin + (0, 0, -60), s_pos.angles);
     }
     var_f587343a.var_fa32835f = 0.75;
     var_f587343a.var_27d52210 = 0.5;
@@ -311,7 +311,7 @@ function function_1e3889e5(var_f587343a) {
 // Size: 0xec
 function function_6f86dee1(var_f587343a) {
     level endon(#"hash_3daf27ede70cbb90");
-    var_f5cadbe8 = vectorscale((0, 0, -1), 60);
+    var_f5cadbe8 = (0, 0, -60);
     while (true) {
         level waittill(#"hash_7ce217c53edc8162");
         level thread namespace_4ed3ce47::function_6fe99ae0();
@@ -441,7 +441,6 @@ function function_6baebf65() {
 function function_c38c0276() {
     level endon(#"hash_3e8dc841ce47f8fd");
     while (true) {
-        option = undefined;
         option = level waittill(#"evidence_board_option_selected");
         if (option.var_70b35161 == 1) {
             level notify(#"hash_3ee5ee530fc0a790");
@@ -486,7 +485,6 @@ function function_487cf276(var_f587343a) {
             self function_f2dbcc31(0, var_f587343a);
             while (true) {
                 self thread function_5c499dd2(var_f587343a);
-                var_b7e306fc = undefined;
                 var_b7e306fc = level waittill(#"hash_1c5e7e49686536b9", #"hash_57c28d19fe61af2f");
                 if (isdefined(var_b7e306fc._notify) && var_b7e306fc._notify == "evidence_board_review_index_update") {
                     var_f587343a = function_f2dbcc31(var_b7e306fc.selected_index, var_f587343a);
@@ -1119,7 +1117,6 @@ function function_9b006527(var_f587343a) {
 function function_a1353526() {
     level endon(#"hash_3daf27ede70cbb90");
     while (true) {
-        s_result = undefined;
         s_result = level waittill(#"hash_7ce217c53edc8162", #"hash_3e8dc841ce47f8fd");
         switch (s_result._notify) {
         case #"hash_7ce217c53edc8162":

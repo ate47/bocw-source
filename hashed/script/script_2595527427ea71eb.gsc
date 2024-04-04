@@ -8,21 +8,8 @@
 // Method(s) 7 Total 14
 class czm_trial_timer : cluielem {
 
-    // Namespace czm_trial_timer/zm_trial_timer
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x3140f0bf, Offset: 0x238
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace czm_trial_timer/zm_trial_timer
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xb4cfef60, Offset: 0x3e8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace czm_trial_timer/zm_trial_timer
     // Params 2, eflags: 0x2 linked
@@ -45,7 +32,7 @@ class czm_trial_timer : cluielem {
     // Checksum 0x650b3e34, Offset: 0x398
     // Size: 0x44
     function set_under_round_rules(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "under_round_rules", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "under_round_rules", value);
     }
 
     // Namespace czm_trial_timer/zm_trial_timer
@@ -53,7 +40,7 @@ class czm_trial_timer : cluielem {
     // Checksum 0x1d5c70f3, Offset: 0x348
     // Size: 0x44
     function set_timer_text(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "timer_text", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "timer_text", value);
     }
 
     // Namespace czm_trial_timer/zm_trial_timer

@@ -51,7 +51,7 @@ function function_32d5e898(*localclientnum) {
         if (isdefined(player) && isdefined(player.doa)) {
             player.doa.cameramode = var_634814ee;
         }
-        player function_278f20a3(vectorscale((1, 0, 0), 75), function_ccf8a968(1));
+        player function_278f20a3((75, 0, 0), function_ccf8a968(1));
     }
 }
 
@@ -118,7 +118,7 @@ function function_278f20a3(angles, min_dist, max_dist = 0) {
 // Size: 0x94
 function function_7dd474a0(*localclientnum, *delta_time) {
     player = level.localplayers[0];
-    cam_pos = player.origin + vectorscale((0, 0, 1), 600);
+    cam_pos = player.origin + (0, 0, 600);
     player camerasetposition(cam_pos);
     player camerasetlookat(player.doa.var_13a2a410);
 }
@@ -160,9 +160,7 @@ function function_14f1aa2b(localclientnum, delta_time) {
     }
     cameramode = localplayer.doa.cameramode;
     if (cameramode == 7) {
-        /#
-            assert(isdefined(level.doa.var_b73cc08));
-        #/
+        assert(isdefined(level.doa.var_b73cc08));
         cam_pos = level.doa.var_b73cc08.origin;
         angles = level.doa.var_b73cc08.angles;
         localplayer camerasetposition(cam_pos);
@@ -182,8 +180,8 @@ function function_14f1aa2b(localclientnum, delta_time) {
     }
     if (cameramode == 4) {
         if (level.localplayers.size > 1) {
-            mins = vectorscale((1, 1, 1), 1e+06);
-            maxs = vectorscale((-1, -1, -1), 1e+06);
+            mins = (1e+06, 1e+06, 1e+06);
+            maxs = (-1e+06, -1e+06, -1e+06);
             if (level.doa.world_state == 0 && isdefined(level.doa.var_72b899ad)) {
                 mins = function_2d9b1c4e(level.doa.var_72b899ad.origin, mins);
                 maxs = function_663f7227(level.doa.var_72b899ad.origin, maxs);
@@ -331,13 +329,11 @@ function changecamera(mode) {
         return;
     }
     self.doa.cameramode = mode;
-    /#
-        assert(isdefined(self.doa.cameramode));
-    #/
+    assert(isdefined(self.doa.cameramode));
     if (is_true(level.doa.var_318aa67a)) {
         self.doa.cameramode = 6;
         self.topdowncamera = 0;
-        self.doa.var_3e81d24c = 1;
+        self.doa.infps = 1;
     }
     self cameraforcedisablescriptcam(0);
     if (is_true(level.doa.var_dec041f5)) {
@@ -361,13 +357,11 @@ function changecamera(mode) {
         }
     }
     if (level.doa.world_state == 0) {
-        /#
-            assert(isdefined(isdefined(level.doa.var_72b899ad)));
-        #/
+        assert(isdefined(isdefined(level.doa.var_72b899ad)));
         normalangle = level.doa.var_72b899ad.var_13ea8aea;
         var_1d83376c = level.doa.var_72b899ad.var_46f3a17d;
     } else {
-        normalangle = vectorscale((1, 0, 0), 75);
+        normalangle = (75, 0, 0);
         var_1d83376c = (75, 180, 0);
     }
     if (is_true(self.doa.var_71122e79)) {

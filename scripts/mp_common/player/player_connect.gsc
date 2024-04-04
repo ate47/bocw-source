@@ -255,9 +255,7 @@ function callback_playerconnect() {
     self hvo::function_2ce5cb7e();
     num_con = getnumconnectedplayers(0);
     num_exp = getnumexpectedplayers(1);
-    /#
-        println("<unknown string>", num_con, "<unknown string>", num_exp);
-    #/
+    println("<unknown string>", num_con, "<unknown string>", num_exp);
     if (num_con == num_exp && num_exp != 0) {
         level flag::set("all_players_connected");
     }
@@ -287,7 +285,7 @@ function function_b7c4c231() {
     }
     spawn = spawning::function_89116a1e(1);
     if (isdefined(spawn)) {
-        var_50747a19 = spawn.origin + vectorscale((0, 0, 1), 60);
+        var_50747a19 = spawn.origin + (0, 0, 60);
         self [[ var_f18c60b3 ]](var_50747a19, spawn.angles);
         return;
     }

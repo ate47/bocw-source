@@ -8,22 +8,6 @@
 class cvehicleturretdurability : cluielem {
 
     // Namespace cvehicleturretdurability/vehicleturretdurability
-    // Params 0, eflags: 0x8
-    // Checksum 0xca5e39ad, Offset: 0x350
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cvehicleturretdurability/vehicleturretdurability
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x3d6e3c51, Offset: 0x4a8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cvehicleturretdurability/vehicleturretdurability
     // Params 1, eflags: 0x0
     // Checksum 0x8d2e111f, Offset: 0x440
     // Size: 0x24
@@ -54,7 +38,7 @@ class cvehicleturretdurability : cluielem {
     // Size: 0x48
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "bar_percent", 0);
+        set_data(localclientnum, "bar_percent", 0);
     }
 
     // Namespace cvehicleturretdurability/vehicleturretdurability
@@ -62,7 +46,7 @@ class cvehicleturretdurability : cluielem {
     // Checksum 0x1d0af15e, Offset: 0x470
     // Size: 0x30
     function set_bar_percent(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "bar_percent", value);
+        set_data(localclientnum, "bar_percent", value);
     }
 
 }

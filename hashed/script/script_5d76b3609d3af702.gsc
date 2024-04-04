@@ -7,22 +7,6 @@
 // Method(s) 11 Total 18
 class class_b20c2804 : cluielem {
 
-    // Namespace class_b20c2804/doa_textbubble
-    // Params 0, eflags: 0x8
-    // Checksum 0x7c0cd366, Offset: 0x560
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_b20c2804/doa_textbubble
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xfe6101f5, Offset: 0x808
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_b20c2804/doa_textbubble
     // Params 1, eflags: 0x0
     // Checksum 0x5009ded4, Offset: 0x6c0
@@ -36,7 +20,7 @@ class class_b20c2804 : cluielem {
     // Checksum 0x2332828c, Offset: 0x798
     // Size: 0x30
     function function_4f6e830d(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "offset_y", value);
+        set_data(localclientnum, "offset_y", value);
     }
 
     // Namespace namespace_b20c2804/doa_textbubble
@@ -52,7 +36,7 @@ class class_b20c2804 : cluielem {
     // Checksum 0xb88f04f2, Offset: 0x760
     // Size: 0x30
     function function_61312692(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "offset_x", value);
+        set_data(localclientnum, "offset_x", value);
     }
 
     // Namespace namespace_b20c2804/doa_textbubble
@@ -60,7 +44,7 @@ class class_b20c2804 : cluielem {
     // Checksum 0xdcad69b9, Offset: 0x7d0
     // Size: 0x30
     function function_7ddfdfef(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "offset_z", value);
+        set_data(localclientnum, "offset_z", value);
     }
 
     // Namespace namespace_b20c2804/doa_textbubble
@@ -76,7 +60,7 @@ class class_b20c2804 : cluielem {
     // Checksum 0x363cb818, Offset: 0x6f0
     // Size: 0x30
     function set_entnum(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "entnum", value);
+        set_data(localclientnum, "entnum", value);
     }
 
     // Namespace namespace_b20c2804/doa_textbubble
@@ -84,7 +68,7 @@ class class_b20c2804 : cluielem {
     // Checksum 0x6fffa821, Offset: 0x728
     // Size: 0x30
     function set_text(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "text", value);
+        set_data(localclientnum, "text", value);
     }
 
     // Namespace namespace_b20c2804/doa_textbubble
@@ -93,11 +77,11 @@ class class_b20c2804 : cluielem {
     // Size: 0xc0
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "entnum", 0);
-        [[ self ]]->set_data(localclientnum, "text", #"");
-        [[ self ]]->set_data(localclientnum, "offset_x", 0);
-        [[ self ]]->set_data(localclientnum, "offset_y", 0);
-        [[ self ]]->set_data(localclientnum, "offset_z", 0);
+        set_data(localclientnum, "entnum", 0);
+        set_data(localclientnum, "text", #"");
+        set_data(localclientnum, "offset_x", 0);
+        set_data(localclientnum, "offset_y", 0);
+        set_data(localclientnum, "offset_z", 0);
     }
 
 }

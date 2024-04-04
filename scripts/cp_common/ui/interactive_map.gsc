@@ -95,9 +95,7 @@ function open(var_738a6265, top_left, bottom_right, var_879505e1 = 1, var_ff0f97
         }
         return;
     }
-    /#
-        assertmsg("<unknown string>");
-    #/
+    assertmsg("<unknown string>");
 }
 
 // Namespace interactive_map/interactive_map
@@ -113,9 +111,7 @@ function function_e0cc3b71(name, value) {
 // Checksum 0xb6ba3c59, Offset: 0xa78
 // Size: 0x41c
 function function_879505e1(var_ff0f9714 = 1, var_509b0860 = #"hash_780067c4596705d7", var_74ac68df = #"hash_71f8107215effa5b") {
-    /#
-        assert(exists(#"interactive_map"), "<unknown string>");
-    #/
+    assert(exists(#"interactive_map"), "<unknown string>");
     function_23036faa(#"cursor", "uid", #"cursor");
     function_23036faa(#"cursor", "widgetName", var_509b0860);
     function_23036faa(#"cursor", "cursorImage", var_74ac68df);
@@ -127,7 +123,7 @@ function function_879505e1(var_ff0f9714 = 1, var_509b0860 = #"hash_780067c459670
     function_8b43da33();
     function_e4d34e68(0);
     prompts::function_e79f51ec(#"cursor");
-    level.interactive_map.var_1cd32747 = vectorscale((1, 1, 0), 0.5);
+    level.interactive_map.var_1cd32747 = (0.5, 0.5, 0);
     if (isdefined(level.interactive_map.var_87c49d20)) {
         var_75576067 = level.interactive_map.var_87c49d20 - level.interactive_map.var_e1d2ab75.top_left;
         level.interactive_map.var_1cd32747 = (vectordot(var_75576067, level.interactive_map.var_e1d2ab75.x_axis) / level.interactive_map.var_e1d2ab75.width, vectordot(var_75576067, level.interactive_map.var_e1d2ab75.y_axis) / level.interactive_map.var_e1d2ab75.height, 0);

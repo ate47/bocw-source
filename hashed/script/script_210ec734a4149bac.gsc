@@ -25,9 +25,7 @@ function private autoexec __init__system__() {
 // Checksum 0xc2586647, Offset: 0x350
 // Size: 0x10c
 function private preinit() {
-    /#
-        assert(isscriptfunctionptr(&civilianpaniccoverservice));
-    #/
+    assert(isscriptfunctionptr(&civilianpaniccoverservice));
     behaviortreenetworkutility::registerbehaviortreescriptapi("civilianPanicCoverService", &civilianpaniccoverservice, 1);
     level.var_ec54dc19 = &function_251c139d;
     callback::on_ai_killed(&on_ai_killed);
@@ -438,7 +436,6 @@ function private function_f1d19be1() {
             waitframe(1);
             continue;
         }
-        wait_result = undefined;
         wait_result = self waittill(#"ai_events");
         waittillframeend();
         if (self.ignoreall || self isragdoll()) {

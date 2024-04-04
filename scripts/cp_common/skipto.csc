@@ -51,9 +51,7 @@ function private postinit() {
 // Size: 0x354
 function add(skipto, var_e784b061, var_dde96e3b, var_48a6b9bd, var_a9e3715c, cleanup_func) {
     if (function_525a83cb(skipto)) {
-        /#
-            errormsg("<unknown string>");
-        #/
+        errormsg("<unknown string>");
         return;
     }
     if (isdefined(level.var_70b370e5)) {
@@ -79,9 +77,7 @@ function add(skipto, var_e784b061, var_dde96e3b, var_48a6b9bd, var_a9e3715c, cle
     }
     level.var_70b370e5 = skipto;
     if (!isdefined(var_e784b061)) {
-        /#
-            assert(isdefined(var_e784b061), "<unknown string>");
-        #/
+        assert(isdefined(var_e784b061), "<unknown string>");
     }
     struct = function_7d6f76df(skipto, var_e784b061, var_dde96e3b, var_48a6b9bd, var_a9e3715c, cleanup_func, var_672c77b1, undefined);
     struct.public = 1;
@@ -97,9 +93,7 @@ function function_9c003a50(skipto, var_e784b061, var_dde96e3b, var_48a6b9bd, var
         level.var_46d8992a = skipto;
     }
     if (function_525a83cb(skipto)) {
-        /#
-            errormsg("<unknown string>");
-        #/
+        errormsg("<unknown string>");
         return;
     }
     if (!isdefined(var_672c77b1)) {
@@ -122,9 +116,7 @@ function function_9c003a50(skipto, var_e784b061, var_dde96e3b, var_48a6b9bd, var
     }
     level.var_70b370e5 = skipto;
     if (!isdefined(var_e784b061)) {
-        /#
-            assert(isdefined(var_e784b061), "<unknown string>");
-        #/
+        assert(isdefined(var_e784b061), "<unknown string>");
     }
     struct = function_7d6f76df(skipto, var_e784b061, var_dde96e3b, var_48a6b9bd, var_a9e3715c, cleanup_func, var_672c77b1, var_89f09f8d);
     struct.public = 1;
@@ -145,9 +137,7 @@ function function_67843f17(skipto, var_e784b061, var_dde96e3b, var_48a6b9bd, var
         struct.var_f36d5247 = 1;
         return;
     }
-    /#
-        errormsg("<unknown string>");
-    #/
+    errormsg("<unknown string>");
 }
 
 // Namespace skipto/skipto
@@ -155,9 +145,7 @@ function function_67843f17(skipto, var_e784b061, var_dde96e3b, var_48a6b9bd, var
 // Checksum 0xe0b8292f, Offset: 0xb68
 // Size: 0xc8
 function function_7d6f76df(msg, var_e784b061, var_dde96e3b, var_48a6b9bd, var_a9e3715c, cleanup_func, var_672c77b1, var_89f09f8d) {
-    /#
-        assert(!isdefined(level._loadstarted), "<unknown string>");
-    #/
+    assert(!isdefined(level._loadstarted), "<unknown string>");
     msg = tolower(msg);
     struct = function_5d3e3cf9(msg, var_e784b061, var_dde96e3b, var_48a6b9bd, var_a9e3715c, cleanup_func, var_672c77b1, var_89f09f8d);
     level.var_c55064fd[msg] = struct;

@@ -121,9 +121,7 @@ function function_5ae4a10c(modelname, targetname, displayname, var_7382ea8b, ico
     }
     /#
         if (isdefined(level.var_2d1b0ac[targetname]) && isdefined(displayname)) {
-            /#
-                assert(level.var_2d1b0ac[targetname] == displayname, "world_event_monster_house");
-            #/
+            assert(level.var_2d1b0ac[targetname] == displayname, "world_event_monster_house");
         }
     #/
     if (isdefined(displayname)) {
@@ -144,11 +142,7 @@ function function_5ae4a10c(modelname, targetname, displayname, var_7382ea8b, ico
 // Checksum 0xc70f1360, Offset: 0x20f0
 // Size: 0x46
 function private function_d1852e75(ent) {
-    /#
-        /#
-            assert(isdefined(ent.var_ed875153), "<unknown string>");
-        #/
-    #/
+    assert(isdefined(ent.var_ed875153), "<unknown string>");
     return ent.var_ed875153;
 }
 

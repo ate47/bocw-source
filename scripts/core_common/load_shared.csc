@@ -21,9 +21,7 @@ function private autoexec __init__system__() {
 // Checksum 0x291e7f35, Offset: 0x120
 // Size: 0x34
 function main() {
-    /#
-        assert(isdefined(level.var_f18a6bd6));
-    #/
+    assert(isdefined(level.var_f18a6bd6));
     [[ level.var_f18a6bd6 ]]();
 }
 

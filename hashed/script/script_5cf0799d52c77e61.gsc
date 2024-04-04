@@ -42,7 +42,6 @@ function function_f5114543() {
     self notify("4e7c7f84f1757943");
     self endon("4e7c7f84f1757943");
     self thread namespace_268747c0::function_978c05b5();
-    result = undefined;
     result = self waittill(#"hash_3e251384a5400dce");
     arrayremovevalue(level.doa.var_584a046, self);
     if (isdefined(self.script_model)) {
@@ -57,18 +56,12 @@ function function_f5114543() {
 // Checksum 0x550db41d, Offset: 0x258
 // Size: 0x2a0
 function function_2c3d65c4(platform) {
-    /#
-        assert(isdefined(platform.target), "<unknown string>");
-    #/
+    assert(isdefined(platform.target), "<unknown string>");
     if (!isdefined(platform.original_origin)) {
         platform.original_origin = platform.origin;
         toks = strtok(platform.script_parameters, ";");
-        /#
-            assert(toks.size >= 2, "<unknown string>");
-        #/
-        /#
-            assert(toks[0] == "<unknown string>" || toks[0] == "<unknown string>", "<unknown string>");
-        #/
+        assert(toks.size >= 2, "<unknown string>");
+        assert(toks[0] == "<unknown string>" || toks[0] == "<unknown string>", "<unknown string>");
         platform.type = toks[0] == "mover" ? 1 : 0;
         platform.duration = int(toks[1]);
         target = struct::get(platform.target, "targetname");

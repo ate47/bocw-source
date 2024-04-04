@@ -51,7 +51,7 @@ function function_d28e9b17() {
     if (isdefined(leftglove)) {
         leftglove.targetname = "leftglove";
         leftglove setplayercollision(0);
-        leftglove linkto(org, "tag_origin", (0, 60, 32), vectorscale((1, 0, 0), 90));
+        leftglove linkto(org, "tag_origin", (0, 60, 32), (90, 0, 0));
         trigger = namespace_ec06fe4a::spawntrigger("trigger_radius", leftglove.origin, 1 | 512 | 8, 40, 50);
         if (isdefined(trigger)) {
             trigger.targetname = "leftGlove";
@@ -66,7 +66,7 @@ function function_d28e9b17() {
     if (isdefined(rightglove)) {
         rightglove.targetname = "rightGlove";
         rightglove setplayercollision(0);
-        rightglove linkto(org, "tag_origin", (0, -60, 32), vectorscale((1, 0, 0), 90));
+        rightglove linkto(org, "tag_origin", (0, -60, 32), (90, 0, 0));
         trigger = namespace_ec06fe4a::spawntrigger("trigger_radius", rightglove.origin, 1 | 512 | 8, 40, 50);
         if (isdefined(trigger)) {
             trigger.targetname = "rightGlove";
@@ -77,7 +77,7 @@ function function_d28e9b17() {
     }
     org.var_b981836 = rightglove;
     org.trigger2 = trigger;
-    org linkto(self, "", vectorscale((0, 0, 1), 10), (0, 0, 0));
+    org linkto(self, "", (0, 0, 10), (0, 0, 0));
     self thread function_61888137(org);
     self thread function_f0855523(org);
     self waittill(#"hash_6733dfa48ff87a81");
@@ -91,7 +91,6 @@ function function_d28e9b17() {
 // Size: 0x94
 function function_c2d94d61() {
     self namespace_83eb6304::function_3ecfde67("boxing_stars");
-    waitresult = undefined;
     waitresult = self waittilltimeout(2, #"actor_corpse", #"entitydeleted");
     if (isdefined(waitresult.corpse)) {
         waitresult.corpse namespace_83eb6304::function_3ecfde67("boxing_stars");
@@ -109,7 +108,6 @@ function private function_7c757878(player, mod = "MOD_UNKNOWN", var_70c63791) {
     }
     self endon(#"death");
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         guy = result.activator;
         if (!isdefined(guy)) {
@@ -174,7 +172,6 @@ function private function_61888137(*org) {
 // Checksum 0xda9f2a53, Offset: 0xc28
 // Size: 0x334
 function private function_f0855523(org) {
-    result = undefined;
     result = self waittill(#"hash_1e2c098e8231a30f", #"entering_last_stand", #"hash_77af89fb2b44942f", #"hash_df25520ab279dff", #"hash_562d458e34274132", #"player_died", #"disconnect", #"enter_vehicle", #"death", #"clone_shutdown");
     self notify(#"hash_1e2c098e8231a30f");
     if (isdefined(org) && isdefined(org.trigger1)) {

@@ -8,27 +8,11 @@
 class cfull_screen_black : cluielem {
 
     // Namespace cfull_screen_black/full_screen_black
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x6087e2ff, Offset: 0x4f0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cfull_screen_black/full_screen_black
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xc13c2e7b, Offset: 0x980
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cfull_screen_black/full_screen_black
     // Params 2, eflags: 0x2 linked
     // Checksum 0x5233af94, Offset: 0x910
     // Size: 0x30
     function set_endalpha(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "endAlpha", value);
+        set_data(localclientnum, "endAlpha", value);
     }
 
     // Namespace cfull_screen_black/full_screen_black
@@ -44,7 +28,7 @@ class cfull_screen_black : cluielem {
     // Checksum 0x5afe5db5, Offset: 0x830
     // Size: 0x30
     function set_green(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "green", value);
+        set_data(localclientnum, "green", value);
     }
 
     // Namespace cfull_screen_black/full_screen_black
@@ -52,7 +36,7 @@ class cfull_screen_black : cluielem {
     // Checksum 0x8c0150e4, Offset: 0x8a0
     // Size: 0x30
     function set_fadeovertime(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "fadeOverTime", value);
+        set_data(localclientnum, "fadeOverTime", value);
     }
 
     // Namespace cfull_screen_black/full_screen_black
@@ -68,7 +52,7 @@ class cfull_screen_black : cluielem {
     // Checksum 0x67cfe0de, Offset: 0x868
     // Size: 0x30
     function set_blue(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "blue", value);
+        set_data(localclientnum, "blue", value);
     }
 
     // Namespace cfull_screen_black/full_screen_black
@@ -91,7 +75,7 @@ class cfull_screen_black : cluielem {
     // Checksum 0x9862e18d, Offset: 0x8d8
     // Size: 0x30
     function set_startalpha(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "startAlpha", value);
+        set_data(localclientnum, "startAlpha", value);
     }
 
     // Namespace cfull_screen_black/full_screen_black
@@ -99,7 +83,7 @@ class cfull_screen_black : cluielem {
     // Checksum 0x2cfbe81c, Offset: 0x948
     // Size: 0x30
     function set_drawhud(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "drawHUD", value);
+        set_data(localclientnum, "drawHUD", value);
     }
 
     // Namespace cfull_screen_black/full_screen_black
@@ -107,7 +91,7 @@ class cfull_screen_black : cluielem {
     // Checksum 0x6165fbdf, Offset: 0x7f8
     // Size: 0x30
     function set_red(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "red", value);
+        set_data(localclientnum, "red", value);
     }
 
     // Namespace cfull_screen_black/full_screen_black
@@ -116,13 +100,13 @@ class cfull_screen_black : cluielem {
     // Size: 0x110
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "red", 0);
-        [[ self ]]->set_data(localclientnum, "green", 0);
-        [[ self ]]->set_data(localclientnum, "blue", 0);
-        [[ self ]]->set_data(localclientnum, "fadeOverTime", 0);
-        [[ self ]]->set_data(localclientnum, "startAlpha", 0);
-        [[ self ]]->set_data(localclientnum, "endAlpha", 0);
-        [[ self ]]->set_data(localclientnum, "drawHUD", 0);
+        set_data(localclientnum, "red", 0);
+        set_data(localclientnum, "green", 0);
+        set_data(localclientnum, "blue", 0);
+        set_data(localclientnum, "fadeOverTime", 0);
+        set_data(localclientnum, "startAlpha", 0);
+        set_data(localclientnum, "endAlpha", 0);
+        set_data(localclientnum, "drawHUD", 0);
     }
 
 }

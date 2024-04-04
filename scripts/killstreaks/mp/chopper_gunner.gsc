@@ -45,9 +45,7 @@ function private function_5160bb1e(killstreaktype) {
     player = self;
     player endon(#"disconnect");
     level endon(#"game_ended");
-    /#
-        assert(!isdefined(level.chopper_gunner));
-    #/
+    assert(!isdefined(level.chopper_gunner));
     var_d6940e18 = namespace_e8c18978::function_5160bb1e(killstreaktype);
     if (var_d6940e18 && isbot(player)) {
         player thread function_25d9a09f(level.chopper_gunner);
@@ -94,7 +92,7 @@ function function_25d9a09f(vehicle) {
             vehicle vehicle_ai::fire_for_time(2 + randomfloat(0.8), 0, enemy);
             vehicle vehicle_ai::fire_for_rounds(1, 1, enemy);
             vehicle turretcleartarget(0);
-            vehicle turretsettargetangles(0, vectorscale((1, 0, 0), 15));
+            vehicle turretsettargetangles(0, (15, 0, 0));
             if (isdefined(enemy)) {
                 wait(2 + randomfloat(0.5));
             }

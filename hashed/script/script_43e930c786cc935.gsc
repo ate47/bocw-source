@@ -97,9 +97,7 @@ function dragontrapstate(localclientnum, *oldval, newval, *bnewent, *binitialsna
         if (!isdefined(self.var_f3b82c6d)) {
             self function_6f3ad355(fieldname);
         }
-        /#
-            assert(isdefined(self.var_f3b82c6d));
-        #/
+        assert(isdefined(self.var_f3b82c6d));
         self.var_f3b82c6d setmodel("zombietron_dragonhead_trap");
         stopforcestreamingxmodel(#"zombietron_dragonhead_trap");
         forcestreamxmodel(#"zombietron_dragonhead_trap_active");
@@ -110,9 +108,7 @@ function dragontrapstate(localclientnum, *oldval, newval, *bnewent, *binitialsna
         if (!isdefined(self.var_f3b82c6d)) {
             self function_6f3ad355(fieldname);
         }
-        /#
-            assert(isdefined(self.var_f3b82c6d));
-        #/
+        assert(isdefined(self.var_f3b82c6d));
         self.var_f3b82c6d setmodel("zombietron_dragonhead_trap_active");
         stopforcestreamingxmodel(#"zombietron_dragonhead_trap_active");
         forcestreamxmodel(#"zombietron_dragonhead_trap");

@@ -288,9 +288,7 @@ function private weapon_class_register(weaponname, weapon_type) {
         level.inventory_array[getweapon(weaponname)] = 1;
         return;
     }
-    /#
-        assert(0, "ping_callouts" + weapon_type + "<unknown string>" + weaponname);
-    #/
+    assert(0, "ping_callouts" + weapon_type + "<unknown string>" + weaponname);
 }
 
 // Namespace loadout/player_loadout
@@ -341,21 +339,15 @@ function private function_6bc4927f() {
                 level.killstreakindices[var_da0b29d2] = i;
                 if (isdefined(iteminfo.killstreakdeathpenaltyindividualearn)) {
                     level.killstreakdeathpenaltyindividualearn[var_da0b29d2] = iteminfo.killstreakdeathpenaltyindividualearn / 100;
-                    /#
-                        assert(level.killstreakdeathpenaltyindividualearn[var_da0b29d2] <= 1);
-                    #/
+                    assert(level.killstreakdeathpenaltyindividualearn[var_da0b29d2] <= 1);
                 }
                 if (isdefined(iteminfo.var_b29e45cf)) {
                     level.var_b29e45cf[var_da0b29d2] = iteminfo.var_b29e45cf;
-                    /#
-                        assert(level.var_b29e45cf[var_da0b29d2] > 0);
-                    #/
+                    assert(level.var_b29e45cf[var_da0b29d2] > 0);
                 }
                 if (isdefined(iteminfo.var_b3c95dd8)) {
                     level.var_b3c95dd8[var_da0b29d2] = iteminfo.var_b3c95dd8;
-                    /#
-                        assert(level.var_b3c95dd8[var_da0b29d2] > 0);
-                    #/
+                    assert(level.var_b3c95dd8[var_da0b29d2] > 0);
                 }
             }
         }
@@ -401,12 +393,8 @@ function private function_8624b793() {
 // Checksum 0x915627b3, Offset: 0x1f50
 // Size: 0x54
 function function_97d216fa(response) {
-    /#
-        assert(isdefined(level.classmap));
-    #/
-    /#
-        assert(isdefined(response));
-    #/
+    assert(isdefined(level.classmap));
+    assert(isdefined(response));
     return level.classmap[response];
 }
 
@@ -517,9 +505,7 @@ function function_6573eeeb() {
 // Checksum 0x531b0f3c, Offset: 0x2590
 // Size: 0x38e
 function give_killstreak(var_523d9b33, &var_58335e4f) {
-    /#
-        assert(isdefined(level.tbl_killstreakdata[var_523d9b33]), "<unknown string>" + var_523d9b33 + "<unknown string>");
-    #/
+    assert(isdefined(level.tbl_killstreakdata[var_523d9b33]), "<unknown string>" + var_523d9b33 + "<unknown string>");
     if (isdefined(level.tbl_killstreakdata[var_523d9b33])) {
         if (isitemrestricted(level.tbl_killstreakdata[var_523d9b33])) {
             return;
@@ -730,9 +716,7 @@ function function_f436358b(weaponclass) {
         profileNamedStop();
     } else {
         profileNamedStart(#"");
-        /#
-            assert(isdefined(self.pers[#"class"]), "<unknown string>");
-        #/
+        assert(isdefined(self.pers[#"class"]), "<unknown string>");
         self.class_num_for_global_weapons = 0;
         profileNamedStop();
     }
@@ -744,9 +728,7 @@ function function_f436358b(weaponclass) {
 // Checksum 0x1ff5d429, Offset: 0x30e8
 // Size: 0x228
 function get_class_num(weaponclass) {
-    /#
-        assert(isdefined(weaponclass));
-    #/
+    assert(isdefined(weaponclass));
     prefixstring = "CLASS_CUSTOM";
     var_8bba14bc = self getcustomclasscount();
     var_8bba14bc = max(var_8bba14bc, 0);
@@ -758,15 +740,11 @@ function get_class_num(weaponclass) {
         if (class_num == -1) {
             class_num = var_8bba14bc;
         }
-        /#
-            assert(isdefined(class_num));
-        #/
+        assert(isdefined(class_num));
         if (class_num < 0 || class_num > var_8bba14bc) {
             class_num = 0;
         }
-        /#
-            assert(class_num >= 0 && class_num <= var_8bba14bc);
-        #/
+        assert(class_num >= 0 && class_num <= var_8bba14bc);
     } else {
         class_num = level.classtoclassnum[weaponclass];
     }
@@ -776,9 +754,7 @@ function get_class_num(weaponclass) {
             class_num = 0;
         }
     }
-    /#
-        assert(isdefined(class_num));
-    #/
+    assert(isdefined(class_num));
     return class_num;
 }
 
@@ -1363,9 +1339,7 @@ function give_loadout(*team, weaponclass, var_e0f216b9) {
     profileNamedStart(#"");
     self clientfield::set("cold_blooded", 0);
     if (function_87bcb1b()) {
-        /#
-            assert(isdefined(self.curclass));
-        #/
+        assert(isdefined(self.curclass));
         self function_d7c205b9(self.curclass, #"give_loadout");
         var_c8f2f688 = 1;
         /#
@@ -1607,15 +1581,9 @@ function register_perks() {
 // Checksum 0xe5c14f2d, Offset: 0x66f0
 // Size: 0x616
 function cac_modified_damage(victim, attacker, damage, mod, weapon, inflictor, hitloc) {
-    /#
-        assert(isdefined(victim));
-    #/
-    /#
-        assert(isdefined(attacker));
-    #/
-    /#
-        assert(isplayer(victim));
-    #/
+    assert(isdefined(victim));
+    assert(isdefined(attacker));
+    assert(isplayer(victim));
     attacker_is_player = isplayer(attacker);
     if (damage <= 0) {
         return damage;

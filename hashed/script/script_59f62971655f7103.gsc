@@ -30,9 +30,7 @@ function function_cdd81094(weapon) {
     if (!is_true(level.var_e444d44)) {
         return undefined;
     }
-    /#
-        assert(isdefined(weapon));
-    #/
+    assert(isdefined(weapon));
     if (!isdefined(weapon.var_5c238c21)) {
         return undefined;
     }

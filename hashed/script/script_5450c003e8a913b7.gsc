@@ -180,9 +180,7 @@ function death_vo_cleanup() {
 // Checksum 0x4a5237f8, Offset: 0xdf0
 // Size: 0xa0
 function add_active_sense_function(func) {
-    /#
-        assert(isdefined(self.stealth), "ALERT" + self getentitynumber() + "<unknown string>" + self.origin);
-    #/
+    assert(isdefined(self.stealth), "ALERT" + self getentitynumber() + "<unknown string>" + self.origin);
     if (!isdefined(self.stealth.active_sense_funcs)) {
         self.stealth.active_sense_funcs = [];
     }
@@ -202,7 +200,7 @@ function proximity_check() {
     }
     var_c23cc9e4 = self geteyeapprox();
     var_bf444fb4 = (self.origin + var_c23cc9e4) / 2;
-    playeroffset = vectorscale((0, 0, 1), 35);
+    playeroffset = (0, 0, 35);
     if (isdefined(self.proximity_bump_dist_sqr_override)) {
         var_4af2cd8d = self.proximity_bump_dist_sqr_override;
     } else {
@@ -351,19 +349,13 @@ function set_sight_state(state) {
         self.fovcosineperiphmaxdistsq = 16384;
         break;
     case #"hash_5689f41e8c0ad00":
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         break;
     case #"hash_2689c03316776ffb":
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         break;
     case #"elevated":
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         break;
     }
     if (isdefined(self.var_e6b70cdb)) {
@@ -442,7 +434,6 @@ function monitor_damage_thread(rangeauto, rangesight) {
         if (!isalive(self)) {
             return;
         }
-        wait_result = undefined;
         wait_result = self waittill(#"damage");
         event_spot = self.origin;
         if (isalive(self) && !self flag::get("stealth_enabled")) {
@@ -623,7 +614,7 @@ function event_handler_should_ignore(event) {
 // Checksum 0x17751dae, Offset: 0x2810
 // Size: 0x1e8
 function should_ignore_sprint_footstep(event) {
-    traceoffset = vectorscale((0, 0, 1), 18);
+    traceoffset = (0, 0, 18);
     ignoreents = getplayers();
     if (isdefined(self.stealth.cantracetoaiignoreents)) {
         ignoreents = arraycombine(ignoreents, self.stealth.cantracetoaiignoreents);
@@ -764,27 +755,21 @@ function react_announce(event) {
     switch (var_bed01a48) {
     case #"investigate":
         self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "investigate", delaytime);
-        /#
-            println("<unknown string>" + self getentitynumber() + "<unknown string>" + event.typeorig + "<unknown string>");
-        #/
+        println("<unknown string>" + self getentitynumber() + "<unknown string>" + event.typeorig + "<unknown string>");
         /#
             function_65b21ab8(self, "<unknown string>");
         #/
         return true;
     case #"cover_blown":
         self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "coverblown", delaytime);
-        /#
-            println("<unknown string>" + self getentitynumber() + "<unknown string>" + event.typeorig + "<unknown string>");
-        #/
+        println("<unknown string>" + self getentitynumber() + "<unknown string>" + event.typeorig + "<unknown string>");
         /#
             function_65b21ab8(self, "<unknown string>");
         #/
         return true;
     case #"combat":
         self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "combat", 1);
-        /#
-            println("<unknown string>" + self getentitynumber() + "<unknown string>" + event.typeorig + "<unknown string>");
-        #/
+        println("<unknown string>" + self getentitynumber() + "<unknown string>" + event.typeorig + "<unknown string>");
         /#
             function_65b21ab8(self, "<unknown string>");
         #/
@@ -851,9 +836,7 @@ function react_announce_specific(event) {
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "investigate", delaytime);
             return true;
         default:
-            /#
-                println("<unknown string>" + event.typeorig + "<unknown string>");
-            #/
+            println("<unknown string>" + event.typeorig + "<unknown string>");
             break;
         }
     }
@@ -897,9 +880,7 @@ function function_6935155f(style, delay) {
 // Checksum 0xb68c44ab, Offset: 0x3988
 // Size: 0x4c
 function bt_set_stealth_state(statename, event) {
-    /#
-        assert(isdefined(self.fnsetstealthstate));
-    #/
+    assert(isdefined(self.fnsetstealthstate));
     self [[ self.fnsetstealthstate ]](statename, event);
 }
 

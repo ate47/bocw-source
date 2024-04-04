@@ -153,9 +153,7 @@ function on_player_spawned() {
 // Checksum 0xdd13338, Offset: 0xab0
 // Size: 0x4c
 function function_878d649f(player) {
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player thread function_388f7cf7();
 }
 
@@ -679,7 +677,6 @@ function delete_pickup_after_awhile() {
 function watch_pickup() {
     self endon(#"death");
     weapon = self.item;
-    waitresult = undefined;
     waitresult = self waittill(#"trigger");
     player = waitresult.activator;
     droppeditem = waitresult.dropped_item;
@@ -707,12 +704,8 @@ function watch_pickup() {
             println("<unknown string>" + weapon.name + "<unknown string>" + isdefined(self.ownersattacker));
         }
     #/
-    /#
-        assert(isdefined(player.tookweaponfrom));
-    #/
-    /#
-        assert(isdefined(player.pickedupweaponkills));
-    #/
+    assert(isdefined(player.tookweaponfrom));
+    assert(isdefined(player.pickedupweaponkills));
     if (!isdefined(player.tookweaponfrom)) {
         player.tookweaponfrom = [];
     }
@@ -819,9 +812,7 @@ function function_f2c53bb2(curweapon) {
         }
     }
     statweapon = getweapon(curweapon.statname);
-    /#
-        assert(statweapon != level.weaponnone);
-    #/
+    assert(statweapon != level.weaponnone);
     if (statweapon.iscarriedkillstreak) {
         var_607dffd9 = killstreaks::function_fde227c6(curweapon, statweapon);
         if (isdefined(self.pers[#"held_killstreak_ammo_count"][var_607dffd9])) {
@@ -971,7 +962,7 @@ function drop_all_to_ground(origin, radius) {
     weapons = getdroppedweapons();
     for (i = 0; i < weapons.size; i++) {
         if (distancesquared(origin, weapons[i].origin) < radius * radius) {
-            trace = bullettrace(weapons[i].origin, weapons[i].origin + vectorscale((0, 0, -1), 2000), 0, weapons[i]);
+            trace = bullettrace(weapons[i].origin, weapons[i].origin + (0, 0, -2000), 0, weapons[i]);
             weapons[i].origin = trace[#"position"];
         }
     }
@@ -985,7 +976,7 @@ function drop_grenades_to_ground(origin, radius) {
     grenades = getentarray("grenade", "classname");
     for (i = 0; i < grenades.size; i++) {
         if (distancesquared(origin, grenades[i].origin) < radius * radius) {
-            grenades[i] launch(vectorscale((1, 1, 1), 5));
+            grenades[i] launch((5, 5, 5));
         }
     }
 }
@@ -1026,7 +1017,6 @@ function watch_offhand_end(weapon) {
     if (weapon.drawoffhandmodelinhand) {
         self setoffhandvisible(1);
         while (self function_2d96f300(weapon)) {
-            msg = undefined;
             msg = self waittill(#"offhand_end", #"death", #"disconnect", #"grenade_fire", #"weapon_change");
             if (msg._notify == #"grenade_fire") {
                 if (isdefined(self) && is_true(weapon.var_d69ee9ed) && self getweaponammoclip(weapon) > 0) {
@@ -1084,7 +1074,6 @@ function begin_grenade_tracking() {
     self endon(#"begin_grenade_tracking", #"death", #"disconnect", #"grenade_throw_cancelled");
     starttime = gettime();
     self thread watch_grenade_cancel();
-    waitresult = undefined;
     waitresult = self waittill(#"grenade_fire");
     grenade = waitresult.projectile;
     function_6dafe6d6(grenade, waitresult.weapon);
@@ -1094,11 +1083,7 @@ function begin_grenade_tracking() {
     weapon = waitresult.weapon;
     cooktime = waitresult.cook_time;
     grenade.originalowner = self;
-    /#
-        /#
-            assert(isdefined(grenade));
-        #/
-    #/
+    assert(isdefined(grenade));
     if (!isdefined(level.missileentities)) {
         level.missileentities = [];
     }
@@ -1269,7 +1254,6 @@ function check_stuck_to_player(deleteonteamchange, awardscoreevent, weapon, var_
         self.killcament = killcament;
         killcament thread function_5ed178fd(self);
     }
-    waitresult = undefined;
     waitresult = self waittill(#"stuck_to_player");
     player = waitresult.player;
     if (isdefined(killcament)) {
@@ -1408,11 +1392,7 @@ function function_4b7977fe(params) {
     grenade = params.projectile;
     weapon = params.weapon;
     grenade turn_grenade_into_a_dud(weapon, 0, self);
-    /#
-        /#
-            assert(isdefined(grenade));
-        #/
-    #/
+    assert(isdefined(grenade));
     if (!isdefined(level.missileentities)) {
         level.missileentities = [];
     }
@@ -1438,7 +1418,7 @@ function get_damageable_ents(pos, radius, dolos, startradius) {
         if (!isalive(players[i]) || players[i].sessionstate != "playing") {
             continue;
         }
-        playerpos = players[i].origin + vectorscale((0, 0, 1), 32);
+        playerpos = players[i].origin + (0, 0, 32);
         distsq = distancesquared(pos, playerpos);
         if (distsq < radius * radius && (!dolos || damage_trace_passed(pos, playerpos, startradius, undefined))) {
             newent = spawnstruct();
@@ -1727,9 +1707,7 @@ function loadout_get_offhand_count(stat) {
     if (isdefined(level.givecustomloadout)) {
         return 0;
     }
-    /#
-        assert(isdefined(self.class_num));
-    #/
+    assert(isdefined(self.class_num));
     if (isdefined(self.class_num)) {
         count = self loadout::getloadoutitemfromddlstats(self.class_num, stat);
     }
@@ -1742,7 +1720,6 @@ function loadout_get_offhand_count(stat) {
 // Size: 0x66c
 function scavenger_think() {
     self endon(#"death");
-    waitresult = undefined;
     waitresult = self waittill(#"scavenger");
     player = waitresult.player;
     primary_weapons = player getweaponslistprimaries();
@@ -1908,7 +1885,6 @@ function drop_limited_weapon(weapon, owner, item) {
 // Size: 0x6a
 function limited_pickup(limited_info) {
     self endon(#"death");
-    waitresult = undefined;
     waitresult = self waittill(#"trigger");
     if (!isdefined(waitresult.dropped_item)) {
         return;
@@ -1969,7 +1945,6 @@ function ninebang_doninebang(attacker, weapon, cooktime) {
 // Size: 0x254
 function track_multi_detonation(ownerent, weapon, *cooktime) {
     self endon(#"trophy_destroyed");
-    waitresult = undefined;
     waitresult = self waittill(#"explode", #"death");
     if (waitresult._notify == "death") {
         return;
@@ -2130,21 +2105,15 @@ function function_830e007d() {
 // Size: 0x38c
 function dropweaponfordeathlaunch(item, damage, angles, weapon, var_a5baf64e, var_6f02cffb, smeansofdeath) {
     if (!isdefined(item)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
     if (!isdefined(item.model) || item.model == #"") {
-        /#
-            println("<unknown string>" + weapon.name);
-        #/
+        println("<unknown string>" + weapon.name);
         return;
     }
     if (!item hasdobj()) {
-        /#
-            println("<unknown string>" + weapon.name);
-        #/
+        println("<unknown string>" + weapon.name);
         return;
     }
     if (smeansofdeath === "MOD_EXECUTION") {

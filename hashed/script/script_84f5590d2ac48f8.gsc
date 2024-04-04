@@ -8,27 +8,11 @@
 class cfull_screen_movie : cluielem {
 
     // Namespace cfull_screen_movie/full_screen_movie
-    // Params 0, eflags: 0xa linked
-    // Checksum 0xe712e817, Offset: 0x508
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cfull_screen_movie/full_screen_movie
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x291be1e8, Offset: 0x990
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cfull_screen_movie/full_screen_movie
     // Params 2, eflags: 0x2 linked
     // Checksum 0x462811a4, Offset: 0x808
     // Size: 0x30
     function set_moviename(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "movieName", value);
+        set_data(localclientnum, "movieName", value);
     }
 
     // Namespace cfull_screen_movie/full_screen_movie
@@ -44,7 +28,7 @@ class cfull_screen_movie : cluielem {
     // Checksum 0x2557e44c, Offset: 0x958
     // Size: 0x30
     function set_moviekey(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "movieKey", value);
+        set_data(localclientnum, "movieKey", value);
     }
 
     // Namespace cfull_screen_movie/full_screen_movie
@@ -52,7 +36,7 @@ class cfull_screen_movie : cluielem {
     // Checksum 0x924072ef, Offset: 0x8e8
     // Size: 0x30
     function set_playoutromovie(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "playOutroMovie", value);
+        set_data(localclientnum, "playOutroMovie", value);
     }
 
     // Namespace cfull_screen_movie/full_screen_movie
@@ -60,7 +44,7 @@ class cfull_screen_movie : cluielem {
     // Checksum 0xd7277ba1, Offset: 0x8b0
     // Size: 0x30
     function set_additive(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "additive", value);
+        set_data(localclientnum, "additive", value);
     }
 
     // Namespace cfull_screen_movie/full_screen_movie
@@ -76,7 +60,7 @@ class cfull_screen_movie : cluielem {
     // Checksum 0x834f58e6, Offset: 0x878
     // Size: 0x30
     function set_looping(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "looping", value);
+        set_data(localclientnum, "looping", value);
     }
 
     // Namespace cfull_screen_movie/full_screen_movie
@@ -84,7 +68,7 @@ class cfull_screen_movie : cluielem {
     // Checksum 0xe16b37dc, Offset: 0x920
     // Size: 0x30
     function registerplayer_callout_traversal(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "skippable", value);
+        set_data(localclientnum, "skippable", value);
     }
 
     // Namespace cfull_screen_movie/full_screen_movie
@@ -92,7 +76,7 @@ class cfull_screen_movie : cluielem {
     // Checksum 0x53d4e580, Offset: 0x840
     // Size: 0x30
     function set_showblackscreen(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "showBlackScreen", value);
+        set_data(localclientnum, "showBlackScreen", value);
     }
 
     // Namespace cfull_screen_movie/full_screen_movie
@@ -116,13 +100,13 @@ class cfull_screen_movie : cluielem {
     // Size: 0x104
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "movieName", #"");
-        [[ self ]]->set_data(localclientnum, "showBlackScreen", 0);
-        [[ self ]]->set_data(localclientnum, "looping", 0);
-        [[ self ]]->set_data(localclientnum, "additive", 0);
-        [[ self ]]->set_data(localclientnum, "playOutroMovie", 0);
-        [[ self ]]->set_data(localclientnum, "skippable", 0);
-        [[ self ]]->set_data(localclientnum, "movieKey", #"");
+        set_data(localclientnum, "movieName", #"");
+        set_data(localclientnum, "showBlackScreen", 0);
+        set_data(localclientnum, "looping", 0);
+        set_data(localclientnum, "additive", 0);
+        set_data(localclientnum, "playOutroMovie", 0);
+        set_data(localclientnum, "skippable", 0);
+        set_data(localclientnum, "movieKey", #"");
     }
 
 }

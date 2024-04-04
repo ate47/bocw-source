@@ -130,7 +130,7 @@ function private function_38db71f(eventstruct) {
     }
     var_1582cba2 = var_e74d8d10[#"position"];
     dir = vectornormalize(end - start);
-    var_74433575 = var_1582cba2 + dir * 5 + vectorscale((0, 0, 1), 60);
+    var_74433575 = var_1582cba2 + dir * 5 + (0, 0, 60);
     /#
         eventstruct.var_87d52c5 = var_74433575;
         eventstruct.var_19c7b18b = var_1582cba2;
@@ -301,21 +301,21 @@ function private function_c20f7b00(eventstruct, str) {
             if (self should_record("<unknown string>")) {
                 record3dtext(str, textpos, (1, 1, 1), "<unknown string>", self, 0.5);
                 recordstar(eventstruct.start_position, (0, 1, 0), "<unknown string>", self);
-                function_af72dbc5(eventstruct.start_position, vectorscale((0, -1, 0), 64), vectorscale((0, 1, 0), 64), yaw, (0, 1, 0), "<unknown string>", self);
+                function_af72dbc5(eventstruct.start_position, (0, -64, 0), (0, 64, 0), yaw, (0, 1, 0), "<unknown string>", self);
                 recordstar(eventstruct.end_position, (1, 0, 0), "<unknown string>", self);
-                function_af72dbc5(eventstruct.end_position, vectorscale((0, -1, 0), 64), vectorscale((0, 1, 0), 64), yaw, (1, 0, 0), "<unknown string>", self);
+                function_af72dbc5(eventstruct.end_position, (0, -64, 0), (0, 64, 0), yaw, (1, 0, 0), "<unknown string>", self);
                 if (isdefined(eventstruct.var_a8cc518d)) {
                     recordstar(eventstruct.var_a8cc518d, (1, 1, 0), "<unknown string>", self);
-                    function_af72dbc5(eventstruct.var_a8cc518d, vectorscale((0, -1, 0), 64), (0, 64, 128), yaw, (1, 1, 0), "<unknown string>", self);
+                    function_af72dbc5(eventstruct.var_a8cc518d, (0, -64, 0), (0, 64, 128), yaw, (1, 1, 0), "<unknown string>", self);
                     recordline(eventstruct.start_position, eventstruct.var_a8cc518d, (0, 1, 1), "<unknown string>", self);
                     recordline(eventstruct.end_position, eventstruct.var_a8cc518d, (0, 1, 1), "<unknown string>", self);
                 } else {
                     recordline(eventstruct.start_position, eventstruct.end_position, (0, 1, 1), "<unknown string>", self);
                 }
                 recordstar(eventstruct.var_883d42a7, (0, 1, 0), "<unknown string>", self);
-                function_af72dbc5(eventstruct.var_883d42a7, vectorscale((0, -1, 0), 64), (0, 64, 128), yaw, (0, 1, 0), "<unknown string>", self);
+                function_af72dbc5(eventstruct.var_883d42a7, (0, -64, 0), (0, 64, 128), yaw, (0, 1, 0), "<unknown string>", self);
                 recordstar(eventstruct.var_15dca465, (1, 0, 0), "<unknown string>", self);
-                function_af72dbc5(eventstruct.var_15dca465, vectorscale((0, -1, 0), 64), (0, 64, 128), yaw, (1, 0, 0), "<unknown string>", self);
+                function_af72dbc5(eventstruct.var_15dca465, (0, -64, 0), (0, 64, 128), yaw, (1, 0, 0), "<unknown string>", self);
                 function_af72dbc5(eventstruct.var_75f5c2cb, (-15, -15, 18), (15, 15, 72), yaw, (1, 0, 1), "<unknown string>", self);
                 if (isdefined(eventstruct.start_node)) {
                     self function_3e781451(eventstruct.start_node, (0, 1, 0));
@@ -350,7 +350,7 @@ function private function_3e781451(node, color) {
             function_af72dbc5(node.origin, mins, maxs, node.angles[1], color, "<unknown string>", self);
             return;
         }
-        function_af72dbc5(node.origin, vectorscale((-1, -1, 0), 15), vectorscale((1, 1, 1), 15), node.angles[1], color, "<unknown string>", self);
+        function_af72dbc5(node.origin, (-15, -15, 0), (15, 15, 15), node.angles[1], color, "<unknown string>", self);
     #/
 }
 

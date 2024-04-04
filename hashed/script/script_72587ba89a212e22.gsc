@@ -7,22 +7,6 @@
 // Method(s) 9 Total 16
 class class_fbe341f : cluielem {
 
-    // Namespace class_fbe341f/dirtybomb_usebar
-    // Params 0, eflags: 0x8
-    // Checksum 0x7e1e6212, Offset: 0x3d8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_fbe341f/dirtybomb_usebar
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x86c7e799, Offset: 0x7d0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_fbe341f/dirtybomb_usebar
     // Params 1, eflags: 0x0
     // Checksum 0x35cafbad, Offset: 0x560
@@ -36,7 +20,7 @@ class class_fbe341f : cluielem {
     // Checksum 0x497bde45, Offset: 0x798
     // Size: 0x30
     function function_4aa46834(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "activatorCount", value);
+        set_data(localclientnum, "activatorCount", value);
     }
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
@@ -64,38 +48,34 @@ class class_fbe341f : cluielem {
     // Size: 0x1c4
     function set_state(localclientnum, state_name) {
         if (#"defaultstate" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 0);
+            set_data(localclientnum, "_state", 0);
             return;
         }
         if (#"detonating" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 1);
+            set_data(localclientnum, "_state", 1);
             return;
         }
         if (#"hash_1a2812055c330ee0" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 2);
+            set_data(localclientnum, "_state", 2);
             return;
         }
         if (#"hash_59e0e869fbae7705" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 3);
+            set_data(localclientnum, "_state", 3);
             return;
         }
         if (#"hash_b86ebfb5a93f57f" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 4);
+            set_data(localclientnum, "_state", 4);
             return;
         }
         if (#"hash_4ff55a42344e567e" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 5);
+            set_data(localclientnum, "_state", 5);
             return;
         }
         if (#"hash_288548f3fca8b603" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 6);
+            set_data(localclientnum, "_state", 6);
             return;
         }
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
     }
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
@@ -103,7 +83,7 @@ class class_fbe341f : cluielem {
     // Checksum 0x228183f8, Offset: 0x760
     // Size: 0x30
     function function_f0df5702(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "progressFrac", value);
+        set_data(localclientnum, "progressFrac", value);
     }
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
@@ -112,9 +92,9 @@ class class_fbe341f : cluielem {
     // Size: 0x84
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_state(localclientnum, #"defaultstate");
-        [[ self ]]->set_data(localclientnum, "progressFrac", 0);
-        [[ self ]]->set_data(localclientnum, "activatorCount", 0);
+        set_state(localclientnum, #"defaultstate");
+        set_data(localclientnum, "progressFrac", 0);
+        set_data(localclientnum, "activatorCount", 0);
     }
 
 }

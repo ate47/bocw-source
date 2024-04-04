@@ -52,9 +52,7 @@ function function_28632638() {
     self.fovcosine = 0.5;
     self.fovcosinebusy = 0.5;
     self.maxsightdistsqrd = sqr(10000);
-    /#
-        assert(isdefined(self.scriptbundlesettings));
-    #/
+    assert(isdefined(self.scriptbundlesettings));
     self.settings = getscriptbundle(self.scriptbundlesettings);
     self.goalradius = 9999999;
     self.goalheight = 5000;
@@ -182,7 +180,7 @@ function state_death_update(params) {
     self vehicle::do_death_dynents();
     self vehicle_death::death_radius_damage();
     self waittilltimeout(3, #"bodyfall large");
-    self radiusdamage(self.origin + vectorscale((0, 0, 1), 10), self.radius * 0.8, 150, 60, self, "MOD_CRUSH");
+    self radiusdamage(self.origin + (0, 0, 10), self.radius * 0.8, 150, 60, self, "MOD_CRUSH");
     vehicle_ai::waittill_asm_complete("death@stationary", 3);
     self disconnectpaths(1);
     self thread vehicle_death::cleanup();
@@ -399,7 +397,7 @@ function function_9fedfa78(*from_state, *to_state, *connection) {
 // Size: 0x1c4
 function function_308a3c0e(params) {
     goal = params.var_c93384f1;
-    trace = physicstrace(goal + vectorscale((0, 0, 1), 500), goal - vectorscale((0, 0, 1), 10000), vectorscale((-1, -1, -1), 10), vectorscale((1, 1, 1), 10), self, 2);
+    trace = physicstrace(goal + (0, 0, 500), goal - (0, 0, 10000), (-10, -10, -10), (10, 10, 10), self, 2);
     if (false) {
         /#
             debugstar(goal, 60000, (0, 1, 0));
@@ -416,7 +414,7 @@ function function_308a3c0e(params) {
     }
     self.jump.goal = goal;
     params.var_faabd95e = 40;
-    params.var_81456956 = vectorscale((0, 0, -1), 6);
+    params.var_81456956 = (0, 0, -6);
     params.var_83ccad16 = 50;
     params.var_d49112b7 = "land@jump";
     self function_f779b6d9(0);
@@ -441,10 +439,10 @@ function function_aa1e85d2(params) {
             debugstar(goal, 60000, (0, 1, 0));
         #/
         /#
-            debugstar(goal + vectorscale((0, 0, 1), 100), 60000, (0, 1, 0));
+            debugstar(goal + (0, 0, 100), 60000, (0, 1, 0));
         #/
         /#
-            line(goal, goal + vectorscale((0, 0, 1), 100), (0, 1, 0), 1, 0, 60000);
+            line(goal, goal + (0, 0, 100), (0, 1, 0), 1, 0, 60000);
         #/
     }
     totaldistance = distance2d(goal, self.jump.linkent.origin);
@@ -507,7 +505,7 @@ function function_aa1e85d2(params) {
     foreach (player in level.players) {
         player val::set(#"hash_1199035500d4ef6a", "takedamage", 0);
     }
-    self radiusdamage(self.origin + vectorscale((0, 0, 1), 15), self.radiusdamageradius, self.radiusdamagemax, self.radiusdamagemin, self, "MOD_EXPLOSIVE");
+    self radiusdamage(self.origin + (0, 0, 15), self.radiusdamageradius, self.radiusdamagemax, self.radiusdamagemin, self, "MOD_EXPLOSIVE");
     foreach (player in level.players) {
         player val::reset(#"hash_1199035500d4ef6a", "takedamage");
         if (distance2dsquared(self.origin, player.origin) < sqr(200)) {
@@ -600,7 +598,6 @@ function waittill_pathing_done(maxtime = 15) {
     self endon(#"change_state");
     self notify("6c6e5a29d1dadca5");
     self endon("6c6e5a29d1dadca5");
-    result = undefined;
     result = self waittilltimeout(maxtime, #"enemy", #"near_goal", #"force_goal", #"reached_end_node", #"pathfind_failed");
 }
 
@@ -612,9 +609,7 @@ function movement_thread() {
     self endon(#"death", #"change_state");
     self notify(#"end_movement_thread");
     self endon(#"end_movement_thread");
-    /#
-        assert(isdefined(level.var_3d1b6323));
-    #/
+    assert(isdefined(level.var_3d1b6323));
     while (true) {
         if (isdefined(self.owner)) {
             wait(1);
@@ -702,7 +697,7 @@ function scan() {
     angles = (0, angles[1], 0);
     rotate = 360;
     while (rotate > 0) {
-        angles = angles + vectorscale((0, 1, 0), 30);
+        angles = angles + (0, 30, 0);
         rotate = rotate - 30;
         forward = anglestoforward(angles);
         aimpos = self.origin + forward * 1000;
@@ -772,9 +767,9 @@ function function_e3489f4e() {
 function function_5786488b(target) {
     if (isdefined(target)) {
         self turretsettarget(0, target);
-        self turretsettarget(3, target, vectorscale((0, 0, -1), 10));
+        self turretsettarget(3, target, (0, 0, -10));
         self waittilltimeout(1, #"turret_on_target");
-        self fireweapon(2, target, vectorscale((0, 0, -1), 10));
+        self fireweapon(2, target, (0, 0, -10));
         self turretcleartarget(2);
     }
 }
@@ -786,7 +781,7 @@ function function_5786488b(target) {
 function function_e177d7af(target) {
     if (isdefined(target)) {
         self turretsettarget(0, target);
-        self turretsettarget(3, target, vectorscale((0, 0, -1), 10));
+        self turretsettarget(3, target, (0, 0, -10));
         self waittilltimeout(1, #"turret_on_target");
         var_628cb978 = getweapon(#"hash_2a42cf9b8d71ff7e");
         var_7f98edcc = target.origin;
@@ -810,7 +805,7 @@ function function_20b4a129() {
     while (!is_true(self.var_a13db918)) {
         if (isdefined(self.gunner2enemy) && self seerecently(self.gunner2enemy, 3) && util::iscooldownready("rocket", 1.5) && !is_true(self.var_a8c60b0e)) {
             self turretsettarget(1, self.gunner2enemy, (0, 0, 0));
-            self turretsettarget(3, self.gunner2enemy, vectorscale((0, 0, -1), 10));
+            self turretsettarget(3, self.gunner2enemy, (0, 0, -10));
             self thread function_7815c554(1);
             wait(1.5);
             if (isdefined(self.gunner2enemy) && self seerecently(self.gunner2enemy, 1)) {

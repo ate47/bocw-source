@@ -159,7 +159,6 @@ function function_1e6004ec(instance) {
     level thread scene::play(#"hash_27db4ac6990e4b2a", level.var_570f49c5);
     level flag::delay_set(5, #"hash_44733903bbd715c9");
     level util::delay(5, undefined, &flag::clear, #"hash_178cddf0409be677");
-    s_result = undefined;
     s_result = level waittill(#"objective_ended");
     if (is_true(s_result.completed)) {
         str_reason = #"hash_6ebafb1370ab6c93";
@@ -224,7 +223,7 @@ function function_6ebbb35b(target) {
     while (isalive(self) && isdefined(target)) {
         if (isai(target) || isplayer(target)) {
             if (target.var_6f84b820 === #"boss") {
-                self turretsettarget(0, target.origin + vectorscale((0, 0, 1), 165));
+                self turretsettarget(0, target.origin + (0, 0, 165));
             } else {
                 self turretsettarget(0, target);
             }
@@ -307,7 +306,6 @@ function private function_9190b7da(target) {
 // Size: 0x21c
 function private function_31125f54() {
     while (true) {
-        s_waitresult = undefined;
         s_waitresult = level waittill(#"hash_4fbe4720f6f13107", #"exfil_cleared");
         if (level flag::get(#"exfil_cleared") && level flag::get(#"hash_fdc24944f59c262") || is_true(s_waitresult.b_success)) {
             level.var_9f6064a4 = #"hash_6893db9b6c7b5a58";

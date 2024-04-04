@@ -113,7 +113,6 @@ function function_d921e776() {
         level.var_7466d419 setneargoalnotifydist(level.var_7466d419.var_cb55c804);
         level.var_7466d419 function_a57c34b7(var_da00db64, 1);
         level.var_7466d419 flag::set("flag_orbit_chopper_ascending");
-        waitresult = undefined;
         waitresult = level.var_7466d419 waittill(#"goal", #"near_goal");
         level.var_7466d419 flag::clear("flag_orbit_chopper_ascending");
     }
@@ -135,7 +134,6 @@ function function_61ae79dd() {
     level.var_7466d419 setneargoalnotifydist(level.var_7466d419.var_cb55c804);
     level.var_7466d419 function_a57c34b7(var_da00db64, 1);
     level.var_7466d419 flag::set("flag_orbit_chopper_ascending");
-    waitresult = undefined;
     waitresult = level.var_7466d419 waittill(#"goal", #"near_goal");
     level.var_7466d419 flag::clear("flag_orbit_chopper_ascending");
 }
@@ -1070,7 +1068,7 @@ function function_43c14dd6() {
     setdvar(#"setsunshadowsplitdistance", "5000");
     level.var_42fad021 = 7.5;
     level.var_7466d419 setspeed(level.var_42fad021, 10, 10);
-    dest = level.var_7466d419.origin + vectorscale((0, 0, 1), 256);
+    dest = level.var_7466d419.origin + (0, 0, 256);
     level.var_7466d419.var_cb55c804 = 10;
     level.var_7466d419 setneargoalnotifydist(level.var_7466d419.var_cb55c804);
     level.var_7466d419 function_a57c34b7(dest, 1);

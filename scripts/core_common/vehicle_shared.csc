@@ -230,7 +230,6 @@ function watch_vehicle_damage(localclientnum, rumble) {
     self endon(#"death");
     self.notifyonbulletimpact = 1;
     while (isdefined(self)) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         mod = waitresult.mod;
         subtarget = waitresult.subtarget;
@@ -315,9 +314,7 @@ function play_exhaust(localclientnum) {
     }
     if (isdefined(self.exhaust_fx) && isdefined(self.exhaustfxtag1)) {
         if (isalive(self)) {
-            /#
-                assert(isdefined(self.exhaustfxtag1), self.vehicletype + "");
-            #/
+            assert(isdefined(self.exhaustfxtag1), self.vehicletype + "");
             self endon(#"death");
             self util::waittill_dobj(localclientnum);
             self.exhaust_id_left = util::playfxontag(localclientnum, self.exhaust_fx, self, self.exhaustfxtag1);
@@ -381,9 +378,7 @@ function play_boost(localclientnum, var_a7ba3864, duration) {
     }
     if (isdefined(var_121afd6f)) {
         if (isalive(self)) {
-            /#
-                assert(isdefined(var_c1da0b13), self.vehicletype + "<unknown string>");
-            #/
+            assert(isdefined(var_c1da0b13), self.vehicletype + "<unknown string>");
             self endon(#"death");
             self util::waittill_dobj(localclientnum);
             var_1ca9b241 = util::playfxontag(localclientnum, var_121afd6f, self, var_c1da0b13);
@@ -1217,9 +1212,7 @@ function toggle_flir_postfxbundle(localclientnum, oldval, newval, *bnewent, *bin
 // Size: 0x8a
 function shouldchangescreenpostfx(localclientnum) {
     player = self;
-    /#
-        assert(isdefined(player));
-    #/
+    assert(isdefined(player));
     if (function_1cbf351b(localclientnum)) {
         killcamentity = function_93e0f729(localclientnum);
         if (isdefined(killcamentity) && killcamentity != player) {
@@ -1284,9 +1277,7 @@ function update_ui_fullscreen_filter_model(localclientnum, vision_set_value) {
 // Size: 0x20c
 function field_toggle_treadfx(*localclientnum, *oldval, newval, bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (self.vehicleclass === "helicopter" || self.vehicleclass === "plane") {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         if (fieldname) {
             if (isdefined(self.csf_no_tread)) {
                 self.csf_no_tread = 0;
@@ -1301,25 +1292,17 @@ function field_toggle_treadfx(*localclientnum, *oldval, newval, bnewent, *biniti
         return;
     }
     if (fieldname) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         if (isdefined(bwastimejump) && bwastimejump) {
-            /#
-                println("<unknown string>" + self getentitynumber());
-            #/
+            println("<unknown string>" + self getentitynumber());
             self.csf_no_tread = 1;
         } else {
-            /#
-                println("<unknown string>" + self getentitynumber());
-            #/
+            println("<unknown string>" + self getentitynumber());
             self kill_treads_forever();
         }
         return;
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     if (isdefined(self.csf_no_tread)) {
         self.csf_no_tread = 0;
     }

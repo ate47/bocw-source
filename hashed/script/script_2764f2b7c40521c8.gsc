@@ -7,28 +7,12 @@
 // Method(s) 10 Total 17
 class class_70ee35b1 : cluielem {
 
-    // Namespace class_70ee35b1/pip_menu
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x742d7204, Offset: 0x428
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_70ee35b1/pip_menu
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x2a1940d, Offset: 0x710
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_70ee35b1/pip_menu
     // Params 2, eflags: 0x2 linked
     // Checksum 0x7e7d48d3, Offset: 0x630
     // Size: 0x30
     function set_moviename(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "movieName", value);
+        set_data(localclientnum, "movieName", value);
     }
 
     // Namespace namespace_70ee35b1/pip_menu
@@ -44,7 +28,7 @@ class class_70ee35b1 : cluielem {
     // Checksum 0x9b3212fb, Offset: 0x6d8
     // Size: 0x30
     function set_additive(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "additive", value);
+        set_data(localclientnum, "additive", value);
     }
 
     // Namespace namespace_70ee35b1/pip_menu
@@ -60,7 +44,7 @@ class class_70ee35b1 : cluielem {
     // Checksum 0x14319523, Offset: 0x6a0
     // Size: 0x30
     function set_looping(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "looping", value);
+        set_data(localclientnum, "looping", value);
     }
 
     // Namespace namespace_70ee35b1/pip_menu
@@ -68,7 +52,7 @@ class class_70ee35b1 : cluielem {
     // Checksum 0x3a0a43f6, Offset: 0x668
     // Size: 0x30
     function set_showblackscreen(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "showBlackScreen", value);
+        set_data(localclientnum, "showBlackScreen", value);
     }
 
     // Namespace namespace_70ee35b1/pip_menu
@@ -89,10 +73,10 @@ class class_70ee35b1 : cluielem {
     // Size: 0xa0
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "movieName", #"");
-        [[ self ]]->set_data(localclientnum, "showBlackScreen", 0);
-        [[ self ]]->set_data(localclientnum, "looping", 0);
-        [[ self ]]->set_data(localclientnum, "additive", 0);
+        set_data(localclientnum, "movieName", #"");
+        set_data(localclientnum, "showBlackScreen", 0);
+        set_data(localclientnum, "looping", 0);
+        set_data(localclientnum, "additive", 0);
     }
 
 }

@@ -74,9 +74,7 @@ function private postinit() {
             script_exploders[script_exploders.size] = potentialexploders[i];
         }
     }
-    /#
-        println("<unknown string>" + potentialexploders.size);
-    #/
+    println("<unknown string>" + potentialexploders.size);
     potentialexploders = getentarray("script_model", "classname");
     for (i = 0; i < potentialexploders.size; i++) {
         if (isdefined(potentialexploders[i].script_prefab_exploder)) {
@@ -86,9 +84,7 @@ function private postinit() {
             script_exploders[script_exploders.size] = potentialexploders[i];
         }
     }
-    /#
-        println("<unknown string>" + potentialexploders.size);
-    #/
+    println("<unknown string>" + potentialexploders.size);
     potentialexploders = getentarray("item_health", "classname");
     for (i = 0; i < potentialexploders.size; i++) {
         if (isdefined(potentialexploders[i].script_prefab_exploder)) {
@@ -98,9 +94,7 @@ function private postinit() {
             script_exploders[script_exploders.size] = potentialexploders[i];
         }
     }
-    /#
-        println("<unknown string>" + potentialexploders.size);
-    #/
+    println("<unknown string>" + potentialexploders.size);
     if (!isdefined(level.createfxent)) {
         level.createfxent = [];
     }
@@ -135,9 +129,7 @@ function private postinit() {
             ent.v[#"fxid"] = exploder.script_fxid;
         }
         ent.v[#"exploder"] = exploder.script_exploder;
-        /#
-            assert(isdefined(exploder.script_exploder), "<unknown string>" + exploder.origin + "<unknown string>");
-        #/
+        assert(isdefined(exploder.script_exploder), "<unknown string>" + exploder.origin + "<unknown string>");
         if (!isdefined(ent.v[#"delay"])) {
             ent.v[#"delay"] = 0;
         }
@@ -223,9 +215,7 @@ function function_993369d6(exploder_string) {
         activate_radiant_exploder(exploder_string, 1);
         return;
     }
-    /#
-        assertmsg("<unknown string>");
-    #/
+    assertmsg("<unknown string>");
 }
 
 // Namespace exploder/exploder_shared
@@ -406,9 +396,7 @@ function brush_delete() {
     if (!isdefined(self.model)) {
         return;
     }
-    /#
-        assert(isdefined(self.model));
-    #/
+    assert(isdefined(self.model));
     if (!isdefined(self.v[#"fxid"]) || self.v[#"fxid"] == "No FX") {
         self.v[#"exploder"] = undefined;
     }
@@ -424,9 +412,7 @@ function brush_show() {
     if (isdefined(self.v[#"delay"])) {
         wait(self.v[#"delay"]);
     }
-    /#
-        assert(isdefined(self.model));
-    #/
+    assert(isdefined(self.model));
     self.model show();
     self.model solid();
 }
@@ -570,9 +556,7 @@ function activate_radiant_exploder(string, immediate) {
 function activate_individual_exploder(*num) {
     level notify("exploder" + self.v[#"exploder"]);
     if (!level.clientscripts || !isdefined(level._exploder_ids[int(self.v[#"exploder"])]) || isdefined(self.v[#"exploder_server"])) {
-        /#
-            println("<unknown string>" + self.v[#"exploder"] + "<unknown string>");
-        #/
+        println("<unknown string>" + self.v[#"exploder"] + "<unknown string>");
         if (isdefined(self.v[#"firefx"])) {
             self thread fire_effect();
         }
@@ -669,9 +653,7 @@ function kill_exploder(exploder_string) {
         killclientradiantexploder(exploder_string);
         return;
     }
-    /#
-        assertmsg("<unknown string>");
-    #/
+    assertmsg("<unknown string>");
 }
 
 // Namespace exploder/exploder_shared
@@ -701,9 +683,7 @@ function exploder_damage() {
 // Size: 0x10c
 function earthquake() {
     earthquake_name = self.v[#"earthquake"];
-    /#
-        assert(isdefined(level.earthquake) && isdefined(level.earthquake[earthquake_name]), "<unknown string>" + earthquake_name + "<unknown string>");
-    #/
+    assert(isdefined(level.earthquake) && isdefined(level.earthquake[earthquake_name]), "<unknown string>" + earthquake_name + "<unknown string>");
     self exploder_delay();
     eq = level.earthquake[earthquake_name];
     earthquake(eq[#"magnitude"], eq[#"duration"], self.v[#"origin"], eq[#"radius"]);
@@ -719,9 +699,7 @@ function rumble() {
     if (isdefined(self.v[#"damage_radius"])) {
         n_rumble_threshold_squared = self.v[#"damage_radius"] * self.v[#"damage_radius"];
     } else {
-        /#
-            println("<unknown string>" + self.v[#"exploder"] + "<unknown string>");
-        #/
+        println("<unknown string>" + self.v[#"exploder"] + "<unknown string>");
         n_rumble_threshold_squared = 16384;
     }
     for (i = 0; i < a_players.size; i++) {

@@ -51,16 +51,12 @@ function function_59621e3c(player, sickness) {
     }
     radiationlevel = radiation::function_c9c6dda1(player);
     if (!isdefined(radiationlevel)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     var_2ba8769e = namespace_956bd4dd::function_6b384c0f(radiationlevel, sickness);
     if (!isdefined(var_2ba8769e)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     var_d4393988 = player clientfield::get_to_player("radiation");
@@ -94,16 +90,12 @@ function function_5cf1c0a(player, sickness) {
     radiationlevel = radiation::function_c9c6dda1(player);
     var_66bba724 = radiationlevel;
     if (!isdefined(radiationlevel)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     var_2ba8769e = namespace_956bd4dd::function_6b384c0f(radiationlevel, sickness);
     if (!isdefined(var_2ba8769e)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     var_d4393988 = player clientfield::get_to_player("radiation");
@@ -133,12 +125,8 @@ function function_137e7814(player, radiationlevel) {
         return;
     }
     var_d4393988 = player clientfield::get_to_player("radiation");
-    /#
-        assert(radiationlevel >= 0);
-    #/
-    /#
-        assert(radiationlevel < pow(2, 3));
-    #/
+    assert(radiationlevel >= 0);
+    assert(radiationlevel < pow(2, 3));
     var_842e1a12 = var_d4393988 >> 3 << 3 | radiationlevel & 8 - 1;
     player clientfield::set_to_player("radiation", var_842e1a12);
 }

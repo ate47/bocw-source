@@ -80,9 +80,7 @@ function findclosestlospointwithinvolume(vol, var_72cc3c18, var_465a4fd5, var_56
 function private function_a4b83b6a(tacquery, space, var_72cc3c18, var_465a4fd5, var_56d24f04, var_78b09589) {
     tacpoints = isdefined(tacticalquery(tacquery, space.origin, space, var_72cc3c18, var_465a4fd5)) ? tacticalquery(tacquery, space.origin, space, var_72cc3c18, var_465a4fd5) : [];
     if (isdefined(var_56d24f04)) {
-        /#
-            assert(isdefined(var_78b09589));
-        #/
+        assert(isdefined(var_78b09589));
         var_dfdc1e6f = sqr(var_78b09589);
         var_fdba779a = [];
         foreach (tac in tacpoints) {

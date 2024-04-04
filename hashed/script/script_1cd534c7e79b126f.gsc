@@ -617,7 +617,6 @@ function function_c57d25ff() {
     var_f9cc146 = self.var_f9cc146;
     var_f9cc146 endon(#"death");
     while (true) {
-        s_waitresult = undefined;
         s_waitresult = var_f9cc146 waittill(#"dragon_side_front", #"dragon_side_left", #"dragon_side_right");
         switch (s_waitresult._notify) {
         case #"dragon_side_front":
@@ -831,7 +830,6 @@ function function_b2c1743d(ai_zombie) {
     self endon(#"cleanup");
     ai_zombie endon(#"death");
     while (true) {
-        s_waitresult = undefined;
         s_waitresult = ai_zombie waittill(#"gib = head", #"gib = arm_left", #"gib = arm_right", #"gib = leg_left");
         switch (s_waitresult._notify) {
         case #"gib = head":
@@ -1002,7 +1000,6 @@ function private function_6e33721e(eventstruct) {
         return;
     }
     grenade = eventstruct.projectile;
-    s_result = undefined;
     s_result = grenade waittill(#"death", #"grenade_bounce", #"grenade_stuck");
     if (s_result._notify == "death") {
         return;

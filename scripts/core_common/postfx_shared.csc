@@ -100,7 +100,7 @@ function function_764eb053() {
                 var_986c8888 = showmodel;
             }
             if ((newspawn || showmodel == 1) && isdefined(ent)) {
-                ent.origin = self.origin + vectorscale((0, 0, 1), 70) + anglestoforward(self.angles) * 250;
+                ent.origin = self.origin + (0, 0, 70) + anglestoforward(self.angles) * 250;
             }
             bundlename = getdvarstring(#"cg_playrenderoverridebundle", "<unknown string>");
             if (bundlename != var_e0f0fb1d && isdefined(ent)) {
@@ -202,9 +202,7 @@ function setfrontendstreamingoverlay(localclientnum, system, enabled) {
 // Checksum 0xe8f560fa, Offset: 0x960
 // Size: 0x9c
 function toggle_postfx(*localclientnum, enabled, var_c8b06dda) {
-    /#
-        assert(isdefined(var_c8b06dda));
-    #/
+    assert(isdefined(var_c8b06dda));
     if (!enabled) {
         if (self function_556665f2(var_c8b06dda)) {
             self stoppostfxbundle(var_c8b06dda);

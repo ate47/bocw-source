@@ -78,7 +78,7 @@ function private function_b8c581fb(*inflictor, *attacker, damage, *flags, *means
         self.takedamage = 0;
         self namespace_ec06fe4a::function_8c808737();
         self notsolid();
-        orb = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, 0, 1), 40));
+        orb = namespace_ec06fe4a::spawnmodel(self.origin + (0, 0, 40));
         if (isdefined(orb)) {
             orb thread namespace_ec06fe4a::function_52afe5df(1);
             orb namespace_83eb6304::function_3ecfde67("electrical_explo");
@@ -119,7 +119,7 @@ function function_d8e8920a() {
             self namespace_83eb6304::function_3ecfde67("ethereal_vapors");
             self.ignoreall = 1;
             self setgoal(self.origin);
-            angles = self.enemy.angles + vectorscale((0, 1, 0), 180);
+            angles = self.enemy.angles + (0, 180, 0);
             self clearenemy();
             self.takedamage = 0;
             self namespace_ec06fe4a::function_8c808737();

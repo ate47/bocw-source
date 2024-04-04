@@ -10,22 +10,18 @@
 // Method(s) 9 Total 9
 class aisquad {
 
+    var squadbreadcrumb;
+    var squadleader;
+    var squadmembers;
+
     // Namespace aisquad/ai_squads
     // Params 0, eflags: 0xa linked
     // Checksum 0x51397290, Offset: 0x188
     // Size: 0x26
-    __constructor() {
-        self.squadleader = 0;
-        self.squadmembers = [];
-        self.squadbreadcrumb = [];
-    }
-
-    // Namespace aisquad/ai_squads
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x80f724d1, Offset: 0x428
-    // Size: 0x4
-    __destructor() {
-        
+    constructor() {
+        squadleader = 0;
+        squadmembers = [];
+        squadbreadcrumb = [];
     }
 
     // Namespace aisquad/ai_squads
@@ -33,7 +29,7 @@ class aisquad {
     // Checksum 0xed6f75d4, Offset: 0x290
     // Size: 0xa
     function getmembers() {
-        return self.squadmembers;
+        return squadmembers;
     }
 
     // Namespace aisquad/ai_squads
@@ -41,10 +37,10 @@ class aisquad {
     // Checksum 0x88dac8df, Offset: 0x330
     // Size: 0x5e
     function removeaifromsqaud(ai) {
-        if (isinarray(self.squadmembers, ai)) {
-            arrayremovevalue(self.squadmembers, ai, 0);
-            if (self.squadleader === ai) {
-                self.squadleader = undefined;
+        if (isinarray(squadmembers, ai)) {
+            arrayremovevalue(squadmembers, ai, 0);
+            if (squadleader === ai) {
+                squadleader = undefined;
             }
         }
     }
@@ -54,7 +50,7 @@ class aisquad {
     // Checksum 0xf7785400, Offset: 0x260
     // Size: 0xa
     function getsquadbreadcrumb() {
-        return self.squadbreadcrumb;
+        return squadbreadcrumb;
     }
 
     // Namespace aisquad/ai_squads
@@ -62,10 +58,10 @@ class aisquad {
     // Checksum 0xcf91a374, Offset: 0x398
     // Size: 0x86
     function think() {
-        if (isint(self.squadleader) && self.squadleader == 0 || !isdefined(self.squadleader)) {
-            if (self.squadmembers.size > 0) {
-                self.squadleader = self.squadmembers[0];
-                self.squadbreadcrumb = self.squadleader.origin;
+        if (isint(squadleader) && squadleader == 0 || !isdefined(squadleader)) {
+            if (squadmembers.size > 0) {
+                squadleader = squadmembers[0];
+                squadbreadcrumb = squadleader.origin;
             } else {
                 return false;
             }
@@ -78,14 +74,12 @@ class aisquad {
     // Checksum 0xc15294c5, Offset: 0x1b8
     // Size: 0x9e
     function addsquadbreadcrumbs(ai) {
-        /#
-            assert(self.squadleader == ai);
-        #/
-        if (distance2dsquared(self.squadbreadcrumb, ai.origin) >= 9216) {
+        assert(squadleader == ai);
+        if (distance2dsquared(squadbreadcrumb, ai.origin) >= 9216) {
             /#
                 recordcircle(ai.origin, 4, (0, 0, 1), "<unknown string>", ai);
             #/
-            self.squadbreadcrumb = ai.origin;
+            squadbreadcrumb = ai.origin;
         }
     }
 
@@ -94,11 +88,11 @@ class aisquad {
     // Checksum 0x5140d50d, Offset: 0x2a8
     // Size: 0x7c
     function addaitosquad(ai) {
-        if (!isinarray(self.squadmembers, ai)) {
+        if (!isinarray(squadmembers, ai)) {
             if (ai.archetype == #"robot") {
                 ai ai::set_behavior_attribute("move_mode", "squadmember");
             }
-            self.squadmembers[self.squadmembers.size] = ai;
+            squadmembers[squadmembers.size] = ai;
         }
     }
 
@@ -107,7 +101,7 @@ class aisquad {
     // Checksum 0x8932a8e6, Offset: 0x278
     // Size: 0xa
     function getleader() {
-        return self.squadleader;
+        return squadleader;
     }
 
 }

@@ -290,9 +290,7 @@ function cleanup_zombie(var_a75dcb5b = 0) {
         return;
     }
     if (!isalive(self)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
     self function_23621259();

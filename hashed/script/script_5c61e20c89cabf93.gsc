@@ -25,9 +25,7 @@ function private preinit() {
 // Size: 0x204
 function function_d1df9410(waitresult) {
     player = waitresult.player;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player playsound(#"wpn_ammo_pickup");
     player playlocalsound(#"wpn_ammo_pickup");
     primary_weapons = player getweaponslistprimaries();

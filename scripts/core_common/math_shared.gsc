@@ -137,11 +137,7 @@ function angle_dif(oldangle, newangle) {
 // Checksum 0xefbbe101, Offset: 0x688
 // Size: 0xc2
 function function_e673fc92(oldangle, newangle, var_f3747178) {
-    /#
-        /#
-            assert(var_f3747178 > 0, "<unknown string>");
-        #/
-    #/
+    assert(var_f3747178 > 0, "<unknown string>");
     angle_diff = angleclamp180(newangle - oldangle);
     angle_diff = sign(angle_diff) * min(abs(angle_diff), var_f3747178);
     return absangleclamp360(oldangle + angle_diff);
@@ -168,9 +164,7 @@ function randomsign() {
 // Checksum 0xda4ea03e, Offset: 0x7c0
 // Size: 0x35a
 function get_dot_direction(v_point, b_ignore_z, b_normalize, str_direction, b_use_eye) {
-    /#
-        assert(isdefined(v_point), "<unknown string>");
-    #/
+    assert(isdefined(v_point), "<unknown string>");
     if (!isdefined(b_ignore_z)) {
         b_ignore_z = 0;
     }
@@ -222,9 +216,7 @@ function get_dot_direction(v_point, b_ignore_z, b_normalize, str_direction, b_us
         v_direction = anglestoup(v_angles) * -1;
         break;
     default:
-        /#
-            assertmsg(str_direction + "<unknown string>");
-        #/
+        assertmsg(str_direction + "<unknown string>");
         v_direction = anglestoforward(v_angles);
         break;
     }
@@ -241,9 +233,7 @@ function get_dot_direction(v_point, b_ignore_z, b_normalize, str_direction, b_us
 // Checksum 0xfb40a90, Offset: 0xb28
 // Size: 0x6a
 function get_dot_right(v_point, b_ignore_z, b_normalize) {
-    /#
-        assert(isdefined(v_point), "<unknown string>");
-    #/
+    assert(isdefined(v_point), "<unknown string>");
     n_dot = get_dot_direction(v_point, b_ignore_z, b_normalize, "right");
     return n_dot;
 }
@@ -253,9 +243,7 @@ function get_dot_right(v_point, b_ignore_z, b_normalize) {
 // Checksum 0x7d40b314, Offset: 0xba0
 // Size: 0x6a
 function get_dot_up(v_point, b_ignore_z, b_normalize) {
-    /#
-        assert(isdefined(v_point), "<unknown string>");
-    #/
+    assert(isdefined(v_point), "<unknown string>");
     n_dot = get_dot_direction(v_point, b_ignore_z, b_normalize, "up");
     return n_dot;
 }
@@ -265,9 +253,7 @@ function get_dot_up(v_point, b_ignore_z, b_normalize) {
 // Checksum 0x836e8b27, Offset: 0xc18
 // Size: 0x6a
 function get_dot_forward(v_point, b_ignore_z, b_normalize) {
-    /#
-        assert(isdefined(v_point), "<unknown string>");
-    #/
+    assert(isdefined(v_point), "<unknown string>");
     n_dot = get_dot_direction(v_point, b_ignore_z, b_normalize, "forward");
     return n_dot;
 }
@@ -277,12 +263,8 @@ function get_dot_forward(v_point, b_ignore_z, b_normalize) {
 // Checksum 0xf2c98ffd, Offset: 0xc90
 // Size: 0xd2
 function get_dot_from_eye(v_point, b_ignore_z, b_normalize, str_direction) {
-    /#
-        assert(isdefined(v_point), "<unknown string>");
-    #/
-    /#
-        assert(isplayer(self) || isai(self), "<unknown string>" + self.classname + "<unknown string>");
-    #/
+    assert(isdefined(v_point), "<unknown string>");
+    assert(isplayer(self) || isai(self), "<unknown string>" + self.classname + "<unknown string>");
     n_dot = get_dot_direction(v_point, b_ignore_z, b_normalize, str_direction, 1);
     return n_dot;
 }
@@ -292,12 +274,8 @@ function get_dot_from_eye(v_point, b_ignore_z, b_normalize, str_direction) {
 // Checksum 0x5dd9b6d4, Offset: 0xd70
 // Size: 0x98
 function array_average(array) {
-    /#
-        assert(isarray(array));
-    #/
-    /#
-        assert(array.size > 0);
-    #/
+    assert(isarray(array));
+    assert(array.size > 0);
     total = 0;
     for (i = 0; i < array.size; i++) {
         total = total + array[i];
@@ -310,12 +288,8 @@ function array_average(array) {
 // Checksum 0xbf71208, Offset: 0xe10
 // Size: 0xfa
 function array_std_deviation(array, mean) {
-    /#
-        assert(isarray(array));
-    #/
-    /#
-        assert(array.size > 0);
-    #/
+    assert(isarray(array));
+    assert(array.size > 0);
     tmp = [];
     for (i = 0; i < array.size; i++) {
         tmp[i] = (array[i] - mean) * (array[i] - mean);
@@ -527,9 +501,7 @@ function normalize_value(clamp_a, clamp_b, var_7e18701b) {
     } else if (var_7e18701b < clamp_a) {
         return 0;
     } else if (clamp_a == clamp_b) {
-        /#
-            assertmsg("<unknown string>" + clamp_a + "<unknown string>" + clamp_b + "<unknown string>");
-        #/
+        assertmsg("<unknown string>" + clamp_a + "<unknown string>" + clamp_b + "<unknown string>");
     }
     return (var_7e18701b - clamp_a) / (clamp_b - clamp_a);
 }

@@ -8,22 +8,6 @@
 class cremote_missile_target_lockon : cluielem {
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
-    // Params 0, eflags: 0x8
-    // Checksum 0x5075bd65, Offset: 0x468
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x6631b5cc, Offset: 0x700
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
     // Params 1, eflags: 0x0
     // Checksum 0x381d3921, Offset: 0x5b8
     // Size: 0x24
@@ -36,7 +20,7 @@ class cremote_missile_target_lockon : cluielem {
     // Checksum 0x7128b02c, Offset: 0x620
     // Size: 0x30
     function set_target_locked(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "target_locked", value);
+        set_data(localclientnum, "target_locked", value);
     }
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
@@ -44,7 +28,7 @@ class cremote_missile_target_lockon : cluielem {
     // Checksum 0xaecb0fc3, Offset: 0x5e8
     // Size: 0x30
     function set_clientnum(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "clientnum", value);
+        set_data(localclientnum, "clientnum", value);
     }
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
@@ -52,7 +36,7 @@ class cremote_missile_target_lockon : cluielem {
     // Checksum 0xb2c7aaec, Offset: 0x658
     // Size: 0x30
     function set_ishawktag(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "isHawkTag", value);
+        set_data(localclientnum, "isHawkTag", value);
     }
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
@@ -68,7 +52,7 @@ class cremote_missile_target_lockon : cluielem {
     // Checksum 0xe32dd631, Offset: 0x6c8
     // Size: 0x30
     function function_7c227f6d(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "isVehicle", value);
+        set_data(localclientnum, "isVehicle", value);
     }
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
@@ -84,7 +68,7 @@ class cremote_missile_target_lockon : cluielem {
     // Checksum 0x611430a2, Offset: 0x690
     // Size: 0x30
     function set_killed(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "killed", value);
+        set_data(localclientnum, "killed", value);
     }
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
@@ -93,11 +77,11 @@ class cremote_missile_target_lockon : cluielem {
     // Size: 0xb0
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "clientnum", 0);
-        [[ self ]]->set_data(localclientnum, "target_locked", 0);
-        [[ self ]]->set_data(localclientnum, "isHawkTag", 0);
-        [[ self ]]->set_data(localclientnum, "killed", 0);
-        [[ self ]]->set_data(localclientnum, "isVehicle", 0);
+        set_data(localclientnum, "clientnum", 0);
+        set_data(localclientnum, "target_locked", 0);
+        set_data(localclientnum, "isHawkTag", 0);
+        set_data(localclientnum, "killed", 0);
+        set_data(localclientnum, "isVehicle", 0);
     }
 
 }

@@ -204,9 +204,7 @@ function function_8f5dfd03(soundalias, targets) {
     } else if (isstring(soundalias)) {
         soundaliases = [tolower(soundalias)];
     }
-    /#
-        assert(isarray(soundaliases), "speed");
-    #/
+    assert(isarray(soundaliases), "speed");
     var_2b6903e6 = function_33560b93(targets);
     var_68303cc7 = [];
     foreach (var_d7ba9fdf in var_2b6903e6) {
@@ -354,9 +352,7 @@ function type_string(soundtype) {
         var_db943b21 = undefined;
         break;
     }
-    /#
-        assert(isdefined(var_db943b21), "<unknown string>" + soundtype);
-    #/
+    assert(isdefined(var_db943b21), "<unknown string>" + soundtype);
     return var_db943b21;
 }
 
@@ -365,17 +361,11 @@ function type_string(soundtype) {
 // Checksum 0xec27d016, Offset: 0x1ae8
 // Size: 0xf2
 function private function_aaee1de3(var_db943b21, var_4769f013, item) {
-    /#
-        assert(isdefined(level._snd), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(level._snd.var_3cc765a3), "<unknown string>");
-    #/
+    assert(isdefined(level._snd), "<unknown string>");
+    assert(isdefined(level._snd.var_3cc765a3), "<unknown string>");
     switch (var_db943b21) {
     default:
-        /#
-            assert(0, "<unknown string>");
-        #/
+        assert(0, "<unknown string>");
         break;
     case #"centity":
     case #"gentity":
@@ -389,23 +379,15 @@ function private function_aaee1de3(var_db943b21, var_4769f013, item) {
 // Checksum 0xc8e56628, Offset: 0x1be8
 // Size: 0x13a
 function private function_7e9752b7(var_db943b21, var_4769f013, item) {
-    /#
-        assert(isdefined(level._snd), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(level._snd.var_3cc765a3), "<unknown string>");
-    #/
+    assert(isdefined(level._snd), "<unknown string>");
+    assert(isdefined(level._snd.var_3cc765a3), "<unknown string>");
     switch (var_db943b21) {
     default:
-        /#
-            assert(0, "<unknown string>");
-        #/
+        assert(0, "<unknown string>");
         break;
     case #"centity":
     case #"gentity":
-        /#
-            assert(isinarray(level._snd.var_3cc765a3, item), "<unknown string>");
-        #/
+        assert(isinarray(level._snd.var_3cc765a3, item), "<unknown string>");
         level._snd.var_3cc765a3[var_4769f013] = undefined;
         break;
     }
@@ -526,16 +508,12 @@ function private function_2639b80c(soundtype, soundalias, var_9ab0e73a) {
         return undefined;
     }
     level._snd._callbacks[#"stop"] = &stop;
-    /#
-        assert(isdefined(level._snd.var_d37e94ca), "<unknown string>");
-    #/
+    assert(isdefined(level._snd.var_d37e94ca), "<unknown string>");
     soundtype = function_ea2f17d1(soundtype, level._snd.var_d37e94ca);
     var_2b6903e6 = [];
     targets = [];
     var_8e0014a9 = function_9a3d9ff2(soundalias);
-    /#
-        assert(isarray(var_8e0014a9) && var_8e0014a9.size == 3, "<unknown string>");
-    #/
+    assert(isarray(var_8e0014a9) && var_8e0014a9.size == 3, "<unknown string>");
     delaytime = var_8e0014a9[0];
     soundalias = var_8e0014a9[1];
     var_6d232fb3 = var_8e0014a9[2];
@@ -543,9 +521,7 @@ function private function_2639b80c(soundtype, soundalias, var_9ab0e73a) {
     if (function_81fac19d(isstring(soundalias) && soundalias == "", "snd_play: empty sound alias """)) {
         return undefined;
     }
-    /#
-        assert(isstring(soundalias) || ishash(soundalias), "<unknown string>");
-    #/
+    assert(isstring(soundalias) || ishash(soundalias), "<unknown string>");
     islooping = soundislooping(soundalias);
     var_b0ef895d = soundexists(soundalias);
     if (function_81fac19d(!var_b0ef895d, "snd: sound alias '" + soundalias + "' does not exist!")) {
@@ -566,9 +542,7 @@ function private function_2639b80c(soundtype, soundalias, var_9ab0e73a) {
     if (isdefined(var_6d232fb3) && var_6d232fb3 > 0) {
         var_99e65ecf = 0;
     }
-    /#
-        assert(isdefined(var_6d232fb3));
-    #/
+    assert(isdefined(var_6d232fb3));
     targets = function_75a3b79f(var_9ab0e73a);
     if (function_81fac19d(!isdefined(targets), "snd: undefined targets")) {
         return undefined;
@@ -613,9 +587,7 @@ function private function_2639b80c(soundtype, soundalias, var_9ab0e73a) {
         }
         switch (soundtype) {
         default:
-            /#
-                assert(0, "<unknown string>");
-            #/
+            assert(0, "<unknown string>");
             break;
         case #"gentity":
             var_afe43979 = namespace_afa8e18b::function_85daf9f0(soundalias, var_1d25915, var_605838f4, var_e330010e);
@@ -673,15 +645,9 @@ function private function_f937a6f7(var_afe43979, var_24ea4e17) {
     if (function_81fac19d(!isdefined(var_afe43979.soundtype), "snd_stop with unknown type")) {
         return;
     }
-    /#
-        assert(isdefined(level._snd.var_d37e94ca), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(var_afe43979), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(var_afe43979.soundtype), "<unknown string>");
-    #/
+    assert(isdefined(level._snd.var_d37e94ca), "<unknown string>");
+    assert(isdefined(var_afe43979), "<unknown string>");
+    assert(isdefined(var_afe43979.soundtype), "<unknown string>");
     if (var_afe43979.soundtype == #"emitter") {
         var_afe43979 notify(#"hash_57df777459b5086");
         var_afe43979.soundtype = undefined;
@@ -744,9 +710,7 @@ function private function_6f736cc1(var_afe43979, var_6d232fb3, delaytime) {
     if (function_81fac19d(!isdefined(var_afe43979) || function_3132f113(var_afe43979), "snd: fade in on deleted gentity!")) {
         return;
     }
-    /#
-        assert(isdefined(var_afe43979));
-    #/
+    assert(isdefined(var_afe43979));
     var_afe43979 endon(#"death");
     var_afe43979 endon(#"hash_501fa67f084af993");
     delaytime = function_ea2f17d1(delaytime, 0);
@@ -770,13 +734,9 @@ function private function_5eb4c6d(target) {
     } else if (isvec(target) == 1) {
         position = target;
     } else {
-        /#
-            assert(0);
-        #/
+        assert(0);
     }
-    /#
-        assert(isvec(position) == 1, "<unknown string>");
-    #/
+    assert(isvec(position) == 1, "<unknown string>");
     return position;
 }
 
@@ -823,18 +783,10 @@ function private function_1ce48d0f(target, dist, var_3c67b910, var_cbf878e6, rot
     if (isdefined(rotation) == 0 || rotation == 0) {
         return;
     }
-    /#
-        assert(isentity(target) || isstruct(target) && isdefined(target.origin) || isvec(target), "<unknown string>");
-    #/
-    /#
-        assert(isnumber(dist), "<unknown string>");
-    #/
-    /#
-        assert(isnumber(var_3c67b910), "<unknown string>");
-    #/
-    /#
-        assert(isnumber(rotation), "<unknown string>");
-    #/
+    assert(isentity(target) || isstruct(target) && isdefined(target.origin) || isvec(target), "<unknown string>");
+    assert(isnumber(dist), "<unknown string>");
+    assert(isnumber(var_3c67b910), "<unknown string>");
+    assert(isnumber(rotation), "<unknown string>");
     /#
         if (function_95c9af4b() > 2) {
             var_97fd701c = randomfloat(1);
@@ -869,15 +821,9 @@ function private function_d1e7d514(emitter) {
     if (function_81fac19d(var_69bd016 == 0, "snd emitter stop not an emitter")) {
         return;
     }
-    /#
-        assert(isdefined(emitter.soundkey), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(level._snd.var_9e1f6b3e), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(level._snd.var_90a7c764), "<unknown string>");
-    #/
+    assert(isdefined(emitter.soundkey), "<unknown string>");
+    assert(isdefined(level._snd.var_9e1f6b3e), "<unknown string>");
+    assert(isdefined(level._snd.var_90a7c764), "<unknown string>");
     level._snd.var_90a7c764[emitter.soundkey] = undefined;
     emitter notify(#"hash_57df777459b5086");
     emitter.soundtype = undefined;
@@ -895,9 +841,7 @@ function private function_d1e7d514(emitter) {
 function private function_dcc0344(soundalias, target, var_8fc5ff4a, var_6c6d0c21, var_4be7fc38, var_ad8975b4) {
     self endon(#"hash_57df777459b5086");
     level endon(#"hash_57df777459b5086");
-    /#
-        assert(isdefined(target) && isarray(target) == 0, "<unknown string>");
-    #/
+    assert(isdefined(target) && isarray(target) == 0, "<unknown string>");
     if (isvec(target)) {
         target = self;
     }
@@ -905,16 +849,12 @@ function private function_dcc0344(soundalias, target, var_8fc5ff4a, var_6c6d0c21
     position = undefined;
     dist = function_84fc754d(function_ea2f17d1(var_6c6d0c21, 0));
     var_a7685aa3 = function_cdc85ae5(var_4be7fc38);
-    /#
-        assert(isarray(var_a7685aa3) && var_a7685aa3.size != 0);
-    #/
+    assert(isarray(var_a7685aa3) && var_a7685aa3.size != 0);
     var_3c67b910 = var_a7685aa3[0];
     rotation = var_a7685aa3[1];
     var_cbf878e6 = function_84fc754d(function_ea2f17d1(var_ad8975b4, 0));
     if (isarray(var_8fc5ff4a) && var_8fc5ff4a.size >= 4) {
-        /#
-            assert(var_8fc5ff4a.size == 4, "<unknown string>");
-        #/
+        assert(var_8fc5ff4a.size == 4, "<unknown string>");
         var_f9baa88 = [var_8fc5ff4a[0], var_8fc5ff4a[1]];
         spawntime = function_84fc754d(var_f9baa88, 0.05);
         wait(spawntime);
@@ -934,9 +874,7 @@ function private function_dcc0344(soundalias, target, var_8fc5ff4a, var_6c6d0c21
         }
         dist = function_84fc754d(function_ea2f17d1(var_6c6d0c21, 0));
         var_a7685aa3 = function_cdc85ae5(var_4be7fc38);
-        /#
-            assert(isarray(var_a7685aa3) && var_a7685aa3.size != 0);
-        #/
+        assert(isarray(var_a7685aa3) && var_a7685aa3.size != 0);
         var_3c67b910 = var_a7685aa3[0];
         rotation = var_a7685aa3[1];
         var_cbf878e6 = function_84fc754d(function_ea2f17d1(var_ad8975b4, 0));
@@ -968,18 +906,10 @@ function emitter(soundalias, target, spawntime, var_6c6d0c21, rotation, var_cbf8
         level._snd.var_9e1f6b3e = 1792;
         level._snd.var_90a7c764 = [];
     }
-    /#
-        assert(isdefined(level._snd.var_9e1f6b3e), "<unknown string>");
-    #/
-    /#
-        assert(soundexists(soundalias), "<unknown string>" + soundalias);
-    #/
-    /#
-        assert(isdefined(target), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(spawntime), "<unknown string>");
-    #/
+    assert(isdefined(level._snd.var_9e1f6b3e), "<unknown string>");
+    assert(soundexists(soundalias), "<unknown string>" + soundalias);
+    assert(isdefined(target), "<unknown string>");
+    assert(isdefined(spawntime), "<unknown string>");
     if (isarray(targets) == 0) {
         targets = [target];
     }
@@ -1030,9 +960,7 @@ function private function_e94a63b7(alias, tag, ends_on_death, var_50bba55f, *rad
         }
     #/
     if (isdefined(var_50bba55f)) {
-        /#
-            assert(var_50bba55f, "<unknown string>");
-        #/
+        assert(var_50bba55f, "<unknown string>");
         function_f4f3a2a(snd, self);
     }
     function_2fdc4fb(snd);
@@ -1120,9 +1048,7 @@ function function_13b51154(curve, size) {
         y = 0;
         switch (curve) {
         default:
-            /#
-                assert(0);
-            #/
+            assert(0);
             break;
         case #"default_vfcurve":
         case #"linear":
@@ -1248,9 +1174,7 @@ function function_9020a959(curve) {
 function function_b918d683(inval, curve) {
     curve = function_d3f407d6(curve);
     lut = level.var_c386bd24[curve];
-    /#
-        assert(isdefined(lut), "<unknown string>" + curve);
-    #/
+    assert(isdefined(lut), "<unknown string>" + curve);
     inval = math::clamp(inval, 0, 1);
     outval = 0;
     step = 1 / (lut.size - 1);
@@ -1336,19 +1260,13 @@ function private function_8eaaf665() {
         foreach (p in self.var_3dc056c0) {
             p.isprocessing = 1;
             if (isdefined(p.var_b90f380f)) {
-                /#
-                    assert(isentity(self), "<unknown string>");
-                #/
+                assert(isentity(self), "<unknown string>");
                 p.inputvalue = self [[ p.var_b90f380f ]](p.userdata);
-                /#
-                    assert(gettime() == now, "<unknown string>");
-                #/
+                assert(gettime() == now, "<unknown string>");
             }
             if (isdefined(p.var_f171f012)) {
                 if (p.userdata.size > 0) {
-                    /#
-                        assert(p.var_f171f012.size == p.userdata.size, "<unknown string>");
-                    #/
+                    assert(p.var_f171f012.size == p.userdata.size, "<unknown string>");
                 }
                 foreach (index, var_1ad28f57 in p.var_f171f012) {
                     if (isentity(self)) {
@@ -1377,15 +1295,11 @@ function private function_ef12a0f5(name) {
     if (isdefined(level.var_ba9b4ed) == 0) {
         level.var_ba9b4ed = [];
     }
-    /#
-        assert(isarray(level.var_ba9b4ed), "<unknown string>");
-    #/
+    assert(isarray(level.var_ba9b4ed), "<unknown string>");
     if (isdefined(self.var_3dc056c0) == 0) {
         self.var_3dc056c0 = [];
     }
-    /#
-        assert(isarray(self.var_3dc056c0), "<unknown string>");
-    #/
+    assert(isarray(self.var_3dc056c0), "<unknown string>");
     if (isdefined(self.var_3dc056c0[name]) == 0) {
         self.var_3dc056c0[name] = spawnstruct();
     }
@@ -1414,15 +1328,9 @@ function function_fae704b2(name, var_1ad28f57, userdata) {
     if (isdefined(self.var_3dc056c0[name].var_f171f012) == 0) {
         self.var_3dc056c0[name].var_f171f012 = [];
     }
-    /#
-        assert(isdefined(self.var_3dc056c0[name]), "<unknown string>" + name + "<unknown string>");
-    #/
-    /#
-        assert(isdefined(self.var_3dc056c0[name].var_f171f012), "<unknown string>");
-    #/
-    /#
-        assert(isarray(self.var_3dc056c0[name].var_f171f012), "<unknown string>");
-    #/
+    assert(isdefined(self.var_3dc056c0[name]), "<unknown string>" + name + "<unknown string>");
+    assert(isdefined(self.var_3dc056c0[name].var_f171f012), "<unknown string>");
+    assert(isarray(self.var_3dc056c0[name].var_f171f012), "<unknown string>");
     var_68ec0ce1 = self.var_3dc056c0[name].var_f171f012.size;
     self.var_3dc056c0[name].var_f171f012[var_68ec0ce1] = var_1ad28f57;
     if (isdefined(self.var_3dc056c0[name].userdata) == 0) {
@@ -1519,14 +1427,10 @@ function function_e94ea06d(var_b90f380f) {
 // Checksum 0x21e82338, Offset: 0x6018
 // Size: 0x122
 function function_c0e3d9aa(*userdata) {
-    /#
-        assert(isdefined(self.origin));
-    #/
+    assert(isdefined(self.origin));
     now = gettime();
     if (isdefined(self.origin_velocity_time) && self.origin_velocity_time == now) {
-        /#
-            assert(isdefined(self.origin_velocity));
-        #/
+        assert(isdefined(self.origin_velocity));
         return self.origin_velocity;
     }
     if (isdefined(self.origin_last) == 0) {
@@ -1547,9 +1451,7 @@ function function_c0e3d9aa(*userdata) {
 // Checksum 0x4320f332, Offset: 0x6148
 // Size: 0x282
 function function_8764d0b2(*userdata) {
-    /#
-        assert(isdefined(self.origin));
-    #/
+    assert(isdefined(self.origin));
     velocity = self function_c0e3d9aa();
     self.var_e6d478c5 = length(velocity);
     /#
@@ -1578,14 +1480,10 @@ function function_8764d0b2(*userdata) {
 // Checksum 0x54b55633, Offset: 0x63d8
 // Size: 0x1f2
 function function_29584494(*userdata) {
-    /#
-        assert(isdefined(self.angles));
-    #/
+    assert(isdefined(self.angles));
     now = gettime();
     if (isdefined(self.var_9254021f) && self.var_9254021f == now) {
-        /#
-            assert(isdefined(self.var_c60cbb0f));
-        #/
+        assert(isdefined(self.var_c60cbb0f));
         return self.var_c60cbb0f;
     }
     angles = self.angles;
@@ -1598,13 +1496,13 @@ function function_29584494(*userdata) {
         }
     }
     if (angles[0] > 180) {
-        angles = angles - vectorscale((1, 0, 0), 360);
+        angles = angles - (360, 0, 0);
     }
     if (angles[1] > 180) {
-        angles = angles - vectorscale((0, 1, 0), 360);
+        angles = angles - (0, 360, 0);
     }
     if (angles[2] > 180) {
-        angles = angles - vectorscale((0, 0, 1), 360);
+        angles = angles - (0, 0, 360);
     }
     if (isdefined(self.var_c60cbb0f) == 0) {
         self.var_c60cbb0f = angles;
@@ -1777,18 +1675,10 @@ function speed(target, alias, var_5c76982f, var_4da05e4e) {
 // Checksum 0x45614ab, Offset: 0x7080
 // Size: 0x378
 function function_d6d4a5d8(var_86bf21bc, var_72585589, var_c5abb52c, var_538ddc9c, var_683a408d, var_d03e56e8, var_2982cf88) {
-    /#
-        assert(isvec(var_86bf21bc));
-    #/
-    /#
-        assert(isvec(var_72585589));
-    #/
-    /#
-        assert(isvec(var_538ddc9c));
-    #/
-    /#
-        assert(isvec(var_683a408d));
-    #/
+    assert(isvec(var_86bf21bc));
+    assert(isvec(var_72585589));
+    assert(isvec(var_538ddc9c));
+    assert(isvec(var_683a408d));
     var_c5abb52c = function_ea2f17d1(var_c5abb52c, 1);
     var_d03e56e8 = function_ea2f17d1(var_d03e56e8, 1);
     var_2982cf88 = function_ea2f17d1(var_2982cf88, 343.3);
@@ -1796,15 +1686,9 @@ function function_d6d4a5d8(var_86bf21bc, var_72585589, var_c5abb52c, var_538ddc9
         return [0, 0, 0];
     }
     var_ec47cb08 = float(var_2982cf88) * 39.3701;
-    /#
-        assert(isnumber(var_c5abb52c));
-    #/
-    /#
-        assert(isnumber(var_d03e56e8));
-    #/
-    /#
-        assert(isnumber(var_ec47cb08));
-    #/
+    assert(isnumber(var_c5abb52c));
+    assert(isnumber(var_d03e56e8));
+    assert(isnumber(var_ec47cb08));
     var_452d5766 = var_86bf21bc - var_538ddc9c;
     len = length(var_452d5766);
     var_2c6a3dcc = 0;
@@ -1862,24 +1746,12 @@ function private function_344f3a4a(inputvalue, userdata) {
     if (!function_e3a36342(player)) {
         return;
     }
-    /#
-        assert(isdefined(player));
-    #/
-    /#
-        assert(isdefined(player.var_9dad7949));
-    #/
-    /#
-        assert(isdefined(self));
-    #/
-    /#
-        assert(isdefined(self.var_9dad7949));
-    #/
-    /#
-        assert(isdefined(self.var_9dad7949.scale));
-    #/
-    /#
-        assert(isdefined(self.var_9dad7949.var_e8950a23));
-    #/
+    assert(isdefined(player));
+    assert(isdefined(player.var_9dad7949));
+    assert(isdefined(self));
+    assert(isdefined(self.var_9dad7949));
+    assert(isdefined(self.var_9dad7949.scale));
+    assert(isdefined(self.var_9dad7949.var_e8950a23));
     var_86bf21bc = self.origin;
     var_72585589 = inputvalue;
     var_c5abb52c = self.var_9dad7949.scale;
@@ -1889,24 +1761,12 @@ function private function_344f3a4a(inputvalue, userdata) {
     if (isdefined(var_683a408d) == 0 || self.var_9dad7949.var_e8950a23 == 0) {
         var_683a408d = (0, 0, 0);
     }
-    /#
-        assert(isvec(var_86bf21bc));
-    #/
-    /#
-        assert(isvec(var_72585589));
-    #/
-    /#
-        assert(isnumber(var_c5abb52c));
-    #/
-    /#
-        assert(isvec(var_538ddc9c));
-    #/
-    /#
-        assert(isvec(var_683a408d));
-    #/
-    /#
-        assert(isnumber(var_d03e56e8));
-    #/
+    assert(isvec(var_86bf21bc));
+    assert(isvec(var_72585589));
+    assert(isnumber(var_c5abb52c));
+    assert(isvec(var_538ddc9c));
+    assert(isvec(var_683a408d));
+    assert(isnumber(var_d03e56e8));
     var_c9ea7ee3 = function_d6d4a5d8(var_86bf21bc, var_72585589, var_c5abb52c, var_538ddc9c, var_683a408d, var_d03e56e8);
     dopplerscale = var_c9ea7ee3[0];
     if (isdefined(self.var_9dad7949.pitchscale)) {
@@ -1939,15 +1799,11 @@ function private function_344f3a4a(inputvalue, userdata) {
 // Checksum 0xd1661ca0, Offset: 0x7bb8
 // Size: 0x20c
 function private _snd_doppler_main(player, dopplerscale, pitchscale, var_a47261d3) {
-    /#
-        assert(function_e3a36342(player));
-    #/
+    assert(function_e3a36342(player));
     dopplerscale = function_ea2f17d1(dopplerscale, 1);
     pitchscale = function_ea2f17d1(pitchscale, 1);
     var_a47261d3 = function_ea2f17d1(var_a47261d3, 1);
-    /#
-        assert(isdefined(player));
-    #/
+    assert(isdefined(player));
     if (isdefined(player.var_9dad7949) == 0) {
         player.var_9dad7949 = spawnstruct();
     }
@@ -1999,9 +1855,7 @@ function function_b9f3bee9(var_afe43979) {
 // Size: 0xfa
 function function_bdd32fcc() {
     skiptos = getskiptos();
-    /#
-        assert(isstring(skiptos));
-    #/
+    assert(isstring(skiptos));
     skiptos = tolower(skiptos);
     skiptos = strtok(skiptos, ",");
     skipto = "";
@@ -2023,12 +1877,8 @@ function private function_637f9a70(callback, var_7d665d77) {
     level notify(#"hash_163618840778df8c");
     level endon(#"hash_163618840778df8c");
     var_7d665d77 = function_ea2f17d1(var_7d665d77, 1);
-    /#
-        assert(isscriptfunctionptr(callback));
-    #/
-    /#
-        assert(isdefined(var_7d665d77));
-    #/
+    assert(isscriptfunctionptr(callback));
+    assert(isdefined(var_7d665d77));
     waitforplayers();
     while (true) {
         skipto = function_bdd32fcc();
@@ -2107,21 +1957,14 @@ function private function_78013c7e(callback) {
     self endon(#"death");
     var_524d6318 = [level];
     trigger = self;
-    /#
-        assert(isdefined(trigger));
-    #/
+    assert(isdefined(trigger));
     while (true) {
-        waitresult = undefined;
         waitresult = trigger waittill(#"trigger");
         player = waitresult.activator;
         istouching = function_c66d3ce2(trigger, player);
         if (istouching) {
             player.var_a1d98d00 = function_ea2f17d1(player.var_a1d98d00, var_524d6318);
-            /#
-                /#
-                    assert(isarray(player.var_a1d98d00) && isdefined(player.var_a1d98d00[0]) && player.var_a1d98d00[0] == level);
-                #/
-            #/
+            assert(isarray(player.var_a1d98d00) && isdefined(player.var_a1d98d00[0]) && player.var_a1d98d00[0] == level);
             if (trigger != level) {
                 player.var_a1d98d00[player.var_a1d98d00.size] = trigger;
             }
@@ -2157,17 +2000,9 @@ function private function_78013c7e(callback) {
                         }
                     }
                 } else {
-                    /#
-                        /#
-                            assert(player.var_a1d98d00.size > 0);
-                        #/
-                    #/
+                    assert(player.var_a1d98d00.size > 0);
                     index = player.var_a1d98d00.size - 1;
-                    /#
-                        /#
-                            assert(index >= 0);
-                        #/
-                    #/
+                    assert(index >= 0);
                     var_9cb85e33 = player.var_a1d98d00[index];
                 }
                 if (isdefined(var_9cb85e33)) {
@@ -2210,9 +2045,7 @@ function trigger_init(callback, name, key) {
 // Checksum 0x835ca3de, Offset: 0x8ae0
 // Size: 0x220
 function function_b4de7637(name, elements) {
-    /#
-        assert(did_init());
-    #/
+    assert(did_init());
     var_ce0e8448 = isstring(name);
     var_a718b5db = isarray(elements) && elements.size > 0 && isarray(elements[0]);
     var_505293ad = isarray(elements) && elements.size >= 3 && isstring(elements[0]);
@@ -2314,12 +2147,8 @@ function function_645c2f9b(player, element) {
     if (function_81fac19d(!var_a718b5db, "snd: set_element unexpected")) {
         return;
     }
-    /#
-        assert(isplayervalid);
-    #/
-    /#
-        assert(var_a718b5db);
-    #/
+    assert(isplayervalid);
+    assert(var_a718b5db);
     player.var_c6206b8b = array();
     foreach (e in elements) {
         alias = e[0];
@@ -2340,9 +2169,7 @@ function function_645c2f9b(player, element) {
 // Checksum 0x3fd6a3e7, Offset: 0x92b0
 // Size: 0x336
 function private function_2fc1b3a7(var_afe43979, player, var_8b0894e2, var_887e31c1) {
-    /#
-        assert(function_a6779cbd(var_afe43979));
-    #/
+    assert(function_a6779cbd(var_afe43979));
     var_afe43979 endon(#"death");
     var_afe43979 notify(#"hash_20f2dfe33da3f037");
     var_afe43979 endon(#"hash_20f2dfe33da3f037");

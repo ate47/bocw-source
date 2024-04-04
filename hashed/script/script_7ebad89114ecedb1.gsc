@@ -38,12 +38,8 @@ function private preinit() {
 // Checksum 0x1b0db344, Offset: 0x3d0
 // Size: 0x284
 function private function_9cc6a162(localclientnum, sickness, var_46bdb64c) {
-    /#
-        assert(ishash(sickness) || isstring(sickness));
-    #/
-    /#
-        assert(isdefined(var_46bdb64c));
-    #/
+    assert(ishash(sickness) || isstring(sickness));
+    assert(isdefined(var_46bdb64c));
     var_5e7fb773 = function_1df4c3b0(localclientnum, #"hash_4f154d6820b7e836");
     var_9ad901c3 = createuimodel(var_5e7fb773, "sickness");
     var_a60a2640 = level.radiation.sickness.size;
@@ -80,12 +76,8 @@ function private function_e352066c(localclientnum) {
 // Checksum 0x803864f, Offset: 0x720
 // Size: 0xf4
 function private function_b200b0ea(localclientnum, sickness, var_46bdb64c) {
-    /#
-        assert(ishash(sickness) || isstring(sickness));
-    #/
-    /#
-        assert(isdefined(var_46bdb64c));
-    #/
+    assert(ishash(sickness) || isstring(sickness));
+    assert(isdefined(var_46bdb64c));
     for (index = 0; index < level.var_96929d7f[localclientnum].sickness.size; index++) {
         if (level.var_96929d7f[localclientnum].sickness[index].var_a2c3987d == sickness) {
             arrayremoveindex(level.var_96929d7f[localclientnum].sickness, index, 0);
@@ -132,9 +124,7 @@ function private radiation(localclientnum, oldval, newval, *bnewent, *binitialsn
     var_66bba724 = bwastimejump & 8 - 1;
     radiationlevel = var_66bba724;
     if (radiationlevel < 0) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         radiationlevel = 0;
     }
     setuimodelvalue(var_11a4b47f, var_66bba724);

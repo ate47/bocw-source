@@ -8,21 +8,8 @@
 // Method(s) 6 Total 13
 class cdeath_zone : cluielem {
 
-    // Namespace cdeath_zone/death_zone
-    // Params 0, eflags: 0x8
-    // Checksum 0x94c99e74, Offset: 0x1e8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cdeath_zone/death_zone
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xc9c4e90c, Offset: 0x320
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace cdeath_zone/death_zone
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class cdeath_zone : cluielem {
     // Checksum 0xaeb05a44, Offset: 0x2d0
     // Size: 0x44
     function set_shutdown_sec(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "shutdown_sec", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "shutdown_sec", value);
     }
 
     // Namespace cdeath_zone/death_zone

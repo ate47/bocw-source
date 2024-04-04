@@ -312,7 +312,6 @@ function function_72dfda8f() {
     self endon(#"death");
     level endon(#"heli_intro_complete");
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"shake_low", #"shake_med", #"hash_7fbec71ff58f17be");
         level.var_8f8dc88e = waitresult._notify;
     }
@@ -368,7 +367,6 @@ function function_3cebcd1b() {
     var_979d3fe0 = [#"hit1_truck_rear", #"hit1_truck_house", #"hit1_truck_mid", #"hit1_truck_front", #"heli_focus_mid_house", #"heli_focus_rear_house"];
     var_f01b798 = ["hit1_truck_rear", "hit1_truck_house", "hit1_truck_mid", "hit1_truck_front", "heli_focus_mid_house", "heli_focus_rear_house"];
     while (true) {
-        ret = undefined;
         ret = level waittill(#"hit1_truck_rear", #"hit1_truck_house", #"hit1_truck_mid", #"hit1_truck_front", #"heli_focus_mid_house", #"heli_focus_rear_house");
         var_87c48267 = "GetEntDislikesHashStrings";
         for (i = 0; i < var_979d3fe0.size; i++) {
@@ -397,7 +395,7 @@ function function_3cebcd1b() {
 // Checksum 0xc78b0efc, Offset: 0x2050
 // Size: 0x144
 function function_f97ce389(heli, tag, var_2d65f507, var_5525c0b0) {
-    heli.light = util::spawn_model("tag_origin", heli gettagorigin(tag) + vectorscale((0, 0, -1), 84), heli gettagangles(tag) + var_2d65f507);
+    heli.light = util::spawn_model("tag_origin", heli gettagorigin(tag) + (0, 0, -84), heli gettagangles(tag) + var_2d65f507);
     if (var_5525c0b0) {
         util::delay(0.3, undefined, &playfxontag, #"hash_f80473c70ea6ee3", heli.light, "tag_origin");
     } else {
@@ -430,7 +428,7 @@ function heli_light(heli, tname, tag, var_2d65f507, var_ba240678, var_fa2357fe =
             }
         }
         if (isdefined(heli.light)) {
-            heli.light linkto(heli, tag, vectorscale((0, 0, -1), 64), var_2d65f507);
+            heli.light linkto(heli, tag, (0, 0, -64), var_2d65f507);
             level.var_eaf95d92[tname] = heli.light;
         }
     }
@@ -447,7 +445,7 @@ function function_336e9e88() {
     self endon(#"death");
     while (true) {
         /#
-            sphere(self.origin + vectorscale((0, 0, 1), 12), 4, (1, 1, 0), 1, 0, 10, 1);
+            sphere(self.origin + (0, 0, 12), 4, (1, 1, 0), 1, 0, 10, 1);
             sphere(self.origin, 8, (1, 1, 0), 1, 0, 10, 1);
         #/
         waitframe(1);
@@ -504,7 +502,7 @@ function function_cbe25a41(var_4cd99adc, tag, var_fa2357fe = 0, var_1a67724f = 0
     self.var_ba240678 = util::spawn_model("tag_origin", var_4cd99adc.origin, var_4cd99adc.angles);
     self.var_113b6995 = 2;
     self.var_35f26704 = 0;
-    self.var_43643137 = vectorscale((0, 0, 1), 36);
+    self.var_43643137 = (0, 0, 36);
     self.var_71664ae5 = 128;
     self.var_1a67724f = var_1a67724f;
     self.var_ba240678 endon(#"death");
@@ -518,7 +516,7 @@ function function_cbe25a41(var_4cd99adc, tag, var_fa2357fe = 0, var_1a67724f = 0
         var_8c29c159 = getent("light_ally_helispot_bnc", "targetname");
         if (isdefined(var_8c29c159)) {
             var_8c29c159.var_6da8d78a = 1;
-            var_8c29c159 linkto(self.var_ba240678, "tag_origin", vectorscale((0, 0, -1), 200), (0, 0, 0));
+            var_8c29c159 linkto(self.var_ba240678, "tag_origin", (0, 0, -200), (0, 0, 0));
             if (var_61bc4e7) {
                 var_8c29c159 thread function_336e9e88();
             }
@@ -588,7 +586,7 @@ function function_cbe25a41(var_4cd99adc, tag, var_fa2357fe = 0, var_1a67724f = 0
             }
         }
         tag_ang = self gettagangles(tag);
-        org = self gettagorigin(tag) + vectorscale((0, 0, -1), 10);
+        org = self gettagorigin(tag) + (0, 0, -10);
         to = vectortoangles(self.var_ba240678.origin - org);
         var_172edc78 = to - tag_ang;
         waitframe(1);
@@ -671,7 +669,6 @@ function function_ccfab96() {
     curr = var_a77bd386;
     var_35d2e273 = 0;
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(["head_swap_none", "head_swap_normal", "head_swap_flappy"]);
         switch (waitresult._notify) {
         case #"head_swap_none":

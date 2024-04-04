@@ -357,9 +357,7 @@ function on_round_end() {
             player.var_8d41c907 = player.var_8d41c907 - var_370ac26d;
         }
         if (!isdefined(player.var_a160c21d) || player.var_a160c21d === 0) {
-            /#
-                println("<unknown string>" + player getentitynumber() + "<unknown string>");
-            #/
+            println("<unknown string>" + player getentitynumber() + "<unknown string>");
             player.var_a160c21d = 0;
         }
         player.var_8d41c907 = player.var_8d41c907 + player zm_round_logic::function_f4c57bbe();
@@ -518,9 +516,7 @@ function private function_9b42df5c(*round_number) {
 // Checksum 0x6f6f9db2, Offset: 0x2190
 // Size: 0x3a
 function private function_600547a4() {
-    /#
-        assert(isdefined(level.round_number));
-    #/
+    assert(isdefined(level.round_number));
     return function_9b42df5c(level.round_number);
 }
 

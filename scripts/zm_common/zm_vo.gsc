@@ -233,7 +233,6 @@ function function_1084cf1d() {
     n_index = randomintrangeinclusive(0, 3);
     var_64edfc97 = #"hash_1df2b33f0eb8bf56" + n_index;
     mdl_monkey playsound(var_64edfc97);
-    s_waitresult = undefined;
     s_waitresult = self waittill(#"stationary");
     v_origin = mdl_monkey.origin;
     mdl_monkey stopsound(var_64edfc97);
@@ -1197,7 +1196,6 @@ function function_d342796e(var_7382ea8b, n_delay, var_67fee570 = 0, var_299a320 
             }
         #/
         self battlechatter::function_a48c33ff(str_vo_alias, dialogflags);
-        s_waitresult = undefined;
         s_waitresult = self waittilltimeout(var_2690dae, #"done_speaking");
         self vo_clear();
     }
@@ -1308,7 +1306,6 @@ function function_7622cb70(var_b58a6345, n_delay, b_wait_if_busy = 1, var_54c38d
             self function_730589a6();
             self.dontspeak = 1;
             self thread _end_vo_say_commander_line(str_vo_alias, var_b4dd2e62, self, var_2690dae);
-            s_waitresult = undefined;
             s_waitresult = self waittilltimeout(var_2690dae, #"death", #"hash_73f839d8939452ad");
             arrayremovevalue(self.var_671911e9, str_vo_alias);
             arrayremovevalue(self.var_29e6a032, var_b4dd2e62);
@@ -1953,12 +1950,8 @@ function private function_3d6e0cd9(dialogkey, killstreaktype, killstreakid, soun
 // Checksum 0xdeaa7952, Offset: 0x7280
 // Size: 0xb4
 function private function_3cf68327(dialogkey, killstreaktype, killstreakid) {
-    /#
-        assert(isdefined(dialogkey));
-    #/
-    /#
-        assert(isdefined(killstreaktype));
-    #/
+    assert(isdefined(dialogkey));
+    assert(isdefined(killstreaktype));
     if (!isdefined(self.owner) || !isdefined(self.team) || self.team != self.owner.team) {
         return;
     }
@@ -1970,12 +1963,8 @@ function private function_3cf68327(dialogkey, killstreaktype, killstreakid) {
 // Checksum 0xd8fb4c29, Offset: 0x7340
 // Size: 0x7c
 function play_taacom_dialog_response(dialogkey, killstreaktype, killstreakid, pilotindex) {
-    /#
-        assert(isdefined(dialogkey));
-    #/
-    /#
-        assert(isdefined(killstreaktype));
-    #/
+    assert(isdefined(dialogkey));
+    assert(isdefined(killstreaktype));
     if (!isdefined(pilotindex)) {
         return;
     }

@@ -8,21 +8,8 @@
 // Method(s) 12 Total 19
 class class_35ee22bc : cluielem {
 
-    // Namespace class_35ee22bc/namespace_9ffd16b9
-    // Params 0, eflags: 0x8
-    // Checksum 0xe7aec773, Offset: 0x378
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_35ee22bc/namespace_9ffd16b9
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xf8f7f4cc, Offset: 0x780
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_35ee22bc/namespace_9ffd16b9
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class class_35ee22bc : cluielem {
     // Checksum 0xcf8f4c31, Offset: 0x640
     // Size: 0x44
     function function_16715e9f(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "guardian_count", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "guardian_count", value);
     }
 
     // Namespace namespace_35ee22bc/namespace_9ffd16b9
@@ -45,7 +32,7 @@ class class_35ee22bc : cluielem {
     // Checksum 0x321f39c8, Offset: 0x6e0
     // Size: 0x44
     function function_191323ee(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "raps_count", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "raps_count", value);
     }
 
     // Namespace namespace_35ee22bc/namespace_9ffd16b9
@@ -53,7 +40,7 @@ class class_35ee22bc : cluielem {
     // Checksum 0x34bceda1, Offset: 0x730
     // Size: 0x44
     function function_461034d2(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "selector_state", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "selector_state", value);
     }
 
     // Namespace namespace_35ee22bc/namespace_9ffd16b9
@@ -69,7 +56,7 @@ class class_35ee22bc : cluielem {
     // Checksum 0xe073d084, Offset: 0x5a0
     // Size: 0x44
     function function_69d88480(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "wasp_count", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "wasp_count", value);
     }
 
     // Namespace namespace_35ee22bc/namespace_9ffd16b9
@@ -92,7 +79,7 @@ class class_35ee22bc : cluielem {
     // Checksum 0xe537351d, Offset: 0x690
     // Size: 0x44
     function function_de1ece9c(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "robot_count", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "robot_count", value);
     }
 
     // Namespace namespace_35ee22bc/namespace_9ffd16b9
@@ -100,7 +87,7 @@ class class_35ee22bc : cluielem {
     // Checksum 0x2be8fc09, Offset: 0x5f0
     // Size: 0x44
     function function_ebe4fe7a(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "rcxd_count", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "rcxd_count", value);
     }
 
     // Namespace namespace_35ee22bc/namespace_9ffd16b9
@@ -108,7 +95,7 @@ class class_35ee22bc : cluielem {
     // Checksum 0x3806744, Offset: 0x550
     // Size: 0x44
     function function_fdfe76bb(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "micromissile_count", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "micromissile_count", value);
     }
 
 }

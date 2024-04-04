@@ -8,22 +8,6 @@
 class cdebug_center_screen : cluielem {
 
     // Namespace cdebug_center_screen/debug_center_screen
-    // Params 0, eflags: 0xa linked
-    // Checksum 0xdc4084e4, Offset: 0x300
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cdebug_center_screen/debug_center_screen
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xcb392d6d, Offset: 0x3d0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cdebug_center_screen/debug_center_screen
     // Params 1, eflags: 0x2 linked
     // Checksum 0x6bbe1073, Offset: 0x3a0
     // Size: 0x24

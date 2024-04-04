@@ -108,13 +108,13 @@ function function_c8ff2bab(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwasdemojump == 1) {
         s_fx = struct::get("s_crash_location", "script_noteworthy");
         playfx(fieldname, #"hash_778b66c2a0ed984d", s_fx.origin, anglestoforward(s_fx.angles), anglestoup(s_fx.angles));
-        playsound(fieldname, #"hash_69796081163eb8b6", s_fx.origin + vectorscale((0, 0, 1), 25));
+        playsound(fieldname, #"hash_69796081163eb8b6", s_fx.origin + (0, 0, 25));
         return;
     }
     if (bwasdemojump == 2) {
         s_fx = struct::get("ww_soul_charge");
         playfx(fieldname, #"hash_7270f564ba9f808a", s_fx.origin, anglestoforward(s_fx.angles), anglestoup(s_fx.angles));
-        playsound(fieldname, #"hash_69796081163eb8b6", s_fx.origin + vectorscale((0, 0, 1), 25));
+        playsound(fieldname, #"hash_69796081163eb8b6", s_fx.origin + (0, 0, 25));
     }
 }
 
@@ -131,7 +131,7 @@ function function_761411a9(localclientnum, *oldval, newval, *bnewent, *binitials
         if (!isdefined(s_fx.var_64d7f29a)) {
             s_fx.var_64d7f29a = 1;
             playsound(fieldname, #"hash_50189ee8aad50903", s_fx.origin);
-            soundloopemitter(#"hash_1a22f6a6cf997055", s_fx.origin + vectorscale((0, 0, 1), 20));
+            soundloopemitter(#"hash_1a22f6a6cf997055", s_fx.origin + (0, 0, 20));
         }
         return;
     }
@@ -150,7 +150,7 @@ function function_761411a9(localclientnum, *oldval, newval, *bnewent, *binitials
     if (isdefined(s_fx.var_64d7f29a)) {
         s_fx.var_64d7f29a = undefined;
         playsound(fieldname, #"hash_63ac991cc8808fb1", s_fx.origin);
-        soundstoploopemitter(#"hash_1a22f6a6cf997055", s_fx.origin + vectorscale((0, 0, 1), 20));
+        soundstoploopemitter(#"hash_1a22f6a6cf997055", s_fx.origin + (0, 0, 20));
     }
 }
 
@@ -169,7 +169,7 @@ function function_bb5d646a(localclientnum, *oldval, *newval, *bnewent, *binitial
     e_fx.var_94450cf4 = e_fx playloopsound(#"hash_20b1d2b1a7ca4646");
     var_29eb5284 = struct::get("ww_soul_charge");
     util::playfxontag(bwasdemojump, #"hash_61e3c7a179d7cdfb", e_fx, "tag_origin");
-    e_fx moveto(e_fx.origin + vectorscale((0, 0, 1), 40), 0.8);
+    e_fx moveto(e_fx.origin + (0, 0, 40), 0.8);
     wait(0.75);
     n_time = distance(e_fx.origin, var_29eb5284.origin) / 400;
     e_fx moveto(var_29eb5284.origin, n_time);

@@ -214,7 +214,7 @@ function ontrophysystemsmashed(attacker, *callback_data) {
 function trophyactive(owner) {
     owner endon(#"disconnect");
     self endon(#"death", #"hacked");
-    traceposition = self.origin + vectorscale((0, 0, 1), 29);
+    traceposition = self.origin + (0, 0, 29);
     while (true) {
         if (!isdefined(self)) {
             return;
@@ -494,7 +494,6 @@ function watchtrophysystemdamage(watcher) {
     self setmaxhealth(self.maxhealth);
     attacker = undefined;
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         damage = waitresult.amount;
         type = waitresult.mod;

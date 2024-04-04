@@ -43,7 +43,6 @@ function function_5529395e() {
     self notify("21a1deafb5f08486");
     self endon("21a1deafb5f08486");
     self thread namespace_268747c0::function_978c05b5();
-    result = undefined;
     result = self waittill(#"hash_3e251384a5400dce");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
         arrayremovevalue(level.doa.var_17228d33, self);
@@ -65,9 +64,7 @@ function function_5529395e() {
 // Checksum 0x60b45474, Offset: 0x3b0
 // Size: 0x218
 function function_8b014c60(trap, var_7c56394 = 0) {
-    /#
-        assert(isdefined(trap.script_parameters), "<unknown string>");
-    #/
+    assert(isdefined(trap.script_parameters), "<unknown string>");
     args = strtok(trap.script_parameters, ";");
     trap.var_b7a27a3a = 0;
     if (isdefined(trap.script_int)) {
@@ -75,16 +72,12 @@ function function_8b014c60(trap, var_7c56394 = 0) {
     }
     switch (args[0]) {
     case #"velocity":
-        /#
-            assert(args.size >= 4, "<unknown string>");
-        #/
+        assert(args.size >= 4, "<unknown string>");
         trap.velocityvector = (float(args[1]), float(args[2]), float(args[3]));
         trap.type = 0;
         break;
     default:
-        /#
-            assert(0);
-        #/
+        assert(0);
         break;
     }
     trap.script_model = namespace_ec06fe4a::spawnmodel(trap.origin, trap.model, trap.angles);
@@ -199,7 +192,7 @@ function function_d74e40c3() {
         self notify(#"hash_3e251384a5400dce");
     }
     var_d71f280f = self.origin;
-    upposition = var_d71f280f + vectorscale((0, 0, 1), 15);
+    upposition = var_d71f280f + (0, 0, 15);
     while (isdefined(self)) {
         waitframe(1);
         if (!isdefined(self.trigger)) {
@@ -208,7 +201,6 @@ function function_d74e40c3() {
             self.trigger triggerenable(1);
             continue;
         }
-        result = undefined;
         result = self.trigger waittill(#"trigger", #"hash_5dc5b7f198cd1bec");
         if (result._notify === #"hash_5dc5b7f198cd1bec") {
             wait(0.25);
@@ -221,7 +213,7 @@ function function_d74e40c3() {
             if (isplayer(guy)) {
                 self.script_model namespace_e32bb68::function_3a59ec34("zmb_physicsBoxVelocity");
                 localvelocity = guy getvelocity() + self.velocityvector;
-                guy setorigin(guy.origin + vectorscale((0, 0, 1), 30));
+                guy setorigin(guy.origin + (0, 0, 30));
                 waitframe(1);
                 if (isdefined(guy)) {
                     guy setvelocity(localvelocity);

@@ -76,9 +76,7 @@ function play_siege(str_anim, n_rate = 1) {
         }
     #/
     if (isdedicated()) {
-        /#
-            println("<unknown string>" + function_9e72a96(str_anim) + "<unknown string>");
-        #/
+        println("<unknown string>" + function_9e72a96(str_anim) + "<unknown string>");
         waitframe(1);
         return;
     }
@@ -175,11 +173,7 @@ function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, 
         str_tag = v_angles_or_tag;
         v_origin = v_origin_or_ent gettagorigin(str_tag);
         v_angles = v_origin_or_ent gettagangles(str_tag);
-        /#
-            /#
-                assert(isdefined(v_origin) && isdefined(v_angles), "<unknown string>" + function_9e72a96(animation) + "<unknown string>" + v_origin_or_ent getentitynumber() + "<unknown string>" + v_angles_or_tag + "<unknown string>");
-            #/
-        #/
+        assert(isdefined(v_origin) && isdefined(v_angles), "<unknown string>" + function_9e72a96(animation) + "<unknown string>" + v_origin_or_ent getentitynumber() + "<unknown string>" + v_angles_or_tag + "<unknown string>");
         if (!isdefined(v_origin)) {
             v_origin = v_origin_or_ent.origin;
         }
@@ -240,9 +234,7 @@ function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, 
         self animscripted(animation, v_origin, v_angles, animation, mode, undefined, n_rate, n_blend_in, n_lerp, n_start_time, 1, b_show_player_firstperson_weapon, var_f4b34dc1, paused, var_dc569aa8, var_1971fee9);
         var_1abb7e22 = 1;
     } else {
-        /#
-            println("<unknown string>" + self getentitynumber() + "<unknown string>" + function_9e72a96(animation));
-        #/
+        println("<unknown string>" + self getentitynumber() + "<unknown string>" + function_9e72a96(animation));
     }
     if (isplayer(self)) {
         thread set_player_clamps(max(n_lerp, n_blend_in));
@@ -340,9 +332,7 @@ function _get_align_ent(e_align) {
 function _get_align_pos(v_origin_or_ent = self.origin, v_angles_or_tag = isdefined(self.angles) ? self.angles : (0, 0, 0)) {
     s = spawnstruct();
     if (isvec(v_origin_or_ent)) {
-        /#
-            assert(isvec(v_angles_or_tag), "<unknown string>");
-        #/
+        assert(isvec(v_angles_or_tag), "<unknown string>");
         s.origin = v_origin_or_ent;
         s.angles = v_angles_or_tag;
     } else {
@@ -377,9 +367,7 @@ function teleport(animation, v_origin_or_ent, v_angles_or_tag, time = 0) {
 // Checksum 0x7814b083, Offset: 0x1cb8
 // Size: 0xdc
 function function_a23b2a60(animation, var_f9e56773 = 0, var_d7b4a07c = 1) {
-    /#
-        assert(var_d7b4a07c > var_f9e56773);
-    #/
+    assert(var_d7b4a07c > var_f9e56773);
     localdelta = getmovedelta(animation, var_f9e56773, var_d7b4a07c);
     animtime = getanimlength(animation);
     length = length2d(localdelta);
@@ -437,7 +425,6 @@ function _reach(s_tracker, animation, v_origin_or_ent, v_angles_or_tag, b_disabl
         #/
         self thread function_ba45bb6c();
         self childthread function_d7627522(animation, v_goal);
-        s_waitresult = undefined;
         s_waitresult = self waittill(#"goal", #"new_anim_reach", #"new_scripted_anim", #"stop_scripted_anim", #"reach_timed_out");
         /#
             if (s_waitresult._notify === "<unknown string>") {
@@ -478,7 +465,6 @@ function function_d7627522(animation, v_goal, radius = 100) {
         waitframe(1);
     }
     self setdesiredspeed(var_f11838cd);
-    s_waitresult = undefined;
     s_waitresult = self waittill(#"goal", #"new_anim_reach", #"new_scripted_anim", #"stop_scripted_anim", #"reach_timed_out");
     self function_9ae1c50();
 }
@@ -584,9 +570,7 @@ function add_notetrack_func(funcname, func) {
     if (!isdefined(level._animnotifyfuncs)) {
         level._animnotifyfuncs = [];
     }
-    /#
-        assert(!isdefined(level._animnotifyfuncs[funcname]), "<unknown string>");
-    #/
+    assert(!isdefined(level._animnotifyfuncs[funcname]), "<unknown string>");
     level._animnotifyfuncs[funcname] = func;
 }
 
@@ -672,7 +656,6 @@ function setup_notetracks() {
 function handle_notetracks(animation) {
     self endon(#"death", #"new_scripted_anim");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(animation);
         str_note = waitresult.notetrack;
         if (isdefined(str_note)) {
@@ -788,9 +771,7 @@ function attach_weapon(weaponobject, tag = "tag_weapon_right") {
         if (self.item != level.weaponnone) {
             detach_weapon();
         }
-        /#
-            assert(isdefined(weaponobject.worldmodel));
-        #/
+        assert(isdefined(weaponobject.worldmodel));
         self attach(weaponobject.worldmodel, tag);
         if (is_true(self.var_8323de3e)) {
             self setentityweapon(weaponobject, 1);
@@ -842,9 +823,7 @@ function fire_weapon(str_tag, *var_58b849e) {
             v_start_ang = self gettagangles(var_58b849e);
             v_end_pos = v_start_pos + vectorscale(anglestoforward(v_start_ang), 100);
             if (isdefined(self.item) && self.item.type === "projectile" && !isinarray(["ball", "grenade", "rocketlauncher", "turret", "pistol", "pistol spread"], self.item.weapclass)) {
-                /#
-                    println("<unknown string>" + self.item.name);
-                #/
+                println("<unknown string>" + self.item.name);
                 return;
             }
             magicbullet(self.item, v_start_pos, v_end_pos, self);
@@ -872,9 +851,7 @@ function function_71d33ba3(var_9114191, *var_58b849e) {
 // Checksum 0x652aaab0, Offset: 0x3ca0
 // Size: 0x25c
 function function_eb0aa7cf(n_pulse = 100, bone) {
-    /#
-        assert(!issentient(self), "<unknown string>");
-    #/
+    assert(!issentient(self), "<unknown string>");
     if (!isdefined(bone)) {
         bone = "tag_physics_pulse";
     }
@@ -885,7 +862,7 @@ function function_eb0aa7cf(n_pulse = 100, bone) {
         return;
     }
     var_cc487a10 = self gettagangles(bone);
-    var_236556ec = vectorscale((0, 0, 1), 100);
+    var_236556ec = (0, 0, 100);
     color = (1, 0, 0);
     if (isdefined(var_cc487a10)) {
         var_236556ec = vectorscale(anglestoforward(var_cc487a10), n_pulse);

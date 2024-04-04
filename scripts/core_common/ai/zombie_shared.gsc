@@ -65,7 +65,6 @@ function handlenotetrack(note, *flagname, customfunction, var1) {
 // Size: 0xa0
 function donotetracks(flagname, customfunction, var1) {
     for (;;) {
-        waitresult = undefined;
         waitresult = self waittill(flagname);
         note = waitresult.notetrack;
         if (!isdefined(note)) {
@@ -95,9 +94,7 @@ function donotetracksforeverproc(notetracksfunc, flagname, killstring, customfun
             returnednote = [[ notetracksfunc ]](flagname, customfunction, var1);
             timetaken = gettime() - time;
             if (timetaken < 0.05) {
-                /#
-                    println(gettime() + "<unknown string>" + flagname + "<unknown string>" + returnednote + "<unknown string>");
-                #/
+                println(gettime() + "<unknown string>" + flagname + "<unknown string>" + returnednote + "<unknown string>");
                 wait(0.05 - timetaken);
             }
         }

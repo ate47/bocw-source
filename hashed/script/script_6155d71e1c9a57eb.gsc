@@ -245,7 +245,6 @@ function underscore() {
     }
     self thread function_28f119be();
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"hash_766bf24383b8f582");
         if (is_true(level.var_b375589a)) {
             if (isdefined(waitresult.var_9c1ed9ea)) {

@@ -46,9 +46,7 @@ function private preinit() {
     if (!isdefined(level.var_a77fcfbe)) {
         level.var_a77fcfbe = &function_dafd9cd;
     }
-    /#
-        assert(level.var_3a536ce3.name != "<unknown string>", "<unknown string>");
-    #/
+    assert(level.var_3a536ce3.name != "<unknown string>", "<unknown string>");
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
@@ -301,7 +299,6 @@ function gadget_health_regen_off(slot, weapon) {
 function enable_healing_after_wait(slot, weapon, wait_time, var_5818bd22, player) {
     self notify(#"healing_preamble");
     self.heal.var_a1cac2f1 = gettime() + var_5818bd22;
-    waitresult = undefined;
     waitresult = self waittilltimeout(wait_time, #"death", #"disconnect", #"healing_disabled", #"healing_preamble");
     if (waitresult._notify != "timeout") {
         return;
@@ -575,12 +572,8 @@ function function_3a6741ee(params) {
     if (!isdefined(var_d1c7ac6d) || var_d1c7ac6d == 0) {
         return;
     }
-    /#
-        assert(isdefined(player) && isdefined(player.gadget_health_regen_slot));
-    #/
-    /#
-        assert(isdefined(player.gadget_health_regen_weapon) && isdefined(player) && isdefined(player.gadget_health_regen_weapon.gadget_powermax));
-    #/
+    assert(isdefined(player) && isdefined(player.gadget_health_regen_slot));
+    assert(isdefined(player.gadget_health_regen_weapon) && isdefined(player) && isdefined(player.gadget_health_regen_weapon.gadget_powermax));
     gadgetslot = player.gadget_health_regen_slot;
     var_5d74fac3 = player.gadget_health_regen_weapon.gadget_powermax;
     var_db3ef30b = player gadgetpowerget(gadgetslot);

@@ -8,22 +8,6 @@
 class czm_tungsten_title_cards : cluielem {
 
     // Namespace czm_tungsten_title_cards/zm_tungsten_title_cards
-    // Params 0, eflags: 0x8
-    // Checksum 0x44410434, Offset: 0x358
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace czm_tungsten_title_cards/zm_tungsten_title_cards
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x3d6e3c51, Offset: 0x4a8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace czm_tungsten_title_cards/zm_tungsten_title_cards
     // Params 1, eflags: 0x0
     // Checksum 0x8d2e111f, Offset: 0x440
     // Size: 0x24
@@ -44,7 +28,7 @@ class czm_tungsten_title_cards : cluielem {
     // Checksum 0x1d0af15e, Offset: 0x470
     // Size: 0x30
     function set_is_title_card_02(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "is_title_card_02", value);
+        set_data(localclientnum, "is_title_card_02", value);
     }
 
     // Namespace czm_tungsten_title_cards/zm_tungsten_title_cards
@@ -62,7 +46,7 @@ class czm_tungsten_title_cards : cluielem {
     // Size: 0x40
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "is_title_card_02", 0);
+        set_data(localclientnum, "is_title_card_02", 0);
     }
 
 }

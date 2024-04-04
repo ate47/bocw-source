@@ -66,9 +66,7 @@ function function_9ddfe2d(action_name, var_7eba8145, parent_name, var_9386e7ce, 
     }
     /#
         if (isdefined(level.var_f467e5b0.actions[action_name]) && level.var_f467e5b0.actions[action_name].var_7eba8145 != var_7eba8145) {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            assertmsg("<unknown string>");
             return;
         }
     #/
@@ -144,17 +142,11 @@ function function_bf28d531() {
 function function_b1543a9d(anim_name, animset) {
     var_4f3681cc = getscriptbundle(animset);
     if (!isdefined(var_4f3681cc)) {
-        /#
-            assertmsg("<unknown string>" + animset + "<unknown string>");
-        #/
+        assertmsg("<unknown string>" + animset + "<unknown string>");
         return;
     }
-    /#
-        assert(var_4f3681cc.type == "<unknown string>");
-    #/
-    /#
-        assert(isdefined(level.var_f467e5b0));
-    #/
+    assert(var_4f3681cc.type == "<unknown string>");
+    assert(isdefined(level.var_f467e5b0));
     foreach (group in var_4f3681cc.animset) {
         foreach (index, animentry in group.anims) {
             entryname = anim_name + "_" + group.name;
@@ -178,9 +170,7 @@ function function_b1543a9d(anim_name, animset) {
 // Checksum 0x5d3bf9dd, Offset: 0xd68
 // Size: 0xc0
 function function_df6077(action_name, enabled) {
-    /#
-        assert(isactor(self));
-    #/
+    assert(isactor(self));
     if (enabled && !is_true(self.var_f467e5b0.enabled[action_name])) {
         self.var_f467e5b0.enabled[action_name] = undefined;
         return;
@@ -198,9 +188,7 @@ function function_df6077(action_name, enabled) {
 // Checksum 0x72848110, Offset: 0xe30
 // Size: 0x16c
 function function_b0868791(action_name, enabled) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (enabled && !is_true(self.var_f467e5b0.enabled[action_name])) {
         self.var_f467e5b0.enabled[action_name] = 1;
     } else if (!enabled && is_true(self.var_f467e5b0.enabled[action_name])) {
@@ -217,9 +205,7 @@ function function_b0868791(action_name, enabled) {
 // Checksum 0x7064bc55, Offset: 0xfa8
 // Size: 0x6c
 function function_202ab848(enabled) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self.var_f467e5b0.disabled = enabled ? undefined : 1;
     self thread function_942d9213();
 }
@@ -229,9 +215,7 @@ function function_202ab848(enabled) {
 // Checksum 0x466b194f, Offset: 0x1020
 // Size: 0x56
 function function_6c59e78f(enabled) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self.var_f467e5b0.var_36a4a92c = enabled ? undefined : 1;
 }
 
@@ -256,9 +240,7 @@ function function_8488e359(var_ecfa567f, var_c7a00bcb) {
 // Checksum 0x487d482a, Offset: 0x1118
 // Size: 0x4c
 function function_1c027741(action_name) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self thread function_e3401e0e(action_name);
 }
 
@@ -289,9 +271,7 @@ function function_abaa32c(action_name) {
 // Checksum 0xaa680f2a, Offset: 0x1218
 // Size: 0x94
 function function_3af7d065(enabled, var_9386e7ce) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!isalive(self)) {
         return;
     }
@@ -305,9 +285,7 @@ function function_3af7d065(enabled, var_9386e7ce) {
 // Size: 0xcc
 function function_c004e236(*prompt, var_9386e7ce) {
     self endon(#"death", #"disconnect");
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!isalive(self)) {
         return;
     }
@@ -322,12 +300,8 @@ function function_c004e236(*prompt, var_9386e7ce) {
 // Size: 0x130
 function function_83bde308(action, var_d61bdbea, var_1ad5f3d8) {
     self endon(#"death", #"disconnect");
-    /#
-        assert(isplayer(self));
-    #/
-    /#
-        assert(isstruct(action));
-    #/
+    assert(isplayer(self));
+    assert(isstruct(action));
     if (!isalive(self)) {
         return false;
     }
@@ -346,9 +320,7 @@ function function_83bde308(action, var_d61bdbea, var_1ad5f3d8) {
 // Checksum 0x3eea7374, Offset: 0x14c8
 // Size: 0x84
 function function_1927d2a8(immediate) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (isdefined(self.var_2cb06cc6) && self.var_2cb06cc6 !== "root") {
         self.var_2cb06cc6.var_43769020 = immediate;
         self notify(self.var_2cb06cc6.ender);
@@ -379,30 +351,22 @@ function function_c11b51e1() {
 function function_ff81e3cc(parent_name, action_name) {
     /#
         if (!isdefined(parent_name) || !isdefined(action_name)) {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            assertmsg("<unknown string>");
             return;
         }
         if (tolower(parent_name) == tolower(action_name)) {
-            /#
-                assertmsg("<unknown string>" + action_name + "<unknown string>");
-            #/
+            assertmsg("<unknown string>" + action_name + "<unknown string>");
             return;
         }
         if (!isdefined(level.var_f467e5b0.actions[action_name])) {
-            /#
-                assertmsg("<unknown string>" + action_name + "<unknown string>");
-            #/
+            assertmsg("<unknown string>" + action_name + "<unknown string>");
             return;
         }
     #/
     if (!isdefined(level.var_f467e5b0.actions[parent_name])) {
         level waittillmatch({#action:parent_name}, #"hash_2fd6623a6dbe43e9");
         if (!isdefined(level.var_f467e5b0.actions[parent_name])) {
-            /#
-                assertmsg("<unknown string>" + action_name + "<unknown string>" + parent_name + "<unknown string>");
-            #/
+            assertmsg("<unknown string>" + action_name + "<unknown string>" + parent_name + "<unknown string>");
             return;
         }
     }
@@ -625,9 +589,7 @@ function function_7ca47b7c(action, event) {
 // Checksum 0x4e1fcb61, Offset: 0x22c8
 // Size: 0x134
 function function_676e0128() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self notify(#"hash_177677e1af36d866");
     self endon(#"death", #"disconnect", #"hash_177677e1af36d866");
     waitframe(1);
@@ -663,9 +625,7 @@ function function_42a5d542(action, var_994af9bf) {
 // Checksum 0x9c459bf8, Offset: 0x24f0
 // Size: 0x3ac
 function function_e3401e0e(name) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!isalive(self)) {
         return;
     }
@@ -689,9 +649,7 @@ function function_e3401e0e(name) {
         foreach (result in var_9c42c399) {
             var_2b8c0efb = result[0];
             var_994b10ae = result[1];
-            /#
-                assert(isdefined(var_2b8c0efb), "<unknown string>");
-            #/
+            assert(isdefined(var_2b8c0efb), "<unknown string>");
             if (is_true(var_994b10ae)) {
                 function_42a5d542(action, var_2b8c0efb);
                 self thread function_e3401e0e(var_2b8c0efb.name);

@@ -8,21 +8,8 @@
 // Method(s) 6 Total 13
 class class_51e5626e : cluielem {
 
-    // Namespace class_51e5626e/sr_message_box
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x7db406ec, Offset: 0x1e8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_51e5626e/sr_message_box
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x58a24760, Offset: 0x320
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_51e5626e/sr_message_box
     // Params 2, eflags: 0x2 linked
@@ -45,7 +32,7 @@ class class_51e5626e : cluielem {
     // Checksum 0x1de1202e, Offset: 0x2d0
     // Size: 0x44
     function function_7a690474(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "messagebox", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "messagebox", value);
     }
 
     // Namespace namespace_51e5626e/sr_message_box

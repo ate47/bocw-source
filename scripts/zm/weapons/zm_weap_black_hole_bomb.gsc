@@ -168,7 +168,7 @@ function function_f576c273(var_a495cbed) {
 // Size: 0x284
 function function_7ceb96bf(player, *endon_condition) {
     endon_condition endon(#"death");
-    if (!bullettracepassed(endon_condition geteye(), self.origin + vectorscale((0, 0, 1), 65), 0, endon_condition)) {
+    if (!bullettracepassed(endon_condition geteye(), self.origin + (0, 0, 65), 0, endon_condition)) {
         return;
     }
     new_origin = undefined;
@@ -209,7 +209,6 @@ function function_7ceb96bf(player, *endon_condition) {
 function function_c2f76b45(var_69cf75ad) {
     var_69cf75ad endon(#"hash_5e52043e21f343d7");
     while (true) {
-        waitresult = undefined;
         waitresult = var_69cf75ad waittill(#"trigger");
         ent_player = waitresult.activator;
         if (is_true(level.var_b54157cf)) {
@@ -308,11 +307,11 @@ function function_13fce2b(var_9e4b7aff) {
     if (!isdefined(var_9e4b7aff)) {
         return;
     }
-    prone_offset = vectorscale((0, 0, 1), 49);
-    crouch_offset = vectorscale((0, 0, 1), 20);
+    prone_offset = (0, 0, 49);
+    crouch_offset = (0, 0, 20);
     var_3334a329 = (0, 0, 0);
     destination = undefined;
-    playsoundatposition(#"hash_89afcb430026d5c", self.origin + vectorscale((0, 0, 1), 50));
+    playsoundatposition(#"hash_89afcb430026d5c", self.origin + (0, 0, 50));
     if (self getstance() == "prone") {
         destination = var_9e4b7aff.origin + prone_offset;
     } else if (self getstance() == "crouch") {
@@ -412,8 +411,8 @@ function function_9c0c8ac3(v_vortex_origin, n_vortex_radius, n_start_time, n_vor
                 ai_zombie.var_92b78660 = 1024;
                 if (is_true(ai_zombie._black_hole_bomb_collapse_death) && !zm_utility::is_magic_bullet_shield_enabled(ai_zombie)) {
                     ai_zombie.skipautoragdoll = 1;
-                    ai_zombie kill(ai_zombie.origin + vectorscale((0, 0, 1), 50), ai_zombie.interdimensional_gun_attacker, undefined, weapon, 0, 1);
-                    level thread hud::function_c9800094(eattacker, ai_zombie.origin + vectorscale((0, 0, 1), 50), ai_zombie.maxhealth, 1);
+                    ai_zombie kill(ai_zombie.origin + (0, 0, 50), ai_zombie.interdimensional_gun_attacker, undefined, weapon, 0, 1);
+                    level thread hud::function_c9800094(eattacker, ai_zombie.origin + (0, 0, 50), ai_zombie.maxhealth, 1);
                     if (is_true(ai_zombie.allowdeath)) {
                         gibserverutils::annihilate(ai_zombie);
                     }
@@ -488,7 +487,7 @@ function private function_fb7c4f41() {
 // Checksum 0x88df7af6, Offset: 0x1e40
 // Size: 0x7c
 function private vortex_explosion(*v_vortex_explosion_origin, eattacker, *n_vortex_radius) {
-    self.origin = self.origin + vectorscale((0, 0, 1), 50);
+    self.origin = self.origin + (0, 0, 50);
     self detonate(n_vortex_radius);
     /#
         recordstar(self.origin, (1, 0, 1), "<unknown string>");

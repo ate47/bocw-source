@@ -128,7 +128,6 @@ function on_player_spawned() {
 function private function_1c2829b5() {
     self endon(#"death");
     while (true) {
-        s_waitresult = undefined;
         s_waitresult = self waittill(#"aoe_damage");
         if (s_waitresult.var_159100b7 == "zm_aoe_radiation_hazard") {
             self status_effect::status_effect_apply(getstatuseffect(#"hash_48bb9c4c96e64c3d"), undefined, self);
@@ -142,22 +141,19 @@ function private function_1c2829b5() {
 // Size: 0x1e2
 function private function_6fa1e587() {
     self endon(#"hash_3913004963ca6fe4");
-    self.trigger_damage = spawn("trigger_damage", self.position + vectorscale((0, 0, 1), 30), 4194304, 75, 175);
+    self.trigger_damage = spawn("trigger_damage", self.position + (0, 0, 30), 4194304, 75, 175);
     self.trigger_damage.owner = self;
     self.trigger_damage.health = 99999;
     self.trigger_damage.var_22cea3da = &function_4685c5f8;
     self.trigger_damage endon(#"death");
     while (true) {
-        s_result = undefined;
         s_result = self.trigger_damage waittill(#"damage");
         if (isplayer(s_result.attacker)) {
             if (isdefined(s_result.weapon) && namespace_b376a999::function_5fef4201(s_result.weapon)) {
                 level notify(#"hash_4a62d4959b0dbb0e", {#e_player:s_result.attacker});
                 if (namespace_b376a999::function_7c292369(s_result.weapon)) {
                     zm_aoe::function_389bf7bf(self, 1);
-                    /#
-                        println("<unknown string>");
-                    #/
+                    println("<unknown string>");
                     s_result.attacker notify(#"hash_7f30d2acb25cc4d9");
                     return;
                 }
@@ -174,9 +170,7 @@ function function_4685c5f8(attacker, time) {
     if (time >= 4000) {
         if (isdefined(self.owner)) {
             zm_aoe::function_389bf7bf(self.owner, 1);
-            /#
-                println("<unknown string>");
-            #/
+            println("<unknown string>");
             attacker notify(#"hash_7f30d2acb25cc4d9");
         }
     }

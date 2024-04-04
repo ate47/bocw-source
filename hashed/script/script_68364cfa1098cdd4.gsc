@@ -16,29 +16,15 @@
 // Method(s) 3 Total 3
 class class_6e09f777 {
 
-    // Namespace class_6e09f777/turret_dead_system
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x80f724d1, Offset: 0x208
-    // Size: 0x4
-    __constructor() {
-        
-    }
-
-    // Namespace namespace_6e09f777/turret_dead_system
-    // Params 0, eflags: 0x82 linked class_linked
-    // Checksum 0x80f724d1, Offset: 0x218
-    // Size: 0x4
-    function __destructor() {
-        
-    }
+    var var_5ee36218;
 
     // Namespace namespace_6e09f777/turret_dead_system
     // Params 1, eflags: 0x2 linked
     // Checksum 0x2d922a1a, Offset: 0x228
     // Size: 0x3c
     function function_860ebd20(var_8f7a5c75) {
-        self.var_5ee36218 = var_8f7a5c75;
-        self.var_5ee36218 flag::wait_till("vehicle_spawn_setup_complete");
+        var_5ee36218 = var_8f7a5c75;
+        var_5ee36218 flag::wait_till("vehicle_spawn_setup_complete");
     }
 
 }

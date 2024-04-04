@@ -74,9 +74,7 @@ function entity_callback(event, localclientnum, params) {
 // Checksum 0x56d2e098, Offset: 0x388
 // Size: 0x17c
 function add_callback(event, func, obj) {
-    /#
-        assert(isdefined(event), "<unknown string>");
-    #/
+    assert(isdefined(event), "<unknown string>");
     if (!isdefined(level._callbacks) || !isdefined(level._callbacks[event])) {
         level._callbacks[event] = [];
     }
@@ -98,9 +96,7 @@ function add_callback(event, func, obj) {
 // Checksum 0xed090a8b, Offset: 0x510
 // Size: 0x154
 function add_entity_callback(event, func, obj) {
-    /#
-        assert(isdefined(event), "<unknown string>");
-    #/
+    assert(isdefined(event), "<unknown string>");
     if (!isdefined(self._callbacks) || !isdefined(self._callbacks[event])) {
         self._callbacks[event] = [];
     }
@@ -128,9 +124,7 @@ function remove_callback_on_death(event, func) {
 // Checksum 0xcdebc8e9, Offset: 0x6c0
 // Size: 0x124
 function function_52ac9652(event, func, obj) {
-    /#
-        assert(isdefined(event), "<unknown string>");
-    #/
+    assert(isdefined(event), "<unknown string>");
     if (!isdefined(self._callbacks) || !isdefined(self._callbacks[event])) {
         return;
     }
@@ -149,12 +143,8 @@ function function_52ac9652(event, func, obj) {
 // Checksum 0x3c3391e0, Offset: 0x7f0
 // Size: 0x12c
 function remove_callback(event, func, obj) {
-    /#
-        assert(isdefined(event), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(level._callbacks[event]), "<unknown string>");
-    #/
+    assert(isdefined(event), "<unknown string>");
+    assert(isdefined(level._callbacks[event]), "<unknown string>");
     foreach (index, func_group in level._callbacks[event]) {
         if (func_group[0] == func) {
             if (func_group[1] === obj) {
@@ -558,9 +548,7 @@ function event_handler[systemstatechange] codecallback_statechange(eventstruct) 
         [[ level._systemstates[eventstruct.system].callback ]](eventstruct.localclientnum, eventstruct.state);
         return;
     }
-    /#
-        println("<unknown string>" + eventstruct.system + "<unknown string>");
-    #/
+    println("<unknown string>" + eventstruct.system + "<unknown string>");
 }
 
 // Namespace callback/event_6ba27c50
@@ -568,9 +556,7 @@ function event_handler[systemstatechange] codecallback_statechange(eventstruct) 
 // Checksum 0xf94b1842, Offset: 0x1738
 // Size: 0x50
 function event_handler[event_6ba27c50] function_d736b8a9(*eventstruct) {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     if (isdefined(level.var_4564d138)) {
         level thread [[ level.var_4564d138 ]]();
     }
@@ -581,9 +567,7 @@ function event_handler[event_6ba27c50] function_d736b8a9(*eventstruct) {
 // Checksum 0x588522b7, Offset: 0x1790
 // Size: 0x64
 function event_handler[maprestart] codecallback_maprestart(*eventstruct) {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     if (isdefined(level.var_6bd86801)) {
         level thread [[ level.var_6bd86801 ]]();
     }
@@ -595,9 +579,7 @@ function event_handler[maprestart] codecallback_maprestart(*eventstruct) {
 // Checksum 0x5bb8e5d0, Offset: 0x1800
 // Size: 0x50
 function event_handler[event_daf3d2ef] function_3036fadc(*eventstruct) {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     if (isdefined(level.var_bad05810)) {
         level thread [[ level.var_bad05810 ]]();
     }
@@ -611,9 +593,7 @@ function event_handler[localclient_connect] codecallback_localclientconnect(even
     if (!isdefined(level.callbacklocalclientconnect)) {
         waitframe(1);
     }
-    /#
-        println("<unknown string>" + eventstruct.localclientnum);
-    #/
+    println("<unknown string>" + eventstruct.localclientnum);
     [[ level.callbacklocalclientconnect ]](eventstruct.localclientnum);
 }
 
@@ -622,9 +602,7 @@ function event_handler[localclient_connect] codecallback_localclientconnect(even
 // Checksum 0xea1121ac, Offset: 0x18c8
 // Size: 0x2c
 function event_handler[glass_smash] codecallback_glasssmash(*eventstruct) {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace callback/sound_setambientstate
@@ -651,9 +629,7 @@ function event_handler[event_10eed35b] function_d3771684(eventstruct) {
     if (!isdefined(level.var_44e74ef4)) {
         return;
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     thread [[ level.var_44e74ef4 ]](eventstruct);
 }
 
@@ -692,9 +668,7 @@ function event_handler[event_d6f9e6ad] function_c1d1f779(eventstruct) {
     if (!isdefined(level.var_c3e66138)) {
         return;
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     thread [[ level.var_c3e66138 ]](eventstruct.var_428d0be2);
 }
 
@@ -973,9 +947,7 @@ function event_handler[sound_chargeshotweaponnotify] codecallback_chargeshotweap
 // Checksum 0x4910ef45, Offset: 0x2588
 // Size: 0x54
 function event_handler[hostmigration] codecallback_hostmigration(eventstruct) {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     if (isdefined(level.callbackhostmigration)) {
         [[ level.callbackhostmigration ]](eventstruct.localclientnum);
     }
@@ -1517,9 +1489,7 @@ function event_handler[event_f4737734] objective_update(eventstruct) {
 // Size: 0xbc
 function callback_stunned(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self.stunned = bwastimejump;
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     if (bwastimejump) {
         self notify(#"stunned");
     } else {

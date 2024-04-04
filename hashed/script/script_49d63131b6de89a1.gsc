@@ -67,9 +67,7 @@ function private function_6e561a85(&var_c4d527a6, exploders) {
 function private function_fcfe0dbe(name) {
     level endon(#"end_game");
     var_65e2dd7c = level.rule[name];
-    /#
-        assert(isdefined(var_65e2dd7c));
-    #/
+    assert(isdefined(var_65e2dd7c));
     if (isdefined(level.rule[name].var_74a7721)) {
         [[ level.rule[name].var_74a7721 ]]();
     }

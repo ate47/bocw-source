@@ -356,13 +356,13 @@ function function_54098fb4(localclientnum, *oldval, newval, *bnewent, *binitials
                 break;
             case 2:
                 if (!isdefined(var_b4488d57.var_2afde778)) {
-                    var_b4488d57.var_2afde778 = playfx(fieldname, #"zm_ai/fx9_orda_spawn_portal_c", self.origin + vectorscale((0, 0, 1), 7000), anglestoforward(self.angles), anglestoup(self.angles + vectorscale((1, 0, 0), 90)));
+                    var_b4488d57.var_2afde778 = playfx(fieldname, #"zm_ai/fx9_orda_spawn_portal_c", self.origin + (0, 0, 7000), anglestoforward(self.angles), anglestoup(self.angles + (90, 0, 0)));
                 }
                 if (!isdefined(var_b4488d57.var_d63b9eb9)) {
                     var_b4488d57.var_d63b9eb9 = playfx(fieldname, #"sr/fx9_orda_aether_portal_beam", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
                 }
                 if (!isdefined(var_b4488d57.var_e1cd0eb7)) {
-                    var_b4488d57.var_e1cd0eb7 = self.origin + vectorscale((0, 0, 1), 500);
+                    var_b4488d57.var_e1cd0eb7 = self.origin + (0, 0, 500);
                     playsound(fieldname, #"hash_46461ba72b8ab7a2", var_b4488d57.var_e1cd0eb7);
                     audio::playloopat(#"evt_sur_we_portal_common_lp", var_b4488d57.var_e1cd0eb7);
                 }
@@ -529,7 +529,7 @@ function function_7da52bb6(localclientnum, var_a2fbae60) {
     var_a2fbae60 endoncallback(&function_9ba86d16, #"death");
     var_a2fbae60.var_6aa3f2c3 = util::spawn_model(localclientnum, #"hash_2a5390b16843700", var_a2fbae60.origin, var_a2fbae60.angles);
     var_a2fbae60 util::delay(0.2, undefined, &hide);
-    playsound(localclientnum, #"hash_6c00f83cd6fdb678", var_a2fbae60.origin + vectorscale((0, 0, 1), 50));
+    playsound(localclientnum, #"hash_6c00f83cd6fdb678", var_a2fbae60.origin + (0, 0, 50));
     var_a2fbae60.var_6aa3f2c3 animation::play_siege(#"p9_fxanim_sv_boss_crystals_sanim", undefined, 1, 0);
     var_a2fbae60 show();
     wait(1);

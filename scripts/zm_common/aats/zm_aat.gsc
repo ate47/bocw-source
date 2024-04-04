@@ -344,11 +344,7 @@ function function_296cde87(aat_name) {
 // Checksum 0x87aabea1, Offset: 0x16d0
 // Size: 0x8a
 function function_70c0e823(aat_name) {
-    /#
-        /#
-            assert(isdefined(level.aat[aat_name]), "<unknown string>" + (ishash(aat_name) ? function_9e72a96(aat_name) : aat_name));
-        #/
-    #/
+    assert(isdefined(level.aat[aat_name]), "<unknown string>" + (ishash(aat_name) ? function_9e72a96(aat_name) : aat_name));
     return level.aat[aat_name].element;
 }
 

@@ -23,9 +23,7 @@ function init() {
                 break;
             }
             args = strtok(shot.script_parameters, ";");
-            /#
-                assert(args.size >= 4);
-            #/
+            assert(args.size >= 4);
             shot.var_dd65e804 = float(args[0]);
             shot.var_411d90d0 = float(args[1]);
             shot.var_3e552258 = float(args[2]);

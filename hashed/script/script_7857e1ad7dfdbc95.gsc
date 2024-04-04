@@ -40,45 +40,25 @@ function init() {
     namespace_250e9486::function_252dff4d("skeleton", 12, &function_2ee0142d, undefined, 65);
     namespace_250e9486::function_252dff4d("skeleton_spear", -1, &function_a54cde8b, undefined);
     namespace_250e9486::function_252dff4d("skeleton_giant", 13, &function_30a4da95, undefined);
-    /#
-        assert(isscriptfunctionptr(&function_27745f02));
-    #/
+    assert(isscriptfunctionptr(&function_27745f02));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_131d230bd57fc075", &function_27745f02);
-    /#
-        assert(isscriptfunctionptr(&function_b11208a));
-    #/
+    assert(isscriptfunctionptr(&function_b11208a));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_6ff3aed5e43634ee", &function_b11208a);
-    /#
-        assert(isscriptfunctionptr(&function_5a24dacc));
-    #/
+    assert(isscriptfunctionptr(&function_5a24dacc));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_545a1de0dddc4e02", &function_5a24dacc);
-    /#
-        assert(isscriptfunctionptr(&function_826b49d4));
-    #/
+    assert(isscriptfunctionptr(&function_826b49d4));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_8d9bd77480759bc", &function_826b49d4);
-    /#
-        assert(isscriptfunctionptr(&function_8e634de));
-    #/
+    assert(isscriptfunctionptr(&function_8e634de));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_4f53494fbc1fb570", &function_8e634de);
-    /#
-        assert(isscriptfunctionptr(&function_b4537f07));
-    #/
+    assert(isscriptfunctionptr(&function_b4537f07));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2162befd5ace1b3d", &function_b4537f07);
-    /#
-        assert(isscriptfunctionptr(&function_a641b0ef));
-    #/
+    assert(isscriptfunctionptr(&function_a641b0ef));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_3ef21635535887a7", &function_a641b0ef);
-    /#
-        assert(isscriptfunctionptr(&function_e86abfca));
-    #/
+    assert(isscriptfunctionptr(&function_e86abfca));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_49c7799480c40847", &function_e86abfca);
-    /#
-        assert(isscriptfunctionptr(&function_c4d9fd77));
-    #/
+    assert(isscriptfunctionptr(&function_c4d9fd77));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_585e3f641c1990a6", &function_c4d9fd77);
-    /#
-        assert(isscriptfunctionptr(&function_3311572f));
-    #/
+    assert(isscriptfunctionptr(&function_3311572f));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_4e45ca62c0385e32", &function_3311572f);
     level.var_dd9ff360 = &function_af85a094;
     level.var_3291f056 = new throttle();
@@ -100,9 +80,7 @@ function init() {
         level.var_8eaf991c = array(level.var_8eaf991c);
     }
     level.var_8eaf991c[level.var_8eaf991c.size] = {#round:30, #limit:4};
-    /#
-        assert(isscriptfunctionptr(&function_6318bedf));
-    #/
+    assert(isscriptfunctionptr(&function_6318bedf));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_706fe37c04dae8e1", &function_6318bedf);
 }
 
@@ -199,7 +177,6 @@ function private function_c91fa191() {
     self notify("7debe29bdea3f840");
     self endon("7debe29bdea3f840");
     while (true) {
-        result = undefined;
         result = self waittill(#"hash_4c72e79bdad8315e");
         result.ai namespace_83eb6304::function_3ecfde67("lightningStrike");
     }
@@ -253,10 +230,10 @@ function private function_fe8bad69() {
         var_8e580c56 = self gettagangles("tag_eye");
         launchorigin = self gettagorigin("tag_eye");
         up = anglestoup(var_8e580c56);
-        launchorigin = launchorigin + up * vectorscale((0, 0, -1), 10);
+        launchorigin = launchorigin + up * (0, 0, -10);
         v_dir = anglestoforward(var_8e580c56) * 50;
         v_right = anglestoright(var_8e580c56) * 10;
-        var_ce35a286 = launchorigin + v_dir + vectorscale((0, 0, 1), 80);
+        var_ce35a286 = launchorigin + v_dir + (0, 0, 80);
         if (namespace_ec06fe4a::function_a8975c67()) {
             missile = magicbullet(self.var_5ab15c1a, launchorigin + v_right, var_ce35a286, self, self.enemy);
             missile thread function_d63e2f4a();
@@ -279,7 +256,6 @@ function function_d63e2f4a() {
     self endon(#"death");
     self.takedamage = 1;
     self enableaimassist();
-    result = undefined;
     result = self waittill(#"damage");
     if (namespace_ec06fe4a::function_a8975c67()) {
         playfx("explosions/fx_exp_grenade_dirt", self.origin);
@@ -647,7 +623,6 @@ function function_c9f197d2() {
     }
     if (!is_true(self.isdying)) {
         self thread function_42a1dabd();
-        waitresult = undefined;
         waitresult = self waittilltimeout(60, #"hash_782dbc5eec90f62f");
         if (waitresult._notify == #"timeout") {
             self val::reset(#"hash_65edbe063d05f17b", "takedamage");

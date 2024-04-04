@@ -108,7 +108,6 @@ function private function_1d6f6f32(*eventstruct) {
     level thread function_ba971eed(self.instance);
     level thread function_556eed55(self);
     while (true) {
-        s_result = undefined;
         s_result = self waittill(#"trigger");
         if (self.instance flag::get("correct_frequencies")) {
             break;
@@ -181,7 +180,7 @@ function function_ba971eed(instance) {
     }
     instance.mdl_radio playsound(var_84152d93);
     wait(1);
-    dropstruct = {#origin:instance.s_start.origin, #angles:instance.s_start.angles + vectorscale((0, -1, 0), 45), #var_738dfc81:8};
+    dropstruct = {#origin:instance.s_start.origin, #angles:instance.s_start.angles + (0, -45, 0), #var_738dfc81:8};
     dropstruct namespace_65181344::function_fd87c780(#"survival_resource_list", 8, 3);
     if (!is_true(instance.var_8ba71ca4)) {
         var_4d16dab7 = dropstruct namespace_65181344::function_fd87c780(#"sr_radio_tuning_music_drop", 1, 3);
@@ -290,7 +289,6 @@ function function_2c1d994f(instance) {
     instance endon(#"cleanup");
     instance endon(#"radio_tuning_success");
     for (n_count = 0; true; n_count--) {
-        result = undefined;
         result = instance waittill(#"hash_2277cbc7a1c6b43");
         if (is_true(result.increase)) {
             n_count++;

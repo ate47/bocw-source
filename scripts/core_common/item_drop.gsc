@@ -227,9 +227,7 @@ function private function_44a6883c(&drop_item_id, &drop_items, &drop_count, &dro
             drop_count[var_604c3ae6] = drop_count[var_604c3ae6] + excess;
             drop_count[index] = drop_count[index] - excess;
             if (drop_count[index] <= 0) {
-                /#
-                    assert(drop_count[index] == 0);
-                #/
+                assert(drop_count[index] == 0);
                 drop_item_id[index] = -1;
                 drop_items[index] = undefined;
                 drop_count[index] = undefined;
@@ -313,15 +311,9 @@ function private function_23b6897(player, position) {
         distance = distance(position, centerpoint);
         distances = array(distance, distance * 1.5, distance, distance * 1.5);
         checkdistance = distance * 3;
-        /#
-            assert(distances.size == var_44a167ba.size);
-        #/
-        /#
-            assert(distances.size == var_e20a427.size);
-        #/
-        /#
-            assert(distances.size == var_ea03e490.size);
-        #/
+        assert(distances.size == var_44a167ba.size);
+        assert(distances.size == var_e20a427.size);
+        assert(distances.size == var_ea03e490.size);
         var_f4b807cb = item_world::function_2e3efdda(centerpoint, undefined, undefined, checkdistance, undefined, 1);
         if (isdefined(level.var_ace9fb52)) {
             var_c36bd68a = arraysortclosest(level.var_ace9fb52, centerpoint, 24, 0, checkdistance);
@@ -382,7 +374,7 @@ function private function_23b6897(player, position) {
                 if (!var_d154a9ba) {
                     if (isplayer(player)) {
                         eyepos = player geteye();
-                        sighttrace = physicstraceex(eyepos, checkpoint, vectorscale((-1, -1, -1), 0.5), vectorscale((1, 1, 1), 0.5), player, 1);
+                        sighttrace = physicstraceex(eyepos, checkpoint, (-0.5, -0.5, -0.5), (0.5, 0.5, 0.5), player, 1);
                         if (sighttrace[#"fraction"] < 1) {
                             /#
                                 debug_line(eyepos, checkpoint, (1, 0, 0));
@@ -427,18 +419,10 @@ function private function_2734eea3(player) {
 // Checksum 0xc8226be9, Offset: 0x1d58
 // Size: 0x9de
 function private function_a938fba7(player, position, angles, itementry, var_74e79ee3 = 0, var_ba40b4c1 = 1) {
-    /#
-        assert(isentity(self));
-    #/
-    /#
-        assert(isentity(player));
-    #/
-    /#
-        assert(isvec(position));
-    #/
-    /#
-        assert(isvec(angles));
-    #/
+    assert(isentity(self));
+    assert(isentity(player));
+    assert(isvec(position));
+    assert(isvec(angles));
     self notsolid();
     ignoreent = player;
     zoffset = 64;
@@ -465,7 +449,7 @@ function private function_a938fba7(player, position, angles, itementry, var_74e7
     self.origin = origin;
     var_96a432da = origin + (0, 0, zoffset);
     var_abe21f5c = origin - (0, 0, zoffset);
-    starttrace = physicstraceex(origin, var_96a432da, vectorscale((-1, -1, -1), 0.5), vectorscale((1, 1, 1), 0.5), ignoreent, 1);
+    starttrace = physicstraceex(origin, var_96a432da, (-0.5, -0.5, -0.5), (0.5, 0.5, 0.5), ignoreent, 1);
     var_96a432da = starttrace[#"position"];
     var_ed97e13a = 5;
     onground = 0;
@@ -476,7 +460,7 @@ function private function_a938fba7(player, position, angles, itementry, var_74e7
             debug_sphere(var_abe21f5c, 1.5, (0, 1, 0));
             debug_line(var_96a432da, var_abe21f5c, (0, 1, 0));
         #/
-        var_708a2754 = physicstraceex(var_96a432da, var_abe21f5c, vectorscale((-1, -1, -1), 0.5), vectorscale((1, 1, 1), 0.5), ignoreent, 1);
+        var_708a2754 = physicstraceex(var_96a432da, var_abe21f5c, (-0.5, -0.5, -0.5), (0.5, 0.5, 0.5), ignoreent, 1);
         if (var_708a2754[#"fraction"] < 1) {
             if (var_708a2754[#"position"][2] > -10000) {
                 origin = var_708a2754[#"position"];
@@ -542,9 +526,9 @@ function private function_a938fba7(player, position, angles, itementry, var_74e7
             debug_sphere(self.origin, 1, (1, 0.5, 0));
         #/
         if (isplayer(player)) {
-            physicstrace = physicstraceex(self.origin, self.origin + vectorscale((0, 0, -1), 5), self.mins, self.maxs, ignoreent, 1);
+            physicstrace = physicstraceex(self.origin, self.origin + (0, 0, -5), self.mins, self.maxs, ignoreent, 1);
             if (physicstrace[#"fraction"] < 1) {
-                self.origin = player.origin + vectorscale((0, 0, 1), 18);
+                self.origin = player.origin + (0, 0, 18);
                 /#
                     debug_sphere(self.origin, 0.6, (1, 0, 0));
                 #/
@@ -988,9 +972,7 @@ function drop_inventory(player) {
 // Size: 0xb50
 function function_30f75868(index = 0, weapon = undefined, count = 0, amount = 0, itemid, position, angles = (0, 0, 0), falling = 2, var_ba40b4c1 = 1, attachments = undefined, var_bce3d77a = undefined) {
     item_world::function_1b11e73c();
-    /#
-        assert(function_2c7fc531(itemid));
-    #/
+    assert(function_2c7fc531(itemid));
     if (count <= 0 || !isdefined(position)) {
         return undefined;
     }
@@ -1032,15 +1014,11 @@ function function_30f75868(index = 0, weapon = undefined, count = 0, amount = 0,
                 baseweapon = item.itementry.baseweapon;
                 item = function_4ba8fde(baseweapon);
                 if (!isdefined(item) || !isdefined(item.itementry)) {
-                    /#
-                        assert(0, "<unknown string>" + baseweapon);
-                    #/
+                    assert(0, "<unknown string>" + baseweapon);
                     return undefined;
                 }
             } else {
-                /#
-                    assert(0, "<unknown string>");
-                #/
+                assert(0, "<unknown string>");
             }
         }
         item.attachments = originalattachments;
@@ -1071,9 +1049,7 @@ function function_30f75868(index = 0, weapon = undefined, count = 0, amount = 0,
         dropitem delete();
         return;
     }
-    /#
-        assert(dropitem.id < 2048);
-    #/
+    assert(dropitem.id < 2048);
     dropitem.networkid = item_world_util::function_1f0def85(dropitem);
     dropitem.itementry = item.itementry;
     dropitem clientfield::set("dynamic_item_drop", 1);
@@ -1191,9 +1167,7 @@ function function_7910964d(index = 0, weapon = undefined, count = 0, amount = 0,
 // Checksum 0x4fbfe43a, Offset: 0x56c0
 // Size: 0x490
 function function_fd9026e4(index = 0, weapon = undefined, count = 0, amount = 0, itemid, position, angles = (0, 0, 0), falling = 2, stashitem = 0, deathstash = 0, targetname = undefined, parentent = undefined, attachments = undefined, var_ba40b4c1 = 1, weaponoptions = undefined, var_e91aba42 = undefined, var_908f65ca = undefined, var_1181c08b = undefined, stockammo = undefined, aat = undefined, paplv = undefined, var_bce3d77a = undefined) {
-    /#
-        assert(!isdefined(deathstash) || deathstash === 1 || deathstash === 0);
-    #/
+    assert(!isdefined(deathstash) || deathstash === 1 || deathstash === 0);
     dropitem = function_30f75868(index, weapon, count, amount, itemid, position, angles, falling, var_ba40b4c1, attachments, var_bce3d77a);
     if (!isdefined(dropitem)) {
         return;
@@ -1258,15 +1232,9 @@ function function_ba84d97e() {
 // Checksum 0xbf13f180, Offset: 0x5c78
 // Size: 0x26a
 function function_4da960f6(origin, radius, time) {
-    /#
-        assert(isvec(origin));
-    #/
-    /#
-        assert(isfloat(radius) || isint(radius));
-    #/
-    /#
-        assert(isfloat(time) || isint(time));
-    #/
+    assert(isvec(origin));
+    assert(isfloat(radius) || isint(radius));
+    assert(isfloat(time) || isint(time));
     if (time < 0) {
         return;
     }
@@ -1347,12 +1315,8 @@ function function_3e7494e3() {
 // Checksum 0x16f2f899, Offset: 0x60d8
 // Size: 0x6e
 function function_801fcc9e(var_84802706) {
-    /#
-        assert(isentity(self));
-    #/
-    /#
-        assert(isint(var_84802706));
-    #/
+    assert(isentity(self));
+    assert(isint(var_84802706));
     self.var_afda6972 = gettime() + var_84802706;
 }
 

@@ -160,7 +160,6 @@ function function_5db5b22e(e_player) {
 function function_477e5e68() {
     level endon(#"end_game");
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         if (!level flag::get("power_on") || level flag::get(#"hash_3b32dd943e760a34") || level flag::get(#"hash_6ca7775f1a984c68")) {
             continue;
@@ -179,7 +178,7 @@ function function_477e5e68() {
 // Size: 0x11c
 function function_4eaecff9() {
     self playsound(#"hash_7ef6b2ee20c71968");
-    self.var_fdec2822 rotateto(self.angles + vectorscale((1, 0, 0), 179), 0.3);
+    self.var_fdec2822 rotateto(self.angles + (179, 0, 0), 0.3);
     self playsound(#"hash_137dbe10929df4eb");
     self.var_fdec2822 waittill(#"rotatedone");
     self function_7265ebeb(0);
@@ -192,7 +191,7 @@ function function_4eaecff9() {
 // Checksum 0xf89d48f1, Offset: 0x13e8
 // Size: 0xd4
 function function_b53f905a() {
-    self.var_fdec2822 rotateto(self.angles + vectorscale((1, 0, 0), 90), 0.3);
+    self.var_fdec2822 rotateto(self.angles + (90, 0, 0), 0.3);
     self playsound(#"hash_5c08d7c4ad20f4b8");
     wait(0.3);
     self playsound(#"hash_7744ef898bf5b90e");
@@ -558,7 +557,7 @@ function private function_2678d78c() {
     self endon(#"death");
     level endon(#"end_game", #"hash_3b32dd943e760a34");
     while (true) {
-        if (isalive(self.var_d6c6799a) && function_c8c79a28(self.var_b74bb962.origin, self.var_d6c6799a.origin + vectorscale((0, 0, 1), 30))) {
+        if (isalive(self.var_d6c6799a) && function_c8c79a28(self.var_b74bb962.origin, self.var_d6c6799a.origin + (0, 0, 30))) {
             wait(0.5);
             continue;
         }
@@ -582,7 +581,7 @@ function private function_3da631cc(entity, *turret, a_zombies) {
     foreach (zombie in a_zombies) {
         var_3300333c = distance(turret.origin, zombie.origin);
         if (var_3300333c < var_8a0a0ad0) {
-            if (function_c8c79a28(self.var_b74bb962.origin, zombie.origin + vectorscale((0, 0, 1), 30))) {
+            if (function_c8c79a28(self.var_b74bb962.origin, zombie.origin + (0, 0, 30))) {
                 target = zombie;
                 var_8a0a0ad0 = var_3300333c;
                 continue;
@@ -694,7 +693,7 @@ function function_c46f0aa(var_edfffb43, target_entity, var_3e383915, var_456379d
     if (!isdefined(var_3e383915)) {
         return false;
     }
-    var_808ec7e5 = vectornormalize(var_3e383915.origin + vectorscale((0, 0, 1), 2) - target_entity);
+    var_808ec7e5 = vectornormalize(var_3e383915.origin + (0, 0, 2) - target_entity);
     if (vectordot(var_808ec7e5, var_456379df) > var_a11fa31c) {
         return true;
     }

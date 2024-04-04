@@ -8,22 +8,6 @@
 class cmp_revive_prompt : cluielem {
 
     // Namespace cmp_revive_prompt/mp_revive_prompt
-    // Params 0, eflags: 0x8
-    // Checksum 0x19639139, Offset: 0x3f0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cmp_revive_prompt/mp_revive_prompt
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x5cbf7d2d, Offset: 0x660
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cmp_revive_prompt/mp_revive_prompt
     // Params 1, eflags: 0x0
     // Checksum 0x2c85d256, Offset: 0x588
     // Size: 0x24
@@ -36,7 +20,7 @@ class cmp_revive_prompt : cluielem {
     // Checksum 0x2928ded9, Offset: 0x5b8
     // Size: 0x30
     function set_clientnum(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "clientnum", value);
+        set_data(localclientnum, "clientnum", value);
     }
 
     // Namespace cmp_revive_prompt/mp_revive_prompt
@@ -44,7 +28,7 @@ class cmp_revive_prompt : cluielem {
     // Checksum 0x10c0b6be, Offset: 0x628
     // Size: 0x30
     function set_reviveprogress(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "reviveProgress", value);
+        set_data(localclientnum, "reviveProgress", value);
     }
 
     // Namespace cmp_revive_prompt/mp_revive_prompt
@@ -71,7 +55,7 @@ class cmp_revive_prompt : cluielem {
     // Checksum 0xa82bff24, Offset: 0x5f0
     // Size: 0x30
     function set_progress(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "progress", value);
+        set_data(localclientnum, "progress", value);
     }
 
     // Namespace cmp_revive_prompt/mp_revive_prompt
@@ -80,9 +64,9 @@ class cmp_revive_prompt : cluielem {
     // Size: 0x88
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "clientnum", 0);
-        [[ self ]]->set_data(localclientnum, "progress", 0);
-        [[ self ]]->set_data(localclientnum, "reviveProgress", 0);
+        set_data(localclientnum, "clientnum", 0);
+        set_data(localclientnum, "progress", 0);
+        set_data(localclientnum, "reviveProgress", 0);
     }
 
 }

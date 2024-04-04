@@ -195,9 +195,7 @@ function private on_challenge_end(local_client_num) {
 // Checksum 0x1e8a94ce, Offset: 0x1578
 // Size: 0x102
 function private function_d59810a5() {
-    /#
-        assert(isdefined(level.var_a2859227));
-    #/
+    assert(isdefined(level.var_a2859227));
     setuimodelvalue(level.var_940b67bb, #"");
     setuimodelvalue(level.var_63e5f17c, #"");
     switch (level.var_a2859227) {

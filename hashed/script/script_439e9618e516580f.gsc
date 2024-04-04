@@ -8,21 +8,8 @@
 // Method(s) 9 Total 16
 class ccp_skip_scene_menu : cluielem {
 
-    // Namespace ccp_skip_scene_menu/cp_skip_scene_menu
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x73db3af2, Offset: 0x2b8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace ccp_skip_scene_menu/cp_skip_scene_menu
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xb57aee1b, Offset: 0x558
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace ccp_skip_scene_menu/cp_skip_scene_menu
     // Params 2, eflags: 0x2 linked
@@ -37,7 +24,7 @@ class ccp_skip_scene_menu : cluielem {
     // Checksum 0x13346b8e, Offset: 0x468
     // Size: 0x44
     function set_hostisskipping(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "hostIsSkipping", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "hostIsSkipping", value);
     }
 
     // Namespace ccp_skip_scene_menu/cp_skip_scene_menu
@@ -53,7 +40,7 @@ class ccp_skip_scene_menu : cluielem {
     // Checksum 0x8e12965, Offset: 0x4b8
     // Size: 0x44
     function set_votedtoskip(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "votedToSkip", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "votedToSkip", value);
     }
 
     // Namespace ccp_skip_scene_menu/cp_skip_scene_menu
@@ -61,7 +48,7 @@ class ccp_skip_scene_menu : cluielem {
     // Checksum 0xc9d54d55, Offset: 0x418
     // Size: 0x44
     function set_showskipbutton(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "showSkipButton", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "showSkipButton", value);
     }
 
     // Namespace ccp_skip_scene_menu/cp_skip_scene_menu
@@ -81,7 +68,7 @@ class ccp_skip_scene_menu : cluielem {
     // Checksum 0x28fe9c55, Offset: 0x508
     // Size: 0x44
     function set_sceneskipendtime(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "sceneSkipEndTime", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "sceneSkipEndTime", value);
     }
 
 }

@@ -240,7 +240,7 @@ function sndfiresalemusic_start() {
     array = level.chests;
     foreach (struct in array) {
         if (!isdefined(struct.sndent)) {
-            struct.sndent = spawn("script_origin", struct.origin + vectorscale((0, 0, 1), 100));
+            struct.sndent = spawn("script_origin", struct.origin + (0, 0, 100));
         }
         if (is_true(level.player_4_vox_override)) {
             struct.sndent playloopsound(#"mus_fire_sale_rich", 1);

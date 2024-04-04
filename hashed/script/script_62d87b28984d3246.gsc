@@ -10,9 +10,7 @@
 // Size: 0x224
 function create(message, var_400e244b, pulse, endons) {
     if (namespace_61e6d095::exists(#"hash_71bae6f32cec8a8e")) {
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         return;
     }
     if (isdefined(endons)) {

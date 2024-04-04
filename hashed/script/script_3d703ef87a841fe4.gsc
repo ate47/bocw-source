@@ -17,9 +17,7 @@ function function_7f8faff9(team) {
 // Checksum 0x76b815c, Offset: 0xc0
 // Size: 0x134
 function function_dc7eaabd(assignment) {
-    /#
-        assert(isdefined(assignment));
-    #/
+    assert(isdefined(assignment));
     self.pers[#"team"] = assignment;
     self.team = assignment;
     self.sessionteam = assignment;
@@ -57,9 +55,7 @@ function is_team_empty(team) {
 function function_959bac94() {
     foreach (team in level.teams) {
         if (self is_team_empty(team)) {
-            /#
-                println("<unknown string>" + "<unknown string>" + self.name + "<unknown string>" + team);
-            #/
+            println("<unknown string>" + "<unknown string>" + self.name + "<unknown string>" + team);
             /#
                 function_d28f6fa0(team);
             #/
@@ -96,9 +92,7 @@ function any_team_hit_score_limit() {
 // Size: 0xaa
 function private function_67aac3d9(gamestat, teama, teamb, previous_winner_score) {
     winner = undefined;
-    /#
-        assert(teama !== "<unknown string>");
-    #/
+    assert(teama !== "<unknown string>");
     if (previous_winner_score == game.stat[gamestat][teamb]) {
         winner = undefined;
     } else if (game.stat[gamestat][teamb] > previous_winner_score) {
@@ -131,9 +125,7 @@ function function_d85770f0(gamestat) {
 // Checksum 0x5d069e68, Offset: 0x5b8
 // Size: 0x7e
 function private function_e390f598(var_1ada49b5, teamb, var_2a5c5ccb) {
-    /#
-        assert(var_1ada49b5 !== "<unknown string>");
-    #/
+    assert(var_1ada49b5 !== "<unknown string>");
     teambscore = [[ level._getteamscore ]](teamb);
     if (teambscore == var_2a5c5ccb) {
         return undefined;
@@ -209,9 +201,7 @@ function function_a9d594a0(party) {
         foreach (party_member in party.party_members) {
             var_2798314b = party_member getparty();
             if (var_2798314b.var_a15e4438 != party.var_a15e4438) {
-                /#
-                    assertmsg("<unknown string>");
-                #/
+                assertmsg("<unknown string>");
             }
         }
     #/

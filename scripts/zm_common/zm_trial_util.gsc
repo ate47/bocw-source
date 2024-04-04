@@ -137,9 +137,7 @@ function private finalize_clientfields() {
 // Size: 0xcc
 function private function_8f7e46db() {
     level flag::wait_till("start_zombie_round_logic");
-    /#
-        assert(isdefined(level.var_6d87ac05) && isdefined(level.var_6d87ac05.index));
-    #/
+    assert(isdefined(level.var_6d87ac05) && isdefined(level.var_6d87ac05.index));
     if (isdefined(level.var_6d87ac05) && isdefined(level.var_6d87ac05.index)) {
         level clientfield::set("ZMHudGlobal.trials.trialIndex", level.var_6d87ac05.index);
     }
@@ -151,9 +149,7 @@ function private function_8f7e46db() {
 // Checksum 0xe9dbed5f, Offset: 0xf68
 // Size: 0x44
 function function_eaa44cea() {
-    /#
-        assert(isdefined(level.var_21e22beb));
-    #/
+    assert(isdefined(level.var_21e22beb));
     clientfield::set_world_uimodel("ZMHudGlobal.trials.gameStartTime", level.var_21e22beb);
 }
 
@@ -186,9 +182,7 @@ function function_21ea8f2b(*b_locked) {
 // Checksum 0x83077d95, Offset: 0x1000
 // Size: 0x4c
 function start_timer(seconds) {
-    /#
-        assert(seconds <= 540);
-    #/
+    assert(seconds <= 540);
     self clientfield::set_to_player("zm_trials_timer", seconds);
 }
 
@@ -229,9 +223,7 @@ function function_885fb2c8() {
 // Checksum 0x2242d59f, Offset: 0x11d8
 // Size: 0x5c
 function function_2976fa44(var_71fbbf01) {
-    /#
-        assert(var_71fbbf01 >= 0 && var_71fbbf01 <= 1000);
-    #/
+    assert(var_71fbbf01 >= 0 && var_71fbbf01 <= 1000);
     level clientfield::set_world_uimodel("ZMHudGlobal.trials.globalCounterMax", var_71fbbf01);
 }
 
@@ -240,9 +232,7 @@ function function_2976fa44(var_71fbbf01) {
 // Checksum 0x4b47beea, Offset: 0x1240
 // Size: 0x13c
 function function_dace284(var_96936cca, b_mute = 0) {
-    /#
-        assert(var_96936cca >= 0 && var_96936cca <= 1000);
-    #/
+    assert(var_96936cca >= 0 && var_96936cca <= 1000);
     if (var_96936cca >= 1 && !b_mute) {
         foreach (e_player in level.players) {
             e_player playsoundtoplayer(#"hash_2ef2e5af521e9817", e_player);
@@ -257,9 +247,7 @@ function function_dace284(var_96936cca, b_mute = 0) {
 // Checksum 0x4eecacf1, Offset: 0x1388
 // Size: 0x14c
 function function_7d32b7d0(var_acc46b81) {
-    /#
-        assert(var_acc46b81 == 0 || var_acc46b81 == 1);
-    #/
+    assert(var_acc46b81 == 0 || var_acc46b81 == 1);
     level clientfield::set_world_uimodel("ZMHudGlobal.trials.globalCounterValue", 0);
     if (var_acc46b81 == 0) {
         level clientfield::set_world_uimodel("ZMHudGlobal.trials.globalCheckState", 2);
@@ -284,9 +272,7 @@ function function_f3dbeda7() {
 // Checksum 0xfc398307, Offset: 0x1508
 // Size: 0x5c
 function function_c2cd0cba(var_71fbbf01) {
-    /#
-        assert(var_71fbbf01 >= 0 && var_71fbbf01 <= 1000);
-    #/
+    assert(var_71fbbf01 >= 0 && var_71fbbf01 <= 1000);
     level clientfield::set_world_uimodel("ZMHudGlobal.trials.playerCounterMax", var_71fbbf01);
 }
 
@@ -295,12 +281,8 @@ function function_c2cd0cba(var_71fbbf01) {
 // Checksum 0xd46f60c9, Offset: 0x1570
 // Size: 0x134
 function function_2190356a(var_96936cca, b_mute = 0) {
-    /#
-        assert(isplayer(self), "<unknown string>");
-    #/
-    /#
-        assert(var_96936cca >= 0 && var_96936cca <= 1000);
-    #/
+    assert(isplayer(self), "<unknown string>");
+    assert(var_96936cca >= 0 && var_96936cca <= 1000);
     if (var_96936cca >= 1 && !b_mute) {
         self playsoundtoplayer(#"hash_1377aa36d8ba27e1", self);
     }
@@ -313,12 +295,8 @@ function function_2190356a(var_96936cca, b_mute = 0) {
 // Checksum 0x9fb7b393, Offset: 0x16b0
 // Size: 0x144
 function function_63060af4(var_acc46b81) {
-    /#
-        assert(isplayer(self));
-    #/
-    /#
-        assert(var_acc46b81 == 0 || var_acc46b81 == 1);
-    #/
+    assert(isplayer(self));
+    assert(var_acc46b81 == 0 || var_acc46b81 == 1);
     clientfield::set_world_uimodel("PlayerList.client" + self.entity_num + "." + "trialsCounterValue", 0);
     if (var_acc46b81 == 0) {
         clientfield::set_world_uimodel("PlayerList.client" + self.entity_num + "." + "trialsCheckState", 2);
@@ -333,9 +311,7 @@ function function_63060af4(var_acc46b81) {
 // Checksum 0x306c0266, Offset: 0x1800
 // Size: 0x64
 function function_f3aacffb() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     clientfield::set_world_uimodel("PlayerList.client" + self.entity_num + "." + "trialsCheckState", 0);
 }
 
@@ -352,9 +328,7 @@ function set_game_state(game_state) {
 // Checksum 0x188b319, Offset: 0x18a0
 // Size: 0xbc
 function function_58292c4a(reason, var_eeb30248 = undefined) {
-    /#
-        assert(get_world_uimodel("<unknown string>") == 1);
-    #/
+    assert(get_world_uimodel("<unknown string>") == 1);
     var_ccabdce8 = 0;
     if (isdefined(var_eeb30248)) {
         var_ccabdce8 = function_1e223bce(var_eeb30248);
@@ -368,12 +342,8 @@ function function_58292c4a(reason, var_eeb30248 = undefined) {
 // Checksum 0xe44ec702, Offset: 0x1968
 // Size: 0x36e
 function function_3f8a4145(var_26f4f16d) {
-    /#
-        assert(isdefined(self.var_c27f1e90));
-    #/
-    /#
-        assert(self.var_c27f1e90.size >= 4);
-    #/
+    assert(isdefined(self.var_c27f1e90));
+    assert(self.var_c27f1e90.size >= 4);
     var_806e2de0 = {};
     var_806e2de0.var_149ec45c = [];
     var_806e2de0.var_8f0c164f = [];
@@ -386,9 +356,7 @@ function function_3f8a4145(var_26f4f16d) {
                 var_806e2de0.var_c4193958[slot] = vapor;
             }
             self notify(vapor + "_stop", {#var_613b7621:!var_d84249cb, #var_fe7072f6:1});
-            /#
-                assert(isdefined(level.var_5355c665));
-            #/
+            assert(isdefined(level.var_5355c665));
             if (isdefined(level.var_5355c665[vapor])) {
                 var_e6aaa1c2 = level.var_5355c665[vapor];
                 self notify(var_e6aaa1c2 + "_stop", {#var_613b7621:!var_d84249cb});
@@ -422,15 +390,9 @@ function function_3f8a4145(var_26f4f16d) {
 // Checksum 0x96de8c4c, Offset: 0x1ce0
 // Size: 0x2a2
 function function_d37a769(var_806e2de0) {
-    /#
-        assert(isdefined(self.var_c27f1e90));
-    #/
-    /#
-        assert(self.var_c27f1e90.size >= 4);
-    #/
-    /#
-        assert(var_806e2de0.var_149ec45c.size == 4);
-    #/
+    assert(isdefined(self.var_c27f1e90));
+    assert(self.var_c27f1e90.size >= 4);
+    assert(var_806e2de0.var_149ec45c.size == 4);
     level.var_bd1e770b = 1;
     for (slot = 0; slot < 4; slot++) {
         if (isdefined(var_806e2de0.var_8f0c164f[slot])) {

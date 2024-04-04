@@ -44,7 +44,7 @@ function function_b26dad22(level_notify) {
     var_9ddd4d57 = undefined;
     level.var_7466d419.var_2939dba = #"hash_5cad1a1b9fdc43ee";
     while (true) {
-        trace_result = physicstrace(level.var_7466d419.origin + vectorscale((0, 0, 1), 50), level.var_7466d419.origin + vectorscale((0, 0, 1), 5000), (0, 0, 0), (0, 0, 0), level.var_7466d419, 16);
+        trace_result = physicstrace(level.var_7466d419.origin + (0, 0, 50), level.var_7466d419.origin + (0, 0, 5000), (0, 0, 0), (0, 0, 0), level.var_7466d419, 16);
         if (isdefined(trace_result) && isdefined(trace_result[#"position"])) {
             var_b4d6bef6 = distance(level.var_7466d419.origin, trace_result[#"position"]);
             if (trace_result[#"fraction"] < 1) {
@@ -131,7 +131,7 @@ function function_4b0f12f6(level_notify) {
         thread function_f4567c7c("stop");
         while (shot_count > 0) {
             if (var_867b0f45 > 20) {
-                offset = vectorscale((1, 0, 0), 1200);
+                offset = (1200, 0, 0);
                 var_6d32c483 = rotatepoint(offset, level.var_7466d419.angles) + var_9d5321a;
                 magicbullet(weapon, var_f4d3e08a, var_6d32c483);
             } else if (var_867b0f45 <= 20) {
@@ -169,7 +169,7 @@ function function_ad449a1b(level_notify) {
         var_f4d3e08a = rotatepoint(var_5a3aa491, level.var_7466d419.angles) + level.var_7466d419.origin;
         if (canshoot) {
             if (var_867b0f45 > 10) {
-                offset = vectorscale((1, 0, 0), 4000);
+                offset = (4000, 0, 0);
                 var_6d32c483 = rotatepoint(offset, level.var_7466d419.angles) + level.var_7466d419.origin;
                 missle = magicbullet(weapon, var_f4d3e08a, var_6d32c483);
                 level.var_c95e0d20 = missle;
@@ -220,11 +220,11 @@ function function_d262b525(level_notify, var_7366cb1a) {
         var_f4d3e08a = rotatepoint(var_5a3aa491, level.var_7466d419.angles) + level.var_7466d419.origin;
         if (canshoot) {
             if (var_867b0f45 > 10) {
-                offset = vectorscale((1, 0, 0), 4000);
+                offset = (4000, 0, 0);
                 var_6d32c483 = rotatepoint(offset, level.var_7466d419.angles) + level.var_7466d419.origin;
                 missle = magicbullet(weapon, var_f4d3e08a, var_6d32c483);
             } else if (var_867b0f45 <= 10) {
-                offset = vectorscale((1, 0, 0), 1000);
+                offset = (1000, 0, 0);
                 var_6d32c483 = rotatepoint(offset, level.var_7466d419.angles) + level.var_7466d419.origin;
                 missle = magicbullet(weapon, var_f4d3e08a, var_6d32c483);
             }

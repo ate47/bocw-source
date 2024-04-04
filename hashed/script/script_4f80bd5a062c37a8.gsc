@@ -49,7 +49,7 @@ function function_86bd7962(player, spot = player.origin, mg = 1) {
     if (isdefined(sentry.var_540d3e16)) {
         sentry.var_540d3e16 thread namespace_ec06fe4a::function_d55f042c(sentry, "death");
     }
-    sentry.origin = spot + vectorscale((0, 0, 1), 2200);
+    sentry.origin = spot + (0, 0, 2200);
     sentry.angles = (player.angles[0], player.angles[1], 0);
     sentry.weapon = sentry seatgetweapon(0);
     sentry turretsetontargettolerance(0, 10);
@@ -74,7 +74,7 @@ function function_86bd7962(player, spot = player.origin, mg = 1) {
     sentry notify(#"hash_1cccdf220a51b30d");
     sentry namespace_e32bb68::function_3a59ec34("evt_doa_pickup_sentry_takeoff");
     sentry namespace_83eb6304::function_3ecfde67("turret_impact");
-    sentry thread namespace_ec06fe4a::function_1a117d29(sentry.origin + vectorscale((0, 0, 1), 2200), 0.5);
+    sentry thread namespace_ec06fe4a::function_1a117d29(sentry.origin + (0, 0, 2200), 0.5);
     sentry waittill(#"movedone");
     sentry delete();
 }
@@ -88,9 +88,9 @@ function function_b44f2805() {
     while (isdefined(self.var_540d3e16)) {
         if (isdefined(self.favoriteenemy)) {
             if (is_true(self.ismissile)) {
-                self.var_540d3e16.origin = self.origin + (self.favoriteenemy.origin - self.origin) * 0.5 + vectorscale((0, 0, 1), 1000);
+                self.var_540d3e16.origin = self.origin + (self.favoriteenemy.origin - self.origin) * 0.5 + (0, 0, 1000);
             } else {
-                self.var_540d3e16.origin = self.favoriteenemy.origin + vectorscale((0, 0, 1), 30);
+                self.var_540d3e16.origin = self.favoriteenemy.origin + (0, 0, 30);
             }
         }
         waitframe(1);
@@ -126,7 +126,7 @@ function function_229ed59f() {
         } else if (isdefined(self.var_540d3e16)) {
             self turretsettarget(0, self.var_540d3e16.origin);
         } else {
-            self turretsettarget(0, self.favoriteenemy.origin + vectorscale((0, 0, 1), 30));
+            self turretsettarget(0, self.favoriteenemy.origin + (0, 0, 30));
         }
         wait(0.5);
     }
@@ -191,7 +191,7 @@ function function_5945a362() {
             if (isdefined(self.var_540d3e16)) {
                 self turretsettarget(0, self.var_540d3e16.origin);
             } else {
-                self turretsettarget(0, self.favoriteenemy.origin + vectorscale((0, 0, 1), 30));
+                self turretsettarget(0, self.favoriteenemy.origin + (0, 0, 30));
             }
             firetime = randomfloatrange(3, 6);
             expiretime = gettime() + firetime * 1000;
@@ -214,7 +214,7 @@ function function_5945a362() {
                         continue;
                     }
                     for (rounds = 30; rounds; rounds--) {
-                        self fireweapon(0, enemy, vectorscale((0, 0, 1), 30), self.owner);
+                        self fireweapon(0, enemy, (0, 0, 30), self.owner);
                         waitframe(1);
                     }
                 }

@@ -86,9 +86,7 @@ function function_58c93260(player, meansofdeath) {
 // Checksum 0x3d970c8e, Offset: 0x488
 // Size: 0xb0
 function function_cdd81094(weapon) {
-    /#
-        assert(isdefined(weapon));
-    #/
+    assert(isdefined(weapon));
     if (!isdefined(weapon.var_5c238c21)) {
         return undefined;
     }

@@ -133,15 +133,9 @@ function clearallgroups() {
 // Checksum 0xc29bae96, Offset: 0x730
 // Size: 0xa4
 function getgroup(groupname) {
-    /#
-        assert(isdefined(level.stealth));
-    #/
-    /#
-        assert(isdefined(level.stealth.groupdata));
-    #/
-    /#
-        assert(isdefined(level.stealth.groupdata.groups));
-    #/
+    assert(isdefined(level.stealth));
+    assert(isdefined(level.stealth.groupdata));
+    assert(isdefined(level.stealth.groupdata.groups));
     return level.stealth.groupdata.groups[groupname];
 }
 
@@ -191,9 +185,7 @@ function makenewpod(groupdata, state, origin) {
 // Checksum 0x29be02b3, Offset: 0xb48
 // Size: 0x8c
 function function_f6ab9430(pod, origin, var_ccf5f27b) {
-    /#
-        assert(isdefined(origin));
-    #/
+    assert(isdefined(origin));
     pod.origin = getclosestpointonnavmesh(origin, 500, 16);
     if (!isdefined(pod.origin)) {
         pod.origin = origin;
@@ -218,9 +210,7 @@ function function_4f3db9c6(pod, var_ccf5f27b) {
     if (!isdefined(var_ccf5f27b)) {
         var_ccf5f27b = 0;
     }
-    /#
-        assert(isdefined(pod));
-    #/
+    assert(isdefined(pod));
     if (!isdefined(pod.origin)) {
         return;
     }
@@ -389,8 +379,8 @@ function drawcross(origin) {
 function pod_debug(pod) {
     /#
         pod endon(#"state_change");
-        up = vectorscale((0, 0, 1), 128);
-        down = vectorscale((0, 0, -1), 12);
+        up = (0, 0, 128);
+        down = (0, 0, -12);
         while (true) {
             if (debug_enabled() && isdefined(pod.origin)) {
                 zoffset = 0;
@@ -550,12 +540,8 @@ function group_investigate_seekbackup(e) {
 // Size: 0x25a
 function group_generateinitialinvestigatepoints(pod, groupname, origin) {
     groupdata = getgroup(groupname);
-    /#
-        assert(pod.state == 1 || pod.state == 2);
-    #/
-    /#
-        assert(!isdefined(pod.investigatepoints));
-    #/
+    assert(pod.state == 1 || pod.state == 2);
+    assert(!isdefined(pod.investigatepoints));
     var_804461ee = 1000000;
     var_c491acad = [];
     var_f5ea0eba = getnodearray("seek_patrol", "targetname");
@@ -638,26 +624,16 @@ function pod_cleanupusedpoints(pod) {
 // Checksum 0x5e7e3f4, Offset: 0x26d0
 // Size: 0x85e
 function group_getinvestigatepoint(guy, *volume) {
-    /#
-        assert(isdefined(volume.origin));
-    #/
+    assert(isdefined(volume.origin));
     if (!isdefined(volume.origin)) {
         return (0, 0, 0);
     }
     groupdata = getgroup(volume.script_stealthgroup);
     pod = group_findpod(groupdata, volume);
-    /#
-        assert(isdefined(pod));
-    #/
-    /#
-        assert(isdefined(pod.investigatepoints));
-    #/
-    /#
-        assert(pod.state == 2 || pod.state == 1);
-    #/
-    /#
-        assert(isdefined(pod.origin));
-    #/
+    assert(isdefined(pod));
+    assert(isdefined(pod.investigatepoints));
+    assert(pod.state == 2 || pod.state == 1);
+    assert(isdefined(pod.origin));
     if (!isdefined(pod.origin)) {
         return volume.origin;
     }
@@ -675,9 +651,7 @@ function group_getinvestigatepoint(guy, *volume) {
             var_86a04485 = data.angle;
         }
     }
-    /#
-        assert(isdefined(var_86a04485));
-    #/
+    assert(isdefined(var_86a04485));
     var_73f7fb2a = 0;
     foreach (dot in dots) {
         if (dot.angle < var_86a04485) {
@@ -832,9 +806,7 @@ function group_coverblown_seekbackup(groupdata, e) {
 // Checksum 0xf59d482b, Offset: 0x3348
 // Size: 0x80
 function pod_updateinvestigateorigin(guy, pos) {
-    /#
-        assert(isdefined(pos));
-    #/
+    assert(isdefined(pos));
     if (!isdefined(self)) {
         return;
     }
@@ -874,15 +846,9 @@ function group_eventhunt(groupname, guy) {
 function group_updatepodhuntorigin(guy, var_4af4ea3d) {
     groupdata = getgroup(guy.script_stealthgroup);
     pod = group_findpod(groupdata, guy);
-    /#
-        assert(isdefined(pod));
-    #/
-    /#
-        assert(pod.state == 2);
-    #/
-    /#
-        assert(isdefined(var_4af4ea3d));
-    #/
+    assert(isdefined(pod));
+    assert(pod.state == 2);
+    assert(isdefined(var_4af4ea3d));
     function_f6ab9430(pod, var_4af4ea3d);
     pod.borigininvestigated = undefined;
     if (isdefined(pod.volume)) {
@@ -1207,9 +1173,7 @@ function group_delayedcombatpropagation(delaytime, guy, target, targetpos) {
 // Checksum 0xa0952db7, Offset: 0x49c0
 // Size: 0x100
 function pod_settocombat(var_3f01ab8a, enemy) {
-    /#
-        assert(!var_3f01ab8a || isdefined(enemy));
-    #/
+    assert(!var_3f01ab8a || isdefined(enemy));
     localmembers = self.members;
     foreach (guy in localmembers) {
         if (var_3f01ab8a) {
@@ -1423,9 +1387,7 @@ function pod_isleader(guy) {
     if (!isdefined(pod)) {
         return false;
     }
-    /#
-        assert(pod.members.size > 0);
-    #/
+    assert(pod.members.size > 0);
     return pod.members[0] == guy;
 }
 
@@ -1455,12 +1417,8 @@ function pod_getclosestguy(pos) {
 // Size: 0x108
 function pod_delete() {
     self notify(#"state_change");
-    /#
-        assert(isdefined(self.parentgroup));
-    #/
-    /#
-        assert(self.members.size == 0);
-    #/
+    assert(isdefined(self.parentgroup));
+    assert(self.members.size == 0);
     groupdata = self.parentgroup;
     numpods = groupdata.pods.size;
     for (ipod = 0; ipod < numpods; ipod++) {

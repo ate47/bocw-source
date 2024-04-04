@@ -233,7 +233,7 @@ function private notetrackstartragdoll(entity) {
                 text = text + "<unknown string>" + notetracks.size;
             }
         }
-        record3dtext(text, entity.origin + vectorscale((0, 0, 1), 4), (1, 0, 0), "<unknown string>", undefined, 0.4);
+        record3dtext(text, entity.origin + (0, 0, 4), (1, 0, 0), "<unknown string>", undefined, 0.4);
     #/
 }
 
@@ -246,7 +246,7 @@ function _delayedragdoll(entity) {
     if (isdefined(entity) && !entity isragdoll()) {
         entity startragdoll();
         /#
-            record3dtext("<unknown string>", entity.origin + vectorscale((0, 0, 1), 4), (1, 0, 0), "<unknown string>", undefined, 0.4);
+            record3dtext("<unknown string>", entity.origin + (0, 0, 4), (1, 0, 0), "<unknown string>", undefined, 0.4);
         #/
     }
 }
@@ -437,15 +437,13 @@ function private function_a5af97c9(animationentity, clip, tag) {
             if (isdefined(animationentity.weapon.name)) {
                 weaponname = function_9e72a96(animationentity.weapon.name);
             }
-            /#
-                assertmsg("<unknown string>" + weaponname + "<unknown string>" + animationentity.aitype);
-            #/
+            assertmsg("<unknown string>" + weaponname + "<unknown string>" + animationentity.aitype);
         }
     #/
     var_fffb32e9 = util::spawn_model(clip.model, origin, angles);
     if (isdefined(var_fffb32e9)) {
         var_fffb32e9 notsolid();
-        var_fffb32e9 physicslaunch(var_fffb32e9.origin - vectorscale((0, 0, 1), 3), (randomfloatrange(-0.5, 0.5), randomfloatrange(-0.5, 0.5), 0));
+        var_fffb32e9 physicslaunch(var_fffb32e9.origin - (0, 0, 3), (randomfloatrange(-0.5, 0.5), randomfloatrange(-0.5, 0.5), 0));
         var_fffb32e9 util::delay(10, undefined, &function_6bde1bde);
     }
 }

@@ -172,7 +172,6 @@ function function_8960f852(oldval, newval) {
 // Size: 0xc8
 function wait_and_set_revive_shader_constant() {
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"notetrack");
         localclientnum = waitresult.localclientnum;
         if (waitresult.notetrack == "revive_shader_constant") {

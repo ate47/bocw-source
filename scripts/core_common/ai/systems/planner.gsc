@@ -8,12 +8,8 @@
 // Checksum 0x4671e8c0, Offset: 0xe0
 // Size: 0x11c
 function private _blackboardsapplyundostate(planner, state) {
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(isarray(planner.blackboards));
-    #/
+    assert(isstruct(planner));
+    assert(isarray(planner.blackboards));
     foreach (key, blackboard in planner.blackboards) {
         if (isdefined(state[key])) {
             plannerblackboard::undo(blackboard, state[key]);
@@ -28,12 +24,8 @@ function private _blackboardsapplyundostate(planner, state) {
 // Checksum 0x1c1eddf3, Offset: 0x208
 // Size: 0x10a
 function private _blackboardscalculateundostate(planner) {
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(isarray(planner.blackboards));
-    #/
+    assert(isstruct(planner));
+    assert(isarray(planner.blackboards));
     state = [];
     foreach (key, blackboard in planner.blackboards) {
         state[key] = plannerblackboard::getundostacksize(blackboard) - 1;
@@ -46,12 +38,8 @@ function private _blackboardscalculateundostate(planner) {
 // Checksum 0x416cbc5e, Offset: 0x320
 // Size: 0xe8
 function private _blackboardsreadmode(planner) {
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(isarray(planner.blackboards));
-    #/
+    assert(isstruct(planner));
+    assert(isarray(planner.blackboards));
     foreach (blackboard in planner.blackboards) {
         plannerblackboard::setreadmode(blackboard);
     }
@@ -62,12 +50,8 @@ function private _blackboardsreadmode(planner) {
 // Checksum 0x1859c474, Offset: 0x410
 // Size: 0xe8
 function private _blackboardsreadwritemode(planner) {
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(isarray(planner.blackboards));
-    #/
+    assert(isstruct(planner));
+    assert(isarray(planner.blackboards));
     foreach (blackboard in planner.blackboards) {
         plannerblackboard::setreadwritemode(blackboard);
     }
@@ -102,27 +86,17 @@ function private _planexpandaction(planner, action) {
     planner.api = action.api;
     pixbeginevent(action.api);
     aiprofile_beginentry(action.api);
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(isstruct(action));
-    #/
-    /#
-        assert(action.type == "<unknown string>");
-    #/
-    /#
-        assert(isarray(planner.plan));
-    #/
+    assert(isstruct(planner));
+    assert(isstruct(action));
+    assert(action.type == "<unknown string>");
+    assert(isarray(planner.plan));
     actionfuncs = plannerutility::getplanneractionfunctions(action.api);
     actioninfo = spawnstruct();
     actioninfo.name = action.api;
     if (isdefined(actionfuncs[#"parameterize"])) {
         _blackboardsreadwritemode(planner);
         actioninfo.params = [[ actionfuncs[#"parameterize"] ]](planner, action.constants);
-        /#
-            assert(isstruct(actioninfo.params), "<unknown string>" + action.api + "<unknown string>");
-        #/
+        assert(isstruct(actioninfo.params), "<unknown string>" + action.api + "<unknown string>");
         _blackboardsreadmode(planner);
     } else {
         actioninfo.params = spawnstruct();
@@ -142,15 +116,9 @@ function private _planexpandpostcondition(planner, postcondition) {
     planner.api = postcondition.api;
     pixbeginevent(postcondition.api);
     aiprofile_beginentry(postcondition.api);
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(isstruct(postcondition));
-    #/
-    /#
-        assert(postcondition.type == "<unknown string>");
-    #/
+    assert(isstruct(planner));
+    assert(isstruct(postcondition));
+    assert(postcondition.type == "<unknown string>");
     _blackboardsreadwritemode(planner);
     postconditionfunc = plannerutility::getplannerapifunction(postcondition.api);
     [[ postconditionfunc ]](planner, postcondition.constants);
@@ -169,15 +137,9 @@ function private _planexpandprecondition(planner, precondition) {
     planner.api = precondition.api;
     pixbeginevent(precondition.api);
     aiprofile_beginentry(precondition.api);
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(isstruct(precondition));
-    #/
-    /#
-        assert(precondition.type == "<unknown string>");
-    #/
+    assert(isstruct(planner));
+    assert(isstruct(precondition));
+    assert(precondition.type == "<unknown string>");
     _blackboardsreadmode(planner);
     preconditionfunc = plannerutility::getplannerapifunction(precondition.api);
     result = [[ preconditionfunc ]](planner, precondition.constants);
@@ -192,9 +154,7 @@ function private _planexpandprecondition(planner, precondition) {
 // Checksum 0xcc0f854b, Offset: 0xae8
 // Size: 0x60
 function private _planfindnextsibling(planner, parentnodeentry, currentchildindex) {
-    /#
-        assert(isstruct(planner));
-    #/
+    assert(isstruct(planner));
     return parentnodeentry.node.children[currentchildindex + 1];
 }
 
@@ -203,9 +163,7 @@ function private _planfindnextsibling(planner, parentnodeentry, currentchildinde
 // Checksum 0x5e3e4ce4, Offset: 0xb50
 // Size: 0x44
 function private _planstackhasnodes(planner) {
-    /#
-        assert(isstruct(planner));
-    #/
+    assert(isstruct(planner));
     return planner.nodestack.size > 0;
 }
 
@@ -214,12 +172,8 @@ function private _planstackhasnodes(planner) {
 // Checksum 0x2fb1061d, Offset: 0xba0
 // Size: 0x88
 function private _planstackpeeknode(planner) {
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(planner.nodestack.size > 0);
-    #/
+    assert(isstruct(planner));
+    assert(planner.nodestack.size > 0);
     nodeentry = planner.nodestack[planner.nodestack.size - 1];
     return nodeentry;
 }
@@ -229,12 +183,8 @@ function private _planstackpeeknode(planner) {
 // Checksum 0x185295db, Offset: 0xc30
 // Size: 0xa4
 function private _planstackpopnode(planner) {
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(planner.nodestack.size > 0);
-    #/
+    assert(isstruct(planner));
+    assert(planner.nodestack.size > 0);
     nodeentry = planner.nodestack[planner.nodestack.size - 1];
     planner.nodestack[planner.nodestack.size - 1] = undefined;
     return nodeentry;
@@ -245,12 +195,8 @@ function private _planstackpopnode(planner) {
 // Checksum 0x769ee01e, Offset: 0xce0
 // Size: 0x10c
 function private _planstackpushnode(planner, node, childindex = undefined) {
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(isstruct(node));
-    #/
+    assert(isstruct(planner));
+    assert(isstruct(node));
     nodeentry = spawnstruct();
     nodeentry.childindex = isdefined(childindex) ? childindex : -1;
     nodeentry.node = node;
@@ -266,9 +212,7 @@ function private _planstackpushnode(planner, node, childindex = undefined) {
 function private _planpushvalidparent(planner, childnodeentry, result) {
     while (_planstackhasnodes(planner)) {
         parentnodeentry = _planstackpeeknode(planner);
-        /#
-            assert(isdefined(parentnodeentry));
-        #/
+        assert(isdefined(parentnodeentry));
         switch (parentnodeentry.node.type) {
         case #"sequence":
             if (result) {
@@ -310,9 +254,7 @@ function private _planpushvalidparent(planner, childnodeentry, result) {
 // Checksum 0xd9d3c7b, Offset: 0x1078
 // Size: 0x23a
 function private _planprocessstack(planner) {
-    /#
-        assert(isstruct(planner));
-    #/
+    assert(isstruct(planner));
     result = 1;
     waitedinthrottle = 0;
     while (_planstackhasnodes(planner)) {
@@ -334,9 +276,7 @@ function private _planprocessstack(planner) {
             _planstackpushnode(planner, nodeentry.node.children[0], 0);
             continue;
         default:
-            /#
-                assert(0, "<unknown string>" + nodeentry.node.type + "<unknown string>");
-            #/
+            assert(0, "<unknown string>" + nodeentry.node.type + "<unknown string>");
             break;
         }
         result = _planpushvalidparent(planner, nodeentry, result);
@@ -348,15 +288,9 @@ function private _planprocessstack(planner) {
 // Checksum 0xd5167be4, Offset: 0x12c0
 // Size: 0xe0
 function private _undoplan(planner, planindex) {
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(isarray(planner.plan));
-    #/
-    /#
-        assert(planindex < planner.plan.size);
-    #/
+    assert(isstruct(planner));
+    assert(isarray(planner.plan));
+    assert(planindex < planner.plan.size);
     for (index = planner.plan.size - 1; index > planindex && index >= 0; index--) {
         planner.plan[index] = undefined;
     }
@@ -377,15 +311,9 @@ function addaction(parent, actionname, constants) {
 // Checksum 0x2eac0d2a, Offset: 0x1408
 // Size: 0xac
 function addchild(parent, node) {
-    /#
-        assert(isstruct(parent));
-    #/
-    /#
-        assert(isstruct(node));
-    #/
-    /#
-        assert(isarray(parent.children));
-    #/
+    assert(isstruct(parent));
+    assert(isstruct(node));
+    assert(isarray(parent.children));
     parent.children[parent.children.size] = node;
 }
 
@@ -442,9 +370,7 @@ function addprecondition(parent, functionname, constants) {
 // Checksum 0xb05fab50, Offset: 0x1648
 // Size: 0x42
 function cancel(planner) {
-    /#
-        assert(isstruct(planner));
-    #/
+    assert(isstruct(planner));
     planner.cancel = 1;
 }
 
@@ -453,12 +379,8 @@ function cancel(planner) {
 // Checksum 0xa16dca72, Offset: 0x1698
 // Size: 0xba
 function createaction(actionname, constants) {
-    /#
-        assert(!isdefined(constants) || isarray(constants));
-    #/
-    /#
-        assert(ishash(actionname));
-    #/
+    assert(!isdefined(constants) || isarray(constants));
+    assert(ishash(actionname));
     node = spawnstruct();
     node.type = "action";
     node.api = actionname;
@@ -471,9 +393,7 @@ function createaction(actionname, constants) {
 // Checksum 0xc89dfdd7, Offset: 0x1760
 // Size: 0xbc
 function createplanner(name) {
-    /#
-        assert(ishash(name));
-    #/
+    assert(ishash(name));
     planner = spawnstruct();
     planner.cancel = 0;
     planner.children = [];
@@ -490,15 +410,9 @@ function createplanner(name) {
 // Checksum 0xaeaa4476, Offset: 0x1828
 // Size: 0x11a
 function createpostcondition(functionname, constants) {
-    /#
-        assert(ishash(functionname));
-    #/
-    /#
-        assert(!isdefined(constants) || isarray(constants));
-    #/
-    /#
-        assert(isfunctionptr(getplannerapifunction(functionname)), "<unknown string>" + function_9e72a96(functionname) + "<unknown string>");
-    #/
+    assert(ishash(functionname));
+    assert(!isdefined(constants) || isarray(constants));
+    assert(isfunctionptr(getplannerapifunction(functionname)), "<unknown string>" + function_9e72a96(functionname) + "<unknown string>");
     node = spawnstruct();
     node.type = "postcondition";
     node.api = functionname;
@@ -511,15 +425,9 @@ function createpostcondition(functionname, constants) {
 // Checksum 0x4c436c77, Offset: 0x1950
 // Size: 0x11a
 function createprecondition(functionname, constants) {
-    /#
-        assert(ishash(functionname));
-    #/
-    /#
-        assert(!isdefined(constants) || isarray(constants));
-    #/
-    /#
-        assert(isfunctionptr(getplannerapifunction(functionname)), "<unknown string>" + function_9e72a96(functionname) + "<unknown string>");
-    #/
+    assert(ishash(functionname));
+    assert(!isdefined(constants) || isarray(constants));
+    assert(isfunctionptr(getplannerapifunction(functionname)), "<unknown string>" + function_9e72a96(functionname) + "<unknown string>");
     node = spawnstruct();
     node.type = "precondition";
     node.api = functionname;
@@ -554,12 +462,8 @@ function createsequence() {
 // Checksum 0xa9a45ab5, Offset: 0x1b08
 // Size: 0xd0
 function createsubblackboard(planner) {
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(isarray(planner.blackboards));
-    #/
+    assert(isstruct(planner));
+    assert(isarray(planner.blackboards));
     newblackboardindex = planner.blackboards.size;
     defaultvalues = [];
     planner.blackboards[newblackboardindex] = plannerblackboard::create(defaultvalues);
@@ -572,18 +476,10 @@ function createsubblackboard(planner) {
 // Checksum 0x2947245, Offset: 0x1be0
 // Size: 0x11a
 function getblackboardattribute(planner, attribute, blackboardindex = 0) {
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(isstring(attribute) || ishash(attribute));
-    #/
-    /#
-        assert(isarray(planner.blackboards));
-    #/
-    /#
-        assert(isstruct(planner.blackboards[blackboardindex]));
-    #/
+    assert(isstruct(planner));
+    assert(isstring(attribute) || ishash(attribute));
+    assert(isarray(planner.blackboards));
+    assert(isstruct(planner.blackboards[blackboardindex]));
     return plannerblackboard::getattribute(planner.blackboards[blackboardindex], attribute);
 }
 
@@ -592,15 +488,9 @@ function getblackboardattribute(planner, attribute, blackboardindex = 0) {
 // Checksum 0xd2087329, Offset: 0x1d08
 // Size: 0xb6
 function getblackboardvalues(planner, blackboardindex) {
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(isarray(planner.blackboards));
-    #/
-    /#
-        assert(isstruct(planner.blackboards[blackboardindex]));
-    #/
+    assert(isstruct(planner));
+    assert(isarray(planner.blackboards));
+    assert(isstruct(planner.blackboards[blackboardindex]));
     return planner.blackboards[blackboardindex].values;
 }
 
@@ -609,15 +499,9 @@ function getblackboardvalues(planner, blackboardindex) {
 // Checksum 0x29da32b7, Offset: 0x1dc8
 // Size: 0xa8
 function getsubblackboard(planner, blackboardindex) {
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(isarray(planner.blackboards));
-    #/
-    /#
-        assert(blackboardindex > 0 && blackboardindex < planner.blackboards.size);
-    #/
+    assert(isstruct(planner));
+    assert(isarray(planner.blackboards));
+    assert(blackboardindex > 0 && blackboardindex < planner.blackboards.size);
     return planner.blackboards[blackboardindex];
 }
 
@@ -628,12 +512,8 @@ function getsubblackboard(planner, blackboardindex) {
 function plan(planner, blackboardvalues, maxframetime = 3, starttime = undefined, var_302e19d3 = 0) {
     pixbeginevent(planner.name);
     aiprofile_beginentry(planner.name);
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(isarray(blackboardvalues));
-    #/
+    assert(isstruct(planner));
+    assert(isarray(blackboardvalues));
     planner.cancel = 0;
     planner.maxframetime = maxframetime;
     planner.plan = [];
@@ -665,9 +545,7 @@ function plan(planner, blackboardvalues, maxframetime = 3, starttime = undefined
 // Size: 0xdc
 function printplanner(planner, filename) {
     /#
-        /#
-            assert(isstruct(planner));
-        #/
+        assert(isstruct(planner));
         file = openfile(filename, "<unknown string>");
         printid = randomint(2147483647);
         _printplannernode(file, planner, 0, printid);
@@ -738,9 +616,7 @@ function private function_3af5bab0(node) {
 // Size: 0x1a4
 function private _printplannernode(file, plannernode, indent, printid) {
     /#
-        /#
-            assert(isstruct(plannernode));
-        #/
+        assert(isstruct(plannernode));
         indentspace = "<unknown string>";
         for (index = 0; index < indent; index++) {
             indentspace = indentspace + "<unknown string>";
@@ -768,18 +644,10 @@ function private _printplannernode(file, plannernode, indent, printid) {
 // Checksum 0x826b3a66, Offset: 0x2680
 // Size: 0x144
 function setblackboardattribute(planner, attribute, value, blackboardindex = 0, readonly = 0) {
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(isstring(attribute) || ishash(attribute));
-    #/
-    /#
-        assert(isarray(planner.blackboards));
-    #/
-    /#
-        assert(isstruct(planner.blackboards[blackboardindex]));
-    #/
+    assert(isstruct(planner));
+    assert(isstring(attribute) || ishash(attribute));
+    assert(isarray(planner.blackboards));
+    assert(isstruct(planner.blackboards[blackboardindex]));
     plannerblackboard::setattribute(planner.blackboards[blackboardindex], attribute, value, readonly);
 }
 
@@ -788,12 +656,8 @@ function setblackboardattribute(planner, attribute, value, blackboardindex = 0, 
 // Checksum 0x5f1163f4, Offset: 0x27d0
 // Size: 0x76
 function subblackboardcount(planner) {
-    /#
-        assert(isstruct(planner));
-    #/
-    /#
-        assert(isarray(planner.blackboards));
-    #/
+    assert(isstruct(planner));
+    assert(isarray(planner.blackboards));
     return planner.blackboards.size - 1;
 }
 
@@ -844,18 +708,12 @@ function createplannerfromasset(assetname) {
                 continue;
             }
             for (childindex = 0; childindex < htnnode.childindexes.size; childindex++) {
-                /#
-                    assert(htnnode.childindexes[childindex] < plannernodes.size);
-                #/
+                assert(htnnode.childindexes[childindex] < plannernodes.size);
                 childnum = htnnode.childindexes[childindex];
                 childnode = plannernodes[childnum];
                 for (htnchildnode = htnasset.nodes[childnum]; htnchildnode.type === #"goto"; htnchildnode = htnasset.nodes[childnum]) {
-                    /#
-                        assert(isdefined(htnchildnode.childindexes));
-                    #/
-                    /#
-                        assert(htnchildnode.childindexes.size == 1);
-                    #/
+                    assert(isdefined(htnchildnode.childindexes));
+                    assert(htnchildnode.childindexes.size == 1);
                     childnum = htnchildnode.childindexes[0];
                     childnode = plannernodes[childnum];
                 }
@@ -871,12 +729,8 @@ function createplannerfromasset(assetname) {
 // Checksum 0xff1e9835, Offset: 0x2cb8
 // Size: 0xbe
 function getplannerapifunction(functionname) {
-    /#
-        assert(ishash(functionname) && functionname != "<unknown string>", "<unknown string>");
-    #/
-    /#
-        assert(isdefined(level._plannerscriptfunctions[#"api"][functionname]), "<unknown string>" + function_9e72a96(functionname) + "<unknown string>");
-    #/
+    assert(ishash(functionname) && functionname != "<unknown string>", "<unknown string>");
+    assert(isdefined(level._plannerscriptfunctions[#"api"][functionname]), "<unknown string>" + function_9e72a96(functionname) + "<unknown string>");
     return level._plannerscriptfunctions[#"api"][functionname];
 }
 
@@ -885,12 +739,8 @@ function getplannerapifunction(functionname) {
 // Checksum 0xe4c34250, Offset: 0x2d80
 // Size: 0xbe
 function getplanneractionfunctions(actionname) {
-    /#
-        assert(ishash(actionname) && actionname != "<unknown string>", "<unknown string>");
-    #/
-    /#
-        assert(isdefined(level._plannerscriptfunctions[#"action"][actionname]), "<unknown string>" + function_9e72a96(actionname) + "<unknown string>");
-    #/
+    assert(ishash(actionname) && actionname != "<unknown string>", "<unknown string>");
+    assert(isdefined(level._plannerscriptfunctions[#"action"][actionname]), "<unknown string>" + function_9e72a96(actionname) + "<unknown string>");
     return level._plannerscriptfunctions[#"action"][actionname];
 }
 
@@ -899,16 +749,10 @@ function getplanneractionfunctions(actionname) {
 // Checksum 0xbb85df0f, Offset: 0x2e48
 // Size: 0x12e
 function registerplannerapi(functionname, functionptr) {
-    /#
-        assert(ishash(functionname) && functionname != "<unknown string>", "<unknown string>");
-    #/
-    /#
-        assert(isfunctionptr(functionptr), "<unknown string>" + function_9e72a96(functionname) + "<unknown string>");
-    #/
+    assert(ishash(functionname) && functionname != "<unknown string>", "<unknown string>");
+    assert(isfunctionptr(functionptr), "<unknown string>" + function_9e72a96(functionname) + "<unknown string>");
     planner::_initializeplannerfunctions(#"api");
-    /#
-        assert(!isdefined(level._plannerscriptfunctions[#"api"][functionname]), "<unknown string>" + functionname + "<unknown string>");
-    #/
+    assert(!isdefined(level._plannerscriptfunctions[#"api"][functionname]), "<unknown string>" + functionname + "<unknown string>");
     level._plannerscriptfunctions[#"api"][functionname] = functionptr;
 }
 
@@ -917,13 +761,9 @@ function registerplannerapi(functionname, functionptr) {
 // Checksum 0x5db4f242, Offset: 0x2f80
 // Size: 0x220
 function registerplanneraction(actionname, paramfuncptr, initializefuncptr, updatefuncptr, terminatefuncptr) {
-    /#
-        assert(ishash(actionname) && actionname != "<unknown string>", "<unknown string>");
-    #/
+    assert(ishash(actionname) && actionname != "<unknown string>", "<unknown string>");
     planner::_initializeplannerfunctions("Action");
-    /#
-        assert(!isdefined(level._plannerscriptfunctions[#"action"][actionname]), "<unknown string>" + function_9e72a96(actionname) + "<unknown string>");
-    #/
+    assert(!isdefined(level._plannerscriptfunctions[#"action"][actionname]), "<unknown string>" + function_9e72a96(actionname) + "<unknown string>");
     level._plannerscriptfunctions[#"action"][actionname] = [];
     if (isfunctionptr(paramfuncptr)) {
         level._plannerscriptfunctions[#"action"][actionname][#"parameterize"] = paramfuncptr;

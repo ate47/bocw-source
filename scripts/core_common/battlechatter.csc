@@ -37,7 +37,6 @@ function private preinit() {
 function function_4bc12499() {
     level endon(#"death");
     while (true) {
-        wait_result = undefined;
         wait_result = level waittill(#"play_death_vox");
         if (!isdefined(wait_result.body)) {
             return;

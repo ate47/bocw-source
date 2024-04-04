@@ -38,9 +38,9 @@ function function_c3996268(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         self playsound(fieldname, #"hash_3a989a32ea5a4c2f");
         self.var_3dec4e8f = self playloopsound(#"hash_54edcd34dafdb14c");
-        playfx(fieldname, #"hash_3cce6d727537b2d6", self gettagorigin("tag_origin") + vectorscale((0, 0, 1), 28), anglestoforward(self.angles), anglestoup(self.angles));
+        playfx(fieldname, #"hash_3cce6d727537b2d6", self gettagorigin("tag_origin") + (0, 0, 28), anglestoforward(self.angles), anglestoup(self.angles));
         wait(1);
-        self.var_f7aa5696 = playfx(fieldname, #"hash_29bb1f45e23e48ac", self gettagorigin("tag_origin") + vectorscale((0, 0, 1), 28), anglestoforward(self.angles), anglestoup(self.angles));
+        self.var_f7aa5696 = playfx(fieldname, #"hash_29bb1f45e23e48ac", self gettagorigin("tag_origin") + (0, 0, 28), anglestoforward(self.angles), anglestoup(self.angles));
         return;
     }
     if (bwastimejump == 3) {

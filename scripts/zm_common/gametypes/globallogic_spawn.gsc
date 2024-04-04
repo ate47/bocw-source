@@ -185,9 +185,7 @@ function spawnplayer() {
     globallogic::updateteamstatus();
     profileNamedStart(#"");
     self thread stoppoisoningandflareonspawn();
-    /#
-        assert(isvalidclass(self.curclass));
-    #/
+    assert(isvalidclass(self.curclass));
     self zm_loadout::give_loadout();
     if (level.inprematchperiod) {
         self val::set(#"prematch_period", "freezecontrols");
@@ -536,17 +534,13 @@ function showspawnmessage() {
 // Size: 0x14e
 function spawnclient(timealreadypassed) {
     profileNamedStart(#"");
-    /#
-        assert(isdefined(self.team));
-    #/
-    /#
-        assert(isvalidclass(self.curclass));
-    #/
+    assert(isdefined(self.team));
+    assert(isvalidclass(self.curclass));
     if (!self mayspawn()) {
         currentorigin = self.origin;
         currentangles = self.angles;
         self showspawnmessage();
-        self thread [[ level.spawnspectator ]](currentorigin + vectorscale((0, 0, 1), 60), currentangles);
+        self thread [[ level.spawnspectator ]](currentorigin + (0, 0, 60), currentangles);
         profileNamedStop();
         return;
     }
@@ -593,7 +587,7 @@ function waitandspawnclient(timealreadypassed) {
             hud_message::setlowermessage(game.strings[#"waiting_to_spawn"], timeuntilspawn);
         }
         if (!spawnedasspectator) {
-            spawnorigin = self.origin + vectorscale((0, 0, 1), 60);
+            spawnorigin = self.origin + (0, 0, 60);
             spawnangles = self.angles;
             if (isdefined(level.useintermissionpointsonwavespawn) && [[ level.useintermissionpointsonwavespawn ]]() == 1) {
                 spawnpoint = spawnlogic::getrandomintermissionpoint();
@@ -615,7 +609,7 @@ function waitandspawnclient(timealreadypassed) {
     if (!level.playerforcerespawn && self.hasspawned && !wavebased && !self.wantsafespawn && !level.playerqueuedrespawn) {
         hud_message::setlowermessage(game.strings[#"press_to_spawn"]);
         if (!spawnedasspectator) {
-            self thread respawn_asspectator(self.origin + vectorscale((0, 0, 1), 60), self.angles);
+            self thread respawn_asspectator(self.origin + (0, 0, 60), self.angles);
         }
         spawnedasspectator = 1;
         self waitrespawnorsafespawnbutton();
@@ -656,7 +650,7 @@ function waitinspawnqueue() {
     if (!level.ingraceperiod && !spawning::usestartspawns()) {
         currentorigin = self.origin;
         currentangles = self.angles;
-        self thread [[ level.spawnspectator ]](currentorigin + vectorscale((0, 0, 1), 60), currentangles);
+        self thread [[ level.spawnspectator ]](currentorigin + (0, 0, 60), currentangles);
         self waittill(#"queue_respawn");
     }
 }

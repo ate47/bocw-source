@@ -309,11 +309,7 @@ function private postinit() {
     function_d4c74ab3();
     foreach (s_instance in a_instances) {
         s_scenedef = getscriptbundle(s_instance.scriptbundlename);
-        /#
-            /#
-                assert(isdefined(s_scenedef), "script_noteworthy" + function_9e72a96(s_instance.scriptbundlename) + "play_from_time_normalized");
-            #/
-        #/
+        assert(isdefined(s_scenedef), "script_noteworthy" + function_9e72a96(s_instance.scriptbundlename) + "play_from_time_normalized");
         if (s_scenedef.vmtype === "client") {
             continue;
         }
@@ -424,21 +420,15 @@ function function_d4c74ab3() {
             }
             if (isdefined(trig.scriptgroup_initscenes)) {
                 a_instances = get_array(trig.scriptgroup_initscenes, "<unknown string>");
-                /#
-                    assert(a_instances.size, "<unknown string>" + str_trig_name + "<unknown string>" + trig.scriptgroup_initscenes);
-                #/
+                assert(a_instances.size, "<unknown string>" + str_trig_name + "<unknown string>" + trig.scriptgroup_initscenes);
             }
             if (isdefined(trig.scriptgroup_playscenes)) {
                 a_instances = get_array(trig.scriptgroup_playscenes, "<unknown string>");
-                /#
-                    assert(a_instances.size, "<unknown string>" + str_trig_name + "<unknown string>" + trig.scriptgroup_playscenes);
-                #/
+                assert(a_instances.size, "<unknown string>" + str_trig_name + "<unknown string>" + trig.scriptgroup_playscenes);
             }
             if (isdefined(trig.scriptgroup_stopscenes)) {
                 a_instances = get_array(trig.scriptgroup_stopscenes, "<unknown string>");
-                /#
-                    assert(a_instances.size, "<unknown string>" + str_trig_name + "<unknown string>" + trig.scriptgroup_stopscenes);
-                #/
+                assert(a_instances.size, "<unknown string>" + str_trig_name + "<unknown string>" + trig.scriptgroup_stopscenes);
             }
         }
     #/
@@ -540,11 +530,7 @@ function _trigger_stop(trig) {
 // Checksum 0x61c9825, Offset: 0x27f0
 // Size: 0x1d4
 function add_scene_func(str_scenedef, func, var_e21c4c4c = "play", ...) {
-    /#
-        /#
-            assert(isdefined(getscriptbundle(str_scenedef)), "<unknown string>" + function_9e72a96(str_scenedef) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(getscriptbundle(str_scenedef)), "<unknown string>" + function_9e72a96(str_scenedef) + "<unknown string>");
     if (!isdefined(level.scene_funcs)) {
         level.scene_funcs = [];
     }
@@ -579,11 +565,7 @@ function function_d0d7d9f7(str_scenedef, func) {
 // Checksum 0x74f5e4d0, Offset: 0x2a98
 // Size: 0x1d4
 function function_d8a83a50(str_scenedef, func, var_e21c4c4c = "play", ...) {
-    /#
-        /#
-            assert(isdefined(getscriptbundle(str_scenedef)), "<unknown string>" + function_9e72a96(str_scenedef) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(getscriptbundle(str_scenedef)), "<unknown string>" + function_9e72a96(str_scenedef) + "<unknown string>");
     if (!isdefined(level.var_4247a0d6)) {
         level.var_4247a0d6 = [];
     }
@@ -627,9 +609,7 @@ function private function_f61e64e8(a_ents, var_4ebc26aa, var_822d3bf5, var_7e21e
         #/
         return;
     }
-    /#
-        println("<unknown string>" + var_4ebc26aa + "<unknown string>" + var_7e21e745);
-    #/
+    println("<unknown string>" + var_4ebc26aa + "<unknown string>" + var_7e21e745);
 }
 
 // Namespace scene/scene_shared
@@ -667,11 +647,7 @@ function private function_41dc295(var_9cef00e4, var_822d3bf5, str_scene_name) {
 // Checksum 0x5d412ebe, Offset: 0x3050
 // Size: 0x23c
 function remove_scene_func(str_scenedef, func, var_e21c4c4c = "play") {
-    /#
-        /#
-            assert(isdefined(getscriptbundle(str_scenedef)), "<unknown string>" + str_scenedef + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(getscriptbundle(str_scenedef)), "<unknown string>" + str_scenedef + "<unknown string>");
     if (!isdefined(level.scene_funcs)) {
         level.scene_funcs = [];
     }
@@ -716,16 +692,8 @@ function private function_c776e5bd(str_scenedef, str_state) {
 // Size: 0xc8
 function get_scenedef(str_scenedef) {
     s_scriptbundle = getscriptbundle(str_scenedef);
-    /#
-        /#
-            assert(isdefined(s_scriptbundle), "script_noteworthy" + function_9e72a96(str_scenedef) + "<unknown string>");
-        #/
-    #/
-    /#
-        /#
-            assert(isdefined(s_scriptbundle.objects), "script_noteworthy" + function_9e72a96(str_scenedef) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(s_scriptbundle), "script_noteworthy" + function_9e72a96(str_scenedef) + "<unknown string>");
+    assert(isdefined(s_scriptbundle.objects), "script_noteworthy" + function_9e72a96(str_scenedef) + "<unknown string>");
     return s_scriptbundle;
 }
 
@@ -754,9 +722,7 @@ function get_scenedefs(str_type = "scene") {
 // Size: 0x168
 function spawn(arg1, arg2, arg3, arg4, b_test_run) {
     str_scenedef = arg1;
-    /#
-        assert(isdefined(str_scenedef), "<unknown string>");
-    #/
+    assert(isdefined(str_scenedef), "<unknown string>");
     if (isvec(arg2)) {
         v_origin = arg2;
         v_angles = arg3;
@@ -977,12 +943,8 @@ function private function_1f9e783e(var_5c8c4fbc, str_scenedef) {
 // Checksum 0xfe5ff5ff, Offset: 0x43d8
 // Size: 0x47c
 function function_15be7db9(str_scenedef, str_shot, var_aed95ca8) {
-    /#
-        assert(isstruct(self));
-    #/
-    /#
-        assert(isstring(str_scenedef) || ishash(str_scenedef));
-    #/
+    assert(isstruct(self));
+    assert(isstring(str_scenedef) || ishash(str_scenedef));
     if (isdefined(var_aed95ca8)) {
         var_aed95ca8 = tolower(var_aed95ca8);
     }
@@ -1011,9 +973,7 @@ function function_15be7db9(str_scenedef, str_shot, var_aed95ca8) {
                 if (isdefined(s_shot.entry) && s_shot.entry.size > 0 && (!isdefined(str_shot) || tolower(s_shot.name) == str_shot)) {
                     o_object.var_55b4f21e = s_shot;
                     [[ o_object ]]->update_alignment();
-                    /#
-                        assert(isdefined(o_object.m_align));
-                    #/
+                    assert(isdefined(o_object.m_align));
                     animation = s_shot.entry[0].anim;
                     if (isdefined(animation)) {
                         result = spawnstruct();
@@ -1052,12 +1012,8 @@ function _init_instance(str_scenedef, a_ents, b_test_run = 0) {
         return;
     }
     /#
-        /#
-            assert(isdefined(str_scenedef), "<unknown string>" + (isdefined(self.origin) ? self.origin : "<unknown string>") + "<unknown string>");
-        #/
-        /#
-            assert(isdefined(s_bundle), "<unknown string>" + (isdefined(self.origin) ? self.origin : "<unknown string>") + "<unknown string>" + str_scenedef + "<unknown string>");
-        #/
+        assert(isdefined(str_scenedef), "<unknown string>" + (isdefined(self.origin) ? self.origin : "<unknown string>") + "<unknown string>");
+        assert(isdefined(s_bundle), "<unknown string>" + (isdefined(self.origin) ? self.origin : "<unknown string>") + "<unknown string>" + str_scenedef + "<unknown string>");
     #/
     if (!is_true(self.script_ignore_active_scene_check)) {
         o_scene = get_active_scene(str_scenedef);
@@ -1307,7 +1263,6 @@ function function_7c6c9843(str_scene, str_shot, a_ents, n_rate = 1) {
             }
         }
         s_bundle = undefined;
-        s_waitresult = undefined;
         s_waitresult = var_7758510f waittillmatchtimeout(var_773f6e2a, {#notetrack:"end"}, var_89e93728);
         return;
     }
@@ -1569,9 +1524,7 @@ function private _play_instance(s_tracker, str_scenedef = self.scriptbundlename,
                     waitframe(1);
                 }
                 b_play = 0;
-                /#
-                    println("<unknown string>" + str_scenedef + "<unknown string>");
-                #/
+                println("<unknown string>" + str_scenedef + "<unknown string>");
             }
         }
         if (str_mode == "init") {
@@ -1705,11 +1658,7 @@ function _get_scene_instances(str_value, str_key = "targetname", str_scenedef, b
     a_instances = [];
     if (isdefined(str_value)) {
         a_instances = struct::get_array(str_value, str_key);
-        /#
-            /#
-                assert(a_instances.size, "<unknown string>" + str_key + "<unknown string>" + function_9e72a96(str_value) + "<unknown string>");
-            #/
-        #/
+        assert(a_instances.size, "<unknown string>" + str_key + "<unknown string>" + function_9e72a96(str_value) + "<unknown string>");
     }
     if (isdefined(str_scenedef)) {
         a_instances_by_scenedef = struct::get_array(str_scenedef, "scriptbundlename");
@@ -1915,11 +1864,7 @@ function stop(arg1, arg2, arg3) {
             }
             if (isdefined(str_key)) {
                 a_instances = struct::get_array(str_value, str_key);
-                /#
-                    /#
-                        assert(a_instances.size, "<unknown string>" + str_key + "<unknown string>" + str_value + "<unknown string>");
-                    #/
-                #/
+                assert(a_instances.size, "<unknown string>" + str_key + "<unknown string>" + str_value + "<unknown string>");
                 str_value = undefined;
             } else {
                 a_instances = struct::get_array(str_value, "targetname");
@@ -2322,9 +2267,7 @@ function get_scene_shot(str_scene) {
             return o_scene._str_shot;
         }
     }
-    /#
-        assert("<unknown string>" + str_scene + "<unknown string>");
-    #/
+    assert("<unknown string>" + str_scene + "<unknown string>");
 }
 
 // Namespace scene/scene_shared
@@ -2730,9 +2673,7 @@ function get_existing_ent(str_name, b_spawner_only = 0, b_nodes_and_structs = 0,
         if (e_array.size == 0) {
             e_array = getspawnerarray(str_name, "targetname");
         }
-        /#
-            assert(e_array.size <= 1, "<unknown string>");
-        #/
+        assert(e_array.size <= 1, "<unknown string>");
         foreach (ent in e_array) {
             if (!isdefined(ent.isdying)) {
                 e = ent;
@@ -2775,9 +2716,7 @@ function _get_existing_ent(val, key, b_ignore_spawners = 0, str_scene) {
         if (!isdefined(str_scene)) {
             str_scene = "<unknown string>";
         }
-        /#
-            assert(a_ents.size <= 1, "<unknown string>" + function_9e72a96(val) + "<unknown string>" + function_9e72a96(str_scene) + "<unknown string>");
-        #/
+        assert(a_ents.size <= 1, "<unknown string>" + function_9e72a96(val) + "<unknown string>" + function_9e72a96(str_scene) + "<unknown string>");
     #/
     return a_ents[0];
 }
@@ -3094,13 +3033,9 @@ function function_8b06792(var_18835bcc) {
 // Checksum 0x36f582a1, Offset: 0xbf90
 // Size: 0xc8
 function anim_reach(str_scene_name, str_shot, ai) {
-    /#
-        assert(isactor(ai));
-    #/
+    assert(isactor(ai));
     o_scene = _init_instance(str_scene_name);
-    /#
-        assert(isclass(o_scene._a_objects[0]));
-    #/
+    assert(isclass(o_scene._a_objects[0]));
     var_8d01ee50 = o_scene._a_objects[0];
     [[ var_8d01ee50 ]]->function_47bd9bac(ai, str_shot);
 }
@@ -3110,9 +3045,7 @@ function anim_reach(str_scene_name, str_shot, ai) {
 // Checksum 0xedc53762, Offset: 0xc060
 // Size: 0x284
 function private function_2fd8d9a3(s_tracker, var_cfeeef61, a_ents) {
-    /#
-        assert(isinarray(level.scene_sequence_names, hash(var_cfeeef61)), "<unknown string>" + var_cfeeef61 + "<unknown string>");
-    #/
+    assert(isinarray(level.scene_sequence_names, hash(var_cfeeef61)), "<unknown string>" + var_cfeeef61 + "<unknown string>");
     if (!isdefined(level.var_25a8c888[var_cfeeef61])) {
         level.var_25a8c888[var_cfeeef61] = [];
         s_bundle = getscriptbundle(var_cfeeef61);
@@ -3131,9 +3064,7 @@ function private function_2fd8d9a3(s_tracker, var_cfeeef61, a_ents) {
             return;
         }
     }
-    /#
-        assertmsg("<unknown string>" + var_cfeeef61 + "<unknown string>");
-    #/
+    assertmsg("<unknown string>" + var_cfeeef61 + "<unknown string>");
 }
 
 // Namespace scene/scene_shared
@@ -3205,7 +3136,6 @@ function private function_8fc96d1b(*var_cfeeef61, var_2f3f4731, a_ents, *n_blend
         foreach (o_scene in self.scenes) {
             s_tracker thread function_84533a09(o_scene);
         }
-        s_waitresult = undefined;
         s_waitresult = s_tracker waittill(#"hash_52bd91230328f58f");
         function_1eaaceab(self.scene_ents, 1);
         arrayremovevalue(self.scene_ents, undefined, 1);

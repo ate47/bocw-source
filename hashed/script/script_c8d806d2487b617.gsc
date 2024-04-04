@@ -44,22 +44,16 @@ function function_1cb3c52d(name, radiationlevel, duration, var_4267b283 = #"hash
     }
     function_f45ee99d();
     if (!isint(radiationlevel) || !isint(duration) || !ishash(name)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     if (level.radiation.levels.size <= radiationlevel) {
-        /#
-            assertmsg("<unknown string>" + radiationlevel + "<unknown string>");
-        #/
+        assertmsg("<unknown string>" + radiationlevel + "<unknown string>");
         return;
     }
     radiation = level.radiation.levels[radiationlevel];
     if (isdefined(radiation.sickness[name])) {
-        /#
-            assertmsg("<unknown string>" + name + "<unknown string>");
-        #/
+        assertmsg("<unknown string>" + name + "<unknown string>");
         return;
     }
     var_46bdb64c = spawnstruct();

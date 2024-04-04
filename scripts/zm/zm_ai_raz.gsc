@@ -228,7 +228,7 @@ function function_54993e2() {
 function function_1f9940b8() {
     self endon(#"death");
     playfx(#"zombie/fx9_onslaught_spawn_sm", self.origin);
-    playsoundatposition(#"hash_14247392847093a6", self.origin + vectorscale((0, 0, 1), 75));
+    playsoundatposition(#"hash_14247392847093a6", self.origin + (0, 0, 75));
     self.in_the_ground = 1;
     self ghost();
     self pathmode("dont move", 1);

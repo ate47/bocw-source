@@ -82,7 +82,6 @@ function function_fadb1cd3(player) {
 function function_bc741cdd() {
     level endon(#"end_game", #"death", #"hash_20afa38b1f1c339e");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         activator = waitresult.activator;
         if (isplayer(activator) && !level flag::get(#"hash_7b5643f5ecc16c8f")) {
@@ -634,7 +633,7 @@ function function_af722d1c() {
     zm_sq::function_266d66eb(#"hash_5c597e863c8de1c8", var_8b3ab8b4, undefined, #"hash_466bc6bf903c0d79", undefined, 96);
     level flag::wait_till_any([#"hash_549c3c7bafb05150", #"hash_434bc775e67b7233", #"hash_20afa38b1f1c339e"]);
     zm_sq::objective_complete(#"hash_5c597e863c8de1c8");
-    zm_sq::function_266d66eb(#"hash_512230df2dcdd311", s_pap_machine.origin + vectorscale((0, 0, 1), 40), undefined, #"hash_466bc6bf903c0d79", undefined, 96);
+    zm_sq::function_266d66eb(#"hash_512230df2dcdd311", s_pap_machine.origin + (0, 0, 40), undefined, #"hash_466bc6bf903c0d79", undefined, 96);
     level flag::wait_till_any([#"hash_434bc775e67b7233", #"hash_20afa38b1f1c339e"]);
     zm_sq::objective_complete(#"hash_512230df2dcdd311");
     level flag::wait_till(#"hash_20afa38b1f1c339e");

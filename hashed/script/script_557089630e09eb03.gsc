@@ -7,22 +7,6 @@
 // Method(s) 16 Total 23
 class class_b6739d61 : cluielem {
 
-    // Namespace class_b6739d61/onslaught_hud
-    // Params 0, eflags: 0x8
-    // Checksum 0x71cdd2ed, Offset: 0x5f8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_b6739d61/onslaught_hud
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x2947510, Offset: 0xc18
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_b6739d61/onslaught_hud
     // Params 1, eflags: 0x0
     // Checksum 0x60cbf04f, Offset: 0x9b8
@@ -36,7 +20,7 @@ class class_b6739d61 : cluielem {
     // Checksum 0xd2638cac, Offset: 0xb70
     // Size: 0x30
     function function_1c28d7c2(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "showBossAlert", value);
+        set_data(localclientnum, "showBossAlert", value);
     }
 
     // Namespace namespace_b6739d61/onslaught_hud
@@ -44,7 +28,7 @@ class class_b6739d61 : cluielem {
     // Checksum 0xa981aae0, Offset: 0xa58
     // Size: 0x30
     function function_2a0b1f84(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "score3Points", value);
+        set_data(localclientnum, "score3Points", value);
     }
 
     // Namespace namespace_b6739d61/onslaught_hud
@@ -60,11 +44,11 @@ class class_b6739d61 : cluielem {
     // Checksum 0xd216a26, Offset: 0xbe0
     // Size: 0x30
     function function_71fd1345(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "showLottoLoadouts", value);
+        set_data(localclientnum, "showLottoLoadouts", value);
     }
 
     // Namespace namespace_b6739d61/onslaught_hud
-    // Params 10, eflags: 0x0
+    // Params a, eflags: 0x0
     // Checksum 0x804e02c2, Offset: 0x618
     // Size: 0x1fc
     function setup_clientfields(*var_ef8933e3, *var_61963aa5, var_964ac54, *var_a584bc49, var_52a170c, var_4e7bf429, var_9a88505e, var_e805c474, var_f1a2774e, var_c22b2a20) {
@@ -86,7 +70,7 @@ class class_b6739d61 : cluielem {
     // Checksum 0xd8264e2a, Offset: 0xac8
     // Size: 0x30
     function function_9b5f8a75(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "showEndScore", value);
+        set_data(localclientnum, "showEndScore", value);
     }
 
     // Namespace namespace_b6739d61/onslaught_hud
@@ -94,7 +78,7 @@ class class_b6739d61 : cluielem {
     // Checksum 0x4991d43d, Offset: 0xa20
     // Size: 0x30
     function function_9c1c0811(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "objective2Text", value);
+        set_data(localclientnum, "objective2Text", value);
     }
 
     // Namespace namespace_b6739d61/onslaught_hud
@@ -102,7 +86,7 @@ class class_b6739d61 : cluielem {
     // Checksum 0x51ef879d, Offset: 0x9e8
     // Size: 0x30
     function function_b73d2d7c(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "bossAlertText", value);
+        set_data(localclientnum, "bossAlertText", value);
     }
 
     // Namespace namespace_b6739d61/onslaught_hud
@@ -110,7 +94,7 @@ class class_b6739d61 : cluielem {
     // Checksum 0x9fe07669, Offset: 0xb38
     // Size: 0x30
     function function_d0a02472(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "showObjective", value);
+        set_data(localclientnum, "showObjective", value);
     }
 
     // Namespace namespace_b6739d61/onslaught_hud
@@ -118,7 +102,7 @@ class class_b6739d61 : cluielem {
     // Checksum 0x604eea20, Offset: 0xba8
     // Size: 0x30
     function function_d6b5fdc4(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "showObjective2", value);
+        set_data(localclientnum, "showObjective2", value);
     }
 
     // Namespace namespace_b6739d61/onslaught_hud
@@ -126,7 +110,7 @@ class class_b6739d61 : cluielem {
     // Checksum 0x525434b0, Offset: 0xb00
     // Size: 0x30
     function function_da96c24e(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "showScore", value);
+        set_data(localclientnum, "showScore", value);
     }
 
     // Namespace namespace_b6739d61/onslaught_hud
@@ -134,7 +118,7 @@ class class_b6739d61 : cluielem {
     // Checksum 0xe59e2109, Offset: 0xa90
     // Size: 0x30
     function set_objectivetext(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "objectiveText", value);
+        set_data(localclientnum, "objectiveText", value);
     }
 
     // Namespace namespace_b6739d61/onslaught_hud
@@ -143,16 +127,16 @@ class class_b6739d61 : cluielem {
     // Size: 0x164
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "bossAlertText", #"");
-        [[ self ]]->set_data(localclientnum, "objective2Text", #"");
-        [[ self ]]->set_data(localclientnum, "score3Points", 0);
-        [[ self ]]->set_data(localclientnum, "objectiveText", #"");
-        [[ self ]]->set_data(localclientnum, "showEndScore", 0);
-        [[ self ]]->set_data(localclientnum, "showScore", 0);
-        [[ self ]]->set_data(localclientnum, "showObjective", 0);
-        [[ self ]]->set_data(localclientnum, "showBossAlert", 0);
-        [[ self ]]->set_data(localclientnum, "showObjective2", 0);
-        [[ self ]]->set_data(localclientnum, "showLottoLoadouts", 0);
+        set_data(localclientnum, "bossAlertText", #"");
+        set_data(localclientnum, "objective2Text", #"");
+        set_data(localclientnum, "score3Points", 0);
+        set_data(localclientnum, "objectiveText", #"");
+        set_data(localclientnum, "showEndScore", 0);
+        set_data(localclientnum, "showScore", 0);
+        set_data(localclientnum, "showObjective", 0);
+        set_data(localclientnum, "showBossAlert", 0);
+        set_data(localclientnum, "showObjective2", 0);
+        set_data(localclientnum, "showLottoLoadouts", 0);
     }
 
 }

@@ -29,9 +29,7 @@ function private autoexec __init__system__() {
 // Checksum 0x690d799b, Offset: 0x2c8
 // Size: 0x34
 function main() {
-    /#
-        assert(isdefined(level.var_f18a6bd6));
-    #/
+    assert(isdefined(level.var_f18a6bd6));
     [[ level.var_f18a6bd6 ]]();
 }
 
@@ -232,14 +230,10 @@ function weapon_ammo() {
             }
             if (change_ammo) {
                 if (!isdefined(clip)) {
-                    /#
-                        assertmsg("<unknown string>" + weap.classname + "<unknown string>" + weap.origin + "<unknown string>");
-                    #/
+                    assertmsg("<unknown string>" + weap.classname + "<unknown string>" + weap.origin + "<unknown string>");
                 }
                 if (!isdefined(extra)) {
-                    /#
-                        assertmsg("<unknown string>" + weap.classname + "<unknown string>" + weap.origin + "<unknown string>");
-                    #/
+                    assertmsg("<unknown string>" + weap.classname + "<unknown string>" + weap.origin + "<unknown string>");
                 }
                 weap itemweaponsetammo(clip, extra);
                 weap itemweaponsetammo(clip, extra, 1);
@@ -323,13 +317,9 @@ function player_throwgrenade_timer() {
 // Checksum 0xd2acab9c, Offset: 0xfd8
 // Size: 0x40a
 function water_think() {
-    /#
-        assert(isdefined(self.target));
-    #/
+    assert(isdefined(self.target));
     targeted = getent(self.target, "targetname");
-    /#
-        assert(isdefined(targeted));
-    #/
+    assert(isdefined(targeted));
     waterheight = targeted.origin[2];
     targeted = undefined;
     level.depth_allow_prone = 8;
@@ -345,7 +335,6 @@ function water_think() {
                 players[i] allowstand(1);
             }
         }
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         other = waitresult.activator;
         if (!isplayer(other)) {
@@ -367,9 +356,7 @@ function water_think() {
                     if (newspeed < 50) {
                         newspeed = 50;
                     }
-                    /#
-                        assert(newspeed <= 190);
-                    #/
+                    assert(newspeed <= 190);
                     if (abs(d) > level.depth_allow_crouch) {
                         players[i] allowcrouch(0);
                     } else {
@@ -447,9 +434,7 @@ function set_fog_progress(progress) {
 // Checksum 0x18a642e1, Offset: 0x1680
 // Size: 0x24
 function ascii_logo() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace load/load_shared
@@ -494,7 +479,6 @@ function shock_onpain() {
     }
     while (true) {
         oldhealth = self.health;
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         mod = waitresult.mod;
         damage = waitresult.amount;

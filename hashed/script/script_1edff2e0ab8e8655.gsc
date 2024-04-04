@@ -69,7 +69,7 @@ function function_b974aa72(origin, player) {
         siegebot::function_5de06a3f();
     }
     if (!is_true(level.doa.var_318aa67a)) {
-        if (is_true(player.doa.var_3e81d24c)) {
+        if (is_true(player.doa.infps)) {
             player notify(#"hash_7893364bd228d63e");
             waitframe(1);
             timeout = gettime() + 1000;
@@ -111,7 +111,7 @@ function function_b974aa72(origin, player) {
     siegebot thread function_c45d8312(player, timeout);
     player namespace_83eb6304::turnofffx("player_trail_" + player.doa.color);
     player waittill(#"hash_279998c5df86c04d");
-    if (!is_true(self.doa.var_3e81d24c)) {
+    if (!is_true(self.doa.infps)) {
         player namespace_83eb6304::function_3ecfde67("player_trail_" + player.doa.color);
     }
     player namespace_7f5aeb59::function_77785447(0, 1);
@@ -180,7 +180,6 @@ function function_c45d8312(player, time) {
     }
     expiretime = gettime() + time * 1000;
     while (isdefined(self)) {
-        result = undefined;
         result = self waittilltimeout(1, #"death", #"flipped", #"exit_vehicle");
         if (result._notify != #"timeout") {
             break;

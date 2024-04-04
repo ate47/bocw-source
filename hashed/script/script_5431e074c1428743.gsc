@@ -134,12 +134,8 @@ function private function_8528a766(bundle_name) {
     if (!isdefined(takedown)) {
         return;
     }
-    /#
-        assert(takedown.type == "<unknown string>");
-    #/
-    /#
-        assert(isdefined(level.var_c8b4a78a));
-    #/
+    assert(takedown.type == "<unknown string>");
+    assert(isdefined(level.var_c8b4a78a));
     var_1d5a6fd3 = spawnstruct();
     var_1d5a6fd3.scenes = [];
     if (isdefined(takedown.scenes)) {
@@ -179,9 +175,7 @@ function private function_8528a766(bundle_name) {
         level.var_c8b4a78a.maxrange = max(isdefined(level.var_c8b4a78a.maxrange) ? level.var_c8b4a78a.maxrange : 0, isdefined(takedown.maxrange) ? takedown.maxrange : 0);
         return;
     }
-    /#
-        assertmsg("<unknown string>" + takedown.name + "<unknown string>");
-    #/
+    assertmsg("<unknown string>" + takedown.name + "<unknown string>");
 }
 
 // Namespace namespace_9c83b58d/namespace_9c83b58d
@@ -189,9 +183,7 @@ function private function_8528a766(bundle_name) {
 // Checksum 0xbedf4f47, Offset: 0x11c8
 // Size: 0xd4
 function private player_init() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!isdefined(self.takedown)) {
         if (!isdefined(self.takedown)) {
             self.takedown = spawnstruct();
@@ -317,9 +309,7 @@ function function_cee18456(parms) {
 // Size: 0x184
 function function_6940d001(action, scene, time, var_9386e7ce) {
     victim = self.takedown.victim[action.name];
-    /#
-        assert(isalive(victim));
-    #/
+    assert(isalive(victim));
     self action_utility::allow_weapon(0);
     var_17813638 = victim function_4c0949f2(self, scene);
     var_86b37828 = self.takedown.takedown[action.name].name;
@@ -348,9 +338,7 @@ function function_1c85708e() {
 // Checksum 0x459b4621, Offset: 0x1af8
 // Size: 0x32a
 function function_41abe76e(*action) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     now = gettime();
     if ((isdefined(self.takedown.var_e38a7cb3) ? self.takedown.var_e38a7cb3 : -1) == now) {
         return self.takedown.var_41abe76e;
@@ -378,7 +366,7 @@ function function_41abe76e(*action) {
             traceresult = playerphysicstrace(self.origin + (0, 0, startz), self.origin + (0, 0, endz));
             if (traceresult[2] < self.origin[2] + endz) {
                 /#
-                    box(self.origin + (0, 0, startz), vectorscale((-1, -1, 0), 15), (15, 15, 70), 0, (1, 0, 0), 1, 1, 1);
+                    box(self.origin + (0, 0, startz), (-15, -15, 0), (15, 15, 70), 0, (1, 0, 0), 1, 1, 1);
                 #/
                 self.takedown.var_41abe76e = 0;
             }
@@ -450,7 +438,7 @@ function function_e3bc3dc9(action) {
             self function_7a061b23(0, action.name);
             /#
                 if (is_true(self.takedown.debug.var_c03e7127) && isentity(var_ebd06be2[0]) && isdefined(var_ebd06be2[1])) {
-                    debugstar(var_ebd06be2[0].origin + vectorscale((0, 0, 1), 30), 1, (1, 0, 0), var_ebd06be2[1], 0.1);
+                    debugstar(var_ebd06be2[0].origin + (0, 0, 30), 1, (1, 0, 0), var_ebd06be2[1], 0.1);
                 }
             #/
         } else {
@@ -470,9 +458,7 @@ function function_e3bc3dc9(action) {
 // Checksum 0x304c0757, Offset: 0x28e0
 // Size: 0x92
 function private function_3cadc363(var_248cbbcf) {
-    /#
-        assert(isplayer(var_248cbbcf.player));
-    #/
+    assert(isplayer(var_248cbbcf.player));
     if (self.var_f467e5b0.enabled[#"body_shield"] === 0) {
         return 0;
     }
@@ -494,9 +480,7 @@ function private function_7d4b1333(var_201c5b1f) {
 // Checksum 0xeaba58dc, Offset: 0x29e0
 // Size: 0x160
 function takedown_prompt_monitor(action, var_d426470, var_72612ea0) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self notify("takedown_prompt_monitor" + (isdefined(var_d426470) ? var_d426470 : "_") + (isdefined(var_72612ea0) ? var_72612ea0 : "_"));
     self endon("takedown_prompt_monitor" + (isdefined(var_d426470) ? var_d426470 : "_") + (isdefined(var_72612ea0) ? var_72612ea0 : "_"));
     self endon(action.ender);
@@ -514,9 +498,7 @@ function takedown_prompt_monitor(action, var_d426470, var_72612ea0) {
 // Checksum 0xe2e04c89, Offset: 0x2b48
 // Size: 0x6a
 function function_146a3d56(enemy) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     return vectornormalize(enemy.var_97e2c0da.check_origin - self getplayercamerapos());
 }
 
@@ -525,9 +507,7 @@ function function_146a3d56(enemy) {
 // Checksum 0xc35f83f1, Offset: 0x2bc0
 // Size: 0x63c
 function function_5ca78f5a(action) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     now = gettime();
     result = undefined;
     if ((isdefined(self.takedown.var_8630163b) ? self.takedown.var_8630163b : -1) != now) {
@@ -610,12 +590,8 @@ function function_5ca78f5a(action) {
 // Checksum 0x23a32092, Offset: 0x3208
 // Size: 0x1c4
 function function_3c43bd2a(action, victim, player) {
-    /#
-        assert(isplayer(player));
-    #/
-    /#
-        assert(isai(victim));
-    #/
+    assert(isplayer(player));
+    assert(isai(victim));
     var_879156ee = undefined;
     var_bf2073bc = undefined;
     victim function_8c04a084(player);
@@ -638,12 +614,8 @@ function function_3c43bd2a(action, victim, player) {
 // Checksum 0x3dbc7d78, Offset: 0x33d8
 // Size: 0x2aa
 function function_be279d34(action, takedown, enemy) {
-    /#
-        assert(isplayer(self));
-    #/
-    /#
-        assert(isdefined(takedown));
-    #/
+    assert(isplayer(self));
+    assert(isdefined(takedown));
     if (isdefined(takedown.actions) && !is_true(takedown.actions[action.name])) {
         return false;
     }
@@ -683,9 +655,7 @@ function function_be279d34(action, takedown, enemy) {
 // Checksum 0x9f76fe2, Offset: 0x3690
 // Size: 0x584
 function function_c943b729(*action, takedown, player) {
-    /#
-        assert(isactor(self));
-    #/
+    assert(isactor(self));
     if (!(isdefined(takedown) && isdefined(player))) {
         return false;
     }
@@ -742,7 +712,7 @@ function function_c943b729(*action, takedown, player) {
         return false;
     }
     if (is_true(takedown.trace)) {
-        zoffset = vectorscale((0, 0, 1), 24);
+        zoffset = (0, 0, 24);
         if (isdefined(takedown.traceheight)) {
             zoffset = (0, 0, takedown.traceheight);
         }
@@ -767,9 +737,7 @@ function function_c943b729(*action, takedown, player) {
 // Checksum 0x95c4ac98, Offset: 0x3c20
 // Size: 0x1b2
 function function_a4e4cef5(*action_name, player) {
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     if (!isdefined(self.var_234d269) || self.var_234d269 != gettime()) {
         self.var_b87cdd12 = 1;
         playerfwd = anglestoforward(player getplayerangles());
@@ -790,9 +758,7 @@ function function_a4e4cef5(*action_name, player) {
 // Checksum 0xd03d4811, Offset: 0x3de0
 // Size: 0x92
 function function_5169db86() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (isdefined(self.takedown.var_17813638)) {
         return self.takedown.var_17813638;
     }
@@ -807,16 +773,10 @@ function function_5169db86() {
 // Checksum 0xd21daa00, Offset: 0x3e80
 // Size: 0x38e
 function function_dce515a6(guy, modelname, var_cf230c0, attach_tag, var_5f373dfe, var_a18e300c, aitype) {
-    /#
-        assert(isplayer(self));
-    #/
-    /#
-        assert(isdefined(attach_tag) == isdefined(var_cf230c0));
-    #/
+    assert(isplayer(self));
+    assert(isdefined(attach_tag) == isdefined(var_cf230c0));
     if (isdefined(attach_tag)) {
-        /#
-            assert(attach_tag.size == var_cf230c0.size);
-        #/
+        assert(attach_tag.size == var_cf230c0.size);
     }
     if (!isdefined(aitype)) {
         aitype = guy.aitype;
@@ -859,9 +819,7 @@ function function_dce515a6(guy, modelname, var_cf230c0, attach_tag, var_5f373dfe
 // Checksum 0x3ed98787, Offset: 0x4218
 // Size: 0x1d6
 function function_4c0949f2(player, scene) {
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     entid = self getentitynumber();
     if (!isdefined(player.takedown.var_17813638)) {
         player.takedown.var_17813638 = spawnstruct();
@@ -964,9 +922,7 @@ function function_7a061b23(enabled, action_name) {
         self.takedown.allow_melee = 1;
     }
     if (isdefined(action_name) && !isdefined(self.takedown.var_9871533[action_name])) {
-        /#
-            assert(self.takedown.var_9871533.size <= 31);
-        #/
+        assert(self.takedown.var_9871533.size <= 31);
         self.takedown.var_9871533[action_name] = self.takedown.var_9871533.size;
     }
     bitmask = 0;
@@ -1123,9 +1079,7 @@ function function_8c04a084(player) {
 // Checksum 0xaebda895, Offset: 0x5490
 // Size: 0x184
 function function_945b4efe(takedown, advance) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!isdefined(self.takedown.var_d701e48f)) {
         self.takedown.var_d701e48f = [];
     }
@@ -1152,9 +1106,7 @@ function function_945b4efe(takedown, advance) {
 function takedown_cleanup(action, var_949a9f8b, *originalorigin, var_d8ba335a) {
     self notify(#"hash_7ef80ca5708348b8");
     self endon(#"hash_7ef80ca5708348b8");
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (isdefined(originalorigin)) {
         if (!isarray(originalorigin)) {
             originalorigin = [originalorigin];
@@ -1190,9 +1142,7 @@ function function_9e3a2c7f(guy) {
             if (isdefined(guy.magic_bullet_shield)) {
                 guy util::stop_magic_bullet_shield();
             }
-            /#
-                println("<unknown string>");
-            #/
+            println("<unknown string>");
         }
     }
 }
@@ -1227,9 +1177,7 @@ function function_db07e398(action_name, var_1d3e20c8, var_c9453f35) {
 // Checksum 0xce887cfa, Offset: 0x5aa0
 // Size: 0x76
 function function_a3b724c6(var_42b3f9a9) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!isdefined(self.takedown)) {
         self.takedown = {};
     }
@@ -1241,12 +1189,8 @@ function function_a3b724c6(var_42b3f9a9) {
 // Checksum 0xe95e14b3, Offset: 0x5b20
 // Size: 0x94
 function function_2ae12730(player) {
-    /#
-        assert(isplayer(player));
-    #/
-    /#
-        assert(isactor(self));
-    #/
+    assert(isplayer(player));
+    assert(isactor(self));
     if (is_true(player.takedown.var_42b3f9a9)) {
         return false;
     }
@@ -1266,7 +1210,7 @@ function private function_ac7d52ad(show) {
             return;
         }
         color = (1, 1, 0);
-        found_color = vectorscale((1, 0, 0), 0.9);
+        found_color = (0.9, 0, 0);
         while (true) {
             waitframe(1);
             corpses = [];
@@ -1288,9 +1232,9 @@ function private function_ac7d52ad(show) {
                 print3d(corpseorigin, "<unknown string>", (1, 1, 1), 1, 0.25, 1, 1);
                 line(corpse.origin, var_1157b993);
                 print3d(var_1157b993, "<unknown string>", (1, 1, 1), 1, 0.25, 1, 1);
-                print3d(corpse.origin + vectorscale((0, 0, 1), 10), "<unknown string>", (1, 1, 1), 1, 0.25, 1, 1);
+                print3d(corpse.origin + (0, 0, 10), "<unknown string>", (1, 1, 1), 1, 0.25, 1, 1);
                 if (isdefined(corpse.found)) {
-                    print3d(corpseorigin + vectorscale((0, 0, 1), 20), "<unknown string>");
+                    print3d(corpseorigin + (0, 0, 20), "<unknown string>");
                 }
                 if (isdefined(level.stealth.corpse.dists)) {
                     foreach (guy in guys) {

@@ -719,7 +719,6 @@ function function_4ec9fc99(struct, var_cc1fb2d0, var_3a053962, str_scene, var_da
     if (var_eed348ab) {
         struct.scriptmodel endon(#"death");
         struct.scriptmodel physicslaunch();
-        s_waitresult = undefined;
         s_waitresult = struct.scriptmodel waittilltimeout(6, #"stationary");
         if (isdefined(struct.var_a4fadd7e)) {
             if (abs(struct.scriptmodel.origin[2] - struct.var_a4fadd7e[2]) > 80 || s_waitresult._notify === #"timeout") {
@@ -752,7 +751,7 @@ function function_4ec9fc99(struct, var_cc1fb2d0, var_3a053962, str_scene, var_da
     } else if (var_3a053962 === "p9_fxanim_zm_gp_chest_01_sml_low_xmodel") {
         trigger sethintstring("SCRIPT/SR_LOOT_HINT_SMALL");
     }
-    trigger.origin = trigger.origin + vectorscale((0, 0, 1), 16);
+    trigger.origin = trigger.origin + (0, 0, 16);
 }
 
 // Namespace namespace_58949729/namespace_58949729
@@ -794,7 +793,7 @@ function function_25979f32(struct, var_93fe96a6, s_instance) {
     } else if (struct.mdl_chest === "p9_fxanim_zm_gp_chest_01_sml_low_xmodel") {
         trigger sethintstring("SCRIPT/SR_LOOT_HINT_SMALL");
     }
-    trigger.origin = trigger.origin + vectorscale((0, 0, 1), 16);
+    trigger.origin = trigger.origin + (0, 0, 16);
     if (is_true(var_93fe96a6)) {
         struct.var_e234ef47 = zm_utility::function_f5a222a8(#"hash_15752913c15d86ff", struct.scriptmodel);
     }
@@ -940,7 +939,7 @@ function function_8665f666(eventstruct) {
     }
     wait(1);
     if (isdefined(self.struct.scriptmodel)) {
-        level thread function_f82f361c(self.struct, self.var_cc1fb2d0, 3, 0, vectorscale((0, 0, -1), 8), 1);
+        level thread function_f82f361c(self.struct, self.var_cc1fb2d0, 3, 0, (0, 0, -8), 1);
         if (self.struct.scriptmodel.model === #"hash_401a47741ffd646f") {
             v_drop = anglestoup(self.struct.scriptmodel.angles) * 16 + anglestoforward(self.struct.scriptmodel.angles) * 12;
             level thread util::delay(1, undefined, &zm_powerups::specific_powerup_drop, "hero_weapon_power", self.struct.scriptmodel.origin + v_drop);
@@ -1115,7 +1114,6 @@ function function_8265e656(var_37180a9f) {
         var_37180a9f callback::function_d8abfc3d(#"hash_5f0caa4b2d44fedf", &function_cb742921);
     }
     while (isdefined(var_37180a9f) && var_37180a9f.health > 0) {
-        s_result = undefined;
         s_result = var_37180a9f waittill(#"damage", #"death", #"hash_52a1c0be67192d9b");
         if (s_result._notify === #"hash_52a1c0be67192d9b") {
             return;
@@ -1409,7 +1407,7 @@ function function_e4314d0e(struct) {
                         str_color = (1, 1, 0);
                     }
                 } else {
-                    str_color = vectorscale((1, 1, 1), 0.75);
+                    str_color = (0.75, 0.75, 0.75);
                 }
                 sphere(struct.origin, n_radius, str_color, 1, 0, 10, 3);
             }

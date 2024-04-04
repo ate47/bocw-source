@@ -314,12 +314,8 @@ function perkkills(victim, isstunned, time) {
     activecuav = 0;
     if (level.teambased) {
         foreach (team, _ in level.teams) {
-            /#
-                assert(isdefined(level.activecounteruavs[team]));
-            #/
-            /#
-                assert(isdefined(level.emp_shared.activeemps[team]));
-            #/
+            assert(isdefined(level.activecounteruavs[team]));
+            assert(isdefined(level.emp_shared.activeemps[team]));
             if (team == player.team) {
                 continue;
             }
@@ -331,12 +327,8 @@ function perkkills(victim, isstunned, time) {
             }
         }
     } else {
-        /#
-            assert(isdefined(level.activecounteruavs[victim.entnum]));
-        #/
-        /#
-            assert(isdefined(level.emp_shared.activeemps[victim.entnum]));
-        #/
+        assert(isdefined(level.activecounteruavs[victim.entnum]));
+        assert(isdefined(level.emp_shared.activeemps[victim.entnum]));
         players = level.players;
         for (i = 0; i < players.size; i++) {
             if (players[i] != player) {
@@ -486,7 +478,6 @@ function watchformantle() {
     self endon(#"disconnect", #"death", #"killmantlemonitor");
     self.mantletime = 0;
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"mantle_start");
         self.mantletime = waitresult.end_time;
     }
@@ -645,15 +636,9 @@ function function_90185171(totaltimeplayed, iswinner) {
         var_9b4de29 = isdefined(iswinner) ? iswinner : 0;
         player function_cce105c8(#"hash_71f20af4235ff7fe", 1, getdvarint(#"hash_54d4176b43d29535", 0), 2, int(max(level.var_52b0a80d, 0)), 3, int(max(level.var_512c31e, 0)), 4, var_9b4de29);
     }
-    /#
-        println("<unknown string>" + player.name);
-    #/
-    /#
-        println("<unknown string>" + (isdefined(totaltimeplayed) ? totaltimeplayed : "<unknown string>"));
-    #/
-    /#
-        println("<unknown string>" + (isdefined(player.pers[#"participation"]) ? player.pers[#"participation"] : "<unknown string>"));
-    #/
+    println("<unknown string>" + player.name);
+    println("<unknown string>" + (isdefined(totaltimeplayed) ? totaltimeplayed : "<unknown string>"));
+    println("<unknown string>" + (isdefined(player.pers[#"participation"]) ? player.pers[#"participation"] : "<unknown string>"));
     var_e521cb78 = 0;
     if (!isdefined(totaltimeplayed) || totaltimeplayed <= 0) {
         return;
@@ -678,9 +663,7 @@ function function_90185171(totaltimeplayed, iswinner) {
     #/
     if (!isdefined(player.pers[#"participation"]) || player.pers[#"participation"] < 1) {
         if (!sessionmodeiswarzonegame()) {
-            /#
-                println(player.name + "<unknown string>");
-            #/
+            println(player.name + "<unknown string>");
             return;
         }
     }
@@ -690,9 +673,7 @@ function function_90185171(totaltimeplayed, iswinner) {
                 var_7be1e671 = player.pers[#"controllerparticipation"] / player.pers[#"controllerparticipationchecks"];
                 if (var_7be1e671 < level.var_8e1c2aa1) {
                     self.pers[#"controllerparticipationendgameresult"] = 0;
-                    /#
-                        println(player.name + "<unknown string>" + var_7be1e671 + "<unknown string>" + level.var_8e1c2aa1 + "<unknown string>");
-                    #/
+                    println(player.name + "<unknown string>" + var_7be1e671 + "<unknown string>" + level.var_8e1c2aa1 + "<unknown string>");
                     return;
                 } else {
                     self.pers[#"controllerparticipationendgameresult"] = 1;
@@ -716,9 +697,7 @@ function function_90185171(totaltimeplayed, iswinner) {
                 var_d0a27bc3 = int(player getxpscale() * 100);
                 var_524ab934 = player function_d40f1a0e();
                 var_68441d6f = player function_325dc923();
-                /#
-                    println("<unknown string>" + total_time + "<unknown string>" + xpearned);
-                #/
+                println("<unknown string>" + total_time + "<unknown string>" + xpearned);
                 player function_cce105c8(hash(var_f406f7e3), 1, int(var_ae857992), 2, total_time, 3, var_90f98f51, 4, xpearned, 5, var_d0a27bc3, 6, var_524ab934, 7, var_68441d6f);
             }
         }

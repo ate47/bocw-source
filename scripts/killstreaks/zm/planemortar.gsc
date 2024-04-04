@@ -123,7 +123,6 @@ function function_c9ca313b(*killstreaktype) {
 // Size: 0xb6
 function function_58189f7d(*killstreaktype) {
     self endon(#"death");
-    waitresult = undefined;
     waitresult = self waittill(#"weapon_fired", #"weapon_change");
     if (!self killstreakrules::function_71e94a3b() && waitresult._notify === "weapon_fired") {
         return 0;
@@ -168,7 +167,7 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
             }
             projectile waittill(#"stationary");
             if (isdefined(projectile)) {
-                projectile.angles = vectorscale((-1, 0, 1), 90);
+                projectile.angles = (-90, 0, 90);
             }
             wait(1);
             if (isdefined(projectile) && isplayer(self)) {

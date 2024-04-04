@@ -169,7 +169,6 @@ function function_e78650d8() {
     player = getplayers()[0];
     player endon(#"death");
     for (slowed = 0; !level flag::get("bustout_player_start"); slowed = 1) {
-        ret = undefined;
         ret = level waittill(#"bustout_player_start", #"bustout_player_entered_house");
         if (level flag::get("bustout_player_start") || !level flag::get("bustout_player_entered_house")) {
             player setmovespeedscale(1);
@@ -314,7 +313,7 @@ function function_69da7d8e(heli) {
     heli turretsettarget(var_8132076f, mover);
     level flag::delay_set(11, "bustout_house_shotup");
     thread function_ea5db7ae();
-    var_af2a1727 = [vectorscale((0, 0, 1), 128), vectorscale((-1, -1, -1), 128)];
+    var_af2a1727 = [(0, 0, 128), (-128, -128, -128)];
     while (!level flag::get("bustout_house_shotup")) {
         heli fireweapon(var_8132076f);
         waitframe(1);

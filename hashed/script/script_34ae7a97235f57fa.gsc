@@ -99,7 +99,7 @@ function function_4814ed2e(*params) {
         return;
     }
     if (isdefined(drop.var_d8b51b9f) && randomfloat(1) < drop.var_d8b51b9f) {
-        origin = self.origin + vectorscale((0, 0, 1), 30);
+        origin = self.origin + (0, 0, 30);
         newdrop = function_cdd56b7c(drop, origin);
         newdrop.multiplier = self function_fbd43d2f();
         level.var_96d850f9[level.var_96d850f9.size] = newdrop;
@@ -186,7 +186,6 @@ function function_31747e4e() {
     trigger = spawn("trigger_radius", self.origin, 0, 60, 60);
     self.pickuptrigger = trigger;
     while (isdefined(self)) {
-        waitresult = undefined;
         waitresult = trigger waittill(#"trigger");
         if (waitresult.activator thread pickup(self)) {
             break;

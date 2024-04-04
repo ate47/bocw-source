@@ -86,9 +86,7 @@ function private function_49695e98(center, mins, maxs, origin) {
 // Size: 0x45a
 function private function_7904ef68(territory) {
     if (!isdefined(territory)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     while (!loadnavvolume(territory.name)) {
@@ -99,8 +97,8 @@ function private function_7904ef68(territory) {
     if (isdefined(territory.target)) {
         entities = getentarray(territory.target, "targetname");
         center = spawnstruct();
-        center.mins = vectorscale((1, 1, 0), 2.14748e+09);
-        center.maxs = vectorscale((-1, -1, 0), 2.14748e+09);
+        center.mins = (2.14748e+09, 2.14748e+09, 0);
+        center.maxs = (-2.14748e+09, -2.14748e+09, 0);
         foreach (entity in entities) {
             if (isdefined(entity.classname) && entity.classname == #"trigger_within_bounds") {
                 territory.bounds[territory.bounds.size] = entity;

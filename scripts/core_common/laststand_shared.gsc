@@ -83,9 +83,7 @@ function is_facing(facee, requireddot = 0.9) {
 // Checksum 0x1f185bbb, Offset: 0x3b0
 // Size: 0x8c
 function revive_hud_create() {
-    /#
-        assert(isdefined(level.revive_hud));
-    #/
+    assert(isdefined(level.revive_hud));
     if (!level.revive_hud revive_hud::is_open(self)) {
         level.revive_hud revive_hud::open(self, 1 | 2 | 4);
     }

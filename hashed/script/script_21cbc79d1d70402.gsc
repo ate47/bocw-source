@@ -217,7 +217,6 @@ function combatstate_thread(enabled = 1) {
 // Size: 0xd6
 function combatstate_updatethread() {
     while (true) {
-        result = undefined;
         result = self waittill(#"hash_ec8c1a398bebc57");
         foreach (func in self.stealth.combatstate.updatefuncs) {
             self thread [[ func ]](result.name, result.type);
@@ -230,21 +229,11 @@ function combatstate_updatethread() {
 // Checksum 0x1f23a016, Offset: 0xdc0
 // Size: 0x110
 function combatstate_addupdatefunc(key, func) {
-    /#
-        assert(isplayer(self));
-    #/
-    /#
-        assert(isdefined(self.stealth));
-    #/
-    /#
-        assert(isdefined(self.stealth.combatstate));
-    #/
-    /#
-        assert(isdefined(key), "<unknown string>");
-    #/
-    /#
-        assert(!isdefined(self.stealth.combatstate.updatefuncs[key]), "<unknown string>" + key + "<unknown string>");
-    #/
+    assert(isplayer(self));
+    assert(isdefined(self.stealth));
+    assert(isdefined(self.stealth.combatstate));
+    assert(isdefined(key), "<unknown string>");
+    assert(!isdefined(self.stealth.combatstate.updatefuncs[key]), "<unknown string>" + key + "<unknown string>");
     self.stealth.combatstate.updatefuncs[key] = func;
 }
 
@@ -253,21 +242,11 @@ function combatstate_addupdatefunc(key, func) {
 // Checksum 0x79252853, Offset: 0xed8
 // Size: 0x100
 function combatstate_removeupdatefunc(key) {
-    /#
-        assert(isplayer(self));
-    #/
-    /#
-        assert(isdefined(self.stealth));
-    #/
-    /#
-        assert(isdefined(self.stealth.combatstate));
-    #/
-    /#
-        assert(isdefined(key), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(self.stealth.combatstate.updatefuncs[key]), "<unknown string>" + key + "<unknown string>");
-    #/
+    assert(isplayer(self));
+    assert(isdefined(self.stealth));
+    assert(isdefined(self.stealth.combatstate));
+    assert(isdefined(key), "<unknown string>");
+    assert(isdefined(self.stealth.combatstate.updatefuncs[key]), "<unknown string>" + key + "<unknown string>");
     self.stealth.combatstate.updatefuncs[key] = undefined;
 }
 
@@ -308,7 +287,6 @@ function stealthhints_eventmonitor() {
     self endon(#"death");
     while (true) {
         self flag::wait_till("stealth_enabled");
-        wait_result = undefined;
         wait_result = level waittill(#"hash_733d7b56ac978e53");
         event = wait_result.event;
         receiver = wait_result.receiver;

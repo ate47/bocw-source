@@ -113,9 +113,7 @@ function assertproperplacement() {
                         player = level.placement[#"all"][i];
                         println("<unknown string>" + i + "<unknown string>" + player.name + "<unknown string>" + player.score);
                     }
-                    /#
-                        assertmsg("<unknown string>");
-                    #/
+                    assertmsg("<unknown string>");
                     break;
                 }
             }
@@ -128,9 +126,7 @@ function assertproperplacement() {
                     player = level.placement[#"all"][i];
                     println("<unknown string>" + i + "<unknown string>" + player.name + "<unknown string>" + player.pointstowin);
                 }
-                /#
-                    assertmsg("<unknown string>");
-                #/
+                assertmsg("<unknown string>");
                 break;
             }
         }
@@ -143,9 +139,7 @@ function assertproperplacement() {
 // Size: 0x6a
 function isvalidclass(c) {
     if (level.oldschool || sessionmodeiszombiesgame()) {
-        /#
-            assert(!isdefined(c));
-        #/
+        assert(!isdefined(c));
         return true;
     }
     return isdefined(c) && c != "";
@@ -279,9 +273,7 @@ function getscoreperminute(*team) {
 // Checksum 0x484f1ac9, Offset: 0xa80
 // Size: 0x96
 function getestimatedtimeuntilscorelimit(team) {
-    /#
-        assert(isplayer(self) || isdefined(team));
-    #/
+    assert(isplayer(self) || isdefined(team));
     scoreperminute = self getscoreperminute(team);
     scoreremaining = self getscoreremaining(team);
     if (!scoreperminute) {
@@ -319,9 +311,7 @@ function waitfortimeornotifynoartillery(time, notifyname) {
     self endon(notifyname);
     wait(time);
     while (isdefined(level.artilleryinprogress)) {
-        /#
-            assert(level.artilleryinprogress);
-        #/
+        assert(level.artilleryinprogress);
         wait(0.25);
     }
 }

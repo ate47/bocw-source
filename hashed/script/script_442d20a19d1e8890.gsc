@@ -7,22 +7,6 @@
 // Method(s) 8 Total 15
 class class_7c3faeda : cluielem {
 
-    // Namespace class_7c3faeda/incursion_infiltrationtitlecards
-    // Params 0, eflags: 0x8
-    // Checksum 0x71617b1e, Offset: 0x3a0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_7c3faeda/incursion_infiltrationtitlecards
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xe1c3639e, Offset: 0x890
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_7c3faeda/incursion_infiltrationtitlecards
     // Params 1, eflags: 0x0
     // Checksum 0x444082bb, Offset: 0x4d0
@@ -55,66 +39,62 @@ class class_7c3faeda : cluielem {
     // Size: 0x34c
     function set_state(localclientnum, state_name) {
         if (#"defaultstate" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 0);
+            set_data(localclientnum, "_state", 0);
             return;
         }
         if (#"hash_1c7fa28cf1485078" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 1);
+            set_data(localclientnum, "_state", 1);
             return;
         }
         if (#"hash_41af72ac3698f06f" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 2);
+            set_data(localclientnum, "_state", 2);
             return;
         }
         if (#"hash_5b1f56f3d27d25f0" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 3);
+            set_data(localclientnum, "_state", 3);
             return;
         }
         if (#"hash_249ee0339eddec66" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 4);
+            set_data(localclientnum, "_state", 4);
             return;
         }
         if (#"hash_55a524ad199904e9" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 5);
+            set_data(localclientnum, "_state", 5);
             return;
         }
         if (#"hash_37b2af92df0bfd42" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 6);
+            set_data(localclientnum, "_state", 6);
             return;
         }
         if (#"hash_30029804cf01e828" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 7);
+            set_data(localclientnum, "_state", 7);
             return;
         }
         if (#"hash_386af01523f194e5" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 8);
+            set_data(localclientnum, "_state", 8);
             return;
         }
         if (#"hash_c5a40437efffe76" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 9);
+            set_data(localclientnum, "_state", 9);
             return;
         }
         if (#"hash_88bd3835c23cdbc" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 10);
+            set_data(localclientnum, "_state", 10);
             return;
         }
         if (#"hash_55e75da288d110d4" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 11);
+            set_data(localclientnum, "_state", 11);
             return;
         }
         if (#"hash_3eb38ea38a92fe35" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 12);
+            set_data(localclientnum, "_state", 12);
             return;
         }
         if (#"hash_79efd6a9d00cac13" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 13);
+            set_data(localclientnum, "_state", 13);
             return;
         }
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
     }
 
     // Namespace namespace_7c3faeda/incursion_infiltrationtitlecards
@@ -122,7 +102,7 @@ class class_7c3faeda : cluielem {
     // Checksum 0x1afcbb04, Offset: 0x858
     // Size: 0x30
     function function_ee0c7ef6(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "SelectedInfiltration", value);
+        set_data(localclientnum, "SelectedInfiltration", value);
     }
 
     // Namespace namespace_7c3faeda/incursion_infiltrationtitlecards
@@ -131,8 +111,8 @@ class class_7c3faeda : cluielem {
     // Size: 0x60
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_state(localclientnum, #"defaultstate");
-        [[ self ]]->set_data(localclientnum, "SelectedInfiltration", 0);
+        set_state(localclientnum, #"defaultstate");
+        set_data(localclientnum, "SelectedInfiltration", 0);
     }
 
 }

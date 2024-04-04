@@ -218,13 +218,9 @@ function private _play_player_dialogue(alias, var_9a8be594, gestures, var_e01a79
         org playsoundwithnotify(alias, "sounddone");
     }
     if (isdefined(gestures)) {
-        /#
-            assert(isdefined(var_e01a79b9), "<unknown string>");
-        #/
+        assert(isdefined(var_e01a79b9), "<unknown string>");
         if (isarray(gestures)) {
-            /#
-                assert(gestures.size == var_e01a79b9.size, "<unknown string>");
-            #/
+            assert(gestures.size == var_e01a79b9.size, "<unknown string>");
             for (i = 0; i < gestures.size; i++) {
                 if (isdefined(var_9e354358) && isdefined(var_9e354358[i])) {
                     player util::delay(var_e01a79b9[i], undefined, &function_ef63262c, gestures[i], var_9e354358[i]);
@@ -253,9 +249,7 @@ function private _play_player_dialogue(alias, var_9a8be594, gestures, var_e01a79
 // Checksum 0xbbf279e8, Offset: 0xd40
 // Size: 0xf2
 function function_ef63262c(var_ee58f129, lookatent) {
-    /#
-        assert(self == level.player, "<unknown string>");
-    #/
+    assert(self == level.player, "<unknown string>");
     self endon(#"death");
     var_cdd69f44 = 0;
     blendtime = undefined;

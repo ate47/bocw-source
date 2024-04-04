@@ -8,28 +8,15 @@
 // Method(s) 9 Total 16
 class cscavenger_icon : cluielem {
 
-    // Namespace cscavenger_icon/scavenger_icon
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x37df1d99, Offset: 0x290
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cscavenger_icon/scavenger_icon
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xe1328c46, Offset: 0x510
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace cscavenger_icon/scavenger_icon
     // Params 1, eflags: 0x2 linked
     // Checksum 0xfc4ca4d, Offset: 0x438
     // Size: 0x3c
     function function_65b281a(player) {
-        player clientfield::function_bb878fc3(self.var_d5213cbb, self.var_bf9c8c95, "armorPlatePulse");
+        player clientfield::function_bb878fc3(var_d5213cbb, var_bf9c8c95, "armorPlatePulse");
     }
 
     // Namespace cscavenger_icon/scavenger_icon
@@ -45,7 +32,7 @@ class cscavenger_icon : cluielem {
     // Checksum 0xf47d9d44, Offset: 0x4c8
     // Size: 0x3c
     function function_417df30c(player) {
-        player clientfield::function_bb878fc3(self.var_d5213cbb, self.var_bf9c8c95, "rareScrapPulse");
+        player clientfield::function_bb878fc3(var_d5213cbb, var_bf9c8c95, "rareScrapPulse");
     }
 
     // Namespace cscavenger_icon/scavenger_icon
@@ -53,7 +40,7 @@ class cscavenger_icon : cluielem {
     // Checksum 0x2ab76318, Offset: 0x480
     // Size: 0x3c
     function function_47e82a09(player) {
-        player clientfield::function_bb878fc3(self.var_d5213cbb, self.var_bf9c8c95, "scrapPulse");
+        player clientfield::function_bb878fc3(var_d5213cbb, var_bf9c8c95, "scrapPulse");
     }
 
     // Namespace cscavenger_icon/scavenger_icon
@@ -81,7 +68,7 @@ class cscavenger_icon : cluielem {
     // Checksum 0x71ffc07a, Offset: 0x3f0
     // Size: 0x3c
     function function_e4e9c303(player) {
-        player clientfield::function_bb878fc3(self.var_d5213cbb, self.var_bf9c8c95, "ammoPulse");
+        player clientfield::function_bb878fc3(var_d5213cbb, var_bf9c8c95, "ammoPulse");
     }
 
 }

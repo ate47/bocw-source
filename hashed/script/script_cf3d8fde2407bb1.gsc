@@ -8,28 +8,15 @@
 // Method(s) 6 Total 13
 class csr_beacon_menu : cluielem {
 
-    // Namespace csr_beacon_menu/sr_beacon_menu
-    // Params 0, eflags: 0xa linked
-    // Checksum 0xa022df69, Offset: 0x1f0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace csr_beacon_menu/sr_beacon_menu
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xc9c4e90c, Offset: 0x328
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace csr_beacon_menu/sr_beacon_menu
     // Params 2, eflags: 0x2 linked
     // Checksum 0x610bbcc, Offset: 0x2d8
     // Size: 0x44
     function function_666779d(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "respond_enabled", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "respond_enabled", value);
     }
 
     // Namespace csr_beacon_menu/sr_beacon_menu

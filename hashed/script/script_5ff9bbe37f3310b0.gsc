@@ -143,7 +143,7 @@ function function_9212e29c(s_instance, s_chest) {
         return;
     }
     level flag::set(#"hash_68097fc64a08e557");
-    ex_elevator_overlight_indicator_ = vectorscale((1, 0, 0), 270);
+    ex_elevator_overlight_indicator_ = (270, 0, 0);
     struct = spawnstruct();
     struct.origin = s_chest.origin + (0, 0, 5000);
     struct.angles = s_chest.angles;
@@ -169,7 +169,7 @@ function function_9212e29c(s_instance, s_chest) {
     mdl_fx stoploopsound();
     mdl_fx playsound(#"hash_6eca5f5eaa236ce3");
     mdl_fx util::deleteaftertime(3);
-    trigger = content_manager::spawn_interact(s_chest, &function_19490940, #"hash_409a53f32f7cae42", undefined, 96, undefined, undefined, vectorscale((0, 0, 1), 16));
+    trigger = content_manager::spawn_interact(s_chest, &function_19490940, #"hash_409a53f32f7cae42", undefined, 96, undefined, undefined, (0, 0, 16));
     trigger.struct = s_chest;
     trigger.var_cc1fb2d0 = namespace_58949729::function_fd5e77fa(#"gold");
     mdl_chest.trigger = trigger;
@@ -193,7 +193,7 @@ function private function_8fa44fea(mdl_chest) {
     a_vehicles = getentitiesinradius(v_loc, 512, 12);
     foreach (vehicle in a_vehicles) {
         if (vehicle istouching(mdl_chest)) {
-            vehicle launchvehicle(vectorscale((0, 0, 1), 50), v_loc);
+            vehicle launchvehicle((0, 0, 50), v_loc);
             waitframe(1);
         }
     }
@@ -224,7 +224,6 @@ function function_19490940(*eventstruct) {
     self setvisibletoall();
     mdl_chest clientfield::set("sr_supply_drop_chest_fx", 3);
     mdl_chest clientfield::set("reward_chest_fx", 3);
-    s_result = undefined;
     s_result = self waittill(#"trigger");
     self thread namespace_58949729::function_8665f666(s_result);
     level thread zm_intel::function_20c3dbfd(function_a1ef346b(), mdl_chest.origin, 120, 3);

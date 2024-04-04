@@ -119,7 +119,7 @@ function function_9eeebbfd(localclientnum) {
                 level.var_a8644947[var_163fec9d] = [];
             }
             level.var_a8644947[var_163fec9d][self getentitynumber()] = self;
-            self.var_15de25d4 = self playloopsound(#"hash_3986cbfda8c21269", 0.1, vectorscale((0, 0, 1), 8));
+            self.var_15de25d4 = self playloopsound(#"hash_3986cbfda8c21269", 0.1, (0, 0, 8));
             self thread function_ea9698c4(localclientnum);
         }
         self useanimtree("generic");
@@ -159,9 +159,7 @@ function private function_cf419a0(localclientnum, icon, range) {
 // Checksum 0x4f50ce25, Offset: 0xba8
 // Size: 0x134
 function function_a7bc52b0(localclientnum) {
-    /#
-        assert(isdefined(self.owner));
-    #/
+    assert(isdefined(self.owner));
     var_55336d8d = level.var_8ddf6d3d;
     var_c394e130 = level.var_96492769;
     var_bf4bed59 = max(var_55336d8d.var_151e2c9b, var_c394e130.var_151e2c9b) + 30;
@@ -618,7 +616,6 @@ function function_c2b5b27c() {
             wait(0.5);
             continue;
         }
-        waitresult = undefined;
         waitresult = self waittill(#"awareness_action", #"death", #"disconnect");
         if (waitresult._notify !== #"awareness_action") {
             self.var_7122b2ff = undefined;

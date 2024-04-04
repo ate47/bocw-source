@@ -56,9 +56,7 @@ function private function_a06dcd8b(v) {
 // Size: 0x230
 function function_2ff463e2(name) {
     var_64f87a02 = getent(0, name, "targetname");
-    /#
-        assert(isdefined(var_64f87a02));
-    #/
+    assert(isdefined(var_64f87a02));
     level.var_a40e1682[name] = var_64f87a02;
     var_64f87a02 hide();
     var_64f87a02.var_d19720ad = function_a06dcd8b(var_64f87a02.origin);
@@ -103,9 +101,7 @@ function private function_b36a26fe() {
 // Checksum 0x4b786248, Offset: 0x980
 // Size: 0x240
 function private function_8396377c(var_57617236, origin, angles) {
-    /#
-        assert(isdefined(var_57617236));
-    #/
+    assert(isdefined(var_57617236));
     door = spawnstruct();
     door.targetname = function_2f65cd89();
     door.origin = origin;
@@ -135,9 +131,7 @@ function private function_8396377c(var_57617236, origin, angles) {
 // Checksum 0xfdfdb70c, Offset: 0xbc8
 // Size: 0x28c
 function private function_9a75d6e9(var_64f87a02, origin, angles) {
-    /#
-        assert(isdefined(var_64f87a02));
-    #/
+    assert(isdefined(var_64f87a02));
     room = spawnstruct();
     room.targetname = function_2f65cd89();
     room.origin = origin;
@@ -275,9 +269,7 @@ function private function_28cdb1db(depth) {
 // Checksum 0xa51bf83a, Offset: 0x13f8
 // Size: 0x34
 function function_f4b7f348(text) {
-    /#
-        println("<unknown string>" + text);
-    #/
+    println("<unknown string>" + text);
 }
 
 // Namespace namespace_f27a9d0d/namespace_f27a9d0d
@@ -385,9 +377,7 @@ function init(name) {
         level.var_4392df44[level.var_4392df44.size] = "script_int";
         level.var_4392df44[level.var_4392df44.size] = "script_parameters";
         var_60f6aaec = struct::get_array("start", "rg_tag_type");
-        /#
-            assert(isdefined(var_60f6aaec.size > 0));
-        #/
+        assert(isdefined(var_60f6aaec.size > 0));
         level.var_60f6aaec = [];
         foreach (start_tag in var_60f6aaec) {
             start_node = spawnstruct();
@@ -461,9 +451,7 @@ function function_363c84ff(name) {
             return start_tag;
         }
     }
-    /#
-        assert(0, "<unknown string>" + name + "<unknown string>");
-    #/
+    assert(0, "<unknown string>" + name + "<unknown string>");
 }
 
 // Namespace namespace_f27a9d0d/namespace_f27a9d0d
@@ -489,9 +477,7 @@ function function_a8d8b1ab(var_603479c6) {
     case 3:
         return 270;
     default:
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         break;
     }
 }
@@ -501,9 +487,7 @@ function function_a8d8b1ab(var_603479c6) {
 // Checksum 0x17d1ab6d, Offset: 0x2060
 // Size: 0xec
 function function_cee62dac(key, value) {
-    /#
-        assert(isdefined(self.tags));
-    #/
+    assert(isdefined(self.tags));
     result = [];
     foreach (tag in self.tags) {
         if (isdefined(tag.(key)) && tag.(key) === value) {
@@ -519,9 +503,7 @@ function function_cee62dac(key, value) {
 // Size: 0xcc
 function function_5165998(key, value) {
     found = function_cee62dac(key, value);
-    /#
-        assert(found.size <= 1, "<unknown string>" + (isdefined(key) ? "<unknown string>" + key : "<unknown string>") + "<unknown string>" + (isdefined(value) ? "<unknown string>" + value : "<unknown string>") + "<unknown string>");
-    #/
+    assert(found.size <= 1, "<unknown string>" + (isdefined(key) ? "<unknown string>" + key : "<unknown string>") + "<unknown string>" + (isdefined(value) ? "<unknown string>" + value : "<unknown string>") + "<unknown string>");
     return found.size < 0 ? undefined : found[0];
 }
 
@@ -531,13 +513,9 @@ function function_5165998(key, value) {
 // Size: 0x15a
 function function_eaad15e2(attach_tag, var_da1a882e, var_c71df200) {
     var_64f87a02 = level.var_a40e1682[var_da1a882e];
-    /#
-        assert(isdefined(var_64f87a02));
-    #/
+    assert(isdefined(var_64f87a02));
     var_103a1f3b = var_64f87a02 function_5165998("id", var_c71df200);
-    /#
-        assert(isdefined(var_103a1f3b));
-    #/
+    assert(isdefined(var_103a1f3b));
     var_cde36dad = vectortoangles(anglestoforward(attach_tag.angles) * -1);
     var_e3438a3b = function_bdd10bae(var_cde36dad, var_103a1f3b.angles);
     var_51d344d5 = attach_tag.origin + rotatepoint(var_103a1f3b.origin * -1, var_e3438a3b);
@@ -550,13 +528,9 @@ function function_eaad15e2(attach_tag, var_da1a882e, var_c71df200) {
 // Size: 0x176
 function function_5b611d11(attach_tag, door_name) {
     var_57617236 = level.var_a40e1682[door_name];
-    /#
-        assert(isdefined(var_57617236));
-    #/
+    assert(isdefined(var_57617236));
     var_5cf84433 = var_57617236 function_5165998("type", "room_center");
-    /#
-        assert(isdefined(var_5cf84433));
-    #/
+    assert(isdefined(var_5cf84433));
     var_cde36dad = vectortoangles(anglestoforward(attach_tag.angles) * -1);
     var_edda8bbd = function_bdd10bae(var_cde36dad, var_5cf84433.angles);
     var_75f95cf7 = attach_tag.origin + rotatepoint(var_5cf84433.origin * -1, var_edda8bbd);
@@ -571,13 +545,9 @@ function function_5b611d11(attach_tag, door_name) {
 // Size: 0x142
 function function_40681754(var_da1a882e, x, y, var_603479c6) {
     var_64f87a02 = level.var_a40e1682[var_da1a882e];
-    /#
-        assert(isdefined(var_64f87a02));
-    #/
+    assert(isdefined(var_64f87a02));
     var_103a1f3b = var_64f87a02 function_5165998("type", "room_center");
-    /#
-        assert(isdefined(var_103a1f3b));
-    #/
+    assert(isdefined(var_103a1f3b));
     var_e3438a3b = (0, function_a8d8b1ab(var_603479c6), 0);
     var_85f8c961 = function_e1842922(x, y);
     var_51d344d5 = var_85f8c961 + rotatepoint(var_103a1f3b.origin * -1, var_e3438a3b);
@@ -646,9 +616,7 @@ function function_39736661(var_816442c9) {
 // Checksum 0xcd9fdb35, Offset: 0x2b30
 // Size: 0xcc
 function function_612d8b4e() {
-    /#
-        assert(isdefined(level.var_ee250665));
-    #/
+    assert(isdefined(level.var_ee250665));
     foreach (room in level.var_c97eeeb4) {
         if (!isdefined(room)) {
             continue;

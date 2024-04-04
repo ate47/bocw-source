@@ -58,9 +58,7 @@ function function_a74b8be1(msg, *players) {
     if (function_81fac19d(!var_9077d19c, "snd_client_msg must be a string or hash")) {
         return;
     }
-    /#
-        assert(var_9077d19c);
-    #/
+    assert(var_9077d19c);
     state = "";
     if (ishash(players)) {
         state = "# " + players;
@@ -95,16 +93,12 @@ function private function_5018393e(ent, targetname) {
     if (function_81fac19d(!isvalidtarget, "snd_client_targetname is not an entity")) {
         return;
     }
-    /#
-        assert(isvalidtarget);
-    #/
+    assert(isvalidtarget);
     targetname = function_ea2f17d1(targetname, ent.targetname);
     if (function_81fac19d(!isdefined(targetname), "snd_client_targetname targetname is undefined")) {
         return;
     }
-    /#
-        assert(isdefined(targetname));
-    #/
+    assert(isdefined(targetname));
     entitynumber = ent getentitynumber();
     state = "T " + entitynumber + " " + targetname;
     fieldname = function_9d83cae7(ent);
@@ -136,12 +130,8 @@ function private function_9d83cae7(ent) {
 // Checksum 0x217fcaeb, Offset: 0xa60
 // Size: 0xd4
 function private function_b2f22cd6(ent, state, fieldname, var_792fc52c) {
-    /#
-        assert(isstring(state));
-    #/
-    /#
-        assert(isstring(fieldname));
-    #/
+    assert(isstring(state));
+    assert(isstring(fieldname));
     var_792fc52c = function_ea2f17d1(var_792fc52c, 3);
     wait(var_792fc52c);
     if (isdefined(ent)) {
@@ -159,9 +149,7 @@ function client_voice(ent, soundalias) {
     if (function_81fac19d(!isvalidtarget, "snd client_vo was not given an entity")) {
         return 0;
     }
-    /#
-        assert(isvalidtarget);
-    #/
+    assert(isvalidtarget);
     var_3dd9dcff = soundexists(soundalias);
     if (function_81fac19d(isdefined(soundalias) && !var_3dd9dcff, "snd client_vo alias does not exist: " + soundalias)) {
         return 0;
@@ -187,12 +175,8 @@ function client_voice(ent, soundalias) {
 // Checksum 0x2df6ce2, Offset: 0xce0
 // Size: 0x188
 function function_b5959278(ent, var_1d25915, var_605838f4, var_e330010e) {
-    /#
-        assert(isdefined(ent), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(ent.soundkey), "<unknown string>");
-    #/
+    assert(isdefined(ent), "<unknown string>");
+    assert(isdefined(ent.soundkey), "<unknown string>");
     if (isdefined(var_605838f4)) {
         var_e330010e = var_605838f4 snd::function_bf7c949(var_e330010e);
         var_386560b8 = (0, 0, 0);
@@ -200,9 +184,7 @@ function function_b5959278(ent, var_1d25915, var_605838f4, var_e330010e) {
         if (isdefined(var_1d25915)) {
             var_386560b8 = var_1d25915;
         }
-        /#
-            assert(isdefined(var_e330010e), "<unknown string>");
-        #/
+        assert(isdefined(var_e330010e), "<unknown string>");
         if (var_e330010e == "tag_origin") {
             var_e330010e = "";
         }
@@ -232,14 +214,12 @@ function function_85daf9f0(soundalias, var_1d25915, var_605838f4, var_e330010e) 
     } else if (isdefined(var_605838f4)) {
         spawnorigin = var_605838f4.origin;
     } else if (!isdefined(var_605838f4) && !isdefined(var_1d25915)) {
-        var_3692a397 = vectorscale((0, 0, -1), 32768);
+        var_3692a397 = (0, 0, -32768);
         spawnorigin = var_3692a397;
     } else {
         spawnorigin = var_1d25915;
     }
-    /#
-        assert(isdefined(spawnorigin));
-    #/
+    assert(isdefined(spawnorigin));
     ent = undefined;
     if (isdefined(var_605838f4)) {
         ent = spawn("script_model", spawnorigin);
@@ -249,9 +229,7 @@ function function_85daf9f0(soundalias, var_1d25915, var_605838f4, var_e330010e) 
     } else {
         ent = spawn("script_origin", spawnorigin);
     }
-    /#
-        assert(isdefined(ent), "<unknown string>");
-    #/
+    assert(isdefined(ent), "<unknown string>");
     if (isentity(ent)) {
         ent.var_90c86b97 = var_605838f4;
         ent.soundtype = #"gentity";
@@ -301,12 +279,8 @@ function function_2dde45d9(var_afe43979, soundalias, var_99e65ecf, delaytime) {
     ent = var_afe43979;
     currentvolume = undefined;
     ent endon(#"death");
-    /#
-        assert(isdefined(ent));
-    #/
-    /#
-        assert(isstring(soundalias));
-    #/
+    assert(isdefined(ent));
+    assert(isstring(soundalias));
     currentvolume = snd::function_92d3587(ent);
     if (!isdefined(var_99e65ecf) && isdefined(currentvolume)) {
         var_99e65ecf = currentvolume;
@@ -320,9 +294,7 @@ function function_2dde45d9(var_afe43979, soundalias, var_99e65ecf, delaytime) {
     if (snd::isnumber(delaytime) && delaytime > 0) {
         wait(delaytime);
     }
-    /#
-        assert(soundexists(soundalias), "<unknown string>" + soundalias);
-    #/
+    assert(soundexists(soundalias), "<unknown string>" + soundalias);
     if (soundislooping(soundalias) == 1) {
         ent playloopsound(soundalias);
     } else {
@@ -411,9 +383,7 @@ function private function_bd8d70b0(done) {
 // Checksum 0x830690b0, Offset: 0x1818
 // Size: 0x44
 function function_2761fc04(*ent, *var_1d25915, *var_605838f4, *var_e330010e) {
-    /#
-        assert(0, "<unknown string>");
-    #/
+    assert(0, "<unknown string>");
 }
 
 // Namespace namespace_afa8e18b/snd
@@ -421,9 +391,7 @@ function function_2761fc04(*ent, *var_1d25915, *var_605838f4, *var_e330010e) {
 // Checksum 0xb6d987f, Offset: 0x1868
 // Size: 0x46
 function function_5275752c(*soundalias, *var_1d25915, *var_605838f4, *var_e330010e) {
-    /#
-        assert(0, "<unknown string>");
-    #/
+    assert(0, "<unknown string>");
     return undefined;
 }
 
@@ -432,9 +400,7 @@ function function_5275752c(*soundalias, *var_1d25915, *var_605838f4, *var_e33001
 // Checksum 0x9abcdf92, Offset: 0x18b8
 // Size: 0x2c
 function function_bdc44456(*ent) {
-    /#
-        assert(0, "<unknown string>");
-    #/
+    assert(0, "<unknown string>");
 }
 
 // Namespace namespace_afa8e18b/snd
@@ -442,9 +408,7 @@ function function_bdc44456(*ent) {
 // Checksum 0x43729f9e, Offset: 0x18f0
 // Size: 0x44
 function function_bb749fc3(*var_afe43979, *soundalias, *var_99e65ecf, *delaytime) {
-    /#
-        assert(0, "<unknown string>");
-    #/
+    assert(0, "<unknown string>");
 }
 
 // Namespace namespace_afa8e18b/snd
@@ -452,9 +416,7 @@ function function_bb749fc3(*var_afe43979, *soundalias, *var_99e65ecf, *delaytime
 // Checksum 0x13f2d605, Offset: 0x1940
 // Size: 0x34
 function function_273d939b(*var_afe43979, *var_24ea4e17) {
-    /#
-        assert(0, "<unknown string>");
-    #/
+    assert(0, "<unknown string>");
 }
 
 #namespace snd;

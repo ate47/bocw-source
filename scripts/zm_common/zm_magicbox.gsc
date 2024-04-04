@@ -325,7 +325,7 @@ function function_165d2388(s_instance) {
 // Size: 0x1e2
 function function_76830bc7() {
     if (!isdefined(self.trigger)) {
-        self.trigger = content_manager::spawn_interact(self, &function_c8745555, #"hash_40a3bd4c33eac8cc", self.zombie_cost, 72, 128, undefined, vectorscale((0, 0, 1), 24));
+        self.trigger = content_manager::spawn_interact(self, &function_c8745555, #"hash_40a3bd4c33eac8cc", self.zombie_cost, 72, 128, undefined, (0, 0, 24));
         self.trigger.zbarrier = self.zbarrier;
         self.trigger.s_chest = self;
         self.zbarrier.trigger = self.trigger;
@@ -639,9 +639,7 @@ function show_chest() {
     self.zbarrier clientfield::set("force_stream_magicbox", 1);
     self.zbarrier set_magic_box_zbarrier_state("arriving");
     self.zbarrier waittilltimeout(5, #"arrived");
-    /#
-        assert(isdefined(level.pandora_show_func), "itemspawnlist");
-    #/
+    assert(isdefined(level.pandora_show_func), "itemspawnlist");
     if (isdefined(level.pandora_show_func)) {
         self thread [[ level.pandora_show_func ]]();
     }
@@ -688,7 +686,6 @@ function hide_chest(doboxleave) {
         if (is_true(doboxleave)) {
             self.zbarrier thread magic_box_zbarrier_leave();
             if (self.zbarrier.state == "leaving") {
-                s_result = undefined;
                 s_result = self.zbarrier waittilltimeout(10, #"left", #"zbarrier_state_change");
                 if (s_result._notify !== "left") {
                     self.zbarrier notify(#"timeout_away");
@@ -720,7 +717,7 @@ function default_pandora_fx_func() {
     if (isdefined(s_pandora_fx_pos_override) && s_pandora_fx_pos_override.script_noteworthy === "pandora_fx_pos_override") {
         self.pandora_light.origin = s_pandora_fx_pos_override.origin;
     }
-    self.pandora_light.angles = self.zbarrier.angles + vectorscale((-1, 0, -1), 90);
+    self.pandora_light.angles = self.zbarrier.angles + (-90, 0, -90);
     self.pandora_light setmodel(#"tag_origin");
     if (!is_true(level._box_initialized)) {
         level flag::wait_till("start_zombie_round_logic");
@@ -931,7 +928,6 @@ function function_c8745555(params) {
 function function_c6cfae9e(user, s_chest, user_cost) {
     self endon(#"death");
     while (isdefined(self) && !is_true(s_chest.var_7672d70d) && !is_true(s_chest.var_afba7c1f)) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         grabber = waitresult.activator;
         s_chest.weapon_out = undefined;
@@ -1089,7 +1085,6 @@ function watch_for_emp_close() {
         self.zbarrier.var_7672d70d = 0;
     }
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"emp_detonate");
         if (distancesquared(waitresult.position, self.origin) < waitresult.radius * waitresult.radius) {
             break;
@@ -1634,9 +1629,7 @@ function function_830aff18(str_item, player, var_4ac286cf, var_257fe1c5, *var_e7
         var_cc054a2 = [[ level.var_a619f078[var_89230090.name] ]](var_4ac286cf);
         if (!var_cc054a2) {
             var_89230090 = getscriptbundle(level.var_940d400a[var_89230090.name]);
-            /#
-                assert(isdefined(var_89230090), "<unknown string>");
-            #/
+            assert(isdefined(var_89230090), "<unknown string>");
         }
     }
     if (isdefined(var_89230090.var_a53e9db0)) {
@@ -1684,9 +1677,7 @@ function function_830aff18(str_item, player, var_4ac286cf, var_257fe1c5, *var_e7
     }
     /#
         if (var_e7308a9 && isdefined(var_89230090) && !isdefined(var_89230090.rarity)) {
-            /#
-                assertmsg("<unknown string>" + var_89230090.name);
-            #/
+            assertmsg("<unknown string>" + var_89230090.name);
         }
     #/
     if (function_db355791(var_4ac286cf, item, 0) && (!var_e7308a9 || var_e7308a9 && isdefined(var_89230090.rarity) && isinarray(var_257fe1c5, hash(var_89230090.rarity)))) {
@@ -1976,9 +1967,7 @@ function treasure_chest_weapon_spawn(chest, player, respin) {
     }
     self endoncallback(&function_62197845, #"box_hacked_respin", #"death");
     self thread clean_up_hacked_box();
-    /#
-        assert(isdefined(player));
-    #/
+    assert(isdefined(player));
     self.chest_moving = 0;
     move_the_box = treasure_chest_should_move(chest, player);
     preferred_weapon = undefined;
@@ -1999,9 +1988,7 @@ function treasure_chest_weapon_spawn(chest, player, respin) {
     if (var_943077fe < 40) {
         var_f91a62a4 = var_943077fe / 40;
     }
-    /#
-        assert(var_f91a62a4 >= 0.1 && var_f91a62a4 <= 2, "<unknown string>");
-    #/
+    assert(var_f91a62a4 >= 0.1 && var_f91a62a4 <= 2, "<unknown string>");
     if (chest.zbarrier iszbarrier()) {
         if (isdefined(level.custom_magic_box_do_weapon_rise)) {
             chest.zbarrier thread [[ level.custom_magic_box_do_weapon_rise ]]();
@@ -2158,7 +2145,7 @@ function treasure_chest_weapon_spawn(chest, player, respin) {
             }
             self.weapon_model = spawn("script_model", v_origin);
             self.weapon_model setmodel(level.chest_joker_model);
-            self.weapon_model.angles = self.angles + vectorscale((0, 1, 0), 180);
+            self.weapon_model.angles = self.angles + (0, 180, 0);
             wait(0.5);
             level notify(#"weapon_fly_away_start");
             wait(2);
@@ -2288,7 +2275,6 @@ function treasure_chest_glowfx() {
     self waittill(#"randomization_done");
     self function_a6d171f4(self.owner.var_c639ca3e);
     self clientfield::set("magicbox_open_fx", 0);
-    s_waitresult = undefined;
     s_waitresult = self waittill(#"weapon_grabbed", #"box_moving");
     if (s_waitresult._notify == "weapon_grabbed") {
         self clientfield::set("magicbox_closed_fx", 1);
@@ -2303,9 +2289,7 @@ function treasure_chest_glowfx() {
 function treasure_chest_give_weapon(item, *var_75c86f89, e_chest) {
     self.last_box_weapon = gettime();
     if (!isentity(var_75c86f89) && !isstruct(var_75c86f89)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
     weapon = isdefined(var_75c86f89.itementry.weapon) ? var_75c86f89.itementry.weapon : level.weaponnone;

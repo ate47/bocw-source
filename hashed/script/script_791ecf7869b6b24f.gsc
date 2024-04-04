@@ -34,7 +34,7 @@ function function_d6c6e6a4(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_d6c6e6a4 = undefined;
     }
     if (bwasdemojump == 1) {
-        self.var_d6c6e6a4 = playfx(fieldname, #"hash_244ac8229348af01", self.origin + vectorscale((1, 0, 0), 10), (0, 0, 1), anglestoforward(self.angles));
+        self.var_d6c6e6a4 = playfx(fieldname, #"hash_244ac8229348af01", self.origin + (10, 0, 0), (0, 0, 1), anglestoforward(self.angles));
     }
 }
 
@@ -52,7 +52,7 @@ function function_81dcb526(localclientnum, *oldval, newval, *bnewent, *binitials
         }
     }
     if (bwasdemojump == 1) {
-        self.var_81dcb526 = playfx(fieldname, #"hash_7c6ddeef1245e0ea", self.origin + vectorscale((0, 0, 1), 30), (0, 0, 1), anglestoforward(self.angles));
+        self.var_81dcb526 = playfx(fieldname, #"hash_7c6ddeef1245e0ea", self.origin + (0, 0, 30), (0, 0, 1), anglestoforward(self.angles));
         self.var_52f9dfc0 = self playloopsound(#"hash_184650f042012414");
     }
 }
@@ -118,7 +118,7 @@ function function_33827fb9(localclientnum, *oldval, newval, *bnewent, *binitials
 // Checksum 0x377fcb9e, Offset: 0xa88
 // Size: 0xa4
 function function_773683a7(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
-    playfx(bwasdemojump, #"sr/fx9_obj_console_defend_dmg_os", self.origin + vectorscale((0, 0, 1), 32), anglestoforward(self.angles), anglestoup(self.angles));
+    playfx(bwasdemojump, #"sr/fx9_obj_console_defend_dmg_os", self.origin + (0, 0, 32), anglestoforward(self.angles), anglestoup(self.angles));
 }
 
 // Namespace namespace_f7b3ed9/namespace_f7b3ed9
@@ -138,10 +138,10 @@ function function_bb5d646a(localclientnum, *oldval, *newval, *bnewent, *binitial
     var_5e7d1e09 = struct::get_array("satellite_pos", "script_noteworthy");
     satellite_pos = arraygetclosest(self.origin, var_5e7d1e09);
     util::playfxontag(bwasdemojump, #"zombie/fx9_onslaught_orb_soul", e_fx, "tag_origin");
-    e_fx moveto(e_fx.origin + vectorscale((0, 0, 1), 40), 0.8);
+    e_fx moveto(e_fx.origin + (0, 0, 40), 0.8);
     wait(0.75);
     n_time = distance(e_fx.origin, satellite_pos.origin) / 400;
-    e_fx moveto(satellite_pos.origin + vectorscale((0, 0, 1), 50), n_time);
+    e_fx moveto(satellite_pos.origin + (0, 0, 50), n_time);
     e_fx waittill(#"movedone");
     util::playfxontag(bwasdemojump, #"maps/zm_red/fx8_soul_charge_purple", e_fx, "tag_origin");
     playsound(bwasdemojump, #"hash_77a638eb74142796", e_fx.origin);
@@ -178,7 +178,7 @@ function function_a93c81b4(localclientnum) {
     self endon(#"hash_64be90d89f0d9c8b");
     self.var_1caaf1f5 = playfx(localclientnum, #"hash_55dab9c7bb0687fa", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
     wait(0.3);
-    playfx(localclientnum, #"sr/fx9_safehouse_orb_activate", self.origin + vectorscale((0, 0, 1), 30));
+    playfx(localclientnum, #"sr/fx9_safehouse_orb_activate", self.origin + (0, 0, 30));
     wait(3 - 0.3);
     stopfx(localclientnum, self.var_1caaf1f5);
     self.var_1caaf1f5 = undefined;

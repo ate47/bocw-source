@@ -126,9 +126,7 @@ function function_245cb231(var_8fb24641, objectiveid) {
         return;
     }
     spawnfilter.handle = function_4589fcae(typename);
-    /#
-        assert(isdefined(spawnfilter.handle));
-    #/
+    assert(isdefined(spawnfilter.handle));
     if (!isdefined(spawnfilter.handle)) {
         return;
     }

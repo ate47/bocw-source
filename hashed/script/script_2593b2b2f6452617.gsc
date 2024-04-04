@@ -337,7 +337,6 @@ function function_c64d2826() {
 // Size: 0x134
 function function_9c294ad5(e_player) {
     e_player endon(#"disconnect");
-    s_result = undefined;
     s_result = e_player waittill(#"hash_31f98f1ef1f33ee1", #"fake_death", #"inserted");
     e_player allowedstances("stand", "crouch", "prone");
     e_player.var_2941a093 = undefined;
@@ -355,12 +354,12 @@ function function_9c294ad5(e_player) {
 // Size: 0x230
 function function_98957f5b() {
     level endon(#"end_game");
-    v_start = self.origin + vectorscale((0, 0, 1), 32);
-    v_end = self.origin - vectorscale((0, 0, 1), 1000);
+    v_start = self.origin + (0, 0, 32);
+    v_end = self.origin - (0, 0, 1000);
     a_trace = groundtrace(v_start, v_end, 0, self, 1);
     v_ground = isdefined(a_trace[#"position"]) ? a_trace[#"position"] : self.origin;
     self playsound(#"evt_sr_obj_def_head_drop");
-    level.e_head = level function_1f14f16f(v_ground + vectorscale((0, 0, 1), 8));
+    level.e_head = level function_1f14f16f(v_ground + (0, 0, 8));
     if (isdefined(level.e_head)) {
         level.e_head.var_dd21aec2 = 1 | 16 | 134217728 | 268435456;
         level.e_head thread function_beaa3f66();
@@ -466,10 +465,10 @@ function function_15f3c92() {
     if (isdefined(self.mdl_base)) {
         self.mdl_base setscale(1.55);
     }
-    self.var_4a416ea9.var_c54337b2 = zm_utility::function_f5a222a8(#"hash_69a419877aee1334", self.var_4a416ea9.origin + vectorscale((0, 0, 1), 70));
+    self.var_4a416ea9.var_c54337b2 = zm_utility::function_f5a222a8(#"hash_69a419877aee1334", self.var_4a416ea9.origin + (0, 0, 70));
     objective_setinvisibletoall(self.var_4a416ea9.var_c54337b2);
     self waittill(#"inserted");
-    self.var_43123efe = util::spawn_model("c_t9_zmb_defense_console_head1_male", self.var_4a416ea9.origin + vectorscale((0, 0, 1), 46), self.var_4a416ea9.angles);
+    self.var_43123efe = util::spawn_model("c_t9_zmb_defense_console_head1_male", self.var_4a416ea9.origin + (0, 0, 46), self.var_4a416ea9.angles);
     if (isdefined(self.var_43123efe)) {
         self.var_43123efe show();
         self.var_43123efe thread scene::play(#"aib_t9_zm_sr_vign_cust_defend_head", "tank_loop", self.var_43123efe);
@@ -521,7 +520,6 @@ function function_bc04a76b() {
 // Checksum 0x4beeee2f, Offset: 0x2f20
 // Size: 0x2ac
 function function_f5087df2() {
-    s_result = undefined;
     s_result = self waittill(#"objective_ended", #"hash_8202877a3aadac8");
     objective_manager::stop_timer();
     foreach (player in getplayers()) {
@@ -612,7 +610,7 @@ function function_e132cdc7(instance) {
 // Checksum 0xdc9ab204, Offset: 0x3668
 // Size: 0xb4
 function function_9c54feb0(instance) {
-    self.n_objective_id = zm_utility::function_f5a222a8(#"hash_48db6906777e28d6", self.origin + vectorscale((0, 0, 1), 70));
+    self.n_objective_id = zm_utility::function_f5a222a8(#"hash_48db6906777e28d6", self.origin + (0, 0, 70));
     self thread function_80ba1bc8(instance, self.n_objective_id);
     instance waittill(#"objective_ended");
     zm_utility::function_bc5a54a8(self.n_objective_id);
@@ -683,8 +681,8 @@ function function_beaa3f66() {
 function function_57cc3128() {
     self endon(#"objective_ended", #"inserted");
     var_4a416ea9 = self.var_4a416ea9;
-    level.var_11af7d74 = zm_utility::function_f5a222a8(#"hash_39f360c41bb85464", var_4a416ea9.origin + vectorscale((0, 0, 1), 30));
-    var_7631cbaa = spawn("trigger_radius_use", var_4a416ea9.origin + vectorscale((0, 0, 1), 24), 0, 96, 96, 1);
+    level.var_11af7d74 = zm_utility::function_f5a222a8(#"hash_39f360c41bb85464", var_4a416ea9.origin + (0, 0, 30));
+    var_7631cbaa = spawn("trigger_radius_use", var_4a416ea9.origin + (0, 0, 24), 0, 96, 96, 1);
     var_7631cbaa triggerignoreteam();
     var_7631cbaa setcursorhint("HINT_NOICON");
     var_7631cbaa sethintstring(#"hash_6442cecaf6cfb0dc");
@@ -692,7 +690,6 @@ function function_57cc3128() {
     var_7631cbaa thread function_c4712107();
     var_4a416ea9 zm_utility::function_747180ea(level.var_11af7d74, undefined, var_7631cbaa);
     while (true) {
-        s_result = undefined;
         s_result = var_7631cbaa waittill(#"trigger");
         if (isalive(s_result.activator) && s_result.activator hasweapon(level.var_e4731251) && is_true(s_result.activator.var_2941a093)) {
             s_result.activator notify(#"inserted");
@@ -1271,7 +1268,6 @@ function function_b9fb6c3a(instance) {
     instance.var_5b5e7a56 = 0;
     instance.var_319626c6 = 0;
     while (true) {
-        s_result = undefined;
         s_result = self waittill(#"damage");
         if (isdefined(s_result.attacker) && isplayer(s_result.attacker)) {
             if (isdefined(s_result.amount)) {
@@ -1341,7 +1337,6 @@ function function_51779021(instance, var_63e8f3af = 3, var_321cde74 = 10) {
     self endon(#"death");
     var_3057025e = 0;
     for (var_1a944fca = gettime(); true; var_1a944fca = gettime()) {
-        s_result = undefined;
         s_result = self waittill(#"damage");
         if (self.health <= 0) {
             break;
@@ -1561,7 +1556,6 @@ function private function_df9979de(instance) {
     self endon(#"death");
     instance endon(#"objective_ended");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         self.time_to_wait = gettime() + 8000;
     }

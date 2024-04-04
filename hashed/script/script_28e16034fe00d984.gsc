@@ -63,7 +63,6 @@ function private function_5c67d66(localclientnum) {
     setuimodelvalue(self.var_e64f428b, 0);
     setuimodelvalue(self.var_f74ea54b, 0);
     while (true) {
-        ret = undefined;
         ret = self waittill(#"show_objectives");
         if (is_true(self.var_d52a8a6e)) {
             continue;
@@ -139,7 +138,6 @@ function private function_aa3ed46f(localclientnum, uimodel, var_d17dd25a) {
 function private function_6311c9e8() {
     self endon(#"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         response = waitresult.response;
         intpayload = waitresult.intpayload;

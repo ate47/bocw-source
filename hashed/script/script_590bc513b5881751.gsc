@@ -47,9 +47,7 @@ function preinit(var_9dedc222) {
 // Size: 0x100
 function function_3675de8b() {
     bundle = killstreaks::get_script_bundle("ac130");
-    /#
-        assert(isdefined(bundle));
-    #/
+    assert(isdefined(bundle));
     var_d57617dd = isdefined(bundle.var_dff95af) ? bundle.var_dff95af : 300;
     level.var_89350618 = killstreaks::function_f3875fb0(level.var_98fe5b4a, isdefined(level.var_b34c8ec8) ? level.var_b34c8ec8 : 9000, var_d57617dd, 1);
     if (isdefined(level.var_1b900c1d)) {
@@ -63,9 +61,7 @@ function function_3675de8b() {
 // Size: 0xa82
 function spawnac130(killstreaktype) {
     player = self;
-    /#
-        assert(!isdefined(level.ac130));
-    #/
+    assert(!isdefined(level.ac130));
     profilestart();
     if (is_true(player.isplanting) || is_true(player.isdefusing) || player util::isusingremote() || player iswallrunning() || player oob::isoutofbounds()) {
         profilestop();
@@ -77,9 +73,7 @@ function spawnac130(killstreaktype) {
         return 0;
     }
     bundle = killstreaks::get_script_bundle("ac130");
-    /#
-        assert(isdefined(bundle));
-    #/
+    assert(isdefined(bundle));
     spawnpos = level.mapcenter + (5000, 5000, 8000);
     level.ac130 = spawnvehicle(bundle.ksvehicle, spawnpos, (0, 0, 0), "ac130");
     level.ac130.identifier_weapon = getweapon("ac130");
@@ -108,11 +102,11 @@ function spawnac130(killstreaktype) {
     level.ac130.damagetaken = 0;
     level.ac130 thread helicopter::heli_health("ac130");
     level.ac130 setcandamage(1);
-    target_set(level.ac130, vectorscale((0, 0, -1), 100));
+    target_set(level.ac130, (0, 0, -100));
     target_setallowhighsteering(level.ac130, 1);
     level.ac130.numflares = 1;
     level.ac130.fx_flare = bundle.var_22ab738b;
-    level.ac130 helicopter::create_flare_ent(vectorscale((0, 0, -1), 25));
+    level.ac130 helicopter::create_flare_ent((0, 0, -25));
     level.ac130 thread heatseekingmissile::missiletarget_proximitydetonateincomingmissile(bundle, "death");
     level.ac130.is_still_valid_target_for_stinger_override = &function_c2bfa7e1;
     level.ac130 thread killstreak_vehicle::function_d4896942(bundle, "ac130", "ac130_shutdown");
@@ -137,7 +131,7 @@ function spawnac130(killstreaktype) {
     level.ac130.var_9d44b193 = bundle.var_693dc1fb;
     if (sessionmodeiswarzonegame()) {
         var_b0490eb9 = getheliheightlockheight(player.origin);
-        trace = groundtrace((player.origin[0], player.origin[1], var_b0490eb9), player.origin - vectorscale((0, 0, 1), 5000), 0, level.ac130);
+        trace = groundtrace((player.origin[0], player.origin[1], var_b0490eb9), player.origin - (0, 0, 5000), 0, level.ac130);
         groundheight = trace[#"position"][2];
         var_b7d4ae34 = groundheight + (var_b0490eb9 - groundheight) * bundle.var_ff73e08c;
         level.var_89350618.origin = (player.origin[0], player.origin[1], var_b7d4ae34);
@@ -161,9 +155,7 @@ function spawnac130(killstreaktype) {
 // Checksum 0x59ff2f12, Offset: 0x1118
 // Size: 0x458
 function function_4d980695(*isowner, killstreaktype) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     player = self;
     player util::setusingremote("ac130");
     player.ignoreempjammed = 1;
@@ -180,9 +172,7 @@ function function_4d980695(*isowner, killstreaktype) {
         return false;
     }
     bundle = killstreaks::get_script_bundle("ac130");
-    /#
-        assert(isdefined(bundle));
-    #/
+    assert(isdefined(bundle));
     var_fbc8efd2 = 1;
     if (isdefined(level.var_36cf2603)) {
         var_fbc8efd2 = level.var_36cf2603;
@@ -324,7 +314,6 @@ function hackedpostfunction(hacker) {
 function function_e187e17b() {
     self endon(#"death");
     for (;;) {
-        params = undefined;
         params = self waittill(#"gunner_weapon_fired");
         if (isdefined(params.projectiles) && isdefined(self.killstreak_id)) {
             foreach (projectile in params.projectiles) {
@@ -346,9 +335,7 @@ function function_7cdff810() {
         return;
     }
     hackedhealth = killstreak_bundles::get_hacked_health("ac130");
-    /#
-        assert(isdefined(hackedhealth));
-    #/
+    assert(isdefined(hackedhealth));
     if (ac130.health > hackedhealth) {
         ac130.health = hackedhealth;
     }
@@ -370,7 +357,6 @@ function waitforgameendthread() {
 // Checksum 0xcd06c04d, Offset: 0x1d08
 // Size: 0x1b2
 function waitforvtolshutdownthread(ac130) {
-    waitresult = undefined;
     waitresult = ac130 waittill(#"ac130_shutdown");
     if (!isdefined(ac130)) {
         return;
@@ -393,9 +379,7 @@ function waitforvtolshutdownthread(ac130) {
         ac130 function_cc756b8d();
         function_8721028e(ac130.owner);
     }
-    /#
-        assert(ac130.var_957d409b === 1);
-    #/
+    assert(ac130.var_957d409b === 1);
     ac130 deletedelay();
     ac130 = undefined;
 }
@@ -484,9 +468,7 @@ function function_c2bfa7e1(ent, *weapon) {
 function watchplayerteamchangethread(ac130) {
     ac130 notify(#"mothership_team_change");
     ac130 endon(#"mothership_team_change");
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     player = self;
     player endon(#"gunner_left");
     player waittill(#"joined_team", #"disconnect", #"joined_spectators");
@@ -509,9 +491,7 @@ function watchplayerteamchangethread(ac130) {
 function watchplayerexitrequestthread(player) {
     player notify(#"watchplayerexitrequestthread_singleton");
     player endon(#"watchplayerexitrequestthread_singleton");
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     ac130 = self;
     level endon(#"game_ended");
     player endon(#"disconnect", #"gunner_left");
@@ -752,7 +732,7 @@ function function_8721028e(player, var_dbcb1965 = 0, var_c3b5f258 = 0) {
         var_15f570c1 = level.ac130.origin + vectorscale(planedir, level.ac130.var_9d44b193);
         level.ac130 thread function_31d18ab9();
         if (var_dbcb1965) {
-            var_15f570c1 = var_15f570c1 + vectorscale((0, 0, -1), 8000);
+            var_15f570c1 = var_15f570c1 + (0, 0, -8000);
         }
         level.ac130 thread helicopter::heli_leave(var_15f570c1, 1);
         level.ac130 thread audio::sndupdatevehiclecontext(0);
@@ -903,13 +883,9 @@ function function_cd679760(startnode, destnodes) {
     self notify(#"flying");
     self endon(#"flying", #"crashing", #"leaving", #"death");
     bundle = killstreaks::get_script_bundle("ac130");
-    /#
-        assert(isdefined(bundle));
-    #/
+    assert(isdefined(bundle));
     nextnode = getent(startnode.target, "targetname");
-    /#
-        assert(isdefined(nextnode), "<unknown string>");
-    #/
+    assert(isdefined(nextnode), "<unknown string>");
     self setspeed(150, 80);
     self setneargoalnotifydist(100);
     self setgoal(nextnode.origin + (0, 0, 0), 1);
@@ -980,9 +956,7 @@ function watchlocationchangethread(destnodes) {
     player endon(#"disconnect", #"gunner_left");
     ac130 = level.ac130;
     bundle = killstreaks::get_script_bundle("ac130");
-    /#
-        assert(isdefined(bundle));
-    #/
+    assert(isdefined(bundle));
     ac130 endon(#"delete", #"ac130_shutdown");
     player thread setplayermovedrecentlythread();
     player.moves = 0;
@@ -1060,7 +1034,7 @@ function updateareanodes(areanodes, forcemove) {
         helinode = getent(node.target, "targetname");
         foreach (player in node.validplayers) {
             node.nodescore = node.nodescore + 1;
-            if (bullettracepassed(player.origin + vectorscale((0, 0, 1), 32), helinode.origin, 0, player)) {
+            if (bullettracepassed(player.origin + (0, 0, 32), helinode.origin, 0, player)) {
                 node.nodescore = node.nodescore + 3;
             }
         }
@@ -1089,7 +1063,7 @@ function traveltonode(goalnode) {
             heli_accel = 15 + randomint(15);
         }
         self setspeed(heli_speed, heli_accel);
-        self setgoal(originoffets[#"start"] + vectorscale((0, 0, 1), 30), 0);
+        self setgoal(originoffets[#"start"] + (0, 0, 30), 0);
         self setgoalyaw(goalnode.angles[1]);
         self waittill(#"goal");
     }
@@ -1102,7 +1076,7 @@ function traveltonode(goalnode) {
             heli_accel = 15 + randomint(15);
         }
         self setspeed(heli_speed, heli_accel);
-        self setgoal(originoffets[#"end"] + vectorscale((0, 0, 1), 30), 0);
+        self setgoal(originoffets[#"end"] + (0, 0, 30), 0);
         self setgoalyaw(goalnode.angles[1]);
         self waittill(#"goal");
     }
@@ -1117,18 +1091,16 @@ function getoriginoffsets(goalnode) {
     endorigin = goalnode.origin;
     numtraces = 0;
     maxtraces = 40;
-    traceoffset = vectorscale((0, 0, -1), 196);
+    traceoffset = (0, 0, -196);
     for (traceorigin = bullettrace(startorigin + traceoffset, endorigin + traceoffset, 0, self); distancesquared(traceorigin[#"position"], endorigin + traceoffset) > 10 && numtraces < maxtraces; traceorigin = bullettrace(startorigin + traceoffset, endorigin + traceoffset, 0, self)) {
-        /#
-            println("<unknown string>" + distancesquared(traceorigin[#"position"], endorigin + traceoffset));
-        #/
+        println("<unknown string>" + distancesquared(traceorigin[#"position"], endorigin + traceoffset));
         if (startorigin[2] < endorigin[2]) {
-            startorigin = startorigin + vectorscale((0, 0, 1), 128);
+            startorigin = startorigin + (0, 0, 128);
         } else if (startorigin[2] > endorigin[2]) {
-            endorigin = endorigin + vectorscale((0, 0, 1), 128);
+            endorigin = endorigin + (0, 0, 128);
         } else {
-            startorigin = startorigin + vectorscale((0, 0, 1), 128);
-            endorigin = endorigin + vectorscale((0, 0, 1), 128);
+            startorigin = startorigin + (0, 0, 128);
+            endorigin = endorigin + (0, 0, 128);
         }
         numtraces++;
     }
@@ -1269,9 +1241,7 @@ function function_8920217c(var_eef27eea = 0, var_dc40d987 = 0, var_c06eaeb5 = 0)
 // Checksum 0x5cacfec0, Offset: 0x5738
 // Size: 0xe0
 function function_672f2acd(var_eb87911a, var_c3c587fa, var_a382eb14) {
-    /#
-        assert(isdefined(level.var_89350618));
-    #/
+    assert(isdefined(level.var_89350618));
     level.var_98fe5b4a = [var_eb87911a[0], var_eb87911a[1]];
     level.var_b34c8ec8 = var_eb87911a[2];
     level.var_89350618.origin = var_eb87911a;

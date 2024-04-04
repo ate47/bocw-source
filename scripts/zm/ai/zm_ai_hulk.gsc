@@ -92,167 +92,85 @@ function private postinit() {
 // Checksum 0x544a837a, Offset: 0xb38
 // Size: 0x1254
 function registerbehaviorscriptfunctions() {
-    /#
-        assert(isscriptfunctionptr(&function_e7256e3d));
-    #/
+    assert(isscriptfunctionptr(&function_e7256e3d));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_7f00daebd9b421f3", &function_e7256e3d);
-    /#
-        assert(isscriptfunctionptr(&function_953cead6));
-    #/
+    assert(isscriptfunctionptr(&function_953cead6));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_455714e4f446fb3f", &function_953cead6);
-    /#
-        assert(isscriptfunctionptr(&function_aeb3f99));
-    #/
+    assert(isscriptfunctionptr(&function_aeb3f99));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2eeaba2322bd670", &function_aeb3f99);
-    /#
-        assert(isscriptfunctionptr(&function_b12bd2af));
-    #/
+    assert(isscriptfunctionptr(&function_b12bd2af));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_3f11c6b538c6490d", &function_b12bd2af);
-    /#
-        assert(isscriptfunctionptr(&function_5cb1afa4));
-    #/
+    assert(isscriptfunctionptr(&function_5cb1afa4));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_5c0880b5677284bb", &function_5cb1afa4);
-    /#
-        assert(isscriptfunctionptr(&function_13fb73f5));
-    #/
+    assert(isscriptfunctionptr(&function_13fb73f5));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_71aaff9a8a017e0f", &function_13fb73f5);
-    /#
-        assert(isscriptfunctionptr(&function_522388bb));
-    #/
+    assert(isscriptfunctionptr(&function_522388bb));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_7e0a179c4a41fc7c", &function_522388bb);
-    /#
-        assert(isscriptfunctionptr(&function_ef24e74d));
-    #/
+    assert(isscriptfunctionptr(&function_ef24e74d));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_6cace5110e683e15", &function_ef24e74d);
-    /#
-        assert(isscriptfunctionptr(&function_420bc403));
-    #/
+    assert(isscriptfunctionptr(&function_420bc403));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_57fbe167f62207e0", &function_420bc403);
-    /#
-        assert(isscriptfunctionptr(&function_43436fbe));
-    #/
+    assert(isscriptfunctionptr(&function_43436fbe));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_64202248ca017639", &function_43436fbe);
-    /#
-        assert(isscriptfunctionptr(&function_d952c34e));
-    #/
+    assert(isscriptfunctionptr(&function_d952c34e));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_3095ba7412015625", &function_d952c34e);
-    /#
-        assert(isscriptfunctionptr(&function_26f2f052));
-    #/
+    assert(isscriptfunctionptr(&function_26f2f052));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_26db78524ff4e80f", &function_26f2f052);
-    /#
-        assert(isscriptfunctionptr(&function_9d0ab285));
-    #/
+    assert(isscriptfunctionptr(&function_9d0ab285));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_1d775d88567086db", &function_9d0ab285);
-    /#
-        assert(isscriptfunctionptr(&function_81f310d1));
-    #/
+    assert(isscriptfunctionptr(&function_81f310d1));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_781a10b407c80d6e", &function_81f310d1);
-    /#
-        assert(!isdefined(&function_69a67765) || isscriptfunctionptr(&function_69a67765));
-    #/
-    /#
-        assert(!isdefined(&function_63dfbf49) || isscriptfunctionptr(&function_63dfbf49));
-    #/
-    /#
-        assert(!isdefined(&function_575afe41) || isscriptfunctionptr(&function_575afe41));
-    #/
+    assert(!isdefined(&function_69a67765) || isscriptfunctionptr(&function_69a67765));
+    assert(!isdefined(&function_63dfbf49) || isscriptfunctionptr(&function_63dfbf49));
+    assert(!isdefined(&function_575afe41) || isscriptfunctionptr(&function_575afe41));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_68cd6332b5b82ad8", &function_69a67765, &function_63dfbf49, &function_575afe41);
-    /#
-        assert(isscriptfunctionptr(&function_aeaf0515));
-    #/
+    assert(isscriptfunctionptr(&function_aeaf0515));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_659d60284acf5e4d", &function_aeaf0515);
-    /#
-        assert(isscriptfunctionptr(&function_32ac1e84));
-    #/
+    assert(isscriptfunctionptr(&function_32ac1e84));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_79a2a707b47c0856", &function_32ac1e84);
-    /#
-        assert(isscriptfunctionptr(&function_9dfb4775));
-    #/
+    assert(isscriptfunctionptr(&function_9dfb4775));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_9f7a23f18ddb154", &function_9dfb4775);
-    /#
-        assert(isscriptfunctionptr(&function_ae66a936));
-    #/
+    assert(isscriptfunctionptr(&function_ae66a936));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_69c65ff122868188", &function_ae66a936);
-    /#
-        assert(isscriptfunctionptr(&function_6d1fdca6));
-    #/
+    assert(isscriptfunctionptr(&function_6d1fdca6));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_6fba980db1d1f999", &function_6d1fdca6);
-    /#
-        assert(isscriptfunctionptr(&function_eee297ff));
-    #/
+    assert(isscriptfunctionptr(&function_eee297ff));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_7a30c8fc251c4689", &function_eee297ff);
-    /#
-        assert(isscriptfunctionptr(&function_f554cbb0));
-    #/
+    assert(isscriptfunctionptr(&function_f554cbb0));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_263ed2f9bdff7c78", &function_f554cbb0);
-    /#
-        assert(isscriptfunctionptr(&function_3962293));
-    #/
+    assert(isscriptfunctionptr(&function_3962293));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_5fb93d2dd4a17db8", &function_3962293);
-    /#
-        assert(isscriptfunctionptr(&function_2821f047));
-    #/
+    assert(isscriptfunctionptr(&function_2821f047));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_7c9fc245e3cb1889", &function_2821f047);
-    /#
-        assert(isscriptfunctionptr(&function_3962293));
-    #/
+    assert(isscriptfunctionptr(&function_3962293));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_5fb93d2dd4a17db8", &function_3962293);
-    /#
-        assert(isscriptfunctionptr(&function_c7721987));
-    #/
+    assert(isscriptfunctionptr(&function_c7721987));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_19fe79cc144d3436", &function_c7721987);
-    /#
-        assert(isscriptfunctionptr(&function_82ecc6e1));
-    #/
+    assert(isscriptfunctionptr(&function_82ecc6e1));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_587648f764f8a972", &function_82ecc6e1);
-    /#
-        assert(isscriptfunctionptr(&function_fc58de23));
-    #/
+    assert(isscriptfunctionptr(&function_fc58de23));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_3f96cb4bdf396a03", &function_fc58de23);
-    /#
-        assert(isscriptfunctionptr(&function_a484c263));
-    #/
+    assert(isscriptfunctionptr(&function_a484c263));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_6862309b4412e9d7", &function_a484c263);
-    /#
-        assert(isscriptfunctionptr(&function_e4520a56));
-    #/
+    assert(isscriptfunctionptr(&function_e4520a56));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_541eda78aa7e01b8", &function_e4520a56);
-    /#
-        assert(isscriptfunctionptr(&function_b80a0830));
-    #/
+    assert(isscriptfunctionptr(&function_b80a0830));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_76d11018e877fc89", &function_b80a0830);
-    /#
-        assert(isscriptfunctionptr(&function_38051331));
-    #/
+    assert(isscriptfunctionptr(&function_38051331));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_c8f578a5ebe8109", &function_38051331);
-    /#
-        assert(isscriptfunctionptr(&function_38051331));
-    #/
+    assert(isscriptfunctionptr(&function_38051331));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_c8f578a5ebe8109", &function_38051331);
-    /#
-        assert(isscriptfunctionptr(&function_66ad182b));
-    #/
+    assert(isscriptfunctionptr(&function_66ad182b));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_17d954b3a9e31930", &function_66ad182b);
-    /#
-        assert(isscriptfunctionptr(&function_2026dbb8));
-    #/
+    assert(isscriptfunctionptr(&function_2026dbb8));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_4e06cf6b46e3f911", &function_2026dbb8);
-    /#
-        assert(isscriptfunctionptr(&function_a781d2df));
-    #/
+    assert(isscriptfunctionptr(&function_a781d2df));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_fe15addd3aa45c6", &function_a781d2df);
-    /#
-        assert(isscriptfunctionptr(&function_4a14402c));
-    #/
+    assert(isscriptfunctionptr(&function_4a14402c));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_2f4549751701963b", &function_4a14402c);
-    /#
-        assert(isscriptfunctionptr(&function_4a14402c));
-    #/
+    assert(isscriptfunctionptr(&function_4a14402c));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2f4549751701963b", &function_4a14402c);
-    /#
-        assert(isscriptfunctionptr(&function_e662093f));
-    #/
+    assert(isscriptfunctionptr(&function_e662093f));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_324c58bd3493d425", &function_e662093f);
     animationstatenetwork::registernotetrackhandlerfunction("stomp", &function_84259878);
     animationstatenetwork::registernotetrackhandlerfunction("melee_smash", &function_f22a5b52);
@@ -420,16 +338,12 @@ function function_967133dc(var_e249b6c9, var_90afec64) {
     var_a707591e = self.maxhealth * var_e249b6c9;
     var_8a8888ba = var_7d6bb33f / var_a707591e * var_90afec64;
     if (var_8a8888ba >= 1) {
-        /#
-            println("arm_raised" + var_8a8888ba);
-        #/
+        println("arm_raised" + var_8a8888ba);
         self.maxhealth = int(self.maxhealth * var_8a8888ba);
         self.health = self.maxhealth;
         return;
     }
-    /#
-        println("<unknown string>" + var_8a8888ba);
-    #/
+    println("<unknown string>" + var_8a8888ba);
 }
 
 // Namespace zm_ai_hulk/zm_ai_hulk
@@ -488,10 +402,10 @@ function function_eb9ae5a8() {
         level.var_f1639161 = [];
     }
     self.var_f09c948a = [];
-    function_91c27ca7(#"hash_17e86f94a72b48c4", "j_knee_le", vectorscale((1, 0, 0), 64), vectorscale((1, 0, 0), 90));
-    function_91c27ca7(#"hash_17e86f94a72b48c4", "j_knee_ri", vectorscale((-1, 0, 0), 64), vectorscale((1, 0, 0), 90));
+    function_91c27ca7(#"hash_17e86f94a72b48c4", "j_knee_le", (64, 0, 0), (90, 0, 0));
+    function_91c27ca7(#"hash_17e86f94a72b48c4", "j_knee_ri", (-64, 0, 0), (90, 0, 0));
     function_91c27ca7(#"hash_52833ae5256b607", "j_head", (0, 0, 0), (0, 0, 0));
-    function_91c27ca7(#"hash_17e86f94a72b48c4", "j_pocket1_le", vectorscale((1, 0, 0), 64), vectorscale((1, 0, 0), 90));
+    function_91c27ca7(#"hash_17e86f94a72b48c4", "j_pocket1_le", (64, 0, 0), (90, 0, 0));
     arraycombine(level.var_f1639161, self.var_f09c948a, 0, 0);
     self callback::function_d8abfc3d(#"on_ai_killed", &function_30c43f47);
 }
@@ -551,7 +465,6 @@ function function_da3fbd96() {
     self endon(#"death");
     self.var_f7c25ec3 = [];
     while (true) {
-        waitresult = undefined;
         waitresult = self waittilltimeout(1, #"enemy", #"hash_416a350f212ab99c");
         if (isdefined(self.enemy) && !isdefined(self.var_f7c25ec3[self.enemy getentitynumber()])) {
             function_e5717670(self.enemy);
@@ -606,9 +519,9 @@ function function_5e2d225(enemy) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xfcddc21e, Offset: 0x35a8
 // Size: 0x70
-function function_adc73ad5(*params, var_cb7dbf62) {
-    if (isdefined(var_cb7dbf62) && isarray(var_cb7dbf62.var_f7c25ec3) && isdefined(var_cb7dbf62.var_f7c25ec3[self getentitynumber()])) {
-        var_cb7dbf62 notify(#"hash_416a350f212ab99c");
+function function_adc73ad5(*params, hulk) {
+    if (isdefined(hulk) && isarray(hulk.var_f7c25ec3) && isdefined(hulk.var_f7c25ec3[self getentitynumber()])) {
+        hulk notify(#"hash_416a350f212ab99c");
     }
 }
 
@@ -651,7 +564,7 @@ function function_6d1daa57(var_cf79a48d) {
 // Size: 0x6e
 function function_231f9a1b(var_b4e2431f) {
     /#
-        record3dtext("<unknown string>" + var_b4e2431f, self.origin + vectorscale((0, 0, 1), 10), (0, 1, 0), "<unknown string>");
+        record3dtext("<unknown string>" + var_b4e2431f, self.origin + (0, 0, 10), (0, 1, 0), "<unknown string>");
     #/
     self.var_b4e2431f = var_b4e2431f;
     self.var_7a90d4da = gettime();
@@ -779,9 +692,7 @@ function function_96319b66(entity, var_ff43be1f) {
         entity.var_f0ee16db = 1;
         return 1;
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace zm_ai_hulk/zm_ai_hulk
@@ -797,7 +708,7 @@ function private function_face3f1c(entity, var_2966e899) {
     if (!(isdefined(last_pos) && isdefined(var_76ff5a40)) || distance2dsquared(last_pos, entity.origin) > sqr(50) || math::angle_dif(var_76ff5a40, entity.angles[1] > 20)) {
         entity.var_cf651bd1[var_2966e899] = entity.origin;
         entity.var_3289efab[var_2966e899] = entity.var_621717f9[1];
-        ground_offset = vectorscale((0, 0, 1), 72);
+        ground_offset = (0, 0, 72);
         var_8d086f5 = entity.origin + ground_offset;
         forward = anglestoforward(entity.angles);
         if (var_2966e899) {
@@ -1774,7 +1685,7 @@ function private function_8a252ee4(entity) {
         var_6b1c9b42 = math::randomsign() * randomint(var_ad804014);
         target_pos = target_pos + (var_736d384, var_6b1c9b42, 0);
     }
-    target_pos = target_pos + vectorscale((0, 0, 1), 24);
+    target_pos = target_pos + (0, 0, 24);
     var_872c6826 = vectortoangles(target_pos - var_8598bad6);
     var_d54a1968 = getweapon(#"hash_194167f630c1e2e2");
     var_dd6bc3a6 = var_d54a1968.projectilespeed;
@@ -1834,11 +1745,9 @@ function private function_7d162bd0(projectile, entity) {
     level endon(#"end_game");
     self endon(#"entitydeleted");
     projectile thread function_cf57c2cb(self);
-    s_waitresult = undefined;
     s_waitresult = self waittill(#"death", #"projectile_impact_explode", #"explode", #"hash_38b24dfa52842786");
     if (s_waitresult._notify == "death") {
         self deletedelay();
-        s_waitresult = undefined;
         s_waitresult = self waittilltimeout(float(function_60d95f53()) / 1000, #"projectile_impact_explode", #"explode", #"hash_38b24dfa52842786");
         if (s_waitresult._notify == "timeout") {
             return;
@@ -1882,8 +1791,8 @@ function private function_7b5805b4(var_ab1b3515, var_ee020b9f, target_ent, var_6
     var_8c063811 = getscriptbundle("molotov_custom_settings");
     blast_radius = 65;
     self.var_ab1b3515 = var_ab1b3515;
-    level thread namespace_68a80213::function_59d981cc(self.origin + vectorscale((0, 0, 1), 18), blast_radius, target_ent, self);
-    namespace_68a80213::function_ccb2e201(self.origin + vectorscale((0, 0, 1), 18), blast_radius);
+    level thread namespace_68a80213::function_59d981cc(self.origin + (0, 0, 18), blast_radius, target_ent, self);
+    namespace_68a80213::function_ccb2e201(self.origin + (0, 0, 18), blast_radius);
     if (is_true(var_693b5357)) {
         target_ent namespace_68a80213::function_e8ad1d81(self.origin, (0, 0, 1), (0, 0, 1), var_ab1b3515.team, var_8c063811, var_ab1b3515, self);
     }
@@ -1902,7 +1811,6 @@ function private function_cf57c2cb(grenade) {
     self.takedamage = 1;
     self.health = 100;
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (waitresult.amount > 0) {
             self.health = self.health - waitresult.amount;
@@ -1951,9 +1859,7 @@ function private function_e4520a56(entity) {
 // Checksum 0x72913260, Offset: 0x86a8
 // Size: 0x10c
 function private function_fd09fbc0(entity) {
-    /#
-        assert(isdefined(entity.var_f01add23), "<unknown string>");
-    #/
+    assert(isdefined(entity.var_f01add23), "<unknown string>");
     n_players = getplayers().size;
     var_fc398f5e = n_players * 2;
     var_8214bfd5 = floor(var_fc398f5e / 4) + (3 - entity.var_f01add23 > var_fc398f5e % 4 ? 0 : 1);
@@ -2083,7 +1989,7 @@ function function_187bcbe(var_717ee5de) {
             var_fba38d14 = undefined;
         }
         while (true) {
-            var_8134d046 = vectorscale((0, 0, 1), 70);
+            var_8134d046 = (0, 0, 70);
             if (isplayer(self.target_ent) && self.target_ent isinvehicle()) {
                 var_8134d046 = self.target_ent gettagorigin("tag_eye") - self.target_ent.origin;
             }
@@ -2275,7 +2181,6 @@ function private function_c9bcf1cb(var_2f769fb1, var_1f14bda8, var_4717cb50) {
         }
     }
     self moveto(target_pos, 0.2);
-    waitresult = undefined;
     waitresult = self waittilltimeout(0.2, #"movedone");
     self.momentum_dir = vectornormalize(self.origin - prev_position);
     if (waitresult._notify === "movedone") {
@@ -2362,7 +2267,6 @@ function function_e57b9f29() {
     self clientfield::set("hs_swarm_state", 4);
     self thread function_51d2e478();
     while (isdefined(self)) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (isplayer(waitresult.attacker)) {
             function_b89cb3dc(waitresult);
@@ -2467,9 +2371,7 @@ function function_5daee27d(position, var_1a504200 = 0, radius = 1, var_f2c9c996)
     dropped = function_9cc082d2(position, 200);
     navmesh_pos = isdefined(dropped[#"point"]) ? dropped[#"point"] : undefined;
     if (!isdefined(navmesh_pos)) {
-        /#
-            println("<unknown string>" + position);
-        #/
+        println("<unknown string>" + position);
         return undefined;
     }
     node = {#origin:navmesh_pos, #var_9f62e935:[], #var_ae0e41c:[], #delay:int(float(var_1a504200) * 1000), #radius:radius, #var_ec6eb3b4:-1, #var_f2c9c996:is_true(var_f2c9c996)};
@@ -2492,9 +2394,7 @@ function function_5daee27d(position, var_1a504200 = 0, radius = 1, var_f2c9c996)
 // Size: 0x1a4
 function function_b2061e66(node1, node2) {
     if (!isarray(node1.var_9f62e935) || !isarray(node2.var_9f62e935)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return 0;
     }
     if (isinarray(node1.var_9f62e935, node2) || isinarray(node2.var_9f62e935, node1)) {
@@ -2520,9 +2420,7 @@ function function_b2061e66(node1, node2) {
 // Size: 0x1a4
 function function_4e087dd9(node1, node2) {
     if (!isarray(node1.var_ae0e41c) || !isarray(node2.var_ae0e41c)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return 0;
     }
     if (isinarray(node1.var_ae0e41c, node2) || isinarray(node2.var_ae0e41c, node1)) {
@@ -3292,8 +3190,8 @@ function function_1344db5f() {
     /#
         var_72980fe1 = getaiarchetypearray(#"hulk");
         if (isdefined(var_72980fe1)) {
-            foreach (var_cb7dbf62 in var_72980fe1) {
-                level thread function_eceecc98(var_cb7dbf62);
+            foreach (hulk in var_72980fe1) {
+                level thread function_eceecc98(hulk);
             }
             return;
         }
@@ -3309,8 +3207,8 @@ function function_36420ae4() {
     /#
         var_72980fe1 = getaiarchetypearray(#"hulk");
         if (isdefined(var_72980fe1)) {
-            foreach (var_cb7dbf62 in var_72980fe1) {
-                level thread function_8a252ee4(var_cb7dbf62);
+            foreach (hulk in var_72980fe1) {
+                level thread function_8a252ee4(hulk);
             }
         }
     #/
@@ -3340,7 +3238,6 @@ function function_571ce384() {
             while (true) {
                 goal = isdefined(closest_player.last_valid_position) ? closest_player.last_valid_position : closest_player.origin;
                 self setgoal(goal);
-                result = undefined;
                 result = self waittill(#"goal", #"bad_path");
                 if (distancesquared(goal, self.origin) < sqr(100)) {
                     break;
@@ -3362,17 +3259,17 @@ function function_c70dab2a() {
             level.var_71b09758 = 0;
         }
         level.var_71b09758 = !level.var_71b09758;
-        debug2dtext(vectorscale((1, 1, 0), 100), "<unknown string>" + level.var_71b09758, (1, 1, 1), 1, (0, 0, 0), 1, 1, 20);
+        debug2dtext((100, 100, 0), "<unknown string>" + level.var_71b09758, (1, 1, 1), 1, (0, 0, 0), 1, 1, 20);
         var_72980fe1 = getaiarchetypearray(#"hulk");
         if (!isdefined(var_72980fe1)) {
             var_72980fe1 = [];
         }
-        foreach (var_cb7dbf62 in var_72980fe1) {
+        foreach (hulk in var_72980fe1) {
             if (level.var_71b09758) {
-                var_cb7dbf62 set(#"hash_2a37902ef6fc54d8", "<unknown string>", 0);
+                hulk set(#"hash_2a37902ef6fc54d8", "<unknown string>", 0);
                 continue;
             }
-            var_cb7dbf62 reset(#"hash_2a37902ef6fc54d8", "<unknown string>");
+            hulk reset(#"hash_2a37902ef6fc54d8", "<unknown string>");
         }
     #/
 }
@@ -3387,17 +3284,17 @@ function toggle_ignore_all() {
             level.var_37acbf8e = 0;
         }
         level.var_37acbf8e = !level.var_37acbf8e;
-        debug2dtext(vectorscale((1, 1, 0), 100), "<unknown string>" + level.var_37acbf8e, (1, 1, 1), 1, (0, 0, 0), 1, 1, 20);
+        debug2dtext((100, 100, 0), "<unknown string>" + level.var_37acbf8e, (1, 1, 1), 1, (0, 0, 0), 1, 1, 20);
         var_72980fe1 = getaiarchetypearray(#"hulk");
         if (!isdefined(var_72980fe1)) {
             var_72980fe1 = [];
         }
-        foreach (var_cb7dbf62 in var_72980fe1) {
+        foreach (hulk in var_72980fe1) {
             if (level.var_37acbf8e) {
-                var_cb7dbf62 set(#"devgui_ignoreall", "<unknown string>", 1);
+                hulk set(#"devgui_ignoreall", "<unknown string>", 1);
                 continue;
             }
-            var_cb7dbf62 reset(#"devgui_ignoreall", "<unknown string>");
+            hulk reset(#"devgui_ignoreall", "<unknown string>");
         }
     #/
 }
@@ -3412,8 +3309,8 @@ function function_91f14f2() {
         if (!isdefined(var_72980fe1)) {
             var_72980fe1 = [];
         }
-        foreach (var_cb7dbf62 in var_72980fe1) {
-            var_cb7dbf62 function_967133dc();
+        foreach (hulk in var_72980fe1) {
+            hulk function_967133dc();
         }
     #/
 }
@@ -3468,7 +3365,7 @@ function function_444a834b() {
             level.var_7fecfd52 = 0;
         }
         level.var_7fecfd52 = !level.var_7fecfd52;
-        debug2dtext(vectorscale((1, 1, 0), 100), "<unknown string>" + level.var_7fecfd52, (1, 1, 1), 1, (0, 0, 0), 1, 1, 20);
+        debug2dtext((100, 100, 0), "<unknown string>" + level.var_7fecfd52, (1, 1, 1), 1, (0, 0, 0), 1, 1, 20);
         if (level.var_7fecfd52) {
             level thread function_5ef33b74();
             return;
@@ -3525,54 +3422,54 @@ function private function_5ef33b74() {
                 recordsphere(node.origin, 15, (1, 1, 0));
                 recordcircle(node.origin, node.radius, (1, 1, 0));
                 if (node.delay > 0) {
-                    record3dtext("<unknown string>" + node.delay, node.origin + vectorscale((0, 0, 1), 60), (0, 0, 0));
+                    record3dtext("<unknown string>" + node.delay, node.origin + (0, 0, 60), (0, 0, 0));
                 }
                 if (is_true(node.var_f2c9c996)) {
-                    record3dtext("<unknown string>", node.origin + vectorscale((0, 0, 1), 80), (1, 1, 0));
+                    record3dtext("<unknown string>", node.origin + (0, 0, 80), (1, 1, 0));
                 }
-                record3dtext("<unknown string>" + node.var_ec6eb3b4, node.origin + vectorscale((0, 0, -1), 50), vectorscale((1, 1, 1), 0.1));
+                record3dtext("<unknown string>" + node.var_ec6eb3b4, node.origin + (0, 0, -50), (0.1, 0.1, 0.1));
             }
             foreach (node in var_2eb1950c) {
                 recordsphere(node.origin, 15, (0, 1, 0));
                 recordcircle(node.origin, node.radius, (0, 1, 0));
                 if (node.delay > 0) {
-                    record3dtext("<unknown string>" + node.delay, node.origin + vectorscale((0, 0, 1), 60), (0, 0, 0));
+                    record3dtext("<unknown string>" + node.delay, node.origin + (0, 0, 60), (0, 0, 0));
                 }
                 if (is_true(node.var_f2c9c996)) {
-                    record3dtext("<unknown string>", node.origin + vectorscale((0, 0, 1), 80), (1, 1, 0));
+                    record3dtext("<unknown string>", node.origin + (0, 0, 80), (1, 1, 0));
                 }
-                record3dtext("<unknown string>" + node.var_ec6eb3b4, node.origin + vectorscale((0, 0, -1), 50), vectorscale((1, 1, 1), 0.1));
+                record3dtext("<unknown string>" + node.var_ec6eb3b4, node.origin + (0, 0, -50), (0.1, 0.1, 0.1));
             }
             foreach (node in level.var_84508d4d) {
                 if (!isinarray(var_2eb1950c, node) && !isinarray(var_4e59fd84, node)) {
                     recordsphere(node.origin, 15, (1, 0, 0));
                     if (node.delay > 0) {
-                        record3dtext("<unknown string>" + node.delay, node.origin + vectorscale((0, 0, 1), 60), (0, 0, 0));
+                        record3dtext("<unknown string>" + node.delay, node.origin + (0, 0, 60), (0, 0, 0));
                     }
                     if (is_true(node.var_f2c9c996)) {
-                        record3dtext("<unknown string>", node.origin + vectorscale((0, 0, 1), 80), (1, 1, 0));
+                        record3dtext("<unknown string>", node.origin + (0, 0, 80), (1, 1, 0));
                     }
-                    record3dtext("<unknown string>" + node.var_ec6eb3b4, node.origin + vectorscale((0, 0, -1), 50), vectorscale((1, 1, 1), 0.1));
+                    record3dtext("<unknown string>" + node.var_ec6eb3b4, node.origin + (0, 0, -50), (0.1, 0.1, 0.1));
                 }
                 foreach (connected in node.var_9f62e935) {
                     recordline(node.origin, connected.origin, (1, 0, 0));
                 }
             }
-            foreach (var_cb7dbf62 in var_72980fe1) {
-                recordcircle(var_cb7dbf62.origin, getdvarint(#"hash_594db65223ca8b1", 100), (1, 0.5, 0));
-                if (isdefined(var_cb7dbf62.var_11f7f094) && isdefined(var_cb7dbf62.var_808b43bf)) {
-                    record3dtext("<unknown string>" + var_cb7dbf62.var_808b43bf, var_cb7dbf62.origin, (0, 0, 1), "<unknown string>", var_cb7dbf62);
-                    record3dtext("<unknown string>" + var_cb7dbf62.var_808b43bf, var_cb7dbf62.origin, (0, 0, 1), "<unknown string>", var_cb7dbf62);
+            foreach (hulk in var_72980fe1) {
+                recordcircle(hulk.origin, getdvarint(#"hash_594db65223ca8b1", 100), (1, 0.5, 0));
+                if (isdefined(hulk.var_11f7f094) && isdefined(hulk.var_808b43bf)) {
+                    record3dtext("<unknown string>" + hulk.var_808b43bf, hulk.origin, (0, 0, 1), "<unknown string>", hulk);
+                    record3dtext("<unknown string>" + hulk.var_808b43bf, hulk.origin, (0, 0, 1), "<unknown string>", hulk);
                 }
-                if (isdefined(var_cb7dbf62.var_fe1e4b1b)) {
-                    recordsphere(var_cb7dbf62.var_fe1e4b1b + vectorscale((0, 0, 1), 30), 10, (1, 0, 1));
-                    record3dtext("<unknown string>", var_cb7dbf62.var_fe1e4b1b + vectorscale((0, 0, 1), 50), (1, 0, 1));
+                if (isdefined(hulk.var_fe1e4b1b)) {
+                    recordsphere(hulk.var_fe1e4b1b + (0, 0, 30), 10, (1, 0, 1));
+                    record3dtext("<unknown string>", hulk.var_fe1e4b1b + (0, 0, 50), (1, 0, 1));
                 }
-                if (isdefined(var_cb7dbf62.favoriteenemy)) {
-                    nodes = function_71979c65(var_cb7dbf62, var_cb7dbf62.favoriteenemy.origin);
+                if (isdefined(hulk.favoriteenemy)) {
+                    nodes = function_71979c65(hulk, hulk.favoriteenemy.origin);
                     foreach (node in nodes) {
-                        recordsphere(node.origin + vectorscale((0, 0, 1), 80), 10, (1, 0.752941, 0.796078));
-                        record3dtext("<unknown string>", node.origin + vectorscale((0, 0, 1), 100), (1, 0.752941, 0.796078));
+                        recordsphere(node.origin + (0, 0, 80), 10, (1, 0.752941, 0.796078));
+                        record3dtext("<unknown string>", node.origin + (0, 0, 100), (1, 0.752941, 0.796078));
                     }
                 }
             }

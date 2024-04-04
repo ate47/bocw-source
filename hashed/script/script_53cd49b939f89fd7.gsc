@@ -67,13 +67,9 @@ function function_63446d7f(var_c12be4a6) {
 // Checksum 0x3fbeabca, Offset: 0x2d8
 // Size: 0xde
 function function_1337c436(menu_name, target_name, alt_render_mode = 1) {
-    /#
-        assert(isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
-    #/
+    assert(isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
     menu_data = level.client_menus[menu_name];
-    /#
-        assert(!isdefined(menu_data.var_cf15815a), "<unknown string>" + menu_name + "<unknown string>");
-    #/
+    assert(!isdefined(menu_data.var_cf15815a), "<unknown string>" + menu_name + "<unknown string>");
     menu_data.var_cf15815a = target_name;
     menu_data.var_c27fdce9 = alt_render_mode;
 }
@@ -119,9 +115,7 @@ function function_e41243c1(var_e953aca6) {
 // Checksum 0x4c372d90, Offset: 0x570
 // Size: 0x1c4
 function function_f603fc4d(menu_name, target_name, xcam, sub_xcam, xcam_frame = undefined, var_1f199068 = undefined, var_2c679be0 = undefined, lerp_time = 0, lut_index = 0) {
-    /#
-        assert(!isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
-    #/
+    assert(!isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
     level.client_menus[menu_name] = {#menu_name:menu_name, #target_name:target_name, #xcam:xcam, #sub_xcam:sub_xcam, #xcam_frame:xcam_frame, #var_1f199068:function_e41243c1(var_1f199068), #var_2c679be0:function_e41243c1(var_2c679be0), #lerp_time:lerp_time, #lut_index:lut_index, #var_e57ed98b:[]};
     return level.client_menus[menu_name];
 }
@@ -131,9 +125,7 @@ function function_f603fc4d(menu_name, target_name, xcam, sub_xcam, xcam_frame = 
 // Checksum 0x2e5353a1, Offset: 0x740
 // Size: 0x130
 function function_460e6001(menu_name, session_mode, target_name, xcam, sub_xcam, xcam_frame = undefined, lerp_time = 0, lut_index = 0) {
-    /#
-        assert(isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
-    #/
+    assert(isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
     level.client_menus[menu_name].var_e57ed98b[session_mode] = {#target_name:target_name, #xcam:xcam, #sub_xcam:sub_xcam, #xcam_frame:xcam_frame, #lerp_time:lerp_time, #lut_index:lut_index};
 }
 
@@ -142,9 +134,7 @@ function function_460e6001(menu_name, session_mode, target_name, xcam, sub_xcam,
 // Checksum 0xc1e212b4, Offset: 0x878
 // Size: 0x16c
 function function_969a2881(menu_name, camera_function, has_state, var_1f199068 = undefined, var_2c679be0 = undefined, lut_index = 0, var_ef0a4d1e) {
-    /#
-        assert(!isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
-    #/
+    assert(!isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
     level.client_menus[menu_name] = {#menu_name:menu_name, #camera_function:camera_function, #has_state:has_state, #var_1f199068:function_e41243c1(var_1f199068), #var_2c679be0:function_e41243c1(var_2c679be0), #lut_index:lut_index, #var_ef0a4d1e:var_ef0a4d1e};
     return level.client_menus[menu_name];
 }
@@ -154,9 +144,7 @@ function function_969a2881(menu_name, camera_function, has_state, var_1f199068 =
 // Checksum 0x509e708e, Offset: 0x9f0
 // Size: 0x124
 function function_6425472c(menu_name, str_scene, var_f647c5b2 = undefined, var_559c5c3e = undefined, var_3e7fd594 = undefined) {
-    /#
-        assert(!isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
-    #/
+    assert(!isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
     level.client_menus[menu_name] = {#menu_name:menu_name, #str_scene:str_scene, #var_f647c5b2:var_f647c5b2, #var_559c5c3e:var_559c5c3e, #var_3e7fd594:var_3e7fd594, #states:[], #var_b80d1ad4:[]};
     return level.client_menus[menu_name];
 }
@@ -166,9 +154,7 @@ function function_6425472c(menu_name, str_scene, var_f647c5b2 = undefined, var_5
 // Checksum 0xcc35c8ce, Offset: 0xb20
 // Size: 0x6e
 function function_17384292(menu_name, callback_fn) {
-    /#
-        assert(isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
-    #/
+    assert(isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
     level.client_menus[menu_name].var_a362e358 = callback_fn;
 }
 
@@ -177,9 +163,7 @@ function function_17384292(menu_name, callback_fn) {
 // Checksum 0x2dbd8445, Offset: 0xb98
 // Size: 0x118
 function function_866692f8(menu_name, state, str_scene, var_f647c5b2 = undefined, var_559c5c3e = undefined, var_3e7fd594 = undefined) {
-    /#
-        assert(isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
-    #/
+    assert(isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
     level.client_menus[menu_name].states[state] = {#menu_name:menu_name, #str_scene:str_scene, #var_f647c5b2:var_f647c5b2, #var_559c5c3e:var_559c5c3e, #var_3e7fd594:var_3e7fd594, #var_b80d1ad4:[]};
 }
 
@@ -188,13 +172,9 @@ function function_866692f8(menu_name, state, str_scene, var_f647c5b2 = undefined
 // Checksum 0x45d5cd62, Offset: 0xcb8
 // Size: 0x16a
 function function_f852c52c(menu_name, state_name = undefined, var_a180b828 = 1, var_a7c679da = 1) {
-    /#
-        assert(isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
-    #/
+    assert(isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
     if (isdefined(state_name)) {
-        /#
-            assert(isdefined(level.client_menus[menu_name].states[state_name]), "<unknown string>" + menu_name + "<unknown string>" + state_name + "<unknown string>");
-        #/
+        assert(isdefined(level.client_menus[menu_name].states[state_name]), "<unknown string>" + menu_name + "<unknown string>" + state_name + "<unknown string>");
         level.client_menus[menu_name].states[state_name].var_b2ad82eb = var_a180b828;
         level.client_menus[menu_name].states[state_name].var_c9213d93 = var_a7c679da;
         return;
@@ -208,12 +188,8 @@ function function_f852c52c(menu_name, state_name = undefined, var_a180b828 = 1, 
 // Checksum 0xce60abb3, Offset: 0xe30
 // Size: 0x15c
 function function_8950260c(menu_name, from_state = "__default__", to_state = "__default__", str_shot) {
-    /#
-        assert(from_state !== to_state, "<unknown string>" + menu_name + "<unknown string>" + (isdefined(from_state) ? "<unknown string>" + from_state : "<unknown string>") + "<unknown string>");
-    #/
-    /#
-        assert(isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
-    #/
+    assert(from_state !== to_state, "<unknown string>" + menu_name + "<unknown string>" + (isdefined(from_state) ? "<unknown string>" + from_state : "<unknown string>") + "<unknown string>");
+    assert(isdefined(level.client_menus[menu_name]), "<unknown string>" + menu_name + "<unknown string>");
     menu = level.client_menus[menu_name];
     if (from_state != "__default__" && isdefined(menu.states[from_state])) {
         menu.states[from_state].var_b80d1ad4[to_state] = str_shot;
@@ -227,9 +203,7 @@ function function_8950260c(menu_name, from_state = "__default__", to_state = "__
 // Checksum 0x7a8e880c, Offset: 0xf98
 // Size: 0x10c
 function function_de0ab(menu_name, var_42d665b7) {
-    /#
-        assert(isdefined(level.client_menus[menu_name]));
-    #/
+    assert(isdefined(level.client_menus[menu_name]));
     if (!isdefined(level.client_menus[menu_name].var_1f199068)) {
         level.client_menus[menu_name].var_1f199068 = [];
     } else if (!isarray(level.client_menus[menu_name].var_1f199068)) {
@@ -243,9 +217,7 @@ function function_de0ab(menu_name, var_42d665b7) {
 // Checksum 0x940ac1b5, Offset: 0x10b0
 // Size: 0x10c
 function function_13b48f53(menu_name, var_34fd6dc0) {
-    /#
-        assert(isdefined(level.client_menus[menu_name]));
-    #/
+    assert(isdefined(level.client_menus[menu_name]));
     if (!isdefined(level.client_menus[menu_name].var_2c679be0)) {
         level.client_menus[menu_name].var_2c679be0 = [];
     } else if (!isarray(level.client_menus[menu_name].var_2c679be0)) {
@@ -384,9 +356,7 @@ function function_6d469004(var_e3315405, var_8de6b51a) {
 // Checksum 0xc2509714, Offset: 0x1b48
 // Size: 0x1b8
 function function_55d56772(var_7271d7d6, var_8176b3c, var_5e806f4a, var_b5964062, var_a62e11c1) {
-    /#
-        assert(isdefined(level.client_menus[var_b5964062]), "<unknown string>" + var_b5964062 + "<unknown string>");
-    #/
+    assert(isdefined(level.client_menus[var_b5964062]), "<unknown string>" + var_b5964062 + "<unknown string>");
     var_2e96e768 = {#var_a62e11c1:var_a62e11c1, #var_8176b3c:var_8176b3c, #var_5e806f4a:var_5e806f4a, #var_b1e821c5:var_7271d7d6};
     if (!isdefined(level.client_menus[var_b5964062].var_386948ca)) {
         level.client_menus[var_b5964062].var_386948ca = [];
@@ -421,7 +391,6 @@ function client_menus(local_client_num) {
     level.var_a14cc36b[local_client_num] = [];
     clientmenustack = level.var_a14cc36b[local_client_num];
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill("menu_change" + local_client_num);
         menu_name = waitresult.menu;
         status = waitresult.status;
@@ -454,9 +423,7 @@ function client_menus(local_client_num) {
             /#
                 if (menu_index != 0) {
                     var_12fe97ab = function_2a35a5f(clientmenustack);
-                    /#
-                        assertmsg("<unknown string>" + local_client_num + "<unknown string>" + menu_name + "<unknown string>" + var_12fe97ab);
-                    #/
+                    assertmsg("<unknown string>" + local_client_num + "<unknown string>" + menu_name + "<unknown string>" + var_12fe97ab);
                 }
             #/
             if (menu_index == 0) {
@@ -476,9 +443,7 @@ function client_menus(local_client_num) {
             /#
                 if (menu_index != 0) {
                     var_12fe97ab = function_2a35a5f(clientmenustack);
-                    /#
-                        assertmsg("<unknown string>" + local_client_num + "<unknown string>" + menu_name + "<unknown string>" + var_12fe97ab);
-                    #/
+                    assertmsg("<unknown string>" + local_client_num + "<unknown string>" + menu_name + "<unknown string>" + var_12fe97ab);
                 }
             #/
             var_80c09ee8 = clientmenustack[0];
@@ -493,12 +458,8 @@ function client_menus(local_client_num) {
 // Checksum 0xee14d0cc, Offset: 0x22f0
 // Size: 0x23c
 function function_befcd4f0(str_scene, var_f647c5b2, var_559c5c3e, var_472bee8f, var_b1e821c5) {
-    /#
-        assert(!isdefined(var_f647c5b2) || function_9730988a(str_scene, var_f647c5b2), "<unknown string>" + str_scene + "<unknown string>" + (isdefined(var_f647c5b2) ? "<unknown string>" + var_f647c5b2 : "<unknown string>"));
-    #/
-    /#
-        assert(!isdefined(var_559c5c3e) || function_9730988a(str_scene, var_559c5c3e), "<unknown string>" + str_scene + "<unknown string>" + (isdefined(var_559c5c3e) ? "<unknown string>" + var_559c5c3e : "<unknown string>"));
-    #/
+    assert(!isdefined(var_f647c5b2) || function_9730988a(str_scene, var_f647c5b2), "<unknown string>" + str_scene + "<unknown string>" + (isdefined(var_f647c5b2) ? "<unknown string>" + var_f647c5b2 : "<unknown string>"));
+    assert(!isdefined(var_559c5c3e) || function_9730988a(str_scene, var_559c5c3e), "<unknown string>" + str_scene + "<unknown string>" + (isdefined(var_559c5c3e) ? "<unknown string>" + var_559c5c3e : "<unknown string>"));
     level notify(#"hash_46855140938f532c");
     level endon(#"hash_46855140938f532c");
     if (isdefined(var_472bee8f)) {

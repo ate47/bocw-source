@@ -7,22 +7,6 @@
 // Method(s) 10 Total 17
 class class_ab111f2c : cluielem {
 
-    // Namespace class_ab111f2c/cp_hint_text
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x895d9d63, Offset: 0x418
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_ab111f2c/cp_hint_text
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xc5df173, Offset: 0x7c0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_ab111f2c/cp_hint_text
     // Params 1, eflags: 0x2 linked
     // Checksum 0x76afe754, Offset: 0x5f0
@@ -36,9 +20,9 @@ class class_ab111f2c : cluielem {
     // Checksum 0x2a493ab8, Offset: 0x6d0
     // Size: 0x6c
     function function_1c78fe1e(localclientnum) {
-        current_val = [[ self ]]->get_data(localclientnum, "fadeout");
+        current_val = get_data(localclientnum, "fadeout");
         new_val = (current_val + 1) % 2;
-        [[ self ]]->set_data(localclientnum, "fadeout", new_val);
+        set_data(localclientnum, "fadeout", new_val);
     }
 
     // Namespace namespace_ab111f2c/cp_hint_text
@@ -54,9 +38,9 @@ class class_ab111f2c : cluielem {
     // Checksum 0x46ef0c30, Offset: 0x658
     // Size: 0x6c
     function function_64d95cad(localclientnum) {
-        current_val = [[ self ]]->get_data(localclientnum, "display_blink");
+        current_val = get_data(localclientnum, "display_blink");
         new_val = (current_val + 1) % 2;
-        [[ self ]]->set_data(localclientnum, "display_blink", new_val);
+        set_data(localclientnum, "display_blink", new_val);
     }
 
     // Namespace namespace_ab111f2c/cp_hint_text
@@ -76,7 +60,7 @@ class class_ab111f2c : cluielem {
     // Checksum 0x60271853, Offset: 0x620
     // Size: 0x30
     function function_a16f86c1(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "hint_text", value);
+        set_data(localclientnum, "hint_text", value);
     }
 
     // Namespace namespace_ab111f2c/cp_hint_text
@@ -84,9 +68,9 @@ class class_ab111f2c : cluielem {
     // Checksum 0x2d146011, Offset: 0x748
     // Size: 0x6c
     function function_a981d6b6(localclientnum) {
-        current_val = [[ self ]]->get_data(localclientnum, "display_noblink");
+        current_val = get_data(localclientnum, "display_noblink");
         new_val = (current_val + 1) % 2;
-        [[ self ]]->set_data(localclientnum, "display_noblink", new_val);
+        set_data(localclientnum, "display_noblink", new_val);
     }
 
     // Namespace namespace_ab111f2c/cp_hint_text
@@ -95,10 +79,10 @@ class class_ab111f2c : cluielem {
     // Size: 0xa0
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "hint_text", #"");
-        [[ self ]]->set_data(localclientnum, "display_blink", 0);
-        [[ self ]]->set_data(localclientnum, "fadeout", 0);
-        [[ self ]]->set_data(localclientnum, "display_noblink", 0);
+        set_data(localclientnum, "hint_text", #"");
+        set_data(localclientnum, "display_blink", 0);
+        set_data(localclientnum, "fadeout", 0);
+        set_data(localclientnum, "display_noblink", 0);
     }
 
 }

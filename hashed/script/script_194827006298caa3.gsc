@@ -78,7 +78,7 @@ function private function_8ebf52b6(instance) {
     s_start = instance.contentgroups[#"start"][0];
     instance.trigger = content_manager::spawn_interact(s_start, &function_dbeb7b0f, #"hash_38e8b4d1311b4a2d", undefined, 100);
     instance.trigger.instance = instance;
-    instance.var_ec694b2c = util::spawn_model(#"hash_7893e6c7d1cf2d74", s_start.origin - vectorscale((0, 0, 1), 8));
+    instance.var_ec694b2c = util::spawn_model(#"hash_7893e6c7d1cf2d74", s_start.origin - (0, 0, 8));
     instance.var_ec694b2c setscale(3);
     instance.var_ec694b2c function_619a5c20();
     instance.var_ec694b2c ghost();
@@ -160,7 +160,7 @@ function private function_deefa538(instance) {
     var_347a4920 playsound(#"hash_149945a98c1798a6");
     var_347a4920 playloopsound(#"hash_3b2e8e212c9bfb8a");
     level thread function_963ac9d8(var_347a4920);
-    fx::play(#"hash_78d88a4dc6405970", var_10d9fd32 + vectorscale((0, 0, 1), 5000), undefined, 10);
+    fx::play(#"hash_78d88a4dc6405970", var_10d9fd32 + (0, 0, 5000), undefined, 10);
     wait(1.5);
     instance.var_eb48250f = function_8a9ecf71(instance, var_eb92deab, var_b6947716, &function_57a97c81);
     instance.var_f2d5c926 = function_8a9ecf71(instance, var_ea63e380, var_532e237f, &function_ca46226a);
@@ -348,7 +348,6 @@ function private function_57a97c81(instance, spawn) {
             self setgoal(self.var_6b51e390.origin);
             self thread function_c292b3fe(self.var_6b51e390.origin, instance);
         }
-        s_result = undefined;
         s_result = self waittill(#"hash_11eeb7d23f82d744", #"hash_2e9e1859076296fb");
         if (s_result._notify === #"hash_11eeb7d23f82d744") {
             arrayremovevalue(instance.a_goals, self.var_6b51e390);
@@ -404,7 +403,7 @@ function private function_ca46226a(instance, *spawn) {
         if (!isalive(var_5e61a2e7)) {
             var_5e61a2e7 = arraygetclosest(self.origin, spawn.var_eb48250f);
             if (isdefined(var_5e61a2e7)) {
-                var_b41c0723 = vectorscale((0, 1, 0), 360) - var_5e61a2e7.spawn.angles;
+                var_b41c0723 = (0, 360, 0) - var_5e61a2e7.spawn.angles;
                 var_5d615ad6 = namespace_77bd50da::function_81cad6d6(self.spawn.origin - var_5e61a2e7.spawn.origin, var_1b1eb410);
             }
         }
@@ -428,7 +427,6 @@ function private function_ca46226a(instance, *spawn) {
         v_goal = getclosestpointonnavmesh(v_goal, 128, 32);
         if (isdefined(v_goal)) {
             self setgoal(v_goal);
-            s_result = undefined;
             s_result = self waittilltimeout(1.5, #"goal");
             var_de5b3f09 = 0;
             if (s_result._notify === "goal") {
@@ -579,18 +577,14 @@ function private function_9974f649(*eventstruct) {
                     ai callback::function_d8abfc3d(#"on_ai_killed", &function_9974f649);
                     ai callback::function_d8abfc3d(#"hash_4afe635f36531659", &function_92184323);
                     ai thread namespace_2c949ef8::function_1c491c2b();
-                    /#
-                        println("<unknown string>");
-                    #/
+                    println("<unknown string>");
                 }
                 if (isalive(ai.var_42fce69b) && !is_true(ai.var_42fce69b.var_20841367)) {
                     ai.var_42fce69b.var_20841367 = 1;
                     ai.var_42fce69b callback::function_d8abfc3d(#"on_ai_killed", &function_9974f649);
                     ai.var_42fce69b callback::function_d8abfc3d(#"hash_4afe635f36531659", &function_92184323);
                     ai.var_42fce69b thread namespace_2c949ef8::function_1c491c2b();
-                    /#
-                        println("<unknown string>");
-                    #/
+                    println("<unknown string>");
                 }
             }
             return;
@@ -618,7 +612,7 @@ function private function_ca912561(instance) {
         player zm_stats::increment_challenge_stat(#"hash_3b540abd221a6d9");
     }
     if (isentity(self)) {
-        traceresult = physicstraceex(self getcentroid(), self getcentroid() - vectorscale((0, 0, 1), 1000), vectorscale((-1, -1, 0), 15), (15, 15, 72));
+        traceresult = physicstraceex(self getcentroid(), self getcentroid() - (0, 0, 1000), (-15, -15, 0), (15, 15, 72));
         v_drop = traceresult[#"position"];
         if (!isdefined(v_drop)) {
             v_drop = self.origin;
@@ -643,9 +637,7 @@ function private function_d3d7a798(ai) {
     while (isdefined(instance) && !is_true(instance.var_ca912561)) {
         function_1eaaceab(instance.a_ai);
         if (!isdefined(instance.a_ai) || instance.a_ai.size <= 0) {
-            /#
-                println("<unknown string>");
-            #/
+            println("<unknown string>");
             if (instance flag::get(#"cleanup")) {
                 return;
             }
@@ -658,9 +650,7 @@ function private function_d3d7a798(ai) {
                         println("<unknown string>" + ai_name + "<unknown string>" + var_f077a87e getentitynumber() + "<unknown string>" + var_f077a87e.origin);
                     #/
                     if (var_f077a87e.origin[2] < -1000) {
-                        /#
-                            println("<unknown string>" + ai_name + "<unknown string>" + var_f077a87e getentitynumber() + "<unknown string>");
-                        #/
+                        println("<unknown string>" + ai_name + "<unknown string>" + var_f077a87e getentitynumber() + "<unknown string>");
                         var_f077a87e.allowdeath = 1;
                         var_f077a87e kill();
                     }
@@ -669,9 +659,7 @@ function private function_d3d7a798(ai) {
         }
         wait(2);
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
@@ -685,7 +673,7 @@ function private function_f0abbc8b() {
     spawn = self.spawn;
     var_55e11aa9 = util::spawn_model("tag_origin", self.origin, spawn.angles);
     self linkto(var_55e11aa9);
-    var_55e11aa9.origin = self.origin + vectorscale((0, 0, 1), 5000);
+    var_55e11aa9.origin = self.origin + (0, 0, 5000);
     level fx::play(#"hash_2520b0c56a09da9d", spawn.origin, undefined, 6);
     wait(0.25);
     str_anim = self function_4cb6cdb8();

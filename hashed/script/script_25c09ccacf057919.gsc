@@ -409,7 +409,7 @@ function function_d6a44f15(str_instance) {
         host = getplayers()[0];
         v_forward = anglestoforward(host getplayerangles());
         v_forward = vectorscale(v_forward, 4000);
-        var_5927a215 = vectorscale((1, 1, 1), 10);
+        var_5927a215 = (10, 10, 10);
         v_eye = host getplayercamerapos();
         var_abd03397 = physicstrace(v_eye, v_eye + v_forward, -1 * var_5927a215, var_5927a215, getplayers()[0], 64 | 2);
         v_origin = var_abd03397[#"position"];
@@ -855,21 +855,21 @@ function function_6559555e() {
                 if (level.var_59a2c772) {
                     if (getplayers()[0] fragbuttonpressed()) {
                         debug2dtext((50, 530, 0), "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
-                        debug2dtext((50, 530, 0) + vectorscale((0, 1, 0), 20), "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
-                        debug2dtext((50, 530, 0) + vectorscale((0, 1, 0), 20) * 2, "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
+                        debug2dtext((50, 530, 0) + (0, 20, 0), "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
+                        debug2dtext((50, 530, 0) + (0, 20, 0) * 2, "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
                     } else if (getplayers()[0] adsbuttonpressed()) {
                         debug2dtext((50, 530, 0), "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
-                        debug2dtext((50, 530, 0) + vectorscale((0, 1, 0), 20), "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
-                        debug2dtext((50, 530, 0) + vectorscale((0, 1, 0), 20) * 2, "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
-                        debug2dtext((50, 530, 0) + vectorscale((0, 1, 0), 20) * 3, "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
-                        debug2dtext((50, 530, 0) + vectorscale((0, 1, 0), 20) * 4, "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
+                        debug2dtext((50, 530, 0) + (0, 20, 0), "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
+                        debug2dtext((50, 530, 0) + (0, 20, 0) * 2, "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
+                        debug2dtext((50, 530, 0) + (0, 20, 0) * 3, "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
+                        debug2dtext((50, 530, 0) + (0, 20, 0) * 4, "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
                     } else {
                         debug2dtext((50, 530, 0), "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
-                        debug2dtext((50, 530, 0) + vectorscale((0, 1, 0), 20), "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
-                        debug2dtext((50, 530, 0) + vectorscale((0, 1, 0), 20) * 2, "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
-                        debug2dtext((50, 530, 0) + vectorscale((0, 1, 0), 20) * 3, "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
-                        debug2dtext((50, 530, 0) + vectorscale((0, 1, 0), 20) * 4, "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
-                        debug2dtext((50, 530, 0) + vectorscale((0, 1, 0), 20) * 5, "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
+                        debug2dtext((50, 530, 0) + (0, 20, 0), "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
+                        debug2dtext((50, 530, 0) + (0, 20, 0) * 2, "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
+                        debug2dtext((50, 530, 0) + (0, 20, 0) * 3, "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
+                        debug2dtext((50, 530, 0) + (0, 20, 0) * 4, "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
+                        debug2dtext((50, 530, 0) + (0, 20, 0) * 5, "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
                     }
                     debug2dtext((640, 25, 0), "<unknown string>", undefined, undefined, undefined, 1, 0.8, 1);
                     function_c88700();
@@ -1103,7 +1103,7 @@ function function_c88700() {
 // Size: 0xda
 function function_5fcc703c() {
     /#
-        v_ground = groundtrace(self.origin + vectorscale((0, 0, 1), 8), self.origin + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
+        v_ground = groundtrace(self.origin + (0, 0, 8), self.origin + (0, 0, -100000), 0, self)[#"position"];
         var_b8c346f = self getpointinbounds(0, 0, -1);
         n_z_diff = var_b8c346f[2] - v_ground[2];
         self.origin = (self.origin[0], self.origin[1], self.origin[2] - n_z_diff);

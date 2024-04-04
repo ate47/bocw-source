@@ -8,21 +8,8 @@
 // Method(s) 7 Total 14
 class cvehicleturretoverheat : cluielem {
 
-    // Namespace cvehicleturretoverheat/vehicleturretoverheat
-    // Params 0, eflags: 0x8
-    // Checksum 0xb6920732, Offset: 0x230
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cvehicleturretoverheat/vehicleturretoverheat
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xb1d7e39c, Offset: 0x468
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace cvehicleturretoverheat/vehicleturretoverheat
     // Params 2, eflags: 0x0
@@ -56,18 +43,14 @@ class cvehicleturretoverheat : cluielem {
     // Size: 0xcc
     function set_state(player, state_name) {
         if (#"defaultstate" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 0);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 0);
             return;
         }
         if (#"overheat" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 1);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 1);
             return;
         }
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
     }
 
     // Namespace cvehicleturretoverheat/vehicleturretoverheat
@@ -75,7 +58,7 @@ class cvehicleturretoverheat : cluielem {
     // Checksum 0x60616771, Offset: 0x418
     // Size: 0x44
     function set_bar_percent(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "bar_percent", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "bar_percent", value);
     }
 
 }

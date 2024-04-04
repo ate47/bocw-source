@@ -107,7 +107,7 @@ function dog_projectile_fx(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x10c
 function private dog_launcher_explode_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
-        self.fx = playfx(fieldname, #"hash_1a93b9b31b5d1d3b", self.origin + vectorscale((0, 0, 1), 18), anglestoup(self.angles));
+        self.fx = playfx(fieldname, #"hash_1a93b9b31b5d1d3b", self.origin + (0, 0, 18), anglestoup(self.angles));
         self playsound(fieldname, #"hash_6a76932cce379c66");
         function_16f54168(fieldname, self.origin, 750, 0.75, 0.3, 0.75, 0.5);
     }
@@ -218,7 +218,6 @@ function private function_2a4100e7(localclientnum) {
 function private function_7622c629(localclientnum) {
     self endon(#"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"hs_turn_off_fx");
         switch (waitresult._notify) {
         case #"hs_turn_off_fx":
@@ -330,7 +329,7 @@ function private function_d61b9cf2(localclientnum, *oldval, *newval, *bnewent, *
 function private function_e54f99c7(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
     if (bwastimejump == 1) {
-        self.fx_ent = util::spawn_model(fieldname, #"tag_origin", self.origin, vectorscale((-1, 0, 0), 90));
+        self.fx_ent = util::spawn_model(fieldname, #"tag_origin", self.origin, (-90, 0, 0));
         self.fx_ent thread function_456a451e();
         return;
     }

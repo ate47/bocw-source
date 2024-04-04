@@ -453,14 +453,14 @@ function function_b0613540() {
                     self iprintlnbold("zmb_music_box" + self.var_c069e1cd);
                 }
                 text_pos = (50, 200, 0);
-                var_609025d8 = vectorscale((0, 1, 0), 30);
+                var_609025d8 = (0, 30, 0);
                 var_6fbe10c9 = self getentitynumber();
                 text = "dog_round" + var_6fbe10c9 + "zombie_riser_fx_lowg" + (isdefined(self.var_c069e1cd) ? self.var_c069e1cd : 0);
                 debug2dtext(text_pos + var_609025d8 * var_6fbe10c9, text, function_1a01f2f7(self) ? (1, 0, 0) : (0, 1, 0), 1, (0, 0, 0), 1);
                 if (var_655d056a !== self.var_c069e1cd) {
                     println(text);
                 }
-                sphere_pos = self getplayercamerapos() + anglestoforward(self getplayerangles()) * 50 + vectorscale((0, 0, 1), 15) + anglestoright(self getplayerangles()) * 25;
+                sphere_pos = self getplayercamerapos() + anglestoforward(self getplayerangles()) * 50 + (0, 0, 15) + anglestoright(self getplayerangles()) * 25;
                 sphere(sphere_pos, 3, function_1a01f2f7(self) ? (1, 0, 0) : (0, 1, 0), 1, 0, 10, 1);
                 debugstar(sphere_pos, 1, function_1a01f2f7(self) ? (1, 0, 0) : (0, 1, 0));
             }
@@ -503,11 +503,7 @@ function function_d5766919(killstreaktype) {
 // Checksum 0xfd59a63a, Offset: 0x2b38
 // Size: 0x7c
 function function_23ae4c41(*params) {
-    /#
-        /#
-            assert(getaicount() <= getailimit(), "MOD_MELEE" + getaicount() + "quadkill" + getailimit());
-        #/
-    #/
+    assert(getaicount() <= getailimit(), "MOD_MELEE" + getaicount() + "quadkill" + getailimit());
 }
 
 // Namespace zm/zm
@@ -605,9 +601,7 @@ function onallplayersready() {
     while (!getnumexpectedplayers(1)) {
         waitframe(1);
     }
-    /#
-        println("killingBlow" + getnumexpectedplayers(1));
-    #/
+    println("killingBlow" + getnumexpectedplayers(1));
     player_count_actual = 0;
     while (player_count_actual < getnumexpectedplayers(1)) {
         players = getplayers();
@@ -617,15 +611,11 @@ function onallplayersready() {
                 player_count_actual++;
             }
         }
-        /#
-            println("LB_ZM_GB_PERKS_DRANK_AT " + getnumconnectedplayers() + "<unknown string>" + getnumexpectedplayers(1));
-        #/
+        println("LB_ZM_GB_PERKS_DRANK_AT " + getnumconnectedplayers() + "<unknown string>" + getnumexpectedplayers(1));
         waitframe(1);
     }
     setinitialplayersconnected();
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     a_e_players = getplayers();
     if (a_e_players.size == 1) {
         level flag::set("solo_game");
@@ -741,7 +731,6 @@ function _outro_slow(func) {
     level endon(#"all_players_connected", #"game_ended");
     array::thread_all(getplayers(), func);
     while (true) {
-        result = undefined;
         result = level waittill(#"connected");
         result.player thread [[ func ]]();
     }
@@ -816,9 +805,7 @@ function post_all_players_connected() {
     level.var_aaf21bbb = level.players.size;
     level.var_5caadd40 = function_58385b58(#"allies").size;
     setteamspyplane(#"allies", 1);
-    /#
-        println("<unknown string>", level.script, "<unknown string>", getplayers().size);
-    #/
+    println("<unknown string>", level.script, "<unknown string>", getplayers().size);
     level thread round_end_monitor();
     if (!level.zombie_anim_intro) {
         if (isdefined(level._round_start_func)) {
@@ -2032,7 +2019,6 @@ function round_end_monitor() {
 function function_51133aa1() {
     level endon(#"resume_end_game");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         response = waitresult.response;
         if (response == "restart_level_zm") {
@@ -2158,7 +2144,6 @@ function function_1bcdea84() {
 // Checksum 0x437d95ac, Offset: 0xa550
 // Size: 0x150a
 function end_game() {
-    waitresult = undefined;
     waitresult = level waittill(#"end_game");
     if (!isdefined(level.winningteam)) {
         level.winningteam = #"draw";
@@ -2854,11 +2839,7 @@ function function_be95f56d(event) {
     if (is_true(level.var_41eb9e50)) {
         var_1c6aa4bd = getdvarfloat(#"hash_16b2dc4785de5e55", 0.5);
     }
-    /#
-        /#
-            assert(isdefined(var_debc856d) && isdefined(var_652c6235) && isdefined(var_20eefff5) && isdefined(var_b0620785) && isdefined(var_1c6aa4bd), "<unknown string>");
-        #/
-    #/
+    assert(isdefined(var_debc856d) && isdefined(var_652c6235) && isdefined(var_20eefff5) && isdefined(var_b0620785) && isdefined(var_1c6aa4bd), "<unknown string>");
     return var_b0620785 * var_20eefff5 * var_652c6235 * var_debc856d * var_1c6aa4bd;
 }
 
@@ -2889,12 +2870,8 @@ function function_d3113f01(var_bfe774a8) {
     var_ee65a0a8 = isdefined(level.var_acd0f67e) ? level.var_acd0f67e : 0;
     var_931577c = isdefined(function_302bd0b9().var_4f7d48d7) ? function_302bd0b9().var_4f7d48d7 : #"gamedata/tables/zm/zm_perroundxp.csv";
     /#
-        /#
-            assert(isdefined(var_931577c), "<unknown string>");
-        #/
-        /#
-            assert(tablelookupcolumnforrow(var_931577c, 0, 0) == 1, "<unknown string>");
-        #/
+        assert(isdefined(var_931577c), "<unknown string>");
+        assert(tablelookupcolumnforrow(var_931577c, 0, 0) == 1, "<unknown string>");
     #/
     if (!isdefined(var_bfe774a8)) {
         if (zm_utility::is_survival()) {

@@ -140,8 +140,8 @@ function function_87a4de18(localclientnum) {
     if (!isdefined(self)) {
         return;
     }
-    var_348db091 = playfx(localclientnum, "zm_ai/fx9_hound_plague_dth_aoe", self.origin + vectorscale((0, 0, 1), 18), anglestoup(self.angles));
-    var_18407835 = self.origin + vectorscale((0, 0, 1), 18);
+    var_348db091 = playfx(localclientnum, "zm_ai/fx9_hound_plague_dth_aoe", self.origin + (0, 0, 18), anglestoup(self.angles));
+    var_18407835 = self.origin + (0, 0, 18);
     self playsound(localclientnum, #"hash_1cbebe710791b56c");
     audio::playloopat(#"hash_155791cb3cba6094", var_18407835);
     wait(3.9);

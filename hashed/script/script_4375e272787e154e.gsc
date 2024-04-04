@@ -56,9 +56,7 @@ function function_b69a4f47(var_2f252ea4) {
 // Checksum 0x28e654a6, Offset: 0x338
 // Size: 0x17c
 function function_e7722af4(localclientnum, *oldval, newval, *bnewent, *binitialsnap, fieldname, *bwastimejump) {
-    /#
-        println("<unknown string>" + bwastimejump);
-    #/
+    println("<unknown string>" + bwastimejump);
     postfxbundle = getscriptbundle(bwastimejump);
     if (!isdefined(postfxbundle)) {
         return;
@@ -68,17 +66,13 @@ function function_e7722af4(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (fieldname > 0) {
         if (!function_148ccc79(binitialsnap, postfxbundle.var_aaf5aae7)) {
-            /#
-                println("<unknown string>" + postfxbundle.var_aaf5aae7);
-            #/
+            println("<unknown string>" + postfxbundle.var_aaf5aae7);
             function_a837926b(binitialsnap, postfxbundle.var_aaf5aae7);
         }
         return;
     }
     if (function_148ccc79(binitialsnap, postfxbundle.var_aaf5aae7)) {
-        /#
-            println("<unknown string>" + postfxbundle.var_aaf5aae7);
-        #/
+        println("<unknown string>" + postfxbundle.var_aaf5aae7);
         codestoppostfxbundlelocal(binitialsnap, postfxbundle.var_aaf5aae7);
     }
 }

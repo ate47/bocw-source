@@ -50,9 +50,7 @@ function set_default_callbacks() {
 // Checksum 0xcb80f4cc, Offset: 0x2f8
 // Size: 0x7c
 function localclientconnect(localclientnum) {
-    /#
-        println("<unknown string>" + localclientnum);
-    #/
+    println("<unknown string>" + localclientnum);
     if (isdefined(level.charactercustomizationsetup)) {
         [[ level.charactercustomizationsetup ]](localclientnum);
     }
@@ -114,9 +112,7 @@ function entityspawned(localclientnum) {
         return;
     }
     if (!isdefined(self.type)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
     if (self.type == "missile") {
@@ -222,12 +218,8 @@ function airsupport(*localclientnum, x, y, z, type, yaw, team, teamfaction, owne
         owner = #"russian";
         break;
     default:
-        /#
-            println("<unknown string>");
-        #/
-        /#
-            println("<unknown string>" + owner + "<unknown string>");
-        #/
+        println("<unknown string>");
+        println("<unknown string>" + owner + "<unknown string>");
         owner = #"marines";
         break;
     }
@@ -242,9 +234,7 @@ function airsupport(*localclientnum, x, y, z, type, yaw, team, teamfaction, owne
         teamfaction = #"none";
         break;
     default:
-        /#
-            println("<unknown string>" + teamfaction + "<unknown string>");
-        #/
+        println("<unknown string>" + teamfaction + "<unknown string>");
         teamfaction = #"allies";
         break;
     }
@@ -315,9 +305,7 @@ function creating_corpse(localclientnum, player) {
 // Size: 0x96
 function callback_emp(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self.emp = bwastimejump;
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     if (bwastimejump) {
         self notify(#"emp");
         return;

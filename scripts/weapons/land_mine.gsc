@@ -66,9 +66,7 @@ function function_14428e95(var_cd03ffa) {
     var_cd03ffa.var_10efd558 = "switched_field_upgrade";
     if (isdefined(var_cd03ffa.weapon.customsettings)) {
         var_6f1c6122 = getscriptbundle(var_cd03ffa.weapon.customsettings);
-        /#
-            assert(isdefined(var_6f1c6122));
-        #/
+        assert(isdefined(var_6f1c6122));
         level.var_261f640c.var_a74161cc = var_6f1c6122;
         var_cd03ffa.activationdelay = isdefined(level.var_261f640c.var_a74161cc.var_a3fd61e7) ? level.var_261f640c.var_a74161cc.var_a3fd61e7 : 0;
         var_cd03ffa.timeout = isdefined(level.var_261f640c.var_a74161cc.var_bd063370) ? level.var_261f640c.var_a74161cc.var_bd063370 : 3000;
@@ -98,7 +96,7 @@ function function_80b82a4d() {
 function function_fe8abb3(var_651a8943, vposition, vforward, vup) {
     if (isdefined(var_651a8943)) {
         var_54d68ee6 = isdefined(vposition) ? vposition : function_80b82a4d();
-        var_bec4f825 = groundtrace(var_54d68ee6 + vectorscale((0, 0, 1), 70), var_54d68ee6 + vectorscale((0, 0, -1), 100), 0, self);
+        var_bec4f825 = groundtrace(var_54d68ee6 + (0, 0, 70), var_54d68ee6 + (0, 0, -100), 0, self);
         var_4be8e019 = self getfxfromsurfacetable(var_651a8943, var_bec4f825[#"surfacetype"]);
         playfx(var_4be8e019, var_54d68ee6, vforward, vup);
     }
@@ -378,7 +376,7 @@ function function_6b505982() {
                 continue;
             }
             if (self function_512af0bb(actor)) {
-                if (is_true(self.var_e5845f1) || sighttracepassed(actor geteyeapprox(), position + vectorscale((0, 0, 1), 30), 0, self)) {
+                if (is_true(self.var_e5845f1) || sighttracepassed(actor geteyeapprox(), position + (0, 0, 30), 0, self)) {
                     self.var_e5845f1 = 1;
                     self function_bf99f93f(actor);
                 }
@@ -605,7 +603,6 @@ function function_6d1a12d3(var_cd03ffa) {
     self.health = self.maxhealth;
     self.damagetaken = 0;
     while (true) {
-        var_cc5d20f7 = undefined;
         var_cc5d20f7 = self waittill(#"damage");
         eattacker = var_cc5d20f7.attacker;
         weapon = var_cc5d20f7.weapon;

@@ -7,22 +7,6 @@
 // Method(s) 5 Total 12
 class class_98cc868d : cluielem {
 
-    // Namespace class_98cc868d/pitch_and_yaw_meters
-    // Params 0, eflags: 0x8
-    // Checksum 0x1578e2b9, Offset: 0x1a0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_98cc868d/pitch_and_yaw_meters
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x862047d4, Offset: 0x260
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_98cc868d/pitch_and_yaw_meters
     // Params 2, eflags: 0x0
     // Checksum 0x245ee05c, Offset: 0x1e8

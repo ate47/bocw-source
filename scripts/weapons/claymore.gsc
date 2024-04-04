@@ -38,9 +38,7 @@ function createclaymorewatcher(watcher) {
     var_e2fa0bc6 = getweapon(#"claymore");
     if (isdefined(var_e2fa0bc6.customsettings)) {
         var_e6fbac16 = getscriptbundle(var_e2fa0bc6.customsettings);
-        /#
-            assert(isdefined(var_e6fbac16));
-        #/
+        assert(isdefined(var_e6fbac16));
         watcher.detectiondot = cos(isdefined(var_e6fbac16.var_bec17b8b) ? var_e6fbac16.var_bec17b8b : 0);
         watcher.detectionmindist = isdefined(var_e6fbac16.var_5303bdc6) ? var_e6fbac16.var_5303bdc6 : 0;
         watcher.detectiongraceperiod = isdefined(var_e6fbac16.var_88b0248b) ? var_e6fbac16.var_88b0248b : 0;

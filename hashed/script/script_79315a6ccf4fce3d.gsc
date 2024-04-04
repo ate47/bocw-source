@@ -45,10 +45,8 @@ function function_dcb0d632(damaged = 0, var_3463bd5c) {
     self thread namespace_268747c0::function_978c05b5();
     if (damaged) {
         self thread namespace_268747c0::function_5418a00f();
-        result = undefined;
         result = self waittilltimeout(30, #"hash_3e251384a5400dce");
     } else {
-        result = undefined;
         result = self waittill(#"hash_3e251384a5400dce");
     }
     if (isdefined(var_3463bd5c) && is_true(var_3463bd5c.var_7c56394) && (is_true(result.var_760a0807) || damaged)) {
@@ -69,9 +67,7 @@ function function_dcb0d632(damaged = 0, var_3463bd5c) {
 // Checksum 0xd459bc0f, Offset: 0x5a8
 // Size: 0x1a4
 function function_db4a8bad(damaged = 0, barrel) {
-    /#
-        assert(isdefined(barrel));
-    #/
+    assert(isdefined(barrel));
     self notify("56fe998691e89973");
     self endon("56fe998691e89973");
     barrel endon(#"death");
@@ -79,13 +75,12 @@ function function_db4a8bad(damaged = 0, barrel) {
     barrel thread function_7e0f72a5();
     barrel thread function_ed0bfdae();
     if (!damaged) {
-        waitresult = undefined;
         waitresult = barrel waittill(#"damage");
         barrel connectpaths();
     }
     barrel thread function_dcb0d632(1, self);
     if (isdefined(waitresult) && isdefined(waitresult.direction)) {
-        impulse = waitresult.direction + vectorscale((0, 0, 1), 5);
+        impulse = waitresult.direction + (0, 0, 5);
         impulse = vectorscale(impulse, 3);
         barrel physicslaunch(barrel.origin, impulse);
     }
@@ -99,12 +94,11 @@ function function_db4a8bad(damaged = 0, barrel) {
 function function_7e0f72a5() {
     self endon(#"death");
     while (true) {
-        result = undefined;
         result = level waittill(#"hash_c1cceae4479f2e5");
         distsq = distancesquared(self.origin, result.origin);
         if (distsq < sqr(256)) {
             dir = vectornormalize(self.origin - result.origin);
-            impulse = dir + vectorscale((0, 0, 1), 10);
+            impulse = dir + (0, 0, 10);
             impulse = vectorscale(dir, 60);
             self physicslaunch(self.origin, impulse);
             if (distsq < sqr(128) && !is_true(self.fuselit)) {
@@ -122,13 +116,12 @@ function function_7e0f72a5() {
 function function_ed0bfdae() {
     self endon(#"death");
     while (true) {
-        result = undefined;
         result = level waittill(#"hash_50be6fd0db982086");
         distsq = distancesquared(self.origin, result.origin);
         if (distsq < sqr(72)) {
             dir = vectornormalize(self.origin - result.origin);
-            impulse = dir + vectorscale((0, 0, 1), 15);
-            impulse = dir + vectorscale((0, 0, 1), 15);
+            impulse = dir + (0, 0, 15);
+            impulse = dir + (0, 0, 15);
             impulse = vectorscale(impulse, 5);
             self physicslaunch(self.origin, impulse);
             if (!is_true(self.fuselit)) {
@@ -158,7 +151,6 @@ function function_d971ecbd(time) {
         if (time >= detonationtime) {
             break;
         }
-        result = undefined;
         result = self waittilltimeout(0.5, #"damage");
         if (result._notify == #"damage") {
             namespace_1e25ad94::debugmsg("Barrel (" + self getentitynumber() + ") took damage of: " + result.amount + " Health left: " + self.health);
@@ -180,7 +172,7 @@ function function_d971ecbd(time) {
     self namespace_e32bb68::function_3a59ec34("evt_doa_hazard_redbarrel_explosion");
     self namespace_e32bb68::function_ae271c0b("evt_doa_hazard_redbarrel_fuse_lp");
     self.takedamage = 0;
-    radiusdamage(self.origin + vectorscale((0, 0, 1), 15), 96, 4000, 2000, self, "MOD_EXPLOSIVE");
+    radiusdamage(self.origin + (0, 0, 15), 96, 4000, 2000, self, "MOD_EXPLOSIVE");
     physicsexplosionsphere(self.origin, 1024, 256, 0.5);
     self disableaimassist();
     if (isdefined(self.var_82190347)) {

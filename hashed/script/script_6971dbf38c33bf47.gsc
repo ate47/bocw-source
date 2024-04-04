@@ -16,9 +16,7 @@ function setup(*localclientnum, seedvalue) {
     }
     level.var_8c615e33 = [];
     function_1f4464c0(seedvalue);
-    /#
-        println("<unknown string>" + seedvalue);
-    #/
+    println("<unknown string>" + seedvalue);
     namespace_65181344::setup_groups();
 }
 

@@ -7,22 +7,6 @@
 // Method(s) 5 Total 12
 class class_b5586f52 : cluielem {
 
-    // Namespace class_b5586f52/sr_objective_timer
-    // Params 0, eflags: 0xa linked
-    // Checksum 0xfb3b6a6b, Offset: 0x1a0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_b5586f52/sr_objective_timer
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x41e0c06d, Offset: 0x260
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_b5586f52/sr_objective_timer
     // Params 2, eflags: 0x2 linked
     // Checksum 0xae0f72a2, Offset: 0x1e8

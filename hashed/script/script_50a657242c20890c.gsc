@@ -20,9 +20,7 @@ function init() {
 // Size: 0x1b4
 function function_114cfee9(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (isdefined(level.var_47807d96)) {
-        /#
-            assert(isint(level.var_47807d96));
-        #/
+        assert(isint(level.var_47807d96));
         stopforcestreamingxmodel(#"hash_3bc4ed2f30d82d31" + level.var_47807d96);
     }
     if (bwasdemojump) {

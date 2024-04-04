@@ -84,7 +84,6 @@ function function_1735c657(forced) {
     self thread function_c724b8f9();
     self thread function_17c3e29f();
     timeout = self namespace_1c2a96f9::function_4808b985(90);
-    result = undefined;
     result = self waittilltimeout(timeout, #"hash_444e9c51ba5bd99", #"hash_7893364bd228d63e");
     if (forced) {
         if (!is_true(result.var_cff8d1e) || is_true(level.doa.var_318aa67a)) {
@@ -113,7 +112,7 @@ function function_1735c657(forced) {
     /#
         debugmsg("<unknown string>" + self.name + "<unknown string>" + gettime());
     #/
-    self.doa.var_3e81d24c = undefined;
+    self.doa.infps = undefined;
     self namespace_7f5aeb59::function_fae39d88();
     wait(0.25);
     self clientfield::increment_to_player("setCompassVis");
@@ -143,7 +142,7 @@ function function_1735c657(forced) {
     self clientfield::increment_to_player("controlBinding");
     self clientfield::increment_to_player("setCompassVis");
     level clientfield::set("doafps", 0);
-    self setorigin(self.origin + vectorscale((0, 0, 1), 20));
+    self setorigin(self.origin + (0, 0, 20));
     self notify(#"hash_5a8ee2526fb3775b");
     /#
         debugmsg("<unknown string>" + self.name + "<unknown string>" + gettime());
@@ -163,7 +162,7 @@ function function_1f704cee(force = 0, faceangles = 1) {
         waitframe(1);
     }
     self endon(#"disconnect");
-    if (is_true(self.doa.var_3e81d24c)) {
+    if (is_true(self.doa.infps)) {
         namespace_1e25ad94::debugmsg("+++++++++++++++++++++++++++++++ PLAYER ALREADY IN FP : " + self.name);
         self thread function_1735c657(force);
         return;
@@ -173,7 +172,7 @@ function function_1f704cee(force = 0, faceangles = 1) {
     /#
         debugmsg("<unknown string>" + self.name + "<unknown string>" + gettime());
     #/
-    self.doa.var_3e81d24c = 1;
+    self.doa.infps = 1;
     self.doa.var_4f3aee7b = force;
     self.doa.var_9f8bc3f9 = 0;
     self thread namespace_7f5aeb59::turnplayershieldon(0);

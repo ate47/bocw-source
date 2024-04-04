@@ -229,9 +229,7 @@ function function_db3aef8f() {
 // Checksum 0xbb9a586, Offset: 0xf68
 // Size: 0x34
 function debugmsg(txt) {
-    /#
-        println("<unknown string>" + txt);
-    #/
+    println("<unknown string>" + txt);
 }
 
 // Namespace namespace_8eb9bc0a/namespace_8eb9bc0a

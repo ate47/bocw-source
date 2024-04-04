@@ -209,7 +209,7 @@ function function_e415c864(var_5da09c55) {
     if (!isdefined(var_5da09c55.height)) {
         var_5da09c55.height = 128;
     }
-    var_912fa366 = spawn("trigger_radius_use", var_5da09c55.origin + vectorscale((0, 0, 1), 16), 0, var_5da09c55.radius, var_5da09c55.height);
+    var_912fa366 = spawn("trigger_radius_use", var_5da09c55.origin + (0, 0, 16), 0, var_5da09c55.radius, var_5da09c55.height);
     var_912fa366.var_5da09c55 = var_5da09c55;
     var_912fa366 triggerignoreteam();
     var_912fa366 setvisibletoall();
@@ -237,7 +237,7 @@ function function_e415c864(var_5da09c55) {
 // Checksum 0x823d7813, Offset: 0xd70
 // Size: 0x17c
 function function_77fde59c(var_5da09c55) {
-    var_912fa366 = spawn("trigger_radius", var_5da09c55.origin + vectorscale((0, 0, 1), 16), 0, 96, 128);
+    var_912fa366 = spawn("trigger_radius", var_5da09c55.origin + (0, 0, 16), 0, 96, 128);
     var_912fa366.var_5da09c55 = var_5da09c55;
     var_912fa366 triggerignoreteam();
     var_912fa366 setvisibletoall();
@@ -402,11 +402,7 @@ function private function_c4035adb(zipline) {
 // Size: 0x9c
 function private function_33111d8d(inuse) {
     self.inuse = self.inuse + (inuse ? 1 : -1);
-    /#
-        /#
-            assert(self.inuse >= 0 && self.inuse <= 4);
-        #/
-    #/
+    assert(self.inuse >= 0 && self.inuse <= 4);
     array::thread_all(getplayers(), &function_c4035adb, self);
 }
 
@@ -478,7 +474,7 @@ function function_be9add5() {
             waitframe(1);
             foreach (zipline in ziplines) {
                 var_86660d95 = zipline.origin;
-                print3d(var_86660d95 + vectorscale((0, 0, 1), 16), zipline.targetname, (0, 1, 0));
+                print3d(var_86660d95 + (0, 0, 16), zipline.targetname, (0, 1, 0));
                 sphere(var_86660d95, 4, (0, 1, 0));
                 circle(var_86660d95, zipline.radius, (0, 1, 0), 1, 1);
                 circle(var_86660d95 + (0, 0, zipline.height), zipline.radius, (0, 1, 0), 1, 1);
@@ -488,7 +484,7 @@ function function_be9add5() {
                         foreach (spawn in dataset.spawns) {
                             spawn_origin = spawn.origin;
                             if (distance2dsquared(spawn_origin, var_86660d95) <= 4096) {
-                                cylinder(spawn_origin, spawn_origin + vectorscale((0, 0, 1), 72), 15, (1, 0, 0));
+                                cylinder(spawn_origin, spawn_origin + (0, 0, 72), 15, (1, 0, 0));
                                 sphere(spawn_origin, 4, (1, 0, 0));
                             }
                         }

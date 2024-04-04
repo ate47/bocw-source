@@ -53,9 +53,7 @@ function function_2d3e0ee4() {
 function function_fabbde0d() {
     foreach (door in level.doa.var_a8a563fc) {
         var_c9d9522c = isdefined(door.model) ? door.model : door.script_string;
-        /#
-            assert(isdefined(var_c9d9522c));
-        #/
+        assert(isdefined(var_c9d9522c));
         model = namespace_f63bdb08::function_2a1e5c1f(door.origin, door.angles, var_c9d9522c, undefined, 1, 2, door.script_parameters);
         if (isdefined(door.model)) {
             door.model delete();

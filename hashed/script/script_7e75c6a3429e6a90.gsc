@@ -7,22 +7,6 @@
 // Method(s) 7 Total 14
 class class_ec90ce81 : cluielem {
 
-    // Namespace class_ec90ce81/sr_weapon_upgrade_menu
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x4d8cce20, Offset: 0x350
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_ec90ce81/sr_weapon_upgrade_menu
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x80a4509f, Offset: 0x4a0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_ec90ce81/sr_weapon_upgrade_menu
     // Params 1, eflags: 0x2 linked
     // Checksum 0xf3c11441, Offset: 0x438
@@ -44,7 +28,7 @@ class class_ec90ce81 : cluielem {
     // Checksum 0xa6e1c4b4, Offset: 0x468
     // Size: 0x30
     function function_83d182e9(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "cannotAmmoMod", value);
+        set_data(localclientnum, "cannotAmmoMod", value);
     }
 
     // Namespace namespace_ec90ce81/sr_weapon_upgrade_menu
@@ -62,7 +46,7 @@ class class_ec90ce81 : cluielem {
     // Size: 0x40
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "cannotAmmoMod", 0);
+        set_data(localclientnum, "cannotAmmoMod", 0);
     }
 
 }

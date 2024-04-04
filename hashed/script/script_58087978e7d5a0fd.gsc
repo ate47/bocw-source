@@ -8,22 +8,6 @@
 class czm_gold_hud : cluielem {
 
     // Namespace czm_gold_hud/zm_gold_hud
-    // Params 0, eflags: 0x8
-    // Checksum 0x26ea4e8b, Offset: 0x198
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace czm_gold_hud/zm_gold_hud
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x122ed914, Offset: 0x258
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace czm_gold_hud/zm_gold_hud
     // Params 2, eflags: 0x0
     // Checksum 0x514b7cae, Offset: 0x1e0
     // Size: 0x3c

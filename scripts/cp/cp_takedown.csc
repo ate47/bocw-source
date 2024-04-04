@@ -109,7 +109,7 @@ function function_766abe10(*localclientnum, *oldval, *newval, *bnewent, *binitia
     ents = getdynentarray("prop_blast_me");
     for (i = 0; i < 20; i++) {
         foreach (ent in ents) {
-            launchdynent(ent, vectorscale((-1, 0, 0), 0.15));
+            launchdynent(ent, (-0.15, 0, 0));
         }
         waitframe(1);
         waitframe(1);

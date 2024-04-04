@@ -61,9 +61,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     level.mapbounds = {#center:(0, 0, 0)};
     level.var_2f5a329e = 1;
     spawning::addsupportedspawnpointtype("tdm");
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     level.dog_round_count = 0;
     changeadvertisedstatus(0);
     clientfield::register("scriptmover", "" + #"hash_56a6be021662c82e", 1, 2, "int");
@@ -210,8 +208,8 @@ function function_d2211917() {
         a_ai = getaiteamarray(level.zombie_team);
         foreach (ai in a_ai) {
             if (isalive(ai) && ai istouching(self)) {
-                var_f2174bdd = getclosestpointonnavmesh(level.var_df7b46d1.origin + vectorscale((0, 0, 1), 8), 128, 64);
-                var_f2174bdd = isdefined(var_f2174bdd) ? var_f2174bdd : level.var_df7b46d1.origin + vectorscale((0, 0, 1), 8);
+                var_f2174bdd = getclosestpointonnavmesh(level.var_df7b46d1.origin + (0, 0, 8), 128, 64);
+                var_f2174bdd = isdefined(var_f2174bdd) ? var_f2174bdd : level.var_df7b46d1.origin + (0, 0, 8);
                 playfx(level._effect[#"hash_7a06e7dd7e64b880"], ai.origin);
                 playfx(level._effect[#"hash_7a06e7dd7e64b880"], var_f2174bdd);
                 ai forceteleport(var_f2174bdd, ai.angles);
@@ -545,7 +543,7 @@ function function_b20199e0(var_57ade5da) {
     if (var_57ade5da === #"hash_3ff43755c44e6d3d" || var_57ade5da === #"hash_4a900af3fc47cdd5" || var_57ade5da === #"hash_60d7855358ceb53d") {
         var_de297ab3 = namespace_58949729::function_257d7203(#"elite");
         if (isdefined(var_de297ab3)) {
-            dropstruct = {#origin:self.origin, #angles:self.angles + vectorscale((0, 1, 0), 180), #var_738dfc81:self.var_738dfc81};
+            dropstruct = {#origin:self.origin, #angles:self.angles + (0, 180, 0), #var_738dfc81:self.var_738dfc81};
             a_items = dropstruct namespace_65181344::function_fd87c780(var_de297ab3, 20, 2);
             return a_items;
         }
@@ -809,9 +807,7 @@ function function_e88957df(var_a0168ed5 = 0) {
                 self zm_stats::increment_challenge_stat(#"hash_2509e6ed81b9096b", undefined, 1);
                 break;
             default:
-                /#
-                    assertmsg("<unknown string>");
-                #/
+                assertmsg("<unknown string>");
                 return;
             }
         }
@@ -900,9 +896,7 @@ function function_e88957df(var_a0168ed5 = 0) {
                 self zm_stats::increment_challenge_stat(#"hash_1c907a3cbd04a346", undefined, 1);
                 break;
             default:
-                /#
-                    assertmsg("<unknown string>");
-                #/
+                assertmsg("<unknown string>");
                 return;
             }
         }
@@ -996,9 +990,7 @@ function function_e88957df(var_a0168ed5 = 0) {
                 self zm_stats::increment_challenge_stat(#"hash_41333e39d398c7e1", undefined, 1);
                 break;
             default:
-                /#
-                    assertmsg("<unknown string>");
-                #/
+                assertmsg("<unknown string>");
                 return;
             }
         }
@@ -1064,9 +1056,7 @@ function function_82ca1565(spawnpoint, gametype) {
     case #"hash_42f07692f7d48364":
         return is_true(spawnpoint.var_3d72e6da);
     default:
-        /#
-            assertmsg("<unknown string>" + gametype + "<unknown string>" + spawnpoint.origin[0] + "<unknown string>" + spawnpoint.origin[1] + "<unknown string>" + spawnpoint.origin[2]);
-        #/
+        assertmsg("<unknown string>" + gametype + "<unknown string>" + spawnpoint.origin[0] + "<unknown string>" + spawnpoint.origin[1] + "<unknown string>" + spawnpoint.origin[2]);
         break;
     }
     return 0;

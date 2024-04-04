@@ -47,11 +47,7 @@ function function_b3681acb() {
 // Size: 0xde
 function function_d7e6fa92(unlock_name) {
     var_9ba1646c = level.var_7d8da246[unlock_name];
-    /#
-        /#
-            assert(isdefined(var_9ba1646c), "<unknown string>" + function_9e72a96(unlock_name) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(var_9ba1646c), "<unknown string>" + function_9e72a96(unlock_name) + "<unknown string>");
     if (!isdefined(var_9ba1646c)) {
         return false;
     }
@@ -164,20 +160,12 @@ function function_c8beca5e(unlock_name, var_1d208aea, state) {
     }
     var_9ba1646c = level.var_7d8da246[unlock_name];
     /#
-        /#
-            assert(isdefined(var_9ba1646c), "<unknown string>" + function_9e72a96(unlock_name) + "<unknown string>");
-        #/
-        /#
-            assert(isinarray(var_9ba1646c.var_3845495, var_1d208aea), "<unknown string>" + function_9e72a96(var_1d208aea) + "<unknown string>" + function_9e72a96(unlock_name));
-        #/
-        /#
-            assert(isinarray(array(0, 1, 2), state), "<unknown string>" + function_9e72a96(var_1d208aea) + "<unknown string>" + function_9e72a96(unlock_name));
-        #/
+        assert(isdefined(var_9ba1646c), "<unknown string>" + function_9e72a96(unlock_name) + "<unknown string>");
+        assert(isinarray(var_9ba1646c.var_3845495, var_1d208aea), "<unknown string>" + function_9e72a96(var_1d208aea) + "<unknown string>" + function_9e72a96(unlock_name));
+        assert(isinarray(array(0, 1, 2), state), "<unknown string>" + function_9e72a96(var_1d208aea) + "<unknown string>" + function_9e72a96(unlock_name));
     #/
     if (!self function_c70bcc7a(unlock_name)) {
-        /#
-            assertmsg("<unknown string>" + unlock_name + "<unknown string>");
-        #/
+        assertmsg("<unknown string>" + unlock_name + "<unknown string>");
         return;
     }
     current_state = self.var_c53589da[unlock_name].var_e7e238a4[var_1d208aea];
@@ -199,11 +187,7 @@ function function_c8beca5e(unlock_name, var_1d208aea, state) {
 // Size: 0x43a
 function function_20b0ca2e(unlock_name) {
     var_9ba1646c = level.var_7d8da246[unlock_name];
-    /#
-        /#
-            assert(isdefined(var_9ba1646c), "<unknown string>" + function_9e72a96(unlock_name) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(var_9ba1646c), "<unknown string>" + function_9e72a96(unlock_name) + "<unknown string>");
     itembundle = getscriptbundle(var_9ba1646c.required_item);
     if (!isdefined(itembundle.unlockableitemref)) {
         return;

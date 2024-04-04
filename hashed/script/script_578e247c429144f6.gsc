@@ -8,21 +8,8 @@
 // Method(s) 6 Total 13
 class cvehicleturretdurability : cluielem {
 
-    // Namespace cvehicleturretdurability/vehicleturretdurability
-    // Params 0, eflags: 0x8
-    // Checksum 0xba748155, Offset: 0x1f0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cvehicleturretdurability/vehicleturretdurability
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xf105f770, Offset: 0x328
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace cvehicleturretdurability/vehicleturretdurability
     // Params 2, eflags: 0x0
@@ -54,7 +41,7 @@ class cvehicleturretdurability : cluielem {
     // Checksum 0x623f3c5e, Offset: 0x2d8
     // Size: 0x44
     function set_bar_percent(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "bar_percent", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "bar_percent", value);
     }
 
 }

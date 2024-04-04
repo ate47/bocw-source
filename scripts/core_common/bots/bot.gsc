@@ -436,7 +436,7 @@ function private function_4fb21bb4() {
     /#
         if (self should_record(#"hash_44dd65804e74042e") && isdefined(self.bot.var_a0b6205e)) {
             function_af72dbc5(self.enemylastseenpos, (0, -96, -64), (0, 96, 64), vectortoangles(self.bot.var_a0b6205e)[1], (1, 1, 0), "<unknown string>", self);
-            recordcircle(self.enemylastseenpos + vectorscale((0, 0, -1), 64), 96, (1, 1, 0), "<unknown string>", self);
+            recordcircle(self.enemylastseenpos + (0, 0, -64), 96, (1, 1, 0), "<unknown string>", self);
         }
     #/
     profileNamedStop();
@@ -716,7 +716,6 @@ function private function_ef59c9e() {
     level endon(#"game_ended");
     self.bot.glasstouch = undefined;
     while (true) {
-        result = undefined;
         result = self waittill(#"glass");
         self.bot.glasstouch = result.position;
         wait(0.2);
@@ -768,12 +767,8 @@ function move_dir() {
 // Checksum 0x3daa762b, Offset: 0x3008
 // Size: 0x112
 function function_f0c35734(trigger) {
-    /#
-        assert(isbot(self));
-    #/
-    /#
-        assert(isdefined(trigger));
-    #/
+    assert(isbot(self));
+    assert(isdefined(trigger));
     radius = self getpathfindingradius();
     height = self function_6a9ae71();
     heightoffset = (0, 0, height * -1 / 2);
@@ -787,12 +782,8 @@ function function_f0c35734(trigger) {
 // Checksum 0x3010326e, Offset: 0x3128
 // Size: 0x142
 function function_52947b70(trigger) {
-    /#
-        assert(isbot(self));
-    #/
-    /#
-        assert(isstruct(trigger));
-    #/
+    assert(isbot(self));
+    assert(isstruct(trigger));
     radius = self getpathfindingradius();
     height = self function_6a9ae71();
     heightoffset = (0, 0, height * -1 / 2);

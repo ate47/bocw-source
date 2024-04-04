@@ -7,22 +7,6 @@
 // Method(s) 7 Total 14
 class class_6b831806 : cluielem {
 
-    // Namespace class_6b831806/blackseajetskideployprompt
-    // Params 0, eflags: 0x8
-    // Checksum 0x50e48056, Offset: 0x358
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_6b831806/blackseajetskideployprompt
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x339de60f, Offset: 0x4b0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_6b831806/blackseajetskideployprompt
     // Params 1, eflags: 0x0
     // Checksum 0x417f4cce, Offset: 0x448
@@ -36,7 +20,7 @@ class class_6b831806 : cluielem {
     // Checksum 0x34a132e7, Offset: 0x478
     // Size: 0x30
     function function_26d9350e(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "deployProgress", value);
+        set_data(localclientnum, "deployProgress", value);
     }
 
     // Namespace namespace_6b831806/blackseajetskideployprompt
@@ -62,7 +46,7 @@ class class_6b831806 : cluielem {
     // Size: 0x48
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "deployProgress", 0);
+        set_data(localclientnum, "deployProgress", 0);
     }
 
 }

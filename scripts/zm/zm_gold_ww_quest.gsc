@@ -210,7 +210,6 @@ function function_2b26d68b() {
 function function_8de4f4ec() {
     level endon(#"end_game");
     var_b446c1a5 = self zm_unitrigger::create(&function_5c2866af, 80);
-    waitresult = undefined;
     waitresult = self waittill(#"trigger_activated");
     zm_unitrigger::unregister_unitrigger(var_b446c1a5);
     level flag::set(#"hash_5dce120a8e013b48");
@@ -356,7 +355,6 @@ function function_e594b500(e_player) {
 function function_5d8ec91d() {
     level endon(#"end_game");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
         if (!level flag::get("power_on3")) {
@@ -571,7 +569,6 @@ function function_d7d376af(var_77d81993) {
 function function_a8890244(var_c8e10123) {
     self endon(#"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (isplayer(waitresult.attacker) && (waitresult.mod === "MOD_PISTOL_BULLET" || waitresult.mod === "MOD_RIFLE_BULLET")) {
             /#
@@ -618,8 +615,8 @@ function function_912a9d36(var_77d81993) {
     self notify("176317fcb3d53d71");
     self endon("176317fcb3d53d71");
     level.var_b0b63450 = function_b3e7ac72(#"hash_51fb36a0b1fe909c", self.origin, self.angles, #"hash_5f15896c26974eb0");
-    level.var_1221f4ab = function_b3e7ac72(#"hash_51fb37a0b1fe924f", self.origin - vectorscale((0, 1, 0), 0.5), self.angles, #"hash_23851dbffef298e1");
-    level.var_82f3ced5 = function_b3e7ac72(#"hash_51fb38a0b1fe9402", self.origin + vectorscale((0, 1, 0), 0.5), self.angles, #"hash_4dd185fb6c5516d");
+    level.var_1221f4ab = function_b3e7ac72(#"hash_51fb37a0b1fe924f", self.origin - (0, 0.5, 0), self.angles, #"hash_23851dbffef298e1");
+    level.var_82f3ced5 = function_b3e7ac72(#"hash_51fb38a0b1fe9402", self.origin + (0, 0.5, 0), self.angles, #"hash_4dd185fb6c5516d");
     n_index = 0;
     level.var_1221f4ab function_a6d637ea(var_77d81993, n_index);
     while (true) {
@@ -775,7 +772,6 @@ function function_230b550c(b_skipped, var_19e802fa) {
 // Size: 0xdc
 function function_6128f9d0() {
     level endon(#"end_game");
-    waitresult = undefined;
     waitresult = level waittill(#"hash_712ab943a79224a7");
     ai = waitresult.ai;
     if (isdefined(ai)) {
@@ -852,7 +848,7 @@ function function_a91dc42a() {
     var_3d9eca2c = anglestoforward(self.angles);
     level flag::wait_till(#"hash_705c7ba8a56685ed");
     var_e03eac13 = model zm_unitrigger::create(#"hash_2319b3ca445b4cf1", 32, &function_6de8eec4);
-    var_e03eac13.origin = var_e03eac13.origin + vectorscale((0, 0, 1), 40) + var_3d9eca2c * 20;
+    var_e03eac13.origin = var_e03eac13.origin + (0, 0, 40) + var_3d9eca2c * 20;
     var_e03eac13.var_dad14d36 = model;
     var_e03eac13.var_40376d20 = struct::get(self.target, "targetname");
 }
@@ -864,7 +860,6 @@ function function_a91dc42a() {
 function function_6de8eec4() {
     level endon(#"end_game");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
         player function_bc82f900(#"zm_gold_interact_rumble_small");
@@ -882,7 +877,7 @@ function function_6de8eec4() {
         if (is_true(self.stub.var_dad14d36.var_e87fbf2f)) {
             if (isdefined(self.stub.var_40376d20)) {
                 var_ab71b599 = zm_intel::function_2ba45c94("zmintel_gold_maxis_audiolog_3", self.stub.var_40376d20.origin);
-                var_ab71b599.angles = vectorscale((0, 0, 1), 53);
+                var_ab71b599.angles = (0, 0, 53);
             }
         }
         if (is_true(self.stub.var_dad14d36.var_58d0878f)) {
@@ -1143,7 +1138,7 @@ function function_f4a3a8b0(entity) {
         level endon(#"end_game");
         if (cointoss(50)) {
             remove_on_ai_damage(&function_fdccaaa8);
-            var_728dec0e = spawn_model(#"hash_7e497f3ba0621b6d", entity.origin + vectorscale((0, 0, 1), 20), entity.angles);
+            var_728dec0e = spawn_model(#"hash_7e497f3ba0621b6d", entity.origin + (0, 0, 20), entity.angles);
             var_728dec0e function_fac87205(#"hash_1d065ea51d79a22e", 64);
             /#
                 iprintlnbold("<unknown string>");

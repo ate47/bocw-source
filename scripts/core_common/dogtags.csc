@@ -123,7 +123,7 @@ function function_2eee13af() {
     self endon(#"stopbounce");
     self endon(#"death");
     while (true) {
-        toppos = self.origin + vectorscale((0, 0, 1), 12);
+        toppos = self.origin + (0, 0, 12);
         self.var_47b256ef moveto(toppos, 0.5, 0, 0);
         self.var_47b256ef waittill(#"movedone");
         if (isdefined(self.clientnum) && self.clientnum > -1) {

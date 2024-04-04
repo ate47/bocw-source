@@ -8,21 +8,8 @@
 // Method(s) 7 Total 14
 class class_7c3faeda : cluielem {
 
-    // Namespace class_7c3faeda/incursion_infiltrationtitlecards
-    // Params 0, eflags: 0x8
-    // Checksum 0x9f56f53c, Offset: 0x240
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_7c3faeda/incursion_infiltrationtitlecards
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xff75f959, Offset: 0x7d8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_7c3faeda/incursion_infiltrationtitlecards
     // Params 2, eflags: 0x0
@@ -56,66 +43,62 @@ class class_7c3faeda : cluielem {
     // Size: 0x42c
     function set_state(player, state_name) {
         if (#"defaultstate" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 0);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 0);
             return;
         }
         if (#"hash_1c7fa28cf1485078" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 1);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 1);
             return;
         }
         if (#"hash_41af72ac3698f06f" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 2);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 2);
             return;
         }
         if (#"hash_5b1f56f3d27d25f0" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 3);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 3);
             return;
         }
         if (#"hash_249ee0339eddec66" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 4);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 4);
             return;
         }
         if (#"hash_55a524ad199904e9" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 5);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 5);
             return;
         }
         if (#"hash_37b2af92df0bfd42" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 6);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 6);
             return;
         }
         if (#"hash_30029804cf01e828" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 7);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 7);
             return;
         }
         if (#"hash_386af01523f194e5" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 8);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 8);
             return;
         }
         if (#"hash_c5a40437efffe76" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 9);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 9);
             return;
         }
         if (#"hash_88bd3835c23cdbc" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 10);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 10);
             return;
         }
         if (#"hash_55e75da288d110d4" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 11);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 11);
             return;
         }
         if (#"hash_3eb38ea38a92fe35" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 12);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 12);
             return;
         }
         if (#"hash_79efd6a9d00cac13" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 13);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 13);
             return;
         }
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
     }
 
     // Namespace namespace_7c3faeda/incursion_infiltrationtitlecards
@@ -123,7 +106,7 @@ class class_7c3faeda : cluielem {
     // Checksum 0x6bc84a3a, Offset: 0x788
     // Size: 0x44
     function function_ee0c7ef6(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "SelectedInfiltration", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "SelectedInfiltration", value);
     }
 
 }

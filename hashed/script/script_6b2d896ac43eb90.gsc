@@ -81,7 +81,7 @@ function function_e28ce6d9(struct) {
         level thread destroy_beacon(var_6afa034c, 120, struct.parent);
         return;
     }
-    v_trigger_offset = vectorscale((0, 0, 1), 32);
+    v_trigger_offset = (0, 0, 32);
     trigger = content_manager::spawn_interact(struct, &function_1fab9ee0, #"hash_48951800c1051da7", undefined, 100, undefined, undefined, v_trigger_offset);
     trigger.var_9d7362a4 = #"hash_48951800c1051da7";
     trigger usetriggerrequirelookat(0);
@@ -90,7 +90,6 @@ function function_e28ce6d9(struct) {
     var_6afa034c.trigger = trigger;
     level.var_1ea1d494 = trigger;
     callback::callback(#"hash_4d2442503e03c0e8", {#var_6afa034c:var_6afa034c});
-    s_result = undefined;
     s_result = level waittill(#"hash_3e765c26047c9f54", #"hash_345e9169ebba28fb");
     struct zm_utility::function_48d9a9c9();
     trigger delete();
@@ -103,9 +102,7 @@ function function_e28ce6d9(struct) {
 function function_1fab9ee0(eventstruct) {
     player = eventstruct.activator;
     machine = self.scriptmodel;
-    /#
-        assert(isdefined(machine), "<unknown string>");
-    #/
+    assert(isdefined(machine), "<unknown string>");
     if (isplayer(player) && !level flag::get(#"hash_23350b678001fece")) {
         if (is_true(getgametypesetting(#"hash_5cc58dfc6675a68e")) && level.var_b48509f9 >= 3) {
             player call_exfil(machine);
@@ -266,9 +263,7 @@ function warp(var_6afa034c) {
     objective_manager::start_timer(10);
     objective_manager::function_a8ad6895(destination);
     var_b2e24cfc = zm_destination_manager::function_f3be07d7(destination);
-    /#
-        assert(var_b2e24cfc.size >= 4, "<unknown string>" + destination.targetname);
-    #/
+    assert(var_b2e24cfc.size >= 4, "<unknown string>" + destination.targetname);
     level flag::clear(#"hash_23350b678001fece");
     level notify(#"hash_345e9169ebba28fb");
     level.var_fe6ca5e8 = undefined;
@@ -370,7 +365,6 @@ function function_21ba74a1(machine, trigger) {
     self endoncallback(&function_6c71e778, #"death");
     self thread function_755edc7e(machine, trigger);
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         response = waitresult.response;
@@ -490,7 +484,6 @@ function function_22aada64() {
     n_damage = 0;
     n_threshold = 1000 * getplayers().size * level.var_b48509f9;
     while (true) {
-        s_result = undefined;
         s_result = self waittill(#"damage");
         n_damage = n_damage + s_result.amount;
         if (n_damage > n_threshold && isdefined(self)) {

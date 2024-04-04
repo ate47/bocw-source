@@ -421,16 +421,16 @@ function function_17f47e92() {
 function function_201a7d58() {
     spawnloc = spawnstruct();
     if (randomint(100) < 60) {
-        spawnloc.origin = [[ level.doa.var_39e3fa99 ]]->function_70fb5745().origin + vectorscale((0, 0, 1), 1600);
+        spawnloc.origin = [[ level.doa.var_39e3fa99 ]]->function_70fb5745().origin + (0, 0, 1600);
         spawnloc.angles = [[ level.doa.var_39e3fa99 ]]->function_70fb5745().angles;
     } else {
         players = getplayers();
         if (players.size) {
             player = players[randomint(players.size)];
-            spawnloc.origin = player.origin + vectorscale((0, 0, 1), 1600);
+            spawnloc.origin = player.origin + (0, 0, 1600);
             spawnloc.angles = player.angles;
         } else {
-            spawnloc.origin = [[ level.doa.var_39e3fa99 ]]->function_70fb5745().origin + vectorscale((0, 0, 1), 1600);
+            spawnloc.origin = [[ level.doa.var_39e3fa99 ]]->function_70fb5745().origin + (0, 0, 1600);
             spawnloc.angles = [[ level.doa.var_39e3fa99 ]]->function_70fb5745().angles;
         }
     }
@@ -455,7 +455,6 @@ function function_9f6da3ff() {
             break;
         }
         doa_enemy::function_a6b807ea(var_94f3b914, 6, origin, 0, undefined, undefined, undefined, level.doa.var_39e3fa99);
-        result = undefined;
         result = level waittilltimeout(30, #"doa_round_over");
         waves--;
     }

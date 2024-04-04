@@ -86,9 +86,7 @@ function function_c1e0cc87(name, looping, fadeout = 0, *unused = 0.5) {
         level.var_9e132ad0 = [];
     }
     var_318e5b78 = level.var_9e132ad0.size + 1;
-    /#
-        assert(var_318e5b78 < 256, "<unknown string>");
-    #/
+    assert(var_318e5b78 < 256, "<unknown string>");
     level.var_9e132ad0[var_318e5b78] = {#name:looping, #looping:fadeout, #fadeout:unused};
 }
 
@@ -97,9 +95,7 @@ function function_c1e0cc87(name, looping, fadeout = 0, *unused = 0.5) {
 // Checksum 0xf7d84e81, Offset: 0x610
 // Size: 0x52
 function function_9585130f(type) {
-    /#
-        assert(isdefined(level.var_9e132ad0[type]), "<unknown string>");
-    #/
+    assert(isdefined(level.var_9e132ad0[type]), "<unknown string>");
     return level.var_9e132ad0[type].name;
 }
 
@@ -108,9 +104,7 @@ function function_9585130f(type) {
 // Checksum 0x6bf7ac6e, Offset: 0x670
 // Size: 0x52
 function function_4744227e(type) {
-    /#
-        assert(isdefined(level.var_9e132ad0[type]), "<unknown string>");
-    #/
+    assert(isdefined(level.var_9e132ad0[type]), "<unknown string>");
     return level.var_9e132ad0[type].looping;
 }
 
@@ -119,9 +113,7 @@ function function_4744227e(type) {
 // Checksum 0xa368b3f, Offset: 0x6d0
 // Size: 0x52
 function function_90ddbde4(type) {
-    /#
-        assert(isdefined(level.var_9e132ad0[type]), "<unknown string>");
-    #/
+    assert(isdefined(level.var_9e132ad0[type]), "<unknown string>");
     return level.var_9e132ad0[type].fadeout;
 }
 

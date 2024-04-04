@@ -8,21 +8,8 @@
 // Method(s) 9 Total 16
 class czm_tungsten_grandprix : cluielem {
 
-    // Namespace czm_tungsten_grandprix/zm_tungsten_grandprix
-    // Params 0, eflags: 0x8
-    // Checksum 0x8e032608, Offset: 0x2b0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace czm_tungsten_grandprix/zm_tungsten_grandprix
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xc91979c9, Offset: 0x550
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace czm_tungsten_grandprix/zm_tungsten_grandprix
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class czm_tungsten_grandprix : cluielem {
     // Checksum 0xefe7233d, Offset: 0x4b0
     // Size: 0x44
     function function_1870151b(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "raceTotalLap", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "raceTotalLap", value);
     }
 
     // Namespace czm_tungsten_grandprix/zm_tungsten_grandprix
@@ -45,7 +32,7 @@ class czm_tungsten_grandprix : cluielem {
     // Checksum 0x4daba36b, Offset: 0x410
     // Size: 0x44
     function function_2b44c64e(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "raceRanking", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "raceRanking", value);
     }
 
     // Namespace czm_tungsten_grandprix/zm_tungsten_grandprix
@@ -53,7 +40,7 @@ class czm_tungsten_grandprix : cluielem {
     // Checksum 0x7cdba257, Offset: 0x500
     // Size: 0x44
     function function_2b80b614(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "raceRewardTier", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "raceRewardTier", value);
     }
 
     // Namespace czm_tungsten_grandprix/zm_tungsten_grandprix
@@ -61,7 +48,7 @@ class czm_tungsten_grandprix : cluielem {
     // Checksum 0xeb6e0b96, Offset: 0x460
     // Size: 0x44
     function function_307daa91(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "raceCurrentLap", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "raceCurrentLap", value);
     }
 
     // Namespace czm_tungsten_grandprix/zm_tungsten_grandprix

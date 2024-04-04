@@ -32,9 +32,7 @@ function event_handler[event_f7d4a05b] function_69452d92(eventstruct) {
     }
     if (eventstruct.gamestate !== game.state) {
         game.state = eventstruct.gamestate;
-        /#
-            println("<unknown string>" + game.state);
-        #/
+        println("<unknown string>" + game.state);
         callback::callback(#"hash_1184c2c2ed4c24b3", eventstruct);
         switch (eventstruct.gamestate) {
         case #"playing":

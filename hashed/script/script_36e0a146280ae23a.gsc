@@ -7,22 +7,6 @@
 // Method(s) 7 Total 14
 class class_e1dc992f : cluielem {
 
-    // Namespace class_e1dc992f/sr_crafting_table_menu
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x5e50a76d, Offset: 0x358
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_e1dc992f/sr_crafting_table_menu
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x80295b4e, Offset: 0x480
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_e1dc992f/sr_crafting_table_menu
     // Params 1, eflags: 0x2 linked
     // Checksum 0xb54779ee, Offset: 0x418
@@ -44,7 +28,7 @@ class class_e1dc992f : cluielem {
     // Checksum 0x14c5fe4a, Offset: 0x448
     // Size: 0x30
     function function_8ec20f82(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "numSelfRevivesPurchased", value);
+        set_data(localclientnum, "numSelfRevivesPurchased", value);
     }
 
     // Namespace namespace_e1dc992f/sr_crafting_table_menu
@@ -61,7 +45,7 @@ class class_e1dc992f : cluielem {
     // Size: 0x40
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "numSelfRevivesPurchased", 0);
+        set_data(localclientnum, "numSelfRevivesPurchased", 0);
     }
 
 }

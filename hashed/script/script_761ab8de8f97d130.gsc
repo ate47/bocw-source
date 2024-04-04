@@ -55,41 +55,23 @@ function init() {
 // Checksum 0x1cddf43c, Offset: 0x5d8
 // Size: 0x3b4
 function registerbehaviorscriptfunctions() {
-    /#
-        assert(isscriptfunctionptr(&function_63e044e7));
-    #/
+    assert(isscriptfunctionptr(&function_63e044e7));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_11f0b891a9d2e6c7", &function_63e044e7);
-    /#
-        assert(isscriptfunctionptr(&function_9e433573));
-    #/
+    assert(isscriptfunctionptr(&function_9e433573));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2b2a4705912ffb22", &function_9e433573);
-    /#
-        assert(isscriptfunctionptr(&function_55b7ea22));
-    #/
+    assert(isscriptfunctionptr(&function_55b7ea22));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_7561185fb9f89048", &function_55b7ea22);
-    /#
-        assert(isscriptfunctionptr(&function_98b102d8));
-    #/
+    assert(isscriptfunctionptr(&function_98b102d8));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_66d076094cefbdbb", &function_98b102d8);
-    /#
-        assert(isscriptfunctionptr(&function_4402c40a));
-    #/
+    assert(isscriptfunctionptr(&function_4402c40a));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_530185ba74913077", &function_4402c40a);
-    /#
-        assert(isscriptfunctionptr(&function_6a3bcddc));
-    #/
+    assert(isscriptfunctionptr(&function_6a3bcddc));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_545373e09d03a06c", &function_6a3bcddc);
-    /#
-        assert(isscriptfunctionptr(&function_b9b03294));
-    #/
+    assert(isscriptfunctionptr(&function_b9b03294));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_1f70e1d883cae162", &function_b9b03294);
-    /#
-        assert(isscriptfunctionptr(&zombietraversalservice));
-    #/
+    assert(isscriptfunctionptr(&zombietraversalservice));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"doazombietraversalservice", &zombietraversalservice);
-    /#
-        assert(isscriptfunctionptr(&function_f637b05d));
-    #/
+    assert(isscriptfunctionptr(&function_f637b05d));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_52efb6ed5d3a4220", &function_f637b05d, 1);
 }
 
@@ -156,9 +138,7 @@ function function_a4b27d0e() {
         self.spawnloc = [[ level.doa.var_a598a835 ]]();
         return;
     }
-    /#
-        assert(isdefined(level.doa.var_39e3fa99));
-    #/
+    assert(isdefined(level.doa.var_39e3fa99));
     self.spawnloc = [[ level.doa.var_39e3fa99 ]]->function_59fc184c();
 }
 
@@ -182,7 +162,7 @@ function function_ef2758f9() {
         barrel.carried = 1;
         barrel.takedamage = 1;
         barrel.health = 99999;
-        barrel linkto(self, "j_head", vectorscale((0, 0, 1), 15), vectorscale((1, 0, 0), 90));
+        barrel linkto(self, "j_head", (0, 0, 15), (90, 0, 0));
         barrel thread function_bd3de922(self);
         barrel thread namespace_ec06fe4a::function_52afe5df(120);
     }
@@ -244,7 +224,7 @@ function function_711927a1(origin) {
     }
     org thread namespace_ec06fe4a::function_52afe5df(3.4);
     trap = {};
-    trap.origin = origin + vectorscale((0, 0, -1), 100);
+    trap.origin = origin + (0, 0, -100);
     trap.angles = (0, 0, 0);
     pole = namespace_53f73cda::function_28826539(trap, 0);
     if (!isdefined(pole)) {
@@ -287,7 +267,7 @@ function function_bd3de922(carrier) {
     carrier waittill(#"death");
     self unlink();
     self solid();
-    impulse = anglestoforward(self.angles) + vectorscale((0, 0, 1), 5);
+    impulse = anglestoforward(self.angles) + (0, 0, 5);
     impulse = vectorscale(impulse, 3);
     self physicslaunch(self.origin, impulse);
     self enableaimassist();
@@ -309,12 +289,10 @@ function function_83a2d68c() {
     if (isdefined(level.doa.var_a598a835)) {
         self.spawnloc = [[ level.doa.var_a598a835 ]]();
     } else {
-        /#
-            assert(isdefined(level.doa.var_39e3fa99));
-        #/
+        assert(isdefined(level.doa.var_39e3fa99));
         self.spawnloc = [[ level.doa.var_39e3fa99 ]]->function_70fb5745();
     }
-    self.org = namespace_ec06fe4a::spawnmodel(self.spawnloc.origin + vectorscale((0, 0, 1), 40), "tag_origin");
+    self.org = namespace_ec06fe4a::spawnmodel(self.spawnloc.origin + (0, 0, 40), "tag_origin");
     if (isdefined(self.org)) {
         self.org.takedamage = 0;
         self.org.targetname = "shadowTeleportMeNow";
@@ -340,9 +318,7 @@ function shadowteleportmenow(initial = 0, origin = self.origin) {
     if (is_true(self.var_6a59f093)) {
         return;
     }
-    /#
-        assert(self.var_c5348ec8 > 0);
-    #/
+    assert(self.var_c5348ec8 > 0);
     self.var_6a59f093 = 1;
     if (!initial) {
         self.var_c5348ec8--;
@@ -354,7 +330,7 @@ function shadowteleportmenow(initial = 0, origin = self.origin) {
     self namespace_83eb6304::function_3ecfde67("spawnZombie");
     wait(0.1);
     if (isdefined(self.org)) {
-        self.org.origin = self.origin + vectorscale((0, 0, 1), 40);
+        self.org.origin = self.origin + (0, 0, 40);
         util::wait_network_frame();
         self.org namespace_83eb6304::function_3ecfde67("shadow_move");
         self.org namespace_83eb6304::function_3ecfde67("shadow_glow");
@@ -365,7 +341,7 @@ function shadowteleportmenow(initial = 0, origin = self.origin) {
         self notsolid();
         self setplayercollision(0);
         self linkto(self.org);
-        self.org moveto(spot + vectorscale((0, 0, 1), 40), 2);
+        self.org moveto(spot + (0, 0, 40), 2);
         self.org waittilltimeout(2.1, #"movedone");
         self.org namespace_83eb6304::function_3ecfde67("shadow_appear");
         self.org namespace_e32bb68::function_3a59ec34("zmb_doa_ai_smokeman_teleport_in_pre");

@@ -38,25 +38,15 @@ function init() {
 // Checksum 0x8578748b, Offset: 0x318
 // Size: 0x234
 function registerbehaviorscriptfunctions() {
-    /#
-        assert(isscriptfunctionptr(&function_abb6c18a));
-    #/
+    assert(isscriptfunctionptr(&function_abb6c18a));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_67cf14163bf00d16", &namespace_250e9486::function_abb6c18a);
-    /#
-        assert(isscriptfunctionptr(&function_99ed5179));
-    #/
+    assert(isscriptfunctionptr(&function_99ed5179));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_14f093af5e75dca1", &namespace_250e9486::function_99ed5179);
-    /#
-        assert(isscriptfunctionptr(&function_50547dae));
-    #/
+    assert(isscriptfunctionptr(&function_50547dae));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_23de4beb58b2ce65", &namespace_250e9486::function_50547dae);
-    /#
-        assert(isscriptfunctionptr(&function_3bda3c55));
-    #/
+    assert(isscriptfunctionptr(&function_3bda3c55));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_43c922ea035ca163", &function_3bda3c55);
-    /#
-        assert(isscriptfunctionptr(&function_f4a61e6a));
-    #/
+    assert(isscriptfunctionptr(&function_f4a61e6a));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_7cdf61f23f735254", &function_f4a61e6a);
     animationstatenetwork::registernotetrackhandlerfunction("hit_ground", &function_85e8940a);
 }
@@ -121,7 +111,6 @@ function damagewatch() {
     self notify("644a96dd6868c931");
     self endon("644a96dd6868c931");
     self endon(#"death");
-    result = undefined;
     result = self waittill(#"damage", #"nuked");
     self.goalradius = 42;
     if (self.zombie_move_speed == "walk") {

@@ -63,9 +63,7 @@ function init_doors() {
         var_2b02295f.var_a7417bea = var_51eefac8;
         var_2b02295f.s_boards = arraygetclosest(var_2b02295f.origin, struct::get_array("survival_door_boards"));
         use_trigger = spawn("trigger_radius_use", var_2b02295f.origin, 0, 96, 96, 1);
-        /#
-            assert(isdefined(use_trigger));
-        #/
+        assert(isdefined(use_trigger));
         use_trigger triggerignoreteam();
         use_trigger setvisibletoall();
         use_trigger setteamfortrigger(#"none");
@@ -73,9 +71,7 @@ function init_doors() {
         use_trigger sethintstring(#"hash_e0e56e669b6a886");
         use_trigger usetriggerignoreuseholdtime();
         var_56d14168 = spawn("script_model", var_2b02295f.origin);
-        /#
-            assert(isdefined(var_56d14168));
-        #/
+        assert(isdefined(var_56d14168));
         var_56d14168.angles = var_2b02295f.angles;
         var_56d14168.health = 10000000;
         var_56d14168 setcandamage(1);
@@ -104,7 +100,6 @@ function init_doors() {
 function function_6a3e8a89() {
     level endon(#"game_ended");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
         var_b1336156 = gettime();
@@ -181,8 +176,8 @@ function private door_think(eventstruct) {
     }
     if (isdefined(door)) {
         current_angles = door.angles;
-        var_f6f828b2 = vectorscale((0, 1, 0), 90) + current_angles;
-        var_bc7389e4 = vectorscale((0, -1, 0), 90) + current_angles;
+        var_f6f828b2 = (0, 90, 0) + current_angles;
+        var_bc7389e4 = (0, -90, 0) + current_angles;
         var_1be3aa53 = vectordot(player.origin - door.origin, anglestoforward(door.angles)) > 0;
         if (door.var_27a45076 == 0 && var_1be3aa53) {
             door rotateto(var_f6f828b2, 0.5);
@@ -317,9 +312,7 @@ function function_55859752() {
     door = self.door;
     if (!isdefined(door)) {
         door = spawn("script_model", self.origin);
-        /#
-            assert(isdefined(door));
-        #/
+        assert(isdefined(door));
         door.angles = self.angles;
         door.health = 10000000;
         door setcandamage(1);
@@ -357,9 +350,7 @@ function private function_e5d01ba1() {
             window_boards.var_811c2d3a = var_7f2b410c;
         }
         window_trigger = spawn("trigger_radius", window_boards.origin, 0, 64, 80, 1);
-        /#
-            assert(isdefined(window_trigger));
-        #/
+        assert(isdefined(window_trigger));
         window_trigger triggerignoreteam();
         window_trigger setvisibletoall();
         window_trigger usetriggerrequirelookat();
@@ -379,7 +370,6 @@ function private function_e5d01ba1() {
 function private function_51095a3d() {
     level endon(#"game_ended");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
         parent_struct = self.parent_struct;
@@ -491,9 +481,7 @@ function function_673a485() {
     window = self.window;
     if (!isdefined(window)) {
         window = spawn("script_model", self.origin);
-        /#
-            assert(isdefined(window));
-        #/
+        assert(isdefined(window));
         window.angles = self.angles;
         window.health = 10000000;
         window setcandamage(1);

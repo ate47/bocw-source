@@ -22,7 +22,7 @@ function preinit() {
 function function_c30c297c(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (isdefined(self)) {
         self playrenderoverridebundle(#"hash_1528dae63f55fcde");
-        playsound(bwastimejump, #"hash_20c4f0485930af2a", self.origin + vectorscale((0, 0, 1), 35));
+        playsound(bwastimejump, #"hash_20c4f0485930af2a", self.origin + (0, 0, 35));
     }
 }
 

@@ -22,12 +22,8 @@ function private function_c92543a0(attachmentitem, attachmentname) {
 // Checksum 0x82f47f1e, Offset: 0x2e0
 // Size: 0x2a0
 function function_8b7b98f(item, attachmentitem, var_41a74919 = 1, allowdupe = 0) {
-    /#
-        assert(isentity(item));
-    #/
-    /#
-        assert(isstruct(attachmentitem));
-    #/
+    assert(isentity(item));
+    assert(isstruct(attachmentitem));
     if (!isdefined(item.itementry) || item.itementry.itemtype != #"weapon") {
         return false;
     }
@@ -63,12 +59,8 @@ function function_8b7b98f(item, attachmentitem, var_41a74919 = 1, allowdupe = 0)
 // Checksum 0x49175156, Offset: 0x588
 // Size: 0x2c0
 function function_9e9c82a6(item, attachmentitem, var_41a74919 = 1, allowdupe = 0) {
-    /#
-        assert(isstruct(item));
-    #/
-    /#
-        assert(isstruct(attachmentitem));
-    #/
+    assert(isstruct(item));
+    assert(isstruct(attachmentitem));
     if (!isdefined(item) || !isdefined(item.itementry) || item.itementry.itemtype != #"weapon") {
         return false;
     }
@@ -104,12 +96,8 @@ function function_9e9c82a6(item, attachmentitem, var_41a74919 = 1, allowdupe = 0
 // Checksum 0xa99083a9, Offset: 0x850
 // Size: 0x514
 function function_2ced1d34(item, var_fe35755b, allowdupes = 0) {
-    /#
-        assert(isdefined(item));
-    #/
-    /#
-        assert(isdefined(var_fe35755b));
-    #/
+    assert(isdefined(item));
+    assert(isdefined(var_fe35755b));
     if (!isdefined(item) || !isdefined(item.itementry)) {
         return;
     }
@@ -117,15 +105,11 @@ function function_2ced1d34(item, var_fe35755b, allowdupes = 0) {
         return;
     }
     if (item.itementry.itemtype != #"weapon") {
-        /#
-            assert(0, "<unknown string>");
-        #/
+        assert(0, "<unknown string>");
         return;
     }
     if (var_fe35755b.itemtype != #"attachment") {
-        /#
-            assert(0, "<unknown string>");
-        #/
+        assert(0, "<unknown string>");
         return;
     }
     if (!isdefined(var_fe35755b.attachments) || var_fe35755b.attachments.size <= 0) {
@@ -200,9 +184,7 @@ function function_837f4a57(var_fe35755b) {
     }
     slots = array("attachSlotOptics", "attachSlotMuzzle", "attachSlotBarrel", "attachSlotUnderbarrel", "attachSlotBody", "attachSlotMagazine", "attachSlotHandle", "attachSlotStock");
     offsets = array(1, 2, 3, 4, 5, 6, 7, 8);
-    /#
-        assert(slots.size == offsets.size);
-    #/
+    assert(slots.size == offsets.size);
     for (index = 0; index < offsets.size; index++) {
         slot = slots[index];
         if (!isdefined(var_fe35755b.(slot))) {
@@ -217,9 +199,7 @@ function function_837f4a57(var_fe35755b) {
 // Checksum 0xa3d37de9, Offset: 0xee8
 // Size: 0x12e
 function function_d8cebda3(itementry) {
-    /#
-        assert(isstruct(itementry));
-    #/
+    assert(isstruct(itementry));
     mutators = 0;
     if (isdefined(itementry)) {
         var_b80d223d = array("doubleinventory", "doublesmallcaliber", "doublear", "doublelargecaliber", "doublesniper", "doubleshotgun", "doublespecial", "doublesmallhealth", "doublemediumhealth", "doublelargehealth", "doublesquadhealth", "doublelethalgrenades", "doubletacticalgrenades", "doubleequipment");
@@ -237,12 +217,8 @@ function function_d8cebda3(itementry) {
 // Checksum 0xc0d2b9e0, Offset: 0x1020
 // Size: 0x256
 function function_2879cbe0(mutators, ammoweapon) {
-    /#
-        assert(isint(mutators));
-    #/
-    /#
-        assert(isweapon(ammoweapon));
-    #/
+    assert(isint(mutators));
+    assert(isweapon(ammoweapon));
     if (!isdefined(level.var_98c8f260)) {
         level.var_98c8f260 = [];
         var_13339abf = array(#"ammo_small_caliber_item_t9", #"ammo_large_caliber_item_t9", #"ammo_ar_item_t9", #"ammo_sniper_item_t9", #"ammo_shotgun_item_t9", #"ammo_special_item_t9");
@@ -254,9 +230,7 @@ function function_2879cbe0(mutators, ammoweapon) {
                 continue;
             }
             weapon = var_f415ce36.weapon;
-            /#
-                assert(isdefined(weapon));
-            #/
+            assert(isdefined(weapon));
             if (!isdefined(weapon)) {
                 continue;
             }
@@ -277,9 +251,7 @@ function function_2879cbe0(mutators, ammoweapon) {
 // Checksum 0xea4862aa, Offset: 0x1280
 // Size: 0x736
 function function_cfa794ca(mutators, itementry) {
-    /#
-        assert(isdefined(itementry));
-    #/
+    assert(isdefined(itementry));
     weapon = item_world_util::function_35e06774(itementry);
     if (isdefined(weapon)) {
         if (weapon.name == #"eq_tripwire") {
@@ -325,18 +297,10 @@ function function_cfa794ca(mutators, itementry) {
 // Checksum 0xb04a046b, Offset: 0x19c0
 // Size: 0x20c
 function function_ca5531a5(inventory, itementry, item, itemtype, var_310b4dff) {
-    /#
-        assert(isdefined(inventory));
-    #/
-    /#
-        assert(isdefined(itementry));
-    #/
-    /#
-        assert(isdefined(itemtype));
-    #/
-    /#
-        assert(isarray(var_310b4dff));
-    #/
+    assert(isdefined(inventory));
+    assert(isdefined(itementry));
+    assert(isdefined(itemtype));
+    assert(isarray(var_310b4dff));
     if (itementry.itemtype != itemtype) {
         return;
     }
@@ -369,9 +333,7 @@ function function_ca5531a5(inventory, itementry, item, itemtype, var_310b4dff) {
 // Size: 0xb2
 function function_417ec8b9(itementry) {
     if (!isdefined(itementry)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     switch (itementry.itemtype) {
@@ -382,9 +344,7 @@ function function_417ec8b9(itementry) {
     case #"perk_tier_3":
         return 16;
     default:
-        /#
-            assert(0);
-        #/
+        assert(0);
         break;
     }
 }
@@ -407,9 +367,7 @@ function function_8746cad9(weaponslot) {
 // Checksum 0xbc5e1a34, Offset: 0x1d10
 // Size: 0x12a
 function function_4bd83c04(item) {
-    /#
-        assert(isdefined(item));
-    #/
+    assert(isdefined(item));
     if (!isdefined(item) || !isdefined(item.itementry)) {
         return false;
     }
@@ -426,9 +384,7 @@ function function_4bd83c04(item) {
 // Checksum 0x785429fd, Offset: 0x1e48
 // Size: 0x1aa
 function get_loot_weapons() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!(isdefined(getgametypesetting(#"wzlootlockers")) ? getgametypesetting(#"wzlootlockers") : 0)) {
         return array();
     }
@@ -463,9 +419,7 @@ function function_4905dddf() {
 // Checksum 0x867f79ba, Offset: 0x20b0
 // Size: 0x50
 function function_80fb4b76() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (clientfield::get_to_player("inventoryThirdWeapon")) {
         return 3;
     }
@@ -477,12 +431,8 @@ function function_80fb4b76() {
 // Checksum 0xd0ebe85d, Offset: 0x2108
 // Size: 0x1cc
 function function_70b12595(item) {
-    /#
-        assert(isdefined(item));
-    #/
-    /#
-        assert(isdefined(item.itementry));
-    #/
+    assert(isdefined(item));
+    assert(isdefined(item.itementry));
     if (!isdefined(item) || !isdefined(item.itementry)) {
         return false;
     }
@@ -508,12 +458,8 @@ function function_70b12595(item) {
 // Checksum 0xe1605572, Offset: 0x22e0
 // Size: 0x262
 function function_ee669356(item) {
-    /#
-        assert(isdefined(item));
-    #/
-    /#
-        assert(isdefined(item.itementry));
-    #/
+    assert(isdefined(item));
+    assert(isdefined(item.itementry));
     if (!isdefined(item) || !isdefined(item.itementry)) {
         return false;
     }
@@ -550,9 +496,7 @@ function function_ee669356(item) {
 // Checksum 0xeb9d9678, Offset: 0x2550
 // Size: 0x196
 function function_b6a27222(slotid) {
-    /#
-        assert(isdefined(slotid));
-    #/
+    assert(isdefined(slotid));
     foreach (weaponslot in array(17 + 1, 17 + 1 + 8 + 1, 17 + 1 + 8 + 1 + 8 + 1)) {
         foreach (attachmentoffset in array(1, 2, 3, 4, 5, 6, 7, 8)) {
             if (slotid == weaponslot + attachmentoffset) {
@@ -597,12 +541,8 @@ function function_1507e6f0(itementry) {
 // Checksum 0xda5b1de, Offset: 0x2858
 // Size: 0xf2
 function function_398b9770(weaponslotid, var_f9f8c0b5) {
-    /#
-        assert(isdefined(weaponslotid));
-    #/
-    /#
-        assert(isdefined(var_f9f8c0b5));
-    #/
+    assert(isdefined(weaponslotid));
+    assert(isdefined(var_f9f8c0b5));
     foreach (attachmentoffset in array(1, 2, 3, 4, 5, 6, 7, 8)) {
         if (var_f9f8c0b5 == weaponslotid + attachmentoffset) {
             return true;
@@ -616,12 +556,8 @@ function function_398b9770(weaponslotid, var_f9f8c0b5) {
 // Checksum 0xcc624ce5, Offset: 0x2958
 // Size: 0x1f8
 function function_31a0b1ef(item, attachmentitem, var_41a74919 = 1) {
-    /#
-        assert(isstruct(item));
-    #/
-    /#
-        assert(isstruct(attachmentitem));
-    #/
+    assert(isstruct(item));
+    assert(isstruct(attachmentitem));
     if (!isdefined(item) || !isdefined(item.attachments) || item.attachments.size <= 0 || !isdefined(item.itementry) || item.itementry.itemtype != #"weapon") {
         return 0;
     }
@@ -648,9 +584,7 @@ function function_31a0b1ef(item, attachmentitem, var_41a74919 = 1) {
 // Checksum 0xe9b45eba, Offset: 0x2b58
 // Size: 0x1f2
 function function_6e9e7169(item) {
-    /#
-        assert(isdefined(item));
-    #/
+    assert(isdefined(item));
     weapon = item_world_util::function_35e06774(item.itementry);
     if (!isdefined(weapon)) {
         return;
@@ -668,9 +602,7 @@ function function_6e9e7169(item) {
     if (isdefined(item.var_59361ab4) && item.var_59361ab4 > 0) {
         weapon = function_eeddea9a(weapon, item.var_59361ab4);
     }
-    /#
-        assert(weapon.attachments.size == attachments.size, "<unknown string>" + attachments.size + "<unknown string>" + function_9e72a96(weapon.name) + "<unknown string>" + weapon.attachments.size);
-    #/
+    assert(weapon.attachments.size == attachments.size, "<unknown string>" + attachments.size + "<unknown string>" + function_9e72a96(weapon.name) + "<unknown string>" + weapon.attachments.size);
     item.var_627c698b = weapon;
 }
 
@@ -679,9 +611,7 @@ function function_6e9e7169(item) {
 // Checksum 0x16bf36e2, Offset: 0x2d58
 // Size: 0xea
 function function_2b83d3ff(item) {
-    /#
-        assert(isdefined(item));
-    #/
+    assert(isdefined(item));
     if (!isdefined(item)) {
         return undefined;
     }

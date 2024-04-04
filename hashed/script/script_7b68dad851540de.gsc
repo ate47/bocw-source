@@ -163,9 +163,7 @@ function private function_3b013edc(shotname) {
 // Checksum 0xbc56f2dc, Offset: 0x9a0
 // Size: 0x15a
 function private function_27844fc(debounce) {
-    /#
-        assert(function_1631909f(self));
-    #/
+    assert(function_1631909f(self));
     if (!isdefined(self.var_715fc83d)) {
         self.var_715fc83d = -1;
     }
@@ -202,9 +200,7 @@ function private function_5ff18583(shots, substr) {
 // Checksum 0x2b8d42b9, Offset: 0xbc8
 // Size: 0x62
 function play(ai) {
-    /#
-        assert(function_1631909f(self));
-    #/
+    assert(function_1631909f(self));
     self thread function_5e77c231(ai);
     self waittill(#"hash_3a2c70ba8c45838e");
 }
@@ -318,7 +314,6 @@ function private function_8b855873(&shots, ai, var_ee9cbc26) {
     ai endon(#"entitydeleted", #"in_action");
     ai.var_a965704f = undefined;
     while (true) {
-        result = undefined;
         result = ai waittill(#"alert", #"death", #"damage");
         self childthread function_ca2d3925(shots, ai, var_ee9cbc26, result);
     }
@@ -442,12 +437,8 @@ function private function_2e6e8631(&shots, var_68a5d6c0, yaw) {
 // Checksum 0x767f8f78, Offset: 0x1b40
 // Size: 0x8a
 function claim(obj) {
-    /#
-        assert(issentient(self));
-    #/
-    /#
-        assert(!isdefined(obj.claimer) || obj.claimer == self, "<unknown string>");
-    #/
+    assert(issentient(self));
+    assert(!isdefined(obj.claimer) || obj.claimer == self, "<unknown string>");
     obj.claimer = self;
     self.smart_object = obj;
 }
@@ -460,9 +451,7 @@ function function_a59dc8a8(obj) {
     if (!isdefined(obj)) {
         return;
     }
-    /#
-        assert(!isdefined(obj.claimer) || obj.claimer == self, "<unknown string>");
-    #/
+    assert(!isdefined(obj.claimer) || obj.claimer == self, "<unknown string>");
     if (isdefined(obj.claimer)) {
         if (!is_true(obj.claimer.var_29133295)) {
             obj.claimer val::reset_all(#"smart_object");
@@ -511,9 +500,7 @@ function can_use(obj) {
 // Checksum 0xafc61373, Offset: 0x1dc8
 // Size: 0x138
 function get_goal() {
-    /#
-        assert(function_1631909f(self));
-    #/
+    assert(function_1631909f(self));
     str_shot = undefined;
     result = self;
     if (self.var_db740c43.size <= 1) {
@@ -527,9 +514,7 @@ function get_goal() {
             result.goalradius = 16;
         }
     }
-    /#
-        assert(isdefined(result.goalradius));
-    #/
+    assert(isdefined(result.goalradius));
     return result;
 }
 
@@ -538,9 +523,7 @@ function get_goal() {
 // Checksum 0xdb97aeaa, Offset: 0x1f08
 // Size: 0x1c8
 function function_ab981ed(desiredpos, volume, var_ce60cc2e, var_2889f642 = 0) {
-    /#
-        assert(issentient(self));
-    #/
+    assert(issentient(self));
     if (!isdefined(level.smartobjectpoints)) {
         return undefined;
     }
@@ -627,9 +610,7 @@ function function_b03cc199(obj) {
 // Checksum 0x3e8f3220, Offset: 0x2368
 // Size: 0xd8c
 function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_aea7aa5b, var_a3a26744) {
-    /#
-        assert(issentient(self));
-    #/
+    assert(issentient(self));
     if (!isdefined(level.smartobjectpoints)) {
         return;
     }
@@ -654,7 +635,7 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
         drawtime = 40;
         var_1d23c510 = getdvarint(#"hash_6c470450dd7dffd2", -1) == self getentitynumber();
         if (var_1d23c510) {
-            line(startpos + vectorscale((0, 0, 1), 6), endpos + vectorscale((0, 0, 1), 6), (0, 0.5, 0.7), 1, 0, drawtime);
+            line(startpos + (0, 0, 6), endpos + (0, 0, 6), (0, 0.5, 0.7), 1, 0, drawtime);
         }
     #/
     var_c7d9d665 = 60;
@@ -669,8 +650,8 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
         if (distancesquared(obj.origin, self.origin) < var_62b1322) {
             /#
                 if (var_1d23c510) {
-                    box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
+                    box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -678,8 +659,8 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
         if (!self can_claim(obj)) {
             /#
                 if (var_1d23c510) {
-                    box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
+                    box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -687,8 +668,8 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
         if (!is_true(var_a3a26744) && !self can_use(obj)) {
             /#
                 if (var_1d23c510) {
-                    box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
+                    box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -696,8 +677,8 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
         if (!is_true(obj.script_auto_use)) {
             /#
                 if (var_1d23c510) {
-                    box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
+                    box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -707,8 +688,8 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
         if (var_98883cf9 < var_9da4df29) {
             /#
                 if (var_1d23c510) {
-                    box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
+                    box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -716,8 +697,8 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
         if (var_98883cf9 > linelen + var_d01a742) {
             /#
                 if (var_1d23c510) {
-                    box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
+                    box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -726,8 +707,8 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
         if (var_c79274d2 * var_c79274d2 > obj.var_2edb5d76) {
             /#
                 if (var_1d23c510) {
-                    box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
+                    box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -739,8 +720,8 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
         if (var_c79274d2 > var_fbf46d73) {
             /#
                 if (var_1d23c510) {
-                    box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
+                    box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -748,8 +729,8 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
         if (isdefined(volume) && !volume istouching(obj.origin)) {
             /#
                 if (var_1d23c510) {
-                    box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
+                    box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -772,7 +753,7 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
             score = score * var_d5260937;
             /#
                 if (var_1d23c510) {
-                    print3d(obj.origin + vectorscale((0, 0, 1), 20), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 20), "<unknown string>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
         }
@@ -789,8 +770,8 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
         }
         /#
             if (var_1d23c510) {
-                box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, vectorscale((1, 1, 0), 0.8), 0, drawtime);
-                print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>" + score, vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
+                box(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.8, 0.8, 0), 0, drawtime);
+                print3d(obj.origin + (0, 0, 24), "<unknown string>" + score, (0.5, 0.5, 0.5), 1, 0.2, drawtime);
             }
         #/
     }
@@ -802,9 +783,7 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
 // Checksum 0x6c8884dc, Offset: 0x3100
 // Size: 0x10a
 function function_b5ba6914(obj, optorigin, volume, *var_2889f642) {
-    /#
-        assert(issentient(self));
-    #/
+    assert(issentient(self));
     if (!is_true(optorigin.script_auto_use)) {
         return false;
     }
@@ -828,9 +807,7 @@ function function_b5ba6914(obj, optorigin, volume, *var_2889f642) {
 // Checksum 0xdd067aa, Offset: 0x3218
 // Size: 0x8c
 function set(obj) {
-    /#
-        assert(issentient(self));
-    #/
+    assert(issentient(self));
     if (isdefined(self.smart_object)) {
         self function_a59dc8a8(self.smart_object);
     }
@@ -869,9 +846,7 @@ function function_bd54ea4c() {
 // Checksum 0x8028b642, Offset: 0x3388
 // Size: 0x92
 function function_feb48f7(*obj) {
-    /#
-        assert(issentient(self));
-    #/
+    assert(issentient(self));
     if (!isdefined(self.script_stealthgroup)) {
         return false;
     }
@@ -886,9 +861,7 @@ function function_feb48f7(*obj) {
 // Checksum 0xa1c63fe6, Offset: 0x3428
 // Size: 0x156
 function function_97a10998(obj) {
-    /#
-        assert(issentient(self));
-    #/
+    assert(issentient(self));
     forward = anglestoforward(self.angles);
     normal = vectornormalize(obj.origin - self.origin);
     if (vectordot(forward, normal) >= cos(60)) {
@@ -985,17 +958,17 @@ function private function_23eef632() {
                 if (ishash(scriptbundlename)) {
                     scriptbundlename = function_9e72a96(scriptbundlename);
                 }
-                print3d(obj.origin + vectorscale((0, 0, 1), 80), scriptbundlename, vectorscale((1, 1, 0), 0.5), 1, 0.25, 1, 1);
-                draw_arrow(obj.origin + (0, 0, 1), obj.origin + (0, 0, 1) + anglestoforward(obj.angles) * 16, vectorscale((1, 1, 0), 0.5));
+                print3d(obj.origin + (0, 0, 80), scriptbundlename, (0.5, 0.5, 0), 1, 0.25, 1, 1);
+                draw_arrow(obj.origin + (0, 0, 1), obj.origin + (0, 0, 1) + anglestoforward(obj.angles) * 16, (0.5, 0.5, 0));
                 if (obj.var_db740c43.size > 0) {
                     foreach (intro in obj.var_db740c43) {
-                        print3d(intro.origin + vectorscale((0, 0, 1), 5), intro.shot, vectorscale((1, 1, 1), 0.5), 0.5, 0.1, 1, 1);
-                        line(intro.origin + (0, 0, 1), obj.origin + (0, 0, 1), vectorscale((1, 1, 1), 0.5), 0.5, 1, 1);
+                        print3d(intro.origin + (0, 0, 5), intro.shot, (0.5, 0.5, 0.5), 0.5, 0.1, 1, 1);
+                        line(intro.origin + (0, 0, 1), obj.origin + (0, 0, 1), (0.5, 0.5, 0.5), 0.5, 1, 1);
                     }
                 }
                 if (isdefined(obj.var_175b0e60) && obj.var_175b0e60.size > 0) {
                     foreach (intro in obj.var_175b0e60) {
-                        print3d(intro.var_93d6832 + vectorscale((0, 0, 1), 5), intro.shot + "<unknown string>", (1, 0, 0), 0.5, 0.1, 1, 1);
+                        print3d(intro.var_93d6832 + (0, 0, 5), intro.shot + "<unknown string>", (1, 0, 0), 0.5, 0.1, 1, 1);
                         line(intro.var_93d6832 + (0, 0, 1), obj.origin + (0, 0, 1), (1, 0, 0), 0.5, 1, 1);
                     }
                 }
@@ -1004,7 +977,7 @@ function private function_23eef632() {
                     if (obj.nextusetime >= 0) {
                         msg = msg + "<unknown string>" + int(float(obj.nextusetime - gettime()) / 1000) + 1;
                     }
-                    print3d(obj.origin + vectorscale((0, 0, 1), 75), msg, (0.5, 0.3, 0), 1, 0.25, 1, 1);
+                    print3d(obj.origin + (0, 0, 75), msg, (0.5, 0.3, 0), 1, 0.25, 1, 1);
                 }
             }
             waitframe(1);
@@ -1026,9 +999,9 @@ function private function_ed7733c7() {
                 if (ishash(scriptbundlename)) {
                     scriptbundlename = function_9e72a96(scriptbundlename);
                 }
-                print3d(obj.origin + vectorscale((0, 0, 1), 80), scriptbundlename, vectorscale((1, 0, 0), 0.5), 1, 0.25, 1, 1);
-                print3d(obj.origin + vectorscale((0, 0, 1), 70), "<unknown string>", vectorscale((1, 0, 0), 0.5), 1, 0.25, 1, 1);
-                draw_arrow(obj.origin + (0, 0, 1), obj.origin + (0, 0, 1) + anglestoforward(obj.angles) * 16, vectorscale((1, 0, 0), 0.5));
+                print3d(obj.origin + (0, 0, 80), scriptbundlename, (0.5, 0, 0), 1, 0.25, 1, 1);
+                print3d(obj.origin + (0, 0, 70), "<unknown string>", (0.5, 0, 0), 1, 0.25, 1, 1);
+                draw_arrow(obj.origin + (0, 0, 1), obj.origin + (0, 0, 1) + anglestoforward(obj.angles) * 16, (0.5, 0, 0));
             }
             if (level.var_49430738.size == 0) {
                 break;
@@ -1050,7 +1023,7 @@ function private function_6ab41bf7(shot) {
             self endon(#"death", #"scene_done");
             while (true) {
                 if (is_true(level.var_929178b5)) {
-                    print3d(self.origin + vectorscale((0, 0, 1), 71), shot, (1, 1, 0), 1, 0.25, 1, 1);
+                    print3d(self.origin + (0, 0, 71), shot, (1, 1, 0), 1, 0.25, 1, 1);
                 }
                 waitframe(1);
             }

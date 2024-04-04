@@ -101,9 +101,7 @@ function private function_df47b31b(flag) {
 // Checksum 0x6c393617, Offset: 0x680
 // Size: 0x5a
 function function_1e4302d0(value, index) {
-    /#
-        assert(index < 2);
-    #/
+    assert(index < 2);
     newvalue = value << 1 | index & 1;
     return newvalue;
 }
@@ -113,14 +111,10 @@ function function_1e4302d0(value, index) {
 // Checksum 0x3909c76f, Offset: 0x6e8
 // Size: 0xda
 function private function_fd3c1bcc(start, end, default_val) {
-    /#
-        assert(isvec(default_val));
-    #/
+    assert(isvec(default_val));
     trace = worldtrace(start, end);
     if (trace[#"fraction"] < 1) {
-        /#
-            assert(isvec(trace[#"position"]));
-        #/
+        assert(isvec(trace[#"position"]));
         return trace[#"position"];
     }
     return default_val;
@@ -131,9 +125,7 @@ function private function_fd3c1bcc(start, end, default_val) {
 // Checksum 0x730bd403, Offset: 0x7d0
 // Size: 0x84
 function function_a5fd9aa8(insertion) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     arrayremovevalue(insertion.players, undefined, 0);
     if (isdefined(insertion.otherplayers)) {
         arrayremovevalue(insertion.otherplayers, undefined, 0);
@@ -161,8 +153,8 @@ function function_70dd0500() {
 // Size: 0x192
 function private function_3ca86964(var_1d83d08d) {
     var_6024133d = getentarray("map_corner", "targetname");
-    mins = vectorscale((-1, -1, 0), 150000);
-    maxs = vectorscale((1, 1, 0), 150000);
+    mins = (-150000, -150000, 0);
+    maxs = (150000, 150000, 0);
     if (var_6024133d.size == 0) {
         return {#start:mins, #end:maxs};
     }
@@ -178,15 +170,9 @@ function private function_3ca86964(var_1d83d08d) {
 // Checksum 0xc42385ea, Offset: 0xa90
 // Size: 0x26a
 function private function_9ddb4115(var_1d83d08d) {
-    /#
-        assert(isstruct(var_1d83d08d));
-    #/
-    /#
-        assert(isdefined(var_1d83d08d.start));
-    #/
-    /#
-        assert(isdefined(var_1d83d08d.end));
-    #/
+    assert(isstruct(var_1d83d08d));
+    assert(isdefined(var_1d83d08d.start));
+    assert(isdefined(var_1d83d08d.end));
     if (isdefined(level.deathcircles) && level.deathcircles.size > 0) {
         initcircle = level.deathcircles[0];
         newstart = var_1d83d08d.start;
@@ -217,21 +203,13 @@ function private function_9ddb4115(var_1d83d08d) {
 // Checksum 0xaca8ab64, Offset: 0xd08
 // Size: 0x168
 function private function_ea1ad421(insertion, start, end) {
-    /#
-        assert(isstruct(insertion));
-    #/
-    /#
-        assert(isvec(start));
-    #/
-    /#
-        assert(isvec(end));
-    #/
+    assert(isstruct(insertion));
+    assert(isvec(start));
+    assert(isvec(end));
     direction = end - start;
     direction = vectornormalize(direction);
     step = isdefined(level.var_427d6976.("insertionOOBCheckStepSize")) ? level.var_427d6976.("insertionOOBCheckStepSize") : 1000;
-    /#
-        assert(!chr_party(start));
-    #/
+    assert(!chr_party(start));
     point = function_f31cf3bb(start, direction, step, 0);
     if (!isdefined(point)) {
         return end;
@@ -274,12 +252,8 @@ function function_f31cf3bb(point, direction, step, depth, var_94a1d56d = 5) {
 // Checksum 0x689134d4, Offset: 0xfa8
 // Size: 0xc4
 function function_9368af66(insertion, player) {
-    /#
-        assert(isstruct(insertion));
-    #/
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isstruct(insertion));
+    assert(isplayer(player));
     insertion.infilteament setvisibletoplayer(player);
     insertion.infilteament clientfield::set("infiltration_ent", function_1e4302d0(1, insertion.index));
 }
@@ -289,15 +263,9 @@ function function_9368af66(insertion, player) {
 // Checksum 0xaf2f260e, Offset: 0x1078
 // Size: 0x2dc
 function function_d53a8c5b(insertion, fly_over_point, var_59526dd5, offset) {
-    /#
-        assert(isstruct(insertion));
-    #/
-    /#
-        assert(isvec(fly_over_point));
-    #/
-    /#
-        assert(isint(var_59526dd5) || isfloat(var_59526dd5));
-    #/
+    assert(isstruct(insertion));
+    assert(isvec(fly_over_point));
+    assert(isint(var_59526dd5) || isfloat(var_59526dd5));
     insertion.fly_over_point = fly_over_point;
     insertion.var_59526dd5 = var_59526dd5;
     var_872f085f = (0, var_59526dd5, 0);
@@ -322,9 +290,7 @@ function function_d53a8c5b(insertion, fly_over_point, var_59526dd5, offset) {
 // Checksum 0x651afb54, Offset: 0x1360
 // Size: 0x1ac
 function private function_e04b0ea8(insertion, start_point, var_872f085f, var_37362e08, var_f69b665b) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     direction = anglestoforward(var_872f085f);
     insertion.var_b686c9d = spawn("script_model", start_point + direction * var_37362e08);
     insertion.var_b686c9d.targetname = "insertion_jump";
@@ -342,9 +308,7 @@ function private function_e04b0ea8(insertion, start_point, var_872f085f, var_373
 // Checksum 0xcea2a043, Offset: 0x1518
 // Size: 0x9c
 function function_1db63266() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     insertionindex = function_20cba65e(self);
     insertion = level.insertions[insertionindex];
     if (isdefined(insertion) && isdefined(insertion.infilteament)) {
@@ -357,9 +321,7 @@ function function_1db63266() {
 // Checksum 0xd1d66c4f, Offset: 0x15c0
 // Size: 0x914
 function private fly_path(insertion, var_1d83d08d, fly_over_point, var_59526dd5) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     var_872f085f = (0, var_59526dd5, 0);
     direction = anglestoforward(var_872f085f);
     direction = vectornormalize(direction);
@@ -374,11 +336,11 @@ function private fly_path(insertion, var_1d83d08d, fly_over_point, var_59526dd5)
     endpoint = var_ee07e61a + var_abb846da * direction;
     /#
         if (getdvarint(#"scr_insertion_debug", 0) == 1) {
-            offset = vectorscale((0, 0, 1), 300);
+            offset = (0, 0, 300);
             debug_sphere(var_1d83d08d.start + 2 * offset, 45, (0, 1, 1));
             debug_sphere(var_1d83d08d.end + 2 * offset, 45, (1, 1, 0));
             debug_sphere(fly_over_point, 75, (1, 1, 1));
-            var_92a2e682 = vectorscale((0, 0, 1), 500);
+            var_92a2e682 = (0, 0, 500);
             debug_sphere(var_82b0af47, 75, (0, 1, 0));
             debug_sphere(var_ee07e61a, 75, (1, 0, 0));
             debug_line(var_82b0af47, var_ee07e61a, (0, 1, 0));
@@ -435,9 +397,7 @@ function private fly_path(insertion, var_1d83d08d, fly_over_point, var_59526dd5)
 // Checksum 0x8e126d63, Offset: 0x1ee0
 // Size: 0x1b4
 function function_20cba65e(player) {
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     if (!isdefined(player)) {
         return 0;
     }
@@ -462,9 +422,7 @@ function function_20cba65e(player) {
 // Checksum 0x49d7d7f4, Offset: 0x20a0
 // Size: 0x3dc
 function function_1b105d5b(insertion, fadeouttime, blacktime, fadeintime, rumble) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     if (isdefined(lui::get_luimenu("FullScreenBlack"))) {
         lui_menu = lui::get_luimenu("FullScreenBlack");
     } else {
@@ -512,12 +470,8 @@ function function_9ed051a4() {
     if (is_true(getgametypesetting(#"hash_2b05db5822050708"))) {
         return (level.mapcenter[0], level.mapcenter[1], function_70dd0500());
     }
-    /#
-        assert(isdefined(level.mapbounds.var_8faef7b7));
-    #/
-    /#
-        assert(isdefined(level.mapbounds.var_68fd6e0a));
-    #/
+    assert(isdefined(level.mapbounds.var_8faef7b7));
+    assert(isdefined(level.mapbounds.var_68fd6e0a));
     map_center = math::find_box_center(level.mapbounds.var_8faef7b7, level.mapbounds.var_68fd6e0a);
     map_center = map_center + (0, 0, function_70dd0500());
     if (is_true(getgametypesetting(#"wzintersectdeathcircle"))) {

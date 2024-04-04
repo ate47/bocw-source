@@ -130,7 +130,6 @@ function do_the_dirty_lerp_helper(*currenttime, *elapsedtime, *localclientnum, *
 function watchforexplosion(localclientnum) {
     self endon(#"death");
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"explode");
         mod = waitresult.mod;
         position = waitresult.position;

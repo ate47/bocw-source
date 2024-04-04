@@ -74,9 +74,7 @@ function function_8e4e3bb2() {
 // Checksum 0x587bfddc, Offset: 0x720
 // Size: 0xe8
 function private function_c7c0cee2(var_9bbce2cd, ringindex) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     for (i = 0; i < var_9bbce2cd.var_e17ae8be[ringindex].size; i++) {
         var_ac287808 = var_9bbce2cd.var_e17ae8be[ringindex][i];
         if (!isdefined(var_ac287808.model.curradius)) {
@@ -284,9 +282,7 @@ function private function_cd602d73() {
 // Size: 0x1aa
 function private function_2020d6b0() {
     if (!isdefined(self)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return false;
     }
     checkdistance = level.var_67432513;
@@ -407,7 +403,7 @@ function private function_f8afee63(ringindex) {
 // Checksum 0x4bb61237, Offset: 0x1bd8
 // Size: 0x1b2
 function private function_2be7a212(ringindex, origin) {
-    origin = function_b4c74561(origin + vectorscale((0, 0, 1), 16));
+    origin = function_b4c74561(origin + (0, 0, 16));
     radindex = self.var_e17ae8be[ringindex].size;
     self.var_e17ae8be[ringindex][radindex] = {};
     self.var_e17ae8be[ringindex][radindex].origin = origin;
@@ -425,7 +421,7 @@ function private function_2be7a212(ringindex, origin) {
 // Checksum 0xefb36e70, Offset: 0x1d98
 // Size: 0x196
 function private function_b4c74561(origin) {
-    var_9912c765 = vectorscale((0, 0, 1), 200);
+    var_9912c765 = (0, 0, 200);
     attempts = 1;
     uptrace = bullettrace(origin + var_9912c765, origin, 0, self);
     downtrace = bullettrace(origin, origin - var_9912c765, 0, self);

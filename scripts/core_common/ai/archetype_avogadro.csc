@@ -180,9 +180,7 @@ function private function_6ddf79a2(localclientnum, oldval, newval, *bnewent, *bi
         level.var_c42e1dca[id] = spawnstruct();
     }
     if (bwastimejump == 0) {
-        /#
-            assert(isdefined(level.var_c42e1dca[id].beam_id));
-        #/
+        assert(isdefined(level.var_c42e1dca[id].beam_id));
         beamkill(binitialsnap, level.var_c42e1dca[id].beam_id);
         return;
     }

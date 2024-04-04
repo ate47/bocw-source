@@ -130,7 +130,7 @@ function function_b7f367ed(old_position, new_position) {
 // Checksum 0xdbfe6dd, Offset: 0x868
 // Size: 0x32
 function is_falling(position) {
-    return function_b7f367ed(position, position + vectorscale((0, 0, -1), 500));
+    return function_b7f367ed(position, position + (0, 0, -500));
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c

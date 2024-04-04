@@ -16,9 +16,7 @@
 // Checksum 0x9e9bb0d2, Offset: 0x3e0
 // Size: 0x4a
 function set_pacifist(val) {
-    /#
-        assert(issentient(self), "<unknown string>");
-    #/
+    assert(issentient(self), "<unknown string>");
     self.pacifist = val;
 }
 
@@ -27,9 +25,7 @@ function set_pacifist(val) {
 // Checksum 0x2b4a9d95, Offset: 0x438
 // Size: 0x3e
 function disable_pain() {
-    /#
-        assert(isai(self), "<unknown string>");
-    #/
+    assert(isai(self), "<unknown string>");
     self.allowpain = 0;
 }
 
@@ -38,9 +34,7 @@ function disable_pain() {
 // Checksum 0xa02b603a, Offset: 0x480
 // Size: 0x42
 function enable_pain() {
-    /#
-        assert(isai(self), "<unknown string>");
-    #/
+    assert(isai(self), "<unknown string>");
     self.allowpain = 1;
 }
 
@@ -120,9 +114,7 @@ function waittill_dead(guys, num, timeoutlength) {
         allalive = 0;
         break;
     }
-    /#
-        assert(allalive, "<unknown string>");
-    #/
+    assert(allalive, "<unknown string>");
     if (!allalive) {
         newarray = [];
         for (i = 0; i < guys.size; i++) {
@@ -236,27 +228,17 @@ function private wait_for_shoot() {
 // Checksum 0x6311de81, Offset: 0xbe8
 // Size: 0x424
 function shoot_at_target(mode, target, tag, duration, sethealth, ignorefirstshotwait) {
-    /#
-        assert(isdefined(self));
-    #/
+    assert(isdefined(self));
     if (!isdefined(self)) {
         return;
     }
     self endon(#"death", #"stop_shoot_at_target");
-    /#
-        assert(isdefined(target), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(mode), "<unknown string>");
-    #/
+    assert(isdefined(target), "<unknown string>");
+    assert(isdefined(mode), "<unknown string>");
     mode_flag = mode === "normal" || mode === "shoot_until_target_dead" || mode === "kill_within_time";
-    /#
-        assert(mode_flag, "<unknown string>");
-    #/
+    assert(mode_flag, "<unknown string>");
     if (isdefined(duration)) {
-        /#
-            assert(duration >= 0, "<unknown string>");
-        #/
+        assert(duration >= 0, "<unknown string>");
     } else {
         duration = 0;
     }
@@ -364,14 +346,10 @@ function function_620eeb6b(goalent) {
         foreach (struct in linkedstructs) {
             if (struct.variantname === var_b266f03e) {
                 if (isdefined(targetent)) {
-                    /#
-                        assertmsg("<unknown string>" + var_b266f03e + "<unknown string>");
-                    #/
+                    assertmsg("<unknown string>" + var_b266f03e + "<unknown string>");
                 }
                 if (goalent == struct) {
-                    /#
-                        assertmsg("<unknown string>");
-                    #/
+                    assertmsg("<unknown string>");
                 }
                 targetent = struct;
             }
@@ -379,14 +357,10 @@ function function_620eeb6b(goalent) {
         foreach (struct in linkedstructs) {
             if (struct.variantname === "ai_likelyenemydir") {
                 if (isdefined(targetent)) {
-                    /#
-                        assertmsg("<unknown string>");
-                    #/
+                    assertmsg("<unknown string>");
                 }
                 if (goalent == struct) {
-                    /#
-                        assertmsg("<unknown string>");
-                    #/
+                    assertmsg("<unknown string>");
                 }
                 targetent = struct;
             }
@@ -403,15 +377,11 @@ function function_620eeb6b(goalent) {
                 foreach (target in var_2188535d) {
                     var_215ed720 = var_215ed720 + " " + target.origin;
                 }
-                /#
-                    assertmsg("<unknown string>" + var_215ed720);
-                #/
+                assertmsg("<unknown string>" + var_215ed720);
             }
         }
         if (!isdefined(targetent)) {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            assertmsg("<unknown string>");
         }
         self.var_2925fedc = targetent.origin;
         self.var_8f561628 = 1;
@@ -599,9 +569,7 @@ function bloody_death(n_delay, hit_loc) {
         return;
     }
     if (isdefined(hit_loc)) {
-        /#
-            assert(isinarray(array("<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>"), hit_loc), "<unknown string>");
-        #/
+        assert(isinarray(array("<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>"), hit_loc), "<unknown string>");
     } else {
         hit_loc = array::random(array("helmet", "head", "neck", "torso_upper", "torso_mid", "torso_lower", "right_arm_upper", "left_arm_upper", "right_arm_lower", "left_arm_lower", "right_hand", "left_hand", "right_leg_upper", "left_leg_upper", "right_leg_lower", "left_leg_lower", "right_foot", "left_foot", "gun", "riotshield"));
     }
@@ -691,15 +659,9 @@ function t_cylinder(origin, radius, halfheight) {
 // Checksum 0xb4ae6a80, Offset: 0x24c0
 // Size: 0xe2
 function function_470c0597(center, halfsize, angles) {
-    /#
-        assert(isvec(center));
-    #/
-    /#
-        assert(isvec(halfsize));
-    #/
-    /#
-        assert(isvec(angles));
-    #/
+    assert(isvec(center));
+    assert(isvec(halfsize));
+    assert(isvec(angles));
     struct = spawnstruct();
     struct.type = 2;
     struct.center = center;
@@ -897,9 +859,7 @@ function function_f6060793() {
 // Checksum 0x4316bded, Offset: 0x2e18
 // Size: 0x42
 function enable_careful() {
-    /#
-        assert(isai(self), "<unknown string>");
-    #/
+    assert(isai(self), "<unknown string>");
     self.script_careful = 1;
 }
 
@@ -908,9 +868,7 @@ function enable_careful() {
 // Checksum 0xc5a7a428, Offset: 0x2e68
 // Size: 0x4e
 function disable_careful() {
-    /#
-        assert(isai(self), "<unknown string>");
-    #/
+    assert(isai(self), "<unknown string>");
     self.script_careful = 0;
     self notify(#"hash_365fd8fda5a5a322");
 }
@@ -920,12 +878,8 @@ function disable_careful() {
 // Checksum 0x5e37ef4a, Offset: 0x2ec0
 // Size: 0x340
 function look_at(look_at, priority = 2, var_9e364106 = 1, duration = 0, var_152044ef, var_71e42546, var_a806de0b = 1, no_head = 0, var_3777d080 = 0, blend_time = 0.5, weight = 1) {
-    /#
-        assert(isai(self), "<unknown string>");
-    #/
-    /#
-        assert(priority >= 0 && priority < 4, "<unknown string>");
-    #/
+    assert(isai(self), "<unknown string>");
+    assert(priority >= 0 && priority < 4, "<unknown string>");
     if (!isdefined(self.var_8a068c50)) {
         self.var_8a068c50 = function_191b31f3();
     }
@@ -1027,9 +981,7 @@ function function_6b85d60d(priority) {
     if (!isdefined(self.var_8a068c50)) {
         self.var_8a068c50 = function_191b31f3();
     }
-    /#
-        assert(priority >= 0 && priority < 4, "<unknown string>");
-    #/
+    assert(priority >= 0 && priority < 4, "<unknown string>");
     function_e1c5902(priority);
     function_fcd4fcb7();
 }
@@ -1119,7 +1071,7 @@ function private function_1571b7b6(object, var_dfb8e94b) {
                 to = to geteye();
             }
             looking = anglestoforward(self gettagangles("<unknown string>"));
-            line(from, from + looking * 500, vectorscale((1, 1, 1), 0.75), 1, 0, 1);
+            line(from, from + looking * 500, (0.75, 0.75, 0.75), 1, 0, 1);
             color = (1, 1, 0);
             if (is_true(var_dfb8e94b)) {
                 color = (1, 1, 1);
@@ -1156,9 +1108,7 @@ function function_fd90d41c(target, tag) {
     if (!isdefined(self.var_875e35a2)) {
         self.var_875e35a2 = util::spawn_model("tag_origin");
     }
-    /#
-        assert(isdefined(self.var_875e35a2));
-    #/
+    assert(isdefined(self.var_875e35a2));
     self.var_875e35a2 linkto(target, tag, (0, 0, 0), (0, 0, 0));
     self lookatentity(self.var_875e35a2);
 }
@@ -1178,9 +1128,7 @@ function function_71915b43(target, tag) {
     if (!isdefined(self.var_875e35a2)) {
         self.var_875e35a2 = util::spawn_model("tag_origin");
     }
-    /#
-        assert(isdefined(self.var_875e35a2));
-    #/
+    assert(isdefined(self.var_875e35a2));
     self.var_875e35a2 linkto(target, tag, (0, 0, 0), (0, 0, 0));
     self aimatentityik(self.var_875e35a2);
 }

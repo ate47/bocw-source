@@ -8,21 +8,8 @@
 // Method(s) 7 Total 14
 class cspectrerisingindicator : cluielem {
 
-    // Namespace cspectrerisingindicator/spectrerisingindicator
-    // Params 0, eflags: 0x8
-    // Checksum 0x2c28bec9, Offset: 0x228
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cspectrerisingindicator/spectrerisingindicator
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x56918045, Offset: 0x3d8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace cspectrerisingindicator/spectrerisingindicator
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class cspectrerisingindicator : cluielem {
     // Checksum 0x4db10819, Offset: 0x338
     // Size: 0x44
     function set_clientnum(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "clientnum", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "clientnum", value);
     }
 
     // Namespace cspectrerisingindicator/spectrerisingindicator
@@ -53,7 +40,7 @@ class cspectrerisingindicator : cluielem {
     // Checksum 0x5fab6c0a, Offset: 0x388
     // Size: 0x44
     function set_isalive(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "isAlive", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "isAlive", value);
     }
 
     // Namespace cspectrerisingindicator/spectrerisingindicator

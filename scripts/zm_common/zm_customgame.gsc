@@ -43,11 +43,7 @@ function function_901b751c(var_c9db62d5) {
         return undefined;
     }
     setting = getgametypesetting(var_c9db62d5);
-    /#
-        /#
-            assert(isdefined(setting), "zblueprint_shield" + function_9e72a96(var_c9db62d5) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(setting), "zblueprint_shield" + function_9e72a96(var_c9db62d5) + "<unknown string>");
     return setting;
 }
 
@@ -1213,9 +1209,7 @@ function private function_34c2aeb5() {
     player.maxhealth = n_target;
     player setmaxhealth(n_target);
     player zm_utility::set_max_health();
-    /#
-        println("<unknown string>" + player.name + "<unknown string>" + player.var_66cb03ad);
-    #/
+    println("<unknown string>" + player.name + "<unknown string>" + player.var_66cb03ad);
     switch (n_regen_delay) {
     case 0:
         player.n_regen_delay = 2;

@@ -101,7 +101,7 @@ function add_a_chicken(model, scale, var_56fa7962, *var_706dd25e) {
     if (!namespace_ec06fe4a::function_a8975c67()) {
         return;
     }
-    orb = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, 0, 1), 30), "tag_origin", self.angles);
+    orb = namespace_ec06fe4a::spawnmodel(self.origin + (0, 0, 30), "tag_origin", self.angles);
     if (isdefined(orb)) {
         orb.targetname = "add_a_chicken";
         orb enablelinkto();
@@ -252,7 +252,6 @@ function function_1284a4d7(player) {
     if (is_true(self.special)) {
         return;
     }
-    result = undefined;
     result = self waittill(#"hash_71379f061079f246");
     waittillframeend();
     self notify(#"hash_451ceeb2b8839dc0");
@@ -276,7 +275,7 @@ function function_1284a4d7(player) {
         }
         while (self.var_4d2a40eb > 0) {
             var_45263d51 = 1;
-            self rotateto(self.angles + vectorscale((0, 1, 0), 180), var_45263d51);
+            self rotateto(self.angles + (0, 180, 0), var_45263d51);
             for (var_44f689f3 = var_45263d51; var_44f689f3 > 0; var_44f689f3 = var_44f689f3 - interval) {
                 extrawait = self function_ecec052c(player, weapon);
                 interval = firetime + extrawait;
@@ -316,7 +315,7 @@ function function_a46136b9(leader) {
         if (distance2dsquared(leader.origin, var_ad847a7d) > sqr(5)) {
             var_ad847a7d = leader.origin;
             if (var_f07c128e) {
-                if (is_true(leader.doa.var_3e81d24c) || isdefined(self.var_706dd25e)) {
+                if (is_true(leader.doa.infps) || isdefined(self.var_706dd25e)) {
                     z = 20;
                 } else {
                     z = 30;
@@ -429,7 +428,6 @@ function function_723d0c4c(player) {
     }
     timeout = gettime() + time;
     while (gettime() < timeout) {
-        result = undefined;
         result = player waittilltimeout(0.25, #"player_died", #"disconnect");
         if (result._notify != #"timeout") {
             self.lastweapon = self function_26c8b67(player, self.special);
@@ -458,9 +456,7 @@ function function_26c8b67(player, var_56fa7962 = 0) {
     if (is_true(level.var_4bf9ea19)) {
         weapon = player getcurrentweapon();
     } else {
-        /#
-            assert(isdefined(player.doa.var_9c7d56c1));
-        #/
+        assert(isdefined(player.doa.var_9c7d56c1));
         if (var_56fa7962 == 0) {
             weapon = player.doa.var_9c7d56c1;
         } else {
@@ -479,10 +475,8 @@ function function_56f05e91(player) {
     self endon(#"death");
     while (isdefined(self) && !is_true(self.var_89dad306)) {
         if (isdefined(player.doa.vehicle)) {
-            msg = undefined;
             msg = player.doa.vehicle waittilltimeout(0.1, #"weapon_fired", #"gunner_weapon_fired", #"death");
         } else {
-            msg = undefined;
             msg = player waittilltimeout(0.1, #"weapon_fired", #"gunner_weapon_fired");
         }
         if (msg._notify != "timeout") {
@@ -523,13 +517,13 @@ function private function_ecec052c(player, weapon) {
     owner = self.bird;
     angles = (self.angles[0], self.angles[1], 0);
     if (isdefined(player)) {
-        if (is_true(player.doa.var_3e81d24c)) {
+        if (is_true(player.doa.infps)) {
             viewangles = player getplayerangles();
             angles = (viewangles[0], self.angles[1], 0);
         }
     }
     forward = anglestoforward(angles);
-    offset = forward * 12 + vectorscale((0, 0, 1), 6);
+    offset = forward * 12 + (0, 0, 6);
     start = self.bird.origin + offset;
     /#
         if (getdvarint(#"hash_688eef6045c14ea9", 0)) {
@@ -604,7 +598,6 @@ function function_a5d7e43d() {
 function function_73b8cd81() {
     self notify(#"hash_5e13e601fac1829b");
     self endon(#"hash_5e13e601fac1829b");
-    msg = undefined;
     msg = self waittill(#"death", #"disconnect", #"hash_5e13e601fac1829b");
     foreach (chicken in self.doa.var_20c63763) {
         if (!isdefined(chicken)) {

@@ -22,7 +22,7 @@ function private function_2c4d3d40() {
     var_3a1737b4 = getscriptbundles(#"itemspawnentry");
     var_cce250bc = function_d634ed59();
     index = 0;
-    offsetorigin = vectorscale((0, 0, -1), 64000);
+    offsetorigin = (0, 0, -64000);
     foreach (var_1461de43, var_28f8f6a9 in var_3a1737b4) {
         if (isdefined(level.var_de3d5d56)) {
             level.var_de3d5d56[var_1461de43] = var_28f8f6a9;
@@ -43,12 +43,8 @@ function private function_2c4d3d40() {
 // Checksum 0xec14da01, Offset: 0x3d0
 // Size: 0x324
 function private function_440f0490(itemlistbundle) {
-    /#
-        assert(isdefined(itemlistbundle) && itemlistbundle.type === "<unknown string>");
-    #/
-    /#
-        assert(itemlistbundle.itemlist.size > 0, "<unknown string>" + itemlistbundle.name + "<unknown string>");
-    #/
+    assert(isdefined(itemlistbundle) && itemlistbundle.type === "<unknown string>");
+    assert(itemlistbundle.itemlist.size > 0, "<unknown string>" + itemlistbundle.name + "<unknown string>");
     if (itemlistbundle.itemlist.size <= 0) {
         return;
     }
@@ -80,9 +76,7 @@ function private function_440f0490(itemlistbundle) {
         currentweight = currentweight + weights[weightindex];
         if (var_d54615ef <= currentweight) {
             itemlistbundle = getscriptbundle(itemlistbundle.itemlist[weightindex].itementry);
-            /#
-                assert(itemlistbundle.type === "<unknown string>");
-            #/
+            assert(itemlistbundle.type === "<unknown string>");
             break;
         }
     }
@@ -103,9 +97,7 @@ function private function_6a5c090c() {
 // Size: 0x180
 function function_9e9f43cd() {
     if (!level flag::get(#"hash_67b445a4b1d59922")) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     foreach (targetname, points in level.var_1d777960) {
@@ -128,14 +120,10 @@ function function_9e9f43cd() {
 // Size: 0x194
 function function_e88ecf7f() {
     if (!level flag::get(#"hash_67b445a4b1d59922")) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
-    /#
-        assert(level.var_bf9b06d3.size == level.var_8d50adaa.size);
-    #/
+    assert(level.var_bf9b06d3.size == level.var_8d50adaa.size);
     for (index = 0; index < level.var_bf9b06d3.size; index++) {
         points = function_abaeb170(level.var_bf9b06d3[index], undefined, undefined, level.var_8d50adaa[index], undefined, 0);
         for (pointindex = 0; pointindex < points.size; pointindex++) {
@@ -283,11 +271,11 @@ function private _spawn_item(point, row, stashitem = 0) {
         function_43cd95f4(point.id, "");
         return;
     } else if (itementry.itemtype == #"vehicle") {
-        ground_pos = bullettrace(point.origin + vectorscale((0, 0, 1), 128), point.origin - vectorscale((0, 0, 1), 128), 0, undefined, 1);
+        ground_pos = bullettrace(point.origin + (0, 0, 128), point.origin - (0, 0, 128), 0, undefined, 1);
         if (ground_pos[#"surfacetype"] == "water" || ground_pos[#"surfacetype"] == "watershallow") {
-            ground_pos = bullettrace(point.origin + vectorscale((0, 0, 1), 2048), point.origin - vectorscale((0, 0, 1), 2048), 0, undefined, 1);
+            ground_pos = bullettrace(point.origin + (0, 0, 2048), point.origin - (0, 0, 2048), 0, undefined, 1);
         }
-        spawnpoint = ground_pos[#"position"] + vectorscale((0, 0, 1), 36);
+        spawnpoint = ground_pos[#"position"] + (0, 0, 36);
         vehicle = undefined;
         if (item_world_util::function_74e1e547(spawnpoint) && territory::is_inside(spawnpoint)) {
             params = spawnstruct();
@@ -323,7 +311,7 @@ function private _spawn_item(point, row, stashitem = 0) {
                 forward = anglestoforward(angles) * level.var_69dda516[0];
                 offset = rotatepoint(forward, (0, level.var_cc113617[0], 0));
                 origin = origin + offset;
-                ground_pos = physicstraceex(origin + vectorscale((0, 0, 1), 24), origin - vectorscale((0, 0, 1), 96), (0, 0, 0), (0, 0, 0), undefined, 32);
+                ground_pos = physicstraceex(origin + (0, 0, 24), origin - (0, 0, 96), (0, 0, 0), (0, 0, 0), undefined, 32);
                 origin = ground_pos[#"position"];
                 normal = ground_pos[#"normal"];
                 angles = function_c1fa62a2(angles, normal);
@@ -385,16 +373,14 @@ function private function_f0e5262b(item_name, point, childindex, stashitem = 0, 
     angles = (0, 0, 0);
     origin = point.origin;
     if (!stashitem) {
-        /#
-            assert(childindex > 0 && childindex <= 5);
-        #/
+        assert(childindex > 0 && childindex <= 5);
         parentangles = (0, point.angles[1], 0);
         degree = level.var_cc113617[childindex];
         distance = level.var_69dda516[childindex];
         offset = (cos(degree) * distance, sin(degree) * distance, 0);
         offset = rotatepoint(offset, parentangles);
         origin = origin + offset;
-        ground_pos = physicstraceex(origin + vectorscale((0, 0, 1), 24), origin - vectorscale((0, 0, 1), 96), (0, 0, 0), (0, 0, 0), undefined, 32);
+        ground_pos = physicstraceex(origin + (0, 0, 24), origin - (0, 0, 96), (0, 0, 0), (0, 0, 0), undefined, 32);
         var_f05b52fe = (isdefined(itementry.positionoffsetx) ? itementry.positionoffsetx : 0, isdefined(itementry.positionoffsety) ? itementry.positionoffsety : 0, isdefined(itementry.positionoffsetz) ? itementry.positionoffsetz : 0);
         origin = ground_pos[#"position"] + var_f05b52fe;
         normal = ground_pos[#"normal"];
@@ -458,9 +444,7 @@ function private function_ea39d1fa(stash) {
             }
             var_1dd9b7f1 = getscriptbundle(var_ee110db8.replacement);
             if (var_1dd9b7f1.type !== #"itemspawnlist") {
-                /#
-                    assert(0, "<unknown string>" + var_ee110db8);
-                #/
+                assert(0, "<unknown string>" + var_ee110db8);
                 continue;
             }
             var_eff83f3 = var_1dd9b7f1;
@@ -483,9 +467,7 @@ function private function_ea39d1fa(stash) {
             }
             stash.available = spawncount;
         } else {
-            /#
-                assert(0);
-            #/
+            assert(0);
         }
     } else {
         var_f16b79a = 0;
@@ -661,9 +643,7 @@ function private _setup() {
     if (isdefined(self.itemlistbundle) && isdefined(level.var_fb9a8536[self.itemlistbundle.name])) {
         self.itemlistbundle = getscriptbundle(level.var_fb9a8536[self.itemlistbundle.name]);
     }
-    /#
-        assert(isdefined(self.itemlistbundle), "<unknown string>" + self.scriptbundlename + "<unknown string>");
-    #/
+    assert(isdefined(self.itemlistbundle), "<unknown string>" + self.scriptbundlename + "<unknown string>");
     if (!isdefined(self.itemlistbundle.itemlist)) {
         self.itemlistbundle.itemlist = [];
     }
@@ -718,12 +698,8 @@ function function_3095d12a() {
 // Checksum 0xd3c3693e, Offset: 0x3218
 // Size: 0xa4
 function private function_9db93def() {
-    /#
-        assert(isdefined(self.target) && self.target != "<unknown string>", "<unknown string>" + self.origin + "<unknown string>");
-    #/
-    /#
-        assert(self.target !== self.targetname, "<unknown string>" + self.origin + "<unknown string>" + self.target + "<unknown string>");
-    #/
+    assert(isdefined(self.target) && self.target != "<unknown string>", "<unknown string>" + self.origin + "<unknown string>");
+    assert(self.target !== self.targetname, "<unknown string>" + self.origin + "<unknown string>" + self.target + "<unknown string>");
 }
 
 // Namespace namespace_65181344/namespace_65181344
@@ -731,24 +707,12 @@ function private function_9db93def() {
 // Checksum 0x6470d421, Offset: 0x32c8
 // Size: 0x6b0
 function private function_a8e0dc24(itementry, data, limit, var_a3a56d95, maxattachments) {
-    /#
-        assert(isstruct(itementry));
-    #/
-    /#
-        assert(itementry.itemtype == #"weapon");
-    #/
-    /#
-        assert(maxattachments >= var_a3a56d95);
-    #/
-    /#
-        assert(isarray(data.currentattachments));
-    #/
-    /#
-        assert(isarray(data.possibleattachments));
-    #/
-    /#
-        assert(isarray(data.availableslots));
-    #/
+    assert(isstruct(itementry));
+    assert(itementry.itemtype == #"weapon");
+    assert(maxattachments >= var_a3a56d95);
+    assert(isarray(data.currentattachments));
+    assert(isarray(data.possibleattachments));
+    assert(isarray(data.availableslots));
     attachments = data.currentattachments;
     if (maxattachments < var_a3a56d95) {
         return attachments;
@@ -763,9 +727,7 @@ function private function_a8e0dc24(itementry, data, limit, var_a3a56d95, maxatta
     }
     var_a3a56d95 = int(min(var_a3a56d95, possibleattachments.size));
     maxattachments = int(min(maxattachments, possibleattachments.size));
-    /#
-        assert(maxattachments >= var_a3a56d95);
-    #/
+    assert(maxattachments >= var_a3a56d95);
     var_5f5def05 = var_a3a56d95;
     var_ac516129 = maxattachments - var_a3a56d95;
     if (var_ac516129 > 0) {
@@ -777,9 +739,7 @@ function private function_a8e0dc24(itementry, data, limit, var_a3a56d95, maxatta
         var_41ade915 = possibleattachments[index].var_6be1bec7;
         var_fe35755b = getscriptbundle(var_41ade915);
         if (!isstruct(var_fe35755b)) {
-            /#
-                assert(0);
-            #/
+            assert(0);
             continue;
         }
         var_e77f982 = 1;
@@ -815,15 +775,9 @@ function private function_a8e0dc24(itementry, data, limit, var_a3a56d95, maxatta
 // Checksum 0x13db6acf, Offset: 0x3980
 // Size: 0x532
 function function_67456242(itementry) {
-    /#
-        assert(isstruct(itementry));
-    #/
-    /#
-        assert(itementry.itemtype == #"weapon");
-    #/
-    /#
-        assert(isdefined(itementry.var_a53e9db0) || isdefined(itementry.var_3e805062));
-    #/
+    assert(isstruct(itementry));
+    assert(itementry.itemtype == #"weapon");
+    assert(isdefined(itementry.var_a53e9db0) || isdefined(itementry.var_3e805062));
     weapon = item_world_util::function_35e06774(itementry, 1);
     attachments = weapon.attachments;
     availableslots = [];
@@ -834,9 +788,7 @@ function function_67456242(itementry) {
         var_41ade915 = item_world_util::function_6a0ee21a(attachment);
         var_fe35755b = getscriptbundle(var_41ade915);
         if (!isstruct(var_fe35755b)) {
-            /#
-                assert(0);
-            #/
+            assert(0);
             continue;
         }
         foreach (slot in array("attachSlotOptics", "attachSlotMuzzle", "attachSlotBarrel", "attachSlotUnderbarrel", "attachSlotBody", "attachSlotMagazine", "attachSlotHandle", "attachSlotStock")) {
@@ -847,9 +799,7 @@ function function_67456242(itementry) {
     }
     var_a3a56d95 = isdefined(itementry.var_8e212f46) ? itementry.var_8e212f46 : 0;
     maxattachments = isdefined(itementry.var_d0e99a2a) ? itementry.var_d0e99a2a : 0;
-    /#
-        assert(maxattachments >= var_a3a56d95);
-    #/
+    assert(maxattachments >= var_a3a56d95);
     data = spawnstruct();
     data.currentattachments = attachments;
     data.availableslots = availableslots;
@@ -874,9 +824,7 @@ function function_67456242(itementry) {
 // Size: 0x16f2
 function private function_e25c9d12(var_f16b79a, &var_8107154f, spawncount, stashitem = 0, falling = 2, &var_a1b91de4 = undefined, var_7d55e249 = undefined) {
     if (!isstruct(self)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     /#
@@ -884,24 +832,12 @@ function private function_e25c9d12(var_f16b79a, &var_8107154f, spawncount, stash
             level.var_2e96a450[self.target] = self.points.size;
         }
     #/
-    /#
-        assert(isstruct(self));
-    #/
-    /#
-        assert(isarray(var_8107154f));
-    #/
-    /#
-        assert(isint(spawncount));
-    #/
-    /#
-        assert(isdefined(self.itemlistbundle));
-    #/
-    /#
-        assert(!is_true(self.vehiclespawner));
-    #/
-    /#
-        assert(!is_true(self.supplystash));
-    #/
+    assert(isstruct(self));
+    assert(isarray(var_8107154f));
+    assert(isint(spawncount));
+    assert(isdefined(self.itemlistbundle));
+    assert(!is_true(self.vehiclespawner));
+    assert(!is_true(self.supplystash));
     if (spawncount <= 0) {
         return;
     }
@@ -995,9 +931,7 @@ function private function_e25c9d12(var_f16b79a, &var_8107154f, spawncount, stash
     }
     arrayremovevalue(self.var_202d2992, 0, 1);
     arrayremovevalue(self.var_3ddde668, 0, 1);
-    /#
-        assert(self.var_43feff59 <= var_399d601b);
-    #/
+    assert(self.var_43feff59 <= var_399d601b);
     var_c499a7fa = getarraykeys(self.var_3ddde668);
     if (self.var_5d3a106 > 0) {
         for (pointindex = self.var_43feff59; pointindex < spawncount && self.var_5d3a106 > 0; pointindex++) {
@@ -1023,9 +957,7 @@ function private function_e25c9d12(var_f16b79a, &var_8107154f, spawncount, stash
         waitframe(1);
         level.var_d0676b07 = getrealtime();
     }
-    /#
-        assert(self.var_43feff59 <= var_399d601b);
-    #/
+    assert(self.var_43feff59 <= var_399d601b);
     if (!isdefined(var_a1b91de4)) {
         var_a1b91de4 = getarraykeys(var_8107154f);
         for (index = 0; index < var_8107154f.size; index++) {
@@ -1051,9 +983,7 @@ function private function_e25c9d12(var_f16b79a, &var_8107154f, spawncount, stash
         }
         var_75aa5cbb = arraykeys[var_f5111345];
         if (pointindex >= var_8107154f.size) {
-            /#
-                assert(var_a9826383 === 0);
-            #/
+            assert(var_a9826383 === 0);
             var_a9826383 = 1;
             pointindex = 0;
         }
@@ -1145,12 +1075,8 @@ function private function_e25c9d12(var_f16b79a, &var_8107154f, spawncount, stash
         if (isdefined(itemlistbundle) && isdefined(level.var_fb9a8536[itemlistbundle.name])) {
             var_12ab6449 = getscriptbundle(level.var_fb9a8536[itemlistbundle.name]);
             if (!isdefined(var_12ab6449)) {
-                /#
-                    println("<unknown string>" + itemlistbundle.name);
-                #/
-                /#
-                    assert(0);
-                #/
+                println("<unknown string>" + itemlistbundle.name);
+                assert(0);
                 continue;
             }
             itemlistbundle = var_12ab6449;
@@ -1305,9 +1231,7 @@ function function_ca77960f() {
 // Checksum 0x86ca0b76, Offset: 0x5db8
 // Size: 0x2f4
 function function_50a2c746(&var_f38d5b52, var_87e9f374 = 0) {
-    /#
-        assert(isarray(var_f38d5b52));
-    #/
+    assert(isarray(var_f38d5b52));
     /#
         if (var_87e9f374) {
         }
@@ -1429,9 +1353,7 @@ function setup_groups() {
     /#
     #/
     level.var_f1f90fd3 = float(gettime() - starttime) / 1000;
-    /#
-        println("<unknown string>" + var_282e0a11);
-    #/
+    println("<unknown string>" + var_282e0a11);
 }
 
 // Namespace namespace_65181344/namespace_65181344
@@ -1440,22 +1362,16 @@ function setup_groups() {
 // Size: 0x546
 function function_5eada592(scriptbundlename, linkto = 1) {
     if (!isdefined(self)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     if (!isdefined(scriptbundlename)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     self.itemlistbundle = getscriptbundle(scriptbundlename);
     if (!isdefined(self.itemlistbundle)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     items = [];
@@ -1524,22 +1440,16 @@ function function_5eada592(scriptbundlename, linkto = 1) {
 // Size: 0x3fc
 function function_ae93ad7b(scriptbundlename, points, falling = 2, var_9961d9f3) {
     if (!isdefined(scriptbundlename)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     if (!isarray(points) || points.size <= 0) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     scriptbundle = getscriptbundle(scriptbundlename);
     if (!isdefined(scriptbundle)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     itemgroup = spawnstruct();
@@ -1583,33 +1493,23 @@ function function_ae93ad7b(scriptbundlename, points, falling = 2, var_9961d9f3) 
 // Size: 0x4b0
 function function_fd87c780(scriptbundlename, itemcount, falling = 2, var_9961d9f3) {
     if (!isdefined(self)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     if (!isdefined(scriptbundlename)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     if (!isint(itemcount) || itemcount <= 0) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     scriptbundle = getscriptbundle(scriptbundlename);
     if (!isdefined(scriptbundle)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
-    /#
-        assert(isdefined(self.origin));
-    #/
+    assert(isdefined(self.origin));
     itemgroup = spawnstruct();
     itemgroup.itemlistbundle = scriptbundle;
     itemgroup.origin = self.origin;

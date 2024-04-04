@@ -374,7 +374,6 @@ function function_467efa7b(var_9f3fb329 = 0) {
 // Size: 0x108
 function function_bb54a31f(*localclientnum, var_20804e3b, var_3ab46b9) {
     self endon(var_3ab46b9);
-    s_result = undefined;
     s_result = level waittill(#"respawn");
     a_e_players = getlocalplayers();
     foreach (e_player in a_e_players) {
@@ -390,7 +389,6 @@ function function_bb54a31f(*localclientnum, var_20804e3b, var_3ab46b9) {
 // Size: 0xfe
 function function_ae3780f1(localclientnum, n_fx_id, var_3ab46b9) {
     self endon(var_3ab46b9);
-    s_result = undefined;
     s_result = level waittill(#"respawn");
     a_e_players = getlocalplayers();
     foreach (e_player in a_e_players) {
@@ -778,7 +776,7 @@ function function_7757350c(player, machine) {
 // Checksum 0x8e490312, Offset: 0x2e50
 // Size: 0x4a
 function private function_2cfe56d8() {
-    var_2cdb84bb = self.origin + vectorscale((0, 0, 1), 24) + anglestoforward(self.angles) * 24;
+    var_2cdb84bb = self.origin + (0, 0, 24) + anglestoforward(self.angles) * 24;
     return var_2cdb84bb;
 }
 
@@ -807,17 +805,17 @@ function private function_538799c4() {
         while (true) {
             if (getdvarint(#"hash_416069220b5b56e3", 0)) {
                 i = 0;
-                debug2dtext((325, 200, 0) + vectorscale((0, 1, 0), 20) * (i + 1), "<unknown string>", (0, 1, 0));
+                debug2dtext((325, 200, 0) + (0, 20, 0) * (i + 1), "<unknown string>", (0, 1, 0));
                 foreach (e_machine in level.var_c427e93b) {
                     if (isdefined(e_machine)) {
                         var_2cdb84bb = e_machine function_2cfe56d8();
                         i++;
                         if (is_true(e_machine.var_c02c4d66)) {
-                            debug2dtext((325, 200, 0) + vectorscale((0, 1, 0), 20) * (i + 1), function_9e72a96(e_machine.model), (0, 1, 0));
+                            debug2dtext((325, 200, 0) + (0, 20, 0) * (i + 1), function_9e72a96(e_machine.model), (0, 1, 0));
                             circle(var_2cdb84bb, 64, (0, 1, 0));
                             continue;
                         }
-                        debug2dtext((325, 200, 0) + vectorscale((0, 1, 0), 20) * (i + 1), function_9e72a96(e_machine.model), (1, 0, 0));
+                        debug2dtext((325, 200, 0) + (0, 20, 0) * (i + 1), function_9e72a96(e_machine.model), (1, 0, 0));
                         circle(var_2cdb84bb, 64, (1, 0, 0));
                     }
                 }

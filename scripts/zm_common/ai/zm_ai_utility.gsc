@@ -121,10 +121,10 @@ function private function_637778cf() {
     self.maxhealth = function_f7014c3d(self.health);
     self.health = self.maxhealth;
     if (getdvarint(#"hash_26d204300c52be34", 0) && self.var_6f84b820 === #"special") {
-        target_set(self, vectorscale((0, 0, 1), 48));
+        target_set(self, (0, 0, 48));
     }
     if (getdvarint(#"hash_367c47109502674", 0) && self.var_6f84b820 === #"elite") {
-        target_set(self, vectorscale((0, 0, 1), 48));
+        target_set(self, (0, 0, 48));
     }
     self.score_events[#"kill"] = settingsbundle.scoreevent;
     self.score_events[#"assist"] = settingsbundle.var_dc706c6c;
@@ -155,9 +155,7 @@ function private function_a19d7104(settingsbundle) {
     }
     foreach (var_e8d7c6d7 in settingsbundle.weapondamagescaleoverrides) {
         if (!isdefined(var_e8d7c6d7.weaponid) || !isdefined(var_e8d7c6d7.damagescale)) {
-            /#
-                println("<unknown string>" + settingsbundle.name);
-            #/
+            println("<unknown string>" + settingsbundle.name);
             continue;
         }
         level.var_532264f5[settingsbundle.name][var_e8d7c6d7.weaponid] = {#var_c6cc6205:var_e8d7c6d7.damagescale, #var_fff93f95:var_e8d7c6d7.var_628192b0, #var_8e22aa87:var_e8d7c6d7.var_fc420d71, #var_fac896db:var_e8d7c6d7.var_97b22faa};
@@ -318,9 +316,7 @@ function function_f7014c3d(base_health) {
     /#
         if (is_true(register_archetype)) {
             if (isdefined(level.var_87df97b5[self.archetype])) {
-                /#
-                    assert(level.var_87df97b5[self.archetype] === base_health, "<unknown string>" + self.archetype + "<unknown string>" + level.var_87df97b5[self.archetype] + "<unknown string>" + base_health);
-                #/
+                assert(level.var_87df97b5[self.archetype] === base_health, "<unknown string>" + self.archetype + "<unknown string>" + level.var_87df97b5[self.archetype] + "<unknown string>" + base_health);
             }
             level.var_87df97b5[self.archetype] = base_health;
         }
@@ -533,9 +529,7 @@ function function_de3dda83(var_5457dc44, hitloc, point, var_ebcb86d6) {
 // Checksum 0xc3c8fc7f, Offset: 0x1f40
 // Size: 0x246
 function function_a2e8fd7b(entity, player, var_3f120c4d = 2) {
-    /#
-        assert(isplayer(player), "<unknown string>");
-    #/
+    assert(isplayer(player), "<unknown string>");
     if (getdvarint(#"zm_zone_pathing", 1) && level.zones.size) {
         zone_path = zm_zonemgr::function_54fc7938(player, entity);
         if (isdefined(entity.var_64c67df3)) {
@@ -684,9 +678,7 @@ function function_a8dc3363(s_location) {
         util::wait_network_frame();
         self pathmode("dont move", 1);
         while (!self function_f1b557c6()) {
-            /#
-                println("<unknown string>" + self getentitynumber() + "<unknown string>");
-            #/
+            println("<unknown string>" + self getentitynumber() + "<unknown string>");
             waitframe(1);
         }
         self dontinterpolate();

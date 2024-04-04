@@ -1800,7 +1800,6 @@ function mega_barrel_watch_reload() {
     self notify(var_17b7891d);
     self endon(var_17b7891d);
     while (true) {
-        result = undefined;
         result = self waittill(#"reload_start");
         var_21e583b2 = self getcurrentweapon();
         if (function_3efc58e4(var_21e583b2)) {
@@ -1838,7 +1837,6 @@ function function_ea836a5d() {
 // Checksum 0xd488d3a6, Offset: 0x10220
 // Size: 0x94
 function function_5a2447b1(time) {
-    result = undefined;
     result = self waittilltimeout(time, #"actor_corpse", #"death");
     waittillframeend();
     if (isdefined(result.corpse)) {
@@ -1880,7 +1878,6 @@ function function_c0543415(watcher) {
 // Checksum 0xdd845b40, Offset: 0x10418
 // Size: 0x19c
 function function_f2346f03(*watcher, *player) {
-    waitresult = undefined;
     waitresult = self waittill(#"projectile_impact_explode", #"explode", #"death");
     damage_pos = self.origin;
     attacker = self.owner;
@@ -2267,11 +2264,7 @@ function function_e7547fea(var_cbe471c0, var_6ce69257 = 0) {
             var_37e764ff.itementry = var_3383cd4e.itementry;
             var_37e764ff.id = var_3383cd4e.id;
         } else {
-            /#
-                /#
-                    assertmsg("<unknown string>" + var_cbe471c0);
-                #/
-            #/
+            assertmsg("<unknown string>" + var_cbe471c0);
         }
         if (var_6ce69257) {
             if (isdefined(self.var_9338f79f) && isdefined(self.var_9d3ba2ea)) {
@@ -2405,7 +2398,6 @@ function mega_barrel_watch_multikill_vo() {
     self notify(var_17b7891d);
     self endon(var_17b7891d);
     while (true) {
-        result = undefined;
         result = self waittill(#"hash_44abe1c14b998f86");
         if (isdefined(result.weapon_name)) {
             if (!self function_c44997c4() && !is_true(self.var_49be2d20) && math::cointoss(35)) {

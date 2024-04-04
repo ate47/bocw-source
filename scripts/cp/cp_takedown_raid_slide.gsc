@@ -47,9 +47,9 @@ function starting(*var_d3440450) {
     var_3eba13ec[0] spawner::add_spawn_function(&namespace_b100dd86::function_a66feb27);
     level.adler = var_8a3bb97c[0] spawner::spawn(1);
     level.woods = var_6534f716[0] spawner::spawn(1);
-    level.var_2fef04d8 = var_3eba13ec[0] spawner::spawn(1);
-    level.var_2fef04d8 val::set(#"magic_bullet_shield", "allowdeath", 0);
-    level.var_2fef04d8.magic_bullet_shield = 1;
+    level.qasim = var_3eba13ec[0] spawner::spawn(1);
+    level.qasim val::set(#"magic_bullet_shield", "allowdeath", 0);
+    level.qasim.magic_bullet_shield = 1;
     var_fcbd93e0 = struct::get("raid_slide_adler", "targetname");
     var_1100faeb = struct::get("raid_slide_woods", "targetname");
     level.adler forceteleport(var_fcbd93e0.origin, var_fcbd93e0.angles);
@@ -140,9 +140,9 @@ function main(var_d3440450, var_50cc0d4f) {
     level.slide_enemy3 thread function_83cb8fb7();
     level.slide_enemy3 thread function_d6825a2e();
     level thread function_41a8d47e();
-    level.var_2fef04d8 thread namespace_b100dd86::swap_head(undefined, "c_t9_cp_ira_militant_vip_qasim_head_nohat");
-    level.var_2fef04d8 thread namespace_b100dd86::swap_head("qasim_punched", "c_t9_cp_ira_militant_vip_qasim_head_nohat_injured");
-    level.var_2fef04d8 thread namespace_b100dd86::function_f82142f8(undefined, "c_t9_cp_ira_militant_vip_qasim_tkd_body");
+    level.qasim thread namespace_b100dd86::swap_head(undefined, "c_t9_cp_ira_militant_vip_qasim_head_nohat");
+    level.qasim thread namespace_b100dd86::swap_head("qasim_punched", "c_t9_cp_ira_militant_vip_qasim_head_nohat_injured");
+    level.qasim thread namespace_b100dd86::function_f82142f8(undefined, "c_t9_cp_ira_militant_vip_qasim_tkd_body");
     level.adler thread util::delay(1, undefined, &namespace_b100dd86::function_f82142f8, undefined, "c_t9_usa_hero_adler_civ_amsterdam_body_no_coat");
     player playerlinktoblend(fake_player, "tag_player", 0.3);
     player playgestureviewmodel(#"hash_629a852e56700e02", undefined, 1, 0.2, 0, 1, 1);
@@ -217,7 +217,7 @@ function function_58b2cc80() {
 function function_85757fc8() {
     level waittill(#"hash_3dd2c779be3b07c8");
     self playrumbleonentity("damage_heavy");
-    objectives::complete("obj_takedown_qasim", level.var_2fef04d8, 0);
+    objectives::complete("obj_takedown_qasim", level.qasim, 0);
 }
 
 // Namespace tkdn_raid_slide/namespace_7747d072
@@ -242,7 +242,7 @@ function function_624525f() {
     var_b84b1bf9 = getent("mb_slide_enemy1", "targetname");
     level waittill(#"hash_3dd2c779be3b07c8");
     if (isalive(level.slide_enemy1) && !isdefined(level.slide_enemy1.var_b481f04a)) {
-        magicbullet(getweapon(#"ar_standard_t9"), var_b84b1bf9.origin, level.slide_enemy1.origin + vectorscale((0, 0, 1), 50));
+        magicbullet(getweapon(#"ar_standard_t9"), var_b84b1bf9.origin, level.slide_enemy1.origin + (0, 0, 50));
     }
 }
 
@@ -395,13 +395,13 @@ function function_83cb8fb7() {
 // Size: 0xfc
 function function_bc2abab3() {
     var_3eba13ec = getspawnerarray("raid_qasim", "targetname");
-    level.var_2fef04d8 = var_3eba13ec[0] spawner::spawn(1);
-    level.var_2fef04d8.radius = 32;
-    level.var_2fef04d8.ignoreall = 1;
-    level.var_2fef04d8.ignoreme = 1;
-    level.var_2fef04d8.script_forcegoal = 1;
-    level.var_2fef04d8 disableaimassist();
-    objectives::follow("obj_takedown_qasim", level.var_2fef04d8, undefined, undefined, 0, #"hash_29f1e9a2d045faaf");
+    level.qasim = var_3eba13ec[0] spawner::spawn(1);
+    level.qasim.radius = 32;
+    level.qasim.ignoreall = 1;
+    level.qasim.ignoreme = 1;
+    level.qasim.script_forcegoal = 1;
+    level.qasim disableaimassist();
+    objectives::follow("obj_takedown_qasim", level.qasim, undefined, undefined, 0, #"hash_29f1e9a2d045faaf");
 }
 
 // Namespace tkdn_raid_slide/namespace_7747d072

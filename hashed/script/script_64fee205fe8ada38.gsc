@@ -52,7 +52,7 @@ function function_4b462025(enemy, b_ignore_cleanup) {
         var_389d01c3 = vectornormalize(target_pos - self gettagorigin("j_pocket5_le"));
         target_pos = target_pos - var_389d01c3 * (getdvarfloat(#"hash_24c8c69455c84258", 750) - var_11b59192);
         var_18ee0f33 = (randomfloat(1) - 0.5) * 100;
-        target_pos = target_pos + rotatepoint(var_389d01c3, vectorscale((0, 1, 0), 90)) * var_18ee0f33;
+        target_pos = target_pos + rotatepoint(var_389d01c3, (0, 90, 0)) * var_18ee0f33;
     }
     angles = vectortoangles(target_pos - self gettagorigin("j_pocket5_le"));
     dir = anglestoforward(angles);
@@ -101,7 +101,7 @@ function function_4b462025(enemy, b_ignore_cleanup) {
     #/
     grenade = self magicgrenadetype(var_d54a1968, var_8598bad6, velocity);
     playsoundatposition(#"hash_4897d1a140f146f5", var_8598bad6);
-    var_9f0ffc57 = vectorscale((0, 0, 1), 30);
+    var_9f0ffc57 = (0, 0, 30);
     var_b1d0a64 = util::spawn_model(#"hash_143e0a5b60055506", var_8598bad6 + var_9f0ffc57, grenade.angles);
     var_b1d0a64 clientfield::set("" + #"dog_projectile_fx", 1);
     var_b1d0a64 linkto(grenade, "tag_origin", var_9f0ffc57);
@@ -122,7 +122,6 @@ function private function_b38c1846(e_projectile, target, b_ignore_cleanup, orda)
     self endon(#"entitydeleted");
     waitframe(1);
     e_projectile thread function_cf57c2cb(self);
-    s_waitresult = undefined;
     s_waitresult = self waittill(#"death", #"projectile_impact_explode", #"explode", #"hash_38b24dfa52842786");
     /#
         if (getdvarint(#"hash_23c79bd6109328a", 0)) {
@@ -131,7 +130,6 @@ function private function_b38c1846(e_projectile, target, b_ignore_cleanup, orda)
     #/
     if (s_waitresult._notify == "death") {
         self deletedelay();
-        s_waitresult = undefined;
         s_waitresult = self waittilltimeout(float(function_60d95f53()) / 1000, #"projectile_impact_explode", #"explode", #"hash_38b24dfa52842786");
         if (s_waitresult._notify == "timeout") {
             return;
@@ -149,10 +147,10 @@ function private function_b38c1846(e_projectile, target, b_ignore_cleanup, orda)
         }
         var_3e7a440 = getscriptbundle("molotov_custom_settings");
         blast_radius = 65;
-        level thread namespace_68a80213::function_59d981cc(var_2cadffe7.origin + vectorscale((0, 0, 1), 18), blast_radius, a_players[0], var_2cadffe7);
-        namespace_68a80213::function_ccb2e201(var_2cadffe7.origin + vectorscale((0, 0, 1), 18), blast_radius);
+        level thread namespace_68a80213::function_59d981cc(var_2cadffe7.origin + (0, 0, 18), blast_radius, a_players[0], var_2cadffe7);
+        namespace_68a80213::function_ccb2e201(var_2cadffe7.origin + (0, 0, 18), blast_radius);
         spawn_pos = getclosestpointonnavmesh(var_2cadffe7.origin, 32, 32);
-        var_8f744cff = function_a1ef346b(undefined, var_2cadffe7.origin + vectorscale((0, 0, 1), 18), blast_radius);
+        var_8f744cff = function_a1ef346b(undefined, var_2cadffe7.origin + (0, 0, 18), blast_radius);
         var_5eda8c18 = isdefined(var_8f744cff) && var_8f744cff.size > 0;
         var_55783e7b = 1;
         if (isdefined(orda)) {
@@ -215,7 +213,6 @@ function private function_cf57c2cb(grenade) {
     self setcandamage(1);
     self.health = 10;
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (waitresult.amount > 0) {
             self.health = self.health - waitresult.amount;
@@ -382,7 +379,7 @@ function private function_187bcbe() {
         var_c0500b76 = (randomint(2) - 0.5) * 2;
         while (true) {
             if (isdefined(self.target_ent)) {
-                var_2f769fb1 = self.target_ent.origin + vectorscale((0, 0, 1), 70);
+                var_2f769fb1 = self.target_ent.origin + (0, 0, 70);
                 to_target = vectornormalize(var_2f769fb1 - self.origin);
                 target_pos = to_target * self.var_88b20e7f + self.origin;
                 self.var_88b20e7f = min(self.var_88b20e7f + 0.1, 100);
@@ -447,7 +444,6 @@ function private function_c9bcf1cb(var_2f769fb1, var_1f14bda8, var_4717cb50) {
     }
     target_pos = vectornormalize(var_4717cb50 - self.origin) * self.var_88b20e7f + self.origin;
     self moveto(target_pos, 0.2);
-    waitresult = undefined;
     waitresult = self waittilltimeout(0.2, #"movedone");
     if (waitresult._notify === "movedone") {
         return true;
@@ -584,7 +580,6 @@ function function_e57b9f29() {
     self clientfield::increment("hs_swarm_state", 1);
     self thread function_51d2e478();
     while (isdefined(self)) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (self.health <= 0) {
             self deletedelay();

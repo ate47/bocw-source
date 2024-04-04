@@ -131,7 +131,6 @@ function private function_2b6f50fd() {
     var_686cf729 = undefined;
     last_pos = undefined;
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"bad_path");
         if (self isplayinganimscripted()) {
             continue;

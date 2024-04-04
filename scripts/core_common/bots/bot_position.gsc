@@ -39,7 +39,6 @@ function private handle_path_failed() {
     self endon(#"death", #"hash_3525e39d3694d0a9");
     level endon(#"game_ended");
     while (true) {
-        params = undefined;
         params = self waittill(#"bot_path_failed");
         switch (params.reason) {
         case 1:
@@ -219,8 +218,8 @@ function private function_794e2efa(trigger, point) {
     if (!isdefined(point)) {
         return false;
     }
-    midpoint = point + vectorscale((0, 0, 1), 36);
-    if (!isdefined(point) || !trigger istouching(midpoint, vectorscale((0, 0, 1), 36))) {
+    midpoint = point + (0, 0, 36);
+    if (!isdefined(point) || !trigger istouching(midpoint, (0, 0, 36))) {
         return false;
     }
     if (trigger.classname != #"trigger_radius_use") {
@@ -242,7 +241,7 @@ function private function_de0e95b7(tpoint) {
     if (!function_96c81b85(tpoint, var_63e5d5aa)) {
         /#
             if (self function_b39b0b55(tpoint.origin, (1, 0, 0), #"hash_53dde4c9c6077ed0")) {
-                recordline(tpoint.origin + vectorscale((0, 0, 1), 70), var_63e5d5aa, (1, 0, 0), "<unknown string>", self);
+                recordline(tpoint.origin + (0, 0, 70), var_63e5d5aa, (1, 0, 0), "<unknown string>", self);
             }
         #/
         return false;
@@ -489,7 +488,7 @@ function private function_7e6af638() {
                     continue;
                 }
                 print3d(failure.start, function_9e72a96(#"failed"), (1, 0, 1), 1, 2.5, 1, 1);
-                box(failure.start, vectorscale((-1, -1, 0), 15), (15, 15, 72), 0, (1, 0, 1));
+                box(failure.start, (-15, -15, 0), (15, 15, 72), 0, (1, 0, 1));
             }
             waitframe(1);
         }

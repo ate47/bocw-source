@@ -583,11 +583,11 @@ function function_b104a7cb() {
                 debug2dtext((960, 180, 0), "<unknown string>" + distance(player.origin, position) + "<unknown string>" + distancesquared(player.origin, position), (1, 1, 0), 1, (0, 0, 0), 0.75);
                 if (record) {
                     recordstar(position, color, "<unknown string>", player);
-                    recordline(position, position + vectorscale((0, 0, 1), 72), color, "<unknown string>", player);
+                    recordline(position, position + (0, 0, 72), color, "<unknown string>", player);
                     continue;
                 }
                 debugstar(position, 1, color);
-                line(position, position + vectorscale((0, 0, 1), 72), color, 1, 1, 1);
+                line(position, position + (0, 0, 72), color, 1, 1, 1);
             }
             waitframe(1);
         }
@@ -622,7 +622,7 @@ function function_eee42c73() {
 function function_58e8b7e3() {
     /#
         while (is_true(level.var_29cf6901.repeat)) {
-            debug2dtext(vectorscale((1, 1, 0), 100), "<unknown string>", (0, 1, 0), 1, vectorscale((1, 1, 1), 0.5), 0.75);
+            debug2dtext((100, 100, 0), "<unknown string>", (0, 1, 0), 1, (0.5, 0.5, 0.5), 0.75);
             waitframe(1);
         }
     #/
@@ -670,7 +670,7 @@ function function_7ae85497(*dist) {
     /#
         v_forward = anglestoforward(self getplayerangles());
         v_forward = vectorscale(v_forward, 4000);
-        var_5927a215 = vectorscale((1, 1, 1), 10);
+        var_5927a215 = (10, 10, 10);
         v_eye = self getplayercamerapos();
         var_abd03397 = physicstrace(v_eye, v_eye + v_forward, -1 * var_5927a215, var_5927a215, getplayers()[0], 64 | 2);
         return var_abd03397[#"position"];
@@ -685,7 +685,7 @@ function spawn_aitype(aitype) {
     /#
         host = getplayers()[0];
         v_origin = host function_7ae85497();
-        ai = spawnactor(aitype, v_origin, host.angles + vectorscale((0, 1, 0), 180), "<unknown string>", 1);
+        ai = spawnactor(aitype, v_origin, host.angles + (0, 180, 0), "<unknown string>", 1);
         if (isdefined(ai)) {
             if (!isdefined(level.var_a46cf88a)) {
                 level.var_a46cf88a = [];
@@ -748,7 +748,7 @@ function private function_51403488() {
             a_ai = player getenemiesinradius(player.origin, 2000);
             foreach (ai in a_ai) {
                 if (isalive(ai)) {
-                    print3d(ai.origin + vectorscale((0, 0, 1), 68), "<unknown string>" + ai.health + "<unknown string>" + (isdefined(ai.maxhealth) ? ai.maxhealth : "<unknown string>"), (0, 1, 0), 1, 0.5);
+                    print3d(ai.origin + (0, 0, 68), "<unknown string>" + ai.health + "<unknown string>" + (isdefined(ai.maxhealth) ? ai.maxhealth : "<unknown string>"), (0, 1, 0), 1, 0.5);
                 }
             }
             waitframe(1);
@@ -906,9 +906,7 @@ function function_2a3a4bf6(params) {
     /#
         var_806a0877 = function_9e72a96(params.name);
         a_str_tokens = strtok(var_806a0877, "<unknown string>");
-        /#
-            assert(isdefined(a_str_tokens) && a_str_tokens.size > 1, var_806a0877 + "<unknown string>");
-        #/
+        assert(isdefined(a_str_tokens) && a_str_tokens.size > 1, var_806a0877 + "<unknown string>");
         str_type = a_str_tokens[1];
         if (params.value === 1 || params.value === 0) {
             level thread function_afb25532(str_type, params.value);
@@ -1233,7 +1231,6 @@ function function_fabd315d(spawn_point, var_957493b8) {
                 if (isdefined(goal)) {
                     self setgoal(goal);
                 }
-                waitresult = undefined;
                 waitresult = self waittilltimeout(7, #"goal", #"bad_path", #"death");
                 if (waitresult._notify == #"goal" || waitresult._notify == "<unknown string>") {
                     break;
@@ -1333,9 +1330,9 @@ function function_254bafc6() {
                 foreach (volume in level.var_afa5478b) {
                     foreach (node in volume.nodes) {
                         recordsphere(node.origin, 10, (1, 0, 0));
-                        record3dtext("<unknown string>" + (isdefined(node.floor) ? node.floor : "<unknown string>"), node.origin + vectorscale((0, 0, 1), 10), (1, 0, 0));
+                        record3dtext("<unknown string>" + (isdefined(node.floor) ? node.floor : "<unknown string>"), node.origin + (0, 0, 10), (1, 0, 0));
                         if (is_true(node.var_6fff1a72)) {
-                            record3dtext("<unknown string>", node.origin + vectorscale((0, 0, 1), 15), (1, 0, 0));
+                            record3dtext("<unknown string>", node.origin + (0, 0, 15), (1, 0, 0));
                         }
                     }
                 }

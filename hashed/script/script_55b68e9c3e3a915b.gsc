@@ -7,22 +7,6 @@
 // Method(s) 5 Total 12
 class class_a19c3039 : cluielem {
 
-    // Namespace class_a19c3039/sr_perk_machine_choice
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x680be4e1, Offset: 0x1a0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_a19c3039/sr_perk_machine_choice
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xa8daa590, Offset: 0x260
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_a19c3039/sr_perk_machine_choice
     // Params 2, eflags: 0x2 linked
     // Checksum 0x55526f87, Offset: 0x1e8

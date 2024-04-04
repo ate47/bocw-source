@@ -335,7 +335,7 @@ function function_d804fc99(a_ents) {
 function function_c8381339(plane, var_857b0901) {
     probe = getent("cargo_probe_1", "targetname");
     if (isdefined(probe)) {
-        probe linkto(plane, "tag_body_animate", vectorscale((-1, 0, 1), 24), (0, 0, 0));
+        probe linkto(plane, "tag_body_animate", (-24, 0, 24), (0, 0, 0));
     }
     probe = getent("cargo_probe_2", "targetname");
     if (isdefined(probe)) {

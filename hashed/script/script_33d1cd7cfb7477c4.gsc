@@ -8,21 +8,8 @@
 // Method(s) 6 Total 13
 class czm_tungsten_title_cards : cluielem {
 
-    // Namespace czm_tungsten_title_cards/zm_tungsten_title_cards
-    // Params 0, eflags: 0x8
-    // Checksum 0xbd4a911f, Offset: 0x1f8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace czm_tungsten_title_cards/zm_tungsten_title_cards
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x49280ecb, Offset: 0x330
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace czm_tungsten_title_cards/zm_tungsten_title_cards
     // Params 2, eflags: 0x0
@@ -45,7 +32,7 @@ class czm_tungsten_title_cards : cluielem {
     // Checksum 0xe631b585, Offset: 0x2e0
     // Size: 0x44
     function set_is_title_card_02(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "is_title_card_02", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "is_title_card_02", value);
     }
 
     // Namespace czm_tungsten_title_cards/zm_tungsten_title_cards

@@ -235,15 +235,15 @@ function function_e095cbef(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_bb8c1f5e(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self.var_a65735b6 = util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_dark_crystals_ambient", self, "tag_origin");
-        soundloopemitter(#"hash_1aebc516d61c565c", self.origin + vectorscale((0, 0, 1), 30));
+        soundloopemitter(#"hash_1aebc516d61c565c", self.origin + (0, 0, 30));
         return;
     }
     if (isdefined(self.var_a65735b6)) {
         stopfx(fieldname, self.var_a65735b6);
         self.var_a65735b6 = undefined;
     }
-    soundstoploopemitter(#"hash_1aebc516d61c565c", self.origin + vectorscale((0, 0, 1), 30));
-    playsound(fieldname, #"hash_10e0a1ad837bef3c", self.origin + vectorscale((0, 0, 1), 30));
+    soundstoploopemitter(#"hash_1aebc516d61c565c", self.origin + (0, 0, 30));
+    playsound(fieldname, #"hash_10e0a1ad837bef3c", self.origin + (0, 0, 30));
     util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_dark_aether_crystals_exp", self, "tag_origin");
 }
 
@@ -425,7 +425,7 @@ function function_f621928c(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x9c
 function function_e2f489c(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     util::playfxontag(bwastimejump, "explosions/fx9_vexp_rcxd_exp", self, "tag_origin");
-    playsound(bwastimejump, #"hash_49567ef6e7579f2", self.origin + vectorscale((0, 0, 1), 20));
+    playsound(bwastimejump, #"hash_49567ef6e7579f2", self.origin + (0, 0, 20));
 }
 
 // Namespace zm_tungsten_main_quest/zm_tungsten_main_quest
@@ -435,7 +435,7 @@ function function_e2f489c(localclientnum, *oldval, *newval, *bnewent, *binitials
 function function_26e6cccc(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
     util::playfxontag(bwastimejump, "maps/zm_tungsten/fx9_zm_rcxd_born", self, "tag_origin");
-    playsound(bwastimejump, #"hash_828435c0edc0e5c", self.origin + vectorscale((0, 0, 1), 20));
+    playsound(bwastimejump, #"hash_828435c0edc0e5c", self.origin + (0, 0, 20));
     if (self.model === #"hash_7dde995ef49216f") {
         n_delay = 1;
         var_b978a3c9 = 0;

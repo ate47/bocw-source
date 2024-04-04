@@ -224,7 +224,6 @@ function perk_start_up() {
     if (isdefined(self.script_int)) {
         power_zone = self.script_int;
         for (int = undefined; int != power_zone; int = waitresult.is_on) {
-            waitresult = undefined;
             waitresult = level waittill(#"power_on");
         }
     } else {
@@ -261,7 +260,7 @@ function vending_machine_flicker_light(fx_light, duration) {
 // Checksum 0x78ee920c, Offset: 0x17a0
 // Size: 0xc4
 function play_perk_fx_on_client(client_num, fx_light, duration) {
-    fxobj = spawn(client_num, self.origin + vectorscale((0, 0, -1), 50), "script_model");
+    fxobj = spawn(client_num, self.origin + (0, 0, -50), "script_model");
     fxobj setmodel(#"tag_origin");
     util::playfxontag(client_num, level._effect[fx_light], fxobj, "tag_origin");
     wait(duration);
@@ -401,7 +400,7 @@ function function_ab7cd429(localclientnum, *oldval, newval, *bnewent, *binitials
     level notify(#"hash_4d8d403fdb281b69");
     wait(0.5);
     if (bwastimejump == 0) {
-        var_6d877f48 = array::random(array(vectorscale((1, 1, 1), 7), vectorscale((-1, -1, -1), 7), vectorscale((-1, 1, 1), 7), vectorscale((1, -1, -1), 7)));
+        var_6d877f48 = array::random(array((7, 7, 7), (-7, -7, -7), (-7, 7, 7), (7, -7, -7)));
         var_aaf8da70 rotateto(level.var_245eb09f + var_6d877f48, 0.2);
         wait(0.8);
         var_aaf8da70 rotateto(level.var_245eb09f, 0.1);

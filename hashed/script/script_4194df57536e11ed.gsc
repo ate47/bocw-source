@@ -8,21 +8,8 @@
 // Method(s) 6 Total 13
 class cinitial_black : cluielem {
 
-    // Namespace cinitial_black/initial_black
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x7db406ec, Offset: 0x1e8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cinitial_black/initial_black
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xe4393d0, Offset: 0x320
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace cinitial_black/initial_black
     // Params 2, eflags: 0x2 linked
@@ -37,7 +24,7 @@ class cinitial_black : cluielem {
     // Checksum 0x898bc677, Offset: 0x2d0
     // Size: 0x44
     function function_2eb3f6e8(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "developer_mode", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "developer_mode", value);
     }
 
     // Namespace cinitial_black/initial_black

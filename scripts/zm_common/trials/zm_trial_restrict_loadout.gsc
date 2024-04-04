@@ -40,9 +40,7 @@ function private preinit() {
 // Checksum 0xeccfdcf9, Offset: 0x4b8
 // Size: 0x1f6
 function private is_weapon_allowed(weapon) {
-    /#
-        assert(weapon != level.weaponnone);
-    #/
+    assert(weapon != level.weaponnone);
     if (zm_loadout::function_2ff6913(weapon)) {
         return true;
     }
@@ -96,9 +94,7 @@ function private is_melee_allowed(weapon) {
 // Checksum 0x6727346d, Offset: 0x7e8
 // Size: 0x100
 function private function_6a8979c9() {
-    /#
-        assert(isdefined(level.var_526d919));
-    #/
+    assert(isdefined(level.var_526d919));
     foreach (weapon in self getweaponslist(1)) {
         self function_e14e7b75(weapon);
         if (weapon.isdualwield && weapon.dualwieldweapon != level.weaponnone) {
@@ -295,9 +291,7 @@ function private on_begin(var_e097dc07, var_f5300808) {
         level.var_869ea5a = 1;
         break;
     default:
-        /#
-            assert(0, "<unknown string>" + var_e097dc07);
-        #/
+        assert(0, "<unknown string>" + var_e097dc07);
         break;
     }
     level.var_526d919 = [];
@@ -495,9 +489,7 @@ function private function_e20ebcfd() {
 // Checksum 0xa3b28233, Offset: 0x2ac8
 // Size: 0x124
 function private function_f3fdd8f7() {
-    /#
-        assert(isdefined(level.var_526d919));
-    #/
+    assert(isdefined(level.var_526d919));
     foreach (weapon in level.var_526d919) {
         if (self hasweapon(weapon, 1)) {
             return true;
@@ -516,9 +508,7 @@ function private function_f3fdd8f7() {
 function private monitor_objective(challenge) {
     self endon(#"disconnect");
     level endon(#"hash_7646638df88a3656");
-    /#
-        assert(isarray(challenge.a_n_objective_ids), "<unknown string>");
-    #/
+    assert(isarray(challenge.a_n_objective_ids), "<unknown string>");
     foreach (n_objective_id in challenge.a_n_objective_ids) {
         objective_setinvisibletoplayer(n_objective_id, self);
     }

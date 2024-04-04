@@ -157,9 +157,7 @@ function function_ab7ec803() {
 // Checksum 0x1c209e09, Offset: 0xad0
 // Size: 0x9a
 function function_6de171e9(slot = 4) {
-    /#
-        assert(level.var_e3f5eafc != level.weaponnone);
-    #/
+    assert(level.var_e3f5eafc != level.weaponnone);
     self giveweapon(level.var_e3f5eafc);
     self setactionslot(slot, "weapon", level.var_e3f5eafc);
     self.var_390003ff = slot;
@@ -170,9 +168,7 @@ function function_6de171e9(slot = 4) {
 // Checksum 0x21359364, Offset: 0xb78
 // Size: 0x9a
 function function_8606cd15(slot = 4) {
-    /#
-        assert(level.var_42db149f != level.weaponnone);
-    #/
+    assert(level.var_42db149f != level.weaponnone);
     self giveweapon(level.var_42db149f);
     self setactionslot(slot, "weapon", level.var_42db149f);
     self.var_5915e3c5 = slot;
@@ -238,9 +234,7 @@ function function_f91a82ef(b_enabled = 1, var_b3649521 = #"hash_12be6ba1327c64b1
 // Checksum 0x78928df2, Offset: 0xec8
 // Size: 0x100
 function function_de6d9b74(prompts) {
-    /#
-        assert(isarray(prompts) || ishash(prompts));
-    #/
+    assert(isarray(prompts) || ishash(prompts));
     level.var_af143f1d = [];
     if (isarray(prompts)) {
         level.var_af143f1d = prompts;
@@ -397,7 +391,6 @@ function private function_376f686f() {
     self notifyonplayercommand("toggle_stance", "+stance");
     self notifyonplayercommand("go_stand", "+gostand");
     while (true) {
-        ret = undefined;
         ret = self waittill(#"toggle_stance", #"go_stand");
         if (ret._notify == "go_stand" || self getstance() != "stand") {
             self setstance("stand");

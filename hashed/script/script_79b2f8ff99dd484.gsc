@@ -7,22 +7,6 @@
 // Method(s) 9 Total 16
 class class_ba33e0c1 : cluielem {
 
-    // Namespace class_ba33e0c1/encodedradio_usebar
-    // Params 0, eflags: 0x8
-    // Checksum 0xae7533b, Offset: 0x3d8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_ba33e0c1/encodedradio_usebar
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xd284eb80, Offset: 0x6b8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_ba33e0c1/encodedradio_usebar
     // Params 1, eflags: 0x0
     // Checksum 0xbfde55ec, Offset: 0x560
@@ -36,7 +20,7 @@ class class_ba33e0c1 : cluielem {
     // Checksum 0xb65be9f1, Offset: 0x680
     // Size: 0x30
     function function_4aa46834(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "activatorCount", value);
+        set_data(localclientnum, "activatorCount", value);
     }
 
     // Namespace namespace_ba33e0c1/encodedradio_usebar
@@ -64,18 +48,14 @@ class class_ba33e0c1 : cluielem {
     // Size: 0xac
     function set_state(localclientnum, state_name) {
         if (#"defaultstate" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 0);
+            set_data(localclientnum, "_state", 0);
             return;
         }
         if (#"hash_5fba3d476e0b33f8" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 1);
+            set_data(localclientnum, "_state", 1);
             return;
         }
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
     }
 
     // Namespace namespace_ba33e0c1/encodedradio_usebar
@@ -83,7 +63,7 @@ class class_ba33e0c1 : cluielem {
     // Checksum 0x74921d4f, Offset: 0x648
     // Size: 0x30
     function function_f0df5702(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "progressFrac", value);
+        set_data(localclientnum, "progressFrac", value);
     }
 
     // Namespace namespace_ba33e0c1/encodedradio_usebar
@@ -92,9 +72,9 @@ class class_ba33e0c1 : cluielem {
     // Size: 0x84
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_state(localclientnum, #"defaultstate");
-        [[ self ]]->set_data(localclientnum, "progressFrac", 0);
-        [[ self ]]->set_data(localclientnum, "activatorCount", 0);
+        set_state(localclientnum, #"defaultstate");
+        set_data(localclientnum, "progressFrac", 0);
+        set_data(localclientnum, "activatorCount", 0);
     }
 
 }

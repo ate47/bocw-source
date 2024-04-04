@@ -101,12 +101,8 @@ function function_de302547(destination) {
 // Checksum 0x1f37f4ce, Offset: 0x658
 // Size: 0x19c
 function function_d0e7af66(instance) {
-    /#
-        assert(isarray(instance.contentgroups[#"hash_71b89bdce48d11f6"]), "<unknown string>");
-    #/
-    /#
-        assert(instance.contentgroups[#"hash_71b89bdce48d11f6"].size == 1, "<unknown string>");
-    #/
+    assert(isarray(instance.contentgroups[#"hash_71b89bdce48d11f6"]), "<unknown string>");
+    assert(instance.contentgroups[#"hash_71b89bdce48d11f6"].size == 1, "<unknown string>");
     namespace_ce1f29cc::function_12c2f41f(instance.origin, 2500);
     var_f86415a9 = arraysortclosest(getentarray("ambush_trigger", "targetname"), instance.origin, undefined, undefined, 2500);
     array::delete_all(var_f86415a9);
@@ -130,9 +126,7 @@ function function_2b0784c1() {
 // Checksum 0x6144b002, Offset: 0x840
 // Size: 0x354
 function function_d9ea0e09(eventstruct) {
-    /#
-        assert(isdefined(self.instance), "<unknown string>");
-    #/
+    assert(isdefined(self.instance), "<unknown string>");
     if (level flag::get("objective_locked")) {
         return;
     }
@@ -168,7 +162,7 @@ function function_d9ea0e09(eventstruct) {
         }
         return;
     }
-    playsoundatposition(#"hash_331360fb3bc61a2e", scriptmodel.origin + vectorscale((0, 0, 1), 50));
+    playsoundatposition(#"hash_331360fb3bc61a2e", scriptmodel.origin + (0, 0, 50));
 }
 
 // Namespace namespace_73df937d/namespace_73df937d
@@ -176,9 +170,7 @@ function function_d9ea0e09(eventstruct) {
 // Checksum 0x37f698f9, Offset: 0xba0
 // Size: 0x334
 function function_e1fab6a9(instance, v_center) {
-    /#
-        assert(isdefined(instance), "<unknown string>");
-    #/
+    assert(isdefined(instance), "<unknown string>");
     a_machines = content_manager::get_children(instance);
     a_machines = arraysortclosest(a_machines, v_center);
     n_time_elapsed = 0;
@@ -196,7 +188,7 @@ function function_e1fab6a9(instance, v_center) {
             foreach (ai in a_ai) {
                 if (isalive(ai) && ai.var_6f84b820 === #"normal" && distance(ai.origin, v_center) < 600) {
                     v_dir = vectornormalize(ai.origin - v_center);
-                    v_launch = v_dir * randomintrange(80, 100) + vectorscale((0, 0, 1), 150);
+                    v_launch = v_dir * randomintrange(80, 100) + (0, 0, 150);
                     ai thread zm_utility::function_ffc279(v_launch);
                 }
             }
@@ -213,7 +205,6 @@ function function_2ed0fa9b(instance, *v_center) {
     if (!is_true(level.var_53bc31ad)) {
         return;
     }
-    s_waitresult = undefined;
     s_waitresult = v_center waittill(#"hash_5000b502c39b09a3");
     playrumbleonposition("sr_prototype_safehouse_rumble", s_waitresult.var_6afa034c.origin);
     a_machines = content_manager::get_children(v_center);
@@ -339,10 +330,10 @@ function function_f1bc8a08(player) {
 // Size: 0x1aa
 function function_e9bd72e8(var_7d0e37f8, instance) {
     scriptmodel = content_manager::spawn_script_model(var_7d0e37f8, "tag_origin");
-    scriptmodel.origin = scriptmodel.origin + vectorscale((0, 0, 1), 40);
+    scriptmodel.origin = scriptmodel.origin + (0, 0, 40);
     scriptmodel clientfield::set("safehouse_claim_fx", 1);
     scriptmodel.targetname = "unclaimed_safehouse";
-    trigger = content_manager::spawn_interact(var_7d0e37f8, &function_d9ea0e09, #"hash_5ecd49cccca29d87", 0, undefined, undefined, undefined, vectorscale((0, 0, 1), 40));
+    trigger = content_manager::spawn_interact(var_7d0e37f8, &function_d9ea0e09, #"hash_5ecd49cccca29d87", 0, undefined, undefined, undefined, (0, 0, 40));
     trigger.instance = instance;
     trigger.scriptmodel = scriptmodel;
     if (!isdefined(instance.objectiveid)) {
@@ -445,14 +436,13 @@ function private function_98715738(*instance) {
     }
     if (isdefined(var_8947b368) && isdefined(s_ee)) {
         var_8947b368 val::set(#"zed", "takedamage", 1);
-        s_result = undefined;
         s_result = var_8947b368 waittill(#"damage", #"death");
         player = s_result.attacker;
         if (isplayer(player) && player getstance() === "crouch") {
             weapon = player getcurrentweapon();
             wait(5);
             if (isalive(player) && player getstance() === "prone" && weapon !== player getcurrentweapon()) {
-                s_ee.angles = s_ee.angles + vectorscale((0, 1, 0), 90);
+                s_ee.angles = s_ee.angles + (0, 90, 0);
                 s_ee thread namespace_65181344::function_fd87c780(#"survival_ee_special_drops", 1, 2);
             }
         }

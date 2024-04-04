@@ -197,7 +197,6 @@ function private on_player_connect() {
 function function_18fbdeee() {
     self endon(#"disconnect");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"hash_3abc816f9601bdd3");
         weapon = waitresult.weapon;
         if (!function_5fef4201(weapon) || self isfiring()) {
@@ -246,7 +245,6 @@ function private function_6e1aa0a9() {
 function watch_weapon_changes() {
     self endon(#"disconnect");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"weapon_change");
         weapon = waitresult.weapon;
         if (function_5fef4201(weapon)) {
@@ -610,7 +608,6 @@ function function_d72b9d03(params) {
 // Checksum 0xaec26c99, Offset: 0x32f8
 // Size: 0x94
 function function_5a2447b1(time) {
-    result = undefined;
     result = self waittilltimeout(time, #"actor_corpse", #"death");
     waittillframeend();
     if (isdefined(result.corpse)) {
@@ -911,11 +908,11 @@ function function_f0c18475(weapon, var_d3c8f6cd = 1) {
                 if (isactor(target.ai)) {
                     target.ai function_6dd73f34(self);
                     var_a11964c[var_a11964c.size] = target.ai;
-                    damage_location = target.ai.origin + vectornormalize(self.origin - target.ai.origin) * 10 + vectorscale((0, 0, 1), 60);
+                    damage_location = target.ai.origin + vectornormalize(self.origin - target.ai.origin) * 10 + (0, 0, 60);
                     target.ai dodamage(function_a712364b(target.distance, target.ai) * var_d3c8f6cd, damage_location, self, undefined, "none", "MOD_DOT", 0, weapon);
                     target.ai thread function_6dbf1bb3(self, 2);
                 } else {
-                    damage_location = target.ai.origin + vectornormalize(self.origin - target.ai.origin) * 10 + vectorscale((0, 0, 1), 60);
+                    damage_location = target.ai.origin + vectornormalize(self.origin - target.ai.origin) * 10 + (0, 0, 60);
                     target.ai dodamage(function_a712364b(target.distance, target.ai) * var_d3c8f6cd, damage_location, self, undefined, "none", "MOD_DOT", 0, weapon);
                 }
                 count = count + 1;
@@ -1331,7 +1328,6 @@ function function_ee76afdc(params, shatter_trigger, crumple_trigger) {
     wait(0.1);
     orig_attacker = params.eattacker;
     while (true) {
-        s_notify = undefined;
         s_notify = shatter_trigger waittill(#"damage");
         if (!is_true(shatter_trigger.var_9591a331) && function_8fbb3409(s_notify.weapon) && !is_true(s_notify.var_98e101b0)) {
             continue;
@@ -1555,7 +1551,6 @@ function function_4af61eed(*watcher, player) {
 function function_6793b4dc(owner) {
     self endon(#"hash_3d4b5f79f21a96b0");
     self thread function_3bf9052d();
-    waitresult = undefined;
     waitresult = self waittill(#"projectile_impact_explode", #"explode");
     if (waitresult._notify == "projectile_impact_explode") {
         function_302616d5(owner, waitresult.position, waitresult.normal);
@@ -1653,7 +1648,6 @@ function function_c9ccbd54() {
         return;
     }
     function_74be4c3e(2);
-    result = undefined;
     result = self waittill(#"actor_corpse");
     if (isdefined(result.corpse)) {
         result.corpse function_74be4c3e(2);
@@ -1753,7 +1747,7 @@ function function_615ff5e9(owner) {
         arrayremovevalue(var_6a77cda0, undefined);
         var_6a77cda0 = arraysortclosest(var_6a77cda0, self.origin, undefined, undefined, 100);
         foreach (trigger in var_6a77cda0) {
-            if (self istouching(trigger, vectorscale((1, 1, 1), 10))) {
+            if (self istouching(trigger, (10, 10, 10))) {
                 trigger notify(#"damage", {#attacker:owner, #weapon:level.var_12b450dc});
             }
         }
@@ -2039,7 +2033,7 @@ function function_77d36cb8(msg, color) {
         if (!getdvarint(#"hash_528e35e5faa6eb75", 0)) {
             return;
         }
-        print3d(self.origin + vectorscale((0, 0, 1), 60), msg, color, 1, 1, 40);
+        print3d(self.origin + (0, 0, 60), msg, color, 1, 1, 40);
     #/
 }
 

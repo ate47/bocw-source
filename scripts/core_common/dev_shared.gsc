@@ -45,7 +45,7 @@ function devgui_test_chart_think() {
                     direction_vec = (direction_vec[0] * scale, direction_vec[1] * scale, direction_vec[2] * scale);
                     level.test_chart_model = spawn("<unknown string>", player geteye() + direction_vec);
                     level.test_chart_model setmodel(#"test_chart_model");
-                    level.test_chart_model.angles = (0, direction[1], 0) + vectorscale((0, 1, 0), 90);
+                    level.test_chart_model.angles = (0, direction[1], 0) + (0, 90, 0);
                 }
             }
             if (val) {
@@ -60,7 +60,7 @@ function devgui_test_chart_think() {
                 direction = player getplayerangles();
                 direction_vec = anglestoforward((0, direction[1], 0));
                 direction_vec = (direction_vec[0] * scale, direction_vec[1] * scale, direction_vec[2] * scale);
-                level.test_chart_model.angles = (0, direction[1], 0) + vectorscale((0, 1, 0), 90);
+                level.test_chart_model.angles = (0, direction[1], 0) + (0, 90, 0);
                 level.test_chart_model.origin = player geteye() + direction_vec;
                 if (player meleebuttonpressed()) {
                     scale = scale + 10;
@@ -326,17 +326,13 @@ function function_f413b4d5(bodytype, outfitindex, var_c1154821, index) {
 // Size: 0x3b2
 function body_customization_process_command(character_index) {
     /#
-        /#
-            println("<unknown string>" + character_index + "<unknown string>");
-        #/
+        println("<unknown string>" + character_index + "<unknown string>");
         split = strtok(character_index, "<unknown string>");
         switch (split.size) {
         case 1:
             command0 = strtok(split[0], "<unknown string>");
             bodytype = int(command0[1]);
-            /#
-                println("<unknown string>" + bodytype + "<unknown string>");
-            #/
+            println("<unknown string>" + bodytype + "<unknown string>");
             function_5639909a(bodytype, 0);
             break;
         case 2:
@@ -344,9 +340,7 @@ function body_customization_process_command(character_index) {
             bodytype = int(command0[1]);
             command1 = strtok(split[1], "<unknown string>");
             outfitindex = int(command1[1]);
-            /#
-                println("<unknown string>" + bodytype + "<unknown string>" + outfitindex + "<unknown string>");
-            #/
+            println("<unknown string>" + bodytype + "<unknown string>" + outfitindex + "<unknown string>");
             function_5639909a(bodytype, outfitindex);
             break;
         case 3:
@@ -357,9 +351,7 @@ function body_customization_process_command(character_index) {
             var_e7f74d2b = strtok(split[2], "<unknown string>");
             var_c1154821 = var_e7f74d2b[0];
             index = int(var_e7f74d2b[1]);
-            /#
-                println("<unknown string>" + bodytype + "<unknown string>" + outfitindex + "<unknown string>" + var_c1154821 + "<unknown string>" + index + "<unknown string>");
-            #/
+            println("<unknown string>" + bodytype + "<unknown string>" + outfitindex + "<unknown string>" + var_c1154821 + "<unknown string>" + index + "<unknown string>");
             function_f413b4d5(bodytype, outfitindex, var_c1154821, index);
             break;
         default:
@@ -494,7 +486,7 @@ function function_986c93f0() {
                 }
                 namehash = v function_d4e2ed8a(roleindex);
                 if (isdefined(namehash)) {
-                    pos = v.origin + vectorscale((0, 0, 1), 100);
+                    pos = v.origin + (0, 0, 100);
                     text = "<unknown string>" + roleindex + "<unknown string>" + function_9e72a96(namehash) + "<unknown string>";
                     color = (1, 1, 1);
                     alpha = 1;
@@ -703,7 +695,7 @@ function draw_pathnode(node, color) {
         if (!isdefined(color)) {
             color = (1, 0, 1);
         }
-        box(node.origin, vectorscale((-1, -1, 0), 16), vectorscale((1, 1, 1), 16), 0, color, 1, 0, 1);
+        box(node.origin, (-16, -16, 0), (16, 16, 16), 0, color, 1, 0, 1);
     #/
 }
 
@@ -913,7 +905,7 @@ function function_7de15c85(spiral) {
 function function_98c05766(spiral) {
     /#
         spawn_point = function_7de15c85(spiral);
-        trace = bullettrace(spawn_point + vectorscale((0, 0, 1), 100), spawn_point, 0, self);
+        trace = bullettrace(spawn_point + (0, 0, 100), spawn_point, 0, self);
         return trace[#"position"];
     #/
 }

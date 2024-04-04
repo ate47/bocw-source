@@ -8,21 +8,8 @@
 // Method(s) 6 Total 13
 class cplayer_insertion_choice : cluielem {
 
-    // Namespace cplayer_insertion_choice/player_insertion_choice
-    // Params 0, eflags: 0x8
-    // Checksum 0xa022df69, Offset: 0x1f0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cplayer_insertion_choice/player_insertion_choice
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xea42bfb7, Offset: 0x440
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace cplayer_insertion_choice/player_insertion_choice
     // Params 2, eflags: 0x0
@@ -55,26 +42,22 @@ class cplayer_insertion_choice : cluielem {
     // Size: 0x15c
     function set_state(player, state_name) {
         if (#"defaultstate" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 0);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 0);
             return;
         }
         if (#"groundvehicle" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 1);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 1);
             return;
         }
         if (#"halojump" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 2);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 2);
             return;
         }
         if (#"heli" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 3);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 3);
             return;
         }
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
     }
 
 }

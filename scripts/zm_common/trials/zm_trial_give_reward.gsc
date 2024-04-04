@@ -62,12 +62,8 @@ function private on_end(round_reset) {
 // Checksum 0x2d82e88d, Offset: 0x398
 // Size: 0x460
 function private function_e7254828() {
-    /#
-        assert(isdefined(level.var_6d87ac05) && isdefined(level.var_6d87ac05.name));
-    #/
-    /#
-        assert(isdefined(level.var_5335b66f) && isdefined(level.var_5335b66f[level.var_6d87ac05.name]));
-    #/
+    assert(isdefined(level.var_6d87ac05) && isdefined(level.var_6d87ac05.name));
+    assert(isdefined(level.var_5335b66f) && isdefined(level.var_5335b66f[level.var_6d87ac05.name]));
     var_93493c8 = level.var_5335b66f[level.var_6d87ac05.name];
     curr_time = gettime() - level.var_21e22beb;
     var_ee7ca64 = is_true(level.var_ee7ca64[level.round_number]);

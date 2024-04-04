@@ -8,9 +8,7 @@
 // Checksum 0x7c2da131, Offset: 0x88
 // Size: 0x6c
 function add_timed_event(seconds, notify_string, client_notify_string) {
-    /#
-        assert(seconds >= 0);
-    #/
+    assert(seconds >= 0);
     if (level.timelimit > 0) {
         level thread timed_event_monitor(seconds, notify_string, client_notify_string);
     }
@@ -40,9 +38,7 @@ function timed_event_monitor(seconds, notify_string, client_notify_string) {
 // Checksum 0x49a853a9, Offset: 0x1b0
 // Size: 0x94
 function add_score_event(score, notify_string, client_notify_string) {
-    /#
-        assert(score >= 0);
-    #/
+    assert(score >= 0);
     if (level.scorelimit > 0) {
         if (level.teambased) {
             level thread score_team_event_monitor(score, notify_string, client_notify_string);
@@ -57,9 +53,7 @@ function add_score_event(score, notify_string, client_notify_string) {
 // Checksum 0xf2e40375, Offset: 0x250
 // Size: 0xbc
 function add_round_score_event(score, notify_string, client_notify_string) {
-    /#
-        assert(score >= 0);
-    #/
+    assert(score >= 0);
     if (level.roundscorelimit > 0) {
         roundscoretobeat = level.roundscorelimit * game.roundsplayed + score;
         if (level.teambased) {

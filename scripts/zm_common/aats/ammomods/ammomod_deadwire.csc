@@ -52,7 +52,7 @@ function zm_ammomod_deadwire_zap(localclientnum, *oldval, newval, *bnewent, *bin
         }
         self.var_43835d52 = util::playfxontag(fieldname, "zm_weapons/fx9_aat_dead_wire_lvl1_stun", self, str_fx_tag);
         if (!isdefined(self.var_8d3dbdcc)) {
-            self playsound(0, #"hash_20d0ecdd50323b09", self.origin + vectorscale((0, 0, 1), 50));
+            self playsound(0, #"hash_20d0ecdd50323b09", self.origin + (0, 0, 50));
             self.var_8d3dbdcc = self playloopsound("zmb_ammomod_deadwire_stunned_lp");
         }
         return;
@@ -78,7 +78,7 @@ function zm_ammomod_deadwire_zap(localclientnum, *oldval, newval, *bnewent, *bin
 function function_4e26277b(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (isalive(self)) {
         self thread function_d84b2bab(bwastimejump);
-        self playsound(bwastimejump, #"hash_20d0ecdd50323b09", self.origin + vectorscale((0, 0, 1), 50));
+        self playsound(bwastimejump, #"hash_20d0ecdd50323b09", self.origin + (0, 0, 50));
     }
 }
 

@@ -8,22 +8,6 @@
 class cprototype_self_revive : cluielem {
 
     // Namespace cprototype_self_revive/prototype_self_revive
-    // Params 0, eflags: 0x8
-    // Checksum 0x26ea4e8b, Offset: 0x1a0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cprototype_self_revive/prototype_self_revive
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x95bbd3fc, Offset: 0x260
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cprototype_self_revive/prototype_self_revive
     // Params 2, eflags: 0x0
     // Checksum 0x8efc0dc, Offset: 0x1e8
     // Size: 0x3c

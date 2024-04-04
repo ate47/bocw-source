@@ -91,9 +91,7 @@ function function_3b9ddd99() {
     self.fovcosine = 0;
     self.fovcosinebusy = 0;
     self.vehaircraftcollisionenabled = 1;
-    /#
-        assert(isdefined(self.scriptbundlesettings));
-    #/
+    assert(isdefined(self.scriptbundlesettings));
     self.settings = getscriptbundle(self.scriptbundlesettings);
     self.goalradius = 2048;
     self.goalheight = 100;
@@ -135,7 +133,7 @@ function function_d48ae962() {
                 while (shots && isdefined(self.var_c4e19d3) && namespace_ec06fe4a::function_a8975c67()) {
                     shots--;
                     fwd = vectorscale(vectornormalize(anglestoforward(self.angles)), 20);
-                    start = self.origin + fwd + vectorscale((0, 0, 1), 20);
+                    start = self.origin + fwd + (0, 0, 20);
                     dest = self.var_c4e19d3.origin + (randomintrange(-15, 15), randomintrange(-15, 15), 48);
                     magicbullet(weapon, start, dest, self);
                     wait(firetime);

@@ -7,22 +7,6 @@
 // Method(s) 5 Total 12
 class class_d0a96b4 : cluielem {
 
-    // Namespace class_d0a96b4/namespace_20a120d7
-    // Params 0, eflags: 0x8
-    // Checksum 0x26ea4e8b, Offset: 0x1a0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_d0a96b4/namespace_20a120d7
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x95bbd3fc, Offset: 0x260
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_d0a96b4/namespace_20a120d7
     // Params 2, eflags: 0x0
     // Checksum 0x8efc0dc, Offset: 0x1e8

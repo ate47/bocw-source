@@ -260,7 +260,6 @@ function function_ff022837(n_duration, weapon) {
     self.var_b1164fd0 = 1;
     self clientfield::set("" + #"hash_59400ab6cbfaec5d", 1);
     self val::set(#"hash_2d88b4c5217c7e7c", "ignoreme", 1);
-    s_waitresult = undefined;
     s_waitresult = self waittilltimeout(n_duration, #"scene_igc_shot_started", #"player_downed", #"death");
     self thread function_c8e90b89(s_waitresult._notify, weapon);
     self flag::decrement("zm_field_upgrade_in_use");
@@ -299,7 +298,7 @@ function function_c5e5e928(var_e14b4254) {
     for (i = 1; i <= 10; i++) {
         var_92848b84 = i / 10 * var_e14b4254;
         v_point = self getplayercamerapos() + anglestoforward(v_angles) * var_92848b84;
-        v_point = groundtrace(v_point + vectorscale((0, 0, 1), 8), v_point + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
+        v_point = groundtrace(v_point + (0, 0, 8), v_point + (0, 0, -100000), 0, self)[#"position"];
         if (!isdefined(a_v_points)) {
             a_v_points = [];
         } else if (!isarray(a_v_points)) {
@@ -360,7 +359,7 @@ function function_c5e5e928(var_e14b4254) {
 // Checksum 0xd45364b8, Offset: 0x1a40
 // Size: 0x72
 function private function_2e44fb9a(var_ab528fee) {
-    v_trace_start = var_ab528fee + vectorscale((0, 0, 1), 70);
+    v_trace_start = var_ab528fee + (0, 0, 70);
     trace = physicstraceex(v_trace_start, var_ab528fee);
     if (trace[#"fraction"] < 0.99) {
         return false;

@@ -67,9 +67,7 @@ function private function_67189b6b(localclientnum, newval) {
         return;
     }
     if (newval == 1) {
-        /#
-            assert(self.id < 2048);
-        #/
+        assert(self.id < 2048);
         if (self.id >= 2048) {
             return;
         }
@@ -151,12 +149,8 @@ function function_1fe1281(localclientnum, newval) {
     if (!isdefined(self)) {
         return;
     }
-    /#
-        assert(isdefined(self.id));
-    #/
-    /#
-        assert(isdefined(self.itementry));
-    #/
+    assert(isdefined(self.id));
+    assert(isdefined(self.itementry));
     if (!isdefined(self.id) || !isdefined(self.itementry)) {
         return;
     }

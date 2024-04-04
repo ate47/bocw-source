@@ -94,21 +94,12 @@ function endselectiononhostmigration() {
 // Checksum 0x22946dea, Offset: 0x5e0
 // Size: 0x1f6
 function endselectionthink() {
-    /#
-        assert(isplayer(self));
-    #/
-    /#
-        assert(isalive(self));
-    #/
-    /#
-        assert(isdefined(self.selectinglocation));
-    #/
-    /#
-        assert(self.selectinglocation == 1);
-    #/
+    assert(isplayer(self));
+    assert(isalive(self));
+    assert(isdefined(self.selectinglocation));
+    assert(self.selectinglocation == 1);
     self thread endselectionongameend();
     self thread endselectiononhostmigration();
-    event = undefined;
     event = self waittill(#"delete", #"death", #"disconnect", #"cancel_location", #"game_ended", #"used", #"weapon_change", #"emp_jammed");
     if (event._notify != "disconnect") {
         self.selectinglocation = undefined;
@@ -128,7 +119,6 @@ function endselectionthink() {
 // Checksum 0xfa3824fc, Offset: 0x7e0
 // Size: 0xd4
 function clearuplocationselection() {
-    event = undefined;
     event = self waittill(#"delete", #"death", #"disconnect", #"game_ended", #"used", #"weapon_change", #"emp_jammed", #"weapon_change_complete");
     if (event._notify != "disconnect" && isdefined(self)) {
         self endlocationselection();
@@ -163,9 +153,7 @@ function calculatereleasetime(flytime, flyheight, flyspeed, bombspeedscale, var_
     falltime = calculatefalltime(flyheight);
     bomb_x = flyspeed * bombspeedscale * falltime;
     release_time = bomb_x / flyspeed;
-    /#
-        assert(var_60b3d9e1 >= 0 && var_60b3d9e1 <= 1, "<unknown string>");
-    #/
+    assert(var_60b3d9e1 >= 0 && var_60b3d9e1 <= 1, "<unknown string>");
     return flytime * var_60b3d9e1 - release_time;
 }
 
@@ -177,9 +165,7 @@ function callstrike(flightplan) {
     level.bomberdamagedents = [];
     level.bomberdamagedentscount = 0;
     level.bomberdamagedentsindex = 0;
-    /#
-        assert(flightplan.distance != 0, "<unknown string>");
-    #/
+    assert(flightplan.distance != 0, "<unknown string>");
     planehalfdistance = flightplan.distance / 2;
     path = getstrikepath(flightplan.target, flightplan.height, planehalfdistance);
     startpoint = path[#"start"];
@@ -192,9 +178,7 @@ function callstrike(flightplan) {
     if (bombtime < 0) {
         bombtime = 0;
     }
-    /#
-        assert(flytime > bombtime);
-    #/
+    assert(flytime > bombtime);
     flightplan.owner endon(#"disconnect");
     requireddeathcount = flightplan.owner.deathcount;
     side = vectorcross(anglestoforward(direction), (0, 0, 1));
@@ -238,7 +222,7 @@ function planestrike(owner, requireddeathcount, pathstart, pathend, bombtime, fl
 // Size: 0x86
 function determinegroundpoint(player, position) {
     ground = (position[0], position[1], player.origin[2]);
-    trace = bullettrace(ground + vectorscale((0, 0, 1), 10000), ground, 0, undefined);
+    trace = bullettrace(ground + (0, 0, 10000), ground, 0, undefined);
     return trace[#"position"];
 }
 
@@ -452,9 +436,7 @@ function gethelipath(start, goal) {
     if (!isdefined(goal_points)) {
         return undefined;
     }
-    /#
-        assert(goal_points.size >= 1);
-    #/
+    assert(goal_points.size >= 1);
     return goal_points;
 }
 
@@ -670,9 +652,7 @@ function calculatepath(start, end, startnoflyzones, goalnoflyzones) {
     if (!isdefined(points)) {
         return undefined;
     }
-    /#
-        assert(points.size >= 1);
-    #/
+    assert(points.size >= 1);
     /#
         debug_sphere(points[points.size - 1], 10, (1, 0, 0), 1, 1000);
     #/
@@ -982,7 +962,6 @@ function debug_draw_bomb_explosion(prevpos) {
         self notify(#"draw_explosion");
         waitframe(1);
         self endon(#"draw_explosion");
-        waitresult = undefined;
         waitresult = self waittill(#"projectile_impact");
         /#
             thread debug_line(prevpos, waitresult.position, (0.5, 1, 0));
@@ -1027,10 +1006,10 @@ function debug_print3d_simple(message, ent, offset, frames) {
         level.airsupport_debug = getdvarint(#"scr_airsupport_debug", 0);
         if (isdefined(level.airsupport_debug) && level.airsupport_debug == 1) {
             if (isdefined(frames)) {
-                thread draw_text(message, vectorscale((1, 1, 1), 0.8), ent, offset, frames);
+                thread draw_text(message, (0.8, 0.8, 0.8), ent, offset, frames);
                 return;
             }
-            thread draw_text(message, vectorscale((1, 1, 1), 0.8), ent, offset, 0);
+            thread draw_text(message, (0.8, 0.8, 0.8), ent, offset, 0);
         }
     #/
 }
@@ -1274,7 +1253,6 @@ function function_9e2054b0(var_65885f89) {
 // Size: 0x8a
 function waitforlocationselection() {
     self endon(#"emp_jammed", #"emp_grenaded");
-    waitresult = undefined;
     waitresult = self waittill(#"confirm_location");
     locationinfo = spawnstruct();
     locationinfo.origin = waitresult.position;
@@ -1289,7 +1267,6 @@ function waitforlocationselection() {
 function function_deb91ef4() {
     self endon(#"emp_jammed", #"emp_grenaded", #"disconnect", #"confirm_location", #"cancel_location", #"enter_vehicle");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         response = waitresult.response;

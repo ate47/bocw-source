@@ -30,9 +30,7 @@ function register_clientfields() {
 // Checksum 0xabd0f34, Offset: 0x2a8
 // Size: 0x344
 function function_51c5f95f(insertion) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     player_insertion::function_a21d9dc(insertion);
     fadeouttime = level.var_8367fa0f;
     blacktime = level.var_ab0cc070;
@@ -72,9 +70,7 @@ function function_51c5f95f(insertion) {
 // Checksum 0xb93cf378, Offset: 0x5f8
 // Size: 0x166
 function private function_26fbfab4(insertion) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     level endon(#"game_ended");
     var_850118f3 = 5;
     /#
@@ -114,9 +110,7 @@ function private function_135ed50e() {
 // Checksum 0xd1df5c2f, Offset: 0x820
 // Size: 0x6b4
 function private function_57d4a011(insertion) {
-    /#
-        assert(isstruct(insertion));
-    #/
+    assert(isstruct(insertion));
     var_5199e69 = getdvarint(#"hash_3602c5d9aaca933c", 20000);
     player_insertion::function_a5fd9aa8(insertion);
     bot_insertion::function_24ca8ecf(insertion);
@@ -124,9 +118,7 @@ function private function_57d4a011(insertion) {
     if (isdefined(var_719e741e)) {
         numplayers = insertion.players.size;
         numteams = 1;
-        /#
-            assert(numplayers > 0, "<unknown string>");
-        #/
+        assert(numplayers > 0, "<unknown string>");
         foreach (team in level.teams) {
             if (is_true(level.everexisted[team])) {
                 numteams++;
@@ -229,9 +221,7 @@ function private function_7bf9c38f(*reinserting) {
             var_180a7b48 = getdvarint(#"hash_37b6eccbe31b5875", 1);
         }
     #/
-    /#
-        assert(isdefined(var_180a7b48), "<unknown string>");
-    #/
+    assert(isdefined(var_180a7b48), "<unknown string>");
     if (!isdefined(var_180a7b48)) {
         var_180a7b48 = 0;
     }
@@ -241,9 +231,7 @@ function private function_7bf9c38f(*reinserting) {
     if (level.warp_portal_vehicles.size) {
         portal = level.warp_portal_vehicles[var_180a7b48];
     }
-    /#
-        assert(isdefined(portal), "<unknown string>");
-    #/
+    assert(isdefined(portal), "<unknown string>");
     if (isdefined(portal)) {
         self setorigin(portal.origin);
     } else {
@@ -411,9 +399,7 @@ function private function_8fc2a69e() {
 // Size: 0x304
 function function_4910c182(insertion) {
     /#
-        /#
-            assert(isdefined(insertion));
-        #/
+        assert(isdefined(insertion));
         insertion clear(#"hash_60fcdd11812a0134");
         insertion clear(#"hash_122f326d72f4c884");
         function_a21d9dc();

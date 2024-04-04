@@ -22,14 +22,10 @@ function autoexec __init__() {
 // Size: 0xbe
 function private function_59c1a869(&replacementarray, var_d1c21f6f, var_b06dd57e) {
     if (!ishash(var_d1c21f6f) || !ishash(var_b06dd57e)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
-    /#
-        assert(!isdefined(replacementarray[var_d1c21f6f]));
-    #/
+    assert(!isdefined(replacementarray[var_d1c21f6f]));
     if (isdefined(replacementarray[var_d1c21f6f])) {
         return;
     }
@@ -45,14 +41,10 @@ function private function_59c1a869(&replacementarray, var_d1c21f6f, var_b06dd57e
 // Size: 0xde
 function private function_41015db1(&replacementarray, itemname, replacementitemname) {
     if (!ishash(itemname) || !ishash(replacementitemname)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
-    /#
-        assert(!isdefined(replacementarray[itemname]));
-    #/
+    assert(!isdefined(replacementarray[itemname]));
     if (isdefined(replacementarray[itemname])) {
         return;
     }
@@ -72,9 +64,7 @@ function private function_41015db1(&replacementarray, itemname, replacementitemn
 function private function_bbc0b67f() {
     flag = #"hash_67b445a4b1d59922";
     if (level flag::get(flag)) {
-        /#
-            assert(0, "<unknown string>");
-        #/
+        assert(0, "<unknown string>");
         return false;
     }
     return true;
@@ -126,9 +116,7 @@ function add_item_replacement(itemname, replacementitemname) {
 // Size: 0x20e
 function add_spawn_point(origin, targetname, angles = (0, 0, 0)) {
     if (!isvec(origin) || !isvec(angles) || !ishash(targetname)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     if (!isdefined(level.var_1d777960[targetname])) {
@@ -151,9 +139,7 @@ function add_spawn_point(origin, targetname, angles = (0, 0, 0)) {
 // Size: 0x10e
 function function_e70fa91c(var_cf456610, var_2ab9d3bd, var_6647c284 = -1) {
     if (!ishash(var_cf456610) || !ishash(var_2ab9d3bd) || !isint(var_6647c284)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     if (!isdefined(level.var_93c59949[var_cf456610])) {
@@ -169,9 +155,7 @@ function function_e70fa91c(var_cf456610, var_2ab9d3bd, var_6647c284 = -1) {
 // Size: 0x126
 function function_2749fcc3(var_89b7987e, var_cf456610, var_2ab9d3bd, var_6647c284 = 1) {
     if (!ishash(var_cf456610) || !ishash(var_2ab9d3bd) || !isint(var_6647c284)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     if (!isdefined(level.var_93c59949[var_cf456610])) {
@@ -187,9 +171,7 @@ function function_2749fcc3(var_89b7987e, var_cf456610, var_2ab9d3bd, var_6647c28
 // Size: 0x54
 function remove_item(itemname) {
     if (!ishash(itemname)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     level.itemreplacement[itemname] = "";
@@ -201,15 +183,11 @@ function remove_item(itemname) {
 // Size: 0xe4
 function function_a997e342(origin, radius) {
     if (!isvec(origin) || !isfloat(radius) && !isint(radius)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     level.var_bf9b06d3[level.var_bf9b06d3.size] = origin;
     level.var_8d50adaa[level.var_8d50adaa.size] = radius;
-    /#
-        assert(level.var_bf9b06d3.size == level.var_8d50adaa.size);
-    #/
+    assert(level.var_bf9b06d3.size == level.var_8d50adaa.size);
 }
 

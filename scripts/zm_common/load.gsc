@@ -84,9 +84,7 @@ function private event_handler[createstruct] function_e0a8e4ba(struct) {
 // Checksum 0xecd52ccc, Offset: 0x520
 // Size: 0x3c
 function autoexec function_aeb1baea() {
-    /#
-        assert(!isdefined(level.var_f18a6bd6));
-    #/
+    assert(!isdefined(level.var_f18a6bd6));
     level.var_f18a6bd6 = &function_5e443ed1;
 }
 
@@ -95,11 +93,7 @@ function autoexec function_aeb1baea() {
 // Checksum 0x3a059c06, Offset: 0x568
 // Size: 0xfc
 function function_5e443ed1() {
-    /#
-        /#
-            assert(isdefined(level.first_frame), "<unknown string>");
-        #/
-    #/
+    assert(isdefined(level.first_frame), "<unknown string>");
     zm::init();
     level._loadstarted = 1;
     register_clientfields();

@@ -7,22 +7,6 @@
 // Method(s) 8 Total 15
 class class_c3742963 : cluielem {
 
-    // Namespace class_c3742963/namespace_ee630e04
-    // Params 0, eflags: 0x8
-    // Checksum 0x1e1925b6, Offset: 0x398
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_c3742963/namespace_ee630e04
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x39638178, Offset: 0x570
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_c3742963/namespace_ee630e04
     // Params 1, eflags: 0x0
     // Checksum 0xfa05e85e, Offset: 0x4d0
@@ -54,7 +38,7 @@ class class_c3742963 : cluielem {
     // Checksum 0x1c9afcd8, Offset: 0x538
     // Size: 0x30
     function function_afdd9f65(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "content_index", value);
+        set_data(localclientnum, "content_index", value);
     }
 
     // Namespace namespace_c3742963/namespace_ee630e04
@@ -62,7 +46,7 @@ class class_c3742963 : cluielem {
     // Checksum 0x1aadbc89, Offset: 0x500
     // Size: 0x30
     function set_visible(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "visible", value);
+        set_data(localclientnum, "visible", value);
     }
 
     // Namespace namespace_c3742963/namespace_ee630e04
@@ -71,8 +55,8 @@ class class_c3742963 : cluielem {
     // Size: 0x5c
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "visible", 0);
-        [[ self ]]->set_data(localclientnum, "content_index", 0);
+        set_data(localclientnum, "visible", 0);
+        set_data(localclientnum, "content_index", 0);
     }
 
 }

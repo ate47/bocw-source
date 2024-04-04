@@ -314,9 +314,7 @@ function mimic_cleanup_teleport() {
         self zm_ai_utility::function_a8dc3363(s_spawn_loc);
         self function_c0b09ab0();
     } else {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
     }
     return true;
 }
@@ -617,7 +615,7 @@ function function_9542c864(var_e663e7c5) {
         if (!isdefined(navmesh_point)) {
             return false;
         }
-        var_e663e7c5.zone_name = zm_zonemgr::get_zone_from_position(navmesh_point + vectorscale((0, 0, 1), 15), 1);
+        var_e663e7c5.zone_name = zm_zonemgr::get_zone_from_position(navmesh_point + (0, 0, 15), 1);
     }
     if (!zm_zonemgr::zone_is_enabled(var_e663e7c5.zone_name)) {
         return false;
@@ -694,7 +692,6 @@ function function_f7e48831(*player) {
 // Size: 0x8c
 function function_8afb304d() {
     self endon(#"death");
-    waitresult = undefined;
     waitresult = self waittill(#"trigger");
     player = waitresult.activator;
     self.stub.machine notify(#"hash_1e8aabc2641542e", {#activator:player});

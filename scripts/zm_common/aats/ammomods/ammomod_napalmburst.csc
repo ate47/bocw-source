@@ -179,7 +179,7 @@ function function_a681160a(localclientnum, is_vehicle = 0) {
         }
     }
     if (!isdefined(self.var_428ce87c)) {
-        self playsound(localclientnum, #"hash_60984c7920920c54", self.origin + vectorscale((0, 0, 1), 50));
+        self playsound(localclientnum, #"hash_60984c7920920c54", self.origin + (0, 0, 50));
         self.var_428ce87c = self playloopsound(#"hash_aed7c693cd1b7cd");
     }
 }

@@ -125,9 +125,7 @@ function private function_23b313bd(player, eventtype, eventdata, var_c5a66313) {
         if (item_world_util::function_2c7fc531(networkid)) {
             itemid = networkid;
             item = function_b1702735(itemid);
-            /#
-                assert(item.itementry.itemtype == #"ammo");
-            #/
+            assert(item.itementry.itemtype == #"ammo");
             if (item.itementry.itemtype == #"ammo") {
                 var_a1ca235e = item.itementry;
                 var_3d1f9df4 = count;

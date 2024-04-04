@@ -8,21 +8,8 @@
 // Method(s) 6 Total 13
 class class_d49eac9b : cluielem {
 
-    // Namespace class_d49eac9b/scream_deathmatch_timer
-    // Params 0, eflags: 0x8
-    // Checksum 0x7db406ec, Offset: 0x1f8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_d49eac9b/scream_deathmatch_timer
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x1f0182c7, Offset: 0x330
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_d49eac9b/scream_deathmatch_timer
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class class_d49eac9b : cluielem {
     // Checksum 0xb73c1a9d, Offset: 0x2e0
     // Size: 0x44
     function function_302c4b81(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "slasherCountDownTime", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "slasherCountDownTime", value);
     }
 
     // Namespace namespace_d49eac9b/scream_deathmatch_timer

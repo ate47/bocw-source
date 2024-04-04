@@ -288,7 +288,7 @@ function function_cb436f32(object) {
     triggerradius = level.var_c9404b0a.bundle.var_366f43e9;
     triggerheight = level.var_c9404b0a.bundle.var_2f1567fb;
     var_b1a6d849 = level.var_c9404b0a.bundle.var_2d890f85;
-    usetrigger = spawn("trigger_radius_use", object.origin - vectorscale((0, 0, 1), 50), 0, triggerradius, triggerheight);
+    usetrigger = spawn("trigger_radius_use", object.origin - (0, 0, 50), 0, triggerradius, triggerheight);
     usetrigger usetriggerrequirelookat();
     usetrigger sethintstring(#"hash_75acfdc16a0732df");
     usetrigger triggerignoreteam();
@@ -397,7 +397,6 @@ function private function_a1434496(*team, player, result) {
 function watchfordeath() {
     level endon(#"game_ended");
     self endon(#"hash_523ddcbd662010e5");
-    waitresult = undefined;
     waitresult = self waittill(#"death");
     if (!isdefined(self)) {
         return;
@@ -418,7 +417,6 @@ function watchfordamage() {
     medpack.health = level.var_c9404b0a.bundle.kshealth;
     startinghealth = medpack.health;
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (isdefined(waitresult.attacker) && waitresult.amount > 0 && damagefeedback::dodamagefeedback(waitresult.weapon, waitresult.attacker)) {
             waitresult.attacker damagefeedback::update(waitresult.mod, waitresult.inflictor, undefined, waitresult.weapon, self);

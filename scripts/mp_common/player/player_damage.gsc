@@ -343,9 +343,7 @@ function private function_a31ab50c(var_7c61c7a1) {
 function private function_961fe569(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, boneindex, vsurfacenormal) {
     profileNamedStart(#"");
     if (!level.console && idflags & 8 && isplayer(eattacker)) {
-        /#
-            println("damage_death_circle" + self getentitynumber() + "<unknown string>" + self.health + "<unknown string>" + eattacker.clientid + "<unknown string>" + isplayer(einflictor) + "<unknown string>" + idamage + "<unknown string>" + shitloc);
-        #/
+        println("damage_death_circle" + self getentitynumber() + "<unknown string>" + self.health + "<unknown string>" + eattacker.clientid + "<unknown string>" + isplayer(einflictor) + "<unknown string>" + idamage + "<unknown string>" + shitloc);
         eattacker stats::function_dad108fa(#"penetration_shots", 1);
     }
     if (getdvarstring(#"scr_csmode") != "") {
@@ -997,9 +995,7 @@ function private modify_player_damage(einflictor, eattacker, idamage, idflags, s
     if (isdefined(overrideplayerdamage)) {
         idamage = self [[ overrideplayerdamage ]](einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, psoffsettime, boneindex);
     }
-    /#
-        assert(isdefined(idamage), "<unknown string>");
-    #/
+    assert(isdefined(idamage), "<unknown string>");
     if (isdefined(eattacker)) {
         idamage = loadout::cac_modified_damage(self, eattacker, idamage, smeansofdeath, weapon, einflictor, shitloc);
         if (isdefined(eattacker.pickup_damage_scale) && eattacker.pickup_damage_scale_time > gettime()) {

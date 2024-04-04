@@ -72,8 +72,8 @@ function function_fd051611(*s_params) {
     }
     if (isdefined(def)) {
         invul = gettime() + 1000;
-        var_3dcc592c = doa_enemy::function_db55a448(def, origin + vectorscale((0, 0, 1), 8), enemy);
-        var_5001fd97 = doa_enemy::function_db55a448(def, origin + vectorscale((0, 0, 1), 32), enemy);
+        var_3dcc592c = doa_enemy::function_db55a448(def, origin + (0, 0, 8), enemy);
+        var_5001fd97 = doa_enemy::function_db55a448(def, origin + (0, 0, 32), enemy);
         if (isdefined(var_3dcc592c)) {
             var_3dcc592c.var_9cb9d79f = invul;
             var_3dcc592c namespace_83eb6304::function_3ecfde67("demon_burst");
@@ -113,9 +113,7 @@ function function_d240d5de() {
     self solid();
     self.fovcosine = 0;
     self.fovcosinebusy = 0;
-    /#
-        assert(isdefined(self.scriptbundlesettings));
-    #/
+    assert(isdefined(self.scriptbundlesettings));
     self.settings = getscriptbundle(self.scriptbundlesettings);
     self.goalradius = 512;
     self.goalheight = 100;
@@ -194,7 +192,7 @@ function function_839fc28e() {
     /#
         self endon(#"death");
         while (true) {
-            line(self.origin, self.origin + vectorscale((0, 0, 1), 1000), (1, 0, 0), 1, 0, 1);
+            line(self.origin, self.origin + (0, 0, 1000), (1, 0, 0), 1, 0, 1);
             waitframe(1);
         }
     #/

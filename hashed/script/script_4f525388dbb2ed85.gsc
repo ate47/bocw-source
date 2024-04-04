@@ -435,7 +435,7 @@ function private function_f46326c5() {
         level endon(#"hash_47e0ed0d8fb144dc");
         while (true) {
             if (isdefined(level._fx.var_7b96a5ce.var_4f5ffab2)) {
-                box(level._fx.var_7b96a5ce.var_4f5ffab2.origin, vectorscale((-1, -1, -1), 10), vectorscale((1, 1, 1), 10), 0, (0, 0, 0), 1, 0, 1);
+                box(level._fx.var_7b96a5ce.var_4f5ffab2.origin, (-10, -10, -10), (10, 10, 10), 0, (0, 0, 0), 1, 0, 1);
                 function_b95b9a60(level._fx.var_7b96a5ce.var_4f5ffab2.origin, level._fx.var_7b96a5ce.data[0].value, (1, 1, 1), 1, 0, 32, 1);
                 debugstar(level._fx.var_7b96a5ce.var_4f5ffab2.origin, 1, (1, 0.65, 0), "<unknown string>", 0.5);
             }

@@ -298,7 +298,7 @@ function ai_puppet_cursor_tracker() {
         while (true) {
             forward = anglestoforward(self getplayerangles());
             forward_vector = vectorscale(forward, 4000);
-            physicsbox = vectorscale((1, 1, 1), 10);
+            physicsbox = (10, 10, 10);
             playereye = self getplayercamerapos();
             level.playercursor = physicstrace(playereye, playereye + forward_vector, -1 * physicsbox, physicsbox, self, 64 | 2);
             level.playercursorai = undefined;
@@ -332,7 +332,7 @@ function ai_puppet_cursor_tracker() {
             if (!level.ai_puppet_highlighting) {
                 ai_puppeteer_render_point(level.playercursor[#"position"], level.playercursor[#"normal"], forward, cursorcolor);
                 if (isdefined(level.playercursorai)) {
-                    box(level.playercursorai.origin, vectorscale((-1, -1, 0), 15), (15, 15, 60), level.playercursorai.angles[1], cursorcolor, 1, 0, 1);
+                    box(level.playercursorai.origin, (-15, -15, 0), (15, 15, 60), level.playercursorai.angles[1], cursorcolor, 1, 0, 1);
                 }
             }
             waitframe(1);
@@ -467,7 +467,7 @@ function ai_puppeteer_render_point(point, normal, forward, color) {
 function ai_puppeteer_render_node(node, color) {
     /#
         print3d(node.origin, node.type, color, 1, 0.35);
-        box(node.origin, vectorscale((-1, -1, 0), 16), vectorscale((1, 1, 1), 16), node.angles[1], color, 1, 1);
+        box(node.origin, (-16, -16, 0), (16, 16, 16), node.angles[1], color, 1, 1);
         nodeforward = anglestoforward(node.angles);
         nodeforward = vectorscale(nodeforward, 8);
         line(node.origin, node.origin + nodeforward, color, 1, 1);

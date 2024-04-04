@@ -239,9 +239,7 @@ function function_b32b7f64() {
 // Checksum 0xd164f7e9, Offset: 0x12b8
 // Size: 0x9a
 function function_21780fc5(dialog_tree, var_a9b0cfdc) {
-    /#
-        assert(isdefined(dialog_tree) && isarray(var_a9b0cfdc) && isint(var_a9b0cfdc[0]) && isint(var_a9b0cfdc[1]), "<unknown string>");
-    #/
+    assert(isdefined(dialog_tree) && isarray(var_a9b0cfdc) && isint(var_a9b0cfdc[0]) && isint(var_a9b0cfdc[1]), "<unknown string>");
     dialog_tree.position = var_a9b0cfdc;
 }
 
@@ -333,7 +331,7 @@ function private function_a92530c0(var_34b21e8e, anim_struct) {
                         ai_pos = var_7f0ec05a;
                     }
                 }
-                pos.var_348c0b50 = struct::spawn(ai_pos.origin + anglestoforward(ai_pos.angles) * 56 + anglestoright(ai_pos.angles) * -10, ai_pos.angles + vectorscale((0, 1, 0), 180));
+                pos.var_348c0b50 = struct::spawn(ai_pos.origin + anglestoforward(ai_pos.angles) * 56 + anglestoright(ai_pos.angles) * -10, ai_pos.angles + (0, 180, 0));
                 pos.origin = pos.var_348c0b50.origin;
             }
         }
@@ -482,11 +480,9 @@ function private function_86a1bed2(var_34b21e8e, struct, player_pos) {
 // Params 9, eflags: 0x2 linked
 // Checksum 0x2b85c9a5, Offset: 0x2260
 // Size: 0x29e
-function function_cfa96cee(dialog_tree, anim_struct, timer, var_b98e33f = "dialog_wait_cancel", var_9897a186 = 80, var_a4b4cae2 = 200, var_7f8e2bfe = 0, use_offset = vectorscale((1, 0, 0), 6), var_5bab29d8 = 0) {
+function function_cfa96cee(dialog_tree, anim_struct, timer, var_b98e33f = "dialog_wait_cancel", var_9897a186 = 80, var_a4b4cae2 = 200, var_7f8e2bfe = 0, use_offset = (6, 0, 0), var_5bab29d8 = 0) {
     if (isdefined(self) && isai(self) && !isalive(self)) {
-        /#
-            println("<unknown string>" + self.name + "<unknown string>");
-        #/
+        println("<unknown string>" + self.name + "<unknown string>");
         return;
     }
     self.radius = 2.5;
@@ -499,7 +495,6 @@ function function_cfa96cee(dialog_tree, anim_struct, timer, var_b98e33f = "dialo
     self util::create_cursor_hint(tagname, use_offset, var_c93a00f2, var_9897a186, undefined, undefined, undefined, var_a4b4cae2, var_7f8e2bfe);
     self prompts::function_92127496(1);
     self prompts::function_1a5e1da6(#"use", 1);
-    msg = undefined;
     msg = self waittill(#"trigger", #"death", #"hash_15ec42f1846ef9d0", #"deleted", var_b98e33f);
     if (msg._notify == "trigger") {
         return dialog_tree run(self, anim_struct, timer, msg.activator, var_5bab29d8);
@@ -513,9 +508,7 @@ function function_cfa96cee(dialog_tree, anim_struct, timer, var_b98e33f = "dialo
 // Checksum 0xfab586a3, Offset: 0x2508
 // Size: 0x13c8
 function run(var_34b21e8e, anim_struct, timer, activator, var_5bab29d8 = 0, var_cf6d95c9 = 4, var_5738c83e = 0) {
-    /#
-        assert(isarray(self.options));
-    #/
+    assert(isarray(self.options));
     if (!isdefined(var_34b21e8e)) {
         var_34b21e8e = level;
     }
@@ -924,9 +917,7 @@ function private function_62d48ab(var_34b21e8e, var_2f04fa05) {
 // Checksum 0x7232ec4b, Offset: 0x4408
 // Size: 0x64
 function private function_d602cdd7(var_e2b4d51e) {
-    /#
-        assert(isarray(self.options));
-    #/
+    assert(isarray(self.options));
     var_e728c53 = self.options.size;
     self.options[var_e728c53] = var_e2b4d51e;
     return var_e728c53;
@@ -1155,11 +1146,8 @@ function private function_8b61aa4c(var_d9d52a9d, var_34b21e8e, var_cf6d95c9 = 4)
         namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "timeOut", self.timeout);
     }
     player = self.activator;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     var_34b21e8e flag::set("waiting_on_player_choice");
-    selected = undefined;
     selected = level waittill(#"dialog_tree_option_selected");
     var_34b21e8e flag::clear("waiting_on_player_choice");
     namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "isActive", 0);
@@ -1181,7 +1169,6 @@ function private function_9ca575ba(var_8447108b) {
         level.waitingforresponse = 1;
         var_cf6a20f2 = -1;
         while (level.waitingforresponse) {
-            var_dae97dcc = undefined;
             var_dae97dcc = level waittill(#"dialog_tree_kbm_key_selected");
             if (var_8447108b.size > 0 && var_dae97dcc.var_70b35161 == 1) {
                 var_cf6a20f2 = 0;

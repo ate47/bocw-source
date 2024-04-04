@@ -265,7 +265,7 @@ function function_27f93038(watcher, owner) {
         player.var_c23218c7[0] thread function_c3726ef3();
     }
     self.var_deb3e8b1 thread function_814f2bcd();
-    self.trigger = spawn("trigger_box", v_origin + vectorscale((0, 0, 1), 20), 512 | 16 | 8192, 40, 115, 30);
+    self.trigger = spawn("trigger_box", v_origin + (0, 0, 20), 512 | 16 | 8192, 40, 115, 30);
     self.trigger.angles = v_angles;
     self.trigger.var_f968837d = self;
     self.trigger.var_deb3e8b1 = self.var_deb3e8b1;
@@ -290,7 +290,7 @@ function function_56133646() {
                     v_min = self.trigger getmins();
                     v_max = self.trigger getmaxs();
                     box(self.trigger.origin, v_min, v_max, self.trigger.angles, (0, 1, 0), undefined, undefined, 1);
-                    print3d(self.trigger.origin + vectorscale((0, 0, 1), 40), "<unknown string>" + self.health, (0, 1, 0), undefined, 0.4, 1);
+                    print3d(self.trigger.origin + (0, 0, 40), "<unknown string>" + self.health, (0, 1, 0), undefined, 0.4, 1);
                 }
             }
             waitframe(1);
@@ -431,7 +431,7 @@ function function_5276a443(var_9055f9a9, var_f968837d, var_6254bcaf, var_8689013
         } else {
             var_70ab6bc = var_da4a3267;
         }
-        var_36635dd8 = isdefined(var_f968837d.origin) ? var_f968837d.origin : self.origin + vectorscale((0, 0, 1), 48);
+        var_36635dd8 = isdefined(var_f968837d.origin) ? var_f968837d.origin : self.origin + (0, 0, 48);
         self namespace_42457a0::function_601fabe9(#"toxic", var_70ab6bc, var_36635dd8, self.var_9258f88f, var_f968837d, "none", "MOD_GAS", 0, weapon);
         self playsound(#"hash_25822a2d894aaa12");
         if (isdefined(var_f968837d)) {

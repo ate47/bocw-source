@@ -121,7 +121,7 @@ function function_b9adea4e() {
 // Checksum 0x5f4dbdcd, Offset: 0x5e8
 // Size: 0x78
 function function_3be9e71a() {
-    var_9463599a = spawncollision(#"hash_1d1c56a494aa468e", "collider", self.origin + vectorscale((0, 0, 1), 50), self.angles);
+    var_9463599a = spawncollision(#"hash_1d1c56a494aa468e", "collider", self.origin + (0, 0, 50), self.angles);
     var_9463599a setscale(2);
     return var_9463599a;
 }

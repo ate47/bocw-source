@@ -14,9 +14,7 @@ function autoexec initnotetrackhandler() {
 // Checksum 0x7b71a8, Offset: 0x98
 // Size: 0x8c
 function private event_handler[runnotetrackhandler] runnotetrackhandler(eventstruct) {
-    /#
-        assert(isarray(eventstruct.notetracks));
-    #/
+    assert(isarray(eventstruct.notetracks));
     for (index = 0; index < eventstruct.notetracks.size; index++) {
         handlenotetrack(eventstruct.entity, eventstruct.notetracks[index]);
     }
@@ -43,15 +41,9 @@ function private handlenotetrack(entity, notetrack) {
 // Checksum 0xd2a7c853, Offset: 0x1c0
 // Size: 0xc4
 function registernotetrackhandlerfunction(notetrackname, notetrackfuncptr) {
-    /#
-        assert(isstring(notetrackname), "<unknown string>");
-    #/
-    /#
-        assert(isfunctionptr(notetrackfuncptr), "<unknown string>");
-    #/
-    /#
-        assert(!isdefined(level._notetrack_handler[notetrackname]), "<unknown string>" + notetrackname + "<unknown string>");
-    #/
+    assert(isstring(notetrackname), "<unknown string>");
+    assert(isfunctionptr(notetrackfuncptr), "<unknown string>");
+    assert(!isdefined(level._notetrack_handler[notetrackname]), "<unknown string>" + notetrackname + "<unknown string>");
     level._notetrack_handler[notetrackname] = notetrackfuncptr;
 }
 

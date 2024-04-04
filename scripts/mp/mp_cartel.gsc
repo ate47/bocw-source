@@ -39,7 +39,7 @@ function function_24198689() {
     var_780f74b5[var_780f74b5.size] = "mp_spawn_point";
     var_780f74b5[var_780f74b5.size] = "mp_spawn_point_axis";
     var_780f74b5[var_780f74b5.size] = "mp_spawn_point_allies";
-    spawning::move_spawn_point(var_780f74b5, (902, 3489, 200.313), (935.51, 3913.98, 191.707), vectorscale((0, -1, 0), 104.985));
+    spawning::move_spawn_point(var_780f74b5, (902, 3489, 200.313), (935.51, 3913.98, 191.707), (0, -104.985, 0));
 }
 
 // Namespace mp_cartel/mp_cartel

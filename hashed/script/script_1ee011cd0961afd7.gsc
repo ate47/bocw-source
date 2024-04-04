@@ -48,12 +48,8 @@ function init() {
 // Size: 0x10c
 function function_4060ccb4(name, *unused1, var_f80dfd0d, *var_5ddf2027, *var_26f1324c = 0) {
     var_318e5b78 = level.doa.var_11c4dca4.size;
-    /#
-        assert(var_318e5b78 < 256, "<unknown string>");
-    #/
-    /#
-        assert(!isdefined(level.doa.var_11c4dca4[var_5ddf2027]), "<unknown string>");
-    #/
+    assert(var_318e5b78 < 256, "<unknown string>");
+    assert(!isdefined(level.doa.var_11c4dca4[var_5ddf2027]), "<unknown string>");
     level.doa.var_11c4dca4[var_5ddf2027] = {#name:var_5ddf2027, #id:var_318e5b78, #clear:var_26f1324c};
 }
 
@@ -104,9 +100,7 @@ function function_13be6e83(&queue) {
     if (!isdefined(self)) {
         return;
     }
-    /#
-        assert(queue.size == 0);
-    #/
+    assert(queue.size == 0);
     self clientfield::set("play_fx", 0);
     self clientfield::set("stop_fx", 0);
 }
@@ -116,9 +110,7 @@ function function_13be6e83(&queue) {
 // Checksum 0xd63fe90d, Offset: 0x6e0
 // Size: 0x11e
 function function_dd47bd22(fxcmd) {
-    /#
-        assert(isdefined(fxcmd), "<unknown string>");
-    #/
+    assert(isdefined(fxcmd), "<unknown string>");
     if (!isdefined(fxcmd)) {
         return;
     }
@@ -172,9 +164,7 @@ function turnofffx(name) {
         }
         self.var_93d7fb93[self.var_93d7fb93.size] = fxcmd;
     }
-    /#
-        assert(self.var_93d7fb93.size < 60, "<unknown string>" + name);
-    #/
+    assert(self.var_93d7fb93.size < 60, "<unknown string>" + name);
 }
 
 // Namespace namespace_83eb6304/namespace_83eb6304
@@ -208,9 +198,7 @@ function function_3ecfde67(name) {
                 i++;
             }
         }
-        /#
-            assert(self.var_93d7fb93.size < 60, "<unknown string>" + name);
-        #/
+        assert(self.var_93d7fb93.size < 60, "<unknown string>" + name);
     #/
 }
 

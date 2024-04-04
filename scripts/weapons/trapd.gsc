@@ -119,7 +119,7 @@ function function_518130e(watcher) {
 // Size: 0xc4
 function function_367f94ba(*attacker, *weapon, *target) {
     self.killcament.starttime = gettime();
-    self molotov::function_462c8632(self.owner, self.origin, (0, 0, 1), vectorscale((0, 0, -1), 400), self.killcament, self.team, getscriptbundle(self.weapon.customsettings));
+    self molotov::function_462c8632(self.owner, self.origin, (0, 0, 1), (0, 0, -400), self.killcament, self.team, getscriptbundle(self.weapon.customsettings));
     self hide();
     wait(10);
     self delete();

@@ -100,7 +100,6 @@ function private function_74272495(*localclientnum, *owner) {
 function private function_69fda304(localclientnum) {
     self endon(#"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"enter_vehicle");
         if ("right" == "right") {
             self function_4e9da3d7(1);

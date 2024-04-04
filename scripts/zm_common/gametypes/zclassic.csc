@@ -18,9 +18,7 @@ function event_handler[gametype_init] main(*eventstruct) {
         level.var_352498c6 = 1;
     }
     util::function_8eb5d4b0(3500, 2.5);
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace zclassic/zclassic
@@ -28,9 +26,7 @@ function event_handler[gametype_init] main(*eventstruct) {
 // Checksum 0x4c9b4e1c, Offset: 0x158
 // Size: 0x24
 function onprecachegametype() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace zclassic/zclassic
@@ -38,8 +34,6 @@ function onprecachegametype() {
 // Checksum 0xcc98602c, Offset: 0x188
 // Size: 0x24
 function onstartgametype() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 

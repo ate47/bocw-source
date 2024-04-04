@@ -42,7 +42,6 @@ function function_e073d92f() {
     self notify("3b218896f68a5246");
     self endon("3b218896f68a5246");
     self thread namespace_268747c0::function_978c05b5();
-    result = undefined;
     result = self waittill(#"hash_3e251384a5400dce");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
         arrayremovevalue(level.doa.var_6733605b, self);
@@ -72,9 +71,7 @@ function function_e073d92f() {
 // Checksum 0xdb1f34d3, Offset: 0x478
 // Size: 0x1b8
 function function_a2e3342e(trap, var_7c56394 = 0) {
-    /#
-        assert(isdefined(trap.target), "<unknown string>");
-    #/
+    assert(isdefined(trap.target), "<unknown string>");
     trap.script_model = namespace_ec06fe4a::spawnmodel(trap.origin, "zombietron_pressure_plate", trap.angles);
     if (isdefined(trap.script_model)) {
         trap.script_model.targetname = "hazard";
@@ -86,9 +83,7 @@ function function_a2e3342e(trap, var_7c56394 = 0) {
     if (trap.var_84a0207b.size == 0) {
         trap.var_84a0207b = struct::get_array(trap.target, "targetname");
     }
-    /#
-        assert(trap.var_84a0207b.size > 0, "<unknown string>");
-    #/
+    assert(trap.var_84a0207b.size > 0, "<unknown string>");
     array::notify_all(trap.var_84a0207b, "plate_assigned");
     trap thread function_3864f6a5();
     return trap;
@@ -196,19 +191,18 @@ function function_3864f6a5() {
         self notify(#"hash_3e251384a5400dce");
     }
     var_d71f280f = self.origin;
-    upposition = var_d71f280f + vectorscale((0, 0, 1), 12);
+    upposition = var_d71f280f + (0, 0, 12);
     self.script_model moveto(upposition, 0.5);
     while (isdefined(self)) {
         waitframe(1);
         if (!isdefined(self.trigger)) {
             self.trigger = namespace_268747c0::function_5bfa98c9("pressureplate", self.origin);
             if (isdefined(self.trigger)) {
-                self.trigger.origin = self.origin + vectorscale((0, 0, 1), 36);
+                self.trigger.origin = self.origin + (0, 0, 36);
                 self.trigger.angles = self.angles;
             }
             continue;
         }
-        result = undefined;
         result = self.trigger waittill(#"trigger");
         self.script_model namespace_e32bb68::function_3a59ec34("zmb_press_pad_down");
         self.script_model moveto(var_d71f280f, 0.5);

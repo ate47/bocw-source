@@ -8,27 +8,11 @@
 class cself_respawn : cluielem {
 
     // Namespace cself_respawn/self_respawn
-    // Params 0, eflags: 0x8
-    // Checksum 0x999020d4, Offset: 0x348
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cself_respawn/self_respawn
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xdaa783f2, Offset: 0x4a0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cself_respawn/self_respawn
     // Params 2, eflags: 0x0
     // Checksum 0x7f231cec, Offset: 0x468
     // Size: 0x30
     function set_percent(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "percent", value);
+        set_data(localclientnum, "percent", value);
     }
 
     // Namespace cself_respawn/self_respawn
@@ -62,7 +46,7 @@ class cself_respawn : cluielem {
     // Size: 0x48
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "percent", 0);
+        set_data(localclientnum, "percent", 0);
     }
 
 }

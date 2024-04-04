@@ -90,9 +90,7 @@ function function_c25b3c76(launchvector, attacker) {
     if (!isactor(self)) {
         return;
     }
-    /#
-        assert(!is_true(self.boss));
-    #/
+    assert(!is_true(self.boss));
     if (is_true(self.boss)) {
         return;
     }

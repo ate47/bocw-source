@@ -92,9 +92,7 @@ function private function_5da462f3(startpos, angles) {
 function fire_weapon(*parms) {
     self endon(#"death");
     if (!isdefined(self.localclientnum) || !isdefined(self.weapon)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
     startpos = self gettagorigin("tag_flash");
@@ -113,9 +111,7 @@ function function_7b038ec3(parms) {
     self endon("cc0866372ca2bf9");
     self endon(#"death", #"hash_53fdcb0020b4588c");
     if (!isdefined(self.localclientnum) || !isdefined(self.weapon)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
     delay = isdefined(self.weapon.firetime) ? self.weapon.firetime : 0.09;

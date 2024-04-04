@@ -169,7 +169,7 @@ function start_timed_vortex(effect_version, v_vortex_origin, n_vortex_radius, n_
                 }
                 if (is_true(ai_zombie._black_hole_bomb_collapse_death)) {
                     ai_zombie.skipautoragdoll = 1;
-                    ai_zombie dodamage(ai_zombie.health + 666, ai_zombie.origin + vectorscale((0, 0, 1), 50), ai_zombie.interdimensional_gun_attacker, undefined, undefined, "MOD_CRUSH");
+                    ai_zombie dodamage(ai_zombie.health + 666, ai_zombie.origin + (0, 0, 50), ai_zombie.interdimensional_gun_attacker, undefined, undefined, "MOD_CRUSH");
                     if (is_true(ai_zombie.allowdeath)) {
                         gibserverutils::annihilate(ai_zombie);
                     }
@@ -213,7 +213,7 @@ function vortex_z_extension(a_ai_zombies, v_vortex_origin, n_vortex_radius) {
     a_ai_zombies_extended_filtered = array::exclude(a_ai_zombies_extended, a_ai_zombies);
     i = 0;
     while (i < a_ai_zombies_extended_filtered.size) {
-        if (a_ai_zombies_extended_filtered[i].origin[2] < v_vortex_origin[2] && bullettracepassed(a_ai_zombies_extended_filtered[i].origin + vectorscale((0, 0, 1), 5), v_vortex_origin + vectorscale((0, 0, 1), 20), 0, self, undefined, 0, 0)) {
+        if (a_ai_zombies_extended_filtered[i].origin[2] < v_vortex_origin[2] && bullettracepassed(a_ai_zombies_extended_filtered[i].origin + (0, 0, 5), v_vortex_origin + (0, 0, 20), 0, self, undefined, 0, 0)) {
             i++;
             continue;
         }

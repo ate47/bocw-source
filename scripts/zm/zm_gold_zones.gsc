@@ -436,7 +436,6 @@ function function_44b1279a() {
             self zm_gold::setupminimap("", "village");
             self clientfield::set_to_player("" + #"hash_697cae64fbcf81f8", 0);
         }
-        s_waitresult = undefined;
         s_waitresult = self waittill(#"zone_change");
     }
 }

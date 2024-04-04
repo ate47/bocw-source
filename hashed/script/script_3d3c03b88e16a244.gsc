@@ -19,9 +19,7 @@ function autoexec init() {
 // Checksum 0x9944b7af, Offset: 0xe8
 // Size: 0x24
 function private function_acf96b05() {
-    /#
-        assert(isdefined(self.ai));
-    #/
+    assert(isdefined(self.ai));
 }
 
 // Namespace namespace_baa4b777/namespace_a84b7a30

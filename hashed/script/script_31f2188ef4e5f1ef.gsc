@@ -38,7 +38,7 @@ function init_fx() {
 // Checksum 0x63c4811f, Offset: 0x498
 // Size: 0x44
 function function_82a143d2() {
-    playfx(level._effect[#"hash_7e6d961e2c87c2c9"], self.origin + vectorscale((0, 0, -1), 150));
+    playfx(level._effect[#"hash_7e6d961e2c87c2c9"], self.origin + (0, 0, -150));
 }
 
 // Namespace namespace_9a981837/namespace_81e6fa1d
@@ -111,7 +111,7 @@ function function_ee673d3d() {
     level.var_7466d419.var_6bbdd0a5 = spawn("script_model", level.var_7466d419.origin);
     level.var_7466d419.var_6bbdd0a5 setmodel(#"tag_origin");
     level.var_7466d419.var_6bbdd0a5 enablelinkto();
-    level.var_7466d419.var_6bbdd0a5 linkto(level.var_7466d419, "tag_fire_extinguisher_attach", vectorscale((0, 0, 1), 35), vectorscale((1, 0, 0), 90));
+    level.var_7466d419.var_6bbdd0a5 linkto(level.var_7466d419, "tag_fire_extinguisher_attach", (0, 0, 35), (90, 0, 0));
     level.var_7466d419.var_585ee020 = #"hash_7401be881ac98bd9";
     level waittill(#"hash_227cc8ce5802e6b5");
     level.var_7466d419.var_6bbdd0a5 delete();
@@ -119,7 +119,7 @@ function function_ee673d3d() {
     level.var_7466d419.var_6bbdd0a5 = spawn("script_model", level.var_7466d419.origin);
     level.var_7466d419.var_6bbdd0a5 setmodel(#"tag_origin");
     level.var_7466d419.var_6bbdd0a5 enablelinkto();
-    level.var_7466d419.var_6bbdd0a5 linkto(level.var_7466d419, "tag_fire_extinguisher_attach", vectorscale((0, 0, 1), 35), vectorscale((1, 0, 0), 90));
+    level.var_7466d419.var_6bbdd0a5 linkto(level.var_7466d419, "tag_fire_extinguisher_attach", (0, 0, 35), (90, 0, 0));
     playfxontag(level.var_7466d419.var_585ee020, level.var_7466d419.var_6bbdd0a5, "tag_origin");
 }
 

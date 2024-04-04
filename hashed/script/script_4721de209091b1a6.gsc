@@ -69,12 +69,8 @@ function play_killstreak_ready_dialog(killstreaktype, taacomwaittime) {
 // Checksum 0x43c028f2, Offset: 0x398
 // Size: 0x7c
 function play_taacom_dialog_response(dialogkey, killstreaktype, killstreakid, pilotindex) {
-    /#
-        assert(isdefined(dialogkey));
-    #/
-    /#
-        assert(isdefined(killstreaktype));
-    #/
+    assert(isdefined(dialogkey));
+    assert(isdefined(killstreaktype));
     if (!isdefined(pilotindex)) {
         return;
     }
@@ -236,12 +232,8 @@ function play_destroyed_dialog_on_owner(killstreaktype, killstreakid) {
 // Checksum 0xbc9a5c1a, Offset: 0x940
 // Size: 0x1cc
 function function_1110a5de(killstreaktype) {
-    /#
-        assert(isdefined(killstreaktype), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(level.killstreaks[killstreaktype]), "<unknown string>");
-    #/
+    assert(isdefined(killstreaktype), "<unknown string>");
+    assert(isdefined(level.killstreaks[killstreaktype]), "<unknown string>");
     pilotdialogarraykey = level.killstreaks[killstreaktype].script_bundle.var_b7bd2ff9;
     if (isdefined(pilotdialogarraykey)) {
         taacombundles = getscriptbundles("mpdialog_taacom");

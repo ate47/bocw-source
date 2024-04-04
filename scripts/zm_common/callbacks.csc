@@ -46,9 +46,7 @@ function set_default_callbacks() {
 // Checksum 0xc181a2b7, Offset: 0x250
 // Size: 0x78
 function localclientconnect(localclientnum) {
-    /#
-        println("<unknown string>" + localclientnum);
-    #/
+    println("<unknown string>" + localclientnum);
     callback(#"on_localclient_connect", localclientnum);
     if (isdefined(level.charactercustomizationsetup)) {
         [[ level.charactercustomizationsetup ]](localclientnum);
@@ -75,9 +73,7 @@ function playerspawned(localclientnum) {
         self thread [[ level._playerspawned_override ]](localclientnum);
         return;
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     if (self function_21c0fa55()) {
         callback(#"on_localplayer_spawned", localclientnum);
     }
@@ -102,9 +98,7 @@ function entityspawned(localclientnum) {
         return;
     }
     if (!isdefined(self.type)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
     if (self.type == "missile") {

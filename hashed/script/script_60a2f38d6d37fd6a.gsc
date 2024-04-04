@@ -149,11 +149,7 @@ function function_32d5e898(localclientnum = 0) {
     level thread function_5521aa1c(localclientnum);
     util::delay(2, "game_over", &function_5beeba99);
     for (i = 0; i < level.doa.var_f5ac1256.size; i++) {
-        /#
-            /#
-                assert(i == level.doa.var_f5ac1256[i].id, "<unknown string>");
-            #/
-        #/
+        assert(i == level.doa.var_f5ac1256[i].id, "<unknown string>");
         level.doa.var_f5ac1256[i].var_2c036085 = 0;
     }
 }

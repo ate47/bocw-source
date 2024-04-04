@@ -8,21 +8,8 @@
 // Method(s) 7 Total 14
 class class_fd95a9c : cluielem {
 
-    // Namespace class_fd95a9c/doa_keytrade
-    // Params 0, eflags: 0x8
-    // Checksum 0xa2707e35, Offset: 0x228
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_fd95a9c/doa_keytrade
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x8aa1ec29, Offset: 0x3d8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_fd95a9c/doa_keytrade
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class class_fd95a9c : cluielem {
     // Checksum 0xb4524f31, Offset: 0x388
     // Size: 0x44
     function function_3ae8b40f(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "confirmBtn", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "confirmBtn", value);
     }
 
     // Namespace namespace_fd95a9c/doa_keytrade
@@ -53,7 +40,7 @@ class class_fd95a9c : cluielem {
     // Checksum 0x4ad3123b, Offset: 0x338
     // Size: 0x44
     function function_8a6595db(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "textBoxHint", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "textBoxHint", value);
     }
 
     // Namespace namespace_fd95a9c/doa_keytrade

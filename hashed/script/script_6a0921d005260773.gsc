@@ -338,9 +338,7 @@ function function_edf9c875(note, ent) {
 // Checksum 0x5d5f3d38, Offset: 0xe50
 // Size: 0xb4
 function getentitypose() {
-    /#
-        assert(isactor(self) || isplayer(self), "<unknown string>");
-    #/
+    assert(isactor(self) || isplayer(self), "<unknown string>");
     if (isactor(self)) {
         return self getblackboardattribute("_stance");
     }
@@ -354,9 +352,7 @@ function getentitypose() {
 // Checksum 0xdd441647, Offset: 0xf10
 // Size: 0xa6
 function function_650c0f8f() {
-    /#
-        assert(isactor(self) || isplayer(self), "<unknown string>");
-    #/
+    assert(isactor(self) || isplayer(self), "<unknown string>");
     stance = self getentitypose();
     if (stance == "stand") {
         return "stn";
@@ -372,9 +368,7 @@ function function_650c0f8f() {
 // Checksum 0x2ea02505, Offset: 0xfc0
 // Size: 0x34
 function debugmsg(txt) {
-    /#
-        println("<unknown string>" + txt);
-    #/
+    println("<unknown string>" + txt);
 }
 
 // Namespace abilities/namespace_c78c9cc2

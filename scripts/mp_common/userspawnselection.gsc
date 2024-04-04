@@ -106,9 +106,7 @@ function onplayerspawned() {
 // Checksum 0xe5c00a81, Offset: 0x5e0
 // Size: 0x5c
 function registeravailablespawnbeacon(spawnbeaconid, spawnbeacon) {
-    /#
-        assert(!isdefined(level.spawnselect.vox_plr_1_revive_down_2[spawnbeaconid]));
-    #/
+    assert(!isdefined(level.spawnselect.vox_plr_1_revive_down_2[spawnbeaconid]));
     level.spawnselect.vox_plr_1_revive_down_2[spawnbeaconid] = spawnbeacon;
 }
 
@@ -429,7 +427,6 @@ function function_b55c5868() {
 function waitforspawnselection() {
     self endon(#"disconnect", #"end_respawn");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         response = waitresult.response;
@@ -507,17 +504,11 @@ function filter_spawnpoints(*spawnpoints) {
         level.spawnselect.lastchosenplayerspawns[e_player.clientid] = -1;
         return undefined;
     }
-    /#
-        assert(e_player getteam() == level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].team);
-    #/
+    assert(e_player getteam() == level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].team);
     if (e_player getteam() != level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].team) {
         return undefined;
     }
-    /#
-        /#
-            assert(isdefined(level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].spawns) && level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].spawns.size > 0);
-        #/
-    #/
+    assert(isdefined(level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].spawns) && level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].spawns.size > 0);
     e_player.var_7007b746 = 1;
     return level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].spawns;
 }
@@ -573,16 +564,10 @@ function private function_259770ba(e_player) {
             }
             println("<unknown string>");
         #/
-        /#
-            assert(e_player.team == level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].team);
-        #/
+        assert(e_player.team == level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].team);
         return undefined;
     }
-    /#
-        /#
-            assert(isdefined(level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].spawns) && level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].spawns.size > 0);
-        #/
-    #/
+    assert(isdefined(level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].spawns) && level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].spawns.size > 0);
     return level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].spawnlist;
 }
 

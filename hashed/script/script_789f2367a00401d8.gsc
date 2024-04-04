@@ -70,8 +70,8 @@ function function_84a3128e() {
         if (isdefined(self.attacker)) {
             attacker = self.attacker;
         }
-        level thread function_59d981cc(self.origin + vectorscale((0, 0, 1), 18), blast_radius, attacker, self);
-        function_ccb2e201(self.origin + vectorscale((0, 0, 1), 18), blast_radius);
+        level thread function_59d981cc(self.origin + (0, 0, 18), blast_radius, attacker, self);
+        function_ccb2e201(self.origin + (0, 0, 18), blast_radius);
         if (!isdefined(self.var_338d4a29) || self.var_338d4a29 == 0) {
             function_e8ad1d81(self.origin, (0, 0, 1), (0, 0, 1), self.team, var_3e7a440, attacker, self);
         }
@@ -141,8 +141,8 @@ function function_e8ad1d81(position, normal, velocity, team, customsettings, att
     molotovsteamweapon = getweapon("molotov_steam");
     if (normal[2] < -0.5) {
         var_36c22d1d = position + vectorscale(normal, 2);
-        var_8ae62b02 = var_36c22d1d - vectorscale((0, 0, 1), 240);
-        var_69d15ad0 = physicstrace(var_36c22d1d, var_8ae62b02, vectorscale((-1, -1, -1), 0.5), vectorscale((1, 1, 1), 0.5), self, 1);
+        var_8ae62b02 = var_36c22d1d - (0, 0, 240);
+        var_69d15ad0 = physicstrace(var_36c22d1d, var_8ae62b02, (-0.5, -0.5, -0.5), (0.5, 0.5, 0.5), self, 1);
         if (var_69d15ad0[#"fraction"] < 1) {
             position = var_69d15ad0[#"position"];
             if (var_69d15ad0[#"fraction"] > 0) {
@@ -160,8 +160,8 @@ function function_e8ad1d81(position, normal, velocity, team, customsettings, att
         }
     } else if (normal[2] < 0.5) {
         var_36c22d1d = position + vectorscale(var_493d36f9, 2);
-        var_8ae62b02 = var_36c22d1d - vectorscale((0, 0, 1), 20);
-        var_69d15ad0 = physicstrace(var_36c22d1d, var_8ae62b02, vectorscale((-1, -1, -1), 0.5), vectorscale((1, 1, 1), 0.5), self, 1);
+        var_8ae62b02 = var_36c22d1d - (0, 0, 20);
+        var_69d15ad0 = physicstrace(var_36c22d1d, var_8ae62b02, (-0.5, -0.5, -0.5), (0.5, 0.5, 0.5), self, 1);
         if (var_69d15ad0[#"fraction"] < 1) {
             position = var_36c22d1d;
             if (var_69d15ad0[#"fraction"] > 0) {
@@ -174,8 +174,8 @@ function function_e8ad1d81(position, normal, velocity, team, customsettings, att
     if (normal[2] < 0.5) {
         wall_normal = normal;
         var_36c22d1d = originalposition + vectorscale(var_493d36f9, 8);
-        var_8ae62b02 = var_36c22d1d - vectorscale((0, 0, 1), 300);
-        var_69d15ad0 = physicstrace(var_36c22d1d, var_8ae62b02, vectorscale((-1, -1, -1), 3), vectorscale((1, 1, 1), 3), self, 1);
+        var_8ae62b02 = var_36c22d1d - (0, 0, 300);
+        var_69d15ad0 = physicstrace(var_36c22d1d, var_8ae62b02, (-3, -3, -3), (3, 3, 3), self, 1);
         var_693f108f = var_69d15ad0[#"fraction"] * 300;
         var_959a2a8b = 0;
         if (var_693f108f > 10) {
@@ -213,13 +213,13 @@ function function_e8ad1d81(position, normal, velocity, team, customsettings, att
         }
     }
     startpos = position + function_7cbeb2f0(normal);
-    desiredendpos = startpos + vectorscale((0, 0, 1), 60);
+    desiredendpos = startpos + (0, 0, 60);
     function_1493c734(startpos, 20, (0, 1, 0), 0.6, 200);
-    phystrace = physicstrace(startpos, desiredendpos, vectorscale((-1, -1, -1), 4), vectorscale((1, 1, 1), 4), self, 1);
+    phystrace = physicstrace(startpos, desiredendpos, (-4, -4, -4), (4, 4, 4), self, 1);
     goalpos = phystrace[#"fraction"] > 1 ? desiredendpos : phystrace[#"position"];
     rotation = randomint(360);
     if (normal[2] < 0.1 && !isdefined(var_e76400c0)) {
-        black = vectorscale((1, 1, 1), 0.1);
+        black = (0.1, 0.1, 0.1);
         trace = hitpos(startpos, startpos + normal * -1 * 70 + (0, 0, -1) * 70, black);
         traceposition = trace[#"position"];
         if (trace[#"fraction"] < 0.9) {
@@ -288,7 +288,7 @@ function function_8a03d3f3(impactpos, startpos, normal, multiplier, rotation, te
     colorarray[colorarray.size] = (0.9, 0.2, 0.2);
     colorarray[colorarray.size] = (0.2, 0.9, 0.2);
     colorarray[colorarray.size] = (0.2, 0.2, 0.9);
-    colorarray[colorarray.size] = vectorscale((1, 1, 1), 0.9);
+    colorarray[colorarray.size] = (0.9, 0.9, 0.9);
     locations = [];
     locations[#"color"] = [];
     locations[#"loc"] = [];
@@ -469,7 +469,7 @@ function damageeffectarea(position, *normal, weapon, radius_multiplier, var_e764
     }
     if (radius >= 0.04) {
         fireeffectarea = spawn("trigger_radius", trigger_radius_position, 0, radius, trigger_radius_height);
-        firesound = spawn("script_origin", fireeffectarea.origin + vectorscale((0, 0, 1), 75));
+        firesound = spawn("script_origin", fireeffectarea.origin + (0, 0, 75));
         if (isdefined(firesound)) {
             firesound playloopsound(#"hash_6993f289f9415bd1");
         }

@@ -219,7 +219,6 @@ function function_81e4abd(player) {
 function function_d8cb1a45() {
     level endon(#"end_game");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         if (isplayer(waitresult.activator)) {
             if (!is_true(self.stub.var_b57b8b27.var_ed73ac32)) {

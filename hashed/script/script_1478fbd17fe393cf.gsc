@@ -111,9 +111,7 @@ function private function_142b2d59(var_572eedec) {
         options = data.options;
         var_88c2ece = data.var_88c2ece;
         var_cb93cf14 = data.var_cb93cf14;
-        /#
-            assert(isarray(options), "<unknown string>");
-        #/
+        assert(isarray(options), "<unknown string>");
         namespace_61e6d095::function_f2a9266(#"hint_tutorial", line_num, "text", title);
         if (!player flag::get(var_cb93cf14) || !isdefined(var_88c2ece)) {
             namespace_61e6d095::function_f2a9266(#"hint_tutorial", line_num, "button_text", options);
@@ -183,7 +181,6 @@ function pause(var_1d470cc4 = #"hash_3c27402259e4c18e", var_63d0d48f = #"hash_3f
         waitframe(2);
         namespace_61e6d095::function_9ade1d9b(#"hint_tutorial", "pause", var_29fa9286);
         player function_df08d48(5);
-        selected = undefined;
         selected = level waittill(#"lui_unpause_game");
         player thread flag::set_for_time(float(function_60d95f53()) / 1000 * 2, "was_paused");
         if (isdefined(var_37e3f2b0)) {
@@ -229,7 +226,6 @@ function function_9f427d88(var_67df10fb = 1, var_f191bdbc) {
     reason = undefined;
     if (var_67df10fb >= float(function_60d95f53()) / 1000) {
         if (var_f191bdbc.size > 0) {
-            reason = undefined;
             reason = self waittilltimeout(var_67df10fb, var_f191bdbc);
         } else {
             wait(var_67df10fb);

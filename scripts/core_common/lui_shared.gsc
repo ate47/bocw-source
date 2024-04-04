@@ -17,22 +17,18 @@
 // Method(s) 10 Total 10
 class cluielem {
 
+    var var_779239b4;
+    var var_bf9c8c95;
+    var var_d5213cbb;
+
     // Namespace cluielem/lui_shared
     // Params 0, eflags: 0xa linked
     // Checksum 0xd170555d, Offset: 0x2f38
     // Size: 0x2a
-    __constructor() {
-        self.var_d5213cbb = "";
-        self.var_bf9c8c95 = undefined;
-        self.var_779239b4 = 0;
-    }
-
-    // Namespace cluielem/lui_shared
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x80f724d1, Offset: 0x3370
-    // Size: 0x4
-    __destructor() {
-        
+    constructor() {
+        var_d5213cbb = "";
+        var_bf9c8c95 = undefined;
+        var_779239b4 = 0;
     }
 
     // Namespace cluielem/lui_shared
@@ -40,7 +36,7 @@ class cluielem {
     // Checksum 0xa711572d, Offset: 0x3230
     // Size: 0x3a
     function function_7bfd10e6(player) {
-        return player function_3fc81484(hash(self.var_d5213cbb), self.var_bf9c8c95);
+        return player function_3fc81484(hash(var_d5213cbb), var_bf9c8c95);
     }
 
     // Namespace cluielem/lui_shared
@@ -48,8 +44,8 @@ class cluielem {
     // Checksum 0x5d256c6a, Offset: 0x31c0
     // Size: 0x62
     function open_luielem(player, flags = 0) {
-        player openluielem(hash(self.var_d5213cbb), self.var_bf9c8c95, flags);
-        self.var_779239b4 = 1;
+        player openluielem(hash(var_d5213cbb), var_bf9c8c95, flags);
+        var_779239b4 = 1;
     }
 
     // Namespace cluielem/lui_shared
@@ -63,8 +59,8 @@ class cluielem {
         if (!isdefined(level.var_f70b6db[hash(menu_name)])) {
             level.var_f70b6db[hash(menu_name)] = 0;
         }
-        self.var_d5213cbb = menu_name;
-        self.var_bf9c8c95 = level.var_f70b6db[hash(menu_name)];
+        var_d5213cbb = menu_name;
+        var_bf9c8c95 = level.var_f70b6db[hash(menu_name)];
         level.var_f70b6db[hash(menu_name)]++;
     }
 
@@ -74,11 +70,11 @@ class cluielem {
     // Size: 0xee
     function close_luielem(player) {
         if (isplayer(player)) {
-            if (isdefined(player.var_3bc46b87) && isdefined(player.var_3bc46b87[hash(self.var_d5213cbb)]) && isdefined(player.var_3bc46b87[hash(self.var_d5213cbb)][self.var_bf9c8c95])) {
-                player.var_3bc46b87[hash(self.var_d5213cbb)][self.var_bf9c8c95] = undefined;
+            if (isdefined(player.var_3bc46b87) && isdefined(player.var_3bc46b87[hash(var_d5213cbb)]) && isdefined(player.var_3bc46b87[hash(var_d5213cbb)][var_bf9c8c95])) {
+                player.var_3bc46b87[hash(var_d5213cbb)][var_bf9c8c95] = undefined;
             }
-            player closeluielem(hash(self.var_d5213cbb), self.var_bf9c8c95);
-            self.var_779239b4 = 0;
+            player closeluielem(hash(var_d5213cbb), var_bf9c8c95);
+            var_779239b4 = 0;
         }
     }
 
@@ -87,7 +83,7 @@ class cluielem {
     // Checksum 0xfbd3782e, Offset: 0x3120
     // Size: 0x44
     function set_clientfield(player, field_name, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, field_name, value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, field_name, value);
     }
 
     // Namespace cluielem/lui_shared
@@ -95,7 +91,7 @@ class cluielem {
     // Checksum 0xd2b4c7b6, Offset: 0x3170
     // Size: 0x44
     function function_d6203429(player, field_name, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, field_name, value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, field_name, value);
     }
 
     // Namespace cluielem/lui_shared
@@ -103,7 +99,7 @@ class cluielem {
     // Checksum 0x8aaec4aa, Offset: 0x3048
     // Size: 0x64
     function add_clientfield(field_name, version, bits, type, var_59f69872 = 1) {
-        clientfield::register_luielem(self.var_d5213cbb, self.var_bf9c8c95, field_name, version, bits, type, var_59f69872);
+        clientfield::register_luielem(var_d5213cbb, var_bf9c8c95, field_name, version, bits, type, var_59f69872);
     }
 
     // Namespace cluielem/lui_shared
@@ -111,7 +107,7 @@ class cluielem {
     // Checksum 0xe0ef6643, Offset: 0x30b8
     // Size: 0x5c
     function function_dcb34c80(var_2a0de052, field_name, version, var_59f69872 = 1) {
-        clientfield::function_b63c5dfe(var_2a0de052, self.var_d5213cbb, self.var_bf9c8c95, field_name, version, var_59f69872);
+        clientfield::function_b63c5dfe(var_2a0de052, var_d5213cbb, var_bf9c8c95, field_name, version, var_59f69872);
     }
 
 }
@@ -434,9 +430,7 @@ function private _play_movie_for_player(str_movie, str_type, show_black_screen, 
         str_menu = "pip_menu";
         break;
     default:
-        /#
-            assertmsg("<unknown string>" + str_type + "<unknown string>");
-        #/
+        assertmsg("<unknown string>" + str_type + "<unknown string>");
         break;
     }
     if (str_type == "pip") {
@@ -460,10 +454,8 @@ function private _play_movie_for_player(str_movie, str_type, show_black_screen, 
         }
         while (true) {
             if (isdefined(n_timeout)) {
-                waitresult = undefined;
                 waitresult = self waittilltimeout(n_timeout, #"menuresponse");
             } else {
-                waitresult = undefined;
                 waitresult = self waittill(#"menuresponse");
             }
             menu = waitresult.menu;
@@ -535,7 +527,6 @@ function private function_1bc580af() {
         [[ lui_menu ]]->set_playoutromovie(self, 1);
         [[ lui_menu ]]->set_showblackscreen(self, 1);
         while (true) {
-            waitresult = undefined;
             waitresult = self waittill(#"menuresponse");
             menu = waitresult.menu;
             response = waitresult.response;
@@ -783,7 +774,6 @@ function open_generic_script_dialog(title, description) {
     self setluimenudata(dialog, #"description", description);
     self.var_520fb18c = dialog;
     do {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         response = waitresult.response;
@@ -820,7 +810,6 @@ function open_script_dialog(dialog_name) {
     self endon(#"disconnect");
     dialog = self openluimenu(dialog_name);
     do {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         response = waitresult.response;

@@ -111,9 +111,7 @@ function init() {
                 room.timeout = getdvarint(#"hash_521cafa4a34ca4cb", 0);
             }
         #/
-        /#
-            assert(room.flipcamera == 0 || room.flipcamera == 1, "stand");
-        #/
+        assert(room.flipcamera == 0 || room.flipcamera == 1, "stand");
         level.doa.var_8f6ccf63[room.script_noteworthy] = room;
         room.var_12ae4b83 = struct::get_array("zombietron_bonus_room_player_starts_" + room.name);
         room.items = struct::get_array("zombietron_bonus_room_item_" + room.name);
@@ -127,9 +125,7 @@ function init() {
         room.spawned_items = [];
         room.var_1406397f = getent("zombietron_bonus_room_exit_trigger_" + room.name, "targetname");
         room.var_6eb6f696 = getent("zombietron_bonus_room_abort_trigger_" + room.name, "targetname");
-        /#
-            assert(room.var_12ae4b83.size == 4);
-        #/
+        assert(room.var_12ae4b83.size == 4);
         var_663588d = "Zombietron/Debug/AutoTesting/BonusRoomSoak/";
         cmdline = "scr_bonus_room_activate " + room.name + "; zombie_devgui bonusroomsoak";
         util::add_devgui(var_663588d + room.name, cmdline);
@@ -331,9 +327,7 @@ function function_b3411080(name) {
     case #"roj":
         return 15;
     default:
-        /#
-            assert(0, "doom door bomb");
-        #/
+        assert(0, "doom door bomb");
         break;
     }
 }
@@ -373,9 +367,7 @@ function function_d496f180(name) {
     case #"roj":
         return 52;
     default:
-        /#
-            assert(0, "<unknown string>");
-        #/
+        assert(0, "<unknown string>");
         break;
     }
 }
@@ -670,13 +662,11 @@ function function_898ca25f(room) {
     }
     if (isdefined(room.var_1406397f)) {
         if (room.timeout === 999 || is_true(level.doa.var_206393b4)) {
-            result = undefined;
             result = room.var_1406397f waittill(#"trigger", #"abort");
         } else {
             level thread namespace_6e90e490::function_c937e51f(timeout);
             level thread function_707a2001(timeout - 10);
             while (timeout > 0) {
-                result = undefined;
                 result = room.var_1406397f waittilltimeout(1, #"trigger", #"abort");
                 if (result._notify == #"timeout") {
                     timeout--;
@@ -899,7 +889,6 @@ function function_56e9011(room) {
 function function_6f63004b(var_74606c86, var_7d320f40) {
     level endon(#"hash_52ca1213084f29fa", #"hash_7dd47c99b7707b1c", #"game_over");
     while (true) {
-        result = undefined;
         result = level waittill(#"hash_6b1b7f8f320c0d3b");
         if (isdefined(result.pickup)) {
             if (result.type != 32 && result.type != 33) {
@@ -936,9 +925,7 @@ function function_edc2fabf(item) {
     }
     type = toks[0];
     if (type === "lootitem") {
-        /#
-            assert(isdefined(item.script_parameters), "<unknown string>");
-        #/
+        assert(isdefined(item.script_parameters), "<unknown string>");
         object = namespace_41f5b853::spawnlootitem(item.origin, item.angles, item.script_parameters, 50, 3);
         if (isdefined(object)) {
             object.target = item.target;
@@ -946,9 +933,7 @@ function function_edc2fabf(item) {
         return object;
     } else if (type === "pick one") {
         var_8447108b = strtok(item.script_parameters, ";");
-        /#
-            assert(var_8447108b.size > 1, "<unknown string>");
-        #/
+        assert(var_8447108b.size > 1, "<unknown string>");
         choice = var_8447108b[randomint(var_8447108b.size)];
         def = namespace_dfc652ee::function_6265bde4(choice);
         if (isdefined(def)) {
@@ -967,9 +952,7 @@ function function_edc2fabf(item) {
         return undefined;
     } else {
         def = namespace_dfc652ee::function_6265bde4(type);
-        /#
-            assert(isdefined(def), "<unknown string>");
-        #/
+        assert(isdefined(def), "<unknown string>");
         if ([[ def ]]->gettype() == 13) {
             scale = 1;
             if (isdefined(item.scale)) {
@@ -1011,9 +994,7 @@ function function_92f612b2(def, pickup) {
 // Checksum 0x3ea4654c, Offset: 0x4de0
 // Size: 0x1dc
 function function_a9f78bf(&var_4200bfbf, room) {
-    /#
-        assert(isdefined(var_4200bfbf) && var_4200bfbf.size >= 4, "<unknown string>");
-    #/
+    assert(isdefined(var_4200bfbf) && var_4200bfbf.size >= 4, "<unknown string>");
     level thread namespace_7f5aeb59::function_67f054d7();
     level waittill(#"hash_1b322de3d2e3e781");
     level thread function_898ca25f(room);
@@ -1038,24 +1019,19 @@ function function_a9f78bf(&var_4200bfbf, room) {
 function function_23ea6695(trigger, room) {
     self notify("2140265bfa49d23a");
     self endon("2140265bfa49d23a");
-    /#
-        assert(isdefined(room));
-    #/
-    /#
-        assert(isdefined(trigger));
-    #/
+    assert(isdefined(room));
+    assert(isdefined(trigger));
     trigger endon(#"death");
-    result = undefined;
     result = trigger waittill(#"trigger");
     trigger triggerenable(0);
     trigger.visited = 1;
     var_4200bfbf = trigger.var_4200bfbf;
     if (!isdefined(var_4200bfbf)) {
         var_4200bfbf = [];
-        var_4200bfbf[0] = {#origin:result.activator.origin, #angles:result.activator.angles + vectorscale((0, 1, 0), 180)};
-        var_4200bfbf[1] = {#origin:var_4200bfbf[0].origin + vectorscale((1, 0, 0), 30), #angles:var_4200bfbf[0].angles};
-        var_4200bfbf[2] = {#origin:var_4200bfbf[0].origin + vectorscale((-1, 0, 0), 30), #angles:var_4200bfbf[0].angles};
-        var_4200bfbf[3] = {#origin:var_4200bfbf[0].origin + vectorscale((0, 1, 0), 30), #angles:var_4200bfbf[0].angles};
+        var_4200bfbf[0] = {#origin:result.activator.origin, #angles:result.activator.angles + (0, 180, 0)};
+        var_4200bfbf[1] = {#origin:var_4200bfbf[0].origin + (30, 0, 0), #angles:var_4200bfbf[0].angles};
+        var_4200bfbf[2] = {#origin:var_4200bfbf[0].origin + (-30, 0, 0), #angles:var_4200bfbf[0].angles};
+        var_4200bfbf[3] = {#origin:var_4200bfbf[0].origin + (0, 30, 0), #angles:var_4200bfbf[0].angles};
     }
     level thread function_a9f78bf(var_4200bfbf, room);
     level waittill(#"hash_1b322de3d2e3e781");
@@ -1092,11 +1068,10 @@ function function_e5c7bce7() {
                 break;
             }
             if (isdefined(level.doa.teleporter) && randomint(5) == 0) {
-                guys[0] setorigin(level.doa.teleporter.origin + vectorscale((0, 0, 1), 32));
+                guys[0] setorigin(level.doa.teleporter.origin + (0, 0, 32));
                 break;
             }
         }
-        result = undefined;
         result = level waittilltimeout(10, #"hash_52ca1213084f29fa");
         if (result._notify == "timeout") {
             continue;
@@ -1126,7 +1101,6 @@ function function_e5c7bce7() {
 // Checksum 0x9d40a116, Offset: 0x5638
 // Size: 0x434
 function function_170eefc7(room, aicount = 28) {
-    result = undefined;
     result = level waittill(#"hash_11a3b1e82b21ec58", #"game_over", #"hash_26543e77189e41db");
     if (result._notify === #"hash_26543e77189e41db" && is_true(result.success)) {
         namespace_7f5aeb59::function_f8645db3(getdvarint(#"hash_1f4204c11443f80a", 1000));
@@ -1183,7 +1157,6 @@ function function_f11b0e51() {
 function function_82273c90(room) {
     level endon(#"hash_11a3b1e82b21ec58", #"game_over");
     while (level.doa.var_6f3d327 === room) {
-        result = undefined;
         result = level waittill(#"player_died");
         if (isdefined(result.player)) {
             result.player thread function_4747bdd0();
@@ -1229,9 +1202,7 @@ function function_4747bdd0(time = 2) {
 // Checksum 0x6e40be6d, Offset: 0x5db8
 // Size: 0x90
 function function_330ded6(pickupdef, *origin) {
-    /#
-        assert(isdefined(level.doa.var_6f3d327));
-    #/
+    assert(isdefined(level.doa.var_6f3d327));
     if (level.doa.var_8609e0e9.size && isinarray(level.doa.var_8609e0e9, [[ origin ]]->getname())) {
         return false;
     }
@@ -1326,7 +1297,6 @@ function function_74c9e3dc(player, defaultval) {
     toks = strtok(self.script_noteworthy, ";");
     val = int(toks[0]);
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         other = result.activator;
         if (player !== other) {
@@ -1355,7 +1325,6 @@ function function_6a60ea16(defaultval) {
         trig thread function_74c9e3dc(self, defaultval);
     }
     while (true) {
-        result = undefined;
         result = self waittill(#"hash_3ae4b1b9ce49f5e");
         if (isdefined(result.val)) {
             self clientfield::set_to_player("setCameraSide", result.val);
@@ -1370,7 +1339,6 @@ function function_6a60ea16(defaultval) {
 function function_270306ac(room) {
     level endon(#"hash_11a3b1e82b21ec58", #"game_over");
     while (level.doa.var_6f3d327 === room) {
-        result = undefined;
         result = level waittill(#"player_died");
         if (isdefined(result.player)) {
             result.player clientfield::set_to_player("setCameraSide", 3);
@@ -1409,9 +1377,7 @@ function function_85a06bf3(*var_c4b5b87c) {
         if (!isdefined(self.last_damaged_by.var_4c5fe7c6)) {
             self.last_damaged_by.var_4c5fe7c6 = struct::get(self.last_damaged_by.target, "targetname");
         }
-        /#
-            assert(isdefined(self.last_damaged_by.var_4c5fe7c6));
-        #/
+        assert(isdefined(self.last_damaged_by.var_4c5fe7c6));
         self setorigin(self.last_damaged_by.var_4c5fe7c6.origin);
         self setplayerangles(self.last_damaged_by.var_4c5fe7c6.angles);
     }
@@ -1425,7 +1391,6 @@ function function_85a06bf3(*var_c4b5b87c) {
 // Size: 0x460
 function function_96e96e0f(room) {
     level endon(#"hash_11a3b1e82b21ec58", #"game_over");
-    result = undefined;
     result = level waittill(#"hash_673fbe4833abc44d");
     i = 0;
     var_876d2ae2 = struct::get_array("eggxit_1_gateWarp", "targetname");
@@ -1495,13 +1460,9 @@ function function_bbd6f14f(*room, openpos, closedpos) {
     self notify("35bd1e44daedf28d");
     self endon("35bd1e44daedf28d");
     var_9b6b2552 = getent("eggxit_margwa_room", "targetname");
-    /#
-        assert(isdefined(var_9b6b2552));
-    #/
+    assert(isdefined(var_9b6b2552));
     var_1ed3b211 = struct::get(var_9b6b2552.target, "targetname");
-    /#
-        assert(isdefined(var_1ed3b211));
-    #/
+    assert(isdefined(var_1ed3b211));
     open = 0;
     self disconnectpaths();
     while (true) {
@@ -1543,7 +1504,7 @@ function function_430e5080(room) {
     }
     self.origin = room.var_5aafdf7;
     originalpos = self.origin;
-    desiredpos = self.origin + vectorscale((0, 0, -1), 180);
+    desiredpos = self.origin + (0, 0, -180);
     if (!isdefined(room.var_5aafdf7)) {
         room.var_5aafdf7 = self.origin;
     }
@@ -1558,9 +1519,7 @@ function function_430e5080(room) {
         }
     }
     if (isdefined(margwa)) {
-        /#
-            assert(margwa.ignoreall == 1, "<unknown string>");
-        #/
+        assert(margwa.ignoreall == 1, "<unknown string>");
         margwa.ignoreall = 1;
     }
     while (true) {
@@ -1588,7 +1547,6 @@ function function_2f1636cd(*room) {
     self notify("723adc9b07be551b");
     self endon("723adc9b07be551b");
     while (true) {
-        result = undefined;
         result = level waittill(#"hash_3f4be37646a2a9cb");
         if (result.ai.classname === #"hash_502ad85371f449ed") {
             result.ai.ignoreall = 1;
@@ -1683,7 +1641,6 @@ function function_2ee246a7(room) {
 function function_38de5c23(*room, aicount = 28) {
     self notify("720c48f1c7d989d4");
     self endon("720c48f1c7d989d4");
-    result = undefined;
     result = level waittill(#"hash_11a3b1e82b21ec58", #"game_over", #"hash_26543e77189e41db");
     if (result._notify === #"hash_26543e77189e41db" && is_true(result.success)) {
         namespace_7f5aeb59::function_f8645db3(getdvarint(#"hash_1f4204c11443f80a", 1000));
@@ -1751,7 +1708,7 @@ function function_1dfe9126(*room) {
     self notify("1205e69a3a57f0be");
     self endon("1205e69a3a57f0be");
     originalpos = self.origin;
-    desiredpos = self.origin + vectorscale((0, 0, -1), 158);
+    desiredpos = self.origin + (0, 0, -158);
     while (true) {
         self namespace_e32bb68::function_ae271c0b("evt_doa_stonedoor_close");
         self waittill(#"plate_activated");
@@ -1760,7 +1717,6 @@ function function_1dfe9126(*room) {
         timedelta = math::clamp(deltaz / 158 * 5, 0.05, 5);
         self namespace_e32bb68::function_3a59ec34("evt_doa_stonedoor_open");
         self moveto(desiredpos, timedelta);
-        result = undefined;
         result = self waittill(#"plate_deactivated", #"hash_7e6e589015c9e33d");
         self namespace_e32bb68::function_ae271c0b("stoneDoorOpening");
         if (result._notify == #"hash_7e6e589015c9e33d") {
@@ -1786,7 +1742,6 @@ function function_c0dff79(room) {
     self triggerenable(1);
     done = 0;
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         if (isdefined(result.activator)) {
             if (!is_true(level.doa.var_e5217306)) {
@@ -1797,7 +1752,7 @@ function function_c0dff79(room) {
                 }
             }
             target = struct::get(self.target, "targetname");
-            org = namespace_ec06fe4a::spawnmodel(target.origin + vectorscale((0, 0, 1), 1000), undefined, target.angles, "doom door org");
+            org = namespace_ec06fe4a::spawnmodel(target.origin + (0, 0, 1000), undefined, target.angles, "doom door org");
             if (isdefined(org)) {
                 org thread namespace_ec06fe4a::function_52afe5df(1.2);
                 org enablelinkto();
@@ -1905,10 +1860,10 @@ function function_af1f8cd5(color) {
     level clientfield::set("banner_eventplayer", var_6b186658);
     if (self.doa.score.bombs > 0) {
         for (take = 7; self.doa.score.bombs > 0 && take > 0; take--) {
-            model = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, 0, 1), 70), "zombietron_nuke", undefined, "doom door bomb");
+            model = namespace_ec06fe4a::spawnmodel(self.origin + (0, 0, 70), "zombietron_nuke", undefined, "doom door bomb");
             if (isdefined(model)) {
                 self.doa.score.bombs--;
-                model moveto(model.origin + vectorscale((0, 0, 1), 2000), 3);
+                model moveto(model.origin + (0, 0, 2000), 3);
                 model thread namespace_ec06fe4a::function_52afe5df(3);
                 wait(0.25);
             }
@@ -1916,22 +1871,22 @@ function function_af1f8cd5(color) {
     }
     if (self.doa.score.boosts > 0) {
         for (take = 4; self.doa.score.boosts > 0 && take > 0; take--) {
-            model = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, 0, 1), 70), "zombietron_boost", undefined, "doom door boost");
+            model = namespace_ec06fe4a::spawnmodel(self.origin + (0, 0, 70), "zombietron_boost", undefined, "doom door boost");
             if (isdefined(model)) {
                 model setscale(1.5);
                 self.doa.score.boosts--;
-                model moveto(model.origin + vectorscale((0, 0, 1), 2000), 3);
+                model moveto(model.origin + (0, 0, 2000), 3);
                 model thread namespace_ec06fe4a::function_52afe5df(3);
                 wait(0.25);
             }
         }
     }
     if (self.doa.score.keys > 0) {
-        model = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, 0, 1), 70), "zombietron_skeleton_key", undefined, "doom door key");
+        model = namespace_ec06fe4a::spawnmodel(self.origin + (0, 0, 70), "zombietron_skeleton_key", undefined, "doom door key");
         if (isdefined(model)) {
             model setscale(3);
             self.doa.score.keys--;
-            model moveto(model.origin + vectorscale((0, 0, 1), 2000), 3);
+            model moveto(model.origin + (0, 0, 2000), 3);
             model thread namespace_ec06fe4a::function_52afe5df(3);
             wait(0.25);
         }
@@ -2151,11 +2106,11 @@ function function_dff4eac9() {
     spawnloc = spawnstruct();
     if (randomint(100) < 90) {
         spot = level.doa.var_6f3d327.var_dd856bff[randomint(level.doa.var_6f3d327.var_dd856bff.size)];
-        spawnloc.origin = spot.origin + vectorscale((0, 0, 1), 765);
+        spawnloc.origin = spot.origin + (0, 0, 765);
         spawnloc.angles = spot.angles;
     } else {
         player = getplayers()[randomint(getplayers().size)];
-        spawnloc.origin = player.origin + vectorscale((0, 0, 1), 765);
+        spawnloc.origin = player.origin + (0, 0, 765);
         spawnloc.angles = player.angles;
     }
     return spawnloc;

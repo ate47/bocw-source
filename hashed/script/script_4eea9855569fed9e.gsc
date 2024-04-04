@@ -8,21 +8,8 @@
 // Method(s) 7 Total 14
 class class_b201538a : cluielem {
 
-    // Namespace class_b201538a/namespace_85157ebf
-    // Params 0, eflags: 0x8
-    // Checksum 0x110e35c0, Offset: 0x250
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_b201538a/namespace_85157ebf
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x4b221b28, Offset: 0x4d0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_b201538a/namespace_85157ebf
     // Params 2, eflags: 0x0
@@ -55,7 +42,7 @@ class class_b201538a : cluielem {
     // Checksum 0x5af05847, Offset: 0x480
     // Size: 0x44
     function function_97bf49cb(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "download_progress", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "download_progress", value);
     }
 
     // Namespace namespace_b201538a/namespace_85157ebf
@@ -64,22 +51,18 @@ class class_b201538a : cluielem {
     // Size: 0x114
     function set_state(player, state_name) {
         if (#"defaultstate" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 0);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 0);
             return;
         }
         if (#"paused" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 1);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 1);
             return;
         }
         if (#"finished" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 2);
+            player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "_state", 2);
             return;
         }
-        /#
-            /#
-                assertmsg("<unknown string>");
-            #/
-        #/
+        assertmsg("<unknown string>");
     }
 
 }

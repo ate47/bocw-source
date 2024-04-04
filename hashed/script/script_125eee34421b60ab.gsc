@@ -54,87 +54,45 @@ function autoexec init() {
 // Checksum 0xb4067c1c, Offset: 0xcf8
 // Size: 0x894
 function private function_c7bb75d5() {
-    /#
-        assert(isscriptfunctionptr(&razsprintservice));
-    #/
+    assert(isscriptfunctionptr(&razsprintservice));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razSprintService", &razsprintservice);
-    /#
-        assert(isscriptfunctionptr(&razshouldmelee));
-    #/
+    assert(isscriptfunctionptr(&razshouldmelee));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldMelee", &razshouldmelee);
-    /#
-        assert(isscriptfunctionptr(&razshouldshowpain));
-    #/
+    assert(isscriptfunctionptr(&razshouldshowpain));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldShowPain", &razshouldshowpain);
-    /#
-        assert(isscriptfunctionptr(&razshouldshowspecialpain));
-    #/
+    assert(isscriptfunctionptr(&razshouldshowspecialpain));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldShowSpecialPain", &razshouldshowspecialpain);
-    /#
-        assert(isscriptfunctionptr(&razshouldshowshieldpain));
-    #/
+    assert(isscriptfunctionptr(&razshouldshowshieldpain));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldShowShieldPain", &razshouldshowshieldpain);
-    /#
-        assert(isscriptfunctionptr(&razshouldshootgroundtorpedo));
-    #/
+    assert(isscriptfunctionptr(&razshouldshootgroundtorpedo));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldShootGroundTorpedo", &razshouldshootgroundtorpedo);
-    /#
-        assert(isscriptfunctionptr(&razshouldgoberserk));
-    #/
+    assert(isscriptfunctionptr(&razshouldgoberserk));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldGoBerserk", &razshouldgoberserk);
-    /#
-        assert(isscriptfunctionptr(&razshouldtraversewindow));
-    #/
+    assert(isscriptfunctionptr(&razshouldtraversewindow));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldTraverseWindow", &razshouldtraversewindow);
-    /#
-        assert(isscriptfunctionptr(&razgroundtorpedowasinterrupted));
-    #/
+    assert(isscriptfunctionptr(&razgroundtorpedowasinterrupted));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razGroundTorpedoWasInterrupted", &razgroundtorpedowasinterrupted);
-    /#
-        assert(isscriptfunctionptr(&razshouldcutoffarm));
-    #/
+    assert(isscriptfunctionptr(&razshouldcutoffarm));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldCutOffArm", &razshouldcutoffarm);
-    /#
-        assert(isscriptfunctionptr(&razshouldmeleerun));
-    #/
+    assert(isscriptfunctionptr(&razshouldmeleerun));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldMeleeRun", &razshouldmeleerun);
-    /#
-        assert(isscriptfunctionptr(&razstartmelee));
-    #/
+    assert(isscriptfunctionptr(&razstartmelee));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razStartMelee", &razstartmelee);
-    /#
-        assert(isscriptfunctionptr(&razfinishmelee));
-    #/
+    assert(isscriptfunctionptr(&razfinishmelee));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razFinishMelee", &razfinishmelee);
-    /#
-        assert(isscriptfunctionptr(&razfinishgroundtorpedo));
-    #/
+    assert(isscriptfunctionptr(&razfinishgroundtorpedo));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razFinishGroundTorpedo", &razfinishgroundtorpedo);
-    /#
-        assert(isscriptfunctionptr(&razgoneberserk));
-    #/
+    assert(isscriptfunctionptr(&razgoneberserk));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razGoneBerserk", &razgoneberserk);
-    /#
-        assert(isscriptfunctionptr(&raztookpain));
-    #/
+    assert(isscriptfunctionptr(&raztookpain));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razTookPain", &raztookpain);
-    /#
-        assert(isscriptfunctionptr(&razstartdeath));
-    #/
+    assert(isscriptfunctionptr(&razstartdeath));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razStartDeath", &razstartdeath);
-    /#
-        assert(isscriptfunctionptr(&razgroundtorpedostaggerstart));
-    #/
+    assert(isscriptfunctionptr(&razgroundtorpedostaggerstart));
     behaviortreenetworkutility::registerbehaviortreescriptapi("razGroundTorpedoStaggerStart", &razgroundtorpedostaggerstart);
-    /#
-        assert(!isdefined(&function_68ef46bd) || isscriptfunctionptr(&function_68ef46bd));
-    #/
-    /#
-        assert(!isdefined(&function_46545247) || isscriptfunctionptr(&function_46545247));
-    #/
-    /#
-        assert(!isdefined(&razfinishgroundtorpedo) || isscriptfunctionptr(&razfinishgroundtorpedo));
-    #/
+    assert(!isdefined(&function_68ef46bd) || isscriptfunctionptr(&function_68ef46bd));
+    assert(!isdefined(&function_46545247) || isscriptfunctionptr(&function_46545247));
+    assert(!isdefined(&razfinishgroundtorpedo) || isscriptfunctionptr(&razfinishgroundtorpedo));
     behaviortreenetworkutility::registerbehaviortreeaction("razGroundTorpedoAction", &function_68ef46bd, &function_46545247, &razfinishgroundtorpedo);
     animationstatenetwork::registeranimationmocomp("mocomp_raz_shoot_torpedo", &function_20e100b4, &function_70204084, &function_bf9973c);
     animationstatenetwork::registernotetrackhandlerfunction("mangler_fire", &function_67e66d54);
@@ -574,12 +532,10 @@ function private function_bf9973c(entity, *mocompanim, *mocompanimblendouttime, 
 function private function_67e66d54(entity) {
     target = get_target_ent(entity);
     if (!isdefined(target) && !is_true(entity.var_467d69c7)) {
-        /#
-            println("MOD_EXPLOSIVE");
-        #/
+        println("MOD_EXPLOSIVE");
         return;
     }
-    entity function_4860f26d(target, vectorscale((0, 0, 1), 48));
+    entity function_4860f26d(target, (0, 0, 48));
     entity.var_af9cbc1c = gettime() + 3000;
 }
 
@@ -689,7 +645,7 @@ function private function_328c7269(var_ad2d46ff, var_e6e4425) {
 // Checksum 0xa49533bb, Offset: 0x2f38
 // Size: 0xe2
 function function_3848e282(var_14df4369) {
-    height_offset = vectorscale((0, 0, 1), 48);
+    height_offset = (0, 0, 48);
     var_30c2c6c3 = var_14df4369.origin + height_offset;
     if (isplayer(var_14df4369)) {
         if (var_14df4369 isinvehicle()) {
@@ -774,7 +730,7 @@ function private function_fc00dc60() {
     self endon(#"detonated");
     var_5bac442e = 26;
     if (self.var_90d59738 >= 1) {
-        trace = bullettrace(self.origin + vectorscale((0, 0, 1), 10), self.origin - (0, 0, var_5bac442e), 0, self);
+        trace = bullettrace(self.origin + (0, 0, 10), self.origin - (0, 0, var_5bac442e), 0, self);
         if (trace[#"surfacetype"] !== "none") {
             self clientfield::increment("raz_torpedo_play_trail", 1);
         }
@@ -790,7 +746,7 @@ function private function_f95c27a2(target) {
     while (isdefined(self)) {
         if (isdefined(target)) {
             if (isplayer(target)) {
-                var_71872c01 = target.origin + vectorscale((0, 0, 1), 48);
+                var_71872c01 = target.origin + (0, 0, 48);
             } else {
                 var_71872c01 = target.origin;
             }
@@ -874,8 +830,8 @@ function private function_ddf221f2(delay) {
         w_weapon = getweapon("none");
         explosion_point = var_36dbf72a.origin;
         var_36dbf72a clientfield::set("raz_detonate_ground_torpedo", 1);
-        radiusdamage(explosion_point + vectorscale((0, 0, 1), 18), 96, 75, 50, self.var_a45c4e6, "MOD_EXPLOSIVE", w_weapon);
-        function_a90fe496(explosion_point + vectorscale((0, 0, 1), 18));
+        radiusdamage(explosion_point + (0, 0, 18), 96, 75, 50, self.var_a45c4e6, "MOD_EXPLOSIVE", w_weapon);
+        function_a90fe496(explosion_point + (0, 0, 18));
         self clientfield::set("raz_torpedo_play_fx_on_self", 0);
         if (isarray(level.var_9ded2ca6)) {
             arrayremovevalue(level.var_9ded2ca6, self);
@@ -1168,7 +1124,7 @@ function function_3c2e8416() {
 function function_1f9940b8() {
     self endon(#"death");
     playfx(#"zombie/fx9_onslaught_spawn_sm", self.origin);
-    playsoundatposition(#"hash_14247392847093a6", self.origin + vectorscale((0, 0, 1), 75));
+    playsoundatposition(#"hash_14247392847093a6", self.origin + (0, 0, 75));
     self.in_the_ground = 1;
     self ghost();
     self pathmode("dont move", 1);
@@ -1208,7 +1164,6 @@ function private function_37c7f369() {
     self endon(#"death");
     self endon(#"disconnect");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"melee_fire", #"zombie_melee");
         if (waitresult._notify === #"melee_fire") {
             zombiebehavior::zombienotetrackmeleefire(self);
@@ -1527,9 +1482,7 @@ function function_2eb802f5(attacker) {
     entity.var_e4fc6a2f = 0;
     entity setblackboardattribute("_gib_location", "head");
     entity.var_5ed30918 = gettime();
-    /#
-        println("helmet");
-    #/
+    println("helmet");
     entity function_5027ed0f();
     if (isdefined(attacker)) {
         level notify(#"hash_84a93496c95c377", attacker);
@@ -1551,9 +1504,7 @@ function function_50c2a59e(*attacker) {
     entity.var_8e205014 = 0;
     entity setblackboardattribute("_gib_location", "arms");
     entity.var_5ed30918 = gettime();
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     entity function_5027ed0f();
 }
 

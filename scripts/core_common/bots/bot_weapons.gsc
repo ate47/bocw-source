@@ -1314,7 +1314,7 @@ function private remote_missile(actionparams) {
             targets = [];
             players = function_f6f34851(self.team);
             foreach (player in players) {
-                if (player hasperk(#"specialty_nokillstreakreticle") || is_true(player.ignoreme) || !bullettracepassed(player.origin + vectorscale((0, 0, 1), 60), player.origin + vectorscale((0, 0, 1), 1000), 0, player)) {
+                if (player hasperk(#"specialty_nokillstreakreticle") || is_true(player.ignoreme) || !bullettracepassed(player.origin + (0, 0, 60), player.origin + (0, 0, 1000), 0, player)) {
                     continue;
                 }
                 targets[targets.size] = player;

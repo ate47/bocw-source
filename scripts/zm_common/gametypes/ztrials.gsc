@@ -104,13 +104,9 @@ function event_handler[level_init] levelinit(*eventstruct) {
     } else if (var_189d26ca == "") {
         var_189d26ca = util::get_map_name() + "_default";
     }
-    /#
-        assert(var_189d26ca != "<unknown string>", "<unknown string>");
-    #/
+    assert(var_189d26ca != "<unknown string>", "<unknown string>");
     level.var_6d87ac05 = zm_trial::function_d02ffd(var_189d26ca);
-    /#
-        assert(isdefined(level.var_6d87ac05), "<unknown string>");
-    #/
+    assert(isdefined(level.var_6d87ac05), "<unknown string>");
     /#
         function_9a6b2309();
     #/
@@ -197,9 +193,7 @@ function private function_491101ba(player) {
     if (level flag::get("round_reset")) {
         return true;
     }
-    /#
-        assert(level get(#"trial_failed"));
-    #/
+    assert(level get(#"trial_failed"));
     return false;
 }
 
@@ -208,9 +202,7 @@ function private function_491101ba(player) {
 // Checksum 0x15db5bcf, Offset: 0xaf8
 // Size: 0xf4
 function private function_61fd0e87() {
-    /#
-        assert(isdefined(level.var_6d87ac05));
-    #/
+    assert(isdefined(level.var_6d87ac05));
     if (!level flag::get("round_reset") && level.round_number >= level.var_6d87ac05.rounds.size) {
         level thread zm_trial::function_361e2cb0();
     }
@@ -278,27 +270,19 @@ function private function_1201b5da(medal) {
             round = 10;
             break;
         default:
-            /#
-                assert(0);
-            #/
+            assert(0);
             break;
         }
-        /#
-            assert(isdefined(round));
-        #/
+        assert(isdefined(round));
         round_info = level.var_6d87ac05.rounds[round - 1];
-        /#
-            assert(isdefined(round_info));
-        #/
+        assert(isdefined(round_info));
         for (i = 0; i < round_info.challenges.size; i++) {
             challenge = round_info.challenges[i];
             if (challenge.name == #"give_reward") {
                 return challenge;
             }
         }
-        /#
-            assert(0);
-        #/
+        assert(0);
         return undefined;
     #/
 }
@@ -309,9 +293,7 @@ function private function_1201b5da(medal) {
 // Size: 0x87e
 function private function_9a6b2309() {
     /#
-        /#
-            assert(isdefined(level.var_6d87ac05));
-        #/
+        assert(isdefined(level.var_6d87ac05));
         foreach (round_info in level.var_6d87ac05.rounds) {
             adddebugcommand("<unknown string>" + round_info.round + "<unknown string>" + function_9e72a96(round_info.name) + "<unknown string>" + round_info.round + "<unknown string>" + round_info.round + "<unknown string>");
         }

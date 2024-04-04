@@ -32,9 +32,7 @@ function private preinit() {
 // Checksum 0x3e50a548, Offset: 0x170
 // Size: 0x260
 function private on_begin(n_count, n_repacks) {
-    /#
-        assert(isdefined(level.zombie_weapons_upgraded));
-    #/
+    assert(isdefined(level.zombie_weapons_upgraded));
     level.var_ab9d0ec6 = [];
     foreach (weapon in getarraykeys(level.zombie_weapons_upgraded)) {
         if (weapon != level.weaponnone) {
@@ -67,12 +65,8 @@ function private on_end(round_reset) {
     foreach (player in getplayers()) {
         player zm_trial_util::function_f3aacffb();
     }
-    /#
-        assert(isdefined(level.var_ab9d0ec6));
-    #/
-    /#
-        assert(isdefined(level.var_ab9d0ec6.size > 0));
-    #/
+    assert(isdefined(level.var_ab9d0ec6));
+    assert(isdefined(level.var_ab9d0ec6.size > 0));
     if (!round_reset) {
         var_696c3b4 = [];
         foreach (player in getplayers()) {

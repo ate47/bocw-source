@@ -48,7 +48,7 @@ function private function_e1f72671(params) {
     if (!isdefined(occupants) || occupants.size == 0) {
         self notify(#"hash_7d134b21d3606f90");
         if (lengthsquared(self.velocity) > sqr(200)) {
-            var_6ceae60 = vectorscale((0, -1, 0), 5);
+            var_6ceae60 = (0, -5, 0);
             var_99d6b963 = rotatepoint(var_6ceae60, self.angles);
             var_63c1fd8 = (-25 + randomfloat(30), 0, -22 + randomfloat(5));
             self launchvehicle(var_99d6b963, var_63c1fd8, 1, 1);

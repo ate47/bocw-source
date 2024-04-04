@@ -23,9 +23,7 @@ function function_97c69304(var_e1ab1198, var_ad825676 = 1, var_4d757ace = 2, var
         prompts::function_86eedc();
     }
     var_6fdd3a3a = getscriptbundle(var_e1ab1198);
-    /#
-        assert(isdefined(var_6fdd3a3a), "<unknown string>" + var_e1ab1198);
-    #/
+    assert(isdefined(var_6fdd3a3a), "<unknown string>" + var_e1ab1198);
     len = var_6fdd3a3a.var_df2d0a90.size;
     namespace_61e6d095::function_9ade1d9b(#"hash_495fb25cf24868b4", "priority", 1);
     namespace_61e6d095::set_state(#"hash_495fb25cf24868b4", var_ec9a3f05);

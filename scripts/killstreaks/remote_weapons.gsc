@@ -63,9 +63,7 @@ function assignremotecontroltrigger(force_new_assignment = 0) {
 // Checksum 0xe2953414, Offset: 0x340
 // Size: 0xda
 function registerremoteweapon(weaponname, hintstring, usecallback, endusecallback, hidecompassonuse = 1) {
-    /#
-        assert(isdefined(level.remoteweapons));
-    #/
+    assert(isdefined(level.remoteweapons));
     level.remoteweapons[weaponname] = spawnstruct();
     level.remoteweapons[weaponname].hintstring = hintstring;
     level.remoteweapons[weaponname].usecallback = usecallback;
@@ -79,9 +77,7 @@ function registerremoteweapon(weaponname, hintstring, usecallback, endusecallbac
 // Size: 0x11c
 function useremoteweapon(weapon, weaponname, immediate, allowmanualdeactivation = 1, always_allow_ride = 0) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     weapon.remoteowner = player;
     weapon.inittime = gettime();
     weapon.remotename = weaponname;
@@ -102,7 +98,6 @@ function useremoteweapon(weapon, weaponname, immediate, allowmanualdeactivation 
 function watchforhack() {
     weapon = self;
     weapon endon(#"death");
-    waitresult = undefined;
     waitresult = weapon waittill(#"killstreak_hacked");
     if (is_true(weapon.remoteweaponallowmanualdeactivation)) {
         weapon thread watchremotecontroldeactivate();
@@ -126,7 +121,6 @@ function on_game_ended() {
 function watchremoveremotecontrolledweapon() {
     weapon = self;
     weapon endon(#"remote_weapon_end");
-    waitresult = undefined;
     waitresult = weapon waittill(#"death", #"remote_weapon_shutdown");
     if (weapon.watch_remote_weapon_death === 1 && isdefined(waitresult._notify) && waitresult._notify == "remote_weapon_shutdown") {
         weapon notify(#"hash_59b25025ce93a142");
@@ -236,7 +230,6 @@ function watchremotetriggeruse() {
         return;
     }
     while (true) {
-        res = undefined;
         res = weapon.usetrigger waittill(#"trigger", #"death");
         if (res._notify == "death") {
             return;
@@ -266,9 +259,7 @@ function watchremotetriggeruse() {
 function useremotecontrolweapon(allowmanualdeactivation = 1, always_allow_ride = 0) {
     self endon(#"death");
     weapon = self;
-    /#
-        assert(isdefined(weapon.remoteowner));
-    #/
+    assert(isdefined(weapon.remoteowner));
     weapon.control_initiated = 1;
     weapon.endremotecontrolweapon = 0;
     weapon.remoteowner endon(#"disconnect", #"joined_team");
@@ -282,7 +273,6 @@ function useremotecontrolweapon(allowmanualdeactivation = 1, always_allow_ride =
         if (always_allow_ride) {
             weapon.remoteowner waittill(#"weapon_change", #"death");
         } else {
-            waitresult = undefined;
             waitresult = weapon.remoteowner waittill(#"weapon_change");
             newweapon = waitresult.weapon;
         }

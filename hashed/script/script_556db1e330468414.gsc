@@ -165,7 +165,7 @@ function private function_cdec3a88(*s_result) {
         level thread function_68aac628(self.instance, "monsterhouse_success");
         level thread function_6326cff8();
         self fx::play(#"hash_124c673fd48c8a4", self.origin, self.angles);
-        playsoundatposition(#"hash_4359f21da1a5d177", self.origin + vectorscale((0, 0, 1), 25));
+        playsoundatposition(#"hash_4359f21da1a5d177", self.origin + (0, 0, 25));
         level scoreevents::doscoreeventcallback("scoreEventSR", {#scoreevent:"event_complete", #nearbyplayers:1, #var_b0a57f8c:2000, #location:self.origin});
     }
 }

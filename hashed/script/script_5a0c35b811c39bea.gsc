@@ -46,17 +46,11 @@ function private preinit() {
     spawner::function_89a2cd87(#"avogadro", &function_c41e67c);
     level.var_8791f7c5 = &function_ac94df05;
     level.var_a35afcb2 = &function_7d5cf0e4;
-    /#
-        assert(isscriptfunctionptr(&function_f498585b));
-    #/
+    assert(isscriptfunctionptr(&function_f498585b));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_76e19aed5b42448f", &function_f498585b);
-    /#
-        assert(isscriptfunctionptr(&function_5871bcf8));
-    #/
+    assert(isscriptfunctionptr(&function_5871bcf8));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_408e0b3d57595bf7", &function_5871bcf8, 1);
-    /#
-        assert(isscriptfunctionptr(&function_14b5c940));
-    #/
+    assert(isscriptfunctionptr(&function_14b5c940));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_21f9e6b4d52f79cb", &function_14b5c940);
     namespace_ce1f29cc::add_archetype_spawn_function(#"avogadro", &function_1d490042);
 }
@@ -300,7 +294,6 @@ function onallcracks(entity) {
     entity pathmode("dont move", 1);
     timeout = getanimlength("ai_t9_zm_avogadro_exit");
     entity animscripted("avogadro_exit_finished", self.origin, self.angles, "ai_t9_zm_avogadro_exit", "normal", "root", 1, 0);
-    waitresult = undefined;
     waitresult = entity waittilltimeout(timeout, #"avogadro_exit_finished");
     entity ghost();
     entity notsolid();
@@ -421,12 +414,12 @@ function function_5871bcf8(entity) {
         entity.var_78dd7804 = undefined;
         return;
     }
-    points = array(nextpos + vectorscale((1, 0, 0), 150), nextpos + vectorscale((1, 0, 0), 300), nextpos - vectorscale((1, 0, 0), 150), nextpos - vectorscale((1, 0, 0), 300), nextpos + vectorscale((0, 1, 0), 150), nextpos + vectorscale((0, 1, 0), 300), nextpos - vectorscale((0, 1, 0), 150), nextpos - vectorscale((0, 1, 0), 300));
+    points = array(nextpos + (150, 0, 0), nextpos + (300, 0, 0), nextpos - (150, 0, 0), nextpos - (300, 0, 0), nextpos + (0, 150, 0), nextpos + (0, 300, 0), nextpos - (0, 150, 0), nextpos - (0, 300, 0));
     bestpoint = undefined;
     traceheightoffset = entity function_6a9ae71();
     points = array::randomize(points);
     foreach (point in points) {
-        nextpos = groundtrace(point + vectorscale((0, 0, 1), 500) + vectorscale((0, 0, 1), 8), point + vectorscale((0, 0, 1), 500) + vectorscale((0, 0, -1), 100000), 0, entity)[#"position"];
+        nextpos = groundtrace(point + (0, 0, 500) + (0, 0, 8), point + (0, 0, 500) + (0, 0, -100000), 0, entity)[#"position"];
         if (nextpos[2] < point[2] - 2000) {
             /#
                 recordsphere(point, 10, (1, 0, 0), "<unknown string>", entity);

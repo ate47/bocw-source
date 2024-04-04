@@ -7,22 +7,6 @@
 // Method(s) 8 Total 15
 class class_37d61ee3 : cluielem {
 
-    // Namespace class_37d61ee3/lui_plane_mortar
-    // Params 0, eflags: 0x8
-    // Checksum 0x3716bc0, Offset: 0x390
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_37d61ee3/lui_plane_mortar
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x22e037c6, Offset: 0x518
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_37d61ee3/lui_plane_mortar
     // Params 1, eflags: 0x0
     // Checksum 0xd93a7117, Offset: 0x478
@@ -44,7 +28,7 @@ class class_37d61ee3 : cluielem {
     // Checksum 0x23bdd50d, Offset: 0x4a8
     // Size: 0x30
     function function_6c69ff4b(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "selectorIndex", value);
+        set_data(localclientnum, "selectorIndex", value);
     }
 
     // Namespace namespace_37d61ee3/lui_plane_mortar
@@ -60,7 +44,7 @@ class class_37d61ee3 : cluielem {
     // Checksum 0xea2a0881, Offset: 0x4e0
     // Size: 0x30
     function function_b172c58e(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "selectorsAvailable", value);
+        set_data(localclientnum, "selectorsAvailable", value);
     }
 
     // Namespace namespace_37d61ee3/lui_plane_mortar
@@ -69,8 +53,8 @@ class class_37d61ee3 : cluielem {
     // Size: 0x5c
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "selectorIndex", 0);
-        [[ self ]]->set_data(localclientnum, "selectorsAvailable", 0);
+        set_data(localclientnum, "selectorIndex", 0);
+        set_data(localclientnum, "selectorsAvailable", 0);
     }
 
 }

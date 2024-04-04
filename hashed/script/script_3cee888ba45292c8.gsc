@@ -265,11 +265,7 @@ function function_440337c2(entity) {
         awareness::function_5c40e824(entity);
         break;
     case #"hash_6192d8af630c6c07":
-        /#
-            /#
-                assert(isdefined(var_cc7597dc), "<unknown string>");
-            #/
-        #/
+        assert(isdefined(var_cc7597dc), "<unknown string>");
         namespace_19c99142::function_ff6a04bc(entity);
         entity.favoriteenemy = var_cc7597dc;
         break;
@@ -400,9 +396,7 @@ function private function_39ab6f8d(entity) {
 // Size: 0xf4
 function private function_2bcd6c38(event) {
     if (!namespace_19c99142::function_9d13a2e7(self)) {
-        /#
-            println(#"hash_1ccae6dcf9ee1418");
-        #/
+        println(#"hash_1ccae6dcf9ee1418");
         return;
     }
     soa = namespace_19c99142::function_9dd68a24(self);
@@ -414,11 +408,7 @@ function private function_2bcd6c38(event) {
 // Checksum 0xda58886a, Offset: 0x17c0
 // Size: 0x70
 function function_917994fb(entity, n_to_spawn) {
-    /#
-        /#
-            assert(isdefined(n_to_spawn), "<unknown string>");
-        #/
-    #/
+    assert(isdefined(n_to_spawn), "<unknown string>");
     if (isdefined(entity.var_9dabebcd) && entity.var_9dabebcd + n_to_spawn > 20) {
         return false;
     }

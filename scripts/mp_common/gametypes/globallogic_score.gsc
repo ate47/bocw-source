@@ -106,7 +106,6 @@ function function_39193e3a() {
     self endon("58dd3f77db08c661");
     level endon(#"game_ended");
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"hero_gadget_activated");
         if (isdefined(waitresult.weapon) && isdefined(waitresult.player)) {
             player = waitresult.player;
@@ -517,9 +516,7 @@ function giveplayermomentum(event, player, victim, descvalue, weapon, var_36f23f
         }
     }
     score = player rank::getscoreinfovalue(event);
-    /#
-        assert(isdefined(score));
-    #/
+    assert(isdefined(score));
     label = rank::getscoreinfolabel(event);
     eventindex = level.scoreinfo[event][#"row"];
     if (score == 0) {
@@ -722,9 +719,7 @@ function default_onplayerscore(event, player, *victim) {
     if (victim rank::function_f7b5d9fa(player)) {
         objscore = score;
     }
-    /#
-        assert(isdefined(score));
-    #/
+    assert(isdefined(score));
     if (level.var_73e51905 === 1 && getdvarint(#"hash_1aa5f986ed71357d", 1) != 0) {
         if (isdefined(victim) && !isalive(victim)) {
             score = 0;
@@ -1100,9 +1095,7 @@ function private function_4f4a98bf(player, momentum) {
 function private function_c17ecb35(player, momentum) {
     momentum = math::clamp(momentum, 0, getdvarint(#"hash_6cc2b9f9d4cbe073", 20000));
     oldmomentum = player.pers[#"momentum"];
-    /#
-        assert(oldmomentum == 0);
-    #/
+    assert(oldmomentum == 0);
     if (momentum == oldmomentum) {
         return;
     }
@@ -1128,9 +1121,7 @@ function private function_c17ecb35(player, momentum) {
                 }
                 if (given) {
                     var_dc3a7628 = var_dc3a7628 - momentumcost;
-                    /#
-                        assert(var_dc3a7628 >= 0);
-                    #/
+                    assert(var_dc3a7628 >= 0);
                 }
             }
             /#
@@ -1720,9 +1711,7 @@ function onteamscore_postprocess() {
 // Size: 0x6c
 function default_onteamscore(event, team) {
     score = rank::getscoreinfovalue(event);
-    /#
-        assert(isdefined(score));
-    #/
+    assert(isdefined(score));
     onteamscore(score, team);
 }
 
@@ -2568,12 +2557,8 @@ function function_e7b4c25c(nemesis_name, value, nemesis_rank, var_15574043, neme
     self.pers[#"nemesis_tracking"][nemesis_name].value = self.pers[#"nemesis_tracking"][nemesis_name].value + value;
     var_b5c193c6 = self.pers[#"nemesis_tracking"][self.pers[#"nemesis_name"]];
     if (self.pers[#"nemesis_name"] === "" || !isdefined(var_b5c193c6) || self.pers[#"nemesis_tracking"][nemesis_name].value > var_b5c193c6.value) {
-        /#
-            assert(isdefined(nemesis_name), "<unknown string>" + self.name);
-        #/
-        /#
-            assert(isstring(nemesis_name), "<unknown string>" + nemesis_name + "<unknown string>" + self.name);
-        #/
+        assert(isdefined(nemesis_name), "<unknown string>" + self.name);
+        assert(isstring(nemesis_name), "<unknown string>" + nemesis_name + "<unknown string>" + self.name);
         self.pers[#"nemesis_name"] = nemesis_name;
         self.pers[#"nemesis_rank"] = nemesis_rank;
         self.pers[#"nemesis_rankicon"] = var_15574043;

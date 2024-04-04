@@ -153,9 +153,7 @@ function function_c0f982ff() {
 // Size: 0x35c
 function add(skipto, var_e784b061, var_dde96e3b, str_name, cleanup_func, var_e5301d70, var_4444a90d = 0) {
     if (function_525a83cb(skipto)) {
-        /#
-            errormsg("KILLS");
-        #/
+        errormsg("KILLS");
         return;
     }
     if (isdefined(level.var_70b370e5)) {
@@ -180,9 +178,7 @@ function add(skipto, var_e784b061, var_dde96e3b, str_name, cleanup_func, var_e53
         var_672c77b1 = level.var_46d8992a;
     }
     level.var_70b370e5 = skipto;
-    /#
-        assert(isdefined(var_e784b061), "titlescreen");
-    #/
+    assert(isdefined(var_e784b061), "titlescreen");
     struct = function_7d6f76df(skipto, var_e784b061, var_dde96e3b, str_name, cleanup_func, var_672c77b1, undefined, var_4444a90d, var_e5301d70);
     struct.public = 1;
     level flag::set("level_has_skiptos");
@@ -202,9 +198,7 @@ function function_eb91535d(skipto, var_e784b061, var_dde96e3b, str_name, cleanup
 // Size: 0x328
 function function_9c003a50(skipto, var_e784b061, var_dde96e3b, str_name, cleanup_func, var_672c77b1, var_89f09f8d) {
     if (function_525a83cb(skipto)) {
-        /#
-            errormsg("KILLS");
-        #/
+        errormsg("KILLS");
         return;
     }
     if (!isdefined(var_672c77b1)) {
@@ -227,9 +221,7 @@ function function_9c003a50(skipto, var_e784b061, var_dde96e3b, str_name, cleanup
     }
     level.var_70b370e5 = skipto;
     if (!isdefined(var_e784b061)) {
-        /#
-            assert(isdefined(var_e784b061), "titlescreen");
-        #/
+        assert(isdefined(var_e784b061), "titlescreen");
     }
     struct = function_7d6f76df(skipto, var_e784b061, var_dde96e3b, str_name, cleanup_func, var_672c77b1, var_89f09f8d);
     struct.public = 1;
@@ -259,9 +251,7 @@ function function_67843f17(skipto, var_e784b061, var_dde96e3b, str_name, cleanup
         struct.var_f36d5247 = 1;
         return;
     }
-    /#
-        errormsg("<unknown string>");
-    #/
+    errormsg("<unknown string>");
 }
 
 // Namespace skipto/skipto
@@ -270,9 +260,7 @@ function function_67843f17(skipto, var_e784b061, var_dde96e3b, str_name, cleanup
 // Size: 0xf8
 function function_227d7faa(skipto) {
     if (!isdefined(level.var_c55064fd[skipto])) {
-        /#
-            assertmsg("<unknown string>" + skipto + "<unknown string>");
-        #/
+        assertmsg("<unknown string>" + skipto + "<unknown string>");
         return;
     }
     level.var_c55064fd[skipto].var_39911cf2 = 0;
@@ -297,9 +285,7 @@ function function_94c5792c(skipto, event_name, event_type, event_size, var_e96e3
 // Checksum 0x2a8471b6, Offset: 0x1790
 // Size: 0x108
 function function_7d6f76df(msg, var_e784b061, var_dde96e3b, str_name, cleanup_func, var_672c77b1, var_89f09f8d, var_4444a90d, var_e5301d70) {
-    /#
-        assert(!isdefined(level._loadstarted), "<unknown string>");
-    #/
+    assert(!isdefined(level._loadstarted), "<unknown string>");
     msg = tolower(msg);
     struct = function_5d3e3cf9(msg, var_e784b061, var_dde96e3b, str_name, cleanup_func, var_672c77b1, var_89f09f8d, var_4444a90d, var_e5301d70);
     level.var_c55064fd[msg] = struct;
@@ -386,11 +372,7 @@ function function_88b0c3ba() {
 // Checksum 0x90326b9a, Offset: 0x1bb0
 // Size: 0x2c
 function function_3e8267cc(msg) {
-    /#
-        /#
-            assertmsg(msg);
-        #/
-    #/
+    assertmsg(msg);
 }
 
 // Namespace skipto/skipto
@@ -715,9 +697,7 @@ function function_5011fee2(missionname = savegame::function_8136eb5a()) {
 // Size: 0x158
 function function_547ca7d2(safehouse, var_fc9732a9 = 1) {
     mapbundle = function_2717b55f(safehouse);
-    /#
-        assert(isdefined(mapbundle) && isdefined(mapbundle.issafehouse));
-    #/
+    assert(isdefined(mapbundle) && isdefined(mapbundle.issafehouse));
     if (safehouse == #"cp_ger_hub_post_cuba" || safehouse == #"cp_ger_hub8") {
         var_fc9732a9 = 0;
     }
@@ -832,9 +812,7 @@ function handle() {
         setdvar(#"skipto_wipe", "");
     }
     skiptos = function_9e3233ed(skiptos);
-    /#
-        assert(is_true(level.first_frame), "<unknown string>");
-    #/
+    assert(is_true(level.first_frame), "<unknown string>");
     if (isdefined(level.var_b28c2c3a)) {
         skiptos = [];
         skiptos[0] = level.var_b28c2c3a;
@@ -1225,9 +1203,7 @@ function on_player_connect() {
 // Checksum 0xeb30236f, Offset: 0x5030
 // Size: 0x394
 function function_4e3ab877(name, var_28e39919 = 1, player, var_ce580a72) {
-    /#
-        assert(isdefined(level.var_c55064fd[name]), "<unknown string>" + name + "<unknown string>");
-    #/
+    assert(isdefined(level.var_c55064fd[name]), "<unknown string>" + name + "<unknown string>");
     if (isdefined(name) && level flag::get(name + "_completed")) {
         return;
     }
@@ -1428,9 +1404,7 @@ function private function_9ab01465() {
 // Checksum 0x84e4a8ff, Offset: 0x5ec0
 // Size: 0xec
 function private function_cdbc8d16(frozen) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (is_true(frozen)) {
         self val::set(#"hash_3d2438fcbc75f543", "freezecontrols", 1);
         self val::set(#"hash_3d2438fcbc75f543", "pre_load_ghost", 1);
@@ -1445,9 +1419,7 @@ function private function_cdbc8d16(frozen) {
 // Checksum 0x5ee14065, Offset: 0x5fb8
 // Size: 0x8c
 function private function_3cdc5488() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self notify("3b7171c23ea95cd9");
     self endon("3b7171c23ea95cd9");
     self endon(#"disconnect");
@@ -1742,9 +1714,7 @@ function function_99ddd76d() {
     if (safehouse == #"cp_ger_hub_post_kgb") {
         return 2;
     }
-    /#
-        assert(safehouse != #"cp_ger_hub_post_cuba" && safehouse != #"cp_ger_hub8");
-    #/
+    assert(safehouse != #"cp_ger_hub_post_cuba" && safehouse != #"cp_ger_hub8");
     return 0;
 }
 
@@ -1779,12 +1749,8 @@ function function_787007b6(rootmapname, stat_name) {
 // Checksum 0xb6e205e4, Offset: 0x7398
 // Size: 0xce
 function function_16c5b1f7() {
-    /#
-        assert(isdefined(self));
-    #/
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isdefined(self));
+    assert(isplayer(self));
     if (isdefined(self.var_993d990c)) {
         self closeluimenu(self.var_993d990c);
         if (self ishost()) {
@@ -1970,7 +1936,6 @@ function function_e8abcd84(var_7a179706 = 0) {
             self.var_993d990c = self openluimenu("Credit_Fullscreen", 1);
             self val::set(#"credits", "freezecontrols", 1);
             do {
-                waitresult = undefined;
                 waitresult = self waittill(#"menuresponse");
                 menu = waitresult.menu;
                 response = waitresult.response;
@@ -2025,9 +1990,7 @@ function function_8338f930(stat_name, rootmapname) {
     if (!isdefined(laststat) || !isdefined(var_a1bd2428)) {
         return 0;
     }
-    /#
-        assert(laststat <= var_a1bd2428);
-    #/
+    assert(laststat <= var_a1bd2428);
     return int(abs(var_a1bd2428 - laststat));
 }
 
@@ -2052,9 +2015,7 @@ function private function_9b847391(skipto, *starting, *direct, *player) {
     level flag::clear(player);
     level flag::set(player + "_completed");
     if (!isdefined(level.var_c55064fd[player])) {
-        /#
-            assertmsg("<unknown string>" + player);
-        #/
+        assertmsg("<unknown string>" + player);
     }
     waittillframeend();
     if (!is_true(level.var_60233e4f)) {
@@ -2142,12 +2103,10 @@ function function_7a7bc9dc(trigger, name) {
     level endon(name + "_terminate");
     if (trigger.script_noteworthy === "allplayers") {
         do {
-            waitresult = undefined;
             waitresult = trigger waittill(#"trigger");
             player = waitresult.activator;
         } while (!function_8916f54(trigger));
     } else {
-        waitresult = undefined;
         waitresult = trigger waittill(#"trigger");
         player = waitresult.activator;
         if (trigger.script_noteworthy === "warpplayers") {
@@ -2197,7 +2156,6 @@ function function_ff45bb89() {
         }
     }
     for (;;) {
-        waitresult = undefined;
         waitresult = level waittill(#"objective_changed");
         function_da9b925(waitresult.objectives);
     }
@@ -2241,9 +2199,7 @@ function function_28af793c(mover) {
                 speed = float(function_60d95f53()) / 1000;
                 continue;
             }
-            /#
-                assert(var_c4572c87 == target.var_6e36f61d, "<unknown string>");
-            #/
+            assert(var_c4572c87 == target.var_6e36f61d, "<unknown string>");
         }
         if (!isdefined(var_c4572c87) || var_c4572c87 == mover) {
             return;
@@ -2293,9 +2249,7 @@ function function_3b424100() {
 // Checksum 0x6ccafa0f, Offset: 0x9958
 // Size: 0x76
 function function_5533c39e(var_d3440450, var_5e819c0f = 1) {
-    /#
-        assert(isdefined(level.var_c55064fd[var_d3440450]), "<unknown string>" + var_d3440450);
-    #/
+    assert(isdefined(level.var_c55064fd[var_d3440450]), "<unknown string>" + var_d3440450);
     level.var_c55064fd[var_d3440450].var_a3d14b6b = var_5e819c0f;
 }
 

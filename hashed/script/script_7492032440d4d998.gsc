@@ -295,7 +295,6 @@ function private function_d228e8b0(var_3f94a5b6) {
     level endon(#"hash_76c5d10560b669a7");
     self endon(#"disconnect", #"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         response = waitresult.response;
@@ -392,7 +391,7 @@ function function_f3c47da1(var_3f94a5b6, e_trigger) {
                 n_angle = var_3f94a5b6.control.angles[0];
                 /#
                     line(s_screen.center + v_anchor, var_3f94a5b6.cursor, (0, 1, 0), 1, 0);
-                    print3d(var_3f94a5b6.cursor + vectorscale((0, 0, 1), 2), n_angle + "<unknown string>" + n_radius, (0, 1, 0), 1, 0.1);
+                    print3d(var_3f94a5b6.cursor + (0, 0, 2), n_angle + "<unknown string>" + n_radius, (0, 1, 0), 1, 0.1);
                 #/
                 var_26c827e8 = abs(v_anchor[2] + s_screen.half_size[2]) / n_radius;
                 a_angles[0] = var_26c827e8 < 1 ? asin(var_26c827e8) : 0;
@@ -446,7 +445,7 @@ function function_f3c47da1(var_3f94a5b6, e_trigger) {
                 n_angle = var_3f94a5b6.control.angles[1];
                 /#
                     line(s_screen.center + v_anchor, var_3f94a5b6.cursor, (0, 0, 1), 1, 0);
-                    print3d(var_3f94a5b6.cursor - vectorscale((0, 0, 1), 2), n_angle + "<unknown string>" + n_radius, (0, 0, 1), 1, 0.1);
+                    print3d(var_3f94a5b6.cursor - (0, 0, 2), n_angle + "<unknown string>" + n_radius, (0, 0, 1), 1, 0.1);
                 #/
                 var_c575b928 = abs(v_anchor[2] - s_screen.half_size[2]) / n_radius;
                 a_angles[0] = var_c575b928 < 1 ? acos(var_c575b928) : 0;

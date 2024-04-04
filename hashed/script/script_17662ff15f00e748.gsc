@@ -45,7 +45,6 @@ function function_49caf2d6() {
     self notify("6879420b153ee8d7");
     self endon("6879420b153ee8d7");
     self thread namespace_268747c0::function_978c05b5();
-    result = undefined;
     result = self waittill(#"hash_3e251384a5400dce");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
         arrayremovevalue(level.doa.var_dfb9e943, self);
@@ -231,7 +230,6 @@ function function_d1b295d7(trap) {
     self endon(#"death", #"hash_5dc5b7f198cd1bec");
     var_f3e30707 = (isdefined(trap.var_f3e30707) ? trap.var_f3e30707 : 1) * 1000;
     while (isdefined(self)) {
-        result = undefined;
         result = self waittill(#"trigger");
         guy = result.activator;
         if (!isdefined(guy)) {

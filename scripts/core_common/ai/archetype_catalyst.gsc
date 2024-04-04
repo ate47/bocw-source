@@ -25,9 +25,7 @@ function autoexec main() {
 // Checksum 0x57b8b711, Offset: 0x190
 // Size: 0x9c
 function private registerbehaviorscriptfunctions() {
-    /#
-        assert(isscriptfunctionptr(&iscatalyst));
-    #/
+    assert(isscriptfunctionptr(&iscatalyst));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"iscatalyst", &iscatalyst);
     animationstatenetwork::registeranimationmocomp("mocomp_teleport_traversal@catalyst", &function_720a0584, undefined, undefined);
 }

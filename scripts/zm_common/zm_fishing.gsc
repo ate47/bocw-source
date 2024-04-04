@@ -78,9 +78,7 @@ function function_43eaec20(destination) {
 // Checksum 0x7291b284, Offset: 0x478
 // Size: 0x408
 function function_29307fae(struct) {
-    /#
-        assert(isstruct(struct), "<unknown string>");
-    #/
+    assert(isstruct(struct), "<unknown string>");
     spawn_points = struct.contentgroups[#"hash_4f55f52a18ce23d"];
     foreach (point in spawn_points) {
         spawn_struct = point;
@@ -88,14 +86,10 @@ function function_29307fae(struct) {
         var_16129dba clientfield::set("set_compass_icon", 1);
         var_1dfa9e6 = content_manager::spawn_script_model(spawn_struct, undefined);
         var_1dfa9e6 playloopsound(#"hash_30a2fa81c37f5aff");
-        /#
-            assert(isdefined(spawn_struct.contentgroups[#"hash_a8d2c2c21149a79"]), "<unknown string>");
-        #/
+        assert(isdefined(spawn_struct.contentgroups[#"hash_a8d2c2c21149a79"]), "<unknown string>");
         var_c4b6fa2d = spawn_struct.contentgroups[#"hash_a8d2c2c21149a79"];
         var_cf8192ca = content_manager::spawn_script_model(var_c4b6fa2d[0], #"hash_dbe95bf7266e66b", 0);
-        /#
-            assert(isdefined(spawn_struct.contentgroups[#"hash_61b2fec1f617bb75"]), "<unknown string>");
-        #/
+        assert(isdefined(spawn_struct.contentgroups[#"hash_61b2fec1f617bb75"]), "<unknown string>");
         var_df283c09 = spawn_struct.contentgroups[#"hash_61b2fec1f617bb75"];
         var_9fadc93c = var_df283c09[0];
         forward = anglestoforward(var_16129dba.angles);
@@ -276,10 +270,10 @@ function function_b828bd39(player, var_cdef1b0e) {
         player function_bc82f900("fishing_rumble");
         playsoundatposition(#"hash_5784befa5a563866", player.origin);
         self thread fishing_buoy_splash();
-        new_pos = self.origin + vectorscale((0, 0, -1), 5);
+        new_pos = self.origin + (0, 0, -5);
         self moveto(new_pos, 0.5);
         self waittill(#"movedone");
-        new_pos = self.origin + vectorscale((0, 0, 1), 5);
+        new_pos = self.origin + (0, 0, 5);
         self moveto(new_pos, 0.5);
         self waittill(#"movedone");
         self.var_3fa8a746 = 0;

@@ -149,12 +149,8 @@ function notify_all(&array, str_notify) {
 // Checksum 0x49f29b7e, Offset: 0x860
 // Size: 0x15c
 function thread_all(&entities, func, arg1, arg2, arg3, arg4, arg5, arg6) {
-    /#
-        assert(isdefined(entities), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(func), "<unknown string>");
-    #/
+    assert(isdefined(entities), "<unknown string>");
+    assert(isdefined(func), "<unknown string>");
     if (isarray(entities)) {
         foreach (ent in entities) {
             util::single_thread(ent, func, arg1, arg2, arg3, arg4, arg5, arg6);
@@ -169,12 +165,8 @@ function thread_all(&entities, func, arg1, arg2, arg3, arg4, arg5, arg6) {
 // Checksum 0x83eef122, Offset: 0x9c8
 // Size: 0x14c
 function thread_all_ents(&entities, func, arg1, arg2, arg3, arg4, arg5) {
-    /#
-        assert(isdefined(entities), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(func), "<unknown string>");
-    #/
+    assert(isdefined(entities), "<unknown string>");
+    assert(isdefined(func), "<unknown string>");
     if (isarray(entities)) {
         foreach (v in entities) {
             util::single_thread(self, func, v, arg1, arg2, arg3, arg4, arg5);
@@ -189,12 +181,8 @@ function thread_all_ents(&entities, func, arg1, arg2, arg3, arg4, arg5) {
 // Checksum 0x5ae58b95, Offset: 0xb20
 // Size: 0x15c
 function run_all(&entities, func, arg1, arg2, arg3, arg4, arg5, arg6) {
-    /#
-        assert(isdefined(entities), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(func), "<unknown string>");
-    #/
+    assert(isdefined(entities), "<unknown string>");
+    assert(isdefined(func), "<unknown string>");
     if (isarray(entities)) {
         foreach (ent in entities) {
             util::single_func(ent, func, arg1, arg2, arg3, arg4, arg5, arg6);
@@ -511,12 +499,8 @@ function remove_keys(array) {
 // Checksum 0x7a26d9e9, Offset: 0x1b60
 // Size: 0x98
 function swap(&array, index1, index2) {
-    /#
-        assert(index1 < array.size, "<unknown string>");
-    #/
-    /#
-        assert(index2 < array.size, "<unknown string>");
-    #/
+    assert(index1 < array.size, "<unknown string>");
+    assert(index2 < array.size, "<unknown string>");
     temp = array[index1];
     array[index1] = array[index2];
     array[index2] = temp;
@@ -778,12 +762,8 @@ function bubble_sort(&array, sort_func) {
 // Checksum 0xfaac9a4e, Offset: 0x2640
 // Size: 0x18c
 function spread_all(&entities, func, arg1, arg2, arg3, arg4, arg5) {
-    /#
-        assert(isdefined(entities), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(func), "<unknown string>");
-    #/
+    assert(isdefined(entities), "<unknown string>");
+    assert(isdefined(func), "<unknown string>");
     if (isarray(entities)) {
         foreach (ent in entities) {
             if (isdefined(ent)) {
@@ -1006,15 +986,11 @@ function function_d1f43a84(max_entries, minval, maxval, compare_func, var_c8e96e
         sorted_array = quick_sort(test_array, compare_func);
         if (var_c8e96eee) {
             for (i = 0; i < var_365f3054 - 1; i++) {
-                /#
-                    assert(sorted_array[i] <= sorted_array[i + 1], "<unknown string>");
-                #/
+                assert(sorted_array[i] <= sorted_array[i + 1], "<unknown string>");
             }
         } else {
             for (i = 0; i < var_365f3054 - 1; i++) {
-                /#
-                    assert(sorted_array[i] >= sorted_array[i + 1], "<unknown string>");
-                #/
+                assert(sorted_array[i] >= sorted_array[i + 1], "<unknown string>");
             }
         }
         println("<unknown string>");
@@ -1075,15 +1051,11 @@ function function_70daaa9d(max_entries, minval, maxval, compare_func, var_c8e96e
         bubble_sort(sorted_array, compare_func);
         if (var_c8e96eee) {
             for (i = 0; i < var_365f3054 - 1; i++) {
-                /#
-                    assert(sorted_array[i] <= sorted_array[i + 1], "<unknown string>");
-                #/
+                assert(sorted_array[i] <= sorted_array[i + 1], "<unknown string>");
             }
         } else {
             for (i = 0; i < var_365f3054 - 1; i++) {
-                /#
-                    assert(sorted_array[i] >= sorted_array[i + 1], "<unknown string>");
-                #/
+                assert(sorted_array[i] >= sorted_array[i + 1], "<unknown string>");
             }
         }
         println("<unknown string>");

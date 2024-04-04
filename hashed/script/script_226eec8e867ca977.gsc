@@ -46,7 +46,6 @@ function function_81853592() {
     self notify("64d873247a66697a");
     self endon("64d873247a66697a");
     self thread namespace_268747c0::function_978c05b5();
-    result = undefined;
     result = self waittill(#"hash_3e251384a5400dce");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
         arrayremovevalue(level.doa.var_18f8e489, self);
@@ -213,9 +212,7 @@ function function_80eed528() {
     self.script_model useanimtree("generic");
     self.script_model solid();
     length = getanimlength(#"hash_32b5327a0dd4ac63");
-    /#
-        assert(self.trigger.size == 0, "<unknown string>");
-    #/
+    assert(self.trigger.size == 0, "<unknown string>");
     triggers = arraycopy(self.trigger);
     foreach (trigger in triggers) {
         trigger namespace_268747c0::function_54f185a();
@@ -226,8 +223,8 @@ function function_80eed528() {
     }
     self.trigger[0] unlink();
     self.trigger[1] unlink();
-    self.trigger[0] linkto(self.script_model, "flogger_trap_rod_jnt", vectorscale((-1, 0, 0), 100));
-    self.trigger[1] linkto(self.script_model, "flogger_trap_rod_jnt", vectorscale((1, 0, 0), 100));
+    self.trigger[0] linkto(self.script_model, "flogger_trap_rod_jnt", (-100, 0, 0));
+    self.trigger[1] linkto(self.script_model, "flogger_trap_rod_jnt", (100, 0, 0));
     self.trigger[0] triggerenable(0);
     self.trigger[1] triggerenable(0);
     if (!isdefined(self.spinrate)) {
@@ -282,7 +279,6 @@ function function_ab141bd8(model, trap) {
     self endon(#"death", #"hash_5dc5b7f198cd1bec");
     fling_force = 190;
     while (isdefined(self)) {
-        result = undefined;
         result = self waittill(#"trigger");
         guy = result.activator;
         if (isdefined(guy)) {

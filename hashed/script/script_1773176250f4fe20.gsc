@@ -44,7 +44,7 @@ function function_77972a15(localclientnum, *oldval, *newval, *bnewent, *binitial
         str_tag = "tag_origin";
     }
     util::playfxontag(bwastimejump, #"hash_75b91d12ce404b81", self, str_tag);
-    playsound(bwastimejump, #"hash_5ab58aab70a35c94", self.origin + vectorscale((0, 0, 1), 35));
+    playsound(bwastimejump, #"hash_5ab58aab70a35c94", self.origin + (0, 0, 35));
 }
 
 // Namespace namespace_bf2d4e77/namespace_bf2d4e77
@@ -89,7 +89,7 @@ function function_7431f6cc(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         if (!isdefined(self.var_9dc86d3e)) {
             self playsound(fieldname, #"hash_45c4b084d38f5afe");
-            self.var_9dc86d3e = self playloopsound(#"hash_5b2010d2b4f171ba", undefined, vectorscale((0, 0, 1), 35));
+            self.var_9dc86d3e = self playloopsound(#"hash_5b2010d2b4f171ba", undefined, (0, 0, 35));
         }
         return;
     }

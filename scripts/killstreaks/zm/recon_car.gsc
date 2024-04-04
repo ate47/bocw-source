@@ -222,7 +222,7 @@ function function_86e8d9af(n_radius = 200) {
         if (isalive(ai_zombie)) {
             if (ai_zombie.var_6f84b820 === #"normal") {
                 v_dir = vectornormalize(ai_zombie.origin - self.origin);
-                v_launch = v_dir * randomintrange(80, 100) + vectorscale((0, 0, 1), 150);
+                v_launch = v_dir * randomintrange(80, 100) + (0, 0, 150);
                 ai_zombie zm_utility::function_ffc279(v_launch, self.owner, ai_zombie.health, self.weapon);
                 continue;
             }
@@ -246,7 +246,7 @@ function private function_584fb7a3() {
     attacker = isdefined(vehicle.owner) ? vehicle.owner : undefined;
     vehicle.takedamage = 1;
     vehicle.allowdeath = 1;
-    vehicle dodamage(vehicle.health + 666, vehicle.origin + vectorscale((0, 0, 1), 10), attacker, attacker, "none", "MOD_EXPLOSIVE", 8192);
+    vehicle dodamage(vehicle.health + 666, vehicle.origin + (0, 0, 10), attacker, attacker, "none", "MOD_EXPLOSIVE", 8192);
 }
 
 // Namespace recon_car/recon_car
@@ -264,7 +264,6 @@ function function_d4789bf5() {
 function function_819fff9d() {
     self endon(#"death");
     for (;;) {
-        waitresult = undefined;
         waitresult = self waittill(#"veh_predictedcollision");
         if ((isplayer(waitresult.target) || isai(waitresult.target)) && util::function_fbce7263(self.team, waitresult.target.team)) {
             if (isdefined(self.owner) && isdefined(self.var_22a05c26.var_d3413870)) {
@@ -282,11 +281,10 @@ function function_819fff9d() {
 function function_f3170551() {
     self endon(#"death");
     for (;;) {
-        waitresult = undefined;
         waitresult = self waittill(#"veh_landed");
         bundle = killstreaks::get_script_bundle("recon_car");
         if (isdefined(bundle.var_b771831a)) {
-            a_trace = groundtrace(self.origin + vectorscale((0, 0, 1), 70), self.origin + vectorscale((0, 0, -1), 100), 0, self);
+            a_trace = groundtrace(self.origin + (0, 0, 70), self.origin + (0, 0, -100), 0, self);
             str_fx = self getfxfromsurfacetable(bundle.var_b771831a, a_trace[#"surfacetype"]);
             playfx(str_fx, a_trace[#"position"], (0, 0, 1));
         }
@@ -300,7 +298,7 @@ function function_f3170551() {
 function function_2087b17f() {
     bundle = killstreaks::get_script_bundle("recon_car");
     arrayremovevalue(level.var_bced5d3c, self);
-    trace = groundtrace(self.origin + vectorscale((0, 0, 1), 70), self.origin + vectorscale((0, 0, -1), 100), 0, self);
+    trace = groundtrace(self.origin + (0, 0, 70), self.origin + (0, 0, -100), 0, self);
     explosionfx = self getfxfromsurfacetable(bundle.var_1c30ba81, trace[#"surfacetype"]);
     if (isdefined(explosionfx)) {
         fxorigin = self gettagorigin("tag_body");
@@ -309,7 +307,7 @@ function function_2087b17f() {
         }
         playfx(explosionfx, fxorigin, (0, 0, 1));
     }
-    playsoundatposition(#"hash_7723f91638b2361f", self.origin + vectorscale((0, 0, 1), 25));
+    playsoundatposition(#"hash_7723f91638b2361f", self.origin + (0, 0, 25));
 }
 
 // Namespace recon_car/recon_car

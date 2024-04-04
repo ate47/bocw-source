@@ -44,9 +44,7 @@ function function_1ffa9231(start_node, var_23b6164f = 0, var_aac80b66 = 1, var_e
     } else {
         rootmapname = getrootmapname();
         if (rootmapname === "cp_nam_armada") {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            assertmsg("<unknown string>");
             return;
         } else {
             function_44e72b9e(1, start_node);
@@ -531,7 +529,6 @@ function function_5f7a4f66(var_23b6164f, var_e883a73e, var_794dcc13 = 0, var_c38
         chopper setneargoalnotifydist(chopper.var_cb55c804);
         chopper function_a57c34b7(var_da00db64, 1);
         chopper flag::set("flag_orbit_chopper_ascending");
-        waitresult = undefined;
         waitresult = chopper waittill(#"goal", #"near_goal");
         chopper flag::clear("flag_orbit_chopper_ascending");
     }
@@ -554,7 +551,7 @@ function function_adf2ea57() {
     start_origin = self gettagorigin("tag_fastrope_ri");
     start_angles = self gettagangles("tag_fastrope_ri");
     var_f7317c23 = start_origin;
-    var_c0ec2d07 = groundtrace(var_f7317c23, start_origin + vectorscale((0, 0, -1), 10000), 0, self);
+    var_c0ec2d07 = groundtrace(var_f7317c23, start_origin + (0, 0, -10000), 0, self);
     var_7eee2432 = var_c0ec2d07[#"position"];
     var_6402a3dd = util::spawn_model("tag_origin", var_f7317c23, start_angles);
     level.players[0] playerlinktodelta(var_6402a3dd, "tag_origin", 1, 45, 45, 45, 45);
@@ -570,8 +567,8 @@ function function_adf2ea57() {
 // Size: 0x2bc
 function function_4db7a747() {
     var_da00db64 = self.origin;
-    var_22043f8e = groundtrace(self.origin + vectorscale((0, 0, -1), 8), self.origin + vectorscale((0, 0, -1), 100000), 0, self);
-    goal_pos = var_22043f8e[#"position"] + vectorscale((0, 0, 1), 90);
+    var_22043f8e = groundtrace(self.origin + (0, 0, -8), self.origin + (0, 0, -100000), 0, self);
+    goal_pos = var_22043f8e[#"position"] + (0, 0, 90);
     self cleargoalyaw();
     self function_d4c687c9();
     self.var_cb55c804 = 10;
@@ -580,7 +577,6 @@ function function_4db7a747() {
     self setgoalyaw((0, self.angles[1], 0)[1]);
     self settargetyaw((0, self.angles[1], 0)[1]);
     self function_a57c34b7(goal_pos, 1);
-    waitresult = undefined;
     waitresult = self waittill(#"goal", #"near_goal");
     level.players[0] enableweapons();
     self makevehicleusable();

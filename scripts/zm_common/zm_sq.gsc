@@ -71,15 +71,9 @@ function on_player_connect() {
 // Size: 0x694
 function register(name, step_name, var_e788cdd7, setup_func, cleanup_func, var_d6ca4caf, var_27465eb4, var_6cc77d4e, a_targets, var_441061cd) {
     /#
-        /#
-            assert(ishash(name), "<unknown string>");
-        #/
-        /#
-            assert(ishash(step_name), "<unknown string>");
-        #/
-        /#
-            assert(ishash(var_e788cdd7), "<unknown string>");
-        #/
+        assert(ishash(name), "<unknown string>");
+        assert(ishash(step_name), "<unknown string>");
+        assert(ishash(var_e788cdd7), "<unknown string>");
         if (!isdefined(name)) {
             if (getdvarint(#"hash_7919e37cd5d57659", 0)) {
                 iprintlnbold("<unknown string>");
@@ -165,14 +159,8 @@ function start(name, var_9d8cf7f = 0) {
     if (!zm_utility::is_ee_enabled() && !var_9d8cf7f) {
         return;
     }
-    /#
-        assert(ishash(name), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self._ee[name]), "<unknown string>" + function_9e72a96(name) + "<unknown string>");
-        #/
-    #/
+    assert(ishash(name), "<unknown string>");
+    assert(isdefined(self._ee[name]), "<unknown string>" + function_9e72a96(name) + "<unknown string>");
     if (self._ee[name].started) {
         /#
             if (getdvarint(#"hash_7919e37cd5d57659", 0)) {
@@ -186,9 +174,7 @@ function start(name, var_9d8cf7f = 0) {
     var_5ea5c94d = 0;
     /#
         if (ee.skip_to_step > -1) {
-            /#
-                assert(0 <= ee.skip_to_step, "<unknown string>");
-            #/
+            assert(0 <= ee.skip_to_step, "<unknown string>");
             if (0 < ee.skip_to_step) {
                 var_5ea5c94d = 1;
             } else if (0 == ee.skip_to_step) {
@@ -204,14 +190,8 @@ function start(name, var_9d8cf7f = 0) {
 // Checksum 0x61978bad, Offset: 0xd70
 // Size: 0x9e
 function is_complete(name) {
-    /#
-        assert(ishash(name), "<unknown string>");
-    #/
-    /#
-        /#
-            assert(isdefined(self._ee[name]), "<unknown string>" + function_9e72a96(name) + "<unknown string>");
-        #/
-    #/
+    assert(ishash(name), "<unknown string>");
+    assert(isdefined(self._ee[name]), "<unknown string>" + function_9e72a96(name) + "<unknown string>");
     return self._ee[name].completed;
 }
 
@@ -220,15 +200,9 @@ function is_complete(name) {
 // Checksum 0xb0acdaf2, Offset: 0xe18
 // Size: 0x142
 function function_9212ff4d(ee_name, step_name) {
-    /#
-        assert(ishash(ee_name), "<unknown string>");
-    #/
-    /#
-        assert(ishash(step_name), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(self._ee[ee_name]), "<unknown string>" + ee_name + "<unknown string>");
-    #/
+    assert(ishash(ee_name), "<unknown string>");
+    assert(ishash(step_name), "<unknown string>");
+    assert(isdefined(self._ee[ee_name]), "<unknown string>" + ee_name + "<unknown string>");
     foreach (ee_index, ee_step in self._ee[ee_name].steps) {
         if (step_name == ee_step.name) {
             return ee_index;
@@ -258,7 +232,6 @@ function private run_step(ee, step, var_5ea5c94d) {
     step.started = 1;
     self thread function_3f795dc3(ee, step, var_5ea5c94d);
     if (!step.completed) {
-        waitresult = undefined;
         waitresult = self waittill(step.var_e788cdd7 + "_setup_completed", step.var_e788cdd7 + "_ended_early");
     }
     /#
@@ -298,9 +271,7 @@ function private run_step(ee, step, var_5ea5c94d) {
         /#
             if (ee.skip_to_step > -1) {
                 var_7f1ec3f3 = ee.current_step + 1;
-                /#
-                    assert(var_7f1ec3f3 <= ee.skip_to_step, "<unknown string>");
-                #/
+                assert(var_7f1ec3f3 <= ee.skip_to_step, "<unknown string>");
                 if (var_7f1ec3f3 < ee.skip_to_step) {
                     var_5ea5c94d = 1;
                 } else if (var_7f1ec3f3 == ee.skip_to_step) {
@@ -507,11 +478,7 @@ function function_266d66eb(var_6cc77d4e, var_54829af, var_8c7ec5ce = 1, var_4410
             }
         }
         function_4339912c(n_obj_id);
-        /#
-            /#
-                assert(isdefined(var_441061cd), "<unknown string>" + function_9e72a96(var_6cc77d4e) + "<unknown string>");
-            #/
-        #/
+        assert(isdefined(var_441061cd), "<unknown string>" + function_9e72a96(var_6cc77d4e) + "<unknown string>");
     }
     if (isdefined(var_441061cd)) {
         foreach (player in a_players) {
@@ -608,9 +575,7 @@ function objective_complete(var_7f440703, a_targets) {
             }
             var_8861fa85 = target.var_e453e8a5[var_7f440703];
             if (!isarray(var_8861fa85) || !var_8861fa85.size) {
-                /#
-                    println("<unknown string>" + function_9e72a96(var_7f440703) + "<unknown string>");
-                #/
+                println("<unknown string>" + function_9e72a96(var_7f440703) + "<unknown string>");
                 continue;
             }
             var_6261674 = arraycombine(var_6261674, var_8861fa85, 0, 0);
@@ -641,9 +606,7 @@ function objective_complete(var_7f440703, a_targets) {
         foreach (player in a_players) {
             var_8861fa85 = player.var_e453e8a5[var_7f440703];
             if (!isarray(var_8861fa85) || !var_8861fa85.size) {
-                /#
-                    println("<unknown string>" + player getentitynumber() + "<unknown string>" + function_9e72a96(var_7f440703) + "<unknown string>");
-                #/
+                println("<unknown string>" + player getentitynumber() + "<unknown string>" + function_9e72a96(var_7f440703) + "<unknown string>");
                 continue;
             }
             var_6261674 = arraycombine(var_6261674, var_8861fa85, 0, 0);
@@ -893,12 +856,8 @@ function function_407dcc8d(var_7f440703, a_targets) {
 // Size: 0x1d6
 function function_f09763fd(ee_name, step_name) {
     /#
-        /#
-            assert(ishash(ee_name), "<unknown string>");
-        #/
-        /#
-            assert(isdefined(self._ee[ee_name]), "<unknown string>" + ee_name + "<unknown string>");
-        #/
+        assert(ishash(ee_name), "<unknown string>");
+        assert(isdefined(self._ee[ee_name]), "<unknown string>" + ee_name + "<unknown string>");
         var_da601d7f = function_44e256d8(ee_name);
         index = function_9212ff4d(ee_name, step_name);
         if (index == -1) {
@@ -918,9 +877,7 @@ function function_f09763fd(ee_name, step_name) {
 // Size: 0xd6
 function function_44e256d8(ee_name) {
     /#
-        /#
-            assert(ishash(ee_name), "<unknown string>");
-        #/
+        assert(ishash(ee_name), "<unknown string>");
         owner = "<unknown string>";
         if (isentity(self)) {
             entitynum = self getentitynumber();
@@ -936,9 +893,7 @@ function function_44e256d8(ee_name) {
 // Size: 0x114
 function function_28aee167(ee_name) {
     /#
-        /#
-            assert(ishash(ee_name), "<unknown string>");
-        #/
+        assert(ishash(ee_name), "<unknown string>");
         ee_path = function_44e256d8(ee_name);
         owner = "<unknown string>";
         if (isentity(self)) {
@@ -955,12 +910,8 @@ function function_28aee167(ee_name) {
 // Size: 0x1e4
 function function_b3da1a16(ee_name, step_name) {
     /#
-        /#
-            assert(ishash(ee_name), "<unknown string>");
-        #/
-        /#
-            assert(ishash(step_name), "<unknown string>");
-        #/
+        assert(ishash(ee_name), "<unknown string>");
+        assert(ishash(step_name), "<unknown string>");
         step_path = function_f09763fd(ee_name, step_name);
         index = function_9212ff4d(ee_name, step_name);
         owner = "<unknown string>";
@@ -1043,7 +994,6 @@ function function_f2dd8601(ee_name, var_f2c264bb) {
         if (function_87306f8a(ee_name, step.name)) {
             if (!step.started) {
                 wait_time = 10 * ee.steps.size;
-                waitresult = undefined;
                 waitresult = self waittilltimeout(wait_time, step.var_e788cdd7 + "<unknown string>");
                 if (waitresult._notify == #"timeout") {
                     if (getdvarint(#"hash_7919e37cd5d57659", 0)) {
@@ -1091,9 +1041,7 @@ function devgui_think() {
                     }
                 }
             }
-            /#
-                assert(isdefined(target));
-            #/
+            assert(isdefined(target));
             switch (cmd[0]) {
             case #"skip_to":
                 ee = target._ee[cmd[2]];
@@ -1263,7 +1211,7 @@ function function_9bee49bf() {
 function function_1091b2a0(var_4f1c1316) {
     /#
         if (!var_4f1c1316.started) {
-            color = vectorscale((1, 1, 1), 0.75);
+            color = (0.75, 0.75, 0.75);
         } else if (!var_4f1c1316.completed) {
             color = (1, 0, 0);
         } else {

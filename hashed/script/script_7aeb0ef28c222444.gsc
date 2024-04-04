@@ -45,9 +45,7 @@ function function_90cdf7ba(type, origin) {
         namespace_e32bb68::function_3a59ec34("guardian_type_skeleton");
         break;
     default:
-        /#
-            assert(0, "<unknown string>");
-        #/
+        assert(0, "<unknown string>");
         break;
     }
     spawndef = doa_enemy::function_d7c5adee(name);

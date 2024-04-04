@@ -231,7 +231,7 @@ function function_bf79a643() {
                 players_in_range = getplayers(undefined, zone.var_45d884e6[index].origin, 910);
                 players = getplayers();
                 foreach (player in players) {
-                    if (player util::is_looking_at(zone.var_45d884e6[index], 0.8, 1, vectorscale((0, 0, 1), 16))) {
+                    if (player util::is_looking_at(zone.var_45d884e6[index], 0.8, 1, (0, 0, 16))) {
                         var_e779ff3c = 1;
                     }
                 }
@@ -260,7 +260,7 @@ function function_bf79a643() {
                 players_in_range = getplayers(undefined, zone.var_6284d1b2[index].origin, 910);
                 players = getplayers();
                 foreach (player in players) {
-                    if (player util::is_looking_at(zone.var_6284d1b2[index], 0.8, 1, vectorscale((0, 0, 1), 32))) {
+                    if (player util::is_looking_at(zone.var_6284d1b2[index], 0.8, 1, (0, 0, 32))) {
                         var_e779ff3c = 1;
                     }
                 }
@@ -303,7 +303,6 @@ function private function_608b90b4() {
     self endon(#"end_game", #"death");
     self.var_e95e6830 = 5;
     while (true) {
-        s_notify = undefined;
         s_notify = self waittill(#"trigger_activated");
         e_player = s_notify.e_who;
         e_player thread function_79ef6b93(self);
@@ -430,7 +429,7 @@ function function_f5527ca2(zone) {
     snowball_pile.var_8438fd5c = 1;
     snowball_pile function_619a5c20();
     snowball_pile zm_unitrigger::create(&function_dd028fcb, 64);
-    snowball_pile.s_unitrigger.origin = snowball_pile.s_unitrigger.origin + vectorscale((0, 0, 1), 32);
+    snowball_pile.s_unitrigger.origin = snowball_pile.s_unitrigger.origin + (0, 0, 32);
     function_1eaaceab(zone.var_4acb65df);
     if (!isdefined(zone.var_4acb65df)) {
         zone.var_4acb65df = [];
@@ -449,7 +448,7 @@ function function_f5527ca2(zone) {
 // Size: 0x274
 function function_4d68903d(zone) {
     self endon(#"death");
-    playfx("_t7/snow/fx_snow_impact_lg", self.origin + vectorscale((0, 0, 1), 30));
+    playfx("_t7/snow/fx_snow_impact_lg", self.origin + (0, 0, 30));
     snowman = util::spawn_model("p9_nt6x_win_snowman", self.origin, self.angles);
     snowman.takedamage = 1;
     snowman.health = 100;
@@ -496,7 +495,7 @@ function function_36043197() {
             self.spawn_time = gettime();
         }
         foreach (player in players) {
-            if (player util::is_looking_at(self, 0.8, 1, vectorscale((0, 0, 1), 32))) {
+            if (player util::is_looking_at(self, 0.8, 1, (0, 0, 32))) {
                 if (self.spawn_time < gettime() - var_47b592ad) {
                     if (!isdefined(self.var_bd710417)) {
                         self.var_bd710417 = [];
@@ -556,7 +555,7 @@ function function_a9114898(origin, angles) {
     fwd = anglestoforward(angles);
     up = anglestoup(angles);
     playfx("maps/ltm/fx9_winter_snowman_dest", origin, fwd, up);
-    playsoundatposition(#"hash_a00a48925a72e55", origin + vectorscale((0, 0, 1), 30));
+    playsoundatposition(#"hash_a00a48925a72e55", origin + (0, 0, 30));
 }
 
 // Namespace namespace_3bb7295f/namespace_3bb7295f
@@ -566,7 +565,6 @@ function function_a9114898(origin, angles) {
 function function_dc8f034(*snowman) {
     self endon(#"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         self function_96244838(waitresult.weapon, waitresult.attacker);
         if (self.health <= 0) {
@@ -605,7 +603,6 @@ function function_856d0105() {
 function function_3a268da9(*params) {
     self endon(#"endgame");
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"hash_4a4f23c60bbb7f6f");
         if (waitresult.itemname === "item_zm_ltm_holiday_gift_01" || waitresult.itemname === "item_zm_ltm_holiday_gift_02" || waitresult.itemname === "item_zm_ltm_holiday_gift_03") {
             switch (waitresult.itemname) {

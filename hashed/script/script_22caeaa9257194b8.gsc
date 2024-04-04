@@ -163,7 +163,6 @@ function private ai_open_try_animated(c_door) {
         self stop_waiting_for_door();
     }
     self.ai.doortoopen = c_door;
-    result = undefined;
     result = self waittilltimeout(6, #"hash_6d9a59cc1ef486a8");
     bsuccess = result._notify != #"timeout";
     if (bsuccess) {
@@ -270,7 +269,6 @@ function private function_a07f8293() {
         var_dc35cd8c = "<unknown string>";
         var_e9968086 = "<unknown string>";
         while (true) {
-            result = undefined;
             result = self waittill(#"hash_46fda91c613b40e5");
             msg = result.msg;
             var_e9968086 = msg;
@@ -295,8 +293,8 @@ function private update_debug(var_e9968086, var_dc35cd8c) {
         time = gettime();
         while (gettime() < time + displaytime * 1000) {
             if (getdvarint(#"hash_33928bcf1b3e5487", 0)) {
-                print3d(self geteye() + vectorscale((0, 0, 1), 15), var_e9968086, (1, 1, 1), 1, 0.3, 1);
-                print3d(self geteye() + vectorscale((0, 0, 1), 10), var_dc35cd8c, vectorscale((1, 1, 1), 0.7), var_852f740c, 0.3, 1);
+                print3d(self geteye() + (0, 0, 15), var_e9968086, (1, 1, 1), 1, 0.3, 1);
+                print3d(self geteye() + (0, 0, 10), var_dc35cd8c, (0.7, 0.7, 0.7), var_852f740c, 0.3, 1);
             }
             var_852f740c = var_852f740c - var_18c3a98a;
             wait(0.05);
@@ -331,7 +329,7 @@ function function_b0731097(var_59e58a96, maxcheckdist) {
     }
     mask = 8;
     for (i = 0; i < path_array.size; i++) {
-        path_array[i] = path_array[i] + vectorscale((0, 0, 1), 20);
+        path_array[i] = path_array[i] + (0, 0, 20);
     }
     for (i = 1; i < path_array.size; i++) {
         if (isdefined(maxcheckdist) && distance > maxcheckdist) {
@@ -339,7 +337,7 @@ function function_b0731097(var_59e58a96, maxcheckdist) {
         }
         prevpos = path_array[i - 1];
         nextpos = path_array[i];
-        results = physicstrace(prevpos, nextpos, vectorscale((-1, -1, 0), 5), vectorscale((1, 1, 0), 5), self, mask);
+        results = physicstrace(prevpos, nextpos, (-5, -5, 0), (5, 5, 0), self, mask);
         if (isdefined(results[#"entity"])) {
             hitent = results[#"entity"];
             if (isdefined(hitent.c_door)) {
@@ -387,7 +385,6 @@ function private ai_monitor_doors() {
         self thread function_a07f8293();
     #/
     while (true) {
-        var_12d56c89 = undefined;
         var_12d56c89 = self waittill(#"path_set", #"reset_door_check");
         result = var_12d56c89._notify;
         if (isdefined(self.ai.isopeningdoor)) {

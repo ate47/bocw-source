@@ -171,9 +171,7 @@ function onspawnplayer(predictedspawn = 0) {
         }
     }
     if (!isdefined(spawn.origin)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         callback::abort_level();
     }
     if (predictedspawn) {
@@ -274,7 +272,7 @@ function private function_594e5666() {
         return level.var_963c3f1b;
     }
     point = level.mapcenter;
-    s_trace = groundtrace(point + vectorscale((0, 0, 1), 10000), point + vectorscale((0, 0, -1), 10000), 0, self);
+    s_trace = groundtrace(point + (0, 0, 10000), point + (0, 0, -10000), 0, self);
     if (s_trace[#"fraction"] < 1) {
         point = s_trace[#"position"];
     }

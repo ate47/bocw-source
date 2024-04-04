@@ -132,20 +132,13 @@ function function_ec0b503f(var_499e2f80) {
     self notify("17273a2d0c87b864");
     self endon("17273a2d0c87b864");
     idx = function_61e1a1cb(var_499e2f80);
-    /#
-        assert(isdefined(idx), "<unknown string>");
-    #/
+    assert(isdefined(idx), "<unknown string>");
     topper = struct::get(var_499e2f80 + "_topper", "targetname");
     var_8f13e4c5 = getent(var_499e2f80 + "_WaitVolume", "targetname");
     startnode = struct::get(var_499e2f80, "targetname");
-    /#
-        assert(isdefined(startnode), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(startnode.target), "<unknown string>");
-    #/
+    assert(isdefined(startnode), "<unknown string>");
+    assert(isdefined(startnode.target), "<unknown string>");
     var_3a27fe75 = struct::get(startnode.target, "targetname");
-    result = undefined;
     result = self waittill(#"trigger");
     if (isdefined(level.doa.var_182fb75a)) {
         self thread function_ec0b503f(var_499e2f80);
@@ -250,9 +243,7 @@ function function_61e1a1cb(name) {
 // Checksum 0x8c925971, Offset: 0x1608
 // Size: 0x6a
 function function_56bd9d70(idx) {
-    /#
-        assert(idx > -1 && idx < level.doa.var_4bd98f7c.size);
-    #/
+    assert(idx > -1 && idx < level.doa.var_4bd98f7c.size);
     return level.doa.var_4bd98f7c[idx].name;
 }
 
@@ -338,9 +329,7 @@ function function_4be92bcc(idx, seconds) {
 // Size: 0x214
 function function_c88b8726(index) {
     profilestart();
-    /#
-        assert(!isdefined(level.doa.var_187ed224), "<unknown string>");
-    #/
+    assert(!isdefined(level.doa.var_187ed224), "<unknown string>");
     if (!isdefined(level.doa.var_a354a42f)) {
         level.doa.var_a354a42f = 1;
     }
@@ -370,9 +359,7 @@ function function_c88b8726(index) {
 // Checksum 0x57556f7a, Offset: 0x1e78
 // Size: 0xac
 function function_30697e3b() {
-    /#
-        assert(level.doa.var_4bd98f7c[level.doa.var_182fb75a].var_9105f204.size);
-    #/
+    assert(level.doa.var_4bd98f7c[level.doa.var_182fb75a].var_9105f204.size);
     return level.doa.var_4bd98f7c[level.doa.var_182fb75a].var_9105f204[randomint(level.doa.var_4bd98f7c[level.doa.var_182fb75a].var_9105f204.size)];
 }
 
@@ -381,9 +368,7 @@ function function_30697e3b() {
 // Checksum 0x24c3c441, Offset: 0x1f30
 // Size: 0xac
 function function_1a775179() {
-    /#
-        assert(level.doa.var_4bd98f7c[level.doa.var_182fb75a].var_40ca2d09.size);
-    #/
+    assert(level.doa.var_4bd98f7c[level.doa.var_182fb75a].var_40ca2d09.size);
     return level.doa.var_4bd98f7c[level.doa.var_182fb75a].var_40ca2d09[randomint(level.doa.var_4bd98f7c[level.doa.var_182fb75a].var_40ca2d09.size)];
 }
 
@@ -396,7 +381,6 @@ function function_fd83ca7f() {
     self endon("5fa33b4e47fc689c");
     level endon(#"dungeon_cleanup", #"dungeon_destroyed");
     while (true) {
-        result = undefined;
         result = self waittill(#"hash_4c72e79bdad8315e");
         result.ai.var_f979e699 = 0;
     }
@@ -412,7 +396,6 @@ function function_3574d58() {
     level endon(#"dungeon_cleanup", #"dungeon_destroyed");
     self endon(#"death");
     while (true) {
-        result = undefined;
         result = self waittill(#"hash_4c72e79bdad8315e");
         if (!isdefined(level.doa.var_35c4260d)) {
             level.doa.var_35c4260d = [];
@@ -482,10 +465,9 @@ function doaenemyfillerfodder() {
 // Checksum 0xe264672b, Offset: 0x2548
 // Size: 0x3d4
 function function_600ea4f() {
-    retval = undefined;
     retval = level waittilltimeout(30, #"hash_db5742cf48f5e5");
     if (retval._notify == #"timeout") {
-        namespace_1e25ad94::function_4e3cfad("	Dungeon creation timeout!", (1, 0, 0), undefined, 1.5, 1000);
+        namespace_1e25ad94::function_4e3cfad("\tDungeon creation timeout!", (1, 0, 0), undefined, 1.5, 1000);
         namespace_1e25ad94::debugmsg("Dungeon creation timeout!", 1);
     }
     if (level.doa.var_c2648383.size > 0) {
@@ -526,7 +508,7 @@ function function_c153f40() {
         level.doa.var_b5f24666 = gettime();
         seconds = (level.doa.var_b5f24666 - level.doa.var_d94cfb75) / 1000;
         function_4be92bcc(level.doa.var_182fb75a, seconds);
-        namespace_1e25ad94::function_4e3cfad("	Dungeon built in : " + seconds + " seconds.  Tiles: " + level.var_c97eeeb4.size + " Rooms: " + level.var_d5561d56 + " Halls: " + level.var_5d40e975, undefined, undefined, undefined, 10);
+        namespace_1e25ad94::function_4e3cfad("\tDungeon built in : " + seconds + " seconds.  Tiles: " + level.var_c97eeeb4.size + " Rooms: " + level.var_d5561d56 + " Halls: " + level.var_5d40e975, undefined, undefined, undefined, 10);
     }
     level thread namespace_5849a337::function_fabbde0d();
     level thread namespace_22574328::function_b9c8a739();
@@ -581,7 +563,6 @@ function function_73730269(var_f3c8eb3) {
     self endon("7457a4fbe260415c");
     level endon(#"game_over");
     level thread namespace_ec06fe4a::function_87612422(level.doa.var_e84586f1.origin, level.doa.var_e84586f1.angles, 0.5, 999999999, level.var_564dda4);
-    result = undefined;
     result = level waittill(#"ladder_up", #"game_over");
     if (result._notify == #"ladder_up" && result.pickup === var_f3c8eb3) {
         namespace_7f5aeb59::function_f8645db3(getdvarint(#"hash_2a014ab8179901f4", 500));
@@ -608,7 +589,7 @@ function function_73730269(var_f3c8eb3) {
     level waittill(#"hash_1b322de3d2e3e781");
     level notify(#"hash_7893364bd228d63e");
     level function_8790b64a();
-    namespace_1e25ad94::function_4e3cfad("	Dungeon destroyed", undefined, undefined, undefined, 10);
+    namespace_1e25ad94::function_4e3cfad("\tDungeon destroyed", undefined, undefined, undefined, 10);
     foreach (player in getplayers()) {
     }
     if (result._notify === "game_over") {

@@ -51,71 +51,37 @@ function init() {
     for (i = 0; i < 2; i++) {
         level.var_8c5f46f1[level.var_8c5f46f1.size] = namespace_ec06fe4a::spawnmodel((0, 0, 0), "tag_origin", (0, 0, 0), "gegenees impact");
     }
-    /#
-        assert(isscriptfunctionptr(&function_d5d3aa77));
-    #/
+    assert(isscriptfunctionptr(&function_d5d3aa77));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2bc0d801acaee9a4", &function_d5d3aa77);
-    /#
-        assert(isscriptfunctionptr(&function_4334cc3b));
-    #/
+    assert(isscriptfunctionptr(&function_4334cc3b));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_4053e75ff0301438", &function_4334cc3b);
-    /#
-        assert(isscriptfunctionptr(&function_a953d80d));
-    #/
+    assert(isscriptfunctionptr(&function_a953d80d));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_1075ab617f39c601", &function_a953d80d);
-    /#
-        assert(isscriptfunctionptr(&function_7f34a57c));
-    #/
+    assert(isscriptfunctionptr(&function_7f34a57c));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_1e595daa404c5a3d", &function_7f34a57c);
-    /#
-        assert(isscriptfunctionptr(&function_75db4aba));
-    #/
+    assert(isscriptfunctionptr(&function_75db4aba));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_7e22610d7293179e", &function_75db4aba);
-    /#
-        assert(isscriptfunctionptr(&function_d344063a));
-    #/
+    assert(isscriptfunctionptr(&function_d344063a));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_1d6949a6c9ec0081", &function_d344063a);
-    /#
-        assert(isscriptfunctionptr(&function_3133f922));
-    #/
+    assert(isscriptfunctionptr(&function_3133f922));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_6f4458058e881523", &function_3133f922);
-    /#
-        assert(isscriptfunctionptr(&function_d82de95f));
-    #/
+    assert(isscriptfunctionptr(&function_d82de95f));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_16cf6fd0904e492f", &function_d82de95f);
-    /#
-        assert(isscriptfunctionptr(&function_564b9cf5));
-    #/
+    assert(isscriptfunctionptr(&function_564b9cf5));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_74ab5c3ab4cbfdda", &function_564b9cf5);
-    /#
-        assert(isscriptfunctionptr(&function_7505908b));
-    #/
+    assert(isscriptfunctionptr(&function_7505908b));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_572453d6d6540a73", &function_7505908b);
-    /#
-        assert(isscriptfunctionptr(&function_9175e656));
-    #/
+    assert(isscriptfunctionptr(&function_9175e656));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_1f9cdbd55afb3860", &function_9175e656);
-    /#
-        assert(isscriptfunctionptr(&function_c81af561));
-    #/
+    assert(isscriptfunctionptr(&function_c81af561));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2c97edb3312da9c6", &function_c81af561);
-    /#
-        assert(isscriptfunctionptr(&function_47fdaf31));
-    #/
+    assert(isscriptfunctionptr(&function_47fdaf31));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_471802b111fa1af0", &function_47fdaf31);
-    /#
-        assert(isscriptfunctionptr(&gegeneesstunstart));
-    #/
+    assert(isscriptfunctionptr(&gegeneesstunstart));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"gegeneesstunstart", &gegeneesstunstart);
-    /#
-        assert(!isdefined(&function_2301c0a7) || isscriptfunctionptr(&function_2301c0a7));
-    #/
-    /#
-        assert(!isdefined(&function_c2155e05) || isscriptfunctionptr(&function_c2155e05));
-    #/
-    /#
-        assert(!isdefined(&function_15502a5) || isscriptfunctionptr(&function_15502a5));
-    #/
+    assert(!isdefined(&function_2301c0a7) || isscriptfunctionptr(&function_2301c0a7));
+    assert(!isdefined(&function_c2155e05) || isscriptfunctionptr(&function_c2155e05));
+    assert(!isdefined(&function_15502a5) || isscriptfunctionptr(&function_15502a5));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_49454f4516c40e65", &function_2301c0a7, &function_c2155e05, &function_15502a5);
     animationstatenetwork::registeranimationmocomp("mocomp_gegenees_shield", &function_d645d2ec, &function_f6bb8a07, &function_64c4573);
     animationstatenetwork::registernotetrackhandlerfunction("gegenees_melee", &function_c3c86ec1);
@@ -209,7 +175,7 @@ function private function_180db9a7(entity) {
     if (isdefined(entity.var_b491d096)) {
         return 0;
     }
-    can_see = bullettracepassed(entity.origin + vectorscale((0, 0, 1), 36), entity.favoriteenemy.origin + vectorscale((0, 0, 1), 36), 0, undefined);
+    can_see = bullettracepassed(entity.origin + (0, 0, 36), entity.favoriteenemy.origin + (0, 0, 36), 0, undefined);
     return can_see;
 }
 
@@ -225,7 +191,7 @@ function private function_4b8e0aab(entity) {
         return 0;
     }
     can_see = 0;
-    trace = physicstrace(entity.origin + vectorscale((0, 0, 1), 48), entity.favoriteenemy.origin + vectorscale((0, 0, 1), 36), (-16, -16, -12), (16, 16, 12), entity);
+    trace = physicstrace(entity.origin + (0, 0, 48), entity.favoriteenemy.origin + (0, 0, 36), (-16, -16, -12), (16, 16, 12), entity);
     if (trace[#"fraction"] == 1 || trace[#"entity"] === entity.favoriteenemy) {
         can_see = 1;
     }
@@ -290,7 +256,7 @@ function function_7fe60e9e(entity) {
             }
         }
     }
-    targetpos = targetpos + vectorscale((0, 0, 1), 36);
+    targetpos = targetpos + (0, 0, 36);
     var_872c6826 = vectortoangles(targetpos - launchpos);
     angles = function_cc68801f(launchpos, targetpos, 600, getdvarfloat(#"bg_lowgravity", 0));
     if (isdefined(angles) && angles[#"lowangle"] > 0) {
@@ -363,7 +329,6 @@ function private function_7e633e59() {
 // Checksum 0xf200a296, Offset: 0x1ee0
 // Size: 0x1bc
 function private function_7d162bd0(projectile, entity) {
-    result = undefined;
     result = projectile waittill(#"projectile_impact", #"projectile_impact_player", #"death");
     if (isdefined(projectile)) {
         projectile thread namespace_ec06fe4a::function_52afe5df(3);
@@ -515,7 +480,7 @@ function private function_d82de95f(entity) {
                     if (level.doa.world_state != 0) {
                         player dodamage(75, player.origin);
                     }
-                    vec = vectornormalize(player.origin - entity.origin) * 1500 + vectorscale((0, 0, 1), 100);
+                    vec = vectornormalize(player.origin - entity.origin) * 1500 + (0, 0, 100);
                     player setvelocity(vec);
                     player playrumbleonentity("zombietron_booster_rumble");
                 } else {

@@ -43,17 +43,13 @@ function playfacethread(*facialanim, str_script_alias, importance, notifystring,
                 if (self.a.facialsoundalias == notifystring) {
                     return;
                 }
-                /#
-                    println("<unknown string>" + self.a.facialsoundalias + "<unknown string>" + notifystring);
-                #/
+                println("<unknown string>" + self.a.facialsoundalias + "<unknown string>" + notifystring);
                 while (self.istalking) {
                     self waittill(#"done speaking");
                 }
             }
         } else {
-            /#
-                println("<unknown string>" + self.a.facialsoundalias + "<unknown string>" + notifystring);
-            #/
+            println("<unknown string>" + self.a.facialsoundalias + "<unknown string>" + notifystring);
             if (isscriptfunctionptr(level.var_4ceaaaf5)) {
                 self thread [[ level.var_4ceaaaf5 ]](self.a.facialsoundalias);
             } else {
@@ -65,21 +61,11 @@ function playfacethread(*facialanim, str_script_alias, importance, notifystring,
             }
         }
     }
-    /#
-        assert(self.a.facialsounddone);
-    #/
-    /#
-        assert(self.a.facialsoundalias == undefined);
-    #/
-    /#
-        assert(self.a.facialsoundnotify == undefined);
-    #/
-    /#
-        assert(self.a.currentdialogimportance == undefined);
-    #/
-    /#
-        assert(!self.istalking);
-    #/
+    assert(self.a.facialsounddone);
+    assert(self.a.facialsoundalias == undefined);
+    assert(self.a.facialsoundnotify == undefined);
+    assert(self.a.currentdialogimportance == undefined);
+    assert(!self.istalking);
     self notify(#"bc_interrupt");
     self.istalking = 1;
     self.a.facialsounddone = 0;
@@ -122,7 +108,6 @@ function playfacethread(*facialanim, str_script_alias, importance, notifystring,
     } else {
         self thread _temp_dialog(notifystring, uniquenotify);
     }
-    ret = undefined;
     ret = self waittill(#"death", #"cancel speaking", uniquenotify);
     if (ret._notify === "cancel speaking" && isdefined(str_vox_file)) {
         self stopsound(str_vox_file);

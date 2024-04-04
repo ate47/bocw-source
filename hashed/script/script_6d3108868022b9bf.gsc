@@ -73,9 +73,7 @@ function function_12624bb8(var_9e3df858, var_7b80750a) {
 // Size: 0x54
 function private function_31c143a8(params) {
     /#
-        /#
-            assert(params.name == "icon_new_evidence_");
-        #/
+        assert(params.name == "icon_new_evidence_");
         level.var_47df5f11 = params.value > 0;
     #/
 }
@@ -86,9 +84,7 @@ function private function_31c143a8(params) {
 // Size: 0x204
 function private function_97c5cb9a(params) {
     /#
-        /#
-            assert(params.name == "Index");
-        #/
+        assert(params.name == "Index");
         if (params.value) {
             var_cf1f3586 = ["<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>"];
             foreach (mission_name in var_cf1f3586) {
@@ -131,9 +127,7 @@ function private function_fa4f5603(statemachine, var_9e3df858) {
             break;
         }
     }
-    /#
-        assert(isdefined(var_625dd793), "<unknown string>" + var_9e3df858);
-    #/
+    assert(isdefined(var_625dd793), "<unknown string>" + var_9e3df858);
     blackboard.var_3cb3ede5 = function_89f058b1(var_b6e3d0a.var_48be729c, var_625dd793);
     foreach (var_f1036742 in blackboard.var_3cb3ede5) {
         if (is_true(var_f1036742.var_32a51de2)) {
@@ -186,7 +180,7 @@ function private function_fa4f5603(statemachine, var_9e3df858) {
     function_580e9a17(var_625dd793, blackboard.var_3cb3ede5);
     blackboard.var_625dd793 = var_625dd793;
     var_a5519791 = struct::get("evidence_board_player_pos", "targetname");
-    blackboard.var_f9e7327d = util::spawn_model("tag_origin", var_a5519791.origin + vectorscale((0, 0, -1), 60), var_a5519791.angles);
+    blackboard.var_f9e7327d = util::spawn_model("tag_origin", var_a5519791.origin + (0, 0, -60), var_a5519791.angles);
     blackboard.var_33e067df = 0.75;
     blackboard.var_8e1686c8 = 0.25;
     blackboard.var_f3592501 = 0.5;
@@ -226,9 +220,7 @@ function private function_89f058b1(var_67e21ca2, *var_625dd793) {
                         #/
                         collectible.isunlocked = isunlocked;
                         if (isunlocked && (isdefined(collectible.var_5eeb1ad0) ? collectible.var_5eeb1ad0 : "") != "") {
-                            /#
-                                assert(!isdefined(collectible.callback), "<unknown string>");
-                            #/
+                            assert(!isdefined(collectible.callback), "<unknown string>");
                             collectible.callback = #"hash_2bfb881b2d0ed7f7";
                         }
                         if (!var_eeb11904.var_1ca68c21) {
@@ -262,9 +254,7 @@ function private function_89f058b1(var_67e21ca2, *var_625dd793) {
 // Checksum 0xf6c09e74, Offset: 0x1f98
 // Size: 0xba
 function private function_eaf23d80(clusterdata) {
-    /#
-        assert(isdefined(clusterdata));
-    #/
+    assert(isdefined(clusterdata));
     foreach (collectible in clusterdata.var_dade7c7f) {
         if (is_true(collectible.isunlocked)) {
             return true;
@@ -281,9 +271,7 @@ function private function_f98394d8(var_625dd793, var_3cb3ede5) {
     var_d771858a = [];
     for (i = 0; i < var_625dd793.size; i++) {
         var_663c51cb = var_625dd793[i];
-        /#
-            assert(isstring(var_663c51cb));
-        #/
+        assert(isstring(var_663c51cb));
         var_d771858a = function_e768ae1e(var_d771858a, var_663c51cb, var_3cb3ede5);
     }
     return var_d771858a;
@@ -397,9 +385,7 @@ function private function_a548b274(clusterdata) {
     if (isdefined(clusterdata.var_8349c453)) {
         return;
     }
-    /#
-        assert(isdefined(clusterdata.var_f8097243));
-    #/
+    assert(isdefined(clusterdata.var_f8097243));
     iconstruct = struct::get(clusterdata.var_f8097243);
     if (isdefined(iconstruct)) {
         clusterdata.var_8349c453 = spawn("script_origin", iconstruct.origin);
@@ -424,9 +410,7 @@ function private function_a40db718(clusterdata) {
     if (isdefined(clusterdata.var_1a7f654)) {
         return;
     }
-    /#
-        assert(isdefined(clusterdata.var_212ee626));
-    #/
+    assert(isdefined(clusterdata.var_212ee626));
     iconstruct = struct::get(clusterdata.var_212ee626);
     if (isdefined(iconstruct)) {
         clusterdata.var_1a7f654 = spawn("script_origin", iconstruct.origin);
@@ -465,9 +449,7 @@ function private function_8c91b796(clusterdata) {
 // Size: 0xec
 function private function_e0cfa93c(var_7b80750a) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player endon(#"death");
     level.player flag::wait_till(level.var_d7d201ba);
     if (isdefined(var_7b80750a)) {
@@ -484,24 +466,18 @@ function private function_e0cfa93c(var_7b80750a) {
 // Size: 0x288
 function private function_e8e65a88(statemachine, initialstate) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player endon(#"death");
     blackboard = statemachine.blackboard;
     blackboard.var_481d0fb1 = [initialstate];
     while (true) {
         player waittill(#"hash_4e26526624ef0227");
-        /#
-            assert(isdefined(statemachine.current_state) && isdefined(statemachine.next_state));
-        #/
+        assert(isdefined(statemachine.current_state) && isdefined(statemachine.next_state));
         blackboard.var_68768c5 = statemachine.current_state.name;
         if (!isinarray(blackboard.var_481d0fb1, statemachine.next_state.name)) {
             array::add(blackboard.var_481d0fb1, statemachine.next_state.name);
         } else {
-            /#
-                assert(blackboard.var_481d0fb1[blackboard.var_481d0fb1.size - 1] == statemachine.current_state.name && blackboard.var_481d0fb1[blackboard.var_481d0fb1.size - 2] == statemachine.next_state.name);
-            #/
+            assert(blackboard.var_481d0fb1[blackboard.var_481d0fb1.size - 1] == statemachine.current_state.name && blackboard.var_481d0fb1[blackboard.var_481d0fb1.size - 2] == statemachine.next_state.name);
             blackboard.var_481d0fb1[blackboard.var_481d0fb1.size - 1] = undefined;
         }
         /#
@@ -521,17 +497,13 @@ function private function_e8e65a88(statemachine, initialstate) {
 // Size: 0x152
 function private function_305352b5() {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     statemachine = player function_1bb19090();
     var_fe7185f8 = statemachine.blackboard.var_68768c5;
     /#
         if (isinarray(statemachine.blackboard.var_481d0fb1, var_fe7185f8)) {
             blackboard = statemachine.blackboard;
-            /#
-                assert(blackboard.var_481d0fb1[blackboard.var_481d0fb1.size - 1] == statemachine.current_state.name && blackboard.var_481d0fb1[blackboard.var_481d0fb1.size - 2] == var_fe7185f8);
-            #/
+            assert(blackboard.var_481d0fb1[blackboard.var_481d0fb1.size - 1] == statemachine.current_state.name && blackboard.var_481d0fb1[blackboard.var_481d0fb1.size - 2] == var_fe7185f8);
         }
     #/
     return isinarray(statemachine.blackboard.var_481d0fb1, var_fe7185f8);
@@ -543,16 +515,12 @@ function private function_305352b5() {
 // Size: 0x152
 function private function_a997529d() {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     statemachine = player function_1bb19090();
     /#
         if (isinarray(statemachine.blackboard.var_481d0fb1, statemachine.next_state.name)) {
             blackboard = statemachine.blackboard;
-            /#
-                assert(blackboard.var_481d0fb1[blackboard.var_481d0fb1.size - 1] == statemachine.current_state.name && blackboard.var_481d0fb1[blackboard.var_481d0fb1.size - 2] == statemachine.next_state.name);
-            #/
+            assert(blackboard.var_481d0fb1[blackboard.var_481d0fb1.size - 1] == statemachine.current_state.name && blackboard.var_481d0fb1[blackboard.var_481d0fb1.size - 2] == statemachine.next_state.name);
         }
     #/
     return isinarray(statemachine.blackboard.var_481d0fb1, statemachine.next_state.name);
@@ -564,15 +532,9 @@ function private function_a997529d() {
 // Size: 0xa4
 function private function_1bb19090() {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
-    /#
-        assert(isdefined(player.state_machines));
-    #/
-    /#
-        assert(isdefined(player.state_machines[#"hash_5e510c4549b3ff60"]));
-    #/
+    assert(isplayer(player));
+    assert(isdefined(player.state_machines));
+    assert(isdefined(player.state_machines[#"hash_5e510c4549b3ff60"]));
     return player.state_machines[#"hash_5e510c4549b3ff60"];
 }
 
@@ -581,9 +543,7 @@ function private function_1bb19090() {
 // Checksum 0xa0a2882f, Offset: 0x30a8
 // Size: 0x2e
 function private function_361f6bd8(*params) {
-    /#
-        assertmsg("<unknown string>");
-    #/
+    assertmsg("<unknown string>");
     return false;
 }
 
@@ -593,9 +553,7 @@ function private function_361f6bd8(*params) {
 // Size: 0x12c
 function private function_6d01a6c8(*params) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     /#
         player function_fc845aca();
     #/
@@ -612,12 +570,8 @@ function private function_6d01a6c8(*params) {
 // Size: 0x8c
 function private function_964c7ad2(*params) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
-    /#
-        assert(!level get("<unknown string>"));
-    #/
+    assert(isplayer(player));
+    assert(!level get("<unknown string>"));
     /#
         player function_d530ce5a();
     #/
@@ -628,14 +582,10 @@ function private function_964c7ad2(*params) {
 // Checksum 0xdf958291, Offset: 0x32b0
 // Size: 0xa4
 function private function_b0a92909(params) {
-    /#
-        assert(isdefined(params.player));
-    #/
+    assert(isdefined(params.player));
     /#
         statemachine = params.player function_1bb19090();
-        /#
-            assert(statemachine.current_state.name == "<unknown string>");
-        #/
+        assert(statemachine.current_state.name == "<unknown string>");
     #/
     params.player notify(#"hash_3f23a5dfb4a181d");
 }
@@ -697,9 +647,7 @@ function private function_587e1291(blackboard) {
 // Size: 0xac4
 function private function_bdf71927(*params) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player endon(#"death");
     /#
         player function_fc845aca();
@@ -755,9 +703,7 @@ function private function_bdf71927(*params) {
         player interactive_map::function_835fb58e(1);
     }
     function_580e9a17(blackboard.var_625dd793, blackboard.var_3cb3ede5);
-    /#
-        assert(!isdefined(blackboard.var_48b0cd0f));
-    #/
+    assert(!isdefined(blackboard.var_48b0cd0f));
     blackboard.var_48b0cd0f = [];
     foreach (mapdata in blackboard.var_3cb3ede5) {
         if (isdefined(mapdata.var_8349c453)) {
@@ -813,9 +759,7 @@ function private function_3ab14abb() {
 // Size: 0x1ac
 function private function_d50da7b8(blackboard) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player endon(#"death");
     player val::set(#"hash_5f70dbe5f8e16583", "freezecontrols", 1);
     player stopgestureviewmodel("dem_lowreadyup", blackboard.var_33e067df);
@@ -836,9 +780,7 @@ function private function_d50da7b8(blackboard) {
 // Size: 0xc0
 function private function_f77a1784(*params) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player endon(#"death", #"hash_4e26526624ef0227");
     player namespace_61e6d095::function_b0bad5ff("eboard_state_change");
     player function_44d63ecd(1, 0.8);
@@ -873,9 +815,7 @@ function private function_e976f5d3() {
     blackboard = statemachine.blackboard;
     blackboard.var_c5bde695 = missionname;
     evidence = blackboard.var_3cb3ede5[missionname];
-    /#
-        assert(isdefined(evidence));
-    #/
+    assert(isdefined(evidence));
     interactive_map::function_23036faa(#"cursor", "missionState", -1);
     interactive_map::function_23036faa(#"cursor", "isSideMission", evidence.var_32a51de2);
     interactive_map::function_23036faa(#"cursor", "year", evidence.var_2200aced);
@@ -897,13 +837,9 @@ function private function_e976f5d3() {
     }
     if (isdefined(evidence.var_dade7c7f) && isdefined(evidence.var_8ca1d4a)) {
         var_61b3cfd0 = collectibles::function_9f976c54(evidence.var_8ca1d4a);
-        /#
-            assert(var_61b3cfd0 < 8);
-        #/
+        assert(var_61b3cfd0 < 8);
         var_68c47b96 = collectibles::function_7be39f53(evidence.var_8ca1d4a);
-        /#
-            assert(var_68c47b96 < 8);
-        #/
+        assert(var_68c47b96 < 8);
         var_2ed2359a = var_61b3cfd0;
         var_2ed2359a = var_2ed2359a | var_68c47b96 << 3;
         interactive_map::function_23036faa(#"cursor", "collectibleCount", var_2ed2359a);
@@ -936,9 +872,7 @@ function private function_cab79d7e() {
 // Size: 0x15c
 function private function_559b452b(*params) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     /#
         player function_d530ce5a();
     #/
@@ -960,9 +894,7 @@ function private function_559b452b(*params) {
 // Size: 0x204
 function private function_22ec525a(blackboard) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player endon(#"death");
     blackboard.var_c5bde695 = undefined;
     player val::set(#"eboard", "show_hud", 1);
@@ -992,21 +924,15 @@ function private function_22ec525a(blackboard) {
 // Size: 0xa0c
 function private function_5b9bb291(*params) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     /#
         player function_fc845aca();
     #/
     statemachine = player function_1bb19090();
     blackboard = statemachine.blackboard;
-    /#
-        assert(isdefined(blackboard.var_c5bde695));
-    #/
+    assert(isdefined(blackboard.var_c5bde695));
     evidence = blackboard.var_3cb3ede5[blackboard.var_c5bde695];
-    /#
-        assert(!exists(#"hash_3ccc1702bc979da8"));
-    #/
+    assert(!exists(#"hash_3ccc1702bc979da8"));
     namespace_61e6d095::create(#"hash_3ccc1702bc979da8", #"hash_4130605c2e66825d");
     namespace_61e6d095::function_d3c3e5c3(#"hash_3ccc1702bc979da8", #"interactive_map");
     var_9f97b0c5 = isdefined(evidence.var_ba2153ee) && evidence.var_ba2153ee == 1;
@@ -1101,9 +1027,7 @@ function private function_d2acd9a1() {
         player waittill(#"hash_278b9a3955f6e5a");
         statemachine = player function_1bb19090();
         blackboard = statemachine.blackboard;
-        /#
-            assert(isdefined(blackboard.var_c5bde695));
-        #/
+        assert(isdefined(blackboard.var_c5bde695));
         evidence = blackboard.var_3cb3ede5[blackboard.var_c5bde695];
         if (isdefined(evidence.var_d832c7fb) && evidence.var_d832c7fb.size > 0) {
             player function_93dd1a56(evidence.var_d832c7fb);
@@ -1117,16 +1041,13 @@ function private function_d2acd9a1() {
 // Size: 0x708
 function private function_c7ffe282(*params) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player endon(#"death", #"hash_4e26526624ef0227");
     player childthread function_e14ba795();
     if (namespace_c8e236da::function_295a2a9e(#"hash_21282e1a3a54e697")) {
         player childthread function_d2acd9a1();
     }
     while (true) {
-        option = undefined;
         option = level waittill(#"evidence_board_option_selected");
         if (!namespace_61e6d095::exists(#"hash_3ccc1702bc979da8")) {
             continue;
@@ -1135,9 +1056,7 @@ function private function_c7ffe282(*params) {
         blackboard = statemachine.blackboard;
         blackboard.var_bcb26d08 = option.var_70b35161;
         if (option.var_70b35161 == 1) {
-            /#
-                assert(isdefined(blackboard.var_c5bde695));
-            #/
+            assert(isdefined(blackboard.var_c5bde695));
             evidence = blackboard.var_3cb3ede5[blackboard.var_c5bde695];
             if (isdefined(evidence.var_dade7c7f) && evidence.var_dade7c7f.size > 0) {
                 player notify(#"hash_3ee5ee530fc0a790");
@@ -1146,9 +1065,7 @@ function private function_c7ffe282(*params) {
             continue;
         }
         if (option.var_70b35161 == 0) {
-            /#
-                assert(isdefined(blackboard.var_c5bde695));
-            #/
+            assert(isdefined(blackboard.var_c5bde695));
             safehouse = savegame::function_8136eb5a();
             nextmission = blackboard.var_c5bde695;
             var_cc500e2b = function_2717b55f(nextmission);
@@ -1187,26 +1104,16 @@ function private function_c7ffe282(*params) {
             continue;
         }
         if (option.var_70b35161 == 3) {
-            /#
-                /#
-                    assert(blackboard.var_c5bde695 == "<unknown string>");
-                #/
-            #/
+            assert(blackboard.var_c5bde695 == "<unknown string>");
             player notify(#"hash_2c777238a293b545");
             break;
         }
         if (option.var_70b35161 == 4) {
-            /#
-                /#
-                    assert(blackboard.var_c5bde695 == "<unknown string>");
-                #/
-            #/
+            assert(blackboard.var_c5bde695 == "<unknown string>");
             player notify(#"hash_2985d911ba4185c8");
             break;
         }
-        /#
-            assertmsg("<unknown string>" + option.var_70b35161);
-        #/
+        assertmsg("<unknown string>" + option.var_70b35161);
     }
 }
 
@@ -1237,16 +1144,12 @@ function private function_9f6854a1(nextmission) {
     self endon("18d00d06dc4ed404");
     self endon(#"disconnect");
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player notify(#"hash_3ac28b014653cac6");
     if (!isdefined(nextmission)) {
         statemachine = player function_1bb19090();
         blackboard = statemachine.blackboard;
-        /#
-            assert(isdefined(blackboard.var_c5bde695));
-        #/
+        assert(isdefined(blackboard.var_c5bde695));
         nextmission = blackboard.var_c5bde695;
     }
     safehouse = savegame::function_8136eb5a();
@@ -1262,18 +1165,14 @@ function private function_9f6854a1(nextmission) {
 // Size: 0x27c
 function private function_96e31558(*params) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player endon(#"death");
     player notify(#"hash_3ac28b014653cac6");
     /#
         player function_d530ce5a();
     #/
     namespace_c8e236da::removelist();
-    /#
-        assert(exists(#"hash_3ccc1702bc979da8"));
-    #/
+    assert(exists(#"hash_3ccc1702bc979da8"));
     namespace_61e6d095::function_73c9a490(#"hash_3ccc1702bc979da8", 0);
     namespace_61e6d095::remove(#"hash_3ccc1702bc979da8");
     statemachine = player function_1bb19090();
@@ -1308,17 +1207,13 @@ function private function_7dfbe539() {
 // Size: 0x21c
 function private function_de709256(*params) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     /#
         player function_fc845aca();
     #/
     statemachine = player function_1bb19090();
     blackboard = statemachine.blackboard;
-    /#
-        assert(isdefined(blackboard.var_c5bde695));
-    #/
+    assert(isdefined(blackboard.var_c5bde695));
     evidence = blackboard.var_3cb3ede5[blackboard.var_c5bde695];
     namespace_61e6d095::function_df0d7a85(#"hash_34f10865afcf9af7", [#"interactive_map"]);
     var_fc34020f = savegame::function_ac15668a(blackboard.var_c5bde695);
@@ -1341,20 +1236,15 @@ function private function_de709256(*params) {
 // Size: 0x210
 function private function_35a396ee(*params) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player endon(#"death", #"hash_4e26526624ef0227");
     player childthread function_e14ba795();
     var_26d73535 = namespace_46c3c08e::function_f9edf6c2();
     statemachine = player function_1bb19090();
     var_fc34020f = savegame::function_ac15668a(statemachine.blackboard.var_c5bde695);
-    /#
-        assert(var_26d73535 > 0);
-    #/
+    assert(var_26d73535 > 0);
     current_index = 0;
     while (true) {
-        result = undefined;
         result = player waittillmatch({#menu:#"hash_20ed03061e0850f3"}, #"menuresponse");
         if (!namespace_61e6d095::exists(#"hash_34f10865afcf9af7")) {
             continue;
@@ -1378,9 +1268,7 @@ function private function_35a396ee(*params) {
 // Size: 0x4c
 function private function_54e62ef2(*oldindex, *newindex) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
 }
 
 // Namespace namespace_fa335fda/namespace_f784b4da
@@ -1398,9 +1286,7 @@ function private function_85225ecb() {
 // Size: 0x13a
 function private function_3740b568() {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player endon(#"death");
     player notify(#"hash_3ac28b014653cac6");
     namespace_46c3c08e::function_2340e15a();
@@ -1409,9 +1295,7 @@ function private function_3740b568() {
     namespace_61e6d095::function_f96376c5(#"hash_34f10865afcf9af7");
     statemachine = player function_1bb19090();
     blackboard = statemachine.blackboard;
-    /#
-        assert(isdefined(blackboard.var_c5bde695));
-    #/
+    assert(isdefined(blackboard.var_c5bde695));
     blackboard.var_1bfff22b hide();
     waitframe(1);
 }
@@ -1422,17 +1306,13 @@ function private function_3740b568() {
 // Size: 0x72c
 function private function_e6734894(*params) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     /#
         player function_fc845aca();
     #/
     statemachine = player function_1bb19090();
     blackboard = statemachine.blackboard;
-    /#
-        assert(isdefined(blackboard.var_c5bde695) && blackboard.var_c5bde695 == "<unknown string>");
-    #/
+    assert(isdefined(blackboard.var_c5bde695) && blackboard.var_c5bde695 == "<unknown string>");
     evidence = blackboard.var_3cb3ede5[blackboard.var_c5bde695];
     foreach (var_38d97d58 in evidence.var_9c01f410) {
         if (isdefined(var_38d97d58.callback) && var_38d97d58.callback == #"chaos_floppy_disk") {
@@ -1440,9 +1320,7 @@ function private function_e6734894(*params) {
             break;
         }
     }
-    /#
-        assert(isdefined(var_7fb2f6df));
-    #/
+    assert(isdefined(var_7fb2f6df));
     blackboard.var_7fb2f6df = var_7fb2f6df;
     var_fc34020f = savegame::function_ac15668a(blackboard.var_c5bde695);
     var_ccb596bd = player_decision::function_ee124ba3();
@@ -1454,9 +1332,7 @@ function private function_e6734894(*params) {
         hinttext = #"hash_2879a6ccf4f083c8";
     }
     blackboard.var_9b52b1bf = !var_fc34020f || var_ccb596bd;
-    /#
-        assert(!exists(#"hash_afc09dfd34bcde0"));
-    #/
+    assert(!exists(#"hash_afc09dfd34bcde0"));
     namespace_61e6d095::create(#"hash_afc09dfd34bcde0", #"hash_102694e2bfda6f95");
     namespace_61e6d095::function_d3c3e5c3(#"hash_afc09dfd34bcde0", #"interactive_map");
     namespace_61e6d095::function_9ade1d9b(#"hash_afc09dfd34bcde0", "evidenceEarnedCount", 0);
@@ -1498,16 +1374,13 @@ function private function_e6734894(*params) {
 // Size: 0x178
 function private function_d4497273(*params) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player endon(#"death", #"hash_4e26526624ef0227");
     player childthread function_e14ba795();
     statemachine = player function_1bb19090();
     blackboard = statemachine.blackboard;
     current_index = isdefined(blackboard.var_bcd1e3f9) ? blackboard.var_bcd1e3f9 : 0;
     while (true) {
-        result = undefined;
         result = player waittillmatch({#menu:#"hash_20ed03061e0850f3", #response:#"hash_79587d9fe84f7a23"}, #"menuresponse");
         if (blackboard.var_9b52b1bf) {
             player thread function_85113485();
@@ -1521,14 +1394,10 @@ function private function_d4497273(*params) {
 // Size: 0xd8
 function private function_85113485() {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     statemachine = player function_1bb19090();
     blackboard = statemachine.blackboard;
-    /#
-        assert(isdefined(blackboard.var_7fb2f6df));
-    #/
+    assert(isdefined(blackboard.var_7fb2f6df));
     player notify(#"hash_7a4583c1e3b9ee99", {#var_ea190649:blackboard.var_7fb2f6df, #var_8a547b69:"evidence_board_evidence_floppy_callback_finished"});
 }
 
@@ -1538,9 +1407,7 @@ function private function_85113485() {
 // Size: 0x50
 function private function_e8205381() {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player notify(#"hash_333d48f5d81e9a37");
 }
 
@@ -1550,9 +1417,7 @@ function private function_e8205381() {
 // Size: 0x1ec
 function private function_dd090dfe(*params) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player endon(#"death");
     player notify(#"hash_3ac28b014653cac6");
     /#
@@ -1565,9 +1430,7 @@ function private function_dd090dfe(*params) {
         function_aa81758f(blackboard.var_7fb2f6df, 1);
         blackboard.var_7fb2f6df = undefined;
         player clientfield::set_to_player("eboard_review_handle_viewmodel", 0);
-        /#
-            assert(exists(#"hash_afc09dfd34bcde0"));
-        #/
+        assert(exists(#"hash_afc09dfd34bcde0"));
         namespace_61e6d095::remove(#"hash_afc09dfd34bcde0");
         namespace_c8e236da::removelist();
         waitframe(1);
@@ -1594,30 +1457,20 @@ function private function_c4deb1a2(*params) {
 // Size: 0x238
 function private function_b00f82b(params) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player endon(#"death");
     statemachine = player function_1bb19090();
     blackboard = statemachine.blackboard;
     if (isdefined(params.var_ea190649)) {
         var_38d97d58 = params.var_ea190649;
     } else {
-        /#
-            assert(isdefined(blackboard.var_c5bde695));
-        #/
-        /#
-            assert(isdefined(blackboard.var_bcd1e3f9));
-        #/
+        assert(isdefined(blackboard.var_c5bde695));
+        assert(isdefined(blackboard.var_bcd1e3f9));
         evidence = blackboard.var_3cb3ede5[blackboard.var_c5bde695];
-        /#
-            assert(isdefined(evidence.var_dade7c7f) && isdefined(evidence.var_dade7c7f[blackboard.var_bcd1e3f9]));
-        #/
+        assert(isdefined(evidence.var_dade7c7f) && isdefined(evidence.var_dade7c7f[blackboard.var_bcd1e3f9]));
         var_38d97d58 = evidence.var_dade7c7f[blackboard.var_bcd1e3f9];
     }
-    /#
-        assert(function_606a97af(var_38d97d58.callback));
-    #/
+    assert(function_606a97af(var_38d97d58.callback));
     player clientfield::set_to_player("eboard_review_handle_viewmodel", 0);
     collectibles::function_f539a1fa(var_38d97d58.callback, var_38d97d58);
     while (player namespace_61e6d095::function_70217795()) {
@@ -1637,9 +1490,7 @@ function private function_b00f82b(params) {
 function private function_340179ff(*params) {
     namespace_c8e236da::removelist();
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player clientfield::set_to_player("eboard_review_handle_viewmodel", 1);
 }
 
@@ -1649,25 +1500,17 @@ function private function_340179ff(*params) {
 // Size: 0x7fc
 function private function_e2e9758c(*params) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     /#
         player function_fc845aca();
     #/
     statemachine = player function_1bb19090();
     blackboard = statemachine.blackboard;
-    /#
-        assert(isdefined(blackboard.var_c5bde695));
-    #/
+    assert(isdefined(blackboard.var_c5bde695));
     if (player function_305352b5()) {
         evidence = blackboard.var_3cb3ede5[blackboard.var_c5bde695];
-        /#
-            assert(isdefined(evidence.var_dade7c7f) && evidence.var_dade7c7f.size > 0);
-        #/
-        /#
-            assert(!exists(#"hash_afc09dfd34bcde0"));
-        #/
+        assert(isdefined(evidence.var_dade7c7f) && evidence.var_dade7c7f.size > 0);
+        assert(!exists(#"hash_afc09dfd34bcde0"));
         namespace_61e6d095::create(#"hash_afc09dfd34bcde0", #"hash_102694e2bfda6f95");
         namespace_61e6d095::function_d3c3e5c3(#"hash_afc09dfd34bcde0", #"interactive_map");
         var_2a015e7e = collectibles::function_5d5166dd(evidence.var_8ca1d4a);
@@ -1727,9 +1570,7 @@ function private function_e2e9758c(*params) {
 // Size: 0x210
 function private function_109f3f2(*params) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player endon(#"death", #"hash_4e26526624ef0227");
     player childthread function_e14ba795();
     statemachine = player function_1bb19090();
@@ -1740,7 +1581,6 @@ function private function_109f3f2(*params) {
         blackboard.var_bcd1e3f9 = 0;
     }
     while (true) {
-        result = undefined;
         result = player waittillmatch({#menu:#"hash_20ed03061e0850f3"}, #"menuresponse");
         if (!namespace_61e6d095::exists(#"hash_afc09dfd34bcde0")) {
             continue;
@@ -1762,19 +1602,13 @@ function private function_109f3f2(*params) {
 // Size: 0x384
 function private function_9019d1f0(oldindex, newindex) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     namespace_61e6d095::function_9ade1d9b(#"hash_afc09dfd34bcde0", "count", newindex);
     statemachine = player function_1bb19090();
     blackboard = statemachine.blackboard;
-    /#
-        assert(isdefined(blackboard.var_c5bde695));
-    #/
+    assert(isdefined(blackboard.var_c5bde695));
     evidence = blackboard.var_3cb3ede5[blackboard.var_c5bde695];
-    /#
-        assert(isdefined(evidence.var_dade7c7f) && isdefined(evidence.var_dade7c7f[newindex]));
-    #/
+    assert(isdefined(evidence.var_dade7c7f) && isdefined(evidence.var_dade7c7f[newindex]));
     var_38d97d58 = evidence.var_dade7c7f[newindex];
     if (is_true(var_38d97d58.isunlocked) && collectibles::function_606a97af(var_38d97d58.callback)) {
         if (var_38d97d58.callback == #"hash_2bfb881b2d0ed7f7") {
@@ -1810,18 +1644,12 @@ function private function_9019d1f0(oldindex, newindex) {
 // Size: 0x160
 function private function_57c5b410(index) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     statemachine = player function_1bb19090();
     blackboard = statemachine.blackboard;
-    /#
-        assert(isdefined(blackboard.var_c5bde695));
-    #/
+    assert(isdefined(blackboard.var_c5bde695));
     evidence = blackboard.var_3cb3ede5[blackboard.var_c5bde695];
-    /#
-        assert(isdefined(evidence.var_dade7c7f) && isdefined(evidence.var_dade7c7f[index]));
-    #/
+    assert(isdefined(evidence.var_dade7c7f) && isdefined(evidence.var_dade7c7f[index]));
     var_38d97d58 = evidence.var_dade7c7f[index];
     if (is_true(var_38d97d58.isunlocked) && collectibles::function_606a97af(var_38d97d58.callback)) {
         player notify(#"hash_7a4583c1e3b9ee99");
@@ -1834,9 +1662,7 @@ function private function_57c5b410(index) {
 // Size: 0x50
 function private function_5ad666ce() {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player notify(#"hash_57c28d19fe61af2f");
 }
 
@@ -1846,9 +1672,7 @@ function private function_5ad666ce() {
 // Size: 0x11c
 function private function_1ec0078f(index, blackboard) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     self notify("79e3bb6b157e8ca7");
     self endon("79e3bb6b157e8ca7");
     player endon(#"death", #"hash_206b23ce56f8caf7");
@@ -1867,9 +1691,7 @@ function private function_1ec0078f(index, blackboard) {
 // Size: 0x324
 function private function_3db40935(*params) {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player endon(#"death");
     player notify(#"hash_3ac28b014653cac6");
     /#
@@ -1895,9 +1717,7 @@ function private function_3db40935(*params) {
             }
             evidence.var_1ca68c21 = var_4eaf209f;
         }
-        /#
-            assert(exists(#"hash_afc09dfd34bcde0"));
-        #/
+        assert(exists(#"hash_afc09dfd34bcde0"));
         namespace_61e6d095::remove(#"hash_afc09dfd34bcde0");
         blackboard.var_bcd1e3f9 = undefined;
         player clientfield::set_to_player("eboard_review_handle_viewmodel", 0);
@@ -1915,9 +1735,7 @@ function private function_3db40935(*params) {
 // Checksum 0x2198f0b0, Offset: 0x8f98
 // Size: 0xac
 function private function_aa81758f(var_520cb95d, isvisible) {
-    /#
-        assert(isdefined(var_520cb95d.isunlocked));
-    #/
+    assert(isdefined(var_520cb95d.isunlocked));
     if (var_520cb95d.isunlocked) {
         var_afbac09f = getent(var_520cb95d.tagname, "script_noteworthy");
         if (isdefined(var_afbac09f)) {
@@ -1937,9 +1755,7 @@ function private function_aa81758f(var_520cb95d, isvisible) {
 function private function_b3f7df56(var_38d97d58) {
     player = getplayers()[0];
     player endon(#"death");
-    /#
-        assert(isdefined(var_38d97d58.var_5eeb1ad0));
-    #/
+    assert(isdefined(var_38d97d58.var_5eeb1ad0));
     namespace_c8e236da::function_ebf737f8(#"hash_412ac8802ccc592d");
     namespace_61e6d095::create(#"hash_2ee86a814f89b7c1", #"hash_6ad4f1126c3ec0e1");
     namespace_61e6d095::function_d3c3e5c3(#"hash_2ee86a814f89b7c1", #"interactive_map");
@@ -1956,9 +1772,7 @@ function private function_b3f7df56(var_38d97d58) {
 // Size: 0xe4
 function private function_e14ba795() {
     player = self;
-    /#
-        assert(isplayer(player));
-    #/
+    assert(isplayer(player));
     player endon(#"death", #"hash_3ac28b014653cac6");
     level endon(#"hash_46f3e63cfcb00995");
     while (true) {
@@ -2012,9 +1826,7 @@ function function_f1d97432(var_88e62a80) {
 function private function_fc845aca() {
     /#
         player = self;
-        /#
-            assert(isplayer(player));
-        #/
+        assert(isplayer(player));
         if (is_true(level.var_47df5f11)) {
             statemachine = player function_1bb19090();
             println("<unknown string>" + statemachine.current_state.name);
@@ -2029,9 +1841,7 @@ function private function_fc845aca() {
 function private function_d530ce5a() {
     /#
         player = self;
-        /#
-            assert(isplayer(player));
-        #/
+        assert(isplayer(player));
         if (is_true(level.var_47df5f11)) {
             statemachine = player function_1bb19090();
             println("<unknown string>" + statemachine.current_state.name);

@@ -14,9 +14,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     if (!level flag::exists(#"ztcm")) {
         level flag::init(#"ztcm", 1);
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace ztcm/ztcm
@@ -24,9 +22,7 @@ function event_handler[gametype_init] main(*eventstruct) {
 // Checksum 0x529def6e, Offset: 0x140
 // Size: 0x24
 function onprecachegametype() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace ztcm/ztcm
@@ -34,8 +30,6 @@ function onprecachegametype() {
 // Checksum 0x469421ee, Offset: 0x170
 // Size: 0x24
 function onstartgametype() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 

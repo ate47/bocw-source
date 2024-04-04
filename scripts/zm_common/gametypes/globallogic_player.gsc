@@ -301,9 +301,7 @@ function spectate_player_watcher() {
         if (count > 0) {
             if (!self.watchingactiveclient) {
                 self val::reset(#"spectate", "freezecontrols");
-                /#
-                    println("<unknown string>");
-                #/
+                println("<unknown string>");
             }
             self.watchingactiveclient = 1;
         } else {
@@ -324,17 +322,13 @@ function spectate_player_watcher() {
 // Checksum 0x204041b5, Offset: 0x1830
 // Size: 0xd0
 function callback_playermigrated() {
-    /#
-        println("<unknown string>" + self.name + "<unknown string>" + gettime());
-    #/
+    println("<unknown string>" + self.name + "<unknown string>" + gettime());
     if (isdefined(self.connected) && self.connected) {
     }
     self thread inform_clientvm_of_migration();
     level.hostmigrationreturnedplayercount++;
     if (level.hostmigrationreturnedplayercount >= level.players.size * 2 / 3) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         level notify(#"hostmigration_enoughplayers");
     }
 }

@@ -8,22 +8,6 @@
 class czm_build_progress : cluielem {
 
     // Namespace czm_build_progress/zm_build_progress
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x4d8cce20, Offset: 0x348
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace czm_build_progress/zm_build_progress
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xb408ece7, Offset: 0x4a0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace czm_build_progress/zm_build_progress
     // Params 1, eflags: 0x2 linked
     // Checksum 0x3eb10922, Offset: 0x438
     // Size: 0x24
@@ -53,7 +37,7 @@ class czm_build_progress : cluielem {
     // Checksum 0xc2527994, Offset: 0x468
     // Size: 0x30
     function set_progress(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "progress", value);
+        set_data(localclientnum, "progress", value);
     }
 
     // Namespace czm_build_progress/zm_build_progress
@@ -62,7 +46,7 @@ class czm_build_progress : cluielem {
     // Size: 0x48
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "progress", 0);
+        set_data(localclientnum, "progress", 0);
     }
 
 }

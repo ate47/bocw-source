@@ -374,7 +374,6 @@ function function_1ad12840(var_baa290f1, var_affc8431) {
     self notify("a4eb5bb1979f8c");
     self endon("a4eb5bb1979f8c");
     self endon(#"death", #"entitydeleted", #"hash_335827d811ed5f67");
-    result = undefined;
     result = self waittilltimeout(5, #"attach", #"detach");
     if (result._notify === "attach") {
         self function_65e5c8c8(1);

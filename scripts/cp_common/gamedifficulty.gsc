@@ -150,7 +150,7 @@ function function_fe49c4b4() {
             bgbar.vertalign = "<unknown string>";
             bgbar.maxwidth = 3;
             bgbar setshader(#"white", bgbar.maxwidth, 10);
-            bgbar.color = vectorscale((1, 1, 1), 0.5);
+            bgbar.color = (0.5, 0.5, 0.5);
             bar = newdebughudelem();
             bar.x = 150 + 80;
             bar.y = y + 2;
@@ -190,7 +190,7 @@ function function_fe49c4b4() {
                 if (width + 2 > bgbar.maxwidth) {
                     bgbar.maxwidth = width + 2;
                     bgbar setshader(#"white", bgbar.maxwidth, 10);
-                    bgbar.color = vectorscale((1, 1, 1), 0.5);
+                    bgbar.color = (0.5, 0.5, 0.5);
                 }
             }
         }
@@ -224,7 +224,6 @@ function function_c6f98249() {
     self endon("54802cc95ae5ac77");
     self endon(#"death");
     for (;;) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (isdefined(waitresult.attacker) && isplayer(waitresult.attacker) && !is_true(isbot(waitresult.attacker))) {
             continue;
@@ -292,9 +291,7 @@ function function_fef4c10f(timer, var_19c9196 = 0) {
     if (!isdefined(self.var_c040f22f)) {
         self.var_c040f22f = self.attackeraccuracy;
     } else {
-        /#
-            assert(self.attackeraccuracy == 0, "<unknown string>");
-        #/
+        assert(self.attackeraccuracy == 0, "<unknown string>");
     }
     self function_f5c273fc();
     wait(timer);
@@ -316,12 +313,8 @@ function private function_f5c273fc() {
 // Size: 0x8a
 function private function_b9d6a17c() {
     self flag::clear("player_zero_attacker_accuracy");
-    /#
-        assert(isdefined(self.var_c040f22f), "<unknown string>");
-    #/
-    /#
-        assert(self.var_c040f22f != 0, "<unknown string>");
-    #/
+    assert(isdefined(self.var_c040f22f), "<unknown string>");
+    assert(self.var_c040f22f != 0, "<unknown string>");
     self.attackeraccuracy = self.var_c040f22f;
     self.var_c040f22f = undefined;
 }
@@ -333,9 +326,7 @@ function private function_b9d6a17c() {
 function private function_ab69b983() {
     self endon(#"death");
     self.var_2869a26a = 0;
-    /#
-        assert(self get("<unknown string>"));
-    #/
+    assert(self get("<unknown string>"));
     self flag::wait_till_clear("player_is_invulnerable");
     cooldowntime = function_81e40993();
     /#
@@ -408,9 +399,7 @@ function function_57ba1474(var_648a2ef0) {
                 level.currentdifficulty = "realistic";
                 break;
             }
-            /#
-                println("<unknown string>" + level.gameskill);
-            #/
+            println("<unknown string>" + level.gameskill);
             setdvar(#"saved_gameskill", level.gameskill);
             setlocalprofilevar("g_gameskill", level.gameskill);
             if (level.gameskill < transient.var_9ac9bc79) {
@@ -764,9 +753,7 @@ function function_2aed7a44(*player, eattacker, *einflictor, idamage, *weapon, *s
 // Size: 0xe2
 function function_23dcd1f6(*player, *eattacker, *einflictor, idamage, *weapon, *shitloc, *var_b646048d) {
     var_68bc2059 = float(function_eb59c79());
-    /#
-        assert(var_68bc2059 > 0);
-    #/
+    assert(var_68bc2059 > 0);
     var_86342214 = float(100) / var_68bc2059;
     return max(var_b646048d * var_86342214, min(1, var_b646048d));
 }

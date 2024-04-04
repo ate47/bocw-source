@@ -75,7 +75,6 @@ function function_a8f7fa5b() {
 function function_2dc6261d() {
     self endon(#"death");
     self.trigs[#"hack"] endon(#"death");
-    waitresult = undefined;
     waitresult = self.trigs[#"hack"] waittill(#"trigger");
     whom = waitresult.activator;
     self notify(#"state_change", {#state:"disabled"});
@@ -91,7 +90,6 @@ function function_2dc6261d() {
 function function_47de2d14() {
     self endon(#"death");
     self.trigs[#"dmg"] endon(#"death");
-    waitresult = undefined;
     waitresult = self.trigs[#"dmg"] waittill(#"trigger");
     whom = waitresult.activator;
     self notify(#"state_change", {#state:"destroyed"});
@@ -104,7 +102,6 @@ function function_47de2d14() {
 function function_7e4779a4() {
     self endon(#"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"state_change");
         state = waitresult.state;
         self notify(state);

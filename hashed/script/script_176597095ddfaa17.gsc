@@ -210,7 +210,7 @@ function function_ac8a88de(var_6874207, *var_d0c31a32) {
 // Size: 0x6c
 function private function_fcf7c9c8() {
     self endon(#"death");
-    move_origin = self.origin + vectorscale((0, 0, -1), 20000);
+    move_origin = self.origin + (0, 0, -20000);
     self moveto(move_origin, 3);
     wait(5);
     self delete();

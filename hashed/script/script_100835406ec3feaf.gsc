@@ -32,12 +32,8 @@ function function_756f46cf() {
     a_locs = [3, 3, 3];
     n_bits = getminbitcountfornum(39);
     a_data = [];
-    /#
-        assert(-1);
-    #/
-    /#
-        assert(a_locs.size == 3);
-    #/
+    assert(-1);
+    assert(a_locs.size == 3);
     for (i = 0; i < 3; i++) {
         number = randomintrange(0, 40);
         location = randomint(a_locs[i]);

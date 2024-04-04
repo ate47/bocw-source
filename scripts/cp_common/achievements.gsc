@@ -46,9 +46,7 @@ function function_df1192a7() {
 // Checksum 0xb2e1caef, Offset: 0x280
 // Size: 0x104
 function function_659819fa(achievement, *var_a299f0b3) {
-    /#
-        assert(ishash(var_a299f0b3), "<unknown string>");
-    #/
+    assert(ishash(var_a299f0b3), "<unknown string>");
     /#
         printtoprightln("<unknown string>" + function_9e72a96(var_a299f0b3), (1, 1, 1));
         println("<unknown string>" + function_9e72a96(var_a299f0b3));
@@ -76,7 +74,6 @@ function on_player_connect() {
     self.var_8e5e0541.var_f79c95f9 = [];
     self thread function_fd51b8a8();
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"hash_55b653455cd7424c");
         function_659819fa(waitresult.id);
     }
@@ -289,7 +286,6 @@ function on_ai_killed(s_params) {
 function private function_fd51b8a8() {
     self endon(#"disconnect");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"gun_level_complete");
         if (waitresult.is_last_rank && waitresult.item_index >= 1 && waitresult.item_index <= 60) {
             self function_659819fa(#"hash_30b6860e2869b596");

@@ -92,9 +92,7 @@ function cac_modified_vehicle_damage(victim, attacker, damage, meansofdeath, wea
 // Size: 0xfc
 function function_3ba6ee5d(weapon, amount) {
     if (!self hasweapon(weapon)) {
-        /#
-            assertmsg("<unknown string>" + weapon.name + "<unknown string>");
-        #/
+        assertmsg("<unknown string>" + weapon.name + "<unknown string>");
         return;
     }
     if (weapon.iscliponly) {
@@ -103,9 +101,7 @@ function function_3ba6ee5d(weapon, amount) {
     }
     self setweaponammoclip(weapon, amount);
     diff = amount - self getweaponammoclip(weapon);
-    /#
-        assert(diff >= 0);
-    #/
+    assert(diff >= 0);
     self setweaponammostock(weapon, diff);
 }
 

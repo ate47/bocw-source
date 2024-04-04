@@ -77,7 +77,6 @@ function function_9505e24b() {
 function function_c3144b08() {
     self endon(#"disconnect", #"hash_4651029f46118bc1", #"force_spawn");
     level endon(#"game_ended");
-    waitresult = undefined;
     waitresult = self waittill(#"waitingtospawn");
     var_fa9f2461 = waitresult.timeuntilspawn + -0.5;
     if (var_fa9f2461 > 0) {
@@ -114,9 +113,7 @@ function function_46fcf917(player) {
         level.var_5e74f048[player.squad].nextindex = 0;
     }
     var_5a752f59 = level.var_5e74f048[player.squad].anchorpoint;
-    /#
-        assert(isdefined(var_5a752f59));
-    #/
+    assert(isdefined(var_5a752f59));
     if (!isdefined(var_5a752f59)) {
         return {#origin:level.mapcenter, #angles:(0, 0, 0)};
     }
@@ -132,7 +129,7 @@ function function_e624cfcf(player, origin, angles) {
     level.var_5e74f048[player.squad].nextindex = nextindex + 1;
     var_4cf012f7 = level.var_4cf012f7[nextindex];
     playerorigin = origin;
-    trace = groundtrace(playerorigin + vectorscale((0, 0, 1), 100), playerorigin - vectorscale((0, 0, 1), 10100), 0, playerorigin, 0, 0);
+    trace = groundtrace(playerorigin + (0, 0, 100), playerorigin - (0, 0, 10100), 0, playerorigin, 0, 0);
     if (trace[#"surfacetype"] == #"none" || trace[#"surfacetype"] == #"default") {
         playerorigin = (playerorigin[0], playerorigin[1], level.mapcenter[2]);
     } else {
@@ -361,7 +358,7 @@ function function_1e077098() {
                 level.var_a349ea8[var_ab9478c7 getentitynumber()] = undefined;
                 continue;
             }
-            trace = groundtrace(var_ab9478c7.origin, var_ab9478c7.origin - vectorscale((0, 0, 1), 5000), 0, var_ab9478c7, 0, 0);
+            trace = groundtrace(var_ab9478c7.origin, var_ab9478c7.origin - (0, 0, 5000), 0, var_ab9478c7, 0, 0);
             if (trace[#"surfacetype"] == #"none") {
                 var_dbcced97[var_dbcced97.size] = var_ab9478c7;
                 continue;

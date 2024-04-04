@@ -7,22 +7,6 @@
 // Method(s) 8 Total 15
 class class_fd95a9c : cluielem {
 
-    // Namespace class_fd95a9c/doa_keytrade
-    // Params 0, eflags: 0x8
-    // Checksum 0xca05cb42, Offset: 0x390
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_fd95a9c/doa_keytrade
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xfa0d2aeb, Offset: 0x580
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_fd95a9c/doa_keytrade
     // Params 1, eflags: 0x0
     // Checksum 0x4fc6c2d1, Offset: 0x4e0
@@ -36,7 +20,7 @@ class class_fd95a9c : cluielem {
     // Checksum 0x46f58ccc, Offset: 0x548
     // Size: 0x30
     function function_3ae8b40f(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "confirmBtn", value);
+        set_data(localclientnum, "confirmBtn", value);
     }
 
     // Namespace namespace_fd95a9c/doa_keytrade
@@ -52,7 +36,7 @@ class class_fd95a9c : cluielem {
     // Checksum 0xf1937791, Offset: 0x510
     // Size: 0x30
     function function_8a6595db(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "textBoxHint", value);
+        set_data(localclientnum, "textBoxHint", value);
     }
 
     // Namespace namespace_fd95a9c/doa_keytrade
@@ -71,8 +55,8 @@ class class_fd95a9c : cluielem {
     // Size: 0x74
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "textBoxHint", #"");
-        [[ self ]]->set_data(localclientnum, "confirmBtn", #"");
+        set_data(localclientnum, "textBoxHint", #"");
+        set_data(localclientnum, "confirmBtn", #"");
     }
 
 }

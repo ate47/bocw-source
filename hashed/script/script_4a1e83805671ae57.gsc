@@ -8,21 +8,8 @@
 // Method(s) 6 Total 13
 class class_44eccfcc : cluielem {
 
-    // Namespace class_44eccfcc/stim_count
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x94c99e74, Offset: 0x1d8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_44eccfcc/stim_count
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x7824daa3, Offset: 0x310
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_44eccfcc/stim_count
     // Params 2, eflags: 0x2 linked
@@ -45,7 +32,7 @@ class class_44eccfcc : cluielem {
     // Checksum 0x45fb2823, Offset: 0x2c0
     // Size: 0x44
     function function_6eef7f4f(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "stim_count", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "stim_count", value);
     }
 
     // Namespace namespace_44eccfcc/stim_count

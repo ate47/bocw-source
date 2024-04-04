@@ -51,7 +51,7 @@ function function_a4cec352(instance) {
 // Checksum 0xb47422f5, Offset: 0x260
 // Size: 0x4c
 function function_225965a4(instance) {
-    function_871649b9(instance, #"hash_1f16d05c9834eacd", #"sr_harvesting_zombie_essence_small", 25, vectorscale((0, 0, -1), 12));
+    function_871649b9(instance, #"hash_1f16d05c9834eacd", #"sr_harvesting_zombie_essence_small", 25, (0, 0, -12));
 }
 
 // Namespace namespace_1ab3fb7b/namespace_1ab3fb7b
@@ -192,7 +192,7 @@ function private function_95da1d88(instance, var_eece1f6a, var_f8dfa2cf) {
                     setdvar(var_9911be33, 1);
                     iprintlnbold("<unknown string>" + function_9e72a96(var_eece1f6a) + "<unknown string>");
                     if (var_9911be33 == "<unknown string>") {
-                        v_offset = vectorscale((0, 0, -1), 12);
+                        v_offset = (0, 0, -12);
                     } else {
                         v_offset = (0, 0, 0);
                     }
@@ -204,7 +204,7 @@ function private function_95da1d88(instance, var_eece1f6a, var_f8dfa2cf) {
                     if (is_true(spawn.var_b215c441)) {
                         str_color = (1, 0.5, 0);
                     } else {
-                        str_color = vectorscale((1, 1, 1), 0.75);
+                        str_color = (0.75, 0.75, 0.75);
                     }
                     n_radius = 64;
                     n_dist = distance(spawn.origin, getplayers()[0].origin);

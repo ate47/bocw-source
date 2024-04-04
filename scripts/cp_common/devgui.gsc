@@ -388,11 +388,9 @@ function function_895ead7c() {
             self closeluimenu(self.var_f031ddbc);
         }
         self.var_f031ddbc = self openluimenu("<unknown string>");
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         for (response = waitresult.response; response != "<unknown string>"; response = waitresult.response) {
-            waitresult = undefined;
             waitresult = self waittill(#"menuresponse");
             menu = waitresult.menu;
         }
@@ -419,12 +417,8 @@ function function_8c36f50() {
 // Size: 0x74
 function function_fa6a74c3(var_32db513) {
     /#
-        /#
-            assert(isdefined(self));
-        #/
-        /#
-            assert(isplayer(self));
-        #/
+        assert(isdefined(self));
+        assert(isplayer(self));
         self addrankxpvalue("<unknown string>", var_32db513, 0);
     #/
 }
@@ -435,12 +429,8 @@ function function_fa6a74c3(var_32db513) {
 // Size: 0x104
 function function_c11f6cfe(var_32db513) {
     /#
-        /#
-            assert(isdefined(self));
-        #/
-        /#
-            assert(isplayer(self));
-        #/
+        assert(isdefined(self));
+        assert(isplayer(self));
         weapon_ref = self.currentweapon.rootweapon.name;
         weapon_index = getitemindexfromref(weapon_ref);
         var_2888ab1b = self get_stat(#"itemstats", weapon_index, #"xp");
@@ -468,12 +458,8 @@ function devgui_invulnerable(onoff) {
 // Size: 0x8c
 function function_c60fba82(teamname) {
     /#
-        /#
-            assert(isdefined(self));
-        #/
-        /#
-            assert(isplayer(self));
-        #/
+        assert(isdefined(self));
+        assert(isplayer(self));
         self.team = teamname;
         self.sessionteam = teamname;
         self.pers[#"team"] = teamname;
@@ -486,12 +472,8 @@ function function_c60fba82(teamname) {
 // Size: 0x114
 function devgui_kill() {
     /#
-        /#
-            assert(isdefined(self));
-        #/
-        /#
-            assert(isplayer(self));
-        #/
+        assert(isdefined(self));
+        assert(isplayer(self));
         if (isalive(self)) {
             self set(#"devgui_kill", "<unknown string>", 1);
             death_from = (randomfloatrange(-20, 20), randomfloatrange(-20, 20), randomfloatrange(-20, 20));
@@ -506,12 +488,8 @@ function devgui_kill() {
 // Size: 0x15e
 function devgui_toggle_ammo() {
     /#
-        /#
-            assert(isdefined(self));
-        #/
-        /#
-            assert(isplayer(self));
-        #/
+        assert(isdefined(self));
+        assert(isplayer(self));
         if (!isalive(self)) {
             return;
         }
@@ -538,12 +516,8 @@ function devgui_toggle_ammo() {
 // Size: 0x9c
 function function_651c7865() {
     /#
-        /#
-            assert(isdefined(self));
-        #/
-        /#
-            assert(isplayer(self));
-        #/
+        assert(isdefined(self));
+        assert(isplayer(self));
         if (!isalive(self)) {
             return;
         }
@@ -557,12 +531,8 @@ function function_651c7865() {
 // Size: 0x116
 function function_541ccb87() {
     /#
-        /#
-            assert(isdefined(self));
-        #/
-        /#
-            assert(isplayer(self));
-        #/
+        assert(isdefined(self));
+        assert(isplayer(self));
         if (!isalive(self)) {
             return;
         }
@@ -601,12 +571,8 @@ function function_4a38f3a4(maxhealth) {
 // Size: 0xfa
 function function_9cd052c5() {
     /#
-        /#
-            assert(isdefined(self));
-        #/
-        /#
-            assert(isplayer(self));
-        #/
+        assert(isdefined(self));
+        assert(isplayer(self));
         if (!isalive(self)) {
             return;
         }
@@ -844,12 +810,8 @@ function devgui_weapon_asset_name_display_think() {
 // Size: 0x31c
 function devgui_give_weapon(weapon_name) {
     /#
-        /#
-            assert(isdefined(self));
-        #/
-        /#
-            assert(isplayer(self));
-        #/
+        assert(isdefined(self));
+        assert(isplayer(self));
         if (!isalive(self)) {
             return;
         }
@@ -898,12 +860,8 @@ function devgui_give_weapon(weapon_name) {
 // Size: 0x41c
 function function_848084d4(var_b0f63180) {
     /#
-        /#
-            assert(isdefined(self));
-        #/
-        /#
-            assert(isplayer(self));
-        #/
+        assert(isdefined(self));
+        assert(isplayer(self));
         if (!isalive(self)) {
             return;
         }
@@ -1080,7 +1038,7 @@ function private function_57edec18() {
                     waitframe(1);
                     continue;
                 }
-                drone_camera = spawnvehicle("<unknown string>", player.origin + vectorscale((0, 0, 1), 150), player.angles, "<unknown string>");
+                drone_camera = spawnvehicle("<unknown string>", player.origin + (0, 0, 150), player.angles, "<unknown string>");
                 drone_camera.ignoreme = 1;
                 drone_camera usevehicle(player, 0);
                 level.drone_camera = drone_camera;

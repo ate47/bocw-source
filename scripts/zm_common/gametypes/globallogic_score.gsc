@@ -126,13 +126,9 @@ function resetplayermomentumondeath() {
 // Size: 0x55a
 function function_144d0392(event, player, victim, *descvalue, var_dbaa74e2) {
     score = victim rank::getscoreinfovalue(player);
-    /#
-        assert(isdefined(score));
-    #/
+    assert(isdefined(score));
     xp = victim rank::getscoreinfoxp(player);
-    /#
-        assert(isdefined(xp));
-    #/
+    assert(isdefined(xp));
     label = rank::getscoreinfolabel(player);
     var_b393387d = victim.pers[#"score"];
     profileNamedStart(#"");
@@ -213,9 +209,7 @@ function default_onplayerscore(event, player, *victim) {
     score = score * level.var_96ab8769;
     var_a08ade2e = zombie_utility::function_6403cf83(#"zombie_point_scalar", victim.team);
     score = int(score * var_a08ade2e);
-    /#
-        assert(isdefined(score));
-    #/
+    assert(isdefined(score));
     _setplayerscore(victim, victim.pers[#"score"] + score);
 }
 
@@ -542,11 +536,7 @@ function getpersstat(dataname) {
 // Size: 0xe6
 function incpersstat(dataname, increment, record_stats, *includegametype) {
     profileNamedStart(#"");
-    /#
-        /#
-            assert(isdefined(self.pers[increment]), function_9e72a96(increment) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(self.pers[increment]), function_9e72a96(increment) + "<unknown string>");
     self.pers[increment] = self.pers[increment] + record_stats;
     self stats::function_dad108fa(increment, record_stats);
     if (!isdefined(includegametype) || includegametype == 1) {

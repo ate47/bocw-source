@@ -31,9 +31,7 @@ function private preinit() {
 // Checksum 0x6ecd53d4, Offset: 0x168
 // Size: 0xd8
 function private on_begin(perk_count) {
-    /#
-        assert(isdefined(level.var_b8be892e));
-    #/
+    assert(isdefined(level.var_b8be892e));
     self.var_851a4ca6 = zm_trial::function_5769f26a(perk_count);
     foreach (player in getplayers()) {
         player thread function_2a5b280f(self);
@@ -49,14 +47,10 @@ function private on_end(round_reset) {
         player zm_trial_util::function_f3aacffb();
     }
     if (!round_reset) {
-        /#
-            assert(isdefined(level.var_b8be892e));
-        #/
+        assert(isdefined(level.var_b8be892e));
         var_57807cdc = [];
         foreach (player in getplayers()) {
-            /#
-                assert(isdefined(player.var_a53b9221));
-            #/
+            assert(isdefined(player.var_a53b9221));
             if (player.var_a53b9221 < self.var_851a4ca6) {
                 array::add(var_57807cdc, player, 0);
             }

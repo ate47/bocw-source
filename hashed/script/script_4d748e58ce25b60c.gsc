@@ -151,7 +151,6 @@ function function_591138a4() {
     self endon("1577d7ba2bd6dee5");
     self endon(#"disconnect");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         if (getplayers().size == 1) {
             continue;
@@ -319,9 +318,7 @@ function function_fc61ee02() {
             setloc = 1;
         }
     } else {
-        /#
-            assert(level.doa.world_state == 0, "<unknown string>");
-        #/
+        assert(level.doa.world_state == 0, "<unknown string>");
         while (!isdefined(level.doa.var_39e3fa99)) {
             waitframe(1);
         }
@@ -501,12 +498,8 @@ function function_ffc15733() {
 // Size: 0x1fa
 function function_a48eea2b(yaw = 0, reset = 0) {
     self endon(#"disconnect");
-    /#
-        assert(isplayer(self));
-    #/
-    /#
-        assert(yaw == 0 || yaw == 1);
-    #/
+    assert(isplayer(self));
+    assert(yaw == 0 || yaw == 1);
     if (!isdefined(self) || !isdefined(self.doa)) {
         return;
     }
@@ -682,9 +675,7 @@ function givealifetoplayer(target, forced = 0) {
 // Checksum 0xe021be7a, Offset: 0x3088
 // Size: 0x84
 function giveaward(type, player) {
-    /#
-        assert(isdefined(player));
-    #/
+    assert(isdefined(player));
     player endon(#"disconnect");
     level namespace_dfc652ee::itemspawn(namespace_dfc652ee::function_6265bde4(type), player.origin, undefined, undefined, 1, undefined, undefined, undefined, player);
 }
@@ -779,7 +770,7 @@ function function_cf940b05() {
         self.doa.var_7a27ee1b = undefined;
     }
     if (self weaponswitchbuttonpressed() || self buttonbitstate("BUTTON_BIT_WEAPNEXT")) {
-        if (!is_true(self.doa.var_3e81d24c)) {
+        if (!is_true(self.doa.infps)) {
             self clientfield::increment_to_player("changeCamera");
         }
         self notify(#"hash_444e9c51ba5bd99");
@@ -868,7 +859,7 @@ function function_ba8327d7() {
             if (isdefined(self.doa.boosttrigger)) {
                 self.doa.boosttrigger.targetname = "triggerBoost";
                 self.doa.boosttrigger enablelinkto();
-                self.doa.boosttrigger linkto(self, undefined, vectorscale((1, 0, 0), 200), self.angles);
+                self.doa.boosttrigger linkto(self, undefined, (200, 0, 0), self.angles);
                 self.doa.boosttrigger.activetime = gettime() + 300;
                 self.doa.boosttrigger thread namespace_7f5aeb59::function_19f387a(self, undefined, undefined, 1);
                 self.doa.boosttrigger thread namespace_ec06fe4a::function_ae010bb4(self);
@@ -876,9 +867,9 @@ function function_ba8327d7() {
             }
             self.doa.var_fdc612e3 = gettime() + 300;
             self.doa.var_b7001078 = forward * 2000;
-            self.doa.var_b7001078 = self.doa.var_b7001078 + vectorscale((0, 0, 1), 200);
+            self.doa.var_b7001078 = self.doa.var_b7001078 + (0, 0, 200);
             self setvelocity(self.doa.var_b7001078);
-            self.doa.var_b7001078 = self.doa.var_b7001078 - vectorscale((0, 0, 1), 200);
+            self.doa.var_b7001078 = self.doa.var_b7001078 - (0, 0, 200);
             self.doa.var_c0f32380 = 0;
             self function_bc82f900("zombietron_booster_rumble");
         }
@@ -997,9 +988,7 @@ function function_a34cf3fb() {
 // Size: 0x3d4
 function private function_6dc6e670(var_182c1d00, origin, player, *updir) {
     self endon(#"death");
-    /#
-        assert(!is_true(self.boss));
-    #/
+    assert(!is_true(self.boss));
     if (!isdefined(level.var_5c7cffec)) {
         level.var_5c7cffec = sqr(160);
         level.var_db768440 = sqr(512);
@@ -1137,7 +1126,7 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
             self.doa.var_cfe0bf1b = time + 1000;
         }
     }
-    if (is_true(self.doa.var_3e81d24c)) {
+    if (is_true(self.doa.infps)) {
         idamage = 65;
         if (is_true(eattacker.var_32c5c724)) {
             idamage = self.maxhealth - 1;
@@ -1155,7 +1144,7 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
         }
         return;
     }
-    if (is_true(self.doa.var_3e81d24c)) {
+    if (is_true(self.doa.infps)) {
         if (smeansofdeath !== "MOD_TRIGGER_HURT") {
             self.doa.var_cfe0bf1b = time + 1500;
         }
@@ -1192,7 +1181,7 @@ function callback_playerlaststand(einflictor, attacker, idamage, smeansofdeath, 
         level notify(#"hash_72523790f36bd2a8");
     }
     self namespace_e32bb68::function_3a59ec34("evt_doa_player_death");
-    if (is_true(self.doa.var_3e81d24c) && self.doa.var_bb4d9604.size == 0) {
+    if (is_true(self.doa.infps) && self.doa.var_bb4d9604.size == 0) {
         self notify(#"hash_7893364bd228d63e");
     }
     namespace_1e25ad94::debugmsg("player entering last stand");
@@ -1405,7 +1394,7 @@ function event_handler[enter_vehicle] codecallback_vehicleenter(eventstruct) {
 // Checksum 0x22a69a23, Offset: 0x6180
 // Size: 0x66
 function event_handler[exit_vehicle] codecallback_vehicleexit(*eventstruct) {
-    if (is_true(self.doa.var_3e81d24c)) {
+    if (is_true(self.doa.infps)) {
         self.doa.var_1b452923 = undefined;
         self notify(#"hash_7893364bd228d63e", {#var_cff8d1e:1});
     }

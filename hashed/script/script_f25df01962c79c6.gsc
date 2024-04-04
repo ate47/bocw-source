@@ -44,9 +44,7 @@ function init() {
         level.doa.var_258d537d.props = struct::get_array("podium_prop");
         level.doa.var_258d537d.var_ba1ebafb = struct::get_array("podium_zombie_spot");
         level.doa.var_258d537d.var_b969d349 = struct::get_array("podium_playerpos");
-        /#
-            assert(level.doa.var_258d537d.var_b969d349.size == 4);
-        #/
+        assert(level.doa.var_258d537d.var_b969d349.size == 4);
     }
 }
 
@@ -184,9 +182,7 @@ function function_4ec353f8(var_a5cecef6, idx) {
         self thread function_14456228(var_a5cecef6);
         break;
     default:
-        /#
-            assert(0);
-        #/
+        assert(0);
         break;
     }
 }
@@ -309,7 +305,6 @@ function function_d32e5650() {
     self.animarray = var_1159929c;
     self.var_2cbcf8e2 = "zombie_outro_mood_angry";
     while (true) {
-        result = undefined;
         result = level waittill(#"zombie_outro_mood_angry", #"hash_6b71fd0ed387fe82", #"hash_749ca0969fe37f63");
         if (!isdefined(self)) {
             return;
@@ -362,12 +357,12 @@ function function_ac2a1e0f() {
     level endon(#"podiumalldone");
     level waittill(#"hash_72da9101d085f010");
     var_b7b96881 = struct::get("podium_gem_spot");
-    var_98425e00 = 50;
+    gems = 50;
     if (isdefined(level.doa.var_258d537d.var_b969d349[0].var_6c5d23f4)) {
         level.doa.var_258d537d.var_b969d349[0].var_6c5d23f4 namespace_e32bb68::function_3a59ec34("evt_doa_outro_gem_shower");
     }
-    while (var_98425e00) {
-        var_98425e00--;
+    while (gems) {
+        gems--;
         spawner::global_spawn_throttle();
         spot = var_b7b96881.origin + (randomintrange(-256, 256), randomintrange(-256, 256), 0);
         gem = namespace_dfc652ee::function_b8f6a8cd(undefined, spot, 1, 1, randomfloatrange(0.75, 2.2));
@@ -413,11 +408,11 @@ function function_52be2241() {
     level notify(#"hash_6b71fd0ed387fe82");
     silverback thread namespace_6e90e490::function_47e11416(47, 3, 1);
     wait(2);
-    org moveto(org.origin + vectorscale((0, 0, 1), 1500), 2);
+    org moveto(org.origin + (0, 0, 1500), 2);
     org namespace_83eb6304::function_3ecfde67("turret_impact");
     org namespace_e32bb68::function_3a59ec34("evt_doa_outro_mamaback_takeoff");
     wait(2);
-    org.origin = var_48fff83e.origin + vectorscale((0, 0, 1), 1500);
+    org.origin = var_48fff83e.origin + (0, 0, 1500);
     org.angles = var_48fff83e.angles;
     org moveto(var_48fff83e.origin, 2);
     wait(2);
@@ -436,7 +431,7 @@ function function_52be2241() {
     level notify(#"hash_691cb7b4a4340202");
     org namespace_83eb6304::function_3ecfde67("turret_impact");
     org namespace_e32bb68::function_3a59ec34("evt_doa_outro_mamaback_takeoff");
-    org moveto(var_48fff83e.origin + vectorscale((0, 0, 1), 1500), 2);
+    org moveto(var_48fff83e.origin + (0, 0, 1500), 2);
     wait(1);
     level thread function_c6630cce(weapon, org, level.doa.var_258d537d.var_b969d349[3]);
     wait(0.25);
@@ -447,7 +442,7 @@ function function_52be2241() {
     level thread function_c6630cce(weapon, org, level.doa.var_258d537d.var_b969d349[0], "momaBackWinner");
     wait(0.25);
     level notify(#"hash_749ca0969fe37f63");
-    org.origin = var_dde0062d.origin + vectorscale((0, 0, 1), 1500);
+    org.origin = var_dde0062d.origin + (0, 0, 1500);
     org moveto(var_dde0062d.origin, 2);
     org namespace_83eb6304::function_3ecfde67("turret_impact");
     if (namespace_ec06fe4a::function_a8975c67()) {
@@ -573,18 +568,14 @@ function function_258d537d() {
         }
     }
     foreach (prop in level.doa.var_258d537d.props) {
-        /#
-            assert(!isdefined(prop.scriptmodel));
-        #/
+        assert(!isdefined(prop.scriptmodel));
         prop.scriptmodel = namespace_ec06fe4a::spawnmodel(prop.origin, prop.model, prop.angles, "podium prop");
         if (isdefined(prop.script_noteworthy)) {
             prop.scriptmodel setscale(float(prop.script_noteworthy));
         }
     }
     foreach (guy in level.doa.var_258d537d.var_ba1ebafb) {
-        /#
-            assert(!isdefined(guy.scriptmodel));
-        #/
+        assert(!isdefined(guy.scriptmodel));
         guy.scriptmodel = namespace_ec06fe4a::spawnmodel(guy.origin, guy.model, guy.angles, "podium crowd");
         guy.scriptmodel thread function_13281cbd(guy.script_int);
     }
@@ -621,9 +612,7 @@ function function_258d537d() {
     }
     level namespace_7f5aeb59::function_67f054d7();
     foreach (prop in level.doa.var_258d537d.props) {
-        /#
-            assert(isdefined(prop.scriptmodel));
-        #/
+        assert(isdefined(prop.scriptmodel));
         prop.scriptmodel delete();
         prop.scriptmodel = undefined;
     }

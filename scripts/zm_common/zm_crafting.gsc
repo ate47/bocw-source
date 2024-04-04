@@ -122,9 +122,7 @@ function setup_tables() {
         if (isdefined(var_6886faaa)) {
             trigger.craftfoundry = function_c1552513(var_6886faaa);
         } else {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            assertmsg("<unknown string>");
         }
         unitrigger = function_f665fde0(trigger);
         if (!isdefined(level.var_4fe2f84d[var_6886faaa])) {
@@ -149,9 +147,7 @@ function setup_tables() {
 // Checksum 0x2c0285fa, Offset: 0x908
 // Size: 0x96
 function reset_table() {
-    /#
-        assert(!is_true(self.registered), "<unknown string>");
-    #/
+    assert(!is_true(self.registered), "<unknown string>");
     zm_unitrigger::register_static_unitrigger(self, &crafting_think);
     self function_35f5c90b(#"craft");
     self.crafted = 0;
@@ -168,9 +164,7 @@ function function_c1552513(name) {
         craftfoundry.name = name;
         setup_craftfoundry(craftfoundry);
     } else {
-        /#
-            assertmsg("<unknown string>" + name);
-        #/
+        assertmsg("<unknown string>" + name);
     }
     return craftfoundry;
 }
@@ -223,9 +217,7 @@ function function_b18074d0(name) {
             #/
         }
     } else {
-        /#
-            assertmsg("<unknown string>" + name);
-        #/
+        assertmsg("<unknown string>" + name);
     }
     return blueprint;
 }
@@ -254,9 +246,7 @@ function get_component(component, blueprint) {
                     var_f61629fd = function_9e72a96(var_f61629fd);
                 }
             #/
-            /#
-                assertmsg("<unknown string>" + (isdefined(var_61972150) ? var_61972150 : "<unknown string>") + "<unknown string>" + (isdefined(var_f61629fd) ? var_f61629fd : "<unknown string>"));
-            #/
+            assertmsg("<unknown string>" + (isdefined(var_61972150) ? var_61972150 : "<unknown string>") + "<unknown string>" + (isdefined(var_f61629fd) ? var_f61629fd : "<unknown string>"));
         }
         /#
             function_4765f5b3(component);
@@ -671,9 +661,7 @@ function function_987a472(modelname, blueprint) {
             s_crafting.model notsolid();
             s_crafting.model show();
         } else {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            assertmsg("<unknown string>");
         }
         return;
     }
@@ -817,9 +805,7 @@ function private function_35f5c90b(state) {
             if (ishash(state)) {
                 state = "<unknown string>" + function_9e72a96(state);
             }
-            /#
-                assertmsg("<unknown string>" + state);
-            #/
+            assertmsg("<unknown string>" + state);
         #/
         return;
     }
@@ -866,7 +852,6 @@ function crafting_think() {
     self notify(#"crafting_think");
     self endon(#"crafting_think", #"kill_trigger", #"death");
     while (isdefined(self)) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
         level notify(#"crafting_started", {#unitrigger:self, #activator:player});

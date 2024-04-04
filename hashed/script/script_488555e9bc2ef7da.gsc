@@ -274,7 +274,6 @@ function function_9de5caaf(*params) {
 function function_f73f4bc2() {
     level endon(#"end_game", #"player_has_both_fuse");
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"hash_24ebf2a541a3c3ea");
         if (zm_utility::check_point_in_playable_area(waitresult.position)) {
             point = function_4ba8fde(#"item_zmquest_platinum_power_quest_fuse");

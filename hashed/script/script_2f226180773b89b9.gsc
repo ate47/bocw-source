@@ -8,22 +8,6 @@
 class cself_revive_visuals_rush : cluielem {
 
     // Namespace cself_revive_visuals_rush/self_revive_visuals_rush
-    // Params 0, eflags: 0x8
-    // Checksum 0x4d8cce20, Offset: 0x350
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cself_revive_visuals_rush/self_revive_visuals_rush
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x672a1259, Offset: 0x4a0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cself_revive_visuals_rush/self_revive_visuals_rush
     // Params 1, eflags: 0x0
     // Checksum 0xa7ba79ea, Offset: 0x438
     // Size: 0x24
@@ -53,7 +37,7 @@ class cself_revive_visuals_rush : cluielem {
     // Checksum 0xcfc5b43f, Offset: 0x468
     // Size: 0x30
     function set_revive_time(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "revive_time", value);
+        set_data(localclientnum, "revive_time", value);
     }
 
     // Namespace cself_revive_visuals_rush/self_revive_visuals_rush
@@ -62,7 +46,7 @@ class cself_revive_visuals_rush : cluielem {
     // Size: 0x40
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "revive_time", 0);
+        set_data(localclientnum, "revive_time", 0);
     }
 
 }

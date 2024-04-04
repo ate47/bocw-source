@@ -187,9 +187,7 @@ function waitlongdurationwithhostmigrationpause(duration) {
     if (duration == 0) {
         return;
     }
-    /#
-        assert(duration > 0);
-    #/
+    assert(duration > 0);
     starttime = gettime();
     for (endtime = gettime() + int(duration * 1000); gettime() < endtime; endtime = endtime + timepassed) {
         waittillhostmigrationstarts(float(endtime - gettime()) / 1000);
@@ -214,9 +212,7 @@ function waitlongdurationwithhostmigrationpauseemp(duration) {
     if (duration == 0) {
         return;
     }
-    /#
-        assert(duration > 0);
-    #/
+    assert(duration > 0);
     starttime = gettime();
     empendtime = gettime() + int(duration * 1000);
     level.empendtime = empendtime;
@@ -247,9 +243,7 @@ function waitlongdurationwithgameendtimeupdate(duration) {
     if (duration == 0) {
         return;
     }
-    /#
-        assert(duration > 0);
-    #/
+    assert(duration > 0);
     starttime = gettime();
     endtime = gettime() + int(duration * 1000);
     while (gettime() < endtime) {

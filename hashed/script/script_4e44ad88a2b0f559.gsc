@@ -326,15 +326,15 @@ function private function_b5460039(point, var_e125ba43, debugcolor) {
     var_a3375299 = undefined;
     if (isdefined(self.bot.var_32d8dabe)) {
         var_a3375299 = point;
-        point = point + rotatepoint(self.bot.var_32d8dabe, self.angles + vectorscale((0, 1, 0), 180));
+        point = point + rotatepoint(self.bot.var_32d8dabe, self.angles + (0, 180, 0));
     }
     /#
         if (self should_record("<unknown string>")) {
-            function_af72dbc5(point, vectorscale((-1, -1, -1), 1.5), vectorscale((1, 1, 1), 1.5), self.angles[1], debugcolor, "<unknown string>", self);
-            record3dtext(function_9e72a96(var_e125ba43), point + vectorscale((0, 0, -1), 0.75), (1, 1, 1), "<unknown string>", self, 0.5);
+            function_af72dbc5(point, (-1.5, -1.5, -1.5), (1.5, 1.5, 1.5), self.angles[1], debugcolor, "<unknown string>", self);
+            record3dtext(function_9e72a96(var_e125ba43), point + (0, 0, -0.75), (1, 1, 1), "<unknown string>", self, 0.5);
             if (isdefined(var_a3375299)) {
-                function_af72dbc5(var_a3375299, vectorscale((-1, -1, -1), 1.5), vectorscale((1, 1, 1), 1.5), self.angles[1], vectorscale((1, 1, 1), 0.75), "<unknown string>", self);
-                recordline(var_a3375299, point, vectorscale((1, 1, 1), 0.75), "<unknown string>", self);
+                function_af72dbc5(var_a3375299, (-1.5, -1.5, -1.5), (1.5, 1.5, 1.5), self.angles[1], (0.75, 0.75, 0.75), "<unknown string>", self);
+                recordline(var_a3375299, point, (0.75, 0.75, 0.75), "<unknown string>", self);
                 if (isdefined(self.bot.var_9e5aaf8d)) {
                     record3dtext(self.bot.var_9e5aaf8d + "<unknown string>", var_a3375299, (1, 1, 0), "<unknown string>", self, 0.5);
                 }

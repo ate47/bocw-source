@@ -8,21 +8,8 @@
 // Method(s) 6 Total 13
 class class_ec90ce81 : cluielem {
 
-    // Namespace class_ec90ce81/sr_weapon_upgrade_menu
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x7db406ec, Offset: 0x1f0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_ec90ce81/sr_weapon_upgrade_menu
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xfd685574, Offset: 0x328
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_ec90ce81/sr_weapon_upgrade_menu
     // Params 2, eflags: 0x2 linked
@@ -45,7 +32,7 @@ class class_ec90ce81 : cluielem {
     // Checksum 0x8a14e737, Offset: 0x2d8
     // Size: 0x44
     function function_83d182e9(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "cannotAmmoMod", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "cannotAmmoMod", value);
     }
 
     // Namespace namespace_ec90ce81/sr_weapon_upgrade_menu

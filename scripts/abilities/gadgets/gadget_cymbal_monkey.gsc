@@ -195,7 +195,7 @@ function private function_1beaca16() {
         if (!tracepassedonnavmesh(var_7162cf15, var_45889380, 15)) {
             /#
                 recordstar(var_45889380, (1, 0, 0));
-                record3dtext("<unknown string>", queryresult.data[i].origin + vectorscale((0, 0, 1), 8), (1, 0, 0));
+                record3dtext("<unknown string>", queryresult.data[i].origin + (0, 0, 8), (1, 0, 0));
             #/
             continue;
         }
@@ -275,7 +275,7 @@ function function_948b1eea(zombie) {
     }
     target_pos = undefined;
     if (!isdefined(self.var_acdc8d71)) {
-        target_pos = groundtrace(self.origin + vectorscale((0, 0, 1), 8), self.origin + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
+        target_pos = groundtrace(self.origin + (0, 0, 8), self.origin + (0, 0, -100000), 0, self)[#"position"];
     } else {
         target_pos = self.var_acdc8d71;
     }
@@ -293,7 +293,7 @@ function function_127fb8f3(cymbal_monkey, *attackingplayer) {
     attackingplayer endon(#"death");
     randangle = randomfloat(360);
     if (isdefined(level._equipment_emp_destroy_fx)) {
-        playfx(level._equipment_emp_destroy_fx, attackingplayer.origin + vectorscale((0, 0, 1), 5), (cos(randangle), sin(randangle), 0), anglestoup(attackingplayer.angles));
+        playfx(level._equipment_emp_destroy_fx, attackingplayer.origin + (0, 0, 5), (cos(randangle), sin(randangle), 0), anglestoup(attackingplayer.angles));
     }
     wait(1.1);
     playfx(#"hash_65c5042becfbaa7d", attackingplayer.origin);

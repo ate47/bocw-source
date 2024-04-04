@@ -52,12 +52,8 @@ function function_136c2270(user) {
 // Checksum 0xa014e257, Offset: 0x240
 // Size: 0x134
 function function_a1839d6b(user, player, key) {
-    /#
-        assert(isdefined(self.users[user]));
-    #/
-    /#
-        assert(isdefined(self.users[user].contributors));
-    #/
+    assert(isdefined(self.users[user]));
+    assert(isdefined(self.users[user].contributors));
     if (!isdefined(self.users[user].contributors[key])) {
         contribution = {#player:player, #contribution:0};
         self.users[user].contributors[key] = contribution;
@@ -214,12 +210,8 @@ function function_b64fb43d() {
 // Checksum 0x79f2a0bf, Offset: 0x9b8
 // Size: 0xa6
 function function_22c9de38(user, count = 1) {
-    /#
-        assert(isdefined(self.users[user]));
-    #/
-    /#
-        assert(isdefined(self.users[user].touching));
-    #/
+    assert(isdefined(self.users[user]));
+    assert(isdefined(self.users[user].touching));
     self.users[user].touching.num = self.users[user].touching.num + count;
 }
 
@@ -228,12 +220,8 @@ function function_22c9de38(user, count = 1) {
 // Checksum 0x1b362604, Offset: 0xa68
 // Size: 0xe6
 function function_26237f3c(user, count = 1) {
-    /#
-        assert(isdefined(self.users[user]));
-    #/
-    /#
-        assert(isdefined(self.users[user].touching));
-    #/
+    assert(isdefined(self.users[user]));
+    assert(isdefined(self.users[user].touching));
     self.users[user].touching.num = self.users[user].touching.num - count;
     if (self.users[user].touching.num < 1) {
         self.users[user].touching.num = 0;
@@ -262,9 +250,7 @@ function function_83eda4c0(user) {
 // Checksum 0x83bfe579, Offset: 0xbd8
 // Size: 0xf4
 function function_ce47d61c(var_5b1365c0 = 0) {
-    /#
-        assert(self.var_9288c4c0 <= self.usetime);
-    #/
+    assert(self.var_9288c4c0 <= self.usetime);
     if (self.maxusers > 0) {
         var_5b1365c0 = min(var_5b1365c0, self.maxusers);
     }
@@ -334,12 +320,8 @@ function function_21db7d02(numclaimants = 0, numother = 0) {
 // Checksum 0xf8131b6b, Offset: 0xf98
 // Size: 0x96
 function function_f1342bb2(user, rate) {
-    /#
-        assert(isdefined(self.users[user]));
-    #/
-    /#
-        assert(isdefined(self.users[user].touching));
-    #/
+    assert(isdefined(self.users[user]));
+    assert(isdefined(self.users[user].touching));
     self.users[user].touching.rate = self.users[user].touching.rate + rate;
 }
 
@@ -348,12 +330,8 @@ function function_f1342bb2(user, rate) {
 // Checksum 0xdd3de055, Offset: 0x1038
 // Size: 0xd6
 function function_27b84c22(user, rate) {
-    /#
-        assert(isdefined(self.users[user]));
-    #/
-    /#
-        assert(isdefined(self.users[user].touching));
-    #/
+    assert(isdefined(self.users[user]));
+    assert(isdefined(self.users[user].touching));
     self.users[user].touching.rate = self.users[user].touching.rate - rate;
     if (self.users[user].touching.num < 1) {
         self.users[user].touching.rate = 0;
@@ -365,12 +343,8 @@ function function_27b84c22(user, rate) {
 // Checksum 0xbe7f0706, Offset: 0x1118
 // Size: 0xb8
 function function_fdf87288(user, player, var_8a3ae0a0, var_5717fa0c) {
-    /#
-        assert(isdefined(self.users[user]));
-    #/
-    /#
-        assert(isdefined(self.users[user].touching));
-    #/
+    assert(isdefined(self.users[user]));
+    assert(isdefined(self.users[user].touching));
     self.users[user].touching.players[var_5717fa0c] = {#player:player, #rate:var_8a3ae0a0, #starttime:gettime()};
 }
 
@@ -379,12 +353,8 @@ function function_fdf87288(user, player, var_8a3ae0a0, var_5717fa0c) {
 // Checksum 0xcd978244, Offset: 0x11d8
 // Size: 0x78
 function function_472b3c15(user, var_5717fa0c) {
-    /#
-        assert(isdefined(self.users[user]));
-    #/
-    /#
-        assert(isdefined(self.users[user].touching));
-    #/
+    assert(isdefined(self.users[user]));
+    assert(isdefined(self.users[user].touching));
     self.users[user].touching.players[var_5717fa0c] = undefined;
 }
 

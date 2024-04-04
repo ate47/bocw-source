@@ -49,7 +49,6 @@ function function_1b39ded0() {
 function function_fcc7ca52() {
     self endon(#"death");
     for (;;) {
-        params = undefined;
         params = self waittill(#"gunner_weapon_fired");
         if (params.gunner_index === 1) {
             self turretsettarget(2, self turretgettarget(1));
@@ -93,7 +92,6 @@ function function_7d2e878c() {
     level endon(#"game_ended");
     self endon(#"death");
     for (;;) {
-        waitresult = undefined;
         waitresult = self waittill(#"stinger_fired_at_me");
         if (!isdefined(self.var_51e39f11)) {
             self.var_51e39f11 = [];

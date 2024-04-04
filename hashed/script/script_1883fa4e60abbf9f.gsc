@@ -64,9 +64,7 @@ function group_flag_clear(f, group) {
 // Checksum 0x99059bb5, Offset: 0x4f8
 // Size: 0xbc
 function group_flag_set(f) {
-    /#
-        assert(issentient(self), "<unknown string>");
-    #/
+    assert(issentient(self), "<unknown string>");
     name = self get_group_flagname(f);
     if (!level flag::get(name) && self != level) {
         self notify(f);
@@ -80,9 +78,7 @@ function group_flag_set(f) {
 // Checksum 0x539dc8d1, Offset: 0x5c0
 // Size: 0x72
 function group_flag(f) {
-    /#
-        assert(issentient(self), "<unknown string>");
-    #/
+    assert(issentient(self), "<unknown string>");
     name = self get_group_flagname(f);
     return level flag::get(name);
 }
@@ -93,9 +89,7 @@ function group_flag(f) {
 // Size: 0x7a
 function get_group_flagname(f, group) {
     if (!isdefined(group)) {
-        /#
-            assert(issentient(self), "<unknown string>");
-        #/
+        assert(issentient(self), "<unknown string>");
         group = self.script_stealthgroup;
     }
     name = f + "-Group:" + group;
@@ -143,9 +137,7 @@ function group_flag_waitopen_or_timeout(f, timer) {
 // Checksum 0x167bdfe2, Offset: 0x828
 // Size: 0x1ba
 function group_flag_init(f) {
-    /#
-        assert(issentient(self), "<unknown string>");
-    #/
+    assert(issentient(self), "<unknown string>");
     if (isdefined(self.script_stealthgroup)) {
         self.script_stealthgroup = string(self.script_stealthgroup);
     } else {
@@ -182,9 +174,7 @@ function function_740dbf99() {
 // Checksum 0x233a6ebb, Offset: 0xa40
 // Size: 0x74
 function group_setcombatgoalradius(group, goalradius) {
-    /#
-        assert(isdefined(level.stealth));
-    #/
+    assert(isdefined(level.stealth));
     if (!isdefined(level.stealth.combat_goalradius)) {
         level.stealth.combat_goalradius = [];
     }
@@ -196,9 +186,7 @@ function group_setcombatgoalradius(group, goalradius) {
 // Checksum 0xe3283872, Offset: 0xac0
 // Size: 0xe2
 function group_add() {
-    /#
-        assert(issentient(self), "<unknown string>");
-    #/
+    assert(issentient(self), "<unknown string>");
     if (!isdefined(level.stealth.group.groups[self.script_stealthgroup])) {
         level.stealth.group.groups[self.script_stealthgroup] = [];
         level.stealth.group notify(self.script_stealthgroup);
@@ -211,12 +199,8 @@ function group_add() {
 // Checksum 0x5bd1f71e, Offset: 0xbb0
 // Size: 0x82
 function group_spotted_flag() {
-    /#
-        assert(self.team != "<unknown string>", "<unknown string>");
-    #/
-    /#
-        assert(isdefined(self.stealth.var_103386e8));
-    #/
+    assert(self.team != "<unknown string>", "<unknown string>");
+    assert(isdefined(self.stealth.var_103386e8));
     return level flag::get(self.stealth.var_103386e8);
 }
 
@@ -283,9 +267,7 @@ function set_stealth_state(msg) {
 // Checksum 0xe2a187c8, Offset: 0xe98
 // Size: 0x34
 function check_stealth() {
-    /#
-        assert(isdefined(self.stealth), "<unknown string>" + self.origin);
-    #/
+    assert(isdefined(self.stealth), "<unknown string>" + self.origin);
 }
 
 // Namespace namespace_979752dc/utility
@@ -338,9 +320,7 @@ function function_7211414e(alertlevel) {
 // Size: 0x5c
 function set_detect_ranges(hidden, spotted) {
     if (!isdefined(hidden) && !isdefined(spotted)) {
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
     }
     namespace_393f6012::set_detect_ranges_internal(hidden, spotted);
 }
@@ -351,9 +331,7 @@ function set_detect_ranges(hidden, spotted) {
 // Size: 0x206
 function set_min_detect_range_darkness(hidden, spotted) {
     if (!isdefined(hidden) && !isdefined(spotted)) {
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
     }
     if (isdefined(hidden)) {
         level.stealth.detect.minrangedarkness[#"hidden"][#"prone"] = hidden[#"prone"];
@@ -421,9 +399,7 @@ function save_last_goal() {
 // Checksum 0xff484aa1, Offset: 0x1628
 // Size: 0x2c
 function set_patrol_move_loop_anim(*animoverride) {
-    /#
-        assertmsg("<unknown string>");
-    #/
+    assertmsg("<unknown string>");
 }
 
 // Namespace namespace_979752dc/utility
@@ -452,9 +428,7 @@ function get_patrol_react_magnitude_int(style) {
     case #"large":
         return 3;
     }
-    /#
-        assertmsg("<unknown string>");
-    #/
+    assertmsg("<unknown string>");
 }
 
 // Namespace namespace_979752dc/utility
@@ -490,9 +464,7 @@ function set_patrol_style(style, allowreact, reactposition, magnitude) {
 // Checksum 0xa7c0231e, Offset: 0x18b0
 // Size: 0x32
 function get_patrol_style() {
-    /#
-        assert(isdefined(self.stealth));
-    #/
+    assert(isdefined(self.stealth));
     return self.stealth.var_458bda8;
 }
 
@@ -563,11 +535,7 @@ function set_patrol_react(position, magnitude, style) {
             return;
         }
     }
-    /#
-        /#
-            assert(magnitude == "<unknown string>" || magnitude == "<unknown string>" || magnitude == "<unknown string>" || magnitude == "<unknown string>");
-        #/
-    #/
+    assert(magnitude == "<unknown string>" || magnitude == "<unknown string>" || magnitude == "<unknown string>" || magnitude == "<unknown string>");
     if (self.alertlevel == "combat" && magnitude != "large") {
         magnitude = "large";
     }
@@ -897,9 +865,7 @@ function set_disguised_default(disguised = 0) {
 // Checksum 0xb89006bb, Offset: 0x2e38
 // Size: 0x14a
 function stealth_override_goal(override) {
-    /#
-        assert(isdefined(self.stealth));
-    #/
+    assert(isdefined(self.stealth));
     if (!isdefined(override)) {
         override = 0;
     }
@@ -1022,9 +988,7 @@ function enable_stealth_for_ai(enabled, var_6f52290c = 0) {
 // Checksum 0x1309af81, Offset: 0x35e8
 // Size: 0xb4
 function custom_state_functions(array) {
-    /#
-        assert(!isdefined(self.stealth), "<unknown string>");
-    #/
+    assert(!isdefined(self.stealth), "<unknown string>");
     if (isdefined(array[#"spotted"])) {
         self.stealth_state_func[#"spotted"] = array[#"spotted"];
     }
@@ -1150,7 +1114,6 @@ function clear_movement_speed() {
 // Checksum 0x46721dbd, Offset: 0x39d0
 // Size: 0x52
 function ignore_corpse() {
-    waitresult = undefined;
     waitresult = self waittill(#"actor_corpse");
     if (isdefined(waitresult.corpse)) {
         waitresult.corpse.found = 1;
@@ -1170,9 +1133,7 @@ function function_bf1fb16f() {
 // Checksum 0xe2df17e2, Offset: 0x3a50
 // Size: 0x76
 function function_569a126(enabled, distance = 2000) {
-    /#
-        assert(isdefined(level.stealth));
-    #/
+    assert(isdefined(level.stealth));
     if (enabled) {
         level.stealth.var_6fd6463b = distance * distance;
         return;

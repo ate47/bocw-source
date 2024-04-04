@@ -246,7 +246,7 @@ function function_732dcb56(killstreaktype) {
         recon_plane.extra_low_health_callback = &function_71ad74a1;
     }
     recon_plane.numflares = 1;
-    recon_plane helicopter::create_flare_ent(vectorscale((0, 0, -1), 25));
+    recon_plane helicopter::create_flare_ent((0, 0, -25));
     recon_plane.rocketdamage = recon_plane.maxhealth / 3 + 1;
     recon_plane moveto(endposition, 40000 * 0.002);
     recon_plane.angles = angles;
@@ -304,7 +304,7 @@ function function_98e60435(var_d44b8c3e, bundle) {
                 var_59a518e1 = array::sort_by_value(var_59a518e1, 1);
                 maxheight = var_59a518e1[var_59a518e1.size - 1];
                 var_35637e22 = maxheight - var_59a518e1[0];
-                trace = groundtrace((var_d44b8c3e[0], var_d44b8c3e[1], maxheight), var_d44b8c3e - vectorscale((0, 0, 1), 5000), 0, undefined);
+                trace = groundtrace((var_d44b8c3e[0], var_d44b8c3e[1], maxheight), var_d44b8c3e - (0, 0, 5000), 0, undefined);
                 groundheight = trace[#"position"][2];
                 var_6b1fb8d9 = groundheight + (maxheight - groundheight) * bundle.var_ff73e08c;
                 endposition = var_90aa61b + vectorscale(forward, var_12306a94 * 2);
@@ -321,7 +321,7 @@ function function_98e60435(var_d44b8c3e, bundle) {
                     var_af2fe365[#"angles"] = angles;
                 }
             }
-            angles = angles + vectorscale((0, 1, 0), 30);
+            angles = angles + (0, 30, 0);
             forward = anglestoforward(angles);
             var_51c6fb78++;
             waitframe(1);
@@ -405,9 +405,7 @@ function ontimeout() {
     self function_171f5ed8();
     self clientfield::set("recon_plane", 0);
     airsupport::leave(10);
-    /#
-        assert(10 > 3);
-    #/
+    assert(10 > 3);
     self util::delay(10 - 3, undefined, &killstreaks::function_3696d106);
     wait(10 - 1);
     self killstreaks::function_90e951f2();
@@ -516,28 +514,20 @@ function function_171f5ed8() {
 function function_cf33d294() {
     if (level.teambased) {
         level.var_eb10c6a7[self.team]--;
-        /#
-            assert(level.var_eb10c6a7[self.team] >= 0);
-        #/
+        assert(level.var_eb10c6a7[self.team] >= 0);
         if (level.var_eb10c6a7[self.team] < 0) {
             level.var_eb10c6a7[self.team] = 0;
         }
     } else if (isdefined(self.ownerentnum)) {
         level.var_eb10c6a7[self.ownerentnum]--;
-        /#
-            assert(level.var_eb10c6a7[self.ownerentnum] >= 0);
-        #/
+        assert(level.var_eb10c6a7[self.ownerentnum] >= 0);
         if (level.var_eb10c6a7[self.ownerentnum] < 0) {
             level.var_eb10c6a7[self.ownerentnum] = 0;
         }
     }
-    /#
-        assert(isdefined(self.ownerentnum));
-    #/
+    assert(isdefined(self.ownerentnum));
     level.var_42ce45d5[self.ownerentnum]--;
-    /#
-        assert(level.var_42ce45d5[self.ownerentnum] >= 0);
-    #/
+    assert(level.var_42ce45d5[self.ownerentnum] >= 0);
     level notify(#"hash_25b529a667fde073");
 }
 

@@ -77,9 +77,7 @@ function private function_43c85ce2() {
         if (function_3132f113(self) == 1) {
             return undefined;
         }
-        /#
-            assert(isvec(origin) == 1);
-        #/
+        assert(isvec(origin) == 1);
         return origin;
     #/
 }
@@ -102,9 +100,7 @@ function private function_cb457f5b() {
         if (function_3132f113(self) == 1) {
             return undefined;
         }
-        /#
-            assert(isvec(angles) == 1);
-        #/
+        assert(isvec(angles) == 1);
         return angles;
     #/
 }
@@ -134,9 +130,7 @@ function private function_7814c6ed(player, playerview, playerangles, cosfov, max
         var_1e686756 = level._snd.var_88612b20.filter;
         soundalias = self function_738e0260();
         origin = undefined;
-        /#
-            assert(isdefined(soundalias) == 1);
-        #/
+        assert(isdefined(soundalias) == 1);
         var_688ce44d = function_c41f829d(soundalias);
         if (isdefined(var_688ce44d) && var_688ce44d == 0) {
             return -1;
@@ -187,9 +181,7 @@ function private function_a3b46281(var_22a4e6a0, array, player, playerview, play
         playerforward = anglestoforward(cosfov);
         playerfov = playerview function_731299e5();
         visible = [];
-        /#
-            assert(isarray(array));
-        #/
+        assert(isarray(array));
         if (isarray(player) && player.size > 0) {
             visible = function_ada64c98(player, playerangles, playerforward, playerfov, maxdistance);
             array = arraycombine(array, visible, 0);
@@ -216,12 +208,8 @@ function private function_9386ad03(player, var_977d0bf3) {
         maxdistance = level._snd.var_88612b20.var_f0f0e7f7;
         maxdistance = maxdistance <= 0 ? 262144 : maxdistance;
         var_22a4e6a0 = [];
-        /#
-            assert(isdefined(player) == 1);
-        #/
-        /#
-            assert(isdefined(var_977d0bf3) == 1);
-        #/
+        assert(isdefined(player) == 1);
+        assert(isdefined(var_977d0bf3) == 1);
         playerview = player function_efda2d6d();
         playerangles = player function_3d31768f();
         fov = player function_731299e5();
@@ -333,9 +321,7 @@ function private function_b78b1ab1(player, *var_977d0bf3) {
         soundalias = self function_738e0260();
         radiusmin = "<unknown string>";
         radiusmax = "<unknown string>";
-        /#
-            assert(isdefined(var_977d0bf3) == 1);
-        #/
+        assert(isdefined(var_977d0bf3) == 1);
         playerview = var_977d0bf3 function_efda2d6d();
         playerangles = var_977d0bf3 function_3d31768f();
         playerright = anglestoright(playerangles);
@@ -451,12 +437,8 @@ function private function_3d58f598(var_977d0bf3) {
         var_89cff76c = "<unknown string>";
         var_a91ca488 = 0;
         if (isdefined(level.var_b7d2deb) == 1) {
-            /#
-                assert(isdefined(level.var_c8afcee6) == 1);
-            #/
-            /#
-                assert(isdefined(level.var_eb0e2b51) == 1);
-            #/
+            assert(isdefined(level.var_c8afcee6) == 1);
+            assert(isdefined(level.var_eb0e2b51) == 1);
             var_56ac818e = level.var_c8afcee6;
             var_da38b6bb = level.var_eb0e2b51;
         }
@@ -850,38 +832,38 @@ function private function_27e49109(distance) {
                 if (is_true(level._snd.var_2dd09170)) {
                     if (isstring(ent.classname)) {
                         yy = (0, 0, var_edbb6afa * row);
-                        function_ac033c46("<unknown string>", ent.origin + yy, scale, "<unknown string>", vectorscale((1, 1, 1), 0.72974), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
+                        function_ac033c46("<unknown string>", ent.origin + yy, scale, "<unknown string>", (0.72974, 0.72974, 0.72974), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
                         function_ac033c46("<unknown string>" + function_ea2f17d1(ent.classname, "<unknown string>"), ent.origin + yy, scale, "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
                     }
                     if (isstring(ent.targetname)) {
                         row++;
                         yy = (0, 0, var_edbb6afa * row);
-                        function_ac033c46("<unknown string>", ent.origin + yy, scale, "<unknown string>", vectorscale((1, 1, 1), 0.72974), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
+                        function_ac033c46("<unknown string>", ent.origin + yy, scale, "<unknown string>", (0.72974, 0.72974, 0.72974), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
                         function_ac033c46("<unknown string>" + function_ea2f17d1(ent.targetname, "<unknown string>"), ent.origin + yy, scale, "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
                     }
                     if (isstring(ent.script_noteworthy)) {
                         row++;
                         yy = (0, 0, var_edbb6afa * row);
-                        function_ac033c46("<unknown string>", ent.origin + yy, scale, "<unknown string>", vectorscale((1, 1, 1), 0.72974), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
+                        function_ac033c46("<unknown string>", ent.origin + yy, scale, "<unknown string>", (0.72974, 0.72974, 0.72974), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
                         function_ac033c46("<unknown string>" + function_ea2f17d1(ent.script_noteworthy, "<unknown string>"), ent.origin + yy, scale, "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
                     }
                 }
                 row = 3;
                 if (is_true(level._snd.var_8c37ff34)) {
                     if (isstring(ent.classname)) {
-                        function_ac033c46("<unknown string>", ent.origin + yy, scale, "<unknown string>", vectorscale((1, 1, 1), 0.72974), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
+                        function_ac033c46("<unknown string>", ent.origin + yy, scale, "<unknown string>", (0.72974, 0.72974, 0.72974), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
                         function_ac033c46("<unknown string>" + function_ea2f17d1(ent.classname, "<unknown string>"), ent.origin + yy, scale, "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
                     }
                     if (isstring(ent.targetname)) {
                         row++;
                         yy = (0, 0, var_edbb6afa * row);
-                        function_ac033c46("<unknown string>", ent.origin + yy, scale, "<unknown string>", vectorscale((1, 1, 1), 0.72974), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
+                        function_ac033c46("<unknown string>", ent.origin + yy, scale, "<unknown string>", (0.72974, 0.72974, 0.72974), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
                         function_ac033c46("<unknown string>" + function_ea2f17d1(ent.targetname, "<unknown string>"), ent.origin + yy, scale, "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
                     }
                     if (isstring(ent.script_noteworthy)) {
                         row++;
                         yy = (0, 0, var_edbb6afa * row);
-                        function_ac033c46("<unknown string>", ent.origin + yy, scale, "<unknown string>", vectorscale((1, 1, 1), 0.72974), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
+                        function_ac033c46("<unknown string>", ent.origin + yy, scale, "<unknown string>", (0.72974, 0.72974, 0.72974), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
                         function_ac033c46("<unknown string>" + function_ea2f17d1(ent.script_noteworthy, "<unknown string>"), ent.origin + yy, scale, "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 0.72, (1, 1, 1), 0.72);
                     }
                 }

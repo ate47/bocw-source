@@ -31,9 +31,7 @@
 function event_handler[gametype_init] main(*eventstruct) {
     level._zombie_gamemodeprecache = &onprecachegametype;
     level._zombie_gamemodemain = &onstartgametype;
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     level.var_36a81b25 = 1;
     clientfield::register("scriptmover", "" + #"hash_56a6be021662c82e", 1, 2, "int", &function_bed6f88d, 0, 0);
     clientfield::register_clientuimodel("hudItems.onslaught.wave_number", #"hash_6f4b11a0bee9b73d", [#"onslaught", #"wave_number"], 1, 7, "int", undefined, 0, 0);
@@ -58,9 +56,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     level._effect[#"hash_55ab97f3dc5e7ba2"] = "sr/fx9_safehouse_orb_activate";
     level.var_de8cc106 = #"hash_6d2c4c09332d861b";
     level.var_cb450873 = #"hash_4bfee97440e2b6f2";
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace zonslaught/zonslaught
@@ -80,9 +76,7 @@ function on_player_spawned(localclientnum) {
 // Checksum 0xd5183446, Offset: 0x8c0
 // Size: 0x24
 function onprecachegametype() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace zonslaught/zonslaught
@@ -90,9 +84,7 @@ function onprecachegametype() {
 // Checksum 0x6bc0607d, Offset: 0x8f0
 // Size: 0x24
 function onstartgametype() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace zonslaught/zonslaught
@@ -123,8 +115,8 @@ function function_bed6f88d(local_client_num, *oldval, newval, *bnewent, *binitia
             self.var_31a246b5 = util::playfxontag(fieldname, #"hash_60aef71494b594e5", self, "tag_origin");
             self playsound(fieldname, #"hash_5e9e10059b1e505c");
         } else {
-            self.var_31a246b5 = playfx(fieldname, level._effect[#"hash_d7a655f41aa4b03"], self.origin - vectorscale((0, 0, 1), 68));
-            self playsound(fieldname, #"hash_5e9e10059b1e505c", self.origin - vectorscale((0, 0, 1), 68));
+            self.var_31a246b5 = playfx(fieldname, level._effect[#"hash_d7a655f41aa4b03"], self.origin - (0, 0, 68));
+            self playsound(fieldname, #"hash_5e9e10059b1e505c", self.origin - (0, 0, 68));
         }
         return;
     }
@@ -153,7 +145,7 @@ function orb_spawn(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *f
         level.var_df7b46d1 = self;
         level.var_df7b46d1 thread function_40deac72(bwastimejump);
         if (!isdefined(level.var_df7b46d1.var_606d06a1)) {
-            v_spawn_pos = level.var_df7b46d1.origin + vectorscale((0, 0, 1), 10);
+            v_spawn_pos = level.var_df7b46d1.origin + (0, 0, 10);
             level.var_df7b46d1.var_606d06a1 = util::spawn_model(bwastimejump, "tag_origin", v_spawn_pos, level.var_df7b46d1.angles);
             level.var_df7b46d1.var_606d06a1.var_fc558e74 = isdefined(level.var_a0b1f787[#"hash_53079af25eecf35b"]) ? level.var_a0b1f787[#"hash_53079af25eecf35b"] : undefined;
             level.var_df7b46d1.var_606d06a1 linkto(level.var_df7b46d1, "tag_origin");
@@ -222,7 +214,7 @@ function orb_soul_capture_fx(localclientnum, *oldval, newval, *bnewent, *binitia
         util::playfxontag(fieldname, level._effect[#"soul_fx"], e_fx, "tag_origin");
         wait(0.3);
         power = distance(e_fx.origin, level.var_df7b46d1.origin);
-        n_time = e_fx fake_physicslaunch(level.var_df7b46d1.origin + vectorscale((0, 0, 1), 68), power, 0.85);
+        n_time = e_fx fake_physicslaunch(level.var_df7b46d1.origin + (0, 0, 68), power, 0.85);
         wait(n_time);
         playsound(fieldname, "zmb_onslaught_zsouls_end", level.var_df7b46d1.origin);
         e_fx stoploopsound(e_fx.sfx_id);

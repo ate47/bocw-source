@@ -50,9 +50,7 @@ function function_e170252c() {
     self.fovcosine = 0;
     self.fovcosinebusy = 0;
     self.vehaircraftcollisionenabled = 1;
-    /#
-        assert(isdefined(self.scriptbundlesettings));
-    #/
+    assert(isdefined(self.scriptbundlesettings));
     self.settings = getscriptbundle(self.scriptbundlesettings);
     self.goalradius = 999999;
     self.goalheight = 999999;
@@ -171,9 +169,7 @@ function guard_points_debug() {
 // Checksum 0x313ce784, Offset: 0xa60
 // Size: 0x332
 function get_guard_points(owner) {
-    /#
-        assert(self._guard_points.size > 0, "<unknown string>");
-    #/
+    assert(self._guard_points.size > 0, "<unknown string>");
     points_array = [];
     foreach (point in self._guard_points) {
         offset = rotatepoint(point, owner.angles);
@@ -188,10 +184,10 @@ function get_guard_points(owner) {
         }
     }
     if (points_array.size < 1) {
-        queryresult = positionquery_source_navigation(owner.origin + vectorscale((0, 0, 1), 50), 25, 200, 100, 1.2 * self.radius, self);
-        positionquery_filter_sight(queryresult, owner.origin + vectorscale((0, 0, 1), 10), (0, 0, 0), self, 3);
+        queryresult = positionquery_source_navigation(owner.origin + (0, 0, 50), 25, 200, 100, 1.2 * self.radius, self);
+        positionquery_filter_sight(queryresult, owner.origin + (0, 0, 10), (0, 0, 0), self, 3);
         foreach (point in queryresult.data) {
-            if (point.visibility === 1 && bullettracepassed(owner.origin + vectorscale((0, 0, 1), 10), point.origin, 0, self, self, 0, 1)) {
+            if (point.visibility === 1 && bullettracepassed(owner.origin + (0, 0, 10), point.origin, 0, self, self, 0, 1)) {
                 if (!isdefined(points_array)) {
                     points_array = [];
                 } else if (!isarray(points_array)) {

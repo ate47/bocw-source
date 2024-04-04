@@ -146,7 +146,7 @@ function function_496d0824(var_3bc2d545, var_e8456387, team, killstreak_id) {
     plane.var_61e3ab9c = var_1313ba73 * 2;
     plane.var_7d573472 = var_1313ba73 * 2;
     plane setspeedimmediate(var_1313ba73, plane.var_61e3ab9c, plane.var_7d573472);
-    target_set(plane, vectorscale((0, 0, 1), 100));
+    target_set(plane, (0, 0, 100));
     plane solid();
     plane killstreaks::function_2b6aa9e8("artillery_barrage", &function_cc147a03, &function_c0f8c056);
     plane thread heatseekingmissile::missiletarget_proximitydetonateincomingmissile(bundle, "crashing", "death");
@@ -589,7 +589,6 @@ function watchownerevents(bomb) {
 // Size: 0x6c
 function watchforemp(*owner) {
     self endon(#"delete", #"death");
-    waitresult = undefined;
     waitresult = self waittill(#"emp_deployed");
     function_9b3c6309(waitresult.attacker);
 }
@@ -662,7 +661,6 @@ function function_c0f8c056(*attacker, *weapon) {
 // Size: 0x34c
 function function_6cd200d2() {
     plane = self;
-    waitresult = undefined;
     waitresult = plane waittill(#"hash_1fe75f940ce5fd52");
     killed = waitresult.is_killed;
     if (target_istarget(plane)) {

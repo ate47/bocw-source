@@ -31,9 +31,7 @@
 // Size: 0x574
 function function_27e76b4c(var_39a61773, var_c027e5d, var_8703bf11 = 1) {
     if (!isdefined(level.var_7466d419)) {
-        /#
-            assert(isdefined(getent("spawner_hero_gunner", "t9_arm_intro_passenger_idle")), "t9_arm_intro_enterhuey_sittingonedge_");
-        #/
+        assert(isdefined(getent("spawner_hero_gunner", "t9_arm_intro_passenger_idle")), "t9_arm_intro_enterhuey_sittingonedge_");
         level.var_7466d419 = vehicle::simple_spawn_single("spawner_heli_player");
         params = spawnstruct();
         params.no_clear_movement = var_8703bf11;
@@ -74,9 +72,7 @@ function function_27e76b4c(var_39a61773, var_c027e5d, var_8703bf11 = 1) {
     }
     if (isdefined(var_c027e5d)) {
         if (var_c027e5d == 3 || var_c027e5d == 4 || var_c027e5d == 5) {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            assertmsg("<unknown string>");
         }
         if (var_c027e5d == 0) {
             if (level.var_7466d419.vehicletype != #"hash_75cd743f7ce45c03") {
@@ -127,12 +123,12 @@ function function_28dd3085(var_7c2d9419) {
 function function_75972637() {
     if (isdefined(level.var_7466d419.reflection)) {
         level.var_7466d419.reflection unlink();
-        level.var_7466d419.reflection.origin = vectorscale((0, 0, -1), 2000);
+        level.var_7466d419.reflection.origin = (0, 0, -2000);
         level.var_7466d419.reflection = undefined;
     }
     if (isdefined(level.var_7466d419.var_3ac8868)) {
         level.var_7466d419.var_3ac8868 unlink();
-        level.var_7466d419.var_3ac8868.origin = vectorscale((0, 0, -1), 2000);
+        level.var_7466d419.var_3ac8868.origin = (0, 0, -2000);
         level.var_7466d419.var_3ac8868 = undefined;
     }
 }
@@ -143,12 +139,8 @@ function function_75972637() {
 // Size: 0x1a6
 function function_8a8a52ab() {
     self endon(#"death");
-    /#
-        assert(isdefined(level.var_7466d419), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(level.var_7466d419.turretweapon), "<unknown string>");
-    #/
+    assert(isdefined(level.var_7466d419), "<unknown string>");
+    assert(isdefined(level.var_7466d419.turretweapon), "<unknown string>");
     weapon = level.var_7466d419.turretweapon;
     while (true) {
         while (!self function_e01d381a() && !self reloadbuttonpressed()) {
@@ -982,7 +974,7 @@ function function_d01d891(boat, position) {
     str_model = #"hash_262ebc4f609e2513";
     weapon_name = undefined;
     if (!isdefined(boat.var_16826e92)) {
-        boat.var_16826e92 = util::spawn_anim_model("tag_origin", boat.origin + vectorscale((0, 0, 1), 32), boat.angles);
+        boat.var_16826e92 = util::spawn_anim_model("tag_origin", boat.origin + (0, 0, 32), boat.angles);
         boat.var_16826e92 linkto(boat);
     }
     tag = "tag_origin";
@@ -1028,9 +1020,7 @@ function function_d01d891(boat, position) {
         var_ef41a687[var_ef41a687.size] = "t9_arm_gear_up_pt2_boat_guy04";
         break;
     default:
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         break;
     }
     fake_guy = util::spawn_anim_model(str_model, boat.origin, boat.angles);
@@ -1163,9 +1153,7 @@ function function_b50b1da4(helicopter, position, var_f37b2ff0) {
         weapon_name = #"hash_4ff481a4f55ed901";
         break;
     default:
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         break;
     }
     fake_guy = util::spawn_anim_model(str_model, helicopter.origin, helicopter.angles);
@@ -1437,7 +1425,6 @@ function function_5f587847(guys, num, timeoutlength) {
     array::thread_all(guys, &ai::waittill_dead_or_dying_thread, ent);
     result = "kill_count_reached";
     while (ent.count > 0) {
-        waitresult = undefined;
         waitresult = ent waittill(#"waittill_dead_guy_dead_or_dying", #"thread_timed_out");
         if (waitresult._notify == "thread_timed_out") {
             result = "timeout";

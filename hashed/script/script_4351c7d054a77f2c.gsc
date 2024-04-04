@@ -8,22 +8,6 @@
 class cspectrerisingindicator : cluielem {
 
     // Namespace cspectrerisingindicator/spectrerisingindicator
-    // Params 0, eflags: 0x8
-    // Checksum 0xb776cd1a, Offset: 0x390
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cspectrerisingindicator/spectrerisingindicator
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x4ddd4d34, Offset: 0x568
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cspectrerisingindicator/spectrerisingindicator
     // Params 1, eflags: 0x0
     // Checksum 0x67e5735, Offset: 0x4c8
     // Size: 0x24
@@ -36,7 +20,7 @@ class cspectrerisingindicator : cluielem {
     // Checksum 0xd09e8a22, Offset: 0x4f8
     // Size: 0x30
     function set_clientnum(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "clientnum", value);
+        set_data(localclientnum, "clientnum", value);
     }
 
     // Namespace cspectrerisingindicator/spectrerisingindicator
@@ -52,7 +36,7 @@ class cspectrerisingindicator : cluielem {
     // Checksum 0x3c5a0b5f, Offset: 0x530
     // Size: 0x30
     function set_isalive(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "isAlive", value);
+        set_data(localclientnum, "isAlive", value);
     }
 
     // Namespace cspectrerisingindicator/spectrerisingindicator
@@ -71,8 +55,8 @@ class cspectrerisingindicator : cluielem {
     // Size: 0x5c
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "clientnum", 0);
-        [[ self ]]->set_data(localclientnum, "isAlive", 0);
+        set_data(localclientnum, "clientnum", 0);
+        set_data(localclientnum, "isAlive", 0);
     }
 
 }

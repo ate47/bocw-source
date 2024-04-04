@@ -83,7 +83,6 @@ function private function_6b10f386(w_weapon) {
 function private function_5c555bdb(var_8e0e7e97, var_6db1f82a, var_484302b2, a_params = undefined) {
     self endon(#"death", #"hash_79917746ae9a28ed");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (is_true(self.b_active)) {
             e_attacker = waitresult.attacker;
@@ -147,7 +146,7 @@ function private activate_target(b_active = 0, n_delay = undefined) {
             iprintlnbold("<unknown string>");
         #/
     } else {
-        var_34d18a7a = vectorscale((0, 0, 1), 60);
+        var_34d18a7a = (0, 0, 60);
     }
     if (b_active) {
         v_dest = self.s_spawn.origin;
@@ -206,9 +205,7 @@ function function_db3d8ac(mdl_target, var_d8f1c196) {
     mdl_target activate_target(1, var_d8f1c196.delay);
     if (isdefined(var_d8f1c196.target)) {
         var_411cc8d4 = struct::get(var_d8f1c196.target, "targetname");
-        /#
-            assert(isdefined(var_411cc8d4));
-        #/
+        assert(isdefined(var_411cc8d4));
         n_move_time = var_d8f1c196.move_time;
         if (!isdefined(n_move_time) || n_move_time <= 0) {
             n_move_time = 0.1;
@@ -364,7 +361,6 @@ function function_66e02dca() {
     }
     s_parent = self.stub.related_parent;
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         e_player = waitresult.activator;
         w_current_weapon = e_player getcurrentweapon();
@@ -397,7 +393,6 @@ function function_66e02dca() {
 function function_9af0ace6(str_weapon_type) {
     level endon(#"end_game");
     self endon(#"hash_171ccedffc06b5e", #"death");
-    waitresult = undefined;
     waitresult = self waittill(#"hash_6a9356013dd27e58");
     level flag::set(str_weapon_type + "_shooting_quest_failed");
 }
@@ -494,7 +489,7 @@ function function_4149847c() {
     level waittill(#"hash_5f47f6e344b29894");
     level flag::set(#"hash_709701a349515bd7");
     var_17aa01a8 = struct::get("sniper_shoot_start_trigger", "targetname");
-    var_356856d6 = util::spawn_model(#"hash_5fc40e47dd99a53f", var_17aa01a8.origin - vectorscale((0, 0, 1), 60), var_17aa01a8.angles);
+    var_356856d6 = util::spawn_model(#"hash_5fc40e47dd99a53f", var_17aa01a8.origin - (0, 0, 60), var_17aa01a8.angles);
     var_356856d6 init_target(var_17aa01a8);
     var_356856d6 thread function_5c555bdb("sniper", level.var_d352f703, &function_5eb556a3);
     var_356856d6 thread function_db3d8ac(var_356856d6, var_17aa01a8);
@@ -566,9 +561,9 @@ function function_d052dc1f(e_player, var_24b25ceb) {
             }
         }
         if (var_d8f1c196.var_d6118311 === "flip_up") {
-            mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin, var_d8f1c196.angles - vectorscale((0, 0, 1), 90));
+            mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin, var_d8f1c196.angles - (0, 0, 90));
         } else {
-            mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin - vectorscale((0, 0, 1), 60), var_d8f1c196.angles);
+            mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin - (0, 0, 60), var_d8f1c196.angles);
         }
         mdl_target init_target(var_d8f1c196);
         mdl_target thread function_5c555bdb("sniper", e_player, &function_3018008e, self);
@@ -670,7 +665,6 @@ function function_2c660cd2(e_player, var_24b25ceb) {
     var_3d23ecc = 0;
     self thread function_d052dc1f(e_player, var_24b25ceb);
     while (var_3d23ecc < var_77ba553d) {
-        waitresult = undefined;
         waitresult = self waittill(#"hash_7973087e9bdd4725", #"hash_6a9356013dd27e58");
         if (waitresult._notify === #"hash_7973087e9bdd4725") {
             var_3d23ecc++;
@@ -898,9 +892,9 @@ function function_d6ee3b1d(e_player, var_24b25ceb, var_ae876f40, var_eb891a8f, n
     self.a_targets = [];
     foreach (var_d8f1c196 in var_24b25ceb) {
         if (var_d8f1c196.var_d6118311 === "flip_up") {
-            mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin, var_d8f1c196.angles - vectorscale((0, 0, 1), 90));
+            mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin, var_d8f1c196.angles - (0, 0, 90));
         } else {
-            mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin - vectorscale((0, 0, 1), 60), var_d8f1c196.angles);
+            mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin - (0, 0, 60), var_d8f1c196.angles);
         }
         mdl_target init_target(var_d8f1c196);
         mdl_target thread function_5c555bdb("smg", e_player, &function_3018008e, self);
@@ -925,9 +919,9 @@ function function_d6ee3b1d(e_player, var_24b25ceb, var_ae876f40, var_eb891a8f, n
                 level flag::set(#"hash_2fe493ce31962394");
                 foreach (var_d8f1c196 in var_ae876f40) {
                     if (var_d8f1c196.var_d6118311 === "flip_up") {
-                        mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin, var_d8f1c196.angles - vectorscale((0, 0, 1), 90));
+                        mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin, var_d8f1c196.angles - (0, 0, 90));
                     } else {
-                        mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin - vectorscale((0, 0, 1), 60), var_d8f1c196.angles);
+                        mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin - (0, 0, 60), var_d8f1c196.angles);
                     }
                     mdl_target init_target(var_d8f1c196);
                     mdl_target thread function_5c555bdb("smg", e_player, &function_3018008e, self);
@@ -949,7 +943,6 @@ function function_d6ee3b1d(e_player, var_24b25ceb, var_ae876f40, var_eb891a8f, n
         }
     }
     while (var_3d23ecc < var_77ba553d) {
-        waitresult = undefined;
         waitresult = self waittill(#"hash_7973087e9bdd4725", #"hash_6a9356013dd27e58");
         if (waitresult._notify === #"hash_7973087e9bdd4725") {
             var_3d23ecc++;
@@ -1078,9 +1071,9 @@ function function_10418fa8(e_player, var_24b25ceb, var_ae876f40, var_eb891a8f, n
     }
     foreach (var_d8f1c196 in var_24b25ceb) {
         if (var_d8f1c196.var_d6118311 === "flip_up") {
-            mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin, var_d8f1c196.angles - vectorscale((0, 0, 1), 90));
+            mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin, var_d8f1c196.angles - (0, 0, 90));
         } else {
-            mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin - vectorscale((0, 0, 1), 60), var_d8f1c196.angles);
+            mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin - (0, 0, 60), var_d8f1c196.angles);
         }
         mdl_target init_target(var_d8f1c196);
         if (n_round == 2 || n_round == 4 || n_round == 5 || n_round == 7) {
@@ -1096,7 +1089,6 @@ function function_10418fa8(e_player, var_24b25ceb, var_ae876f40, var_eb891a8f, n
         self.a_targets[self.a_targets.size] = mdl_target;
     }
     while (var_3d23ecc < var_77ba553d) {
-        waitresult = undefined;
         waitresult = self waittill(#"hash_7973087e9bdd4725", #"hash_6a9356013dd27e58");
         if (waitresult._notify === #"hash_7973087e9bdd4725") {
             var_3d23ecc++;
@@ -1141,9 +1133,7 @@ function function_74afe29f(mdl_target, var_d8f1c196) {
     mdl_target activate_target(1, var_d8f1c196.delay);
     if (isdefined(var_d8f1c196.target)) {
         var_411cc8d4 = struct::get(var_d8f1c196.target, "targetname");
-        /#
-            assert(isdefined(var_411cc8d4));
-        #/
+        assert(isdefined(var_411cc8d4));
         n_move_time = var_d8f1c196.move_time;
         if (!isdefined(n_move_time) || n_move_time <= 0) {
             n_move_time = 0.1;
@@ -1301,14 +1291,12 @@ function function_1cb31d02(e_player, var_24b25ceb, n_round) {
     var_fce1cbd4 = [0, 1, 1.5, 2, 2, 3];
     var_fce1cbd4 = array::randomize(var_fce1cbd4);
     var_f425a78e = 0;
-    /#
-        assert(var_fce1cbd4.size >= var_24b25ceb.size);
-    #/
+    assert(var_fce1cbd4.size >= var_24b25ceb.size);
     foreach (var_d8f1c196 in var_24b25ceb) {
         if (var_d8f1c196.var_d6118311 === "flip_up") {
-            mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin, var_d8f1c196.angles - vectorscale((0, 0, 1), 90));
+            mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin, var_d8f1c196.angles - (0, 0, 90));
         } else {
-            mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin - vectorscale((0, 0, 1), 60), var_d8f1c196.angles);
+            mdl_target = util::spawn_model(#"hash_5fc40e47dd99a53f", var_d8f1c196.origin - (0, 0, 60), var_d8f1c196.angles);
         }
         mdl_target init_target(var_d8f1c196);
         mdl_target thread function_5c555bdb("pistol", e_player, &function_3018008e, self);
@@ -1323,7 +1311,6 @@ function function_1cb31d02(e_player, var_24b25ceb, n_round) {
         var_f425a78e++;
     }
     while (var_3d23ecc < var_77ba553d) {
-        waitresult = undefined;
         waitresult = self waittill(#"hash_7973087e9bdd4725", #"hash_6a9356013dd27e58");
         if (waitresult._notify === #"hash_7973087e9bdd4725") {
             var_3d23ecc++;
@@ -1420,9 +1407,7 @@ function function_44edd841(mdl_target, var_d8f1c196, n_round, *e_player) {
     }
     if (isdefined(n_round.target)) {
         var_411cc8d4 = struct::get(n_round.target, "targetname");
-        /#
-            assert(isdefined(var_411cc8d4));
-        #/
+        assert(isdefined(var_411cc8d4));
         n_move_time = n_round.move_time;
         if (!isdefined(n_move_time) || n_move_time <= 0) {
             n_move_time = 0.1;

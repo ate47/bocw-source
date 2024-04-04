@@ -34,63 +34,29 @@ function private preinit() {
 // Checksum 0x392b4504, Offset: 0x2b8
 // Size: 0x6a4
 function private registerbehaviorscriptfunctions() {
-    /#
-        assert(isscriptfunctionptr(&isziplining));
-    #/
+    assert(isscriptfunctionptr(&isziplining));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"isziplining", &isziplining);
-    /#
-        assert(!isdefined(&function_8de15fec) || isscriptfunctionptr(&function_8de15fec));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
+    assert(!isdefined(&function_8de15fec) || isscriptfunctionptr(&function_8de15fec));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_49592f95dd588bd6", &function_8de15fec, undefined, undefined);
-    /#
-        assert(isscriptfunctionptr(&function_dedfe444));
-    #/
+    assert(isscriptfunctionptr(&function_dedfe444));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_7a881cd7648d875a", &function_dedfe444);
-    /#
-        assert(!isdefined(&function_54e23559) || isscriptfunctionptr(&function_54e23559));
-    #/
-    /#
-        assert(!isdefined(&function_f5e4c85b) || isscriptfunctionptr(&function_f5e4c85b));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
+    assert(!isdefined(&function_54e23559) || isscriptfunctionptr(&function_54e23559));
+    assert(!isdefined(&function_f5e4c85b) || isscriptfunctionptr(&function_f5e4c85b));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_7ce06449bd45e2fb", &function_54e23559, &function_f5e4c85b, undefined);
-    /#
-        assert(!isdefined(&function_8956c060) || isscriptfunctionptr(&function_8956c060));
-    #/
-    /#
-        assert(!isdefined(&function_c7c70177) || isscriptfunctionptr(&function_c7c70177));
-    #/
-    /#
-        assert(!isdefined(&function_11b30321) || isscriptfunctionptr(&function_11b30321));
-    #/
+    assert(!isdefined(&function_8956c060) || isscriptfunctionptr(&function_8956c060));
+    assert(!isdefined(&function_c7c70177) || isscriptfunctionptr(&function_c7c70177));
+    assert(!isdefined(&function_11b30321) || isscriptfunctionptr(&function_11b30321));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_4bf47859e6047df4", &function_8956c060, &function_c7c70177, &function_11b30321);
-    /#
-        assert(!isdefined(&function_dd8aadf1) || isscriptfunctionptr(&function_dd8aadf1));
-    #/
-    /#
-        assert(!isdefined(&function_28c69db4) || isscriptfunctionptr(&function_28c69db4));
-    #/
-    /#
-        assert(!isdefined(&function_97a75ffc) || isscriptfunctionptr(&function_97a75ffc));
-    #/
+    assert(!isdefined(&function_dd8aadf1) || isscriptfunctionptr(&function_dd8aadf1));
+    assert(!isdefined(&function_28c69db4) || isscriptfunctionptr(&function_28c69db4));
+    assert(!isdefined(&function_97a75ffc) || isscriptfunctionptr(&function_97a75ffc));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_267af6f7a7ece24f", &function_dd8aadf1, &function_28c69db4, &function_97a75ffc);
-    /#
-        assert(!isdefined(&function_574f0280) || isscriptfunctionptr(&function_574f0280));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(&function_c0a3f837) || isscriptfunctionptr(&function_c0a3f837));
-    #/
+    assert(!isdefined(&function_574f0280) || isscriptfunctionptr(&function_574f0280));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(&function_c0a3f837) || isscriptfunctionptr(&function_c0a3f837));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_666c4b85dd04d173", &function_574f0280, undefined, &function_c0a3f837);
     animationstatenetwork::registernotetrackhandlerfunction("zipline_attach_adjust_begin", &function_daabc8cc);
 }
@@ -213,7 +179,7 @@ function private function_54e23559(entity, asmstatename) {
 // Size: 0x64
 function private function_6d7d599e() {
     var_4fa6735c = function_4fa6735c();
-    rotated_offset = rotatepoint(vectorscale((0, 0, -1), 72), var_4fa6735c);
+    rotated_offset = rotatepoint((0, 0, -72), var_4fa6735c);
     return self.zipline_start.origin + rotated_offset;
 }
 
@@ -454,10 +420,8 @@ function private function_9dac9d34() {
 // Size: 0xac
 function private function_56e443d9() {
     self.var_b20b0960 endon(#"death");
-    s_results = undefined;
     s_results = self.var_b20b0960 waittill(#"reached_end_node", #"zipline_start_disconnect");
     if (s_results._notify === "zipline_start_disconnect") {
-        s_results = undefined;
         s_results = self.var_b20b0960 waittilltimeout(0.35, #"reached_end_node");
     }
     function_c4cfe0f5();
@@ -514,7 +478,7 @@ function private function_28c69db4(entity, *asmstatename) {
         }
         result = 4;
     } else {
-        gravity = vectorscale((0, 0, -1), 980);
+        gravity = (0, 0, -980);
         forward = anglestoforward(asmstatename.angles);
         velocity = asmstatename.var_b30ec151 + gravity * float(function_60d95f53()) / 1000;
         position = asmstatename.origin + asmstatename.var_b30ec151 * float(function_60d95f53()) / 1000 + 0.5 * gravity * sqr(float(function_60d95f53()) / 1000);
@@ -660,7 +624,7 @@ function function_5ddff7e3() {
         if (enabled) {
             /#
                 sphere(self.var_b20b0960.origin, 2, (0, 1, 0), 0.3, 0, 8, 1);
-                line(self.var_b20b0960.origin, self.var_b20b0960.origin + vectorscale((0, 0, 1), 72), (1, 1, 0));
+                line(self.var_b20b0960.origin, self.var_b20b0960.origin + (0, 0, 72), (1, 1, 0));
             #/
         }
     }

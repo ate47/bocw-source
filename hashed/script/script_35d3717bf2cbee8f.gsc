@@ -88,9 +88,7 @@ function private function_33f0ddd3(*eventstruct) {
 // Checksum 0xe599028, Offset: 0x6b0
 // Size: 0x1c0
 function private function_6a8979c9() {
-    /#
-        assert(isdefined(level.var_3e2ac3b6));
-    #/
+    assert(isdefined(level.var_3e2ac3b6));
     foreach (weapon in self getweaponslist(1)) {
         if (isdefined(level.var_3e2ac3b6[weapon.name])) {
             self lockweapon(weapon);

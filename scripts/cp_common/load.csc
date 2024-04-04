@@ -45,9 +45,7 @@ function levelnotifyhandler(clientnum, state, *oldstate) {
 // Checksum 0xce9781c3, Offset: 0x1d8
 // Size: 0x3c
 function autoexec function_aeb1baea() {
-    /#
-        assert(!isdefined(level.var_f18a6bd6));
-    #/
+    assert(!isdefined(level.var_f18a6bd6));
     level.var_f18a6bd6 = &function_5e443ed1;
 }
 
@@ -56,11 +54,7 @@ function autoexec function_aeb1baea() {
 // Checksum 0xe8c3dc02, Offset: 0x220
 // Size: 0x174
 function function_5e443ed1() {
-    /#
-        /#
-            assert(isdefined(level.first_frame), "<unknown string>");
-        #/
-    #/
+    assert(isdefined(level.first_frame), "<unknown string>");
     if (is_true(level._loadstarted)) {
         return;
     }

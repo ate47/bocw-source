@@ -15,9 +15,7 @@ function event_handler[gametype_init] main(*eventstruct) {
 // Checksum 0x95b27cf2, Offset: 0xc8
 // Size: 0x24
 function onprecachegametype() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace ztutorial/ztutorial
@@ -25,8 +23,6 @@ function onprecachegametype() {
 // Checksum 0x8652413c, Offset: 0xf8
 // Size: 0x24
 function onstartgametype() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 

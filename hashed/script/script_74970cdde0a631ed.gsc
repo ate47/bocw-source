@@ -37,7 +37,7 @@ function function_9c1c5551(origin, player) {
         return;
     }
     if (!is_true(level.doa.var_318aa67a)) {
-        if (is_true(player.doa.var_3e81d24c)) {
+        if (is_true(player.doa.infps)) {
             player notify(#"hash_7893364bd228d63e");
             waitframe(1);
             timeout = gettime() + 1000;
@@ -77,7 +77,7 @@ function function_9c1c5551(origin, player) {
     tank thread function_c45d8312(player, timeout);
     player namespace_83eb6304::turnofffx("player_trail_" + player.doa.color);
     player waittill(#"hash_279998c5df86c04d");
-    if (!is_true(self.doa.var_3e81d24c)) {
+    if (!is_true(self.doa.infps)) {
         player namespace_83eb6304::function_3ecfde67("player_trail_" + player.doa.color);
     }
     player namespace_7f5aeb59::function_77785447(0, 1);

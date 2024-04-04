@@ -48,7 +48,6 @@ function collision_thread(localclientnum) {
     self endon(#"death");
     self endon(#"exit_vehicle");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"veh_collision");
         hip = waitresult.velocity;
         hitn = waitresult.normal;
@@ -72,7 +71,7 @@ function collision_thread(localclientnum) {
                 self playsound(localclientnum, alias, undefined, volume);
                 /#
                     if (getdvarint(#"hash_1ea6228199536d7e", 0) == 1) {
-                        debug2dtext(vectorscale((0, 1, 0), 100), function_9e72a96(alias) + "<unknown string>" + volume + "<unknown string>", undefined, undefined, (0, 0, 0), 1, 3, 16);
+                        debug2dtext((0, 100, 0), function_9e72a96(alias) + "<unknown string>" + volume + "<unknown string>", undefined, undefined, (0, 0, 0), 1, 3, 16);
                     }
                 #/
                 if (isdefined(self.heavycollisionrumble) && player function_21c0fa55() && self isdrivingvehicle(player)) {
@@ -91,7 +90,7 @@ function collision_thread(localclientnum) {
                 self playsound(localclientnum, alias, undefined, volume);
                 /#
                     if (getdvarint(#"hash_1ea6228199536d7e", 0) == 1) {
-                        debug2dtext(vectorscale((0, 1, 0), 200), function_9e72a96(alias) + "<unknown string>" + volume + "<unknown string>", undefined, undefined, (0, 0, 0), 1, 3, 16);
+                        debug2dtext((0, 200, 0), function_9e72a96(alias) + "<unknown string>" + volume + "<unknown string>", undefined, undefined, (0, 0, 0), 1, 3, 16);
                     }
                 #/
                 if (isdefined(self.lightcollisionrumble) && player function_21c0fa55() && self isdrivingvehicle(player)) {
@@ -158,7 +157,7 @@ function suspension_thread(localclientnum) {
             self playsound(localclientnum, alias, undefined, volume);
             /#
                 if (getdvarint(#"hash_1ea6228199536d7e", 0) == 1) {
-                    debug2dtext(vectorscale((0, 1, 0), 300), function_9e72a96(alias) + "<unknown string>" + volume + "<unknown string>", undefined, undefined, (0, 0, 0), 1, 3, 16);
+                    debug2dtext((0, 300, 0), function_9e72a96(alias) + "<unknown string>" + volume + "<unknown string>", undefined, undefined, (0, 0, 0), 1, 3, 16);
                 }
             #/
             if (player function_21c0fa55() && self isdrivingvehicle(player)) {

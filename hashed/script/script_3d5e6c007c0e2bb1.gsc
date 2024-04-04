@@ -49,11 +49,11 @@ function barrelupdate(model_name = "zombietron_barrel") {
     } else {
         return;
     }
-    barrel = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, 1, 0), 90), model_name);
+    barrel = namespace_ec06fe4a::spawnmodel(self.origin + (0, 90, 0), model_name);
     if (isdefined(barrel)) {
         barrel.targetname = "barrel1";
         barrel setplayercollision(0);
-        barrel linkto(org, "tag_origin", vectorscale((0, 1, 0), 90));
+        barrel linkto(org, "tag_origin", (0, 90, 0));
         if (isplayer(self)) {
             barrel thread namespace_ec06fe4a::function_ae010bb4(self);
         }
@@ -70,7 +70,7 @@ function barrelupdate(model_name = "zombietron_barrel") {
     }
     org.barrel1 = barrel;
     org.trigger1 = trigger;
-    barrel = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, -1, 0), 90), model_name);
+    barrel = namespace_ec06fe4a::spawnmodel(self.origin + (0, -90, 0), model_name);
     if (isdefined(barrel)) {
         if (isplayer(self)) {
             barrel thread namespace_ec06fe4a::function_ae010bb4(self);
@@ -78,7 +78,7 @@ function barrelupdate(model_name = "zombietron_barrel") {
         barrel.targetname = "barrel2";
         barrel setmodel(model_name);
         barrel setplayercollision(0);
-        barrel linkto(org, "tag_origin", vectorscale((0, -1, 0), 90));
+        barrel linkto(org, "tag_origin", (0, -90, 0));
         trigger = namespace_ec06fe4a::spawntrigger("trigger_radius", barrel.origin, 1 | 512 | 8, 40, 50);
         if (isdefined(trigger)) {
             if (isplayer(self)) {
@@ -92,14 +92,14 @@ function barrelupdate(model_name = "zombietron_barrel") {
     }
     org.barrel2 = barrel;
     org.trigger2 = trigger;
-    org linkto(self, "", vectorscale((0, 0, 1), 10), (0, 0, 0));
+    org linkto(self, "", (0, 0, 10), (0, 0, 0));
     self namespace_e32bb68::function_3a59ec34("evt_doa_pickup_barrel_active_lp");
     self thread function_61888137(org);
     self thread function_f0855523(org);
     org thread function_6ad92846(self);
     while (isdefined(org) && isdefined(self)) {
         org.origin = self.origin;
-        org rotateto(org.angles + vectorscale((0, 1, 0), 180), 1.2);
+        org rotateto(org.angles + (0, 180, 0), 1.2);
         wait(1.2);
     }
 }
@@ -115,7 +115,6 @@ function private function_7c757878(player, mod = "MOD_UNKNOWN", var_70c63791) {
     }
     self endon(#"death");
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         guy = result.activator;
         if (!isdefined(guy)) {

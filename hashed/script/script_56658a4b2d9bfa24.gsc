@@ -190,9 +190,7 @@ function private devgui_loop() {
         if (dvarstr == "") {
             continue;
         }
-        /#
-            println(dvarstr);
-        #/
+        println(dvarstr);
         setdvar(#"devgui_bot", "");
         self thread function_40dbe923(dvarstr);
     }
@@ -505,7 +503,7 @@ function private devgui_add_fixed_spawn_bots(botarg, var_b27e53da, countarg) {
     trace = self eye_trace(0, 1);
     spawndir = self.origin - trace[#"position"];
     spawnangles = vectortoangles(spawndir);
-    offset = vectorscale((0, 0, 1), 5);
+    offset = (0, 0, 5);
     origin = trace[#"position"] + offset;
     bots = function_bd48ef10(team, count, origin, spawnangles[1], roleindex);
     vehicle = trace[#"entity"];
@@ -518,9 +516,7 @@ function private devgui_add_fixed_spawn_bots(botarg, var_b27e53da, countarg) {
             }
         }
     }
-    /#
-        println("<unknown string>" + botarg + "<unknown string>" + var_c6e7a9ca + "<unknown string>" + origin[0] + "<unknown string>" + origin[1] + "<unknown string>" + origin[2] + "<unknown string>" + spawnangles[1]);
-    #/
+    println("<unknown string>" + botarg + "<unknown string>" + var_c6e7a9ca + "<unknown string>" + origin[0] + "<unknown string>" + origin[1] + "<unknown string>" + origin[2] + "<unknown string>" + spawnangles[1]);
 }
 
 // Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
@@ -548,7 +544,7 @@ function private function_57d0759d(botarg, var_b27e53da, countarg, origin, angle
         var_b27e53da = -1;
     }
     roleindex = int(var_b27e53da);
-    offset = vectorscale((0, 0, 1), 5);
+    offset = (0, 0, 5);
     origin = origin + offset;
     bots = function_bd48ef10(team, count, origin, angle, roleindex);
 }
@@ -608,9 +604,7 @@ function private function_881d3aa(host, botarg) {
 // Checksum 0xf01d1d64, Offset: 0x2d00
 // Size: 0x100
 function private function_8dbb49c0(ignoreteam) {
-    /#
-        assert(isdefined(ignoreteam));
-    #/
+    assert(isdefined(ignoreteam));
     maxteamplayers = player::function_d36b6597();
     foreach (team, _ in level.teams) {
         if (team == ignoreteam) {

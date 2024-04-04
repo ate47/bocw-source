@@ -6,9 +6,7 @@
 // Checksum 0xfd2f2ac5, Offset: 0x80
 // Size: 0x104
 function private event_handler[delete] function_55217f7b(*eventstruct) {
-    /#
-        assert(isdefined(self));
-    #/
+    assert(isdefined(self));
     if (isdefined(self)) {
         /#
             if (isdefined(self.classname)) {
@@ -28,9 +26,7 @@ function private event_handler[delete] function_55217f7b(*eventstruct) {
 // Checksum 0x2a5a0dbd, Offset: 0x190
 // Size: 0x10c
 function private event_handler[event_9aed3d2d] function_f447a48e(*eventstruct) {
-    /#
-        assert(isdefined(self));
-    #/
+    assert(isdefined(self));
     waitframe(1);
     if (isdefined(self)) {
         /#

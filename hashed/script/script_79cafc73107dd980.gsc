@@ -31,17 +31,11 @@
 // Checksum 0xcb458638, Offset: 0x1d0
 // Size: 0x194
 function init() {
-    /#
-        assert(isscriptfunctionptr(&function_29c22852));
-    #/
+    assert(isscriptfunctionptr(&function_29c22852));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_4ead7642034f30f7", &function_29c22852);
-    /#
-        assert(isscriptfunctionptr(&function_33b29495));
-    #/
+    assert(isscriptfunctionptr(&function_33b29495));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_3d7ced75f59bb519", &function_33b29495);
-    /#
-        assert(isscriptfunctionptr(&function_27a1a846));
-    #/
+    assert(isscriptfunctionptr(&function_27a1a846));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_6e9be4be56cd06d3", &function_27a1a846);
     animationstatenetwork::registernotetrackhandlerfunction("nova_crawler_melee", &function_99ac548f);
     namespace_250e9486::function_252dff4d("crawler_zombie", 3, &function_96a48049, undefined, 37);
@@ -92,7 +86,6 @@ function function_3dbef270(*params) {
 function function_86555fba() {
     self endon(#"death");
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         if (isdefined(result.activator) && !is_true(result.activator.boss)) {
             result.activator thread namespace_250e9486::function_b5feb0bf();

@@ -8,21 +8,8 @@
 // Method(s) 6 Total 13
 class cinsertion_passenger_count : cluielem {
 
-    // Namespace cinsertion_passenger_count/insertion_passenger_count
-    // Params 0, eflags: 0x8
-    // Checksum 0x94c99e74, Offset: 0x1f0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cinsertion_passenger_count/insertion_passenger_count
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xc9c4e90c, Offset: 0x328
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace cinsertion_passenger_count/insertion_passenger_count
     // Params 2, eflags: 0x0
@@ -54,7 +41,7 @@ class cinsertion_passenger_count : cluielem {
     // Checksum 0x4b88eec5, Offset: 0x2d8
     // Size: 0x44
     function set_count(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "count", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "count", value);
     }
 
 }

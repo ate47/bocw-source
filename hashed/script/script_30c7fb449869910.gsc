@@ -105,9 +105,7 @@ function pickupsettype(localclientnum, *oldval, newval, *bnewent, *binitialsnap,
     self.pickuptype = bwastimejump & (1 << 6) - 1;
     self.variant = bwastimejump >> 6;
     def = function_c9502d74(self.pickuptype, self.variant);
-    /#
-        assert(isdefined(def), "<unknown string>");
-    #/
+    assert(isdefined(def), "<unknown string>");
     if (!isdefined(def) || !isdefined(def.modelname)) {
         return;
     }
@@ -265,7 +263,7 @@ function function_4ecd84a8(player, flipped = 0) {
         }
         var_a3046af4 = var_a3046af4 + (x, y, z);
     } else {
-        var_a3046af4 = self.origin + vectorscale((0, 0, 1), 3000);
+        var_a3046af4 = self.origin + (0, 0, 3000);
     }
     waitframe(1);
     self moveto(var_a3046af4, 2, 0, 0);

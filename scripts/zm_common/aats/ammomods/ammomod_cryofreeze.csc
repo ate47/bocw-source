@@ -81,7 +81,7 @@ function function_a7a5e842(localclientnum, *oldval, newval, *bnewent, *binitials
             self thread function_a565490f(fieldname);
         }
         if (!isdefined(self.var_f41344b)) {
-            self playsound(fieldname, #"hash_1b0ce890be5c595", self.origin + vectorscale((0, 0, 1), 50));
+            self playsound(fieldname, #"hash_1b0ce890be5c595", self.origin + (0, 0, 50));
             self.var_f41344b = self playloopsound(#"hash_6274adb83dbbdbe");
         }
         self thread function_bfdbfcd(fieldname, 1);

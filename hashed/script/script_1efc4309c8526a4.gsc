@@ -8,27 +8,11 @@
 class ccp_chyron : cluielem {
 
     // Namespace ccp_chyron/cp_chyron
-    // Params 0, eflags: 0xa linked
-    // Checksum 0xabfb1d8d, Offset: 0x498
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace ccp_chyron/cp_chyron
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xe416aff7, Offset: 0x8b8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace ccp_chyron/cp_chyron
     // Params 2, eflags: 0x2 linked
     // Checksum 0x12778941, Offset: 0x7d8
     // Size: 0x30
     function function_6b7b6e4(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "line3", value);
+        set_data(localclientnum, "line3", value);
     }
 
     // Namespace ccp_chyron/cp_chyron
@@ -44,7 +28,7 @@ class ccp_chyron : cluielem {
     // Checksum 0xe92d5541, Offset: 0x7a0
     // Size: 0x30
     function function_147e5271(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "line2", value);
+        set_data(localclientnum, "line2", value);
     }
 
     // Namespace ccp_chyron/cp_chyron
@@ -52,7 +36,7 @@ class ccp_chyron : cluielem {
     // Checksum 0x122c199d, Offset: 0x848
     // Size: 0x30
     function function_2a377de3(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "line5", value);
+        set_data(localclientnum, "line5", value);
     }
 
     // Namespace ccp_chyron/cp_chyron
@@ -60,7 +44,7 @@ class ccp_chyron : cluielem {
     // Checksum 0x7e5e4660, Offset: 0x768
     // Size: 0x30
     function function_4b584028(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "line1", value);
+        set_data(localclientnum, "line1", value);
     }
 
     // Namespace ccp_chyron/cp_chyron
@@ -76,7 +60,7 @@ class ccp_chyron : cluielem {
     // Checksum 0xa3082a41, Offset: 0x880
     // Size: 0x30
     function function_90bde5d3(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "index", value);
+        set_data(localclientnum, "index", value);
     }
 
     // Namespace ccp_chyron/cp_chyron
@@ -98,7 +82,7 @@ class ccp_chyron : cluielem {
     // Checksum 0x7cde0dc1, Offset: 0x810
     // Size: 0x30
     function function_b7f01956(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "line4", value);
+        set_data(localclientnum, "line4", value);
     }
 
     // Namespace ccp_chyron/cp_chyron
@@ -107,12 +91,12 @@ class ccp_chyron : cluielem {
     // Size: 0x108
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "line1", #"");
-        [[ self ]]->set_data(localclientnum, "line2", #"");
-        [[ self ]]->set_data(localclientnum, "line3", #"");
-        [[ self ]]->set_data(localclientnum, "line4", #"");
-        [[ self ]]->set_data(localclientnum, "line5", #"");
-        [[ self ]]->set_data(localclientnum, "index", 0);
+        set_data(localclientnum, "line1", #"");
+        set_data(localclientnum, "line2", #"");
+        set_data(localclientnum, "line3", #"");
+        set_data(localclientnum, "line4", #"");
+        set_data(localclientnum, "line5", #"");
+        set_data(localclientnum, "index", 0);
     }
 
 }

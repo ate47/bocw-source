@@ -7,22 +7,6 @@
 // Method(s) 12 Total 19
 class class_a0b518ca : cluielem {
 
-    // Namespace class_a0b518ca/zm_control_point_hud
-    // Params 0, eflags: 0x8
-    // Checksum 0xebe96db9, Offset: 0x4b8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_a0b518ca/zm_control_point_hud
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xc0102ab4, Offset: 0x8b8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_a0b518ca/zm_control_point_hud
     // Params 1, eflags: 0x0
     // Checksum 0x6cb4a5e9, Offset: 0x738
@@ -36,7 +20,7 @@ class class_a0b518ca : cluielem {
     // Checksum 0xf919d998, Offset: 0x880
     // Size: 0x30
     function function_338d48a0(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "hasDamage", value);
+        set_data(localclientnum, "hasDamage", value);
     }
 
     // Namespace namespace_a0b518ca/zm_control_point_hud
@@ -52,7 +36,7 @@ class class_a0b518ca : cluielem {
     // Checksum 0xc7c85e5c, Offset: 0x768
     // Size: 0x30
     function function_62264c81(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "chargePct", value);
+        set_data(localclientnum, "chargePct", value);
     }
 
     // Namespace namespace_a0b518ca/zm_control_point_hud
@@ -60,7 +44,7 @@ class class_a0b518ca : cluielem {
     // Checksum 0xd9b3b77, Offset: 0x848
     // Size: 0x30
     function function_751f7270(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "hasCharge", value);
+        set_data(localclientnum, "hasCharge", value);
     }
 
     // Namespace namespace_a0b518ca/zm_control_point_hud
@@ -82,7 +66,7 @@ class class_a0b518ca : cluielem {
     // Checksum 0x4d120c86, Offset: 0x7a0
     // Size: 0x30
     function function_a04ff29a(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "damagePct", value);
+        set_data(localclientnum, "damagePct", value);
     }
 
     // Namespace namespace_a0b518ca/zm_control_point_hud
@@ -90,7 +74,7 @@ class class_a0b518ca : cluielem {
     // Checksum 0x8f220bee, Offset: 0x7d8
     // Size: 0x30
     function function_a59aefa6(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "ordaHealthPct", value);
+        set_data(localclientnum, "ordaHealthPct", value);
     }
 
     // Namespace namespace_a0b518ca/zm_control_point_hud
@@ -98,7 +82,7 @@ class class_a0b518ca : cluielem {
     // Checksum 0x1427c44f, Offset: 0x810
     // Size: 0x30
     function function_a95c34f3(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "hasOrda", value);
+        set_data(localclientnum, "hasOrda", value);
     }
 
     // Namespace namespace_a0b518ca/zm_control_point_hud
@@ -107,12 +91,12 @@ class class_a0b518ca : cluielem {
     // Size: 0xe4
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "chargePct", 0);
-        [[ self ]]->set_data(localclientnum, "damagePct", 0);
-        [[ self ]]->set_data(localclientnum, "ordaHealthPct", 0);
-        [[ self ]]->set_data(localclientnum, "hasOrda", 0);
-        [[ self ]]->set_data(localclientnum, "hasCharge", 0);
-        [[ self ]]->set_data(localclientnum, "hasDamage", 0);
+        set_data(localclientnum, "chargePct", 0);
+        set_data(localclientnum, "damagePct", 0);
+        set_data(localclientnum, "ordaHealthPct", 0);
+        set_data(localclientnum, "hasOrda", 0);
+        set_data(localclientnum, "hasCharge", 0);
+        set_data(localclientnum, "hasDamage", 0);
     }
 
 }

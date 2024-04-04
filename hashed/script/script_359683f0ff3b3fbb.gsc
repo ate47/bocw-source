@@ -8,22 +8,6 @@
 class cprototype_hud : cluielem {
 
     // Namespace cprototype_hud/prototype_hud
-    // Params 0, eflags: 0xa linked
-    // Checksum 0xebae90dc, Offset: 0x510
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cprototype_hud/prototype_hud
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x84e70740, Offset: 0x918
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cprototype_hud/prototype_hud
     // Params 1, eflags: 0x2 linked
     // Checksum 0x92bece9f, Offset: 0x798
     // Size: 0x24
@@ -36,7 +20,7 @@ class cprototype_hud : cluielem {
     // Checksum 0x1134e5a1, Offset: 0x8e0
     // Size: 0x30
     function function_1b05e380(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "active_obj_progress_visibility", value);
+        set_data(localclientnum, "active_obj_progress_visibility", value);
     }
 
     // Namespace cprototype_hud/prototype_hud
@@ -44,7 +28,7 @@ class cprototype_hud : cluielem {
     // Checksum 0xceed02b7, Offset: 0x8a8
     // Size: 0x30
     function function_1bd6077e(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "active_objective_progress", value);
+        set_data(localclientnum, "active_objective_progress", value);
     }
 
     // Namespace cprototype_hud/prototype_hud
@@ -52,7 +36,7 @@ class cprototype_hud : cluielem {
     // Checksum 0x2f9f128a, Offset: 0x870
     // Size: 0x30
     function function_4dfb5783(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "objective_retrieval", value);
+        set_data(localclientnum, "objective_retrieval", value);
     }
 
     // Namespace cprototype_hud/prototype_hud
@@ -68,7 +52,7 @@ class cprototype_hud : cluielem {
     // Checksum 0xdaa45d46, Offset: 0x800
     // Size: 0x30
     function function_7491d6c5(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "main_objective_string", value);
+        set_data(localclientnum, "main_objective_string", value);
     }
 
     // Namespace cprototype_hud/prototype_hud
@@ -76,7 +60,7 @@ class cprototype_hud : cluielem {
     // Checksum 0xd8aa993f, Offset: 0x838
     // Size: 0x30
     function function_817e4d10(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "active_obj_visibility", value);
+        set_data(localclientnum, "active_obj_visibility", value);
     }
 
     // Namespace cprototype_hud/prototype_hud
@@ -98,7 +82,7 @@ class cprototype_hud : cluielem {
     // Checksum 0xcb409b9f, Offset: 0x7c8
     // Size: 0x30
     function set_active_objective_string(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "active_objective_string", value);
+        set_data(localclientnum, "active_objective_string", value);
     }
 
     // Namespace cprototype_hud/prototype_hud
@@ -107,12 +91,12 @@ class cprototype_hud : cluielem {
     // Size: 0xec
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "active_objective_string", #"");
-        [[ self ]]->set_data(localclientnum, "main_objective_string", #"");
-        [[ self ]]->set_data(localclientnum, "active_obj_visibility", 0);
-        [[ self ]]->set_data(localclientnum, "objective_retrieval", 0);
-        [[ self ]]->set_data(localclientnum, "active_objective_progress", 0);
-        [[ self ]]->set_data(localclientnum, "active_obj_progress_visibility", 0);
+        set_data(localclientnum, "active_objective_string", #"");
+        set_data(localclientnum, "main_objective_string", #"");
+        set_data(localclientnum, "active_obj_visibility", 0);
+        set_data(localclientnum, "objective_retrieval", 0);
+        set_data(localclientnum, "active_objective_progress", 0);
+        set_data(localclientnum, "active_obj_progress_visibility", 0);
     }
 
 }

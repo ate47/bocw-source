@@ -140,9 +140,7 @@ function menuautoassign(comingfrommenu, var_4c542e39, var_432c77c2) {
     if (!isdefined(assignment)) {
         assignment = var_4c542e39;
     }
-    /#
-        assert(isdefined(assignment));
-    #/
+    assert(isdefined(assignment));
     if (assignment === #"spectator" && !level.forceautoassign) {
         self teams::function_dc7eaabd(assignment);
         self player::function_6f6c29e(comingfrommenu);
@@ -222,9 +220,7 @@ function beginclasschoice(*comingfrommenu) {
     if (self.pers[#"team"] == #"spectator") {
         return;
     }
-    /#
-        assert(isdefined(level.teams[self.pers[#"team"]]));
-    #/
+    assert(isdefined(level.teams[self.pers[#"team"]]));
     team = self.pers[#"team"];
     if (level.disableclassselection == 1 || getdvarint(#"migration_soak", 0) == 1) {
         level thread globallogic::updateteamstatus();
@@ -239,9 +235,7 @@ function beginclasschoice(*comingfrommenu) {
 // Checksum 0xeb225dda, Offset: 0xdb8
 // Size: 0x8c
 function showmainmenuforteam() {
-    /#
-        assert(isdefined(level.teams[self.pers[#"team"]]));
-    #/
+    assert(isdefined(level.teams[self.pers[#"team"]]));
     team = self.pers[#"team"];
     [[ level.spawnspectator ]]();
     self draft::open();
@@ -392,9 +386,7 @@ function menuclass(response, forcedclass, *updatecharacterindex, var_632376a3) {
             timepassed = undefined;
             if (!is_true(level.var_d0252074) || !is_true(self.hasspawned)) {
                 if (isdefined(self.respawntimerstarttime)) {
-                    /#
-                        println("<unknown string>" + self.name + "<unknown string>");
-                    #/
+                    println("<unknown string>" + self.name + "<unknown string>");
                     timepassed = float(gettime() - self.respawntimerstarttime) / 1000;
                 }
                 self thread [[ level.spawnclient ]](timepassed);

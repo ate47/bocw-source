@@ -121,9 +121,7 @@
 // Size: 0x123c
 function event_handler[gametype_init] main(*eventstruct) {
     register_clientfields = 0;
-    /#
-        println("super_sprint");
-    #/
+    println("super_sprint");
     foreach (map in namespace_18bbc38e::function_3cdae979()) {
         fields = getmapfields(map.name);
         var_d0972d81 = !sessionmodeisonlinegame() && (!isdefined(fields.var_694983ad) || getdvarint(fields.var_694983ad, 0));
@@ -441,9 +439,7 @@ function function_acafdd66() {
             if (self.var_eb221ba <= 2) {
                 new_origin = getclosestpointonnavmesh(self.origin, 200, min(40 + self.var_eb221ba * 50, 90));
                 if (isdefined(new_origin)) {
-                    /#
-                        println("<unknown string>" + self getentitynumber() + "<unknown string>" + self.origin);
-                    #/
+                    println("<unknown string>" + self getentitynumber() + "<unknown string>" + self.origin);
                     self forceteleport(new_origin);
                     if (ispointonnavmesh(new_origin, self)) {
                         self.var_eb221ba = 0;
@@ -628,7 +624,7 @@ function function_182a24df() {
         return function_aad874d();
     }
     fwd = anglestoforward(targetangles);
-    spawnorigin = targetorigin - fwd * 64 + vectorscale((0, 0, 1), 50);
+    spawnorigin = targetorigin - fwd * 64 + (0, 0, 50);
     self.resurrect_origin = spawnorigin;
     self.resurrect_angles = vectortoangles(fwd);
     self spawn(self.resurrect_origin, self.resurrect_angles, "zsurvival");
@@ -976,12 +972,8 @@ function function_fef3deb1() {
     var_842cdacd = zm_destination_manager::function_f3be07d7(level.contentmanager.var_5f2429b1);
     var_58b02068 = struct::get(var_842cdacd[0].target, "targetname");
     level flag::set(#"hash_39574fd530246717");
-    /#
-        assert(isdefined(level.contentmanager.var_5f2429b1.targetname), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(var_58b02068), "<unknown string>" + level.contentmanager.var_5f2429b1.targetname);
-    #/
+    assert(isdefined(level.contentmanager.var_5f2429b1.targetname), "<unknown string>");
+    assert(isdefined(var_58b02068), "<unknown string>" + level.contentmanager.var_5f2429b1.targetname);
     return var_58b02068;
 }
 
@@ -1397,7 +1389,7 @@ function private function_8dd547b3(v_destination) {
 // Checksum 0x7aa1c20b, Offset: 0x6b80
 // Size: 0x72
 function private function_18fb55bd(var_ab528fee) {
-    v_trace_start = var_ab528fee + vectorscale((0, 0, 1), 70);
+    v_trace_start = var_ab528fee + (0, 0, 70);
     trace = physicstraceex(v_trace_start, var_ab528fee);
     if (trace[#"fraction"] < 0.99) {
         return false;

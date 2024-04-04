@@ -80,8 +80,8 @@ function private function_cc775529(s_instance) {
     var_b7eee573.health = var_b7eee573.maxhealth;
     var_b7eee573 val::set(#"hash_1592629a5ec5c8a", "takedamage", 1);
     var_b7eee573 val::set(#"hash_1592629a5ec5c8a", "allowdeath", 0);
-    var_d263d14a = vectorscale((0, 0, 1), 22);
-    var_a758131a = vectorscale((0, 0, 1), 22);
+    var_d263d14a = (0, 0, 22);
+    var_a758131a = (0, 0, 22);
     var_b7eee573 endon(#"death");
     var_b7eee573 fx::play(#"hash_c36745220550934", var_b7eee573.origin + var_d263d14a, var_b7eee573.angles, #"hash_4aa1201cb1b6cb04");
     util::wait_network_frame();
@@ -94,7 +94,6 @@ function private function_cc775529(s_instance) {
     var_edcf865 = var_b7eee573.maxhealth / var_31eda780;
     var_d6cf3f65 = 1;
     for (var_1b519b48 = var_8969e152; true; var_1b519b48 = undefined) {
-        s_result = undefined;
         s_result = var_b7eee573 waittill(#"damage", #"hash_5261a9b309eef309", #"hash_13c4c7440825676a");
         if (s_result._notify === #"hash_13c4c7440825676a") {
             /#

@@ -230,9 +230,7 @@ function function_d2cf74ab(var_248cbbcf) {
 // Checksum 0x7f1bbcd9, Offset: 0x1078
 // Size: 0x38
 function function_a02c0e4f(*victim) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     return true;
 }
 
@@ -251,9 +249,7 @@ function function_ecd2291d() {
 // Checksum 0x1fc6ce7c, Offset: 0x1100
 // Size: 0x184
 function function_849bed38(*link_ents, *var_e4df1bec, *var_cee46280) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     waitframe(1);
     pitch = abs(angleclamp180(self getplayerangles()[0]));
     duration = pitch / 180;
@@ -371,7 +367,6 @@ function function_58980558(victim) {
 // Size: 0x64
 function function_ae4d480a(victim) {
     victim endon(#"entitydeleted");
-    result = undefined;
     result = victim waittill(#"actor_corpse");
     self thread function_58980558(result.corpse);
 }
@@ -381,9 +376,7 @@ function function_ae4d480a(victim) {
 // Checksum 0x2b9c7157, Offset: 0x19c0
 // Size: 0x5b4
 function function_7ead73b1(*action, *body, *var_d1b14335, scene, gesture) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     waittillframeend();
     player = self;
     self prompts::function_ee7adae5(#"actions");
@@ -393,7 +386,7 @@ function function_7ead73b1(*action, *body, *var_d1b14335, scene, gesture) {
     var_17813638.origin = self.origin;
     var_17813638.angles = self.angles;
     if (!self action_utility::function_fdff1cf3()) {
-        offset = vectorscale((0, 0, 1), 8);
+        offset = (0, 0, 8);
         var_17813638.origin = playerphysicstrace(self.origin + offset, self.origin + anglestoforward(self.angles) * -15 + offset);
         var_17813638.origin = playerphysicstrace(var_17813638.origin, var_17813638.origin - offset);
     }
@@ -448,9 +441,7 @@ function function_11b042fc(scenename, objectname, shot = 0, var_dd00fdae = 0) {
 // Checksum 0xe717d327, Offset: 0x20c8
 // Size: 0xe4
 function function_1058ffa1(guy = self) {
-    /#
-        assert(isactor(guy));
-    #/
+    assert(isactor(guy));
     guy.var_54163419 = util::spawn_model(#"hash_32587dcc01217c21", guy.origin, guy.angles);
     guy.var_54163419 notsolid();
     guy.var_54163419 linkto(guy, "tag_accessory_left", (0, 0, 0), (0, 0, 0));
@@ -477,7 +468,7 @@ function function_30e6300b(var_5fb1bd74) {
         launchforce = launchforce + (randomfloatrange(-0.5, 0.5), randomfloatrange(-0.5, 0.5), randomfloatrange(-0.5, 0.5));
         launchforce = vectornormalize(launchforce) * 0.1;
         var_5fb1bd74.var_54163419 unlink();
-        var_5fb1bd74.var_54163419 physicslaunch(var_5fb1bd74.var_54163419.origin - vectorscale((0, 0, 1), 3), launchforce);
+        var_5fb1bd74.var_54163419 physicslaunch(var_5fb1bd74.var_54163419.origin - (0, 0, 3), launchforce);
         var_5fb1bd74.var_54163419 thread grenade_explode(var_5fb1bd74, 2);
     }
 }
@@ -695,9 +686,9 @@ function function_306feb88(*guy) {
                 if (dot > cos(30) && !is_true(interact.var_bb317c90)) {
                     dot_right = vectordot(vectorcross(move_dir, (0, 0, 1)), dir);
                     if (dot_right > 0) {
-                        dir = rotatepoint(move_dir, vectorscale((0, -1, 0), 45));
+                        dir = rotatepoint(move_dir, (0, -45, 0));
                     } else {
-                        dir = rotatepoint(move_dir, vectorscale((0, 1, 0), 45));
+                        dir = rotatepoint(move_dir, (0, 45, 0));
                     }
                     var_ba580a85 = "body_shield_push" + "_push_" + randomintrange(1, 5);
                     interact.var_f6639ad8 = level.var_f467e5b0.anims[#"generic"][var_ba580a85];
@@ -724,7 +715,7 @@ function function_306feb88(*guy) {
                     pt = rotatepoint(move_dir, (0, 0, 0) - interact.angles) * -1;
                     test_point = interact getpointinbounds(pt[0], pt[1], pt[2]);
                     if (distance2dsquared(self.origin, test_point) < 32 * 32) {
-                        impactpoint = interact.origin + vectorscale((0, 0, 1), 15);
+                        impactpoint = interact.origin + (0, 0, 15);
                         impactpoint = impactpoint + vectornormalize(self.origin - interact.origin) * 10;
                         radiusdamage(impactpoint, 16, interact.health + 1, interact.health, self, "MOD_IMPACT");
                         destroyed[interact getentitynumber()] = interact;
@@ -734,8 +725,8 @@ function function_306feb88(*guy) {
         }
         var_c3548f43 = move_delta * 3;
         var_858fa287 = move_delta * 5;
-        zoffset = vectorscale((0, 0, 1), 16);
-        boundsmin = vectorscale((-1, -1, 0), 16);
+        zoffset = (0, 0, 16);
+        boundsmin = (-16, -16, 0);
         boundsmax = (16, 16, 40);
         mask = 1 | 8 | 2;
         tracestart = self.origin + zoffset;

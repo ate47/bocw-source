@@ -287,7 +287,6 @@ function function_8c4bd0ee() {
 // Checksum 0x53fb94b8, Offset: 0x1d30
 // Size: 0x70
 function function_85249ea7() {
-    waitresult = undefined;
     waitresult = self waittill(#"grenade_fire");
     grenade = waitresult.projectile;
     grenade waittill(#"explode");
@@ -386,7 +385,6 @@ function function_629b5919() {
 function function_5ba83448() {
     self endon(#"hash_72d5a2c9e1d7ed8a");
     self.health = 999;
-    result = undefined;
     result = self waittill(#"damage", #"hash_39550364a879e1d4");
     if (result._notify === "damage") {
         self val::set(#"kitchen_guy", "takedamage", 0);
@@ -502,9 +500,9 @@ function left_flank() {
 function function_917872db() {
     level flag::wait_till_timeout(1.5, "flag_spawn_qasim_failsafe");
     qasim_runner = getspawnerarray("qasim_stairs", "targetname");
-    var_2fef04d8 = qasim_runner[0] spawner::spawn(1);
+    qasim = qasim_runner[0] spawner::spawn(1);
     level notify(#"hash_750f5969110dee88");
-    var_2fef04d8 namespace_b100dd86::function_6578b894();
+    qasim namespace_b100dd86::function_6578b894();
     rooftop_goto = struct::get("rooftop_goto", "targetname");
     objectives::remove("obj_takedown_qasim");
     level objectives::complete("follow_adler", level.adler);

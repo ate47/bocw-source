@@ -286,7 +286,7 @@ function private function_2e225b16() {
                 locations = level._fx.ambientwar.data[group_id].locations;
                 distance = level._fx.ambientwar.data[group_id].distance;
                 for (i = 0; i < locations.size; i++) {
-                    box(locations[i].origin, vectorscale((-1, -1, -1), 5), vectorscale((1, 1, 1), 5), locations[i].angles, (0, 0, 0), 1, 0, 1);
+                    box(locations[i].origin, (-5, -5, -5), (5, 5, 5), locations[i].angles, (0, 0, 0), 1, 0, 1);
                     debugaxis(locations[i].origin, locations[i].angles, 16, 1, 0, 1);
                     if (function_1913c46(locations[i])) {
                         circle(locations[i].origin, locations[i].var_c9dbde14, (1, 0.65, 0), 0, 1, 1);
@@ -394,8 +394,8 @@ function private function_613e65ee(group_id) {
                 /#
                     if (getdvarint(#"hash_1ccb34f428b1a279", 0) && function_be6420e7(level._fx.ambientwar.selection) == group_id) {
                         display_time = getdvarfloat(#"hash_79ddea850d94a804", 0.5) / float(function_60d95f53()) / 1000;
-                        start = var_5fd45f33.origin + vectorscale((0, 0, 1), 20);
-                        end = var_5fd45f33.origin + vectorscale((0, 0, 1), 100);
+                        start = var_5fd45f33.origin + (0, 0, 20);
+                        end = var_5fd45f33.origin + (0, 0, 100);
                         str = isdefined(var_5fd45f33.var_b17f3758) ? "<unknown string>" + effect : effect;
                         line(start, end, (1, 0.65, 0), 1, 0, int(display_time));
                         print3d(end, str, (1, 1, 1), 1, 0.5, int(display_time), 0);

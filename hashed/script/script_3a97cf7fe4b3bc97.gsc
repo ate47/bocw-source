@@ -88,7 +88,7 @@ function sr_demented_echo_fx(localclientnum, *oldval, newval, *bnewent, *binitia
     }
     v_tag = self gettagorigin("j_spine4");
     if (!isdefined(v_tag)) {
-        v_tag = self.origin + vectorscale((0, 0, 1), 48);
+        v_tag = self.origin + (0, 0, 48);
     }
     playfx(fieldname, #"hash_5bbf453f2140d55f", v_tag);
 }

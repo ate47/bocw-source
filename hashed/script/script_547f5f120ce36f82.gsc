@@ -8,21 +8,8 @@
 // Method(s) 7 Total 14
 class class_302a48fc : cluielem {
 
-    // Namespace class_302a48fc/vip_notify_text
-    // Params 0, eflags: 0x8
-    // Checksum 0x9f56f53c, Offset: 0x230
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_302a48fc/vip_notify_text
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xa02d9667, Offset: 0x3e0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_302a48fc/vip_notify_text
     // Params 2, eflags: 0x0
@@ -55,7 +42,7 @@ class class_302a48fc : cluielem {
     // Checksum 0x118f27f9, Offset: 0x390
     // Size: 0x44
     function set_alpha(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "alpha", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "alpha", value);
     }
 
     // Namespace namespace_302a48fc/vip_notify_text
@@ -63,7 +50,7 @@ class class_302a48fc : cluielem {
     // Checksum 0xd14571ed, Offset: 0x340
     // Size: 0x44
     function function_d01a102c(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "vipmessage", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "vipmessage", value);
     }
 
 }

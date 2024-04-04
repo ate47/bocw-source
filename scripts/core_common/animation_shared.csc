@@ -57,11 +57,7 @@ function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, 
     self notify(#"new_scripted_anim");
     self endon(#"new_scripted_anim", #"death");
     if (!isdefined(self.model) || self.model == #"") {
-        /#
-            /#
-                assertmsg("<unknown string>" + self.origin);
-            #/
-        #/
+        assertmsg("<unknown string>" + self.origin);
         return;
     }
     flag::set_val("firstframe", n_blend_out == 0);
@@ -75,9 +71,7 @@ function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, 
         self animscripted("_anim_notify_", n_rate, n_blend_in, v_angles_or_tag, n_lerp, n_blend_out, n_start_time, var_b2e32ae2);
     } else {
         if (isstring(n_blend_in)) {
-            /#
-                assert(isdefined(n_rate.model), "<unknown string>" + v_angles_or_tag + "<unknown string>" + n_blend_in + "<unknown string>");
-            #/
+            assert(isdefined(n_rate.model), "<unknown string>" + v_angles_or_tag + "<unknown string>" + n_blend_in + "<unknown string>");
             v_pos = n_rate gettagorigin(n_blend_in);
             v_ang = n_rate gettagangles(n_blend_in);
             self.origin = v_pos;
@@ -148,9 +142,7 @@ function _get_align_ent(e_align) {
 function _get_align_pos(v_origin_or_ent = self.origin, v_angles_or_tag = isdefined(self.angles) ? self.angles : (0, 0, 0)) {
     s = spawnstruct();
     if (isvec(v_origin_or_ent)) {
-        /#
-            assert(isvec(v_angles_or_tag), "<unknown string>");
-        #/
+        assert(isvec(v_angles_or_tag), "<unknown string>");
         s.origin = v_origin_or_ent;
         s.angles = v_angles_or_tag;
     } else {
@@ -196,9 +188,7 @@ function add_notetrack_func(funcname, func) {
     if (!isdefined(level._animnotifyfuncs)) {
         level._animnotifyfuncs = [];
     }
-    /#
-        assert(!isdefined(level._animnotifyfuncs[funcname]), "<unknown string>");
-    #/
+    assert(!isdefined(level._animnotifyfuncs[funcname]), "<unknown string>");
     level._animnotifyfuncs[funcname] = func;
 }
 
@@ -253,9 +243,7 @@ function call_notetrack_handler(str_note) {
                 self [[ func ]]();
                 break;
             default:
-                /#
-                    assertmsg("<unknown string>");
-                #/
+                assertmsg("<unknown string>");
                 break;
             }
         }
@@ -292,7 +280,6 @@ function handle_notetracks() {
     level endon(#"demo_jump");
     self endon(#"handle_notetracks", #"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"_anim_notify_");
         str_note = waitresult.notetrack;
         if (str_note != "end" && str_note != "loop_end") {

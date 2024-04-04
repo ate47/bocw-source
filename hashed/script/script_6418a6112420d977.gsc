@@ -54,7 +54,7 @@ function function_4f8b33df(instance) {
     self.var_b7eee573.e_fx = util::spawn_model("tag_origin", self.var_b7eee573.origin, self.var_dafa2b89.angles);
     util::wait_network_frame();
     if (isdefined(self.var_b7eee573.e_fx)) {
-        self.var_b7eee573.e_fx linkto(self, "tag_cage_attach", vectorscale((0, 0, 1), 17));
+        self.var_b7eee573.e_fx linkto(self, "tag_cage_attach", (0, 0, 17));
     }
 }
 
@@ -312,7 +312,7 @@ function function_2db63909(instance) {
     wait(2);
     if (isdefined(self.var_b7eee573)) {
         self.var_b7eee573.e_fx clientfield::set("" + #"hash_4bedc093642e28f6", 0);
-        self.var_b7eee573 fx::play(#"hash_1b9b90f45278a5ae", self.var_b7eee573.origin + vectorscale((0, 0, 1), 22), self.var_b7eee573.angles, #"hash_62901a3385d3e7af", 1);
+        self.var_b7eee573 fx::play(#"hash_1b9b90f45278a5ae", self.var_b7eee573.origin + (0, 0, 22), self.var_b7eee573.angles, #"hash_62901a3385d3e7af", 1);
         self.var_b7eee573 playsound(#"hash_75c73a4779a02dbb");
     }
     util::wait_network_frame();
@@ -386,7 +386,6 @@ function function_a76b2c1f(instance) {
     self endon(#"death");
     instance endon(#"objective_ended");
     while (true) {
-        s_result = undefined;
         s_result = self waittill(#"bridge", #"stairs");
         if (s_result._notify === "bridge") {
             s_pos = struct::get("bridge_pos");
@@ -463,7 +462,7 @@ function function_6d122cef() {
         v_forward = vectornormalize(anglestoforward(self.angles)) * 2400 + self.origin;
     }
     if (isdefined(v_forward)) {
-        v_ground = groundtrace(v_forward + vectorscale((0, 0, 1), 1000), v_forward + vectorscale((0, 0, -1), 1000), 0, self)[#"position"];
+        v_ground = groundtrace(v_forward + (0, 0, 1000), v_forward + (0, 0, -1000), 0, self)[#"position"];
     }
     if (!isdefined(v_ground)) {
         if (isdefined(self.nextnode)) {
@@ -849,7 +848,6 @@ function function_24735dd6(instance) {
     instance endon(#"objective_ended");
     self endon(#"death");
     while (true) {
-        s_result = undefined;
         s_result = self waittill(#"riser", #"bridge_riser");
         var_cec14fb9 = undefined;
         if (s_result._notify === "bridge_riser") {
@@ -1105,7 +1103,6 @@ function function_8265e656(var_37180a9f) {
     var_37180a9f endon(#"death");
     var_37180a9f callback::function_d8abfc3d(#"hash_5f0caa4b2d44fedf", &function_1cabf2e9);
     while (isdefined(var_37180a9f) && var_37180a9f.health > 0) {
-        s_result = undefined;
         s_result = var_37180a9f waittill(#"damage", #"death");
         if (isplayer(s_result.attacker) && isalive(s_result.attacker)) {
             s_result.attacker util::show_hit_marker();
@@ -1183,11 +1180,11 @@ function function_6b7297f6() {
     var_b7eee573 setscale(0.5);
     var_b7eee573 playsound(#"hash_55b5e35f7d261fee");
     var_b7eee573 playloopsound(#"hash_5dc7884f02e73776");
-    var_b7eee573 fx::play(#"hash_c36745220550934", var_b7eee573.origin + vectorscale((0, 0, 1), 22), var_b7eee573.angles, #"hash_62901a3385d3e7af", 1);
+    var_b7eee573 fx::play(#"hash_c36745220550934", var_b7eee573.origin + (0, 0, 22), var_b7eee573.angles, #"hash_62901a3385d3e7af", 1);
     level.var_c39a4b8f.var_b7eee573 = var_b7eee573;
     var_b7eee573 endon(#"death");
     waitframe(1);
-    v_offset = vectorscale((0, 0, -1), 5);
+    v_offset = (0, 0, -5);
     str_tag = "tag_cage_attach";
     var_ec6068b9 = level.var_c39a4b8f gettagorigin(str_tag);
     var_b7eee573 moveto(var_ec6068b9 + v_offset, 0.75);

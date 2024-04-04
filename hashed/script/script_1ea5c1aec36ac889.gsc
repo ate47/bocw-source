@@ -127,12 +127,12 @@ function function_dec85954(str_vo, var_ac39950d = 0) {
 // Size: 0xdc
 function function_eb6180c9(*watcher) {
     if (isdefined(level.var_b617b3fe) && self hasweapon(level.var_b617b3fe)) {
-        if (!isdefined(level.var_56e22cfa.var_9140144d)) {
+        if (!isdefined(level.klaus.var_9140144d)) {
             return;
         }
-        if (isdefined(level.var_56e22cfa)) {
-            level.var_56e22cfa zodcompanionutility::function_34179e9a();
-            level.var_56e22cfa thread function_dec85954("zber_kvo_cmdflw");
+        if (isdefined(level.klaus)) {
+            level.klaus zodcompanionutility::function_34179e9a();
+            level.klaus thread function_dec85954("zber_kvo_cmdflw");
         }
         self notify(#"hash_65d1a61342635458");
         self gestures::function_56e00fbf(#"hash_7e249c3769936b51", undefined, 1);
@@ -157,10 +157,9 @@ function private function_d6f65535(*str_notify) {
 function private function_67c8b5c3() {
     level endoncallback(&function_d6f65535, #"hash_279a97271de2b7e1");
     self endoncallback(&function_d6f65535, #"disconnect", #"hash_7b63ce1ec3e195b4", #"hash_65d1a61342635458");
-    waitresult = undefined;
     waitresult = self waittill(#"offhand_end", #"hash_7f812cfd98c00a7b");
-    if (waitresult._notify === #"hash_7f812cfd98c00a7b" && isdefined(level.var_56e22cfa) && !level.var_56e22cfa flag::get(#"hash_3218e127380e4a29")) {
-        level.var_56e22cfa waittill(#"death", #"hash_3218e127380e4a29", #"hash_6edebe8930290c3b");
+    if (waitresult._notify === #"hash_7f812cfd98c00a7b" && isdefined(level.klaus) && !level.klaus flag::get(#"hash_3218e127380e4a29")) {
+        level.klaus waittill(#"death", #"hash_3218e127380e4a29", #"hash_6edebe8930290c3b");
     }
     self function_d6f65535();
 }
@@ -211,9 +210,9 @@ function private function_9132ad8e() {
     v_end = v_start + v_forward * 1200;
     a_trace = bullettrace(v_start, v_end, 0, self.var_310a3632.mdl_target, 1, 0);
     if (a_trace[#"fraction"] == 1) {
-        a_trace = bullettrace(v_end, v_end - vectorscale((0, 0, 1), 40), 0, self.var_310a3632.mdl_target, 1, 0);
+        a_trace = bullettrace(v_end, v_end - (0, 0, 40), 0, self.var_310a3632.mdl_target, 1, 0);
     }
-    v_hit = a_trace[#"position"] + vectorscale((0, 0, 1), 8);
+    v_hit = a_trace[#"position"] + (0, 0, 8);
     if (a_trace[#"fraction"] < 1) {
         var_5c65b47a = self getpathfindingradius();
         var_20fe4148 = getclosestpointonnavmesh(v_hit, 32, var_5c65b47a);
@@ -276,13 +275,11 @@ function event_handler[grenade_fire] function_6ed5772c(eventstruct) {
     }
     weapon = eventstruct.weapon;
     if (weapon.name == #"hash_7993749c94189bd9") {
-        /#
-            assert(isdefined(self.var_310a3632.var_689f4026));
-        #/
+        assert(isdefined(self.var_310a3632.var_689f4026));
         var_72c2d810 = self.var_310a3632.var_6164d302;
-        if (isdefined(level.var_56e22cfa) && level flag::get(#"hash_279a97271de2b7e1")) {
+        if (isdefined(level.klaus) && level flag::get(#"hash_279a97271de2b7e1")) {
             if (function_b864b947(var_72c2d810)) {
-                b_valid = level.var_56e22cfa zodcompanionutility::function_fc7a4f48(var_72c2d810, 1);
+                b_valid = level.klaus zodcompanionutility::function_fc7a4f48(var_72c2d810, 1);
             }
             if (is_true(b_valid)) {
                 var_52e2c28d = 0;
@@ -290,10 +287,10 @@ function event_handler[grenade_fire] function_6ed5772c(eventstruct) {
                     var_52e2c28d = [[ level.var_3537dbe0 ]](var_72c2d810);
                 }
                 if (!is_true(var_52e2c28d)) {
-                    level.var_56e22cfa thread function_dec85954("zber_kvo_cmdloc");
+                    level.klaus thread function_dec85954("zber_kvo_cmdloc");
                 }
             } else {
-                level.var_56e22cfa thread function_dec85954("zber_kvo_invloc");
+                level.klaus thread function_dec85954("zber_kvo_invloc");
             }
         }
         if (is_true(b_valid)) {

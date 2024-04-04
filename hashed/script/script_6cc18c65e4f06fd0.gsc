@@ -301,7 +301,7 @@ function function_56700eee(*a_ents) {
     if (!level flag::get("connect_zone_opc_room_to_armory2")) {
         var_b1081d76 = getent("sms_door", "targetname");
         if (isdefined(var_b1081d76)) {
-            var_b1081d76 moveto(var_b1081d76.origin + vectorscale((0, 0, -1), 102), 0.05);
+            var_b1081d76 moveto(var_b1081d76.origin + (0, 0, -102), 0.05);
         }
     }
     hidemiscmodels("village_courtyard_side_gate");
@@ -994,7 +994,6 @@ function function_386e82a(var_f6cc9550, var_25febefa) {
     n_index = 0;
     var_245f6f1 = var_f6cc9550;
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (isdefined(waitresult.amount) && isplayer(waitresult.attacker)) {
             damage = waitresult.amount;

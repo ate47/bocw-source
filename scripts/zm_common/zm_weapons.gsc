@@ -704,11 +704,7 @@ function function_17e9ed37(rarity = #"white", clipsize, var_9839b3b1, var_7fa2b5
                         var_ee3c60e = #"hash_5a8770083150213";
                         break;
                     default:
-                        /#
-                            /#
-                                assert(0, "<unknown string>");
-                            #/
-                        #/
+                        assert(0, "<unknown string>");
                         break;
                     }
                     if (isdefined(var_ee3c60e)) {
@@ -876,7 +872,6 @@ function function_33cc663e(str_weapon) {
 function watchforgrenadeduds() {
     self endon(#"death", #"disconnect");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"grenade_fire");
         grenade = waitresult.projectile;
         weapon = waitresult.weapon;
@@ -893,7 +888,6 @@ function watchforgrenadeduds() {
 function watchforgrenadelauncherduds() {
     self endon(#"death", #"disconnect");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"grenade_launcher_fire");
         grenade = waitresult.projectile;
         weapon = waitresult.weapon;
@@ -1163,9 +1157,7 @@ function add_zombie_weapon(weapon_name, upgrade_name, is_ee, cost, weaponvo, wea
     if (is_true(is_wonder_weapon)) {
         struct.var_51344511 = [];
     }
-    /#
-        println("<unknown string>" + function_9e72a96(weapon_name));
-    #/
+    println("<unknown string>" + function_9e72a96(weapon_name));
     struct.is_in_box = level.zombie_include_weapons[weapon];
     if (!isdefined(ammo_cost) || ammo_cost == 0) {
         ammo_cost = zm_utility::round_up_to_ten(int(cost * 0.5));
@@ -1216,9 +1208,7 @@ function include_zombie_weapon(weapon_name, in_box) {
     if (!isdefined(in_box)) {
         in_box = 1;
     }
-    /#
-        println("<unknown string>" + function_9e72a96(weapon_name));
-    #/
+    println("<unknown string>" + function_9e72a96(weapon_name));
     level.zombie_include_weapons[getweapon(weapon_name)] = in_box;
 }
 
@@ -1498,11 +1488,7 @@ function player_can_use_content(weapon) {
 // Checksum 0x71097c16, Offset: 0x5d58
 // Size: 0x72
 function get_weapon_hint(weapon) {
-    /#
-        /#
-            assert(isdefined(level.zombie_weapons[weapon]), function_9e72a96(weapon.name) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(level.zombie_weapons[weapon]), function_9e72a96(weapon.name) + "<unknown string>");
     return level.zombie_weapons[weapon].hint;
 }
 
@@ -1511,11 +1497,7 @@ function get_weapon_hint(weapon) {
 // Checksum 0x2dc4d77a, Offset: 0x5dd8
 // Size: 0x72
 function get_weapon_cost(weapon) {
-    /#
-        /#
-            assert(isdefined(level.zombie_weapons[weapon]), function_9e72a96(weapon.name) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(level.zombie_weapons[weapon]), function_9e72a96(weapon.name) + "<unknown string>");
     return level.zombie_weapons[weapon].cost;
 }
 
@@ -1555,11 +1537,7 @@ function function_5d47055e(str_rarity) {
 // Checksum 0x1ee48530, Offset: 0x5fb8
 // Size: 0x72
 function get_ammo_cost(weapon) {
-    /#
-        /#
-            assert(isdefined(level.zombie_weapons[weapon]), function_9e72a96(weapon.name) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(level.zombie_weapons[weapon]), function_9e72a96(weapon.name) + "<unknown string>");
     return level.zombie_weapons[weapon].ammo_cost;
 }
 
@@ -1568,11 +1546,7 @@ function get_ammo_cost(weapon) {
 // Checksum 0xbe5b6408, Offset: 0x6038
 // Size: 0x94
 function get_upgraded_ammo_cost(weapon) {
-    /#
-        /#
-            assert(isdefined(level.zombie_weapons[weapon]), function_9e72a96(weapon.name) + "<unknown string>");
-        #/
-    #/
+    assert(isdefined(level.zombie_weapons[weapon]), function_9e72a96(weapon.name) + "<unknown string>");
     if (isdefined(level.zombie_weapons[weapon].upgraded_ammo_cost)) {
         return level.zombie_weapons[weapon].upgraded_ammo_cost;
     }
@@ -1608,9 +1582,7 @@ function get_ammo_cost_for_weapon(w_current, n_base_non_wallbuy_cost = 750, n_up
 // Checksum 0xdb907544, Offset: 0x6220
 // Size: 0x5a
 function get_is_in_box(weapon) {
-    /#
-        assert(isdefined(level.zombie_weapons[weapon]), weapon.name + "<unknown string>");
-    #/
+    assert(isdefined(level.zombie_weapons[weapon]), weapon.name + "<unknown string>");
     return level.zombie_weapons[weapon].is_in_box;
 }
 
@@ -1718,9 +1690,7 @@ function get_attachment_index(weapon) {
             }
         }
     }
-    /#
-        println("<unknown string>" + weapon.name);
-    #/
+    println("<unknown string>" + weapon.name);
     return -1;
 }
 
@@ -2076,9 +2046,7 @@ function function_98776900(item, nosound = 0, var_ac6e9818 = 0, var_d29fef1 = 0)
         return;
     }
     if (!item_world_util::function_d9648161(item.networkid)) {
-        /#
-            println("<unknown string>" + (isdefined(item.itementry.name) ? item.itementry.name : "<unknown string>"));
-        #/
+        println("<unknown string>" + (isdefined(item.itementry.name) ? item.itementry.name : "<unknown string>"));
         return;
     }
     if (!function_2bcaec6f(item.itementry.weapon)) {
@@ -2300,11 +2268,7 @@ function weapon_give(weapon, nosound, *b_switch_weapon = 0, var_bc218695 = 0, va
             self switchtoweapon(nosound);
             return;
         }
-        /#
-            /#
-                assert(0, "<unknown string>");
-            #/
-        #/
+        assert(0, "<unknown string>");
         return;
     }
     var_3383cd4e = function_4ba8fde(str_item);
@@ -2732,9 +2696,7 @@ function weapondata_take(weapondata) {
         }
         alt_weapon = alt_weapon.altweapon;
         if (isinarray(a_alt_weapons, alt_weapon)) {
-            /#
-                println("<unknown string>" + function_9e72a96(alt_weapon.name) + "<unknown string>");
-            #/
+            println("<unknown string>" + function_9e72a96(alt_weapon.name) + "<unknown string>");
             break;
         }
     }
@@ -2756,9 +2718,7 @@ function create_loadout(weapons) {
             weapon = getweapon(weapon);
         }
         if (weapon == weaponnone) {
-            /#
-                println("<unknown string>" + weapon.name);
-            #/
+            println("<unknown string>" + weapon.name);
         }
         loadout.weapons[weapon.name] = get_default_weapondata(weapon);
         if (!isdefined(loadout.current)) {
@@ -3658,7 +3618,6 @@ function function_56c9bbd4() {
         var_7fa2b50b = self getweaponammoclip(weapon.dualwieldweapon);
     }
     item = self item_inventory::function_230ceec4(weapon);
-    waitresult = undefined;
     waitresult = self waittilltimeout(1, #"hash_1e7eaffac0fda4d4");
     var_6bcacc0c = self function_446b181e(weapon.statname);
     if (isdefined(var_6bcacc0c)) {
@@ -3769,7 +3728,6 @@ function function_d2b370d7(aat_name, var_c3317960) {
 function private function_9b75e4aa() {
     self endon(#"disconnect");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         response = waitresult.response;

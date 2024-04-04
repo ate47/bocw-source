@@ -31,9 +31,7 @@ function private preinit() {
 // Size: 0x14c
 function private function_538c9c9b(params) {
     /#
-        /#
-            assert(params.name == "<unknown string>");
-        #/
+        assert(params.name == "<unknown string>");
         if (params.value == "<unknown string>") {
             return;
         }
@@ -42,9 +40,7 @@ function private function_538c9c9b(params) {
             return;
         }
         paramarray = strtok(params.value, "<unknown string>");
-        /#
-            assert(paramarray.size == 2);
-        #/
+        assert(paramarray.size == 2);
         notetype = paramarray[0];
         noteid = paramarray[1];
         player = getplayers()[0];
@@ -59,9 +55,7 @@ function private function_538c9c9b(params) {
 function private function_32402e29(*notetype, *noteid) {
     player = self;
     if (namespace_61e6d095::exists(#"hash_5903f7e85045920f")) {
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         return;
     }
     namespace_61e6d095::create(#"hash_5903f7e85045920f", #"hash_77979ca92bd3cc85");

@@ -30,8 +30,6 @@ function set_state(state) {
     game.state = state;
     function_cab6408d(state);
     level notify(state);
-    /#
-        println("<unknown string>" + state);
-    #/
+    println("<unknown string>" + state);
 }
 

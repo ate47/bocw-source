@@ -342,18 +342,14 @@ function callback_playerkilled(einflictor, attacker, idamage, smeansofdeath, wea
     var_a44c7fd8 = {#victimorigin:self.origin, #var_5fceefd4:self getplayerangles(), #victimweapon:self.currentweapon, #einflictor:einflictor, #attacker:attacker, #attackerorigin:vattacker.origin, #var_83634238:isplayer(vattacker) ? vattacker getplayerangles() : vattacker.angles, #idamage:idamage, #smeansofdeath:smeansofdeath, #weapon:weapon, #var_fd90b0bb:var_fd90b0bb, #vdir:vdir, #shitloc:shitloc, #matchtime:function_f8d53445()};
     if (isdefined(self.uselaststandparams) && enteredresurrect == 0) {
         self.uselaststandparams = undefined;
-        /#
-            assert(isdefined(self.laststandparams));
-        #/
+        assert(isdefined(self.laststandparams));
         if (isdefined(self.laststandparams) && (!level.teambased || !isdefined(attacker) || !isplayer(attacker) || !var_8efc9727 || var_41c4d474)) {
             einflictor = self.laststandparams.einflictor;
             attacker = self.laststandparams.attacker;
             attackerstance = self.laststandparams.attackerstance;
             idamage = self.laststandparams.idamage;
             smeansofdeath = self.laststandparams.smeansofdeath;
-            /#
-                assert(isdefined(smeansofdeath));
-            #/
+            assert(isdefined(smeansofdeath));
             weapon = self.laststandparams.weapon;
             var_fd90b0bb = self.laststandparams.var_fd90b0bb;
             vdir = self.laststandparams.vdir;
@@ -531,7 +527,7 @@ function private function_42862f77(var_a2f12b49, attacker, deathtimeoffset, psof
         livesleft = !(level.numlives && !self.pers[#"lives"]) && !(level.numteamlives && !game.lives[self.team]);
         if (livesleft && !teams::is_all_dead(self.team)) {
             if (is_true(level.spawnsystem.deathcirclerespawn)) {
-                self thread [[ level.spawnspectator ]](self.origin + vectorscale((0, 0, 1), 60), self.angles);
+                self thread [[ level.spawnspectator ]](self.origin + (0, 0, 60), self.angles);
             } else if (is_true(level.var_ce3bff50)) {
                 self.var_7350dfd7 = 1;
             } else {
@@ -540,7 +536,7 @@ function private function_42862f77(var_a2f12b49, attacker, deathtimeoffset, psof
             return;
         }
         if (!is_true(self.var_686890d5)) {
-            self thread [[ level.spawnspectator ]](self.origin + vectorscale((0, 0, 1), 60), self.angles);
+            self thread [[ level.spawnspectator ]](self.origin + (0, 0, 60), self.angles);
         }
         return;
     } else {
@@ -911,9 +907,7 @@ function private function_c2c4d6e9(var_c391d0a8, *bledout, enteredresurrect, cou
         }
         self.deathcount++;
     }
-    /#
-        println("<unknown string>" + self.clientid + "<unknown string>" + self.deathcount);
-    #/
+    println("<unknown string>" + self.clientid + "<unknown string>" + self.deathcount);
 }
 
 // Namespace player/player_killed
@@ -986,9 +980,7 @@ function private function_5f6cde96(var_41c4d474, var_8efc9727) {
     self.deathtime = gettime();
     self.pers[#"deathtime"] = self.deathtime;
     if (!var_41c4d474 && !var_8efc9727) {
-        /#
-            assert(isdefined(self.lastspawntime));
-        #/
+        assert(isdefined(self.lastspawntime));
         if (!isdefined(self.alivetimecurrentindex)) {
             self.alivetimecurrentindex = 0;
         }
@@ -1099,12 +1091,8 @@ function private function_93115f65(enteredresurrect) {
 // Checksum 0x90fa9668, Offset: 0x53a0
 // Size: 0x33c
 function private function_caabcf70(victim, callbackparams, laststandparams, var_a1d415ee) {
-    /#
-        assert(isdefined(victim));
-    #/
-    /#
-        assert(isdefined(callbackparams));
-    #/
+    assert(isdefined(victim));
+    assert(isdefined(callbackparams));
     if (!isdefined(victim) || !isdefined(callbackparams)) {
         return;
     }
@@ -1204,9 +1192,7 @@ function private watch_death(weapon, attacker, smeansofdeath, deathanimduration)
 // Checksum 0x8f538f0f, Offset: 0x5a20
 // Size: 0xee
 function private function_b029639e(attacker, weapon, smeansofdeath, shitloc) {
-    /#
-        assert(isdefined(smeansofdeath));
-    #/
+    assert(isdefined(smeansofdeath));
     if (weapons::isheadshot(weapon, shitloc, smeansofdeath) && isplayer(attacker)) {
         return "MOD_HEAD_SHOT";
     }
@@ -2133,7 +2119,7 @@ function private start_death_from_above_ragdoll(*dir) {
         return;
     }
     self startragdoll();
-    self launchragdoll(vectorscale((0, 0, -1), 100));
+    self launchragdoll((0, 0, -100));
 }
 
 // Namespace player/player_killed

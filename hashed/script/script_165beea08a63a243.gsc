@@ -48,7 +48,7 @@ function fake_physicslaunch(target_pos, power) {
 // Size: 0x32c
 function function_7a1e21a9(attacker, v_origin, min_radius, max_radius = 50, var_4dd1cd8b = 70, var_8c20ac00 = 100, n_height = 101, *var_e927082a = 64, n_power = 100, var_4c1ec23b, min_angle = 0, max_angle = 360, var_383ab56c = 0, var_92844ba1 = 0) {
     self endon(#"death");
-    self.origin = min_radius + vectorscale((0, 0, 1), 4);
+    self.origin = min_radius + (0, 0, 4);
     if (isdefined(v_origin) && is_true(v_origin.usingvehicle)) {
         max_radius = var_8c20ac00;
         var_4dd1cd8b = n_height;
@@ -225,6 +225,6 @@ function function_e1cd5954(v_origin, min_radius = 0, max_radius = 32, n_height =
     if (isdefined(var_c67a78a0)) {
         var_9bd6c1ae = var_c67a78a0;
     }
-    return var_9bd6c1ae + vectorscale((0, 0, 1), 10);
+    return var_9bd6c1ae + (0, 0, 10);
 }
 

@@ -286,7 +286,6 @@ function function_6cde5436() {
     level endon(#"end_game");
     var_8d5d092c = self.stub.var_8d5d092c;
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
         if (player zm_utility::in_revive_trigger()) {
@@ -535,9 +534,7 @@ function function_7a74dbfd(str_targetname) {
     var_6a4c362c = [];
     for (i = 0; i < 4; i++) {
         var_f0bbde5 = struct::get(str_targetname + i);
-        /#
-            assert(isdefined(var_f0bbde5), "<unknown string>" + str_targetname + i);
-        #/
+        assert(isdefined(var_f0bbde5), "<unknown string>" + str_targetname + i);
         if (!isdefined(var_6a4c362c)) {
             var_6a4c362c = [];
         } else if (!isarray(var_6a4c362c)) {
@@ -920,26 +917,19 @@ function function_c1f603e(var_12230d08, n_cooldown, var_8d5d092c) {
 function function_5165d69() {
     level endon(#"end_game");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
         if (!isdefined(player)) {
-            /#
-                assert(0, "<unknown string>");
-            #/
+            assert(0, "<unknown string>");
             continue;
         }
         var_616025ba = getvehiclenode("fasttravel_dropdown_" + player.var_388ee880 + "_start", "targetname");
         if (!isdefined(var_616025ba)) {
-            /#
-                assert(0, "<unknown string>");
-            #/
+            assert(0, "<unknown string>");
             continue;
         }
         if (!isdefined(player.var_2790fd8b)) {
-            /#
-                assert(0, "<unknown string>");
-            #/
+            assert(0, "<unknown string>");
             continue;
         }
         player endon(#"death");
@@ -1041,9 +1031,7 @@ function private function_fdb3b5(var_a16f5b07, s_teleport_room, var_98b11ed9) {
         str_alias = str_alias + self.var_1bfa91a;
     }
     playsoundatposition(str_alias, var_a16f5b07);
-    /#
-        println("<unknown string>" + self getplayercamerapos());
-    #/
+    println("<unknown string>" + self getplayercamerapos());
     self childthread function_e4af83af(s_teleport_room);
     waittillframeend();
     self playrumblelooponentity(#"hash_5d8a1a68b12dfb24");
@@ -1076,7 +1064,7 @@ function function_a78584c0(var_6c365dbf, var_896486fb, var_1f8fbe0b = 0) {
     }
     self childthread function_fdb3b5(var_a16f5b07, isdefined(var_896486fb) ? var_896486fb : s_teleport_room, var_98b11ed9);
     v_vortex_origin = s_teleport_room.origin + anglestoforward(s_teleport_room.angles) * 1000;
-    var_291fc0f7 = struct::spawn(v_vortex_origin, s_teleport_room.angles - vectorscale((0, 1, 0), 90));
+    var_291fc0f7 = struct::spawn(v_vortex_origin, s_teleport_room.angles - (0, 90, 0));
     self function_82c1415f(var_291fc0f7, var_1f8fbe0b);
     self clientfield::set_to_player("" + #"hash_638ce9451eb0ea49", 0);
     if (isdefined(self.var_805b8325)) {
@@ -1221,9 +1209,7 @@ function function_60d91d03(var_f0bbde5, a_e_players) {
         var_65d61e3a = 1024;
     }
     b_safe = 1;
-    /#
-        assert(isdefined(var_f0bbde5), "<unknown string>");
-    #/
+    assert(isdefined(var_f0bbde5), "<unknown string>");
     foreach (e_player in a_e_players) {
         if (is_true(e_player.var_16735873)) {
             continue;

@@ -8,21 +8,8 @@
 // Method(s) 6 Total 13
 class czm_build_progress : cluielem {
 
-    // Namespace czm_build_progress/zm_build_progress
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x7db406ec, Offset: 0x1e8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace czm_build_progress/zm_build_progress
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x1f0182c7, Offset: 0x320
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace czm_build_progress/zm_build_progress
     // Params 2, eflags: 0x2 linked
@@ -54,7 +41,7 @@ class czm_build_progress : cluielem {
     // Checksum 0xa64c23eb, Offset: 0x2d0
     // Size: 0x44
     function set_progress(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "progress", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "progress", value);
     }
 
 }

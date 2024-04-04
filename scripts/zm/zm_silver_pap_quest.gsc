@@ -163,7 +163,6 @@ function function_af722d1c() {
     level.var_f0a7e859 = 0;
     zm_sq::function_266d66eb(#"hash_51a6aa8cdd8606d6", var_1e94a095, undefined, #"hash_2c04785633aa43c5", undefined, 100);
     while (true) {
-        s_waitresult = undefined;
         s_waitresult = level waittill(#"terminal_1_is_on", #"terminal_2_is_on");
         if (s_waitresult._notify == "terminal_1_is_on") {
             zm_sq::objective_complete(#"hash_51a6aa8cdd8606d6", var_763f6aa3);
@@ -206,7 +205,6 @@ function function_af722d1c() {
     zm_sq::function_266d66eb(#"hash_48b81559139c7c6f", level.var_f070b39a, undefined, #"hash_570634faa6508f0d", undefined, 64);
     zm_sq::function_3029d343(#"hash_48b81559139c7c6f", level.var_f070b39a);
     while (!level flag::get(#"piece_is_found")) {
-        s_waitresult = undefined;
         s_waitresult = level waittill(#"piece_is_found", #"dark_aether_active", level.var_f070b39a.var_2490cffb, level.var_f070b39a.var_b8b53a8f);
         switch (s_waitresult._notify) {
         case #"piece_is_found":
@@ -247,7 +245,6 @@ function function_af722d1c() {
     waitframe(1);
     zm_sq::function_266d66eb(#"hash_502a7e67764fe01a", level.var_241be029, undefined, #"hash_74ad706cf06d3af0", undefined, 64);
     while (!level flag::get(#"pap_quest_completed")) {
-        s_waitresult = undefined;
         s_waitresult = level waittill(#"pap_quest_completed", #"in_dark_side", #"hash_4adb3a0e79514d43");
         if (s_waitresult._notify === #"hash_4adb3a0e79514d43") {
             level waittill(#"pap_quest_completed");
@@ -390,7 +387,6 @@ function function_c1bd7e55() {
 // Checksum 0x6f485fe1, Offset: 0x2c20
 // Size: 0x198
 function function_d1377146(var_7692d390) {
-    waitresult = undefined;
     waitresult = level waittill(#"dark_side_timeout", #"hash_61e8a39b3a4bee6a", #"hash_322c7f92525e008e", #"bomber_nose_rise_done");
     if (waitresult._notify == "bomber_nose_rise_done") {
         level thread scene::play(#"hash_2f425040d5e62683", "loop");
@@ -433,7 +429,6 @@ function function_40102053() {
 // Checksum 0xfa140106, Offset: 0x2f20
 // Size: 0x2a8
 function function_d9e95e32(truckcollision) {
-    waitresult = undefined;
     waitresult = level waittill(#"dark_side_timeout", #"hash_61e8a39b3a4bee6a", #"hash_322c7f92525e008e", #"truck_rise_done");
     if (waitresult._notify == "truck_rise_done") {
         level thread scene::play(#"hash_3b239490a05b582e", "loop");
@@ -621,9 +616,9 @@ function function_79d5804a() {
 // Size: 0x2fc
 function function_61b74ad2(num) {
     if (num == 1) {
-        e_activator = self zm_unitrigger::function_fac87205(&function_67c20e9d, vectorscale((1, 1, 1), 128));
+        e_activator = self zm_unitrigger::function_fac87205(&function_67c20e9d, (128, 128, 128));
     } else {
-        e_activator = self zm_unitrigger::function_fac87205(&function_600a5109, vectorscale((1, 1, 1), 128));
+        e_activator = self zm_unitrigger::function_fac87205(&function_600a5109, (128, 128, 128));
     }
     if (isplayer(e_activator)) {
         e_activator clientfield::increment_to_player("" + #"hash_7a769c728c89b6b5");
@@ -632,7 +627,7 @@ function function_61b74ad2(num) {
     exploder::exploder("lgt_" + num + "_terminal_powered_on");
     exploder::exploder("lgt_" + num + "_central_ring_on");
     level flag::set("terminal_" + num + "_is_on");
-    playsoundatposition(#"hash_6c88f3463b82c932", self.origin + vectorscale((0, 0, 1), 60));
+    playsoundatposition(#"hash_6c88f3463b82c932", self.origin + (0, 0, 60));
     var_30873e2 = getent(self.target, "targetname");
     var_30873e2 setforcenocull();
     if (num == 1) {
@@ -747,7 +742,7 @@ function function_c95d2c8() {
 function function_530c2230() {
     self thread function_931d1962(2);
     self playloopsound(#"hash_224c4ffb3e869259");
-    e_activator = self zm_unitrigger::function_fac87205(&function_557b8c82, vectorscale((1, 1, 1), 128));
+    e_activator = self zm_unitrigger::function_fac87205(&function_557b8c82, (128, 128, 128));
     if (isplayer(e_activator)) {
         e_activator clientfield::increment_to_player("" + #"hash_6696d96a08b9701d");
     }
@@ -986,7 +981,6 @@ function function_716add58() {
     level endon(#"end_game");
     level endon(#"hash_3e765c26047c9f54");
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"into_the_dark_side");
         level flag::clear(#"hash_4d6700553ede7078");
         level.var_67e9e1a7 = 0;
@@ -1026,7 +1020,6 @@ function function_716add58() {
         }
         level thread function_48213c59();
         level thread function_b1b484d();
-        waitresult = undefined;
         waitresult = level waittill(#"dark_side_timeout", #"pap_quest_completed", #"hash_61e8a39b3a4bee6a");
         level flag::set("start_back_to_normal");
         if (waitresult._notify != "dark_side_timeout") {
@@ -1114,7 +1107,7 @@ function function_6c1800f0() {
     level waittill(#"piece_is_found");
     level.var_241be029 = util::spawn_model("tag_origin", struct::get("zm_go_mac", "script_noteworthy").origin);
     level.var_241be029 playloopsound(#"hash_4d743fb901081e97");
-    e_activator = level.var_241be029 zm_unitrigger::function_fac87205(&function_2ad61161, vectorscale((1, 1, 1), 64));
+    e_activator = level.var_241be029 zm_unitrigger::function_fac87205(&function_2ad61161, (64, 64, 64));
     if (isplayer(e_activator)) {
         e_activator clientfield::increment_to_player("" + #"hash_7a769c728c89b6b5");
     }

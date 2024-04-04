@@ -7,21 +7,8 @@
 // Method(s) 7 Total 14
 class class_37d61ee3 : cluielem {
 
-    // Namespace class_37d61ee3/lui_plane_mortar
-    // Params 0, eflags: 0x8
-    // Checksum 0x65b0f98c, Offset: 0x200
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_37d61ee3/lui_plane_mortar
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xbdba8668, Offset: 0x380
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_37d61ee3/lui_plane_mortar
     // Params 2, eflags: 0x0
@@ -44,7 +31,7 @@ class class_37d61ee3 : cluielem {
     // Checksum 0x6e06e9b8, Offset: 0x2c0
     // Size: 0x54
     function function_6c69ff4b(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 1, value, 1);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 1, value, 1);
     }
 
     // Namespace namespace_37d61ee3/lui_plane_mortar
@@ -60,7 +47,7 @@ class class_37d61ee3 : cluielem {
     // Checksum 0x5fa88031, Offset: 0x320
     // Size: 0x54
     function function_b172c58e(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 2, value, 1);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 2, value, 1);
     }
 
 }

@@ -164,15 +164,12 @@ function function_fa6f7ba7() {
 // Checksum 0xa18a4a99, Offset: 0x1408
 // Size: 0x144
 function function_c937e51f(var_f40cf449) {
-    /#
-        assert(var_f40cf449 < 2048, "<unknown string>");
-    #/
+    assert(var_f40cf449 < 2048, "<unknown string>");
     level endon(#"game_over", #"hash_4254d6c79b4ea2bc");
     self notify("25862a390086cba3");
     self endon("25862a390086cba3");
     level clientfield::set_world_uimodel("DOA_GLOBALUIMODEL_COUNTDOWN", var_f40cf449);
     while (var_f40cf449 > 0) {
-        result = undefined;
         result = level waittilltimeout(1, #"hash_d075b46833ffc79");
         if (result._notify == #"timeout") {
             var_f40cf449--;
@@ -202,7 +199,7 @@ function function_7f7a069d() {
     level clientfield::set_world_uimodel(self.doa.score.var_234fa0ba, self.doa.score.points);
     level clientfield::set_world_uimodel(self.doa.score.var_b45b1692, self.health / 150);
     var_194c59ae = self.doa.score.var_194c59ae;
-    if (is_true(self.doa.var_3e81d24c) && level.doa.world_state == 0 && !is_true(level.doa.var_318aa67a)) {
+    if (is_true(self.doa.infps) && level.doa.world_state == 0 && !is_true(level.doa.var_318aa67a)) {
         if (var_194c59ae < 4) {
             var_194c59ae = 4;
         }
@@ -212,7 +209,7 @@ function function_7f7a069d() {
     level clientfield::set_world_uimodel(self.doa.score.var_18b2a561, self.doa.weaponlevel);
     level clientfield::set_world_uimodel(self.doa.score.var_a5236080, self.doa.var_d8955419 / 1024);
     level clientfield::set_world_uimodel(self.doa.score.var_68162a1e, namespace_eccff4fb::function_f3b382da(self));
-    var_20367411 = self.doa.score.var_98425e00 - self.doa.score.var_6ec1ad9d;
+    var_20367411 = self.doa.score.gems - self.doa.score.var_6ec1ad9d;
     var_fd0181fe = self.doa.score.var_e49e3de7 - self.doa.score.var_6ec1ad9d;
     level clientfield::set_world_uimodel(self.doa.score.var_16ec5307, var_20367411 / var_fd0181fe);
     if (is_true(self.doa.respawning)) {

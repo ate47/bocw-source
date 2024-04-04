@@ -23,12 +23,8 @@ function private autoexec __init__system__() {
 // Checksum 0xcb357765, Offset: 0x178
 // Size: 0x4ae
 function enable(shouldenable, firstpoint, var_8fbcda45) {
-    /#
-        assert(isactor(self));
-    #/
-    /#
-        assert(shouldenable === 1 || shouldenable === 0, "<unknown string>");
-    #/
+    assert(isactor(self));
+    assert(shouldenable === 1 || shouldenable === 0, "<unknown string>");
     if (is_true(shouldenable)) {
         if (!isdefined(self.poi)) {
             self.poi = {};
@@ -44,9 +40,7 @@ function enable(shouldenable, firstpoint, var_8fbcda45) {
     self.poi.doingpoi = shouldenable;
     self.poi.var_8fbcda45 = var_8fbcda45;
     if (!shouldenable) {
-        /#
-            assert(isdefined(level.poi.var_5ee53e3), "<unknown string>");
-        #/
+        assert(isdefined(level.poi.var_5ee53e3), "<unknown string>");
         arrayremovevalue(level.poi.var_5ee53e3, self);
         self.turnrate = isdefined(self.poi.poi_oldturnrate) ? self.poi.poi_oldturnrate : self.turnrate;
         self.gunadditiveoverride = undefined;
@@ -74,9 +68,7 @@ function enable(shouldenable, firstpoint, var_8fbcda45) {
     if (isdefined(level.poi.fnfindcqbpointsofinterest)) {
         level thread [[ level.poi.fnfindcqbpointsofinterest ]]();
     }
-    /#
-        assert(!isdefined(firstpoint) || isstruct(firstpoint));
-    #/
+    assert(!isdefined(firstpoint) || isstruct(firstpoint));
     self.poi.poi_oldturnrate = self.turnrate;
     self.turnrate = 0.25;
     self.poi.leftaimlimit = 90;
@@ -202,9 +194,7 @@ function private function_f3a2a643() {
     }
     self.poi.nextpoi = undefined;
     if (haspoi) {
-        /#
-            assert(isdefined(self.poi.poi_starttime));
-        #/
+        assert(isdefined(self.poi.poi_starttime));
         if (gettime() < self.poi.poi_starttime + 2000) {
             return self.poi.currentpoi;
         }
@@ -243,9 +233,7 @@ function private function_f3a2a643() {
 // Checksum 0x6e3326e6, Offset: 0x1100
 // Size: 0xf4
 function private function_aabc1f4c() {
-    /#
-        assert(isdefined(self.poi.poi_firstpoint));
-    #/
+    assert(isdefined(self.poi.poi_firstpoint));
     if (sighttracepassed(self geteye(), self.poi.poi_firstpoint.origin, 0, undefined)) {
         poi = self.poi.poi_firstpoint;
         if (isdefined(poi.target)) {
@@ -267,9 +255,7 @@ function private function_aabc1f4c() {
 // Size: 0x348
 function private function_75334336(haspoi) {
     min_time = undefined;
-    /#
-        assert(haspoi && isdefined(self.poi.currentpoi.target) || isdefined(self.poi.nextpoi));
-    #/
+    assert(haspoi && isdefined(self.poi.currentpoi.target) || isdefined(self.poi.nextpoi));
     if (haspoi) {
         if (isdefined(self.poi.currentpoi.target)) {
             self.poi.nextpoi = struct::get(self.poi.currentpoi.target, "targetname");
@@ -321,9 +307,7 @@ function private function_a6d41d6e(poi) {
     if (is_true(self.poi.poi_disablefov)) {
         return true;
     }
-    /#
-        assert(isdefined(poi));
-    #/
+    assert(isdefined(poi));
     myforward = anglestoforward(self.angles);
     var_82b1379b = acos(vectordot(myforward, vectornormalize(poi.origin - self geteye())));
     return var_82b1379b < (isdefined(self.poi.poi_fovlimit) ? self.poi.poi_fovlimit : 90);
@@ -334,9 +318,7 @@ function private function_a6d41d6e(poi) {
 // Checksum 0x555e7145, Offset: 0x1658
 // Size: 0x84
 function private function_b4d1a9bb() {
-    /#
-        assert(!isdefined(self) || isactor(self));
-    #/
+    assert(!isdefined(self) || isactor(self));
     if (isdefined(self.stealth) && level flag::get("stealth_spotted")) {
         return true;
     }
@@ -352,7 +334,6 @@ function private function_b4d1a9bb() {
 // Size: 0xb4
 function private function_d0341c76(priority, var_9ced4e21) {
     self endon(#"death");
-    result = undefined;
     result = self waittilltimeout(var_9ced4e21, #"stealth_attack", #"enemy");
     if (result._notify == "stealth_attack" || result._notify == "enemy") {
         self ai::look_at(undefined, priority, 1);
@@ -498,9 +479,7 @@ function private function_504eb38e(var_bed66f89) {
 // Checksum 0x270fd26c, Offset: 0x1fc0
 // Size: 0x1ea
 function private function_636d2b5d(yawmax, yawmin, pitchmin, pitchmax) {
-    /#
-        assert(isdefined(self.poi.auto));
-    #/
+    assert(isdefined(self.poi.auto));
     if (!isdefined(self.poi.auto.og_yawmax)) {
         self.poi.auto.og_yawmax = self.poi.auto.yawmax;
     }
@@ -524,18 +503,10 @@ function private function_636d2b5d(yawmax, yawmin, pitchmin, pitchmax) {
 // Checksum 0x6adfad52, Offset: 0x21b8
 // Size: 0x182
 function private function_d60aa558() {
-    /#
-        assert(isdefined(self.poi.auto.og_yawmax));
-    #/
-    /#
-        assert(isdefined(self.poi.auto.og_yawmin));
-    #/
-    /#
-        assert(isdefined(self.poi.auto.og_pitchmin));
-    #/
-    /#
-        assert(isdefined(self.poi.auto.og_pitchmax));
-    #/
+    assert(isdefined(self.poi.auto.og_yawmax));
+    assert(isdefined(self.poi.auto.og_yawmin));
+    assert(isdefined(self.poi.auto.og_pitchmin));
+    assert(isdefined(self.poi.auto.og_pitchmax));
     self.poi.auto.yawmax = self.poi.auto.og_yawmax;
     self.poi.auto.yawmin = self.poi.auto.og_yawmin;
     self.poi.auto.pitchmin = self.poi.auto.og_pitchmin;
@@ -618,7 +589,7 @@ function private function_9c52ce45(poi) {
         auto = 1;
         if (!is_true(poi.script_auto_use)) {
             hs = 2;
-            color = vectorscale((1, 1, 1), 0.2);
+            color = (0.2, 0.2, 0.2);
             text = "<unknown string>";
             auto = 0;
         }
@@ -636,7 +607,7 @@ function private function_9c52ce45(poi) {
             prev = get(poi.targetname, "<unknown string>");
         }
         if (auto && isdefined(poi.var_3b03815e) && gettime() < poi.var_3b03815e + var_711c17c1) {
-            print3d(poi.origin, "<unknown string>" + float(poi.var_3b03815e + var_711c17c1 - gettime()) / 1000, vectorscale((1, 1, 1), 0.2), 1, 0.25, 1);
+            print3d(poi.origin, "<unknown string>" + float(poi.var_3b03815e + var_711c17c1 - gettime()) / 1000, (0.2, 0.2, 0.2), 1, 0.25, 1);
         } else {
             line(poi.origin + (0, 0, hs), poi.origin + (0, 0, hs * -1), color, 1, 1, 1);
             line(poi.origin + (0, hs, 0), poi.origin + (0, hs * -1, 0), color, 1, 1, 1);
@@ -661,13 +632,13 @@ function private function_9c52ce45(poi) {
             if (auto) {
                 time = time + "<unknown string>" + (float(isdefined(poi.var_715fc83d) ? poi.var_715fc83d : 0) < 0 ? float(5000) / 1000 : float(poi.var_715fc83d));
             }
-            print3d(poi.origin + vectorscale((0, 0, 1), 5), text, color, 1, 0.25, 1, 1);
-            print3d(poi.origin + vectorscale((0, 0, -1), 10), time, color, 1, 0.25, 1, 1);
+            print3d(poi.origin + (0, 0, 5), text, color, 1, 0.25, 1, 1);
+            print3d(poi.origin + (0, 0, -10), time, color, 1, 0.25, 1, 1);
             visible = 1;
         }
         if (isdefined(next) && (gettime() < (isdefined(poi.var_3b03815e) ? poi.var_3b03815e : 0) || visible)) {
-            line(poi.origin, next.origin, vectorscale((1, 1, 1), 0.5), 0.5, 1, 1);
-            drawarrow(vectorlerp(poi.origin, next.origin, 0.1), vectortoangles(next.origin - poi.origin), vectorscale((1, 1, 1), 0.5), 0, 10, 0);
+            line(poi.origin, next.origin, (0.5, 0.5, 0.5), 0.5, 1, 1);
+            drawarrow(vectorlerp(poi.origin, next.origin, 0.1), vectortoangles(next.origin - poi.origin), (0.5, 0.5, 0.5), 0, 10, 0);
         }
     #/
 }

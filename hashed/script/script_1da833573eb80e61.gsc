@@ -8,22 +8,6 @@
 class cinitial_black : cluielem {
 
     // Namespace cinitial_black/initial_black
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x4d8cce20, Offset: 0x348
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cinitial_black/initial_black
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x672a1259, Offset: 0x498
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cinitial_black/initial_black
     // Params 1, eflags: 0x2 linked
     // Checksum 0xa7ba79ea, Offset: 0x430
     // Size: 0x24
@@ -36,7 +20,7 @@ class cinitial_black : cluielem {
     // Checksum 0x81b6fc75, Offset: 0x460
     // Size: 0x30
     function function_2eb3f6e8(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "developer_mode", value);
+        set_data(localclientnum, "developer_mode", value);
     }
 
     // Namespace cinitial_black/initial_black
@@ -62,7 +46,7 @@ class cinitial_black : cluielem {
     // Size: 0x40
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "developer_mode", 0);
+        set_data(localclientnum, "developer_mode", 0);
     }
 
 }

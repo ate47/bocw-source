@@ -14,12 +14,8 @@ function autoexec initanimationmocomps() {
 // Checksum 0x2aa9897, Offset: 0xe0
 // Size: 0x162
 function event_handler[runanimationmocomp] runanimationmocomp(eventstruct) {
-    /#
-        assert(eventstruct.status >= 0 && eventstruct.status <= 2, "<unknown string>" + eventstruct.status + "<unknown string>");
-    #/
-    /#
-        assert(isdefined(level._animationmocomps[eventstruct.name]), "<unknown string>" + eventstruct.name + "<unknown string>");
-    #/
+    assert(eventstruct.status >= 0 && eventstruct.status <= 2, "<unknown string>" + eventstruct.status + "<unknown string>");
+    assert(isdefined(level._animationmocomps[eventstruct.name]), "<unknown string>" + eventstruct.name + "<unknown string>");
     if (eventstruct.status == 0) {
         eventstruct.status = "asm_mocomp_start";
     } else if (eventstruct.status == 1) {
@@ -37,29 +33,19 @@ function event_handler[runanimationmocomp] runanimationmocomp(eventstruct) {
 // Size: 0x232
 function registeranimationmocomp(mocompname, startfuncptr, updatefuncptr, terminatefuncptr) {
     mocompname = tolower(mocompname);
-    /#
-        assert(isstring(mocompname), "<unknown string>");
-    #/
-    /#
-        assert(!isdefined(level._animationmocomps[mocompname]), "<unknown string>" + mocompname + "<unknown string>");
-    #/
+    assert(isstring(mocompname), "<unknown string>");
+    assert(!isdefined(level._animationmocomps[mocompname]), "<unknown string>" + mocompname + "<unknown string>");
     level._animationmocomps[mocompname] = array();
-    /#
-        assert(isdefined(startfuncptr) && isfunctionptr(startfuncptr), "<unknown string>");
-    #/
+    assert(isdefined(startfuncptr) && isfunctionptr(startfuncptr), "<unknown string>");
     level._animationmocomps[mocompname][#"asm_mocomp_start"] = startfuncptr;
     if (isdefined(updatefuncptr)) {
-        /#
-            assert(isfunctionptr(updatefuncptr), "<unknown string>");
-        #/
+        assert(isfunctionptr(updatefuncptr), "<unknown string>");
         level._animationmocomps[mocompname][#"asm_mocomp_update"] = updatefuncptr;
     } else {
         level._animationmocomps[mocompname][#"asm_mocomp_update"] = &animationmocompemptyfunc;
     }
     if (isdefined(terminatefuncptr)) {
-        /#
-            assert(isfunctionptr(terminatefuncptr), "<unknown string>");
-        #/
+        assert(isfunctionptr(terminatefuncptr), "<unknown string>");
         level._animationmocomps[mocompname][#"asm_mocomp_terminate"] = terminatefuncptr;
         return;
     }

@@ -60,9 +60,7 @@ function private function_30c3f95d(var_352058a) {
 // Checksum 0x725ea3b7, Offset: 0x5d8
 // Size: 0x82
 function player_init() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!isdefined(self.var_9ebbaa46)) {
         self.var_9ebbaa46 = spawnstruct();
         self.var_9ebbaa46.victim = undefined;
@@ -76,9 +74,7 @@ function player_init() {
 // Checksum 0x9bac2208, Offset: 0x668
 // Size: 0xc4
 function function_c3475251(action) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self endon(action.ender);
     self player_init();
     if (is_true(self actions::function_83bde308(action, "use", #"carry_body"))) {
@@ -93,9 +89,7 @@ function function_c3475251(action) {
 // Checksum 0x5a4af75c, Offset: 0x738
 // Size: 0x76
 function function_b9c74598(action) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self endon(action.ender);
     self player_init();
     self waittill(#"body_pickup");
@@ -202,12 +196,8 @@ function function_9ccb0bfc(var_248cbbcf) {
 // Checksum 0x5f8dff18, Offset: 0xd38
 // Size: 0x2b6
 function function_5654f611(body) {
-    /#
-        assert(isplayer(self));
-    #/
-    /#
-        assert(isentity(body));
-    #/
+    assert(isplayer(self));
+    assert(isentity(body));
     var_46abe989 = body.origin;
     if (!isai(body)) {
         var_46abe989 = body getcorpsephysicsorigin();
@@ -340,9 +330,7 @@ function function_ebce8b6(*a_ents) {
 function private function_e3789852(*victim) {
     self notify("61ce5061c1e4aeb3");
     self endon("61ce5061c1e4aeb3");
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self endon(#"death", #"hash_7c3b085512be9978");
     util::waittill_any_ents(level, "no_corpse_pickup", level, "drop_corpse", level, "prompts_disabled", self, "prompts_disabled");
     self notify(#"hash_4dff86580406a1af");
@@ -355,9 +343,7 @@ function private function_e3789852(*victim) {
 function private function_f1aa7603(*victim) {
     self notify("12028de136f92897");
     self endon("12028de136f92897");
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self endon(#"hash_7c3b085512be9978");
     self waittill(#"death", #"hash_2b62b2990144ebf6");
     if (isentity(self.takedown.body)) {
@@ -402,7 +388,6 @@ function function_9abb3f03(victim) {
     self prompts::function_d03d79d6(button, 0);
     self prompts::function_3171730f(button, #"actions");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"body_drop", #"hash_4dff86580406a1af");
         if (!self function_c4fe1ef2() && waitresult._notify === "body_drop") {
             continue;
@@ -462,10 +447,8 @@ function body_drop(victim) {
 // Checksum 0x77344d8e, Offset: 0x2230
 // Size: 0xec
 function private function_305446bc(forward = 20) {
-    /#
-        assert(isplayer(self));
-    #/
-    offset = vectorscale((0, 0, 1), 8);
+    assert(isplayer(self));
+    offset = (0, 0, 8);
     new_origin = playerphysicstrace(self.origin + offset, self.origin + anglestoforward(self.angles) * forward + offset);
     new_origin = playerphysicstrace(new_origin, new_origin - offset);
     self setorigin(new_origin);

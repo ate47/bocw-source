@@ -90,9 +90,7 @@ function private function_da432d39(name) {
 // Checksum 0x8cdcbefe, Offset: 0x4b0
 // Size: 0x74
 function private function_1e34097d(var_8f63b4bd) {
-    /#
-        assert(var_8f63b4bd < 1048576);
-    #/
+    assert(var_8f63b4bd < 1048576);
     level.var_59cd6d34.var_cd7d2e9f = var_8f63b4bd;
     level clientfield::set("district_bitfield", level.var_59cd6d34.var_cd7d2e9f);
 }

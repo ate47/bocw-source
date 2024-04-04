@@ -45,8 +45,8 @@ function function_9cb928dc(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_214a11f9 = util::playfxontag(fieldname, var_8cce6a5c, self.var_b4afca05, "tag_origin");
         self thread function_add31c08();
         if (!isdefined(self.var_d912eb65)) {
-            playsound(fieldname, #"hash_3f0bee7329c6d063", self.origin + vectorscale((0, 0, 1), 25));
-            self.var_d912eb65 = self playloopsound(#"hash_d9ada961eacdf0", undefined, vectorscale((0, 0, 1), 25));
+            playsound(fieldname, #"hash_3f0bee7329c6d063", self.origin + (0, 0, 25));
+            self.var_d912eb65 = self playloopsound(#"hash_d9ada961eacdf0", undefined, (0, 0, 25));
         }
         return;
     }

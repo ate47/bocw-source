@@ -127,16 +127,13 @@ function function_c8fb4513(var_63c85287 = 600, var_1f7b3936 = int(600 / 5)) {
     level.var_f045e945 = undefined;
     level notify(#"hash_58abffc4e8e535c7");
     if (!isdefined(var_e2062f3)) {
-        /#
-            assertmsg("<unknown string>" + (isdefined(level.script) ? level.script : "<unknown string>") + "<unknown string>");
-        #/
+        assertmsg("<unknown string>" + (isdefined(level.script) ? level.script : "<unknown string>") + "<unknown string>");
         level notify(#"end_game", {#reason:#"hash_22a0611dcd352614"});
         return;
     }
     content_manager::spawn_instance(var_e2062f3);
     level notify(#"hash_3e765c26047c9f54");
     level flag::set(#"hash_742b43f40747c72a");
-    s_result = undefined;
     s_result = level waittill(#"objective_ended");
     if (is_true(s_result.completed)) {
         str_reason = #"hash_6ebafb1370ab6c93";
@@ -399,7 +396,7 @@ function function_ab0f88ca() {
             }
             /#
                 if (getdvarint(#"hash_33b0be96bf3cd69a", 0) || getdvarint(#"hash_7466f1c38ea3ceab", 0)) {
-                    cylinder(v_spawn, v_spawn + vectorscale((0, 0, 1), 5000), 500, (1, 0, 0), 0, n_delay * 20);
+                    cylinder(v_spawn, v_spawn + (0, 0, 5000), 500, (1, 0, 0), 0, n_delay * 20);
                 }
             #/
             player thread namespace_591b4396::function_64df57fc(v_spawn, var_62455b3e);
@@ -570,7 +567,7 @@ function function_e01cf436(var_36b79a75, n_max_time = 30) {
             #/
         }
         if (n_time >= n_max_time && !is_true(self.ignoreme)) {
-            v_start = self.origin + vectorscale((0, 0, 1), 2000) + anglestoforward(self.angles) * -2000;
+            v_start = self.origin + (0, 0, 2000) + anglestoforward(self.angles) * -2000;
             array::delete_all(self.var_5946e38a);
             arrayremovevalue(self.var_5946e38a, undefined);
             var_8214bfd5 = 4;
@@ -637,11 +634,11 @@ function function_3ff09157(var_36b79a75, n_current_time, b_inside) {
             if (isdefined(var_9d01657b) && isdefined(var_5c77052c) && isdefined(n_radius)) {
                 if (b_inside) {
                     debug2dtext((300, 600, 0), "<unknown string>" + (isdefined(n_current_time) ? n_current_time : 0) + "<unknown string>" + n_max_time, (1, 0, 0));
-                    print3d(var_5c77052c + vectorscale((0, 0, 1), 40), "<unknown string>" + (isdefined(n_current_time) ? n_current_time : 0) + "<unknown string>" + n_max_time, (1, 0, 0), undefined, 0.1, 1, 1);
+                    print3d(var_5c77052c + (0, 0, 40), "<unknown string>" + (isdefined(n_current_time) ? n_current_time : 0) + "<unknown string>" + n_max_time, (1, 0, 0), undefined, 0.1, 1, 1);
                     cylinder(var_5c77052c, var_9d01657b, n_radius, (1, 0, 0), undefined, 1);
                     return;
                 }
-                print3d(var_5c77052c + vectorscale((0, 0, 1), 40), "<unknown string>" + (isdefined(n_current_time) ? n_current_time : 0) + "<unknown string>" + n_max_time, (0, 1, 0), undefined, 0.25, 1, 1);
+                print3d(var_5c77052c + (0, 0, 40), "<unknown string>" + (isdefined(n_current_time) ? n_current_time : 0) + "<unknown string>" + n_max_time, (0, 1, 0), undefined, 0.25, 1, 1);
                 cylinder(var_5c77052c, var_9d01657b, n_radius, (0, 1, 0), undefined, 1);
             }
         }

@@ -39,17 +39,11 @@ function private preinit() {
     spawner::function_89a2cd87(#"avogadro", &function_c41e67c);
     level.var_c8827250 = &function_dc04aa1a;
     zm_cleanup::function_cdf5a512(#"avogadro", &function_c9791011);
-    /#
-        assert(isscriptfunctionptr(&function_f498585b));
-    #/
+    assert(isscriptfunctionptr(&function_f498585b));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_76e19aed5b42448f", &function_f498585b);
-    /#
-        assert(isscriptfunctionptr(&function_5871bcf8));
-    #/
+    assert(isscriptfunctionptr(&function_5871bcf8));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_408e0b3d57595bf7", &function_5871bcf8, 1);
-    /#
-        assert(isscriptfunctionptr(&function_14b5c940));
-    #/
+    assert(isscriptfunctionptr(&function_14b5c940));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_21f9e6b4d52f79cb", &function_14b5c940);
     zm_round_spawning::register_archetype(#"avogadro", &function_68ae7023, &round_spawn, undefined, 50);
     zm_round_spawning::function_306ce518(#"avogadro", &function_f53b79b4);

@@ -46,9 +46,7 @@ function private preinit() {
 // Size: 0x154
 function main() {
     function_f9682fd();
-    /#
-        assert(isdefined(level.stealth), "<unknown string>");
-    #/
+    assert(isdefined(level.stealth), "<unknown string>");
     level.stealth.fnplayerlootenabled = undefined;
     level.stealth.fngetcorpseorigin = &get_corpse_origin;
     level.stealth.fnsetbattlechatter = undefined;
@@ -281,9 +279,7 @@ function threat_sight_player_sight_audio(anycansee, maxthreat, var_2107b994) {
 // Checksum 0xf1712749, Offset: 0x11e8
 // Size: 0x206
 function addeventplaybcs(*eventaction, eventtype, modifier, *delay, *eventstruct, *force, *var_9c201ccd) {
-    /#
-        assert(isdefined(force));
-    #/
+    assert(isdefined(force));
     alias = undefined;
     responses = undefined;
     switch (force) {

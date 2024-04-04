@@ -324,9 +324,7 @@ function init_spawnfunctions() {
 // Checksum 0x8f442f60, Offset: 0x3588
 // Size: 0xf0
 function function_d3918b2e(var_1ef13f7e) {
-    /#
-        assert(isdefined(var_1ef13f7e), "hub_mdl_cart_01_clip");
-    #/
+    assert(isdefined(var_1ef13f7e), "hub_mdl_cart_01_clip");
     if (var_1ef13f7e == "adler") {
         level.adler = self;
     }
@@ -524,9 +522,7 @@ function function_6194f34a(var_8ced85ea, var_3223cb64, *var_ef49aa65 = 0) {
 // Checksum 0x9602d11e, Offset: 0x4288
 // Size: 0x778
 function function_91c383b1(chapter) {
-    /#
-        assert(isdefined(chapter), "hub_mdl_lounge_chair");
-    #/
+    assert(isdefined(chapter), "hub_mdl_lounge_chair");
     level.a_ai_allies = [];
     level.var_58ccee4 = [];
     switch (chapter) {
@@ -1021,9 +1017,7 @@ function function_1011dd35() {
 // Size: 0x114
 function function_82743d25(var_8ced85ea, var_ef49aa65) {
     var_45ddb155 = ["post_takedown", "post_armada", "post_yamantau", "post_kgb", "post_cuba"];
-    /#
-        assert(isinarray(var_45ddb155, var_8ced85ea));
-    #/
+    assert(isinarray(var_45ddb155, var_8ced85ea));
     for (i = 0; i < var_45ddb155.size; i++) {
         if (var_8ced85ea === var_45ddb155[i]) {
             var_af175293 = i;
@@ -1184,7 +1178,7 @@ function function_7b0516d7(var_5fc1b24e) {
     level.player endon(#"death");
     self.var_ba1eee16.challenge_id = (isdefined(level.var_f5552371) ? level.var_f5552371 : "") + "_" + self.animname;
     if (!isdefined(self.var_ba1eee16.v_offset)) {
-        self.var_ba1eee16.v_offset = vectorscale((0, 0, 1), 8);
+        self.var_ba1eee16.v_offset = (0, 0, 8);
     }
     self.var_ba1eee16.var_f16ae1ba = 0;
     self.var_ba1eee16.var_91f6b4c9 = 0;
@@ -1211,7 +1205,6 @@ function function_7b0516d7(var_5fc1b24e) {
             self util::create_cursor_hint(tagname, self.var_ba1eee16.v_offset, var_c93a00f2, 160, undefined, undefined, undefined, undefined, 0);
             self prompts::function_92127496(1);
             self prompts::function_1a5e1da6(#"use", 1);
-            msg = undefined;
             msg = self waittill(#"trigger", #"death", #"hash_15ec42f1846ef9d0", #"deleted", #"kill_dialog");
             if (msg._notify == "trigger") {
                 if (self.var_ba1eee16.s_tree dialog_tree::function_6a2674b8() > 1) {
@@ -1251,7 +1244,6 @@ function function_7942fda9(var_2bdad064, var_bdaf74c3) {
         level thread scene::play(self.var_ba1eee16.var_f2190d3d, var_2bdad064[2]);
         n_length = scene::function_8582657c(self.var_ba1eee16.var_f2190d3d, var_2bdad064[2]);
     }
-    s_notify = undefined;
     s_notify = self waittilltimeout(n_length, #"hash_71ceced1590e6571", #"hash_155e10099c9b39af", #"hash_70e9da56c5fa88ef");
     self flag::clear("_dialog_anim_playing");
     if (s_notify._notify === "dialog_tree_cancel_response") {
@@ -1428,7 +1420,6 @@ function function_29699066() {
         break;
     }
     level thread function_a59f5e5b(self, var_ffb43fb8);
-    ret = undefined;
     ret = level waittill(#"hash_727216e12f8e4bc0", #"hash_286884e81482304b");
     if (ret._notify == "dialog_tree_choice_made") {
         self flag::set("dialog_wait_for_animation");
@@ -1472,9 +1463,7 @@ function function_a59f5e5b(actor, var_ffb43fb8) {
 // Checksum 0xba12ec30, Offset: 0x9790
 // Size: 0x7a
 function function_daffdf1(scene) {
-    /#
-        assert(isdefined(scene), "_moscow");
-    #/
+    assert(isdefined(scene), "_moscow");
     s_scene = struct::get(scene, "targetname");
     s_scene.origin = self.origin;
     s_scene.angles = self.angles;
@@ -2454,9 +2443,7 @@ function exit_func() {
 function function_cdbadaff(n_time, var_4961ddd2, var_97fef14f) {
     self endon(#"death");
     self endon(#"entitydeleted");
-    /#
-        assert(self.classname == "<unknown string>", "<unknown string>");
-    #/
+    assert(self.classname == "<unknown string>", "<unknown string>");
     if (!isdefined(n_time)) {
         n_time = 1;
     }
@@ -2804,7 +2791,6 @@ function function_ca7fd487(origin) {
     player = level.player;
     while (true) {
         tag util::create_cursor_hint("tag_origin", (0, 0, 0), #"hash_5a99713f8e17468c", 85, undefined, &function_f5ee087c, undefined, undefined, undefined, undefined, undefined, 1, undefined);
-        s_result = undefined;
         s_result = player waittill(#"exit", #"hash_542efe3d2dcb6459");
         if (s_result._notify == #"hash_542efe3d2dcb6459") {
             tag util::remove_cursor_hint();
@@ -2832,7 +2818,6 @@ function function_f5ee087c() {
     namespace_c8e236da::function_ebf737f8(#"hash_7d0ad4e924d219af");
     level flag::wait_till("level_is_go");
     while (true) {
-        s_result = undefined;
         s_result = player waittill(#"exit", #"hash_542efe3d2dcb6459");
         if (s_result._notify == #"exit") {
             level flag::set("combination_lock_exited");
@@ -3024,7 +3009,7 @@ function function_cd3f7bff() {
     self.count = 0;
     self.var_e12cd9e4 = 6;
     while (!level flag::get("post_kgb_exited")) {
-        self.usable util::create_cursor_hint("tag_origin", vectorscale((0, 0, 1), 8), #"hash_1cbb97e6dd4209d1");
+        self.usable util::create_cursor_hint("tag_origin", (0, 0, 8), #"hash_1cbb97e6dd4209d1");
         util::waittill_any_ents(self.usable, "trigger");
         self.usable util::remove_cursor_hint();
         if (!isdefined(self.var_5956048c)) {
@@ -3189,7 +3174,6 @@ function function_98bc17c8() {
 // Size: 0x20e
 function function_77a7721() {
     while (true) {
-        var_c564fe97 = undefined;
         var_c564fe97 = level waittill(#"hash_24aefb38c6bd8236", #"hash_10d521d9edbeb091", #"hash_7730e9e72bc8c4b2", #"hash_620e399c26081cc5", #"hash_98ecabf687c31a0", #"hash_7e2afe32d900fa23", #"hash_4559bc6bde09c1f0", #"hash_3af2de6bab0e3202");
         switch (var_c564fe97._notify) {
         case #"hash_24aefb38c6bd8236":

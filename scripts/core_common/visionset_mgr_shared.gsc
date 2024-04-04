@@ -34,9 +34,7 @@ function private preinit() {
 // Checksum 0xd0985360, Offset: 0x220
 // Size: 0x172
 function register_info(type, name, version, priority, lerp_step_count, should_activate_per_player, lerp_thread, ref_count_lerp_thread) {
-    /#
-        assert(level.vsmgr_initializing, "<unknown string>");
-    #/
+    assert(level.vsmgr_initializing, "<unknown string>");
     lower_name = tolower(name);
     validate_info(type, lower_name, priority);
     add_sorted_name_key(type, lower_name);
@@ -369,9 +367,7 @@ function finalize_clientfields() {
 // Checksum 0x624aa6e5, Offset: 0x13c8
 // Size: 0x234
 function finalize_type_clientfields() {
-    /#
-        println("<unknown string>" + self.type + "<unknown string>");
-    #/
+    println("<unknown string>" + self.type + "<unknown string>");
     if (1 >= self.info.size) {
         return;
     }
@@ -383,9 +379,7 @@ function finalize_type_clientfields() {
         if (self.info[self.sorted_name_keys[i]].lerp_bit_count > self.cf_lerp_bit_count) {
             self.cf_lerp_bit_count = self.info[self.sorted_name_keys[i]].lerp_bit_count;
         }
-        /#
-            println("<unknown string>" + self.info[self.sorted_name_keys[i]].name + "<unknown string>" + self.info[self.sorted_name_keys[i]].version + "<unknown string>" + self.info[self.sorted_name_keys[i]].lerp_step_count + "<unknown string>");
-        #/
+        println("<unknown string>" + self.info[self.sorted_name_keys[i]].name + "<unknown string>" + self.info[self.sorted_name_keys[i]].version + "<unknown string>" + self.info[self.sorted_name_keys[i]].lerp_step_count + "<unknown string>");
     }
     clientfield::register("toplayer", self.cf_slot_name, self.highest_version, self.cf_slot_bit_count, "int");
     if (1 < self.cf_lerp_bit_count) {
@@ -404,16 +398,10 @@ function validate_info(type, name, priority) {
             break;
         }
     }
-    /#
-        assert(i < keys.size, "<unknown string>" + type + "<unknown string>");
-    #/
+    assert(i < keys.size, "<unknown string>" + type + "<unknown string>");
     foreach (v in level.vsmgr[type].info) {
-        /#
-            assert(v.name != name, "<unknown string>" + type + "<unknown string>" + name + "<unknown string>");
-        #/
-        /#
-            assert(v.priority != priority, "<unknown string>" + type + "<unknown string>" + priority + "<unknown string>" + name + "<unknown string>" + v.name + "<unknown string>");
-        #/
+        assert(v.name != name, "<unknown string>" + type + "<unknown string>" + name + "<unknown string>");
+        assert(v.priority != priority, "<unknown string>" + type + "<unknown string>" + priority + "<unknown string>" + name + "<unknown string>" + v.name + "<unknown string>");
     }
 }
 

@@ -118,9 +118,7 @@ function private function_86b9a404() {
 // Checksum 0xc4f59276, Offset: 0x778
 // Size: 0x84
 function function_e12c220a(var_16888a24) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!isplayer(self)) {
         return;
     }
@@ -159,7 +157,6 @@ function private function_a7879258(lastweapon) {
         self weapons::function_d571ac59(lastweapon, 0, 0, var_b2cde03b);
         return;
     }
-    waitresult = undefined;
     waitresult = self waittilltimeout(2, #"weapon_change_complete", #"death", #"enter_vehicle", #"exit_vehicle");
     if (waitresult._notify !== #"weapon_change_complete") {
         self weapons::function_d571ac59(lastweapon, 0, 0, var_b2cde03b);
@@ -179,7 +176,6 @@ function private function_a7879258(lastweapon) {
                 self weapons::function_d571ac59(lastweapon, 0, 0, var_b2cde03b);
                 return;
             }
-            waitresult = undefined;
             waitresult = self waittilltimeout(1.1, #"death", #"enter_vehicle", #"exit_vehicle");
             if (waitresult._notify !== #"timeout") {
                 self weapons::function_d571ac59(lastweapon, 0, 0, var_b2cde03b);

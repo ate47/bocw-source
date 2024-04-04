@@ -98,18 +98,10 @@ function private function_8610d024(localclientnum, _cmd) {
 // Checksum 0xcaaf8970, Offset: 0xb78
 // Size: 0x22a
 function private function_21d71e38(player, cmd, args) {
-    /#
-        assert(isplayer(player));
-    #/
-    /#
-        assert(isdefined(player.localclientnum));
-    #/
-    /#
-        assert(isstring(cmd) && (cmd == "<unknown string>" || cmd == "<unknown string>"));
-    #/
-    /#
-        assert(isarray(args) && args.size >= 2);
-    #/
+    assert(isplayer(player));
+    assert(isdefined(player.localclientnum));
+    assert(isstring(cmd) && (cmd == "<unknown string>" || cmd == "<unknown string>"));
+    assert(isarray(args) && args.size >= 2);
     if (function_81fac19d(!isscriptfunctionptr(level._snd._callbacks[#"hash_42c86668831b6304"]), "snd: client msg without initialization")) {
         return;
     }
@@ -131,18 +123,10 @@ function private function_21d71e38(player, cmd, args) {
 // Checksum 0x218660b1, Offset: 0xdb0
 // Size: 0x190
 function private function_6d366059(player, cmd, args) {
-    /#
-        assert(isplayer(player));
-    #/
-    /#
-        assert(isdefined(player.localclientnum));
-    #/
-    /#
-        assert(isstring(cmd) && cmd == "<unknown string>");
-    #/
-    /#
-        assert(isarray(args));
-    #/
+    assert(isplayer(player));
+    assert(isdefined(player.localclientnum));
+    assert(isstring(cmd) && cmd == "<unknown string>");
+    assert(isarray(args));
     entitynumber = int(args[1]);
     targetname = string(args[2]);
     if (args.size > 3) {
@@ -158,18 +142,10 @@ function private function_6d366059(player, cmd, args) {
 // Checksum 0xa882d197, Offset: 0xf48
 // Size: 0x542
 function private function_cc4bf5ee(player, cmd, args) {
-    /#
-        assert(isplayer(player));
-    #/
-    /#
-        assert(isdefined(player.localclientnum));
-    #/
-    /#
-        assert(isstring(cmd) && cmd == "<unknown string>");
-    #/
-    /#
-        assert(isarray(args));
-    #/
+    assert(isplayer(player));
+    assert(isdefined(player.localclientnum));
+    assert(isstring(cmd) && cmd == "<unknown string>");
+    assert(isarray(args));
     var_e1fb96c7 = isdefined(level._snd._callbacks[#"client_voice"]) && isscriptfunctionptr(level._snd._callbacks[#"client_voice"]);
     entitynumber = int(args[1]);
     soundalias = undefined;
@@ -177,9 +153,7 @@ function private function_cc4bf5ee(player, cmd, args) {
         soundalias = string(args[2]);
     }
     if (args.size > 3) {
-        /#
-            assert(isstring(soundalias));
-        #/
+        assert(isstring(soundalias));
         for (i = 3; i < args.size; i++) {
             soundalias = soundalias + " " + string(args[i]);
         }
@@ -326,12 +300,8 @@ function function_ce78b33b(callback) {
 // Checksum 0x2e7a9be, Offset: 0x18f0
 // Size: 0x1b0
 function function_2761fc04(ent, var_1d25915, var_605838f4, var_e330010e) {
-    /#
-        assert(isdefined(ent), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(ent.soundkey), "<unknown string>");
-    #/
+    assert(isdefined(ent), "<unknown string>");
+    assert(isdefined(ent.soundkey), "<unknown string>");
     if (isdefined(var_605838f4)) {
         var_e330010e = var_605838f4 snd::function_bf7c949(var_e330010e);
         var_386560b8 = (0, 0, 0);
@@ -339,9 +309,7 @@ function function_2761fc04(ent, var_1d25915, var_605838f4, var_e330010e) {
         if (isdefined(var_1d25915)) {
             var_386560b8 = var_1d25915;
         }
-        /#
-            assert(isdefined(var_e330010e), "<unknown string>");
-        #/
+        assert(isdefined(var_e330010e), "<unknown string>");
         if (isstring(var_e330010e) && var_e330010e != "" && var_e330010e != "tag_origin") {
             ent linkto(var_605838f4, var_e330010e);
         } else {
@@ -374,14 +342,12 @@ function function_5275752c(soundalias, var_1d25915, var_605838f4, var_e330010e) 
     } else if (isdefined(var_605838f4)) {
         spawnorigin = var_605838f4.origin;
     } else if (!isdefined(var_605838f4) && !isdefined(var_1d25915)) {
-        var_3692a397 = vectorscale((0, 0, -1), 32768);
+        var_3692a397 = (0, 0, -32768);
         spawnorigin = var_3692a397;
     } else {
         spawnorigin = var_1d25915;
     }
-    /#
-        assert(isdefined(spawnorigin));
-    #/
+    assert(isdefined(spawnorigin));
     ent = undefined;
     if (isdefined(var_605838f4)) {
         ent = spawn(0, spawnorigin, "script_model");
@@ -389,9 +355,7 @@ function function_5275752c(soundalias, var_1d25915, var_605838f4, var_e330010e) 
     } else {
         ent = spawn(0, spawnorigin, "script_origin");
     }
-    /#
-        assert(isdefined(ent), "<unknown string>");
-    #/
+    assert(isdefined(ent), "<unknown string>");
     ent.var_90c86b97 = var_605838f4;
     ent.soundtype = #"centity";
     ent.soundkey = ent getentitynumber();
@@ -439,12 +403,8 @@ function function_bb749fc3(var_afe43979, soundalias, var_99e65ecf, delaytime) {
     ent = var_afe43979;
     currentvolume = undefined;
     ent endon(#"death");
-    /#
-        assert(isdefined(ent));
-    #/
-    /#
-        assert(isstring(soundalias) || ishash(soundalias));
-    #/
+    assert(isdefined(ent));
+    assert(isstring(soundalias) || ishash(soundalias));
     currentvolume = 1;
     if (!isdefined(var_99e65ecf) && isdefined(currentvolume)) {
         var_99e65ecf = currentvolume;
@@ -459,9 +419,7 @@ function function_bb749fc3(var_afe43979, soundalias, var_99e65ecf, delaytime) {
         wait(delaytime);
     }
     soundhandle = -1;
-    /#
-        assert(soundexists(soundalias), "<unknown string>" + soundalias);
-    #/
+    assert(soundexists(soundalias), "<unknown string>" + soundalias);
     if (soundislooping(soundalias) == 1) {
         soundhandle = ent playloopsound(soundalias);
     } else {
@@ -551,9 +509,7 @@ function private function_297cdf07(done, soundhandle) {
 // Checksum 0x82ac3476, Offset: 0x2440
 // Size: 0x44
 function function_b5959278(*ent, *var_1d25915, *var_605838f4, *var_e330010e) {
-    /#
-        assert(0, "<unknown string>");
-    #/
+    assert(0, "<unknown string>");
 }
 
 // Namespace namespace_afa8e18b/snd
@@ -561,9 +517,7 @@ function function_b5959278(*ent, *var_1d25915, *var_605838f4, *var_e330010e) {
 // Checksum 0x7d66fbad, Offset: 0x2490
 // Size: 0x46
 function function_85daf9f0(*soundalias, *var_1d25915, *var_605838f4, *var_e330010e) {
-    /#
-        assert(0, "<unknown string>");
-    #/
+    assert(0, "<unknown string>");
     return undefined;
 }
 
@@ -572,9 +526,7 @@ function function_85daf9f0(*soundalias, *var_1d25915, *var_605838f4, *var_e33001
 // Checksum 0xd86e43f6, Offset: 0x24e0
 // Size: 0x2c
 function function_6ac5b570(*ent) {
-    /#
-        assert(0, "<unknown string>");
-    #/
+    assert(0, "<unknown string>");
 }
 
 // Namespace namespace_afa8e18b/snd
@@ -582,9 +534,7 @@ function function_6ac5b570(*ent) {
 // Checksum 0xcc94ec83, Offset: 0x2518
 // Size: 0x44
 function function_2dde45d9(*var_afe43979, *soundalias, *var_99e65ecf, *delaytime) {
-    /#
-        assert(0, "<unknown string>");
-    #/
+    assert(0, "<unknown string>");
 }
 
 // Namespace namespace_afa8e18b/snd
@@ -592,9 +542,7 @@ function function_2dde45d9(*var_afe43979, *soundalias, *var_99e65ecf, *delaytime
 // Checksum 0x368e01bb, Offset: 0x2568
 // Size: 0x34
 function function_9f156b27(*var_afe43979, *var_24ea4e17) {
-    /#
-        assert(0, "<unknown string>");
-    #/
+    assert(0, "<unknown string>");
 }
 
 #namespace snd;
@@ -650,9 +598,7 @@ function private function_d72fc2b9(var_afe43979, value, var_9cecf99a) {
         return;
     }
     function_3323ac64(var_afe43979);
-    /#
-        assert(isdefined(var_afe43979.var_aceb47b0) == 1);
-    #/
+    assert(isdefined(var_afe43979.var_aceb47b0) == 1);
     if (isdefined(var_9cecf99a) == 1) {
         if (var_9cecf99a == &function_5803da43) {
             var_afe43979.var_aceb47b0.volume = value;
@@ -669,9 +615,7 @@ function private function_d72fc2b9(var_afe43979, value, var_9cecf99a) {
 // Checksum 0xe54a8ec1, Offset: 0x28b0
 // Size: 0x9e
 function private function_2530f85d(var_afe43979, var_9cecf99a) {
-    /#
-        assert(isdefined(var_afe43979));
-    #/
+    assert(isdefined(var_afe43979));
     if (isdefined(var_afe43979.var_aceb47b0) == 1) {
         if (var_9cecf99a == &function_5803da43) {
             return var_afe43979.var_aceb47b0.volume;
@@ -691,9 +635,7 @@ function private function_6c660df4(var_9cecf99a) {
     var_257087e9 = undefined;
     self endon(#"death");
     self waittill(#"hash_2178ab9046055607");
-    /#
-        assert(isdefined(var_9cecf99a) == 1, "<unknown string>");
-    #/
+    assert(isdefined(var_9cecf99a) == 1, "<unknown string>");
     if (var_9cecf99a == &function_5803da43) {
         self.var_aceb47b0.var_6d865326 = undefined;
         var_257087e9 = "volume";
@@ -702,9 +644,7 @@ function private function_6c660df4(var_9cecf99a) {
         self.var_aceb47b0.var_a1666553 = undefined;
         var_257087e9 = "pitch";
     }
-    /#
-        assert(isdefined(var_257087e9) == 1);
-    #/
+    assert(isdefined(var_257087e9) == 1);
     self.var_aceb47b0.threads[var_257087e9] = undefined;
     if (isdefined(self.var_aceb47b0.var_6d865326) == 0 && isdefined(self.var_aceb47b0.var_a1666553) == 0) {
         self.var_aceb47b0.var_e5dc3452 = undefined;
@@ -719,22 +659,12 @@ function private function_6c660df4(var_9cecf99a) {
 // Size: 0x762
 function private function_48e190dd(curve, scale, time, var_9cecf99a, callbackfunc) {
     self endon(#"death", #"disconnect");
-    /#
-        assert(isdefined(self.var_aceb47b0) == 1);
-    #/
-    /#
-        assert(isdefined(self.var_aceb47b0.threads) == 1);
-    #/
-    /#
-        assert(isdefined(var_9cecf99a) == 1);
-    #/
-    /#
-        assert(time > 0);
-    #/
+    assert(isdefined(self.var_aceb47b0) == 1);
+    assert(isdefined(self.var_aceb47b0.threads) == 1);
+    assert(isdefined(var_9cecf99a) == 1);
+    assert(time > 0);
     var_7c87e4f1 = function_fc955f31(curve);
-    /#
-        assert(var_7c87e4f1 > 0, "<unknown string>");
-    #/
+    assert(var_7c87e4f1 > 0, "<unknown string>");
     frametime = float(function_6cfa7975());
     timeremainder = function_a18ae88f(float(time), frametime);
     time = float(time) + frametime - timeremainder;
@@ -776,9 +706,7 @@ function private function_48e190dd(curve, scale, time, var_9cecf99a, callbackfun
         self.var_aceb47b0.var_a1666553 = 1;
         var_257087e9 = "pitch";
     }
-    /#
-        assert(isdefined(var_257087e9) == 1);
-    #/
+    assert(isdefined(var_257087e9) == 1);
     self.var_aceb47b0.threads[var_257087e9] = 1;
     self endon("snd_stop_scale_" + var_257087e9);
     while (var_5bd40646 < timems && isdefined(self) == 1 && isdefined(self.var_aceb47b0.threads[var_257087e9]) == 1) {
@@ -822,13 +750,9 @@ function private function_48e190dd(curve, scale, time, var_9cecf99a, callbackfun
 // Checksum 0xb29434c7, Offset: 0x3230
 // Size: 0xaa
 function function_f2a84378(var_afe43979, waitinterval) {
-    /#
-        assert(isdefined(var_afe43979) == 1);
-    #/
+    assert(isdefined(var_afe43979) == 1);
     function_3323ac64(var_afe43979);
-    /#
-        assert(isdefined(var_afe43979.var_aceb47b0) == 1);
-    #/
+    assert(isdefined(var_afe43979.var_aceb47b0) == 1);
     var_afe43979.var_aceb47b0.waitinterval = max(waitinterval, function_6cfa7975());
 }
 
@@ -847,15 +771,9 @@ function function_5db87276(var_afe43979, var_a31cb1fb, value, time, curve, callb
     if (function_81fac19d(function_3132f113(var_afe43979) == 1, "snd_scale: called on removed entity")) {
         return;
     }
-    /#
-        assert(isdefined(var_afe43979) == 1, "<unknown string>");
-    #/
-    /#
-        assert(function_3132f113(var_afe43979) == 0, "<unknown string>");
-    #/
-    /#
-        assert(isdefined(value) == 1);
-    #/
+    assert(isdefined(var_afe43979) == 1, "<unknown string>");
+    assert(function_3132f113(var_afe43979) == 0, "<unknown string>");
+    assert(isdefined(value) == 1);
     function_3323ac64(var_afe43979);
     var_e127d44f = value;
     var_9cecf99a = undefined;
@@ -884,9 +802,7 @@ function function_5db87276(var_afe43979, var_a31cb1fb, value, time, curve, callb
         function_81fac19d(value != var_e127d44f, "snd_scale: clamped pitch " + value + " -> " + var_e127d44f);
         break;
     }
-    /#
-        assert(isdefined(var_afe43979) == 1);
-    #/
+    assert(isdefined(var_afe43979) == 1);
     if (isdefined(time) == 0 || time == 0) {
         [[ var_9cecf99a ]](var_afe43979, var_e127d44f, 0);
         function_d72fc2b9(var_afe43979, var_e127d44f, var_9cecf99a);
@@ -928,9 +844,7 @@ function function_7308d4d0(var_afe43979) {
     if (function_81fac19d(function_3132f113(var_afe43979) == 1, "snd_scale: called on removed entity")) {
         return 0;
     }
-    /#
-        assert(isdefined(var_afe43979) == 1);
-    #/
+    assert(isdefined(var_afe43979) == 1);
     return function_2530f85d(var_afe43979, &function_5803da43);
 }
 
@@ -945,9 +859,7 @@ function function_6f94855d(var_afe43979) {
     if (function_81fac19d(function_3132f113(var_afe43979) == 1, "snd_scale: called on removed entity")) {
         return 0;
     }
-    /#
-        assert(isdefined(var_afe43979) == 1);
-    #/
+    assert(isdefined(var_afe43979) == 1);
     return function_2530f85d(var_afe43979, &function_d7b79aea);
 }
 

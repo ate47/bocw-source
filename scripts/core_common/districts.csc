@@ -68,9 +68,7 @@ function function_36d7ec1e(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Checksum 0xc30f6207, Offset: 0x398
 // Size: 0x64
 function function_8040a3dc(index) {
-    /#
-        assert(index < 20);
-    #/
+    assert(index < 20);
     if (index >= level.var_59cd6d34.var_2844be06.size) {
         return undefined;
     }

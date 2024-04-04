@@ -64,18 +64,10 @@ function private finalize() {
 // Checksum 0x7bd2b5cd, Offset: 0x4f8
 // Size: 0x1ea
 function register_script(scriptname, spawncallback, startcallback, category, waypoint, var_4b7d58a, var_b4fae213, var_3fc9b09f = #"hash_248bfcefe7e51481", var_549cb6f6 = undefined) {
-    /#
-        assert(isstring(scriptname) || ishash(scriptname));
-    #/
-    /#
-        assert(isfunctionptr(startcallback));
-    #/
-    /#
-        assert(ishash(category));
-    #/
-    /#
-        assert(isinarray(level.var_4e996a3f, category), "<unknown string>" + function_9e72a96(category) + "<unknown string>");
-    #/
+    assert(isstring(scriptname) || ishash(scriptname));
+    assert(isfunctionptr(startcallback));
+    assert(ishash(category));
+    assert(isinarray(level.var_4e996a3f, category), "<unknown string>" + function_9e72a96(category) + "<unknown string>");
     script = content_manager::register_script(scriptname, isdefined(var_549cb6f6) ? var_549cb6f6 : &function_4e8b29ac);
     script.var_32523552 = spawncallback;
     script.var_11dcc37e = startcallback;
@@ -91,15 +83,9 @@ function register_script(scriptname, spawncallback, startcallback, category, way
 // Checksum 0x39686b37, Offset: 0x6f0
 // Size: 0x214
 function objective_ended(instance, completed = 1) {
-    /#
-        assert(isstruct(instance));
-    #/
-    /#
-        assert(level.contentmanager.activeobjective === instance);
-    #/
-    /#
-        assert(isint(completed));
-    #/
+    assert(isstruct(instance));
+    assert(level.contentmanager.activeobjective === instance);
+    assert(isint(completed));
     level.contentmanager.var_1d9d92ba = level.contentmanager.activeobjective;
     level.contentmanager.activeobjective = undefined;
     level flag::clear("objective_locked");
@@ -134,9 +120,7 @@ function function_43529cfe() {
 // Checksum 0xd63217bd, Offset: 0x968
 // Size: 0x6c
 function function_d28e25e7(var_2e19be37) {
-    /#
-        assert(var_2e19be37 <= 32, "<unknown string>");
-    #/
+    assert(var_2e19be37 <= 32, "<unknown string>");
     if (clientfield::can_set("hudItems.warzone.objectivesCompleted")) {
         level clientfield::set_world_uimodel("hudItems.warzone.objectivesCompleted", var_2e19be37);
     }
@@ -147,9 +131,7 @@ function function_d28e25e7(var_2e19be37) {
 // Checksum 0x9a8adfe4, Offset: 0x9e0
 // Size: 0x6c
 function function_9f6de950(objectivetotal) {
-    /#
-        assert(objectivetotal <= 32, "<unknown string>");
-    #/
+    assert(objectivetotal <= 32, "<unknown string>");
     if (clientfield::can_set("hudItems.warzone.objectiveTotal")) {
         level clientfield::set_world_uimodel("hudItems.warzone.objectiveTotal", objectivetotal);
     }
@@ -198,7 +180,6 @@ function private function_20f53e16(&instances) {
     level endon(#"game_ended");
     foreach (instance in instances) {
         content_manager::spawn_instance(instance);
-        s_result = undefined;
         s_result = level waittill(#"objective_ended");
         if (s_result.completed === 0 && getdvarint(#"hash_15b141da1584bd0d", 1)) {
             namespace_553954de::function_bde08b58(0);
@@ -436,12 +417,8 @@ function private function_1df85442(&destinations, category) {
 // Checksum 0x99875092, Offset: 0x1d08
 // Size: 0x1a4
 function private function_4e8b29ac(instance) {
-    /#
-        assert(isarray(instance.contentgroups[#"hash_3966465c498df3a6"]));
-    #/
-    /#
-        assert(instance.contentgroups[#"hash_3966465c498df3a6"].size == 1);
-    #/
+    assert(isarray(instance.contentgroups[#"hash_3966465c498df3a6"]));
+    assert(instance.contentgroups[#"hash_3966465c498df3a6"].size == 1);
     function_9d4e6125(instance.content_script_name);
     var_7d0e37f8 = instance.contentgroups[#"hash_3966465c498df3a6"][0];
     script = content_manager::get_script(instance.content_script_name);
@@ -624,9 +601,7 @@ function private function_fa47c63e(scriptname) {
 // Size: 0x244
 function start_timer(n_seconds, str_label = #"", var_7ae7852d = 0) {
     level endon(#"game_ended", #"timer_stop");
-    /#
-        assert(n_seconds <= 900);
-    #/
+    assert(n_seconds <= 900);
     level thread function_d3b93d12(n_seconds, str_label, var_7ae7852d);
     foreach (player in getplayers()) {
         player clientfield::set_to_player("sr_defend_timer", 0);
@@ -721,9 +696,7 @@ function function_c30c5e91(*str_notify) {
 function function_b8278876(n_seconds, str_label = #"") {
     level endon(#"game_ended");
     self endon(#"death", #"timer_stop");
-    /#
-        assert(n_seconds <= 900);
-    #/
+    assert(n_seconds <= 900);
     self clientfield::set_to_player("sr_defend_timer", 0);
     if (!level.var_4f12f6d0 sr_objective_timer::is_open(self)) {
         level.var_4f12f6d0 sr_objective_timer::open(self, 1);
@@ -835,9 +808,7 @@ function function_589654ad() {
 // Size: 0x36c
 function autoexec function_42fa2bab() {
     var_8e30d7a1 = getscriptbundle(#"zmsr_objectives");
-    /#
-        assert(isdefined(var_8e30d7a1), "<unknown string>");
-    #/
+    assert(isdefined(var_8e30d7a1), "<unknown string>");
     var_1fd516bc = [];
     variants = [];
     if (isdefined(var_8e30d7a1.var_be78e8da)) {
@@ -909,7 +880,7 @@ function function_67b313bb() {
         level notify(#"hash_473116b92ba013b9");
         level endon(#"hash_473116b92ba013b9");
         var_b49d430f = array("<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>");
-        var_9986d9d6 = array((1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 1, 0), (1, 0.5, 0), (0, 1, 1), (1, 0, 1), (0.439216, 0.501961, 0.564706), (0, 0, 0), vectorscale((1, 1, 0), 0.501961), (0.545098, 0.270588, 0.0745098));
+        var_9986d9d6 = array((1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 1, 0), (1, 0.5, 0), (0, 1, 1), (1, 0, 1), (0.439216, 0.501961, 0.564706), (0, 0, 0), (0.501961, 0.501961, 0), (0.545098, 0.270588, 0.0745098));
         while (true) {
             foreach (index, var_83aaaa47 in var_b49d430f) {
                 v_color = var_9986d9d6[index];

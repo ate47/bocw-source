@@ -44,9 +44,7 @@ function ragdoll_launch(var_ed6db408, magnitude) {
     if (!(isdefined(self) && isdefined(magnitude)) || is_true(self.var_873d65bd)) {
         return;
     }
-    /#
-        assert(magnitude <= 3, "<unknown string>" + magnitude + "<unknown string>");
-    #/
+    assert(magnitude <= 3, "<unknown string>" + magnitude + "<unknown string>");
     if (isvec(var_ed6db408)) {
         var_218aaae3 = function_72d3bca6(level.var_30858358, var_ed6db408, undefined, 0, 32);
         foreach (var_887796fa in var_218aaae3) {
@@ -86,9 +84,7 @@ function private function_9cffb95a() {
 // Checksum 0x15b2f1fa, Offset: 0x598
 // Size: 0x7c
 function private function_12d36686(index) {
-    /#
-        assert(isentity(level.var_30858358[index]), "<unknown string>");
-    #/
+    assert(isentity(level.var_30858358[index]), "<unknown string>");
     level.var_30858358[index] deletedelay();
     level.var_30858358[index] = undefined;
 }

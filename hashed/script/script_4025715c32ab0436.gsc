@@ -7,22 +7,6 @@
 // Method(s) 8 Total 15
 class class_5813c56a : cluielem {
 
-    // Namespace class_5813c56a/zm_silver_hud
-    // Params 0, eflags: 0x8
-    // Checksum 0xb776cd1a, Offset: 0x390
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_5813c56a/zm_silver_hud
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x8397fdfc, Offset: 0x568
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_5813c56a/zm_silver_hud
     // Params 1, eflags: 0x0
     // Checksum 0xc19fb2c6, Offset: 0x4c8
@@ -36,7 +20,7 @@ class class_5813c56a : cluielem {
     // Checksum 0xfb11c6d6, Offset: 0x530
     // Size: 0x30
     function function_39ee9107(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "showPhoto", value);
+        set_data(localclientnum, "showPhoto", value);
     }
 
     // Namespace namespace_5813c56a/zm_silver_hud
@@ -62,7 +46,7 @@ class class_5813c56a : cluielem {
     // Checksum 0x604f0b5f, Offset: 0x4f8
     // Size: 0x30
     function function_9efecfd1(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "aetherscopeStatus", value);
+        set_data(localclientnum, "aetherscopeStatus", value);
     }
 
     // Namespace namespace_5813c56a/zm_silver_hud
@@ -71,8 +55,8 @@ class class_5813c56a : cluielem {
     // Size: 0x5c
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "aetherscopeStatus", 0);
-        [[ self ]]->set_data(localclientnum, "showPhoto", 0);
+        set_data(localclientnum, "aetherscopeStatus", 0);
+        set_data(localclientnum, "showPhoto", 0);
     }
 
 }

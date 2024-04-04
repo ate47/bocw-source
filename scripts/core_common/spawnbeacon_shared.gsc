@@ -44,7 +44,7 @@ function init_shared() {
     level.spawnbeaconsettings.var_613ff100 = [];
     level.spawnbeaconsettings.beacons = [];
     level.spawnbeaconsettings.maxpower = 100;
-    level.spawnbeaconsettings.var_b851d15e = vectorscale((0, 0, 1), 5);
+    level.spawnbeaconsettings.var_b851d15e = (0, 0, 5);
     level.spawnbeaconsettings.var_247a8b = 100;
     /#
         level.spawnbeaconsettings.var_e7571ff1 = [];
@@ -382,13 +382,9 @@ function updatethreat() {
 // Size: 0x92
 function getnewspawnbeaconspawnlist() {
     if (!sessionmodeiscampaigngame()) {
-        /#
-            assert(level.spawnbeaconsettings.availablespawnlists.size > 0);
-        #/
+        assert(level.spawnbeaconsettings.availablespawnlists.size > 0);
         spawnlist = array::pop(level.spawnbeaconsettings.availablespawnlists);
-        /#
-            assert(isdefined(spawnlist));
-        #/
+        assert(isdefined(spawnlist));
         return spawnlist;
     }
 }
@@ -399,9 +395,7 @@ function getnewspawnbeaconspawnlist() {
 // Size: 0x74
 function freespawnbeaconspawnlist(spawnlistname) {
     if (isdefined(spawnlistname)) {
-        /#
-            assert(!contains(level.spawnbeaconsettings.availablespawnlists, spawnlistname));
-        #/
+        assert(!contains(level.spawnbeaconsettings.availablespawnlists, spawnlistname));
         array::push(level.spawnbeaconsettings.availablespawnlists, spawnlistname);
     }
 }
@@ -411,9 +405,7 @@ function freespawnbeaconspawnlist(spawnlistname) {
 // Checksum 0x80e5d8, Offset: 0x1670
 // Size: 0x66
 function gadget_spawnbeacon_on(*slot, playerweapon) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self notify(#"start_killstreak", {#weapon:playerweapon});
 }
 
@@ -622,12 +614,8 @@ function getspawnbeaconspawns(*origin) {
 // Checksum 0x2619e574, Offset: 0x24f8
 // Size: 0x19e
 function createspawngroupforspawnbeacon(associatedspawnbeacon, spawnstoadd) {
-    /#
-        assert(isdefined(spawnstoadd));
-    #/
-    /#
-        assert(isdefined(associatedspawnbeacon));
-    #/
+    assert(isdefined(spawnstoadd));
+    assert(isdefined(associatedspawnbeacon));
     if (spawnstoadd.size == 0) {
         return false;
     }
@@ -635,17 +623,13 @@ function createspawngroupforspawnbeacon(associatedspawnbeacon, spawnstoadd) {
     enemyteam = util::getotherteam(team);
     var_5b29525a = level.teambased && isdefined(game.switchedsides) && game.switchedsides && level.spawnsystem.var_3709dc53;
     associatedspawnbeacon.spawnlist = getnewspawnbeaconspawnlist();
-    /#
-        assert(isdefined(associatedspawnbeacon.spawnlist));
-    #/
+    assert(isdefined(associatedspawnbeacon.spawnlist));
     if (level.teambased) {
         if (var_5b29525a) {
             enemyteam = team;
             team = enemyteam;
         }
-        /#
-            assert(isdefined(team));
-        #/
+        assert(isdefined(team));
         addspawnpoints(team, spawnstoadd, associatedspawnbeacon.spawnlist);
         addspawnpoints(enemyteam, spawnstoadd, associatedspawnbeacon.spawnlist);
     }
@@ -687,7 +671,6 @@ function watchfordeath() {
     level endon(#"game_ended");
     self.owner endon(#"disconnect", #"joined_team", #"changed_specialist");
     self endon(#"hash_523ddcbd662010e5");
-    waitresult = undefined;
     waitresult = self waittill(#"death");
     if (!isdefined(self)) {
         return;
@@ -717,7 +700,6 @@ function watchfordamage() {
     }
     spawnbeacon.maxhealth = spawnbeacon.health;
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (isdefined(waitresult.attacker) && waitresult.amount > 0 && damagefeedback::dodamagefeedback(waitresult.weapon, waitresult.attacker)) {
             waitresult.attacker damagefeedback::update(waitresult.mod, waitresult.inflictor, undefined, waitresult.weapon, self);
@@ -809,7 +791,7 @@ function retreatedstartmelee(var_a820f9, spawns) {
     placedspawnbeacon.var_2d045452 = var_a820f9;
     placedspawnbeacon function_41b29ff0(#"hash_77200d1bb519ba08");
     placedspawnbeacon useanimtree("generic");
-    target_set(placedspawnbeacon, vectorscale((0, 0, 1), 32));
+    target_set(placedspawnbeacon, (0, 0, 32));
     placedspawnbeacon.owner = player;
     placedspawnbeacon clientfield::set("spawnbeacon_placed", 1);
     placedspawnbeacon setteam(player getteam());
@@ -869,9 +851,7 @@ function retreatedstartmelee(var_a820f9, spawns) {
 // Checksum 0xbd9add81, Offset: 0x3650
 // Size: 0x34
 function function_264da546(*var_cd3712d2, *jammer) {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared

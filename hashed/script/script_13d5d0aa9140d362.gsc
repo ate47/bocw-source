@@ -397,10 +397,10 @@ function function_17a3dc2f(s_instance) {
     }
     if (self.vehicletype === "vehicle_t9_mil_fav_light" && (getdvarint(#"hash_11ff4ccbba6b40f6", 0) === 1 || math::cointoss(50))) {
         if (math::cointoss(50)) {
-            v_rotate = vectorscale((0, -1, 0), 90);
+            v_rotate = (0, -90, 0);
             n_x_offset = 40;
         } else {
-            v_rotate = vectorscale((0, 1, 0), 90);
+            v_rotate = (0, 90, 0);
             n_x_offset = -40;
         }
         self thread function_cddedd63(#"hash_43b6b22949e57424", v_rotate, n_x_offset);
@@ -408,10 +408,10 @@ function function_17a3dc2f(s_instance) {
     }
     if (self.vehicletype === "vehicle_t9_civ_ru_sedan_80s_player" && (getdvarint(#"hash_11ff4ccbba6b40f6", 0) === 1 || math::cointoss(50))) {
         if (math::cointoss(50)) {
-            v_rotate = vectorscale((0, -1, 0), 90);
+            v_rotate = (0, -90, 0);
             n_x_offset = 40;
         } else {
-            v_rotate = vectorscale((0, 1, 0), 90);
+            v_rotate = (0, 90, 0);
             n_x_offset = -40;
         }
         self thread function_cddedd63(#"hash_43b6b22949e57424", v_rotate, n_x_offset);
@@ -464,10 +464,10 @@ function function_724dafb1(destination) {
                 vehicle thread function_cddedd63(#"hash_1fb3bec008c18436");
             } else if (spawn.targetname === "mp_map_wide_fav_spawn" && (getdvarint(#"hash_11ff4ccbba6b40f6", 0) === 1 || math::cointoss(50))) {
                 if (math::cointoss(50)) {
-                    v_rotate = vectorscale((0, -1, 0), 90);
+                    v_rotate = (0, -90, 0);
                     n_x_offset = 40;
                 } else {
-                    v_rotate = vectorscale((0, 1, 0), 90);
+                    v_rotate = (0, 90, 0);
                     n_x_offset = -40;
                 }
                 vehicle thread function_cddedd63(#"hash_43b6b22949e57424", v_rotate, n_x_offset);
@@ -615,7 +615,6 @@ function on_vehicle_spawned() {
                 var_c8229258 = "deploy";
             }
             if (isalive(var_6031fb1f)) {
-                var_71383cea = undefined;
                 var_71383cea = var_6031fb1f waittill(#"death", #"delete", var_c8229258);
                 if (var_71383cea._notify === "death") {
                     if (isdefined(var_6031fb1f)) {

@@ -96,7 +96,6 @@ function function_8e50d09b() {
 function function_acd83a15() {
     level endon(#"game_over");
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"musroundend", #"hash_350a3e373494a400");
         if (waitresult._notify === "musRoundEnd") {
             foreach (player in getplayers()) {

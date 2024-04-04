@@ -345,7 +345,6 @@ function player_grenade_check() {
     while (true) {
         self waittill(#"grenade_pullback");
         level flag::set("stealth_player_nade");
-        waitresult = undefined;
         waitresult = self waittill(#"grenade_fire");
         thread player_grenade_check_dieout(waitresult.projectile);
     }
@@ -400,12 +399,8 @@ function init_stealth_volumes() {
     volumes = arraycombine(volumes, allvolumes);
     if (isdefined(volumes)) {
         foreach (vol in volumes) {
-            /#
-                assert(isdefined(vol.script_stealthgroup), "<unknown string>" + vol.origin);
-            #/
-            /#
-                assert(vol.script_stealthgroup != "<unknown string>" && vol.script_stealthgroup != "<unknown string>", "<unknown string>" + vol.origin);
-            #/
+            assert(isdefined(vol.script_stealthgroup), "<unknown string>" + vol.origin);
+            assert(vol.script_stealthgroup != "<unknown string>" && vol.script_stealthgroup != "<unknown string>", "<unknown string>" + vol.origin);
             groups = strtok(vol.script_stealthgroup, " ");
             foreach (group in groups) {
                 /#
@@ -421,12 +416,8 @@ function init_stealth_volumes() {
     volumes = arraycombine(volumes, allvolumes);
     if (isdefined(volumes)) {
         foreach (vol in volumes) {
-            /#
-                assert(isdefined(vol.script_stealthgroup), "<unknown string>" + vol.origin);
-            #/
-            /#
-                assert(vol.script_stealthgroup != "<unknown string>" && vol.script_stealthgroup != "<unknown string>", "<unknown string>" + vol.origin);
-            #/
+            assert(isdefined(vol.script_stealthgroup), "<unknown string>" + vol.origin);
+            assert(vol.script_stealthgroup != "<unknown string>" && vol.script_stealthgroup != "<unknown string>", "<unknown string>" + vol.origin);
             groups = strtok(vol.script_stealthgroup, " ");
             foreach (group in groups) {
                 /#
@@ -442,12 +433,8 @@ function init_stealth_volumes() {
     volumes = arraycombine(volumes, allvolumes, 0, 0);
     if (isdefined(volumes)) {
         foreach (vol in volumes) {
-            /#
-                assert(isdefined(vol.script_stealthgroup), "<unknown string>" + vol.origin);
-            #/
-            /#
-                assert(vol.script_stealthgroup != "<unknown string>" && vol.script_stealthgroup != "<unknown string>", "<unknown string>" + vol.origin);
-            #/
+            assert(isdefined(vol.script_stealthgroup), "<unknown string>" + vol.origin);
+            assert(vol.script_stealthgroup != "<unknown string>" && vol.script_stealthgroup != "<unknown string>", "<unknown string>" + vol.origin);
             groups = strtok(vol.script_stealthgroup, " ");
             foreach (group in groups) {
                 /#
@@ -502,7 +489,6 @@ function private function_5ca45f26(trigger, var_a7c14b20, var_1910605e) {
         level.var_5ca45f26[var_a7c14b20][level.var_5ca45f26[var_a7c14b20].size] = trigger;
     }
     while (true) {
-        waitresult = undefined;
         waitresult = trigger waittill(#"trigger");
         other = waitresult.activator;
         if (other flag::get(var_a7c14b20)) {

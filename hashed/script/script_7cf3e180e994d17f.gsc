@@ -168,9 +168,7 @@ function function_f0ecd8() {
     if (var_9ce32949 & 1 || var_9ce32949 & 128) {
         return;
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 1);
 }
 
@@ -184,9 +182,7 @@ function function_85afc2fb() {
         return;
     }
     var_9ce32949 = var_9ce32949 & ~14;
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     self clientfield::set("clf_rccar_fxstate", var_9ce32949 & ~1);
 }
 
@@ -199,9 +195,7 @@ function function_3419411b() {
     if (var_9ce32949 & 2 || var_9ce32949 & 128) {
         return;
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 2);
 }
 
@@ -212,9 +206,7 @@ function function_3419411b() {
 function function_98db0a95() {
     var_9ce32949 = self clientfield::get("clf_rccar_fxstate");
     if (var_9ce32949 & 2 && !(var_9ce32949 & 128)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         self clientfield::set("clf_rccar_fxstate", var_9ce32949 & ~2);
     }
 }
@@ -229,9 +221,7 @@ function function_323b6e10() {
         return;
     }
     var_9ce32949 = var_9ce32949 & ~8;
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 4);
 }
 
@@ -242,9 +232,7 @@ function function_323b6e10() {
 function function_a66b2882() {
     var_9ce32949 = self clientfield::get("clf_rccar_fxstate");
     if (var_9ce32949 & 4 && !(var_9ce32949 & 128)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         self clientfield::set("clf_rccar_fxstate", var_9ce32949 & ~4);
     }
 }
@@ -259,9 +247,7 @@ function function_53bd0317() {
         return;
     }
     var_9ce32949 = var_9ce32949 & ~4;
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 8);
 }
 
@@ -272,9 +258,7 @@ function function_53bd0317() {
 function function_f2cb4cab() {
     var_9ce32949 = self clientfield::get("clf_rccar_fxstate");
     if (var_9ce32949 & 8 && !(var_9ce32949 & 128)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         self clientfield::set("clf_rccar_fxstate", var_9ce32949 & ~8);
     }
 }
@@ -320,9 +304,7 @@ function function_fe8be1e0() {
         return;
     }
     var_9ce32949 = var_9ce32949 & ~126;
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 128);
 }
 

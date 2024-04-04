@@ -81,12 +81,8 @@ function timeuntilspawn(includeteamkilldelay) {
             respawndelay = respawndelay + globallogic_player::teamkilldelay();
         }
         if (isdefined(self.bleedout_time) && isdefined(self.var_84c0402e)) {
-            /#
-                assert(self.bleedout_time >= 0);
-            #/
-            /#
-                assert(self.bleedout_time <= self.var_84c0402e);
-            #/
+            assert(self.bleedout_time >= 0);
+            assert(self.bleedout_time <= self.var_84c0402e);
             respawndelay = respawndelay - self.var_84c0402e - self.bleedout_time;
         }
     }
@@ -228,9 +224,7 @@ function spawnplayer() {
         waitframe(1);
     }
     profileNamedStart(#"");
-    /#
-        assert(isvalidclass(self.curclass) || isbot(self));
-    #/
+    assert(isvalidclass(self.curclass) || isbot(self));
     self loadout::setclass(self.curclass);
     var_db3f2906 = self savegame::function_2ee66e93("altPlayerID", undefined);
     var_d4a479a1 = undefined;
@@ -316,7 +310,6 @@ function function_e3b1cd54() {
     self notify(#"hash_587f51dc5f621d5d");
     self endon(#"hash_587f51dc5f621d5d", #"disconnect");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"vehicle_death");
         if (waitresult.vehicle_died) {
             self.diedonvehicle = 1;
@@ -619,17 +612,13 @@ function showspawnmessage() {
 // Checksum 0x816f5d5b, Offset: 0x20a8
 // Size: 0x136
 function spawnclient(timealreadypassed) {
-    /#
-        assert(isdefined(self.team));
-    #/
-    /#
-        assert(isvalidclass(self.curclass));
-    #/
+    assert(isdefined(self.team));
+    assert(isvalidclass(self.curclass));
     if (!self mayspawn()) {
         currentorigin = self.origin;
         currentangles = self.angles;
         self showspawnmessage();
-        self thread [[ level.spawnspectator ]](currentorigin + vectorscale((0, 0, 1), 60), currentangles);
+        self thread [[ level.spawnspectator ]](currentorigin + (0, 0, 60), currentangles);
         return;
     }
     if (is_true(self.waitingtospawn)) {
@@ -670,7 +659,7 @@ function waitandspawnclient(timealreadypassed) {
         }
         if (teamkilldelay > 0) {
             hud_message::setlowermessage(#"hash_7d1a0e5bd191fce", teamkilldelay);
-            self thread respawn_asspectator(self.origin + vectorscale((0, 0, 1), 60), self.angles);
+            self thread respawn_asspectator(self.origin + (0, 0, 60), self.angles);
             spawnedasspectator = 1;
             wait(teamkilldelay);
         }
@@ -695,7 +684,7 @@ function waitandspawnclient(timealreadypassed) {
             hud_message::setlowermessage(game.strings[#"waiting_to_spawn"], timeuntilspawn);
         }
         if (!spawnedasspectator) {
-            spawnorigin = self.origin + vectorscale((0, 0, 1), 60);
+            spawnorigin = self.origin + (0, 0, 60);
             spawnangles = self.angles;
             if (isdefined(level.useintermissionpointsonwavespawn) && [[ level.useintermissionpointsonwavespawn ]]() == 1) {
                 spawnpoint = spawning::get_random_intermission_point();
@@ -719,7 +708,7 @@ function waitandspawnclient(timealreadypassed) {
             spawnedasspectator = self [[ level.var_84a50edd ]]();
         }
         if (!spawnedasspectator) {
-            self thread respawn_asspectator(self.origin + vectorscale((0, 0, 1), 60), self.angles);
+            self thread respawn_asspectator(self.origin + (0, 0, 60), self.angles);
         }
         spawnedasspectator = 1;
         if (!self [[ level.var_515c3797 ]]()) {
@@ -735,7 +724,7 @@ function waitandspawnclient(timealreadypassed) {
     if (level.players.size > 0) {
         if (scene::should_spectate_on_join()) {
             if (!spawnedasspectator) {
-                self thread respawn_asspectator(self.origin + vectorscale((0, 0, 1), 60), self.angles);
+                self thread respawn_asspectator(self.origin + (0, 0, 60), self.angles);
             }
             spawnedasspectator = 1;
             scene::wait_until_spectate_on_join_completes();
@@ -745,7 +734,7 @@ function waitandspawnclient(timealreadypassed) {
     if (!level.playerforcerespawn && self.hasspawned && !wavebased && !self.wantsafespawn && !level.playerqueuedrespawn && !spawnedasspectator) {
         hud_message::setlowermessage(game.strings[#"press_to_spawn"]);
         if (!spawnedasspectator) {
-            self thread respawn_asspectator(self.origin + vectorscale((0, 0, 1), 60), self.angles);
+            self thread respawn_asspectator(self.origin + (0, 0, 60), self.angles);
         }
         spawnedasspectator = 1;
         self waitrespawnorsafespawnbutton();
@@ -791,7 +780,6 @@ function function_bb88905b(var_4dff964a) {
         return;
     }
     self.var_bb88905b = 1;
-    s_notify = undefined;
     s_notify = self waittilltimeout(var_4dff964a, #"force_spawn", #"scene");
     if (s_notify._notify == "timeout") {
         lui::screen_fade_out(0.3, (1, 1, 1), "spectate_spawn");
@@ -836,7 +824,7 @@ function waitinspawnqueue() {
     if (!level.ingraceperiod && !spawning::usestartspawns()) {
         currentorigin = self.origin;
         currentangles = self.angles;
-        self thread [[ level.spawnspectator ]](currentorigin + vectorscale((0, 0, 1), 60), currentangles);
+        self thread [[ level.spawnspectator ]](currentorigin + (0, 0, 60), currentangles);
         self waittill(#"queue_respawn");
     }
 }

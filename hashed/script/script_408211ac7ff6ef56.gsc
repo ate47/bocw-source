@@ -56,9 +56,7 @@ function function_350c0e2b(index, origin, angles, var_98c867cd) {
     if (var_98c867cd == 5 || var_98c867cd == 6) {
         return function_fb72164f(var_98c867cd, index, origin, angles, ignore_entity, 1);
     }
-    /#
-        assert(0);
-    #/
+    assert(0);
 }
 
 // Namespace namespace_b637a3ed/namespace_b637a3ed
@@ -66,9 +64,7 @@ function function_350c0e2b(index, origin, angles, var_98c867cd) {
 // Checksum 0x65b7970d, Offset: 0x470
 // Size: 0x9e4
 function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreent, var_8c967549, var_a17c7804, traces = 1) {
-    /#
-        assert(!isdefined(ignoreent) || isentity(ignoreent));
-    #/
+    assert(!isdefined(ignoreent) || isentity(ignoreent));
     var_13406a7f = traces;
     var_ad49c795 = getdvarint(#"hash_730e73fdf6a44e00", 0);
     var_5b5e9cdb = 13;
@@ -168,12 +164,12 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
     if (var_98c867cd == 4) {
         start_origin = var_118985a1;
     } else {
-        start_origin = var_118985a1 + vectorscale((0, 0, 1), 40);
+        start_origin = var_118985a1 + (0, 0, 40);
     }
     if (isdefined(getgametypesetting(#"hash_69df7093cd32f107")) ? getgametypesetting(#"hash_69df7093cd32f107") : 0) {
         var_d69d1a6d = getclosestpointonnavmesh(origin, 48, 6);
         if (isdefined(var_d69d1a6d) && var_13406a7f) {
-            traceoffset = vectorscale((0, 0, 1), 60);
+            traceoffset = (0, 0, 60);
             traceresults = physicstraceex(var_d69d1a6d + traceoffset, var_d69d1a6d - traceoffset, (0, 0, 0), (0, 0, 0), ignoreents, 1);
             if (traceresults[#"fraction"] < 1) {
                 origin = traceresults[#"position"] + (0, 0, var_7def9f0);
@@ -200,9 +196,7 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
 // Checksum 0xcfe9222d, Offset: 0xe60
 // Size: 0x2fc
 function function_fb72164f(var_98c867cd, index, baseorigin, baseangles, ignoreent, traces = 1) {
-    /#
-        assert(!isdefined(ignoreent) || isentity(ignoreent));
-    #/
+    assert(!isdefined(ignoreent) || isentity(ignoreent));
     var_ad49c795 = getdvarint(#"hash_730e73fdf6a44e00", 0);
     var_7def9f0 = 16;
     if (var_98c867cd == 6) {
@@ -235,7 +229,7 @@ function function_fb72164f(var_98c867cd, index, baseorigin, baseangles, ignoreen
             noground = 1;
         }
     }
-    start_origin = baseorigin + vectorscale((0, 0, 1), 40);
+    start_origin = baseorigin + (0, 0, 40);
     return {#start_origin:start_origin, #start_angles:baseangles, #end_origin:origin, #end_angles:baseangles};
 }
 

@@ -66,9 +66,7 @@ function private function_116fd9a7() {
 // Size: 0x122
 function private function_d045e83b(item, player, *networkid, itemid, *itemcount, var_aec6fa7f, *slot) {
     if (itemid.itementry.itemtype !== #"ammo") {
-        /#
-            assertmsg("<unknown string>" + itemid.name + "<unknown string>");
-        #/
+        assertmsg("<unknown string>" + itemid.name + "<unknown string>");
         return 0;
     }
     if (!self item_inventory::can_pickup_ammo(itemid)) {
@@ -400,9 +398,7 @@ function private function_2650d5c6(*item, player, *networkid, *itemid, *itemcoun
 // Checksum 0x69877ca7, Offset: 0x1978
 // Size: 0x3b0
 function private function_a712496a(item, player, *networkid, *itemid, itemcount, var_aec6fa7f, slotid) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     stockammo = networkid.stockammo;
     if (isdefined(networkid.weaponoverride)) {
         foreach (attachment in networkid.weaponoverride.attachments) {

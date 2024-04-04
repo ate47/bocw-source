@@ -100,24 +100,12 @@ function function_999594fe(var_beee4994, hint_string, model, var_c024c2e0, cost)
 // Checksum 0x3eedfacb, Offset: 0x7c8
 // Size: 0x43c
 function function_744f2a2(struct, var_a0f07ebc, modelname, hint_string, var_c024c2e0, cost, callbackfunction, var_1b39aebe = 0) {
-    /#
-        assert(isstruct(struct), "<unknown string>");
-    #/
-    /#
-        assert(isfunctionptr(callbackfunction), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(modelname), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(hint_string), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(var_c024c2e0), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(cost), "<unknown string>");
-    #/
+    assert(isstruct(struct), "<unknown string>");
+    assert(isfunctionptr(callbackfunction), "<unknown string>");
+    assert(isdefined(modelname), "<unknown string>");
+    assert(isdefined(hint_string), "<unknown string>");
+    assert(isdefined(var_c024c2e0), "<unknown string>");
+    assert(isdefined(cost), "<unknown string>");
     if (zm_utility::is_survival()) {
         var_c6d25878 = &zm_utility::function_f5a222a8;
     } else {
@@ -186,7 +174,7 @@ function wait_for_power(var_386a4480) {
 // Checksum 0x2b9a0e89, Offset: 0xd08
 // Size: 0xc4
 function function_96a51643(mdl_machine) {
-    v_loc = mdl_machine.origin + vectorscale((0, 0, 1), 16) + anglestoforward(mdl_machine.angles) * 32;
+    v_loc = mdl_machine.origin + (0, 0, 16) + anglestoforward(mdl_machine.angles) * 32;
     trigger = spawn("trigger_radius", v_loc, 0, 32, 64, 1);
     trigger zm_perks::check_for_change();
     if (isdefined(trigger)) {
@@ -247,18 +235,10 @@ function function_472f16d8(eventstruct) {
     var_da8463d0 = self.var_a0f07ebc;
     var_c024c2e0 = self.var_c024c2e0;
     var_87abc3a0 = self.var_87abc3a0;
-    /#
-        assert(isdefined(machine), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(var_da8463d0), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(var_c024c2e0), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(var_87abc3a0), "<unknown string>");
-    #/
+    assert(isdefined(machine), "<unknown string>");
+    assert(isdefined(var_da8463d0), "<unknown string>");
+    assert(isdefined(var_c024c2e0), "<unknown string>");
+    assert(isdefined(var_87abc3a0), "<unknown string>");
     if (isplayer(player)) {
         if (var_c024c2e0 == #"hash_3eac5ec7a888ddfb") {
             if (!level.var_5df76d0 sr_perk_machine_choice::is_open(player) && !player clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
@@ -377,7 +357,6 @@ function function_4513f006(machine, trigger) {
     self endoncallback(&function_6c71e778, #"death");
     self thread function_3fec008f(machine, trigger);
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         response = waitresult.response;

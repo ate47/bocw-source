@@ -188,7 +188,7 @@ function private laser_fx(localclientnum, *oldval, newval, *bnewent, *binitialsn
         var_4c010185 = self gettagorigin("tag_fx_laser_fire");
         if (isdefined(var_4c010185) && isdefined(self)) {
             self.var_d38834a4 = util::spawn_model(fieldname, "tag_origin", var_4c010185);
-            self.var_895dc68e = util::spawn_model(fieldname, "tag_origin", var_4c010185 + vectorscale((0, 0, -1), 24));
+            self.var_895dc68e = util::spawn_model(fieldname, "tag_origin", var_4c010185 + (0, 0, -24));
         }
         if (isdefined(self.var_d38834a4) && isdefined(self.var_895dc68e)) {
             level beam::launch(self.var_d38834a4, "tag_origin", self.var_895dc68e, "tag_origin", "beam9_sr_mq_phase_neutralizer_laser", 1);
@@ -275,10 +275,10 @@ function private function_cdd8bedf(localclientnum, *oldval, newval, *bnewent, *b
         stopfx(fieldname, self.n_fx_id);
         self.n_fx_id = undefined;
     } else if (self.model === #"hash_46cb6387fd2006a7") {
-        self.var_51d78901 = playfx(fieldname, #"zm_ai/fx9_orda_spawn_portal_c", self.origin + vectorscale((0, 0, 1), 7000), anglestoforward(self.angles), anglestoup(self.angles + vectorscale((1, 0, 0), 90)));
+        self.var_51d78901 = playfx(fieldname, #"zm_ai/fx9_orda_spawn_portal_c", self.origin + (0, 0, 7000), anglestoforward(self.angles), anglestoup(self.angles + (90, 0, 0)));
         self.var_d63b9eb9 = playfx(fieldname, #"sr/fx9_orda_aether_portal_beam", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
         if (!isdefined(self.var_e1cd0eb7)) {
-            self.var_e1cd0eb7 = self.origin + vectorscale((0, 0, 1), 500);
+            self.var_e1cd0eb7 = self.origin + (0, 0, 500);
             playsound(fieldname, #"hash_46461ba72b8ab7a2", self.var_e1cd0eb7);
         }
         wait(2.9);

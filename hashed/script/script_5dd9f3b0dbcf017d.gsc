@@ -8,28 +8,15 @@
 // Method(s) 6 Total 13
 class czm_trial_weapon_locked : cluielem {
 
-    // Namespace czm_trial_weapon_locked/zm_trial_weapon_locked
-    // Params 0, eflags: 0x8
-    // Checksum 0xa1028b2b, Offset: 0x1e8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace czm_trial_weapon_locked/zm_trial_weapon_locked
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xec5286ee, Offset: 0x318
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace czm_trial_weapon_locked/zm_trial_weapon_locked
     // Params 1, eflags: 0x0
     // Checksum 0x313e08fb, Offset: 0x2d0
     // Size: 0x3c
     function function_1e74977(player) {
-        player clientfield::function_bb878fc3(self.var_d5213cbb, self.var_bf9c8c95, "show_icon");
+        player clientfield::function_bb878fc3(var_d5213cbb, var_bf9c8c95, "show_icon");
     }
 
     // Namespace czm_trial_weapon_locked/zm_trial_weapon_locked

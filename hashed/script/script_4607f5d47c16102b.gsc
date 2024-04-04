@@ -8,21 +8,8 @@
 // Method(s) 15 Total 22
 class cluielemimage : cluielem {
 
-    // Namespace cluielemimage/luielemimage
-    // Params 0, eflags: 0xa linked
-    // Checksum 0xf6507b99, Offset: 0x720
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cluielemimage/luielemimage
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xd20ca314, Offset: 0xc90
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace cluielemimage/luielemimage
     // Params 2, eflags: 0x2 linked
@@ -37,7 +24,7 @@ class cluielemimage : cluielem {
     // Checksum 0xa1c92449, Offset: 0xba0
     // Size: 0x44
     function set_green(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "green", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "green", value);
     }
 
     // Namespace cluielemimage/luielemimage
@@ -45,7 +32,7 @@ class cluielemimage : cluielem {
     // Checksum 0x8d113850, Offset: 0xab0
     // Size: 0x44
     function set_fadeovertime(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "fadeOverTime", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "fadeOverTime", value);
     }
 
     // Namespace cluielemimage/luielemimage
@@ -61,7 +48,7 @@ class cluielemimage : cluielem {
     // Checksum 0xe5ddb341, Offset: 0xa60
     // Size: 0x44
     function set_height(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "height", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "height", value);
     }
 
     // Namespace cluielemimage/luielemimage
@@ -69,7 +56,7 @@ class cluielemimage : cluielem {
     // Checksum 0x94cfc89c, Offset: 0xc40
     // Size: 0x44
     function set_material(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "material", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "material", value);
     }
 
     // Namespace cluielemimage/luielemimage
@@ -77,7 +64,7 @@ class cluielemimage : cluielem {
     // Checksum 0x482d38eb, Offset: 0xbf0
     // Size: 0x44
     function set_blue(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "blue", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "blue", value);
     }
 
     // Namespace cluielemimage/luielemimage
@@ -85,7 +72,7 @@ class cluielemimage : cluielem {
     // Checksum 0x96f1a05d, Offset: 0xa10
     // Size: 0x44
     function set_width(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "width", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "width", value);
     }
 
     // Namespace cluielemimage/luielemimage
@@ -111,7 +98,7 @@ class cluielemimage : cluielem {
     // Checksum 0x5b859552, Offset: 0x9c0
     // Size: 0x44
     function set_y(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "y", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "y", value);
     }
 
     // Namespace cluielemimage/luielemimage
@@ -119,7 +106,7 @@ class cluielemimage : cluielem {
     // Checksum 0x561639e, Offset: 0xb00
     // Size: 0x44
     function set_alpha(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "alpha", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "alpha", value);
     }
 
     // Namespace cluielemimage/luielemimage
@@ -127,7 +114,7 @@ class cluielemimage : cluielem {
     // Checksum 0xa7878c3d, Offset: 0x970
     // Size: 0x44
     function set_x(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "x", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "x", value);
     }
 
     // Namespace cluielemimage/luielemimage
@@ -135,7 +122,7 @@ class cluielemimage : cluielem {
     // Checksum 0x4d89fdd8, Offset: 0xb50
     // Size: 0x44
     function set_red(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "red", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "red", value);
     }
 
 }

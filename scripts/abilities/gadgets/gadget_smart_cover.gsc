@@ -473,7 +473,6 @@ function function_670cd4a3() {
     self endon(#"death");
     self.var_19fde5b7 = [];
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"grenade_stuck");
         if (isdefined(waitresult.projectile)) {
             array::add(self.var_19fde5b7, waitresult.projectile);
@@ -510,7 +509,6 @@ function function_37f1dcd1() {
     level endon(#"game_ended");
     self.owner endon(#"disconnect", #"joined_team", #"changed_specialist", #"hacked");
     self endon(#"hash_5de1fc3780ea0eaa");
-    waitresult = undefined;
     waitresult = self waittill(#"death");
     if (!isdefined(self)) {
         return;
@@ -526,7 +524,6 @@ function ondamage() {
     self endon(#"death");
     level endon(#"game_ended");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (isdefined(waitresult.attacker) && isplayer(waitresult.attacker)) {
             if (waitresult.amount > 0 && damagefeedback::dodamagefeedback(waitresult.weapon, waitresult.attacker)) {
@@ -647,7 +644,7 @@ function getmodel(*var_796be15d) {
 }
 
 // Namespace smart_cover/gadget_smart_cover
-// Params d, eflags: 0x2 linked
+// Params 13, eflags: 0x2 linked
 // Checksum 0xbafd0145, Offset: 0x2f78
 // Size: 0x1ca
 function function_d2368084(*einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, *var_fd90b0bb, *vpoint, *vdir, *shitloc, *psoffsettime, *iboneindex, *imodelindex) {
@@ -796,7 +793,6 @@ function function_18dd6b22(smartcover) {
     level endon(#"game_ended");
     smartcover endon(#"death");
     while (true) {
-        waitresult = undefined;
         waitresult = smartcover waittill(#"broken");
         if (waitresult.type == "base_piece_broken") {
             smartcover function_2a494565(0);
@@ -901,15 +897,9 @@ function function_92112113(attacker, victim, weapon, attackerweapon, *meansofdea
 // Checksum 0x2a13f99, Offset: 0x4220
 // Size: 0x2aa
 function private function_4e6d9621(smartcover, origins, radii) {
-    /#
-        assert(isarray(origins));
-    #/
-    /#
-        assert(!isarray(radii) || origins.size == radii.size);
-    #/
-    /#
-        assert(isdefined(smartcover.var_eda9690f) && smartcover.var_eda9690f.size > 0);
-    #/
+    assert(isarray(origins));
+    assert(!isarray(radii) || origins.size == radii.size);
+    assert(isdefined(smartcover.var_eda9690f) && smartcover.var_eda9690f.size > 0);
     foreach (var_592587c3 in smartcover.var_eda9690f) {
         for (index = 0; index < origins.size; index++) {
             distance = distancesquared(origins[index], var_592587c3);
@@ -1038,7 +1028,6 @@ function turretthink() {
     turret.trigger endon(#"death");
     turret.turret_vehicle_entnum = turret getentitynumber();
     while (true) {
-        waitresult = undefined;
         waitresult = turret.trigger waittill(#"trigger");
         ent = waitresult.activator;
         if (ent == turret) {
@@ -1209,7 +1198,7 @@ function microwaveturretaffectsentity(entity) {
         return false;
     }
     angles = turret getangles();
-    realorigin = turret.origin + vectorscale((0, 0, 1), 30);
+    realorigin = turret.origin + (0, 0, 30);
     forward = anglestoforward(angles);
     origin = realorigin - forward * 50;
     shoot_at_pos = entity getshootatpos(turret);

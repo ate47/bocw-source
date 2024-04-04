@@ -430,9 +430,7 @@ function private function_93491e83(entity) {
 // Checksum 0x7472284, Offset: 0x1d00
 // Size: 0xdc
 function function_4a82368f(entity, owner) {
-    /#
-        assert(isdefined(owner));
-    #/
+    assert(isdefined(owner));
     if (isplayer(owner)) {
         owner clientfield::set_to_player("jammedvehpostfx", 1);
     }

@@ -13,9 +13,7 @@ function function_d46dcfc2(var_74f025c6, var_11a76757, var_352bdb5f, var_45269c4
         level.var_80747947 = [];
     }
     level.var_80747947[var_74f025c6] = {#var_11a76757:var_11a76757, #var_352bdb5f:var_352bdb5f, #var_45269c45:var_45269c45};
-    /#
-        assert(!level get(var_74f025c6));
-    #/
+    assert(!level get(var_74f025c6));
     [[ level.var_80747947[var_74f025c6].var_45269c45 ]]();
 }
 

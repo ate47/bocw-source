@@ -37,18 +37,18 @@ function reward_chest_fx(localclientnum, *oldval, newval, *bnewent, *binitialsna
         break;
     case 1:
         self.n_fx_id = util::playfxontag(fieldname, "sr/fx9_chest_explore_amb_sm", self, "tag_origin");
-        self.var_b3673abf = self playloopsound(#"hash_149989d596125e40", undefined, vectorscale((0, 0, 1), 40));
+        self.var_b3673abf = self playloopsound(#"hash_149989d596125e40", undefined, (0, 0, 40));
         break;
     case 2:
         self.n_fx_id = util::playfxontag(fieldname, "sr/fx9_chest_explore_amb_md", self, "tag_origin");
-        self.var_b3673abf = self playloopsound(#"hash_3b1f5984e7ae4c48", undefined, vectorscale((0, 0, 1), 40));
+        self.var_b3673abf = self playloopsound(#"hash_3b1f5984e7ae4c48", undefined, (0, 0, 40));
         break;
     case 3:
         if (self.model === #"hash_12e47c6c01f2ff59") {
         } else {
             self.n_fx_id = util::playfxontag(fieldname, "sr/fx9_chest_explore_amb_lg", self, "tag_origin");
         }
-        self.var_b3673abf = self playloopsound(#"hash_5dc67061425177d4", undefined, vectorscale((0, 0, 1), 40));
+        self.var_b3673abf = self playloopsound(#"hash_5dc67061425177d4", undefined, (0, 0, 40));
         break;
     }
 }

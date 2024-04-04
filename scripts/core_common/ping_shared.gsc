@@ -49,9 +49,7 @@ function function_44806bba(type) {
     } else if (pool == 12) {
         return getdvarint(#"hash_37085d816592dbe3", 2);
     } else {
-        /#
-            assertmsg("<unknown string>" + type + "<unknown string>" + pool + "<unknown string>");
-        #/
+        assertmsg("<unknown string>" + type + "<unknown string>" + pool + "<unknown string>");
     }
     return 1;
 }

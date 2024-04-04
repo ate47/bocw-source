@@ -68,7 +68,7 @@ function init(instance) {
     for (i = 0; i < instance.var_42dcbe3d.size; i++) {
         v_org = instance.var_42dcbe3d[i].origin;
         if (instance.var_42dcbe3d[i].script_int === 0) {
-            v_offset = vectorscale((0, 0, 1), 1000);
+            v_offset = (0, 0, 1000);
         } else {
             v_offset = (0, 0, 0);
         }
@@ -430,12 +430,11 @@ function function_7ac4b826(instance) {
 function function_338034b3() {
     self endon(#"objective_ended", #"hash_8202877a3aadac8");
     self.var_4272a188 triggerenable(0);
-    var_1490cdb5 = spawn("trigger_radius_use", self.var_4a416ea9.origin + vectorscale((0, 0, 1), 24), 0, 96, 96, 1);
+    var_1490cdb5 = spawn("trigger_radius_use", self.var_4a416ea9.origin + (0, 0, 24), 0, 96, 96, 1);
     var_1490cdb5 triggerignoreteam();
     var_1490cdb5 setcursorhint("HINT_NOICON");
     var_1490cdb5 sethintstring(#"hash_263f26fcd49be105");
     var_1490cdb5 usetriggerrequirelookat(1);
-    s_result = undefined;
     s_result = var_1490cdb5 waittill(#"trigger");
     var_1490cdb5 delete();
     objective_setvisibletoall(self.var_e55c8b4e);
@@ -1176,7 +1175,7 @@ function function_5efbdd83(instance) {
             break;
         }
     }
-    dropstruct = {#origin:self.origin + vectorscale((0, 0, 1), 40), #angles:self.angles + vectorscale((0, 1, 0), 90), #var_738dfc81:1};
+    dropstruct = {#origin:self.origin + (0, 0, 40), #angles:self.angles + (0, 90, 0), #var_738dfc81:1};
     if (math::cointoss(33)) {
         if (isdefined(dropstruct)) {
             item = self function_97379a52(dropstruct);
@@ -1228,7 +1227,7 @@ function function_a6ee18e5(params) {
 // Checksum 0x903b763, Offset: 0x5b18
 // Size: 0xd2
 function function_97379a52(s_drop) {
-    v_org = s_drop.origin + vectorscale((0, 0, -1), 30);
+    v_org = s_drop.origin + (0, 0, -30);
     item = zm_powerups::specific_powerup_drop(array("full_ammo", "bonus_points_team", "insta_kill", "double_points"), v_org, #"allies", undefined, undefined, 1);
     if (isdefined(item)) {
         item.var_99498378 = 1;
@@ -1271,27 +1270,27 @@ function function_5ebfd8cc() {
     }
     switch (self.model) {
     case #"hash_4b80250fb5dabe8d":
-        self.origin = self.origin + vectorscale((0, 0, 1), 4);
+        self.origin = self.origin + (0, 0, 4);
         break;
     case #"hash_23a5f9a86747c06e":
-        self.origin = self.origin + vectorscale((0, 0, 1), 4);
+        self.origin = self.origin + (0, 0, 4);
         break;
     case #"hash_610103e5b898f507":
-        self.origin = self.origin + vectorscale((0, 0, -1), 2);
+        self.origin = self.origin + (0, 0, -2);
         break;
     case #"hash_15c8d8d59a771d41":
     case #"hash_3dabd96b7684e947":
     case #"hash_5ecac889d056f331":
     case #"hash_5fc7ee5c69212e50":
     case #"hash_796f6395f5856ff1":
-        self.origin = self.origin + vectorscale((0, 0, -1), 2);
-        self.angles = self.angles + vectorscale((0, 1, 0), 90);
+        self.origin = self.origin + (0, 0, -2);
+        self.angles = self.angles + (0, 90, 0);
         break;
     case #"hash_727faa4539faa0b7":
         self.origin = self.origin - vectornormalize(anglestoforward(self.angles)) * 10;
         break;
     case #"hash_4d42f402f7b6780f":
-        self.origin = self.origin + vectorscale((0, 0, -1), 4);
+        self.origin = self.origin + (0, 0, -4);
         break;
     }
 }
@@ -1326,7 +1325,7 @@ function function_71e7b72b() {
 // Size: 0xd8
 function function_b5770dda(instance, var_c2323ea4) {
     instance endon(#"objective_ended");
-    slots = namespace_85745671::function_bdb2b85b(self, self.origin + vectorscale((0, 0, 1), 16), self.angles, 42, var_c2323ea4, 16);
+    slots = namespace_85745671::function_bdb2b85b(self, self.origin + (0, 0, 16), self.angles, 42, var_c2323ea4, 16);
     if (!isdefined(slots) || slots.size <= 0) {
         return;
     }
@@ -1343,9 +1342,9 @@ function function_b5a08eb6(instance) {
     instance waittill(#"summon");
     if (isdefined(self.var_cef46557)) {
         self.var_cef46557 function_619a5c20();
-        self.var_2edbcbd0 = util::spawn_model("tag_origin", self.origin + vectorscale((0, 0, 1), 40));
+        self.var_2edbcbd0 = util::spawn_model("tag_origin", self.origin + (0, 0, 40));
         self.var_2edbcbd0 linkto(self.var_cef46557);
-        self.var_e23c5c1d = util::spawn_model("tag_origin", self.origin + vectorscale((0, 0, 1), 40));
+        self.var_e23c5c1d = util::spawn_model("tag_origin", self.origin + (0, 0, 40));
         self.var_e23c5c1d linkto(self.var_cef46557);
     }
     self function_841b1bf7();
@@ -1499,7 +1498,6 @@ function function_1ee78771(instance) {
     self.n_start_health = self.health;
     self val::set("droppod", "takedamage", 1);
     while (true) {
-        s_result = undefined;
         s_result = self waittill(#"damage");
         if (isdefined(s_result.attacker) && !isplayer(s_result.attacker)) {
             var_c3a3ae13 = self.health / self.n_start_health;
@@ -1722,7 +1720,7 @@ function function_912eedf3(zombie) {
     zombie endon(#"death");
     if (isdefined(zombie) && zombie.var_6f84b820 === #"normal") {
         v_dir = vectornormalize(zombie.origin - self.origin);
-        v_launch = v_dir * randomintrange(100, 150) + vectorscale((0, 0, 1), 150);
+        v_launch = v_dir * randomintrange(100, 150) + (0, 0, 150);
         zombie.allowdeath = 1;
         if (isalive(zombie) && !zombie isragdoll()) {
             if (zm_utility::is_magic_bullet_shield_enabled(zombie)) {

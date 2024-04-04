@@ -64,9 +64,7 @@ function is_inside(point, ignoreheight = 0, territory = level.territory) {
         return true;
     }
     if (!isvec(point)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return false;
     }
     if (!isdefined(territory.bounds) || territory.bounds.size == 0) {

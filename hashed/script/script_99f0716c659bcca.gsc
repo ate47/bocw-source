@@ -39,7 +39,6 @@ function private function_1679806a(s_watcher) {
 function private function_e879ee6d(hatchet) {
     hatchet endon(#"delete", #"death");
     while (true) {
-        var_51b88026 = undefined;
         var_51b88026 = hatchet waittill(#"grenade_stuck");
         if (!isdefined(var_51b88026.hitent) || !isactor(var_51b88026.hitent)) {
             continue;
@@ -50,7 +49,7 @@ function private function_e879ee6d(hatchet) {
         hatchet unlink();
         waitframe(1);
         hatchet.angles = (hatchet.angles[0] + 90, 0, 0);
-        hatchet launch(vectorscale((0, 0, -1), 0.5));
+        hatchet launch((0, 0, -0.5));
     }
 }
 

@@ -209,7 +209,6 @@ function function_cf2fab43(event) {
 function private function_3041c2b8() {
     level endon(#"game_ended");
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"glass_smash");
         origin = undefined;
         radius = undefined;
@@ -344,7 +343,6 @@ function event_handler[grenade_fire] function_da91200f(eventstruct) {
 // Size: 0x74
 function private function_bf26aaf9(*params) {
     self endon(#"death");
-    waitresult = undefined;
     waitresult = self waittill(#"grenade_bounce");
     if (isdefined(waitresult)) {
         function_e732359c(0, waitresult.position, 256, self);
@@ -366,7 +364,6 @@ function private function_83c46567(dynent) {
 function private function_4645d5f8(*params) {
     self endon(#"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"gunshot", #"explode", #"hash_c77d45f3ba174cb", #"alert");
         if (self.current_state.name === #"chase") {
             self waittill(#"state_changed");
@@ -398,7 +395,6 @@ function private function_4645d5f8(*params) {
 function private function_fc45f7e2(*params) {
     self endon(#"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"hash_4f3c0b937432f8b0");
         switch (waitresult._notify) {
         case #"hash_4f3c0b937432f8b0":
@@ -416,9 +412,7 @@ function register_state(entity, name, enter, update, exit, target_update, debug_
     if (!isdefined(entity.var_d2a0e298)) {
         entity.var_d2a0e298 = [];
     }
-    /#
-        assert(!isdefined(entity.var_d2a0e298[name]));
-    #/
+    assert(!isdefined(entity.var_d2a0e298[name]));
     entity.var_d2a0e298[name] = {#name:name, #enter_func:enter, #update_func:update, #exit_func:exit, #target_func:target_update, #debug_func:debug_update};
 }
 
@@ -435,11 +429,7 @@ function function_b3810444(entity, name) {
 // Checksum 0x839e04b, Offset: 0x1778
 // Size: 0x16c
 function set_state(entity, state_name) {
-    /#
-        /#
-            assert(isdefined(entity.var_d2a0e298[state_name]), "<unknown string>" + (ishash(state_name) ? function_9e72a96(state_name) : state_name));
-        #/
-    #/
+    assert(isdefined(entity.var_d2a0e298[state_name]), "<unknown string>" + (ishash(state_name) ? function_9e72a96(state_name) : state_name));
     state = entity.var_d2a0e298[state_name];
     if (isdefined(entity.current_state)) {
         if (isdefined(entity.current_state.exit_func)) {
@@ -666,11 +656,9 @@ function function_3bac247(entity) {
         }
         entity namespace_e292b080::zombieupdategoal(goal);
         if (!getdvarint(#"hash_50e7f4258cd6dd5", 0)) {
-            waitresult = undefined;
             waitresult = entity waittilltimeout(randomfloatrange(var_e49abf9f, var_a33458ef), #"goal");
         } else {
             /#
-                waitresult = undefined;
                 waitresult = entity waittilltimeout(randomfloatrange(var_e49abf9f, var_a33458ef), #"goal", #"bad_path");
                 if (waitresult._notify === #"bad_path") {
                     /#
@@ -775,9 +763,7 @@ function function_853a6d58(event) {
 // Checksum 0x1556909c, Offset: 0x30e8
 // Size: 0x84
 function function_b41f0471(entity) {
-    /#
-        assert(isdefined(entity.var_b4b8ad5f));
-    #/
+    assert(isdefined(entity.var_b4b8ad5f));
     entity.var_eb5eeb0f = [];
     callback::function_d8abfc3d(#"awareness_event", &function_853a6d58);
     entity thread function_2eab2251(entity, entity.var_b4b8ad5f);
@@ -849,7 +835,7 @@ function function_2eab2251(entity, awareness_event) {
         #/
         [[ level.var_812c573d ]]->waitinqueue(entity);
         if (awareness_event.type === 4) {
-            var_7a601c40 = vectorscale((0, 0, 1), 70);
+            var_7a601c40 = (0, 0, 70);
             trace = groundtrace(var_2e7ba82c, var_2e7ba82c - var_7a601c40, 0, entity);
             var_2e7ba82c = var_2e7ba82c - var_7a601c40 * trace[#"fraction"];
         }
@@ -886,7 +872,6 @@ function function_2eab2251(entity, awareness_event) {
     }
     if (!entity isingoal(investigate_point) && var_c5488bbd) {
         entity namespace_e292b080::zombieupdategoal(investigate_point);
-        waitresult = undefined;
         waitresult = entity waittill(#"goal", #"bad_path");
         if (isdefined(waitresult) && waitresult._notify == #"bad_path") {
             entity.var_3eaac485 = gettime() + int(randomfloatrange(1.5, 2.5) * 1000);
@@ -1054,11 +1039,7 @@ function function_5c40e824(entity) {
                     var_7c12fa23 = 1;
                 }
             }
-            /#
-                /#
-                    assert(potential_targets.size <= 16, "<unknown string>");
-                #/
-            #/
+            assert(potential_targets.size <= 16, "<unknown string>");
         }
     } else {
         var_61203702 = getentitiesinradius(entity.origin, 1500, 15);
@@ -1301,10 +1282,10 @@ function function_5c40e824(entity) {
                         var_edbf2d06 = var_edbf2d06 + "<unknown string>" + attacker.player getentitynumber() + "<unknown string>" + entity.var_448aebc7[attacker.player getentitynumber()] + "<unknown string>" + var_76fc2ac9 + "<unknown string>";
                     }
                 }
-                record3dtext(var_edbf2d06, entity.origin + vectorscale((0, 0, -1), 20), (1, 1, 1), "<unknown string>", entity, 0.5);
+                record3dtext(var_edbf2d06, entity.origin + (0, 0, -20), (1, 1, 1), "<unknown string>", entity, 0.5);
             }
             if (is_true(entity.var_982e6932)) {
-                record3dtext("<unknown string>", entity.origin + vectorscale((0, 0, -1), 25), (0, 1, 0), "<unknown string>", entity, 0.5);
+                record3dtext("<unknown string>", entity.origin + (0, 0, -25), (0, 1, 0), "<unknown string>", entity, 0.5);
             }
         }
     #/
@@ -1319,12 +1300,10 @@ function function_4c4ad565(event) {
         var_55015c64 = event.victim getentitynumber();
         var_e7c958b3 = event.attacker getentitynumber();
         /#
-            /#
-                assert(isdefined(var_55015c64) && isdefined("<unknown string>"));
-            #/
+            assert(isdefined(var_55015c64) && isdefined("<unknown string>"));
             if (getdvar(#"hash_169a29e17dd1b916", 0) > 0) {
                 recordline(self.origin, event.victim.origin, (0, 0, 0));
-                record3dtext("<unknown string>" + var_55015c64 + "<unknown string>", self.origin - vectorscale((0, 0, 1), 5), (0, 0, 0), "<unknown string>", self, 0.5);
+                record3dtext("<unknown string>" + var_55015c64 + "<unknown string>", self.origin - (0, 0, 5), (0, 0, 0), "<unknown string>", self, 0.5);
             }
         #/
         if (!isdefined(self.var_b2fdaa21)) {
@@ -1410,7 +1389,7 @@ function function_d0939c67(entity, target, min_dist) {
             if (isdefined(goal)) {
                 var_616d9e84 = 1;
                 if (distancesquared(target.origin, goal) > sqr(min_dist)) {
-                    z_offset = vectorscale((0, 0, 1), 35);
+                    z_offset = (0, 0, 35);
                     var_616d9e84 = bullettracepassed(target.origin + z_offset, goal + z_offset, 0, entity);
                 }
                 if (!var_616d9e84 || !ispointonnavmesh(goal, entity)) {
@@ -1581,13 +1560,13 @@ function function_7c72a5c7(entity) {
                 entity.at_entrance_tear_spot = 0;
                 /#
                     if (getdvarint(#"hash_2f078c2224f40586", 0) && isdefined(entity.first_node.zbarrier)) {
-                        record3dtext("<unknown string>" + entity.first_node.zbarrier getentnum(), entity.origin + vectorscale((0, 0, 1), 2), (1, 0, 0), "<unknown string>", entity);
+                        record3dtext("<unknown string>" + entity.first_node.zbarrier getentnum(), entity.origin + (0, 0, 2), (1, 0, 0), "<unknown string>", entity);
                     }
                 #/
             }
             /#
                 if (getdvarint(#"hash_2f078c2224f40586", 0) && isdefined(entity.first_node.zbarrier)) {
-                    record3dtext("<unknown string>" + entity.first_node.zbarrier getentnum(), entity.origin + vectorscale((0, 0, 1), 7), (1, 0.5, 0), "<unknown string>", entity);
+                    record3dtext("<unknown string>" + entity.first_node.zbarrier getentnum(), entity.origin + (0, 0, 7), (1, 0.5, 0), "<unknown string>", entity);
                 }
             #/
         }
@@ -1618,7 +1597,7 @@ function function_fd83d499(entity) {
             entity.got_to_entrance = 1;
             /#
                 if (getdvarint(#"hash_2f078c2224f40586", 0)) {
-                    record3dtext("<unknown string>" + entity.first_node.zbarrier getentnum(), entity.origin + vectorscale((0, 0, 1), 2), (1, 0.5, 0), "<unknown string>", entity);
+                    record3dtext("<unknown string>" + entity.first_node.zbarrier getentnum(), entity.origin + (0, 0, 2), (1, 0.5, 0), "<unknown string>", entity);
                     line(entity.origin, entity.first_node.origin, (0.1, 0.9, 0));
                 }
             #/

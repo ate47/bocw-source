@@ -231,7 +231,7 @@ function turn_off() {
     self vehicle::toggle_force_driver_taillights(0);
     self vehicle_ai::turnoffallambientanims();
     if (isairborne(self)) {
-        self setphysacceleration(vectorscale((0, 0, -1), 300));
+        self setphysacceleration((0, 0, -300));
         self setrotorspeed(0);
     }
     self.var_52e23e90 = undefined;
@@ -506,7 +506,6 @@ function on_player_corpse(*params) {
 function function_69c9e9a0() {
     level endon(#"game_ended");
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"hash_4aced1739d6627a2");
         vehicle = waitresult.vehicle;
         if (!isvehicle(vehicle)) {
@@ -776,9 +775,7 @@ function private function_6aa73a2a(missile, vehicle) {
 // Checksum 0xff8c619c, Offset: 0x2fd0
 // Size: 0x5c
 function function_adc0649a() {
-    /#
-        assert(isvehicle(self));
-    #/
+    assert(isvehicle(self));
     return is_true(self.emped) || is_true(self.isjammed);
 }
 
@@ -1290,7 +1287,6 @@ function update_turret_fire(vehicle, seat_index, var_c269692d) {
         return;
     }
     while (true) {
-        params = undefined;
         params = vehicle waittill(#"gunner_weapon_fired");
         if (params.gunner_index === seat_index) {
             vehicle.var_96c0f900[seat_index] = vehicle.var_96c0f900[seat_index] - var_c269692d;
@@ -1403,12 +1399,9 @@ function private function_17949e01() {
     while (true) {
         self waittill(#"beached");
         while (true) {
-            waitresult = undefined;
             waitresult = self waittill(#"touch", #"unbeached");
             if (!self function_b835102b()) {
-                /#
-                    println("<unknown string>" + self getentitynumber());
-                #/
+                println("<unknown string>" + self getentitynumber());
                 return;
             }
             if (waitresult._notify == #"touch" && isdefined(waitresult.entity) && isplayer(waitresult.entity)) {
@@ -1460,9 +1453,7 @@ function function_e8e41bbb() {
     fxorg = undefined;
     while (true) {
         if (!self function_b835102b()) {
-            /#
-                println("<unknown string>" + self getentitynumber());
-            #/
+            println("<unknown string>" + self getentitynumber());
             return;
         }
         speed = length(self getvelocity());
@@ -1592,9 +1583,7 @@ function function_c9620f20(params) {
     self.abnormal_status.attacker = params.param1;
     self.abnormal_status.inflictor = params.param2;
     time = params.param0;
-    /#
-        assert(isdefined(time));
-    #/
+    assert(isdefined(time));
     util::cooldown("emped_timer", time);
     while (!util::iscooldownready("emped_timer") && isalive(self)) {
         timeleft = max(util::getcooldownleft("emped_timer"), 0.5);
@@ -1612,20 +1601,11 @@ function function_d3da7e1e() {
     self endon("3df7debc9a06b9e4");
     self endon(#"death", #"exit_vehicle", #"change_seat");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"weapon_fired");
         var_1c7142e7 = waitresult.projectile;
-        /#
-            /#
-                assert(isdefined(var_1c7142e7), "<unknown string>");
-            #/
-        #/
+        assert(isdefined(var_1c7142e7), "<unknown string>");
         target = self turretgettarget(0);
-        /#
-            /#
-                assert(isdefined(target), "<unknown string>");
-            #/
-        #/
+        assert(isdefined(target), "<unknown string>");
         var_251a3d58 = function_41cb03eb(0);
         foreach (projectile in var_1c7142e7) {
             targetent = spawn("script_origin", target);

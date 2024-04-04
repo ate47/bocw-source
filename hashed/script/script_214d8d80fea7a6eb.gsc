@@ -314,23 +314,15 @@ function private function_b68c2eb9(localclientnum, oldval, newval, *bnewent, *bi
     if (!changed) {
         return;
     }
-    /#
-        println("<unknown string>");
-    #/
-    /#
-        println("<unknown string>" + fieldname + "<unknown string>" + bwastimejump + "<unknown string>" + changed + "<unknown string>");
-    #/
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
+    println("<unknown string>" + fieldname + "<unknown string>" + bwastimejump + "<unknown string>" + changed + "<unknown string>");
+    println("<unknown string>");
     for (var_67e99fbd = 1; changed >= var_67e99fbd; var_67e99fbd = var_67e99fbd << 1) {
         if (changed & var_67e99fbd) {
             self thread [[ level._fx.rc_car.var_7351c5a[var_67e99fbd] ]](binitialsnap, bwastimejump);
         }
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -355,14 +347,10 @@ function private function_5c750f8f(*localclientnum, state) {
     self endon("1b2da60ebd37930");
     self endon(#"death", #"fx_death");
     if (state & 1) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -374,16 +362,12 @@ function private function_a718a890(localclientnum, state) {
     self endon("311048a0bc7152f6");
     self endon(#"death", #"fx_death");
     if (state & 2) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         fxid = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_td_rc_flashlight", self, "tag_fx_flashlight");
         self thread function_d4cb569b(localclientnum, fxid, "stop_flashlight_fx");
         return;
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     self notify(#"stop_flashlight_fx");
 }
 
@@ -396,15 +380,11 @@ function private function_2550ab3e(localclientnum, state) {
     self endon("441a582706e2ec76");
     self endon(#"death", #"fx_death");
     if (state & 4) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         self thread function_7dc13ec9(localclientnum);
         return;
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     self notify(#"hash_28344e38d8947eea");
     self notify(#"stop_blink_fx");
 }
@@ -444,17 +424,13 @@ function private function_3383f5e2(localclientnum, state) {
     self endon("7df042faaef394e8");
     self endon(#"death", #"fx_death");
     if (state & 8) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         fxid = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_td_rc_light_green", self, "tag_fx_light_rear");
         self thread function_d4cb569b(localclientnum, fxid, "stop_proximity_fx");
         self.var_2aa68449 = snd::play("wpn_tkd_rcxd_detonate_timer_ready", [self, "tag_fx_light_rear"]);
         return;
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     self notify(#"stop_proximity_fx");
 }
 
@@ -467,43 +443,31 @@ function private function_4cfdb901(localclientnum, state) {
     self endon("6b1164a992a5029b");
     self endon(#"death", #"fx_death");
     if (state & 16) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         snd::play("wpn_tkd_rcxd_impact_lt");
         fxid = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_td_rc_damage_light", self, "tag_origin");
         self thread function_d4cb569b(localclientnum, fxid, "stop_damage_light_fx");
     } else {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         self notify(#"stop_damage_light_fx");
     }
     if (state & 32) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         snd::play("wpn_tkd_rcxd_impact_md");
         fxid = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_td_rc_damage_medium", self, "tag_origin");
         self thread function_d4cb569b(localclientnum, fxid, "stop_damage_medium_fx");
     } else {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         self notify(#"stop_damage_medium_fx");
     }
     if (state & 64) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         snd::play("wpn_tkd_rcxd_impact_hv");
         fxid = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_td_rc_damage_heavy", self, "tag_origin");
         self thread function_d4cb569b(localclientnum, fxid, "stop_damage_heavy_fx");
         return;
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     self notify(#"stop_damage_heavy_fx");
 }
 
@@ -515,16 +479,12 @@ function private function_51de3dc2(localclientnum, state) {
     self notify("6db46cb8b5275540");
     self endon("6db46cb8b5275540");
     if (state & 128) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         fxid = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_td_rc_exp_c4", self, "tag_origin");
         self thread function_d4cb569b(localclientnum, fxid, "stop_death_fx");
         return;
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     self notify(#"stop_death_fx");
 }
 
@@ -693,7 +653,7 @@ function private function_23f6671d() {
         var_69954662 = level._fx.rc_car.velocity[1] / 20;
         var_69954662 = max(-1, min(1, var_69954662));
         var_69954662 = var_69954662 * 0.5;
-        var_50bfab0d = level._fx.rc_car.origin + anglestoforward(level._fx.rc_car.angles) * 100 + vectorscale((0, 0, 1), 15);
+        var_50bfab0d = level._fx.rc_car.origin + anglestoforward(level._fx.rc_car.angles) * 100 + (0, 0, 15);
         screenpos = self function_a6a764a9(var_50bfab0d, 1);
         if (isdefined(screenpos)) {
             self postfx::function_c8b5f318("pstfx_speedblur", "X Offset", screenpos[0]);
@@ -795,8 +755,6 @@ function private function_d1374213(*localclientnum, *oldval, newval, *bnewent, *
 // Checksum 0xdd4b530f, Offset: 0x3918
 // Size: 0xd4
 function private function_907070de(var_55ee7def, localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump) {
-    /#
-        println("<unknown string>" + var_55ee7def + "<unknown string>" + localclientnum + "<unknown string>" + oldval + "<unknown string>" + newval + "<unknown string>" + bnewent + "<unknown string>" + binitialsnap + "<unknown string>" + fieldname + "<unknown string>" + bwastimejump);
-    #/
+    println("<unknown string>" + var_55ee7def + "<unknown string>" + localclientnum + "<unknown string>" + oldval + "<unknown string>" + newval + "<unknown string>" + bnewent + "<unknown string>" + binitialsnap + "<unknown string>" + fieldname + "<unknown string>" + bwastimejump);
 }
 

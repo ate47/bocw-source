@@ -67,17 +67,11 @@ function private function_25996839(var_166900a8, bundle, validity_func, var_35a2
 // Checksum 0x1a082943, Offset: 0x3d0
 // Size: 0x134
 function function_f72f089c(var_166900a8, bundle, validity_func, var_35a2c593, default_bundle, force_kill) {
-    /#
-        assert(isdefined(level.renderoverridebundle));
-    #/
+    assert(isdefined(level.renderoverridebundle));
     if (!isdefined(level.renderoverridebundle.var_383fe4d6)) {
         level.renderoverridebundle.var_383fe4d6 = [];
     }
-    /#
-        /#
-            assert(!function_25996839(var_166900a8, bundle, validity_func, var_35a2c593));
-        #/
-    #/
+    assert(!function_25996839(var_166900a8, bundle, validity_func, var_35a2c593));
     level.renderoverridebundle.var_383fe4d6[var_166900a8] = {#bundle:bundle, #validity_func:validity_func, #var_35a2c593:var_35a2c593, #var_1a5b7293:0, #default_bundle:default_bundle, #force_kill:force_kill};
 }
 
@@ -95,7 +89,6 @@ function function_2dbeddb5(*local_client_num, var_166900a8) {
 // Size: 0x3be
 function function_e04728e4(local_client_num) {
     while (true) {
-        result = undefined;
         result = level waittill(#"demo_jump", #"killcam_begin", #"killcam_end", #"player_switch", #"joined_team", #"localplayer_spawned", #"hash_7f642789ed08aae0", #"thermal_toggle", #"hacked");
         if (result._notify == "killcam_end") {
             function_9129cbe3(local_client_num);

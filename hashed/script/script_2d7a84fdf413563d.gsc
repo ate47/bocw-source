@@ -8,27 +8,11 @@
 class csr_beacon_menu : cluielem {
 
     // Namespace csr_beacon_menu/sr_beacon_menu
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x999020d4, Offset: 0x350
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace csr_beacon_menu/sr_beacon_menu
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x339de60f, Offset: 0x4a0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace csr_beacon_menu/sr_beacon_menu
     // Params 2, eflags: 0x2 linked
     // Checksum 0x22ccd385, Offset: 0x468
     // Size: 0x30
     function function_666779d(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "respond_enabled", value);
+        set_data(localclientnum, "respond_enabled", value);
     }
 
     // Namespace csr_beacon_menu/sr_beacon_menu
@@ -62,7 +46,7 @@ class csr_beacon_menu : cluielem {
     // Size: 0x40
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "respond_enabled", 0);
+        set_data(localclientnum, "respond_enabled", 0);
     }
 
 }

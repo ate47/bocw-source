@@ -39,9 +39,7 @@ function private function_8f9218ba(hud) {
 // Checksum 0x252ed5ee, Offset: 0x2a0
 // Size: 0x182
 function private function_20b6bc92() {
-    /#
-        assert(isdefined(level.var_a00c303b), "<unknown string>");
-    #/
+    assert(isdefined(level.var_a00c303b), "<unknown string>");
     level notify(#"hash_20f3988ee2416a3d");
     level endon(#"hash_20f3988ee2416a3d");
     level.var_a00c303b.mainthread = 1;
@@ -66,7 +64,7 @@ function private function_20b6bc92() {
 // Size: 0x2d8
 function function_b009fcc9(x, y, w, h, target, callbackfunc, callbackdata, isvertical, backgroundcolor, backgroundalpha, var_a2dbe44f, var_6a3d8755) {
     isvertical = function_ea2f17d1(isvertical, 0);
-    backgroundcolor = function_ea2f17d1(backgroundcolor, vectorscale((1, 1, 1), 0.72974));
+    backgroundcolor = function_ea2f17d1(backgroundcolor, (0.72974, 0.72974, 0.72974));
     backgroundalpha = function_ea2f17d1(backgroundalpha, 0.72974);
     var_a2dbe44f = function_ea2f17d1(var_a2dbe44f, (0, 1, 0));
     var_6a3d8755 = function_ea2f17d1(var_6a3d8755, 0.72974);

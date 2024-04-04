@@ -197,11 +197,7 @@ function private function_dda06e36(entity) {
         zm_behavior::zombiefindflesh(entity);
         break;
     case #"hash_6192d8af630c6c07":
-        /#
-            /#
-                assert(isdefined(var_cc7597dc), "<unknown string>");
-            #/
-        #/
+        assert(isdefined(var_cc7597dc), "<unknown string>");
         namespace_19c99142::function_ff6a04bc(entity);
         entity.favoriteenemy = var_cc7597dc;
         entity.goalradius = entity getpathfindingradius();
@@ -422,11 +418,7 @@ function function_bd4dbc6d() {
 // Checksum 0x1dad7eee, Offset: 0x1ac0
 // Size: 0x6a
 function function_917994fb(*entity, n_to_spawn) {
-    /#
-        /#
-            assert(isdefined(n_to_spawn), "<unknown string>");
-        #/
-    #/
+    assert(isdefined(n_to_spawn), "<unknown string>");
     if (isdefined(level.zombie_total) && level.zombie_total < n_to_spawn) {
         return false;
     }

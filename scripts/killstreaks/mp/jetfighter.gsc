@@ -218,7 +218,7 @@ function private function_8f304847(var_d44b8c3e, startangles) {
                 var_59a518e1 = array::sort_by_value(var_59a518e1, 1);
                 maxheight = var_59a518e1[var_59a518e1.size - 1];
                 var_35637e22 = maxheight - var_59a518e1[0];
-                trace = groundtrace((var_d44b8c3e[0], var_d44b8c3e[1], maxheight), var_d44b8c3e - vectorscale((0, 0, 1), 5000), 0, undefined);
+                trace = groundtrace((var_d44b8c3e[0], var_d44b8c3e[1], maxheight), var_d44b8c3e - (0, 0, 5000), 0, undefined);
                 groundheight = trace[#"position"][2];
                 bundle = killstreaks::get_script_bundle("jetfighter");
                 var_6b1fb8d9 = groundheight + (maxheight - groundheight) * bundle.var_ff73e08c;
@@ -235,7 +235,7 @@ function private function_8f304847(var_d44b8c3e, startangles) {
                     var_af2fe365[#"angles"] = angles;
                 }
             }
-            angles = angles + vectorscale((0, 1, 0), 30);
+            angles = angles + (0, 30, 0);
             forward = anglestoforward(angles);
             var_51c6fb78++;
             waitframe(1);

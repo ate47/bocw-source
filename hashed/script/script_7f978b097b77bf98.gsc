@@ -114,7 +114,7 @@ function private function_b0c8ef74(eventstruct) {
         level thread function_7914c7ef(self.instance.var_85c920d0, s_chest);
         eventstruct.activator function_bc82f900("damage_heavy");
         eventstruct.activator zm_stats::function_945c7ce2(#"hash_346e6565d0a79066", 1);
-        level thread util::delay(1, undefined, &namespace_58949729::function_f82f361c, self.s_chest, namespace_58949729::function_fd5e77fa(#"black"), 3, 0, vectorscale((0, 0, -1), 8), 1);
+        level thread util::delay(1, undefined, &namespace_58949729::function_f82f361c, self.s_chest, namespace_58949729::function_fd5e77fa(#"black"), 3, 0, (0, 0, -8), 1);
         self.instance.mdl_chest thread namespace_58949729::function_1e2500f();
         level scoreevents::doscoreeventcallback("scoreEventSR", {#scoreevent:"event_complete", #nearbyplayers:1, #var_b0a57f8c:5000, #location:self.instance.mdl_chest.origin});
         players = getplayers("all", self.instance.mdl_chest.origin, 5000);
@@ -185,14 +185,14 @@ function private function_91c5571b(instance) {
 // Size: 0x404
 function private function_5338581(instance) {
     instance.mdl_chest endon(#"death");
-    playsoundatposition(#"hash_6cad1d9a51f99476", instance.mdl_chest.origin + vectorscale((0, 0, 1), 20));
+    playsoundatposition(#"hash_6cad1d9a51f99476", instance.mdl_chest.origin + (0, 0, 20));
     wait(0.25);
     foreach (player in function_a1ef346b("all", instance.mdl_chest.origin, 2048)) {
         player function_bc82f900("damage_heavy");
     }
     instance.mdl_chest clientfield::set("sr_black_chest_fx", 2);
     wait(2);
-    playsoundatposition(#"hash_2cc0c33bfc0f9373", instance.mdl_chest.origin + vectorscale((0, 0, 1), 20));
+    playsoundatposition(#"hash_2cc0c33bfc0f9373", instance.mdl_chest.origin + (0, 0, 20));
     instance.mdl_chest thread zm_vo::function_d6f8bbd9(#"hash_15b09a217e61af64", 2.5);
     instance.var_fc398f5e = 0;
     s_chest = instance.contentgroups[#"chest"][0];
@@ -265,7 +265,6 @@ function private function_1f15d9fc(instance) {
     self waittill(#"movedone");
     self val::set(#"hash_65a3f68c4d919b89", "takedamage", 1);
     while (isdefined(self)) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage", #"hash_2cc769566d9f395a");
         if (isdefined(waitresult.amount)) {
             self.health = self.health - waitresult.amount;
@@ -377,10 +376,10 @@ function private function_7914c7ef(var_85c920d0, *s_chest) {
         }
         if (isdefined(var_ff1022f3)) {
             s_chest dontinterpolate();
-            s_chest.origin = var_ff1022f3.origin + vectorscale((0, 0, 1), 40);
+            s_chest.origin = var_ff1022f3.origin + (0, 0, 40);
             s_chest.angles = var_ff1022f3.angles;
             s_chest show();
-            s_chest thread fx::play(#"hash_6e08ff9234426629", var_ff1022f3.origin + vectorscale((0, 0, 1), 48), var_ff1022f3.angles);
+            s_chest thread fx::play(#"hash_6e08ff9234426629", var_ff1022f3.origin + (0, 0, 48), var_ff1022f3.angles);
             s_chest clientfield::set("sr_demented_echo_fx", 1);
             s_chest playsound(#"hash_36ac898552727197");
             s_chest playloopsound("evt_sur_we_bc_ghost_lp");

@@ -100,7 +100,7 @@ function function_66027924(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x94
 function function_8d607c5a(localclientnum) {
     self playsound(localclientnum, #"hash_13985582064d5e89");
-    self.var_5bea7e99 = self playloopsound(#"hash_2353ca5802f38a90", undefined, vectorscale((0, 0, 1), 50));
+    self.var_5bea7e99 = self playloopsound(#"hash_2353ca5802f38a90", undefined, (0, 0, 50));
     self thread function_c3ae0dcf();
     self thread function_ce1bd3f2(localclientnum);
 }
@@ -121,7 +121,6 @@ function function_59ee055f(localclientnum) {
 function function_c3ae0dcf() {
     self endon(#"death", #"entitydeleted");
     while (true) {
-        s_result = undefined;
         s_result = self waittill(#"sndambientbreath");
         self.var_ce0f9600 = int(s_result.active);
     }
@@ -155,7 +154,7 @@ function function_ce1bd3f2(localclientnum) {
                 n_wait_min = var_7f07b218;
                 n_wait_max = var_4dfa7e5a;
             }
-            self playsound(localclientnum, var_d49193ec + var_b240b48 + suffix, self.origin + vectorscale((0, 0, 1), 75));
+            self playsound(localclientnum, var_d49193ec + var_b240b48 + suffix, self.origin + (0, 0, 75));
             wait(randomfloatrange(n_wait_min, n_wait_max));
             if (var_b240b48 === "inhale") {
                 var_b240b48 = "exhale";
@@ -196,7 +195,7 @@ function function_b53ee6c9(localclientnum) {
                 n_wait_min = var_7f07b218;
                 n_wait_max = var_4dfa7e5a;
             }
-            self playsound(localclientnum, var_d49193ec + var_b240b48 + suffix, self.origin + vectorscale((0, 0, 1), 75));
+            self playsound(localclientnum, var_d49193ec + var_b240b48 + suffix, self.origin + (0, 0, 75));
             if (var_b240b48 === "inhale") {
                 wait(randomfloatrange(0.45, 0.5));
             } else {

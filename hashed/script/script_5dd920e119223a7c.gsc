@@ -233,7 +233,7 @@ function function_fe2c378a(instance) {
     foreach (player in getplayers()) {
         if (isalive(player)) {
             if (distance2dsquared(self.origin, player.origin) >= 1440000) {
-                n_dot = vectordot(vectorscale((0, 1, 0), 180), vectornormalize(self.origin - player.origin));
+                n_dot = vectordot((0, 180, 0), vectornormalize(self.origin - player.origin));
                 n_frac = cos(n_dot);
                 if (n_dot >= 165 && n_dot <= 180) {
                     if (instance.location.target === "destination_golova") {
@@ -419,7 +419,6 @@ function private start_callback(instance, activator) {
     foreach (var_a1042f77 in isdefined(instance.contentgroups[#"flood"]) ? instance.contentgroups[#"flood"] : []) {
         var_a1042f77 thread function_4b4ffd20(instance, activator);
     }
-    s_waitresult = undefined;
     s_waitresult = instance waittill(#"objective_ended");
     namespace_7589cf5c::function_ed193293(instance);
     if (is_true(instance.success)) {
@@ -1040,7 +1039,7 @@ function function_72213470(s_instance) {
     wait(3);
     var_d8f8912 = getent("death_sound_entity", "targetname");
     if (isdefined(var_d8f8912)) {
-        level thread namespace_cda50904::function_a92a93e9(var_d8f8912.origin + vectorscale((0, 0, 1), 48), undefined, 1);
+        level thread namespace_cda50904::function_a92a93e9(var_d8f8912.origin + (0, 0, 48), undefined, 1);
         var_d8f8912 delete();
     }
 }
@@ -1153,7 +1152,6 @@ function private function_15bda870(s_spawn, var_109708e0, s_instance) {
         if (isdefined(level.var_1f73a372)) {
             level.var_1f73a372 thread util::delay(5, "end_game", &function_314cd1eb);
         }
-        s_waitresult = undefined;
         s_waitresult = level.var_1f73a372 waittill(#"death");
         if (isdefined(level.var_1f73a372)) {
             level.var_1f73a372 thread function_8da8f6cf(s_instance);
@@ -1583,7 +1581,6 @@ function function_314cd1eb() {
 function function_47de2d14() {
     self endon(#"death", #"attacking");
     while (true) {
-        s_result = undefined;
         s_result = self waittill(#"damage");
         if (isdefined(s_result.attacker) && isplayer(s_result.attacker)) {
             self flag::set("attack");
@@ -1820,7 +1817,7 @@ function function_42fbf5d9(s_dest, s_instance, var_f5064815) {
     if (isdefined(self)) {
         n_dist = distance(self.origin, s_dest.origin);
         n_time = n_dist / 1000;
-        self moveto(s_dest.origin + vectorscale((0, 0, 1), 40), n_time);
+        self moveto(s_dest.origin + (0, 0, 40), n_time);
         self waittill(#"movedone");
     }
     if (isdefined(self)) {
@@ -1906,7 +1903,7 @@ function private function_e13574ed(var_f5064815) {
 // Size: 0x14c
 function function_a1829ee4() {
     v_origin = self getcentroid();
-    v_upper = v_origin + vectorscale((0, 0, 1), 30);
+    v_upper = v_origin + (0, 0, 30);
     foreach (player in getplayers()) {
         if (player util::is_player_looking_at(v_origin, 0.6, 1, self) || player util::is_player_looking_at(v_upper, 0.6, 1, self) || player util::is_player_looking_at(self.origin, 0.6, 1, self)) {
             return true;
@@ -1924,7 +1921,7 @@ function function_667a319b(s_instance, *b_play_vo) {
     self endon(#"death");
     while (true) {
         v_origin = self getcentroid();
-        v_upper = v_origin + vectorscale((0, 0, 1), 30);
+        v_upper = v_origin + (0, 0, 30);
         foreach (player in getplayers()) {
             if (isalive(player) && isdefined(v_origin) && isdefined(v_upper)) {
                 if (player util::is_player_looking_at(v_origin, 0.6, 1, self) || player util::is_player_looking_at(v_upper, 0.6, 1, self) || player util::is_player_looking_at(self.origin, 0.6, 1, self)) {
@@ -1947,7 +1944,6 @@ function private function_83c20994(var_31891b5a) {
     self endon(#"death");
     var_31891b5a endon(#"hash_733ab6814f36e8ee");
     while (true) {
-        s_waitresult = undefined;
         s_waitresult = self waittill(#"damage");
         if (isplayer(s_waitresult.attacker)) {
             var_31891b5a notify(#"hash_733ab6814f36e8ee");

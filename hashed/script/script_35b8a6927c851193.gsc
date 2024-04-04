@@ -96,17 +96,11 @@ function private main() {
 // Checksum 0x979d6836, Offset: 0x8b8
 // Size: 0x18c
 function initzombiebehaviors() {
-    /#
-        assert(isscriptfunctionptr(&function_197fdaee));
-    #/
+    assert(isscriptfunctionptr(&function_197fdaee));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2e71bc334e0009ba", &function_197fdaee);
-    /#
-        assert(isscriptfunctionptr(&function_20a45305));
-    #/
+    assert(isscriptfunctionptr(&function_20a45305));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_37d4dfdcc2dcf48b", &function_20a45305);
-    /#
-        assert(isscriptfunctionptr(&function_c142ffd7));
-    #/
+    assert(isscriptfunctionptr(&function_c142ffd7));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_40014132d9127d48", &function_c142ffd7);
     animationstatenetwork::registernotetrackhandlerfunction("show_projectile", &function_a7d522bd);
     animationstatenetwork::registernotetrackhandlerfunction("fire_projectile", &function_f45f4725);
@@ -138,7 +132,7 @@ function private function_42151b1b() {
     self.completed_emerging_into_playable_area = 1;
     self.zombie_think_done = 1;
     self.var_28621cf4 = "j_neck";
-    self.var_e5365d8a = vectorscale((0, 0, 1), 6);
+    self.var_e5365d8a = (0, 0, 6);
     self.var_cbc65493 = 0.25;
     self setavoidancemask("avoid actor");
     self namespace_85745671::function_9758722("walk");
@@ -377,7 +371,6 @@ function private function_6f78caa9() {
         attacker = self.owner;
         start_pos = self.owner.origin;
     }
-    waitresult = undefined;
     waitresult = self waittilltimeout(5, #"projectile_impact_player", #"death");
     if (waitresult._notify == #"projectile_impact_player" && isdefined(waitresult.player)) {
         player = waitresult.player;

@@ -116,7 +116,7 @@ function function_51d21736() {
     self.var_c50d964 = 35;
     self.var_721a3dbd = 1;
     self.var_28621cf4 = "j_spine3";
-    self.var_e5365d8a = vectorscale((0, 0, 1), 3);
+    self.var_e5365d8a = (0, 0, 3);
     self.completed_emerging_into_playable_area = 1;
     self.canbetargetedbyturnedzombies = 1;
 }
@@ -243,37 +243,21 @@ function private function_cf29908a(entity) {
 // Size: 0x40c
 function registerbehaviorscriptfunctions() {
     spawner::add_archetype_spawn_function(#"zombie_dog", &archetypezombiedogblackboardinit);
-    /#
-        assert(isscriptfunctionptr(&function_5bac75b6));
-    #/
+    assert(isscriptfunctionptr(&function_5bac75b6));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_77ab4b89c5221f6a", &function_5bac75b6);
-    /#
-        assert(isscriptfunctionptr(&function_4cc712c8));
-    #/
+    assert(isscriptfunctionptr(&function_4cc712c8));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_6125f61af86f0b68", &function_4cc712c8);
-    /#
-        assert(isscriptfunctionptr(&function_e393f5fe));
-    #/
+    assert(isscriptfunctionptr(&function_e393f5fe));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_105b4f2a2302e4fc", &function_e393f5fe);
-    /#
-        assert(isscriptfunctionptr(&function_80f985a4));
-    #/
+    assert(isscriptfunctionptr(&function_80f985a4));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_39dff89e44839780", &function_80f985a4);
-    /#
-        assert(isscriptfunctionptr(&function_47e1bdeb));
-    #/
+    assert(isscriptfunctionptr(&function_47e1bdeb));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_17b0ff54092cd3bd", &function_47e1bdeb);
-    /#
-        assert(isscriptfunctionptr(&function_a5103696));
-    #/
+    assert(isscriptfunctionptr(&function_a5103696));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_741bad83e4d39bf2", &function_a5103696);
-    /#
-        assert(isscriptfunctionptr(&function_648f6c9b));
-    #/
+    assert(isscriptfunctionptr(&function_648f6c9b));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_5dacd9fb020cb77b", &function_648f6c9b);
-    /#
-        assert(isscriptfunctionptr(&function_a5c4f83b));
-    #/
+    assert(isscriptfunctionptr(&function_a5c4f83b));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_5c24ff85e2293300", &function_a5c4f83b);
     animationstatenetwork::registeranimationmocomp("mocomp_dog_lightning_teleport", &function_90dbd41, &function_2fa3612a, &function_1f51eea3);
     animationstatenetwork::registernotetrackhandlerfunction("zombie_dog_death_vocal", &function_6f24d732);
@@ -350,7 +334,7 @@ function private on_dog_killed(*params) {
             blast_radius = 100;
             var_83f35abe = 5;
         }
-        radiusdamage(self.origin + vectorscale((0, 0, 1), 18), blast_radius, var_83f35abe, var_6927cfa0, undefined, "MOD_PROJECTILE_SPLASH");
+        radiusdamage(self.origin + (0, 0, 18), blast_radius, var_83f35abe, var_6927cfa0, undefined, "MOD_PROJECTILE_SPLASH");
         self clientfield::set("sr_dog_fx", 0);
         self ghost();
         self notsolid();

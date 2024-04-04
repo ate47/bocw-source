@@ -36,7 +36,7 @@ function spectate_player_watcher() {
         }
     #/
     if (self.pers[#"team"] == #"spectator") {
-        spawnorigin = self.origin + vectorscale((0, 0, 1), 60);
+        spawnorigin = self.origin + (0, 0, 60);
         spawnangles = self.angles;
         spawnpoint = spawning::get_random_intermission_point();
         if (isdefined(spawnpoint)) {

@@ -67,85 +67,45 @@ function private postinit() {
 // Checksum 0xebada343, Offset: 0x7b0
 // Size: 0x8dc
 function registerbehaviorscriptfunctions() {
-    /#
-        assert(isscriptfunctionptr(&function_f8e8c129));
-    #/
+    assert(isscriptfunctionptr(&function_f8e8c129));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_520d52c557d9427", &function_f8e8c129);
-    /#
-        assert(isscriptfunctionptr(&function_7e5905cd));
-    #/
+    assert(isscriptfunctionptr(&function_7e5905cd));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_3a8b7da6a91d85f3", &function_7e5905cd);
-    /#
-        assert(isscriptfunctionptr(&function_1169b184));
-    #/
+    assert(isscriptfunctionptr(&function_1169b184));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_3e8335833e76fa0e", &function_1169b184);
-    /#
-        assert(isscriptfunctionptr(&function_afa4bed6));
-    #/
+    assert(isscriptfunctionptr(&function_afa4bed6));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_34a6a91002379d9e", &function_afa4bed6);
-    /#
-        assert(isscriptfunctionptr(&function_e7e003b0));
-    #/
+    assert(isscriptfunctionptr(&function_e7e003b0));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_351e1f4e4e8beb5", &function_e7e003b0);
-    /#
-        assert(isscriptfunctionptr(&function_14e1e2c8));
-    #/
+    assert(isscriptfunctionptr(&function_14e1e2c8));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_1e90b07558cc9b1b", &function_14e1e2c8);
-    /#
-        assert(isscriptfunctionptr(&function_9ab1c000));
-    #/
+    assert(isscriptfunctionptr(&function_9ab1c000));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_1d3ff4cb570ac40", &function_9ab1c000);
-    /#
-        assert(isscriptfunctionptr(&function_3b8d314c));
-    #/
+    assert(isscriptfunctionptr(&function_3b8d314c));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_75ba4163e4512e01", &function_3b8d314c);
-    /#
-        assert(isscriptfunctionptr(&function_ceeb405));
-    #/
+    assert(isscriptfunctionptr(&function_ceeb405));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2cca123cff468ca8", &function_ceeb405);
-    /#
-        assert(isscriptfunctionptr(&function_b57de57a));
-    #/
+    assert(isscriptfunctionptr(&function_b57de57a));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2992bf38eb0ecb9c", &function_b57de57a);
-    /#
-        assert(isscriptfunctionptr(&function_36f6a838));
-    #/
+    assert(isscriptfunctionptr(&function_36f6a838));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_14db413a212246df", &function_36f6a838);
-    /#
-        assert(isscriptfunctionptr(&function_d58f8483));
-    #/
+    assert(isscriptfunctionptr(&function_d58f8483));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_42901d14fb88f316", &function_d58f8483);
-    /#
-        assert(isscriptfunctionptr(&function_5ce54900));
-    #/
+    assert(isscriptfunctionptr(&function_5ce54900));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_177974191a99d4ac", &function_5ce54900);
-    /#
-        assert(isscriptfunctionptr(&function_1ad43460));
-    #/
+    assert(isscriptfunctionptr(&function_1ad43460));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_1b632346ef84251c", &function_1ad43460);
-    /#
-        assert(isscriptfunctionptr(&function_77788917));
-    #/
+    assert(isscriptfunctionptr(&function_77788917));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_6220b20470033c72", &function_77788917);
-    /#
-        assert(isscriptfunctionptr(&function_c83209ee));
-    #/
+    assert(isscriptfunctionptr(&function_c83209ee));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_ebc4b27b9d85561", &function_c83209ee);
-    /#
-        assert(isscriptfunctionptr(&function_f14292cf));
-    #/
+    assert(isscriptfunctionptr(&function_f14292cf));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_6955957f9e1d47a3", &function_f14292cf);
-    /#
-        assert(isscriptfunctionptr(&function_b411d93));
-    #/
+    assert(isscriptfunctionptr(&function_b411d93));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_4bb168e1b80acaed", &function_b411d93);
-    /#
-        assert(isscriptfunctionptr(&function_a495d71f));
-    #/
+    assert(isscriptfunctionptr(&function_a495d71f));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_49880776aa68a310", &function_a495d71f, 1);
-    /#
-        assert(isscriptfunctionptr(&function_a495d71f));
-    #/
+    assert(isscriptfunctionptr(&function_a495d71f));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2b76cd8d945e7de7", &function_a495d71f, 1);
     animationstatenetwork::registernotetrackhandlerfunction("avogadro_shoot_bolt", &shoot_bolt_wait);
     animationstatenetwork::registeranimationmocomp("avogadro_tactical_walk@avogadro", &function_bc2f2686, &function_bc2f2686, undefined);
@@ -591,7 +551,7 @@ function private shoot_bolt_wait(entity) {
     if (!enemy scene::function_c935c42()) {
         target_velocity = enemy getvelocity();
         if (isplayer(enemy)) {
-            target_pos = target_pos + vectorscale((0, 0, -1), 12);
+            target_pos = target_pos + (0, 0, -12);
             if (enemy isinvehicle()) {
                 target_velocity = enemy getvehicleoccupied() getvelocity();
             }
@@ -649,7 +609,6 @@ function function_dec8144d() {
         self.health = self.maxhealth;
     }
     while (isdefined(self)) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (waitresult.mod === "MOD_PISTOL_BULLET" || waitresult.mod === "MOD_RIFLE_BULLET" || waitresult.mod === "MOD_PROJECTILE") {
             if (self.health <= 0) {
@@ -679,7 +638,6 @@ function function_5f54a393() {
 // Size: 0xc0
 function function_5f86757d() {
     level endon(#"game_ended");
-    waitresult = undefined;
     waitresult = self waittill(#"explode", #"death", #"projectile_impact_explode");
     if (!isdefined(self)) {
         return waitresult;
@@ -1001,7 +959,7 @@ function function_3d3ee1a4(entity, point, enemy) {
     if (!function_9f1d0b0d(entity, point)) {
         return undefined;
     }
-    groundpos = groundtrace(point + vectorscale((0, 0, 1), 500) + vectorscale((0, 0, 1), 8), point + vectorscale((0, 0, 1), 500) + vectorscale((0, 0, -1), 100000), 0, entity)[#"position"];
+    groundpos = groundtrace(point + (0, 0, 500) + (0, 0, 8), point + (0, 0, 500) + (0, 0, -100000), 0, entity)[#"position"];
     if (groundpos[2] < point[2] - 2000) {
         /#
             recordsphere(point, 10, (1, 0, 0), "<unknown string>", entity);
@@ -1027,7 +985,7 @@ function function_3d3ee1a4(entity, point, enemy) {
             }
         }
     }
-    groundpos = groundtrace(nextpos + vectorscale((0, 0, 1), 500) + vectorscale((0, 0, 1), 8), nextpos + vectorscale((0, 0, 1), 500) + vectorscale((0, 0, -1), 100000), 0, entity)[#"position"];
+    groundpos = groundtrace(nextpos + (0, 0, 500) + (0, 0, 8), nextpos + (0, 0, 500) + (0, 0, -100000), 0, entity)[#"position"];
     if (abs(nextpos[2] - groundpos[2]) > 5) {
         return undefined;
     }
@@ -1155,9 +1113,7 @@ function function_d58f8483(entity) {
     target = get_target_ent(entity);
     var_bd4e4e13 = !isplayer(target) || zm_utility::is_player_valid(target, 1);
     if (isdefined(target) && distancesquared(entity.origin, target.origin) <= sqr(entity.var_724ec089) && var_bd4e4e13) {
-        /#
-            assert(isdefined(entity.var_696e2d53) && isdefined(entity.var_e3b6f14a), "<unknown string>");
-        #/
+        assert(isdefined(entity.var_696e2d53) && isdefined(entity.var_e3b6f14a), "<unknown string>");
         if (gettime() < entity.var_696e2d53) {
             return entity.var_e3b6f14a;
         }
@@ -1418,7 +1374,7 @@ function function_598bf886(entity) {
                 recordline(entity.origin, var_9b482dc3, (0, 1, 0), "<unknown string>", entity);
             #/
             /#
-                recordline(entity.origin + vectorscale((0, 0, 1), 3), var_37c56a35 + vectorscale((0, 0, 1), 3), (1, 0.5, 0), "<unknown string>", entity);
+                recordline(entity.origin + (0, 0, 3), var_37c56a35 + (0, 0, 3), (1, 0.5, 0), "<unknown string>", entity);
             #/
             if (distancesquared(entity.origin, var_9b482dc3) >= 100 || is_false(entity.can_phase)) {
                 entity.var_e8a7f45d.state = nextstate;

@@ -198,9 +198,7 @@ function trigger_process(trigger) {
         }
         if (isdefined(trigger.script_vehiclegroupdelete)) {
             if (!isdefined(level.vehicle_deletegroup[trigger.script_vehiclegroupdelete])) {
-                /#
-                    println("vehicle.bindingCooldown", trigger.script_vehiclegroupdelete);
-                #/
+                println("vehicle.bindingCooldown", trigger.script_vehiclegroupdelete);
                 level.vehicle_deletegroup[trigger.script_vehiclegroupdelete] = [];
             }
             array::delete_all(level.vehicle_deletegroup[trigger.script_vehiclegroupdelete]);
@@ -214,9 +212,7 @@ function trigger_process(trigger) {
         }
         if (isdefined(trigger) && isdefined(trigger.script_vehiclestartmove)) {
             if (!isdefined(level.vehicle_startmovegroup[trigger.script_vehiclestartmove])) {
-                /#
-                    println("tag_fx_flare_left", trigger.script_vehiclestartmove);
-                #/
+                println("tag_fx_flare_left", trigger.script_vehiclestartmove);
                 return;
             }
             foreach (vehicle in arraycopy(level.vehicle_startmovegroup[trigger.script_vehiclestartmove])) {
@@ -473,9 +469,7 @@ function islastnode(node) {
 // Checksum 0xb02a127c, Offset: 0x2958
 // Size: 0xbfc
 function paths(node) {
-    /#
-        assert(isdefined(node) || isdefined(self.attachedpath), "<unknown string>");
-    #/
+    assert(isdefined(node) || isdefined(self.attachedpath), "<unknown string>");
     self notify(#"endpath");
     self endon(#"endpath");
     self notify(#"newpath");
@@ -493,7 +487,6 @@ function paths(node) {
     #/
     currentpoint = pathstart;
     while (isdefined(currentpoint)) {
-        waitresult = undefined;
         waitresult = self waittill(#"reached_node");
         currentpoint = waitresult.node;
         currentpoint enable_turrets(self);
@@ -714,9 +707,7 @@ function resume_path() {
 // Size: 0x264
 function get_on_path(path_start, str_key = "targetname", distance = 0) {
     if (!isdefined(self)) {
-        /#
-            assert(0, "<unknown string>");
-        #/
+        assert(0, "<unknown string>");
         return;
     }
     if (isstring(path_start)) {
@@ -724,14 +715,10 @@ function get_on_path(path_start, str_key = "targetname", distance = 0) {
     }
     if (!isdefined(path_start)) {
         if (isdefined(self.targetname)) {
-            /#
-                assertmsg("<unknown string>" + self.targetname);
-            #/
+            assertmsg("<unknown string>" + self.targetname);
             return;
         }
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         return;
     }
     if (isdefined(self.hasstarted)) {
@@ -762,9 +749,7 @@ function get_on_path(path_start, str_key = "targetname", distance = 0) {
 // Checksum 0x7f1a975, Offset: 0x39b0
 // Size: 0x94
 function function_af0fc980() {
-    /#
-        assert(is_true(isai(self)));
-    #/
+    assert(is_true(isai(self)));
     state = self vehicle_ai::get_previous_state();
     if (!isdefined(state)) {
         state = "off";
@@ -821,9 +806,7 @@ function go_path() {
         arrayremovevalue(level.vehicle_startmovegroup[self.script_vehiclestartmove], self);
     }
     if (isdefined(self.hasstarted)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     } else {
         self.hasstarted = 1;
@@ -872,7 +855,7 @@ function function_bb9b43a9(path_start, var_1c847d0f, var_dda93e6c, location, var
 // Params 6, eflags: 0x0
 // Checksum 0xfd158b54, Offset: 0x3fd8
 // Size: 0x1c4
-function function_3f76e204(path_start, player_origin, player_angles, height_offset = 0, angle_offset = vectorscale((0, 1, 0), 45), var_bc779e6c = 0.5) {
+function function_3f76e204(path_start, player_origin, player_angles, height_offset = 0, angle_offset = (0, 45, 0), var_bc779e6c = 0.5) {
     if (!isdefined(path_start) || !isdefined(player_origin) || !isdefined(player_angles) || !isdefined(height_offset)) {
         return;
     }
@@ -934,7 +917,6 @@ function _spawn_group(spawngroup) {
 // Size: 0x56
 function _scripted_spawn(group) {
     thread _scripted_spawn_go(group);
-    waitresult = undefined;
     waitresult = level waittill("vehiclegroup spawned" + group);
     return waitresult.vehicles;
 }
@@ -1164,7 +1146,6 @@ function subtarget_watch(vehicle, subtarget) {
     vehicle endon(#"death");
     target_set(vehicle, (0, 0, 0), subtarget);
     while (true) {
-        waitresult = undefined;
         waitresult = vehicle waittill(#"subtarget_broken");
         if (waitresult.subtarget === subtarget) {
             break;
@@ -1276,7 +1257,7 @@ function debug_set_speed(*speed, *rate, msg) {
         self endon(#"new debug_vehiclesetspeed", #"resuming speed", #"death");
         while (true) {
             while (getdvarstring(#"debug_vehiclesetspeed") != "<unknown string>") {
-                print3d(self.origin + vectorscale((0, 0, 1), 192), "<unknown string>" + msg, (1, 1, 1), 1, 3);
+                print3d(self.origin + (0, 0, 192), "<unknown string>" + msg, (1, 1, 1), 1, 3);
                 waitframe(1);
             }
             wait(0.5);
@@ -1398,9 +1379,7 @@ function get_normal_anim_time(animation) {
 // Size: 0x5e
 function setup_dynamic_detour(pathnode, get_func) {
     prevnode = [[ get_func ]](pathnode.targetname);
-    /#
-        assert(isdefined(prevnode), "<unknown string>");
-    #/
+    assert(isdefined(prevnode), "<unknown string>");
     prevnode.detoured = 0;
 }
 
@@ -1819,9 +1798,7 @@ function get_vehiclenode_any_dynamic(target) {
             println("<unknown string>" + path_start.targetname);
             println("<unknown string>" + self.vehicletype);
         #/
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
     }
     if (!isdefined(path_start)) {
         path_start = struct::get(target, "targetname");
@@ -1852,7 +1829,7 @@ function land() {
     self sethoverparams(0, 0, 10);
     self cleargoalyaw();
     self settargetyaw((0, self.angles[1], 0)[1]);
-    self set_goal_pos(groundtrace(self.origin + vectorscale((0, 0, 1), 8), self.origin + vectorscale((0, 0, -1), 100000), 0, self)[#"position"], 1);
+    self set_goal_pos(groundtrace(self.origin + (0, 0, 8), self.origin + (0, 0, -100000), 0, self)[#"position"], 1);
     self waittill(#"goal");
 }
 
@@ -1953,7 +1930,7 @@ function unload_node_helicopter(*node) {
     self sethoverparams(0, 0, 10);
     goal = self.nextnode.origin;
     start = self.nextnode.origin;
-    end = start - vectorscale((0, 0, 1), 10000);
+    end = start - (0, 0, 10000);
     trace = bullettrace(start, end, 0, undefined);
     if (trace[#"fraction"] <= 1) {
         goal = (trace[#"position"][0], trace[#"position"][1], trace[#"position"][2] + self.fastropeoffset);
@@ -1983,7 +1960,7 @@ function detach_path() {
             self setspeed(0.01);
         }
         self setgoalyaw((0, self.angles[1], 0)[1]);
-        self function_a57c34b7(self.origin + vectorscale((0, 0, 1), 4), 1);
+        self function_a57c34b7(self.origin + (0, 0, 4), 1);
     }
 }
 
@@ -1995,9 +1972,7 @@ function simple_spawn(name_or_spawners, b_supress_assert = 0) {
     a_spawners = [];
     if (isstring(name_or_spawners)) {
         a_spawners = getvehiclespawnerarray(name_or_spawners, "targetname");
-        /#
-            assert(a_spawners.size || b_supress_assert, "<unknown string>" + name_or_spawners + "<unknown string>");
-        #/
+        assert(a_spawners.size || b_supress_assert, "<unknown string>" + name_or_spawners + "<unknown string>");
     } else {
         if (!isdefined(name_or_spawners)) {
             name_or_spawners = [];
@@ -2030,9 +2005,7 @@ function simple_spawn_single(name_or_spawner, b_supress_assert = 0) {
     } else {
         name = name_or_spawner;
     }
-    /#
-        assert(b_supress_assert || vehicle_array.size == 1, "<unknown string>" + name + "<unknown string>" + vehicle_array.size + "<unknown string>");
-    #/
+    assert(b_supress_assert || vehicle_array.size == 1, "<unknown string>" + name + "<unknown string>" + vehicle_array.size + "<unknown string>");
     if (vehicle_array.size > 0) {
         return vehicle_array[0];
     }
@@ -2044,9 +2017,7 @@ function simple_spawn_single(name_or_spawner, b_supress_assert = 0) {
 // Size: 0x92
 function simple_spawn_single_and_drive(name) {
     vehiclearray = simple_spawn(name);
-    /#
-        assert(vehiclearray.size == 1, "<unknown string>" + name + "<unknown string>" + vehiclearray.size + "<unknown string>");
-    #/
+    assert(vehiclearray.size == 1, "<unknown string>" + name + "<unknown string>" + vehiclearray.size + "<unknown string>");
     vehiclearray[0] thread go_path();
     return vehiclearray[0];
 }
@@ -2068,18 +2039,10 @@ function simple_spawn_and_drive(name) {
 // Checksum 0x9e5ff04, Offset: 0x7c60
 // Size: 0xaa
 function spawn(*modelname, targetname, vehicletype, origin, angles) {
-    /#
-        assert(isdefined(targetname));
-    #/
-    /#
-        assert(isdefined(vehicletype));
-    #/
-    /#
-        assert(isdefined(origin));
-    #/
-    /#
-        assert(isdefined(angles));
-    #/
+    assert(isdefined(targetname));
+    assert(isdefined(vehicletype));
+    assert(isdefined(origin));
+    assert(isdefined(angles));
     return spawnvehicle(vehicletype, origin, angles, targetname);
 }
 
@@ -2091,7 +2054,7 @@ function impact_fx(fxname, surfacetypes) {
     if (isdefined(fxname)) {
         body = self gettagorigin("tag_body");
         if (!isdefined(body)) {
-            body = self.origin + vectorscale((0, 0, 1), 10);
+            body = self.origin + (0, 0, 10);
         }
         trace = bullettrace(body, body - (0, 0, 2 * self.radius), 0, self);
         if (trace[#"fraction"] < 1 && !isdefined(trace[#"entity"]) && (!isdefined(surfacetypes) || array::contains(surfacetypes, trace[#"surfacetype"]))) {
@@ -2116,7 +2079,7 @@ function maingun_fx() {
         self waittill(#"weapon_fired");
         playfxontag(level.vehicle_deckdust[self.model], self, "tag_engine_exhaust");
         barrel_origin = self gettagorigin("tag_flash");
-        ground = physicstrace(barrel_origin, barrel_origin + vectorscale((0, 0, -1), 128));
+        ground = physicstrace(barrel_origin, barrel_origin + (0, 0, -128));
         physicsexplosionsphere(ground, 192, 100, 1);
     }
 }
@@ -2255,9 +2218,7 @@ function toggle_burn_fx(on) {
 // Checksum 0xb3447ad9, Offset: 0x84f8
 // Size: 0x6c
 function do_death_dynents(special_status = 1) {
-    /#
-        assert(special_status >= 0 && special_status <= 3);
-    #/
+    assert(special_status >= 0 && special_status <= 3);
     self clientfield::set("spawn_death_dynents", special_status);
 }
 
@@ -2516,7 +2477,7 @@ function attack_group_think() {
                 arrayremovevalue(valid_targets, current_target);
                 continue;
             }
-            self turretsettarget(0, current_target, vectorscale((0, 0, 1), 50));
+            self turretsettarget(0, current_target, (0, 0, 50));
             if (isdefined(self.fire_delay_min) && isdefined(self.fire_delay_max)) {
                 if (self.fire_delay_max < self.fire_delay_min) {
                     self.fire_delay_max = self.fire_delay_min;
@@ -2882,7 +2843,6 @@ function add_hijack_function(veh_targetname, spawn_func, param1, param2, param3,
 // Size: 0x16c
 function private _watch_for_hijacked_vehicles() {
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"clonedentity");
         str_targetname = waitresult.clone.targetname;
         waittillframeend();
@@ -2924,9 +2884,7 @@ function function_2798ed66() {
         self.var_77b06e7a = [];
         var_2d292ec2 = getnodearray(self.script_vehiclecovernode, "script_vehiclecovernode");
         foreach (node in var_2d292ec2) {
-            /#
-                assert(isdefined(node.var_f3da2b27), "<unknown string>" + node.origin + "<unknown string>");
-            #/
+            assert(isdefined(node.var_f3da2b27), "<unknown string>" + node.origin + "<unknown string>");
             array::add(self.var_77b06e7a, node, 0);
             tag_origin = self gettagorigin(node.var_f3da2b27);
             tag_angles = self gettagangles(node.var_f3da2b27);
@@ -3052,9 +3010,7 @@ function init_target_group() {
 // Checksum 0xbca24c49, Offset: 0xa8d8
 // Size: 0x9c
 function add_to_target_group(target_ent) {
-    /#
-        assert(isdefined(self.target_group), "<unknown string>");
-    #/
+    assert(isdefined(self.target_group), "<unknown string>");
     if (!isdefined(self.target_group)) {
         self.target_group = [];
     } else if (!isarray(self.target_group)) {
@@ -3068,9 +3024,7 @@ function add_to_target_group(target_ent) {
 // Checksum 0x2df922fe, Offset: 0xa980
 // Size: 0x4c
 function remove_from_target_group(target_ent) {
-    /#
-        assert(isdefined(self.target_group), "<unknown string>");
-    #/
+    assert(isdefined(self.target_group), "<unknown string>");
     arrayremovevalue(self.target_group, target_ent);
 }
 
@@ -3081,9 +3035,7 @@ function remove_from_target_group(target_ent) {
 function monitor_missiles_locked_on_to_me(player, wait_time = 0.1) {
     monitored_entity = self;
     monitored_entity endon(#"death");
-    /#
-        assert(isdefined(monitored_entity.target_group), "<unknown string>");
-    #/
+    assert(isdefined(monitored_entity.target_group), "<unknown string>");
     player endon(#"stop_monitor_missile_locked_on_to_me", #"disconnect", #"joined_team");
     while (true) {
         closest_attacker = player get_closest_attacker_with_missile_locked_on_to_me(monitored_entity);
@@ -3107,7 +3059,6 @@ function watch_freeze_on_flash(duration) {
     }
     veh clientfield::set("stun", 0);
     while (true) {
-        waitresult = undefined;
         waitresult = veh waittill(#"damage", #"death");
         if (waitresult._notify == "death") {
             return;
@@ -3132,13 +3083,12 @@ function watch_freeze_on_flash(duration) {
                 veh vehclearlookat();
                 veh disablegunnerfiring(0, 1);
                 angles = veh function_bc2f1cb8(0);
-                veh turretsettargetangles(0, angles + vectorscale((1, 0, 0), 50));
+                veh turretsettargetangles(0, angles + (50, 0, 0));
                 if (controlled && isdefined(owner)) {
                     owner val::set(#"veh", "freezecontrols", 1);
                     owner clientfield::set_to_player("static_postfx", 1);
                 }
                 veh clientfield::set("stun", 1);
-                waitresult = undefined;
                 waitresult = veh waittilltimeout(duration, #"death");
                 if (controlled && isdefined(owner)) {
                     owner clientfield::set_to_player("static_postfx", 0);
@@ -3179,9 +3129,7 @@ function stop_monitor_missiles_locked_on_to_me() {
 // Checksum 0x62d601f8, Offset: 0xafb0
 // Size: 0x256
 function get_closest_attacker_with_missile_locked_on_to_me(monitored_entity) {
-    /#
-        assert(isdefined(monitored_entity.target_group), "<unknown string>");
-    #/
+    assert(isdefined(monitored_entity.target_group), "<unknown string>");
     player = self;
     closest_attacker = undefined;
     closest_attacker_dot = -999;
@@ -3312,7 +3260,7 @@ function private function_3624d1c8() {
             if (isdefined(vehicle)) {
                 var_d4862d39 = undefined;
                 vehiclename = function_9e72a96(vehicle.vehicletype);
-                debug2dtext(vectorscale((0, 1, 0), 50), vehiclename);
+                debug2dtext((0, 50, 0), vehiclename);
                 var_6a8c15bb = undefined;
                 if (self attackbuttonpressed()) {
                     if (!isdefined(self.var_e54ab55e)) {
@@ -3421,9 +3369,7 @@ function devgui_vehicle_spawn_think() {
             return;
         }
         level wait_till("<unknown string>");
-        /#
-            assert(!isdefined(level.vehicle_spawner), "<unknown string>");
-        #/
+        assert(!isdefined(level.vehicle_spawner), "<unknown string>");
         level.vehicle_spawner = spawnstruct();
         var_31caf8f0 = function_951b4205();
         var_31caf8f0 = function_1f05ebe8(var_31caf8f0);
@@ -3541,7 +3487,7 @@ function private function_8b412f99(var_c50f1a19) {
         while (true) {
             player = getplayers()[0];
             origin = player.origin + anglestoforward(player getplayerangles()) * 270;
-            origin = origin + vectorscale((0, 0, 1), 40);
+            origin = origin + (0, 0, 40);
             if (player usebuttonpressed()) {
                 self.dynamic_spawn_dummy_model hide();
                 vehicle = spawnvehicle(var_c50f1a19, origin, player.angles, "<unknown string>");
@@ -3772,9 +3718,9 @@ function private function_831cd622(e_player) {
         var_d526c0e4 = self.origin + anglestoright(self.angles) * 115;
         var_c1af71a1 = self.origin + anglestoright(self.angles) * -125;
         var_b44997b4 = self.origin + anglestoforward(self.angles) * -110;
-        if (v_movement[1] < 0 && ispointonnavmesh(var_c1af71a1) && bullettracepassed(self.origin + vectorscale((0, 0, 1), 75), var_c1af71a1 + vectorscale((0, 0, 1), 5), 1, self)) {
+        if (v_movement[1] < 0 && ispointonnavmesh(var_c1af71a1) && bullettracepassed(self.origin + (0, 0, 75), var_c1af71a1 + (0, 0, 5), 1, self)) {
             s_info.var_664b49b8 = "left";
-        } else if (ispointonnavmesh(var_d526c0e4) && bullettracepassed(self.origin + vectorscale((0, 0, 1), 75), var_d526c0e4 + vectorscale((0, 0, 1), 5), 1, self)) {
+        } else if (ispointonnavmesh(var_d526c0e4) && bullettracepassed(self.origin + (0, 0, 75), var_d526c0e4 + (0, 0, 5), 1, self)) {
             s_info.var_664b49b8 = "right";
         } else {
             s_info.var_664b49b8 = "left";
@@ -4063,11 +4009,7 @@ function function_fa8ced6e(v_origin, v_angles, str_vehicle = undefined) {
     if (self isinvehicle()) {
         return self getvehicleoccupied();
     }
-    /#
-        /#
-            assert(isdefined(str_vehicle), "<unknown string>");
-        #/
-    #/
+    assert(isdefined(str_vehicle), "<unknown string>");
     var_80730518 = spawnvehicle(str_vehicle, v_origin, v_angles, "player_spawned_vehicle");
     var_80730518 usevehicle(self, 0);
     return var_80730518;
@@ -4127,9 +4069,7 @@ function update_flare_ability(player, var_55716d54, active_time = 5, cooldown_ti
     }
     self.var_40d7d1f2 = 0;
     while (isdefined(player) && (isdefined(player.vh_vehicle) || self.var_40d7d1f2)) {
-        /#
-            assert(!is_true(self.var_40d7d1f2));
-        #/
+        assert(!is_true(self.var_40d7d1f2));
         if (player function_e01d381a()) {
             self flag::clear("flares_available");
             self.var_40d7d1f2 = 1;
@@ -4211,7 +4151,7 @@ function fire_flares(*player, flare_tag = undefined, flare_lifetime = undefined)
             start_origin = self gettagorigin(flare_tag);
         }
         if (!isdefined(start_origin)) {
-            start_origin = self gettagorigin("tag_origin") + vectorscale((0, 0, 1), 128);
+            start_origin = self gettagorigin("tag_origin") + (0, 0, 128);
         }
         if (isdefined(flare_tag)) {
             var_ac3aef54 = self gettagangles(flare_tag);
@@ -4222,7 +4162,7 @@ function fire_flares(*player, flare_tag = undefined, flare_lifetime = undefined)
         flare = util::spawn_model(model, start_origin, var_ac3aef54);
         flare clientfield::set("play_flare_fx", 1);
         flare_lifetime = max(var_f9a2afb9[var_558d81a6] - var_558d81a6 * 0.15, 0.5);
-        flare thread move_flare(self, vectorscale((0, 0, -1), 200), 0.5, 0.25, flare_lifetime, flare_tag);
+        flare thread move_flare(self, (0, 0, -200), 0.5, 0.25, flare_lifetime, flare_tag);
         flare thread function_9ff1a886(self);
         wait(0.15);
     }
@@ -4362,7 +4302,6 @@ function function_9ff1a886(owner) {
     self.var_8dfaef6b = 0;
     while (!self.var_8dfaef6b) {
         self.var_8dfaef6b = self function_d6c00549(owner);
-        waitresult = undefined;
         waitresult = owner waittill(#"stinger_fired_at_me");
         self.var_8dfaef6b = self function_d6c00549(owner, waitresult.projectile);
     }

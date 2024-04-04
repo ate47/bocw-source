@@ -246,9 +246,7 @@ function onspawnintermission() {
     spawnpointname = "info_intermission";
     spawnpoints = getentarray(spawnpointname, "classname");
     if (spawnpoints.size < 1) {
-        /#
-            println("stand" + spawnpointname + "closeLoadingMovie");
-        #/
+        println("stand" + spawnpointname + "closeLoadingMovie");
         return;
     }
     spawnpoint = spawnpoints[randomint(spawnpoints.size)];
@@ -312,9 +310,7 @@ function onspawnplayerunified() {
 // Checksum 0xec0816c3, Offset: 0x15a0
 // Size: 0x2f2
 function onfindvalidspawnpoint() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     if (level flag::get("begin_spawning")) {
         spawnpoint = zm_player::check_for_valid_spawn_near_team(self, 1);
         /#
@@ -347,9 +343,7 @@ function onfindvalidspawnpoint() {
         if (!isdefined(spawnpoints) || spawnpoints.size == 0) {
             spawnpoints = struct::get_array("initial_spawn_points", "targetname");
         }
-        /#
-            assert(isdefined(spawnpoints), "<unknown string>");
-        #/
+        assert(isdefined(spawnpoints), "<unknown string>");
         spawnpoint = zm_player::getfreespawnpoint(spawnpoints, self);
     }
     return spawnpoint;
@@ -368,17 +362,13 @@ function onspawnplayer(predictedspawn = 0) {
         return;
     }
     if (isdefined(level.customspawnlogic)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         spawnpoint = self [[ level.customspawnlogic ]](predictedspawn);
         if (predictedspawn) {
             return;
         }
     } else {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         spawnpoint = self onfindvalidspawnpoint();
         if (predictedspawn) {
             self predictspawnpoint(spawnpoint.origin, spawnpoint.angles);
@@ -523,7 +513,6 @@ function zm_map_restart() {
 function menu_onmenuresponse() {
     self endon(#"disconnect");
     for (;;) {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         response = waitresult.response;
@@ -687,7 +676,6 @@ function init() {
 // Size: 0x78
 function onplayerconnect() {
     for (;;) {
-        waitresult = undefined;
         waitresult = level waittill(#"connected");
         waitresult.player thread onplayerspawned();
         if (isdefined(level.var_2742b26e)) {

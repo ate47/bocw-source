@@ -97,129 +97,67 @@ function detachright(entity) {
 // Checksum 0x2f6ac485, Offset: 0xb30
 // Size: 0xdec
 function registerbehaviorscriptfunctions() {
-    /#
-        assert(isscriptfunctionptr(&gladiatortargetservice));
-    #/
+    assert(isscriptfunctionptr(&gladiatortargetservice));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"gladiatortargetservice", &gladiatortargetservice);
-    /#
-        assert(isscriptfunctionptr(&function_4f73587a));
-    #/
+    assert(isscriptfunctionptr(&function_4f73587a));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2f31066d04316712", &function_4f73587a);
-    /#
-        assert(isscriptfunctionptr(&function_4660925e));
-    #/
+    assert(isscriptfunctionptr(&function_4660925e));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_19f5dddb53541f2f", &function_4660925e);
-    /#
-        assert(isscriptfunctionptr(&function_edd0777f));
-    #/
+    assert(isscriptfunctionptr(&function_edd0777f));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_3d538371b59fc4ce", &function_edd0777f);
-    /#
-        assert(isscriptfunctionptr(&function_154454e8));
-    #/
+    assert(isscriptfunctionptr(&function_154454e8));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_205614b8bf4014e6", &function_154454e8);
-    /#
-        assert(isscriptfunctionptr(&function_154454e8));
-    #/
+    assert(isscriptfunctionptr(&function_154454e8));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_205614b8bf4014e6", &function_154454e8);
-    /#
-        assert(isscriptfunctionptr(&function_2b6f49c8));
-    #/
+    assert(isscriptfunctionptr(&function_2b6f49c8));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_48c3fc4eec7605", &function_2b6f49c8);
-    /#
-        assert(isscriptfunctionptr(&function_2b6f49c8));
-    #/
+    assert(isscriptfunctionptr(&function_2b6f49c8));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_48c3fc4eec7605", &function_2b6f49c8);
-    /#
-        assert(isscriptfunctionptr(&function_d2ab62ae));
-    #/
+    assert(isscriptfunctionptr(&function_d2ab62ae));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_4aefcc750ed27716", &function_d2ab62ae);
-    /#
-        assert(isscriptfunctionptr(&function_a3329afd));
-    #/
+    assert(isscriptfunctionptr(&function_a3329afd));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_1e62e0f93339aad3", &function_a3329afd);
-    /#
-        assert(isscriptfunctionptr(&function_13f886a2));
-    #/
+    assert(isscriptfunctionptr(&function_13f886a2));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_4038d6d7b731c1de", &function_13f886a2);
-    /#
-        assert(isscriptfunctionptr(&function_61e7d5f5));
-    #/
+    assert(isscriptfunctionptr(&function_61e7d5f5));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_1d96f193711e7602", &function_61e7d5f5);
-    /#
-        assert(isscriptfunctionptr(&function_6bbfa1a0));
-    #/
+    assert(isscriptfunctionptr(&function_6bbfa1a0));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_753bdf09b9b21d9a", &function_6bbfa1a0);
-    /#
-        assert(isscriptfunctionptr(&function_dd674e3c));
-    #/
+    assert(isscriptfunctionptr(&function_dd674e3c));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_649ab6146cce9955", &function_dd674e3c);
-    /#
-        assert(isscriptfunctionptr(&function_7468904d));
-    #/
+    assert(isscriptfunctionptr(&function_7468904d));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_19966227fe912af8", &function_7468904d);
-    /#
-        assert(isscriptfunctionptr(&gladiatorshouldreact));
-    #/
+    assert(isscriptfunctionptr(&gladiatorshouldreact));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"gladiatorshouldreact", &gladiatorshouldreact);
-    /#
-        assert(isscriptfunctionptr(&function_c1b97472));
-    #/
+    assert(isscriptfunctionptr(&function_c1b97472));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_5934d511f3d43e76", &function_c1b97472);
-    /#
-        assert(isscriptfunctionptr(&function_fe0ecd9f));
-    #/
+    assert(isscriptfunctionptr(&function_fe0ecd9f));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_7114ad7e891644ce", &function_fe0ecd9f);
-    /#
-        assert(isscriptfunctionptr(&gladiatorpickaxe));
-    #/
+    assert(isscriptfunctionptr(&gladiatorpickaxe));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"gladiatorpickaxe", &gladiatorpickaxe);
-    /#
-        assert(isscriptfunctionptr(&gladiatorpickaxe));
-    #/
+    assert(isscriptfunctionptr(&gladiatorpickaxe));
     behaviorstatemachine::registerbsmscriptapiinternal(#"gladiatorpickaxe", &gladiatorpickaxe);
-    /#
-        assert(isscriptfunctionptr(&function_7891bd9b));
-    #/
+    assert(isscriptfunctionptr(&function_7891bd9b));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2ec3db12905e5ef2", &function_7891bd9b);
-    /#
-        assert(isscriptfunctionptr(&function_490a290d));
-    #/
+    assert(isscriptfunctionptr(&function_490a290d));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_324b5266aa732357", &function_490a290d);
-    /#
-        assert(isscriptfunctionptr(&function_6719445a));
-    #/
+    assert(isscriptfunctionptr(&function_6719445a));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_7a99cf7ed75b85d4", &function_6719445a);
-    /#
-        assert(isscriptfunctionptr(&function_fced00e1));
-    #/
+    assert(isscriptfunctionptr(&function_fced00e1));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_84d084fea1afb67", &function_fced00e1);
-    /#
-        assert(isscriptfunctionptr(&function_3963581d));
-    #/
+    assert(isscriptfunctionptr(&function_3963581d));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_72578a0bdaf6cabc", &function_3963581d);
-    /#
-        assert(isscriptfunctionptr(&function_dfbf9d5e));
-    #/
+    assert(isscriptfunctionptr(&function_dfbf9d5e));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_1c6cfcf6fdb404ff", &function_dfbf9d5e);
-    /#
-        assert(isscriptfunctionptr(&function_8d49edfa));
-    #/
+    assert(isscriptfunctionptr(&function_8d49edfa));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_50e5d4b2634f5877", &function_8d49edfa);
-    /#
-        assert(isscriptfunctionptr(&function_990c9627));
-    #/
+    assert(isscriptfunctionptr(&function_990c9627));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_52aa25564f02b9a1", &function_990c9627);
-    /#
-        assert(isscriptfunctionptr(&function_6ba071ff));
-    #/
+    assert(isscriptfunctionptr(&function_6ba071ff));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2d6fdeb321d8ce80", &function_6ba071ff);
-    /#
-        assert(isscriptfunctionptr(&function_3ca98f5a));
-    #/
+    assert(isscriptfunctionptr(&function_3ca98f5a));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_7ed731cb43b72ab7", &function_3ca98f5a);
-    /#
-        assert(isscriptfunctionptr(&function_e217245a));
-    #/
+    assert(isscriptfunctionptr(&function_e217245a));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_51d4a260f5e68d32", &function_e217245a);
     animationstatenetwork::registeranimationmocomp("mocomp_gladiator_leap", &registerhud_message_electricity_, &function_3f15e557, &function_96f1cbf6);
     animationstatenetwork::registeranimationmocomp("mocomp_gladiator_throw", &function_3137174f, &function_64cd870, &function_d9e4ebc8);
@@ -251,9 +189,7 @@ function private gladiatortargetservice(entity) {
                 if (!isdefined(entity.favoriteenemy)) {
                     return;
                 }
-                /#
-                    assert(isdefined(entity.favoriteenemy.origin), "left_arm_upper" + (isdefined(entity.favoriteenemy.birthtime) ? entity.favoriteenemy.birthtime : "<unknown string>") + "<unknown string>" + entity.favoriteenemy getentitynumber());
-                #/
+                assert(isdefined(entity.favoriteenemy.origin), "left_arm_upper" + (isdefined(entity.favoriteenemy.birthtime) ? entity.favoriteenemy.birthtime : "<unknown string>") + "<unknown string>" + entity.favoriteenemy getentitynumber());
                 to_enemy = entity.favoriteenemy.origin - entity.origin;
                 to_enemy = (to_enemy[0], to_enemy[1], 0);
                 var_2ddabcd3 = anglestoforward(entity.angles);
@@ -389,7 +325,7 @@ function private function_edd0777f(entity) {
     if (yaw > 22.5) {
         return false;
     }
-    can_see = bullettracepassed(entity.origin + vectorscale((0, 0, 1), 36), entity.favoriteenemy.origin + vectorscale((0, 0, 1), 36), 0, undefined);
+    can_see = bullettracepassed(entity.origin + (0, 0, 36), entity.favoriteenemy.origin + (0, 0, 36), 0, undefined);
     if (!can_see) {
         return false;
     }
@@ -759,9 +695,7 @@ function function_3f15e557(entity, mocompanim, *mocompanimblendouttime, *mocompa
     if (self.health <= 0) {
         return;
     }
-    /#
-        assert(isdefined(self.meleeinfo));
-    #/
+    assert(isdefined(self.meleeinfo));
     if (!isdefined(self.meleeinfo)) {
         return;
     }
@@ -816,9 +750,7 @@ function function_3f15e557(entity, mocompanim, *mocompanimblendouttime, *mocompa
         }
     }
     if (self.meleeinfo.adjustmentstarted && currentanimtime <= self.meleeinfo.var_6392c3a2) {
-        /#
-            assert(isdefined(self.meleeinfo.var_10b8b6d1) && isdefined(self.meleeinfo.var_8b9a15a6));
-        #/
+        assert(isdefined(self.meleeinfo.var_10b8b6d1) && isdefined(self.meleeinfo.var_8b9a15a6));
         adjustedorigin = mocompanimflag.origin + mocompanimflag.meleeinfo.var_10b8b6d1 * self.meleeinfo.var_8b9a15a6;
         mocompanimflag forceteleport(adjustedorigin);
     }
@@ -1098,7 +1030,7 @@ function private function_75f32da6(inflictor, attacker, damage, idflags, meansof
                     self [[ level.var_36fff581 ]](attacker);
                     if (namespace_ec06fe4a::function_a8975c67()) {
                         if (function_3238d10d(self.origin)) {
-                            playsoundatposition(#"hash_10711c56d7aa52d5", self.origin + vectorscale((0, 0, 1), 30));
+                            playsoundatposition(#"hash_10711c56d7aa52d5", self.origin + (0, 0, 30));
                         }
                     }
                 }
@@ -1184,7 +1116,7 @@ function private function_3b8907b9(s_params) {
     if (isdefined(self.var_9a9a0311[#"tag_weapon_right"])) {
         self.var_9a9a0311[#"tag_weapon_right"] delete();
     }
-    impulse = anglestoforward(self.angles) + vectorscale((0, 0, 1), 5);
+    impulse = anglestoforward(self.angles) + (0, 0, 5);
     impulse = vectorscale(impulse, 3);
     self function_5be18f96(0);
     if (self isattached("c_t8_zmb_dlc0_zombie_destroyer_axe1", "tag_weapon_left")) {

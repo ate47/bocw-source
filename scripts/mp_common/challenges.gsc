@@ -1959,8 +1959,8 @@ function challengekills(data) {
             }
         }
         if (victimwasonground && !var_8e5d0c71) {
-            var_141c7081 = victimorigin + vectorscale((0, 0, 1), 31);
-            var_a2d0af6e = attackerorigin + vectorscale((0, 0, 1), 31);
+            var_141c7081 = victimorigin + (0, 0, 31);
+            var_a2d0af6e = attackerorigin + (0, 0, 31);
             dirtoplayer = vectornormalize(var_a2d0af6e - victimorigin);
             if (!isdefined(var_455d60a2)) {
                 var_455d60a2 = distancesquared(attackerorigin, victimorigin);
@@ -1983,8 +1983,8 @@ function challengekills(data) {
             }
         }
         if (attackeronground && !attackerwassprinting) {
-            var_b1cd76d4 = victimorigin + vectorscale((0, 0, 1), 31);
-            var_a3a1ea2e = attackerorigin + vectorscale((0, 0, 1), 31);
+            var_b1cd76d4 = victimorigin + (0, 0, 31);
+            var_a3a1ea2e = attackerorigin + (0, 0, 31);
             var_88cb8e4 = vectornormalize(var_b1cd76d4 - var_a3a1ea2e);
             if (!isdefined(var_455d60a2)) {
                 var_455d60a2 = distancesquared(attackerorigin, victimorigin);
@@ -2895,12 +2895,8 @@ function getbaseweapon(weapon) {
 // Checksum 0xd72d77ce, Offset: 0xe160
 // Size: 0x27c
 function function_8e3fdb84(baseweapon, player, weaponclass) {
-    /#
-        assert(isdefined(baseweapon));
-    #/
-    /#
-        assert(isdefined(player.weaponkillsthisspawn));
-    #/
+    assert(isdefined(baseweapon));
+    assert(isdefined(player.weaponkillsthisspawn));
     if (isdefined(player.weaponkillsthisspawn[baseweapon])) {
         player.weaponkillsthisspawn[baseweapon]++;
         weaponkillsthisspawn = player.weaponkillsthisspawn[baseweapon];
@@ -2935,12 +2931,8 @@ function function_8e3fdb84(baseweapon, player, weaponclass) {
 // Checksum 0x2d119822, Offset: 0xe3e8
 // Size: 0x72c
 function function_7fd1799f(baseweapon, player, weaponclass, meansofdeath) {
-    /#
-        assert(isdefined(baseweapon));
-    #/
-    /#
-        assert(isdefined(player.weaponkillsthisspawn));
-    #/
+    assert(isdefined(baseweapon));
+    assert(isdefined(player.weaponkillsthisspawn));
     if (isdefined(player.weaponkillsthisspawn[baseweapon])) {
         player.weaponkillsthisspawn[baseweapon]++;
         weaponkillsthisspawn = player.weaponkillsthisspawn[baseweapon];

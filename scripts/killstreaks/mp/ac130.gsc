@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\ac130_shared.gsc;
+#using script_590bc513b5881751;
 #using scripts\mp_common\util.gsc;
 #using scripts\mp_common\teams\teams.gsc;
 #using scripts\mp_common\player\player_utils.gsc;
@@ -45,9 +45,7 @@ function private spawnac130(killstreaktype) {
     player = self;
     player endon(#"disconnect");
     level endon(#"game_ended");
-    /#
-        assert(!isdefined(level.ac130));
-    #/
+    assert(!isdefined(level.ac130));
     var_b0b764aa = ac130_shared::spawnac130(killstreaktype);
     if (var_b0b764aa && isbot(player)) {
         level.ac130 thread ac130_shared::function_a514a080(player);

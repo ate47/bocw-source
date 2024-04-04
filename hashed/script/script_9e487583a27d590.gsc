@@ -264,7 +264,7 @@ function function_183e5d08() {
     self.var_ba1eee16.var_cb67e512 = self.var_ba1eee16.s_tree dialog_tree::function_7fe78745(1, "exit_lazar_convo", 1, #"hash_18589726ffc5a631", undefined, undefined, undefined, 1, "flag_dialog_nevermind", "forever");
     self.var_ba1eee16.s_tree dialog_tree::function_6bbbf87("exit_lazar_convo", #"hash_2f64cfbbf513db93", undefined, undefined, "waiting_idle", 1, undefined, "forever");
     self.var_ba1eee16.str_location = "gun_table";
-    self.var_ba1eee16.v_offset = vectorscale((0, 0, 1), 2);
+    self.var_ba1eee16.v_offset = (0, 0, 2);
     self.var_ba1eee16.var_17b38a0e = undefined;
     self.var_ba1eee16.var_e1eebb0b = 3;
     self.var_ba1eee16.var_142355f9 = undefined;
@@ -535,7 +535,7 @@ function function_a3e12ec8(volume, struct, str_shot) {
         if (!(isdefined(volume) && level.player istouching(volume))) {
             continue;
         }
-        if (level.player util::point_in_fov(struct.origin + vectorscale((0, 0, 1), 32), 0, 1) && !level.player util::point_in_fov(struct.origin + vectorscale((0, 0, 1), 32), 0.71, 1)) {
+        if (level.player util::point_in_fov(struct.origin + (0, 0, 32), 0, 1) && !level.player util::point_in_fov(struct.origin + (0, 0, 32), 0.71, 1)) {
             level.adler flag::set("flag_in_scene");
             level.adler notify(#"kill_dialog");
             wait(0.1);

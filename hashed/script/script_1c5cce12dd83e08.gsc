@@ -131,7 +131,7 @@ function function_60886116(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_f15a1018(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
     self util::waittill_dobj(bwastimejump);
-    playfx(bwastimejump, "sr/fx9_hvt_aether_portal_exp", self.origin + vectorscale((0, 0, 1), 32), anglestoforward(self.angles), anglestoup(self.angles));
+    playfx(bwastimejump, "sr/fx9_hvt_aether_portal_exp", self.origin + (0, 0, 32), anglestoforward(self.angles), anglestoup(self.angles));
     self playsound(bwastimejump, #"hash_591b69e6e55b5eb1");
 }
 

@@ -384,7 +384,6 @@ function function_c13cee9b() {
     if (is_true(level.var_ab24f23b)) {
         return;
     }
-    waitresult = undefined;
     waitresult = level waittill(#"match_ending_soon");
     if (waitresult.event === "score") {
         level notify(#"hash_15b8b6edc4ed3032", {#var_7090bf53:1});
@@ -401,7 +400,6 @@ function function_13bcae23() {
     if (isdefined(level.gametype) && level.gametype == "sd") {
         var_ffe73385 = 1;
     }
-    s_waitresult = undefined;
     s_waitresult = level waittill(#"hash_15b8b6edc4ed3032");
     if (!is_true(s_waitresult.var_7090bf53)) {
         level notify(#"hash_d50c83061fcd561");
@@ -420,7 +418,6 @@ function function_13bcae23() {
 // Size: 0xa4
 function function_913f483f() {
     level endon(#"game_ended", #"hash_d50c83061fcd561");
-    s_waitresult = undefined;
     s_waitresult = level waittill(#"hash_28434e94a8844dc5");
     if (isdefined(s_waitresult.n_delay)) {
         wait(s_waitresult.n_delay);

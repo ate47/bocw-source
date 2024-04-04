@@ -8,21 +8,8 @@
 // Method(s) 9 Total 16
 class cremote_missile_targets : cluielem {
 
-    // Namespace cremote_missile_targets/remote_missile_targets
-    // Params 0, eflags: 0x8
-    // Checksum 0x53d202e8, Offset: 0x2c0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cremote_missile_targets/remote_missile_targets
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xa198971c, Offset: 0x560
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace cremote_missile_targets/remote_missile_targets
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class cremote_missile_targets : cluielem {
     // Checksum 0x2995c3d, Offset: 0x420
     // Size: 0x44
     function set_player_target_active(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "player_target_active", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "player_target_active", value);
     }
 
     // Namespace cremote_missile_targets/remote_missile_targets
@@ -53,7 +40,7 @@ class cremote_missile_targets : cluielem {
     // Checksum 0x47a254b6, Offset: 0x4c0
     // Size: 0x44
     function set_extra_target_2(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "extra_target_2", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "extra_target_2", value);
     }
 
     // Namespace cremote_missile_targets/remote_missile_targets
@@ -73,7 +60,7 @@ class cremote_missile_targets : cluielem {
     // Checksum 0x4ce7ea6b, Offset: 0x470
     // Size: 0x44
     function set_extra_target_1(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "extra_target_1", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "extra_target_1", value);
     }
 
     // Namespace cremote_missile_targets/remote_missile_targets
@@ -81,7 +68,7 @@ class cremote_missile_targets : cluielem {
     // Checksum 0xde6665e7, Offset: 0x510
     // Size: 0x44
     function set_extra_target_3(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "extra_target_3", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "extra_target_3", value);
     }
 
 }

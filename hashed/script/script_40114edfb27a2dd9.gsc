@@ -8,29 +8,13 @@
 class cscavenger_icon : cluielem {
 
     // Namespace cscavenger_icon/scavenger_icon
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x70c4ee11, Offset: 0x410
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cscavenger_icon/scavenger_icon
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x77d1b4d3, Offset: 0x7f0
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace cscavenger_icon/scavenger_icon
     // Params 1, eflags: 0x2 linked
     // Checksum 0x731937f2, Offset: 0x688
     // Size: 0x6c
     function function_65b281a(localclientnum) {
-        current_val = [[ self ]]->get_data(localclientnum, "armorPlatePulse");
+        current_val = get_data(localclientnum, "armorPlatePulse");
         new_val = (current_val + 1) % 2;
-        [[ self ]]->set_data(localclientnum, "armorPlatePulse", new_val);
+        set_data(localclientnum, "armorPlatePulse", new_val);
     }
 
     // Namespace cscavenger_icon/scavenger_icon
@@ -46,9 +30,9 @@ class cscavenger_icon : cluielem {
     // Checksum 0xa65878f1, Offset: 0x778
     // Size: 0x6c
     function function_417df30c(localclientnum) {
-        current_val = [[ self ]]->get_data(localclientnum, "rareScrapPulse");
+        current_val = get_data(localclientnum, "rareScrapPulse");
         new_val = (current_val + 1) % 2;
-        [[ self ]]->set_data(localclientnum, "rareScrapPulse", new_val);
+        set_data(localclientnum, "rareScrapPulse", new_val);
     }
 
     // Namespace cscavenger_icon/scavenger_icon
@@ -56,9 +40,9 @@ class cscavenger_icon : cluielem {
     // Checksum 0x9fd56a, Offset: 0x700
     // Size: 0x6c
     function function_47e82a09(localclientnum) {
-        current_val = [[ self ]]->get_data(localclientnum, "scrapPulse");
+        current_val = get_data(localclientnum, "scrapPulse");
         new_val = (current_val + 1) % 2;
-        [[ self ]]->set_data(localclientnum, "scrapPulse", new_val);
+        set_data(localclientnum, "scrapPulse", new_val);
     }
 
     // Namespace cscavenger_icon/scavenger_icon
@@ -86,9 +70,9 @@ class cscavenger_icon : cluielem {
     // Checksum 0x8ba0b740, Offset: 0x610
     // Size: 0x6c
     function function_e4e9c303(localclientnum) {
-        current_val = [[ self ]]->get_data(localclientnum, "ammoPulse");
+        current_val = get_data(localclientnum, "ammoPulse");
         new_val = (current_val + 1) % 2;
-        [[ self ]]->set_data(localclientnum, "ammoPulse", new_val);
+        set_data(localclientnum, "ammoPulse", new_val);
     }
 
     // Namespace cscavenger_icon/scavenger_icon
@@ -97,10 +81,10 @@ class cscavenger_icon : cluielem {
     // Size: 0x94
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "ammoPulse", 0);
-        [[ self ]]->set_data(localclientnum, "armorPlatePulse", 0);
-        [[ self ]]->set_data(localclientnum, "scrapPulse", 0);
-        [[ self ]]->set_data(localclientnum, "rareScrapPulse", 0);
+        set_data(localclientnum, "ammoPulse", 0);
+        set_data(localclientnum, "armorPlatePulse", 0);
+        set_data(localclientnum, "scrapPulse", 0);
+        set_data(localclientnum, "rareScrapPulse", 0);
     }
 
 }

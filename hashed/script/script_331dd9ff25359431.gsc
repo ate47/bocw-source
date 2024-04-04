@@ -30,9 +30,7 @@ function event_handler[gametype_init] main(*eventstruct) {
         level.var_352498c6 = 1;
     }
     callback::on_gameplay_started(&on_gameplay_started);
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace zcranked/zcranked
@@ -40,9 +38,7 @@ function event_handler[gametype_init] main(*eventstruct) {
 // Checksum 0x25cd103b, Offset: 0x528
 // Size: 0x24
 function onprecachegametype() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace zcranked/zcranked
@@ -50,9 +46,7 @@ function onprecachegametype() {
 // Checksum 0xfc0afbaf, Offset: 0x558
 // Size: 0x24
 function onstartgametype() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace zcranked/zcranked

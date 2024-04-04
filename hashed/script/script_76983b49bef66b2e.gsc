@@ -50,7 +50,7 @@ function function_6ec0595a() {
         self.doa.tesla_org = org;
         org.owner = self;
         org.objects = [];
-        org linkto(self, undefined, vectorscale((0, 0, 1), 30));
+        org linkto(self, undefined, (0, 0, 30));
         org thread namespace_ec06fe4a::function_f506b4c7(1);
         org thread function_3be74620(self);
         self thread function_8efc825c(org);
@@ -103,10 +103,10 @@ function function_9b8a196a() {
 // Size: 0x2dc
 function function_dd76db7c(org) {
     angle = randomint(360);
-    var_eb19ca0d = rotatepointaroundaxis(vectorscale((1, 0, 0), 60), (0, 0, 1), org.angles[1] + angle);
-    var_19e02799 = rotatepointaroundaxis(vectorscale((1, 0, 0), 60), (0, 0, 1), org.angles[1] + angle + 180);
-    var_7ccfed7b = rotatepointaroundaxis(vectorscale((1, 0, 0), 60), (0, 0, 1), org.angles[1] + angle + 90);
-    var_6b8d4af6 = rotatepointaroundaxis(vectorscale((1, 0, 0), 60), (0, 0, 1), org.angles[1] + angle - 90);
+    var_eb19ca0d = rotatepointaroundaxis((60, 0, 0), (0, 0, 1), org.angles[1] + angle);
+    var_19e02799 = rotatepointaroundaxis((60, 0, 0), (0, 0, 1), org.angles[1] + angle + 180);
+    var_7ccfed7b = rotatepointaroundaxis((60, 0, 0), (0, 0, 1), org.angles[1] + angle + 90);
+    var_6b8d4af6 = rotatepointaroundaxis((60, 0, 0), (0, 0, 1), org.angles[1] + angle - 90);
     ball = function_9b8a196a();
     if (isdefined(ball)) {
         ball.org = org;
@@ -146,7 +146,7 @@ function function_453dcc55() {
         self.trigger delete();
     }
     self unlink();
-    vel = self.org.origin - self.origin + vectorscale((0, 0, 1), 50);
+    vel = self.org.origin - self.origin + (0, 0, 50);
     self thread function_f50d3546(self.org, vel);
     wait(5);
     self delete();
@@ -209,7 +209,6 @@ function function_8efc825c(org) {
 function function_49ee8def() {
     self endon(#"death");
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         guy = result.activator;
         if (isplayer(guy)) {

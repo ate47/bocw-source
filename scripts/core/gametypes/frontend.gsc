@@ -66,9 +66,7 @@ function private on_menu_response(eventstruct) {
     if (eventstruct.response === #"hash_5d0de86d96808d71") {
         if (eventstruct.intpayload === 1) {
             machine_array = getdynentarray(#"hash_69b47fecbecb8b0", 1);
-            /#
-                assert(isdefined(machine_array) && machine_array.size == 1);
-            #/
+            assert(isdefined(machine_array) && machine_array.size == 1);
             level.var_d0e9b96 = machine_array[0];
         } else {
             level.var_d0e9b96 = undefined;
@@ -275,9 +273,7 @@ function function_27d2e95a() {
 // Size: 0xbc
 function function_1c289498(...) {
     /#
-        /#
-            assert(vararg.size > 1);
-        #/
+        assert(vararg.size > 1);
         if (vararg.size <= 1) {
             return;
         }

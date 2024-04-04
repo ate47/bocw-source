@@ -8,21 +8,8 @@
 // Method(s) 9 Total 16
 class cwz_revive_prompt : cluielem {
 
-    // Namespace cwz_revive_prompt/wz_revive_prompt
-    // Params 0, eflags: 0x8
-    // Checksum 0x54abefc7, Offset: 0x2b0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cwz_revive_prompt/wz_revive_prompt
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xc183df32, Offset: 0x550
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace cwz_revive_prompt/wz_revive_prompt
     // Params 2, eflags: 0x0
@@ -37,7 +24,7 @@ class cwz_revive_prompt : cluielem {
     // Checksum 0x344f412b, Offset: 0x410
     // Size: 0x44
     function set_clientnum(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "clientnum", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "clientnum", value);
     }
 
     // Namespace cwz_revive_prompt/wz_revive_prompt
@@ -45,7 +32,7 @@ class cwz_revive_prompt : cluielem {
     // Checksum 0xb0ec630e, Offset: 0x4b0
     // Size: 0x44
     function set_reviveprogress(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "reviveProgress", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "reviveProgress", value);
     }
 
     // Namespace cwz_revive_prompt/wz_revive_prompt
@@ -73,7 +60,7 @@ class cwz_revive_prompt : cluielem {
     // Checksum 0xd20548c6, Offset: 0x460
     // Size: 0x44
     function set_progress(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "progress", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "progress", value);
     }
 
     // Namespace cwz_revive_prompt/wz_revive_prompt
@@ -81,7 +68,7 @@ class cwz_revive_prompt : cluielem {
     // Checksum 0x6116bebc, Offset: 0x500
     // Size: 0x44
     function set_cowardsway(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "cowardsWay", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "cowardsWay", value);
     }
 
 }

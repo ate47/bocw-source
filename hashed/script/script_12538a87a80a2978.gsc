@@ -100,16 +100,14 @@ function function_bdd95292(struct) {
     struct.var_9825cc78 = [];
     struct.players = [];
     players = getplayers();
-    /#
-        assert(players.size > 0, "<unknown string>");
-    #/
+    assert(players.size > 0, "<unknown string>");
     foreach (player in players) {
         if (!isdefined(player.var_524f43cb)) {
             player.var_524f43cb = [];
         }
         trigger = content_manager::spawn_interact(struct, &function_b4f2a34e, #"hash_4703982104472957", undefined, 200);
         trigger.struct = struct;
-        trigger.origin = trigger.origin + vectorscale((0, 0, 1), 16);
+        trigger.origin = trigger.origin + (0, 0, 16);
         objid = zm_utility::function_f5a222a8(#"hash_52547cde15854dbf", struct.scriptmodel);
         trigger.var_7fadf788 = objid;
         player.var_524f43cb[objid] = objid;
@@ -567,7 +565,7 @@ function function_578918d1() {
                     forwardvec = vectornormalize(forwardvec);
                     forwardvec = forwardvec * 128;
                     loc = player.origin + forwardvec;
-                    function_a92a93e9(loc, player.angles + vectorscale((0, 1, 0), 180), 0);
+                    function_a92a93e9(loc, player.angles + (0, 180, 0), 0);
                 }
             }
             wait(1);

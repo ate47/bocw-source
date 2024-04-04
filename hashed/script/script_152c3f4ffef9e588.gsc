@@ -39,15 +39,11 @@ function private preinit() {
 // Size: 0xf6
 function private function_3c3e40b6() {
     if (!isdefined(level.radiation)) {
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         return;
     }
     if (level.radiation.levels.size <= 0) {
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         return;
     }
     self.radiation = {};
@@ -67,9 +63,7 @@ function private _on_player_spawned() {
     if (!namespace_956bd4dd::function_ab99e60c()) {
         return;
     }
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self function_3c3e40b6();
 }
 
@@ -81,9 +75,7 @@ function private function_9dece272(*params) {
     if (!namespace_956bd4dd::function_ab99e60c()) {
         return;
     }
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self clientfield::set_to_player("ftdb_inZone", 0);
 }
 
@@ -93,9 +85,7 @@ function private function_9dece272(*params) {
 // Size: 0x4e
 function function_c9c6dda1(player) {
     if (!isplayer(player)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     return player.radiation.var_32adf91d;
@@ -289,15 +279,11 @@ function private function_770871f5(player) {
 // Size: 0x114
 function private function_f68871f2(player, sickness) {
     if (!isplayer(player)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     if (!ishash(sickness)) {
-        /#
-            assert(0);
-        #/
+        assert(0);
         return;
     }
     var_46bdb64c = level.radiation.sickness[sickness];

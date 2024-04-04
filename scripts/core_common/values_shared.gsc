@@ -141,9 +141,7 @@ function register(str_name, var_3509ed3e, call_on = "$self", func, ...) {
     }
     a_registered = getarraykeys(level.values);
     if (isinarray(a_registered, hash(str_name))) {
-        /#
-            assertmsg("<unknown string>" + str_name + "<unknown string>");
-        #/
+        assertmsg("<unknown string>" + str_name + "<unknown string>");
         return;
     }
     s_value = spawnstruct();
@@ -163,9 +161,7 @@ function private assert_registered(str_name) {
     /#
         a_registered = getarraykeys(level.values);
         if (!isinarray(a_registered, hash(str_name))) {
-            /#
-                assertmsg("<unknown string>" + str_name + "<unknown string>");
-            #/
+            assertmsg("<unknown string>" + str_name + "<unknown string>");
             return false;
         }
     #/
@@ -581,9 +577,7 @@ function private function_37c7ffcd(b_value = 1) {
 // Checksum 0xbfdcc517, Offset: 0x2950
 // Size: 0x64
 function private function_ba94b5cd(b_value = 1) {
-    /#
-        assert(sessionmodeiscampaigngame());
-    #/
+    assert(sessionmodeiscampaigngame());
     setsaveddvar(#"aim_assist_script_disable", b_value);
 }
 
@@ -624,9 +618,7 @@ function private set_ignoreall(b_value = 1) {
 // Checksum 0x7d133d8b, Offset: 0x2ab8
 // Size: 0x66
 function private function_62318390(b_value = 1) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (b_value) {
         self.nohitmarkers = undefined;
         return;
@@ -796,9 +788,7 @@ function private validate(str_name, call_on, func, ...) {
     /#
         a_registered = getarraykeys(level.values);
         if (!isinarray(a_registered, hash(str_name))) {
-            /#
-                assertmsg("<unknown string>" + str_name + "<unknown string>");
-            #/
+            assertmsg("<unknown string>" + str_name + "<unknown string>");
             return;
         }
         s_value = level.values[str_name];
@@ -827,9 +817,7 @@ function private _validate_value(str_name, value, b_assert) {
         }
         b_match = current_value === value;
         if (b_assert) {
-            /#
-                assert(b_match, "<unknown string>" + function_9e72a96(str_name) + "<unknown string>" + current_value + "<unknown string>" + value + "<unknown string>");
-            #/
+            assert(b_match, "<unknown string>" + function_9e72a96(str_name) + "<unknown string>" + current_value + "<unknown string>" + value + "<unknown string>");
         }
         return b_match;
     #/

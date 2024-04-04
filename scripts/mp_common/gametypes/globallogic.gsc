@@ -1100,9 +1100,7 @@ function showobjectivenotificationuiforallplayers(*missiontype, delay) {
 // Checksum 0xe3d323f3, Offset: 0x5120
 // Size: 0x44c
 function matchstarttimer(timerlength, var_1be62bdc) {
-    /#
-        println("");
-    #/
+    println("");
     mpintro_visionset_activate_func();
     if (isdefined(var_1be62bdc)) {
         level flag::wait_till(var_1be62bdc);
@@ -1111,9 +1109,7 @@ function matchstarttimer(timerlength, var_1be62bdc) {
     var_5654073f = counttime >= 2;
     level.var_5654073f = var_5654073f;
     level.var_fd167bf6 = gettime() + int(counttime * 1000);
-    /#
-        println("controllerParticipation" + level.var_fd167bf6 + "overtime" + timerlength);
-    #/
+    println("controllerParticipation" + level.var_fd167bf6 + "overtime" + timerlength);
     var_c85a136a = 0;
     var_b9ef7eae = undefined;
     luinotifyevent(#"create_prematch_timer", 2, level.var_fd167bf6, var_5654073f);
@@ -1159,9 +1155,7 @@ function matchstarttimer(timerlength, var_1be62bdc) {
     }
     luinotifyevent(#"prematch_timer_ended", 1, var_5654073f);
     function_411eb759(1, 1);
-    /#
-        println("g_compassShowEnemies");
-    #/
+    println("g_compassShowEnemies");
 }
 
 // Namespace globallogic/globallogic
@@ -1446,21 +1440,11 @@ function gamehistoryplayerkicked() {
         scoreboardposition = level.players.size;
     }
     /#
-        /#
-            assert(isdefined(self.kills));
-        #/
-        /#
-            assert(isdefined(self.deaths));
-        #/
-        /#
-            assert(isdefined(self.score));
-        #/
-        /#
-            assert(isdefined(scoreboardposition));
-        #/
-        /#
-            assert(isdefined(teamscoreratio));
-        #/
+        assert(isdefined(self.kills));
+        assert(isdefined(self.deaths));
+        assert(isdefined(self.score));
+        assert(isdefined(scoreboardposition));
+        assert(isdefined(teamscoreratio));
     #/
     self gamehistoryfinishmatch(2, self.kills, self.deaths, self.score, scoreboardposition, teamscoreratio);
     if (isdefined(self.pers[#"matchesplayedstatstracked"])) {
@@ -1905,9 +1889,7 @@ function function_8b4fc766(var_c1e98979) {
 // Checksum 0xd9e20d30, Offset: 0x8078
 // Size: 0x94
 function function_a3e3bd39(winning_team, var_c1e98979) {
-    /#
-        assert(isdefined(winning_team));
-    #/
+    assert(isdefined(winning_team));
     if (function_8b4fc766(var_c1e98979)) {
         globallogic_score::giveteamscoreforobjective_delaypostprocessing(winning_team, 1);
     }
@@ -2286,12 +2268,8 @@ function function_4636deca(player) {
     }
     player player_record::function_7569c0fb();
     nemesis = player.pers[#"nemesis_name"];
-    /#
-        assert(isdefined(nemesis), "24e231eb85a2ab57" + player.name);
-    #/
-    /#
-        assert(isstring(nemesis), "<unknown string>" + nemesis + "<unknown string>" + player.name);
-    #/
+    assert(isdefined(nemesis), "24e231eb85a2ab57" + player.name);
+    assert(isstring(nemesis), "<unknown string>" + nemesis + "<unknown string>" + player.name);
     if (!isdefined(player.pers[#"killed_players"][nemesis])) {
         player.pers[#"killed_players"][nemesis] = 0;
     }
@@ -2668,9 +2646,7 @@ function removedisconnectedplayerfromplacement() {
         return;
     }
     level.placement[#"all"][numplayers - 1] = undefined;
-    /#
-        assert(level.placement[#"all"].size == numplayers - 1);
-    #/
+    assert(level.placement[#"all"].size == numplayers - 1);
     /#
         assertproperplacement();
     #/
@@ -2780,9 +2756,7 @@ function getplacementforplayer(player) {
 function istopscoringplayer(player) {
     topscoringplayer = 0;
     updateplacement();
-    /#
-        assert(level.placement[#"all"].size > 0);
-    #/
+    assert(level.placement[#"all"].size > 0);
     if (level.placement[#"all"].size == 0) {
         return 0;
     }
@@ -3122,12 +3096,8 @@ function updateallalivetimes() {
 // Checksum 0x3a7cd375, Offset: 0xc7a8
 // Size: 0x100
 function function_b6caec44(score, var_d0266750) {
-    /#
-        assert(isdefined(score));
-    #/
-    /#
-        assert(isdefined(var_d0266750));
-    #/
+    assert(isdefined(score));
+    assert(isdefined(var_d0266750));
     if (level.scorelimit <= 0) {
         return;
     }
@@ -3148,9 +3118,7 @@ function function_b6caec44(score, var_d0266750) {
 // Checksum 0x41679493, Offset: 0xc8b0
 // Size: 0xf8
 function checkplayerscorelimitsoon() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (level.scorelimit <= 0) {
         return;
     }
@@ -3426,9 +3394,7 @@ function function_2960a822(activeteamcount) {
 // Checksum 0xfeab7c74, Offset: 0xd988
 // Size: 0x8bc
 function function_bf2901cf() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     level endon(#"game_ended");
     var_7c0f98d7 = [];
     player_ready = [];
@@ -3465,9 +3431,7 @@ function function_bf2901cf() {
             } else {
                 var_15016392 = player player::function_114b77dd(time, var_94fab29);
             }
-            /#
-                assert(isdefined(level.teams[player.team]) || player.team == #"spectator" || player.team == #"none");
-            #/
+            assert(isdefined(level.teams[player.team]) || player.team == #"spectator" || player.team == #"none");
             if (isdefined(level.teams[player.team])) {
                 var_1cee3797++;
                 player_num = player getentitynumber();
@@ -3535,9 +3499,7 @@ function function_bf2901cf() {
             }
         }
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace globallogic/globallogic
@@ -3569,9 +3531,7 @@ function function_7277d8f1() {
             wait(float(var_526ef4a1) / 1000);
         }
     }
-    /#
-        println("<unknown string>" + gettime());
-    #/
+    println("<unknown string>" + gettime());
 }
 
 // Namespace globallogic/globallogic
@@ -3579,9 +3539,7 @@ function function_7277d8f1() {
 // Checksum 0x5ba77f38, Offset: 0xe348
 // Size: 0x47c
 function prematchperiod() {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     setmatchflag("hud_hardcore", level.hardcoremode);
     level endon(#"game_ended");
     /#
@@ -3639,9 +3597,7 @@ function prematchperiod() {
         player callback::callback(#"prematch_end");
     }
     level callback::callback(#"prematch_end");
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
 }
 
 // Namespace globallogic/globallogic
@@ -3749,12 +3705,8 @@ function function_b9b7618() {
     level.intermission = 0;
     setmatchflag("cg_drawSpectatorMessages", 1);
     if (!isdefined(game.gamestarted)) {
-        /#
-            assert(isdefined(game.attackers) && isdefined(game.defenders));
-        #/
-        /#
-            assert(game.attackers != game.defenders);
-        #/
+        assert(isdefined(game.attackers) && isdefined(game.defenders));
+        assert(game.attackers != game.defenders);
         gamestate::set_state(#"pregame");
         game.strings[#"press_to_spawn"] = #"hash_203ff65a4ee460e6";
         if (level.teambased) {
@@ -4025,8 +3977,8 @@ function function_c35255d6() {
 // Size: 0xe0
 function function_891f6555(origin, color) {
     /#
-        start = origin + vectorscale((0, 0, 1), 70000);
-        end = origin - vectorscale((0, 0, 1), 70000);
+        start = origin + (0, 0, 70000);
+        end = origin - (0, 0, 70000);
         alpha = 1;
         duration = 1;
         while (true) {
@@ -4048,9 +4000,7 @@ function function_891f6555(origin, color) {
 function function_6e1f21c4() {
     /#
         wait(1);
-        /#
-            assert(isdefined(level.mapcenter));
-        #/
+        assert(isdefined(level.mapcenter));
         thread function_891f6555(level.mapcenter, (1, 0, 0));
         minimaporigins = getentarray("<unknown string>", "<unknown string>");
         if (minimaporigins.size >= 2) {
@@ -4066,18 +4016,10 @@ function function_6e1f21c4() {
 // Size: 0x1ac
 function function_ec990830() {
     /#
-        /#
-            assert(level.mapbounds.var_8faef7b7[0] <= level.mapcenter[0] && level.mapbounds.var_8faef7b7[1] <= level.mapcenter[1]);
-        #/
-        /#
-            assert(level.mapbounds.var_68fd6e0a[0] >= level.mapcenter[0] && level.mapbounds.var_68fd6e0a[1] >= level.mapcenter[1]);
-        #/
-        /#
-            assert(level.mapbounds.var_1d694d71[0] <= level.mapcenter[0] && level.mapbounds.var_1d694d71[1] <= level.mapcenter[1]);
-        #/
-        /#
-            assert(level.mapbounds.var_a13a9915[0] >= level.mapcenter[0] && level.mapbounds.var_a13a9915[1] >= level.mapcenter[1]);
-        #/
+        assert(level.mapbounds.var_8faef7b7[0] <= level.mapcenter[0] && level.mapbounds.var_8faef7b7[1] <= level.mapcenter[1]);
+        assert(level.mapbounds.var_68fd6e0a[0] >= level.mapcenter[0] && level.mapbounds.var_68fd6e0a[1] >= level.mapcenter[1]);
+        assert(level.mapbounds.var_1d694d71[0] <= level.mapcenter[0] && level.mapbounds.var_1d694d71[1] <= level.mapcenter[1]);
+        assert(level.mapbounds.var_a13a9915[0] >= level.mapcenter[0] && level.mapbounds.var_a13a9915[1] >= level.mapcenter[1]);
     #/
 }
 
@@ -4090,13 +4032,13 @@ function private calculate_map_center() {
     #/
     minimaporigins = getentarray("minimap_corner", "targetname");
     if (minimaporigins.size >= 2) {
-        mins = math::expand_mins(vectorscale((1, 1, 1), 2.14748e+09), minimaporigins[0].origin);
+        mins = math::expand_mins((2.14748e+09, 2.14748e+09, 2.14748e+09), minimaporigins[0].origin);
         mins = math::expand_mins(mins, minimaporigins[1].origin);
-        maxs = math::expand_maxs(vectorscale((-1, -1, -1), 2.14748e+09), minimaporigins[0].origin);
+        maxs = math::expand_maxs((-2.14748e+09, -2.14748e+09, -2.14748e+09), minimaporigins[0].origin);
         maxs = math::expand_maxs(maxs, minimaporigins[1].origin);
     } else {
-        mins = vectorscale((-1, -1, -1), 5000);
-        maxs = vectorscale((1, 1, 1), 5000);
+        mins = (-5000, -5000, -5000);
+        maxs = (5000, 5000, 5000);
         /#
             var_2c05cfaa = "<unknown string>";
             if (minimaporigins.size == 1) {
@@ -4274,7 +4216,6 @@ function annihilatorgunplayerkilleffect(attacker, weapon, smeansofdeath) {
 // Size: 0x1a4
 function annihilatorgunactorkilleffect(attacker, weapon) {
     self endon(#"death");
-    waitresult = undefined;
     waitresult = self waittill(#"actor_corpse");
     body = waitresult.corpse;
     if (weapon.fusetime != 0) {
@@ -4343,7 +4284,6 @@ function bowplayerkilleffect() {
 // Size: 0x114
 function pineapplegunactorkilleffect() {
     self endon(#"death");
-    waitresult = undefined;
     waitresult = self waittill(#"actor_corpse");
     body = waitresult.corpse;
     wait(0.75);

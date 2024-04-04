@@ -184,9 +184,7 @@ function function_e3871553(var_4d2ad93e) {
             self.var_5f08a4b1[self.var_5f08a4b1.size] = str_weapon_name;
         }
     } else {
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
         return;
     }
     switch (var_2b930188) {

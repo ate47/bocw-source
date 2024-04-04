@@ -336,7 +336,6 @@ function function_df51a2e8(*var_5314bd63, *nd_path_start, *var_384528, str_notif
 function function_8eafd734() {
     self endon(#"death");
     while (true) {
-        s_result = undefined;
         s_result = self waittill(#"damage");
         if (isplayer(s_result.attacker) && isalive(s_result.attacker)) {
             s_result.attacker damagefeedback::update(s_result.mod, s_result.inflictor, undefined, s_result.weapon, self);

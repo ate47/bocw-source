@@ -135,9 +135,7 @@ function function_a7ff1fc3(localclientnum) {
 // Checksum 0x48a0d2ac, Offset: 0x880
 // Size: 0x124
 function function_d2e02ee(localclientnum, name) {
-    /#
-        assert(isdefined(level.doa.var_8f6ccf63[name]));
-    #/
+    assert(isdefined(level.doa.var_8f6ccf63[name]));
     room = level.doa.var_8f6ccf63[name];
     player = function_5c10bd79(localclientnum);
     if (!isdefined(player.doa)) {

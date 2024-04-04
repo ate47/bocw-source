@@ -75,7 +75,7 @@ function function_3b0ca643(var_c56101e0) {
             var_4ec57c29 = #"hash_729db72e5e196219";
             var_f6b3e5dd = #"hash_1d2437fd7fe38d19";
             var_6e38d21c = #"hash_39c41891747dabba";
-            v_offset = vectorscale((0, 0, 1), 45);
+            v_offset = (0, 0, 45);
             break;
         case #"zombie_dog":
             if (self.var_9fde8624 === #"hash_2a5479b83161cb35") {

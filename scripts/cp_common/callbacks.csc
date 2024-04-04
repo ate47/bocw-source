@@ -50,9 +50,7 @@ function set_default_callbacks() {
 // Checksum 0x2e987e36, Offset: 0x280
 // Size: 0x9c
 function localclientconnect(localclientnum) {
-    /#
-        println("<unknown string>" + localclientnum);
-    #/
+    println("<unknown string>" + localclientnum);
     if (isdefined(level.charactercustomizationsetup)) {
         [[ level.charactercustomizationsetup ]](localclientnum);
     }
@@ -86,9 +84,7 @@ function entityspawned(localclientnum) {
     self endon(#"death");
     util::function_89a98f85();
     if (!isdefined(self.type)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
     if (isplayer(self)) {
@@ -155,9 +151,7 @@ function creating_corpse(*localclientnum, *player) {
 // Size: 0x96
 function callback_stunned(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self.stunned = bwastimejump;
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     if (bwastimejump) {
         self notify(#"stunned");
         return;
@@ -171,9 +165,7 @@ function callback_stunned(*localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x96
 function callback_emp(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self.emp = bwastimejump;
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     if (bwastimejump) {
         self notify(#"emp");
         return;

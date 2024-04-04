@@ -159,7 +159,7 @@ function function_3d070ab6(location, killstreak_id, hardpointtype) {
 function function_db619336(hardpointtype, killstreak_id, location) {
     if (sessionmodeiswarzonegame()) {
         position = location.origin;
-        trace = bullettrace(position + vectorscale((0, 0, 1), 10000), position - vectorscale((0, 0, 1), 10000), 0, undefined);
+        trace = bullettrace(position + (0, 0, 10000), position - (0, 0, 10000), 0, undefined);
         targetpoint = trace[#"fraction"] > 1 ? (position[0], position[1], 0) : trace[#"position"];
         var_b0490eb9 = getheliheightlockheight(position);
         groundheight = trace[#"position"][2];
@@ -205,9 +205,7 @@ function function_1e30e51e(hardpointtype, killstreak_id, location, var_a6b1bda0,
         startnode = getvehiclenode("warthog_start", "targetname");
     }
     if (!isdefined(startnode)) {
-        /#
-            println("kill3");
-        #/
+        println("kill3");
         return undefined;
     }
     /#
@@ -217,9 +215,7 @@ function function_1e30e51e(hardpointtype, killstreak_id, location, var_a6b1bda0,
     #/
     plane = spawnvehicle(level.straferunvehicle, startnode.origin, (0, 0, 0), "straferun");
     if (!isdefined(plane)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return undefined;
     }
     plane clientfield::set("scorestreakActive", 1);
@@ -253,9 +249,9 @@ function function_1e30e51e(hardpointtype, killstreak_id, location, var_a6b1bda0,
         plane util::make_sentient();
         plane.ignoreme = 1;
     }
-    plane.killcament = spawn("script_model", plane.origin + vectorscale((0, 0, 1), 700));
+    plane.killcament = spawn("script_model", plane.origin + (0, 0, 700));
     plane.killcament setfovforkillcam(25);
-    plane.killcament.angles = vectorscale((1, 0, 0), 15);
+    plane.killcament.angles = (15, 0, 0);
     plane.killcament.starttime = gettime();
     offset_x = getdvarint(#"hash_6354a081bacd5b72", -600);
     offset_y = getdvarint(#"hash_6354a181bacd5d25", 0);
@@ -278,7 +274,7 @@ function function_1e30e51e(hardpointtype, killstreak_id, location, var_a6b1bda0,
         var_1c847d0f = level.mapcenter;
     }
     if (!isdefined(var_dda93e6c)) {
-        var_dda93e6c = vectorscale((0, 1, 0), 90);
+        var_dda93e6c = (0, 90, 0);
     }
     var_b818f98a = structcopy(location);
     var_b818f98a.origin = var_b818f98a.origin + var_49d19de7;
@@ -369,7 +365,6 @@ function watchdamage(bundle) {
     low_health = 0;
     damage_taken = 0;
     for (;;) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         attacker = waitresult.attacker;
         mod = waitresult.mod;
@@ -421,7 +416,6 @@ function watchdamage(bundle) {
 function watchforotherkillstreaks() {
     self endon(#"death");
     for (;;) {
-        waitresult = undefined;
         waitresult = level waittill(#"killstreak_started");
         killstreaktype = waitresult.killstreaktype;
         teamname = waitresult.team;
@@ -453,7 +447,6 @@ function watchforotherkillstreaks() {
 function watchforkills() {
     self endon(#"death");
     for (;;) {
-        waitresult = undefined;
         waitresult = self waittill(#"killed");
         if (isplayer(waitresult.victim)) {
         }
@@ -489,7 +482,6 @@ function dostraferuns(bundle, var_a6b1bda0, hardpointtype) {
     self endon(#"death");
     self.var_23493b54 = 0;
     for (;;) {
-        waitresult = undefined;
         waitresult = self waittill(#"noteworthy");
         noteworthy = waitresult.noteworthy;
         noteworthynode = waitresult.noteworthy_node;
@@ -577,8 +569,7 @@ function function_d4896942() {
 function startstrafe() {
     self endon(#"death", #"strafe_stop");
     if (isdefined(self.strafing)) {
-        iprintlnbold("TRYING TO STRAFE WHEN ALREADY STRAFING!
-");
+        iprintlnbold("TRYING TO STRAFE WHEN ALREADY STRAFING!\n");
         return;
     }
     self.strafing = 1;
@@ -599,10 +590,10 @@ function startstrafe() {
         /#
             if (getdvarint(#"scr_devstraferunbulletsdebugdraw", 0)) {
                 time = 300;
-                debug_line(attackstartvector, trace[#"position"] - vectorscale((0, 0, 1), 20), (1, 0, 0), time, 0);
+                debug_line(attackstartvector, trace[#"position"] - (0, 0, 20), (1, 0, 0), time, 0);
                 if (count % 30 == 0) {
                     trace = bullettrace(perfectattackstartvector, (perfectattackstartvector[0], perfectattackstartvector[1], -100000), 0, self, 0, 1);
-                    debug_line(trace[#"position"] + vectorscale((0, 0, 1), 20), trace[#"position"] - vectorscale((0, 0, 1), 20), (0, 0, 1), time, 0);
+                    debug_line(trace[#"position"] + (0, 0, 20), trace[#"position"] - (0, 0, 20), (0, 0, 1), time, 0);
                 }
             }
         #/
@@ -618,8 +609,7 @@ function startstrafe() {
 function function_ec6320ce(bundle, var_a6b1bda0) {
     self endon(#"death");
     if (isdefined(self.strafing)) {
-        iprintlnbold("TRYING TO STRAFE WHEN ALREADY STRAFING!
-");
+        iprintlnbold("TRYING TO STRAFE WHEN ALREADY STRAFING!\n");
         return;
     }
     self.strafing = 1;
@@ -698,7 +688,7 @@ function firerockets() {
         rocket attachkillcamtorocket(level.straferunkillcams[self.var_739aa202].rockets[rocketindex], best_target, targetorigin);
         /#
             if (getdvarint(#"scr_devstraferunkillcamsdebugdraw", 0)) {
-                rocket thread debug_draw_bomb_path(undefined, vectorscale((0, 1, 0), 0.5), 400);
+                rocket thread debug_draw_bomb_path(undefined, (0, 0.5, 0), 400);
             }
         #/
         wait(level.straferunrocketdelay);
@@ -847,7 +837,7 @@ function leavemap(hardpointtype) {
 function explode() {
     self endon(#"delete");
     self ghost();
-    forward = self.origin + vectorscale((0, 0, 1), 100) - self.origin;
+    forward = self.origin + (0, 0, 100) - self.origin;
     params = getscriptbundle(killstreaks::function_e2c3bda3("straferun", "killstreak_straferun"));
     if (isdefined(params.var_5ebb3c10)) {
         playfxontag(params.var_5ebb3c10, self, isdefined(params.var_5b2583e1) ? params.var_5b2583e1 : "tag_origin");
@@ -871,7 +861,7 @@ function explode() {
 // Checksum 0x4a3f6dde, Offset: 0x3a10
 // Size: 0xa6
 function cantargetentity(entity) {
-    heli_centroid = self.origin + vectorscale((0, 0, -1), 160);
+    heli_centroid = self.origin + (0, 0, -160);
     heli_forward_norm = anglestoforward(self.angles);
     heli_turret_point = heli_centroid + 144 * heli_forward_norm;
     visible_amount = entity sightconetrace(heli_turret_point, self);
@@ -1059,9 +1049,7 @@ function createkillcams(*numkillcams, numrockets) {
 // Size: 0xbc
 function resetkillcams(time) {
     self endon(#"death");
-    /#
-        assert(isdefined(self.var_739aa202));
-    #/
+    assert(isdefined(self.var_739aa202));
     if (isdefined(time)) {
         wait(time);
     }
@@ -1076,9 +1064,7 @@ function resetkillcams(time) {
 // Size: 0x104
 function unlinkkillcams() {
     numrockets = level.straferunkillcams[#"hash_1dfff61be0d43f2d"].rockets.size;
-    /#
-        assert(level.straferunkillcams[#"hash_1dfff61be0d43f2d"].rockets.size == level.straferunkillcams[#"hash_1dfff31be0d43a14"].rockets.size);
-    #/
+    assert(level.straferunkillcams[#"hash_1dfff61be0d43f2d"].rockets.size == level.straferunkillcams[#"hash_1dfff31be0d43a14"].rockets.size);
     for (i = 0; i < numrockets; i++) {
         level.straferunkillcams[#"hash_1dfff61be0d43f2d"].rockets[i] unlink();
         level.straferunkillcams[#"hash_1dfff31be0d43a14"].rockets[i] unlink();
@@ -1106,7 +1092,7 @@ function resetkillcament(parent) {
     offset_x = getdvarint(#"scr_killcamplaneoffsetx", -3000);
     offset_y = getdvarint(#"scr_killcamplaneoffsety", 0);
     offset_z = getdvarint(#"scr_killcamplaneoffsetz", 740);
-    self linkto(parent, "tag_origin", (offset_x, offset_y, offset_z), vectorscale((1, 0, 0), 10));
+    self linkto(parent, "tag_origin", (offset_x, offset_y, offset_z), (10, 0, 0));
     self thread unlinkwhenparentdies(parent);
 }
 
@@ -1121,7 +1107,7 @@ function resetrocketkillcament(parent, rocketindex) {
     offset_y = getdvarint(#"scr_killcamplaneoffsety", 0);
     offset_z = getdvarint(#"scr_killcamplaneoffsetz", 740);
     rockettag = level.straferunrockettags[rocketindex % level.straferunrockettags.size];
-    self linkto(parent, rockettag, (offset_x, offset_y, offset_z), vectorscale((1, 0, 0), 10));
+    self linkto(parent, rockettag, (offset_x, offset_y, offset_z), (10, 0, 0));
     self thread unlinkwhenparentdies(parent);
 }
 
@@ -1159,7 +1145,7 @@ function attachkillcamtorocket(killcament, selectedtarget, targetorigin) {
     killcament unlink();
     killcament.angles = (0, 0, 0);
     killcament.origin = self.origin;
-    killcament linkto(self, "", (offset_x, offset_y, offset_z), vectorscale((1, 0, 0), 9));
+    killcament linkto(self, "", (offset_x, offset_y, offset_z), (9, 0, 0));
     killcament thread unlinkwhenclose(selectedtarget, targetorigin, self);
 }
 

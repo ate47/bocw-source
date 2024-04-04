@@ -42,7 +42,7 @@ function postinit() {
 function perk_machine_rob(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump && isdefined(self)) {
         self playrenderoverridebundle(#"hash_e8f3d55b3b05c7e");
-        var_85bec78b = self.origin + vectorscale((0, 0, 1), 50);
+        var_85bec78b = self.origin + (0, 0, 50);
         wait(1);
         playsound(fieldname, #"hash_1ac5c65e0bb6f52e", var_85bec78b);
         soundloopemitter("zmb_perkmachine_power_on_lp", var_85bec78b);

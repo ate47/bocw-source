@@ -59,23 +59,17 @@ function private function_ac3d4bc() {
 // Checksum 0xdece4122, Offset: 0x2a8
 // Size: 0x3da
 function private function_8991ddb4(localclientnum) {
-    /#
-        assert(!isdefined(self.threat_sight.elem));
-    #/
+    assert(!isdefined(self.threat_sight.elem));
     self.threat_sight.var_1911547e = [[ level.var_6c0cd084 ]]->function_65cdd2df(self);
     if (!isdefined(self.threat_sight.var_1911547e)) {
         myscore = self function_ac3d4bc();
         lowest = undefined;
         var_5b9574e0 = undefined;
         foreach (guy in [[ level.var_6c0cd084 ]]->function_85a5add5()) {
-            /#
-                assert(isdefined(guy.threat_sight));
-            #/
+            assert(isdefined(guy.threat_sight));
             score = guy function_ac3d4bc();
             if (!isdefined(lowest) || score < lowest) {
-                /#
-                    assert(guy !== self);
-                #/
+                assert(guy !== self);
                 lowest = score;
                 var_5b9574e0 = guy;
             }
@@ -166,7 +160,7 @@ function private function_ccfdbd44(*localclientnum, msg) {
         self endon("<unknown string>");
         self endon(#"death");
         while (getdvarint(#"hash_40034352c4930dca") && isdefined(self.threat_sight)) {
-            print3d(self.origin + vectorscale((0, 0, 1), 40), msg, (1, 1, 1), 1, 0.75, 1, 0);
+            print3d(self.origin + (0, 0, 40), msg, (1, 1, 1), 1, 0.75, 1, 0);
             waitframe(1);
         }
     #/

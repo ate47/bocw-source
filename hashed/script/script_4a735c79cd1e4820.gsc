@@ -68,9 +68,7 @@ function function_80d28d77(localclientnum, impactfx, var_4b30f907, var_9cb23c3, 
     if (!isdefined(var_40f7123c)) {
         var_40f7123c = -1;
     }
-    /#
-        assert(var_4b30f907 > 0);
-    #/
+    assert(var_4b30f907 > 0);
     wait_time = 1 / var_4b30f907;
     var_70bdcaa = int(max(0.016 / wait_time, 1));
     wait_time = 0.016 * int(max(wait_time / 0.016, 1));
@@ -167,7 +165,7 @@ function private function_7355defa(localclientnum, impactfx, var_9cb23c3, hitpos
 function private function_f63efb32(var_d500b38d, var_d06c0cef, var_434f3a56, var_740a6a07, var_17e9e56c, var_40f7123c) {
     /#
         bounds = function_c440d28e(self.model);
-        box(self.origin, bounds.mins, bounds.maxs, absangleclamp360(self.angles[1]), vectorscale((0, 1, 0), 0.25), 1, 1, 1);
+        box(self.origin, bounds.mins, bounds.maxs, absangleclamp360(self.angles[1]), (0, 0.25, 0), 1, 1, 1);
         var_4fe68d11 = bounds.maxs - bounds.mins;
         halfsize = var_4fe68d11 * 0.5;
         midpoint = bounds.mins + halfsize;

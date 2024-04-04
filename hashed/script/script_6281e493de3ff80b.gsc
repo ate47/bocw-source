@@ -55,101 +55,51 @@ function init() {
 // Checksum 0x8376ba45, Offset: 0xac8
 // Size: 0x9c4
 function registerbehaviorscriptfunctions() {
-    /#
-        assert(isscriptfunctionptr(&margwatargetservice));
-    #/
+    assert(isscriptfunctionptr(&margwatargetservice));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaTargetService", &margwatargetservice);
-    /#
-        assert(isscriptfunctionptr(&margwashouldsmashattack));
-    #/
+    assert(isscriptfunctionptr(&margwashouldsmashattack));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldSmashAttack", &margwashouldsmashattack);
-    /#
-        assert(isscriptfunctionptr(&margwashouldswipeattack));
-    #/
+    assert(isscriptfunctionptr(&margwashouldswipeattack));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldSwipeAttack", &margwashouldswipeattack);
-    /#
-        assert(isscriptfunctionptr(&margwashouldshowpain));
-    #/
+    assert(isscriptfunctionptr(&margwashouldshowpain));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldShowPain", &margwashouldshowpain);
-    /#
-        assert(isscriptfunctionptr(&margwashouldreactstun));
-    #/
+    assert(isscriptfunctionptr(&margwashouldreactstun));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldReactStun", &margwashouldreactstun);
-    /#
-        assert(isscriptfunctionptr(&margwashouldspawn));
-    #/
+    assert(isscriptfunctionptr(&margwashouldspawn));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldSpawn", &margwashouldspawn);
-    /#
-        assert(isscriptfunctionptr(&margwashouldreset));
-    #/
+    assert(isscriptfunctionptr(&margwashouldreset));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldReset", &margwashouldreset);
-    /#
-        assert(!isdefined(&margwareactstunaction) || isscriptfunctionptr(&margwareactstunaction));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
+    assert(!isdefined(&margwareactstunaction) || isscriptfunctionptr(&margwareactstunaction));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
     behaviortreenetworkutility::registerbehaviortreeaction("margwaReactStunAction", &margwareactstunaction, undefined, undefined);
-    /#
-        assert(!isdefined(&margwaswipeattackaction) || isscriptfunctionptr(&margwaswipeattackaction));
-    #/
-    /#
-        assert(!isdefined(&function_12a0b652) || isscriptfunctionptr(&function_12a0b652));
-    #/
-    /#
-        assert(!isdefined(&function_9f21d288) || isscriptfunctionptr(&function_9f21d288));
-    #/
+    assert(!isdefined(&margwaswipeattackaction) || isscriptfunctionptr(&margwaswipeattackaction));
+    assert(!isdefined(&function_12a0b652) || isscriptfunctionptr(&function_12a0b652));
+    assert(!isdefined(&function_9f21d288) || isscriptfunctionptr(&function_9f21d288));
     behaviortreenetworkutility::registerbehaviortreeaction("margwaSwipeAttackAction", &margwaswipeattackaction, &function_12a0b652, &function_9f21d288);
-    /#
-        assert(isscriptfunctionptr(&margwaidlestart));
-    #/
+    assert(isscriptfunctionptr(&margwaidlestart));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaIdleStart", &margwaidlestart);
-    /#
-        assert(isscriptfunctionptr(&margwamovestart));
-    #/
+    assert(isscriptfunctionptr(&margwamovestart));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaMoveStart", &margwamovestart);
-    /#
-        assert(isscriptfunctionptr(&margwatraverseactionstart));
-    #/
+    assert(isscriptfunctionptr(&margwatraverseactionstart));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaTraverseActionStart", &margwatraverseactionstart);
-    /#
-        assert(isscriptfunctionptr(&margwapainstart));
-    #/
+    assert(isscriptfunctionptr(&margwapainstart));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaPainStart", &margwapainstart);
-    /#
-        assert(isscriptfunctionptr(&margwapainterminate));
-    #/
+    assert(isscriptfunctionptr(&margwapainterminate));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaPainTerminate", &margwapainterminate);
-    /#
-        assert(isscriptfunctionptr(&margwareactstunstart));
-    #/
+    assert(isscriptfunctionptr(&margwareactstunstart));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaReactStunStart", &margwareactstunstart);
-    /#
-        assert(isscriptfunctionptr(&margwareactstunterminate));
-    #/
+    assert(isscriptfunctionptr(&margwareactstunterminate));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaReactStunTerminate", &margwareactstunterminate);
-    /#
-        assert(isscriptfunctionptr(&margwaspawnstart));
-    #/
+    assert(isscriptfunctionptr(&margwaspawnstart));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaSpawnStart", &margwaspawnstart);
-    /#
-        assert(isscriptfunctionptr(&margwasmashattackstart));
-    #/
+    assert(isscriptfunctionptr(&margwasmashattackstart));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaSmashAttackStart", &margwasmashattackstart);
-    /#
-        assert(isscriptfunctionptr(&margwasmashattackterminate));
-    #/
+    assert(isscriptfunctionptr(&margwasmashattackterminate));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaSmashAttackTerminate", &margwasmashattackterminate);
-    /#
-        assert(isscriptfunctionptr(&margwaswipeattackstart));
-    #/
+    assert(isscriptfunctionptr(&margwaswipeattackstart));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaSwipeAttackStart", &margwaswipeattackstart);
-    /#
-        assert(isscriptfunctionptr(&margwaswipeattackterminate));
-    #/
+    assert(isscriptfunctionptr(&margwaswipeattackterminate));
     behaviortreenetworkutility::registerbehaviortreescriptapi("margwaSwipeAttackTerminate", &margwaswipeattackterminate);
     animationstatenetwork::registernotetrackhandlerfunction("margwa_smash_attack", &function_b4c86753);
     animationstatenetwork::registernotetrackhandlerfunction("margwa_bodyfall large", &function_11199ef4);

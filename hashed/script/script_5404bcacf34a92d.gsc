@@ -58,11 +58,7 @@ function on_item_pickup(params) {
     if (!isdefined(params.item) || params.item.itementry.name !== #"item_zmintel_gold_omega_artifact_4") {
         return;
     }
-    /#
-        /#
-            assert(isdefined(params.item.var_7961a37e), "<unknown string>");
-        #/
-    #/
+    assert(isdefined(params.item.var_7961a37e), "<unknown string>");
     item = params.item;
     level flag::set(#"hash_1dc3d47b1604d916");
     item notify(#"hash_46b95c46bf0a5522");
@@ -119,9 +115,7 @@ function on_item_drop(params) {
         return;
     }
     /#
-        /#
-            assert(isdefined(self.var_348162a4), "<unknown string>");
-        #/
+        assert(isdefined(self.var_348162a4), "<unknown string>");
         function_2586c596("<unknown string>" + self.var_348162a4);
     #/
     params.item.var_7961a37e = self.var_348162a4;
@@ -139,11 +133,7 @@ function on_item_drop(params) {
 // Checksum 0x90d207df, Offset: 0x870
 // Size: 0xcc
 function function_b31c7f6(*params) {
-    /#
-        /#
-            assert(isplayer(self));
-        #/
-    #/
+    assert(isplayer(self));
     if (isdefined(self.var_348162a4)) {
         point = function_4ba8fde(#"item_zmintel_gold_omega_artifact_4");
         self item_drop::drop_item(0, getweapon(#"hash_f223cacb02788e3"), 1, 0, point.id, self.origin, self.angles, 0);
@@ -394,9 +384,7 @@ function function_b6bf3f94(time) {
 function function_43cd5eff() {
     /#
         function_2586c596("<unknown string>");
-        /#
-            assert(isdefined(self.var_348162a4));
-        #/
+        assert(isdefined(self.var_348162a4));
     #/
     level notify(#"hash_52b46513284ae413", {#id:self.var_348162a4});
     level notify(#"hash_56f7aed0dabf82ca" + self.var_348162a4);
@@ -414,11 +402,7 @@ function function_43cd5eff() {
 function function_646c719c(time, is_deployed = 0) {
     self endon(#"death", #"hash_5600121a4b0794ab");
     wait(time);
-    /#
-        /#
-            assert(isdefined(self.var_7961a37e));
-        #/
-    #/
+    assert(isdefined(self.var_7961a37e));
     level notify(#"hash_6382150c7bec4fd9", {#id:self.var_7961a37e});
     if (is_true(is_deployed) && isdefined(self.owner)) {
         self.owner.var_2a68975a = undefined;
@@ -451,25 +435,18 @@ function function_3b028b4a(time_left, var_646dca28, var_7961a37e, var_b512a2d) {
     level.var_acb5d4ce[var_7961a37e].var_b512a2d = var_b512a2d;
     level.var_acb5d4ce[var_7961a37e].var_b722fee6 = var_b512a2d;
     while (true) {
-        result = undefined;
         result = level waittilltimeout(time_left, #"hash_c1bf755b6bc771e" + var_7961a37e);
         var_1967ad3 = level.var_acb5d4ce[var_7961a37e].var_b512a2d;
         var_b722fee6 = level.var_acb5d4ce[var_7961a37e].var_b722fee6;
         if (result._notify == #"timeout") {
             if (!isdefined(var_646dca28)) {
-                /#
-                    println("<unknown string>");
-                #/
+                println("<unknown string>");
             } else if (isdefined(var_1967ad3)) {
                 level function_1c8713ac(var_646dca28, var_1967ad3.origin, var_28dbb034);
             } else if (isdefined(var_b722fee6)) {
                 level function_1c8713ac(var_646dca28, var_b722fee6.origin, var_28dbb034);
             } else {
-                /#
-                    /#
-                        assert(0, "<unknown string>");
-                    #/
-                #/
+                assert(0, "<unknown string>");
             }
             if (var_28dbb034) {
                 if (isplayer(var_1967ad3)) {
@@ -579,7 +556,7 @@ function function_1c8713ac(var_646dca28, var_19d9c3aa, var_82529e94 = 0) {
     #/
     if (isdefined(var_19d9c3aa)) {
         if (var_82529e94) {
-            var_19d9c3aa = var_19d9c3aa + vectorscale((1, 1, 0), 100);
+            var_19d9c3aa = var_19d9c3aa + (100, 100, 0);
         }
         var_b45574e6 = getclosestpointonnavmesh(var_19d9c3aa, 500);
         if (!isdefined(var_b45574e6)) {

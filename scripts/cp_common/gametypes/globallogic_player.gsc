@@ -79,9 +79,7 @@ function private preinit() {
             }
             var_4546d401[#"stand"][var_4546d401[#"stand"].size] = entry.gesture;
         }
-        /#
-            assert(isdefined(var_4546d401[#"stand"]));
-        #/
+        assert(isdefined(var_4546d401[#"stand"]));
         foreach (entry in collection.crouch) {
             if (!isdefined(var_4546d401[#"crouch"])) {
                 var_4546d401[#"crouch"] = [];
@@ -90,9 +88,7 @@ function private preinit() {
             }
             var_4546d401[#"crouch"][var_4546d401[#"crouch"].size] = entry.gesture;
         }
-        /#
-            assert(isdefined(var_4546d401[#"crouch"]));
-        #/
+        assert(isdefined(var_4546d401[#"crouch"]));
         foreach (entry in collection.prone) {
             if (!isdefined(var_4546d401[#"prone"])) {
                 var_4546d401[#"prone"] = [];
@@ -101,22 +97,14 @@ function private preinit() {
             }
             var_4546d401[#"prone"][var_4546d401[#"prone"].size] = entry.gesture;
         }
-        /#
-            assert(isdefined(var_4546d401[#"prone"]));
-        #/
+        assert(isdefined(var_4546d401[#"prone"]));
         if (is_true(collection.var_9af99f2f)) {
-            /#
-                assert(!isdefined(level.var_ee4d094a[#"hash_3a5790d783810d4a"]));
-            #/
+            assert(!isdefined(level.var_ee4d094a[#"hash_3a5790d783810d4a"]));
             level.var_ee4d094a[#"hash_3a5790d783810d4a"] = var_4546d401;
             continue;
         }
-        /#
-            assert(isdefined(collection.weapon));
-        #/
-        /#
-            assert(!isdefined(level.var_ee4d094a[collection.weapon]));
-        #/
+        assert(isdefined(collection.weapon));
+        assert(!isdefined(level.var_ee4d094a[collection.weapon]));
         level.var_ee4d094a[collection.weapon] = var_4546d401;
     }
     clientfield::register("toplayer", "player_damage_type", 1, 1, "int");
@@ -529,12 +517,8 @@ function function_f92e23de() {
         var_397a145d = self stats::get_stat(#"playerstatslist", #"incaps", #"statvalue");
         var_ebf6c5c6 = self stats::get_stat(#"playerstatsbymap", var_11ffb46, #"currentstats", #"incaps");
         if (isdefined(var_eeb08e4)) {
-            /#
-                assert(var_eeb08e4 >= var_397a145d, "<unknown string>");
-            #/
-            /#
-                assert(var_eeb08e4 >= var_ebf6c5c6, "<unknown string>");
-            #/
+            assert(var_eeb08e4 >= var_397a145d, "<unknown string>");
+            assert(var_eeb08e4 >= var_ebf6c5c6, "<unknown string>");
             self stats::set_stat(#"playerstatslist", #"incaps", #"statvalue", var_eeb08e4);
             self.incaps = var_eeb08e4 - self stats::get_stat(#"playerstatsbymap", var_11ffb46, #"currentstats", #"incaps");
             self.pers[#"incaps"] = self.incaps;
@@ -543,17 +527,11 @@ function function_f92e23de() {
         var_a25504c0 = self stats::get_stat(#"playerstatslist", #"revives", #"statvalue");
         var_939d065a = self stats::get_stat(#"playerstatsbymap", var_11ffb46, #"currentstats", #"revives");
         if (isdefined(var_cb9c2ac2)) {
-            /#
-                assert(var_cb9c2ac2 >= var_a25504c0, "<unknown string>");
-            #/
-            /#
-                assert(var_cb9c2ac2 >= var_939d065a, "<unknown string>");
-            #/
+            assert(var_cb9c2ac2 >= var_a25504c0, "<unknown string>");
+            assert(var_cb9c2ac2 >= var_939d065a, "<unknown string>");
             self stats::set_stat(#"playerstatslist", #"revives", #"statvalue", var_cb9c2ac2);
             self.revives = var_cb9c2ac2 - self stats::get_stat(#"playerstatsbymap", var_11ffb46, #"currentstats", #"revives");
-            /#
-                assert(self.revives >= 0);
-            #/
+            assert(self.revives >= 0);
             self.pers[#"revives"] = self.revives;
         }
         var_28f0970b = self getnoncheckpointdata("lives");
@@ -794,9 +772,7 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
             idamage = modifieddamage;
         }
     }
-    /#
-        assert(isdefined(idamage), "<unknown string>");
-    #/
+    assert(isdefined(idamage), "<unknown string>");
     params = spawnstruct();
     params.einflictor = einflictor;
     params.eattacker = eattacker;
@@ -1120,11 +1096,11 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
             loc = anglestoforward(self getplayerangles()) * 128;
             color = (1, 1, 0);
             dur = 15;
-            height = vectorscale((0, 0, 1), 16);
+            height = (0, 0, 16);
             if (idamage >= 100) {
                 dur = 40;
                 color = (1, 0, 0);
-                height = vectorscale((0, 0, 1), 32);
+                height = (0, 0, 32);
             } else if (idamage < 20) {
                 dur = 8;
                 height = (0, 0, 0);
@@ -1133,8 +1109,8 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
             loc = loc + self getorigin() + height;
             print3d(loc, "<unknown string>" + idamage, color, 1, 0.5, dur, 1);
             if (isdefined(eattacker.origin)) {
-                print3d(eattacker.origin + vectorscale((0, 0, 1), 72), "<unknown string>" + idamage, color, 1, 1, dur, 1);
-                line(eattacker.origin + vectorscale((0, 0, 1), 72), loc, color, 1, 0, dur);
+                print3d(eattacker.origin + (0, 0, 72), "<unknown string>" + idamage, color, 1, 1, dur, 1);
+                line(eattacker.origin + (0, 0, 72), loc, color, 1, 0, dur);
             }
         }
     #/
@@ -1252,9 +1228,7 @@ function isaikillstreakdamage(weapon, einflictor) {
 function finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, boneindex, vsurfacenormal) {
     profileNamedStart(#"");
     if (!level.console && idflags & 8 && isplayer(eattacker)) {
-        /#
-            println("<unknown string>" + self getentitynumber() + "<unknown string>" + self.health + "<unknown string>" + eattacker.clientid + "<unknown string>" + isplayer(einflictor) + "<unknown string>" + idamage + "<unknown string>" + shitloc);
-        #/
+        println("<unknown string>" + self getentitynumber() + "<unknown string>" + self.health + "<unknown string>" + eattacker.clientid + "<unknown string>" + isplayer(einflictor) + "<unknown string>" + idamage + "<unknown string>" + shitloc);
         eattacker stats::function_dad108fa(#"penetration_shots", 1);
     }
     if (!self util::function_a1d6293()) {
@@ -1363,8 +1337,8 @@ function private function_bb371c3(var_b1630ef, debugdraw) {
     var_c8e0e024 = (var_2ae934a0 * -1, var_2ae934a0 * -1, -0.1);
     var_288b287b = (var_2ae934a0, var_2ae934a0, 0.1);
     var_fe488304 = player.origin + var_be9b9194.forward * var_6ee16314;
-    startoffset = vectorscale((0, 0, 1), 5);
-    endoffset = vectorscale((0, 0, -1), 8);
+    startoffset = (0, 0, 5);
+    endoffset = (0, 0, -8);
     var_891e5be8 = physicstrace(var_fe488304 + startoffset, var_fe488304 + endoffset, var_c8e0e024, var_288b287b, player, 32);
     if (is_true(var_891e5be8[#"startsolid"]) || var_891e5be8[#"fraction"] > 0.9 || var_891e5be8[#"fraction"] < 0.1) {
         var_f3002d70 = 0;
@@ -1380,7 +1354,7 @@ function private function_bb371c3(var_b1630ef, debugdraw) {
             box(var_fe488304, var_1c1cfbe7, var_d42e62c7, 0, var_974e8d59, 1, 1, 400);
             var_f7a96b34 = [var_fe488304 + (var_c8e0e024[0], var_c8e0e024[1], 0), var_fe488304 + (var_288b287b[0], var_c8e0e024[1], 0), var_fe488304 + (var_c8e0e024[0], var_288b287b[1], 0), var_fe488304 + (var_288b287b[0], var_288b287b[1], 0)];
             foreach (corner in var_f7a96b34) {
-                line(corner, corner + vectorscale((0, 0, 1), 99), var_974e8d59, 1, 1, 400);
+                line(corner, corner + (0, 0, 99), var_974e8d59, 1, 1, 400);
             }
         }
     #/
@@ -1399,13 +1373,9 @@ function private function_7abbea8e(params) {
         var_5d3a3f89 = isdefined(params.var_3ca8c1dc);
     #/
     if (!var_5d3a3f89) {
-        /#
-            assert(player.health <= params.idamage);
-        #/
+        assert(player.health <= params.idamage);
     }
-    /#
-        assert(!player function_a1d6293());
-    #/
+    assert(!player function_a1d6293());
     audio::on_player_killed();
     healthoverlay::end_health_regen();
     player callback::callback(#"hash_2fea1d218f4c6a1f", params);
@@ -1455,9 +1425,7 @@ function private function_7abbea8e(params) {
 // Size: 0xfa
 function private function_39727d8d() {
     player = self;
-    /#
-        assert(isdefined(level.var_ee4d094a));
-    #/
+    assert(isdefined(level.var_ee4d094a));
     currentweaponname = player getcurrentweapon().name;
     var_f0fdc6f6 = level.var_ee4d094a[currentweaponname];
     if (!isdefined(var_f0fdc6f6)) {
@@ -1465,9 +1433,7 @@ function private function_39727d8d() {
     }
     currentstance = player getstance();
     var_c8299c32 = var_f0fdc6f6[currentstance];
-    /#
-        assert(isdefined(var_c8299c32));
-    #/
+    assert(isdefined(var_c8299c32));
     return array::random(var_c8299c32);
 }
 
@@ -1712,9 +1678,7 @@ function callback_playerkilled(einflictor, attacker, idamage, smeansofdeath, wea
     self.vattackerorigin = undefined;
     if (isdefined(self.uselaststandparams)) {
         self.uselaststandparams = undefined;
-        /#
-            assert(isdefined(self.laststandparams));
-        #/
+        assert(isdefined(self.laststandparams));
         if (!level.teambased || isdefined(self.laststandparams) && (!isdefined(attacker) || !isplayer(attacker) || attacker.team != self.team || attacker == self)) {
             einflictor = self.laststandparams.einflictor;
             attacker = self.laststandparams.attacker;
@@ -1820,9 +1784,7 @@ function callback_playerkilled(einflictor, attacker, idamage, smeansofdeath, wea
         self.deathcount = 0;
     }
     self.deathcount++;
-    /#
-        println("<unknown string>" + self.clientid + "<unknown string>" + self.deathcount);
-    #/
+    println("<unknown string>" + self.clientid + "<unknown string>" + self.deathcount);
     self function_c90195f7(attacker, weapon);
     lpselfnum = self getentitynumber();
     lpselfname = self.name;
@@ -1920,9 +1882,7 @@ function callback_playerkilled(einflictor, attacker, idamage, smeansofdeath, wea
     if (isplayer(attacker)) {
         attackerstring = attacker getxuid() + "(" + lpattackname + ")";
     }
-    /#
-        println("<unknown string>" + smeansofdeath + "<unknown string>" + weapon.name + "<unknown string>" + attackerstring + "<unknown string>" + idamage + "<unknown string>" + shitloc + "<unknown string>" + int(self.origin[0]) + "<unknown string>" + int(self.origin[1]) + "<unknown string>" + int(self.origin[2]));
-    #/
+    println("<unknown string>" + smeansofdeath + "<unknown string>" + weapon.name + "<unknown string>" + attackerstring + "<unknown string>" + idamage + "<unknown string>" + shitloc + "<unknown string>" + int(self.origin[0]) + "<unknown string>" + int(self.origin[1]) + "<unknown string>" + int(self.origin[2]));
     globallogic::updateteamstatus();
     self weapons::detach_carry_object_model();
     var_adfdd617 = 0;
@@ -2303,7 +2263,7 @@ function start_death_from_above_ragdoll(*dir) {
         return;
     }
     self startragdoll();
-    self launchragdoll(vectorscale((0, 0, -1), 100));
+    self launchragdoll((0, 0, -100));
 }
 
 // Namespace globallogic_player/globallogic_player

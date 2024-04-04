@@ -255,16 +255,12 @@ function function_96d38b95(result) {
 // Size: 0x204
 function record_special_move_data_for_life(killer) {
     if (!isdefined(self.lastwallrunstarttime) || !isdefined(self.lastdoublejumpstarttime) || !isdefined(self.timespentwallrunninginlife) || !isdefined(self.numberofdoublejumpsinlife) || !isdefined(self.numberofslidesinlife)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
     if (isdefined(killer)) {
         if (!isdefined(killer.lastwallrunstarttime) || !isdefined(killer.lastdoublejumpstarttime)) {
-            /#
-                println("<unknown string>");
-            #/
+            println("<unknown string>");
             return;
         }
         matchrecordlogspecialmovedataforlife(self, isdefined(self.lastswimmingstarttime) ? self.lastswimmingstarttime : 0, self.lastwallrunstarttime, self.lastslidestarttime, self.lastdoublejumpstarttime, isdefined(self.timespentswimminginlife) ? self.timespentswimminginlife : 0, self.timespentwallrunninginlife, self.numberofdoublejumpsinlife, self.numberofslidesinlife, killer, killer.lastswimmingstarttime, killer.lastwallrunstarttime, isdefined(killer.lastslidestarttime) ? killer.lastslidestarttime : 0, killer.lastdoublejumpstarttime);

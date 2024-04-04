@@ -64,9 +64,7 @@ function private on_begin(var_a29299fb) {
 // Checksum 0xf4083439, Offset: 0x718
 // Size: 0xc4
 function private on_end(round_reset) {
-    /#
-        assert(is_true(level.buys_disabled));
-    #/
+    assert(is_true(level.buys_disabled));
     if (!round_reset) {
         function_fa70c8c4();
         function_c606ef4b();
@@ -125,9 +123,7 @@ function function_8327d26e() {
 // Checksum 0x856bda7f, Offset: 0x9a8
 // Size: 0x2d8
 function private function_6fd56055() {
-    /#
-        assert(isdefined(level._spawned_wallbuys));
-    #/
+    assert(isdefined(level._spawned_wallbuys));
     foreach (wallbuy in level._spawned_wallbuys) {
         target_struct = struct::get(wallbuy.target, "targetname");
         if (isdefined(target_struct) && isdefined(target_struct.target)) {
@@ -144,9 +140,7 @@ function private function_6fd56055() {
             }
         }
         if (isdefined(wallbuy.trigger_stub) && isdefined(wallbuy.trigger_stub.clientfieldname)) {
-            /#
-                assert(!isdefined(wallbuy.var_d6cca569));
-            #/
+            assert(!isdefined(wallbuy.var_d6cca569));
             wallbuy.var_d6cca569 = level clientfield::get(wallbuy.trigger_stub.clientfieldname);
             level clientfield::set(wallbuy.trigger_stub.clientfieldname, 0);
         }
@@ -161,9 +155,7 @@ function private function_6fd56055() {
 // Checksum 0x38d9f447, Offset: 0xc88
 // Size: 0x2b8
 function private function_fa70c8c4() {
-    /#
-        assert(isdefined(level._spawned_wallbuys));
-    #/
+    assert(isdefined(level._spawned_wallbuys));
     foreach (wallbuy in level._spawned_wallbuys) {
         target_struct = struct::get(wallbuy.target, "targetname");
         if (isdefined(target_struct) && isdefined(target_struct.target)) {
@@ -180,9 +172,7 @@ function private function_fa70c8c4() {
             }
         }
         if (isdefined(wallbuy.trigger_stub) && isdefined(wallbuy.trigger_stub.clientfieldname)) {
-            /#
-                assert(isdefined(wallbuy.var_d6cca569));
-            #/
+            assert(isdefined(wallbuy.var_d6cca569));
             level clientfield::set(wallbuy.trigger_stub.clientfieldname, wallbuy.var_d6cca569);
             wallbuy.var_d6cca569 = undefined;
         }

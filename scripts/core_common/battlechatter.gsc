@@ -259,12 +259,8 @@ function stop_dialog(var_cdaf7797) {
 function function_9d4a3d68(var_11317dc8, speakingplayer, secondplayer, weapon, startdelay, var_44e63719) {
     level endon(#"game_ended");
     speakingplayer endon(#"disconnect");
-    /#
-        assert(isdefined(var_11317dc8));
-    #/
-    /#
-        assert(isplayer(speakingplayer));
-    #/
+    assert(isdefined(var_11317dc8));
+    assert(isplayer(speakingplayer));
     startdelay = isdefined(startdelay) ? startdelay : 0;
     if (sessionmodeiszombiesgame()) {
         var_44e63719 = isdefined(var_44e63719) ? var_44e63719 : 1;

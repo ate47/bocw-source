@@ -41,7 +41,7 @@ function play_charge_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap
 function function_b5268151(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump == 1) {
         var_3e0b2cbd = self gettagorigin("tag_scanner");
-        var_8946daad = vectorscale((1, 0, 0), 20);
+        var_8946daad = (20, 0, 0);
         self.var_1e7bc717 = playfx(fieldname, #"hash_6dd20a5f232201ca", var_3e0b2cbd, anglestoforward(var_8946daad), anglestoup(var_8946daad));
     }
 }
@@ -102,9 +102,7 @@ function function_9b54b294(localclientnum, *oldval, newval, *bnewent, *binitials
 // Checksum 0x96e68360, Offset: 0x928
 // Size: 0x16c
 function private function_5d7d4dd0(localclientnum, var_76f1881e, b_clockwise = 1) {
-    /#
-        assert(var_76f1881e > 0 && var_76f1881e <= 20);
-    #/
+    assert(var_76f1881e > 0 && var_76f1881e <= 20);
     v_center = self gettagorigin("tag_screen_fx");
     if (!isdefined(level.var_838bf3b1[localclientnum])) {
         level.var_838bf3b1[localclientnum] = util::spawn_model(localclientnum, #"hash_2316d53ec18a5c74", v_center);
@@ -174,7 +172,7 @@ function function_aa1d2bf6(localclientnum, *oldval, newval, *bnewent, *binitials
         var_79bb44c5 = util::spawn_model(fieldname, #"hash_130813d3a3ab8977", self.origin, self.angles);
         board_rotate_origin = getent(fieldname, "board_rotate_origin", "targetname");
         var_79bb44c5 linkto(board_rotate_origin);
-        board_rotate_origin rotateto(board_rotate_origin.angles + vectorscale((0, 1, 0), 90), 3);
+        board_rotate_origin rotateto(board_rotate_origin.angles + (0, 90, 0), 3);
         var_79bb44c5 playsound(fieldname, #"hash_1500984cecfd6a57");
     }
 }

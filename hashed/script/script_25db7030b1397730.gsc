@@ -8,28 +8,15 @@
 // Method(s) 11 Total 18
 class ccp_chyron : cluielem {
 
-    // Namespace ccp_chyron/cp_chyron
-    // Params 0, eflags: 0xa linked
-    // Checksum 0xe96616ac, Offset: 0x308
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace ccp_chyron/cp_chyron
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xc6d26dc6, Offset: 0x698
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace ccp_chyron/cp_chyron
     // Params 2, eflags: 0x2 linked
     // Checksum 0xdd08d88d, Offset: 0x558
     // Size: 0x44
     function function_6b7b6e4(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "line3", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "line3", value);
     }
 
     // Namespace ccp_chyron/cp_chyron
@@ -45,7 +32,7 @@ class ccp_chyron : cluielem {
     // Checksum 0x48aaae22, Offset: 0x508
     // Size: 0x44
     function function_147e5271(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "line2", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "line2", value);
     }
 
     // Namespace ccp_chyron/cp_chyron
@@ -53,7 +40,7 @@ class ccp_chyron : cluielem {
     // Checksum 0x75036974, Offset: 0x5f8
     // Size: 0x44
     function function_2a377de3(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "line5", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "line5", value);
     }
 
     // Namespace ccp_chyron/cp_chyron
@@ -61,7 +48,7 @@ class ccp_chyron : cluielem {
     // Checksum 0xd3cd3b16, Offset: 0x4b8
     // Size: 0x44
     function function_4b584028(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "line1", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "line1", value);
     }
 
     // Namespace ccp_chyron/cp_chyron
@@ -77,7 +64,7 @@ class ccp_chyron : cluielem {
     // Checksum 0x5065f1c0, Offset: 0x648
     // Size: 0x44
     function function_90bde5d3(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "index", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "index", value);
     }
 
     // Namespace ccp_chyron/cp_chyron
@@ -99,7 +86,7 @@ class ccp_chyron : cluielem {
     // Checksum 0x66caebfe, Offset: 0x5a8
     // Size: 0x44
     function function_b7f01956(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "line4", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "line4", value);
     }
 
 }

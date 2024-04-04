@@ -8,22 +8,6 @@
 class clui_napalm_strike : cluielem {
 
     // Namespace clui_napalm_strike/lui_napalm_strike
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x88fc4b08, Offset: 0x1a0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace clui_napalm_strike/lui_napalm_strike
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x61ae0512, Offset: 0x260
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
-    // Namespace clui_napalm_strike/lui_napalm_strike
     // Params 2, eflags: 0x2 linked
     // Checksum 0x3aed3c6b, Offset: 0x1e8
     // Size: 0x3c

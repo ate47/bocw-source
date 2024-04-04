@@ -98,9 +98,7 @@ function function_2111cf41(watcher) {
     var_167da8cf = getweapon(#"listening_device");
     if (isdefined(var_167da8cf.customsettings)) {
         var_e6fbac16 = getscriptbundle(var_167da8cf.customsettings);
-        /#
-            assert(isdefined(var_e6fbac16));
-        #/
+        assert(isdefined(var_e6fbac16));
     }
     watcher.stuntime = 1;
     watcher.ondetonatecallback = &function_ad011f90;

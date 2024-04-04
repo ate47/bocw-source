@@ -73,9 +73,7 @@ function private function_e6d37e3b(*oldval, *newval) {
 // Checksum 0x5dcc201b, Offset: 0x810
 // Size: 0x4c
 function function_5f1df718(var_474d98c7) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self thread function_3ca27921(var_474d98c7);
 }
 
@@ -106,9 +104,7 @@ function private function_3ca27921(var_474d98c7) {
 // Checksum 0x3074baa2, Offset: 0x9a8
 // Size: 0x176
 function private function_6ea199e(var_474d98c7) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (!isdefined(self.var_758eae6)) {
         self.var_758eae6 = {};
     }
@@ -220,9 +216,7 @@ function waitrespawnbutton() {
 // Size: 0xf4
 function printonteam(text, str_team) {
     str_team = get_team_mapping(str_team);
-    /#
-        assert(isdefined(level.players));
-    #/
+    assert(isdefined(level.players));
     for (i = 0; i < level.players.size; i++) {
         player = level.players[i];
         if (isdefined(player.pers[#"team"]) && player.pers[#"team"] == str_team) {
@@ -237,9 +231,7 @@ function printonteam(text, str_team) {
 // Size: 0xf4
 function printboldonteam(text, str_team) {
     str_team = get_team_mapping(str_team);
-    /#
-        assert(isdefined(level.players));
-    #/
+    assert(isdefined(level.players));
     for (i = 0; i < level.players.size; i++) {
         player = level.players[i];
         if (isdefined(player.pers[#"team"]) && player.pers[#"team"] == str_team) {
@@ -254,9 +246,7 @@ function printboldonteam(text, str_team) {
 // Size: 0xfc
 function printboldonteamarg(text, str_team, arg) {
     str_team = get_team_mapping(str_team);
-    /#
-        assert(isdefined(level.players));
-    #/
+    assert(isdefined(level.players));
     for (i = 0; i < level.players.size; i++) {
         player = level.players[i];
         if (isdefined(player.pers[#"team"]) && player.pers[#"team"] == str_team) {
@@ -315,9 +305,7 @@ function getotherteam(str_team) {
     } else {
         return #"allies";
     }
-    /#
-        assertmsg(".button" + str_team);
-    #/
+    assertmsg(".button" + str_team);
 }
 
 // Namespace util/util
@@ -353,9 +341,7 @@ function getotherteamsmask(str_skip_team) {
 // Checksum 0x8d7345f, Offset: 0x1430
 // Size: 0x5c
 function getfx(fx) {
-    /#
-        assert(isdefined(level._effect[fx]), "<unknown string>" + fx + "<unknown string>");
-    #/
+    assert(isdefined(level._effect[fx]), "<unknown string>" + fx + "<unknown string>");
     return level._effect[fx];
 }
 
@@ -478,9 +464,7 @@ function clearusingremote(*remotename) {
 // Checksum 0xa4e161ee, Offset: 0x1890
 // Size: 0x32
 function getremotename() {
-    /#
-        assert(self isusingremote());
-    #/
+    assert(self isusingremote());
     return self.usingremote;
 }
 
@@ -977,12 +961,9 @@ function function_268bdf4f(name, func_init, arg1, arg2, arg3, arg4, arg5, var_dc
         if (!is_true(spawner.spawning)) {
             spawner.count++;
             ai_hero = spawner::simple_spawn_single(spawner);
-            /#
-                assert(isdefined(ai_hero), "<unknown string>" + name + "<unknown string>");
-            #/
+            assert(isdefined(ai_hero), "<unknown string>" + name + "<unknown string>");
             spawner notify(#"hash_7edd884f767a5390", {#hero:ai_hero});
         } else {
-            waitresult = undefined;
             waitresult = spawner waittill(#"hash_7edd884f767a5390");
             ai_hero = waitresult.hero;
         }
@@ -1001,7 +982,7 @@ function function_268bdf4f(name, func_init, arg1, arg2, arg3, arg4, arg5, var_dc
         ai_hero [[ level.var_d88df155 ]]();
     }
     if (var_dc17ca64) {
-        ai_hero thread namespace_446fe428::enable_thermal();
+        ai_hero thread oed::enable_thermal();
     }
     return ai_hero;
 }
@@ -1031,9 +1012,7 @@ function function_fc345061(str_name) {
     self endon(#"unmake_hero");
     self waittill(#"death");
     if (isdefined(self) && !is_true(level.var_5be43b2d)) {
-        /#
-            assertmsg("<unknown string>" + str_name + "<unknown string>");
-        #/
+        assertmsg("<unknown string>" + str_name + "<unknown string>");
     }
     unmake_hero(str_name);
 }
@@ -1116,9 +1095,7 @@ function function_d0016d9c(n_zone, var_97094ff3 = 1) {
 function function_9d9d132a(n_zone, var_97094ff3 = 1) {
     level notify(#"hash_16f43460a48d5395");
     level endon(#"hash_16f43460a48d5395");
-    /#
-        assert(n_zone > 0, "<unknown string>");
-    #/
+    assert(n_zone > 0, "<unknown string>");
     level flag::set(#"hash_262b0a7523df69cd");
     level flag::wait_till("all_players_connected");
     if (var_97094ff3) {
@@ -1192,7 +1169,7 @@ function function_749362d7(var_53cdb3f5, gesture = #"hash_743809219cd0d96b") {
         self val::set(#"low_ready", "allow_prone", 0);
     }
     self.var_f82e2c3d = undefined;
-    namespace_446fe428::enable_ev(!var_53cdb3f5);
+    oed::enable_ev(!var_53cdb3f5);
 }
 
 // Namespace util/util
@@ -1211,9 +1188,7 @@ function function_1478233c(var_e601604e) {
             self playgestureviewmodel(var_e601604e, undefined, undefined, undefined, undefined, undefined, 1);
             return;
         }
-        /#
-            assertmsg("<unknown string>");
-        #/
+        assertmsg("<unknown string>");
     }
 }
 
@@ -1361,10 +1336,8 @@ function function_7b7dfab3(n_display_time, str_turn_off_notify) {
     self endon(#"disconnect");
     s_waitresult = undefined;
     if (n_display_time > 0.75) {
-        s_waitresult = undefined;
         s_waitresult = self waittilltimeout(n_display_time - 0.75, str_turn_off_notify, #"kill_hint_text", #"death");
     } else {
-        s_waitresult = undefined;
         s_waitresult = self waittill(str_turn_off_notify, #"kill_hint_text", #"death");
     }
     if (s_waitresult._notify == "timeout") {
@@ -1507,11 +1480,7 @@ function function_74a9e89b(str_team = #"any", str_vehicle = undefined) {
         } else {
             var_30181301 = var_17d40a0f;
         }
-        /#
-            /#
-                assert(var_30181301.size > 0, "<unknown string>");
-            #/
-        #/
+        assert(var_30181301.size > 0, "<unknown string>");
         s_point = arraygetclosest(e_player.origin, var_30181301);
         if (isdefined(world.var_f6fb45f7[e_player.name])) {
         }
@@ -1525,7 +1494,6 @@ function function_74a9e89b(str_team = #"any", str_vehicle = undefined) {
 // Size: 0x200
 function function_2020ca4e() {
     while (isdefined(self)) {
-        str_result = undefined;
         str_result = self waittill(#"vehicle_used", #"enter_vehicle", #"exit_vehicle", #"death");
         if (str_result._notify == "death") {
             if (isdefined(self)) {
@@ -1579,9 +1547,7 @@ function can_see_ai(var_428cf68a, ai, latency, var_593afcc1, var_8230ceac) {
         }
         entnum = var_428cf68a getentitynumber();
         if (isdefined(ai.var_830332de) && ai.var_830332de[entnum] + latency >= currenttime) {
-            /#
-                assert(isdefined(ai.var_59c5720b[entnum]));
-            #/
+            assert(isdefined(ai.var_59c5720b[entnum]));
             return ai.var_59c5720b[entnum];
         }
         if (!isdefined(ai.var_830332de)) {
@@ -1743,9 +1709,7 @@ function are_enemies_nearby(origin, radius = 2000) {
 // Checksum 0x2aac7f8c, Offset: 0x5c50
 // Size: 0x184
 function function_5045bb33(var_6d369e51, var_c8ae7644, var_5816725d, var_c0bf04f, var_724aaf0a, var_18542db1 = 1) {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     self notify(#"hash_b771812661a9fdc");
     self endon(#"hash_b771812661a9fdc");
     if (!isdefined(var_5816725d)) {
@@ -1840,9 +1804,7 @@ function function_27f5f662(var_6aa6a4ac, var_9e5871fd, delay = 4) {
 function private function_b7367cc0(parms) {
     if (!is_true(level.var_4032a278)) {
         lines = strtok(parms, " ;,");
-        /#
-            assert(lines.size == 3, "<unknown string>");
-        #/
+        assert(lines.size == 3, "<unknown string>");
         self dialog_gender_vo(lines[0], lines[1], lines[2]);
     }
 }
@@ -1854,9 +1816,7 @@ function private function_b7367cc0(parms) {
 function private function_244408f7(parms) {
     if (!is_true(level.var_4032a278)) {
         lines = strtok(parms, " ;,");
-        /#
-            assert(lines.size == 4, "<unknown string>");
-        #/
+        assert(lines.size == 4, "<unknown string>");
         self dialog_faction_vo(lines[0], lines[1], lines[2], lines[3]);
     }
 }
@@ -2041,9 +2001,7 @@ function function_a5318821(var_79a934ad = 1, var_6fa12df4 = 0, var_64b54706 = un
         }
     }
     if (lookup >= var_1afba46e.size) {
-        /#
-            println("<unknown string>" + var_f82db92c + "<unknown string>");
-        #/
+        println("<unknown string>" + var_f82db92c + "<unknown string>");
         return;
     }
     var_918f15a4 = self namespace_70eba6e6::function_33bf99f8(2) - 1;

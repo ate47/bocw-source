@@ -479,9 +479,7 @@ function private player_base_health() {
 // Checksum 0x82346ada, Offset: 0x2298
 // Size: 0x13a
 function private function_55d01d42() {
-    /#
-        assert(self function_700ca4f5());
-    #/
+    assert(self function_700ca4f5());
     character_index = self getcharacterbodytype();
     fields = getcharacterfields(character_index, currentsessionmode());
     if (isdefined(fields) && (isdefined(fields.digitalblood) ? fields.digitalblood : 0)) {
@@ -640,7 +638,6 @@ function private function_62b7e00d(localclientnum) {
         return;
     }
     level.blood.soundhandle = function_604c9983(localclientnum, level.blood.var_d8dc9013);
-    waitresult = undefined;
     waitresult = self waittill(#"death", #"hash_6bf3273fdaffc859", #"disconnect", #"critical_health_end");
     if (isdefined(level.blood.soundhandle)) {
         function_d48752e(localclientnum, level.blood.soundhandle);
@@ -957,9 +954,7 @@ function private function_dd830dee(var_3942c692) {
     } else {
         level.blood.scriptbundle = getgametypesetting(#"hardcoremode") ? getscriptbundle("hardcore_blood_settings") : getscriptbundle("cp_blood_settings");
     }
-    /#
-        assert(isdefined(level.blood.scriptbundle));
-    #/
+    assert(isdefined(level.blood.scriptbundle));
     if (!isdefined(level.blood.var_e9d8aaf5)) {
         level.blood.var_e9d8aaf5 = isdefined(level.blood.scriptbundle.var_e9d8aaf5) ? level.blood.scriptbundle.var_e9d8aaf5 : 0;
     }

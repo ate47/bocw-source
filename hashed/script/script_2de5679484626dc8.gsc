@@ -8,28 +8,15 @@
 // Method(s) 16 Total 23
 class czm_dac_challenges_hud : cluielem {
 
-    // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 0, eflags: 0xa linked
-    // Checksum 0xfd7f7951, Offset: 0x488
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xbe5d34ac, Offset: 0xa68
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
     // Params 2, eflags: 0x2 linked
     // Checksum 0xc496793f, Offset: 0x7a0
     // Size: 0x44
     function set_binlocation(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "bInLocation", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "bInLocation", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -45,7 +32,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0x90edaa50, Offset: 0xa18
     // Size: 0x44
     function function_1097decc(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "showChallenge", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "showChallenge", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -53,7 +40,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0x7c5a857b, Offset: 0x700
     // Size: 0x44
     function set_challengetext(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "challengeText", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "challengeText", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -61,7 +48,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0xdab2a7c2, Offset: 0x750
     // Size: 0x44
     function set_bottomtext(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "bottomText", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "bottomText", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -69,7 +56,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0x384811db, Offset: 0x888
     // Size: 0x44
     function set_rewardhidden(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "rewardHidden", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "rewardHidden", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -104,7 +91,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0x592530e8, Offset: 0x7f0
     // Size: 0x3c
     function increment_progress(player) {
-        player clientfield::function_bb878fc3(self.var_d5213cbb, self.var_bf9c8c95, "progress");
+        player clientfield::function_bb878fc3(var_d5213cbb, var_bf9c8c95, "progress");
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -112,7 +99,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0xb01ce6ed, Offset: 0x838
     // Size: 0x44
     function set_tributeavailable(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "tributeAvailable", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "tributeAvailable", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -120,7 +107,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0x8f77a92c, Offset: 0x978
     // Size: 0x44
     function function_c079b98b(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "challengeTypeText", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "challengeTypeText", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -128,7 +115,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0x406c9474, Offset: 0x9c8
     // Size: 0x44
     function function_c21d733d(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "showIntelRewardText", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "showIntelRewardText", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -136,7 +123,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0xf5e47e21, Offset: 0x8d8
     // Size: 0x44
     function set_challengefailing(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "challengeFailing", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "challengeFailing", value);
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
@@ -144,7 +131,7 @@ class czm_dac_challenges_hud : cluielem {
     // Checksum 0x19aa1f94, Offset: 0x928
     // Size: 0x44
     function function_f63ec96b(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "rewardText", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "rewardText", value);
     }
 
 }

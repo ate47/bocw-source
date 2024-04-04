@@ -7,22 +7,6 @@
 // Method(s) 13 Total 20
 class class_35ee22bc : cluielem {
 
-    // Namespace class_35ee22bc/namespace_9ffd16b9
-    // Params 0, eflags: 0x8
-    // Checksum 0x5da169f6, Offset: 0x518
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_35ee22bc/namespace_9ffd16b9
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xd2a7ba53, Offset: 0x980
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
-
     // Namespace namespace_35ee22bc/namespace_9ffd16b9
     // Params 1, eflags: 0x0
     // Checksum 0x10c77f54, Offset: 0x7c8
@@ -36,7 +20,7 @@ class class_35ee22bc : cluielem {
     // Checksum 0x9463b42a, Offset: 0x8a0
     // Size: 0x30
     function function_16715e9f(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "guardian_count", value);
+        set_data(localclientnum, "guardian_count", value);
     }
 
     // Namespace namespace_35ee22bc/namespace_9ffd16b9
@@ -44,7 +28,7 @@ class class_35ee22bc : cluielem {
     // Checksum 0x1a5bec8a, Offset: 0x910
     // Size: 0x30
     function function_191323ee(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "raps_count", value);
+        set_data(localclientnum, "raps_count", value);
     }
 
     // Namespace namespace_35ee22bc/namespace_9ffd16b9
@@ -52,7 +36,7 @@ class class_35ee22bc : cluielem {
     // Checksum 0x7886dbf, Offset: 0x948
     // Size: 0x30
     function function_461034d2(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "selector_state", value);
+        set_data(localclientnum, "selector_state", value);
     }
 
     // Namespace namespace_35ee22bc/namespace_9ffd16b9
@@ -68,7 +52,7 @@ class class_35ee22bc : cluielem {
     // Checksum 0x6f846515, Offset: 0x830
     // Size: 0x30
     function function_69d88480(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "wasp_count", value);
+        set_data(localclientnum, "wasp_count", value);
     }
 
     // Namespace namespace_35ee22bc/namespace_9ffd16b9
@@ -91,7 +75,7 @@ class class_35ee22bc : cluielem {
     // Checksum 0xcb006d19, Offset: 0x8d8
     // Size: 0x30
     function function_de1ece9c(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "robot_count", value);
+        set_data(localclientnum, "robot_count", value);
     }
 
     // Namespace namespace_35ee22bc/namespace_9ffd16b9
@@ -99,7 +83,7 @@ class class_35ee22bc : cluielem {
     // Checksum 0x61c2f74e, Offset: 0x868
     // Size: 0x30
     function function_ebe4fe7a(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "rcxd_count", value);
+        set_data(localclientnum, "rcxd_count", value);
     }
 
     // Namespace namespace_35ee22bc/namespace_9ffd16b9
@@ -108,13 +92,13 @@ class class_35ee22bc : cluielem {
     // Size: 0xe8
     function function_fa582112(localclientnum) {
         cluielem::function_fa582112(localclientnum);
-        [[ self ]]->set_data(localclientnum, "micromissile_count", 0);
-        [[ self ]]->set_data(localclientnum, "wasp_count", 0);
-        [[ self ]]->set_data(localclientnum, "rcxd_count", 0);
-        [[ self ]]->set_data(localclientnum, "guardian_count", 0);
-        [[ self ]]->set_data(localclientnum, "robot_count", 0);
-        [[ self ]]->set_data(localclientnum, "raps_count", 0);
-        [[ self ]]->set_data(localclientnum, "selector_state", 0);
+        set_data(localclientnum, "micromissile_count", 0);
+        set_data(localclientnum, "wasp_count", 0);
+        set_data(localclientnum, "rcxd_count", 0);
+        set_data(localclientnum, "guardian_count", 0);
+        set_data(localclientnum, "robot_count", 0);
+        set_data(localclientnum, "raps_count", 0);
+        set_data(localclientnum, "selector_state", 0);
     }
 
     // Namespace namespace_35ee22bc/namespace_9ffd16b9
@@ -122,7 +106,7 @@ class class_35ee22bc : cluielem {
     // Checksum 0x6bfdbe37, Offset: 0x7f8
     // Size: 0x30
     function function_fdfe76bb(localclientnum, value) {
-        [[ self ]]->set_data(localclientnum, "micromissile_count", value);
+        set_data(localclientnum, "micromissile_count", value);
     }
 
 }

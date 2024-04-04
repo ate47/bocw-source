@@ -302,9 +302,7 @@ function closemenus() {
 // Checksum 0x648f25f6, Offset: 0xf00
 // Size: 0xfc
 function beginclasschoice(*forcenewchoice) {
-    /#
-        assert(isdefined(level.teams[self.pers[#"team"]]));
-    #/
+    assert(isdefined(level.teams[self.pers[#"team"]]));
     team = self.pers[#"team"];
     self.pers[#"class"] = level.defaultclass;
     self.curclass = level.defaultclass;
@@ -319,9 +317,7 @@ function beginclasschoice(*forcenewchoice) {
 // Checksum 0x8a06683f, Offset: 0x1008
 // Size: 0x9c
 function showmainmenuforteam() {
-    /#
-        assert(isdefined(level.teams[self.pers[#"team"]]));
-    #/
+    assert(isdefined(level.teams[self.pers[#"team"]]));
     team = self.pers[#"team"];
     self openmenu(game.menu["menu_changeclass_" + level.teams[team]]);
 }

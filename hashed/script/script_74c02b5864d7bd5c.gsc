@@ -33,15 +33,9 @@ function private preinit() {
 // Size: 0x520
 function function_cd089b2e(*killstreaktype) {
     result = 0;
-    /#
-        assert(isplayer(self));
-    #/
-    /#
-        assert(isalive(self));
-    #/
-    /#
-        assert(isdefined(level.var_44018194));
-    #/
+    assert(isplayer(self));
+    assert(isalive(self));
+    assert(isdefined(level.var_44018194));
     player = self;
     if (player isinair() || player isplayerunderwater() || player isplayerswimming() || player isplayerwallrunning()) {
         return 0;
@@ -56,9 +50,7 @@ function function_cd089b2e(*killstreaktype) {
     player disableweaponcycling();
     player setclientuivisibilityflag("hud_visible", 0);
     if (isdefined(level.var_44018194)) {
-        /#
-            assert(isdefined(level.var_8811f9ea));
-        #/
+        assert(isdefined(level.var_8811f9ea));
         var_1ad7055e = [[ level.var_8811f9ea ]]();
         var_b8155147 = isarray(var_1ad7055e) ? var_1ad7055e.size : 0;
         level clientfield::set_world_uimodel("hudItems.spyMatchData.playerCount", var_b8155147);
@@ -70,7 +62,6 @@ function function_cd089b2e(*killstreaktype) {
         level.var_44018194 hud_spy::set_state(player, "WantedOrderMenu");
         player flag::set("selectingWantedPlayer");
         player thread function_eb585639();
-        event = undefined;
         event = player waittill(#"player_selected", #"hash_91a93ea58d7ad74", #"death", #"disconnect", #"game_ended");
         if (event._notify === "player_selected") {
             result = 1;
@@ -128,7 +119,6 @@ function private function_eb585639() {
     self endon(#"disconnect", #"death", #"hash_91a93ea58d7ad74", #"player_selected");
     level endon(#"game_ended");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         response = waitresult.response;

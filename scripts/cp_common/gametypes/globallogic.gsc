@@ -417,9 +417,7 @@ function killserverpc() {
     level.forcedend = 1;
     level.hostforcedend = 1;
     level.killserver = 1;
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     thread endgame();
 }
 
@@ -869,21 +867,11 @@ function gamehistoryplayerkicked() {
         scoreboardposition = level.players.size;
     }
     /#
-        /#
-            assert(isdefined(self.kills));
-        #/
-        /#
-            assert(isdefined(self.deaths));
-        #/
-        /#
-            assert(isdefined(self.score));
-        #/
-        /#
-            assert(isdefined(scoreboardposition));
-        #/
-        /#
-            assert(isdefined(teamscoreratio));
-        #/
+        assert(isdefined(self.kills));
+        assert(isdefined(self.deaths));
+        assert(isdefined(self.score));
+        assert(isdefined(scoreboardposition));
+        assert(isdefined(teamscoreratio));
     #/
     self gamehistoryfinishmatch(2, self.kills, self.deaths, self.score, scoreboardposition, teamscoreratio);
     if (isdefined(self.pers[#"matchesplayedstatstracked"])) {
@@ -1243,9 +1231,7 @@ function removedisconnectedplayerfromplacement() {
         return;
     }
     level.placement[#"all"][numplayers - 1] = undefined;
-    /#
-        assert(level.placement[#"all"].size == numplayers - 1);
-    #/
+    assert(level.placement[#"all"].size == numplayers - 1);
     /#
         assertproperplacement();
     #/
@@ -1351,9 +1337,7 @@ function getplacementforplayer(player) {
 function istopscoringplayer(*player) {
     topplayer = 0;
     updateplacement();
-    /#
-        assert(level.placement[#"all"].size > 0);
-    #/
+    assert(level.placement[#"all"].size > 0);
     if (level.placement[#"all"].size == 0) {
         return 0;
     }
@@ -1553,9 +1537,7 @@ function function_2905c18e() {
 // Checksum 0xfd44b950, Offset: 0x5b88
 // Size: 0xc0
 function checkteamscorelimitsoon(team) {
-    /#
-        assert(isdefined(team));
-    #/
+    assert(isdefined(team));
     if (level.scorelimit <= 0) {
         return;
     }
@@ -1576,9 +1558,7 @@ function checkteamscorelimitsoon(team) {
 // Checksum 0x7076ad05, Offset: 0x5c50
 // Size: 0xc8
 function checkplayerscorelimitsoon() {
-    /#
-        assert(isplayer(self));
-    #/
+    assert(isplayer(self));
     if (level.scorelimit <= 0) {
         return;
     }
@@ -1829,9 +1809,7 @@ function callback_startgametype() {
         if (!isdefined(game.defenders)) {
             game.defenders = #"axis";
         }
-        /#
-            assert(game.attackers != game.defenders);
-        #/
+        assert(game.attackers != game.defenders);
         foreach (team, _ in level.teams) {
             if (!isdefined(game.team)) {
                 game.team = #"cia";
@@ -2094,9 +2072,7 @@ function checkroundswitch() {
     if (!isdefined(level.onroundswitch)) {
         return false;
     }
-    /#
-        assert(game.roundsplayed > 0);
-    #/
+    assert(game.roundsplayed > 0);
     if (game.roundsplayed % level.roundswitch == 0) {
         [[ level.onroundswitch ]]();
         return true;

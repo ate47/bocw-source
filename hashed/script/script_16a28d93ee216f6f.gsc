@@ -22,9 +22,7 @@ function scalevolume(*ent, *vol) {
 // Checksum 0xb2ee8469, Offset: 0x130
 // Size: 0x42
 function corpse_init_entity() {
-    /#
-        assert(isdefined(self.stealth));
-    #/
+    assert(isdefined(self.stealth));
     self.stealth.corpse = spawnstruct();
 }
 
@@ -71,12 +69,8 @@ function set_corpse_ranges(array) {
 // Checksum 0x3d795d7b, Offset: 0x350
 // Size: 0x74
 function set_corpse_ignore() {
-    /#
-        assert(isdefined(level.stealth));
-    #/
-    /#
-        assert(isentity(self));
-    #/
+    assert(isdefined(level.stealth));
+    assert(isentity(self));
     level.stealth.ignore_corpse[self getentitynumber()] = self.origin;
 }
 
@@ -85,12 +79,8 @@ function set_corpse_ignore() {
 // Checksum 0x34acb71a, Offset: 0x3d0
 // Size: 0x74
 function set_corpse_entity() {
-    /#
-        assert(isdefined(level.stealth));
-    #/
-    /#
-        assert(isentity(self));
-    #/
+    assert(isdefined(level.stealth));
+    assert(isentity(self));
     level.stealth.additional_corpse[self getentitynumber()] = self;
 }
 
@@ -174,9 +164,7 @@ function corpse_sight() {
         }
         distsq = distancesquared(self.origin, corpseorigin);
         if (corpse corpse_check_shadow(corpseorigin)) {
-            /#
-                assert(level.stealth.corpse.dists[#"hash_67ecb968e26f1dee"] <= check_dist);
-            #/
+            assert(level.stealth.corpse.dists[#"hash_67ecb968e26f1dee"] <= check_dist);
             var_1adb66c8 = sqr(level.stealth.corpse.dists[#"hash_67ecb968e26f1dee"]);
             var_3ff1021a = var_1adb66c8;
         }
@@ -209,7 +197,7 @@ function corpse_sight() {
             }
         }
         sight = anglestoforward(self gettagangles("tag_eye"));
-        var_b455e74a = vectornormalize(corpseorigin + vectorscale((0, 0, 1), 30) - self geteye());
+        var_b455e74a = vectornormalize(corpseorigin + (0, 0, 30) - self geteye());
         if (vectordot(sight, var_b455e74a) > 0.55) {
             if (!isdefined(corpse.seen) && self cansee(corpse)) {
                 saw_corpse = corpse;
@@ -366,7 +354,7 @@ function suspicious_door_sighting() {
             }
         }
         sight = anglestoforward(self gettagangles("tag_eye"));
-        var_385f9620 = vectornormalize(doororigin + vectorscale((0, 0, 1), 30) - self geteye());
+        var_385f9620 = vectornormalize(doororigin + (0, 0, 30) - self geteye());
         if (vectordot(sight, var_385f9620) > 0.55) {
             if (!isdefined(door.seen) && self cansee(door) && util::can_see_ai(door.origin, self, 250, getplayers()[0])) {
                 saw_door = door;

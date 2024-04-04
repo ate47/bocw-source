@@ -220,7 +220,7 @@ function private function_d794f3ac() {
     var_6e000a0e = util::spawn_model("tag_origin", var_ceb9f97e.origin, var_ceb9f97e.angles);
     var_192a77dd linkto(var_6e000a0e);
     var_6e000a0e playsound(#"hash_2bf666c2ef742d89");
-    var_6e000a0e rotateto(var_6e000a0e.angles + vectorscale((0, -1, 0), 120), 1, 0.25, 0.25);
+    var_6e000a0e rotateto(var_6e000a0e.angles + (0, -120, 0), 1, 0.25, 0.25);
     var_6e000a0e waittill(#"rotatedone");
     if (isdefined(var_6e000a0e)) {
         var_6e000a0e delete();
@@ -241,7 +241,7 @@ function private function_e663b61e() {
     var_a801f97d connectpaths();
     var_a801f97d linkto(var_8e0d050c);
     var_8e0d050c playsound(#"hash_2170098ce6c0016");
-    var_8e0d050c moveto(var_8e0d050c.origin + vectorscale((0, 0, 1), 90), 2, 0.5, 0.5);
+    var_8e0d050c moveto(var_8e0d050c.origin + (0, 0, 90), 2, 0.5, 0.5);
 }
 
 // Namespace namespace_9d3ef6c5/namespace_9d3ef6c5
@@ -294,7 +294,7 @@ function function_1fad5dd0() {
                 if (level flag::get_all(s_fasttravel.unitrigger_stub.var_a92d1b24)) {
                     var_b76ed368 = struct::get(s_fasttravel.unitrigger_stub.script_string, "targetname");
                     if (!isdefined(s_fasttravel.unitrigger_stub.var_4eadb6a8)) {
-                        s_fasttravel.unitrigger_stub.var_4eadb6a8 = util::spawn_model("tag_origin", var_b76ed368.origin, vectorscale((1, 0, 0), 270));
+                        s_fasttravel.unitrigger_stub.var_4eadb6a8 = util::spawn_model("tag_origin", var_b76ed368.origin, (270, 0, 0));
                     }
                     if (s_fasttravel.var_d7a120b9 === "up") {
                         s_fasttravel.unitrigger_stub.var_4eadb6a8 clientfield::set("" + #"hash_56ce10c39906bf70", 1);
@@ -360,7 +360,6 @@ function function_ca8f3b73() {
 function function_b5f4f0c() {
     level.var_a43447e4 = [];
     while (true) {
-        s_notify = undefined;
         s_notify = level waittill(#"fasttravel_bought");
         s_notify.player zm_vo::function_604084ea();
         if (!isdefined(level.var_a43447e4)) {

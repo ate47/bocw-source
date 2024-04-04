@@ -57,7 +57,6 @@ function private function_469dabd0(killstreaktype) {
 // Size: 0x2ce
 function private function_a2eec6c2(killstreaktype, killstreakweapon) {
     self endon(#"disconnect");
-    waitresult = undefined;
     waitresult = self waittill(#"weapon_fired", #"weapon_change", #"hash_24520f447c149637");
     if (waitresult._notify === #"hash_24520f447c149637") {
         self notify(#"cancel_selection");
@@ -85,9 +84,7 @@ function private function_a2eec6c2(killstreaktype, killstreakweapon) {
         str_notify = function_9e72a96(waitresult._notify);
         str_weapon = function_9e72a96(waitresult.weapon.name);
         var_d8d53d01 = isdefined(waitresult.last_weapon) ? function_9e72a96(waitresult.last_weapon.name) : "<unknown string>";
-        /#
-            assertmsg("<unknown string>" + str_notify + "<unknown string>" + str_weapon + "<unknown string>" + var_d8d53d01);
-        #/
+        assertmsg("<unknown string>" + str_notify + "<unknown string>" + str_weapon + "<unknown string>" + var_d8d53d01);
     #/
     self notify(#"cancel_selection");
 }
@@ -98,7 +95,6 @@ function private function_a2eec6c2(killstreaktype, killstreakweapon) {
 // Size: 0xec
 function function_be6de952(killstreaktype, var_94fe38b6) {
     self endon(#"disconnect");
-    waitresult = undefined;
     waitresult = self waittill(#"lockin_selection", #"cancel_selection");
     if (waitresult._notify === "lockin_selection") {
         wait(0.1);
@@ -122,7 +118,6 @@ function private function_f3305d7f(killstreaktype, var_c7502f87, var_7551540f) {
     var_17b7891d = "61205d598a90cb21" + killstreaktype;
     self notify(var_17b7891d);
     self endon(var_17b7891d);
-    waitresult = undefined;
     waitresult = self waittill(#"disconnect", #"cancel_selection", #"lockin_selection");
     if (waitresult._notify === "lockin_selection") {
         self waittill(#"disconnect", var_7551540f);
@@ -154,15 +149,15 @@ function private function_b66d4fac(killstreaktype, maxrange, var_f6825ff2, var_c
     self notify(var_17b7891d);
     self endon(var_17b7891d);
     self endon(#"disconnect", #"cancel_selection", #"lockin_selection");
-    var_4ad3bc13 = vectorscale((0, 0, 1), 8);
+    var_4ad3bc13 = (0, 0, 8);
     if (!isdefined(self.mdl_target[killstreaktype])) {
-        self.mdl_target[killstreaktype] = util::spawn_model("tag_origin", self.origin, vectorscale((1, 0, 0), 270));
+        self.mdl_target[killstreaktype] = util::spawn_model("tag_origin", self.origin, (270, 0, 0));
         self.mdl_target[killstreaktype].var_806c145b = var_c7502f87;
     } else {
         self function_ecb58f93(killstreaktype, self.mdl_target[killstreaktype].var_806c145b);
         waitframe(1);
         if (isplayer(self)) {
-            self.mdl_target[killstreaktype] = util::spawn_model("tag_origin", self.origin, vectorscale((1, 0, 0), 270));
+            self.mdl_target[killstreaktype] = util::spawn_model("tag_origin", self.origin, (270, 0, 0));
             self.mdl_target[killstreaktype].var_806c145b = var_c7502f87;
         }
     }

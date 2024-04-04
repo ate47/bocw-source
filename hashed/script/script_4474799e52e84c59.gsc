@@ -129,9 +129,7 @@ function function_546a7089(index) {
 // Checksum 0x5d2e1300, Offset: 0x820
 // Size: 0x5f8
 function function_3b0cb5a4(struct) {
-    /#
-        assert(isstruct(struct), "<unknown string>");
-    #/
+    assert(isstruct(struct), "<unknown string>");
     spawn_points = struct.contentgroups[#"hash_2535c42129449bb9"];
     foreach (point in spawn_points) {
         var_e57cfd4a = point.script_noteworthy;
@@ -155,9 +153,7 @@ function function_3b0cb5a4(struct) {
                 break;
             }
         } else {
-            /#
-                assert(0, "<unknown string>");
-            #/
+            assert(0, "<unknown string>");
         }
         if (getdvarint(#"hash_7dae47192308f053", 1)) {
             var_f8fadaec = #"hash_7bb0fd5062a04b85";
@@ -214,12 +210,8 @@ function function_fb2bc4ac(eventstruct) {
     player = eventstruct.activator;
     model = self.scriptmodel;
     var_e57cfd4a = self.var_e57cfd4a;
-    /#
-        assert(isdefined(model), "<unknown string>");
-    #/
-    /#
-        assert(isdefined(var_e57cfd4a), "<unknown string>");
-    #/
+    assert(isdefined(model), "<unknown string>");
+    assert(isdefined(var_e57cfd4a), "<unknown string>");
     if (is_true(model.opening)) {
         return;
     }
@@ -262,9 +254,7 @@ function function_fb2bc4ac(eventstruct) {
 // Size: 0x40c
 function function_35eeef70(var_e57cfd4a) {
     self endon(#"death");
-    /#
-        assert(isdefined(var_e57cfd4a), "<unknown string>");
-    #/
+    assert(isdefined(var_e57cfd4a), "<unknown string>");
     while (true) {
         foreach (player in getplayers()) {
             currentweapon = player getcurrentweapon();
@@ -386,8 +376,7 @@ function function_217a625a(a_ents) {
         }
         break;
     }
-    var_2faa8624 linkto(var_bf71a40b, "tag_tank", (0, 0, 0), vectorscale((-1, 0, 0), 28));
-    waitresult = undefined;
+    var_2faa8624 linkto(var_bf71a40b, "tag_tank", (0, 0, 0), (-28, 0, 0));
     waitresult = level waittill(#"silver_weapon_crate_closed", #"hash_685e9797cabb8ed", #"hash_142e9131e668557d");
     var_2faa8624 unlink();
     if (isdefined(var_2faa8624)) {
@@ -482,7 +471,6 @@ function function_8d9ddc22(player, var_e7772c37) {
                 level notify(#"hash_142e9131e668557d");
                 return;
             }
-            result = undefined;
             result = player waittilltimeout(5, #"death", #"weapon_change_complete", #"entering_last_stand");
             if (result._notify == #"timeout" || player getcurrentweapon() != var_d5c2e187) {
                 player notify(#"hash_6a9e5d5a03df7e27");
@@ -514,11 +502,7 @@ function function_8d9ddc22(player, var_e7772c37) {
                 var_981d2438.itementry = var_3383cd4e.itementry;
                 var_981d2438.id = var_3383cd4e.id;
             } else {
-                /#
-                    /#
-                        assertmsg("<unknown string>" + var_963f7bc9.name);
-                    #/
-                #/
+                assertmsg("<unknown string>" + var_963f7bc9.name);
             }
         }
         level notify(#"hash_685e9797cabb8ed");

@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using scripts\killstreaks\ac130_shared.csc;
+#using script_79917113c7593edd;
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\system_shared.csc;
 #using scripts\core_common\struct.csc;

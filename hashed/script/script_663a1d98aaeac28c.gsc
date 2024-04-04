@@ -69,16 +69,13 @@ function function_16a186f(*s_watcher, player) {
 function function_e95b2776() {
     self endon(#"delete", #"death");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"stationary");
         if (!isdefined(waitresult.target)) {
             self.angles = angleclamp180(self.angles);
             v_right = anglestoright(self.angles);
             var_6731520b = vectorcross(waitresult.normal, v_right);
             if (lengthsquared(var_6731520b) < 0.1) {
-                /#
-                    println("<unknown string>");
-                #/
+                println("<unknown string>");
                 break;
             }
             var_6731520b = vectornormalize(var_6731520b);

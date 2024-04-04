@@ -214,7 +214,7 @@ function function_793d38f() {
             waitframe(1);
             offset = 75 + 22 * 11;
             if (is_true(level.var_98e71360)) {
-                debug2dtext((105, offset * 0.85, 0), "<unknown string>" + "<unknown string>", (1, 1, 1), undefined, vectorscale((1, 1, 1), 0.1), 0.9, 0.85);
+                debug2dtext((105, offset * 0.85, 0), "<unknown string>" + "<unknown string>", (1, 1, 1), undefined, (0.1, 0.1, 0.1), 0.9, 0.85);
                 offset = offset - 22;
             } else {
                 offset = offset - 22;
@@ -223,7 +223,7 @@ function function_793d38f() {
                 index = (level.var_536f1a3 - i + level.var_cc43c151.size - 1) % level.var_cc43c151.size;
                 debug_struct = level.var_cc43c151[index];
                 string = debug_struct.timestamp + "<unknown string>" + "<unknown string>" + debug_struct.attacker + "<unknown string>" + "<unknown string>" + "<unknown string>" + debug_struct.damage + "<unknown string>" + debug_struct.var_d036befe + "<unknown string>" + "<unknown string>" + var_92abc4e4[debug_struct.element] + function_9e72a96(debug_struct.element) + "<unknown string>" + "<unknown string>" + "<unknown string>" + debug_struct.entity;
-                debug2dtext((105, offset * 0.85, 0), string, (1, 1, 1), undefined, i == 0 ? vectorscale((1, 1, 1), 0.2) : vectorscale((1, 1, 1), 0.1), 0.9, 0.85);
+                debug2dtext((105, offset * 0.85, 0), string, (1, 1, 1), undefined, i == 0 ? (0.2, 0.2, 0.2) : (0.1, 0.1, 0.1), 0.9, 0.85);
                 offset = offset - 22;
             }
         }

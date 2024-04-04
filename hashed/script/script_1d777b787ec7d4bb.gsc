@@ -226,7 +226,6 @@ function function_c03a8002(e_player) {
 function function_789417a9() {
     level endon(#"end_game");
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         e_player = waitresult.activator;
         if (level flag::get(#"hash_1c70d74ceb5e9aa2") || level flag::get(#"hash_49e515cdcf4bb8db")) {
@@ -568,7 +567,6 @@ function function_ca558ad5() {
     }
     var_f5a1c26a = 0;
     while (var_f5a1c26a < var_10ff40e4) {
-        result = undefined;
         result = level waittill(#"hash_7de17e8051b0d8d2");
         var_135c0555 = result.entity;
         attacker = result.attacker;
@@ -629,7 +627,6 @@ function function_30f8cfb4(satellite, zone_index, var_14a22ccd = 0) {
     zm_sq::function_3029d343(#"hash_8602209567f541c", e_objective);
     zm_sq::function_266d66eb(#"hash_68f4e9062d28524d", e_objective, undefined, var_9bb2940e, #"hash_3e7926c5aefe4406", undefined, &zm_gold_util::function_13ebb331, "vol_player_in_firebase");
     while (true) {
-        result = undefined;
         result = self waittill(#"damage");
         if (!isplayer(result.attacker)) {
             level notify("damage" + zone_index, {#amount:result.amount, #var_e3276b1e:satellite.mdl});
@@ -766,7 +763,6 @@ function function_bc369205(var_14a22ccd = 0, var_17f8efd5 = 0, var_d219813c = 0)
     }
     self flag::clear(#"hash_7288309470ca474f");
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill("damage" + self.script_int);
         amount = waitresult.amount;
         var_3b0cab15 = 4000;
@@ -1077,7 +1073,7 @@ function function_ef08f824() {
 function function_bdb2b85b(origin, angles, radius, num_spots, zone_name, max_height = 512) {
     level endon(#"game_ended");
     slots = [];
-    mins = vectorscale((-1, -1, 0), 10);
+    mins = (-10, -10, 0);
     maxs = (10, 10, 48);
     /#
         record3dtext("<unknown string>", origin, (0, 0, 1));
@@ -1087,7 +1083,7 @@ function function_bdb2b85b(origin, angles, radius, num_spots, zone_name, max_hei
         x = radius * cos(t + angles[1]);
         y = radius * sin(t + angles[1]);
         pos = (x, y, 0) + origin;
-        var_e07c7e8 = physicstrace(pos + vectorscale((0, 0, 1), 10), pos + vectorscale((0, 0, -1), 10), mins, maxs, self, 1);
+        var_e07c7e8 = physicstrace(pos + (0, 0, 10), pos + (0, 0, -10), mins, maxs, self, 1);
         var_c060661b = var_e07c7e8[#"position"];
         var_3e98a413 = getclosestpointonnavmesh(var_c060661b, 64, 15);
         if (isdefined(var_3e98a413)) {

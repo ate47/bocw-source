@@ -225,7 +225,6 @@ function function_42807ff9() {
     self notify(var_17b7891d);
     self endon(var_17b7891d);
     while (true) {
-        result = undefined;
         result = self waittill(#"reload_start");
         self function_d4759f13(0);
     }
@@ -439,10 +438,10 @@ function function_b80325b1(owner, position, var_23130969) {
     var_7ef7dc23.exploded = 0;
     var_7ef7dc23.var_bc60b6e0 = 1;
     var_7ef7dc23.var_23130969 = var_23130969;
-    var_7ef7dc23.var_13015f04 = position + vectorscale((0, 0, 1), 28);
+    var_7ef7dc23.var_13015f04 = position + (0, 0, 28);
     /#
         if (getdvarint(#"hash_49e9d3375f091d35", 0)) {
-            cylinder(var_7ef7dc23.origin, var_7ef7dc23.origin + vectorscale((0, 0, 1), 56), 15, (0, 1, 0), 0, 60);
+            cylinder(var_7ef7dc23.origin, var_7ef7dc23.origin + (0, 0, 56), 15, (0, 1, 0), 0, 60);
         }
     #/
     if (!isdefined(level.var_3afb1303)) {
@@ -476,7 +475,6 @@ function function_646f5566() {
     level endon(#"end_game");
     self endon(#"death");
     while (true) {
-        s_notify = undefined;
         s_notify = self waittill(#"ray_hit");
         if (!isdefined(self) || !self.is_active) {
             return;
@@ -547,7 +545,6 @@ function function_d60a354c() {
     level endon(#"end_game");
     self endon(#"explode");
     self endon(#"death");
-    waitresult = undefined;
     waitresult = self waittilltimeout(3, #"ray_hit");
     if (waitresult._notify !== "ray_hit") {
         /#
@@ -728,7 +725,6 @@ function function_bdb8126a() {
 // Checksum 0x5d60f0e5, Offset: 0x3018
 // Size: 0x94
 function function_5a2447b1(time) {
-    result = undefined;
     result = self waittilltimeout(time, #"actor_corpse", #"death");
     waittillframeend();
     if (isdefined(result.corpse)) {
@@ -749,7 +745,7 @@ function function_6a0ad00(msg, color = (1, 0, 0)) {
         if (!getdvarint(#"hash_49e9d3375f091d35", 0)) {
             return;
         }
-        print3d(self.origin + vectorscale((0, 0, 1), 60), msg, color, 1, 1, 10);
+        print3d(self.origin + (0, 0, 60), msg, color, 1, 1, 10);
     #/
 }
 

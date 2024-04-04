@@ -67,12 +67,8 @@ function function_a2d73bc3(team) {
 // Checksum 0xf9acd9bb, Offset: 0x280
 // Size: 0x9c
 function function_153000d0(male, female) {
-    /#
-        assert(isdefined(male));
-    #/
-    /#
-        assert(isdefined(female));
-    #/
+    assert(isdefined(male));
+    assert(isdefined(female));
     male_index = player_role::function_97d19493(male);
     female_index = player_role::function_97d19493(female);
     function_e8cc8373(male_index, female_index);
@@ -83,12 +79,8 @@ function function_153000d0(male, female) {
 // Checksum 0x55623d4a, Offset: 0x328
 // Size: 0x8c
 function private function_e8cc8373(male, female) {
-    /#
-        assert(isdefined(male));
-    #/
-    /#
-        assert(isdefined(female));
-    #/
+    assert(isdefined(male));
+    assert(isdefined(female));
     if (!function_74650d7()) {
         return;
     }
@@ -101,9 +93,7 @@ function private function_e8cc8373(male, female) {
 // Checksum 0xb9ab7823, Offset: 0x3c0
 // Size: 0xec
 function function_db5ddd5f(perk) {
-    /#
-        assert(isdefined(perk));
-    #/
+    assert(isdefined(perk));
     if (!function_74650d7()) {
         return;
     }

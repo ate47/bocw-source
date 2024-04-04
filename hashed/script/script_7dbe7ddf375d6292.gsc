@@ -128,7 +128,6 @@ function function_aa95d684(*watcher, *player) {
 // Size: 0x558
 function function_5f86757d() {
     level endon(#"game_ended");
-    wait_result = undefined;
     wait_result = self waittill(#"explode", #"death");
     if (isdefined(self) && isdefined(self.owner)) {
         players = getentitiesinradius(self.origin, 64, 1);

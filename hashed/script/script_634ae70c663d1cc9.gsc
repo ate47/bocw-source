@@ -247,7 +247,7 @@ function function_54f185a() {
     self notify(#"hash_5dc5b7f198cd1bec");
     self unlink();
     self triggerenable(0);
-    self.origin = vectorscale((0, 0, -1), 20000);
+    self.origin = (0, 0, -20000);
     type = self.type;
     self.var_a09cdd4f = 0;
     arrayremovevalue(level.doa.var_90dc2431[type + "_active"], self);
@@ -302,9 +302,7 @@ function function_3874b272(type, var_2c5f6748) {
         self thread namespace_98036e8c::function_1ba8281d();
         return;
     default:
-        /#
-            assert(0, "<unknown string>");
-        #/
+        assert(0, "<unknown string>");
         break;
     }
 }

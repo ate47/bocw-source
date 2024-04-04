@@ -7,21 +7,8 @@
 // Method(s) 15 Total 22
 class cluielembar : cluielem {
 
-    // Namespace cluielembar/luielembar
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x16e02915, Offset: 0x6b0
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace cluielembar/luielembar
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0x1c02379d, Offset: 0xb80
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace cluielembar/luielembar
     // Params 2, eflags: 0x2 linked
@@ -36,7 +23,7 @@ class cluielembar : cluielem {
     // Checksum 0xadc14e25, Offset: 0xa18
     // Size: 0x6c
     function set_green(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 8, int(value * (16 - 1)), 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 8, int(value * (16 - 1)), 0);
     }
 
     // Namespace cluielembar/luielembar
@@ -44,7 +31,7 @@ class cluielembar : cluielem {
     // Checksum 0x80f446c3, Offset: 0x8d0
     // Size: 0x4c
     function set_fadeovertime(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 5, value, 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 5, value, 0);
     }
 
     // Namespace cluielembar/luielembar
@@ -60,7 +47,7 @@ class cluielembar : cluielem {
     // Checksum 0x6093b6c7, Offset: 0x878
     // Size: 0x4c
     function set_height(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 4, value, 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 4, value, 0);
     }
 
     // Namespace cluielembar/luielembar
@@ -68,7 +55,7 @@ class cluielembar : cluielem {
     // Checksum 0xad0cad77, Offset: 0xa90
     // Size: 0x6c
     function set_blue(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 9, int(value * (16 - 1)), 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 9, int(value * (16 - 1)), 0);
     }
 
     // Namespace cluielembar/luielembar
@@ -76,7 +63,7 @@ class cluielembar : cluielem {
     // Checksum 0x16509506, Offset: 0x820
     // Size: 0x4c
     function set_width(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 3, value, 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 3, value, 0);
     }
 
     // Namespace cluielembar/luielembar
@@ -92,7 +79,7 @@ class cluielembar : cluielem {
     // Checksum 0x7eeba1c3, Offset: 0x7c8
     // Size: 0x4c
     function set_y(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 2, value, 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 2, value, 0);
     }
 
     // Namespace cluielembar/luielembar
@@ -100,7 +87,7 @@ class cluielembar : cluielem {
     // Checksum 0x1a5ec481, Offset: 0x928
     // Size: 0x6c
     function set_alpha(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 6, int(value * (16 - 1)), 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 6, int(value * (16 - 1)), 0);
     }
 
     // Namespace cluielembar/luielembar
@@ -108,7 +95,7 @@ class cluielembar : cluielem {
     // Checksum 0xf5f538ab, Offset: 0x770
     // Size: 0x4c
     function set_x(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 1, value, 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 1, value, 0);
     }
 
     // Namespace cluielembar/luielembar
@@ -116,7 +103,7 @@ class cluielembar : cluielem {
     // Checksum 0x6feedf98, Offset: 0x9a0
     // Size: 0x6c
     function set_red(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 7, int(value * (16 - 1)), 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 7, int(value * (16 - 1)), 0);
     }
 
     // Namespace cluielembar/luielembar
@@ -124,7 +111,7 @@ class cluielembar : cluielem {
     // Checksum 0x54b97954, Offset: 0xb08
     // Size: 0x6c
     function set_bar_percent(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 10, int(value * (128 - 1)), 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 10, int(value * (128 - 1)), 0);
     }
 
 }

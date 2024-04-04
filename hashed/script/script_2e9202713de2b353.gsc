@@ -209,20 +209,14 @@ function function_e71841a() {
         var_5e62902b.origin = var_f6198c5b.origin;
         var_5e62902b.type = args[0];
         if (var_5e62902b.type == #"room_warp") {
-            /#
-                assert(args.size >= 4, "<unknown string>");
-            #/
+            assert(args.size >= 4, "<unknown string>");
             width = int(args[1]);
             length = int(args[2]);
             height = int(args[3]);
             var_5e62902b.trigger = namespace_ec06fe4a::spawntrigger("trigger_box", var_5e62902b.origin, 2, length, height, width);
-            /#
-                assert(isdefined(var_f6198c5b.script_noteworthy), "<unknown string>");
-            #/
+            assert(isdefined(var_f6198c5b.script_noteworthy), "<unknown string>");
             var_5e62902b.room = namespace_5a917022::function_c8892b0f(var_f6198c5b.script_noteworthy);
-            /#
-                assert(isdefined(var_5e62902b.room), "<unknown string>");
-            #/
+            assert(isdefined(var_5e62902b.room), "<unknown string>");
             if (isdefined(args[4])) {
                 var_5e62902b.trigger.var_ee2cd39c = namespace_ec06fe4a::spawnmodel(var_5e62902b.origin, args[4], var_f6198c5b.angles, "room_warp" + var_5e62902b.origin);
                 if (isdefined(var_5e62902b.trigger.var_ee2cd39c)) {

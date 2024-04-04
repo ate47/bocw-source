@@ -38,13 +38,13 @@ function init_clientfields() {
 function function_1fad5dd0(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self.fx = util::playfxontag(fieldname, #"hash_76a47d3490330bb6", self, "tag_origin");
-        self.sfx = self playloopsound("zmb_darkaether_portal_lp", undefined, vectorscale((1, 0, 0), 25));
+        self.sfx = self playloopsound("zmb_darkaether_portal_lp", undefined, (25, 0, 0));
         self function_bc183609(fieldname);
         return;
     }
     if (bwastimejump == 2) {
         self.fx = util::playfxontag(fieldname, #"hash_11996c3130b523ff", self, "tag_origin");
-        self.sfx = self playloopsound("zmb_darkaether_portal_lp", undefined, vectorscale((1, 0, 0), 25));
+        self.sfx = self playloopsound("zmb_darkaether_portal_lp", undefined, (25, 0, 0));
         self function_bc183609(fieldname);
         return;
     }

@@ -8,21 +8,8 @@
 // Method(s) 7 Total 14
 class class_c3742963 : cluielem {
 
-    // Namespace class_c3742963/namespace_ee630e04
-    // Params 0, eflags: 0x8
-    // Checksum 0x808719b2, Offset: 0x518
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_c3742963/namespace_ee630e04
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xeceda3ff, Offset: 0x6c8
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_c3742963/namespace_ee630e04
     // Params 2, eflags: 0x0
@@ -55,7 +42,7 @@ class class_c3742963 : cluielem {
     // Checksum 0xa5ce69b1, Offset: 0x678
     // Size: 0x44
     function function_afdd9f65(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "content_index", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "content_index", value);
     }
 
     // Namespace namespace_c3742963/namespace_ee630e04
@@ -63,7 +50,7 @@ class class_c3742963 : cluielem {
     // Checksum 0x146b6c8c, Offset: 0x628
     // Size: 0x44
     function set_visible(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "visible", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "visible", value);
     }
 
 }

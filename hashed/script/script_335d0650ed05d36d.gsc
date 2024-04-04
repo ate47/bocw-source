@@ -23,9 +23,7 @@
 // Checksum 0x7d9ad59e, Offset: 0x150
 // Size: 0xd4
 function function_d0149d6b() {
-    /#
-        assert(isdefined(level.spawnsystem));
-    #/
+    assert(isdefined(level.spawnsystem));
     if (!isdefined(level.spawnsystem.var_bfd7cd96)) {
         level.spawnsystem.var_bfd7cd96 = &function_4fe2525a;
     }
@@ -229,16 +227,12 @@ function function_b4f071cd() {
     var_ba7cd990 = struct::get(#"hash_3ccb068cc20d10fb");
     var_3ab559fb = struct::get(#"hash_2a16a120d7d497f0");
     if (!isdefined(var_ba7cd990) || !isdefined(var_3ab559fb)) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
     spawns = function_82061144("start_spawn", #"allies");
     if (spawns.size == 0) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
     var_bbd0ce18 = distancesquared(spawns[0].origin, var_ba7cd990.origin);

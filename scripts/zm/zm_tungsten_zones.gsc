@@ -540,7 +540,6 @@ function function_44b1279a() {
         } else if (var_710b2d6e != 4) {
             self clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 4);
         }
-        s_waitresult = undefined;
         s_waitresult = self waittill(#"zone_change");
     }
 }
@@ -570,9 +569,7 @@ function setupminimap(material, var_da0dddd2) {
         }
         var_aa9f20e7[var_aa9f20e7.size] = corner;
     }
-    /#
-        assert(var_32af51c9.size == 2 && var_aa9f20e7.size == 2, "connect_burger_to_concessions");
-    #/
+    assert(var_32af51c9.size == 2 && var_aa9f20e7.size == 2, "connect_burger_to_concessions");
     if (var_da0dddd2 == "tunnel") {
         self compass::function_d6cba2e9(material, var_32af51c9[0].origin[0], var_32af51c9[0].origin[1], var_32af51c9[1].origin[0], var_32af51c9[1].origin[1]);
     }

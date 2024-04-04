@@ -56,7 +56,6 @@ function function_c73ec9a(*local_client_num, *oldval, newval, *bnewent, *binitia
 function function_57e7e78e() {
     level endon(#"disconnect", #"game_ended");
     while (true) {
-        waitresult = undefined;
         waitresult = level waittill(#"hash_15feb9f40beffb1");
         xuids = associativearray();
         xuids[#"hash_71fa255feba2b605"] = util::function_48e57e36(waitresult.var_e278dfff);

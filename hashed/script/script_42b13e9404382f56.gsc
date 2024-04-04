@@ -8,21 +8,8 @@
 // Method(s) 8 Total 15
 class class_c982469d : cluielem {
 
-    // Namespace class_c982469d/zm_corrupted_health_bar
-    // Params 0, eflags: 0x8
-    // Checksum 0x651807dd, Offset: 0x268
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_c982469d/zm_corrupted_health_bar
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0x3642e974, Offset: 0x490
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_c982469d/zm_corrupted_health_bar
     // Params 2, eflags: 0x0
@@ -45,7 +32,7 @@ class class_c982469d : cluielem {
     // Checksum 0x5c8a1c32, Offset: 0x440
     // Size: 0x44
     function function_74adcd8a(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "armor_vis", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "armor_vis", value);
     }
 
     // Namespace namespace_c982469d/zm_corrupted_health_bar
@@ -64,7 +51,7 @@ class class_c982469d : cluielem {
     // Checksum 0xdb448747, Offset: 0x3f0
     // Size: 0x44
     function set_armor(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "armor", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "armor", value);
     }
 
     // Namespace namespace_c982469d/zm_corrupted_health_bar
@@ -72,7 +59,7 @@ class class_c982469d : cluielem {
     // Checksum 0x79d54b4c, Offset: 0x3a0
     // Size: 0x44
     function set_health(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "health", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "health", value);
     }
 
 }

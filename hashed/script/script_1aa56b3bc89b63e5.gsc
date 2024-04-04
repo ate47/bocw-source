@@ -24,9 +24,7 @@ function private autoexec __init__system__() {
 // Checksum 0xb43c2ceb, Offset: 0x1e0
 // Size: 0xd4
 function set_enabled(enabled, on_damage = 0, var_895878e1 = 3) {
-    /#
-        assert(isactor(self));
-    #/
+    assert(isactor(self));
     if (is_true(enabled)) {
         self.var_ca3bd64e = var_895878e1;
         self.var_fa99a047 = on_damage;
@@ -99,9 +97,7 @@ function private function_4ad903f4(einflictor, eattacker, idamage, idflags, smea
 // Checksum 0xd528aa84, Offset: 0x600
 // Size: 0x53c
 function private function_856a28c3(var_afe2c3af, einflictor, eattacker, *idamage, *idflags, *smeansofdeath, weapon, *vpoint, *vdir, *shitloc, *psoffsettime, *boneindex, *modelindex) {
-    /#
-        assert(isplayer(boneindex) || isplayer(psoffsettime));
-    #/
+    assert(isplayer(boneindex) || isplayer(psoffsettime));
     self notify(#"hash_ae39942308147bf");
     if (shitloc) {
         self.var_4a438c2b = 1;

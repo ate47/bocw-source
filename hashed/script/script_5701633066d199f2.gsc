@@ -145,163 +145,75 @@ function function_23f77d98() {
 // Checksum 0xbe0f26a, Offset: 0xdb8
 // Size: 0xf84
 function registerbehaviorscriptfunctions() {
-    /#
-        assert(isscriptfunctionptr(&function_33f06519));
-    #/
+    assert(isscriptfunctionptr(&function_33f06519));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_459fdfeaf87cae96", &function_33f06519);
-    /#
-        assert(isscriptfunctionptr(&function_dbce9550));
-    #/
+    assert(isscriptfunctionptr(&function_dbce9550));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2aebaa8271a615b", &function_dbce9550);
-    /#
-        assert(isscriptfunctionptr(&function_b87b3fef));
-    #/
+    assert(isscriptfunctionptr(&function_b87b3fef));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"doawaskilledbytesla", &function_b87b3fef);
-    /#
-        assert(isscriptfunctionptr(&function_e90927b7));
-    #/
+    assert(isscriptfunctionptr(&function_e90927b7));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2e09996956de0a27", &function_e90927b7);
-    /#
-        assert(!isdefined(&function_9b6830c9) || isscriptfunctionptr(&function_9b6830c9));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(&function_fbdc2cc4) || isscriptfunctionptr(&function_fbdc2cc4));
-    #/
+    assert(!isdefined(&function_9b6830c9) || isscriptfunctionptr(&function_9b6830c9));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(&function_fbdc2cc4) || isscriptfunctionptr(&function_fbdc2cc4));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_1a0fd593ee4f4d13", &function_9b6830c9, undefined, &function_fbdc2cc4);
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_73a2a53598a6f94c", undefined, undefined, undefined);
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_3793e8ada1f18447", undefined, undefined, undefined);
-    /#
-        assert(!isdefined(&function_1f0241e) || isscriptfunctionptr(&function_1f0241e));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
+    assert(!isdefined(&function_1f0241e) || isscriptfunctionptr(&function_1f0241e));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_2e49b8797978f93e", &function_1f0241e, undefined, undefined);
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_16f749aefbd4ce23", undefined, undefined, undefined);
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
     behaviortreenetworkutility::registerbehaviortreeaction(#"zombieidleaction", undefined, undefined, undefined);
-    /#
-        assert(!isdefined(&zombietraverseaction) || isscriptfunctionptr(&zombietraverseaction));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(&zombietraverseactionterminate) || isscriptfunctionptr(&zombietraverseactionterminate));
-    #/
+    assert(!isdefined(&zombietraverseaction) || isscriptfunctionptr(&zombietraverseaction));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(&zombietraverseactionterminate) || isscriptfunctionptr(&zombietraverseactionterminate));
     behaviortreenetworkutility::registerbehaviortreeaction(#"zombietraverseaction", &zombietraverseaction, undefined, &zombietraverseactionterminate);
-    /#
-        assert(isscriptfunctionptr(&function_abb6c18a));
-    #/
+    assert(isscriptfunctionptr(&function_abb6c18a));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_70f5a4ae6dc526d3", &function_abb6c18a);
-    /#
-        assert(isscriptfunctionptr(&function_e5fc1f3c));
-    #/
+    assert(isscriptfunctionptr(&function_e5fc1f3c));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_18eef53c3b7c9c68", &function_e5fc1f3c);
-    /#
-        assert(isscriptfunctionptr(&function_99ed5179));
-    #/
+    assert(isscriptfunctionptr(&function_99ed5179));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_5ceb7142be5709e8", &function_99ed5179);
-    /#
-        assert(isscriptfunctionptr(&function_50547dae));
-    #/
+    assert(isscriptfunctionptr(&function_50547dae));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_6c4bbcf0db9f4832", &function_50547dae);
-    /#
-        assert(isscriptfunctionptr(&zombieshouldknockdown));
-    #/
+    assert(isscriptfunctionptr(&zombieshouldknockdown));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"zombieshouldknockdown", &zombieshouldknockdown);
-    /#
-        assert(isscriptfunctionptr(&zombieknockdownactionstart));
-    #/
+    assert(isscriptfunctionptr(&zombieknockdownactionstart));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"zombieknockdownactionstart", &zombieknockdownactionstart);
-    /#
-        assert(isscriptfunctionptr(&function_c8939973));
-    #/
+    assert(isscriptfunctionptr(&function_c8939973));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_a6273a84b4237ce", &function_c8939973);
-    /#
-        assert(isscriptfunctionptr(&zombiegetupactionterminate));
-    #/
+    assert(isscriptfunctionptr(&zombiegetupactionterminate));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"zombiegetupactionterminate", &zombiegetupactionterminate);
-    /#
-        assert(isscriptfunctionptr(&function_32353f6e));
-    #/
+    assert(isscriptfunctionptr(&function_32353f6e));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"zombieshouldstun", &function_32353f6e);
-    /#
-        assert(isscriptfunctionptr(&function_32353f6e));
-    #/
+    assert(isscriptfunctionptr(&function_32353f6e));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_ed5637600484f3c", &function_32353f6e);
-    /#
-        assert(!isdefined(&function_645230f8) || isscriptfunctionptr(&function_645230f8));
-    #/
-    /#
-        assert(!isdefined(&function_83a9ca0f) || isscriptfunctionptr(&function_83a9ca0f));
-    #/
-    /#
-        assert(!isdefined(&function_4bc5ddbb) || isscriptfunctionptr(&function_4bc5ddbb));
-    #/
+    assert(!isdefined(&function_645230f8) || isscriptfunctionptr(&function_645230f8));
+    assert(!isdefined(&function_83a9ca0f) || isscriptfunctionptr(&function_83a9ca0f));
+    assert(!isdefined(&function_4bc5ddbb) || isscriptfunctionptr(&function_4bc5ddbb));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_38146c0a3e111cb3", &function_645230f8, &function_83a9ca0f, &function_4bc5ddbb);
-    /#
-        assert(isscriptfunctionptr(&stunstart));
-    #/
+    assert(isscriptfunctionptr(&stunstart));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_6f551ce50701a441", &stunstart);
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
-    /#
-        assert(!isdefined(&function_83a9ca0f) || isscriptfunctionptr(&function_83a9ca0f));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
-    #/
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    assert(!isdefined(&function_83a9ca0f) || isscriptfunctionptr(&function_83a9ca0f));
+    assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_5ab8d15ff77f1b6f", undefined, &function_83a9ca0f, undefined);
-    /#
-        assert(isscriptfunctionptr(&function_de68bf47));
-    #/
+    assert(isscriptfunctionptr(&function_de68bf47));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_e568b63ec039220", &function_de68bf47);
-    /#
-        assert(isscriptfunctionptr(&function_e2da0652));
-    #/
+    assert(isscriptfunctionptr(&function_e2da0652));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2363b19a9d5f0aa8", &function_e2da0652);
 }
 
@@ -329,9 +241,7 @@ function function_17d3b57() {
     if (namespace_4dae815d::function_59a9cf1d() == 4) {
         return (40 - curcount);
     }
-    /#
-        assert(0);
-    #/
+    assert(0);
     return 40 - curcount;
 }
 
@@ -376,9 +286,7 @@ function function_252dff4d(name, aitype, var_d240d5de, var_41157a40, unlocklevel
     if (!isdefined(level.doa.var_3a73503f)) {
         level.doa.var_3a73503f = [];
     }
-    /#
-        assert(isdefined(aitype));
-    #/
+    assert(isdefined(aitype));
     struct = spawnstruct();
     struct.name = name;
     struct.type = aitype;
@@ -394,9 +302,7 @@ function function_252dff4d(name, aitype, var_d240d5de, var_41157a40, unlocklevel
     }
     foreach (spawner in level.doa.var_3a73503f) {
         if (spawner.type == aitype && aitype != -1) {
-            /#
-                assert(0, "headshot_nochunks");
-            #/
+            assert(0, "headshot_nochunks");
         }
     }
     level.doa.var_3a73503f[level.doa.var_3a73503f.size] = struct;
@@ -407,9 +313,7 @@ function function_252dff4d(name, aitype, var_d240d5de, var_41157a40, unlocklevel
 // Checksum 0xd6d9561f, Offset: 0x2228
 // Size: 0x138
 function function_d1bc3f11(var_463f7b07, reset = 0) {
-    /#
-        assert(var_463f7b07 >= 0, "<unknown string>");
-    #/
+    assert(var_463f7b07 >= 0, "<unknown string>");
     if (reset) {
         level.doa.var_329c97a3 = [];
     }
@@ -459,7 +363,6 @@ function function_fce39c7a() {
     self endon("5639eeefb2d08db2");
     self endon(#"death");
     self.var_968a296f = undefined;
-    result = undefined;
     result = self waittill(#"bad_path");
     if (!isdefined(self.doa.var_baa2991d)) {
         self.doa.var_baa2991d = 0;
@@ -471,7 +374,6 @@ function function_fce39c7a() {
         namespace_1e25ad94::debugmsg("Entity " + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + " got a bad path notification going to: " + result.position + ". Redirecting to: " + nextpos + " BP Count = " + self.doa.var_baa2991d);
         self function_41354e51(nextpos, 1);
         self.var_72283e28 = gettime() + 10000;
-        result = undefined;
         result = self waittilltimeout(10, #"goal");
         if (result._notify == "goal") {
             self.doa.var_baa2991d = 0;
@@ -655,7 +557,6 @@ function function_572e5496(radius, baseorigin) {
             self.lastknownenemypos = undefined;
             self.var_860a34b9 = baseorigin;
             self function_41354e51(baseorigin, 1, 1);
-            result = undefined;
             result = self waittill(#"goal", #"damage");
             self.var_834ad023 = 0;
             if (result._notify === "goal") {
@@ -703,7 +604,6 @@ function function_39451598(var_370ac26d = getdvarint(#"hash_4321f22c262c3ad1", 1
     self notify("7415aa24bfa8ab0b");
     self endon("7415aa24bfa8ab0b");
     while (isdefined(self)) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         if (isdefined(waitresult.attacker) && isplayer(waitresult.attacker)) {
             if (waitresult.amount >= self.health) {
@@ -911,9 +811,7 @@ function function_c1f37cab() {
             [[ self.var_5603780 ]]();
             return;
         }
-        /#
-            assert(!is_true(self.boss));
-        #/
+        assert(!is_true(self.boss));
         self.var_c0bd8c06 = 1;
         self thread namespace_ec06fe4a::deletemeonnotify(#"hash_12b1eb419a23e3bd");
         self thread namespace_ec06fe4a::function_570729f0(5);
@@ -1014,9 +912,7 @@ function function_8971bbb7() {
 // Checksum 0x37ae65ab, Offset: 0x44d0
 // Size: 0x426
 function function_1bbf4511(origin, *var_f1479aab, context) {
-    /#
-        assert(isdefined(var_f1479aab));
-    #/
+    assert(isdefined(var_f1479aab));
     self endon(#"death");
     if (!is_true(self.boss) && isdefined(self.var_9b6df834)) {
         [[ self.var_9b6df834 ]]->waitinqueue(self);
@@ -1039,9 +935,7 @@ function function_1bbf4511(origin, *var_f1479aab, context) {
         }
     }
     var_f1479aab = adjustedorigin;
-    /#
-        assert(isdefined(var_f1479aab));
-    #/
+    assert(isdefined(var_f1479aab));
     if (isactor(self)) {
     }
     self setgoal(var_f1479aab);
@@ -1940,7 +1834,7 @@ function function_dab7edc(einflictor, eattacker, idamage, idflags, smeansofdeath
     if (smeansofdeath == "MOD_PISTOL_BULLET" || smeansofdeath == "MOD_RIFLE_BULLET" || smeansofdeath == "MOD_HEAD_SHOT") {
         var_799e18e5 = vpoint;
     } else {
-        var_799e18e5 = self.origin + vectorscale((0, 0, 1), 60);
+        var_799e18e5 = self.origin + (0, 0, 60);
     }
     if (var_5f32808d > 0) {
         damage = idamage;
@@ -1966,9 +1860,7 @@ function function_dab7edc(einflictor, eattacker, idamage, idflags, smeansofdeath
     self callback::callback(#"on_ai_damage", params);
     if (idamage > 0 && isplayer(eattacker)) {
         if (is_true(self.boss)) {
-            /#
-                assert(isdefined(self.var_9be3628d));
-            #/
+            assert(isdefined(self.var_9be3628d));
             self.var_9be3628d[eattacker.entnum] = self.var_9be3628d[eattacker.entnum] + idamage;
         }
         if (!isdefined(eattacker.pers[#"damagedone"])) {
@@ -2017,7 +1909,7 @@ function function_9b31d191(einflictor, eattacker, idamage, smeansofdeath, weapon
     if (!is_true(self.var_4dcf6637) && is_true(self.annihilate) || is_true(self.interdimensional_gun_kill) || isdefined(damagefromunderneath) && is_true(damagefromunderneath.bulletimpactexplode)) {
         self namespace_ed80aead::function_586ef822();
         if (is_true(self.interdimensional_gun_kill)) {
-            namespace_dfc652ee::function_b8f6a8cd(level.doa.var_4b113826, self.origin + vectorscale((0, 0, 1), 40), 1, 1, 1, self.angles);
+            namespace_dfc652ee::function_b8f6a8cd(level.doa.var_4b113826, self.origin + (0, 0, 40), 1, 1, 1, self.angles);
         }
     }
     if (isdefined(vdir)) {
@@ -2038,7 +1930,7 @@ function function_9b31d191(einflictor, eattacker, idamage, smeansofdeath, weapon
     }
     if (isdefined(shitloc)) {
         if (isplayer(shitloc)) {
-            if (is_true(shitloc.doa.var_3e81d24c)) {
+            if (is_true(shitloc.doa.infps)) {
                 shitloc namespace_d2efac9a::function_dc4e1885();
             }
             if (is_true(self.var_eeaac918) || is_true(self.var_6dc6e670)) {
@@ -2050,9 +1942,7 @@ function function_9b31d191(einflictor, eattacker, idamage, smeansofdeath, weapon
         }
     }
     if (timeoffset == "MOD_CRUSH") {
-        /#
-            assert(!is_true(self.boss));
-        #/
+        assert(!is_true(self.boss));
         self namespace_ed80aead::function_1f275794(undefined, shitloc);
         if (isdefined(shitloc)) {
             shitloc notify(#"hash_6d92185248475f65");
@@ -2102,7 +1992,7 @@ function function_c36e5cab(einflictor, eattacker, idamage, idflags, smeansofdeat
     if (smeansofdeath == "MOD_PISTOL_BULLET" || smeansofdeath == "MOD_RIFLE_BULLET" || smeansofdeath == "MOD_HEAD_SHOT") {
         var_799e18e5 = vpoint;
     } else {
-        var_799e18e5 = self.origin + vectorscale((0, 0, 1), 60);
+        var_799e18e5 = self.origin + (0, 0, 60);
     }
     hud::function_c9800094(eattacker, var_799e18e5, int(idamage / 10), var_5f32808d);
     idamage = int(idamage);
@@ -2393,11 +2283,9 @@ function function_e10af211(var_a349a77f, trailfx, impactfx = "turret_impact", va
     self endon(#"death");
     if (!isdefined(var_a349a77f)) {
         if (namespace_4dae815d::function_59a9cf1d() == 0) {
-            var_a349a77f = [[ level.doa.var_39e3fa99 ]]->function_70fb5745().origin + vectorscale((0, 0, 1), 2000);
+            var_a349a77f = [[ level.doa.var_39e3fa99 ]]->function_70fb5745().origin + (0, 0, 2000);
         } else {
-            /#
-                assert(0, "<unknown string>");
-            #/
+            assert(0, "<unknown string>");
         }
     }
     if (!isdefined(var_a349a77f)) {
@@ -2411,7 +2299,7 @@ function function_e10af211(var_a349a77f, trailfx, impactfx = "turret_impact", va
     }
     groundpos = namespace_ec06fe4a::function_65ee50ba(var_a349a77f, 32, -3000);
     if (is_true(var_f635f46a)) {
-        var_13aa549b = namespace_ec06fe4a::spawnmodel(groundpos + vectorscale((0, 0, 1), 24), "tag_origin");
+        var_13aa549b = namespace_ec06fe4a::spawnmodel(groundpos + (0, 0, 24), "tag_origin");
         if (isdefined(var_13aa549b)) {
             var_13aa549b namespace_83eb6304::function_3ecfde67("incoming_impact");
             var_13aa549b thread namespace_ec06fe4a::function_d55f042c(self, "death");

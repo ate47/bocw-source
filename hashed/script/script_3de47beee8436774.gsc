@@ -363,7 +363,7 @@ function function_e1c02ad2() {
     var_d231fd39 hide();
     level waittill(#"hash_6d5dee70f2cbd555");
     level thread scene::play(#"hash_3e6782ff3f9727c5");
-    radiusdamage(s_target.origin - vectorscale((0, 0, 1), 200), 512, 500, 500);
+    radiusdamage(s_target.origin - (0, 0, 200), 512, 500, 500);
     earthquake(0.25, 1, s_target.origin, 2500);
     level.player playrumbleonentity("damage_heavy");
     level waittill(#"hash_f8089be6fd4f682");
@@ -381,7 +381,6 @@ function function_9ca7e163() {
     var_4e227252 = 0;
     level clientfield::set("" + #"hash_147afd2c82d374fe", 1);
     while (true) {
-        s_waitresult = undefined;
         s_waitresult = trigger waittill(#"damage");
         if (s_waitresult.attacker === level.player) {
             var_4e227252 = var_4e227252 + s_waitresult.amount;
@@ -737,7 +736,6 @@ function function_428180d() {
     }
     wait(2);
     level.player dialogue::queue("vox_cp_armd_00004_adlr_focusfireonthec_42");
-    s_waitresult = undefined;
     s_waitresult = level waittilltimeout(4, #"hash_20b54b22a8747044");
     if (s_waitresult._notify === "mortar_orbit_red_barrel_destroyed") {
         wait(1);
@@ -753,7 +751,6 @@ function function_428180d() {
         level.player dialogue::queue("vox_cp_armd_00004_adlr_dontletupbell_e6");
         wait(1);
     }
-    s_waitresult = undefined;
     s_waitresult = level waittilltimeout(4, #"hash_20b54b22a8747044");
     if (s_waitresult._notify === "mortar_orbit_red_barrel_destroyed") {
         wait(1);
@@ -981,7 +978,7 @@ function function_97519340(nd_start) {
     self.origin = nd_start.origin;
     self.angles = nd_start.angles;
     self setgoalyaw((0, self.angles[1], 0)[1]);
-    self function_a57c34b7(self.origin + vectorscale((0, 0, 1), 4), 1, 0);
+    self function_a57c34b7(self.origin + (0, 0, 4), 1, 0);
     self setyawspeed(120, 60, 60);
     self setmaxpitchroll(30, 60);
     self.var_cb55c804 = 256;
@@ -1348,7 +1345,7 @@ function function_24c9e377() {
     self cleartargetyaw();
     self cleargoalyaw();
     self function_d4c687c9();
-    self function_a57c34b7(self.origin + vectorscale((0, 0, 1), 4), 1, 0);
+    self function_a57c34b7(self.origin + (0, 0, 4), 1, 0);
     self setspeed(30, 20, 20);
 }
 
@@ -1363,7 +1360,7 @@ function function_5a365113(var_7e2d8151, var_1eea8080 = 0) {
     if (var_1eea8080) {
         self setspeed(30, 20, 20);
         self vehlookat(var_7e2d8151.origin);
-        self function_a57c34b7(var_7e2d8151.origin + vectorscale((0, 0, 1), 500), 1, 0);
+        self function_a57c34b7(var_7e2d8151.origin + (0, 0, 500), 1, 0);
         self.var_cb55c804 = 256;
         self setneargoalnotifydist(self.var_cb55c804);
         self sethoverparams(30, 20, 20);
@@ -1498,7 +1495,6 @@ function function_469dbbc4(a_ents) {
     enemy thread function_77ff9ff2();
     enemy thread function_aad3f658();
     level scene::remove_scene_func(#"hash_47c1f9bed49aef1b", &function_469dbbc4, "init");
-    waitresult = undefined;
     waitresult = enemy waittill(#"damage");
     self thread function_119bac80(waitresult.attacker);
     level notify(#"hash_6c9ae8bf940ed483");
@@ -1523,7 +1519,6 @@ function function_119bac80(attacker) {
     self endon(#"death");
     function_c1a275eb(attacker);
     while (isdefined(self)) {
-        waitresult = undefined;
         waitresult = self waittill(#"damage");
         function_c1a275eb(waitresult.attacker);
     }
@@ -1783,7 +1778,6 @@ function function_f2cbcaaa() {
 function function_291146ea() {
     self.a.nodeath = 1;
     self.skipdeath = 1;
-    waitresult = undefined;
     waitresult = self waittill(#"damage", #"death");
     self thread function_119bac80(waitresult.attacker);
     self scene::play(#"hash_7766f548c20a2de7", "Shot 1", self);
@@ -1813,8 +1807,8 @@ function function_c25d3a03() {
     var_706eb820 = getent("windowbash_shutter_right", "targetname");
     var_9914920b = getent("windowbash_shutter_collision", "targetname");
     self waittill(#"hash_55c9dfd739723702");
-    var_cc8a06e0 rotateto(vectorscale((0, 1, 0), 290), 0.1);
-    var_706eb820 rotateto(vectorscale((0, 1, 0), 170), 0.1);
+    var_cc8a06e0 rotateto((0, 290, 0), 0.1);
+    var_706eb820 rotateto((0, 170, 0), 0.1);
     var_9914920b delete();
     if (isdefined(level.var_52874eb2)) {
         self setpersonalthreatbias(level.var_52874eb2, -10000);
@@ -1882,7 +1876,6 @@ function function_7f4a10e5() {
     self endon(#"death");
     level scene::play(#"hash_2b1584529efce6e9", "intro", self);
     level thread scene::play(#"hash_2b1584529efce6e9", "loop", self);
-    waitresult = undefined;
     waitresult = self waittilltimeout(1.3, #"damage");
     self thread function_119bac80(waitresult.attacker);
     if (waitresult._notify == "damage") {
@@ -1924,7 +1917,6 @@ function function_c98cbd4e() {
 // Size: 0x17c
 function function_558f59db(var_cc827aa1) {
     self endon(#"death");
-    waitresult = undefined;
     waitresult = self waittill(#"damage");
     self thread function_119bac80(waitresult.attacker);
     if (isdefined(self) && isdefined(waitresult.attacker)) {
@@ -2066,7 +2058,6 @@ function function_566d3929() {
 // Checksum 0xca246661, Offset: 0xb260
 // Size: 0x1ec
 function function_e12e064f() {
-    waitresult = undefined;
     waitresult = self waittill(#"damage", #"death");
     self thread function_119bac80(waitresult.attacker);
     self scene::stop();
@@ -2504,7 +2495,7 @@ function function_3d691322() {
     level objectives::complete("armada_obj_mortar_goto_red_door");
     level.buddy.allowbattlechatter[#"bc"] = 0;
     level objectives::function_4eb5c04a("armada_obj_mortar_open_red_door", var_e361d345.origin, #"hash_56b4845f8e5f7fe6");
-    var_e361d345 util::create_cursor_hint(undefined, vectorscale((0, 0, 1), 3), #"hash_725b894f542049b0", 64, undefined, undefined, undefined, 128);
+    var_e361d345 util::create_cursor_hint(undefined, (0, 0, 3), #"hash_725b894f542049b0", 64, undefined, undefined, undefined, 128);
     var_e361d345 prompts::set_objective("armada_obj_mortar_open_red_door");
     var_e361d345 waittill(#"trigger");
     playsoundatposition(#"hash_122a651ea798052a", (0, 0, 0));
@@ -2520,7 +2511,7 @@ function function_3d691322() {
     level thread function_766af271();
     level.player thread function_4bf5cfff();
     level waittilltimeout(23, #"hash_e17270abc5bbc3a");
-    level objectives::goto("armada_obj_mortar_pickup_dossier", var_83809bc3.origin + vectorscale((0, 0, 1), 3), #"hash_6d35027c1e7e2463", 1, 0);
+    level objectives::goto("armada_obj_mortar_pickup_dossier", var_83809bc3.origin + (0, 0, 3), #"hash_6d35027c1e7e2463", 1, 0);
     var_83809bc3 util::create_cursor_hint(undefined, (0, 0, 0), #"hash_2830457a70bfc369", 64, undefined, undefined, undefined, 256);
     var_83809bc3 prompts::set_objective("armada_obj_mortar_pickup_dossier");
     var_83809bc3 waittill(#"trigger");
@@ -3041,7 +3032,7 @@ function function_e9339cdf() {
 function function_cdf5e193() {
     var_338850b9 = struct::get("obj_mortar_exfil_chopper", "targetname");
     level objectives::function_4eb5c04a("armada_obj_board_exfil_huey", var_338850b9.origin, #"hash_18816c129c6324ee");
-    var_338850b9 util::create_cursor_hint(undefined, vectorscale((0, 0, -1), 3), #"hash_3b23a8397807c7de", 64, undefined, undefined, undefined, 128);
+    var_338850b9 util::create_cursor_hint(undefined, (0, 0, -3), #"hash_3b23a8397807c7de", 64, undefined, undefined, undefined, 128);
     var_338850b9 prompts::set_objective("armada_obj_board_exfil_huey");
     var_338850b9 waittill(#"trigger");
     objectives::complete("armada_obj_board_exfil_huey");

@@ -344,9 +344,7 @@ function function_66980cf3() {
 // Checksum 0xd1017042, Offset: 0x1448
 // Size: 0x5c
 function function_de8dda88(str_name) {
-    /#
-        assert(isdefined(level.var_f9c9c0[str_name]), "<unknown string>" + str_name + "<unknown string>");
-    #/
+    assert(isdefined(level.var_f9c9c0[str_name]), "<unknown string>" + str_name + "<unknown string>");
     self.var_e3ab1888[str_name] = 0;
 }
 
@@ -355,9 +353,7 @@ function function_de8dda88(str_name) {
 // Checksum 0x18d4d1d0, Offset: 0x14b0
 // Size: 0x2ce
 function do_damage(str_name, n_damage, e_ent, disable_ui) {
-    /#
-        assert(isdefined(level.var_f9c9c0[str_name]), "<unknown string>" + str_name + "<unknown string>");
-    #/
+    assert(isdefined(level.var_f9c9c0[str_name]), "<unknown string>" + str_name + "<unknown string>");
     if (!isdefined(disable_ui)) {
         disable_ui = 0;
     }
@@ -435,9 +431,7 @@ function function_c64631b9(*str_notify) {
 // Checksum 0x9d62f216, Offset: 0x18f8
 // Size: 0x50
 function function_a4d2293(str_name) {
-    /#
-        assert(isdefined(self.var_e3ab1888[str_name]), "<unknown string>" + str_name + "<unknown string>");
-    #/
+    assert(isdefined(self.var_e3ab1888[str_name]), "<unknown string>" + str_name + "<unknown string>");
     return self.var_e3ab1888[str_name];
 }
 
@@ -446,18 +440,10 @@ function function_a4d2293(str_name) {
 // Checksum 0x58147a9a, Offset: 0x1950
 // Size: 0x138
 function function_838a3ba4(str_name) {
-    /#
-        assert(isdefined(self.var_e3ab1888[str_name]), "<unknown string>" + str_name + "<unknown string>");
-    #/
-    /#
-        assert(isdefined(level.var_f9c9c0[str_name]), "<unknown string>" + str_name + "<unknown string>");
-    #/
-    /#
-        assert(isdefined(level.var_f9c9c0[str_name].var_43c0c72), "<unknown string>" + str_name + "<unknown string>");
-    #/
-    /#
-        assert(level.var_f9c9c0[str_name].var_43c0c72 != 0, "<unknown string>" + str_name + "<unknown string>");
-    #/
+    assert(isdefined(self.var_e3ab1888[str_name]), "<unknown string>" + str_name + "<unknown string>");
+    assert(isdefined(level.var_f9c9c0[str_name]), "<unknown string>" + str_name + "<unknown string>");
+    assert(isdefined(level.var_f9c9c0[str_name].var_43c0c72), "<unknown string>" + str_name + "<unknown string>");
+    assert(level.var_f9c9c0[str_name].var_43c0c72 != 0, "<unknown string>" + str_name + "<unknown string>");
     return self.var_e3ab1888[str_name] / level.var_f9c9c0[str_name].var_43c0c72;
 }
 
@@ -466,9 +452,7 @@ function function_838a3ba4(str_name) {
 // Checksum 0xbfbb512c, Offset: 0x1a90
 // Size: 0x6c
 function function_e9b38487(str_name, var_e7cbf6d7 = 1) {
-    /#
-        assert(isdefined(self.var_faa7fdee[str_name]), "<unknown string>" + str_name + "<unknown string>");
-    #/
+    assert(isdefined(self.var_faa7fdee[str_name]), "<unknown string>" + str_name + "<unknown string>");
     self.var_faa7fdee[str_name] = var_e7cbf6d7;
 }
 
@@ -760,9 +744,7 @@ function function_a80c4c4f(n_time, var_a64e984c = 1) {
 // Checksum 0x102fdac2, Offset: 0x2b70
 // Size: 0x1d0
 function function_54b9a44e(str_hazard, var_25dc3e31, n_time, var_a64e984c) {
-    /#
-        assert(isdefined(level.var_f9c9c0[str_hazard]), "<unknown string>" + str_hazard + "<unknown string>");
-    #/
+    assert(isdefined(level.var_f9c9c0[str_hazard]), "<unknown string>" + str_hazard + "<unknown string>");
     self notify("stop_hazard_dot_" + str_hazard);
     self endon("stop_hazard_dot_" + str_hazard, #"death");
     self function_e9b38487(str_hazard, 0);

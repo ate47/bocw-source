@@ -43,7 +43,6 @@ function function_49caf2d6() {
     self notify("5911fdf5a238fc16");
     self endon("5911fdf5a238fc16");
     self thread namespace_268747c0::function_978c05b5();
-    result = undefined;
     result = self waittill(#"hash_3e251384a5400dce");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
         arrayremovevalue(level.doa.var_ed906439, self);
@@ -85,13 +84,9 @@ function function_4acf40a(trap, var_7c56394 = 0, modelname) {
 // Size: 0x32c
 function function_7ae8d74a(trap, page = 0) {
     if (!is_true(trap.initialized)) {
-        /#
-            assert(isdefined(trap.script_parameters), "<unknown string>");
-        #/
+        assert(isdefined(trap.script_parameters), "<unknown string>");
         args = strtok(trap.script_parameters, ";");
-        /#
-            assert(args.size >= 4, "<unknown string>");
-        #/
+        assert(args.size >= 4, "<unknown string>");
         trap.type = hash(args[0]);
         trap.radius = int(args[1]);
         trap.height = int(args[2]);
@@ -242,7 +237,6 @@ function function_d1b295d7(trap) {
     self endon(#"death", #"hash_3e251384a5400dce", #"hash_5dc5b7f198cd1bec");
     var_f3e30707 = (isdefined(trap.var_f3e30707) ? trap.var_f3e30707 : 1) * 1000;
     while (true) {
-        result = undefined;
         result = self waittill(#"trigger");
         guy = result.activator;
         if (!isdefined(guy)) {

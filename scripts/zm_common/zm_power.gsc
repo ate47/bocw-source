@@ -131,7 +131,6 @@ function electric_switch() {
             self sethintstring(#"zombie/electric_switch");
         }
         self setvisibletoall();
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         user = waitresult.activator;
         if (is_true(self.var_b9eb2dbb)) {
@@ -182,7 +181,6 @@ function electric_switch() {
             }
         }
         self setvisibletoall();
-        waitresult = undefined;
         waitresult = self waittill(#"trigger");
         user = waitresult.activator;
         self setinvisibletoall();
@@ -429,9 +427,7 @@ function revert_power_to_list(delta, origin, radius, powered_list) {
 function revert_power(delta, origin, radius, *powered_list) {
     if (origin > 0) {
         self.depowered_count--;
-        /#
-            assert(self.depowered_count >= 0, "<unknown string>");
-        #/
+        assert(self.depowered_count >= 0, "<unknown string>");
         if (self.depowered_count == 0 && self.powered_count > 0 && !self.power) {
             self.power = 1;
             self [[ self.power_on_func ]](radius, powered_list);
@@ -440,9 +436,7 @@ function revert_power(delta, origin, radius, *powered_list) {
     }
     if (origin < 0) {
         self.powered_count--;
-        /#
-            assert(self.powered_count >= 0, "<unknown string>");
-        #/
+        assert(self.powered_count >= 0, "<unknown string>");
         if (self.powered_count == 0 && self.power) {
             self.power = 0;
             self [[ self.power_off_func ]](radius, powered_list);
@@ -456,9 +450,7 @@ function revert_power(delta, origin, radius, *powered_list) {
 // Size: 0xc8
 function add_local_power(origin, radius) {
     localpower = spawnstruct();
-    /#
-        println("<unknown string>" + origin + "<unknown string>" + radius + "<unknown string>");
-    #/
+    println("<unknown string>" + origin + "<unknown string>" + radius + "<unknown string>");
     localpower.origin = origin;
     localpower.radius = radius;
     localpower.enabled_list = change_power_in_radius(1, origin, radius);
@@ -498,9 +490,7 @@ function move_local_power(localpower, origin) {
 // Checksum 0x3c74a4b2, Offset: 0x1d30
 // Size: 0x104
 function end_local_power(localpower) {
-    /#
-        println("<unknown string>" + localpower.origin + "<unknown string>" + localpower.radius + "<unknown string>");
-    #/
+    println("<unknown string>" + localpower.origin + "<unknown string>" + localpower.radius + "<unknown string>");
     if (isdefined(localpower.enabled_list)) {
         revert_power_to_list(-1, localpower.origin, localpower.radius, localpower.enabled_list);
     }
@@ -588,9 +578,7 @@ function set_global_power(on_off) {
 // Size: 0xfc
 function global_power(on_off) {
     if (on_off) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         if (!self.power) {
             self.power = 1;
             self [[ self.power_on_func ]]();
@@ -598,13 +586,9 @@ function global_power(on_off) {
         self.powered_count++;
         return;
     }
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     self.powered_count--;
-    /#
-        assert(self.powered_count >= 0, "<unknown string>");
-    #/
+    assert(self.powered_count >= 0, "<unknown string>");
     if (self.powered_count == 0 && self.power) {
         self.power = 0;
         self [[ self.power_off_func ]]();
@@ -688,9 +672,7 @@ function door_range(delta, origin, radius) {
 // Checksum 0x6392595e, Offset: 0x24d0
 // Size: 0x5c
 function door_power_on(*origin, *radius) {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     self.target.power_on = 1;
     self.target notify(#"power_on");
 }
@@ -700,9 +682,7 @@ function door_power_on(*origin, *radius) {
 // Checksum 0x252934ba, Offset: 0x2538
 // Size: 0x5e
 function door_power_off(*origin, *radius) {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     self.target notify(#"power_off");
     self.target.power_on = 0;
 }
@@ -712,9 +692,7 @@ function door_power_off(*origin, *radius) {
 // Checksum 0xcf3e7741, Offset: 0x25a0
 // Size: 0x5c
 function door_local_power_on(*origin, *radius) {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     self.target.local_power_on = 1;
     self.target notify(#"local_power_on");
 }
@@ -724,9 +702,7 @@ function door_local_power_on(*origin, *radius) {
 // Checksum 0x6280d5af, Offset: 0x2608
 // Size: 0x5e
 function door_local_power_off(*origin, *radius) {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     self.target notify(#"local_power_off");
     self.target.local_power_on = 0;
 }
@@ -772,9 +748,7 @@ function zombie_range(delta, origin, radius) {
 // Checksum 0xc48392d5, Offset: 0x2798
 // Size: 0x82
 function zombie_power_off(*origin, *radius) {
-    /#
-        println("<unknown string>");
-    #/
+    println("<unknown string>");
     for (i = 0; i < self.zombies.size; i++) {
         self.zombies[i] thread stun_zombie();
         waitframe(1);
@@ -813,7 +787,7 @@ function perk_range(*delta, origin, radius) {
         if (is_true(self.target.trigger_off)) {
             perkorigin = self.target.realorigin;
         } else if (is_true(self.target.disabled)) {
-            perkorigin = perkorigin + vectorscale((0, 0, 1), 10000);
+            perkorigin = perkorigin + (0, 0, 10000);
         }
         if (distancesquared(perkorigin, origin) < radius * radius) {
             return true;
@@ -827,9 +801,7 @@ function perk_range(*delta, origin, radius) {
 // Checksum 0xeac6e09e, Offset: 0x29b8
 // Size: 0x9c
 function perk_power_on(*origin, *radius) {
-    /#
-        println("<unknown string>" + self.target getvendingmachinenotify() + "<unknown string>");
-    #/
+    println("<unknown string>" + self.target getvendingmachinenotify() + "<unknown string>");
     level notify(self.target zm_perks::getvendingmachinenotify() + "_on");
     zm_perks::perk_unpause(self.target.script_notify);
 }
@@ -840,9 +812,7 @@ function perk_power_on(*origin, *radius) {
 // Size: 0x192
 function perk_power_off(*origin, *radius) {
     notify_name = self.target zm_perks::getvendingmachinenotify();
-    /#
-        println("<unknown string>" + self.target getvendingmachinenotify() + "<unknown string>");
-    #/
+    println("<unknown string>" + self.target getvendingmachinenotify() + "<unknown string>");
     self.target.unitrigger_stub notify(#"death");
     self.target.unitrigger_stub thread zm_perks::vending_trigger_think();
     if (isdefined(level._custom_perks[self.target.script_notify].var_4a48be24)) {

@@ -45,7 +45,7 @@ function private function_2a159d3e() {
 function private function_fcd7744f() {
     self hidepart("tag_ammo_all", "", 1);
     w_grenade = function_1ba6c697(self.grenade_type);
-    self util::create_cursor_hint(undefined, vectorscale((0, 0, 1), 3), undefined, undefined, undefined, &function_d5fc8564, undefined, undefined, undefined, undefined, 1, 0);
+    self util::create_cursor_hint(undefined, (0, 0, 3), undefined, undefined, undefined, &function_d5fc8564, undefined, undefined, undefined, undefined, 1, 0);
     self function_417045b(w_grenade, w_grenade.clipsize);
 }
 
@@ -80,9 +80,7 @@ function private function_1ba6c697(var_4847a929) {
         w_grenade = getweapon(var_4847a929);
         break;
     }
-    /#
-        assert(w_grenade != getweapon("<unknown string>"), "<unknown string>" + var_4847a929 + "<unknown string>");
-    #/
+    assert(w_grenade != getweapon("<unknown string>"), "<unknown string>" + var_4847a929 + "<unknown string>");
     return w_grenade;
 }
 

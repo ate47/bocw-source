@@ -206,9 +206,7 @@ function default_onspawnspectator(origin, angles) {
         return;
     }
     spawnpoints = spawning::get_spawnpoint_array("mp_global_intermission");
-    /#
-        assert(spawnpoints.size, "<unknown string>");
-    #/
+    assert(spawnpoints.size, "<unknown string>");
     spawnpoint = spawning::get_spawnpoint_random(spawnpoints);
     self function_85d45b4b(spawnpoint.origin, spawnpoint.angles);
 }

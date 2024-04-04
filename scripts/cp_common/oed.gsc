@@ -11,9 +11,9 @@
 #using scripts\core_common\array_shared.gsc;
 #using scripts\core_common\struct.gsc;
 
-#namespace namespace_446fe428;
+#namespace oed;
 
-// Namespace namespace_446fe428/namespace_446fe428
+// Namespace oed/oed
 // Params 0, eflags: 0x5
 // Checksum 0xefb54035, Offset: 0x198
 // Size: 0x4c
@@ -21,7 +21,7 @@ function private autoexec __init__system__() {
     system::register(#"oed", &preinit, &postinit, undefined, undefined);
 }
 
-// Namespace namespace_446fe428/namespace_446fe428
+// Namespace oed/oed
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9ea1eee3, Offset: 0x1f0
 // Size: 0x27c
@@ -44,7 +44,7 @@ function private preinit() {
     level.disable_thermal = &disable_thermal;
 }
 
-// Namespace namespace_446fe428/namespace_446fe428
+// Namespace oed/oed
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x478
 // Size: 0x4
@@ -52,7 +52,7 @@ function private postinit() {
     
 }
 
-// Namespace namespace_446fe428/namespace_446fe428
+// Namespace oed/oed
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8599d26e, Offset: 0x488
 // Size: 0x6c
@@ -64,7 +64,7 @@ function on_player_spawned() {
     self clientfield::set_to_player("sitrep_toggle", 1);
 }
 
-// Namespace namespace_446fe428/button_bit_actionslot_1_pressed
+// Namespace oed/button_bit_actionslot_1_pressed
 // Params 0, eflags: 0x20
 // Checksum 0x95a7123a, Offset: 0x500
 // Size: 0x8c
@@ -77,7 +77,7 @@ function event_handler[button_bit_actionslot_1_pressed] function_84d84898() {
     }
 }
 
-// Namespace namespace_446fe428/namespace_446fe428
+// Namespace oed/oed
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc0163027, Offset: 0x598
 // Size: 0x64
@@ -91,7 +91,7 @@ function function_9eccf6c1() {
     }
 }
 
-// Namespace namespace_446fe428/namespace_446fe428
+// Namespace oed/oed
 // Params 1, eflags: 0x2 linked
 // Checksum 0xb38d6f8b, Offset: 0x608
 // Size: 0x5c
@@ -104,7 +104,7 @@ function enable_thermal(var_5bf5152f) {
     }
 }
 
-// Namespace namespace_446fe428/namespace_446fe428
+// Namespace oed/oed
 // Params 0, eflags: 0x2 linked
 // Checksum 0x387ccfb4, Offset: 0x670
 // Size: 0x44
@@ -116,7 +116,7 @@ function function_5feac491() {
     }
 }
 
-// Namespace namespace_446fe428/namespace_446fe428
+// Namespace oed/oed
 // Params 0, eflags: 0x2 linked
 // Checksum 0x62af39ac, Offset: 0x6c0
 // Size: 0x16
@@ -124,7 +124,7 @@ function disable_thermal() {
     self notify(#"disable_thermal");
 }
 
-// Namespace namespace_446fe428/namespace_446fe428
+// Namespace oed/oed
 // Params 1, eflags: 0x0
 // Checksum 0xefdfedc9, Offset: 0x6e0
 // Size: 0xaa
@@ -135,7 +135,7 @@ function function_9ce86e2d(b_enabled = 1) {
     }
 }
 
-// Namespace namespace_446fe428/namespace_446fe428
+// Namespace oed/oed
 // Params 1, eflags: 0x2 linked
 // Checksum 0xa31077a, Offset: 0x798
 // Size: 0x4c
@@ -146,7 +146,7 @@ function enable_ev(b_enabled = 1) {
     }
 }
 
-// Namespace namespace_446fe428/namespace_446fe428
+// Namespace oed/oed
 // Params 1, eflags: 0x2 linked
 // Checksum 0x26a3ef7d, Offset: 0x7f0
 // Size: 0x5e
@@ -159,7 +159,7 @@ function function_4b06932(b_enabled = 1) {
     self notify(#"hash_2e8449934db3fd9d");
 }
 
-// Namespace namespace_446fe428/namespace_446fe428
+// Namespace oed/oed
 // Params 2, eflags: 0x0
 // Checksum 0xed5b94b7, Offset: 0x858
 // Size: 0x8c
@@ -173,7 +173,7 @@ function function_f2a6c166(*var_af4a3f3e, var_5bf5152f) {
     }
 }
 
-// Namespace namespace_446fe428/namespace_446fe428
+// Namespace oed/oed
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc2712c3, Offset: 0x8f0
 // Size: 0x34
@@ -184,7 +184,7 @@ function function_99b61739() {
     }
 }
 
-// Namespace namespace_446fe428/namespace_446fe428
+// Namespace oed/oed
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8ed2db1c, Offset: 0x930
 // Size: 0x24
@@ -192,7 +192,7 @@ function function_b925bd3c() {
     self clientfield::set("sitrep_material", 0);
 }
 
-// Namespace namespace_446fe428/namespace_446fe428
+// Namespace oed/oed
 // Params 1, eflags: 0x0
 // Checksum 0x6fa09561, Offset: 0x960
 // Size: 0xc8
@@ -203,7 +203,7 @@ function function_19b0de13(*b_active) {
     }
 }
 
-// Namespace namespace_446fe428/namespace_446fe428
+// Namespace oed/oed
 // Params 0, eflags: 0x0
 // Checksum 0x8575d89a, Offset: 0xa30
 // Size: 0xb2

@@ -138,7 +138,7 @@ function private function_7f8d6723(localclientnum, victim, var_d21483a5) {
     bullet = util::spawn_model(localclientnum, "attach_t9_bullet_762_tip_view", parms.startpos, parms.angles);
     var_ef954e24.angles = parms.angles;
     bullet linkto(var_ef954e24);
-    bullet rotatevelocity(vectorscale((0, 0, 1), 4000), 9999);
+    bullet rotatevelocity((0, 0, 4000), 9999);
     var_ef954e24 moveto(parms.targetpos, parms.time);
     thread function_ff6d0f8b(localclientnum, parms, bullet);
     util::playfxontag(localclientnum, "maps/cp_takedown/fx9_hit3_sniper_trail", bullet, "tag_bullet_fx");
@@ -192,9 +192,9 @@ function private function_7f8d6723(localclientnum, victim, var_d21483a5) {
                 var_a4607150 = (0, 0, 0);
             }
         } else {
-            var_a4607150 = parms.angles + vectorscale((0, 1, 0), 90);
+            var_a4607150 = parms.angles + (0, 90, 0);
             if (math::cointoss()) {
-                var_a4607150 = parms.angles + vectorscale((0, -1, 0), 90);
+                var_a4607150 = parms.angles + (0, -90, 0);
             }
             offset_dir = anglestoforward(var_a4607150);
             offset_vec = offset_dir * -125;
@@ -205,9 +205,7 @@ function private function_7f8d6723(localclientnum, victim, var_d21483a5) {
         if (isdefined(var_52c1d392)) {
             var_ac259dff moveto(var_52c1d392.origin, 0.8);
             if (var_d21483a5 == 2 || var_d21483a5 == 4) {
-                /#
-                    assert(isdefined(focus_pos));
-                #/
+                assert(isdefined(focus_pos));
                 var_6de66f1f = focus_pos - var_52c1d392.origin;
                 if (lengthsquared(var_6de66f1f) > 0) {
                     var_6de66f1f = vectornormalize(var_6de66f1f);
@@ -230,9 +228,7 @@ function private function_7f8d6723(localclientnum, victim, var_d21483a5) {
         setdvar(#"runtime_time_scale", 1);
         wait(0.3);
         setdvar(#"runtime_time_scale", 0.1);
-        /#
-            assert(parms.var_6051349d > 0.3);
-        #/
+        assert(parms.var_6051349d > 0.3);
         wait(parms.var_6051349d - 0.3);
         setdvar(#"runtime_time_scale", 1);
         var_ac259dff delete();
@@ -290,9 +286,7 @@ function private function_63a2faff(startval, endval, lerptime) {
     self endon("3efe26a39ba7eb9f");
     self endon(#"death");
     if (!self postfx::function_556665f2("pstfx_speedblur")) {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         return;
     }
     i = 0;
@@ -303,9 +297,7 @@ function private function_63a2faff(startval, endval, lerptime) {
         i = i + self function_8e4cd43b() / 1000 * rate;
         self.var_2ba6387e = lerpfloat(startval, endval, i);
         self postfx::function_c8b5f318("pstfx_speedblur", "Blur", self.var_2ba6387e);
-        /#
-            println("<unknown string>" + self.var_2ba6387e);
-        #/
+        println("<unknown string>" + self.var_2ba6387e);
         waitframe(1);
     }
     self notify(#"hash_3999b38781a1f7c1");

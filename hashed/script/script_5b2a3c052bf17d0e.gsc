@@ -69,11 +69,11 @@ function function_4317fa79(destination) {
 function private function_bf25e268(var_193b9763) {
     foreach (var_5207017 in var_193b9763) {
         if (issubstr(var_5207017.targetname, "auto12")) {
-            var_5207017.v_launch = (0, 450, 1300) - vectorscale((0, 0, 1), 50);
+            var_5207017.v_launch = (0, 450, 1300) - (0, 0, 50);
             continue;
         }
         if (issubstr(var_5207017.targetname, "auto14")) {
-            var_5207017.origin = var_5207017.origin + anglestoright(var_5207017.angles) * 32 + vectorscale((0, 0, -1), 5);
+            var_5207017.origin = var_5207017.origin + anglestoright(var_5207017.angles) * 32 + (0, 0, -5);
         }
     }
 }
@@ -121,7 +121,7 @@ function private function_e7e5c90d(s_instance) {
         var_5207017.var_126a8ffb = content_manager::spawn_script_model(var_5207017, #"hash_31994e81355d0644");
         var_5207017.var_126a8ffb setforcenocull();
         var_5207017.var_126a8ffb clientfield::set("jump_pad_amb_sound_lp", 1);
-        v_offset = anglestoright(var_5207017.angles) * -20 + vectorscale((0, 0, 1), 64);
+        v_offset = anglestoright(var_5207017.angles) * -20 + (0, 0, 64);
         var_5207017.trigger = content_manager::spawn_interact(var_5207017, &function_2558caae, #"hash_6ba513ca9aca2762", 500, 48, 64, undefined, v_offset);
         var_5207017.trigger.var_5207017 = var_5207017;
         var_5207017.trigger thread zm_utility::function_2256923f(500);
@@ -203,7 +203,6 @@ function private function_789d2df5(var_5207017) {
     var_5207017.var_eb4df9cc = spawn("trigger_radius", var_5207017.origin, 0, 16, 64);
     var_5207017.var_eb4df9cc trigger::add_flags(16);
     while (isdefined(var_5207017.var_eb4df9cc) && var_5207017 flag::get(#"hash_7f36ba06f49e9217")) {
-        s_result = undefined;
         s_result = var_5207017.var_eb4df9cc waittill(#"trigger");
         if (!var_5207017 flag::get(#"hash_7f36ba06f49e9217")) {
             break;
@@ -346,7 +345,7 @@ function function_e6d9e6cd() {
     if (isdefined(self.var_b7e783e3)) {
         return;
     }
-    v_trigger_offset = vectorscale((0, 0, -1), 32);
+    v_trigger_offset = (0, 0, -32);
     a_s_spawns = struct::get_array(self.targetname, "target");
     foreach (s_spawn in self.var_e2d1273) {
         var_88f24b00 = content_manager::spawn_script_model(s_spawn, #"hash_8b8c98dda08574e");
@@ -356,7 +355,7 @@ function function_e6d9e6cd() {
         var_88f24b00 clientfield::set("jump_pad_essence_fx", 1);
         var_88f24b00.angles = (randomint(360), randomint(360), randomint(360));
         var_88f24b00 bobbing((0, 0, 1), 3, 1);
-        var_88f24b00 rotate(vectorscale((1, 0, 1), 6));
+        var_88f24b00 rotate((6, 0, 6));
         s_spawn.trigger = spawn("trigger_radius", s_spawn.origin + v_trigger_offset, 0, 32, 48);
         s_spawn.trigger callback::on_trigger(&function_90c8355);
         s_spawn.trigger.var_88f24b00 = var_88f24b00;

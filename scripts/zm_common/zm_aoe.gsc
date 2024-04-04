@@ -14,22 +14,18 @@
 // Method(s) 2 Total 2
 class areaofeffect {
 
+    var spawntime;
+    var state;
+    var var_be1913ae;
+
     // Namespace areaofeffect/zm_aoe
     // Params 0, eflags: 0xa linked
     // Checksum 0x5139b7bd, Offset: 0x170
     // Size: 0x2a
-    __constructor() {
-        self.spawntime = gettime();
-        self.state = 0;
-        self.var_be1913ae = gettime() + 100;
-    }
-
-    // Namespace areaofeffect/zm_aoe
-    // Params 0, eflags: 0x82 linked class_linked
-    // Checksum 0x80f724d1, Offset: 0x1a8
-    // Size: 0x4
-    function __destructor() {
-        
+    constructor() {
+        spawntime = gettime();
+        state = 0;
+        var_be1913ae = gettime() + 100;
     }
 
 }
@@ -38,20 +34,14 @@ class areaofeffect {
 // Method(s) 2 Total 2
 class class_698343df {
 
+    var var_9a08bb02;
+
     // Namespace class_698343df/zm_aoe
     // Params 0, eflags: 0xa linked
     // Checksum 0x679170c9, Offset: 0x240
     // Size: 0xe
-    __constructor() {
-        self.var_9a08bb02 = [];
-    }
-
-    // Namespace namespace_698343df/zm_aoe
-    // Params 0, eflags: 0x82 linked class_linked
-    // Checksum 0x80f724d1, Offset: 0x258
-    // Size: 0x4
-    function __destructor() {
-        
+    constructor() {
+        var_9a08bb02 = [];
     }
 
 }
@@ -86,9 +76,7 @@ function private postinit() {
 // Checksum 0xf4543642, Offset: 0x3d0
 // Size: 0x98
 function private function_e969e75(type) {
-    /#
-        assert(isdefined(level.var_400ae143));
-    #/
+    assert(isdefined(level.var_400ae143));
     arraykeys = getarraykeys(level.var_400ae143);
     if (isinarray(arraykeys, hash(type))) {
         return level.var_400ae143[hash(type)];
@@ -105,14 +93,10 @@ function function_15dea507(aoeid, type, var_3a11a165, lifetime, var_f2cd3aad, da
         level.var_400ae143 = [];
     }
     arraykeys = getarraykeys(level.var_400ae143);
-    /#
-        assert(!isinarray(arraykeys, hash(type)));
-    #/
+    assert(!isinarray(arraykeys, hash(type)));
     var_508aaded = new class_698343df();
     level.var_400ae143[type] = var_508aaded;
-    /#
-        assert(damagemin <= damagemax, "<unknown string>");
-    #/
+    assert(damagemin <= damagemax, "<unknown string>");
     var_508aaded.type = type;
     var_508aaded.var_3a11a165 = var_3a11a165;
     var_508aaded.lifetime = lifetime;
@@ -134,15 +118,11 @@ function function_15dea507(aoeid, type, var_3a11a165, lifetime, var_f2cd3aad, da
 // Size: 0x1c2
 function function_371b4147(aoeid, type, position, userdata, var_fb4d789f, var_6efc944c) {
     var_46f1b5eb = function_e969e75(type);
-    /#
-        assert(isdefined(var_46f1b5eb), "<unknown string>");
-    #/
+    assert(isdefined(var_46f1b5eb), "<unknown string>");
     if (var_46f1b5eb.var_9a08bb02.size >= var_46f1b5eb.var_3a11a165) {
         function_2c33d107(type);
     }
-    /#
-        assert(var_46f1b5eb.var_9a08bb02.size < var_46f1b5eb.var_3a11a165);
-    #/
+    assert(var_46f1b5eb.var_9a08bb02.size < var_46f1b5eb.var_3a11a165);
     aoe = new areaofeffect();
     aoe.position = position;
     aoe.endtime = gettime() + var_46f1b5eb.lifetime;
@@ -167,13 +147,9 @@ function function_371b4147(aoeid, type, position, userdata, var_fb4d789f, var_6e
 // Size: 0xa4
 function private function_668a9b2d(aoe, type) {
     var_46f1b5eb = function_e969e75(type);
-    /#
-        assert(isdefined(var_46f1b5eb), "<unknown string>");
-    #/
+    assert(isdefined(var_46f1b5eb), "<unknown string>");
     array::add(var_46f1b5eb.var_9a08bb02, aoe);
-    /#
-        assert(var_46f1b5eb.var_9a08bb02.size <= var_46f1b5eb.var_3a11a165);
-    #/
+    assert(var_46f1b5eb.var_9a08bb02.size <= var_46f1b5eb.var_3a11a165);
 }
 
 // Namespace zm_aoe/zm_aoe
@@ -182,9 +158,7 @@ function private function_668a9b2d(aoe, type) {
 // Size: 0x108
 function private function_87bbe4fc(type) {
     var_46f1b5eb = function_e969e75(type);
-    /#
-        assert(isdefined(var_46f1b5eb), "<unknown string>");
-    #/
+    assert(isdefined(var_46f1b5eb), "<unknown string>");
     if (var_46f1b5eb.var_9a08bb02.size) {
         oldest = var_46f1b5eb.var_9a08bb02[0];
         foreach (aoe in var_46f1b5eb.var_9a08bb02) {
@@ -202,9 +176,7 @@ function private function_87bbe4fc(type) {
 // Size: 0x12c
 function private function_fa03204a(aoe, type) {
     var_46f1b5eb = function_e969e75(type);
-    /#
-        assert(isinarray(var_46f1b5eb.var_9a08bb02, aoe));
-    #/
+    assert(isinarray(var_46f1b5eb.var_9a08bb02, aoe));
     if (isdefined(aoe.userdata)) {
         if (isdefined(level.var_6efc944c)) {
             [[ level.var_6efc944c ]](aoe);
@@ -214,9 +186,7 @@ function private function_fa03204a(aoe, type) {
         }
     }
     arrayremovevalue(var_46f1b5eb.var_9a08bb02, aoe);
-    /#
-        assert(var_46f1b5eb.var_9a08bb02.size < var_46f1b5eb.var_3a11a165);
-    #/
+    assert(var_46f1b5eb.var_9a08bb02.size < var_46f1b5eb.var_3a11a165);
     thread function_4f0db8cf(aoe.entity);
 }
 
@@ -246,9 +216,7 @@ function private function_2c33d107(type) {
 // Size: 0x25a
 function private function_ccf8f659(aoe, forceend = 0) {
     var_46f1b5eb = function_e969e75(aoe.type);
-    /#
-        assert(isdefined(var_46f1b5eb));
-    #/
+    assert(isdefined(var_46f1b5eb));
     if (aoe.state == 5) {
         return;
     }
@@ -334,9 +302,7 @@ function function_389bf7bf(aoe, var_a0739fc1) {
 // Size: 0x190
 function private function_e5950b1e(type) {
     var_46f1b5eb = function_e969e75(type);
-    /#
-        assert(isdefined(var_46f1b5eb));
-    #/
+    assert(isdefined(var_46f1b5eb));
     var_2aad0cec = [];
     foreach (aoe in var_46f1b5eb.var_9a08bb02) {
         function_ccf8f659(aoe);
@@ -355,15 +321,11 @@ function private function_e5950b1e(type) {
 // Size: 0x2f0
 function private function_bea2e288(type) {
     var_46f1b5eb = function_e969e75(type);
-    /#
-        assert(isdefined(var_46f1b5eb));
-    #/
+    assert(isdefined(var_46f1b5eb));
     players = getplayers();
     foreach (aoe in var_46f1b5eb.var_9a08bb02) {
         foreach (player in players) {
-            /#
-                assert(isdefined(aoe.entity));
-            #/
+            assert(isdefined(aoe.entity));
             dist = distance(aoe.entity.origin, player.origin);
             withinrange = dist <= var_46f1b5eb.radius;
             var_c0af03ae = 0;
@@ -389,9 +351,7 @@ function private function_bea2e288(type) {
 // Size: 0xa6
 function private function_60bb02f3(type) {
     var_46f1b5eb = function_e969e75(type);
-    /#
-        assert(isdefined(var_46f1b5eb));
-    #/
+    assert(isdefined(var_46f1b5eb));
     while (true) {
         if (!var_46f1b5eb.var_9a08bb02.size) {
             waitframe(1);

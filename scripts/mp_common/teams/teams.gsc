@@ -393,7 +393,6 @@ function waituntilteamchange(player, callback, arg, end_condition1, end_conditio
     if (isdefined(end_condition3)) {
         self endon(end_condition3);
     }
-    event = undefined;
     event = player waittill(#"joined_team", #"disconnect", #"joined_spectators");
     if (isdefined(callback)) {
         self [[ callback ]](arg, event);
@@ -416,7 +415,6 @@ function waituntilteamchangesingleton(player, singletonstring, callback, arg, en
     if (isdefined(end_condition3)) {
         self endon(end_condition3);
     }
-    event = undefined;
     event = player waittill(#"joined_team", #"disconnect", #"joined_spectators");
     if (isdefined(callback)) {
         self thread [[ callback ]](arg, event);
@@ -494,12 +492,8 @@ function function_596bfb16() {
 // Checksum 0xce00516c, Offset: 0x1958
 // Size: 0x64
 function get_flag_model(teamref) {
-    /#
-        assert(isdefined(game.flagmodels));
-    #/
-    /#
-        assert(isdefined(game.flagmodels[teamref]));
-    #/
+    assert(isdefined(game.flagmodels));
+    assert(isdefined(game.flagmodels[teamref]));
     return game.flagmodels[teamref];
 }
 
@@ -508,12 +502,8 @@ function get_flag_model(teamref) {
 // Checksum 0xa6a890a1, Offset: 0x19c8
 // Size: 0x64
 function get_flag_carry_model(teamref) {
-    /#
-        assert(isdefined(game.carry_flagmodels));
-    #/
-    /#
-        assert(isdefined(game.carry_flagmodels[teamref]));
-    #/
+    assert(isdefined(game.carry_flagmodels));
+    assert(isdefined(game.carry_flagmodels[teamref]));
     return game.carry_flagmodels[teamref];
 }
 
@@ -522,12 +512,8 @@ function get_flag_carry_model(teamref) {
 // Checksum 0x90e77f3a, Offset: 0x1a38
 // Size: 0x64
 function function_fd110460(teamref) {
-    /#
-        assert(isdefined(game.carry_icon));
-    #/
-    /#
-        assert(isdefined(game.carry_icon[teamref]));
-    #/
+    assert(isdefined(game.carry_icon));
+    assert(isdefined(game.carry_icon[teamref]));
     return game.carry_icon[teamref];
 }
 

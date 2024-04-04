@@ -135,11 +135,7 @@ function function_e439076f(var_5937b8ee) {
     self endon(#"death");
     wait(5);
     level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:self, #scoreevent:var_5937b8ee});
-    /#
-        /#
-            assert(isdefined(level.scoreinfo[var_5937b8ee][#"xp"]), "<unknown string>");
-        #/
-    #/
+    assert(isdefined(level.scoreinfo[var_5937b8ee][#"xp"]), "<unknown string>");
     var_370ac26d = level.scoreinfo[var_5937b8ee][#"xp"];
     self luinotifyevent(#"hash_6743fb07d8c3b4b0", 1, var_370ac26d);
     namespace_8d0ae0b4::function_b9cd2b6c(var_370ac26d);

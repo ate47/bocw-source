@@ -115,7 +115,7 @@ function warpalltoplayer(team, player) {
             angles = target getplayerangles();
             yaw = (0, angles[1], 0);
             forward = anglestoforward(yaw);
-            spawn_origin = origin + forward * 128 + vectorscale((0, 0, 1), 16);
+            spawn_origin = origin + forward * 128 + (0, 0, 16);
             if (!bullettracepassed(target geteye(), spawn_origin, 0, target)) {
                 spawn_origin = undefined;
             }
@@ -624,9 +624,7 @@ function giveextraperks() {
         }
         perks = getarraykeys(self.extraperks);
         for (i = 0; i < perks.size; i++) {
-            /#
-                println("<unknown string>" + self.name + "<unknown string>" + perks[i] + "<unknown string>");
-            #/
+            println("<unknown string>" + self.name + "<unknown string>" + perks[i] + "<unknown string>");
             self setperk(perks[i]);
         }
     #/
@@ -663,9 +661,7 @@ function xkillsy(attackername, victimname) {
 function testscriptruntimeerrorassert() {
     /#
         wait(1);
-        /#
-            assert(0);
-        #/
+        assert(0);
     #/
 }
 
@@ -896,11 +892,9 @@ function print_weapon_name() {
         self endon(#"print_weapon_name");
         wait(0.2);
         if (self isswitchingweapons()) {
-            waitresult = undefined;
             waitresult = self waittill(#"weapon_change_complete");
             fail_safe = 0;
             while (waitresult.weapon == level.weaponnone) {
-                waitresult = undefined;
                 waitresult = self waittill(#"weapon_change_complete");
                 waitframe(1);
                 fail_safe++;
@@ -1020,7 +1014,7 @@ function devstraferunpathdebugdraw() {
         violet = (0.4, 0, 0.6);
         maxdrawtime = 10;
         drawtime = maxdrawtime;
-        origintextoffset = vectorscale((0, 0, -1), 50);
+        origintextoffset = (0, 0, -50);
         endonmsg = "<unknown string>";
         while (true) {
             if (getdvarint(#"scr_devstraferunpathdebugdraw", 0) > 0) {
@@ -1106,7 +1100,7 @@ function devhelipathdebugdraw() {
         textscale = 1;
         maxdrawtime = 10;
         drawtime = maxdrawtime;
-        origintextoffset = vectorscale((0, 0, -1), 50);
+        origintextoffset = (0, 0, -50);
         endonmsg = "<unknown string>";
         while (true) {
             if (getdvarint(#"scr_devhelipathsdebugdraw", 0) > 0) {

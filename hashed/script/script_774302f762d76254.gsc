@@ -480,7 +480,7 @@ function function_a511c7c4() {
     level flag::set("doa_round_paused");
     if (!level.var_43cd3fe5 doa_keytrade::is_open(player)) {
         if (!is_true(level.doa.var_318aa67a)) {
-            while (is_true(player.doa.var_3e81d24c)) {
+            while (is_true(player.doa.infps)) {
                 waitframe(1);
             }
         }
@@ -521,7 +521,6 @@ function function_49592bf9(var_4b98f072) {
     is_gamepad = self gamepadusedlast();
     setdvar(#"ui_busyblockingamemenu", !is_gamepad);
     while (true) {
-        waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         response = waitresult.response;
         if (response == "menu_second_chance_cancel") {
@@ -603,7 +602,6 @@ function function_8682e93e() {
     if (level flag::get("doa_rof_visited")) {
         return;
     }
-    result = undefined;
     result = level waittill(#"hash_77a8f97f2648672");
     if (result.name != "jungle_1") {
         level thread function_8682e93e();

@@ -246,9 +246,7 @@ function function_4c9d66b1() {
 // Size: 0x274
 function function_c70b26ea(squad = self function_4c9d66b1()) {
     if (squad == #"none") {
-        /#
-            println("<unknown string>");
-        #/
+        println("<unknown string>");
         if (level.var_c58668ea) {
             squad = function_c98289a5(self.team);
             if (squad == #"none") {

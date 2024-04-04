@@ -46,7 +46,7 @@ function sr_supply_drop_chest_fx(localclientnum, *oldval, newval, *bnewent, *bin
     if (bwastimejump == 1) {
         self.var_aa4114ee = function_239993de(fieldname, #"hash_23c80cc2126820b2", self, "tag_origin");
         self.var_4b0f392d = self playloopsound(#"hash_52036cf3cfe2b967");
-        playsound(fieldname, #"hash_1f3fbd4b941aceed", self.origin + vectorscale((0, 0, 1), 35));
+        playsound(fieldname, #"hash_1f3fbd4b941aceed", self.origin + (0, 0, 35));
         function_239993de(fieldname, #"hash_64f736260391468a", self, "tag_origin");
         return;
     }

@@ -244,7 +244,7 @@ function removeactivespawner(spawner) {
 function createline(org) {
     /#
         for (;;) {
-            line(org + vectorscale((0, 0, 1), 35), org, (0.2, 0.5, 0.8), 0.5);
+            line(org + (0, 0, 35), org, (0.2, 0.5, 0.8), 0.5);
             waitframe(1);
         }
     #/
@@ -262,7 +262,7 @@ function createlineconstantly(ent) {
             waitframe(1);
         }
         for (;;) {
-            line(org + vectorscale((0, 0, 1), 35), org, (1, 0.2, 0.1), 0.5);
+            line(org + (0, 0, 35), org, (1, 0.2, 0.1), 0.5);
             waitframe(1);
         }
     #/
@@ -278,9 +278,9 @@ function debugmisstime() {
         self endon(#"hash_5ec34db59fed84d9", #"death");
         for (;;) {
             if (self.a.misstime <= 0) {
-                print3d(self gettagorigin("<unknown string>") + vectorscale((0, 0, 1), 15), "<unknown string>", (0.3, 1, 1), 1);
+                print3d(self gettagorigin("<unknown string>") + (0, 0, 15), "<unknown string>", (0.3, 1, 1), 1);
             } else {
-                print3d(self gettagorigin("<unknown string>") + vectorscale((0, 0, 1), 15), self.a.misstime / 20, (0.3, 1, 1), 1);
+                print3d(self gettagorigin("<unknown string>") + (0, 0, 15), self.a.misstime / 20, (0.3, 1, 1), 1);
             }
             waitframe(1);
         }
@@ -573,9 +573,7 @@ function showdebugtrace() {
         var_e4a81a27 = undefined;
         var_7933c5bf = (15.1859, -12.2822, 4.071);
         var_e4a81a27 = (947.2, -10918, 64.9514);
-        /#
-            assert(!isdefined(level.traceend));
-        #/
+        assert(!isdefined(level.traceend));
         for (;;) {
             players = getplayers();
             waitframe(1);
@@ -772,7 +770,7 @@ function vecscale(vec, scalar) {
 function function_e05e43c3(origin) {
     /#
         normalvec = vectornormalize(origin - self getshootatpos());
-        var_b9593434 = vectornormalize(origin - vectorscale((0, 0, 1), 24) - self getshootatpos());
+        var_b9593434 = vectornormalize(origin - (0, 0, 24) - self getshootatpos());
         var_c2a09695 = vectordot(normalvec, var_b9593434);
         var_8194ae5a = anglestoforward(self getplayerangles());
         vectordot = vectordot(var_8194ae5a, normalvec);
@@ -869,18 +867,18 @@ function displaythreat(entity, var_d77f9c98) {
         col2 = (0.2, 0.5, 1);
         pacifist = self != players[0] && self.pacifist;
         for (i = 0; i <= 20; i++) {
-            print3d(self.origin + vectorscale((0, 0, 1), 65), "<unknown string>", col, 3);
-            print3d(self.origin + vectorscale((0, 0, 1), 50), threat, col, 5);
+            print3d(self.origin + (0, 0, 65), "<unknown string>", col, 3);
+            print3d(self.origin + (0, 0, 50), threat, col, 5);
             if (isdefined(var_d77f9c98)) {
-                print3d(self.origin + vectorscale((0, 0, 1), 35), var_d77f9c98, col, 2);
+                print3d(self.origin + (0, 0, 35), var_d77f9c98, col, 2);
             }
-            print3d(self.origin + vectorscale((0, 0, 1), 15), "<unknown string>", col2, 3);
+            print3d(self.origin + (0, 0, 15), "<unknown string>", col2, 3);
             print3d(self.origin + (0, 0, 0), var_fa7d5fc3, col2, 5);
             if (isdefined(mygroup)) {
-                print3d(self.origin + vectorscale((0, 0, -1), 15), mygroup, col2, 2);
+                print3d(self.origin + (0, 0, -15), mygroup, col2, 2);
             }
             if (pacifist) {
-                print3d(self.origin + vectorscale((0, 0, 1), 25), "<unknown string>", col2, 5);
+                print3d(self.origin + (0, 0, 25), "<unknown string>", col2, 5);
             }
             waitframe(1);
         }
@@ -1057,7 +1055,7 @@ function function_b03ecdf3() {
         if (level.var_969ba98a) {
             for (i = 0; i < level.var_b19c1dfd.size; i++) {
                 var_d357ff0e = level.var_b19c1dfd[i];
-                var_d357ff0e.var_cdbf6838 = vectorscale((1, 1, 1), 0.5);
+                var_d357ff0e.var_cdbf6838 = (0.5, 0.5, 0.5);
             }
         } else if (players.size > 0) {
             dot = 0.85;
@@ -1065,7 +1063,7 @@ function function_b03ecdf3() {
             for (i = 0; i < level.var_b19c1dfd.size; i++) {
                 var_d357ff0e = level.var_b19c1dfd[i];
                 var_d357ff0e.var_cdbf6838 = (0.25, 1, 0.5);
-                difference = vectornormalize(var_d357ff0e.origin + vectorscale((0, 0, 1), 40) - players[0].origin + vectorscale((0, 0, 1), 55));
+                difference = vectornormalize(var_d357ff0e.origin + (0, 0, 40) - players[0].origin + (0, 0, 55));
                 newdot = vectordot(forward, difference);
                 if (newdot < dot) {
                     continue;
@@ -1084,7 +1082,7 @@ function function_b03ecdf3() {
             if (level.var_969ba98a) {
                 msg = "<unknown string>";
             }
-            print3d(var_d357ff0e.origin + vectorscale((0, 0, 1), 40), msg + var_d357ff0e.animsounds.size, var_d357ff0e.var_cdbf6838, 1, 1);
+            print3d(var_d357ff0e.origin + (0, 0, 40), msg + var_d357ff0e.animsounds.size, var_d357ff0e.var_cdbf6838, 1, 1);
         }
         if (var_86c85a76) {
             function_21619947();
@@ -1180,7 +1178,7 @@ function function_21619947() {
                 var_5e39fc46 = level.var_c22fdb8f[key];
                 var_5e39fc46.label = soundalias;
                 if (!is_from_animsound(var_d357ff0e.animname, var_d357ff0e.anime, var_d357ff0e.notetrack)) {
-                    var_5e39fc46.color = vectorscale((1, 1, 1), 0.7);
+                    var_5e39fc46.color = (0.7, 0.7, 0.7);
                 }
             }
         }
@@ -1880,7 +1878,7 @@ function function_16b58d7f() {
                             drawstring = "<unknown string>";
                         }
                         scale = dist / 1000;
-                        print3d(ai.origin + vectorscale((0, 0, 1), 67), drawstring + "<unknown string>" + dist, drawcolor, 1, scale);
+                        print3d(ai.origin + (0, 0, 67), drawstring + "<unknown string>" + dist, drawcolor, 1, scale);
                     }
                 }
             }
@@ -1947,9 +1945,7 @@ function function_3171027d() {
 function function_90edec37() {
     /#
         level endon(#"hash_34e65f3c6ffc6a39");
-        /#
-            assert(isdefined(level.aitypes) && level.aitypes.size > 0, "<unknown string>");
-        #/
+        assert(isdefined(level.aitypes) && level.aitypes.size > 0, "<unknown string>");
         level.dynamic_spawn_hud = newdebughudelem(getplayers()[0]);
         level.dynamic_spawn_hud.alignx = "<unknown string>";
         level.dynamic_spawn_hud.x = 0;
@@ -1967,7 +1963,7 @@ function function_90edec37() {
             dist = distance(eye, trace[#"position"]);
             position = eye + vectorscale(direction_vec, dist - level.aitypes[level.var_9f54edf5].radius);
             origin = position;
-            angles = self.angles + vectorscale((0, 1, 0), 180);
+            angles = self.angles + (0, 180, 0);
             level.dynamic_spawn_dummy_model.origin = position;
             level.dynamic_spawn_dummy_model.angles = angles;
             level.dynamic_spawn_hud settext("<unknown string>" + level.var_9f54edf5 + 1 + "<unknown string>" + level.aitypes.size + "<unknown string>" + level.aitypes[level.var_9f54edf5].classname);
@@ -2031,12 +2027,12 @@ function function_d2ddc8bc() {
         guys = getaiarray();
         for (i = 0; i < guys.size; i++) {
             if (guys[i].team == #"axis") {
-                print3d(guys[i].origin + vectorscale((0, 0, 1), 70), isdefined(guys[i].goalradius) ? "<unknown string>" + guys[i].goalradius : "<unknown string>", (1, 0, 0), 1, 1, 1);
-                record3dtext("<unknown string>" + guys[i].goalradius, guys[i].origin + vectorscale((0, 0, 1), 70), (1, 0, 0), "<unknown string>");
+                print3d(guys[i].origin + (0, 0, 70), isdefined(guys[i].goalradius) ? "<unknown string>" + guys[i].goalradius : "<unknown string>", (1, 0, 0), 1, 1, 1);
+                record3dtext("<unknown string>" + guys[i].goalradius, guys[i].origin + (0, 0, 70), (1, 0, 0), "<unknown string>");
                 continue;
             }
-            print3d(guys[i].origin + vectorscale((0, 0, 1), 70), isdefined(guys[i].goalradius) ? "<unknown string>" + guys[i].goalradius : "<unknown string>", (0, 1, 0), 1, 1, 1);
-            record3dtext("<unknown string>" + guys[i].goalradius, guys[i].origin + vectorscale((0, 0, 1), 70), (0, 1, 0), "<unknown string>");
+            print3d(guys[i].origin + (0, 0, 70), isdefined(guys[i].goalradius) ? "<unknown string>" + guys[i].goalradius : "<unknown string>", (0, 1, 0), 1, 1, 1);
+            record3dtext("<unknown string>" + guys[i].goalradius, guys[i].origin + (0, 0, 70), (0, 1, 0), "<unknown string>");
         }
     #/
 }
@@ -2068,9 +2064,9 @@ function debug_health() {
         guys = getaiarray();
         for (i = 0; i < guys.size; i++) {
             if (isdefined(guys[i] gettagorigin("<unknown string>"))) {
-                var_d4d10882 = guys[i] gettagorigin("<unknown string>") + vectorscale((0, 0, 1), 15);
+                var_d4d10882 = guys[i] gettagorigin("<unknown string>") + (0, 0, 15);
             } else {
-                var_d4d10882 = guys[i] getorigin() + vectorscale((0, 0, 1), 70);
+                var_d4d10882 = guys[i] getorigin() + (0, 0, 70);
             }
             print3d(var_d4d10882, isdefined(guys[i].health) ? "<unknown string>" + guys[i].health : "<unknown string>", level.var_99e12d63[guys[i].team], 1, 0.5);
             recordenttext(isdefined(guys[i].health) ? "<unknown string>" + guys[i].health : "<unknown string>", guys[i], level.var_99e12d63[guys[i].team], "<unknown string>");

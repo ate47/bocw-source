@@ -7,21 +7,8 @@
 // Method(s) 10 Total 17
 class class_b20c2804 : cluielem {
 
-    // Namespace class_b20c2804/doa_textbubble
-    // Params 0, eflags: 0x8
-    // Checksum 0x53fefe1d, Offset: 0x298
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_b20c2804/doa_textbubble
-    // Params 0, eflags: 0x90 class_linked
-    // Checksum 0xc93f394d, Offset: 0x528
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_b20c2804/doa_textbubble
     // Params 2, eflags: 0x0
@@ -36,7 +23,7 @@ class class_b20c2804 : cluielem {
     // Checksum 0x44e8eb2c, Offset: 0x478
     // Size: 0x4c
     function function_4f6e830d(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 4, value, 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 4, value, 0);
     }
 
     // Namespace namespace_b20c2804/doa_textbubble
@@ -52,7 +39,7 @@ class class_b20c2804 : cluielem {
     // Checksum 0xc62228ac, Offset: 0x420
     // Size: 0x4c
     function function_61312692(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 3, value, 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 3, value, 0);
     }
 
     // Namespace namespace_b20c2804/doa_textbubble
@@ -60,7 +47,7 @@ class class_b20c2804 : cluielem {
     // Checksum 0x6f50056, Offset: 0x4d0
     // Size: 0x4c
     function function_7ddfdfef(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 5, value, 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 5, value, 0);
     }
 
     // Namespace namespace_b20c2804/doa_textbubble
@@ -76,7 +63,7 @@ class class_b20c2804 : cluielem {
     // Checksum 0x331a2767, Offset: 0x358
     // Size: 0x4c
     function set_entnum(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 1, value, 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 1, value, 0);
     }
 
     // Namespace namespace_b20c2804/doa_textbubble
@@ -84,7 +71,7 @@ class class_b20c2804 : cluielem {
     // Checksum 0xc53329bb, Offset: 0x3b0
     // Size: 0x64
     function set_text(player, value) {
-        player lui::function_bb6bcb89(hash(self.var_d5213cbb), self.var_bf9c8c95, 2, function_f2d511a6("string", value), 0);
+        player lui::function_bb6bcb89(hash(var_d5213cbb), var_bf9c8c95, 2, function_f2d511a6("string", value), 0);
     }
 
 }

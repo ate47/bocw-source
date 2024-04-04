@@ -1151,7 +1151,7 @@ function function_50d6beb5(*var_d3440450, *var_50cc0d4f) {
 function function_e46c8c06() {
     var_338850b9 = struct::get("obj_haskins_board_chopper", "targetname");
     level objectives::function_4eb5c04a("armada_obj_haskins_board_chopper", var_338850b9.origin, #"hash_2c9448553a6a5c07");
-    var_338850b9 util::create_cursor_hint(undefined, vectorscale((0, 0, -1), 3), #"hash_37e62971018a0abd", 64, undefined, undefined, undefined, 128);
+    var_338850b9 util::create_cursor_hint(undefined, (0, 0, -3), #"hash_37e62971018a0abd", 64, undefined, undefined, undefined, 128);
     var_338850b9 prompts::set_objective("armada_obj_haskins_board_chopper");
     var_338850b9 waittill(#"trigger");
     objectives::complete("armada_obj_haskins_board_chopper");
@@ -1327,7 +1327,6 @@ function function_e2df4629(var_74056fba, start_flag, var_887853be, max_drones) {
             drone namespace_4e75a347::function_cab4b520("alert");
         }
         while (true) {
-            s_waitresult = undefined;
             s_waitresult = level waittill(var_887853be, #"hash_4affce8b3ea8ab6d", #"hash_4d46078cfbdcc621");
             if (s_waitresult._notify == "flag_intro_base_cleanup" || s_waitresult._notify == "flag_intro_cleanup_runners") {
                 break;

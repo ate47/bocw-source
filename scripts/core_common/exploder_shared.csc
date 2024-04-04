@@ -209,9 +209,7 @@ function function_993369d6(exploder_id) {
         activate_radiant_exploder(exploder_id, 1);
         return;
     }
-    /#
-        assertmsg("<unknown string>" + exploder_id);
-    #/
+    assertmsg("<unknown string>" + exploder_id);
 }
 
 // Namespace exploder/exploder_shared
@@ -310,9 +308,7 @@ function kill_exploder(exploder_id) {
         }
         return;
     }
-    /#
-        assertmsg("<unknown string>" + exploder_id);
-    #/
+    assertmsg("<unknown string>" + exploder_id);
 }
 
 // Namespace exploder/exploder_shared
@@ -463,9 +459,7 @@ function cannon_effect() {
         self.loopfx = [];
     }
     if (!isdefined(level._effect[self.v[#"fxid"]])) {
-        /#
-            assertmsg("<unknown string>" + self.v[#"fxid"] + "<unknown string>");
-        #/
+        assertmsg("<unknown string>" + self.v[#"fxid"] + "<unknown string>");
         return;
     }
     for (i = 0; i < players.size; i++) {

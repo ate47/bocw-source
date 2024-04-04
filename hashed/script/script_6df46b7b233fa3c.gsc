@@ -8,28 +8,15 @@
 // Method(s) 9 Total 16
 class class_70ee35b1 : cluielem {
 
-    // Namespace class_70ee35b1/pip_menu
-    // Params 0, eflags: 0xa linked
-    // Checksum 0x53d202e8, Offset: 0x2a8
-    // Size: 0x14
-    __constructor() {
-        cluielem::__constructor();
-    }
-
-    // Namespace class_70ee35b1/pip_menu
-    // Params 0, eflags: 0x92 linked class_linked
-    // Checksum 0xf4979702, Offset: 0x548
-    // Size: 0x14
-    __destructor() {
-        cluielem::__destructor();
-    }
+    var var_bf9c8c95;
+    var var_d5213cbb;
 
     // Namespace namespace_70ee35b1/pip_menu
     // Params 2, eflags: 0x2 linked
     // Checksum 0x16440dfe, Offset: 0x408
     // Size: 0x44
     function set_moviename(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "movieName", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "movieName", value);
     }
 
     // Namespace namespace_70ee35b1/pip_menu
@@ -45,7 +32,7 @@ class class_70ee35b1 : cluielem {
     // Checksum 0xcd2d4d53, Offset: 0x4f8
     // Size: 0x44
     function set_additive(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "additive", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "additive", value);
     }
 
     // Namespace namespace_70ee35b1/pip_menu
@@ -61,7 +48,7 @@ class class_70ee35b1 : cluielem {
     // Checksum 0xbde610bc, Offset: 0x4a8
     // Size: 0x44
     function set_looping(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "looping", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "looping", value);
     }
 
     // Namespace namespace_70ee35b1/pip_menu
@@ -69,7 +56,7 @@ class class_70ee35b1 : cluielem {
     // Checksum 0xd4705e89, Offset: 0x458
     // Size: 0x44
     function set_showblackscreen(player, value) {
-        player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "showBlackScreen", value);
+        player clientfield::function_9bf78ef8(var_d5213cbb, var_bf9c8c95, "showBlackScreen", value);
     }
 
     // Namespace namespace_70ee35b1/pip_menu
