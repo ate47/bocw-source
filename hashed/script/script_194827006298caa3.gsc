@@ -63,7 +63,7 @@ function private function_8ebf52b6(instance) {
         showmiscmodels(var_2b737124.targetname);
         /#
             if (getdvarint(#"hash_730311c63805303a", 0)) {
-                level wait_till(#"gameplay_started");
+                level flag::wait_till(#"gameplay_started");
                 wait(randomfloatrange(1, 5));
             }
         #/
@@ -374,7 +374,7 @@ function private function_c292b3fe(v_loc, instance) {
     self endon("7de34d93ee0908d1");
     self endon(#"death");
     instance endon(#"hash_3ea0bab19c8c86b6");
-    for (n_time = 0; distance2dsquared(self.origin, v_loc) > 10000 && n_time < 90; n_time = n_time + 1) {
+    for (n_time = 0; distance2dsquared(self.origin, v_loc) > 10000 && n_time < 90; n_time += 1) {
         wait(1);
     }
     if (n_time >= 90) {

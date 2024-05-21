@@ -36,12 +36,13 @@ function on_player_spawned() {
     }
 }
 
-// Namespace weapons/weapons_shared
-// Params 0, eflags: 0x0
-// Checksum 0x51314935, Offset: 0x290
-// Size: 0x1b8
-function function_867af0b() {
-    /#
+/#
+
+    // Namespace weapons/weapons_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x51314935, Offset: 0x290
+    // Size: 0x1b8
+    function function_867af0b() {
         self endon(#"death");
         player = self;
         gameobject_link = undefined;
@@ -59,7 +60,7 @@ function function_867af0b() {
                     gameobject_link delete();
                     gameobject_link = undefined;
                 }
-                gameobject_link = spawn_model("<unknown string>", player.origin, player.angles);
+                gameobject_link = util::spawn_model("<unknown string>", player.origin, player.angles);
                 player playerlinkto(gameobject_link, "<unknown string>", 0, 60, 60, 30, 10, 0);
                 player function_66f3a713();
             } else if (test_mount == 2) {
@@ -67,8 +68,9 @@ function function_867af0b() {
             }
             setdvar(#"test_mount", 0);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace weapons/weapons_shared
 // Params 3, eflags: 0x2 linked
@@ -203,7 +205,7 @@ function function_e870d33d() {
                 var_80a327fb = var_37c33d3b >= 36 ? "stand" : "crouch";
                 exit_origin = player.origin;
                 vehicle_origin = player.origin + vectorscale(vectornormalize((player_forward[0], player_forward[1], 0)), float(isdefined(settings.var_4207321e) ? settings.var_4207321e : 16));
-                vehicle_origin = vehicle_origin + (0, 0, var_5035eb1b);
+                vehicle_origin += (0, 0, var_5035eb1b);
                 player.var_2d23ee07 = var_5035eb1b;
                 vehicle = spawnvehicle(var_13ab34e1, vehicle_origin, var_a3a6eba5);
                 vehicle.team = player.team;
@@ -560,10 +562,10 @@ function weapondamagetrace(from, to, startradius, ignore) {
     /#
         if (getdvarint(#"scr_damage_debug", 0) != 0) {
             if (trace[#"fraction"] == 1) {
-                thread drawdebugline(midpos, to, (1, 1, 1), 600);
+                thread debug::drawdebugline(midpos, to, (1, 1, 1), 600);
             } else {
-                thread drawdebugline(midpos, trace[#"position"], (1, 0.9, 0.8), 600);
-                thread drawdebugline(trace[#"position"], to, (1, 0.4, 0.3), 600);
+                thread debug::drawdebugline(midpos, trace[#"position"], (1, 0.9, 0.8), 600);
+                thread debug::drawdebugline(trace[#"position"], to, (1, 0.4, 0.3), 600);
             }
         }
     #/
@@ -613,7 +615,7 @@ function has_lockon(target) {
 // Size: 0x40
 function function_74bbb3fa(damage, weapon, *target) {
     if (target.var_eb19d8cb) {
-        weapon = weapon * target.var_eb19d8cb;
+        weapon *= target.var_eb19d8cb;
     }
     return weapon;
 }

@@ -88,7 +88,7 @@ function private function_c96b0450() {
                     player_facing = anglestoforward(player_angles);
                     var_3495bfe6 = self.origin - player.origin;
                     if (vectordot(var_3495bfe6, player_facing) > 0) {
-                        self.var_ce60d915 = self.var_ce60d915 + float(function_60d95f53()) / 1000;
+                        self.var_ce60d915 += float(function_60d95f53()) / 1000;
                         if (self.var_ce60d915 > 1.5 && self.nextfindbestcovertime > gettime()) {
                             self.nextfindbestcovertime = gettime();
                         }
@@ -263,14 +263,14 @@ function private function_9cefbbde(var_5f60ac6c) {
         initial_force = rotatepoint(initial_force, self.angles);
         var_9fa53333 = (0, -10, 10);
         var_9fa53333 = rotatepoint(var_9fa53333, self.angles);
-        contact_point = contact_point + var_9fa53333;
+        contact_point += var_9fa53333;
         break;
     case #"umbrella_right":
         initial_force = (0, -0.25, 0.5);
         initial_force = rotatepoint(initial_force, self.angles);
         var_9fa53333 = (0, 10, 10);
         var_9fa53333 = rotatepoint(var_9fa53333, self.angles);
-        contact_point = contact_point + var_9fa53333;
+        contact_point += var_9fa53333;
         break;
     default:
         break;

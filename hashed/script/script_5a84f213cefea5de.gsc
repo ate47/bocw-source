@@ -96,7 +96,7 @@ function private function_898628ef(item, player, *networkid, *itemid, itemcount,
             }
             ammo = itemcount getweaponammoclip(weapon);
             if (!weapon.iscliponly) {
-                ammo = ammo + itemcount getweaponammostock(weapon);
+                ammo += itemcount getweaponammostock(weapon);
             }
             hasammo = ammo > 0;
             if (hasammo) {

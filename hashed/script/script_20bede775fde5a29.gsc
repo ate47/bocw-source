@@ -152,7 +152,7 @@ function function_7adce590(local_client_num, *oldval, *newval, *bnewent, *biniti
             if (getdvarint(#"hash_6d98441d0465c104", 0)) {
                 /#
                     custom_character = function_c4ede3a8(bwastimejump, "<unknown string>" + key, 1);
-                    add(var_ec067cd3, [[ custom_character ]]->function_217b10ed());
+                    array::add(var_ec067cd3, [[ custom_character ]]->function_217b10ed());
                 #/
                 continue;
             }

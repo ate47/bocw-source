@@ -427,7 +427,7 @@ function private function_33593a44(localclientnum, var_312d65d1, var_68f7ce2e, n
     if (var_312d65d1 == 1 && var_68f7ce2e == 2) {
         while (n_blend < 1) {
             function_be93487f(localclientnum, var_312d65d1 | var_68f7ce2e, 1 - n_blend, n_blend, 0, 0);
-            n_blend = n_blend + n_increment;
+            n_blend += n_increment;
             wait(0.05);
         }
         return;
@@ -435,7 +435,7 @@ function private function_33593a44(localclientnum, var_312d65d1, var_68f7ce2e, n
     if (var_312d65d1 == 2 && var_68f7ce2e == 1) {
         while (n_blend < 1) {
             function_be93487f(localclientnum, var_312d65d1 | var_68f7ce2e, n_blend, 1 - n_blend, 0, 0);
-            n_blend = n_blend + n_increment;
+            n_blend += n_increment;
             wait(0.05);
         }
     }

@@ -138,7 +138,7 @@ function on_joined_team(*params) {
     self endon(#"disconnect");
     teammask = getteammask(self.team);
     for (teamindex = 0; teammask > 1; teamindex++) {
-        teammask = teammask >> 1;
+        teammask >>= 1;
     }
     if (teamindex % 2) {
         self set_blops_dialog(teamindex);

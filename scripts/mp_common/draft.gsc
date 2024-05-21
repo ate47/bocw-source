@@ -46,40 +46,37 @@ function private preinit() {
     #/
 }
 
-// Namespace draft/draft
-// Params 0, eflags: 0x0
-// Checksum 0x3450e8b4, Offset: 0x408
-// Size: 0x3c
-function function_6bea5139() {
-    /#
+/#
+
+    // Namespace draft/draft
+    // Params 0, eflags: 0x0
+    // Checksum 0x3450e8b4, Offset: 0x408
+    // Size: 0x3c
+    function function_6bea5139() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         wait(5);
         level.var_5fa54158 = "<unknown string>";
-    #/
-}
+    }
 
-// Namespace draft/draft
-// Params 1, eflags: 0x0
-// Checksum 0x7a157214, Offset: 0x450
-// Size: 0x64
-function function_95c03d66(message) {
-    /#
+    // Namespace draft/draft
+    // Params 1, eflags: 0x0
+    // Checksum 0x7a157214, Offset: 0x450
+    // Size: 0x64
+    function function_95c03d66(message) {
         if (message == level.var_5fa54158) {
             return;
         }
         level.var_5fa54158 = message;
         println(message);
         level thread function_6bea5139();
-    #/
-}
+    }
 
-// Namespace draft/draft
-// Params 1, eflags: 0x0
-// Checksum 0x2f50b710, Offset: 0x4c0
-// Size: 0xe6
-function function_947fe5c4(character) {
-    /#
+    // Namespace draft/draft
+    // Params 1, eflags: 0x0
+    // Checksum 0x2f50b710, Offset: 0x4c0
+    // Size: 0xe6
+    function function_947fe5c4(character) {
         if (character != "<unknown string>") {
             var_44dd7e5d = hash(character);
             playerroletemplatecount = getplayerroletemplatecount(currentsessionmode());
@@ -91,15 +88,13 @@ function function_947fe5c4(character) {
                 }
             }
         }
-    #/
-}
+    }
 
-// Namespace draft/draft
-// Params 0, eflags: 0x0
-// Checksum 0x3bf82ac1, Offset: 0x5b0
-// Size: 0x13a
-function function_e8a5f9ba() {
-    /#
+    // Namespace draft/draft
+    // Params 0, eflags: 0x0
+    // Checksum 0x3bf82ac1, Offset: 0x5b0
+    // Size: 0x13a
+    function function_e8a5f9ba() {
         current = getdvarstring(#"character", "<unknown string>");
         if (current != "<unknown string>") {
             while (true) {
@@ -112,8 +107,9 @@ function function_e8a5f9ba() {
                 wait(1);
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace draft/draft
 // Params 0, eflags: 0x2 linked
@@ -245,7 +241,7 @@ function select_character(characterindex, forceselection, *var_8a239568) {
     if (!player_role::is_valid(forceselection)) {
         return false;
     }
-    assert(is_valid(forceselection));
+    assert(player_role::is_valid(forceselection));
     if (!is_true(var_8a239568) && !can_select_character(forceselection)) {
         return false;
     }
@@ -414,7 +410,7 @@ function decrement(timeremaining) {
             return timeremaining;
         }
     #/
-    level.var_b318d3d1 = level.var_b318d3d1 - 1;
+    level.var_b318d3d1 -= 1;
     function_ee80d2e8(int(max(0, level.var_b318d3d1)));
     return timeremaining - 1;
 }
@@ -441,7 +437,7 @@ function function_3e648d9b() {
 // Size: 0x580
 function draft_run() {
     /#
-        function_b4f2a076();
+        rat::function_b4f2a076();
     #/
     timeremaining = getgametypesetting(#"drafttime");
     function_ee80d2e8(int(max(0, level.var_b318d3d1)));
@@ -598,7 +594,7 @@ function assign_remaining_players(only_assign_player) {
         /#
             println("<unknown string>");
             foreach (player in team) {
-                characterindex = player get();
+                characterindex = player player_role::get();
                 println("<unknown string>" + player.name + "<unknown string>" + characterindex);
             }
         #/
@@ -757,7 +753,7 @@ function draft_finalize() {
     level notify(#"draft_complete");
     set_draft_stage(0);
     /#
-        function_6aa20375();
+        rat::function_6aa20375();
     #/
 }
 
@@ -858,8 +854,8 @@ function open() {
     }
     /#
         autoselection = getdvarint(#"auto_select_character", -1);
-        if (is_valid(autoselection)) {
-            player set(autoselection);
+        if (player_role::is_valid(autoselection)) {
+            player player_role::set(autoselection);
             if (!getdvarint(#"hash_1f80dbba75375e3d", 0)) {
                 customloadoutindex = self.pers[#"loadoutindex"];
                 if (isdefined(customloadoutindex)) {

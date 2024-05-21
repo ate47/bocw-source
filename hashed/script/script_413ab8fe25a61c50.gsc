@@ -34,7 +34,7 @@
 // Checksum 0x3be7856d, Offset: 0x330
 // Size: 0xa28
 function function_93e7ee52(challengetype = 0, name) {
-    level.doa.var_e5ef2ab4 = level.doa.var_e5ef2ab4 | 1 << challengetype;
+    level.doa.var_e5ef2ab4 |= 1 << challengetype;
     level.doa.var_a598a835 = undefined;
     level.doa.var_a77e4601 = [];
     level flag::clear("challenge_round_spawnOverride");
@@ -292,7 +292,7 @@ function function_d1dc367c() {
         var_58bd90cd--;
         if (var_58bd90cd <= 0) {
             var_58bd90cd = 2;
-            var_87b290c9 = var_87b290c9 - 8;
+            var_87b290c9 -= 8;
             if (var_87b290c9 < 20) {
                 var_87b290c9 = 20;
             }
@@ -405,7 +405,7 @@ function function_17f47e92() {
     var_f8ff628e = doa_enemy::function_db55a448(level.doa.var_d15a522, level.doa.var_6d072a34.origin);
     /#
         if (is_true(level.var_a095060b)) {
-            var_f8ff628e thread function_3b3bb5c(0.1, 600);
+            var_f8ff628e thread namespace_ec06fe4a::function_3b3bb5c(0.1, 600);
         }
     #/
     if (isdefined(var_f8ff628e)) {
@@ -509,7 +509,7 @@ function function_cd4e6a10() {
         level thread namespace_9fc66ac::announce(63);
         /#
             if (is_true(level.var_a095060b)) {
-                var_f8ff628e thread function_3b3bb5c(0.1, 1500);
+                var_f8ff628e thread namespace_ec06fe4a::function_3b3bb5c(0.1, 1500);
             }
         #/
         var_f8ff628e waittill(#"death");
@@ -593,7 +593,7 @@ function function_c6834d32() {
     /#
         foreach (boss in var_f89c12f1) {
             if (is_true(level.var_a095060b)) {
-                boss thread function_3b3bb5c(0.1, 600);
+                boss thread namespace_ec06fe4a::function_3b3bb5c(0.1, 600);
             }
         }
     #/
@@ -621,7 +621,7 @@ function function_382bc607() {
     if (isdefined(var_f8ff628e)) {
         /#
             if (is_true(level.var_a095060b)) {
-                var_f8ff628e thread function_3b3bb5c(0.1, 600);
+                var_f8ff628e thread namespace_ec06fe4a::function_3b3bb5c(0.1, 600);
             }
         #/
         var_f8ff628e waittill(#"death");

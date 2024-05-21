@@ -538,7 +538,7 @@ function function_5ce9975c(var_661691aa) {
         break;
     }
     if (var_661691aa > 8) {
-        n_max = n_max + 1;
+        n_max += 1;
     }
     return n_max;
 }
@@ -1726,7 +1726,7 @@ function function_6a62464c(v_goal, *n_dist, n_time) {
             break;
         }
         v_dest = n_dist + (0, 0, n_inc);
-        n_inc = n_inc - 10;
+        n_inc -= 10;
         self moveto(v_dest, n_time);
         waitframe(1);
     }

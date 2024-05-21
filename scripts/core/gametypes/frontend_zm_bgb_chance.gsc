@@ -3,22 +3,21 @@
 
 #namespace zm_frontend_zm_bgb_chance;
 
-// Namespace zm_frontend_zm_bgb_chance/frontend_zm_bgb_chance
-// Params 0, eflags: 0x0
-// Checksum 0x6dce7e0a, Offset: 0x88
-// Size: 0x1c
-function zm_frontend_bgb_slots_logic() {
-    /#
-        level thread zm_frontend_bgb_devgui();
-    #/
-}
+/#
 
-// Namespace zm_frontend_zm_bgb_chance/frontend_zm_bgb_chance
-// Params 0, eflags: 0x0
-// Checksum 0xedec958f, Offset: 0xb0
-// Size: 0x1bc
-function zm_frontend_bgb_devgui() {
-    /#
+    // Namespace zm_frontend_zm_bgb_chance/frontend_zm_bgb_chance
+    // Params 0, eflags: 0x0
+    // Checksum 0x6dce7e0a, Offset: 0x88
+    // Size: 0x1c
+    function zm_frontend_bgb_slots_logic() {
+        level thread zm_frontend_bgb_devgui();
+    }
+
+    // Namespace zm_frontend_zm_bgb_chance/frontend_zm_bgb_chance
+    // Params 0, eflags: 0x0
+    // Checksum 0xedec958f, Offset: 0xb0
+    // Size: 0x1bc
+    function zm_frontend_bgb_devgui() {
         setdvar(#"bgb_test_power_boost_devgui", "<unknown string>");
         setdvar(#"bgb_test_success_fail_devgui", "<unknown string>");
         bgb_devgui_base = "<unknown string>";
@@ -30,15 +29,13 @@ function zm_frontend_bgb_devgui() {
         adddebugcommand("<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + 1 + "<unknown string>");
         adddebugcommand("<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + 1 + "<unknown string>");
         level thread bgb_devgui_think();
-    #/
-}
+    }
 
-// Namespace zm_frontend_zm_bgb_chance/frontend_zm_bgb_chance
-// Params 0, eflags: 0x0
-// Checksum 0x5d2121af, Offset: 0x278
-// Size: 0x1c8
-function bgb_devgui_think() {
-    /#
+    // Namespace zm_frontend_zm_bgb_chance/frontend_zm_bgb_chance
+    // Params 0, eflags: 0x0
+    // Checksum 0x5d2121af, Offset: 0x278
+    // Size: 0x1c8
+    function bgb_devgui_think() {
         b_powerboost_toggle = 0;
         b_successfail_toggle = 0;
         for (;;) {
@@ -46,7 +43,7 @@ function bgb_devgui_think() {
             n_val_successfail = getdvarstring(#"bgb_test_success_fail_devgui");
             if (n_val_powerboost != "<unknown string>") {
                 b_powerboost_toggle = !b_powerboost_toggle;
-                level set("<unknown string>", b_powerboost_toggle);
+                level clientfield::set("<unknown string>", b_powerboost_toggle);
                 if (b_powerboost_toggle) {
                     iprintlnbold("<unknown string>");
                 } else {
@@ -55,7 +52,7 @@ function bgb_devgui_think() {
             }
             if (n_val_successfail != "<unknown string>") {
                 b_successfail_toggle = !b_successfail_toggle;
-                level set("<unknown string>", b_successfail_toggle);
+                level clientfield::set("<unknown string>", b_successfail_toggle);
                 if (b_successfail_toggle) {
                     iprintlnbold("<unknown string>");
                 } else {
@@ -66,6 +63,6 @@ function bgb_devgui_think() {
             setdvar(#"bgb_test_success_fail_devgui", "<unknown string>");
             wait(0.5);
         }
-    #/
-}
+    }
 
+#/

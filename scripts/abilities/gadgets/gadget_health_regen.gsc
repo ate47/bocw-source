@@ -373,7 +373,7 @@ function enable_healing(slot, weapon, player) {
         self.heal.rate = heal_amount / float(var_4465ef1e) / 1000;
         var_9c776d17 = self function_4e64ede5();
         if (isfloat(var_9c776d17)) {
-            self.heal.rate = self.heal.rate * var_9c776d17;
+            self.heal.rate *= var_9c776d17;
         }
         self.heal.heal_amount = heal_amount;
         self.heal.var_4e6c244d = weapon.var_db003065;

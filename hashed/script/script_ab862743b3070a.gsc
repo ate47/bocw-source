@@ -328,7 +328,7 @@ function get_favorite_enemy() {
     if (!is_target_valid(least_hunted)) {
         return undefined;
     }
-    least_hunted.hunted_by = least_hunted.hunted_by + 1;
+    least_hunted.hunted_by += 1;
     return least_hunted;
 }
 
@@ -398,20 +398,22 @@ function function_246a0760() {
     #/
 }
 
-// Namespace zombie_dog_util/ai_dog_util
-// Params 0, eflags: 0x0
-// Checksum 0x7936578f, Offset: 0x16d8
-// Size: 0x60
-function function_de0a6ae4() {
-    /#
+/#
+
+    // Namespace zombie_dog_util/ai_dog_util
+    // Params 0, eflags: 0x0
+    // Checksum 0x7936578f, Offset: 0x16d8
+    // Size: 0x60
+    function function_de0a6ae4() {
         while (true) {
             level waittill(#"between_round_over");
             if (getdvarint(#"force_dogs", 0) > 0) {
                 level.next_dog_round = level.round_number;
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zombie_dog_util/ai_dog_util
 // Params 0, eflags: 0x2 linked
@@ -446,7 +448,7 @@ function dog_round_stop(*var_d25bbdd5) {
     level flag::clear("dog_clips");
     level thread zm_audio::sndmusicsystem_playstate("dog_end");
     zm::increment_dog_round_stat("finished");
-    level.dog_round_count = level.dog_round_count + 1;
+    level.dog_round_count += 1;
     if (zm_utility::function_c4b020f8()) {
         wait(0.5);
     } else {
@@ -532,7 +534,7 @@ function dog_init() {
     self setavoidancemask("avoid none");
     self collidewithactors(1);
     health_multiplier = getdvarfloat(#"scr_dog_health_walk_multiplier", 4);
-    health_multiplier = health_multiplier * (isdefined(level.var_570d178a) ? level.var_570d178a : 1);
+    health_multiplier *= isdefined(level.var_570d178a) ? level.var_570d178a : 1;
     self.maxhealth = int(level.dog_health * health_multiplier);
     self.health = int(level.dog_health * health_multiplier);
     self.freezegun_damage = 0;
@@ -551,7 +553,7 @@ function dog_init() {
     self.flame_damage_time = 0;
     self.thundergun_knockdown_func = &dog_thundergun_knockdown;
     /#
-        self zombie_history("<unknown string>" + self.origin);
+        self zm_spawner::zombie_history("<unknown string>" + self.origin);
     #/
     if (isdefined(level.var_9c55db3)) {
         self [[ level.var_9c55db3 ]]();
@@ -629,7 +631,7 @@ function dog_explode_fx(dog, *origin) {
 // Size: 0xbc
 function zombie_setup_attack_properties_dog() {
     /#
-        self zombie_history("<unknown string>");
+        self zm_spawner::zombie_history("<unknown string>");
     #/
     self val::reset(#"dog_spawn", "ignoreall");
     self val::reset(#"dog_spawn", "ignoreme");

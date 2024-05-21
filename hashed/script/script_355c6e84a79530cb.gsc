@@ -180,7 +180,7 @@ function function_e1fab6a9(instance, v_center) {
         n_wait = n_dist / 600 * 1.5 - n_time_elapsed - 0.1;
         if (n_wait > 0 && n_time_elapsed < 1.5) {
             wait(n_wait);
-            n_time_elapsed = n_time_elapsed + n_wait;
+            n_time_elapsed += n_wait;
         }
         level thread function_ae44cb3d(instance, s_machine.content_key);
         if (is_true(level.var_53bc31ad)) {
@@ -330,7 +330,7 @@ function function_f1bc8a08(player) {
 // Size: 0x1aa
 function function_e9bd72e8(var_7d0e37f8, instance) {
     scriptmodel = content_manager::spawn_script_model(var_7d0e37f8, "tag_origin");
-    scriptmodel.origin = scriptmodel.origin + (0, 0, 40);
+    scriptmodel.origin += (0, 0, 40);
     scriptmodel clientfield::set("safehouse_claim_fx", 1);
     scriptmodel.targetname = "unclaimed_safehouse";
     trigger = content_manager::spawn_interact(var_7d0e37f8, &function_d9ea0e09, #"hash_5ecd49cccca29d87", 0, undefined, undefined, undefined, (0, 0, 40));
@@ -442,32 +442,31 @@ function private function_98715738(*instance) {
             weapon = player getcurrentweapon();
             wait(5);
             if (isalive(player) && player getstance() === "prone" && weapon !== player getcurrentweapon()) {
-                s_ee.angles = s_ee.angles + (0, 90, 0);
+                s_ee.angles += (0, 90, 0);
                 s_ee thread namespace_65181344::function_fd87c780(#"survival_ee_special_drops", 1, 2);
             }
         }
     }
 }
 
-// Namespace namespace_73df937d/namespace_73df937d
-// Params 0, eflags: 0x0
-// Checksum 0x8f1c400, Offset: 0x1fa8
-// Size: 0x84
-function init_devgui() {
-    /#
-        waittill_can_add_debug_command();
+/#
+
+    // Namespace namespace_73df937d/namespace_73df937d
+    // Params 0, eflags: 0x0
+    // Checksum 0x8f1c400, Offset: 0x1fa8
+    // Size: 0x84
+    function init_devgui() {
+        util::waittill_can_add_debug_command();
         level thread function_dab40c5f();
         adddebugcommand("<unknown string>");
-        add_devgui(devgui_path("<unknown string>", 105), "<unknown string>");
-    #/
-}
+        util::add_devgui(content_manager::devgui_path("<unknown string>", 105), "<unknown string>");
+    }
 
-// Namespace namespace_73df937d/namespace_73df937d
-// Params 0, eflags: 0x0
-// Checksum 0x9eea3e8, Offset: 0x2038
-// Size: 0x124
-function function_dab40c5f() {
-    /#
+    // Namespace namespace_73df937d/namespace_73df937d
+    // Params 0, eflags: 0x0
+    // Checksum 0x9eea3e8, Offset: 0x2038
+    // Size: 0x124
+    function function_dab40c5f() {
         while (true) {
             if (getdvarint(#"hash_112f254e6d461fd6", 0)) {
                 setdvar(#"hash_112f254e6d461fd6", 0);
@@ -480,6 +479,6 @@ function function_dab40c5f() {
             }
             wait(0.1);
         }
-    #/
-}
+    }
 
+#/

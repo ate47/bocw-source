@@ -21,7 +21,7 @@ function get_center(territory = level.territory) {
         return center;
     }
     foreach (boundary in territory.bounds) {
-        center = center + boundary.origin;
+        center += boundary.origin;
     }
     return center / territory.bounds.size;
 }

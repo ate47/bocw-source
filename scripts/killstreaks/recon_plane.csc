@@ -26,7 +26,7 @@ function private preinit() {
     callback::on_localclient_connect(&player_init);
     bundlename = "killstreak_recon_plane";
     if (sessionmodeiswarzonegame()) {
-        bundlename = bundlename + "_wz";
+        bundlename += "_wz";
     }
     level.var_d9ef3e7c = getscriptbundle(bundlename);
     level.var_d84f0c02 = [];

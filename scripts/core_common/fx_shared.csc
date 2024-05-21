@@ -167,14 +167,17 @@ function oneshot_thread(clientnum) {
     create_trigger(clientnum);
 }
 
-// Namespace fx/fx_shared
-// Params 0, eflags: 0x0
-// Checksum 0xd7f18f8b, Offset: 0xa68
-// Size: 0x8
-function report_num_effects() {
-    /#
-    #/
-}
+/#
+
+    // Namespace fx/fx_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xd7f18f8b, Offset: 0xa68
+    // Size: 0x8
+    function report_num_effects() {
+        
+    }
+
+#/
 
 // Namespace fx/fx_shared
 // Params 1, eflags: 0x2 linked

@@ -18,11 +18,11 @@
 function autoexec registerdefaultnotetrackhandlerfunctions() {
     registernotetrackhandlerfunction("fire", &notetrackfirebullet);
     registernotetrackhandlerfunction("gib_disable", &notetrackgibdisable);
-    registernotetrackhandlerfunction("gib = "head"", &gibserverutils::gibhead);
-    registernotetrackhandlerfunction("gib = "arm_left"", &gibserverutils::gibleftarm);
-    registernotetrackhandlerfunction("gib = "arm_right"", &gibserverutils::gibrightarm);
-    registernotetrackhandlerfunction("gib = "leg_left"", &gibserverutils::gibleftleg);
-    registernotetrackhandlerfunction("gib = "leg_right"", &gibserverutils::gibrightleg);
+    registernotetrackhandlerfunction("gib = \"head\"", &gibserverutils::gibhead);
+    registernotetrackhandlerfunction("gib = \"arm_left\"", &gibserverutils::gibleftarm);
+    registernotetrackhandlerfunction("gib = \"arm_right\"", &gibserverutils::gibrightarm);
+    registernotetrackhandlerfunction("gib = \"leg_left\"", &gibserverutils::gibleftleg);
+    registernotetrackhandlerfunction("gib = \"leg_right\"", &gibserverutils::gibrightleg);
     registernotetrackhandlerfunction("dropgun", &notetrackdropgun);
     registernotetrackhandlerfunction("gun drop", &notetrackdropgun);
     registernotetrackhandlerfunction("drop_shield", &notetrackdropshield);
@@ -46,14 +46,14 @@ function autoexec registerdefaultnotetrackhandlerfunctions() {
     registernotetrackhandlerfunction("detach clip right", &function_9d41000);
     registernotetrackhandlerfunction("step1", &notetrackstaircasestep1);
     registernotetrackhandlerfunction("step2", &notetrackstaircasestep2);
-    registernotetrackhandlerfunction("anim_movement = "stop"", &notetrackanimmovementstop);
+    registernotetrackhandlerfunction("anim_movement = \"stop\"", &notetrackanimmovementstop);
     registernotetrackhandlerfunction("gun_2_back", &notetrackguntoback);
     registernotetrackhandlerfunction("gun_2_right", &function_776caa25);
     registernotetrackhandlerfunction("pistol_pickup", &function_f7e95a07);
     registernotetrackhandlerfunction("pistol_putaway", &function_c49db6d);
-    registerblackboardnotetrackhandler("anim_pose = \"stand\"", "_stance", "stand");
-    registerblackboardnotetrackhandler("anim_pose = \"crouch\"", "_stance", "crouch");
-    registerblackboardnotetrackhandler("anim_pose = \"prone\"", "_stance", "prone");
+    registerblackboardnotetrackhandler("anim_pose = \\"stand\\"", "_stance", "stand");
+    registerblackboardnotetrackhandler("anim_pose = \\"crouch\\"", "_stance", "crouch");
+    registerblackboardnotetrackhandler("anim_pose = \\"prone\\"", "_stance", "prone");
     registerblackboardnotetrackhandler("anim_pose = stand", "_stance", "stand");
     registerblackboardnotetrackhandler("anim_pose = crouch", "_stance", "crouch");
     registerblackboardnotetrackhandler("anim_pose = prone", "_stance", "prone");
@@ -127,7 +127,7 @@ function private notetrackstaircasestep1(entity) {
 // Size: 0x64
 function private notetrackstaircasestep2(entity) {
     numsteps = entity getblackboardattribute("_staircase_num_steps");
-    numsteps = numsteps + 2;
+    numsteps += 2;
     entity setblackboardattribute("_staircase_num_steps", numsteps);
 }
 
@@ -224,13 +224,13 @@ function private notetrackstartragdoll(entity) {
         var_89953da0 = entity asmgetcurrentdeltaanimation();
         text = "tag_accessory_left";
         if (isdefined(var_89953da0) && var_89953da0 != "<unknown string>") {
-            text = text + "<unknown string>" + function_9e72a96(var_89953da0);
+            text += "<unknown string>" + function_9e72a96(var_89953da0);
             notetracks = getnotetracktimes(var_89953da0, "<unknown string>");
             if (notetracks.size == 1) {
                 time = entity getanimtime(var_89953da0);
-                text = text + "<unknown string>" + notetracks[0] + "<unknown string>" + time;
+                text += "<unknown string>" + notetracks[0] + "<unknown string>" + time;
             } else {
-                text = text + "<unknown string>" + notetracks.size;
+                text += "<unknown string>" + notetracks.size;
             }
         }
         record3dtext(text, entity.origin + (0, 0, 4), (1, 0, 0), "<unknown string>", undefined, 0.4);
@@ -522,7 +522,7 @@ function function_9d41000(animationentity) {
 // Size: 0x4c
 function private function_6bde1bde() {
     self endon(#"death");
-    self.origin = self.origin + (0, 0, -1);
+    self.origin += (0, 0, -1);
     waitframe(1);
     self delete();
 }

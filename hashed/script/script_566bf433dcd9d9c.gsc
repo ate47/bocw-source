@@ -146,7 +146,7 @@ function private opendooratreasonabletime() {
         var_a3bb43c4 = function_f002dade(#"human", #"run");
         if (currentspeed > 0 && var_a3bb43c4 > 0) {
             speedratio = currentspeed / var_a3bb43c4;
-            opendist = opendist * speedratio;
+            opendist *= speedratio;
         }
     }
     opendistsq = sqr(opendist);

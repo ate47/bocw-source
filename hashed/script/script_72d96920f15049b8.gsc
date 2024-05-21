@@ -159,7 +159,7 @@ function function_5160bb1e(killstreaktype) {
     if (sessionmodeiswarzonegame() && !is_true(level.var_29cfe9dd) || is_true(level.var_d5ad2e35)) {
         if (sessionmodeiszombiesgame()) {
             height = isdefined(level.var_1beaaeca) ? level.var_1beaaeca : 3500;
-            height = height + (isdefined(level.var_fba637a5) ? level.var_fba637a5 : 0);
+            height += isdefined(level.var_fba637a5) ? level.var_fba637a5 : 0;
             angle_offset = isdefined(level.var_32e48553) ? level.var_32e48553 : (0, 45, 0);
             var_77e38a57 = level.var_981cf9cf;
             position = self.origin;
@@ -191,7 +191,7 @@ function function_5160bb1e(killstreaktype) {
                             var_a338f16a = var_bd2c37fd;
                         }
                     #/
-                    position = position + vectorscale(tocenter, var_ceaada96 * var_a338f16a);
+                    position += vectorscale(tocenter, var_ceaada96 * var_a338f16a);
                 }
             }
             trace = bullettrace(position + (0, 0, 10000), position - (0, 0, 10000), 0, undefined);
@@ -250,7 +250,7 @@ function private function_26e7fb55(var_d44b8c3e, var_1838351, startangles) {
             var_c8e01926 = var_35637e22;
             var_f4f791a2 = angles[1];
         }
-        angles = angles + (0, 30, 0);
+        angles += (0, 30, 0);
         forward = anglestoforward(angles);
         var_51c6fb78++;
         waitframe(1);
@@ -559,7 +559,7 @@ function watchplayerexitrequestthread(player) {
         player function_7deaa2a4(timeused);
         player function_9d62ff6c();
         while (player usebuttonpressed() && player killstreaks::function_59e2c378()) {
-            timeused = timeused + 0.05;
+            timeused += 0.05;
             player function_7deaa2a4(timeused / var_f6263fe2);
             if (timeused > var_f6263fe2) {
                 self namespace_f9b02f80::play_pilot_dialog_on_owner("remoteOperatorRemoved", "chopper_gunner", self.killstreak_id);

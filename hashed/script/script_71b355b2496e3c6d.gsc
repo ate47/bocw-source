@@ -56,8 +56,8 @@ function function_e83889f9(localclientnum, *oldval, newval, *bnewent, *binitials
     zombieorigin = (self.origin[0], self.origin[1], self.origin[2] + 64);
     var_3f57677f = zombieorigin - level.var_30858358[fieldname][bwastimejump].ent.origin;
     dist = length(var_3f57677f);
-    var_3f57677f = var_3f57677f / dist;
-    var_3f57677f = var_3f57677f * level.var_38bf45dc[level.var_30858358[fieldname][bwastimejump].var_3934e676];
+    var_3f57677f /= dist;
+    var_3f57677f *= level.var_38bf45dc[level.var_30858358[fieldname][bwastimejump].var_3934e676];
     self launchragdoll(var_3f57677f);
 }
 

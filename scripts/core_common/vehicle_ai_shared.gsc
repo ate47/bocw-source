@@ -422,14 +422,14 @@ function throw_off_balance(damagetype, *hitpoint, hitdirection, *hitlocationinfo
     if (hitdirection == "MOD_EXPLOSIVE" || hitdirection == "MOD_GRENADE_SPLASH" || hitdirection == "MOD_PROJECTILE_SPLASH") {
         self setvehvelocity(self.velocity + vectornormalize(hitlocationinfo) * 300);
         ang_vel = self getangularvelocity();
-        ang_vel = ang_vel + (randomfloatrange(-300, 300), randomfloatrange(-300, 300), randomfloatrange(-300, 300));
+        ang_vel += (randomfloatrange(-300, 300), randomfloatrange(-300, 300), randomfloatrange(-300, 300));
         self setangularvelocity(ang_vel);
         return;
     }
     ang_vel = self getangularvelocity();
     yaw_vel = randomfloatrange(-320, 320);
-    yaw_vel = yaw_vel + math::sign(yaw_vel) * 150;
-    ang_vel = ang_vel + (randomfloatrange(-150, 150), yaw_vel, randomfloatrange(-150, 150));
+    yaw_vel += math::sign(yaw_vel) * 150;
+    ang_vel += (randomfloatrange(-150, 150), yaw_vel, randomfloatrange(-150, 150));
     self setangularvelocity(ang_vel);
 }
 
@@ -564,10 +564,10 @@ function burning_thread(attacker, inflictor) {
     }
     starttime = gettime();
     interval = max(secondsperonedamage, 0.5);
-    for (damage = 0; util::timesince(starttime) < lastingtime; damage = damage - damageint) {
+    for (damage = 0; util::timesince(starttime) < lastingtime; damage -= damageint) {
         previoustime = gettime();
         wait(interval);
-        damage = damage + util::timesince(previoustime) * damagepersecond;
+        damage += util::timesince(previoustime) * damagepersecond;
         damageint = int(damage);
         self dodamage(damageint, self.origin, attacker, self, "none", "MOD_BURNED");
     }
@@ -1692,7 +1692,7 @@ function positionquery_filter_random(queryresult, min, max) {
             point._scoredebug[#"random"].score = score;
             point._scoredebug[#"random"].scorename = "<unknown string>";
         #/
-        point.score = point.score + score;
+        point.score += score;
     }
 }
 
@@ -1724,7 +1724,7 @@ function positionquery_filter_outofgoalanchor(queryresult, tolerance = 1) {
                 point._scoredebug[#"outofgoalanchor"].score = score;
                 point._scoredebug[#"outofgoalanchor"].scorename = "<unknown string>";
             #/
-            point.score = point.score + score;
+            point.score += score;
         }
     }
 }
@@ -1803,7 +1803,7 @@ function positionquery_filter_distawayfromtarget(queryresult, targetarray, dista
                 point._scoredebug[#"tooclosetoothers"].score = tooclosepenalty;
                 point._scoredebug[#"tooclosetoothers"].scorename = "<unknown string>";
             #/
-            point.score = point.score + tooclosepenalty;
+            point.score += tooclosepenalty;
         }
     }
 }
@@ -2023,7 +2023,7 @@ function private function_4ab1a63a(goal) {
                 point._scoredebug[#"inclaimedlocation"].score = -5000;
                 point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
             #/
-            point.score = point.score + -5000;
+            point.score += -5000;
         }
         score = randomfloatrange(0, 80);
         /#
@@ -2036,7 +2036,7 @@ function private function_4ab1a63a(goal) {
             point._scoredebug[#"random"].score = score;
             point._scoredebug[#"random"].scorename = "<unknown string>";
         #/
-        point.score = point.score + score;
+        point.score += score;
     }
     if (queryresult.data.size > 0) {
         positionquery_postprocess_sortscore(queryresult);
@@ -2095,7 +2095,7 @@ function function_1e0d693b(goal, enemy) {
                 point._scoredebug[#"outofgoalanchor"].score = score;
                 point._scoredebug[#"outofgoalanchor"].scorename = "<unknown string>";
             #/
-            point.score = point.score + score;
+            point.score += score;
         }
         if (!point.visibility) {
             /#
@@ -2108,7 +2108,7 @@ function function_1e0d693b(goal, enemy) {
                 point._scoredebug[#"no visibility"].score = -5000;
                 point._scoredebug[#"no visibility"].scorename = "<unknown string>";
             #/
-            point.score = point.score + -5000;
+            point.score += -5000;
         }
         /#
             if (!isdefined(point._scoredebug)) {
@@ -2120,7 +2120,7 @@ function function_1e0d693b(goal, enemy) {
             point._scoredebug[#"engagementdist"].score = point.distawayfromengagementarea * -1;
             point._scoredebug[#"engagementdist"].scorename = "<unknown string>";
         #/
-        point.score = point.score + point.distawayfromengagementarea * -1;
+        point.score += point.distawayfromengagementarea * -1;
         /#
             if (!isdefined(point._scoredebug)) {
                 point._scoredebug = [];
@@ -2131,7 +2131,7 @@ function function_1e0d693b(goal, enemy) {
             point._scoredebug[#"hash_6c444b535ec20313"].score = mapfloat(0, prefereddistawayfromorigin, -5000, 0, point.disttoorigin2d);
             point._scoredebug[#"hash_6c444b535ec20313"].scorename = "<unknown string>";
         #/
-        point.score = point.score + mapfloat(0, prefereddistawayfromorigin, -5000, 0, point.disttoorigin2d);
+        point.score += mapfloat(0, prefereddistawayfromorigin, -5000, 0, point.disttoorigin2d);
         if (point.inclaimedlocation) {
             /#
                 if (!isdefined(point._scoredebug)) {
@@ -2143,7 +2143,7 @@ function function_1e0d693b(goal, enemy) {
                 point._scoredebug[#"inclaimedlocation"].score = -5000;
                 point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
             #/
-            point.score = point.score + -5000;
+            point.score += -5000;
         }
         distfrompreferredheight = abs(point.origin[2] - goalheight);
         if (distfrompreferredheight > var_20b5eeff) {
@@ -2158,7 +2158,7 @@ function function_1e0d693b(goal, enemy) {
                 point._scoredebug[#"height"].score = heightscore;
                 point._scoredebug[#"height"].scorename = "<unknown string>";
             #/
-            point.score = point.score + heightscore;
+            point.score += heightscore;
         }
         score = randomfloatrange(0, 80);
         /#
@@ -2171,7 +2171,7 @@ function function_1e0d693b(goal, enemy) {
             point._scoredebug[#"random"].score = score;
             point._scoredebug[#"random"].scorename = "<unknown string>";
         #/
-        point.score = point.score + score;
+        point.score += score;
     }
     if (queryresult.data.size > 0) {
         positionquery_postprocess_sortscore(queryresult);
@@ -2208,7 +2208,7 @@ function private function_4646fb11(goal) {
                 point._scoredebug[#"outofgoalanchor"].score = score;
                 point._scoredebug[#"outofgoalanchor"].scorename = "<unknown string>";
             #/
-            point.score = point.score + score;
+            point.score += score;
         }
         if (point.inclaimedlocation) {
             /#
@@ -2221,7 +2221,7 @@ function private function_4646fb11(goal) {
                 point._scoredebug[#"inclaimedlocation"].score = -5000;
                 point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
             #/
-            point.score = point.score + -5000;
+            point.score += -5000;
         }
         score = randomfloatrange(0, 80);
         /#
@@ -2234,7 +2234,7 @@ function private function_4646fb11(goal) {
             point._scoredebug[#"random"].score = score;
             point._scoredebug[#"random"].scorename = "<unknown string>";
         #/
-        point.score = point.score + score;
+        point.score += score;
     }
     if (queryresult.data.size > 0) {
         positionquery_postprocess_sortscore(queryresult);

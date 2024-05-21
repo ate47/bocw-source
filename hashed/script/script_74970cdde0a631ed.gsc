@@ -72,7 +72,7 @@ function function_9c1c5551(origin, player) {
     tank function_d733412a(0);
     timeout = player namespace_1c2a96f9::function_4808b985(30);
     if (isdefined(level.doa.var_a77e6349)) {
-        timeout = timeout + 10;
+        timeout += 10;
     }
     tank thread function_c45d8312(player, timeout);
     player namespace_83eb6304::turnofffx("player_trail_" + player.doa.color);

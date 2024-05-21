@@ -741,7 +741,7 @@ class class_744b99c {
                 loc.chance = 0;
             }
             if (loc.script_noteworthy === "zombietron_skeleton_key") {
-                loc.chance = loc.chance - 25 * level.doa.var_be74bf2c;
+                loc.chance -= 25 * level.doa.var_be74bf2c;
                 if (loc.chance < 1) {
                     loc.chance = 1;
                 }
@@ -1405,10 +1405,10 @@ function function_7d406bae(npc, distance = 2400) {
     items = doa_enemy::function_924423d(npc);
     unspawned = 0;
     foreach (item in items) {
-        unspawned = unspawned + item.count;
+        unspawned += item.count;
     }
     arrayremovevalue(npc.enemylist, undefined);
-    npc.count = npc.count + npc.enemylist.size + unspawned;
+    npc.count += npc.enemylist.size + unspawned;
     foreach (guy in npc.enemylist) {
         if (is_true(guy.boss)) {
             guy thread namespace_ec06fe4a::function_52afe5df();

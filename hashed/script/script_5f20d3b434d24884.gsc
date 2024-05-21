@@ -747,7 +747,7 @@ function function_72e8509(def) {
     }
     count = 0;
     foreach (def in level.doa.pickups.var_8b9e74df) {
-        count = count + [[ def ]]->function_b3131904();
+        count += [[ def ]]->function_b3131904();
     }
     return count;
 }
@@ -998,7 +998,7 @@ function function_7e4e4b8a(player, height = 1200) {
     player endon(#"disconnect");
     self thread namespace_ec06fe4a::function_ae010bb4(player);
     var_eaf9387b = gettime() + 3500;
-    self.origin = self.origin + (0, 0, height);
+    self.origin += (0, 0, height);
     while (isdefined(self) && gettime() < var_eaf9387b) {
         if (self.origin[2] <= player.origin[2]) {
             self.origin = player.origin;
@@ -1113,7 +1113,7 @@ function function_83aea294(origin, numitems = 10, radius = 256, pickupdef, data,
         spawner::global_spawn_throttle();
         spot = origin;
         if (radius > 0) {
-            spot = spot + (randomintrange(radius * -1, radius), randomintrange(radius * -1, radius), 0);
+            spot += (randomintrange(radius * -1, radius), randomintrange(radius * -1, radius), 0);
         }
         spawnfunc = [[ pickupdef ]]->function_a8f2b5de();
         if (isdefined(spawnfunc)) {
@@ -1177,7 +1177,7 @@ function function_b8f6a8cd(pickupdef = function_57160cba(13), origin, popup = 0,
     width = (scale < 3 ? 1 : 2) * 42;
     height = (scale < 3 ? 1 : 2) * 72;
     scale = int(scale / 10 * 65535);
-    data = data + scale;
+    data += scale;
     return itemspawn(pickupdef, origin, angles, data, forced, undefined, width, height);
 }
 
@@ -1196,7 +1196,7 @@ function function_57160cba(type = 0) {
     if (type == 1 || type == 2) {
         roll = randomint(100);
         if (type == 2) {
-            roll = roll - 50;
+            roll -= 50;
         }
         itemtype = 0;
         if (roll < 50 && level.doa.pickups.var_2a93b19[1].size) {
@@ -1619,7 +1619,7 @@ function function_2ebebd0c() {
                 break;
             case 20:
                 level thread namespace_9fc66ac::announce(24, 1 << player.entnum);
-                player namespace_41cb996::function_41a10718(8);
+                player namespace_41cb996::ui_menu_ftue_itemshop(8);
                 player namespace_41cb996::function_d5bd34b4();
                 break;
             case 21:
@@ -1803,7 +1803,7 @@ function function_cbae9ca3() {
 // Size: 0x96
 function function_594c2e4e() {
     self endon(#"death");
-    self.origin = self.origin + (0, 0, 12);
+    self.origin += (0, 0, 12);
     self thread namespace_ec06fe4a::function_f506b4c7();
     self thread namespace_ec06fe4a::function_8b1ae345(undefined, 12, "stopIdle");
     self waittill(#"hash_221d94db078860dd");
@@ -1874,7 +1874,7 @@ function function_4ecd84a8(player, entnum = player.entnum, var_a3046af4, time = 
                     y = 0 - y;
                     x = 0 - x;
                 }
-                var_a3046af4 = var_a3046af4 + (x, y, z);
+                var_a3046af4 += (x, y, z);
             } else {
                 var_a3046af4 = self.origin + (0, 0, 3000);
             }
@@ -1909,10 +1909,10 @@ function function_401a53c4(player) {
             var_d7e22d96 = 20000;
             bottomy = 30000;
             if (is_true(level.doa.var_ecff3871)) {
-                var_bead1873 = var_bead1873 * -1;
-                topy = topy * -1;
-                var_d7e22d96 = var_d7e22d96 * -1;
-                bottomy = bottomy * -1;
+                var_bead1873 *= -1;
+                topy *= -1;
+                var_d7e22d96 *= -1;
+                bottomy *= -1;
             }
             var_a3046af4 = player.origin;
             if (player.entnum == 0) {
@@ -1924,7 +1924,7 @@ function function_401a53c4(player) {
             } else if (player.entnum == 3) {
                 offset = (var_d7e22d96 * -1, bottomy * -1, 10000);
             }
-            var_a3046af4 = var_a3046af4 + offset;
+            var_a3046af4 += offset;
         } else {
             var_a3046af4 = self.origin + (0, 0, 3000);
         }
@@ -1948,8 +1948,8 @@ function function_2cfd5616(var_35526169) {
     }
     self solid();
     vel = target_point - self.origin;
-    self.origin = self.origin + 4 * vel;
-    vel = vel * randomfloatrange(0.5, 3);
+    self.origin += 4 * vel;
+    vel *= randomfloatrange(0.5, 3);
     self physicslaunch(self.origin, vel);
 }
 
@@ -1964,7 +1964,7 @@ function function_2c64b1c7() {
     self setscale(self.scale);
     self.var_d34e5888 = self.scale * 2;
     if (self.scale == 10) {
-        self.var_d34e5888 = self.var_d34e5888 + 50;
+        self.var_d34e5888 += 50;
     }
     self solid();
 }
@@ -2119,7 +2119,7 @@ function function_2735024b() {
     while (amount) {
         if (isdefined(level.doa.var_39e3fa99)) {
             spot = [[ level.doa.var_39e3fa99 ]]->function_70fb5745().origin;
-            spot = spot + (0, 0, 1000);
+            spot += (0, 0, 1000);
             function_b8f6a8cd(undefined, spot, 1);
             amount--;
             wait(randomintrange(1, 3));

@@ -71,7 +71,7 @@ function function_afc62ca5() {
     namespace_250e9486::function_25b2c8a9();
     self namespace_250e9486::function_db744d28();
     self.var_9329a57c = 0;
-    self.maxhealth = self.maxhealth + 250000 + int(50000 * namespace_ec06fe4a::function_ef369bae()) + level.doa.var_6c58d51 * 300000;
+    self.maxhealth += 250000 + int(50000 * namespace_ec06fe4a::function_ef369bae()) + level.doa.var_6c58d51 * 300000;
     self.health = self.maxhealth;
     self.var_c59b482e = self.maxhealth * (0.1 + 0.15 * namespace_ec06fe4a::function_ef369bae());
     self.var_d04a8ee = 200;
@@ -304,7 +304,7 @@ function private function_ebf85268(*inflictor, attacker, damage, *idflags, *mean
         self.var_265cb589 = 0;
     }
     if (isdefined(self.var_c59e2dbf)) {
-        self.var_c59e2dbf = self.var_c59e2dbf + final_damage;
+        self.var_c59e2dbf += final_damage;
     } else {
         self.var_c59e2dbf = final_damage;
     }
@@ -823,7 +823,7 @@ function function_8b63ee0e(entity, mocompanim, *mocompanimblendouttime, *mocompa
         isvisible = traceresult[#"fraction"] == 1;
         var_535d098c = 0;
         if (isdefined(traceresult[#"hitloc"]) && traceresult[#"hitloc"] == "riotshield") {
-            mocompanimflag.meleeinfo.adjustedendpos = mocompanimflag.meleeinfo.adjustedendpos + vectorscale(var_cc075bd0, 50);
+            mocompanimflag.meleeinfo.adjustedendpos += vectorscale(var_cc075bd0, 50);
             var_535d098c = 1;
         }
         if (!var_201660e6) {

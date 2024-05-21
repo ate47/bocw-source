@@ -638,12 +638,13 @@ function function_51bb743b(weapon, camooptions) {
     return undefined;
 }
 
-// Namespace activecamo/activecamo_shared
-// Params 0, eflags: 0x0
-// Checksum 0x45b5be3a, Offset: 0x2920
-// Size: 0x1a0
-function function_12e53b2d() {
-    /#
+/#
+
+    // Namespace activecamo/activecamo_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x45b5be3a, Offset: 0x2920
+    // Size: 0x1a0
+    function function_12e53b2d() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         while (true) {
@@ -667,6 +668,6 @@ function function_12e53b2d() {
                 function_e3e0feb5(0, undefined);
             }
         }
-    #/
-}
+    }
 
+#/

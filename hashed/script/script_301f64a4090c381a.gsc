@@ -30,7 +30,7 @@ function private autoexec __init__system__() {
 function private preinit() {
     /#
         if (getdvarint(#"hash_4894e3a42dd84dfa", 0)) {
-            on_connect(&on_player_connect);
+            callback::on_connect(&on_player_connect);
         }
     #/
 }
@@ -79,9 +79,9 @@ function function_9af806be(var_c5b25bc5) {
     case 6:
         self zm_laststand::function_3a00302e(1);
         if (!isdefined(self.n_regen_delay)) {
-            self.n_regen_delay = zombie_utility::function_d2dfacfd("player_health_regen_delay");
+            self.n_regen_delay = zombie_utility::get_zombie_var("player_health_regen_delay");
         }
-        self.n_regen_delay = self.n_regen_delay + 1;
+        self.n_regen_delay += 1;
         break;
     }
 }
@@ -98,23 +98,23 @@ function function_2a94cd59() {
     /#
         switch (var_c5b25bc5) {
         case 1:
-            self function_b933de24(#"fl1");
+            self player::function_b933de24(#"fl1");
             break;
         case 2:
-            self perk_unsetperk(#"hash_53010725c65a98a5");
+            self perks::perk_unsetperk(#"hash_53010725c65a98a5");
             break;
         case 3:
-            self function_b933de24(#"db1");
+            self player::function_b933de24(#"db1");
             break;
         case 4:
-            self perk_unsetperk(#"hash_130074ec6de7a431");
+            self perks::perk_unsetperk(#"hash_130074ec6de7a431");
             break;
         case 5:
-            self perk_unsetperk(#"hash_1bc7d0ea42d1d0a8");
+            self perks::perk_unsetperk(#"hash_1bc7d0ea42d1d0a8");
             break;
         case 6:
-            self function_409dc98e(1, 0);
-            self.n_regen_delay = self.n_regen_delay - 1;
+            self zm_laststand::function_409dc98e(1, 0);
+            self.n_regen_delay -= 1;
             break;
         }
     #/
@@ -139,17 +139,17 @@ function actor_damage_override(*inflictor, attacker, damage, *flags, meansofdeat
     switch (shitloc.var_2fe40b9d) {
     case 1:
         if (shitloc zm_weapons::function_f5a0899d(surfacetype, 0)) {
-            psoffsettime = psoffsettime * 1.15;
+            psoffsettime *= 1.15;
         }
         break;
     case 3:
         if (shitloc zm_weapons::function_f5a0899d(surfacetype, 0)) {
-            psoffsettime = psoffsettime * 0.85;
+            psoffsettime *= 0.85;
         }
         break;
     case 6:
         if (boneindex == "MOD_MELEE" && isdefined(surfacetype) && !surfacetype.isriotshield && !zm_loadout::is_hero_weapon(surfacetype)) {
-            psoffsettime = psoffsettime + 200;
+            psoffsettime += 200;
         }
         break;
     }
@@ -178,7 +178,7 @@ function function_c3f3716() {
 // Size: 0x60
 function function_863dc0ef(n_cost) {
     if (self function_6a7a1533(-1000)) {
-        n_cost = n_cost + -1000;
+        n_cost += -1000;
         return int(max(n_cost, 0));
     }
     return n_cost;
@@ -227,12 +227,13 @@ function private function_68992377(var_c5b25bc5, var_97f3fbb7) {
     }
 }
 
-// Namespace namespace_e38c57c1/namespace_e38c57c1
-// Params 0, eflags: 0x0
-// Checksum 0xc56ec330, Offset: 0x9b0
-// Size: 0x640
-function devgui() {
-    /#
+/#
+
+    // Namespace namespace_e38c57c1/namespace_e38c57c1
+    // Params 0, eflags: 0x0
+    // Checksum 0xc56ec330, Offset: 0x9b0
+    // Size: 0x640
+    function devgui() {
         adddebugcommand("<unknown string>");
         adddebugcommand("<unknown string>");
         adddebugcommand("<unknown string>");
@@ -306,40 +307,34 @@ function devgui() {
             }
             setdvar(#"hash_443a451d4b2f9de2", "<unknown string>");
         }
-    #/
-}
+    }
 
-// Namespace namespace_e38c57c1/namespace_e38c57c1
-// Params 0, eflags: 0x0
-// Checksum 0x541194e8, Offset: 0xff8
-// Size: 0x4c
-function on_player_connect() {
-    /#
+    // Namespace namespace_e38c57c1/namespace_e38c57c1
+    // Params 0, eflags: 0x0
+    // Checksum 0x541194e8, Offset: 0xff8
+    // Size: 0x4c
+    function on_player_connect() {
         self endon(#"disconnect");
-        level wait_till("<unknown string>");
+        level flag::wait_till("<unknown string>");
         self devgui_player_menu();
-    #/
-}
+    }
 
-// Namespace namespace_e38c57c1/namespace_e38c57c1
-// Params 3, eflags: 0x40
-// Checksum 0x5e128483, Offset: 0x1050
-// Size: 0x74
-function function_c1ccd7f3(var_fc09f1a3, n_player, ...) {
-    /#
+    // Namespace namespace_e38c57c1/namespace_e38c57c1
+    // Params 3, eflags: 0x40
+    // Checksum 0x5e128483, Offset: 0x1050
+    // Size: 0x74
+    function function_c1ccd7f3(var_fc09f1a3, n_player, ...) {
         a_e_players = getplayers();
         if (a_e_players.size >= n_player) {
-            single_func_argarray(a_e_players[n_player - 1], var_fc09f1a3, vararg);
+            util::single_func_argarray(a_e_players[n_player - 1], var_fc09f1a3, vararg);
         }
-    #/
-}
+    }
 
-// Namespace namespace_e38c57c1/namespace_e38c57c1
-// Params 0, eflags: 0x0
-// Checksum 0xbacfd6a, Offset: 0x10d0
-// Size: 0x274
-function devgui_player_menu() {
-    /#
+    // Namespace namespace_e38c57c1/namespace_e38c57c1
+    // Params 0, eflags: 0x0
+    // Checksum 0xbacfd6a, Offset: 0x10d0
+    // Size: 0x274
+    function devgui_player_menu() {
         self function_1c3ffffd();
         var_21c1ba1 = self getentitynumber() + 1;
         adddebugcommand("<unknown string>" + self.name + "<unknown string>" + var_21c1ba1 + "<unknown string>" + var_21c1ba1 + "<unknown string>");
@@ -349,16 +344,14 @@ function devgui_player_menu() {
         adddebugcommand("<unknown string>" + self.name + "<unknown string>" + var_21c1ba1 + "<unknown string>" + var_21c1ba1 + "<unknown string>");
         adddebugcommand("<unknown string>" + self.name + "<unknown string>" + var_21c1ba1 + "<unknown string>" + var_21c1ba1 + "<unknown string>");
         adddebugcommand("<unknown string>" + self.name + "<unknown string>" + var_21c1ba1 + "<unknown string>" + var_21c1ba1 + "<unknown string>");
-    #/
-}
+    }
 
-// Namespace namespace_e38c57c1/namespace_e38c57c1
-// Params 0, eflags: 0x0
-// Checksum 0x6e411fee, Offset: 0x1350
-// Size: 0x34
-function function_1c3ffffd() {
-    /#
+    // Namespace namespace_e38c57c1/namespace_e38c57c1
+    // Params 0, eflags: 0x0
+    // Checksum 0x6e411fee, Offset: 0x1350
+    // Size: 0x34
+    function function_1c3ffffd() {
         adddebugcommand("<unknown string>" + self.name + "<unknown string>");
-    #/
-}
+    }
 
+#/

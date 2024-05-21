@@ -64,7 +64,7 @@ function think() {
         self [[ state.think ]](bot.objective);
     }
     /#
-        if (self should_record(#"hash_bb5c278818b000b")) {
+        if (self bot::should_record(#"hash_bb5c278818b000b")) {
             self function_26b3a2f();
             self function_d966fb1c();
         }
@@ -88,7 +88,7 @@ function private function_79241feb() {
         if (isdefined(objective.weight)) {
             weight = self [[ objective.weight ]](objective);
         }
-        totalweight = totalweight + weight;
+        totalweight += weight;
         weights[weights.size] = totalweight;
     }
     var_e8351662 = randomfloat(totalweight);
@@ -591,7 +591,7 @@ function private function_ca06456b(start, end, bounds, var_cdea01dc) {
     var_beaef07d = anglestoforward(var_f8c9ffb2);
     var_75128d22 = anglestoright(var_f8c9ffb2);
     /#
-        shouldrecord = self should_record(#"hash_bb5c278818b000b");
+        shouldrecord = self bot::should_record(#"hash_bb5c278818b000b");
         if (shouldrecord) {
             recordline(start, var_6d229307, (1, 0, 1), "<unknown string>", self);
             recordline(var_6d229307, var_57a5b0, (1, 0, 1), "<unknown string>", self);
@@ -754,12 +754,13 @@ function private function_f217ace2(volume) {
     return points[randomint(points.size)].origin + (0, 0, 50);
 }
 
-// Namespace bot_orders/bot_orders
-// Params 0, eflags: 0x4
-// Checksum 0xc388cc72, Offset: 0x2a78
-// Size: 0x64c
-function private function_7a7ab1a2() {
-    /#
+/#
+
+    // Namespace bot_orders/bot_orders
+    // Params 0, eflags: 0x4
+    // Checksum 0xc388cc72, Offset: 0x2a78
+    // Size: 0x64c
+    function private function_7a7ab1a2() {
         level endon(#"game_ended");
         while (true) {
             waitframe(1);
@@ -787,7 +788,7 @@ function private function_7a7ab1a2() {
                         }
                     }
                 }
-                zoffset = zoffset + -10;
+                zoffset += -10;
             }
             foreach (id in var_dd2331cb) {
                 info = function_b507a336(id);
@@ -804,15 +805,13 @@ function private function_7a7ab1a2() {
                 record3dtext(id, info.origin, (0, 0, 1), "<unknown string>");
             }
         }
-    #/
-}
+    }
 
-// Namespace bot_orders/bot_orders
-// Params 0, eflags: 0x4
-// Checksum 0x942ad6dd, Offset: 0x30d0
-// Size: 0x174
-function private function_26b3a2f() {
-    /#
+    // Namespace bot_orders/bot_orders
+    // Params 0, eflags: 0x4
+    // Checksum 0x942ad6dd, Offset: 0x30d0
+    // Size: 0x174
+    function private function_26b3a2f() {
         order = self.bot.order;
         if (!isdefined(order)) {
             record3dtext(function_9e72a96(#"hash_266967e49741306c"), self.origin, (0, 1, 1), "<unknown string>", self, 0.5);
@@ -823,15 +822,13 @@ function private function_26b3a2f() {
         if (isdefined(objective) && isdefined(objective.info) && isdefined(objective.info.target)) {
             recordline(self.origin, objective.info.target.origin, (0, 1, 1), "<unknown string>", self);
         }
-    #/
-}
+    }
 
-// Namespace bot_orders/bot_orders
-// Params 0, eflags: 0x4
-// Checksum 0xbecc4502, Offset: 0x3250
-// Size: 0x1be
-function private function_d966fb1c() {
-    /#
+    // Namespace bot_orders/bot_orders
+    // Params 0, eflags: 0x4
+    // Checksum 0xbecc4502, Offset: 0x3250
+    // Size: 0x1be
+    function private function_d966fb1c() {
         route = self.bot.route;
         if (!isdefined(route)) {
             return;
@@ -853,6 +850,6 @@ function private function_d966fb1c() {
             }
             lastorigin = info.origin;
         }
-    #/
-}
+    }
 
+#/

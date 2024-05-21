@@ -112,19 +112,19 @@ function function_f1e8c2f7() {
         var_645ded9a = row[8];
         for (i = 1; i <= 55; i++) {
             if (i >= 1 && i <= 10) {
-                bonus_damage = bonus_damage + var_74f162ea;
+                bonus_damage += var_74f162ea;
             } else if (i >= 11 && i <= 16) {
-                bonus_damage = bonus_damage + var_81142c5;
+                bonus_damage += var_81142c5;
             } else if (i >= 16 && i <= 21) {
-                bonus_damage = bonus_damage + var_b08480ed;
+                bonus_damage += var_b08480ed;
             } else if (i >= 21 && i <= 26) {
-                bonus_damage = bonus_damage + var_70508332;
+                bonus_damage += var_70508332;
             } else if (i >= 26 && i <= 31) {
-                bonus_damage = bonus_damage + var_43523789;
+                bonus_damage += var_43523789;
             } else if (i >= 31 && i <= 36) {
-                bonus_damage = bonus_damage + var_72cb1191;
+                bonus_damage += var_72cb1191;
             } else if (i >= 36) {
-                bonus_damage = bonus_damage + var_645ded9a;
+                bonus_damage += var_645ded9a;
             }
             var_68b4c58a.var_4321cafd[i] = bonus_damage;
         }
@@ -156,12 +156,13 @@ function function_dfaf0bad() {
     }
 }
 
-// Namespace zm_equipment/zm_equipment
-// Params 4, eflags: 0x0
-// Checksum 0x96b2af3e, Offset: 0x8e0
-// Size: 0xd4a
-function abilities_devgui_add_gadgets_custom(*root, pname, pid, menu_index) {
-    /#
+/#
+
+    // Namespace zm_equipment/zm_equipment
+    // Params 4, eflags: 0x0
+    // Checksum 0x96b2af3e, Offset: 0x8e0
+    // Size: 0xd4a
+    function abilities_devgui_add_gadgets_custom(*root, pname, pid, menu_index) {
         var_61b8f8fb = "<unknown string>";
         add_cmd_with_root = "<unknown string>" + var_61b8f8fb + pname + "<unknown string>";
         a_abilities = [];
@@ -176,7 +177,7 @@ function abilities_devgui_add_gadgets_custom(*root, pname, pid, menu_index) {
         arrayinsert(a_abilities, getweapon(#"cymbal_monkey"), 0);
         arrayinsert(a_abilities, getweapon(#"tesla_coil"), 0);
         arrayinsert(a_abilities, getweapon(#"tomahawk_t8"), 0);
-        function_174037fe(add_cmd_with_root, pid, a_abilities, "<unknown string>", menu_index);
+        ability_player::function_174037fe(add_cmd_with_root, pid, a_abilities, "<unknown string>", menu_index);
         a_hero_weapons = [];
         arrayinsert(a_hero_weapons, getweapon(#"hero_gravityspikes"), 0);
         arrayinsert(a_hero_weapons, getweapon(#"hero_lightninggun"), 0);
@@ -223,14 +224,15 @@ function abilities_devgui_add_gadgets_custom(*root, pname, pid, menu_index) {
         arrayinsert(a_hero_weapons, getweapon(#"hero_minigun_t8_lv1"), 0);
         arrayinsert(a_hero_weapons, getweapon(#"hero_minigun_t8_lv2"), 0);
         arrayinsert(a_hero_weapons, getweapon(#"hero_minigun_t8_lv3"), 0);
-        function_a40d04ca(add_cmd_with_root, pid, a_hero_weapons, "<unknown string>", menu_index);
+        ability_player::function_a40d04ca(add_cmd_with_root, pid, a_hero_weapons, "<unknown string>", menu_index);
         menu_index++;
-        menu_index = abilities_devgui_add_power(add_cmd_with_root, pid, menu_index);
-        menu_index = function_2e0162e9(add_cmd_with_root, pid, menu_index);
+        menu_index = ability_player::abilities_devgui_add_power(add_cmd_with_root, pid, menu_index);
+        menu_index = ability_player::function_2e0162e9(add_cmd_with_root, pid, menu_index);
         adddebugcommand("<unknown string>");
         return menu_index;
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_equipment/zm_equipment
 // Params 1, eflags: 0x0
@@ -680,12 +682,13 @@ function init_hint_hudelem(x, y, alignx, aligny, fontscale, alpha) {
     self.sort = 20;
 }
 
-// Namespace zm_equipment/zm_equipment
-// Params 2, eflags: 0x0
-// Checksum 0xb8000f17, Offset: 0x2dd0
-// Size: 0x184
-function setup_client_hintelem(ypos, font_scale) {
-    /#
+/#
+
+    // Namespace zm_equipment/zm_equipment
+    // Params 2, eflags: 0x0
+    // Checksum 0xb8000f17, Offset: 0x2dd0
+    // Size: 0x184
+    function setup_client_hintelem(ypos, font_scale) {
         if (!isdefined(ypos)) {
             ypos = 220;
         }
@@ -705,8 +708,9 @@ function setup_client_hintelem(ypos, font_scale) {
             return;
         }
         self.hintelem init_hint_hudelem(320, ypos, "<unknown string>", "<unknown string>", font_scale, 1);
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_equipment/zm_equipment
 // Params 1, eflags: 0x2 linked
@@ -968,7 +972,7 @@ function function_379f6b5d(n_base_damage, weapon, aicategory = #"normal", maxhea
                 var_b663540c = 55;
             }
             bonus_damage = damagestruct.var_4321cafd[var_b663540c];
-            var_5d7b4163 = var_5d7b4163 + bonus_damage;
+            var_5d7b4163 += bonus_damage;
         }
         if (isdefined(maxhealth)) {
             switch (aicategory) {
@@ -1039,15 +1043,16 @@ function function_4f51b6ea(weapon, str_means_of_death) {
     return false;
 }
 
-// Namespace zm_equipment/zm_equipment
-// Params 0, eflags: 0x0
-// Checksum 0x47121bdb, Offset: 0x3f30
-// Size: 0x1de
-function function_e418901e() {
-    /#
+/#
+
+    // Namespace zm_equipment/zm_equipment
+    // Params 0, eflags: 0x0
+    // Checksum 0x47121bdb, Offset: 0x3f30
+    // Size: 0x1de
+    function function_e418901e() {
         setdvar(#"give_equipment", "<unknown string>");
         waitframe(1);
-        level wait_till("<unknown string>");
+        level flag::wait_till("<unknown string>");
         waitframe(1);
         str_cmd = "<unknown string>" + "<unknown string>" + "<unknown string>";
         adddebugcommand(str_cmd);
@@ -1067,23 +1072,21 @@ function function_e418901e() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
-// Checksum 0x2dfcdccf, Offset: 0x4118
-// Size: 0xa4
-function function_1d34b98d(equipment) {
-    /#
+    // Namespace zm_equipment/zm_equipment
+    // Params 1, eflags: 0x0
+    // Checksum 0x2dfcdccf, Offset: 0x4118
+    // Size: 0xa4
+    function function_1d34b98d(equipment) {
         waitframe(1);
-        level wait_till("<unknown string>");
+        level flag::wait_till("<unknown string>");
         waitframe(1);
         if (isdefined(equipment)) {
             equipment_id = getweaponname(equipment);
             str_cmd = "<unknown string>" + equipment_id + "<unknown string>" + equipment_id + "<unknown string>";
             adddebugcommand(str_cmd);
         }
-    #/
-}
+    }
 
+#/

@@ -24,9 +24,9 @@ function private function_685505ce(inputarray) {
     }
     for (i = 0; i < inputarray.size; i++) {
         if (isdefined(inputarray[i])) {
-            targetstring = targetstring + inputarray[i];
+            targetstring += inputarray[i];
             if (i != inputarray.size - 1) {
-                targetstring = targetstring + ",";
+                targetstring += ",";
             }
         }
     }

@@ -188,7 +188,7 @@ function function_d4a86caf() {
                 }
                 if (activate) {
                     function_b9c75c0(trap, 1);
-                    trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
+                    trap.var_eb9d64bb += 5000;
                     namespace_1e25ad94::debugmsg("Paging IN fireball trap at:" + trap.origin);
                 }
                 continue;
@@ -250,7 +250,7 @@ function function_14a55bfa() {
             if (namespace_ec06fe4a::function_a8975c67(64)) {
                 newangles = angles;
                 if (var_ac885920) {
-                    newangles = newangles + (randomfloatrange(self.var_1a7efc31 * -1, self.var_1a7efc31), randomfloatrange(self.var_92bb507 * -1, self.var_92bb507), randomfloatrange(self.var_bf3fd288 * -1, self.var_bf3fd288));
+                    newangles += (randomfloatrange(self.var_1a7efc31 * -1, self.var_1a7efc31), randomfloatrange(self.var_92bb507 * -1, self.var_92bb507), randomfloatrange(self.var_bf3fd288 * -1, self.var_bf3fd288));
                 }
                 launchvector = anglestoforward(newangles);
                 velocity = launchvector * (var_7ceb92b + randomfloatrange(var_c36bfa20 * -1, var_c36bfa20));

@@ -321,7 +321,7 @@ function function_8e4d84eb(localclientnum, bundlename) {
         var_8c180cda = lerpfloat(var_8c180cda, function_b5338ccb(var_a23c6f11, var_2c46fc48.var_b4e0311b), 0.25);
         var_e8be0c0e = abs(var_a23c6f11) != 0 && (var_8c180cda < 0 && var_cbcfc238 > var_2c46fc48.var_11f00a95 || var_8c180cda > 0 && var_cbcfc238 < var_2c46fc48.var_8dd70933);
         if (var_e8be0c0e) {
-            var_73024e3b = var_73024e3b + var_8c180cda * var_2c46fc48.var_95d1f1bd * float(self function_8e4cd43b()) / 1000;
+            var_73024e3b += var_8c180cda * var_2c46fc48.var_95d1f1bd * float(self function_8e4cd43b()) / 1000;
             if (var_73024e3b < 0) {
                 var_73024e3b = 0;
             } else if (var_73024e3b > 1) {

@@ -180,16 +180,16 @@ function function_54354e4e(var_b3160f0, axis) {
 function function_92b063ff(var_b3160f0, axis) {
     switch (axis) {
     case 0:
-        self.origin = self.origin + (var_b3160f0.delta, 0, 0);
+        self.origin += (var_b3160f0.delta, 0, 0);
         break;
     case 1:
-        self.origin = self.origin + (0, var_b3160f0.delta, 0);
+        self.origin += (0, var_b3160f0.delta, 0);
         break;
     case 2:
-        self.origin = self.origin + (0, 0, var_b3160f0.delta);
+        self.origin += (0, 0, var_b3160f0.delta);
         break;
     default:
-        self.origin = self.origin + var_b3160f0.delta;
+        self.origin += var_b3160f0.delta;
         break;
     }
 }
@@ -222,16 +222,16 @@ function function_3b3f9801(var_b3160f0, axis) {
 function function_faea843b(var_b3160f0, axis) {
     switch (axis) {
     case 0:
-        self.angles = self.angles + (var_b3160f0.delta, 0, 0);
+        self.angles += (var_b3160f0.delta, 0, 0);
         break;
     case 1:
-        self.angles = self.angles + (0, var_b3160f0.delta, 0);
+        self.angles += (0, var_b3160f0.delta, 0);
         break;
     case 2:
-        self.angles = self.angles + (0, 0, var_b3160f0.delta);
+        self.angles += (0, 0, var_b3160f0.delta);
         break;
     default:
-        self.angles = self.angles + var_b3160f0.delta;
+        self.angles += var_b3160f0.delta;
         break;
     }
     if (var_b3160f0.var_37e98bce) {

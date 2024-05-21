@@ -35,7 +35,7 @@ function init_shared() {
 function killstreaktargetset(killstreakentity, offset = (0, 0, 0)) {
     target_set(killstreakentity, offset);
     /#
-        killstreakentity thread killstreak_switch_team(killstreakentity.owner);
+        killstreakentity thread killstreak_hacking::killstreak_switch_team(killstreakentity.owner);
     #/
 }
 
@@ -46,7 +46,7 @@ function killstreaktargetset(killstreakentity, offset = (0, 0, 0)) {
 function killstreaktargetclear(killstreakentity) {
     target_remove(killstreakentity);
     /#
-        killstreakentity thread killstreak_switch_team_end();
+        killstreakentity thread killstreak_hacking::killstreak_switch_team_end();
     #/
 }
 

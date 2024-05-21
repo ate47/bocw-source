@@ -288,17 +288,18 @@ function private function_c3452ef9(eventstruct) {
     self.traversemantlenode = undefined;
 }
 
-// Namespace bot_traversals/bot_traversals
-// Params 2, eflags: 0x4
-// Checksum 0x317067d, Offset: 0x13c8
-// Size: 0x5b6
-function private function_c20f7b00(eventstruct, str) {
-    /#
+/#
+
+    // Namespace bot_traversals/bot_traversals
+    // Params 2, eflags: 0x4
+    // Checksum 0x317067d, Offset: 0x13c8
+    // Size: 0x5b6
+    function private function_c20f7b00(eventstruct, str) {
         self endon(#"death", #"hash_3525e39d3694d0a9", #"hash_72f42e7610533d49", #"entering_last_stand", #"animscripted_start");
         textpos = vectorlerp(eventstruct.start_position, eventstruct.end_position, 0.5);
         yaw = vectortoangles(eventstruct.normal)[1];
         do {
-            if (self should_record("<unknown string>")) {
+            if (self bot::should_record("<unknown string>")) {
                 record3dtext(str, textpos, (1, 1, 1), "<unknown string>", self, 0.5);
                 recordstar(eventstruct.start_position, (0, 1, 0), "<unknown string>", self);
                 function_af72dbc5(eventstruct.start_position, (0, -64, 0), (0, 64, 0), yaw, (0, 1, 0), "<unknown string>", self);
@@ -335,15 +336,13 @@ function private function_c20f7b00(eventstruct, str) {
             }
             waitframe(1);
         } while (isbot(self) && self botundermanualcontrol() && isdefined(self.bot) && isdefined(self.bot.traversal));
-    #/
-}
+    }
 
-// Namespace bot_traversals/bot_traversals
-// Params 2, eflags: 0x4
-// Checksum 0xf4b38ff, Offset: 0x1988
-// Size: 0xf4
-function private function_3e781451(node, color) {
-    /#
+    // Namespace bot_traversals/bot_traversals
+    // Params 2, eflags: 0x4
+    // Checksum 0xf4b38ff, Offset: 0x1988
+    // Size: 0xf4
+    function private function_3e781451(node, color) {
         if (node.type == #"volume") {
             mins = (0, 0, 0) - node.aabb_extents;
             maxs = node.aabb_extents;
@@ -351,6 +350,6 @@ function private function_3e781451(node, color) {
             return;
         }
         function_af72dbc5(node.origin, (-15, -15, 0), (15, 15, 15), node.angles[1], color, "<unknown string>", self);
-    #/
-}
+    }
 
+#/

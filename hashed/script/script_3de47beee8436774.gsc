@@ -217,7 +217,7 @@ function function_c343823c(einflictor, eattacker, idamage, idflags, smeansofdeat
         }
     }
     n_damage = min(psoffsettime, 195);
-    var_53bb8ef2.var_cfa81957 = var_53bb8ef2.var_cfa81957 - n_damage;
+    var_53bb8ef2.var_cfa81957 -= n_damage;
     if (var_53bb8ef2.var_cfa81957 <= 0) {
         var_53bb8ef2.var_4ec7cb08 = 1;
         self vehicle::get_off_path();
@@ -383,7 +383,7 @@ function function_9ca7e163() {
     while (true) {
         s_waitresult = trigger waittill(#"damage");
         if (s_waitresult.attacker === level.player) {
-            var_4e227252 = var_4e227252 + s_waitresult.amount;
+            var_4e227252 += s_waitresult.amount;
             if (var_4e227252 >= 250) {
                 level thread function_2c4d7184();
             }
@@ -2342,7 +2342,7 @@ function function_de2d35ad() {
     trigger::wait_till("mg_spawn_go");
     var_5deea171 = spawner::simple_spawn_single("mortar_combat_enemy_spawner_main_turret");
     if (isdefined(var_5deea171)) {
-        var_5deea171.health = var_5deea171.health * 2;
+        var_5deea171.health *= 2;
         var_5deea171 thread function_250de527();
         var_5deea171 thread function_8ed36c06();
     }

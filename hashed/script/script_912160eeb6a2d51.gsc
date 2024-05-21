@@ -253,7 +253,7 @@ function private function_3a739b35() {
             }
             var_91b6ad45 = int(threat_sight * ((1 << 6) - 1));
             if ((var_97c4563c == 1 || var_97c4563c == 2) && var_91b6ad45 == 0) {
-                var_403d799 = var_403d799 + float(function_60d95f53()) / 1000;
+                var_403d799 += float(function_60d95f53()) / 1000;
                 if (var_403d799 > 1) {
                     var_97c4563c = 0;
                 }
@@ -414,8 +414,8 @@ function threat_sight_sighted(player) {
         self.stealth.threat_sight_count++;
     }
     waittime = self namespace_979752dc::alert_delay_distance_time(player);
-    waittime = waittime / pow(2, self.stealth.threat_sight_count);
-    waittime = waittime * 1000;
+    waittime /= pow(2, self.stealth.threat_sight_count);
+    waittime *= 1000;
     curtime = gettime();
     self.stealth.reactendtime = curtime + waittime;
     starttime = curtime;
@@ -425,8 +425,8 @@ function threat_sight_sighted(player) {
             break;
         }
         waittime = self namespace_979752dc::alert_delay_distance_time(player);
-        waittime = waittime / pow(2, self.stealth.threat_sight_count);
-        waittime = waittime * 1000;
+        waittime /= pow(2, self.stealth.threat_sight_count);
+        waittime *= 1000;
         if (starttime + waittime < reactendtime) {
             reactendtime = starttime + waittime;
         }
@@ -499,7 +499,7 @@ function threat_sight_force_visible_thread() {
                     forcedvis.ent thread threat_sight_player_sight_audio(1, max(forcedvis.ent.stealth.maxthreat, newthreat));
                 }
                 if (newthreat + delta < level.var_53ad6e22[#"ai_threatforcedmax"]) {
-                    newthreat = newthreat + delta;
+                    newthreat += delta;
                     self setthreatsight(forcedvis.ent, newthreat);
                     if (level.var_53ad6e22[#"ai_threatforcedmax"] >= 1 && newthreat >= 1 && !notified) {
                         self function_a3fcf9e0("sight", forcedvis.ent, forcedvis.ent.origin);

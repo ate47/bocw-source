@@ -224,23 +224,25 @@ function private function_413cffae(n_interval, e_player) {
     }
 }
 
-// Namespace zm_trial_weapon_rotation/zm_trial_weapon_rotation
-// Params 1, eflags: 0x0
-// Checksum 0x35a9fa98, Offset: 0x1118
-// Size: 0xf2
-function function_579553d8(n_interval) {
-    /#
+/#
+
+    // Namespace zm_trial_weapon_rotation/zm_trial_weapon_rotation
+    // Params 1, eflags: 0x0
+    // Checksum 0x35a9fa98, Offset: 0x1118
+    // Size: 0xf2
+    function function_579553d8(n_interval) {
         self notify("<unknown string>");
         self endon("<unknown string>");
         level endon(#"hash_7646638df88a3656", #"end_game");
         while (true) {
             debug2dtext((8, 400, 0), "<unknown string>" + n_interval, undefined, undefined, undefined, 1);
             waitframe(1);
-            n_interval = n_interval - float(function_60d95f53()) / 1000;
-            n_interval = clamp(n_interval, 0, 999);
+            n_interval -= float(function_60d95f53()) / 1000;
+            n_interval = math::clamp(n_interval, 0, 999);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_trial_weapon_rotation/zm_trial_weapon_rotation
 // Params 1, eflags: 0x0
@@ -249,7 +251,7 @@ function function_579553d8(n_interval) {
 function function_27cd9d6(var_41f1a085 = 0) {
     self endon(#"disconnect", #"hash_14795fd12c6dae32");
     level endon(#"hash_7646638df88a3656");
-    for (n_time = 0; !isalive(self) || self laststand::player_is_in_laststand() || self isusingoffhand() || self function_55acff10() || self zm_laststand::is_reviving_any() || n_time < var_41f1a085; n_time = n_time + float(function_60d95f53()) / 1000) {
+    for (n_time = 0; !isalive(self) || self laststand::player_is_in_laststand() || self isusingoffhand() || self function_55acff10() || self zm_laststand::is_reviving_any() || n_time < var_41f1a085; n_time += float(function_60d95f53()) / 1000) {
         waitframe(1);
     }
 }

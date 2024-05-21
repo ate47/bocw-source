@@ -850,12 +850,13 @@ function function_407dcc8d(var_7f440703, a_targets) {
     return a_n_objective_ids;
 }
 
-// Namespace zm_sq/zm_sq
-// Params 2, eflags: 0x0
-// Checksum 0xb11da1bf, Offset: 0x4420
-// Size: 0x1d6
-function function_f09763fd(ee_name, step_name) {
-    /#
+/#
+
+    // Namespace zm_sq/zm_sq
+    // Params 2, eflags: 0x0
+    // Checksum 0xb11da1bf, Offset: 0x4420
+    // Size: 0x1d6
+    function function_f09763fd(ee_name, step_name) {
         assert(ishash(ee_name), "<unknown string>");
         assert(isdefined(self._ee[ee_name]), "<unknown string>" + ee_name + "<unknown string>");
         var_da601d7f = function_44e256d8(ee_name);
@@ -868,15 +869,13 @@ function function_f09763fd(ee_name, step_name) {
             return;
         }
         return var_da601d7f + "<unknown string>" + function_9e72a96(step_name) + "<unknown string>" + index + "<unknown string>";
-    #/
-}
+    }
 
-// Namespace zm_sq/zm_sq
-// Params 1, eflags: 0x0
-// Checksum 0x1993a4a9, Offset: 0x4600
-// Size: 0xd6
-function function_44e256d8(ee_name) {
-    /#
+    // Namespace zm_sq/zm_sq
+    // Params 1, eflags: 0x0
+    // Checksum 0x1993a4a9, Offset: 0x4600
+    // Size: 0xd6
+    function function_44e256d8(ee_name) {
         assert(ishash(ee_name), "<unknown string>");
         owner = "<unknown string>";
         if (isentity(self)) {
@@ -884,32 +883,28 @@ function function_44e256d8(ee_name) {
             owner = "<unknown string>" + entitynum + "<unknown string>";
         }
         return "<unknown string>" + owner + function_9e72a96(ee_name) + "<unknown string>";
-    #/
-}
+    }
 
-// Namespace zm_sq/zm_sq
-// Params 1, eflags: 0x0
-// Checksum 0xbd047940, Offset: 0x46e0
-// Size: 0x114
-function function_28aee167(ee_name) {
-    /#
+    // Namespace zm_sq/zm_sq
+    // Params 1, eflags: 0x0
+    // Checksum 0xbd047940, Offset: 0x46e0
+    // Size: 0x114
+    function function_28aee167(ee_name) {
         assert(ishash(ee_name), "<unknown string>");
         ee_path = function_44e256d8(ee_name);
         owner = "<unknown string>";
         if (isentity(self)) {
             owner = self getentitynumber();
         }
-        waittill_can_add_debug_command();
+        util::waittill_can_add_debug_command();
         adddebugcommand("<unknown string>" + ee_path + "<unknown string>" + owner + "<unknown string>" + function_9e72a96(ee_name) + "<unknown string>");
-    #/
-}
+    }
 
-// Namespace zm_sq/zm_sq
-// Params 2, eflags: 0x0
-// Checksum 0xeff1f5d4, Offset: 0x4800
-// Size: 0x1e4
-function function_b3da1a16(ee_name, step_name) {
-    /#
+    // Namespace zm_sq/zm_sq
+    // Params 2, eflags: 0x0
+    // Checksum 0xeff1f5d4, Offset: 0x4800
+    // Size: 0x1e4
+    function function_b3da1a16(ee_name, step_name) {
         assert(ishash(ee_name), "<unknown string>");
         assert(ishash(step_name), "<unknown string>");
         step_path = function_f09763fd(ee_name, step_name);
@@ -918,33 +913,29 @@ function function_b3da1a16(ee_name, step_name) {
         if (isentity(self)) {
             owner = self getentitynumber();
         }
-        waittill_can_add_debug_command();
+        util::waittill_can_add_debug_command();
         adddebugcommand("<unknown string>" + step_path + "<unknown string>" + owner + "<unknown string>" + function_9e72a96(ee_name) + "<unknown string>" + index + "<unknown string>");
         adddebugcommand("<unknown string>" + step_path + "<unknown string>" + owner + "<unknown string>" + function_9e72a96(ee_name) + "<unknown string>" + index + "<unknown string>");
-    #/
-}
+    }
 
-// Namespace zm_sq/zm_sq
-// Params 0, eflags: 0x0
-// Checksum 0xa9934c06, Offset: 0x49f0
-// Size: 0x8c
-function function_fa5a5bfd() {
-    /#
+    // Namespace zm_sq/zm_sq
+    // Params 0, eflags: 0x0
+    // Checksum 0xa9934c06, Offset: 0x49f0
+    // Size: 0x8c
+    function function_fa5a5bfd() {
         if (isdefined(self._ee)) {
             playernum = self getentitynumber();
             path = "<unknown string>" + playernum;
-            waittill_can_add_debug_command();
+            util::waittill_can_add_debug_command();
             adddebugcommand("<unknown string>" + path + "<unknown string>");
         }
-    #/
-}
+    }
 
-// Namespace zm_sq/zm_sq
-// Params 2, eflags: 0x0
-// Checksum 0xd2b48b9f, Offset: 0x4a88
-// Size: 0xca
-function function_87306f8a(ee_name, step_name) {
-    /#
+    // Namespace zm_sq/zm_sq
+    // Params 2, eflags: 0x0
+    // Checksum 0xd2b48b9f, Offset: 0x4a88
+    // Size: 0xca
+    function function_87306f8a(ee_name, step_name) {
         ee = self._ee[ee_name];
         step_index = function_9212ff4d(ee_name, step_name);
         if (ee.started && step_index <= ee.current_step) {
@@ -957,15 +948,13 @@ function function_87306f8a(ee_name, step_name) {
             level start(ee.name);
         }
         return 1;
-    #/
-}
+    }
 
-// Namespace zm_sq/zm_sq
-// Params 1, eflags: 0x0
-// Checksum 0x446dad87, Offset: 0x4b60
-// Size: 0x14c
-function function_614612f(ee_name) {
-    /#
+    // Namespace zm_sq/zm_sq
+    // Params 1, eflags: 0x0
+    // Checksum 0x446dad87, Offset: 0x4b60
+    // Size: 0x14c
+    function function_614612f(ee_name) {
         ee = self._ee[ee_name];
         if (ee.started) {
             ee.steps[ee.current_step] notify(#"end_early");
@@ -975,15 +964,13 @@ function function_614612f(ee_name) {
             iprintlnbold("<unknown string>" + function_9e72a96(ee_name) + "<unknown string>" + function_9e72a96(ee.steps[ee.current_step].name) + "<unknown string>");
             println("<unknown string>" + function_9e72a96(ee_name) + "<unknown string>" + function_9e72a96(ee.steps[ee.current_step].name) + "<unknown string>");
         }
-    #/
-}
+    }
 
-// Namespace zm_sq/zm_sq
-// Params 2, eflags: 0x0
-// Checksum 0x7b7fe0ca, Offset: 0x4cb8
-// Size: 0x324
-function function_f2dd8601(ee_name, var_f2c264bb) {
-    /#
+    // Namespace zm_sq/zm_sq
+    // Params 2, eflags: 0x0
+    // Checksum 0x7b7fe0ca, Offset: 0x4cb8
+    // Size: 0x324
+    function function_f2dd8601(ee_name, var_f2c264bb) {
         if (isentity(self)) {
             self endon(#"death");
             self endon(#"disconnect");
@@ -1010,15 +997,13 @@ function function_f2dd8601(ee_name, var_f2c264bb) {
             println("<unknown string>" + function_9e72a96(ee.name) + "<unknown string>" + function_9e72a96(ee.steps[ee.current_step].name) + "<unknown string>");
         }
         function_614612f(ee_name);
-    #/
-}
+    }
 
-// Namespace zm_sq/zm_sq
-// Params 0, eflags: 0x0
-// Checksum 0x9d919078, Offset: 0x4fe8
-// Size: 0x8de
-function devgui_think() {
-    /#
+    // Namespace zm_sq/zm_sq
+    // Params 0, eflags: 0x0
+    // Checksum 0x9d919078, Offset: 0x4fe8
+    // Size: 0x8de
+    function devgui_think() {
         self notify(#"hash_6d8b1a4c632ecc9");
         self endon(#"hash_6d8b1a4c632ecc9");
         while (true) {
@@ -1109,15 +1094,13 @@ function devgui_think() {
                 break;
             }
         }
-    #/
-}
+    }
 
-// Namespace zm_sq/zm_sq
-// Params 2, eflags: 0x4
-// Checksum 0x1271def8, Offset: 0x58d0
-// Size: 0xa4
-function private create_hudelem(y, x) {
-    /#
+    // Namespace zm_sq/zm_sq
+    // Params 2, eflags: 0x4
+    // Checksum 0x1271def8, Offset: 0x58d0
+    // Size: 0xa4
+    function private create_hudelem(y, x) {
         if (!isdefined(x)) {
             x = 0;
         }
@@ -1129,15 +1112,13 @@ function private create_hudelem(y, x) {
         var_aa917a22.y = y;
         var_aa917a22.x = x;
         return var_aa917a22;
-    #/
-}
+    }
 
-// Namespace zm_sq/zm_sq
-// Params 0, eflags: 0x0
-// Checksum 0x45021b4d, Offset: 0x5980
-// Size: 0x248
-function function_5df75220() {
-    /#
+    // Namespace zm_sq/zm_sq
+    // Params 0, eflags: 0x0
+    // Checksum 0x45021b4d, Offset: 0x5980
+    // Size: 0x248
+    function function_5df75220() {
         current_y = 30;
         foreach (ee in level._ee) {
             current_x = 30;
@@ -1146,28 +1127,26 @@ function function_5df75220() {
             }
             ee.debug_hudelem settext(function_9e72a96(ee.name));
             ee.debug_hudelem.fontscale = 1.5;
-            current_x = current_x + 5;
+            current_x += 5;
             step_string = "<unknown string>";
             foreach (step in ee.steps) {
-                current_y = current_y + 15;
+                current_y += 15;
                 if (!isdefined(step.debug_hudelem)) {
                     step.debug_hudelem = create_hudelem(current_y, current_x);
                 }
                 step.debug_hudelem settext(step_string + function_9e72a96(step.name));
                 step.debug_hudelem.fontscale = 1.5;
             }
-            current_y = current_y + 30;
+            current_y += 30;
         }
         level.var_7f2ca392 = 1;
-    #/
-}
+    }
 
-// Namespace zm_sq/zm_sq
-// Params 0, eflags: 0x0
-// Checksum 0xbef2c88c, Offset: 0x5bd0
-// Size: 0x172
-function function_c1d3567c() {
-    /#
+    // Namespace zm_sq/zm_sq
+    // Params 0, eflags: 0x0
+    // Checksum 0xbef2c88c, Offset: 0x5bd0
+    // Size: 0x172
+    function function_c1d3567c() {
         level notify(#"hash_21c0567b0010f696");
         foreach (ee in level._ee) {
             if (isdefined(ee.debug_hudelem)) {
@@ -1182,15 +1161,13 @@ function function_c1d3567c() {
             }
         }
         level.var_7f2ca392 = undefined;
-    #/
-}
+    }
 
-// Namespace zm_sq/zm_sq
-// Params 0, eflags: 0x0
-// Checksum 0x84999853, Offset: 0x5d50
-// Size: 0x156
-function function_9bee49bf() {
-    /#
+    // Namespace zm_sq/zm_sq
+    // Params 0, eflags: 0x0
+    // Checksum 0x84999853, Offset: 0x5d50
+    // Size: 0x156
+    function function_9bee49bf() {
         level endon(#"hash_21c0567b0010f696");
         while (true) {
             waitframe(1);
@@ -1201,15 +1178,13 @@ function function_9bee49bf() {
                 }
             }
         }
-    #/
-}
+    }
 
-// Namespace zm_sq/zm_sq
-// Params 1, eflags: 0x0
-// Checksum 0x29f69717, Offset: 0x5eb0
-// Size: 0x64
-function function_1091b2a0(var_4f1c1316) {
-    /#
+    // Namespace zm_sq/zm_sq
+    // Params 1, eflags: 0x0
+    // Checksum 0x29f69717, Offset: 0x5eb0
+    // Size: 0x64
+    function function_1091b2a0(var_4f1c1316) {
         if (!var_4f1c1316.started) {
             color = (0.75, 0.75, 0.75);
         } else if (!var_4f1c1316.completed) {
@@ -1218,6 +1193,6 @@ function function_1091b2a0(var_4f1c1316) {
             color = (0, 1, 0);
         }
         return color;
-    #/
-}
+    }
 
+#/

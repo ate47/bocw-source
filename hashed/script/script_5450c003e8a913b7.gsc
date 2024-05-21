@@ -39,7 +39,7 @@ function main() {
     self bt_set_stealth_state("idle");
     self stealth_init_goal_radius();
     /#
-        self thread debug_enemy();
+        self thread namespace_b0df45a::debug_enemy();
     #/
     if (isdefined(level.stealth.fninitenemygame)) {
         self thread [[ level.stealth.fninitenemygame ]]();
@@ -395,7 +395,7 @@ function set_alert_level(type, event) {
         wait(0.05);
     }
     /#
-        self thread function_690312e5(type);
+        self thread namespace_b0df45a::function_690312e5(type);
     #/
     self namespace_979752dc::set_stealth_state(type);
     self notify(#"hash_1969930500784d9a", type);
@@ -757,21 +757,21 @@ function react_announce(event) {
         self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "investigate", delaytime);
         println("<unknown string>" + self getentitynumber() + "<unknown string>" + event.typeorig + "<unknown string>");
         /#
-            function_65b21ab8(self, "<unknown string>");
+            namespace_b0df45a::function_65b21ab8(self, "<unknown string>");
         #/
         return true;
     case #"cover_blown":
         self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "coverblown", delaytime);
         println("<unknown string>" + self getentitynumber() + "<unknown string>" + event.typeorig + "<unknown string>");
         /#
-            function_65b21ab8(self, "<unknown string>");
+            namespace_b0df45a::function_65b21ab8(self, "<unknown string>");
         #/
         return true;
     case #"combat":
         self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "combat", 1);
         println("<unknown string>" + self getentitynumber() + "<unknown string>" + event.typeorig + "<unknown string>");
         /#
-            function_65b21ab8(self, "<unknown string>");
+            namespace_b0df45a::function_65b21ab8(self, "<unknown string>");
         #/
         return true;
     }
@@ -803,27 +803,27 @@ function react_announce_specific(event) {
         case #"found_corpse":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", event.typeorig, delaytime);
             /#
-                function_65b21ab8(self, "<unknown string>");
+                namespace_b0df45a::function_65b21ab8(self, "<unknown string>");
             #/
             return true;
         case #"bulletwhizby":
         case #"gunshot":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "gunshot", 0.2, event);
             /#
-                function_65b21ab8(self, "<unknown string>");
+                namespace_b0df45a::function_65b21ab8(self, "<unknown string>");
             #/
             return true;
         case #"ally_damaged":
         case #"gunshot_teammate":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "gunshot", randomfloatrange(0.8, 1.3), event);
             /#
-                function_65b21ab8(self, "<unknown string>");
+                namespace_b0df45a::function_65b21ab8(self, "<unknown string>");
             #/
             return true;
         case #"ally_killed":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "ally_killed", 0.5);
             /#
-                function_65b21ab8(self, "<unknown string>");
+                namespace_b0df45a::function_65b21ab8(self, "<unknown string>");
             #/
             return true;
         case #"proximity":

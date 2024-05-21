@@ -8,34 +8,33 @@
 
 #namespace damagefeedback;
 
-// Namespace damagefeedback/damagefeedback_shared
-// Params 0, eflags: 0x5
-// Checksum 0x403b6071, Offset: 0x1e8
-// Size: 0x3c
-function private autoexec __init__system__() {
-    /#
-        register(#"damagefeedback", &preinit, undefined, undefined, undefined);
-    #/
-}
+/#
 
-// Namespace damagefeedback/damagefeedback_shared
-// Params 0, eflags: 0x4
-// Checksum 0xed3224e1, Offset: 0x230
-// Size: 0x2c
-function private preinit() {
-    /#
-        on_connect(&on_player_connect);
-    #/
-}
+    // Namespace damagefeedback/damagefeedback_shared
+    // Params 0, eflags: 0x5
+    // Checksum 0x403b6071, Offset: 0x1e8
+    // Size: 0x3c
+    function private autoexec __init__system__() {
+        system::register(#"damagefeedback", &preinit, undefined, undefined, undefined);
+    }
 
-// Namespace damagefeedback/damagefeedback_shared
-// Params 0, eflags: 0x0
-// Checksum 0x6674f5b, Offset: 0x268
-// Size: 0x8
-function on_player_connect() {
-    /#
-    #/
-}
+    // Namespace damagefeedback/damagefeedback_shared
+    // Params 0, eflags: 0x4
+    // Checksum 0xed3224e1, Offset: 0x230
+    // Size: 0x2c
+    function private preinit() {
+        callback::on_connect(&on_player_connect);
+    }
+
+    // Namespace damagefeedback/damagefeedback_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x6674f5b, Offset: 0x268
+    // Size: 0x8
+    function on_player_connect() {
+        
+    }
+
+#/
 
 // Namespace damagefeedback/damagefeedback_shared
 // Params 1, eflags: 0x2 linked
@@ -98,7 +97,7 @@ function hit_alert_sfx_cp(mod, *inflictor, *perkfeedback, weapon, victim, *psoff
             hitalias = #"hash_66f38123cad3a33b";
         }
         if (isdefined(hitalias)) {
-            hitalias = hitalias + suffix;
+            hitalias += suffix;
         }
         if (isvehicle(psoffsettime)) {
             hitalias = #"hash_2ce81d103e923201";
@@ -508,12 +507,13 @@ function damage_feedback_get_dead(*victim, mod, weapon, stage) {
     return stage == 5 && (mod == "MOD_BULLET" || mod == "MOD_RIFLE_BULLET" || mod == "MOD_PISTOL_BULLET" || mod == "MOD_IMPACT" || mod == "MOD_HEAD_SHOT" || mod == "MOD_BURNED" || mod == "MOD_DOT" || mod == "MOD_MELEE_WEAPON_BUTT") && !weapon.isheavyweapon && !killstreaks::is_killstreak_weapon(weapon);
 }
 
-// Namespace damagefeedback/damagefeedback_shared
-// Params 3, eflags: 0x0
-// Checksum 0x6a83e46d, Offset: 0x1f48
-// Size: 0x1c6
-function damage_feedback_growth(victim, mod, weapon) {
-    /#
+/#
+
+    // Namespace damagefeedback/damagefeedback_shared
+    // Params 3, eflags: 0x0
+    // Checksum 0x6a83e46d, Offset: 0x1f48
+    // Size: 0x1c6
+    function damage_feedback_growth(victim, mod, weapon) {
         if (isdefined(self.hud_damagefeedback)) {
             stage = damage_feedback_get_stage(victim);
             self.hud_damagefeedback.x = -11 + -1 * stage;
@@ -531,15 +531,13 @@ function damage_feedback_growth(victim, mod, weapon) {
             self.hud_damagefeedback fadeovertime(1);
             self.hud_damagefeedback.alpha = 0;
         }
-    #/
-}
+    }
 
-// Namespace damagefeedback/damagefeedback_shared
-// Params 0, eflags: 0x0
-// Checksum 0x61a64650, Offset: 0x2118
-// Size: 0x96
-function kill_hitmarker_fade() {
-    /#
+    // Namespace damagefeedback/damagefeedback_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x61a64650, Offset: 0x2118
+    // Size: 0x96
+    function kill_hitmarker_fade() {
         if (!isdefined(self.hud_damagefeedback)) {
             return;
         }
@@ -549,8 +547,9 @@ function kill_hitmarker_fade() {
         wait(0.25);
         self.hud_damagefeedback fadeovertime(0.3);
         self.hud_damagefeedback.alpha = 0;
-    #/
-}
+    }
+
+#/
 
 // Namespace damagefeedback/damagefeedback_shared
 // Params 3, eflags: 0x0

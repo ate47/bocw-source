@@ -180,7 +180,7 @@ function function_44e72b9e(var_e25c39ec = 0, start_node) {
         level.var_6fb3a1e6 makevehicleusable();
         level.var_6fb3a1e6 usevehicle(level.players[0], 1);
         /#
-            thread function_eeb6bf9c("<unknown string>", "<unknown string>", "<unknown string>", undefined, 5);
+            thread util::function_eeb6bf9c("<unknown string>", "<unknown string>", "<unknown string>", undefined, 5);
         #/
     }
     waitframe(1);
@@ -428,12 +428,12 @@ function function_3028905b() {
         var_23ebc694 = var_2a900db9.origin - var_93b51755.origin;
         var_1403f864 = vectornormalize(var_23ebc694);
         target_point = chopper.origin - var_c9250ee0;
-        target_point = target_point + vectorscale(var_1403f864, randomfloatrange(-150, 150) * var_ff21af1);
+        target_point += vectorscale(var_1403f864, randomfloatrange(-150, 150) * var_ff21af1);
         var_b1b75f05 = vectorscale(perpendicularvector(var_1403f864), randomfloatrange(-40, 40) * var_ff21af1);
         var_c9250ee0 = var_b1b75f05;
-        target_point = target_point + var_b1b75f05;
+        target_point += var_b1b75f05;
         target_point = (target_point[0], target_point[1], var_b6e34907);
-        target_point = target_point + (0, 0, randomfloatrange(-40, 40) * var_ff21af1);
+        target_point += (0, 0, randomfloatrange(-40, 40) * var_ff21af1);
         chopper setyawspeed(75, 45, 45);
         chopper setspeed(randomfloatrange(5, 15) * var_ff21af1, 5, 5);
         chopper setmaxpitchroll(5, 5);
@@ -605,7 +605,7 @@ function function_7eb6aae3(var_e883a73e) {
     while (true) {
         timeused = 0;
         while (level.players[0] actionslottwobuttonpressed()) {
-            timeused = timeused + 0.05;
+            timeused += 0.05;
             if (timeused > 0.5) {
                 level.players[0] notify(#"hash_7a8828759fd65505");
             }

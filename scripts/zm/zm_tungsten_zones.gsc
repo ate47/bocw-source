@@ -352,18 +352,20 @@ function zone_init() {
     namespace_f0b43eb5::create_challenge(#"hash_580e3a81d3b46e59", 90, "zone_board_room_01", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_board_room_01", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
 }
 
-// Namespace zm_tungsten_zones/zm_tungsten_zones
-// Params 0, eflags: 0x0
-// Checksum 0x7b58cb5b, Offset: 0x4458
-// Size: 0x36
-function function_b9ad8870() {
-    /#
-        wait_till("connect_backlot_to_mainstreet");
+/#
+
+    // Namespace zm_tungsten_zones/zm_tungsten_zones
+    // Params 0, eflags: 0x0
+    // Checksum 0x7b58cb5b, Offset: 0x4458
+    // Size: 0x36
+    function function_b9ad8870() {
+        flag::wait_till("connect_backlot_to_mainstreet");
         while (true) {
             wait(2);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
 // Params 0, eflags: 0x2 linked
@@ -811,7 +813,7 @@ function private function_88c5fdab(a_ents) {
 // Size: 0x5c
 function function_6e486b1(*var_d3413870) {
     var_74de2d96 = self zm_zonemgr::is_player_in_zone(level.var_65c43c31);
-    var_74de2d96 = var_74de2d96 | self zm_zonemgr::is_player_in_zone("zone_observation");
+    var_74de2d96 |= self zm_zonemgr::is_player_in_zone("zone_observation");
     return var_74de2d96;
 }
 

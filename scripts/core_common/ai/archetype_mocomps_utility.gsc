@@ -44,7 +44,7 @@ function private drawtraversal(traversal, entity, animation, *mocompanimblendout
     currentposition = mocompanimblendouttime.startposition;
     nextposition = currentposition;
     segments = 0;
-    for (segmenttime = 0; segmenttime <= animlength; segmenttime = segmenttime + float(function_60d95f53()) / 1000) {
+    for (segmenttime = 0; segmenttime <= animlength; segmenttime += float(function_60d95f53()) / 1000) {
         nexttime = segmenttime + float(function_60d95f53()) / 1000;
         if (nexttime > animlength) {
             nexttime = animlength;
@@ -102,7 +102,7 @@ function private drawtraversalsection(section, entity, animation, *mocompanimble
     nextposition = currentposition;
     segments = 0;
     deltatoendtotal = (0, 0, 0);
-    for (segmenttime = mocompanimblendouttime.starttime; segmenttime <= mocompanimblendouttime.endtime; segmenttime = segmenttime + float(function_60d95f53()) / 1000) {
+    for (segmenttime = mocompanimblendouttime.starttime; segmenttime <= mocompanimblendouttime.endtime; segmenttime += float(function_60d95f53()) / 1000) {
         nexttime = segmenttime + float(function_60d95f53()) / 1000;
         if (nexttime > mocompanimblendouttime.endtime) {
             nexttime = mocompanimblendouttime.endtime;
@@ -111,11 +111,11 @@ function private drawtraversalsection(section, entity, animation, *mocompanimble
         nextposition = currentposition + rotatepoint(movedelta, mocompanimblendouttime.startangles);
         if (nexttime >= mocompanimblendouttime.mocompstarttime && lengthsquared(deltatoendtotal) < lengthsquared(mocompanimblendouttime.deltatoendposition)) {
             adjusteddeltaperframe = mocompanimblendouttime.adjusteddeltaperframe;
-            deltatoendtotal = deltatoendtotal + adjusteddeltaperframe;
+            deltatoendtotal += adjusteddeltaperframe;
             if (lengthsquared(deltatoendtotal) > lengthsquared(mocompanimblendouttime.deltatoendposition)) {
-                adjusteddeltaperframe = adjusteddeltaperframe - deltatoendtotal - mocompanimblendouttime.deltatoendposition;
+                adjusteddeltaperframe -= deltatoendtotal - mocompanimblendouttime.deltatoendposition;
             }
-            nextposition = nextposition + adjusteddeltaperframe;
+            nextposition += adjusteddeltaperframe;
             /#
                 recordline(currentposition, nextposition, (0, 1, 0), "<unknown string>", mocompanimflag);
             #/
@@ -579,21 +579,21 @@ function mocomptraversalproceduralpivotupdate(entity, mocompanim, mocompanimblen
     if (traversal.lastanimtime >= section.mocompstarttime && lengthsquared(section.deltatoendtotal) < lengthsquared(section.deltatoendposition)) {
         animationtimedelta = (animationnextsteptime - traversal.lastanimtime) / float(function_60d95f53()) / 1000;
         adjusteddeltaperframe = section.adjusteddeltaperframe * animationtimedelta;
-        section.deltatoendtotal = section.deltatoendtotal + adjusteddeltaperframe;
+        section.deltatoendtotal += adjusteddeltaperframe;
         if (traversal.lastanimtime <= section.mocompendtime && section.deltatoendmocompmultiplier < 1 && !is_true(level.var_881e464e)) {
             animationrate = traversal.initialanimationrate * section.deltatoendmocompmultiplier;
         }
         if (lengthsquared(section.deltatoendtotal) > lengthsquared(section.deltatoendposition)) {
-            adjusteddeltaperframe = adjusteddeltaperframe - section.deltatoendtotal - section.deltatoendposition;
+            adjusteddeltaperframe -= section.deltatoendtotal - section.deltatoendposition;
         }
     }
     traversal.lastanimtime = animationnextsteptime;
-    traversal.var_98d8ca66 = traversal.var_98d8ca66 + adjusteddeltaperframe;
+    traversal.var_98d8ca66 += adjusteddeltaperframe;
     newentityorigin = traversal.startposition + rotatepoint(movedelta, traversal.startangles) + traversal.var_98d8ca66;
     if (isdefined(traversal.endnodeparent)) {
         parentdelta = traversal.endnodeparent.origin - traversal.lastendnodeparentorigin;
         traversal.lastendnodeparentorigin = traversal.endnodeparent.origin;
-        newentityorigin = newentityorigin + parentdelta;
+        newentityorigin += parentdelta;
     }
     if (isactor(entity)) {
         if (!is_true(entity.ai.var_8a9efbb6)) {
@@ -753,19 +753,19 @@ function function_74ff11d0(entity, mocompanim, mocompanimblendouttime, mocompani
     if (traversal.lastanimtime >= section.mocompstarttime && section.var_9bcea3fe <= section.mocomptimeinframes) {
         animationtimedelta = (animationnextsteptime - traversal.lastanimtime) / float(function_60d95f53()) / 1000;
         adjusteddeltaperframe = section.adjusteddeltaperframe * animationtimedelta;
-        section.deltatoendtotal = section.deltatoendtotal + adjusteddeltaperframe;
+        section.deltatoendtotal += adjusteddeltaperframe;
         section.var_9bcea3fe++;
         if (lengthsquared(section.deltatoendtotal) > lengthsquared(section.deltatoendposition)) {
-            adjusteddeltaperframe = adjusteddeltaperframe - section.deltatoendtotal - section.deltatoendposition;
+            adjusteddeltaperframe -= section.deltatoendtotal - section.deltatoendposition;
         }
     }
     traversal.lastanimtime = animationnextsteptime;
-    traversal.var_98d8ca66 = traversal.var_98d8ca66 + adjusteddeltaperframe;
+    traversal.var_98d8ca66 += adjusteddeltaperframe;
     newentityorigin = traversal.startposition + rotatepoint(movedelta, traversal.startangles) + traversal.var_98d8ca66;
     if (isdefined(traversal.endnodeparent)) {
         parentdelta = traversal.endnodeparent.origin - traversal.lastendnodeparentorigin;
         traversal.lastendnodeparentorigin = traversal.endnodeparent.origin;
-        newentityorigin = newentityorigin + parentdelta;
+        newentityorigin += parentdelta;
     }
     entity forceteleport(newentityorigin, traversal.startangles, 0, 0);
 }
@@ -1199,7 +1199,7 @@ function function_fe81623b(entity, *mocompanim, *mocompanimblendouttime, *mocomp
     mocompduration.var_faf3d7c1 = anglestoforward(mocompduration.angles) * -1 * mocompduration.var_a94d73fa;
     if (!is_true(mocompduration.var_d667c9b7)) {
         var_9efb1605 = mocompduration.var_b98d64dc;
-        var_9efb1605 = var_9efb1605 + min(getdvarfloat(#"hash_554109ca6ea62d2a", 250), mocompduration.var_24594a06 * mocompduration.var_d8481de * 1 / resistance * getdvarfloat(#"hash_1b2914f9c8ff0bca", 0.5)) * mocompduration.var_331c8e1b;
+        var_9efb1605 += min(getdvarfloat(#"hash_554109ca6ea62d2a", 250), mocompduration.var_24594a06 * mocompduration.var_d8481de * 1 / resistance * getdvarfloat(#"hash_1b2914f9c8ff0bca", 0.5)) * mocompduration.var_331c8e1b;
         var_9efb1605 = max(var_9efb1605, getdvarfloat(#"hash_555bf3ca6ebccf80", 40));
         mocompduration.var_efe6f3a3 = (0, 0, 1) * var_9efb1605;
         mocompduration.var_d667c9b7 = 1;

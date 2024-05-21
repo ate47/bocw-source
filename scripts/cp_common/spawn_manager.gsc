@@ -32,7 +32,7 @@ function private preinit() {
     array::thread_all(level.spawn_managers, &function_b574e20c);
     function_edad3267();
     /#
-        on_connect(&on_player_connect);
+        callback::on_connect(&on_player_connect);
         level thread function_50a58f3();
     #/
 }
@@ -70,7 +70,7 @@ function function_7051aeac(var_21472c04) {
     var_54642189 = self.var_b02a42f7 - self.var_5ee53e3.size;
     var_514ec5ff = var_54642189 >= var_21472c04 && totalfree >= var_21472c04 && var_21472c04 > 0;
     var_7d4f7444 = level.var_539b11be - level.var_e4fdd7dd;
-    assert(self.enable == level get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
+    assert(self.enable == level flag::get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
     if (self.script_forcespawn == 0) {
         return (totalfree > 0 && var_54642189 > 0 && var_7d4f7444 > 0 && var_514ec5ff && self.enable);
     }
@@ -181,12 +181,13 @@ function function_b4ecf5f4() {
     }
 }
 
-// Namespace spawn_manager/spawn_manager
-// Params 1, eflags: 0x0
-// Checksum 0xfdf7def, Offset: 0xad8
-// Size: 0x128
-function function_827b4278(str_name) {
-    /#
+/#
+
+    // Namespace spawn_manager/spawn_manager
+    // Params 1, eflags: 0x0
+    // Checksum 0xfdf7def, Offset: 0xad8
+    // Size: 0x128
+    function function_827b4278(str_name) {
         var_2f99f0ac = getentarray("<unknown string>", "<unknown string>");
         foreach (sm in var_2f99f0ac) {
             if (sm != self) {
@@ -195,8 +196,9 @@ function function_827b4278(str_name) {
                 }
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace spawn_manager/spawn_manager
 // Params 0, eflags: 0x2 linked
@@ -456,8 +458,8 @@ function function_b574e20c() {
             waitframe(1);
         }
         waitframe(1);
-        assert(!level get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
-        assert(!level get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
+        assert(!level flag::get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
+        assert(!level flag::get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
     }
     self function_f00c27f1();
     if (isdefined(self.var_5ee53e3) && self.var_5ee53e3.size != 0) {
@@ -658,7 +660,7 @@ function function_26374d3f() {
     if (isdefined(self.script_wait)) {
         wait(self.script_wait);
         if (isdefined(self.script_wait_add)) {
-            self.script_wait = self.script_wait + self.script_wait_add;
+            self.script_wait += self.script_wait_add;
         }
         return;
     }
@@ -679,8 +681,8 @@ function function_26374d3f() {
             wait(self.script_wait_min);
         }
         if (isdefined(self.script_wait_add)) {
-            self.script_wait_min = self.script_wait_min + self.script_wait_add;
-            self.script_wait_max = self.script_wait_max + self.script_wait_add;
+            self.script_wait_min += self.script_wait_add;
+            self.script_wait_max += self.script_wait_add;
         }
     }
 }
@@ -722,7 +724,7 @@ function function_a239f3bc() {
 // Checksum 0xd6a006d0, Offset: 0x2740
 // Size: 0x84
 function function_2b1e3e5f() {
-    assert(!level get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
+    assert(!level flag::get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
     level flag::set("sm_" + self.sm_id + "_enabled");
 }
 
@@ -740,7 +742,7 @@ function function_e6bfc4ff() {
 // Checksum 0x8b3b2e48, Offset: 0x2818
 // Size: 0x84
 function function_c81f3c84() {
-    assert(!level get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
+    assert(!level flag::get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
     level flag::set("sm_" + self.sm_id + "_killed");
 }
 
@@ -749,7 +751,7 @@ function function_c81f3c84() {
 // Checksum 0x2fbae66b, Offset: 0x28a8
 // Size: 0x84
 function function_f00c27f1() {
-    assert(!level get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
+    assert(!level flag::get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
     level flag::set("sm_" + self.sm_id + "_complete");
 }
 
@@ -758,7 +760,7 @@ function function_f00c27f1() {
 // Checksum 0x6be97a2a, Offset: 0x2938
 // Size: 0x84
 function function_a1dec600() {
-    assert(!level get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
+    assert(!level flag::get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
     level flag::set("sm_" + self.sm_id + "_cleared");
 }
 
@@ -775,15 +777,15 @@ function function_3c035c82(var_2594900) {
 // Params 4, eflags: 0x0
 // Checksum 0x333d2d46, Offset: 0x2a18
 // Size: 0x14c
-function function_883b9499(var_368d405d, var_50e34230, var_66d7c971, var_f71154e) {
+function function_883b9499(var_368d405d, trig_name, var_66d7c971, var_f71154e) {
     if (isdefined(var_f71154e) && var_f71154e) {
-        trigger = getent(var_50e34230, var_66d7c971);
-        assert(isdefined(trigger), "<unknown string>" + var_66d7c971 + "<unknown string>" + var_50e34230 + "<unknown string>");
+        trigger = getent(trig_name, var_66d7c971);
+        assert(isdefined(trigger), "<unknown string>" + var_66d7c971 + "<unknown string>" + trig_name + "<unknown string>");
         trigger endon(#"trigger");
     }
     if (level flag::exists("sm_" + var_368d405d + "_enabled")) {
         level flag::wait_till("sm_" + var_368d405d + "_complete");
-        trigger::use(var_50e34230, var_66d7c971);
+        trigger::use(trig_name, var_66d7c971);
         return;
     }
     assertmsg("<unknown string>" + var_368d405d + "<unknown string>");
@@ -793,15 +795,15 @@ function function_883b9499(var_368d405d, var_50e34230, var_66d7c971, var_f71154e
 // Params 4, eflags: 0x0
 // Checksum 0x6ac0c8a1, Offset: 0x2b70
 // Size: 0x14c
-function function_fc60286c(var_368d405d, var_50e34230, var_66d7c971, var_f71154e) {
+function function_fc60286c(var_368d405d, trig_name, var_66d7c971, var_f71154e) {
     if (isdefined(var_f71154e) && var_f71154e) {
-        trigger = getent(var_50e34230, var_66d7c971);
-        assert(isdefined(trigger), "<unknown string>" + var_66d7c971 + "<unknown string>" + var_50e34230 + "<unknown string>");
+        trigger = getent(trig_name, var_66d7c971);
+        assert(isdefined(trigger), "<unknown string>" + var_66d7c971 + "<unknown string>" + trig_name + "<unknown string>");
         trigger endon(#"trigger");
     }
     if (level flag::exists("sm_" + var_368d405d + "_enabled")) {
         level flag::wait_till("sm_" + var_368d405d + "_cleared");
-        trigger::use(var_50e34230, var_66d7c971);
+        trigger::use(trig_name, var_66d7c971);
         return;
     }
     assertmsg("<unknown string>" + var_368d405d + "<unknown string>");
@@ -811,15 +813,15 @@ function function_fc60286c(var_368d405d, var_50e34230, var_66d7c971, var_f71154e
 // Params 4, eflags: 0x0
 // Checksum 0x1b321eef, Offset: 0x2cc8
 // Size: 0x14c
-function function_eba7c12(var_368d405d, var_50e34230, var_66d7c971, var_f71154e) {
+function function_eba7c12(var_368d405d, trig_name, var_66d7c971, var_f71154e) {
     if (isdefined(var_f71154e) && var_f71154e) {
-        trigger = getent(var_50e34230, var_66d7c971);
-        assert(isdefined(trigger), "<unknown string>" + var_66d7c971 + "<unknown string>" + var_50e34230 + "<unknown string>");
+        trigger = getent(trig_name, var_66d7c971);
+        assert(isdefined(trigger), "<unknown string>" + var_66d7c971 + "<unknown string>" + trig_name + "<unknown string>");
         trigger endon(#"trigger");
     }
     if (level flag::exists("sm_" + var_368d405d + "_enabled")) {
         level flag::wait_till("sm_" + var_368d405d + "_enabled");
-        trigger::use(var_50e34230, var_66d7c971);
+        trigger::use(trig_name, var_66d7c971);
         return;
     }
     assertmsg("<unknown string>" + var_368d405d + "<unknown string>");
@@ -831,7 +833,7 @@ function function_eba7c12(var_368d405d, var_50e34230, var_66d7c971, var_f71154e)
 // Size: 0xf4
 function function_cf623c0e(var_368d405d, process, ent, var1, var2, var3, var4, var5) {
     assert(isdefined(process), "<unknown string>");
-    assert(level exists("<unknown string>" + var_368d405d + "<unknown string>"), "<unknown string>" + var_368d405d + "<unknown string>");
+    assert(level flag::exists("<unknown string>" + var_368d405d + "<unknown string>"), "<unknown string>" + var_368d405d + "<unknown string>");
     wait_till_complete(var_368d405d);
     util::single_func(ent, process, var1, var2, var3, var4, var5);
 }
@@ -842,7 +844,7 @@ function function_cf623c0e(var_368d405d, process, ent, var1, var2, var3, var4, v
 // Size: 0xf4
 function function_685f0f0b(var_368d405d, process, ent, var1, var2, var3, var4, var5) {
     assert(isdefined(process), "<unknown string>");
-    assert(level exists("<unknown string>" + var_368d405d + "<unknown string>"), "<unknown string>" + var_368d405d + "<unknown string>");
+    assert(level flag::exists("<unknown string>" + var_368d405d + "<unknown string>"), "<unknown string>" + var_368d405d + "<unknown string>");
     wait_till_cleared(var_368d405d);
     util::single_func(ent, process, var1, var2, var3, var4, var5);
 }
@@ -853,7 +855,7 @@ function function_685f0f0b(var_368d405d, process, ent, var1, var2, var3, var4, v
 // Size: 0xf4
 function function_2886c4a9(var_368d405d, process, ent, var1, var2, var3, var4, var5) {
     assert(isdefined(process), "<unknown string>");
-    assert(level exists("<unknown string>" + var_368d405d + "<unknown string>"), "<unknown string>" + var_368d405d + "<unknown string>");
+    assert(level flag::exists("<unknown string>" + var_368d405d + "<unknown string>"), "<unknown string>" + var_368d405d + "<unknown string>");
     function_58415221(var_368d405d);
     util::single_func(ent, process, var1, var2, var3, var4, var5);
 }

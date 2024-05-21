@@ -286,13 +286,13 @@ function function_505038df() {
 // Size: 0x1c6
 function function_8a19ab89(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     /#
-        debugmsg("<unknown string>" + bwastimejump);
+        namespace_1e25ad94::debugmsg("<unknown string>" + bwastimejump);
     #/
     if (bwastimejump) {
         if (!isdefined(level.doa.var_d1aae7e4) && isdefined(level.doa.var_72b899ad)) {
             level.doa.var_d1aae7e4 = "fxexp_" + level.doa.var_72b899ad.script_noteworthy + "_FPS";
             /#
-                debugmsg("<unknown string>" + level.doa.var_d1aae7e4 + "<unknown string>" + fieldname);
+                namespace_1e25ad94::debugmsg("<unknown string>" + level.doa.var_d1aae7e4 + "<unknown string>" + fieldname);
             #/
             playradiantexploder(fieldname, level.doa.var_d1aae7e4);
         }

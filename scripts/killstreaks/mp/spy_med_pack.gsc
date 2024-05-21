@@ -125,7 +125,7 @@ function function_cc39bcf1(watcher, owner) {
             owner stats::function_e24eec31(self.weapon, #"used", 1);
         }
         self waittilltimeout(10, #"stationary");
-        if (!owner deployable::function_f8fe102f()) {
+        if (!owner deployable::location_valid()) {
             owner setriotshieldfailhint();
             self deletedelay();
             return;
@@ -234,7 +234,7 @@ function function_438ca4e0() {
 // Size: 0x38
 function function_530817e7() {
     currentid = game.var_f39ffe9;
-    game.var_f39ffe9 = game.var_f39ffe9 + 1;
+    game.var_f39ffe9 += 1;
     return currentid;
 }
 

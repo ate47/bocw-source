@@ -553,7 +553,7 @@ function private function_d3d685b8() {
     angles = self gettagangles("tag_flash");
     forward = anglestoforward(angles);
     endpos = startpos + vectorscale(forward, 1000);
-    startpos = startpos + vectorscale(forward, 10);
+    startpos += vectorscale(forward, 10);
     magicbullet(self.weapon, startpos, endpos, self);
 }
 
@@ -631,7 +631,7 @@ function private function_54f05251() {
                 distance = distance2d(destination, var_792c52e4);
                 if (distance <= var_946a08d6) {
                     var_792c52e4 = destination;
-                    var_946a08d6 = var_946a08d6 - distance;
+                    var_946a08d6 -= distance;
                     path_index++;
                     if (path_index >= path.size) {
                         if (var_38c05d54) {
@@ -778,9 +778,9 @@ function private function_a7879d43(node) {
         rightvec = anglestoright(node.angles);
         upvec = anglestoup(node.angles);
         relativeoffset = (0, self.drone.var_155ac8ec * node.radius, 0);
-        adjustedorigin = adjustedorigin + forwardvec * relativeoffset[0];
-        adjustedorigin = adjustedorigin + rightvec * relativeoffset[1];
-        adjustedorigin = adjustedorigin + upvec * relativeoffset[2];
+        adjustedorigin += forwardvec * relativeoffset[0];
+        adjustedorigin += rightvec * relativeoffset[1];
+        adjustedorigin += upvec * relativeoffset[2];
     }
     return adjustedorigin;
 }

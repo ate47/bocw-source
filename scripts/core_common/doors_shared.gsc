@@ -205,15 +205,15 @@ class cdoor {
         if (isdefined(v_offset)) {
             if (v_offset[0]) {
                 v_side = anglestoforward(v_angles);
-                v_pos = v_pos + v_offset[0] * v_side;
+                v_pos += v_offset[0] * v_side;
             }
             if (v_offset[1]) {
                 v_dir = anglestoright(v_angles);
-                v_pos = v_pos + v_offset[1] * v_dir;
+                v_pos += v_offset[1] * v_dir;
             }
             if (v_offset[2]) {
                 v_up = anglestoup(v_angles);
-                v_pos = v_pos + v_offset[2] * v_up;
+                v_pos += v_offset[2] * v_up;
             }
         }
         return v_pos;
@@ -1016,15 +1016,15 @@ class cdoor {
         v_pos = v_origin;
         if (v_offset[0]) {
             v_side = anglestoforward(v_angles);
-            v_pos = v_pos + v_offset[0] * v_side;
+            v_pos += v_offset[0] * v_side;
         }
         if (v_offset[1]) {
             v_dir = anglestoright(v_angles);
-            v_pos = v_pos + v_offset[1] * v_dir;
+            v_pos += v_offset[1] * v_dir;
         }
         if (v_offset[2]) {
             v_up = anglestoup(v_angles);
-            v_pos = v_pos + v_offset[2] * v_up;
+            v_pos += v_offset[2] * v_up;
         }
         return v_pos;
     }
@@ -1297,7 +1297,7 @@ class cdoor {
             if (isdefined(m_e_door.var_4101ccab)) {
                 var_8d684abd = m_e_door.var_4101ccab;
                 if (m_e_door getcontents() & 536870912) {
-                    var_8d684abd = var_8d684abd | 536870912;
+                    var_8d684abd |= 536870912;
                 }
                 m_e_door setcontents(var_8d684abd);
             }
@@ -1317,10 +1317,10 @@ class cdoor {
                 var_8d684abd = var_8d684abd | 64 | 128 | 512 | 1024 | 4096 | 8192 | 65536 | 1048576;
             }
             if (var_1ce7d3b0 & 16) {
-                var_8d684abd = var_8d684abd & ~16;
+                var_8d684abd &= ~16;
             }
             if (var_1ce7d3b0 & 131072) {
-                var_8d684abd = var_8d684abd & ~131072;
+                var_8d684abd &= ~131072;
             }
             m_e_door setcontents(var_8d684abd);
         }
@@ -1383,7 +1383,7 @@ function private preinit() {
     util::init_dvar("scr_door_player_gestures", 1, &function_bae7ed2e);
     util::init_dvar(#"disabledoors", 0, &function_bae7ed2e);
     /#
-        init_dvar("<unknown string>", 0, &function_bae7ed2e);
+        util::init_dvar("<unknown string>", 0, &function_bae7ed2e);
     #/
     callback::on_spawned(&bash_monitor);
 }
@@ -1721,12 +1721,13 @@ function setup_door_info(s_door_bundle, s_door_instance, c_door) {
     return c_door;
 }
 
-// Namespace doors/doors_shared
-// Params 0, eflags: 0x0
-// Checksum 0xd269e53, Offset: 0x7840
-// Size: 0xde
-function debug_draw() {
-    /#
+/#
+
+    // Namespace doors/doors_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xd269e53, Offset: 0x7840
+    // Size: 0xde
+    function debug_draw() {
         if (isdefined(self.m_e_door)) {
             self.m_e_door endon(#"death");
             ent_num = self.m_e_door getentitynumber();
@@ -1742,15 +1743,13 @@ function debug_draw() {
                 waitframe(1);
             }
         }
-    #/
-}
+    }
 
-// Namespace doors/doors_shared
-// Params 1, eflags: 0x0
-// Checksum 0x44356b1a, Offset: 0x7928
-// Size: 0xaf4
-function function_75697b7d(ent_num) {
-    /#
+    // Namespace doors/doors_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x44356b1a, Offset: 0x7928
+    // Size: 0xaf4
+    function function_75697b7d(ent_num) {
         assert(isdefined(self.m_e_door));
         angles = self.m_e_door.angles;
         var_ed80ebc4 = self function_fb354714();
@@ -1761,7 +1760,7 @@ function function_75697b7d(ent_num) {
         line(start, start + var_5e92800d * 5, (1, 0, 0), 1);
         print3d(self.m_e_door.origin + (0, 0, -5), "<unknown string>" + self.m_s_bundle.name + "<unknown string>" + ent_num, (1, 1, 1), 1, 0.1);
         center = self get_door_center(1);
-        center = center + (0, 0, -5);
+        center += (0, 0, -5);
         if (is_true(self.var_d587661f)) {
             print3d(center + (0, 0, -5), "<unknown string>" + self.var_d587661f, (1, 0, 0), 1, 0.1);
         }
@@ -1775,7 +1774,7 @@ function function_75697b7d(ent_num) {
         if (temp != "<unknown string>") {
             print3d(center + (0, 0, -6.5), temp, (1, 0, 0), 1, 0.1);
         }
-        if (self get("<unknown string>")) {
+        if (self flag::get("<unknown string>")) {
             print3d(center + (0, 0, -8), "<unknown string>", (1, 0, 0), 1, 0.1);
         } else {
             print3d(center + (0, 0, -8), "<unknown string>", (0, 1, 0), 1, 0.1);
@@ -1785,7 +1784,7 @@ function function_75697b7d(ent_num) {
             print3d(center + (0, 0, -9.5), "<unknown string>", (0, 0.5, 0), 1, 0.1);
             var_e9846847 = self.var_a2f96f78.var_ea225236;
         } else if (isdefined(self.var_a2f96f78.targetname)) {
-            var_a20f663b = get_script_bundle_instances("<unknown string>", array(self.var_a2f96f78.targetname, "<unknown string>"));
+            var_a20f663b = struct::get_script_bundle_instances("<unknown string>", array(self.var_a2f96f78.targetname, "<unknown string>"));
             if (isdefined(var_a20f663b) && var_a20f663b.size > 0) {
                 var_e9846847 = var_a20f663b[0];
                 print3d(center + (0, 0, -9.5), "<unknown string>", (0, 0.5, 0), 1, 0.1);
@@ -1828,181 +1827,178 @@ function function_75697b7d(ent_num) {
         }
         if (isdefined(self.m_s_bundle) && (self.m_s_bundle.door_open_method == "<unknown string>" || self.m_s_bundle.door_open_method == "<unknown string>")) {
             if (isdefined(self.var_15695d13)) {
-                self thread draw_max_yaw(1);
+                self thread namespace_64f6ea7a::draw_max_yaw(1);
             }
             if (isdefined(self.var_ca91d615)) {
-                self thread draw_max_yaw(0);
+                self thread namespace_64f6ea7a::draw_max_yaw(0);
             }
         }
         if (ent_num === level.var_8e7ad5cb) {
             before = level.var_1def7d37[#"hash_5171254138328d84"];
             level.var_1def7d37[#"hash_5171254138328d84"] = 2;
-            self init_max_yaws();
+            self namespace_64f6ea7a::init_max_yaws();
             level.var_8e7ad5cb = undefined;
             level.var_1def7d37[#"hash_5171254138328d84"] = before;
         }
-    #/
-}
+    }
 
-// Namespace doors/doors_shared
-// Params 1, eflags: 0x0
-// Checksum 0x91fccf94, Offset: 0x8428
-// Size: 0x1c6
-function function_2150e56f(flags) {
-    /#
+    // Namespace doors/doors_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x91fccf94, Offset: 0x8428
+    // Size: 0x1c6
+    function function_2150e56f(flags) {
         retval = "<unknown string>";
         if (flags & 1) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 2) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 4) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 8) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 16) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 32) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 64) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 128) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 256) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 512) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 1024) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 2048) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 4096) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         return retval;
-    #/
-}
+    }
 
-// Namespace doors/doors_shared
-// Params 1, eflags: 0x0
-// Checksum 0xd5edea81, Offset: 0x85f8
-// Size: 0x446
-function function_81fba61a(flags) {
-    /#
+    // Namespace doors/doors_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0xd5edea81, Offset: 0x85f8
+    // Size: 0x446
+    function function_81fba61a(flags) {
         retval = "<unknown string>";
         if (flags & 1) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 2) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 4) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 8) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 16) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 32) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 64) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 128) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 256) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 512) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 1024) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 2048) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 4096) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 524288) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 8192) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 16384) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 32768) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 32768) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 65536) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 131072) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 262144) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 1073741824) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 536870912) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 1048576) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 2097152) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 4194304) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 8388608) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 16777216) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 134217728) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 268435456) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 2147483648) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 33554432) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         if (flags & 67108864) {
-            retval = retval + "<unknown string>";
+            retval += "<unknown string>";
         }
         return retval;
-    #/
-}
+    }
+
+#/
 
 // Namespace doors/doors_shared
 // Params 0, eflags: 0x6 linked
@@ -3096,12 +3092,13 @@ function private should_bash_open(player) {
     return false;
 }
 
-// Namespace doors/doors_shared
-// Params 1, eflags: 0x4
-// Checksum 0x76fc2f69, Offset: 0xc780
-// Size: 0x394
-function private bash_debug(duration) {
-    /#
+/#
+
+    // Namespace doors/doors_shared
+    // Params 1, eflags: 0x4
+    // Checksum 0x76fc2f69, Offset: 0xc780
+    // Size: 0x394
+    function private bash_debug(duration) {
         if (level.var_1def7d37[#"hash_5171254138328d84"]) {
             var_1a23fa7 = [];
             var_c03beac5 = [];
@@ -3129,8 +3126,9 @@ function private bash_debug(duration) {
             color = abs(dot) >= 0.4 ? (0, 1, 0) : (1, 0, 0);
             print3d(center + (0, 0, -1.5), "<unknown string>" + dot, color, 1, 0.1, duration);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace doors/doors_shared
 // Params 1, eflags: 0x6 linked
@@ -3247,7 +3245,7 @@ function door_bash_open(var_84e2c431, var_a6028302 = 0, var_d14527df) {
 // Size: 0xd8
 function private function_14c2fe40(player) {
     weapon = player getcurrentweapon();
-    if (weapon.displayname == #"hash_5fe1e4f4cfb91755" || is_true(weapon.ismeleeweapon) && !is_true(weapon.isbulletweapon) && !is_true(weapon.isprojectileweapon)) {
+    if (weapon.displayname == #"weapon/noweapon" || is_true(weapon.ismeleeweapon) && !is_true(weapon.isbulletweapon) && !is_true(weapon.isprojectileweapon)) {
         return true;
     }
     if (weapon.name == #"eq_spy_camera") {
@@ -3367,7 +3365,7 @@ function private function_d2a304e(a_doors) {
 // Checksum 0x1e592350, Offset: 0xd8c8
 // Size: 0x2fe
 function private function_1e18148c() {
-    assert(is_false(level get(#"hash_ead1c2fc78eb61c")));
+    assert(is_false(level flag::get(#"hash_ead1c2fc78eb61c")));
     s_minigame = spawnstruct();
     var_33468886 = spawnstruct();
     var_33468886 function_7fe6d007(self.model);

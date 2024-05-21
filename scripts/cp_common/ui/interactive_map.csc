@@ -69,11 +69,11 @@ function private function_f4804ac(localclientnum) {
                     var_75576067 = input[#"move"];
                 }
                 var_75576067 = (var_75576067[0], var_75576067[1] * -1, 0) * var_8ab7eec6 * 1024 * (cur_time - last_time);
-                var_75576067 = var_75576067 * ((isdefined(function_2ff81eb2("state")) ? function_2ff81eb2("state") : 0) < 0 ? 1 : 0.66);
-                cursor_pos = cursor_pos + var_75576067;
+                var_75576067 *= (isdefined(function_2ff81eb2("state")) ? function_2ff81eb2("state") : 0) < 0 ? 1 : 0.66;
+                cursor_pos += var_75576067;
             } else {
                 var_75576067 = function_6593be12(localclientnum);
-                cursor_pos = cursor_pos + var_75576067;
+                cursor_pos += var_75576067;
                 var_ecec29b6 = math::clamp(cursor_pos[0], 0, var_5068885e[0] - var_498c84ce);
                 var_9031f03b = math::clamp(cursor_pos[1], 0, var_5068885e[1] - var_860de4e5);
                 cursor_pos = (var_ecec29b6, var_9031f03b, 0);

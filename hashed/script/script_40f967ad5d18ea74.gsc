@@ -121,7 +121,7 @@ class class_6fd989ce {
         }
         var_85613d6b = struct::get_array(var_d7dae20a.target, "targetname");
         foreach (node in var_85613d6b) {
-            node.origin = node.origin - var_d7dae20a.origin;
+            node.origin -= var_d7dae20a.origin;
         }
     }
 
@@ -299,9 +299,9 @@ class class_c4926dee {
             level thread namespace_c85a46fe::function_40ec656b(self, [[ generator ]]->function_68e475d0(), [[ generator ]]->function_8370e1a3());
         }
         if (isplayer(shitloc) && var_21a4af6a > 0) {
-            var_21a4af6a = var_21a4af6a - psoffsettime;
+            var_21a4af6a -= psoffsettime;
             points = int(psoffsettime / 25) * 25;
-            points = points >> 2;
+            points >>= 2;
             points = int(points / 25) * 25;
             shitloc namespace_eccff4fb::enemykill(undefined, points);
         }
@@ -403,7 +403,7 @@ class class_c4926dee {
                     }
                 }
             }
-            m_active = m_active & function_d8b78bb3();
+            m_active &= function_d8b78bb3();
             if (last && !m_active) {
                 m_model namespace_83eb6304::turnofffx(function_45ee8bad());
                 m_model clientfield::set("show_health_bar", 0);
@@ -618,7 +618,7 @@ class class_c4926dee {
                 doa_enemy::function_a6b807ea(spawndef, 1, origin, 0, generator);
                 /#
                     if (getdvarint(#"hash_14f8549e0645635d", 0)) {
-                        level thread function_1d1f2c26(origin, var_6d14cf9d, 12, (1, 0, 0));
+                        level thread namespace_1e25ad94::function_1d1f2c26(origin, var_6d14cf9d, 12, (1, 0, 0));
                     }
                 #/
                 wait(var_6d14cf9d);
@@ -909,7 +909,7 @@ function function_782e605e(name) {
                 var_9b3d6734 = int(a_toks[3]);
             }
         }
-        var_9b3d6734 = var_9b3d6734 + var_d613e783;
+        var_9b3d6734 += var_d613e783;
         if (var_9b3d6734 < 100 && randomint(100) > var_9b3d6734) {
             continue;
         }

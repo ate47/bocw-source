@@ -161,7 +161,7 @@ function private function_4b3b25af(killstreak_id) {
 function private function_6ff76fc6() {
     height = killstreaks::function_43f4782d() + 4000 + randomfloatrange(-200, 200);
     if (sessionmodeiswarzonegame()) {
-        height = height + self.origin[2];
+        height += self.origin[2];
     } else if (level.teams.size == 2) {
         if (isdefined(level.var_3944682)) {
             var_7188db6d = level.var_3944682[self.team];
@@ -235,7 +235,7 @@ function private function_8f304847(var_d44b8c3e, startangles) {
                     var_af2fe365[#"angles"] = angles;
                 }
             }
-            angles = angles + (0, 30, 0);
+            angles += (0, 30, 0);
             forward = anglestoforward(angles);
             var_51c6fb78++;
             waitframe(1);
@@ -597,24 +597,23 @@ function function_6fe870ea() {
     self namespace_f9b02f80::play_taacom_dialog_response_on_owner("timeoutConfirmed", "jetfighter", self.killstreak_id);
 }
 
-// Namespace jetfighter/jetfighter
-// Params 0, eflags: 0x0
-// Checksum 0xea724d4d, Offset: 0x27a8
-// Size: 0x5c
-function function_35b87c52() {
-    /#
-        init_dvar("<unknown string>", 0, &function_2f5700b4);
-        waittill_can_add_debug_command();
-        adddebugcommand("<unknown string>");
-    #/
-}
+/#
 
-// Namespace jetfighter/jetfighter
-// Params 1, eflags: 0x0
-// Checksum 0x50cf78a9, Offset: 0x2810
-// Size: 0x194
-function function_2f5700b4(params) {
-    /#
+    // Namespace jetfighter/jetfighter
+    // Params 0, eflags: 0x0
+    // Checksum 0xea724d4d, Offset: 0x27a8
+    // Size: 0x5c
+    function function_35b87c52() {
+        util::init_dvar("<unknown string>", 0, &function_2f5700b4);
+        util::waittill_can_add_debug_command();
+        adddebugcommand("<unknown string>");
+    }
+
+    // Namespace jetfighter/jetfighter
+    // Params 1, eflags: 0x0
+    // Checksum 0x50cf78a9, Offset: 0x2810
+    // Size: 0x194
+    function function_2f5700b4(params) {
         if (params.value) {
             player = getplayers()[0];
             var_10c3dd58 = player function_6ff76fc6();
@@ -623,12 +622,12 @@ function function_2f5700b4(params) {
             adjustedpath = function_8f304847(var_d44b8c3e, angles);
             startposition = adjustedpath[#"startposition"];
             angles = adjustedpath[#"angles"];
-            var_a50bad8f = spawn_model("<unknown string>", (var_d44b8c3e[0], var_d44b8c3e[1], startposition[2]), angles);
+            var_a50bad8f = util::spawn_model("<unknown string>", (var_d44b8c3e[0], var_d44b8c3e[1], startposition[2]), angles);
             playsoundatposition("<unknown string>", var_a50bad8f.origin);
-            var_a50bad8f play(#"p9_fxanim_mp_dogfight_01_bundle");
+            var_a50bad8f scene::play(#"p9_fxanim_mp_dogfight_01_bundle");
             var_a50bad8f delete();
             setdvar(#"hash_62c0e40b6a2a602d", 0);
         }
-    #/
-}
+    }
 
+#/

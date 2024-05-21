@@ -473,9 +473,9 @@ function function_7725894b() {
         }
         curspeed = lerpfloat(0, 7040, var_471b7e06);
         movedelta = vectornormalize(forward) * curspeed * deltatime;
-        mover.origin = mover.origin + movedelta;
+        mover.origin += movedelta;
         newpitch = mover.angles[0];
-        newpitch = newpitch - 6 * deltatime;
+        newpitch -= 6 * deltatime;
         if (newpitch < -45) {
             newpitch = -45;
         } else if (newpitch > 0) {

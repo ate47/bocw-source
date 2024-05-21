@@ -255,26 +255,25 @@ function private function_d37f3f18() {
     }
 }
 
-// Namespace namespace_ca8676a3/namespace_ca8676a3
-// Params 0, eflags: 0x4
-// Checksum 0x3d6f92aa, Offset: 0xe40
-// Size: 0x8c
-function private function_851f409b() {
-    /#
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        add_custom_devgui_callback(&function_18227767);
-    #/
-}
+/#
 
-// Namespace namespace_ca8676a3/namespace_ca8676a3
-// Params 1, eflags: 0x4
-// Checksum 0x92312446, Offset: 0xed8
-// Size: 0x162
-function private function_18227767(cmd) {
-    /#
+    // Namespace namespace_ca8676a3/namespace_ca8676a3
+    // Params 0, eflags: 0x4
+    // Checksum 0x3d6f92aa, Offset: 0xe40
+    // Size: 0x8c
+    function private function_851f409b() {
+        adddebugcommand("<unknown string>");
+        adddebugcommand("<unknown string>");
+        adddebugcommand("<unknown string>");
+        adddebugcommand("<unknown string>");
+        zm_devgui::add_custom_devgui_callback(&function_18227767);
+    }
+
+    // Namespace namespace_ca8676a3/namespace_ca8676a3
+    // Params 1, eflags: 0x4
+    // Checksum 0x92312446, Offset: 0xed8
+    // Size: 0x162
+    function private function_18227767(cmd) {
         switch (cmd) {
         case #"hash_31690de1b49c022a":
             ais = getaiarchetypearray(#"zod_companion");
@@ -296,15 +295,13 @@ function private function_18227767(cmd) {
         default:
             break;
         }
-    #/
-}
+    }
 
-// Namespace namespace_ca8676a3/namespace_ca8676a3
-// Params 2, eflags: 0x4
-// Checksum 0x60eac9c, Offset: 0x1048
-// Size: 0x194
-function private function_e3e858b1(dist, move_speed) {
-    /#
+    // Namespace namespace_ca8676a3/namespace_ca8676a3
+    // Params 2, eflags: 0x4
+    // Checksum 0x60eac9c, Offset: 0x1048
+    // Size: 0x194
+    function private function_e3e858b1(dist, move_speed) {
         if (!isdefined(move_speed)) {
             move_speed = "<unknown string>";
         }
@@ -321,6 +318,6 @@ function private function_e3e858b1(dist, move_speed) {
             }
             ai function_92157e49(point, move_speed);
         }
-    #/
-}
+    }
 
+#/

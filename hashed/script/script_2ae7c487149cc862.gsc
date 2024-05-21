@@ -181,13 +181,13 @@ function function_d233fb1f(localclientnum) {
     while (true) {
         self function_116b95e5(#"pstfx_speedblur", #"blur", var_9b8a1091);
         wait(0.08);
-        var_9b8a1091 = var_9b8a1091 + 0.01;
+        var_9b8a1091 += 0.01;
         if (var_9b8a1091 == 0.1) {
             self playrumbleonentity(localclientnum, "damage_light");
         }
         if (var_9b8a1091 > 0.1) {
             while (var_9b8a1091 > 0) {
-                var_9b8a1091 = var_9b8a1091 - 0.01;
+                var_9b8a1091 -= 0.01;
                 self function_116b95e5(#"pstfx_speedblur", #"blur", var_9b8a1091);
                 wait(0.08);
             }

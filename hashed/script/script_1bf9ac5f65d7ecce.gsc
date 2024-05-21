@@ -86,7 +86,7 @@ function private function_32ab045(ent, name) {
         break;
     default:
         /#
-            function_81fac19d(function_d78e3644(), "tag_origin" + function_783b69(name, "<unknown string>"));
+            snd::function_81fac19d(snd::function_d78e3644(), "tag_origin" + snd::function_783b69(name, "<unknown string>"));
         #/
         break;
     }
@@ -104,7 +104,7 @@ function private _trigger(player, trigger, *var_ec80d14b) {
         break;
     default:
         /#
-            function_81fac19d(function_d78e3644(), "<unknown string>" + trigger_name + "<unknown string>");
+            snd::function_81fac19d(snd::function_d78e3644(), "<unknown string>" + trigger_name + "<unknown string>");
         #/
         break;
     }
@@ -222,7 +222,7 @@ function private function_f2a2832d(*player, msg) {
         break;
     default:
         /#
-            function_81fac19d(function_d78e3644(), "<unknown string>" + function_783b69(msg, "<unknown string>"));
+            snd::function_81fac19d(snd::function_d78e3644(), "<unknown string>" + snd::function_783b69(msg, "<unknown string>"));
         #/
         break;
     }
@@ -278,7 +278,7 @@ function private function_887ac605(objective) {
         break;
     default:
         /#
-            function_81fac19d(function_d78e3644(), "<unknown string>" + objective + "<unknown string>");
+            snd::function_81fac19d(snd::function_d78e3644(), "<unknown string>" + objective + "<unknown string>");
         #/
         break;
     }

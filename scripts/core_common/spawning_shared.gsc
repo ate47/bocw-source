@@ -141,7 +141,7 @@ function init_teams() {
     }
     foreach (team, _ in level.teams) {
         spawnsystem.ispawn_teammask[team] = 1 << count;
-        all = all | spawnsystem.ispawn_teammask[team];
+        all |= spawnsystem.ispawn_teammask[team];
         count++;
     }
     spawnsystem.ispawn_teammask[#"all"] = all;

@@ -288,7 +288,7 @@ function function_204364c2(localclientnum, *oldval, *newval, *bnewent, *binitial
     util::playfxontag(bwastimejump, "sr/fx9_obj_secure_rocket_essence_absorb", self, "tag_monitor");
     self playsound(bwastimejump, #"hash_2fae425a6d8e1256");
     if (isdefined(self.var_7d8e0749) && self.var_7d8e0749 >= 0) {
-        self.var_7d8e0749 = self.var_7d8e0749 + 40;
+        self.var_7d8e0749 += 40;
         if (self.var_7d8e0749 > 100) {
             self.var_7d8e0749 = 100;
         }
@@ -320,7 +320,7 @@ function function_a84c11f7(localclientnum, *oldval, *newval, *bnewent, *binitial
     self.var_f1c4246e = self playloopsound(#"hash_22d6d61841f2b48a");
     while (true) {
         wait(0.5);
-        var_1105889c = var_1105889c + 0.01;
+        var_1105889c += 0.01;
         self function_78233d29(self.var_ee6bcd51, "", "Alpha", var_1105889c);
         if (var_1105889c >= 1) {
             var_1105889c = 1;
@@ -337,7 +337,7 @@ function function_2117533c(*localclientnum, *oldval, *newval, *bnewent, *binitia
     self endon(#"deactivate");
     var_1105889c = self.var_7d8e0749 / self.var_38fee6d5;
     if (isdefined(self.var_7d8e0749) && self.var_7d8e0749 > 0) {
-        self.var_7d8e0749 = self.var_7d8e0749 - 1;
+        self.var_7d8e0749 -= 1;
         if (self.var_7d8e0749 < 15) {
             self.var_7d8e0749 = 15;
         }

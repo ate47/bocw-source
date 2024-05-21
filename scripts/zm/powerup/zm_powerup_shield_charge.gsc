@@ -66,40 +66,39 @@ function shield_charge_powerup(*item, player) {
             var_2cacdde7 = 50;
         }
     }
-    player.armor = player.armor + math::clamp(var_2cacdde7, 0, player.maxarmor);
+    player.armor += math::clamp(var_2cacdde7, 0, player.maxarmor);
 }
 
-// Namespace zm_powerup_shield_charge/zm_powerup_shield_charge
-// Params 0, eflags: 0x0
-// Checksum 0x8f1cf069, Offset: 0x3e8
-// Size: 0x7c
-function shield_devgui() {
-    /#
-        level wait_till("<unknown string>");
+/#
+
+    // Namespace zm_powerup_shield_charge/zm_powerup_shield_charge
+    // Params 0, eflags: 0x0
+    // Checksum 0x8f1cf069, Offset: 0x3e8
+    // Size: 0x7c
+    function shield_devgui() {
+        level flag::wait_till("<unknown string>");
         wait(1);
-        add_custom_devgui_callback(&shield_devgui_callback);
+        zm_devgui::add_custom_devgui_callback(&shield_devgui_callback);
         adddebugcommand("<unknown string>");
         adddebugcommand("<unknown string>");
-    #/
-}
+    }
 
-// Namespace zm_powerup_shield_charge/zm_powerup_shield_charge
-// Params 1, eflags: 0x0
-// Checksum 0x5ba61bd0, Offset: 0x470
-// Size: 0xc8
-function shield_devgui_callback(cmd) {
-    /#
+    // Namespace zm_powerup_shield_charge/zm_powerup_shield_charge
+    // Params 1, eflags: 0x0
+    // Checksum 0x5ba61bd0, Offset: 0x470
+    // Size: 0xc8
+    function shield_devgui_callback(cmd) {
         players = getplayers();
         retval = 0;
         switch (cmd) {
         case #"shield_charge":
-            zombie_devgui_give_powerup(cmd, 1);
+            zm_devgui::zombie_devgui_give_powerup(cmd, 1);
             break;
         case #"next_shield_charge":
-            zombie_devgui_give_powerup(getsubstr(cmd, 5), 0);
+            zm_devgui::zombie_devgui_give_powerup(getsubstr(cmd, 5), 0);
             break;
         }
         return retval;
-    #/
-}
+    }
 
+#/

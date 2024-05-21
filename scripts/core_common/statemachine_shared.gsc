@@ -250,23 +250,22 @@ function evaluate_connections(eval_func, params) {
     }
 }
 
-// Namespace statemachine/statemachine_shared
-// Params 0, eflags: 0x0
-// Checksum 0x72619741, Offset: 0xdf0
-// Size: 0x40
-function debugon() {
-    /#
+/#
+
+    // Namespace statemachine/statemachine_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x72619741, Offset: 0xdf0
+    // Size: 0x40
+    function debugon() {
         dvarval = getdvarint(#"statemachine_debug", 0);
         return dvarval > 0;
-    #/
-}
+    }
 
-// Namespace statemachine/statemachine_shared
-// Params 0, eflags: 0x0
-// Checksum 0x8d4c1a4f, Offset: 0xe38
-// Size: 0x266
-function function_acc83382() {
-    /#
+    // Namespace statemachine/statemachine_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x8d4c1a4f, Offset: 0xe38
+    // Size: 0x266
+    function function_acc83382() {
         owner = self;
         if (!isdefined(owner)) {
             return;
@@ -297,6 +296,6 @@ function function_acc83382() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
+#/

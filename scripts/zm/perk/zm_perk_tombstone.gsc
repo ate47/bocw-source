@@ -966,10 +966,10 @@ function function_8bc73ff9() {
         self.var_72d64cfd = 0;
     }
     if (isdefined(var_12a9e30a.scrap)) {
-        self.var_595a11bc = self.var_595a11bc + var_12a9e30a.scrap;
+        self.var_595a11bc += var_12a9e30a.scrap;
     }
     if (isdefined(var_12a9e30a.var_c7f20631)) {
-        self.var_72d64cfd = self.var_72d64cfd + var_12a9e30a.var_c7f20631;
+        self.var_72d64cfd += var_12a9e30a.var_c7f20631;
     }
     scorestreak = var_12a9e30a.scorestreak;
     if (isdefined(scorestreak.itementry)) {

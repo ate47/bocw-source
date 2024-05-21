@@ -9,12 +9,13 @@
 
 #namespace snd;
 
-// Namespace snd/namespace_6ca4ad5f
-// Params 1, eflags: 0x4
-// Checksum 0xb0824ff1, Offset: 0xc8
-// Size: 0x1cc
-function private function_8f9218ba(hud) {
-    /#
+/#
+
+    // Namespace snd/namespace_6ca4ad5f
+    // Params 1, eflags: 0x4
+    // Checksum 0xb0824ff1, Offset: 0xc8
+    // Size: 0x1cc
+    function private function_8f9218ba(hud) {
         if (isdefined(hud.var_ca1ec566)) {
             function_e23ba9aa(0, hud.var_ca1ec566, hud.var_708cbe39, "<unknown string>", hud.var_28f96332, hud.var_685ce76a);
             value = function_ea2f17d1(hud.value, 0);
@@ -24,15 +25,16 @@ function private function_8f9218ba(hud) {
                 if (hud.isvertical == 1) {
                     inpos = hud.var_ca1ec566 + (2, 2 + insize[1], 0);
                     insize = (insize[0], insize[1] * value, insize[2]);
-                    inpos = inpos - (0, insize[1], 0);
+                    inpos -= (0, insize[1], 0);
                 } else {
                     insize = (insize[0] * value, insize[1], insize[2]);
                 }
                 function_e23ba9aa(0, inpos, insize, "<unknown string>", hud.var_4a70ec60, hud.var_e2c0fdcb);
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace snd/namespace_6ca4ad5f
 // Params 0, eflags: 0x4

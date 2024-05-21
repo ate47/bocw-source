@@ -113,16 +113,17 @@ function set_dvar_float_if_unset(dvar, value) {
     return getdvarfloat(dvar, 0);
 }
 
-// Namespace namespace_2d986308/namespace_2d986308
-// Params 2, eflags: 0x0
-// Checksum 0x3b552c6b, Offset: 0x648
-// Size: 0x4e
-function function_102a701c(tens, ones) {
-    /#
+/#
+
+    // Namespace namespace_2d986308/namespace_2d986308
+    // Params 2, eflags: 0x0
+    // Checksum 0x3b552c6b, Offset: 0x648
+    // Size: 0x4e
+    function function_102a701c(tens, ones) {
         while (!isdefined(tens) || !isdefined(ones)) {
             iprintlnbold("<unknown string>");
             wait(2);
         }
-    #/
-}
+    }
 
+#/

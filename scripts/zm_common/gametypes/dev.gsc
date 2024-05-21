@@ -18,32 +18,29 @@
 
 #namespace dev;
 
-// Namespace dev/dev
-// Params 0, eflags: 0x5
-// Checksum 0x775afb45, Offset: 0x100
-// Size: 0x4c
-function private autoexec __init__system__() {
-    /#
-        register(#"dev", &preinit, undefined, undefined, #"spawnlogic");
-    #/
-}
+/#
 
-// Namespace dev/dev
-// Params 0, eflags: 0x4
-// Checksum 0x1ff2225, Offset: 0x158
-// Size: 0x2c
-function private preinit() {
-    /#
-        on_start_gametype(&init);
-    #/
-}
+    // Namespace dev/dev
+    // Params 0, eflags: 0x5
+    // Checksum 0x775afb45, Offset: 0x100
+    // Size: 0x4c
+    function private autoexec __init__system__() {
+        system::register(#"dev", &preinit, undefined, undefined, #"spawnlogic");
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0xdb9effd3, Offset: 0x190
-// Size: 0x258
-function init() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x4
+    // Checksum 0x1ff2225, Offset: 0x158
+    // Size: 0x2c
+    function private preinit() {
+        callback::on_start_gametype(&init);
+    }
+
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0xdb9effd3, Offset: 0x190
+    // Size: 0x258
+    function init() {
         if (getdvarstring(#"scr_show_hq_spawns") == "<unknown string>") {
             setdvar(#"scr_show_hq_spawns", "<unknown string>");
         }
@@ -54,8 +51,8 @@ function init() {
         thread testdvars();
         thread devhelipathdebugdraw();
         thread devstraferunpathdebugdraw();
-        thread setplayermomentumdebug();
-        thread dev_cac_init();
+        thread globallogic_score::setplayermomentumdebug();
+        thread dev_class::dev_cac_init();
         level.dem_spawns = [];
         if (level.gametype == "<unknown string>") {
             extra_spawns = [];
@@ -70,72 +67,65 @@ function init() {
                 }
             }
         }
-        on_connect(&on_player_connect);
+        callback::on_connect(&on_player_connect);
         for (;;) {
             updatedevsettings();
             wait(0.5);
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0x761b7b7c, Offset: 0x3f0
-// Size: 0x8
-function on_player_connect() {
-    /#
-    #/
-}
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0x761b7b7c, Offset: 0x3f0
+    // Size: 0x8
+    function on_player_connect() {
+        
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0x6a561899, Offset: 0x400
-// Size: 0x2a8
-function updatehardpoints() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0x6a561899, Offset: 0x400
+    // Size: 0x2a8
+    function updatehardpoints() {
         foreach (key, streak in level.killstreaks) {
             dvar = streak.devdvar;
             enemydvar = streak.devenemydvar;
-            host = gethostplayer();
+            host = util::gethostplayer();
             if (isdefined(dvar) && getdvarint(dvar, 0) == 1) {
                 foreach (player in level.players) {
                     if (is_true(level.usingmomentum) && is_true(level.usingscorestreaks)) {
-                        player give(key);
+                        player killstreaks::give(key);
                         continue;
                     }
                     if (isbot(player)) {
                         player.bot[#"killstreaks"] = [];
-                        player.bot[#"killstreaks"][0] = get_menu_name(key);
-                        killstreakweapon = get_killstreak_weapon(key);
-                        player give_weapon(killstreakweapon, 1);
-                        _setplayermomentum(player, 2000);
+                        player.bot[#"killstreaks"][0] = killstreaks::get_menu_name(key);
+                        killstreakweapon = killstreaks::get_killstreak_weapon(key);
+                        player killstreaks::give_weapon(killstreakweapon, 1);
+                        globallogic_score::_setplayermomentum(player, 2000);
                         continue;
                     }
-                    player give(key);
+                    player killstreaks::give(key);
                 }
                 setdvar(dvar, 0);
             }
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 1, eflags: 0x0
-// Checksum 0x20556174, Offset: 0x6b0
-// Size: 0x4c
-function warpalltohost(team) {
-    /#
-        host = gethostplayer();
+    // Namespace dev/dev
+    // Params 1, eflags: 0x0
+    // Checksum 0x20556174, Offset: 0x6b0
+    // Size: 0x4c
+    function warpalltohost(team) {
+        host = util::gethostplayer();
         warpalltoplayer(team, host.name);
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 2, eflags: 0x0
-// Checksum 0xbec9a8bf, Offset: 0x708
-// Size: 0x31c
-function warpalltoplayer(team, player) {
-    /#
+    // Namespace dev/dev
+    // Params 2, eflags: 0x0
+    // Checksum 0xbec9a8bf, Offset: 0x708
+    // Size: 0x31c
+    function warpalltoplayer(team, player) {
         players = getplayers();
         target = undefined;
         for (i = 0; i < players.size; i++) {
@@ -171,7 +161,7 @@ function warpalltoplayer(team, player) {
                     continue;
                 }
                 if (nodes.size > 0) {
-                    node = random(nodes);
+                    node = array::random(nodes);
                     players[i] setorigin(node.origin);
                     continue;
                 }
@@ -179,15 +169,13 @@ function warpalltoplayer(team, player) {
             }
         }
         setdvar(#"scr_playerwarp", "<unknown string>");
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0x887c8a87, Offset: 0xa30
-// Size: 0x424
-function updatedevsettingszm() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0x887c8a87, Offset: 0xa30
+    // Size: 0x424
+    function updatedevsettingszm() {
         if (level.players.size > 0) {
             if (getdvarint(#"hash_6efff55aa118c517", 0) == 3) {
                 if (!isdefined(level.streamdumpteamindex)) {
@@ -203,7 +191,7 @@ function updatedevsettingszm() {
                 }
                 match_string = level.scr_zm_ui_gametype + "<unknown string>" + location;
                 if (level.streamdumpteamindex < level.teams.size) {
-                    structs = get_array("<unknown string>", "<unknown string>");
+                    structs = struct::get_array("<unknown string>", "<unknown string>");
                     if (isdefined(structs)) {
                         foreach (struct in structs) {
                             if (isdefined(struct.script_string)) {
@@ -217,7 +205,7 @@ function updatedevsettingszm() {
                         }
                     }
                     if (!isdefined(spawnpoints) || spawnpoints.size == 0) {
-                        spawnpoints = get_array("<unknown string>", "<unknown string>");
+                        spawnpoints = struct::get_array("<unknown string>", "<unknown string>");
                     }
                     if (isdefined(spawnpoints)) {
                         numpoints = spawnpoints.size;
@@ -231,8 +219,8 @@ function updatedevsettingszm() {
                 averageorigin = (0, 0, 0);
                 averageangles = (0, 0, 0);
                 foreach (spawnpoint in spawnpoints) {
-                    averageorigin = averageorigin + spawnpoint.origin / numpoints;
-                    averageangles = averageangles + spawnpoint.angles / numpoints;
+                    averageorigin += spawnpoint.origin / numpoints;
+                    averageangles += spawnpoint.angles / numpoints;
                 }
                 level.players[0] setplayerangles(averageangles);
                 level.players[0] setorigin(averageorigin);
@@ -240,18 +228,16 @@ function updatedevsettingszm() {
                 setdvar(#"hash_6efff55aa118c517", 2);
             }
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0x72ee904f, Offset: 0xe60
-// Size: 0x1604
-function updatedevsettings() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0x72ee904f, Offset: 0xe60
+    // Size: 0x1604
+    function updatedevsettings() {
         show_spawns = getdvarint(#"scr_showspawns", 0);
         show_start_spawns = getdvarint(#"scr_showstartspawns", 0);
-        player = gethostplayer();
+        player = util::gethostplayer();
         if (show_spawns >= 1) {
             show_spawns = 1;
         } else {
@@ -345,14 +331,14 @@ function updatedevsettings() {
             } else if (getdvarstring(#"scr_round_pause") != "<unknown string>") {
                 if (!level.timerstopped) {
                     iprintln("<unknown string>");
-                    pausetimer();
+                    globallogic_utils::pausetimer();
                 } else {
                     iprintln("<unknown string>");
-                    resumetimer();
+                    globallogic_utils::resumetimer();
                 }
                 setdvar(#"scr_round_pause", "<unknown string>");
             } else if (getdvarstring(#"scr_round_end") != "<unknown string>") {
-                level forceend();
+                level globallogic::forceend();
                 setdvar(#"scr_round_end", "<unknown string>");
             } else if (getdvarstring(#"scr_show_hq_spawns") != "<unknown string>") {
                 if (!isdefined(level.devgui_show_hq)) {
@@ -391,8 +377,8 @@ function updatedevsettings() {
                     averageorigin = (0, 0, 0);
                     averageangles = (0, 0, 0);
                     foreach (spawnpoint in level.spawn_start[teamname]) {
-                        averageorigin = averageorigin + spawnpoint.origin / numpoints;
-                        averageangles = averageangles + spawnpoint.angles / numpoints;
+                        averageorigin += spawnpoint.origin / numpoints;
+                        averageangles += spawnpoint.angles / numpoints;
                     }
                     level.players[0] setplayerangles(averageangles);
                     level.players[0] setorigin(averageorigin);
@@ -448,7 +434,7 @@ function updatedevsettings() {
         }
         if (getdvarstring(#"scr_forceevent") != "<unknown string>") {
             event = getdvarstring(#"scr_forceevent");
-            player = gethostplayer();
+            player = util::gethostplayer();
             forward = anglestoforward(player.angles);
             right = anglestoright(player.angles);
             if (event == "<unknown string>") {
@@ -498,16 +484,14 @@ function updatedevsettings() {
                 }
             }
         }
-        debugupdate();
-    #/
-}
+        potm::debugupdate();
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0xf2f47a57, Offset: 0x2470
-// Size: 0x1b6
-function devgui_spawn_think() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0xf2f47a57, Offset: 0x2470
+    // Size: 0x1b6
+    function devgui_spawn_think() {
         self notify(#"devgui_spawn_think");
         self endon(#"devgui_spawn_think", #"disconnect");
         dpad_left = 0;
@@ -529,21 +513,19 @@ function devgui_spawn_think() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0xda81559f, Offset: 0x2630
-// Size: 0x148
-function devgui_unlimited_ammo() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0xda81559f, Offset: 0x2630
+    // Size: 0x148
+    function devgui_unlimited_ammo() {
         self notify(#"devgui_unlimited_ammo");
         self endon(#"devgui_unlimited_ammo", #"disconnect");
         for (;;) {
             wait(1);
             primary_weapons = self getweaponslistprimaries();
-            offhand_weapons_and_alts = exclude(self getweaponslist(1), primary_weapons);
+            offhand_weapons_and_alts = array::exclude(self getweaponslist(1), primary_weapons);
             weapons = arraycombine(primary_weapons, offhand_weapons_and_alts, 0, 0);
             arrayremovevalue(weapons, level.weaponbasemelee);
             for (i = 0; i < weapons.size; i++) {
@@ -554,15 +536,13 @@ function devgui_unlimited_ammo() {
                 self givemaxammo(weapon);
             }
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0xac2a366d, Offset: 0x2780
-// Size: 0x11c
-function devgui_unlimited_momentum() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0xac2a366d, Offset: 0x2780
+    // Size: 0x11c
+    function devgui_unlimited_momentum() {
         level notify(#"devgui_unlimited_momentum");
         level endon(#"devgui_unlimited_momentum");
         for (;;) {
@@ -578,18 +558,16 @@ function devgui_unlimited_momentum() {
                 if (player.sessionstate != "<unknown string>") {
                     continue;
                 }
-                _setplayermomentum(player, 5000);
+                globallogic_score::_setplayermomentum(player, 5000);
             }
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 1, eflags: 0x0
-// Checksum 0xd82a29a8, Offset: 0x28a8
-// Size: 0x100
-function devgui_increase_momentum(score) {
-    /#
+    // Namespace dev/dev
+    // Params 1, eflags: 0x0
+    // Checksum 0xd82a29a8, Offset: 0x28a8
+    // Size: 0x100
+    function devgui_increase_momentum(score) {
         players = getplayers();
         foreach (player in players) {
             if (!isdefined(player)) {
@@ -601,17 +579,15 @@ function devgui_increase_momentum(score) {
             if (player.sessionstate != "<unknown string>") {
                 continue;
             }
-            player giveplayermomentumnotification(score, #"testplayerscorefortan", "<unknown string>", 0);
+            player globallogic_score::giveplayermomentumnotification(score, #"testplayerscorefortan", "<unknown string>", 0);
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0x37c72387, Offset: 0x29b0
-// Size: 0x320
-function devgui_health_debug() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0x37c72387, Offset: 0x29b0
+    // Size: 0x320
+    function devgui_health_debug() {
         self notify(#"devgui_health_debug");
         self endon(#"devgui_health_debug", #"disconnect");
         x = 80;
@@ -646,15 +622,13 @@ function devgui_health_debug() {
             self.debug_health_bar setshader(#"black", width, 8);
             self.debug_health_text setvalue(self.health);
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0xe1b22967, Offset: 0x2cd8
-// Size: 0xac
-function giveextraperks() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0xe1b22967, Offset: 0x2cd8
+    // Size: 0xac
+    function giveextraperks() {
         if (!isdefined(self.extraperks)) {
             return;
         }
@@ -663,15 +637,13 @@ function giveextraperks() {
             println("<unknown string>" + self.name + "<unknown string>" + perks[i] + "<unknown string>");
             self setperk(perks[i]);
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 2, eflags: 0x0
-// Checksum 0xc2ec0122, Offset: 0x2d90
-// Size: 0x140
-function xkillsy(attackername, victimname) {
-    /#
+    // Namespace dev/dev
+    // Params 2, eflags: 0x0
+    // Checksum 0xc2ec0122, Offset: 0x2d90
+    // Size: 0x140
+    function xkillsy(attackername, victimname) {
         attacker = undefined;
         victim = undefined;
         for (index = 0; index < level.players.size; index++) {
@@ -687,49 +659,41 @@ function xkillsy(attackername, victimname) {
             return;
         }
         victim thread [[ level.callbackplayerdamage ]](attacker, attacker, 1000, 0, "<unknown string>", level.weaponnone, (0, 0, 0), (0, 0, 0), "<unknown string>", 0, 0);
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0xb9cc17af, Offset: 0x2ed8
-// Size: 0x24
-function testscriptruntimeerrorassert() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0xb9cc17af, Offset: 0x2ed8
+    // Size: 0x24
+    function testscriptruntimeerrorassert() {
         wait(1);
         assert(0);
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0x29ece536, Offset: 0x2f08
-// Size: 0x44
-function testscriptruntimeerror2() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0x29ece536, Offset: 0x2f08
+    // Size: 0x44
+    function testscriptruntimeerror2() {
         myundefined = "<unknown string>";
         if (myundefined == 1) {
             println("<unknown string>");
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0x9e8e005d, Offset: 0x2f58
-// Size: 0x1c
-function testscriptruntimeerror1() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0x9e8e005d, Offset: 0x2f58
+    // Size: 0x1c
+    function testscriptruntimeerror1() {
         testscriptruntimeerror2();
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0xeb5c69f9, Offset: 0x2f80
-// Size: 0xdc
-function testscriptruntimeerror() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0xeb5c69f9, Offset: 0x2f80
+    // Size: 0xdc
+    function testscriptruntimeerror() {
         wait(5);
         for (;;) {
             if (getdvarstring(#"scr_testscriptruntimeerror") != "<unknown string>") {
@@ -745,15 +709,13 @@ function testscriptruntimeerror() {
             testscriptruntimeerror1();
         }
         thread testscriptruntimeerror();
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0xf5983560, Offset: 0x3068
-// Size: 0xfc
-function testdvars() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0xf5983560, Offset: 0x3068
+    // Size: 0xfc
+    function testdvars() {
         wait(5);
         for (;;) {
             if (getdvarstring(#"scr_testdvar") != "<unknown string>") {
@@ -767,17 +729,15 @@ function testdvars() {
         setdvar(dvarname, dvarvalue);
         setdvar(#"scr_testdvar", "<unknown string>");
         thread testdvars();
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 5, eflags: 0x0
-// Checksum 0xcf5073d6, Offset: 0x3170
-// Size: 0x4ae
-function showonespawnpoint(spawn_point, color, notification, height, print) {
-    /#
+    // Namespace dev/dev
+    // Params 5, eflags: 0x0
+    // Checksum 0xcf5073d6, Offset: 0x3170
+    // Size: 0x4ae
+    function showonespawnpoint(spawn_point, color, notification, height, print) {
         if (!isdefined(height) || height <= 0) {
-            height = get_player_height();
+            height = util::get_player_height();
         }
         if (!isdefined(print)) {
             print = spawn_point.classname;
@@ -799,15 +759,15 @@ function showonespawnpoint(spawn_point, color, notification, height, print) {
         thread lineuntilnotified(b, b + (0, 0, height), color, 0, notification);
         thread lineuntilnotified(c, c + (0, 0, height), color, 0, notification);
         thread lineuntilnotified(d, d + (0, 0, height), color, 0, notification);
-        a = a + (0, 0, height);
-        b = b + (0, 0, height);
-        c = c + (0, 0, height);
-        d = d + (0, 0, height);
+        a += (0, 0, height);
+        b += (0, 0, height);
+        c += (0, 0, height);
+        d += (0, 0, height);
         thread lineuntilnotified(a, b, color, 0, notification);
         thread lineuntilnotified(b, c, color, 0, notification);
         thread lineuntilnotified(c, d, color, 0, notification);
         thread lineuntilnotified(d, a, color, 0, notification);
-        center = center + (0, 0, height / 2);
+        center += (0, 0, height / 2);
         arrow_forward = anglestoforward(spawn_point.angles);
         arrowhead_forward = anglestoforward(spawn_point.angles);
         arrowhead_right = anglestoright(spawn_point.angles);
@@ -822,15 +782,13 @@ function showonespawnpoint(spawn_point, color, notification, height, print) {
         thread lineuntilnotified(a, c, color, 0, notification);
         thread print3duntilnotified(spawn_point.origin + (0, 0, height), print, color, 1, 1, notification);
         return;
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0x994e225c, Offset: 0x3628
-// Size: 0xd6
-function showspawnpoints() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0x994e225c, Offset: 0x3628
+    // Size: 0xd6
+    function showspawnpoints() {
         if (isdefined(level.spawnpoints)) {
             color = (1, 1, 1);
             for (spawn_point_index = 0; spawn_point_index < level.spawnpoints.size; spawn_point_index++) {
@@ -842,26 +800,22 @@ function showspawnpoints() {
             showonespawnpoint(level.dem_spawns[i], color, "<unknown string>");
         }
         return;
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0x2e41c147, Offset: 0x3708
-// Size: 0x22
-function hidespawnpoints() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0x2e41c147, Offset: 0x3708
+    // Size: 0x22
+    function hidespawnpoints() {
         level notify(#"hide_spawnpoints");
         return;
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0xa37b728a, Offset: 0x3738
-// Size: 0x23e
-function showstartspawnpoints() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0xa37b728a, Offset: 0x3738
+    // Size: 0x23e
+    function showstartspawnpoints() {
         if (!level.teambased) {
             return;
         }
@@ -884,67 +838,57 @@ function showstartspawnpoints() {
             }
         }
         return;
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0x9374c538, Offset: 0x3980
-// Size: 0x22
-function hidestartspawnpoints() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0x9374c538, Offset: 0x3980
+    // Size: 0x22
+    function hidestartspawnpoints() {
         level notify(#"hide_startspawnpoints");
         return;
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 6, eflags: 0x0
-// Checksum 0x59909ed5, Offset: 0x39b0
-// Size: 0x6e
-function print3duntilnotified(origin, text, color, alpha, scale, notification) {
-    /#
+    // Namespace dev/dev
+    // Params 6, eflags: 0x0
+    // Checksum 0x59909ed5, Offset: 0x39b0
+    // Size: 0x6e
+    function print3duntilnotified(origin, text, color, alpha, scale, notification) {
         level endon(notification);
         for (;;) {
             print3d(origin, text, color, alpha, scale);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 5, eflags: 0x0
-// Checksum 0xf4769737, Offset: 0x3a28
-// Size: 0x66
-function lineuntilnotified(start, end, color, depthtest, notification) {
-    /#
+    // Namespace dev/dev
+    // Params 5, eflags: 0x0
+    // Checksum 0xf4769737, Offset: 0x3a28
+    // Size: 0x66
+    function lineuntilnotified(start, end, color, depthtest, notification) {
         level endon(notification);
         for (;;) {
             line(start, end, color, depthtest);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 1, eflags: 0x0
-// Checksum 0x72d68c99, Offset: 0x3a98
-// Size: 0x2a
-function dvar_turned_on(val) {
-    /#
+    // Namespace dev/dev
+    // Params 1, eflags: 0x0
+    // Checksum 0x72d68c99, Offset: 0x3a98
+    // Size: 0x2a
+    function dvar_turned_on(val) {
         if (val <= 0) {
             return 0;
         }
         return 1;
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 5, eflags: 0x0
-// Checksum 0x11330f8a, Offset: 0x3ad0
-// Size: 0xc4
-function new_hud(hud_name, msg, x, y, scale) {
-    /#
+    // Namespace dev/dev
+    // Params 5, eflags: 0x0
+    // Checksum 0x11330f8a, Offset: 0x3ad0
+    // Size: 0xc4
+    function new_hud(hud_name, msg, x, y, scale) {
         if (!isdefined(level.hud_array)) {
             level.hud_array = [];
         }
@@ -954,15 +898,13 @@ function new_hud(hud_name, msg, x, y, scale) {
         hud = set_hudelem(msg, x, y, scale);
         level.hud_array[hud_name][level.hud_array[hud_name].size] = hud;
         return hud;
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 7, eflags: 0x0
-// Checksum 0x80affc32, Offset: 0x3ba0
-// Size: 0x142
-function set_hudelem(text, x, y, scale, alpha, sort, *debug_hudelem) {
-    /#
+    // Namespace dev/dev
+    // Params 7, eflags: 0x0
+    // Checksum 0x80affc32, Offset: 0x3ba0
+    // Size: 0x142
+    function set_hudelem(text, x, y, scale, alpha, sort, *debug_hudelem) {
         /#
             if (!isdefined(sort)) {
                 sort = 1;
@@ -990,15 +932,13 @@ function set_hudelem(text, x, y, scale, alpha, sort, *debug_hudelem) {
             }
             return hud;
         #/
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0x7dc6fddb, Offset: 0x3cf0
-// Size: 0x14c
-function print_weapon_name() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0x7dc6fddb, Offset: 0x3cf0
+    // Size: 0x14c
+    function print_weapon_name() {
         self notify(#"print_weapon_name");
         self endon(#"print_weapon_name");
         wait(0.2);
@@ -1020,15 +960,13 @@ function print_weapon_name() {
         if (printweaponname) {
             iprintlnbold(weapon.name);
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0xb07792dd, Offset: 0x3e48
-// Size: 0x1d8
-function set_equipment_list() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0xb07792dd, Offset: 0x3e48
+    // Size: 0x1d8
+    function set_equipment_list() {
         if (isdefined(level.dev_equipment)) {
             return;
         }
@@ -1042,15 +980,13 @@ function set_equipment_list() {
         level.dev_equipment[7] = getweapon(#"bouncingbetty");
         level.dev_equipment[8] = getweapon(#"trophy_system");
         level.dev_equipment[9] = getweapon(#"pda_hack");
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0xf9b0c5c5, Offset: 0x4028
-// Size: 0x208
-function set_grenade_list() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0xf9b0c5c5, Offset: 0x4028
+    // Size: 0x208
+    function set_grenade_list() {
         if (isdefined(level.dev_grenade)) {
             return;
         }
@@ -1065,30 +1001,26 @@ function set_grenade_list() {
         level.dev_grenade[8] = getweapon(#"nightingale");
         level.dev_grenade[9] = getweapon(#"emp_grenade");
         level.dev_grenade[10] = getweapon(#"sensor_grenade");
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 1, eflags: 0x0
-// Checksum 0xf7ad993c, Offset: 0x4238
-// Size: 0xac
-function take_all_grenades_and_equipment(player) {
-    /#
-        for (i = 0; i < level.dev_equipment.size; i++) {
+    // Namespace dev/dev
+    // Params 1, eflags: 0x0
+    // Checksum 0xf7ad993c, Offset: 0x4238
+    // Size: 0xac
+    function take_all_grenades_and_equipment(player) {
+                for (i = 0; i < level.dev_equipment.size; i++) {
             player takeweapon(level.dev_equipment[i + 1]);
         }
         for (i = 0; i < level.dev_grenade.size; i++) {
             player takeweapon(level.dev_grenade[i + 1]);
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0x35541b09, Offset: 0x42f0
-// Size: 0x138
-function equipment_dev_gui() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0x35541b09, Offset: 0x42f0
+    // Size: 0x138
+    function equipment_dev_gui() {
         set_equipment_list();
         set_grenade_list();
         setdvar(#"scr_give_equipment", "<unknown string>");
@@ -1103,15 +1035,13 @@ function equipment_dev_gui() {
                 setdvar(#"scr_give_equipment", 0);
             }
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0xe21bc74, Offset: 0x4430
-// Size: 0x138
-function grenade_dev_gui() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0xe21bc74, Offset: 0x4430
+    // Size: 0x138
+    function grenade_dev_gui() {
         set_equipment_list();
         set_grenade_list();
         setdvar(#"scr_give_grenade", "<unknown string>");
@@ -1126,15 +1056,13 @@ function grenade_dev_gui() {
                 setdvar(#"scr_give_grenade", 0);
             }
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0xf733fb66, Offset: 0x4570
-// Size: 0x44e
-function devstraferunpathdebugdraw() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0xf733fb66, Offset: 0x4570
+    // Size: 0x44e
+    function devstraferunpathdebugdraw() {
         white = (1, 1, 1);
         red = (1, 0, 0);
         green = (0, 1, 0);
@@ -1201,7 +1129,7 @@ function devstraferunpathdebugdraw() {
                     nodes[nodes.size] = new_node;
                     node = new_node;
                 }
-                drawtime = drawtime - 0.05;
+                drawtime -= 0.05;
                 if (drawtime < 0) {
                     drawtime = maxdrawtime;
                 }
@@ -1210,15 +1138,13 @@ function devstraferunpathdebugdraw() {
             }
             wait(1);
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0x8d653f8c, Offset: 0x49c8
-// Size: 0x3bc
-function devhelipathdebugdraw() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0x8d653f8c, Offset: 0x49c8
+    // Size: 0x3bc
+    function devhelipathdebugdraw() {
         white = (1, 1, 1);
         red = (1, 0, 0);
         green = (0, 1, 0);
@@ -1272,7 +1198,7 @@ function devhelipathdebugdraw() {
                         }
                     }
                 }
-                drawtime = drawtime - 0.05;
+                drawtime -= 0.05;
                 if (drawtime < 0) {
                     drawtime = maxdrawtime;
                 }
@@ -1284,85 +1210,73 @@ function devhelipathdebugdraw() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 0, eflags: 0x0
-// Checksum 0x386174c2, Offset: 0x4d90
-// Size: 0xfc
-function draworiginlines() {
-    /#
+    // Namespace dev/dev
+    // Params 0, eflags: 0x0
+    // Checksum 0x386174c2, Offset: 0x4d90
+    // Size: 0xfc
+    function draworiginlines() {
         red = (1, 0, 0);
         green = (0, 1, 0);
         blue = (0, 0, 1);
         line(self.origin, self.origin + anglestoforward(self.angles) * 10, red);
         line(self.origin, self.origin + anglestoright(self.angles) * 10, green);
         line(self.origin, self.origin + anglestoup(self.angles) * 10, blue);
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 4, eflags: 0x0
-// Checksum 0xd1cb446e, Offset: 0x4e98
-// Size: 0x64
-function drawtargetnametext(textcolor, textalpha, textscale, textoffset) {
-    /#
+    // Namespace dev/dev
+    // Params 4, eflags: 0x0
+    // Checksum 0xd1cb446e, Offset: 0x4e98
+    // Size: 0x64
+    function drawtargetnametext(textcolor, textalpha, textscale, textoffset) {
         if (!isdefined(textoffset)) {
             textoffset = (0, 0, 0);
         }
         print3d(self.origin + textoffset, self.targetname, textcolor, textalpha, textscale);
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 4, eflags: 0x0
-// Checksum 0xce7aa2cc, Offset: 0x4f08
-// Size: 0x64
-function drawnoteworthytext(textcolor, textalpha, textscale, textoffset) {
-    /#
+    // Namespace dev/dev
+    // Params 4, eflags: 0x0
+    // Checksum 0xce7aa2cc, Offset: 0x4f08
+    // Size: 0x64
+    function drawnoteworthytext(textcolor, textalpha, textscale, textoffset) {
         if (!isdefined(textoffset)) {
             textoffset = (0, 0, 0);
         }
         print3d(self.origin + textoffset, self.script_noteworthy, textcolor, textalpha, textscale);
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 4, eflags: 0x0
-// Checksum 0x5cefa793, Offset: 0x4f78
-// Size: 0xbc
-function draworigintext(textcolor, textalpha, textscale, textoffset) {
-    /#
+    // Namespace dev/dev
+    // Params 4, eflags: 0x0
+    // Checksum 0x5cefa793, Offset: 0x4f78
+    // Size: 0xbc
+    function draworigintext(textcolor, textalpha, textscale, textoffset) {
         if (!isdefined(textoffset)) {
             textoffset = (0, 0, 0);
         }
         originstring = "<unknown string>" + self.origin[0] + "<unknown string>" + self.origin[1] + "<unknown string>" + self.origin[2] + "<unknown string>";
         print3d(self.origin + textoffset, originstring, textcolor, textalpha, textscale);
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 4, eflags: 0x0
-// Checksum 0xf1ecd12f, Offset: 0x5040
-// Size: 0xcc
-function drawspeedacceltext(textcolor, textalpha, textscale, textoffset) {
-    /#
+    // Namespace dev/dev
+    // Params 4, eflags: 0x0
+    // Checksum 0xf1ecd12f, Offset: 0x5040
+    // Size: 0xcc
+    function drawspeedacceltext(textcolor, textalpha, textscale, textoffset) {
         if (isdefined(self.script_airspeed)) {
             print3d(self.origin + (0, 0, textoffset[2] * 2), "<unknown string>" + self.script_airspeed, textcolor, textalpha, textscale);
         }
         if (isdefined(self.script_accel)) {
             print3d(self.origin + (0, 0, textoffset[2] * 3), "<unknown string>" + self.script_accel, textcolor, textalpha, textscale);
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 7, eflags: 0x0
-// Checksum 0x9f790004, Offset: 0x5118
-// Size: 0x11e
-function drawpath(linecolor, textcolor, textalpha, textscale, textoffset, drawtime, endonmsg) {
-    /#
+    // Namespace dev/dev
+    // Params 7, eflags: 0x0
+    // Checksum 0x9f790004, Offset: 0x5118
+    // Size: 0x11e
+    function drawpath(linecolor, textcolor, textalpha, textscale, textoffset, drawtime, endonmsg) {
         level endon(endonmsg);
         ent = self;
         entfirsttarget = ent.targetname;
@@ -1377,15 +1291,13 @@ function drawpath(linecolor, textcolor, textalpha, textscale, textoffset, drawti
             ent = enttarget;
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace dev/dev
-// Params 8, eflags: 0x0
-// Checksum 0xf3fa8849, Offset: 0x5240
-// Size: 0x116
-function drawpathsegment(enttarget, linecolor, textcolor, textalpha, textscale, textoffset, drawtime, endonmsg) {
-    /#
+    // Namespace dev/dev
+    // Params 8, eflags: 0x0
+    // Checksum 0xf3fa8849, Offset: 0x5240
+    // Size: 0x116
+    function drawpathsegment(enttarget, linecolor, textcolor, textalpha, textscale, textoffset, drawtime, endonmsg) {
         level endon(endonmsg);
         while (drawtime > 0) {
             if (isdefined(self.targetname) && self.targetname == "<unknown string>") {
@@ -1393,9 +1305,9 @@ function drawpathsegment(enttarget, linecolor, textcolor, textalpha, textscale, 
             }
             line(self.origin, enttarget.origin, linecolor);
             self drawspeedacceltext(textcolor, textalpha, textscale, textoffset);
-            drawtime = drawtime - 0.05;
+            drawtime -= 0.05;
             waitframe(1);
         }
-    #/
-}
+    }
 
+#/

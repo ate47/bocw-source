@@ -269,7 +269,7 @@ function activateuav(killstreaktype) {
             trace = groundtrace((self.origin[0], self.origin[1], var_b0490eb9), self.origin - (0, 0, 5000), 0, uav);
             groundheight = trace[#"position"][2];
             var_5f8c899e = groundheight + (var_b0490eb9 - groundheight) * bundle.var_ff73e08c;
-            var_5f8c899e = var_5f8c899e - killstreaks::function_43f4782d();
+            var_5f8c899e -= killstreaks::function_43f4782d();
         } else {
             var_5f8c899e = 5000;
         }
@@ -593,7 +593,7 @@ function uavtracker() {
         activeuavs = isdefined(level.activeuavs[player.team]) ? level.activeuavs[player.team] : 0;
         var_376f7f8c = activeuavs + (isdefined(level.activesatellites[player.team]) ? level.activesatellites[player.team] : 0);
         if (isdefined(player.entnum)) {
-            var_376f7f8c = var_376f7f8c + (isdefined(level.var_eb10c6a7[player.entnum]) ? level.var_eb10c6a7[player.entnum] : 0);
+            var_376f7f8c += isdefined(level.var_eb10c6a7[player.entnum]) ? level.var_eb10c6a7[player.entnum] : 0;
         }
         player setclientuivisibilityflag("radar_client", var_376f7f8c > 0);
         player.hasspyplane = var_376f7f8c > 0;

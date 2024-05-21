@@ -697,7 +697,7 @@ function function_14bad487(trap_prop, total_time, iteration_time, angle) {
     }
     for (i = 0; i < iterations; i++) {
         trap_prop rotateroll(start_roll + current_delta, iteration_time);
-        current_delta = current_delta * -1;
+        current_delta *= -1;
         wait(iteration_time);
     }
     trap_prop.angles = original_angles;
@@ -743,7 +743,7 @@ function function_24811d29(s_info) {
     if (gettime() - prop.var_b31a1e22 > int(3 * 1000)) {
         prop.tracked_damage = 0;
     }
-    prop.tracked_damage = prop.tracked_damage + s_info.idamage;
+    prop.tracked_damage += s_info.idamage;
     prop.var_b31a1e22 = gettime();
     if (prop.tracked_damage >= 100) {
         player = isplayer(s_info.einflictor) ? s_info.einflictor : s_info.eattacker;

@@ -44,7 +44,7 @@ function findnextpointofinterest(curpos, region, var_5a990e80, bforward = 1) {
             }
             starttoend = var_84ee6edd - var_640dd14c;
             var_e15dea17 = length(starttoend);
-            starttoend = starttoend / var_e15dea17;
+            starttoend /= var_e15dea17;
             var_acb91842 = var_9a135fe4 == var_5a990e80 && (var_5a990e80 == 0 && bforward || var_5a990e80 == region.route_points.size && !bforward);
             result = [];
             result[0] = smartobj;
@@ -84,7 +84,7 @@ function findcurposonroute(curpos, route) {
         nextpt = (var_6bc1390 + 1) % var_6a605059;
         starttoend = route[nextpt].origin - route[var_6bc1390].origin;
         var_5e9b5f9f = length(starttoend);
-        starttoend = starttoend / var_5e9b5f9f;
+        starttoend /= var_5e9b5f9f;
         var_4fbaae92 = curpos - route[var_6bc1390].origin;
         var_98883cf9 = vectordot(starttoend, var_4fbaae92);
         if (bestscore > 0 && (var_98883cf9 < 0 || var_98883cf9 > var_5e9b5f9f)) {
@@ -138,12 +138,13 @@ function getregionforpos(pos) {
     return var_ccae54a1;
 }
 
-// Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 3, eflags: 0x0
-// Checksum 0x5d809fe8, Offset: 0x9c0
-// Size: 0x12c
-function function_7a946650(msg, index, var_371132fe) {
-    /#
+/#
+
+    // Namespace namespace_5cd4acd8/namespace_1a229754
+    // Params 3, eflags: 0x0
+    // Checksum 0x5d809fe8, Offset: 0x9c0
+    // Size: 0x12c
+    function function_7a946650(msg, index, var_371132fe) {
         idx = string(index);
         target = "<unknown string>";
         targetname = "<unknown string>";
@@ -158,15 +159,13 @@ function function_7a946650(msg, index, var_371132fe) {
             transition = "<unknown string>";
         }
         println("<unknown string>" + msg + "<unknown string>" + idx + "<unknown string>" + targetname + "<unknown string>" + target + "<unknown string>" + transition);
-    #/
-}
+    }
 
-// Namespace namespace_5cd4acd8/namespace_1a229754
-// Params 0, eflags: 0x0
-// Checksum 0x9f925225, Offset: 0xaf8
-// Size: 0x1a0
-function function_28ec085c() {
-    /#
+    // Namespace namespace_5cd4acd8/namespace_1a229754
+    // Params 0, eflags: 0x0
+    // Checksum 0x9f925225, Offset: 0xaf8
+    // Size: 0x1a0
+    function function_28ec085c() {
         foreach (region in level.stealth.hunt_regions) {
             foreach (point in region.transition_points) {
                 foreach (transition in point.transitions) {
@@ -174,8 +173,9 @@ function function_28ec085c() {
                 }
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_5cd4acd8/namespace_1a229754
 // Params 1, eflags: 0x2 linked
@@ -313,15 +313,15 @@ function buildhuntstealthgroupgraphdata() {
             i = 1;
             for (i = 1; i < region.route_points.size; i++) {
                 var_ebcfaa4d = length(region.route_points[i].origin - region.route_points[i - 1].origin);
-                var_fb678b1c = var_fb678b1c + var_ebcfaa4d;
+                var_fb678b1c += var_ebcfaa4d;
             }
-            var_fb678b1c = var_fb678b1c * 0.5;
+            var_fb678b1c *= 0.5;
             for (i = 0; i < region.route_points.size - 1; i++) {
                 var_ebcfaa4d = length(region.route_points[i].origin - region.route_points[i + 1].origin);
                 if (var_fb678b1c - var_ebcfaa4d < 0) {
                     break;
                 }
-                var_fb678b1c = var_fb678b1c - var_ebcfaa4d;
+                var_fb678b1c -= var_ebcfaa4d;
             }
             fraction = var_fb678b1c / var_ebcfaa4d;
             region.approx_location = vectorlerp(region.route_points[i].origin, region.route_points[i + 1].origin, fraction);
@@ -559,7 +559,7 @@ function huntcomputeaiindependentregionscores(*group, group_data) {
     }
     for (var_3e6a3ff3 = 0; var_3e6a3ff3 < numregions; var_3e6a3ff3++) {
         region = group_data.hunt_regions[var_3e6a3ff3];
-        region.bfs_score = region.bfs_score / highestscore;
+        region.bfs_score /= highestscore;
         region.bfs_visited = undefined;
     }
     aiprofile_endentry();
@@ -591,7 +591,7 @@ function huntunassignfromregion(region) {
 // Checksum 0xe252418d, Offset: 0x2c90
 // Size: 0x4c
 function huntincaiassignment(region) {
-    region.shared_data.bfs_assigned = region.shared_data.bfs_assigned + 1;
+    region.shared_data.bfs_assigned += 1;
     self hunttrytoenterregionvolume(region);
 }
 
@@ -601,7 +601,7 @@ function huntincaiassignment(region) {
 // Size: 0xb6
 function huntdecaiassignment(region) {
     assert(region.shared_data.bfs_assigned != 0, "<unknown string>");
-    region.shared_data.bfs_assigned = region.shared_data.bfs_assigned - 1;
+    region.shared_data.bfs_assigned -= 1;
     self hunttrytoexitregionvolume(region);
     if (region.shared_data.in_region == 0) {
         region.shared_data.bfs_cooldown = gettime() + region.cooldown;
@@ -615,7 +615,7 @@ function huntdecaiassignment(region) {
 function hunttrytoenterregionvolume(region) {
     if (!self.stealth.cleardata.isinregion && region.volume istouching(self.origin)) {
         assert(self.stealth.cleardata.curregion == region, "<unknown string>" + region.index + "<unknown string>");
-        region.shared_data.in_region = region.shared_data.in_region + 1;
+        region.shared_data.in_region += 1;
         self.stealth.cleardata.isinregion = 1;
         if (region.shared_data.player_in_region && region.shared_data.in_region == 1) {
             var_8a32f5c = 1000;
@@ -631,7 +631,7 @@ function hunttrytoenterregionvolume(region) {
 function hunttrytoexitregionvolume(region) {
     assert(self.stealth.cleardata.curregion == region, "<unknown string>" + region.index + "<unknown string>");
     if (self.stealth.cleardata.isinregion) {
-        region.shared_data.in_region = region.shared_data.in_region - 1;
+        region.shared_data.in_region -= 1;
         self.stealth.cleardata.isinregion = 0;
     }
 }
@@ -681,7 +681,7 @@ function huntgetnextregion(region) {
     }
     self.stealth.cleardata.prevregion[0] = self.stealth.cleardata.prevregion[1];
     self.stealth.cleardata.prevregion[1] = self.stealth.cleardata.curregion;
-    target_score = target_score + 0.5;
+    target_score += 0.5;
     if (target_score > 1) {
         target_score = 0;
     }

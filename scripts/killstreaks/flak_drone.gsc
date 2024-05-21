@@ -84,7 +84,7 @@ function state_off_update(*params) {
             foreach (point in queryresult.data) {
                 randomscore = randomfloatrange(0, 100);
                 disttooriginscore = point.disttoorigin2d * 0.2;
-                point.score = point.score + randomscore + disttooriginscore;
+                point.score += randomscore + disttooriginscore;
                 /#
                     if (!isdefined(point._scoredebug)) {
                         point._scoredebug = [];
@@ -95,7 +95,7 @@ function state_off_update(*params) {
                     point._scoredebug[#"disttoorigin"].score = disttooriginscore;
                     point._scoredebug[#"disttoorigin"].scorename = "<unknown string>";
                 #/
-                point.score = point.score + disttooriginscore;
+                point.score += disttooriginscore;
                 if (point.score > best_score) {
                     best_score = point.score;
                     best_point = point;
@@ -195,10 +195,10 @@ function spawnflakrocket(missile, spawnpos, parent) {
         }
         /#
             if (debug_draw && isdefined(missile)) {
-                debug_sphere(missile.origin, 6, (0.9, 0, 0), 0.9, debug_duration);
+                util::debug_sphere(missile.origin, 6, (0.9, 0, 0), 0.9, debug_duration);
             }
             if (debug_draw && isdefined(rocket)) {
-                debug_sphere(rocket.origin, 6, (0, 0, 0.9), 0.9, debug_duration);
+                util::debug_sphere(rocket.origin, 6, (0, 0, 0.9), 0.9, debug_duration);
             }
         #/
         if (isdefined(parent)) {
@@ -214,9 +214,9 @@ function spawnflakrocket(missile, spawnpos, parent) {
             /#
                 if (debug_draw && isdefined(parent)) {
                     if (tooclosetopredictedparent && !(predicteddist < 0 || curdist > prevdist)) {
-                        debug_sphere(parent.origin, 18, (0.9, 0, 0.9), 0.9, debug_duration);
+                        util::debug_sphere(parent.origin, 18, (0.9, 0, 0.9), 0.9, debug_duration);
                     } else {
-                        debug_sphere(parent.origin, 18, (0, 0.9, 0), 0.9, debug_duration);
+                        util::debug_sphere(parent.origin, 18, (0, 0.9, 0), 0.9, debug_duration);
                     }
                 }
             #/
@@ -316,7 +316,7 @@ function drone_pain(*eattacker, *damagetype, *hitpoint, *hitdirection, *hitlocat
     if (!is_true(self.inpain)) {
         yaw_vel = math::randomsign() * randomfloatrange(280, 320);
         ang_vel = self getangularvelocity();
-        ang_vel = ang_vel + (randomfloatrange(-120, -100), yaw_vel, randomfloatrange(-200, 200));
+        ang_vel += (randomfloatrange(-120, -100), yaw_vel, randomfloatrange(-200, 200));
         self setangularvelocity(ang_vel);
         self thread drone_pain_for_time(0.8, 0.7);
     }

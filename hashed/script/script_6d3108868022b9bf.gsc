@@ -36,7 +36,7 @@ function function_12624bb8(var_9e3df858, var_7b80750a) {
     /#
         function_5ac4dc99("icon_new_evidence_", 0);
         function_cd140ee9("icon_new_evidence_", &function_31c143a8);
-        init_dvar("Index", 0, &function_97c5cb9a);
+        util::init_dvar("Index", 0, &function_97c5cb9a);
         level.var_5bd2109 = getdvarint(#"hash_1fe50f2a47161399", 0) > 0;
         level.var_99e01934 = getdvarint(#"hash_4ea6d647c6120234", 0) > 0;
     #/
@@ -67,35 +67,35 @@ function function_12624bb8(var_9e3df858, var_7b80750a) {
     player thread function_e0cfa93c(var_7b80750a);
 }
 
-// Namespace namespace_fa335fda/namespace_f784b4da
-// Params 1, eflags: 0x4
-// Checksum 0x37b67fa0, Offset: 0x1060
-// Size: 0x54
-function private function_31c143a8(params) {
-    /#
+/#
+
+    // Namespace namespace_fa335fda/namespace_f784b4da
+    // Params 1, eflags: 0x4
+    // Checksum 0x37b67fa0, Offset: 0x1060
+    // Size: 0x54
+    function private function_31c143a8(params) {
         assert(params.name == "icon_new_evidence_");
         level.var_47df5f11 = params.value > 0;
-    #/
-}
+    }
 
-// Namespace namespace_fa335fda/namespace_f784b4da
-// Params 1, eflags: 0x4
-// Checksum 0x1e744402, Offset: 0x10c0
-// Size: 0x204
-function private function_97c5cb9a(params) {
-    /#
+    // Namespace namespace_fa335fda/namespace_f784b4da
+    // Params 1, eflags: 0x4
+    // Checksum 0x1e744402, Offset: 0x10c0
+    // Size: 0x204
+    function private function_97c5cb9a(params) {
         assert(params.name == "Index");
         if (params.value) {
             var_cf1f3586 = ["<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>"];
             foreach (mission_name in var_cf1f3586) {
-                if (is_true(function_2ee66e93(mission_name + "<unknown string>"))) {
-                    set_player_data(mission_name + "<unknown string>", 0);
+                if (is_true(savegame::function_2ee66e93(mission_name + "<unknown string>"))) {
+                    savegame::set_player_data(mission_name + "<unknown string>", 0);
                 }
             }
             setdvar(#"hash_432a49c2505fa5fe", 0);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_fa335fda/namespace_f784b4da
 // Params 2, eflags: 0x6 linked
@@ -571,7 +571,7 @@ function private function_6d01a6c8(*params) {
 function private function_964c7ad2(*params) {
     player = self;
     assert(isplayer(player));
-    assert(!level get("<unknown string>"));
+    assert(!level flag::get("<unknown string>"));
     /#
         player function_d530ce5a();
     #/
@@ -841,7 +841,7 @@ function private function_e976f5d3() {
         var_68c47b96 = collectibles::function_7be39f53(evidence.var_8ca1d4a);
         assert(var_68c47b96 < 8);
         var_2ed2359a = var_61b3cfd0;
-        var_2ed2359a = var_2ed2359a | var_68c47b96 << 3;
+        var_2ed2359a |= var_68c47b96 << 3;
         interactive_map::function_23036faa(#"cursor", "collectibleCount", var_2ed2359a);
     } else {
         interactive_map::function_23036faa(#"cursor", "collectibleCount", 0);
@@ -932,7 +932,7 @@ function private function_5b9bb291(*params) {
     blackboard = statemachine.blackboard;
     assert(isdefined(blackboard.var_c5bde695));
     evidence = blackboard.var_3cb3ede5[blackboard.var_c5bde695];
-    assert(!exists(#"hash_3ccc1702bc979da8"));
+    assert(!namespace_61e6d095::exists(#"hash_3ccc1702bc979da8"));
     namespace_61e6d095::create(#"hash_3ccc1702bc979da8", #"hash_4130605c2e66825d");
     namespace_61e6d095::function_d3c3e5c3(#"hash_3ccc1702bc979da8", #"interactive_map");
     var_9f97b0c5 = isdefined(evidence.var_ba2153ee) && evidence.var_ba2153ee == 1;
@@ -1172,7 +1172,7 @@ function private function_96e31558(*params) {
         player function_d530ce5a();
     #/
     namespace_c8e236da::removelist();
-    assert(exists(#"hash_3ccc1702bc979da8"));
+    assert(namespace_61e6d095::exists(#"hash_3ccc1702bc979da8"));
     namespace_61e6d095::function_73c9a490(#"hash_3ccc1702bc979da8", 0);
     namespace_61e6d095::remove(#"hash_3ccc1702bc979da8");
     statemachine = player function_1bb19090();
@@ -1332,7 +1332,7 @@ function private function_e6734894(*params) {
         hinttext = #"hash_2879a6ccf4f083c8";
     }
     blackboard.var_9b52b1bf = !var_fc34020f || var_ccb596bd;
-    assert(!exists(#"hash_afc09dfd34bcde0"));
+    assert(!namespace_61e6d095::exists(#"hash_afc09dfd34bcde0"));
     namespace_61e6d095::create(#"hash_afc09dfd34bcde0", #"hash_102694e2bfda6f95");
     namespace_61e6d095::function_d3c3e5c3(#"hash_afc09dfd34bcde0", #"interactive_map");
     namespace_61e6d095::function_9ade1d9b(#"hash_afc09dfd34bcde0", "evidenceEarnedCount", 0);
@@ -1430,7 +1430,7 @@ function private function_dd090dfe(*params) {
         function_aa81758f(blackboard.var_7fb2f6df, 1);
         blackboard.var_7fb2f6df = undefined;
         player clientfield::set_to_player("eboard_review_handle_viewmodel", 0);
-        assert(exists(#"hash_afc09dfd34bcde0"));
+        assert(namespace_61e6d095::exists(#"hash_afc09dfd34bcde0"));
         namespace_61e6d095::remove(#"hash_afc09dfd34bcde0");
         namespace_c8e236da::removelist();
         waitframe(1);
@@ -1470,7 +1470,7 @@ function private function_b00f82b(params) {
         assert(isdefined(evidence.var_dade7c7f) && isdefined(evidence.var_dade7c7f[blackboard.var_bcd1e3f9]));
         var_38d97d58 = evidence.var_dade7c7f[blackboard.var_bcd1e3f9];
     }
-    assert(function_606a97af(var_38d97d58.callback));
+    assert(collectibles::function_606a97af(var_38d97d58.callback));
     player clientfield::set_to_player("eboard_review_handle_viewmodel", 0);
     collectibles::function_f539a1fa(var_38d97d58.callback, var_38d97d58);
     while (player namespace_61e6d095::function_70217795()) {
@@ -1510,7 +1510,7 @@ function private function_e2e9758c(*params) {
     if (player function_305352b5()) {
         evidence = blackboard.var_3cb3ede5[blackboard.var_c5bde695];
         assert(isdefined(evidence.var_dade7c7f) && evidence.var_dade7c7f.size > 0);
-        assert(!exists(#"hash_afc09dfd34bcde0"));
+        assert(!namespace_61e6d095::exists(#"hash_afc09dfd34bcde0"));
         namespace_61e6d095::create(#"hash_afc09dfd34bcde0", #"hash_102694e2bfda6f95");
         namespace_61e6d095::function_d3c3e5c3(#"hash_afc09dfd34bcde0", #"interactive_map");
         var_2a015e7e = collectibles::function_5d5166dd(evidence.var_8ca1d4a);
@@ -1717,7 +1717,7 @@ function private function_3db40935(*params) {
             }
             evidence.var_1ca68c21 = var_4eaf209f;
         }
-        assert(exists(#"hash_afc09dfd34bcde0"));
+        assert(namespace_61e6d095::exists(#"hash_afc09dfd34bcde0"));
         namespace_61e6d095::remove(#"hash_afc09dfd34bcde0");
         blackboard.var_bcd1e3f9 = undefined;
         player clientfield::set_to_player("eboard_review_handle_viewmodel", 0);
@@ -1819,33 +1819,32 @@ function function_f1d97432(var_88e62a80) {
     }
 }
 
-// Namespace namespace_fa335fda/namespace_f784b4da
-// Params 0, eflags: 0x4
-// Checksum 0xde09d9f4, Offset: 0x94b8
-// Size: 0xac
-function private function_fc845aca() {
-    /#
+/#
+
+    // Namespace namespace_fa335fda/namespace_f784b4da
+    // Params 0, eflags: 0x4
+    // Checksum 0xde09d9f4, Offset: 0x94b8
+    // Size: 0xac
+    function private function_fc845aca() {
         player = self;
         assert(isplayer(player));
         if (is_true(level.var_47df5f11)) {
             statemachine = player function_1bb19090();
             println("<unknown string>" + statemachine.current_state.name);
         }
-    #/
-}
+    }
 
-// Namespace namespace_fa335fda/namespace_f784b4da
-// Params 0, eflags: 0x4
-// Checksum 0x59a7b053, Offset: 0x9570
-// Size: 0xac
-function private function_d530ce5a() {
-    /#
+    // Namespace namespace_fa335fda/namespace_f784b4da
+    // Params 0, eflags: 0x4
+    // Checksum 0x59a7b053, Offset: 0x9570
+    // Size: 0xac
+    function private function_d530ce5a() {
         player = self;
         assert(isplayer(player));
         if (is_true(level.var_47df5f11)) {
             statemachine = player function_1bb19090();
             println("<unknown string>" + statemachine.current_state.name);
         }
-    #/
-}
+    }
 
+#/

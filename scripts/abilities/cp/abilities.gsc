@@ -50,12 +50,13 @@ function function_b797206c(*slot, *weapon) {
     return true;
 }
 
-// Namespace abilities/abilities
-// Params 1, eflags: 0x0
-// Checksum 0x7ccc55c1, Offset: 0x218
-// Size: 0xf6
-function function_5bcf55cb(var_28b5f8ed) {
-    /#
+/#
+
+    // Namespace abilities/abilities
+    // Params 1, eflags: 0x0
+    // Checksum 0x7ccc55c1, Offset: 0x218
+    // Size: 0xf6
+    function function_5bcf55cb(var_28b5f8ed) {
         var_659e10d3 = [];
         foreach (ability in var_28b5f8ed) {
             weapon = getweapon(ability);
@@ -64,63 +65,61 @@ function function_5bcf55cb(var_28b5f8ed) {
             }
         }
         return var_659e10d3;
-    #/
-}
+    }
 
-// Namespace abilities/abilities
-// Params 4, eflags: 0x0
-// Checksum 0xca55da3e, Offset: 0x318
-// Size: 0x5c2
-function abilities_devgui_add_gadgets_custom(root, pname, pid, menu_index) {
-    /#
+    // Namespace abilities/abilities
+    // Params 4, eflags: 0x0
+    // Checksum 0xca55da3e, Offset: 0x318
+    // Size: 0x5c2
+    function abilities_devgui_add_gadgets_custom(root, pname, pid, menu_index) {
         add_cmd_with_root = "<unknown string>" + root + pname + "<unknown string>";
         level.var_fefd47f = [];
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
-        add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
+        array::add(level.var_fefd47f, "<unknown string>", 0);
         a_grenades = function_5bcf55cb(level.var_fefd47f);
-        function_174037fe(add_cmd_with_root, pid, a_grenades, "<unknown string>", menu_index);
+        ability_player::function_174037fe(add_cmd_with_root, pid, a_grenades, "<unknown string>", menu_index);
         level.var_29d4fb5b = [];
-        add(level.var_29d4fb5b, "<unknown string>", 0);
-        add(level.var_29d4fb5b, "<unknown string>", 0);
-        add(level.var_29d4fb5b, "<unknown string>", 0);
-        add(level.var_29d4fb5b, "<unknown string>", 0);
-        add(level.var_29d4fb5b, "<unknown string>", 0);
-        add(level.var_29d4fb5b, "<unknown string>", 0);
-        add(level.var_29d4fb5b, "<unknown string>", 0);
-        add(level.var_29d4fb5b, "<unknown string>", 0);
-        add(level.var_29d4fb5b, "<unknown string>", 0);
-        add(level.var_29d4fb5b, "<unknown string>", 0);
-        add(level.var_29d4fb5b, "<unknown string>", 0);
-        add(level.var_29d4fb5b, "<unknown string>", 0);
-        add(level.var_29d4fb5b, "<unknown string>", 0);
-        add(level.var_29d4fb5b, "<unknown string>", 0);
+        array::add(level.var_29d4fb5b, "<unknown string>", 0);
+        array::add(level.var_29d4fb5b, "<unknown string>", 0);
+        array::add(level.var_29d4fb5b, "<unknown string>", 0);
+        array::add(level.var_29d4fb5b, "<unknown string>", 0);
+        array::add(level.var_29d4fb5b, "<unknown string>", 0);
+        array::add(level.var_29d4fb5b, "<unknown string>", 0);
+        array::add(level.var_29d4fb5b, "<unknown string>", 0);
+        array::add(level.var_29d4fb5b, "<unknown string>", 0);
+        array::add(level.var_29d4fb5b, "<unknown string>", 0);
+        array::add(level.var_29d4fb5b, "<unknown string>", 0);
+        array::add(level.var_29d4fb5b, "<unknown string>", 0);
+        array::add(level.var_29d4fb5b, "<unknown string>", 0);
+        array::add(level.var_29d4fb5b, "<unknown string>", 0);
+        array::add(level.var_29d4fb5b, "<unknown string>", 0);
         a_abilities = function_5bcf55cb(level.var_29d4fb5b);
-        function_a40d04ca(add_cmd_with_root, pid, a_abilities, "<unknown string>", menu_index);
+        ability_player::function_a40d04ca(add_cmd_with_root, pid, a_abilities, "<unknown string>", menu_index);
         menu_index++;
-        menu_index = abilities_devgui_add_power(add_cmd_with_root, pid, menu_index);
+        menu_index = ability_player::abilities_devgui_add_power(add_cmd_with_root, pid, menu_index);
         wait(1);
-        menu_index = function_2e0162e9(add_cmd_with_root, pid, menu_index);
-        level.var_86734d48 = &giveloadout;
+        menu_index = ability_player::function_2e0162e9(add_cmd_with_root, pid, menu_index);
+        level.var_86734d48 = &loadout::giveloadout;
         return menu_index;
-    #/
-}
+    }
 
+#/

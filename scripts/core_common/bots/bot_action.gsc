@@ -325,7 +325,7 @@ function private weight_actions(&paramslist) {
         }
     }
     /#
-        if (self should_record("<unknown string>")) {
+        if (self bot::should_record("<unknown string>")) {
             if (!isdefined(var_3a4035f3)) {
                 record3dtext("<unknown string>", self.origin, (1, 0, 1), "<unknown string>", self, 0.5);
             }
@@ -348,7 +348,7 @@ function private weight_actions(&paramslist) {
                 headerstr = "<unknown string>";
                 recordweight = "<unknown string>";
                 if (isdefined(actionparams.weight)) {
-                    color = map_color(actionparams.weight, 100, (1, 0, 0), (1, 0.5, 0), (1, 1, 0), (0, 1, 0));
+                    color = bot::map_color(actionparams.weight, 100, (1, 0, 0), (1, 0.5, 0), (1, 1, 0), (0, 1, 0));
                     recordweight = actionparams.weight;
                     if (actionparams === var_3a4035f3) {
                         headerstr = "<unknown string>";

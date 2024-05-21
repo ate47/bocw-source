@@ -308,7 +308,7 @@ function private function_fccfb0af(loadoutclass, &var_19546df5, var_38e0e278, co
         }
         if (self [[ var_1b426c77 ]](loadoutclass, attachment, attachmentindex)) {
             var_b8a59e38++;
-            var_41a600fd = var_41a600fd | groupname == #"optic";
+            var_41a600fd |= groupname == #"optic";
             arrayremoveindex(groupnames, groupindex, 0);
             continue;
         }
@@ -470,12 +470,13 @@ function private function_ef026df8(attachments, overridedvar = undefined) {
     return groups;
 }
 
-// Namespace namespace_7f22227a/namespace_7f22227a
-// Params 0, eflags: 0x4
-// Checksum 0xdf5410ad, Offset: 0x1d40
-// Size: 0x54a
-function private function_3dd3f3b6() {
-    /#
+/#
+
+    // Namespace namespace_7f22227a/namespace_7f22227a
+    // Params 0, eflags: 0x4
+    // Checksum 0xdf5410ad, Offset: 0x1d40
+    // Size: 0x54a
+    function private function_3dd3f3b6() {
         level endon(#"game_ended");
         var_ec9c0769 = [#"talent":6, #"bonuscard":3, #"killstreak":4];
         while (true) {
@@ -517,23 +518,23 @@ function private function_3dd3f3b6() {
             foreach (team, slotcount in teamcounts) {
                 y = 30;
                 debug2dtext((x, y, 0), function_9e72a96(team), undefined, undefined, undefined, 1);
-                y = y + 22;
-                x = x + 20;
+                y += 22;
+                x += 20;
                 foreach (slot, itemnames in slotcount) {
                     debug2dtext((x, y, 0), function_9e72a96(slot), undefined, undefined, undefined, 1);
-                    y = y + 22;
-                    x = x + 20;
+                    y += 22;
+                    x += 20;
                     foreach (itemname, count in itemnames) {
                         debug2dtext((x, y, 0), function_9e72a96(itemname) + "<unknown string>" + count, undefined, undefined, undefined, 1);
-                        y = y + 22;
+                        y += 22;
                     }
-                    x = x - 20;
+                    x -= 20;
                 }
-                x = x - 20;
-                x = x + 300;
+                x -= 20;
+                x += 300;
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
+#/

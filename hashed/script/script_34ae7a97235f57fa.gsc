@@ -174,7 +174,7 @@ function function_24035033() {
         angle = time * 90;
         self.angles = (0, angle, 0);
         waitframe(1);
-        time = time + float(function_60d95f53()) / 1000;
+        time += float(function_60d95f53()) / 1000;
     }
 }
 

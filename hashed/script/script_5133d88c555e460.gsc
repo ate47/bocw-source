@@ -174,7 +174,7 @@ function function_8ef296ea() {
                     chance = 25;
                     break;
                 }
-                chance = chance - 15;
+                chance -= 15;
             }
         }
         chance = math::clamp(chance, 10, 95);
@@ -229,7 +229,7 @@ function function_12462f60() {
             var_9a615a35++;
         }
         if (var_9a615a35 > 0 && self.zombie_move_speed == "sprint") {
-            var_9a615a35 = var_9a615a35 - 3;
+            var_9a615a35 -= 3;
             if (var_9a615a35 <= 0) {
                 var_9a615a35 = 0;
                 self function_add8c81a(self.var_993e6488);
@@ -784,7 +784,7 @@ function function_f23c95c0(entity) {
     if (gettime() < entity.var_3b0b5ef8) {
         return false;
     }
-    entity.var_3b0b5ef8 = entity.var_3b0b5ef8 + randomint(1000);
+    entity.var_3b0b5ef8 += randomint(1000);
     return randomint(100) < 5;
 }
 
@@ -1143,7 +1143,7 @@ function function_36e94670(destination, timems, var_fbe64ccb) {
                     self notify(#"move_to_pos_downward_cycle");
                     /#
                         if (getdvarint(#"hash_4c32f1957a11eb6b", 0)) {
-                            self.owner thread function_b4ff2191((0, 0, 1), 300);
+                            self.owner thread namespace_ec06fe4a::function_b4ff2191((0, 0, 1), 300);
                         }
                     #/
                 }
@@ -1173,7 +1173,7 @@ function function_36e94670(destination, timems, var_fbe64ccb) {
         if (isai(self)) {
             self forceteleport(self.origin + delta);
         } else {
-            self.origin = self.origin + delta;
+            self.origin += delta;
         }
         waitframe(1);
     }
@@ -1271,7 +1271,7 @@ function function_bf9a2a1d(number = 5) {
             banana1.targetname = "banana1";
             banana1 setmodel("zombietron_banana");
             banana1 thread function_bcfd19b2(self, undefined, baseangle);
-            baseangle = baseangle + increment;
+            baseangle += increment;
         }
         number--;
     }

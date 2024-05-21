@@ -267,7 +267,7 @@ function private function_1f15d9fc(instance) {
     while (isdefined(self)) {
         waitresult = self waittill(#"damage", #"hash_2cc769566d9f395a");
         if (isdefined(waitresult.amount)) {
-            self.health = self.health - waitresult.amount;
+            self.health -= waitresult.amount;
         }
         if (isplayer(waitresult.attacker)) {
             self zm_ai_hulk::function_b89cb3dc(waitresult);

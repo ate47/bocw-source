@@ -23,8 +23,8 @@ function private autoexec __init__system__() {
 function private preinit() {
     clientfield::register("vehicle", "raps_side_deathfx", 1, 1, "int");
     vehicle::add_main_callback("raps", &raps_initialize);
-    slow_triggers = getentarray("raps_slow", "targetname");
-    array::thread_all(slow_triggers, &slow_raps_trigger);
+    5748 = getentarray("raps_slow", "targetname");
+    array::thread_all(5748, &slow_raps_trigger);
 }
 
 // Namespace raps/raps

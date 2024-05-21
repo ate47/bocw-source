@@ -274,7 +274,7 @@ function getotherteamsmask(skip_team) {
         if (team == skip_team) {
             continue;
         }
-        mask = mask | getteammask(team);
+        mask |= getteammask(team);
     }
     return mask;
 }
@@ -414,7 +414,7 @@ function iskillstreaksenabled() {
 function private function_78e3e07b(team, index, objective_strings) {
     setobjectivetext(team, objective_strings.text);
     if (level.splitscreen) {
-        setobjectivescoretext(team, objective_strings.var_27a7a289);
+        setobjectivescoretext(team, objective_strings.score_text);
     } else {
         setobjectivescoretext(team, objective_strings.var_4687634f);
     }
@@ -889,34 +889,31 @@ function function_94a3be2() {
     return false;
 }
 
-// Namespace util/util
-// Params 0, eflags: 0x0
-// Checksum 0x6c343570, Offset: 0x2980
-// Size: 0x4c
-function check_art_mode() {
-    /#
+/#
+
+    // Namespace util/util
+    // Params 0, eflags: 0x0
+    // Checksum 0x6c343570, Offset: 0x2980
+    // Size: 0x4c
+    function check_art_mode() {
         if (getdvarint(#"art_mode", 0) > 0) {
             adddebugcommand("<unknown string>");
         }
-    #/
-}
+    }
 
-// Namespace util/util
-// Params 0, eflags: 0x0
-// Checksum 0xd3e41392, Offset: 0x29d8
-// Size: 0x1c
-function apply_dev_overrides() {
-    /#
+    // Namespace util/util
+    // Params 0, eflags: 0x0
+    // Checksum 0xd3e41392, Offset: 0x29d8
+    // Size: 0x1c
+    function apply_dev_overrides() {
         override_gts_timelimit();
-    #/
-}
+    }
 
-// Namespace util/util
-// Params 0, eflags: 0x0
-// Checksum 0x6caa3509, Offset: 0x2a00
-// Size: 0x7c
-function override_gts_timelimit() {
-    /#
+    // Namespace util/util
+    // Params 0, eflags: 0x0
+    // Checksum 0x6caa3509, Offset: 0x2a00
+    // Size: 0x7c
+    function override_gts_timelimit() {
         timelimitoverride = getdvarint(#"timelimitoverride", -1);
         if (timelimitoverride >= 0) {
             if (level.timelimit != timelimitoverride) {
@@ -924,6 +921,6 @@ function override_gts_timelimit() {
                 setgametypesetting("<unknown string>", timelimitoverride);
             }
         }
-    #/
-}
+    }
 
+#/

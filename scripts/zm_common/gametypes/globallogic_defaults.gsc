@@ -56,7 +56,7 @@ function default_onforfeit(team) {
         if (isplayer(winner)) {
             print("<unknown string>" + winner getxuid() + "<unknown string>" + winner.name + "<unknown string>");
         } else {
-            logteamwinstring("<unknown string>", winner);
+            globallogic_utils::logteamwinstring("<unknown string>", winner);
         }
     #/
     thread globallogic::endgame(winner, endreason);
@@ -208,7 +208,7 @@ function default_onspawnintermission() {
         return;
     }
     /#
-        error("<unknown string>" + spawnpointname + "<unknown string>");
+        util::error("<unknown string>" + spawnpointname + "<unknown string>");
     #/
 }
 

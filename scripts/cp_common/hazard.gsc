@@ -580,7 +580,7 @@ function function_f8b76be2(var_4380761c) {
             self allowjump(0);
         }
         if (self function_838a3ba4("gas") > 0.75) {
-            var_c98d6d89 = var_c98d6d89 - 0.02;
+            var_c98d6d89 -= 0.02;
             if (var_c98d6d89 < 0.25) {
                 var_c98d6d89 = 0.25;
             }
@@ -611,7 +611,7 @@ function function_fadc8777() {
         self allowjump(1);
     }
     while (var_c98d6d89 < 1) {
-        var_c98d6d89 = var_c98d6d89 + 0.02;
+        var_c98d6d89 += 0.02;
         var_c98d6d89 = math::clamp(var_c98d6d89, 0.25, 1);
         self setmovespeedscale(var_c98d6d89);
         waitframe(1);

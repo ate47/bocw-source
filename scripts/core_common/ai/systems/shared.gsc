@@ -483,12 +483,14 @@ function donotetracksfortimeendnotify(time) {
     self notify(#"stop_notetracks");
 }
 
-// Namespace shared/event_39e29b54
-// Params 1, eflags: 0x20
-// Checksum 0x384ba8a4, Offset: 0x1b50
-// Size: 0x10
-function event_handler[event_39e29b54] function_d0b05b9e(*eventstruct) {
-    /#
-    #/
-}
+/#
 
+    // Namespace shared/event_39e29b54
+    // Params 1, eflags: 0x20
+    // Checksum 0x384ba8a4, Offset: 0x1b50
+    // Size: 0x10
+    function event_handler[event_39e29b54] function_d0b05b9e(*eventstruct) {
+        
+    }
+
+#/

@@ -107,27 +107,27 @@ function function_edfc9233(var_484cc88b = 0) {
     delay = 0;
     if (var_484cc88b & 1) {
         self function_15a789ab(1, delay, 0);
-        delay = delay + 0.5;
+        delay += 0.5;
     }
     if (var_484cc88b & 2) {
         self function_15a789ab(2, delay, 0);
-        delay = delay + 0.5;
+        delay += 0.5;
     }
     if (var_484cc88b & 4) {
         self function_15a789ab(4, delay, 0);
-        delay = delay + 0.5;
+        delay += 0.5;
     }
     if (var_484cc88b & 8) {
         self function_15a789ab(8, delay, 0);
-        delay = delay + 0.5;
+        delay += 0.5;
     }
     if (var_484cc88b & 16) {
         self function_15a789ab(16, delay, 0);
-        delay = delay + 0.5;
+        delay += 0.5;
     }
     if (var_484cc88b & 32) {
         self function_15a789ab(32, delay, 0);
-        delay = delay + 0.5;
+        delay += 0.5;
     }
 }
 
@@ -224,7 +224,7 @@ function function_86515c3b(player, var_191ca105, banner = 1) {
         player namespace_83eb6304::function_3ecfde67(var_191ca105.fx);
         player namespace_e32bb68::function_3a59ec34(var_191ca105.sfx);
     }
-    player.doa.var_484cc88b = player.doa.var_484cc88b | var_191ca105.var_c8386627;
+    player.doa.var_484cc88b |= var_191ca105.var_c8386627;
     var_9a24b67c = level.var_73ffa220[player.name];
     assert(isdefined(var_9a24b67c), "<unknown string>");
     if (isdefined(var_9a24b67c)) {
@@ -516,7 +516,7 @@ function function_11463552() {
         for (i = 0; i < var_7f432780.size; i++) {
             var_5ab7bbf5 = var_7f432780[i].model.data.var_c8386627;
             assert((mask & var_5ab7bbf5) != var_5ab7bbf5, "<unknown string>");
-            mask = mask | var_5ab7bbf5;
+            mask |= var_5ab7bbf5;
         }
     #/
     if (isdefined(level.doa.var_a5d58dd1)) {

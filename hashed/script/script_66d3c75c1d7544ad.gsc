@@ -40,15 +40,16 @@ function on_vehicle_spawned() {
     }
 }
 
-// Namespace namespace_2cab06c8/namespace_2cab06c8
-// Params 0, eflags: 0x0
-// Checksum 0xf09eacba, Offset: 0x1c0
-// Size: 0x74
-function init_devgui() {
-    /#
-        mapname = get_map_name();
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-    #/
-}
+/#
 
+    // Namespace namespace_2cab06c8/namespace_2cab06c8
+    // Params 0, eflags: 0x0
+    // Checksum 0xf09eacba, Offset: 0x1c0
+    // Size: 0x74
+    function init_devgui() {
+        mapname = util::get_map_name();
+        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
+        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
+    }
+
+#/

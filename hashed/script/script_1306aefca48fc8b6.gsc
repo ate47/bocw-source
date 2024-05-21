@@ -363,7 +363,7 @@ function function_6a09928b(location, type) {
     model = undefined;
     if (isdefined(modelname)) {
         /#
-            debugmsg("<unknown string>" + function_9e72a96(type) + "<unknown string>" + modelname + "<unknown string>" + location.origin);
+            namespace_1e25ad94::debugmsg("<unknown string>" + function_9e72a96(type) + "<unknown string>" + modelname + "<unknown string>" + location.origin);
         #/
     }
     return model;

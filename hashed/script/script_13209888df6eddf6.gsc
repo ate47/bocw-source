@@ -105,7 +105,7 @@ function function_29c5050c() {
             }
             var_29a0fa27++;
             wait(delay);
-            delay = delay * 2;
+            delay *= 2;
         }
         level flag::wait_till_clear("flag_vo_intro_walk_and_talk_nags");
     }
@@ -585,12 +585,13 @@ function add_dialogue_line(name, msg, var_733709e8, duration = 8) {
     #/
 }
 
-// Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x4
-// Checksum 0x6f0ec030, Offset: 0x3fa0
-// Size: 0xcc
-function private destroy_dialogue_hud() {
-    /#
+/#
+
+    // Namespace namespace_a64c0f5b/namespace_a4b0d260
+    // Params 0, eflags: 0x4
+    // Checksum 0x6f0ec030, Offset: 0x3fa0
+    // Size: 0xcc
+    function private destroy_dialogue_hud() {
         scale = 1;
         if (isdefined(level.dialoguelinescale)) {
             scale = level.dialoguelinescale;
@@ -598,19 +599,17 @@ function private destroy_dialogue_hud() {
         self endon(#"death");
         self fadeovertime(0.2);
         self moveovertime(0.2);
-        self.y = self.y - 12 * scale;
+        self.y -= 12 * scale;
         self.alpha = 0;
         wait(0.2);
         self destroy();
-    #/
-}
+    }
 
-// Namespace namespace_a64c0f5b/namespace_a4b0d260
-// Params 0, eflags: 0x4
-// Checksum 0xd553c618, Offset: 0x4078
-// Size: 0xfe
-function private update_dialogue_huds() {
-    /#
+    // Namespace namespace_a64c0f5b/namespace_a4b0d260
+    // Params 0, eflags: 0x4
+    // Checksum 0xd553c618, Offset: 0x4078
+    // Size: 0xfe
+    function private update_dialogue_huds() {
         scale = 1;
         if (isdefined(level.dialoguelinescale)) {
             scale = level.dialoguelinescale;
@@ -620,6 +619,6 @@ function private update_dialogue_huds() {
             hud moveovertime(0.2);
             hud.y = 260 + index * 12 * scale;
         }
-    #/
-}
+    }
 
+#/

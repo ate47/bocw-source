@@ -196,11 +196,11 @@ function function_e8ad1d81(position, normal, velocity, team, customsettings, att
             x = originalposition[0];
             y = originalposition[1];
             lowestz = var_69d15ad0[#"position"][2];
-            for (z = originalposition[2]; z > lowestz; z = z - randomintrange(20, 30)) {
+            for (z = originalposition[2]; z > lowestz; z -= randomintrange(20, 30)) {
                 newpos = (x, y, z);
                 water_depth = get_water_depth(newpos);
                 if (function_a66ba8cc(water_depth) || is_under_water(newpos)) {
-                    newpos = newpos - (0, 0, water_depth);
+                    newpos -= (0, 0, water_depth);
                     level thread function_42b9fdbe(molotovsteamweapon, newpos, (0, 0, 1), int(5), team);
                     break;
                 }
@@ -429,12 +429,13 @@ function function_42b9fdbe(weapon, loc, normal, duration, *team) {
     spawntimedfx(loc, normal, fxnormal, team, #"axis");
 }
 
-// Namespace namespace_68a80213/namespace_68a80213
-// Params 5, eflags: 0x0
-// Checksum 0x869e01d, Offset: 0x21b0
-// Size: 0xb4
-function incendiary_debug_line(from, to, color, depthtest, time) {
-    /#
+/#
+
+    // Namespace namespace_68a80213/namespace_68a80213
+    // Params 5, eflags: 0x0
+    // Checksum 0x869e01d, Offset: 0x21b0
+    // Size: 0xb4
+    function incendiary_debug_line(from, to, color, depthtest, time) {
         debug_rcbomb = getdvarint(#"scr_molotov_debug", 0);
         if (debug_rcbomb == 1) {
             if (!isdefined(time)) {
@@ -445,8 +446,9 @@ function incendiary_debug_line(from, to, color, depthtest, time) {
             }
             line(from, to, color, 1, depthtest, time);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_68a80213/namespace_68a80213
 // Params 11, eflags: 0x2 linked
@@ -463,7 +465,7 @@ function damageeffectarea(position, *normal, weapon, radius_multiplier, var_e764
         var_289a74bc = spawn("trigger_radius", var_21f4217c, 0, 12, var_cbaaea69);
         /#
             if (getdvarint(#"scr_draw_triggers", 0)) {
-                level thread drawcylinder(var_21f4217c, 12, var_cbaaea69, undefined, "<unknown string>", (1, 0, 0), 0.9);
+                level thread util::drawcylinder(var_21f4217c, 12, var_cbaaea69, undefined, "<unknown string>", (1, 0, 0), 0.9);
             }
         #/
     }
@@ -476,7 +478,7 @@ function damageeffectarea(position, *normal, weapon, radius_multiplier, var_e764
     }
     /#
         if (getdvarint(#"scr_draw_triggers", 0)) {
-            level thread drawcylinder(trigger_radius_position, radius, trigger_radius_height, undefined, "<unknown string>");
+            level thread util::drawcylinder(trigger_radius_position, radius, trigger_radius_height, undefined, "<unknown string>");
         }
     #/
     self.var_ebf0b1c9 = [];
@@ -992,7 +994,7 @@ function function_1493c734(origin, radius, color, alpha, time) {
             if (debug_fire > 1) {
                 radius = int(radius / debug_fire);
             }
-            debug_sphere(origin, radius, color, alpha, time);
+            util::debug_sphere(origin, radius, color, alpha, time);
         }
     #/
 }

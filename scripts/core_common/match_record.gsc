@@ -3,18 +3,20 @@
 
 #namespace match_record;
 
-// Namespace match_record/match_record
-// Params 2, eflags: 0x0
-// Checksum 0x23638ece, Offset: 0x88
-// Size: 0x38
-function function_d92cb558(result, *vararg) {
-    /#
+/#
+
+    // Namespace match_record/match_record
+    // Params 2, eflags: 0x0
+    // Checksum 0x23638ece, Offset: 0x88
+    // Size: 0x38
+    function function_d92cb558(result, *vararg) {
         pathstr = "<unknown string>";
         if (isdefined(vararg)) {
         }
         return pathstr;
-    #/
-}
+    }
+
+#/
 
 // Namespace match_record/match_record
 // Params 1, eflags: 0x42 linked

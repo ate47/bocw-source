@@ -16,22 +16,21 @@
 
 #namespace debug;
 
-// Namespace debug/debug
-// Params 0, eflags: 0x5
-// Checksum 0xf638f740, Offset: 0xf0
-// Size: 0x3c
-function private autoexec __init__system__() {
-    /#
-        register(#"hash_157baa9bc984206a", &preinit, undefined, undefined, undefined);
-    #/
-}
+/#
 
-// Namespace debug/debug
-// Params 0, eflags: 0x4
-// Checksum 0xdfd613dc, Offset: 0x138
-// Size: 0xa4
-function private preinit() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x5
+    // Checksum 0xf638f740, Offset: 0xf0
+    // Size: 0x3c
+    function private autoexec __init__system__() {
+        system::register(#"hash_157baa9bc984206a", &preinit, undefined, undefined, undefined);
+    }
+
+    // Namespace debug/debug
+    // Params 0, eflags: 0x4
+    // Checksum 0xdfd613dc, Offset: 0x138
+    // Size: 0xa4
+    function private preinit() {
         level.animsound_hudlimit = 14;
         level.var_99e12d63 = [];
         level.var_99e12d63[#"axis"] = (1, 0, 0);
@@ -40,15 +39,13 @@ function private preinit() {
         level.var_99e12d63[#"neutral"] = (1, 1, 1);
         thread debugdvars();
         thread engagement_distance_debug_toggle();
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0x6c65ecfb, Offset: 0x1e8
-// Size: 0xdc
-function drawenttag(num) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0x6c65ecfb, Offset: 0x1e8
+    // Size: 0xdc
+    function drawenttag(num) {
         ai = getaiarray();
         for (i = 0; i < ai.size; i++) {
             if (ai[i] getentnum() != num) {
@@ -59,66 +56,56 @@ function drawenttag(num) {
         /#
             setdvar(#"hash_4f53ce2aad8845e2", "<unknown string>");
         #/
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 2, eflags: 0x0
-// Checksum 0xde33971, Offset: 0x2d0
-// Size: 0x6c
-function drawtag(tag, opcolor) {
-    /#
+    // Namespace debug/debug
+    // Params 2, eflags: 0x0
+    // Checksum 0xde33971, Offset: 0x2d0
+    // Size: 0x6c
+    function drawtag(tag, opcolor) {
         org = self gettagorigin(tag);
         ang = self gettagangles(tag);
         drawarrow(org, ang, opcolor);
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0x5f335d46, Offset: 0x348
-// Size: 0x3e
-function function_73d54326(opcolor) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0x5f335d46, Offset: 0x348
+    // Size: 0x3e
+    function function_73d54326(opcolor) {
         for (;;) {
             drawarrow(self.origin, self.angles, opcolor);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 2, eflags: 0x0
-// Checksum 0xa9408f47, Offset: 0x390
-// Size: 0x3e
-function function_cc26947c(org, ang) {
-    /#
+    // Namespace debug/debug
+    // Params 2, eflags: 0x0
+    // Checksum 0xa9408f47, Offset: 0x390
+    // Size: 0x3e
+    function function_cc26947c(org, ang) {
         for (;;) {
             drawarrow(org, ang);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x427b3423, Offset: 0x3d8
-// Size: 0x36
-function function_9b38e79c() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x427b3423, Offset: 0x3d8
+    // Size: 0x36
+    function function_9b38e79c() {
         for (;;) {
             drawarrow(self.origin, self.angles);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 6, eflags: 0x0
-// Checksum 0xa1b507b9, Offset: 0x418
-// Size: 0x2dc
-function drawarrow(org, ang, opcolor, var_40dcdbad, var_6e4eeae5, var_5f9d71c2) {
-    /#
+    // Namespace debug/debug
+    // Params 6, eflags: 0x0
+    // Checksum 0xa1b507b9, Offset: 0x418
+    // Size: 0x2dc
+    function drawarrow(org, ang, opcolor, var_40dcdbad, var_6e4eeae5, var_5f9d71c2) {
         if (!isdefined(var_40dcdbad)) {
             var_40dcdbad = 1;
         }
@@ -154,42 +141,36 @@ function drawarrow(org, ang, opcolor, var_40dcdbad, var_6e4eeae5, var_5f9d71c2) 
             line(org, org + right, blue, 0.9);
             line(org, org + up, green, 0.9);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0xc85885dd, Offset: 0x700
-// Size: 0x56
-function function_738cf60a() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0xc85885dd, Offset: 0x700
+    // Size: 0x56
+    function function_738cf60a() {
         for (;;) {
             drawarrow(level.player.origin, level.player getplayerangles(), (1, 1, 1));
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 2, eflags: 0x0
-// Checksum 0xe76f7353, Offset: 0x760
-// Size: 0x4e
-function drawtagforever(tag, opcolor) {
-    /#
+    // Namespace debug/debug
+    // Params 2, eflags: 0x0
+    // Checksum 0xe76f7353, Offset: 0x760
+    // Size: 0x4e
+    function drawtagforever(tag, opcolor) {
         self endon(#"death");
         for (;;) {
             drawtag(tag, opcolor);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0x12622944, Offset: 0x7b8
-// Size: 0x3e
-function dragtaguntildeath(tag) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0x12622944, Offset: 0x7b8
+    // Size: 0x3e
+    function dragtaguntildeath(tag) {
         for (;;) {
             if (!isdefined(self.origin)) {
                 break;
@@ -197,15 +178,13 @@ function dragtaguntildeath(tag) {
             drawtag(tag);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 2, eflags: 0x0
-// Checksum 0xec0281fa, Offset: 0x800
-// Size: 0xec
-function viewtag(type, tag) {
-    /#
+    // Namespace debug/debug
+    // Params 2, eflags: 0x0
+    // Checksum 0xec0281fa, Offset: 0x800
+    // Size: 0xec
+    function viewtag(type, tag) {
         if (type == "<unknown string>") {
             ai = getaiarray();
             for (i = 0; i < ai.size; i++) {
@@ -217,15 +196,13 @@ function viewtag(type, tag) {
         for (i = 0; i < vehicle.size; i++) {
             vehicle[i] drawtag(tag);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0x5f9aef20, Offset: 0x8f8
-// Size: 0x90
-function removeactivespawner(spawner) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0x5f9aef20, Offset: 0x8f8
+    // Size: 0x90
+    function removeactivespawner(spawner) {
         var_391a8d23 = [];
         for (p = 0; p < level.activenodes.size; p++) {
             if (level.activenodes[p] == spawner) {
@@ -234,28 +211,24 @@ function removeactivespawner(spawner) {
             var_391a8d23[var_391a8d23.size] = level.activenodes[p];
         }
         level.activenodes = var_391a8d23;
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0x9a0652ea, Offset: 0x990
-// Size: 0x5e
-function createline(org) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0x9a0652ea, Offset: 0x990
+    // Size: 0x5e
+    function createline(org) {
         for (;;) {
             line(org + (0, 0, 35), org, (0.2, 0.5, 0.8), 0.5);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0xf480d9a5, Offset: 0x9f8
-// Size: 0x9e
-function createlineconstantly(ent) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0xf480d9a5, Offset: 0x9f8
+    // Size: 0x9e
+    function createlineconstantly(ent) {
         org = undefined;
         while (isalive(ent)) {
             org = ent.origin;
@@ -265,15 +238,13 @@ function createlineconstantly(ent) {
             line(org + (0, 0, 35), org, (1, 0.2, 0.1), 0.5);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x736d7160, Offset: 0xaa0
-// Size: 0x126
-function debugmisstime() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x736d7160, Offset: 0xaa0
+    // Size: 0x126
+    function debugmisstime() {
         self notify(#"hash_5ec34db59fed84d9");
         self endon(#"hash_5ec34db59fed84d9", #"death");
         for (;;) {
@@ -284,39 +255,33 @@ function debugmisstime() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x9b901963, Offset: 0xbd0
-// Size: 0x1e
-function debugmisstimeoff() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x9b901963, Offset: 0xbd0
+    // Size: 0x1e
+    function debugmisstimeoff() {
         self notify(#"hash_5ec34db59fed84d9");
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 2, eflags: 0x0
-// Checksum 0x6f67913b, Offset: 0xbf8
-// Size: 0x5c
-function function_24a0ab5e(dvar, setting) {
-    /#
+    // Namespace debug/debug
+    // Params 2, eflags: 0x0
+    // Checksum 0x6f67913b, Offset: 0xbf8
+    // Size: 0x5c
+    function function_24a0ab5e(dvar, setting) {
         /#
             if (getdvarstring(dvar) == "<unknown string>") {
                 setdvar(dvar, setting);
             }
         #/
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0x99f65b26, Offset: 0xc60
-// Size: 0xd6
-function debugjump(num) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0x99f65b26, Offset: 0xc60
+    // Size: 0xd6
+    function debugjump(num) {
         ai = getaiarray();
         for (i = 0; i < ai.size; i++) {
             if (ai[i] getentnum() != num) {
@@ -326,15 +291,13 @@ function debugjump(num) {
             line(players[0].origin, ai[i].origin, (0.2, 0.3, 1));
             return;
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x1e341fe5, Offset: 0xd40
-// Size: 0x153e
-function debugdvars() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x1e341fe5, Offset: 0xd40
+    // Size: 0x153e
+    function debugdvars() {
         if (getdvarstring(#"hash_5f6154a37f067e0e") == "<unknown string>") {
             setdvar(#"hash_5f6154a37f067e0e", "<unknown string>");
         }
@@ -485,10 +448,10 @@ function debugdvars() {
             }
             if (getdvarstring(#"hash_69129788c0aed850") == "<unknown string>") {
                 setdvar(#"hash_69129788c0aed850", "<unknown string>");
-                thread_all(getaiarray(), &debugmisstime);
+                array::thread_all(getaiarray(), &debugmisstime);
             } else if (getdvarstring(#"hash_69129788c0aed850") == "<unknown string>") {
                 setdvar(#"hash_69129788c0aed850", "<unknown string>");
-                thread_all(getaiarray(), &debugmisstimeoff);
+                array::thread_all(getaiarray(), &debugmisstimeoff);
             }
             if (getdvarstring(#"hash_14cb1b9851034a23") == "<unknown string>") {
                 thread deathspawnerpreview();
@@ -518,7 +481,7 @@ function debugdvars() {
                 var_375b9d88 = 1;
             }
             if (var_375b9d88 && getdvarstring(#"hash_3e63b96becc87615") == "<unknown string>") {
-                level.animation.defaultexception = &void;
+                level.animation.defaultexception = &util::void;
                 level.animation notify(#"hash_1c96242baab724dd");
                 var_375b9d88 = 0;
             }
@@ -532,15 +495,13 @@ function debugdvars() {
             function_d851fc3c();
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x37b78c31, Offset: 0x2288
-// Size: 0x190
-function function_d851fc3c() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x37b78c31, Offset: 0x2288
+    // Size: 0x190
+    function function_d851fc3c() {
         toggleon = getdvarint(#"hash_1a7527951f30d85d", 0);
         if (!toggleon) {
             return;
@@ -560,15 +521,13 @@ function function_d851fc3c() {
             }
             ai lookatentity();
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0xa304be47, Offset: 0x2420
-// Size: 0x168
-function showdebugtrace() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0xa304be47, Offset: 0x2420
+    // Size: 0x168
+    function showdebugtrace() {
         var_7933c5bf = undefined;
         var_e4a81a27 = undefined;
         var_7933c5bf = (15.1859, -12.2822, 4.071);
@@ -588,15 +547,13 @@ function showdebugtrace() {
             trace = bullettrace(start, end, 0, undefined);
             line(start, trace[#"position"], (0.9, 0.5, 0.8), 0.5);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x50a675a1, Offset: 0x2590
-// Size: 0x1ae
-function hatmodel() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x50a675a1, Offset: 0x2590
+    // Size: 0x1ae
+    function hatmodel() {
         for (;;) {
             if (getdvarstring(#"hash_612c3c60b889819f") == "<unknown string>") {
                 return;
@@ -629,19 +586,17 @@ function hatmodel() {
             }
             wait(15);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x10aaf7e6, Offset: 0x2748
-// Size: 0x2d4
-function debug_nuke() {
-    /#
-        player = gethostplayer();
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x10aaf7e6, Offset: 0x2748
+    // Size: 0x2d4
+    function debug_nuke() {
+        player = util::gethostplayer();
         dvar = getdvarstring(#"debug_nuke");
         if (dvar == "<unknown string>") {
-            ai = getaiteamarray(get_enemy_team(player.team), #"team3");
+            ai = getaiteamarray(util::get_enemy_team(player.team), #"team3");
             for (i = 0; i < ai.size; i++) {
                 ignore = 0;
                 classname = ai[i].classname;
@@ -653,45 +608,40 @@ function debug_nuke() {
                 }
             }
         } else if (dvar == "<unknown string>") {
-            ai = getaiteamarray(get_enemy_team(player.team));
+            ai = getaiteamarray(util::get_enemy_team(player.team));
             for (i = 0; i < ai.size; i++) {
                 ai[i] dodamage(ai[i].health, (0, 0, 0), player);
             }
         } else if (dvar == "<unknown string>") {
-            ai = getaispeciesarray(get_enemy_team(player.team), "<unknown string>");
+            ai = getaispeciesarray(util::get_enemy_team(player.team), "<unknown string>");
             for (i = 0; i < ai.size; i++) {
                 ai[i] dodamage(ai[i].health, (0, 0, 0), player);
             }
         }
         setdvar(#"debug_nuke", "<unknown string>");
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x820ccf8f, Offset: 0x2a28
-// Size: 0x8
-function function_36733cf6() {
-    /#
-    #/
-}
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x820ccf8f, Offset: 0x2a28
+    // Size: 0x8
+    function function_36733cf6() {
+        
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x91011a70, Offset: 0x2a38
-// Size: 0x2c
-function freeplayer() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x91011a70, Offset: 0x2a38
+    // Size: 0x2c
+    function freeplayer() {
         setdvar(#"hash_5aa2b9b0db0dfc6c", 0);
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x7e2171a2, Offset: 0x2a70
-// Size: 0x13c
-function deathspawnerpreview() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x7e2171a2, Offset: 0x2a70
+    // Size: 0x13c
+    function deathspawnerpreview() {
         waittillframeend();
         for (i = 0; i < 50; i++) {
             if (!isdefined(level.deathspawnerents[i])) {
@@ -707,15 +657,13 @@ function deathspawnerpreview() {
                 print3d(ent.origin, i + "<unknown string>" + "<unknown string>", (0, 0.8, 0.6), 5);
             }
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x7de02c71, Offset: 0x2bb8
-// Size: 0x8a
-function getchains() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x7de02c71, Offset: 0x2bb8
+    // Size: 0x8a
+    function getchains() {
         var_a3d6bdf3 = [];
         var_a3d6bdf3 = getentarray("<unknown string>", "<unknown string>");
         array = [];
@@ -723,15 +671,13 @@ function getchains() {
             array[i] = var_a3d6bdf3[i] getchain();
         }
         return array;
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0xa03e8bd2, Offset: 0x2c50
-// Size: 0xf6
-function getchain() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0xa03e8bd2, Offset: 0x2c50
+    // Size: 0xf6
+    function getchain() {
         array = [];
         ent = self;
         while (isdefined(ent)) {
@@ -750,25 +696,21 @@ function getchain() {
             var_63f64a73[i] = array[i].origin;
         }
         return var_63f64a73;
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 2, eflags: 0x0
-// Checksum 0x642fd014, Offset: 0x2d50
-// Size: 0x44
-function vecscale(vec, scalar) {
-    /#
+    // Namespace debug/debug
+    // Params 2, eflags: 0x0
+    // Checksum 0x642fd014, Offset: 0x2d50
+    // Size: 0x44
+    function vecscale(vec, scalar) {
         return (vec[0] * scalar, vec[1] * scalar, vec[2] * scalar);
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0x92b83d4a, Offset: 0x2da0
-// Size: 0x10c
-function function_e05e43c3(origin) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0x92b83d4a, Offset: 0x2da0
+    // Size: 0x10c
+    function function_e05e43c3(origin) {
         normalvec = vectornormalize(origin - self getshootatpos());
         var_b9593434 = vectornormalize(origin - (0, 0, 24) - self getshootatpos());
         var_c2a09695 = vectordot(normalvec, var_b9593434);
@@ -778,38 +720,32 @@ function function_e05e43c3(origin) {
             return 1;
         }
         return 0;
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x32ae73bf, Offset: 0x2eb8
-// Size: 0x8c
-function function_fdfcc52() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x32ae73bf, Offset: 0x2eb8
+    // Size: 0x8c
+    function function_fdfcc52() {
         close = getdvarint(#"hash_6dc1aa818420a8b5", 0);
         far = getdvarint(#"hash_29dc7f9d45c3fc64", 1500);
         setexpfog(close, far, 1, 1, 1, 0);
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x7ad4daec, Offset: 0x2f50
-// Size: 0x24
-function debugthreat() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x7ad4daec, Offset: 0x2f50
+    // Size: 0x24
+    function debugthreat() {
         level.last_threat_debug = gettime();
         thread debugthreatcalc();
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0xbf8380cd, Offset: 0x2f80
-// Size: 0x15c
-function debugthreatcalc() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0xbf8380cd, Offset: 0x2f80
+    // Size: 0x15c
+    function debugthreatcalc() {
         ai = getaiarray();
         entnum = getdvarstring(#"hash_3e6f543e092fe601");
         entity = undefined;
@@ -829,31 +765,29 @@ function debugthreatcalc() {
             return;
         }
         var_d77f9c98 = entity getthreatbiasgroup();
-        thread_all(ai, &displaythreat, entity, var_d77f9c98);
+        array::thread_all(ai, &displaythreat, entity, var_d77f9c98);
         players[0] thread displaythreat(entity, var_d77f9c98);
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 2, eflags: 0x0
-// Checksum 0xd7d1c4b1, Offset: 0x30e8
-// Size: 0x37a
-function displaythreat(entity, var_d77f9c98) {
-    /#
+    // Namespace debug/debug
+    // Params 2, eflags: 0x0
+    // Checksum 0xd7d1c4b1, Offset: 0x30e8
+    // Size: 0x37a
+    function displaythreat(entity, var_d77f9c98) {
         self endon(#"death");
         if (self.team == entity.team) {
             return;
         }
         var_fa7d5fc3 = 0;
-        var_fa7d5fc3 = var_fa7d5fc3 + self.threatbias;
+        var_fa7d5fc3 += self.threatbias;
         threat = 0;
-        threat = threat + entity.threatbias;
+        threat += entity.threatbias;
         mygroup = undefined;
         if (isdefined(var_d77f9c98)) {
             mygroup = self getthreatbiasgroup();
             if (isdefined(mygroup)) {
-                threat = threat + getthreatbias(var_d77f9c98, mygroup);
-                var_fa7d5fc3 = var_fa7d5fc3 + getthreatbias(mygroup, var_d77f9c98);
+                threat += getthreatbias(var_d77f9c98, mygroup);
+                var_fa7d5fc3 += getthreatbias(mygroup, var_d77f9c98);
             }
         }
         if (entity.ignoreme || threat < -900000) {
@@ -882,15 +816,13 @@ function displaythreat(entity, var_d77f9c98) {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x7a253be2, Offset: 0x3470
-// Size: 0xc4
-function init_animsounds() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x7a253be2, Offset: 0x3470
+    // Size: 0xc4
+    function init_animsounds() {
         level.animsounds = [];
         level.animsound_aliases = [];
         waittillframeend();
@@ -903,15 +835,13 @@ function init_animsounds() {
         for (i = 0; i < animnames.size; i++) {
             init_animsounds_for_animname(animnames[i]);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0xa31202ce, Offset: 0x3540
-// Size: 0x156
-function init_notetracks_for_animname(animname) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0xa31202ce, Offset: 0x3540
+    // Size: 0x156
+    function init_notetracks_for_animname(animname) {
         foreach (v in level.scr_notetrack[animname]) {
             soundalias = v[#"sound"];
             if (!isdefined(soundalias)) {
@@ -924,15 +854,13 @@ function init_notetracks_for_animname(animname) {
                 level.animsound_aliases[animname][anime][notetrack][#"hash_3bcdf8e8541b5d4a"] = 1;
             }
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0x97b84a59, Offset: 0x36a0
-// Size: 0xfe
-function init_animsounds_for_animname(animname) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0x97b84a59, Offset: 0x36a0
+    // Size: 0xfe
+    function init_animsounds_for_animname(animname) {
         animes = getarraykeys(level.scr_animsound[animname]);
         for (i = 0; i < animes.size; i++) {
             anime = animes[i];
@@ -940,15 +868,13 @@ function init_animsounds_for_animname(animname) {
             level.animsound_aliases[animname][anime]["<unknown string>" + anime][#"soundalias"] = soundalias;
             level.animsound_aliases[animname][anime]["<unknown string>" + anime][#"hash_3bcdf8e8541b5d4a"] = 1;
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 3, eflags: 0x0
-// Checksum 0x3256372, Offset: 0x37a8
-// Size: 0xba
-function function_90b2a0b0(x, y, msg) {
-    /#
+    // Namespace debug/debug
+    // Params 3, eflags: 0x0
+    // Checksum 0x3256372, Offset: 0x37a8
+    // Size: 0xba
+    function function_90b2a0b0(x, y, msg) {
         var_5e39fc46 = newdebughudelem();
         var_5e39fc46.alignx = "<unknown string>";
         var_5e39fc46.aligny = "<unknown string>";
@@ -959,15 +885,13 @@ function function_90b2a0b0(x, y, msg) {
         var_5e39fc46.label = msg;
         level.var_e8a7658[level.var_e8a7658.size] = var_5e39fc46;
         return var_5e39fc46;
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0xd3e20562, Offset: 0x3870
-// Size: 0x8b4
-function function_b03ecdf3() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0xd3e20562, Offset: 0x3870
+    // Size: 0x8b4
+    function function_b03ecdf3() {
         enabled = getdvarstring(#"hash_7ac06724b86d8e1f") == "<unknown string>";
         if (!isdefined(level.var_100db28b)) {
             if (!enabled) {
@@ -1050,7 +974,7 @@ function function_b03ecdf3() {
         }
         level.var_b19c1dfd = [];
         arrayremovevalue(level.animsounds, undefined);
-        thread_all(level.animsounds, &function_e5ad4202);
+        array::thread_all(level.animsounds, &function_e5ad4202);
         players = getplayers();
         if (level.var_969ba98a) {
             for (i = 0; i < level.var_b19c1dfd.size; i++) {
@@ -1087,15 +1011,13 @@ function function_b03ecdf3() {
         if (var_86c85a76) {
             function_21619947();
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x2c944a76, Offset: 0x4130
-// Size: 0x62c
-function function_21619947() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x2c944a76, Offset: 0x4130
+    // Size: 0x62c
+    function function_21619947() {
         guy = level.animsound_tagged;
         animsounds = guy.animsounds;
         animname = "<unknown string>";
@@ -1195,15 +1117,13 @@ function function_21619947() {
             level.animsound_aliases[var_d357ff0e.animname][var_d357ff0e.anime][var_d357ff0e.notetrack] = undefined;
             function_119a2b9f();
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0x1ecec534, Offset: 0x4768
-// Size: 0xb4
-function get_alias_from_stored(var_d357ff0e) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0x1ecec534, Offset: 0x4768
+    // Size: 0xb4
+    function get_alias_from_stored(var_d357ff0e) {
         if (!isdefined(level.animsound_aliases[var_d357ff0e.animname])) {
             return;
         }
@@ -1214,39 +1134,33 @@ function get_alias_from_stored(var_d357ff0e) {
             return;
         }
         return level.animsound_aliases[var_d357ff0e.animname][var_d357ff0e.anime][var_d357ff0e.notetrack][#"soundalias"];
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 3, eflags: 0x0
-// Checksum 0x6517e1e3, Offset: 0x4828
-// Size: 0x46
-function is_from_animsound(animname, anime, notetrack) {
-    /#
+    // Namespace debug/debug
+    // Params 3, eflags: 0x0
+    // Checksum 0x6517e1e3, Offset: 0x4828
+    // Size: 0x46
+    function is_from_animsound(animname, anime, notetrack) {
         return isdefined(level.animsound_aliases[animname][anime][notetrack][#"hash_3bcdf8e8541b5d4a"]);
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x4bd0d348, Offset: 0x4878
-// Size: 0x6c
-function function_e5ad4202() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x4bd0d348, Offset: 0x4878
+    // Size: 0x6c
+    function function_e5ad4202() {
         players = getplayers();
         if (distance(players[0].origin, self.origin) > 1500) {
             return;
         }
         level.var_b19c1dfd[level.var_b19c1dfd.size] = self;
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0x3a7c762e, Offset: 0x48f0
-// Size: 0xbc
-function debug_animsoundtag(var_ba7744bf) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0x3a7c762e, Offset: 0x48f0
+    // Size: 0xbc
+    function debug_animsoundtag(var_ba7744bf) {
         tag = getdvarstring("<unknown string>" + var_ba7744bf);
         if (tag == "<unknown string>") {
             iprintlnbold("<unknown string>");
@@ -1254,15 +1168,13 @@ function debug_animsoundtag(var_ba7744bf) {
         }
         tag_sound(tag, var_ba7744bf - 1);
         setdvar(#"tag" + var_ba7744bf, "<unknown string>");
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0xecbe2f3c, Offset: 0x49b8
-// Size: 0xac
-function debug_animsoundtagselected() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0xecbe2f3c, Offset: 0x49b8
+    // Size: 0xac
+    function debug_animsoundtagselected() {
         tag = getdvarstring(#"tag");
         if (tag == "<unknown string>") {
             iprintlnbold("<unknown string>");
@@ -1270,15 +1182,13 @@ function debug_animsoundtagselected() {
         }
         tag_sound(tag, level.var_d7c96297);
         setdvar(#"tag", "<unknown string>");
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 2, eflags: 0x0
-// Checksum 0xed123a82, Offset: 0x4a70
-// Size: 0x14c
-function tag_sound(tag, var_ba7744bf) {
-    /#
+    // Namespace debug/debug
+    // Params 2, eflags: 0x0
+    // Checksum 0xed123a82, Offset: 0x4a70
+    // Size: 0x14c
+    function tag_sound(tag, var_ba7744bf) {
         if (!isdefined(level.animsound_tagged)) {
             return;
         }
@@ -1292,15 +1202,13 @@ function tag_sound(tag, var_ba7744bf) {
             level.animsound_aliases[var_d357ff0e.animname][var_d357ff0e.anime][var_d357ff0e.notetrack][#"hash_3bcdf8e8541b5d4a"] = 1;
             function_119a2b9f();
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x180c421f, Offset: 0x4bc8
-// Size: 0x10c
-function function_119a2b9f() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x180c421f, Offset: 0x4bc8
+    // Size: 0x10c
+    function function_119a2b9f() {
         filename = "<unknown string>" + level.script + "<unknown string>";
         file = openfile(filename, "<unknown string>");
         if (file == -1) {
@@ -1311,15 +1219,13 @@ function function_119a2b9f() {
         function_eaaa729a(file);
         saved = closefile(file);
         setdvar(#"hash_685827e90be8c03d", "<unknown string>");
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0x4fec750a, Offset: 0x4ce0
-// Size: 0x454
-function function_eaaa729a(file) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0x4fec750a, Offset: 0x4ce0
+    // Size: 0x454
+    function function_eaaa729a(file) {
         tab = "<unknown string>";
         fprintln(file, "<unknown string>");
         fprintln(file, "<unknown string>");
@@ -1353,15 +1259,13 @@ function function_eaaa729a(file) {
             }
         }
         fprintln(file, "<unknown string>");
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x91c8f22f, Offset: 0x5140
-// Size: 0x2fc
-function function_f48a99b9() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x91c8f22f, Offset: 0x5140
+    // Size: 0x2fc
+    function function_f48a99b9() {
         setdvar(#"hash_328d096ed229649d", 0);
         if (!isdefined(level.var_31c87253) || getdvarint(#"enablenpcdeathtracking", 0) != 1) {
             return;
@@ -1390,53 +1294,47 @@ function function_f48a99b9() {
             saved = closefile(file);
         #/
         level.var_31c87253 = [];
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0xc4bd0071, Offset: 0x5448
-// Size: 0x9e
-function tostr(str) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0xc4bd0071, Offset: 0x5448
+    // Size: 0x9e
+    function tostr(str) {
         newstr = "<unknown string>";
         for (i = 0; i < str.size; i++) {
             if (str[i] == "<unknown string>") {
-                newstr = newstr + "<unknown string>";
-                newstr = newstr + "<unknown string>";
+                newstr += "<unknown string>";
+                newstr += "<unknown string>";
                 continue;
             }
-            newstr = newstr + str[i];
+            newstr += str[i];
         }
-        newstr = newstr + "<unknown string>";
+        newstr += "<unknown string>";
         return newstr;
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 5, eflags: 0x0
-// Checksum 0xba229db3, Offset: 0x54f0
-// Size: 0xc4
-function new_hud(hud_name, msg, x, y, scale) {
-    /#
+    // Namespace debug/debug
+    // Params 5, eflags: 0x0
+    // Checksum 0xba229db3, Offset: 0x54f0
+    // Size: 0xc4
+    function new_hud(hud_name, msg, x, y, scale) {
         if (!isdefined(level.hud_array)) {
             level.hud_array = [];
         }
         if (!isdefined(level.hud_array[hud_name])) {
             level.hud_array[hud_name] = [];
         }
-        hud = set_hudelem(msg, x, y, scale);
+        hud = debug_menu::set_hudelem(msg, x, y, scale);
         level.hud_array[hud_name][level.hud_array[hud_name].size] = hud;
         return hud;
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0xdc38cc91, Offset: 0x55c0
-// Size: 0x464
-function debug_show_viewpos() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0xdc38cc91, Offset: 0x55c0
+    // Size: 0x464
+    function debug_show_viewpos() {
         var_1071292 = newdebughudelem();
         var_1071292.x = 10;
         var_1071292.y = 300;
@@ -1492,53 +1390,45 @@ function debug_show_viewpos() {
             }
             wait(0.5);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0xe0277241, Offset: 0x5a30
-// Size: 0x78
-function function_d2d39ee5(num) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0xe0277241, Offset: 0x5a30
+    // Size: 0x78
+    function function_d2d39ee5(num) {
         var_dd9c91de = abs(num);
         count = 0;
         while (true) {
-            var_dd9c91de = var_dd9c91de * 0.1;
-            count = count + 1;
+            var_dd9c91de *= 0.1;
+            count += 1;
             if (var_dd9c91de < 1) {
                 return count;
             }
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 2, eflags: 0x0
-// Checksum 0x119e5348, Offset: 0x5ab0
-// Size: 0x3a
-function function_6334846f(val, num) {
-    /#
+    // Namespace debug/debug
+    // Params 2, eflags: 0x0
+    // Checksum 0x119e5348, Offset: 0x5ab0
+    // Size: 0x3a
+    function function_6334846f(val, num) {
         return int(val * num) / num;
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0xc4510e08, Offset: 0x5af8
-// Size: 0x16
-function function_1261f881() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0xc4510e08, Offset: 0x5af8
+    // Size: 0x16
+    function function_1261f881() {
         return level.players[0];
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0xdfb2260, Offset: 0x5b18
-// Size: 0x14c
-function engagement_distance_debug_toggle() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0xdfb2260, Offset: 0x5b18
+    // Size: 0x14c
+    function engagement_distance_debug_toggle() {
         level endon(#"kill_engage_dist_debug_toggle_watcher");
         laststate = getdvarint(#"debug_engage_dists", 0);
         while (true) {
@@ -1554,28 +1444,24 @@ function engagement_distance_debug_toggle() {
             }
             wait(0.3);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0x51052030, Offset: 0x5c70
-// Size: 0x2a
-function dvar_turned_on(val) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0x51052030, Offset: 0x5c70
+    // Size: 0x2a
+    function dvar_turned_on(val) {
         if (val <= 0) {
             return 0;
         }
         return 1;
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0x3885cc43, Offset: 0x5ca8
-// Size: 0x32a
-function engagement_distance_debug_init(player) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0x3885cc43, Offset: 0x5ca8
+    // Size: 0x32a
+    function engagement_distance_debug_init(player) {
         level.realtimeengagedist = newdebughudelem(player);
         level.realtimeengagedist.alignx = "<unknown string>";
         level.realtimeengagedist.fontscale = 1.5;
@@ -1591,7 +1477,7 @@ function engagement_distance_debug_init(player) {
         level.realtimeengagedist_value.y = 250;
         level.realtimeengagedist_value.color = (1, 1, 1);
         level.realtimeengagedist_value setvalue(0);
-        xpos = xpos + 37;
+        xpos += 37;
         level.realtimeengagedist_middle = newdebughudelem(player);
         level.realtimeengagedist_middle.alignx = "<unknown string>";
         level.realtimeengagedist_middle.fontscale = 1.5;
@@ -1599,7 +1485,7 @@ function engagement_distance_debug_init(player) {
         level.realtimeengagedist_middle.y = 250;
         level.realtimeengagedist_middle.color = (1, 1, 1);
         level.realtimeengagedist_middle settext("<unknown string>");
-        xpos = xpos + 105;
+        xpos += 105;
         level.realtimeengagedist_offvalue = newdebughudelem(player);
         level.realtimeengagedist_offvalue.alignx = "<unknown string>";
         level.realtimeengagedist_offvalue.fontscale = 1.5;
@@ -1613,28 +1499,24 @@ function engagement_distance_debug_init(player) {
         hudobjarray[2] = level.realtimeengagedist_middle;
         hudobjarray[3] = level.realtimeengagedist_offvalue;
         return hudobjarray;
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 2, eflags: 0x0
-// Checksum 0xe70b209f, Offset: 0x5fe0
-// Size: 0x5c
-function engage_dist_debug_hud_destroy(hudarray, killnotify) {
-    /#
+    // Namespace debug/debug
+    // Params 2, eflags: 0x0
+    // Checksum 0xe70b209f, Offset: 0x5fe0
+    // Size: 0x5c
+    function engage_dist_debug_hud_destroy(hudarray, killnotify) {
         level waittill(killnotify);
         for (i = 0; i < hudarray.size; i++) {
             hudarray[i] destroy();
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0xd31e35e9, Offset: 0x6048
-// Size: 0x284
-function weapon_engage_dists_init() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0xd31e35e9, Offset: 0x6048
+    // Size: 0x284
+    function weapon_engage_dists_init() {
         level.engagedists = [];
         genericpistol = spawnstruct();
         genericpistol.engagedistmin = 125;
@@ -1672,38 +1554,32 @@ function weapon_engage_dists_init() {
         engage_dists_add("<unknown string>", generichmg);
         engage_dists_add("<unknown string>", genericriflesa);
         level thread engage_dists_watcher();
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 2, eflags: 0x0
-// Checksum 0xa6362f55, Offset: 0x62d8
-// Size: 0x28
-function engage_dists_add(weaponname, values) {
-    /#
+    // Namespace debug/debug
+    // Params 2, eflags: 0x0
+    // Checksum 0xa6362f55, Offset: 0x62d8
+    // Size: 0x28
+    function engage_dists_add(weaponname, values) {
         level.engagedists[weaponname] = values;
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 1, eflags: 0x0
-// Checksum 0xdee91eb6, Offset: 0x6308
-// Size: 0x3e
-function get_engage_dists(weapon) {
-    /#
+    // Namespace debug/debug
+    // Params 1, eflags: 0x0
+    // Checksum 0xdee91eb6, Offset: 0x6308
+    // Size: 0x3e
+    function get_engage_dists(weapon) {
         if (isdefined(level.engagedists[weapon])) {
             return level.engagedists[weapon];
         }
         return undefined;
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x9c5bbd18, Offset: 0x6350
-// Size: 0x108
-function engage_dists_watcher() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x9c5bbd18, Offset: 0x6350
+    // Size: 0x108
+    function engage_dists_watcher() {
         level endon(#"kill_all_engage_dist_debug", #"kill_engage_dists_watcher");
         while (true) {
             player = function_1261f881();
@@ -1723,15 +1599,13 @@ function engage_dists_watcher() {
             player.lastweapon = playerweapon;
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x94ec43c2, Offset: 0x6460
-// Size: 0x42e
-function debug_realtime_engage_dist() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x94ec43c2, Offset: 0x6460
+    // Size: 0x42e
+    function debug_realtime_engage_dist() {
         level endon(#"kill_all_engage_dist_debug", #"kill_realtime_engagement_distance_debug");
         player = function_1261f881();
         hudobjarray = engagement_distance_debug_init(player);
@@ -1773,35 +1647,31 @@ function debug_realtime_engage_dist() {
                     }
                 }
             }
-            thread function_6844bea4(1, 5, 0.05, level.debugrtengagedistcolor, tracepoint, tracenormal);
-            thread function_6844bea4(1, 1, 0.05, level.debugrtengagedistcolor, tracepoint, tracenormal);
+            thread util::function_6844bea4(1, 5, 0.05, level.debugrtengagedistcolor, tracepoint, tracenormal);
+            thread util::function_6844bea4(1, 1, 0.05, level.debugrtengagedistcolor, tracepoint, tracenormal);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 2, eflags: 0x0
-// Checksum 0xc68db50f, Offset: 0x6898
-// Size: 0x78
-function hudobj_changecolor(hudobjarray, newcolor) {
-    /#
-        for (i = 0; i < hudobjarray.size; i++) {
+    // Namespace debug/debug
+    // Params 2, eflags: 0x0
+    // Checksum 0xc68db50f, Offset: 0x6898
+    // Size: 0x78
+    function hudobj_changecolor(hudobjarray, newcolor) {
+                for (i = 0; i < hudobjarray.size; i++) {
             hudobj = hudobjarray[i];
             if (hudobj.color != newcolor) {
                 hudobj.color = newcolor;
                 level.debugrtengagedistcolor = newcolor;
             }
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 2, eflags: 0x0
-// Checksum 0xc909b92e, Offset: 0x6918
-// Size: 0x2ec
-function engagedist_hud_changetext(engagedisttype, units) {
-    /#
+    // Namespace debug/debug
+    // Params 2, eflags: 0x0
+    // Checksum 0xc909b92e, Offset: 0x6918
+    // Size: 0x2ec
+    function engagedist_hud_changetext(engagedisttype, units) {
         if (!isdefined(level.lastdisttype)) {
             level.lastdisttype = "<unknown string>";
         }
@@ -1835,15 +1705,13 @@ function engagedist_hud_changetext(engagedisttype, units) {
             self[3].alpha = 0;
         }
         level.lastdisttype = engagedisttype;
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x8fc879e7, Offset: 0x6c10
-// Size: 0x2f6
-function function_16b58d7f() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x8fc879e7, Offset: 0x6c10
+    // Size: 0x2f6
+    function function_16b58d7f() {
         level endon(#"kill_all_engage_dist_debug", #"hash_55d49f3fca6a3bdc");
         player = function_1261f881();
         while (true) {
@@ -1884,15 +1752,13 @@ function function_16b58d7f() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0xbd9eec2f, Offset: 0x6f10
-// Size: 0xcc
-function function_2fcd7502() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0xbd9eec2f, Offset: 0x6f10
+    // Size: 0xcc
+    function function_2fcd7502() {
         if (!isdefined(level.var_4c576f0)) {
             function_3171027d();
             level.var_4c576f0 = 1;
@@ -1905,15 +1771,13 @@ function function_2fcd7502() {
         if (isdefined(level.dynamic_spawn_dummy_model)) {
             level.dynamic_spawn_dummy_model delete();
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0xd04e19a3, Offset: 0x6fe8
-// Size: 0x1a8
-function function_3171027d() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0xd04e19a3, Offset: 0x6fe8
+    // Size: 0x1a8
+    function function_3171027d() {
         spawners = getspawnerarray();
         level.aitypes = [];
         level.var_9f54edf5 = 0;
@@ -1935,15 +1799,13 @@ function function_3171027d() {
                 level.aitypes[level.aitypes.size] = struct;
             }
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0xd22b68eb, Offset: 0x7198
-// Size: 0x726
-function function_90edec37() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0xd22b68eb, Offset: 0x7198
+    // Size: 0x726
+    function function_90edec37() {
         level endon(#"hash_34e65f3c6ffc6a39");
         assert(isdefined(level.aitypes) && level.aitypes.size > 0, "<unknown string>");
         level.dynamic_spawn_hud = newdebughudelem(getplayers()[0]);
@@ -1981,8 +1843,8 @@ function function_90edec37() {
                 var_ec8949ef = getdvarint(#"debug_dynamic_ai_ignoreme", 0);
                 var_a127c98a = getdvarint(#"debug_dynamic_ai_ignoreall", 0);
                 spawn.pacifist = getdvarint(#"debug_dynamic_ai_pacifist", 0);
-                spawn set(#"hash_624cb07df0cbb198", "<unknown string>", var_ec8949ef);
-                spawn set(#"hash_624cb07df0cbb198", "<unknown string>", var_a127c98a);
+                spawn val::set(#"hash_624cb07df0cbb198", "<unknown string>", var_ec8949ef);
+                spawn val::set(#"hash_624cb07df0cbb198", "<unknown string>", var_a127c98a);
                 spawn.fixednode = 0;
                 wait(0.3);
             } else if (self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>")) {
@@ -2004,26 +1866,22 @@ function function_90edec37() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x793d1a80, Offset: 0x78c8
-// Size: 0x3c
-function function_11228d34() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x793d1a80, Offset: 0x78c8
+    // Size: 0x3c
+    function function_11228d34() {
         wait(1);
         iprintlnbold("<unknown string>" + level.script + "<unknown string>");
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x75a9b7b, Offset: 0x7910
-// Size: 0x1e4
-function function_d2ddc8bc() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x75a9b7b, Offset: 0x7910
+    // Size: 0x1e4
+    function function_d2ddc8bc() {
         guys = getaiarray();
         for (i = 0; i < guys.size; i++) {
             if (guys[i].team == #"axis") {
@@ -2034,15 +1892,13 @@ function function_d2ddc8bc() {
             print3d(guys[i].origin + (0, 0, 70), isdefined(guys[i].goalradius) ? "<unknown string>" + guys[i].goalradius : "<unknown string>", (0, 1, 0), 1, 1, 1);
             record3dtext("<unknown string>" + guys[i].goalradius, guys[i].origin + (0, 0, 70), (0, 1, 0), "<unknown string>");
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x435a1030, Offset: 0x7b00
-// Size: 0x1c0
-function function_3a215729() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x435a1030, Offset: 0x7b00
+    // Size: 0x1c0
+    function function_3a215729() {
         guys = getaiarray();
         foreach (guy in guys) {
             recordcircle(guy.origin, sqrt(guy.maxsightdistsqrd), (1, 1, 0), "<unknown string>");
@@ -2051,15 +1907,13 @@ function function_3a215729() {
             record3dtext(isdefined(player.maxvisibledist) ? "<unknown string>" + player.maxvisibledist : "<unknown string>", player.origin, (1, 0, 0), "<unknown string>");
             recordcircle(player.origin, player.maxvisibledist, (1, 0, 0), "<unknown string>");
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x751afdb4, Offset: 0x7cc8
-// Size: 0x2c4
-function debug_health() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x751afdb4, Offset: 0x7cc8
+    // Size: 0x2c4
+    function debug_health() {
         var_d4d10882 = (0, 0, 0);
         guys = getaiarray();
         for (i = 0; i < guys.size; i++) {
@@ -2078,29 +1932,25 @@ function debug_health() {
         if (isdefined(level.player)) {
             recordenttext(isdefined(level.player.health) ? "<unknown string>" + level.player.health : "<unknown string>", level.player, level.var_99e12d63[#"allies"], "<unknown string>");
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 0, eflags: 0x0
-// Checksum 0x7f7d8162, Offset: 0x7f98
-// Size: 0xe4
-function function_feb182a2() {
-    /#
+    // Namespace debug/debug
+    // Params 0, eflags: 0x0
+    // Checksum 0x7f7d8162, Offset: 0x7f98
+    // Size: 0xe4
+    function function_feb182a2() {
         guys = getaiarray();
         for (i = 0; i < guys.size; i++) {
             diststring = guys[i].engageminfalloffdist + "<unknown string>" + guys[i].engagemindist + "<unknown string>" + guys[i].engagemaxdist + "<unknown string>" + guys[i].engagemaxfalloffdist;
             recordenttext(diststring, guys[i], level.var_99e12d63[guys[i].team], "<unknown string>");
         }
-    #/
-}
+    }
 
-// Namespace debug/debug
-// Params 5, eflags: 0x0
-// Checksum 0xcd0db45, Offset: 0x8088
-// Size: 0xb4
-function debug_sphere(origin, radius, color, alpha, time) {
-    /#
+    // Namespace debug/debug
+    // Params 5, eflags: 0x0
+    // Checksum 0xcd0db45, Offset: 0x8088
+    // Size: 0xb4
+    function debug_sphere(origin, radius, color, alpha, time) {
         if (!isdefined(time)) {
             time = 1000;
         }
@@ -2109,6 +1959,6 @@ function debug_sphere(origin, radius, color, alpha, time) {
         }
         sides = int(10 * (1 + int(radius) % 100));
         sphere(origin, radius, color, alpha, 1, sides, time);
-    #/
-}
+    }
 
+#/

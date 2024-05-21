@@ -41,7 +41,7 @@ function private function_918ce680(localclientnum, pos, *surface, *notetrack, *b
     if (n_scale > 1 || n_scale < 0) {
         return;
     }
-    n_scale = n_scale * 0.25;
+    n_scale *= 0.25;
     if (n_scale <= 0.01) {
         return;
     }

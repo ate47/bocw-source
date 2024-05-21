@@ -178,7 +178,7 @@ function private function_9ddb4115(var_1d83d08d) {
         newstart = var_1d83d08d.start;
         toend = vectornormalize(var_1d83d08d.end - var_1d83d08d.start);
         for (var_164fe5c9 = distance2dsquared(newstart, initcircle.origin); var_164fe5c9 > sqr(initcircle.radius); var_164fe5c9 = var_c820832) {
-            newstart = newstart + toend * 1000;
+            newstart += toend * 1000;
             var_c820832 = distance2dsquared(newstart, initcircle.origin);
             if (var_c820832 > var_164fe5c9) {
                 break;
@@ -188,7 +188,7 @@ function private function_9ddb4115(var_1d83d08d) {
         var_1b8e09d2 = var_1d83d08d.end;
         tostart = toend * -1;
         for (var_164fe5c9 = distance2dsquared(var_1b8e09d2, initcircle.origin); var_164fe5c9 > sqr(initcircle.radius); var_164fe5c9 = var_c820832) {
-            var_1b8e09d2 = var_1b8e09d2 + tostart * 1000;
+            var_1b8e09d2 += tostart * 1000;
             var_c820832 = distance2dsquared(var_1b8e09d2, initcircle.origin);
             if (var_c820832 > var_164fe5c9) {
                 break;
@@ -209,7 +209,7 @@ function private function_ea1ad421(insertion, start, end) {
     direction = end - start;
     direction = vectornormalize(direction);
     step = isdefined(level.var_427d6976.("insertionOOBCheckStepSize")) ? level.var_427d6976.("insertionOOBCheckStepSize") : 1000;
-    assert(!chr_party(start));
+    assert(!oob::chr_party(start));
     point = function_f31cf3bb(start, direction, step, 0);
     if (!isdefined(point)) {
         return end;
@@ -350,7 +350,7 @@ function private fly_path(insertion, var_1d83d08d, fly_over_point, var_59526dd5)
             debug_sphere(endpoint, 75, (1, 0.5, 0));
             debug_line(var_82b0af47, startpoint, (1, 0, 0));
             debug_line(var_ee07e61a, endpoint, (1, 0, 0));
-            minimaporigins = function_1f583d2e("<unknown string>", "<unknown string>");
+            minimaporigins = territory::function_1f583d2e("<unknown string>", "<unknown string>");
             if (minimaporigins.size == 2) {
                 maxheight = float(max(minimaporigins[0].origin[2], minimaporigins[1].origin[2]));
                 corner1 = (minimaporigins[0].origin[0], minimaporigins[0].origin[1], maxheight);
@@ -473,7 +473,7 @@ function function_9ed051a4() {
     assert(isdefined(level.mapbounds.var_8faef7b7));
     assert(isdefined(level.mapbounds.var_68fd6e0a));
     map_center = math::find_box_center(level.mapbounds.var_8faef7b7, level.mapbounds.var_68fd6e0a);
-    map_center = map_center + (0, 0, function_70dd0500());
+    map_center += (0, 0, function_70dd0500());
     if (is_true(getgametypesetting(#"wzintersectdeathcircle"))) {
         circleindex = isdefined(getgametypesetting(#"wzintersectdeathcircleindex")) ? getgametypesetting(#"wzintersectdeathcircleindex") : 0;
         if (isdefined(level.deathcircles) && level.deathcircles.size > 0 && circleindex < level.deathcircles.size) {
@@ -569,12 +569,13 @@ function function_51350a25() {
     return false;
 }
 
-// Namespace player_insertion/namespace_3088f362
-// Params 5, eflags: 0x0
-// Checksum 0xa522c6a7, Offset: 0x2c98
-// Size: 0xf4
-function debug_sphere(origin, radius, color, alpha, time) {
-    /#
+/#
+
+    // Namespace player_insertion/namespace_3088f362
+    // Params 5, eflags: 0x0
+    // Checksum 0xa522c6a7, Offset: 0x2c98
+    // Size: 0xf4
+    function debug_sphere(origin, radius, color, alpha, time) {
         if (!isdefined(alpha)) {
             alpha = 1;
         }
@@ -588,15 +589,13 @@ function debug_sphere(origin, radius, color, alpha, time) {
             sides = int(10 * (1 + int(radius / 100)));
             sphere(origin, radius, color, alpha, 1, sides, time);
         }
-    #/
-}
+    }
 
-// Namespace player_insertion/namespace_3088f362
-// Params 5, eflags: 0x0
-// Checksum 0xa7bbc667, Offset: 0x2d98
-// Size: 0xc4
-function debug_line(from, to, color, time, depthtest) {
-    /#
+    // Namespace player_insertion/namespace_3088f362
+    // Params 5, eflags: 0x0
+    // Checksum 0xa7bbc667, Offset: 0x2d98
+    // Size: 0xc4
+    function debug_line(from, to, color, time, depthtest) {
         if (!isdefined(time)) {
             time = 5000;
         }
@@ -609,6 +608,6 @@ function debug_line(from, to, color, time, depthtest) {
             }
             line(from, to, color, 1, depthtest, time);
         }
-    #/
-}
+    }
 
+#/

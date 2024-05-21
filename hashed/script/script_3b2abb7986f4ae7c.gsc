@@ -302,29 +302,29 @@ function function_be51796c(einflictor, eattacker, idamage, idflags, smeansofdeat
                     damage = zm_equipment::function_739fbb72(damage, vdamageorigin, #"elite", self.maxhealth);
                 }
                 if (killstreaks::is_killstreak_weapon(vdamageorigin)) {
-                    damage = damage * 0.5;
+                    damage *= 0.5;
                     if (vdamageorigin.firetype === "Minigun") {
-                        damage = damage * 0.75;
+                        damage *= 0.75;
                     }
                 } else {
-                    damage = damage * 0.1;
+                    damage *= 0.1;
                 }
             }
             item = var_fd90b0bb item_inventory::function_230ceec4(vdamageorigin);
             if (isdefined(item)) {
                 var_528363fd = self namespace_b61a349a::function_b3496fde(weapon, var_fd90b0bb, damage, vdir, shitloc, vdamageorigin, damagefromunderneath, modelindex, partname, vsurfacenormal);
-                damage = damage + var_528363fd;
+                damage += var_528363fd;
                 if (shitloc != "MOD_MELEE") {
                     var_4d1602de = zm_weapons::function_d85e6c3a(item.itementry);
-                    damage = damage * var_4d1602de;
+                    damage *= var_4d1602de;
                     if (isdefined(item.paplv)) {
                         var_645b8bb = zm_weapons::function_896671d5(item.itementry.weapon, item.paplv);
-                        damage = damage * var_645b8bb;
+                        damage *= var_645b8bb;
                     }
                 }
             } else {
                 var_fd72ea28 = self namespace_b61a349a::function_b3496fde(weapon, var_fd90b0bb, damage, vdir, shitloc, vdamageorigin, damagefromunderneath, modelindex, partname, vsurfacenormal);
-                damage = damage + var_fd72ea28;
+                damage += var_fd72ea28;
             }
             if (zm_weapons::is_wonder_weapon(vdamageorigin)) {
                 if (shitloc === "MOD_PROJECTILE_SPLASH") {
@@ -333,9 +333,9 @@ function function_be51796c(einflictor, eattacker, idamage, idflags, smeansofdeat
                     if (vdamageorigin.name === #"ww_ieu_plasma_t9" || vdamageorigin.name === #"ww_ieu_plasma_t9_upgraded") {
                         damage = self namespace_b376a999::function_fd195372(weapon, var_fd90b0bb, damage, vdir, shitloc, vdamageorigin, psoffsettime, damagefromunderneath, modelindex, partname, vsurfacenormal);
                     } else if (vdamageorigin.name === #"ww_ieu_gas_t9" || vdamageorigin.name === #"ww_ieu_gas_t9_upgraded") {
-                        damage = damage * 0.1;
+                        damage *= 0.1;
                     }
-                    damage = damage * 0.3;
+                    damage *= 0.3;
                 }
             }
         }
@@ -427,26 +427,26 @@ function cratecontrolleddrop(instance, v_target_location, n_drop_time = 10, var_
     crate = self;
     crate endon(#"death");
     params = spawnstruct();
-    if (!isdefined(params.var_a2629b1c)) {
-        params.var_a2629b1c = 100;
+    if (!isdefined(params.ksthrustersoffheight)) {
+        params.ksthrustersoffheight = 100;
     }
     params.kstotaldroptime = isdefined(n_drop_time) ? n_drop_time : 10;
-    if (!isdefined(params.var_46783f3a)) {
-        params.var_46783f3a = 0.65;
+    if (!isdefined(params.ksacceltimepercentage)) {
+        params.ksacceltimepercentage = 0.65;
     }
     if (!isdefined(params.var_827e3209)) {
         params.var_827e3209 = #"hash_3aa3ac8dc366dcf1";
     }
     crate thread watchforcratekill(v_target_location[2] + 200);
     crate thread update_crate_velocity();
-    var_ae4c0bf9 = isdefined(level.var_947cc86b) ? level.var_947cc86b : params.var_a2629b1c;
+    var_ae4c0bf9 = isdefined(level.var_947cc86b) ? level.var_947cc86b : params.ksthrustersoffheight;
     target = (v_target_location[0], v_target_location[1], v_target_location[2] + var_ae4c0bf9);
     var_c65d6e50 = 1;
     if (isdefined(var_72886e11) && var_72886e11 >= target[2]) {
         var_c65d6e50 = 0;
     }
     if (!is_true(level.var_2e93cff2) && var_c65d6e50) {
-        var_cc6645da = params.var_46783f3a;
+        var_cc6645da = params.ksacceltimepercentage;
         acceltime = params.kstotaldroptime * var_cc6645da;
         deceltime = is_true(params.var_f03a1094) ? params.kstotaldroptime - acceltime : 0;
         hostmigration::waittillhostmigrationdone();
@@ -599,7 +599,7 @@ function function_71c8970c(interval) {
         playfxontag(#"hash_73dda66347b73ddd", self, "tag_fx_04");
         playfxontag(#"hash_3e6e2a2df9fd889", self, "tag_body");
         wait(interval);
-        interval = interval / 1.2;
+        interval /= 1.2;
         if (interval < 0.08) {
             break;
         }

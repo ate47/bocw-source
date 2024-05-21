@@ -430,7 +430,7 @@ function private function_e9819a23(entity) {
         predictedenemypos = entity.enemy.origin;
         velocity = entity.enemy getvelocity();
         if (length(velocity) > 0) {
-            predictedenemypos = predictedenemypos + vectorscale(velocity, 0.25);
+            predictedenemypos += vectorscale(velocity, 0.25);
         }
         distancesq = distancesquared(entity.origin, predictedenemypos);
         if (distancesq <= sqr(128)) {
@@ -487,7 +487,7 @@ function private function_85d8b15d(entity) {
         predictedenemypos = entity.enemy.origin;
         velocity = entity.enemy getvelocity();
         if (length(velocity) > 0) {
-            predictedenemypos = predictedenemypos + vectorscale(velocity, 0.25);
+            predictedenemypos += vectorscale(velocity, 0.25);
         }
         distancesq = distancesquared(entity.origin, predictedenemypos);
         if (distancesq <= sqr(128)) {
@@ -742,7 +742,7 @@ function function_3511ecd1(entity, mocompanim, *mocompanimblendouttime, *mocompa
         predictedenemypos = mocompanimflag.enemy.origin;
         velocity = mocompanimflag.enemy getvelocity();
         if (length(velocity) > 0) {
-            predictedenemypos = predictedenemypos + vectorscale(velocity, 0.25);
+            predictedenemypos += vectorscale(velocity, 0.25);
         }
         mocompanimflag.meleeinfo.adjustedendpos = predictedenemypos;
         var_cf699df5 = distancesquared(mocompanimflag.meleeinfo.var_9bfa8497, mocompanimflag.meleeinfo.var_cb28f380);
@@ -754,7 +754,7 @@ function function_3511ecd1(entity, mocompanim, *mocompanimblendouttime, *mocompa
         var_535d098c = 0;
         if (isdefined(traceresult[#"hitloc"]) && traceresult[#"hitloc"] == "riotshield") {
             var_cc075bd0 = vectornormalize(mocompanimflag.origin - mocompanimflag.meleeinfo.adjustedendpos);
-            mocompanimflag.meleeinfo.adjustedendpos = mocompanimflag.meleeinfo.adjustedendpos + vectorscale(var_cc075bd0, 50);
+            mocompanimflag.meleeinfo.adjustedendpos += vectorscale(var_cc075bd0, 50);
             var_535d098c = 1;
         }
         if (traceresult[#"fraction"] < 0.9) {

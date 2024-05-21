@@ -524,21 +524,21 @@ function function_63d01c33() {
         }
         var_9681c147.angles = (var_398bbe57 * n_pitch, var_9681c147.angles[1], var_eb102f19 * n_roll);
         if (n_pitch > 1) {
-            n_pitch = n_pitch - 0.5;
+            n_pitch -= 0.5;
         }
         if (n_roll > 1) {
-            n_roll = n_roll - 0.5;
+            n_roll -= 0.5;
         }
-        var_eb102f19 = var_eb102f19 * -1;
+        var_eb102f19 *= -1;
         if (!var_4794d60e) {
             if (math::cointoss(50)) {
-                var_398bbe57 = var_398bbe57 * -1;
+                var_398bbe57 *= -1;
             } else {
                 var_4794d60e = 1;
             }
             continue;
         }
-        var_398bbe57 = var_398bbe57 * -1;
+        var_398bbe57 *= -1;
         var_4794d60e = 0;
     }
 }

@@ -10,19 +10,20 @@
 
 #namespace battlechatter;
 
-// Namespace battlechatter/namespace_2987c8a4
-// Params 0, eflags: 0x0
-// Checksum 0x62f70e41, Offset: 0xc0
-// Size: 0x408
-function devgui_think() {
-    /#
+/#
+
+    // Namespace battlechatter/namespace_2987c8a4
+    // Params 0, eflags: 0x0
+    // Checksum 0x62f70e41, Offset: 0xc0
+    // Size: 0x408
+    function devgui_think() {
         setdvar(#"devgui_mpdialog", "<unknown string>");
         setdvar(#"testalias_player", "<unknown string>");
         setdvar(#"testalias_taacom", "<unknown string>");
         setdvar(#"testalias_commander", "<unknown string>");
         while (true) {
             wait(1);
-            player = gethostplayer();
+            player = util::gethostplayer();
             if (!isdefined(player)) {
                 continue;
             }
@@ -69,15 +70,13 @@ function devgui_think() {
             }
             setdvar(#"devgui_mpdialog", "<unknown string>");
         }
-    #/
-}
+    }
 
-// Namespace battlechatter/namespace_2987c8a4
-// Params 1, eflags: 0x0
-// Checksum 0xe310a9cd, Offset: 0x4d0
-// Size: 0xea
-function test_other_dialog(delay) {
-    /#
+    // Namespace battlechatter/namespace_2987c8a4
+    // Params 1, eflags: 0x0
+    // Checksum 0xe310a9cd, Offset: 0x4d0
+    // Size: 0xea
+    function test_other_dialog(delay) {
         players = arraysort(level.players, self.origin);
         foreach (player in players) {
             if (player != self && isalive(player)) {
@@ -85,68 +84,58 @@ function test_other_dialog(delay) {
                 return;
             }
         }
-    #/
-}
+    }
 
-// Namespace battlechatter/namespace_2987c8a4
-// Params 1, eflags: 0x0
-// Checksum 0xe43d1d6a, Offset: 0x5c8
-// Size: 0x64
-function test_player_dialog(delay) {
-    /#
+    // Namespace battlechatter/namespace_2987c8a4
+    // Params 1, eflags: 0x0
+    // Checksum 0xe43d1d6a, Offset: 0x5c8
+    // Size: 0x64
+    function test_player_dialog(delay) {
         if (!isdefined(delay)) {
             delay = 0;
         }
         wait(delay);
         self playsoundontag(getdvarstring(#"testalias_player", "<unknown string>"), "<unknown string>");
-    #/
-}
+    }
 
-// Namespace battlechatter/namespace_2987c8a4
-// Params 1, eflags: 0x0
-// Checksum 0x5866dad3, Offset: 0x638
-// Size: 0x5c
-function test_taacom_dialog(delay) {
-    /#
+    // Namespace battlechatter/namespace_2987c8a4
+    // Params 1, eflags: 0x0
+    // Checksum 0x5866dad3, Offset: 0x638
+    // Size: 0x5c
+    function test_taacom_dialog(delay) {
         if (!isdefined(delay)) {
             delay = 0;
         }
         wait(delay);
         self playlocalsound(getdvarstring(#"testalias_taacom", "<unknown string>"));
-    #/
-}
+    }
 
-// Namespace battlechatter/namespace_2987c8a4
-// Params 1, eflags: 0x0
-// Checksum 0x312355d0, Offset: 0x6a0
-// Size: 0x5c
-function test_commander_dialog(delay) {
-    /#
+    // Namespace battlechatter/namespace_2987c8a4
+    // Params 1, eflags: 0x0
+    // Checksum 0x312355d0, Offset: 0x6a0
+    // Size: 0x5c
+    function test_commander_dialog(delay) {
         if (!isdefined(delay)) {
             delay = 0;
         }
         wait(delay);
         self playlocalsound(getdvarstring(#"testalias_commander", "<unknown string>"));
-    #/
-}
+    }
 
-// Namespace battlechatter/namespace_2987c8a4
-// Params 1, eflags: 0x0
-// Checksum 0xace447fa, Offset: 0x708
-// Size: 0x54
-function play_test_dialog(dialogkey) {
-    /#
+    // Namespace battlechatter/namespace_2987c8a4
+    // Params 1, eflags: 0x0
+    // Checksum 0xace447fa, Offset: 0x708
+    // Size: 0x54
+    function play_test_dialog(dialogkey) {
         dialogalias = self get_player_dialog_alias(dialogkey, undefined);
         self playsoundontag(dialogalias, "<unknown string>");
-    #/
-}
+    }
 
-// Namespace battlechatter/namespace_2987c8a4
-// Params 0, eflags: 0x0
-// Checksum 0xa464eae9, Offset: 0x768
-// Size: 0x10c
-function response_key() {
-    /#
+    // Namespace battlechatter/namespace_2987c8a4
+    // Params 0, eflags: 0x0
+    // Checksum 0xa464eae9, Offset: 0x768
+    // Size: 0x10c
+    function response_key() {
         switch (self getmpdialogname()) {
         case #"spectre":
             return "<unknown string>";
@@ -168,15 +157,13 @@ function response_key() {
             return "<unknown string>";
         }
         return "<unknown string>";
-    #/
-}
+    }
 
-// Namespace battlechatter/namespace_2987c8a4
-// Params 0, eflags: 0x0
-// Checksum 0x673715f7, Offset: 0x880
-// Size: 0x144
-function play_conv_self_other() {
-    /#
+    // Namespace battlechatter/namespace_2987c8a4
+    // Params 0, eflags: 0x0
+    // Checksum 0x673715f7, Offset: 0x880
+    // Size: 0x144
+    function play_conv_self_other() {
         num = randomintrange(0, 4);
         self play_test_dialog("<unknown string>" + num);
         wait(4);
@@ -187,15 +174,13 @@ function play_conv_self_other() {
                 break;
             }
         }
-    #/
-}
+    }
 
-// Namespace battlechatter/namespace_2987c8a4
-// Params 0, eflags: 0x0
-// Checksum 0xfa9b6987, Offset: 0x9d0
-// Size: 0x144
-function play_conv_other_self() {
-    /#
+    // Namespace battlechatter/namespace_2987c8a4
+    // Params 0, eflags: 0x0
+    // Checksum 0xfa9b6987, Offset: 0x9d0
+    // Size: 0x144
+    function play_conv_other_self() {
         num = randomintrange(0, 4);
         players = arraysort(level.players, self.origin);
         foreach (player in players) {
@@ -206,15 +191,13 @@ function play_conv_other_self() {
         }
         wait(4);
         self play_test_dialog("<unknown string>" + player response_key() + num);
-    #/
-}
+    }
 
-// Namespace battlechatter/namespace_2987c8a4
-// Params 0, eflags: 0x0
-// Checksum 0xb48e301d, Offset: 0xb20
-// Size: 0x1ec
-function play_conv_other_other() {
-    /#
+    // Namespace battlechatter/namespace_2987c8a4
+    // Params 0, eflags: 0x0
+    // Checksum 0xb48e301d, Offset: 0xb20
+    // Size: 0x1ec
+    function play_conv_other_other() {
         num = randomintrange(0, 4);
         players = arraysort(level.players, self.origin);
         foreach (player in players) {
@@ -231,6 +214,6 @@ function play_conv_other_other() {
                 break;
             }
         }
-    #/
-}
+    }
 
+#/

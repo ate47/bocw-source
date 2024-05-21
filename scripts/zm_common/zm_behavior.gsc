@@ -571,7 +571,7 @@ function function_754be649(entity) {
             }
         }
         if (isdefined(entity.var_5a81324d) && isdefined(entity.var_cbc65493)) {
-            entity.meleedistsq = entity.meleedistsq * entity.var_cbc65493;
+            entity.meleedistsq *= entity.var_cbc65493;
         }
     }
     if (is_true(self.isonnavmesh) && !tracepassedonnavmesh(entity.origin, isdefined(entity.enemy.last_valid_position) ? entity.enemy.last_valid_position : entity.enemy.origin, entity.enemy getpathfindingradius())) {
@@ -1157,7 +1157,7 @@ function zombieupdategoalcode() {
                         }
                         break;
                     }
-                    segmentlength = segmentlength + currentseglength;
+                    segmentlength += currentseglength;
                 }
             }
         }
@@ -2388,7 +2388,7 @@ function barricadeentermocompstart(entity, mocompanim, *mocompanimblendouttime, 
         angles = getstartangles(zbarrier_origin, var_f4b27846, mocompduration);
     }
     if (isdefined(mocompanimflag.mocomp_barricade_offset)) {
-        origin = origin + anglestoforward(angles) * mocompanimflag.mocomp_barricade_offset;
+        origin += anglestoforward(angles) * mocompanimflag.mocomp_barricade_offset;
     }
     mocompanimflag forceteleport(origin, angles, 1);
     mocompanimflag animmode("noclip", 0);
@@ -2432,7 +2432,7 @@ function barricadeentermocompnozstart(entity, mocompanim, *mocompanimblendouttim
         angles = getstartangles(zbarrier_origin, var_f4b27846, mocompduration);
     }
     if (isdefined(mocompanimflag.mocomp_barricade_offset)) {
-        origin = origin + anglestoforward(angles) * mocompanimflag.mocomp_barricade_offset;
+        origin += anglestoforward(angles) * mocompanimflag.mocomp_barricade_offset;
     }
     mocompanimflag forceteleport(origin, angles, 1);
     mocompanimflag animmode("noclip", 0);
@@ -2817,9 +2817,9 @@ function function_29c1ba76(*einflictor, eattacker, idamage, *idflags, smeansofde
                     case #"launcher":
                     case #"special":
                         if (n_tier >= 2 && n_tier < 5) {
-                            var_3cddb028 = var_3cddb028 + var_3cddb028 * 0.1;
+                            var_3cddb028 += var_3cddb028 * 0.1;
                         } else if (n_tier >= 5) {
-                            var_3cddb028 = var_3cddb028 + var_3cddb028 * 0.25;
+                            var_3cddb028 += var_3cddb028 * 0.25;
                         }
                         break;
                     }
@@ -2858,7 +2858,7 @@ function function_29c1ba76(*einflictor, eattacker, idamage, *idflags, smeansofde
 function function_ac6dcd03(entity, weapon, *eattacker) {
     damage_mod = 1;
     if (isdefined(eattacker)) {
-        damage_mod = damage_mod * function_e403e74e(1, eattacker, weapon);
+        damage_mod *= function_e403e74e(1, eattacker, weapon);
     }
     return damage_mod;
 }
@@ -2894,10 +2894,10 @@ function function_c5a2dbe5(*entity, weapon, eattacker) {
             }
         }
         if (eattacker namespace_e86ffa8::function_7bf30775(2)) {
-            damage_mod = damage_mod * 1.5;
+            damage_mod *= 1.5;
         }
         if (eattacker namespace_e86ffa8::function_cb561923(4)) {
-            damage_mod = damage_mod * 1.25;
+            damage_mod *= 1.25;
         }
     }
     return damage_mod;
@@ -2916,8 +2916,8 @@ function function_f4e9bba4(entity) {
     }
     foreach (weakpoint in weakpoints) {
         if (weakpoint.type === #"armor") {
-            max_health = max_health + weakpoint.maxhealth;
-            var_765c0df4 = var_765c0df4 + max(weakpoint.health, 0);
+            max_health += weakpoint.maxhealth;
+            var_765c0df4 += max(weakpoint.health, 0);
         }
     }
     if (max_health == 0) {
@@ -3055,7 +3055,7 @@ function function_4a99b560(entity, enemy) {
             }
             var_8a34a513 = isdefined(enemy) && isarray(enemy.var_f904e440);
             var_79637724 = var_8a34a513 && isinarray(enemy.var_f904e440, entity);
-            var_b295b952 = !isdefined(enemy) || !is_classic() && distance2dsquared(entity.origin, enemy.origin) <= sqr(100);
+            var_b295b952 = !isdefined(enemy) || !zm_utility::is_classic() && distance2dsquared(entity.origin, enemy.origin) <= sqr(100);
             var_6c2051ca = !isdefined(enemy) || !entity function_92dcde87(start_pos, target_pos, (to_target[0], to_target[1], var_813d38fa), time, enemy);
             record3dtext("<unknown string>", entity.origin, var_8a34a513 ? (0, 1, 0) : (1, 0, 0), "<unknown string>", entity);
             record3dtext("<unknown string>", entity.origin, var_79637724 ? (0, 1, 0) : (1, 0, 0), "<unknown string>", entity);

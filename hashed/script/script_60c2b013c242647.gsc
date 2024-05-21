@@ -44,10 +44,10 @@ function function_922745a1(player) {
         velocity = forward * (getdvarint(#"hash_6e23b1c0ac2fdd38", 150) + randomintrange(-50, 50));
         boost = sin(self.angles[1]);
         if (boost < 0) {
-            boost = boost * -1;
+            boost *= -1;
         }
         up = mapfloat(0, 1, 300, 900, boost);
-        velocity = velocity + (0, 0, up);
+        velocity += (0, 0, up);
         player magicgrenadetype(weapon, top, velocity);
     }
 }

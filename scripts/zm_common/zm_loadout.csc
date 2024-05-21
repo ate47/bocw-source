@@ -32,7 +32,7 @@ function private autoexec __init__system__() {
 function private preinit() {
     /#
         if (!isdemoplaying()) {
-            on_localplayer_spawned(&on_localplayer_spawned);
+            callback::on_localplayer_spawned(&on_localplayer_spawned);
         }
     #/
 }

@@ -259,7 +259,7 @@ function function_dc15ad60() {
     var_69a1706b = int(var_10e74788 / 3);
     var_2df437f5 = 0;
     for (i = 1; i <= var_69a1706b; i++) {
-        var_2df437f5 = var_2df437f5 + var_69a1706b * i;
+        var_2df437f5 += var_69a1706b * i;
     }
     while (true) {
         time = gettime();
@@ -298,7 +298,7 @@ function function_dc15ad60() {
                 if (dodamage) {
                     if (isdefined(player)) {
                         if (is_true(player.var_e5f956c5)) {
-                            var_9d778583 = var_9d778583 * 2;
+                            var_9d778583 *= 2;
                         }
                         player dodamage(var_9d778583, player.origin, undefined, undefined, undefined, "MOD_TRIGGER_HURT", 8192);
                         player playsoundtoplayer(#"hash_11f49f9aedeeff5e", player);
@@ -310,7 +310,7 @@ function function_dc15ad60() {
                     } else if (isvehicle(entity)) {
                         vehicle = entity;
                         if (is_true(vehicle.var_e5f956c5)) {
-                            var_9d778583 = var_9d778583 * 2;
+                            var_9d778583 *= 2;
                         }
                         if (!is_false(vehicle.allowdeath) && var_9d778583 >= vehicle.health) {
                             occupants = vehicle getvehoccupants();

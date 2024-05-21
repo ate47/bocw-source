@@ -1099,12 +1099,13 @@ function function_61a9bc58() {
     self.var_6156031a = undefined;
 }
 
-// Namespace zm_lockdown_util/zm_lockdown_util
-// Params 4, eflags: 0x40
-// Checksum 0xfd408b62, Offset: 0x3b58
-// Size: 0x124
-function function_78eae22a(entity, stub, reason, ...) {
-    /#
+/#
+
+    // Namespace zm_lockdown_util/zm_lockdown_util
+    // Params 4, eflags: 0x40
+    // Checksum 0xfd408b62, Offset: 0x3b58
+    // Size: 0x124
+    function function_78eae22a(entity, stub, reason, ...) {
         if (getdvarint(#"hash_3ec02cda135af40f", 0) == 1 && getdvarint(#"recorder_enablerec", 0) == 1) {
             if (!isdefined(entity.var_d187874c)) {
                 entity.var_d187874c = [];
@@ -1113,15 +1114,13 @@ function function_78eae22a(entity, stub, reason, ...) {
             }
             entity.var_d187874c[entity.var_d187874c.size] = {#stub:stub, #reason:reason, #args:vararg};
         }
-    #/
-}
+    }
 
-// Namespace zm_lockdown_util/zm_lockdown_util
-// Params 1, eflags: 0x0
-// Checksum 0x3373920, Offset: 0x3c88
-// Size: 0x520
-function function_f3cff6ff(entity) {
-    /#
+    // Namespace zm_lockdown_util/zm_lockdown_util
+    // Params 1, eflags: 0x0
+    // Checksum 0x3373920, Offset: 0x3c88
+    // Size: 0x520
+    function function_f3cff6ff(entity) {
         if (!(getdvarint(#"hash_3ec02cda135af40f", 0) == 1 && getdvarint(#"recorder_enablerec", 0) == 1)) {
             return;
         }
@@ -1136,103 +1135,97 @@ function function_f3cff6ff(entity) {
             color = (1, 0, 0);
             switch (var_ca00d79a.reason) {
             case 0:
-                text = text + "<unknown string>";
+                text += "<unknown string>";
                 break;
             case 1:
-                text = text + "<unknown string>";
+                text += "<unknown string>";
                 break;
             case 2:
-                text = text + "<unknown string>";
+                text += "<unknown string>";
                 break;
             case 3:
-                text = text + "<unknown string>";
+                text += "<unknown string>";
                 break;
             case 4:
-                text = text + "<unknown string>";
+                text += "<unknown string>";
                 break;
             case 5:
-                text = text + "<unknown string>";
+                text += "<unknown string>";
                 break;
             case 6:
-                text = text + "<unknown string>";
+                text += "<unknown string>";
                 break;
             case 8:
-                text = text + "<unknown string>" + var_ca00d79a.args[0];
+                text += "<unknown string>" + var_ca00d79a.args[0];
                 break;
             case 9:
-                text = text + "<unknown string>";
+                text += "<unknown string>";
                 break;
             case 7:
-                text = text + "<unknown string>";
+                text += "<unknown string>";
                 break;
             case 11:
-                text = text + "<unknown string>" + var_ca00d79a.args[0];
+                text += "<unknown string>" + var_ca00d79a.args[0];
                 break;
             case 10:
-                text = text + "<unknown string>";
+                text += "<unknown string>";
                 color = (0, 1, 0);
                 break;
             case 13:
-                text = text + "<unknown string>";
+                text += "<unknown string>";
                 break;
             case 14:
-                text = text + "<unknown string>";
+                text += "<unknown string>";
                 recordstar(var_ca00d79a.args[0], (0, 1, 1));
                 recordstar(var_ca00d79a.args[1].origin, (1, 0, 1));
                 recordline(var_ca00d79a.args[1].origin, var_ca00d79a.args[1].origin + anglestoforward(var_ca00d79a.args[1].angles) * 10, (1, 1, 0));
                 break;
             case 15:
-                text = text + "<unknown string>";
+                text += "<unknown string>";
                 break;
             case 16:
-                text = text + "<unknown string>";
+                text += "<unknown string>";
                 break;
             case 17:
-                text = text + "<unknown string>";
+                text += "<unknown string>";
                 break;
             }
             recordstar(var_ca00d79a.stub.origin, (1, 1, 0));
             record3dtext(text, var_ca00d79a.stub.origin + (0, 0, 10), color);
         }
-    #/
-}
+    }
 
-// Namespace zm_lockdown_util/zm_lockdown_util
-// Params 3, eflags: 0x4
-// Checksum 0x2c7ea0f4, Offset: 0x41b0
-// Size: 0x100
-function private function_6351d1c3(entity, registerlotus_right, var_d05e79c8) {
-    /#
+    // Namespace zm_lockdown_util/zm_lockdown_util
+    // Params 3, eflags: 0x4
+    // Checksum 0x2c7ea0f4, Offset: 0x41b0
+    // Size: 0x100
+    function private function_6351d1c3(entity, registerlotus_right, var_d05e79c8) {
         foreach (stub in registerlotus_right) {
             dist = distancesquared(entity.origin, stub.origin);
             if (dist > sqr(var_d05e79c8)) {
                 function_78eae22a(entity, stub, 8, sqrt(dist));
             }
         }
-    #/
-}
+    }
 
-// Namespace zm_lockdown_util/zm_lockdown_util
-// Params 0, eflags: 0x4
-// Checksum 0x39b805b3, Offset: 0x42b8
-// Size: 0xa4
-function private function_946bb116() {
-    /#
-        add_custom_devgui_callback(&function_2765c63);
+    // Namespace zm_lockdown_util/zm_lockdown_util
+    // Params 0, eflags: 0x4
+    // Checksum 0x39b805b3, Offset: 0x42b8
+    // Size: 0xa4
+    function private function_946bb116() {
+        zm_devgui::add_custom_devgui_callback(&function_2765c63);
         adddebugcommand("<unknown string>");
         adddebugcommand("<unknown string>");
         adddebugcommand("<unknown string>");
         adddebugcommand("<unknown string>");
         adddebugcommand("<unknown string>");
-    #/
-}
+    }
 
-// Namespace zm_lockdown_util/zm_lockdown_util
-// Params 1, eflags: 0x4
-// Checksum 0x1dd97abf, Offset: 0x4368
-// Size: 0xaa
-function private function_2765c63(cmd) {
-    /#
+    // Namespace zm_lockdown_util/zm_lockdown_util
+    // Params 1, eflags: 0x4
+    // Checksum 0x1dd97abf, Offset: 0x4368
+    // Size: 0xaa
+    function private function_2765c63(cmd) {
         switch (cmd) {
         case #"hash_619d20b906a39230":
             level.var_cd20e41b = !is_true(level.var_cd20e41b);
@@ -1243,15 +1236,13 @@ function private function_2765c63(cmd) {
             }
             break;
         }
-    #/
-}
+    }
 
-// Namespace zm_lockdown_util/zm_lockdown_util
-// Params 0, eflags: 0x4
-// Checksum 0xe274bb4a, Offset: 0x4420
-// Size: 0x3cc
-function private function_6e1690d5() {
-    /#
+    // Namespace zm_lockdown_util/zm_lockdown_util
+    // Params 0, eflags: 0x4
+    // Checksum 0xe274bb4a, Offset: 0x4420
+    // Size: 0x3cc
+    function private function_6e1690d5() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         level endon(#"hash_52b90374b27fcb8a");
@@ -1286,6 +1277,6 @@ function private function_6e1690d5() {
                 circle(stub.origin, 16, (1, 0, 0), 0, 0, 10);
             }
         }
-    #/
-}
+    }
 
+#/

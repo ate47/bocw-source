@@ -483,15 +483,16 @@ function private function_ea7b33b6() {
     }
 }
 
-// Namespace namespace_6f90aa12/namespace_6f90aa12
-// Params 1, eflags: 0x4
-// Checksum 0xe73dcb84, Offset: 0x19c8
-// Size: 0x54
-function private function_73769410(message) {
-    /#
+/#
+
+    // Namespace namespace_6f90aa12/namespace_6f90aa12
+    // Params 1, eflags: 0x4
+    // Checksum 0xe73dcb84, Offset: 0x19c8
+    // Size: 0x54
+    function private function_73769410(message) {
         if (getdvarint(#"hash_3553283c6676bb54", 0)) {
             println("<unknown string>" + message);
         }
-    #/
-}
+    }
 
+#/

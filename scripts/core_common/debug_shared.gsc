@@ -6,40 +6,37 @@
 
 #namespace debug;
 
-// Namespace debug/debug_shared
-// Params 0, eflags: 0x5
-// Checksum 0x1635ef25, Offset: 0xa0
-// Size: 0x3c
-function private autoexec __init__system__() {
-    /#
-        register(#"debug", &preinit, undefined, undefined, undefined);
-    #/
-}
+/#
 
-// Namespace debug/debug_shared
-// Params 0, eflags: 0x4
-// Checksum 0xcb5ef124, Offset: 0xe8
-// Size: 0xac
-function private preinit() {
-    /#
+    // Namespace debug/debug_shared
+    // Params 0, eflags: 0x5
+    // Checksum 0x1635ef25, Offset: 0xa0
+    // Size: 0x3c
+    function private autoexec __init__system__() {
+        system::register(#"debug", &preinit, undefined, undefined, undefined);
+    }
+
+    // Namespace debug/debug_shared
+    // Params 0, eflags: 0x4
+    // Checksum 0xcb5ef124, Offset: 0xe8
+    // Size: 0xac
+    function private preinit() {
         level thread debug_draw_tuning_sphere();
         level thread devgui_debug_key_value();
         level thread function_e648ca7c();
-        on_loadout(&on_loadout);
+        callback::on_loadout(&on_loadout);
         /#
             if (getdvarint(#"hash_2bf322fc226fa167", 0)) {
                 adddebugcommand("<unknown string>");
             }
         #/
-    #/
-}
+    }
 
-// Namespace debug/debug_shared
-// Params 0, eflags: 0x4
-// Checksum 0x7b863afa, Offset: 0x1a0
-// Size: 0x23a
-function private function_ddca74dd() {
-    /#
+    // Namespace debug/debug_shared
+    // Params 0, eflags: 0x4
+    // Checksum 0x7b863afa, Offset: 0x1a0
+    // Size: 0x23a
+    function private function_ddca74dd() {
         weaponname = getdvar(#"hash_136a06446fceeaa5", "<unknown string>");
         if (weaponname != "<unknown string>") {
             waitframe(1);
@@ -68,25 +65,21 @@ function private function_ddca74dd() {
                 self.spawnweapon = weapon;
             }
         }
-    #/
-}
+    }
 
-// Namespace debug/debug_shared
-// Params 0, eflags: 0x4
-// Checksum 0xa270e193, Offset: 0x3e8
-// Size: 0x1c
-function private on_loadout() {
-    /#
+    // Namespace debug/debug_shared
+    // Params 0, eflags: 0x4
+    // Checksum 0xa270e193, Offset: 0x3e8
+    // Size: 0x1c
+    function private on_loadout() {
         self function_ddca74dd();
-    #/
-}
+    }
 
-// Namespace debug/debug_shared
-// Params 0, eflags: 0x0
-// Checksum 0xd76f282e, Offset: 0x410
-// Size: 0x3f0
-function devgui_debug_key_value() {
-    /#
+    // Namespace debug/debug_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xd76f282e, Offset: 0x410
+    // Size: 0x3f0
+    function devgui_debug_key_value() {
         a_keys = array("<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>");
         setdvar(#"debug_key_value", 0);
         setdvar(#"debug_key_value_dist", 2000);
@@ -95,10 +88,10 @@ function devgui_debug_key_value() {
         foreach (str_key in a_keys) {
             adddebugcommand("<unknown string>" + str_key + "<unknown string>" + str_key + "<unknown string>");
         }
-        while (!exists("<unknown string>")) {
-            wait_network_frame();
+        while (!flag::exists("<unknown string>")) {
+            util::wait_network_frame();
         }
-        level wait_till("<unknown string>");
+        level flag::wait_till("<unknown string>");
         while (true) {
             debug_key_value = getdvar(#"debug_key_value", 0);
             if (debug_key_value != 0) {
@@ -119,15 +112,13 @@ function devgui_debug_key_value() {
             }
             wait(randomfloatrange(0.133333, 0.266667));
         }
-    #/
-}
+    }
 
-// Namespace debug/debug_shared
-// Params 0, eflags: 0x0
-// Checksum 0x59c2d001, Offset: 0x808
-// Size: 0x228
-function debug_draw_tuning_sphere() {
-    /#
+    // Namespace debug/debug_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x59c2d001, Offset: 0x808
+    // Size: 0x228
+    function debug_draw_tuning_sphere() {
         n_sphere_radius = 0;
         v_text_position = (0, 0, 0);
         n_text_scale = 1;
@@ -149,15 +140,13 @@ function debug_draw_tuning_sphere() {
             }
             wait(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug_shared
-// Params 3, eflags: 0x0
-// Checksum 0xdd6f6b8, Offset: 0xa38
-// Size: 0x14e
-function debug_key_value(str_key, n_time, n_scale) {
-    /#
+    // Namespace debug/debug_shared
+    // Params 3, eflags: 0x0
+    // Checksum 0xdd6f6b8, Offset: 0xa38
+    // Size: 0x14e
+    function debug_key_value(str_key, n_time, n_scale) {
         if (!isdefined(n_scale)) {
             n_scale = 1;
         }
@@ -168,7 +157,7 @@ function debug_key_value(str_key, n_time, n_scale) {
             if (isdefined(n_time)) {
                 __s = spawnstruct();
                 __s endon(#"timeout");
-                __s delay_notify(n_time, "<unknown string>");
+                __s util::delay_notify(n_time, "<unknown string>");
             }
             while (true) {
                 value = self.(str_key);
@@ -178,123 +167,105 @@ function debug_key_value(str_key, n_time, n_scale) {
                 waitframe(1);
             }
         }
-    #/
-}
+    }
 
-// Namespace debug/debug_shared
-// Params 4, eflags: 0x0
-// Checksum 0x610425e0, Offset: 0xb90
-// Size: 0x62
-function drawdebuglineinternal(frompoint, topoint, color, durationframes) {
-    /#
-        for (i = 0; i < durationframes; i++) {
+    // Namespace debug/debug_shared
+    // Params 4, eflags: 0x0
+    // Checksum 0x610425e0, Offset: 0xb90
+    // Size: 0x62
+    function drawdebuglineinternal(frompoint, topoint, color, durationframes) {
+                for (i = 0; i < durationframes; i++) {
             line(frompoint, topoint, color);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug_shared
-// Params 4, eflags: 0x0
-// Checksum 0xd5a1a6a4, Offset: 0xc00
-// Size: 0x8a
-function drawdebugenttoentinternal(ent1, ent2, color, durationframes) {
-    /#
-        for (i = 0; i < durationframes; i++) {
+    // Namespace debug/debug_shared
+    // Params 4, eflags: 0x0
+    // Checksum 0xd5a1a6a4, Offset: 0xc00
+    // Size: 0x8a
+    function drawdebugenttoentinternal(ent1, ent2, color, durationframes) {
+                for (i = 0; i < durationframes; i++) {
             if (!isdefined(ent1) || !isdefined(ent2)) {
                 return;
             }
             line(ent1.origin, ent2.origin, color);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug_shared
-// Params 4, eflags: 0x0
-// Checksum 0x27404a02, Offset: 0xc98
-// Size: 0x44
-function drawdebugline(frompoint, topoint, color, durationframes) {
-    /#
+    // Namespace debug/debug_shared
+    // Params 4, eflags: 0x0
+    // Checksum 0x27404a02, Offset: 0xc98
+    // Size: 0x44
+    function drawdebugline(frompoint, topoint, color, durationframes) {
         thread drawdebuglineinternal(frompoint, topoint, color, durationframes);
-    #/
-}
+    }
 
-// Namespace debug/debug_shared
-// Params 4, eflags: 0x0
-// Checksum 0x5d4e84f8, Offset: 0xce8
-// Size: 0x44
-function drawdebuglineenttoent(ent1, ent2, color, durationframes) {
-    /#
+    // Namespace debug/debug_shared
+    // Params 4, eflags: 0x0
+    // Checksum 0x5d4e84f8, Offset: 0xce8
+    // Size: 0x44
+    function drawdebuglineenttoent(ent1, ent2, color, durationframes) {
         thread drawdebugenttoentinternal(ent1, ent2, color, durationframes);
-    #/
-}
+    }
 
-// Namespace debug/debug_shared
-// Params 0, eflags: 0x0
-// Checksum 0xaf3ff78f, Offset: 0xd38
-// Size: 0x5c
-function function_e648ca7c() {
-    /#
+    // Namespace debug/debug_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xaf3ff78f, Offset: 0xd38
+    // Size: 0x5c
+    function function_e648ca7c() {
         setdvar(#"hash_b8d10baa344fcbd", 0);
         function_cd140ee9(#"hash_b8d10baa344fcbd", &function_68f58e51);
-    #/
-}
+    }
 
-// Namespace debug/debug_shared
-// Params 1, eflags: 0x0
-// Checksum 0x6cea3fb5, Offset: 0xda0
-// Size: 0x34
-function function_68f58e51(params) {
-    /#
+    // Namespace debug/debug_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x6cea3fb5, Offset: 0xda0
+    // Size: 0x34
+    function function_68f58e51(params) {
         level.var_77e1430c = params.value;
         function_c0767f67();
-    #/
-}
+    }
 
-// Namespace debug/debug_shared
-// Params 0, eflags: 0x0
-// Checksum 0xe4149c07, Offset: 0xde0
-// Size: 0x4c
-function function_1b531660() {
-    /#
+    // Namespace debug/debug_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xe4149c07, Offset: 0xde0
+    // Size: 0x4c
+    function function_1b531660() {
         if (!isdefined(level.var_77e1430c)) {
             level.var_77e1430c = 0;
         }
         level.var_77e1430c = !level.var_77e1430c;
         function_c0767f67();
-    #/
-}
+    }
 
-// Namespace debug/debug_shared
-// Params 0, eflags: 0x0
-// Checksum 0xb5d5784e, Offset: 0xe38
-// Size: 0x13c
-function function_c0767f67() {
-    /#
+    // Namespace debug/debug_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xb5d5784e, Offset: 0xe38
+    // Size: 0x13c
+    function function_c0767f67() {
         if (!isdefined(level.var_77e1430c)) {
             level.var_77e1430c = 0;
         }
         if (level.var_77e1430c) {
-            on_player_damage(&function_e7321799);
-            on_actor_damage(&function_e7321799);
-            on_vehicle_damage(&function_e7321799);
-            function_9d78f548(&function_e7321799);
+            callback::on_player_damage(&function_e7321799);
+            callback::on_actor_damage(&function_e7321799);
+            callback::on_vehicle_damage(&function_e7321799);
+            callback::function_9d78f548(&function_e7321799);
             return;
         }
-        remove_on_player_damage(&function_e7321799);
-        remove_on_actor_damage(&function_e7321799);
-        remove_on_vehicle_damage(&function_e7321799);
-        function_f125b93a(&function_e7321799);
-    #/
-}
+        callback::remove_on_player_damage(&function_e7321799);
+        callback::remove_on_actor_damage(&function_e7321799);
+        callback::remove_on_vehicle_damage(&function_e7321799);
+        callback::function_f125b93a(&function_e7321799);
+    }
 
-// Namespace debug/debug_shared
-// Params 1, eflags: 0x0
-// Checksum 0x95e2942c, Offset: 0xf80
-// Size: 0x10c
-function function_e7321799(params) {
-    /#
+    // Namespace debug/debug_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x95e2942c, Offset: 0xf80
+    // Size: 0x10c
+    function function_e7321799(params) {
         damage = params.idamage;
         location = params.vpoint;
         target = self;
@@ -305,23 +276,21 @@ function function_e7321799(params) {
         if (damage) {
             thread function_2cde0af9("<unknown string>" + damage, (1, 1, 1), location, (randomfloatrange(-1, 1), randomfloatrange(-1, 1), 2), 30);
         }
-    #/
-}
+    }
 
-// Namespace debug/debug_shared
-// Params 5, eflags: 0x0
-// Checksum 0xb3984721, Offset: 0x1098
-// Size: 0xbe
-function function_2cde0af9(text, color, start, velocity, frames) {
-    /#
+    // Namespace debug/debug_shared
+    // Params 5, eflags: 0x0
+    // Checksum 0xb3984721, Offset: 0x1098
+    // Size: 0xbe
+    function function_2cde0af9(text, color, start, velocity, frames) {
         location = start;
         alpha = 1;
         for (i = 0; i < frames; i++) {
             print3d(location, text, color, alpha, 0.6, 1);
-            location = location + velocity;
-            alpha = alpha - 1 / frames * 2;
+            location += velocity;
+            alpha -= 1 / frames * 2;
             waitframe(1);
         }
-    #/
-}
+    }
 
+#/

@@ -389,7 +389,7 @@ function function_381f09f3() {
             if (currenthealth + regen_amount > self.var_66cb03ad) {
                 regen_amount = self.var_66cb03ad - currenthealth;
             }
-            self.health = self.health + regen_amount;
+            self.health += regen_amount;
             if (!self scene::is_igc_active()) {
                 self clientfield::increment_to_player("fx_heal_aoe_player_clientfield", 1);
             }

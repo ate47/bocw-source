@@ -389,7 +389,7 @@ function function_3170d645(projectile, trophy) {
             if (!isdefined(useobj) || !_the_root_zurich_spawners(useobj, trophy)) {
                 continue;
             }
-            var_2e36557f = var_2e36557f | (useobj.userate && (useobj gameobjects::function_4b64b7fd(player.team) || useobj.interactteam === #"hash_33c49a99551acae7"));
+            var_2e36557f |= useobj.userate && (useobj gameobjects::function_4b64b7fd(player.team) || useobj.interactteam === #"hash_33c49a99551acae7");
             if (var_2e36557f) {
                 break;
             }
@@ -405,7 +405,7 @@ function function_3170d645(projectile, trophy) {
             if (!isdefined(useobj) || !_the_root_zurich_spawners(useobj, trophy)) {
                 continue;
             }
-            var_2e36557f = var_2e36557f | (useobj.userate && (useobj gameobjects::function_4b64b7fd(player.team) || useobj.interactteam === #"hash_33c49a99551acae7"));
+            var_2e36557f |= useobj.userate && (useobj gameobjects::function_4b64b7fd(player.team) || useobj.interactteam === #"hash_33c49a99551acae7");
             if (var_2e36557f) {
                 break;
             }
@@ -420,7 +420,7 @@ function function_3170d645(projectile, trophy) {
             if (!isdefined(useobj) || !_the_root_zurich_spawners(useobj, trophy)) {
                 continue;
             }
-            var_2e36557f = var_2e36557f | (useobj.userate && (useobj gameobjects::function_4b64b7fd(player.team) || useobj.interactteam === #"hash_33c49a99551acae7"));
+            var_2e36557f |= useobj.userate && (useobj gameobjects::function_4b64b7fd(player.team) || useobj.interactteam === #"hash_33c49a99551acae7");
             if (var_2e36557f) {
                 break;
             }
@@ -519,7 +519,7 @@ function watchtrophysystemdamage(watcher) {
         if (type == "MOD_MELEE" || weapon.isemp || weapon.destroysequipment) {
             self.damagetaken = damagemax;
         } else {
-            self.damagetaken = self.damagetaken + damage;
+            self.damagetaken += damage;
         }
         if (self.damagetaken >= damagemax) {
             if (util::function_fbce7263(attacker.team, self.team)) {

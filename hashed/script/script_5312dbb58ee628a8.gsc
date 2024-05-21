@@ -238,7 +238,7 @@ function function_3be2d17f(watcher, player) {
     }
     self waittill(#"stationary");
     self deployable::function_dd266e08(player);
-    self.origin = self.origin + (0, 0, 2);
+    self.origin += (0, 0, 2);
     player onplaceturret(self);
     killstreakslot = self.vehicle.killstreakslot;
     usedtime = player.pers[#"hash_55c15f9af76e4e68"][killstreakslot];
@@ -512,7 +512,7 @@ function ondamage(*einflictor, eattacker, idamage, idflags, smeansofdeath, weapo
     if (!isdefined(var_b8d8d7ef)) {
         var_b8d8d7ef = killstreaks::get_old_damage(psoffsettime, vsurfacenormal, partname, damagefromunderneath, 1);
     }
-    self.damagetaken = self.damagetaken + var_b8d8d7ef;
+    self.damagetaken += var_b8d8d7ef;
     return var_b8d8d7ef;
 }
 
@@ -1008,7 +1008,7 @@ function function_16ccb771() {
         self vehicle_ai::fire_for_rounds(self.turret.var_83891ae2, 0, self.e_current_target);
         if (isdefined(self.e_current_target)) {
             var_e30e452 = function_a13e4d16(self.e_current_target);
-            var_e30e452.var_d8796b87 = var_e30e452.var_d8796b87 + 1;
+            var_e30e452.var_d8796b87 += 1;
             var_e30e452.var_fdb2d6c1 = gettime();
             /#
                 var_f10e8561 = self.e_current_target getentitynumber();
@@ -1159,7 +1159,7 @@ function function_31477582() {
         if (trace[#"fraction"] > 0) {
             new_origin = trace[#"position"];
             self.origin = (new_origin[0], new_origin[1], self.origin[2] - min(max_delta, self.origin[2] - new_origin[2]));
-            max_delta = max_delta + var_463c449d;
+            max_delta += var_463c449d;
             waitframe(1);
             continue;
         }
@@ -1337,12 +1337,13 @@ function function_5a5ec846(e_target) {
     }
 }
 
-// Namespace missile_turret/namespace_1b611bca
-// Params 2, eflags: 0x0
-// Checksum 0xe97886b0, Offset: 0x5d58
-// Size: 0xac
-function function_600ab97b(str_text, var_3f1d5c63) {
-    /#
+/#
+
+    // Namespace missile_turret/namespace_1b611bca
+    // Params 2, eflags: 0x0
+    // Checksum 0xe97886b0, Offset: 0x5d58
+    // Size: 0xac
+    function function_600ab97b(str_text, var_3f1d5c63) {
         if (!isdefined(var_3f1d5c63)) {
             var_3f1d5c63 = 2;
         }
@@ -1350,21 +1351,19 @@ function function_600ab97b(str_text, var_3f1d5c63) {
         if (getdvarint(#"hash_7a06f4366ad184cb", 0) >= var_3f1d5c63) {
             println("<unknown string>" + self getentitynumber() + "<unknown string>" + str_text);
         }
-    #/
-}
+    }
 
-// Namespace missile_turret/namespace_1b611bca
-// Params 0, eflags: 0x0
-// Checksum 0x886491bf, Offset: 0x5e10
-// Size: 0x192
-function function_bc71337c() {
-    /#
+    // Namespace missile_turret/namespace_1b611bca
+    // Params 0, eflags: 0x0
+    // Checksum 0x886491bf, Offset: 0x5e10
+    // Size: 0x192
+    function function_bc71337c() {
         self endon(#"death", #"end_turret_scanning");
         if (getdvarint(#"hash_7a06f4366ad184cb", 0) >= 1) {
             var_4c7bb5d2 = 20;
             for (var_d6f7b785 = 0; ; var_d6f7b785++) {
                 if (var_d6f7b785 % var_4c7bb5d2 == 0) {
-                    drawcylinder(self.origin, sqrt(self.turret.var_ddf7efa7), 100000, float(function_60d95f53()) / 1000 * var_4c7bb5d2, undefined, (1, 0.85, 0));
+                    util::drawcylinder(self.origin, sqrt(self.turret.var_ddf7efa7), 100000, float(function_60d95f53()) / 1000 * var_4c7bb5d2, undefined, (1, 0.85, 0));
                 }
                 if (isdefined(self.var_c27dadc8)) {
                     line(self.origin, function_b098be17(self.var_c27dadc8), (1, 0, 0));
@@ -1375,6 +1374,6 @@ function function_bc71337c() {
                 waitframe(1);
             }
         }
-    #/
-}
+    }
 
+#/

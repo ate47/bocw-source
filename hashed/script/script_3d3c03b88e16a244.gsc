@@ -14,13 +14,17 @@ function autoexec init() {
     spawner::add_archetype_spawn_function(#"hash_7c0d83ac1e845ac2", &function_f9fa2bbb);
 }
 
-// Namespace namespace_baa4b777/namespace_a84b7a30
-// Params 0, eflags: 0x4
-// Checksum 0x9944b7af, Offset: 0xe8
-// Size: 0x24
-function private function_acf96b05() {
-    assert(isdefined(self.ai));
-}
+/#
+
+    // Namespace namespace_baa4b777/namespace_a84b7a30
+    // Params 0, eflags: 0x4
+    // Checksum 0x9944b7af, Offset: 0xe8
+    // Size: 0x24
+    function private function_acf96b05() {
+        assert(isdefined(self.ai));
+    }
+
+#/
 
 // Namespace namespace_baa4b777/namespace_a84b7a30
 // Params 0, eflags: 0x6 linked
@@ -77,15 +81,16 @@ function private function_fa765ef3() {
     }
 }
 
-// Namespace namespace_baa4b777/namespace_a84b7a30
-// Params 1, eflags: 0x4
-// Checksum 0x65f2663f, Offset: 0x270
-// Size: 0x54
-function private function_ee21651d(message) {
-    /#
+/#
+
+    // Namespace namespace_baa4b777/namespace_a84b7a30
+    // Params 1, eflags: 0x4
+    // Checksum 0x65f2663f, Offset: 0x270
+    // Size: 0x54
+    function private function_ee21651d(message) {
         if (getdvarint(#"hash_71bbda417e2a07e9", 0)) {
             println("<unknown string>" + message);
         }
-    #/
-}
+    }
 
+#/

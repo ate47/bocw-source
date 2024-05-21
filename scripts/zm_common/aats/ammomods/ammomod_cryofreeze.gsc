@@ -145,7 +145,7 @@ function function_f00409f3(attacker, *mod, weapon, var_e1ec1eee = 0, tier = 0) {
         if (tier >= 1) {
             multiplier = 3;
         }
-        self.var_d70e35fb = self.var_d70e35fb - var_fa87e189 * multiplier;
+        self.var_d70e35fb -= var_fa87e189 * multiplier;
         if (self.var_d70e35fb <= 0.4) {
             self.var_d70e35fb = 0.4;
         }
@@ -187,7 +187,7 @@ function function_76d7d189(*e_attacker, *weapon, tier = 0) {
     }
     for (i = 0; i < 8; i++) {
         wait(var_b543d2cf / 8);
-        self.var_d70e35fb = self.var_d70e35fb + 0.125;
+        self.var_d70e35fb += 0.125;
         if (self.var_d70e35fb >= 1) {
             break;
         }

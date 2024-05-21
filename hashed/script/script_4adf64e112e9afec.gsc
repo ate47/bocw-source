@@ -1017,7 +1017,7 @@ function showplayerhint(localclientnum, *oldval, newval, *bnewent, *binitialsnap
     if (!function_f457ec42(fieldname)) {
         return;
     }
-    self.doa.var_25f4de97 = self.doa.var_25f4de97 | 1 << bwastimejump;
+    self.doa.var_25f4de97 |= 1 << bwastimejump;
     msg = function_3d3e551(bwastimejump);
     if (isdefined(msg)) {
         self thread message(fieldname, msg);
@@ -1064,7 +1064,7 @@ function function_b5afa57f(localclientnum, *oldval, *newval, *bnewent, *binitial
     } else {
         value = is_true(self.doa.infps) || level.doa.world_state >= 4 || isdefined(level.doa.var_182fb75a);
         if (level.doa.var_938e4f08 != 0) {
-            value = value & level.doa.var_938e4f08 == 8;
+            value &= level.doa.var_938e4f08 == 8;
         }
     }
     function_9c238883(self getentitynumber(), bwastimejump, value);

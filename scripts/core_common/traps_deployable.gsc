@@ -781,7 +781,7 @@ function function_59a79a68(var_3af54106, *damage_callback, destroyed_callback, e
             }
             self challenges::trackassists(attacker, weapon_damage, 0);
         }
-        self.damagetaken = self.damagetaken + weapon_damage;
+        self.damagetaken += weapon_damage;
         if (!issentient(self) && weapon_damage > 0) {
             self.attacker = attacker;
         }
@@ -989,7 +989,7 @@ function turret_activate(var_3af54106, owner, team, vehicle, origin, angles, par
         if (!isdefined(level.var_c70c6768)) {
             level.var_c70c6768 = 0;
         } else {
-            level.var_c70c6768 = level.var_c70c6768 + 1;
+            level.var_c70c6768 += 1;
         }
         vehicle.turret_id = string(level.var_c70c6768);
         badplace_cylinder("turret_bad_place_" + vehicle.turret_id, 0, vehicle.origin, vehicle.settings.var_9493f6dc, vehicle.settings.var_c9c01aa4, #"axis", #"allies", #"neutral");
@@ -1218,28 +1218,29 @@ function function_f6ea9af9(flag) {
     clean_traps(0, undefined, flag);
 }
 
-// Namespace traps_deployable/traps_deployable
-// Params 1, eflags: 0x0
-// Checksum 0x2be54c9d, Offset: 0x3fa8
-// Size: 0x2c
-function printerror(message) {
-    println("<unknown string>", message);
-}
+/#
 
-// Namespace traps_deployable/traps_deployable
-// Params 1, eflags: 0x0
-// Checksum 0x5dd660cb, Offset: 0x3fe0
-// Size: 0x2c
-function printinfo(message) {
-    println("<unknown string>", message);
-}
+    // Namespace traps_deployable/traps_deployable
+    // Params 1, eflags: 0x0
+    // Checksum 0x2be54c9d, Offset: 0x3fa8
+    // Size: 0x2c
+    function printerror(message) {
+        println("<unknown string>", message);
+    }
 
-// Namespace traps_deployable/traps_deployable
-// Params 0, eflags: 0x0
-// Checksum 0x341bedff, Offset: 0x4018
-// Size: 0x134
-function function_ef942626() {
-    /#
+    // Namespace traps_deployable/traps_deployable
+    // Params 1, eflags: 0x0
+    // Checksum 0x5dd660cb, Offset: 0x3fe0
+    // Size: 0x2c
+    function printinfo(message) {
+        println("<unknown string>", message);
+    }
+
+    // Namespace traps_deployable/traps_deployable
+    // Params 0, eflags: 0x0
+    // Checksum 0x341bedff, Offset: 0x4018
+    // Size: 0x134
+    function function_ef942626() {
         if (is_true(level.trapddebug)) {
             var_a8539bf6 = self;
             if (!isdefined(level.var_d56d2937)) {
@@ -1255,15 +1256,13 @@ function function_ef942626() {
             }
             level.var_d56d2937.var_59eaf9e1[level.var_d56d2937.var_59eaf9e1.size] = var_a8539bf6;
         }
-    #/
-}
+    }
 
-// Namespace traps_deployable/traps_deployable
-// Params 0, eflags: 0x0
-// Checksum 0x921b8cb, Offset: 0x4158
-// Size: 0xc8
-function function_3b7cb719() {
-    /#
+    // Namespace traps_deployable/traps_deployable
+    // Params 0, eflags: 0x0
+    // Checksum 0x921b8cb, Offset: 0x4158
+    // Size: 0xc8
+    function function_3b7cb719() {
         level.trapddebug = getdvarint(#"scr_trapd_debug", 0);
         while (true) {
             trapddebug = level.trapddebug;
@@ -1275,30 +1274,28 @@ function function_3b7cb719() {
             }
             wait(1);
         }
-    #/
-}
+    }
 
-// Namespace traps_deployable/traps_deployable
-// Params 0, eflags: 0x0
-// Checksum 0xcc1bd9f8, Offset: 0x4228
-// Size: 0x19c
-function destroy_traps() {
-    /#
+    // Namespace traps_deployable/traps_deployable
+    // Params 0, eflags: 0x0
+    // Checksum 0xcc1bd9f8, Offset: 0x4228
+    // Size: 0x19c
+    function destroy_traps() {
         if (isdefined(level.var_d56d2937) && isdefined(level.var_d56d2937.var_59eaf9e1)) {
             var_59eaf9e1 = level.var_d56d2937.var_59eaf9e1;
             for (i = var_59eaf9e1.size - 1; i >= 0; i--) {
                 if (isdefined(var_59eaf9e1[i])) {
                     var_5e63b00d = var_59eaf9e1[i];
                     if (isdefined(var_5e63b00d.script_flag_true)) {
-                        tokens = create_flags_and_return_tokens(var_5e63b00d.script_flag_true);
+                        tokens = util::create_flags_and_return_tokens(var_5e63b00d.script_flag_true);
                         for (j = 0; j < tokens.size; j++) {
-                            level clear(tokens[j]);
+                            level flag::clear(tokens[j]);
                         }
                     }
                     if (isdefined(var_5e63b00d.script_flag_false)) {
-                        tokens = create_flags_and_return_tokens(var_5e63b00d.script_flag_false);
+                        tokens = util::create_flags_and_return_tokens(var_5e63b00d.script_flag_false);
                         for (j = 0; j < tokens.size; j++) {
-                            level clear(tokens[j]);
+                            level flag::clear(tokens[j]);
                         }
                     }
                 }
@@ -1306,15 +1303,13 @@ function destroy_traps() {
             }
         }
         clean_traps(1);
-    #/
-}
+    }
 
-// Namespace traps_deployable/traps_deployable
-// Params 0, eflags: 0x0
-// Checksum 0x80c0ccbe, Offset: 0x43d0
-// Size: 0x10c
-function debug_init() {
-    /#
+    // Namespace traps_deployable/traps_deployable
+    // Params 0, eflags: 0x0
+    // Checksum 0x80c0ccbe, Offset: 0x43d0
+    // Size: 0x10c
+    function debug_init() {
         thread function_3b7cb719();
         while (true) {
             debugint = getdvarint(#"scr_trapd_int", 0);
@@ -1333,6 +1328,6 @@ function debug_init() {
             wait(1);
         }
         thread debug_init();
-    #/
-}
+    }
 
+#/

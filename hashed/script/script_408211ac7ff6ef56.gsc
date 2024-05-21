@@ -46,7 +46,7 @@ function function_350c0e2b(index, origin, angles, var_98c867cd) {
         } else {
             yaw = 25;
         }
-        yaw = yaw + randomfloatrange(-10, 10);
+        yaw += randomfloatrange(-10, 10);
         dist = 35 + index / 2 * 25 + randomfloatrange(-5, 5);
         return function_9345a4f7(var_98c867cd, index, origin, angles, undefined, yaw, dist, 1);
     }
@@ -122,7 +122,7 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
         #/
         if (traceresults[#"fraction"] < 1) {
             origin = traceresults[#"position"];
-            origin = origin + dir * var_3512e170;
+            origin += dir * var_3512e170;
         } else {
             origin = traceend - var_ef1cacd6;
         }
@@ -152,14 +152,14 @@ function function_9345a4f7(var_98c867cd, index, baseorigin, baseangles, ignoreen
             origin = traceresults[#"position"] + (0, 0, var_7def9f0);
             zdiff = tracestart[2] - origin[2];
             if (zdiff > 150) {
-                origin = origin + 0.06 * (0, 0, zdiff);
+                origin += 0.06 * (0, 0, zdiff);
             }
         } else {
             origin = (0, 0, 0);
             noground = 1;
         }
     } else {
-        origin = origin + (0, 0, var_7def9f0);
+        origin += (0, 0, var_7def9f0);
     }
     if (var_98c867cd == 4) {
         start_origin = var_118985a1;
@@ -233,12 +233,13 @@ function function_fb72164f(var_98c867cd, index, baseorigin, baseangles, ignoreen
     return {#start_origin:start_origin, #start_angles:baseangles, #end_origin:origin, #end_angles:baseangles};
 }
 
-// Namespace namespace_b637a3ed/namespace_b637a3ed
-// Params 5, eflags: 0x0
-// Checksum 0xe79f2dc8, Offset: 0x1168
-// Size: 0x214
-function function_7289b47(index, name, start, end, traceresults) {
-    /#
+/#
+
+    // Namespace namespace_b637a3ed/namespace_b637a3ed
+    // Params 5, eflags: 0x0
+    // Checksum 0xe79f2dc8, Offset: 0x1168
+    // Size: 0x214
+    function function_7289b47(index, name, start, end, traceresults) {
         var_e011538a = 2000;
         if (traceresults[#"fraction"] < 1) {
             line(start, traceresults[#"position"], (1, 0, 0), 1, 0, var_e011538a);
@@ -253,15 +254,13 @@ function function_7289b47(index, name, start, end, traceresults) {
             return;
         }
         line(start, end, (1, 1, 1), 1, 0, var_e011538a);
-    #/
-}
+    }
 
-// Namespace namespace_b637a3ed/namespace_b637a3ed
-// Params 1, eflags: 0x0
-// Checksum 0x6402b234, Offset: 0x1388
-// Size: 0xba
-function function_f6480a82(time) {
-    /#
+    // Namespace namespace_b637a3ed/namespace_b637a3ed
+    // Params 1, eflags: 0x0
+    // Checksum 0x6402b234, Offset: 0x1388
+    // Size: 0xba
+    function function_f6480a82(time) {
         var_e011538a = 2000;
         self endon(#"death");
         last_origin = self.origin;
@@ -271,6 +270,6 @@ function function_f6480a82(time) {
             line(last_origin, self.origin, (0, 1, 0), 1, 1, var_e011538a);
             last_origin = self.origin;
         }
-    #/
-}
+    }
 
+#/

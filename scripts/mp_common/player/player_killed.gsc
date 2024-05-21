@@ -2100,10 +2100,10 @@ function private start_explosive_ragdoll(dir, weapon) {
         }
     } else {
         if (math::cointoss()) {
-            x = x * -1;
+            x *= -1;
         }
         if (math::cointoss()) {
-            y = y * -1;
+            y *= -1;
         }
     }
     self startragdoll();
@@ -2277,7 +2277,7 @@ function updatekillstreak(einflictor, attacker, weapon) {
         profileNamedStart(#"");
         if (!isdefined(einflictor) || !isdefined(einflictor.requireddeathcount) || attacker.deathcount == einflictor.requireddeathcount) {
             shouldgivekillstreak = killstreaks::should_give_killstreak(weapon);
-            shouldgivekillstreak = shouldgivekillstreak & !attacker isinvehicle();
+            shouldgivekillstreak &= !attacker isinvehicle();
             if (shouldgivekillstreak) {
                 attacker killstreaks::add_to_killstreak_count(weapon);
             }

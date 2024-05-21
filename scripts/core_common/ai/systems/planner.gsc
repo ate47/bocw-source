@@ -412,7 +412,7 @@ function createplanner(name) {
 function createpostcondition(functionname, constants) {
     assert(ishash(functionname));
     assert(!isdefined(constants) || isarray(constants));
-    assert(isfunctionptr(getplannerapifunction(functionname)), "<unknown string>" + function_9e72a96(functionname) + "<unknown string>");
+    assert(isfunctionptr(plannerutility::getplannerapifunction(functionname)), "<unknown string>" + function_9e72a96(functionname) + "<unknown string>");
     node = spawnstruct();
     node.type = "postcondition";
     node.api = functionname;
@@ -427,7 +427,7 @@ function createpostcondition(functionname, constants) {
 function createprecondition(functionname, constants) {
     assert(ishash(functionname));
     assert(!isdefined(constants) || isarray(constants));
-    assert(isfunctionptr(getplannerapifunction(functionname)), "<unknown string>" + function_9e72a96(functionname) + "<unknown string>");
+    assert(isfunctionptr(plannerutility::getplannerapifunction(functionname)), "<unknown string>" + function_9e72a96(functionname) + "<unknown string>");
     node = spawnstruct();
     node.type = "precondition";
     node.api = functionname;
@@ -539,27 +539,26 @@ function plan(planner, blackboardvalues, maxframetime = 3, starttime = undefined
     return planner.plan;
 }
 
-// Namespace planner/planner
-// Params 2, eflags: 0x0
-// Checksum 0x1692c516, Offset: 0x20f8
-// Size: 0xdc
-function printplanner(planner, filename) {
-    /#
+/#
+
+    // Namespace planner/planner
+    // Params 2, eflags: 0x0
+    // Checksum 0x1692c516, Offset: 0x20f8
+    // Size: 0xdc
+    function printplanner(planner, filename) {
         assert(isstruct(planner));
         file = openfile(filename, "<unknown string>");
         printid = randomint(2147483647);
         _printplannernode(file, planner, 0, printid);
         _printclearprintid(planner);
         closefile(file);
-    #/
-}
+    }
 
-// Namespace planner/planner
-// Params 1, eflags: 0x4
-// Checksum 0x41dd3b30, Offset: 0x21e0
-// Size: 0x8c
-function private _printclearprintid(plannernode) {
-    /#
+    // Namespace planner/planner
+    // Params 1, eflags: 0x4
+    // Checksum 0x41dd3b30, Offset: 0x21e0
+    // Size: 0x8c
+    function private _printclearprintid(plannernode) {
         plannernode.printid = undefined;
         if (isdefined(plannernode.children)) {
             for (index = 0; index < plannernode.children.size; index++) {
@@ -568,63 +567,59 @@ function private _printclearprintid(plannernode) {
                 }
             }
         }
-    #/
-}
+    }
 
-// Namespace planner/planner
-// Params 1, eflags: 0x4
-// Checksum 0x87d7b86a, Offset: 0x2278
-// Size: 0x24e
-function private function_3af5bab0(node) {
-    /#
+    // Namespace planner/planner
+    // Params 1, eflags: 0x4
+    // Checksum 0x87d7b86a, Offset: 0x2278
+    // Size: 0x24e
+    function private function_3af5bab0(node) {
         text = node.type;
         if (isdefined(node.name)) {
-            text = text + "<unknown string>" + node.name;
+            text += "<unknown string>" + node.name;
         }
         if (isdefined(node.api)) {
-            text = text + "<unknown string>" + node.api;
+            text += "<unknown string>" + node.api;
         }
         if (isdefined(node.constants)) {
-            text = text + "<unknown string>";
+            text += "<unknown string>";
             first = 1;
             foreach (key, value in node.constants) {
                 if (!first) {
-                    text = text + "<unknown string>";
+                    text += "<unknown string>";
                 }
                 if (isint(value) || isfloat(value)) {
-                    text = text + key + "<unknown string>" + value;
+                    text += key + "<unknown string>" + value;
                 } else if (isstring(value)) {
-                    text = text + key + "<unknown string>" + value + "<unknown string>";
+                    text += key + "<unknown string>" + value + "<unknown string>";
                 } else if (isarray(value)) {
-                    text = text + key + "<unknown string>";
+                    text += key + "<unknown string>";
                 } else if (!isdefined(value)) {
-                    text = text + key + "<unknown string>";
+                    text += key + "<unknown string>";
                 }
                 first = 0;
             }
         }
         if (isdefined(node.name) || isdefined(node.api)) {
-            text = text + "<unknown string>";
+            text += "<unknown string>";
         }
         return text;
-    #/
-}
+    }
 
-// Namespace planner/planner
-// Params 4, eflags: 0x4
-// Checksum 0x27d0ec12, Offset: 0x24d0
-// Size: 0x1a4
-function private _printplannernode(file, plannernode, indent, printid) {
-    /#
+    // Namespace planner/planner
+    // Params 4, eflags: 0x4
+    // Checksum 0x27d0ec12, Offset: 0x24d0
+    // Size: 0x1a4
+    function private _printplannernode(file, plannernode, indent, printid) {
         assert(isstruct(plannernode));
         indentspace = "<unknown string>";
         for (index = 0; index < indent; index++) {
-            indentspace = indentspace + "<unknown string>";
+            indentspace += "<unknown string>";
         }
         text = "<unknown string>";
         if (plannernode.printid === printid) {
-            text = text + "<unknown string>";
-            text = text + function_3af5bab0(plannernode);
+            text += "<unknown string>";
+            text += function_3af5bab0(plannernode);
             fprintln(file, indentspace + text);
             return;
         }
@@ -636,8 +631,9 @@ function private _printplannernode(file, plannernode, indent, printid) {
                 _printplannernode(file, plannernode.children[index], indent + 1, printid);
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace planner/planner
 // Params 5, eflags: 0x0

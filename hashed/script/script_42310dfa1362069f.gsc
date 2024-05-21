@@ -267,7 +267,7 @@ function event_listener_thread() {
                     }
                     self.stealth.event_escalation_count[event.typeorig]++;
                 }
-                self.stealth.event_escalation_scalar = self.stealth.event_escalation_scalar + var_4cca9730;
+                self.stealth.event_escalation_scalar += var_4cca9730;
             }
             /#
                 typeorig = "<unknown string>";
@@ -276,9 +276,9 @@ function event_listener_thread() {
                 }
                 event_str = "<unknown string>" + (ishash(event.type) ? function_9e72a96(event.type) : event.type) + typeorig;
                 if (isdefined(eventhandled) && !eventhandled) {
-                    event_str = event_str + "<unknown string>";
+                    event_str += "<unknown string>";
                 }
-                self thread function_314b7255(event_str, (1, 1, 1), 1, 0.5, (0, 0, 40), 4);
+                self thread namespace_b0df45a::function_314b7255(event_str, (1, 1, 1), 1, 0.5, (0, 0, 40), 4);
                 self.stealth.ai_event = event.type;
             #/
         }

@@ -220,7 +220,7 @@ function function_dc41f225(player) {
             level.var_578f8cf3 setscale(n_scale);
         }
         wait(float(function_60d95f53()) / 1000);
-        n_scale = n_scale - var_ee107645;
+        n_scale -= var_ee107645;
     }
     wait(0.1);
     var_b7c784c2 scene::delete_scene_spawned_ents("p9_fxanim_zm_grab_attack");

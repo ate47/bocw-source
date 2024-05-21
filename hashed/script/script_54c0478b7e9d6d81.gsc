@@ -31,7 +31,7 @@ function function_67d3eb46(localclientnum) {
         if (isdefined(self)) {
             self mapshaderconstant(localclientnum, 0, "scriptVector3", 1, var_daa5498, 0, 0.04);
         }
-        var_daa5498 = var_daa5498 + 0.04;
+        var_daa5498 += 0.04;
         waitframe(1);
     }
 }

@@ -26,18 +26,20 @@ function private preinit() {
     clientfield::register_clientuimodel("huditems.abilityDelayProgress", 1, 5, "float");
 }
 
-// Namespace ability_gadgets/ability_gadgets
-// Params 1, eflags: 0x0
-// Checksum 0x16b6e68b, Offset: 0x1e8
-// Size: 0x74
-function gadgets_print(str) {
-    /#
+/#
+
+    // Namespace ability_gadgets/ability_gadgets
+    // Params 1, eflags: 0x0
+    // Checksum 0x16b6e68b, Offset: 0x1e8
+    // Size: 0x74
+    function gadgets_print(str) {
         if (getdvarint(#"scr_debug_gadgets", 0)) {
             toprint = str;
             println(self.playername + "<unknown string>" + "<unknown string>" + toprint);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace ability_gadgets/ability_gadgets
 // Params 0, eflags: 0x2 linked

@@ -106,7 +106,7 @@ function function_d8e8920a() {
                 velocity = self.enemy getvelocity();
                 velocity = (velocity[0], velocity[1], 0);
                 if (length(velocity) >= 0) {
-                    var_6e3ad56b = var_6e3ad56b + vectorscale(velocity, 1.8);
+                    var_6e3ad56b += vectorscale(velocity, 1.8);
                 }
             }
             dest = getrandomnavpoint(var_6e3ad56b, 20, self getpathfindingradius());

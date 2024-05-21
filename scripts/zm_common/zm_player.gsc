@@ -83,13 +83,13 @@ function private preinit() {
 // Checksum 0x74e7a0fc, Offset: 0x780
 // Size: 0xda
 function private function_34c2aeb5() {
-    n_target = int(max(zombie_utility::function_d2dfacfd(#"player_base_health"), 1));
+    n_target = int(max(zombie_utility::get_zombie_var(#"player_base_health"), 1));
     self.var_66cb03ad = n_target;
     self.maxhealth = n_target;
     self setmaxhealth(n_target);
     self zm_utility::set_max_health();
-    self.n_regen_delay = zombie_utility::function_d2dfacfd("player_health_regen_delay");
-    self.n_regen_rate = zombie_utility::function_d2dfacfd("player_health_regen_rate");
+    self.n_regen_delay = zombie_utility::get_zombie_var("player_health_regen_delay");
+    self.n_regen_rate = zombie_utility::get_zombie_var("player_health_regen_rate");
 }
 
 // Namespace zm_player/zm_player
@@ -232,7 +232,7 @@ function player_track_ammo_count() {
             if (isdefined(level.var_142dc1b8) && isdefined(level.var_142dc1b8[weapon.name])) {
                 var_89557197 = level.var_142dc1b8[weapon.name];
             } else if (ammostock < 1) {
-                var_89557197 = var_89557197 + 10;
+                var_89557197 += 10;
             }
             if (ammocount > var_89557197 || self laststand::player_is_in_laststand()) {
                 ammooutcount = 0;
@@ -373,10 +373,10 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
     eattacker = player::figure_out_attacker(eattacker);
     if (isplayer(eattacker) && !weapons::ismeleemod(smeansofdeath)) {
         var_8f516911 = function_b576d3d(weapon, shitloc);
-        idamage = idamage * var_8f516911;
+        idamage *= var_8f516911;
     }
     if (is_true(self.var_b895a3ff)) {
-        idamage = idamage - idamage * 0.25;
+        idamage -= idamage * 0.25;
     }
     idamage = function_182d09fd(eattacker, idamage);
     startedinlaststand = 0;
@@ -419,7 +419,7 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
     self callback::callback(#"on_player_damage", params);
     if (is_true(self.magic_bullet_shield)) {
         maxhealth = self.maxhealth;
-        self.health = self.health + int(idamage);
+        self.health += int(idamage);
         self.maxhealth = maxhealth;
     }
     if (isdefined(level.prevent_player_damage) && !level.friendlyfire) {
@@ -427,7 +427,7 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
             return;
         }
     }
-    idflags = idflags | level.idflags_no_knockback;
+    idflags |= level.idflags_no_knockback;
     if (idamage > 0 && shitloc == "riotshield") {
         shitloc = "torso_upper";
     }
@@ -487,16 +487,16 @@ function function_182d09fd(eattacker, idamage) {
         return int(idamage);
     }
     if (eattacker.archetype === #"zombie" && isdefined(level.var_c739ead9)) {
-        idamage = idamage * level.var_c739ead9;
+        idamage *= level.var_c739ead9;
     }
     if (eattacker.var_6f84b820 === #"elite" && isdefined(level.var_5a59b382)) {
-        idamage = idamage * level.var_5a59b382;
+        idamage *= level.var_5a59b382;
     }
     if (eattacker.var_6f84b820 === #"special" && isdefined(level.var_cfbc34ae)) {
-        idamage = idamage * level.var_cfbc34ae;
+        idamage *= level.var_cfbc34ae;
     }
     if (eattacker.var_6f84b820 === #"normal" && isdefined(level.var_97850f30)) {
-        idamage = idamage * level.var_97850f30;
+        idamage *= level.var_97850f30;
     }
     return int(idamage);
 }
@@ -529,7 +529,7 @@ function register_player_friendly_fire_callback(callback) {
 }
 
 // Namespace zm_player/zm_player
-// Params 11, eflags: 0x2 linked
+// Params b, eflags: 0x2 linked
 // Checksum 0xc8cbf77b, Offset: 0x22f8
 // Size: 0x108
 function process_friendly_fire_callbacks(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, vpoint, vdir, shitloc, psoffsettime, boneindex) {
@@ -1068,11 +1068,11 @@ function player_prevent_damage(einflictor, eattacker, idamage, *idflags, smeanso
         if (is_true(self.bgb_in_plain_sight_active)) {
             str = "<unknown string>";
             if (isai(vdir)) {
-                str = str + function_9e72a96(vdir.archetype);
+                str += function_9e72a96(vdir.archetype);
             } else if (isdefined(vdir)) {
                 str = str + "<unknown string>" + vdir getentitynumber();
             } else {
-                str = str + "<unknown string>";
+                str += "<unknown string>";
             }
             println(str);
             println("<unknown string>" + (is_true(self.ignoreme) ? "<unknown string>" : "<unknown string>"));
@@ -1264,7 +1264,7 @@ function last_stand_revive() {
 // Size: 0x10c
 function spectators_respawn() {
     level endon(#"between_round_over", #"end_game");
-    if (!isdefined(zombie_utility::function_d2dfacfd(#"spectators_respawn")) || !zombie_utility::function_d2dfacfd(#"spectators_respawn")) {
+    if (!isdefined(zombie_utility::get_zombie_var(#"spectators_respawn")) || !zombie_utility::get_zombie_var(#"spectators_respawn")) {
         return;
     }
     while (true) {
@@ -1769,13 +1769,13 @@ function player_damage_override(einflictor, eattacker, idamage, idflags, smeanso
         if (isdefined(self.var_fa7c46f)) {
             idamage = 0;
         }
-        idflags = idflags | 2048;
+        idflags |= 2048;
         if (gear_armor > 0 && self.armor <= 0) {
             self.var_426947c4 = 1;
         }
     }
     if (is_true(self.power_armor_took_damage)) {
-        idflags = idflags | 1024;
+        idflags |= 1024;
     }
     if (isdefined(level.var_ccdc4ca6)) {
         for (i = 0; i < level.var_ccdc4ca6.size; i++) {
@@ -2106,7 +2106,7 @@ function zm_on_player_spawned() {
     self val::nuke("takedamage");
     /#
         if (getdvarint(#"zombie_cheat", 0) >= 1 && getdvarint(#"zombie_cheat", 0) <= 3) {
-            self set(#"zombie_devgui", "<unknown string>", 0);
+            self val::set(#"zombie_devgui", "<unknown string>", 0);
         }
     #/
 }

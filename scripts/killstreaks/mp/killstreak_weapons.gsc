@@ -433,7 +433,7 @@ function onplayerkilled(*einflictor, attacker, *idamage, *smeansofdeath, weapon,
         } else {
             var_3e7b9084 = isdefined(bundle.var_877cedde) ? bundle.var_877cedde : 0;
             var_6deff896 = int(floor(deathanimduration.maxammo * var_3e7b9084 / 100));
-            ammocount = ammocount - var_6deff896;
+            ammocount -= var_6deff896;
         }
         if (ammocount < 0) {
             ammocount = 0;

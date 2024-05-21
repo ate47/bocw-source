@@ -446,7 +446,7 @@ function destroy_beacon(mdl_beacon, var_fcfc4edd = 10, var_495727a3) {
         wait(0.5);
         bomb hidepart("tag_sign");
         wait(0.5);
-        timer = timer - 1;
+        timer -= 1;
         /#
             iprintlnbold(timer);
         #/
@@ -485,7 +485,7 @@ function function_22aada64() {
     n_threshold = 1000 * getplayers().size * level.var_b48509f9;
     while (true) {
         s_result = self waittill(#"damage");
-        n_damage = n_damage + s_result.amount;
+        n_damage += s_result.amount;
         if (n_damage > n_threshold && isdefined(self)) {
             self scene::stop(#"p9_fxanim_sv_tesla_tower_clean_bundle");
             self thread scene::play(#"p9_fxanim_sv_tesla_tower_dmg_bundle", self);

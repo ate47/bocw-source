@@ -97,10 +97,10 @@ function function_c9c6dda1(player) {
 // Size: 0x79e
 function private function_1e3ac913() {
     level endon(#"game_ended");
-    var_1a1c0d86 = 0;
+    updatepass = 0;
     while (true) {
         foreach (index, player in getplayers()) {
-            if (index % 10 == var_1a1c0d86) {
+            if (index % 10 == updatepass) {
                 if (!isdefined(player.radiation)) {
                     continue;
                 }
@@ -133,10 +133,10 @@ function private function_1e3ac913() {
                         if (isdefined(level.var_c3a003ad)) {
                             var_cad9861a = player [[ level.var_c3a003ad ]](var_cad9861a);
                         }
-                        player.radiation.var_abd7d46a = player.radiation.var_abd7d46a - var_cad9861a;
+                        player.radiation.var_abd7d46a -= var_cad9861a;
                         while (player.radiation.var_abd7d46a < 0 && player.radiation.var_32adf91d < level.var_c43aac04) {
                             player.radiation.var_32adf91d++;
-                            player.radiation.var_abd7d46a = player.radiation.var_abd7d46a + level.radiation.levels[player.radiation.var_32adf91d].maxhealth;
+                            player.radiation.var_abd7d46a += level.radiation.levels[player.radiation.var_32adf91d].maxhealth;
                             var_56bea7c = 1;
                         }
                         if (player.radiation.var_abd7d46a < 0) {
@@ -172,9 +172,9 @@ function private function_1e3ac913() {
                             var_4a34487 = player [[ level.var_11f2d0c5 ]]();
                         }
                         var_ac8e5dcc = level.var_f569833a * (1 - var_4a34487);
-                        player.radiation.var_abd7d46a = player.radiation.var_abd7d46a + var_ac8e5dcc;
+                        player.radiation.var_abd7d46a += var_ac8e5dcc;
                         while (player.radiation.var_32adf91d > 0 && player.radiation.var_abd7d46a > level.radiation.levels[player.radiation.var_32adf91d].maxhealth) {
-                            player.radiation.var_abd7d46a = player.radiation.var_abd7d46a - level.radiation.levels[player.radiation.var_32adf91d].maxhealth;
+                            player.radiation.var_abd7d46a -= level.radiation.levels[player.radiation.var_32adf91d].maxhealth;
                             player.radiation.var_32adf91d--;
                             var_56bea7c = 1;
                         }
@@ -191,7 +191,7 @@ function private function_1e3ac913() {
                 player function_9b065f90();
             }
         }
-        var_1a1c0d86 = (var_1a1c0d86 + 1) % 10;
+        updatepass = (updatepass + 1) % 10;
         waitframe(1);
     }
 }

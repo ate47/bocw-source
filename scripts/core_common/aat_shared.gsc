@@ -110,12 +110,13 @@ function private function_33f0ddd3(s_event) {
     }
 }
 
-// Namespace aat/aat_shared
-// Params 1, eflags: 0x0
-// Checksum 0x3b3758e3, Offset: 0x720
-// Size: 0x19c
-function setup_devgui(var_e73fddff) {
-    /#
+/#
+
+    // Namespace aat/aat_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x3b3758e3, Offset: 0x720
+    // Size: 0x19c
+    function setup_devgui(var_e73fddff) {
         if (!isdefined(var_e73fddff)) {
             var_e73fddff = "<unknown string>";
         }
@@ -125,20 +126,18 @@ function setup_devgui(var_e73fddff) {
         foreach (key, v in level.aat) {
             if (key != "<unknown string>") {
                 name = function_9e72a96(key);
-                add_debug_command(aat_devgui_base + name + "<unknown string>" + "<unknown string>" + "<unknown string>" + name + "<unknown string>");
+                util::add_debug_command(aat_devgui_base + name + "<unknown string>" + "<unknown string>" + "<unknown string>" + name + "<unknown string>");
             }
         }
-        add_debug_command(aat_devgui_base + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command(aat_devgui_base + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>");
         level thread aat_devgui_think();
-    #/
-}
+    }
 
-// Namespace aat/aat_shared
-// Params 0, eflags: 0x4
-// Checksum 0x725bf45f, Offset: 0x8c8
-// Size: 0x278
-function private aat_devgui_think() {
-    /#
+    // Namespace aat/aat_shared
+    // Params 0, eflags: 0x4
+    // Checksum 0x725bf45f, Offset: 0x8c8
+    // Size: 0x278
+    function private aat_devgui_think() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         for (;;) {
@@ -148,7 +147,7 @@ function private aat_devgui_think() {
                     if (aat_name == "<unknown string>") {
                         if (sessionmodeiszombiesgame()) {
                             weapon = level.players[i] getcurrentweapon();
-                            item = level.players[i] function_230ceec4(weapon);
+                            item = level.players[i] item_inventory::function_230ceec4(weapon);
                             if (isdefined(item.aat)) {
                                 item.aat = undefined;
                             }
@@ -157,7 +156,7 @@ function private aat_devgui_think() {
                     } else {
                         if (sessionmodeiszombiesgame()) {
                             weapon = level.players[i] getcurrentweapon();
-                            item = level.players[i] function_230ceec4(weapon);
+                            item = level.players[i] item_inventory::function_230ceec4(weapon);
                             if (isdefined(item)) {
                                 item.aat = aat_name;
                             }
@@ -170,15 +169,13 @@ function private aat_devgui_think() {
             setdvar(#"aat_acquire_devgui", "<unknown string>");
             wait(0.5);
         }
-    #/
-}
+    }
 
-// Namespace aat/aat_shared
-// Params 4, eflags: 0x4
-// Checksum 0xb6730a4, Offset: 0xb48
-// Size: 0x202
-function private aat_set_debug_text(name, success, success_reroll, fail) {
-    /#
+    // Namespace aat/aat_shared
+    // Params 4, eflags: 0x4
+    // Checksum 0xb6730a4, Offset: 0xb48
+    // Size: 0x202
+    function private aat_set_debug_text(name, success, success_reroll, fail) {
         self notify(#"aat_set_debug_text_thread");
         self endon(#"aat_set_debug_text_thread", #"disconnect");
         if (!isdefined(self.aat_debug_text)) {
@@ -206,8 +203,9 @@ function private aat_set_debug_text(name, success, success_reroll, fail) {
         if ("<unknown string>" == name) {
             self.aat_debug_text.alpha = 0;
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace aat/aat_shared
 // Params 0, eflags: 0x6 linked
@@ -716,7 +714,7 @@ function function_7a12b737(stat_name, amount = 1) {
     }
     self stats::function_dad108fa(stat_name, amount);
     /#
-        var_ba1fb8c1 = self get_stat_global(stat_name);
+        var_ba1fb8c1 = self stats::get_stat_global(stat_name);
         if (isdefined(var_ba1fb8c1)) {
             if (isdefined(self.entity_num)) {
                 println("<unknown string>" + self.entity_num + "<unknown string>" + function_9e72a96(stat_name) + "<unknown string>" + var_ba1fb8c1);

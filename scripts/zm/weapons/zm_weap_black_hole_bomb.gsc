@@ -487,23 +487,24 @@ function private function_fb7c4f41() {
 // Checksum 0x88df7af6, Offset: 0x1e40
 // Size: 0x7c
 function private vortex_explosion(*v_vortex_explosion_origin, eattacker, *n_vortex_radius) {
-    self.origin = self.origin + (0, 0, 50);
+    self.origin += (0, 0, 50);
     self detonate(n_vortex_radius);
     /#
         recordstar(self.origin, (1, 0, 1), "<unknown string>");
     #/
 }
 
-// Namespace namespace_71f583f0/namespace_71f583f0
-// Params 1, eflags: 0x0
-// Checksum 0xc9c6d395, Offset: 0x1ec8
-// Size: 0x4c
-function function_1a6605b0(string) {
-    /#
+/#
+
+    // Namespace namespace_71f583f0/namespace_71f583f0
+    // Params 1, eflags: 0x0
+    // Checksum 0xc9c6d395, Offset: 0x1ec8
+    // Size: 0x4c
+    function function_1a6605b0(string) {
         if (!getdvarint(#"hash_4fd011a8151f574c", 0)) {
             return;
         }
         println(string);
-    #/
-}
+    }
 
+#/

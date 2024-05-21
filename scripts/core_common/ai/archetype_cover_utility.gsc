@@ -260,7 +260,7 @@ function private function_bbe42083(entity) {
         entity.var_a4f84a7f = entity.lastshottime;
     }
     if (isdefined(entity.enemy) && entity cansee(entity.enemy)) {
-        entity.var_1a0b2452 = entity.var_1a0b2452 + 0.05;
+        entity.var_1a0b2452 += 0.05;
     } else {
         entity.var_1a0b2452 = 0;
     }
@@ -386,7 +386,7 @@ function private function_2f4d2a0a(entity) {
         entity.var_a4f84a7f = entity.lastshottime;
     }
     if (isdefined(entity.enemy) && entity cansee(entity.enemy)) {
-        entity.var_d9884655 = entity.var_d9884655 + 0.05;
+        entity.var_d9884655 += 0.05;
     } else {
         entity.var_d9884655 = 0;
     }

@@ -83,93 +83,93 @@ function function_95ed7b4a() {
 function function_fcfd6064(localclientnum, itementry, clientdata, networkid) {
     player = function_27673a7(localclientnum);
     if (isdefined(player) && is_true(level.var_1c1febec[localclientnum]) && !function_65b9eb0f(localclientnum) && player function_6c32d092(localclientnum, #"hash_7082a9127deb8f95")) {
-        var_8ad7f92f = "rob_sr_item_white_dp";
+        renderbundle = "rob_sr_item_white_dp";
         if (isdefined(itementry)) {
             switch (itementry.rarity) {
             case #"none":
                 break;
             case #"resource":
-                var_8ad7f92f = "rob_sr_item_white_dp";
+                renderbundle = "rob_sr_item_white_dp";
                 break;
             case #"uncommon":
-                var_8ad7f92f = "rob_sr_item_green_dp";
+                renderbundle = "rob_sr_item_green_dp";
                 break;
             case #"rare":
-                var_8ad7f92f = "rob_sr_item_blue_dp";
+                renderbundle = "rob_sr_item_blue_dp";
                 break;
             case #"epic":
-                var_8ad7f92f = "rob_sr_item_purple_dp";
+                renderbundle = "rob_sr_item_purple_dp";
                 break;
             case #"legendary":
-                var_8ad7f92f = "rob_sr_item_orange_dp";
+                renderbundle = "rob_sr_item_orange_dp";
                 break;
             case #"ultra":
-                var_8ad7f92f = "rob_sr_item_gold_dp";
+                renderbundle = "rob_sr_item_gold_dp";
                 break;
             case #"loadout":
-                var_8ad7f92f = "rob_sr_item_red_dp";
+                renderbundle = "rob_sr_item_red_dp";
                 break;
             }
             if (itementry.itemtype == #"resource") {
-                var_8ad7f92f = #"hash_2f523d47697a9ce3";
+                renderbundle = #"hash_2f523d47697a9ce3";
             }
             if (is_true(itementry.var_47f145b4)) {
-                var_8ad7f92f = #"hash_52f7937d76fafca0";
+                renderbundle = #"hash_52f7937d76fafca0";
             }
             if (isdefined(itementry.var_599225da)) {
-                var_8ad7f92f = itementry.var_599225da;
+                renderbundle = itementry.var_599225da;
             }
         }
         if (isdefined(networkid) && isdefined(clientdata) && isdefined(clientdata.var_ffc1c0e1)) {
             if (isdefined(clientdata.var_ffc1c0e1[networkid]) && clientdata.var_ffc1c0e1[networkid].servertime > getservertime(localclientnum, 1)) {
-                var_8ad7f92f = #"hash_3d6eb4b9bbc74fbd";
+                renderbundle = #"hash_3d6eb4b9bbc74fbd";
             }
         }
-        return var_8ad7f92f;
+        return renderbundle;
     }
-    var_8ad7f92f = #"hash_312ceb838675b80";
+    renderbundle = #"hash_312ceb838675b80";
     if (isdefined(itementry)) {
         switch (itementry.rarity) {
         case #"none":
             break;
         case #"resource":
-            var_8ad7f92f = #"hash_312ceb838675b80";
+            renderbundle = #"hash_312ceb838675b80";
             break;
         case #"uncommon":
-            var_8ad7f92f = #"hash_70c807782a37573e";
+            renderbundle = #"hash_70c807782a37573e";
             break;
         case #"rare":
-            var_8ad7f92f = #"hash_5b08235c0b55a003";
+            renderbundle = #"hash_5b08235c0b55a003";
             break;
         case #"epic":
-            var_8ad7f92f = #"rob_sr_item_purple";
+            renderbundle = #"rob_sr_item_purple";
             break;
         case #"legendary":
-            var_8ad7f92f = #"hash_64261dabb4df88cd";
+            renderbundle = #"hash_64261dabb4df88cd";
             break;
         case #"ultra":
-            var_8ad7f92f = #"rob_sr_item_gold";
+            renderbundle = #"rob_sr_item_gold";
             break;
         case #"loadout":
-            var_8ad7f92f = #"hash_3088f081654a720e";
+            renderbundle = #"hash_3088f081654a720e";
             break;
         }
         if (itementry.itemtype == #"resource") {
-            var_8ad7f92f = #"hash_2f523d47697a9ce3";
+            renderbundle = #"hash_2f523d47697a9ce3";
         }
         if (is_true(itementry.var_47f145b4)) {
-            var_8ad7f92f = #"hash_52f7937d76fafca0";
+            renderbundle = #"hash_52f7937d76fafca0";
         }
         if (isdefined(itementry.var_599225da)) {
-            var_8ad7f92f = itementry.var_599225da;
+            renderbundle = itementry.var_599225da;
         }
     }
     if (isdefined(networkid) && isdefined(clientdata) && isdefined(clientdata.var_ffc1c0e1)) {
         if (isdefined(clientdata.var_ffc1c0e1[networkid]) && clientdata.var_ffc1c0e1[networkid].servertime > getservertime(localclientnum, 1)) {
-            var_8ad7f92f = #"hash_3d6eb4b9bbc74fbd";
+            renderbundle = #"hash_3d6eb4b9bbc74fbd";
         }
     }
-    return var_8ad7f92f;
+    return renderbundle;
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception

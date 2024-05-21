@@ -120,7 +120,7 @@ function private function_871649b9(instance, var_eece1f6a, var_f8dfa2cf, n_spawn
     instance.a_items = a_items;
     instance callback::function_d8abfc3d(#"hash_345e9169ebba28fb", &function_149da5dd);
     /#
-        level delay(1, undefined, &function_95da1d88, instance, function_9e72a96(var_eece1f6a), var_f8dfa2cf);
+        level util::delay(1, undefined, &function_95da1d88, instance, function_9e72a96(var_eece1f6a), var_f8dfa2cf);
     #/
 }
 
@@ -132,7 +132,7 @@ function private function_149da5dd() {
     self flag::set(#"hash_788aaa9d57c1fa71");
     self callback::function_52ac9652(#"hash_345e9169ebba28fb", &function_149da5dd);
     /#
-        a_spawns = get_array(self.targetname, "<unknown string>");
+        a_spawns = struct::get_array(self.targetname, "<unknown string>");
         foreach (spawn in a_spawns) {
             spawn.var_b215c441 = undefined;
         }
@@ -152,31 +152,30 @@ function private function_149da5dd() {
     self flag::clear(#"hash_788aaa9d57c1fa71");
 }
 
-// Namespace namespace_1ab3fb7b/namespace_1ab3fb7b
-// Params 0, eflags: 0x4
-// Checksum 0xc7e09174, Offset: 0x870
-// Size: 0x13c
-function private init_devgui() {
-    /#
-        waittill_can_add_debug_command();
-        add_devgui("<unknown string>", "<unknown string>");
-        add_devgui("<unknown string>", "<unknown string>");
-        add_devgui("<unknown string>", "<unknown string>");
-        add_devgui("<unknown string>", "<unknown string>");
-        add_devgui("<unknown string>", "<unknown string>");
-        add_devgui("<unknown string>", "<unknown string>");
-        add_devgui("<unknown string>", "<unknown string>");
-        add_devgui("<unknown string>", "<unknown string>");
-        add_devgui("<unknown string>", "<unknown string>");
-    #/
-}
+/#
 
-// Namespace namespace_1ab3fb7b/namespace_1ab3fb7b
-// Params 3, eflags: 0x4
-// Checksum 0xb9203fc9, Offset: 0x9b8
-// Size: 0x41e
-function private function_95da1d88(instance, var_eece1f6a, var_f8dfa2cf) {
-    /#
+    // Namespace namespace_1ab3fb7b/namespace_1ab3fb7b
+    // Params 0, eflags: 0x4
+    // Checksum 0xc7e09174, Offset: 0x870
+    // Size: 0x13c
+    function private init_devgui() {
+        util::waittill_can_add_debug_command();
+        util::add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<unknown string>", "<unknown string>");
+    }
+
+    // Namespace namespace_1ab3fb7b/namespace_1ab3fb7b
+    // Params 3, eflags: 0x4
+    // Checksum 0xb9203fc9, Offset: 0x9b8
+    // Size: 0x41e
+    function private function_95da1d88(instance, var_eece1f6a, var_f8dfa2cf) {
         instance notify(#"hash_554bb5d130031f06");
         instance endon(#"hash_554bb5d130031f06");
         a_spawns = isdefined(instance.contentgroups[var_eece1f6a]) ? instance.contentgroups[var_eece1f6a] : [];
@@ -208,7 +207,7 @@ function private function_95da1d88(instance, var_eece1f6a, var_f8dfa2cf) {
                     }
                     n_radius = 64;
                     n_dist = distance(spawn.origin, getplayers()[0].origin);
-                    n_radius = n_radius * n_dist / 3000;
+                    n_radius *= n_dist / 3000;
                     sphere(spawn.origin, n_radius, str_color, 1, 0, 7, 5);
                 }
                 if (var_794c9d5f == 3) {
@@ -227,6 +226,6 @@ function private function_95da1d88(instance, var_eece1f6a, var_f8dfa2cf) {
             }
             waitframe(5);
         }
-    #/
-}
+    }
 
+#/

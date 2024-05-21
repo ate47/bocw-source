@@ -73,7 +73,7 @@ function private function_bf25e268(var_193b9763) {
             continue;
         }
         if (issubstr(var_5207017.targetname, "auto14")) {
-            var_5207017.origin = var_5207017.origin + anglestoright(var_5207017.angles) * 32 + (0, 0, -5);
+            var_5207017.origin += anglestoright(var_5207017.angles) * 32 + (0, 0, -5);
         }
     }
 }

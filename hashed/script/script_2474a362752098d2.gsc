@@ -270,7 +270,7 @@ function function_8328d4bc(item) {
     }
     self.origin = item.origin + (0, 0, 24);
     if (isdefined(item.trigger_offset)) {
-        self.origin = self.origin + item.trigger_offset;
+        self.origin += item.trigger_offset;
     }
     if (!isdefined(item.var_cbff4088)) {
         item.var_cbff4088 = 0;

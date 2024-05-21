@@ -325,7 +325,7 @@ function function_7c82917f(current_weapon) {
     self endon(#"disconnect");
     n_reload_time = isdefined(current_weapon.reloadtime) ? current_weapon.reloadtime : 0.25;
     if (self namespace_e86ffa8::function_efb6dedf()) {
-        n_reload_time = n_reload_time * getdvarfloat(#"perk_weapreloadmultiplier", 0);
+        n_reload_time *= getdvarfloat(#"perk_weapreloadmultiplier", 0);
     }
     n_cooldown_time = n_reload_time + 3;
     wait(n_cooldown_time);

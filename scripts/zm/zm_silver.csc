@@ -187,7 +187,7 @@ function function_ce2c0029(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0xd0
 function private function_65490f35(localclientnum, var_2de789b, var_2d090e03, n_time = 30) {
     level endon(#"hash_1f7ec9fe70a9f7a6");
-    for (n_blend = n_time; true; n_blend = n_blend - var_2de789b) {
+    for (n_blend = n_time; true; n_blend -= var_2de789b) {
         if (var_2de789b > var_2d090e03) {
             var_2de789b = var_2d090e03 + (var_2de789b - var_2d090e03) * n_blend / n_time;
         } else {
@@ -211,7 +211,7 @@ function private function_33593a44(localclientnum, var_312d65d1, var_68f7ce2e, n
     if (var_312d65d1 == 1 && var_68f7ce2e == 8) {
         while (n_blend < 1) {
             function_be93487f(localclientnum, var_312d65d1 | var_68f7ce2e, 1 - n_blend, 0, 0, n_blend);
-            n_blend = n_blend + n_increment;
+            n_blend += n_increment;
             level.var_25fd57f3 = 1 - n_blend;
             level.var_653fb8f8 = n_blend;
             wait(0.016);
@@ -221,7 +221,7 @@ function private function_33593a44(localclientnum, var_312d65d1, var_68f7ce2e, n
     if (var_312d65d1 == 8 && var_68f7ce2e == 1) {
         while (n_blend < 1) {
             function_be93487f(localclientnum, var_312d65d1 | var_68f7ce2e, n_blend, 0, 0, 1 - n_blend);
-            n_blend = n_blend + n_increment;
+            n_blend += n_increment;
             level.var_25fd57f3 = n_blend;
             level.var_653fb8f8 = 1 - n_blend;
             wait(0.016);

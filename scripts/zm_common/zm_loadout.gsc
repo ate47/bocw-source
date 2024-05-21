@@ -192,7 +192,7 @@ function function_54cb37a4(weapon) {
     primaryweapons = self getweaponslistprimaries();
     initial_current_weapon = self getcurrentweapon();
     current_weapon = self zm_weapons::switch_from_alt_weapon(initial_current_weapon);
-    assert(self player_can_use_content(weapon));
+    assert(self zm_weapons::player_can_use_content(weapon));
     weapon_limit = zm_utility::get_player_weapon_limit(self);
     if (is_true(weapon.craftitem)) {
         zm_items::player_pick_up(self, weapon);
@@ -744,7 +744,7 @@ function function_cdcea3fd() {
 // Size: 0x734
 function give_start_weapon(b_switch_weapon) {
     /#
-        level function_b8a3efea();
+        level namespace_cdc318b3::function_b8a3efea();
     #/
     primary_weapon = self function_439b009a("primary");
     if (isweapon(level.var_a9ebf2c6)) {
@@ -891,10 +891,10 @@ function get_class_num(weaponclass) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x156c3872, Offset: 0x2ec0
 // Size: 0x1b4
-function function_d7c205b9(newclass, var_eead10f0 = #"unspecified") {
+function function_d7c205b9(newclass, calledfrom = #"unspecified") {
     loadoutindex = isdefined(newclass) ? get_class_num(newclass) : undefined;
     self.pers[#"loadoutindex"] = loadoutindex;
-    var_45843e9a = var_eead10f0 == #"give_loadout";
+    var_45843e9a = calledfrom == #"give_loadout";
     var_7f8c24df = 0;
     if (!var_45843e9a) {
         var_7f8c24df = isdefined(game) && isdefined(game.state) && game.state == #"playing" && isalive(self);

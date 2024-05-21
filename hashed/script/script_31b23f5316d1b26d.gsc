@@ -227,7 +227,7 @@ function function_b3f5992c() {
         #/
         var_eebf1bb0 = room function_cee62dac("type", "room_connector");
         foreach (var_29e30639 in var_eebf1bb0) {
-            var_ae433e22 = function_6dbc9ea5(var_29e30639.origin, array("start", "room_connector"), 4);
+            var_ae433e22 = c_t8_zmb_dlc0_zombie_male_body4_g_lowclean(var_29e30639.origin, array("start", "room_connector"), 4);
             foreach (var_194401e3 in var_ae433e22) {
                 if (var_194401e3 != var_29e30639) {
                     room function_71b94f8a(var_29e30639, var_194401e3);
@@ -558,7 +558,7 @@ function function_40681754(var_da1a882e, x, y, var_603479c6) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xf34ca591, Offset: 0x2668
 // Size: 0x29a
-function function_6dbc9ea5(origin, var_816442c9, distancetolerance) {
+function c_t8_zmb_dlc0_zombie_male_body4_g_lowclean(origin, var_816442c9, distancetolerance) {
     if (!isarray(var_816442c9)) {
         var_816442c9 = array(var_816442c9);
     }

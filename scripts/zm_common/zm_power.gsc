@@ -50,12 +50,13 @@ function private postinit() {
     #/
 }
 
-// Namespace zm_power/zm_power
-// Params 0, eflags: 0x0
-// Checksum 0x3a0dcdf5, Offset: 0x320
-// Size: 0xf2
-function debug_powered_items() {
-    /#
+/#
+
+    // Namespace zm_power/zm_power
+    // Params 0, eflags: 0x0
+    // Checksum 0x3a0dcdf5, Offset: 0x320
+    // Size: 0xf2
+    function debug_powered_items() {
         while (true) {
             if (getdvarint(#"zombie_equipment_health", 0)) {
                 if (isdefined(level.local_power)) {
@@ -66,8 +67,9 @@ function debug_powered_items() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_power/zm_power
 // Params 0, eflags: 0x2 linked
@@ -544,12 +546,12 @@ function get_local_power_cost(localpower) {
     cost = 0;
     if (isdefined(localpower) && isdefined(localpower.enabled_list)) {
         foreach (powered in localpower.enabled_list) {
-            cost = cost + powered get_powered_item_cost();
+            cost += powered get_powered_item_cost();
         }
     }
     if (isdefined(localpower) && isdefined(localpower.added_list)) {
         foreach (powered in localpower.added_list) {
-            cost = cost + powered get_powered_item_cost();
+            cost += powered get_powered_item_cost();
         }
     }
     return cost;
@@ -716,7 +718,7 @@ function cost_door() {
         if (!isdefined(self.one_time_cost)) {
             self.one_time_cost = 0;
         }
-        self.one_time_cost = self.one_time_cost + self.target.power_cost;
+        self.one_time_cost += self.target.power_cost;
         self.target.power_cost = 0;
     }
     if (isdefined(self.one_time_cost)) {
@@ -787,7 +789,7 @@ function perk_range(*delta, origin, radius) {
         if (is_true(self.target.trigger_off)) {
             perkorigin = self.target.realorigin;
         } else if (is_true(self.target.disabled)) {
-            perkorigin = perkorigin + (0, 0, 10000);
+            perkorigin += (0, 0, 10000);
         }
         if (distancesquared(perkorigin, origin) < radius * radius) {
             return true;
@@ -801,7 +803,7 @@ function perk_range(*delta, origin, radius) {
 // Checksum 0xeac6e09e, Offset: 0x29b8
 // Size: 0x9c
 function perk_power_on(*origin, *radius) {
-    println("<unknown string>" + self.target getvendingmachinenotify() + "<unknown string>");
+    println("<unknown string>" + self.target zm_perks::getvendingmachinenotify() + "<unknown string>");
     level notify(self.target zm_perks::getvendingmachinenotify() + "_on");
     zm_perks::perk_unpause(self.target.script_notify);
 }
@@ -812,7 +814,7 @@ function perk_power_on(*origin, *radius) {
 // Size: 0x192
 function perk_power_off(*origin, *radius) {
     notify_name = self.target zm_perks::getvendingmachinenotify();
-    println("<unknown string>" + self.target getvendingmachinenotify() + "<unknown string>");
+    println("<unknown string>" + self.target zm_perks::getvendingmachinenotify() + "<unknown string>");
     self.target.unitrigger_stub notify(#"death");
     self.target.unitrigger_stub thread zm_perks::vending_trigger_think();
     if (isdefined(level._custom_perks[self.target.script_notify].var_4a48be24)) {
@@ -917,7 +919,7 @@ function function_da4a8c05(hintstring, n_zone = 0) {
     self endon(#"death");
     str_flag = "power_on";
     if (n_zone > 0) {
-        str_flag = str_flag + n_zone;
+        str_flag += n_zone;
     }
     level flag::wait_till(str_flag);
     if (!isdefined(level.var_cef2e607[#"hash_1d6a2292435f5d0a"])) {
@@ -941,7 +943,7 @@ function function_1ae64b8c(hintstring, n_zone = 0) {
     self endon(#"death");
     str_flag = "power_on";
     if (n_zone > 0) {
-        str_flag = str_flag + n_zone;
+        str_flag += n_zone;
     }
     level flag::wait_till_clear(str_flag);
     self.script_noteworthy = "power";

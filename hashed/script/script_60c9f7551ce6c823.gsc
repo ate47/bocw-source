@@ -321,7 +321,7 @@ function function_16abf3d3() {
                 }
                 if (activate && !is_true(trap.var_9760b617)) {
                     function_3bea16f1(trap, 1);
-                    trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
+                    trap.var_eb9d64bb += 5000;
                     namespace_1e25ad94::debugmsg("Paging IN pole trap at:" + trap.origin);
                 }
                 continue;
@@ -358,9 +358,9 @@ function function_a971a62f(origin, var_5c526bd9 = origin, var_c705f304 = 85) {
                 var_d8176d62 = origin - var_5c526bd9;
                 var_d8176d62 = vectornormalize(dir);
                 if (vectordot(dir, var_d8176d62) < 0) {
-                    dir = dir * -1;
+                    dir *= -1;
                 }
-                origin = origin + dir * min_dist;
+                origin += dir * min_dist;
                 pushed = 1;
             }
         }

@@ -301,13 +301,13 @@ function private _gibpiecetag(*localclientnum, entity, gibflag, var_c3317960) {
 function private function_ba120c50(gibflags) {
     var_ec7623a6 = 0;
     if (gibflags & 12) {
-        var_ec7623a6 = var_ec7623a6 | 1;
+        var_ec7623a6 |= 1;
     }
     if (gibflags & 48) {
-        var_ec7623a6 = var_ec7623a6 | 2;
+        var_ec7623a6 |= 2;
     }
     if (gibflags & 384) {
-        var_ec7623a6 = var_ec7623a6 | 4;
+        var_ec7623a6 |= 4;
     }
     return var_ec7623a6;
 }
@@ -372,7 +372,7 @@ function private _gibentity(localclientnum, gibflags, shouldspawngibs, var_c3317
             }
             _handlegibcallbacks(localclientnum, entity, currentgibflag);
         }
-        currentgibflag = currentgibflag << 1;
+        currentgibflag <<= 1;
     }
 }
 
@@ -499,7 +499,7 @@ function _gibpiece(localclientnum, entity, gibmodel, gibtag, gibfx, gibdir, gibd
     if (isdefined(gibdir) && !isdefined(gibdirscale)) {
         startposition = (0, 0, 0);
         forwardvector = gibdir;
-        forwardvector = forwardvector * randomfloatrange(100, 500);
+        forwardvector *= randomfloatrange(100, 500);
     } else {
         waitframe(1);
         if (isdefined(entity)) {
@@ -519,8 +519,8 @@ function _gibpiece(localclientnum, entity, gibmodel, gibtag, gibfx, gibdir, gibd
             scale = gibdirscale;
         }
         forwardvector = vectornormalize(endposition - startposition);
-        forwardvector = forwardvector * scale;
-        forwardvector = forwardvector + dir;
+        forwardvector *= scale;
+        forwardvector += dir;
     }
     if (isdefined(entity)) {
         if (!isdefined(entity.var_f9a4eb08)) {
@@ -569,7 +569,7 @@ function private _handlegibannihilate(localclientnum) {
 function private _handlegibhead(localclientnum) {
     entity = self;
     entity endon(#"death");
-    entity waittillmatch({#notetrack:"gib = "head""}, #"_anim_notify_");
+    entity waittillmatch({#notetrack:"gib = \"head\""}, #"_anim_notify_");
     cliententgibhead(localclientnum, entity, 0);
 }
 
@@ -580,7 +580,7 @@ function private _handlegibhead(localclientnum) {
 function private _handlegibrightarm(localclientnum) {
     entity = self;
     entity endon(#"death");
-    entity waittillmatch({#notetrack:"gib = "arm_right""}, #"_anim_notify_");
+    entity waittillmatch({#notetrack:"gib = \"arm_right\""}, #"_anim_notify_");
     cliententgibrightarm(localclientnum, entity, 0);
 }
 
@@ -591,7 +591,7 @@ function private _handlegibrightarm(localclientnum) {
 function private _handlegibleftarm(localclientnum) {
     entity = self;
     entity endon(#"death");
-    entity waittillmatch({#notetrack:"gib = "arm_left""}, #"_anim_notify_");
+    entity waittillmatch({#notetrack:"gib = \"arm_left\""}, #"_anim_notify_");
     cliententgibleftarm(localclientnum, entity, 0);
 }
 
@@ -602,7 +602,7 @@ function private _handlegibleftarm(localclientnum) {
 function private _handlegibrightleg(localclientnum) {
     entity = self;
     entity endon(#"death");
-    entity waittillmatch({#notetrack:"gib = "leg_right""}, #"_anim_notify_");
+    entity waittillmatch({#notetrack:"gib = \"leg_right\""}, #"_anim_notify_");
     cliententgibrightleg(localclientnum, entity, 0);
 }
 
@@ -613,7 +613,7 @@ function private _handlegibrightleg(localclientnum) {
 function private _handlegibleftleg(localclientnum) {
     entity = self;
     entity endon(#"death");
-    entity waittillmatch({#notetrack:"gib = "leg_left""}, #"_anim_notify_");
+    entity waittillmatch({#notetrack:"gib = \"leg_left\""}, #"_anim_notify_");
     cliententgibleftleg(localclientnum, entity, 0);
 }
 

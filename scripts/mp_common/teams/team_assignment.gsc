@@ -634,7 +634,7 @@ function function_344e464d() {
                 if (squad == #"none") {
                     continue;
                 }
-                for (current_count = level.var_704bcca1 - var_a787dfe7; current_count < level.var_704bcca1; current_count = current_count + function_8c162ba0(var_d28e4159, squad)) {
+                for (current_count = level.var_704bcca1 - var_a787dfe7; current_count < level.var_704bcca1; current_count += function_8c162ba0(var_d28e4159, squad)) {
                     var_d28e4159 = function_569914e8(squad, level.var_704bcca1 - current_count, distribution[squad], var_f36ce5dd[team]);
                     if (!isdefined(var_d28e4159)) {
                         break;
@@ -664,19 +664,21 @@ function function_344e464d() {
     #/
 }
 
-// Namespace teams/team_assignment
-// Params 0, eflags: 0x4
-// Checksum 0x6246a042, Offset: 0x27a0
-// Size: 0xa0
-function private function_a9bfa6d6() {
-    /#
+/#
+
+    // Namespace teams/team_assignment
+    // Params 0, eflags: 0x4
+    // Checksum 0x6246a042, Offset: 0x27a0
+    // Size: 0xa0
+    function private function_a9bfa6d6() {
         if (level.var_ba13fb7a) {
             foreach (team in level.teams) {
                 self thread function_6c66cc64(team);
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace teams/team_assignment
 // Params 1, eflags: 0x0
@@ -692,12 +694,13 @@ function function_2c846a74(team) {
     #/
 }
 
-// Namespace teams/team_assignment
-// Params 1, eflags: 0x4
-// Checksum 0xc9362e14, Offset: 0x28b0
-// Size: 0x2b0
-function private function_6c66cc64(team) {
-    /#
+/#
+
+    // Namespace teams/team_assignment
+    // Params 1, eflags: 0x4
+    // Checksum 0xc9362e14, Offset: 0x28b0
+    // Size: 0x2b0
+    function private function_6c66cc64(team) {
         players = getplayers(team);
         if (players.size == 0) {
             return;
@@ -705,9 +708,9 @@ function private function_6c66cc64(team) {
         team_str = function_2c846a74(team);
         voip = "<unknown string>";
         if (isdefined(level.var_75dffa9f[team])) {
-            voip = voip + (level.var_75dffa9f[team] == #"game" ? "<unknown string>" : "<unknown string>");
+            voip += level.var_75dffa9f[team] == #"game" ? "<unknown string>" : "<unknown string>";
         } else {
-            voip = voip + "<unknown string>";
+            voip += "<unknown string>";
         }
         println("<unknown string>" + "<unknown string>" + team_str + "<unknown string>" + voip);
         foreach (player in players) {
@@ -723,17 +726,15 @@ function private function_6c66cc64(team) {
             party = player getparty();
             println("<unknown string>" + "<unknown string>" + player.name + "<unknown string>" + var_bdb3f6a6 + "<unknown string>" + (party.fill ? "<unknown string>" : "<unknown string>") + "<unknown string>" + party.var_a15e4438);
         }
-    #/
-}
+    }
 
-// Namespace teams/team_assignment
-// Params 0, eflags: 0x0
-// Checksum 0xad235017, Offset: 0x2b68
-// Size: 0x43c
-function function_58b6d2c9() {
-    /#
+    // Namespace teams/team_assignment
+    // Params 0, eflags: 0x0
+    // Checksum 0xad235017, Offset: 0x2b68
+    // Size: 0x43c
+    function function_58b6d2c9() {
         if (level.multiteam && level.maxteamplayers > 0) {
-            max_players = function_d36b6597();
+            max_players = player::function_d36b6597();
             players = getplayers();
             foreach (team in level.teams) {
                 var_dcbb8617 = getplayers(team);
@@ -763,15 +764,13 @@ function function_58b6d2c9() {
                 }
             }
         }
-    #/
-}
+    }
 
-// Namespace teams/team_assignment
-// Params 0, eflags: 0x0
-// Checksum 0x57f4ac6f, Offset: 0x2fb0
-// Size: 0x14c
-function function_1aa0418f() {
-    /#
+    // Namespace teams/team_assignment
+    // Params 0, eflags: 0x0
+    // Checksum 0x57f4ac6f, Offset: 0x2fb0
+    // Size: 0x14c
+    function function_1aa0418f() {
         while (true) {
             wait(3);
             players = getplayers();
@@ -782,19 +781,17 @@ function function_1aa0418f() {
                 wait(1);
                 bots = get_bots();
                 foreach (bot in bots) {
-                    level thread remove_bot(bot);
+                    level thread bot::remove_bot(bot);
                 }
             }
         }
-    #/
-}
+    }
 
-// Namespace teams/team_assignment
-// Params 0, eflags: 0x0
-// Checksum 0xd990e5aa, Offset: 0x3108
-// Size: 0xcc
-function get_bots() {
-    /#
+    // Namespace teams/team_assignment
+    // Params 0, eflags: 0x0
+    // Checksum 0xd990e5aa, Offset: 0x3108
+    // Size: 0xcc
+    function get_bots() {
         players = getplayers();
         bots = [];
         foreach (player in players) {
@@ -803,6 +800,6 @@ function get_bots() {
             }
         }
         return bots;
-    #/
-}
+    }
 
+#/

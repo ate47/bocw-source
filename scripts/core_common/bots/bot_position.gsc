@@ -4,16 +4,18 @@
 
 #namespace bot_position;
 
-// Namespace bot_position/bot_position
-// Params 0, eflags: 0x2 linked
-// Checksum 0x61475db6, Offset: 0xf8
-// Size: 0x2c
-function preinit() {
-    /#
+/#
+
+    // Namespace bot_position/bot_position
+    // Params 0, eflags: 0x2 linked
+    // Checksum 0x61475db6, Offset: 0xf8
+    // Size: 0x2c
+    function preinit() {
         level.var_51a0bf0 = [];
         level thread function_7e6af638();
-    #/
-}
+    }
+
+#/
 
 // Namespace bot_position/bot_position
 // Params 0, eflags: 0x2 linked
@@ -340,7 +342,7 @@ function private set_position(point, var_e125ba43) {
     if (!isdefined(navmeshpoint)) {
         /#
             self function_b39b0b55(point, (1, 0, 0), var_e125ba43 + function_9e72a96(#"hash_7d1aa4caccc3dd42"));
-            if (self should_record(#"hash_6356356a050dc83d")) {
+            if (self bot::should_record(#"hash_6356356a050dc83d")) {
                 recordline(self.origin, point, (1, 0, 0), "<unknown string>", self);
             }
         #/
@@ -350,7 +352,7 @@ function private set_position(point, var_e125ba43) {
     self.bot.var_aa94cd1b = undefined;
     /#
         self function_b39b0b55(navmeshpoint, (0, 1, 0), var_e125ba43);
-        if (self should_record(#"hash_6356356a050dc83d")) {
+        if (self bot::should_record(#"hash_6356356a050dc83d")) {
             recordline(self.origin, navmeshpoint, (0, 1, 0), "<unknown string>", self);
         }
     #/
@@ -433,13 +435,14 @@ function private function_7b48fb52(info) {
     return points;
 }
 
-// Namespace bot_position/bot_position
-// Params 3, eflags: 0x4
-// Checksum 0x549ca214, Offset: 0x18f8
-// Size: 0xe2
-function private function_b39b0b55(origin, color, label) {
-    /#
-        if (!self should_record(#"hash_6356356a050dc83d")) {
+/#
+
+    // Namespace bot_position/bot_position
+    // Params 3, eflags: 0x4
+    // Checksum 0x549ca214, Offset: 0x18f8
+    // Size: 0xe2
+    function private function_b39b0b55(origin, color, label) {
+        if (!self bot::should_record(#"hash_6356356a050dc83d")) {
             return 0;
         }
         top = origin + (0, 0, 128);
@@ -448,30 +451,26 @@ function private function_b39b0b55(origin, color, label) {
             record3dtext(function_9e72a96(label), top, (1, 1, 1), "<unknown string>", self, 0.5);
         }
         return 1;
-    #/
-}
+    }
 
-// Namespace bot_position/bot_position
-// Params 2, eflags: 0x4
-// Checksum 0xf52dc19a, Offset: 0x19e8
-// Size: 0xd0
-function private function_70eeee8d(points, color) {
-    /#
-        if (!self should_record(#"hash_6356356a050dc83d")) {
+    // Namespace bot_position/bot_position
+    // Params 2, eflags: 0x4
+    // Checksum 0xf52dc19a, Offset: 0x19e8
+    // Size: 0xd0
+    function private function_70eeee8d(points, color) {
+        if (!self bot::should_record(#"hash_6356356a050dc83d")) {
             return;
         }
         foreach (point in points) {
             recordstar(point.origin, color, "<unknown string>", self);
         }
-    #/
-}
+    }
 
-// Namespace bot_position/bot_position
-// Params 0, eflags: 0x4
-// Checksum 0x17392763, Offset: 0x1ac0
-// Size: 0x26a
-function private function_7e6af638() {
-    /#
+    // Namespace bot_position/bot_position
+    // Params 0, eflags: 0x4
+    // Checksum 0x17392763, Offset: 0x1ac0
+    // Size: 0x26a
+    function private function_7e6af638() {
         level endon(#"game_ended");
         failures = level.var_51a0bf0;
         while (true) {
@@ -492,20 +491,18 @@ function private function_7e6af638() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace bot_position/bot_position
-// Params 1, eflags: 0x4
-// Checksum 0x44b37c18, Offset: 0x1d38
-// Size: 0x8c
-function private function_8a8380d0(end) {
-    /#
+    // Namespace bot_position/bot_position
+    // Params 1, eflags: 0x4
+    // Checksum 0x44b37c18, Offset: 0x1d38
+    // Size: 0x8c
+    function private function_8a8380d0(end) {
         failures = level.var_51a0bf0;
         failures[failures.size] = {#start:self.origin, #end:end};
         if (failures.size > 100) {
             arrayremoveindex(failures, 0);
         }
-    #/
-}
+    }
 
+#/

@@ -597,13 +597,17 @@ function event_handler[localclient_connect] codecallback_localclientconnect(even
     [[ level.callbacklocalclientconnect ]](eventstruct.localclientnum);
 }
 
-// Namespace callback/glass_smash
-// Params 1, eflags: 0x20
-// Checksum 0xea1121ac, Offset: 0x18c8
-// Size: 0x2c
-function event_handler[glass_smash] codecallback_glasssmash(*eventstruct) {
-    println("<unknown string>");
-}
+/#
+
+    // Namespace callback/glass_smash
+    // Params 1, eflags: 0x20
+    // Checksum 0xea1121ac, Offset: 0x18c8
+    // Size: 0x2c
+    function event_handler[glass_smash] codecallback_glasssmash(*eventstruct) {
+        println("<unknown string>");
+    }
+
+#/
 
 // Namespace callback/sound_setambientstate
 // Params 1, eflags: 0x20

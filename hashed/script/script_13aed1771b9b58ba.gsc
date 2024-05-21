@@ -322,7 +322,7 @@ function function_7995eedf(s_params) {
             if (!player function_1072c231() && player function_d87329b7()) {
                 var_2cacdde7 = 0.1 * player.maxarmor;
                 var_2cacdde7 = int(var_2cacdde7);
-                player.armor = player.armor + math::clamp(var_2cacdde7, 0, player.maxarmor);
+                player.armor += math::clamp(var_2cacdde7, 0, player.maxarmor);
                 player playsoundtoplayer(#"hash_271353dc9677cad3", player);
             }
         }

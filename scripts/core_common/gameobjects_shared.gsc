@@ -902,7 +902,7 @@ function set_use_multiplier_callback(callbackfunction) {
 function defaultuseratescalercallback(player) {
     useobj = self;
     characterindex = player getspecialistindex();
-    assert(is_valid(characterindex));
+    assert(player_role::is_valid(characterindex));
     playerrole = getplayerrolecategory(characterindex, currentsessionmode());
     if (isdefined(playerrole) && isdefined(useobj.bundle)) {
         switch (playerrole) {
@@ -930,7 +930,7 @@ function defaultuseratescalercallback(player) {
 function defaultallowweaponscallback(object) {
     player = self;
     characterindex = player getspecialistindex();
-    assert(is_valid(characterindex));
+    assert(player_role::is_valid(characterindex));
     playerrole = getplayerrolecategory(characterindex, currentsessionmode());
     if (isdefined(playerrole) && isdefined(object.bundle)) {
         switch (playerrole) {
@@ -1052,7 +1052,7 @@ function create_carry_object(ownerteam, trigger, visuals, offset, objectivename,
     if (carryobject function_4ea98a09()) {
         assert(isdefined(objectivename), "pack");
         carryobject.objid = [];
-        level.objidstart = level.objidstart + 2;
+        level.objidstart += 2;
         carryobject.objectiveid = get_next_obj_id();
         objective_add(carryobject.objectiveid, "invisible", carryobject.curorigin, objectivename);
     }
@@ -1415,7 +1415,7 @@ function set_trigger_origin(origin) {
     offset = (self.maxs[2] - self.mins[2]) / 2;
     self.origin = (origin[0], origin[1], origin[2] + offset);
     if (isvec(self.trigger_offset)) {
-        self.origin = self.origin + self.trigger_offset;
+        self.origin += self.trigger_offset;
     }
 }
 
@@ -1674,7 +1674,7 @@ function take_object(object) {
     if (object.type == "carryObject") {
         /#
             if (isdefined(self.carryicon)) {
-                self.carryicon destroyelem();
+                self.carryicon hud::destroyelem();
             }
         #/
         self.carryobject = undefined;
@@ -1686,7 +1686,7 @@ function take_object(object) {
                         elem = self.packicon[i];
                         arrayremovevalue(self.packicon, elem);
                         /#
-                            elem destroyelem();
+                            elem hud::destroyelem();
                         #/
                         self thread adjust_remaining_packicons();
                     }
@@ -2499,7 +2499,7 @@ function use_object_prox_think() {
             if (self.usetime && (!self.mustmaintainclaim || !self function_abe3458c())) {
                 if (self.decayprogress && self function_d897ff7()) {
                     if (isdefined(self.autodecaytime) && self.autodecaytime > 0 && self.curprogress > 0) {
-                        self.curprogress = self.curprogress - level.var_9fee970c * self.usetime / int(self.autodecaytime * 1000);
+                        self.curprogress -= level.var_9fee970c * self.usetime / int(self.autodecaytime * 1000);
                         deltaprogress = self.curprogress - previousprogress;
                         self function_72307b09(deltaprogress);
                         self update_current_progress();
@@ -2533,7 +2533,7 @@ function use_object_prox_think() {
                     if (!isdefined(var_5b06cc31)) {
                         var_5b06cc31 = 1;
                     }
-                    self.curprogress = self.curprogress - level.var_9fee970c * self.userate * decayscale * var_5b06cc31;
+                    self.curprogress -= level.var_9fee970c * self.userate * decayscale * var_5b06cc31;
                     deltaprogress = self.curprogress - previousprogress;
                     self function_72307b09(deltaprogress);
                     if (isdefined(self.decayprogressmin) && self.curprogress < self.decayprogressmin) {
@@ -2579,7 +2579,7 @@ function use_object_prox_think() {
                         var_5b06cc31 = 1;
                     }
                     self.inuse = 1;
-                    self.curprogress = self.curprogress + level.var_9fee970c * self.userate * var_5b06cc31;
+                    self.curprogress += level.var_9fee970c * self.userate * var_5b06cc31;
                     deltaprogress = self.curprogress - previousprogress;
                     function_72307b09(deltaprogress);
                     self update_current_progress();
@@ -2925,7 +2925,7 @@ function function_14c9bdaa() {
         player_use_rate = self.playerrole.gameobjectuserate;
     }
     if (isdefined(self.var_def3c25b)) {
-        player_use_rate = player_use_rate * self [[ self.var_def3c25b ]](self);
+        player_use_rate *= self [[ self.var_def3c25b ]](self);
     }
     return player_use_rate;
 }
@@ -3289,10 +3289,10 @@ function use_hold_think_loop(player) {
             }
             if (waitforweapon) {
                 userate = isdefined(self.userate) && self.userate !== 0 ? self.userate : 1;
-                self.curprogress = self.curprogress + int(timedout * 1000) * userate * playerusemultiplier;
+                self.curprogress += int(timedout * 1000) * userate * playerusemultiplier;
             }
             previousprogress = self.curprogress;
-            self.curprogress = self.curprogress + level.var_9fee970c * self.userate * playerusemultiplier;
+            self.curprogress += level.var_9fee970c * self.userate * playerusemultiplier;
             deltaprogress = self.curprogress - previousprogress;
             self function_72307b09(deltaprogress);
             self update_current_progress();
@@ -3319,7 +3319,7 @@ function use_hold_think_loop(player) {
                 return true;
             }
         }
-        timedout = timedout + float(function_60d95f53()) / 1000;
+        timedout += float(function_60d95f53()) / 1000;
         hostmigration::waittillhostmigrationdone();
     }
     return false;
@@ -3719,18 +3719,20 @@ function allow_use(relativeteam) {
     mdl_gameobject update_trigger();
 }
 
-// Namespace gameobjects/gameobjects_shared
-// Params 1, eflags: 0x0
-// Checksum 0x765bb858, Offset: 0xc4f8
-// Size: 0x4c
-function function_9ddbc967(group) {
-    /#
+/#
+
+    // Namespace gameobjects/gameobjects_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x765bb858, Offset: 0xc4f8
+    // Size: 0x4c
+    function function_9ddbc967(group) {
         if (is_relative_team(group)) {
             return;
         }
         assertmsg("<unknown string>" + group);
-    #/
-}
+    }
+
+#/
 
 // Namespace gameobjects/gameobjects_shared
 // Params 1, eflags: 0x2 linked
@@ -4426,7 +4428,7 @@ function create_pack_object(ownerteam, trigger, visuals, offset, objectivename, 
     if (packobject function_4ea98a09()) {
         assert(isdefined(objectivename), "pack");
         packobject.objid = [];
-        level.objidstart = level.objidstart + 2;
+        level.objidstart += 2;
         packobject.objectiveid = get_next_obj_id();
         objective_add(packobject.objectiveid, "invisible", packobject.curorigin, objectivename);
         if (isdefined(var_6f828297)) {

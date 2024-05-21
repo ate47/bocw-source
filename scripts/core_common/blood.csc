@@ -93,7 +93,7 @@ function private setcontrollerlightbarcolorpulsing(localclientnum, color, pulser
     if (scale > 1) {
         scale = (scale - 2) * -1;
     }
-    curcolor = curcolor + color * 0.8 * scale;
+    curcolor += color * 0.8 * scale;
     setcontrollerlightbarcolor(localclientnum, curcolor);
 }
 
@@ -325,7 +325,7 @@ function private player_splatter(localclientnum) {
                     if (local_player function_d2cb869e(#"hash_73c750f53749d44d")) {
                         function_4238734d(localclientnum, #"hash_73c750f53749d44d", #"blur amount", blur);
                         if (is_true(splatter.shockrifle)) {
-                            opacity = opacity * 0.05;
+                            opacity *= 0.05;
                         }
                         function_4238734d(localclientnum, #"hash_73c750f53749d44d", #"opacity", opacity);
                         function_672c739(localclientnum, splatter.shockrifle);

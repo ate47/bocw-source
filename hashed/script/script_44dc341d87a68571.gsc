@@ -705,7 +705,7 @@ function function_3f15e557(entity, mocompanim, *mocompanimblendouttime, *mocompa
         if (isplayer(mocompanimflag.favoriteenemy)) {
             velocity = mocompanimflag.favoriteenemy getvelocity();
             if (length(velocity) >= 0) {
-                predictedenemypos = predictedenemypos + vectorscale(velocity, 0.25);
+                predictedenemypos += vectorscale(velocity, 0.25);
             }
         }
         var_83fd29ee = vectornormalize(predictedenemypos - mocompanimflag.origin);
@@ -908,7 +908,7 @@ function function_adb41cc7() {
     foreach (item in level.doa.var_dcbded2) {
         type = [[ item.spawndef ]]->gettype();
         if (type == 6 || type == 7) {
-            total = total + item.count;
+            total += item.count;
         }
     }
     return total <= max;
@@ -928,7 +928,7 @@ function function_5af2c5ef() {
     self namespace_250e9486::function_25b2c8a9();
     self.maxhealth = self.health + 13000;
     if (isdefined(level.doa.var_a77e6349)) {
-        self.maxhealth = self.maxhealth + 10000;
+        self.maxhealth += 10000;
     }
     self.meleedistsq = 1764 * 2;
     self.health = self.maxhealth;
@@ -1173,7 +1173,7 @@ function private function_fbc2806e(var_a4388d06, spin_dir) {
     var_ecc54f32 = self gettagangles(var_a4388d06);
     invert = 1;
     if (isdefined(spin_dir)) {
-        invert = invert * spin_dir;
+        invert *= spin_dir;
     }
     var_ecc54f32 = (0, self.angles[1], 0);
     axe = namespace_ec06fe4a::spawnmodel(var_23f0c5b3, "tag_origin");
@@ -1206,7 +1206,7 @@ function private function_fbc2806e(var_a4388d06, spin_dir) {
         }
         axe moveto(move_pos, 0.1);
         wait(0.1);
-        total_dist = total_dist + interval_dist;
+        total_dist += interval_dist;
         if (total_dist >= max_dist) {
             break;
         }

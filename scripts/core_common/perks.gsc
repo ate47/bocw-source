@@ -209,11 +209,11 @@ function private function_78976b52() {
 // Checksum 0x1f9df55e, Offset: 0xd08
 // Size: 0x100
 function private function_e5f5216f(cf) {
-    var_ac922159 = getdvarint(#"hash_72fe00ba2b98e139", 11);
+    rechargetime = getdvarint(#"hash_72fe00ba2b98e139", 11);
     elapsedtime = 0;
     starttime = gettime();
-    while (elapsedtime < var_ac922159) {
-        progress = elapsedtime / var_ac922159;
+    while (elapsedtime < rechargetime) {
+        progress = elapsedtime / rechargetime;
         self clientfield::set_player_uimodel(cf, progress);
         waitframe(1);
         elapsedtime = float(gettime() - starttime) / 1000;
@@ -229,11 +229,11 @@ function private function_e5f5216f(cf) {
 // Size: 0x150
 function private function_691948bf(cf) {
     self endon(#"hash_5c998eb8e3fcffe5");
-    var_ac922159 = getdvarint(#"hash_3d104eb411be9f06", 25);
+    rechargetime = getdvarint(#"hash_3d104eb411be9f06", 25);
     elapsedtime = 0;
     starttime = gettime();
-    while (elapsedtime < var_ac922159) {
-        progress = elapsedtime / var_ac922159;
+    while (elapsedtime < rechargetime) {
+        progress = elapsedtime / rechargetime;
         self clientfield::set_player_uimodel(cf, progress);
         waitframe(1);
         elapsedtime = gettime() - starttime;

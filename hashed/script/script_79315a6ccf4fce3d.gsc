@@ -155,8 +155,8 @@ function function_d971ecbd(time) {
         if (result._notify == #"damage") {
             namespace_1e25ad94::debugmsg("Barrel (" + self getentitynumber() + ") took damage of: " + result.amount + " Health left: " + self.health);
             self.fuselit = 1;
-            detonationtime = detonationtime - 2000;
-            stage1 = stage1 - 2000;
+            detonationtime -= 2000;
+            stage1 -= 2000;
         }
         if (!var_38ec2561 && time > stage1) {
             var_38ec2561 = 1;
@@ -308,7 +308,7 @@ function function_2b60f30() {
                 }
                 if (activate) {
                     function_647017bd(trap, 1);
-                    trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
+                    trap.var_eb9d64bb += 5000;
                     namespace_1e25ad94::debugmsg("Paging IN barrel trap at:" + trap.origin);
                 }
                 continue;

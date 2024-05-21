@@ -318,9 +318,9 @@ function function_4be92bcc(idx, seconds) {
         }
         var_80d530a9.var_a98f4fd2[var_80d530a9.var_a98f4fd2.size] = tile;
     }
-    level.doa.var_fa21a3aa = level.doa.var_fa21a3aa + var_80d530a9.tiles;
-    level.doa.var_f23e2931 = level.doa.var_f23e2931 + var_80d530a9.halls;
-    level.doa.var_f5f2b4e8 = level.doa.var_f5f2b4e8 + var_80d530a9.rooms;
+    level.doa.var_fa21a3aa += var_80d530a9.tiles;
+    level.doa.var_f23e2931 += var_80d530a9.halls;
+    level.doa.var_f5f2b4e8 += var_80d530a9.rooms;
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c

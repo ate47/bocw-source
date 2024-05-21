@@ -106,7 +106,7 @@ function function_b974aa72(origin, player) {
     siegebot function_d733412a(0);
     timeout = player namespace_1c2a96f9::function_4808b985(40);
     if (isdefined(level.doa.var_a77e6349)) {
-        timeout = timeout + 30;
+        timeout += 30;
     }
     siegebot thread function_c45d8312(player, timeout);
     player namespace_83eb6304::turnofffx("player_trail_" + player.doa.color);

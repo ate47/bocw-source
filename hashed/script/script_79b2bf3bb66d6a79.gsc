@@ -94,12 +94,13 @@ function private function_23f390cc(var_be96a4f8) {
     return (var_be96a4f8[2], var_be96a4f8[1], var_be96a4f8[0] * -1);
 }
 
-// Namespace snipercam/snipercam
-// Params 1, eflags: 0x4
-// Checksum 0xc4a2199a, Offset: 0x7a8
-// Size: 0x232
-function private function_51f065c3(parms) {
-    /#
+/#
+
+    // Namespace snipercam/snipercam
+    // Params 1, eflags: 0x4
+    // Checksum 0xc4a2199a, Offset: 0x7a8
+    // Size: 0x232
+    function private function_51f065c3(parms) {
         foreach (var_188953e0 in level.var_6356fe3b) {
             var_1b6e3d9c = distance2d(var_188953e0.start.origin, parms.var_b21e26bd);
             if (var_1b6e3d9c < 200) {
@@ -123,8 +124,9 @@ function private function_51f065c3(parms) {
                 waitframe(1);
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace snipercam/snipercam
 // Params 3, eflags: 0x6 linked
@@ -294,7 +296,7 @@ function private function_63a2faff(startval, endval, lerptime) {
     startval = isdefined(self.var_2ba6387e) ? self.var_2ba6387e : startval;
     self postfx::function_c8b5f318("pstfx_speedblur", "Blur", startval);
     while (i < 1) {
-        i = i + self function_8e4cd43b() / 1000 * rate;
+        i += self function_8e4cd43b() / 1000 * rate;
         self.var_2ba6387e = lerpfloat(startval, endval, i);
         self postfx::function_c8b5f318("pstfx_speedblur", "Blur", self.var_2ba6387e);
         println("<unknown string>" + self.var_2ba6387e);

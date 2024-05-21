@@ -217,14 +217,14 @@ function function_92c05efb(var_9da78756) {
 function private function_1e3823bc(var_3f94a5b6) {
     s_input = {#updown:0, #var_93354cc2:0};
     if (self buttonbitstate(var_3f94a5b6.var_a666ab6e[0])) {
-        s_input.updown = s_input.updown + 1;
+        s_input.updown += 1;
     } else if (self buttonbitstate(var_3f94a5b6.var_a666ab6e[1])) {
-        s_input.updown = s_input.updown - 1;
+        s_input.updown -= 1;
     }
     if (self buttonbitstate(var_3f94a5b6.var_a666ab6e[2])) {
-        s_input.var_93354cc2 = s_input.var_93354cc2 - 1;
+        s_input.var_93354cc2 -= 1;
     } else if (self buttonbitstate(var_3f94a5b6.var_a666ab6e[3])) {
-        s_input.var_93354cc2 = s_input.var_93354cc2 + 1;
+        s_input.var_93354cc2 += 1;
     }
     return s_input;
 }
@@ -244,12 +244,13 @@ function private function_d25d2a9(var_e9a27711, s_screen, var_7b1452d6, n_active
     var_7b1452d6.angles = (a_angles[0], a_angles[1], 0);
 }
 
-// Namespace namespace_2a67e53/namespace_2a67e53
-// Params 0, eflags: 0x4
-// Checksum 0xdb672c10, Offset: 0x17c8
-// Size: 0xbe
-function private function_dae63c17() {
-    /#
+/#
+
+    // Namespace namespace_2a67e53/namespace_2a67e53
+    // Params 0, eflags: 0x4
+    // Checksum 0xdb672c10, Offset: 0x17c8
+    // Size: 0xbe
+    function private function_dae63c17() {
         level endon(#"end_game", #"hash_76c5d10560b669a7");
         self endon(#"disconnect", #"death");
         while (true) {
@@ -258,8 +259,9 @@ function private function_dae63c17() {
             self iprintlnbold("<unknown string>");
             wait(5);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_2a67e53/namespace_2a67e53
 // Params 1, eflags: 0x2 linked

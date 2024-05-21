@@ -197,7 +197,7 @@ function function_a48c33ff(dialogalias, dialogflags, dialogbuffer, enemy) {
         }
         dialogalias = dialogalias + "_0" + self.stolendialogindex;
         self.stolendialogindex++;
-        self.stolendialogindex = self.stolendialogindex % 4;
+        self.stolendialogindex %= 4;
     }
     if (dialogflags & 2) {
         if (self hasdobj() && self haspart("J_Head")) {
@@ -647,8 +647,8 @@ function playkillbattlechatter(dialogkey, attacker, weapon, victim, inflictor) {
         if (var_25db02aa) {
             var_71449560 = isdefined(var_5c238c21.var_9ccf7d8b) ? var_5c238c21.var_9ccf7d8b : 4;
             if (isdefined(var_5c238c21.var_48b8bd2c)) {
-                var_71449560 = var_71449560 + (isdefined(var_5c238c21.var_c4d151c8) ? var_5c238c21.var_c4d151c8 : 0);
-                var_71449560 = var_71449560 + (isdefined(var_5c238c21.var_4eb6c155) ? var_5c238c21.var_4eb6c155 : 4);
+                var_71449560 += isdefined(var_5c238c21.var_c4d151c8) ? var_5c238c21.var_c4d151c8 : 0;
+                var_71449560 += isdefined(var_5c238c21.var_4eb6c155) ? var_5c238c21.var_4eb6c155 : 4;
             }
             thread function_9d4a3d68(0, attacker, undefined, weapon, var_5c238c21.var_57c1e152, var_71449560);
             return;
@@ -696,7 +696,7 @@ function function_b5242998() {
     }
     allies = [];
     allyradiussq = mpdialog_value("playerVoiceRadius", 0);
-    allyradiussq = allyradiussq * allyradiussq;
+    allyradiussq *= allyradiussq;
     foreach (player in level.players) {
         if (!isdefined(player) || !isalive(player) || player.sessionstate != "playing" || player == self || player hasperk(#"specialty_quieter") || util::function_fbce7263(player.team, self.team)) {
             continue;
@@ -878,7 +878,7 @@ function playgadgetready(weapon, userflip = 0) {
             delaykey = "rouletteFlipDelay";
         }
         waittime = mpdialog_value(delaykey, minwaittime);
-        dialogflags = dialogflags + 64;
+        dialogflags += 64;
     } else {
         if (is_true(self.isthief)) {
             generickey = playerbundle.thiefweaponready;
@@ -900,7 +900,7 @@ function playgadgetready(weapon, userflip = 0) {
             if (self.laststolengadget === weapon && self.laststolengadgettime + int(mpdialog_value(repeatthresholdkey, 0) * 1000) > gettime()) {
                 dialogkey = repeatkey;
             } else {
-                dialogflags = dialogflags + 64;
+                dialogflags += 64;
             }
         }
     }
@@ -1156,8 +1156,8 @@ function play_gadget_success(weapon, *waitkey, *victim, var_5d738b56) {
     self.playedgadgetsuccess = 1;
     var_71449560 = isdefined(var_5c238c21.var_9ccf7d8b) ? var_5c238c21.var_9ccf7d8b : 4;
     if (isdefined(var_5c238c21.var_48b8bd2c)) {
-        var_71449560 = var_71449560 + (isdefined(var_5c238c21.var_c4d151c8) ? var_5c238c21.var_c4d151c8 : 0);
-        var_71449560 = var_71449560 + (isdefined(var_5c238c21.var_4eb6c155) ? var_5c238c21.var_4eb6c155 : 4);
+        var_71449560 += isdefined(var_5c238c21.var_c4d151c8) ? var_5c238c21.var_c4d151c8 : 0;
+        var_71449560 += isdefined(var_5c238c21.var_4eb6c155) ? var_5c238c21.var_4eb6c155 : 4;
     }
     thread function_9d4a3d68(0, self, var_5d738b56, victim, var_5c238c21.var_57c1e152, var_71449560);
 }

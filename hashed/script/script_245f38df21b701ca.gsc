@@ -80,7 +80,7 @@ function setarena(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fi
     if (bwastimejump != 32 - 1) {
         level.doa.var_72b899ad = level.doa.arenas[bwastimejump];
         /#
-            debugmsg("<unknown string>" + level.doa.var_72b899ad.script_noteworthy);
+            namespace_1e25ad94::debugmsg("<unknown string>" + level.doa.var_72b899ad.script_noteworthy);
         #/
     }
     var_129a290 = 1;
@@ -129,11 +129,11 @@ function settod(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *field
         break;
     }
     /#
-        debugmsg("<unknown string>" + level.doa.var_72b899ad.script_noteworthy + "<unknown string>" + level.doa.var_3303cb0d);
+        namespace_1e25ad94::debugmsg("<unknown string>" + level.doa.var_72b899ad.script_noteworthy + "<unknown string>" + level.doa.var_3303cb0d);
     #/
     level.doa.var_1fc44fbc = "fxexp_" + level.doa.var_72b899ad.script_noteworthy + "_" + level.doa.var_3303cb0d;
     /#
-        debugmsg("<unknown string>" + level.doa.var_1fc44fbc + "<unknown string>" + fieldname);
+        namespace_1e25ad94::debugmsg("<unknown string>" + level.doa.var_1fc44fbc + "<unknown string>" + fieldname);
     #/
     playradiantexploder(fieldname, level.doa.var_1fc44fbc);
 }

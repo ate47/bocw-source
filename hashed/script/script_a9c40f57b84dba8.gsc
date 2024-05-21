@@ -446,17 +446,17 @@ function function_abac41c9(var_b4488d57, var_3e5ed63d) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xc5ac5bba, Offset: 0x24a0
 // Size: 0xd2
-function function_51ed2144(var_b4488d57, var_b7eee573) {
-    if (!(isdefined(var_b4488d57) && isdefined(var_b7eee573))) {
+function function_51ed2144(var_b4488d57, mdl_orb) {
+    if (!(isdefined(var_b4488d57) && isdefined(mdl_orb))) {
         return;
     }
     var_b4488d57 endon(#"hash_6a2f3283df9a5b38");
-    var_b7eee573 endon(#"death");
+    mdl_orb endon(#"death");
     for (var_5beedbc3 = var_b4488d57.var_5beedbc3; !isdefined(var_5beedbc3); var_5beedbc3 = var_b4488d57.var_5beedbc3) {
         waitframe(1);
     }
     var_5beedbc3 endon(#"death");
-    var_b7eee573.var_28efd47d = var_b7eee573 beam::launch(var_b7eee573, "tag_origin", var_5beedbc3, "j_spine4", "beam9_sr_boss_avo_orb_tether");
+    mdl_orb.var_28efd47d = mdl_orb beam::launch(mdl_orb, "tag_origin", var_5beedbc3, "j_spine4", "beam9_sr_boss_avo_orb_tether");
 }
 
 // Namespace namespace_1b312da5/namespace_1b312da5

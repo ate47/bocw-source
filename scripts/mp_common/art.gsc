@@ -30,18 +30,20 @@ function private preinit() {
     #/
 }
 
-// Namespace art/art
-// Params 2, eflags: 0x0
-// Checksum 0x7aa77a40, Offset: 0x1e8
-// Size: 0x44
-function artfxprintln(file, string) {
-    /#
+/#
+
+    // Namespace art/art
+    // Params 2, eflags: 0x0
+    // Checksum 0x7aa77a40, Offset: 0x1e8
+    // Size: 0x44
+    function artfxprintln(file, string) {
         if (file == -1) {
             return;
         }
         fprintln(file, string);
-    #/
-}
+    }
+
+#/
 
 // Namespace art/art
 // Params 2, eflags: 0x2 linked
@@ -56,7 +58,7 @@ function strtok_loc(string, *par1) {
             indexstring = "";
             continue;
         }
-        indexstring = indexstring + par1[i];
+        indexstring += par1[i];
     }
     if (indexstring.size) {
         stringlist[stringlist.size] = indexstring;
@@ -215,12 +217,13 @@ function fovslidercheck() {
     }
 }
 
-// Namespace art/art
-// Params 0, eflags: 0x0
-// Checksum 0x48bdd201, Offset: 0x1368
-// Size: 0x40c
-function dumpsettings() {
-    /#
+/#
+
+    // Namespace art/art
+    // Params 0, eflags: 0x0
+    // Checksum 0x48bdd201, Offset: 0x1368
+    // Size: 0x40c
+    function dumpsettings() {
         if (getdvar(#"scr_art_dump", 0)) {
             println("<unknown string>" + level.fognearplane + "<unknown string>");
             println("<unknown string>" + level.fogexphalfplane + "<unknown string>");
@@ -246,6 +249,6 @@ function dumpsettings() {
             println("<unknown string>");
             setdvar(#"scr_art_dump", 0);
         }
-    #/
-}
+    }
 
+#/

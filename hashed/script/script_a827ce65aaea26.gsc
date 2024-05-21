@@ -270,7 +270,7 @@ function on_round_end() {
     }
     if (level.round_number <= 55) {
         if ((isdefined(level.round_number) ? level.round_number : 1) % 5 == 0) {
-            level.var_44064cc6 = level.var_44064cc6 + 5;
+            level.var_44064cc6 += 5;
         }
     }
     function_c531a378();

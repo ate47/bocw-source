@@ -210,7 +210,7 @@ function beacon_spawned(watcher, owner) {
     }
     owner notify(#"hash_31be1f8b27209ad0", {#player:owner, #beacon:self});
     level notify(#"hash_31be1f8b27209ad0", {#player:owner, #beacon:self});
-    if (!owner deployable::function_f8fe102f()) {
+    if (!owner deployable::location_valid()) {
         owner deployable::function_416f03e6(level.spawnbeaconsettings.beaconweapon);
         self delete();
         return;
@@ -346,7 +346,7 @@ function function_41a037e6() {
         foreach (var_25d50c8b in level.spawnbeaconsettings.var_613ff100) {
             distance = distancesquared(spawnbeacon.origin, player.origin);
             if (distance <= var_25d50c8b.zonemax && distance > var_25d50c8b.zonemin) {
-                spawnbeacon.threatlevel = spawnbeacon.threatlevel + var_25d50c8b.points;
+                spawnbeacon.threatlevel += var_25d50c8b.points;
             }
         }
     }
@@ -395,7 +395,7 @@ function getnewspawnbeaconspawnlist() {
 // Size: 0x74
 function freespawnbeaconspawnlist(spawnlistname) {
     if (isdefined(spawnlistname)) {
-        assert(!contains(level.spawnbeaconsettings.availablespawnlists, spawnlistname));
+        assert(!array::contains(level.spawnbeaconsettings.availablespawnlists, spawnlistname));
         array::push(level.spawnbeaconsettings.availablespawnlists, spawnlistname);
     }
 }
@@ -543,7 +543,7 @@ function function_a9ff3efb(var_d3213f00) {
             self [[ level.var_34c482f2 ]](attacker, self.var_d02ddb8e);
         }
         /#
-            push_front(level.spawnbeaconsettings.var_e7571ff1, self.objectiveid);
+            array::push_front(level.spawnbeaconsettings.var_e7571ff1, self.objectiveid);
         #/
         if (isdefined(self.objectiveid)) {
             deleteobjective(self.objectiveid);
@@ -737,7 +737,7 @@ function function_438ca4e0() {
 // Size: 0x38
 function function_9c87725b() {
     currentid = game.spawnbeaconid;
-    game.spawnbeaconid = game.spawnbeaconid + 1;
+    game.spawnbeaconid += 1;
     return currentid;
 }
 
@@ -846,13 +846,17 @@ function retreatedstartmelee(var_a820f9, spawns) {
     player notify(#"beacon_added");
 }
 
-// Namespace spawn_beacon/spawnbeacon_shared
-// Params 2, eflags: 0x0
-// Checksum 0xbd9add81, Offset: 0x3650
-// Size: 0x34
-function function_264da546(*var_cd3712d2, *jammer) {
-    println("<unknown string>");
-}
+/#
+
+    // Namespace spawn_beacon/spawnbeacon_shared
+    // Params 2, eflags: 0x0
+    // Checksum 0xbd9add81, Offset: 0x3650
+    // Size: 0x34
+    function function_264da546(*var_cd3712d2, *jammer) {
+        println("<unknown string>");
+    }
+
+#/
 
 // Namespace spawn_beacon/spawnbeacon_shared
 // Params 3, eflags: 0x2 linked

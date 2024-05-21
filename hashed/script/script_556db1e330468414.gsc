@@ -304,12 +304,13 @@ function function_68aac628(instance, var_9c1ed9ea) {
     }
 }
 
-// Namespace namespace_181e92ae/world_event_monster_house
-// Params 1, eflags: 0x4
-// Checksum 0x79670daa, Offset: 0x15f0
-// Size: 0x202
-function private function_fa4d3a3e(instance) {
-    /#
+/#
+
+    // Namespace namespace_181e92ae/world_event_monster_house
+    // Params 1, eflags: 0x4
+    // Checksum 0x79670daa, Offset: 0x15f0
+    // Size: 0x202
+    function private function_fa4d3a3e(instance) {
         if (!getdvarint(#"hash_730311c63805303a", 0)) {
             return;
         }
@@ -326,6 +327,6 @@ function private function_fa4d3a3e(instance) {
             }
             waitframe(10);
         }
-    #/
-}
+    }
 
+#/

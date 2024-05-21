@@ -163,10 +163,10 @@ function function_4ba529a7(weapon) {
 // Size: 0x8c
 function function_d4759f13(ammo_state, var_a444fb = 0, var_93eafdc0 = 0) {
     if (var_a444fb) {
-        ammo_state = ammo_state + 4;
+        ammo_state += 4;
     }
     if (var_93eafdc0) {
-        ammo_state = ammo_state + 8;
+        ammo_state += 8;
     }
     self clientfield::set("" + #"hash_7508e13e17dd1e3c", ammo_state);
 }
@@ -637,7 +637,7 @@ function function_70240b1b() {
 // Size: 0x54
 function function_b198b062(stage) {
     if (self.var_23130969 > 1) {
-        stage = stage + 4;
+        stage += 4;
     }
     self clientfield::set("" + #"hash_47e7d5219a26a786", stage);
 }
@@ -736,16 +736,17 @@ function function_5a2447b1(time) {
     }
 }
 
-// Namespace namespace_a5ef5769/namespace_a5ef5769
-// Params 2, eflags: 0x0
-// Checksum 0xbecb1e82, Offset: 0x30b8
-// Size: 0x8c
-function function_6a0ad00(msg, color = (1, 0, 0)) {
-    /#
+/#
+
+    // Namespace namespace_a5ef5769/namespace_a5ef5769
+    // Params 2, eflags: 0x0
+    // Checksum 0xbecb1e82, Offset: 0x30b8
+    // Size: 0x8c
+    function function_6a0ad00(msg, color = (1, 0, 0)) {
         if (!getdvarint(#"hash_49e9d3375f091d35", 0)) {
             return;
         }
         print3d(self.origin + (0, 0, 60), msg, color, 1, 1, 10);
-    #/
-}
+    }
 
+#/

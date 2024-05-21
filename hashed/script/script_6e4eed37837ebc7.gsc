@@ -174,7 +174,7 @@ function private function_e7085388(weapon, var_e3774219 = 0) {
             var_d3239b6b = function_e7967fc8(previousweapon, var_4dcb7b2e);
             var_1b634dac = self.pers[#"hash_13b806f669a6bb82"][#"ammo"] * var_d3239b6b;
             if (isdefined(self.pers[#"hash_13b806f669a6bb82"][#"hash_67e7b008344d0e5e"])) {
-                var_1b634dac = var_1b634dac + self.pers[#"hash_13b806f669a6bb82"][#"hash_67e7b008344d0e5e"];
+                var_1b634dac += self.pers[#"hash_13b806f669a6bb82"][#"hash_67e7b008344d0e5e"];
             }
         } else {
             var_1b634dac = self.pers[#"hash_13b806f669a6bb82"][#"hash_32a0670ee5dfa2cc"];
@@ -201,7 +201,7 @@ function private function_e7085388(weapon, var_e3774219 = 0) {
     }
     elapsedtime = isdefined(self.pers[#"hash_13b806f669a6bb82"][#"hash_67e7b008344d0e5e"]) ? self.pers[#"hash_13b806f669a6bb82"][#"hash_67e7b008344d0e5e"] : 0;
     if (is_true(var_cdd95e58) && !is_true(var_4dcb7b2e)) {
-        elapsedtime = elapsedtime * 0.75;
+        elapsedtime *= 0.75;
     }
     var_9d2ffe1e = int(floor(elapsedtime));
     self function_cfb0d7cc(var_9d2ffe1e);
@@ -214,7 +214,7 @@ function private function_e7085388(weapon, var_e3774219 = 0) {
         }
         waitframe(1);
         util::function_5355d311();
-        elapsedtime = elapsedtime + float(function_60d95f53()) / 1000;
+        elapsedtime += float(function_60d95f53()) / 1000;
         self.pers[#"hash_13b806f669a6bb82"][#"hash_67e7b008344d0e5e"] = elapsedtime;
     }
     self function_cfb0d7cc(int(floor(elapsedtime)));
@@ -248,7 +248,7 @@ function private function_e7967fc8(weapon, var_cdd95e58 = 0) {
         }
     #/
     if (var_cdd95e58) {
-        cooldown = cooldown * 0.75;
+        cooldown *= 0.75;
     }
     return cooldown;
 }

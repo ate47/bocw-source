@@ -160,7 +160,7 @@ function function_ea5dfa17() {
 function function_295c9975() {
     namespace_250e9486::function_25b2c8a9();
     level thread function_ea5dfa17();
-    self.maxhealth = self.maxhealth + 150000 + int(75000 * namespace_ec06fe4a::function_ef369bae());
+    self.maxhealth += 150000 + int(75000 * namespace_ec06fe4a::function_ef369bae());
     self.health = self.maxhealth;
     self.var_1c8b76d3 = 1;
     self namespace_250e9486::function_db744d28();
@@ -376,7 +376,7 @@ function private function_df15eebf(entity) {
     origin = entity gettagorigin("j_nose4");
     radiusdamage(origin, 200, 150, 150, entity);
     /#
-        level thread debugcircle(origin, 200, 5, (1, 0, 0));
+        level thread namespace_1e25ad94::debugcircle(origin, 200, 5, (1, 0, 0));
     #/
     enemies = function_f6f34851(self.team);
     foreach (target in enemies) {
@@ -430,7 +430,7 @@ function private function_2328518e(entity) {
         }
     }
     /#
-        level thread debugcircle(dmgorigin, 200, 5, (1, 0, 1));
+        level thread namespace_1e25ad94::debugcircle(dmgorigin, 200, 5, (1, 0, 1));
     #/
     enemies = function_f6f34851(entity.team);
     foreach (target in enemies) {
@@ -858,7 +858,7 @@ function private function_f8145b00(entity) {
                         recordsphere(targetpos, 8, (0, 1, 1), "<unknown string>");
                     #/
                     dirtoenemy = vectornormalize(targetpos - self.origin);
-                    targetpos = targetpos + vectorscale(dirtoenemy * -1, 170);
+                    targetpos += vectorscale(dirtoenemy * -1, 170);
                     targetpos = getclosestpointonnavmesh(targetpos, 400, entity getpathfindingradius() * 1.2);
                     if (isdefined(targetpos)) {
                         path = generatenavmeshpath(self.origin, targetpos, self);

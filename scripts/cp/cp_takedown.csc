@@ -218,7 +218,7 @@ function hit1_helispotlight(localclientnum, *oldval, newval, *bnewent, *binitial
                 /#
                     fwd = anglestoforward(self gettagangles(tag_fx));
                     fwd = vectornormalize(fwd);
-                    fwd = fwd * 2512;
+                    fwd *= 2512;
                 #/
             }
             waitframe(1);

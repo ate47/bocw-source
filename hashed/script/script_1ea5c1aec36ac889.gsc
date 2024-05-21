@@ -400,24 +400,23 @@ function function_2d3ad651(e_player) {
     profilestop();
 }
 
-// Namespace namespace_33c196c8/namespace_33c196c8
-// Params 0, eflags: 0x0
-// Checksum 0x244c711, Offset: 0x1918
-// Size: 0x5c
-function function_63a18814() {
-    /#
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_custom_devgui_callback(&cmd);
-    #/
-}
+/#
 
-// Namespace namespace_33c196c8/namespace_33c196c8
-// Params 1, eflags: 0x0
-// Checksum 0x21dca8d1, Offset: 0x1980
-// Size: 0x82
-function cmd(cmd) {
-    /#
+    // Namespace namespace_33c196c8/namespace_33c196c8
+    // Params 0, eflags: 0x0
+    // Checksum 0x244c711, Offset: 0x1918
+    // Size: 0x5c
+    function function_63a18814() {
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        zm_devgui::add_custom_devgui_callback(&cmd);
+    }
+
+    // Namespace namespace_33c196c8/namespace_33c196c8
+    // Params 1, eflags: 0x0
+    // Checksum 0x21dca8d1, Offset: 0x1980
+    // Size: 0x82
+    function cmd(cmd) {
         switch (cmd) {
         case #"hash_4b0f351e219eb41b":
             function_605ea132();
@@ -428,28 +427,24 @@ function cmd(cmd) {
         default:
             break;
         }
-    #/
-}
+    }
 
-// Namespace namespace_33c196c8/namespace_33c196c8
-// Params 0, eflags: 0x0
-// Checksum 0xc0e6783b, Offset: 0x1a10
-// Size: 0x44
-function function_605ea132() {
-    /#
+    // Namespace namespace_33c196c8/namespace_33c196c8
+    // Params 0, eflags: 0x0
+    // Checksum 0xc0e6783b, Offset: 0x1a10
+    // Size: 0x44
+    function function_605ea132() {
         player = getplayers()[0];
         level thread function_e7136ed2(player);
-    #/
-}
+    }
 
-// Namespace namespace_33c196c8/namespace_33c196c8
-// Params 0, eflags: 0x0
-// Checksum 0xaaf2bddc, Offset: 0x1a60
-// Size: 0x44
-function function_f4e829d6() {
-    /#
+    // Namespace namespace_33c196c8/namespace_33c196c8
+    // Params 0, eflags: 0x0
+    // Checksum 0xaaf2bddc, Offset: 0x1a60
+    // Size: 0x44
+    function function_f4e829d6() {
         player = getplayers()[0];
         level thread function_2d3ad651(player);
-    #/
-}
+    }
 
+#/

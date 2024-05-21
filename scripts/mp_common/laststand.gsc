@@ -87,7 +87,7 @@ function private preinit() {
     level.var_8e910e84 = 1;
     level.var_97c6ee7c = &playerlaststand;
     level.skiplaststand = getgametypesetting(#"skiplaststand");
-    level.var_25364e47 = getgametypesetting(#"hash_83f11b8abac148f");
+    level.laststandlives = getgametypesetting(#"hash_83f11b8abac148f");
     level.var_5c13c13f = getgametypesetting(#"hash_4c7c8c4bd1b2a58b");
     level.var_57e7d5a = getgametypesetting(#"hash_67d54bbc52811921");
     level.var_b5087de4 = getgametypesetting(#"hash_3e13b420d6773b4c");
@@ -248,7 +248,7 @@ function event_handler[exit_vehicle] codecallback_vehicleexit(eventstruct) {
 function on_player_damage(params) {
     if (self is_reviving_any()) {
         if (isdefined(self.reviving_player) && isdefined(self.reviving_player.var_d75a6ff5)) {
-            self.reviving_player.var_d75a6ff5.var_d733f8d7 = self.reviving_player.var_d75a6ff5.var_d733f8d7 + params.idamage;
+            self.reviving_player.var_d75a6ff5.var_d733f8d7 += params.idamage;
             if (self.health <= params.idamage) {
                 self.reviving_player.var_d75a6ff5.var_bb36e277 = 1;
             }
@@ -490,21 +490,22 @@ function function_2b77bc35() {
     return teams;
 }
 
-// Namespace laststand_mp/laststand
-// Params 0, eflags: 0x0
-// Checksum 0x22c0c13c, Offset: 0x2088
-// Size: 0x270
-function function_86c92a7e() {
-    /#
+/#
+
+    // Namespace laststand_mp/laststand
+    // Params 0, eflags: 0x0
+    // Checksum 0x22c0c13c, Offset: 0x2088
+    // Size: 0x270
+    function function_86c92a7e() {
         level endon(#"game_ended");
         while (true) {
             var_e796bc31 = getdvarstring(#"scr_last_stand", "<unknown string>");
             if (var_e796bc31 == "<unknown string>") {
-                host = gethostplayer();
+                host = util::gethostplayer();
                 angles = host getplayerangles();
                 dir = anglestoforward(angles);
                 eye = host geteye();
-                dir = dir * 500;
+                dir *= 500;
                 trace = bullettrace(eye, eye + dir, 1, host);
                 target = trace[#"entity"];
                 if (!isdefined(target) || !isplayer(target)) {
@@ -521,8 +522,9 @@ function function_86c92a7e() {
             setdvar(#"scr_last_stand", "<unknown string>");
             wait(0.1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace laststand_mp/laststand
 // Params 4, eflags: 0x0
@@ -537,7 +539,7 @@ function function_b1158c52(attacker, idamage, smeansofdeath, var_4cf51823) {
         return true;
     } else if (is_true(level.var_6dec0ba0) && isdefined(attacker) && attacker == self) {
         return true;
-    } else if (is_true(level.var_25364e47) && self.laststandcount > level.var_25364e47) {
+    } else if (is_true(level.laststandlives) && self.laststandcount > level.laststandlives) {
         return true;
     } else if (is_true(level.var_b21f0c3) && self isplayerswimming()) {
         return true;
@@ -827,7 +829,7 @@ function laststand_bleedout_damage() {
         if (function_58f9f9c5(waitresult)) {
             self.var_969fabf4 = 0;
         } else {
-            self.var_969fabf4 = self.var_969fabf4 - waitresult.idamage;
+            self.var_969fabf4 -= waitresult.idamage;
         }
         if (self.var_969fabf4 <= 0) {
             self.bleedout_time = 0;
@@ -836,7 +838,7 @@ function laststand_bleedout_damage() {
             self.var_a1d415ee = {#einflictor:waitresult.einflictor, #attacker:waitresult.eattacker, #attackerorigin:vattacker.origin, #var_83634238:isplayer(vattacker) ? vattacker getplayerangles() : vattacker.angles, #idamage:waitresult.idamage, #smeansofdeath:waitresult.smeansofdeath, #weapon:waitresult.weapon, #var_fd90b0bb:waitresult.var_fd90b0bb, #vdir:waitresult.vdir, #shitloc:waitresult.shitloc, #matchtime:function_f8d53445()};
         }
         if (isdefined(self.var_d75a6ff5)) {
-            self.var_d75a6ff5.damage = self.var_d75a6ff5.damage + int(waitresult.idamage);
+            self.var_d75a6ff5.damage += int(waitresult.idamage);
         }
         self function_a6872ca5(waitresult.idamage, waitresult.eattacker, waitresult.idflags, waitresult.smeansofdeath, waitresult.weapon, waitresult.var_fd90b0bb, waitresult.vpoint, waitresult.shitloc, waitresult.vdamageorigin, waitresult.boneindex, waitresult.vsurfacenormal, self.var_969fabf4 <= 0);
     }
@@ -911,12 +913,12 @@ function laststand_bleedout(bleedouttime, var_969fabf4) {
                 }
                 self.var_eb33efbc = 1;
                 if (time >= var_7c962084 + var_cb141a23) {
-                    self.bleedout_time = self.bleedout_time - var_93b9385d;
+                    self.bleedout_time -= var_93b9385d;
                     var_7c962084 = time;
-                    var_9da219f5 = var_9da219f5 + var_cb141a23;
+                    var_9da219f5 += var_cb141a23;
                 }
             } else if (time >= var_9da219f5) {
-                self.bleedout_time = self.bleedout_time - 1;
+                self.bleedout_time -= 1;
                 var_7c962084 = undefined;
                 var_9da219f5 = time + int(1 * 1000);
             }
@@ -930,8 +932,8 @@ function laststand_bleedout(bleedouttime, var_969fabf4) {
                 self.var_bcba8155 = time;
             }
             waitframe(1);
-            var_cebeb781 = var_cebeb781 | !self usebuttonpressed();
-            var_3e5a068a = var_3e5a068a | !self buttonbitstate(var_1b4f5d73);
+            var_cebeb781 |= !self usebuttonpressed();
+            var_3e5a068a |= !self buttonbitstate(var_1b4f5d73);
             self.var_eb33efbc = 0;
             while (!is_true(self.var_1cc38de0) && (self is_being_revived() || self function_72e0c544())) {
                 waitframe(1);
@@ -1508,7 +1510,7 @@ function revive_do_revive(playerbeingrevived) {
         }
         self clientfield::set_player_uimodel("hudItems.laststand.reviveProgress", playerbeingrevived.reviveprogress);
         playerbeingrevived clientfield::set_player_uimodel("hudItems.laststand.reviveProgress", playerbeingrevived.reviveprogress);
-        timer = timer + float(function_60d95f53()) / 1000;
+        timer += float(function_60d95f53()) / 1000;
         waitframe(1);
     }
     self clientfield::set_player_uimodel("hudItems.laststand.reviveProgress", 0);
@@ -1570,15 +1572,16 @@ function function_8e3d5c84() {
     }
 }
 
-// Namespace laststand_mp/laststand
-// Params 0, eflags: 0x0
-// Checksum 0x53648d97, Offset: 0x6ca8
-// Size: 0xf0
-function function_64bea7b1() {
-    /#
+/#
+
+    // Namespace laststand_mp/laststand
+    // Params 0, eflags: 0x0
+    // Checksum 0x53648d97, Offset: 0x6ca8
+    // Size: 0xf0
+    function function_64bea7b1() {
         self endon(#"player_revived", #"disconnect", #"death");
         wait(getdvarint(#"hash_4fc41e7721e32d59", 1));
-        while (isalive(self) && self player_is_in_laststand()) {
+        while (isalive(self) && self laststand::player_is_in_laststand()) {
             success = self function_73d6c609();
             if (success) {
                 self thread revive_success(self, 0);
@@ -1587,8 +1590,9 @@ function function_64bea7b1() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace laststand_mp/laststand
 // Params 0, eflags: 0x0
@@ -1629,7 +1633,7 @@ function function_73d6c609() {
             break;
         }
         self clientfield::set_player_uimodel("hudItems.laststand.reviveProgress", self.reviveprogress);
-        timer = timer + float(function_60d95f53()) / 1000;
+        timer += float(function_60d95f53()) / 1000;
         waitframe(1);
     }
     self clientfield::set_player_uimodel("hudItems.laststand.reviveProgress", 0);

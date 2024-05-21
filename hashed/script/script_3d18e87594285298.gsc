@@ -313,7 +313,7 @@ function function_5053f358(action, body) {
     body solid();
     self function_7ead73b1(action, body, "grenade", scene, "ges_body_shield_to_grenade");
     self function_8ba805b3();
-    var_ae5fe668 = var_ae5fe668 - float(gettime() - start) / 1000;
+    var_ae5fe668 -= float(gettime() - start) / 1000;
     if (var_ae5fe668 > 0) {
         wait(var_ae5fe668);
     }
@@ -465,7 +465,7 @@ function function_30e6300b(var_5fb1bd74) {
     if (isdefined(var_5fb1bd74.var_54163419) && isdefined(var_5fb1bd74.var_bc2602c8) && !is_true(var_5fb1bd74.var_54163419.dropped)) {
         var_5fb1bd74.var_54163419.dropped = 1;
         launchforce = var_5fb1bd74.var_bc2602c8 * 2;
-        launchforce = launchforce + (randomfloatrange(-0.5, 0.5), randomfloatrange(-0.5, 0.5), randomfloatrange(-0.5, 0.5));
+        launchforce += (randomfloatrange(-0.5, 0.5), randomfloatrange(-0.5, 0.5), randomfloatrange(-0.5, 0.5));
         launchforce = vectornormalize(launchforce) * 0.1;
         var_5fb1bd74.var_54163419 unlink();
         var_5fb1bd74.var_54163419 physicslaunch(var_5fb1bd74.var_54163419.origin - (0, 0, 3), launchforce);
@@ -716,7 +716,7 @@ function function_306feb88(*guy) {
                     test_point = interact getpointinbounds(pt[0], pt[1], pt[2]);
                     if (distance2dsquared(self.origin, test_point) < 32 * 32) {
                         impactpoint = interact.origin + (0, 0, 15);
-                        impactpoint = impactpoint + vectornormalize(self.origin - interact.origin) * 10;
+                        impactpoint += vectornormalize(self.origin - interact.origin) * 10;
                         radiusdamage(impactpoint, 16, interact.health + 1, interact.health, self, "MOD_IMPACT");
                         destroyed[interact getentitynumber()] = interact;
                     }

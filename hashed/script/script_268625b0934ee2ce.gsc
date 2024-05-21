@@ -174,7 +174,7 @@ function private stealth_noteworthy_kill_monitor() {
         if (var_7cc7f71e >= 2 && isbullet) {
             self thread stealth_noteworthy_delayed("good_kill_double", victim, 1);
         }
-        var_a57f6402 = var_a57f6402 + var_7cc7f71e;
+        var_a57f6402 += var_7cc7f71e;
         if (var_a57f6402 > 1) {
             self thread stealth_noteworthy_delayed("good_kill_impressive", victim, 1);
             continue;
@@ -300,12 +300,13 @@ function private stealth_noteworthy_priority(eventname) {
     return 0;
 }
 
-// Namespace namespace_7a865494/player
-// Params 0, eflags: 0x4
-// Checksum 0x3959c489, Offset: 0x1520
-// Size: 0x174
-function private function_1e099116() {
-    /#
+/#
+
+    // Namespace namespace_7a865494/player
+    // Params 0, eflags: 0x4
+    // Checksum 0x3959c489, Offset: 0x1520
+    // Size: 0x174
+    function private function_1e099116() {
         while (true) {
             wait_result = getplayers()[0] waittill("<unknown string>");
             eventname = wait_result.event;
@@ -320,8 +321,9 @@ function private function_1e099116() {
                 }
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_7a865494/player
 // Params 0, eflags: 0x6 linked

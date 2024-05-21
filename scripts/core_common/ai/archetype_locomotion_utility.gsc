@@ -676,7 +676,7 @@ function traversesetup(behaviortreeentity, asmstatename) {
             } else {
                 asmname = "jump_up_down_across";
             }
-            asmname = asmname + "@traversal";
+            asmname += "@traversal";
         } else if (isdefined(self.ai.var_2b570fa6)) {
             asmname = self.ai.var_2b570fa6;
         }
@@ -1024,23 +1024,22 @@ function choosejukedirection(entity) {
     entity setblackboardattribute("_juke_direction", jukedirection);
 }
 
-// Namespace aiutility/archetype_locomotion_utility
-// Params 0, eflags: 0x4
-// Checksum 0xb4b0d1cd, Offset: 0x5138
-// Size: 0x52
-function private function_3b027260() {
-    /#
+/#
+
+    // Namespace aiutility/archetype_locomotion_utility
+    // Params 0, eflags: 0x4
+    // Checksum 0xb4b0d1cd, Offset: 0x5138
+    // Size: 0x52
+    function private function_3b027260() {
         return level.var_ace44d97 != 0 && (level.var_ace44d97 == 1 || level.var_ace44d97 == self getentnum());
-    #/
-}
+    }
 
-// Namespace aiutility/archetype_locomotion_utility
-// Params 1, eflags: 0x4
-// Checksum 0xe7d37c7a, Offset: 0x5198
-// Size: 0x24
-function private function_73bd30d3(params) {
-    /#
+    // Namespace aiutility/archetype_locomotion_utility
+    // Params 1, eflags: 0x4
+    // Checksum 0xe7d37c7a, Offset: 0x5198
+    // Size: 0x24
+    function private function_73bd30d3(params) {
         level.var_ace44d97 = params.value;
-    #/
-}
+    }
 
+#/

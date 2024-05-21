@@ -79,7 +79,7 @@ function private get_max_yaw(var_b6cc4c20) {
         return;
     }
     var_f58bf66c = get_max_yaw_internal(var_e4214597, var_1e45bf81, var_b6cc4c20);
-    var_f58bf66c = var_f58bf66c + var_2a162980;
+    var_f58bf66c += var_2a162980;
     var_c3277087 = get_max_yaw_internal(var_f58bf66c, var_2a162980, var_b6cc4c20);
     if (var_b6cc4c20) {
         self.var_15695d13 = var_c3277087 * var_533884d6;
@@ -111,12 +111,12 @@ function private get_max_yaw_internal(test_yaw, increment, var_b6cc4c20) {
             if (failed_once) {
                 finish = 1;
             }
-            test_yaw = test_yaw + increment;
+            test_yaw += increment;
         } else {
             if (!failed_once) {
                 failed_once = 1;
             }
-            test_yaw = test_yaw - increment;
+            test_yaw -= increment;
             finished = 1;
         }
         cycles++;
@@ -164,7 +164,7 @@ function private yaw_collision_check(yaw, var_b6cc4c20, *var_43119537) {
             } else if (var_fe34498d < 50) {
                 color = (1, 1, 0);
             }
-            var_5bdd16d1 = basestart + self function_eea7cdb4(trace_angles) * self.var_e9da41b9;
+            var_5bdd16d1 = basestart + self doors::function_eea7cdb4(trace_angles) * self.var_e9da41b9;
             line(basestart, var_5bdd16d1, (1, 1, 1), 1, 0, var_816ef68c);
             print3d(var_5bdd16d1, var_b6cc4c20 + "<unknown string>", color, 1, 0.05, var_816ef68c);
             line(start, var_84a65cf6[#"position"], color, 0.5, 0, var_816ef68c);
@@ -208,12 +208,13 @@ function private yaw_collision_check(yaw, var_b6cc4c20, *var_43119537) {
     return false;
 }
 
-// Namespace namespace_64f6ea7a/namespace_64f6ea7a
-// Params 1, eflags: 0x0
-// Checksum 0xb4c1b5b4, Offset: 0xcd0
-// Size: 0x194
-function draw_max_yaw(var_b6cc4c20) {
-    /#
+/#
+
+    // Namespace namespace_64f6ea7a/namespace_64f6ea7a
+    // Params 1, eflags: 0x0
+    // Checksum 0xb4c1b5b4, Offset: 0xcd0
+    // Size: 0x194
+    function draw_max_yaw(var_b6cc4c20) {
         trace_angles = undefined;
         color = undefined;
         if (var_b6cc4c20) {
@@ -224,12 +225,13 @@ function draw_max_yaw(var_b6cc4c20) {
             color = (0, 0.5, 0.5);
         }
         start = self.var_85f2454d.origin;
-        line_end = start + self function_eea7cdb4(trace_angles) * self.var_e9da41b9;
+        line_end = start + self doors::function_eea7cdb4(trace_angles) * self.var_e9da41b9;
         line(start, line_end, color, 1, 0, 1);
         angle = [[ self ]]->function_85fe0c35(!var_b6cc4c20);
         print3d(line_end, angle + "<unknown string>", color, 1, 0.05);
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_64f6ea7a/namespace_64f6ea7a
 // Params 1, eflags: 0x2 linked
@@ -280,7 +282,7 @@ function private door_ease_in_open_input() {
         }
         self.masterdoorratescale = 1 - time / maxtime;
         wait(0.05);
-        time = time - 0.05;
+        time -= 0.05;
     }
     self.masterdoorratescale = 1;
 }
@@ -370,7 +372,7 @@ function push_door(e_who, var_5991aa24) {
         dist = distance2d(pushent.origin, endpoint);
         percent = mapfloat(min_dist, max_dist, 0, 1, dist);
         amount = max_push * (1 - percent);
-        amount = amount * self.masterdoorratescale;
+        amount *= self.masterdoorratescale;
     }
     if (abs(amount) < 0.001) {
         return;
@@ -590,7 +592,7 @@ function function_9670a4a4(var_f700d5eb, b_reverse, var_d6cc2350, var_58c4c830, 
     var_9c7b53b4 = math::sign(self.m_s_bundle.door_swing_angle);
     var_812c62a6 = var_d6cc2350 * var_9c7b53b4;
     if (b_reverse) {
-        var_812c62a6 = var_812c62a6 * -1;
+        var_812c62a6 *= -1;
     }
     var_d5f7cb0e = [[ self ]]->function_85fe0c35(!b_reverse);
     if (var_f700d5eb < var_d5f7cb0e) {

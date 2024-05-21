@@ -336,7 +336,7 @@ function function_f7014c3d(base_health) {
                     } else {
                         health_rounds = current_round - var_b3e29825[i].start_round;
                     }
-                    result_health = result_health + var_d3e853a6 * health_rounds;
+                    result_health += var_d3e853a6 * health_rounds;
                     continue;
                 }
                 break;
@@ -348,7 +348,7 @@ function function_f7014c3d(base_health) {
         }
         num_players = getplayers().size;
         if (isdefined(var_5d195d82) && num_players > 1) {
-            result_health = result_health + result_health * (num_players - 1) * var_5d195d82;
+            result_health += result_health * (num_players - 1) * var_5d195d82;
         }
         level.var_41dd92fd[ai_name] = {#health:int(result_health), #round:current_round};
     }
@@ -372,7 +372,7 @@ function function_b5fe98(n_round) {
             n_index++;
         }
         if (isdefined(var_b3e29825[n_index].var_928e93a0)) {
-            result_health = result_health + var_b3e29825[n_index].var_928e93a0;
+            result_health += var_b3e29825[n_index].var_928e93a0;
         }
         var_22fbe1cc++;
     }
@@ -382,7 +382,7 @@ function function_b5fe98(n_round) {
     }
     num_players = getplayers().size;
     if (isdefined(var_5d195d82) && num_players > 1) {
-        result_health = result_health + result_health * (num_players - 1) * var_5d195d82;
+        result_health += result_health * (num_players - 1) * var_5d195d82;
     }
     return int(result_health);
 }
@@ -496,9 +496,9 @@ function function_422fdfd4(entity, attacker, weapon, var_5457dc44, hitloc, point
         has_weakpoints = isdefined(namespace_81245006::function_fab3ee3e(self));
         if (var_30362eca && attacker hasperk(#"specialty_mod_awareness")) {
             if (var_b1c1c5cf < 1) {
-                var_b1c1c5cf = var_b1c1c5cf + 0.2;
+                var_b1c1c5cf += 0.2;
             } else {
-                var_b1c1c5cf = var_b1c1c5cf * 1.2;
+                var_b1c1c5cf *= 1.2;
             }
         }
     }

@@ -40,7 +40,7 @@ function function_3c4a545b(*localclientnum) {
     self endon(#"hash_31875ebd426b00c1");
     var_f052fbf4 = 0.5;
     while (var_f052fbf4 <= 1) {
-        var_f052fbf4 = var_f052fbf4 + 0.04;
+        var_f052fbf4 += 0.04;
         waitframe(1);
     }
 }

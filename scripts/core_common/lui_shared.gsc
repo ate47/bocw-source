@@ -729,7 +729,7 @@ function private _screen_fade(n_time, n_target_alpha, n_start_alpha, v_color, b_
             printtoprightln("<unknown string>");
         }
         level.n_fade_debug_time = n_debug_time;
-        printtoprightln("<unknown string>" + rjust("<unknown string>" + gettime(), 6) + "<unknown string>" + rjust(str_menu_id, 10) + "<unknown string>" + rjust(v_color, 11) + "<unknown string>" + rjust(n_start_alpha + "<unknown string>" + n_target_alpha, 10) + "<unknown string>" + rjust(n_time, 6) + "<unknown string>", (1, 1, 1));
+        printtoprightln("<unknown string>" + string::rjust("<unknown string>" + gettime(), 6) + "<unknown string>" + string::rjust(str_menu_id, 10) + "<unknown string>" + string::rjust(v_color, 11) + "<unknown string>" + string::rjust(n_start_alpha + "<unknown string>" + n_target_alpha, 10) + "<unknown string>" + string::rjust(n_time, 6) + "<unknown string>", (1, 1, 1));
     #/
     if (n_time > 0) {
         wait(n_time);

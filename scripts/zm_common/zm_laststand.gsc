@@ -307,16 +307,16 @@ function playerlaststand(einflictor, attacker, idamage, smeansofdeath, weapon, *
     if (!isdefined(self.n_downs)) {
         self.n_downs = 0;
     }
-    self.n_downs = self.n_downs + 1;
+    self.n_downs += 1;
     bleedout_time = getdvarfloat(#"hash_1116ba0f929df636", isdefined(self.var_b92e42da) ? self.var_b92e42da : getdvarfloat(#"player_laststandbleedouttime", 0));
     if (zm_custom::function_901b751c(#"zmlimiteddownsamount") && self.n_downs > zm_custom::function_901b751c(#"zmlimiteddownsamount")) {
         bleedout_time = 0;
     }
     if (isdefined(self.n_bleedout_time_multiplier)) {
-        bleedout_time = bleedout_time * self.n_bleedout_time_multiplier;
+        bleedout_time *= self.n_bleedout_time_multiplier;
     }
     if (isdefined(self.var_5c4f1263)) {
-        bleedout_time = bleedout_time * self.var_5c4f1263;
+        bleedout_time *= self.var_5c4f1263;
     }
     if (self namespace_e86ffa8::function_33d837e4(2)) {
         bleedout_time = 60;
@@ -869,7 +869,7 @@ function laststand_bleedout(delay) {
                 level.var_ff482f76 zm_laststand_client::set_num_downs(self, self.n_downs);
                 level.var_ff482f76 zm_laststand_client::set_revive_progress(self, 0);
             }
-            self.bleedout_time = self.bleedout_time - 0.2;
+            self.bleedout_time -= 0.2;
             bleedoutprogress = self.bleedout_time / delay;
             if (isdefined(self.var_57b374b4) && !(self.var_c6a6f334 === 1)) {
                 objective_setprogress(self.var_57b374b4, bleedoutprogress);
@@ -1063,8 +1063,8 @@ function function_618fd37e() {
 // Size: 0x9c
 function function_3a00302e(n_count = 1, var_d47c52b4 = 1) {
     if (var_d47c52b4) {
-        self.var_d66589da = self.var_d66589da + n_count;
-        self.var_5d4c5daf = self.var_5d4c5daf + n_count;
+        self.var_d66589da += n_count;
+        self.var_5d4c5daf += n_count;
     }
     self function_3d685b5f(self function_618fd37e() + n_count);
 }
@@ -1075,7 +1075,7 @@ function function_3a00302e(n_count = 1, var_d47c52b4 = 1) {
 // Size: 0x84
 function function_409dc98e(n_count = 1, b_revived = 1) {
     if (b_revived) {
-        self.var_308dc243 = self.var_308dc243 + n_count;
+        self.var_308dc243 += n_count;
     }
     self function_3d685b5f(self function_618fd37e() - n_count);
 }
@@ -1088,8 +1088,8 @@ function function_b7c101fa() {
     self endon(#"disconnect");
     self.var_72249004 = 0;
     self.var_308dc243 = 0;
-    self.var_d66589da = int(zombie_utility::function_d2dfacfd(#"hash_67ae1b8cbb7c985"));
-    self.var_5d4c5daf = int(zombie_utility::function_d2dfacfd(#"hash_3098c53bba6402d3"));
+    self.var_d66589da = int(zombie_utility::get_zombie_var(#"hash_67ae1b8cbb7c985"));
+    self.var_5d4c5daf = int(zombie_utility::get_zombie_var(#"hash_3098c53bba6402d3"));
     level thread function_4d3cb10();
     self waittill(#"spawned");
     if (!zm_utility::is_survival()) {
@@ -1208,7 +1208,7 @@ function function_73d6c609(n_duration) {
     while (true) {
         while (self function_550c4ac4()) {
             waitframe(1);
-            var_722c6f25 = var_722c6f25 + 0.05;
+            var_722c6f25 += 0.05;
             level.var_ff482f76 zm_laststand_client::set_revive_progress(self, var_722c6f25 / n_duration);
             if (var_722c6f25 >= n_duration) {
                 b_success = 1;
@@ -1496,7 +1496,7 @@ function is_reviving_any() {
 function revive_get_revive_time(e_revivee) {
     revivetime = 3;
     if (self namespace_e86ffa8::function_8923370c(0)) {
-        revivetime = revivetime * self function_bd85bc2f();
+        revivetime *= self function_bd85bc2f();
     }
     if (isdefined(self.get_revive_time)) {
         revivetime = self [[ self.get_revive_time ]](e_revivee);
@@ -1534,7 +1534,7 @@ function revive_do_revive(e_revivee, t_secondary) {
     if (!isdefined(self.revive_progress)) {
         self.revive_progress = 0;
     }
-    self.revive_progress = self.revive_progress + 1;
+    self.revive_progress += 1;
     self thread check_for_failed_revive(e_revivee);
     while (isdefined(self) && self is_reviving(e_revivee, t_secondary)) {
         hud_player = function_800268ed(e_revivee) ? e_revivee.var_1ff8de20 : e_revivee;
@@ -1552,7 +1552,7 @@ function revive_do_revive(e_revivee, t_secondary) {
             break;
         }
         waitframe(1);
-        e_revivee.var_6fc48a11 = e_revivee.var_6fc48a11 + float(function_60d95f53()) / 1000;
+        e_revivee.var_6fc48a11 += float(function_60d95f53()) / 1000;
     }
     if (!is_true(e_revivee.revivetrigger.auto_revive) && !revived) {
         if (isplayer(e_revivee)) {
@@ -1594,7 +1594,7 @@ function revive_do_revive(e_revivee, t_secondary) {
 function function_2cc9a315(revivetime) {
     self endon(#"player_being_revived", #"player_revived", #"disconnect", #"bled_out");
     while (isdefined(self) && !is_true(self.var_c6a6f334) && isdefined(self.var_6fc48a11) && self.var_6fc48a11 >= 0) {
-        self.var_6fc48a11 = self.var_6fc48a11 - 0.05;
+        self.var_6fc48a11 -= 0.05;
         hud_player = function_800268ed(self) ? self.var_1ff8de20 : self;
         level.var_ff482f76 zm_laststand_client::set_revive_progress(hud_player, self.var_6fc48a11 / revivetime);
         waitframe(1);
@@ -1801,7 +1801,7 @@ function xp_revive_once_per_round(player_being_revived) {
 function revive_force_revive(reviver) {
     assert(isdefined(self));
     assert(isplayer(self));
-    assert(self player_is_in_laststand());
+    assert(self laststand::player_is_in_laststand());
     self thread revive_success(reviver);
 }
 

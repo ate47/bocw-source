@@ -11,22 +11,21 @@
 
 #namespace spawning;
 
-// Namespace spawning/namespace_797605b0
-// Params 1, eflags: 0x0
-// Checksum 0x30a2e227, Offset: 0xc8
-// Size: 0x20
-function function_a860c440(var_ef54e156) {
-    /#
-        level.var_c99a6ece = var_ef54e156;
-    #/
-}
+/#
 
-// Namespace spawning/namespace_797605b0
-// Params 0, eflags: 0x0
-// Checksum 0x5b0e1de5, Offset: 0xf0
-// Size: 0x3c8
-function spawnpoint_debug() {
-    /#
+    // Namespace spawning/namespace_797605b0
+    // Params 1, eflags: 0x0
+    // Checksum 0x30a2e227, Offset: 0xc8
+    // Size: 0x20
+    function function_a860c440(var_ef54e156) {
+        level.var_c99a6ece = var_ef54e156;
+    }
+
+    // Namespace spawning/namespace_797605b0
+    // Params 0, eflags: 0x0
+    // Checksum 0x5b0e1de5, Offset: 0xf0
+    // Size: 0x3c8
+    function spawnpoint_debug() {
         a_spawnlists = getspawnlists();
         index = 0;
         foreach (s_list in a_spawnlists) {
@@ -52,27 +51,25 @@ function spawnpoint_debug() {
                 }
                 point_team = selectedplayer.pers[#"team"];
                 influencer_team = selectedplayer.pers[#"team"];
-                vis_team_mask = getotherteamsmask(selectedplayer.pers[#"team"]);
+                vis_team_mask = util::getotherteamsmask(selectedplayer.pers[#"team"]);
                 nextbestspawnpoint = getbestspawnpoint(point_team, influencer_team, vis_team_mask, selectedplayer, 0);
                 selectedplayer setorigin(nextbestspawnpoint[#"origin"]);
                 selectedplayer setplayerangles(nextbestspawnpoint[#"angles"]);
                 break;
             case #"refresh":
-                level set(#"spawnpoints_dirty");
+                level flag::set(#"spawnpoints_dirty");
                 break;
             }
             setdvar(#"spawnsystem_debug_command", "<unknown string>");
             wait(0.5);
         }
-    #/
-}
+    }
 
-// Namespace spawning/namespace_797605b0
-// Params 4, eflags: 0x0
-// Checksum 0xf30fc024, Offset: 0x4c0
-// Size: 0x11c
-function function_df47057f(*team, label, var_2f64048d, spawnpoints) {
-    /#
+    // Namespace spawning/namespace_797605b0
+    // Params 4, eflags: 0x0
+    // Checksum 0xf30fc024, Offset: 0x4c0
+    // Size: 0x11c
+    function function_df47057f(*team, label, var_2f64048d, spawnpoints) {
         if (!spawnpoints.size) {
             return;
         }
@@ -85,26 +82,22 @@ function function_df47057f(*team, label, var_2f64048d, spawnpoints) {
             level.var_94f4ca81.dataset = array(level.var_94f4ca81.dataset);
         }
         level.var_94f4ca81.dataset[level.var_94f4ca81.dataset.size] = var_2e980658;
-    #/
-}
+    }
 
-// Namespace spawning/namespace_797605b0
-// Params 4, eflags: 0x0
-// Checksum 0xbb7ca74a, Offset: 0x5e8
-// Size: 0x6c
-function function_25e7711a(list_type, team, label, var_2f64048d) {
-    /#
+    // Namespace spawning/namespace_797605b0
+    // Params 4, eflags: 0x0
+    // Checksum 0xbb7ca74a, Offset: 0x5e8
+    // Size: 0x6c
+    function function_25e7711a(list_type, team, label, var_2f64048d) {
         spawnpoints = function_82061144(list_type, team);
         function_df47057f(team, label, var_2f64048d, spawnpoints);
-    #/
-}
+    }
 
-// Namespace spawning/namespace_797605b0
-// Params 0, eflags: 0x0
-// Checksum 0xf51ab269, Offset: 0x660
-// Size: 0x9f6
-function function_48a6b85() {
-    /#
+    // Namespace spawning/namespace_797605b0
+    // Params 0, eflags: 0x0
+    // Checksum 0xf51ab269, Offset: 0x660
+    // Size: 0x9f6
+    function function_48a6b85() {
         level endon(#"hash_47f3d9a9e91670d1");
         self endon(#"disconnect");
         dpad_left = 0;
@@ -198,15 +191,13 @@ function function_48a6b85() {
             debug2dtext((100, 800, 0), "<unknown string>" + string(level.var_94f4ca81.currentspawnindex) + "<unknown string>" + string(level.var_94f4ca81.dataset[level.var_94f4ca81.currentsetindex].spawns.size), (1, 0, 0));
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace spawning/namespace_797605b0
-// Params 0, eflags: 0x0
-// Checksum 0x8eaee1b1, Offset: 0x1060
-// Size: 0x3e8
-function devgui_spawn_think() {
-    /#
+    // Namespace spawning/namespace_797605b0
+    // Params 0, eflags: 0x0
+    // Checksum 0x8eaee1b1, Offset: 0x1060
+    // Size: 0x3e8
+    function devgui_spawn_think() {
         self notify(#"devgui_spawn_think");
         self endon(#"devgui_spawn_think");
         self endon(#"disconnect");
@@ -243,6 +234,6 @@ function devgui_spawn_think() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
+#/

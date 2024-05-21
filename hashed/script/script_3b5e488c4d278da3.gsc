@@ -409,7 +409,7 @@ function function_79ef6b93(snowball_pile) {
         if (var_ff2621e6 > 0) {
             playfx("maps/ltm/fx9_winter_snowball_pile_pickup", snowball_pile.origin);
         }
-        snowball_pile.var_e95e6830 = snowball_pile.var_e95e6830 - var_ff2621e6;
+        snowball_pile.var_e95e6830 -= var_ff2621e6;
     }
 }
 
@@ -429,7 +429,7 @@ function function_f5527ca2(zone) {
     snowball_pile.var_8438fd5c = 1;
     snowball_pile function_619a5c20();
     snowball_pile zm_unitrigger::create(&function_dd028fcb, 64);
-    snowball_pile.s_unitrigger.origin = snowball_pile.s_unitrigger.origin + (0, 0, 32);
+    snowball_pile.s_unitrigger.origin += (0, 0, 32);
     function_1eaaceab(zone.var_4acb65df);
     if (!isdefined(zone.var_4acb65df)) {
         zone.var_4acb65df = [];

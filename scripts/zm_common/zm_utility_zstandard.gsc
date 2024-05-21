@@ -566,16 +566,17 @@ function function_c492c4d6(str_index, var_ed1db1a7, a_str_zones, a_str_next_defe
     } else if (!isarray(a_str_next_defend)) {
         a_str_next_defend = array(a_str_next_defend);
     }
-    assert(isdefined(get(var_ed1db1a7)), "<unknown string>" + var_ed1db1a7 + "<unknown string>");
+    assert(isdefined(struct::get(var_ed1db1a7)), "<unknown string>" + var_ed1db1a7 + "<unknown string>");
     level.a_s_defend_areas[str_index] = {#var_ed1db1a7:var_ed1db1a7, #a_str_zones:a_str_zones, #a_str_next_defend:a_str_next_defend, #var_16a34df0:var_16a34df0, #var_39c44288:var_39c44288, #var_c13f5c4b:var_c13f5c4b, #var_9fc5eea1:var_9fc5eea1};
 }
 
-// Namespace zm_utility/zm_utility_zstandard
-// Params 0, eflags: 0x0
-// Checksum 0x1b39fa79, Offset: 0x2398
-// Size: 0x1b4
-function function_1e856719() {
-    /#
+/#
+
+    // Namespace zm_utility/zm_utility_zstandard
+    // Params 0, eflags: 0x0
+    // Checksum 0x1b39fa79, Offset: 0x2398
+    // Size: 0x1b4
+    function function_1e856719() {
         a_str_defend_areas = getarraykeys(level.a_s_defend_areas);
         foreach (str_index, s_defend_area in level.a_s_defend_areas) {
             assert(isarray(s_defend_area.a_str_next_defend), "<unknown string>" + function_9e72a96(str_index) + "<unknown string>");
@@ -583,8 +584,9 @@ function function_1e856719() {
                 assert(isinarray(a_str_defend_areas, str_next_defend), "<unknown string>" + function_9e72a96(str_next_defend) + "<unknown string>");
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_utility/zm_utility_zstandard
 // Params 1, eflags: 0x0

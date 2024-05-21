@@ -92,26 +92,27 @@ function private preinit() {
     }
 }
 
-// Namespace namespace_85745671/namespace_85745671
-// Params 0, eflags: 0x0
-// Checksum 0x90791c13, Offset: 0x8f0
-// Size: 0x578
-function function_b4f41a02() {
-    /#
+/#
+
+    // Namespace namespace_85745671/namespace_85745671
+    // Params 0, eflags: 0x0
+    // Checksum 0x90791c13, Offset: 0x8f0
+    // Size: 0x578
+    function function_b4f41a02() {
         level endon(#"game_ended");
         aitypes = function_19df1c1c();
         setdvar(#"hash_70cb00491d863294", "<unknown string>");
         setdvar(#"hash_209287456d55fca1", "<unknown string>");
         foreach (type in aitypes) {
             if (function_e949cfd7(type)) {
-                add_debug_command("<unknown string>" + function_9e72a96(type) + "<unknown string>" + function_9e72a96(type) + "<unknown string>");
-                add_debug_command("<unknown string>" + function_9e72a96(type) + "<unknown string>" + function_9e72a96(type) + "<unknown string>");
+                util::add_debug_command("<unknown string>" + function_9e72a96(type) + "<unknown string>" + function_9e72a96(type) + "<unknown string>");
+                util::add_debug_command("<unknown string>" + function_9e72a96(type) + "<unknown string>" + function_9e72a96(type) + "<unknown string>");
             }
         }
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
         while (true) {
             wait(0.1);
             cmd = getdvarstring(#"hash_209287456d55fca1", "<unknown string>");
@@ -127,9 +128,9 @@ function function_b4f41a02() {
                 eye = player geteye();
                 direction_vec = (direction_vec[0] * 8000, direction_vec[1] * 8000, direction_vec[2] * 8000);
                 trace = bullettrace(eye, eye + direction_vec, 0, undefined);
-                add_ai_spawn_function(&function_df8d461e);
+                spawner::add_ai_spawn_function(&function_df8d461e);
                 ai = spawnactor(cmd_tokens[1], trace[#"position"], (0, 0, 0), "<unknown string>", 1);
-                function_932006d1(&function_df8d461e);
+                spawner::function_932006d1(&function_df8d461e);
                 break;
             case #"hash_deec03a3269d42":
                 player = level.players[0];
@@ -138,35 +139,31 @@ function function_b4f41a02() {
                 eye = player geteye();
                 direction_vec = (direction_vec[0] * 8000, direction_vec[1] * 8000, direction_vec[2] * 8000);
                 trace = bullettrace(eye, eye + direction_vec, 0, undefined);
-                add_ai_spawn_function(&function_df8d461e);
+                spawner::add_ai_spawn_function(&function_df8d461e);
                 ai = spawnactor(cmd_tokens[1], trace[#"position"], (0, 0, 0), "<unknown string>", 1);
-                function_932006d1(&function_df8d461e);
+                spawner::function_932006d1(&function_df8d461e);
                 break;
             }
             setdvar(#"hash_209287456d55fca1", "<unknown string>");
         }
-    #/
-}
+    }
 
-// Namespace namespace_85745671/namespace_85745671
-// Params 0, eflags: 0x4
-// Checksum 0x36b3a79e, Offset: 0xe70
-// Size: 0x3c
-function private function_df8d461e() {
-    /#
+    // Namespace namespace_85745671/namespace_85745671
+    // Params 0, eflags: 0x4
+    // Checksum 0x36b3a79e, Offset: 0xe70
+    // Size: 0x3c
+    function private function_df8d461e() {
         if (self.targetname === "<unknown string>") {
             self.ignoreall = 1;
-            pause(self);
+            awareness::pause(self);
         }
-    #/
-}
+    }
 
-// Namespace namespace_85745671/namespace_85745671
-// Params 0, eflags: 0x0
-// Checksum 0xffb97f3a, Offset: 0xeb8
-// Size: 0xdfe
-function debug_ai() {
-    /#
+    // Namespace namespace_85745671/namespace_85745671
+    // Params 0, eflags: 0x0
+    // Checksum 0xffb97f3a, Offset: 0xeb8
+    // Size: 0xdfe
+    function debug_ai() {
         level endon(#"game_ended");
         level.var_b4702614 = [];
         level.var_b4702614[0] = "<unknown string>";
@@ -288,8 +285,9 @@ function debug_ai() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_85745671/namespace_85745671
 // Params 3, eflags: 0x2 linked
@@ -1344,7 +1342,7 @@ function event_handler[event_9673dc9a] function_3981d015(eventstruct) {
                 if (eventstruct.ent.health > 0) {
                     forward = anglestoforward(eventstruct.ent.angles);
                     if (eventstruct.state == 2) {
-                        forward = forward * -1;
+                        forward *= -1;
                     }
                     function_d9a69cf2(eventstruct.ent.origin, forward);
                 }
@@ -1530,21 +1528,21 @@ function function_13d991c7(vehicle) {
         }
         var_c8394a1c = 2 / var_89eb7ad8 * 2 / 35;
         var_e74e4ad9 = var_89eb7ad8 * 2 / 35 - 4;
-        for (xx = -1; xx <= 1; xx = xx + 2) {
+        for (xx = -1; xx <= 1; xx += 2) {
             side = xx > 0 ? 3 : 1;
             spot = function_8b9f2fd7(vehicle, -1 + var_c8394a1c, xx, -1);
             for (spot_index = 0; spot_index < var_e74e4ad9; spot_index++) {
-                spot = spot + vehicle_forward * 35;
+                spot += vehicle_forward * 35;
                 function_3c2e73c7(vehicle, spot, side);
             }
         }
         var_a8beb071 = 2 / var_11560bb5 * 2 / 35;
         var_98185c02 = var_11560bb5 * 2 / 35 - 2;
-        for (yy = -1; yy <= 1; yy = yy + 2) {
+        for (yy = -1; yy <= 1; yy += 2) {
             side = yy > 0 ? 0 : 2;
             spot = function_8b9f2fd7(vehicle, yy, -1 + var_a8beb071, -1);
             for (spot_index = 0; spot_index < var_98185c02; spot_index++) {
-                spot = spot - var_63017913 * 35;
+                spot -= var_63017913 * 35;
                 function_3c2e73c7(vehicle, spot, side);
             }
         }
@@ -1701,7 +1699,7 @@ function function_34a02ce7(hitent, damage) {
 function custom_melee_fire() {
     idflags = 0;
     if (isdefined(self.enemy) && is_true(self.enemy.armor)) {
-        idflags = idflags | 2048;
+        idflags |= 2048;
     }
     melee_dir = undefined;
     if (isdefined(self.attackable)) {
@@ -1947,7 +1945,7 @@ function function_e441487e(vehicle) {
     var_c86c1e8e = self gettagorigin("j_spine4");
     var_747c692d = isdefined(var_c86c1e8e[2]) ? var_c86c1e8e[2] : var_496cfa10[2];
     var_14c32c86 = (self.origin[0], self.origin[1], var_747c692d);
-    var_14c32c86 = var_14c32c86 + vectornormalize(var_496cfa10 - var_14c32c86) * ai_radius;
+    var_14c32c86 += vectornormalize(var_496cfa10 - var_14c32c86) * ai_radius;
     fx = #"hash_759f82a7cd698ae";
     if (self.var_6f84b820 === #"normal") {
         fx = #"hash_61a4124615c8df27";
@@ -2023,10 +2021,10 @@ function on_ai_damage(params) {
                     v_hitloc = params.vpoint;
                     if (self.aitype === #"spawner_bo5_mechz_sr" || self.aitype === #"hash_4f87aa2a203d37d0" || self.aitype === #"spawner_zm_steiner" || self.aitype === #"hash_21f3d5d40d72e08d") {
                         v_launch = v_velocity * var_e96b9598 * -1;
-                        n_damage = n_damage * 4;
+                        n_damage *= 4;
                     } else if (self.aitype === #"hash_60d7855358ceb53d" || self.aitype === #"hash_acac3fe7a341329" || self.aitype === #"hash_3ff43755c44e6d3d" || self.aitype === #"hash_469e4baceeaf38f5") {
                         v_launch = v_velocity * var_e96b9598 * -1;
-                        n_damage = n_damage * 8;
+                        n_damage *= 8;
                     }
                     if (isdefined(var_80730518)) {
                         var_80730518 thread function_66c37f3b();
@@ -2112,7 +2110,7 @@ function function_dbf5bfd3(victim, damage) {
     var_496cfa10 = self.origin + self getboundsmidpoint();
     ai_radius = victim getpathfindingradius();
     var_14c32c86 = (victim.origin[0], victim.origin[1], var_496cfa10[2]);
-    var_14c32c86 = var_14c32c86 + vectornormalize(var_496cfa10 - var_14c32c86) * ai_radius;
+    var_14c32c86 += vectornormalize(var_496cfa10 - var_14c32c86) * ai_radius;
     switch (victim.var_97ca51c7) {
     case 1:
         fx = #"hash_2a892324f9a00349";

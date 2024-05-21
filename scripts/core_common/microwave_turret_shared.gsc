@@ -78,12 +78,13 @@ function stopmicrowave() {
     }
 }
 
-// Namespace microwave_turret/microwave_turret_shared
-// Params 0, eflags: 0x0
-// Checksum 0xf9d050d2, Offset: 0x400
-// Size: 0x7c
-function turretdebugwatch() {
-    /#
+/#
+
+    // Namespace microwave_turret/microwave_turret_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xf9d050d2, Offset: 0x400
+    // Size: 0x7c
+    function turretdebugwatch() {
         turret = self;
         turret endon(#"stop_turret_debug");
         for (;;) {
@@ -94,15 +95,13 @@ function turretdebugwatch() {
             }
             wait(1);
         }
-    #/
-}
+    }
 
-// Namespace microwave_turret/microwave_turret_shared
-// Params 0, eflags: 0x0
-// Checksum 0xd928885, Offset: 0x488
-// Size: 0x104
-function turretdebug() {
-    /#
+    // Namespace microwave_turret/microwave_turret_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xd928885, Offset: 0x488
+    // Size: 0x104
+    function turretdebug() {
         turret = self;
         angles = turret gettagangles("<unknown string>");
         origin = turret gettagorigin("<unknown string>");
@@ -110,10 +109,11 @@ function turretdebug() {
         forward = anglestoforward(angles);
         dome_apex = cone_apex + vectorscale(forward, 750);
         /#
-            debug_spherical_cone(cone_apex, dome_apex, 15, 16, (0.95, 0.1, 0.1), 0.3, 1, 3);
+            util::debug_spherical_cone(cone_apex, dome_apex, 15, 16, (0.95, 0.1, 0.1), 0.3, 1, 3);
         #/
-    #/
-}
+    }
+
+#/
 
 // Namespace microwave_turret/microwave_turret_shared
 // Params 0, eflags: 0x0
@@ -193,7 +193,7 @@ function microwaveentity(entity) {
         }
         damage = 15 * damagescalar;
         if (level.hardcoremode) {
-            damage = damage / 2;
+            damage /= 2;
         }
         if (!isai(entity) && entity util::mayapplyscreeneffect()) {
             if (!isdefined(entity.microwavepoisoning) || !entity.microwavepoisoning) {

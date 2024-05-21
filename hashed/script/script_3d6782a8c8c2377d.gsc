@@ -64,7 +64,7 @@ function function_28632638() {
         self.var_dc23ac4b = 1;
     }
     self function_fc796a05();
-    self turretsetontargettolerance(0, self.settings.var_17a9a936);
+    self turretsetontargettolerance(0, self.settings.gunner_turret_on_target_range);
     self asmrequestsubstate(#"locomotion@movement");
     if (self.vehicletype === "spawner_enemy_boss_siegebot_zombietron") {
         self asmsetanimationrate(0.5);
@@ -210,7 +210,7 @@ function function_660b79d2() {
         var_a95a42b4 = anglestoup(self.angles);
         worldup = (0, 0, 1);
         if (vectordot(var_a95a42b4, worldup) < 0.64) {
-            tilecount = tilecount + 1;
+            tilecount += 1;
         } else {
             tilecount = 0;
         }
@@ -479,7 +479,7 @@ function function_aa1e85d2(params) {
         }
         var_73b3a48 = velocity[2];
         velocity = (0, 0, velocity[2]);
-        velocity = velocity + var_130db229 + params.var_81456956 + var_b1a7dcb1;
+        velocity += var_130db229 + params.var_81456956 + var_b1a7dcb1;
         if (var_73b3a48 > 0 && velocity[2] < 0) {
             self asmrequestsubstate(#"hash_7ed8f3dbe3df1eec");
         }
@@ -488,7 +488,7 @@ function function_aa1e85d2(params) {
         }
         var_f3ba37c7 = goal[2] + 110;
         var_8157eba2 = self.jump.linkent.origin[2];
-        self.jump.linkent.origin = self.jump.linkent.origin + velocity;
+        self.jump.linkent.origin += velocity;
         if (self.jump.linkent.origin[2] < var_f3ba37c7 && (var_8157eba2 > var_f3ba37c7 || var_73b3a48 > 0 && velocity[2] < 0)) {
             self notify(#"hash_528b934eace9e5db");
             self asmrequestsubstate(params.var_d49112b7);
@@ -697,8 +697,8 @@ function scan() {
     angles = (0, angles[1], 0);
     rotate = 360;
     while (rotate > 0) {
-        angles = angles + (0, 30, 0);
-        rotate = rotate - 30;
+        angles += (0, 30, 0);
+        rotate -= 30;
         forward = anglestoforward(angles);
         aimpos = self.origin + forward * 1000;
         self turretsettarget(0, aimpos);
@@ -882,10 +882,10 @@ function function_73fc60dc() {
                 cooldown = 15;
                 if (self.scriptvehicletype == #"xbot") {
                     if (is_true(self.var_bb240734)) {
-                        cooldown = cooldown - 5;
+                        cooldown -= 5;
                     }
                     if (is_true(self.var_a13db918)) {
-                        cooldown = cooldown - 5;
+                        cooldown -= 5;
                     }
                 }
                 util::cooldown("javelin_rocket_launcher", cooldown);

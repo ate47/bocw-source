@@ -269,7 +269,7 @@ function private function_94eab4fb(params) {
             item = function_b1702735(itemworld.id);
             if (isdefined(item.itementry)) {
                 originoffset = (isdefined(item.itementry.var_5dc4470b) ? item.itementry.var_5dc4470b : 0, isdefined(item.itementry.var_54a3b4ca) ? item.itementry.var_54a3b4ca : 0, isdefined(item.itementry.var_3e688854) ? item.itementry.var_3e688854 : 0);
-                loc = loc - rotatepoint(originoffset, itemworld.angles);
+                loc -= rotatepoint(originoffset, itemworld.angles);
             }
         }
     }
@@ -945,7 +945,7 @@ function private function_83751d93(local_client_num, unique_id, event_type, loca
                 var_166a2084 = ent getpointinbounds(0, 0, 1);
                 var_da008149 = ent getpointinbounds(0, 0, 0);
                 var_b2f64e7 = var_166a2084[2] - var_da008149[2];
-                var_b2f64e7 = var_b2f64e7 + (isdefined(level.var_3fc6a555[ent.var_fc558e74]) ? level.var_3fc6a555[ent.var_fc558e74] : 0);
+                var_b2f64e7 += isdefined(level.var_3fc6a555[ent.var_fc558e74]) ? level.var_3fc6a555[ent.var_fc558e74] : 0;
             }
             if (ent.var_fc558e74 === "double_door" || ent.var_fc558e74 === "power_double_door") {
                 var_c25008cf = struct::get_array("ping_objective_ent", "script_noteworthy");
@@ -1196,7 +1196,7 @@ function private function_43569f3b(ent) {
                 var_52c78c2c = "pingGearLethalGeneric";
             }
         }
-        var_52c78c2c = var_52c78c2c + "Enemy";
+        var_52c78c2c += "Enemy";
     }
     return var_52c78c2c;
 }

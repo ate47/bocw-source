@@ -103,7 +103,7 @@ function function_417fd9b() {
                         loot.item.owner = loot;
                         namespace_1e25ad94::debugmsg("Paging IN loot at:" + loot.origin);
                     }
-                    loot.var_eb9d64bb = loot.var_eb9d64bb + 5000;
+                    loot.var_eb9d64bb += 5000;
                 }
                 continue;
             }

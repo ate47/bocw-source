@@ -354,13 +354,13 @@ function on_round_end() {
         }
         if (zm_utility::function_1a01f2f7(player)) {
             player addrankxpvalue("round_end_xp", var_370ac26d, 4);
-            player.var_8d41c907 = player.var_8d41c907 - var_370ac26d;
+            player.var_8d41c907 -= var_370ac26d;
         }
         if (!isdefined(player.var_a160c21d) || player.var_a160c21d === 0) {
             println("<unknown string>" + player getentitynumber() + "<unknown string>");
             player.var_a160c21d = 0;
         }
-        player.var_8d41c907 = player.var_8d41c907 + player zm_round_logic::function_f4c57bbe();
+        player.var_8d41c907 += player zm_round_logic::function_f4c57bbe();
         player.var_a160c21d = 0;
         if (level.round_number % 5 == 0 && level.round_number >= 5) {
             var_36bda4b = function_ef580a0c(level.round_number);
@@ -389,7 +389,7 @@ function function_74872db6() {
     var_e4eea632 = 0;
     if (level.round_number > 0 && level.round_number % 3 == 0) {
         level.var_e78b055a = level.var_d041f60d;
-        level.var_d041f60d = level.var_d041f60d - 3;
+        level.var_d041f60d -= 3;
         level.var_d041f60d = math::clamp(level.var_d041f60d, 5, 30);
         if (level.var_d041f60d > 6) {
             var_e4eea632 = 1;
@@ -627,7 +627,7 @@ function private function_bbdbb1b6() {
     self perks::perk_setperk(#"specialty_staminup");
     self perks::perk_setperk(#"specialty_fastreload");
     while (isalive(self) && self.var_5f356773 > 0) {
-        self.var_5f356773 = self.var_5f356773 - float(function_60d95f53()) / 1000;
+        self.var_5f356773 -= float(function_60d95f53()) / 1000;
         if (self function_64030a52()) {
             self function_50454ebf(1);
             while (self function_64030a52()) {

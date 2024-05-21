@@ -281,7 +281,7 @@ function shoot_at_target(mode, target, tag, duration, sethealth, ignorefirstshot
         if (duration >= 0) {
             elapsed = 0;
             while (isdefined(target) && target.health > 0 && elapsed <= duration) {
-                elapsed = elapsed + 0.05;
+                elapsed += 0.05;
                 if (!is_true(self.start_duration_comp)) {
                     elapsed = 0;
                 }
@@ -375,7 +375,7 @@ function function_620eeb6b(goalent) {
             } else {
                 var_215ed720 = "";
                 foreach (target in var_2188535d) {
-                    var_215ed720 = var_215ed720 + " " + target.origin;
+                    var_215ed720 += " " + target.origin;
                 }
                 assertmsg("<unknown string>" + var_215ed720);
             }
@@ -1055,12 +1055,13 @@ function private function_fcd4fcb7() {
     #/
 }
 
-// Namespace ai/ai_shared
-// Params 2, eflags: 0x4
-// Checksum 0xcf5e6df9, Offset: 0x38d0
-// Size: 0x1be
-function private function_1571b7b6(object, var_dfb8e94b) {
-    /#
+/#
+
+    // Namespace ai/ai_shared
+    // Params 2, eflags: 0x4
+    // Checksum 0xcf5e6df9, Offset: 0x38d0
+    // Size: 0x1be
+    function private function_1571b7b6(object, var_dfb8e94b) {
         self endon(#"death", #"entitydeleted");
         self notify("<unknown string>");
         self endon("<unknown string>");
@@ -1079,19 +1080,18 @@ function private function_1571b7b6(object, var_dfb8e94b) {
             line(from, to, color, 1, 0, 1);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace ai/ai_shared
-// Params 0, eflags: 0x0
-// Checksum 0x25d3bc51, Offset: 0x3a98
-// Size: 0x54
-function function_45ef77da() {
-    /#
+    // Namespace ai/ai_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x25d3bc51, Offset: 0x3a98
+    // Size: 0x54
+    function function_45ef77da() {
         dvar = getdvarstring(#"hash_4493b356ca38ab5e", "<unknown string>");
         return int(dvar);
-    #/
-}
+    }
+
+#/
 
 // Namespace ai/ai_shared
 // Params 2, eflags: 0x0

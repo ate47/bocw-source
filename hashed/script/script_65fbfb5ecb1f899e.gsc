@@ -60,7 +60,7 @@ function function_f95cb457(start, target, time, ease_type, ease_in, ease_out, va
         var_18b7d7a4 = self function_838f0a04();
         delta = var_18b7d7a4 - getdvarfloat(#"cg_focallength", var_18b7d7a4);
         if (abs(delta) > 0.001) {
-            start = start - delta;
+            start -= delta;
         }
     }
     localclientnum = self getlocalclientnumber();
@@ -206,7 +206,7 @@ function function_d4a4a726(localclientnum, start_value, target_value, time, var_
         util::function_50f54b6f(self, var_f71e2d8f, var_b3160f0, vararg);
         waitframe(1);
         new_time = float(localplayer getclienttime()) / 1000;
-        cur_time = cur_time + new_time - last_time;
+        cur_time += new_time - last_time;
         last_time = new_time;
     }
     var_b3160f0.cur_value = target_value;

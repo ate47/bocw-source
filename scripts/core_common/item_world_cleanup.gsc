@@ -287,7 +287,7 @@ function private function_ada16428(current_origin, var_c5a0bed8, *previous_origi
             if (!isdefined(vehicle.var_a6b3cbdc)) {
                 delay = 60000;
                 if (isdefined(vehicle.var_8e382c5f)) {
-                    delay = delay + 300000;
+                    delay += 300000;
                 }
                 vehicle.var_a6b3cbdc = time + delay;
             }

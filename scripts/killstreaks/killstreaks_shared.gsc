@@ -323,25 +323,24 @@ function register_dev_dvars(killstreaktype) {
     #/
 }
 
-// Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
-// Checksum 0xa3de2f95, Offset: 0x16b0
-// Size: 0xbc
-function register_dev_debug_dvar(killstreaktype) {
-    /#
+/#
+
+    // Namespace killstreaks/killstreaks_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0xa3de2f95, Offset: 0x16b0
+    // Size: 0xbc
+    function register_dev_debug_dvar(killstreaktype) {
         assert(isdefined(killstreaktype), "<unknown string>");
         assert(isdefined(level.killstreaks[killstreaktype]), "<unknown string>");
         level.killstreaks[killstreaktype].devdebugdvar = "<unknown string>" + killstreaktype + "<unknown string>";
         devgui_scorestreak_command_debugdvar(killstreaktype, level.killstreaks[killstreaktype].devdebugdvar);
-    #/
-}
+    }
 
-// Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
-// Checksum 0xd0d9f8fc, Offset: 0x1778
-// Size: 0x138
-function register_devgui(killstreaktype) {
-    /#
+    // Namespace killstreaks/killstreaks_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0xd0d9f8fc, Offset: 0x1778
+    // Size: 0x138
+    function register_devgui(killstreaktype) {
         level endon(#"game_ended");
         wait(randomintrange(2, 20) * float(function_60d95f53()) / 1000);
         give_type_all = "<unknown string>";
@@ -354,38 +353,33 @@ function register_devgui(killstreaktype) {
         }
         if (isdefined(level.killstreaks[killstreaktype].devtimeoutdvar)) {
         }
-    #/
-}
+    }
 
-// Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x0
-// Checksum 0x3e1f93ca, Offset: 0x18b8
-// Size: 0x4c
-function devgui_scorestreak_command_givedvar(killstreaktype, give_type, dvar) {
-    /#
+    // Namespace killstreaks/killstreaks_shared
+    // Params 3, eflags: 0x0
+    // Checksum 0x3e1f93ca, Offset: 0x18b8
+    // Size: 0x4c
+    function devgui_scorestreak_command_givedvar(killstreaktype, give_type, dvar) {
         devgui_scorestreak_command(killstreaktype, give_type, "<unknown string>" + dvar + "<unknown string>");
-    #/
-}
+    }
 
-// Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x0
-// Checksum 0xbc05635d, Offset: 0x1910
-// Size: 0x34
-function devgui_scorestreak_command_timeoutdvar(killstreaktype, dvar) {
-    /#
+    // Namespace killstreaks/killstreaks_shared
+    // Params 2, eflags: 0x0
+    // Checksum 0xbc05635d, Offset: 0x1910
+    // Size: 0x34
+    function devgui_scorestreak_command_timeoutdvar(killstreaktype, dvar) {
         devgui_scorestreak_dvar_toggle(killstreaktype, "<unknown string>", dvar);
-    #/
-}
+    }
 
-// Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x0
-// Checksum 0x6a8bd6c4, Offset: 0x1950
-// Size: 0x34
-function devgui_scorestreak_command_debugdvar(killstreaktype, dvar) {
-    /#
+    // Namespace killstreaks/killstreaks_shared
+    // Params 2, eflags: 0x0
+    // Checksum 0x6a8bd6c4, Offset: 0x1950
+    // Size: 0x34
+    function devgui_scorestreak_command_debugdvar(killstreaktype, dvar) {
         devgui_scorestreak_dvar_toggle(killstreaktype, "<unknown string>", dvar);
-    #/
-}
+    }
+
+#/
 
 // Namespace killstreaks/killstreaks_shared
 // Params 3, eflags: 0x0
@@ -409,7 +403,7 @@ function devgui_scorestreak_command(killstreaktype, title, command) {
         killstreak_weapon = get_killstreak_weapon(killstreaktype);
         if (isdefined(killstreak_weapon) && killstreak_weapon != level.weaponnone) {
             if (killstreak_weapon.displayname == #"") {
-                display_name = display_name + "<unknown string>";
+                display_name += "<unknown string>";
             } else {
                 display_name = makelocalizedstring(killstreak_weapon.displayname);
             }
@@ -422,7 +416,7 @@ function devgui_scorestreak_command(killstreaktype, title, command) {
         if (strstartswith(killstreaktype, "<unknown string>")) {
             killstreaktype = getsubstr(killstreaktype, 10);
         }
-        add_queued_debug_command(root + display_name + "<unknown string>" + killstreaktype + "<unknown string>" + title + "<unknown string>" + command + "<unknown string>");
+        util::add_queued_debug_command(root + display_name + "<unknown string>" + killstreaktype + "<unknown string>" + title + "<unknown string>" + command + "<unknown string>");
     #/
 }
 
@@ -441,13 +435,17 @@ function should_draw_debug(killstreak) {
     return 0;
 }
 
-// Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x0
-// Checksum 0xc71d604a, Offset: 0x1d00
-// Size: 0x34
-function function_2459bd2f() {
-    assert(isdefined(level.killstreaks), "<unknown string>");
-}
+/#
+
+    // Namespace killstreaks/killstreaks_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xc71d604a, Offset: 0x1d00
+    // Size: 0x34
+    function function_2459bd2f() {
+        assert(isdefined(level.killstreaks), "<unknown string>");
+    }
+
+#/
 
 // Namespace killstreaks/killstreaks_shared
 // Params 1, eflags: 0x2 linked
@@ -520,7 +518,7 @@ function give_if_streak_count_matches(index, killstreak, streakcount) {
         killstreaklevel = get_level(index, killstreak);
         if (self hasperk(#"specialty_killstreak")) {
             reduction = getdvarint(#"perk_killstreakreduction", 0);
-            killstreaklevel = killstreaklevel - reduction;
+            killstreaklevel -= reduction;
             if (killstreaklevel <= 0) {
                 killstreaklevel = 1;
             }
@@ -549,7 +547,7 @@ function give_for_streak() {
     }
     given = 0;
     for (i = 0; i < self.killstreak.size; i++) {
-        given = given | give_if_streak_count_matches(i, self.killstreak[i], self.pers[#"cur_kill_streak"]);
+        given |= give_if_streak_count_matches(i, self.killstreak[i], self.pers[#"cur_kill_streak"]);
     }
 }
 
@@ -963,7 +961,7 @@ function change_killstreak_quantity(killstreakweapon, delta) {
     }
     quantity = get_killstreak_quantity(killstreakweapon);
     previousquantity = quantity;
-    quantity = quantity + delta;
+    quantity += delta;
     if (quantity > level.scorestreaksmaxstacking) {
         quantity = level.scorestreaksmaxstacking;
     }
@@ -1543,8 +1541,8 @@ function is_delayable_killstreak(killstreaktype) {
 function display_unavailable_time() {
     var_c18439df = [[ level.gettimepassed ]]();
     if (var_c18439df == 0 && (isdefined(level.var_fd167bf6) ? level.var_fd167bf6 : 0) > gettime()) {
-        var_c18439df = var_c18439df - level.var_fd167bf6 - gettime();
-        var_c18439df = var_c18439df - 900;
+        var_c18439df -= level.var_fd167bf6 - gettime();
+        var_c18439df -= 900;
     }
     timeleft = int(level.roundstartkillstreakdelay - float(var_c18439df) / 1000);
     if (timeleft <= 0) {
@@ -1800,12 +1798,13 @@ function private initialspawnprotection() {
     self val::reset(#"killstreak_spawn_protection", "ignoreme");
 }
 
-// Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x0
-// Checksum 0x504fa7ae, Offset: 0x6e70
-// Size: 0xe0
-function killstreak_debug_think() {
-    /#
+/#
+
+    // Namespace killstreaks/killstreaks_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x504fa7ae, Offset: 0x6e70
+    // Size: 0xe0
+    function killstreak_debug_think() {
         setdvar(#"debug_killstreak", "<unknown string>");
         for (;;) {
             cmd = getdvarstring(#"debug_killstreak");
@@ -1819,15 +1818,13 @@ function killstreak_debug_think() {
             }
             wait(0.5);
         }
-    #/
-}
+    }
 
-// Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x0
-// Checksum 0x83186a4f, Offset: 0x6f58
-// Size: 0x32c
-function killstreak_data_dump() {
-    /#
+    // Namespace killstreaks/killstreaks_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x83186a4f, Offset: 0x6f58
+    // Size: 0x32c
+    function killstreak_data_dump() {
         iprintln("<unknown string>");
         println("<unknown string>");
         println("<unknown string>");
@@ -1867,8 +1864,9 @@ function killstreak_data_dump() {
             println("<unknown string>");
         }
         println("<unknown string>");
-    #/
-}
+    }
+
+#/
 
 // Namespace killstreaks/killstreaks_shared
 // Params 4, eflags: 0x2 linked
@@ -1970,7 +1968,7 @@ function monitordamage(killstreak_ref, max_health, destroyed_callback, low_healt
                 var_e7344d41 [[ var_e7344d41.var_307aef8d ]](self);
             }
         }
-        self.damagetaken = self.damagetaken + weapon_damage;
+        self.damagetaken += weapon_damage;
         if (!issentient(self) && weapon_damage > 0) {
             self.attacker = attacker;
         }
@@ -2644,31 +2642,31 @@ function update_player_threat(player) {
     player.threatlevel = 0;
     dist = distance(player.origin, heli.origin);
     var_b90cd297 = isdefined(self.var_fc0dee44) ? self.var_fc0dee44 : level.heli_visual_range;
-    player.threatlevel = player.threatlevel + (var_b90cd297 - dist) / var_b90cd297 * 100;
+    player.threatlevel += (var_b90cd297 - dist) / var_b90cd297 * 100;
     if (isdefined(heli.attacker) && player == heli.attacker) {
-        player.threatlevel = player.threatlevel + 100;
+        player.threatlevel += 100;
     }
     if (isdefined(player.carryobject)) {
-        player.threatlevel = player.threatlevel + 200;
+        player.threatlevel += 200;
     }
     if (isdefined(player.score)) {
-        player.threatlevel = player.threatlevel + player.score * 2;
+        player.threatlevel += player.score * 2;
     }
     if (player weapons::has_launcher()) {
         if (player weapons::has_lockon(heli)) {
-            player.threatlevel = player.threatlevel + 1000;
+            player.threatlevel += 1000;
         } else {
-            player.threatlevel = player.threatlevel + 500;
+            player.threatlevel += 500;
         }
     }
     if (player weapons::has_heavy_weapon()) {
-        player.threatlevel = player.threatlevel + 300;
+        player.threatlevel += 300;
     }
     if (player weapons::has_lmg()) {
-        player.threatlevel = player.threatlevel + 200;
+        player.threatlevel += 200;
     }
     if (isdefined(player.antithreat)) {
-        player.threatlevel = player.threatlevel - player.antithreat;
+        player.threatlevel -= player.antithreat;
     }
     if (player.threatlevel <= 0) {
         player.threatlevel = 1;
@@ -2684,7 +2682,7 @@ function update_non_player_threat(non_player) {
     non_player.threatlevel = 0;
     dist = distance(non_player.origin, heli.origin);
     var_b90cd297 = isdefined(self.var_fc0dee44) ? self.var_fc0dee44 : level.heli_visual_range;
-    non_player.threatlevel = non_player.threatlevel + (var_b90cd297 - dist) / var_b90cd297 * 100;
+    non_player.threatlevel += (var_b90cd297 - dist) / var_b90cd297 * 100;
     if (non_player.threatlevel <= 0) {
         non_player.threatlevel = 1;
     }
@@ -2699,19 +2697,19 @@ function update_actor_threat(actor) {
     actor.threatlevel = 0;
     dist = distance(actor.origin, heli.origin);
     var_b90cd297 = isdefined(self.var_fc0dee44) ? self.var_fc0dee44 : level.heli_visual_range;
-    actor.threatlevel = actor.threatlevel + (var_b90cd297 - dist) / var_b90cd297 * 100;
+    actor.threatlevel += (var_b90cd297 - dist) / var_b90cd297 * 100;
     if (isdefined(actor.owner)) {
         if (isdefined(heli.attacker) && actor.owner == heli.attacker) {
-            actor.threatlevel = actor.threatlevel + 100;
+            actor.threatlevel += 100;
         }
         if (isdefined(actor.owner.carryobject)) {
-            actor.threatlevel = actor.threatlevel + 200;
+            actor.threatlevel += 200;
         }
         if (isdefined(actor.owner.score)) {
-            actor.threatlevel = actor.threatlevel + actor.owner.score * 4;
+            actor.threatlevel += actor.owner.score * 4;
         }
         if (isdefined(actor.owner.antithreat)) {
-            actor.threatlevel = actor.threatlevel - actor.owner.antithreat;
+            actor.threatlevel -= actor.owner.antithreat;
         }
     }
     if (actor.threatlevel <= 0) {
@@ -2728,7 +2726,7 @@ function update_dog_threat(dog) {
     dog.threatlevel = 0;
     dist = distance(dog.origin, heli.origin);
     var_b90cd297 = isdefined(self.var_fc0dee44) ? self.var_fc0dee44 : level.heli_visual_range;
-    dog.threatlevel = dog.threatlevel + (var_b90cd297 - dist) / var_b90cd297 * 100;
+    dog.threatlevel += (var_b90cd297 - dist) / var_b90cd297 * 100;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -2753,19 +2751,19 @@ function missile_valid_target_check(missiletarget) {
 function update_missile_player_threat(player) {
     player.missilethreatlevel = 0;
     dist = distance(player.origin, self.origin);
-    player.missilethreatlevel = player.missilethreatlevel + (level.heli_missile_range - dist) / level.heli_missile_range * 100;
+    player.missilethreatlevel += (level.heli_missile_range - dist) / level.heli_missile_range * 100;
     if (self missile_valid_target_check(player) == 0) {
         player.missilethreatlevel = 1;
         return;
     }
     if (isdefined(self.attacker) && player == self.attacker) {
-        player.missilethreatlevel = player.missilethreatlevel + 100;
+        player.missilethreatlevel += 100;
     }
     if (isdefined(player.score)) {
-        player.missilethreatlevel = player.missilethreatlevel + player.score * 4;
+        player.missilethreatlevel += player.score * 4;
     }
     if (isdefined(player.antithreat)) {
-        player.missilethreatlevel = player.missilethreatlevel - player.antithreat;
+        player.missilethreatlevel -= player.antithreat;
     }
     if (player.missilethreatlevel <= 0) {
         player.missilethreatlevel = 1;
@@ -3418,12 +3416,13 @@ function function_edde22a8() {
     self playsound("mpl_d_hard_nuke_obtain");
 }
 
-// Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x0
-// Checksum 0x37471e0, Offset: 0xc320
-// Size: 0x2a8
-function debug_ricochet_protection() {
-    /#
+/#
+
+    // Namespace killstreaks/killstreaks_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x37471e0, Offset: 0xc320
+    // Size: 0x2a8
+    function debug_ricochet_protection() {
         debug_wait = 0.5;
         debug_frames = int(debug_wait / float(function_60d95f53()) / 1000) + 1;
         while (true) {
@@ -3453,8 +3452,9 @@ function debug_ricochet_protection() {
                 }
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace killstreaks/killstreaks_shared
 // Params 1, eflags: 0x2 linked

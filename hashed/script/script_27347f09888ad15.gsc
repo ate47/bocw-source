@@ -97,8 +97,8 @@ function function_ce65eab6(var_89592ba7) {
         if (entry.var_cffbc08 == -1) {
             infinite = 1;
         }
-        spawned = spawned + entry.spawned;
-        var_cffbc08 = var_cffbc08 + function_b9ea4226(entry.var_cffbc08, var_89592ba7.var_b0abb10e);
+        spawned += entry.spawned;
+        var_cffbc08 += function_b9ea4226(entry.var_cffbc08, var_89592ba7.var_b0abb10e);
     }
     return {#spawned:spawned, #var_cffbc08:infinite ? -1 : var_cffbc08};
 }
@@ -179,7 +179,7 @@ function private function_622c131e(&var_5c120708, &var_fcfdb752, var_e1be5b85, v
         if (is_true(var_e1be5b85) && isdefined(var_fcfdb752[index]) && !function_9a90dff7(var_fcfdb752[index]) && var_cffbc08 - var_fcfdb752[index].spawned <= 0) {
             continue;
         }
-        total_weights = total_weights + (isdefined(entry.var_857deb66) ? entry.var_857deb66 : 0);
+        total_weights += isdefined(entry.var_857deb66) ? entry.var_857deb66 : 0;
         struct = {#weight:total_weights, #name:isdefined(level.var_ce15b8c9[entry.entryname]) ? level.var_ce15b8c9[entry.entryname] : entry.entryname};
         var_5b34aaca[var_5b34aaca.size] = struct;
     }

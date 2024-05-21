@@ -380,7 +380,7 @@ function function_d96c49e7(localclientnum, pos, *surface, *notetrack, *bone) {
     if (n_scale > 1 || n_scale < 0) {
         return;
     }
-    n_scale = n_scale * 0.25;
+    n_scale *= 0.25;
     if (n_scale <= 0.01) {
         return;
     }

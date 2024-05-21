@@ -384,10 +384,10 @@ function function_abaeef51(str, var_d5779ab5, var_54e5e046) {
     first = 1;
     foreach (s in sarray) {
         if (!first) {
-            var_cc407339 = var_cc407339 + var_54e5e046;
+            var_cc407339 += var_54e5e046;
         }
         first = 0;
-        var_cc407339 = var_cc407339 + s;
+        var_cc407339 += s;
     }
     return var_cc407339;
 }

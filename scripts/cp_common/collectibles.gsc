@@ -407,27 +407,26 @@ function function_f539a1fa(collectible, params) {
     return false;
 }
 
-// Namespace collectibles/collectibles
-// Params 0, eflags: 0x0
-// Checksum 0x41939116, Offset: 0x1838
-// Size: 0x90
-function function_a66b8474() {
-    /#
+/#
+
+    // Namespace collectibles/collectibles
+    // Params 0, eflags: 0x0
+    // Checksum 0x41939116, Offset: 0x1838
+    // Size: 0x90
+    function function_a66b8474() {
         foreach (id, collectible in level.var_19cf69db) {
             function_cb8ff1b9(id, 0);
         }
-    #/
-}
+    }
 
-// Namespace collectibles/collectibles
-// Params 0, eflags: 0x0
-// Checksum 0x5a9b78b5, Offset: 0x18d0
-// Size: 0x98
-function function_4e4a7021() {
-    /#
+    // Namespace collectibles/collectibles
+    // Params 0, eflags: 0x0
+    // Checksum 0x5a9b78b5, Offset: 0x18d0
+    // Size: 0x98
+    function function_4e4a7021() {
         foreach (id, collectible in level.var_19cf69db) {
             function_cb8ff1b9(id, 1);
         }
-    #/
-}
+    }
 
+#/

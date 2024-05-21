@@ -70,7 +70,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
         }
     }
     if (isdefined(eattacker) && isplayer(eattacker) && (smeansofdeath == "MOD_MELEE" || smeansofdeath == "MOD_MELEE_WEAPON_BUTT")) {
-        idamage = idamage * 3;
+        idamage *= 3;
     }
     idamage = int(idamage);
     unmodified = idamage;
@@ -93,7 +93,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
     }
     assert(isdefined(idamage), "<unknown string>");
     if (!isdefined(vdir)) {
-        idflags = idflags | 4;
+        idflags |= 4;
     }
     if (isdefined(eattacker)) {
         if (isplayer(eattacker)) {

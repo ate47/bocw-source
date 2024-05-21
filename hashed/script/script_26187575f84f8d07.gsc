@@ -28,17 +28,19 @@ function init(var_551ace8a, var_94aa053c) {
     level.var_ac7be286 = [];
 }
 
-// Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 0, eflags: 0x0
-// Checksum 0x9e4bb2d7, Offset: 0x528
-// Size: 0x44
-function onstartgametype() {
-    /#
+/#
+
+    // Namespace namespace_b77e8eb1/namespace_b77e8eb1
+    // Params 0, eflags: 0x0
+    // Checksum 0x9e4bb2d7, Offset: 0x528
+    // Size: 0x44
+    function onstartgametype() {
         if (getdvarint(#"hash_26399e7b3c887ffb", 0)) {
             level thread function_64d94faa();
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
 // Params 0, eflags: 0x2 linked
@@ -181,7 +183,7 @@ function private function_218080fb() {
     if (isdefined(self.script_radius)) {
         maxradius = self.script_radius;
         if (!isdefined(level.var_e1206a08)) {
-            maxradius = maxradius - 1600;
+            maxradius -= 1600;
         }
         self.var_a96d0116 = 4;
     } else {
@@ -191,7 +193,7 @@ function private function_218080fb() {
     var_92d713c7 = level.var_aa6b51f5;
     totaldelta = maxradius - initialradius;
     if (isdefined(self.script_radius) && !isdefined(level.var_e1206a08)) {
-        totaldelta = totaldelta + 1600;
+        totaldelta += 1600;
     }
     self.var_91017512 = totaldelta / (self.numrings - 1 - self.var_a96d0116);
     self.circleradius = 800;
@@ -210,7 +212,7 @@ function private function_218080fb() {
                 offsetangle = randomint(360);
                 offsetvector = (cos(offsetangle), sin(offsetangle), 0);
                 var_3413960f = randomint(level.var_380f7d22);
-                origin = origin + vectorscale(offsetvector, var_3413960f);
+                origin += vectorscale(offsetvector, var_3413960f);
             }
             self.var_fa06c0e[i][j] = origin;
         }
@@ -220,7 +222,7 @@ function private function_218080fb() {
             self function_7a12a868(self.numrings - i, level.var_36cba6d6);
         }
     }
-    self.numrings = self.numrings - self.var_a96d0116;
+    self.numrings -= self.var_a96d0116;
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
@@ -313,7 +315,7 @@ function private function_87a78a13() {
     }
     maxindex = 0;
     for (i = 0; i < self.var_261dd536; i++) {
-        maxindex = maxindex + self.var_fa06c0e[i].size;
+        maxindex += self.var_fa06c0e[i].size;
     }
     var_806fff0a = int(maxindex * level.var_35b75d82);
     var_1082b7c4 = var_b75abae3 / var_806fff0a;
@@ -330,7 +332,7 @@ function private function_87a78a13() {
                 var_5162de87 thread function_60c3117b(0.1, 1, 5, 0);
                 break;
             }
-            index = index - self.var_fa06c0e[j].size;
+            index -= self.var_fa06c0e[j].size;
         }
         if (is_true(self.var_3dde41e2) && isdefined(var_5162de87)) {
             util::wait_network_frame(1);
@@ -544,12 +546,13 @@ function function_904efdb8() {
     }
 }
 
-// Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 0, eflags: 0x4
-// Checksum 0x6db29cd5, Offset: 0x2520
-// Size: 0x4d4
-function private function_64d94faa() {
-    /#
+/#
+
+    // Namespace namespace_b77e8eb1/namespace_b77e8eb1
+    // Params 0, eflags: 0x4
+    // Checksum 0x6db29cd5, Offset: 0x2520
+    // Size: 0x4d4
+    function private function_64d94faa() {
         level endon(#"game_ended");
         level.var_8c48fd1 = 0;
         level.var_a0cb7a38 = [];
@@ -570,20 +573,18 @@ function private function_64d94faa() {
                 if (player usebuttonpressed() && !is_true(level.var_a0cb7a38[level.var_8c48fd1])) {
                     level.var_2f418a15[level.var_8c48fd1] thread function_33e28605(level.var_8c48fd1);
                     level.var_8c48fd1++;
-                    level.var_8c48fd1 = level.var_8c48fd1 % 3;
+                    level.var_8c48fd1 %= 3;
                     wait(0.5);
                 }
             }
         }
-    #/
-}
+    }
 
-// Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 1, eflags: 0x4
-// Checksum 0xe53b8d79, Offset: 0x2a00
-// Size: 0xb4
-function private function_33e28605(var_f07efec7) {
-    /#
+    // Namespace namespace_b77e8eb1/namespace_b77e8eb1
+    // Params 1, eflags: 0x4
+    // Checksum 0xe53b8d79, Offset: 0x2a00
+    // Size: 0xb4
+    function private function_33e28605(var_f07efec7) {
         level.var_a0cb7a38[var_f07efec7] = 1;
         level.var_ac7be286[level.var_ac7be286.size] = self;
         self function_6a583613();
@@ -592,15 +593,13 @@ function private function_33e28605(var_f07efec7) {
         }
         self function_57172b7();
         level.var_a0cb7a38[var_f07efec7] = 0;
-    #/
-}
+    }
 
-// Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 0, eflags: 0x4
-// Checksum 0x67b80d75, Offset: 0x2ac0
-// Size: 0x206
-function private function_3d8141ab() {
-    /#
+    // Namespace namespace_b77e8eb1/namespace_b77e8eb1
+    // Params 0, eflags: 0x4
+    // Checksum 0x67b80d75, Offset: 0x2ac0
+    // Size: 0x206
+    function private function_3d8141ab() {
         level endon(#"game_ended");
         while (!isdefined(self.var_b06ed2fa)) {
             waitframe(1);
@@ -616,15 +615,13 @@ function private function_3d8141ab() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 1, eflags: 0x0
-// Checksum 0xfe53af06, Offset: 0x2cd0
-// Size: 0x160
-function function_c6ce0ef0(structs) {
-    /#
+    // Namespace namespace_b77e8eb1/namespace_b77e8eb1
+    // Params 1, eflags: 0x0
+    // Checksum 0xfe53af06, Offset: 0x2cd0
+    // Size: 0x160
+    function function_c6ce0ef0(structs) {
         foreach (struct in structs) {
             level.var_ac7be286[level.var_ac7be286.size] = struct;
             struct.var_8e392e0f = struct.script_radius - 1200;
@@ -637,19 +634,17 @@ function function_c6ce0ef0(structs) {
             }
             struct.var_b06ed2fa setscale(targetscale);
         }
-    #/
-}
+    }
 
-// Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 0, eflags: 0x0
-// Checksum 0x57c66495, Offset: 0x2e38
-// Size: 0x9c
-function function_366d6aba() {
-    /#
+    // Namespace namespace_b77e8eb1/namespace_b77e8eb1
+    // Params 0, eflags: 0x0
+    // Checksum 0x57c66495, Offset: 0x2e38
+    // Size: 0x9c
+    function function_366d6aba() {
         foreach (var_5aeec5ab in level.var_ac7be286) {
             var_5aeec5ab function_ea7ab3a9();
         }
         level.var_ac7be286 = [];
-    #/
-}
+    }
 
+#/

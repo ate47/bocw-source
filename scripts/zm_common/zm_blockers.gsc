@@ -649,7 +649,7 @@ function door_activate(time, open = 1, quick, use_blocker_clip_for_pathing) {
                     wait(0.5);
                     bomb hidepart("tag_sign");
                     wait(0.5);
-                    timer = timer - 1;
+                    timer -= 1;
                     /#
                         iprintlnbold(timer);
                     #/
@@ -934,7 +934,7 @@ function door_think() {
                 if (!isdefined(self.power_cost)) {
                     self.power_cost = 0;
                 }
-                self.power_cost = self.power_cost + 200;
+                self.power_cost += 200;
             }
             self sethintstring("");
             if (is_true(level.local_doors_stay_open)) {
@@ -966,7 +966,7 @@ function door_think() {
                 if (!isdefined(self.power_cost)) {
                     self.power_cost = 0;
                 }
-                self.power_cost = self.power_cost + 200;
+                self.power_cost += 200;
             }
             self sethintstring("");
             if (is_true(level.local_doors_stay_open)) {
@@ -1602,7 +1602,7 @@ function function_a9bf8f6c(t_door) {
     if (isdefined(t_door.zombie_cost)) {
         if (is_true(level.is_forever_solo_game)) {
             if (t_door.zombie_cost >= 750) {
-                t_door.zombie_cost = t_door.zombie_cost - 250;
+                t_door.zombie_cost -= 250;
             }
         }
         cost = t_door.zombie_cost;
@@ -1836,7 +1836,7 @@ function blocker_attack_spots() {
     self.attack_spots_taken = taken;
     self.attack_spots = spots;
     /#
-        self thread debug_attack_spots_taken();
+        self thread zm_utility::debug_attack_spots_taken();
     #/
 }
 
@@ -1953,21 +1953,21 @@ function handle_post_board_repair_rewards(cost, *zbarrier) {
     if (!isdefined(self.var_d1463e1e)) {
         self.var_d1463e1e = 0;
     }
-    var_fe6ea5a4 = isdefined(zombie_utility::function_d2dfacfd(#"rebuild_barrier_cap_per_round")) ? zombie_utility::function_d2dfacfd(#"rebuild_barrier_cap_per_round") : 0;
-    self.rebuild_barrier_reward = self.rebuild_barrier_reward + zbarrier;
+    var_fe6ea5a4 = isdefined(zombie_utility::get_zombie_var(#"rebuild_barrier_cap_per_round")) ? zombie_utility::get_zombie_var(#"rebuild_barrier_cap_per_round") : 0;
+    self.rebuild_barrier_reward += zbarrier;
     if (self.var_d1463e1e === 0 && self.rebuild_barrier_reward >= var_fe6ea5a4) {
         self.var_d1463e1e = 1;
         level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:self, #scoreevent:"secure_barrier_round_limit_zm"});
         self zm_utility::play_sound_on_ent("purchase");
     } else if (self.rebuild_barrier_reward < var_fe6ea5a4 && !is_true(self.var_d1463e1e)) {
         if (isdefined(self.var_7e008e0c) && self.var_7e008e0c > 0) {
-            zbarrier = zbarrier * self.var_7e008e0c;
+            zbarrier *= self.var_7e008e0c;
         }
         level scoreevents::doscoreeventcallback("scoreEventZM", {#attacker:self, #scoreevent:"boarded_up_entrance_zm"});
         self zm_utility::play_sound_on_ent("purchase");
     }
     if (isdefined(self.board_repair)) {
-        self.board_repair = self.board_repair + 1;
+        self.board_repair += 1;
     }
 }
 
@@ -2034,7 +2034,7 @@ function blocker_trigger_think() {
     thread zm_unitrigger::register_static_unitrigger(self.unitrigger_stub, &blocker_unitrigger_think);
     /#
         if (getdvarint(#"zombie_debug", 0) > 0) {
-            thread debug_blocker(trigger_pos, radius, height);
+            thread zm_utility::debug_blocker(trigger_pos, radius, height);
         }
     #/
     while (true) {
@@ -2268,7 +2268,7 @@ function remove_chunk(chunk, node, *destroy_immediately, *zomb) {
             dest = ent.origin + anglestoforward(ent.angles) * dist;
             trace = bullettrace(dest + (0, 0, 16), dest + (0, 0, -200), 0, undefined);
             if (trace[#"fraction"] == 1) {
-                dest = dest + (0, 0, -200);
+                dest += (0, 0, -200);
             } else {
                 dest = trace[#"position"];
             }
@@ -2296,7 +2296,7 @@ function remove_chunk(chunk, node, *destroy_immediately, *zomb) {
             dest = ent.origin + anglestoforward(ent.angles) * dist;
             trace = bullettrace(dest + (0, 0, 16), dest + (0, 0, -200), 0, undefined);
             if (trace[#"fraction"] == 1) {
-                dest = dest + (0, 0, -200);
+                dest += (0, 0, -200);
             } else {
                 dest = trace[#"position"];
             }
@@ -2328,7 +2328,7 @@ function remove_chunk(chunk, node, *destroy_immediately, *zomb) {
         dest = ent.origin + anglestoforward(ent.angles) * dist;
         trace = bullettrace(dest + (0, 0, 16), dest + (0, 0, -200), 0, undefined);
         if (trace[#"fraction"] == 1) {
-            dest = dest + (0, 0, -200);
+            dest += (0, 0, -200);
         } else {
             dest = trace[#"position"];
         }
@@ -2364,7 +2364,7 @@ function remove_chunk(chunk, node, *destroy_immediately, *zomb) {
             dest = ent.origin + anglestoforward(ent.angles) * dist;
             trace = bullettrace(dest + (0, 0, 16), dest + (0, 0, -200), 0, undefined);
             if (trace[#"fraction"] == 1) {
-                dest = dest + (0, 0, -200);
+                dest += (0, 0, -200);
             } else {
                 dest = trace[#"position"];
             }

@@ -618,7 +618,7 @@ function private function_8e224906(var_ad2d46ff) {
             var_36dbf72a thread function_ddf221f2(0);
         } else {
             var_36dbf72a function_edb8ac3f(var_ad2d46ff);
-            var_36dbf72a.var_90d59738 = var_36dbf72a.var_90d59738 + 1;
+            var_36dbf72a.var_90d59738 += 1;
         }
         wait(0.1);
     }
@@ -695,8 +695,8 @@ function private function_edb8ac3f(var_ad2d46ff) {
             if (ratio > 1) {
                 ratio = 1;
             }
-            new_vector = new_vector * ratio;
-            new_vector = new_vector + self.var_d070aa8d;
+            new_vector *= ratio;
+            new_vector += self.var_d070aa8d;
             normal_vector = vectornormalize(new_vector);
         }
     }
@@ -762,7 +762,7 @@ function private function_f95c27a2(target) {
                     prediction_time = 0.225;
                 }
             }
-            self.knockdown_iterations = self.knockdown_iterations + 1;
+            self.knockdown_iterations += 1;
             vector_to_target = var_71872c01 - self.origin;
             normal_vector = vectornormalize(vector_to_target);
             move_distance = 700 * prediction_time;
@@ -1285,7 +1285,7 @@ function private function_85b9ec36(inflictor, attacker, damage, *dflags, mod, we
     }
     var_a70572a9 = 0.4;
     if (isdefined(level.var_1b01acb4)) {
-        var_a70572a9 = var_a70572a9 * [[ level.var_1b01acb4 ]](self, hitloc, var_fd90b0bb);
+        var_a70572a9 *= [[ level.var_1b01acb4 ]](self, hitloc, var_fd90b0bb);
     }
     if (!isdefined(entity.var_a55d2294) && !is_true(entity.berserk)) {
         entity.var_a55d2294 = gettime() + 60000;
@@ -1360,14 +1360,14 @@ function function_4c13b4e7(entity, weakpoint, attacker, damage, var_a70572a9, we
         if (namespace_81245006::function_f29756fe(weakpoint) === 1 && isdefined(weakpoint.var_f371ebb0)) {
             if (isdefined(level.var_56f626bc)) {
                 damage_mod = [[ level.var_56f626bc ]](self, weapon, attacker);
-                damage = damage * damage_mod;
+                damage *= damage_mod;
             }
             if (weakpoint.var_f371ebb0 == "right_arm_armor") {
                 namespace_81245006::function_ef87b7e8(weakpoint, damage);
                 entity clientfield::increment("raz_gun_weakpoint_hit", 1);
                 entity.var_417905cf = weakpoint.health;
             } else {
-                damage = damage * var_a70572a9;
+                damage *= var_a70572a9;
                 namespace_81245006::function_ef87b7e8(weakpoint, damage);
             }
         }

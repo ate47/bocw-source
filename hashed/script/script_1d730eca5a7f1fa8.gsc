@@ -35,7 +35,7 @@ function function_b784c6bd(type) {
     switch (type) {
     case 10:
         self namespace_83eb6304::function_3ecfde67("player_healOS");
-        self.health = self.health + 150;
+        self.health += 150;
         if (self.health < self.health) {
             self.health = self.health;
         } else if (self.health > 150) {

@@ -360,7 +360,7 @@ function function_995e01b6(localclientnum, player) {
     teamcolor = get_team_color(localclientnum, player.team, 3);
     if (player function_21c0fa55() && !function_4af9029c(localclientnum)) {
         gradient = getdvarfloat(#"hash_595a2f8a298ab607", 1);
-        teamcolor = teamcolor * gradient;
+        teamcolor *= gradient;
     }
     var_1762ffa playrenderoverridebundle(rob);
     if (var_1762ffa postfx::function_556665f2(postfx)) {

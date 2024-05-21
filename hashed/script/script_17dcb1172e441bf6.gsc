@@ -34,12 +34,13 @@ function init() {
     level thread function_99069e31();
 }
 
-// Namespace namespace_1e25ad94/namespace_1e25ad94
-// Params 4, eflags: 0x2 linked
-// Checksum 0x88adf808, Offset: 0x170
-// Size: 0x94
-function debugcircle(origin, radius, seconds, color) {
-    /#
+/#
+
+    // Namespace namespace_1e25ad94/namespace_1e25ad94
+    // Params 4, eflags: 0x2 linked
+    // Checksum 0x88adf808, Offset: 0x170
+    // Size: 0x94
+    function debugcircle(origin, radius, seconds, color) {
         if (!isdefined(seconds)) {
             seconds = 1;
         }
@@ -48,25 +49,21 @@ function debugcircle(origin, radius, seconds, color) {
         }
         frames = int(20 * seconds);
         circle(origin, radius, color, 0, 1, frames);
-    #/
-}
+    }
 
-// Namespace namespace_1e25ad94/namespace_1e25ad94
-// Params 4, eflags: 0x2 linked
-// Checksum 0xda6fbf63, Offset: 0x210
-// Size: 0x64
-function debugline(p1, p2, seconds, color) {
-    /#
+    // Namespace namespace_1e25ad94/namespace_1e25ad94
+    // Params 4, eflags: 0x2 linked
+    // Checksum 0xda6fbf63, Offset: 0x210
+    // Size: 0x64
+    function debugline(p1, p2, seconds, color) {
         line(p1, p2, color, 1, 0, int(seconds * 20));
-    #/
-}
+    }
 
-// Namespace namespace_1e25ad94/namespace_1e25ad94
-// Params 4, eflags: 0x2 linked
-// Checksum 0x828078ed, Offset: 0x280
-// Size: 0x1ae
-function function_1d1f2c26(point, timesec, size, color) {
-    /#
+    // Namespace namespace_1e25ad94/namespace_1e25ad94
+    // Params 4, eflags: 0x2 linked
+    // Checksum 0x828078ed, Offset: 0x280
+    // Size: 0x1ae
+    function function_1d1f2c26(point, timesec, size, color) {
         self endon(#"hash_20de371f231f3e8a");
         end = gettime() + timesec * 1000;
         halfwidth = int(size / 2);
@@ -82,15 +79,13 @@ function function_1d1f2c26(point, timesec, size, color) {
             line(var_cfbcbc57, var_9e09d8f2, color, 1, 0, 1);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace namespace_1e25ad94/namespace_1e25ad94
-// Params 3, eflags: 0x2 linked
-// Checksum 0xf24f81c4, Offset: 0x438
-// Size: 0x1c6
-function debugorigin(timesec, size, color) {
-    /#
+    // Namespace namespace_1e25ad94/namespace_1e25ad94
+    // Params 3, eflags: 0x2 linked
+    // Checksum 0xf24f81c4, Offset: 0x438
+    // Size: 0x1c6
+    function debugorigin(timesec, size, color) {
         self endon(#"hash_60eabc6ae83239fe");
         end = gettime() + timesec * 1000;
         halfwidth = int(size / 2);
@@ -107,15 +102,13 @@ function debugorigin(timesec, size, color) {
             line(var_cfbcbc57, var_9e09d8f2, color, 1, 0, 1);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace namespace_1e25ad94/namespace_1e25ad94
-// Params 2, eflags: 0x2 linked
-// Checksum 0x996400c2, Offset: 0x608
-// Size: 0xc8
-function debugmsg(txt, critical = 0) {
-    /#
+    // Namespace namespace_1e25ad94/namespace_1e25ad94
+    // Params 2, eflags: 0x2 linked
+    // Checksum 0x996400c2, Offset: 0x608
+    // Size: 0xc8
+    function debugmsg(txt, critical = 0) {
         if (critical == 0) {
             println("<unknown string>" + txt);
             return;
@@ -123,17 +116,15 @@ function debugmsg(txt, critical = 0) {
         text = "<unknown string>" + gettime() + "<unknown string>" + txt;
         println("<unknown string>" + text);
         level.doa.var_62f60f27[level.doa.var_62f60f27.size] = text;
-    #/
-}
+    }
 
-// Namespace namespace_1e25ad94/namespace_1e25ad94
-// Params 3, eflags: 0x0
-// Checksum 0x1eb2bccc, Offset: 0x6d8
-// Size: 0x9e
-function function_75ebaff2(txt, timesec, entity) {
-    /#
+    // Namespace namespace_1e25ad94/namespace_1e25ad94
+    // Params 3, eflags: 0x0
+    // Checksum 0x1eb2bccc, Offset: 0x6d8
+    // Size: 0x9e
+    function function_75ebaff2(txt, timesec, entity) {
         end = gettime() + timesec * 1000;
-        origin = function_23e1f90f()[0].origin;
+        origin = namespace_7f5aeb59::function_23e1f90f()[0].origin;
         while (end > gettime()) {
             if (isdefined(entity)) {
                 origin = entity.origin;
@@ -141,15 +132,13 @@ function function_75ebaff2(txt, timesec, entity) {
             print3d(origin, txt);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace namespace_1e25ad94/namespace_1e25ad94
-// Params 7, eflags: 0x2 linked
-// Checksum 0x29cbb364, Offset: 0x780
-// Size: 0x11e
-function function_b57a9d84(vcenter, yaw, length, width, height, timesec = 1, color = (1, 0, 0)) {
-    /#
+    // Namespace namespace_1e25ad94/namespace_1e25ad94
+    // Params 7, eflags: 0x2 linked
+    // Checksum 0x29cbb364, Offset: 0x780
+    // Size: 0x11e
+    function function_b57a9d84(vcenter, yaw, length, width, height, timesec = 1, color = (1, 0, 0)) {
         end = gettime() + timesec * 1000;
         mins = (length * -1 / 2, width * -1 / 2, height * -1 / 2);
         maxs = (length / 2, width / 2, height / 2);
@@ -157,15 +146,13 @@ function function_b57a9d84(vcenter, yaw, length, width, height, timesec = 1, col
             box(vcenter, mins, maxs, yaw, color, 1, 0, 1);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace namespace_1e25ad94/namespace_1e25ad94
-// Params 7, eflags: 0x2 linked
-// Checksum 0x5f0820fb, Offset: 0x8a8
-// Size: 0x126
-function function_67127ba2(entity, yaw, length, width, height, timesec = 1, color = (1, 0, 0)) {
-    /#
+    // Namespace namespace_1e25ad94/namespace_1e25ad94
+    // Params 7, eflags: 0x2 linked
+    // Checksum 0x5f0820fb, Offset: 0x8a8
+    // Size: 0x126
+    function function_67127ba2(entity, yaw, length, width, height, timesec = 1, color = (1, 0, 0)) {
         end = gettime() + timesec * 1000;
         mins = (length * -1 / 2, width * -1 / 2, height * -1 / 2);
         maxs = (length / 2, width / 2, height / 2);
@@ -173,8 +160,9 @@ function function_67127ba2(entity, yaw, length, width, height, timesec = 1, colo
             box(entity.origin, mins, maxs, yaw, color, 1, 0, 1);
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_1e25ad94/namespace_1e25ad94
 // Params 0, eflags: 0x2 linked
@@ -186,7 +174,7 @@ function function_99069e31() {
             waitframe(1);
             if (level.doa.var_62f60f27.size && isdefined(level.doa.var_39e3fa99)) {
                 if (level.doa.world_state == 4) {
-                    origin = function_23e1f90f()[0].origin;
+                    origin = namespace_7f5aeb59::function_23e1f90f()[0].origin;
                 } else {
                     origin = [[ level.doa.var_39e3fa99 ]]->function_ffcf1d1();
                 }
@@ -219,12 +207,13 @@ function function_8225da57() {
     level.doa.var_62f60f27 = [];
 }
 
-// Namespace namespace_1e25ad94/namespace_1e25ad94
-// Params 4, eflags: 0x0
-// Checksum 0x64b20143, Offset: 0xbc0
-// Size: 0x1d0
-function function_72f01f3f(origin, radius, time, color = (0, 1, 0)) {
-    /#
+/#
+
+    // Namespace namespace_1e25ad94/namespace_1e25ad94
+    // Params 4, eflags: 0x0
+    // Checksum 0x64b20143, Offset: 0xbc0
+    // Size: 0x1d0
+    function function_72f01f3f(origin, radius, time, color = (0, 1, 0)) {
         level endon(#"hash_54ce4a6a8260618e");
         self endon(#"death");
         var_264789d0 = 0.05;
@@ -241,19 +230,17 @@ function function_72f01f3f(origin, radius, time, color = (0, 1, 0)) {
             angletoplayer = vectortoangles(origin - players[0].origin);
             for (i = 0; i < circleres; i++) {
                 plotpoints[plotpoints.size] = origin + vectorscale(anglestoforward(angletoplayer + (rad, 90, 0)), radius) + (0, 0, 12);
-                rad = rad + circleinc;
+                rad += circleinc;
             }
             function_f8c6064(plotpoints, color, var_264789d0);
         }
-    #/
-}
+    }
 
-// Namespace namespace_1e25ad94/namespace_1e25ad94
-// Params 3, eflags: 0x0
-// Checksum 0x94163055, Offset: 0xd98
-// Size: 0xcc
-function function_f8c6064(plotpoints, var_2bd0b8bf, var_f491dcf7 = 1) {
-    /#
+    // Namespace namespace_1e25ad94/namespace_1e25ad94
+    // Params 3, eflags: 0x0
+    // Checksum 0x94163055, Offset: 0xd98
+    // Size: 0xcc
+    function function_f8c6064(plotpoints, var_2bd0b8bf, var_f491dcf7 = 1) {
         if (plotpoints.size == 0) {
             return;
         }
@@ -265,15 +252,13 @@ function function_f8c6064(plotpoints, var_2bd0b8bf, var_f491dcf7 = 1) {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace namespace_1e25ad94/namespace_1e25ad94
-// Params 5, eflags: 0x2 linked
-// Checksum 0x61faff7a, Offset: 0xe70
-// Size: 0x2b2
-function function_e8f2d12c(pos, rad, height, var_f491dcf7 = 1, color = (0, 0, 0)) {
-    /#
+    // Namespace namespace_1e25ad94/namespace_1e25ad94
+    // Params 5, eflags: 0x2 linked
+    // Checksum 0x61faff7a, Offset: 0xe70
+    // Size: 0x2b2
+    function function_e8f2d12c(pos, rad, height, var_f491dcf7 = 1, color = (0, 0, 0)) {
         self endon(#"hash_7e407f4c91c28e18");
         self endon(#"death");
         currad = rad;
@@ -288,8 +273,9 @@ function function_e8f2d12c(pos, rad, height, var_f491dcf7 = 1, color = (0, 0, 0)
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_1e25ad94/namespace_1e25ad94
 // Params 0, eflags: 0x0
@@ -298,7 +284,7 @@ function function_e8f2d12c(pos, rad, height, var_f491dcf7 = 1, color = (0, 0, 0)
 function function_ee689179() {
     self.fading = 1;
     while (self.alpha > 0) {
-        self.alpha = self.alpha - 0.01;
+        self.alpha -= 0.01;
         waitframe(1);
     }
     arrayremovevalue(level.doa.var_3843f782, self);
@@ -320,7 +306,7 @@ function function_8f04a649() {
                     line thread function_ee689179();
                 }
                 line.y = var_4c600979;
-                var_4c600979 = var_4c600979 + int(20 * line.scale);
+                var_4c600979 += int(20 * line.scale);
                 debug2dtext((line.x, line.y, 0), line.text, line.color, line.alpha, (0, 0, 0), 0, line.scale, 1);
             }
             waitframe(1);
@@ -347,12 +333,13 @@ function function_4e3cfad(text, color = (1, 1, 1), alpha = 1, scale = 1, duratio
     level thread function_8f04a649();
 }
 
-// Namespace namespace_1e25ad94/namespace_1e25ad94
-// Params 7, eflags: 0x2 linked
-// Checksum 0x160d086f, Offset: 0x14b8
-// Size: 0x10c
-function function_70e370a(posx, posy, text, color = (1, 1, 1), alpha = 1, scale = 1, durationsec = 3) {
-    /#
+/#
+
+    // Namespace namespace_1e25ad94/namespace_1e25ad94
+    // Params 7, eflags: 0x2 linked
+    // Checksum 0x160d086f, Offset: 0x14b8
+    // Size: 0x10c
+    function function_70e370a(posx, posy, text, color = (1, 1, 1), alpha = 1, scale = 1, durationsec = 3) {
         if (!isdefined(text) || text == "<unknown string>") {
             return;
         }
@@ -361,6 +348,6 @@ function function_70e370a(posx, posy, text, color = (1, 1, 1), alpha = 1, scale 
             frames = 1;
         }
         debug2dtext((posx, posy, 0), text, color, alpha, (0, 0, 0), 0, scale, frames);
-    #/
-}
+    }
 
+#/

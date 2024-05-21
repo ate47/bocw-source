@@ -35,18 +35,20 @@ function private preinit() {
     }
 }
 
-// Namespace art/art
-// Params 2, eflags: 0x0
-// Checksum 0x889d30a8, Offset: 0x220
-// Size: 0x44
-function artfxprintln(file, string) {
-    /#
+/#
+
+    // Namespace art/art
+    // Params 2, eflags: 0x0
+    // Checksum 0x889d30a8, Offset: 0x220
+    // Size: 0x44
+    function artfxprintln(file, string) {
         if (file == -1) {
             return;
         }
         fprintln(file, string);
-    #/
-}
+    }
+
+#/
 
 // Namespace art/art
 // Params 2, eflags: 0x2 linked
@@ -61,7 +63,7 @@ function strtok_loc(string, *par1) {
             indexstring = "";
             continue;
         }
-        indexstring = indexstring + par1[i];
+        indexstring += par1[i];
     }
     if (indexstring.size) {
         stringlist[stringlist.size] = indexstring;
@@ -92,12 +94,13 @@ function setfogsliders() {
     setdvar(#"scr_fog_color", red + " " + green + " " + blue);
 }
 
-// Namespace art/art
-// Params 0, eflags: 0x0
-// Checksum 0xc5a72f9d, Offset: 0x4e8
-// Size: 0xa78
-function tweakart() {
-    /#
+/#
+
+    // Namespace art/art
+    // Params 0, eflags: 0x0
+    // Checksum 0xc5a72f9d, Offset: 0x4e8
+    // Size: 0xa78
+    function tweakart() {
         if (!isdefined(level.tweakfile)) {
             level.tweakfile = 0;
         }
@@ -183,8 +186,9 @@ function tweakart() {
             }
             wait(0.1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace art/art
 // Params 0, eflags: 0x0
@@ -217,12 +221,13 @@ function fovslidercheck() {
     }
 }
 
-// Namespace art/art
-// Params 0, eflags: 0x0
-// Checksum 0xeee78bd5, Offset: 0x1368
-// Size: 0x40c
-function dumpsettings() {
-    /#
+/#
+
+    // Namespace art/art
+    // Params 0, eflags: 0x0
+    // Checksum 0xeee78bd5, Offset: 0x1368
+    // Size: 0x40c
+    function dumpsettings() {
         if (getdvar(#"scr_art_dump", 0)) {
             println("<unknown string>" + level.fognearplane + "<unknown string>");
             println("<unknown string>" + level.fogexphalfplane + "<unknown string>");
@@ -248,6 +253,6 @@ function dumpsettings() {
             println("<unknown string>");
             setdvar(#"scr_art_dump", 0);
         }
-    #/
-}
+    }
 
+#/

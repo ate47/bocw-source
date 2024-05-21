@@ -144,7 +144,7 @@ function group_flag_init(f) {
         self.script_stealthgroup = "default";
     }
     if (self.team == "allies") {
-        self.script_stealthgroup = self.script_stealthgroup + "allies";
+        self.script_stealthgroup += "allies";
     }
     if (!level flag::exists(f)) {
         level flag::init(f);
@@ -262,13 +262,17 @@ function set_stealth_state(msg) {
     self.stealth.state = num;
 }
 
-// Namespace namespace_979752dc/utility
-// Params 0, eflags: 0x0
-// Checksum 0xe2a187c8, Offset: 0xe98
-// Size: 0x34
-function check_stealth() {
-    assert(isdefined(self.stealth), "<unknown string>" + self.origin);
-}
+/#
+
+    // Namespace namespace_979752dc/utility
+    // Params 0, eflags: 0x0
+    // Checksum 0xe2a187c8, Offset: 0xe98
+    // Size: 0x34
+    function check_stealth() {
+        assert(isdefined(self.stealth), "<unknown string>" + self.origin);
+    }
+
+#/
 
 // Namespace namespace_979752dc/utility
 // Params 0, eflags: 0x2 linked
@@ -394,13 +398,17 @@ function save_last_goal() {
     return undefined;
 }
 
-// Namespace namespace_979752dc/utility
-// Params 1, eflags: 0x0
-// Checksum 0xff484aa1, Offset: 0x1628
-// Size: 0x2c
-function set_patrol_move_loop_anim(*animoverride) {
-    assertmsg("<unknown string>");
-}
+/#
+
+    // Namespace namespace_979752dc/utility
+    // Params 1, eflags: 0x0
+    // Checksum 0xff484aa1, Offset: 0x1628
+    // Size: 0x2c
+    function set_patrol_move_loop_anim(*animoverride) {
+        assertmsg("<unknown string>");
+    }
+
+#/
 
 // Namespace namespace_979752dc/utility
 // Params 1, eflags: 0x0
@@ -643,7 +651,7 @@ function get_path_dist_sq(from, to, var_58924346) {
     }
     distsq = 0;
     for (i = 1; i < path.size; i++) {
-        distsq = distsq + distancesquared(path[i - 1], path[i]);
+        distsq += distancesquared(path[i - 1], path[i]);
     }
     return distsq;
 }

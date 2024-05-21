@@ -5,14 +5,15 @@
 
 #namespace zm_callings_devgui;
 
-// Namespace zm_callings_devgui/zm_callings_devgui
-// Params 0, eflags: 0x0
-// Checksum 0x2e9d8ec6, Offset: 0x98
-// Size: 0x1c4
-function function_9f47471() {
-    /#
-        level wait_till("<unknown string>");
-        add_custom_devgui_callback(&function_6cbc14bb);
+/#
+
+    // Namespace zm_callings_devgui/zm_callings_devgui
+    // Params 0, eflags: 0x0
+    // Checksum 0x2e9d8ec6, Offset: 0x98
+    // Size: 0x1c4
+    function function_9f47471() {
+        level flag::wait_till("<unknown string>");
+        zm_devgui::add_custom_devgui_callback(&function_6cbc14bb);
         if (!isdefined(level.var_314051a1)) {
             return;
         }
@@ -21,18 +22,16 @@ function function_9f47471() {
         foreach (var_acbd7392 in var_94237d8) {
             var_31e48984 = "<unknown string>" + function_9e72a96(var_acbd7392);
             adddebugcommand("<unknown string>" + function_9e72a96(var_acbd7392) + "<unknown string>" + i + "<unknown string>" + var_31e48984 + "<unknown string>");
-            i = i + 1;
+            i += 1;
         }
         adddebugcommand("<unknown string>");
-    #/
-}
+    }
 
-// Namespace zm_callings_devgui/zm_callings_devgui
-// Params 1, eflags: 0x0
-// Checksum 0x6faeaf64, Offset: 0x268
-// Size: 0x57c
-function function_1d4f22e4(cmd) {
-    /#
+    // Namespace zm_callings_devgui/zm_callings_devgui
+    // Params 1, eflags: 0x0
+    // Checksum 0x6faeaf64, Offset: 0x268
+    // Size: 0x57c
+    function function_1d4f22e4(cmd) {
         if (strstartswith(cmd, "<unknown string>")) {
             str = strreplace(cmd, "<unknown string>", "<unknown string>");
             arr = strtok(str, "<unknown string>");
@@ -56,7 +55,7 @@ function function_1d4f22e4(cmd) {
                 var_fe8112e6 = 0;
                 foreach (var_d1017f27 in self.var_96d6f6d1) {
                     if (var_d1017f27.var_30c47a21 == var_762ca590) {
-                        self function_4368582a(var_d1017f27, var_d1017f27.var_e226ec4f);
+                        self zm_callings::function_4368582a(var_d1017f27, var_d1017f27.var_e226ec4f);
                         var_fe8112e6 = 1;
                     }
                 }
@@ -85,32 +84,28 @@ function function_1d4f22e4(cmd) {
             }
             self thread function_8a37e046(interval);
         }
-    #/
-}
+    }
 
-// Namespace zm_callings_devgui/zm_callings_devgui
-// Params 1, eflags: 0x0
-// Checksum 0xd80a3e5, Offset: 0x7f0
-// Size: 0x11e
-function function_8a37e046(n_interval) {
-    /#
+    // Namespace zm_callings_devgui/zm_callings_devgui
+    // Params 1, eflags: 0x0
+    // Checksum 0xd80a3e5, Offset: 0x7f0
+    // Size: 0x11e
+    function function_8a37e046(n_interval) {
         foreach (var_d1017f27 in self.var_96d6f6d1) {
-            progress = self function_4368582a(var_d1017f27, 0);
+            progress = self zm_callings::function_4368582a(var_d1017f27, 0);
             if (isdefined(progress)) {
                 target = var_d1017f27.var_e226ec4f;
                 iprintln(self.name + "<unknown string>" + function_9e72a96(var_d1017f27.var_ad971622) + "<unknown string>" + progress + "<unknown string>" + target);
             }
             wait(n_interval);
         }
-    #/
-}
+    }
 
-// Namespace zm_callings_devgui/zm_callings_devgui
-// Params 1, eflags: 0x0
-// Checksum 0xbc866258, Offset: 0x918
-// Size: 0xc0
-function function_6cbc14bb(cmd) {
-    /#
+    // Namespace zm_callings_devgui/zm_callings_devgui
+    // Params 1, eflags: 0x0
+    // Checksum 0xbc866258, Offset: 0x918
+    // Size: 0xc0
+    function function_6cbc14bb(cmd) {
         foreach (p in level.players) {
             if (!isdefined(p)) {
                 continue;
@@ -120,6 +115,6 @@ function function_6cbc14bb(cmd) {
             }
             p function_1d4f22e4(cmd);
         }
-    #/
-}
+    }
 
+#/

@@ -21,7 +21,7 @@ function private autoexec __init__system__() {
 function private preinit() {
     bundlename = "killstreak_remote_missile";
     if (sessionmodeiswarzonegame()) {
-        bundlename = bundlename + "_wz";
+        bundlename += "_wz";
     }
     init_shared(bundlename);
     level.var_5951cb24 = &function_5951cb24;

@@ -126,7 +126,7 @@ function function_1e0fa475(weapon, var_2b003a39, var_5baceff5, n_duration) {
                     self clientfield::set("" + #"hash_1668fcf85f7c231", 1);
                 }
                 var_600ca6d2 = float(gettime() - n_current_time) / 1000;
-                n_duration = n_duration - var_600ca6d2;
+                n_duration -= var_600ca6d2;
             }
         }
         /#
@@ -142,7 +142,7 @@ function function_1e0fa475(weapon, var_2b003a39, var_5baceff5, n_duration) {
             }
         }
         waitframe(1);
-        n_duration = n_duration - float(function_60d95f53()) / 1000;
+        n_duration -= float(function_60d95f53()) / 1000;
     }
     if (isdefined(self)) {
         self flag::decrement("zm_field_upgrade_in_use");

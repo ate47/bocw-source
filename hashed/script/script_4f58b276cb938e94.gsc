@@ -24,7 +24,7 @@ function main() {
     self namespace_cf88f507::event_init_entity();
     self thread namespace_f1f700ac::monitor_damage_thread(level.stealth.damage_auto_range, level.stealth.damage_sight_range);
     /#
-        self thread debug_enemy();
+        self thread namespace_b0df45a::debug_enemy();
     #/
     self namespace_f1f700ac::set_alert_level("reset");
     self namespace_f1f700ac::bt_set_stealth_state("idle");

@@ -53,7 +53,7 @@ function autoexec main() {
     val::register("prioritize_target_near_leader", 1);
     val::default_value("prioritize_target_near_leader", 0);
     /#
-        function_c7dd7a17("parasite");
+        zm_devgui::function_c7dd7a17("parasite");
     #/
 }
 
@@ -688,7 +688,7 @@ function private manage_companion_movement(entity) {
                         entity.var_345d40 = 0;
                         return;
                     }
-                    entity.var_345d40 = entity.var_345d40 + 1;
+                    entity.var_345d40 += 1;
                 }
             }
         }
@@ -779,7 +779,7 @@ function private function_a2ba1ce8(target_entity, max_distance) {
         if (currentseglength + segmentlength > max_distance) {
             return false;
         }
-        segmentlength = segmentlength + currentseglength;
+        segmentlength += currentseglength;
     }
     return true;
 }
@@ -1010,7 +1010,7 @@ function zod_companion_revive_player(player) {
 // Size: 0x126
 function function_9cb5b8e0() {
     revivetime = 3;
-    for (var_d3e5d819 = 0; isdefined(self); var_d3e5d819 = var_d3e5d819 + float(function_60d95f53()) / 1000) {
+    for (var_d3e5d819 = 0; isdefined(self); var_d3e5d819 += float(function_60d95f53()) / 1000) {
         hud_player = isplayer(self.var_1ff8de20) ? self.var_1ff8de20 : self;
         level.var_ff482f76 zm_laststand_client::set_revive_progress(hud_player, var_d3e5d819 / revivetime);
         if (isdefined(hud_player.var_57b374b4)) {
@@ -1343,9 +1343,9 @@ function private zodcalcproceduraltraversal(entity) {
     traversal.startpoint2 = entity.origin + (0, 0, heightoffset);
     traversal.endpoint2 = traversal.endpoint1 + (0, 0, heightoffset);
     if (traversal.startpoint1[2] < traversal.endpoint1[2]) {
-        traversal.startpoint2 = traversal.startpoint2 + (0, 0, traversal.absheighttoend);
+        traversal.startpoint2 += (0, 0, traversal.absheighttoend);
     } else {
-        traversal.endpoint2 = traversal.endpoint2 + (0, 0, traversal.absheighttoend);
+        traversal.endpoint2 += (0, 0, traversal.absheighttoend);
     }
     /#
         recordline(traversal.startpoint1, traversal.startpoint2, (1, 0.5, 0), "neck", entity);
@@ -1363,7 +1363,7 @@ function private zodcalcproceduraltraversal(entity) {
         /#
             recordline(previouspoint, nextpoint, (0, 1, 0), "neck", entity);
         #/
-        traversal.curvelength = traversal.curvelength + distance(previouspoint, nextpoint);
+        traversal.curvelength += distance(previouspoint, nextpoint);
         previouspoint = nextpoint;
     }
     traversal.starttime = gettime();
@@ -1462,7 +1462,7 @@ function private function_7d1f506(entity, *mocompanim, *mocompanimblendouttime, 
     traversal = mocompduration.traversal;
     if (isdefined(traversal)) {
         if (mocompduration ispaused()) {
-            traversal.starttime = traversal.starttime + int(float(function_60d95f53()) / 1000 * 1000);
+            traversal.starttime += int(float(function_60d95f53()) / 1000 * 1000);
             return;
         }
         realt = (gettime() - traversal.starttime) / traversal.totaltime;

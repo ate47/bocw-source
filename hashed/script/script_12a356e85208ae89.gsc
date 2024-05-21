@@ -125,11 +125,11 @@ function settod(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *field
         break;
     }
     /#
-        debugmsg("<unknown string>" + level.doa.var_47dcd1f.name + "<unknown string>" + level.doa.var_7c19cda1);
+        namespace_1e25ad94::debugmsg("<unknown string>" + level.doa.var_47dcd1f.name + "<unknown string>" + level.doa.var_7c19cda1);
     #/
     level.doa.var_e2a9584a = "fxexp_" + level.doa.var_47dcd1f.name + "_section_" + level.doa.var_f9d8fba5 + "_" + level.doa.var_7c19cda1;
     /#
-        debugmsg("<unknown string>" + level.doa.var_e2a9584a + "<unknown string>" + fieldname);
+        namespace_1e25ad94::debugmsg("<unknown string>" + level.doa.var_e2a9584a + "<unknown string>" + fieldname);
     #/
     playradiantexploder(fieldname, level.doa.var_e2a9584a);
 }

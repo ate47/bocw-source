@@ -452,14 +452,14 @@ function function_af29fe57(remotemissilespawnpoints) {
                 bestspawnpoint = spawnpoint;
             }
         }
-        bestspawnpoint.spawnscore = bestspawnpoint.spawnscore + 2;
+        bestspawnpoint.spawnscore += 2;
     }
     bestspawn = remotemissilespawnpoints[0];
     foreach (spawnpoint in remotemissilespawnpoints) {
         foreach (player in spawnpoint.validplayers) {
-            spawnpoint.spawnscore = spawnpoint.spawnscore + 1;
+            spawnpoint.spawnscore += 1;
             if (bullettracepassed(player.origin + (0, 0, 32), spawnpoint.origin, 0, player)) {
-                spawnpoint.spawnscore = spawnpoint.spawnscore + 3;
+                spawnpoint.spawnscore += 3;
             }
             if (spawnpoint.spawnscore > bestspawn.spawnscore) {
                 bestspawn = spawnpoint;
@@ -1225,9 +1225,9 @@ function function_2c190692(rocket, target) {
         return;
     }
     if (isdefined(rocket.var_ae685ec9)) {
-        origin = origin + (-70, -100, 0);
+        origin += (-70, -100, 0);
     } else {
-        origin = origin + (-70, 100, 0);
+        origin += (-70, 100, 0);
     }
     var_67ee15f2 = magicbullet(var_6aece548, origin, targetorigin, self, target, (0, 0, 30));
     if (isdefined(rocket.var_ae685ec9)) {

@@ -123,7 +123,7 @@ function function_bd34685d(origin, angles, var_91e0802f) {
         for (i = 0; i < testangles.size; i++) {
             startangles[i] = (0, angles[1], 0);
             startpoint = origin + vectorscale(anglestoforward(startangles[i] + testangles[i]), var_91e0802f);
-            startpoint = startpoint + (0, 0, var_9e563db1);
+            startpoint += (0, 0, var_9e563db1);
             if (playerpositionvalidignoreent(startpoint, self)) {
                 var_4c85436b = getclosestpointonnavmesh(startpoint, 500);
                 if (isdefined(var_4c85436b)) {
@@ -166,7 +166,7 @@ function function_4e0fa155(clone) {
             level.doa.clones[i] = clone;
             var_329388c = 1;
             /#
-                debugmsg("<unknown string>" + i + "<unknown string>" + level.doa.clones.size);
+                namespace_1e25ad94::debugmsg("<unknown string>" + i + "<unknown string>" + level.doa.clones.size);
             #/
             break;
         }
@@ -184,7 +184,7 @@ function function_34038097(clone) {
             level.doa.clones[i] = undefined;
             arrayremovevalue(level.doa.clones, undefined);
             /#
-                debugmsg("<unknown string>" + i + "<unknown string>" + level.doa.clones.size);
+                namespace_1e25ad94::debugmsg("<unknown string>" + i + "<unknown string>" + level.doa.clones.size);
             #/
             break;
         }
@@ -210,7 +210,7 @@ function function_56d29b42() {
         }
     }
     /#
-        debugmsg("<unknown string>" + i + "<unknown string>" + level.doa.clones.size);
+        namespace_1e25ad94::debugmsg("<unknown string>" + i + "<unknown string>" + level.doa.clones.size);
     #/
     level.doa.clones[oldestindex] notify(#"clone_shutdown");
     level.doa.clones[oldestindex] = undefined;
@@ -236,7 +236,7 @@ function function_f9d22968() {
     self function_a7a144f0(self);
     timeout = self namespace_1c2a96f9::function_4808b985(25);
     velocity = self getvelocity();
-    velocity = velocity + (0, 0, velocity[2] * -1);
+    velocity += (0, 0, velocity[2] * -1);
     velocity = vectornormalize(velocity);
     origin = self.origin + velocity * 17 + vectorscale(anglestoforward(self getangles()), 17);
     validspawns = function_bd34685d(origin, self getangles(), 300);
@@ -377,7 +377,7 @@ function private function_5d01145(clone, player, forward, spawntime) {
     clone.spawntime = gettime();
     clone setmaxhealth(600);
     if (isdefined(clone.pathablematerial)) {
-        clone.pathablematerial = clone.pathablematerial & ~2;
+        clone.pathablematerial &= ~2;
     }
     clone collidewithactors(1);
     clone pushplayer(1);

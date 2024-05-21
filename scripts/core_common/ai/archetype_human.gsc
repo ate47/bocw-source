@@ -283,7 +283,7 @@ function damageoverride(einflictor, eattacker, idamage, idflags, smeansofdeath, 
     }
     if (isdefined(eattacker) && isplayer(eattacker) && (smeansofdeath === "MOD_RIFLE_BULLET" || smeansofdeath === "MOD_PISTOL_BULLET" || smeansofdeath === "MOD_HEAD_SHOT") && isdefined(shitloc) && (shitloc == "head" || shitloc == "helmet" || shitloc == "neck")) {
         level.var_d7e2833c = 1;
-        idamage = idamage * 5;
+        idamage *= 5;
     }
     self.var_ec422675 = undefined;
     if (isdefined(eattacker) && !isplayer(eattacker) && !isvehicle(eattacker)) {
@@ -716,7 +716,7 @@ function private function_2c95bf72(entity) {
 function private function_4e71bfb4(entity) {
     if (!isdefined(entity.var_8061b3cd)) {
         var_7894038a = randomintrange(0, 9) * 250;
-        var_7894038a = var_7894038a + 4000;
+        var_7894038a += 4000;
         entity.var_8061b3cd = gettime() + var_7894038a;
     } else if (gettime() >= entity.var_8061b3cd) {
         entity.var_8061b3cd = undefined;

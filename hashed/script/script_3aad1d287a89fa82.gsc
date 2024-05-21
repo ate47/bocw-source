@@ -543,7 +543,7 @@ function function_294b258e(localclientnum, var_1280faf3) {
                 v_angles = var_1280faf3 gettagangles(str_tag);
                 v_origin = var_1280faf3 gettagorigin(str_tag);
                 if (i > 0) {
-                    v_origin = v_origin + anglestoforward(v_angles) * 2048;
+                    v_origin += anglestoforward(v_angles) * 2048;
                 }
                 mdl_beam = util::spawn_model(localclientnum, #"tag_origin", v_origin, v_angles);
                 if (isdefined(mdl_beam)) {

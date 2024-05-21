@@ -108,7 +108,7 @@ function private setcontrollerlightbarcolorpulsing(localclientnum, color, pulser
     if (scale > 1) {
         scale = (scale - 2) * -1;
     }
-    curcolor = curcolor + color * 0.8 * scale;
+    curcolor += color * 0.8 * scale;
     setcontrollerlightbarcolor(localclientnum, curcolor);
 }
 
@@ -467,7 +467,7 @@ function private player_base_health() {
         return 150;
     }
     basehealth = self getplayerspawnhealth();
-    basehealth = basehealth + (isdefined(level.var_90bb9821) ? level.var_90bb9821 : 0);
+    basehealth += isdefined(level.var_90bb9821) ? level.var_90bb9821 : 0;
     if (isdefined(self.var_ee9b8af0)) {
         basehealth = self.var_ee9b8af0;
     }

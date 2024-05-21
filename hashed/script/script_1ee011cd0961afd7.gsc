@@ -194,7 +194,7 @@ function function_3ecfde67(name) {
         if (self.var_93d7fb93.size >= 60) {
             i = 1;
             foreach (var_9e787c74 in self.var_93d7fb93) {
-                debugmsg("<unknown string>" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "<unknown string>" + i + "<unknown string>" + var_9e787c74.fx.name + "<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "<unknown string>" + i + "<unknown string>" + var_9e787c74.fx.name + "<unknown string>");
                 i++;
             }
         }

@@ -53,7 +53,7 @@ function function_297a5142() {
 // Checksum 0xceb79601, Offset: 0x2d8
 // Size: 0x22
 function function_7486dbf4(var_2cacdde7) {
-    var_2cacdde7 = var_2cacdde7 + var_2cacdde7 * 0.25;
+    var_2cacdde7 += var_2cacdde7 * 0.25;
     return var_2cacdde7;
 }
 
@@ -70,7 +70,7 @@ function function_366a682a(*einflictor, *eattacker, idamage, *idflags, smeansofd
         if (var_b66f2623 <= 0 && self.armor > 0) {
             self playsoundtoplayer(#"hash_7bc0e76bd7c09fd0", self);
             self.armor = 0;
-            shitloc = shitloc - 1 - var_b66f2623;
+            shitloc -= 1 - var_b66f2623;
         }
     }
     return shitloc;

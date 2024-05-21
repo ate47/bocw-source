@@ -44,7 +44,7 @@ function function_f9682fd() {
     }
     level.var_8bca2033 = &namespace_979752dc::function_2baa2568;
     /#
-        thread debug_manager();
+        thread namespace_b0df45a::debug_manager();
     #/
 }
 

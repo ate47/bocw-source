@@ -69,12 +69,12 @@ function function_a485d734() {
         if (level.doa.world_state == 0) {
             self.maxhealth = 60000;
         } else {
-            self.maxhealth = self.maxhealth + 60000 + int(15000 * namespace_ec06fe4a::function_ef369bae());
+            self.maxhealth += 60000 + int(15000 * namespace_ec06fe4a::function_ef369bae());
         }
         self.var_8d1d18aa = 1;
         self setblackboardattribute("_run_n_gun_variation", "variation_forward");
     } else {
-        self.maxhealth = self.maxhealth + 25000 + 7000 * getplayers().size;
+        self.maxhealth += 25000 + 7000 * getplayers().size;
     }
     self.health = self.maxhealth;
     self.var_f979e699 = isdefined(self.var_9fde8624) ? 200 : 500;
@@ -371,7 +371,7 @@ function private function_3aa93442(entity) {
             if (function_b860fc37(enemy)) {
                 target_origin = enemy.origin + (0, 0, 8);
                 velocity = enemy getvelocity();
-                target_origin = target_origin + velocity;
+                target_origin += velocity;
                 org = namespace_ec06fe4a::spawnmodel(target_origin, "tag_origin", (0, 0, 0), "steiner blast org");
                 if (isdefined(org)) {
                     org thread namespace_ec06fe4a::function_52afe5df(2);
@@ -575,7 +575,7 @@ function private function_bf8080c1(entity) {
     if (isplayer(enemy)) {
         velocity = enemy getvelocity();
         if (length(velocity) >= 0) {
-            var_6e3ad56b = var_6e3ad56b + vectorscale(velocity, 0.5);
+            var_6e3ad56b += vectorscale(velocity, 0.5);
         }
     }
     target_pos = var_6e3ad56b + (0, 0, 32);
@@ -584,7 +584,7 @@ function private function_bf8080c1(entity) {
     var_8598bad6 = entity gettagorigin("tag_bombthrower_FX");
     dist = distance(var_8598bad6, target_pos);
     velocity = vectorscale(dir, dist);
-    velocity = velocity + (0, 0, 120);
+    velocity += (0, 0, 120);
     if (isdefined(entity.org)) {
         entity.org.origin = target_pos;
         entity.org thread function_f7d9bc34();
@@ -1095,7 +1095,7 @@ function private function_545f48af(*entity) {
 function private function_42d0830a(entity) {
     if (isdefined(entity) && isdefined(entity.variant_type)) {
         if (entity.variant_type < 3) {
-            entity.variant_type = entity.variant_type + 1;
+            entity.variant_type += 1;
             return;
         }
         entity.variant_type = 0;

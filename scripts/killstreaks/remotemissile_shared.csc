@@ -37,7 +37,7 @@ function init_shared() {
         callback::on_spawned(&on_player_spawned);
         bundlename = "killstreak_remote_missile";
         if (sessionmodeiswarzonegame()) {
-            bundlename = bundlename + "_wz";
+            bundlename += "_wz";
         }
         level.var_bb1f7e1e = getscriptbundle(bundlename);
         if (!getdvarint(#"hash_4aad305a4a7f93db", 0)) {

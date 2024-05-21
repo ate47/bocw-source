@@ -272,7 +272,7 @@ function function_43f4782d() {
         println("<unknown string>");
         height = 1000;
         if (isdefined(level.mapcenter)) {
-            height = height + level.mapcenter[2];
+            height += level.mapcenter[2];
         }
     }
     return height;
@@ -287,7 +287,7 @@ function private function_a021023d(rotator, angle, radius, var_b468418b, var_93e
     xoffset = cos(angle) * radiusoffset;
     yoffset = sin(angle) * radiusoffset;
     anglevector = vectornormalize((xoffset, yoffset, 0));
-    anglevector = anglevector * radius;
+    anglevector *= radius;
     anglevector = (anglevector[0], anglevector[1], 0);
     angle_offset = 90 * (var_93e44bb3 > 0 ? 1 : -1);
     self linkto(rotator, "tag_origin", anglevector, (0, angle + angle_offset, roll));
@@ -370,10 +370,10 @@ function function_8294e9b3() {
 function function_5a7ecb6b(var_56422be = 0.01) {
     self endon(#"death");
     scale = 0.1;
-    for (scalestep = 0.1; scale < 1; scalestep = scalestep - var_56422be) {
+    for (scalestep = 0.1; scale < 1; scalestep -= var_56422be) {
         self setscale(scale);
         waitframe(1);
-        scale = scale + scalestep;
+        scale += scalestep;
         if (scalestep > var_56422be + 0.01) {
         }
     }
@@ -393,10 +393,10 @@ function function_3696d106(var_56422be = 0.001) {
         self function_60d50ea4();
     }
     scale = 0.99;
-    for (scalestep = 0.01; scale > 0.01; scalestep = scalestep + var_56422be) {
+    for (scalestep = 0.01; scale > 0.01; scalestep += var_56422be) {
         self setscale(scale);
         waitframe(1);
-        scale = scale - scalestep;
+        scale -= scalestep;
         if (scalestep < 0.1) {
         }
     }

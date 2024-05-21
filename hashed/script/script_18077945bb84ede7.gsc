@@ -211,33 +211,32 @@ function function_b802c7fc(var_af05f9a2 = 0, take = 0, var_60460256 = 0) {
     }
 }
 
-// Namespace namespace_2a9f256a/namespace_2a9f256a
-// Params 0, eflags: 0x0
-// Checksum 0xf6e22ed3, Offset: 0x8d0
-// Size: 0x5c
-function add_devgui() {
-    /#
-        waittill_can_add_debug_command();
+/#
+
+    // Namespace namespace_2a9f256a/namespace_2a9f256a
+    // Params 0, eflags: 0x0
+    // Checksum 0xf6e22ed3, Offset: 0x8d0
+    // Size: 0x5c
+    function add_devgui() {
+        util::waittill_can_add_debug_command();
         level thread function_27fca01f();
         cmd = "<unknown string>";
         adddebugcommand(cmd);
-    #/
-}
+    }
 
-// Namespace namespace_2a9f256a/namespace_2a9f256a
-// Params 0, eflags: 0x0
-// Checksum 0x8b7bbb47, Offset: 0x938
-// Size: 0xe0
-function function_27fca01f() {
-    /#
+    // Namespace namespace_2a9f256a/namespace_2a9f256a
+    // Params 0, eflags: 0x0
+    // Checksum 0x8b7bbb47, Offset: 0x938
+    // Size: 0xe0
+    function function_27fca01f() {
         while (true) {
             if (getdvarint(#"hash_5499eefe1f37aa95", 0)) {
                 setdvar(#"hash_5499eefe1f37aa95", 0);
-                thread_all(function_a1ef346b(), &function_afab250a, 5000);
-                thread_all(function_a1ef346b(), &function_a6d4221f, 5000);
+                array::thread_all(function_a1ef346b(), &function_afab250a, 5000);
+                array::thread_all(function_a1ef346b(), &function_a6d4221f, 5000);
             }
             wait(0.1);
         }
-    #/
-}
+    }
 
+#/

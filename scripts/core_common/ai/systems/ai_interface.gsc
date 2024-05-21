@@ -1,22 +1,21 @@
 // Atian COD Tools GSC CW decompiler test
 #namespace ai_interface;
 
-// Namespace ai_interface/ai_interface
-// Params 0, eflags: 0x1
-// Checksum 0xa6106f93, Offset: 0xd8
-// Size: 0x34
-function autoexec main() {
-    /#
-        level.__ai_debuginterface = getdvarint(#"ai_debuginterface", 0);
-    #/
-}
+/#
 
-// Namespace ai_interface/ai_interface
-// Params 3, eflags: 0x4
-// Checksum 0x74b923bb, Offset: 0x118
-// Size: 0x31a
-function private _checkvalue(archetype, attributename, value) {
-    /#
+    // Namespace ai_interface/ai_interface
+    // Params 0, eflags: 0x1
+    // Checksum 0xa6106f93, Offset: 0xd8
+    // Size: 0x34
+    function autoexec main() {
+        level.__ai_debuginterface = getdvarint(#"ai_debuginterface", 0);
+    }
+
+    // Namespace ai_interface/ai_interface
+    // Params 3, eflags: 0x4
+    // Checksum 0x74b923bb, Offset: 0x118
+    // Size: 0x31a
+    function private _checkvalue(archetype, attributename, value) {
         attribute = level.__ai_interface[archetype][attributename];
         switch (attribute[#"type"]) {
         case #"_interface_entity":
@@ -40,15 +39,13 @@ function private _checkvalue(archetype, attributename, value) {
             assert("<unknown string>" + attribute[#"type"] + "<unknown string>" + attributename + "<unknown string>");
             break;
         }
-    #/
-}
+    }
 
-// Namespace ai_interface/ai_interface
-// Params 2, eflags: 0x4
-// Checksum 0xa5020092, Offset: 0x440
-// Size: 0x30c
-function private _checkprerequisites(entity, attribute) {
-    /#
+    // Namespace ai_interface/ai_interface
+    // Params 2, eflags: 0x4
+    // Checksum 0xa5020092, Offset: 0x440
+    // Size: 0x30c
+    function private _checkprerequisites(entity, attribute) {
         if (isdefined(level.__ai_debuginterface) && level.__ai_debuginterface > 0) {
             assert(isentity(entity) || isstruct(entity), "<unknown string>");
             assert(isactor(entity) || isvehicle(entity) || isstruct(entity) || isbot(entity), "<unknown string>");
@@ -59,20 +56,19 @@ function private _checkprerequisites(entity, attribute) {
             assert(isarray(level.__ai_interface[entity.archetype][attribute]), "<unknown string>" + attribute + "<unknown string>" + function_9e72a96(entity.archetype) + "<unknown string>");
             assert(isstring(level.__ai_interface[entity.archetype][attribute][#"type"]), "<unknown string>" + attribute + "<unknown string>");
         }
-    #/
-}
+    }
 
-// Namespace ai_interface/ai_interface
-// Params 3, eflags: 0x4
-// Checksum 0xd844c171, Offset: 0x758
-// Size: 0xc4
-function private _checkregistrationprerequisites(archetype, attribute, callbackfunction) {
-    /#
+    // Namespace ai_interface/ai_interface
+    // Params 3, eflags: 0x4
+    // Checksum 0xd844c171, Offset: 0x758
+    // Size: 0xc4
+    function private _checkregistrationprerequisites(archetype, attribute, callbackfunction) {
         assert(ishash(archetype), "<unknown string>");
         assert(ishash(attribute), "<unknown string>");
         assert(!isdefined(callbackfunction) || isfunctionptr(callbackfunction), "<unknown string>");
-    #/
-}
+    }
+
+#/
 
 // Namespace ai_interface/ai_interface
 // Params 1, eflags: 0x6 linked
@@ -105,7 +101,7 @@ function createinterfaceforentity(entity) {
 // Size: 0x7c
 function getaiattribute(entity, attribute) {
     /#
-        _checkprerequisites(entity, attribute);
+        ai_interface::_checkprerequisites(entity, attribute);
     #/
     if (!isdefined(entity.__interface[attribute])) {
         return level.__ai_interface[entity.archetype][attribute][#"default_value"];
@@ -127,7 +123,7 @@ function hasaiattribute(entity, attribute) {
 // Size: 0x154
 function registerentityinterface(archetype, attribute, defaultvalue, callbackfunction) {
     /#
-        _checkregistrationprerequisites(archetype, attribute, callbackfunction);
+        ai_interface::_checkregistrationprerequisites(archetype, attribute, callbackfunction);
     #/
     ai_interface::_initializelevelinterface(archetype);
     assert(!isdefined(level.__ai_interface[archetype][attribute]), "<unknown string>" + attribute + "<unknown string>" + archetype + "<unknown string>");
@@ -136,7 +132,7 @@ function registerentityinterface(archetype, attribute, defaultvalue, callbackfun
     level.__ai_interface[archetype][attribute][#"default_value"] = defaultvalue;
     level.__ai_interface[archetype][attribute][#"type"] = "_interface_entity";
     /#
-        _checkvalue(archetype, attribute, defaultvalue);
+        ai_interface::_checkvalue(archetype, attribute, defaultvalue);
     #/
 }
 
@@ -146,7 +142,7 @@ function registerentityinterface(archetype, attribute, defaultvalue, callbackfun
 // Size: 0x1bc
 function registermatchedinterface(archetype, attribute, defaultvalue, possiblevalues, callbackfunction) {
     /#
-        _checkregistrationprerequisites(archetype, attribute, callbackfunction);
+        ai_interface::_checkregistrationprerequisites(archetype, attribute, callbackfunction);
         assert(!isdefined(possiblevalues) || isarray(possiblevalues), "<unknown string>");
     #/
     ai_interface::_initializelevelinterface(archetype);
@@ -157,7 +153,7 @@ function registermatchedinterface(archetype, attribute, defaultvalue, possibleva
     level.__ai_interface[archetype][attribute][#"type"] = "_interface_match";
     level.__ai_interface[archetype][attribute][#"values"] = possiblevalues;
     /#
-        _checkvalue(archetype, attribute, defaultvalue);
+        ai_interface::_checkvalue(archetype, attribute, defaultvalue);
     #/
 }
 
@@ -167,7 +163,7 @@ function registermatchedinterface(archetype, attribute, defaultvalue, possibleva
 // Size: 0x2ec
 function registernumericinterface(archetype, attribute, defaultvalue, minimum, maximum, callbackfunction) {
     /#
-        _checkregistrationprerequisites(archetype, attribute, callbackfunction);
+        ai_interface::_checkregistrationprerequisites(archetype, attribute, callbackfunction);
         assert(!isdefined(minimum) || isint(minimum) || isfloat(minimum), "<unknown string>");
         assert(!isdefined(maximum) || isint(maximum) || isfloat(maximum), "<unknown string>");
         assert(!isdefined(minimum) && !isdefined(maximum) || isdefined(minimum) && isdefined(maximum), "<unknown string>");
@@ -182,7 +178,7 @@ function registernumericinterface(archetype, attribute, defaultvalue, minimum, m
     level.__ai_interface[archetype][attribute][#"min_value"] = minimum;
     level.__ai_interface[archetype][attribute][#"type"] = "_interface_numeric";
     /#
-        _checkvalue(archetype, attribute, defaultvalue);
+        ai_interface::_checkvalue(archetype, attribute, defaultvalue);
     #/
 }
 
@@ -192,7 +188,7 @@ function registernumericinterface(archetype, attribute, defaultvalue, minimum, m
 // Size: 0x154
 function registervectorinterface(archetype, attribute, defaultvalue, callbackfunction) {
     /#
-        _checkregistrationprerequisites(archetype, attribute, callbackfunction);
+        ai_interface::_checkregistrationprerequisites(archetype, attribute, callbackfunction);
     #/
     ai_interface::_initializelevelinterface(archetype);
     assert(!isdefined(level.__ai_interface[archetype][attribute]), "<unknown string>" + attribute + "<unknown string>" + archetype + "<unknown string>");
@@ -201,7 +197,7 @@ function registervectorinterface(archetype, attribute, defaultvalue, callbackfun
     level.__ai_interface[archetype][attribute][#"default_value"] = defaultvalue;
     level.__ai_interface[archetype][attribute][#"type"] = "_interface_vector";
     /#
-        _checkvalue(archetype, attribute, defaultvalue);
+        ai_interface::_checkvalue(archetype, attribute, defaultvalue);
     #/
 }
 
@@ -211,8 +207,8 @@ function registervectorinterface(archetype, attribute, defaultvalue, callbackfun
 // Size: 0x110
 function setaiattribute(entity, attribute, value) {
     /#
-        _checkprerequisites(entity, attribute);
-        _checkvalue(entity.archetype, attribute, value);
+        ai_interface::_checkprerequisites(entity, attribute);
+        ai_interface::_checkvalue(entity.archetype, attribute, value);
     #/
     oldvalue = entity.__interface[attribute];
     if (!isdefined(oldvalue)) {

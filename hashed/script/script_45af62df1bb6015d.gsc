@@ -189,16 +189,16 @@ function private function_a0aa5f5f(init) {
     if (self.minigame.var_be8b922e.var_71de0627 == "random") {
         var_17ecda5a = randomfloatrange(var_76514cc5, 90) * math::randomsign();
         if (abs(self.minigame.scratch.var_5d92bcc8 + var_17ecda5a) > 90) {
-            var_17ecda5a = var_17ecda5a * -1;
+            var_17ecda5a *= -1;
         }
     } else if (self.minigame.var_be8b922e.var_71de0627 == "alternating sides") {
         var_17ecda5a = randomfloatrange(var_76514cc5, 90 + abs(self.minigame.scratch.var_5d92bcc8)) * math::sign(self.minigame.scratch.var_5d92bcc8) * -1;
     } else if (self.minigame.var_be8b922e.var_71de0627 == "alternating directions") {
-        self.minigame.scratch.var_9fa74a7c = self.minigame.scratch.var_9fa74a7c * -1;
+        self.minigame.scratch.var_9fa74a7c *= -1;
         var_7f321bad = var_4cbec6df * self.minigame.var_be8b922e.var_59079673;
         var_17ecda5a = randomfloatrange(var_76514cc5, var_7f321bad) * self.minigame.scratch.var_9fa74a7c;
     }
-    self.minigame.scratch.var_5d92bcc8 = self.minigame.scratch.var_5d92bcc8 + var_17ecda5a;
+    self.minigame.scratch.var_5d92bcc8 += var_17ecda5a;
     self.minigame.scratch.var_66a8f3b7 = randomfloatrange(self.minigame.var_be8b922e.var_84bfe4cb * 2, abs(-60)) * math::sign(self.minigame.scratch.var_66a8f3b7) * -1;
 }
 
@@ -261,8 +261,8 @@ function private function_8b0dc9ba(localclientnum) {
     self.minigame.scratch.var_8e926fa1 = gamepadusedlast(localclientnum);
     self.minigame.scratch.input = util::function_ca4b4e19(localclientnum, 0, self.minigame.scratch.var_8e926fa1);
     if (self.minigame.scratch.var_8e926fa1) {
-        var_859fc98 = self.minigame.var_be8b922e.var_4436bd13 == "look" && self.minigame.var_be8b922e.var_f1206d0d == "left-right" || self.minigame.var_be8b922e.var_4436bd13 != "look" && self.minigame.var_be8b922e.var_d74b78fc == "tension";
-        self.minigame.scratch.input[#"look"] = util::function_63320ea1(self.minigame.scratch.input[#"look"], 0.2, var_859fc98);
+        fakeactor_node_get_cover_list = self.minigame.var_be8b922e.var_4436bd13 == "look" && self.minigame.var_be8b922e.var_f1206d0d == "left-right" || self.minigame.var_be8b922e.var_4436bd13 != "look" && self.minigame.var_be8b922e.var_d74b78fc == "tension";
+        self.minigame.scratch.input[#"look"] = util::function_63320ea1(self.minigame.scratch.input[#"look"], 0.2, fakeactor_node_get_cover_list);
         var_bef152 = self.minigame.var_be8b922e.var_4436bd13 == "move" && self.minigame.var_be8b922e.var_f1206d0d == "left-right" || self.minigame.var_be8b922e.var_4436bd13 != "move" && self.minigame.var_be8b922e.var_d74b78fc == "tension";
         self.minigame.scratch.input[#"move"] = util::function_63320ea1(self.minigame.scratch.input[#"move"], 0.2, var_bef152);
         return;
@@ -276,7 +276,7 @@ function private function_8b0dc9ba(localclientnum) {
 // Size: 0x28c
 function private function_395ef29b(input) {
     if (self.minigame.var_be8b922e.var_f1206d0d == "left-right" || !self.minigame.scratch.var_8e926fa1) {
-        self.minigame.scratch.var_b4059b5f = self.minigame.scratch.var_b4059b5f - input[0] * self.minigame.var_be8b922e.var_b0b43710 * self.minigame.scratch.var_e0861271;
+        self.minigame.scratch.var_b4059b5f -= input[0] * self.minigame.var_be8b922e.var_b0b43710 * self.minigame.scratch.var_e0861271;
     } else if (self.minigame.var_be8b922e.var_f1206d0d == "full arc") {
         if (length(input) > 0.5) {
             yaw = angleclamp180(vectortoangles(input)[1] - 90);
@@ -366,7 +366,7 @@ function private function_74dbcf3e(var_999c568b) {
     var_bff04727 = var_60088c20 <= var_4cbec6df ? 0 : 1;
     var_ff738e09 = 0;
     if (var_60088c20 <= var_4cbec6df && var_999c568b) {
-        self.minigame.scratch.var_f2412eaf = self.minigame.scratch.var_f2412eaf + self.minigame.scratch.var_e0861271;
+        self.minigame.scratch.var_f2412eaf += self.minigame.scratch.var_e0861271;
         if (self.minigame.scratch.var_f2412eaf >= self.minigame.var_be8b922e.var_426eb8da) {
             self function_e9e03641(self.localclientnum, self.minigame.scratch.var_b47c6dfb, 2);
             var_ff738e09 = 0;

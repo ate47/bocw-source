@@ -88,14 +88,14 @@ function function_b217acf() {
 // Size: 0xa4e
 function function_160e40a2() {
     level endon(#"game_ended");
-    var_1a1c0d86 = 0;
+    updatepass = 0;
     cosangle = cos(20);
     var_3393f5fe = cos(50);
     var_2c51fa57 = sqr(64);
     while (true) {
         foreach (i, player in getplayers()) {
             time = gettime();
-            if (i % 2 == var_1a1c0d86) {
+            if (i % 2 == updatepass) {
                 if (!isdefined(player.var_8a022726)) {
                     continue;
                 }
@@ -186,7 +186,7 @@ function function_160e40a2() {
                 }
             }
         }
-        var_1a1c0d86 = (var_1a1c0d86 + 1) % 2;
+        updatepass = (updatepass + 1) % 2;
         waitframe(1);
     }
 }
@@ -209,7 +209,7 @@ function function_c743094d(eventstruct) {
     dynent = eventstruct.ent;
     activator = eventstruct.attacker;
     if (is_true(eventstruct.melee) && isplayer(activator) && isdefined(activator.var_8a022726) && activator.var_8a022726 istriggerenabled()) {
-        dynent.health = dynent.health + eventstruct.amount;
+        dynent.health += eventstruct.amount;
         stateindex = function_ffdbe8c2(dynent);
         var_b4b3af4c = anglestoforward(dynent.angles);
         playerdir = activator.var_8a022726.origin - activator.origin;
@@ -304,12 +304,12 @@ function function_d7b6ee00(activator, laststate, state) {
         right = anglestoright(self.angles);
         bounds = function_c440d28e(self.var_15d44120);
         start = self.origin + (0, 0, 35);
-        start = start - right * (bounds.mins[1] + bounds.maxs[1]) * 0.5;
+        start -= right * (bounds.mins[1] + bounds.maxs[1]) * 0.5;
         if (state == 1) {
-            start = start + forward * 5;
+            start += forward * 5;
             end = start + forward * 35;
         } else {
-            start = start - forward * 5;
+            start -= forward * 5;
             end = start - forward * 35;
         }
         /#
@@ -375,7 +375,7 @@ function function_51a020(activator, laststate, state) {
 function private function_724a2fa5(eventstruct) {
     dynent = eventstruct.ent;
     if (isdefined(eventstruct)) {
-        dynent.health = dynent.health + eventstruct.amount;
+        dynent.health += eventstruct.amount;
     }
     if (isdefined(dynent.var_a548ec11) && gettime() <= dynent.var_a548ec11) {
         return;

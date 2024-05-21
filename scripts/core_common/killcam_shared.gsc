@@ -467,7 +467,7 @@ function killcam(attackernum, targetnum, killcam_entity_info, weapon, meansofdea
     self.killcam = 1;
     /#
         if (!self issplitscreen() && level.perksenabled == 1) {
-            self showperks();
+            self hud::showperks();
         }
     #/
     self thread spawned_killcam_cleanup();
@@ -743,7 +743,7 @@ function cancel_on_use_specific_button(pressingbuttonfunc, finishedfunc) {
         }
         buttontime = 0;
         while (self [[ pressingbuttonfunc ]]()) {
-            buttontime = buttontime + 0.05;
+            buttontime += 0.05;
             waitframe(1);
         }
         if (buttontime >= 0.5) {
@@ -751,7 +751,7 @@ function cancel_on_use_specific_button(pressingbuttonfunc, finishedfunc) {
         }
         buttontime = 0;
         while (!self [[ pressingbuttonfunc ]]() && buttontime < 0.5) {
-            buttontime = buttontime + 0.05;
+            buttontime += 0.05;
             waitframe(1);
         }
         if (buttontime >= 0.5) {
@@ -928,7 +928,7 @@ function get_closest_killcam_entity(attacker, killcamentities, depth = 0) {
         }
         origin = killcament.origin;
         if (isdefined(killcament.offsetpoint)) {
-            origin = origin + killcament.offsetpoint;
+            origin += killcament.offsetpoint;
         }
         dist = distancesquared(self.origin, origin);
         if (!isdefined(closestkillcament) || dist < closestkillcamentdist) {

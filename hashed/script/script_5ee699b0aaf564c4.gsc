@@ -136,8 +136,8 @@ function function_e624cfcf(player, origin, angles) {
         playerorigin = trace[#"position"];
     }
     offset_origin = playerorigin + anglestoforward(angles) * var_4cf012f7.forwardoffset;
-    offset_origin = offset_origin + anglestoright(angles) * var_4cf012f7.rightoffset;
-    offset_origin = offset_origin + anglestoup(angles) * var_4cf012f7.upoffset;
+    offset_origin += anglestoright(angles) * var_4cf012f7.rightoffset;
+    offset_origin += anglestoup(angles) * var_4cf012f7.upoffset;
     return {#origin:offset_origin, #angles:angles};
 }
 
@@ -193,7 +193,7 @@ function function_96d350e9(spawn) {
         }
     }
     zoffset = getdvarint(#"hash_1e5142ed6dd5c6a0", randomintrange(10000, 10100));
-    origin = origin + (0, 0, zoffset);
+    origin += (0, 0, zoffset);
     self thread function_2613549d(origin, angles);
 }
 

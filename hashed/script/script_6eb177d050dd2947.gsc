@@ -119,7 +119,7 @@ function function_9eeebbfd(localclientnum) {
                 level.var_a8644947[var_163fec9d] = [];
             }
             level.var_a8644947[var_163fec9d][self getentitynumber()] = self;
-            self.var_15de25d4 = self playloopsound(#"hash_3986cbfda8c21269", 0.1, (0, 0, 8));
+            self.enabledxp = self playloopsound(#"hash_3986cbfda8c21269", 0.1, (0, 0, 8));
             self thread function_ea9698c4(localclientnum);
         }
         self useanimtree("generic");
@@ -657,9 +657,9 @@ function private function_2c8858f7(localclientnum) {
 // Size: 0x56
 function private function_ea9698c4(*localclientnum) {
     self waittill(#"death");
-    if (isdefined(self.var_15de25d4)) {
-        self stoploopsound(self.var_15de25d4);
-        self.var_15de25d4 = undefined;
+    if (isdefined(self.enabledxp)) {
+        self stoploopsound(self.enabledxp);
+        self.enabledxp = undefined;
     }
 }
 

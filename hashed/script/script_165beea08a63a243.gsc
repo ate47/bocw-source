@@ -60,7 +60,7 @@ function function_7a1e21a9(attacker, v_origin, min_radius, max_radius = 50, var_
     }
     if (!var_92844ba1) {
         if (distancesquared(self.origin, dest_origin) > var_4dd1cd8b * var_4dd1cd8b) {
-            n_power = n_power * var_e927082a / n_power;
+            n_power *= var_e927082a / n_power;
         }
     }
     time = self fake_physicslaunch(dest_origin, n_power);
@@ -206,7 +206,7 @@ function function_e1cd5954(v_origin, min_radius = 0, max_radius = 32, n_height =
             while (function_1979a72e(randompoint)) {
                 randompoint = (x_pos, y_pos + flip * 16, v_origin[2] + n_height);
                 if (checks < 2) {
-                    flip = flip * -1;
+                    flip *= -1;
                 } else {
                     flip++;
                     checks = 0;

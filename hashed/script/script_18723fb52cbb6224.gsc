@@ -221,7 +221,7 @@ function function_42d1d544(instance) {
     self fx::play(#"hash_33d3573cec691428", self.origin, self.angles, #"hash_5fc1f0dacaa027e8");
     while (true) {
         usetrigger waittill(#"trigger");
-        var_b61e50f0 = var_b61e50f0 + 1;
+        var_b61e50f0 += 1;
         if (var_b61e50f0 > 8) {
             var_b61e50f0 = 1;
         }
@@ -315,7 +315,7 @@ function function_d3b57053(instance) {
         instance.var_abe944bc = 1;
         return true;
     }
-    instance.var_abe944bc = instance.var_abe944bc + 5;
+    instance.var_abe944bc += 5;
     if (instance.var_abe944bc >= 50) {
         instance.var_abe944bc = 50;
     }

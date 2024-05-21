@@ -142,7 +142,7 @@ function function_3037364a(e_revivee) {
     while (true) {
         waitframe(1);
         if (isplayer(e_revivee)) {
-            e_revivee.var_6fc48a11 = e_revivee.var_6fc48a11 + 0.05;
+            e_revivee.var_6fc48a11 += 0.05;
             if (isdefined(level.var_ff482f76)) {
                 level.var_ff482f76 zm_laststand_client::set_revive_progress(e_revivee, e_revivee.var_6fc48a11 / revivetime);
             }
@@ -323,7 +323,7 @@ function unhide_quickrevive() {
     if (isdefined(level.quick_revive_linked_ent)) {
         org = level.quick_revive_linked_ent.origin;
         if (isdefined(level.quick_revive_linked_ent_offset)) {
-            org = org + level.quick_revive_linked_ent_offset;
+            org += level.quick_revive_linked_ent_offset;
         }
     }
     if (!is_true(level.quick_revive_linked_ent_moves) && level.quick_revive_machine.origin != org) {
@@ -335,7 +335,7 @@ function unhide_quickrevive() {
         if (isdefined(level.quick_revive_linked_ent)) {
             org = level.quick_revive_linked_ent.origin;
             if (isdefined(level.quick_revive_linked_ent_offset)) {
-                org = org + level.quick_revive_linked_ent_offset;
+                org += level.quick_revive_linked_ent_offset;
             }
             level.quick_revive_machine.origin = org;
         }

@@ -415,14 +415,14 @@ function play_next_killstreak_dialog() {
     }
     waittime = 0;
     if (isdefined(nextdialog.soundevent) && isdefined(nextdialog.var_8a6b001a) && isalive(nextdialog.var_8a6b001a)) {
-        waittime = waittime + battlechatter::mpdialog_value("taacomHackAndReplyDialogBuffer", 0);
+        waittime += battlechatter::mpdialog_value("taacomHackAndReplyDialogBuffer", 0);
         self thread function_30f16f29(nextdialog.soundevent, nextdialog.var_8a6b001a, nextdialog.weapon);
     } else {
         /#
             function_d9079fc1(dialogalias, "overwatchHelicopterHacked");
         #/
         self playlocalsound(dialogalias);
-        waittime = waittime + battlechatter::mpdialog_value("killstreakDialogBuffer", 0);
+        waittime += battlechatter::mpdialog_value("killstreakDialogBuffer", 0);
     }
     self.currentkillstreakdialog = nextdialog;
     self thread wait_next_killstreak_dialog(waittime);
@@ -870,7 +870,7 @@ function function_f554c1ad(dialogbundle, dialogkey) {
     if (!isdefined(dialogbundle) || !isdefined(dialogkey)) {
         return undefined;
     }
-    dialogkey = dialogkey + "SpeakerBundle";
+    dialogkey += "SpeakerBundle";
     if (ishash(dialogkey)) {
         if (isdefined(level.var_9f234058)) {
             var_3a0f7868 = self [[ level.var_9f234058 ]](dialogbundle, dialogkey);
@@ -905,7 +905,7 @@ function function_ec14f55(dialogbundle, dialogkey) {
     if (!isdefined(dialogbundle) || !isdefined(dialogkey)) {
         return undefined;
     }
-    dialogkey = dialogkey + "_soundLengthOverride";
+    dialogkey += "_soundLengthOverride";
     if (ishash(dialogkey)) {
         if (isdefined(level.var_695f6028)) {
             var_d042255d = self [[ level.var_695f6028 ]](dialogbundle, dialogkey);
@@ -1124,7 +1124,7 @@ function function_6daffa93(weapon, var_f3ab6571) {
     }
     if (isdefined(taacomdialog)) {
         if (is_true(var_f3ab6571)) {
-            taacomdialog = taacomdialog + "Multiple";
+            taacomdialog += "Multiple";
         }
         play_taacom_dialog(taacomdialog);
     }
@@ -1166,7 +1166,7 @@ function function_a2cde53d(weapon, var_f3ab6571) {
     }
     if (isdefined(taacomdialog)) {
         if (is_true(var_f3ab6571)) {
-            taacomdialog = taacomdialog + "Multiple";
+            taacomdialog += "Multiple";
         }
         play_taacom_dialog(taacomdialog);
     }
@@ -1309,12 +1309,13 @@ function function_4fb91bc7(weapon, var_df17fa82, var_53c10ed8) {
     self.var_d6422943 = gettime() + int(battlechatter::mpdialog_value("taacomHackedReplyCooldownSec", 0) * 1000);
 }
 
-// Namespace globallogic_audio/globallogic_audio
-// Params 2, eflags: 0x0
-// Checksum 0x21a5a3cc, Offset: 0x4678
-// Size: 0x174
-function function_d9079fc1(str_alias, var_3cd9c84b) {
-    /#
+/#
+
+    // Namespace globallogic_audio/globallogic_audio
+    // Params 2, eflags: 0x0
+    // Checksum 0x21a5a3cc, Offset: 0x4678
+    // Size: 0x174
+    function function_d9079fc1(str_alias, var_3cd9c84b) {
         var_a1f778fa = isdedicated() && function_541e02d0(str_alias) || soundexists(str_alias);
         if (getdvarint(#"debug_vo", 0)) {
             if (!var_a1f778fa) {
@@ -1329,6 +1330,6 @@ function function_d9079fc1(str_alias, var_3cd9c84b) {
                 println(var_3cd9c84b + function_9e72a96(str_alias));
             }
         }
-    #/
-}
+    }
 
+#/

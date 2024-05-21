@@ -25,12 +25,13 @@ function private preinit() {
     #/
 }
 
-// Namespace zombie_horde/zombie_horde
-// Params 0, eflags: 0x4
-// Checksum 0x57296c83, Offset: 0x198
-// Size: 0x2c2
-function private debug() {
-    /#
+/#
+
+    // Namespace zombie_horde/zombie_horde
+    // Params 0, eflags: 0x4
+    // Checksum 0x57296c83, Offset: 0x198
+    // Size: 0x2c2
+    function private debug() {
         while (true) {
             foreach (var_31f1a7be in level.var_e051b3bc) {
                 recordcircle(var_31f1a7be.origin, var_31f1a7be.radius, (0, 0, 1), "<unknown string>");
@@ -52,8 +53,9 @@ function private debug() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zombie_horde/zombie_horde
 // Params 4, eflags: 0x2 linked
@@ -163,7 +165,7 @@ function private function_3e88b567() {
     }
     var_cdbefa16 = vectornormalize(goal - self.origin);
     velocity = var_cdbefa16 * 10;
-    self.origin = self.origin + velocity;
+    self.origin += velocity;
     self.origin = getclosestpointonnavmesh(self.origin, 200, 32);
     self.angles = vectortoangles(var_cdbefa16);
 }

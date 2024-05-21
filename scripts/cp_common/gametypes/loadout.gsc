@@ -94,7 +94,7 @@ function private function_5536bd9e() {
     healthtoassign = self.spawnhealth;
     if (isdefined(level.maxspawnhealthboostprct)) {
         self.bonusspawnhealth = int(level.maxspawnhealthboostprct * self.spawnhealth);
-        healthtoassign = healthtoassign + self.bonusspawnhealth;
+        healthtoassign += self.bonusspawnhealth;
     }
     self player::function_9080887a(healthtoassign);
     self.maxhealth = healthtoassign;

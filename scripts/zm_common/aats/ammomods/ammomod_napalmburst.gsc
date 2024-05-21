@@ -167,8 +167,8 @@ function function_80b0dbe5(e_attacker, w_weapon, tier) {
     var_70ab6bc = self.maxhealth * 0.05;
     var_9b6cf9b5 = self.maxhealth * 0.1;
     if (tier >= 3) {
-        var_70ab6bc = var_70ab6bc * 2;
-        var_9b6cf9b5 = var_9b6cf9b5 * 2;
+        var_70ab6bc *= 2;
+        var_9b6cf9b5 *= 2;
     }
     i = 0;
     var_9fa954e6 = 5;

@@ -958,13 +958,13 @@ function function_88a7c00a(instance) {
 // Size: 0x12e
 function function_c9277739(a_s_pts) {
     for (i = 0; i < a_s_pts.size; i++) {
-        a_s_pts[i].var_7caea647 = 0;
+        a_s_pts[i].b_cansee = 0;
         foreach (player in getplayers()) {
             if (player util::is_player_looking_at(a_s_pts[i].origin, 0.8, 1, player)) {
-                a_s_pts[i].var_7caea647 = 1;
+                a_s_pts[i].b_cansee = 1;
             }
         }
-        if (!a_s_pts[i].var_7caea647) {
+        if (!a_s_pts[i].b_cansee) {
             v_point = a_s_pts[i].origin;
             return v_point;
         }
@@ -1201,7 +1201,7 @@ function function_5efbdd83(instance) {
         util::wait_network_frame();
         if (isdefined(item) && instance.targetname === "objective_black_sea_secure") {
             if (self.n_id === 0) {
-                item.origin = item.origin + (3, -2, 0);
+                item.origin += (3, -2, 0);
             }
             item.angles = self.angles;
         }
@@ -1270,27 +1270,27 @@ function function_5ebfd8cc() {
     }
     switch (self.model) {
     case #"hash_4b80250fb5dabe8d":
-        self.origin = self.origin + (0, 0, 4);
+        self.origin += (0, 0, 4);
         break;
     case #"hash_23a5f9a86747c06e":
-        self.origin = self.origin + (0, 0, 4);
+        self.origin += (0, 0, 4);
         break;
     case #"hash_610103e5b898f507":
-        self.origin = self.origin + (0, 0, -2);
+        self.origin += (0, 0, -2);
         break;
     case #"hash_15c8d8d59a771d41":
     case #"hash_3dabd96b7684e947":
     case #"hash_5ecac889d056f331":
     case #"hash_5fc7ee5c69212e50":
     case #"hash_796f6395f5856ff1":
-        self.origin = self.origin + (0, 0, -2);
-        self.angles = self.angles + (0, 90, 0);
+        self.origin += (0, 0, -2);
+        self.angles += (0, 90, 0);
         break;
     case #"hash_727faa4539faa0b7":
-        self.origin = self.origin - vectornormalize(anglestoforward(self.angles)) * 10;
+        self.origin -= vectornormalize(anglestoforward(self.angles)) * 10;
         break;
     case #"hash_4d42f402f7b6780f":
-        self.origin = self.origin + (0, 0, -4);
+        self.origin += (0, 0, -4);
         break;
     }
 }

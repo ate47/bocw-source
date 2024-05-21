@@ -129,9 +129,9 @@ function function_88e2e18a(killstreaktype, location, team, killstreak_id, startd
                 height = groundheight + (var_b0490eb9 - groundheight) * (isdefined(level.var_5915ecb1) ? level.var_5915ecb1 : bundle.var_ff73e08c);
             } else {
                 height = killstreaks::function_43f4782d();
-                height = height + 3400 + randomfloatrange(-100, 100);
+                height += 3400 + randomfloatrange(-100, 100);
                 traceheight = trace[#"position"][2];
-                height = height + traceheight - level.mapcenter[2];
+                height += traceheight - level.mapcenter[2];
             }
         }
     }
@@ -289,8 +289,8 @@ function private function_c248485(plane, targetpoint, team, owner, dosound = 0, 
         if (dosound && i == killstreakbundle.var_2df25e4a / 2) {
             playsoundatposition(#"hash_18c79f680760b8c8", targetpoint);
         }
-        var_1d6434c4 = var_1d6434c4 - killstreakbundle.var_4bb1a46b;
-        var_c3aa02d8 = var_c3aa02d8 - killstreakbundle.var_ea6e191e;
+        var_1d6434c4 -= killstreakbundle.var_4bb1a46b;
+        var_c3aa02d8 -= killstreakbundle.var_ea6e191e;
         wait(killstreakbundle.var_582f5ef7);
     }
 }
@@ -443,7 +443,7 @@ function function_985141f2(owner, startpos, normal, direction, killcament, team,
     fxcount = killstreakbundle.var_804c11a3;
     function_f712ec5e();
     fxlength = var_57a970a6 / fxcount;
-    startpos = startpos + vectorscale(direction * -1, var_57a970a6 / 2 - fxlength / 2);
+    startpos += vectorscale(direction * -1, var_57a970a6 / 2 - fxlength / 2);
     for (fxindex = 0; fxindex < fxcount; fxindex++) {
         locations[#"point"][fxindex] = startpos + vectorscale(direction, fxlength * fxindex);
     }
@@ -595,7 +595,7 @@ function private function_e3bc95f2(killstreakbundle) {
         }
         level.napalmstrike.affectedplayers = var_e5a58a70;
         wait(killstreakbundle.var_f5f02f46);
-        var_4122ca21 = var_4122ca21 - killstreakbundle.var_f5f02f46;
+        var_4122ca21 -= killstreakbundle.var_f5f02f46;
         level function_f712ec5e();
     }
     foreach (player in level.napalmstrike.affectedplayers) {

@@ -368,19 +368,21 @@ function function_55d56772(var_7271d7d6, var_8176b3c, var_5e806f4a, var_b5964062
     }
 }
 
-// Namespace namespace_d5a9ff55/namespace_d5a9ff55
-// Params 1, eflags: 0x4
-// Checksum 0xfd51d298, Offset: 0x1d08
-// Size: 0x118
-function private function_2a35a5f(var_a14cc36b) {
-    /#
+/#
+
+    // Namespace namespace_d5a9ff55/namespace_d5a9ff55
+    // Params 1, eflags: 0x4
+    // Checksum 0xfd51d298, Offset: 0x1d08
+    // Size: 0x118
+    function private function_2a35a5f(var_a14cc36b) {
         var_12fe97ab = "<unknown string>";
         foreach (menu_item in var_a14cc36b) {
-            var_12fe97ab = var_12fe97ab + "<unknown string>" + (isdefined(menu_item.menu_name) ? "<unknown string>" + menu_item.menu_name : ishash(menu_item.menu_name) ? function_9e72a96(menu_item.menu_name) : "<unknown string>") + "<unknown string>";
+            var_12fe97ab += "<unknown string>" + (isdefined(menu_item.menu_name) ? "<unknown string>" + menu_item.menu_name : ishash(menu_item.menu_name) ? function_9e72a96(menu_item.menu_name) : "<unknown string>") + "<unknown string>";
         }
         return var_12fe97ab;
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_d5a9ff55/namespace_d5a9ff55
 // Params 1, eflags: 0x2 linked
@@ -458,8 +460,8 @@ function client_menus(local_client_num) {
 // Checksum 0xee14d0cc, Offset: 0x22f0
 // Size: 0x23c
 function function_befcd4f0(str_scene, var_f647c5b2, var_559c5c3e, var_472bee8f, var_b1e821c5) {
-    assert(!isdefined(var_f647c5b2) || function_9730988a(str_scene, var_f647c5b2), "<unknown string>" + str_scene + "<unknown string>" + (isdefined(var_f647c5b2) ? "<unknown string>" + var_f647c5b2 : "<unknown string>"));
-    assert(!isdefined(var_559c5c3e) || function_9730988a(str_scene, var_559c5c3e), "<unknown string>" + str_scene + "<unknown string>" + (isdefined(var_559c5c3e) ? "<unknown string>" + var_559c5c3e : "<unknown string>"));
+    assert(!isdefined(var_f647c5b2) || scene::function_9730988a(str_scene, var_f647c5b2), "<unknown string>" + str_scene + "<unknown string>" + (isdefined(var_f647c5b2) ? "<unknown string>" + var_f647c5b2 : "<unknown string>"));
+    assert(!isdefined(var_559c5c3e) || scene::function_9730988a(str_scene, var_559c5c3e), "<unknown string>" + str_scene + "<unknown string>" + (isdefined(var_559c5c3e) ? "<unknown string>" + var_559c5c3e : "<unknown string>"));
     level notify(#"hash_46855140938f532c");
     level endon(#"hash_46855140938f532c");
     if (isdefined(var_472bee8f)) {

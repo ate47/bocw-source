@@ -438,12 +438,13 @@ function function_ffac0e3() {
     self notify(#"hash_149b5fe3276ace1c");
 }
 
-// Namespace coop/coop
-// Params 0, eflags: 0x0
-// Checksum 0x336211b9, Offset: 0x2368
-// Size: 0x186
-function function_c5eb768b() {
-    /#
+/#
+
+    // Namespace coop/coop
+    // Params 0, eflags: 0x0
+    // Checksum 0x336211b9, Offset: 0x2368
+    // Size: 0x186
+    function function_c5eb768b() {
         if (!isdefined(self.var_ca00be20)) {
             self.var_ca00be20 = newdebughudelem(self);
             self.var_ca00be20.archived = 0;
@@ -464,8 +465,9 @@ function function_c5eb768b() {
         }
         self.var_ca00be20 settext(#"hash_335a164eda0d56ff");
         self.var_ca00be20.alpha = 1;
-    #/
-}
+    }
+
+#/
 
 // Namespace coop/coop
 // Params 0, eflags: 0x2 linked

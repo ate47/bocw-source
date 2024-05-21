@@ -118,12 +118,13 @@ function getvalueinrange(value, minvalue, maxvalue) {
     return value;
 }
 
-// Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x0
-// Checksum 0xf6f4f7e9, Offset: 0x4e0
-// Size: 0x2a8
-function assertproperplacement() {
-    /#
+/#
+
+    // Namespace globallogic_utils/globallogic_utils
+    // Params 0, eflags: 0x0
+    // Checksum 0xf6f4f7e9, Offset: 0x4e0
+    // Size: 0x2a8
+    function assertproperplacement() {
         numplayers = level.placement[#"all"].size;
         if (level.teambased) {
             for (i = 0; i < numplayers - 1; i++) {
@@ -150,8 +151,9 @@ function assertproperplacement() {
                 break;
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace globallogic_utils/globallogic_utils
 // Params 1, eflags: 0x2 linked
@@ -172,16 +174,16 @@ function playtickingsound(gametype_tick_sound) {
     while (true) {
         self playsound(gametype_tick_sound);
         if (time > 10) {
-            time = time - 1;
+            time -= 1;
             wait(1);
         } else if (time > 4) {
-            time = time - 0.5;
+            time -= 0.5;
             wait(0.5);
         } else if (time > 1) {
-            time = time - 0.4;
+            time -= 0.4;
             wait(0.4);
         } else {
-            time = time - 0.3;
+            time -= 0.3;
             wait(0.3);
         }
         hostmigration::waittillhostmigrationdone();
@@ -208,16 +210,16 @@ function gametimer() {
     level.starttime = gettime();
     level.discardtime = 0;
     if (isdefined(game.roundmillisecondsalreadypassed)) {
-        level.starttime = level.starttime - game.roundmillisecondsalreadypassed;
+        level.starttime -= game.roundmillisecondsalreadypassed;
         game.roundmillisecondsalreadypassed = undefined;
     }
     prevtime = gettime() - 1000;
     while (game.state == #"playing") {
         if (!level.timerstopped) {
-            game.timepassed = game.timepassed + gettime() - prevtime;
+            game.timepassed += gettime() - prevtime;
         }
         if (!level.playabletimerstopped) {
-            game.playabletimepassed = game.playabletimepassed + gettime() - prevtime;
+            game.playabletimepassed += gettime() - prevtime;
         }
         prevtime = gettime();
         wait(1);
@@ -302,7 +304,7 @@ function resumetimer() {
     level.timerstopped = 0;
     level.playabletimerstopped = 0;
     if (isdefined(level.discardtime)) {
-        level.discardtime = level.discardtime + gettime() - level.timerpausetime;
+        level.discardtime += gettime() - level.timerpausetime;
     }
 }
 
@@ -427,18 +429,20 @@ function gethitlocheight(shitloc) {
     return 48;
 }
 
-// Namespace globallogic_utils/globallogic_utils
-// Params 2, eflags: 0x0
-// Checksum 0xd3a3b75a, Offset: 0x1100
-// Size: 0x5a
-function debugline(start, end) {
-    /#
-        for (i = 0; i < 50; i++) {
+/#
+
+    // Namespace globallogic_utils/globallogic_utils
+    // Params 2, eflags: 0x0
+    // Checksum 0xd3a3b75a, Offset: 0x1100
+    // Size: 0x5a
+    function debugline(start, end) {
+                for (i = 0; i < 50; i++) {
             line(start, end);
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace globallogic_utils/globallogic_utils
 // Params 2, eflags: 0x2 linked
@@ -448,16 +452,17 @@ function function_4aa8d809(index, string) {
     level.var_336c35f1[index] = string;
 }
 
-// Namespace globallogic_utils/globallogic_utils
-// Params 1, eflags: 0x2 linked
-// Checksum 0x826d07e3, Offset: 0x1198
-// Size: 0x23c
-function function_8d61a6c2(var_c1e98979) {
-    /#
+/#
+
+    // Namespace globallogic_utils/globallogic_utils
+    // Params 1, eflags: 0x2 linked
+    // Checksum 0x826d07e3, Offset: 0x1198
+    // Size: 0x23c
+    function function_8d61a6c2(var_c1e98979) {
         assert(isdefined(var_c1e98979));
         assert(isdefined(level.var_336c35f1[var_c1e98979]));
         log_string = level.var_336c35f1[var_c1e98979];
-        winner = get_winner();
+        winner = round::get_winner();
         if (isplayer(winner)) {
             print("<unknown string>" + winner getxuid() + "<unknown string>" + winner.name + "<unknown string>");
         }
@@ -472,8 +477,9 @@ function function_8d61a6c2(var_c1e98979) {
             log_string = log_string + "<unknown string>" + str_team + "<unknown string>" + game.stat[#"teamscores"][team];
         }
         print(log_string);
-    #/
-}
+    }
+
+#/
 
 // Namespace globallogic_utils/globallogic_utils
 // Params 1, eflags: 0x0
@@ -498,7 +504,7 @@ function print_map_errors() {
                 println("<unknown string>" + level.maperrors[i]);
             }
             println("<unknown string>");
-            error("<unknown string>");
+            util::error("<unknown string>");
         #/
         callback::abort_level();
         return true;

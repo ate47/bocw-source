@@ -365,7 +365,7 @@ function gamerepanalyzeandreport() {
             }
         }
         paramname = "splitscreen";
-        splitscreenplayercount = splitscreenplayercount + getparamvalueforplayer(playername, paramname);
+        splitscreenplayercount += getparamvalueforplayer(playername, paramname);
     }
     setmaximumparamvalueforcurrentgame("splitscreen", splitscreenplayercount);
     for (j = 0; j < game.gamerep[#"params"].size; j++) {

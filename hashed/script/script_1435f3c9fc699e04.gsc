@@ -111,7 +111,7 @@ function function_f30290b(user, key) {
 function function_339d0e91() {
     total = 0;
     foreach (var_b2dad138 in self.users) {
-        total = total + var_b2dad138.touching.num;
+        total += var_b2dad138.touching.num;
     }
     return total;
 }
@@ -126,7 +126,7 @@ function function_3a7a2963(var_77efb18) {
         if (user_name == var_77efb18) {
             continue;
         }
-        total = total + var_b2dad138.touching.num;
+        total += var_b2dad138.touching.num;
     }
     return total;
 }
@@ -298,7 +298,7 @@ function function_a7dbb00b(var_77efb18) {
         if (user_name == var_77efb18) {
             continue;
         }
-        rate = rate + function_9f894584(user_name);
+        rate += function_9f894584(user_name);
     }
     return rate;
 }

@@ -396,12 +396,13 @@ function lc_play_arc_fx(target, params) {
     fxorg delete();
 }
 
-// Namespace lightning_chain/lightning_chain
-// Params 2, eflags: 0x4
-// Checksum 0xa27da88f, Offset: 0x1790
-// Size: 0x6e
-function private lc_debug_arc(*origin, *distance) {
-    /#
+/#
+
+    // Namespace lightning_chain/lightning_chain
+    // Params 2, eflags: 0x4
+    // Checksum 0xa27da88f, Offset: 0x1790
+    // Size: 0x6e
+    function private lc_debug_arc(*origin, *distance) {
         if (getdvarint(#"zombie_debug", 0) != 3) {
             return;
         }
@@ -409,18 +410,16 @@ function private lc_debug_arc(*origin, *distance) {
         while (gettime() < start + 3000) {
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace lightning_chain/lightning_chain
-// Params 1, eflags: 0x0
-// Checksum 0xe42b6c77, Offset: 0x1808
-// Size: 0x5c
-function function_df47c3e8(msg) {
-    /#
+    // Namespace lightning_chain/lightning_chain
+    // Params 1, eflags: 0x0
+    // Checksum 0xe42b6c77, Offset: 0x1808
+    // Size: 0x5c
+    function function_df47c3e8(msg) {
         if (getdvarint(#"zombie_debug", 0) > 0) {
             println("<unknown string>" + msg);
         }
-    #/
-}
+    }
 
+#/

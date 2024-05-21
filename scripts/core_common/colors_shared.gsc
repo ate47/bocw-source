@@ -44,8 +44,8 @@ function private preinit() {
         if (isdefined(nodes[i].script_color_axis)) {
             nodes[i] add_node_to_global_arrays(nodes[i].script_color_axis, #"axis");
         }
-        if (isdefined(nodes[i].var_15eb6ad5)) {
-            nodes[i] add_node_to_global_arrays(nodes[i].var_15eb6ad5, #"team3");
+        if (isdefined(nodes[i].script_color_team3)) {
+            nodes[i] add_node_to_global_arrays(nodes[i].script_color_team3, #"team3");
         }
     }
     for (i = 0; i < volumes.size; i++) {
@@ -55,8 +55,8 @@ function private preinit() {
         if (isdefined(volumes[i].script_color_axis)) {
             volumes[i] add_volume_to_global_arrays(volumes[i].script_color_axis, #"axis");
         }
-        if (isdefined(volumes[i].var_15eb6ad5)) {
-            volumes[i] add_volume_to_global_arrays(volumes[i].var_15eb6ad5, #"team3");
+        if (isdefined(volumes[i].script_color_team3)) {
+            volumes[i] add_volume_to_global_arrays(volumes[i].script_color_team3, #"team3");
         }
     }
     /#
@@ -145,33 +145,32 @@ function private postinit() {
         if (isdefined(trig.script_color_axis)) {
             trig thread trigger_issues_orders(trig.script_color_axis, #"axis");
         }
-        if (isdefined(trig.var_15eb6ad5)) {
-            trig thread trigger_issues_orders(trig.var_15eb6ad5, #"team3");
+        if (isdefined(trig.script_color_team3)) {
+            trig thread trigger_issues_orders(trig.script_color_team3, #"team3");
         }
     }
 }
 
-// Namespace colors/colors_shared
-// Params 0, eflags: 0x0
-// Checksum 0xb3182557, Offset: 0xe30
-// Size: 0x56
-function debugdvars() {
-    /#
+/#
+
+    // Namespace colors/colors_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xb3182557, Offset: 0xe30
+    // Size: 0x56
+    function debugdvars() {
         while (true) {
             if (getdvar(#"debug_colornodes", 0) > 0) {
                 thread debug_colornodes();
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace colors/colors_shared
-// Params 0, eflags: 0x0
-// Checksum 0x26a8ccc0, Offset: 0xe90
-// Size: 0x88
-function get_team_substr() {
-    /#
+    // Namespace colors/colors_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x26a8ccc0, Offset: 0xe90
+    // Size: 0x88
+    function get_team_substr() {
         if (self.team == #"allies") {
             if (!isdefined(self.node.script_color_allies_old)) {
                 return;
@@ -184,15 +183,13 @@ function get_team_substr() {
             }
             return self.node.script_color_axis_old;
         }
-    #/
-}
+    }
 
-// Namespace colors/colors_shared
-// Params 0, eflags: 0x0
-// Checksum 0xf0124eab, Offset: 0xf20
-// Size: 0x11c
-function try_to_draw_line_to_node() {
-    /#
+    // Namespace colors/colors_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xf0124eab, Offset: 0xf20
+    // Size: 0x11c
+    function try_to_draw_line_to_node() {
         if (!isdefined(self.node)) {
             return;
         }
@@ -208,15 +205,13 @@ function try_to_draw_line_to_node() {
         }
         recordline(self.origin + (0, 0, 25), self.node.origin, _get_debug_color(self.script_forcecolor), "<unknown string>", self);
         line(self.origin + (0, 0, 25), self.node.origin, _get_debug_color(self.script_forcecolor));
-    #/
-}
+    }
 
-// Namespace colors/colors_shared
-// Params 1, eflags: 0x0
-// Checksum 0x76199efa, Offset: 0x1048
-// Size: 0x1a2
-function _get_debug_color(str_color) {
-    /#
+    // Namespace colors/colors_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x76199efa, Offset: 0x1048
+    // Size: 0x1a2
+    function _get_debug_color(str_color) {
         switch (str_color) {
         case #"red":
         case #"r":
@@ -243,15 +238,13 @@ function _get_debug_color(str_color) {
             println("<unknown string>" + str_color + "<unknown string>");
             return (0, 0, 0);
         }
-    #/
-}
+    }
 
-// Namespace colors/colors_shared
-// Params 0, eflags: 0x0
-// Checksum 0x9c8b35a9, Offset: 0x11f8
-// Size: 0x2a4
-function debug_colornodes() {
-    /#
+    // Namespace colors/colors_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x9c8b35a9, Offset: 0x11f8
+    // Size: 0x2a4
+    function debug_colornodes() {
         array = [];
         array[#"axis"] = [];
         array[#"allies"] = [];
@@ -273,15 +266,13 @@ function debug_colornodes() {
         draw_colornodes(array, #"allies");
         draw_colornodes(array, #"axis");
         draw_colornodes(array, #"team3");
-    #/
-}
+    }
 
-// Namespace colors/colors_shared
-// Params 2, eflags: 0x0
-// Checksum 0xb5dc990a, Offset: 0x14a8
-// Size: 0x2c0
-function draw_colornodes(array, team) {
-    /#
+    // Namespace colors/colors_shared
+    // Params 2, eflags: 0x0
+    // Checksum 0xb5dc990a, Offset: 0x14a8
+    // Size: 0x2c0
+    function draw_colornodes(array, team) {
         foreach (k, v in array[team]) {
             color = _get_debug_color(function_9e72a96(k)[0]);
             if (isdefined(level.colornodes_debug_array[team][k])) {
@@ -298,15 +289,13 @@ function draw_colornodes(array, team) {
                 }
             }
         }
-    #/
-}
+    }
 
-// Namespace colors/colors_shared
-// Params 0, eflags: 0x0
-// Checksum 0xea3b79f4, Offset: 0x1770
-// Size: 0x60
-function debugcolorfriendlies() {
-    /#
+    // Namespace colors/colors_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xea3b79f4, Offset: 0x1770
+    // Size: 0x60
+    function debugcolorfriendlies() {
         level.debug_color_friendlies = [];
         level.debug_color_huds = [];
         level thread debugcolorfriendliestogglewatch();
@@ -314,15 +303,13 @@ function debugcolorfriendlies() {
             level waittill(#"updated_color_friendlies");
             draw_color_friendlies();
         }
-    #/
-}
+    }
 
-// Namespace colors/colors_shared
-// Params 0, eflags: 0x0
-// Checksum 0x8e96c231, Offset: 0x17d8
-// Size: 0xe8
-function debugcolorfriendliestogglewatch() {
-    /#
+    // Namespace colors/colors_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x8e96c231, Offset: 0x17d8
+    // Size: 0xe8
+    function debugcolorfriendliestogglewatch() {
         just_turned_on = 0;
         just_turned_off = 0;
         while (true) {
@@ -338,15 +325,13 @@ function debugcolorfriendliestogglewatch() {
             }
             wait(0.25);
         }
-    #/
-}
+    }
 
-// Namespace colors/colors_shared
-// Params 0, eflags: 0x0
-// Checksum 0x57c769c9, Offset: 0x18c8
-// Size: 0xd6
-function get_script_palette() {
-    /#
+    // Namespace colors/colors_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x57c769c9, Offset: 0x18c8
+    // Size: 0xd6
+    function get_script_palette() {
         rgb = [];
         rgb[#"r"] = (1, 0, 0);
         rgb[#"o"] = (1, 0.5, 0);
@@ -356,15 +341,13 @@ function get_script_palette() {
         rgb[#"b"] = (0, 0, 1);
         rgb[#"p"] = (1, 0, 1);
         return rgb;
-    #/
-}
+    }
 
-// Namespace colors/colors_shared
-// Params 0, eflags: 0x0
-// Checksum 0x662e7114, Offset: 0x19a8
-// Size: 0x34a
-function draw_color_friendlies() {
-    /#
+    // Namespace colors/colors_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x662e7114, Offset: 0x19a8
+    // Size: 0x34a
+    function draw_color_friendlies() {
         level endon(#"updated_color_friendlies");
         colored_friendlies = [];
         colors = [];
@@ -405,10 +388,11 @@ function draw_color_friendlies() {
                 overlay.color = rgb[colors[i]];
                 level.debug_color_huds[level.debug_color_huds.size] = overlay;
             }
-            y = y + 25;
+            y += 25;
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace colors/colors_shared
 // Params 0, eflags: 0x0
@@ -606,7 +590,7 @@ function activate_color_trigger(var_cc966c56) {
         str_color = self.script_color_axis;
         break;
     case #"team3":
-        str_color = self.var_15eb6ad5;
+        str_color = self.script_color_team3;
         break;
     default:
         return;
@@ -696,7 +680,7 @@ function function_f06ea88(node, var_f9350db6, var_cc966c56) {
         str_color = node.script_color_axis;
         break;
     case #"team3":
-        str_color = node.var_15eb6ad5;
+        str_color = node.script_color_team3;
         break;
     default:
         return;
@@ -890,8 +874,8 @@ function color_node_finds_a_user() {
     if (isdefined(self.script_color_axis)) {
         color_node_finds_user_from_colorcodes(self.script_color_axis, #"axis");
     }
-    if (isdefined(self.var_15eb6ad5)) {
-        color_node_finds_user_from_colorcodes(self.var_15eb6ad5, #"team3");
+    if (isdefined(self.script_color_team3)) {
+        color_node_finds_user_from_colorcodes(self.script_color_team3, #"team3");
     }
 }
 
@@ -1303,7 +1287,7 @@ function removespawnerfromcolornumberarray() {
         str_color = self.script_color_axis;
         break;
     case #"team3":
-        str_color = self.var_15eb6ad5;
+        str_color = self.script_color_team3;
         break;
     default:
         return;
@@ -1311,9 +1295,9 @@ function removespawnerfromcolornumberarray() {
     if (!isdefined(str_color)) {
         return;
     }
-    var_9986d9d6 = strtok(str_color, " ");
-    for (i = 0; i < var_9986d9d6.size; i++) {
-        arrayremovevalue(level.arrays_of_colorcoded_spawners[self.team][var_9986d9d6[i]], self);
+    a_str_colors = strtok(str_color, " ");
+    for (i = 0; i < a_str_colors.size; i++) {
+        arrayremovevalue(level.arrays_of_colorcoded_spawners[self.team][a_str_colors[i]], self);
     }
 }
 
@@ -1571,7 +1555,7 @@ function get_color_spawner(classname, fromcolor) {
 function getclasscolorhash(classname, fromcolor) {
     classcolorhash = classname;
     if (isdefined(fromcolor)) {
-        classcolorhash = classcolorhash + "##" + fromcolor;
+        classcolorhash += "##" + fromcolor;
     }
     return classcolorhash;
 }
@@ -1737,7 +1721,7 @@ function has_color() {
     } else if (self.team == #"axis") {
         return (isdefined(self.script_color_axis) || isdefined(self.script_forcecolor));
     } else if (self.team == #"team3") {
-        return (isdefined(self.var_15eb6ad5) || isdefined(self.script_forcecolor));
+        return (isdefined(self.script_color_team3) || isdefined(self.script_forcecolor));
     }
     return false;
 }
@@ -1919,12 +1903,13 @@ function private function_c73b2e00(node, volume) {
     return false;
 }
 
-// Namespace colors/colors_shared
-// Params 0, eflags: 0x0
-// Checksum 0x874f79a5, Offset: 0x63c0
-// Size: 0x6a
-function insure_player_does_not_set_forcecolor_twice_in_one_frame() {
-    /#
+/#
+
+    // Namespace colors/colors_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x874f79a5, Offset: 0x63c0
+    // Size: 0x6a
+    function insure_player_does_not_set_forcecolor_twice_in_one_frame() {
         assert(!isdefined(self.setforcecolor), "<unknown string>");
         self.setforcecolor = 1;
         waittillframeend();
@@ -1932,6 +1917,6 @@ function insure_player_does_not_set_forcecolor_twice_in_one_frame() {
             return;
         }
         self.setforcecolor = undefined;
-    #/
-}
+    }
 
+#/

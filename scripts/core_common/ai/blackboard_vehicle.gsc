@@ -1,13 +1,17 @@
 // Atian COD Tools GSC CW decompiler test
 #namespace blackboard;
 
-// Namespace blackboard/blackboard_vehicle
-// Params 0, eflags: 0x0
-// Checksum 0xa1e91aee, Offset: 0x80
-// Size: 0x34
-function registervehicleblackboardattributes() {
-    assert(isvehicle(self), "<unknown string>");
-}
+/#
+
+    // Namespace blackboard/blackboard_vehicle
+    // Params 0, eflags: 0x0
+    // Checksum 0xa1e91aee, Offset: 0x80
+    // Size: 0x34
+    function registervehicleblackboardattributes() {
+        assert(isvehicle(self), "<unknown string>");
+    }
+
+#/
 
 // Namespace blackboard/blackboard_vehicle
 // Params 0, eflags: 0x2 linked
@@ -41,7 +45,7 @@ function vehgetpredictedyawtoenemy(entity, lookaheadtime) {
     }
     selfpredictedpos = entity.origin;
     moveangle = entity.angles[1] + entity getmotionangle();
-    selfpredictedpos = selfpredictedpos + (cos(moveangle), sin(moveangle), 0) * 200 * lookaheadtime;
+    selfpredictedpos += (cos(moveangle), sin(moveangle), 0) * 200 * lookaheadtime;
     yaw = vectortoangles(entity.enemy.origin - selfpredictedpos)[1] - entity.angles[1];
     yaw = absangleclamp360(yaw);
     entity.predictedyawtoenemy = yaw;

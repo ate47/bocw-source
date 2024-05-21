@@ -501,7 +501,7 @@ function function_c6630cce(weapon, org, var_ec941905, killnote) {
     var_ec941905.var_6c5d23f4 hide();
     chicken = namespace_ec06fe4a::spawnmodel(var_ec941905.origin, "zombietron_chicken", var_ec941905.angles, "chickenBlast chicken");
     var_ec941905.chicken = chicken;
-    chicken.angles = chicken.angles + (0, randomintrange(-90, 90), 0);
+    chicken.angles += (0, randomintrange(-90, 90), 0);
     chicken thread namespace_ec06fe4a::function_d55f042c(level, "podiumAllDone");
     chicken setscale(3);
     chicken useanimtree("generic");

@@ -283,7 +283,7 @@ function function_dc928114(player, weapon, weapon_index) {
         foreach (stagenum, var_62b564ee in activecamo.var_13949c61.stages) {
             stage = activecamo.stages[stagenum];
             if (isdefined(stage.var_dd54a13b[base_weapon])) {
-                var_8d729f1b = var_8d729f1b + stage.var_dd54a13b[base_weapon].statvalue;
+                var_8d729f1b += stage.var_dd54a13b[base_weapon].statvalue;
             }
         }
     }

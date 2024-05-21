@@ -130,7 +130,7 @@ function trig_enter_waterfall_mist(localplayer) {
         if (isunderwater(localclientnum)) {
             break;
         }
-        localplayer.rainopacity = localplayer.rainopacity + 0.003;
+        localplayer.rainopacity += 0.003;
         if (localplayer.rainopacity > 1) {
             localplayer.rainopacity = 1;
         }
@@ -151,7 +151,7 @@ function trig_leave_waterfall_mist(localplayer) {
             if (isunderwater(localclientnum)) {
                 break;
             }
-            localplayer.rainopacity = localplayer.rainopacity - 0.005;
+            localplayer.rainopacity -= 0.005;
             waitframe(1);
         }
     }

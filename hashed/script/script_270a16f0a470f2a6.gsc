@@ -123,7 +123,7 @@ function function_3e0af5bf(var_a276c861) {
     }
     s_unitrigger = var_73888042 zm_unitrigger::create(#"hash_a3ff0135b4c5d4a", (56, 56, 100));
     zm_unitrigger::unitrigger_force_per_player_triggers(s_unitrigger, 1);
-    s_unitrigger.origin = s_unitrigger.origin + (-24, 30, 0);
+    s_unitrigger.origin += (-24, 30, 0);
     var_73888042 thread function_372852d();
     var_73888042 util::delay_notify(5, "trigger_activated");
 }
@@ -171,7 +171,7 @@ function function_16dfcdea() {
         e_player = waitresult.activator;
         e_player flag::set(#"hash_467e4279ccacfd8a");
         level flag::set(#"hash_7855ea5b15a4c861");
-        level.var_a70c997e = level.var_a70c997e + 1;
+        level.var_a70c997e += 1;
         hidemiscmodels("ts_pz_bx_" + level.var_a70c997e);
         var_1efd6e0f = struct::get("pizza_box_loc");
         playsoundatposition(#"hash_5ee8279df26f0e2a", var_1efd6e0f.origin);
@@ -276,7 +276,7 @@ function function_a7cf8b16(a_ents) {
         s_waitresult = var_e82701bb waittill(#"damage");
         var_e82701bb clientfield::increment("" + #"hash_50dd9d9bf6b71a00", 1);
         if (s_waitresult.amount > 0) {
-            var_e82701bb.health = var_e82701bb.health - s_waitresult.amount;
+            var_e82701bb.health -= s_waitresult.amount;
             /#
                 iprintlnbold("<unknown string>" + var_e82701bb.health);
             #/
@@ -468,7 +468,7 @@ function function_a32f14f8() {
         if (level.var_421e3759 == struct::get_array("dest_pizza").size) {
             function_6d3d697d();
         } else {
-            level.var_421e3759 = level.var_421e3759 + 1;
+            level.var_421e3759 += 1;
         }
         var_53313495 = array::function_a3b0f814(var_e07849bb);
         if (!isdefined(var_53313495)) {
@@ -483,7 +483,7 @@ function function_a32f14f8() {
             var_9e536071 = item_drop::drop_item(0, undefined, 1, 0, point.id, v_pos, var_53313495.angles, 0);
             var_9e536071.var_dd21aec2 = 1 | 16;
             if (var_aa4f9213 === #"armor_item_lv1_t9_sr" || var_aa4f9213 === #"ray_gun_item_sr") {
-                var_53313495.origin = var_53313495.origin + (0, 0, 12);
+                var_53313495.origin += (0, 0, 12);
             }
             n_power = length(v_pos - var_53313495.origin) * 2;
             var_9e536071 zm_utility::fake_physicslaunch(var_53313495.origin, n_power);
@@ -563,25 +563,24 @@ function function_6c07d63(var_a276c861, var_19e802fa) {
     }
 }
 
-// Namespace namespace_60bf0cf2/namespace_60bf0cf2
-// Params 0, eflags: 0x0
-// Checksum 0x7383b4b2, Offset: 0x26b8
-// Size: 0x5c
-function function_c72df2e9() {
-    /#
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_custom_devgui_callback(&cmd);
-    #/
-}
+/#
 
-// Namespace namespace_60bf0cf2/namespace_60bf0cf2
-// Params 1, eflags: 0x0
-// Checksum 0x9ae12282, Offset: 0x2720
-// Size: 0x17a
-function cmd(var_acfb518f) {
-    /#
-        var_329d95fb = get_array("<unknown string>", "<unknown string>");
+    // Namespace namespace_60bf0cf2/namespace_60bf0cf2
+    // Params 0, eflags: 0x0
+    // Checksum 0x7383b4b2, Offset: 0x26b8
+    // Size: 0x5c
+    function function_c72df2e9() {
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        zm_devgui::add_custom_devgui_callback(&cmd);
+    }
+
+    // Namespace namespace_60bf0cf2/namespace_60bf0cf2
+    // Params 1, eflags: 0x0
+    // Checksum 0x9ae12282, Offset: 0x2720
+    // Size: 0x17a
+    function cmd(var_acfb518f) {
+        var_329d95fb = struct::get_array("<unknown string>", "<unknown string>");
         switch (var_acfb518f) {
         case #"hash_7acad1e41b4b7af3":
             foreach (var_f271f008 in var_329d95fb) {
@@ -594,15 +593,13 @@ function cmd(var_acfb518f) {
             }
             break;
         }
-    #/
-}
+    }
 
-// Namespace namespace_60bf0cf2/namespace_60bf0cf2
-// Params 1, eflags: 0x0
-// Checksum 0xa3155065, Offset: 0x28a8
-// Size: 0xb4
-function function_b7549e2f(state) {
-    /#
+    // Namespace namespace_60bf0cf2/namespace_60bf0cf2
+    // Params 1, eflags: 0x0
+    // Checksum 0xa3155065, Offset: 0x28a8
+    // Size: 0xb4
+    function function_b7549e2f(state) {
         self notify("<unknown string>");
         self endon("<unknown string>");
         self endon(#"death");
@@ -612,6 +609,6 @@ function function_b7549e2f(state) {
                 wait(10 * float(function_60d95f53()) / 1000);
             }
         }
-    #/
-}
+    }
 
+#/

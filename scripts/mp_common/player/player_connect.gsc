@@ -295,7 +295,7 @@ function function_b7c4c231() {
         return;
     }
     /#
-        error("<unknown string>");
+        util::error("<unknown string>");
     #/
 }
 
@@ -458,8 +458,8 @@ function private function_db0c0406() {
 function private init_character_index() {
     /#
         autoselection = getdvarint(#"auto_select_character", -1);
-        if (is_valid(autoselection)) {
-            select_character(autoselection, 1);
+        if (player_role::is_valid(autoselection)) {
+            draft::select_character(autoselection, 1);
             return;
         }
         autoselection = getdvarstring(#"character");
@@ -469,7 +469,7 @@ function private init_character_index() {
             for (i = 0; i < playerroletemplatecount; i++) {
                 var_3c6fd4f7 = function_b14806c6(i, currentsessionmode());
                 if (var_3c6fd4f7 == var_6a3f295d) {
-                    select_character(i, 1);
+                    draft::select_character(i, 1);
                     return;
                 }
             }

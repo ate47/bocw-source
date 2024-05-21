@@ -215,18 +215,18 @@ function event_handler[weapon_change] function_edc4ebe8(eventstruct) {
     if (!isdefined(self.var_ea1458aa)) {
         return;
     }
-    var_f2b25a4e = self isusingoffhand() ? self getcurrentoffhand() : eventstruct.weapon;
-    if (var_f2b25a4e.var_76ce72e8) {
+    challengeweapon = self isusingoffhand() ? self getcurrentoffhand() : eventstruct.weapon;
+    if (challengeweapon.var_76ce72e8) {
         self.var_ea1458aa.var_59ac2f5 = undefined;
-        scoreevents = globallogic_score::function_3cbc4c6c(var_f2b25a4e.var_2e4a8800);
+        scoreevents = globallogic_score::function_3cbc4c6c(challengeweapon.var_2e4a8800);
         if (isdefined(scoreevents) && scoreevents.var_fcd2ff3a === 1) {
             self.var_ea1458aa.var_59ac2f5 = 0;
         }
         return;
     }
-    if (!isdefined(level.var_ca4ce464) || level.var_ca4ce464[var_f2b25a4e] !== 1) {
+    if (!isdefined(level.var_ca4ce464) || level.var_ca4ce464[challengeweapon] !== 1) {
         self.var_ea1458aa.var_96d50420 = undefined;
-        if (var_f2b25a4e.issignatureweapon) {
+        if (challengeweapon.issignatureweapon) {
             self.var_ea1458aa.var_96d50420 = 0;
         }
     }
@@ -1558,7 +1558,7 @@ function challengekills(data) {
             if (!isdefined(player.var_aec3f150)) {
                 player.var_aec3f150 = 0;
             }
-            player.var_aec3f150 = player.var_aec3f150 | 1;
+            player.var_aec3f150 |= 1;
             if (player.var_aec3f150 == 7) {
                 player stats::function_d0de7686(#"hash_68b5c40f079f4af0", 1, #"hash_2b2b28f1d1323b99");
                 player.pers[#"hash_15f486ff20a9984f"] = 1;
@@ -1746,7 +1746,7 @@ function challengekills(data) {
                 if (!isdefined(player.var_aec3f150)) {
                     player.var_aec3f150 = 0;
                 }
-                player.var_aec3f150 = player.var_aec3f150 | 2;
+                player.var_aec3f150 |= 2;
                 if (player.var_aec3f150 == 7) {
                     player stats::function_d0de7686(#"hash_68b5c40f079f4af0", 1, #"hash_2b2b28f1d1323b99");
                     player.pers[#"hash_15f486ff20a9984f"] = 1;
@@ -1840,7 +1840,7 @@ function challengekills(data) {
                     if (!isdefined(player.var_aec3f150)) {
                         player.var_aec3f150 = 0;
                     }
-                    player.var_aec3f150 = player.var_aec3f150 | 4;
+                    player.var_aec3f150 |= 4;
                     if (player.var_aec3f150 == 7) {
                         player stats::function_d0de7686(#"hash_68b5c40f079f4af0", 1, #"hash_2b2b28f1d1323b99");
                         player.pers[#"hash_15f486ff20a9984f"] = 1;
@@ -2016,8 +2016,8 @@ function challengekills(data) {
             player.var_88d3f4a4 = {#var_c879622c:attackerorigin, #var_273b4eaf:1};
         } else if (abs(player.var_88d3f4a4.var_c879622c[2] - attackerorigin[2]) < 45 && distance2dsquared(player.var_88d3f4a4.var_c879622c, attackerorigin) < 40000) {
             player.var_88d3f4a4.var_273b4eaf++;
-            player.var_88d3f4a4.var_c879622c = player.var_88d3f4a4.var_c879622c + attackerorigin;
-            player.var_88d3f4a4.var_c879622c = player.var_88d3f4a4.var_c879622c * 0.5;
+            player.var_88d3f4a4.var_c879622c += attackerorigin;
+            player.var_88d3f4a4.var_c879622c *= 0.5;
             if (player.var_88d3f4a4.var_273b4eaf >= 3) {
                 player stats::function_dad108fa(#"hash_6a6377a03ebc1503", 1);
                 player.var_88d3f4a4 = undefined;
@@ -2861,17 +2861,17 @@ function tu7_fix_mastery_perk_2() {
         return;
     }
     perk_2_tally = 1;
-    perk_2_tally = perk_2_tally + player tally_completed_challenge(100, #"destroy_ai_scorestreak_coldblooded");
-    perk_2_tally = perk_2_tally + player tally_completed_challenge(100, #"kills_counteruav_emp_hardline");
-    perk_2_tally = perk_2_tally + player tally_completed_challenge(200, #"kill_after_resupply");
-    perk_2_tally = perk_2_tally + player tally_completed_challenge(100, #"kills_after_sprint_fasthands");
-    perk_2_tally = perk_2_tally + player tally_completed_challenge(200, #"kill_detect_tracker");
-    perk_2_tally = perk_2_tally + player tally_completed_challenge(10, #"earn_5_scorestreaks_anteup");
-    perk_2_tally = perk_2_tally + player tally_completed_challenge(25, #"kill_scavenger_tracker_resupply");
-    perk_2_tally = perk_2_tally + player tally_completed_challenge(25, #"kill_hardwired_coldblooded");
-    perk_2_tally = perk_2_tally + player tally_completed_challenge(25, #"kill_anteup_overclock_scorestreak_specialist");
-    perk_2_tally = perk_2_tally + player tally_completed_challenge(50, #"kill_fasthands_gungho_sprint");
-    perk_2_tally = perk_2_tally + player tally_completed_challenge(50, #"kill_tracker_sixthsense");
+    perk_2_tally += player tally_completed_challenge(100, #"destroy_ai_scorestreak_coldblooded");
+    perk_2_tally += player tally_completed_challenge(100, #"kills_counteruav_emp_hardline");
+    perk_2_tally += player tally_completed_challenge(200, #"kill_after_resupply");
+    perk_2_tally += player tally_completed_challenge(100, #"kills_after_sprint_fasthands");
+    perk_2_tally += player tally_completed_challenge(200, #"kill_detect_tracker");
+    perk_2_tally += player tally_completed_challenge(10, #"earn_5_scorestreaks_anteup");
+    perk_2_tally += player tally_completed_challenge(25, #"kill_scavenger_tracker_resupply");
+    perk_2_tally += player tally_completed_challenge(25, #"kill_hardwired_coldblooded");
+    perk_2_tally += player tally_completed_challenge(25, #"kill_anteup_overclock_scorestreak_specialist");
+    perk_2_tally += player tally_completed_challenge(50, #"kill_fasthands_gungho_sprint");
+    perk_2_tally += player tally_completed_challenge(50, #"kill_tracker_sixthsense");
     if (mastery_perk_2 < perk_2_tally) {
         player stats::function_dad108fa(#"mastery_perk_2", 1);
     }
@@ -2979,7 +2979,7 @@ function function_7fd1799f(baseweapon, player, weaponclass, meansofdeath) {
         if (!is_true(player.var_a570722a)) {
             var_32b01dc1 = 0;
             foreach (weaponkillsthisspawn in player.weaponkillsthisspawn) {
-                var_32b01dc1 = var_32b01dc1 + weaponkillsthisspawn;
+                var_32b01dc1 += weaponkillsthisspawn;
             }
             if (var_32b01dc1 >= 5) {
                 player.var_a570722a = 1;
@@ -2990,7 +2990,7 @@ function function_7fd1799f(baseweapon, player, weaponclass, meansofdeath) {
             if (!isdefined(var_32b01dc1)) {
                 var_32b01dc1 = 0;
                 foreach (weaponkillsthisspawn in player.weaponkillsthisspawn) {
-                    var_32b01dc1 = var_32b01dc1 + weaponkillsthisspawn;
+                    var_32b01dc1 += weaponkillsthisspawn;
                 }
             }
             if (var_32b01dc1 >= 3) {

@@ -206,25 +206,24 @@ function function_9e3de60() {
     zm_aoe::function_3690781e();
 }
 
-// Namespace zm_hazard/zm_hazard
-// Params 0, eflags: 0x0
-// Checksum 0x28afc4c1, Offset: 0xb68
-// Size: 0x7c
-function function_b5cd0ae5() {
-    /#
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        level wait_till("<unknown string>");
-        add_custom_devgui_callback(&function_2499fe1b);
-    #/
-}
+/#
 
-// Namespace zm_hazard/zm_hazard
-// Params 0, eflags: 0x0
-// Checksum 0x6c985b44, Offset: 0xbf0
-// Size: 0x1ac
-function function_eccc5dbd() {
-    /#
+    // Namespace zm_hazard/zm_hazard
+    // Params 0, eflags: 0x0
+    // Checksum 0x28afc4c1, Offset: 0xb68
+    // Size: 0x7c
+    function function_b5cd0ae5() {
+        adddebugcommand("<unknown string>");
+        adddebugcommand("<unknown string>");
+        level flag::wait_till("<unknown string>");
+        zm_devgui::add_custom_devgui_callback(&function_2499fe1b);
+    }
+
+    // Namespace zm_hazard/zm_hazard
+    // Params 0, eflags: 0x0
+    // Checksum 0x6c985b44, Offset: 0xbf0
+    // Size: 0x1ac
+    function function_eccc5dbd() {
         player = getplayers()[0];
         v_direction = player getplayerangles();
         v_direction = anglestoforward(v_direction) * 500;
@@ -238,15 +237,13 @@ function function_eccc5dbd() {
         }
         println("<unknown string>" + spot.origin);
         level thread function_47187ffc(spot);
-    #/
-}
+    }
 
-// Namespace zm_hazard/zm_hazard
-// Params 1, eflags: 0x0
-// Checksum 0x327340e1, Offset: 0xda8
-// Size: 0x9a
-function function_2499fe1b(cmd) {
-    /#
+    // Namespace zm_hazard/zm_hazard
+    // Params 1, eflags: 0x0
+    // Checksum 0x327340e1, Offset: 0xda8
+    // Size: 0x9a
+    function function_2499fe1b(cmd) {
         switch (cmd) {
         case #"hash_1a5bda29acd157fd":
             function_eccc5dbd();
@@ -258,6 +255,6 @@ function function_2499fe1b(cmd) {
         default:
             break;
         }
-    #/
-}
+    }
 
+#/

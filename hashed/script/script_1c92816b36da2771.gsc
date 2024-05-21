@@ -712,7 +712,7 @@ function function_b88fcac5() {
                     level.klaus.owner = e_player;
                 }
             } else {
-                level.var_dd86d7a7 = level.var_dd86d7a7 - e_player.score;
+                level.var_dd86d7a7 -= e_player.score;
                 /#
                     iprintlnbold("<unknown string>" + e_player.score + "<unknown string>" + level.var_dd86d7a7);
                 #/
@@ -1169,54 +1169,53 @@ function on_host_migration_end(*params) {
     }
 }
 
-// Namespace namespace_6fb22263/namespace_6fb22263
-// Params 0, eflags: 0x0
-// Checksum 0xe5869376, Offset: 0x5050
-// Size: 0xec
-function function_cd7a3de4() {
-    /#
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_custom_devgui_callback(&cmd);
-    #/
-}
+/#
 
-// Namespace namespace_6fb22263/namespace_6fb22263
-// Params 1, eflags: 0x0
-// Checksum 0x18f37ad5, Offset: 0x5148
-// Size: 0x332
-function cmd(cmd) {
-    /#
+    // Namespace namespace_6fb22263/namespace_6fb22263
+    // Params 0, eflags: 0x0
+    // Checksum 0xe5869376, Offset: 0x5050
+    // Size: 0xec
+    function function_cd7a3de4() {
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        zm_devgui::add_custom_devgui_callback(&cmd);
+    }
+
+    // Namespace namespace_6fb22263/namespace_6fb22263
+    // Params 1, eflags: 0x0
+    // Checksum 0x18f37ad5, Offset: 0x5148
+    // Size: 0x332
+    function cmd(cmd) {
         switch (cmd) {
         case #"hash_4ce575885ab4acea":
-            level set(#"hash_75f07aed08b6bb5e");
+            level flag::set(#"hash_75f07aed08b6bb5e");
             break;
         case #"hash_5cfab73d14bc7014":
-            level set(#"hash_392c756e6906b2a2");
-            level function_7df6bb60(#"hash_6a83f912cd01808c", 1);
+            level flag::set(#"hash_392c756e6906b2a2");
+            level zm_ui_inventory::function_7df6bb60(#"hash_6a83f912cd01808c", 1);
             function_5f47a7c2(#"hash_48cf3273adcd9b0b");
             break;
         case #"hash_5fe826431d1f6b23":
-            level set(#"hash_20e3ef55ace43370");
-            level function_7df6bb60(#"hash_4b03961693d6a43a", 1);
+            level flag::set(#"hash_20e3ef55ace43370");
+            level zm_ui_inventory::function_7df6bb60(#"hash_4b03961693d6a43a", 1);
             function_5f47a7c2(#"hash_1afef7d9c56952d");
             break;
         case #"hash_19a215e19189ffcb":
-            level toggle(#"hash_66eb1b5632f46da8");
+            level flag::toggle(#"hash_66eb1b5632f46da8");
             break;
         case #"hash_46febba823b8b1fc":
-            level set(#"hash_5f5899aa1acda8de");
+            level flag::set(#"hash_5f5899aa1acda8de");
             break;
         case #"hash_21562ac47b7b0515":
-            if (level get(#"hash_57651acabc979ef4")) {
+            if (level flag::get(#"hash_57651acabc979ef4")) {
                 level notify(#"hash_567b7d7322c5892b");
-                level clear(#"hash_57651acabc979ef4");
+                level flag::clear(#"hash_57651acabc979ef4");
                 function_b503a4ce(1);
             }
         case #"hash_54da172330d6643a":
@@ -1236,18 +1235,16 @@ function cmd(cmd) {
             }
             break;
         }
-    #/
-}
+    }
 
-// Namespace namespace_6fb22263/namespace_6fb22263
-// Params 0, eflags: 0x0
-// Checksum 0x289d593c, Offset: 0x5488
-// Size: 0x21a
-function function_953cbff5() {
-    /#
+    // Namespace namespace_6fb22263/namespace_6fb22263
+    // Params 0, eflags: 0x0
+    // Checksum 0x289d593c, Offset: 0x5488
+    // Size: 0x21a
+    function function_953cbff5() {
         level endon(#"end_game", #"hash_212022a63900fb38");
         var_9039575a = getent("<unknown string>", "<unknown string>");
-        var_3cf3aa06 = get_array("<unknown string>", "<unknown string>");
+        var_3cf3aa06 = struct::get_array("<unknown string>", "<unknown string>");
         while (true) {
             if (isdefined(level.klaus)) {
                 circle(level.klaus.origin, 50, (0, 1, 0));
@@ -1265,21 +1262,19 @@ function function_953cbff5() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace namespace_6fb22263/namespace_6fb22263
-// Params 0, eflags: 0x4
-// Checksum 0xb1240d77, Offset: 0x56b0
-// Size: 0x1ee
-function private function_8d8c6876() {
-    /#
+    // Namespace namespace_6fb22263/namespace_6fb22263
+    // Params 0, eflags: 0x4
+    // Checksum 0xb1240d77, Offset: 0x56b0
+    // Size: 0x1ee
+    function private function_8d8c6876() {
         level endon(#"end_game");
         while (true) {
-            if (isdefined(level.klaus) && level get(#"hash_5503fb2f49e6a242")) {
+            if (isdefined(level.klaus) && level flag::get(#"hash_5503fb2f49e6a242")) {
                 if (getdvarint(#"hash_2090a496be9714aa", 0)) {
-                    iprintln("<unknown string>" + level get(#"hash_6d16c284cbb301d1") + "<unknown string>" + "<unknown string>" + level get(#"hash_279a97271de2b7e1") + "<unknown string>" + "<unknown string>" + level get(#"hash_57651acabc979ef4"));
-                    iprintln("<unknown string>" + level get(#"hash_66eb1b5632f46da8") + "<unknown string>" + "<unknown string>" + level get(#"hash_75f07aed08b6bb5e"));
+                    iprintln("<unknown string>" + level flag::get(#"hash_6d16c284cbb301d1") + "<unknown string>" + "<unknown string>" + level flag::get(#"hash_279a97271de2b7e1") + "<unknown string>" + "<unknown string>" + level flag::get(#"hash_57651acabc979ef4"));
+                    iprintln("<unknown string>" + level flag::get(#"hash_66eb1b5632f46da8") + "<unknown string>" + "<unknown string>" + level flag::get(#"hash_75f07aed08b6bb5e"));
                     if (isdefined(level.klaus.exhausted)) {
                         iprintln("<unknown string>" + level.klaus.exhausted);
                     } else {
@@ -1289,6 +1284,6 @@ function private function_8d8c6876() {
             }
             wait(3);
         }
-    #/
-}
+    }
 
+#/

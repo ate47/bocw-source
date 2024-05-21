@@ -96,10 +96,10 @@ function private create_use_trigger() {
 // Size: 0x196
 function private update_loop() {
     level endon(#"game_ended");
-    var_1a1c0d86 = 0;
+    updatepass = 0;
     while (true) {
         foreach (i, player in getplayers()) {
-            if (i % 5 == var_1a1c0d86) {
+            if (i % 5 == updatepass) {
                 if (!isdefined(player.var_8a022726)) {
                     continue;
                 }
@@ -110,7 +110,7 @@ function private update_loop() {
                 player function_2f394f36();
             }
         }
-        var_1a1c0d86 = (var_1a1c0d86 + 1) % 5;
+        updatepass = (updatepass + 1) % 5;
         waitframe(1);
     }
 }
@@ -415,27 +415,26 @@ function use_dynent(dynent, activator, overridestate, disablegesture = 0, var_c7
     return 0;
 }
 
-// Namespace dynent_use/dynent_use
-// Params 0, eflags: 0x4
-// Checksum 0xcb0ff404, Offset: 0x1af8
-// Size: 0x6c
-function private devgui_loop() {
-    /#
+/#
+
+    // Namespace dynent_use/dynent_use
+    // Params 0, eflags: 0x4
+    // Checksum 0xcb0ff404, Offset: 0x1af8
+    // Size: 0x6c
+    function private devgui_loop() {
         level endon(#"game_ended");
         while (!canadddebugcommand()) {
             waitframe(1);
         }
         adddebugcommand("<unknown string>");
         adddebugcommand("<unknown string>");
-    #/
-}
+    }
 
-// Namespace dynent_use/dynent_use
-// Params 0, eflags: 0x4
-// Checksum 0xf9039352, Offset: 0x1b70
-// Size: 0x288
-function private function_6b66543a() {
-    /#
+    // Namespace dynent_use/dynent_use
+    // Params 0, eflags: 0x4
+    // Checksum 0xf9039352, Offset: 0x1b70
+    // Size: 0x288
+    function private function_6b66543a() {
         self endon(#"disconnect");
         while (true) {
             waitframe(1);
@@ -463,6 +462,6 @@ function private function_6b66543a() {
                 circle(top, maxs[0], color, 0, 1);
             }
         }
-    #/
-}
+    }
 
+#/

@@ -314,7 +314,7 @@ function vehicle_spawn(s_instance) {
                 }
                 vehicle.v_org = vehicle.origin;
                 vehicle.v_ang = vehicle.angles;
-                s_instance.var_2bb61e5b = s_instance.var_2bb61e5b + var_50b7449f.seats;
+                s_instance.var_2bb61e5b += var_50b7449f.seats;
                 vehicle thread function_17a3dc2f(s_instance);
                 if (vehicle.vehicletype === "vehicle_motorcycle_mil_us_offroad" || vehicle.vehicletype === "vehicle_t9_mil_fav_light") {
                     foreach (var_f8d6002f in var_f6b6b97e) {
@@ -335,7 +335,7 @@ function vehicle_spawn(s_instance) {
                                 }
                                 vehicle.v_org = vehicle.origin;
                                 vehicle.v_ang = vehicle.angles;
-                                s_instance.var_2bb61e5b = s_instance.var_2bb61e5b + var_50b7449f.seats;
+                                s_instance.var_2bb61e5b += var_50b7449f.seats;
                                 vehicle thread function_17a3dc2f(s_instance);
                                 if (s_instance.var_2bb61e5b >= 4) {
                                     break;

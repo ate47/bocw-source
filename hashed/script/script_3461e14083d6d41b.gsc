@@ -147,7 +147,7 @@ function function_1d9bbc33(localclientnum, player) {
                 if (falloff > 1) {
                     falloff = 1;
                 }
-                self.threshold = self.threshold * falloff;
+                self.threshold *= falloff;
                 if (self.threshold < 0) {
                     self.threshold = 0;
                 } else if (self.threshold > 1) {

@@ -856,7 +856,7 @@ function controllerparticipationcheck() {
             var_9c06c7d1 = function_ca7c50ce();
             difference = level.var_b6752258 - var_9c06c7d1;
             if (difference > 0) {
-                difference = difference + 0.02;
+                difference += 0.02;
                 self.pers[#"hash_2013e34fb3c104e9"] = difference;
             }
             self.pers[#"controllerparticipationsuccessafterinactivitywarning"] = 1;
@@ -1376,7 +1376,7 @@ function getlosersteamscores(winner) {
         if (team == winner) {
             continue;
         }
-        teamscores = teamscores + game.stat[#"teamscores"][team];
+        teamscores += game.stat[#"teamscores"][team];
     }
     return teamscores;
 }

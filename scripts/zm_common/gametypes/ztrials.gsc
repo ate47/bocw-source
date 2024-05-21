@@ -193,7 +193,7 @@ function private function_491101ba(player) {
     if (level flag::get("round_reset")) {
         return true;
     }
-    assert(level get(#"trial_failed"));
+    assert(level flag::get(#"trial_failed"));
     return false;
 }
 
@@ -230,12 +230,13 @@ function private function_b8839207(e_door, n_cost) {
     }
 }
 
-// Namespace ztrials/ztrials
-// Params 0, eflags: 0x4
-// Checksum 0x3b825ee8, Offset: 0xcf0
-// Size: 0xec
-function private complete_current_round() {
-    /#
+/#
+
+    // Namespace ztrials/ztrials
+    // Params 0, eflags: 0x4
+    // Checksum 0x3b825ee8, Offset: 0xcf0
+    // Size: 0xec
+    function private complete_current_round() {
         level.devcheater = 1;
         level.zombie_total = 0;
         level notify(#"kill_round");
@@ -249,15 +250,13 @@ function private complete_current_round() {
                 zombies[i] dodamage(zombies[i].health + 666, zombies[i].origin);
             }
         }
-    #/
-}
+    }
 
-// Namespace ztrials/ztrials
-// Params 1, eflags: 0x4
-// Checksum 0x112c9a79, Offset: 0xde8
-// Size: 0x188
-function private function_1201b5da(medal) {
-    /#
+    // Namespace ztrials/ztrials
+    // Params 1, eflags: 0x4
+    // Checksum 0x112c9a79, Offset: 0xde8
+    // Size: 0x188
+    function private function_1201b5da(medal) {
         round = undefined;
         switch (medal) {
         case #"gold":
@@ -284,15 +283,13 @@ function private function_1201b5da(medal) {
         }
         assert(0);
         return undefined;
-    #/
-}
+    }
 
-// Namespace ztrials/ztrials
-// Params 0, eflags: 0x4
-// Checksum 0xf3b3dc94, Offset: 0xf78
-// Size: 0x87e
-function private function_9a6b2309() {
-    /#
+    // Namespace ztrials/ztrials
+    // Params 0, eflags: 0x4
+    // Checksum 0xf3b3dc94, Offset: 0xf78
+    // Size: 0x87e
+    function private function_9a6b2309() {
         assert(isdefined(level.var_6d87ac05));
         foreach (round_info in level.var_6d87ac05.rounds) {
             adddebugcommand("<unknown string>" + round_info.round + "<unknown string>" + function_9e72a96(round_info.name) + "<unknown string>" + round_info.round + "<unknown string>" + round_info.round + "<unknown string>");
@@ -315,7 +312,7 @@ function private function_9a6b2309() {
                 if (isdefined(level.var_b9714a5d)) {
                     [[ level.var_b9714a5d ]](round_number);
                 }
-                level thread zombie_goto_round(round_number);
+                level thread zm_game_module::zombie_goto_round(round_number);
                 setdvar(#"hash_57e97658cd1d89e2", "<unknown string>");
             }
             string = getdvarstring(#"hash_25a4cfc19b09ae41", "<unknown string>");
@@ -323,10 +320,10 @@ function private function_9a6b2309() {
             if (cmd.size > 0) {
                 strikes = int(cmd[0]);
                 if (strikes == 3) {
-                    function_fe2ecb6(strikes - 1);
-                    fail();
+                    zm_trial::function_fe2ecb6(strikes - 1);
+                    zm_trial::fail();
                 } else {
-                    function_fe2ecb6(strikes);
+                    zm_trial::function_fe2ecb6(strikes);
                 }
                 setdvar(#"hash_25a4cfc19b09ae41", "<unknown string>");
             }
@@ -339,16 +336,16 @@ function private function_9a6b2309() {
             string = getdvarstring(#"hash_5a32209acb1f54a0", "<unknown string>");
             cmd = strtok(string, "<unknown string>");
             if (cmd.size > 0) {
-                fail(undefined, getplayers());
+                zm_trial::fail(undefined, getplayers());
                 setdvar(#"hash_5a32209acb1f54a0", "<unknown string>");
             }
             string = getdvarstring(#"hash_1576c65ebdf43de0", "<unknown string>");
             cmd = strtok(string, "<unknown string>");
             if (cmd.size > 0) {
                 foreach (player in getplayers()) {
-                    player function_49469f35("<unknown string>", 0);
-                    player function_49469f35("<unknown string>", 0);
-                    player function_49469f35("<unknown string>", 0);
+                    player zm_stats::function_49469f35("<unknown string>", 0);
+                    player zm_stats::function_49469f35("<unknown string>", 0);
+                    player zm_stats::function_49469f35("<unknown string>", 0);
                 }
                 level.var_ee7ca64 = [];
                 setdvar(#"hash_1576c65ebdf43de0", "<unknown string>");
@@ -361,16 +358,16 @@ function private function_9a6b2309() {
                     player luinotifyevent(#"hash_8d33c3be569f08", 1, challenge.row);
                     stat_name = challenge.params[1];
                     curr_time = gettime();
-                    player function_49469f35(stat_name, curr_time);
+                    player zm_stats::function_49469f35(stat_name, curr_time);
                 }
                 setdvar(#"hash_2f6ef50454652bf2", "<unknown string>");
             }
             if (getdvarint(#"hash_145033f5271f2651", 0) == 1) {
-                function_9c1092f6();
+                zm_trial_util::function_9c1092f6();
                 setdvar(#"hash_145033f5271f2651", 0);
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
+#/

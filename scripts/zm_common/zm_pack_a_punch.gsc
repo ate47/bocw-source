@@ -464,7 +464,7 @@ function private function_64416c32(*delta, origin, radius) {
         if (is_true(self.target.trigger_off)) {
             paporigin = self.target.realorigin;
         } else if (is_true(self.target.disabled)) {
-            paporigin = paporigin + (0, 0, 10000);
+            paporigin += (0, 0, 10000);
         }
         if (distancesquared(paporigin, origin) < radius * radius) {
             return true;
@@ -602,7 +602,7 @@ function private function_222c0292(current_weapon, packa_rollers, pap_machine, v
     self.var_9b0383f5 = 1;
     self.var_655c0753 = undefined;
     self.restore_clip = undefined;
-    self.restore_stock = undefined;
+    self.healing_aura_revive_zm = undefined;
     self.restore_clip_size = undefined;
     self.restore_max = undefined;
     currentaathashid = -1;
@@ -614,7 +614,7 @@ function private function_222c0292(current_weapon, packa_rollers, pap_machine, v
         self.var_655c0753 = 1;
         self.restore_clip = self getweaponammoclip(current_weapon);
         self.restore_clip_size = current_weapon.clipsize;
-        self.restore_stock = self getweaponammostock(current_weapon);
+        self.healing_aura_revive_zm = self getweaponammostock(current_weapon);
         self.restore_max = current_weapon.maxammo;
     }
     pap_machine thread wait_for_disconnect(self);
@@ -658,7 +658,7 @@ function private function_222c0292(current_weapon, packa_rollers, pap_machine, v
                 self recordmapevent(19, gettime(), self.origin, level.round_number, weaponidx, var_376755db);
             }
             /#
-                self debug_print("<unknown string>");
+                self zm_challenges::debug_print("<unknown string>");
             #/
             self zm_stats::increment_challenge_stat(#"pap_weapon_packed");
             self zm_stats::increment_challenge_stat(#"hash_2126e77556d8e66b");
@@ -671,7 +671,7 @@ function private function_222c0292(current_weapon, packa_rollers, pap_machine, v
             if (is_true(pap_machine.unitrigger_stub.var_59f1d079)) {
                 pap_machine.unitrigger_stub.var_59f1d079 = undefined;
                 /#
-                    self debug_print("<unknown string>");
+                    self zm_challenges::debug_print("<unknown string>");
                 #/
                 self zm_stats::increment_challenge_stat(#"pap_weapon_double_packed", undefined, 1);
                 self stats::inc_stat(#"item_stats", current_weapon.name, #"doublepacked", #"statvalue", 1);
@@ -855,11 +855,11 @@ function private wait_for_player_to_take(player, weapon, packa_timer, var_a86430
                 player switchtoweapon(upgrade_weapon);
                 if (is_true(player.var_655c0753) && !is_true(pap_machine.var_b64e889a)) {
                     new_clip = player.restore_clip + upgrade_weapon.clipsize - player.restore_clip_size;
-                    new_stock = player.restore_stock + upgrade_weapon.maxammo - player.restore_max;
+                    new_stock = player.healing_aura_revive_zm + upgrade_weapon.maxammo - player.restore_max;
                 }
                 player.var_655c0753 = undefined;
                 player.restore_clip = undefined;
-                player.restore_stock = undefined;
+                player.healing_aura_revive_zm = undefined;
                 player.restore_max = undefined;
                 player.restore_clip_size = undefined;
                 player callback::callback(#"hash_790b67aca1bf8fc0", upgrade_weapon);

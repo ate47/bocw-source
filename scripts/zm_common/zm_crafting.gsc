@@ -56,7 +56,7 @@ function private postinit() {
     function_7a8f3cbd();
     function_60a6c623();
     setup_tables();
-    if (zombie_utility::function_d2dfacfd(#"highlight_craftables") || zm_custom::function_901b751c(#"zmcraftingkeyline")) {
+    if (zombie_utility::get_zombie_var(#"highlight_craftables") || zm_custom::function_901b751c(#"zmcraftingkeyline")) {
         level thread function_40f32480();
     }
     /#
@@ -647,14 +647,14 @@ function function_987a472(modelname, blueprint) {
         s_model = struct::get(s_crafting.target, "targetname");
         if (isdefined(s_model)) {
             m_spawn = spawn("script_model", s_model.origin);
-            m_spawn.origin = m_spawn.origin + blueprint.v_offset;
+            m_spawn.origin += blueprint.v_offset;
             if (isdefined(s_crafting.v_origin_offset)) {
-                m_spawn.origin = m_spawn.origin + s_crafting.v_origin_offset;
+                m_spawn.origin += s_crafting.v_origin_offset;
             }
             m_spawn.angles = s_model.angles;
-            m_spawn.angles = m_spawn.angles + blueprint.v_angles;
+            m_spawn.angles += blueprint.v_angles;
             if (isdefined(s_crafting.v_angle_offset)) {
-                m_spawn.angles = m_spawn.angles + s_crafting.v_angle_offset;
+                m_spawn.angles += s_crafting.v_angle_offset;
             }
             m_spawn setmodel(modelname);
             s_crafting.model = m_spawn;
@@ -1026,7 +1026,7 @@ function private function_f37c4bb5(player) {
         if (isdefined(self.stub.blueprint.var_54a97edd) && is_true(self.stub.blueprint.var_54a97edd.isriotshield)) {
             foreach (e_player in getplayers()) {
                 /#
-                    e_player debug_print("<unknown string>");
+                    e_player zm_challenges::debug_print("<unknown string>");
                 #/
                 e_player zm_stats::increment_challenge_stat(#"shields_built", undefined, 1);
             }
@@ -1088,11 +1088,11 @@ function private function_3c45b116() {
         if (isdefined(s_model)) {
             v_origin = s_model.origin;
             if (isdefined(self.v_origin_offset)) {
-                v_origin = v_origin + self.v_origin_offset;
+                v_origin += self.v_origin_offset;
             }
             v_angles = s_model.angles;
             if (isdefined(self.v_angle_offset)) {
-                v_angles = v_angles + self.v_angle_offset;
+                v_angles += self.v_angle_offset;
             }
         }
     } else {
@@ -1115,11 +1115,11 @@ function private function_230f6303() {
         if (isdefined(s_model)) {
             v_origin = s_model.origin;
             if (isdefined(self.v_origin_offset)) {
-                v_origin = v_origin + self.v_origin_offset;
+                v_origin += self.v_origin_offset;
             }
             v_angles = s_model.angles;
             if (isdefined(self.v_angle_offset)) {
-                v_angles = v_angles + self.v_angle_offset;
+                v_angles += self.v_angle_offset;
             }
         }
     } else {
@@ -1191,7 +1191,7 @@ function private function_9693e041(player) {
 // Size: 0x3c
 function function_c9163c5d(str) {
     if (isdefined(str) && str != "") {
-        str = str + "_KEYBOARD";
+        str += "_KEYBOARD";
     }
     return str;
 }
@@ -1238,7 +1238,7 @@ function function_ceac3bf9(player, b_repaired = 0) {
         n_cost = player function_86cab486();
         break;
     }
-    n_cost = n_cost - var_a185bd91;
+    n_cost -= var_a185bd91;
     if (n_cost < 100) {
         n_cost = 100;
     }
@@ -1472,12 +1472,13 @@ function private function_42673a26(player) {
     self sethintstring(self.stub.hint_string);
 }
 
-// Namespace zm_crafting/zm_crafting
-// Params 1, eflags: 0x0
-// Checksum 0x4c654f23, Offset: 0x5608
-// Size: 0x134
-function function_3012605d(unitrigger) {
-    /#
+/#
+
+    // Namespace zm_crafting/zm_crafting
+    // Params 1, eflags: 0x0
+    // Checksum 0x4c654f23, Offset: 0x5608
+    // Size: 0x134
+    function function_3012605d(unitrigger) {
         if (!isdefined(level.var_644b04e2)) {
             level.var_644b04e2 = [];
         }
@@ -1491,27 +1492,24 @@ function function_3012605d(unitrigger) {
         if (unitrigger.craftfoundry.displayname != "<unknown string>") {
             name = unitrigger.craftfoundry.displayname;
         }
-        waittill_can_add_debug_command();
+        util::waittill_can_add_debug_command();
         str_cmd = "<unknown string>" + table_id + "<unknown string>" + name + "<unknown string>" + table_id + "<unknown string>";
         adddebugcommand(str_cmd);
-    #/
-}
+    }
 
-// Namespace zm_crafting/zm_crafting
-// Params 1, eflags: 0x0
-// Checksum 0xc230b9c6, Offset: 0x5748
-// Size: 0x10
-function function_e197bb07(*foundry) {
-    /#
-    #/
-}
+    // Namespace zm_crafting/zm_crafting
+    // Params 1, eflags: 0x0
+    // Checksum 0xc230b9c6, Offset: 0x5748
+    // Size: 0x10
+    function function_e197bb07(*foundry) {
+        
+    }
 
-// Namespace zm_crafting/zm_crafting
-// Params 1, eflags: 0x0
-// Checksum 0x7871696e, Offset: 0x5760
-// Size: 0xd0
-function function_e5af6b6e(blueprint) {
-    /#
+    // Namespace zm_crafting/zm_crafting
+    // Params 1, eflags: 0x0
+    // Checksum 0x7871696e, Offset: 0x5760
+    // Size: 0xd0
+    function function_e5af6b6e(blueprint) {
         name = blueprint.name;
         if (blueprint.displayname != "<unknown string>") {
             name = blueprint.displayname;
@@ -1519,37 +1517,32 @@ function function_e5af6b6e(blueprint) {
         foreach (component in blueprint.components) {
             function_e9e4a1d0(name, component);
         }
-    #/
-}
+    }
 
-// Namespace zm_crafting/zm_crafting
-// Params 2, eflags: 0x0
-// Checksum 0x8b03d31f, Offset: 0x5838
-// Size: 0xa4
-function function_e9e4a1d0(var_a13e8cac, component) {
-    /#
-        waittill_can_add_debug_command();
+    // Namespace zm_crafting/zm_crafting
+    // Params 2, eflags: 0x0
+    // Checksum 0x8b03d31f, Offset: 0x5838
+    // Size: 0xa4
+    function function_e9e4a1d0(var_a13e8cac, component) {
+        util::waittill_can_add_debug_command();
         name = getweaponname(component);
         str_cmd = "<unknown string>" + var_a13e8cac + "<unknown string>" + name + "<unknown string>" + name + "<unknown string>";
         adddebugcommand(str_cmd);
-    #/
-}
+    }
 
-// Namespace zm_crafting/zm_crafting
-// Params 1, eflags: 0x0
-// Checksum 0x3b9e2048, Offset: 0x58e8
-// Size: 0x10
-function function_4765f5b3(*component) {
-    /#
-    #/
-}
+    // Namespace zm_crafting/zm_crafting
+    // Params 1, eflags: 0x0
+    // Checksum 0x3b9e2048, Offset: 0x58e8
+    // Size: 0x10
+    function function_4765f5b3(*component) {
+        
+    }
 
-// Namespace zm_crafting/zm_crafting
-// Params 0, eflags: 0x0
-// Checksum 0xae744e5, Offset: 0x5900
-// Size: 0xf4
-function devgui_get_players() {
-    /#
+    // Namespace zm_crafting/zm_crafting
+    // Params 0, eflags: 0x0
+    // Checksum 0xae744e5, Offset: 0x5900
+    // Size: 0xf4
+    function devgui_get_players() {
         var_4ab6b47 = getdvarstring(#"hash_7c8c0c3f35357a53");
         if (var_4ab6b47 != "<unknown string>") {
             player_id = int(var_4ab6b47);
@@ -1560,21 +1553,19 @@ function devgui_get_players() {
             }
         }
         return getplayers();
-    #/
-}
+    }
 
-// Namespace zm_crafting/zm_crafting
-// Params 0, eflags: 0x0
-// Checksum 0x5d0284ed, Offset: 0x5a00
-// Size: 0x276
-function devgui_think() {
-    /#
+    // Namespace zm_crafting/zm_crafting
+    // Params 0, eflags: 0x0
+    // Checksum 0x5d0284ed, Offset: 0x5a00
+    // Size: 0x276
+    function devgui_think() {
         setdvar(#"hash_7c8c0c3f35357a53", "<unknown string>");
-        waittill_can_add_debug_command();
+        util::waittill_can_add_debug_command();
         str_cmd = "<unknown string>";
         adddebugcommand(str_cmd);
         for (i = 1; i <= 4; i++) {
-            waittill_can_add_debug_command();
+            util::waittill_can_add_debug_command();
             str_cmd = "<unknown string>" + i + "<unknown string>" + i + "<unknown string>" + i + "<unknown string>";
             adddebugcommand(str_cmd);
         }
@@ -1582,36 +1573,32 @@ function devgui_think() {
             var_cf5ebef8 = getdvarstring(#"hash_43086839e587cc6c");
             if (var_cf5ebef8 != "<unknown string>") {
                 table_id = int(var_cf5ebef8);
-                thread_all(devgui_get_players(), &function_fe738a08, table_id);
+                array::thread_all(devgui_get_players(), &function_fe738a08, table_id);
                 setdvar(#"hash_43086839e587cc6c", "<unknown string>");
             }
             component = getdvarstring(#"hash_3a357be22156749e");
             if (component != "<unknown string>") {
                 w_comp = get_component(component);
-                thread_all(devgui_get_players(), &function_3e29352d, w_comp);
+                array::thread_all(devgui_get_players(), &function_3e29352d, w_comp);
                 setdvar(#"hash_3a357be22156749e", "<unknown string>");
             }
             wait(1);
         }
-    #/
-}
+    }
 
-// Namespace zm_crafting/zm_crafting
-// Params 1, eflags: 0x0
-// Checksum 0xa07f5c1c, Offset: 0x5c80
-// Size: 0x24
-function function_3e29352d(w_comp) {
-    /#
+    // Namespace zm_crafting/zm_crafting
+    // Params 1, eflags: 0x0
+    // Checksum 0xa07f5c1c, Offset: 0x5c80
+    // Size: 0x24
+    function function_3e29352d(w_comp) {
         self giveweapon(w_comp);
-    #/
-}
+    }
 
-// Namespace zm_crafting/zm_crafting
-// Params 1, eflags: 0x0
-// Checksum 0x3e91cbe6, Offset: 0x5cb0
-// Size: 0x1dc
-function function_fe738a08(table_id) {
-    /#
+    // Namespace zm_crafting/zm_crafting
+    // Params 1, eflags: 0x0
+    // Checksum 0x3e91cbe6, Offset: 0x5cb0
+    // Size: 0x1dc
+    function function_fe738a08(table_id) {
         unitrigger = level.var_644b04e2[table_id];
         entnum = self getentitynumber();
         origin = unitrigger.origin;
@@ -1621,20 +1608,20 @@ function function_fe738a08(table_id) {
         plorigin = origin + 48 * forward;
         switch (entnum) {
         case 0:
-            plorigin = plorigin + 16 * right;
+            plorigin += 16 * right;
             break;
         case 1:
-            plorigin = plorigin + 16 * forward;
+            plorigin += 16 * forward;
             break;
         case 2:
-            plorigin = plorigin - 16 * right;
+            plorigin -= 16 * right;
             break;
         case 3:
-            plorigin = plorigin - 16 * forward;
+            plorigin -= 16 * forward;
             break;
         }
         self setorigin(plorigin);
         self setplayerangles(var_21f5823e);
-    #/
-}
+    }
 
+#/

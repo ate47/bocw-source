@@ -45,7 +45,7 @@ function private preinit() {
     function_44a82004("power_on");
     level flag::init(#"disable_fast_travel");
     /#
-        add_custom_devgui_callback(&function_dd6276f3);
+        zm_devgui::add_custom_devgui_callback(&function_dd6276f3);
         adddebugcommand("<unknown string>");
         adddebugcommand("<unknown string>");
         adddebugcommand("<unknown string>");
@@ -619,7 +619,7 @@ function function_66d020b0(var_5314bd63, nd_path_start, var_384528, str_notify, 
     }
     self notify(#"hash_1c35eb15aa210d6", {#var_9fa6220c:var_12230d08});
     /#
-        self debug_print("<unknown string>");
+        self zm_challenges::debug_print("<unknown string>");
     #/
     self zm_stats::increment_challenge_stat(#"fast_travels");
     if (!is_true(self.var_472e3448)) {
@@ -710,7 +710,7 @@ function function_7a607f29(var_12230d08) {
         self val::set(#"fasttravel", "disable_weapons", 1);
     }
     self bgb::suspend_weapon_cycling();
-    self.var_be3224e6 = 1;
+    self.bgb_disabled = 1;
     self util::magic_bullet_shield();
 }
 
@@ -731,7 +731,7 @@ function function_e61d152a() {
             self namespace_f0b43eb5::function_d38641f1();
         }
     }
-    self.var_be3224e6 = 0;
+    self.bgb_disabled = 0;
     self bgb::resume_weapon_cycling();
     self util::stop_magic_bullet_shield();
 }
@@ -837,7 +837,7 @@ function function_62686dda(var_6c365dbf) {
     }
     str_alias = #"hash_3388d9809bf60b12";
     if (isdefined(self.var_1bfa91a)) {
-        str_alias = str_alias + self.var_1bfa91a;
+        str_alias += self.var_1bfa91a;
     }
     playsoundatposition(str_alias, var_a16f5b07);
     wait(0.5);
@@ -849,7 +849,7 @@ function function_62686dda(var_6c365dbf) {
     }
     str_alias = #"hash_52aaa9a4a2e71c73";
     if (isdefined(self.var_1bfa91a)) {
-        str_alias = str_alias + self.var_1bfa91a;
+        str_alias += self.var_1bfa91a;
     }
     self playsound(str_alias);
     self notify(#"fasttravel_over");
@@ -900,7 +900,7 @@ function function_c1f603e(var_12230d08, n_cooldown, var_8d5d092c) {
     }
     self.var_9c7b96ed[var_8d5d092c] = 1;
     if (self hasperk(#"specialty_cooldown")) {
-        n_cooldown = n_cooldown * 0.5;
+        n_cooldown *= 0.5;
     }
     if (isdefined(var_12230d08)) {
         var_12230d08 waittilltimeout(n_cooldown, #"cancel_fasttravel_cooldown");
@@ -1028,7 +1028,7 @@ function private function_fdb3b5(var_a16f5b07, s_teleport_room, var_98b11ed9) {
     }
     str_alias = #"hash_3388d9809bf60b12";
     if (isdefined(self.var_1bfa91a)) {
-        str_alias = str_alias + self.var_1bfa91a;
+        str_alias += self.var_1bfa91a;
     }
     playsoundatposition(str_alias, var_a16f5b07);
     println("<unknown string>" + self getplayercamerapos());
@@ -1086,7 +1086,7 @@ function function_a78584c0(var_6c365dbf, var_896486fb, var_1f8fbe0b = 0) {
     }
     str_alias = #"hash_52aaa9a4a2e71c73";
     if (isdefined(self.var_1bfa91a)) {
-        str_alias = str_alias + self.var_1bfa91a;
+        str_alias += self.var_1bfa91a;
     }
     self playsound(#"hash_52aaa9a4a2e71c73");
     self allowcrouch(1);
@@ -1150,7 +1150,7 @@ function function_82c1415f(var_291fc0f7, var_1f8fbe0b = 0) {
     level endon(#"end_game");
     var_e830c896 = function_183c691b(var_1f8fbe0b);
     duration = function_b6e62bc1();
-    duration = duration / 2;
+    duration /= 2;
     level thread function_c88e13b1(duration);
     if (!isdefined(level.var_f3901984)) {
         if (var_1f8fbe0b) {

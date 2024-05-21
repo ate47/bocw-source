@@ -34,17 +34,19 @@ function set_enabled(enabled, on_damage = 0, var_895878e1 = 3) {
     aiutility::removeaioverridedamagecallback(self, &function_4ad903f4);
 }
 
-// Namespace snipercam/snipercam
-// Params 2, eflags: 0x0
-// Checksum 0xfdb66e17, Offset: 0x2c0
-// Size: 0x64
-function function_5d276f5b(var_895878e1, victim) {
-    /#
+/#
+
+    // Namespace snipercam/snipercam
+    // Params 2, eflags: 0x0
+    // Checksum 0xfdb66e17, Offset: 0x2c0
+    // Size: 0x64
+    function function_5d276f5b(var_895878e1, victim) {
         player = getplayers()[0];
         victim.var_ca3bd64e = var_895878e1;
         victim thread function_856a28c3(0, player);
-    #/
-}
+    }
+
+#/
 
 // Namespace snipercam/snipercam
 // Params 0, eflags: 0x6 linked

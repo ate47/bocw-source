@@ -224,7 +224,7 @@ function default_onspawnintermission(endgame) {
         self spawn(spawnpoint.origin, spawnpoint.angles);
     } else {
         /#
-            error("<unknown string>");
+            util::error("<unknown string>");
         #/
     }
     self callback::callback(#"hash_3e52a013a2eb0f16");
@@ -237,7 +237,7 @@ function default_onspawnintermission(endgame) {
 function default_gettimelimit() {
     /#
         if (getdvarfloat(#"timelimit_override", -1) != -1) {
-            return clamp(getdvarfloat(#"timelimit_override", -1), level.timelimitmin, level.timelimitmax);
+            return math::clamp(getdvarfloat(#"timelimit_override", -1), level.timelimitmin, level.timelimitmax);
         }
     #/
     return math::clamp(getgametypesetting(#"timelimit"), level.timelimitmin, level.timelimitmax);
@@ -250,10 +250,10 @@ function default_gettimelimit() {
 function default_getteamkillpenalty(einflictor, attacker, smeansofdeath, weapon) {
     teamkill_penalty = 1;
     if (killstreaks::is_killstreak_weapon(weapon)) {
-        teamkill_penalty = teamkill_penalty * killstreaks::get_killstreak_team_kill_penalty_scale(weapon);
+        teamkill_penalty *= killstreaks::get_killstreak_team_kill_penalty_scale(weapon);
     }
     if (isdefined(level.var_17ae20ae) && [[ level.var_17ae20ae ]](einflictor, attacker, smeansofdeath, weapon)) {
-        teamkill_penalty = teamkill_penalty * level.teamkillpenaltymultiplier;
+        teamkill_penalty *= level.teamkillpenaltymultiplier;
     }
     return teamkill_penalty;
 }
@@ -266,7 +266,7 @@ function default_getteamkillscore(einflictor, attacker, smeansofdeath, weapon) {
     teamkill_score = attacker rank::getscoreinfovalue("team_kill");
     if (isdefined(level.var_17ae20ae) && [[ level.var_17ae20ae ]](einflictor, attacker, smeansofdeath, weapon)) {
         teamkill_score = attacker rank::getscoreinfovalue("kill");
-        teamkill_score = teamkill_score * level.teamkillscoremultiplier;
+        teamkill_score *= level.teamkillscoremultiplier;
     }
     return int(teamkill_score);
 }

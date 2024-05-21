@@ -159,7 +159,7 @@ function function_d4a86caf() {
                 }
                 if (activate) {
                     function_4acf40a(trap, 1);
-                    trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
+                    trap.var_eb9d64bb += 5000;
                     namespace_1e25ad94::debugmsg("Paging IN killzone trap at:" + trap.origin);
                 }
                 continue;

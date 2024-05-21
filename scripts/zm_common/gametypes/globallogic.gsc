@@ -1013,7 +1013,7 @@ function removedisconnectedplayerfromplacement() {
     level.placement[#"all"][numplayers - 1] = undefined;
     assert(level.placement[#"all"].size == numplayers - 1);
     /#
-        assertproperplacement();
+        globallogic_utils::assertproperplacement();
     #/
     updateteamplacement();
     if (level.teambased) {
@@ -1053,7 +1053,7 @@ function updateplacement() {
     }
     level.placement[#"all"] = placementall;
     /#
-        assertproperplacement();
+        globallogic_utils::assertproperplacement();
     #/
     updateteamplacement();
 }
@@ -1131,7 +1131,7 @@ function sortdeadplayers(team) {
 function totalalivecount() {
     count = 0;
     foreach (team, _ in level.teams) {
-        count = count + function_a1ef346b(team).size;
+        count += function_a1ef346b(team).size;
     }
     return count;
 }
@@ -1143,7 +1143,7 @@ function totalalivecount() {
 function totalplayerlives() {
     count = 0;
     foreach (team, _ in level.teams) {
-        count = count + level.playerlives[team];
+        count += level.playerlives[team];
     }
     return count;
 }
@@ -1574,7 +1574,7 @@ function callback_startgametype() {
     }
     level.inprematchperiod = 1;
     if (level.prematchperiod > 2) {
-        level.prematchperiod = level.prematchperiod + randomfloat(4) - 2;
+        level.prematchperiod += randomfloat(4) - 2;
     }
     if (!isdefined(level.graceperiod)) {
         level.graceperiod = 15;
@@ -1621,20 +1621,22 @@ function callback_startgametype() {
     #/
 }
 
-// Namespace globallogic/globallogic
-// Params 0, eflags: 0x0
-// Checksum 0x5756a867, Offset: 0x6538
-// Size: 0x50
-function forcedebughostmigration() {
-    /#
+/#
+
+    // Namespace globallogic/globallogic
+    // Params 0, eflags: 0x0
+    // Checksum 0x5756a867, Offset: 0x6538
+    // Size: 0x50
+    function forcedebughostmigration() {
         while (true) {
-            waittillhostmigrationdone();
+            hostmigration::waittillhostmigrationdone();
             wait(60);
             starthostmigration();
-            waittillhostmigrationdone();
+            hostmigration::waittillhostmigrationdone();
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace globallogic/globallogic
 // Params 4, eflags: 0x2 linked

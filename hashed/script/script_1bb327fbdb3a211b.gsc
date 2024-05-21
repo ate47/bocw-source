@@ -876,48 +876,47 @@ function function_904d21fd() {
     }
 }
 
-// Namespace namespace_8a08914c/namespace_cc6c4729
-// Params 0, eflags: 0x0
-// Checksum 0xe33e73e0, Offset: 0x40c0
-// Size: 0x74
-function function_cd7a3de4() {
-    /#
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_custom_devgui_callback(&cmd);
-    #/
-}
+/#
 
-// Namespace namespace_8a08914c/namespace_cc6c4729
-// Params 1, eflags: 0x0
-// Checksum 0x8bfa4af5, Offset: 0x4140
-// Size: 0x22a
-function cmd(cmd) {
-    /#
+    // Namespace namespace_8a08914c/namespace_cc6c4729
+    // Params 0, eflags: 0x0
+    // Checksum 0xe33e73e0, Offset: 0x40c0
+    // Size: 0x74
+    function function_cd7a3de4() {
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        zm_devgui::add_custom_devgui_callback(&cmd);
+    }
+
+    // Namespace namespace_8a08914c/namespace_cc6c4729
+    // Params 1, eflags: 0x0
+    // Checksum 0x8bfa4af5, Offset: 0x4140
+    // Size: 0x22a
+    function cmd(cmd) {
         switch (cmd) {
         case #"hash_649635ef22bf36d8":
-            level set(#"hash_3b34b6b1b8c07116");
-            level function_7df6bb60(#"hash_2d5a3bb1a97e6bcc", 1);
+            level flag::set(#"hash_3b34b6b1b8c07116");
+            level zm_ui_inventory::function_7df6bb60(#"hash_2d5a3bb1a97e6bcc", 1);
             level thread function_f9447d48(self);
-            level set("<unknown string>" + #"hash_45b04d88564a1cd", 0);
-            var_3bc263c7 = get("<unknown string>");
-            var_1f3c6d19 = get(var_3bc263c7.target);
+            level clientfield::set("<unknown string>" + #"hash_45b04d88564a1cd", 0);
+            var_3bc263c7 = struct::get("<unknown string>");
+            var_1f3c6d19 = struct::get(var_3bc263c7.target);
             if (isdefined(var_1f3c6d19.var_f863218)) {
                 var_1f3c6d19.var_f863218 delete();
             }
             break;
         case #"hash_649638ef22bf3bf1":
-            level set(#"hash_377409bcba0102a7");
-            level function_7df6bb60(#"hash_2d5a3eb1a97e70e5", 1);
+            level flag::set(#"hash_377409bcba0102a7");
+            level zm_ui_inventory::function_7df6bb60(#"hash_2d5a3eb1a97e70e5", 1);
             level thread function_75bec488(self);
             break;
         case #"hash_649637ef22bf3a3e":
-            level set(#"hash_6eaa2d1db393bd70");
-            level function_7df6bb60(#"hash_2d5a3db1a97e6f32", 1);
+            level flag::set(#"hash_6eaa2d1db393bd70");
+            level zm_ui_inventory::function_7df6bb60(#"hash_2d5a3db1a97e6f32", 1);
             level thread function_da57dd7c(self);
             break;
         }
-    #/
-}
+    }
 
+#/

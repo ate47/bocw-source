@@ -1174,10 +1174,10 @@ function function_d342796e(var_7382ea8b, n_delay, var_67fee570 = 0, var_299a320 
         }
         dialogflags = 0;
         if (var_299a320) {
-            dialogflags = dialogflags | 2;
+            dialogflags |= 2;
         }
         if (var_b9582129) {
-            dialogflags = dialogflags | 4;
+            dialogflags |= 4;
         }
         self.isspeaking = 1;
         self.var_5b6ebfd0 = !var_299a320;

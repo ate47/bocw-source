@@ -220,7 +220,7 @@ function function_50a86206(params) {
         self.var_fc782c29 = 0;
         self.var_b4ca9f11 = gettime() + 2000;
     }
-    self.var_fc782c29 = self.var_fc782c29 + params.idamage;
+    self.var_fc782c29 += params.idamage;
     function_dbc638a8(self);
     if (params.smeansofdeath === "MOD_BURNED") {
         self.var_d444767 = gettime();
@@ -356,7 +356,7 @@ function function_29c1ba76(*einflictor, eattacker, idamage, *idflags, smeansofde
     if (namespace_81245006::hasarmor(self) && (shitloc === "MOD_PROJECTILE_SPLASH" || shitloc === "MOD_GRENADE_SPLASH" || shitloc == "MOD_EXPLOSIVE")) {
         var_3cddb028 = 0.5 * vdir;
         if (isdefined(level.var_56f626bc)) {
-            var_3cddb028 = var_3cddb028 * [[ level.var_56f626bc ]](self, psoffsettime, vpoint);
+            var_3cddb028 *= [[ level.var_56f626bc ]](self, psoffsettime, vpoint);
         }
         var_31e96b81 = int(var_3cddb028);
         foreach (weakpoint in self.var_5ace757d) {
@@ -377,7 +377,7 @@ function function_29c1ba76(*einflictor, eattacker, idamage, *idflags, smeansofde
         var_ebcff177 = 3;
         vdir = 0.5 * vdir;
         if (isdefined(level.var_56f626bc)) {
-            vdir = vdir * [[ level.var_56f626bc ]](self, psoffsettime, vpoint);
+            vdir *= [[ level.var_56f626bc ]](self, psoffsettime, vpoint);
         }
         namespace_81245006::function_ef87b7e8(weakpoint, vdir);
         if (namespace_81245006::function_f29756fe(weakpoint) === 3 && isdefined(weakpoint.var_f371ebb0)) {
@@ -389,7 +389,7 @@ function function_29c1ba76(*einflictor, eattacker, idamage, *idflags, smeansofde
         var_ebcff177 = 2;
     }
     if (isdefined(level.var_1b01acb4)) {
-        vdir = vdir * [[ level.var_1b01acb4 ]](self, psoffsettime, vpoint);
+        vdir *= [[ level.var_1b01acb4 ]](self, psoffsettime, vpoint);
     }
     return {#damage:vdir, #weakpoint:weakpoint, #var_ebcff177:var_ebcff177};
 }
@@ -551,7 +551,7 @@ function private shoot_bolt_wait(entity) {
     if (!enemy scene::function_c935c42()) {
         target_velocity = enemy getvelocity();
         if (isplayer(enemy)) {
-            target_pos = target_pos + (0, 0, -12);
+            target_pos += (0, 0, -12);
             if (enemy isinvehicle()) {
                 target_velocity = enemy getvehicleoccupied() getvelocity();
             }
@@ -563,13 +563,13 @@ function private shoot_bolt_wait(entity) {
     }
     velocity = target_pos - source_pos;
     var_cfca9f29 = length(velocity) / 800;
-    target_pos = target_pos + target_velocity * var_cfca9f29 * randomfloatrange(0, 1);
+    target_pos += target_velocity * var_cfca9f29 * randomfloatrange(0, 1);
     /#
         recordsphere(target_pos, 10, (0, 1, 0), "<unknown string>");
     #/
     velocity = target_pos - source_pos;
     velocity = vectornormalize(velocity);
-    velocity = velocity * 800;
+    velocity *= 800;
     bolt = entity magicmissile(getweapon(#"hash_28832732f6432c98"), source_pos, velocity);
     if (!isdefined(bolt)) {
         return;

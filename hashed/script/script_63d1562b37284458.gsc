@@ -401,7 +401,7 @@ function private function_c4035adb(zipline) {
 // Checksum 0xc036ea1c, Offset: 0x16a8
 // Size: 0x9c
 function private function_33111d8d(inuse) {
-    self.inuse = self.inuse + (inuse ? 1 : -1);
+    self.inuse += inuse ? 1 : -1;
     assert(self.inuse >= 0 && self.inuse <= 4);
     array::thread_all(getplayers(), &function_c4035adb, self);
 }
@@ -458,17 +458,18 @@ function function_c54ca80d(var_5da09c55) {
     }
 }
 
-// Namespace namespace_9cf4c697/namespace_9cf4c697
-// Params 0, eflags: 0x0
-// Checksum 0x323d2ad4, Offset: 0x1970
-// Size: 0x39c
-function function_be9add5() {
-    /#
+/#
+
+    // Namespace namespace_9cf4c697/namespace_9cf4c697
+    // Params 0, eflags: 0x0
+    // Checksum 0x323d2ad4, Offset: 0x1970
+    // Size: 0x39c
+    function function_be9add5() {
         if (!getdvarint(#"hash_13a9fb4be8e86e13", 0)) {
             return;
         }
         ziplines = level.var_e02fab68;
-        mapname = get_map_name();
+        mapname = util::get_map_name();
         adddebugcommand("<unknown string>" + mapname + "<unknown string>");
         while (getdvarint(#"hash_13a9fb4be8e86e13", 0)) {
             waitframe(1);
@@ -492,6 +493,6 @@ function function_be9add5() {
                 }
             }
         }
-    #/
-}
+    }
 
+#/

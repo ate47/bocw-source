@@ -390,7 +390,7 @@ function function_6b15092(aat_name, damage, victim) {
     case #"ammomod_cryofreeze_3":
     case #"ammomod_cryofreeze_2":
         if (is_true(victim.var_958cf9c5)) {
-            damage = damage + damage * 0.25;
+            damage += damage * 0.25;
         }
         break;
     }

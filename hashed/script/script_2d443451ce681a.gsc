@@ -492,7 +492,7 @@ function private function_66d43d96() {
             point2d = self.var_11149e48.path.pathpoints[self.var_11149e48.path.index];
             point2d = (point2d[0], point2d[1], self.origin[2]);
             if (distancesquared(point2d, self.origin) < sqr(16)) {
-                self.var_11149e48.path.index = self.var_11149e48.path.index + 1;
+                self.var_11149e48.path.index += 1;
                 continue;
             }
             break;

@@ -83,7 +83,7 @@ function private preinit() {
     callback::on_connect(&function_3ba26955);
     callback::on_disconnect(&on_disconnect);
     /#
-        init_dvar(#"hash_26af2f9714c95db1", 0, &function_452938ed);
+        util::init_dvar(#"hash_26af2f9714c95db1", 0, &function_452938ed);
     #/
     if (!isdefined(level.var_75b29eed)) {
         level.var_75b29eed = new class_c6c0e94();
@@ -586,7 +586,7 @@ function check_point_in_enabled_zone(origin, zone_is_active, player_zones, playe
 function round_up_to_ten(score) {
     new_score = score - score % 10;
     if (new_score < score) {
-        new_score = new_score + 10;
+        new_score += 10;
     }
     return new_score;
 }
@@ -599,7 +599,7 @@ function round_up_score(score, value = 5) {
     score = int(score);
     new_score = score - score % value;
     if (new_score < score) {
-        new_score = new_score + value;
+        new_score += value;
     }
     return new_score;
 }
@@ -609,7 +609,7 @@ function round_up_score(score, value = 5) {
 // Checksum 0xb6555ec0, Offset: 0x2500
 // Size: 0x32
 function halve_score(n_score) {
-    n_score = n_score / 2;
+    n_score /= 2;
     n_score = round_up_score(n_score);
     return n_score;
 }
@@ -778,7 +778,7 @@ function generated_radius_attract_positions(forward, offset, num_positions, attr
     self endon(#"death");
     failed = 0;
     degs_per_pos = 360 / num_positions;
-    for (i = offset; i < 360 + offset; i = i + degs_per_pos) {
+    for (i = offset; i < 360 + offset; i += degs_per_pos) {
         altforward = forward * attract_radius;
         rotated_forward = (cos(i) * altforward[0] - sin(i) * altforward[1], sin(i) * altforward[0] + cos(i) * altforward[1], altforward[2]);
         if (isdefined(level.poi_positioning_func)) {
@@ -827,12 +827,13 @@ function generated_radius_attract_positions(forward, offset, num_positions, attr
     return failed;
 }
 
-// Namespace zm_utility/zm_utility
-// Params 0, eflags: 0x0
-// Checksum 0x7657a1cc, Offset: 0x31e0
-// Size: 0x98
-function debug_draw_attractor_positions() {
-    /#
+/#
+
+    // Namespace zm_utility/zm_utility
+    // Params 0, eflags: 0x0
+    // Checksum 0x7657a1cc, Offset: 0x31e0
+    // Size: 0x98
+    function debug_draw_attractor_positions() {
         while (true) {
             while (!isdefined(self.attractor_positions)) {
                 waitframe(1);
@@ -846,15 +847,13 @@ function debug_draw_attractor_positions() {
                 return;
             }
         }
-    #/
-}
+    }
 
-// Namespace zm_utility/zm_utility
-// Params 0, eflags: 0x0
-// Checksum 0xdb8cb23a, Offset: 0x3280
-// Size: 0x98
-function debug_draw_claimed_attractor_positions() {
-    /#
+    // Namespace zm_utility/zm_utility
+    // Params 0, eflags: 0x0
+    // Checksum 0xdb8cb23a, Offset: 0x3280
+    // Size: 0x98
+    function debug_draw_claimed_attractor_positions() {
         while (true) {
             while (!isdefined(self.claimed_attractor_positions)) {
                 waitframe(1);
@@ -868,8 +867,9 @@ function debug_draw_claimed_attractor_positions() {
                 return;
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_utility/zm_utility
 // Params 2, eflags: 0x2 linked
@@ -901,7 +901,7 @@ function get_zombie_point_of_interest(origin, poi_array) {
             continue;
         }
         dist = distancesquared(origin, ent_array[i].origin);
-        dist = dist - ent_array[i].added_poi_value;
+        dist -= ent_array[i].added_poi_value;
         if (isdefined(ent_array[i].poi_radius)) {
             curr_radius = ent_array[i].poi_radius;
         }
@@ -1641,7 +1641,7 @@ function function_3d70ba7a(origin, players) {
                 foreach (attacker in self.var_c2dcab66) {
                     var_76fc2ac9 = (gettime() - attacker.time) * 0.001;
                     if (isdefined(attacker.player) && isdefined(self.var_448aebc7[attacker.player getentitynumber()])) {
-                        var_edbf2d06 = var_edbf2d06 + "<unknown string>" + attacker.player getentitynumber() + "<unknown string>" + self.var_448aebc7[attacker.player getentitynumber()] + "<unknown string>" + var_76fc2ac9 + "<unknown string>";
+                        var_edbf2d06 += "<unknown string>" + attacker.player getentitynumber() + "<unknown string>" + self.var_448aebc7[attacker.player getentitynumber()] + "<unknown string>" + var_76fc2ac9 + "<unknown string>";
                     }
                 }
                 record3dtext(var_edbf2d06, self.origin + (0, 0, -20), (1, 1, 1), "<unknown string>", self, 0.5);
@@ -1886,7 +1886,7 @@ function get_number_of_valid_players() {
     num_player_valid = 0;
     for (i = 0; i < players.size; i++) {
         if (is_player_valid(players[i])) {
-            num_player_valid = num_player_valid + 1;
+            num_player_valid += 1;
         }
     }
     return num_player_valid;
@@ -1973,7 +1973,7 @@ function non_destroyed_bar_board_order(origin, chunks) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x9a7604c, Offset: 0x72c0
 // Size: 0x494
-function non_destroyed_grate_order(*origin, chunks_grate) {
+function vehicle_outline_watcher(*origin, chunks_grate) {
     grate_order = [];
     grate_order1 = [];
     grate_order2 = [];
@@ -2145,7 +2145,7 @@ function get_closest_non_destroyed_chunk(origin, barrier, barrier_chunks) {
     } else if (isdefined(chunks)) {
         return non_destroyed_bar_board_order(origin, chunks);
     } else if (isdefined(chunks_grate)) {
-        return non_destroyed_grate_order(origin, chunks_grate);
+        return vehicle_outline_watcher(origin, chunks_grate);
     }
     return undefined;
 }
@@ -2548,12 +2548,13 @@ function play_loopsound_on_ent(ref) {
     self playsound(level.zombie_sounds[ref]);
 }
 
-// Namespace zm_utility/zm_utility
-// Params 2, eflags: 0x0
-// Checksum 0x1ce5717c, Offset: 0x8fb0
-// Size: 0xa6
-function draw_line_ent_to_ent(ent1, ent2) {
-    /#
+/#
+
+    // Namespace zm_utility/zm_utility
+    // Params 2, eflags: 0x0
+    // Checksum 0x1ce5717c, Offset: 0x8fb0
+    // Size: 0xa6
+    function draw_line_ent_to_ent(ent1, ent2) {
         if (getdvarint(#"zombie_debug", 0) != 1) {
             return;
         }
@@ -2563,15 +2564,13 @@ function draw_line_ent_to_ent(ent1, ent2) {
             line(ent1.origin, ent2.origin);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace zm_utility/zm_utility
-// Params 3, eflags: 0x0
-// Checksum 0xafc60572, Offset: 0x9060
-// Size: 0xbe
-function draw_line_ent_to_pos(ent, pos, end_on) {
-    /#
+    // Namespace zm_utility/zm_utility
+    // Params 3, eflags: 0x0
+    // Checksum 0xafc60572, Offset: 0x9060
+    // Size: 0xbe
+    function draw_line_ent_to_pos(ent, pos, end_on) {
         if (getdvarint(#"zombie_debug", 0) != 1) {
             return;
         }
@@ -2584,27 +2583,23 @@ function draw_line_ent_to_pos(ent, pos, end_on) {
             line(ent.origin, pos);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace zm_utility/zm_utility
-// Params 1, eflags: 0x0
-// Checksum 0xda895205, Offset: 0x9128
-// Size: 0x5c
-function debug_print(msg) {
-    /#
+    // Namespace zm_utility/zm_utility
+    // Params 1, eflags: 0x0
+    // Checksum 0xda895205, Offset: 0x9128
+    // Size: 0x5c
+    function debug_print(msg) {
         if (getdvarint(#"zombie_debug", 0) > 0) {
             println("<unknown string>" + msg);
         }
-    #/
-}
+    }
 
-// Namespace zm_utility/zm_utility
-// Params 3, eflags: 0x0
-// Checksum 0xa5c0153a, Offset: 0x9190
-// Size: 0x98
-function debug_blocker(pos, rad, height) {
-    /#
+    // Namespace zm_utility/zm_utility
+    // Params 3, eflags: 0x0
+    // Checksum 0xa5c0153a, Offset: 0x9190
+    // Size: 0x98
+    function debug_blocker(pos, rad, height) {
         self notify(#"stop_debug_blocker");
         self endon(#"stop_debug_blocker");
         for (;;) {
@@ -2614,15 +2609,13 @@ function debug_blocker(pos, rad, height) {
             waitframe(1);
             drawcylinder(pos, rad, height);
         }
-    #/
-}
+    }
 
-// Namespace zm_utility/zm_utility
-// Params 3, eflags: 0x0
-// Checksum 0x51e02f6, Offset: 0x9230
-// Size: 0x234
-function drawcylinder(pos, rad, height) {
-    /#
+    // Namespace zm_utility/zm_utility
+    // Params 3, eflags: 0x0
+    // Checksum 0x51e02f6, Offset: 0x9230
+    // Size: 0x234
+    function drawcylinder(pos, rad, height) {
         currad = rad;
         curheight = height;
         for (r = 0; r < 20; r++) {
@@ -2632,15 +2625,13 @@ function drawcylinder(pos, rad, height) {
             line(pos + (cos(theta) * currad, sin(theta) * currad, curheight), pos + (cos(theta2) * currad, sin(theta2) * currad, curheight));
             line(pos + (cos(theta) * currad, sin(theta) * currad, 0), pos + (cos(theta) * currad, sin(theta) * currad, curheight));
         }
-    #/
-}
+    }
 
-// Namespace zm_utility/zm_utility
-// Params 0, eflags: 0x0
-// Checksum 0x1e31f9e4, Offset: 0x9470
-// Size: 0x170
-function debug_attack_spots_taken() {
-    /#
+    // Namespace zm_utility/zm_utility
+    // Params 0, eflags: 0x0
+    // Checksum 0x1e31f9e4, Offset: 0x9470
+    // Size: 0x170
+    function debug_attack_spots_taken() {
         self notify(#"stop_debug_breadcrumbs");
         self endon(#"stop_debug_breadcrumbs");
         while (true) {
@@ -2661,25 +2652,24 @@ function debug_attack_spots_taken() {
             msg = "<unknown string>" + count + "<unknown string>" + self.attack_spots_taken.size;
             print3d(self.origin, msg);
         }
-    #/
-}
+    }
 
-// Namespace zm_utility/zm_utility
-// Params 2, eflags: 0x0
-// Checksum 0xa882a8b, Offset: 0x95e8
-// Size: 0xa6
-function float_print3d(msg, time) {
-    /#
+    // Namespace zm_utility/zm_utility
+    // Params 2, eflags: 0x0
+    // Checksum 0xa882a8b, Offset: 0x95e8
+    // Size: 0xa6
+    function float_print3d(msg, time) {
         self endon(#"death");
         time = gettime() + time * 1000;
         offset = (0, 0, 72);
         while (gettime() < time) {
-            offset = offset + (0, 0, 2);
+            offset += (0, 0, 2);
             print3d(self.origin + offset, msg, (1, 1, 1));
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_utility/zm_utility
 // Params 2, eflags: 0x2 linked
@@ -4748,12 +4738,13 @@ function function_ff902863(var_6cc77d4e = level.var_e63703cd[n_obj_id].var_6cc77
     function_92d1707f(#"hash_57cacfb95186806d", s_objective);
 }
 
-// Namespace zm_utility/zm_utility
-// Params 1, eflags: 0x0
-// Checksum 0x93f5ab31, Offset: 0xf650
-// Size: 0x14c
-function function_452938ed(params) {
-    /#
+/#
+
+    // Namespace zm_utility/zm_utility
+    // Params 1, eflags: 0x0
+    // Checksum 0x93f5ab31, Offset: 0xf650
+    // Size: 0x14c
+    function function_452938ed(params) {
         if (int(params.value)) {
             if (isarray(level.var_e63703cd)) {
                 println("<unknown string>" + level.var_e63703cd.size + "<unknown string>");
@@ -4763,8 +4754,9 @@ function function_452938ed(params) {
             }
             setdvar(params.name, 0);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_utility/zm_utility
 // Params 0, eflags: 0x2 linked
@@ -5281,9 +5273,9 @@ function function_9f7fd525(var_c61df77f = "zombie_location", a_str_zones, var_a6
 function function_7618c8ef(var_6e4c63cc = 0.0667) {
     n_damage_multiplier = 1;
     if (is_true(self.ignore_health_regen_delay)) {
-        n_damage_multiplier = n_damage_multiplier + 1.25;
+        n_damage_multiplier += 1.25;
         if (self hasperk(#"hash_7f98b3dd3cce95aa")) {
-            n_damage_multiplier = n_damage_multiplier + 0.75;
+            n_damage_multiplier += 0.75;
         }
     }
     var_16e6b8ea = int(self.maxhealth * var_6e4c63cc * n_damage_multiplier);
@@ -5377,7 +5369,7 @@ function function_e3025ca5() {
 // Size: 0x1a2
 function get_round_number(var_ec585b8 = 0) {
     if (is_survival()) {
-        var_88710b09 = zombie_utility::function_d2dfacfd(#"hash_6ba259e60f87bb15");
+        var_88710b09 = zombie_utility::get_zombie_var(#"hash_6ba259e60f87bb15");
         if (var_ec585b8 > 0) {
             n_round_number = isdefined(var_88710b09[var_ec585b8 - 1].round) ? var_88710b09[var_ec585b8 - 1].round : 0;
         } else if (level.var_b48509f9 - 1 >= var_88710b09.size) {
@@ -5691,7 +5683,7 @@ function function_14bad487(trap_prop, total_time, iteration_time, angle) {
     }
     for (i = 0; i < iterations; i++) {
         trap_prop rotateroll(start_roll + current_delta, iteration_time);
-        current_delta = current_delta * -1;
+        current_delta *= -1;
         wait(iteration_time);
     }
     trap_prop.angles = original_angles;

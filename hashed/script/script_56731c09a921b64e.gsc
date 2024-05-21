@@ -2211,7 +2211,7 @@ function function_e5b5756e() {
         }
         level.var_1da41b83++;
         if (level.var_1da41b83 >= 50) {
-            level.var_b96c6e68 = level.var_b96c6e68 + 1;
+            level.var_b96c6e68 += 1;
         }
     }
 }
@@ -2249,7 +2249,7 @@ function function_e7547fea(var_cbe471c0, var_6ce69257 = 0) {
     if (isdefined(var_37e764ff)) {
         var_28f1804e = self namespace_a0d533d1::function_2b83d3ff(var_37e764ff);
         if (function_98e73a50(var_28f1804e)) {
-            var_cbe471c0 = var_cbe471c0 + "_upgraded";
+            var_cbe471c0 += "_upgraded";
         }
         var_c07b2ded = getweapon(var_cbe471c0);
         var_c07b2ded = function_eeddea9a(var_c07b2ded, function_9f1cc9a9(var_28f1804e));
@@ -2634,10 +2634,10 @@ function function_6406aefd(player, weapon) {
             trace = bullettrace(var_ddd89fe0, var_59cce13c, 1, e_target);
             e_target = trace[#"entity"];
             if (isactor(e_target) && isalive(e_target) || is_true(e_target.var_4165b2d7)) {
-                trace_distance = trace_distance - distance(var_ddd89fe0, trace[#"position"]);
+                trace_distance -= distance(var_ddd89fe0, trace[#"position"]);
                 e_target dodamage(n_damage, trace[#"position"], player, undefined, trace[#"hitloc"], "MOD_RIFLE_BULLET", 0, weapon);
             }
-            trace_distance = trace_distance - 20;
+            trace_distance -= 20;
             waitframe(1);
         } while (trace_distance > 5 && trace[#"fraction"] < 1);
         triggers = getentarray("trigger_damage", "classname");
@@ -2665,7 +2665,7 @@ function function_c57b04f7(player) {
         var_1e65372b = player getplayercamerapos();
         self.angles = player getplayerangles();
         if (self.beam_length < 800) {
-            self.beam_length = self.beam_length + 1200 * float(function_60d95f53()) / 1000;
+            self.beam_length += 1200 * float(function_60d95f53()) / 1000;
         }
         self.move_dir = anglestoforward(self.angles);
         v_target_pos = var_1e65372b + self.move_dir * self.beam_length;
@@ -2744,7 +2744,7 @@ function function_dd8805e4(player) {
     }
     self clientfield::set("" + #"hash_4bd7cbe3f7fd44dd", 3);
     while (isdefined(self) && self.beam_length > 0) {
-        self.beam_length = self.beam_length - 1200 * float(function_60d95f53()) / 1000;
+        self.beam_length -= 1200 * float(function_60d95f53()) / 1000;
         waitframe(1);
     }
     if (isdefined(self)) {
@@ -2801,40 +2801,37 @@ function function_83d01300() {
     target_set(self);
 }
 
-// Namespace namespace_1e7573ec/namespace_1e7573ec
-// Params 1, eflags: 0x0
-// Checksum 0x530f27a0, Offset: 0x13c80
-// Size: 0x4c
-function function_fc9aff93(string) {
-    /#
+/#
+
+    // Namespace namespace_1e7573ec/namespace_1e7573ec
+    // Params 1, eflags: 0x0
+    // Checksum 0x530f27a0, Offset: 0x13c80
+    // Size: 0x4c
+    function function_fc9aff93(string) {
         if (getdvarint(#"hash_2ce8880e12d4414b", 0)) {
             println(string);
         }
-    #/
-}
+    }
 
-// Namespace namespace_1e7573ec/namespace_1e7573ec
-// Params 0, eflags: 0x0
-// Checksum 0x34bb5123, Offset: 0x13cd8
-// Size: 0xa4
-function function_37597f29() {
-    /#
-        level_name = get_map_name();
+    // Namespace namespace_1e7573ec/namespace_1e7573ec
+    // Params 0, eflags: 0x0
+    // Checksum 0x34bb5123, Offset: 0x13cd8
+    // Size: 0xa4
+    function function_37597f29() {
+        level_name = util::get_map_name();
         if (level_name === "<unknown string>") {
-            add_debug_command("<unknown string>");
-            add_debug_command("<unknown string>");
-            add_debug_command("<unknown string>");
-            add_custom_devgui_callback(&cmd);
+            util::add_debug_command("<unknown string>");
+            util::add_debug_command("<unknown string>");
+            util::add_debug_command("<unknown string>");
+            zm_devgui::add_custom_devgui_callback(&cmd);
         }
-    #/
-}
+    }
 
-// Namespace namespace_1e7573ec/namespace_1e7573ec
-// Params 1, eflags: 0x0
-// Checksum 0x75eeeee6, Offset: 0x13d88
-// Size: 0xda
-function cmd(cmd) {
-    /#
+    // Namespace namespace_1e7573ec/namespace_1e7573ec
+    // Params 1, eflags: 0x0
+    // Checksum 0x75eeeee6, Offset: 0x13d88
+    // Size: 0xda
+    function cmd(cmd) {
         switch (cmd) {
         case #"hash_624c20b760e6e5c6":
             function_a7c4f468(#"mega_barrel_modkit_diffusion_beam_item_t9");
@@ -2848,15 +2845,13 @@ function cmd(cmd) {
         default:
             break;
         }
-    #/
-}
+    }
 
-// Namespace namespace_1e7573ec/namespace_1e7573ec
-// Params 1, eflags: 0x0
-// Checksum 0xeafba991, Offset: 0x13e70
-// Size: 0x11c
-function function_a7c4f468(weapon_name) {
-    /#
+    // Namespace namespace_1e7573ec/namespace_1e7573ec
+    // Params 1, eflags: 0x0
+    // Checksum 0xeafba991, Offset: 0x13e70
+    // Size: 0x11c
+    function function_a7c4f468(weapon_name) {
         player = getplayers()[0];
         direction = player getplayerangles();
         direction_vec = anglestoforward(direction);
@@ -2865,15 +2860,13 @@ function function_a7c4f468(weapon_name) {
         direction_vec = (direction_vec[0] * scale, direction_vec[1] * scale, direction_vec[2] * scale);
         trace = bullettrace(eye, eye + direction_vec, 0, undefined);
         function_43a91a9f(trace[#"position"], weapon_name);
-    #/
-}
+    }
 
-// Namespace namespace_1e7573ec/namespace_1e7573ec
-// Params 0, eflags: 0x0
-// Checksum 0x8c48fe68, Offset: 0x13f98
-// Size: 0x78
-function function_8822b5d3() {
-    /#
+    // Namespace namespace_1e7573ec/namespace_1e7573ec
+    // Params 0, eflags: 0x0
+    // Checksum 0x8c48fe68, Offset: 0x13f98
+    // Size: 0x78
+    function function_8822b5d3() {
         self endon(#"death");
         var_17b7891d = "<unknown string>" + "<unknown string>";
         self notify(var_17b7891d);
@@ -2882,6 +2875,6 @@ function function_8822b5d3() {
             wait(20);
             self thread function_1340d9d6(#"hash_1e6feff7436a5081");
         }
-    #/
-}
+    }
 
+#/

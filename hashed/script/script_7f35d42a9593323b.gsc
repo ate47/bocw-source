@@ -207,7 +207,7 @@ function private function_e26728bc(entity) {
     var_3e3a3402 = entity.enemy.origin;
     v_velocity = entity.enemy getvelocity();
     var_b6897326 = randomfloatrange(1, 2.5);
-    var_3e3a3402 = var_3e3a3402 + v_velocity * var_b6897326;
+    var_3e3a3402 += v_velocity * var_b6897326;
     var_736d384 = math::randomsign() * randomint(48);
     var_6b1c9b42 = math::randomsign() * randomint(48);
     target_pos = var_3e3a3402 + (var_736d384, var_6b1c9b42, 0);
@@ -217,7 +217,7 @@ function private function_e26728bc(entity) {
     var_8598bad6 = entity gettagorigin("tag_gun_barrel2") + launch_offset;
     dist = distance(var_8598bad6, target_pos);
     velocity = dir * dist;
-    velocity = velocity + (0, 0, 120);
+    velocity += (0, 0, 120);
     val = 1;
     oldval = entity clientfield::get("mechz_115_gun_firing");
     if (oldval === val) {
@@ -916,7 +916,7 @@ function function_fd99ea48(mechz) {
     tick_rate = 0.25;
     if (!is_true(self.is_burning)) {
         self.is_burning = 1;
-        for (percentage = 0; percentage <= 1; percentage = percentage + tick_rate) {
+        for (percentage = 0; percentage <= 1; percentage += tick_rate) {
             self dodamage(250 * tick_rate, self.origin, mechz, undefined, undefined, "MOD_BURNED", 0);
             wait(1.5 * tick_rate);
         }
@@ -1233,9 +1233,9 @@ function function_679ee5b3(inflictor, attacker, damage, dflags, mod, weapon, *va
         if (isdefined(var_6dd5345c)) {
             damage_type = var_6dd5345c;
             if (damage_type == 3) {
-                dflags = dflags * 0.75;
+                dflags *= 0.75;
                 if (isdefined(level.var_1b01acb4)) {
-                    dflags = dflags * [[ level.var_1b01acb4 ]](self, var_fd90b0bb, damage);
+                    dflags *= [[ level.var_1b01acb4 ]](self, var_fd90b0bb, damage);
                 }
             }
         }
@@ -1273,7 +1273,7 @@ function private function_669e8e27(entity, weakpoint, attacker, damage, weapon, 
         if (isdefined(level.var_56f626bc)) {
             damage_mod = [[ level.var_56f626bc ]](entity, weapon, attacker);
         }
-        damage = damage * damage_mod;
+        damage *= damage_mod;
         namespace_81245006::function_ef87b7e8(weakpoint, damage);
         if (namespace_81245006::function_f29756fe(weakpoint) === 3 && isdefined(weakpoint.var_f371ebb0)) {
             destructserverutils::function_8475c53a(entity, weakpoint.var_f371ebb0);
@@ -1409,7 +1409,7 @@ function function_923942a7(var_a460aef2, aim_tag, var_40f25562 = 0.5) {
     }
     if (isdefined(var_a460aef2)) {
         var_b7ff6051 = anglestoright(angles);
-        origin = origin + var_b7ff6051 * var_a460aef2;
+        origin += var_b7ff6051 * var_a460aef2;
     }
     facing_vec = anglestoforward(angles);
     enemy = is_true(self.var_1fa24724) ? self.enemy : self.favoriteenemy;

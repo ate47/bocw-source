@@ -130,9 +130,9 @@ function private function_56f03b13(player) {
         for (index = 0; index < player.var_efc688f7.size; index++) {
             if (isdefined(player.var_efc688f7[index]) && player.var_efc688f7[index]) {
                 if (isdefined(var_4f1ec5c) && var_4f1ec5c != "") {
-                    var_4f1ec5c = var_4f1ec5c + ";";
+                    var_4f1ec5c += ";";
                 }
-                var_4f1ec5c = var_4f1ec5c + index;
+                var_4f1ec5c += index;
             }
         }
     }

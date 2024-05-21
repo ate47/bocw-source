@@ -338,12 +338,13 @@ function game_result(str_winning_team) {
     }
 }
 
-// Namespace ui/ui
-// Params 0, eflags: 0x4
-// Checksum 0x6ca45db9, Offset: 0x1630
-// Size: 0x196
-function private devgui_loop() {
-    /#
+/#
+
+    // Namespace ui/ui
+    // Params 0, eflags: 0x4
+    // Checksum 0x6ca45db9, Offset: 0x1630
+    // Size: 0x196
+    function private devgui_loop() {
         while (true) {
             wait(0.25);
             dvarstr = getdvarstring(#"hash_146e539b33582942", "<unknown string>");
@@ -352,7 +353,7 @@ function private devgui_loop() {
             }
             setdvar(#"hash_146e539b33582942", "<unknown string>");
             args = strtok(dvarstr, "<unknown string>");
-            host = gethostplayer();
+            host = util::gethostplayer();
             if (!isdefined(host)) {
                 continue;
             }
@@ -368,15 +369,13 @@ function private devgui_loop() {
                 break;
             }
         }
-    #/
-}
+    }
 
-// Namespace ui/ui
-// Params 2, eflags: 0x4
-// Checksum 0xab2d9f6a, Offset: 0x17d0
-// Size: 0xb4
-function private function_97f309cb(portraitid, var_e9f94d47) {
-    /#
+    // Namespace ui/ui
+    // Params 2, eflags: 0x4
+    // Checksum 0xab2d9f6a, Offset: 0x17d0
+    // Size: 0xb4
+    function private function_97f309cb(portraitid, var_e9f94d47) {
         if (!isdefined(var_e9f94d47)) {
             var_e9f94d47 = undefined;
         }
@@ -389,22 +388,20 @@ function private function_97f309cb(portraitid, var_e9f94d47) {
             return;
         }
         self luinotifyevent(#"offsite_comms_complete");
-    #/
-}
+    }
 
-// Namespace ui/ui
-// Params 1, eflags: 0x4
-// Checksum 0xad1af81d, Offset: 0x1890
-// Size: 0x6c
-function private function_f29c45f6(index) {
-    /#
+    // Namespace ui/ui
+    // Params 1, eflags: 0x4
+    // Checksum 0xad1af81d, Offset: 0x1890
+    // Size: 0x6c
+    function private function_f29c45f6(index) {
         if (!isdefined(index)) {
             index = 0;
         }
         if (isstring(index)) {
             index = int(index);
         }
-        self set_player_uimodel("<unknown string>", index);
-    #/
-}
+        self clientfield::set_player_uimodel("<unknown string>", index);
+    }
 
+#/

@@ -110,7 +110,7 @@ function function_1735c657(forced) {
     self clientfield::increment_to_player("exitFPS");
     self.doa.var_21eab413 = gettime() + 2500;
     /#
-        debugmsg("<unknown string>" + self.name + "<unknown string>" + gettime());
+        namespace_1e25ad94::debugmsg("<unknown string>" + self.name + "<unknown string>" + gettime());
     #/
     self.doa.infps = undefined;
     self namespace_7f5aeb59::function_fae39d88();
@@ -145,7 +145,7 @@ function function_1735c657(forced) {
     self setorigin(self.origin + (0, 0, 20));
     self notify(#"hash_5a8ee2526fb3775b");
     /#
-        debugmsg("<unknown string>" + self.name + "<unknown string>" + gettime());
+        namespace_1e25ad94::debugmsg("<unknown string>" + self.name + "<unknown string>" + gettime());
     #/
 }
 
@@ -170,7 +170,7 @@ function function_1f704cee(force = 0, faceangles = 1) {
     self notify("7f96f25ab02d6853");
     self endon("7f96f25ab02d6853");
     /#
-        debugmsg("<unknown string>" + self.name + "<unknown string>" + gettime());
+        namespace_1e25ad94::debugmsg("<unknown string>" + self.name + "<unknown string>" + gettime());
     #/
     self.doa.infps = 1;
     self.doa.var_4f3aee7b = force;
@@ -186,7 +186,7 @@ function function_1f704cee(force = 0, faceangles = 1) {
     }
     angles = (0, angles[1], 0);
     /#
-        debugmsg("<unknown string>" + angles + "<unknown string>" + v_player_velocity + "<unknown string>" + length(v_player_velocity));
+        namespace_1e25ad94::debugmsg("<unknown string>" + angles + "<unknown string>" + v_player_velocity + "<unknown string>" + length(v_player_velocity));
     #/
     if (is_true(self.doa.var_f583234e)) {
         self clientfield::set_to_player("toggleflashlight", 0);
@@ -215,7 +215,7 @@ function function_1f704cee(force = 0, faceangles = 1) {
             self unlink();
             self.doa.var_5d4bd96f delete();
             /#
-                debugmsg("<unknown string>" + self.angles);
+                namespace_1e25ad94::debugmsg("<unknown string>" + self.angles);
             #/
         }
     }

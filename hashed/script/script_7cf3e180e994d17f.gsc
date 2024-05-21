@@ -64,31 +64,30 @@ function private function_7c9b0132() {
     #/
 }
 
-// Namespace namespace_db2381c4/namespace_db2381c4
-// Params 1, eflags: 0x4
-// Checksum 0xfc2d6124, Offset: 0x658
-// Size: 0x34
-function private function_7db8d681(parms) {
-    /#
-        level.rc_car thread function_256335fe(parms.value);
-    #/
-}
+/#
 
-// Namespace namespace_db2381c4/namespace_db2381c4
-// Params 1, eflags: 0x4
-// Checksum 0x59a5bb9a, Offset: 0x698
-// Size: 0x184
-function private function_256335fe(value) {
-    /#
+    // Namespace namespace_db2381c4/namespace_db2381c4
+    // Params 1, eflags: 0x4
+    // Checksum 0xfc2d6124, Offset: 0x658
+    // Size: 0x34
+    function private function_7db8d681(parms) {
+        level.rc_car thread function_256335fe(parms.value);
+    }
+
+    // Namespace namespace_db2381c4/namespace_db2381c4
+    // Params 1, eflags: 0x4
+    // Checksum 0x59a5bb9a, Offset: 0x698
+    // Size: 0x184
+    function private function_256335fe(value) {
         self notify("<unknown string>");
         self endon("<unknown string>");
         wait(getdvarfloat(#"hash_6aa37454960fce7a", 2));
-        var_9ce32949 = self get("<unknown string>");
-        var_9ce32949 = var_9ce32949 & ~112;
+        var_9ce32949 = self clientfield::get("<unknown string>");
+        var_9ce32949 &= ~112;
         switch (value) {
         case 1:
             iprintlnbold("<unknown string>");
-            var_9ce32949 = var_9ce32949 | 16;
+            var_9ce32949 |= 16;
             break;
         case 2:
             iprintlnbold("<unknown string>");
@@ -99,9 +98,10 @@ function private function_256335fe(value) {
             var_9ce32949 = var_9ce32949 | 16 | 32 | 64;
             break;
         }
-        self set("<unknown string>", var_9ce32949);
-    #/
-}
+        self clientfield::set("<unknown string>", var_9ce32949);
+    }
+
+#/
 
 // Namespace namespace_db2381c4/namespace_db2381c4
 // Params 0, eflags: 0x2 linked
@@ -181,7 +181,7 @@ function function_85afc2fb() {
     if (!(var_9ce32949 & 1)) {
         return;
     }
-    var_9ce32949 = var_9ce32949 & ~14;
+    var_9ce32949 &= ~14;
     println("<unknown string>");
     self clientfield::set("clf_rccar_fxstate", var_9ce32949 & ~1);
 }
@@ -220,7 +220,7 @@ function function_323b6e10() {
     if (var_9ce32949 & 4 || var_9ce32949 & 128) {
         return;
     }
-    var_9ce32949 = var_9ce32949 & ~8;
+    var_9ce32949 &= ~8;
     println("<unknown string>");
     self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 4);
 }
@@ -246,7 +246,7 @@ function function_53bd0317() {
     if (var_9ce32949 & 8 || var_9ce32949 & 128) {
         return;
     }
-    var_9ce32949 = var_9ce32949 & ~4;
+    var_9ce32949 &= ~4;
     println("<unknown string>");
     self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 8);
 }
@@ -275,7 +275,7 @@ function function_6bd3950d(var_7737e6aa) {
     if (!isdefined(self.var_e32d3cab)) {
         self.var_e32d3cab = 100;
     }
-    self.var_e32d3cab = self.var_e32d3cab - var_7737e6aa;
+    self.var_e32d3cab -= var_7737e6aa;
     if (self.var_e32d3cab <= 0) {
         self function_fe8be1e0();
         return;
@@ -303,7 +303,7 @@ function function_fe8be1e0() {
     if (var_9ce32949 & 128) {
         return;
     }
-    var_9ce32949 = var_9ce32949 & ~126;
+    var_9ce32949 &= ~126;
     println("<unknown string>");
     self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 128);
 }

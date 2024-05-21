@@ -282,7 +282,7 @@ function function_7495bd30() {
             }
             continue;
         }
-        level.doa.var_2ad97fac = level.doa.var_2ad97fac - 8;
+        level.doa.var_2ad97fac -= 8;
         if (level.doa.var_2ad97fac < 0) {
             level.doa.var_2ad97fac = 0;
         }
@@ -424,7 +424,7 @@ function function_f7086924(var_64a23077) {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params 10, eflags: 0x2 linked
+// Params a, eflags: 0x2 linked
 // Checksum 0x4a65be0c, Offset: 0x1490
 // Size: 0x1b6
 function function_5982ca9d(spawndef, count = 10, targetpoint, radius = 0, generator, enemy, var_294cccb7, arena, groupid, expiresat) {
@@ -534,7 +534,7 @@ function function_7292bc() {
                 }
                 if (isdefined(queueitem.expiration) && time > queueitem.expiration) {
                     arrayremoveindex(level.doa.var_dcbded2, 0);
-                    level.doa.var_2b4e2465 = level.doa.var_2b4e2465 + queueitem.count;
+                    level.doa.var_2b4e2465 += queueitem.count;
                     queueitem = undefined;
                     continue;
                 }
@@ -550,7 +550,7 @@ function function_7292bc() {
                 idx = 0;
                 while (true) {
                     if (level.doa.var_dcbded2.size > idx && level.doa.var_dcbded2[idx].groupid === groupid) {
-                        sizeneeded = sizeneeded + level.doa.var_dcbded2[idx].count;
+                        sizeneeded += level.doa.var_dcbded2[idx].count;
                         level.doa.var_dcbded2[idx].groupid = undefined;
                         idx++;
                         continue;
@@ -574,9 +574,9 @@ function function_7292bc() {
             if (isdefined(ai)) {
                 /#
                     if (isdefined(ai)) {
-                        debugmsg("<unknown string>" + ai getentitynumber() + "<unknown string>" + [[ queueitem.spawndef ]]->getname() + "<unknown string>" + ai.origin);
+                        namespace_1e25ad94::debugmsg("<unknown string>" + ai getentitynumber() + "<unknown string>" + [[ queueitem.spawndef ]]->getname() + "<unknown string>" + ai.origin);
                     } else {
-                        debugmsg("<unknown string>" + [[ queueitem.spawndef ]]->getname());
+                        namespace_1e25ad94::debugmsg("<unknown string>" + [[ queueitem.spawndef ]]->getname());
                     }
                 #/
             }
@@ -622,7 +622,7 @@ function spawnai(spawnparams, spawnloc) {
             }
             var_6b57b559 = (getplayers().size - 1) * 0.1;
             if (var_6b57b559 > 0) {
-                ai.maxhealth = ai.maxhealth + int(ai.maxhealth * var_6b57b559);
+                ai.maxhealth += int(ai.maxhealth * var_6b57b559);
                 ai.health = ai.maxhealth;
             }
             spawnparams.var_64a23077 = undefined;

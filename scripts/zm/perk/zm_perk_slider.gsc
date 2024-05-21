@@ -196,7 +196,7 @@ function function_d2991c92(v_start_position) {
     self endon(#"death", #"hash_6939dd7af68cec");
     while (self issliding()) {
         n_distance = distance(v_start_position, self.origin);
-        self.var_f354086e = self.var_f354086e + n_distance;
+        self.var_f354086e += n_distance;
         if (self.var_f354086e >= 32) {
             nearbyzombies = self getenemiesinradius(self.origin, 64);
             nearbyzombies = arraysortclosest(nearbyzombies, self.origin);
@@ -268,7 +268,7 @@ function function_4d806c6a(var_a25d1f0 = 25, explosion_radius = 64, var_8b77e4de
     forward = anglestoforward(self.angles);
     forward = vectornormalize(forward);
     forward = vectorscale(forward, 64);
-    var_55f73ce6 = var_55f73ce6 + forward;
+    var_55f73ce6 += forward;
     var_c37cb40 = 1;
     switch (explosion_radius) {
     case 64:

@@ -147,30 +147,29 @@ function private on_localclient_connect(localclientnum) {
     #/
 }
 
-// Namespace zm_holiday_event/zm_holiday_event
-// Params 1, eflags: 0x0
-// Checksum 0x23194efa, Offset: 0xa70
-// Size: 0x74
-function function_4ebcb98d(localclientnum) {
-    /#
-        init_dvar(#"hash_4cf563ada0725f21", "<unknown string>", &function_5f56213c);
-        add_devgui(localclientnum, "<unknown string>", "<unknown string>");
-    #/
-}
+/#
 
-// Namespace zm_holiday_event/zm_holiday_event
-// Params 1, eflags: 0x4
-// Checksum 0xa9e7dcaa, Offset: 0xaf0
-// Size: 0xfc
-function private function_5f56213c(params) {
-    /#
+    // Namespace zm_holiday_event/zm_holiday_event
+    // Params 1, eflags: 0x0
+    // Checksum 0x23194efa, Offset: 0xa70
+    // Size: 0x74
+    function function_4ebcb98d(localclientnum) {
+        util::init_dvar(#"hash_4cf563ada0725f21", "<unknown string>", &function_5f56213c);
+        util::add_devgui(localclientnum, "<unknown string>", "<unknown string>");
+    }
+
+    // Namespace zm_holiday_event/zm_holiday_event
+    // Params 1, eflags: 0x4
+    // Checksum 0xa9e7dcaa, Offset: 0xaf0
+    // Size: 0xfc
+    function private function_5f56213c(params) {
         if (params.value === "<unknown string>") {
             return;
         }
         switch (params.name) {
         case #"hash_4cf563ada0725f21":
-            level toggle(#"hash_63e59d16907d2aab");
-            if (level get(#"hash_63e59d16907d2aab")) {
+            level flag::toggle(#"hash_63e59d16907d2aab");
+            if (level flag::get(#"hash_63e59d16907d2aab")) {
                 iprintlnbold("<unknown string>");
             } else {
                 iprintlnbold("<unknown string>");
@@ -178,6 +177,6 @@ function private function_5f56213c(params) {
             break;
         }
         setdvar(#"hash_4cf563ada0725f21", "<unknown string>");
-    #/
-}
+    }
 
+#/

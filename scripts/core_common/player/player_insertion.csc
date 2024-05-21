@@ -27,7 +27,7 @@ function private preinit() {
     spawnpoints = struct::get_array("infil_spawn", "targetname");
     /#
         if (spawnpoints.size == 0) {
-            spawnpoints = get_array("<unknown string>", "<unknown string>");
+            spawnpoints = struct::get_array("<unknown string>", "<unknown string>");
         }
     #/
     if (spawnpoints.size != 0) {
@@ -458,8 +458,8 @@ function function_4da7bee9(localclientnum, oldval, newval, *bnewent, binitialsna
     for (var_1e7db62f = 0; var_1e7db62f < 2; var_1e7db62f++) {
         oldvalue = binitialsnap & 1;
         value = fieldname & 1;
-        fieldname = fieldname >> 1;
-        binitialsnap = binitialsnap >> 1;
+        fieldname >>= 1;
+        binitialsnap >>= 1;
         if (oldvalue == value && !bwastimejump) {
             continue;
         }

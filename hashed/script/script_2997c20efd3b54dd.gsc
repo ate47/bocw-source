@@ -150,12 +150,13 @@ function private function_5010aab6(localclientnum, *oldvalue, *newvalue, *bnewen
     }
 }
 
-// Namespace namespace_6c0cd084/threat_sight
-// Params 2, eflags: 0x4
-// Checksum 0xb9052364, Offset: 0xb58
-// Size: 0xce
-function private function_ccfdbd44(*localclientnum, msg) {
-    /#
+/#
+
+    // Namespace namespace_6c0cd084/threat_sight
+    // Params 2, eflags: 0x4
+    // Checksum 0xb9052364, Offset: 0xb58
+    // Size: 0xce
+    function private function_ccfdbd44(*localclientnum, msg) {
         self notify("<unknown string>");
         self endon("<unknown string>");
         self endon(#"death");
@@ -163,8 +164,9 @@ function private function_ccfdbd44(*localclientnum, msg) {
             print3d(self.origin + (0, 0, 40), msg, (1, 1, 1), 1, 0.75, 1, 0);
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_6c0cd084/threat_sight
 // Params 1, eflags: 0x6 linked

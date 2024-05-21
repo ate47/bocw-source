@@ -744,10 +744,10 @@ function getteamscoreratio() {
         if (team == playerteam) {
             continue;
         }
-        otherteamscore = otherteamscore + getteamscore(team);
+        otherteamscore += getteamscore(team);
     }
     if (level.teams.size > 1) {
-        otherteamscore = otherteamscore / (level.teams.size - 1);
+        otherteamscore /= level.teams.size - 1;
     }
     if (otherteamscore != 0) {
         return (float(score) / float(otherteamscore));
@@ -1033,7 +1033,7 @@ function endgame() {
         player freezecontrols(1);
         player clearallnoncheckpointdata();
         /#
-            player freegameplayhudelems();
+            player globallogic_ui::freegameplayhudelems();
         #/
     }
     music::setmusicstate("silent");
@@ -1233,7 +1233,7 @@ function removedisconnectedplayerfromplacement() {
     level.placement[#"all"][numplayers - 1] = undefined;
     assert(level.placement[#"all"].size == numplayers - 1);
     /#
-        assertproperplacement();
+        globallogic_utils::assertproperplacement();
     #/
     updateteamplacement();
     if (level.teambased) {
@@ -1284,7 +1284,7 @@ function updateplacement() {
     }
     level.placement[#"all"] = placementall;
     /#
-        assertproperplacement();
+        globallogic_utils::assertproperplacement();
     #/
     updateteamplacement();
 }
@@ -1403,7 +1403,7 @@ function sortdeadplayers(team) {
 function totalalivecount() {
     count = 0;
     foreach (team, _ in level.teams) {
-        count = count + function_a1ef346b(team).size;
+        count += function_a1ef346b(team).size;
     }
     return count;
 }
@@ -1415,7 +1415,7 @@ function totalalivecount() {
 function totalplayerlives() {
     count = 0;
     foreach (team, _ in level.teams) {
-        count = count + level.playerlives[team];
+        count += level.playerlives[team];
     }
     return count;
 }
@@ -1427,7 +1427,7 @@ function totalplayerlives() {
 function function_b102e4be() {
     count = 0;
     foreach (team, _ in level.teams) {
-        count = count + level.laststandcount[team];
+        count += level.laststandcount[team];
     }
     return count;
 }
@@ -1975,7 +1975,7 @@ function callback_startgametype() {
     }
     level.inprematchperiod = 1;
     if (level.prematchperiod > 2) {
-        level.prematchperiod = level.prematchperiod + randomfloat(4) - 2;
+        level.prematchperiod += randomfloat(4) - 2;
     }
     level.graceperiod = 10;
     level.ingraceperiod = 1;

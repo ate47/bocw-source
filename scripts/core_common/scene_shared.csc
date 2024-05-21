@@ -716,10 +716,10 @@ class csceneplayer : cscriptbundleobjectbase, csceneobject {
                     continue;
                 }
                 v_pos = (1350, 195, 0);
-                var_c74251a4 = function_8582657c(_o_scene._s, _str_shot);
+                var_c74251a4 = scene::function_8582657c(_o_scene._s, _str_shot);
                 var_962ef8af = "<unknown string>" + function_9e72a96(_o_scene._str_name) + "<unknown string>" + _str_shot + "<unknown string>" + var_c74251a4 + "<unknown string>" + var_c74251a4 * 30;
                 debug2dtext(v_pos, var_962ef8af, undefined, undefined, undefined, 1, 0.8);
-                v_pos = v_pos + (0, 20, 0) * 2;
+                v_pos += (0, 20, 0) * 2;
                 waitframe(1);
             }
         #/
@@ -949,7 +949,7 @@ class csceneobject : cscriptbundleobjectbase {
             }
         } else {
             /#
-                log("<unknown string>" + animation + "<unknown string>");
+                cscriptbundleobjectbase::log("<unknown string>" + animation + "<unknown string>");
             #/
         }
         _is_valid = is_alive(clientnum);
@@ -1015,7 +1015,7 @@ class csceneobject : cscriptbundleobjectbase {
             _e_array[clientnum] thread animation::play(animation, m_align, m_tag, 0, _n_blend, undefined, undefined, undefined, undefined, undefined, clientnum);
         }
         while (wait_start_time < wait_time && !is_skipping_scene()) {
-            wait_start_time = wait_start_time + 0.016;
+            wait_start_time += 0.016;
             waitframe(1);
         }
     }
@@ -1049,7 +1049,7 @@ class csceneobject : cscriptbundleobjectbase {
         waittillframeend();
         _str_shot = scene::function_de6a7579(_o_scene._str_name, "init", _o_scene._e_root);
         var_55b4f21e = function_730a4c60(_str_shot);
-        cscriptbundleobjectbase::error(!isdefined(var_55b4f21e), "Shot struct is not defined for this object. Check and make sure that "" + _str_shot + "" is a valid shot name for this scene bundle");
+        cscriptbundleobjectbase::error(!isdefined(var_55b4f21e), "Shot struct is not defined for this object. Check and make sure that \"" + _str_shot + "\" is a valid shot name for this scene bundle");
         if (isdefined(_n_clientnum)) {
             _spawn(_n_clientnum, is_true(_s.firstframe) || isdefined(_s.initanim) || isdefined(_s.initanimloop));
         } else {
@@ -1538,7 +1538,7 @@ class csceneobject : cscriptbundleobjectbase {
         [[ _o_scene ]]->function_7a1288f1(str_shot);
         _str_shot = str_shot;
         var_55b4f21e = function_730a4c60(_str_shot);
-        cscriptbundleobjectbase::error(!isdefined(var_55b4f21e), "Shot struct is not defined for this object. Check and make sure that "" + _str_shot + "" is a valid shot name for this scene bundle");
+        cscriptbundleobjectbase::error(!isdefined(var_55b4f21e), "Shot struct is not defined for this object. Check and make sure that \"" + _str_shot + "\" is a valid shot name for this scene bundle");
         if (isdefined(_n_clientnum)) {
             play_per_client(_n_clientnum, n_start_time, b_looping, params);
             return;
@@ -1669,7 +1669,7 @@ class csceneobject : cscriptbundleobjectbase {
     function function_ec3fa8f5() {
         if (isarray(var_55b4f21e.entry)) {
             foreach (s_entry in var_55b4f21e.entry) {
-                if (s_entry.var_71bac06 === "cameraswitcher") {
+                if (s_entry.entrytype === "cameraswitcher") {
                     return true;
                 }
             }
@@ -1995,16 +1995,16 @@ function postfx_igc(localclientnum, oldval, newval, bnewent, binitialsnap, field
     captureframe(localclientnum, codeimagename);
     n_hex = 0;
     b_streamer_wait = 1;
-    for (i = 0; i < 2000; i = i + int(0.016 * 1000)) {
+    for (i = 0; i < 2000; i += int(0.016 * 1000)) {
         st = float(i) / 1000;
         if (b_streamer_wait && st >= 0.65) {
-            for (n_streamer_time_total = 0; !isstreamerready() && n_streamer_time_total < 5000; n_streamer_time_total = n_streamer_time_total + gettime() - n_streamer_time) {
+            for (n_streamer_time_total = 0; !isstreamerready() && n_streamer_time_total < 5000; n_streamer_time_total += gettime() - n_streamer_time) {
                 n_streamer_time = gettime();
-                for (j = int(0.65 * 1000); j < 1150; j = j + int(0.016 * 1000)) {
+                for (j = int(0.65 * 1000); j < 1150; j += int(0.016 * 1000)) {
                     jt = float(j) / 1000;
                     waitframe(1);
                 }
-                for (j = int(1.15 * 1000); j < 650; j = j - int(0.016 * 1000)) {
+                for (j = int(1.15 * 1000); j < 650; j -= int(0.016 * 1000)) {
                     jt = float(j) / 1000;
                     waitframe(1);
                 }
@@ -2079,7 +2079,7 @@ function postfx_igc_short(localclientnum, *oldval, *newval, *bnewent, *binitials
     createscenecodeimage(bwastimejump, codeimagename);
     captureframe(bwastimejump, codeimagename);
     b_streamer_wait = 1;
-    for (i = 0; i < 850; i = i + int(0.016 * 1000)) {
+    for (i = 0; i < 850; i += int(0.016 * 1000)) {
         st = float(i) / 1000;
         if (st <= 0.5) {
         } else if (st > 0.5 && st <= 0.85) {
@@ -2617,7 +2617,7 @@ function play_from_time(arg1, arg2, arg3, n_time, var_c9d6bbb = 1, var_20dda4d1 
         str_mode = "play_from_time_elapsed";
     }
     if ((function_d3e3e0c7(arg1) || function_d3e3e0c7(arg2)) && var_20dda4d1) {
-        str_mode = str_mode + "_single";
+        str_mode += "_single";
     }
     play(arg1, arg2, arg3, 0, str_mode, n_time, params);
 }
@@ -2676,11 +2676,11 @@ function function_1eab8670(obj, str_shot) {
             if (s_shot.name === str_shot && isdefined(s_shot.entry)) {
                 foreach (s_entry in s_shot.entry) {
                     if (isdefined(s_entry.cameraswitcher)) {
-                        var_5a162d58 = var_5a162d58 + float(getcamanimtime(s_entry.cameraswitcher)) / 1000;
+                        var_5a162d58 += float(getcamanimtime(s_entry.cameraswitcher)) / 1000;
                         continue;
                     }
                     if (isdefined(s_entry.anim)) {
-                        n_anim_length = n_anim_length + getanimlength(s_entry.anim);
+                        n_anim_length += getanimlength(s_entry.anim);
                     }
                 }
                 break;
@@ -2715,7 +2715,7 @@ function function_dde5f483(str_scenedef, n_elapsed_time) {
             var_8b21886e.var_3486c904 = (n_elapsed_time - var_219aac3f) / var_958bccd3;
             return var_8b21886e;
         }
-        var_7a2504a = var_7a2504a + var_958bccd3;
+        var_7a2504a += var_958bccd3;
     }
     var_8b21886e.var_ef711d04 = a_shots[a_shots.size - 1];
     var_8b21886e.var_3486c904 = 0.9;
@@ -2751,7 +2751,7 @@ function function_12479eba(str_scenedef) {
     a_shots = get_all_shot_names(str_scenedef, undefined, 1);
     var_9d90ef8b = 0;
     foreach (str_shot in a_shots) {
-        var_9d90ef8b = var_9d90ef8b + function_8582657c(s_scenedef, str_shot);
+        var_9d90ef8b += function_8582657c(s_scenedef, str_shot);
     }
     return var_9d90ef8b;
 }
@@ -2918,7 +2918,7 @@ function _play_instance(s_tracker, str_scenedef = self.scriptbundlename, a_ents,
         var_8b21886e = function_d1abba8b(str_scenedef, str_shot, str_mode, n_time, var_5b51581a);
         str_shot = var_8b21886e.var_ef711d04;
         var_dd2b75b = var_8b21886e.var_3486c904;
-        str_mode = str_mode + ":" + var_dd2b75b;
+        str_mode += ":" + var_dd2b75b;
     }
     if (str_mode === "init") {
         str_shot = function_de6a7579(str_scenedef, str_mode, self);

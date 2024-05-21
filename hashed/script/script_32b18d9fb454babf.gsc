@@ -55,17 +55,17 @@ function private function_64a75da7() {
         if (getdvarint(#"hash_33b0be96bf3cd69a", 0)) {
             level.contentmanager.var_d60029a6 = array(level.contentmanager.var_5f2429b1);
             level.contentmanager.currentdestination = level.contentmanager.var_5f2429b1;
-            level set(#"hash_7ace2c0d668c5128");
-            level activate(level.contentmanager.var_5f2429b1);
-            level wait_till(#"all_players_spawned");
+            level flag::set(#"hash_7ace2c0d668c5128");
+            level zm_destination_manager::activate(level.contentmanager.var_5f2429b1);
+            level flag::wait_till(#"all_players_spawned");
             if (!isdefined(level.contentmanager.var_c4181ea)) {
-                level function_de302547(level.contentmanager.var_5f2429b1);
+                level namespace_73df937d::function_de302547(level.contentmanager.var_5f2429b1);
                 foreach (player in getplayers()) {
                     player setorigin(level.contentmanager.var_c4181ea.origin);
                 }
             }
             level waittill(#"hash_581a9d913f67821a");
-            level thread function_7c05a985(level.contentmanager.var_5f2429b1);
+            level thread namespace_591b4396::function_7c05a985(level.contentmanager.var_5f2429b1);
             return;
         }
     #/
@@ -531,7 +531,7 @@ function function_bd104a73() {
         structs = content_manager::function_4485ab6d("objectiveCategory", objective);
         foreach (script_struct in structs) {
             if (isdefined(script_struct.var_4b7d58a)) {
-                var_877f4c5 = var_877f4c5 & (is_true(getgametypesetting(script_struct.var_4b7d58a)) || is_true(getdvarint(script_struct.var_4b7d58a, 0)));
+                var_877f4c5 &= is_true(getgametypesetting(script_struct.var_4b7d58a)) || is_true(getdvarint(script_struct.var_4b7d58a, 0));
             }
         }
         if (!var_877f4c5) {

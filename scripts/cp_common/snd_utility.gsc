@@ -99,10 +99,10 @@ function function_ea2f17d1(variable, value) {
 function function_154caeff(v) {
     if (isvec(v) == 1) {
         avg = 0;
-        avg = avg + v[0];
-        avg = avg + v[1];
-        avg = avg + v[2];
-        avg = avg / 3;
+        avg += v[0];
+        avg += v[1];
+        avg += v[2];
+        avg /= 3;
         return avg;
     }
     assert(isarray(v) == 1, "dprior");
@@ -113,9 +113,9 @@ function function_154caeff(v) {
         return v[0];
     }
     foreach (vec in v) {
-        avg = avg + vec;
+        avg += vec;
     }
-    avg = avg / v.size;
+    avg /= v.size;
     return avg;
 }
 
@@ -128,10 +128,10 @@ function function_70dbede3(angle) {
         return angle;
     }
     while (angle < -180) {
-        angle = angle + 360;
+        angle += 360;
     }
     while (angle > 180) {
-        angle = angle - 360;
+        angle -= 360;
     }
     return angle;
 }
@@ -312,27 +312,29 @@ function function_783b69(s, wrap) {
             s = function_9e72a96(s);
         }
     #/
-    str = str + wrap + s + wrap;
+    str += wrap + s + wrap;
     return str;
 }
 
-// Namespace snd/snd_utility
-// Params 2, eflags: 0x0
-// Checksum 0x587b060c, Offset: 0x1208
-// Size: 0xb8
-function function_8cb4e540(inputstring, var_329bae03) {
-    /#
+/#
+
+    // Namespace snd/snd_utility
+    // Params 2, eflags: 0x0
+    // Checksum 0x587b060c, Offset: 0x1208
+    // Size: 0xb8
+    function function_8cb4e540(inputstring, var_329bae03) {
         prefix = "<unknown string>";
         outputstring = "<unknown string>";
         if (isstring(inputstring) && inputstring.size > 0 && inputstring.size < var_329bae03) {
-            for (var_329bae03 = var_329bae03 - inputstring.size; var_329bae03 >= 0; var_329bae03--) {
-                prefix = prefix + "<unknown string>";
+            for (var_329bae03 -= inputstring.size; var_329bae03 >= 0; var_329bae03--) {
+                prefix += "<unknown string>";
             }
         }
         outputstring = prefix + inputstring;
         return outputstring;
-    #/
-}
+    }
+
+#/
 
 // Namespace snd/snd_utility
 // Params 1, eflags: 0x2 linked
@@ -443,7 +445,7 @@ function function_322e32be(array) {
         return array[0];
     }
     randomindex = randomintrange(1, array.size);
-    randomindex = randomindex - 1;
+    randomindex -= 1;
     assert(randomindex >= 0 && randomindex < array.size - 1);
     randomelement = array[randomindex];
     return randomelement;
@@ -572,7 +574,7 @@ function function_69fd73ba(target, range) {
                 var_c8cfc057 = vectornormalize(var_c8cfc057);
                 var_597aa60f = function_d6053a8f(current_distance, 0) + "<unknown string>" + var_39e18923;
                 if (isfloat(var_9d415208)) {
-                    var_597aa60f = var_597aa60f + "<unknown string>" + var_9d415208;
+                    var_597aa60f += "<unknown string>" + var_9d415208;
                     if (var_9d415208 > 0) {
                         function_b95b9a60(var_727198c5, var_9d415208, var_c8cfc057, 1, 1);
                     }
@@ -709,10 +711,10 @@ function function_41df60ba(framecount, var_5bc3280a) {
 // Size: 0x92
 function function_a0a15145(var_20694abe, var_4bbb9191, var_79a551f0, var_50c632d3, var_338eef61) {
     if (var_4bbb9191 == var_79a551f0) {
-        var_79a551f0 = var_79a551f0 + 0.001;
+        var_79a551f0 += 0.001;
     }
     if (var_50c632d3 == var_338eef61) {
-        var_338eef61 = var_338eef61 + 0.001;
+        var_338eef61 += 0.001;
     }
     var_ff6041fe = mapfloat(var_4bbb9191, var_79a551f0, var_50c632d3, var_338eef61, var_20694abe);
     return var_ff6041fe;
@@ -826,14 +828,14 @@ function function_160366e9(centerorigin, dist, var_3c67b910, var_cbf878e6) {
     }
     var_3c67b910 = function_ea2f17d1(var_3c67b910, 0);
     var_cbf878e6 = function_ea2f17d1(var_cbf878e6, 0);
-    var_3c67b910 = var_3c67b910 + 180;
-    var_cbf878e6 = var_cbf878e6 + 270;
+    var_3c67b910 += 180;
+    var_cbf878e6 += 270;
     posx = centerorigin[0];
     posy = centerorigin[1];
     posz = centerorigin[2];
-    posx = posx + dist * sin(var_cbf878e6) * cos(var_3c67b910);
-    posy = posy + dist * sin(var_cbf878e6) * sin(var_3c67b910);
-    posz = posz + dist * cos(var_cbf878e6);
+    posx += dist * sin(var_cbf878e6) * cos(var_3c67b910);
+    posy += dist * sin(var_cbf878e6) * sin(var_3c67b910);
+    posz += dist * cos(var_cbf878e6);
     position = (posx, posy, posz);
     return position;
 }
@@ -1231,12 +1233,13 @@ function function_b3acadc6(callbackfunc, arg1, arg2, arg3, arg4, arg5, arg6, arg
     self thread function_df40860c(callbackfunc, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 }
 
-// Namespace snd/snd_utility
-// Params 3, eflags: 0x4
-// Checksum 0xc9c449b7, Offset: 0x4388
-// Size: 0x1a8
-function private function_9cae113f(soundalias, column, var_46195ad8) {
-    /#
+/#
+
+    // Namespace snd/snd_utility
+    // Params 3, eflags: 0x4
+    // Checksum 0xc9c449b7, Offset: 0x4388
+    // Size: 0x1a8
+    function private function_9cae113f(soundalias, column, var_46195ad8) {
         if (soundexists(soundalias) == 0) {
             return undefined;
         }
@@ -1257,30 +1260,27 @@ function private function_9cae113f(soundalias, column, var_46195ad8) {
             }
         }
         return var_434eefbd;
-    #/
-}
+    }
 
-// Namespace snd/snd_utility
-// Params 2, eflags: 0x0
-// Checksum 0x1d875703, Offset: 0x4538
-// Size: 0x44
-function function_7139f5ae(soundalias, column) {
-    /#
+    // Namespace snd/snd_utility
+    // Params 2, eflags: 0x0
+    // Checksum 0x1d875703, Offset: 0x4538
+    // Size: 0x44
+    function function_7139f5ae(soundalias, column) {
         minvalue = function_9cae113f(soundalias, column, "<unknown string>");
         return minvalue;
-    #/
-}
+    }
 
-// Namespace snd/snd_utility
-// Params 2, eflags: 0x0
-// Checksum 0xdb2d57ba, Offset: 0x4588
-// Size: 0x44
-function function_10120598(soundalias, column) {
-    /#
+    // Namespace snd/snd_utility
+    // Params 2, eflags: 0x0
+    // Checksum 0xdb2d57ba, Offset: 0x4588
+    // Size: 0x44
+    function function_10120598(soundalias, column) {
         maxvalue = function_9cae113f(soundalias, column, "<unknown string>");
         return maxvalue;
-    #/
-}
+    }
+
+#/
 
 // Namespace snd/snd_utility
 // Params 1, eflags: 0x2 linked
@@ -1293,7 +1293,7 @@ function function_636a2037(decimal) {
     while (quotient != 0) {
         remainder = quotient % 16;
         hexadecimal = var_c6e8bc8d[remainder] + hexadecimal;
-        quotient = quotient >> 4;
+        quotient >>= 4;
     }
     return hexadecimal;
 }
@@ -1381,17 +1381,19 @@ function function_cc5643b5(str) {
     return var_f76bdca5;
 }
 
-// Namespace snd/snd_utility
-// Params 1, eflags: 0x0
-// Checksum 0xe0d69c35, Offset: 0x4a40
-// Size: 0x54
-function function_3626f311(hex) {
-    /#
+/#
+
+    // Namespace snd/snd_utility
+    // Params 1, eflags: 0x0
+    // Checksum 0xe0d69c35, Offset: 0x4a40
+    // Size: 0x54
+    function function_3626f311(hex) {
         hashvalue = function_35dccf3f(hex);
         stringvalue = function_9e72a96(hashvalue);
         return stringvalue;
-    #/
-}
+    }
+
+#/
 
 // Namespace snd/snd_utility
 // Params 2, eflags: 0x2 linked

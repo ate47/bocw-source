@@ -57,7 +57,7 @@ function private function_67189b6b(localclientnum, newval) {
         return;
     }
     stashitem = (newval & 4) != 0;
-    newval = newval & -5;
+    newval &= -5;
     self.falling = self clientfield::get("dynamic_item_drop_falling");
     if (newval == 0) {
         if (isdefined(self) && isdefined(self.networkid) && isdefined(level.item_spawn_drops[self.networkid])) {

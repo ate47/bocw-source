@@ -78,18 +78,20 @@ function function_c6491fb8() {
     self thread function_f73fe25f();
 }
 
-// Namespace namespace_5443b356/namespace_88f6bc3c
-// Params 0, eflags: 0x0
-// Checksum 0x897d94f6, Offset: 0x6a0
-// Size: 0x5c
-function function_6f822dd3() {
-    /#
+/#
+
+    // Namespace namespace_5443b356/namespace_88f6bc3c
+    // Params 0, eflags: 0x0
+    // Checksum 0x897d94f6, Offset: 0x6a0
+    // Size: 0x5c
+    function function_6f822dd3() {
         self endon(#"disconnect");
-        self thread function_b5d0a39e("<unknown string>", undefined, undefined, 200, 10000);
+        self thread util::function_b5d0a39e("<unknown string>", undefined, undefined, 200, 10000);
         wait(3);
-        self thread function_2e0c1f7d();
-    #/
-}
+        self thread util::function_2e0c1f7d();
+    }
+
+#/
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
 // Params 2, eflags: 0x2 linked
@@ -147,7 +149,7 @@ function function_33141024(vdir, tweentime, var_c69fe125, var_eebc8ec0, var_3cbc
     forwarddir = anglestoforward(angles);
     vector = position + forwarddir;
     if (isdefined(vdir)) {
-        vdir = vdir * -1;
+        vdir *= -1;
         var_1042ef32 = vectortoangles(vdir);
     } else {
         vdir = (forwarddir[0], forwarddir[1], forwarddir[2]);

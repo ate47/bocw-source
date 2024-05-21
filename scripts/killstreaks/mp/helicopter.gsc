@@ -33,7 +33,7 @@ function private preinit() {
     callback::on_vehicle_killed(&on_vehicle_killed);
     bundle = "killstreak_helicopter_comlink";
     if (sessionmodeiswarzonegame()) {
-        bundle = bundle + "_wz";
+        bundle += "_wz";
     }
     if (sessionmodeismultiplayergame() || sessionmodeiswarzonegame()) {
         killstreaks::register_killstreak(bundle, &usekillstreakhelicopter);

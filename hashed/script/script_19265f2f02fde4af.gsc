@@ -94,11 +94,11 @@ function private function_8f050823() {
             maxs = self getmaxs();
             mins = self getmins();
         }
-        bounds = bounds * self.var_ac2c4043;
+        bounds *= self.var_ac2c4043;
         data.var_141b25f = abs(bounds[0] * bounds[1] * bounds[2]) / 231;
         data.var_78e64a1a = data.var_141b25f;
         while (data.var_78e64a1a > var_2cc6e886.var_3efc3a35 || data.var_33c88c75.size > 0) {
-            data.var_78e64a1a = data.var_78e64a1a - var_2cc6e886.var_d85a87b / 60 * 0.016 * data.var_33c88c75.size;
+            data.var_78e64a1a -= var_2cc6e886.var_d85a87b / 60 * 0.016 * data.var_33c88c75.size;
             var_bed2bab8 = data.var_78e64a1a / data.var_141b25f;
             /#
                 if (getdvarint(#"hash_2a6bc2c12ee6a9b4", 0)) {
@@ -147,7 +147,7 @@ function private function_93b52d75(damage_data) {
         mins = self getabsmins();
         height = (maxs[2] - mins[2]) * self.var_ac2c4043[2];
         if (isdefined(self.var_6020a9fa)) {
-            mins = mins + (0, 0, height * self.var_6020a9fa);
+            mins += (0, 0, height * self.var_6020a9fa);
         }
         return max(0, data.var_141b25f * (damage_data.position[2] - mins[2]) / height);
     }
@@ -226,7 +226,7 @@ function private function_2138c62(local_client_num, var_1e5d913d, damage_data, v
         var_caa96e8a = 1;
         dist = isdefined(var_2cc6e886.distance) ? var_2cc6e886.distance : 0;
         if ((isdefined(var_2cc6e886.var_403e0972) ? var_2cc6e886.var_403e0972 : 0) > 0) {
-            dist = dist + randomfloatrange(var_2cc6e886.var_403e0972 * -1, var_2cc6e886.var_403e0972);
+            dist += randomfloatrange(var_2cc6e886.var_403e0972 * -1, var_2cc6e886.var_403e0972);
         }
         dist_squared = dist * dist;
         foreach (var_b935e60d in var_b33be77) {
@@ -309,7 +309,7 @@ function private function_2138c62(local_client_num, var_1e5d913d, damage_data, v
             effect_id = playfx(local_client_num, var_2cc6e886.effect, damage_data.position, forward);
             lifetime = var_2cc6e886.lifetime;
             if ((isdefined(var_2cc6e886.var_3478ebdf) ? var_2cc6e886.var_3478ebdf : 0) > 0) {
-                lifetime = lifetime + randomfloat(var_2cc6e886.var_3478ebdf);
+                lifetime += randomfloat(var_2cc6e886.var_3478ebdf);
             }
             var_d017fb86 = "augmented_impact_fx_" + damage_data.var_7c5043e3;
             self thread function_479d351(local_client_num, var_2cc6e886.start_sound, var_2cc6e886.loop_sound, var_2cc6e886.end_sound, damage_data.position, lifetime, var_2cc6e886.var_d560194f, var_d017fb86);

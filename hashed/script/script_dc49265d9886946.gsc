@@ -116,7 +116,7 @@ function private function_98c21925() {
     n_rotate_angle = 0.8;
     n_start_time = gettime();
     while (true) {
-        self.angles = self.angles + (n_rotate_angle, 0, 0);
+        self.angles += (n_rotate_angle, 0, 0);
         waitframe(1);
         if (gettime() > n_start_time + var_a4d67f13 / 2) {
             if (gettime() > n_start_time + var_a4d67f13) {
@@ -429,12 +429,13 @@ function function_a43a8406() {
     }
 }
 
-// Namespace namespace_cdc318b3/namespace_cdc318b3
-// Params 0, eflags: 0x0
-// Checksum 0xd017689c, Offset: 0x1fd0
-// Size: 0x358
-function function_b8a3efea() {
-    /#
+/#
+
+    // Namespace namespace_cdc318b3/namespace_cdc318b3
+    // Params 0, eflags: 0x0
+    // Checksum 0xd017689c, Offset: 0x1fd0
+    // Size: 0x358
+    function function_b8a3efea() {
         if (!getdvarint(#"hash_5df55c4b5dbbc9c4", 0)) {
             return;
         }
@@ -443,29 +444,29 @@ function function_b8a3efea() {
                 n_progress = getdvarint("<unknown string>" + str_map, 0);
                 if (n_progress) {
                     if (str_map == "<unknown string>") {
-                        player set_global_stat(#"hash_172d82afa5eb40a8", 1);
+                        player zm_stats::set_global_stat(#"hash_172d82afa5eb40a8", 1);
                         continue;
                     }
                     if (str_map == "<unknown string>") {
-                        player set_global_stat(#"hash_774b3a384fb5ad", 1);
+                        player zm_stats::set_global_stat(#"hash_774b3a384fb5ad", 1);
                         continue;
                     }
-                    player set_stat(#"playerstatsbymap", hash(str_map), #"stats", #"main_quest_completed", #"statvalue", 1);
+                    player stats::set_stat(#"playerstatsbymap", hash(str_map), #"stats", #"main_quest_completed", #"statvalue", 1);
                 }
             }
             n_rarity = getdvarint(#"hash_4a79e82c895372b1", 0);
             if (n_rarity > 5) {
-                player set_stat(#"hash_2dd2a2b3580dd409", #"rarity_upgrade", 3);
+                player stats::set_stat(#"hash_2dd2a2b3580dd409", #"rarity_upgrade", 3);
                 continue;
             }
             if (n_rarity > 3) {
-                player set_stat(#"hash_2dd2a2b3580dd409", #"rarity_upgrade", 2);
+                player stats::set_stat(#"hash_2dd2a2b3580dd409", #"rarity_upgrade", 2);
                 continue;
             }
             if (n_rarity > 1) {
-                player set_stat(#"hash_2dd2a2b3580dd409", #"rarity_upgrade", 1);
+                player stats::set_stat(#"hash_2dd2a2b3580dd409", #"rarity_upgrade", 1);
             }
         }
-    #/
-}
+    }
 
+#/

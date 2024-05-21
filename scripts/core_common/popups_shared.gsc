@@ -70,12 +70,13 @@ function on_player_connect() {
     }
 }
 
-// Namespace popups/popups_shared
-// Params 0, eflags: 0x0
-// Checksum 0x92be76e6, Offset: 0x388
-// Size: 0x64
-function devgui_notif_getgunleveltablename() {
-    /#
+/#
+
+    // Namespace popups/popups_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x92be76e6, Offset: 0x388
+    // Size: 0x64
+    function devgui_notif_getgunleveltablename() {
         if (sessionmodeiscampaigngame()) {
             return #"gamedata/weapons/cp/cp_gunlevels.csv";
         }
@@ -83,15 +84,13 @@ function devgui_notif_getgunleveltablename() {
             return #"gamedata/weapons/zm/zm_gunlevels.csv";
         }
         return #"gamedata/weapons/mp/mp_gunlevels.csv";
-    #/
-}
+    }
 
-// Namespace popups/popups_shared
-// Params 0, eflags: 0x0
-// Checksum 0x7117cc1f, Offset: 0x3f8
-// Size: 0x4e
-function devgui_notif_getchallengestablecount() {
-    /#
+    // Namespace popups/popups_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x7117cc1f, Offset: 0x3f8
+    // Size: 0x4e
+    function devgui_notif_getchallengestablecount() {
         if (sessionmodeiscampaigngame()) {
             return 1;
         }
@@ -99,15 +98,13 @@ function devgui_notif_getchallengestablecount() {
             return 6;
         }
         return 6;
-    #/
-}
+    }
 
-// Namespace popups/popups_shared
-// Params 1, eflags: 0x0
-// Checksum 0xdc593a15, Offset: 0x450
-// Size: 0x9a
-function devgui_notif_getchallengestablename(tableid) {
-    /#
+    // Namespace popups/popups_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0xdc593a15, Offset: 0x450
+    // Size: 0x9a
+    function devgui_notif_getchallengestablename(tableid) {
         if (sessionmodeiscampaigngame()) {
             return (#"gamedata/stats/cp/statsmilestones" + tableid + "<unknown string>");
         }
@@ -115,15 +112,13 @@ function devgui_notif_getchallengestablename(tableid) {
             return (#"gamedata/stats/zm/statsmilestones" + tableid + "<unknown string>");
         }
         return #"gamedata/stats/mp/statsmilestones" + tableid + "<unknown string>";
-    #/
-}
+    }
 
-// Namespace popups/popups_shared
-// Params 0, eflags: 0x0
-// Checksum 0x7630a42, Offset: 0x4f8
-// Size: 0x15a
-function devgui_create_weapon_levels_table() {
-    /#
+    // Namespace popups/popups_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x7630a42, Offset: 0x4f8
+    // Size: 0x15a
+    function devgui_create_weapon_levels_table() {
         level.tbl_weaponids = [];
         for (i = 0; i < 1024; i++) {
             iteminfo = getunlockableiteminfofromindex(i, 0);
@@ -140,15 +135,13 @@ function devgui_create_weapon_levels_table() {
                 }
             }
         }
-    #/
-}
+    }
 
-// Namespace popups/popups_shared
-// Params 0, eflags: 0x0
-// Checksum 0x92d5d168, Offset: 0x660
-// Size: 0x1dc
-function devgui_notif_init() {
-    /#
+    // Namespace popups/popups_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x92d5d168, Offset: 0x660
+    // Size: 0x1dc
+    function devgui_notif_init() {
         setdvar(#"scr_notif_devgui_rank", 0);
         setdvar(#"scr_notif_devgui_gun_lvl_xp", 0);
         setdvar(#"scr_notif_devgui_gun_lvl_attachment_index", 0);
@@ -157,32 +150,30 @@ function devgui_notif_init() {
         if (isdedicated()) {
             return;
         }
-        add_devgui("<unknown string>", "<unknown string>");
-        add_devgui("<unknown string>", "<unknown string>");
-        add_devgui("<unknown string>", "<unknown string>");
-        add_devgui("<unknown string>", "<unknown string>");
-        add_devgui("<unknown string>", "<unknown string>");
-        add_devgui("<unknown string>", "<unknown string>");
-        add_devgui("<unknown string>", "<unknown string>");
-        add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<unknown string>", "<unknown string>");
+        util::add_devgui("<unknown string>", "<unknown string>");
         level thread function_a65863ce();
-    #/
-}
+    }
 
-// Namespace popups/popups_shared
-// Params 0, eflags: 0x0
-// Checksum 0x32ed30b1, Offset: 0x848
-// Size: 0x2a6
-function function_a65863ce() {
-    /#
+    // Namespace popups/popups_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x32ed30b1, Offset: 0x848
+    // Size: 0x2a6
+    function function_a65863ce() {
         level endon(#"game_ended");
         while (true) {
             if (getdvarint(#"hash_5b32141cac382fa3", 0) > 0) {
-                remove_devgui("<unknown string>");
+                util::remove_devgui("<unknown string>");
                 level thread notif_devgui_gun_rank();
                 setdvar(#"hash_5b32141cac382fa3", 0);
             } else if (getdvarint(#"hash_4ccabf785218a1e0", 0) > 0) {
-                remove_devgui("<unknown string>");
+                util::remove_devgui("<unknown string>");
                 level thread notif_devgui_rank();
                 setdvar(#"hash_4ccabf785218a1e0", 0);
             } else {
@@ -212,7 +203,7 @@ function function_a65863ce() {
                         break;
                     }
                     if (isdefined(menu)) {
-                        remove_devgui(menu);
+                        util::remove_devgui(menu);
                         level thread function_43b5625e(dvarval);
                         setdvar(#"hash_3873da9b7bf24d7c", 0);
                     }
@@ -220,15 +211,13 @@ function function_a65863ce() {
             }
             wait(2);
         }
-    #/
-}
+    }
 
-// Namespace popups/popups_shared
-// Params 1, eflags: 0x0
-// Checksum 0x656dd4fa, Offset: 0xaf8
-// Size: 0x2e4
-function function_43b5625e(tablenum) {
-    /#
+    // Namespace popups/popups_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x656dd4fa, Offset: 0xaf8
+    // Size: 0x2e4
+    function function_43b5625e(tablenum) {
         notif_challenges_devgui_base = "<unknown string>";
         tablename = devgui_notif_getchallengestablename(tablenum);
         rows = tablelookuprowcount(tablename);
@@ -244,7 +233,7 @@ function function_43b5625e(tablenum) {
                 }
                 name = tablelookupcolumnforrow(tablename, j, 5);
                 devgui_cmd_challenge_path = notif_challenges_devgui_base + function_9e72a96(type) + "<unknown string>" + function_9e72a96(name) + "<unknown string>" + challengetierstring + "<unknown string>" + challengeid;
-                waittill_can_add_debug_command();
+                util::waittill_can_add_debug_command();
                 adddebugcommand(devgui_cmd_challenge_path + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + j + "<unknown string>" + "<unknown string>" + "<unknown string>" + tablenum + "<unknown string>");
                 if (int(challengeid) % 10) {
                     waitframe(1);
@@ -252,15 +241,13 @@ function function_43b5625e(tablenum) {
             }
         }
         level thread notif_devgui_challenges_think();
-    #/
-}
+    }
 
-// Namespace popups/popups_shared
-// Params 0, eflags: 0x0
-// Checksum 0x3e7efbe2, Offset: 0xde8
-// Size: 0x10c
-function notif_devgui_rank() {
-    /#
+    // Namespace popups/popups_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x3e7efbe2, Offset: 0xde8
+    // Size: 0x10c
+    function notif_devgui_rank() {
         if (!isdefined(level.ranktable)) {
             return;
         }
@@ -270,45 +257,41 @@ function notif_devgui_rank() {
             if (display_level < 10) {
                 display_level = "<unknown string>" + display_level;
             }
-            waittill_can_add_debug_command();
+            util::waittill_can_add_debug_command();
             adddebugcommand(notif_rank_devgui_base + display_level + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + i + "<unknown string>");
         }
         waitframe(1);
         level thread notif_devgui_rank_up_think();
-    #/
-}
+    }
 
-// Namespace popups/popups_shared
-// Params 0, eflags: 0x0
-// Checksum 0xb238fd2c, Offset: 0xf00
-// Size: 0xce
-function notif_devgui_rank_up_think() {
-    /#
+    // Namespace popups/popups_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xb238fd2c, Offset: 0xf00
+    // Size: 0xce
+    function notif_devgui_rank_up_think() {
         for (;;) {
             rank_number = getdvarint(#"scr_notif_devgui_rank", 0);
             if (rank_number == 0) {
                 waitframe(1);
                 continue;
             }
-            level.players[0] codecallback_rankup({#rank:rank_number, #prestige:0, #unlock_tokens_added:1});
+            level.players[0] rank::codecallback_rankup({#rank:rank_number, #prestige:0, #unlock_tokens_added:1});
             setdvar(#"scr_notif_devgui_rank", 0);
             wait(1);
         }
-    #/
-}
+    }
 
-// Namespace popups/popups_shared
-// Params 0, eflags: 0x0
-// Checksum 0xfeedade7, Offset: 0xfd8
-// Size: 0x944
-function notif_devgui_gun_rank() {
-    /#
+    // Namespace popups/popups_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xfeedade7, Offset: 0xfd8
+    // Size: 0x944
+    function notif_devgui_gun_rank() {
         notif_gun_rank_devgui_base = "<unknown string>";
         gunlevel_rankid_col = 0;
         gunlevel_gunref_col = 2;
         gunlevel_attachment_unlock_col = 3;
         gunlevel_xpgained_col = 4;
-        level wait_till("<unknown string>");
+        level flag::wait_till("<unknown string>");
         if (!isdefined(level.tbl_weaponids)) {
             devgui_create_weapon_levels_table();
         }
@@ -378,22 +361,20 @@ function notif_devgui_gun_rank() {
             foreach (gun, attachment_group in gun_group) {
                 foreach (attachment, attachment_data in attachment_group[#"attachments"]) {
                     devgui_cmd_gun_path = notif_gun_rank_devgui_base + function_9e72a96(group_name) + "<unknown string>" + function_9e72a96(gun_group[gun][#"ref"]) + "<unknown string>" + function_9e72a96(attachment);
-                    waittill_can_add_debug_command();
+                    util::waittill_can_add_debug_command();
                     adddebugcommand(devgui_cmd_gun_path + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + attachment_data[#"xp"] + "<unknown string>" + "<unknown string>" + "<unknown string>" + attachment_data[#"itemindex"] + "<unknown string>" + "<unknown string>" + "<unknown string>" + gun_group[gun][#"itemindex"] + "<unknown string>" + "<unknown string>" + "<unknown string>" + attachment_data[#"rankid"] + "<unknown string>");
                 }
             }
             waitframe(1);
         }
         level thread notif_devgui_gun_level_think();
-    #/
-}
+    }
 
-// Namespace popups/popups_shared
-// Params 0, eflags: 0x0
-// Checksum 0xfdbe887d, Offset: 0x1928
-// Size: 0x1c6
-function notif_devgui_gun_level_think() {
-    /#
+    // Namespace popups/popups_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xfdbe887d, Offset: 0x1928
+    // Size: 0x1c6
+    function notif_devgui_gun_level_think() {
         for (;;) {
             weapon_item_index = getdvarint(#"scr_notif_devgui_gun_lvl_item_index", 0);
             if (weapon_item_index == 0) {
@@ -403,22 +384,20 @@ function notif_devgui_gun_level_think() {
             xp_reward = getdvarint(#"scr_notif_devgui_gun_lvl_xp", 0);
             attachment_index = getdvarint(#"scr_notif_devgui_gun_lvl_attachment_index", 0);
             rank_id = getdvarint(#"scr_notif_devgui_gun_lvl_rank_id", 0);
-            level.players[0] codecallback_gunchallengecomplete({#reward:xp_reward, #attachment_index:attachment_index, #item_index:weapon_item_index, #rank_id:rank_id});
+            level.players[0] persistence::codecallback_gunchallengecomplete({#reward:xp_reward, #attachment_index:attachment_index, #item_index:weapon_item_index, #rank_id:rank_id});
             setdvar(#"scr_notif_devgui_gun_lvl_xp", 0);
             setdvar(#"scr_notif_devgui_gun_lvl_attachment_index", 0);
             setdvar(#"scr_notif_devgui_gun_lvl_item_index", 0);
             setdvar(#"scr_notif_devgui_gun_lvl_rank_id", 0);
             wait(1);
         }
-    #/
-}
+    }
 
-// Namespace popups/popups_shared
-// Params 0, eflags: 0x0
-// Checksum 0xb08a4667, Offset: 0x1af8
-// Size: 0x436
-function notif_devgui_challenges_think() {
-    /#
+    // Namespace popups/popups_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xb08a4667, Offset: 0x1af8
+    // Size: 0x436
+    function notif_devgui_challenges_think() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         setdvar(#"scr_notif_devgui_challenge_row", 0);
@@ -464,20 +443,18 @@ function notif_devgui_challenges_think() {
             xpreward = int(tablelookupcolumnforrow(tablename, row, 6));
             challengeid = int(tablelookupcolumnforrow(tablename, row, 0));
             maxvalue = int(tablelookupcolumnforrow(tablename, row, 2));
-            player codecallback_challengecomplete({#reward:xpreward, #max:maxvalue, #row:row, #table_number:table - 1, #challenge_type:type, #item_index:itemindex, #challenge_index:challengeid});
+            player persistence::codecallback_challengecomplete({#reward:xpreward, #max:maxvalue, #row:row, #table_number:table - 1, #challenge_type:type, #item_index:itemindex, #challenge_index:challengeid});
             setdvar(#"scr_notif_devgui_challenge_row", 0);
             setdvar(#"scr_notif_devgui_challenge_table", 0);
             wait(1);
         }
-    #/
-}
+    }
 
-// Namespace popups/popups_shared
-// Params 0, eflags: 0x0
-// Checksum 0xbfa0685d, Offset: 0x1f38
-// Size: 0x7f8
-function popupsfromconsole() {
-    /#
+    // Namespace popups/popups_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xbfa0685d, Offset: 0x1f38
+    // Size: 0x7f8
+    function popupsfromconsole() {
         while (true) {
             timeout = getdvarfloat(#"scr_popuptime", 1);
             if (timeout == 0) {
@@ -494,11 +471,11 @@ function popupsfromconsole() {
             teammsg = getdvarint(#"scr_teamslideout", 0);
             challengeindex = getdvarint(#"scr_challengeindex", 1);
             for (i = 0; i < medal; i++) {
-                level.players[0] codecallback_medal({#medal_index:2});
+                level.players[0] medals::codecallback_medal({#medal_index:2});
             }
             for (i = 0; i < challenge; i++) {
-                level.players[0] codecallback_challengecomplete({#reward:1000, #max:10, #row:19, #table_numuber:0, #challenge_type:0, #item_index:0, #challenge_index:18});
-                level.players[0] codecallback_challengecomplete({#reward:1000, #max:1, #row:21, #table_number:0, #challenge_type:0, #item_index:0, #challenge_index:20});
+                level.players[0] persistence::codecallback_challengecomplete({#reward:1000, #max:10, #row:19, #table_numuber:0, #challenge_type:0, #item_index:0, #challenge_index:18});
+                level.players[0] persistence::codecallback_challengecomplete({#reward:1000, #max:1, #row:21, #table_number:0, #challenge_type:0, #item_index:0, #challenge_index:20});
                 rewardxp = 500;
                 maxval = 1;
                 row = 1;
@@ -518,13 +495,13 @@ function popupsfromconsole() {
                 challengetype = 4;
                 itemindex = 1;
                 challengeindex = 611;
-                level.players[0] codecallback_challengecomplete({#reward:rewardxp, #max:maxval, #row:row, #table_number:tablenumber, #challenge_type:challengetype, #item_index:itemindex, #challenge_index:challengeindex});
+                level.players[0] persistence::codecallback_challengecomplete({#reward:rewardxp, #max:maxval, #row:row, #table_number:tablenumber, #challenge_type:challengetype, #item_index:itemindex, #challenge_index:challengeindex});
             }
             for (i = 0; i < rank; i++) {
-                level.players[0] codecallback_rankup({#rank:4, #prestige:0, #unlock_tokens_added:1});
+                level.players[0] rank::codecallback_rankup({#rank:4, #prestige:0, #unlock_tokens_added:1});
             }
             for (i = 0; i < gun; i++) {
-                level.players[0] codecallback_gunchallengecomplete({#reward:0, #attachment_index:20, #item_index:25, #rank_id:0});
+                level.players[0] persistence::codecallback_gunchallengecomplete({#reward:0, #attachment_index:20, #item_index:25, #rank_id:0});
             }
             for (i = 0; i < teammsg; i++) {
                 player = level.players[0];
@@ -561,8 +538,9 @@ function popupsfromconsole() {
                 }
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace popups/popups_shared
 // Params 2, eflags: 0x2 linked

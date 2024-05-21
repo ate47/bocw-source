@@ -175,7 +175,7 @@ function private function_1cbc22b0(weapon, n_radius) {
     /#
         level thread function_da2298bc();
     #/
-    for (n_timer = 0; n_timer <= var_3889eb68.n_duration; n_timer = n_timer + 1) {
+    for (n_timer = 0; n_timer <= var_3889eb68.n_duration; n_timer += 1) {
         if (var_3889eb68.var_5e3cceb9) {
             if (isdefined(self)) {
                 a_ai = self getenemiesinradius(var_3889eb68.origin, n_radius);
@@ -309,7 +309,7 @@ function private function_64a3f9c6(var_dfbbc9a0 = 0, var_feefd408 = 0, var_cf53a
                 self.var_c91dca7e = lerpfloat(4, 5, var_473d58cc);
                 self.var_fc827c27 = lerpfloat(10, 20, var_473d58cc);
                 self.n_duration = lerpfloat(15, 20, var_473d58cc);
-                self.var_8ad82414 = self.var_8ad82414 + float(function_60d95f53()) / 1000;
+                self.var_8ad82414 += float(function_60d95f53()) / 1000;
             } else {
                 self.var_8ad82414 = 0;
                 self.var_5b61dff6 = 0.04;
@@ -341,12 +341,13 @@ function private function_64a3f9c6(var_dfbbc9a0 = 0, var_feefd408 = 0, var_cf53a
     }
 }
 
-// Namespace namespace_2ab93693/namespace_2ab93693
-// Params 0, eflags: 0x0
-// Checksum 0x49e6512c, Offset: 0x1f98
-// Size: 0x486
-function function_da2298bc() {
-    /#
+/#
+
+    // Namespace namespace_2ab93693/namespace_2ab93693
+    // Params 0, eflags: 0x0
+    // Checksum 0x49e6512c, Offset: 0x1f98
+    // Size: 0x486
+    function function_da2298bc() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         while (getdvarint(#"hash_3ce5890428b398f1", 0) && isarray(level.var_686c81d7) && level.var_686c81d7.size) {
@@ -378,6 +379,6 @@ function function_da2298bc() {
             }
             wait(1);
         }
-    #/
-}
+    }
 
+#/

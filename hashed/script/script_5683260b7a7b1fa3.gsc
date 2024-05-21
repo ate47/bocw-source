@@ -43,11 +43,11 @@ function private preinit() {
         clientfield::register_clientuimodel("hudItems.onslaught.lottoloadouts_rarity", 1, 2, "int");
         clientfield::register_clientuimodel("hudItems.onslaught.lottoloadouts_atttype", 1, 4, "int");
         /#
-            add_debug_command("<unknown string>");
-            add_debug_command("<unknown string>");
-            add_debug_command("<unknown string>");
-            add_debug_command("<unknown string>");
-            add_custom_devgui_callback(&function_8df2fc68);
+            util::add_debug_command("<unknown string>");
+            util::add_debug_command("<unknown string>");
+            util::add_debug_command("<unknown string>");
+            util::add_debug_command("<unknown string>");
+            zm_devgui::add_custom_devgui_callback(&function_8df2fc68);
         #/
     }
 }
@@ -60,12 +60,13 @@ function function_c090ac9c() {
     level flag::wait_till("rounds_started");
 }
 
-// Namespace namespace_e6fea84d/namespace_e6fea84d
-// Params 1, eflags: 0x4
-// Checksum 0xaffa5b29, Offset: 0x498
-// Size: 0xe2
-function private function_8df2fc68(cmd) {
-    /#
+/#
+
+    // Namespace namespace_e6fea84d/namespace_e6fea84d
+    // Params 1, eflags: 0x4
+    // Checksum 0xaffa5b29, Offset: 0x498
+    // Size: 0xe2
+    function private function_8df2fc68(cmd) {
         switch (cmd) {
         case #"hash_21b5fc9db9accec7":
             level thread function_4e9f972a(1);
@@ -80,8 +81,9 @@ function private function_8df2fc68(cmd) {
             level thread function_4e9f972a(10);
             break;
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_e6fea84d/namespace_e6fea84d
 // Params 0, eflags: 0x0

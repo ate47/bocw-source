@@ -152,23 +152,22 @@ function _update_health(hacker) {
     #/
 }
 
-// Namespace killstreak_hacking/killstreak_hacking
-// Params 0, eflags: 0x0
-// Checksum 0x97edac7, Offset: 0x720
-// Size: 0x28
-function killstreak_switch_team_end() {
-    /#
+/#
+
+    // Namespace killstreak_hacking/killstreak_hacking
+    // Params 0, eflags: 0x0
+    // Checksum 0x97edac7, Offset: 0x720
+    // Size: 0x28
+    function killstreak_switch_team_end() {
         killstreakentity = self;
         killstreakentity notify(#"killstreak_switch_team_end");
-    #/
-}
+    }
 
-// Namespace killstreak_hacking/killstreak_hacking
-// Params 1, eflags: 0x0
-// Checksum 0x7b3de21e, Offset: 0x750
-// Size: 0x21a
-function killstreak_switch_team(owner) {
-    /#
+    // Namespace killstreak_hacking/killstreak_hacking
+    // Params 1, eflags: 0x0
+    // Checksum 0x7b3de21e, Offset: 0x750
+    // Size: 0x21a
+    function killstreak_switch_team(owner) {
         killstreakentity = self;
         killstreakentity notify(#"killstreak_switch_team_singleton");
         killstreakentity endon(#"killstreak_switch_team_singleton", #"death");
@@ -203,6 +202,6 @@ function killstreak_switch_team(owner) {
                 return;
             }
         }
-    #/
-}
+    }
 
+#/

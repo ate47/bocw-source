@@ -50,7 +50,7 @@ function function_72c32279() {
     if (util::isfirstround()) {
         /#
             println("<unknown string>" + getutc());
-            println("<unknown string>" + get_map_name());
+            println("<unknown string>" + util::get_map_name());
             println("<unknown string>" + level.gametype);
             println("<unknown string>" + sessionmodeisprivateonlinegame());
             println("<unknown string>" + sessionmodeissystemlink());
@@ -92,7 +92,7 @@ function function_d519e318() {
         /#
             println("<unknown string>" + function_f8d53445());
             println("<unknown string>" + gettime());
-            println("<unknown string>" + get_map_name());
+            println("<unknown string>" + util::get_map_name());
             println("<unknown string>" + level.gametype);
             println("<unknown string>" + getutc());
         #/

@@ -1309,7 +1309,7 @@ function private function_350ee41() {
     s_bundle = getscriptbundle(level.str_magicbox_weapon_itemspawnlist);
     totalweight = 0;
     foreach (s_item in s_bundle.itemlist) {
-        totalweight = totalweight + s_item.minweight;
+        totalweight += s_item.minweight;
         level.var_c0c63390[s_item.itementry] = totalweight;
     }
     if (!isdefined(level.str_magicbox_named_itemspawnlist)) {
@@ -1428,7 +1428,7 @@ function limited_weapon_below_quota(weapon, ignore_player) {
         }
         if (isdefined(level.custom_limited_weapon_checks)) {
             foreach (check in level.custom_limited_weapon_checks) {
-                count = count + [[ check ]](weapon);
+                count += [[ check ]](weapon);
             }
             if (count >= limit) {
                 return false;
@@ -1595,7 +1595,7 @@ function function_603af7a8(weapon) {
         level.zombie_weapons[weapon].is_in_box = 1;
     }
     /#
-        level thread function_bcc8843e(getweaponname(weapon), "<unknown string>", "<unknown string>");
+        level thread zm_devgui::function_bcc8843e(getweaponname(weapon), "<unknown string>", "<unknown string>");
     #/
 }
 
@@ -2430,7 +2430,7 @@ function ammo_give(weapon, b_purchased = 1) {
                     n_ammo_max = var_ef0714fa;
                 }
                 if (weapon.isdualwield) {
-                    n_ammo_max = n_ammo_max * 2;
+                    n_ammo_max *= 2;
                 }
                 if (var_b8624c26 >= n_ammo_max + var_98f6dae8 + var_4052eae0) {
                     var_cd9d17e0 = 0;
@@ -3518,7 +3518,7 @@ function function_52b3c7ca(weapon, item, var_b2e08916, clipsize, var_9839b3b1, v
                         point.var_bce3d77a = var_7fa2b50b;
                     }
                 }
-                for (n_timeout = 0; n_timeout <= 3; n_timeout = n_timeout + float(function_60d95f53()) / 1000) {
+                for (n_timeout = 0; n_timeout <= 3; n_timeout += float(function_60d95f53()) / 1000) {
                     dropweapon = self item_inventory::drop_inventory_item(item.networkid);
                     if (isdefined(dropweapon)) {
                         break;
@@ -4030,24 +4030,23 @@ function function_9aaa198a(var_5302a1ef = 0, var_a0cc02cf = 0, var_96c71057 = 0,
     }
 }
 
-// Namespace zm_weapons/zm_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x33fdc268, Offset: 0xee18
-// Size: 0x7c
-function function_800654fc() {
-    /#
+/#
+
+    // Namespace zm_weapons/zm_weapons
+    // Params 0, eflags: 0x0
+    // Checksum 0x33fdc268, Offset: 0xee18
+    // Size: 0x7c
+    function function_800654fc() {
         level endon(#"game_ended");
         adddebugcommand("<unknown string>" + function_9e72a96(#"ray_gun_item_sr") + "<unknown string>");
-        function_d8ef0f00(&function_8610a5cc);
-    #/
-}
+        namespace_420b39d3::function_d8ef0f00(&function_8610a5cc);
+    }
 
-// Namespace zm_weapons/zm_weapons
-// Params 1, eflags: 0x0
-// Checksum 0xd078fe6d, Offset: 0xeea0
-// Size: 0x130
-function function_8610a5cc(params) {
-    /#
+    // Namespace zm_weapons/zm_weapons
+    // Params 1, eflags: 0x0
+    // Checksum 0xd078fe6d, Offset: 0xeea0
+    // Size: 0x130
+    function function_8610a5cc(params) {
         tokens = strtok(params.value, "<unknown string>");
         if (!tokens.size || tokens[0] != "<unknown string>") {
             return;
@@ -4058,6 +4057,6 @@ function function_8610a5cc(params) {
                 player function_98776900(item);
             }
         }
-    #/
-}
+    }
 
+#/

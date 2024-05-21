@@ -2229,7 +2229,7 @@ function function_42fbf5d9(instance, var_f00d1e) {
             break;
         }
         v_dest = var_f00d1e.origin + (0, 0, n_inc);
-        n_inc = n_inc - 30;
+        n_inc -= 30;
         if (v_dest[2] <= var_f00d1e.origin[2]) {
             break;
         }

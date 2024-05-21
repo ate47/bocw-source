@@ -57,23 +57,23 @@ function monitor() {
 function function_d35f877a(player, *weapon, statname, value = 0) {
     if (isdefined(weapon.var_3dc66299)) {
         if (statname == #"shots") {
-            weapon.var_3dc66299.shots = weapon.var_3dc66299.shots + value;
+            weapon.var_3dc66299.shots += value;
             return;
         }
         if (statname == #"hits") {
-            weapon.var_3dc66299.hits = weapon.var_3dc66299.hits + value;
+            weapon.var_3dc66299.hits += value;
             return;
         }
         if (statname == #"kills") {
-            weapon.var_3dc66299.kills = weapon.var_3dc66299.kills + value;
+            weapon.var_3dc66299.kills += value;
             return;
         }
         if (statname == #"deathsduringuse") {
-            weapon.var_3dc66299.deathsduringuse = weapon.var_3dc66299.deathsduringuse + value;
+            weapon.var_3dc66299.deathsduringuse += value;
             return;
         }
         if (statname == #"headshots") {
-            weapon.var_3dc66299.headshots = weapon.var_3dc66299.headshots + value;
+            weapon.var_3dc66299.headshots += value;
         }
     }
 }
@@ -244,14 +244,14 @@ function private travel_dist() {
         is_alive = isalive(self);
         if (is_alive) {
             dist = distance(self.origin, prevpos);
-            var_365f7ec5 = var_365f7ec5 + dist;
+            var_365f7ec5 += dist;
             if (dist > 0 && game.state == #"playing") {
                 if (!self isinvehicle()) {
                     groundent = self getgroundent();
                     if (isdefined(groundent) && !isvehicle(groundent)) {
-                        var_7e8e90a4 = var_7e8e90a4 + dist;
+                        var_7e8e90a4 += dist;
                         if (is_true(self.outsidedeathcircle)) {
-                            var_87a9b1b1 = var_87a9b1b1 + dist;
+                            var_87a9b1b1 += dist;
                         }
                     }
                 }
@@ -259,15 +259,15 @@ function private travel_dist() {
             var_601d5ffc++;
             prevpos = self.origin;
             if (dist >= 1.6) {
-                var_aab0a48f = var_aab0a48f + 1;
+                var_aab0a48f += 1;
             }
         }
         if (var_601d5ffc % 5 == 0 || !is_alive || isdefined(self.usingremote)) {
             if (var_aab0a48f > 0) {
                 distancemoved = distance(self.origin, positionptm);
                 if (distancemoved > 16) {
-                    var_ec704eef = var_ec704eef + distancemoved;
-                    self.time_played_moving = self.time_played_moving + var_aab0a48f;
+                    var_ec704eef += distancemoved;
+                    self.time_played_moving += var_aab0a48f;
                 }
             }
             positionptm = self.origin;
@@ -331,7 +331,7 @@ function function_83433c76() {
     if (!isdefined(self.timespentwallrunninginlife)) {
         self.timespentwallrunninginlife = 0;
     }
-    self.timespentwallrunninginlife = self.timespentwallrunninginlife + gettime() - self.lastwallrunstarttime;
+    self.timespentwallrunninginlife += gettime() - self.lastwallrunstarttime;
 }
 
 // Namespace player_monitor/swimming_begin
@@ -358,7 +358,7 @@ function function_9fabf258() {
     if (!isdefined(self.timespentswimminginlife)) {
         self.timespentswimminginlife = 0;
     }
-    self.timespentswimminginlife = self.timespentswimminginlife + gettime() - self.lastswimmingstarttime;
+    self.timespentswimminginlife += gettime() - self.lastswimmingstarttime;
 }
 
 // Namespace player_monitor/slide_begin

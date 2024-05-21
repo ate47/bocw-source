@@ -197,7 +197,7 @@ function getteamcenter(team) {
         if (!isalive(teammate)) {
             continue;
         }
-        var_f44bf438 = var_f44bf438 + teammate.origin;
+        var_f44bf438 += teammate.origin;
         totalaliveplayers++;
     }
     if (totalaliveplayers == 0) {
@@ -353,12 +353,13 @@ function function_a9ef6d5d(plane, var_675219e7, var_aff95821, var_d1769adf) {
     }
 }
 
-// Namespace artillery_barrage/artillery_barrage_shared
-// Params 1, eflags: 0x0
-// Checksum 0x48a25af3, Offset: 0x1990
-// Size: 0x150
-function function_8c164ce0(path) {
-    /#
+/#
+
+    // Namespace artillery_barrage/artillery_barrage_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x48a25af3, Offset: 0x1990
+    // Size: 0x150
+    function function_8c164ce0(path) {
         draw_path = getdvarint(#"hash_619e2bb393e45754", 0);
         if (draw_path == 0) {
             return;
@@ -370,13 +371,14 @@ function function_8c164ce0(path) {
         foreach (point in path) {
             if (!var_11f31e2c) {
                 var_11f31e2c = 1;
-                debug_sphere(point, radius, (0, 1, 0), alpha, var_342eb58c);
+                util::debug_sphere(point, radius, (0, 1, 0), alpha, var_342eb58c);
                 continue;
             }
-            debug_sphere(point, radius, (0, 0, 1), alpha, var_342eb58c);
+            util::debug_sphere(point, radius, (0, 0, 1), alpha, var_342eb58c);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace artillery_barrage/artillery_barrage_shared
 // Params 6, eflags: 0x0
@@ -674,10 +676,10 @@ function function_6cd200d2() {
         goalx = randomfloatrange(650, 700);
         goaly = randomfloatrange(650, 700);
         if (randomintrange(0, 2) > 0) {
-            goalx = goalx * -1;
+            goalx *= -1;
         }
         if (randomintrange(0, 2) > 0) {
-            goaly = goaly * -1;
+            goaly *= -1;
         }
         planedir = anglestoforward(plane.angles);
         plane setplanegoalpos(plane.origin + (goalx, goaly, randomfloatrange(600, 700) * -1) + vectorscale(planedir, 3500));

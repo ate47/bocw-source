@@ -399,7 +399,7 @@ function function_4b23ad31(machine, trigger) {
                     var_d53eef6c = var_1a988176 == #"self_revive_sr_item";
                     if (var_d53eef6c) {
                         if (var_1f514c83) {
-                            var_1d1d4a2a = var_1d1d4a2a + self.var_ac1e78a5 * 50;
+                            var_1d1d4a2a += self.var_ac1e78a5 * 50;
                         }
                     }
                     var_3069fe3 = 0;
@@ -424,7 +424,7 @@ function function_4b23ad31(machine, trigger) {
                             self give_item(var_1a988176);
                         }
                         if (var_d53eef6c && var_1f514c83) {
-                            self.var_ac1e78a5 = self.var_ac1e78a5 + 1;
+                            self.var_ac1e78a5 += 1;
                             self.var_ac1e78a5 = math::clamp(self.var_ac1e78a5, 0, 1000);
                             if (level.var_3ed9fd33 sr_crafting_table_menu::is_open(self)) {
                                 level.var_3ed9fd33 sr_crafting_table_menu::function_8ec20f82(self, self.var_ac1e78a5);
@@ -619,12 +619,13 @@ function function_18dfa93a(destination) {
     }
 }
 
-// Namespace namespace_1cc7b406/namespace_1cc7b406
-// Params 0, eflags: 0x0
-// Checksum 0x7d446a8b, Offset: 0x2868
-// Size: 0x62c
-function function_633b283d() {
-    /#
+/#
+
+    // Namespace namespace_1cc7b406/namespace_1cc7b406
+    // Params 0, eflags: 0x0
+    // Checksum 0x7d446a8b, Offset: 0x2868
+    // Size: 0x62c
+    function function_633b283d() {
         adddebugcommand("<unknown string>" + function_9e72a96(#"concussion_t9_item_sr") + "<unknown string>");
         adddebugcommand("<unknown string>" + function_9e72a96(#"cymbal_monkey_t9_item_sr") + "<unknown string>");
         adddebugcommand("<unknown string>" + function_9e72a96(#"item_survival_scorestreak_deathmachine") + "<unknown string>");
@@ -649,16 +650,14 @@ function function_633b283d() {
         adddebugcommand("<unknown string>" + function_9e72a96(#"grapple_t9_item_sr") + "<unknown string>");
         adddebugcommand("<unknown string>" + function_9e72a96(#"item_survival_scorestreak_arcxd") + "<unknown string>");
         adddebugcommand("<unknown string>" + function_9e72a96(#"item_survival_scorestreak_hand_cannon") + "<unknown string>");
-        function_d8ef0f00(&function_7a1fc37c);
-    #/
-}
+        namespace_420b39d3::function_d8ef0f00(&function_7a1fc37c);
+    }
 
-// Namespace namespace_1cc7b406/namespace_1cc7b406
-// Params 1, eflags: 0x0
-// Checksum 0xd9f135dd, Offset: 0x2ea0
-// Size: 0x130
-function function_7a1fc37c(params) {
-    /#
+    // Namespace namespace_1cc7b406/namespace_1cc7b406
+    // Params 1, eflags: 0x0
+    // Checksum 0xd9f135dd, Offset: 0x2ea0
+    // Size: 0x130
+    function function_7a1fc37c(params) {
         tokens = strtok(params.value, "<unknown string>");
         if (!tokens.size || tokens[0] != "<unknown string>") {
             return;
@@ -669,6 +668,6 @@ function function_7a1fc37c(params) {
                 player give_item(str_item_name);
             }
         }
-    #/
-}
+    }
 
+#/

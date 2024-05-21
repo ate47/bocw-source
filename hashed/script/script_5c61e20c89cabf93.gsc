@@ -36,7 +36,7 @@ function function_d1df9410(waitresult) {
         }
         stock = player getweaponammostock(weapon);
         clip = weapon.clipsize;
-        clip = clip * getdvarfloat(#"scavenger_clip_multiplier", 1);
+        clip *= getdvarfloat(#"scavenger_clip_multiplier", 1);
         clip = int(clip);
         maxammo = player function_5d951520(weapon);
         if (stock < maxammo - clip * 3) {

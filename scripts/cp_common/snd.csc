@@ -131,7 +131,7 @@ function private function_6d366059(player, cmd, args) {
     targetname = string(args[2]);
     if (args.size > 3) {
         for (i = 3; i < args.size; i++) {
-            targetname = targetname + " " + string(args[i]);
+            targetname += " " + string(args[i]);
         }
     }
     level._snd.var_cd3159ba["" + entitynumber] = targetname;
@@ -155,7 +155,7 @@ function private function_cc4bf5ee(player, cmd, args) {
     if (args.size > 3) {
         assert(isstring(soundalias));
         for (i = 3; i < args.size; i++) {
-            soundalias = soundalias + " " + string(args[i]);
+            soundalias += " " + string(args[i]);
         }
     }
     ent = undefined;
@@ -333,12 +333,12 @@ function function_5275752c(soundalias, var_1d25915, var_605838f4, var_e330010e) 
     spawnorigin = undefined;
     if (isdefined(var_605838f4) && isdefined(var_e330010e) && isdefined(var_1d25915)) {
         spawnorigin = var_605838f4 gettagorigin(var_e330010e);
-        spawnorigin = spawnorigin + var_1d25915;
+        spawnorigin += var_1d25915;
     } else if (isdefined(var_605838f4) && isdefined(var_e330010e)) {
         spawnorigin = var_605838f4 gettagorigin(var_e330010e);
     } else if (isdefined(var_605838f4) && isdefined(var_1d25915)) {
         spawnorigin = var_605838f4.origin;
-        spawnorigin = spawnorigin + var_1d25915;
+        spawnorigin += var_1d25915;
     } else if (isdefined(var_605838f4)) {
         spawnorigin = var_605838f4.origin;
     } else if (!isdefined(var_605838f4) && !isdefined(var_1d25915)) {
@@ -370,7 +370,7 @@ function function_5275752c(soundalias, var_1d25915, var_605838f4, var_e330010e) 
 function function_bdc44456(ent) {
     if (snd::function_81fac19d(!isdefined(ent) || function_3132f113(ent), "snd: free on deleted entity!")) {
         /#
-            if (function_f984063f()) {
+            if (snd::function_f984063f()) {
                 debugbreak();
             }
         #/
@@ -383,7 +383,7 @@ function function_bdc44456(ent) {
             var_605838f4.var_a415b6d6[ent.soundkey] = undefined;
         } else {
             /#
-                if (function_f984063f()) {
+                if (snd::function_f984063f()) {
                     debugbreak();
                 }
             #/
@@ -441,7 +441,7 @@ function function_273d939b(var_afe43979, var_24ea4e17) {
     ent = var_afe43979;
     if (snd::function_81fac19d(!isdefined(ent) || function_3132f113(ent), "snd: stop on deleted entity!")) {
         /#
-            if (function_f984063f()) {
+            if (snd::function_f984063f()) {
                 debugbreak();
             }
         #/
@@ -471,8 +471,8 @@ function private function_5834ae26(soundalias, done) {
     ent = self;
     ent endon(#"death");
     waittime = soundgetplaybacktime(soundalias);
-    waittime = waittime * 1.25;
-    waittime = waittime / 1000;
+    waittime *= 1.25;
+    waittime /= 1000;
     wait(waittime);
     ent notify(done, ent.soundalias);
     function_bdc44456(ent);
@@ -504,13 +504,17 @@ function private function_297cdf07(done, soundhandle) {
     function_bdc44456(ent);
 }
 
-// Namespace namespace_afa8e18b/snd
-// Params 4, eflags: 0x2 linked
-// Checksum 0x82ac3476, Offset: 0x2440
-// Size: 0x44
-function function_b5959278(*ent, *var_1d25915, *var_605838f4, *var_e330010e) {
-    assert(0, "<unknown string>");
-}
+/#
+
+    // Namespace namespace_afa8e18b/snd
+    // Params 4, eflags: 0x2 linked
+    // Checksum 0x82ac3476, Offset: 0x2440
+    // Size: 0x44
+    function function_b5959278(*ent, *var_1d25915, *var_605838f4, *var_e330010e) {
+        assert(0, "<unknown string>");
+    }
+
+#/
 
 // Namespace namespace_afa8e18b/snd
 // Params 4, eflags: 0x2 linked
@@ -521,31 +525,35 @@ function function_85daf9f0(*soundalias, *var_1d25915, *var_605838f4, *var_e33001
     return undefined;
 }
 
-// Namespace namespace_afa8e18b/snd
-// Params 1, eflags: 0x0
-// Checksum 0xd86e43f6, Offset: 0x24e0
-// Size: 0x2c
-function function_6ac5b570(*ent) {
-    assert(0, "<unknown string>");
-}
+/#
 
-// Namespace namespace_afa8e18b/snd
-// Params 4, eflags: 0x2 linked
-// Checksum 0xcc94ec83, Offset: 0x2518
-// Size: 0x44
-function function_2dde45d9(*var_afe43979, *soundalias, *var_99e65ecf, *delaytime) {
-    assert(0, "<unknown string>");
-}
+    // Namespace namespace_afa8e18b/snd
+    // Params 1, eflags: 0x0
+    // Checksum 0xd86e43f6, Offset: 0x24e0
+    // Size: 0x2c
+    function function_6ac5b570(*ent) {
+        assert(0, "<unknown string>");
+    }
 
-// Namespace namespace_afa8e18b/snd
-// Params 2, eflags: 0x2 linked
-// Checksum 0x368e01bb, Offset: 0x2568
-// Size: 0x34
-function function_9f156b27(*var_afe43979, *var_24ea4e17) {
-    assert(0, "<unknown string>");
-}
+    // Namespace namespace_afa8e18b/snd
+    // Params 4, eflags: 0x2 linked
+    // Checksum 0xcc94ec83, Offset: 0x2518
+    // Size: 0x44
+    function function_2dde45d9(*var_afe43979, *soundalias, *var_99e65ecf, *delaytime) {
+        assert(0, "<unknown string>");
+    }
+
+    // Namespace namespace_afa8e18b/snd
+    // Params 2, eflags: 0x2 linked
+    // Checksum 0x368e01bb, Offset: 0x2568
+    // Size: 0x34
+    function function_9f156b27(*var_afe43979, *var_24ea4e17) {
+        assert(0, "<unknown string>");
+    }
 
 #namespace snd;
+
+#/
 
 // Namespace snd/snd
 // Params 1, eflags: 0x6 linked
@@ -715,7 +723,7 @@ function private function_48e190dd(curve, scale, time, var_9cecf99a, callbackfun
             timeinterval = max(self.var_aceb47b0.waitinterval, frametime);
         }
         waittime = min(timeinterval, remainingtime);
-        var_5bd40646 = var_5bd40646 + int(waittime * 1000 + 0.5);
+        var_5bd40646 += int(waittime * 1000 + 0.5);
         timefrac = float(var_5bd40646) / float(timems);
         scalevalue = 1;
         if (var_71659f7c > 0) {
@@ -893,12 +901,13 @@ function private function_bf76eea3() {
     return fov;
 }
 
-// Namespace snd/snd
-// Params 2, eflags: 0x4
-// Checksum 0x6c37c15f, Offset: 0x3a78
-// Size: 0x316
-function private function_360bb421(key, value) {
-    /#
+/#
+
+    // Namespace snd/snd
+    // Params 2, eflags: 0x4
+    // Checksum 0x6c37c15f, Offset: 0x3a78
+    // Size: 0x316
+    function private function_360bb421(key, value) {
         values = strtok(value, "<unknown string>");
         if (isarray(values) && values.size > 0) {
             contextkey = values[0];
@@ -920,6 +929,6 @@ function private function_360bb421(key, value) {
             }
         }
         return value;
-    #/
-}
+    }
 
+#/

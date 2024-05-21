@@ -428,7 +428,7 @@ function function_1dcff2c3(weapon) {
     var_b8b29a85 = var_5a130b17 > 0 && ammo_in_clip < clip_size;
     self.takedown.var_6bd335ce = var_b8b29a85 && ammo_in_clip < clip_size * 0.33;
     if (ammo_in_clip == 0) {
-        self.takedown.var_6cf436f = self.takedown.var_6cf436f + float(function_60d95f53()) / 1000;
+        self.takedown.var_6cf436f += float(function_60d95f53()) / 1000;
     } else {
         self.takedown.var_6cf436f = 0;
     }
@@ -548,7 +548,7 @@ function function_e98922fb(action) {
     while (true) {
         result = self waittilltimeout(1, #"body_shield_damage");
         if (result._notify != "body_shield_damage") {
-            self.takedown.body_shield.health = self.takedown.body_shield.health - 7;
+            self.takedown.body_shield.health -= 7;
             self.takedown.body_shield.var_70faf312 = self.takedown.body_shield.health;
             self.takedown.body_shield.var_ea2da6bc = gettime();
             self notify(#"hash_3cc22522d66c35f8");

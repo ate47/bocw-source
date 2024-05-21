@@ -434,7 +434,7 @@ function function_c57b04f7(localclientnum) {
         self.var_31574a7.origin = tag_pos;
         var_1e65372b = isdefined(self.owner getcampos()) ? self.owner getcampos() : tag_pos;
         if (self.beam_length < 800) {
-            self.beam_length = self.beam_length + 19.2;
+            self.beam_length += 19.2;
         }
         self.move_dir = anglestoforward(self.owner getplayerangles());
         v_target_pos = var_1e65372b + self.move_dir * self.beam_length;

@@ -54,7 +54,7 @@ function private preinit() {
         level thread function_7904ef68(level.territory);
     }
     /#
-        mapname = get_map_name();
+        mapname = util::get_map_name();
         foreach (territory in territories) {
             adddebugcommand("<unknown string>" + mapname + "<unknown string>" + territory.targetname + "<unknown string>" + territory.targetname + "<unknown string>");
         }

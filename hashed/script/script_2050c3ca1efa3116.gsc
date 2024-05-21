@@ -135,7 +135,7 @@ function function_157f1b14() {
                 }
                 if (activate) {
                     function_c5cbd3bf(trap, 1);
-                    trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
+                    trap.var_eb9d64bb += 5000;
                     namespace_1e25ad94::debugmsg("Paging IN pungi trap at:" + trap.origin);
                 }
                 continue;
@@ -231,7 +231,7 @@ function function_1e690b43(movetime, lifetime) {
                 self.trigger.origin = self.origin + offset;
                 self.trigger.angles = self.angles;
                 /#
-                    level thread function_b57a9d84(self.trigger.origin, self.trigger.angles[1], self.trigger.length, self.trigger.width, self.trigger.height, lifetime);
+                    level thread namespace_1e25ad94::function_b57a9d84(self.trigger.origin, self.trigger.angles[1], self.trigger.length, self.trigger.width, self.trigger.height, lifetime);
                 #/
             }
         }

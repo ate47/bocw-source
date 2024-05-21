@@ -75,7 +75,7 @@ function zombify_player() {
     if (gametype == #"zsurvival") {
         self val::reset(#"laststand", "ignoreme");
     }
-    if (!isdefined(zombie_utility::function_d2dfacfd(#"zombify_player")) || !zombie_utility::function_d2dfacfd(#"zombify_player")) {
+    if (!isdefined(zombie_utility::get_zombie_var(#"zombify_player")) || !zombie_utility::get_zombie_var(#"zombify_player")) {
         self thread zm_player::spawnspectator();
         return;
     }
@@ -113,7 +113,7 @@ function playerzombie_player_damage() {
             waitframe(1);
             continue;
         }
-        self.zombiehealth = self.zombiehealth - amount;
+        self.zombiehealth -= amount;
         if (self.zombiehealth <= 0) {
             self thread playerzombie_downed_state();
             self waittill(#"playerzombie_downed_state_done");

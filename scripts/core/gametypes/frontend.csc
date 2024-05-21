@@ -796,12 +796,13 @@ function function_4b3b4c30(localclientnum) {
     }
 }
 
-// Namespace frontend/frontend
-// Params 0, eflags: 0x0
-// Checksum 0xc302ac7a, Offset: 0x5a10
-// Size: 0x8e
-function function_ee181cbd() {
-    /#
+/#
+
+    // Namespace frontend/frontend
+    // Params 0, eflags: 0x0
+    // Checksum 0xc302ac7a, Offset: 0x5a10
+    // Size: 0x8e
+    function function_ee181cbd() {
         self notify("operator_missions");
         self endon("operator_missions");
         self endon(#"death");
@@ -811,8 +812,9 @@ function function_ee181cbd() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace frontend/frontend
 // Params 0, eflags: 0x2 linked
@@ -922,12 +924,13 @@ function entityspawned(*localclientnum) {
     
 }
 
-// Namespace frontend/frontend
-// Params 1, eflags: 0x0
-// Checksum 0x25cf66f5, Offset: 0x6240
-// Size: 0x208
-function function_90646a7f(localclientnum) {
-    /#
+/#
+
+    // Namespace frontend/frontend
+    // Params 1, eflags: 0x0
+    // Checksum 0x25cf66f5, Offset: 0x6240
+    // Size: 0x208
+    function function_90646a7f(localclientnum) {
         while (true) {
             ct_cmd = getdvarint(#"hash_52d9845c30e27ace", 0);
             if (ct_cmd == 0) {
@@ -941,15 +944,13 @@ function function_90646a7f(localclientnum) {
             sendmenuresponse(localclientnum, #"hash_3130994c2d7cee8c", int(origin[0]) + "s6_lobby_geo_1" + int(origin[1]) + "s6_lobby_geo_1" + int(origin[2]) + "s6_lobby_geo_1" + int(angles[0]) + "s6_lobby_geo_1" + int(angles[1]) + "s6_lobby_geo_1" + int(angles[2]), 1);
             setdvar(#"hash_52d9845c30e27ace", 0);
         }
-    #/
-}
+    }
 
-// Namespace frontend/frontend
-// Params 2, eflags: 0x0
-// Checksum 0x1e3879d8, Offset: 0x6450
-// Size: 0x182
-function function_da10fc8f(localclientnum, var_da239274) {
-    /#
+    // Namespace frontend/frontend
+    // Params 2, eflags: 0x0
+    // Checksum 0x1e3879d8, Offset: 0x6450
+    // Size: 0x182
+    function function_da10fc8f(localclientnum, var_da239274) {
         var_38b900c2 = getent(localclientnum, "s4_lobby_geo_2", "intro");
         var_51a0f339 = getent(localclientnum, "amb_frontend_planedrone_flux", "intro");
         var_38b900c2 show();
@@ -969,15 +970,13 @@ function function_da10fc8f(localclientnum, var_da239274) {
         var_38b900c2 show();
         var_51a0f339 hide();
         waitframe(1);
-    #/
-}
+    }
 
-// Namespace frontend/frontend
-// Params 6, eflags: 0x0
-// Checksum 0x618b416f, Offset: 0x65e0
-// Size: 0x384
-function function_5d6480a0(localclientnum, weapon, weapon_model, weapon_name, var_2d8a24a3, var_f879230e) {
-    /#
+    // Namespace frontend/frontend
+    // Params 6, eflags: 0x0
+    // Checksum 0x618b416f, Offset: 0x65e0
+    // Size: 0x384
+    function function_5d6480a0(localclientnum, weapon, weapon_model, weapon_name, var_2d8a24a3, var_f879230e) {
         if (ishash(var_2d8a24a3.name)) {
             camo_index = var_2d8a24a3.item_index == 0 ? 0 : function_8b51d9d1(var_2d8a24a3.name);
             var_9ce34e01 = function_9e72a96(var_2d8a24a3.name);
@@ -986,7 +985,7 @@ function function_5d6480a0(localclientnum, weapon, weapon_model, weapon_name, va
             var_9ce34e01 = var_2d8a24a3.name;
         }
         if (isdefined(camo_index)) {
-            activecamoinfo = function_13e12ab1(camo_index);
+            activecamoinfo = activecamo::function_13e12ab1(camo_index);
             if (isdefined(activecamoinfo) && activecamoinfo.stages.size > 1) {
                 var_3594168e = activecamoinfo.stages[2];
                 if (!is_true(var_3594168e.disabled)) {
@@ -1003,7 +1002,7 @@ function function_5d6480a0(localclientnum, weapon, weapon_model, weapon_name, va
             render_options = function_6eff28b5(localclientnum, camo_index, 0, 0);
             weapon_model useweaponmodel(weapon, undefined, render_options, var_f879230e);
             if (isdefined(var_3594168e)) {
-                function_6c9e0e1a(localclientnum, weapon_model, var_3594168e, level.var_43aac701);
+                activecamo::function_6c9e0e1a(localclientnum, weapon_model, var_3594168e, level.var_43aac701);
             }
             iteration = 0;
             max_iterations = getdvarint(#"hash_16a421138c7e03f8", -1);
@@ -1014,15 +1013,13 @@ function function_5d6480a0(localclientnum, weapon, weapon_model, weapon_name, va
             wait(0.1);
             function_da10fc8f(localclientnum, "<unknown string>" + weapon_name + "<unknown string>" + weapon_name + "<unknown string>" + var_9ce34e01 + "<unknown string>");
         }
-    #/
-}
+    }
 
-// Namespace frontend/frontend
-// Params 3, eflags: 0x0
-// Checksum 0x6baca9e0, Offset: 0x6970
-// Size: 0x644
-function function_f2c538de(localclientnum, *menu_name, state) {
-    /#
+    // Namespace frontend/frontend
+    // Params 3, eflags: 0x0
+    // Checksum 0x6baca9e0, Offset: 0x6970
+    // Size: 0x644
+    function function_f2c538de(localclientnum, *menu_name, state) {
         self notify("<unknown string>");
         self endon("<unknown string>");
         args = strtok(state, "<unknown string>");
@@ -1037,24 +1034,24 @@ function function_f2c538de(localclientnum, *menu_name, state) {
         var_38b900c2 show();
         var_51a0f339 hide();
         weapon = getweapon(weapon_name);
-        target = get(#"weapon_icon_staging");
+        target = struct::get(#"weapon_icon_staging");
         weapon_model = spawn(menu_name, target.origin, "<unknown string>");
         weapon_model.targetname = "<unknown string>";
         weapon_model.angles = target.angles;
         weapon_model sethighdetail();
         weapon_model useweaponmodel(weapon);
-        s_info = function_3bff05ba(weapon, #"primary");
+        s_info = customclass::function_3bff05ba(weapon, #"primary");
         weapon_model setscale(s_info.scale);
         if (type === "<unknown string>") {
             shot = function_e2703c27(weapon);
-            if (!function_9730988a(#"scene_frontend_weapon_camo_render", shot)) {
+            if (!scene::function_9730988a(#"scene_frontend_weapon_camo_render", shot)) {
                 shot = undefined;
             }
         }
         if (!isdefined(shot)) {
             shot = "<unknown string>";
         }
-        level thread play(#"scene_frontend_weapon_camo_render", shot);
+        level thread scene::play(#"scene_frontend_weapon_camo_render", shot);
         if (camo != -2) {
             options = function_ea647602("<unknown string>");
             if (camo == -1) {
@@ -1092,32 +1089,28 @@ function function_f2c538de(localclientnum, *menu_name, state) {
                 function_5d6480a0(menu_name, var_d68c33d0.weapon, weapon_model, weapon_name, {#item_index:0, #name:"<unknown string>" + i}, var_d68c33d0.var_fd90b0bb);
             }
         }
-        level thread stop(#"scene_frontend_weapon_camo_render");
+        level thread scene::stop(#"scene_frontend_weapon_camo_render");
         level notify("<unknown string>" + menu_name, {#menu:"<unknown string>", #status:"<unknown string>"});
         weapon_model delete();
         setdvar(#"weap_render", "<unknown string>");
         function_59013397();
-    #/
-}
+    }
 
-// Namespace frontend/frontend
-// Params 1, eflags: 0x0
-// Checksum 0x22e9fce4, Offset: 0x6fc0
-// Size: 0x26
-function function_d583ca36(weapon) {
-    /#
+    // Namespace frontend/frontend
+    // Params 1, eflags: 0x0
+    // Checksum 0x22e9fce4, Offset: 0x6fc0
+    // Size: 0x26
+    function function_d583ca36(weapon) {
         return weapon.inventorytype == "<unknown string>";
-    #/
-}
+    }
 
-// Namespace frontend/frontend
-// Params 1, eflags: 0x0
-// Checksum 0xd0d72cb7, Offset: 0x6ff0
-// Size: 0x99a
-function function_db3c4c69(localclientnum) {
-    /#
-        function_969a2881("<unknown string>", &function_f2c538de, 1, undefined, undefined, 0);
-        target = get(#"weapon_icon_staging");
+    // Namespace frontend/frontend
+    // Params 1, eflags: 0x0
+    // Checksum 0xd0d72cb7, Offset: 0x6ff0
+    // Size: 0x99a
+    function function_db3c4c69(localclientnum) {
+        namespace_d5a9ff55::function_969a2881("<unknown string>", &function_f2c538de, 1, undefined, undefined, 0);
+        target = struct::get(#"weapon_icon_staging");
         assert(isdefined(target));
         level.var_43aac701 = [];
         var_663588d = "<unknown string>";
@@ -1126,7 +1119,7 @@ function function_db3c4c69(localclientnum) {
         if (!isdefined(a_weapons)) {
             a_weapons = [];
         }
-        a_weapons = filter(a_weapons, 1, &function_d583ca36);
+        a_weapons = array::filter(a_weapons, 1, &function_d583ca36);
         foreach (weapon in a_weapons) {
             name = getweaponname(weapon);
             var_ee63b362 = root_weapon + "<unknown string>" + name;
@@ -1176,8 +1169,9 @@ function function_db3c4c69(localclientnum) {
                 }
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace frontend/frontend
 // Params 2, eflags: 0x2 linked
@@ -1276,7 +1270,7 @@ function function_d47a6728(localclientnum, var_302876c9) {
     if (!isdefined(character) || !isclass(character)) {
         return (randomint(2) < 0 ? "male" : "female");
     }
-    n_character_index = [[ character ]]->function_9004475c();
+    n_character_index = [[ character ]]->get_character_index();
     var_3b97696d = getherogender(n_character_index, 1);
     return var_3b97696d;
 }
@@ -1753,7 +1747,7 @@ function function_424d091c(var_d0b01271) {
 // Checksum 0x1e563e24, Offset: 0xa068
 // Size: 0x32
 function function_2ca65924(var_d0b01271) {
-    return function_4b2dd0a6([[ var_d0b01271 ]]->get_character_mode(), [[ var_d0b01271 ]]->function_9004475c());
+    return function_4b2dd0a6([[ var_d0b01271 ]]->get_character_mode(), [[ var_d0b01271 ]]->get_character_index());
 }
 
 // Namespace frontend/frontend
@@ -1808,7 +1802,7 @@ function function_c5aa56cd(localclientnum, var_b9c520c2 = 0) {
             var_1dfa126c = 1;
         }
         if (isdefined(character_index)) {
-            if (isdefined(level.var_1c43dd3e) && ([[ level.var_1c43dd3e ]]->function_9004475c() != character_index || var_bec52aca.var_90d2372c || is_true(var_1dfa126c))) {
+            if (isdefined(level.var_1c43dd3e) && ([[ level.var_1c43dd3e ]]->get_character_index() != character_index || var_bec52aca.var_90d2372c || is_true(var_1dfa126c))) {
                 if (var_bec52aca.var_90d2372c && ![[ level.var_1c43dd3e ]]->function_6b9e9618()) {
                     [[ level.var_1c43dd3e ]]->function_d72d0c2d(1);
                 } else if (!var_bec52aca.var_90d2372c && [[ level.var_1c43dd3e ]]->function_6b9e9618()) {
@@ -1893,7 +1887,7 @@ function function_f00765ad(localclientnum, xuid, var_87c045d1, index, var_3f0e79
     level endon(#"lobby_change", #"disconnect");
     iterations = 0;
     var_a65df30 = [[ var_87c045d1 ]]->function_e599283f();
-    current_index = [[ var_87c045d1 ]]->function_9004475c();
+    current_index = [[ var_87c045d1 ]]->get_character_index();
     var_23904c1d = getcharactercustomizationforxuid(localclientnum, xuid);
     while (!isdefined(var_23904c1d) && iterations < 15) {
         wait(1);
@@ -2306,7 +2300,7 @@ function function_c47e078a(var_bf321a0c, var_302876c9 = 1, character, localclien
             level scene::cancel(#"scene_frontend_t9_character_customization_camera");
             level scene::cancel(#"scene_frontend_t9_cac_overview");
             n_character_index = getequippedheroindex(xuid, 1);
-            if (n_character_index != [[ localclientnum ]]->function_9004475c()) {
+            if (n_character_index != [[ localclientnum ]]->get_character_index()) {
                 var_7f395102 = character_customization::function_7474681d(xuid, 1, n_character_index);
                 [[ localclientnum ]]->function_15a8906a(var_7f395102);
             }

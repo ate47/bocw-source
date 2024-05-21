@@ -163,7 +163,7 @@ function function_9d10940b() {
                 }
                 if (activate) {
                     function_ecfc6c75(trap, 1);
-                    trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
+                    trap.var_eb9d64bb += 5000;
                     namespace_1e25ad94::debugmsg("Paging IN flogger trap at:" + trap.origin);
                 }
                 continue;
@@ -231,7 +231,7 @@ function function_80eed528() {
         self.spinrate = 1;
     }
     animationrate = self.spinrate;
-    length = length / animationrate;
+    length /= animationrate;
     self.script_model namespace_e32bb68::function_3a59ec34("evt_doa_hazard_flogger_eng_start");
     wait(1);
     foreach (trigger in self.trigger) {
@@ -304,7 +304,7 @@ function function_ab141bd8(model, trap) {
             if (!is_true(guy.var_e66cd6fb)) {
                 v_centroid = guy getcentroid();
                 v_away_from_source = vectornormalize(self.origin - v_centroid);
-                v_away_from_source = v_away_from_source * 128;
+                v_away_from_source *= 128;
                 v_away_from_source = (v_away_from_source[0], v_away_from_source[1], randomintrange(128, 200));
                 guy thread namespace_ec06fe4a::function_b4ff2191(v_away_from_source, fling_force);
                 continue;

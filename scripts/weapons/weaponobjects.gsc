@@ -653,7 +653,7 @@ function weaponobjectdamage(watcher) {
         type = waitresult.mod;
         idflags = waitresult.flags;
         damage = weapons::function_74bbb3fa(damage, weapon, self.weapon);
-        self.damagetaken = self.damagetaken + damage;
+        self.damagetaken += damage;
         if (!isplayer(attacker) && isdefined(attacker.owner)) {
             attacker = attacker.owner;
         }
@@ -1402,55 +1402,52 @@ function function_7cdcc8ba(watcher) {
     if (isdefined(watcher)) {
         foreach (var_3fa20979 in watcher.objectarray) {
             if (isdefined(var_3fa20979.owner) && var_3fa20979.owner == self) {
-                count = count + 1;
+                count += 1;
             }
         }
     }
     return count;
 }
 
-// Namespace weaponobjects/weaponobjects
-// Params 5, eflags: 0x0
-// Checksum 0xbf9007f1, Offset: 0x4bb0
-// Size: 0xae
-function proximitysphere(origin, innerradius, incolor, outerradius, outcolor) {
-    /#
+/#
+
+    // Namespace weaponobjects/weaponobjects
+    // Params 5, eflags: 0x0
+    // Checksum 0xbf9007f1, Offset: 0x4bb0
+    // Size: 0xae
+    function proximitysphere(origin, innerradius, incolor, outerradius, outcolor) {
         self endon(#"death");
         while (true) {
             if (isdefined(innerradius)) {
-                debug_sphere(origin, innerradius, incolor, 0.25, 1);
+                dev::debug_sphere(origin, innerradius, incolor, 0.25, 1);
             }
             if (isdefined(outerradius)) {
-                debug_sphere(origin, outerradius, outcolor, 0.25, 1);
+                dev::debug_sphere(origin, outerradius, outcolor, 0.25, 1);
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace weaponobjects/weaponobjects
-// Params 1, eflags: 0x0
-// Checksum 0x190d291b, Offset: 0x4c68
-// Size: 0x94
-function proximityalarmweaponobjectdebug(*watcher) {
-    /#
+    // Namespace weaponobjects/weaponobjects
+    // Params 1, eflags: 0x0
+    // Checksum 0x190d291b, Offset: 0x4c68
+    // Size: 0x94
+    function proximityalarmweaponobjectdebug(*watcher) {
         self endon(#"death");
-        self waittillnotmoving();
+        self util::waittillnotmoving();
         if (!isdefined(self)) {
             return;
         }
         self thread proximitysphere(self.origin, self.weapon.proximityalarminnerradius, (0, 0.75, 0), self.weapon.proximityalarmouterradius, (0, 0.75, 0));
-    #/
-}
+    }
 
-// Namespace weaponobjects/weaponobjects
-// Params 1, eflags: 0x0
-// Checksum 0x6eb2efad, Offset: 0x4d08
-// Size: 0xfc
-function proximityweaponobjectdebug(watcher) {
-    /#
+    // Namespace weaponobjects/weaponobjects
+    // Params 1, eflags: 0x0
+    // Checksum 0x6eb2efad, Offset: 0x4d08
+    // Size: 0xfc
+    function proximityweaponobjectdebug(watcher) {
         self endon(#"death");
-        self waittillnotmoving();
+        self util::waittillnotmoving();
         if (!isdefined(self)) {
             return;
         }
@@ -1460,15 +1457,13 @@ function proximityweaponobjectdebug(watcher) {
         }
         self thread showcone(acos(watcher.detectiondot), watcher.detonateradius, (1, 0.85, 0));
         self thread showcone(60, 256, (1, 0, 0));
-    #/
-}
+    }
 
-// Namespace weaponobjects/weaponobjects
-// Params 3, eflags: 0x0
-// Checksum 0x2d5abe8f, Offset: 0x4e10
-// Size: 0x1f6
-function showcone(angle, range, color) {
-    /#
+    // Namespace weaponobjects/weaponobjects
+    // Params 3, eflags: 0x0
+    // Checksum 0x2d5abe8f, Offset: 0x4e10
+    // Size: 0x1f6
+    function showcone(angle, range, color) {
         self endon(#"death");
         start = self.origin;
         forward = anglestoforward(self.angles);
@@ -1489,8 +1484,9 @@ function showcone(angle, range, color) {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace weaponobjects/weaponobjects
 // Params 1, eflags: 0x0
@@ -1722,13 +1718,13 @@ function hackerresult(player, owner) {
         player val::set(#"gameobjects", "disable_weapons");
         /#
             if (!isdefined(self.progressbar)) {
-                self.progressbar = player function_5037fb7f();
+                self.progressbar = player hud::function_5037fb7f();
                 self.progressbar.lastuserate = -1;
-                self.progressbar showelem();
-                self.progressbar updatebar(0.01, 1 / hacktime);
-                self.progresstext = player function_48badcf4();
+                self.progressbar hud::showelem();
+                self.progressbar hud::updatebar(0.01, 1 / hacktime);
+                self.progresstext = player hud::function_48badcf4();
                 self.progresstext settext(#"mp/hacking");
-                self.progresstext showelem();
+                self.progresstext hud::showelem();
                 player playlocalsound(#"evt_hacker_hacking");
             }
         #/
@@ -1740,8 +1736,8 @@ function hackerresult(player, owner) {
     }
     /#
         if (isdefined(self.progressbar)) {
-            self.progressbar destroyelem();
-            self.progresstext destroyelem();
+            self.progressbar hud::destroyelem();
+            self.progresstext hud::destroyelem();
         }
     #/
     if (isdefined(self)) {
@@ -2271,18 +2267,20 @@ function function_ac7c2bf9(*params) {
     }
 }
 
-// Namespace weaponobjects/weaponobjects
-// Params 2, eflags: 0x0
-// Checksum 0x4b94848, Offset: 0x77f8
-// Size: 0x62
-function saydamaged(orig, amount) {
-    /#
-        for (i = 0; i < 60; i++) {
+/#
+
+    // Namespace weaponobjects/weaponobjects
+    // Params 2, eflags: 0x0
+    // Checksum 0x4b94848, Offset: 0x77f8
+    // Size: 0x62
+    function saydamaged(orig, amount) {
+                for (i = 0; i < 60; i++) {
             print3d(orig, "<unknown string>" + amount);
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace weaponobjects/weaponobjects
 // Params 2, eflags: 0x6 linked
@@ -2314,7 +2312,7 @@ function private function_c9fc5521(player, weapon) {
 function private get_ammo(player, weapon) {
     ammo = player getweaponammoclip(weapon);
     if (!weapon.iscliponly) {
-        ammo = ammo + player getweaponammostock(weapon);
+        ammo += player getweaponammostock(weapon);
     }
     return ammo;
 }
@@ -2582,7 +2580,7 @@ function function_57152a5(watcher, player, origin) {
     weapon = watcher.weapon;
     if (isdefined(weapon.var_ac36c1db) && weapon.var_ac36c1db > 0) {
         height = weapon.var_ac36c1db;
-        origin = origin - (0, 0, height * 0.5);
+        origin -= (0, 0, height * 0.5);
     }
     self.pickuptrigger = function_d5e8c3d0(origin, 50, 50);
     if (!function_c83025b7(weapon)) {
@@ -2744,8 +2742,8 @@ function watchshutdown(*player) {
     if (isdefined(hackertrigger)) {
         /#
             if (isdefined(hackertrigger.progressbar)) {
-                hackertrigger.progressbar destroyelem();
-                hackertrigger.progresstext destroyelem();
+                hackertrigger.progressbar hud::destroyelem();
+                hackertrigger.progresstext hud::destroyelem();
             }
         #/
         hackertrigger delete();
@@ -3028,12 +3026,13 @@ function function_931041f8(owner) {
     }
 }
 
-// Namespace weaponobjects/weaponobjects
-// Params 3, eflags: 0x0
-// Checksum 0x287028ba, Offset: 0x9c40
-// Size: 0x1b0
-function switch_team(entity, watcher, owner) {
-    /#
+/#
+
+    // Namespace weaponobjects/weaponobjects
+    // Params 3, eflags: 0x0
+    // Checksum 0x287028ba, Offset: 0x9c40
+    // Size: 0x1b0
+    function switch_team(entity, watcher, owner) {
         self notify(#"stop_disarmthink");
         self endon(#"stop_disarmthink", #"death");
         setdvar(#"scr_switch_team", "<unknown string>");
@@ -3057,6 +3056,6 @@ function switch_team(entity, watcher, owner) {
                 setdvar(#"scr_switch_team", 0);
             }
         }
-    #/
-}
+    }
 
+#/

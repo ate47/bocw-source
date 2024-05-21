@@ -191,7 +191,7 @@ function private function_68126677(var_624b8d02 = getdvarint(#"hash_5f8a3b48d8eb
             var_58b1f132 = vectornormalize(origin - self.origin);
             scale = (var_624b8d02 - distsq) / var_624b8d02;
             movevec = vectorscale(var_58b1f132, forcemag * scale);
-            self.origin = self.origin + movevec;
+            self.origin += movevec;
             self.var_e48718a6 = 1;
         }
     }

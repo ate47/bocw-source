@@ -218,18 +218,18 @@ function private function_a1ce8017(var_85c920d0) {
             return;
         }
         if (!isplayer(s_result.attacker)) {
-            var_85c920d0.health = var_85c920d0.health + s_result.amount;
+            var_85c920d0.health += s_result.amount;
             continue;
         }
         n_damage = s_result.amount;
         var_9b823197 = 1;
         if (s_result.part_name === "j_head") {
-            n_damage = n_damage * 2.2;
+            n_damage *= 2.2;
             var_570564b8 = int(n_damage - s_result.amount);
             var_9b823197 = 2;
         }
         if (isdefined(var_570564b8)) {
-            var_85c920d0.health = var_85c920d0.health - var_570564b8;
+            var_85c920d0.health -= var_570564b8;
         }
         hud::function_c9800094(s_result.attacker, s_result.position, int(n_damage), var_9b823197);
         if (var_85c920d0.health <= 1) {

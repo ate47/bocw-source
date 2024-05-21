@@ -43,59 +43,61 @@ function setupcallbacks() {
     level.autocontrolplayer = &menuautocontrolplayer;
 }
 
-// Namespace globallogic_ui/globallogic_ui
-// Params 0, eflags: 0x0
-// Checksum 0x53611123, Offset: 0x270
-// Size: 0x284
-function freegameplayhudelems() {
-    /#
+/#
+
+    // Namespace globallogic_ui/globallogic_ui
+    // Params 0, eflags: 0x0
+    // Checksum 0x53611123, Offset: 0x270
+    // Size: 0x284
+    function freegameplayhudelems() {
         /#
             if (isdefined(self.perkicon)) {
                 for (numspecialties = 0; numspecialties < level.maxspecialties; numspecialties++) {
                     if (isdefined(self.perkicon[numspecialties])) {
-                        self.perkicon[numspecialties] destroyelem();
-                        self.perkname[numspecialties] destroyelem();
+                        self.perkicon[numspecialties] hud::destroyelem();
+                        self.perkname[numspecialties] hud::destroyelem();
                     }
                 }
             }
             if (isdefined(self.perkhudelem)) {
-                self.perkhudelem destroyelem();
+                self.perkhudelem hud::destroyelem();
             }
         #/
         if (isdefined(self.killstreakicon)) {
             if (isdefined(self.killstreakicon[0])) {
-                self.killstreakicon[0] destroyelem();
+                self.killstreakicon[0] hud::destroyelem();
             }
             if (isdefined(self.killstreakicon[1])) {
-                self.killstreakicon[1] destroyelem();
+                self.killstreakicon[1] hud::destroyelem();
             }
             if (isdefined(self.killstreakicon[2])) {
-                self.killstreakicon[2] destroyelem();
+                self.killstreakicon[2] hud::destroyelem();
             }
             if (isdefined(self.killstreakicon[3])) {
-                self.killstreakicon[3] destroyelem();
+                self.killstreakicon[3] hud::destroyelem();
             }
             if (isdefined(self.killstreakicon[4])) {
-                self.killstreakicon[4] destroyelem();
+                self.killstreakicon[4] hud::destroyelem();
             }
         }
         if (isdefined(self.lowermessage)) {
-            self.lowermessage destroyelem();
+            self.lowermessage hud::destroyelem();
         }
         if (isdefined(self.lowertimer)) {
-            self.lowertimer destroyelem();
+            self.lowertimer hud::destroyelem();
         }
         if (isdefined(self.proxbar)) {
-            self.proxbar destroyelem();
+            self.proxbar hud::destroyelem();
         }
         if (isdefined(self.proxbartext)) {
-            self.proxbartext destroyelem();
+            self.proxbartext hud::destroyelem();
         }
         if (isdefined(self.carryicon)) {
-            self.carryicon destroyelem();
+            self.carryicon hud::destroyelem();
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace globallogic_ui/globallogic_ui
 // Params 2, eflags: 0x6 linked
@@ -173,7 +175,7 @@ function menuautoassign(comingfrommenu, var_4c542e39, var_432c77c2) {
         self beginclasschoice(comingfrommenu);
     }
     /#
-        self function_58b6d2c9();
+        self teams::function_58b6d2c9();
     #/
 }
 

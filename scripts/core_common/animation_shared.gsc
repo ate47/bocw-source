@@ -116,12 +116,13 @@ function stop(n_blend = 0.2, var_8b43f3e3 = 0) {
     }
 }
 
-// Namespace animation/animation_shared
-// Params 2, eflags: 0x0
-// Checksum 0xc76ee1ec, Offset: 0xb80
-// Size: 0x204
-function debug_print(str_animation, str_msg) {
-    /#
+/#
+
+    // Namespace animation/animation_shared
+    // Params 2, eflags: 0x0
+    // Checksum 0xc76ee1ec, Offset: 0xb80
+    // Size: 0x204
+    function debug_print(str_animation, str_msg) {
         str_dvar = getdvarstring(#"debug_anim_shared", "<unknown string>");
         if (str_dvar != "<unknown string>") {
             if (!isstring(str_animation)) {
@@ -136,11 +137,12 @@ function debug_print(str_animation, str_msg) {
                 b_print = 1;
             }
             if (b_print) {
-                printtoprightln(str_animation + "<unknown string>" + rjust(str_msg, 10) + "<unknown string>" + rjust("<unknown string>" + self getentitynumber(), 4) + "<unknown string>" + rjust("<unknown string>" + gettime(), 6) + "<unknown string>", (1, 1, 0), -1);
+                printtoprightln(str_animation + "<unknown string>" + string::rjust(str_msg, 10) + "<unknown string>" + string::rjust("<unknown string>" + self getentitynumber(), 4) + "<unknown string>" + string::rjust("<unknown string>" + gettime(), 6) + "<unknown string>", (1, 1, 0), -1);
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace animation/animation_shared
 // Params 15, eflags: 0x2 linked
@@ -242,7 +244,7 @@ function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, 
     /#
         self.var_80c69db6 = "<unknown string>";
         self.var_6c4bb19 = {#animation:animation, #v_origin_or_ent:v_origin_or_ent, #v_angles_or_tag:v_angles_or_tag, #var_f4b34dc1:var_f4b34dc1};
-        if (level get("<unknown string>")) {
+        if (level flag::get("<unknown string>")) {
             self thread anim_info_render_thread();
         }
     #/
@@ -481,7 +483,7 @@ function function_ba45bb6c() {
         wait(1);
         var_ab436758 = self.origin;
         if (distance(var_ab436758, var_89ae1c69) < 60) {
-            var_dc2b2d0b = var_dc2b2d0b + 1;
+            var_dc2b2d0b += 1;
         } else {
             var_dc2b2d0b = 0;
             var_89ae1c69 = self.origin;
@@ -493,22 +495,24 @@ function function_ba45bb6c() {
     }
 }
 
-// Namespace animation/animation_shared
-// Params 2, eflags: 0x0
-// Checksum 0xa63f05f9, Offset: 0x2648
-// Size: 0x166
-function debug_anim_reach(v_goal, str_anim) {
-    /#
+/#
+
+    // Namespace animation/animation_shared
+    // Params 2, eflags: 0x0
+    // Checksum 0xa63f05f9, Offset: 0x2648
+    // Size: 0x166
+    function debug_anim_reach(v_goal, str_anim) {
         self endon(#"death", #"goal", #"new_anim_reach", #"new_scripted_anim", #"stop_scripted_anim");
         while (true) {
-            level wait_till("<unknown string>");
+            level flag::wait_till("<unknown string>");
             print3d(self.origin, "<unknown string>" + function_9e72a96(str_anim) + "<unknown string>" + v_goal + "<unknown string>" + (ispointonnavmesh(v_goal) ? "<unknown string>" : "<unknown string>"), (1, 0, 0), 1, 0.4, 1);
             line(self.origin, v_goal, (1, 0, 0));
             circle(v_goal, 10, (1, 0, 0));
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace animation/animation_shared
 // Params 7, eflags: 0x2 linked
@@ -876,7 +880,7 @@ function function_eb0aa7cf(n_pulse = 100, bone) {
     }
     self physicslaunch(var_8ef160cb, var_236556ec);
     /#
-        draw_arrow_time(var_8ef160cb, var_8ef160cb + var_236556ec, color, 2);
+        util::draw_arrow_time(var_8ef160cb, var_8ef160cb + var_236556ec, color, 2);
     #/
 }
 

@@ -128,12 +128,13 @@ function keep_time() {
     }
 }
 
-// Namespace load/load_shared
-// Params 0, eflags: 0x0
-// Checksum 0x3b73a9be, Offset: 0x7e8
-// Size: 0x148
-function level_notify_listener() {
-    /#
+/#
+
+    // Namespace load/load_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x3b73a9be, Offset: 0x7e8
+    // Size: 0x148
+    function level_notify_listener() {
         while (true) {
             val = getdvarstring(#"level_notify");
             if (val != "<unknown string>") {
@@ -149,46 +150,40 @@ function level_notify_listener() {
             }
             wait(0.2);
         }
-    #/
-}
+    }
 
-// Namespace load/load_shared
-// Params 0, eflags: 0x0
-// Checksum 0x68c96b8c, Offset: 0x938
-// Size: 0x98
-function client_notify_listener() {
-    /#
+    // Namespace load/load_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x68c96b8c, Offset: 0x938
+    // Size: 0x98
+    function client_notify_listener() {
         while (true) {
             val = getdvarstring(#"client_notify");
             if (val != "<unknown string>") {
-                clientnotify(val);
+                util::clientnotify(val);
                 setdvar(#"client_notify", "<unknown string>");
             }
             wait(0.2);
         }
-    #/
-}
+    }
 
-// Namespace load/load_shared
-// Params 0, eflags: 0x0
-// Checksum 0x712d2f21, Offset: 0x9d8
-// Size: 0x48
-function save_checkpoint_on_notify() {
-    /#
+    // Namespace load/load_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x712d2f21, Offset: 0x9d8
+    // Size: 0x48
+    function save_checkpoint_on_notify() {
         while (true) {
             level waittill(#"save");
             checkpointcreate();
             checkpointcommit();
         }
-    #/
-}
+    }
 
-// Namespace load/load_shared
-// Params 0, eflags: 0x0
-// Checksum 0x5602bf4b, Offset: 0xa28
-// Size: 0x68
-function load_checkpoint_on_notify() {
-    /#
+    // Namespace load/load_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x5602bf4b, Offset: 0xa28
+    // Size: 0x68
+    function load_checkpoint_on_notify() {
         while (true) {
             level waittill(#"load");
             if (isdefined(level.var_36a4cf75)) {
@@ -197,8 +192,9 @@ function load_checkpoint_on_notify() {
             level.var_5be43b2d = 1;
             function_f31af5ab();
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace load/load_shared
 // Params 0, eflags: 0x2 linked
@@ -409,7 +405,7 @@ function lerp_trigger_dvar_value(trigger, dvar, value, time) {
     curr_value = getdvarfloat(dvar, 0);
     diff = (curr_value - value) / steps;
     for (i = 0; i < steps; i++) {
-        curr_value = curr_value - diff;
+        curr_value -= diff;
         setsaveddvar(dvar, curr_value);
         waitframe(1);
     }
@@ -429,13 +425,17 @@ function set_fog_progress(progress) {
     setvolfog(startdist, halfwaydist, self.script_halfway_height, self.script_base_height, color[0], color[1], color[2], 0.4);
 }
 
-// Namespace load/load_shared
-// Params 0, eflags: 0x0
-// Checksum 0x18a642e1, Offset: 0x1680
-// Size: 0x24
-function ascii_logo() {
-    println("<unknown string>");
-}
+/#
+
+    // Namespace load/load_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x18a642e1, Offset: 0x1680
+    // Size: 0x24
+    function ascii_logo() {
+        println("<unknown string>");
+    }
+
+#/
 
 // Namespace load/load_shared
 // Params 0, eflags: 0x2 linked
@@ -601,8 +601,8 @@ function art_review() {
     case 1:
     case 2:
         /#
-            hud = function_f5a689d("<unknown string>", 1.2);
-            hud setpoint("<unknown string>", "<unknown string>", 0, -200);
+            hud = hud::function_f5a689d("<unknown string>", 1.2);
+            hud hud::setpoint("<unknown string>", "<unknown string>", 0, -200);
             hud.sort = 1001;
             hud.color = (1, 0, 0);
             hud settext("<unknown string>");

@@ -31,18 +31,20 @@ function private preinit() {
     #/
 }
 
-// Namespace art/art
-// Params 2, eflags: 0x0
-// Checksum 0x7aa77a40, Offset: 0x1f0
-// Size: 0x44
-function artfxprintln(file, string) {
-    /#
+/#
+
+    // Namespace art/art
+    // Params 2, eflags: 0x0
+    // Checksum 0x7aa77a40, Offset: 0x1f0
+    // Size: 0x44
+    function artfxprintln(file, string) {
         if (file == -1) {
             return;
         }
         fprintln(file, string);
-    #/
-}
+    }
+
+#/
 
 // Namespace art/art
 // Params 2, eflags: 0x0
@@ -57,7 +59,7 @@ function strtok_loc(string, *par1) {
             indexstring = "";
             continue;
         }
-        indexstring = indexstring + par1[i];
+        indexstring += par1[i];
     }
     if (indexstring.size) {
         stringlist[stringlist.size] = indexstring;
@@ -65,12 +67,13 @@ function strtok_loc(string, *par1) {
     return stringlist;
 }
 
-// Namespace art/art
-// Params 0, eflags: 0x0
-// Checksum 0xdcfd0c2d, Offset: 0x2f8
-// Size: 0x1bc
-function setfogsliders() {
-    /#
+/#
+
+    // Namespace art/art
+    // Params 0, eflags: 0x0
+    // Checksum 0xdcfd0c2d, Offset: 0x2f8
+    // Size: 0x1bc
+    function setfogsliders() {
         fogall = strtok_loc(getdvarstring(#"g_fogcolorreadonly"), "<unknown string>");
         red = fogall[0];
         green = fogall[1];
@@ -87,15 +90,13 @@ function setfogsliders() {
         setdvar(#"scr_fog_exp_halfplane", halfplane);
         setdvar(#"scr_fog_nearplane", nearplane);
         setdvar(#"scr_fog_color", red + "<unknown string>" + green + "<unknown string>" + blue);
-    #/
-}
+    }
 
-// Namespace art/art
-// Params 0, eflags: 0x0
-// Checksum 0x80a6aea2, Offset: 0x4c0
-// Size: 0xa98
-function tweakart() {
-    /#
+    // Namespace art/art
+    // Params 0, eflags: 0x0
+    // Checksum 0x80a6aea2, Offset: 0x4c0
+    // Size: 0xa98
+    function tweakart() {
         if (!isdefined(level.tweakfile)) {
             level.tweakfile = 0;
         }
@@ -181,15 +182,13 @@ function tweakart() {
             }
             wait(0.1);
         }
-    #/
-}
+    }
 
-// Namespace art/art
-// Params 0, eflags: 0x0
-// Checksum 0x496a890, Offset: 0xf60
-// Size: 0x3f4
-function fovslidercheck() {
-    /#
+    // Namespace art/art
+    // Params 0, eflags: 0x0
+    // Checksum 0x496a890, Offset: 0xf60
+    // Size: 0x3f4
+    function fovslidercheck() {
         if (level.dofdefault[#"nearstart"] >= level.dofdefault[#"nearend"]) {
             level.dofdefault[#"nearstart"] = level.dofdefault[#"nearend"] - 1;
             setdvar(#"scr_dof_nearstart", level.dofdefault[#"nearstart"]);
@@ -214,15 +213,13 @@ function fovslidercheck() {
             level.dofdefault[#"farstart"] = level.dofdefault[#"nearend"] + 1;
             setdvar(#"scr_dof_farstart", level.dofdefault[#"farstart"]);
         }
-    #/
-}
+    }
 
-// Namespace art/art
-// Params 0, eflags: 0x0
-// Checksum 0x645d8d33, Offset: 0x1360
-// Size: 0x40c
-function dumpsettings() {
-    /#
+    // Namespace art/art
+    // Params 0, eflags: 0x0
+    // Checksum 0x645d8d33, Offset: 0x1360
+    // Size: 0x40c
+    function dumpsettings() {
         if (getdvar(#"scr_art_dump", 0)) {
             println("<unknown string>" + level.fognearplane + "<unknown string>");
             println("<unknown string>" + level.fogexphalfplane + "<unknown string>");
@@ -248,6 +245,6 @@ function dumpsettings() {
             println("<unknown string>");
             setdvar(#"scr_art_dump", 0);
         }
-    #/
-}
+    }
 
+#/

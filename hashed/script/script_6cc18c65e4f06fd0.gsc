@@ -476,7 +476,7 @@ function function_32d60e81(ents) {
     level.var_d99f785b thread function_9ad6d900();
     /#
         if (getdvarint(#"hash_1eae33931bd2729", 0)) {
-            level thread start_timer(300);
+            level thread objective_manager::start_timer(300);
         }
     #/
 }
@@ -953,7 +953,7 @@ function function_2d524ed(var_8f66ca5d) {
             var_25febefa = array(var_25febefa);
         }
         var_25febefa[var_25febefa.size] = var_c962047c;
-        var_f6cc9550 = var_f6cc9550 + var_c962047c;
+        var_f6cc9550 += var_c962047c;
     }
     self function_386e82a(var_f6cc9550, var_25febefa);
     foreach (e_player in getplayers()) {
@@ -1029,8 +1029,8 @@ function function_386e82a(var_f6cc9550, var_25febefa) {
             var_cb7c50c0 = aiutility::function_cb552839(self);
             hud::function_c9800094(attacker, var_cb7c50c0, damage, var_ebcff177);
             attacker util::show_hit_marker();
-            level.n_total_damage = level.n_total_damage + damage;
-            var_245f6f1 = var_245f6f1 - damage;
+            level.n_total_damage += damage;
+            var_245f6f1 -= damage;
             if (zm_utility::is_player_valid(attacker, 0, 0)) {
                 if (!isdefined(level.var_7f41d246)) {
                     level.var_7f41d246 = [];
@@ -1085,18 +1085,18 @@ function get_weapon_damage(inflictor, attacker, damage, flags, meansofdeath, wea
     item = attacker item_inventory::function_230ceec4(weapon);
     if (isdefined(item)) {
         var_528363fd = self namespace_b61a349a::function_b3496fde(inflictor, attacker, damage, flags, meansofdeath, weapon, vpoint, vdir, shitloc, psoffsettime, boneindex, surfacetype);
-        damage = damage + var_528363fd;
+        damage += var_528363fd;
         if (meansofdeath != "MOD_MELEE") {
             var_4d1602de = zm_weapons::function_d85e6c3a(item.itementry);
-            damage = damage * var_4d1602de;
+            damage *= var_4d1602de;
             if (isdefined(item.paplv)) {
                 var_645b8bb = zm_weapons::function_896671d5(item.itementry.weapon, item.paplv);
-                damage = damage * var_645b8bb;
+                damage *= var_645b8bb;
             }
         }
     } else {
         var_fd72ea28 = self namespace_b61a349a::function_b3496fde(inflictor, attacker, damage, flags, meansofdeath, weapon, vpoint, vdir, shitloc, psoffsettime, boneindex, surfacetype);
-        damage = damage + var_fd72ea28;
+        damage += var_fd72ea28;
     }
     damage = namespace_1b527536::actor_damage_override(inflictor, attacker, damage, flags, meansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, psoffsettime, boneindex, surfacetype);
     return int(damage);
@@ -1454,7 +1454,7 @@ function function_e4db583b(var_238eb6ec, var_bce45f4a = 0, var_533ac894, var_cb5
             continue;
         }
         var_77bcb393 = 0;
-        var_1e8caeb1 = var_1e8caeb1 + var_5dc704a7;
+        var_1e8caeb1 += var_5dc704a7;
         while (level.var_2266b455 < var_698258d8) {
             level.var_2266b455++;
             while (!isdefined(ai_mimic)) {
@@ -1567,7 +1567,7 @@ function function_c7f8bea5(var_238eb6ec, var_9919554c = 0, var_533ac894, var_291
             continue;
         }
         var_c99b0541 = 0;
-        var_1e8caeb1 = var_1e8caeb1 + var_5dc704a7;
+        var_1e8caeb1 += var_5dc704a7;
         while (level.var_197697e8 < var_f9ded159) {
             level.var_197697e8++;
             while (!isdefined(var_7e46a1cf)) {
@@ -1673,29 +1673,28 @@ function function_e2f134ce() {
     level flag::wait_till_clear(#"hash_21921ed511559aa3");
 }
 
-// Namespace namespace_c4d353e7/namespace_c4d353e7
-// Params 0, eflags: 0x0
-// Checksum 0x7827b3cf, Offset: 0x76c8
-// Size: 0xd4
-function function_37597f29() {
-    /#
-        add_debug_command("trigger_arm_smash_start");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_custom_devgui_callback(&cmd);
-    #/
-}
+/#
 
-// Namespace namespace_c4d353e7/namespace_c4d353e7
-// Params 1, eflags: 0x0
-// Checksum 0x6629727f, Offset: 0x77a8
-// Size: 0x14a
-function cmd(cmd) {
-    /#
+    // Namespace namespace_c4d353e7/namespace_c4d353e7
+    // Params 0, eflags: 0x0
+    // Checksum 0x7827b3cf, Offset: 0x76c8
+    // Size: 0xd4
+    function function_37597f29() {
+        util::add_debug_command("trigger_arm_smash_start");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        zm_devgui::add_custom_devgui_callback(&cmd);
+    }
+
+    // Namespace namespace_c4d353e7/namespace_c4d353e7
+    // Params 1, eflags: 0x0
+    // Checksum 0x6629727f, Offset: 0x77a8
+    // Size: 0x14a
+    function cmd(cmd) {
         switch (cmd) {
         case #"hash_213591a3df24967d":
             level.var_cc4817d7 = "<unknown string>";
@@ -1722,6 +1721,6 @@ function cmd(cmd) {
         default:
             break;
         }
-    #/
-}
+    }
 
+#/

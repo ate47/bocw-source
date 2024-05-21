@@ -111,7 +111,7 @@ function function_e0cc3b71(name, value) {
 // Checksum 0xb6ba3c59, Offset: 0xa78
 // Size: 0x41c
 function function_879505e1(var_ff0f9714 = 1, var_509b0860 = #"hash_780067c4596705d7", var_74ac68df = #"hash_71f8107215effa5b") {
-    assert(exists(#"interactive_map"), "<unknown string>");
+    assert(namespace_61e6d095::exists(#"interactive_map"), "<unknown string>");
     function_23036faa(#"cursor", "uid", #"cursor");
     function_23036faa(#"cursor", "widgetName", var_509b0860);
     function_23036faa(#"cursor", "cursorImage", var_74ac68df);
@@ -309,11 +309,11 @@ function function_c8d8772e(uid, flags) {
         }
         var_c2e076fc = 0;
         foreach (flag in flags) {
-            var_c2e076fc = var_c2e076fc | 1 << flag;
+            var_c2e076fc |= 1 << flag;
         }
         var_b89f8baa = function_dbf83dc4(uid, "flags");
         if (isdefined(var_b89f8baa)) {
-            var_c2e076fc = var_c2e076fc | var_b89f8baa;
+            var_c2e076fc |= var_b89f8baa;
         }
         function_d0243e5b(uid, "flags", var_c2e076fc);
     }
@@ -334,7 +334,7 @@ function function_cc611397(uid, flags) {
             flags = array(flags);
         }
         foreach (flag in flags) {
-            var_c2e076fc = var_c2e076fc & ~(1 << flag);
+            var_c2e076fc &= ~(1 << flag);
         }
     }
 }
@@ -704,7 +704,7 @@ function private function_9dfe141f(uid, var_6d62c29c, angle_offset = 0) {
         pos = self.origin;
         angles = self.angles;
         if (isentity(self)) {
-            pos = pos + rotatepoint(self getboundsmidpoint(), angles);
+            pos += rotatepoint(self getboundsmidpoint(), angles);
         }
         var_fe23d888 = pos - level.interactive_map.var_e1d2ab75.top_left;
         self.var_2ac0bdff = (vectordot(var_fe23d888, level.interactive_map.var_e1d2ab75.x_axis) / level.interactive_map.var_e1d2ab75.width, vectordot(var_fe23d888, level.interactive_map.var_e1d2ab75.y_axis) / level.interactive_map.var_e1d2ab75.height, 0);

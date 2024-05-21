@@ -32,8 +32,8 @@ function private event_handler[event_cc819519] function_686b88aa(*eventstruct) {
     snd::function_294cb4fa();
     snd::waitforplayers();
     /#
-        dvar("af_wreck", "<unknown string>" + 3, &function_5e7cc862);
-        dvar("<unknown string>", "<unknown string>" + 15, &function_5e7cc862);
+        snd::dvar("af_wreck", "<unknown string>" + 3, &function_5e7cc862);
+        snd::dvar("<unknown string>", "<unknown string>" + 15, &function_5e7cc862);
     #/
 }
 
@@ -94,38 +94,37 @@ function private function_887ac605(objective) {
         break;
     default:
         /#
-            function_81fac19d(function_d78e3644(), "<unknown string>" + objective + "<unknown string>");
+            snd::function_81fac19d(snd::function_d78e3644(), "<unknown string>" + objective + "<unknown string>");
         #/
         break;
     }
 }
 
-// Namespace namespace_a052577e/namespace_c0722ca1
-// Params 0, eflags: 0x0
-// Checksum 0x4be4a6ec, Offset: 0xb48
-// Size: 0x96
-function function_77da0ec2() {
-    /#
+/#
+
+    // Namespace namespace_a052577e/namespace_c0722ca1
+    // Params 0, eflags: 0x0
+    // Checksum 0x4be4a6ec, Offset: 0xb48
+    // Size: 0x96
+    function function_77da0ec2() {
         self endon(#"death");
         self endon(#"hash_2caeecd393c68946");
         while (isdefined(self) && isdefined(self.origin) && isdefined(self.angles)) {
-            function_81183b3(self.origin, 24, self.angles, (1, 1, 1), 1, 0, 1);
+            snd::function_81183b3(self.origin, 24, self.angles, (1, 1, 1), 1, 0, 1);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace namespace_a052577e/namespace_c0722ca1
-// Params 2, eflags: 0x0
-// Checksum 0x28d894bc, Offset: 0xbe8
-// Size: 0x1b2
-function function_5e7cc862(*key, value) {
-    /#
+    // Namespace namespace_a052577e/namespace_c0722ca1
+    // Params 2, eflags: 0x0
+    // Checksum 0x28d894bc, Offset: 0xbe8
+    // Size: 0x1b2
+    function function_5e7cc862(*key, value) {
         level notify(#"hash_63850bb43dbc38de");
-        players = function_da785aa8();
+        players = snd::function_da785aa8();
         player = players[0];
         assert(isplayer(player));
-        view_origin = player function_efda2d6d();
+        view_origin = player snd::function_efda2d6d();
         var_839b8d61 = getentitiesinradius(view_origin, 16384, 15);
         var_97d10723 = function_b6dd763(view_origin, 16384);
         ents = arraycombine(var_839b8d61, var_97d10723, 0);
@@ -134,8 +133,9 @@ function function_5e7cc862(*key, value) {
         }
         level thread function_a20133bd();
         return value;
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_a052577e/namespace_c0722ca1
 // Params 1, eflags: 0x2 linked
@@ -188,7 +188,7 @@ function function_a20133bd() {
         var_dcf355d7 = 0;
         var_bff726ab = min(32, ents.size);
         while (ents.size > 0 && var_dcf355d7 < var_bff726ab) {
-            var_88701456 = var_88701456 % ents.size;
+            var_88701456 %= ents.size;
             ent = ents[var_88701456];
             if (isentity(ent) && !ent ishidden()) {
                 head = ent.head;

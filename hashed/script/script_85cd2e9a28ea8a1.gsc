@@ -7,12 +7,13 @@
 
 #namespace snd;
 
-// Namespace snd/namespace_ce2d072f
-// Params 7, eflags: 0x0
-// Checksum 0x64c55d1, Offset: 0xa8
-// Size: 0x154
-function function_669c57bc(posx, posy, text, color, alpha, scale, duration) {
-    /#
+/#
+
+    // Namespace snd/namespace_ce2d072f
+    // Params 7, eflags: 0x0
+    // Checksum 0x64c55d1, Offset: 0xa8
+    // Size: 0x154
+    function function_669c57bc(posx, posy, text, color, alpha, scale, duration) {
         if (isdefined(text) == 0 || text == "<unknown string>") {
             return;
         }
@@ -25,15 +26,13 @@ function function_669c57bc(posx, posy, text, color, alpha, scale, duration) {
             return;
         }
         debug2dtext((posx, posy, 0), text, color, alpha, (0, 0, 0), 0, scale, duration);
-    #/
-}
+    }
 
-// Namespace snd/namespace_ce2d072f
-// Params 2, eflags: 0x0
-// Checksum 0xb317af6f, Offset: 0x208
-// Size: 0x134
-function function_9f4eb444(text, scale) {
-    /#
+    // Namespace snd/namespace_ce2d072f
+    // Params 2, eflags: 0x0
+    // Checksum 0xb317af6f, Offset: 0x208
+    // Size: 0x134
+    function function_9f4eb444(text, scale) {
         assert(isdefined(text));
         if (isdefined(scale) == 0) {
             scale = 1;
@@ -47,30 +46,26 @@ function function_9f4eb444(text, scale) {
         centery = var_c13d121d * 0.5 - 12;
         center = array(centerx, centery);
         return center;
-    #/
-}
+    }
 
-// Namespace snd/namespace_ce2d072f
-// Params 2, eflags: 0x0
-// Checksum 0x7dc8fc41, Offset: 0x348
-// Size: 0xa4
-function function_409c06e5(text, scale) {
-    /#
+    // Namespace snd/namespace_ce2d072f
+    // Params 2, eflags: 0x0
+    // Checksum 0x7dc8fc41, Offset: 0x348
+    // Size: 0xa4
+    function function_409c06e5(text, scale) {
         centerpos = function_9f4eb444(text, scale);
         var_fad221f1 = centerpos[0];
         var_ec8f856c = centerpos[1];
         var_ec8f856c = var_ec8f856c * 0.5 + 12;
         defaultpos = array(var_fad221f1, var_ec8f856c);
         return defaultpos;
-    #/
-}
+    }
 
-// Namespace snd/namespace_ce2d072f
-// Params 7, eflags: 0x4
-// Checksum 0xdcca15ce, Offset: 0x3f8
-// Size: 0x41c
-function private function_ac3c5285(posx, posy, text, color, scale, var_24ea4e17, var_45b08b81) {
-    /#
+    // Namespace snd/namespace_ce2d072f
+    // Params 7, eflags: 0x4
+    // Checksum 0xdcca15ce, Offset: 0x3f8
+    // Size: 0x41c
+    function private function_ac3c5285(posx, posy, text, color, scale, var_24ea4e17, var_45b08b81) {
         var_d6f54187 = 24 * scale;
         frametime = function_6cfa7975();
         var_48c93ed9 = int(var_24ea4e17 / frametime);
@@ -88,7 +83,7 @@ function private function_ac3c5285(posx, posy, text, color, scale, var_24ea4e17,
         if (level.var_89c4a5f0.size > 0) {
             foreach (row in level.var_89c4a5f0) {
                 if (isinarray(level.var_89c4a5f0, posy) == 1) {
-                    posy = posy + var_d6f54187;
+                    posy += var_d6f54187;
                     continue;
                 }
                 break;
@@ -98,34 +93,32 @@ function private function_ac3c5285(posx, posy, text, color, scale, var_24ea4e17,
         while (framecount < var_48c93ed9) {
             if (framecount < var_1c57e012) {
                 var_78aff59a = int(float(framecount) / float(var_9a0d8dab));
-                var_78aff59a = var_78aff59a % 2;
+                var_78aff59a %= 2;
                 if (var_78aff59a) {
-                    framecount = framecount + 1;
+                    framecount += 1;
                     waitframe(1);
                     continue;
                 }
             }
             framefrac = float(framecount) / float(var_48c93ed9);
-            framefrac = clamp(framefrac, 0, 1);
+            framefrac = math::clamp(framefrac, 0, 1);
             alpha = function_b918d683(1 - framefrac, "<unknown string>");
             var_8b9208e = alpha * alpha;
             colorscale = function_2677a7e2(color, alpha);
             function_65bb0ccd(text, posx, posy, scale, "<unknown string>", colorscale, alpha, (0, 0, 0), var_8b9208e, (1, 1, 1), var_8b9208e, 1);
-            framecount = framecount + 1;
+            framecount += 1;
             waitframe(1);
         }
         if (isarray(level.var_89c4a5f0)) {
             arrayremovevalue(level.var_89c4a5f0, posy);
         }
-    #/
-}
+    }
 
-// Namespace snd/namespace_ce2d072f
-// Params 7, eflags: 0x0
-// Checksum 0x2bd59671, Offset: 0x820
-// Size: 0x1a4
-function function_3ba3cecb(text, posx, posy, color, scale, var_24ea4e17, var_45b08b81) {
-    /#
+    // Namespace snd/namespace_ce2d072f
+    // Params 7, eflags: 0x0
+    // Checksum 0x2bd59671, Offset: 0x820
+    // Size: 0x1a4
+    function function_3ba3cecb(text, posx, posy, color, scale, var_24ea4e17, var_45b08b81) {
         assert(isdefined(text) == 1);
         color = function_ea2f17d1(color, (1, 0.5, 0.5));
         scale = function_ea2f17d1(scale, 1.75);
@@ -142,35 +135,29 @@ function function_3ba3cecb(text, posx, posy, color, scale, var_24ea4e17, var_45b
         }
         level thread function_ac3c5285(posx, posy, text, color, scale, var_24ea4e17, var_45b08b81);
         println(text);
-    #/
-}
+    }
 
-// Namespace snd/namespace_ce2d072f
-// Params 7, eflags: 0x0
-// Checksum 0x8041cb65, Offset: 0x9d0
-// Size: 0x64
-function function_fa8480e6(origin, text, color, alpha, scale, duration, centered) {
-    /#
+    // Namespace snd/namespace_ce2d072f
+    // Params 7, eflags: 0x0
+    // Checksum 0x8041cb65, Offset: 0x9d0
+    // Size: 0x64
+    function function_fa8480e6(origin, text, color, alpha, scale, duration, centered) {
         print3d(origin, text, color, alpha, scale, duration, centered);
-    #/
-}
+    }
 
-// Namespace snd/namespace_ce2d072f
-// Params 7, eflags: 0x0
-// Checksum 0x691a9b8a, Offset: 0xa40
-// Size: 0x64
-function function_4e22152d(origin, text, color, alpha, scale, duration, *right) {
-    /#
+    // Namespace snd/namespace_ce2d072f
+    // Params 7, eflags: 0x0
+    // Checksum 0x691a9b8a, Offset: 0xa40
+    // Size: 0x64
+    function function_4e22152d(origin, text, color, alpha, scale, duration, *right) {
         print3d(text, color, alpha, scale, duration, right, 1);
-    #/
-}
+    }
 
-// Namespace snd/namespace_ce2d072f
-// Params 12, eflags: 0x0
-// Checksum 0x26c5b635, Offset: 0xab0
-// Size: 0x3c4
-function function_65bb0ccd(text, x, y, scale, var_6c897a55, color, alpha, shadowcolor, var_7389333f, lightcolor, var_c16d003f, duration) {
-    /#
+    // Namespace snd/namespace_ce2d072f
+    // Params 12, eflags: 0x0
+    // Checksum 0x26c5b635, Offset: 0xab0
+    // Size: 0x3c4
+    function function_65bb0ccd(text, x, y, scale, var_6c897a55, color, alpha, shadowcolor, var_7389333f, lightcolor, var_c16d003f, duration) {
         color = function_ea2f17d1(color, (1, 1, 1));
         alpha = function_ea2f17d1(alpha, 1);
         scale = function_ea2f17d1(scale, 1);
@@ -188,12 +175,12 @@ function function_65bb0ccd(text, x, y, scale, var_6c897a55, color, alpha, shadow
         case #"c":
         case #"centered":
         case #"center":
-            offset = offset + (width * -0.5, 0, 0);
+            offset += (width * -0.5, 0, 0);
             break;
         case 2:
         case #"r":
         case #"right":
-            offset = offset + (width * -1, 0, 0);
+            offset += (width * -1, 0, 0);
             break;
         }
         if (isdefined(shadowcolor) == 1) {
@@ -213,15 +200,13 @@ function function_65bb0ccd(text, x, y, scale, var_6c897a55, color, alpha, shadow
         }
         position = (x, y, 0) + offset;
         function_669c57bc(position[0], position[1], text, color, alpha, scale, duration);
-    #/
-}
+    }
 
-// Namespace snd/namespace_ce2d072f
-// Params 11, eflags: 0x0
-// Checksum 0x745c490, Offset: 0xe80
-// Size: 0x6b4
-function function_ac033c46(text, origin, scale, var_6c897a55, color, alpha, shadowcolor, var_7389333f, lightcolor, var_c16d003f, duration) {
-    /#
+    // Namespace snd/namespace_ce2d072f
+    // Params 11, eflags: 0x0
+    // Checksum 0x745c490, Offset: 0xe80
+    // Size: 0x6b4
+    function function_ac033c46(text, origin, scale, var_6c897a55, color, alpha, shadowcolor, var_7389333f, lightcolor, var_c16d003f, duration) {
         color = function_ea2f17d1(color, (1, 1, 1));
         alpha = function_ea2f17d1(alpha, 1);
         scale = function_ea2f17d1(scale, 1);
@@ -254,7 +239,7 @@ function function_ac033c46(text, origin, scale, var_6c897a55, color, alpha, shad
             if (var_b69585e4) {
                 dist = distance(origin, vieworigin);
                 var_7295dcac = dist * 0.00133333;
-                scale = scale * var_7295dcac;
+                scale *= var_7295dcac;
             }
         }
         width = 11 * scale * textsize;
@@ -277,7 +262,7 @@ function function_ac033c46(text, origin, scale, var_6c897a55, color, alpha, shad
         case 2:
         case #"r":
         case #"right":
-            offset = offset + (width * -1, 0, 0);
+            offset += (width * -1, 0, 0);
             break;
         }
         if (isdefined(shadowcolor) == 1) {
@@ -286,7 +271,7 @@ function function_ac033c46(text, origin, scale, var_6c897a55, color, alpha, shad
             }
             var_9aa20b4e = var_e9588a4 * 1 * scale + var_3e836530 * -1 * scale;
             position = origin + var_e9588a4 * offset[0] + var_3e836530 * offset[2];
-            position = position + var_9aa20b4e;
+            position += var_9aa20b4e;
             print3d(position, text, shadowcolor, var_7389333f, scale, duration, centered);
         }
         if (isdefined(lightcolor) == 1) {
@@ -295,20 +280,18 @@ function function_ac033c46(text, origin, scale, var_6c897a55, color, alpha, shad
             }
             var_6a4ad33c = var_e9588a4 * -0.666 * scale + var_3e836530 * 0.666 * scale;
             position = origin + var_e9588a4 * offset[0] + var_3e836530 * offset[2];
-            position = position + var_6a4ad33c;
+            position += var_6a4ad33c;
             print3d(position, text, lightcolor, var_c16d003f, scale, duration, centered);
         }
         position = origin + var_e9588a4 * offset[0] + var_3e836530 * offset[2];
         print3d(position, text, color, alpha, scale, duration, centered);
-    #/
-}
+    }
 
-// Namespace snd/namespace_ce2d072f
-// Params 4, eflags: 0x4
-// Checksum 0x53916600, Offset: 0x1540
-// Size: 0x184
-function private function_bfdce45f(color, depthtest, var_5c8bd7d0, offset) {
-    /#
+    // Namespace snd/namespace_ce2d072f
+    // Params 4, eflags: 0x4
+    // Checksum 0x53916600, Offset: 0x1540
+    // Size: 0x184
+    function private function_bfdce45f(color, depthtest, var_5c8bd7d0, offset) {
         if (var_5c8bd7d0.size < 2) {
             return;
         }
@@ -321,24 +304,22 @@ function private function_bfdce45f(color, depthtest, var_5c8bd7d0, offset) {
             var_c64078a7 = var_5c8bd7d0[linecount - 1];
             if (isvec(var_4612448) == 1 && isvec(var_c64078a7) == 1 && var_4612448 != var_c64078a7) {
                 if (isvec(offset) == 1) {
-                    var_4612448 = var_4612448 + offset;
-                    var_c64078a7 = var_c64078a7 + offset;
+                    var_4612448 += offset;
+                    var_c64078a7 += offset;
                 }
                 line(var_4612448, var_c64078a7, colorscale, alpha, depthtest, 1);
             }
             colorscale = vectorscale(color, alpha * 1.5);
-            alpha = alpha - var_4aa962c3;
+            alpha -= var_4aa962c3;
             linecount--;
         }
-    #/
-}
+    }
 
-// Namespace snd/namespace_ce2d072f
-// Params 4, eflags: 0x4
-// Checksum 0xdbe6df7e, Offset: 0x16d0
-// Size: 0x1fa
-function private function_6ee9efa7(color, depthtest, duration, offset) {
-    /#
+    // Namespace snd/namespace_ce2d072f
+    // Params 4, eflags: 0x4
+    // Checksum 0xdbe6df7e, Offset: 0x16d0
+    // Size: 0x1fa
+    function private function_6ee9efa7(color, depthtest, duration, offset) {
         assert(isdefined(self.origin) == 1, "<unknown string>");
         assert(isvec(color) == 1, "<unknown string>");
         assert(isdefined(duration) == 1, "<unknown string>");
@@ -363,15 +344,13 @@ function private function_6ee9efa7(color, depthtest, duration, offset) {
             framecount++;
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace snd/namespace_ce2d072f
-// Params 5, eflags: 0x0
-// Checksum 0xb7dfc480, Offset: 0x18d8
-// Size: 0x15c
-function function_31d6fc52(var_9632a625, color, depthtest, duration, offset) {
-    /#
+    // Namespace snd/namespace_ce2d072f
+    // Params 5, eflags: 0x0
+    // Checksum 0xb7dfc480, Offset: 0x18d8
+    // Size: 0x15c
+    function function_31d6fc52(var_9632a625, color, depthtest, duration, offset) {
         color = function_ea2f17d1(color, (1, 1, 1));
         depthtest = function_ea2f17d1(depthtest, 0);
         duration = function_ea2f17d1(duration, 5);
@@ -385,15 +364,13 @@ function function_31d6fc52(var_9632a625, color, depthtest, duration, offset) {
         }
         assert(duration > 2, "<unknown string>");
         var_9632a625 thread function_6ee9efa7(color, depthtest, duration, offset);
-    #/
-}
+    }
 
-// Namespace snd/namespace_ce2d072f
-// Params 7, eflags: 0x0
-// Checksum 0x8ad4b588, Offset: 0x1a40
-// Size: 0x404
-function function_a787fe30(origin, angles, extents, color, alpha, depthtest, duration) {
-    /#
+    // Namespace snd/namespace_ce2d072f
+    // Params 7, eflags: 0x0
+    // Checksum 0x8ad4b588, Offset: 0x1a40
+    // Size: 0x404
+    function function_a787fe30(origin, angles, extents, color, alpha, depthtest, duration) {
         half = extents * 0.5;
         var_95483828 = (half, half, half);
         mins = origin - var_95483828;
@@ -425,25 +402,21 @@ function function_a787fe30(origin, angles, extents, color, alpha, depthtest, dur
             line(var_b78392fb[i], var_b78392fb[j], color, alpha, depthtest, duration);
             line(var_c9c13776[i], var_b78392fb[i], color, alpha, depthtest, duration);
         }
-    #/
-}
+    }
 
-// Namespace snd/namespace_ce2d072f
-// Params 7, eflags: 0x0
-// Checksum 0x9a76f413, Offset: 0x1e50
-// Size: 0x64
-function function_27e52823(origin, angles, var_81cc59c8, color, alpha, depthtest, duration) {
-    /#
+    // Namespace snd/namespace_ce2d072f
+    // Params 7, eflags: 0x0
+    // Checksum 0x9a76f413, Offset: 0x1e50
+    // Size: 0x64
+    function function_27e52823(origin, angles, var_81cc59c8, color, alpha, depthtest, duration) {
         function_a787fe30(origin, angles, var_81cc59c8, color, alpha, depthtest, duration);
-    #/
-}
+    }
 
-// Namespace snd/namespace_ce2d072f
-// Params 7, eflags: 0x0
-// Checksum 0x274e5b09, Offset: 0x1ec0
-// Size: 0x2ac
-function function_81183b3(origin, size, angles, color, alpha, depthtest, duration) {
-    /#
+    // Namespace snd/namespace_ce2d072f
+    // Params 7, eflags: 0x0
+    // Checksum 0x274e5b09, Offset: 0x1ec0
+    // Size: 0x2ac
+    function function_81183b3(origin, size, angles, color, alpha, depthtest, duration) {
         forward = (1, 0, 0);
         right = (0, 1, 0);
         up = (0, 0, 1);
@@ -459,9 +432,9 @@ function function_81183b3(origin, size, angles, color, alpha, depthtest, duratio
             up = anglestoup(angles);
         }
         half = size * 0.5;
-        forward = forward * half;
-        right = right * half;
-        up = up * half;
+        forward *= half;
+        right *= half;
+        up *= half;
         var_d805968e = 0.333;
         var_ec1abeec = (var_d805968e, var_d805968e, var_d805968e);
         var_b278259c = color * var_ec1abeec + (1, 0, 0);
@@ -470,15 +443,13 @@ function function_81183b3(origin, size, angles, color, alpha, depthtest, duratio
         line(origin - forward, origin + forward, var_b278259c, alpha, depthtest, duration);
         line(origin - right, origin + right, var_7a8ab5a2, alpha, depthtest, duration);
         line(origin - up, origin + up, colb, alpha, depthtest, duration);
-    #/
-}
+    }
 
-// Namespace snd/namespace_ce2d072f
-// Params 8, eflags: 0x0
-// Checksum 0xde28ddaa, Offset: 0x2178
-// Size: 0x384
-function function_8aaa798e(origin, angles, length, var_e3c3c3d9, color, alpha, depthtest, duration) {
-    /#
+    // Namespace snd/namespace_ce2d072f
+    // Params 8, eflags: 0x0
+    // Checksum 0xde28ddaa, Offset: 0x2178
+    // Size: 0x384
+    function function_8aaa798e(origin, angles, length, var_e3c3c3d9, color, alpha, depthtest, duration) {
         assert(isvec(origin));
         assert(isvec(angles));
         length = function_ea2f17d1(length, 12);
@@ -510,8 +481,9 @@ function function_8aaa798e(origin, angles, length, var_e3c3c3d9, color, alpha, d
         line(a, d, color, alpha, depthtest, duration);
         line(d, e, color, alpha, depthtest, duration);
         line(e, a, color, alpha, depthtest, duration);
-    #/
-}
+    }
+
+#/
 
 // Namespace snd/namespace_ce2d072f
 // Params 1, eflags: 0x2 linked
@@ -546,7 +518,7 @@ function function_da7b7c0e(var_841c640a, screensize) {
     screenaspect = screensize[0] / screensize[1];
     var_73ea373d = screenaspect * 480;
     var_d8976fdf = -0.5 * (var_73ea373d - 640);
-    var_11ea799a = var_11ea799a + var_d8976fdf;
+    var_11ea799a += var_d8976fdf;
     return array(var_11ea799a, var_39fdd05);
 }
 

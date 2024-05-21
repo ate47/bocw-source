@@ -76,7 +76,7 @@ function private function_e2782c4a(*inputvalue, userdata) {
             if (var_453b3fb3.var_404d1644.distanceattenuation > var_ab57c0be) {
                 var_ab57c0be = var_453b3fb3.var_404d1644.distanceattenuation;
                 if (isdefined(var_453b3fb3.var_404d1644.var_d89a17f3) == 1) {
-                    var_ab57c0be = var_ab57c0be * var_453b3fb3.var_404d1644.var_d89a17f3;
+                    var_ab57c0be *= var_453b3fb3.var_404d1644.var_d89a17f3;
                 }
             }
         }
@@ -527,7 +527,7 @@ function function_4f3aa5d6(*var_f828a846, attack, hold, *release, var_2ce83612, 
     scale = mapfloat(dist_min, dist_max, 0, 0.3, dist);
     wait(var_2ce83612);
     if (release == 0) {
-        release = release + 0.05;
+        release += 0.05;
     }
     wait(hold + release);
 }
@@ -653,7 +653,7 @@ function function_7bde8914(w, amount) {
         diff = var_bf1e5b71 - w[i];
         offset = (1 - amount) * abs(diff);
         if (diff < 0) {
-            offset = offset * -1;
+            offset *= -1;
         }
         a[i] = w[i] + offset;
     }
@@ -670,7 +670,7 @@ function function_4dca3057(w, v) {
     total = 0;
     var_e1a9017f = v[v.size - 1];
     for (i = 0; i < var_99adf0c9; i++) {
-        total = total + w[i];
+        total += w[i];
         if (r < total) {
             var_e1a9017f = v[i];
             break;
@@ -689,7 +689,7 @@ function function_7a111e9c(w) {
     total = 0;
     var_e1a9017f = w.size - 1;
     for (i = 0; i < var_99adf0c9; i++) {
-        total = total + w[i];
+        total += w[i];
         if (r < total) {
             var_e1a9017f = i;
             break;
@@ -733,16 +733,16 @@ function function_2517b19c(min, max, label = "shared_default", width = 0.5) {
         level.var_76d79843.label = 0;
     }
     width = math::clamp(width, 0, 1);
-    width = width * 5;
+    width *= 5;
     iteration = 0;
     for (i = 0; i < width; i++) {
-        iteration = iteration + randomfloatrange(min, max);
+        iteration += randomfloatrange(min, max);
     }
     x = iteration / width;
     if (x > max * 0.5) {
-        x = x - max;
+        x -= max;
     }
-    x = x + max * 0.5;
+    x += max * 0.5;
     previous = level.var_76d79843.label;
     range = max - min;
     mid = range * 0.5;
@@ -897,7 +897,7 @@ function function_9299618(var_16ae04ab, var_5b2df2a0, endons) {
                     var_20768eda = self.origin + (0, 0, 72);
                 }
                 org = var_20768eda;
-                org = org + (0, 0, 9);
+                org += (0, 0, 9);
                 var_a8dca3b9 = "<unknown string>";
                 if (self.var_2de4672c > 0) {
                     nexttime = self.var_2de4672c / 1000 - now / 1000;
@@ -1185,12 +1185,13 @@ function private function_d2c66f6e(flag_name, *var_2ce1e8bb, fade_in_time, fade_
     }
 }
 
-// Namespace snd/namespace_93606de4
-// Params 0, eflags: 0x4
-// Checksum 0x76b4bbba, Offset: 0x4988
-// Size: 0x3be
-function private function_b5c66198() {
-    /#
+/#
+
+    // Namespace snd/namespace_93606de4
+    // Params 0, eflags: 0x4
+    // Checksum 0x76b4bbba, Offset: 0x4988
+    // Size: 0x3be
+    function private function_b5c66198() {
         level endon(#"hash_6a5860b6e04cdea1");
         while (!isdefined(level.stealth) && !isdefined(level.player.stealth)) {
             waitframe(1);
@@ -1218,23 +1219,21 @@ function private function_b5c66198() {
             alpha = 1;
             function_669c57bc(x, yy, "<unknown string>", (0.72974, 0.72974, 0.72974), alpha, scale);
             function_669c57bc(x, yy, "<unknown string>" + state, var_27dc744f, alpha, scale);
-            yy = yy + var_97b12dd2;
+            yy += var_97b12dd2;
             function_669c57bc(x, yy, "<unknown string>", (0.72974, 0.72974, 0.72974), alpha, scale);
             function_669c57bc(x, yy, "<unknown string>" + maxthreat + "<unknown string>" + delta + "<unknown string>", var_27dc744f, alpha, scale);
-            yy = yy + var_97b12dd2;
+            yy += var_97b12dd2;
             function_669c57bc(x, yy, "<unknown string>", (0.72974, 0.72974, 0.72974), alpha, scale);
             function_669c57bc(x, yy, "<unknown string>" + var_ddb580ee, var_27dc744f, alpha, scale);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace snd/namespace_93606de4
-// Params 2, eflags: 0x4
-// Checksum 0x23e06f5, Offset: 0x4d50
-// Size: 0x7a
-function private function_6a02a3f8(*key, value) {
-    /#
+    // Namespace snd/namespace_93606de4
+    // Params 2, eflags: 0x4
+    // Checksum 0x23e06f5, Offset: 0x4d50
+    // Size: 0x7a
+    function private function_6a02a3f8(*key, value) {
         value = int(value);
         if (value == 0) {
             level notify(#"hash_6a5860b6e04cdea1");
@@ -1242,39 +1241,33 @@ function private function_6a02a3f8(*key, value) {
             level thread function_b5c66198();
         }
         return "<unknown string>" + value;
-    #/
-}
+    }
 
-// Namespace snd/namespace_93606de4
-// Params 2, eflags: 0x4
-// Checksum 0x29d480da, Offset: 0x4dd8
-// Size: 0x32
-function private function_c1f0a1a0(*key, value) {
-    /#
-        setmusicstate(value);
+    // Namespace snd/namespace_93606de4
+    // Params 2, eflags: 0x4
+    // Checksum 0x29d480da, Offset: 0x4dd8
+    // Size: 0x32
+    function private function_c1f0a1a0(*key, value) {
+        music::setmusicstate(value);
         return value;
-    #/
-}
+    }
 
-// Namespace snd/namespace_93606de4
-// Params 2, eflags: 0x4
-// Checksum 0x55bb2c98, Offset: 0x4e18
-// Size: 0x58
-function private function_7dbf6e02(*key, value) {
-    /#
+    // Namespace snd/namespace_93606de4
+    // Params 2, eflags: 0x4
+    // Checksum 0x55bb2c98, Offset: 0x4e18
+    // Size: 0x58
+    function private function_7dbf6e02(*key, value) {
         valuearray = strtok(value, "<unknown string>");
         time = 0.05;
         return value;
-    #/
-}
+    }
 
-// Namespace snd/namespace_93606de4
-// Params 2, eflags: 0x4
-// Checksum 0xd4b3f4d0, Offset: 0x4e78
-// Size: 0x20
-function private function_4ba99182(*key, *value) {
-    /#
+    // Namespace snd/namespace_93606de4
+    // Params 2, eflags: 0x4
+    // Checksum 0xd4b3f4d0, Offset: 0x4e78
+    // Size: 0x20
+    function private function_4ba99182(*key, *value) {
         return "<unknown string>";
-    #/
-}
+    }
 
+#/

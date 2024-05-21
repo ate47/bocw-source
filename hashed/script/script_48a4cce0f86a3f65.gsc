@@ -117,7 +117,7 @@ function private function_7d76b3ac() {
 // Size: 0x60
 function private function_e65ba67(dvar) {
     if (dvar.name == #"hash_71b8f2363319bff4") {
-        dvar.value = dvar.value * dvar.value;
+        dvar.value *= dvar.value;
     }
     level.var_435c3a22[dvar.name] = dvar.value;
 }

@@ -179,9 +179,9 @@ function function_75125d25(b_state = 1) {
 // Size: 0xb4
 function function_f5692e0c(var_9c1ed9ea, str_team, player) {
     if (isdefined(game.musicset)) {
-        var_9c1ed9ea = var_9c1ed9ea + game.musicset;
+        var_9c1ed9ea += game.musicset;
     } else {
-        var_9c1ed9ea = var_9c1ed9ea + "_default";
+        var_9c1ed9ea += "_default";
     }
     if (isdefined(str_team)) {
         music::setmusicstatebyteam(var_9c1ed9ea, str_team);

@@ -386,7 +386,7 @@ function aoe_friendlies(weapon, aoe) {
         profile_start_time = util::get_start_time();
         profile_elapsed_times = [];
         extra_profile_time = 1000;
-        end_time = end_time + extra_profile_time;
+        end_time += extra_profile_time;
     }
     has_reapply_check = isdefined(aoe.check_reapply_time_func);
     aoe_team = self.team;
@@ -442,7 +442,7 @@ function aoe_trace_entity(entity, origin, trace_z_offset) {
         return false;
     }
     /#
-        thread draw_debug_line(origin, entitypoint, 1);
+        thread util::draw_debug_line(origin, entitypoint, 1);
     #/
     return true;
 }

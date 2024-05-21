@@ -36,7 +36,7 @@ function function_98acc465() {
     self physicslaunch(self.origin, (0, 0, 10));
     self.health = 500 + level.doa.var_6c58d51 * 500;
     if (self.type === 33) {
-        self.health = self.health + 1250;
+        self.health += 1250;
     }
     self thread function_b968c4a9();
     self thread function_5160690e();
@@ -132,7 +132,7 @@ function function_5160690e() {
             zombie setentitytarget(self);
             dir = vectornormalize(self.origin - zombie.origin) * 30;
             self physicslaunch(self.origin, (dir[0], dir[1], dir[2] + 10));
-            self.health = self.health - 40;
+            self.health -= 40;
             if (self.health < 0) {
                 self namespace_e32bb68::function_3a59ec34("zmb_explode");
                 self namespace_83eb6304::function_3ecfde67("egg_explode");

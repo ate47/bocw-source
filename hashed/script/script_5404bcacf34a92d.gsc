@@ -210,7 +210,7 @@ function function_c50ebe3c(*watcher, owner) {
     self function_619a5c20();
     self.var_7961a37e = owner.var_348162a4;
     /#
-        self on_death(&function_71d12dd9);
+        self callback::on_death(&function_71d12dd9);
     #/
     if (isdefined(owner)) {
         if (isdefined(owner.var_646dca28)) {
@@ -482,7 +482,7 @@ function function_3b028b4a(time_left, var_646dca28, var_7961a37e, var_b512a2d) {
             level.var_acb5d4ce[var_7961a37e].var_b512a2d = result.entity;
         }
         time_now = gettime();
-        time_left = time_left - float(time_now - start_time) / 1000;
+        time_left -= float(time_now - start_time) / 1000;
         start_time = time_now;
     }
 }
@@ -556,7 +556,7 @@ function function_1c8713ac(var_646dca28, var_19d9c3aa, var_82529e94 = 0) {
     #/
     if (isdefined(var_19d9c3aa)) {
         if (var_82529e94) {
-            var_19d9c3aa = var_19d9c3aa + (100, 100, 0);
+            var_19d9c3aa += (100, 100, 0);
         }
         var_b45574e6 = getclosestpointonnavmesh(var_19d9c3aa, 500);
         if (!isdefined(var_b45574e6)) {
@@ -658,30 +658,29 @@ function empty_function(*watcher, *player) {
     
 }
 
-// Namespace namespace_e0966e1e/namespace_e0966e1e
-// Params 1, eflags: 0x0
-// Checksum 0xbd23c89, Offset: 0x2968
-// Size: 0x52
-function function_71d12dd9(*params) {
-    /#
+/#
+
+    // Namespace namespace_e0966e1e/namespace_e0966e1e
+    // Params 1, eflags: 0x0
+    // Checksum 0xbd23c89, Offset: 0x2968
+    // Size: 0x52
+    function function_71d12dd9(*params) {
         if (isdefined(self.var_fd1ae96a)) {
             return;
         }
         function_2586c596("<unknown string>" + self.var_7961a37e);
         self.var_fd1ae96a = 1;
-    #/
-}
+    }
 
-// Namespace namespace_e0966e1e/namespace_e0966e1e
-// Params 1, eflags: 0x0
-// Checksum 0x191e39cf, Offset: 0x29c8
-// Size: 0x4c
-function function_2586c596(string) {
-    /#
+    // Namespace namespace_e0966e1e/namespace_e0966e1e
+    // Params 1, eflags: 0x0
+    // Checksum 0x191e39cf, Offset: 0x29c8
+    // Size: 0x4c
+    function function_2586c596(string) {
         if (!getdvarint(#"hash_6c6f56f6f67992a4", 0)) {
             return;
         }
         iprintlnbold(string);
-    #/
-}
+    }
 
+#/

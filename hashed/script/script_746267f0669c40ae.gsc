@@ -136,7 +136,7 @@ function private function_968ec9e9(parent, child, var_cbb28d5) {
     }
     direction = var_ea4696e7 - var_cbb28d5.orientation;
     if (direction < 0) {
-        direction = direction + 4;
+        direction += 4;
     }
     return level.var_55d5afa8[direction];
 }
@@ -158,7 +158,7 @@ function private function_5a8d487e(parent, child, var_ea1e2708) {
     }
     direction = var_89d5b354 - var_ea1e2708.orientation;
     if (direction < 0) {
-        direction = direction + 4;
+        direction += 4;
     }
     return level.var_55d5afa8[direction];
 }

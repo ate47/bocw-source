@@ -1,12 +1,13 @@
 // Atian COD Tools GSC CW decompiler test
 #namespace hud;
 
-// Namespace hud/hud_util_shared
-// Params 1, eflags: 0x0
-// Checksum 0x7b76565b, Offset: 0x80
-// Size: 0xdc
-function setparent(element) {
-    /#
+/#
+
+    // Namespace hud/hud_util_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x7b76565b, Offset: 0x80
+    // Size: 0xdc
+    function setparent(element) {
         if (isdefined(self.parent) && self.parent == element) {
             return;
         }
@@ -20,36 +21,30 @@ function setparent(element) {
             return;
         }
         self setpoint("<unknown string>");
-    #/
-}
+    }
 
-// Namespace hud/hud_util_shared
-// Params 0, eflags: 0x0
-// Checksum 0xfc4b9df1, Offset: 0x168
-// Size: 0x10
-function getparent() {
-    /#
+    // Namespace hud/hud_util_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xfc4b9df1, Offset: 0x168
+    // Size: 0x10
+    function getparent() {
         return self.parent;
-    #/
-}
+    }
 
-// Namespace hud/hud_util_shared
-// Params 1, eflags: 0x0
-// Checksum 0xd625b22e, Offset: 0x180
-// Size: 0x3c
-function addchild(element) {
-    /#
+    // Namespace hud/hud_util_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0xd625b22e, Offset: 0x180
+    // Size: 0x3c
+    function addchild(element) {
         element.index = self.children.size;
         self.children[self.children.size] = element;
-    #/
-}
+    }
 
-// Namespace hud/hud_util_shared
-// Params 1, eflags: 0x0
-// Checksum 0xaebdb158, Offset: 0x1c8
-// Size: 0xb6
-function removechild(element) {
-    /#
+    // Namespace hud/hud_util_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0xaebdb158, Offset: 0x1c8
+    // Size: 0xb6
+    function removechild(element) {
         element.parent = undefined;
         if (self.children[self.children.size - 1] != element) {
             self.children[element.index] = self.children[self.children.size - 1];
@@ -57,15 +52,13 @@ function removechild(element) {
         }
         self.children[self.children.size - 1] = undefined;
         element.index = undefined;
-    #/
-}
+    }
 
-// Namespace hud/hud_util_shared
-// Params 5, eflags: 0x0
-// Checksum 0x53b36e01, Offset: 0x288
-// Size: 0x8ac
-function setpoint(point, relativepoint, xoffset, yoffset, movetime) {
-    /#
+    // Namespace hud/hud_util_shared
+    // Params 5, eflags: 0x0
+    // Checksum 0x53b36e01, Offset: 0x288
+    // Size: 0x8ac
+    function setpoint(point, relativepoint, xoffset, yoffset, movetime) {
         if (!isdefined(movetime)) {
             movetime = 0;
         }
@@ -221,8 +214,8 @@ function setpoint(point, relativepoint, xoffset, yoffset, movetime) {
             }
         }
         self.y = element.y + offsety * yfactor;
-        self.x = self.x + self.xoffset;
-        self.y = self.y + self.yoffset;
+        self.x += self.xoffset;
+        self.y += self.yoffset;
         switch (self.elemtype) {
         case #"bar":
             setpointbar(point, relativepoint, xoffset, yoffset);
@@ -231,15 +224,13 @@ function setpoint(point, relativepoint, xoffset, yoffset, movetime) {
             break;
         }
         self updatechildren();
-    #/
-}
+    }
 
-// Namespace hud/hud_util_shared
-// Params 4, eflags: 0x0
-// Checksum 0x5c756f61, Offset: 0xb40
-// Size: 0x1bc
-function setpointbar(*point, *relativepoint, *xoffset, *yoffset) {
-    /#
+    // Namespace hud/hud_util_shared
+    // Params 4, eflags: 0x0
+    // Checksum 0x5c756f61, Offset: 0xb40
+    // Size: 0x1bc
+    function setpointbar(*point, *relativepoint, *xoffset, *yoffset) {
         self.bar.horzalign = self.horzalign;
         self.bar.vertalign = self.vertalign;
         self.bar.alignx = "<unknown string>";
@@ -258,27 +249,23 @@ function setpointbar(*point, *relativepoint, *xoffset, *yoffset) {
             self.bar.y = self.y;
         }
         self updatebar(self.bar.frac);
-    #/
-}
+    }
 
-// Namespace hud/hud_util_shared
-// Params 2, eflags: 0x0
-// Checksum 0xb8943ea, Offset: 0xd08
-// Size: 0x44
-function updatebar(barfrac, rateofchange) {
-    /#
+    // Namespace hud/hud_util_shared
+    // Params 2, eflags: 0x0
+    // Checksum 0xb8943ea, Offset: 0xd08
+    // Size: 0x44
+    function updatebar(barfrac, rateofchange) {
         if (self.elemtype == "<unknown string>") {
             updatebarscale(barfrac, rateofchange);
         }
-    #/
-}
+    }
 
-// Namespace hud/hud_util_shared
-// Params 2, eflags: 0x0
-// Checksum 0xeb0ab96, Offset: 0xd58
-// Size: 0x23e
-function updatebarscale(barfrac, rateofchange) {
-    /#
+    // Namespace hud/hud_util_shared
+    // Params 2, eflags: 0x0
+    // Checksum 0xeb0ab96, Offset: 0xd58
+    // Size: 0x23e
+    function updatebarscale(barfrac, rateofchange) {
         barwidth = int(self.width * barfrac + 0.5);
         if (!barwidth) {
             barwidth = 1;
@@ -297,15 +284,13 @@ function updatebarscale(barfrac, rateofchange) {
         }
         self.bar.rateofchange = rateofchange;
         self.bar.lastupdatetime = gettime();
-    #/
-}
+    }
 
-// Namespace hud/hud_util_shared
-// Params 2, eflags: 0x0
-// Checksum 0x6c455d9a, Offset: 0xfa0
-// Size: 0xfc
-function function_665f547d(font, fontscale) {
-    /#
+    // Namespace hud/hud_util_shared
+    // Params 2, eflags: 0x0
+    // Checksum 0x6c455d9a, Offset: 0xfa0
+    // Size: 0xfc
+    function function_665f547d(font, fontscale) {
         fontelem = newdebughudelem(self);
         fontelem.elemtype = "<unknown string>";
         fontelem.font = font;
@@ -320,15 +305,13 @@ function function_665f547d(font, fontscale) {
         fontelem setparent(level.uiparent);
         fontelem.hidden = 0;
         return fontelem;
-    #/
-}
+    }
 
-// Namespace hud/hud_util_shared
-// Params 2, eflags: 0x0
-// Checksum 0xee896002, Offset: 0x10a8
-// Size: 0xfc
-function function_f5a689d(font, fontscale) {
-    /#
+    // Namespace hud/hud_util_shared
+    // Params 2, eflags: 0x0
+    // Checksum 0xee896002, Offset: 0x10a8
+    // Size: 0xfc
+    function function_f5a689d(font, fontscale) {
         fontelem = newdebughudelem();
         fontelem.elemtype = "<unknown string>";
         fontelem.font = font;
@@ -343,15 +326,13 @@ function function_f5a689d(font, fontscale) {
         fontelem setparent(level.uiparent);
         fontelem.hidden = 0;
         return fontelem;
-    #/
-}
+    }
 
-// Namespace hud/hud_util_shared
-// Params 3, eflags: 0x0
-// Checksum 0x5df38d8c, Offset: 0x11b0
-// Size: 0x30c
-function function_7a0dd8a9(color, width, height) {
-    /#
+    // Namespace hud/hud_util_shared
+    // Params 3, eflags: 0x0
+    // Checksum 0x5df38d8c, Offset: 0x11b0
+    // Size: 0x30c
+    function function_7a0dd8a9(color, width, height) {
         barelem = newdebughudelem(self);
         barelem.x = 0;
         barelem.y = 0;
@@ -400,15 +381,13 @@ function function_7a0dd8a9(color, width, height) {
         }
         barelembg.hidden = 0;
         return barelembg;
-    #/
-}
+    }
 
-// Namespace hud/hud_util_shared
-// Params 0, eflags: 0x0
-// Checksum 0xf6e88918, Offset: 0x14c8
-// Size: 0xaa
-function function_5037fb7f() {
-    /#
+    // Namespace hud/hud_util_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xf6e88918, Offset: 0x14c8
+    // Size: 0xaa
+    function function_5037fb7f() {
         bar = function_7a0dd8a9((1, 1, 1), level.primaryprogressbarwidth, level.primaryprogressbarheight);
         if (level.splitscreen) {
             bar setpoint("<unknown string>", undefined, level.primaryprogressbarx, level.primaryprogressbary);
@@ -416,15 +395,13 @@ function function_5037fb7f() {
             bar setpoint("<unknown string>", undefined, level.primaryprogressbarx, level.primaryprogressbary);
         }
         return bar;
-    #/
-}
+    }
 
-// Namespace hud/hud_util_shared
-// Params 0, eflags: 0x0
-// Checksum 0x5008f487, Offset: 0x1580
-// Size: 0xb8
-function function_48badcf4() {
-    /#
+    // Namespace hud/hud_util_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x5008f487, Offset: 0x1580
+    // Size: 0xb8
+    function function_48badcf4() {
         text = function_665f547d("<unknown string>", level.primaryprogressbarfontsize);
         if (level.splitscreen) {
             text setpoint("<unknown string>", undefined, level.primaryprogressbartextx, level.primaryprogressbartexty);
@@ -433,15 +410,13 @@ function function_48badcf4() {
         }
         text.sort = -1;
         return text;
-    #/
-}
+    }
 
-// Namespace hud/hud_util_shared
-// Params 0, eflags: 0x0
-// Checksum 0x8dbf9737, Offset: 0x1640
-// Size: 0xe2
-function hideelem() {
-    /#
+    // Namespace hud/hud_util_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x8dbf9737, Offset: 0x1640
+    // Size: 0xe2
+    function hideelem() {
         if (self.hidden) {
             return;
         }
@@ -459,15 +434,13 @@ function hideelem() {
                 self.barframe.alpha = 0;
             }
         }
-    #/
-}
+    }
 
-// Namespace hud/hud_util_shared
-// Params 0, eflags: 0x0
-// Checksum 0x175271b, Offset: 0x1730
-// Size: 0x10a
-function showelem() {
-    /#
+    // Namespace hud/hud_util_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x175271b, Offset: 0x1730
+    // Size: 0x10a
+    function showelem() {
         if (!self.hidden) {
             return;
         }
@@ -489,15 +462,13 @@ function showelem() {
         if (self.alpha != 1) {
             self.alpha = 1;
         }
-    #/
-}
+    }
 
-// Namespace hud/hud_util_shared
-// Params 0, eflags: 0x0
-// Checksum 0x76ce74ca, Offset: 0x1848
-// Size: 0x11c
-function destroyelem() {
-    /#
+    // Namespace hud/hud_util_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x76ce74ca, Offset: 0x1848
+    // Size: 0x11c
+    function destroyelem() {
         tempchildren = [];
         for (index = 0; index < self.children.size; index++) {
             if (isdefined(self.children[index])) {
@@ -512,19 +483,17 @@ function destroyelem() {
             self.barframe destroy();
         }
         self destroy();
-    #/
-}
+    }
 
-// Namespace hud/hud_util_shared
-// Params 0, eflags: 0x0
-// Checksum 0x91aa66ce, Offset: 0x1970
-// Size: 0x7c
-function updatechildren() {
-    /#
-        for (index = 0; index < self.children.size; index++) {
+    // Namespace hud/hud_util_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x91aa66ce, Offset: 0x1970
+    // Size: 0x7c
+    function updatechildren() {
+                for (index = 0; index < self.children.size; index++) {
             child = self.children[index];
             child setpoint(child.point, child.relativepoint, child.xoffset, child.yoffset);
         }
-    #/
-}
+    }
 
+#/

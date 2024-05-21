@@ -355,7 +355,7 @@ function function_7df47abd() {
         n_count = var_b90dca7b;
     }
     level.var_6fad6ea9 = level.zombie_ai_limit - n_count;
-    level.zombie_ai_limit = level.zombie_ai_limit - level.var_6fad6ea9;
+    level.zombie_ai_limit -= level.var_6fad6ea9;
     callback::on_ai_spawned(&function_de517a00);
     foreach (ai_zombie in getaiteamarray(level.zombie_team)) {
         ai_zombie thread function_de517a00();
@@ -560,7 +560,7 @@ function function_ca558ad5() {
     callback::on_ai_killed(&function_559a9ad3);
     var_10ff40e4 = 7 + function_a1ef346b().size * 5;
     if (level.round_number > 20) {
-        var_10ff40e4 = var_10ff40e4 + level.round_number - 20;
+        var_10ff40e4 += level.round_number - 20;
     }
     if (var_10ff40e4 > 50) {
         var_10ff40e4 = 50;
@@ -782,7 +782,7 @@ function function_bc369205(var_14a22ccd = 0, var_17f8efd5 = 0, var_d219813c = 0)
         if (self.var_2b239c6f > var_3b0cab15) {
             self thread function_21a9e71b(0, var_14a22ccd, var_d219813c);
         } else {
-            self.var_2b239c6f = self.var_2b239c6f + amount;
+            self.var_2b239c6f += amount;
         }
         if (!var_17f8efd5) {
             sndonoverride_eye_(self.var_2b239c6f, var_3b0cab15, 1);
@@ -870,7 +870,7 @@ function function_21a9e71b(success, var_14a22ccd, *var_d219813c = 0) {
         }
     }
     if (!var_d219813c && isdefined(level.var_6fad6ea9)) {
-        level.zombie_ai_limit = level.zombie_ai_limit + level.var_6fad6ea9;
+        level.zombie_ai_limit += level.var_6fad6ea9;
         level.var_6fad6ea9 = undefined;
         self.mdl_tag clientfield::set("" + #"hash_48cdaba6cfee3ee8", 0);
     }
@@ -1153,26 +1153,25 @@ function private function_2f28c166() {
     }
 }
 
-// Namespace namespace_f7b3ed9/namespace_f7b3ed9
-// Params 0, eflags: 0x0
-// Checksum 0x94d79d54, Offset: 0x5518
-// Size: 0x8c
-function function_37597f29() {
-    /#
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_custom_devgui_callback(&cmd);
-    #/
-}
+/#
 
-// Namespace namespace_f7b3ed9/namespace_f7b3ed9
-// Params 1, eflags: 0x0
-// Checksum 0x1334d3db, Offset: 0x55b0
-// Size: 0xd2
-function cmd(cmd) {
-    /#
+    // Namespace namespace_f7b3ed9/namespace_f7b3ed9
+    // Params 0, eflags: 0x0
+    // Checksum 0x94d79d54, Offset: 0x5518
+    // Size: 0x8c
+    function function_37597f29() {
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        zm_devgui::add_custom_devgui_callback(&cmd);
+    }
+
+    // Namespace namespace_f7b3ed9/namespace_f7b3ed9
+    // Params 1, eflags: 0x0
+    // Checksum 0x1334d3db, Offset: 0x55b0
+    // Size: 0xd2
+    function cmd(cmd) {
         switch (cmd) {
         case #"hash_4d05810932ce7723":
             function_2ecb6786();
@@ -1189,85 +1188,77 @@ function cmd(cmd) {
         default:
             break;
         }
-    #/
-}
+    }
 
-// Namespace namespace_f7b3ed9/namespace_f7b3ed9
-// Params 0, eflags: 0x0
-// Checksum 0xea86fafa, Offset: 0x5690
-// Size: 0x9c
-function function_2ecb6786() {
-    /#
+    // Namespace namespace_f7b3ed9/namespace_f7b3ed9
+    // Params 0, eflags: 0x0
+    // Checksum 0xea86fafa, Offset: 0x5690
+    // Size: 0x9c
+    function function_2ecb6786() {
         foreach (control_point in level.var_cc43b632) {
             control_point.var_3dacb34d = 1;
         }
         iprintlnbold("<unknown string>");
-    #/
-}
+    }
 
-// Namespace namespace_f7b3ed9/namespace_f7b3ed9
-// Params 0, eflags: 0x0
-// Checksum 0x4bb1433e, Offset: 0x5738
-// Size: 0x1fc
-function function_b2d9913a() {
-    /#
+    // Namespace namespace_f7b3ed9/namespace_f7b3ed9
+    // Params 0, eflags: 0x0
+    // Checksum 0x4bb1433e, Offset: 0x5738
+    // Size: 0x1fc
+    function function_b2d9913a() {
         foreach (control_point in level.var_cc43b632) {
             if (isdefined(control_point.mdl_tag)) {
-                control_point.mdl_tag set("<unknown string>" + #"hash_221e597b28199323", 0);
-                control_point.mdl_tag set("<unknown string>" + #"hash_48cdaba6cfee3ee8", 1);
+                control_point.mdl_tag clientfield::set("<unknown string>" + #"hash_221e597b28199323", 0);
+                control_point.mdl_tag clientfield::set("<unknown string>" + #"hash_48cdaba6cfee3ee8", 1);
             }
-            satellites = get_array(control_point.target, "<unknown string>");
+            satellites = struct::get_array(control_point.target, "<unknown string>");
             foreach (satellite in satellites) {
                 if (isdefined(satellite.mdl)) {
-                    satellite.mdl set("<unknown string>" + #"hash_20b22d2242b107cc", 0);
-                    satellite.mdl set("<unknown string>" + #"hash_4cf52ac8c941f331", 1);
+                    satellite.mdl clientfield::set("<unknown string>" + #"hash_20b22d2242b107cc", 0);
+                    satellite.mdl clientfield::set("<unknown string>" + #"hash_4cf52ac8c941f331", 1);
                 }
             }
         }
-    #/
-}
+    }
 
-// Namespace namespace_f7b3ed9/namespace_f7b3ed9
-// Params 0, eflags: 0x0
-// Checksum 0x1575ce4d, Offset: 0x5940
-// Size: 0x1fc
-function function_c4d7b0f0() {
-    /#
+    // Namespace namespace_f7b3ed9/namespace_f7b3ed9
+    // Params 0, eflags: 0x0
+    // Checksum 0x1575ce4d, Offset: 0x5940
+    // Size: 0x1fc
+    function function_c4d7b0f0() {
         foreach (control_point in level.var_cc43b632) {
             if (isdefined(control_point.mdl_tag)) {
-                control_point.mdl_tag set("<unknown string>" + #"hash_48cdaba6cfee3ee8", 0);
-                control_point.mdl_tag set("<unknown string>" + #"hash_221e597b28199323", 1);
+                control_point.mdl_tag clientfield::set("<unknown string>" + #"hash_48cdaba6cfee3ee8", 0);
+                control_point.mdl_tag clientfield::set("<unknown string>" + #"hash_221e597b28199323", 1);
             }
-            satellites = get_array(control_point.target, "<unknown string>");
+            satellites = struct::get_array(control_point.target, "<unknown string>");
             foreach (satellite in satellites) {
                 if (isdefined(satellite.mdl)) {
-                    satellite.mdl set("<unknown string>" + #"hash_4cf52ac8c941f331", 0);
-                    satellite.mdl set("<unknown string>" + #"hash_20b22d2242b107cc", 1);
+                    satellite.mdl clientfield::set("<unknown string>" + #"hash_4cf52ac8c941f331", 0);
+                    satellite.mdl clientfield::set("<unknown string>" + #"hash_20b22d2242b107cc", 1);
                 }
             }
         }
-    #/
-}
+    }
 
-// Namespace namespace_f7b3ed9/namespace_f7b3ed9
-// Params 0, eflags: 0x0
-// Checksum 0x2c36f67f, Offset: 0x5b48
-// Size: 0x1ec
-function function_353c005c() {
-    /#
+    // Namespace namespace_f7b3ed9/namespace_f7b3ed9
+    // Params 0, eflags: 0x0
+    // Checksum 0x2c36f67f, Offset: 0x5b48
+    // Size: 0x1ec
+    function function_353c005c() {
         foreach (control_point in level.var_cc43b632) {
             if (isdefined(control_point.mdl_tag)) {
-                control_point.mdl_tag set("<unknown string>" + #"hash_48cdaba6cfee3ee8", 0);
-                control_point.mdl_tag set("<unknown string>" + #"hash_221e597b28199323", 0);
+                control_point.mdl_tag clientfield::set("<unknown string>" + #"hash_48cdaba6cfee3ee8", 0);
+                control_point.mdl_tag clientfield::set("<unknown string>" + #"hash_221e597b28199323", 0);
             }
-            satellites = get_array(control_point.target, "<unknown string>");
+            satellites = struct::get_array(control_point.target, "<unknown string>");
             foreach (satellite in satellites) {
                 if (isdefined(satellite.mdl)) {
-                    satellite.mdl set("<unknown string>" + #"hash_4cf52ac8c941f331", 0);
-                    satellite.mdl set("<unknown string>" + #"hash_20b22d2242b107cc", 0);
+                    satellite.mdl clientfield::set("<unknown string>" + #"hash_4cf52ac8c941f331", 0);
+                    satellite.mdl clientfield::set("<unknown string>" + #"hash_20b22d2242b107cc", 0);
                 }
             }
         }
-    #/
-}
+    }
 
+#/

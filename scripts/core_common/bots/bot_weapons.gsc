@@ -1103,7 +1103,7 @@ function private function_d0cdb00e(actionparams) {
         targetlocations[0] = (0, 0, 0);
     }
     location = targetlocations[randomint(targetlocations.size)];
-    location = location + (randomfloatrange(500 * -1, 500), randomfloatrange(500 * -1, 500), 0);
+    location += (randomfloatrange(500 * -1, 500), randomfloatrange(500 * -1, 500), 0);
     self notify(#"confirm_location", {#position:location, #yaw:0});
     while (!self function_a39f313c() || self getcurrentweapon() == level.weaponnone) {
         self waittill(#"hash_77f2882ff9140e86");
@@ -2338,7 +2338,7 @@ function private function_411e397e() {
     delaytime = isdefined(self.bot.difficulty.var_d70788cb) ? self.bot.difficulty.var_d70788cb : 0;
     var_8a2cf681 = self function_7067eabd();
     if (var_8a2cf681 >= 2.5 || !(self.bot.enemydist <= var_8a2cf681 * 500)) {
-        delaytime = delaytime + self function_957aa281();
+        delaytime += self function_957aa281();
     }
     totaltime = delaytime + shoottime;
     self.bot.var_d70788cb = gettime() + int(delaytime * 1000);
@@ -2407,10 +2407,10 @@ function private function_9160a207(currentweapon) {
             var_66a04f11 = isdefined(self.bot.difficulty.var_65a25108) ? self.bot.difficulty.var_65a25108 : 0;
             var_7e2f0732 = isdefined(self.bot.difficulty.var_e0e4be1b) ? self.bot.difficulty.var_e0e4be1b : 0;
             falloff = lerpfloat(var_66a04f11, var_7e2f0732, var_e99f12e5 / var_f4b40c21);
-            var_f519fbc6 = var_f519fbc6 * falloff;
+            var_f519fbc6 *= falloff;
         }
         if (self playerads() < 1) {
-            var_f519fbc6 = var_f519fbc6 * (isdefined(self.bot.difficulty.var_363a4bcd) ? self.bot.difficulty.var_363a4bcd : 0);
+            var_f519fbc6 *= isdefined(self.bot.difficulty.var_363a4bcd) ? self.bot.difficulty.var_363a4bcd : 0;
         }
     }
     /#

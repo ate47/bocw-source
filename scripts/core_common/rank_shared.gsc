@@ -488,7 +488,7 @@ function updaterank() {
         rankid++;
     }
     /#
-        print("<unknown string>" + oldrank + "<unknown string>" + newrankid + "<unknown string>" + self get_stat_global(#"time_played_total"));
+        print("<unknown string>" + oldrank + "<unknown string>" + newrankid + "<unknown string>" + self stats::get_stat_global(#"time_played_total"));
     #/
     self setrank(newrankid);
     return true;

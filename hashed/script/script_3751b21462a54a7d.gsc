@@ -238,7 +238,7 @@ function function_a173ab53() {
 function function_4c5d2b62() {
     cost = 2500;
     if (isdefined(self.var_7341f980)) {
-        cost = cost + self.var_7341f980.size * 500;
+        cost += self.var_7341f980.size * 500;
     }
     return cost;
 }
@@ -411,7 +411,7 @@ function function_3fecad82(talent, var_6e2cc6cb = 1, var_96b5aff5 = #"") {
         }
         break;
     }
-    self.var_77c69799 = self.var_77c69799 + 1;
+    self.var_77c69799 += 1;
     self function_b4083162(talent, var_96b5aff5);
     var_3dab8681 = namespace_e86ffa8::function_cde018a9(talent);
     if (isdefined(level._custom_perks[var_3dab8681]) && isdefined(level._custom_perks[var_3dab8681].player_thread_give)) {
@@ -912,15 +912,16 @@ function function_cc0055e9(talent) {
     return true;
 }
 
-// Namespace namespace_791d0451/namespace_791d0451
-// Params 0, eflags: 0x0
-// Checksum 0xa2a44287, Offset: 0x3a10
-// Size: 0x46c
-function function_c0f77370() {
-    /#
+/#
+
+    // Namespace namespace_791d0451/namespace_791d0451
+    // Params 0, eflags: 0x0
+    // Checksum 0xa2a44287, Offset: 0x3a10
+    // Size: 0x46c
+    function function_c0f77370() {
         level endon(#"game_ended");
         level.var_6f4eb990 = "<unknown string>";
-        function_d8ef0f00(&function_1d36527d);
+        namespace_420b39d3::function_d8ef0f00(&function_1d36527d);
         adddebugcommand("<unknown string>" + "<unknown string>" + "<unknown string>");
         adddebugcommand("<unknown string>" + "<unknown string>" + "<unknown string>");
         adddebugcommand("<unknown string>" + "<unknown string>" + "<unknown string>");
@@ -939,15 +940,13 @@ function function_c0f77370() {
         adddebugcommand("<unknown string>" + function_9e72a96(#"hash_3417450e1347185") + "<unknown string>");
         adddebugcommand("<unknown string>" + function_9e72a96(#"hash_7f98b3dd3cce95aa") + "<unknown string>");
         adddebugcommand("<unknown string>" + function_9e72a96(#"hash_5930cf0eb070e35a") + "<unknown string>");
-    #/
-}
+    }
 
-// Namespace namespace_791d0451/namespace_791d0451
-// Params 1, eflags: 0x0
-// Checksum 0x9e5a3762, Offset: 0x3e88
-// Size: 0x36c
-function function_1d36527d(params) {
-    /#
+    // Namespace namespace_791d0451/namespace_791d0451
+    // Params 1, eflags: 0x0
+    // Checksum 0x9e5a3762, Offset: 0x3e88
+    // Size: 0x36c
+    function function_1d36527d(params) {
         tokens = strtok(params.value, "<unknown string>");
         if (!tokens.size || tokens[0] != "<unknown string>" && tokens[0] != "<unknown string>" && tokens[0] != "<unknown string>" && tokens[0] != "<unknown string>") {
             return;
@@ -990,6 +989,6 @@ function function_1d36527d(params) {
                 player function_4c1d0e25(talent);
             }
         }
-    #/
-}
+    }
 
+#/

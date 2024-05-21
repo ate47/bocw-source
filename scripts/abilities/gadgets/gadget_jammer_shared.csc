@@ -202,7 +202,7 @@ function player_isjammed(localclientnum, oldval, newval, *bnewent, *binitialsnap
 function function_b47f94f(*localclientnum, var_da91b79d) {
     self endon(#"hash_55123a0e484012d5");
     endtime = 0.25;
-    for (progress = 0; progress < endtime; progress = progress + 0.1) {
+    for (progress = 0; progress < endtime; progress += 0.1) {
         percent = 1 - min(1, progress / endtime);
         setuimodelvalue(var_da91b79d, percent);
         wait(0.15);

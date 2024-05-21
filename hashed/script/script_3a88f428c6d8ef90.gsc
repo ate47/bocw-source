@@ -196,7 +196,7 @@ function function_b3496fde(*inflictor, attacker, damage, *flags, meansofdeath, w
         case 5:
             if (isplayer(shitloc) && shitloc.var_16cd8b35 < 1) {
                 var_9eaf0b7a = int(0.1 * shitloc.var_66cb03ad);
-                shitloc.health = shitloc.health + var_9eaf0b7a;
+                shitloc.health += var_9eaf0b7a;
                 if (shitloc.health > shitloc.var_66cb03ad) {
                     var_253772ec = var_9eaf0b7a - shitloc.health - shitloc.var_66cb03ad;
                     shitloc.health = shitloc.var_66cb03ad;
@@ -516,29 +516,28 @@ function function_8a6ccd14(weapon, n_tier, var_570564b8 = 0, var_497316dc = 0) {
     }
 }
 
-// Namespace namespace_b61a349a/namespace_b61a349a
-// Params 0, eflags: 0x0
-// Checksum 0x39b280f5, Offset: 0x1e88
-// Size: 0x12c
-function function_6aa829ef() {
-    /#
+/#
+
+    // Namespace namespace_b61a349a/namespace_b61a349a
+    // Params 0, eflags: 0x0
+    // Checksum 0x39b280f5, Offset: 0x1e88
+    // Size: 0x12c
+    function function_6aa829ef() {
         level endon(#"game_ended");
-        function_d8ef0f00(&function_6cb3521c);
+        namespace_420b39d3::function_d8ef0f00(&function_6cb3521c);
         adddebugcommand("<unknown string>" + 0 + "<unknown string>");
         adddebugcommand("<unknown string>" + 1 + "<unknown string>");
         adddebugcommand("<unknown string>" + 2 + "<unknown string>");
         adddebugcommand("<unknown string>" + 3 + "<unknown string>");
         adddebugcommand("<unknown string>" + 4 + "<unknown string>");
         adddebugcommand("<unknown string>" + 5 + "<unknown string>");
-    #/
-}
+    }
 
-// Namespace namespace_b61a349a/namespace_b61a349a
-// Params 1, eflags: 0x0
-// Checksum 0x5cab919c, Offset: 0x1fc0
-// Size: 0x118
-function function_6cb3521c(params) {
-    /#
+    // Namespace namespace_b61a349a/namespace_b61a349a
+    // Params 1, eflags: 0x0
+    // Checksum 0x5cab919c, Offset: 0x1fc0
+    // Size: 0x118
+    function function_6cb3521c(params) {
         tokens = strtok(params.value, "<unknown string>");
         if (!tokens.size || tokens[0] != "<unknown string>") {
             return;
@@ -546,6 +545,6 @@ function function_6cb3521c(params) {
         foreach (player in getplayers()) {
             setdvar(#"hash_31933df32887a98b", int(tokens[1]));
         }
-    #/
-}
+    }
 
+#/

@@ -116,7 +116,7 @@ function private function_d0b587e2(*localclientnum) {
     n_increment = 1 / 50;
     while (n_percent > 0) {
         self function_78233d29(#"hash_5e190029d2c86444", "", "Threshold", n_percent);
-        n_percent = n_percent - n_increment;
+        n_percent -= n_increment;
         wait(1);
     }
     self function_78233d29(#"hash_5e190029d2c86444", "", "Threshold", 0);

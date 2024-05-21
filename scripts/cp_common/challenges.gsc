@@ -285,13 +285,14 @@ function function_706ec529() {
     #/
 }
 
-// Namespace challenges/challenges
-// Params 0, eflags: 0x4
-// Checksum 0xe056980b, Offset: 0xdd0
-// Size: 0x10c
-function private function_160aeb02() {
-    /#
-        init_dvar("<unknown string>", -1, &function_5fc09844);
+/#
+
+    // Namespace challenges/challenges
+    // Params 0, eflags: 0x4
+    // Checksum 0xe056980b, Offset: 0xdd0
+    // Size: 0x10c
+    function private function_160aeb02() {
+        util::init_dvar("<unknown string>", -1, &function_5fc09844);
         var_c83485 = 36;
         for (challengeindex = 1; challengeindex <= var_c83485; challengeindex++) {
             var_6cbd4315 = tablelookup(#"gamedata/stats/cp/statsmilestones1.csv", 0, challengeindex, 4);
@@ -300,22 +301,21 @@ function private function_160aeb02() {
                 adddebugcommand("<unknown string>" + var_6cbd4315 + "<unknown string>" + challengeindex - 1 + "<unknown string>" + challengeindex + "<unknown string>");
             }
         }
-    #/
-}
+    }
 
-// Namespace challenges/challenges
-// Params 1, eflags: 0x4
-// Checksum 0x1ff9dd48, Offset: 0xee8
-// Size: 0x7c
-function private function_5fc09844(param) {
-    /#
+    // Namespace challenges/challenges
+    // Params 1, eflags: 0x4
+    // Checksum 0x1ff9dd48, Offset: 0xee8
+    // Size: 0x7c
+    function private function_5fc09844(param) {
         challengeindex = int(param.value);
         if (challengeindex >= 0) {
             setdvar(#"hash_2295f8bff1842026", -1);
             level thread function_9635f1e6(challengeindex);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace challenges/challenges
 // Params 1, eflags: 0x2 linked
@@ -368,14 +368,14 @@ function private function_65b0a754() {
         waitframe(1);
         var_21e736f9 = tablelookup(#"gamedata/stats/cp/statsmilestones1.csv", 0, challengeindex, 5);
         challengexp = int(tablelookup(#"gamedata/stats/cp/statsmilestones1.csv", 0, challengeindex, 6));
-        var_3e63e7e4 = tablelookup(#"gamedata/stats/cp/statsmilestones1.csv", 0, challengeindex, 12);
+        challengedesc = tablelookup(#"gamedata/stats/cp/statsmilestones1.csv", 0, challengeindex, 12);
         if (namespace_61e6d095::exists(#"hash_166066a38ca1f36d")) {
             namespace_61e6d095::remove(#"hash_166066a38ca1f36d");
         }
         namespace_61e6d095::create(#"hash_166066a38ca1f36d", #"hash_367f58e18cde1c9e");
         namespace_61e6d095::function_d3c3e5c3(#"hash_166066a38ca1f36d", [#"dialog_tree", #"interactive_map", #"computer"]);
         namespace_61e6d095::function_9ade1d9b(#"hash_166066a38ca1f36d", "text", hash(var_21e736f9));
-        namespace_61e6d095::function_9ade1d9b(#"hash_166066a38ca1f36d", "desc", hash(var_3e63e7e4));
+        namespace_61e6d095::function_9ade1d9b(#"hash_166066a38ca1f36d", "desc", hash(challengedesc));
         namespace_61e6d095::function_9ade1d9b(#"hash_166066a38ca1f36d", "count", challengexp);
         player = getplayers()[0];
         player playsound(#"hash_9422601830d30a9");
@@ -504,24 +504,23 @@ function function_18b65152() {
     }
 }
 
-// Namespace challenges/challenges
-// Params 1, eflags: 0x0
-// Checksum 0xdebe9b9f, Offset: 0x1da8
-// Size: 0x3c
-function function_6d4abfcd(n_time) {
-    /#
+/#
+
+    // Namespace challenges/challenges
+    // Params 1, eflags: 0x0
+    // Checksum 0xdebe9b9f, Offset: 0x1da8
+    // Size: 0x3c
+    function function_6d4abfcd(n_time) {
         self endon(#"disconnect");
         wait(n_time);
-        self thread function_2e0c1f7d();
-    #/
-}
+        self thread util::function_2e0c1f7d();
+    }
 
-// Namespace challenges/challenges
-// Params 0, eflags: 0x0
-// Checksum 0xfd35e04, Offset: 0x1df0
-// Size: 0x80
-function function_ba92458e() {
-    /#
+    // Namespace challenges/challenges
+    // Params 0, eflags: 0x0
+    // Checksum 0xfd35e04, Offset: 0x1df0
+    // Size: 0x80
+    function function_ba92458e() {
         while (true) {
             if (getdvarint(#"hash_557c55de257d4066", 0) == 1) {
                 self function_1b7d307e();
@@ -529,41 +528,39 @@ function function_ba92458e() {
             }
             wait(0.1);
         }
-    #/
-}
+    }
 
-// Namespace challenges/challenges
-// Params 0, eflags: 0x0
-// Checksum 0x5f3fd636, Offset: 0x1e78
-// Size: 0x348
-function function_1b7d307e() {
-    /#
+    // Namespace challenges/challenges
+    // Params 0, eflags: 0x0
+    // Checksum 0x5f3fd636, Offset: 0x1e78
+    // Size: 0x348
+    function function_1b7d307e() {
         var_2418c386 = [];
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
-        add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
+        array::add(var_2418c386, "<unknown string>");
         foreach (challenge in var_2418c386) {
-            self function_dad108fa(challenge, 1000);
+            self stats::function_dad108fa(challenge, 1000);
             iprintln("<unknown string>" + challenge);
             wait(1);
         }
-    #/
-}
+    }
 
+#/

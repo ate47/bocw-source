@@ -54,32 +54,34 @@ function autoexec registerbehaviorscriptfunctions() {
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"covercleanuptothrowgrenade", &covercleanuptothrowgrenade);
     assert(isscriptfunctionptr(&function_6e9ba2ac));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_5734f7a752b4150b", &function_6e9ba2ac);
-    assert(isscriptfunctionptr(&function_8f12f910));
+    assert(isscriptfunctionptr(&aiutility::function_8f12f910));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_5b614e766fc4d283", &aiutility::function_8f12f910);
-    assert(isscriptfunctionptr(&function_8f12f910));
+    assert(isscriptfunctionptr(&aiutility::function_8f12f910));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2078ca98b094c39", &aiutility::function_8f12f910);
-    assert(isscriptfunctionptr(&function_8f12f910));
+    assert(isscriptfunctionptr(&aiutility::function_8f12f910));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_914aa2c9d4ad21c", &aiutility::function_8f12f910);
-    assert(isscriptfunctionptr(&function_8f12f910));
+    assert(isscriptfunctionptr(&aiutility::function_8f12f910));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"switchtogrenadelauncher", &aiutility::function_8f12f910);
-    assert(isscriptfunctionptr(&function_8f12f910));
+    assert(isscriptfunctionptr(&aiutility::function_8f12f910));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"switchtolightninggun", &aiutility::function_8f12f910);
-    assert(isscriptfunctionptr(&function_8f12f910));
+    assert(isscriptfunctionptr(&aiutility::function_8f12f910));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"switchtoannihilator", &aiutility::function_8f12f910);
     /#
-        init_dvar("<unknown string>", 0, &function_9c20a620);
+        util::init_dvar("<unknown string>", 0, &function_9c20a620);
     #/
 }
 
-// Namespace archetype_human_cover/archetype_human_cover
-// Params 1, eflags: 0x4
-// Checksum 0x573a671, Offset: 0xc58
-// Size: 0x3c
-function private function_9c20a620(parms) {
-    /#
+/#
+
+    // Namespace archetype_human_cover/archetype_human_cover
+    // Params 1, eflags: 0x4
+    // Checksum 0x573a671, Offset: 0xc58
+    // Size: 0x3c
+    function private function_9c20a620(parms) {
         level.var_6324e9e5[parms.name] = int(parms.value);
-    #/
-}
+    }
+
+#/
 
 // Namespace archetype_human_cover/archetype_human_cover
 // Params 3, eflags: 0x2 linked
@@ -146,7 +148,7 @@ function function_9d8b22d8(entity, throwifpossible = 0, var_f06df42 = 1) {
         enemyorigin = entity lastknownpos(entity.enemy);
         accuracy = 1;
         if (isdefined(level.var_21347b32) && isdefined(level.gameskill)) {
-            accuracy = level.var_21347b32[level.gameskill].var_da7e542b;
+            accuracy = level.var_21347b32[level.gameskill].base_enemy_accuracy;
         }
         maxdistance = 128 / accuracy;
         var_4748f6aa = (enemyorigin[0] + maxdistance * randomfloatrange(-1, 1), enemyorigin[1] + maxdistance * randomfloatrange(-1, 1), enemyorigin[2]);

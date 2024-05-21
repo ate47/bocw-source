@@ -295,12 +295,13 @@ function function_a0f5b7f5(team) {
     return bots;
 }
 
-// Namespace bot_devgui/bot_devgui
-// Params 0, eflags: 0x4
-// Checksum 0xbe878247, Offset: 0x15c8
-// Size: 0x220
-function private function_d3901b82() {
-    /#
+/#
+
+    // Namespace bot_devgui/bot_devgui
+    // Params 0, eflags: 0x4
+    // Checksum 0xbe878247, Offset: 0x15c8
+    // Size: 0x220
+    function private function_d3901b82() {
         level endon(#"game_ended");
         sessionmode = currentsessionmode();
         if (sessionmode != 4) {
@@ -313,13 +314,14 @@ function private function_d3901b82() {
                 assetname = function_9e72a96(function_ac0419ac(index, sessionmode));
                 name = displayname + "T-Pose" + assetname + ":";
                 cmd = "Force Button:" + name + "<unknown string>" + index + "<unknown string>" + index + "<unknown string>";
-                add_debug_command(cmd);
+                util::add_debug_command(cmd);
                 cmd = "<unknown string>" + name + "<unknown string>" + index + "<unknown string>" + index + "<unknown string>";
-                add_debug_command(cmd);
+                util::add_debug_command(cmd);
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x6 linked
@@ -378,7 +380,7 @@ function private add_bot_devgui_menu() {
 // Checksum 0x51271fe7, Offset: 0x1e18
 // Size: 0xe4
 function private add_bot_devgui_cmd(entnum, path, sortkey, devguiarg, cmdargs = "") {
-    cmd = "devgui_cmd "Bots/" + entnum + " " + self.name + ":" + entnum + "/" + path + ":" + sortkey + "" "set devgui_bot " + devguiarg + " " + entnum + " " + cmdargs + """;
+    cmd = "devgui_cmd \"Bots/" + entnum + " " + self.name + ":" + entnum + "/" + path + ":" + sortkey + "\" \"set devgui_bot " + devguiarg + " " + entnum + " " + cmdargs + "\"";
     util::add_debug_command(cmd);
 }
 
@@ -439,7 +441,7 @@ function clear_bot_devgui_menu() {
     if (entnum >= 16) {
         return;
     }
-    cmd = "devgui_remove "Bots/" + entnum + " " + self.name + """;
+    cmd = "devgui_remove \"Bots/" + entnum + " " + self.name + "\"";
     util::add_debug_command(cmd);
 }
 
@@ -545,7 +547,7 @@ function private function_57d0759d(botarg, var_b27e53da, countarg, origin, angle
     }
     roleindex = int(var_b27e53da);
     offset = (0, 0, 5);
-    origin = origin + offset;
+    origin += offset;
     bots = function_bd48ef10(team, count, origin, angle, roleindex);
 }
 
@@ -562,17 +564,17 @@ function private function_bd48ef10(team, count, origin, yaw, roleindex) {
     }
     bots[bots.size] = self bot::add_fixed_spawn_bot(team, origin, yaw, roleindex);
     /#
-        spiral = function_a4ccb933(origin, yaw);
+        spiral = dev::function_a4ccb933(origin, yaw);
         for (i = 0; i < count - 1; i++) {
-            function_df0b6f84(spiral);
-            origin = function_98c05766(spiral);
-            angle = function_4783f10c(spiral);
+            dev::function_df0b6f84(spiral);
+            origin = dev::function_98c05766(spiral);
+            angle = dev::function_4783f10c(spiral);
             if (!isdefined(bots)) {
                 bots = [];
             } else if (!isarray(bots)) {
                 bots = array(bots);
             }
-            bots[bots.size] = self add_fixed_spawn_bot(team, origin, angle, roleindex);
+            bots[bots.size] = self bot::add_fixed_spawn_bot(team, origin, angle, roleindex);
         }
     #/
     return bots;
@@ -1065,7 +1067,7 @@ function private function_263ca697() {
     var_e91aba42 = self function_8cbd254d(weapon);
     /#
         setdvar(#"bot_spawn_weapon", getweaponname(weapon.rootweapon));
-        setdvar(#"hash_c6e51858c88a5ee", function_2146bd83(weapon));
+        setdvar(#"hash_c6e51858c88a5ee", util::function_2146bd83(weapon));
     #/
     bots = get_bots();
     foreach (bot in bots) {

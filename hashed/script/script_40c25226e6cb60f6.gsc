@@ -146,7 +146,7 @@ function function_e74a3df6() {
                 }
                 if (activate) {
                     function_8b014c60(trap, 1);
-                    trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
+                    trap.var_eb9d64bb += 5000;
                     namespace_1e25ad94::debugmsg("Paging IN physics box trap at:" + trap.origin);
                 }
                 continue;
@@ -197,7 +197,7 @@ function function_d74e40c3() {
         waitframe(1);
         if (!isdefined(self.trigger)) {
             self.trigger = self namespace_268747c0::function_678eaf60("physicsbox", self.origin, 256, 1, 128);
-            self.trigger.origin = self.trigger.origin + (0, 0, self.var_b7a27a3a);
+            self.trigger.origin += (0, 0, self.var_b7a27a3a);
             self.trigger triggerenable(1);
             continue;
         }

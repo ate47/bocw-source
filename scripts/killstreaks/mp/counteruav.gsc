@@ -215,35 +215,35 @@ function getfirstavailableoffsetindex() {
         }
     }
     /#
-        warning("<unknown string>");
+        util::warning("<unknown string>");
     #/
     return 0;
 }
 
-// Namespace counteruav/counteruav
-// Params 0, eflags: 0x0
-// Checksum 0x2b1db47a, Offset: 0xe40
-// Size: 0x34
-function waitanddebugdrawoffsetlist() {
-    /#
+/#
+
+    // Namespace counteruav/counteruav
+    // Params 0, eflags: 0x0
+    // Checksum 0x2b1db47a, Offset: 0xe40
+    // Size: 0x34
+    function waitanddebugdrawoffsetlist() {
         level endon(#"game_ended");
         wait(10);
         debugdrawoffsetlist();
-    #/
-}
+    }
 
-// Namespace counteruav/counteruav
-// Params 0, eflags: 0x0
-// Checksum 0x1c041345, Offset: 0xe80
-// Size: 0xd8
-function debugdrawoffsetlist() {
-    /#
+    // Namespace counteruav/counteruav
+    // Params 0, eflags: 0x0
+    // Checksum 0x1c041345, Offset: 0xe80
+    // Size: 0xd8
+    function debugdrawoffsetlist() {
         baseposition = level.counter_uav_positions[0];
         foreach (offset in level.counter_uav_offsets) {
-            debug_sphere(baseposition + offset, 24, (0.95, 0.05, 0.05), 0.75, 9999999);
+            util::debug_sphere(baseposition + offset, 24, (0.95, 0.05, 0.05), 0.75, 9999999);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace counteruav/counteruav
 // Params 4, eflags: 0x2 linked
@@ -260,7 +260,7 @@ function buildoffsetlist(startoffset, depth, offset_x, offset_y) {
             if (itemcount > 1) {
                 y = i * offset_y;
                 total_y = offset_y * startingindex;
-                y = y - total_y / 2;
+                y -= total_y / 2;
             }
             offsets[startingindex + i] = startoffset + (x, y, 0);
         }
@@ -319,7 +319,7 @@ function activatecounteruav(killstreaktype) {
             trace = groundtrace((self.origin[0], self.origin[1], var_b0490eb9), self.origin - (0, 0, 5000), 0, counteruav);
             groundheight = trace[#"position"][2];
             var_5f8c899e = groundheight + (var_b0490eb9 - groundheight) * bundle.var_ff73e08c;
-            var_5f8c899e = var_5f8c899e - killstreaks::function_43f4782d();
+            var_5f8c899e -= killstreaks::function_43f4782d();
         } else {
             var_5f8c899e = 6000;
         }

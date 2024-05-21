@@ -306,12 +306,13 @@ function function_6ffdbd95(var_5496c504) {
     self unlink();
 }
 
-// Namespace planemortar/planemortar_shared
-// Params 2, eflags: 0x0
-// Checksum 0x2c5d0be4, Offset: 0x15e8
-// Size: 0x1e0
-function function_77ed0e9b(var_5496c504, fxanim) {
-    /#
+/#
+
+    // Namespace planemortar/planemortar_shared
+    // Params 2, eflags: 0x0
+    // Checksum 0x2c5d0be4, Offset: 0x15e8
+    // Size: 0x1e0
+    function function_77ed0e9b(var_5496c504, fxanim) {
         var_5496c504 endon(#"magic_missile");
         while (true) {
             println("<unknown string>" + fxanim.angles);
@@ -327,8 +328,9 @@ function function_77ed0e9b(var_5496c504, fxanim) {
             println("<unknown string>" + anglestoforward(self.angles));
             wait(0.5);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace planemortar/planemortar_shared
 // Params 3, eflags: 0x2 linked
@@ -360,7 +362,7 @@ function function_4ef32baf(position, yaw, team) {
     startpoint = position + vectorscale(direction, -12000);
     endpoint = position + vectorscale(direction, 18000);
     height = airsupport::getnoflyzoneheightcrossed(startpoint, endpoint, height);
-    height = height + randomfloatrange(-200, 200);
+    height += randomfloatrange(-200, 200);
     startpoint = (startpoint[0], startpoint[1], height);
     position = (position[0], position[1], height);
     endpoint = (endpoint[0], endpoint[1], height);

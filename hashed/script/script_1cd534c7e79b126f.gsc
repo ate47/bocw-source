@@ -352,7 +352,7 @@ function actor_damage_override(*inflictor, attacker, damage, *flags, *meansofdea
                     if (b_trace_passed) {
                         color = green;
                     }
-                    line(self get_eye(), var_ca4c48f1, color, undefined, undefined, 300);
+                    line(self util::get_eye(), var_ca4c48f1, color, undefined, undefined, 300);
                 }
             #/
             var_f3a93cf1 = 0;

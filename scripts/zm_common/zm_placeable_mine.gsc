@@ -425,7 +425,7 @@ function private on_spawn_retrieve_trigger(watcher, player) {
 // Checksum 0x611fc9c1, Offset: 0x1488
 // Size: 0x26
 function private adjust_trigger_origin(origin) {
-    origin = origin + (0, 0, 20);
+    origin += (0, 0, 20);
     return origin;
 }
 

@@ -25,18 +25,19 @@ function function_93c5a24() {
     #/
 }
 
-// Namespace namespace_1125e192/namespace_d5ac265e
-// Params 1, eflags: 0x0
-// Checksum 0x50da46db, Offset: 0x188
-// Size: 0x6e
-function function_ace23f69(v_loc) {
-    /#
+/#
+
+    // Namespace namespace_1125e192/namespace_d5ac265e
+    // Params 1, eflags: 0x0
+    // Checksum 0x50da46db, Offset: 0x188
+    // Size: 0x6e
+    function function_ace23f69(v_loc) {
         self notify("<unknown string>");
         self endon("<unknown string>");
         while (isdefined(v_loc)) {
             sphere(v_loc, 32, (1, 0, 0), undefined, undefined, undefined, 10);
             waitframe(10);
         }
-    #/
-}
+    }
 
+#/

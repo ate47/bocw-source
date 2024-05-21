@@ -220,7 +220,7 @@ function private get_favorite_enemy(dog) {
     if (!is_target_valid(dog, least_hunted)) {
         return undefined;
     }
-    least_hunted.hunted_by = least_hunted.hunted_by + 1;
+    least_hunted.hunted_by += 1;
     return least_hunted;
 }
 
@@ -392,7 +392,7 @@ function function_303397b0(behaviortreeentity, *asmstatename) {
 function private function_756cb98c(*einflictor, eattacker, idamage, *idflags, smeansofdeath, *weapon, *var_fd90b0bb, *vpoint, *vdir, *shitloc, *psoffsettime, *boneindex, *modelindex) {
     if (isdefined(psoffsettime) && isactor(psoffsettime) && (modelindex === "MOD_RIFLE_BULLET" || modelindex == "MOD_PISTOL_BULLET" || modelindex == "MOD_HEAD_SHOT")) {
         level.var_d7e2833c = 1;
-        boneindex = boneindex * 3;
+        boneindex *= 3;
     }
     return boneindex;
 }

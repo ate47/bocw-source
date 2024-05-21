@@ -964,7 +964,7 @@ function actorgetpredictedyawtoenemy(entity, lookaheadtime) {
     }
     selfpredictedpos = entity.origin;
     moveangle = entity.angles[1] + entity getmotionangle();
-    selfpredictedpos = selfpredictedpos + (cos(moveangle), sin(moveangle), 0) * 200 * lookaheadtime;
+    selfpredictedpos += (cos(moveangle), sin(moveangle), 0) * 200 * lookaheadtime;
     aimpos = entity function_c709ce88();
     yaw = vectortoangles(aimpos - selfpredictedpos)[1] - entity.angles[1];
     yaw = absangleclamp360(yaw);
@@ -1192,7 +1192,7 @@ function function_abb9c007(*entity) {
 function getangleusingdirection(direction) {
     directionyaw = vectortoangles(direction)[1];
     yawdiff = directionyaw - self.angles[1];
-    yawdiff = yawdiff * 0.00277778;
+    yawdiff *= 0.00277778;
     flooredyawdiff = floor(yawdiff + 0.5);
     turnangle = (yawdiff - flooredyawdiff) * 360;
     return absangleclamp360(turnangle);
@@ -1742,7 +1742,7 @@ function function_15b9bbef(entity) {
 function trygoingtoclosestnodetoenemybehavior(entity) {
     var_be8baf32 = randomintrange(30000, 60000);
     if (entity.aggressivemode) {
-        var_be8baf32 = var_be8baf32 / 2;
+        var_be8baf32 /= 2;
     }
     entity.var_df6c21d4 = gettime() + var_be8baf32;
     if (isdefined(entity.weapon) && isdefined(entity.weapon.weapclass) && entity.weapon.weapclass == "spread") {
@@ -2439,22 +2439,22 @@ function gethighestnodestance(node) {
         msg1 = "<unknown string>" + self.aitype + "<unknown string>" + node.type + "<unknown string>" + node.origin + "<unknown string>";
         msg2 = "<unknown string>";
         if (var_f078bbdd.size == 0) {
-            msg2 = msg2 + "<unknown string>";
+            msg2 += "<unknown string>";
         } else {
             foreach (stance in var_f078bbdd) {
-                msg2 = msg2 + "<unknown string>" + stance + "<unknown string>";
+                msg2 += "<unknown string>" + stance + "<unknown string>";
             }
         }
-        msg2 = msg2 + "<unknown string>";
+        msg2 += "<unknown string>";
         msg3 = "<unknown string>";
         if (var_58cb7691.size == 0) {
-            msg3 = msg3 + "<unknown string>";
+            msg3 += "<unknown string>";
         } else {
             foreach (stance in var_58cb7691) {
-                msg3 = msg3 + "<unknown string>" + stance + "<unknown string>";
+                msg3 += "<unknown string>" + stance + "<unknown string>";
             }
         }
-        msg3 = msg3 + "<unknown string>";
+        msg3 += "<unknown string>";
         errormsg("<unknown string>" + msg1 + "<unknown string>" + msg2 + "<unknown string>" + msg3);
     #/
     if (node.type == #"cover crouch" || node.type == #"cover crouch window" || node.type == #"conceal crouch") {
@@ -2666,7 +2666,7 @@ function meleereleasemutex(entity) {
     if (isdefined(entity.meleeenemy)) {
         if (isplayer(entity.meleeenemy)) {
             if (isdefined(entity.meleeenemy.meleeattackers)) {
-                entity.meleeenemy.meleeattackers = entity.meleeenemy.meleeattackers - 1;
+                entity.meleeenemy.meleeattackers -= 1;
                 if (entity.meleeenemy.meleeattackers <= 0) {
                     entity.meleeenemy.meleeattackers = undefined;
                 }

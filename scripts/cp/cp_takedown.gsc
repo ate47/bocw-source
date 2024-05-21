@@ -86,21 +86,24 @@ function function_37dfd679() {
     skipto::add("tkdn_af_skid", &tkdn_af_skid::main, &tkdn_af_skid::starting, "Hit 3: Skid", &tkdn_af_skid::cleanup, ["airfield_base"]);
     skipto::function_eb91535d("tkdn_af_wreck", &tkdn_af_wreck::main, &tkdn_af_wreck::starting, "Hit 3: Wreck", &tkdn_af_wreck::cleanup, ["airfield_base"]);
     /#
-        add_dev("<unknown string>", &main, &starting, "<unknown string>", &cleanup, undefined, undefined, ["<unknown string>"]);
-        add_dev("<unknown string>", &main, &starting, "<unknown string>", &cleanup, undefined, undefined, ["<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>"]);
-        add_dev("<unknown string>", &main, &starting, "<unknown string>", &cleanup, undefined, undefined, ["<unknown string>"]);
-        add_dev("<unknown string>", &function_5bef74d0);
+        skipto::add_dev("<unknown string>", &tkdn_raid_bar::main, &tkdn_raid_bar::starting, "<unknown string>", &tkdn_raid_bar::cleanup, undefined, undefined, ["<unknown string>"]);
+        skipto::add_dev("<unknown string>", &tkdn_raid_bar::main, &tkdn_raid_bar::starting, "<unknown string>", &tkdn_raid_bar::cleanup, undefined, undefined, ["<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>"]);
+        skipto::add_dev("<unknown string>", &tkdn_af_intro::main, &tkdn_af_intro::starting, "<unknown string>", &tkdn_af_intro::cleanup, undefined, undefined, ["<unknown string>"]);
+        skipto::add_dev("<unknown string>", &function_5bef74d0);
     #/
 }
 
-// Namespace tkdn/cp_takedown
-// Params 2, eflags: 0x0
-// Checksum 0xf725e976, Offset: 0xd68
-// Size: 0x18
-function function_5bef74d0(*var_d3440450, *var_50cc0d4f) {
-    /#
-    #/
-}
+/#
+
+    // Namespace tkdn/cp_takedown
+    // Params 2, eflags: 0x0
+    // Checksum 0xf725e976, Offset: 0xd68
+    // Size: 0x18
+    function function_5bef74d0(*var_d3440450, *var_50cc0d4f) {
+        
+    }
+
+#/
 
 // Namespace tkdn/cp_takedown
 // Params 0, eflags: 0x2 linked

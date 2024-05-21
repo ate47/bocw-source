@@ -192,7 +192,7 @@ function bot_claim_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, 
 function fake_physicslaunch(target_pos, power, var_4862f668) {
     start_pos = self.origin;
     gravity = getdvarint(#"bg_gravity", 0) * -1;
-    gravity = gravity * var_4862f668;
+    gravity *= var_4862f668;
     dist = distance(start_pos, target_pos);
     time = dist / power;
     delta = target_pos - start_pos;

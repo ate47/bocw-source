@@ -836,7 +836,7 @@ function track_fire(curweapon) {
     profileNamedStart(#"");
     shotsfired = 1;
     if (1 < curweapon.shotcount) {
-        shotsfired = shotsfired * curweapon.shotcount;
+        shotsfired *= curweapon.shotcount;
     }
     weaponpickedup = 0;
     if (isdefined(self.pickedupweapons) && isdefined(self.pickedupweapons[curweapon])) {
@@ -1504,10 +1504,10 @@ function damage_trace(from, to, startradius, ignore) {
     /#
         if (getdvarint(#"scr_damage_debug", 0) != 0) {
             if (trace[#"fraction"] == 1) {
-                thread drawdebugline(midpos, to, (1, 1, 1), 600);
+                thread debug::drawdebugline(midpos, to, (1, 1, 1), 600);
             } else {
-                thread drawdebugline(midpos, trace[#"position"], (1, 0.9, 0.8), 600);
-                thread drawdebugline(trace[#"position"], to, (1, 0.4, 0.3), 600);
+                thread debug::drawdebugline(midpos, trace[#"position"], (1, 0.9, 0.8), 600);
+                thread debug::drawdebugline(trace[#"position"], to, (1, 0.4, 0.3), 600);
             }
         }
     #/
@@ -1777,7 +1777,7 @@ function scavenger_think() {
         stock = player getweaponammostock(weapon);
         start = player getfractionstartammo(weapon);
         clip = weapon.clipsize;
-        clip = clip * getdvarfloat(#"scavenger_clip_multiplier", 2);
+        clip *= getdvarfloat(#"scavenger_clip_multiplier", 2);
         clip = int(clip);
         maxammo = weapon.maxammo;
         if (stock < maxammo - clip) {
@@ -1874,7 +1874,7 @@ function drop_limited_weapon(weapon, owner, item) {
     if (limited_info.weapon != weapon) {
         return;
     }
-    limited_info.drops = limited_info.drops - 1;
+    limited_info.drops -= 1;
     owner.limited_info = undefined;
     item thread limited_pickup(limited_info);
 }
@@ -1915,7 +1915,7 @@ function ninebang_doninebang(attacker, weapon, cooktime) {
     cookstages = min(floor(cooktime / weapon.cookoffholdtime * maxstages), maxstages);
     intervaltime = float(weapon.var_1c0e3cb7) / 1000;
     var_9729fdb9 = float(weapon.var_4941de5) / 1000;
-    cookstages = cookstages * 3;
+    cookstages *= 3;
     if (!cookstages) {
         cookstages = 3;
     }
@@ -2127,26 +2127,26 @@ function dropweaponfordeathlaunch(item, damage, angles, weapon, var_a5baf64e, va
     var_9e5cfd66 = randomfloatrange(40 * var_a5baf64e, 80 * var_a5baf64e);
     var_19a39012 = randomfloatrange(40 * var_a5baf64e, 80 * var_a5baf64e);
     if (math::cointoss()) {
-        var_19a39012 = var_19a39012 * -1;
+        var_19a39012 *= -1;
     }
     if (!isdefined(angles)) {
         angles = self.angles;
     }
     launchvelocity = (0, 0, 0);
-    launchvelocity = launchvelocity + anglestoforward(angles) * var_9e5cfd66;
-    launchvelocity = launchvelocity + anglestoright(angles) * var_19a39012;
-    launchvelocity = launchvelocity + anglestoup(angles) * var_92043f3a;
+    launchvelocity += anglestoforward(angles) * var_9e5cfd66;
+    launchvelocity += anglestoright(angles) * var_19a39012;
+    launchvelocity += anglestoup(angles) * var_92043f3a;
     var_f45e7999 = randomfloatrange(100, 150);
     if (math::cointoss()) {
-        var_f45e7999 = var_f45e7999 * -1;
+        var_f45e7999 *= -1;
     }
     var_af228248 = randomfloatrange(100, 150);
     if (math::cointoss()) {
-        var_af228248 = var_af228248 * -1;
+        var_af228248 *= -1;
     }
     var_46dcaa45 = randomfloatrange(250, 350);
     if (math::cointoss()) {
-        var_46dcaa45 = var_46dcaa45 * -1;
+        var_46dcaa45 *= -1;
     }
     var_342f4a88 = (var_f45e7999, var_af228248, var_46dcaa45);
     item function_1e25084(launchvelocity, var_342f4a88);

@@ -481,7 +481,7 @@ function private function_aab851cf() {
                 angle_offset = var_1b56e5cf * 60 * delta_time;
                 yaw = angle_offset[0];
                 pitch = angle_offset[1];
-                v_angle = v_angle + (pitch, yaw, 0);
+                v_angle += (pitch, yaw, 0);
                 var_3faba1b8 = v_angle[1];
                 clamped_pitch = v_angle[0];
                 if (isdefined(var_59ab9a62.var_71fe4b43) && var_59ab9a62.var_71fe4b43 !== 0) {

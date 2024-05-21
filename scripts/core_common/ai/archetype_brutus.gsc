@@ -16,13 +16,17 @@ function autoexec init() {
     spawner::add_archetype_spawn_function(#"brutus", &function_517fd069);
 }
 
-// Namespace archetypebrutus/archetype_brutus
-// Params 0, eflags: 0x4
-// Checksum 0xa338ef4e, Offset: 0x100
-// Size: 0x24
-function private function_651f04c3() {
-    assert(isdefined(self.ai));
-}
+/#
+
+    // Namespace archetypebrutus/archetype_brutus
+    // Params 0, eflags: 0x4
+    // Checksum 0xa338ef4e, Offset: 0x100
+    // Size: 0x24
+    function private function_651f04c3() {
+        assert(isdefined(self.ai));
+    }
+
+#/
 
 // Namespace archetypebrutus/archetype_brutus
 // Params 0, eflags: 0x6 linked
@@ -60,17 +64,19 @@ function private registerbehaviorscriptfunctions() {
     
 }
 
-// Namespace archetypebrutus/archetype_brutus
-// Params 1, eflags: 0x4
-// Checksum 0x6e797976, Offset: 0x200
-// Size: 0x54
-function private function_f9f08bb1(message) {
-    /#
+/#
+
+    // Namespace archetypebrutus/archetype_brutus
+    // Params 1, eflags: 0x4
+    // Checksum 0x6e797976, Offset: 0x200
+    // Size: 0x54
+    function private function_f9f08bb1(message) {
         if (getdvarint(#"scr_brutusdebug", 0)) {
             println("<unknown string>" + message);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace archetypebrutus/archetype_brutus
 // Params 4, eflags: 0x2 linked

@@ -363,13 +363,13 @@ function function_6a09928b(location, type) {
     model = undefined;
     if (isdefined(modelname)) {
         /#
-            debugmsg("<unknown string>" + function_9e72a96(type) + "<unknown string>" + modelname + "<unknown string>" + location.origin);
+            namespace_1e25ad94::debugmsg("<unknown string>" + function_9e72a96(type) + "<unknown string>" + modelname + "<unknown string>" + location.origin);
         #/
         model = namespace_ec06fe4a::spawnmodel(0, location.origin, modelname, location.angles, "dungeon floor decor " + modelname);
         if (isdefined(model)) {
             if (isdefined(modelinfo)) {
                 model setscale(modelinfo.scale);
-                model.angles = model.angles + (0, modelinfo.yaw_offset, 0);
+                model.angles += (0, modelinfo.yaw_offset, 0);
                 if (isdefined(modelinfo.fx)) {
                     model.fx = util::playfxontag(0, level._effect[modelinfo.fx], model, "tag_fx");
                 }

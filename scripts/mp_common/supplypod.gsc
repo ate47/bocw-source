@@ -277,7 +277,7 @@ function supplypod_spawned(watcher, owner) {
             owner notify(#"supplypod");
         }
         self waittilltimeout(0.05, #"stationary");
-        if (!owner deployable::function_f8fe102f()) {
+        if (!owner deployable::location_valid()) {
             owner setriotshieldfailhint();
             self deletedelay();
             return;
@@ -366,7 +366,7 @@ function on_player_spawned() {
             player.var_57de9100.trigger setinvisibletoplayer(player);
         }
         player thread function_18f999b5(float(player.var_17d74a5c) / 1000);
-        player.var_17d74a5c = player.var_17d74a5c + gettime();
+        player.var_17d74a5c += gettime();
         player function_3ea286();
     }
 }
@@ -666,7 +666,7 @@ function function_438ca4e0() {
 // Size: 0x38
 function function_fec0924() {
     currentid = game.var_6ccfdacd;
-    game.var_6ccfdacd = game.var_6ccfdacd + 1;
+    game.var_6ccfdacd += 1;
     return currentid;
 }
 
@@ -857,7 +857,7 @@ function function_18f999b5(waittime) {
     if (result._notify == #"timeout") {
         self function_46d74bb7(1);
     } else if (isdefined(level.var_934fb97.bundle.var_98da26d) ? level.var_934fb97.bundle.var_98da26d : 0) {
-        self.var_17d74a5c = self.var_17d74a5c - gettime();
+        self.var_17d74a5c -= gettime();
     } else {
         self.var_17d74a5c = undefined;
         self.var_bfeea3dd = undefined;
@@ -1007,7 +1007,7 @@ function function_b8a25634(owner) {
         }
         cooldown = cooldowns[slot] * (isdefined(player._gadgets_player[slot].var_e4d4fa7e) ? player._gadgets_player[slot].var_e4d4fa7e : 0);
         if (is_true(owner)) {
-            cooldown = cooldown * (isdefined(level.var_934fb97.bundle.var_44a195ff) ? level.var_934fb97.bundle.var_44a195ff : 0);
+            cooldown *= isdefined(level.var_934fb97.bundle.var_44a195ff) ? level.var_934fb97.bundle.var_44a195ff : 0;
         }
         player gadgetpowerchange(slot, cooldown);
     }

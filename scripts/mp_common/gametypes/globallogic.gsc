@@ -203,14 +203,14 @@ function init() {
     if (isdefined(level.gametype)) {
         level.var_12323003 = function_16495154(level.var_837aa533);
         if (level.var_1e347348 === 1) {
-            level.var_12323003 = level.var_12323003 + "_tournament";
+            level.var_12323003 += "_tournament";
         }
         level.basegametype = function_be90acca(level.var_837aa533);
     }
     level.teambased = 0;
     level.teamcount = getgametypesetting(#"teamcount");
     /#
-        level.teamcount = clamp(level.teamcount, 1, getdvarint(#"com_maxclients", level.teamcount));
+        level.teamcount = math::clamp(level.teamcount, 1, getdvarint(#"com_maxclients", level.teamcount));
     #/
     level.multiteam = level.teamcount > 2;
     level.maxteamplayers = getgametypesetting(#"maxteamplayers");
@@ -326,18 +326,20 @@ function init() {
     registerfriendlyfiredelay(level.gametype, 15, 0, 1440);
 }
 
-// Namespace globallogic/globallogic
-// Params 0, eflags: 0x0
-// Checksum 0x4fc23b54, Offset: 0x2628
-// Size: 0x50
-function function_340107d4() {
-    /#
+/#
+
+    // Namespace globallogic/globallogic
+    // Params 0, eflags: 0x0
+    // Checksum 0x4fc23b54, Offset: 0x2628
+    // Size: 0x50
+    function function_340107d4() {
         while (true) {
             wait(2);
             level.var_724cf71 = getdvarint(#"scr_ekia", level.var_724cf71);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace globallogic/globallogic
 // Params 0, eflags: 0x6 linked
@@ -535,7 +537,7 @@ function precache_mp_anticheat_leaderboards() {
     }
     anticheatleaderboard = "LB_MP_ANTICHEAT_" + level.gametype + postfix;
     if (level.gametype != "fr") {
-        anticheatleaderboard = anticheatleaderboard + " LB_MP_ANTICHEAT_GLOBAL";
+        anticheatleaderboard += " LB_MP_ANTICHEAT_GLOBAL";
     }
     precacheleaderboards(anticheatleaderboard);
 }
@@ -1075,7 +1077,7 @@ function showobjectivenotificationuiforallplayers(*missiontype, delay) {
     if (sessionmodeismultiplayergame()) {
         menudelay = getgametypesetting(#"bountypurchasephaseduration");
         if (isdefined(menudelay)) {
-            delay = delay + menudelay;
+            delay += menudelay;
         }
     }
     wait(delay);
@@ -1198,7 +1200,7 @@ function wavespawntimer() {
         time = gettime();
         notified = 0;
         foreach (team, _ in level.teams) {
-            notified = notified | notifyteamwavespawn(team, time);
+            notified |= notifyteamwavespawn(team, time);
         }
         if (notified) {
             level callback::callback(#"hash_3be1213f454fa90e");
@@ -1256,10 +1258,10 @@ function getteamscoreratio() {
         if (team == playerteam) {
             continue;
         }
-        otherteamscore = otherteamscore + getteamscore(team);
+        otherteamscore += getteamscore(team);
     }
     if (level.teams.size > 1) {
-        otherteamscore = otherteamscore / (level.teams.size - 1);
+        otherteamscore /= level.teams.size - 1;
     }
     if (otherteamscore != 0) {
         return (float(score) / float(otherteamscore));
@@ -1644,7 +1646,7 @@ function awardotherlootxp() {
         if (!isdefined(func)) {
             continue;
         }
-        lootxp = lootxp + player [[ func ]]();
+        lootxp += player [[ func ]]();
     }
     return lootxp;
 }
@@ -1663,7 +1665,7 @@ function private function_6c9e78d5(var_c1e98979) {
     players = level.players;
     foreach (player in players) {
         /#
-            player freegameplayhudelems();
+            player globallogic_ui::freegameplayhudelems();
         #/
         player.pers[#"lastroundscore"] = player.pointstowin;
         player weapons::update_timings(current_time);
@@ -1771,7 +1773,7 @@ function private function_d8d30361(var_c1e98979) {
     setdvar(#"g_gameended", 1);
     round::function_897438f4(var_c1e98979);
     /#
-        function_65e13d0f();
+        rat::function_65e13d0f();
     #/
 }
 
@@ -2648,7 +2650,7 @@ function removedisconnectedplayerfromplacement() {
     level.placement[#"all"][numplayers - 1] = undefined;
     assert(level.placement[#"all"].size == numplayers - 1);
     /#
-        assertproperplacement();
+        globallogic_utils::assertproperplacement();
     #/
     updateteamplacement();
     if (level.teambased) {
@@ -2697,7 +2699,7 @@ function updateplacement() {
     }
     level.placement[#"all"] = placementall;
     /#
-        assertproperplacement();
+        globallogic_utils::assertproperplacement();
     #/
     updateteamplacement();
 }
@@ -2854,7 +2856,7 @@ function sortdeadplayers(team) {
 function totalalivecount() {
     count = 0;
     foreach (team, _ in level.teams) {
-        count = count + function_a1ef346b(team).size;
+        count += function_a1ef346b(team).size;
     }
     return count;
 }
@@ -2866,7 +2868,7 @@ function totalalivecount() {
 function totalplayerlives() {
     count = 0;
     foreach (team, _ in level.teams) {
-        count = count + level.playerlives[team];
+        count += level.playerlives[team];
     }
     return count;
 }
@@ -3035,14 +3037,14 @@ function updatealivetimes(team) {
                     continue;
                 }
                 if (time != 0) {
-                    average_time = average_time + time;
+                    average_time += time;
                     count++;
                 }
             }
         }
         if (count) {
-            total_value_count = total_value_count + count;
-            average_player_spawn_time = average_player_spawn_time + average_time / count;
+            total_value_count += count;
+            average_player_spawn_time += average_time / count;
             total_player_count++;
         }
     }
@@ -3058,14 +3060,14 @@ function updatealivetimes(team) {
                     continue;
                 }
                 if (time != 0) {
-                    average_time = average_time + time;
+                    average_time += time;
                     count++;
                 }
             }
         }
         if (count) {
-            total_value_count = total_value_count + count;
-            average_player_spawn_time = average_player_spawn_time + average_time / count;
+            total_value_count += count;
+            average_player_spawn_time += average_time / count;
             total_player_count++;
         }
     }
@@ -3342,7 +3344,7 @@ function startgame() {
     }
     set_game_playing();
     /#
-        function_7d22c1c9();
+        rat::function_7d22c1c9();
     #/
     if (util::isfirstround()) {
         thread showobjectivenotificationuiforallplayers(undefined, 0);
@@ -3912,7 +3914,7 @@ function function_b9b7618() {
     }
     level.inprematchperiod = 1;
     if (level.prematchperiod > 2 && level.rankedmatch) {
-        level.prematchperiod = level.prematchperiod + randomfloat(4) - 2;
+        level.prematchperiod += randomfloat(4) - 2;
     }
     if (level.numlives || anyteamhaswavedelay() || level.playerqueuedrespawn) {
         level.graceperiod = 15;
@@ -3958,25 +3960,24 @@ function function_b9b7618() {
     #/
 }
 
-// Namespace globallogic/globallogic
-// Params 0, eflags: 0x0
-// Checksum 0xb7ec8a66, Offset: 0x105c0
-// Size: 0x3a
-function function_c35255d6() {
-    /#
+/#
+
+    // Namespace globallogic/globallogic
+    // Params 0, eflags: 0x0
+    // Checksum 0xb7ec8a66, Offset: 0x105c0
+    // Size: 0x3a
+    function function_c35255d6() {
         if (getdvarint(#"hash_32817346b14acbcc", 0) > 0) {
             return 1;
         }
         return 0;
-    #/
-}
+    }
 
-// Namespace globallogic/globallogic
-// Params 2, eflags: 0x0
-// Checksum 0x6dd99cf8, Offset: 0x10608
-// Size: 0xe0
-function function_891f6555(origin, color) {
-    /#
+    // Namespace globallogic/globallogic
+    // Params 2, eflags: 0x0
+    // Checksum 0x6dd99cf8, Offset: 0x10608
+    // Size: 0xe0
+    function function_891f6555(origin, color) {
         start = origin + (0, 0, 70000);
         end = origin - (0, 0, 70000);
         alpha = 1;
@@ -3990,15 +3991,13 @@ function function_891f6555(origin, color) {
             }
             wait(1);
         }
-    #/
-}
+    }
 
-// Namespace globallogic/globallogic
-// Params 0, eflags: 0x0
-// Checksum 0x5462b74, Offset: 0x106f0
-// Size: 0xe4
-function function_6e1f21c4() {
-    /#
+    // Namespace globallogic/globallogic
+    // Params 0, eflags: 0x0
+    // Checksum 0x5462b74, Offset: 0x106f0
+    // Size: 0xe4
+    function function_6e1f21c4() {
         wait(1);
         assert(isdefined(level.mapcenter));
         thread function_891f6555(level.mapcenter, (1, 0, 0));
@@ -4007,21 +4006,20 @@ function function_6e1f21c4() {
             thread function_891f6555(minimaporigins[0].origin, (0, 1, 1));
             thread function_891f6555(minimaporigins[1].origin, (0, 0, 1));
         }
-    #/
-}
+    }
 
-// Namespace globallogic/globallogic
-// Params 0, eflags: 0x0
-// Checksum 0xa079d5fc, Offset: 0x107e0
-// Size: 0x1ac
-function function_ec990830() {
-    /#
+    // Namespace globallogic/globallogic
+    // Params 0, eflags: 0x0
+    // Checksum 0xa079d5fc, Offset: 0x107e0
+    // Size: 0x1ac
+    function function_ec990830() {
         assert(level.mapbounds.var_8faef7b7[0] <= level.mapcenter[0] && level.mapbounds.var_8faef7b7[1] <= level.mapcenter[1]);
         assert(level.mapbounds.var_68fd6e0a[0] >= level.mapcenter[0] && level.mapbounds.var_68fd6e0a[1] >= level.mapcenter[1]);
         assert(level.mapbounds.var_1d694d71[0] <= level.mapcenter[0] && level.mapbounds.var_1d694d71[1] <= level.mapcenter[1]);
         assert(level.mapbounds.var_a13a9915[0] >= level.mapcenter[0] && level.mapbounds.var_a13a9915[1] >= level.mapcenter[1]);
-    #/
-}
+    }
+
+#/
 
 // Namespace globallogic/globallogic
 // Params 0, eflags: 0x6 linked
@@ -4099,20 +4097,22 @@ function callback_startgametype() {
     #/
 }
 
-// Namespace globallogic/globallogic
-// Params 0, eflags: 0x0
-// Checksum 0x4a90a9cb, Offset: 0x10df0
-// Size: 0x50
-function forcedebughostmigration() {
-    /#
+/#
+
+    // Namespace globallogic/globallogic
+    // Params 0, eflags: 0x0
+    // Checksum 0x4a90a9cb, Offset: 0x10df0
+    // Size: 0x50
+    function forcedebughostmigration() {
         while (true) {
-            waittillhostmigrationdone();
+            hostmigration::waittillhostmigrationdone();
             wait(60);
             starthostmigration();
-            waittillhostmigrationdone();
+            hostmigration::waittillhostmigrationdone();
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace globallogic/globallogic
 // Params 4, eflags: 0x2 linked
@@ -4531,7 +4531,7 @@ function function_411eb759(var_48d0aaac, var_d60264ca) {
                 }
             }
         } while (function_bfd92dc5());
-        level.var_9d348da1 = level.var_9d348da1 + gettime() - level.timerpausetime;
+        level.var_9d348da1 += gettime() - level.timerpausetime;
         level.var_e80a117f = 0;
         util::function_1c8873f6(0);
         globallogic_utils::resumetimer();

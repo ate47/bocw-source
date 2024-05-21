@@ -239,7 +239,7 @@ function function_56762cd0(objid, var_288da8b5, hacktimems, targetentity) {
     lasttime = gettime();
     currentprogress = 0;
     while (isdefined(var_288da8b5) && isdefined(targetentity) && function_808efdee(var_288da8b5, targetentity) && isalive(var_288da8b5) && var_288da8b5 usebuttonpressed() && currentprogress < 1) {
-        currentprogress = currentprogress + (gettime() - lasttime) / hacktimems;
+        currentprogress += (gettime() - lasttime) / hacktimems;
         objective_setprogress(objid, currentprogress);
         lasttime = gettime();
         waitframe(1);

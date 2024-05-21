@@ -164,7 +164,7 @@ function function_f15be4f1() {
     self.health = 1000000;
     while (true) {
         s_result = self waittill(#"damage");
-        self.health = self.health + s_result.amount;
+        self.health += s_result.amount;
         if (isplayer(s_result.attacker) && s_result.mod == "MOD_MELEE") {
             if (is_true(s_result.attacker.var_54c2b211)) {
                 s_result.attacker.var_54c2b211 = 0;

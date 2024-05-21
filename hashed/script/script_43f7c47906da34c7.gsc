@@ -341,7 +341,7 @@ function function_690ccad8() {
             if (isdefined(self.usingremote)) {
                 continue;
             }
-            self.var_313fc9f2 = self.var_313fc9f2 - var_a073e972;
+            self.var_313fc9f2 -= var_a073e972;
         }
     }
     if (!isalive(self)) {

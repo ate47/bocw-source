@@ -97,7 +97,7 @@ function init() {
 function function_1b3fc8e4() {
     namespace_250e9486::function_25b2c8a9();
     self namespace_250e9486::function_db744d28();
-    self.maxhealth = self.maxhealth + 250000 + int(100000 * namespace_ec06fe4a::function_ef369bae()) + level.doa.var_6c58d51 * 300000;
+    self.maxhealth += 250000 + int(100000 * namespace_ec06fe4a::function_ef369bae()) + level.doa.var_6c58d51 * 300000;
     self.health = self.maxhealth;
     self.var_1c8b76d3 = 1;
     self.no_gib = 1;
@@ -118,7 +118,7 @@ function function_1b3fc8e4() {
     self attach("c_t8_zmb_dlc2_gegenees_helmet1", "j_head");
     self function_d06af584();
     self.var_cc7959e1 = 1;
-    self.var_ed782d5 = getweapon("zombietron_gegenees_spear_projectile");
+    self.spearweapon = getweapon("zombietron_gegenees_spear_projectile");
     self.var_a9716e54 = 0;
     self.var_c63e2811 = 0;
 }
@@ -243,20 +243,20 @@ function function_7fe60e9e(entity) {
     if (distancesquared(targetpos, entity.origin) > sqr(250)) {
         velocity = entity.favoriteenemy getvelocity();
         velocity = (velocity[0], velocity[1], 0);
-        targetpos = targetpos + velocity * 0.25;
+        targetpos += velocity * 0.25;
         var_a76a363d = math::randomsign() * randomint(var_ad804014);
         var_9b241db1 = math::randomsign() * randomint(var_ad804014);
-        targetpos = targetpos + (var_a76a363d, var_9b241db1, 0);
+        targetpos += (var_a76a363d, var_9b241db1, 0);
         speed = length(velocity);
         if (speed > 0) {
             var_7ee6937e = vectornormalize((targetpos[0], targetpos[1], 0) - (launchpos[0], launchpos[1], 0));
             dot = vectordot(-1 * var_7ee6937e, velocity / speed);
             if (dot >= 0.8) {
-                targetpos = targetpos + var_7ee6937e * dot * speed * 0.5;
+                targetpos += var_7ee6937e * dot * speed * 0.5;
             }
         }
     }
-    targetpos = targetpos + (0, 0, 36);
+    targetpos += (0, 0, 36);
     var_872c6826 = vectortoangles(targetpos - launchpos);
     angles = function_cc68801f(launchpos, targetpos, 600, getdvarfloat(#"bg_lowgravity", 0));
     if (isdefined(angles) && angles[#"lowangle"] > 0) {
@@ -269,7 +269,7 @@ function function_7fe60e9e(entity) {
     var_a137cb9f = entity gettagorigin("tag_inhand");
     var_eb549b4f = entity.favoriteenemy.origin;
     if (namespace_ec06fe4a::function_a8975c67(16)) {
-        projectile = entity magicmissile(entity.var_ed782d5, var_a137cb9f, velocity, entity.favoriteenemy);
+        projectile = entity magicmissile(entity.spearweapon, var_a137cb9f, velocity, entity.favoriteenemy);
         projectile thread function_7d162bd0(projectile, entity);
         entity function_59e9f77b();
     }
@@ -839,9 +839,9 @@ function private function_ca5688e3(inflictor, attacker, damage, idflags, meansof
     if (!isdefined(self.shielddamage)) {
         self.shielddamage = adjusted_damage;
     } else {
-        self.shielddamage = self.shielddamage + adjusted_damage;
+        self.shielddamage += adjusted_damage;
     }
-    self.var_a9716e54 = self.var_a9716e54 + adjusted_damage;
+    self.var_a9716e54 += adjusted_damage;
     if (self.var_a9716e54 >= 500) {
         self.var_a9716e54 = 0;
         self function_9a05389e();

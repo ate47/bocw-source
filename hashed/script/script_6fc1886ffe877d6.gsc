@@ -457,7 +457,7 @@ function function_8deb12b0(instance) {
             }
         }
         if (self namespace_e86ffa8::function_3623f9d1(0)) {
-            n_speed = n_speed + n_speed * 0.2;
+            n_speed += n_speed * 0.2;
             if (n_speed > 1) {
                 n_speed = 1;
             }
@@ -859,7 +859,7 @@ function function_f5087df2() {
 function bomb_timer() {
     self endon(#"death");
     playsoundatposition(#"hash_56452f5fcd5ed800", self.origin);
-    for (n_timer = 210; n_timer; n_timer = n_timer - 1) {
+    for (n_timer = 210; n_timer; n_timer -= 1) {
         var_67c95546 = int(n_timer / 60);
         var_16782a41 = int(n_timer % 60 / 10);
         var_b30bc24e = n_timer % 60 % 10;
@@ -1320,7 +1320,7 @@ function function_582f2cb() {
         self.a_mdl_blockers = [];
         foreach (s_blocker in self.contentgroups[#"hash_441da645c3f27eea"]) {
             if (self.targetname === "objective_golova_holdout" && s_blocker.origin == (-9937, 8419, 176)) {
-                s_blocker.origin = s_blocker.origin + (9, 31, 0);
+                s_blocker.origin += (9, 31, 0);
                 self.a_mdl_blockers[self.a_mdl_blockers.size] = content_manager::spawn_script_model(s_blocker, s_blocker.model, 1);
                 continue;
             }

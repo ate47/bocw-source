@@ -165,12 +165,13 @@ function function_cd7e8422() {
     level flag::set(#"hash_652c6116077f444e");
 }
 
-// Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 1, eflags: 0x0
-// Checksum 0xbc19179b, Offset: 0x1810
-// Size: 0xce
-function function_f7a25ad5(var_23d9277f) {
-    /#
+/#
+
+    // Namespace zm_gold_main_quest/zm_gold_main_quest
+    // Params 1, eflags: 0x0
+    // Checksum 0xbc19179b, Offset: 0x1810
+    // Size: 0xce
+    function function_f7a25ad5(var_23d9277f) {
         level endon(#"end_game", #"hash_1943cbe07e8dd438", #"hash_7c153e7ca15e550f");
         while (true) {
             if (getdvarint(#"zm_debug_ee", 0)) {
@@ -179,8 +180,9 @@ function function_f7a25ad5(var_23d9277f) {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest
 // Params 2, eflags: 0x2 linked
@@ -326,7 +328,7 @@ function function_4a9e112c() {
     level flag::clear("spawn_zombies");
     var_2eb22136 = 4 + getplayers().size * 2;
     if (isdefined(level.var_e2aef122)) {
-        level.var_e2aef122 = level.var_e2aef122 + var_2eb22136;
+        level.var_e2aef122 += var_2eb22136;
     }
     while (var_2eb22136 > 0) {
         ai = zm_utility::function_cce73165("dog_location", #"hash_7a8b592728eec95d", #"zone_field_hospital");
@@ -1290,7 +1292,7 @@ function function_3a3ca419() {
         level.var_852bdce8[level.var_852bdce8.size] = var_d2ee34ea.mdl;
     }
     s_trigger = var_d2ee34ea zm_unitrigger::create(&function_9c74e3e3, 80, &function_f69ec622);
-    s_trigger.origin = s_trigger.origin + (0, 0, 30);
+    s_trigger.origin += (0, 0, 30);
     s_trigger.spawn_pos = var_d2ee34ea;
     callback::function_50fdac80(&function_3a3ca419);
     level waittill(#"hash_6c5c3396d53d00dc");
@@ -1498,7 +1500,7 @@ function function_531dcaa4() {
         level.var_852bdce8[level.var_852bdce8.size] = var_d2ee34ea.mdl;
     }
     s_trigger = var_d2ee34ea zm_unitrigger::create(&function_9c74e3e3, 80, &function_f69ec622);
-    s_trigger.origin = s_trigger.origin + (0, 0, 30);
+    s_trigger.origin += (0, 0, 30);
     s_trigger.spawn_pos = var_d2ee34ea;
     level waittill(#"hash_594981d29e7367a");
     s_fx = struct::get(#"hash_49b108485b1c0965");
@@ -1631,7 +1633,7 @@ function function_b5fc7e46() {
         level.var_852bdce8[level.var_852bdce8.size] = spawn_pos;
     }
     s_trigger = spawn_pos zm_unitrigger::create(&function_9c74e3e3, 80, &function_f69ec622);
-    s_trigger.origin = s_trigger.origin + (0, 0, 30);
+    s_trigger.origin += (0, 0, 30);
     s_trigger.spawn_pos = spawn_pos;
 }
 
@@ -2030,7 +2032,7 @@ function function_8365add8(b_skipped) {
     s_portal_pos = struct::get("tp_pos");
     var_e8c728b4 = util::spawn_model("tag_origin", var_fac83bd.origin, var_fac83bd.angles);
     zm_sq::function_266d66eb(#"hash_70910dcf03846864", s_portal_pos);
-    for (n_time = 0; true; n_time = n_time + float(function_60d95f53()) / 1000) {
+    for (n_time = 0; true; n_time += float(function_60d95f53()) / 1000) {
         a_players = function_a1ef346b();
         var_e8178f0 = 0;
         foreach (player in a_players) {
@@ -2347,7 +2349,7 @@ function function_6addcb69() {
             level flag::clear(#"hash_f274034949876d7");
             if (isdefined(s_target)) {
                 level thread function_ee77f553(s_target);
-                self.stub.var_47e9ef0c.var_ec1fca48 = self.stub.var_47e9ef0c.var_ec1fca48 + 2;
+                self.stub.var_47e9ef0c.var_ec1fca48 += 2;
                 level thread function_41a039fe(self.stub.var_47e9ef0c.var_ec1fca48);
             }
         }
@@ -2713,7 +2715,7 @@ function function_b5fa44e4() {
     var_2c696c5e = 2400;
     while (var_2c696c5e > 0) {
         self setscale(self.var_6fcf713a / 15000);
-        self.var_6fcf713a = self.var_6fcf713a - var_8020f96;
+        self.var_6fcf713a -= var_8020f96;
         var_2c696c5e--;
         waitframe(1);
     }
@@ -2763,7 +2765,7 @@ function function_c5a09ae3(var_18ceba08) {
     }
     wait(5);
     var_2eb22136 = getplayers().size * 3 + 4;
-    level.var_b089f503 = level.var_b089f503 + var_2eb22136;
+    level.var_b089f503 += var_2eb22136;
     i = 0;
     while (i < var_2eb22136) {
         s_pos = array::random(a_s_pts);
@@ -3220,24 +3222,23 @@ function function_b9a3fa11(var_e0c6386f, var_40feefce, var_c4ad7aa9) {
     level zm_vo::function_7622cb70(var_b3b54a4);
 }
 
-// Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 0, eflags: 0x0
-// Checksum 0x7b3ef69f, Offset: 0xfb68
-// Size: 0x5c
-function devgui_setup() {
-    /#
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_custom_devgui_callback(&cmd);
-    #/
-}
+/#
 
-// Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 1, eflags: 0x0
-// Checksum 0xea311c7b, Offset: 0xfbd0
-// Size: 0x82
-function cmd(cmd) {
-    /#
+    // Namespace zm_gold_main_quest/zm_gold_main_quest
+    // Params 0, eflags: 0x0
+    // Checksum 0x7b3ef69f, Offset: 0xfb68
+    // Size: 0x5c
+    function devgui_setup() {
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        zm_devgui::add_custom_devgui_callback(&cmd);
+    }
+
+    // Namespace zm_gold_main_quest/zm_gold_main_quest
+    // Params 1, eflags: 0x0
+    // Checksum 0xea311c7b, Offset: 0xfbd0
+    // Size: 0x82
+    function cmd(cmd) {
         switch (cmd) {
         case #"hash_75f15b2152e52f98":
             function_a8a17d5d();
@@ -3248,36 +3249,32 @@ function cmd(cmd) {
         default:
             break;
         }
-    #/
-}
+    }
 
-// Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 0, eflags: 0x0
-// Checksum 0x5ebecf26, Offset: 0xfc60
-// Size: 0x104
-function function_a8a17d5d() {
-    /#
+    // Namespace zm_gold_main_quest/zm_gold_main_quest
+    // Params 0, eflags: 0x0
+    // Checksum 0x5ebecf26, Offset: 0xfc60
+    // Size: 0x104
+    function function_a8a17d5d() {
         satellite_base = getent("<unknown string>", "<unknown string>");
-        satellite_fx_pos = get("<unknown string>", "<unknown string>");
+        satellite_fx_pos = struct::get("<unknown string>", "<unknown string>");
         if (!isdefined(satellite_base.fx_tag)) {
-            satellite_base.fx_tag = spawn_model("<unknown string>", satellite_fx_pos.origin, satellite_fx_pos.angles);
+            satellite_base.fx_tag = util::spawn_model("<unknown string>", satellite_fx_pos.origin, satellite_fx_pos.angles);
         }
-        satellite_base.fx_tag set("<unknown string>" + #"hash_6f292901e2fcaeb3", 0);
+        satellite_base.fx_tag clientfield::set("<unknown string>" + #"hash_6f292901e2fcaeb3", 0);
         wait(1);
-        satellite_base.fx_tag set("<unknown string>" + #"hash_6f292901e2fcaeb3", 1);
-    #/
-}
+        satellite_base.fx_tag clientfield::set("<unknown string>" + #"hash_6f292901e2fcaeb3", 1);
+    }
 
-// Namespace zm_gold_main_quest/zm_gold_main_quest
-// Params 0, eflags: 0x0
-// Checksum 0xb5c52927, Offset: 0xfd70
-// Size: 0x84
-function function_47a17b36() {
-    /#
+    // Namespace zm_gold_main_quest/zm_gold_main_quest
+    // Params 0, eflags: 0x0
+    // Checksum 0xb5c52927, Offset: 0xfd70
+    // Size: 0x84
+    function function_47a17b36() {
         satellite_base = getent("<unknown string>", "<unknown string>");
         if (isdefined(satellite_base) && isdefined(satellite_base.fx_tag)) {
-            satellite_base.fx_tag set("<unknown string>" + #"hash_6f292901e2fcaeb3", 0);
+            satellite_base.fx_tag clientfield::set("<unknown string>" + #"hash_6f292901e2fcaeb3", 0);
         }
-    #/
-}
+    }
 
+#/

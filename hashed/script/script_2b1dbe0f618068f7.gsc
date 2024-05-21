@@ -150,15 +150,16 @@ function event_handler[event_647adea6] function_465c8646(eventstruct) {
     }
 }
 
-// Namespace namespace_2ed67032/namespace_2ed67032
-// Params 1, eflags: 0x0
-// Checksum 0x7230b3cc, Offset: 0x890
-// Size: 0x44
-function function_ad64a47(reasonstring) {
-    /#
+/#
+
+    // Namespace namespace_2ed67032/namespace_2ed67032
+    // Params 1, eflags: 0x0
+    // Checksum 0x7230b3cc, Offset: 0x890
+    // Size: 0x44
+    function function_ad64a47(reasonstring) {
         if (level.var_a2ef9587 === 1) {
             println("<unknown string>" + reasonstring);
         }
-    #/
-}
+    }
 
+#/

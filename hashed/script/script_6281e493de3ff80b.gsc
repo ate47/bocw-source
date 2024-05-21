@@ -912,7 +912,7 @@ function function_239ee36(*inflictor, attacker, damage, *dflags, *mod, *weapon, 
     }
     if (var_f04f8dd5.size) {
         var_fe17e856 = var_f04f8dd5[0];
-        var_fe17e856.health = var_fe17e856.health - boneindex;
+        var_fe17e856.health -= boneindex;
         self clientfield::increment(var_fe17e856.var_2d048cdf);
         if (var_fe17e856.health <= 0) {
             if (self function_a6af900e(var_fe17e856.model, offsettime)) {
@@ -1008,7 +1008,7 @@ function function_6337506a(vdir, limit, front = 1) {
     orientation = self getplayerangles();
     forwardvec = anglestoforward(orientation);
     if (!front) {
-        forwardvec = forwardvec * -1;
+        forwardvec *= -1;
     }
     forwardvec2d = (forwardvec[0], forwardvec[1], 0);
     unitforwardvec2d = vectornormalize(forwardvec2d);

@@ -33,14 +33,17 @@ function private preinit() {
     #/
 }
 
-// Namespace namespace_77b8863/namespace_77b8863
-// Params 0, eflags: 0x0
-// Checksum 0x761b7b7c, Offset: 0x270
-// Size: 0x8
-function update_dvars() {
-    /#
-    #/
-}
+/#
+
+    // Namespace namespace_77b8863/namespace_77b8863
+    // Params 0, eflags: 0x0
+    // Checksum 0x761b7b7c, Offset: 0x270
+    // Size: 0x8
+    function update_dvars() {
+        
+    }
+
+#/
 
 // Namespace namespace_77b8863/namespace_77b8863
 // Params 0, eflags: 0x2 linked

@@ -715,12 +715,13 @@ function private function_43ad32c1(action, result) {
     }
 }
 
-// Namespace actions/actions
-// Params 0, eflags: 0x0
-// Checksum 0x9ddec0, Offset: 0x2ae8
-// Size: 0x420
-function function_d661f822() {
-    /#
+/#
+
+    // Namespace actions/actions
+    // Params 0, eflags: 0x0
+    // Checksum 0x9ddec0, Offset: 0x2ae8
+    // Size: 0x420
+    function function_d661f822() {
         self notify(#"hash_2eaf8be0116c39a9");
         self endoncallback(&function_67860a50, #"hash_2eaf8be0116c39a9");
         var_5283788 = 8;
@@ -742,11 +743,11 @@ function function_d661f822() {
                 switch (i) {
                 case 0:
                     if (isdefined(self.var_2cb06cc6)) {
-                        text = text + self.var_2cb06cc6.name + "<unknown string>";
+                        text += self.var_2cb06cc6.name + "<unknown string>";
                         foreach (child in self.var_2cb06cc6.var_1eb98b2a) {
-                            text = text + child.name + "<unknown string>";
+                            text += child.name + "<unknown string>";
                         }
-                        text = text + "<unknown string>";
+                        text += "<unknown string>";
                     }
                     break;
                 case 1:
@@ -775,21 +776,19 @@ function function_d661f822() {
                 self.var_56116d92[i] settext(text);
             }
         }
-    #/
-}
+    }
 
-// Namespace actions/actions
-// Params 1, eflags: 0x4
-// Checksum 0x7e0c9916, Offset: 0x2f10
-// Size: 0xaa
-function private function_67860a50(*params) {
-    /#
+    // Namespace actions/actions
+    // Params 1, eflags: 0x4
+    // Checksum 0x7e0c9916, Offset: 0x2f10
+    // Size: 0xaa
+    function private function_67860a50(*params) {
         if (isdefined(self.var_56116d92)) {
             foreach (elem in self.var_56116d92) {
                 elem destroy();
             }
         }
         self.var_56116d92 = undefined;
-    #/
-}
+    }
 
+#/

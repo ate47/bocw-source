@@ -353,7 +353,7 @@ function function_8bbbfc85() {
     }
     level.player endon(#"blow_rc_car");
     var_727f982c = 20;
-    var_727f982c = var_727f982c * 39.3701;
+    var_727f982c *= 39.3701;
     while (true) {
         old_dist = distance2d(level.rc_car.origin, level.af_plane.origin);
         wait(5);
@@ -1012,7 +1012,7 @@ function function_8d9f9fd7() {
             } else if (dot < -0.2) {
                 shot = "shoot_behind_";
             }
-            shot = shot + string(randomint(2) + 1);
+            shot += string(randomint(2) + 1);
             self scene::play("scene_tkd_hit3_chase_adler", shot);
             skip_idle = 0;
             continue;
@@ -1042,7 +1042,7 @@ function function_d4dfd1df() {
     self endon(#"death");
     /#
         while (true) {
-            debug_line(self.origin, self.origin + (0, 0, 5000), (0, 1, 0), undefined, undefined, 1);
+            util::debug_line(self.origin, self.origin + (0, 0, 5000), (0, 1, 0), undefined, undefined, 1);
             waitframe(1);
         }
     #/
@@ -1204,15 +1204,15 @@ function function_ba23e9b(*player, var_b8ef2e) {
     var_43939108 = (-6, 0, 0);
     var_5fb21670 = (0, 0, 0);
     if (!var_b8ef2e) {
-        var_43939108 = var_43939108 + right_vec * 24;
+        var_43939108 += right_vec * 24;
         var_5fb21670 = -1 * right_vec;
     } else {
-        var_43939108 = var_43939108 - right_vec * 24;
+        var_43939108 -= right_vec * 24;
         var_5fb21670 = right_vec;
     }
     var_5fb21670 = vectornormalize(var_5fb21670);
-    var_5fb21670 = var_5fb21670 + (0, 0, 1);
-    var_5fb21670 = var_5fb21670 * 100;
+    var_5fb21670 += (0, 0, 1);
+    var_5fb21670 *= 100;
     self launchvehicle(var_5fb21670, var_43939108, 1, 1);
     self delete_riders(1);
     wait(randomfloatrange(0.75, 1.5));
@@ -1542,7 +1542,7 @@ function function_e652a247() {
         clip.angles = var_ca688dc9.angles;
         level waittill(#"starting_crash_seq");
         var_ca688dc9 delete();
-        clip.origin = clip.origin - (0, 0, 20);
+        clip.origin -= (0, 0, 20);
     }
 }
 
@@ -1737,7 +1737,7 @@ function function_db378ce0() {
                 var_ae72f23a = randomintrange(1, var_de9ba1c9 + 1);
                 var_27e1b0d4 = "idle";
                 if (var_ae72f23a > 1) {
-                    var_27e1b0d4 = var_27e1b0d4 + string(var_ae72f23a);
+                    var_27e1b0d4 += string(var_ae72f23a);
                 }
                 org thread scene::play(anim_scene, var_27e1b0d4, [self]);
                 level notify(#"chase_walla", {#enemy:self});
@@ -1893,7 +1893,7 @@ function function_e4f900a2(var_effc03f2) {
 function function_1c4bdba5() {
     level.player endon(#"blow_rc_car");
     var_b2462917 = 30;
-    var_b2462917 = var_b2462917 * 12;
+    var_b2462917 *= 12;
     while (true) {
         var_72f2834e = level.rc_car.origin + anglestoforward(level.rc_car.angles) * 150;
         if (var_72f2834e[0] - level.var_49a5d2a4.origin[0] > var_b2462917) {
@@ -1914,8 +1914,8 @@ function function_e6320cb3() {
     level endon(#"failed_chase");
     self endon(#"death");
     var_908eb0a2 = 50;
-    var_908eb0a2 = var_908eb0a2 * 12;
-    var_908eb0a2 = var_908eb0a2 * var_908eb0a2;
+    var_908eb0a2 *= 12;
+    var_908eb0a2 *= var_908eb0a2;
     var_5d248f34 = -1 * cos(25);
     level waittill(#"hash_4a8efa61ddc01361");
     while (!level flag::get("failed_chase")) {
@@ -1951,7 +1951,7 @@ function function_b9613eb(right = 1, speed_pct = 1, var_4c7dbda9 = 10, var_6466f
     if (right) {
         n_modifier = -1;
     }
-    var_6466f659 = var_6466f659 * 12;
+    var_6466f659 *= 12;
     var_28ec8367 = sqr(var_28ec8367);
     cur_node = self.currentnode;
     if (!isdefined(cur_node.target)) {
@@ -2068,7 +2068,7 @@ function function_ab88cc4() {
     var_12078aec = self getweaponslist();
     ammo = 0;
     foreach (weap in var_12078aec) {
-        ammo = ammo + self getammocount(weap);
+        ammo += self getammocount(weap);
     }
     return ammo;
 }

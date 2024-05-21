@@ -88,7 +88,7 @@ function function_d4a4a726(start_value, target_value, time, var_f71e2d8f, ease_t
     var_b3160f0.cur_value = start_value;
     var_b3160f0.var_37e98bce = 0;
     var_88a4b08c = var_b3160f0.cur_value;
-    for (cur_time = 0; cur_time < time; cur_time = cur_time + float(function_60d95f53()) / 1000) {
+    for (cur_time = 0; cur_time < time; cur_time += float(function_60d95f53()) / 1000) {
         var_b3160f0.pct = min(1, cur_time / time);
         var_88a4b08c = var_b3160f0.cur_value;
         switch (var_33ce6852.size) {

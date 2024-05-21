@@ -38,11 +38,11 @@ function init() {
 // Checksum 0x8578748b, Offset: 0x318
 // Size: 0x234
 function registerbehaviorscriptfunctions() {
-    assert(isscriptfunctionptr(&function_abb6c18a));
+    assert(isscriptfunctionptr(&namespace_250e9486::function_abb6c18a));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_67cf14163bf00d16", &namespace_250e9486::function_abb6c18a);
-    assert(isscriptfunctionptr(&function_99ed5179));
+    assert(isscriptfunctionptr(&namespace_250e9486::function_99ed5179));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_14f093af5e75dca1", &namespace_250e9486::function_99ed5179);
-    assert(isscriptfunctionptr(&function_50547dae));
+    assert(isscriptfunctionptr(&namespace_250e9486::function_50547dae));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_23de4beb58b2ce65", &namespace_250e9486::function_50547dae);
     assert(isscriptfunctionptr(&function_3bda3c55));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_43c922ea035ca163", &function_3bda3c55);

@@ -205,7 +205,7 @@ function function_aff8caac(n_count, item) {
     if (!isdefined(self.var_a3210d75)) {
         self.var_a3210d75 = 0;
     }
-    self.var_a3210d75 = self.var_a3210d75 + n_count;
+    self.var_a3210d75 += n_count;
     if (is_true(item.var_9f9d9b10)) {
         level flag::clear(#"hash_50d40a20b859977f");
     }
@@ -258,7 +258,7 @@ function teleport_players(var_e07fc3c5, var_cdf41f72 = 1) {
     if (!isdefined(level.var_257d029d)) {
         level.var_257d029d = 0;
     }
-    level.var_257d029d = level.var_257d029d + 1;
+    level.var_257d029d += 1;
     self val::set(#"hash_7ddef091eca1a62", "ignoreme", 1);
     self val::set("arcade_token", "freezecontrols", 1);
     self val::set("arcade_token", "takedamage", 0);
@@ -346,7 +346,7 @@ function function_8dd4d280() {
     }
     self clientfield::set("in_enemy_mute_smoke", 0);
     if (isdefined(level.var_257d029d)) {
-        level.var_257d029d = level.var_257d029d - 1;
+        level.var_257d029d -= 1;
         if (level.var_257d029d <= 0) {
             level clientfield::set("" + #"hash_7017982268bd7369", 0);
         }
@@ -2406,25 +2406,24 @@ function function_cbcc2ab7(player) {
     return 1;
 }
 
-// Namespace namespace_edb23975/namespace_edb23975
-// Params 0, eflags: 0x0
-// Checksum 0x6c7e454b, Offset: 0xad30
-// Size: 0x74
-function function_cd7a3de4() {
-    /#
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_custom_devgui_callback(&cmd);
-    #/
-}
+/#
 
-// Namespace namespace_edb23975/namespace_edb23975
-// Params 1, eflags: 0x0
-// Checksum 0xc022e967, Offset: 0xadb0
-// Size: 0x282
-function cmd(cmd) {
-    /#
+    // Namespace namespace_edb23975/namespace_edb23975
+    // Params 0, eflags: 0x0
+    // Checksum 0x6c7e454b, Offset: 0xad30
+    // Size: 0x74
+    function function_cd7a3de4() {
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        zm_devgui::add_custom_devgui_callback(&cmd);
+    }
+
+    // Namespace namespace_edb23975/namespace_edb23975
+    // Params 1, eflags: 0x0
+    // Checksum 0xc022e967, Offset: 0xadb0
+    // Size: 0x282
+    function cmd(cmd) {
         switch (cmd) {
         case #"hash_455d7fe244b8d836":
             a_players = function_a1ef346b();
@@ -2437,20 +2436,20 @@ function cmd(cmd) {
         case #"hash_6e7195a08bee9603":
             a_players = function_a1ef346b();
             foreach (player in a_players) {
-                if (player get(#"hash_6570ebf5a30c93d")) {
-                    player clear(#"hash_6570ebf5a30c93d");
+                if (player flag::get(#"hash_6570ebf5a30c93d")) {
+                    player flag::clear(#"hash_6570ebf5a30c93d");
                 }
             }
             break;
         case #"hash_31d56fb057b35676":
             a_players = function_a1ef346b();
             foreach (player in a_players) {
-                if (player get(#"hash_299f96da2a2177b8")) {
-                    player clear(#"hash_299f96da2a2177b8");
+                if (player flag::get(#"hash_299f96da2a2177b8")) {
+                    player flag::clear(#"hash_299f96da2a2177b8");
                 }
             }
             break;
         }
-    #/
-}
+    }
 
+#/

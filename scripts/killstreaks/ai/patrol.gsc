@@ -199,18 +199,20 @@ function function_94d884e4(var_9033671b) {
     return undefined;
 }
 
-// Namespace ai_patrol/patrol
-// Params 1, eflags: 0x4
-// Checksum 0xf2057004, Offset: 0xbd8
-// Size: 0x38
-function private is_debugging(dvar) {
-    /#
+/#
+
+    // Namespace ai_patrol/patrol
+    // Params 1, eflags: 0x4
+    // Checksum 0xf2057004, Offset: 0xbd8
+    // Size: 0x38
+    function private is_debugging(dvar) {
         if (getdvarint(dvar, 0)) {
             return 1;
         }
         return 0;
-    #/
-}
+    }
+
+#/
 
 // Namespace ai_patrol/patrol
 // Params 0, eflags: 0x0
@@ -422,7 +424,7 @@ function function_325c6829(origin) {
     assert(isdefined(self.ai.patrol));
     oldorigin = origin;
     if (isdefined(self.script_owner) && isdefined(self.var_2f8f0d5e)) {
-        origin = origin + vectorscale(anglestoforward((0, self.script_owner.angles[1], 0)), self.var_2f8f0d5e);
+        origin += vectorscale(anglestoforward((0, self.script_owner.angles[1], 0)), self.var_2f8f0d5e);
         origin = getclosestpointonnavmesh(origin, 200, 20);
     }
     if (!isdefined(origin)) {

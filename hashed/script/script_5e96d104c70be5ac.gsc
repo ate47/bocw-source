@@ -70,7 +70,7 @@ function function_72c32279() {
     }
     /#
         println("<unknown string>" + getutc());
-        println("<unknown string>" + get_map_name());
+        println("<unknown string>" + util::get_map_name());
         println("<unknown string>" + level.gametype);
         println("<unknown string>" + sessionmodeisprivateonlinegame());
         println("<unknown string>" + sessionmodeissystemlink());
@@ -114,7 +114,7 @@ function function_d519e318() {
     /#
         println("<unknown string>" + function_f8d53445());
         println("<unknown string>" + gettime());
-        println("<unknown string>" + get_map_name());
+        println("<unknown string>" + util::get_map_name());
         println("<unknown string>" + level.gametype);
         println("<unknown string>" + getutc());
     #/
@@ -325,7 +325,7 @@ function private function_4bd3e96c() {
     weapons::update_last_held_weapon_timings(gettime(), self.currentweapon);
     if (isdefined(self.pers[#"hash_69b63c99be1fb428"])) {
         weapon_names = getarraykeys(self.pers[#"hash_69b63c99be1fb428"]);
-        for (weapon_index = 0; weapon_index < weapon_names.size; weapon_index = weapon_index + 1) {
+        for (weapon_index = 0; weapon_index < weapon_names.size; weapon_index += 1) {
             weapon_name = weapon_names[weapon_index];
             var_dc08e79b = self.pers[#"hash_69b63c99be1fb428"][weapon_name];
             var_fa5921b6 = var_dc08e79b[#"xpearned"];
@@ -799,7 +799,7 @@ function private on_ai_damage(params) {
         if (!isdefined(self.telemetry.var_b968cd78)) {
             self.telemetry.var_b968cd78 = 0;
         }
-        self.telemetry.var_b968cd78 = self.telemetry.var_b968cd78 + (isdefined(params.idamage) ? params.idamage : 0);
+        self.telemetry.var_b968cd78 += isdefined(params.idamage) ? params.idamage : 0;
     }
 }
 
@@ -815,7 +815,7 @@ function private on_player_damage(params) {
         if (!isdefined(params.eattacker.telemetry.damage_dealt)) {
             params.eattacker.telemetry.damage_dealt = 0;
         }
-        params.eattacker.telemetry.damage_dealt = params.eattacker.telemetry.damage_dealt + params.idamage;
+        params.eattacker.telemetry.damage_dealt += params.idamage;
     }
 }
 

@@ -83,11 +83,11 @@ function get_velocity() {
     for (index = breadcrumb_count - 2; index >= 0; index--) {
         crumb_index--;
         if (crumb_index < 0) {
-            crumb_index = crumb_index + breadcrumb_count;
+            crumb_index += breadcrumb_count;
         }
         crumb = self.tracking.breadcrumbs[crumb_index];
-        travel = travel + last_point - crumb.point;
-        total_time = total_time + last_time - crumb.time;
+        travel += last_point - crumb.point;
+        total_time += last_time - crumb.time;
         last_point = crumb.point;
         last_time = crumb.time;
     }
@@ -99,12 +99,13 @@ function get_velocity() {
     return self.tracking.velocity;
 }
 
-// Namespace tracking/tracking
-// Params 0, eflags: 0x0
-// Checksum 0x6342cb4b, Offset: 0x5f8
-// Size: 0x8e
-function debug_tracking() {
-    /#
+/#
+
+    // Namespace tracking/tracking
+    // Params 0, eflags: 0x0
+    // Checksum 0x6342cb4b, Offset: 0x5f8
+    // Size: 0x8e
+    function debug_tracking() {
         self endon(#"disconnect");
         while (true) {
             if (function_605bb988()) {
@@ -113,6 +114,6 @@ function debug_tracking() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
+#/

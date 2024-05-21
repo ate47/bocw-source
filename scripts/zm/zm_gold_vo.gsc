@@ -310,12 +310,13 @@ function function_767d8cf3() {
     level thread scene::play(#"aib_t9_zm_vign_rav_seated_01", "seated_loop_1", level.var_3ebc9062);
 }
 
-// Namespace zm_gold_vo/zm_gold_vo
-// Params 1, eflags: 0x0
-// Checksum 0x1df81265, Offset: 0x15e8
-// Size: 0xae
-function function_51e0aa02(var_23d9277f) {
-    /#
+/#
+
+    // Namespace zm_gold_vo/zm_gold_vo
+    // Params 1, eflags: 0x0
+    // Checksum 0x1df81265, Offset: 0x15e8
+    // Size: 0xae
+    function function_51e0aa02(var_23d9277f) {
         level endon(#"pap_quest_completed");
         while (true) {
             if (getdvarint(#"zm_debug_ee", 0)) {
@@ -324,8 +325,9 @@ function function_51e0aa02(var_23d9277f) {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_gold_vo/zm_gold_vo
 // Params 0, eflags: 0x2 linked

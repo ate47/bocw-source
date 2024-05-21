@@ -486,7 +486,7 @@ function getnodeorigin() {
 // Size: 0x4c
 function safemod(a, b) {
     result = int(a) % b;
-    result = result + b;
+    result += b;
     return result % b;
 }
 
@@ -585,26 +585,25 @@ function notifyaftertime(notifystring, killmestring, time) {
     self notify(notifystring);
 }
 
-// Namespace zombie_utility/zombie_utility
-// Params 4, eflags: 0x0
-// Checksum 0x9e97fe7b, Offset: 0x1e18
-// Size: 0x82
-function drawstringtime(msg, org, color, timer) {
-    /#
+/#
+
+    // Namespace zombie_utility/zombie_utility
+    // Params 4, eflags: 0x0
+    // Checksum 0x9e97fe7b, Offset: 0x1e18
+    // Size: 0x82
+    function drawstringtime(msg, org, color, timer) {
         maxtime = timer * 20;
         for (i = 0; i < maxtime; i++) {
             print3d(org, msg, color, 1, 1);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace zombie_utility/zombie_utility
-// Params 1, eflags: 0x0
-// Checksum 0x3478b7ae, Offset: 0x1ea8
-// Size: 0x110
-function showlastenemysightpos(string) {
-    /#
+    // Namespace zombie_utility/zombie_utility
+    // Params 1, eflags: 0x0
+    // Checksum 0x3478b7ae, Offset: 0x1ea8
+    // Size: 0x110
+    function showlastenemysightpos(string) {
         self notify(#"got known enemy2");
         self endon(#"got known enemy2", #"death");
         if (!isvalidenemy(self.enemy)) {
@@ -622,8 +621,9 @@ function showlastenemysightpos(string) {
             }
             print3d(self.lastenemysightpos, string, color, 1, 2.15);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zombie_utility/zombie_utility
 // Params 0, eflags: 0x0
@@ -682,7 +682,7 @@ function showdebugproc(frompoint, topoint, color, printtime) {
     /#
         self endon(#"death");
         timer = printtime * 20;
-        for (i = 0; i < timer; i = i + 1) {
+        for (i = 0; i < timer; i += 1) {
             waitframe(1);
             line(frompoint, topoint, color);
         }
@@ -755,20 +755,22 @@ function calculatenodeoffset(right, forward, baseoffset) {
     return vectorscale(right, baseoffset[0]) + vectorscale(forward, baseoffset[1]) + (0, 0, baseoffset[2]);
 }
 
-// Namespace zombie_utility/zombie_utility
-// Params 3, eflags: 0x0
-// Checksum 0xe31af8f9, Offset: 0x2630
-// Size: 0x6e
-function showlines(start, end, end2) {
-    /#
+/#
+
+    // Namespace zombie_utility/zombie_utility
+    // Params 3, eflags: 0x0
+    // Checksum 0xe31af8f9, Offset: 0x2630
+    // Size: 0x6e
+    function showlines(start, end, end2) {
         for (;;) {
             line(start, end, (1, 0, 0), 1);
             waitframe(1);
             line(start, end2, (0, 0, 1), 1);
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zombie_utility/zombie_utility
 // Params 2, eflags: 0x0
@@ -785,12 +787,12 @@ function anim_array(animarray, animweights) {
     weights = 0;
     total_weight = 0;
     for (i = 0; i < total_anims; i++) {
-        total_weight = total_weight + animweights[i];
+        total_weight += animweights[i];
     }
     anim_play = randomfloat(total_weight);
     current_weight = 0;
     for (i = 0; i < total_anims; i++) {
-        current_weight = current_weight + animweights[i];
+        current_weight += animweights[i];
         if (anim_play >= current_weight) {
             continue;
         }
@@ -816,36 +818,36 @@ function forcedcover(msg) {
     return isdefined(self.a.forced_cover) && self.a.forced_cover == msg;
 }
 
-// Namespace zombie_utility/zombie_utility
-// Params 6, eflags: 0x0
-// Checksum 0xa3b12376, Offset: 0x2880
-// Size: 0x92
-function print3dtime(timer, org, msg, color, alpha, scale) {
-    /#
+/#
+
+    // Namespace zombie_utility/zombie_utility
+    // Params 6, eflags: 0x0
+    // Checksum 0xa3b12376, Offset: 0x2880
+    // Size: 0x92
+    function print3dtime(timer, org, msg, color, alpha, scale) {
         newtime = timer / 0.05;
         for (i = 0; i < newtime; i++) {
             print3d(org, msg, color, alpha, scale);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace zombie_utility/zombie_utility
-// Params 5, eflags: 0x0
-// Checksum 0xaaa2b6c8, Offset: 0x2920
-// Size: 0xba
-function print3drise(org, msg, color, alpha, scale) {
-    /#
+    // Namespace zombie_utility/zombie_utility
+    // Params 5, eflags: 0x0
+    // Checksum 0xaaa2b6c8, Offset: 0x2920
+    // Size: 0xba
+    function print3drise(org, msg, color, alpha, scale) {
         newtime = 100;
         up = 0;
         org = org;
         for (i = 0; i < newtime; i++) {
-            up = up + 0.5;
+            up += 0.5;
             print3d(org + (0, 0, up), msg, color, alpha, scale);
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zombie_utility/zombie_utility
 // Params 1, eflags: 0x0
@@ -856,12 +858,12 @@ function random_weight(array) {
     if (array.size > 1) {
         anim_weight = 0;
         for (i = 0; i < array.size; i++) {
-            anim_weight = anim_weight + array[i];
+            anim_weight += array[i];
         }
         anim_play = randomfloat(anim_weight);
         anim_weight = 0;
         for (i = 0; i < array.size; i++) {
-            anim_weight = anim_weight + array[i];
+            anim_weight += array[i];
             if (anim_play < anim_weight) {
                 idleanim = i;
                 break;
@@ -871,12 +873,13 @@ function random_weight(array) {
     return idleanim;
 }
 
-// Namespace zombie_utility/zombie_utility
-// Params 2, eflags: 0x0
-// Checksum 0x5129e729, Offset: 0x2ad0
-// Size: 0x86
-function persistentdebugline(start, end) {
-    /#
+/#
+
+    // Namespace zombie_utility/zombie_utility
+    // Params 2, eflags: 0x0
+    // Checksum 0x5129e729, Offset: 0x2ad0
+    // Size: 0x86
+    function persistentdebugline(start, end) {
         self endon(#"death");
         level notify(#"newdebugline");
         level endon(#"newdebugline");
@@ -884,8 +887,9 @@ function persistentdebugline(start, end) {
             line(start, end, (0.3, 1, 0), 1);
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zombie_utility/zombie_utility
 // Params 0, eflags: 0x2 linked
@@ -954,12 +958,13 @@ function animarraypickrandom(animname) {
     return self.a.array[animname][index];
 }
 
-// Namespace zombie_utility/zombie_utility
-// Params 0, eflags: 0x0
-// Checksum 0x7f51f180, Offset: 0x2e78
-// Size: 0x118
-function dumpanimarray() {
-    /#
+/#
+
+    // Namespace zombie_utility/zombie_utility
+    // Params 0, eflags: 0x0
+    // Checksum 0x7f51f180, Offset: 0x2e78
+    // Size: 0x118
+    function dumpanimarray() {
         println("<unknown string>");
         foreach (k, v in self.a.array) {
             if (isarray(v)) {
@@ -968,8 +973,9 @@ function dumpanimarray() {
             }
             println("<unknown string>" + k + "<unknown string>", v);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zombie_utility/zombie_utility
 // Params 1, eflags: 0x0
@@ -1090,27 +1096,26 @@ function set_orient_mode(mode, val1) {
     self orientmode(mode);
 }
 
-// Namespace zombie_utility/zombie_utility
-// Params 1, eflags: 0x0
-// Checksum 0xed0fe8f, Offset: 0x3330
-// Size: 0xac
-function debug_anim_print(text) {
-    /#
+/#
+
+    // Namespace zombie_utility/zombie_utility
+    // Params 1, eflags: 0x0
+    // Checksum 0xed0fe8f, Offset: 0x3330
+    // Size: 0xac
+    function debug_anim_print(text) {
         if (isdefined(level.dog_debug_anims) && level.dog_debug_anims) {
             println(text + "<unknown string>" + gettime());
         }
         if (isdefined(level.dog_debug_anims_ent) && level.dog_debug_anims_ent == self getentnum()) {
             println(text + "<unknown string>" + gettime());
         }
-    #/
-}
+    }
 
-// Namespace zombie_utility/zombie_utility
-// Params 2, eflags: 0x0
-// Checksum 0x24a2c8fe, Offset: 0x33e8
-// Size: 0x17c
-function debug_turn_print(text, *line) {
-    /#
+    // Namespace zombie_utility/zombie_utility
+    // Params 2, eflags: 0x0
+    // Checksum 0x24a2c8fe, Offset: 0x33e8
+    // Size: 0x17c
+    function debug_turn_print(text, *line) {
         if (isdefined(level.dog_debug_turns) && level.dog_debug_turns == self getentnum()) {
             duration = 200;
             currentyawcolor = (1, 1, 1);
@@ -1123,8 +1128,9 @@ function debug_turn_print(text, *line) {
             lookaheadyaw = angleclamp180(lookaheadangles[1]);
             println(line + "<unknown string>" + gettime() + "<unknown string>" + currentyaw + "<unknown string>" + lookaheadyaw + "<unknown string>" + desiredyaw);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zombie_utility/zombie_utility
 // Params 4, eflags: 0x0
@@ -1154,7 +1160,7 @@ function set_zombie_var(zvar, value, defaultvalue, is_team_based = 0) {
 // Params 3, eflags: 0x0
 // Checksum 0x92eaa0a1, Offset: 0x36a0
 // Size: 0x7a
-function function_c7ab6cbc(zvar, team, value) {
+function set_zombie_var_team(zvar, team, value) {
     if (!isdefined(level.zombie_vars)) {
         level.zombie_vars = [];
     }
@@ -1169,7 +1175,7 @@ function function_c7ab6cbc(zvar, team, value) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x800a0f90, Offset: 0x3728
 // Size: 0x38
-function function_d2dfacfd(zvar) {
+function get_zombie_var(zvar) {
     if (!isdefined(level.zombie_vars)) {
         level.zombie_vars = [];
     }
@@ -1180,7 +1186,7 @@ function function_d2dfacfd(zvar) {
 // Params 2, eflags: 0x0
 // Checksum 0x7b9d926c, Offset: 0x3768
 // Size: 0x3c
-function function_6403cf83(zvar, team) {
+function get_zombie_var_team(zvar, team) {
     if (isdefined(level.zombie_vars[team])) {
         return level.zombie_vars[team][zvar];
     }
@@ -1190,7 +1196,7 @@ function function_6403cf83(zvar, team) {
 // Params 2, eflags: 0x0
 // Checksum 0x27208534, Offset: 0x37b0
 // Size: 0x68
-function function_826f5e98(zvar, value) {
+function set_zombie_var_player(zvar, value) {
     assert(isplayer(self), "<unknown string>");
     if (!isdefined(self.zombie_vars)) {
         self.zombie_vars = [];
@@ -1202,7 +1208,7 @@ function function_826f5e98(zvar, value) {
 // Params 1, eflags: 0x0
 // Checksum 0x1760210d, Offset: 0x3820
 // Size: 0x60
-function function_73061b82(zvar) {
+function get_zombie_var_player(zvar) {
     assert(isplayer(self), "<unknown string>");
     if (!isdefined(self.zombie_vars)) {
         self.zombie_vars = [];
@@ -1379,13 +1385,13 @@ function get_rise_death_anim() {
 // Checksum 0x5c4cceb0, Offset: 0x3f30
 // Size: 0x7a
 function reset_attack_spot() {
-    if (isdefined(self.attacking_node)) {
-        node = self.attacking_node;
+    if (isdefined(self.601)) {
+        node = self.601;
         index = self.attacking_spot_index;
         node.attack_spots_taken[index] = 0;
         node notify(#"hash_45aa77702fef26f4");
     }
-    self.attacking_node = undefined;
+    self.601 = undefined;
     self.attacking_spot_index = undefined;
     self.attacking_spot = undefined;
 }
@@ -1440,7 +1446,7 @@ function round_spawn_failsafe() {
         self thread round_spawn_failsafe_debug_draw();
     }
     for (v_prev_origin = self.origin; true; v_prev_origin = self.origin) {
-        if (!function_d2dfacfd(#"zombie_use_failsafe")) {
+        if (!get_zombie_var(#"zombie_use_failsafe")) {
             return;
         }
         if (is_true(self.ignore_round_spawn_failsafe)) {
@@ -1459,7 +1465,7 @@ function round_spawn_failsafe() {
         if (isdefined(self.lastchunk_destroy_time) && gettime() - self.lastchunk_destroy_time < 8000) {
             continue;
         }
-        if (self.origin[2] < function_d2dfacfd(#"below_world_check")) {
+        if (self.origin[2] < get_zombie_var(#"below_world_check")) {
             if (isdefined(level.var_455393ef)) {
                 self thread [[ level.var_455393ef ]](v_prev_origin);
             } else {
@@ -1524,14 +1530,14 @@ function ai_calculate_health(base_health, round_number) {
     for (i = 2; i <= round_number; i++) {
         if (i >= 10 && !is_true(level.var_50dd0ec5)) {
             old_health = var_d082c739;
-            var_d082c739 = var_d082c739 + int(var_d082c739 * function_d2dfacfd(#"zombie_health_increase_multiplier"));
+            var_d082c739 += int(var_d082c739 * get_zombie_var(#"zombie_health_increase_multiplier"));
             if (var_d082c739 < old_health) {
                 var_d082c739 = old_health;
                 break;
             }
             continue;
         }
-        var_d082c739 = int(var_d082c739 + function_d2dfacfd(#"zombie_health_increase"));
+        var_d082c739 = int(var_d082c739 + get_zombie_var(#"zombie_health_increase"));
     }
     return var_d082c739;
 }
@@ -1748,7 +1754,7 @@ function function_33da7a07(is_easy) {
     if (self._starting_round_number == 1) {
         n_move_speed = 1;
     } else {
-        n_move_speed = int(self._starting_round_number * function_d2dfacfd(#"zombie_move_speed_multiplier"));
+        n_move_speed = int(self._starting_round_number * get_zombie_var(#"zombie_move_speed_multiplier"));
     }
     var_750836cc = randomintrange(n_move_speed, n_move_speed + 35);
     return function_f9c50a93(var_750836cc, is_easy);
@@ -1895,9 +1901,9 @@ function get_current_actor_count() {
     count = 0;
     actors = getaispeciesarray(level.zombie_team, "all");
     if (isdefined(actors)) {
-        count = count + actors.size;
+        count += actors.size;
     }
-    count = count + getcorpsearray().size;
+    count += getcorpsearray().size;
     return count;
 }
 
@@ -2008,7 +2014,7 @@ function zombie_gib(amount, attacker, *direction_vec, point, type, *tagname, *mo
             self allowpitchangle(1);
             self setpitchorient();
             health = self.health;
-            health = health * 0.1;
+            health *= 0.1;
             if (isdefined(self.crawl_anim_override)) {
                 self [[ self.crawl_anim_override ]]();
             }
@@ -2439,7 +2445,7 @@ function makezombiecrawler(b_both_legs) {
     self allowpitchangle(1);
     self setpitchorient();
     health = self.health;
-    health = health * 0.1;
+    health *= 0.1;
 }
 
 // Namespace zombie_utility/zombie_utility
@@ -2615,25 +2621,26 @@ function function_d446de65(entity, position, drop_height, var_e294ac7d = 1) {
     return undefined;
 }
 
-// Namespace zombie_utility/zombie_utility
-// Params 0, eflags: 0x0
-// Checksum 0xea794dab, Offset: 0x8228
-// Size: 0x118
-function updateanimationrate() {
-    /#
+/#
+
+    // Namespace zombie_utility/zombie_utility
+    // Params 0, eflags: 0x0
+    // Checksum 0xea794dab, Offset: 0x8228
+    // Size: 0x118
+    function updateanimationrate() {
         self notify(#"updateanimationrate");
         self endon(#"death", #"updateanimationrate");
-        settings_bundle = self function_9139c839();
+        settings_bundle = self ai::function_9139c839();
         if (!isdefined(settings_bundle)) {
             return;
         }
-        var_fd8e23d9 = self function_9139c839().var_450edb3b;
+        var_fd8e23d9 = self ai::function_9139c839().var_450edb3b;
         if (isdefined(var_fd8e23d9)) {
             self asmsetanimationrate(var_fd8e23d9);
         }
         while (true) {
             wait(1);
-            animation_rate = self function_9139c839().var_450edb3b;
+            animation_rate = self ai::function_9139c839().var_450edb3b;
             if (!isdefined(animation_rate)) {
                 return;
             }
@@ -2643,6 +2650,6 @@ function updateanimationrate() {
             self asmsetanimationrate(animation_rate);
             var_fd8e23d9 = animation_rate;
         }
-    #/
-}
+    }
 
+#/

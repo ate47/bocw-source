@@ -154,7 +154,7 @@ function private function_57d4a011(insertion) {
                 z_pos = var_5199e69;
                 portal_vehicle.origin = (x_pos, y_pos, z_pos);
                 portal_vehicle.angle_step = angle;
-                angle = angle + step_size;
+                angle += step_size;
                 target = var_8a2c40d0.origin - portal_vehicle.origin;
                 target = vectornormalize(target);
                 angles = vectortoangles(target);
@@ -213,7 +213,7 @@ function private function_7bf9c38f(*reinserting) {
     if (isdefined(level.deathcircleindex)) {
         circleindex = level.deathcircleindex + 2;
     }
-    speed = speed / circleindex;
+    speed /= circleindex;
     self unlink();
     var_180a7b48 = self function_ec7cfdb();
     /#
@@ -393,29 +393,30 @@ function private function_8fc2a69e() {
     self clientfield::set("warpportalfx", 0);
 }
 
-// Namespace namespace_b9471dc1/namespace_b9471dc1
-// Params 1, eflags: 0x0
-// Checksum 0xb3d23fd9, Offset: 0x1a38
-// Size: 0x304
-function function_4910c182(insertion) {
-    /#
+/#
+
+    // Namespace namespace_b9471dc1/namespace_b9471dc1
+    // Params 1, eflags: 0x0
+    // Checksum 0xb3d23fd9, Offset: 0x1a38
+    // Size: 0x304
+    function function_4910c182(insertion) {
         assert(isdefined(insertion));
-        insertion clear(#"hash_60fcdd11812a0134");
-        insertion clear(#"hash_122f326d72f4c884");
-        function_a21d9dc();
+        insertion flag::clear(#"hash_60fcdd11812a0134");
+        insertion flag::clear(#"hash_122f326d72f4c884");
+        player_insertion::function_a21d9dc();
         insertion.players = function_a1ef346b();
-        level function_948ac812(insertion);
-        level thread function_1b105d5b(insertion, 2, 2, 5, 1);
+        level player_insertion::function_948ac812(insertion);
+        level thread player_insertion::function_1b105d5b(insertion, 2, 2, 5, 1);
         wait(2 + 0.1);
-        level thread function_85818e24("<unknown string>");
-        level thread function_a4deb676();
-        insertion set(#"hash_122f326d72f4c884");
-        insertion set(#"hash_60fcdd11812a0134");
-        insertion set(#"insertion_teleport_completed");
+        level thread globallogic_audio::function_85818e24("<unknown string>");
+        level thread player_insertion::function_a4deb676();
+        insertion flag::set(#"hash_122f326d72f4c884");
+        insertion flag::set(#"hash_60fcdd11812a0134");
+        insertion flag::set(#"insertion_teleport_completed");
         foreach (player in insertion.players) {
             player function_a25e421c();
         }
-        level wait_till_timeout(0.5, #"insertion_presentation_completed");
+        level flag::wait_till_timeout(0.5, #"insertion_presentation_completed");
         function_26fbfab4();
         var_990e3011 = 3;
         /#
@@ -426,6 +427,6 @@ function function_4910c182(insertion) {
         wait(var_990e3011);
         players = getplayers();
         players[0] function_adc8cff4();
-    #/
-}
+    }
 
+#/

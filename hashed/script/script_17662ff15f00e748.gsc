@@ -150,7 +150,7 @@ function function_d4a86caf() {
                 }
                 if (activate) {
                     function_54989f74(trap, 1);
-                    trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
+                    trap.var_eb9d64bb += 5000;
                     namespace_1e25ad94::debugmsg("Paging IN dragonhead trap at:" + trap.origin);
                 }
                 continue;
@@ -213,7 +213,7 @@ function function_b853a1c6() {
             self.trigger triggerenable(1);
             count = randomintrange(5, 12);
             while (isdefined(self.trigger) && count > 0) {
-                count = count - 0.25;
+                count -= 0.25;
                 wait(0.25);
             }
         }

@@ -147,16 +147,16 @@ function state_death_update(params) {
     self.vehcheckforpredictedcrash = 1;
     forward = anglestoforward(self.angles);
     forward_mag = randomfloatrange(0, 300);
-    forward_mag = forward_mag + math::sign(forward_mag) * 400;
-    forward = forward * forward_mag;
+    forward_mag += math::sign(forward_mag) * 400;
+    forward *= forward_mag;
     new_vel = forward + self.velocity * 0.75;
     ang_vel = self getangularvelocity();
     yaw_vel = randomfloatrange(0, 130) * math::sign(ang_vel[1]);
-    yaw_vel = yaw_vel + math::sign(yaw_vel) * 20;
+    yaw_vel += math::sign(yaw_vel) * 20;
     ang_vel = (randomfloatrange(-1, 1), yaw_vel, 0);
     roll_amount = abs(ang_vel[1]) / 150 * 30;
     if (ang_vel[1] > 0) {
-        roll_amount = roll_amount * -1;
+        roll_amount *= -1;
     }
     self.angles = (self.angles[0], self.angles[1], roll_amount);
     ang_vel = (ang_vel[0], ang_vel[1], roll_amount * 0.9);
@@ -762,7 +762,7 @@ function function_7afa9936(*eattacker, *damagetype, hitpoint, hitdirection, *hit
         sign = math::sign(vectordot(var_ba48a3f3, partname));
         yaw_vel = sign * randomfloatrange(100, 140);
         ang_vel = self getangularvelocity();
-        ang_vel = ang_vel + (randomfloatrange(-120, -100), yaw_vel, randomfloatrange(-100, 100));
+        ang_vel += (randomfloatrange(-120, -100), yaw_vel, randomfloatrange(-100, 100));
         self setangularvelocity(ang_vel);
         self thread function_3787ff5(8, 1, 0.8, hitlocationinfo, emped);
     }
@@ -913,7 +913,7 @@ function function_1e0d693b(goal, enemy) {
                 point._scoredebug[#"outofgoalanchor"].score = score;
                 point._scoredebug[#"outofgoalanchor"].scorename = "<unknown string>";
             #/
-            point.score = point.score + score;
+            point.score += score;
         }
         if (!point.visibility) {
             /#
@@ -926,7 +926,7 @@ function function_1e0d693b(goal, enemy) {
                 point._scoredebug[#"no visibility"].score = -5000;
                 point._scoredebug[#"no visibility"].scorename = "<unknown string>";
             #/
-            point.score = point.score + -5000;
+            point.score += -5000;
         }
         /#
             if (!isdefined(point._scoredebug)) {
@@ -938,7 +938,7 @@ function function_1e0d693b(goal, enemy) {
             point._scoredebug[#"engagementdist"].score = point.distawayfromengagementarea * -1;
             point._scoredebug[#"engagementdist"].scorename = "<unknown string>";
         #/
-        point.score = point.score + point.distawayfromengagementarea * -1;
+        point.score += point.distawayfromengagementarea * -1;
         /#
             if (!isdefined(point._scoredebug)) {
                 point._scoredebug = [];
@@ -949,7 +949,7 @@ function function_1e0d693b(goal, enemy) {
             point._scoredebug[#"hash_6c444b535ec20313"].score = mapfloat(0, prefereddistawayfromorigin, -5000, 0, point.disttoorigin2d);
             point._scoredebug[#"hash_6c444b535ec20313"].scorename = "<unknown string>";
         #/
-        point.score = point.score + mapfloat(0, prefereddistawayfromorigin, -5000, 0, point.disttoorigin2d);
+        point.score += mapfloat(0, prefereddistawayfromorigin, -5000, 0, point.disttoorigin2d);
         if (point.inclaimedlocation) {
             /#
                 if (!isdefined(point._scoredebug)) {
@@ -961,7 +961,7 @@ function function_1e0d693b(goal, enemy) {
                 point._scoredebug[#"inclaimedlocation"].score = -5000;
                 point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
             #/
-            point.score = point.score + -5000;
+            point.score += -5000;
         }
         distfrompreferredheight = abs(point.origin[2] - goalheight);
         if (distfrompreferredheight > var_20b5eeff) {
@@ -976,7 +976,7 @@ function function_1e0d693b(goal, enemy) {
                 point._scoredebug[#"height"].score = heightscore;
                 point._scoredebug[#"height"].scorename = "<unknown string>";
             #/
-            point.score = point.score + heightscore;
+            point.score += heightscore;
         }
         score = randomfloatrange(0, 80);
         /#
@@ -989,7 +989,7 @@ function function_1e0d693b(goal, enemy) {
             point._scoredebug[#"random"].score = score;
             point._scoredebug[#"random"].scorename = "<unknown string>";
         #/
-        point.score = point.score + score;
+        point.score += score;
     }
     if (queryresult.data.size > 0) {
         vehicle_ai::positionquery_postprocess_sortscore(queryresult);

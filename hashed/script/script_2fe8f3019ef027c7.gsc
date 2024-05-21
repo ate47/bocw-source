@@ -545,7 +545,7 @@ function private function_c8417113(entity) {
         var_c5eb6510 = min(getdvarfloat(#"hash_72328e4462f91c62", 300), distance(var_c302bfc5.origin, best_node.origin));
         dist = distance(entity.origin, best_node.origin);
         var_e9347624 = max(var_c5eb6510 - dist, 0);
-        var_7b5ed862 = var_7b5ed862 + vectornormalize(var_c302bfc5.origin - best_node.origin) * var_e9347624;
+        var_7b5ed862 += vectornormalize(var_c302bfc5.origin - best_node.origin) * var_e9347624;
     }
     if (isdefined(var_7b5ed862)) {
         var_47efca42 = function_e7f9bcfd(entity, var_7b5ed862);

@@ -209,7 +209,7 @@ function function_54993e2() {
     }
     if (!isdefined(var_d7eff26a)) {
         /#
-            if (any_player_in_noclip()) {
+            if (zm_devgui::any_player_in_noclip()) {
             }
         #/
         return false;

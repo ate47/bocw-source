@@ -83,7 +83,7 @@ function function_6736205c(var_638b775a = 0) {
     var_189ef5f2 = spawnstruct();
     v_forward = vecscale(vectornormalize(anglestoforward(self.angles)), 64);
     var_189ef5f2.origin = self.origin;
-    var_189ef5f2.origin = var_189ef5f2.origin + v_forward;
+    var_189ef5f2.origin += v_forward;
     switch (var_638b775a) {
     case 0:
         playfx("zm_weapons/fx9_fld_frost_blast_lvl0_3p", var_189ef5f2.origin);

@@ -148,7 +148,7 @@ function callback_vehicledamage(einflictor, eattacker, idamage, idflags, smeanso
         return;
     }
     if (!isdefined(vdir)) {
-        idflags = idflags | 4;
+        idflags |= 4;
     }
     self.idflags = idflags;
     self.idflagstime = gettime();
@@ -165,10 +165,10 @@ function callback_vehicledamage(einflictor, eattacker, idamage, idflags, smeanso
         }
     }
     if (smeansofdeath == "MOD_PROJECTILE" || smeansofdeath == "MOD_GRENADE") {
-        idamage = idamage * weapon.vehicleprojectiledamagescalar;
+        idamage *= weapon.vehicleprojectiledamagescalar;
     }
-    idamage = idamage * level.vehicledamagescalar;
-    idamage = idamage * self getvehdamagemultiplier(self.idflags, smeansofdeath, weapon, eattacker);
+    idamage *= level.vehicledamagescalar;
+    idamage *= self getvehdamagemultiplier(self.idflags, smeansofdeath, weapon, eattacker);
     if (isdefined(level.var_c31df7cf) && weapon === level.var_c31df7cf && weapons::isexplosivedamage(smeansofdeath) && isdefined(self.var_f22b9fe4) && self.var_f22b9fe4 > 0) {
         idamage = int(self.healthdefault / self.var_f22b9fe4);
     }
@@ -317,13 +317,13 @@ function callback_vehicleradiusdamage(einflictor, eattacker, idamage, finnerdama
     if (smeansofdeath == "MOD_PROJECTILE_SPLASH" || smeansofdeath == "MOD_GRENADE_SPLASH" || smeansofdeath == "MOD_EXPLOSIVE") {
         scalar = weapon.vehicleprojectilesplashdamagescalar;
         idamage = int(idamage * scalar);
-        finnerdamage = finnerdamage * scalar;
-        fouterdamage = fouterdamage * scalar;
+        finnerdamage *= scalar;
+        fouterdamage *= scalar;
         if (finnerdamage == 0) {
             return;
         }
     }
-    idamage = idamage * self getvehdamagemultiplier(self.idflags, smeansofdeath, weapon);
+    idamage *= self getvehdamagemultiplier(self.idflags, smeansofdeath, weapon);
     idamage = int(idamage);
     if (idamage == 0) {
         return;

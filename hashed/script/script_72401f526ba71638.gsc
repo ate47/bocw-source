@@ -459,7 +459,7 @@ function private function_f832427c(*s_params) {
             if (is_true(self.var_d0de7f41) || is_true(self.var_7fb7de87)) {
                 return;
             }
-            if (is_true(e_player zombie_utility::function_73061b82(#"zombie_insta_kill")) || is_true(zombie_utility::function_6403cf83(#"zombie_insta_kill", e_player.team))) {
+            if (is_true(e_player zombie_utility::get_zombie_var_player(#"zombie_insta_kill")) || is_true(zombie_utility::get_zombie_var_team(#"zombie_insta_kill", e_player.team))) {
                 return;
             }
             if (is_true(e_player.var_e84418c4)) {
@@ -468,13 +468,13 @@ function private function_f832427c(*s_params) {
             if (e_player isremotecontrolling()) {
                 return;
             }
-            e_player.var_8da24ed0 = e_player.var_8da24ed0 + 1;
+            e_player.var_8da24ed0 += 1;
             if ((is_true(e_player.var_28107825) || e_player flag::get(#"hash_35735a804a34da04")) && isdefined(e_player.var_67aa3392)) {
                 e_player.var_67aa3392.var_5b5d9768 = e_player.var_8da24ed0;
             }
             var_7df0eb27 = e_player.var_fc8023b4;
             if (e_player namespace_e86ffa8::function_efb6dedf(2)) {
-                var_7df0eb27 = var_7df0eb27 - int(var_7df0eb27 * 0.2);
+                var_7df0eb27 -= int(var_7df0eb27 * 0.2);
             }
             e_player function_fe8d21ed(var_7df0eb27);
             if (isplayer(e_player)) {
@@ -486,13 +486,13 @@ function private function_f832427c(*s_params) {
     }
     if (isplayer(self.attacker) && self.damageweapon.name === #"hash_6a4dd5ed56f6e3f6") {
         e_player = self.attacker;
-        e_player.var_8da24ed0 = e_player.var_8da24ed0 + 1;
+        e_player.var_8da24ed0 += 1;
         if ((is_true(e_player.var_28107825) || e_player flag::get(#"hash_35735a804a34da04")) && isdefined(e_player.var_67aa3392)) {
             e_player.var_67aa3392.var_5b5d9768 = e_player.var_8da24ed0;
         }
         var_7df0eb27 = e_player.var_fc8023b4;
         if (e_player namespace_e86ffa8::function_efb6dedf(2)) {
-            var_7df0eb27 = var_7df0eb27 - int(var_7df0eb27 * 0.2);
+            var_7df0eb27 -= int(var_7df0eb27 * 0.2);
         }
         e_player function_fe8d21ed(var_7df0eb27);
         if (isplayer(e_player)) {
@@ -654,9 +654,9 @@ function actor_damage_override(*inflictor, attacker, damage, *flags, *meansofdea
                 var_8214ea7f = var_3889eb68.var_c91dca7e;
             }
         }
-        boneindex = boneindex + boneindex * var_8214ea7f;
+        boneindex += boneindex * var_8214ea7f;
         if (isdefined(self.var_95ee6823)) {
-            boneindex = boneindex * self.var_95ee6823;
+            boneindex *= self.var_95ee6823;
         }
     }
     return int(boneindex);
@@ -783,82 +783,81 @@ function function_841bae20(var_dc307ae2) {
     return undefined;
 }
 
-// Namespace namespace_1b527536/namespace_1b527536
-// Params 0, eflags: 0x0
-// Checksum 0xd95ba257, Offset: 0x3618
-// Size: 0xd4c
-function function_f793af68() {
-    /#
+/#
+
+    // Namespace namespace_1b527536/namespace_1b527536
+    // Params 0, eflags: 0x0
+    // Checksum 0xd95ba257, Offset: 0x3618
+    // Size: 0xd4c
+    function function_f793af68() {
         level endon(#"game_ended");
         setdvar(#"hash_6ace867d48136ede", "<unknown string>");
         setdvar(#"hash_31bd3f1a2ffb2b7", "<unknown string>");
         setdvar(#"hash_78ea4420d95a6213", "<unknown string>");
         setdvar(#"hash_3ce5890428b398f1", "<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_1_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_2_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_3_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_4_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_5_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_1_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_2_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_3_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_4_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_5_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_1_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_2_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_3_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_4_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_5_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_1_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_2_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_3_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_4_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_5_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_1_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_2_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_3_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_4_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_5_item_sr") + "<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_1_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_2_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_3_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_4_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_5_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_1_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_2_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_3_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_4_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_5_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_1_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_2_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_3_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_4_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_5_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_1_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_2_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_3_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_4_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_5_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_1_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_2_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_3_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_4_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_5_item_sr") + "<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
         function_cd140ee9(#"hash_6ace867d48136ede", &function_35216077);
         function_cd140ee9(#"hash_31bd3f1a2ffb2b7", &function_35216077);
         function_cd140ee9(#"hash_78ea4420d95a6213", &function_35216077);
         function_cd140ee9(#"hash_3ce5890428b398f1", &function_35216077);
-    #/
-}
+    }
 
-// Namespace namespace_1b527536/namespace_1b527536
-// Params 1, eflags: 0x0
-// Checksum 0x4fc0eb6c, Offset: 0x4370
-// Size: 0x38c
-function function_35216077(params) {
-    /#
+    // Namespace namespace_1b527536/namespace_1b527536
+    // Params 1, eflags: 0x0
+    // Checksum 0x4fc0eb6c, Offset: 0x4370
+    // Size: 0x38c
+    function function_35216077(params) {
         if (params.value === "<unknown string>") {
             return;
         }
@@ -896,6 +895,6 @@ function function_35216077(params) {
         setdvar(#"hash_6ace867d48136ede", "<unknown string>");
         setdvar(#"hash_31bd3f1a2ffb2b7", "<unknown string>");
         setdvar(#"hash_78ea4420d95a6213", "<unknown string>");
-    #/
-}
+    }
 
+#/

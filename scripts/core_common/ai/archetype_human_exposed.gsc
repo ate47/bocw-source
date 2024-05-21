@@ -118,7 +118,7 @@ function private exposedshootupdate(entity) {
         entity.var_a4f84a7f = entity.lastshottime;
     }
     if (isdefined(entity.enemy) && entity cansee(entity.enemy)) {
-        entity.var_b636f23b = entity.var_b636f23b + 0.05;
+        entity.var_b636f23b += 0.05;
     } else {
         entity.var_b636f23b = 0;
     }

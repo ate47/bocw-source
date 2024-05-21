@@ -98,12 +98,13 @@ function getvalueinrange(value, minvalue, maxvalue) {
     return value;
 }
 
-// Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x0
-// Checksum 0x98fe7a89, Offset: 0x3f0
-// Size: 0x2a0
-function assertproperplacement() {
-    /#
+/#
+
+    // Namespace globallogic_utils/globallogic_utils
+    // Params 0, eflags: 0x0
+    // Checksum 0x98fe7a89, Offset: 0x3f0
+    // Size: 0x2a0
+    function assertproperplacement() {
         numplayers = level.placement[#"all"].size;
         if (level.teambased) {
             for (i = 0; i < numplayers - 1; i++) {
@@ -130,8 +131,9 @@ function assertproperplacement() {
                 break;
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace globallogic_utils/globallogic_utils
 // Params 1, eflags: 0x2 linked
@@ -156,21 +158,21 @@ function playtickingsound(gametype_tick_sound) {
     while (true) {
         self playsound(gametype_tick_sound);
         if (time > 10) {
-            time = time - 1;
+            time -= 1;
             wait(1);
             continue;
         }
         if (time > 4) {
-            time = time - 0.5;
+            time -= 0.5;
             wait(0.5);
             continue;
         }
         if (time > 1) {
-            time = time - 0.4;
+            time -= 0.4;
             wait(0.4);
             continue;
         }
-        time = time - 0.3;
+        time -= 0.3;
         wait(0.3);
     }
 }
@@ -193,13 +195,13 @@ function gametimer() {
     level.starttime = gettime();
     level.discardtime = 0;
     if (isdefined(game.roundmillisecondsalreadypassed)) {
-        level.starttime = level.starttime - game.roundmillisecondsalreadypassed;
+        level.starttime -= game.roundmillisecondsalreadypassed;
         game.roundmillisecondsalreadypassed = undefined;
     }
     prevtime = gettime();
     while (game.state == "playing") {
         if (!level.timerstopped) {
-            game.timepassed = game.timepassed + gettime() - prevtime;
+            game.timepassed += gettime() - prevtime;
         }
         prevtime = gettime();
         wait(1);
@@ -241,7 +243,7 @@ function resumetimer() {
         return;
     }
     level.timerstopped = 0;
-    level.discardtime = level.discardtime + gettime() - level.timerpausetime;
+    level.discardtime += gettime() - level.timerpausetime;
 }
 
 // Namespace globallogic_utils/globallogic_utils
@@ -373,18 +375,20 @@ function gethitlocheight(shitloc) {
     return 48;
 }
 
-// Namespace globallogic_utils/globallogic_utils
-// Params 2, eflags: 0x0
-// Checksum 0x30f46fb3, Offset: 0xe80
-// Size: 0x5a
-function debugline(start, end) {
-    /#
-        for (i = 0; i < 50; i++) {
+/#
+
+    // Namespace globallogic_utils/globallogic_utils
+    // Params 2, eflags: 0x0
+    // Checksum 0x30f46fb3, Offset: 0xe80
+    // Size: 0x5a
+    function debugline(start, end) {
+                for (i = 0; i < 50; i++) {
             line(start, end);
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace globallogic_utils/globallogic_utils
 // Params 2, eflags: 0x2 linked

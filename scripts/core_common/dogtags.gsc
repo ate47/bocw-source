@@ -145,7 +145,7 @@ function spawn_dog_tag(victim, attacker, on_use_function, objectives_for_attacke
     baseoffset = (0, 0, 14);
     pos = victim.origin + baseoffset;
     if (isvec(posoffset)) {
-        pos = pos + posoffset;
+        pos += posoffset;
     }
     dogtag.origin = pos;
     dogtag.curorigin = pos;

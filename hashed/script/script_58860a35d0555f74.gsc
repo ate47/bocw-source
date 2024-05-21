@@ -157,12 +157,13 @@ function private function_83407b23(v_destination) {
     return false;
 }
 
-// Namespace namespace_1fd59e39/namespace_1fd59e39
-// Params 0, eflags: 0x4
-// Checksum 0xed949124, Offset: 0xc88
-// Size: 0x152
-function private function_e41cc86b() {
-    /#
+/#
+
+    // Namespace namespace_1fd59e39/namespace_1fd59e39
+    // Params 0, eflags: 0x4
+    // Checksum 0xed949124, Offset: 0xc88
+    // Size: 0x152
+    function private function_e41cc86b() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         while (true) {
@@ -176,8 +177,9 @@ function private function_e41cc86b() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_1fd59e39/namespace_1fd59e39
 // Params 0, eflags: 0x2 linked

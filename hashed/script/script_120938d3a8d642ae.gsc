@@ -61,7 +61,7 @@ function private function_5504a588(var_a744e12b, position, forward, time) {
     lifetime = (isdefined(var_a744e12b.var_20fad2ac) ? var_a744e12b.var_20fad2ac : 0) * time + (isdefined(var_a744e12b.var_4229702e) ? var_a744e12b.var_4229702e : 0);
     if ((isdefined(var_a744e12b.var_e8611768) ? var_a744e12b.var_e8611768 : 0) > 0) {
         wait(var_a744e12b.var_e8611768);
-        lifetime = lifetime - var_a744e12b.var_e8611768;
+        lifetime -= var_a744e12b.var_e8611768;
     }
     var_a8fdf55a = position + forward * (isdefined(var_a744e12b.var_8858c944) ? var_a744e12b.var_8858c944 : 0) + (0, 0, isdefined(var_a744e12b.var_88ea53cd) ? var_a744e12b.var_88ea53cd : 0);
     badplace_cylinder("", lifetime, var_a8fdf55a, isdefined(var_a744e12b.var_68d82a10) ? var_a744e12b.var_68d82a10 : 0, isdefined(var_a744e12b.var_e981f9fa) ? var_a744e12b.var_e981f9fa : 0, #"any");
@@ -74,7 +74,7 @@ function private function_5504a588(var_a744e12b, position, forward, time) {
 function private function_e13068cd(damage_data, var_1005269b, position, forward, var_9861703a) {
     if (isdefined(var_1005269b.delay)) {
         wait(var_1005269b.delay);
-        var_9861703a = var_9861703a - var_1005269b.delay;
+        var_9861703a -= var_1005269b.delay;
     }
     var_11098775 = position + forward * (isdefined(var_1005269b.var_a744e12b[0].forward_offset) ? var_1005269b.var_a744e12b[0].forward_offset : 0) + (0, 0, isdefined(var_1005269b.var_a744e12b[0].z_offset) ? var_1005269b.var_a744e12b[0].z_offset : 0);
     cone_angle = isdefined(var_1005269b.var_a744e12b[0].cone_angle) ? var_1005269b.var_a744e12b[0].cone_angle : 0;
@@ -99,7 +99,7 @@ function private function_e13068cd(damage_data, var_1005269b, position, forward,
         var_9b091486 = var_c95e4493;
         end_origin = position + forward * (isdefined(var_a744e12b.forward_offset) ? var_a744e12b.forward_offset : 0) + (0, 0, isdefined(var_a744e12b.z_offset) ? var_a744e12b.z_offset : 0);
         while (time <= end_time) {
-            time = time + float(function_60d95f53()) / 1000;
+            time += float(function_60d95f53()) / 1000;
             if (var_a744e12b.lerp_time > time) {
                 fraction = time / var_a744e12b.lerp_time;
                 var_11098775 = lerpvector(start_origin, end_origin, fraction);
@@ -149,7 +149,7 @@ function private function_beee2d27(damage_data, var_11098775, forward, cone_angl
             if (dist_to_target < var_c95e4493 * var_f869e2a9) {
                 damage_amount = damage_data.var_447ecba3;
                 if (isai(target)) {
-                    damage_amount = damage_amount * damage_data.var_875147a8;
+                    damage_amount *= damage_data.var_875147a8;
                 }
                 target dodamage(damage_amount, var_db7ae062, undefined, undefined, undefined, damage_data.damage_mod);
                 self.var_b3bd4a36[target getentitynumber()] = gettime() + damage_data.damage_interval;
@@ -165,7 +165,7 @@ function private function_beee2d27(damage_data, var_11098775, forward, cone_angl
 function private function_3db443e5(damage_data, var_1005269b, position, forward, var_9861703a) {
     if (isdefined(var_1005269b.delay)) {
         wait(var_1005269b.delay);
-        var_9861703a = var_9861703a - var_1005269b.delay;
+        var_9861703a -= var_1005269b.delay;
     }
     sphere_origin = position + forward * (isdefined(var_1005269b.var_a744e12b[0].forward_offset) ? var_1005269b.var_a744e12b[0].forward_offset : 0) + (0, 0, isdefined(var_1005269b.var_a744e12b[0].z_offset) ? var_1005269b.var_a744e12b[0].z_offset : 0);
     sphere_radius = isdefined(var_1005269b.var_a744e12b[0].sphere_radius) ? var_1005269b.var_a744e12b[0].sphere_radius : 0;
@@ -185,7 +185,7 @@ function private function_3db443e5(damage_data, var_1005269b, position, forward,
         var_10be2386 = sphere_radius;
         end_origin = position + forward * (isdefined(var_a744e12b.forward_offset) ? var_a744e12b.forward_offset : 0) + (0, 0, isdefined(var_a744e12b.z_offset) ? var_a744e12b.z_offset : 0);
         while (time <= end_time) {
-            time = time + float(function_60d95f53()) / 1000;
+            time += float(function_60d95f53()) / 1000;
             if (var_a744e12b.lerp_time > time) {
                 fraction = time / var_a744e12b.lerp_time;
                 sphere_origin = lerpvector(start_origin, end_origin, fraction);
@@ -217,7 +217,7 @@ function private function_c89e7444(damage_data, sphere_origin, sphere_radius) {
         if (issentient(target) && (!isdefined(self.var_b3bd4a36[target getentitynumber()]) || self.var_b3bd4a36[target getentitynumber()] < gettime())) {
             damage_amount = damage_data.var_447ecba3;
             if (isai(target)) {
-                damage_amount = damage_amount * damage_data.var_875147a8;
+                damage_amount *= damage_data.var_875147a8;
             }
             target dodamage(damage_amount, sphere_origin, undefined, undefined, undefined, damage_data.damage_mod);
             self.var_b3bd4a36[target getentitynumber()] = gettime() + damage_data.damage_interval;

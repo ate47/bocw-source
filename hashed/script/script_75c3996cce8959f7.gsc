@@ -123,13 +123,13 @@ function function_ce6420c(localclientnum) {
             yaw = self.doa.var_4aa817ed.degrees;
             var_9756b1d4 = abs(yaw - lastyaw);
             if (var_9756b1d4 <= 1) {
-                var_183aaf3c = var_183aaf3c + var_f3e30707;
+                var_183aaf3c += var_f3e30707;
             } else {
                 var_183aaf3c = 0;
                 self serverfield::set("rstick_input_inc", 0);
             }
             if (var_183aaf3c > 1) {
-                var_183aaf3c = var_183aaf3c - 1;
+                var_183aaf3c -= 1;
                 self serverfield::set("rstick_input_inc", latch);
                 latch = latch == 1 ? 2 : 1;
             }
@@ -169,13 +169,13 @@ function function_4fa1ee4f(localclientnum) {
             yaw = self.doa.var_c8b6bcb0.degrees;
             var_9756b1d4 = abs(yaw - lastyaw);
             if (var_9756b1d4 <= 1) {
-                var_183aaf3c = var_183aaf3c + var_f3e30707;
+                var_183aaf3c += var_f3e30707;
             } else {
                 var_183aaf3c = 0;
                 self serverfield::set("lstick_input_inc", 0);
             }
             if (var_183aaf3c > 1) {
-                var_183aaf3c = var_183aaf3c - 1;
+                var_183aaf3c -= 1;
                 self serverfield::set("lstick_input_inc", latch);
                 latch = latch == 1 ? 2 : 1;
             }
@@ -259,20 +259,20 @@ function function_fcc90081(localclientnum) {
 // Size: 0x14c
 function function_4d692cc4(localclientnum, mapping = "zombietron") {
     /#
-        debugmsg("<unknown string>" + (isdefined(self.name) ? self.name : "<unknown string>") + "<unknown string>" + mapping + "<unknown string>" + (islocalplayer(self) ? "<unknown string>" : "<unknown string>"));
+        namespace_1e25ad94::debugmsg("<unknown string>" + (isdefined(self.name) ? self.name : "<unknown string>") + "<unknown string>" + mapping + "<unknown string>" + (islocalplayer(self) ? "<unknown string>" : "<unknown string>"));
     #/
     if (is_true(level.doa.var_318aa67a)) {
         mapping = "default";
     }
     if (islocalplayer(self)) {
         /#
-            debugmsg("<unknown string>" + localclientnum);
+            namespace_1e25ad94::debugmsg("<unknown string>" + localclientnum);
         #/
         forcegamemodemappings(localclientnum, mapping);
         return;
     }
     /#
-        debugmsg("<unknown string>");
+        namespace_1e25ad94::debugmsg("<unknown string>");
     #/
 }
 

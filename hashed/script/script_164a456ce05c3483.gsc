@@ -179,8 +179,8 @@ function function_c5f9ea85() {
         if (var_b4cd1e7 && self.doa.var_e940d370 > 60) {
             continue;
         }
-        self.doa.var_d362196a = self.doa.var_d362196a + var_e984c3d6;
-        self.doa.var_e46a9e57.var_e519217b = self.doa.var_e46a9e57.var_e519217b + var_e984c3d6;
+        self.doa.var_d362196a += var_e984c3d6;
+        self.doa.var_e46a9e57.var_e519217b += var_e984c3d6;
     }
 }
 
@@ -200,7 +200,7 @@ function function_1782c6ad() {
     thresh = sqr(0.1);
     while (true) {
         wait(var_f3e30707);
-        self.doa.var_e940d370 = self.doa.var_e940d370 + var_f3e30707;
+        self.doa.var_e940d370 += var_f3e30707;
         if (self function_8bc54983()) {
             continue;
         }
@@ -290,17 +290,17 @@ function function_bb0408ca() {
         }
         time = gettime();
         if (time - self.doa.var_e45f072b > 60000) {
-            self.doa.var_8f47d882 = self.doa.var_8f47d882 + var_f3e30707 + var_b3b05c12;
+            self.doa.var_8f47d882 += var_f3e30707 + var_b3b05c12;
         } else if (self.doa.var_7f8d38c2 < 120) {
             self.doa.var_8f47d882 = 0;
         } else {
-            self.doa.var_8f47d882 = self.doa.var_8f47d882 + var_f3e30707 + var_b3b05c12;
-            self.doa.var_8f47d882 = self.doa.var_8f47d882 + int(self.doa.var_7f8d38c2 / 100);
+            self.doa.var_8f47d882 += var_f3e30707 + var_b3b05c12;
+            self.doa.var_8f47d882 += int(self.doa.var_7f8d38c2 / 100);
         }
         /#
             if (lastlevel < var_af82a000 && self.doa.var_8f47d882 >= var_af82a000) {
                 self iprintlnbold(#"hash_59bd89e170a924ac");
-                debugmsg("zombietron_boxing_glove" + self.name);
+                namespace_1e25ad94::debugmsg("zombietron_boxing_glove" + self.name);
             }
         #/
         if (self.doa.var_8f47d882 > var_bc153d9a) {
@@ -311,7 +311,7 @@ function function_bb0408ca() {
                 if (!isdefined(var_9a24b67c.var_7411a081)) {
                     var_9a24b67c.var_7411a081 = 0;
                 }
-                var_9a24b67c.var_7411a081 = var_9a24b67c.var_7411a081 + 1;
+                var_9a24b67c.var_7411a081 += 1;
                 level.var_73ffa220[self.name] = var_9a24b67c;
                 var_9ebc9df6.var_502dc598 = var_9a24b67c.var_7411a081;
             }
@@ -505,7 +505,7 @@ function function_83fe843d(player) {
         i = player.entnum;
     }
     if (is_true(level.var_4ed7ab1b)) {
-        i = i % 4;
+        i %= 4;
     }
     switch (i) {
     case 0:
@@ -709,12 +709,13 @@ function function_aab26933(origin, var_af6dcc26 = 1024) {
     return function_b9e8248(origin, var_af6dcc26).size;
 }
 
-// Namespace namespace_7f5aeb59/namespace_7f5aeb59
-// Params 0, eflags: 0x2 linked
-// Checksum 0xe622f24c, Offset: 0x3078
-// Size: 0xd8
-function function_19616199() {
-    /#
+/#
+
+    // Namespace namespace_7f5aeb59/namespace_7f5aeb59
+    // Params 0, eflags: 0x2 linked
+    // Checksum 0xe622f24c, Offset: 0x3078
+    // Size: 0xd8
+    function function_19616199() {
         self endon(#"disconnect");
         level endon(#"game_over");
         self notify("<unknown string>");
@@ -722,11 +723,12 @@ function function_19616199() {
         while (is_true(level.doa.var_2e491399)) {
             waitframe(1);
             if (self getinvulnerability() || is_true(self.doa.var_221ef439)) {
-                level thread function_e8f2d12c(self.origin, 60, 72, 1, (1, 0, 0));
+                level thread namespace_1e25ad94::function_e8f2d12c(self.origin, 60, 72, 1, (1, 0, 0));
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_7f5aeb59/namespace_7f5aeb59
 // Params 2, eflags: 0x2 linked
@@ -987,8 +989,8 @@ function function_a8b57c52(var_2784b779, angles, ignore, var_b498e4b0) {
         }
         player setorigin(var_2784b779);
         player setplayerangles(angles);
-        var_2784b779 = var_2784b779 + offset;
-        offset = offset * -1;
+        var_2784b779 += offset;
+        offset *= -1;
     }
 }
 
@@ -1003,70 +1005,70 @@ function function_c0310e2a() {
         }
         while (true) {
             if (self stancebuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self fragbuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self reloadbuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self secondaryoffhandbuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self inventorybuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self offhandspecialbuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self weaponswitchbuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self vehiclemoveupbuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self actionbuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self jumpbuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self sprintbuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self meleebuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self throwbuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self adsbuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self actionslotfourbuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self actionslotthreebuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self actionslottwobuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self actionslotonebuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self attackbuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self boostbuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self changeseatbuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             if (self usebuttonpressed()) {
-                debugmsg("<unknown string>");
+                namespace_1e25ad94::debugmsg("<unknown string>");
             }
             waitframe(1);
         }
@@ -1214,11 +1216,11 @@ function function_ebcb2cca() {
     level endon(#"game_over");
     rate = 2;
     if (self namespace_1c2a96f9::function_b01c3b20()) {
-        rate = rate + 2;
+        rate += 2;
     }
     while (isdefined(self)) {
         if (self.health < self.maxhealth && !is_true(self.doa.respawning)) {
-            self.health = self.health + rate;
+            self.health += rate;
             if (self.health > self.maxhealth) {
                 self.health = self.maxhealth;
             }
@@ -1270,10 +1272,10 @@ function function_f8645db3(var_370ac26d, var_2f0c0007 = 0) {
             if (var_b4cd1e7 && player.doa.var_e940d370 > 60) {
                 continue;
             }
-            player.doa.var_370ac26d = player.doa.var_370ac26d + var_370ac26d;
+            player.doa.var_370ac26d += var_370ac26d;
             player addrankxpvalue("wave_end_xp", var_370ac26d, 4);
-            player.doa.var_d362196a = player.doa.var_d362196a + var_2f0c0007;
-            player.doa.var_e46a9e57.var_e519217b = player.doa.var_e46a9e57.var_e519217b + var_2f0c0007;
+            player.doa.var_d362196a += var_2f0c0007;
+            player.doa.var_e46a9e57.var_e519217b += var_2f0c0007;
             player luinotifyevent(#"hash_3e6dd0ad7b864154", 1, var_370ac26d);
         }
     }
@@ -1296,7 +1298,7 @@ function function_67f054d7(duration = 2) {
     }
     while (duration > 0) {
         waitframe(1);
-        duration = duration - float(function_60d95f53()) / 1000;
+        duration -= float(function_60d95f53()) / 1000;
         namespace_ec06fe4a::function_445bad70(1);
     }
     util::wait_network_frame();
@@ -1471,16 +1473,17 @@ function laststand_enable_player_weapons() {
     self namespace_41cb996::function_6c4d9896(self.doa.var_ed8fde10);
 }
 
-// Namespace namespace_7f5aeb59/namespace_7f5aeb59
-// Params 1, eflags: 0x0
-// Checksum 0x46bb8285, Offset: 0x6070
-// Size: 0x1c4
-function function_884143e(attacker) {
-    /#
+/#
+
+    // Namespace namespace_7f5aeb59/namespace_7f5aeb59
+    // Params 1, eflags: 0x0
+    // Checksum 0x46bb8285, Offset: 0x6070
+    // Size: 0x1c4
+    function function_884143e(attacker) {
         if (isdefined(attacker)) {
-            level thread debugcircle(attacker.origin + (0, 0, 12), 40, 10, (1, 0, 0));
-            level thread debugline(self.origin + (0, 0, 12), attacker.origin + (0, 0, 12), 10, (1, 0, 0));
-            attacker thread debugorigin(10, 24, (1, 0, 0));
+            level thread namespace_1e25ad94::debugcircle(attacker.origin + (0, 0, 12), 40, 10, (1, 0, 0));
+            level thread namespace_1e25ad94::debugline(self.origin + (0, 0, 12), attacker.origin + (0, 0, 12), 10, (1, 0, 0));
+            attacker thread namespace_1e25ad94::debugorigin(10, 24, (1, 0, 0));
             if (isdefined(attacker.zombie_type)) {
                 text = attacker.zombie_type;
             } else if (isdefined(attacker.var_fd5301f9)) {
@@ -1494,10 +1497,11 @@ function function_884143e(attacker) {
             } else {
                 text = "<unknown string>";
             }
-            level thread function_75ebaff2(text, 10, attacker);
+            level thread namespace_1e25ad94::function_75ebaff2(text, 10, attacker);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_7f5aeb59/namespace_7f5aeb59
 // Params 1, eflags: 0x2 linked
@@ -1725,7 +1729,7 @@ function function_a74228bc(value = 450) {
     self notify("2478a2fd5b5b309f");
     self endon("2478a2fd5b5b309f");
     self endon(#"disconnect");
-    self.doa.var_9ff62c1c = self.doa.var_9ff62c1c + value;
+    self.doa.var_9ff62c1c += value;
     var_60323adb = 6;
     while (self.doa.var_9ff62c1c > 0) {
         waitframe(1);

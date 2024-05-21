@@ -39,12 +39,13 @@ function localplayer_postfx_bundle_init(*localclientnum) {
     #/
 }
 
-// Namespace postfx/postfx_shared
-// Params 0, eflags: 0x0
-// Checksum 0x9efffb61, Offset: 0x1b0
-// Size: 0x210
-function postfxbundledebuglisten() {
-    /#
+/#
+
+    // Namespace postfx/postfx_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x9efffb61, Offset: 0x1b0
+    // Size: 0x210
+    function postfxbundledebuglisten() {
         self endon(#"death");
         setdvar(#"scr_play_postfx_bundle", "<unknown string>");
         setdvar(#"scr_stop_postfx_bundle", "<unknown string>");
@@ -67,15 +68,13 @@ function postfxbundledebuglisten() {
             }
             wait(0.5);
         }
-    #/
-}
+    }
 
-// Namespace postfx/postfx_shared
-// Params 0, eflags: 0x0
-// Checksum 0x64be4111, Offset: 0x3c8
-// Size: 0x2ae
-function function_764eb053() {
-    /#
+    // Namespace postfx/postfx_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x64be4111, Offset: 0x3c8
+    // Size: 0x2ae
+    function function_764eb053() {
         self endon(#"death");
         var_986c8888 = 0;
         var_4828f60f = 0;
@@ -89,7 +88,7 @@ function function_764eb053() {
                 if (showmodel > 0) {
                     if (!isdefined(ent)) {
                         newspawn = 1;
-                        ent = spawn_model(self.localclientnum, "<unknown string>");
+                        ent = util::spawn_model(self.localclientnum, "<unknown string>");
                     }
                 } else if (var_986c8888 > 0) {
                     if (isdefined(ent)) {
@@ -119,8 +118,9 @@ function function_764eb053() {
             var_4828f60f = showviewmodel;
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace postfx/postfx_shared
 // Params 1, eflags: 0x2 linked

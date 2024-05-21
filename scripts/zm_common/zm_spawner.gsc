@@ -72,12 +72,13 @@ function init() {
     #/
 }
 
-// Namespace zm_spawner/zm_spawner
-// Params 0, eflags: 0x0
-// Checksum 0xb3ba3fe, Offset: 0xa10
-// Size: 0x43a
-function debug_show_exterior_goals() {
-    /#
+/#
+
+    // Namespace zm_spawner/zm_spawner
+    // Params 0, eflags: 0x0
+    // Checksum 0xb3ba3fe, Offset: 0xa10
+    // Size: 0x43a
+    function debug_show_exterior_goals() {
         while (true) {
             if (is_true(level.toggle_show_exterior_goals)) {
                 color = (1, 1, 1);
@@ -113,8 +114,9 @@ function debug_show_exterior_goals() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_spawner/zm_spawner
 // Params 1, eflags: 0x2 linked
@@ -286,7 +288,7 @@ function zombie_damage_failsafe() {
         v_starting_origin = self.enemy.origin;
         var_f2ca854b = self.enemy.health;
         var_65a69eba = undefined;
-        for (var_f3a1b629 = 0; isalive(self.enemy) && isplayer(self.enemy) && e_enemy == self.enemy && self istouching(self.enemy) && !self.enemy laststand::player_is_in_laststand(); var_f3a1b629 = var_f3a1b629 + 0.5) {
+        for (var_f3a1b629 = 0; isalive(self.enemy) && isplayer(self.enemy) && e_enemy == self.enemy && self istouching(self.enemy) && !self.enemy laststand::player_is_in_laststand(); var_f3a1b629 += 0.5) {
             if (distancesquared(v_starting_origin, self.enemy.origin) > 60 * 60) {
                 break;
             }
@@ -355,7 +357,7 @@ function zombie_think() {
     self.find_flesh_struct_string = find_flesh_struct_string;
     /#
         self.backupnode = self.first_node;
-        self thread wait_for_puppet_pickup();
+        self thread zm_puppet::wait_for_puppet_pickup();
     #/
     self setgoal(self.origin);
     if (!is_true(self.start_inert)) {
@@ -428,7 +430,7 @@ function zombie_assure_node() {
                 /#
                     self zombie_history("<unknown string>" + self.entrance_nodes[i].origin);
                     println("<unknown string>" + self.origin + "<unknown string>" + self.entrance_nodes[i].origin);
-                    level thread draw_line_ent_to_pos(self, self.entrance_nodes[i].origin, "<unknown string>");
+                    level thread zm_utility::draw_line_ent_to_pos(self, self.entrance_nodes[i].origin, "<unknown string>");
                 #/
                 self.first_node = self.entrance_nodes[i];
                 self setgoal(self.entrance_nodes[i].origin);
@@ -446,7 +448,7 @@ function zombie_assure_node() {
                 /#
                     self zombie_history("<unknown string>" + self.entrance_nodes[i].origin);
                     println("<unknown string>" + self.origin + "<unknown string>" + self.entrance_nodes[i].origin);
-                    level thread draw_line_ent_to_pos(self, self.entrance_nodes[i].origin, "<unknown string>");
+                    level thread zm_utility::draw_line_ent_to_pos(self, self.entrance_nodes[i].origin, "<unknown string>");
                 #/
                 self.first_node = self.entrance_nodes[i];
                 self setgoal(self.entrance_nodes[i].origin);
@@ -619,7 +621,7 @@ function get_attack_spot(node) {
             index = val;
         }
     #/
-    self.attacking_node = node;
+    self.601 = node;
     self.attacking_spot_index = index;
     node.attack_spots_taken[index] = 1;
     self.attacking_spot = node.attack_spots[index];
@@ -1150,13 +1152,17 @@ function player_using_hi_score_weapon(player) {
     return false;
 }
 
-// Namespace zm_spawner/zm_spawner
-// Params 1, eflags: 0x0
-// Checksum 0xd8e45110, Offset: 0x4bf8
-// Size: 0x2c
-function register_zombie_damage_callback(*func) {
-    assertmsg("<unknown string>");
-}
+/#
+
+    // Namespace zm_spawner/zm_spawner
+    // Params 1, eflags: 0x0
+    // Checksum 0xd8e45110, Offset: 0x4bf8
+    // Size: 0x2c
+    function register_zombie_damage_callback(*func) {
+        assertmsg("<unknown string>");
+    }
+
+#/
 
 // Namespace zm_spawner/zm_spawner
 // Params 3, eflags: 0x0
@@ -1371,7 +1377,7 @@ function zombie_death_event(zombie) {
         return;
     }
     if (isplayer(attacker) && isdefined(attacker.n_health_on_kill)) {
-        attacker.health = attacker.health + attacker.n_health_on_kill;
+        attacker.health += attacker.n_health_on_kill;
         if (attacker.health >= attacker.maxhealth) {
             attacker zm_utility::set_max_health(1);
         }
@@ -1382,7 +1388,7 @@ function zombie_death_event(zombie) {
                 continue;
             }
             if (isdefined(player.n_health_on_kill)) {
-                player.health = player.health + player.n_health_on_kill;
+                player.health += player.n_health_on_kill;
                 if (player.health >= player.maxhealth) {
                     player zm_utility::set_max_health(1);
                 }
@@ -1495,18 +1501,20 @@ function attractors_generated_listener() {
     self.zombie_path_timer = 0;
 }
 
-// Namespace zm_spawner/zm_spawner
-// Params 1, eflags: 0x0
-// Checksum 0xa2c1b545, Offset: 0x64e8
-// Size: 0x58
-function zombie_history(msg) {
-    /#
+/#
+
+    // Namespace zm_spawner/zm_spawner
+    // Params 1, eflags: 0x0
+    // Checksum 0xa2c1b545, Offset: 0x64e8
+    // Size: 0x58
+    function zombie_history(msg) {
         if (!isdefined(self.zombie_history) || 32 <= self.zombie_history.size) {
             self.zombie_history = [];
         }
         self.zombie_history[self.zombie_history.size] = msg;
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_spawner/zm_spawner
 // Params 3, eflags: 0x0
@@ -1717,7 +1725,7 @@ function do_zombie_spawn() {
                 println("<unknown string>" + function_9e72a96(self.archetype) + "<unknown string>" + (isdefined(self.script_int) ? self.script_int : "<unknown string>") + "<unknown string>");
                 println("<unknown string>" + (isdefined(level.spawner_int) ? level.spawner_int : "<unknown string>"));
                 println("<unknown string>");
-                foreach (zone_name in get_active_zone_names()) {
+                foreach (zone_name in zm_zonemgr::get_active_zone_names()) {
                     var_f888a944 = [];
                     foreach (array in level.zones[zone_name].a_loc_types) {
                         foreach (spot in array) {
@@ -1772,7 +1780,7 @@ function do_zombie_spawn() {
     /#
         if (is_true(level.toggle_show_spawn_locations)) {
             debugstar(spot.origin, getdvarint(#"scr_spawner_location_time", 0), (0, 1, 0));
-            host_player = gethostplayer();
+            host_player = util::gethostplayer();
             distance = distance(spot.origin, host_player.origin);
             iprintln("<unknown string>" + distance / 12 + "<unknown string>");
         }
@@ -1823,19 +1831,21 @@ function function_65439499(spawn_points, var_12af83a0 = 5000) {
     return undefined;
 }
 
-// Namespace zm_spawner/zm_spawner
-// Params 0, eflags: 0x0
-// Checksum 0x6c51034c, Offset: 0x7e48
-// Size: 0x5e
-function draw_zone_spawned_from() {
-    /#
+/#
+
+    // Namespace zm_spawner/zm_spawner
+    // Params 0, eflags: 0x0
+    // Checksum 0x6c51034c, Offset: 0x7e48
+    // Size: 0x5e
+    function draw_zone_spawned_from() {
         self endon(#"death");
         while (true) {
             print3d(self.origin + (0, 0, 64), self.zone_spawned_from, (1, 1, 1));
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_spawner/zm_spawner
 // Params 1, eflags: 0x2 linked
@@ -1856,7 +1866,7 @@ function do_zombie_rise(spot) {
     }
     anim_org = spot.origin;
     anim_ang = spot.angles;
-    anim_org = anim_org + (0, 0, 0);
+    anim_org += (0, 0, 0);
     self ghost();
     self.anchor moveto(anim_org, 0.05);
     self.anchor waittill(#"movedone");
@@ -2010,7 +2020,7 @@ function zombie_rise_dust_fx(ai_zombie) {
             break;
         }
     }
-    for (t = 0; t < 5.5; t = t + 0.3) {
+    for (t = 0; t < 5.5; t += 0.3) {
         playfxontag(level._effect[str_fx], ai_zombie, "J_SpineUpper");
         wait(0.3);
     }
@@ -2025,7 +2035,7 @@ function zombie_tesla_head_gib() {
     if (self.animname === "quad_zombie") {
         return;
     }
-    if (randomint(100) < zombie_utility::function_d2dfacfd(#"tesla_head_gib_chance")) {
+    if (randomint(100) < zombie_utility::get_zombie_var(#"tesla_head_gib_chance")) {
         wait(randomfloatrange(0.53, 1));
         self zombie_utility::zombie_head_gib();
         return;

@@ -346,7 +346,7 @@ function function_9f635a5(cooldowntime = 0, killstreaktype) {
                 self.var_8b9b1bba[killstreaktype] = var_e5e81b59;
                 self killstreaks::function_b3185041(killstreakslot, var_e5e81b59);
             } else {
-                cooldowntime = cooldowntime - float(gettime()) / 1000 - currenttime;
+                cooldowntime -= float(gettime()) / 1000 - currenttime;
             }
             currenttime = float(gettime()) / 1000;
             waitframe(1);
@@ -542,12 +542,13 @@ function iskillstreakallowed(hardpointtype, team, var_1d8339ae, var_91419d5) {
     return isallowed;
 }
 
-// Namespace killstreakrules/killstreakrules_shared
-// Params 1, eflags: 0x0
-// Checksum 0x6cdf07ee, Offset: 0x20b8
-// Size: 0xcc
-function killstreak_debug_text(text) {
-    /#
+/#
+
+    // Namespace killstreakrules/killstreakrules_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x6cdf07ee, Offset: 0x20b8
+    // Size: 0xcc
+    function killstreak_debug_text(text) {
         level.killstreak_rule_debug = getdvarint(#"scr_killstreak_rule_debug", 0);
         if (isdefined(level.killstreak_rule_debug)) {
             if (level.killstreak_rule_debug == 1) {
@@ -558,6 +559,6 @@ function killstreak_debug_text(text) {
                 iprintlnbold("<unknown string>" + text);
             }
         }
-    #/
-}
+    }
 
+#/

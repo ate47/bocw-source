@@ -99,12 +99,13 @@ function getvalueinrange(value, minvalue, maxvalue) {
     return value;
 }
 
-// Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x0
-// Checksum 0xf3af1811, Offset: 0x3c8
-// Size: 0x1b8
-function assertproperplacement() {
-    /#
+/#
+
+    // Namespace globallogic_utils/globallogic_utils
+    // Params 0, eflags: 0x0
+    // Checksum 0xf3af1811, Offset: 0x3c8
+    // Size: 0x1b8
+    function assertproperplacement() {
         numplayers = level.placement[#"all"].size;
         for (i = 0; i < numplayers - 1; i++) {
             if (isdefined(level.placement[#"all"][i]) && isdefined(level.placement[#"all"][i + 1])) {
@@ -119,8 +120,9 @@ function assertproperplacement() {
                 }
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace globallogic_utils/globallogic_utils
 // Params 1, eflags: 0x2 linked
@@ -141,16 +143,16 @@ function playtickingsound(gametype_tick_sound) {
     while (true) {
         self playsound(gametype_tick_sound);
         if (time > 10) {
-            time = time - 1;
+            time -= 1;
             wait(1);
         } else if (time > 4) {
-            time = time - 0.5;
+            time -= 0.5;
             wait(0.5);
         } else if (time > 1) {
-            time = time - 0.4;
+            time -= 0.4;
             wait(0.4);
         } else {
-            time = time - 0.3;
+            time -= 0.3;
             wait(0.3);
         }
         hostmigration::waittillhostmigrationdone();
@@ -175,13 +177,13 @@ function gametimer() {
     level.starttime = gettime();
     level.discardtime = 0;
     if (isdefined(game.roundmillisecondsalreadypassed)) {
-        level.starttime = level.starttime - game.roundmillisecondsalreadypassed;
+        level.starttime -= game.roundmillisecondsalreadypassed;
         game.roundmillisecondsalreadypassed = undefined;
     }
     prevtime = gettime();
     while (game.state == "playing") {
         if (!level.timerstopped) {
-            game.timepassed = game.timepassed + gettime() - prevtime;
+            game.timepassed += gettime() - prevtime;
         }
         prevtime = gettime();
         wait(1);
@@ -223,7 +225,7 @@ function resumetimer() {
         return;
     }
     level.timerstopped = 0;
-    level.discardtime = level.discardtime + gettime() - level.timerpausetime;
+    level.discardtime += gettime() - level.timerpausetime;
 }
 
 // Namespace globallogic_utils/globallogic_utils
@@ -336,25 +338,24 @@ function gethitlocheight(shitloc) {
     return 48;
 }
 
-// Namespace globallogic_utils/globallogic_utils
-// Params 2, eflags: 0x0
-// Checksum 0xb66ad44c, Offset: 0xd80
-// Size: 0x5a
-function debugline(start, end) {
-    /#
-        for (i = 0; i < 50; i++) {
+/#
+
+    // Namespace globallogic_utils/globallogic_utils
+    // Params 2, eflags: 0x0
+    // Checksum 0xb66ad44c, Offset: 0xd80
+    // Size: 0x5a
+    function debugline(start, end) {
+                for (i = 0; i < 50; i++) {
             line(start, end);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace globallogic_utils/globallogic_utils
-// Params 2, eflags: 0x2 linked
-// Checksum 0x21da9363, Offset: 0xde8
-// Size: 0x10c
-function logteamwinstring(wintype, winner) {
-    /#
+    // Namespace globallogic_utils/globallogic_utils
+    // Params 2, eflags: 0x2 linked
+    // Checksum 0x21da9363, Offset: 0xde8
+    // Size: 0x10c
+    function logteamwinstring(wintype, winner) {
         log_string = wintype;
         if (isdefined(winner)) {
             log_string = log_string + "<unknown string>" + winner;
@@ -363,6 +364,6 @@ function logteamwinstring(wintype, winner) {
             log_string = log_string + "<unknown string>" + str_team + "<unknown string>" + game.stat[#"teamscores"][team];
         }
         print(log_string);
-    #/
-}
+    }
 
+#/

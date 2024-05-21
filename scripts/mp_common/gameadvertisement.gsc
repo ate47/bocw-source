@@ -185,13 +185,14 @@ function default_rules() {
     return true;
 }
 
-// Namespace gameadvertisement/gameadvertisement
-// Params 2, eflags: 0x0
-// Checksum 0x2b86e214, Offset: 0x990
-// Size: 0x122
-function sessionadvertismentcreatedebughud(linenum, alignx) {
-    /#
-        debug_hud = new_hud("<unknown string>", "<unknown string>", 0, 0, 1);
+/#
+
+    // Namespace gameadvertisement/gameadvertisement
+    // Params 2, eflags: 0x0
+    // Checksum 0x2b86e214, Offset: 0x990
+    // Size: 0x122
+    function sessionadvertismentcreatedebughud(linenum, alignx) {
+        debug_hud = dev::new_hud("<unknown string>", "<unknown string>", 0, 0, 1);
         debug_hud.hidewheninmenu = 1;
         debug_hud.horzalign = "<unknown string>";
         debug_hud.vertalign = "<unknown string>";
@@ -206,15 +207,13 @@ function sessionadvertismentcreatedebughud(linenum, alignx) {
         debug_hud.alpha = 1;
         debug_hud settext("<unknown string>");
         return debug_hud;
-    #/
-}
+    }
 
-// Namespace gameadvertisement/gameadvertisement
-// Params 3, eflags: 0x0
-// Checksum 0x2ee6677a, Offset: 0xac0
-// Size: 0x10e
-function updatedebughud(hudindex, text, value) {
-    /#
+    // Namespace gameadvertisement/gameadvertisement
+    // Params 3, eflags: 0x0
+    // Checksum 0x2ee6677a, Offset: 0xac0
+    // Size: 0x10e
+    function updatedebughud(hudindex, text, value) {
         switch (hudindex) {
         case 1:
             level.sessionadverthud_1a_text = text;
@@ -234,15 +233,13 @@ function updatedebughud(hudindex, text, value) {
             break;
         }
         return hudindex + 1;
-    #/
-}
+    }
 
-// Namespace gameadvertisement/gameadvertisement
-// Params 0, eflags: 0x0
-// Checksum 0xbf38d078, Offset: 0xbd8
-// Size: 0x638
-function sessionadvertismentupdatedebughud() {
-    /#
+    // Namespace gameadvertisement/gameadvertisement
+    // Params 0, eflags: 0x0
+    // Checksum 0xbf38d078, Offset: 0xbd8
+    // Size: 0x638
+    function sessionadvertismentupdatedebughud() {
         level endon(#"game_end");
         sessionadverthud_0 = undefined;
         sessionadverthud_1a = undefined;
@@ -270,7 +267,7 @@ function sessionadvertismentupdatedebughud() {
                 level.sessionadverthud_0_text = "<unknown string>";
             }
             if (!isdefined(sessionadverthud_0) && showdebughud != 0) {
-                host = gethostplayer();
+                host = util::gethostplayer();
                 if (!isdefined(host)) {
                     continue;
                 }
@@ -334,6 +331,6 @@ function sessionadvertismentupdatedebughud() {
                 }
             }
         }
-    #/
-}
+    }
 
+#/

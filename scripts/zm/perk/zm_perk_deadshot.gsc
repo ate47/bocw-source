@@ -124,13 +124,13 @@ function function_4d088c19(*inflictor, attacker, damage, *flags, meansofdeath, *
         if (vpoint namespace_e86ffa8::function_7bf30775(1)) {
             if (self.health >= self.maxhealth) {
                 if (isdefined(var_84ed9a13) && namespace_81245006::function_f29756fe(var_84ed9a13) == 1 && var_84ed9a13.type !== #"armor") {
-                    vdir = vdir + vdir * 1;
+                    vdir += vdir * 1;
                 }
             }
         }
         if (vpoint namespace_e86ffa8::function_7bf30775(4)) {
             if (isdefined(var_84ed9a13) && namespace_81245006::function_f29756fe(var_84ed9a13) == 1 && var_84ed9a13.type !== #"armor") {
-                vdir = vdir + vdir * 0.1;
+                vdir += vdir * 0.1;
             }
         }
         if (vpoint namespace_791d0451::function_56cedda7(#"hash_1f95b08e4a49d87e")) {
@@ -144,7 +144,7 @@ function function_4d088c19(*inflictor, attacker, damage, *flags, meansofdeath, *
                 } else if (vpoint.var_39f18bc3 > 10) {
                     vpoint.var_39f18bc3 = 10;
                 }
-                vdir = vdir + vdir * 0.02 * vpoint.var_39f18bc3;
+                vdir += vdir * 0.02 * vpoint.var_39f18bc3;
             } else {
                 vpoint.var_39f18bc3 = 0;
             }

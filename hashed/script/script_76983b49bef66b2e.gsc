@@ -159,7 +159,7 @@ function function_453dcc55() {
 function function_f50d3546(org, vel) {
     self moveto(org.origin, 0.5);
     self waittilltimeout(1, #"movedone");
-    vel = vel * 0.25;
+    vel *= 0.25;
     self namespace_83eb6304::function_3ecfde67("tesla_launch");
     self namespace_e32bb68::function_ae271c0b("evt_doa_pickup_teslaball_active_lp");
     self physicslaunch(self.origin, vel);

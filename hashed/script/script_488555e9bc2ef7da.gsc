@@ -507,34 +507,33 @@ function function_ea520491() {
     zm_unitrigger::unregister_unitrigger(var_d9653ef0);
 }
 
-// Namespace namespace_54685ebd/namespace_54685ebd
-// Params 0, eflags: 0x0
-// Checksum 0x4c86f315, Offset: 0x2380
-// Size: 0x8c
-function function_cd7a3de4() {
-    /#
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_custom_devgui_callback(&cmd);
-    #/
-}
+/#
 
-// Namespace namespace_54685ebd/namespace_54685ebd
-// Params 1, eflags: 0x0
-// Checksum 0x27ed2c86, Offset: 0x2418
-// Size: 0x282
-function cmd(cmd) {
-    /#
+    // Namespace namespace_54685ebd/namespace_54685ebd
+    // Params 0, eflags: 0x0
+    // Checksum 0x4c86f315, Offset: 0x2380
+    // Size: 0x8c
+    function function_cd7a3de4() {
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        zm_devgui::add_custom_devgui_callback(&cmd);
+    }
+
+    // Namespace namespace_54685ebd/namespace_54685ebd
+    // Params 1, eflags: 0x0
+    // Checksum 0x27ed2c86, Offset: 0x2418
+    // Size: 0x282
+    function cmd(cmd) {
         switch (cmd) {
         case #"hash_64b8a356ba686f7b":
-            level set(#"hash_7d72f2dda7a4104e");
-            level set("<unknown string>");
+            level flag::set(#"hash_7d72f2dda7a4104e");
+            level flag::set("<unknown string>");
             break;
         case #"hash_4cbd866bd8931c8a":
             level thread function_ce636e();
-            level set(#"player_has_both_fuse");
+            level flag::set(#"player_has_both_fuse");
             break;
         case #"hash_72b6d8c2e2e976a3":
             var_dfe526e8 = function_a1ef346b();
@@ -545,11 +544,11 @@ function cmd(cmd) {
             var_dfe526e8 = function_a1ef346b();
             foreach (player in var_dfe526e8) {
                 point = function_4ba8fde(#"item_zmquest_platinum_power_quest_fuse");
-                var_752753e1 = drop_item(0, undefined, 1, 0, point.id, player.origin, undefined, 2);
+                var_752753e1 = item_drop::drop_item(0, undefined, 1, 0, point.id, player.origin, undefined, 2);
                 var_752753e1.var_dd21aec2 = 1 | 16;
             }
             break;
         }
-    #/
-}
+    }
 
+#/

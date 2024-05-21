@@ -495,7 +495,7 @@ function function_bd4d69e3(localclientnum, var_6e938f0b, var_e15e9f2a, var_801f8
         }
         for (i = 0; i < n_count; i++) {
             v_point = function_72c54d21(self.origin, randomintrange(20, 60), 180, 0);
-            v_point = v_point + self.origin + anglestoforward(self.angles) * 150;
+            v_point += self.origin + anglestoforward(self.angles) * 150;
             switch (var_e15e9f2a) {
             case 1:
                 e_item = util::spawn_model(localclientnum, #"hash_62b204735601bbc9", v_point);

@@ -276,12 +276,12 @@ function function_1284a4d7(player) {
         while (self.var_4d2a40eb > 0) {
             var_45263d51 = 1;
             self rotateto(self.angles + (0, 180, 0), var_45263d51);
-            for (var_44f689f3 = var_45263d51; var_44f689f3 > 0; var_44f689f3 = var_44f689f3 - interval) {
+            for (var_44f689f3 = var_45263d51; var_44f689f3 > 0; var_44f689f3 -= interval) {
                 extrawait = self function_ecec052c(player, weapon);
                 interval = firetime + extrawait;
                 wait(interval);
             }
-            self.var_4d2a40eb = self.var_4d2a40eb - var_45263d51;
+            self.var_4d2a40eb -= var_45263d51;
         }
     }
     self namespace_e32bb68::function_3a59ec34("evt_doa_pickup_chicken_explode");
@@ -320,7 +320,7 @@ function function_a46136b9(leader) {
                 } else {
                     z = 30;
                 }
-                var_ad847a7d = var_ad847a7d + (0, 0, z);
+                var_ad847a7d += (0, 0, z);
             }
             if (!isdefined(self.var_f8b35ef5)) {
                 self.var_f8b35ef5 = [];
@@ -420,7 +420,7 @@ function function_723d0c4c(player) {
     }
     timesec = player namespace_1c2a96f9::function_4808b985(60);
     if (player namespace_1c2a96f9::function_d5b51f1e()) {
-        timesec = timesec + 60;
+        timesec += 60;
     }
     time = timesec * 1000;
     while (!namespace_dfc652ee::function_f759a457()) {
@@ -501,7 +501,7 @@ function function_26d43617(player) {
         }
         weapon = self function_26c8b67(player, self.special);
         extrawait = self function_ecec052c(player, weapon);
-        extrawait = extrawait + weapon.firetime - 0.05;
+        extrawait += weapon.firetime - 0.05;
         if (extrawait > 0) {
             wait(extrawait);
         }
@@ -527,8 +527,8 @@ function private function_ecec052c(player, weapon) {
     start = self.bird.origin + offset;
     /#
         if (getdvarint(#"hash_688eef6045c14ea9", 0)) {
-            level thread function_1d1f2c26(start, 5, 20, (1, 0, 0));
-            level thread debugline(start, self.origin + forward * 1000, 5, (1, 0, 0));
+            level thread namespace_1e25ad94::function_1d1f2c26(start, 5, 20, (1, 0, 0));
+            level thread namespace_1e25ad94::debugline(start, self.origin + forward * 1000, 5, (1, 0, 0));
         }
     #/
     if (weapon != level.weaponnone) {
@@ -665,8 +665,8 @@ function function_8f7ae651() {
             waitframe(1);
         }
         wait(1);
-        var_52acc12f = var_52acc12f - 1;
-        var_52acc12f = var_52acc12f - self.bird.killcount;
+        var_52acc12f -= 1;
+        var_52acc12f -= self.bird.killcount;
         self.bird.killcount = 0;
     }
     roll = randomint(100);

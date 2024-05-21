@@ -40,7 +40,7 @@ function doexplosion(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *
     physics_explosion = 0;
     if (bwastimejump & 1 << 9) {
         physics_explosion = 1;
-        bwastimejump = bwastimejump - (1 << 9);
+        bwastimejump -= 1 << 9;
     }
     physics_force = 0.3;
     if (physics_explosion && bwastimejump > 0) {

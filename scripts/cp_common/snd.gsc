@@ -157,13 +157,13 @@ function client_voice(ent, soundalias) {
     entitynumber = ent getentitynumber();
     state = "V " + entitynumber;
     if (var_3dd9dcff) {
-        state = state + " " + soundalias;
+        state += " " + soundalias;
     }
     util::setclientsysstate("clientSoundCommand", state);
     waittime = 0;
     if (var_3dd9dcff) {
         waittime = soundgetplaybacktime(soundalias);
-        waittime = waittime / 1000;
+        waittime /= 1000;
     }
     return waittime;
 }
@@ -208,7 +208,7 @@ function function_85daf9f0(soundalias, var_1d25915, var_605838f4, var_e330010e) 
     spawnorigin = undefined;
     if (isdefined(var_605838f4) && isdefined(var_e330010e) && isdefined(var_1d25915)) {
         spawnorigin = var_605838f4 gettagorigin(var_e330010e);
-        spawnorigin = spawnorigin + var_1d25915;
+        spawnorigin += var_1d25915;
     } else if (isdefined(var_605838f4) && isdefined(var_e330010e)) {
         spawnorigin = var_605838f4 gettagorigin(var_e330010e);
     } else if (isdefined(var_605838f4)) {
@@ -246,7 +246,7 @@ function function_85daf9f0(soundalias, var_1d25915, var_605838f4, var_e330010e) 
 function function_6ac5b570(ent) {
     if (snd::function_81fac19d(!isdefined(ent) || function_3132f113(ent), "snd: free on deleted entity!")) {
         /#
-            if (function_f984063f()) {
+            if (snd::function_f984063f()) {
                 debugbreak();
             }
         #/
@@ -259,7 +259,7 @@ function function_6ac5b570(ent) {
             var_605838f4.var_a415b6d6[ent.soundkey] = undefined;
         } else {
             /#
-                if (function_f984063f()) {
+                if (snd::function_f984063f()) {
                     debugbreak();
                 }
             #/
@@ -329,7 +329,7 @@ function function_9f156b27(var_afe43979, var_24ea4e17) {
     ent = var_afe43979;
     if (snd::function_81fac19d(!isdefined(ent) || function_3132f113(ent), "snd: stop on deleted entity!")) {
         /#
-            if (function_f984063f()) {
+            if (snd::function_f984063f()) {
                 debugbreak();
             }
         #/
@@ -359,8 +359,8 @@ function private function_94954510(soundalias, done) {
     ent = self;
     ent endon(#"death");
     waittime = soundgetplaybacktime(soundalias);
-    waittime = waittime + 250;
-    waittime = waittime / 1000;
+    waittime += 250;
+    waittime /= 1000;
     wait(waittime);
     ent notify(done, ent.soundalias);
     function_6ac5b570(ent);
@@ -378,13 +378,17 @@ function private function_bd8d70b0(done) {
     function_6ac5b570(ent);
 }
 
-// Namespace namespace_afa8e18b/snd
-// Params 4, eflags: 0x2 linked
-// Checksum 0x830690b0, Offset: 0x1818
-// Size: 0x44
-function function_2761fc04(*ent, *var_1d25915, *var_605838f4, *var_e330010e) {
-    assert(0, "<unknown string>");
-}
+/#
+
+    // Namespace namespace_afa8e18b/snd
+    // Params 4, eflags: 0x2 linked
+    // Checksum 0x830690b0, Offset: 0x1818
+    // Size: 0x44
+    function function_2761fc04(*ent, *var_1d25915, *var_605838f4, *var_e330010e) {
+        assert(0, "<unknown string>");
+    }
+
+#/
 
 // Namespace namespace_afa8e18b/snd
 // Params 4, eflags: 0x2 linked
@@ -395,31 +399,35 @@ function function_5275752c(*soundalias, *var_1d25915, *var_605838f4, *var_e33001
     return undefined;
 }
 
-// Namespace namespace_afa8e18b/snd
-// Params 1, eflags: 0x0
-// Checksum 0x9abcdf92, Offset: 0x18b8
-// Size: 0x2c
-function function_bdc44456(*ent) {
-    assert(0, "<unknown string>");
-}
+/#
 
-// Namespace namespace_afa8e18b/snd
-// Params 4, eflags: 0x2 linked
-// Checksum 0x43729f9e, Offset: 0x18f0
-// Size: 0x44
-function function_bb749fc3(*var_afe43979, *soundalias, *var_99e65ecf, *delaytime) {
-    assert(0, "<unknown string>");
-}
+    // Namespace namespace_afa8e18b/snd
+    // Params 1, eflags: 0x0
+    // Checksum 0x9abcdf92, Offset: 0x18b8
+    // Size: 0x2c
+    function function_bdc44456(*ent) {
+        assert(0, "<unknown string>");
+    }
 
-// Namespace namespace_afa8e18b/snd
-// Params 2, eflags: 0x2 linked
-// Checksum 0x13f2d605, Offset: 0x1940
-// Size: 0x34
-function function_273d939b(*var_afe43979, *var_24ea4e17) {
-    assert(0, "<unknown string>");
-}
+    // Namespace namespace_afa8e18b/snd
+    // Params 4, eflags: 0x2 linked
+    // Checksum 0x43729f9e, Offset: 0x18f0
+    // Size: 0x44
+    function function_bb749fc3(*var_afe43979, *soundalias, *var_99e65ecf, *delaytime) {
+        assert(0, "<unknown string>");
+    }
+
+    // Namespace namespace_afa8e18b/snd
+    // Params 2, eflags: 0x2 linked
+    // Checksum 0x13f2d605, Offset: 0x1940
+    // Size: 0x34
+    function function_273d939b(*var_afe43979, *var_24ea4e17) {
+        assert(0, "<unknown string>");
+    }
 
 #namespace snd;
+
+#/
 
 // Namespace snd/snd
 // Params 0, eflags: 0x6 linked

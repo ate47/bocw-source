@@ -751,9 +751,9 @@ function private function_32843fc9(startpoint, endpoint) {
         groundtrace = groundtrace(startpoint, endpoint, 0, undefined, 0);
         if (groundtrace[#"fraction"] <= 0 || groundtrace[#"startsolid"]) {
             if (startpoint[2] > endpoint[2]) {
-                startpoint = startpoint + (0, 0, 64);
+                startpoint += (0, 0, 64);
             } else {
-                endpoint = endpoint + (0, 0, 64);
+                endpoint += (0, 0, 64);
             }
             continue;
         }
@@ -839,7 +839,7 @@ function function_70c0ae61(spawningplayer, objectiveposition) {
     var_d8544733 = nearestplayer.origin - objectiveposition;
     var_d8544733 = (var_d8544733[0], var_d8544733[1], 0);
     if (nearestplayer.team === spawningplayer.team) {
-        var_d8544733 = var_d8544733 * -1;
+        var_d8544733 *= -1;
     }
     angles = vectortoangles(var_d8544733);
     var_6b26b855 = util::get_start_time();

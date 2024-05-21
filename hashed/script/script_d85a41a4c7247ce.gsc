@@ -247,7 +247,7 @@ function function_fa7a206b(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0xc0
 function function_d233fb1f() {
     self endon(#"death", #"disconnect", #"hash_639f680ae2bb2ff");
-    for (var_9b8a1091 = 0.01; true; var_9b8a1091 = var_9b8a1091 + 0.01) {
+    for (var_9b8a1091 = 0.01; true; var_9b8a1091 += 0.01) {
         self function_116b95e5(#"pstfx_speedblur", #"blur", var_9b8a1091);
         wait(0.08);
         if (var_9b8a1091 < 0.3) {

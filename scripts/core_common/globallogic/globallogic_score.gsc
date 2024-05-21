@@ -945,12 +945,13 @@ function allow_old_indexs(var_8d498080) {
     self function_d3ca3608(var_8725a10d.var_14d1d5a1);
 }
 
-// Namespace globallogic_score/globallogic_score
-// Params 0, eflags: 0x0
-// Checksum 0x43ac066f, Offset: 0x3d98
-// Size: 0x22e
-function function_bb9f3842() {
-    /#
+/#
+
+    // Namespace globallogic_score/globallogic_score
+    // Params 0, eflags: 0x0
+    // Checksum 0x43ac066f, Offset: 0x3d98
+    // Size: 0x22e
+    function function_bb9f3842() {
         level endon(#"game_ended");
         if (!isdefined(level.var_10cd7193)) {
             level.var_10cd7193 = [];
@@ -974,6 +975,6 @@ function function_bb9f3842() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
+#/

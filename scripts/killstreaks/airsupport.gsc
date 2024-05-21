@@ -24,19 +24,19 @@ function init_shared() {
         airsupport_heights = struct::get_array("air_support_height", "targetname");
         /#
             if (airsupport_heights.size > 1) {
-                error("<unknown string>");
+                util::error("<unknown string>");
             }
         #/
         airsupport_heights = getentarray("air_support_height", "targetname");
         /#
             if (airsupport_heights.size > 0) {
-                error("<unknown string>");
+                util::error("<unknown string>");
             }
         #/
         heli_height_meshes = getentarray("heli_height_lock", "classname");
         /#
             if (heli_height_meshes.size > 1) {
-                error("<unknown string>");
+                util::error("<unknown string>");
             }
         #/
         callback::on_spawned(&clearmonitoredspeed);
@@ -749,7 +749,7 @@ function entlosradiusdamage(ent, pos, radius, max, min, owner, einflictor) {
                 /#
                     debug_star((pos[0], pos[1], head_height), (0, 1, 0), debug_display_time);
                 #/
-                dist = dist * 4;
+                dist *= 4;
                 if (dist > radius) {
                     return false;
                 }
@@ -763,7 +763,7 @@ function entlosradiusdamage(ent, pos, radius, max, min, owner, einflictor) {
                     /#
                         debug_star(pos, (0, 1, 0), debug_display_time);
                     #/
-                    dist = dist * 4;
+                    dist *= 4;
                     if (dist > radius) {
                         return false;
                     }
@@ -839,7 +839,7 @@ function flattenyaw(goal) {
     self endon(#"death");
     increment = 3;
     if (self.angles[1] > goal) {
-        increment = increment * -1;
+        increment *= -1;
     }
     while (abs(self.angles[1] - goal) > 3) {
         self.angles = (self.angles[0], self.angles[1] + increment, self.angles[2]);
@@ -875,10 +875,10 @@ function leave(duration, var_384be02f = 0) {
         if (isdefined(nfz)) {
             if (tries != 1) {
                 if (tries % 2 == 1) {
-                    yaw = yaw * -1;
+                    yaw *= -1;
                 } else {
-                    yaw = yaw + 10;
-                    yaw = yaw * -1;
+                    yaw += 10;
+                    yaw *= -1;
                 }
             }
             tries--;
@@ -908,7 +908,7 @@ function getrandomhelicopterstartorigin() {
     pathrandomness = 100;
     direction = (0, randomintrange(-2, 3), 0);
     start_origin = anglestoforward(direction) * dist;
-    start_origin = start_origin + ((randomfloat(2) - 1) * pathrandomness, (randomfloat(2) - 1) * pathrandomness, 0);
+    start_origin += ((randomfloat(2) - 1) * pathrandomness, (randomfloat(2) - 1) * pathrandomness, 0);
     /#
         if (getdvarint(#"scr_noflyzones_debug", 0)) {
             if (level.noflyzones.size) {
@@ -923,24 +923,23 @@ function getrandomhelicopterstartorigin() {
     return start_origin;
 }
 
-// Namespace airsupport/airsupport
-// Params 0, eflags: 0x0
-// Checksum 0x49c203b, Offset: 0x33d8
-// Size: 0x8c
-function debug_no_fly_zones() {
-    /#
-        for (i = 0; i < level.noflyzones.size; i++) {
+/#
+
+    // Namespace airsupport/airsupport
+    // Params 0, eflags: 0x0
+    // Checksum 0x49c203b, Offset: 0x33d8
+    // Size: 0x8c
+    function debug_no_fly_zones() {
+                for (i = 0; i < level.noflyzones.size; i++) {
             debug_airsupport_cylinder(level.noflyzones[i].origin, level.noflyzones[i].radius, level.noflyzones[i].height, (1, 1, 1), undefined, 5000);
         }
-    #/
-}
+    }
 
-// Namespace airsupport/airsupport
-// Params 4, eflags: 0x0
-// Checksum 0x77fe10b9, Offset: 0x3470
-// Size: 0xb4
-function debug_plane_line(flytime, flyspeed, pathstart, pathend) {
-    /#
+    // Namespace airsupport/airsupport
+    // Params 4, eflags: 0x0
+    // Checksum 0x77fe10b9, Offset: 0x3470
+    // Size: 0xb4
+    function debug_plane_line(flytime, flyspeed, pathstart, pathend) {
         /#
             thread debug_line(pathstart, pathend, (1, 1, 1));
         #/
@@ -950,15 +949,13 @@ function debug_plane_line(flytime, flyspeed, pathstart, pathend) {
                 thread debug_star(pathstart + vectorscale(delta, i * flyspeed), (1, 0, 0));
             }
         #/
-    #/
-}
+    }
 
-// Namespace airsupport/airsupport
-// Params 1, eflags: 0x0
-// Checksum 0x15fb7e8, Offset: 0x3530
-// Size: 0xb4
-function debug_draw_bomb_explosion(prevpos) {
-    /#
+    // Namespace airsupport/airsupport
+    // Params 1, eflags: 0x0
+    // Checksum 0x15fb7e8, Offset: 0x3530
+    // Size: 0xb4
+    function debug_draw_bomb_explosion(prevpos) {
         self notify(#"draw_explosion");
         waitframe(1);
         self endon(#"draw_explosion");
@@ -967,15 +964,13 @@ function debug_draw_bomb_explosion(prevpos) {
             thread debug_line(prevpos, waitresult.position, (0.5, 1, 0));
             thread debug_star(waitresult.position, (1, 0, 0));
         #/
-    #/
-}
+    }
 
-// Namespace airsupport/airsupport
-// Params 3, eflags: 0x0
-// Checksum 0xd8f8e309, Offset: 0x35f0
-// Size: 0x128
-function debug_draw_bomb_path(projectile, color, time) {
-    /#
+    // Namespace airsupport/airsupport
+    // Params 3, eflags: 0x0
+    // Checksum 0xd8f8e309, Offset: 0x35f0
+    // Size: 0x128
+    function debug_draw_bomb_path(projectile, color, time) {
         self endon(#"death");
         level.airsupport_debug = getdvarint(#"scr_airsupport_debug", 0);
         if (!isdefined(color)) {
@@ -994,15 +989,13 @@ function debug_draw_bomb_path(projectile, color, time) {
                 wait(0.2);
             }
         }
-    #/
-}
+    }
 
-// Namespace airsupport/airsupport
-// Params 4, eflags: 0x0
-// Checksum 0xeca9157c, Offset: 0x3720
-// Size: 0xe4
-function debug_print3d_simple(message, ent, offset, frames) {
-    /#
+    // Namespace airsupport/airsupport
+    // Params 4, eflags: 0x0
+    // Checksum 0xeca9157c, Offset: 0x3720
+    // Size: 0xe4
+    function debug_print3d_simple(message, ent, offset, frames) {
         level.airsupport_debug = getdvarint(#"scr_airsupport_debug", 0);
         if (isdefined(level.airsupport_debug) && level.airsupport_debug == 1) {
             if (isdefined(frames)) {
@@ -1011,15 +1004,13 @@ function debug_print3d_simple(message, ent, offset, frames) {
             }
             thread draw_text(message, (0.8, 0.8, 0.8), ent, offset, 0);
         }
-    #/
-}
+    }
 
-// Namespace airsupport/airsupport
-// Params 5, eflags: 0x0
-// Checksum 0xebdade7f, Offset: 0x3810
-// Size: 0xf2
-function draw_text(msg, color, ent, offset, frames) {
-    /#
+    // Namespace airsupport/airsupport
+    // Params 5, eflags: 0x0
+    // Checksum 0xebdade7f, Offset: 0x3810
+    // Size: 0xf2
+    function draw_text(msg, color, ent, offset, frames) {
         if (frames == 0) {
             while (isdefined(ent) && isdefined(ent.origin)) {
                 print3d(ent.origin + offset, msg, color, 0.5, 4);
@@ -1034,28 +1025,24 @@ function draw_text(msg, color, ent, offset, frames) {
             print3d(ent.origin + offset, msg, color, 0.5, 4);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace airsupport/airsupport
-// Params 5, eflags: 0x0
-// Checksum 0x9831d7de, Offset: 0x3910
-// Size: 0xa4
-function debug_print3d(message, color, ent, origin_offset, frames) {
-    /#
+    // Namespace airsupport/airsupport
+    // Params 5, eflags: 0x0
+    // Checksum 0x9831d7de, Offset: 0x3910
+    // Size: 0xa4
+    function debug_print3d(message, color, ent, origin_offset, frames) {
         level.airsupport_debug = getdvarint(#"scr_airsupport_debug", 0);
         if (isdefined(level.airsupport_debug) && level.airsupport_debug == 1) {
             self thread draw_text(message, color, ent, origin_offset, frames);
         }
-    #/
-}
+    }
 
-// Namespace airsupport/airsupport
-// Params 5, eflags: 0x0
-// Checksum 0xf53b769a, Offset: 0x39c0
-// Size: 0xec
-function debug_line(from, to, color, time, depthtest) {
-    /#
+    // Namespace airsupport/airsupport
+    // Params 5, eflags: 0x0
+    // Checksum 0xf53b769a, Offset: 0x39c0
+    // Size: 0xec
+    function debug_line(from, to, color, time, depthtest) {
         level.airsupport_debug = getdvarint(#"scr_airsupport_debug", 0);
         if (isdefined(level.airsupport_debug) && level.airsupport_debug == 1) {
             if (distancesquared(from, to) < 0.01) {
@@ -1069,15 +1056,13 @@ function debug_line(from, to, color, time, depthtest) {
             }
             line(from, to, color, 1, depthtest, time);
         }
-    #/
-}
+    }
 
-// Namespace airsupport/airsupport
-// Params 3, eflags: 0x0
-// Checksum 0x1efc178c, Offset: 0x3ab8
-// Size: 0xac
-function debug_star(origin, color, time) {
-    /#
+    // Namespace airsupport/airsupport
+    // Params 3, eflags: 0x0
+    // Checksum 0x1efc178c, Offset: 0x3ab8
+    // Size: 0xac
+    function debug_star(origin, color, time) {
         level.airsupport_debug = getdvarint(#"scr_airsupport_debug", 0);
         if (isdefined(level.airsupport_debug) && level.airsupport_debug == 1) {
             if (!isdefined(time)) {
@@ -1088,15 +1073,13 @@ function debug_star(origin, color, time) {
             }
             debugstar(origin, time, color);
         }
-    #/
-}
+    }
 
-// Namespace airsupport/airsupport
-// Params 4, eflags: 0x0
-// Checksum 0xad18601d, Offset: 0x3b70
-// Size: 0xbc
-function debug_circle(origin, radius, color, time) {
-    /#
+    // Namespace airsupport/airsupport
+    // Params 4, eflags: 0x0
+    // Checksum 0xad18601d, Offset: 0x3b70
+    // Size: 0xbc
+    function debug_circle(origin, radius, color, time) {
         level.airsupport_debug = getdvarint(#"scr_airsupport_debug", 0);
         if (isdefined(level.airsupport_debug) && level.airsupport_debug == 1) {
             if (!isdefined(time)) {
@@ -1107,15 +1090,13 @@ function debug_circle(origin, radius, color, time) {
             }
             circle(origin, radius, color, 1, 1, time);
         }
-    #/
-}
+    }
 
-// Namespace airsupport/airsupport
-// Params 5, eflags: 0x0
-// Checksum 0xcb5077a, Offset: 0x3c38
-// Size: 0x104
-function debug_sphere(origin, radius, color, alpha, time) {
-    /#
+    // Namespace airsupport/airsupport
+    // Params 5, eflags: 0x0
+    // Checksum 0xcb5077a, Offset: 0x3c38
+    // Size: 0x104
+    function debug_sphere(origin, radius, color, alpha, time) {
         level.airsupport_debug = getdvarint(#"scr_airsupport_debug", 0);
         if (isdefined(level.airsupport_debug) && level.airsupport_debug == 1) {
             if (!isdefined(time)) {
@@ -1127,28 +1108,24 @@ function debug_sphere(origin, radius, color, alpha, time) {
             sides = int(10 * (1 + int(radius / 100)));
             sphere(origin, radius, color, alpha, 1, sides, time);
         }
-    #/
-}
+    }
 
-// Namespace airsupport/airsupport
-// Params 6, eflags: 0x0
-// Checksum 0x8b727ee, Offset: 0x3d48
-// Size: 0xac
-function debug_airsupport_cylinder(origin, radius, height, color, mustrenderheight, time) {
-    /#
+    // Namespace airsupport/airsupport
+    // Params 6, eflags: 0x0
+    // Checksum 0x8b727ee, Offset: 0x3d48
+    // Size: 0xac
+    function debug_airsupport_cylinder(origin, radius, height, color, mustrenderheight, time) {
         level.airsupport_debug = getdvarint(#"scr_airsupport_debug", 0);
         if (isdefined(level.airsupport_debug) && level.airsupport_debug == 1) {
             debug_cylinder(origin, radius, height, color, mustrenderheight, time);
         }
-    #/
-}
+    }
 
-// Namespace airsupport/airsupport
-// Params 6, eflags: 0x0
-// Checksum 0x2d862502, Offset: 0x3e00
-// Size: 0x11c
-function debug_cylinder(origin, radius, height, color, mustrenderheight, time) {
-    /#
+    // Namespace airsupport/airsupport
+    // Params 6, eflags: 0x0
+    // Checksum 0x2d862502, Offset: 0x3e00
+    // Size: 0x11c
+    function debug_cylinder(origin, radius, height, color, mustrenderheight, time) {
         subdivision = 600;
         if (!isdefined(time)) {
             time = 1000;
@@ -1165,8 +1142,9 @@ function debug_cylinder(origin, radius, height, color, mustrenderheight, time) {
             point = origin + (0, 0, mustrenderheight);
             circle(point, radius, color, 1, 1, time);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace airsupport/airsupport
 // Params 3, eflags: 0x0
@@ -1216,7 +1194,7 @@ function monitorspeed(spawnprotectiontime) {
         velocity = self getvelocity();
         speedsq = lengthsquared(velocity);
         if (speedsq < minspeedsq) {
-            self.nottargettedai_underminspeedtimer = self.nottargettedai_underminspeedtimer + waitperiodmilliseconds;
+            self.nottargettedai_underminspeedtimer += waitperiodmilliseconds;
         } else {
             self.nottargettedai_underminspeedtimer = 0;
         }

@@ -39,10 +39,10 @@ function function_5e443ed1() {
     assert(isdefined(level.first_frame), "<unknown string>");
     level._loadstarted = 1;
     /#
-        check_art_mode();
+        util::check_art_mode();
     #/
     /#
-        apply_dev_overrides();
+        util::apply_dev_overrides();
     #/
     setclearanceceiling(16);
     register_clientfields();

@@ -1,12 +1,13 @@
 // Atian COD Tools GSC CW decompiler test
 #namespace debug_menu;
 
-// Namespace debug_menu/debug_menu
-// Params 7, eflags: 0x0
-// Checksum 0xeac3b0f9, Offset: 0x80
-// Size: 0x17a
-function set_hudelem(text, x, y, scale, alpha, sort, debug_hudelem) {
-    /#
+/#
+
+    // Namespace debug_menu/debug_menu
+    // Params 7, eflags: 0x0
+    // Checksum 0xeac3b0f9, Offset: 0x80
+    // Size: 0x17a
+    function set_hudelem(text, x, y, scale, alpha, sort, debug_hudelem) {
         if (!isdefined(alpha)) {
             alpha = 1;
         }
@@ -36,15 +37,13 @@ function set_hudelem(text, x, y, scale, alpha, sort, debug_hudelem) {
             hud settext(text);
         }
         return hud;
-    #/
-}
+    }
 
-// Namespace debug_menu/debug_menu
-// Params 5, eflags: 0x0
-// Checksum 0x17d3919d, Offset: 0x208
-// Size: 0xc4
-function new_hud(hud_name, msg, x, y, scale) {
-    /#
+    // Namespace debug_menu/debug_menu
+    // Params 5, eflags: 0x0
+    // Checksum 0x17d3919d, Offset: 0x208
+    // Size: 0xc4
+    function new_hud(hud_name, msg, x, y, scale) {
         if (!isdefined(level.hud_array)) {
             level.hud_array = [];
         }
@@ -54,15 +53,13 @@ function new_hud(hud_name, msg, x, y, scale) {
         hud = set_hudelem(msg, x, y, scale);
         level.hud_array[hud_name][level.hud_array[hud_name].size] = hud;
         return hud;
-    #/
-}
+    }
 
-// Namespace debug_menu/debug_menu
-// Params 1, eflags: 0x0
-// Checksum 0xc7c5071e, Offset: 0x2d8
-// Size: 0x8c
-function function_7cafeca(hud_name) {
-    /#
+    // Namespace debug_menu/debug_menu
+    // Params 1, eflags: 0x0
+    // Checksum 0xc7c5071e, Offset: 0x2d8
+    // Size: 0x8c
+    function function_7cafeca(hud_name) {
         if (!isdefined(level.hud_array[hud_name])) {
             return;
         }
@@ -71,18 +68,16 @@ function function_7cafeca(hud_name) {
             function_2a064f4f(huds[i]);
         }
         level.hud_array[hud_name] = undefined;
-    #/
-}
+    }
 
-// Namespace debug_menu/debug_menu
-// Params 1, eflags: 0x0
-// Checksum 0x71824801, Offset: 0x370
-// Size: 0x2c
-function function_2a064f4f(hud) {
-    /#
+    // Namespace debug_menu/debug_menu
+    // Params 1, eflags: 0x0
+    // Checksum 0x71824801, Offset: 0x370
+    // Size: 0x2c
+    function function_2a064f4f(hud) {
         if (isdefined(hud)) {
             hud destroy();
         }
-    #/
-}
+    }
 
+#/

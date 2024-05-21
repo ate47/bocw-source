@@ -108,16 +108,16 @@ function threat_sight_set_state_parameters(statename) {
         statename = self.stealth.threat_sight_state;
     }
     if (isdefined(self.stealth.threatsightratescale)) {
-        var_8c0a9bbb = var_8c0a9bbb * self.stealth.threatsightratescale;
+        var_8c0a9bbb *= self.stealth.threatsightratescale;
     }
     if (isdefined(self.stealth.threatsightdistscale)) {
-        distscale = distscale * self.stealth.threatsightdistscale;
+        distscale *= self.stealth.threatsightdistscale;
     }
     if (isdefined(level.stealth.threatsightratescale)) {
-        var_8c0a9bbb = var_8c0a9bbb * level.stealth.threatsightratescale;
+        var_8c0a9bbb *= level.stealth.threatsightratescale;
     }
     if (isdefined(level.stealth.threatsightdistscale)) {
-        distscale = distscale * level.stealth.threatsightdistscale;
+        distscale *= level.stealth.threatsightdistscale;
     }
     var_218126c3 = level.player.maxvisibledist;
     var_bb0a10d2 = min(200, var_218126c3 * 0.33);
@@ -186,8 +186,8 @@ function threat_sight_player_sight_audio(anycansee, maxthreat, var_2107b994) {
         }
     #/
     if (isdefined(self.stealth.threat_sight_snd_ent)) {
-        self.stealth.threat_sight_snd_threat = self.stealth.threat_sight_snd_threat - self.stealth.threat_sight_snd_threat * var_c7f21015;
-        self.stealth.threat_sight_snd_threat = self.stealth.threat_sight_snd_threat + maxthreat * var_c7f21015;
+        self.stealth.threat_sight_snd_threat -= self.stealth.threat_sight_snd_threat * var_c7f21015;
+        self.stealth.threat_sight_snd_threat += maxthreat * var_c7f21015;
         if (self.stealth.threat_sight_snd_threat < 0.0001) {
             self.stealth.threat_sight_snd_threat = 0;
         }

@@ -285,7 +285,7 @@ function function_5a8becdc(localclientnum, *player, buildinfo, *var_4b1c8937) {
     var_b963136f = int(var_4b1c8937.width / cellwidth);
     var_227adab7 = var_4b1c8937.width - cellwidth * var_b963136f;
     if (var_227adab7 > 0 && var_227adab7 / 2 < level.smartcoversettings.bundle.var_3dfbdbeb && var_b963136f + 2 <= level.smartcoversettings.bundle.var_b118698f) {
-        var_b963136f = var_b963136f + 2;
+        var_b963136f += 2;
     }
     var_9de92bd5 = int(var_4b1c8937.height / cellheight);
     var_2582dbd = var_4b1c8937.height - cellheight * var_9de92bd5;
@@ -314,21 +314,23 @@ function function_5a8becdc(localclientnum, *player, buildinfo, *var_4b1c8937) {
     }
 }
 
-// Namespace smart_cover/gadget_smart_cover
-// Params 2, eflags: 0x0
-// Checksum 0xab938a97, Offset: 0x18c8
-// Size: 0xe4
-function debug_trace(origin, trace) {
-    /#
+/#
+
+    // Namespace smart_cover/gadget_smart_cover
+    // Params 2, eflags: 0x0
+    // Checksum 0xab938a97, Offset: 0x18c8
+    // Size: 0xe4
+    function debug_trace(origin, trace) {
         if (trace[#"fraction"] < 1) {
             color = (0.95, 0.05, 0.05);
         } else {
             color = (0.05, 0.95, 0.05);
         }
         sphere(trace[#"position"], 5, color, 0.75, 1, 10, 100);
-        debug_line(origin, trace[#"position"], color, 100);
-    #/
-}
+        util::debug_line(origin, trace[#"position"], color, 100);
+    }
+
+#/
 
 // Namespace smart_cover/gadget_smart_cover
 // Params 1, eflags: 0x2 linked
@@ -381,8 +383,8 @@ function startmicrowavefx(localclientnum) {
             }
         #/
         need_to_rebuild = microwavefxent microwavefxhash(trace, origin, "center");
-        need_to_rebuild = need_to_rebuild | microwavefxent microwavefxhash(traceright, origin, "right");
-        need_to_rebuild = need_to_rebuild | microwavefxent microwavefxhash(traceleft, origin, "left");
+        need_to_rebuild |= microwavefxent microwavefxhash(traceright, origin, "right");
+        need_to_rebuild |= microwavefxent microwavefxhash(traceleft, origin, "left");
         level.last_microwave_turret_fx_trace = gettime();
         if (!need_to_rebuild) {
             wait(1);
@@ -408,12 +410,12 @@ function microwavefxhash(trace, origin, name) {
         tracedistsq = distancesquared(origin, trace[#"position"]);
         if (tracedistsq >= endofhalffxsq || i == 0) {
             if (tracedistsq < endoffullfxsq) {
-                hash = hash + 1;
+                hash += 1;
             } else {
-                hash = hash + counter;
+                hash += counter;
             }
         }
-        counter = counter * 2;
+        counter *= 2;
     }
     if (!isdefined(self.fxhashs[name])) {
         self.fxhashs[name] = 0;
@@ -462,18 +464,20 @@ function stop_fx_on_tag(localclientnum, *fxname, tag) {
     }
 }
 
-// Namespace smart_cover/gadget_smart_cover
-// Params 3, eflags: 0x0
-// Checksum 0xe092676a, Offset: 0x2228
-// Size: 0x94
-function render_debug_sphere(tag, color, *fxname) {
-    /#
+/#
+
+    // Namespace smart_cover/gadget_smart_cover
+    // Params 3, eflags: 0x0
+    // Checksum 0xe092676a, Offset: 0x2228
+    // Size: 0x94
+    function render_debug_sphere(tag, color, *fxname) {
         if (getdvarint(#"scr_microwave_turret_fx_debug", 0)) {
             origin = self gettagorigin(color);
             sphere(origin, 2, fxname, 0.75, 1, 10, 100);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace smart_cover/gadget_smart_cover
 // Params 5, eflags: 0x2 linked

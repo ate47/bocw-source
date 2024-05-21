@@ -69,13 +69,17 @@ function function_209fda28(weapon) {
     }
 }
 
-// Namespace deployable/deployable
-// Params 1, eflags: 0x0
-// Checksum 0x9d291da1, Offset: 0x478
-// Size: 0x2c
-function function_84fa8d39(*weapon) {
-    println("<unknown string>");
-}
+/#
+
+    // Namespace deployable/deployable
+    // Params 1, eflags: 0x0
+    // Checksum 0x9d291da1, Offset: 0x478
+    // Size: 0x2c
+    function function_84fa8d39(*weapon) {
+        println("<unknown string>");
+    }
+
+#/
 
 // Namespace deployable/deployable
 // Params 1, eflags: 0x0
@@ -337,7 +341,7 @@ function private function_6654310c(weapon) {
 // Params 0, eflags: 0x0
 // Checksum 0xa560be3, Offset: 0x11d8
 // Size: 0xc
-function function_f8fe102f() {
+function location_valid() {
     return isdefined(self.var_b8878ba9);
 }
 

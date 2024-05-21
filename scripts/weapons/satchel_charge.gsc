@@ -425,25 +425,24 @@ function function_4ba658e5(*watcher, *player) {
     
 }
 
-// Namespace satchel_charge/satchel_charge
-// Params 1, eflags: 0x0
-// Checksum 0x6e0c8f20, Offset: 0x1848
-// Size: 0x74
-function function_335a9072(text) {
-    /#
+/#
+
+    // Namespace satchel_charge/satchel_charge
+    // Params 1, eflags: 0x0
+    // Checksum 0x6e0c8f20, Offset: 0x1848
+    // Size: 0x74
+    function function_335a9072(text) {
         if (level.weaponobjectdebug == 1) {
             entitynumber = self getentitynumber();
             println("<unknown string>" + entitynumber + "<unknown string>" + text);
         }
-    #/
-}
+    }
 
-// Namespace satchel_charge/satchel_charge
-// Params 0, eflags: 0x0
-// Checksum 0xcdfc7ca5, Offset: 0x18c8
-// Size: 0xb6
-function function_87e9f461() {
-    /#
+    // Namespace satchel_charge/satchel_charge
+    // Params 0, eflags: 0x0
+    // Checksum 0xcdfc7ca5, Offset: 0x18c8
+    // Size: 0xb6
+    function function_87e9f461() {
         self endon(#"death", #"hacked", #"detonating");
         function_a0778d59();
         starttime = gettime();
@@ -451,6 +450,6 @@ function function_87e9f461() {
             function_335a9072("<unknown string>" + float(self.weapon.fusetime - gettime() - starttime) / 1000);
             waitframe(1);
         }
-    #/
-}
+    }
 
+#/

@@ -743,7 +743,7 @@ function function_9b1a8f91(localclientnum, mask = randomint(1 << level.var_8056a
         if (mask & 1) {
             util::playfxontag(localclientnum, isdefined(self.var_600c0020) ? self.var_600c0020[idx] : level.var_8056ac44[idx], self, level.var_75aaaa81[idx]);
         }
-        mask = mask >> 1;
+        mask >>= 1;
     }
 }
 

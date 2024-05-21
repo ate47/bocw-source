@@ -19,7 +19,7 @@ function main() {
     self thread spotted_thread();
     self thread visibility_thread();
     /#
-        self thread debug_friendly();
+        self thread namespace_b0df45a::debug_friendly();
     #/
 }
 

@@ -328,7 +328,7 @@ function set_game_state(game_state) {
 // Checksum 0x188b319, Offset: 0x18a0
 // Size: 0xbc
 function function_58292c4a(reason, var_eeb30248 = undefined) {
-    assert(get_world_uimodel("<unknown string>") == 1);
+    assert(clientfield::get_world_uimodel("<unknown string>") == 1);
     var_ccabdce8 = 0;
     if (isdefined(var_eeb30248)) {
         var_ccabdce8 = function_1e223bce(var_eeb30248);
@@ -508,7 +508,7 @@ function function_96e10d88(successful) {
 function function_1e223bce(players) {
     bitarray = 0;
     foreach (player in players) {
-        bitarray = bitarray | 1 << player getentitynumber();
+        bitarray |= 1 << player getentitynumber();
     }
     return bitarray;
 }
@@ -519,7 +519,7 @@ function function_1e223bce(players) {
 // Size: 0x3e
 function function_85d088ed(player) {
     bitarray = 0;
-    bitarray = bitarray | 1 << player getentitynumber();
+    bitarray |= 1 << player getentitynumber();
     return bitarray;
 }
 
@@ -703,12 +703,13 @@ function function_dc0859e(var_b5434dd5 = 1) {
     }
 }
 
-// Namespace zm_trial_util/zm_trial_util
-// Params 0, eflags: 0x0
-// Checksum 0xad74590a, Offset: 0x3318
-// Size: 0x1a8
-function open_all_doors() {
-    /#
+/#
+
+    // Namespace zm_trial_util/zm_trial_util
+    // Params 0, eflags: 0x0
+    // Checksum 0xad74590a, Offset: 0x3318
+    // Size: 0x1a8
+    function open_all_doors() {
         a_zombie_doors = getentarray("<unknown string>", "<unknown string>");
         for (i = 0; i < a_zombie_doors.size; i++) {
             if (!is_true(a_zombie_doors[i].has_been_opened)) {
@@ -728,42 +729,38 @@ function open_all_doors() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace zm_trial_util/zm_trial_util
-// Params 0, eflags: 0x0
-// Checksum 0xe010c100, Offset: 0x34c8
-// Size: 0x160
-function function_9c71b46f() {
-    /#
+    // Namespace zm_trial_util/zm_trial_util
+    // Params 0, eflags: 0x0
+    // Checksum 0xe010c100, Offset: 0x34c8
+    // Size: 0x160
+    function function_9c71b46f() {
         foreach (player in getplayers()) {
             for (i = 0; i < player.var_c27f1e90.size; i++) {
                 perk = player.var_c27f1e90[i];
                 if (isdefined(player.perk_purchased) && player.perk_purchased == perk) {
                     continue;
                 }
-                if (!player hasperk(perk) && !player has_perk_paused(perk)) {
-                    n_index = player function_c1efcc57(perk);
-                    player function_9bdf581f(perk, n_index);
+                if (!player hasperk(perk) && !player zm_perks::has_perk_paused(perk)) {
+                    n_index = player zm_perks::function_c1efcc57(perk);
+                    player zm_perks::function_9bdf581f(perk, n_index);
                 }
             }
         }
-    #/
-}
+    }
 
-// Namespace zm_trial_util/zm_trial_util
-// Params 0, eflags: 0x0
-// Checksum 0xd0b5a51c, Offset: 0x3630
-// Size: 0x94
-function function_9c1092f6() {
-    /#
+    // Namespace zm_trial_util/zm_trial_util
+    // Params 0, eflags: 0x0
+    // Checksum 0xd0b5a51c, Offset: 0x3630
+    // Size: 0x94
+    function function_9c1092f6() {
         iprintlnbold("<unknown string>");
         if (getgametypesetting(#"zmshowtimer", 0) == 1) {
             setgametypesetting(#"zmshowtimer", 0);
             return;
         }
         setgametypesetting(#"zmshowtimer", 1);
-    #/
-}
+    }
 
+#/

@@ -155,14 +155,17 @@ function function_5f05b132() {
     clientfield::set("dmg_models_and_vol_decals_burning", 0);
 }
 
-// Namespace namespace_31c67f6d/namespace_89829bca
-// Params 0, eflags: 0x0
-// Checksum 0xcc6ac33b, Offset: 0x28b0
-// Size: 0x8
-function function_e81f8ff1() {
-    /#
-    #/
-}
+/#
+
+    // Namespace namespace_31c67f6d/namespace_89829bca
+    // Params 0, eflags: 0x0
+    // Checksum 0xcc6ac33b, Offset: 0x28b0
+    // Size: 0x8
+    function function_e81f8ff1() {
+        
+    }
+
+#/
 
 // Namespace namespace_31c67f6d/namespace_89829bca
 // Params 0, eflags: 0x2 linked
@@ -1880,7 +1883,7 @@ function function_a70e8e05(str_scene, var_9a2dd7eb) {
         if (var_aa19e187 > var_63293649) {
             break;
         }
-        var_7868cbd8 = var_7868cbd8 + 1;
+        var_7868cbd8 += 1;
         if (var_7868cbd8 > var_9a2dd7eb) {
             var_7868cbd8 = 1;
         }
@@ -2456,7 +2459,7 @@ function function_cdbadaff(n_time, var_4961ddd2, var_97fef14f) {
     t = 0;
     while (t < n_time) {
         var_76bd8d90 = var_97fef14f + (var_4961ddd2 - var_97fef14f) * t / n_time;
-        t = t + 0.025;
+        t += 0.025;
         self setlightintensity(function_5d783702(var_76bd8d90));
         wait(0.025);
     }
@@ -2497,7 +2500,7 @@ function function_ae83465e(n_time, var_64ba523d, var_e15fe12b) {
     t = 0;
     while (t < n_time) {
         var_2f339140 = var_e15fe12b + (var_64ba523d - var_e15fe12b) * t / n_time;
-        t = t + 0.05;
+        t += 0.05;
         self setlightcolor(var_2f339140);
         wait(0.025);
     }
@@ -2913,7 +2916,7 @@ function function_32d36a25() {
 // Size: 0x46
 function function_3a845769() {
     level waittill(#"hash_5d924b80d3bc44e8");
-    level.var_dbd670f4.origin = level.var_dbd670f4.origin + (0, 0, 1);
+    level.var_dbd670f4.origin += (0, 0, 1);
 }
 
 // Namespace namespace_31c67f6d/namespace_89829bca

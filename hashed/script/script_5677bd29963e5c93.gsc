@@ -67,12 +67,13 @@ function private function_bc948200() {
     
 }
 
-// Namespace namespace_80c07c34/namespace_80c07c34
-// Params 2, eflags: 0x4
-// Checksum 0x354109f0, Offset: 0x2a0
-// Size: 0x12c
-function private function_5da462f3(startpos, angles) {
-    /#
+/#
+
+    // Namespace namespace_80c07c34/namespace_80c07c34
+    // Params 2, eflags: 0x4
+    // Checksum 0x354109f0, Offset: 0x2a0
+    // Size: 0x12c
+    function private function_5da462f3(startpos, angles) {
         forward = anglestoforward(angles);
         right = anglestoright(angles);
         up = anglestoup(angles);
@@ -82,8 +83,9 @@ function private function_5da462f3(startpos, angles) {
         line(startpos, endpos, (0, 1, 0), 1, 1, 10);
         endpos = startpos + vectorscale(up, 250);
         line(startpos, endpos, (0, 0, 1), 1, 1, 10);
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_80c07c34/namespace_80c07c34
 // Params 1, eflags: 0x2 linked

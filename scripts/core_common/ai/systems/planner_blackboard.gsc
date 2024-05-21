@@ -1,15 +1,17 @@
 // Atian COD Tools GSC CW decompiler test
 #namespace plannerblackboard;
 
-// Namespace plannerblackboard/planner_blackboard
-// Params 0, eflags: 0x1
-// Checksum 0xc5ce24cf, Offset: 0x90
-// Size: 0x34
-function autoexec main() {
-    /#
+/#
+
+    // Namespace plannerblackboard/planner_blackboard
+    // Params 0, eflags: 0x1
+    // Checksum 0xc5ce24cf, Offset: 0x90
+    // Size: 0x34
+    function autoexec main() {
         level.__ai_debugplannerblackboard = getdvarint(#"ai_debugplannerblackboard", 0);
-    #/
-}
+    }
+
+#/
 
 // Namespace plannerblackboard/planner_blackboard
 // Params 1, eflags: 0x2 linked

@@ -160,7 +160,7 @@ function function_3eafd069(entity) {
     #/
     var_e03eac13 = s_trigger_pos zm_unitrigger::create(&function_56b196db, 32, &function_bb30710d);
     zm_unitrigger::unitrigger_force_per_player_triggers(var_e03eac13, 1);
-    var_e03eac13.origin = var_e03eac13.origin + (0, 0, 35);
+    var_e03eac13.origin += (0, 0, 35);
     var_e03eac13.vo_string = zm_platinum_vo::function_c5fed573([#"hash_253b4ad2f1c726c7", #"hash_253b4bd2f1c7287a", #"hash_253b4cd2f1c72a2d"], [#"hash_2569b41becd226e3", #"hash_2569b51becd22896", #"hash_2569b61becd22a49"], [#"hash_456525933756ae59", #"hash_456522933756a940", #"hash_456523933756aaf3"]);
 }
 

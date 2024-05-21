@@ -2023,15 +2023,17 @@ function event_handler[player_callout] function_c91ebb30(eventstruct) {
     self callback(#"player_callout", eventstruct);
 }
 
-// Namespace callback/debug_movement
-// Params 1, eflags: 0x20
-// Checksum 0x4810603d, Offset: 0x51d0
-// Size: 0x34
-function event_handler[debug_movement] function_930ce3c3(eventstruct) {
-    /#
+/#
+
+    // Namespace callback/debug_movement
+    // Params 1, eflags: 0x20
+    // Checksum 0x4810603d, Offset: 0x51d0
+    // Size: 0x34
+    function event_handler[debug_movement] function_930ce3c3(eventstruct) {
         self callback(#"debug_movement", eventstruct);
-    #/
-}
+    }
+
+#/
 
 // Namespace callback/event_6726fc3a
 // Params 1, eflags: 0x20

@@ -436,7 +436,7 @@ function function_690c4abe() {
                         }
                         model scene::stop();
                         model delete();
-                        models_cleaned = models_cleaned + 1;
+                        models_cleaned += 1;
                         if (models_cleaned % 10 == 0) {
                             waitframe(1);
                         }
@@ -500,21 +500,22 @@ function get_children(parent) {
     return struct::get_array(parent.targetname, "target");
 }
 
-// Namespace content_manager/content_manager
-// Params 0, eflags: 0x4
-// Checksum 0x906a8e4e, Offset: 0x2410
-// Size: 0x3dc
-function private init_devgui() {
-    /#
-        waittill_can_add_debug_command();
+/#
+
+    // Namespace content_manager/content_manager
+    // Params 0, eflags: 0x4
+    // Checksum 0x906a8e4e, Offset: 0x2410
+    // Size: 0x3dc
+    function private init_devgui() {
+        util::waittill_can_add_debug_command();
         adddebugcommand("<unknown string>");
-        add_devgui(devgui_path("<unknown string>", 0), "<unknown string>");
+        util::add_devgui(devgui_path("<unknown string>", 0), "<unknown string>");
         foreach (destination in level.contentmanager.destinations) {
             foreach (location in destination.locations) {
                 foreach (instance in location.instances) {
                     instancekey = location.targetname + "<unknown string>" + instance.content_script_name;
                     path = devgui_path("<unknown string>", 1, destination.targetname, location.targetname, instance.content_script_name);
-                    add_devgui(path, "<unknown string>" + instancekey);
+                    util::add_devgui(path, "<unknown string>" + instancekey);
                 }
             }
         }
@@ -522,39 +523,35 @@ function private init_devgui() {
             foreach (instance in location.instances) {
                 instancekey = location.targetname + "<unknown string>" + instance.content_script_name;
                 path = devgui_path("<unknown string>", 2, location.targetname, instance.content_script_name);
-                add_devgui(path, "<unknown string>" + instancekey);
+                util::add_devgui(path, "<unknown string>" + instancekey);
             }
         }
         level thread debug_draw();
         level thread function_b3843ca7();
-    #/
-}
+    }
 
-// Namespace content_manager/content_manager
-// Params 1, eflags: 0x40
-// Checksum 0x55b75972, Offset: 0x27f8
-// Size: 0xd8
-function devgui_path(...) {
-    /#
+    // Namespace content_manager/content_manager
+    // Params 1, eflags: 0x40
+    // Checksum 0x55b75972, Offset: 0x27f8
+    // Size: 0xd8
+    function devgui_path(...) {
         path = "<unknown string>";
         foreach (arg in vararg) {
             if (isint(arg)) {
-                path = path + "<unknown string>";
+                path += "<unknown string>";
             } else {
-                path = path + "<unknown string>";
+                path += "<unknown string>";
             }
-            path = path + arg;
+            path += arg;
         }
         return path;
-    #/
-}
+    }
 
-// Namespace content_manager/content_manager
-// Params 0, eflags: 0x4
-// Checksum 0xdf72fd31, Offset: 0x28d8
-// Size: 0x1c0
-function private function_b3843ca7() {
-    /#
+    // Namespace content_manager/content_manager
+    // Params 0, eflags: 0x4
+    // Checksum 0xdf72fd31, Offset: 0x28d8
+    // Size: 0x1c0
+    function private function_b3843ca7() {
         while (true) {
             setdvar(#"hash_6d5a45dcdc3af9b5", "<unknown string>");
             waitframe(1);
@@ -584,15 +581,13 @@ function private function_b3843ca7() {
             getplayers()[0] setorigin(teleport.origin);
             spawn_instance(instance);
         }
-    #/
-}
+    }
 
-// Namespace content_manager/content_manager
-// Params 0, eflags: 0x4
-// Checksum 0x89ad8590, Offset: 0x2aa0
-// Size: 0x162
-function private debug_draw() {
-    /#
+    // Namespace content_manager/content_manager
+    // Params 0, eflags: 0x4
+    // Checksum 0x89ad8590, Offset: 0x2aa0
+    // Size: 0x162
+    function private debug_draw() {
         while (true) {
             if (getdvarint(#"hash_55e098bf3549b14d", 0)) {
                 foreach (destination in level.contentmanager.destinations) {
@@ -604,25 +599,21 @@ function private debug_draw() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace content_manager/content_manager
-// Params 1, eflags: 0x0
-// Checksum 0x4197f942, Offset: 0x2c10
-// Size: 0x34
-function draw_destination(destination) {
-    /#
+    // Namespace content_manager/content_manager
+    // Params 1, eflags: 0x0
+    // Checksum 0x4197f942, Offset: 0x2c10
+    // Size: 0x34
+    function draw_destination(destination) {
         draw_struct(destination, (0, 1, 0), undefined, destination.targetname);
-    #/
-}
+    }
 
-// Namespace content_manager/content_manager
-// Params 2, eflags: 0x0
-// Checksum 0x99f88a9c, Offset: 0x2c50
-// Size: 0xe0
-function draw_location(location, destination) {
-    /#
+    // Namespace content_manager/content_manager
+    // Params 2, eflags: 0x0
+    // Checksum 0x99f88a9c, Offset: 0x2c50
+    // Size: 0xe0
+    function draw_location(location, destination) {
         if (!isdefined(destination)) {
             destination = undefined;
         }
@@ -630,29 +621,25 @@ function draw_location(location, destination) {
         foreach (instance in location.instances) {
             draw_instance(instance, location);
         }
-    #/
-}
+    }
 
-// Namespace content_manager/content_manager
-// Params 2, eflags: 0x0
-// Checksum 0x9c6a08d7, Offset: 0x2d38
-// Size: 0x5c
-function draw_instance(instance, location) {
-    /#
+    // Namespace content_manager/content_manager
+    // Params 2, eflags: 0x0
+    // Checksum 0x9c6a08d7, Offset: 0x2d38
+    // Size: 0x5c
+    function draw_instance(instance, location) {
         if (!isdefined(location)) {
             location = undefined;
         }
         draw_struct(instance, (0, 0, 1), location);
         function_b2b08c09(instance);
-    #/
-}
+    }
 
-// Namespace content_manager/content_manager
-// Params 1, eflags: 0x0
-// Checksum 0x69f27836, Offset: 0x2da0
-// Size: 0x13c
-function function_b2b08c09(node) {
-    /#
+    // Namespace content_manager/content_manager
+    // Params 1, eflags: 0x0
+    // Checksum 0x69f27836, Offset: 0x2da0
+    // Size: 0x13c
+    function function_b2b08c09(node) {
         if (isarray(node.contentgroups)) {
             foreach (group in node.contentgroups) {
                 foreach (child in group) {
@@ -661,15 +648,13 @@ function function_b2b08c09(node) {
                 }
             }
         }
-    #/
-}
+    }
 
-// Namespace content_manager/content_manager
-// Params 4, eflags: 0x0
-// Checksum 0xab4810c0, Offset: 0x2ee8
-// Size: 0x13c
-function draw_struct(struct, color, parent, extrastr) {
-    /#
+    // Namespace content_manager/content_manager
+    // Params 4, eflags: 0x0
+    // Checksum 0xab4810c0, Offset: 0x2ee8
+    // Size: 0x13c
+    function draw_struct(struct, color, parent, extrastr) {
         if (!isdefined(parent)) {
             parent = undefined;
         }
@@ -686,15 +671,13 @@ function draw_struct(struct, color, parent, extrastr) {
         }
         sphere(struct.origin, 8, color);
         print3d(struct.origin, debugstr);
-    #/
-}
+    }
 
-// Namespace content_manager/content_manager
-// Params 2, eflags: 0x0
-// Checksum 0x284293fb, Offset: 0x3030
-// Size: 0x7a
-function function_4636f4cb(str, append) {
-    /#
+    // Namespace content_manager/content_manager
+    // Params 2, eflags: 0x0
+    // Checksum 0x284293fb, Offset: 0x3030
+    // Size: 0x7a
+    function function_4636f4cb(str, append) {
         if (ishash(append)) {
             append = function_9e72a96(append);
         }
@@ -704,6 +687,6 @@ function function_4636f4cb(str, append) {
             return (str + "<unknown string>" + append);
         }
         return str;
-    #/
-}
+    }
 
+#/

@@ -255,7 +255,7 @@ function function_ccf82192(var_38280f2f, delta = 1) {
 function private function_902ef0de(var_38280f2f, delta) {
     /#
         if (getdvarint(#"scr_contract_debug_multiplier", 0) > 0) {
-            delta = delta * getdvarint(#"scr_contract_debug_multiplier", 1);
+            delta *= getdvarint(#"scr_contract_debug_multiplier", 1);
         }
     #/
     if (delta <= 0) {
@@ -373,12 +373,13 @@ function contract_win(winner) {
     }
 }
 
-// Namespace contracts/cwl_contracts
-// Params 0, eflags: 0x0
-// Checksum 0xa56fedf3, Offset: 0x1700
-// Size: 0xcc
-function devgui_setup() {
-    /#
+/#
+
+    // Namespace contracts/cwl_contracts
+    // Params 0, eflags: 0x0
+    // Checksum 0xa56fedf3, Offset: 0x1700
+    // Size: 0xcc
+    function devgui_setup() {
         devgui_base = "<unknown string>";
         wait(3);
         function_e07e542b(devgui_base, undefined);
@@ -388,114 +389,100 @@ function devgui_setup() {
         function_936f8390(devgui_base);
         function_2e9917ec(devgui_base);
         function_295a8005(devgui_base);
-    #/
-}
+    }
 
-// Namespace contracts/cwl_contracts
-// Params 1, eflags: 0x0
-// Checksum 0x4cb2212b, Offset: 0x17d8
-// Size: 0x12c
-function function_17a92a99(var_1d89ece6) {
-    /#
+    // Namespace contracts/cwl_contracts
+    // Params 1, eflags: 0x0
+    // Checksum 0x4cb2212b, Offset: 0x17d8
+    // Size: 0x12c
+    function function_17a92a99(var_1d89ece6) {
         var_78a6fb52 = var_1d89ece6 + "<unknown string>";
         var_c8d599b5 = "<unknown string>";
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-    #/
-}
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+    }
 
-// Namespace contracts/cwl_contracts
-// Params 1, eflags: 0x0
-// Checksum 0xc535f75f, Offset: 0x1910
-// Size: 0xb4
-function function_7f05e018(var_1d89ece6) {
-    /#
+    // Namespace contracts/cwl_contracts
+    // Params 1, eflags: 0x0
+    // Checksum 0xc535f75f, Offset: 0x1910
+    // Size: 0xb4
+    function function_7f05e018(var_1d89ece6) {
         var_78a6fb52 = var_1d89ece6 + "<unknown string>";
         var_c8d599b5 = "<unknown string>";
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-    #/
-}
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+    }
 
-// Namespace contracts/cwl_contracts
-// Params 1, eflags: 0x0
-// Checksum 0x4fd78d33, Offset: 0x19d0
-// Size: 0x154
-function function_bdc473ef(var_1d89ece6) {
-    /#
+    // Namespace contracts/cwl_contracts
+    // Params 1, eflags: 0x0
+    // Checksum 0x4fd78d33, Offset: 0x19d0
+    // Size: 0x154
+    function function_bdc473ef(var_1d89ece6) {
         var_78a6fb52 = var_1d89ece6 + "<unknown string>";
         var_c8d599b5 = "<unknown string>";
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-    #/
-}
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+    }
 
-// Namespace contracts/cwl_contracts
-// Params 1, eflags: 0x0
-// Checksum 0xd3619160, Offset: 0x1b30
-// Size: 0x154
-function function_936f8390(var_1d89ece6) {
-    /#
+    // Namespace contracts/cwl_contracts
+    // Params 1, eflags: 0x0
+    // Checksum 0xd3619160, Offset: 0x1b30
+    // Size: 0x154
+    function function_936f8390(var_1d89ece6) {
         var_78a6fb52 = var_1d89ece6 + "<unknown string>";
         var_c8d599b5 = "<unknown string>";
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-    #/
-}
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+    }
 
-// Namespace contracts/cwl_contracts
-// Params 1, eflags: 0x0
-// Checksum 0x3afa78ef, Offset: 0x1c90
-// Size: 0x154
-function function_2e9917ec(var_1d89ece6) {
-    /#
+    // Namespace contracts/cwl_contracts
+    // Params 1, eflags: 0x0
+    // Checksum 0x3afa78ef, Offset: 0x1c90
+    // Size: 0x154
+    function function_2e9917ec(var_1d89ece6) {
         var_78a6fb52 = var_1d89ece6 + "<unknown string>";
         var_c8d599b5 = "<unknown string>";
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-    #/
-}
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+    }
 
-// Namespace contracts/cwl_contracts
-// Params 1, eflags: 0x0
-// Checksum 0xebe1e365, Offset: 0x1df0
-// Size: 0x3a
-function function_ef925b75(var_1d89ece6) {
-    /#
+    // Namespace contracts/cwl_contracts
+    // Params 1, eflags: 0x0
+    // Checksum 0xebe1e365, Offset: 0x1df0
+    // Size: 0x3a
+    function function_ef925b75(var_1d89ece6) {
         var_78a6fb52 = var_1d89ece6 + "<unknown string>";
         var_c8d599b5 = "<unknown string>";
-    #/
-}
+    }
 
-// Namespace contracts/cwl_contracts
-// Params 1, eflags: 0x0
-// Checksum 0xb2882e85, Offset: 0x1e38
-// Size: 0x64
-function function_295a8005(var_1d89ece6) {
-    /#
+    // Namespace contracts/cwl_contracts
+    // Params 1, eflags: 0x0
+    // Checksum 0xb2882e85, Offset: 0x1e38
+    // Size: 0x64
+    function function_295a8005(var_1d89ece6) {
         var_78a6fb52 = var_1d89ece6 + "<unknown string>";
         var_c8d599b5 = "<unknown string>";
-        function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-    #/
-}
+        util::function_3f749abc(var_78a6fb52 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+    }
 
+#/

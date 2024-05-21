@@ -581,7 +581,7 @@ function function_4ffd09e4() {
         result = self.var_6332d14f waittill(#"damage");
         if (!isplayer(result.attacker)) {
             self clientfield::increment("" + #"hash_85303d8249a5451");
-            var_f15d2e26 = var_f15d2e26 - result.amount;
+            var_f15d2e26 -= result.amount;
             /#
                 iprintlnbold(var_f15d2e26);
             #/
@@ -1204,93 +1204,92 @@ function function_e243a545() {
     level flag::clear(#"hash_66eb1b5632f46da8");
 }
 
-// Namespace namespace_7a518726/namespace_7a518726
-// Params 0, eflags: 0x0
-// Checksum 0xce9e314a, Offset: 0x5970
-// Size: 0xec
-function function_cd7a3de4() {
-    /#
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_custom_devgui_callback(&cmd);
-    #/
-}
+/#
 
-// Namespace namespace_7a518726/namespace_7a518726
-// Params 1, eflags: 0x0
-// Checksum 0x2fa340dd, Offset: 0x5a68
-// Size: 0x60a
-function cmd(cmd) {
-    /#
+    // Namespace namespace_7a518726/namespace_7a518726
+    // Params 0, eflags: 0x0
+    // Checksum 0xce9e314a, Offset: 0x5970
+    // Size: 0xec
+    function function_cd7a3de4() {
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        zm_devgui::add_custom_devgui_callback(&cmd);
+    }
+
+    // Namespace namespace_7a518726/namespace_7a518726
+    // Params 1, eflags: 0x0
+    // Checksum 0x2fa340dd, Offset: 0x5a68
+    // Size: 0x60a
+    function cmd(cmd) {
         switch (cmd) {
         case #"hash_52e9bd6ba5bfab34":
-            level set(#"hash_75f07aed08b6bb5e");
+            level flag::set(#"hash_75f07aed08b6bb5e");
             level.var_3d8c252b = 3;
-            level set(#"hash_4c498c40805ec092");
-            level set(#"hash_11d54d2ecf05cb2");
-            level set(#"hash_2bd741137c515a48");
+            level flag::set(#"hash_4c498c40805ec092");
+            level flag::set(#"hash_11d54d2ecf05cb2");
+            level flag::set(#"hash_2bd741137c515a48");
             break;
         case #"hash_4f9ea1b4a8a09817":
-            level set(#"hash_2fea433a677a8531");
+            level flag::set(#"hash_2fea433a677a8531");
             break;
         case #"hash_2a439dc6ff821f8c":
-            level set(#"hash_73b91a4076d8a5fd");
+            level flag::set(#"hash_73b91a4076d8a5fd");
             playsoundatposition(#"hash_77b21ab51a834aa5", (0, 0, 0));
             break;
         case #"hash_7f4f450f45fab726":
             spawn_loc = level.klaus.origin;
             spawn_angles = level.klaus.angles;
             var_55033b92 = spawnactor("<unknown string>", spawn_loc, spawn_angles);
-            var_55033b92 function_73367fa9();
-            var_55033b92 set("<unknown string>" + #"hash_703543ca871a0f75", 1);
+            var_55033b92 namespace_6fb22263::function_73367fa9();
+            var_55033b92 clientfield::set("<unknown string>" + #"hash_703543ca871a0f75", 1);
             wait(1);
-            var_55033b92 function_94fde0c0();
+            var_55033b92 namespace_ca8676a3::function_94fde0c0();
             var_55033b92 function_99f76fa4(level.var_88672174, 0, 0);
             break;
         case #"hash_7fa0510f463f22b2":
             spawn_loc = level.klaus.origin;
             spawn_angles = level.klaus.angles;
             var_55033b92 = spawnactor("<unknown string>", spawn_loc, spawn_angles);
-            var_55033b92 function_73367fa9();
-            var_55033b92 set("<unknown string>" + #"hash_703543ca871a0f75", 1);
+            var_55033b92 namespace_6fb22263::function_73367fa9();
+            var_55033b92 clientfield::set("<unknown string>" + #"hash_703543ca871a0f75", 1);
             wait(1);
-            var_55033b92 function_94fde0c0();
+            var_55033b92 namespace_ca8676a3::function_94fde0c0();
             var_55033b92 function_99f76fa4(level.var_5b8c6c9b, 0, 0);
             break;
         case #"hash_2a5a3d4fd5a02048":
             spawn_loc = level.klaus.origin;
             spawn_angles = level.klaus.angles;
             var_55033b92 = spawnactor("<unknown string>", spawn_loc, spawn_angles);
-            var_55033b92 function_73367fa9();
-            var_55033b92 set("<unknown string>" + #"hash_703543ca871a0f75", 1);
+            var_55033b92 namespace_6fb22263::function_73367fa9();
+            var_55033b92 clientfield::set("<unknown string>" + #"hash_703543ca871a0f75", 1);
             wait(1);
-            var_55033b92 function_94fde0c0();
+            var_55033b92 namespace_ca8676a3::function_94fde0c0();
             var_55033b92 function_99f76fa4(level.var_f1662fe9, 0, 0);
             break;
         case #"hash_1c3b84bbe061a573":
             spawn_loc = level.klaus.origin;
             spawn_angles = level.klaus.angles;
             var_55033b92 = spawnactor("<unknown string>", spawn_loc, spawn_angles);
-            var_55033b92 function_73367fa9();
-            var_55033b92 set("<unknown string>" + #"hash_703543ca871a0f75", 1);
+            var_55033b92 namespace_6fb22263::function_73367fa9();
+            var_55033b92 clientfield::set("<unknown string>" + #"hash_703543ca871a0f75", 1);
             wait(1);
-            var_55033b92 function_94fde0c0();
+            var_55033b92 namespace_ca8676a3::function_94fde0c0();
             var_55033b92 function_99f76fa4(0, 0, 0);
             break;
         case #"hash_593067b88bb64850":
-            var_1b22e364 = get("<unknown string>", "<unknown string>");
+            var_1b22e364 = struct::get("<unknown string>", "<unknown string>");
             var_44ff9e2 = getentarray(var_1b22e364.target, "<unknown string>");
             foreach (var_67fbb89d in var_44ff9e2) {
                 var_67fbb89d thread function_ed04cf0f(1);
             }
             break;
         }
-    #/
-}
+    }
 
+#/

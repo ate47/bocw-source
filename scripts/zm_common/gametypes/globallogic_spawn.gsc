@@ -112,7 +112,7 @@ function timeuntilwavespawn(minimumwait) {
     numwaves = ceil(numwavespassedearliestspawntime);
     timeofspawn = lastwavetime + numwaves * wavedelay;
     if (isdefined(self.wavespawnindex)) {
-        timeofspawn = timeofspawn + var_e0fb0ad5;
+        timeofspawn += var_e0fb0ad5;
     }
     return float(timeofspawn - gettime()) / 1000;
 }
@@ -185,7 +185,7 @@ function spawnplayer() {
     globallogic::updateteamstatus();
     profileNamedStart(#"");
     self thread stoppoisoningandflareonspawn();
-    assert(isvalidclass(self.curclass));
+    assert(globallogic_utils::isvalidclass(self.curclass));
     self zm_loadout::give_loadout();
     if (level.inprematchperiod) {
         self val::set(#"prematch_period", "freezecontrols");
@@ -210,7 +210,7 @@ function spawnplayer() {
         if (!level.splitscreen && getdvarint(#"scr_showperksonspawn", 0) == 1 && game.state != "<unknown string>") {
             profileNamedStart(#"");
             if (level.perksenabled == 1) {
-                self showperks();
+                self hud::showperks();
             }
             profileNamedStop();
         }
@@ -535,7 +535,7 @@ function showspawnmessage() {
 function spawnclient(timealreadypassed) {
     profileNamedStart(#"");
     assert(isdefined(self.team));
-    assert(isvalidclass(self.curclass));
+    assert(globallogic_utils::isvalidclass(self.curclass));
     if (!self mayspawn()) {
         currentorigin = self.origin;
         currentangles = self.angles;
@@ -574,10 +574,10 @@ function waitandspawnclient(timealreadypassed) {
     }
     timeuntilspawn = timeuntilspawn(0);
     if (timeuntilspawn > timealreadypassed) {
-        timeuntilspawn = timeuntilspawn - timealreadypassed;
+        timeuntilspawn -= timealreadypassed;
         timealreadypassed = 0;
     } else {
-        timealreadypassed = timealreadypassed - timeuntilspawn;
+        timealreadypassed -= timeuntilspawn;
         timeuntilspawn = 0;
     }
     if (timeuntilspawn > 0) {

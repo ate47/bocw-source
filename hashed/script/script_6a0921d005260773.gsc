@@ -4,26 +4,25 @@
 
 #namespace abilities;
 
-// Namespace abilities/namespace_c78c9cc2
-// Params 0, eflags: 0x0
-// Checksum 0x5f82f5c8, Offset: 0xe0
-// Size: 0x46
-function function_9b38e79c() {
-    /#
+/#
+
+    // Namespace abilities/namespace_c78c9cc2
+    // Params 0, eflags: 0x0
+    // Checksum 0x5f82f5c8, Offset: 0xe0
+    // Size: 0x46
+    function function_9b38e79c() {
         self endon(#"death");
         for (;;) {
             debug_arrow(self.origin, self.angles);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace abilities/namespace_c78c9cc2
-// Params 3, eflags: 0x0
-// Checksum 0x6886589a, Offset: 0x130
-// Size: 0x27c
-function debug_arrow(org, ang, opcolor) {
-    /#
+    // Namespace abilities/namespace_c78c9cc2
+    // Params 3, eflags: 0x0
+    // Checksum 0x6886589a, Offset: 0x130
+    // Size: 0x27c
+    function debug_arrow(org, ang, opcolor) {
         forward = anglestoforward(ang);
         forwardfar = vectorscale(forward, 50);
         forwardclose = vectorscale(forward, 50 * 0.8);
@@ -46,15 +45,13 @@ function debug_arrow(org, ang, opcolor) {
         line(org + forwardfar, org + forwardclose + leftdraw, red, 0.9);
         line(org, org + right, blue, 0.9);
         line(org, org + up, green, 0.9);
-    #/
-}
+    }
 
-// Namespace abilities/namespace_c78c9cc2
-// Params 4, eflags: 0x0
-// Checksum 0x3b868828, Offset: 0x3b8
-// Size: 0x94
-function debug_circle(origin, radius, seconds, color) {
-    /#
+    // Namespace abilities/namespace_c78c9cc2
+    // Params 4, eflags: 0x0
+    // Checksum 0x3b868828, Offset: 0x3b8
+    // Size: 0x94
+    function debug_circle(origin, radius, seconds, color) {
         if (!isdefined(seconds)) {
             seconds = 1;
         }
@@ -63,8 +60,9 @@ function debug_circle(origin, radius, seconds, color) {
         }
         frames = int(20 * seconds);
         circle(origin, radius, color, 0, 1, frames);
-    #/
-}
+    }
+
+#/
 
 // Namespace abilities/namespace_c78c9cc2
 // Params 3, eflags: 0x0
@@ -104,7 +102,7 @@ function function_23c1f0b0() {
         }
         flag = function_f9b48b95(ability.name);
         if (isdefined(flag)) {
-            self.abilities.var_b10e8797 = self.abilities.var_b10e8797 | flag;
+            self.abilities.var_b10e8797 |= flag;
         }
     }
 }
@@ -122,7 +120,7 @@ function function_f204ea98(name) {
         return;
     }
     self function_6d4cf28e();
-    self.abilities.var_b10e8797 = self.abilities.var_b10e8797 | flag;
+    self.abilities.var_b10e8797 |= flag;
 }
 
 // Namespace abilities/namespace_c78c9cc2
@@ -138,7 +136,7 @@ function function_8fe77681(name) {
     if (!isdefined(flag)) {
         return;
     }
-    self.abilities.var_b10e8797 = self.abilities.var_b10e8797 & ~flag;
+    self.abilities.var_b10e8797 &= ~flag;
 }
 
 // Namespace abilities/namespace_c78c9cc2
@@ -262,12 +260,13 @@ function function_566e25f9(*context) {
     return "";
 }
 
-// Namespace abilities/namespace_c78c9cc2
-// Params 6, eflags: 0x0
-// Checksum 0xdeac70bf, Offset: 0xbf0
-// Size: 0x8c
-function function_e20f02eb(origin, mins, maxs, yaw, frames, color) {
-    /#
+/#
+
+    // Namespace abilities/namespace_c78c9cc2
+    // Params 6, eflags: 0x0
+    // Checksum 0xdeac70bf, Offset: 0xbf0
+    // Size: 0x8c
+    function function_e20f02eb(origin, mins, maxs, yaw, frames, color) {
         if (!isdefined(yaw)) {
             yaw = 0;
         }
@@ -278,15 +277,13 @@ function function_e20f02eb(origin, mins, maxs, yaw, frames, color) {
             color = (1, 0, 0);
         }
         box(origin, mins, maxs, yaw, color, 1, 0, frames);
-    #/
-}
+    }
 
-// Namespace abilities/namespace_c78c9cc2
-// Params 5, eflags: 0x0
-// Checksum 0xece58c59, Offset: 0xc88
-// Size: 0xcc
-function debug_sphere(origin, radius, color, alpha, timeframes) {
-    /#
+    // Namespace abilities/namespace_c78c9cc2
+    // Params 5, eflags: 0x0
+    // Checksum 0xece58c59, Offset: 0xc88
+    // Size: 0xcc
+    function debug_sphere(origin, radius, color, alpha, timeframes) {
         if (!isdefined(color)) {
             color = (1, 0, 0);
         }
@@ -298,8 +295,9 @@ function debug_sphere(origin, radius, color, alpha, timeframes) {
         }
         sides = int(10 * (1 + int(radius) % 100));
         sphere(origin, radius, color, alpha, 1, sides, timeframes);
-    #/
-}
+    }
+
+#/
 
 // Namespace abilities/namespace_c78c9cc2
 // Params 2, eflags: 0x0
@@ -363,13 +361,17 @@ function function_650c0f8f() {
     return "";
 }
 
-// Namespace abilities/namespace_c78c9cc2
-// Params 1, eflags: 0x0
-// Checksum 0x2ea02505, Offset: 0xfc0
-// Size: 0x34
-function debugmsg(txt) {
-    println("<unknown string>" + txt);
-}
+/#
+
+    // Namespace abilities/namespace_c78c9cc2
+    // Params 1, eflags: 0x0
+    // Checksum 0x2ea02505, Offset: 0xfc0
+    // Size: 0x34
+    function debugmsg(txt) {
+        println("<unknown string>" + txt);
+    }
+
+#/
 
 // Namespace abilities/namespace_c78c9cc2
 // Params 1, eflags: 0x2 linked

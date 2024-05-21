@@ -83,7 +83,7 @@ function function_8d4cb2b(localclientnum) {
             }
             traveltime = shot.var_411d90d0;
             if (shot.var_3e552258 == 0) {
-                traveltime = traveltime - 0.5;
+                traveltime -= 0.5;
             }
             if (isdefined(shot.targetstruct)) {
                 var_3dbe949b moveto(shot.targetstruct.origin, shot.var_411d90d0);

@@ -10,22 +10,21 @@
 
 #namespace scene;
 
-// Namespace scene/scene_debug_shared
-// Params 0, eflags: 0x5
-// Checksum 0x69cfa57c, Offset: 0xc0
-// Size: 0x3c
-function private autoexec __init__system__() {
-    /#
-        register(#"scene_debug", &function_c3c9d0e5, undefined, undefined, undefined);
-    #/
-}
+/#
 
-// Namespace scene/scene_debug_shared
-// Params 0, eflags: 0x0
-// Checksum 0xdb5a95ea, Offset: 0x108
-// Size: 0x19c
-function function_c3c9d0e5() {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 0, eflags: 0x5
+    // Checksum 0x69cfa57c, Offset: 0xc0
+    // Size: 0x3c
+    function private autoexec __init__system__() {
+        system::register(#"scene_debug", &function_c3c9d0e5, undefined, undefined, undefined);
+    }
+
+    // Namespace scene/scene_debug_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xdb5a95ea, Offset: 0x108
+    // Size: 0x19c
+    function function_c3c9d0e5() {
         if (getdvarstring(#"scene_menu_mode", "<unknown string>") == "<unknown string>") {
             setdvar(#"scene_menu_mode", "<unknown string>");
         }
@@ -41,15 +40,13 @@ function function_c3c9d0e5() {
         level thread toggle_postfx_igc_loop();
         level thread debug_display_all();
         level thread function_42edf155();
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 0, eflags: 0x0
-// Checksum 0xa31241c6, Offset: 0x2b0
-// Size: 0x6be
-function run_scene_tests() {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xa31241c6, Offset: 0x2b0
+    // Size: 0x6be
+    function run_scene_tests() {
         level endon(#"run_scene_tests");
         var_cdb63291 = 0;
         while (true) {
@@ -73,17 +70,17 @@ function run_scene_tests() {
                 }
             } else {
                 if (str_client_scene != "<unknown string>") {
-                    level clientnotify(str_client_scene + "<unknown string>");
-                    wait_network_frame();
+                    level util::clientnotify(str_client_scene + "<unknown string>");
+                    util::wait_network_frame();
                 }
                 if (str_scene != "<unknown string>") {
                     setdvar(#"run_scene", "<unknown string>");
                     b_series = str_mode == "<unknown string>";
                     if (str_mode == "<unknown string>" || str_mode == "<unknown string>") {
-                        str_mode = str_mode + "<unknown string>" + getdvarstring(#"hash_3018c0b9207d1c", "<unknown string>");
-                        str_mode = str_mode + "<unknown string>" + getdvarstring(#"hash_51617678bebb961a", "<unknown string>");
-                        str_mode = str_mode + "<unknown string>" + getdvarstring(#"hash_4bf15ae7a6fbf73c", "<unknown string>");
-                        str_mode = str_mode + "<unknown string>" + getdvarstring(#"hash_7b946c8966b56a8e", "<unknown string>");
+                        str_mode += "<unknown string>" + getdvarstring(#"hash_3018c0b9207d1c", "<unknown string>");
+                        str_mode += "<unknown string>" + getdvarstring(#"hash_51617678bebb961a", "<unknown string>");
+                        str_mode += "<unknown string>" + getdvarstring(#"hash_4bf15ae7a6fbf73c", "<unknown string>");
+                        str_mode += "<unknown string>" + getdvarstring(#"hash_7b946c8966b56a8e", "<unknown string>");
                     }
                     level thread test_play(str_scene, str_shot, str_mode);
                 }
@@ -91,8 +88,8 @@ function run_scene_tests() {
             str_scene = getdvarstring(#"init_scene");
             str_client_scene = getdvarstring(#"init_client_scene");
             if (str_client_scene != "<unknown string>") {
-                level clientnotify(str_client_scene + "<unknown string>");
-                wait_network_frame();
+                level util::clientnotify(str_client_scene + "<unknown string>");
+                util::wait_network_frame();
             }
             if (str_scene != "<unknown string>") {
                 setdvar(#"init_scene", "<unknown string>");
@@ -104,8 +101,8 @@ function run_scene_tests() {
             str_scene = getdvarstring(#"stop_scene");
             str_client_scene = getdvarstring(#"stop_client_scene");
             if (str_client_scene != "<unknown string>") {
-                level clientnotify(str_client_scene + "<unknown string>");
-                wait_network_frame();
+                level util::clientnotify(str_client_scene + "<unknown string>");
+                util::wait_network_frame();
             }
             if (str_scene != "<unknown string>") {
                 setdvar(#"stop_scene", "<unknown string>");
@@ -129,26 +126,22 @@ function run_scene_tests() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 2, eflags: 0x0
-// Checksum 0x913f461c, Offset: 0x978
-// Size: 0x64
-function capture_scene(str_scene, str_mode) {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 2, eflags: 0x0
+    // Checksum 0x913f461c, Offset: 0x978
+    // Size: 0x64
+    function capture_scene(str_scene, str_mode) {
         setdvar(#"scene_menu", 0);
         level play(str_scene, undefined, undefined, 1, str_mode);
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 0, eflags: 0x0
-// Checksum 0x2361f99, Offset: 0x9e8
-// Size: 0x244
-function toggle_scene_menu() {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x2361f99, Offset: 0x9e8
+    // Size: 0x244
+    function toggle_scene_menu() {
         setdvar(#"scene_menu", 0);
         n_scene_menu_last = -1;
         while (true) {
@@ -165,11 +158,11 @@ function toggle_scene_menu() {
                         break;
                     default:
                         function_1f93be7b();
-                        level clear(#"menu_open");
-                        level clear(#"menu_open");
-                        level clear(#"hash_4035a6aa4a6ba08d");
-                        level clear(#"hash_7b50fddf7a4b9e2e");
-                        level clear(#"hash_5bcd66a9c21f5b2d");
+                        level flag::clear(#"menu_open");
+                        level flag::clear(#"menu_open");
+                        level flag::clear(#"hash_4035a6aa4a6ba08d");
+                        level flag::clear(#"hash_7b50fddf7a4b9e2e");
+                        level flag::clear(#"hash_5bcd66a9c21f5b2d");
                         level notify(#"scene_menu_cleanup");
                         setdvar(#"bgcache_disablewarninghints", 0);
                         setdvar(#"cl_tacticalhud", 1);
@@ -180,67 +173,59 @@ function toggle_scene_menu() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 1, eflags: 0x0
-// Checksum 0x5ed9bbe9, Offset: 0xc38
-// Size: 0xd4
-function function_8ee42bf(o_scene) {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x5ed9bbe9, Offset: 0xc38
+    // Size: 0xd4
+    function function_8ee42bf(o_scene) {
         if (isdefined(o_scene) && isdefined(o_scene._s)) {
             str_type = isdefined(o_scene._s.scenetype) ? o_scene._s.scenetype : "<unknown string>";
-            if (level get(str_type + "<unknown string>") && level get(#"hash_5bcd66a9c21f5b2d")) {
+            if (level flag::get(str_type + "<unknown string>") && level flag::get(#"hash_5bcd66a9c21f5b2d")) {
                 level thread display_scene_menu(o_scene._s.scenetype);
             }
         }
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 1, eflags: 0x0
-// Checksum 0x61a2732a, Offset: 0xd18
-// Size: 0x74
-function function_70042fe2(str_scene) {
-    /#
-        if (!level get("<unknown string>")) {
-            level set("<unknown string>");
+    // Namespace scene/scene_debug_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x61a2732a, Offset: 0xd18
+    // Size: 0x74
+    function function_70042fe2(str_scene) {
+        if (!level flag::get("<unknown string>")) {
+            level flag::set("<unknown string>");
             level.var_a97df3b7 = str_scene;
             function_27f5972e(str_scene);
         }
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 0, eflags: 0x0
-// Checksum 0x2b0cd32, Offset: 0xd98
-// Size: 0x76
-function function_1f93be7b() {
-    /#
-        if (level get("<unknown string>") && isdefined(level.var_a97df3b7)) {
-            level clear("<unknown string>");
+    // Namespace scene/scene_debug_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x2b0cd32, Offset: 0xd98
+    // Size: 0x76
+    function function_1f93be7b() {
+        if (level flag::get("<unknown string>") && isdefined(level.var_a97df3b7)) {
+            level flag::clear("<unknown string>");
             function_f81475ae(level.var_a97df3b7);
             level.var_a97df3b7 = undefined;
         }
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 2, eflags: 0x0
-// Checksum 0x7675ff07, Offset: 0xe18
-// Size: 0xfc6
-function display_scene_menu(str_type, str_scene) {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 2, eflags: 0x0
+    // Checksum 0x7675ff07, Offset: 0xe18
+    // Size: 0xfc6
+    function display_scene_menu(str_type, str_scene) {
         if (!isdefined(str_type)) {
             str_type = "<unknown string>";
         }
-        level clear(#"hash_4035a6aa4a6ba08d");
-        level clear(#"hash_7b50fddf7a4b9e2e");
+        level flag::clear(#"hash_4035a6aa4a6ba08d");
+        level flag::clear(#"hash_7b50fddf7a4b9e2e");
         level notify(#"scene_menu_cleanup");
         level endon(#"scene_menu_cleanup");
         waittillframeend();
-        level set(#"menu_open");
+        level flag::set(#"menu_open");
         setdvar(#"bgcache_disablewarninghints", 1);
         setdvar(#"cl_tacticalhud", 0);
         names = [];
@@ -259,48 +244,48 @@ function display_scene_menu(str_type, str_scene) {
             b_shot_menu = 1;
             selected = isdefined(level.scene_menu_shot_index) ? level.scene_menu_shot_index : 0;
         } else {
-            level set(str_type + "<unknown string>");
-            if (level get(#"hash_5bcd66a9c21f5b2d")) {
+            level flag::set(str_type + "<unknown string>");
+            if (level flag::get(#"hash_5bcd66a9c21f5b2d")) {
                 println("<unknown string>" + toupper(str_type) + "<unknown string>");
             }
             var_72acc069 = 1;
             foreach (str_scenedef in level.scenedefs) {
                 s_scenedef = getscriptbundle(str_scenedef);
                 if (s_scenedef.vmtype !== "<unknown string>" && s_scenedef.scenetype === str_type) {
-                    if (level get(#"hash_5bcd66a9c21f5b2d")) {
+                    if (level flag::get(#"hash_5bcd66a9c21f5b2d")) {
                         if (is_scene_active(s_scenedef.name) && function_c0f30783(s_scenedef)) {
-                            add_sorted(names, s_scenedef.name, 0);
+                            array::add_sorted(names, s_scenedef.name, 0);
                             println("<unknown string>" + toupper(str_type) + "<unknown string>" + var_72acc069 + "<unknown string>" + s_scenedef.name);
                             var_72acc069++;
                         }
                         continue;
                     }
                     if (function_c0f30783(s_scenedef)) {
-                        add_sorted(names, s_scenedef.name, 0);
+                        array::add_sorted(names, s_scenedef.name, 0);
                     }
                 }
             }
-            if (level get(#"hash_5bcd66a9c21f5b2d")) {
+            if (level flag::get(#"hash_5bcd66a9c21f5b2d")) {
                 println("<unknown string>" + toupper(str_type) + "<unknown string>");
             }
             foreach (str_scene_name in names) {
                 str_prefix = getsubstr(str_scene_name, 0, 4);
                 if (str_prefix == "<unknown string>") {
                     arrayremovevalue(names, str_scene_name);
-                    push_front(names, str_scene_name);
+                    array::push_front(names, str_scene_name);
                 }
             }
             names[names.size] = "<unknown string>";
             names[names.size] = "<unknown string>";
-            push_front(names, "<unknown string>");
-            push_front(names, "<unknown string>");
+            array::push_front(names, "<unknown string>");
+            array::push_front(names, "<unknown string>");
             str_title = str_type + "<unknown string>";
             selected = isdefined(level.scene_menu_index) ? level.scene_menu_index : 0;
         }
         if (selected > names.size - 1) {
             selected = 0;
         }
-        if (!b_shot_menu && !level get(#"scene_menu_disable")) {
+        if (!b_shot_menu && !level flag::get(#"scene_menu_disable")) {
             debug2dtext((150, 410 + 400, 0), "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 1, 2);
         }
         up_pressed = 0;
@@ -329,32 +314,32 @@ function display_scene_menu(str_type, str_scene) {
                 scene_list_settext(names, selected, str_title, b_shot_menu, 1);
             }
             if (!up_pressed) {
-                if (level.host up_button_pressed()) {
+                if (level.host util::up_button_pressed()) {
                     up_pressed = 1;
                     selected--;
                     if (names[selected] === "<unknown string>") {
                         selected--;
                     }
                 }
-            } else if (level.host up_button_held()) {
+            } else if (level.host util::up_button_held()) {
                 held = 1;
-                selected = selected - 10;
-            } else if (!level.host up_button_pressed()) {
+                selected -= 10;
+            } else if (!level.host util::up_button_pressed()) {
                 held = 0;
                 up_pressed = 0;
             }
             if (!down_pressed) {
-                if (level.host down_button_pressed()) {
+                if (level.host util::down_button_pressed()) {
                     down_pressed = 1;
                     selected++;
                     if (names[selected] === "<unknown string>") {
                         selected++;
                     }
                 }
-            } else if (level.host down_button_held()) {
+            } else if (level.host util::down_button_held()) {
                 held = 1;
-                selected = selected + 10;
-            } else if (!level.host down_button_pressed()) {
+                selected += 10;
+            } else if (!level.host util::down_button_pressed()) {
                 held = 0;
                 down_pressed = 0;
             }
@@ -403,7 +388,7 @@ function display_scene_menu(str_type, str_scene) {
                 setdvar(#"run_scene", str_scene + "<unknown string>" + names[selected] + "<unknown string>" + "<unknown string>");
             } else if (function_606f1f21()) {
                 if (names[selected] == "<unknown string>") {
-                    level toggle("<unknown string>");
+                    level flag::toggle("<unknown string>");
                     while (function_606f1f21()) {
                         waitframe(1);
                     }
@@ -439,66 +424,56 @@ function display_scene_menu(str_type, str_scene) {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 1, eflags: 0x0
-// Checksum 0xf8244fc8, Offset: 0x1de8
-// Size: 0x84
-function function_c0f30783(s_scenedef) {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0xf8244fc8, Offset: 0x1de8
+    // Size: 0x84
+    function function_c0f30783(s_scenedef) {
         if (!is_true(s_scenedef.var_241c5f3c) || is_true(s_scenedef.var_241c5f3c) && getdvarint(#"zm_debug_ee", 0)) {
             return 1;
         }
         return 0;
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 0, eflags: 0x0
-// Checksum 0x7d6fe21d, Offset: 0x1e78
-// Size: 0x82
-function function_606f1f21() {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x7d6fe21d, Offset: 0x1e78
+    // Size: 0x82
+    function function_606f1f21() {
         if (level.host buttonpressed("<unknown string>") || level.host buttonpressed("<unknown string>") || level.host buttonpressed("<unknown string>")) {
             return 1;
         }
         return 0;
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 0, eflags: 0x0
-// Checksum 0xf88092f7, Offset: 0x1f08
-// Size: 0x38
-function function_940c526f() {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xf88092f7, Offset: 0x1f08
+    // Size: 0x38
+    function function_940c526f() {
         if (level.host buttonpressed("<unknown string>")) {
             return 1;
         }
         return 0;
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 5, eflags: 0x0
-// Checksum 0xac04c304, Offset: 0x1f48
-// Size: 0x74
-function scene_list_settext(strings, n_selected, str_title, b_shot_menu, var_444abf97) {
-    /#
-        if (!level get(#"scene_menu_disable")) {
+    // Namespace scene/scene_debug_shared
+    // Params 5, eflags: 0x0
+    // Checksum 0xac04c304, Offset: 0x1f48
+    // Size: 0x74
+    function scene_list_settext(strings, n_selected, str_title, b_shot_menu, var_444abf97) {
+        if (!level flag::get(#"scene_menu_disable")) {
             thread _scene_list_settext(strings, n_selected, str_title, b_shot_menu, var_444abf97);
         }
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 5, eflags: 0x4
-// Checksum 0x3d9f99d5, Offset: 0x1fc8
-// Size: 0x434
-function private _scene_list_settext(strings, n_selected, str_title, b_shot_menu, var_444abf97) {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 5, eflags: 0x4
+    // Checksum 0x3d9f99d5, Offset: 0x1fc8
+    // Size: 0x434
+    function private _scene_list_settext(strings, n_selected, str_title, b_shot_menu, var_444abf97) {
         if (!isdefined(b_shot_menu)) {
             b_shot_menu = 0;
         }
@@ -530,7 +505,7 @@ function private _scene_list_settext(strings, n_selected, str_title, b_shot_menu
             }
             str_scene = text;
             if (isdefined(level.last_scene_state) && isdefined(level.last_scene_state[text])) {
-                text = text + "<unknown string>" + level.last_scene_state[text] + "<unknown string>";
+                text += "<unknown string>" + level.last_scene_state[text] + "<unknown string>";
             }
             if (i == 5) {
                 text = "<unknown string>" + text + "<unknown string>";
@@ -547,30 +522,26 @@ function private _scene_list_settext(strings, n_selected, str_title, b_shot_menu
             return;
         }
         debug2dtext((150, 410 + 400, 0), "<unknown string>", (1, 1, 1), 1, (0, 0, 0), 1, 1, var_444abf97);
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 1, eflags: 0x0
-// Checksum 0x476541af, Offset: 0x2408
-// Size: 0x58
-function is_scene_active(str_scene) {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x476541af, Offset: 0x2408
+    // Size: 0x58
+    function is_scene_active(str_scene) {
         if (str_scene != "<unknown string>" && str_scene != "<unknown string>") {
             if (level is_active(str_scene)) {
                 return 1;
             }
         }
         return 0;
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 1, eflags: 0x0
-// Checksum 0x8944070b, Offset: 0x2468
-// Size: 0x192
-function function_3bafd088(var_a572f325) {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x8944070b, Offset: 0x2468
+    // Size: 0x192
+    function function_3bafd088(var_a572f325) {
         /#
             if (getdvarint(#"dvr_enable", 0) > 0 && getdvarint(#"scr_scene_dvr", 0) > 0) {
                 if (!isdefined(var_a572f325)) {
@@ -587,15 +558,13 @@ function function_3bafd088(var_a572f325) {
                 wait(1);
             }
         #/
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 1, eflags: 0x0
-// Checksum 0x929c21e5, Offset: 0x2608
-// Size: 0x16c
-function function_d2785094(var_a572f325) {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x929c21e5, Offset: 0x2608
+    // Size: 0x16c
+    function function_d2785094(var_a572f325) {
         /#
             if (getdvarint(#"dvr_enable", 0) > 0 && getdvarint(#"scr_scene_dvr", 0) > 0) {
                 drawbig = 0;
@@ -618,18 +587,16 @@ function function_d2785094(var_a572f325) {
                 adddebugcommand("<unknown string>");
             }
         #/
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 3, eflags: 0x0
-// Checksum 0x2e1613c1, Offset: 0x2780
-// Size: 0x11c
-function test_play(arg1, arg2, str_mode) {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 3, eflags: 0x0
+    // Checksum 0x2e1613c1, Offset: 0x2780
+    // Size: 0x11c
+    function test_play(arg1, arg2, str_mode) {
         n_skipto = getdvarfloat(#"scr_scene_skipto_time", 0);
         if (n_skipto > 0) {
-            str_mode = str_mode + "<unknown string>" + n_skipto;
+            str_mode += "<unknown string>" + n_skipto;
         }
         var_a572f325 = spawnstruct();
         var_a572f325.name = arg1;
@@ -642,17 +609,15 @@ function test_play(arg1, arg2, str_mode) {
         function_3bafd088(var_a572f325);
         play(arg1, arg2, undefined, 1, str_mode);
         function_d2785094(var_a572f325);
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 0, eflags: 0x0
-// Checksum 0x1fb55477, Offset: 0x28a8
-// Size: 0x12a
-function debug_display_all() {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x1fb55477, Offset: 0x28a8
+    // Size: 0x12a
+    function debug_display_all() {
         while (true) {
-            level wait_till("<unknown string>");
+            level flag::wait_till("<unknown string>");
             debug_frames = randomintrange(5, 10);
             debug_time = debug_frames / 20;
             if (isdefined(level.scene_roots)) {
@@ -663,15 +628,13 @@ function debug_display_all() {
             }
             wait(debug_time);
         }
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 1, eflags: 0x0
-// Checksum 0xccaabec5, Offset: 0x29e0
-// Size: 0x30c
-function debug_display(debug_frames) {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0xccaabec5, Offset: 0x29e0
+    // Size: 0x30c
+    function debug_display(debug_frames) {
         sphere(debug_display_origin(), 1, (1, 1, 0), 1, 1, 8, debug_frames);
         i = 0;
         if (self == level) {
@@ -711,47 +674,41 @@ function debug_display(debug_frames) {
             n_offset = 15;
             print3d(debug_display_origin() - (0, 0, n_offset), str_scene, (0.8, 0.2, 0.8), 1, 0.3, debug_frames);
         }
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 4, eflags: 0x0
-// Checksum 0x68aee50e, Offset: 0x2cf8
-// Size: 0x124
-function print_scene_debug(debug_frames, i, str_scene, str_state) {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 4, eflags: 0x0
+    // Checksum 0x68aee50e, Offset: 0x2cf8
+    // Size: 0x124
+    function print_scene_debug(debug_frames, i, str_scene, str_state) {
         v_origin = debug_display_origin();
         n_offset = 15 * (i + 1);
         str_scene = function_9e72a96(str_scene);
         print3d(v_origin - (0, 0, n_offset), str_scene, (0.8, 0.2, 0.8), 1, 0.3, debug_frames);
         print3d(v_origin - (0, 0, n_offset + 5), "<unknown string>" + str_state + "<unknown string>", (0.8, 0.2, 0.8), 1, 0.15, debug_frames);
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 0, eflags: 0x0
-// Checksum 0xaec54bb0, Offset: 0x2e28
-// Size: 0x28
-function debug_display_origin() {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xaec54bb0, Offset: 0x2e28
+    // Size: 0x28
+    function debug_display_origin() {
         if (self == level) {
             return (0, 0, 0);
         }
         return self.origin;
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 2, eflags: 0x0
-// Checksum 0x95a0fe2d, Offset: 0x2e58
-// Size: 0x24c
-function move_to_scene(str_scene, b_reverse_dir) {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 2, eflags: 0x0
+    // Checksum 0x95a0fe2d, Offset: 0x2e58
+    // Size: 0x24c
+    function move_to_scene(str_scene, b_reverse_dir) {
         if (!isdefined(b_reverse_dir)) {
             b_reverse_dir = 0;
         }
         if (level.debug_current_scene_name !== str_scene) {
-            level.debug_current_scene_instances = get_array(str_scene, "<unknown string>");
+            level.debug_current_scene_instances = struct::get_array(str_scene, "<unknown string>");
             level.debug_current_scene_index = 0;
             level.debug_current_scene_name = str_scene;
         } else if (b_reverse_dir) {
@@ -783,44 +740,38 @@ function move_to_scene(str_scene, b_reverse_dir) {
         }
         s_scene = level.debug_current_scene_instances[level.debug_current_scene_index];
         level.host set_origin(s_scene.origin);
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 1, eflags: 0x0
-// Checksum 0x96e61b6, Offset: 0x30b0
-// Size: 0x64
-function set_origin(v_origin) {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x96e61b6, Offset: 0x30b0
+    // Size: 0x64
+    function set_origin(v_origin) {
         if (!self isinmovemode("<unknown string>", "<unknown string>")) {
             adddebugcommand("<unknown string>");
         }
         self setorigin(v_origin);
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 0, eflags: 0x0
-// Checksum 0x1ec48407, Offset: 0x3120
-// Size: 0x84
-function toggle_postfx_igc_loop() {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x1ec48407, Offset: 0x3120
+    // Size: 0x84
+    function toggle_postfx_igc_loop() {
         while (true) {
             if (getdvarint(#"scr_postfx_igc_loop", 0)) {
-                run_all(function_a1ef346b(), &increment_to_player, "<unknown string>", 1);
+                array::run_all(function_a1ef346b(), &clientfield::increment_to_player, "<unknown string>", 1);
                 wait(4);
             }
             wait(1);
         }
-    #/
-}
+    }
 
-// Namespace scene/scene_debug_shared
-// Params 0, eflags: 0x0
-// Checksum 0x7ca369bc, Offset: 0x31b0
-// Size: 0x2d6
-function function_42edf155() {
-    /#
+    // Namespace scene/scene_debug_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x7ca369bc, Offset: 0x31b0
+    // Size: 0x2d6
+    function function_42edf155() {
         while (true) {
             requestflag = getdvarint(#"hash_1c68b689a2dac0fa", 0);
             if (requestflag != 0) {
@@ -835,7 +786,7 @@ function function_42edf155() {
                 s = get_existing_ent(align_target, 0, 1);
                 if (isdefined(s)) {
                     if (align_tag != "<unknown string>") {
-                        s = _get_align_pos(s, align_tag);
+                        s = animation::_get_align_pos(s, align_tag);
                     }
                     position_x = s.origin[0];
                     position_y = s.origin[1];
@@ -854,6 +805,6 @@ function function_42edf155() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
+#/

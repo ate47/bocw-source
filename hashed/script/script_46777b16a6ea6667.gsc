@@ -222,7 +222,7 @@ function private function_1076a2e0() {
             self.var_c4e19d3 = undefined;
         } else {
             self.var_c4e19d3 = target;
-            self.var_c4e19d3.hunted_by = self.var_c4e19d3.hunted_by + 1;
+            self.var_c4e19d3.hunted_by += 1;
             self vehlookat(self.var_c4e19d3);
             self turretsettarget(0, self.var_c4e19d3);
         }
@@ -364,7 +364,7 @@ function function_1c4cd527(origin, owner, innerradius, outerradius, halfheight, 
                         point._scoredebug[#"no visibility"].score = -1000;
                         point._scoredebug[#"no visibility"].scorename = "<unknown string>";
                     #/
-                    point.score = point.score + -1000;
+                    point.score += -1000;
                 }
             }
         }
@@ -381,7 +381,7 @@ function function_1c4cd527(origin, owner, innerradius, outerradius, halfheight, 
                 point._scoredebug[#"no visibility"].score = -5000;
                 point._scoredebug[#"no visibility"].scorename = "<unknown string>";
             #/
-            point.score = point.score + -5000;
+            point.score += -5000;
         }
     }
     if (queryresult.data.size > 0) {

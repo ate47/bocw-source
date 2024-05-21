@@ -593,8 +593,8 @@ function function_f4e9bba4(entity) {
     }
     foreach (weakpoint in weakpoints) {
         if (weakpoint.type === #"armor") {
-            max_health = max_health + weakpoint.maxhealth;
-            var_765c0df4 = var_765c0df4 + max(weakpoint.health, 0);
+            max_health += weakpoint.maxhealth;
+            var_765c0df4 += max(weakpoint.health, 0);
         }
     }
     if (max_health == 0) {

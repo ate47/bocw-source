@@ -658,12 +658,14 @@ function private function_d88f3e48(entity) {
     function_1c430dad(entity, 0);
 }
 
-// Namespace namespace_9f3d3e9/namespace_9f3d3e9
-// Params 0, eflags: 0x0
-// Checksum 0x3a44c844, Offset: 0x2968
-// Size: 0x8
-function function_c698f66b() {
-    /#
-    #/
-}
+/#
 
+    // Namespace namespace_9f3d3e9/namespace_9f3d3e9
+    // Params 0, eflags: 0x0
+    // Checksum 0x3a44c844, Offset: 0x2968
+    // Size: 0x8
+    function function_c698f66b() {
+        
+    }
+
+#/

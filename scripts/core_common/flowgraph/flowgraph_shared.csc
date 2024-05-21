@@ -268,7 +268,7 @@ function forloop(*x, i_begin, i_end) {
     if (i_end < i_begin) {
         i_step = -1;
     }
-    for (i = i_begin; i != i_end; i = i + i_step) {
+    for (i = i_begin; i != i_end; i += i_step) {
         self flowgraph::kick(array(1, i), 1);
     }
 }
@@ -520,8 +520,8 @@ function function_8892c7a6(i_value) {
 // Params 1, eflags: 0x0
 // Checksum 0xb03e8b83, Offset: 0x1be8
 // Size: 0x10
-function function_28c4ae67(var_2eb63fd3) {
-    return var_2eb63fd3;
+function function_28c4ae67(f_value) {
+    return f_value;
 }
 
 // Namespace namespace_22752a75/flowgraph_shared
@@ -544,16 +544,16 @@ function function_fe4cf085(str_value) {
 // Params 1, eflags: 0x0
 // Checksum 0xb0b63ce9, Offset: 0x1c30
 // Size: 0x10
-function function_3ece9d7e(var_4cb0cd3c) {
-    return var_4cb0cd3c;
+function function_3ece9d7e(h_value) {
+    return h_value;
 }
 
 // Namespace namespace_22752a75/flowgraph_shared
 // Params 1, eflags: 0x0
 // Checksum 0xfad5a247, Offset: 0x1c48
 // Size: 0x10
-function function_68a5d644(var_30e9e231) {
-    return var_30e9e231;
+function function_68a5d644(ea_value) {
+    return ea_value;
 }
 
 // Namespace namespace_22752a75/flowgraph_shared
@@ -600,16 +600,16 @@ function function_513da14e(var_162b6305) {
 // Params 1, eflags: 0x0
 // Checksum 0x113e7b2b, Offset: 0x1cd8
 // Size: 0x10
-function function_7cbb60c3(var_e7355b57) {
-    return var_e7355b57;
+function function_7cbb60c3(sp_value) {
+    return sp_value;
 }
 
 // Namespace namespace_22752a75/flowgraph_shared
 // Params 1, eflags: 0x0
 // Checksum 0x1ba998ef, Offset: 0x1cf0
 // Size: 0x10
-function function_f2357a4d(var_52d6c2bd) {
-    return var_52d6c2bd;
+function function_f2357a4d(w_value) {
+    return w_value;
 }
 
 // Namespace namespace_22752a75/flowgraph_shared
@@ -632,8 +632,8 @@ function function_fdafe394(var_e477c3b) {
 // Params 1, eflags: 0x0
 // Checksum 0x3e5c35d, Offset: 0x1d38
 // Size: 0x10
-function function_28848a6a(var_6b11d5a) {
-    return var_6b11d5a;
+function function_28848a6a(mdl_value) {
+    return mdl_value;
 }
 
 // Namespace namespace_22752a75/flowgraph_shared

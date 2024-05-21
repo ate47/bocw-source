@@ -90,18 +90,19 @@ function private _on_player_spawned(*localclientnum) {
     }
 }
 
-// Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 1, eflags: 0x4
-// Checksum 0x1d712b23, Offset: 0x3b8
-// Size: 0x1dc
-function private function_93945397(parms) {
-    /#
+/#
+
+    // Namespace namespace_9fe28d6e/namespace_9fe28d6e
+    // Params 1, eflags: 0x4
+    // Checksum 0x1d712b23, Offset: 0x3b8
+    // Size: 0x1dc
+    function private function_93945397(parms) {
         if (parms.value == 1) {
             setdvar(#"hash_1614a5a56768d221", 0);
-            level._fx.player set(#"hash_36c3761ec21ee4ac", "<unknown string>", 0);
-            level._fx.player set(#"hash_36c3761ec21ee4ac", "<unknown string>", 1);
-            level._fx.player set(#"hash_36c3761ec21ee4ac", "<unknown string>", 1);
-            level._fx.player set(#"hash_36c3761ec21ee4ac", "<unknown string>", 1);
+            level._fx.player val::set(#"hash_36c3761ec21ee4ac", "<unknown string>", 0);
+            level._fx.player val::set(#"hash_36c3761ec21ee4ac", "<unknown string>", 1);
+            level._fx.player val::set(#"hash_36c3761ec21ee4ac", "<unknown string>", 1);
+            level._fx.player val::set(#"hash_36c3761ec21ee4ac", "<unknown string>", 1);
             adddebugcommand("<unknown string>");
             adddebugcommand("<unknown string>");
             function_8af93a7();
@@ -109,18 +110,16 @@ function private function_93945397(parms) {
         }
         function_263df0ea();
         adddebugcommand("<unknown string>");
-        level._fx.player reset_all(#"hash_36c3761ec21ee4ac");
-    #/
-}
+        level._fx.player val::reset_all(#"hash_36c3761ec21ee4ac");
+    }
 
-// Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 0, eflags: 0x4
-// Checksum 0x621c7883, Offset: 0x5a0
-// Size: 0x21c
-function private function_8af93a7() {
-    /#
-        create(#"hash_2f8c229e8241a3a0", #"hash_355d1782cf92b25");
-        if (exists(#"hash_2f8c229e8241a3a0")) {
+    // Namespace namespace_9fe28d6e/namespace_9fe28d6e
+    // Params 0, eflags: 0x4
+    // Checksum 0x621c7883, Offset: 0x5a0
+    // Size: 0x21c
+    function private function_8af93a7() {
+        namespace_61e6d095::create(#"hash_2f8c229e8241a3a0", #"hash_355d1782cf92b25");
+        if (namespace_61e6d095::exists(#"hash_2f8c229e8241a3a0")) {
             if (!isdefined(level._fx.ambientwar)) {
                 level._fx.ambientwar = {};
             }
@@ -141,62 +140,56 @@ function private function_8af93a7() {
             level._fx.player thread function_5402d440(level._fx.ambientwar.input, buttons);
             level._fx.player thread function_a11a465a(level._fx.ambientwar.input);
         }
-    #/
-}
+    }
 
-// Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 0, eflags: 0x4
-// Checksum 0xf4e0fce7, Offset: 0x7c8
-// Size: 0x418
-function private function_56e7d0e3() {
-    /#
+    // Namespace namespace_9fe28d6e/namespace_9fe28d6e
+    // Params 0, eflags: 0x4
+    // Checksum 0xf4e0fce7, Offset: 0x7c8
+    // Size: 0x418
+    function private function_56e7d0e3() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         level endon(#"hash_d28501bd896672c");
         while (true) {
-            if (exists(#"hash_2f8c229e8241a3a0")) {
+            if (namespace_61e6d095::exists(#"hash_2f8c229e8241a3a0")) {
                 for (i = 0; i < level._fx.ambientwar.var_bebc9d74; i++) {
-                    function_7239e030(#"hash_2f8c229e8241a3a0", i);
+                    namespace_61e6d095::function_7239e030(#"hash_2f8c229e8241a3a0", i);
                 }
                 count = 0;
                 foreach (entry in level._fx.ambientwar.data) {
-                    set_count(#"hash_2f8c229e8241a3a0", count);
-                    function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", entry.var_c6bf081d);
-                    function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", entry.is_active);
-                    function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", entry.group_id);
-                    function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", entry.locations.size);
-                    function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", string(float(entry.distance.min), 1));
-                    function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", string(float(entry.distance.max), 1));
-                    function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", string(float(entry.delay.min), 1));
-                    function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", string(float(entry.delay.max), 1));
+                    namespace_61e6d095::set_count(#"hash_2f8c229e8241a3a0", count);
+                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", entry.var_c6bf081d);
+                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", entry.is_active);
+                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", entry.group_id);
+                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", entry.locations.size);
+                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", string(float(entry.distance.min), 1));
+                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", string(float(entry.distance.max), 1));
+                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", string(float(entry.delay.min), 1));
+                    namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", count, "<unknown string>", string(float(entry.delay.max), 1));
                     count++;
                 }
                 level._fx.ambientwar.var_bebc9d74 = count;
             }
             level waittill(#"hash_51a762912b76bdc1");
         }
-    #/
-}
+    }
 
-// Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 0, eflags: 0x4
-// Checksum 0xa3d66232, Offset: 0xbe8
-// Size: 0x64
-function private function_263df0ea() {
-    /#
+    // Namespace namespace_9fe28d6e/namespace_9fe28d6e
+    // Params 0, eflags: 0x4
+    // Checksum 0xa3d66232, Offset: 0xbe8
+    // Size: 0x64
+    function private function_263df0ea() {
         level notify(#"hash_d28501bd896672c");
-        if (exists(#"hash_2f8c229e8241a3a0")) {
-            remove(#"hash_2f8c229e8241a3a0");
+        if (namespace_61e6d095::exists(#"hash_2f8c229e8241a3a0")) {
+            namespace_61e6d095::remove(#"hash_2f8c229e8241a3a0");
         }
-    #/
-}
+    }
 
-// Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 2, eflags: 0x4
-// Checksum 0x8a6dd4e, Offset: 0xc58
-// Size: 0x15a
-function private function_5402d440(input, buttons) {
-    /#
+    // Namespace namespace_9fe28d6e/namespace_9fe28d6e
+    // Params 2, eflags: 0x4
+    // Checksum 0x8a6dd4e, Offset: 0xc58
+    // Size: 0x15a
+    function private function_5402d440(input, buttons) {
         level endon(#"hash_d28501bd896672c");
         while (true) {
             foreach (button in buttons) {
@@ -211,15 +204,13 @@ function private function_5402d440(input, buttons) {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 1, eflags: 0x4
-// Checksum 0x95d187da, Offset: 0xdc0
-// Size: 0x224
-function private function_a11a465a(input) {
-    /#
+    // Namespace namespace_9fe28d6e/namespace_9fe28d6e
+    // Params 1, eflags: 0x4
+    // Checksum 0x95d187da, Offset: 0xdc0
+    // Size: 0x224
+    function private function_a11a465a(input) {
         self notify("<unknown string>");
         self endon("<unknown string>");
         level endon(#"hash_d28501bd896672c");
@@ -243,19 +234,17 @@ function private function_a11a465a(input) {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 1, eflags: 0x4
-// Checksum 0x147e50e, Offset: 0xff0
-// Size: 0x1da
-function private function_d885deda(selection) {
-    /#
+    // Namespace namespace_9fe28d6e/namespace_9fe28d6e
+    // Params 1, eflags: 0x4
+    // Checksum 0x147e50e, Offset: 0xff0
+    // Size: 0x1da
+    function private function_d885deda(selection) {
         level endon(#"hash_d28501bd896672c");
         if (isdefined(level._fx.ambientwar.selection)) {
             level._fx.ambientwar.data[function_be6420e7(level._fx.ambientwar.selection)].var_c6bf081d = 0;
-            function_f2a9266(#"hash_2f8c229e8241a3a0", level._fx.ambientwar.selection, "<unknown string>", 0);
+            namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", level._fx.ambientwar.selection, "<unknown string>", 0);
         }
         if (selection < 0) {
             selection = level._fx.ambientwar.data.size - 1;
@@ -263,19 +252,17 @@ function private function_d885deda(selection) {
         if (selection >= level._fx.ambientwar.data.size) {
             selection = 0;
         }
-        play("<unknown string>", level._fx.player);
+        snd::play("<unknown string>", level._fx.player);
         level._fx.ambientwar.data[function_be6420e7(selection)].var_c6bf081d = 1;
-        function_f2a9266(#"hash_2f8c229e8241a3a0", selection, "<unknown string>", 1);
+        namespace_61e6d095::function_f2a9266(#"hash_2f8c229e8241a3a0", selection, "<unknown string>", 1);
         level._fx.ambientwar.selection = selection;
-    #/
-}
+    }
 
-// Namespace namespace_9fe28d6e/namespace_9fe28d6e
-// Params 0, eflags: 0x4
-// Checksum 0xd110be15, Offset: 0x11d8
-// Size: 0x2be
-function private function_2e225b16() {
-    /#
+    // Namespace namespace_9fe28d6e/namespace_9fe28d6e
+    // Params 0, eflags: 0x4
+    // Checksum 0xd110be15, Offset: 0x11d8
+    // Size: 0x2be
+    function private function_2e225b16() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         level endon(#"hash_d28501bd896672c");
@@ -299,8 +286,9 @@ function private function_2e225b16() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_9fe28d6e/namespace_9fe28d6e
 // Params 1, eflags: 0x4

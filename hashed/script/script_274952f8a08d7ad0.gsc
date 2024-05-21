@@ -135,7 +135,7 @@ function function_6757d9a1(startval, endval, duration) {
     self endon("571c05ff9137e8da");
     self endon(#"hash_20666ddcfb99d876");
     currenttime = gettime();
-    duration = duration * 1000;
+    duration *= 1000;
     endtime = int(currenttime + duration);
     diff = abs(startval - endval);
     while (true) {

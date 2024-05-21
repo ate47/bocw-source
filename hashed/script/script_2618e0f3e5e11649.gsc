@@ -618,17 +618,17 @@ function function_ffbebde3(&hotzones) {
         /#
             hotzone.instance.var_19b23216[#"proximity"] = proximity;
         #/
-        hotzone.instance.var_8fa06b8e = hotzone.instance.var_8fa06b8e + proximity;
+        hotzone.instance.var_8fa06b8e += proximity;
         facing = function_b6a93fcd(hotzone, var_1414fb7f);
         /#
             hotzone.instance.var_19b23216[#"facing"] = facing;
         #/
-        hotzone.instance.var_8fa06b8e = hotzone.instance.var_8fa06b8e + facing;
+        hotzone.instance.var_8fa06b8e += facing;
         state = function_df47d6e7(hotzone);
         /#
             hotzone.instance.var_19b23216[#"state"] = state;
         #/
-        hotzone.instance.var_8fa06b8e = hotzone.instance.var_8fa06b8e + state;
+        hotzone.instance.var_8fa06b8e += state;
         waitframe(1);
     }
     for (index = 0; index < hotzones.size; index++) {
@@ -662,11 +662,11 @@ function function_3e21a60b(hotzone, &player_array) {
     for (player_index = player_array.size - 1; player_index >= 0; player_index--) {
         player = player_array[player_index];
         if (player.origin[2] > hotzone.origin[2] && player.origin[2] < hotzone.origin[2] + hotzone.height && distance2dsquared(player.origin, hotzone.origin) <= radiussq) {
-            score = score + 100;
+            score += 100;
             continue;
         }
         if (player.origin[2] > hotzone.origin[2] - 2000 && player.origin[2] < hotzone.origin[2] + hotzone.height + 2000) {
-            score = score + mapfloat(radius, 10000, 100, 0, distance2d(player.origin, hotzone.origin));
+            score += mapfloat(radius, 10000, 100, 0, distance2d(player.origin, hotzone.origin));
         }
     }
     return score;
@@ -686,7 +686,7 @@ function function_b6a93fcd(hotzone, &player_array) {
         if (dot < fov) {
             continue;
         }
-        score = score + mapfloat(fov, 1, 0, 25, dot);
+        score += mapfloat(fov, 1, 0, 25, dot);
     }
     return score;
 }
@@ -902,7 +902,7 @@ function spawn_ai(hotzone) {
         if (var_9f9ede51 == #"hash_729b116cf9d044" && !level flag::get(#"hash_ad588d53f52329a")) {
             level flag::set(#"hash_ad588d53f52329a");
             /#
-                level thread function_ace23f69(spawn_point.origin);
+                level thread namespace_1125e192::function_ace23f69(spawn_point.origin);
             #/
         }
         new_ai callback::function_d8abfc3d(#"on_ai_killed", &function_2b886fac, undefined, [hotzone]);
@@ -975,7 +975,7 @@ function function_947f6f99(hotzone) {
     for (i = 0; var_a9c2ddd5 > 0 && i < hotzone.instance.var_743c45a5.size; i++) {
         if (!isinarray(var_c794a75, hotzone.instance.var_743c45a5[i])) {
             var_c794a75[var_c794a75.size] = hotzone.instance.var_743c45a5[i];
-            var_a9c2ddd5 = var_a9c2ddd5 - 1;
+            var_a9c2ddd5 -= 1;
         }
     }
     function_fb4091d0(hotzone, var_c794a75);
@@ -1187,12 +1187,13 @@ function function_ee71d10f(aitype, alias) {
     return level.var_39b4b1e2[alias][aitype];
 }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 0, eflags: 0x0
-// Checksum 0xe66a157, Offset: 0x5200
-// Size: 0xcbc
-function function_9b928fad() {
-    /#
+/#
+
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 0, eflags: 0x0
+    // Checksum 0xe66a157, Offset: 0x5200
+    // Size: 0xcbc
+    function function_9b928fad() {
         if (!getdvarint(#"hash_7f960fed9c1533f", 1)) {
             return;
         }
@@ -1267,15 +1268,13 @@ function function_9b928fad() {
         adddebugcommand("<unknown string>" + "<unknown string>" + "<unknown string>" + var_525602a9 + "<unknown string>" + "<unknown string>" + "<unknown string>");
         function_cd140ee9("<unknown string>", &function_3fbd8696);
         function_cd140ee9("<unknown string>", &function_542b33bf);
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 1, eflags: 0x0
-// Checksum 0xfa303e3, Offset: 0x5ec8
-// Size: 0xc2
-function function_3fbd8696(dvar) {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 1, eflags: 0x0
+    // Checksum 0xfa303e3, Offset: 0x5ec8
+    // Size: 0xc2
+    function function_3fbd8696(dvar) {
         switch (dvar.value) {
         case 0:
             level notify(#"hash_7ef679d3b9fffd3f");
@@ -1287,15 +1286,13 @@ function function_3fbd8696(dvar) {
             level thread function_3de1c8ac(&function_bf876de8);
             break;
         }
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 1, eflags: 0x0
-// Checksum 0x5a25c36e, Offset: 0x5f98
-// Size: 0x7fc
-function function_542b33bf(dvar) {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 1, eflags: 0x0
+    // Checksum 0x5a25c36e, Offset: 0x5f98
+    // Size: 0x7fc
+    function function_542b33bf(dvar) {
         switch (dvar.value) {
         case #"hash_35a3b819e2c0441d":
             level.var_70da9652.var_4b72bf24 = !is_true(level.var_70da9652.var_4b72bf24);
@@ -1358,11 +1355,11 @@ function function_542b33bf(dvar) {
             break;
         case #"hash_155d8615abc8b3f5":
             spawns = function_fac3e87c();
-            level thread function_46997bdf(&spawns, "<unknown string>");
+            level thread namespace_420b39d3::function_46997bdf(&spawns, "<unknown string>");
             break;
         case #"hash_635a7b13408b9567":
             spawns = function_fac3e87c();
-            function_70e877d7(&spawns);
+            namespace_420b39d3::function_70e877d7(&spawns);
             break;
         case #"hash_2a330edd1205dc06":
             level.var_70da9652.var_bf84a5e9 = !is_true(level.var_70da9652.var_bf84a5e9);
@@ -1381,51 +1378,43 @@ function function_542b33bf(dvar) {
         if (dvar.value != "<unknown string>") {
             setdvar(dvar.name, "<unknown string>");
         }
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 0, eflags: 0x0
-// Checksum 0xef40ad8d, Offset: 0x67a0
-// Size: 0xc0
-function function_bc437ca0() {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 0, eflags: 0x0
+    // Checksum 0xef40ad8d, Offset: 0x67a0
+    // Size: 0xc0
+    function function_bc437ca0() {
         waittillframeend();
         level notify(#"hash_1a8453d57fb3fe48");
         foreach (hotzone in level.hotzones) {
             function_ea2997e4(hotzone);
             function_4aca4e83(hotzone);
         }
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 0, eflags: 0x0
-// Checksum 0x4eaccfd0, Offset: 0x6868
-// Size: 0x6a
-function function_d78228f7() {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 0, eflags: 0x0
+    // Checksum 0x4eaccfd0, Offset: 0x6868
+    // Size: 0x6a
+    function function_d78228f7() {
         level.var_70da9652.var_b74207be = getdvarint(#"hash_3de4c46e91e294cc", 0);
         level.var_70da9652.var_84a7284e = getdvarint(#"hash_3558c135587c5d42", 0);
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 0, eflags: 0x0
-// Checksum 0xcc45017d, Offset: 0x68e0
-// Size: 0x24
-function function_c3eed624() {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 0, eflags: 0x0
+    // Checksum 0xcc45017d, Offset: 0x68e0
+    // Size: 0x24
+    function function_c3eed624() {
         return getplayers()[0].origin;
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 0, eflags: 0x0
-// Checksum 0x15c4cd8e, Offset: 0x6910
-// Size: 0x168
-function function_bf876de8() {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 0, eflags: 0x0
+    // Checksum 0x15c4cd8e, Offset: 0x6910
+    // Size: 0x168
+    function function_bf876de8() {
         player = getplayers()[0];
         direction = player getplayerangles();
         direction_vec = anglestoforward(direction);
@@ -1435,15 +1424,13 @@ function function_bf876de8() {
         circle(trace[#"position"], 16, (1, 0.5, 0), 1, 1, 1);
         debugstar(trace[#"position"], 1, (1, 0.5, 0));
         return trace[#"position"];
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 1, eflags: 0x0
-// Checksum 0x4cbaf80, Offset: 0x6a80
-// Size: 0x3ee
-function function_3de1c8ac(var_2da12984) {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 1, eflags: 0x0
+    // Checksum 0x4cbaf80, Offset: 0x6a80
+    // Size: 0x3ee
+    function function_3de1c8ac(var_2da12984) {
         level endon(#"game_ended", #"hash_7ef679d3b9fffd3f");
         self notify("<unknown string>");
         self endon("<unknown string>");
@@ -1486,18 +1473,16 @@ function function_3de1c8ac(var_2da12984) {
                 scale = 0.85;
                 offset = 75;
                 debug2dtext((105, offset * scale, 0), "<unknown string>" + level.var_71c1e90a, (1, 1, 0), undefined, (0.4, 0.4, 0.4), 0.9, scale);
-                offset = offset + 22;
+                offset += 22;
             }
         }
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 3, eflags: 0x0
-// Checksum 0xcd51bfd3, Offset: 0x6e78
-// Size: 0xec
-function function_a5ea005d(hotzone, array_index, scale) {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 3, eflags: 0x0
+    // Checksum 0xcd51bfd3, Offset: 0x6e78
+    // Size: 0xec
+    function function_a5ea005d(hotzone, array_index, scale) {
         index = 0;
         options = level.var_70da9652;
         var_a7c842b3 = function_6320ae1d(hotzone, options);
@@ -1506,15 +1491,13 @@ function function_a5ea005d(hotzone, array_index, scale) {
             return;
         }
         line(hotzone.origin, hotzone.origin + (0, 0, 300), var_a7c842b3, 1);
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 3, eflags: 0x0
-// Checksum 0xa67c5775, Offset: 0x6f70
-// Size: 0x634
-function function_1a530376(hotzone, array_index, scale) {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 3, eflags: 0x0
+    // Checksum 0xa67c5775, Offset: 0x6f70
+    // Size: 0x634
+    function function_1a530376(hotzone, array_index, scale) {
         index = 0;
         options = level.var_70da9652;
         var_a7c842b3 = function_6320ae1d(hotzone, options);
@@ -1523,11 +1506,11 @@ function function_1a530376(hotzone, array_index, scale) {
             index = function_af798ce8(index, scale, 1, var_a7c842b3, array_index, hotzone);
         }
         print3d(hotzone.origin + (0, 0, index), function_89a74781(hotzone) + "<unknown string>" + hotzone.instance.tier, var_a7c842b3, 1, scale * 0.8, 1);
-        index = index + 17 * scale * 0.8;
+        index += 17 * scale * 0.8;
         print3d(hotzone.origin + (0, 0, index), function_9e72a96(hotzone.scriptbundlename), var_a7c842b3, 1, scale * 1, 1);
-        index = index + 17 * scale * 1;
+        index += 17 * scale * 1;
         print3d(hotzone.origin + (0, 0, index), is_true(hotzone.instance.disabled) ? "<unknown string>" : "<unknown string>", is_true(hotzone.instance.disabled) ? (1, 0, 1) : (0, 1, 1), 1, scale * 1, 1);
-        index = index + 17 * scale * 1;
+        index += 17 * scale * 1;
         if (is_true(options.var_5cdd46ee)) {
             index = function_42926dcf(index, scale, 1, hotzone);
         }
@@ -1566,24 +1549,22 @@ function function_1a530376(hotzone, array_index, scale) {
         if (is_true(options.var_3eef4d41) && is_true(hotzone.var_19e89e4e)) {
             draw_box(hotzone.origin, hotzone.angles, hotzone.var_499035e2, hotzone.var_81314a61, hotzone.var_48d0f926, (1, 1, 0));
         }
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 6, eflags: 0x0
-// Checksum 0x7398099f, Offset: 0x75b0
-// Size: 0x312
-function function_af798ce8(index, scale, alpha, color, var_5ab1a705, hotzone) {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 6, eflags: 0x0
+    // Checksum 0x7398099f, Offset: 0x75b0
+    // Size: 0x312
+    function function_af798ce8(index, scale, alpha, color, var_5ab1a705, hotzone) {
         if (!hotzone.instance.priority) {
             line(hotzone.origin, hotzone.origin + (0, 0, 300), color);
             return index;
         }
         print3d(hotzone.origin + (0, 0, index), "<unknown string>" + hotzone.instance.priority, color, alpha, scale * 1, 1);
-        index = index + 17 * scale * 1;
+        index += 17 * scale * 1;
         foreach (key, value in hotzone.instance.priority_debug) {
             print3d(hotzone.origin + (0, 0, index), function_9e72a96(key) + "<unknown string>" + value, color, alpha, scale * 1, 1);
-            index = index + 17 * scale * 1;
+            index += 17 * scale * 1;
         }
         if (!level.hotzones[0].instance.priority) {
             var_2a5f3b00 = mapfloat(0, level.hotzones.size, 0, 1, var_5ab1a705);
@@ -1594,52 +1575,48 @@ function function_af798ce8(index, scale, alpha, color, var_5ab1a705, hotzone) {
         line(hotzone.origin, hotzone.origin + (0, 0, height), color);
         print3d(hotzone.origin + (0, 0, height), var_5ab1a705, color, 1, scale * 2);
         return index;
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 6, eflags: 0x0
-// Checksum 0x611759c, Offset: 0x78d0
-// Size: 0x590
-function function_d937ea12(index, scale, alpha, color, hotzone, options) {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 6, eflags: 0x0
+    // Checksum 0x611759c, Offset: 0x78d0
+    // Size: 0x590
+    function function_d937ea12(index, scale, alpha, color, hotzone, options) {
         list_name = function_47ae367f(hotzone, hotzone.instance.tier, hotzone.instance.current_state);
         print3d(hotzone.origin + (0, 0, index), "<unknown string>" + (is_true(hotzone.instance.var_98957c00) ? "<unknown string>" : "<unknown string>"), color, alpha, scale * 0.75, 1);
-        index = index + 17 * scale * 0.75;
+        index += 17 * scale * 0.75;
         print3d(hotzone.origin + (0, 0, index), "<unknown string>" + (is_true(hotzone.instance.var_4188d7c8) ? "<unknown string>" : "<unknown string>"), color, alpha, scale * 0.75, 1);
-        index = index + 17 * scale * 0.75;
+        index += 17 * scale * 0.75;
         print3d(hotzone.origin + (0, 0, index), "<unknown string>" + hotzone.instance.var_743c45a5.size + "<unknown string>" + hotzone.instance.var_1fb426c4, color, alpha, scale * 0.75, 1);
-        index = index + 17 * scale * 0.75;
+        index += 17 * scale * 0.75;
         print3d(hotzone.origin + (0, 0, index), "<unknown string>" + hotzone.instance.spawned_ai + "<unknown string>" + hotzone.instance.var_735d3a6b, color, alpha, scale * 0.75, 1);
-        index = index + 17 * scale * 0.75;
-        index = index + 17 * scale * 0.75;
+        index += 17 * scale * 0.75;
+        index += 17 * scale * 0.75;
         if (isdefined(hotzone.instance.var_d36a24ed)) {
-            spawn_info = function_ce65eab6(hotzone.instance.var_d36a24ed);
+            spawn_info = namespace_679a22ba::function_ce65eab6(hotzone.instance.var_d36a24ed);
             print3d(hotzone.origin + (0, 0, index), "<unknown string>" + spawn_info.spawned + "<unknown string>" + (spawn_info.var_cffbc08 == -1 ? "<unknown string>" : spawn_info.var_cffbc08), color, alpha, scale * 0.75, 1);
-            index = index + 17 * scale * 0.75;
+            index += 17 * scale * 0.75;
             if (is_true(options.var_26ba38c4)) {
                 for (i = hotzone.instance.var_d36a24ed.var_7c88c117.size - 1; i >= 0; i--) {
                     entry = hotzone.instance.var_d36a24ed.var_7c88c117[i];
                     print3d(hotzone.origin + (0, 0, index), "<unknown string>" + entry.name + "<unknown string>" + entry.spawned + "<unknown string>" + (entry.var_cffbc08 == -1 ? "<unknown string>" : entry.var_cffbc08), color, alpha, scale * 0.75, 1);
-                    index = index + 17 * scale * 0.75;
+                    index += 17 * scale * 0.75;
                 }
             }
         }
         print3d(hotzone.origin + (0, 0, index), "<unknown string>" + (isdefined(list_name) ? list_name : "<unknown string>"), (0, 1, 1), alpha, scale * 0.75, 1);
-        index = index + 17 * scale * 0.75;
+        index += 17 * scale * 0.75;
         return index;
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 6, eflags: 0x0
-// Checksum 0x93900217, Offset: 0x7e68
-// Size: 0x268
-function function_11ba669e(index, scale, alpha, var_a7c842b3, hotzone, *options) {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 6, eflags: 0x0
+    // Checksum 0x93900217, Offset: 0x7e68
+    // Size: 0x268
+    function function_11ba669e(index, scale, alpha, var_a7c842b3, hotzone, *options) {
         foreach (ent_num, var_687dacb8 in options.instance.var_ee69e628) {
             print3d(options.origin + (0, 0, scale), "<unknown string>" + ent_num + "<unknown string>" + var_687dacb8.count, hotzone, var_a7c842b3, alpha * 0.75, 1);
-            scale = scale + 17 * alpha * 0.75;
+            scale += 17 * alpha * 0.75;
             foreach (ai in var_687dacb8.entities) {
                 if (!isalive(ai)) {
                     continue;
@@ -1648,49 +1625,43 @@ function function_11ba669e(index, scale, alpha, var_a7c842b3, hotzone, *options)
             }
         }
         print3d(options.origin + (0, 0, scale), "<unknown string>", hotzone, var_a7c842b3, alpha * 0.75, 1);
-        scale = scale + 17 * alpha * 0.75;
+        scale += 17 * alpha * 0.75;
         return scale;
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 6, eflags: 0x0
-// Checksum 0xb5c8d301, Offset: 0x80d8
-// Size: 0x1b0
-function function_22dd41d8(index, scale, alpha, var_a7c842b3, hotzone, *options) {
-    /#
-        scale = scale + 17 * alpha * 0.75;
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 6, eflags: 0x0
+    // Checksum 0xb5c8d301, Offset: 0x80d8
+    // Size: 0x1b0
+    function function_22dd41d8(index, scale, alpha, var_a7c842b3, hotzone, *options) {
+        scale += 17 * alpha * 0.75;
         foreach (state_name, count in options.instance.var_ac7b2365) {
             print3d(options.origin + (0, 0, scale), "<unknown string>" + function_9e72a96(state_name) + "<unknown string>" + count, hotzone, var_a7c842b3, alpha * 0.75, 1);
-            scale = scale + 17 * alpha * 0.75;
+            scale += 17 * alpha * 0.75;
         }
         print3d(options.origin + (0, 0, scale), "<unknown string>", hotzone, var_a7c842b3, alpha * 0.75, 1);
-        scale = scale + 17 * alpha * 0.75;
+        scale += 17 * alpha * 0.75;
         return scale;
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 4, eflags: 0x0
-// Checksum 0x8a44f68, Offset: 0x8290
-// Size: 0xc8
-function function_42926dcf(index, scale, alpha, hotzone) {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 4, eflags: 0x0
+    // Checksum 0x8a44f68, Offset: 0x8290
+    // Size: 0xc8
+    function function_42926dcf(index, scale, alpha, hotzone) {
         if (!isdefined(hotzone.var_c43420a)) {
             return index;
         }
         print3d(hotzone.origin + (0, 0, index), "<unknown string>" + hotzone.var_c43420a + "<unknown string>" + hotzone.var_d3455e4, (1, 0, 1), alpha, scale * 0.75, 1);
-        index = index + 17 * scale * 0.75;
+        index += 17 * scale * 0.75;
         return index;
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 2, eflags: 0x0
-// Checksum 0x80770e71, Offset: 0x8360
-// Size: 0x16a
-function function_6320ae1d(hotzone, options) {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 2, eflags: 0x0
+    // Checksum 0x80770e71, Offset: 0x8360
+    // Size: 0x16a
+    function function_6320ae1d(hotzone, options) {
         if (is_true(options.var_419cf6f8)) {
             if (!level.hotzones[0].instance.priority) {
                 return (1, 0, 0);
@@ -1709,15 +1680,13 @@ function function_6320ae1d(hotzone, options) {
         default:
             return (0.3, 0.3, 0.3);
         }
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 1, eflags: 0x0
-// Checksum 0x403647d4, Offset: 0x84d8
-// Size: 0xfa
-function function_89a74781(hotzone) {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 1, eflags: 0x0
+    // Checksum 0x403647d4, Offset: 0x84d8
+    // Size: 0xfa
+    function function_89a74781(hotzone) {
         switch (hotzone.instance.current_state) {
         case 0:
             return "<unknown string>";
@@ -1733,42 +1702,36 @@ function function_89a74781(hotzone) {
         default:
             return "<unknown string>";
         }
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 5, eflags: 0x0
-// Checksum 0x9ba42fbe, Offset: 0x85e0
-// Size: 0xb4
-function function_59a41525(origin, radius, height, color, depthtest) {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 5, eflags: 0x0
+    // Checksum 0x9ba42fbe, Offset: 0x85e0
+    // Size: 0xb4
+    function function_59a41525(origin, radius, height, color, depthtest) {
         circle(origin, radius, color, depthtest, 1, 1);
         circle(origin + (0, 0, height), radius, color, depthtest, 1, 1);
         line(origin, origin + (0, 0, height), color, 1, depthtest, 1);
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 7, eflags: 0x0
-// Checksum 0x383c95e, Offset: 0x86a0
-// Size: 0xfc
-function draw_box(origin, angles, width, length, height, color, centered) {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 7, eflags: 0x0
+    // Checksum 0x383c95e, Offset: 0x86a0
+    // Size: 0xfc
+    function draw_box(origin, angles, width, length, height, color, centered) {
         if (!isdefined(centered)) {
             centered = 0;
         }
         mins = (-0.5 * width, -0.5 * length, centered ? height / -2 : 0);
         maxs = (0.5 * width, 0.5 * length, centered ? height / 2 : height);
         box(origin, mins, maxs, angles, color, 1, 1, 1);
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 3, eflags: 0x0
-// Checksum 0x5e829918, Offset: 0x87a8
-// Size: 0x236
-function function_9c8936c1(&var_af4acf6e, origin, color) {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 3, eflags: 0x0
+    // Checksum 0x5e829918, Offset: 0x87a8
+    // Size: 0x236
+    function function_9c8936c1(&var_af4acf6e, origin, color) {
         foreach (point in var_af4acf6e) {
             index = 0;
             debugstar(point.origin, 1, color);
@@ -1779,49 +1742,43 @@ function function_9c8936c1(&var_af4acf6e, origin, color) {
             }
             if (is_true(level.var_70da9652.var_cb0c00c7) && isdefined(point.archetype)) {
                 print3d(point.origin + (0, 0, index), point.archetype, color, 1, 0.75 * 0.75, 1, 1);
-                index = index + 17 * 0.75 * 0.75;
+                index += 17 * 0.75 * 0.75;
             }
         }
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 5, eflags: 0x0
-// Checksum 0x13297424, Offset: 0x89e8
-// Size: 0xfa
-function function_774fd83c(spawn_point, color, index, scale, alpha) {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 5, eflags: 0x0
+    // Checksum 0x13297424, Offset: 0x89e8
+    // Size: 0xfa
+    function function_774fd83c(spawn_point, color, index, scale, alpha) {
         print3d(spawn_point.origin + (0, 0, index), spawn_point.var_90d0c0ff, color, alpha, scale * scale, 1, 1);
-        index = index + 17 * scale * scale;
+        index += 17 * scale * scale;
         draw_arrow(spawn_point.origin, spawn_point.origin + anglestoforward(spawn_point.angles) * 15, (1, 0.752941, 0.796078), 6);
         return index;
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 1, eflags: 0x0
-// Checksum 0xfc8a4d7f, Offset: 0x8af0
-// Size: 0x1fc
-function function_af647be2(player) {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 1, eflags: 0x0
+    // Checksum 0xfc8a4d7f, Offset: 0x8af0
+    // Size: 0x1fc
+    function function_af647be2(player) {
         line(player.origin + (0, 0, 72), player.origin + (0, 0, 572), (0, 1, 1));
         draw_box(player.origin, player.angles, 32, 32, 72, (0, 1, 1));
         var_9029dbde = rotatepointaroundaxis((256, 0, 0), (0, 0, 1), angleclamp180(player.angles[1] + 45));
-        var_9029dbde = var_9029dbde + player.origin;
+        var_9029dbde += player.origin;
         line(player.origin, var_9029dbde, (1, 0.5, 0));
         var_a9e71ad4 = rotatepointaroundaxis((256, 0, 0), (0, 0, 1), angleclamp180(player.angles[1] - 45));
-        var_a9e71ad4 = var_a9e71ad4 + player.origin;
+        var_a9e71ad4 += player.origin;
         line(player.origin, var_a9e71ad4, (1, 0.5, 0));
         line(player.origin, player.origin + anglestoforward(player.angles) * 256, (1, 1, 0));
-    #/
-}
+    }
 
-// Namespace namespace_ce1f29cc/namespace_ce1f29cc
-// Params 4, eflags: 0x0
-// Checksum 0xc39d4b72, Offset: 0x8cf8
-// Size: 0x164
-function draw_arrow(start, end, color, var_6c0bdd43) {
-    /#
+    // Namespace namespace_ce1f29cc/namespace_ce1f29cc
+    // Params 4, eflags: 0x0
+    // Checksum 0xc39d4b72, Offset: 0x8cf8
+    // Size: 0x164
+    function draw_arrow(start, end, color, var_6c0bdd43) {
         angles = vectortoangles(end - start);
         y_delta = var_6c0bdd43 / sqrt(2);
         x_delta = var_6c0bdd43 / sqrt(2);
@@ -1830,6 +1787,6 @@ function draw_arrow(start, end, color, var_6c0bdd43) {
         var_2ded77 = rotatepoint((-1 * x_delta, y_delta, 0), angles);
         line(end, end + var_52defcab, color);
         line(end, end + var_2ded77, color);
-    #/
-}
+    }
 
+#/

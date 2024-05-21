@@ -25,18 +25,19 @@ function private preinit() {
     #/
 }
 
-// Namespace namespace_e3815316/namespace_e3815316
-// Params 1, eflags: 0x4
-// Checksum 0x9837cd00, Offset: 0x158
-// Size: 0x14c
-function private function_538c9c9b(params) {
-    /#
+/#
+
+    // Namespace namespace_e3815316/namespace_e3815316
+    // Params 1, eflags: 0x4
+    // Checksum 0x9837cd00, Offset: 0x158
+    // Size: 0x14c
+    function private function_538c9c9b(params) {
         assert(params.name == "<unknown string>");
         if (params.value == "<unknown string>") {
             return;
         }
         setdvar(#"hash_1809fc0397c17b91", "<unknown string>");
-        if (exists(#"hash_5903f7e85045920f")) {
+        if (namespace_61e6d095::exists(#"hash_5903f7e85045920f")) {
             return;
         }
         paramarray = strtok(params.value, "<unknown string>");
@@ -45,8 +46,9 @@ function private function_538c9c9b(params) {
         noteid = paramarray[1];
         player = getplayers()[0];
         player thread function_32402e29(notetype, noteid);
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_e3815316/namespace_e3815316
 // Params 2, eflags: 0x4

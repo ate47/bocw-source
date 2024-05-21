@@ -326,7 +326,7 @@ function watch_exit() {
     while (true) {
         timeused = 0;
         while (vehicle.owner usebuttonpressed() && vehicle.owner killstreaks::function_59e2c378()) {
-            timeused = timeused + level.var_9fee970c;
+            timeused += level.var_9fee970c;
             if (timeused >= 250) {
                 vehicle function_1f46c433();
                 return;
@@ -671,7 +671,7 @@ function function_d75fbe15(origin, angles) {
         startangles[i] = (0, angles[1], 0);
         startpoint = origin + vectorscale(anglestoforward(startangles[i] + testangles[i]), 70);
         endpoint = startpoint - (0, 0, 100);
-        startpoint = startpoint + (0, 0, startheight);
+        startpoint += (0, 0, startheight);
         mask = 1 | 2;
         trace = physicstrace(startpoint, endpoint, mins, maxs, self, mask);
         if (isdefined(trace[#"entity"]) && isplayer(trace[#"entity"])) {
@@ -731,7 +731,7 @@ function function_c82e14d2(origin, angles, heightoffset) {
         wheel = rotatepoint(wheels[i], yawangles);
         startpoint = origin + wheel;
         endpoint = startpoint + (0, 0, -1 * height - heightoffset);
-        startpoint = startpoint + (0, 0, height - heightoffset);
+        startpoint += (0, 0, height - heightoffset);
         trace = bullettrace(startpoint, endpoint, 0, self);
         if (trace[#"fraction"] < 1) {
             touchcount++;

@@ -223,7 +223,7 @@ function update_hint_string(player) {
 // Size: 0x232
 function function_aaf2d8(player, weapon, b_weapon_supports_aat, var_a86430cb) {
     var_6224cea8 = player function_7352d8cc(weapon);
-    if (zombie_utility::function_d2dfacfd(#"zombie_powerup_bonfire_sale_on")) {
+    if (zombie_utility::get_zombie_var(#"zombie_powerup_bonfire_sale_on")) {
         var_376755db = 1000;
         if (b_weapon_supports_aat && var_a86430cb) {
             if (var_6224cea8) {
@@ -250,7 +250,7 @@ function function_aaf2d8(player, weapon, b_weapon_supports_aat, var_a86430cb) {
         }
     }
     if (is_true(player.talisman_weapon_reducepapcost)) {
-        var_376755db = var_376755db - player.talisman_weapon_reducepapcost;
+        var_376755db -= player.talisman_weapon_reducepapcost;
     }
     var_376755db = int(max(10, var_376755db));
     if (isdefined(level.var_66153d2c)) {
@@ -430,7 +430,7 @@ function function_6d45375a(weapon) {
     weapon = zm_weapons::function_93cd8e76(weapon);
     n_multiplier = 1;
     if (isdefined(self.var_2843d3cc) && isdefined(self.var_2843d3cc[weapon])) {
-        n_multiplier = n_multiplier + (2 - 1) * self.var_2843d3cc[weapon] / 3;
+        n_multiplier += (2 - 1) * self.var_2843d3cc[weapon] / 3;
     }
     return n_multiplier;
 }

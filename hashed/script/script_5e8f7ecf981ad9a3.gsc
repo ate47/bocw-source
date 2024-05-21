@@ -38,7 +38,7 @@ function init() {
 // Checksum 0xb529001e, Offset: 0x268
 // Size: 0x504
 function registerbehaviorscriptfunctions() {
-    assert(isscriptfunctionptr(&function_32353f6e));
+    assert(isscriptfunctionptr(&namespace_250e9486::function_32353f6e));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_ef20564d67585c5", &namespace_250e9486::function_32353f6e);
     assert(isscriptfunctionptr(&function_a3037ba2));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_463e60b10fe1afee", &function_a3037ba2);
@@ -56,11 +56,11 @@ function registerbehaviorscriptfunctions() {
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_3a2582998db5774b", &function_cf9a996);
     assert(isscriptfunctionptr(&function_bc8edc07));
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_3c518f78c393482e", &function_bc8edc07);
-    assert(isscriptfunctionptr(&function_abb6c18a));
+    assert(isscriptfunctionptr(&namespace_250e9486::function_abb6c18a));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_48a15a732caa47ce", &namespace_250e9486::function_abb6c18a);
-    assert(isscriptfunctionptr(&function_99ed5179));
+    assert(isscriptfunctionptr(&namespace_250e9486::function_99ed5179));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_4b5d0f518720c6e9", &namespace_250e9486::function_99ed5179);
-    assert(isscriptfunctionptr(&function_50547dae));
+    assert(isscriptfunctionptr(&namespace_250e9486::function_50547dae));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_1f5497ad3559808d", &namespace_250e9486::function_50547dae);
 }
 

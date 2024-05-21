@@ -281,7 +281,7 @@ function include_weapon(weapon_name, display_in_box, cost, ammo_cost, upgraded =
     }
     if (!isdefined(weapon.worldmodel)) {
         /#
-            thread error("<unknown string>" + function_9e72a96(weapon_name) + "<unknown string>");
+            thread util::error("<unknown string>" + function_9e72a96(weapon_name) + "<unknown string>");
         #/
         return;
     }

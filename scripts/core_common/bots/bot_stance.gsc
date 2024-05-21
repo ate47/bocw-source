@@ -57,7 +57,7 @@ function private function_29975d32() {
         if (self.bot.order !== #"chase_enemy") {
             return false;
         }
-        mindist = mindist * 0.8;
+        mindist *= 0.8;
     }
     var_b8c123c0 = var_8be65bb9.var_b8c123c0;
     if (var_b8c123c0[2] - self.origin[2] >= 16) {

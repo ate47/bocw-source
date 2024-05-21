@@ -367,13 +367,17 @@ function function_88b0c3ba() {
     return level flag::get("level_has_skiptos");
 }
 
-// Namespace skipto/skipto
-// Params 1, eflags: 0x0
-// Checksum 0x90326b9a, Offset: 0x1bb0
-// Size: 0x2c
-function function_3e8267cc(msg) {
-    assertmsg(msg);
-}
+/#
+
+    // Namespace skipto/skipto
+    // Params 1, eflags: 0x0
+    // Checksum 0x90326b9a, Offset: 0x1bb0
+    // Size: 0x2c
+    function function_3e8267cc(msg) {
+        assertmsg(msg);
+    }
+
+#/
 
 // Namespace skipto/skipto
 // Params 1, eflags: 0x2 linked
@@ -646,10 +650,10 @@ function function_116cfcba(skiptos) {
     first = 1;
     foreach (skipto in skiptos) {
         if (!first) {
-            skiptostr = skiptostr + ",";
+            skiptostr += ",";
         }
         first = 0;
-        skiptostr = skiptostr + skipto;
+        skiptostr += skipto;
     }
     return skiptostr;
 }
@@ -709,7 +713,7 @@ function function_547ca7d2(safehouse, var_fc9732a9 = 1) {
             skipto = mapbundle.var_a04dfce6;
         }
         if (var_fc9732a9 && skipto != "") {
-            skipto = skipto + "_skip_briefing";
+            skipto += "_skip_briefing";
         }
     }
     return skipto;
@@ -960,10 +964,10 @@ function function_abaeef51(str, var_d5779ab5, var_54e5e046) {
     first = 1;
     foreach (s in sarray) {
         if (!first) {
-            var_cc407339 = var_cc407339 + var_54e5e046;
+            var_cc407339 += var_54e5e046;
         }
         first = 0;
-        var_cc407339 = var_cc407339 + s;
+        var_cc407339 += s;
     }
     return var_cc407339;
 }
@@ -1740,7 +1744,7 @@ function function_787007b6(rootmapname, stat_name) {
     var_7176c82c = self savegame::function_2ee66e93("savegame_" + stat_name);
     var_aa0ccaed = self stats::get_stat(#"playerstatsbymap", rootmapname, #"currentstats", stat_name);
     var_2fc24ec6 = var_2102f84a - var_7176c82c;
-    var_aa0ccaed = var_aa0ccaed + var_2fc24ec6;
+    var_aa0ccaed += var_2fc24ec6;
     self stats::set_stat(#"playerstatsbymap", rootmapname, #"currentstats", stat_name, var_aa0ccaed);
 }
 

@@ -35,7 +35,7 @@ function autoexec init() {
     spawner::add_archetype_spawn_function(#"zombie", &function_eb55349f);
     spawner::function_89a2cd87(#"zombie", &function_9668f61f);
     /#
-        add_archetype_spawn_function(#"zombie", &updateanimationrate);
+        spawner::add_archetype_spawn_function(#"zombie", &zombie_utility::updateanimationrate);
     #/
     clientfield::register("actor", "zombie", 1, 1, "int");
     clientfield::register("actor", "pustule_pulse_cf", 1, 2, "int");
@@ -275,7 +275,7 @@ function function_f771a3f8(params) {
             self.var_4db55459 = 0;
             self.stumble = 0;
         }
-        self.var_4db55459 = self.var_4db55459 + params.idamage;
+        self.var_4db55459 += params.idamage;
         if (isdefined(params.shitloc)) {
             if (isinarray(array("helmet", "head", "neck"), params.shitloc)) {
                 function_da30b556(self);
@@ -680,7 +680,7 @@ function zombieupdatezigzaggoal() {
                     }
                     break;
                 }
-                segmentlength = segmentlength + currentseglength;
+                segmentlength += currentseglength;
             }
         }
         if (isdefined(level._zombiezigzagtimemin) && isdefined(level._zombiezigzagtimemax)) {
@@ -1286,7 +1286,7 @@ function zombieidgundeathupdate(entity, *mocompanim, *mocompanimblendouttime, *m
             if (isdefined(v_nearest_navmesh_point)) {
                 f_distance = distance(mocompduration.damageorigin, v_nearest_navmesh_point);
                 if (f_distance < 41) {
-                    mocompduration.damageorigin = mocompduration.damageorigin + (0, 0, 36);
+                    mocompduration.damageorigin += (0, 0, 36);
                 }
             }
         }
@@ -1301,7 +1301,7 @@ function zombieidgundeathupdate(entity, *mocompanim, *mocompanimblendouttime, *m
             return;
         }
         if (mocompduration.hole_pull_speed < 12) {
-            mocompduration.hole_pull_speed = mocompduration.hole_pull_speed + 0.5;
+            mocompduration.hole_pull_speed += 0.5;
             if (mocompduration.hole_pull_speed > 12) {
                 mocompduration.hole_pull_speed = 12;
             }

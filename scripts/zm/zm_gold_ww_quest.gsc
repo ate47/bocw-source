@@ -549,11 +549,11 @@ function function_d7d376af(var_77d81993) {
     b_clockwise = 1;
     for (i = 0; i < var_77d81993.size; i++) {
         var_76f1881e = var_77d81993[i] & 31;
-        var_76f1881e = var_76f1881e + (b_clockwise ? 0 : 32);
+        var_76f1881e += b_clockwise ? 0 : 32;
         level clientfield::set("" + #"hash_6ad15545c118bf44", var_76f1881e);
         n_delta = (var_77d81993[i] - var_cc14c4b2) * (b_clockwise ? 1 : -1);
         if (n_delta < 0) {
-            n_delta = n_delta + 20;
+            n_delta += 20;
         }
         var_cc14c4b2 = var_77d81993[i];
         b_clockwise = !b_clockwise;
@@ -1020,25 +1020,24 @@ function function_ade87eb5(item_name, entity, type) {
     return item;
 }
 
-// Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 0, eflags: 0x0
-// Checksum 0x19190eed, Offset: 0x46c0
-// Size: 0x74
-function function_37597f29() {
-    /#
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>");
-        add_custom_devgui_callback(&cmd);
-    #/
-}
+/#
 
-// Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 1, eflags: 0x0
-// Checksum 0x8765d0ba, Offset: 0x4740
-// Size: 0xaa
-function cmd(cmd) {
-    /#
+    // Namespace zm_gold_ww_quest/zm_gold_ww_quest
+    // Params 0, eflags: 0x0
+    // Checksum 0x19190eed, Offset: 0x46c0
+    // Size: 0x74
+    function function_37597f29() {
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        util::add_debug_command("<unknown string>");
+        zm_devgui::add_custom_devgui_callback(&cmd);
+    }
+
+    // Namespace zm_gold_ww_quest/zm_gold_ww_quest
+    // Params 1, eflags: 0x0
+    // Checksum 0x8765d0ba, Offset: 0x4740
+    // Size: 0xaa
+    function cmd(cmd) {
         switch (cmd) {
         case #"hash_ddb7689e8dd7f4a":
             function_f6d9adbf();
@@ -1052,36 +1051,30 @@ function cmd(cmd) {
         default:
             break;
         }
-    #/
-}
+    }
 
-// Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 0, eflags: 0x0
-// Checksum 0xef5b6e68, Offset: 0x47f8
-// Size: 0x1c
-function function_f6d9adbf() {
-    /#
+    // Namespace zm_gold_ww_quest/zm_gold_ww_quest
+    // Params 0, eflags: 0x0
+    // Checksum 0xef5b6e68, Offset: 0x47f8
+    // Size: 0x1c
+    function function_f6d9adbf() {
         level thread spawn_mangler();
-    #/
-}
+    }
 
-// Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 0, eflags: 0x0
-// Checksum 0x5b3bc7b6, Offset: 0x4820
-// Size: 0x3c
-function function_4291c822() {
-    /#
+    // Namespace zm_gold_ww_quest/zm_gold_ww_quest
+    // Params 0, eflags: 0x0
+    // Checksum 0x5b3bc7b6, Offset: 0x4820
+    // Size: 0x3c
+    function function_4291c822() {
         var_685ca72f = function_af26979d();
         level thread function_d7d376af(var_685ca72f);
-    #/
-}
+    }
 
-// Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 0, eflags: 0x0
-// Checksum 0x2cd8eb2c, Offset: 0x4868
-// Size: 0x1c8
-function function_c6769eb8() {
-    /#
+    // Namespace zm_gold_ww_quest/zm_gold_ww_quest
+    // Params 0, eflags: 0x0
+    // Checksum 0x2cd8eb2c, Offset: 0x4868
+    // Size: 0x1c8
+    function function_c6769eb8() {
         var_79bb44c5 = getent("<unknown string>", "<unknown string>");
         var_685ca72f = function_af26979d();
         if (isdefined(level.var_b0b63450)) {
@@ -1099,53 +1092,47 @@ function function_c6769eb8() {
         foreach (var_76f1881e in var_685ca72f) {
             iprintlnbold(var_76f1881e);
         }
-    #/
-}
+    }
 
-// Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 0, eflags: 0x0
-// Checksum 0x3f75fb9c, Offset: 0x4a38
-// Size: 0xb4
-function spawn_mangler() {
-    /#
-        var_b6246671 = get("<unknown string>", "<unknown string>");
+    // Namespace zm_gold_ww_quest/zm_gold_ww_quest
+    // Params 0, eflags: 0x0
+    // Checksum 0x3f75fb9c, Offset: 0x4a38
+    // Size: 0xb4
+    function spawn_mangler() {
+        var_b6246671 = struct::get("<unknown string>", "<unknown string>");
         spawn_mangler = spawnactor(#"hash_4f87aa2a203d37d0", var_b6246671.origin, var_b6246671.angles, "<unknown string>", 1);
         if (isdefined(spawn_mangler)) {
-            spawn_mangler function_d8abfc3d(#"on_ai_damage", &function_fdccaaa8);
+            spawn_mangler callback::function_d8abfc3d(#"on_ai_damage", &function_fdccaaa8);
         }
-    #/
-}
+    }
 
-// Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 1, eflags: 0x0
-// Checksum 0xe7db264, Offset: 0x4af8
-// Size: 0x6c
-function function_fdccaaa8(s_params) {
-    /#
+    // Namespace zm_gold_ww_quest/zm_gold_ww_quest
+    // Params 1, eflags: 0x0
+    // Checksum 0xe7db264, Offset: 0x4af8
+    // Size: 0x6c
+    function function_fdccaaa8(s_params) {
         str_hit_loc = s_params.shitloc;
         if (self.archetype === #"raz" && str_hit_loc === "<unknown string>") {
             level thread function_f4a3a8b0(self);
         }
-    #/
-}
+    }
 
-// Namespace zm_gold_ww_quest/zm_gold_ww_quest
-// Params 1, eflags: 0x0
-// Checksum 0x8d0069c2, Offset: 0x4b70
-// Size: 0x124
-function function_f4a3a8b0(entity) {
-    /#
+    // Namespace zm_gold_ww_quest/zm_gold_ww_quest
+    // Params 1, eflags: 0x0
+    // Checksum 0x8d0069c2, Offset: 0x4b70
+    // Size: 0x124
+    function function_f4a3a8b0(entity) {
         level endon(#"end_game");
-        if (cointoss(50)) {
-            remove_on_ai_damage(&function_fdccaaa8);
-            var_728dec0e = spawn_model(#"hash_7e497f3ba0621b6d", entity.origin + (0, 0, 20), entity.angles);
-            var_728dec0e function_fac87205(#"hash_1d065ea51d79a22e", 64);
+        if (math::cointoss(50)) {
+            callback::remove_on_ai_damage(&function_fdccaaa8);
+            var_728dec0e = util::spawn_model(#"hash_7e497f3ba0621b6d", entity.origin + (0, 0, 20), entity.angles);
+            var_728dec0e zm_unitrigger::function_fac87205(#"hash_1d065ea51d79a22e", 64);
             /#
                 iprintlnbold("<unknown string>");
             #/
             var_728dec0e delete();
-            level set(#"hash_4942017a2b95789a");
+            level flag::set(#"hash_4942017a2b95789a");
         }
-    #/
-}
+    }
 
+#/

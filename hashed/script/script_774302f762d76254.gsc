@@ -287,7 +287,7 @@ function function_e22d3978(number = level.doa.roundnumber) {
         if (!isdefined(player.doa)) {
             continue;
         }
-        player.doa.var_7e445455 = player.doa.var_7e445455 + dx;
+        player.doa.var_7e445455 += dx;
     }
     setroundsplayed(level.doa.roundnumber);
     namespace_9fc66ac::function_2fc07d61();
@@ -492,7 +492,7 @@ function function_a511c7c4() {
     while (var_4b98f072.timeleft > 0) {
         level clientfield::set_world_uimodel("DOA_GLOBALUIMODEL_COUNTDOWN", var_4b98f072.timeleft);
         wait(1);
-        var_4b98f072.timeleft = var_4b98f072.timeleft - 1;
+        var_4b98f072.timeleft -= 1;
     }
     if (!isdefined(level.doa.var_6f3d327)) {
         namespace_6e90e490::function_fa6f7ba7();

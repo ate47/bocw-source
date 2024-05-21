@@ -89,7 +89,7 @@ function private cleanup_main() {
             n_override_cleanup_dist_sq = 2250000;
         }
         profilestop();
-        n_next_eval = n_next_eval + 3000;
+        n_next_eval += 3000;
         level function_399d4af3(n_override_cleanup_dist_sq);
     }
 }

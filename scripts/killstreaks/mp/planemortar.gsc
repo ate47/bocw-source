@@ -29,7 +29,7 @@ function private preinit() {
     init_shared();
     bundlename = "killstreak_planemortar";
     if (sessionmodeiswarzonegame()) {
-        bundlename = bundlename + "_wz";
+        bundlename += "_wz";
     }
     killstreaks::register_killstreak(bundlename, &usekillstreakplanemortar);
     level.killstreaks["inventory_" + getscriptbundle(bundlename).var_d3413870].var_33807ea0 = 1;

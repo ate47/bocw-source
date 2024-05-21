@@ -371,9 +371,9 @@ function function_b82cae8f(linktype, var_5596253c = 1) {
             origin = player getplayercamerapos();
             angles = player getplayerangles();
             axis = anglestoaxis(angles);
-            origin = origin + offset[0] * axis.forward;
-            origin = origin + offset[1] * axis.right;
-            origin = origin + offset[2] * axis.up;
+            origin += offset[0] * axis.forward;
+            origin += offset[1] * axis.right;
+            origin += offset[2] * axis.up;
             if (isactor(self)) {
                 self teleport(origin, angles);
             } else {
@@ -432,7 +432,7 @@ function allow_weapon(allowed, forced, gesture, var_dfce6e2d) {
         return;
     }
     if (isdefined(self.var_15c4009c)) {
-        self.var_15c4009c = self.var_15c4009c - 1;
+        self.var_15c4009c -= 1;
         if (is_true(forced) || self.var_15c4009c <= 0) {
             self val::reset_all(#"hash_1759513a118d68fd");
             self val::reset_all(#"hash_58b9fd1cfcf4a27d");
@@ -600,11 +600,11 @@ function function_d621e6d6(var_eea30707, blendtime) {
 function function_47ffa6b8(var_b56433f8) {
     suffix = "";
     if (is_true(self.var_de5476af)) {
-        suffix = suffix + "_ads";
+        suffix += "_ads";
     }
-    suffix = suffix + "_loop";
+    suffix += "_loop";
     if (self function_bda1ed48()) {
-        suffix = suffix + "_walk";
+        suffix += "_walk";
     }
     return var_b56433f8 + suffix;
 }
@@ -1234,7 +1234,7 @@ function function_d76eed10(action) {
     if (trace_pos != self.origin) {
         trace_pos = playerphysicstrace(self.takedown.start_origin + (0, 0, step), self.origin + (0, 0, step));
         if (trace_pos[0] != self.origin[0] || trace_pos[1] != self.origin[1]) {
-            trace_pos = trace_pos + vectornormalize(self.takedown.start_origin - self.origin);
+            trace_pos += vectornormalize(self.takedown.start_origin - self.origin);
         }
         trace_pos = playerphysicstrace(trace_pos, trace_pos - (0, 0, step));
         var_f5aab51b = playerphysicstrace(trace_pos + (0, 0, 1), trace_pos);

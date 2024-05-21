@@ -158,40 +158,37 @@ function function_a23c96ea() {
     return true;
 }
 
-// Namespace namespace_7fe06af4/namespace_7fe06af4
-// Params 0, eflags: 0x0
-// Checksum 0x14f80859, Offset: 0x888
-// Size: 0x94
-function devgui_init() {
-    /#
+/#
+
+    // Namespace namespace_7fe06af4/namespace_7fe06af4
+    // Params 0, eflags: 0x0
+    // Checksum 0x14f80859, Offset: 0x888
+    // Size: 0x94
+    function devgui_init() {
         waitframe(1);
-        mapname = get_map_name();
+        mapname = util::get_map_name();
         adddebugcommand("<unknown string>");
         adddebugcommand("<unknown string>" + mapname + "<unknown string>");
         adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-    #/
-}
+    }
 
-// Namespace namespace_7fe06af4/namespace_7fe06af4
-// Params 0, eflags: 0x0
-// Checksum 0xd864315d, Offset: 0x928
-// Size: 0x40
-function function_9c9ba5() {
-    /#
+    // Namespace namespace_7fe06af4/namespace_7fe06af4
+    // Params 0, eflags: 0x0
+    // Checksum 0xd864315d, Offset: 0x928
+    // Size: 0x40
+    function function_9c9ba5() {
         level endon(#"game_ended");
         while (true) {
             wait(0.5);
             function_a150d07b();
         }
-    #/
-}
+    }
 
-// Namespace namespace_7fe06af4/namespace_7fe06af4
-// Params 0, eflags: 0x0
-// Checksum 0xadaa6d25, Offset: 0x970
-// Size: 0xa8
-function function_ee18bf8f() {
-    /#
+    // Namespace namespace_7fe06af4/namespace_7fe06af4
+    // Params 0, eflags: 0x0
+    // Checksum 0xadaa6d25, Offset: 0x970
+    // Size: 0xa8
+    function function_ee18bf8f() {
         level endon(#"game_ended");
         while (true) {
             wait(0.5);
@@ -201,20 +198,18 @@ function function_ee18bf8f() {
                 setdvar(#"hash_4c0f0935eafdfaa", 0);
             }
         }
-    #/
-}
+    }
 
-// Namespace namespace_7fe06af4/namespace_7fe06af4
-// Params 0, eflags: 0x0
-// Checksum 0xbcfff312, Offset: 0xa20
-// Size: 0x5e
-function function_fa68a2e6() {
-    /#
+    // Namespace namespace_7fe06af4/namespace_7fe06af4
+    // Params 0, eflags: 0x0
+    // Checksum 0xbcfff312, Offset: 0xa20
+    // Size: 0x5e
+    function function_fa68a2e6() {
         self endon(#"death", #"headless");
         while (true) {
             sphere(self.origin, 16, (0, 1, 0));
             waitframe(1);
         }
-    #/
-}
+    }
 
+#/

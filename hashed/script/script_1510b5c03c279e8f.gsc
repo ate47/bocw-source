@@ -181,7 +181,7 @@ function function_be5ba736(enemy) {
             point._scoredebug[#"disttoorigin"].score = mapfloat(0, prefereddistawayfromorigin, 0, 300, point.disttoorigin2d);
             point._scoredebug[#"disttoorigin"].scorename = "<unknown string>";
         #/
-        point.score = point.score + mapfloat(0, prefereddistawayfromorigin, 0, 300, point.disttoorigin2d);
+        point.score += mapfloat(0, prefereddistawayfromorigin, 0, 300, point.disttoorigin2d);
         if (point.inclaimedlocation) {
             /#
                 if (!isdefined(point._scoredebug)) {
@@ -193,7 +193,7 @@ function function_be5ba736(enemy) {
                 point._scoredebug[#"inclaimedlocation"].score = -500;
                 point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
             #/
-            point.score = point.score + -500;
+            point.score += -500;
         }
         /#
             if (!isdefined(point._scoredebug)) {
@@ -205,7 +205,7 @@ function function_be5ba736(enemy) {
             point._scoredebug[#"random"].score = randomfloatrange(0, randomness);
             point._scoredebug[#"random"].scorename = "<unknown string>";
         #/
-        point.score = point.score + randomfloatrange(0, randomness);
+        point.score += randomfloatrange(0, randomness);
         /#
             if (!isdefined(point._scoredebug)) {
                 point._scoredebug = [];
@@ -216,7 +216,7 @@ function function_be5ba736(enemy) {
             point._scoredebug[#"engagementdist"].score = point.distawayfromengagementarea * -1;
             point._scoredebug[#"engagementdist"].scorename = "<unknown string>";
         #/
-        point.score = point.score + point.distawayfromengagementarea * -1;
+        point.score += point.distawayfromengagementarea * -1;
         if (point.score > best_score) {
             best_score = point.score;
             best_point = point;
@@ -460,7 +460,7 @@ function function_aebf9e0f(*params) {
                         point._scoredebug[#"disttoorigin"].score = mapfloat(0, 200, 0, -200, distance(point.origin, queryresult.origin));
                         point._scoredebug[#"disttoorigin"].scorename = "<unknown string>";
                     #/
-                    point.score = point.score + mapfloat(0, 200, 0, -200, distance(point.origin, queryresult.origin));
+                    point.score += mapfloat(0, 200, 0, -200, distance(point.origin, queryresult.origin));
                     /#
                         if (!isdefined(point._scoredebug)) {
                             point._scoredebug = [];
@@ -471,7 +471,7 @@ function function_aebf9e0f(*params) {
                         point._scoredebug[#"heighttoorigin"].score = mapfloat(50, 200, 0, -200, abs(point.origin[2] - queryresult.origin[2]));
                         point._scoredebug[#"heighttoorigin"].scorename = "<unknown string>";
                     #/
-                    point.score = point.score + mapfloat(50, 200, 0, -200, abs(point.origin[2] - queryresult.origin[2]));
+                    point.score += mapfloat(50, 200, 0, -200, abs(point.origin[2] - queryresult.origin[2]));
                     if (point.inclaimedlocation === 1) {
                         /#
                             if (!isdefined(point._scoredebug)) {
@@ -483,7 +483,7 @@ function function_aebf9e0f(*params) {
                             point._scoredebug[#"inclaimedlocation"].score = -500;
                             point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
                         #/
-                        point.score = point.score + -500;
+                        point.score += -500;
                     }
                     if (point.score > best_score) {
                         best_score = point.score;
@@ -659,14 +659,14 @@ function function_4417a164() {
         enemy_vel_offset = enemy getvelocity() * 0.5;
         enemy_look_dir_offset = anglestoforward(enemy.angles);
         if (distance2dsquared(self.origin, enemy.origin) > sqr(500)) {
-            enemy_look_dir_offset = enemy_look_dir_offset * 110;
+            enemy_look_dir_offset *= 110;
         } else {
-            enemy_look_dir_offset = enemy_look_dir_offset * 35;
+            enemy_look_dir_offset *= 35;
         }
         offset = enemy_vel_offset + enemy_look_dir_offset;
         offset = (offset[0], offset[1], 0);
         if (tracepassedonnavmesh(target_pos_onnavmesh, target_pos + offset)) {
-            target_pos = target_pos + offset;
+            target_pos += offset;
         } else {
             target_pos = target_pos_onnavmesh;
         }

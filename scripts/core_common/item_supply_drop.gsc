@@ -41,12 +41,13 @@ function private preinit() {
     clientfield::register("vehicle", "supply_drop_vehicle_landed", 1, 1, "counter");
 }
 
-// Namespace item_supply_drop/item_supply_drop
-// Params 0, eflags: 0x4
-// Checksum 0x87faa490, Offset: 0x738
-// Size: 0x3c6
-function private function_eaba72c9() {
-    /#
+/#
+
+    // Namespace item_supply_drop/item_supply_drop
+    // Params 0, eflags: 0x4
+    // Checksum 0x87faa490, Offset: 0x738
+    // Size: 0x3c6
+    function private function_eaba72c9() {
         while (true) {
             if (getdvarint(#"wz_supply_drop", 0) > 0) {
                 switch (getdvarint(#"wz_supply_drop", 0)) {
@@ -91,19 +92,17 @@ function private function_eaba72c9() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace item_supply_drop/item_supply_drop
-// Params 0, eflags: 0x4
-// Checksum 0x8b69b54e, Offset: 0xb08
-// Size: 0x174
-function private _setup_devgui() {
-    /#
+    // Namespace item_supply_drop/item_supply_drop
+    // Params 0, eflags: 0x4
+    // Checksum 0x8b69b54e, Offset: 0xb08
+    // Size: 0x174
+    function private _setup_devgui() {
         while (!canadddebugcommand()) {
             waitframe(1);
         }
-        mapname = get_map_name();
+        mapname = util::get_map_name();
         adddebugcommand("<unknown string>" + mapname + "<unknown string>");
         adddebugcommand("<unknown string>" + mapname + "<unknown string>");
         adddebugcommand("<unknown string>" + mapname + "<unknown string>");
@@ -112,15 +111,13 @@ function private _setup_devgui() {
         adddebugcommand("<unknown string>" + mapname + "<unknown string>");
         adddebugcommand("<unknown string>" + mapname + "<unknown string>");
         level thread function_eaba72c9();
-    #/
-}
+    }
 
-// Namespace item_supply_drop/item_supply_drop
-// Params 0, eflags: 0x4
-// Checksum 0x33681d5c, Offset: 0xc88
-// Size: 0x45c
-function private debug_supply_drop() {
-    /#
+    // Namespace item_supply_drop/item_supply_drop
+    // Params 0, eflags: 0x4
+    // Checksum 0x33681d5c, Offset: 0xc88
+    // Size: 0x45c
+    function private debug_supply_drop() {
         if (isdefined(level.supplydropveh)) {
             deathcircleindex = isdefined(level.deathcircleindex) ? level.deathcircleindex : 0;
             deathcircle = level.deathcircles[deathcircleindex];
@@ -160,8 +157,9 @@ function private debug_supply_drop() {
                 sphere(var_99a8be82, radius, (1, 1, 1));
             }
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace item_supply_drop/item_supply_drop
 // Params 2, eflags: 0x4
@@ -767,7 +765,7 @@ function private function_8234217e(var_faa1ea31, vectors) {
         }
     }
     if (bestdot < 0) {
-        var_54b25053 = var_54b25053 * -1;
+        var_54b25053 *= -1;
     }
     return var_54b25053;
 }
@@ -994,7 +992,7 @@ function function_418e26fe(var_2118f785 = undefined, helicopter = 0, voiceevent 
     } else {
         var_729c4495 = 20000;
     }
-    var_729c4495 = var_729c4495 + var_541c190b;
+    var_729c4495 += var_541c190b;
     var_94f13d8b = 2000 + var_729c4495;
     deathcirclecenter = nextdeathcircle.origin;
     deathcirclecenter = (deathcirclecenter[0], deathcirclecenter[1], var_94f13d8b);

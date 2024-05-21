@@ -890,7 +890,7 @@ function private function_168d593a() {
                 continue;
             }
             n_countdown = 5;
-            n_wait_time = n_wait_time - 1;
+            n_wait_time -= 1;
         }
     }
 }
@@ -1166,36 +1166,37 @@ function function_891d8fc(var_324be745) {
     level flag::set(var_324be745);
 }
 
-// Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest
-// Params 0, eflags: 0x0
-// Checksum 0x792c0dc2, Offset: 0x5958
-// Size: 0x38c
-function function_8ac7a154() {
-    /#
-        level set(#"hash_23042147964b0bc2");
-        level set("<unknown string>" + #"hash_2c7fb1cc66c590a0", 1);
-        portal_fx = getent("<unknown string>", "<unknown string>");
-        playsoundatposition(#"hash_4e9f052116a0cb95", portal_fx.origin);
-        level thread play(#"hash_5b9b9143bf52fa5f", "<unknown string>");
-        level set(#"hash_3976f9f041f5b338");
-        level set("<unknown string>" + #"hash_18f96dcb4766fbe8", 1);
-        portal_fx = getent("<unknown string>", "<unknown string>");
-        playsoundatposition(#"hash_4e9f052116a0cb95", portal_fx.origin);
-        level set("<unknown string>" + #"hash_27308a7dd991ce8d", 0);
-        level thread play(#"hash_12a9771a2346ed59", "<unknown string>");
-        level set("<unknown string>" + #"hash_3432d09ff93c9a0c", 1);
-        portal_fx = getent("<unknown string>", "<unknown string>");
-        playsoundatposition(#"hash_4e9f052116a0cb95", portal_fx.origin);
-        portal_fx = getent("<unknown string>", "<unknown string>");
-        playsoundatposition(#"hash_4e9f052116a0cb95", portal_fx.origin);
-        level thread play(#"hash_6331244ff2bb3ab1", "<unknown string>");
-        level thread play(#"hash_7c52431e19ff8737", "<unknown string>");
-        level set(#"hash_67685d2c51bd61db");
-        level set(#"hash_4c3af4729843e724");
-        function_990a7f89();
-        function_4f804075();
-        function_5c0aa258();
-        function_904e469e();
-    #/
-}
+/#
 
+    // Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest
+    // Params 0, eflags: 0x0
+    // Checksum 0x792c0dc2, Offset: 0x5958
+    // Size: 0x38c
+    function function_8ac7a154() {
+        level flag::set(#"hash_23042147964b0bc2");
+        level clientfield::set("<unknown string>" + #"hash_2c7fb1cc66c590a0", 1);
+        portal_fx = getent("<unknown string>", "<unknown string>");
+        playsoundatposition(#"hash_4e9f052116a0cb95", portal_fx.origin);
+        level thread scene::play(#"hash_5b9b9143bf52fa5f", "<unknown string>");
+        level flag::set(#"hash_3976f9f041f5b338");
+        level clientfield::set("<unknown string>" + #"hash_18f96dcb4766fbe8", 1);
+        portal_fx = getent("<unknown string>", "<unknown string>");
+        playsoundatposition(#"hash_4e9f052116a0cb95", portal_fx.origin);
+        level clientfield::set("<unknown string>" + #"hash_27308a7dd991ce8d", 0);
+        level thread scene::play(#"hash_12a9771a2346ed59", "<unknown string>");
+        level clientfield::set("<unknown string>" + #"hash_3432d09ff93c9a0c", 1);
+        portal_fx = getent("<unknown string>", "<unknown string>");
+        playsoundatposition(#"hash_4e9f052116a0cb95", portal_fx.origin);
+        portal_fx = getent("<unknown string>", "<unknown string>");
+        playsoundatposition(#"hash_4e9f052116a0cb95", portal_fx.origin);
+        level thread scene::play(#"hash_6331244ff2bb3ab1", "<unknown string>");
+        level thread scene::play(#"hash_7c52431e19ff8737", "<unknown string>");
+        level flag::set(#"hash_67685d2c51bd61db");
+        level flag::set(#"hash_4c3af4729843e724");
+        zm_tungsten_zones::function_990a7f89();
+        zm_tungsten_zones::function_4f804075();
+        zm_tungsten_zones::function_5c0aa258();
+        zm_tungsten_zones::function_904e469e();
+    }
+
+#/

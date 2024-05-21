@@ -220,18 +220,20 @@ function private function_a7e644f6(eventstruct) {
     }
 }
 
-// Namespace player_free_fall/player_free_fall
-// Params 0, eflags: 0x4
-// Checksum 0x2ee37cd7, Offset: 0xb60
-// Size: 0x44
-function private function_1fc427dc() {
-    /#
+/#
+
+    // Namespace player_free_fall/player_free_fall
+    // Params 0, eflags: 0x4
+    // Checksum 0x2ee37cd7, Offset: 0xb60
+    // Size: 0x44
+    function private function_1fc427dc() {
         waitframe(1);
         waitframe(1);
         adddebugcommand("<unknown string>");
         adddebugcommand("<unknown string>");
-    #/
-}
+    }
+
+#/
 
 // Namespace player_free_fall/player_free_fall
 // Params 0, eflags: 0x6 linked
@@ -349,25 +351,26 @@ function private function_bd421742(eventstruct) {
     self setclientuivisibilityflag("weapon_hud_visible", 1);
 }
 
-// Namespace player_free_fall/player_free_fall
-// Params 0, eflags: 0x4
-// Checksum 0x77a4ec58, Offset: 0x10a8
-// Size: 0x164
-function private function_a2b7e8a1() {
-    /#
-        mapname = get_map_name();
-        waitframe(1);
-        waitframe(1);
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-        waitframe(1);
-        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
-    #/
-}
+/#
 
+    // Namespace player_free_fall/player_free_fall
+    // Params 0, eflags: 0x4
+    // Checksum 0x77a4ec58, Offset: 0x10a8
+    // Size: 0x164
+    function private function_a2b7e8a1() {
+        mapname = util::get_map_name();
+        waitframe(1);
+        waitframe(1);
+        adddebugcommand("<unknown string>");
+        adddebugcommand("<unknown string>");
+        adddebugcommand("<unknown string>");
+        adddebugcommand("<unknown string>");
+        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
+        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
+        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
+        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
+        waitframe(1);
+        adddebugcommand("<unknown string>" + mapname + "<unknown string>");
+    }
+
+#/

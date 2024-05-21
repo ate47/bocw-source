@@ -155,7 +155,7 @@ function result(*death, attacker, *mod, weapon, *var_fd90b0bb, vpoint, *shitloc,
         vpoint clientfield::increment_to_player("ammomod_deadwire_proc", 1);
     }
     playfx("zm_weapons/fx9_aat_bul_impact_electric", boneindex);
-    if (!isdefined(zombie_utility::function_d2dfacfd(#"tesla_head_gib_chance"))) {
+    if (!isdefined(zombie_utility::get_zombie_var(#"tesla_head_gib_chance"))) {
         zombie_utility::set_zombie_var(#"tesla_head_gib_chance", 50);
     }
     vpoint zm_utility::function_5d356609(aat_name, tier);
@@ -322,7 +322,7 @@ function function_2bd8c11(player, damage_percent, weapon, stun_duration) {
             }
             waitframe(1);
         }
-        time = time + 1;
+        time += 1;
         wait(1);
     }
 }

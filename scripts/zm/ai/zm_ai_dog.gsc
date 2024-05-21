@@ -257,8 +257,8 @@ function registerbehaviorscriptfunctions() {
     assert(!isdefined(&function_e87d4fff) || isscriptfunctionptr(&function_e87d4fff));
     assert(!isdefined(&function_81758b93) || isscriptfunctionptr(&function_81758b93));
     behaviortreenetworkutility::registerbehaviortreeaction(#"hash_1765abc5cdc24867", &function_856447f6, &function_e87d4fff, &function_81758b93);
-    assert(isscriptfunctionptr(&function_82df49dc));
-    behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_1e70520bdbcffd27", &function_82df49dc);
+    assert(isscriptfunctionptr(&pa_cl_vport_zscale_4));
+    behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_1e70520bdbcffd27", &pa_cl_vport_zscale_4);
     assert(isscriptfunctionptr(&function_2e0abd15));
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_286661abebb905a2", &function_2e0abd15);
     assert(isscriptfunctionptr(&function_70daebd0));
@@ -483,7 +483,7 @@ function private get_favorite_enemy(dog) {
     if (!isdefined(least_hunted.hunted_by)) {
         least_hunted.hunted_by = 0;
     }
-    least_hunted.hunted_by = least_hunted.hunted_by + 1;
+    least_hunted.hunted_by += 1;
     return least_hunted;
 }
 
@@ -1575,7 +1575,7 @@ function private function_473c71d0(entity) {
         vehicle = entity.favoriteenemy getvehicleoccupied();
         goal = namespace_85745671::function_401070dd(vehicle, entity.favoriteenemy);
         if (isvec(goal)) {
-            goal = goal + vectornormalize(goal - vehicle.origin) * 100;
+            goal += vectornormalize(goal - vehicle.origin) * 100;
             goal = getclosestpointonnavmesh(goal, 200, entity getpathfindingradius());
             if (isvec(goal)) {
                 entity function_a57c34b7(goal);
@@ -1809,7 +1809,7 @@ function private function_1e0ddac1() {
 // Size: 0x48
 function private function_856447f6(entity, asmstatename) {
     animationstatenetworkutility::requeststate(entity, asmstatename);
-    function_82df49dc(entity);
+    pa_cl_vport_zscale_4(entity);
     return 5;
 }
 
@@ -1829,11 +1829,11 @@ function private function_e87d4fff(entity, *asmstatename) {
     meleerange = asmstatename.meleeweapon.aimeleerange;
     if (isplayer(asmstatename.favoriteenemy)) {
         if (asmstatename.favoriteenemy getstance() == "prone") {
-            meleerange = meleerange * 1.5;
+            meleerange *= 1.5;
         }
         if (asmstatename.favoriteenemy isinvehicle()) {
             enemy_eye_pos = asmstatename.favoriteenemy getcentroid();
-            meleerange = meleerange * 2;
+            meleerange *= 2;
         }
     }
     if (distancesquared(eye_pos, enemy_eye_pos) > sqr(meleerange)) {
@@ -1856,7 +1856,7 @@ function private function_81758b93(entity, *asmstatename) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x2dd256f1, Offset: 0x74f0
 // Size: 0x8e
-function function_82df49dc(entity) {
+function pa_cl_vport_zscale_4(entity) {
     self function_2b82dc3c();
     entity pathmode("dont move", 1);
     entity clearpath();
@@ -1927,7 +1927,7 @@ function function_fba7325a(entity, mocompanim, *mocompanimblendouttime, *mocompa
             #/
             vehicleoffset = vehicle getvelocity() * distance2d(enemypos, mocompanimflag.origin) * getdvarfloat(#"hash_7167a82d9d60a72", 0.0015);
             if (vectordot(enemypos + vehicleoffset - mocompanimflag.origin, enemypos - mocompanimflag.origin) >= 0) {
-                enemypos = enemypos + vehicleoffset;
+                enemypos += vehicleoffset;
             }
             /#
                 debugstar(enemypos, 50, (0, 0, 1));
@@ -1971,7 +1971,7 @@ function function_b1b9da60(entity, mocompanim, *mocompanimblendouttime, *mocompa
         if (isplayer(mocompanimflag.favoriteenemy)) {
             velocity = mocompanimflag.favoriteenemy getvelocity();
             if (length(velocity) >= 0) {
-                predictedenemypos = predictedenemypos + vectorscale(velocity, 0.25);
+                predictedenemypos += vectorscale(velocity, 0.25);
             }
         }
         var_83fd29ee = vectornormalize(predictedenemypos - mocompanimflag.origin);
@@ -2342,24 +2342,23 @@ function function_10083d9f() {
     }
 }
 
-// Namespace zm_ai_dog/zm_ai_dog
-// Params 0, eflags: 0x0
-// Checksum 0x63b6f3bf, Offset: 0x98e8
-// Size: 0xa4
-function function_db4f75e() {
-    /#
+/#
+
+    // Namespace zm_ai_dog/zm_ai_dog
+    // Params 0, eflags: 0x0
+    // Checksum 0x63b6f3bf, Offset: 0x98e8
+    // Size: 0xa4
+    function function_db4f75e() {
         function_5ac4dc99(#"hash_8b22ac08c03321a", "<unknown string>");
         function_cd140ee9(#"hash_8b22ac08c03321a", &function_4072bc4d);
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>");
-    #/
-}
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>");
+    }
 
-// Namespace zm_ai_dog/zm_ai_dog
-// Params 1, eflags: 0x0
-// Checksum 0xd1493a38, Offset: 0x9998
-// Size: 0x94
-function function_4072bc4d(dvar) {
-    /#
+    // Namespace zm_ai_dog/zm_ai_dog
+    // Params 1, eflags: 0x0
+    // Checksum 0xd1493a38, Offset: 0x9998
+    // Size: 0x94
+    function function_4072bc4d(dvar) {
         switch (dvar.value) {
         case #"hash_71dc780eee2bf889":
             level thread function_a8cde6e0();
@@ -2368,15 +2367,13 @@ function function_4072bc4d(dvar) {
             return;
         }
         setdvar(#"hash_8b22ac08c03321a", "<unknown string>");
-    #/
-}
+    }
 
-// Namespace zm_ai_dog/zm_ai_dog
-// Params 0, eflags: 0x0
-// Checksum 0xcbf0bc48, Offset: 0x9a38
-// Size: 0x19a
-function function_a8cde6e0() {
-    /#
+    // Namespace zm_ai_dog/zm_ai_dog
+    // Params 0, eflags: 0x0
+    // Checksum 0xcbf0bc48, Offset: 0x9a38
+    // Size: 0x19a
+    function function_a8cde6e0() {
         if (!isdefined(level.var_45c2d80e)) {
             level.var_45c2d80e = [];
             level.var_45c2d80e[level.var_45c2d80e.size] = "<unknown string>";
@@ -2395,6 +2392,6 @@ function function_a8cde6e0() {
             dog.knockdown_type = "<unknown string>";
             dog.knockdown_direction = level.var_45c2d80e[level.var_8bf2b256];
         }
-    #/
-}
+    }
 
+#/

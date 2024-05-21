@@ -1035,12 +1035,13 @@ function on_item_pickup(params) {
     }
 }
 
-// Namespace namespace_d4ecbbf0/namespace_d4ecbbf0
-// Params 0, eflags: 0x0
-// Checksum 0x32884a77, Offset: 0x3798
-// Size: 0x224
-function function_14defa19() {
-    /#
+/#
+
+    // Namespace namespace_d4ecbbf0/namespace_d4ecbbf0
+    // Params 0, eflags: 0x0
+    // Checksum 0x32884a77, Offset: 0x3798
+    // Size: 0x224
+    function function_14defa19() {
         setdvar(#"hash_45e7c4e448c5fdd3", "<unknown string>");
         var_5084d761 = ["<unknown string>", "<unknown string>", "<unknown string>"];
         var_d2d49534 = [1, 2, 5, 10, 20, 50, 100];
@@ -1052,15 +1053,13 @@ function function_14defa19() {
                 adddebugcommand(cmdstring);
             }
         }
-    #/
-}
+    }
 
-// Namespace namespace_d4ecbbf0/namespace_d4ecbbf0
-// Params 0, eflags: 0x0
-// Checksum 0xc2b20e14, Offset: 0x39c8
-// Size: 0x22e
-function function_868c9a6e() {
-    /#
+    // Namespace namespace_d4ecbbf0/namespace_d4ecbbf0
+    // Params 0, eflags: 0x0
+    // Checksum 0xc2b20e14, Offset: 0x39c8
+    // Size: 0x22e
+    function function_868c9a6e() {
         while (true) {
             str_command = getdvarstring(#"hash_45e7c4e448c5fdd3", "<unknown string>");
             if (str_command != "<unknown string>") {
@@ -1079,6 +1078,6 @@ function function_868c9a6e() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
+#/

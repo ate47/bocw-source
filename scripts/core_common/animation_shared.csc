@@ -94,7 +94,7 @@ function _play(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_blend_in, 
     /#
         self.var_80c69db6 = "<unknown string>";
         self.var_6c4bb19 = {#animation:v_angles_or_tag, #v_origin_or_ent:n_rate, #v_angles_or_tag:n_blend_in};
-        if (level get("<unknown string>")) {
+        if (level flag::get("<unknown string>")) {
             self thread anim_info_render_thread();
         }
     #/

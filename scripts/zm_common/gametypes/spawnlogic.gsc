@@ -396,18 +396,19 @@ function getbestweightedspawnpoint(spawnpoints) {
                 bestspawnpoint.spawndata[bestspawnpoint.spawndata.size] = "<unknown string>" + penalty;
             }
         #/
-        bestspawnpoint.weight = bestspawnpoint.weight - penalty;
+        bestspawnpoint.weight -= penalty;
         bestspawnpoint.lastsighttracetime = gettime();
     }
 }
 
-// Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
-// Checksum 0x592ab72a, Offset: 0x12b8
-// Size: 0x144
-function checkbad(spawnpoint) {
-    /#
-        for (i = 0; i < level.players.size; i++) {
+/#
+
+    // Namespace spawnlogic/spawnlogic
+    // Params 1, eflags: 0x0
+    // Checksum 0x592ab72a, Offset: 0x12b8
+    // Size: 0x144
+    function checkbad(spawnpoint) {
+                for (i = 0; i < level.players.size; i++) {
             player = level.players[i];
             if (!isalive(player) || player.sessionstate != "<unknown string>") {
                 continue;
@@ -420,15 +421,13 @@ function checkbad(spawnpoint) {
                 thread badspawnline(spawnpoint.sighttracepoint, player.origin + (0, 0, 50), self.name, player.name);
             }
         }
-    #/
-}
+    }
 
-// Namespace spawnlogic/spawnlogic
-// Params 4, eflags: 0x0
-// Checksum 0x240204cf, Offset: 0x1408
-// Size: 0xda
-function badspawnline(start, end, name1, name2) {
-    /#
+    // Namespace spawnlogic/spawnlogic
+    // Params 4, eflags: 0x0
+    // Checksum 0x240204cf, Offset: 0x1408
+    // Size: 0xda
+    function badspawnline(start, end, name1, name2) {
         dist = distance(start, end);
         for (i = 0; i < 200; i++) {
             line(start, end, (1, 0, 0));
@@ -436,15 +435,13 @@ function badspawnline(start, end, name1, name2) {
             print3d(end, name2);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace spawnlogic/spawnlogic
-// Params 3, eflags: 0x0
-// Checksum 0x9a33c241, Offset: 0x14f0
-// Size: 0x772
-function storespawndata(spawnpoints, useweights, bestspawnpoint) {
-    /#
+    // Namespace spawnlogic/spawnlogic
+    // Params 3, eflags: 0x0
+    // Checksum 0x9a33c241, Offset: 0x14f0
+    // Size: 0x772
+    function storespawndata(spawnpoints, useweights, bestspawnpoint) {
         if (!isdefined(level.storespawndata) || !level.storespawndata) {
             return;
         }
@@ -465,14 +462,14 @@ function storespawndata(spawnpoints, useweights, bestspawnpoint) {
         for (i = 0; i < spawnpoints.size; i++) {
             str = vectostr(spawnpoints[i].origin) + "<unknown string>";
             if (spawnpoints[i] == bestspawnpoint) {
-                str = str + "<unknown string>";
+                str += "<unknown string>";
             } else {
-                str = str + "<unknown string>";
+                str += "<unknown string>";
             }
             if (!useweights) {
-                str = str + "<unknown string>";
+                str += "<unknown string>";
             } else {
-                str = str + spawnpoints[i].weight + "<unknown string>";
+                str += spawnpoints[i].weight + "<unknown string>";
             }
             if (!isdefined(spawnpoints[i].spawndata)) {
                 spawnpoints[i].spawndata = [];
@@ -480,13 +477,13 @@ function storespawndata(spawnpoints, useweights, bestspawnpoint) {
             if (!isdefined(spawnpoints[i].sightchecks)) {
                 spawnpoints[i].sightchecks = [];
             }
-            str = str + spawnpoints[i].spawndata.size + "<unknown string>";
+            str += spawnpoints[i].spawndata.size + "<unknown string>";
             for (j = 0; j < spawnpoints[i].spawndata.size; j++) {
-                str = str + spawnpoints[i].spawndata[j] + "<unknown string>";
+                str += spawnpoints[i].spawndata[j] + "<unknown string>";
             }
-            str = str + spawnpoints[i].sightchecks.size + "<unknown string>";
+            str += spawnpoints[i].sightchecks.size + "<unknown string>";
             for (j = 0; j < spawnpoints[i].sightchecks.size; j++) {
-                str = str + spawnpoints[i].sightchecks[j].penalty + "<unknown string>" + vectostr(spawnpoints[i].origin) + "<unknown string>";
+                str += spawnpoints[i].sightchecks[j].penalty + "<unknown string>" + vectostr(spawnpoints[i].origin) + "<unknown string>";
             }
             fprintfields(file, str);
         }
@@ -500,11 +497,11 @@ function storespawndata(spawnpoints, useweights, bestspawnpoint) {
                 continue;
             }
             numallies++;
-            str = str + vectostr(obj.allies[i].origin) + "<unknown string>";
+            str += vectostr(obj.allies[i].origin) + "<unknown string>";
         }
         for (i = 0; i < obj.enemies.size; i++) {
             numenemies++;
-            str = str + vectostr(obj.enemies[i].origin) + "<unknown string>";
+            str += vectostr(obj.enemies[i].origin) + "<unknown string>";
         }
         str = numallies + "<unknown string>" + numenemies + "<unknown string>" + str;
         fprintfields(file, str);
@@ -525,12 +522,12 @@ function storespawndata(spawnpoints, useweights, bestspawnpoint) {
                 index = otherdata.size;
                 otherdata[index] = spawnstruct();
                 otherdata[index].origin = level.flags[i].origin;
-                otherdata[index].text = level.flags[i].useobj get_owner_team() + "<unknown string>";
+                otherdata[index].text = level.flags[i].useobj gameobjects::get_owner_team() + "<unknown string>";
             }
         }
         str = otherdata.size + "<unknown string>";
         for (i = 0; i < otherdata.size; i++) {
-            str = str + vectostr(otherdata[i].origin) + "<unknown string>" + otherdata[i].text + "<unknown string>";
+            str += vectostr(otherdata[i].origin) + "<unknown string>" + otherdata[i].text + "<unknown string>";
         }
         fprintfields(file, str);
         closefile(file);
@@ -538,15 +535,13 @@ function storespawndata(spawnpoints, useweights, bestspawnpoint) {
         if (isdefined(self.thisspawnid)) {
         }
         self.thisspawnid = thisspawnid;
-    #/
-}
+    }
 
-// Namespace spawnlogic/spawnlogic
-// Params 2, eflags: 0x0
-// Checksum 0x95d09c43, Offset: 0x1c70
-// Size: 0x984
-function readspawndata(desiredid, relativepos) {
-    /#
+    // Namespace spawnlogic/spawnlogic
+    // Params 2, eflags: 0x0
+    // Checksum 0x95d09c43, Offset: 0x1c70
+    // Size: 0x984
+    function readspawndata(desiredid, relativepos) {
         file = openfile("<unknown string>", "<unknown string>");
         if (file < 0) {
             return;
@@ -625,7 +620,7 @@ function readspawndata(desiredid, relativepos) {
                 data.maxweight = 0;
             }
             if (data.minweight == data.maxweight) {
-                data.minweight = data.minweight - 1;
+                data.minweight -= 1;
             }
             if (freadln(file) <= 0) {
                 break;
@@ -693,15 +688,13 @@ function readspawndata(desiredid, relativepos) {
             }
         }
         closefile(file);
-    #/
-}
+    }
 
-// Namespace spawnlogic/spawnlogic
-// Params 0, eflags: 0x0
-// Checksum 0xb2df3e56, Offset: 0x2600
-// Size: 0x428
-function drawspawndata() {
-    /#
+    // Namespace spawnlogic/spawnlogic
+    // Params 0, eflags: 0x0
+    // Checksum 0xb2df3e56, Offset: 0x2600
+    // Size: 0x428
+    function drawspawndata() {
         level notify(#"drawing_spawn_data");
         level endon(#"drawing_spawn_data");
         textoffset = (0, 0, -12);
@@ -724,48 +717,45 @@ function drawspawndata() {
                 orig = sp.sighttracepoint;
                 if (sp.winner) {
                     print3d(orig, level.curspawndata.playername + "<unknown string>", (0.5, 0.5, 1), 1, 2);
-                    orig = orig + textoffset;
+                    orig += textoffset;
                 }
                 amnt = (sp.weight - level.curspawndata.minweight) / (level.curspawndata.maxweight - level.curspawndata.minweight);
                 print3d(orig, "<unknown string>" + sp.weight, (1 - amnt, amnt, 0.5));
-                orig = orig + textoffset;
+                orig += textoffset;
                 for (j = 0; j < sp.data.size; j++) {
                     print3d(orig, sp.data[j], (1, 1, 1));
-                    orig = orig + textoffset;
+                    orig += textoffset;
                 }
                 for (j = 0; j < sp.sightchecks.size; j++) {
                     print3d(orig, "<unknown string>" + sp.sightchecks[j].penalty, (1, 0.5, 0.5));
-                    orig = orig + textoffset;
+                    orig += textoffset;
                 }
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
-// Checksum 0xb45aecc0, Offset: 0x2a30
-// Size: 0x6e
-function vectostr(vec) {
-    /#
+    // Namespace spawnlogic/spawnlogic
+    // Params 1, eflags: 0x0
+    // Checksum 0xb45aecc0, Offset: 0x2a30
+    // Size: 0x6e
+    function vectostr(vec) {
         return int(vec[0]) + "<unknown string>" + int(vec[1]) + "<unknown string>" + int(vec[2]);
-    #/
-}
+    }
 
-// Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
-// Checksum 0xf9e478cc, Offset: 0x2aa8
-// Size: 0x96
-function strtovec(str) {
-    /#
+    // Namespace spawnlogic/spawnlogic
+    // Params 1, eflags: 0x0
+    // Checksum 0xf9e478cc, Offset: 0x2aa8
+    // Size: 0x96
+    function strtovec(str) {
         parts = strtok(str, "<unknown string>");
         if (parts.size != 3) {
             return (0, 0, 0);
         }
         return (int(parts[0]), int(parts[1]), int(parts[2]));
-    #/
-}
+    }
+
+#/
 
 // Namespace spawnlogic/spawnlogic
 // Params 1, eflags: 0x2 linked
@@ -990,10 +980,10 @@ function getspawnpoint_dm(spawnpoints) {
             for (j = 0; j < aliveplayers.size; j++) {
                 dist = distance(spawnpoints[i].origin, aliveplayers[j].origin);
                 if (dist < baddist) {
-                    nearbybadamount = nearbybadamount + (baddist - dist) / baddist;
+                    nearbybadamount += (baddist - dist) / baddist;
                 }
                 distfromideal = abs(dist - idealdist);
-                totaldistfromideal = totaldistfromideal + distfromideal;
+                totaldistfromideal += distfromideal;
             }
             avgdistfromideal = totaldistfromideal / aliveplayers.size;
             welldistancedamount = (idealdist - avgdistfromideal) / idealdist;
@@ -1040,16 +1030,16 @@ function getspawnpoint_turned(spawnpoints, idealdist, baddist, idealdistteam, ba
                 distfromideal = 0;
                 if (aliveplayers[j].team == myteam) {
                     if (dist < baddistteam) {
-                        nearbybadamount = nearbybadamount + (baddistteam - dist) / baddistteam;
+                        nearbybadamount += (baddistteam - dist) / baddistteam;
                     }
                     distfromideal = abs(dist - idealdistteam);
                 } else {
                     if (dist < baddist) {
-                        nearbybadamount = nearbybadamount + (baddist - dist) / baddist;
+                        nearbybadamount += (baddist - dist) / baddist;
                     }
                     distfromideal = abs(dist - idealdist);
                 }
-                totaldistfromideal = totaldistfromideal + distfromideal;
+                totaldistfromideal += distfromideal;
             }
             avgdistfromideal = totaldistfromideal / aliveplayers.size;
             welldistancedamount = (idealdist - avgdistfromideal) / idealdist;
@@ -1074,12 +1064,13 @@ function spawnlogic_begin() {
     #/
 }
 
-// Namespace spawnlogic/spawnlogic
-// Params 0, eflags: 0x0
-// Checksum 0x2b65996e, Offset: 0x3b98
-// Size: 0xbc
-function watchspawnprofile() {
-    /#
+/#
+
+    // Namespace spawnlogic/spawnlogic
+    // Params 0, eflags: 0x0
+    // Checksum 0x2b65996e, Offset: 0x3b98
+    // Size: 0xbc
+    function watchspawnprofile() {
         while (true) {
             while (true) {
                 if (getdvarint(#"scr_spawnprofile", 0) > 0) {
@@ -1096,15 +1087,13 @@ function watchspawnprofile() {
             }
             level notify(#"stop_spawn_profile");
         }
-    #/
-}
+    }
 
-// Namespace spawnlogic/spawnlogic
-// Params 0, eflags: 0x0
-// Checksum 0xf0824276, Offset: 0x3c60
-// Size: 0x11e
-function spawnprofile() {
-    /#
+    // Namespace spawnlogic/spawnlogic
+    // Params 0, eflags: 0x0
+    // Checksum 0xf0824276, Offset: 0x3c60
+    // Size: 0x11e
+    function spawnprofile() {
         level endon(#"stop_spawn_profile");
         while (true) {
             if (level.players.size > 0 && level.spawnpoints.size > 0) {
@@ -1120,15 +1109,13 @@ function spawnprofile() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace spawnlogic/spawnlogic
-// Params 0, eflags: 0x0
-// Checksum 0x64e59d71, Offset: 0x3d88
-// Size: 0x5a
-function spawngraphcheck() {
-    /#
+    // Namespace spawnlogic/spawnlogic
+    // Params 0, eflags: 0x0
+    // Checksum 0x64e59d71, Offset: 0x3d88
+    // Size: 0x5a
+    function spawngraphcheck() {
         while (true) {
             if (getdvarint(#"scr_spawngraph", 0) < 1) {
                 wait(3);
@@ -1137,15 +1124,13 @@ function spawngraphcheck() {
             thread spawngraph();
             return;
         }
-    #/
-}
+    }
 
-// Namespace spawnlogic/spawnlogic
-// Params 0, eflags: 0x0
-// Checksum 0xb6468b4b, Offset: 0x3df0
-// Size: 0x55e
-function spawngraph() {
-    /#
+    // Namespace spawnlogic/spawnlogic
+    // Params 0, eflags: 0x0
+    // Checksum 0xb6468b4b, Offset: 0x3df0
+    // Size: 0x55e
+    function spawngraph() {
         w = 20;
         h = 20;
         weightscale = 0.1;
@@ -1213,15 +1198,13 @@ function spawngraph() {
             level.players[0] drawspawngraph(fakespawnpoints, w, h, weightscale);
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace spawnlogic/spawnlogic
-// Params 4, eflags: 0x0
-// Checksum 0x97b51b78, Offset: 0x4358
-// Size: 0x108
-function drawspawngraph(fakespawnpoints, w, h, weightscale) {
-    /#
+    // Namespace spawnlogic/spawnlogic
+    // Params 4, eflags: 0x0
+    // Checksum 0x97b51b78, Offset: 0x4358
+    // Size: 0x108
+    function drawspawngraph(fakespawnpoints, w, h, weightscale) {
         i = 0;
         for (y = 0; y < h; y++) {
             yamnt = y / (h - 1);
@@ -1236,43 +1219,37 @@ function drawspawngraph(fakespawnpoints, w, h, weightscale) {
                 i++;
             }
         }
-    #/
-}
+    }
 
-// Namespace spawnlogic/spawnlogic
-// Params 2, eflags: 0x0
-// Checksum 0x6041f7a8, Offset: 0x4468
-// Size: 0x46
-function setupspawngraphpoint(s1, weightscale) {
-    /#
+    // Namespace spawnlogic/spawnlogic
+    // Params 2, eflags: 0x0
+    // Checksum 0x6041f7a8, Offset: 0x4468
+    // Size: 0x46
+    function setupspawngraphpoint(s1, weightscale) {
         s1.visible = 1;
         if (s1.weight < -1000 / weightscale) {
             s1.visible = 0;
         }
-    #/
-}
+    }
 
-// Namespace spawnlogic/spawnlogic
-// Params 3, eflags: 0x0
-// Checksum 0x9371cd38, Offset: 0x44b8
-// Size: 0xc4
-function spawngraphline(s1, s2, weightscale) {
-    /#
+    // Namespace spawnlogic/spawnlogic
+    // Params 3, eflags: 0x0
+    // Checksum 0x9371cd38, Offset: 0x44b8
+    // Size: 0xc4
+    function spawngraphline(s1, s2, weightscale) {
         if (!s1.visible || !s2.visible) {
             return;
         }
         p1 = s1.origin + (0, 0, s1.weight * weightscale + 100);
         p2 = s2.origin + (0, 0, s2.weight * weightscale + 100);
         line(p1, p2, (1, 1, 1));
-    #/
-}
+    }
 
-// Namespace spawnlogic/spawnlogic
-// Params 0, eflags: 0x0
-// Checksum 0xad2610b, Offset: 0x4588
-// Size: 0x362
-function loopbotspawns() {
-    /#
+    // Namespace spawnlogic/spawnlogic
+    // Params 0, eflags: 0x0
+    // Checksum 0xad2610b, Offset: 0x4588
+    // Size: 0x362
+    function loopbotspawns() {
         while (true) {
             if (getdvarint(#"scr_killbots", 0) < 1) {
                 wait(3);
@@ -1314,15 +1291,13 @@ function loopbotspawns() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace spawnlogic/spawnlogic
-// Params 0, eflags: 0x0
-// Checksum 0xde53b186, Offset: 0x48f8
-// Size: 0x1f8
-function allowspawndatareading() {
-    /#
+    // Namespace spawnlogic/spawnlogic
+    // Params 0, eflags: 0x0
+    // Checksum 0xde53b186, Offset: 0x48f8
+    // Size: 0x1f8
+    function allowspawndatareading() {
         setdvar(#"scr_showspawnid", "<unknown string>");
         prevval = getdvarstring(#"scr_showspawnid");
         prevrelval = getdvarstring(#"scr_spawnidcycle");
@@ -1349,15 +1324,13 @@ function allowspawndatareading() {
             }
             thread drawspawndata();
         }
-    #/
-}
+    }
 
-// Namespace spawnlogic/spawnlogic
-// Params 0, eflags: 0x0
-// Checksum 0xd26d9aa3, Offset: 0x4af8
-// Size: 0x43e
-function showdeathsdebug() {
-    /#
+    // Namespace spawnlogic/spawnlogic
+    // Params 0, eflags: 0x0
+    // Checksum 0xd26d9aa3, Offset: 0x4af8
+    // Size: 0x43e
+    function showdeathsdebug() {
         while (true) {
             if (!getdvarint(#"scr_spawnpointdebug", 0)) {
                 wait(3);
@@ -1402,8 +1375,9 @@ function showdeathsdebug() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace spawnlogic/spawnlogic
 // Params 0, eflags: 0x0
@@ -1444,11 +1418,11 @@ function spawnweightdebug(spawnpoints) {
                 }
                 orig = spawnpoints[i].origin + (0, 0, 80);
                 print3d(orig, int(spawnpoints[i].weight), (1, amnt, 0.5));
-                orig = orig + textoffset;
+                orig += textoffset;
                 if (isdefined(spawnpoints[i].spawndata)) {
                     for (j = 0; j < spawnpoints[i].spawndata.size; j++) {
                         print3d(orig, spawnpoints[i].spawndata[j], (0.5, 0.5, 0.5));
-                        orig = orig + textoffset;
+                        orig += textoffset;
                     }
                 }
                 if (isdefined(spawnpoints[i].sightchecks)) {
@@ -1457,7 +1431,7 @@ function spawnweightdebug(spawnpoints) {
                             continue;
                         }
                         print3d(orig, "<unknown string>" + spawnpoints[i].sightchecks[j].penalty, (0.5, 0.5, 0.5));
-                        orig = orig + textoffset;
+                        orig += textoffset;
                     }
                 }
             }
@@ -1486,12 +1460,13 @@ function profiledebug() {
     }
 }
 
-// Namespace spawnlogic/spawnlogic
-// Params 2, eflags: 0x0
-// Checksum 0xeca3db03, Offset: 0x5338
-// Size: 0xc8
-function debugnearbyplayers(players, origin) {
-    /#
+/#
+
+    // Namespace spawnlogic/spawnlogic
+    // Params 2, eflags: 0x0
+    // Checksum 0xeca3db03, Offset: 0x5338
+    // Size: 0xc8
+    function debugnearbyplayers(players, origin) {
         if (!getdvarint(#"scr_spawnpointdebug", 0)) {
             return;
         }
@@ -1505,8 +1480,9 @@ function debugnearbyplayers(players, origin) {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace spawnlogic/spawnlogic
 // Params 2, eflags: 0x0
@@ -1615,7 +1591,7 @@ function getnonteamsum(skip_team, sums) {
         if (team == skip_team) {
             continue;
         }
-        value = value + sums[team];
+        value += sums[team];
     }
     return value;
 }
@@ -1849,7 +1825,7 @@ function avoidvisibleenemies(spawnpoints, teambased) {
             if (mindist < nearbyenemyouterrange * 2) {
                 penalty = nearbyenemyminorpenalty * (1 - mindist / nearbyenemyouterrange * 2);
                 if (mindist < nearbyenemyouterrange) {
-                    penalty = penalty + nearbyenemypenalty * (1 - mindist / nearbyenemyouterrange);
+                    penalty += nearbyenemypenalty * (1 - mindist / nearbyenemyouterrange);
                 }
                 if (penalty > 0) {
                     spawnpoints[i].weight = spawnpoints[i].weight - penalty;
@@ -1891,7 +1867,7 @@ function avoidspawnreuse(spawnpoints, teambased) {
             distsq = distancesquared(spawnpoint.lastspawnedplayer.origin, spawnpoint.origin);
             if (distsq < maxdistsq) {
                 worsen = 5000 * (1 - distsq / maxdistsq) * (1 - timepassed / maxtime);
-                spawnpoint.weight = spawnpoint.weight - worsen;
+                spawnpoint.weight -= worsen;
                 /#
                     if (level.storespawndata || level.debugspawning) {
                         spawnpoint.spawndata[spawnpoint.spawndata.size] = "<unknown string>" + worsen;

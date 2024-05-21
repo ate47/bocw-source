@@ -102,7 +102,7 @@ function private function_c30fad9a() {
             player.takedown.debug.var_b47c9f89 = getdvarint(#"hash_38e86dc5164822fe", 0) ? 1 : undefined;
             player.takedown.debug.var_8dbd3c70 = getdvarint(#"hash_576712f5a0d594b3", 0) || getdvarint(#"hash_4bda603314a2d6dc", 0) ? 1 : undefined;
             if (is_true(player.takedown.debug.var_c03e7127)) {
-                player thread function_d661f822();
+                player thread actions::function_d661f822();
             } else {
                 player notify(#"hash_2eaf8be0116c39a9");
             }
@@ -930,13 +930,13 @@ function function_7a061b23(enabled, action_name) {
         bitmask = 1 << self.takedown.var_9871533[action_name];
     } else {
         foreach (bitindex in self.takedown.var_9871533) {
-            bitmask = bitmask | 1 << bitindex;
+            bitmask |= 1 << bitindex;
         }
     }
     if (enabled) {
-        self.takedown.var_d4da26de = self.takedown.var_d4da26de & ~bitmask;
+        self.takedown.var_d4da26de &= ~bitmask;
     } else {
-        self.takedown.var_d4da26de = self.takedown.var_d4da26de | bitmask;
+        self.takedown.var_d4da26de |= bitmask;
     }
     var_b381ae79 = !self.takedown.var_d4da26de;
     self.takedown.allow_melee = var_b381ae79;
@@ -1197,12 +1197,13 @@ function function_2ae12730(player) {
     return self.awarenesslevelcurrent == "combat";
 }
 
-// Namespace namespace_9c83b58d/namespace_9c83b58d
-// Params 1, eflags: 0x4
-// Checksum 0x9704eb1f, Offset: 0x5bc0
-// Size: 0x508
-function private function_ac7d52ad(show) {
-    /#
+/#
+
+    // Namespace namespace_9c83b58d/namespace_9c83b58d
+    // Params 1, eflags: 0x4
+    // Checksum 0x9704eb1f, Offset: 0x5bc0
+    // Size: 0x508
+    function private function_ac7d52ad(show) {
         self notify("<unknown string>");
         self endon("<unknown string>");
         self endon(#"death", #"disconnect");
@@ -1256,6 +1257,6 @@ function private function_ac7d52ad(show) {
                 }
             }
         }
-    #/
-}
+    }
 
+#/

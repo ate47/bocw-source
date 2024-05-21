@@ -363,12 +363,13 @@ function private function_60bb02f3(type) {
     }
 }
 
-// Namespace zm_aoe/zm_aoe
-// Params 1, eflags: 0x4
-// Checksum 0xd6bc24d1, Offset: 0x1608
-// Size: 0x2a6
-function private function_e39c0be4(var_46f1b5eb) {
-    /#
+/#
+
+    // Namespace zm_aoe/zm_aoe
+    // Params 1, eflags: 0x4
+    // Checksum 0xd6bc24d1, Offset: 0x1608
+    // Size: 0x2a6
+    function private function_e39c0be4(var_46f1b5eb) {
         var_46f1b5eb endon(#"hash_343e166e4aa4288e");
         while (true) {
             if (getdvarint(#"zm_debug_aoe", 0)) {
@@ -390,6 +391,6 @@ function private function_e39c0be4(var_46f1b5eb) {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
+#/

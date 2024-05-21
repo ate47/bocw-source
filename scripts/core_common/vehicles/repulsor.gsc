@@ -140,12 +140,13 @@ function state_death_update(params) {
     vehicle_ai::defaultstate_death_update(params);
 }
 
-// Namespace repulsor/repulsor
-// Params 0, eflags: 0x0
-// Checksum 0xfe446ed1, Offset: 0x948
-// Size: 0x10a
-function guard_points_debug() {
-    /#
+/#
+
+    // Namespace repulsor/repulsor
+    // Params 0, eflags: 0x0
+    // Checksum 0xfe446ed1, Offset: 0x948
+    // Size: 0x10a
+    function guard_points_debug() {
         self endon(#"death");
         if (self.isdebugdrawing === 1) {
             return;
@@ -161,8 +162,9 @@ function guard_points_debug() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace repulsor/repulsor
 // Params 1, eflags: 0x0
@@ -459,7 +461,7 @@ function function_649bd6d(goal) {
                 point._scoredebug[#"inclaimedlocation"].score = -5000;
                 point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
             #/
-            point.score = point.score + -5000;
+            point.score += -5000;
         }
         score = randomfloatrange(0, 80);
         /#
@@ -472,7 +474,7 @@ function function_649bd6d(goal) {
             point._scoredebug[#"random"].score = score;
             point._scoredebug[#"random"].scorename = "<unknown string>";
         #/
-        point.score = point.score + score;
+        point.score += score;
     }
     if (queryresult.data.size > 0) {
         vehicle_ai::positionquery_postprocess_sortscore(queryresult);

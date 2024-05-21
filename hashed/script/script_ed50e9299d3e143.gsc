@@ -204,7 +204,7 @@ function aileapgoalservice(entity) {
     /#
         record3dtext(time, entity.origin, (0, 0, 1), "<unknown string>", entity);
     #/
-    time = time / float(function_60d95f53()) / 1000;
+    time /= float(function_60d95f53()) / 1000;
     var_199c57d2 = distance2d / time;
     var_ef97a46c = (goalpos[2] - startpos[2] + 0.5 * gravity * sqr(time)) / time;
     entity.var_862cb24b = {#time:1, #startpos:startpos, #nextpos:startpos, #goal:goalpos, #to_goal:goalpos - startpos, #vel:(dir[0] * var_199c57d2, dir[1] * var_199c57d2, var_ef97a46c), #var_af225c86:isdefined(var_af225c86)};
@@ -336,7 +336,7 @@ function function_b12119f0(entity, asmstatename) {
         animationstatenetworkutility::requeststate(entity, asmstatename);
     }
     gravity = is_true(self.is_zombie) ? 5 : 4.5;
-    entity.var_862cb24b.time = entity.var_862cb24b.time + 1;
+    entity.var_862cb24b.time += 1;
     entity.var_862cb24b.nextpos = entity.var_862cb24b.startpos + entity.var_862cb24b.vel * entity.var_862cb24b.time + 0.5 * (0, 0, -1) * gravity * sqr(entity.var_862cb24b.time);
     var_f423e961 = entity.var_862cb24b.goal - entity.var_862cb24b.nextpos;
     if (vectordot((var_f423e961[0], var_f423e961[1], 0), (entity.var_862cb24b.to_goal[0], entity.var_862cb24b.to_goal[1], 0)) < 0) {

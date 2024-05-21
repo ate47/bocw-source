@@ -26,26 +26,25 @@ function function_45a212c0() {
     level.var_21f73755 = 1;
 }
 
-// Namespace namespace_2d440395/namespace_2d440395
-// Params 2, eflags: 0x4
-// Checksum 0x46a315f1, Offset: 0x128
-// Size: 0x74
-function private function_205a8326(msg, var_9fb99f62) {
-    /#
+/#
+
+    // Namespace namespace_2d440395/namespace_2d440395
+    // Params 2, eflags: 0x4
+    // Checksum 0x46a315f1, Offset: 0x128
+    // Size: 0x74
+    function private function_205a8326(msg, var_9fb99f62) {
         if (isdefined(var_9fb99f62)) {
             println("<unknown string>" + msg + "<unknown string>" + var_9fb99f62);
             return;
         }
         println("<unknown string>" + msg);
-    #/
-}
+    }
 
-// Namespace namespace_2d440395/namespace_2d440395
-// Params 1, eflags: 0x4
-// Checksum 0x41ea0ebc, Offset: 0x1a8
-// Size: 0x124
-function private function_48b77dbf(customgame) {
-    /#
+    // Namespace namespace_2d440395/namespace_2d440395
+    // Params 1, eflags: 0x4
+    // Checksum 0x41ea0ebc, Offset: 0x1a8
+    // Size: 0x124
+    function private function_48b77dbf(customgame) {
         var_9fb99f62 = "<unknown string>";
         if (!is_true(getgametypesetting(#"wzenablespraycans"))) {
             var_9fb99f62 = "<unknown string>" + (isdefined(getgametypesetting(#"wzenablespraycans")) ? getgametypesetting(#"wzenablespraycans") : "<unknown string>");
@@ -57,6 +56,6 @@ function private function_48b77dbf(customgame) {
             }
         }
         function_205a8326("<unknown string>", var_9fb99f62);
-    #/
-}
+    }
 
+#/

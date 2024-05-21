@@ -53,14 +53,14 @@ function timeuntilspawn(includeteamkilldelay) {
             if (!isdefined(self.var_4999cc5d)) {
                 self.var_4999cc5d = 0;
             } else {
-                self.var_4999cc5d = self.var_4999cc5d + 1;
+                self.var_4999cc5d += 1;
             }
         } else {
             self.var_4999cc5d = 0;
         }
         if (isplayer(self) && !isbot(self) && isdefined(level.var_a164210a)) {
             var_7415756f = level.var_a164210a * self.var_4999cc5d;
-            respawndelay = respawndelay + var_7415756f;
+            respawndelay += var_7415756f;
             if (isdefined(level.var_a6a26da0) && respawndelay > level.var_a6a26da0) {
                 respawndelay = level.var_a6a26da0;
             }
@@ -72,18 +72,18 @@ function timeuntilspawn(includeteamkilldelay) {
             }
         }
         if (is_true(self.suicide) && level.suicidespawndelay > 0) {
-            respawndelay = respawndelay + level.suicidespawndelay;
+            respawndelay += level.suicidespawndelay;
         }
         if (is_true(self.teamkilled) && level.teamkilledspawndelay > 0) {
-            respawndelay = respawndelay + level.teamkilledspawndelay;
+            respawndelay += level.teamkilledspawndelay;
         }
         if (includeteamkilldelay && is_true(self.teamkillpunish)) {
-            respawndelay = respawndelay + globallogic_player::teamkilldelay();
+            respawndelay += globallogic_player::teamkilldelay();
         }
         if (isdefined(self.bleedout_time) && isdefined(self.var_84c0402e)) {
             assert(self.bleedout_time >= 0);
             assert(self.bleedout_time <= self.var_84c0402e);
-            respawndelay = respawndelay - self.var_84c0402e - self.bleedout_time;
+            respawndelay -= self.var_84c0402e - self.bleedout_time;
         }
     }
     wavebased = level.waverespawndelay > 0;
@@ -158,7 +158,7 @@ function timeuntilwavespawn(minimumwait) {
     numwaves = ceil(numwavespassedearliestspawntime);
     timeofspawn = lastwavetime + numwaves * wavedelay;
     if (isdefined(self.wavespawnindex)) {
-        timeofspawn = timeofspawn + var_e0fb0ad5;
+        timeofspawn += var_e0fb0ad5;
     }
     return float(timeofspawn - gettime()) / 1000;
 }
@@ -224,7 +224,7 @@ function spawnplayer() {
         waitframe(1);
     }
     profileNamedStart(#"");
-    assert(isvalidclass(self.curclass) || isbot(self));
+    assert(globallogic_utils::isvalidclass(self.curclass) || isbot(self));
     self loadout::setclass(self.curclass);
     var_db3f2906 = self savegame::function_2ee66e93("altPlayerID", undefined);
     var_d4a479a1 = undefined;
@@ -267,7 +267,7 @@ function spawnplayer() {
         if (getdvarint(#"scr_showperksonspawn", 0) == 1 && game.state != "<unknown string>") {
             profileNamedStart(#"");
             if (level.perksenabled == 1) {
-                self showperks();
+                self hud::showperks();
             }
             profileNamedStop();
         }
@@ -613,7 +613,7 @@ function showspawnmessage() {
 // Size: 0x136
 function spawnclient(timealreadypassed) {
     assert(isdefined(self.team));
-    assert(isvalidclass(self.curclass));
+    assert(globallogic_utils::isvalidclass(self.curclass));
     if (!self mayspawn()) {
         currentorigin = self.origin;
         currentangles = self.angles;
@@ -651,10 +651,10 @@ function waitandspawnclient(timealreadypassed) {
     if (is_true(self.teamkillpunish)) {
         teamkilldelay = globallogic_player::teamkilldelay();
         if (teamkilldelay > timealreadypassed) {
-            teamkilldelay = teamkilldelay - timealreadypassed;
+            teamkilldelay -= timealreadypassed;
             timealreadypassed = 0;
         } else {
-            timealreadypassed = timealreadypassed - teamkilldelay;
+            timealreadypassed -= teamkilldelay;
             teamkilldelay = 0;
         }
         if (teamkilldelay > 0) {
@@ -671,10 +671,10 @@ function waitandspawnclient(timealreadypassed) {
     }
     timeuntilspawn = timeuntilspawn(0);
     if (timeuntilspawn > timealreadypassed) {
-        timeuntilspawn = timeuntilspawn - timealreadypassed;
+        timeuntilspawn -= timealreadypassed;
         timealreadypassed = 0;
     } else {
-        timealreadypassed = timealreadypassed - timeuntilspawn;
+        timealreadypassed -= timeuntilspawn;
         timeuntilspawn = 0;
     }
     if (timeuntilspawn > 0) {

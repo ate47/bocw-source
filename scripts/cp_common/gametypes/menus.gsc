@@ -120,7 +120,7 @@ function on_menu_response() {
         if (response == #"first_snapshot") {
             if (level flag::get(#"hash_321357f5b78401ef")) {
                 /#
-                    function_3f278444();
+                    globallogic_ui::function_3f278444();
                 #/
             }
             level flag::set(#"hash_321357f5b78401ef");

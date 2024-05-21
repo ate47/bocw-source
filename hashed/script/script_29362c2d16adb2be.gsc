@@ -89,7 +89,7 @@ function function_ee81f2ca(origin, player) {
     player thread function_160c9deb(hind);
     timeout = player namespace_1c2a96f9::function_4808b985(40);
     if (isdefined(level.doa.var_a77e6349)) {
-        timeout = timeout + 20;
+        timeout += 20;
     }
     hind thread function_c45d8312(player, timeout);
     player namespace_83eb6304::turnofffx("player_trail_" + player.doa.color);

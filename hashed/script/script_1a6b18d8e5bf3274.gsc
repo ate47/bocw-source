@@ -45,7 +45,7 @@ function function_dd46bc90(localclientnum, *oldval, newval, *bnewent, *binitials
     b_upgraded = 0;
     if (bwastimejump >= 4) {
         b_upgraded = 1;
-        bwastimejump = bwastimejump - 4;
+        bwastimejump -= 4;
     }
     if (bwastimejump == 1) {
         if (b_upgraded) {
@@ -176,12 +176,12 @@ function function_5962609c(localclientnum, oldval, newval, var_efe94974) {
     var_ba3dd99f = 0;
     if (newval >= 8) {
         var_ba3dd99f = 1;
-        newval = newval - 8;
+        newval -= 8;
     }
     b_upgraded = 0;
     if (newval >= 4) {
         b_upgraded = 1;
-        newval = newval - 4;
+        newval -= 4;
     }
     a_e_players = getlocalplayers();
     foreach (e_player in a_e_players) {

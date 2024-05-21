@@ -61,7 +61,7 @@ function private preinit() {
         clientfield::register_clientuimodel("huditems.killedByAttachment" + index, #"hash_6f4b11a0bee9b73d", #"killedbyattachment" + (isdefined(index) ? "" + index : ""), 1, 6, "int", undefined, 0, 0);
     }
     clientfield::register("toplayer", "thermal_sight", 1, 1, "int", &function_765b7c63, 0, 0);
-    clientfield::register("toplayer", "strobe_light", 1, 1, "int", &function_e1af467, 0, 0);
+    clientfield::register("toplayer", "strobe_light", 1, 1, "int", &fireflykillcam, 0, 0);
     clientfield::register("allplayers", "cold_blooded", 1, 1, "int", &function_194072a7, 0, 0);
     clientfield::register_clientuimodel("huditems.killedByMasteryBadgeMarksman", #"hash_6f4b11a0bee9b73d", #"hash_211941ad042d5253", 12000, 1, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("huditems.killedByMasteryBadgeSharpshooter", #"hash_6f4b11a0bee9b73d", #"hash_8cf83c1c40a25bd", 12000, 1, "int", undefined, 0, 0);
@@ -155,7 +155,7 @@ function annihilate_effect_cb(localclientnum, oldval, newval, *bnewent, *binitia
                 where = self gettagorigin("J_SpineLower");
                 if (!isdefined(where)) {
                     where = self.origin;
-                    where = where + (0, 0, 40);
+                    where += (0, 0, 40);
                 }
                 playfx(binitialsnap, fields.fullbodyexplosion, where);
             }
@@ -173,7 +173,7 @@ function pineapplegun_effect_cb(localclientnum, oldval, newval, *bnewent, *binit
             where = self gettagorigin("J_SpineLower");
             if (!isdefined(where)) {
                 where = self.origin;
-                where = where + (0, 0, 40);
+                where += (0, 0, 40);
             }
             playfx(binitialsnap, level._effect[#"pineapplegun_explosion"], where);
         }
@@ -251,7 +251,7 @@ function function_765b7c63(local_client_num, oldval, newval, bnewent, binitialsn
 // Params 7, eflags: 0x2 linked
 // Checksum 0x1bc9899c, Offset: 0x1b88
 // Size: 0xcc
-function function_e1af467(local_client_num, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function fireflykillcam(local_client_num, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (function_1cbf351b(fieldname)) {
         return;
     }

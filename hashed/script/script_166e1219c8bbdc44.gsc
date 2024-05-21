@@ -666,9 +666,9 @@ function function_f8ed548c(b_freeze) {
     while (isdefined(self)) {
         self function_78233d29("rob_test_character_ice", "", "Threshold", self.var_82fb67e7);
         if (b_freeze) {
-            self.var_82fb67e7 = self.var_82fb67e7 + 0.2;
+            self.var_82fb67e7 += 0.2;
         } else {
-            self.var_82fb67e7 = self.var_82fb67e7 - 0.05;
+            self.var_82fb67e7 -= 0.05;
         }
         if (b_freeze && self.var_82fb67e7 >= 1) {
             break;
@@ -865,7 +865,7 @@ function function_aaa79dd8(localclientnum, newval) {
         break;
     }
     if (!self zm_utility::function_f8796df3(localclientnum)) {
-        str_beam = str_beam + "_3p";
+        str_beam += "_3p";
         self.var_59e057ab = level beam::function_cfb2f62a(localclientnum, self, "tag_flash", undefined, "tag_origin", str_beam);
         while (isdefined(self.var_59e057ab)) {
             waitframe(1);

@@ -156,7 +156,7 @@ function function_135acc2d(var_e2bc3a9f, update_rate) {
             }
             var_92c4d936++;
         }
-        var_92c4d936 = var_92c4d936 % players.size;
+        var_92c4d936 %= players.size;
         for (player_index = 0; player_index < players.size; player_index++) {
             var_1896e17 = (player_index + var_92c4d936) % players.size;
             assert(var_1896e17 < players.size);
@@ -653,7 +653,7 @@ function function_9080887a(var_cf05ebb7) {
     }
     var_f7d37aa4 = 0;
     foreach (modifier in self.var_894f7879) {
-        var_f7d37aa4 = var_f7d37aa4 + modifier;
+        var_f7d37aa4 += modifier;
     }
     basemaxhealth = isdefined(var_cf05ebb7) ? var_cf05ebb7 : self.spawnhealth;
     self.var_66cb03ad = int(basemaxhealth + var_f7d37aa4 + (isdefined(level.var_90bb9821) ? level.var_90bb9821 : 0));
@@ -1005,7 +1005,7 @@ function function_1cec6cba(players) {
     }
     var_6195506c = 0;
     foreach (count in var_ab9e77bf) {
-        var_6195506c = var_6195506c + count;
+        var_6195506c += count;
     }
     return var_6195506c;
 }

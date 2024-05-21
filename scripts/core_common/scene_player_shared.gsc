@@ -161,7 +161,7 @@ class csceneplayer : csceneobject {
         }
         /#
             if (getdvarint(#"debug_scene", 0) > 0) {
-                log(toupper(_s.type) + "<unknown string>" + _str_camera + "<unknown string>");
+                csceneobject::log(toupper(_s.type) + "<unknown string>" + _str_camera + "<unknown string>");
             }
         #/
         flag::clear(#"camera_playing");
@@ -235,7 +235,7 @@ class csceneplayer : csceneobject {
         }
         /#
             if (getdvarint(#"debug_scene", 0) > 0) {
-                log(toupper(_s.type) + "<unknown string>" + function_9e72a96(animation) + "<unknown string>");
+                csceneobject::log(toupper(_s.type) + "<unknown string>" + function_9e72a96(animation) + "<unknown string>");
                 printtoprightln("<unknown string>" + (isdefined(_s.name) ? _s.name : _s.model) + "<unknown string>" + function_9e72a96(animation));
             }
             if (getdvarint(#"debug_scene_skip", 0) > 0) {
@@ -365,7 +365,7 @@ class csceneplayer : csceneobject {
         stop_camera(player);
         /#
             if (is_true(_o_scene._b_testing)) {
-                p_host = gethostplayer();
+                p_host = util::gethostplayer();
                 stop_camera(p_host);
             }
         #/
@@ -511,7 +511,7 @@ class csceneplayer : csceneobject {
         }
         /#
             if (player === level.host) {
-                player delay(0.5, "<unknown string>", &destroy_dev_info);
+                player util::delay(0.5, "<unknown string>", &destroy_dev_info);
             }
         #/
     }
@@ -564,7 +564,7 @@ class csceneplayer : csceneobject {
                 level.var_6e7be24a.fontscale = 1.3;
                 level.var_6e7be24a.color = (0.439216, 0.501961, 0.564706);
                 if (!isdefined(_o_scene.var_9d90ef8b)) {
-                    _o_scene.var_9d90ef8b = function_12479eba(_o_scene._str_name);
+                    _o_scene.var_9d90ef8b = scene::function_12479eba(_o_scene._str_name);
                 }
                 level.var_6e7be24a settext("<unknown string>" + _o_scene.var_9d90ef8b + "<unknown string>");
                 return;
@@ -761,15 +761,15 @@ class csceneplayer : csceneobject {
                 }
                 thread function_31a89cb0(player, 1);
                 while (var_7a496fd5 > 0) {
-                    var_7a496fd5 = var_7a496fd5 - float(function_60d95f53()) / 1000;
-                    var_33d5f97d = var_33d5f97d - float(function_60d95f53()) / 1000;
+                    var_7a496fd5 -= float(function_60d95f53()) / 1000;
+                    var_33d5f97d -= float(function_60d95f53()) / 1000;
                     b_result = check_input(player, var_ec50a0d3, var_966ea21d);
                     if (b_result) {
                         b_pressed_button = 1;
                         player notify(#"hash_feb654ece8faa3d");
                         while (var_7a496fd5 > 0) {
                             waitframe(1);
-                            var_7a496fd5 = var_7a496fd5 - float(function_60d95f53()) / 1000;
+                            var_7a496fd5 -= float(function_60d95f53()) / 1000;
                         }
                         function_a27af0ae(player);
                         var_a3cc5416 = 1;
@@ -781,14 +781,14 @@ class csceneplayer : csceneobject {
                     thread function_31a89cb0(player, 0);
                     thread function_d0cf938(player, 1);
                     while (var_33d5f97d > 0) {
-                        var_33d5f97d = var_33d5f97d - float(function_60d95f53()) / 1000;
+                        var_33d5f97d -= float(function_60d95f53()) / 1000;
                         b_result = check_input(player, var_ec50a0d3, var_966ea21d);
                         if (b_result) {
                             b_pressed_button = 1;
                             player notify(#"hash_feb654ece8faa3d");
                             while (var_33d5f97d > 0) {
                                 waitframe(1);
-                                var_33d5f97d = var_33d5f97d - float(function_60d95f53()) / 1000;
+                                var_33d5f97d -= float(function_60d95f53()) / 1000;
                             }
                             function_ef1eb90b(player);
                             var_a3cc5416 = 1;
@@ -878,10 +878,10 @@ class csceneplayer : csceneobject {
                 n_update_time = float(function_60d95f53()) / 1000 / n_anim_length;
                 var_ea474464 = math::clamp(var_5df5e79a, 1, 1);
                 if (csceneobject::function_a808aac7()) {
-                    var_a3cc5416 = var_a3cc5416 - n_update_time * var_ea474464;
+                    var_a3cc5416 -= n_update_time * var_ea474464;
                     var_f667af2f = 1 - var_a3cc5416;
                 } else {
-                    var_a3cc5416 = var_a3cc5416 + n_update_time * var_ea474464;
+                    var_a3cc5416 += n_update_time * var_ea474464;
                     var_f667af2f = var_a3cc5416;
                 }
                 var_f667af2f = math::clamp(var_f667af2f, 0, 1);
@@ -903,7 +903,7 @@ class csceneplayer : csceneobject {
                                 thread [[ o_obj ]]->_play_anim(o_obj.var_efc540b6, 1, 0, undefined, var_f667af2f);
                             }
                             waitframe(1);
-                            var_a3cc5416 = var_a3cc5416 + n_update_time * var_ea474464;
+                            var_a3cc5416 += n_update_time * var_ea474464;
                             var_f667af2f = var_a3cc5416;
                         }
                         var_b97b91e4 = undefined;
@@ -1185,7 +1185,7 @@ class csceneplayer : csceneobject {
             return 0;
         }
         /#
-            if (player === level.host && check_team(player.team, _str_team)) {
+            if (player === level.host && scene::check_team(player.team, _str_team)) {
                 display_dev_info();
             }
         #/
@@ -1242,7 +1242,7 @@ class csceneplayer : csceneobject {
         player.var_e3d6d713 = player.current_scene;
         player.anim_debug_name = _s.name;
         /#
-            if (function_209522a0() && isplayer(player)) {
+            if (csceneobject::function_209522a0() && isplayer(player)) {
                 if (isdefined(_s.model)) {
                     var_be7bc546 = currentsessionmode();
                     var_123ebd30 = getallcharacterbodies(var_be7bc546);
@@ -1473,7 +1473,7 @@ class csceneplayer : csceneobject {
             }
         }
         /#
-            if (isdefined(player.var_96494502) && (function_6a0b0afe(_o_scene._str_mode) || function_b260bdcc(_o_scene._str_name, _str_shot))) {
+            if (isdefined(player.var_96494502) && (scene::function_6a0b0afe(_o_scene._str_mode) || scene::function_b260bdcc(_o_scene._str_name, _str_shot))) {
                 player takeweapon(player.var_96494502);
                 player.var_96494502 = undefined;
             }
@@ -1669,9 +1669,9 @@ class csceneplayer : csceneobject {
     // Size: 0x3d2
     function _spawn() {
         /#
-            if (is_true(_o_scene._b_testing) && is_player()) {
-                p_host = gethostplayer();
-                if (!in_this_scene(p_host)) {
+            if (is_true(_o_scene._b_testing) && csceneobject::is_player()) {
+                p_host = util::gethostplayer();
+                if (!csceneobject::in_this_scene(p_host)) {
                     _e = p_host;
                     return;
                 }
@@ -1683,8 +1683,8 @@ class csceneplayer : csceneobject {
             /#
                 var_a41f3ee5 = getdvarint(#"hash_7ff9a3a022339237", 0);
                 if (var_a41f3ee5) {
-                    player = pop_front(a_players, 0);
-                    push(a_players, player, var_a41f3ee5);
+                    player = array::pop_front(a_players, 0);
+                    array::push(a_players, player, var_a41f3ee5);
                 }
             #/
             foreach (ent in a_players) {
@@ -1838,7 +1838,7 @@ class cscenefakeplayer : csceneobject {
             var_cd31cd6a = getdvarstring(#"hash_575aeb603638c901", "<unknown string>");
             if (isdefined(_e) && var_cd31cd6a != "<unknown string>") {
                 weapon = getweapon(var_cd31cd6a);
-                _e attach_weapon(weapon);
+                _e animation::attach_weapon(weapon);
             }
         #/
         csceneobject::_prepare();
@@ -1928,7 +1928,7 @@ class cscenesharedplayer : csceneplayer, csceneobject {
         } while (b_playing);
         /#
             if (getdvarint(#"debug_scene", 0) > 0) {
-                log(toupper(_s.type) + "<unknown string>" + _str_current_anim + "<unknown string>");
+                csceneobject::log(toupper(_s.type) + "<unknown string>" + _str_current_anim + "<unknown string>");
             }
         #/
         thread [[ _o_scene ]]->_call_shot_funcs("players_done");
@@ -2040,7 +2040,7 @@ class cscenesharedplayer : csceneplayer, csceneobject {
         if (n_time_frac < 1) {
             /#
                 if (getdvarint(#"scene_hide_player", 0) > 0) {
-                    player set(#"scene", "<unknown string>");
+                    player val::set(#"scene", "<unknown string>");
                 }
                 if (getdvarint(#"debug_scene", 0) > 0) {
                     printtoprightln("<unknown string>" + _s.name + "<unknown string>" + player_animation);

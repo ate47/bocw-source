@@ -237,12 +237,13 @@ function function_6ebbb35b(target) {
     }
 }
 
-// Namespace namespace_f865255e/namespace_f865255e
-// Params 1, eflags: 0x4
-// Checksum 0xb3c78321, Offset: 0x1500
-// Size: 0x736
-function private function_9190b7da(target) {
-    /#
+/#
+
+    // Namespace namespace_f865255e/namespace_f865255e
+    // Params 1, eflags: 0x4
+    // Checksum 0xb3c78321, Offset: 0x1500
+    // Size: 0x736
+    function private function_9190b7da(target) {
         self notify("<unknown string>");
         self endon("<unknown string>");
         self endon(#"death");
@@ -297,8 +298,9 @@ function private function_9190b7da(target) {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_f865255e/namespace_f865255e
 // Params 0, eflags: 0x6 linked

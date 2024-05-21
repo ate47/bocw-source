@@ -389,7 +389,7 @@ function private function_2650d5c6(*item, player, *networkid, *itemid, *itemcoun
         }
     }
     var_2cacdde7 = int(var_2cacdde7);
-    self.armor = self.armor + math::clamp(var_2cacdde7, 0, self.maxarmor);
+    self.armor += math::clamp(var_2cacdde7, 0, self.maxarmor);
     return false;
 }
 
@@ -415,7 +415,7 @@ function private function_a712496a(item, player, *networkid, *itemid, itemcount,
     }
     if (item_inventory::get_weapon_count() == namespace_a0d533d1::function_80fb4b76()) {
         stashitem = item_world_util::function_83c20f83(networkid);
-        stashitem = stashitem & ~(isdefined(networkid.deathstash) ? networkid.deathstash : 0);
+        stashitem &= ~(isdefined(networkid.deathstash) ? networkid.deathstash : 0);
         weaponitem = item_inventory::function_230ceec4(itemid.currentweapon);
         if (!isdefined(weaponitem)) {
             itemid takeweapon(itemid.currentweapon);

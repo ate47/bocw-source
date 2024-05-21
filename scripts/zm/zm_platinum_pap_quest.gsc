@@ -207,7 +207,7 @@ function function_bf1953a() {
 // Size: 0xb8
 function function_22ce4251() {
     level endon(#"end_game", #"hash_20afa38b1f1c339e");
-    n_max_zombies = zombie_utility::function_d2dfacfd(#"zombie_max_ai");
+    n_max_zombies = zombie_utility::get_zombie_var(#"zombie_max_ai");
     while (true) {
         if (getaiteamarray(level.zombie_team).size < n_max_zombies - 11) {
             return;
@@ -640,45 +640,44 @@ function function_af722d1c() {
     zm_sq::objective_complete(#"hash_1c556f45aa40ebef");
 }
 
-// Namespace namespace_bce659ef/namespace_bce659ef
-// Params 0, eflags: 0x0
-// Checksum 0xd9424d45, Offset: 0x3010
-// Size: 0x44
-function function_37597f29() {
-    /#
-        add_debug_command("<unknown string>");
-        add_custom_devgui_callback(&cmd);
-    #/
-}
+/#
 
-// Namespace namespace_bce659ef/namespace_bce659ef
-// Params 1, eflags: 0x0
-// Checksum 0x3106309f, Offset: 0x3060
-// Size: 0x2b2
-function cmd(cmd) {
-    /#
+    // Namespace namespace_bce659ef/namespace_bce659ef
+    // Params 0, eflags: 0x0
+    // Checksum 0xd9424d45, Offset: 0x3010
+    // Size: 0x44
+    function function_37597f29() {
+        util::add_debug_command("<unknown string>");
+        zm_devgui::add_custom_devgui_callback(&cmd);
+    }
+
+    // Namespace namespace_bce659ef/namespace_bce659ef
+    // Params 1, eflags: 0x0
+    // Checksum 0x3106309f, Offset: 0x3060
+    // Size: 0x2b2
+    function cmd(cmd) {
         switch (cmd) {
         case #"hash_4f52dabbc7c7806b":
-            level set(#"hash_20afa38b1f1c339e");
-            level set("<unknown string>" + #"hash_2e8ad83a0edc8ab4", 0);
-            var_b9deb373 = get_script_bundle_instances("<unknown string>", ["<unknown string>", "<unknown string>"]);
-            var_f501ee56 = get_script_bundle_instances("<unknown string>", ["<unknown string>", "<unknown string>"]);
+            level flag::set(#"hash_20afa38b1f1c339e");
+            level clientfield::set("<unknown string>" + #"hash_2e8ad83a0edc8ab4", 0);
+            var_b9deb373 = struct::get_script_bundle_instances("<unknown string>", ["<unknown string>", "<unknown string>"]);
+            var_f501ee56 = struct::get_script_bundle_instances("<unknown string>", ["<unknown string>", "<unknown string>"]);
             var_bc5ea9bc = arraycombine(var_b9deb373, var_f501ee56, 0, 0);
-            var_1a4d3aef = get_script_bundle_instances("<unknown string>", ["<unknown string>", "<unknown string>"]);
+            var_1a4d3aef = struct::get_script_bundle_instances("<unknown string>", ["<unknown string>", "<unknown string>"]);
             var_bc5ea9bc = arraycombine(var_bc5ea9bc, var_1a4d3aef, 0, 0);
             foreach (var_8a36246d in var_bc5ea9bc) {
-                if (var_8a36246d is_playing()) {
-                    var_8a36246d stop(1);
+                if (var_8a36246d scene::is_playing()) {
+                    var_8a36246d scene::stop(1);
                 }
             }
             for (i = 0; i <= 10; i++) {
-                level set("<unknown string>" + #"hash_3fb8ca8c017ba7ac", i);
+                level clientfield::set("<unknown string>" + #"hash_3fb8ca8c017ba7ac", i);
                 waitframe(1);
             }
             break;
         default:
             break;
         }
-    #/
-}
+    }
 
+#/

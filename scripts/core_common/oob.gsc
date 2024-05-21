@@ -71,15 +71,17 @@ function private preinit() {
     #/
 }
 
-// Namespace oob/oob
-// Params 0, eflags: 0x4
-// Checksum 0xe9139b02, Offset: 0x858
-// Size: 0x24
-function private init_debug() {
-    /#
+/#
+
+    // Namespace oob/oob
+    // Params 0, eflags: 0x4
+    // Checksum 0xe9139b02, Offset: 0x858
+    // Size: 0x24
+    function private init_debug() {
         adddebugcommand("<unknown string>");
-    #/
-}
+    }
+
+#/
 
 // Namespace oob/oob
 // Params 0, eflags: 0x2 linked

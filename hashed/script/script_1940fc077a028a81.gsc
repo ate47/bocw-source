@@ -347,10 +347,10 @@ function zombieshouldmelee(entity) {
             test_origin = isdefined(enemy.last_valid_position) ? enemy.last_valid_position : enemy.origin;
         }
         if (isdefined(enemy_vehicle) && isdefined(entity.var_cbc65493)) {
-            meleedistsq = meleedistsq * entity.var_cbc65493;
+            meleedistsq *= entity.var_cbc65493;
         }
         if (isdefined(enemy_vehicle) && isdefined(entity.var_a9db7324) && abs(enemy_vehicle getspeed()) > 0) {
-            meleedistsq = meleedistsq * entity.var_a9db7324;
+            meleedistsq *= entity.var_a9db7324;
         }
     }
     z_delta = abs(entity.origin[2] - test_origin[2]);
@@ -994,7 +994,7 @@ function zombieupdategoal(goalpos) {
             var_dd9d0d3b = 0;
             var_f7a5acc7 = isdefined(level.var_177b14f8) ? level.var_177b14f8 : getdvarfloat(#"hash_340ef7499f8caf47", 500);
             if (var_12846c4b) {
-                var_f7a5acc7 = var_f7a5acc7 * 0.2;
+                var_f7a5acc7 *= 0.2;
             }
             for (point_i = 0; point_i < var_188c33e9.size; point_i++) {
                 point = var_188c33e9[point_i];
@@ -1168,7 +1168,7 @@ function zombieupdategoal(goalpos) {
                             }
                             break;
                         }
-                        segmentlength = segmentlength + currentseglength;
+                        segmentlength += currentseglength;
                     }
                 }
             }

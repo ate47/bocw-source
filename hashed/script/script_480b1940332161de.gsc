@@ -454,18 +454,18 @@ function private function_504eb38e(var_bed66f89) {
         yaw = randomfloatrange(self.poi.auto.angles[1] + 5, self.poi.auto.angles[1] + 10);
         pitch = randomfloatrange(5, 10);
         if (math::cointoss()) {
-            pitch = pitch * -1;
+            pitch *= -1;
         }
         pitch = self.poi.auto.angles[0] + pitch;
         if (math::cointoss()) {
-            yaw = yaw * -1;
+            yaw *= -1;
         }
     } else {
         poiauto = self.poi.auto;
         yaw = randomfloatrange(poiauto.yawmin, poiauto.yawmax);
         pitch = randomfloatrange(poiauto.pitchmin, poiauto.pitchmax);
         if (math::cointoss()) {
-            yaw = yaw * -1;
+            yaw *= -1;
         }
         self.poi.auto.angles = (pitch, yaw, 0);
     }
@@ -513,29 +513,28 @@ function private function_d60aa558() {
     self.poi.auto.pitchmax = self.poi.auto.og_pitchmax;
 }
 
-// Namespace poi/namespace_b1048555
-// Params 1, eflags: 0x4
-// Checksum 0x1e31aaab, Offset: 0x2348
-// Size: 0x94
-function private function_c30fad9a(*parms) {
-    /#
+/#
+
+    // Namespace poi/namespace_b1048555
+    // Params 1, eflags: 0x4
+    // Checksum 0x1e31aaab, Offset: 0x2348
+    // Size: 0x94
+    function private function_c30fad9a(*parms) {
         level notify(#"hash_4821a87b2782d121");
         level.poi.debug = getdvarint(#"hash_1986594f14fcd987", 0);
         if (is_true(level.poi.debug)) {
             level thread debug();
         }
-    #/
-}
+    }
 
-// Namespace poi/namespace_b1048555
-// Params 0, eflags: 0x4
-// Checksum 0xe0170a7b, Offset: 0x23e8
-// Size: 0x32a
-function private debug() {
-    /#
+    // Namespace poi/namespace_b1048555
+    // Params 0, eflags: 0x4
+    // Checksum 0xe0170a7b, Offset: 0x23e8
+    // Size: 0x32a
+    function private debug() {
         self notify(#"hash_4821a87b2782d121");
         self endon(#"hash_4821a87b2782d121");
-        var_3b1af2ae = get_array("<unknown string>", "<unknown string>");
+        var_3b1af2ae = struct::get_array("<unknown string>", "<unknown string>");
         while (true) {
             if (isdefined(level.poi.var_5ee53e3)) {
                 foreach (ai in level.poi.var_5ee53e3) {
@@ -557,15 +556,13 @@ function private debug() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace poi/namespace_b1048555
-// Params 0, eflags: 0x4
-// Checksum 0x739f7f19, Offset: 0x2720
-// Size: 0x126
-function private function_4c4e4ab0() {
-    /#
+    // Namespace poi/namespace_b1048555
+    // Params 0, eflags: 0x4
+    // Checksum 0x739f7f19, Offset: 0x2720
+    // Size: 0x126
+    function private function_4c4e4ab0() {
         while (true) {
             if (is_true(level.poi.debug) && isdefined(self.poi.auto.angles)) {
                 localdir = anglestoforward(self.poi.auto.angles);
@@ -574,15 +571,13 @@ function private function_4c4e4ab0() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace poi/namespace_b1048555
-// Params 1, eflags: 0x4
-// Checksum 0xabb28da5, Offset: 0x2850
-// Size: 0x68c
-function private function_9c52ce45(poi) {
-    /#
+    // Namespace poi/namespace_b1048555
+    // Params 1, eflags: 0x4
+    // Checksum 0xabb28da5, Offset: 0x2850
+    // Size: 0x68c
+    function private function_9c52ce45(poi) {
         hs = 4;
         color = (0, 0, 1);
         text = "<unknown string>";
@@ -601,10 +596,10 @@ function private function_9c52ce45(poi) {
         prev = undefined;
         next = undefined;
         if (isdefined(poi.target)) {
-            next = get(poi.target, "<unknown string>");
+            next = struct::get(poi.target, "<unknown string>");
         }
         if (isdefined(poi.targetname)) {
-            prev = get(poi.targetname, "<unknown string>");
+            prev = struct::get(poi.targetname, "<unknown string>");
         }
         if (auto && isdefined(poi.var_3b03815e) && gettime() < poi.var_3b03815e + var_711c17c1) {
             print3d(poi.origin, "<unknown string>" + float(poi.var_3b03815e + var_711c17c1 - gettime()) / 1000, (0.2, 0.2, 0.2), 1, 0.25, 1);
@@ -613,17 +608,17 @@ function private function_9c52ce45(poi) {
             line(poi.origin + (0, hs, 0), poi.origin + (0, hs * -1, 0), color, 1, 1, 1);
             line(poi.origin + (hs, 0, 0), poi.origin + (hs * -1, 0, 0), color, 1, 1, 1);
             time = "<unknown string>" + float(2000) / 1000;
-            waittime = poi function_4b93f9c2();
+            waittime = poi util::function_4b93f9c2();
             if (waittime > 0) {
                 time = "<unknown string>";
                 if (isdefined(poi.script_wait)) {
-                    time = time + float(poi.script_wait);
+                    time += float(poi.script_wait);
                 }
                 if (isdefined(poi.script_wait_min) || isdefined(poi.script_wait_min)) {
                     if (time.size > 0) {
-                        time = time + "<unknown string>";
+                        time += "<unknown string>";
                     }
-                    time = time + (isdefined(poi.script_wait_min) ? poi.script_wait_min : 0);
+                    time += isdefined(poi.script_wait_min) ? poi.script_wait_min : 0;
                     if (isdefined(poi.script_wait_max) && float(poi.script_wait_max) > float(isdefined(poi.script_wait_min) ? poi.script_wait_min : 0)) {
                         time = time + "<unknown string>" + poi.script_wait_max;
                     }
@@ -638,8 +633,8 @@ function private function_9c52ce45(poi) {
         }
         if (isdefined(next) && (gettime() < (isdefined(poi.var_3b03815e) ? poi.var_3b03815e : 0) || visible)) {
             line(poi.origin, next.origin, (0.5, 0.5, 0.5), 0.5, 1, 1);
-            drawarrow(vectorlerp(poi.origin, next.origin, 0.1), vectortoangles(next.origin - poi.origin), (0.5, 0.5, 0.5), 0, 10, 0);
+            debug::drawarrow(vectorlerp(poi.origin, next.origin, 0.1), vectortoangles(next.origin - poi.origin), (0.5, 0.5, 0.5), 0, 10, 0);
         }
-    #/
-}
+    }
 
+#/

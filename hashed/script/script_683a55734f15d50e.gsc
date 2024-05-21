@@ -87,13 +87,13 @@ function random_weighted(array, weights) {
         var_766a145f = 0;
         keys = getarraykeys(array);
         foreach (key in keys) {
-            var_766a145f = var_766a145f + weights[key];
+            var_766a145f += weights[key];
         }
         var_ca23d24f = randomfloatrange(0, var_766a145f);
         var_da00fb33 = keys[0];
         for (i = 0; i < keys.size && var_ca23d24f >= 0; i++) {
             var_da00fb33 = keys[i];
-            var_ca23d24f = var_ca23d24f - weights[var_da00fb33];
+            var_ca23d24f -= weights[var_da00fb33];
         }
         return array[var_da00fb33];
     }
@@ -543,7 +543,7 @@ function function_8534e7be() {
                 arrayremovevalue(level.doa.var_b8ef1466, self.spawninfo);
                 level.doa.var_c793b1bb[level.doa.var_c793b1bb.size] = self.spawninfo;
             }
-            self.health = self.health + result.amount;
+            self.health += result.amount;
             self thread basketexplo(is_true(self.crate));
             return;
         }

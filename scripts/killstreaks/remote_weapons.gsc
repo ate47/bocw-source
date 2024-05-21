@@ -347,7 +347,7 @@ function watchremotecontroldeactivate() {
         weapon.remoteowner function_7deaa2a4(timeused);
         weapon.remoteowner function_9d62ff6c();
         while (weapon.remoteowner usebuttonpressed() && weapon.remoteowner killstreaks::function_59e2c378()) {
-            timeused = timeused + 0.05;
+            timeused += 0.05;
             weapon.remoteowner function_7deaa2a4(timeused / var_f6263fe2);
             if (timeused > var_f6263fe2) {
                 weapon thread endremotecontrolweaponuse(1);
@@ -468,7 +468,7 @@ function fadetoblackandbackin() {
 function stunstaticfx(duration) {
     self endon(#"remove_remote_weapon");
     wait(duration - 0.5);
-    for (time = duration - 0.5; time < duration; time = time + 0.05) {
+    for (time = duration - 0.5; time < duration; time += 0.05) {
         waitframe(1);
     }
 }

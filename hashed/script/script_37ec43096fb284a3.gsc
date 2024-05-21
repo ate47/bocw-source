@@ -58,9 +58,9 @@ function function_a380fe5(*localclientnum, *oldval, newval, *bnewent, *binitials
         var_ee6bcd51 = #"hash_4a9cb80afea6f8cb";
     }
     if (util::get_map_name() === "wz_sanatorium") {
-        var_ee6bcd51 = var_ee6bcd51 + "_sanatorium";
+        var_ee6bcd51 += "_sanatorium";
     } else if (util::get_map_name() === "mp_black_sea") {
-        var_ee6bcd51 = var_ee6bcd51 + "_black_sea";
+        var_ee6bcd51 += "_black_sea";
     }
     if (hash(self.model) === #"hash_10f3318f64304974") {
         var_ee6bcd51 = #"hash_1a5c12ea1f8d94e7";

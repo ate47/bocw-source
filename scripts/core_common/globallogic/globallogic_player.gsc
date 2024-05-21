@@ -84,7 +84,7 @@ function function_c5343206(eattacker, einflictor, idamage, smeansofdeath, weapon
             }
         }
     }
-    var_ca60c93e.damage = var_ca60c93e.damage + idamage;
+    var_ca60c93e.damage += idamage;
     var_ca60c93e.einflictor = einflictor;
     var_ca60c93e.weapon = weapon;
     var_ca60c93e.lastdamagetime = time;
@@ -286,7 +286,7 @@ function trackattackerdamage(eattacker, idamage, smeansofdeath, weapon, shitloc)
         self.attackersthisspawn[attackerclientid] = eattacker;
     }
     var_ca60c93e = self.attackerdamage[attackerclientid];
-    var_ca60c93e.damage = var_ca60c93e.damage + idamage;
+    var_ca60c93e.damage += idamage;
     var_ca60c93e.meansofdeath = smeansofdeath;
     var_ca60c93e.weapon = weapon;
     var_ca60c93e.shitloc = shitloc;

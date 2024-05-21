@@ -49,7 +49,7 @@ function private preinit() {
     level.var_5604e453 = &function_5604e453;
     bundlename = "killstreak_recon_plane";
     if (sessionmodeiswarzonegame()) {
-        bundlename = bundlename + "_wz";
+        bundlename += "_wz";
     }
     if (tweakables::gettweakablevalue("killstreak", "allowradardirection")) {
         killstreaks::register_killstreak(bundlename, &function_732dcb56);
@@ -321,7 +321,7 @@ function function_98e60435(var_d44b8c3e, bundle) {
                     var_af2fe365[#"angles"] = angles;
                 }
             }
-            angles = angles + (0, 30, 0);
+            angles += (0, 30, 0);
             forward = anglestoforward(angles);
             var_51c6fb78++;
             waitframe(1);

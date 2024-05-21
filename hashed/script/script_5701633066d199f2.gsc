@@ -297,7 +297,7 @@ function function_252dff4d(name, aitype, var_d240d5de, var_41157a40, unlocklevel
     struct.unlocklevel = isdefined(unlocklevel) ? unlocklevel : -1;
     struct.var_71e54e3a = [];
     if (aitype != -1 && aitype <= 29) {
-        level.doa.var_695258a5 = level.doa.var_695258a5 | 1 << aitype;
+        level.doa.var_695258a5 |= 1 << aitype;
         level.doa.var_4eb7c3f0++;
     }
     foreach (spawner in level.doa.var_3a73503f) {
@@ -394,8 +394,8 @@ function function_472bf4() {
         }
         self endon(#"death");
         while (true) {
-            level thread debugline(self.origin, self.goalpos, 0.05, self haspath() ? (0, 1, 0) : (1, 0, 0));
-            level thread function_b57a9d84(self.goalpos, 0, 20, 20, 20, 0.05, self isatgoal() ? (0, 1, 0) : (1, 0, 0));
+            level thread namespace_1e25ad94::debugline(self.origin, self.goalpos, 0.05, self haspath() ? (0, 1, 0) : (1, 0, 0));
+            level thread namespace_1e25ad94::function_b57a9d84(self.goalpos, 0, 20, 20, 20, 0.05, self isatgoal() ? (0, 1, 0) : (1, 0, 0));
             waitframe(1);
         }
     #/
@@ -626,7 +626,7 @@ function function_25b2c8a9(*spawner, *str_targetname, *force_spawn) {
     self thread function_fce39c7a();
     /#
         if (getdvarint(#"hash_207746eb90f92763", 0)) {
-            self thread debugorigin(999, 20, (1, 0, 0));
+            self thread namespace_1e25ad94::debugorigin(999, 20, (1, 0, 0));
         }
     #/
     self.doa = spawnstruct();
@@ -943,10 +943,10 @@ function function_1bbf4511(origin, *var_f1479aab, context) {
     frac = math::clamp(distsq / sqr(800), 0, 1);
     if (isdefined(self.zombie_move_speed)) {
         if (self.zombie_move_speed == "walk" || is_true(self.missinglegs)) {
-            frac = frac + 0.2;
+            frac += 0.2;
         }
         if (self.zombie_move_speed == "sprint") {
-            frac = frac - 0.2;
+            frac -= 0.2;
         }
         if (frac < 0.1) {
             frac = 0.1;
@@ -962,7 +962,7 @@ function function_1bbf4511(origin, *var_f1479aab, context) {
     self.var_72283e28 = gettime() + repathdelay;
     if (!self haspath() && (!isactor(self) || !self isatgoal())) {
         self.var_f95bc76f = math::clamp(self.var_f95bc76f + 1, 0, 10);
-        self.var_72283e28 = self.var_72283e28 + randomintrange(200 * self.var_f95bc76f, 500 * self.var_f95bc76f);
+        self.var_72283e28 += randomintrange(200 * self.var_f95bc76f, 500 * self.var_f95bc76f);
         return;
     }
     self.var_f95bc76f = 0;
@@ -1006,7 +1006,7 @@ function function_41354e51(origin, force = 0, context = 0) {
         scale = max(1, var_5aad8687 / sqr(256));
         var_2773df6d = int(self.var_f578c3a2 * scale);
         if (distsq > var_2773df6d) {
-            self.var_72283e28 = self.var_72283e28 - 150;
+            self.var_72283e28 -= 150;
         }
         return;
     }
@@ -1023,15 +1023,15 @@ function function_622f5b91(var_77cbeb28) {
     foreach (ally in var_77cbeb28) {
         ally.rank = i * 50;
         if (self.favoriteenemy === ally) {
-            ally.rank = ally.rank + 100;
+            ally.rank += 100;
         }
         if (self.lastattacker === ally) {
-            ally.rank = ally.rank + 40;
+            ally.rank += 40;
         }
         distsq = distancesquared(self.origin, ally.origin);
         if (distsq < var_a8bd6ee9) {
             amount = 300 - int(mapfloat(0, var_a8bd6ee9, 0, 300, distsq));
-            ally.rank = ally.rank + amount;
+            ally.rank += amount;
         }
         i--;
     }
@@ -1042,7 +1042,7 @@ function function_622f5b91(var_77cbeb28) {
         }
         foreach (ally in var_77cbeb28) {
             if (guy.favoriteenemy === ally) {
-                ally.rank = ally.rank - 20;
+                ally.rank -= 20;
             }
         }
     }
@@ -1762,7 +1762,7 @@ function function_dab7edc(einflictor, eattacker, idamage, idflags, smeansofdeath
     if (self.team == "allies") {
         idamage = math::clamp(idamage, 100, self.health);
         /#
-            debugmsg("<unknown string>" + self.archetype + "<unknown string>" + idamage);
+            namespace_1e25ad94::debugmsg("<unknown string>" + self.archetype + "<unknown string>" + idamage);
         #/
     }
     if (is_true(self.basic)) {
@@ -1783,7 +1783,7 @@ function function_dab7edc(einflictor, eattacker, idamage, idflags, smeansofdeath
     if (isdefined(weapon) && isdefined(level.doa.var_d7e090f7[weapon.name])) {
         var_36ee3765 = level [[ level.doa.var_d7e090f7[weapon.name] ]](self, idamage, eattacker, vdir, smeansofdeath, weapon);
         if (isdefined(var_36ee3765)) {
-            idamage = idamage + int(var_36ee3765);
+            idamage += int(var_36ee3765);
         }
     }
     if (!is_true(self.boss)) {
@@ -1791,7 +1791,7 @@ function function_dab7edc(einflictor, eattacker, idamage, idflags, smeansofdeath
     }
     if (smeansofdeath == "MOD_BURNED") {
         /#
-            debugmsg("<unknown string>" + idamage + "<unknown string>" + self.health + (idamage < self.health ? "<unknown string>" : "<unknown string>"));
+            namespace_1e25ad94::debugmsg("<unknown string>" + idamage + "<unknown string>" + self.health + (idamage < self.health ? "<unknown string>" : "<unknown string>"));
         #/
     }
     if (smeansofdeath == "MOD_CRUSH") {
@@ -1870,7 +1870,7 @@ function function_dab7edc(einflictor, eattacker, idamage, idflags, smeansofdeath
     }
     /#
         if (is_true(level.doa.var_598305fe)) {
-            function_c9800094(eattacker, vdamageorigin, idamage, idamage < 1000 ? 1 : 2);
+            hud::function_c9800094(eattacker, vdamageorigin, idamage, idamage < 1000 ? 1 : 2);
         }
     #/
     self finishactordamage(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, timeoffset, boneindex, surfacetype, surfacenormal);
@@ -1887,7 +1887,7 @@ function function_9b31d191(einflictor, eattacker, idamage, smeansofdeath, weapon
     self asmsetanimationrate(1);
     if (self.team == "allies") {
         /#
-            debugmsg("<unknown string>" + self.archetype);
+            namespace_1e25ad94::debugmsg("<unknown string>" + self.archetype);
         #/
     }
     if (isdefined(self.fx)) {
@@ -2244,9 +2244,9 @@ function function_422fdfd4(*entity, attacker, *weapon, var_5457dc44, hitloc, poi
         has_weakpoints = isdefined(namespace_81245006::function_fab3ee3e(self));
         if (var_30362eca && var_ebcb86d6 hasperk(#"specialty_mod_awareness")) {
             if (var_b1c1c5cf < 1) {
-                var_b1c1c5cf = var_b1c1c5cf + 0.2;
+                var_b1c1c5cf += 0.2;
             } else {
-                var_b1c1c5cf = var_b1c1c5cf * 1.2;
+                var_b1c1c5cf *= 1.2;
             }
         }
     }

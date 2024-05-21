@@ -64,11 +64,11 @@ function private event_handler[event_9673dc9a] function_3981d015(eventstruct) {
             if (is_true(newstate.var_8725802)) {
                 gametime = gettime();
                 if (is_true(newstate.var_e23400ad)) {
-                    gametime = gametime + abs(dynent.origin[0] + dynent.origin[1] + dynent.origin[2]);
+                    gametime += abs(dynent.origin[0] + dynent.origin[1] + dynent.origin[2]);
                 }
                 animlength = int(getanimlength(newstate.stateanim) * 1000);
                 starttime = gametime / animlength / rate;
-                starttime = starttime - int(starttime);
+                starttime -= int(starttime);
             } else if (teleport && !isanimlooping(newstate.stateanim)) {
                 starttime = 1;
             }
@@ -120,12 +120,13 @@ function event_handler[event_cf200f34] function_209450ae(eventstruct) {
     }
 }
 
-// Namespace dynent_world/dynent_world
-// Params 0, eflags: 0x4
-// Checksum 0x5259262b, Offset: 0x9d8
-// Size: 0x13e
-function private devgui_loop() {
-    /#
+/#
+
+    // Namespace dynent_world/dynent_world
+    // Params 0, eflags: 0x4
+    // Checksum 0x5259262b, Offset: 0x9d8
+    // Size: 0x13e
+    function private devgui_loop() {
         level endon(#"game_ended");
         while (!canadddebugcommand()) {
             waitframe(1);
@@ -145,6 +146,6 @@ function private devgui_loop() {
                 break;
             }
         }
-    #/
-}
+    }
 
+#/

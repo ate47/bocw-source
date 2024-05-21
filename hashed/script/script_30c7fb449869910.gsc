@@ -209,7 +209,7 @@ function function_3577c445(localclientnum, *oldval, newval, *bnewent, *binitials
         return;
     }
     player = undefined;
-    bwastimejump = bwastimejump - 1;
+    bwastimejump -= 1;
     if (bwastimejump > 0) {
         if (bwastimejump == 15) {
             player = undefined;
@@ -261,7 +261,7 @@ function function_4ecd84a8(player, flipped = 0) {
             y = 0 - y;
             x = 0 - x;
         }
-        var_a3046af4 = var_a3046af4 + (x, y, z);
+        var_a3046af4 += (x, y, z);
     } else {
         var_a3046af4 = self.origin + (0, 0, 3000);
     }

@@ -170,12 +170,13 @@ function function_20cfd8b5(team) {
     return undefined;
 }
 
-// Namespace teams/teams
-// Params 1, eflags: 0x4
-// Checksum 0x30998ef, Offset: 0x7a0
-// Size: 0x12c
-function private function_ba459d03(team) {
-    /#
+/#
+
+    // Namespace teams/teams
+    // Params 1, eflags: 0x4
+    // Checksum 0x30998ef, Offset: 0x7a0
+    // Size: 0x12c
+    function private function_ba459d03(team) {
         if (is_true(level.var_ba13fb7a)) {
             team_str = string(team);
             if (isdefined(level.teams[team])) {
@@ -183,40 +184,36 @@ function private function_ba459d03(team) {
             }
             voip = "<unknown string>";
             if (isdefined(level.var_75dffa9f[team])) {
-                voip = voip + (level.var_75dffa9f[team] == #"game" ? "<unknown string>" : "<unknown string>");
+                voip += level.var_75dffa9f[team] == #"game" ? "<unknown string>" : "<unknown string>";
             } else {
-                voip = voip + "<unknown string>";
+                voip += "<unknown string>";
             }
             println("<unknown string>" + "<unknown string>" + self.name + "<unknown string>" + team_str + "<unknown string>" + voip);
         }
-    #/
-}
+    }
 
-// Namespace teams/teams
-// Params 1, eflags: 0x0
-// Checksum 0x8d35b591, Offset: 0x8d8
-// Size: 0xd8
-function function_a9d594a0(party) {
-    /#
+    // Namespace teams/teams
+    // Params 1, eflags: 0x0
+    // Checksum 0x8d35b591, Offset: 0x8d8
+    // Size: 0xd8
+    function function_a9d594a0(party) {
         foreach (party_member in party.party_members) {
             var_2798314b = party_member getparty();
             if (var_2798314b.var_a15e4438 != party.var_a15e4438) {
                 assertmsg("<unknown string>");
             }
         }
-    #/
-}
+    }
 
-// Namespace teams/teams
-// Params 1, eflags: 0x0
-// Checksum 0x20e37b67, Offset: 0x9b8
-// Size: 0xc0
-function function_d28f6fa0(team) {
-    /#
+    // Namespace teams/teams
+    // Params 1, eflags: 0x0
+    // Checksum 0x20e37b67, Offset: 0x9b8
+    // Size: 0xc0
+    function function_d28f6fa0(team) {
         players = getplayers(team);
         foreach (player in players) {
             function_a9d594a0(player getparty());
         }
-    #/
-}
+    }
 
+#/

@@ -211,7 +211,7 @@ function function_26b21477(chalk, new_rarity) {
         chalk.trigger.item_name = item_name;
         chalk.trigger.rarity = new_rarity;
         cost = zm_weapons::get_weapon_cost(chalk.trigger.weapon);
-        cost = cost + zm_weapons::function_5d47055e(new_rarity);
+        cost += zm_weapons::function_5d47055e(new_rarity);
         chalk.trigger.cost = cost;
         hint = function_6e93c5b2(new_rarity);
         chalk.trigger sethintstring(hint, chalk.trigger.weapon.displayname, cost);
@@ -322,7 +322,7 @@ function function_a1a1d2(weapon_name, var_e9040287, item_name, chalk_model, inde
     weapon = getweapon(weapon_name);
     hint = function_6e93c5b2(str_rarity);
     cost = zm_weapons::get_weapon_cost(weapon);
-    cost = cost + zm_weapons::function_5d47055e(str_rarity);
+    cost += zm_weapons::function_5d47055e(str_rarity);
     chalk_model = self content_manager::spawn_script_model(self, chalk_model, 0, 0);
     chalk_model clientfield::set("set_compass_icon", 1);
     switch (weapon.weapclass) {
@@ -350,7 +350,7 @@ function function_a1a1d2(weapon_name, var_e9040287, item_name, chalk_model, inde
     trigger = self content_manager::function_22e120bc(self, &function_ab0340bb, hint, weapon.displayname, 25, var_7f9f4eb, 32, (0, var_8bda2b44, 0), cost);
     trigger.angles = chalk_model.angles + (0, 90, 0);
     v_forward = anglestoforward(trigger.angles) * 10;
-    trigger.origin = trigger.origin - v_forward;
+    trigger.origin -= v_forward;
     trigger.weapon = weapon;
     trigger.cost = cost;
     trigger.var_9f32a5f4 = 1;
@@ -867,7 +867,7 @@ function add_dynamic_wallbuy(weapon, wallbuy, pristine) {
     unitrigger_stub.script_length = bounds[0] * 0.25;
     unitrigger_stub.script_width = bounds[1];
     unitrigger_stub.script_height = bounds[2];
-    unitrigger_stub.origin = unitrigger_stub.origin - anglestoright(unitrigger_stub.angles) * unitrigger_stub.script_length * 0.4;
+    unitrigger_stub.origin -= anglestoright(unitrigger_stub.angles) * unitrigger_stub.script_length * 0.4;
     unitrigger_stub.target = spawned_wallbuy.target;
     unitrigger_stub.targetname = "weapon_upgrade";
     unitrigger_stub.cursor_hint = "HINT_NOICON";
@@ -888,7 +888,7 @@ function add_dynamic_wallbuy(weapon, wallbuy, pristine) {
     zm_unitrigger::unitrigger_force_per_player_triggers(unitrigger_stub, 1);
     if (weapon.ismeleeweapon) {
         if (weapon == "tazer_knuckles" && isdefined(level.taser_trig_adjustment)) {
-            unitrigger_stub.origin = unitrigger_stub.origin + level.taser_trig_adjustment;
+            unitrigger_stub.origin += level.taser_trig_adjustment;
         }
         zm_melee_weapon::add_stub(unitrigger_stub, weapon);
         zm_unitrigger::register_static_unitrigger(unitrigger_stub, &zm_melee_weapon::melee_weapon_think);
@@ -1345,7 +1345,7 @@ function weapon_show(player, var_4ee4441d = 0) {
     player_yaw = player_angles[1];
     weapon_yaw = self.angles[1];
     if (isdefined(self.script_int)) {
-        weapon_yaw = weapon_yaw - self.script_int;
+        weapon_yaw -= self.script_int;
     }
     yaw_diff = angleclamp180(player_yaw - weapon_yaw);
     if (yaw_diff > 0) {
@@ -1354,7 +1354,7 @@ function weapon_show(player, var_4ee4441d = 0) {
         yaw = weapon_yaw + 90;
     }
     self.og_origin = self.origin;
-    self.origin = self.origin + anglestoforward((0, yaw, 0)) * 8;
+    self.origin += anglestoforward((0, yaw, 0)) * 8;
     waitframe(1);
     self show();
     zm_utility::play_sound_at_pos("weapon_show", self.origin, self);

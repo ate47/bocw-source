@@ -44,7 +44,7 @@ function private preinit() {
 function physics_explosion_and_rumble(*origin, radius, physics_explosion) {
     assert(radius <= pow(2, 10) - 1);
     if (is_true(physics_explosion)) {
-        radius = radius + (1 << 9);
+        radius += 1 << 9;
     }
     self clientfield::set("start_destructible_explosion", radius);
 }
@@ -183,7 +183,7 @@ function simple_timed_explosion(destructible_event, attacker) {
     }
     time_interval = randomintrange(wait_times[0], wait_times[1]);
     if (util::function_7f7a77ab()) {
-        for (var_9037cf6c = 0; var_9037cf6c < time_interval; var_9037cf6c = var_9037cf6c + float(function_60d95f53()) / 1000) {
+        for (var_9037cf6c = 0; var_9037cf6c < time_interval; var_9037cf6c += float(function_60d95f53()) / 1000) {
             util::function_9d5c26a();
             waitframe(1);
         }
@@ -382,7 +382,7 @@ function car_fire_think(attacker) {
     }
     time_interval = randomintrange(7, 10);
     if (util::function_7f7a77ab()) {
-        for (var_9037cf6c = 0; var_9037cf6c < time_interval; var_9037cf6c = var_9037cf6c + float(function_60d95f53()) / 1000) {
+        for (var_9037cf6c = 0; var_9037cf6c < time_interval; var_9037cf6c += float(function_60d95f53()) / 1000) {
             util::function_9d5c26a();
             waitframe(1);
         }
@@ -421,7 +421,7 @@ function function_93f99ad9(damage, time_interval) {
     self endon("9da33c91d7da95b");
     if (util::function_7f7a77ab()) {
         while (true) {
-            for (var_9037cf6c = 0; var_9037cf6c < time_interval; var_9037cf6c = var_9037cf6c + float(function_60d95f53()) / 1000) {
+            for (var_9037cf6c = 0; var_9037cf6c < time_interval; var_9037cf6c += float(function_60d95f53()) / 1000) {
                 util::function_9d5c26a();
                 waitframe(1);
             }
@@ -443,7 +443,7 @@ function breakafter(time, damage, *piece) {
     self notify(#"breakafter");
     self endon(#"breakafter");
     if (util::function_7f7a77ab()) {
-        for (var_9037cf6c = 0; var_9037cf6c < damage; var_9037cf6c = var_9037cf6c + float(function_60d95f53()) / 1000) {
+        for (var_9037cf6c = 0; var_9037cf6c < damage; var_9037cf6c += float(function_60d95f53()) / 1000) {
             util::function_9d5c26a();
             waitframe(1);
         }

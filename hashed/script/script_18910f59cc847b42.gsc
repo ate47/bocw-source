@@ -215,8 +215,8 @@ function function_14f1aa2b(localclientnum, delta_time) {
         level.var_145dec4f = var_91e98520;
     }
     cam_pos = playercenter;
-    cam_pos = cam_pos + var_be529a4e * localplayer.doa.var_f793b3d3;
-    cam_pos = cam_pos + var_7dd1941e * -20;
+    cam_pos += var_be529a4e * localplayer.doa.var_f793b3d3;
+    cam_pos += var_7dd1941e * -20;
     if (level.localplayers.size > 1 && cameramode == 4 && isdefined(level.doa.var_72b899ad)) {
         var_8172ec08 = 200;
         var_cfa24a5 = 1800;
@@ -246,19 +246,19 @@ function function_14f1aa2b(localclientnum, delta_time) {
         if (!isdefined(level.var_6a822745)) {
             level.var_6a822745 = var_c9fdfd75;
         }
-        var_fa5416a8 = var_fa5416a8 - var_c9fdfd75;
+        var_fa5416a8 -= var_c9fdfd75;
         if (t > 1) {
-            var_c9fdfd75 = var_c9fdfd75 * t;
+            var_c9fdfd75 *= t;
         }
-        level.var_6a822745 = level.var_6a822745 + (var_c9fdfd75 - level.var_6a822745) * 3 * delta_time;
-        cam_pos = cam_pos + var_be529a4e * var_c9fdfd75;
-        var_fa5416a8 = var_fa5416a8 * t;
+        level.var_6a822745 += (var_c9fdfd75 - level.var_6a822745) * 3 * delta_time;
+        cam_pos += var_be529a4e * var_c9fdfd75;
+        var_fa5416a8 *= t;
         var_fa5416a8 = math::clamp(var_fa5416a8, 0, var_8d932466);
         if (!isdefined(level.var_fa5416a8)) {
             level.var_fa5416a8 = var_fa5416a8;
         }
-        level.var_fa5416a8 = level.var_fa5416a8 + (var_fa5416a8 - level.var_fa5416a8) * 2 * delta_time;
-        cam_pos = cam_pos + var_be529a4e * level.var_fa5416a8;
+        level.var_fa5416a8 += (var_fa5416a8 - level.var_fa5416a8) * 2 * delta_time;
+        cam_pos += var_be529a4e * level.var_fa5416a8;
     }
     if (isdefined(localplayer.var_45c6f27d)) {
         lerp_rate = 2;
@@ -370,7 +370,7 @@ function changecamera(mode) {
         self function_278f20a3(normalangle, height);
     }
     /#
-        debugmsg("<unknown string>" + self getentitynumber() + "<unknown string>" + self.doa.cameramode);
+        namespace_1e25ad94::debugmsg("<unknown string>" + self getentitynumber() + "<unknown string>" + self.doa.cameramode);
     #/
 }
 

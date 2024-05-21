@@ -73,7 +73,7 @@ function playfacethread(*facialanim, str_script_alias, importance, notifystring,
     self.a.facialsoundalias = notifystring;
     self.a.currentdialogimportance = waitornot;
     if (waitornot == 1) {
-        level.numberofimportantpeopletalking = level.numberofimportantpeopletalking + 1;
+        level.numberofimportantpeopletalking += 1;
     }
     /#
         if (level.numberofimportantpeopletalking > 1) {
@@ -81,7 +81,7 @@ function playfacethread(*facialanim, str_script_alias, importance, notifystring,
         }
     #/
     uniquenotify = timetowait + " " + level.talknotifyseed;
-    level.talknotifyseed = level.talknotifyseed + 1;
+    level.talknotifyseed += 1;
     if (isdefined(level.scr_sound) && isdefined(level.scr_sound[#"generic"])) {
         str_vox_file = level.scr_sound[#"generic"][notifystring];
     }
@@ -113,7 +113,7 @@ function playfacethread(*facialanim, str_script_alias, importance, notifystring,
         self stopsound(str_vox_file);
     }
     if (waitornot == 1) {
-        level.numberofimportantpeopletalking = level.numberofimportantpeopletalking - 1;
+        level.numberofimportantpeopletalking -= 1;
         level.importantpeopletalkingtime = gettime();
     }
     if (isdefined(self)) {

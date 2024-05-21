@@ -241,7 +241,7 @@ function function_cf969eb1(timeout = 5) {
             return;
         }
         wait(0.1);
-        timeout = timeout - 0.1;
+        timeout -= 0.1;
     }
     self namespace_83eb6304::turnofffx("remote_player_busy");
     if (isdefined(self.var_d57eeb7f) && self.var_d57eeb7f > 0) {
@@ -402,7 +402,7 @@ function main() {
         curcount = players.size;
         if (curcount != level.doa.var_e09e5160) {
             /#
-                debugmsg("<unknown string>" + curcount);
+                namespace_1e25ad94::debugmsg("<unknown string>" + curcount);
             #/
         }
         level.doa.var_e09e5160 = curcount;
@@ -867,9 +867,9 @@ function function_ba8327d7() {
             }
             self.doa.var_fdc612e3 = gettime() + 300;
             self.doa.var_b7001078 = forward * 2000;
-            self.doa.var_b7001078 = self.doa.var_b7001078 + (0, 0, 200);
+            self.doa.var_b7001078 += (0, 0, 200);
             self setvelocity(self.doa.var_b7001078);
-            self.doa.var_b7001078 = self.doa.var_b7001078 - (0, 0, 200);
+            self.doa.var_b7001078 -= (0, 0, 200);
             self.doa.var_c0f32380 = 0;
             self function_bc82f900("zombietron_booster_rumble");
         }
@@ -1187,8 +1187,8 @@ function callback_playerlaststand(einflictor, attacker, idamage, smeansofdeath, 
     namespace_1e25ad94::debugmsg("player entering last stand");
     delta = gettime() - self.doa.var_77c8b9d4;
     /#
-        if (delta < 7000 || self function_61bccc9()) {
-            debugmsg("<unknown string>" + self.doa.color + "<unknown string>");
+        if (delta < 7000 || self namespace_7f5aeb59::function_61bccc9()) {
+            namespace_1e25ad94::debugmsg("<unknown string>" + self.doa.color + "<unknown string>");
         }
     #/
     self.doa.var_77c8b9d4 = gettime();
@@ -1199,12 +1199,12 @@ function callback_playerlaststand(einflictor, attacker, idamage, smeansofdeath, 
                 killedby = smeansofdeath.targetname;
             }
         }
-        debugmsg("<unknown string>" + self.doa.color + "<unknown string>" + killedby);
+        namespace_1e25ad94::debugmsg("<unknown string>" + self.doa.color + "<unknown string>" + killedby);
         if (is_true(smeansofdeath.var_cd7dffa1) || getdvarint(#"hash_55b5b49e1b334929", 0) && isdefined(smeansofdeath)) {
             if (is_true(smeansofdeath.var_cd7dffa1)) {
-                debugmsg("<unknown string>" + self.doa.color + "<unknown string>" + (isdefined(smeansofdeath) && isdefined(smeansofdeath.zombie_type) ? smeansofdeath.zombie_type : "<unknown string>"), 1);
+                namespace_1e25ad94::debugmsg("<unknown string>" + self.doa.color + "<unknown string>" + (isdefined(smeansofdeath) && isdefined(smeansofdeath.zombie_type) ? smeansofdeath.zombie_type : "<unknown string>"), 1);
             }
-            function_884143e(smeansofdeath);
+            namespace_7f5aeb59::function_884143e(smeansofdeath);
         }
     #/
     self function_dc7906e8(idamage, smeansofdeath, weapon, var_fd90b0bb, vdir, shitloc, psoffsettime, delayoverride);
@@ -1284,10 +1284,10 @@ function function_51e87eda() {
                 continue;
             }
             if (self namespace_1c2a96f9::function_b01c3b20() && player namespace_1c2a96f9::function_b01c3b20()) {
-                self.doa.var_f64d2ac0 = self.doa.var_f64d2ac0 + 1;
+                self.doa.var_f64d2ac0 += 1;
                 continue;
             }
-            self.doa.var_f64d2ac0 = self.doa.var_f64d2ac0 + player.doa.var_96ca2395;
+            self.doa.var_f64d2ac0 += player.doa.var_96ca2395;
         }
         wait(1);
     }
@@ -1318,7 +1318,7 @@ function function_49b2bfe5(duration) {
         waitframe(1);
         progress = var_58d202bd;
         if (self.doa.var_f64d2ac0 > 0) {
-            progress = progress + var_58d202bd * self.doa.var_f64d2ac0;
+            progress += var_58d202bd * self.doa.var_f64d2ac0;
             time = gettime();
             if (time > var_339d778e) {
                 self namespace_83eb6304::function_3ecfde67("player_healOS");
@@ -1327,7 +1327,7 @@ function function_49b2bfe5(duration) {
         } else {
             var_339d778e = 0;
         }
-        self.doa.var_ac8a92d4 = self.doa.var_ac8a92d4 + progress;
+        self.doa.var_ac8a92d4 += progress;
         if (self getcurrentweapon() != level.laststandweapon) {
             self namespace_7f5aeb59::laststand_disable_player_weapons();
         }

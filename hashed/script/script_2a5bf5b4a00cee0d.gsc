@@ -125,7 +125,7 @@ function function_9788bacc(myteam = "allies") {
             }
         }
     }
-    teamsize = teamsize + getaiteamarray(team).size;
+    teamsize += getaiteamarray(team).size;
     return teamsize;
 }
 
@@ -430,7 +430,7 @@ function function_22d11b92() {
 function function_1811d978(timesec) {
     var_b92f73b0 = gettime();
     if (isdefined(timesec)) {
-        var_b92f73b0 = var_b92f73b0 + timesec * 1000;
+        var_b92f73b0 += timesec * 1000;
     }
     self.marked_for_death = 1;
     self.var_ef7cd97 = gettime();
@@ -688,7 +688,7 @@ function function_1ebe83a7(startscale, endscale = 1, timems = 3000) {
     var_c7fbfa53 = (endscale - startscale) / timems / 50;
     endtime = gettime() + timems;
     while (isdefined(self) && gettime() < endtime) {
-        var_44bf347e = var_44bf347e + var_c7fbfa53;
+        var_44bf347e += var_c7fbfa53;
         self setscale(var_44bf347e);
         waitframe(1);
     }
@@ -890,7 +890,7 @@ function function_1a117d29(location, timesec = 1) {
     increment = (self.origin - location) / timesec * 20;
     targettime = gettime() + timesec * 1000;
     while (gettime() < targettime) {
-        self.origin = self.origin - increment;
+        self.origin -= increment;
         waitframe(1);
     }
     self notify(#"movedone");
@@ -1112,13 +1112,13 @@ function function_2017393e(array, weights) {
         var_766a145f = 0;
         keys = getarraykeys(array);
         foreach (key in keys) {
-            var_766a145f = var_766a145f + weights[key];
+            var_766a145f += weights[key];
         }
         var_ca23d24f = function_7ae7bf61(0, var_766a145f);
         var_da00fb33 = keys[0];
         for (i = 0; i < keys.size && var_ca23d24f >= 0; i++) {
             var_da00fb33 = keys[i];
-            var_ca23d24f = var_ca23d24f - weights[var_da00fb33];
+            var_ca23d24f -= weights[var_da00fb33];
         }
         return array[var_da00fb33];
     }
@@ -1139,7 +1139,7 @@ function function_73d79e7d(parent, var_b1f98440 = 0, offset = (0, 0, 0)) {
         } else {
             self.origin = parent.origin;
         }
-        self.origin = self.origin + offset;
+        self.origin += offset;
         waitframe(1);
     }
 }

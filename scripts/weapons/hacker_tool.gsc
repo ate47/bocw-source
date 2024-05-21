@@ -82,7 +82,7 @@ function clearhackertarget(weapon, successfulhack, spawned) {
     self weaponlocktargettooclose(0);
     self weaponlocknoclearance(0);
     /#
-        self destroylockoncanceledmessage();
+        self heatseekingmissile::destroylockoncanceledmessage();
     #/
 }
 
@@ -322,12 +322,12 @@ function hackertooltargetloop(weapon) {
                 continue;
             }
             if (self.hackertoollostsightlinetime == 0) {
-                self.hackertoollocktimeelapsed = self.hackertoollocktimeelapsed + 0.1 * hackingtimescale(self.hackertooltarget);
+                self.hackertoollocktimeelapsed += 0.1 * hackingtimescale(self.hackertooltarget);
                 hackpercentage = self.hackertoollocktimeelapsed / lockontime * 100;
                 self setweaponhackpercent(weapon, hackpercentage);
                 heatseekingmissile::setfriendlyflags(weapon, self.hackertooltarget);
             } else {
-                self.hackertoollocktimeelapsed = self.hackertoollocktimeelapsed - 0.1 * hackingtimenolineofsightscale(self.hackertooltarget);
+                self.hackertoollocktimeelapsed -= 0.1 * hackingtimenolineofsightscale(self.hackertooltarget);
                 if (self.hackertoollocktimeelapsed < 0) {
                     self.hackertoollocktimeelapsed = 0;
                     self clearhackertarget(weapon, 0, 0);
@@ -348,7 +348,7 @@ function hackertooltargetloop(weapon) {
         }
         if (self isempjammed()) {
             /#
-                self destroylockoncanceledmessage();
+                self heatseekingmissile::destroylockoncanceledmessage();
             #/
             continue;
         }
@@ -356,26 +356,26 @@ function hackertooltargetloop(weapon) {
         if (!isdefined(besttarget)) {
             self stophackertoolsoundloop();
             /#
-                self destroylockoncanceledmessage();
+                self heatseekingmissile::destroylockoncanceledmessage();
             #/
             continue;
         }
         if (!self heatseekingmissile::locksighttest(besttarget)) {
             self stophackertoolsoundloop();
             /#
-                self destroylockoncanceledmessage();
+                self heatseekingmissile::destroylockoncanceledmessage();
             #/
             continue;
         }
         if (self heatseekingmissile::locksighttest(besttarget) && isdefined(besttarget.lockondelay) && besttarget.lockondelay) {
             self stophackertoolsoundloop();
             /#
-                self displaylockoncanceledmessage();
+                self heatseekingmissile::displaylockoncanceledmessage();
             #/
             continue;
         }
         /#
-            self destroylockoncanceledmessage();
+            self heatseekingmissile::destroylockoncanceledmessage();
         #/
         if (isentitypreviouslyhacked(besttarget)) {
             if (!isdefined(self.hacker_sound_ent) || isdefined(self.hacker_alreadyhacked) && self.hacker_alreadyhacked == 0) {
@@ -814,18 +814,19 @@ function getlockontime(*target, weapon) {
     return locklengthms / lockonspeed;
 }
 
-// Namespace hacker_tool/hacker_tool
-// Params 0, eflags: 0x0
-// Checksum 0x4de99027, Offset: 0x2d98
-// Size: 0xa8
-function tunables() {
-    /#
+/#
+
+    // Namespace hacker_tool/hacker_tool
+    // Params 0, eflags: 0x0
+    // Checksum 0x4de99027, Offset: 0x2d98
+    // Size: 0xa8
+    function tunables() {
         while (true) {
             level.hackertoollostsightlimitms = getdvarint(#"scr_hackertoollostsightlimitms", 1000);
             level.hackertoollockonradius = getdvarfloat(#"scr_hackertoollockonradius", 20);
             level.hackertoollockonfov = getdvarint(#"scr_hackertoollockonfov", 65);
             wait(1);
         }
-    #/
-}
+    }
 
+#/

@@ -37,10 +37,10 @@ function init_shared() {
         level.ultimate_turret_shared = {};
         bundlename = "killstreak_ultimate_turret";
         if (sessionmodeiswarzonegame()) {
-            bundlename = bundlename + "_wz";
+            bundlename += "_wz";
         }
         if (sessionmodeiszombiesgame()) {
-            bundlename = bundlename + "_zm";
+            bundlename += "_zm";
         }
         killstreaks::register_killstreak(bundlename, &activateturret);
         killstreaks::function_d8c32ca4("ultimate_turret", &function_a385666);
@@ -344,7 +344,7 @@ function function_3be2d17f(watcher, player) {
     }
     self waittill(#"stationary");
     self deployable::function_dd266e08(player);
-    self.origin = self.origin + (0, 0, 2);
+    self.origin += (0, 0, 2);
     player onplaceturret(self);
     killstreakslot = self.vehicle.killstreakslot;
     self.killstreakslot = killstreakslot;
@@ -761,7 +761,7 @@ function onturretdamage(einflictor, eattacker, idamage, idflags, smeansofdeath, 
     empdamage = int(shitloc + self.healthdefault * 1 + 0.5);
     var_820fb5ae = self.damagetaken;
     shitloc = self killstreaks::ondamageperweapon("ultimate_turret", vdir, shitloc, vdamageorigin, psoffsettime, damagefromunderneath, self.maxhealth, undefined, self.maxhealth * 0.4, undefined, empdamage, undefined, 1, 1);
-    self.damagetaken = self.damagetaken + shitloc;
+    self.damagetaken += shitloc;
     if (self.damagetaken > self.maxhealth && !isdefined(self.will_die)) {
         self.will_die = 1;
         if (isdefined(self.owner)) {
@@ -1546,7 +1546,7 @@ function function_31477582() {
         if (trace[#"fraction"] > 0) {
             new_origin = trace[#"position"];
             self.origin = (new_origin[0], new_origin[1], self.origin[2] - min(max_delta, self.origin[2] - new_origin[2]));
-            max_delta = max_delta + var_463c449d;
+            max_delta += var_463c449d;
             waitframe(1);
             continue;
         }

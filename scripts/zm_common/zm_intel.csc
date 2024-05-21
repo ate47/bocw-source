@@ -296,15 +296,16 @@ function function_12e3769(var_d5fa8477) {
     return var_19a3087c.var_6073bf8f;
 }
 
-// Namespace zm_intel/zm_intel
-// Params 1, eflags: 0x0
-// Checksum 0xe3465912, Offset: 0x1310
-// Size: 0x328
-function function_ded2880a(localclientnum) {
-    /#
-        init_dvar(#"hash_42041dee5640342d", "<unknown string>", &function_fd0c6ab2);
-        init_dvar(#"hash_472c425964c7d41e", "<unknown string>", &function_fd0c6ab2);
-        var_3132e3d3 = get_map_name();
+/#
+
+    // Namespace zm_intel/zm_intel
+    // Params 1, eflags: 0x0
+    // Checksum 0xe3465912, Offset: 0x1310
+    // Size: 0x328
+    function function_ded2880a(localclientnum) {
+        util::init_dvar(#"hash_42041dee5640342d", "<unknown string>", &function_fd0c6ab2);
+        util::init_dvar(#"hash_472c425964c7d41e", "<unknown string>", &function_fd0c6ab2);
+        var_3132e3d3 = util::get_map_name();
         var_65679637 = getscriptbundlenames("<unknown string>");
         foreach (var_d5fa8477 in var_65679637) {
             var_d5fa8477 = function_9e72a96(var_d5fa8477);
@@ -332,20 +333,18 @@ function function_ded2880a(localclientnum) {
             if (s_bundle.mapname !== var_3132e3d3) {
                 continue;
             }
-            add_devgui(localclientnum, "<unknown string>" + var_2b65c1ac + "<unknown string>", "<unknown string>" + var_d5fa8477 + "<unknown string>");
+            util::add_devgui(localclientnum, "<unknown string>" + var_2b65c1ac + "<unknown string>", "<unknown string>" + var_d5fa8477 + "<unknown string>");
             if (s_bundle.var_ad4ad686 === #"dark_aether") {
-                add_devgui(localclientnum, "<unknown string>" + var_2b65c1ac + "<unknown string>", "<unknown string>" + var_d5fa8477 + "<unknown string>");
+                util::add_devgui(localclientnum, "<unknown string>" + var_2b65c1ac + "<unknown string>", "<unknown string>" + var_d5fa8477 + "<unknown string>");
             }
         }
-    #/
-}
+    }
 
-// Namespace zm_intel/zm_intel
-// Params 1, eflags: 0x0
-// Checksum 0xa631a30, Offset: 0x1640
-// Size: 0x1c4
-function function_fd0c6ab2(params) {
-    /#
+    // Namespace zm_intel/zm_intel
+    // Params 1, eflags: 0x0
+    // Checksum 0xa631a30, Offset: 0x1640
+    // Size: 0x1c4
+    function function_fd0c6ab2(params) {
         if (params.value === "<unknown string>") {
             return;
         }
@@ -368,6 +367,6 @@ function function_fd0c6ab2(params) {
         }
         setdvar(#"hash_42041dee5640342d", "<unknown string>");
         setdvar(#"hash_472c425964c7d41e", "<unknown string>");
-    #/
-}
+    }
 
+#/

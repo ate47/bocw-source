@@ -1013,7 +1013,7 @@ function turretdebug() {
     forward = anglestoforward(angles);
     dome_apex = cone_apex + vectorscale(forward, isdefined(level.smartcoversettings.bundle.var_b345c668) ? level.smartcoversettings.bundle.var_b345c668 : 0);
     /#
-        debug_spherical_cone(cone_apex, dome_apex, isdefined(level.smartcoversettings.bundle.var_cbd5f27c) ? level.smartcoversettings.bundle.var_cbd5f27c : 0, 16, (0.95, 0.1, 0.1), 0.3, 1, 3);
+        util::debug_spherical_cone(cone_apex, dome_apex, isdefined(level.smartcoversettings.bundle.var_cbd5f27c) ? level.smartcoversettings.bundle.var_cbd5f27c : 0, 16, (0.95, 0.1, 0.1), 0.3, 1, 3);
     #/
 }
 
@@ -1113,7 +1113,7 @@ function microwaveentity(entity) {
         }
         damage = (isdefined(level.smartcoversettings.bundle.var_d2369c5a) ? level.smartcoversettings.bundle.var_d2369c5a : 0) * damagescalar;
         if (level.hardcoremode) {
-            damage = damage * (isdefined(level.smartcoversettings.bundle.var_78c1e37b) ? level.smartcoversettings.bundle.var_78c1e37b : 0.25);
+            damage *= isdefined(level.smartcoversettings.bundle.var_78c1e37b) ? level.smartcoversettings.bundle.var_78c1e37b : 0.25;
         }
         if (!isai(entity) && entity util::mayapplyscreeneffect()) {
             if (!isdefined(entity.microwavepoisoning) || !entity.microwavepoisoning) {

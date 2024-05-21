@@ -1570,15 +1570,17 @@ function spent_points_tracking() {
     }
 }
 
-// Namespace zm_challenges/zm_challenges
-// Params 0, eflags: 0x0
-// Checksum 0xacd2e6ab, Offset: 0x84d0
-// Size: 0x24
-function increment_magic_box() {
-    /#
+/#
+
+    // Namespace zm_challenges/zm_challenges
+    // Params 0, eflags: 0x0
+    // Checksum 0xacd2e6ab, Offset: 0x84d0
+    // Size: 0x24
+    function increment_magic_box() {
         self debug_print("<unknown string>");
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_challenges/zm_challenges
 // Params 0, eflags: 0x0
@@ -2096,17 +2098,19 @@ function function_a9f6b8ef() {
     }
 }
 
-// Namespace zm_challenges/zm_challenges
-// Params 1, eflags: 0x0
-// Checksum 0x805d7896, Offset: 0xa970
-// Size: 0x6c
-function debug_print(str_line) {
-    /#
+/#
+
+    // Namespace zm_challenges/zm_challenges
+    // Params 1, eflags: 0x0
+    // Checksum 0x805d7896, Offset: 0xa970
+    // Size: 0x6c
+    function debug_print(str_line) {
         if (getdvarint(#"zombie_debug", 0) > 0) {
             println("<unknown string>" + self.entity_num + "<unknown string>" + str_line);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_challenges/zm_challenges
 // Params 1, eflags: 0x2 linked
@@ -2285,20 +2289,20 @@ function function_4e5de0a2() {
     if (!is_true(var_d585ec85)) {
         self stats::set_stat_global(#"hash_3eacfddc84997ba5", 1);
         var_3c362b22 = 0;
-        var_3c362b22 = var_3c362b22 + self stats::function_97f7728e(#"hash_43e326396554e18c", #"uses");
-        var_3c362b22 = var_3c362b22 + self stats::function_97f7728e(#"hash_43e329396554e6a5", #"uses");
-        var_3c362b22 = var_3c362b22 + self stats::function_97f7728e(#"hash_43e328396554e4f2", #"uses");
-        var_3c362b22 = var_3c362b22 + self stats::function_97f7728e(#"hash_43e323396554dc73", #"uses");
-        var_3c362b22 = var_3c362b22 + self stats::function_97f7728e(#"hash_43e322396554dac0", #"uses");
+        var_3c362b22 += self stats::function_97f7728e(#"hash_43e326396554e18c", #"uses");
+        var_3c362b22 += self stats::function_97f7728e(#"hash_43e329396554e6a5", #"uses");
+        var_3c362b22 += self stats::function_97f7728e(#"hash_43e328396554e4f2", #"uses");
+        var_3c362b22 += self stats::function_97f7728e(#"hash_43e323396554dc73", #"uses");
+        var_3c362b22 += self stats::function_97f7728e(#"hash_43e322396554dac0", #"uses");
         if (var_3c362b22 > 0) {
             self stats::function_622feb0d(#"hash_55569355da0f0f68", #"uses", var_3c362b22);
         }
         var_eb1fb63e = 0;
-        var_eb1fb63e = var_eb1fb63e + self stats::function_97f7728e(#"hash_7a071f09cf16cbfa", #"uses");
-        var_eb1fb63e = var_eb1fb63e + self stats::function_97f7728e(#"hash_7a071e09cf16ca47", #"uses");
-        var_eb1fb63e = var_eb1fb63e + self stats::function_97f7728e(#"hash_7a071d09cf16c894", #"uses");
-        var_eb1fb63e = var_eb1fb63e + self stats::function_97f7728e(#"hash_7a071c09cf16c6e1", #"uses");
-        var_eb1fb63e = var_eb1fb63e + self stats::function_97f7728e(#"hash_7a071b09cf16c52e", #"uses");
+        var_eb1fb63e += self stats::function_97f7728e(#"hash_7a071f09cf16cbfa", #"uses");
+        var_eb1fb63e += self stats::function_97f7728e(#"hash_7a071e09cf16ca47", #"uses");
+        var_eb1fb63e += self stats::function_97f7728e(#"hash_7a071d09cf16c894", #"uses");
+        var_eb1fb63e += self stats::function_97f7728e(#"hash_7a071c09cf16c6e1", #"uses");
+        var_eb1fb63e += self stats::function_97f7728e(#"hash_7a071b09cf16c52e", #"uses");
         if (var_eb1fb63e > 0) {
             self stats::function_622feb0d(#"hash_5d6f444e983b62ca", #"uses", var_eb1fb63e);
         }
@@ -2501,7 +2505,7 @@ function function_dc7c4fb9(...) {
         arrayremoveindex(vararg, vararg.size - 1);
         result = self writestat(2, vararg, value);
         /#
-            function_d92cb558(result, vararg);
+            stats::function_d92cb558(result, vararg);
         #/
     }
     return is_true(result);

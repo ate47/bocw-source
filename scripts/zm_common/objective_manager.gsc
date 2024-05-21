@@ -446,7 +446,7 @@ function private function_8239a941(struct, instance, hintstring) {
     }
     scriptmodel = content_manager::spawn_script_model(struct, #"tag_origin");
     trigger = content_manager::spawn_interact(struct, &function_cec3c94c, hintstring);
-    trigger.origin = trigger.origin + (0, 0, 0);
+    trigger.origin += (0, 0, 0);
     trigger.instance = instance;
     trigger.scriptmodel = scriptmodel;
     instance.var_4272a188 = trigger;
@@ -839,52 +839,49 @@ function autoexec function_42fa2bab() {
     level.var_f8197880 = variants;
 }
 
-// Namespace objective_manager/objective_manager
-// Params 0, eflags: 0x0
-// Checksum 0x1a0cf0b9, Offset: 0x39c0
-// Size: 0x1c4
-function init_devgui() {
-    /#
-        waittill_can_add_debug_command();
-        function_d8ef0f00(&function_7a7ab1a2);
-        add_devgui(devgui_path("<unknown string>", 100), "<unknown string>");
-        add_devgui(devgui_path("<unknown string>", 101), "<unknown string>");
-        add_devgui(devgui_path("<unknown string>", 102), "<unknown string>");
-        add_devgui(devgui_path("<unknown string>", 102), "<unknown string>");
-        add_devgui(devgui_path("<unknown string>", 102), "<unknown string>");
-        add_devgui(devgui_path("<unknown string>", 103), "<unknown string>");
-        add_devgui(devgui_path("<unknown string>", 104), "<unknown string>");
-    #/
-}
+/#
 
-// Namespace objective_manager/objective_manager
-// Params 1, eflags: 0x0
-// Checksum 0xa3196ce3, Offset: 0x3b90
-// Size: 0x50
-function function_a8417c4a(params) {
-    /#
+    // Namespace objective_manager/objective_manager
+    // Params 0, eflags: 0x0
+    // Checksum 0x1a0cf0b9, Offset: 0x39c0
+    // Size: 0x1c4
+    function init_devgui() {
+        util::waittill_can_add_debug_command();
+        namespace_420b39d3::function_d8ef0f00(&function_7a7ab1a2);
+        util::add_devgui(content_manager::devgui_path("<unknown string>", 100), "<unknown string>");
+        util::add_devgui(content_manager::devgui_path("<unknown string>", 101), "<unknown string>");
+        util::add_devgui(content_manager::devgui_path("<unknown string>", 102), "<unknown string>");
+        util::add_devgui(content_manager::devgui_path("<unknown string>", 102), "<unknown string>");
+        util::add_devgui(content_manager::devgui_path("<unknown string>", 102), "<unknown string>");
+        util::add_devgui(content_manager::devgui_path("<unknown string>", 103), "<unknown string>");
+        util::add_devgui(content_manager::devgui_path("<unknown string>", 104), "<unknown string>");
+    }
+
+    // Namespace objective_manager/objective_manager
+    // Params 1, eflags: 0x0
+    // Checksum 0xa3196ce3, Offset: 0x3b90
+    // Size: 0x50
+    function function_a8417c4a(params) {
         if (params.value) {
             level thread function_67b313bb();
             return;
         }
         level notify(#"hash_473116b92ba013b9");
-    #/
-}
+    }
 
-// Namespace objective_manager/objective_manager
-// Params 0, eflags: 0x0
-// Checksum 0xa13b5c5c, Offset: 0x3be8
-// Size: 0x3c2
-function function_67b313bb() {
-    /#
+    // Namespace objective_manager/objective_manager
+    // Params 0, eflags: 0x0
+    // Checksum 0xa13b5c5c, Offset: 0x3be8
+    // Size: 0x3c2
+    function function_67b313bb() {
         level notify(#"hash_473116b92ba013b9");
         level endon(#"hash_473116b92ba013b9");
         var_b49d430f = array("<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>");
-        var_9986d9d6 = array((1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 1, 0), (1, 0.5, 0), (0, 1, 1), (1, 0, 1), (0.439216, 0.501961, 0.564706), (0, 0, 0), (0.501961, 0.501961, 0), (0.545098, 0.270588, 0.0745098));
+        a_str_colors = array((1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 1, 0), (1, 0.5, 0), (0, 1, 1), (1, 0, 1), (0.439216, 0.501961, 0.564706), (0, 0, 0), (0.501961, 0.501961, 0), (0.545098, 0.270588, 0.0745098));
         while (true) {
             foreach (index, var_83aaaa47 in var_b49d430f) {
-                v_color = var_9986d9d6[index];
-                var_2cd4e005 = get_array(var_83aaaa47, "<unknown string>");
+                v_color = a_str_colors[index];
+                var_2cd4e005 = struct::get_array(var_83aaaa47, "<unknown string>");
                 foreach (s_objective in var_2cd4e005) {
                     print3d(s_objective.origin, "<unknown string>" + var_83aaaa47 + "<unknown string>" + (isdefined(s_objective.targetname) ? s_objective.targetname : "<unknown string>"), (1, 1, 0), undefined, 1);
                     n_distance = distance(getplayers()[0].origin, s_objective.origin);
@@ -896,25 +893,21 @@ function function_67b313bb() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace objective_manager/objective_manager
-// Params 1, eflags: 0x0
-// Checksum 0xf3db98b2, Offset: 0x3fb8
-// Size: 0x2c
-function function_caba1575(instance) {
-    /#
+    // Namespace objective_manager/objective_manager
+    // Params 1, eflags: 0x0
+    // Checksum 0xf3db98b2, Offset: 0x3fb8
+    // Size: 0x2c
+    function function_caba1575(instance) {
         self setorigin(instance.origin);
-    #/
-}
+    }
 
-// Namespace objective_manager/objective_manager
-// Params 1, eflags: 0x0
-// Checksum 0xe9143b, Offset: 0x3ff0
-// Size: 0x59a
-function function_7a7ab1a2(params) {
-    /#
+    // Namespace objective_manager/objective_manager
+    // Params 1, eflags: 0x0
+    // Checksum 0xe9143b, Offset: 0x3ff0
+    // Size: 0x59a
+    function function_7a7ab1a2(params) {
         commands = ["<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>"];
         tokens = strtok(params.value, "<unknown string>");
         if (!tokens.size || !isinarray(commands, tokens[0])) {
@@ -923,14 +916,14 @@ function function_7a7ab1a2(params) {
         switch (tokens[0]) {
         case #"hash_f6faed38fbaaaa5":
             level.var_cf558bf++;
-            function_7c97e961(level.var_b48509f9 + 1);
+            namespace_553954de::function_7c97e961(level.var_b48509f9 + 1);
             foreach (player in getplayers()) {
                 player luinotifyevent(#"hash_5b1ff06d07e9002a", 3, 2, level.var_b48509f9, 0);
             }
             break;
         case #"hash_7c2f98129d7c2219":
             level.var_cf558bf--;
-            function_7c97e961(level.var_b48509f9 - 1);
+            namespace_553954de::function_7c97e961(level.var_b48509f9 - 1);
             foreach (player in getplayers()) {
                 player luinotifyevent(#"hash_5b1ff06d07e9002a", 3, 2, level.var_b48509f9, 0);
             }
@@ -975,15 +968,13 @@ function function_7a7ab1a2(params) {
             setdvar(#"hash_4fd21096bcb24e82", !getdvar(#"hash_4fd21096bcb24e82", 0));
             break;
         }
-    #/
-}
+    }
 
-// Namespace objective_manager/objective_manager
-// Params 0, eflags: 0x4
-// Checksum 0xd6830cbc, Offset: 0x4598
-// Size: 0x51c
-function private function_3a388f32() {
-    /#
+    // Namespace objective_manager/objective_manager
+    // Params 0, eflags: 0x4
+    // Checksum 0xd6830cbc, Offset: 0x4598
+    // Size: 0x51c
+    function private function_3a388f32() {
         a_instances = level.contentmanager.currentdestination.var_e859e591;
         if (!isdefined(a_instances)) {
             return;
@@ -1058,6 +1049,6 @@ function private function_3a388f32() {
         println("<unknown string>" + var_9c4efc51 + "<unknown string>");
         println("<unknown string>" + var_869cd0ed + "<unknown string>");
         println("<unknown string>");
-    #/
-}
+    }
 
+#/

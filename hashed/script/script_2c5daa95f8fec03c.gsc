@@ -71,7 +71,7 @@ function initweakpoints(entity) {
         }
         var_7c4db75f.var_60790e23 = undefined;
         if (isdefined(var_7c4db75f.var_8b732142)) {
-            var_7c4db75f.var_8b732142 = var_7c4db75f.var_8b732142 - 1;
+            var_7c4db75f.var_8b732142 -= 1;
         }
         array::add(entity.var_5ace757d, var_7c4db75f);
     }
@@ -278,7 +278,7 @@ function function_fab3ee3e(entity) {
 // Checksum 0x3b050042, Offset: 0x11a0
 // Size: 0xf4
 function function_ef87b7e8(var_dd54fdb1, damage) {
-    var_dd54fdb1.health = var_dd54fdb1.health - damage;
+    var_dd54fdb1.health -= damage;
     if (isactor(self) && isdefined(var_dd54fdb1.var_98634dc5)) {
         self clientfield::increment(var_dd54fdb1.var_98634dc5);
     }

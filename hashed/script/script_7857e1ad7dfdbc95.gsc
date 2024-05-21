@@ -125,7 +125,7 @@ function private function_b11208a(entity) {
             guy thread namespace_ec06fe4a::function_570729f0();
             /#
                 dist = distance2d(guy.origin, entity.origin);
-                debugmsg("<unknown string>" + guy getentitynumber() + "<unknown string>" + (isdefined(guy.aitype) ? guy.aitype : guy.classname) + "<unknown string>" + guy.origin + "<unknown string>" + dist);
+                namespace_1e25ad94::debugmsg("<unknown string>" + guy getentitynumber() + "<unknown string>" + (isdefined(guy.aitype) ? guy.aitype : guy.classname) + "<unknown string>" + guy.origin + "<unknown string>" + dist);
             #/
         }
     }
@@ -230,7 +230,7 @@ function private function_fe8bad69() {
         var_8e580c56 = self gettagangles("tag_eye");
         launchorigin = self gettagorigin("tag_eye");
         up = anglestoup(var_8e580c56);
-        launchorigin = launchorigin + up * (0, 0, -10);
+        launchorigin += up * (0, 0, -10);
         v_dir = anglestoforward(var_8e580c56) * 50;
         v_right = anglestoright(var_8e580c56) * 10;
         var_ce35a286 = launchorigin + v_dir + (0, 0, 80);
@@ -359,10 +359,10 @@ function function_e7667c0d() {
     self endon(#"death");
     while (true) {
         if (isdefined(self.enemy) && !self haspath()) {
-            self.var_6e5b38d9 = self.var_6e5b38d9 - 2500;
-            self.var_95bfdd95 = self.var_95bfdd95 - 3500;
-            self.var_60188515 = self.var_60188515 - 1500;
-            self.var_249206b6 = self.var_249206b6 - 500;
+            self.var_6e5b38d9 -= 2500;
+            self.var_95bfdd95 -= 3500;
+            self.var_60188515 -= 1500;
+            self.var_249206b6 -= 500;
         }
         wait(1);
     }
@@ -475,7 +475,7 @@ function function_a54cde8b() {
 // Size: 0xa2
 function private function_abab78a7(*inflictor, attacker, damage, *idflags, *meansofdeath, *weapon, *var_fd90b0bb, *point, *dir, *hitloc, *offsettime, *boneindex, *modelindex) {
     if (isdefined(boneindex) && is_true(boneindex.boss)) {
-        modelindex = modelindex * 8;
+        modelindex *= 8;
     }
     return modelindex;
 }
@@ -528,7 +528,7 @@ function private function_af85a094(inflictor, attacker, damage, idflags, meansof
     if (isdefined(boneindex)) {
         bonename = getpartname(self, boneindex);
         if (isdefined(self.var_dafc95a5) && self.var_dafc95a5 > 0 && bonename === "j_skeleton_shield" || bonename === "tag_weapon_left") {
-            self.var_dafc95a5 = self.var_dafc95a5 - damage;
+            self.var_dafc95a5 -= damage;
             if (self.var_490042cd <= gettime()) {
                 self.var_490042cd = gettime() + 300;
                 self clientfield::increment("" + #"hash_3a6a3e4ef0a1a999", 1);

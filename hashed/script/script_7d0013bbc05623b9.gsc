@@ -51,21 +51,21 @@ function private preload() {
     callback::on_spawned(&on_player_spawned);
     util::init_dvar("cg_cpMaxHoldDurationIgnore", 0, &function_5baa8d71);
     /#
-        init_dvar("<unknown string>", 0, &function_db698ba5);
-        init_dvar("<unknown string>", 0, &function_db698ba5);
-        init_dvar("<unknown string>", 0, &function_db698ba5);
-        init_dvar("<unknown string>", 0, &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
-        init_dvar("<unknown string>", 0, &function_db698ba5);
-        init_dvar("<unknown string>", "<unknown string>", &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", 0, &function_db698ba5);
+        util::init_dvar("<unknown string>", 0, &function_db698ba5);
+        util::init_dvar("<unknown string>", 0, &function_db698ba5);
+        util::init_dvar("<unknown string>", 0, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", 0, &function_db698ba5);
+        util::init_dvar("<unknown string>", "<unknown string>", &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
     #/
 }
 
@@ -77,15 +77,17 @@ function private function_5baa8d71(dvar) {
     level.var_503dffcb[dvar.name] = dvar.value;
 }
 
-// Namespace prompts/prompts
-// Params 1, eflags: 0x4
-// Checksum 0x75add66b, Offset: 0x1118
-// Size: 0x2c
-function private function_db698ba5(dvar) {
-    /#
+/#
+
+    // Namespace prompts/prompts
+    // Params 1, eflags: 0x4
+    // Checksum 0x75add66b, Offset: 0x1118
+    // Size: 0x2c
+    function private function_db698ba5(dvar) {
         level.var_a48f9f79[dvar.name] = dvar.value;
-    #/
-}
+    }
+
+#/
 
 // Namespace prompts/prompts
 // Params 0, eflags: 0x2 linked
@@ -243,7 +245,7 @@ function function_a4cf2cde(var_50c32acd) {
         self.var_3e95b88f.var_80778410 = 1;
     }
     if (isdefined(var_50c32acd.offset)) {
-        offset = offset + var_50c32acd.offset;
+        offset += var_50c32acd.offset;
     } else if (isplayer(self)) {
         offset = (914.286, 675, 0);
     }
@@ -767,14 +769,14 @@ function function_334e020() {
             } else if (iscorpse(self)) {
                 var_393b6e18 = self getcorpsephysicsorigin() + (0, 0, 6);
             } else if (is_true(self.var_3e95b88f.var_754bedbb)) {
-                var_393b6e18 = var_393b6e18 + rotatepoint(self getboundsmidpoint(), self.angles);
+                var_393b6e18 += rotatepoint(self getboundsmidpoint(), self.angles);
             }
         }
         if (isdefined(self.var_3e95b88f.offset) && self.var_3e95b88f.offset != (0, 0, 0)) {
             if (is_true(self.var_3e95b88f.var_80778410)) {
-                var_393b6e18 = var_393b6e18 + rotatepoint(self.var_3e95b88f.offset, self.angles);
+                var_393b6e18 += rotatepoint(self.var_3e95b88f.offset, self.angles);
             } else {
-                var_393b6e18 = var_393b6e18 + self.var_3e95b88f.offset;
+                var_393b6e18 += self.var_3e95b88f.offset;
             }
         }
         return var_393b6e18;
@@ -1118,7 +1120,7 @@ function private function_e8006b47() {
                 }
                 var_5e83875a = isdefined(var_62bce5b6.var_5e83875a) ? var_62bce5b6.var_5e83875a : 30;
                 if (var_62bce5b6.state != 0 && var_62bce5b6.state != 4) {
-                    var_5e83875a = var_5e83875a + (isdefined(var_62bce5b6.var_7faab93d) ? var_62bce5b6.var_7faab93d : 1);
+                    var_5e83875a += isdefined(var_62bce5b6.var_7faab93d) ? var_62bce5b6.var_7faab93d : 1;
                 }
                 if (function_12186571(prompt, var_62bce5b6, player, dist, var_393b6e18, var_5e83875a)) {
                     var_e24c19de = 1;
@@ -1267,7 +1269,7 @@ function private function_6b2492cb(prompt, var_62bce5b6, player) {
 function private function_fcef5f5b(prompt, var_62bce5b6, player) {
     if (is_true(var_62bce5b6.var_f14d06ca)) {
         if (isdefined(var_62bce5b6.var_c570a6f9)) {
-            var_62bce5b6.var_c570a6f9 = var_62bce5b6.var_c570a6f9 + float(function_60d95f53()) / 1000;
+            var_62bce5b6.var_c570a6f9 += float(function_60d95f53()) / 1000;
         }
         return;
     }
@@ -1616,7 +1618,7 @@ function private function_a6104953() {
         namespace_61e6d095::set_ent(var_3a6b0af4, self);
         offset = isdefined(self.var_3e95b88f.offset) ? self.var_3e95b88f.offset : (0, 0, 0);
         if (!self function_5a11b8f6()) {
-            offset = offset + self.origin;
+            offset += self.origin;
             self.var_3e95b88f.var_80778410 = 0;
         }
         if (offset != (0, 0, 0)) {
@@ -1684,9 +1686,9 @@ function private function_263b3850(uid, prompt, player) {
         flags = self.var_3e95b88f.prompts[prompt].flags;
         /#
             if (level.var_a48f9f79[#"hash_464a6e9e035a826e"] == 2) {
-                flags = flags & ~1;
+                flags &= ~1;
             } else if (level.var_a48f9f79[#"hash_464a6e9e035a826e"] == 3) {
-                flags = flags | 1;
+                flags |= 1;
             }
         #/
         namespace_61e6d095::function_9bc1d2f1(uid, self.var_3e95b88f.var_294a441e[prompt], flags, 1, "flags", self.var_3e95b88f.var_db58523e);

@@ -128,12 +128,13 @@ function function_f5714974() {
     }
 }
 
-// Namespace laststand/laststand_shared
-// Params 3, eflags: 0x0
-// Checksum 0x4f49ccd3, Offset: 0x620
-// Size: 0x234
-function drawcylinder(pos, rad, height) {
-    /#
+/#
+
+    // Namespace laststand/laststand_shared
+    // Params 3, eflags: 0x0
+    // Checksum 0x4f49ccd3, Offset: 0x620
+    // Size: 0x234
+    function drawcylinder(pos, rad, height) {
         currad = rad;
         curheight = height;
         for (r = 0; r < 20; r++) {
@@ -143,8 +144,9 @@ function drawcylinder(pos, rad, height) {
             line(pos + (cos(theta) * currad, sin(theta) * currad, curheight), pos + (cos(theta2) * currad, sin(theta2) * currad, curheight));
             line(pos + (cos(theta) * currad, sin(theta) * currad, 0), pos + (cos(theta) * currad, sin(theta) * currad, curheight));
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace laststand/laststand_shared
 // Params 0, eflags: 0x0

@@ -852,16 +852,18 @@ function wait_till_not_touching(e_to_check, e_to_touch) {
     }
 }
 
-// Namespace util/util_shared
-// Params 1, eflags: 0x0
-// Checksum 0x45f299d0, Offset: 0x2a58
-// Size: 0x32
-function error(message) {
-    /#
+/#
+
+    // Namespace util/util_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x45f299d0, Offset: 0x2a58
+    // Size: 0x32
+    function error(message) {
         println("<unknown string>", message);
         waitframe(1);
-    #/
-}
+    }
+
+#/
 
 // Namespace util/util_shared
 // Params 2, eflags: 0x2 linked
@@ -1077,29 +1079,28 @@ function get_start_time() {
     return getmicrosecondsraw();
 }
 
-// Namespace util/util_shared
-// Params 2, eflags: 0x0
-// Checksum 0x40190858, Offset: 0x3238
-// Size: 0xc4
-function note_elapsed_time(start_time, label = "unspecified") {
-    /#
+/#
+
+    // Namespace util/util_shared
+    // Params 2, eflags: 0x0
+    // Checksum 0x40190858, Offset: 0x3238
+    // Size: 0xc4
+    function note_elapsed_time(start_time, label = "unspecified") {
         elapsed_time = get_elapsed_time(start_time, getmicrosecondsraw());
         if (!isdefined(start_time)) {
             return;
         }
-        elapsed_time = elapsed_time * 0.001;
+        elapsed_time *= 0.001;
         msg = label + "<unknown string>" + elapsed_time + "<unknown string>";
         profileprintln(msg);
         iprintlnbold(msg);
-    #/
-}
+    }
 
-// Namespace util/util_shared
-// Params 2, eflags: 0x0
-// Checksum 0xeecbd0e1, Offset: 0x3308
-// Size: 0xa4
-function function_d11b3582(var_43692bd4, label = "unspecified") {
-    /#
+    // Namespace util/util_shared
+    // Params 2, eflags: 0x0
+    // Checksum 0xeecbd0e1, Offset: 0x3308
+    // Size: 0xa4
+    function function_d11b3582(var_43692bd4, label = "unspecified") {
         if (!isdefined(var_43692bd4)) {
             return;
         }
@@ -1107,8 +1108,9 @@ function function_d11b3582(var_43692bd4, label = "unspecified") {
         msg = label + "<unknown string>" + elapsed_time + "<unknown string>";
         profileprintln(msg);
         iprintlnbold(msg);
-    #/
-}
+    }
+
+#/
 
 // Namespace util/util_shared
 // Params 2, eflags: 0x2 linked
@@ -1124,12 +1126,13 @@ function record_elapsed_time(start_time, &elapsed_time_array) {
     elapsed_time_array[elapsed_time_array.size] = elapsed_time;
 }
 
-// Namespace util/util_shared
-// Params 2, eflags: 0x2 linked
-// Checksum 0x3f065d82, Offset: 0x3458
-// Size: 0x1bc
-function note_elapsed_times(&elapsed_time_array, label = "unspecified") {
-    /#
+/#
+
+    // Namespace util/util_shared
+    // Params 2, eflags: 0x2 linked
+    // Checksum 0x3f065d82, Offset: 0x3458
+    // Size: 0x1bc
+    function note_elapsed_times(&elapsed_time_array, label = "unspecified") {
         if (!isarray(elapsed_time_array)) {
             return;
         }
@@ -1140,8 +1143,8 @@ function note_elapsed_times(&elapsed_time_array, label = "unspecified") {
         smallest_elapsed_time = 2147483647;
         largest_elapsed_time = 0;
         foreach (elapsed_time in elapsed_time_array) {
-            elapsed_time = elapsed_time * 0.001;
-            total_elapsed_time = total_elapsed_time + elapsed_time;
+            elapsed_time *= 0.001;
+            total_elapsed_time += elapsed_time;
             if (elapsed_time < smallest_elapsed_time) {
                 smallest_elapsed_time = elapsed_time;
             }
@@ -1153,15 +1156,13 @@ function note_elapsed_times(&elapsed_time_array, label = "unspecified") {
         msg = label + "<unknown string>" + smallest_elapsed_time + "<unknown string>" + average_elapsed_time + "<unknown string>" + largest_elapsed_time + "<unknown string>" + elapsed_time_array.size;
         profileprintln(msg);
         iprintlnbold(msg);
-    #/
-}
+    }
 
-// Namespace util/util_shared
-// Params 5, eflags: 0x0
-// Checksum 0xd76a4a0d, Offset: 0x3620
-// Size: 0x164
-function function_53966f9c(&elapsed_time_array, label = "unspecified", var_5461755f = 10, var_fe4c69e3 = 100, var_d09034b4) {
-    /#
+    // Namespace util/util_shared
+    // Params 5, eflags: 0x0
+    // Checksum 0xd76a4a0d, Offset: 0x3620
+    // Size: 0x164
+    function function_53966f9c(&elapsed_time_array, label = "unspecified", var_5461755f = 10, var_fe4c69e3 = 100, var_d09034b4) {
         if (!isdefined(var_d09034b4)) {
             var_d09034b4 = elapsed_time_array.size;
         }
@@ -1175,8 +1176,9 @@ function function_53966f9c(&elapsed_time_array, label = "unspecified", var_54617
             }
             arrayremovevalue(elapsed_time_array, undefined);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace util/util_shared
 // Params 2, eflags: 0x2 linked
@@ -1188,7 +1190,7 @@ function get_elapsed_time(start_time, end_time = getmicrosecondsraw()) {
     }
     elapsed_time = end_time - start_time;
     if (elapsed_time < 0) {
-        elapsed_time = elapsed_time + -2147483648;
+        elapsed_time += -2147483648;
     }
     return elapsed_time;
 }
@@ -1436,12 +1438,13 @@ function local_players_entity_thread(entity, func, arg1, arg2, arg3, arg4) {
     }
 }
 
-// Namespace util/util_shared
-// Params 4, eflags: 0x0
-// Checksum 0xb1679635, Offset: 0x42d8
-// Size: 0xb4
-function debug_line(from, to, color, time) {
-    /#
+/#
+
+    // Namespace util/util_shared
+    // Params 4, eflags: 0x0
+    // Checksum 0xb1679635, Offset: 0x42d8
+    // Size: 0xb4
+    function debug_line(from, to, color, time) {
         level.debug_line = getdvarint(#"scr_debug_line", 0);
         if (isdefined(level.debug_line) && level.debug_line == 1) {
             if (!isdefined(time)) {
@@ -1449,15 +1452,13 @@ function debug_line(from, to, color, time) {
             }
             line(from, to, color, 1, 1, time);
         }
-    #/
-}
+    }
 
-// Namespace util/util_shared
-// Params 3, eflags: 0x0
-// Checksum 0x434b44af, Offset: 0x4398
-// Size: 0xac
-function debug_star(origin, color, time) {
-    /#
+    // Namespace util/util_shared
+    // Params 3, eflags: 0x0
+    // Checksum 0x434b44af, Offset: 0x4398
+    // Size: 0xac
+    function debug_star(origin, color, time) {
         level.debug_star = getdvarint(#"scr_debug_star", 0);
         if (isdefined(level.debug_star) && level.debug_star == 1) {
             if (!isdefined(time)) {
@@ -1468,8 +1469,9 @@ function debug_star(origin, color, time) {
             }
             debugstar(origin, time, color);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace util/util_shared
 // Params 1, eflags: 0x2 linked
@@ -1520,12 +1522,13 @@ function is_safehouse(str_next_map = get_map_name()) {
     return false;
 }
 
-// Namespace util/util_shared
-// Params 1, eflags: 0x0
-// Checksum 0x6721e7f7, Offset: 0x4658
-// Size: 0x118
-function button_held_think(which_button) {
-    /#
+/#
+
+    // Namespace util/util_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x6721e7f7, Offset: 0x4658
+    // Size: 0x118
+    function button_held_think(which_button) {
         self endon(#"death");
         if (!isdefined(self._holding_button)) {
             self._holding_button = [];
@@ -1549,95 +1552,82 @@ function button_held_think(which_button) {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace util/util_shared
-// Params 0, eflags: 0x0
-// Checksum 0x424cad14, Offset: 0x4778
-// Size: 0x48
-function init_button_wrappers() {
-    /#
+    // Namespace util/util_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x424cad14, Offset: 0x4778
+    // Size: 0x48
+    function init_button_wrappers() {
         if (!isdefined(level._button_funcs)) {
             level._button_funcs[4] = &up_button_pressed;
             level._button_funcs[5] = &down_button_pressed;
         }
-    #/
-}
+    }
 
-// Namespace util/util_shared
-// Params 0, eflags: 0x0
-// Checksum 0xbad59eaf, Offset: 0x47c8
-// Size: 0x62
-function up_button_held() {
-    /#
+    // Namespace util/util_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xbad59eaf, Offset: 0x47c8
+    // Size: 0x62
+    function up_button_held() {
         init_button_wrappers();
         if (!isdefined(self._up_button_think_threaded)) {
             self thread button_held_think(4);
             self._up_button_think_threaded = 1;
         }
         return self._holding_button[4];
-    #/
-}
+    }
 
-// Namespace util/util_shared
-// Params 0, eflags: 0x0
-// Checksum 0x48442f9f, Offset: 0x4838
-// Size: 0x62
-function down_button_held() {
-    /#
+    // Namespace util/util_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x48442f9f, Offset: 0x4838
+    // Size: 0x62
+    function down_button_held() {
         init_button_wrappers();
         if (!isdefined(self._down_button_think_threaded)) {
             self thread button_held_think(5);
             self._down_button_think_threaded = 1;
         }
         return self._holding_button[5];
-    #/
-}
+    }
 
-// Namespace util/util_shared
-// Params 0, eflags: 0x0
-// Checksum 0xaf424cc2, Offset: 0x48a8
-// Size: 0x46
-function up_button_pressed() {
-    /#
+    // Namespace util/util_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xaf424cc2, Offset: 0x48a8
+    // Size: 0x46
+    function up_button_pressed() {
         return self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>");
-    #/
-}
+    }
 
-// Namespace util/util_shared
-// Params 0, eflags: 0x0
-// Checksum 0x71c37f7b, Offset: 0x48f8
-// Size: 0x28
-function waittill_up_button_pressed() {
-    /#
+    // Namespace util/util_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x71c37f7b, Offset: 0x48f8
+    // Size: 0x28
+    function waittill_up_button_pressed() {
         while (!self up_button_pressed()) {
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace util/util_shared
-// Params 0, eflags: 0x0
-// Checksum 0xfabfd5c0, Offset: 0x4928
-// Size: 0x46
-function down_button_pressed() {
-    /#
+    // Namespace util/util_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0xfabfd5c0, Offset: 0x4928
+    // Size: 0x46
+    function down_button_pressed() {
         return self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>");
-    #/
-}
+    }
 
-// Namespace util/util_shared
-// Params 0, eflags: 0x0
-// Checksum 0x25590078, Offset: 0x4978
-// Size: 0x28
-function waittill_down_button_pressed() {
-    /#
+    // Namespace util/util_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x25590078, Offset: 0x4978
+    // Size: 0x28
+    function waittill_down_button_pressed() {
         while (!self down_button_pressed()) {
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace util/util_shared
 // Params 0, eflags: 0x2 linked
@@ -1935,14 +1925,14 @@ function function_e387bcd() {
 function function_4b93f9c2() {
     result = 0;
     if (isdefined(self.script_wait)) {
-        result = result + self.script_wait;
+        result += self.script_wait;
     }
     n_min = isdefined(self.script_wait_min) ? self.script_wait_min : 0;
     n_max = isdefined(self.script_wait_max) ? self.script_wait_max : 0;
     if (n_max > n_min) {
-        result = result + randomfloatrange(n_min, n_max);
+        result += randomfloatrange(n_min, n_max);
     } else if (n_min > 0) {
-        result = result + n_min;
+        result += n_min;
     }
     return result;
 }
@@ -1956,18 +1946,18 @@ function script_wait() {
     if (isdefined(self.script_wait)) {
         wait(self.script_wait);
         if (isdefined(self.script_wait_add)) {
-            self.script_wait = self.script_wait + self.script_wait_add;
+            self.script_wait += self.script_wait_add;
         }
     }
     n_min = isdefined(self.script_wait_min) ? self.script_wait_min : 0;
     n_max = isdefined(self.script_wait_max) ? self.script_wait_max : 0;
     if (n_max > n_min) {
         wait(randomfloatrange(n_min, n_max));
-        self.script_wait_min = self.script_wait_min + (isdefined(self.script_wait_add) ? self.script_wait_add : 0);
-        self.script_wait_max = self.script_wait_max + (isdefined(self.script_wait_add) ? self.script_wait_add : 0);
+        self.script_wait_min += isdefined(self.script_wait_add) ? self.script_wait_add : 0;
+        self.script_wait_max += isdefined(self.script_wait_add) ? self.script_wait_add : 0;
     } else if (n_min > 0) {
         wait(n_min);
-        self.script_wait_min = self.script_wait_min + (isdefined(self.script_wait_add) ? self.script_wait_add : 0);
+        self.script_wait_min += isdefined(self.script_wait_add) ? self.script_wait_add : 0;
     }
     return gettime() - n_time;
 }
@@ -2018,8 +2008,8 @@ function function_48e57e36(var_1f1d12d8) {
     decimal = 0;
     for (i = var_1f1d12d8.size - 1; i >= 0; i--) {
         if (var_1f1d12d8[i] >= "0" && var_1f1d12d8[i] <= "9") {
-            decimal = decimal + int(var_1f1d12d8[i]) * base;
-            base = base * 16;
+            decimal += int(var_1f1d12d8[i]) * base;
+            base *= 16;
             continue;
         }
         if (var_1f1d12d8[i] >= "a" && var_1f1d12d8[i] <= "f") {
@@ -2036,32 +2026,32 @@ function function_48e57e36(var_1f1d12d8) {
             } else if (var_1f1d12d8[i] == "f") {
                 number = 15;
             }
-            decimal = decimal + number * base;
-            base = base * 16;
+            decimal += number * base;
+            base *= 16;
         }
     }
     return decimal;
 }
 
-// Namespace util/util_shared
-// Params 3, eflags: 0x0
-// Checksum 0xbf039eec, Offset: 0x5b40
-// Size: 0x5c
-function add_devgui(localclientnum, menu_path, commands) {
-    /#
-        adddebugcommand(localclientnum, "<unknown string>" + menu_path + "<unknown string>" + commands + "<unknown string>");
-    #/
-}
+/#
 
-// Namespace util/util_shared
-// Params 2, eflags: 0x0
-// Checksum 0xe747f73, Offset: 0x5ba8
-// Size: 0x44
-function remove_devgui(localclientnum, menu_path) {
-    /#
+    // Namespace util/util_shared
+    // Params 3, eflags: 0x0
+    // Checksum 0xbf039eec, Offset: 0x5b40
+    // Size: 0x5c
+    function add_devgui(localclientnum, menu_path, commands) {
+        adddebugcommand(localclientnum, "<unknown string>" + menu_path + "<unknown string>" + commands + "<unknown string>");
+    }
+
+    // Namespace util/util_shared
+    // Params 2, eflags: 0x0
+    // Checksum 0xe747f73, Offset: 0x5ba8
+    // Size: 0x44
+    function remove_devgui(localclientnum, menu_path) {
         adddebugcommand(localclientnum, "<unknown string>" + menu_path + "<unknown string>");
-    #/
-}
+    }
+
+#/
 
 // Namespace util/util_shared
 // Params 2, eflags: 0x2 linked
@@ -2227,18 +2217,18 @@ function function_6f326f49(hour, minute, second, day, month, year) {
     for (;;) {
         setdvar(#"hash_dfcfdb3bf28da5e", string(hour, 2) + ":" + string(minute, 2) + ":" + string(second, 2) + " " + string(month, 2) + "/" + string(day, 2) + "/" + string(year % 100, 2));
         wait(1);
-        second = second + 1;
+        second += 1;
         if (second > 59) {
             second = 0;
-            minute = minute + 1;
+            minute += 1;
         }
         if (minute > 59) {
             minute = 0;
-            hour = hour + 1;
+            hour += 1;
         }
         if (hour > 23) {
             hour = 0;
-            day = day + 1;
+            day += 1;
         }
         switch (month) {
         case 1:
@@ -2284,11 +2274,11 @@ function function_6f326f49(hour, minute, second, day, month, year) {
         }
         if (day > var_8bf17cd8) {
             day = 1;
-            month = month + 1;
+            month += 1;
         }
         if (month > 12) {
             month = 1;
-            year = year + 1;
+            year += 1;
         }
     }
 }

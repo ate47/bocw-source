@@ -184,19 +184,21 @@ function proximitykill() {
     }
 }
 
-// Namespace namespace_a0fa2b5/namespace_a0fa2b5
-// Params 0, eflags: 0x0
-// Checksum 0xc868920e, Offset: 0xd48
-// Size: 0x66
-function function_839fc28e() {
-    /#
+/#
+
+    // Namespace namespace_a0fa2b5/namespace_a0fa2b5
+    // Params 0, eflags: 0x0
+    // Checksum 0xc868920e, Offset: 0xd48
+    // Size: 0x66
+    function function_839fc28e() {
         self endon(#"death");
         while (true) {
             line(self.origin, self.origin + (0, 0, 1000), (1, 0, 0), 1, 0, 1);
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_a0fa2b5/namespace_a0fa2b5
 // Params 0, eflags: 0x2 linked

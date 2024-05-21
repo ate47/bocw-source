@@ -252,12 +252,12 @@ function private function_16686fd4(localclientnum, model, pos, angles, *hitpos, 
     } else {
         var_5846115f = anglestoforward(self.angles);
     }
-    var_bab6cdb7 = var_bab6cdb7 * 0.1;
+    var_bab6cdb7 *= 0.1;
     if (var_bab6cdb7 < 10) {
         var_bab6cdb7 = 10;
     }
     var_5846115f = var_5846115f * 0.5 + var_9ec7627b * 0.5;
-    var_5846115f = var_5846115f * var_bab6cdb7;
+    var_5846115f *= var_bab6cdb7;
     createdynentandlaunch(model, pos, angles, hitpos, self.origin, var_5846115f * var_243511ab);
 }
 

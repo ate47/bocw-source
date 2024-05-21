@@ -24,28 +24,30 @@ function private preinit() {
         if (!isdefined(level.var_cc2922d)) {
             level.var_cc2922d = [];
         }
-        init_dvar("<unknown string>", -1, &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
-        init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
+        util::init_dvar("<unknown string>", -1, &function_db698ba5);
     #/
 }
 
-// Namespace player_decision/player_decision
-// Params 1, eflags: 0x4
-// Checksum 0xdee6ac49, Offset: 0x2c0
-// Size: 0x3c
-function private function_db698ba5(dvar) {
-    /#
+/#
+
+    // Namespace player_decision/player_decision
+    // Params 1, eflags: 0x4
+    // Checksum 0xdee6ac49, Offset: 0x2c0
+    // Size: 0x3c
+    function private function_db698ba5(dvar) {
         level.var_cc2922d[dvar.name] = int(dvar.value);
-    #/
-}
+    }
+
+#/
 
 // Namespace player_decision/player_decision
 // Params 2, eflags: 0x6 linked

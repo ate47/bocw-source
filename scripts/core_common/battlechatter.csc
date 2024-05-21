@@ -298,7 +298,7 @@ function game_end_vox(player, eventid) {
     factionlist = map::function_596f8772();
     teammask = getteammask(player.team);
     for (teamindex = 0; teammask > 1; teamindex++) {
-        teammask = teammask >> 1;
+        teammask >>= 1;
     }
     if (teamindex % 2) {
         faction = getscriptbundle(isdefined(factionlist.faction[teamindex].var_d2446fa0) ? factionlist.faction[teamindex].var_d2446fa0 : #"");

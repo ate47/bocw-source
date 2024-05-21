@@ -176,7 +176,7 @@ function updateweapon() {
         if (self isfiring()) {
             decay = int(decay * (3 - self.doa.var_d6b75dff));
         }
-        self.doa.var_d8955419 = self.doa.var_d8955419 - decay;
+        self.doa.var_d8955419 -= decay;
         if (self.doa.var_d8955419 < 0) {
             self.doa.var_d8955419 = 0;
         }
@@ -195,7 +195,7 @@ function updateweapon() {
         }
         self namespace_e32bb68::function_3a59ec34("evt_doa_pickup_weapon_downgraded");
         /#
-            debugmsg("<unknown string>" + self.name + "<unknown string>" + self.doa.weaponlevel + "<unknown string>" + [[ self.doa.weaponpack ]]->getname());
+            namespace_1e25ad94::debugmsg("<unknown string>" + self.name + "<unknown string>" + self.doa.weaponlevel + "<unknown string>" + [[ self.doa.weaponpack ]]->getname());
         #/
     }
     if (self.doa.var_fd5fcb75 != self.doa.var_ed8fde10) {
@@ -216,18 +216,18 @@ function function_51e99bc7(amount = 1) {
     if (is_true(self.doa.respawning)) {
         return;
     }
-    self.doa.var_d8955419 = self.doa.var_d8955419 + int(64 * amount);
+    self.doa.var_d8955419 += int(64 * amount);
     if (self.doa.var_d8955419 >= 1024) {
         if (self.doa.weaponlevel < 2) {
             oldlevel = self.doa.weaponlevel;
-            self.doa.weaponlevel = self.doa.weaponlevel + int(self.doa.var_d8955419 / 1024);
+            self.doa.weaponlevel += int(self.doa.var_d8955419 / 1024);
             if (self.doa.weaponlevel > 2) {
                 self.doa.weaponlevel = 2;
             }
             if (oldlevel == 1 && self.doa.weaponlevel == 2) {
                 self thread namespace_6e90e490::function_47e11416(5);
             }
-            self.doa.var_d8955419 = self.doa.var_d8955419 - (self.doa.weaponlevel - oldlevel) * 1024;
+            self.doa.var_d8955419 -= (self.doa.weaponlevel - oldlevel) * 1024;
             time = gettime() + 2000;
             if (self.doa.var_909a4dd5 < time) {
                 self.doa.var_909a4dd5 = time;
@@ -235,7 +235,7 @@ function function_51e99bc7(amount = 1) {
             self function_a5a7bbb7([[ self.doa.weaponpack ]]->function_91c18b19(self.doa.weaponlevel));
             self namespace_e32bb68::function_3a59ec34("evt_doa_pickup_weapon_upgraded");
             /#
-                debugmsg("<unknown string>" + self.name + "<unknown string>" + self.doa.weaponlevel + "<unknown string>" + [[ self.doa.weaponpack ]]->getname());
+                namespace_1e25ad94::debugmsg("<unknown string>" + self.name + "<unknown string>" + self.doa.weaponlevel + "<unknown string>" + [[ self.doa.weaponpack ]]->getname());
             #/
         } else {
             self.doa.var_d8955419 = 1023;
@@ -323,7 +323,7 @@ function function_6c4d9896(var_9de8aead, weaponpickup = 0) {
         self.doa.var_d8955419 = 1023;
     }
     /#
-        debugmsg("<unknown string>" + self.name + "<unknown string>" + self.doa.var_fd5fcb75 + "<unknown string>" + (is_true(fill) ? "<unknown string>" : "<unknown string>"));
+        namespace_1e25ad94::debugmsg("<unknown string>" + self.name + "<unknown string>" + self.doa.var_fd5fcb75 + "<unknown string>" + (is_true(fill) ? "<unknown string>" : "<unknown string>"));
         self thread function_a91422ce();
     #/
     profilestop();
@@ -513,7 +513,7 @@ function function_eae80c2(origin, var_ce35a286, target, var_7aea2f21 = 0.1) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xce19c76, Offset: 0x2300
 // Size: 0xc2
-function function_41a10718(*timesec, var_effbd38b = 1) {
+function ui_menu_ftue_itemshop(*timesec, var_effbd38b = 1) {
     time = gettime();
     if (self.doa.var_909a4dd5 < time && is_true(var_effbd38b)) {
         self thread function_a0a68431();

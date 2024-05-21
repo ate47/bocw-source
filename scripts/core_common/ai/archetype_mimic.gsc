@@ -701,10 +701,10 @@ function function_5f11c5b7(entity, *asmstatename) {
         if (is_true(level.var_ec72eeae)) {
             recordstar(var_2ed29acc, (0, 1, 0), "<unknown string>");
             recordline(var_1ed13caa, var_2ed29acc, (0, 1, 0), "<unknown string>");
-            recordstar(closest_point_on_line(closest_player.origin, var_1ed13caa, var_2ed29acc), (1, 0, 1), "<unknown string>");
+            recordstar(math::closest_point_on_line(closest_player.origin, var_1ed13caa, var_2ed29acc), (1, 0, 1), "<unknown string>");
             recordstar(var_a36e995b, (0, 1, 0), "<unknown string>");
             recordline(var_e49586c9, var_a36e995b, (0, 1, 0), "<unknown string>");
-            recordstar(closest_point_on_line(closest_player.origin, var_e49586c9, var_a36e995b), (1, 0, 1), "<unknown string>");
+            recordstar(math::closest_point_on_line(closest_player.origin, var_e49586c9, var_a36e995b), (1, 0, 1), "<unknown string>");
         }
     #/
     if (!isdefined(closest_player) || closest_player isplayinganimscripted() || isdefined(asmstatename.var_f6fd2062) && ![[ asmstatename.var_f6fd2062 ]](closest_player) || !istouching(math::closest_point_on_line(closest_player.origin, var_1ed13caa, var_2ed29acc), closest_player, var_52b615cf) || !istouching(math::closest_point_on_line(closest_player.origin, var_e49586c9, var_a36e995b), closest_player, var_52b615cf)) {
@@ -803,75 +803,74 @@ function private function_8177d507(entity) {
     entity.var_8706203c = gettime() + int(10 * 1000);
 }
 
-// Namespace archetype_mimic/archetype_mimic
-// Params 0, eflags: 0x0
-// Checksum 0x75d5ceb2, Offset: 0x3ea0
-// Size: 0x76c
-function function_b2616fd7() {
-    /#
+/#
+
+    // Namespace archetype_mimic/archetype_mimic
+    // Params 0, eflags: 0x0
+    // Checksum 0x75d5ceb2, Offset: 0x3ea0
+    // Size: 0x76c
+    function function_b2616fd7() {
         function_5ac4dc99(#"hash_63d887d4b23cb6e", "<unknown string>");
         function_cd140ee9(#"hash_63d887d4b23cb6e", &function_c19802);
         __index = isdefined(__index) ? __index : 0;
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
         __index++;
         __index = isdefined(__index) ? __index : 0;
-        add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
+        util::add_debug_command("<unknown string>" + "<unknown string>" + "<unknown string>" + __index + "<unknown string>" + "<unknown string>" + "<unknown string>");
         __index++;
         level thread function_c5a69992(__index);
-    #/
-}
+    }
 
-// Namespace archetype_mimic/archetype_mimic
-// Params 1, eflags: 0x0
-// Checksum 0xe247a513, Offset: 0x4618
-// Size: 0x3cc
-function function_c19802(dvar) {
-    /#
+    // Namespace archetype_mimic/archetype_mimic
+    // Params 1, eflags: 0x0
+    // Checksum 0xe247a513, Offset: 0x4618
+    // Size: 0x3cc
+    function function_c19802(dvar) {
         tokens = strtok(dvar.value, "<unknown string>");
         switch (isdefined(tokens[0]) ? tokens[0] : "<unknown string>") {
         case #"hash_31323c2655b560b7":
@@ -902,7 +901,7 @@ function function_c19802(dvar) {
             level thread function_37c34605();
             break;
         case #"hash_10ab0e022e9a6697":
-            function_fd24f982();
+            mimic_prop_spawn::function_fd24f982();
             break;
         case #"hash_21d6880dde085ff6":
             level.var_72a9fe4c = !is_true(level.var_72a9fe4c);
@@ -932,20 +931,18 @@ function function_c19802(dvar) {
             return;
         }
         setdvar(#"hash_63d887d4b23cb6e", "<unknown string>");
-    #/
-}
+    }
 
-// Namespace archetype_mimic/archetype_mimic
-// Params 1, eflags: 0x0
-// Checksum 0xd8c9d8af, Offset: 0x49f0
-// Size: 0x218
-function function_c5a69992(__index) {
-    /#
+    // Namespace archetype_mimic/archetype_mimic
+    // Params 1, eflags: 0x0
+    // Checksum 0xd8c9d8af, Offset: 0x49f0
+    // Size: 0x218
+    function function_c5a69992(__index) {
         if (!isdefined(__index)) {
             __index = 0;
         }
         level endon(#"game_ended");
-        spawn_points = get_array("<unknown string>", "<unknown string>");
+        spawn_points = struct::get_array("<unknown string>", "<unknown string>");
         scriptbundlenames = [];
         foreach (index, point in spawn_points) {
             if (isdefined(point.scriptbundlename) && !isinarray(scriptbundlenames, point.scriptbundlename)) {
@@ -956,17 +953,15 @@ function function_c5a69992(__index) {
             }
         }
         foreach (name_index, name in scriptbundlenames) {
-            add_debug_command("<unknown string>" + __index + "<unknown string>" + function_9e72a96(name) + "<unknown string>" + name_index + "<unknown string>" + function_9e72a96(name) + "<unknown string>");
+            util::add_debug_command("<unknown string>" + __index + "<unknown string>" + function_9e72a96(name) + "<unknown string>" + name_index + "<unknown string>" + function_9e72a96(name) + "<unknown string>");
         }
-    #/
-}
+    }
 
-// Namespace archetype_mimic/archetype_mimic
-// Params 0, eflags: 0x0
-// Checksum 0x27c591c9, Offset: 0x4c10
-// Size: 0x21a
-function function_f543fa16() {
-    /#
+    // Namespace archetype_mimic/archetype_mimic
+    // Params 0, eflags: 0x0
+    // Checksum 0x27c591c9, Offset: 0x4c10
+    // Size: 0x21a
+    function function_f543fa16() {
         level.("<unknown string>") = !is_true(level.("<unknown string>"));
         if (!is_true(level.("<unknown string>"))) {
             level notify(#"kill_" + "<unknown string>");
@@ -974,7 +969,7 @@ function function_f543fa16() {
         }
         level endon(#"kill_" + "<unknown string>");
         while (true) {
-            var_2a1f535d = function_2e8c33f6();
+            var_2a1f535d = mimic_prop_spawn::function_2e8c33f6();
             foreach (trap_prop in var_2a1f535d) {
                 color = is_true(trap_prop.pause_trap) ? (1, 0, 0) : (0, 1, 1);
                 debugstar(trap_prop.origin, 1, color);
@@ -985,15 +980,13 @@ function function_f543fa16() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace archetype_mimic/archetype_mimic
-// Params 0, eflags: 0x0
-// Checksum 0x1d008253, Offset: 0x4e38
-// Size: 0x162
-function function_fa613511() {
-    /#
+    // Namespace archetype_mimic/archetype_mimic
+    // Params 0, eflags: 0x0
+    // Checksum 0x1d008253, Offset: 0x4e38
+    // Size: 0x162
+    function function_fa613511() {
         level.("<unknown string>") = !is_true(level.("<unknown string>"));
         if (!is_true(level.("<unknown string>"))) {
             level notify(#"kill_" + "<unknown string>");
@@ -1009,15 +1002,13 @@ function function_fa613511() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace archetype_mimic/archetype_mimic
-// Params 0, eflags: 0x0
-// Checksum 0x5ccee968, Offset: 0x4fa8
-// Size: 0xf4
-function function_ea10da3f() {
-    /#
+    // Namespace archetype_mimic/archetype_mimic
+    // Params 0, eflags: 0x0
+    // Checksum 0x5ccee968, Offset: 0x4fa8
+    // Size: 0xf4
+    function function_ea10da3f() {
         waitframe(1);
         player = getplayers()[0];
         direction = player getplayerangles();
@@ -1026,15 +1017,13 @@ function function_ea10da3f() {
         direction_vec = (direction_vec[0] * 8000, direction_vec[1] * 8000, direction_vec[2] * 8000);
         trace = bullettrace(eye, eye + direction_vec, 0, undefined);
         return trace;
-    #/
-}
+    }
 
-// Namespace archetype_mimic/archetype_mimic
-// Params 0, eflags: 0x0
-// Checksum 0x51493cd8, Offset: 0x50a8
-// Size: 0xac
-function function_a42f6839() {
-    /#
+    // Namespace archetype_mimic/archetype_mimic
+    // Params 0, eflags: 0x0
+    // Checksum 0x51493cd8, Offset: 0x50a8
+    // Size: 0xac
+    function function_a42f6839() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         trace = function_ea10da3f();
@@ -1042,56 +1031,48 @@ function function_a42f6839() {
         if (!queryresult.data.size) {
             return;
         }
-        function_b309db61(queryresult.data, undefined, level.var_dc3159ff);
-    #/
-}
+        mimic_prop_spawn::function_b309db61(queryresult.data, undefined, level.var_dc3159ff);
+    }
 
-// Namespace archetype_mimic/archetype_mimic
-// Params 0, eflags: 0x0
-// Checksum 0xa0828702, Offset: 0x5160
-// Size: 0x64
-function function_d70b96a8() {
-    /#
+    // Namespace archetype_mimic/archetype_mimic
+    // Params 0, eflags: 0x0
+    // Checksum 0xa0828702, Offset: 0x5160
+    // Size: 0x64
+    function function_d70b96a8() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         trace = function_ea10da3f();
-        function_51012821(trace[#"position"], undefined, undefined, 3);
-    #/
-}
+        mimic_prop_spawn::function_51012821(trace[#"position"], undefined, undefined, 3);
+    }
 
-// Namespace archetype_mimic/archetype_mimic
-// Params 0, eflags: 0x0
-// Checksum 0x43dd2511, Offset: 0x51d0
-// Size: 0x64
-function function_5b9e63e6() {
-    /#
+    // Namespace archetype_mimic/archetype_mimic
+    // Params 0, eflags: 0x0
+    // Checksum 0x43dd2511, Offset: 0x51d0
+    // Size: 0x64
+    function function_5b9e63e6() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         trace = function_ea10da3f();
-        function_51012821(trace[#"position"], undefined, undefined, 1);
-    #/
-}
+        mimic_prop_spawn::function_51012821(trace[#"position"], undefined, undefined, 1);
+    }
 
-// Namespace archetype_mimic/archetype_mimic
-// Params 0, eflags: 0x0
-// Checksum 0x5fb225f8, Offset: 0x5240
-// Size: 0xa4
-function function_3bd29cb8() {
-    /#
+    // Namespace archetype_mimic/archetype_mimic
+    // Params 0, eflags: 0x0
+    // Checksum 0x5fb225f8, Offset: 0x5240
+    // Size: 0xa4
+    function function_3bd29cb8() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         trace = function_ea10da3f();
         closest_point = arraygetclosest(trace[#"position"], level.var_6e175eb);
-        function_b309db61(array(closest_point), undefined, undefined);
-    #/
-}
+        mimic_prop_spawn::function_b309db61(array(closest_point), undefined, undefined);
+    }
 
-// Namespace archetype_mimic/archetype_mimic
-// Params 0, eflags: 0x0
-// Checksum 0xdbb45d75, Offset: 0x52f0
-// Size: 0xca
-function function_d312cd2c() {
-    /#
+    // Namespace archetype_mimic/archetype_mimic
+    // Params 0, eflags: 0x0
+    // Checksum 0xdbb45d75, Offset: 0x52f0
+    // Size: 0xca
+    function function_d312cd2c() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         trace = function_ea10da3f();
@@ -1099,15 +1080,13 @@ function function_d312cd2c() {
         if (isdefined(mimic)) {
             mimic.never_hide = 1;
         }
-    #/
-}
+    }
 
-// Namespace archetype_mimic/archetype_mimic
-// Params 0, eflags: 0x0
-// Checksum 0xb856ff21, Offset: 0x53c8
-// Size: 0x142
-function function_37c34605() {
-    /#
+    // Namespace archetype_mimic/archetype_mimic
+    // Params 0, eflags: 0x0
+    // Checksum 0xb856ff21, Offset: 0x53c8
+    // Size: 0x142
+    function function_37c34605() {
         level.("<unknown string>") = !is_true(level.("<unknown string>"));
         if (!is_true(level.("<unknown string>"))) {
             level notify(#"kill_" + "<unknown string>");
@@ -1120,15 +1099,13 @@ function function_37c34605() {
             }
             waitframe(5);
         }
-    #/
-}
+    }
 
-// Namespace archetype_mimic/archetype_mimic
-// Params 0, eflags: 0x0
-// Checksum 0xdb785813, Offset: 0x5518
-// Size: 0x274
-function function_bc75224c() {
-    /#
+    // Namespace archetype_mimic/archetype_mimic
+    // Params 0, eflags: 0x0
+    // Checksum 0xdb785813, Offset: 0x5518
+    // Size: 0x274
+    function function_bc75224c() {
         level.("<unknown string>") = !is_true(level.("<unknown string>"));
         if (!is_true(level.("<unknown string>"))) {
             level notify(#"kill_" + "<unknown string>");
@@ -1140,7 +1117,7 @@ function function_bc75224c() {
         spawn_points = [];
         while (true) {
             if (gettime() >= var_88f244b8 + var_d6d4c388) {
-                spawn_points = function_bc29cf28();
+                spawn_points = mimic_prop_spawn::function_bc29cf28();
                 var_88f244b8 = gettime();
             }
             foreach (point in spawn_points) {
@@ -1149,41 +1126,37 @@ function function_bc75224c() {
             }
             wait(0.5);
         }
-    #/
-}
+    }
 
-// Namespace archetype_mimic/archetype_mimic
-// Params 0, eflags: 0x0
-// Checksum 0x4c0fe291, Offset: 0x5798
-// Size: 0xbc
-function function_6469c221() {
-    /#
+    // Namespace archetype_mimic/archetype_mimic
+    // Params 0, eflags: 0x0
+    // Checksum 0x4c0fe291, Offset: 0x5798
+    // Size: 0xbc
+    function function_6469c221() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         trace = function_ea10da3f();
-        spawn_structs = function_bc29cf28();
+        spawn_structs = mimic_prop_spawn::function_bc29cf28();
         if (!spawn_structs.size) {
             return;
         }
         closest_struct = arraygetclosest(trace[#"position"], spawn_structs);
-        function_b309db61([closest_struct]);
-    #/
-}
+        mimic_prop_spawn::function_b309db61([closest_struct]);
+    }
 
-// Namespace archetype_mimic/archetype_mimic
-// Params 0, eflags: 0x0
-// Checksum 0xb9c1cb60, Offset: 0x5860
-// Size: 0x2f4
-function function_7f6a5e14() {
-    /#
+    // Namespace archetype_mimic/archetype_mimic
+    // Params 0, eflags: 0x0
+    // Checksum 0xb9c1cb60, Offset: 0x5860
+    // Size: 0x2f4
+    function function_7f6a5e14() {
         level.("<unknown string>") = !is_true(level.("<unknown string>"));
         if (!is_true(level.("<unknown string>"))) {
             level notify(#"kill_" + "<unknown string>");
             return;
         }
         level endon(#"kill_" + "<unknown string>");
-        var_d4034654 = get_array("<unknown string>", "<unknown string>");
-        var_d4034654 = arraycombine(var_d4034654, function_bc29cf28(), 0, 0);
+        var_d4034654 = struct::get_array("<unknown string>", "<unknown string>");
+        var_d4034654 = arraycombine(var_d4034654, mimic_prop_spawn::function_bc29cf28(), 0, 0);
         waitframe(1);
         while (true) {
             player = getplayers()[0];
@@ -1200,15 +1173,13 @@ function function_7f6a5e14() {
             }
             wait(0.25);
         }
-    #/
-}
+    }
 
-// Namespace archetype_mimic/archetype_mimic
-// Params 1, eflags: 0x4
-// Checksum 0x5628ac1, Offset: 0x5b60
-// Size: 0x580
-function private function_5ef9a937(point) {
-    /#
+    // Namespace archetype_mimic/archetype_mimic
+    // Params 1, eflags: 0x4
+    // Checksum 0x5628ac1, Offset: 0x5b60
+    // Size: 0x580
+    function private function_5ef9a937(point) {
         if (isdefined(point.lure_prop_type)) {
             switch (point.lure_prop_type) {
             case 0:
@@ -1228,7 +1199,7 @@ function private function_5ef9a937(point) {
             new_origin = groundtrace(point.origin + (0, 0, 15) + (0, 0, 8), point.origin + (0, 0, 15) + (0, 0, -100000), 0, undefined)[#"position"];
         }
         validation_info = {#origin:new_origin, #angles:point.angles, #var_60d91344:[], #var_ed56107c:[]};
-        for (i = -180; i < 180; i = i + 15) {
+        for (i = -180; i < 180; i += 15) {
             move_delta = getmovedelta(#"hash_414bef9b5dcae460");
             angle_delta = getangledelta(#"hash_414bef9b5dcae460");
             move_delta = rotatepoint(move_delta, point.angles + (0, angle_delta + i, 0));
@@ -1247,20 +1218,18 @@ function private function_5ef9a937(point) {
             validation_info.var_ed56107c[validation_info.var_ed56107c.size] = var_ed56107c;
         }
         return validation_info;
-    #/
-}
+    }
 
-// Namespace archetype_mimic/archetype_mimic
-// Params 1, eflags: 0x4
-// Checksum 0xd759a16, Offset: 0x60e8
-// Size: 0x130
-function private function_ccc08aea(validation_info) {
-    /#
+    // Namespace archetype_mimic/archetype_mimic
+    // Params 1, eflags: 0x4
+    // Checksum 0xd759a16, Offset: 0x60e8
+    // Size: 0x130
+    function private function_ccc08aea(validation_info) {
         foreach (var_ed56107c in validation_info.var_ed56107c) {
             debugstar(var_ed56107c.var_dc11f544, 5, var_ed56107c.passed ? (0, 1, 0) : (1, 0, 0));
             line(var_ed56107c.var_dc11f544, var_ed56107c.var_20f2bd48, var_ed56107c.passed ? (0, 1, 0) : (1, 0, 0), 1, 0, 5);
             line(var_ed56107c.var_9f7d6d3b, var_ed56107c.var_dc11f544, (1, 0, 1), 1, 0, 5);
         }
-    #/
-}
+    }
 
+#/

@@ -411,7 +411,7 @@ function function_7cda7776(var_faa74cb) {
 // Size: 0x248
 function function_d4c74ab3() {
     /#
-        a_triggers = get_all();
+        a_triggers = trigger::get_all();
         foreach (trig in a_triggers) {
             if (isdefined(trig.targetname)) {
                 str_trig_name = "<unknown string>" + trig.targetname + "<unknown string>";
@@ -419,15 +419,15 @@ function function_d4c74ab3() {
                 str_trig_name = "<unknown string>" + trig getentitynumber() + "<unknown string>";
             }
             if (isdefined(trig.scriptgroup_initscenes)) {
-                a_instances = get_array(trig.scriptgroup_initscenes, "<unknown string>");
+                a_instances = struct::get_array(trig.scriptgroup_initscenes, "<unknown string>");
                 assert(a_instances.size, "<unknown string>" + str_trig_name + "<unknown string>" + trig.scriptgroup_initscenes);
             }
             if (isdefined(trig.scriptgroup_playscenes)) {
-                a_instances = get_array(trig.scriptgroup_playscenes, "<unknown string>");
+                a_instances = struct::get_array(trig.scriptgroup_playscenes, "<unknown string>");
                 assert(a_instances.size, "<unknown string>" + str_trig_name + "<unknown string>" + trig.scriptgroup_playscenes);
             }
             if (isdefined(trig.scriptgroup_stopscenes)) {
-                a_instances = get_array(trig.scriptgroup_stopscenes, "<unknown string>");
+                a_instances = struct::get_array(trig.scriptgroup_stopscenes, "<unknown string>");
                 assert(a_instances.size, "<unknown string>" + str_trig_name + "<unknown string>" + trig.scriptgroup_stopscenes);
             }
         }
@@ -612,12 +612,13 @@ function private function_f61e64e8(a_ents, var_4ebc26aa, var_822d3bf5, var_7e21e
     println("<unknown string>" + var_4ebc26aa + "<unknown string>" + var_7e21e745);
 }
 
-// Namespace scene/scene_shared
-// Params 3, eflags: 0x4
-// Checksum 0x6c382964, Offset: 0x2e60
-// Size: 0x1e6
-function private function_41dc295(var_9cef00e4, var_822d3bf5, str_scene_name) {
-    /#
+/#
+
+    // Namespace scene/scene_shared
+    // Params 3, eflags: 0x4
+    // Checksum 0x6c382964, Offset: 0x2e60
+    // Size: 0x1e6
+    function private function_41dc295(var_9cef00e4, var_822d3bf5, str_scene_name) {
         var_9cef00e4 endon(#"death");
         if (isdefined(str_scene_name)) {
             level endon(str_scene_name + "<unknown string>");
@@ -639,8 +640,9 @@ function private function_41dc295(var_9cef00e4, var_822d3bf5, str_scene_name) {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace scene/scene_shared
 // Params 3, eflags: 0x2 linked
@@ -1495,7 +1497,7 @@ function private _play_instance(s_tracker, str_scenedef = self.scriptbundlename,
         var_8b21886e = function_d1abba8b(str_scenedef, str_shot, str_mode, n_time, var_5b51581a);
         str_shot = var_8b21886e.var_ef711d04;
         var_dd2b75b = var_8b21886e.var_3486c904;
-        str_mode = str_mode + ":" + var_dd2b75b;
+        str_mode += ":" + var_dd2b75b;
     }
     if (str_mode === "init") {
         str_shot = function_de6a7579(str_scenedef, str_mode);
@@ -1693,13 +1695,13 @@ function play_from_time(arg1, arg2, arg3, n_time, var_c9d6bbb = 1, var_20dda4d1 
         str_mode = "play_from_time_elapsed";
     }
     if ((function_d3e3e0c7(arg1) || function_d3e3e0c7(arg2)) && var_20dda4d1) {
-        str_mode = str_mode + "_single";
+        str_mode += "_single";
     }
     if (!b_include_players) {
-        str_mode = str_mode + "_noplayers";
+        str_mode += "_noplayers";
     }
     if (!var_2250555) {
-        str_mode = str_mode + "_noai";
+        str_mode += "_noai";
     }
     play(arg1, arg2, arg3, 0, str_mode, n_time);
 }
@@ -1758,11 +1760,11 @@ function function_1eab8670(obj, str_shot) {
             if (s_shot.name === tolower(str_shot) && isdefined(s_shot.entry)) {
                 foreach (s_entry in s_shot.entry) {
                     if (isdefined(s_entry.cameraswitcher)) {
-                        var_5a162d58 = var_5a162d58 + float(getcamanimtime(s_entry.cameraswitcher)) / 1000;
+                        var_5a162d58 += float(getcamanimtime(s_entry.cameraswitcher)) / 1000;
                         continue;
                     }
                     if (isdefined(s_entry.anim)) {
-                        n_anim_length = n_anim_length + getanimlength(s_entry.anim);
+                        n_anim_length += getanimlength(s_entry.anim);
                     }
                 }
                 break;
@@ -1797,7 +1799,7 @@ function function_dde5f483(str_scenedef, n_elapsed_time) {
             var_8b21886e.var_3486c904 = (n_elapsed_time - var_219aac3f) / var_958bccd3;
             return var_8b21886e;
         }
-        var_7a2504a = var_7a2504a + var_958bccd3;
+        var_7a2504a += var_958bccd3;
     }
     var_8b21886e.var_ef711d04 = a_shots[a_shots.size - 1];
     var_8b21886e.var_3486c904 = 0.99;
@@ -1833,7 +1835,7 @@ function function_12479eba(str_scenedef) {
     a_shots = get_all_shot_names(str_scenedef, 1);
     var_9d90ef8b = 0;
     foreach (str_shot in a_shots) {
-        var_9d90ef8b = var_9d90ef8b + function_8582657c(s_scenedef, str_shot);
+        var_9d90ef8b += function_8582657c(s_scenedef, str_shot);
     }
     return var_9d90ef8b;
 }
@@ -2215,7 +2217,7 @@ function updateigcviewtime(b_in_igc) {
             if (!isdefined(player.totaligcviewtime)) {
                 player.totaligcviewtime = 0;
             }
-            player.totaligcviewtime = player.totaligcviewtime + int(float(igcviewtimesec) / 1000);
+            player.totaligcviewtime += int(float(igcviewtimesec) / 1000);
         }
     }
 }
@@ -2228,9 +2230,9 @@ function set_igc_active(b_in_igc) {
     n_ent_num = self getentitynumber();
     n_players_in_igc_field = level clientfield::get("in_igc");
     if (b_in_igc) {
-        n_players_in_igc_field = n_players_in_igc_field | 1 << n_ent_num;
+        n_players_in_igc_field |= 1 << n_ent_num;
     } else {
-        n_players_in_igc_field = n_players_in_igc_field & ~(1 << n_ent_num);
+        n_players_in_igc_field &= ~(1 << n_ent_num);
     }
     updateigcviewtime(b_in_igc);
     level clientfield::set("in_igc", n_players_in_igc_field);
@@ -2759,12 +2761,13 @@ function synced_delete(str_scene) {
     self delete();
 }
 
-// Namespace scene/scene_shared
-// Params 1, eflags: 0x0
-// Checksum 0xf857cda9, Offset: 0xb3b0
-// Size: 0x11c
-function error_on_screen(str_msg) {
-    /#
+/#
+
+    // Namespace scene/scene_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0xf857cda9, Offset: 0xb3b0
+    // Size: 0x11c
+    function error_on_screen(str_msg) {
         str_msg = function_9e72a96(str_msg);
         if (str_msg != "<unknown string>") {
             if (!isdefined(level.scene_error_hud)) {
@@ -2779,29 +2782,25 @@ function error_on_screen(str_msg) {
             level.scene_error_hud settext(str_msg);
             self thread _destroy_error_on_screen();
         }
-    #/
-}
+    }
 
-// Namespace scene/scene_shared
-// Params 0, eflags: 0x0
-// Checksum 0x6ff2c3e6, Offset: 0xb4d8
-// Size: 0x86
-function _destroy_error_on_screen() {
-    /#
+    // Namespace scene/scene_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x6ff2c3e6, Offset: 0xb4d8
+    // Size: 0x86
+    function _destroy_error_on_screen() {
         level notify(#"_destroy_error_on_screen");
         level endon(#"_destroy_error_on_screen");
         self waittilltimeout(5, #"scene_stop", #"scene_done");
         level.scene_error_hud destroy();
         level.scene_error_hud = undefined;
-    #/
-}
+    }
 
-// Namespace scene/scene_shared
-// Params 1, eflags: 0x0
-// Checksum 0x1b6228d0, Offset: 0xb568
-// Size: 0x11c
-function warning_on_screen(str_msg) {
-    /#
+    // Namespace scene/scene_shared
+    // Params 1, eflags: 0x0
+    // Checksum 0x1b6228d0, Offset: 0xb568
+    // Size: 0x11c
+    function warning_on_screen(str_msg) {
         str_msg = function_9e72a96(str_msg);
         if (str_msg != "<unknown string>") {
             if (!isdefined(level.scene_warning_hud)) {
@@ -2816,22 +2815,21 @@ function warning_on_screen(str_msg) {
             level.scene_warning_hud settext(str_msg);
             self thread _destroy_warning_on_screen();
         }
-    #/
-}
+    }
 
-// Namespace scene/scene_shared
-// Params 0, eflags: 0x0
-// Checksum 0x28a19a8a, Offset: 0xb690
-// Size: 0x86
-function _destroy_warning_on_screen() {
-    /#
+    // Namespace scene/scene_shared
+    // Params 0, eflags: 0x0
+    // Checksum 0x28a19a8a, Offset: 0xb690
+    // Size: 0x86
+    function _destroy_warning_on_screen() {
         level notify(#"_destroy_warning_on_screen");
         level endon(#"_destroy_warning_on_screen");
         self waittilltimeout(5, #"scene_stop", #"scene_done");
         level.scene_warning_hud destroy();
         level.scene_warning_hud = undefined;
-    #/
-}
+    }
+
+#/
 
 // Namespace scene/scene_shared
 // Params 2, eflags: 0x2 linked
@@ -2839,7 +2837,7 @@ function _destroy_warning_on_screen() {
 // Size: 0xc4
 function wait_server_time(n_time, n_start_time = 0) {
     n_len = n_time - n_time * n_start_time;
-    n_len = n_len / float(function_60d95f53()) / 1000;
+    n_len /= float(function_60d95f53()) / 1000;
     n_len_int = int(n_len);
     if (n_len_int != n_len) {
         n_len = floor(n_len);

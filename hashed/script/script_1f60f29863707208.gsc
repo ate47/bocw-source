@@ -138,7 +138,7 @@ function function_bb5d646a(localclientnum, *oldval, *newval, *bnewent, *binitial
     }
     e_fx = util::spawn_model(bwasdemojump, "tag_origin", self gettagorigin("J_Spine4"));
     playsound(bwasdemojump, #"hash_10f64731553b9b9d", e_fx.origin);
-    e_fx.var_94450cf4 = e_fx playloopsound(#"hash_1cefc6f663a17a63");
+    e_fx.sound_id = e_fx playloopsound(#"hash_1cefc6f663a17a63");
     var_f0029f2 = struct::get_array("harvesting_unit", "targetname");
     harvesting_unit = arraygetclosest(self.origin, var_f0029f2);
     util::playfxontag(bwasdemojump, #"hash_61e3c7a179d7cdfb", e_fx, "tag_origin");
@@ -148,7 +148,7 @@ function function_bb5d646a(localclientnum, *oldval, *newval, *bnewent, *binitial
     e_fx moveto(harvesting_unit.origin + (0, 0, 32), n_time);
     e_fx waittill(#"movedone");
     util::playfxontag(bwasdemojump, #"hash_4d1d38d5da4d929b", e_fx, "tag_origin");
-    e_fx stoploopsound(e_fx.var_94450cf4);
+    e_fx stoploopsound(e_fx.sound_id);
     playsound(bwasdemojump, #"hash_150b4ab213c5864", e_fx.origin);
     wait(0.3);
     e_fx delete();
@@ -495,7 +495,7 @@ function function_6774a2f2(localclientnum, *oldval, *newval, *bnewent, *binitial
     var_3b1d1169 = getent(bwastimejump, "lab_second_hidden_door", "targetname");
     level notify(#"hash_39278a16dce99955");
     if (isdefined(var_3b1d1169.brightness)) {
-        var_3b1d1169.brightness = var_3b1d1169.brightness + 0.025;
+        var_3b1d1169.brightness += 0.025;
         if (var_3b1d1169.brightness < 0) {
             var_3b1d1169.brightness = 0;
         } else if (var_3b1d1169.brightness > 1) {
@@ -526,8 +526,8 @@ function function_a28ff742(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         playsound(fieldname, #"hash_18233b644512c916", (-2739, 14319, -320));
         while (var_3b1d1169.reveal > 0) {
-            var_3b1d1169.reveal = var_3b1d1169.reveal - 0.05;
-            var_3b1d1169.brightness = var_3b1d1169.brightness - 0.05;
+            var_3b1d1169.reveal -= 0.05;
+            var_3b1d1169.brightness -= 0.05;
             wait(0.1);
             if (var_3b1d1169.reveal < 0) {
                 var_3b1d1169.reveal = 0;
@@ -574,7 +574,7 @@ function function_296ed7c6(localclientnum, *oldval, newval, *bnewent, *binitials
             var_3b1d1169.var_d280dacf = 0;
         }
         while (var_3b1d1169.brightness > 0) {
-            var_3b1d1169.brightness = var_3b1d1169.brightness - 0.01;
+            var_3b1d1169.brightness -= 0.01;
             wait(0.02);
             if (var_3b1d1169.brightness < 0) {
                 var_3b1d1169.brightness = 0;

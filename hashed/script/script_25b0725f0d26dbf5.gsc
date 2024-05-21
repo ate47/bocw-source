@@ -174,12 +174,13 @@ function function_f305c075() {
     }
 }
 
-// Namespace namespace_b7cfe907/namespace_862012f3
-// Params 1, eflags: 0x0
-// Checksum 0x29ba45d7, Offset: 0x16f8
-// Size: 0xcc
-function function_bda8e87c(time) {
-    /#
+/#
+
+    // Namespace namespace_b7cfe907/namespace_862012f3
+    // Params 1, eflags: 0x0
+    // Checksum 0x29ba45d7, Offset: 0x16f8
+    // Size: 0xcc
+    function function_bda8e87c(time) {
         var_d2352269 = getdvarint(#"hash_161a6ec03efc35e9", 3);
         if (var_d2352269 == 0) {
             if ("<unknown string>" == "<unknown string>") {
@@ -191,8 +192,9 @@ function function_bda8e87c(time) {
             wait(time);
             adddebugcommand("<unknown string>");
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_b7cfe907/namespace_862012f3
 // Params 1, eflags: 0x2 linked
@@ -1337,7 +1339,7 @@ function function_7e3b4837(var_80561a4a) {
     if (is_true(var_80561a4a)) {
         if (isdefined(self.var_42cfec27) && self.var_42cfec27 != "") {
             var_b0c85051 = soundgetplaybacktime(self.var_42cfec27) * 0.001;
-            var_b0c85051 = var_b0c85051 - 0.5;
+            var_b0c85051 -= 0.5;
             if (var_b0c85051 > 0) {
                 var_b0c85051 = math::clamp(var_b0c85051, 0.25, 1.5);
                 self playsound(self.var_42cfec27);
@@ -1621,7 +1623,7 @@ function function_48fcfe89() {
     step = 0.05;
     while (true) {
         iprintln("t: " + time);
-        time = time + step;
+        time += step;
         wait(step);
     }
 }
@@ -1738,12 +1740,13 @@ function function_2647f901(var_44a53a25, var_a586dc85 = 1, n_scale = 1.6) {
     setdvar(#"hash_27a2597778a64794", var_cda33ee6);
 }
 
-// Namespace namespace_b7cfe907/namespace_862012f3
-// Params 0, eflags: 0x0
-// Checksum 0x5101785c, Offset: 0x7488
-// Size: 0x7e
-function function_a079809e() {
-    /#
+/#
+
+    // Namespace namespace_b7cfe907/namespace_862012f3
+    // Params 0, eflags: 0x0
+    // Checksum 0x5101785c, Offset: 0x7488
+    // Size: 0x7e
+    function function_a079809e() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         while (true) {
@@ -1751,15 +1754,13 @@ function function_a079809e() {
             iprintln("<unknown string>" + var_f55e1260);
             wait(1);
         }
-    #/
-}
+    }
 
-// Namespace namespace_b7cfe907/namespace_862012f3
-// Params 3, eflags: 0x0
-// Checksum 0x4f7f9a82, Offset: 0x7510
-// Size: 0xa6
-function function_becb869c(string, var_52763577, offset) {
-    /#
+    // Namespace namespace_b7cfe907/namespace_862012f3
+    // Params 3, eflags: 0x0
+    // Checksum 0x4f7f9a82, Offset: 0x7510
+    // Size: 0xa6
+    function function_becb869c(string, var_52763577, offset) {
         if (!isdefined(offset)) {
             offset = (0, 0, 0);
         }
@@ -1771,6 +1772,6 @@ function function_becb869c(string, var_52763577, offset) {
             print3d(self.origin + offset, string, (0, 1, 0), 1, 0.6, 1, 1);
             waitframe(1);
         }
-    #/
-}
+    }
 
+#/

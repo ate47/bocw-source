@@ -141,7 +141,7 @@ function private function_b21ea513() {
     if (!isdefined(var_8a75d6bc)) {
         return false;
     }
-    var_8a75d6bc = var_8a75d6bc + (0, 0, self getplayerviewheight());
+    var_8a75d6bc += (0, 0, self getplayerviewheight());
     self function_b5460039(var_8a75d6bc, #"hash_4d7ab907ebdddd3c", (1, 0.5, 0));
     return true;
 }
@@ -326,10 +326,10 @@ function private function_b5460039(point, var_e125ba43, debugcolor) {
     var_a3375299 = undefined;
     if (isdefined(self.bot.var_32d8dabe)) {
         var_a3375299 = point;
-        point = point + rotatepoint(self.bot.var_32d8dabe, self.angles + (0, 180, 0));
+        point += rotatepoint(self.bot.var_32d8dabe, self.angles + (0, 180, 0));
     }
     /#
-        if (self should_record("<unknown string>")) {
+        if (self bot::should_record("<unknown string>")) {
             function_af72dbc5(point, (-1.5, -1.5, -1.5), (1.5, 1.5, 1.5), self.angles[1], debugcolor, "<unknown string>", self);
             record3dtext(function_9e72a96(var_e125ba43), point + (0, 0, -0.75), (1, 1, 1), "<unknown string>", self, 0.5);
             if (isdefined(var_a3375299)) {

@@ -66,7 +66,7 @@ function main(var_d3440450, var_50cc0d4f) {
         probe = getent(probe, "targetname");
         if (isdefined(probe)) {
             probe unlink();
-            probe.origin = probe.origin - (0, 0, 10000);
+            probe.origin -= (0, 0, 10000);
         }
     }
     player = getplayers()[0];

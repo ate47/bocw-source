@@ -4,12 +4,13 @@
 
 #namespace ability_power;
 
-// Namespace ability_power/ability_power
-// Params 2, eflags: 0x0
-// Checksum 0x3056b043, Offset: 0xf8
-// Size: 0x104
-function cpower_print(slot, str) {
-    /#
+/#
+
+    // Namespace ability_power/ability_power
+    // Params 2, eflags: 0x0
+    // Checksum 0x3056b043, Offset: 0xf8
+    // Size: 0x104
+    function cpower_print(slot, str) {
         color = "<unknown string>";
         toprint = color + "<unknown string>" + str;
         weaponname = "<unknown string>";
@@ -21,8 +22,9 @@ function cpower_print(slot, str) {
             return;
         }
         println(self.playername + "<unknown string>" + weaponname + "<unknown string>" + toprint);
-    #/
-}
+    }
+
+#/
 
 // Namespace ability_power/ability_power
 // Params 1, eflags: 0x0
@@ -75,7 +77,7 @@ function power_gain_event_score(*event, eattacker, score, weapon) {
     }
     var_f1ee6456 = 1;
     /#
-        var_f1ee6456 = var_f1ee6456 * getdvarfloat(#"hash_eae9a8ee387705d", 1);
+        var_f1ee6456 *= getdvarfloat(#"hash_eae9a8ee387705d", 1);
     #/
     if (!isdefined(level.var_607bc6e7)) {
         level.var_607bc6e7 = getgametypesetting(#"scoreheropowergainfactor");
@@ -266,9 +268,9 @@ function power_consume_timer_think(slot, *weapon) {
         powerconsumpted = 0;
         if (self isonground()) {
             if (self._gadgets_player[weapon].gadget_powersprintloss > 0 && self issprinting()) {
-                powerconsumpted = powerconsumpted + 1 * float(interval) / 1000 * self._gadgets_player[weapon].gadget_powersprintloss;
+                powerconsumpted += 1 * float(interval) / 1000 * self._gadgets_player[weapon].gadget_powersprintloss;
             } else if (self._gadgets_player[weapon].gadget_powermoveloss && self ismovingpowerloss()) {
-                powerconsumpted = powerconsumpted + 1 * float(interval) / 1000 * self._gadgets_player[weapon].gadget_powermoveloss;
+                powerconsumpted += 1 * float(interval) / 1000 * self._gadgets_player[weapon].gadget_powermoveloss;
             }
         }
         if (powerconsumpted > 0.1) {

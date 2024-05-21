@@ -16,9 +16,9 @@ function register(str_name, func_preinit, func_postinit, var_e9137475, reqs) {
         level.system_funcs = [];
     }
     system = {#prefunc:func_preinit, #postfunc:func_postinit, #var_f30a1800:var_e9137475, #reqs:reqs, #flags:0};
-    system.flags = system.flags | (isdefined(func_preinit) ? 0 : 2);
-    system.flags = system.flags | (isdefined(func_postinit) ? 0 : 4);
-    system.flags = system.flags | (isdefined(var_e9137475) ? 0 : 8);
+    system.flags |= isdefined(func_preinit) ? 0 : 2;
+    system.flags |= isdefined(func_postinit) ? 0 : 4;
+    system.flags |= isdefined(var_e9137475) ? 0 : 8;
     level.system_funcs[str_name] = system;
 }
 
@@ -34,7 +34,7 @@ function exec_post_system(func) {
         if (isdefined(func.reqs)) {
             function_5095b2c6(func);
         }
-        func.flags = func.flags | 4;
+        func.flags |= 4;
         [[ func.postfunc ]]();
     }
 }
@@ -83,7 +83,7 @@ function exec_pre_system(func) {
             function_8dfa23e0(func);
         }
         [[ func.prefunc ]]();
-        func.flags = func.flags | 2;
+        func.flags |= 2;
     }
 }
 
@@ -129,7 +129,7 @@ function function_6cc01f0(func) {
             function_3e3686fa(func);
         }
         [[ func.var_f30a1800 ]]();
-        func.flags = func.flags | 8;
+        func.flags |= 8;
     }
 }
 

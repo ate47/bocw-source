@@ -60,12 +60,13 @@ function updatesitrepscan() {
     }
 }
 
-// Namespace perks/perks
-// Params 0, eflags: 0x0
-// Checksum 0xa6e15d9c, Offset: 0x6a8
-// Size: 0x2c0
-function updatedvars() {
-    /#
+/#
+
+    // Namespace perks/perks
+    // Params 0, eflags: 0x0
+    // Checksum 0xa6e15d9c, Offset: 0x6a8
+    // Size: 0x2c0
+    function updatedvars() {
         while (true) {
             level.sitrepscan1_enable = getdvarint(#"scr_sitrepscan1_enable", level.sitrepscan1_enable);
             level.sitrepscan1_setoutline = getdvarint(#"scr_sitrepscan1_setoutline", level.sitrepscan1_setoutline);
@@ -83,8 +84,9 @@ function updatedvars() {
             level.sitrepscan2_setdesat = getdvarfloat(#"scr_sitrepscan2_setdesat", level.sitrepscan2_setdesat);
             wait(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace perks/perks
 // Params 7, eflags: 0x2 linked
@@ -193,12 +195,13 @@ function on_player_spawned(local_client_num) {
     }
 }
 
-// Namespace perks/perks
-// Params 2, eflags: 0x0
-// Checksum 0x62966d79, Offset: 0xda8
-// Size: 0xac
-function array_equal(&a, &b) {
-    /#
+/#
+
+    // Namespace perks/perks
+    // Params 2, eflags: 0x0
+    // Checksum 0x62966d79, Offset: 0xda8
+    // Size: 0xac
+    function array_equal(&a, &b) {
         if (isdefined(a) && isdefined(b) && isarray(a) && isarray(b) && a.size == b.size) {
             for (i = 0; i < a.size; i++) {
                 if (a[i] !== b[i]) {
@@ -208,15 +211,13 @@ function array_equal(&a, &b) {
             return 1;
         }
         return 0;
-    #/
-}
+    }
 
-// Namespace perks/perks
-// Params 1, eflags: 0x0
-// Checksum 0x8b2e7849, Offset: 0xe60
-// Size: 0xd8
-function watch_perks_change(local_client_num) {
-    /#
+    // Namespace perks/perks
+    // Params 1, eflags: 0x0
+    // Checksum 0x8b2e7849, Offset: 0xe60
+    // Size: 0xd8
+    function watch_perks_change(local_client_num) {
         self notify(#"watch_perks_change");
         self endon(#"watch_perks_change");
         self endon(#"death");
@@ -229,8 +230,9 @@ function watch_perks_change(local_client_num) {
             }
             wait(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace perks/perks
 // Params 1, eflags: 0x0
@@ -784,20 +786,20 @@ function monitor_detectnearbyenemies(local_client_num) {
                     var_c729e60c = 2;
                 }
                 if (cosangle > 0.707107) {
-                    enemydetectedbitfield = enemydetectedbitfield | var_c729e60c << 0;
+                    enemydetectedbitfield |= var_c729e60c << 0;
                     continue;
                 }
                 if (cosangle < -0.707107) {
-                    enemydetectedbitfield = enemydetectedbitfield | var_c729e60c << 9;
+                    enemydetectedbitfield |= var_c729e60c << 9;
                     continue;
                 }
                 localplayeranglestoright = anglestoright(playerangles);
                 var_21060744 = vectordot(vectorflat, localplayeranglestoright) < 0;
                 if (cosangle > 0) {
-                    enemydetectedbitfield = enemydetectedbitfield | var_c729e60c << (var_21060744 ? 15 : 3);
+                    enemydetectedbitfield |= var_c729e60c << (var_21060744 ? 15 : 3);
                     continue;
                 }
-                enemydetectedbitfield = enemydetectedbitfield | var_c729e60c << (var_21060744 ? 12 : 6);
+                enemydetectedbitfield |= var_c729e60c << (var_21060744 ? 12 : 6);
             }
         }
         if (enemydetectedbitfield) {
@@ -806,7 +808,7 @@ function monitor_detectnearbyenemies(local_client_num) {
                 bitfields = enemydetectedbitfield;
                 for (i = 0; i < 4; i++) {
                     self thread function_c90f8547(var_c948d7f9[i], bitfields & (1 << 4) - 1, bundle.var_a3d426e6);
-                    bitfields = bitfields >> 3;
+                    bitfields >>= 3;
                 }
                 enemynearbytime = 0;
                 diff = enemydetectedbitfield ^ previousenemydetectedbitfield;
@@ -820,7 +822,7 @@ function monitor_detectnearbyenemies(local_client_num) {
                 }
                 previousenemydetectedbitfield = enemydetectedbitfield;
             }
-            enemynearbytime = enemynearbytime + 0.05;
+            enemynearbytime += 0.05;
         } else {
             enemynearbytime = 0;
             if (previousenemydetectedbitfield != 0 && enemylosttime >= 0.05) {
@@ -829,7 +831,7 @@ function monitor_detectnearbyenemies(local_client_num) {
                 }
                 previousenemydetectedbitfield = 0;
             }
-            enemylosttime = enemylosttime + 0.05;
+            enemylosttime += 0.05;
         }
         wait(0.05);
     }

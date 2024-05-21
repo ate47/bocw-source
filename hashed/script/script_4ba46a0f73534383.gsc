@@ -95,7 +95,7 @@ function private on_player_loadout() {
 function private function_e74225a7(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, *slot) {
     if (itemcount.itementry.itemtype == #"armor_shard") {
         var_82da4e0 = int(min(slot, self.var_c52363ab - var_aec6fa7f.var_7d7d976a));
-        var_aec6fa7f.var_7d7d976a = var_aec6fa7f.var_7d7d976a + var_82da4e0;
+        var_aec6fa7f.var_7d7d976a += var_82da4e0;
         var_aec6fa7f clientfield::set_player_uimodel("hudItems.armorPlateCount", var_aec6fa7f.var_7d7d976a);
         return (slot - var_82da4e0);
     }
@@ -132,7 +132,7 @@ function function_e12c220a(var_16888a24) {
 // Size: 0x114
 function private function_d66636df() {
     if (function_86b9a404()) {
-        self.var_7d7d976a = self.var_7d7d976a - 1;
+        self.var_7d7d976a -= 1;
         self clientfield::set_player_uimodel("hudItems.armorPlateCount", self.var_7d7d976a);
         var_8b8faf32 = armor::get_armor();
         var_3d557ef9 = var_8b8faf32 + 75;

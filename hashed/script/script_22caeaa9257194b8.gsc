@@ -225,12 +225,13 @@ function private stop_waiting_for_door() {
     self.ai.waitingfordoor = undefined;
 }
 
-// Namespace namespace_4fa53161/namespace_4fa53161
-// Params 1, eflags: 0x4
-// Checksum 0x7a3c50f, Offset: 0xc58
-// Size: 0x16a
-function private function_cbb3e924(var_be457ed9) {
-    /#
+/#
+
+    // Namespace namespace_4fa53161/namespace_4fa53161
+    // Params 1, eflags: 0x4
+    // Checksum 0x7a3c50f, Offset: 0xc58
+    // Size: 0x16a
+    function private function_cbb3e924(var_be457ed9) {
         foreach (i, g in self.var_d0ca7119) {
             if (isdefined(self.var_14439ba5) && self.var_14439ba5 == g) {
                 circle(g.origin, 5, var_be457ed9, 0, 1, 1);
@@ -241,30 +242,26 @@ function private function_cbb3e924(var_be457ed9) {
                 self notify(#"hash_46fda91c613b40e5", {#msg:var_cab378c2});
             }
         }
-    #/
-}
+    }
 
-// Namespace namespace_4fa53161/namespace_4fa53161
-// Params 3, eflags: 0x4
-// Checksum 0x4845998c, Offset: 0xdd0
-// Size: 0xa0
-function private draw_node_line(node, time, color) {
-    /#
+    // Namespace namespace_4fa53161/namespace_4fa53161
+    // Params 3, eflags: 0x4
+    // Checksum 0x4845998c, Offset: 0xdd0
+    // Size: 0xa0
+    function private draw_node_line(node, time, color) {
         self endon(#"death");
         timer = gettime() + time * 1000;
         while (gettime() < timer) {
             line(self geteye(), node.origin, color, 0.5, 0, 1);
             wait(0.05);
         }
-    #/
-}
+    }
 
-// Namespace namespace_4fa53161/namespace_4fa53161
-// Params 0, eflags: 0x4
-// Checksum 0x913cf68e, Offset: 0xe78
-// Size: 0xb0
-function private function_a07f8293() {
-    /#
+    // Namespace namespace_4fa53161/namespace_4fa53161
+    // Params 0, eflags: 0x4
+    // Checksum 0x913cf68e, Offset: 0xe78
+    // Size: 0xb0
+    function private function_a07f8293() {
         self endon(#"death");
         var_dc35cd8c = "<unknown string>";
         var_e9968086 = "<unknown string>";
@@ -275,15 +272,13 @@ function private function_a07f8293() {
             self childthread update_debug(var_e9968086, var_dc35cd8c);
             var_dc35cd8c = var_e9968086;
         }
-    #/
-}
+    }
 
-// Namespace namespace_4fa53161/namespace_4fa53161
-// Params 2, eflags: 0x4
-// Checksum 0x6a9480a1, Offset: 0xf30
-// Size: 0x18c
-function private update_debug(var_e9968086, var_dc35cd8c) {
-    /#
+    // Namespace namespace_4fa53161/namespace_4fa53161
+    // Params 2, eflags: 0x4
+    // Checksum 0x6a9480a1, Offset: 0xf30
+    // Size: 0x18c
+    function private update_debug(var_e9968086, var_dc35cd8c) {
         self notify(#"hash_4a185a55bf47797f");
         self endon(#"hash_4a185a55bf47797f");
         var_852f740c = 1;
@@ -296,11 +291,12 @@ function private update_debug(var_e9968086, var_dc35cd8c) {
                 print3d(self geteye() + (0, 0, 15), var_e9968086, (1, 1, 1), 1, 0.3, 1);
                 print3d(self geteye() + (0, 0, 10), var_dc35cd8c, (0.7, 0.7, 0.7), var_852f740c, 0.3, 1);
             }
-            var_852f740c = var_852f740c - var_18c3a98a;
+            var_852f740c -= var_18c3a98a;
             wait(0.05);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_4fa53161/namespace_4fa53161
 // Params 2, eflags: 0x0
@@ -344,7 +340,7 @@ function function_b0731097(var_59e58a96, maxcheckdist) {
                 var_fe505a43 = hitent function_808e656();
                 if (var_fe505a43 & var_59e58a96) {
                     hitpos = results[#"position"];
-                    distance = distance + distance(prevpos, hitpos);
+                    distance += distance(prevpos, hitpos);
                     if (isdefined(maxcheckdist) && distance > maxcheckdist) {
                         return undefined;
                     } else {
@@ -356,7 +352,7 @@ function function_b0731097(var_59e58a96, maxcheckdist) {
                 }
             }
         }
-        distance = distance + distance(prevpos, nextpos);
+        distance += distance(prevpos, nextpos);
     }
     return undefined;
 }

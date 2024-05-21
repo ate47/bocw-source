@@ -62,7 +62,7 @@ function private function_440f0490(itemlistbundle) {
         randomint = function_d59c2d03(diff + 1);
         weight = randomint + minweight;
         weights[weights.size] = weight;
-        weighttotal = weighttotal + weight;
+        weighttotal += weight;
     }
     if (weighttotal <= 0) {
         return;
@@ -73,7 +73,7 @@ function private function_440f0490(itemlistbundle) {
         if (!isdefined(itemlistbundle.itemlist[weightindex].itementry)) {
             continue;
         }
-        currentweight = currentweight + weights[weightindex];
+        currentweight += weights[weightindex];
         if (var_d54615ef <= currentweight) {
             itemlistbundle = getscriptbundle(itemlistbundle.itemlist[weightindex].itementry);
             assert(itemlistbundle.type === "<unknown string>");
@@ -310,7 +310,7 @@ function private _spawn_item(point, row, stashitem = 0) {
                 angles = (0, angleclamp180(origin[0] + origin[1] + origin[2]), 0);
                 forward = anglestoforward(angles) * level.var_69dda516[0];
                 offset = rotatepoint(forward, (0, level.var_cc113617[0], 0));
-                origin = origin + offset;
+                origin += offset;
                 ground_pos = physicstraceex(origin + (0, 0, 24), origin - (0, 0, 96), (0, 0, 0), (0, 0, 0), undefined, 32);
                 origin = ground_pos[#"position"];
                 normal = ground_pos[#"normal"];
@@ -323,7 +323,7 @@ function private _spawn_item(point, row, stashitem = 0) {
         }
         angles = combineangles(angles, (isdefined(itementry.angleoffsetx) ? itementry.angleoffsetx : 0, isdefined(itementry.angleoffsety) ? itementry.angleoffsety : 0, isdefined(itementry.angleoffsetz) ? itementry.angleoffsetz : 0));
         originoffset = (isdefined(itementry.positionoffsetx) ? itementry.positionoffsetx : 0, isdefined(itementry.positionoffsety) ? itementry.positionoffsety : 0, isdefined(itementry.positionoffsetz) ? itementry.positionoffsetz : 0);
-        origin = origin + originoffset;
+        origin += originoffset;
         if (numchildren > 0 || isdefined(itementry.var_47f145b4)) {
             point = function_53a81463(origin, angles, point.targetname, item_name);
         } else {
@@ -379,13 +379,13 @@ function private function_f0e5262b(item_name, point, childindex, stashitem = 0, 
         distance = level.var_69dda516[childindex];
         offset = (cos(degree) * distance, sin(degree) * distance, 0);
         offset = rotatepoint(offset, parentangles);
-        origin = origin + offset;
+        origin += offset;
         ground_pos = physicstraceex(origin + (0, 0, 24), origin - (0, 0, 96), (0, 0, 0), (0, 0, 0), undefined, 32);
         var_f05b52fe = (isdefined(itementry.positionoffsetx) ? itementry.positionoffsetx : 0, isdefined(itementry.positionoffsety) ? itementry.positionoffsety : 0, isdefined(itementry.positionoffsetz) ? itementry.positionoffsetz : 0);
         origin = ground_pos[#"position"] + var_f05b52fe;
         normal = ground_pos[#"normal"];
-        angles = angles + (0, level.var_82e94a26[childindex], 0);
-        angles = angles + (0, point.angles[1], 0);
+        angles += (0, level.var_82e94a26[childindex], 0);
+        angles += (0, point.angles[1], 0);
         angles = function_c1fa62a2(angles, normal);
         angles = combineangles(angles, (isdefined(itementry.angleoffsetx) ? itementry.angleoffsetx : 0, isdefined(itementry.angleoffsety) ? itementry.angleoffsety : 0, isdefined(itementry.angleoffsetz) ? itementry.angleoffsetz : 0));
         if (getrealtime() - level.var_d0676b07 > level.var_3e9c9a35) {
@@ -463,7 +463,7 @@ function private function_ea39d1fa(stash) {
             for (row = 0; row < var_eff83f3.itemlist.size; row++) {
                 available = isdefined(var_eff83f3.itemlist[row].available) ? var_eff83f3.itemlist[row].available : 0;
                 available = int(max(available, 0));
-                spawncount = spawncount + available;
+                spawncount += available;
             }
             stash.available = spawncount;
         } else {
@@ -504,7 +504,7 @@ function private function_ea39d1fa(stash) {
                 itemspawnlist = spawnstruct();
                 itemspawnlist.itemlistbundle = itemlistbundle;
                 items = itemspawnlist function_e25c9d12(var_f16b79a, var_8107154f, var_8107154f.size, 1);
-                var_f16b79a = var_f16b79a + items.size;
+                var_f16b79a += items.size;
             }
             if (getrealtime() - level.var_d0676b07 > level.var_3e9c9a35) {
                 waitframe(1);
@@ -731,7 +731,7 @@ function private function_a8e0dc24(itementry, data, limit, var_a3a56d95, maxatta
     var_5f5def05 = var_a3a56d95;
     var_ac516129 = maxattachments - var_a3a56d95;
     if (var_ac516129 > 0) {
-        var_5f5def05 = var_5f5def05 + function_d59c2d03(var_ac516129);
+        var_5f5def05 += function_d59c2d03(var_ac516129);
     }
     var_5f5def05 = min(var_5f5def05, 8);
     var_5f5def05 = min(var_5f5def05, attachments.size + limit);
@@ -874,7 +874,7 @@ function private function_e25c9d12(var_f16b79a, &var_8107154f, spawncount, stash
             diff = maxweight - minweight;
             weight = function_d59c2d03(diff + 1) + minweight;
             self.weights[row] = weight;
-            self.weighttotal = self.weighttotal + self.weights[row];
+            self.weighttotal += self.weights[row];
         }
     }
     if (getrealtime() - level.var_d0676b07 > level.var_3e9c9a35) {
@@ -889,7 +889,7 @@ function private function_e25c9d12(var_f16b79a, &var_8107154f, spawncount, stash
             continue;
         }
         if (self.available[row] < 0) {
-            self.weighttotal = self.weighttotal + self.weights[row];
+            self.weighttotal += self.weights[row];
             continue;
         }
         points = 0;
@@ -898,10 +898,10 @@ function private function_e25c9d12(var_f16b79a, &var_8107154f, spawncount, stash
         }
         if (points > self.available[row]) {
             self.weights[row] = 2147483647;
-            spawncount = spawncount - self.available[row];
+            spawncount -= self.available[row];
             continue;
         }
-        self.weighttotal = self.weighttotal + self.weights[row];
+        self.weighttotal += self.weights[row];
     }
     if (getrealtime() - level.var_d0676b07 > level.var_3e9c9a35) {
         waitframe(1);
@@ -921,8 +921,8 @@ function private function_e25c9d12(var_f16b79a, &var_8107154f, spawncount, stash
             }
             self.var_202d2992[row] = int(floor(points));
             self.var_3ddde668[row] = int((points - self.var_202d2992[row]) * 1000);
-            self.var_43feff59 = self.var_43feff59 + self.var_202d2992[row];
-            self.var_5d3a106 = self.var_5d3a106 + self.var_3ddde668[row];
+            self.var_43feff59 += self.var_202d2992[row];
+            self.var_5d3a106 += self.var_3ddde668[row];
         }
     }
     if (getrealtime() - level.var_d0676b07 > level.var_3e9c9a35) {
@@ -942,7 +942,7 @@ function private function_e25c9d12(var_f16b79a, &var_8107154f, spawncount, stash
                 if (self.available[var_75aa5cbb] != 0) {
                     var_cc5fea3d = var_28ef6352 + self.var_3ddde668[var_75aa5cbb];
                     if (var_28ef6352 <= randomval && randomval <= var_cc5fea3d) {
-                        self.var_5d3a106 = self.var_5d3a106 - self.var_3ddde668[var_75aa5cbb];
+                        self.var_5d3a106 -= self.var_3ddde668[var_75aa5cbb];
                         self.var_3ddde668[var_75aa5cbb] = 0;
                         self.var_202d2992[var_75aa5cbb] = (isdefined(self.var_202d2992[var_75aa5cbb]) ? self.var_202d2992[var_75aa5cbb] : 0) + 1;
                         self.var_43feff59++;
@@ -1157,7 +1157,7 @@ function reset_items() {
             angles = function_bdd10bae(angles, (0, angleclamp180(origin[0] + origin[1] + origin[2]), 0));
         }
         originoffset = ((isdefined(itementry.positionoffsetx) ? itementry.positionoffsetx : 0) * -1, (isdefined(itementry.positionoffsety) ? itementry.positionoffsety : 0) * -1, (isdefined(itementry.positionoffsetz) ? itementry.positionoffsetz : 0) * -1);
-        origin = origin + originoffset;
+        origin += originoffset;
         function_b97dfce0(point.id, origin);
         function_3eab95b5(point.id, angles);
         if (getrealtime() - level.var_d0676b07 > level.var_3e9c9a35) {
@@ -1382,7 +1382,7 @@ function function_5eada592(scriptbundlename, linkto = 1) {
         for (row = 0; row < self.itemlistbundle.itemlist.size; row++) {
             available = isdefined(self.itemlistbundle.itemlist[row].available) ? self.itemlistbundle.itemlist[row].available : 0;
             available = int(max(available, 0));
-            spawncount = spawncount + available;
+            spawncount += available;
         }
         self.available = spawncount;
     } else {
@@ -1519,7 +1519,7 @@ function function_fd87c780(scriptbundlename, itemcount, falling = 2, var_9961d9f
         itemgroup.angles = combineangles(itemgroup.angles, angleoffset);
     }
     if (isvec(self.anglesoffset)) {
-        itemgroup.angles = itemgroup.angles + self.anglesoffset;
+        itemgroup.angles += self.anglesoffset;
     }
     var_8107154f = [];
     for (pointid = 0; pointid < itemcount; pointid++) {

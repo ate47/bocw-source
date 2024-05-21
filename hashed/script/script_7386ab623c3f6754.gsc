@@ -276,12 +276,13 @@ function function_27f93038(watcher, owner) {
     #/
 }
 
-// Namespace namespace_bf2d4e77/namespace_bf2d4e77
-// Params 0, eflags: 0x0
-// Checksum 0x2fe80e7, Offset: 0x1a78
-// Size: 0x146
-function function_56133646() {
-    /#
+/#
+
+    // Namespace namespace_bf2d4e77/namespace_bf2d4e77
+    // Params 0, eflags: 0x0
+    // Checksum 0x2fe80e7, Offset: 0x1a78
+    // Size: 0x146
+    function function_56133646() {
         self endon(#"death");
         self.var_deb3e8b1 endon(#"death");
         while (true) {
@@ -295,8 +296,9 @@ function function_56133646() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_bf2d4e77/namespace_bf2d4e77
 // Params 0, eflags: 0x2 linked
@@ -435,7 +437,7 @@ function function_5276a443(var_9055f9a9, var_f968837d, var_6254bcaf, var_8689013
         self namespace_42457a0::function_601fabe9(#"toxic", var_70ab6bc, var_36635dd8, self.var_9258f88f, var_f968837d, "none", "MOD_GAS", 0, weapon);
         self playsound(#"hash_25822a2d894aaa12");
         if (isdefined(var_f968837d)) {
-            var_f968837d.health = var_f968837d.health - var_4471a107;
+            var_f968837d.health -= var_4471a107;
             if (var_f968837d.health <= 0) {
                 var_f968837d thread function_c3726ef3();
             }

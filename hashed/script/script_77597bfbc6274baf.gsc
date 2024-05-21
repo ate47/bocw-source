@@ -166,7 +166,7 @@ function function_bb5d646a(localclientnum, *oldval, *newval, *bnewent, *binitial
     }
     e_fx = util::spawn_model(bwasdemojump, "tag_origin", self gettagorigin("J_Spine4"));
     playsound(bwasdemojump, #"hash_14182939d9e547b2", e_fx.origin);
-    e_fx.var_94450cf4 = e_fx playloopsound(#"hash_20b1d2b1a7ca4646");
+    e_fx.sound_id = e_fx playloopsound(#"hash_20b1d2b1a7ca4646");
     var_29eb5284 = struct::get("ww_soul_charge");
     util::playfxontag(bwasdemojump, #"hash_61e3c7a179d7cdfb", e_fx, "tag_origin");
     e_fx moveto(e_fx.origin + (0, 0, 40), 0.8);
@@ -175,7 +175,7 @@ function function_bb5d646a(localclientnum, *oldval, *newval, *bnewent, *binitial
     e_fx moveto(var_29eb5284.origin, n_time);
     e_fx waittill(#"movedone");
     util::playfxontag(bwasdemojump, #"hash_4d1d38d5da4d929b", e_fx, "tag_origin");
-    e_fx stoploopsound(e_fx.var_94450cf4);
+    e_fx stoploopsound(e_fx.sound_id);
     playsound(bwasdemojump, #"hash_282ba4e04a5fa817", e_fx.origin);
     wait(0.3);
     e_fx delete();

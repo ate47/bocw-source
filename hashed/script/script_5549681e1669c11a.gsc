@@ -1991,11 +1991,11 @@ function function_b2706226(room) {
         namespace_6e90e490::function_fa6f7ba7();
         if (!done) {
             /#
-                var_2240c239 = function_9788bacc();
+                var_2240c239 = namespace_ec06fe4a::function_9788bacc();
                 if (var_2240c239 > 0) {
                     var_49d47ba8 = getaiteamarray("<unknown string>");
                     foreach (ai in var_49d47ba8) {
-                        level thread debugline(getplayers()[0].origin, ai.origin, 30);
+                        level thread namespace_1e25ad94::debugline(getplayers()[0].origin, ai.origin, 30);
                     }
                 }
             #/

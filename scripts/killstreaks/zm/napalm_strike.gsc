@@ -97,11 +97,11 @@ function function_53a0e7ce(var_b004174a) {
         forward = vectornormalize(forward);
         forward = vectorscale(forward, 190);
         forward = (forward[0], forward[1], forward[2]);
-        s_location.origin = s_location.origin + forward;
+        s_location.origin += forward;
         right = anglestoright((0, s_location.angles[1], 0));
         right = vectornormalize(right);
         right = vectorscale(right, 256);
-        s_location.origin = s_location.origin + right;
+        s_location.origin += right;
         s_location.yaw = s_location.angles[1] + 90;
         s_location.height = 1500 + 3400 + randomfloatrange(-200, 200);
         killstreak_id = self killstreakrules::killstreakstart("napalm_strike_zm", self.team, 0, 1);

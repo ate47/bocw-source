@@ -179,10 +179,10 @@ function function_d233fb1f() {
     while (true) {
         self function_116b95e5(#"hash_75fe7a4dbc759253", #"blur", var_9b8a1091);
         wait(0.08);
-        var_9b8a1091 = var_9b8a1091 + 0.01;
+        var_9b8a1091 += 0.01;
         if (var_9b8a1091 > 0.1) {
             while (var_9b8a1091 > 0) {
-                var_9b8a1091 = var_9b8a1091 - 0.01;
+                var_9b8a1091 -= 0.01;
                 self function_116b95e5(#"hash_75fe7a4dbc759253", #"blur", var_9b8a1091);
                 wait(0.08);
             }

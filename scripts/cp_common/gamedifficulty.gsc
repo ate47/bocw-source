@@ -84,12 +84,13 @@ function function_66c52cbf(msg, *ignored) {
     return level.difficultysettings[ignored][level.currentdifficulty];
 }
 
-// Namespace gamedifficulty/gamedifficulty
-// Params 0, eflags: 0x0
-// Checksum 0x1eff0cc, Offset: 0x518
-// Size: 0xd0
-function function_f4a93c9c() {
-    /#
+/#
+
+    // Namespace gamedifficulty/gamedifficulty
+    // Params 0, eflags: 0x0
+    // Checksum 0x1eff0cc, Offset: 0x518
+    // Size: 0xd0
+    function function_f4a93c9c() {
         waittillframeend();
         while (true) {
             while (true) {
@@ -108,15 +109,13 @@ function function_f4a93c9c() {
             level notify(#"hash_4fff5870dd60a939");
             function_d1f1cf52();
         }
-    #/
-}
+    }
 
-// Namespace gamedifficulty/gamedifficulty
-// Params 0, eflags: 0x0
-// Checksum 0x2bc11a27, Offset: 0x5f0
-// Size: 0x616
-function function_fe49c4b4() {
-    /#
+    // Namespace gamedifficulty/gamedifficulty
+    // Params 0, eflags: 0x0
+    // Checksum 0x2bc11a27, Offset: 0x5f0
+    // Size: 0x616
+    function function_fe49c4b4() {
         level notify(#"hash_7eabe7ecd3c67fd");
         level endon(#"hash_7eabe7ecd3c67fd");
         y = 40;
@@ -163,10 +162,10 @@ function function_fe49c4b4() {
             var_cabf91e7.bar = bar;
             var_cabf91e7.bgbar = bgbar;
             var_cabf91e7.key = key;
-            y = y + 10;
+            y += 10;
             level.var_60023d69[key] = var_cabf91e7;
         }
-        level wait_till("<unknown string>");
+        level flag::wait_till("<unknown string>");
         while (true) {
             waitframe(1);
             players = level.players;
@@ -194,15 +193,13 @@ function function_fe49c4b4() {
                 }
             }
         }
-    #/
-}
+    }
 
-// Namespace gamedifficulty/gamedifficulty
-// Params 0, eflags: 0x0
-// Checksum 0x150e5655, Offset: 0xc10
-// Size: 0xec
-function function_d1f1cf52() {
-    /#
+    // Namespace gamedifficulty/gamedifficulty
+    // Params 0, eflags: 0x0
+    // Checksum 0x150e5655, Offset: 0xc10
+    // Size: 0xec
+    function function_d1f1cf52() {
         level notify(#"hash_7eabe7ecd3c67fd");
         if (!isdefined(level.var_60023d69)) {
             return;
@@ -212,8 +209,9 @@ function function_d1f1cf52() {
             level.var_60023d69[level.var_1c9484[i]].bar destroy();
             level.var_60023d69[level.var_1c9484[i]] destroy();
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace gamedifficulty/gamedifficulty
 // Params 0, eflags: 0x2 linked
@@ -326,7 +324,7 @@ function private function_b9d6a17c() {
 function private function_ab69b983() {
     self endon(#"death");
     self.var_2869a26a = 0;
-    assert(self get("<unknown string>"));
+    assert(self flag::get("<unknown string>"));
     self flag::wait_till_clear("player_is_invulnerable");
     cooldowntime = function_81e40993();
     /#
@@ -460,7 +458,7 @@ function function_1cfd1920() {
 // Size: 0x5a
 function function_8ffb61a(*event) {
     function_c7551020();
-    var_2b9b388d = level.var_21347b32[level.gameskill].var_148c047d;
+    var_2b9b388d = level.var_21347b32[level.gameskill].difficulty_xp_multiplier;
     if (isdefined(var_2b9b388d)) {
         return var_2b9b388d;
     }
@@ -525,7 +523,7 @@ function function_81e40993() {
 // Size: 0x50
 function function_e4046aa6() {
     function_c7551020();
-    var_b0210d64 = level.var_21347b32[level.gameskill].var_da7e542b;
+    var_b0210d64 = level.var_21347b32[level.gameskill].base_enemy_accuracy;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
     }
@@ -538,7 +536,7 @@ function function_e4046aa6() {
 // Size: 0x52
 function function_eb59c79() {
     function_c7551020();
-    var_b0210d64 = level.var_21347b32[level.gameskill].var_9ffb574;
+    var_b0210d64 = level.var_21347b32[level.gameskill].playerdifficultyhealth;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
     }

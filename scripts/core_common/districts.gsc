@@ -43,7 +43,7 @@ function function_a7d79fcb(names, exclusive = 0) {
     foreach (name in names) {
         bit = function_da432d39(name);
         if (bit >= 0) {
-            var_8f63b4bd = var_8f63b4bd | 1 << bit;
+            var_8f63b4bd |= 1 << bit;
         }
     }
     level function_1e34097d(var_8f63b4bd);
@@ -67,7 +67,7 @@ function function_930f8c81(names, exclusive = 0) {
         bit = function_da432d39(name);
         if (bit >= 0) {
             mask = ~(1 << bit);
-            var_8f63b4bd = var_8f63b4bd & mask;
+            var_8f63b4bd &= mask;
         }
     }
     level function_1e34097d(var_8f63b4bd);

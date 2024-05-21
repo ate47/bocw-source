@@ -302,8 +302,8 @@ function private function_65ee50ba() {
         var_1a055edd = array(var_1a055edd);
     }
     var_1a055edd[var_1a055edd.size] = var_2eefd050;
-    for (xoffset = -1; xoffset <= 1; xoffset = xoffset + 2) {
-        for (yoffset = -1; yoffset <= 1; yoffset = yoffset + 2) {
+    for (xoffset = -1; xoffset <= 1; xoffset += 2) {
+        for (yoffset = -1; yoffset <= 1; yoffset += 2) {
             checkpos = basepos + (xoffset * check_dist, yoffset * check_dist, 0);
             groundpos = groundtrace(checkpos + (0, 0, 8), checkpos + (0, 0, -100000), 0, self)[#"position"];
             if (!isdefined(var_1a055edd)) {

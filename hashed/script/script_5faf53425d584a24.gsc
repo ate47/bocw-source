@@ -111,7 +111,7 @@ function private function_23b313bd(player, eventtype, eventdata, var_c5a66313) {
                         if (!isdefined(stash.var_80b1d504)) {
                             stash.var_80b1d504 = 0;
                         }
-                        stash.var_80b1d504 = stash.var_80b1d504 + 1;
+                        stash.var_80b1d504 += 1;
                     }
                 }
             }

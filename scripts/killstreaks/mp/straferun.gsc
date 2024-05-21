@@ -277,7 +277,7 @@ function function_1e30e51e(hardpointtype, killstreak_id, location, var_a6b1bda0,
         var_dda93e6c = (0, 90, 0);
     }
     var_b818f98a = structcopy(location);
-    var_b818f98a.origin = var_b818f98a.origin + var_49d19de7;
+    var_b818f98a.origin += var_49d19de7;
     plane vehicle::function_bb9b43a9(startnode, var_1c847d0f, var_dda93e6c, var_b818f98a, var_e4c839a6);
     plane.killbox = [];
     plane.killbox[#"origin"] = var_b818f98a.origin;
@@ -378,13 +378,13 @@ function watchdamage(bundle) {
         #/
         if (!isdefined(weapon) || weapon.rootweapon != getweapon(#"tr_flechette_t8")) {
             if (mod == "MOD_PROJECTILE" || mod == "MOD_PROJECTILE_SPLASH" || mod == "MOD_EXPLOSIVE") {
-                damage = damage + (isdefined(bundle.kshealth) ? bundle.kshealth : 100);
+                damage += isdefined(bundle.kshealth) ? bundle.kshealth : 100;
             }
         }
         if (!issentient(self) && damage > 0) {
             self.attacker = attacker;
         }
-        damage_taken = damage_taken + damage;
+        damage_taken += damage;
         if (damage_taken >= (isdefined(bundle.kshealth) ? bundle.kshealth : 100)) {
             self thread explode();
             self.var_d02ddb8e = weapon;
@@ -577,7 +577,7 @@ function startstrafe() {
     weaponshoottime = level.straferungunweapon.firetime;
     for (;;) {
         gunorigin = self gettagorigin("tag_flash");
-        gunorigin = gunorigin + (0, 0, self.straferungunoffset);
+        gunorigin += (0, 0, self.straferungunoffset);
         forward = anglestoforward(self.angles);
         forwardnoz = vectornormalize((forward[0], forward[1], 0));
         right = vectorcross(forwardnoz, (0, 0, 1));
@@ -590,10 +590,10 @@ function startstrafe() {
         /#
             if (getdvarint(#"scr_devstraferunbulletsdebugdraw", 0)) {
                 time = 300;
-                debug_line(attackstartvector, trace[#"position"] - (0, 0, 20), (1, 0, 0), time, 0);
+                airsupport::debug_line(attackstartvector, trace[#"position"] - (0, 0, 20), (1, 0, 0), time, 0);
                 if (count % 30 == 0) {
                     trace = bullettrace(perfectattackstartvector, (perfectattackstartvector[0], perfectattackstartvector[1], -100000), 0, self, 0, 1);
-                    debug_line(trace[#"position"] + (0, 0, 20), trace[#"position"] - (0, 0, 20), (0, 0, 1), time, 0);
+                    airsupport::debug_line(trace[#"position"] + (0, 0, 20), trace[#"position"] - (0, 0, 20), (0, 0, 1), time, 0);
                 }
             }
         #/
@@ -627,7 +627,7 @@ function function_ec6320ce(bundle, var_a6b1bda0) {
     var_6703392b = isdefined(bundle.var_e479aa7d) ? bundle.var_e479aa7d : 1000;
     for (;;) {
         gunorigin = self gettagorigin("tag_flash");
-        gunorigin = gunorigin + (0, 0, self.straferungunoffset);
+        gunorigin += (0, 0, self.straferungunoffset);
         var_af2dc9d2 = (gettime() - var_acb6bcc8) / var_6703392b;
         if (var_af2dc9d2 > 1) {
             break;
@@ -635,9 +635,9 @@ function function_ec6320ce(bundle, var_a6b1bda0) {
         var_47f1292b = var_9ec4e10e + vectorscale(var_b01435f6, var_af2dc9d2);
         var_b3a734d8 = isdefined(bundle.var_a6bb5503) ? bundle.var_a6bb5503 : level.straferungunradius;
         if (var_a6b1bda0 == #"hash_1dfff61be0d43f2d") {
-            var_47f1292b = var_47f1292b + vectorscale(var_f6fe02b9, var_d7e70604 + randomfloatrange(var_b3a734d8 * -1, var_b3a734d8));
+            var_47f1292b += vectorscale(var_f6fe02b9, var_d7e70604 + randomfloatrange(var_b3a734d8 * -1, var_b3a734d8));
         } else {
-            var_47f1292b = var_47f1292b - vectorscale(var_f6fe02b9, var_d7e70604 + randomfloatrange(var_b3a734d8 * -1, var_b3a734d8));
+            var_47f1292b -= vectorscale(var_f6fe02b9, var_d7e70604 + randomfloatrange(var_b3a734d8 * -1, var_b3a734d8));
         }
         /#
             if (getdvarint(#"scr_devstraferunbulletsdebugdraw", 0)) {
@@ -688,7 +688,7 @@ function firerockets() {
         rocket attachkillcamtorocket(level.straferunkillcams[self.var_739aa202].rockets[rocketindex], best_target, targetorigin);
         /#
             if (getdvarint(#"scr_devstraferunkillcamsdebugdraw", 0)) {
-                rocket thread debug_draw_bomb_path(undefined, (0, 0.5, 0), 400);
+                rocket thread airsupport::debug_draw_bomb_path(undefined, (0, 0.5, 0), 400);
             }
         #/
         wait(level.straferunrocketdelay);

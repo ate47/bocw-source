@@ -870,7 +870,7 @@ function loop_sound(alias, interval) {
             playfxontag(#"hash_3e6e2a2df9fd889", self, "tag_body");
         }
         wait(interval);
-        interval = interval / 1.2;
+        interval /= 1.2;
         if (interval < 0.08) {
             break;
         }
@@ -1435,7 +1435,7 @@ function function_de2018e3(item, player, slotid = undefined, playgesture = 1, va
             profilestart();
             var_c5781c22 = player [[ handlerfunc ]](item, player, item.networkid, item.id, var_8cd447d8, var_aec6fa7f, slotid);
             profilestop();
-            var_c5781c22 = var_c5781c22 + var_d72b1a4b - var_8cd447d8;
+            var_c5781c22 += var_d72b1a4b - var_8cd447d8;
             assert(isint(var_c5781c22) && var_c5781c22 >= 0);
             if (itementry.itemtype == #"ammo" && var_d72b1a4b === var_c5781c22) {
             } else if (var_c5781c22 == var_d72b1a4b) {
@@ -1530,7 +1530,7 @@ function pickup_item(item, var_22be503 = 1, var_26a492bc = 0, autopickup = 0) {
         var_d72b1a4b = function_c8ab2022(item, 0);
         var_8cd447d8 = function_c8ab2022(item, 1);
         remainingitems = function_de2018e3(item, self, undefined, !autopickup, 1);
-        remainingitems = remainingitems + var_d72b1a4b - var_8cd447d8;
+        remainingitems += var_d72b1a4b - var_8cd447d8;
         if (remainingitems == 0) {
             if (isdefined(rumble) && isplayer(self)) {
                 self function_bc82f900(rumble);
@@ -1547,7 +1547,7 @@ function pickup_item(item, var_22be503 = 1, var_26a492bc = 0, autopickup = 0) {
                 self function_bc82f900(rumble);
             }
             stashitem = item_world_util::function_83c20f83(item);
-            stashitem = stashitem & ~(isdefined(item.deathstash) ? item.deathstash : 0);
+            stashitem &= ~(isdefined(item.deathstash) ? item.deathstash : 0);
             dropitem = self item_drop::function_fd9026e4(0, item.itementry.weapon, remainingitems, item.amount, item.id, item.origin, item.angles, 0, stashitem, undefined, isdefined(item.targetnamehash) ? item.targetnamehash : item.targetname, undefined, undefined, 0);
             if (isdefined(dropitem)) {
                 dropitem.origin = item.origin;
@@ -1616,7 +1616,7 @@ function function_83ddce0f(item, inventoryslot) {
     var_8acbe1d0 = self function_6105623a(item) || item.itementry.itemtype == #"armor_shard" || item.itementry.itemtype == #"resource" || item.itementry.itemtype == #"ammo" || item.itementry.itemtype == #"backpack" && !self item_inventory::has_backpack() || item.itementry.var_4a1a4613 == #"armor_heal";
     stashitem = item_world_util::function_83c20f83(item);
     deathstashitem = isdefined(item.deathstash) ? item.deathstash : 0;
-    stashitem = stashitem & ~deathstashitem;
+    stashitem &= ~deathstashitem;
     dropitem = undefined;
     if (!var_8acbe1d0 && self item_inventory::has_inventory_item(inventoryslot)) {
         var_69944179 = self.inventory.items[inventoryslot];

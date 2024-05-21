@@ -381,8 +381,8 @@ function private function_e1008fbd(vehicle) {
 // Size: 0xa4
 function private function_2cec1af6(vehicle, seat) {
     flag = seat + "_occupied";
-    assert(vehicle exists(flag));
-    assert(!vehicle get(flag));
+    assert(vehicle flag::exists(flag));
+    assert(!vehicle flag::get(flag));
     vehicle flag::set(flag);
 }
 
@@ -392,8 +392,8 @@ function private function_2cec1af6(vehicle, seat) {
 // Size: 0xa4
 function private function_2e28cc0(vehicle, seat) {
     flag = seat + "_occupied";
-    assert(vehicle exists(flag));
-    assert(!vehicle get(flag));
+    assert(vehicle flag::exists(flag));
+    assert(!vehicle flag::get(flag));
     vehicle flag::clear(flag);
 }
 
@@ -638,7 +638,7 @@ function private function_114d7bd3(vehicle) {
         if (ai flag::get("dead_in_vehicle")) {
             return;
         }
-        assert(ai get("<unknown string>"));
+        assert(ai flag::get("<unknown string>"));
         incombat = function_b214280f(ai);
         closeanim = function_422cecb5(ai, incombat);
         ai get_out(vehicle, ai, "driver", incombat);
@@ -661,7 +661,7 @@ function private function_b56639f2(vehicle) {
         if (ai flag::get("dead_in_vehicle")) {
             return;
         }
-        assert(ai get("<unknown string>"));
+        assert(ai flag::get("<unknown string>"));
         incombat = function_b214280f(ai);
         closeanim = function_422cecb5(ai, incombat);
         ai get_out(vehicle, ai, "passenger1", incombat);
@@ -684,7 +684,7 @@ function private function_2ef91b74(vehicle) {
         if (ai flag::get("dead_in_vehicle")) {
             return;
         }
-        assert(ai get("<unknown string>"));
+        assert(ai flag::get("<unknown string>"));
         incombat = function_b214280f(ai);
         closeanim = function_422cecb5(ai, incombat);
         ai get_out(vehicle, ai, "gunner1", incombat);
@@ -707,7 +707,7 @@ function private function_da0917a4(vehicle) {
         if (ai flag::get("dead_in_vehicle")) {
             return;
         }
-        assert(ai get("<unknown string>"));
+        assert(ai flag::get("<unknown string>"));
         incombat = function_b214280f(ai);
         closeanim = function_422cecb5(ai, incombat);
         ai get_out(vehicle, ai, "gunner2", incombat);
@@ -741,7 +741,7 @@ function private function_2ca26543(vehicle) {
             if (ai flag::get("dead_in_vehicle")) {
                 continue;
             }
-            assert(ai get("<unknown string>"));
+            assert(ai flag::get("<unknown string>"));
             incombat = function_b214280f(ai);
             if (!var_f982fa99) {
                 if (incombat && isdefined(ai.var_ec30f5da.var_b7605392)) {
@@ -894,7 +894,7 @@ function exit_ground(ai, incombat) {
             if (isdefined(var_8f9272fc)) {
                 result = groundtrace(var_8f9272fc + (0, 0, 100), var_8f9272fc + (0, 0, -100), 0, ai.vehicle);
                 if (result[#"fraction"] > 0 && result[#"fraction"] < 1) {
-                    startorigin = startorigin + result[#"position"] - targetorigin;
+                    startorigin += result[#"position"] - targetorigin;
                 }
             }
         }
@@ -1051,8 +1051,8 @@ function private forward_euler_integration(e_move, v_target_landing, n_initial_s
     gravity = (0, 0, -385.8);
     while (!landed) {
         previousposition = position;
-        velocity = velocity + gravity * 0.1;
-        position = position + velocity * 0.1;
+        velocity += gravity * 0.1;
+        position += velocity * 0.1;
         if (position[2] + velocity[2] * 0.1 <= v_target_landing[2]) {
             landed = 1;
             position = v_target_landing;

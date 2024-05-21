@@ -106,16 +106,16 @@ function timeuntilspawn(includeteamkilldelay) {
             respawndelay = level.playerrespawndelay;
         }
         if (isdefined(level.playerincrementalrespawndelay) && isdefined(self.pers[#"spawns"])) {
-            respawndelay = respawndelay + level.playerincrementalrespawndelay * self.pers[#"spawns"];
+            respawndelay += level.playerincrementalrespawndelay * self.pers[#"spawns"];
         }
         if (is_true(self.suicide) && level.suicidespawndelay > 0) {
-            respawndelay = respawndelay + level.suicidespawndelay;
+            respawndelay += level.suicidespawndelay;
         }
         if (is_true(self.teamkilled) && level.teamkilledspawndelay > 0) {
-            respawndelay = respawndelay + level.teamkilledspawndelay;
+            respawndelay += level.teamkilledspawndelay;
         }
         if (includeteamkilldelay && is_true(self.teamkillpunish)) {
-            respawndelay = respawndelay + player::function_821200bb();
+            respawndelay += player::function_821200bb();
         }
     }
     if (is_true(level.spawnsystem.deathcirclerespawn)) {
@@ -233,7 +233,7 @@ function timeuntilwavespawn(minimumwait) {
     numwaves = ceil(numwavespassedearliestspawntime);
     timeofspawn = lastwavetime + numwaves * wavedelay;
     if (isdefined(self.wavespawnindex)) {
-        timeofspawn = timeofspawn + var_e0fb0ad5;
+        timeofspawn += var_e0fb0ad5;
     }
     return float(timeofspawn - gettime()) / 1000;
 }
@@ -460,8 +460,8 @@ function spawnplayer() {
         draft::assign_remaining_players(self);
     }
     role = self player_role::get();
-    assert(!function_87bcb1b() || isvalidclass(self.curclass));
-    assert(is_valid(role));
+    assert(!loadout::function_87bcb1b() || globallogic_utils::isvalidclass(self.curclass));
+    assert(player_role::is_valid(role));
     self.pers[#"momentum_at_spawn_or_game_end"] = isdefined(self.pers[#"momentum"]) ? self.pers[#"momentum"] : 0;
     if (loadout::function_87bcb1b()) {
         self loadout::function_53b62db1(self.curclass);
@@ -938,7 +938,7 @@ function showspawnmessage() {
 function spawnclient(timealreadypassed) {
     profileNamedStart(#"");
     assert(isdefined(self.team));
-    assert(!function_87bcb1b() || isvalidclass(self.curclass));
+    assert(!loadout::function_87bcb1b() || globallogic_utils::isvalidclass(self.curclass));
     if (!self mayspawn() && !is_true(self.usedresurrect)) {
         currentorigin = self.origin;
         currentangles = self.angles;
@@ -969,7 +969,7 @@ function spawnclient(timealreadypassed) {
 // Size: 0x9e
 function function_1a12c7a1(timeuntilspawn) {
     self endon(#"force_spawn", #"hash_33713849648e651d");
-    for (var_9037cf6c = 0; var_9037cf6c < timeuntilspawn; var_9037cf6c = var_9037cf6c + float(function_60d95f53()) / 1000) {
+    for (var_9037cf6c = 0; var_9037cf6c < timeuntilspawn; var_9037cf6c += float(function_60d95f53()) / 1000) {
         util::function_9d5c26a();
         waitframe(1);
     }
@@ -1003,7 +1003,7 @@ function waitandspawnclient(timealreadypassed) {
     if (is_true(self.teamkillpunish)) {
         var_821200bb = player::function_821200bb();
         if (var_821200bb > timealreadypassed) {
-            var_821200bb = var_821200bb - timealreadypassed;
+            var_821200bb -= timealreadypassed;
         } else {
             var_821200bb = 0;
         }
@@ -1021,7 +1021,7 @@ function waitandspawnclient(timealreadypassed) {
     }
     timeuntilspawn = timeuntilspawn(0);
     if (timeuntilspawn > timealreadypassed) {
-        timeuntilspawn = timeuntilspawn - timealreadypassed;
+        timeuntilspawn -= timealreadypassed;
     } else {
         timeuntilspawn = 0;
     }
@@ -1066,7 +1066,7 @@ function waitandspawnclient(timealreadypassed) {
             var_239ada2f = timeuntilspawn(0);
             if (!var_3ffa560b) {
                 if (var_239ada2f > timealreadypassed) {
-                    var_239ada2f = var_239ada2f - timealreadypassed;
+                    var_239ada2f -= timealreadypassed;
                 } else {
                     var_239ada2f = 0;
                 }

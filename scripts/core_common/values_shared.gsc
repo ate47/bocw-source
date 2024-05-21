@@ -780,12 +780,13 @@ function function_5276aede(str_id, value) {
     reset(str_id, "allow_sprint");
 }
 
-// Namespace val/values_shared
-// Params 4, eflags: 0x44
-// Checksum 0x409a0c50, Offset: 0x3230
-// Size: 0xf2
-function private validate(str_name, call_on, func, ...) {
-    /#
+/#
+
+    // Namespace val/values_shared
+    // Params 4, eflags: 0x44
+    // Checksum 0x409a0c50, Offset: 0x3230
+    // Size: 0xf2
+    function private validate(str_name, call_on, func, ...) {
         a_registered = getarraykeys(level.values);
         if (!isinarray(a_registered, hash(str_name))) {
             assertmsg("<unknown string>" + str_name + "<unknown string>");
@@ -796,22 +797,20 @@ function private validate(str_name, call_on, func, ...) {
         s_value.func_validate = func;
         s_value.validate_call_on = call_on;
         s_value.validate_args = vararg;
-    #/
-}
+    }
 
-// Namespace val/values_shared
-// Params 3, eflags: 0x4
-// Checksum 0xa013b87f, Offset: 0x3330
-// Size: 0x15a
-function private _validate_value(str_name, value, b_assert) {
-    /#
+    // Namespace val/values_shared
+    // Params 3, eflags: 0x4
+    // Checksum 0xa013b87f, Offset: 0x3330
+    // Size: 0x15a
+    function private _validate_value(str_name, value, b_assert) {
         if (!isdefined(b_assert)) {
             b_assert = 0;
         }
         s_value = level.values[str_name];
         if (isdefined(s_value.func_validate)) {
             call_on = s_value.validate_call_on === "<unknown string>" ? self : s_value.validate_call_on;
-            current_value = single_func_argarray(call_on, s_value.func_validate, _replace_values(s_value.validate_args));
+            current_value = util::single_func_argarray(call_on, s_value.func_validate, _replace_values(s_value.validate_args));
         } else {
             current_value = self.(str_name);
         }
@@ -820,19 +819,17 @@ function private _validate_value(str_name, value, b_assert) {
             assert(b_match, "<unknown string>" + function_9e72a96(str_name) + "<unknown string>" + current_value + "<unknown string>" + value + "<unknown string>");
         }
         return b_match;
-    #/
-}
+    }
 
-// Namespace val/values_shared
-// Params 0, eflags: 0x4
-// Checksum 0x8ba4e017, Offset: 0x3498
-// Size: 0x44a
-function private debug_values() {
-    /#
-        level init_dvar("<unknown string>");
-        level wait_till("<unknown string>");
+    // Namespace val/values_shared
+    // Params 0, eflags: 0x4
+    // Checksum 0x8ba4e017, Offset: 0x3498
+    // Size: 0x44a
+    function private debug_values() {
+        level flag::init_dvar("<unknown string>");
+        level flag::wait_till("<unknown string>");
         while (true) {
-            level wait_till("<unknown string>");
+            level flag::wait_till("<unknown string>");
             str_debug_values_entity = getdvarstring(#"scr_debug_values_entity", "<unknown string>");
             if (str_debug_values_entity == "<unknown string>" || str_debug_values_entity == "<unknown string>" || str_debug_values_entity == "<unknown string>") {
                 hud_ent = level.host;
@@ -872,15 +869,13 @@ function private debug_values() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
 
-// Namespace val/values_shared
-// Params 6, eflags: 0x4
-// Checksum 0xf0564f8, Offset: 0x38f0
-// Size: 0x21c
-function private display_value(index, str_name, str_id, value, b_valid, on_hud) {
-    /#
+    // Namespace val/values_shared
+    // Params 6, eflags: 0x4
+    // Checksum 0xf0564f8, Offset: 0x38f0
+    // Size: 0x21c
+    function private display_value(index, str_name, str_id, value, b_valid, on_hud) {
         if (!isdefined(on_hud)) {
             on_hud = 0;
         }
@@ -892,17 +887,17 @@ function private display_value(index, str_name, str_id, value, b_valid, on_hud) 
         }
         str_value = "<unknown string>";
         if ((isdefined(str_name) ? "<unknown string>" + str_name : "<unknown string>") != "<unknown string>") {
-            str_value = rjust(str_name, 20);
+            str_value = string::rjust(str_name, 20);
             if (isdefined(value)) {
-                str_value = str_value + "<unknown string>" + value;
+                str_value += "<unknown string>" + value;
             }
-            str_value = str_value + "<unknown string>" + ljust(isdefined(str_id) ? "<unknown string>" + str_id : "<unknown string>", 30);
+            str_value += "<unknown string>" + string::ljust(isdefined(str_id) ? "<unknown string>" + str_id : "<unknown string>", 30);
         }
         color = b_valid ? (1, 1, 1) : (1, 0, 0);
         if (on_hud) {
             debug2dtext((200, 100 + index * 20, 0), str_value, color, 1, (0, 0, 0), 0.5, 0.8, 1);
         }
         print3d(self.origin - (0, 0, index * 8), str_value, color, 1, 0.3, 1);
-    #/
-}
+    }
 
+#/

@@ -56,7 +56,7 @@ function private function_d00809d8(localclientnum, pos, *surface, notetrack, *bo
     if (n_scale > 1 || n_scale < 0) {
         return;
     }
-    n_scale = n_scale * 0.25;
+    n_scale *= 0.25;
     if (n_scale <= 0.01) {
         return;
     }
@@ -162,7 +162,7 @@ function private function_ce49549a(localclientnum, *oldval, *newval, *bnewent, *
     if (n_scale > 1 || n_scale < 0) {
         return;
     }
-    n_scale = n_scale * 0.25;
+    n_scale *= 0.25;
     if (n_scale <= 0.01) {
         return;
     }

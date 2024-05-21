@@ -38,29 +38,28 @@ function private preinit() {
     level.precachecustomcharacters = &precachecustomcharacters;
     initcharacterstartindex();
     /#
-        add_custom_devgui_callback(&function_9436b105);
+        zm_devgui::add_custom_devgui_callback(&function_9436b105);
     #/
 }
 
-// Namespace zm_characters/zm_characters
-// Params 1, eflags: 0x4
-// Checksum 0xfcdb592a, Offset: 0x860
-// Size: 0x94
-function private zombie_force_char(n_char) {
-    /#
+/#
+
+    // Namespace zm_characters/zm_characters
+    // Params 1, eflags: 0x4
+    // Checksum 0xfcdb592a, Offset: 0x860
+    // Size: 0x94
+    function private zombie_force_char(n_char) {
         assert(isdefined(self));
         assert(isplayer(self));
         assert(isalive(self));
         set_character(n_char);
-    #/
-}
+    }
 
-// Namespace zm_characters/zm_characters
-// Params 1, eflags: 0x4
-// Checksum 0x56474fd7, Offset: 0x900
-// Size: 0x104
-function private function_9436b105(cmd) {
-    /#
+    // Namespace zm_characters/zm_characters
+    // Params 1, eflags: 0x4
+    // Checksum 0x56474fd7, Offset: 0x900
+    // Size: 0x104
+    function private function_9436b105(cmd) {
         if (issubstr(cmd, "vox_plr_3_exert_pain_high_3")) {
             tokens = strtok(cmd, "<unknown string>");
             player = int(getsubstr(tokens[0], "<unknown string>".size));
@@ -68,8 +67,9 @@ function private function_9436b105(cmd) {
             players = getplayers();
             players[player - 1] thread zombie_force_char(character);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_characters/zm_characters
 // Params 0, eflags: 0x2 linked
@@ -152,7 +152,7 @@ function set_character(character) {
     self detachall();
     if (isdefined(character)) {
         if (isarray(character)) {
-            self.characterindex = function_9004475c(character);
+            self.characterindex = get_character_index(character);
         } else {
             self.characterindex = character;
         }
@@ -254,7 +254,7 @@ function setup_personality_character_exerts() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x3319a7dd, Offset: 0x1840
 // Size: 0xce
-function function_9004475c(character) {
+function get_character_index(character) {
     var_ba015ed = getplayerroletemplatecount(currentsessionmode());
     for (i = 0; i < var_ba015ed; i++) {
         name = function_ac0419ac(i, currentsessionmode());
@@ -298,7 +298,7 @@ function function_dc232a80(character) {
     if (isdefined(self) && isplayer(self)) {
         characterindex = player_role::get();
     } else if (isarray(character)) {
-        characterindex = function_9004475c(character);
+        characterindex = get_character_index(character);
     }
     if (isdefined(characterindex)) {
         if (player_role::is_valid(characterindex)) {

@@ -40,7 +40,7 @@ function main() {
         self thread stealthhints_thread();
     }
     /#
-        self childthread debug_player();
+        self childthread namespace_b0df45a::debug_player();
     #/
 }
 
@@ -92,7 +92,7 @@ function get_detect_range() {
     }
     range = level.stealth.detect.range[detection][stance];
     if (self flag::get("stealth_in_shadow")) {
-        range = range * level.stealth.detect.range[detection][#"shadow"];
+        range *= level.stealth.detect.range[detection][#"shadow"];
         range = max(range, level.stealth.detect.minrangedarkness[detection][stance]);
     }
     if (isdefined(self.stealth.var_f6c2537d) && self.stealth.var_f6c2537d.size > 0) {

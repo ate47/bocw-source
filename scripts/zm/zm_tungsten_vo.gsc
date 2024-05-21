@@ -465,30 +465,29 @@ function function_5df7275b() {
     }
 }
 
-// Namespace zm_tungsten_vo/zm_tungsten_vo
-// Params 0, eflags: 0x0
-// Checksum 0x949dcab6, Offset: 0x2f18
-// Size: 0x44
-function function_cd7a3de4() {
-    /#
-        add_debug_command("vox_zamr_env_kp5_krav_1");
-        add_custom_devgui_callback(&cmd);
-    #/
-}
+/#
 
-// Namespace zm_tungsten_vo/zm_tungsten_vo
-// Params 1, eflags: 0x0
-// Checksum 0xdd5cda17, Offset: 0x2f68
-// Size: 0x62
-function cmd(cmd) {
-    /#
+    // Namespace zm_tungsten_vo/zm_tungsten_vo
+    // Params 0, eflags: 0x0
+    // Checksum 0x949dcab6, Offset: 0x2f18
+    // Size: 0x44
+    function function_cd7a3de4() {
+        util::add_debug_command("vox_zamr_env_kp5_krav_1");
+        zm_devgui::add_custom_devgui_callback(&cmd);
+    }
+
+    // Namespace zm_tungsten_vo/zm_tungsten_vo
+    // Params 1, eflags: 0x0
+    // Checksum 0xdd5cda17, Offset: 0x2f68
+    // Size: 0x62
+    function cmd(cmd) {
         switch (cmd) {
         case #"test_vo":
-            level thread function_7622cb70("<unknown string>");
+            level thread zm_vo::function_7622cb70("<unknown string>");
             break;
         default:
             break;
         }
-    #/
-}
+    }
 
+#/

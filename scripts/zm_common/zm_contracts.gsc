@@ -200,7 +200,7 @@ function increment_zm_contract(var_38280f2f, delta = 1, var_86024473) {
 function private function_902ef0de(var_38280f2f, delta) {
     /#
         if (getdvarint(#"scr_contract_debug_multiplier", 0) > 0) {
-            delta = delta * getdvarint(#"scr_contract_debug_multiplier", 1);
+            delta *= getdvarint(#"scr_contract_debug_multiplier", 1);
         }
     #/
     if (delta <= 0) {
@@ -431,89 +431,88 @@ function function_1d4fae71() {
     }
 }
 
-// Namespace contracts/zm_contracts
-// Params 0, eflags: 0x0
-// Checksum 0x224d366d, Offset: 0x16a8
-// Size: 0x54
-function devgui_setup() {
-    /#
+/#
+
+    // Namespace contracts/zm_contracts
+    // Params 0, eflags: 0x0
+    // Checksum 0x224d366d, Offset: 0x16a8
+    // Size: 0x54
+    function devgui_setup() {
         devgui_base = "<unknown string>";
         wait(3);
         function_e07e542b(devgui_base, undefined);
         function_295a8005(devgui_base);
-    #/
-}
+    }
 
-// Namespace contracts/zm_contracts
-// Params 1, eflags: 0x0
-// Checksum 0x37cde5ba, Offset: 0x1708
-// Size: 0x91c
-function function_295a8005(var_1d89ece6) {
-    /#
+    // Namespace contracts/zm_contracts
+    // Params 1, eflags: 0x0
+    // Checksum 0x37cde5ba, Offset: 0x1708
+    // Size: 0x91c
+    function function_295a8005(var_1d89ece6) {
         var_bbd68476 = var_1d89ece6 + "<unknown string>";
         var_c8d599b5 = "<unknown string>";
         var_86418430 = var_bbd68476 + "<unknown string>";
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
         var_86418430 = var_bbd68476 + "<unknown string>";
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
         var_86418430 = var_bbd68476 + "<unknown string>";
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
         var_86418430 = var_bbd68476 + "<unknown string>";
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
         var_86418430 = var_bbd68476 + "<unknown string>";
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
         var_86418430 = var_bbd68476 + "<unknown string>";
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
         var_86418430 = var_bbd68476 + "<unknown string>";
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
         var_86418430 = var_bbd68476 + "<unknown string>";
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
         var_86418430 = var_bbd68476 + "<unknown string>";
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-        function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
-    #/
-}
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+        util::function_3f749abc(var_86418430 + "<unknown string>", var_c8d599b5 + "<unknown string>");
+    }
 
+#/

@@ -163,7 +163,7 @@ function get_item_from_string_perk(perks_string) {
     item_struct = spawnstruct();
     if (!isdefined(level.perkspecialties[perks_string])) {
         /#
-            error("<unknown string>" + perks_string + "<unknown string>" + self.origin);
+            util::error("<unknown string>" + perks_string + "<unknown string>" + self.origin);
         #/
         return;
     }

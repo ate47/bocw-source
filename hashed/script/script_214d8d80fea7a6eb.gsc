@@ -317,7 +317,7 @@ function private function_b68c2eb9(localclientnum, oldval, newval, *bnewent, *bi
     println("<unknown string>");
     println("<unknown string>" + fieldname + "<unknown string>" + bwastimejump + "<unknown string>" + changed + "<unknown string>");
     println("<unknown string>");
-    for (var_67e99fbd = 1; changed >= var_67e99fbd; var_67e99fbd = var_67e99fbd << 1) {
+    for (var_67e99fbd = 1; changed >= var_67e99fbd; var_67e99fbd <<= 1) {
         if (changed & var_67e99fbd) {
             self thread [[ level._fx.rc_car.var_7351c5a[var_67e99fbd] ]](binitialsnap, bwastimejump);
         }
@@ -652,7 +652,7 @@ function private function_23f6671d() {
         var_75128a58 = 1 - scalar;
         var_69954662 = level._fx.rc_car.velocity[1] / 20;
         var_69954662 = max(-1, min(1, var_69954662));
-        var_69954662 = var_69954662 * 0.5;
+        var_69954662 *= 0.5;
         var_50bfab0d = level._fx.rc_car.origin + anglestoforward(level._fx.rc_car.angles) * 100 + (0, 0, 15);
         screenpos = self function_a6a764a9(var_50bfab0d, 1);
         if (isdefined(screenpos)) {
@@ -750,11 +750,14 @@ function private function_d1374213(*localclientnum, *oldval, newval, *bnewent, *
     }
 }
 
-// Namespace namespace_db2381c4/namespace_db2381c4
-// Params 8, eflags: 0x4
-// Checksum 0xdd4b530f, Offset: 0x3918
-// Size: 0xd4
-function private function_907070de(var_55ee7def, localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump) {
-    println("<unknown string>" + var_55ee7def + "<unknown string>" + localclientnum + "<unknown string>" + oldval + "<unknown string>" + newval + "<unknown string>" + bnewent + "<unknown string>" + binitialsnap + "<unknown string>" + fieldname + "<unknown string>" + bwastimejump);
-}
+/#
 
+    // Namespace namespace_db2381c4/namespace_db2381c4
+    // Params 8, eflags: 0x4
+    // Checksum 0xdd4b530f, Offset: 0x3918
+    // Size: 0xd4
+    function private function_907070de(var_55ee7def, localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump) {
+        println("<unknown string>" + var_55ee7def + "<unknown string>" + localclientnum + "<unknown string>" + oldval + "<unknown string>" + newval + "<unknown string>" + bnewent + "<unknown string>" + binitialsnap + "<unknown string>" + fieldname + "<unknown string>" + bwastimejump);
+    }
+
+#/

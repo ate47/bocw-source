@@ -33,15 +33,17 @@ function scalevolume(*ent, *vol) {
     
 }
 
-// Namespace namespace_77fd5d41/namespace_77fd5d41
-// Params 0, eflags: 0x2 linked
-// Checksum 0x3848724d, Offset: 0x510
-// Size: 0x24
-function main() {
-    /#
+/#
+
+    // Namespace namespace_77fd5d41/namespace_77fd5d41
+    // Params 0, eflags: 0x2 linked
+    // Checksum 0x3848724d, Offset: 0x510
+    // Size: 0x24
+    function main() {
         function_5ac4dc99("Cover", 0);
-    #/
-}
+    }
+
+#/
 
 // Namespace namespace_77fd5d41/namespace_77fd5d41
 // Params 0, eflags: 0x2 linked
@@ -955,7 +957,7 @@ function investigate_sanitycheckinitialpos(investigatepos, searchpos) {
     var_ea982379 = searchpos - self.origin;
     var_de013700 = length(var_ea982379);
     if (var_de013700 > 256) {
-        var_ea982379 = var_ea982379 / var_de013700;
+        var_ea982379 /= var_de013700;
         if (vectordot(var_ea982379, var_f578e91a) < -0.5) {
             return false;
         }
@@ -2004,12 +2006,12 @@ function hunt_getnextclearpos() {
     }
     cleardata = self.stealth.cleardata;
     if (cleardata.brouteforward) {
-        cleardata.curroutepoint = cleardata.curroutepoint + 1;
+        cleardata.curroutepoint += 1;
         if (cleardata.curroutepoint >= cleardata.curregion.route_points.size) {
             cleardata.curroutepoint = 0;
         }
     } else {
-        cleardata.curroutepoint = cleardata.curroutepoint - 1;
+        cleardata.curroutepoint -= 1;
         if (cleardata.curroutepoint < 0) {
             cleardata.curroutepoint = cleardata.curregion.route_points.size - 1;
         }
@@ -2448,7 +2450,7 @@ function hunt_sidechecks(instancedata) {
                     continue;
                 }
                 /#
-                    if (debug_enabled()) {
+                    if (namespace_b0df45a::debug_enabled()) {
                         var_861ee216 = anglestoforward(node.angles);
                         circle(lookaheadpos, var_bea9b15e, (0, 1, 0), 1, 0, 1);
                         box(node.origin, (-16, -16, 0), (16, 16, 8), node.angles[1], (1, 1, 0), 1, 0, 1);
@@ -2470,7 +2472,7 @@ function hunt_sidechecks(instancedata) {
     if (isdefined(instancedata.cornerchecknode)) {
         cornerchecknode = instancedata.cornerchecknode;
         /#
-            if (debug_enabled()) {
+            if (namespace_b0df45a::debug_enabled()) {
                 box(cornerchecknode.origin, (-16, -16, 0), (16, 16, 8), cornerchecknode.angles[1], (1, 1, 0), 1, 0, 1);
             }
         #/
@@ -2489,7 +2491,7 @@ function hunt_sidechecks(instancedata) {
             checkpos = self.origin + rotatepoint((128, 0, 0), cornerchecknode.angles);
         }
         /#
-            if (debug_enabled()) {
+            if (namespace_b0df45a::debug_enabled()) {
                 line(cornerchecknode.origin, checkpos, (1, 1, 0), 1, 0, 1);
             }
         #/

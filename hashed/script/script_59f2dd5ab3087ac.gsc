@@ -106,7 +106,7 @@ function updateprogress(localclientnum, obj_id, cooldowntime) {
     self endon(#"hash_21d2c3e2020a95a3");
     level endon(#"disconnect", #"game_ended");
     endtime = cooldowntime - 4;
-    for (progress = 0; progress < endtime; progress = progress + 0.15) {
+    for (progress = 0; progress < endtime; progress += 0.15) {
         percent = min(1, progress / endtime);
         objective_setprogress(localclientnum, obj_id, percent);
         wait(0.15);

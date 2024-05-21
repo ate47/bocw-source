@@ -93,7 +93,7 @@ function is_encounter() {
 function round_up_to_ten(score) {
     new_score = score - score % 10;
     if (new_score < score) {
-        new_score = new_score + 10;
+        new_score += 10;
     }
     return new_score;
 }
@@ -106,7 +106,7 @@ function round_up_score(score, value) {
     score = int(score);
     new_score = score - score % value;
     if (new_score < score) {
-        new_score = new_score + value;
+        new_score += value;
     }
     return new_score;
 }
@@ -116,7 +116,7 @@ function round_up_score(score, value) {
 // Checksum 0x76d8dfe0, Offset: 0x908
 // Size: 0x3a
 function halve_score(n_score) {
-    n_score = n_score / 2;
+    n_score /= 2;
     n_score = round_up_score(n_score, 10);
     return n_score;
 }
@@ -300,12 +300,13 @@ function zm_ui_infotext(localclientnum, *oldval, newval, *bnewent, *binitialsnap
     setuimodelvalue(createuimodel(function_1df4c3b0(binitialsnap, #"zm_inventory"), "infoText"), "");
 }
 
-// Namespace zm_utility/zm_utility
-// Params 4, eflags: 0x0
-// Checksum 0xa3f25bcb, Offset: 0x1090
-// Size: 0x274
-function drawcylinder(pos, rad, height, color) {
-    /#
+/#
+
+    // Namespace zm_utility/zm_utility
+    // Params 4, eflags: 0x0
+    // Checksum 0xa3f25bcb, Offset: 0x1090
+    // Size: 0x274
+    function drawcylinder(pos, rad, height, color) {
         currad = rad;
         curheight = height;
         debugstar(pos, 1, color);
@@ -316,8 +317,9 @@ function drawcylinder(pos, rad, height, color) {
             line(pos + (cos(theta) * currad, sin(theta) * currad, curheight), pos + (cos(theta2) * currad, sin(theta2) * currad, curheight), color, 1, 1, 100);
             line(pos + (cos(theta) * currad, sin(theta) * currad, 0), pos + (cos(theta) * currad, sin(theta) * currad, curheight), color, 1, 1, 100);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_utility/zm_utility
 // Params 1, eflags: 0x2 linked
@@ -699,7 +701,7 @@ function function_725e99fb(localclientnum) {
         level.var_c427e93b = [];
     }
     /#
-        init_dvar(#"hash_416069220b5b56e3", 0, &function_3a919d3f);
+        util::init_dvar(#"hash_416069220b5b56e3", 0, &function_3a919d3f);
     #/
     while (true) {
         arrayremovevalue(level.var_c427e93b, undefined);
@@ -707,11 +709,11 @@ function function_725e99fb(localclientnum) {
             if (!getdvarint(#"hash_2769a6109d9d7b4d", 1)) {
                 foreach (machine in level.var_c427e93b) {
                     if (is_true(machine.var_c02c4d66)) {
-                        unlock_model(machine.model);
+                        util::unlock_model(machine.model);
                         machine.var_c02c4d66 = undefined;
                         if (isarray(machine.var_35f71e38)) {
                             foreach (var_61794186 in machine.var_35f71e38) {
-                                unlock_model(var_61794186);
+                                util::unlock_model(var_61794186);
                             }
                         }
                     }
@@ -780,26 +782,25 @@ function private function_2cfe56d8() {
     return var_2cdb84bb;
 }
 
-// Namespace zm_utility/zm_utility
-// Params 1, eflags: 0x0
-// Checksum 0xa7a5a8db, Offset: 0x2ea8
-// Size: 0x60
-function function_3a919d3f(params) {
-    /#
+/#
+
+    // Namespace zm_utility/zm_utility
+    // Params 1, eflags: 0x0
+    // Checksum 0xa7a5a8db, Offset: 0x2ea8
+    // Size: 0x60
+    function function_3a919d3f(params) {
         if (int(params.value)) {
             level thread function_538799c4();
             return;
         }
         level notify(#"hash_a8ed1dd0750e229");
-    #/
-}
+    }
 
-// Namespace zm_utility/zm_utility
-// Params 0, eflags: 0x4
-// Checksum 0xc85805b5, Offset: 0x2f10
-// Size: 0x26a
-function private function_538799c4() {
-    /#
+    // Namespace zm_utility/zm_utility
+    // Params 0, eflags: 0x4
+    // Checksum 0xc85805b5, Offset: 0x2f10
+    // Size: 0x26a
+    function private function_538799c4() {
         level notify(#"hash_a8ed1dd0750e229");
         level endon(#"hash_a8ed1dd0750e229");
         while (true) {
@@ -822,8 +823,9 @@ function private function_538799c4() {
             }
             waitframe(1);
         }
-    #/
-}
+    }
+
+#/
 
 // Namespace zm_utility/zm_utility
 // Params 0, eflags: 0x2 linked

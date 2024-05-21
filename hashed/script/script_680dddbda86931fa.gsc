@@ -531,7 +531,7 @@ function function_1f0def85(item) {
 function function_970b8d86(slotid, attachmentoffset = undefined) {
     if (isdefined(attachmentoffset)) {
         assert(attachmentoffset <= 8);
-        slotid = slotid + attachmentoffset;
+        slotid += attachmentoffset;
     }
     assert(slotid >= 0 && slotid < 17 + 1 + 8 + 1 + 8 + 1 + 8 + 1);
     var_f5e3c230 = slotid;
@@ -724,7 +724,7 @@ function function_f73bc33(item) {
 // Checksum 0xd709095d, Offset: 0x3e20
 // Size: 0x46
 function get_itemtype(itementry) {
-    return isdefined(itementry.var_456aa154) ? getscriptbundle(itementry.var_456aa154).name : itementry.name;
+    return isdefined(itementry.actionregisterweapon) ? getscriptbundle(itementry.actionregisterweapon).name : itementry.name;
 }
 
 // Namespace item_world_util/item_world_util

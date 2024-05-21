@@ -143,7 +143,7 @@ function event_handler[event_bf57d5bb] function_4540ef25(*eventstruct) {
     }
     eyepoint = self geteye();
     dir = anglestoforward(self getplayerangles());
-    dir = dir * mpdialog_value("enemyContactDistance", 0);
+    dir *= mpdialog_value("enemyContactDistance", 0);
     endpoint = eyepoint + dir;
     traceresult = bullettrace(eyepoint, endpoint, 1, self);
     if (isdefined(traceresult[#"entity"]) && util::function_fbce7263(traceresult[#"entity"].team, self.team)) {
