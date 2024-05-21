@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_24f8d3e335c86c5a;
 #using script_1f60f29863707208;
-#using script_7412801d944d156b;
+#using scripts\zm\zm_platinum_ww_quest.csc;
 #using script_14b99732aeac3ca6;
 #using script_3dcf1dc8f679581e;
 #using script_5cd3f24eb1709844;

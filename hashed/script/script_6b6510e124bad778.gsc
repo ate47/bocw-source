@@ -147,7 +147,7 @@ function function_3332c6a1() {
     self.doa.score.var_85987bae = toks[0] + self.doa.entnum + 1 + toks[1];
     toks = strtok("doaGlobal.player$.respawnHelpers", "$");
     self.doa.score.var_ac6c4aee = toks[0] + self.doa.entnum + 1 + toks[1];
-    self function_7f7a069d();
+    self updatehud();
 }
 
 // Namespace namespace_6e90e490/namespace_6e90e490
@@ -187,7 +187,7 @@ function function_c937e51f(var_f40cf449) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x6c6217a0, Offset: 0x1558
 // Size: 0x6ac
-function function_7f7a069d() {
+function updatehud() {
     if (!isdefined(self.doa) || !isdefined(self.doa.score)) {
         return;
     }

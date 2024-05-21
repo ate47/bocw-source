@@ -3,9 +3,9 @@
 #using scripts\core_common\bots\bot_action.gsc;
 #using scripts\core_common\bots\bot.gsc;
 
-#namespace namespace_eed5a117;
+#namespace bot_actions;
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 0, eflags: 0x2 linked
 // Checksum 0xe370327e, Offset: 0xb8
 // Size: 0x5a
@@ -20,7 +20,7 @@ function preinit() {
     }
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 0, eflags: 0x6 linked
 // Checksum 0xbf6254a6, Offset: 0x120
 // Size: 0x27c
@@ -37,7 +37,7 @@ function private function_9cefb01() {
     }
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0x1ba62362, Offset: 0x3a8
 // Size: 0x460
@@ -115,7 +115,7 @@ function private function_bebdaa6b(actionparams) {
     return 95;
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0xf78bd2c7, Offset: 0x810
 // Size: 0x8e
@@ -129,7 +129,7 @@ function private reload(*actionparams) {
     }
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0xee6fae91, Offset: 0x8a8
 // Size: 0x1c8
@@ -160,7 +160,7 @@ function private function_6ba9f861(actionparams) {
     return 100;
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0xa45adf, Offset: 0xa78
 // Size: 0xfc
@@ -172,7 +172,7 @@ function private function_22e246dd(*actionparams) {
     self use_gameobject(self.bot.var_538135ed.gameobject);
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0x3aba25d0, Offset: 0xb80
 // Size: 0x28e
@@ -206,7 +206,7 @@ function private function_9575b14a(actionparams) {
     return 100;
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0x4584e1d2, Offset: 0xe18
 // Size: 0xa6
@@ -221,7 +221,7 @@ function private function_5be2fa6e(actionparams) {
     }
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0x100d5180, Offset: 0xec8
 // Size: 0x1a8
@@ -255,7 +255,7 @@ function private function_5040c5b8(actionparams) {
     return 100;
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0x2685b710, Offset: 0x1078
 // Size: 0x130
@@ -275,7 +275,7 @@ function private revive(actionparams) {
     }
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0xeed6a878, Offset: 0x11b0
 // Size: 0x5e2
@@ -365,7 +365,7 @@ function private function_97bc2873(actionparams) {
     return 96;
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0x619552f7, Offset: 0x17a0
 // Size: 0x15e
@@ -389,7 +389,7 @@ function private melee(actionparams) {
     }
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0xba02010d, Offset: 0x1908
 // Size: 0xd0
@@ -406,7 +406,7 @@ function private function_d31a5b9a(actionparams) {
     return 100;
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0x8ffbabd7, Offset: 0x19e0
 // Size: 0x1b0
@@ -428,7 +428,7 @@ function private function_3aab44a3(*actionparams) {
     }
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0x8d44b363, Offset: 0x1b98
 // Size: 0x138
@@ -451,7 +451,7 @@ function private function_96340252(actionparams) {
     return 100;
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0xb36509b2, Offset: 0x1cd8
 // Size: 0x1a8
@@ -479,7 +479,7 @@ function private function_c49cdd53(*actionparams) {
     }
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0xb59c3d1, Offset: 0x1e88
 // Size: 0x26
@@ -489,7 +489,7 @@ function private function_84f889a2(*notifyhash) {
     }
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0x9e16cfca, Offset: 0x1eb8
 // Size: 0x1a8
@@ -513,7 +513,7 @@ function private function_9f7ee32b(actionparams) {
     return 100;
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0xdc4e0c10, Offset: 0x2068
 // Size: 0x90
@@ -525,7 +525,7 @@ function private function_f60b48cd(*actionparams) {
     }
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0x5cf41de2, Offset: 0x2100
 // Size: 0x118
@@ -550,7 +550,7 @@ function private use_trigger(trigger) {
     }
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0x5be0ce15, Offset: 0x2220
 // Size: 0x9a
@@ -565,7 +565,7 @@ function private function_e02bffcd(trigger) {
     return distance2dsquared(trigger.origin, self.origin) < radius * radius;
 }
 
-// Namespace namespace_eed5a117/namespace_eed5a117
+// Namespace bot_actions/bot_actions
 // Params 1, eflags: 0x6 linked
 // Checksum 0xead329cc, Offset: 0x22c8
 // Size: 0x178

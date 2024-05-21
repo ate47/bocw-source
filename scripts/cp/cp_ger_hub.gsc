@@ -47,9 +47,9 @@ function function_5b503df2() {
     skipto::add("post_kgb_skip_briefing", &hub_post_kgb::function_223f05aa, &hub_post_kgb::function_b58272a1, "safehouse_start", undefined, ["safehouse"]);
     skipto::add("post_cuba", &hub_post_cuba::main, &hub_post_cuba::starting, "safehouse_start", undefined, ["safehouse"]);
     /#
-        function_67843f17("<unknown string>", &main, &starting, "<unknown string>");
-        function_67843f17("<unknown string>", &main, &starting, "<unknown string>");
-        function_67843f17("<unknown string>", &main, &starting, "<unknown string>");
+        add_dev("<unknown string>", &main, &starting, "<unknown string>");
+        add_dev("<unknown string>", &main, &starting, "<unknown string>");
+        add_dev("<unknown string>", &main, &starting, "<unknown string>");
     #/
 }
 

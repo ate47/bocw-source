@@ -86,10 +86,10 @@ function function_37dfd679() {
     skipto::add("tkdn_af_skid", &tkdn_af_skid::main, &tkdn_af_skid::starting, "Hit 3: Skid", &tkdn_af_skid::cleanup, ["airfield_base"]);
     skipto::function_eb91535d("tkdn_af_wreck", &tkdn_af_wreck::main, &tkdn_af_wreck::starting, "Hit 3: Wreck", &tkdn_af_wreck::cleanup, ["airfield_base"]);
     /#
-        function_67843f17("<unknown string>", &main, &starting, "<unknown string>", &cleanup, undefined, undefined, ["<unknown string>"]);
-        function_67843f17("<unknown string>", &main, &starting, "<unknown string>", &cleanup, undefined, undefined, ["<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>"]);
-        function_67843f17("<unknown string>", &main, &starting, "<unknown string>", &cleanup, undefined, undefined, ["<unknown string>"]);
-        function_67843f17("<unknown string>", &function_5bef74d0);
+        add_dev("<unknown string>", &main, &starting, "<unknown string>", &cleanup, undefined, undefined, ["<unknown string>"]);
+        add_dev("<unknown string>", &main, &starting, "<unknown string>", &cleanup, undefined, undefined, ["<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>"]);
+        add_dev("<unknown string>", &main, &starting, "<unknown string>", &cleanup, undefined, undefined, ["<unknown string>"]);
+        add_dev("<unknown string>", &function_5bef74d0);
     #/
 }
 

@@ -579,16 +579,16 @@ function function_5ff83684() {
     level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_shotgun_t9_dw");
     level.pistol_value_solo_replace_below = level.pistol_values.size - 1;
     level.pistol_values[level.pistol_values.size] = level.default_solo_laststandpistol;
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_e58e352069bc0a5");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_7ea686a9e6a34c98");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_8930926b44733df");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_762ab59305ba3b92");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_4d26fe8a4c3a8340");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_969789ddb6ea1e1");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_2ce3d130a2776a32");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_4f5655b28a953dc7");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_4cb501299914890");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_68ffd1ca728b067a");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_semiauto_t9_upgraded");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_burst_t9_upgraded");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_revolver_t9_upgraded");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_fullauto_t9_upgraded");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_shotgun_t9_upgraded");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_semiauto_t9_dw_upgraded");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_burst_t9_dw_upgraded");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_revolver_t9_dw_upgraded");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_fullauto_t9_dw_upgraded");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_shotgun_t9_dw_upgraded");
     level.pistol_values[level.pistol_values.size] = getweapon(#"ray_gun");
     level.pistol_values[level.pistol_values.size] = getweapon(#"ray_gun_upgraded");
 }
@@ -1537,11 +1537,11 @@ function revive_do_revive(e_revivee, t_secondary) {
     self.revive_progress = self.revive_progress + 1;
     self thread check_for_failed_revive(e_revivee);
     while (isdefined(self) && self is_reviving(e_revivee, t_secondary)) {
-        var_ae7a2103 = function_800268ed(e_revivee) ? e_revivee.var_1ff8de20 : e_revivee;
-        level.var_ff482f76 zm_laststand_client::set_revive_progress(var_ae7a2103, e_revivee.var_6fc48a11 / revivetime);
-        if (isdefined(var_ae7a2103.var_57b374b4)) {
-            objective_setprogress(var_ae7a2103.var_57b374b4, e_revivee.var_6fc48a11 / revivetime);
-            objective_setgamemodeflags(var_ae7a2103.var_57b374b4, 0);
+        hud_player = function_800268ed(e_revivee) ? e_revivee.var_1ff8de20 : e_revivee;
+        level.var_ff482f76 zm_laststand_client::set_revive_progress(hud_player, e_revivee.var_6fc48a11 / revivetime);
+        if (isdefined(hud_player.var_57b374b4)) {
+            objective_setprogress(hud_player.var_57b374b4, e_revivee.var_6fc48a11 / revivetime);
+            objective_setgamemodeflags(hud_player.var_57b374b4, 0);
         }
         if (is_true(e_revivee.revivetrigger.auto_revive)) {
             break;
@@ -1581,8 +1581,8 @@ function revive_do_revive(e_revivee, t_secondary) {
         e_revivee thread function_7165ead0();
     } else {
         e_revivee.var_6fc48a11 = 0;
-        var_ae7a2103 = function_800268ed(e_revivee) ? e_revivee.var_1ff8de20 : e_revivee;
-        level.var_ff482f76 zm_laststand_client::set_revive_progress(var_ae7a2103, 0);
+        hud_player = function_800268ed(e_revivee) ? e_revivee.var_1ff8de20 : e_revivee;
+        level.var_ff482f76 zm_laststand_client::set_revive_progress(hud_player, 0);
     }
     return revived;
 }
@@ -1595,8 +1595,8 @@ function function_2cc9a315(revivetime) {
     self endon(#"player_being_revived", #"player_revived", #"disconnect", #"bled_out");
     while (isdefined(self) && !is_true(self.var_c6a6f334) && isdefined(self.var_6fc48a11) && self.var_6fc48a11 >= 0) {
         self.var_6fc48a11 = self.var_6fc48a11 - 0.05;
-        var_ae7a2103 = function_800268ed(self) ? self.var_1ff8de20 : self;
-        level.var_ff482f76 zm_laststand_client::set_revive_progress(var_ae7a2103, self.var_6fc48a11 / revivetime);
+        hud_player = function_800268ed(self) ? self.var_1ff8de20 : self;
+        level.var_ff482f76 zm_laststand_client::set_revive_progress(hud_player, self.var_6fc48a11 / revivetime);
         waitframe(1);
     }
 }

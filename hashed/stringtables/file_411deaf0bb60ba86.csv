@@ -255,8 +255,8 @@
 22415806,#hash_3a984ec8e8d92173,0,2,#blueprint,#ultra,false,?0
 27012354,#ar_slowhandling_t9,0,2,#weapon,#base,false,?0
 19193072,#hash_4bf3f77ef57ad02,0,0,#blueprint,#legendary,false,?0
-23595328,#hash_49c4494ae66c1fa7,0,0,#blueprint,#ultra,false,?0
-29752529,#hash_25ff17bb722aaaf5,0,0,#weapon,#base,false,?0
+23595328,#ar_soviet_bp_ferrofluid,0,0,#blueprint,#ultra,false,?0
+29752529,#ar_soviet_t9,0,0,#weapon,#base,false,?0
 18353033,#hash_7bfe641abf162e17,0,0,#blueprint,#legendary,false,?0
 27406254,#hash_393ea3350b385d9e,0,0,#blueprint,#legendary,false,?0
 26001662,#hash_2aaa03d516b2679b,0,0,#blueprint,#epic,false,?0
@@ -3652,8 +3652,8 @@ cod_points_9500,#,0,0,#common,#false,false,?0
 28059508,#hash_44433ab146be5d3d,0,0,#blueprint,#epic,false,?0
 26806612,#hash_64f96df246810797,0,0,#blueprint,#legendary,false,?0
 29145886,#melee_sai_t9_dw,0,0,#weapon,#base,false,?0
-25102261,#hash_e80718397fcd60e,0,0,#blueprint,#legendary,false,?0
-30566826,#hash_6518b25ee10d7f7e,0,0,#weapon,#base,false,?0
+25102261,#melee_scythe_bp_rbunny,0,0,#blueprint,#legendary,false,?0
+30566826,#melee_scythe_t9,0,0,#weapon,#base,false,?0
 27189826,#hash_3745de317cc9629c,0,0,#blueprint,#epic,false,?0
 24207439,#hash_3029d913130932de,0,0,#blueprint,#epic,false,?0
 25492791,#hash_1fe7199042a98913,0,0,#blueprint,#epic,false,?0
@@ -6295,13 +6295,13 @@ s4_xp_token_rare,#,7,0,#rare,#false,false,?0
 18348356,#hash_752d57c1173cb5d0,0,0,#blueprint,#legendary,false,?0
 32171286,#hash_bb2e600dfab109c,0,0,#blueprint,#legendary,false,?0
 26700036,#hash_60592b8a8057f14b,0,0,#blueprint,#ultra,false,?0
-19684290,#hash_278e52b904ea7e6b,0,0,#weapon,#base,false,?0
+19684290,#smg_cqb_t9,0,0,#weapon,#base,false,?0
 26630605,#hash_26be2b3d8478eab2,0,0,#blueprint,#legendary,false,?0
 17915477,#hash_356ebcbe067904bd,0,4,#blueprint,#legendary,false,?0
 29958260,#hash_721b211ea4a5ce7e,0,0,#blueprint,#legendary,false,?0
 18418030,#hash_530c19cae65d0cca,0,0,#blueprint,#legendary,false,?0
 32224192,#smg_fastfire_t9,0,1,#weapon,#base,false,?0
-18006136,#hash_7a9d35a0f888b881,0,0,#weapon,#base,false,?0
+18006136,#smg_flechette_t9,0,0,#weapon,#base,false,?0
 26933756,#hash_1fac5134efbf2461,0,0,#blueprint,#epic,false,?0
 20748199,#hash_667f15a55ec2003f,0,0,#blueprint,#rare,false,?0
 28366664,#hash_527d0c4c67658c4e,0,0,#blueprint,#legendary,false,?0

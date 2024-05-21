@@ -992,16 +992,16 @@ function function_268bdf4f(name, func_init, arg1, arg2, arg3, arg4, arg5, var_dc
 // Checksum 0x7c7d6590, Offset: 0x32b8
 // Size: 0x126
 function function_619dc45e(var_18647bc8, func, arg1, arg2, arg3, arg4, arg5) {
-    var_e68b3e89 = [];
-    foreach (var_6058faa5 in var_18647bc8) {
-        if (!isdefined(var_e68b3e89)) {
-            var_e68b3e89 = [];
-        } else if (!isarray(var_e68b3e89)) {
-            var_e68b3e89 = array(var_e68b3e89);
+    a_heroes = [];
+    foreach (str_hero in var_18647bc8) {
+        if (!isdefined(a_heroes)) {
+            a_heroes = [];
+        } else if (!isarray(a_heroes)) {
+            a_heroes = array(a_heroes);
         }
-        var_e68b3e89[var_e68b3e89.size] = function_268bdf4f(var_6058faa5, func, arg1, arg2, arg3, arg4, arg5);
+        a_heroes[a_heroes.size] = function_268bdf4f(str_hero, func, arg1, arg2, arg3, arg4, arg5);
     }
-    return var_e68b3e89;
+    return a_heroes;
 }
 
 // Namespace util/util

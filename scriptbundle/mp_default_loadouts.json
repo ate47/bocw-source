@@ -206,7 +206,7 @@
             "customclassname": "#hash_1c0def7894dcc13c",
             "var_26b5c8ef": -1,
             "primary": "#lmg_light_t9",
-            "specialgrenade": "#hash_2b9efbad11308e02",
+            "specialgrenade": "#land_mine",
             "secondary": "#launcher_standard_t9",
             "primarygrenade": "#satchel_charge",
             "secondarygrenade": "#willy_pete"
@@ -465,7 +465,7 @@
             "customclassname": "#class/slot1",
             "var_26b5c8ef": -1,
             "primary": "#ar_standard_t9",
-            "specialgrenade": "#hash_2b9efbad11308e02",
+            "specialgrenade": "#land_mine",
             "secondary": "#pistol_semiauto_t9",
             "primarygrenade": "#frag_grenade",
             "secondarygrenade": "#eq_slow_grenade"
@@ -497,7 +497,7 @@
             "customclassname": "#class/slot1",
             "var_26b5c8ef": -1,
             "primary": "#ar_standard_t9",
-            "specialgrenade": "#hash_2b9efbad11308e02",
+            "specialgrenade": "#land_mine",
             "secondary": "#pistol_semiauto_t9",
             "primarygrenade": "#frag_grenade",
             "secondarygrenade": "#eq_slow_grenade"
@@ -557,7 +557,7 @@
             "customclassname": "#class/slot3",
             "var_26b5c8ef": -1,
             "primary": "#lmg_accurate_t9",
-            "specialgrenade": "#hash_2b9efbad11308e02",
+            "specialgrenade": "#land_mine",
             "secondary": "#launcher_standard_t9",
             "primarygrenade": "#frag_grenade",
             "secondarygrenade": "#eq_slow_grenade"
@@ -617,7 +617,7 @@
             "customclassname": "#class/slot5",
             "var_26b5c8ef": -1,
             "primary": "#tr_damagesemi_t9",
-            "specialgrenade": "#hash_2b9efbad11308e02",
+            "specialgrenade": "#land_mine",
             "secondary": "#pistol_semiauto_t9",
             "primarygrenade": "#frag_grenade",
             "secondarygrenade": "#eq_slow_grenade"
@@ -647,7 +647,7 @@
             "customclassname": "#class/slot6",
             "var_26b5c8ef": -1,
             "primary": "#ar_damage_t9",
-            "specialgrenade": "#hash_2b9efbad11308e02",
+            "specialgrenade": "#land_mine",
             "secondary": "#shotgun_pump_t9",
             "primarygrenade": "#frag_grenade",
             "secondarygrenade": "#hash_364914e1708cb629"

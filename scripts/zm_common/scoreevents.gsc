@@ -103,7 +103,7 @@ function function_af57ad40() {
     function_9451b95c(#"sig_bow_flame", "combat_bow_kill_zm", "combat_bow_special_kill_zm", "combat_bow_elite_kill_zm");
     function_9451b95c(#"hash_1734871fef9c0549", "chopper_gunner_kill_zm", "chopper_gunner_kill_special_zm", "chopper_gunner_kill_elite_zm");
     function_9451b95c(#"hero_annihilator", "hand_cannon_kill_zm", "hand_cannon_special_kill_zm", "hand_cannon_elite_kill_zm");
-    function_9451b95c(#"hash_3c8b385a76cbfe83", "arcxd_kill_zm", "arcxd_special_kill_zm", "arcxd_elite_kill_zm");
+    function_9451b95c(#"recon_car_zm", "arcxd_kill_zm", "arcxd_special_kill_zm", "arcxd_elite_kill_zm");
     function_9451b95c(#"planemortar", "artillery_strike_kill_zm", "artillery_strike_kill_special_zm", "artillery_strike_kill_elite_zm");
     function_9451b95c(#"napalm_strike", "napalm_strike_kill_zm", "napalm_strike_kill_special_zm", "napalm_strike_kill_elite_zm");
     function_9451b95c(#"hash_6a4dd5ed56f6e3f6", "lt53_kazimir_portal_kill_zm", "lt53_kazimir_portal_kill_special_zm", "lt53_kazimir_portal_kill_elite_zm");
@@ -532,12 +532,12 @@ function function_970a97b2(params) {
             processscoreevent(scoreevent, params.eattacker, var_a0345f37, params.weapon, undefined, params);
         } else if (isdefined(params.weapon.name)) {
             switch (params.weapon.name) {
-            case #"hash_941005e056449b4":
-            case #"hash_11363c24185fecdb":
-            case #"hash_189ef2dafffe1f4c":
-            case #"hash_294926d598e011fa":
+            case #"ww_ieu_gas_t9_upgraded":
+            case #"ww_ieu_plasma_t9_upgraded":
+            case #"ww_ieu_acid_t9_upgraded":
+            case #"ww_ieu_shockwave_t9_upgraded":
             case #"ww_ieu_shockwave_t9":
-            case #"hash_4ee16eb0581e4646":
+            case #"ww_ieu_electric_t9_upgraded":
             case #"ww_ieu_electric_t9":
             case #"ww_ieu_acid_t9":
             case #"ww_ieu_gas_t9":
@@ -900,12 +900,12 @@ function function_f2ce8b86(params) {
                     case #"remote_missile":
                     case #"remote_missile_bomblet":
                     case #"remote_missile_missile":
-                        var_c2dcab66.player stats::function_8fb23f94(#"hash_3de3d523512f7cbc", #"kills", 1);
-                        var_c2dcab66.player stats::function_b04e7184(#"hash_3de3d523512f7cbc", #"best_kills");
+                        var_c2dcab66.player stats::function_8fb23f94(#"remote_missile_zm", #"kills", 1);
+                        var_c2dcab66.player stats::function_b04e7184(#"remote_missile_zm", #"best_kills");
                         break;
                     case #"recon_car":
-                        var_c2dcab66.player stats::function_8fb23f94(#"hash_3c8b385a76cbfe83", #"kills", 1);
-                        var_c2dcab66.player stats::function_b04e7184(#"hash_3c8b385a76cbfe83", #"best_kills");
+                        var_c2dcab66.player stats::function_8fb23f94(#"recon_car_zm", #"kills", 1);
+                        var_c2dcab66.player stats::function_b04e7184(#"recon_car_zm", #"best_kills");
                     default:
                         var_c2dcab66.player stats::function_8fb23f94(var_c2dcab66.weapon.statname, #"kills", 1);
                         break;
@@ -1512,7 +1512,7 @@ function updatemultikill(params) {
                         if (params.eattacker.var_4927d3d[params.weapon.name].multikills === 5) {
                             processscoreevent("cruise_missile_multikill_zm", params.eattacker, undefined, params.weapon);
                             params.eattacker contracts::increment_zm_contract(#"hash_1a6125474b0d46e1");
-                            params.eattacker stats::function_8fb23f94(#"hash_3de3d523512f7cbc", #"hash_7bf29fa438d54aad", 1);
+                            params.eattacker stats::function_8fb23f94(#"remote_missile_zm", #"hash_7bf29fa438d54aad", 1);
                             params.eattacker function_529d54aa();
                             var_da42dc1e = 1;
                         }
@@ -1565,10 +1565,10 @@ function updatemultikill(params) {
                             var_da42dc1e = 1;
                         }
                         break;
-                    case #"hash_3c8b385a76cbfe83":
+                    case #"recon_car_zm":
                         if (params.eattacker.var_4927d3d[params.weapon.name].multikills === 5) {
                             processscoreevent("arcxd_multikill_zm", params.eattacker, undefined, params.weapon);
-                            params.eattacker stats::function_8fb23f94(#"hash_3c8b385a76cbfe83", #"hash_7bf29fa438d54aad", 1);
+                            params.eattacker stats::function_8fb23f94(#"recon_car_zm", #"hash_7bf29fa438d54aad", 1);
                             params.eattacker function_529d54aa();
                             var_da42dc1e = 1;
                         }
@@ -1648,12 +1648,12 @@ function updatemultikill(params) {
                         processscoreevent("lt53_kazimir_multikill_zm", params.eattacker, undefined, params.weapon);
                         var_da42dc1e = 1;
                         break;
-                    case #"hash_941005e056449b4":
-                    case #"hash_11363c24185fecdb":
-                    case #"hash_189ef2dafffe1f4c":
-                    case #"hash_294926d598e011fa":
+                    case #"ww_ieu_gas_t9_upgraded":
+                    case #"ww_ieu_plasma_t9_upgraded":
+                    case #"ww_ieu_acid_t9_upgraded":
+                    case #"ww_ieu_shockwave_t9_upgraded":
                     case #"ww_ieu_shockwave_t9":
-                    case #"hash_4ee16eb0581e4646":
+                    case #"ww_ieu_electric_t9_upgraded":
                     case #"ww_ieu_electric_t9":
                     case #"ww_ieu_acid_t9":
                     case #"ww_ieu_gas_t9":
@@ -1661,18 +1661,18 @@ function updatemultikill(params) {
                         processscoreevent("ieu_multikill_zm", params.eattacker, undefined, params.weapon);
                         var_da42dc1e = 1;
                         break;
-                    case #"hash_2d0c14dce5a6ebed":
-                    case #"hash_386308ed987052a4":
+                    case #"ww_mega_barrel_fullauto_copycat_t9_upgraded":
+                    case #"ww_mega_barrel_fullauto_copycat_t9":
                         params.eattacker notify(#"hash_44abe1c14b998f86", {#weapon_name:params.weapon.name});
                         processscoreevent("crbrs_multikill_zm", params.eattacker, undefined, params.weapon);
                         var_da42dc1e = 1;
                         break;
-                    case #"hash_226d0ad69d9efa1":
-                    case #"hash_c5ecf0ae6501e5f":
-                    case #"hash_131a672d67787b26":
-                    case #"hash_13c5628d2e8de172":
-                    case #"hash_209d5c516bfdf9e5":
-                    case #"hash_7bf7797b85b0089c":
+                    case #"ww_mega_barrel_fullauto_blazer_beam_t9":
+                    case #"ww_mega_barrel_fullauto_diffusion_beam_t9_upgraded":
+                    case #"ww_mega_barrel_fullauto_diffusion_beam_t9":
+                    case #"ww_mega_barrel_fullauto_blazer_beam_t9_upgraded":
+                    case #"ww_mega_barrel_fullauto_micro_missile_t9_upgraded":
+                    case #"ww_mega_barrel_fullauto_micro_missile_t9":
                         processscoreevent("crbrs_variants_multikill_zm", params.eattacker, undefined, params.weapon);
                         params.eattacker notify(#"hash_44abe1c14b998f86", {#weapon_name:params.weapon.name});
                         var_da42dc1e = 1;
@@ -1809,7 +1809,7 @@ function updatemultikill(params) {
     if (zm_utility::is_player_valid(params.eattacker, 0, 0)) {
         if (params.enemy.damagemod === "MOD_UNKNOWN" && (params.weapon.name === #"hash_ac86d29509a8939" || params.weapon.name === #"hash_493fc891e20b4f8a")) {
             function_2bf1d1bb("ray_rifle_multikill_zm", params.eattacker, params.weapon.name, params.weapon, 2000, 10);
-        } else if (params.enemy.damagemod === "MOD_MELEE" && (params.weapon.name === #"hash_69461751fa492ea4" || params.weapon.name === #"hash_5382c3fae4273fed")) {
+        } else if (params.enemy.damagemod === "MOD_MELEE" && (params.weapon.name === #"ww_axe_gun_melee_t9" || params.weapon.name === #"ww_axe_gun_melee_t9_upgraded")) {
             function_2bf1d1bb("crystal_axe_blade_multikill_zm", params.eattacker, params.weapon.name, params.weapon, 2000, 10);
         } else if (params.enemy.damagemod === "MOD_PISTOL_BULLET" && (params.weapon.name === #"hash_18696150427f2efb" || params.weapon.name === #"hash_7eab88123b09e2c")) {
             function_2bf1d1bb("crystal_axe_shardshooter_multikill_zm", params.eattacker, params.weapon.name, params.weapon, 2000, 10);

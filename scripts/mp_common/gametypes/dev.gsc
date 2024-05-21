@@ -1900,7 +1900,7 @@ function set_equipment_list() {
         level.dev_equipment[9] = getweapon(#"pda_hack");
         level.dev_equipment[10] = getweapon(#"threat_detector");
         level.dev_equipment[11] = getweapon(#"armor_station");
-        level.dev_equipment[12] = getweapon(#"hash_2b9efbad11308e02");
+        level.dev_equipment[12] = getweapon(#"land_mine");
         level.dev_equipment[13] = getweapon(#"missile_turret");
         level.dev_equipment[14] = getweapon(#"weapon_armor");
     #/

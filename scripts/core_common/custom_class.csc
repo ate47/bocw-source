@@ -2319,9 +2319,9 @@ function function_f7bc8c66(localclientnum) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x477dfe30, Offset: 0xad20
 // Size: 0x2d2
-function function_7a6db01f(localclientnum, var_353b5fbf) {
+function function_7a6db01f(localclientnum, str_ammo_mod) {
     n_tier = 0;
-    switch (var_353b5fbf) {
+    switch (str_ammo_mod) {
     case #"hash_5ecac889d056f331":
         n_tier = stats::get_stat(localclientnum, #"cacloadouts", #"hash_1b24e5b336f5ae8d", #"hash_54782d04f50f4fb0");
         break;
@@ -2514,7 +2514,7 @@ function function_ccfcedeb(localclientnum) {
 // Params 5, eflags: 0x0
 // Checksum 0xec528c4e, Offset: 0xbb68
 // Size: 0xbc
-function function_7fe44f38(localclientnum, var_8a4ba442, newweaponstring, var_f020955, should_update_weapon_options = 0) {
+function change_weapon(localclientnum, var_8a4ba442, newweaponstring, var_f020955, should_update_weapon_options = 0) {
     self notify("310fda479d61d9f");
     self endon("310fda479d61d9f");
     self endon(#"death");

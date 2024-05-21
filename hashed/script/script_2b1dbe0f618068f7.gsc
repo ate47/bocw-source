@@ -22,7 +22,7 @@ function private preinit() {
     clientfield::register_clientuimodel("hudItems.armorPlateCount", #"hash_6f4b11a0bee9b73d", #"hash_7c65108f5dcd93ef", 1, 4, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("hudItems.armorPlateMaxCarry", #"hash_6f4b11a0bee9b73d", #"hash_6260c609342f556d", 1, 4, "int", undefined, 0, 0);
     level.var_a05cd64e = &function_a05cd64e;
-    level.var_8ef8b9e8 = getweapon(#"hash_9825a3f1d038c6f");
+    level.var_8ef8b9e8 = getweapon(#"armor_plate");
     callback::on_localclient_connect(&on_localclient_connect);
     callback::on_localplayer_spawned(&on_localplayer_spawned);
     serverfield::register("armor_plate_behavior", 1, 1, "int");

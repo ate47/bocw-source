@@ -118,62 +118,62 @@ function private postinit() {
     init();
     function_8389c033(#"ray_gun", #"ray_gun");
     function_8389c033(#"ray_gun", #"ray_gun_upgraded");
-    function_8389c033(#"ww_ray_rifle_t9", #"hash_426d7c850c7f1d2");
-    function_8389c033(#"ray_gun_upgraded", #"hash_426d7c850c7f1d2");
+    function_8389c033(#"ww_ray_rifle_t9", #"ww_ray_rifle_t9_upgraded");
+    function_8389c033(#"ray_gun_upgraded", #"ww_ray_rifle_t9_upgraded");
     function_8389c033(#"ww_ray_rifle_t9", #"ray_gun");
     function_8389c033(#"ww_ray_rifle_t9", #"ray_gun_upgraded");
-    function_8389c033(#"hash_386308ed987052a4", #"hash_386308ed987052a4");
-    function_8389c033(#"hash_386308ed987052a4", #"hash_226d0ad69d9efa1");
-    function_8389c033(#"hash_386308ed987052a4", #"hash_131a672d67787b26");
-    function_8389c033(#"hash_386308ed987052a4", #"hash_7bf7797b85b0089c");
-    function_8389c033(#"hash_226d0ad69d9efa1", #"hash_386308ed987052a4");
-    function_8389c033(#"hash_226d0ad69d9efa1", #"hash_226d0ad69d9efa1");
-    function_8389c033(#"hash_226d0ad69d9efa1", #"hash_131a672d67787b26");
-    function_8389c033(#"hash_226d0ad69d9efa1", #"hash_7bf7797b85b0089c");
-    function_8389c033(#"hash_131a672d67787b26", #"hash_386308ed987052a4");
-    function_8389c033(#"hash_131a672d67787b26", #"hash_226d0ad69d9efa1");
-    function_8389c033(#"hash_131a672d67787b26", #"hash_131a672d67787b26");
-    function_8389c033(#"hash_131a672d67787b26", #"hash_7bf7797b85b0089c");
-    function_8389c033(#"hash_7bf7797b85b0089c", #"hash_386308ed987052a4");
-    function_8389c033(#"hash_7bf7797b85b0089c", #"hash_226d0ad69d9efa1");
-    function_8389c033(#"hash_7bf7797b85b0089c", #"hash_131a672d67787b26");
-    function_8389c033(#"hash_7bf7797b85b0089c", #"hash_7bf7797b85b0089c");
+    function_8389c033(#"ww_mega_barrel_fullauto_copycat_t9", #"ww_mega_barrel_fullauto_copycat_t9");
+    function_8389c033(#"ww_mega_barrel_fullauto_copycat_t9", #"ww_mega_barrel_fullauto_blazer_beam_t9");
+    function_8389c033(#"ww_mega_barrel_fullauto_copycat_t9", #"ww_mega_barrel_fullauto_diffusion_beam_t9");
+    function_8389c033(#"ww_mega_barrel_fullauto_copycat_t9", #"ww_mega_barrel_fullauto_micro_missile_t9");
+    function_8389c033(#"ww_mega_barrel_fullauto_blazer_beam_t9", #"ww_mega_barrel_fullauto_copycat_t9");
+    function_8389c033(#"ww_mega_barrel_fullauto_blazer_beam_t9", #"ww_mega_barrel_fullauto_blazer_beam_t9");
+    function_8389c033(#"ww_mega_barrel_fullauto_blazer_beam_t9", #"ww_mega_barrel_fullauto_diffusion_beam_t9");
+    function_8389c033(#"ww_mega_barrel_fullauto_blazer_beam_t9", #"ww_mega_barrel_fullauto_micro_missile_t9");
+    function_8389c033(#"ww_mega_barrel_fullauto_diffusion_beam_t9", #"ww_mega_barrel_fullauto_copycat_t9");
+    function_8389c033(#"ww_mega_barrel_fullauto_diffusion_beam_t9", #"ww_mega_barrel_fullauto_blazer_beam_t9");
+    function_8389c033(#"ww_mega_barrel_fullauto_diffusion_beam_t9", #"ww_mega_barrel_fullauto_diffusion_beam_t9");
+    function_8389c033(#"ww_mega_barrel_fullauto_diffusion_beam_t9", #"ww_mega_barrel_fullauto_micro_missile_t9");
+    function_8389c033(#"ww_mega_barrel_fullauto_micro_missile_t9", #"ww_mega_barrel_fullauto_copycat_t9");
+    function_8389c033(#"ww_mega_barrel_fullauto_micro_missile_t9", #"ww_mega_barrel_fullauto_blazer_beam_t9");
+    function_8389c033(#"ww_mega_barrel_fullauto_micro_missile_t9", #"ww_mega_barrel_fullauto_diffusion_beam_t9");
+    function_8389c033(#"ww_mega_barrel_fullauto_micro_missile_t9", #"ww_mega_barrel_fullauto_micro_missile_t9");
     function_dd02fe13(#"knife_loadout");
-    function_dd02fe13(#"hash_7a910d220f3767fa");
+    function_dd02fe13(#"knife_loadout_upgraded");
     function_dd02fe13(#"melee_sledgehammer_t9");
-    function_dd02fe13(#"hash_537b94a09bd1867f");
+    function_dd02fe13(#"melee_sledgehammer_t9_upgraded");
     function_dd02fe13(#"melee_wakizashi_t9");
-    function_dd02fe13(#"hash_34a3d5e05d7acdee");
+    function_dd02fe13(#"melee_wakizashi_t9_upgraded");
     function_dd02fe13(#"melee_etool_t9");
-    function_dd02fe13(#"hash_63b33204197f67ee");
+    function_dd02fe13(#"melee_etool_t9_upgraded");
     function_dd02fe13(#"melee_machete_t9");
-    function_dd02fe13(#"hash_61b3e2efa78ea114");
+    function_dd02fe13(#"melee_machete_t9_upgraded");
     function_dd02fe13(#"special_ballisticknife_t9_dw");
-    function_dd02fe13(#"hash_3df82d524851afee");
-    function_dd02fe13(#"hash_4650af6ac5c9ce80");
-    function_dd02fe13(#"hash_30d658a39c0dc9e7");
+    function_dd02fe13(#"special_ballisticknife_t9_lh");
+    function_dd02fe13(#"special_ballisticknife_t9_dw_upgraded");
+    function_dd02fe13(#"special_ballisticknife_t9_lh_upgraded");
     function_dd02fe13(#"melee_baseballbat_t9");
-    function_dd02fe13(#"hash_4aa507ecfabf584");
+    function_dd02fe13(#"melee_baseballbat_t9_upgraded");
     function_dd02fe13(#"melee_mace_t9");
-    function_dd02fe13(#"hash_7a0ceabf0b80dfbd");
+    function_dd02fe13(#"melee_mace_t9_upgraded");
     function_dd02fe13(#"melee_cane_t9");
-    function_dd02fe13(#"hash_44cec6cd46d6990a");
+    function_dd02fe13(#"melee_cane_t9_upgraded");
     function_dd02fe13(#"melee_sai_t9_dw");
-    function_dd02fe13(#"hash_3ed8ac521638597a");
+    function_dd02fe13(#"melee_sai_t9_dw_upgraded");
     function_dd02fe13(#"melee_coldwar_t9_dw");
     function_dd02fe13(#"hash_7c9376e0e68e89db");
     function_dd02fe13(#"melee_battleaxe_t9");
-    function_dd02fe13(#"hash_4f60c436c17984b5");
-    function_dd02fe13(#"hash_6518b25ee10d7f7e");
-    function_dd02fe13(#"hash_3e4e4f6831a18917");
+    function_dd02fe13(#"melee_battleaxe_t9_upgraded");
+    function_dd02fe13(#"melee_scythe_t9");
+    function_dd02fe13(#"melee_scythe_t9_upgraded");
     function_90953640(getweapon(#"shotgun_pump_t9"), 4, float(function_60d95f53()) / 1000, 1);
     function_e2bcbf46(#"hero_flamethrower");
-    function_283a8d38(#"hash_25ff17bb722aaaf5");
-    function_283a8d38(#"hash_7008465d543f5ee");
-    function_283a8d38(#"hash_7a9d35a0f888b881");
-    function_283a8d38(#"hash_42075af2b5383d12");
-    function_283a8d38(#"hash_6518b25ee10d7f7e");
-    function_283a8d38(#"hash_3e4e4f6831a18917");
+    function_283a8d38(#"ar_soviet_t9");
+    function_283a8d38(#"ar_soviet_t9_upgraded");
+    function_283a8d38(#"smg_flechette_t9");
+    function_283a8d38(#"smg_flechette_t9_upgraded");
+    function_283a8d38(#"melee_scythe_t9");
+    function_283a8d38(#"melee_scythe_t9_upgraded");
 }
 
 // Namespace zm_weapons/zm_weapons
@@ -2215,7 +2215,7 @@ function weapon_give(weapon, nosound, *b_switch_weapon = 0, var_bc218695 = 0, va
             var_908f65ca = self function_1c228d69(self.class_num, var_bc218695);
         }
         if (is_weapon_upgraded(nosound)) {
-            if (nosound.name == #"hash_7a910d220f3767fa") {
+            if (nosound.name == #"knife_loadout_upgraded") {
                 str_item = "knife_loadout" + "_t9_upgraded" + "_item_sr";
             } else {
                 str_item = nosound.name + "_item_sr";
@@ -2927,24 +2927,24 @@ function is_wonder_weapon(w_to_check) {
     }
     if (isdefined(w_to_check.name)) {
         switch (w_to_check.name) {
-        case #"hash_226d0ad69d9efa1":
-        case #"hash_941005e056449b4":
-        case #"hash_c5ecf0ae6501e5f":
-        case #"hash_11363c24185fecdb":
-        case #"hash_131a672d67787b26":
-        case #"hash_13c5628d2e8de172":
-        case #"hash_189ef2dafffe1f4c":
-        case #"hash_209d5c516bfdf9e5":
-        case #"hash_294926d598e011fa":
-        case #"hash_2d0c14dce5a6ebed":
-        case #"hash_386308ed987052a4":
+        case #"ww_mega_barrel_fullauto_blazer_beam_t9":
+        case #"ww_ieu_gas_t9_upgraded":
+        case #"ww_mega_barrel_fullauto_diffusion_beam_t9_upgraded":
+        case #"ww_ieu_plasma_t9_upgraded":
+        case #"ww_mega_barrel_fullauto_diffusion_beam_t9":
+        case #"ww_mega_barrel_fullauto_blazer_beam_t9_upgraded":
+        case #"ww_ieu_acid_t9_upgraded":
+        case #"ww_mega_barrel_fullauto_micro_missile_t9_upgraded":
+        case #"ww_ieu_shockwave_t9_upgraded":
+        case #"ww_mega_barrel_fullauto_copycat_t9_upgraded":
+        case #"ww_mega_barrel_fullauto_copycat_t9":
         case #"ww_ieu_shockwave_t9":
-        case #"hash_4ee16eb0581e4646":
+        case #"ww_ieu_electric_t9_upgraded":
         case #"ww_ieu_electric_t9":
         case #"ww_ieu_acid_t9":
         case #"ww_ieu_gas_t9":
         case #"ww_ieu_plasma_t9":
-        case #"hash_7bf7797b85b0089c":
+        case #"ww_mega_barrel_fullauto_micro_missile_t9":
             return true;
         }
     }

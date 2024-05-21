@@ -166,10 +166,10 @@ function private function_b38c1846(e_projectile, target, b_ignore_cleanup, orda)
         }
         if (isdefined(spawn_pos) && !var_5eda8c18 && var_55783e7b && !var_a3f16cf9) {
             if (getfreeactorcount() < 1) {
-                var_2c1b14ae = getaiarchetypearray(#"zombie");
-                if (isdefined(var_2c1b14ae)) {
-                    var_2c1b14ae[0].allowdeath = 1;
-                    var_2c1b14ae[0] kill();
+                a_zombie = getaiarchetypearray(#"zombie");
+                if (isdefined(a_zombie)) {
+                    a_zombie[0].allowdeath = 1;
+                    a_zombie[0] kill();
                 }
             }
             ai_dog = spawnactor(#"hash_7a8b592728eec95d", spawn_pos, var_2cadffe7.angles);

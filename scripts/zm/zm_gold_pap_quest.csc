@@ -25,7 +25,7 @@ function function_7d467651(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwasdemojump) {
         var_73524bb4 = getentarray(fieldname, "portal_fx", "targetname");
         foreach (var_2c517d4c in var_73524bb4) {
-            var_2c517d4c.var_b875cdb1 = playfx(fieldname, #"hash_3af1d592cda71a5c", var_2c517d4c.origin, anglestoforward(var_2c517d4c.angles), anglestoup(var_2c517d4c.angles));
+            var_2c517d4c.fx_portal = playfx(fieldname, #"hash_3af1d592cda71a5c", var_2c517d4c.origin, anglestoforward(var_2c517d4c.angles), anglestoup(var_2c517d4c.angles));
             if (!isdefined(var_2c517d4c.var_a3b04735)) {
                 var_2c517d4c.var_a3b04735 = var_2c517d4c playloopsound(#"hash_722697efdfb3562f");
             }
@@ -34,8 +34,8 @@ function function_7d467651(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     var_73524bb4 = getentarray(fieldname, "portal_fx", "targetname");
     foreach (var_2c517d4c in var_73524bb4) {
-        stopfx(fieldname, var_2c517d4c.var_b875cdb1);
-        var_2c517d4c.var_b875cdb1 = undefined;
+        stopfx(fieldname, var_2c517d4c.fx_portal);
+        var_2c517d4c.fx_portal = undefined;
         if (isdefined(var_2c517d4c.var_a3b04735)) {
             var_2c517d4c stoploopsound(var_2c517d4c.var_a3b04735);
             var_2c517d4c.var_a3b04735 = undefined;

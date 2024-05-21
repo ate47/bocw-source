@@ -115,7 +115,7 @@ function event_handler[level_init] main(*eventstruct) {
     namespace_b574e135::init();
     namespace_bce659ef::init();
     namespace_6fb22263::init();
-    namespace_47f97e84::init();
+    zm_platinum_ww_quest::init();
     namespace_7a518726::init();
     namespace_1fc8f2e3::init();
     namespace_4e8d47b1::init();
@@ -189,7 +189,7 @@ function event_handler[level_init] main(*eventstruct) {
     callback::on_player_killed(&namespace_207ea311::function_31b6f21e);
     callback::add_callback(#"hash_594217387367ebb4", &function_d81240c3);
     level._effect[#"hash_10dedae3d37c056f"] = #"hash_1337a37de3e6690";
-    level.var_fc439a95 = #"hash_386308ed987052a4";
+    level.var_fc439a95 = #"ww_mega_barrel_fullauto_copycat_t9";
     level.var_7f72eddd = "default_zombies_platinum";
     level.var_dafeed10 = "exfil_platinum_";
     level.var_4bc7192d = #"hash_3f8c4e1a10327ae3";

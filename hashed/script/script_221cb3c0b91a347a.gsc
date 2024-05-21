@@ -1498,21 +1498,21 @@ function function_c9658564() {
 function function_ed4a5d52(var_f0de9b92) {
     switch (var_f0de9b92) {
     case #"full_ammo":
-        var_9c0bf2db = #"p7_zm_power_up_max_ammo";
+        mdl_powerup = #"p7_zm_power_up_max_ammo";
         break;
     case #"insta_kill":
-        var_9c0bf2db = #"p7_zm_power_up_insta_kill";
+        mdl_powerup = #"p7_zm_power_up_insta_kill";
         break;
     case #"fire_sale":
-        var_9c0bf2db = #"p7_zm_power_up_firesale";
+        mdl_powerup = #"p7_zm_power_up_firesale";
         break;
     case #"nuke":
-        var_9c0bf2db = #"p7_zm_power_up_nuke";
+        mdl_powerup = #"p7_zm_power_up_nuke";
         break;
     default:
         break;
     }
-    return var_9c0bf2db;
+    return mdl_powerup;
 }
 
 // Namespace namespace_dbaeabbd/namespace_dbaeabbd

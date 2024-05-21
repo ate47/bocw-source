@@ -5,9 +5,9 @@
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\clientfield_shared.csc;
 
-#namespace namespace_47f97e84;
+#namespace zm_platinum_ww_quest;
 
-// Namespace namespace_47f97e84/namespace_47f97e84
+// Namespace zm_platinum_ww_quest/zm_platinum_ww_quest
 // Params 0, eflags: 0x2 linked
 // Checksum 0xea0d0b03, Offset: 0x118
 // Size: 0xb4
@@ -17,7 +17,7 @@ function init() {
     zm_ping::function_5ae4a10c("p7_lockers_metal_tall_01", "black_light_locker", #"hash_278d26f49cc82f87", undefined, #"hash_4cb794edb4a5ec1f", 1, -20);
 }
 
-// Namespace namespace_47f97e84/namespace_47f97e84
+// Namespace zm_platinum_ww_quest/zm_platinum_ww_quest
 // Params 7, eflags: 0x2 linked
 // Checksum 0x8916e56b, Offset: 0x1d8
 // Size: 0xa4

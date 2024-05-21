@@ -14,8 +14,8 @@ function init_shared() {
     weaponobjects::function_e6400478(#"special_ballisticknife_t9_dw", &createballisticknifewatcher, 0);
     weaponobjects::function_e6400478(#"special_crossbow_t9", &createballisticknifewatcher, 0);
     if (is_true(level.var_b68902c4)) {
-        weaponobjects::function_e6400478(#"hash_4650af6ac5c9ce80", &createballisticknifewatcher, 0);
-        weaponobjects::function_e6400478(#"hash_c6535e906c2c072", &createballisticknifewatcher, 0);
+        weaponobjects::function_e6400478(#"special_ballisticknife_t9_dw_upgraded", &createballisticknifewatcher, 0);
+        weaponobjects::function_e6400478(#"special_crossbow_t9_upgraded", &createballisticknifewatcher, 0);
     }
 }
 

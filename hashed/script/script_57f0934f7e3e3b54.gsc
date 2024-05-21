@@ -59,9 +59,9 @@ function private function_6c73be30() {
     level.killstreakweapons[getweapon(#"hash_183ddeea72e71f27")] = "napalm_strike_zm";
     level.killstreakweapons[getweapon(#"inventory_sig_bow_flame")] = "inventory_sig_bow_flame";
     level.killstreakweapons[getweapon(#"hash_3243350071038ce0")] = "inventory_napalm_strike_zm";
-    level.killstreakweapons[getweapon(#"hash_3c8b385a76cbfe83")] = "recon_car";
-    level.killstreakweapons[getweapon(#"hash_3de3d523512f7cbc")] = "remote_missile";
-    level.killstreakweapons[getweapon(#"hash_417dbdb750a6345b")] = "inventory_remote_missile";
+    level.killstreakweapons[getweapon(#"recon_car_zm")] = "recon_car";
+    level.killstreakweapons[getweapon(#"remote_missile_zm")] = "remote_missile";
+    level.killstreakweapons[getweapon(#"inventory_remote_missile_zm")] = "inventory_remote_missile";
 }
 
 // Namespace killstreaks/killstreaks

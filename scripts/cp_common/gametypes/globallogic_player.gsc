@@ -1075,8 +1075,8 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
         self finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, boneindex, vsurfacenormal);
     }
     time = gettime();
-    var_29532ab1 = getweapon(#"gadget_health_regen");
-    slot = self gadgetgetslot(var_29532ab1);
+    regen_gadget = getweapon(#"gadget_health_regen");
+    slot = self gadgetgetslot(regen_gadget);
     if (!isbot(self) && !self function_8bc54983() && !self scene::is_igc_active() && !self isplayinganimscripted() && !self isinvehicle() && isdefined(slot) && self gadgetisready(slot) && self.health - idamage <= 50 && (!isdefined(self.var_17a87fa6) || time >= self.var_17a87fa6 + 15000) && (!isdefined(self.var_40bbb505) || self.var_40bbb505 < 3)) {
         self.var_17a87fa6 = time;
         if (!isdefined(self.var_40bbb505)) {

@@ -5762,10 +5762,10 @@ function function_cce73165(var_947b45e7, var_82706add, str_zone_name) {
         return;
     }
     if (getfreeactorcount() < 1) {
-        var_2c1b14ae = getaiarchetypearray(#"zombie");
-        if (isdefined(var_2c1b14ae)) {
-            var_2c1b14ae[0].allowdeath = 1;
-            var_2c1b14ae[0] kill();
+        a_zombie = getaiarchetypearray(#"zombie");
+        if (isdefined(a_zombie)) {
+            a_zombie[0].allowdeath = 1;
+            a_zombie[0] kill();
         }
     }
     if (isdefined(var_958f8634)) {

@@ -415,7 +415,7 @@ function main() {
             if (!is_true(player.laststand) || player.doa.score.lives > 0 || is_true(player.var_4a81243b)) {
                 aliveplayers++;
             }
-            player namespace_6e90e490::function_7f7a069d();
+            player namespace_6e90e490::updatehud();
             player namespace_eccff4fb::function_7752515d();
             player namespace_41cb996::updateweapon();
             if (player.birthtime + 500 > timecurrent) {

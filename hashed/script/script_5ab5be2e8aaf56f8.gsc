@@ -59,7 +59,7 @@ function init(instance) {
     }
     foreach (model in instance.a_models) {
         if (model.model === #"hash_38cf6d433834d7c5") {
-            instance.var_4a416ea9 = model;
+            instance.mdl_console = model;
         }
         if (model.model === #"hash_35683f67bd38dc11") {
             instance.var_2972bc14 = model;
@@ -176,8 +176,8 @@ function function_738f5215() {
     while (!var_35dfb407) {
         a_players = getplayers();
         foreach (player in a_players) {
-            if (distance2dsquared(player.origin, self.var_4a416ea9.origin) <= 2250000) {
-                if (player util::is_looking_at(self.var_4a416ea9, 0.7, 0) || player util::is_looking_at(self.origin, 0.7, 1) || distance2dsquared(player.origin, self.var_4a416ea9.origin) <= 250000) {
+            if (distance2dsquared(player.origin, self.mdl_console.origin) <= 2250000) {
+                if (player util::is_looking_at(self.mdl_console, 0.7, 0) || player util::is_looking_at(self.origin, 0.7, 1) || distance2dsquared(player.origin, self.mdl_console.origin) <= 250000) {
                     var_35dfb407 = 1;
                     break;
                 }
@@ -209,10 +209,10 @@ function function_17f1d0f3() {
 function function_1a2e6a13() {
     foreach (model in self.a_models) {
         if (model.model === #"hash_38cf6d433834d7c5") {
-            var_4a416ea9 = model;
+            mdl_console = model;
         }
     }
-    var_b98dc7c6 = util::spawn_model("p9_sur_computer_console_hvt_01_screen_missile_in_act", var_4a416ea9.origin, var_4a416ea9.angles);
+    var_b98dc7c6 = util::spawn_model("p9_sur_computer_console_hvt_01_screen_missile_in_act", mdl_console.origin, mdl_console.angles);
     var_b98dc7c6 playloopsound(#"hash_7f16b09413f4244");
     if (isdefined(var_b98dc7c6)) {
         if (!isdefined(self.a_models)) {
@@ -222,7 +222,7 @@ function function_1a2e6a13() {
         }
         self.a_models[self.a_models.size] = var_b98dc7c6;
     }
-    var_6ee5c0f2 = util::spawn_model("p9_sur_computer_console_hvt_01_screen_missile_act", var_4a416ea9.origin, var_4a416ea9.angles);
+    var_6ee5c0f2 = util::spawn_model("p9_sur_computer_console_hvt_01_screen_missile_act", mdl_console.origin, mdl_console.angles);
     if (isdefined(var_6ee5c0f2)) {
         if (!isdefined(self.a_models)) {
             self.a_models = [];
@@ -430,7 +430,7 @@ function function_7ac4b826(instance) {
 function function_338034b3() {
     self endon(#"objective_ended", #"hash_8202877a3aadac8");
     self.var_4272a188 triggerenable(0);
-    var_1490cdb5 = spawn("trigger_radius_use", self.var_4a416ea9.origin + (0, 0, 24), 0, 96, 96, 1);
+    var_1490cdb5 = spawn("trigger_radius_use", self.mdl_console.origin + (0, 0, 24), 0, 96, 96, 1);
     var_1490cdb5 triggerignoreteam();
     var_1490cdb5 setcursorhint("HINT_NOICON");
     var_1490cdb5 sethintstring(#"hash_263f26fcd49be105");
@@ -1805,7 +1805,7 @@ function clear_vehicles(instance) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xcdfee7a9, Offset: 0x7f88
 // Size: 0x1ac
-function function_81d3631c(*var_4a416ea9) {
+function function_81d3631c(*mdl_console) {
     self endon(#"death");
     self playrumbleonentity("sr_transmitter_clear");
     self makevehicleunusable();

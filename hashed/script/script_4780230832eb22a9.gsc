@@ -20,7 +20,7 @@ function autoexec ignore_systems() {
     system::ignore(#"hash_7776caebba9c5d5a");
     system::ignore(#"ac130");
     system::ignore(#"recon_car");
-    system::ignore(#"hash_2b9efbad11308e02");
+    system::ignore(#"land_mine");
     system::ignore(#"satchel_charge");
     system::ignore(#"planemortar");
     system::ignore(#"ultimate_turret");

@@ -113,7 +113,7 @@ function initzombiebehaviors() {
 function private function_42151b1b() {
     self.ai.var_870d0893 = 1;
     self callback::function_d8abfc3d(#"on_ai_damage", &zombie_gib_on_damage);
-    self callback::function_d8abfc3d(#"on_ai_melee", &namespace_85745671::function_b8eb5dea);
+    self callback::function_d8abfc3d(#"on_ai_melee", &namespace_85745671::zombie_on_melee);
     self callback::function_d8abfc3d(#"hash_3bb51ce51020d0eb", &namespace_85745671::function_16e2f075);
     self callback::function_d8abfc3d(#"on_ai_killed", &function_bf21203e);
     aiutility::addaioverridedamagecallback(self, &function_853cd0f0);

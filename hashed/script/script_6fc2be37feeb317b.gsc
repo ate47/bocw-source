@@ -255,7 +255,7 @@ function function_e3af0084() {
             }
             if (!zm_weapons::is_wonder_weapon(weapon)) {
                 if (isdefined(var_d2648452.aat)) {
-                    if (weapon.weapclass != "melee" && weapon.name != #"special_ballisticknife_t9_dw" && weapon.name != #"hash_4650af6ac5c9ce80") {
+                    if (weapon.weapclass != "melee" && weapon.name != #"special_ballisticknife_t9_dw" && weapon.name != #"special_ballisticknife_t9_dw_upgraded") {
                         self function_bf3044dc(weapon, 1);
                     }
                 } else {
@@ -659,8 +659,8 @@ function function_ff03fdfb(destination) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x6ffb3ca7, Offset: 0x2d50
 // Size: 0xc4
-function function_80287c83(weapon, var_353b5fbf) {
-    var_5503dd3 = {#var_c08f8ddc:gettime(), #var_671a4a8f:zm_utility::function_e3025ca5(), #var_19b950db:zm_utility::get_round_number(), #weapon:weapon.name, #ammo_mod:var_353b5fbf};
+function function_80287c83(weapon, str_ammo_mod) {
+    var_5503dd3 = {#var_c08f8ddc:gettime(), #var_671a4a8f:zm_utility::function_e3025ca5(), #var_19b950db:zm_utility::get_round_number(), #weapon:weapon.name, #ammo_mod:str_ammo_mod};
     self function_678f57c8(#"hash_6856c2164be3f8db", var_5503dd3);
 }
 

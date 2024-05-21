@@ -1011,11 +1011,11 @@ function zod_companion_revive_player(player) {
 function function_9cb5b8e0() {
     revivetime = 3;
     for (var_d3e5d819 = 0; isdefined(self); var_d3e5d819 = var_d3e5d819 + float(function_60d95f53()) / 1000) {
-        var_ae7a2103 = isplayer(self.var_1ff8de20) ? self.var_1ff8de20 : self;
-        level.var_ff482f76 zm_laststand_client::set_revive_progress(var_ae7a2103, var_d3e5d819 / revivetime);
-        if (isdefined(var_ae7a2103.var_57b374b4)) {
-            objective_setprogress(var_ae7a2103.var_57b374b4, var_d3e5d819 / revivetime);
-            objective_setgamemodeflags(var_ae7a2103.var_57b374b4, 0);
+        hud_player = isplayer(self.var_1ff8de20) ? self.var_1ff8de20 : self;
+        level.var_ff482f76 zm_laststand_client::set_revive_progress(hud_player, var_d3e5d819 / revivetime);
+        if (isdefined(hud_player.var_57b374b4)) {
+            objective_setprogress(hud_player.var_57b374b4, var_d3e5d819 / revivetime);
+            objective_setgamemodeflags(hud_player.var_57b374b4, 0);
         }
         if (var_d3e5d819 >= revivetime) {
             break;

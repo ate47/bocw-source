@@ -1961,8 +1961,8 @@ function function_d938cbd8() {
 // Size: 0xc0
 function function_df5afb5e() {
     /#
-        var_ed9ebb4a = getaiarchetypearray(#"zombie");
-        foreach (zombie in var_ed9ebb4a) {
+        s_zombies = getaiarchetypearray(#"zombie");
+        foreach (zombie in s_zombies) {
             zombie function_df5afb5e(1);
         }
     #/

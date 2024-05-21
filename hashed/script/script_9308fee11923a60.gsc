@@ -73,20 +73,20 @@ function function_8c61edee(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         v_up = vectornormalize(anglestoup(self.angles)) * 40 + self.origin;
         if (isdefined(var_f3133091) && isdefined(v_up)) {
-            self.var_8cf2f35b = util::spawn_model(fieldname, "tag_origin", var_f3133091.origin + (0, 0, 50));
+            self.e_vortex = util::spawn_model(fieldname, "tag_origin", var_f3133091.origin + (0, 0, 50));
             self.var_b5bdd2b9 = util::spawn_model(fieldname, "tag_origin", v_up);
         }
         wait(0.1);
-        if (isdefined(self) && isdefined(self.var_8cf2f35b) && isdefined(self.var_b5bdd2b9)) {
+        if (isdefined(self) && isdefined(self.e_vortex) && isdefined(self.var_b5bdd2b9)) {
             self.var_b5bdd2b9.angles = (-90, 0, 0);
             if (bwastimejump == 1) {
-                self.var_40433812 = util::playfxontag(fieldname, "sr/fx9_harvester_extraction_source_01", self.var_8cf2f35b, "tag_origin");
+                self.var_40433812 = util::playfxontag(fieldname, "sr/fx9_harvester_extraction_source_01", self.e_vortex, "tag_origin");
                 self.var_221b7b06 = util::playfxontag(fieldname, "sr/fx9_harvester_extraction_target_01", self.var_b5bdd2b9, "tag_origin");
                 self.var_b3f4d513 = self playloopsound(#"hash_61133944ebd5c4ea");
             } else {
                 wait(0.2);
-                if (isdefined(self) && isdefined(self.var_8cf2f35b) && isdefined(self.var_b5bdd2b9)) {
-                    self.var_40433812 = util::playfxontag(fieldname, "sr/fx9_harvester_extraction_source_02", self.var_8cf2f35b, "tag_origin");
+                if (isdefined(self) && isdefined(self.e_vortex) && isdefined(self.var_b5bdd2b9)) {
+                    self.var_40433812 = util::playfxontag(fieldname, "sr/fx9_harvester_extraction_source_02", self.e_vortex, "tag_origin");
                     self.var_221b7b06 = util::playfxontag(fieldname, "sr/fx9_harvester_extraction_target_02", self.var_b5bdd2b9, "tag_origin");
                     self.var_b3f4d513 = self playloopsound(#"hash_61133944ebd5c4ea");
                 }

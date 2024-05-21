@@ -139,7 +139,7 @@ function function_a7a24a36(weaponname) {
     case #"gadget_jammer":
         attacker increment_contract(#"hash_85cce48722a5003");
         break;
-    case #"hash_2b9efbad11308e02":
+    case #"land_mine":
         attacker increment_contract(#"hash_40b0132274ac999");
         break;
     case #"tear_gas":
@@ -236,7 +236,7 @@ function contract_kills(data) {
     default:
         break;
     }
-    if (weapon.statname == #"hash_2b9efbad11308e02") {
+    if (weapon.statname == #"land_mine") {
         attacker function_fd9fb79b(#"hash_6d99dd47b6819429");
         if (data.washacked === 1) {
             attacker function_fd9fb79b(#"hash_211bbd0f79bedaee");
@@ -499,7 +499,7 @@ function function_fd9fb79b(var_38280f2f, delta = 1) {
 // Size: 0xfc
 function function_fb608f0a(weapon) {
     self increment_contract(#"hash_186da11489a29d82");
-    if (weapon.statname == #"hash_2b9efbad11308e02") {
+    if (weapon.statname == #"land_mine") {
         increment_contract(#"hash_4ef18c4603d407ad");
         return;
     }

@@ -462,10 +462,10 @@ function function_572778b9(str_objective) {
 // Params 5, eflags: 0x2 linked
 // Checksum 0xb6503b77, Offset: 0x1b78
 // Size: 0x108
-function function_6a5ca7ac(str_objective, var_ca55a7ed, var_f4089be9, var_52710aa4, var_834e72f6 = 1) {
+function function_6a5ca7ac(str_objective, a_target, var_f4089be9, var_52710aa4, var_834e72f6 = 1) {
     parent_id = function_285e460(var_f4089be9, var_52710aa4);
     if (isdefined(parent_id)) {
-        a_n_objective_ids = function_d849bbf2(str_objective, var_ca55a7ed);
+        a_n_objective_ids = function_d849bbf2(str_objective, a_target);
         foreach (n_objective_id in a_n_objective_ids) {
             namespace_96850e69::function_6a5ca7ac(n_objective_id, parent_id, var_834e72f6);
         }

@@ -23,7 +23,7 @@ function private autoexec __init__system__() {
 // Checksum 0xe0bc9b2f, Offset: 0x170
 // Size: 0x124
 function private preinit() {
-    level.var_8ef8b9e8 = getweapon(#"hash_9825a3f1d038c6f");
+    level.var_8ef8b9e8 = getweapon(#"armor_plate");
     clientfield::register_clientuimodel("hudItems.armorPlateCount", 1, 4, "int", 0);
     clientfield::register_clientuimodel("hudItems.armorPlateMaxCarry", 1, 4, "int");
     callback::on_spawned(&on_player_spawned);

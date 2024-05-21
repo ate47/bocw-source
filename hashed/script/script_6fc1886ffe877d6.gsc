@@ -1006,7 +1006,7 @@ function function_a9232706(instance) {
         var_a6470558 = vectornormalize(targetorigin - self.origin);
         player.w_current = player getcurrentweapon();
         if (!is_true(player.w_current.isdualwield)) {
-            player thread function_3a8bd5a3(self);
+            player thread player_gesture(self);
         }
         player function_bc82f900("damage_heavy");
         player playerknockback(1);
@@ -1020,7 +1020,7 @@ function function_a9232706(instance) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xe5dbc822, Offset: 0x57a8
 // Size: 0xe6
-function function_3a8bd5a3(mdl_crystal) {
+function player_gesture(mdl_crystal) {
     self endon(#"disconnect");
     if (self util::is_player_looking_at(mdl_crystal.origin, 0.6, 1, mdl_crystal)) {
         if (!is_true(self.var_e758cbce)) {

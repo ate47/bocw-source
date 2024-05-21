@@ -48,7 +48,7 @@ function private preinit() {
     level.var_3602c1be = &playkillbattlechatter;
     level.allowspecialistdialog = (isdefined(mpdialog.enableherodialog) ? mpdialog.enableherodialog : 0) && is_true(level.allowbattlechatter[#"bc"]);
     level.playstartconversation = (isdefined(mpdialog.enableconversation) ? mpdialog.enableconversation : 0) && is_true(level.allowbattlechatter[#"bc"]);
-    level.var_add8e0f2 = [#"frag_grenade", #"eq_sticky_grenade", #"hash_5453c9b880261bcb", #"eq_slow_grenade", #"willy_pete", #"nightingale", #"eq_molotov", #"satchel_charge", #"hatchet", #"hash_2b9efbad11308e02", #"trophy_system"];
+    level.var_add8e0f2 = [#"frag_grenade", #"eq_sticky_grenade", #"hash_5453c9b880261bcb", #"eq_slow_grenade", #"willy_pete", #"nightingale", #"eq_molotov", #"satchel_charge", #"hatchet", #"land_mine", #"trophy_system"];
     level.var_648e79b7 = [];
     level.var_75aa0434 = [];
     level.var_e444d44 = 1;

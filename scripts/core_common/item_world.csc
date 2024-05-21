@@ -1877,7 +1877,7 @@ function private function_cc2f075(localclientnum) {
 // Size: 0x6c
 function private function_3574b1fa(weaponname) {
     switch (weaponname) {
-    case #"hash_426d7c850c7f1d2":
+    case #"ww_ray_rifle_t9_upgraded":
     case #"ww_ray_rifle_t9":
     case #"ray_gun_upgraded":
     case #"ray_gun":

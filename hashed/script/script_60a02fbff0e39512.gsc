@@ -57,8 +57,8 @@ function private event_handler[event_9673dc9a] function_3981d015(eventstruct) {
         if (!isdefined(object)) {
             continue;
         }
-        if (object.weapon.name == #"hash_2b9efbad11308e02") {
-            object namespace_6a37ec38::function_338f99f5();
+        if (object.weapon.name == #"land_mine") {
+            object land_mine::function_338f99f5();
             continue;
         }
         object dodamage(object.health - 1, dynent.origin);

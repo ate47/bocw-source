@@ -294,8 +294,8 @@ function function_31afa2db() {
     if (level.player hasweapon(primary_weapon)) {
         level.player switchtoweaponimmediate(primary_weapon, 1);
     } else {
-        var_65be7012 = level.player getweaponslistprimaries();
-        level.player switchtoweaponimmediate(var_65be7012[0], 1);
+        weaps = level.player getweaponslistprimaries();
+        level.player switchtoweaponimmediate(weaps[0], 1);
     }
     level.player setmovespeedscale(1);
 }

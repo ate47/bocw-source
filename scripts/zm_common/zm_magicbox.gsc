@@ -2341,8 +2341,8 @@ function treasure_chest_give_weapon(item, *var_75c86f89, e_chest) {
         return;
     }
     if (!killstreaks::is_killstreak_weapon(weapon)) {
-        var_76436ceb = self.inventory.items[weaponslotid];
-        var_76436ceb.var_a0cc02cf = 1;
+        weapon_item = self.inventory.items[weaponslotid];
+        weapon_item.var_a0cc02cf = 1;
     } else {
         var_bcc2655a = undefined;
         var_16f12c31 = self.inventory.items[17];

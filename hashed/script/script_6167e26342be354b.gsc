@@ -578,7 +578,7 @@ function function_2ffd5f18() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x3547281, Offset: 0x22f8
 // Size: 0x8a
-function private function_5cdf64e2() {
+function private updateplayers() {
     profilestart();
     foreach (player in level.players) {
         function_61f1a8b6(player);
@@ -597,7 +597,7 @@ function private function_bae8dea9() {
         if (!isdefined(level.players)) {
             continue;
         }
-        function_5cdf64e2();
+        updateplayers();
         function_6d9e5aa2();
         function_33d9297();
     }

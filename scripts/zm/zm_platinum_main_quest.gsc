@@ -513,7 +513,7 @@ function function_f8702828() {
     self.var_e3c067a4 = 0;
     var_439e487c = 20;
     var_3b1d1169 = getent("lab_second_hidden_door", "targetname");
-    var_c33e9969 = getweapon(#"hash_226d0ad69d9efa1");
+    var_c33e9969 = getweapon(#"ww_mega_barrel_fullauto_blazer_beam_t9");
     while (true) {
         waitresult = self waittill(#"damage");
         weapon = zm_weapons::function_386dacbc(waitresult.weapon);
@@ -950,7 +950,7 @@ function function_475abfc5() {
     self.var_4bbcfae9 = util::spawn_model(#"hash_4dca8f01586f4747", self.origin, self.angles);
     self.var_4bbcfae9 disconnectpaths();
     level flag::wait_till("power_on");
-    self.var_c3cd747e = util::spawn_model(#"hash_6fe95d21ab838a0e", self.origin, self.angles);
+    self.light_mdl = util::spawn_model(#"hash_6fe95d21ab838a0e", self.origin, self.angles);
     self.var_4bbcfae9 clientfield::set("" + #"hash_6256b5001ca2ef80", 1);
     self.var_4bbcfae9 clientfield::set("" + #"hash_643cab616f5bd8e4", 1);
     level flag::wait_till(#"hash_64e189de9593e575");
@@ -1022,7 +1022,7 @@ function function_c080f1c1(s_device) {
         s_device.var_a3e9fe06 moveto(s_device.var_a3e9fe06.origin + (0, 0, -4), 3);
         s_device.var_a3e9fe06 playsound(#"hash_2eedbe412ecac84");
         s_device.var_4bbcfae9 clientfield::set("" + #"hash_6256b5001ca2ef80", 2);
-        s_device.var_c3cd747e setmodel(#"hash_25492a4f77d4f1db");
+        s_device.light_mdl setmodel(#"hash_25492a4f77d4f1db");
         s_device.var_a3e9fe06 waittill(#"movedone");
     }
     s_device thread function_6012c55c();
@@ -1048,7 +1048,7 @@ function function_1144f1aa(s_device, player) {
     }
     s_device.var_4bbcfae9 clientfield::increment("" + #"hash_5924dea34439fc47");
     s_device.var_4bbcfae9 clientfield::set("" + #"hash_6256b5001ca2ef80", 3);
-    s_device.var_c3cd747e setmodel(#"hash_44623e6053914d8f");
+    s_device.light_mdl setmodel(#"hash_44623e6053914d8f");
     waitframe(5);
     if (isdefined(s_device.var_a3e9fe06)) {
         s_device.var_a3e9fe06 delete();

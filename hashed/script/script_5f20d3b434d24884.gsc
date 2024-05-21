@@ -1761,13 +1761,13 @@ function function_cbae9ca3() {
     if (isdefined(self.doa.vehicle) && isdefined(self.doa.var_baad518e)) {
         playerz = self.doa.var_baad518e[2];
     }
-    var_8adf26a4 = 72;
-    var_a592dbab = 25;
-    var_b2876baf = playerz + var_8adf26a4;
-    var_4eae5a61 = playerx - var_a592dbab;
-    playerright = playerx + var_a592dbab;
-    var_a2eaa855 = playery - var_a592dbab;
-    var_ec175a2f = playery + var_a592dbab;
+    playerh = 72;
+    playerw = 25;
+    var_b2876baf = playerz + playerh;
+    var_4eae5a61 = playerx - playerw;
+    playerright = playerx + playerw;
+    var_a2eaa855 = playery - playerw;
+    var_ec175a2f = playery + playerw;
     foreach (pickup in self.doa.var_ad888d1f) {
         if (!isdefined(pickup)) {
             continue;

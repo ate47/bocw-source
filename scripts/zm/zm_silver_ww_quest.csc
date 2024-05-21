@@ -425,12 +425,12 @@ function function_1385b26c(localclientnum, *oldval, *newval, *bnewent, *binitial
 function private function_7532a0ff(weapon_name) {
     if (isdefined(weapon_name)) {
         switch (weapon_name) {
-        case #"hash_941005e056449b4":
-        case #"hash_11363c24185fecdb":
-        case #"hash_189ef2dafffe1f4c":
-        case #"hash_294926d598e011fa":
+        case #"ww_ieu_gas_t9_upgraded":
+        case #"ww_ieu_plasma_t9_upgraded":
+        case #"ww_ieu_acid_t9_upgraded":
+        case #"ww_ieu_shockwave_t9_upgraded":
         case #"ww_ieu_shockwave_t9":
-        case #"hash_4ee16eb0581e4646":
+        case #"ww_ieu_electric_t9_upgraded":
         case #"ww_ieu_electric_t9":
         case #"ww_ieu_acid_t9":
         case #"ww_ieu_gas_t9":

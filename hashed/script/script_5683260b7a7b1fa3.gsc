@@ -284,7 +284,7 @@ function function_e3871553(var_4d2ad93e) {
         }
         if (!zm_weapons::is_wonder_weapon(weapon)) {
             if (isdefined(var_a781b3e1.aat)) {
-                if (weapon.weapclass != "melee" && weapon.name != #"special_ballisticknife_t9_dw" && weapon.name != #"hash_4650af6ac5c9ce80") {
+                if (weapon.weapclass != "melee" && weapon.name != #"special_ballisticknife_t9_dw" && weapon.name != #"special_ballisticknife_t9_dw_upgraded") {
                     self function_bf3044dc(weapon, 1);
                 }
             } else {

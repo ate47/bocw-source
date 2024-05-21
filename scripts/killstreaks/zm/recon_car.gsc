@@ -31,7 +31,7 @@ function private autoexec __init__system__() {
 // Size: 0xf4
 function private preinit() {
     level.var_bced5d3c = [];
-    level.var_85baa7a3 = getweapon(#"hash_3c8b385a76cbfe83");
+    level.var_85baa7a3 = getweapon(#"recon_car_zm");
     if (!is_true(getgametypesetting(#"hash_45aec06707484fef"))) {
         return 0;
     }
@@ -48,7 +48,7 @@ function private preinit() {
 function init_killstreak() {
     bundle = getscriptbundle("killstreak_recon_car_zm");
     killstreak_vehicle::init_killstreak(bundle);
-    deployable::register_deployable(getweapon(#"hash_3c8b385a76cbfe83"), &function_b5006cfa, undefined, undefined, #"hash_37605398dce96965");
+    deployable::register_deployable(getweapon(#"recon_car_zm"), &function_b5006cfa, undefined, undefined, #"hash_37605398dce96965");
     callback::on_weapon_change(&function_93426c92);
     vehicle::add_main_callback("vehicle_t9_rcxd_racing_zm", &function_d1661ada);
 }

@@ -563,7 +563,7 @@ function function_704910e8(var_81c652e4) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x6fc7f5ee, Offset: 0x2c88
 // Size: 0x3cc
-function function_b6e1020(var_a343da4e, n_spawn, var_84296e0, var_5c263237, var_67b2128e = 1, str_endon, var_4e08b638) {
+function function_b6e1020(a_loc, n_spawn, var_84296e0, var_5c263237, var_67b2128e = 1, str_endon, var_4e08b638) {
     if (isdefined(str_endon)) {
         level endon(str_endon);
     }
@@ -576,14 +576,14 @@ function function_b6e1020(var_a343da4e, n_spawn, var_84296e0, var_5c263237, var_
     }
     if (!isdefined(var_5c263237)) {
         for (i = 0; i < n_spawn; i++) {
-            if (var_a343da4e.size == 0) {
+            if (a_loc.size == 0) {
                 return;
             }
             while (getfreeactorcount() < 1) {
                 waitframe(1);
             }
-            e_loc = array::random(var_a343da4e);
-            arrayremovevalue(var_a343da4e, e_loc);
+            e_loc = array::random(a_loc);
+            arrayremovevalue(a_loc, e_loc);
             str_type = array::random(var_84296e0);
             ai = spawnactor(str_type, e_loc.origin, e_loc.angles);
             if (isdefined(ai)) {
@@ -596,7 +596,7 @@ function function_b6e1020(var_a343da4e, n_spawn, var_84296e0, var_5c263237, var_
         return;
     }
     for (i = 0; i < n_spawn; i++) {
-        if (var_a343da4e.size == 0) {
+        if (a_loc.size == 0) {
             /#
                 iprintlnbold("<unknown string>");
             #/
@@ -606,8 +606,8 @@ function function_b6e1020(var_a343da4e, n_spawn, var_84296e0, var_5c263237, var_
         while (getfreeactorcount() < 1) {
             waitframe(1);
         }
-        e_loc = array::random(var_a343da4e);
-        arrayremovevalue(var_a343da4e, e_loc);
+        e_loc = array::random(a_loc);
+        arrayremovevalue(a_loc, e_loc);
         str_type = array::random(var_84296e0);
         ai = spawnactor(str_type, e_loc.origin, e_loc.angles);
         if (isdefined(ai)) {
@@ -897,9 +897,9 @@ function function_5ed2e797(var_854257c7, var_2cdf7adf, var_9171844e, b_return) {
 function function_e0b9a88e(var_2cdf7adf) {
     var_222825ae = struct::get("club_reward_ww_" + var_2cdf7adf);
     point = function_4ba8fde(#"ww_mega_barrel_fullauto_copycat_t9_item_sr");
-    var_4d1c70f5 = item_drop::drop_item(0, getweapon(#"hash_386308ed987052a4"), 1, 0, point.id, var_222825ae.origin, var_222825ae.angles, 0);
-    var_4d1c70f5.var_dd21aec2 = 1 | 16;
-    var_4d1c70f5 moveto(var_222825ae.origin - (0, 0, 62), 10, 0.05, 0.05);
+    item_ww = item_drop::drop_item(0, getweapon(#"ww_mega_barrel_fullauto_copycat_t9"), 1, 0, point.id, var_222825ae.origin, var_222825ae.angles, 0);
+    item_ww.var_dd21aec2 = 1 | 16;
+    item_ww moveto(var_222825ae.origin - (0, 0, 62), 10, 0.05, 0.05);
 }
 
 // Namespace namespace_958b287a/namespace_958b287a

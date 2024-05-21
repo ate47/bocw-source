@@ -406,7 +406,7 @@ function function_7ead73b1(*action, *body, *var_d1b14335, scene, gesture) {
     self.takedown.body_shield.actor.var_1a1dd1a0 = notes[0];
     if (isdefined(gesture)) {
         self.var_621f8539 = gesture;
-        self thread action_utility::function_3ceda691(gesture);
+        self thread action_utility::gesture_play(gesture);
     }
     self util::delay(float(function_60d95f53()) / 1000, undefined, &action_utility::function_76e2ec80);
     var_17813638 action_utility::scene_play(scene, self, self.takedown.body_shield.actor);

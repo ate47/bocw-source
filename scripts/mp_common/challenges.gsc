@@ -1894,7 +1894,7 @@ function challengekills(data) {
             player stats::function_dad108fa(#"hash_172b3bc29a9fabde", 1);
             player stats::function_dad108fa(#"hash_a77c3dd233743eb", 1);
             player stats::function_dad108fa(#"hash_3ef5b668aaef6551", 1);
-        } else if (weapon.statname === #"hash_2b9efbad11308e02") {
+        } else if (weapon.statname === #"land_mine") {
             player stats::function_dad108fa(#"hash_101aa1c56608b02d", 1);
             player stats::function_bcf9602(#"hash_5a979e436e74441", 1, #"hash_6abe83944d701459");
         } else if (weapon.statname === #"hatchet") {
@@ -2564,7 +2564,7 @@ function challengekills(data) {
             attacker stats::function_dad108fa(#"hash_5f4d95085e8f9a1c", 1);
             attacker stats::function_bcf9602(#"hash_513bc9963a91d4b5", 1, #"hash_735ace6b22542a65");
             break;
-        case #"hash_2b9efbad11308e02":
+        case #"land_mine":
         case #"tear_gas":
         case #"satchel_charge":
             if (data.var_b4e7eecb || data.var_fb4d11c6 || data.var_c496a910 || isdefined(data.var_7c5ded5a) && data.var_7c5ded5a + 3000 > time || isdefined(data.var_4a01f856) && data.var_4a01f856 + 3000 > time || isdefined(data.var_a1c9eb28) && data.var_a1c9eb28 + 3000 > time) {
@@ -3974,7 +3974,7 @@ function function_8e9b2d44(data, *time) {
             if (isgroundvehicle) {
                 attacker stats::function_dad108fa(#"hash_7659bc4836c71dee", 1);
             }
-        } else if (weapon.name === #"hash_2b9efbad11308e02") {
+        } else if (weapon.name === #"land_mine") {
             if (isgroundvehicle) {
                 attacker stats::function_dad108fa(#"hash_68f56bb01d2ea427", 1);
             }

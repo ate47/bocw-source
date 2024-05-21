@@ -206,7 +206,7 @@ function function_2ed0fa9b(instance, *v_center) {
         return;
     }
     s_waitresult = v_center waittill(#"hash_5000b502c39b09a3");
-    playrumbleonposition("sr_prototype_safehouse_rumble", s_waitresult.var_6afa034c.origin);
+    playrumbleonposition("sr_prototype_safehouse_rumble", s_waitresult.mdl_beacon.origin);
     a_machines = content_manager::get_children(v_center);
     foreach (s_machine in a_machines) {
         if (isdefined(s_machine.trigger)) {

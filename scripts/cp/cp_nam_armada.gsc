@@ -163,8 +163,8 @@ function function_37dfd679() {
     skipto::add("armada_crash_part_4_laststand", &armada_crash::function_cd3c6f53, &function_df03d4dc, "Crash - Last Stand", &function_6e6c4f85);
     skipto::function_46d8992a("armada_intro");
     /#
-        function_67843f17("flag_intro_trucks_go", &function_c03bb520);
-        function_67843f17("mortar_brush_exfil_door_closed", &function_1061456b);
+        add_dev("flag_intro_trucks_go", &function_c03bb520);
+        add_dev("mortar_brush_exfil_door_closed", &function_1061456b);
     #/
 }
 
@@ -833,8 +833,8 @@ function function_e7152de8() {
 // Checksum 0x8eab2983, Offset: 0x7268
 // Size: 0x4c
 function function_3623e8fb() {
-    var_b9cd8925 = getent("t_player_heli_oob", "targetname");
-    var_b9cd8925 triggerenable(1);
+    t_oob = getent("t_player_heli_oob", "targetname");
+    t_oob triggerenable(1);
 }
 
 // Namespace namespace_722cc932/cp_nam_armada
@@ -842,8 +842,8 @@ function function_3623e8fb() {
 // Checksum 0xc804654d, Offset: 0x72c0
 // Size: 0x44
 function function_13237d0a() {
-    var_b9cd8925 = getent("t_player_heli_oob", "targetname");
-    var_b9cd8925 triggerenable(0);
+    t_oob = getent("t_player_heli_oob", "targetname");
+    t_oob triggerenable(0);
 }
 
 // Namespace namespace_722cc932/cp_nam_armada
@@ -3832,8 +3832,8 @@ function function_56a77920() {
 // Checksum 0xf500ce40, Offset: 0x14400
 // Size: 0x4c
 function function_d6988dc3() {
-    var_b9cd8925 = getent("t_ripcord_oob", "targetname");
-    var_b9cd8925 triggerenable(1);
+    t_oob = getent("t_ripcord_oob", "targetname");
+    t_oob triggerenable(1);
 }
 
 // Namespace namespace_722cc932/cp_nam_armada
@@ -3841,8 +3841,8 @@ function function_d6988dc3() {
 // Checksum 0xb3bce731, Offset: 0x14458
 // Size: 0x44
 function function_60f16ecb() {
-    var_b9cd8925 = getent("t_ripcord_oob", "targetname");
-    var_b9cd8925 triggerenable(0);
+    t_oob = getent("t_ripcord_oob", "targetname");
+    t_oob triggerenable(0);
 }
 
 // Namespace namespace_722cc932/cp_nam_armada

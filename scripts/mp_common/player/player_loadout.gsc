@@ -402,7 +402,7 @@ function function_97d216fa(response) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x3db8080b, Offset: 0x1fb0
 // Size: 0x12c
-function private function_f8157311(weaponclass, killstreaknum) {
+function private get_killstreak_index(weaponclass, killstreaknum) {
     killstreaknum++;
     killstreakstring = "killstreak" + killstreaknum;
     /#
@@ -452,7 +452,7 @@ function give_killstreaks() {
     classnum = self.class_num_for_global_weapons;
     sortedkillstreaks = [];
     for (killstreaknum = 0; killstreaknum < level.maxkillstreaks; killstreaknum++) {
-        killstreakindex = function_f8157311(classnum, killstreaknum);
+        killstreakindex = get_killstreak_index(classnum, killstreaknum);
         if (isdefined(killstreakindex) && killstreakindex > 0) {
             give_killstreak(killstreakindex, sortedkillstreaks);
         }

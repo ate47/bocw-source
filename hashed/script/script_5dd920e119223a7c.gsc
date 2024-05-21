@@ -138,14 +138,14 @@ function function_a3df0b62() {
     var_35dfb407 = 0;
     foreach (model in self.a_models) {
         if (model.model === #"hash_38cf6d433834d7c5") {
-            var_4a416ea9 = model;
+            mdl_console = model;
         }
     }
     while (!var_35dfb407) {
         a_players = function_a1ef346b();
         foreach (player in a_players) {
-            if (isalive(player) && isdefined(var_4a416ea9) && distance2dsquared(player.origin, var_4a416ea9.origin) <= 1000000) {
-                if (player util::is_looking_at(var_4a416ea9, 0.7, 0) || player util::is_looking_at(self.origin, 0.7, 1) || distance2dsquared(player.origin, var_4a416ea9.origin) <= 250000) {
+            if (isalive(player) && isdefined(mdl_console) && distance2dsquared(player.origin, mdl_console.origin) <= 1000000) {
+                if (player util::is_looking_at(mdl_console, 0.7, 0) || player util::is_looking_at(self.origin, 0.7, 1) || distance2dsquared(player.origin, mdl_console.origin) <= 250000) {
                     var_35dfb407 = 1;
                     break;
                 }
@@ -327,10 +327,10 @@ function function_86a476ea(s_instance) {
 function function_1a2e6a13() {
     foreach (model in self.a_models) {
         if (model.model === #"hash_38cf6d433834d7c5") {
-            var_4a416ea9 = model;
+            mdl_console = model;
         }
     }
-    var_b98dc7c6 = util::spawn_model("p9_sur_computer_console_hvt_01_screen_laser_in_act", var_4a416ea9.origin, var_4a416ea9.angles);
+    var_b98dc7c6 = util::spawn_model("p9_sur_computer_console_hvt_01_screen_laser_in_act", mdl_console.origin, mdl_console.angles);
     if (isdefined(var_b98dc7c6)) {
         if (!isdefined(self.a_models)) {
             self.a_models = [];
@@ -340,7 +340,7 @@ function function_1a2e6a13() {
         self.a_models[self.a_models.size] = var_b98dc7c6;
         var_b98dc7c6 playloopsound(#"hash_d4387570f7d95f1");
     }
-    var_6ee5c0f2 = util::spawn_model("p9_sur_computer_console_hvt_01_screen_laser_act", var_4a416ea9.origin, var_4a416ea9.angles);
+    var_6ee5c0f2 = util::spawn_model("p9_sur_computer_console_hvt_01_screen_laser_act", mdl_console.origin, mdl_console.angles);
     if (isdefined(var_6ee5c0f2)) {
         if (!isdefined(self.a_models)) {
             self.a_models = [];

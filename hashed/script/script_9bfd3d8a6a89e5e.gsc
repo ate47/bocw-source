@@ -96,7 +96,7 @@ function function_e3e4c03c(action, body) {
     self.takedown.body_shield.weapons = body.weapons;
     self.takedown.body_shield.aitype = body.aitype;
     self.takedown.body_shield.health = 70;
-    self.takedown.body_shield.var_82bfd108 = self.takedown.body_shield.health;
+    self.takedown.body_shield.healthmax = self.takedown.body_shield.health;
     self.takedown.body_shield.var_70faf312 = self.takedown.body_shield.health;
     self.takedown.body_shield.var_ea2da6bc = gettime();
     if (isai(body)) {
@@ -144,7 +144,7 @@ function private function_40622d99() {
             waitframe(1);
         }
         self util::delay(0.2, undefined, &showviewmodel);
-        self action_utility::function_3ceda691(self.var_621f8539, undefined, undefined, undefined, undefined, 1);
+        self action_utility::gesture_play(self.var_621f8539, undefined, undefined, undefined, undefined, 1);
     }
 }
 
@@ -230,7 +230,7 @@ function function_756e29bb(action, anim_name, var_c09e9b1c, var_d60fb210, var_2e
         var_36a368e3 = var_c09e9b1c;
     }
     gesture = self action_utility::function_98f117ad(var_36a368e3);
-    var_991552e7 = self action_utility::function_98f117ad(var_36a368e3, "ads");
+    gestureads = self action_utility::function_98f117ad(var_36a368e3, "ads");
     firstframe = 1;
     self thread action_utility::function_6e8e5902(action.ender);
     self childthread function_2513e926(action);
@@ -246,13 +246,13 @@ function function_756e29bb(action, anim_name, var_c09e9b1c, var_d60fb210, var_2e
             var_adb7de30 = undefined;
             if (var_2ec5b92f !== self.var_de5476af) {
                 if (var_2ec5b92f) {
-                    self action_utility::function_3ceda691(var_991552e7, undefined, 1, transtime);
-                    self.takedown.gesture = var_991552e7;
+                    self action_utility::gesture_play(gestureads, undefined, 1, transtime);
+                    self.takedown.gesture = gestureads;
                     if (isdefined(self.var_de5476af)) {
                         var_adb7de30 = "_ads_in";
                     }
                 } else {
-                    self action_utility::function_3ceda691(gesture, undefined, 1, transtime);
+                    self action_utility::gesture_play(gesture, undefined, 1, transtime);
                     self.takedown.gesture = gesture;
                     if (isdefined(self.var_de5476af)) {
                         var_adb7de30 = "_ads_out";
@@ -285,7 +285,7 @@ function function_756e29bb(action, anim_name, var_c09e9b1c, var_d60fb210, var_2e
         }
         if (doreload) {
             self function_501ef65d(weapon);
-            self action_utility::gesture_stop(var_991552e7, 0, 1);
+            self action_utility::gesture_stop(gestureads, 0, 1);
             self action_utility::gesture_stop(gesture, 0, 1);
             self.var_de5476af = undefined;
             self.var_a7f1f0d6 = undefined;
@@ -515,7 +515,7 @@ function function_c13ab5c7(action) {
         result = self waittill(#"body_shield_damage");
         min_time = 2;
         var_365d33af = 300;
-        var_6f8dfb10 = self.takedown.body_shield.var_82bfd108 / min_time;
+        var_6f8dfb10 = self.takedown.body_shield.healthmax / min_time;
         var_7ac1bcf6 = var_6f8dfb10 / 1000 / float(var_365d33af);
         new_health = self.takedown.body_shield.health - result.idamage;
         new_health = max(new_health, self.takedown.body_shield.var_70faf312 - var_7ac1bcf6);
@@ -616,7 +616,7 @@ function function_c6059aa(action) {
     self endon(#"death", action.ender);
     self prompts::function_82cf95d9(#"hash_24279f7ed6cd096c");
     while (true) {
-        var_4109ff8e = self.takedown.body_shield.health / self.takedown.body_shield.var_82bfd108;
+        var_4109ff8e = self.takedown.body_shield.health / self.takedown.body_shield.healthmax;
         if (isdefined(self.var_3e95b88f)) {
             self prompts::function_b1cfa4bc(var_4109ff8e);
         }

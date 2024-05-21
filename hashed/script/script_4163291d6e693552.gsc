@@ -348,7 +348,7 @@ function function_8eafd734() {
 // Params 1, eflags: 0x0
 // Checksum 0xfbf5d19d, Offset: 0x1680
 // Size: 0xf2
-function function_83eb80af(v_org) {
+function kill_zombies(v_org) {
     var_a940cf88 = getaiarray();
     for (i = 0; i < var_a940cf88.size; i++) {
         if (is_true(var_a940cf88[i].allowdeath) && isalive(var_a940cf88[i]) && distancesquared(v_org, var_a940cf88[i].origin) <= sqr(5000)) {

@@ -776,9 +776,9 @@ function give_weapon_reward(var_7ed75e97, var_6c9485fc = 3, b_upgraded = 0, var_
             str_item_name = #"ww_ieu_shockwave_t9_item_sr";
         } else if (str_weapon_name === #"ww_ray_rifle_t9") {
             str_item_name = #"ww_ray_rifle_t9_item_sr";
-        } else if (str_weapon_name === #"hash_386308ed987052a4") {
+        } else if (str_weapon_name === #"ww_mega_barrel_fullauto_copycat_t9") {
             str_item_name = #"ww_mega_barrel_fullauto_copycat_t9_item_sr";
-        } else if (str_weapon_name === #"hash_69461751fa492ea4") {
+        } else if (str_weapon_name === #"ww_axe_gun_melee_t9") {
             str_item_name = #"ww_axe_gun_melee_t9_item_sr";
         }
     } else {
@@ -1538,22 +1538,22 @@ function function_c45635c7(mdl_reward, b_rotate, var_b9b24, var_d1bb6924 = 1) {
 function function_ed4a5d52(var_f0de9b92) {
     switch (var_f0de9b92) {
     case #"double_points":
-        var_9c0bf2db = #"p7_zm_power_up_double_points";
+        mdl_powerup = #"p7_zm_power_up_double_points";
         break;
     case #"carpenter":
-        var_9c0bf2db = #"p7_zm_power_up_carpenter";
+        mdl_powerup = #"p7_zm_power_up_carpenter";
         break;
     case #"full_ammo":
-        var_9c0bf2db = #"p7_zm_power_up_max_ammo";
+        mdl_powerup = #"p7_zm_power_up_max_ammo";
         break;
     case #"fire_sale":
-        var_9c0bf2db = #"p7_zm_power_up_firesale";
+        mdl_powerup = #"p7_zm_power_up_firesale";
         break;
     case #"self_revive":
-        var_9c0bf2db = #"hash_3de8f6cb1e738702";
+        mdl_powerup = #"hash_3de8f6cb1e738702";
         break;
     }
-    return var_9c0bf2db;
+    return mdl_powerup;
 }
 
 // Namespace namespace_f999c142/namespace_f999c142

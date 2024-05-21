@@ -40,22 +40,22 @@ function private preinit() {
 // Checksum 0xe76b84bb, Offset: 0x5d8
 // Size: 0x304
 function private postinit() {
-    zm_weapons::function_8389c033(#"hash_386308ed987052a4", #"hash_386308ed987052a4");
-    zm_weapons::function_8389c033(#"hash_386308ed987052a4", #"hash_131a672d67787b26");
-    zm_weapons::function_8389c033(#"hash_386308ed987052a4", #"hash_226d0ad69d9efa1");
-    zm_weapons::function_8389c033(#"hash_386308ed987052a4", #"hash_7bf7797b85b0089c");
-    zm_weapons::function_8389c033(#"hash_131a672d67787b26", #"hash_386308ed987052a4");
-    zm_weapons::function_8389c033(#"hash_131a672d67787b26", #"hash_131a672d67787b26");
-    zm_weapons::function_8389c033(#"hash_131a672d67787b26", #"hash_226d0ad69d9efa1");
-    zm_weapons::function_8389c033(#"hash_131a672d67787b26", #"hash_7bf7797b85b0089c");
-    zm_weapons::function_8389c033(#"hash_226d0ad69d9efa1", #"hash_386308ed987052a4");
-    zm_weapons::function_8389c033(#"hash_226d0ad69d9efa1", #"hash_131a672d67787b26");
-    zm_weapons::function_8389c033(#"hash_226d0ad69d9efa1", #"hash_226d0ad69d9efa1");
-    zm_weapons::function_8389c033(#"hash_226d0ad69d9efa1", #"hash_7bf7797b85b0089c");
-    zm_weapons::function_8389c033(#"hash_7bf7797b85b0089c", #"hash_386308ed987052a4");
-    zm_weapons::function_8389c033(#"hash_7bf7797b85b0089c", #"hash_131a672d67787b26");
-    zm_weapons::function_8389c033(#"hash_7bf7797b85b0089c", #"hash_226d0ad69d9efa1");
-    zm_weapons::function_8389c033(#"hash_7bf7797b85b0089c", #"hash_7bf7797b85b0089c");
+    zm_weapons::function_8389c033(#"ww_mega_barrel_fullauto_copycat_t9", #"ww_mega_barrel_fullauto_copycat_t9");
+    zm_weapons::function_8389c033(#"ww_mega_barrel_fullauto_copycat_t9", #"ww_mega_barrel_fullauto_diffusion_beam_t9");
+    zm_weapons::function_8389c033(#"ww_mega_barrel_fullauto_copycat_t9", #"ww_mega_barrel_fullauto_blazer_beam_t9");
+    zm_weapons::function_8389c033(#"ww_mega_barrel_fullauto_copycat_t9", #"ww_mega_barrel_fullauto_micro_missile_t9");
+    zm_weapons::function_8389c033(#"ww_mega_barrel_fullauto_diffusion_beam_t9", #"ww_mega_barrel_fullauto_copycat_t9");
+    zm_weapons::function_8389c033(#"ww_mega_barrel_fullauto_diffusion_beam_t9", #"ww_mega_barrel_fullauto_diffusion_beam_t9");
+    zm_weapons::function_8389c033(#"ww_mega_barrel_fullauto_diffusion_beam_t9", #"ww_mega_barrel_fullauto_blazer_beam_t9");
+    zm_weapons::function_8389c033(#"ww_mega_barrel_fullauto_diffusion_beam_t9", #"ww_mega_barrel_fullauto_micro_missile_t9");
+    zm_weapons::function_8389c033(#"ww_mega_barrel_fullauto_blazer_beam_t9", #"ww_mega_barrel_fullauto_copycat_t9");
+    zm_weapons::function_8389c033(#"ww_mega_barrel_fullauto_blazer_beam_t9", #"ww_mega_barrel_fullauto_diffusion_beam_t9");
+    zm_weapons::function_8389c033(#"ww_mega_barrel_fullauto_blazer_beam_t9", #"ww_mega_barrel_fullauto_blazer_beam_t9");
+    zm_weapons::function_8389c033(#"ww_mega_barrel_fullauto_blazer_beam_t9", #"ww_mega_barrel_fullauto_micro_missile_t9");
+    zm_weapons::function_8389c033(#"ww_mega_barrel_fullauto_micro_missile_t9", #"ww_mega_barrel_fullauto_copycat_t9");
+    zm_weapons::function_8389c033(#"ww_mega_barrel_fullauto_micro_missile_t9", #"ww_mega_barrel_fullauto_diffusion_beam_t9");
+    zm_weapons::function_8389c033(#"ww_mega_barrel_fullauto_micro_missile_t9", #"ww_mega_barrel_fullauto_blazer_beam_t9");
+    zm_weapons::function_8389c033(#"ww_mega_barrel_fullauto_micro_missile_t9", #"ww_mega_barrel_fullauto_micro_missile_t9");
 }
 
 // Namespace namespace_1e7573ec/namespace_1e7573ec
@@ -269,8 +269,8 @@ function function_88a55cb8(localclientnum, weapon, var_bb894354 = 0) {
     if (self.var_42662764 !== weapon.name) {
         if (isdefined(self.var_42662764)) {
             switch (self.var_42662764) {
-            case #"hash_209d5c516bfdf9e5":
-            case #"hash_7bf7797b85b0089c":
+            case #"ww_mega_barrel_fullauto_micro_missile_t9_upgraded":
+            case #"ww_mega_barrel_fullauto_micro_missile_t9":
                 self function_d64a2c25(localclientnum);
                 break;
             default:
@@ -283,10 +283,10 @@ function function_88a55cb8(localclientnum, weapon, var_bb894354 = 0) {
         return;
     }
     switch (weapon.name) {
-    case #"hash_7bf7797b85b0089c":
+    case #"ww_mega_barrel_fullauto_micro_missile_t9":
         self function_d64a2c25(localclientnum, var_bb894354 > 0, 0);
         break;
-    case #"hash_209d5c516bfdf9e5":
+    case #"ww_mega_barrel_fullauto_micro_missile_t9_upgraded":
         self function_d64a2c25(localclientnum, var_bb894354 > 0, 1);
         break;
     default:
@@ -325,14 +325,14 @@ function function_d64a2c25(localclientnum, enable = 0, is_upgraded = 0) {
 function function_3efc58e4(weapon) {
     if (isdefined(weapon)) {
         switch (weapon.name) {
-        case #"hash_226d0ad69d9efa1":
-        case #"hash_c5ecf0ae6501e5f":
-        case #"hash_131a672d67787b26":
-        case #"hash_13c5628d2e8de172":
-        case #"hash_209d5c516bfdf9e5":
-        case #"hash_2d0c14dce5a6ebed":
-        case #"hash_386308ed987052a4":
-        case #"hash_7bf7797b85b0089c":
+        case #"ww_mega_barrel_fullauto_blazer_beam_t9":
+        case #"ww_mega_barrel_fullauto_diffusion_beam_t9_upgraded":
+        case #"ww_mega_barrel_fullauto_diffusion_beam_t9":
+        case #"ww_mega_barrel_fullauto_blazer_beam_t9_upgraded":
+        case #"ww_mega_barrel_fullauto_micro_missile_t9_upgraded":
+        case #"ww_mega_barrel_fullauto_copycat_t9_upgraded":
+        case #"ww_mega_barrel_fullauto_copycat_t9":
+        case #"ww_mega_barrel_fullauto_micro_missile_t9":
             return true;
         }
     }
@@ -360,7 +360,7 @@ function function_a1e57b34(localclientnum, *oldval, newval, *bnewent, *binitials
             beam::function_47deed80(fieldname, self.var_6152b139);
         }
         weapon = self.owner function_d2c2b168().rootweapon;
-        if (weapon.name === #"hash_13c5628d2e8de172") {
+        if (weapon.name === #"ww_mega_barrel_fullauto_blazer_beam_t9_upgraded") {
             self.var_d34c8bb = self.owner zm_utility::function_f8796df3(fieldname) ? "beam9_zm_mega_barrel_blazer_upgraded" : "beam9_zm_mega_barrel_blazer_3p_upgraded";
         } else {
             self.var_d34c8bb = self.owner zm_utility::function_f8796df3(fieldname) ? "beam9_zm_mega_barrel_blazer" : "beam9_zm_mega_barrel_blazer_3p";
@@ -498,7 +498,7 @@ function function_53bb1917(localclientnum, *oldval, newval, *bnewent, *binitials
         if (!isdefined(self.var_accb4770)) {
             weapon = self function_d2c2b168().rootweapon;
             var_accb4770 = util::spawn_model(fieldname, #"hash_62460e2f377db8bc");
-            var_accb4770.var_515e20e6 = weapon.name === #"hash_2d0c14dce5a6ebed";
+            var_accb4770.var_515e20e6 = weapon.name === #"ww_mega_barrel_fullauto_copycat_t9_upgraded";
             var_accb4770 linktocamera();
             var_accb4770 setforcenocull();
             var_accb4770 thread scene::play(#"p9_fxanim_ww_mega_barrel_fullauto_copycat_circle_bundle", var_accb4770);

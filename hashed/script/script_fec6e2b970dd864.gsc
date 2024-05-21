@@ -103,8 +103,8 @@ function function_b122e75f() {
 // Size: 0x3d4
 function function_f8b76690(var_a0345f37, player, *weapon) {
     weaponslotid = weapon item_inventory::function_d768ea30();
-    var_76436ceb = weapon.inventory.items[weaponslotid];
-    if (var_76436ceb.var_387e74f4 === 1) {
+    weapon_item = weapon.inventory.items[weaponslotid];
+    if (weapon_item.var_387e74f4 === 1) {
         weapon zm_stats::increment_challenge_stat(#"hash_79f623602d23af5a");
     }
     if (weapon isinvehicle()) {

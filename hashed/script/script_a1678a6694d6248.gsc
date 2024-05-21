@@ -73,7 +73,7 @@ function private preinit() {
 // Checksum 0x5eb04511, Offset: 0x8b8
 // Size: 0x34
 function postinit() {
-    zm_weapons::function_8389c033(#"hash_69461751fa492ea4", #"hash_69461751fa492ea4");
+    zm_weapons::function_8389c033(#"ww_axe_gun_melee_t9", #"ww_axe_gun_melee_t9");
 }
 
 // Namespace namespace_6fc19861/namespace_6fc19861
@@ -127,8 +127,8 @@ function function_58d581b6(weapon) {
         switch (weapon.name) {
         case #"hash_7eab88123b09e2c":
         case #"hash_18696150427f2efb":
-        case #"hash_5382c3fae4273fed":
-        case #"hash_69461751fa492ea4":
+        case #"ww_axe_gun_melee_t9_upgraded":
+        case #"ww_axe_gun_melee_t9":
             return true;
         }
     }
@@ -142,8 +142,8 @@ function function_58d581b6(weapon) {
 function function_17a14a22(weapon) {
     if (isdefined(weapon)) {
         switch (weapon.name) {
-        case #"hash_5382c3fae4273fed":
-        case #"hash_69461751fa492ea4":
+        case #"ww_axe_gun_melee_t9_upgraded":
+        case #"ww_axe_gun_melee_t9":
             return true;
         }
     }
@@ -173,7 +173,7 @@ function function_2da7c1b7(weapon) {
     if (isdefined(weapon)) {
         switch (weapon.name) {
         case #"hash_7eab88123b09e2c":
-        case #"hash_5382c3fae4273fed":
+        case #"ww_axe_gun_melee_t9_upgraded":
             return true;
         }
     }

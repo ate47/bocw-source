@@ -54,7 +54,7 @@ function function_ce3b36df() {
         self.ai.var_870d0893 = 1;
         self.completed_emerging_into_playable_area = 1;
     }
-    self callback::function_d8abfc3d(#"on_ai_melee", &namespace_85745671::function_b8eb5dea);
+    self callback::function_d8abfc3d(#"on_ai_melee", &namespace_85745671::zombie_on_melee);
     self callback::function_d8abfc3d(#"on_ai_melee", &namespace_85745671::function_95c99579, undefined, [undefined, 1]);
     self callback::function_d8abfc3d(#"hash_10ab46b52df7967a", &namespace_85745671::function_5cb3181e);
     self.var_12af7864 = 1;

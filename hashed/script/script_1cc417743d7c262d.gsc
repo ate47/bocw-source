@@ -1106,7 +1106,7 @@ function function_6daffa93(weapon, var_f3ab6571) {
     case #"gadget_supplypod":
         taacomdialog = "supplyPodWeaponDestroyedFriendly";
         break;
-    case #"hash_2b9efbad11308e02":
+    case #"land_mine":
         taacomdialog = "landmineWeaponDestroyedFriendly";
         break;
     case #"listening_device":
@@ -1148,7 +1148,7 @@ function function_a2cde53d(weapon, var_f3ab6571) {
     case #"gadget_supplypod":
         taacomdialog = "supplyPodHacked";
         break;
-    case #"hash_2b9efbad11308e02":
+    case #"land_mine":
         taacomdialog = "landmineHacked";
         break;
     case #"listening_device":

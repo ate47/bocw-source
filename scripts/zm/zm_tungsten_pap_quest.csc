@@ -81,14 +81,14 @@ function function_34eb3249(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_8c88a649(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     e_portal = getent(fieldname, "portal_dmg_spark_fx", "targetname");
     if (bwasdemojump) {
-        if (!isdefined(e_portal.var_b875cdb1)) {
-            e_portal.var_b875cdb1 = playfx(fieldname, #"hash_532aade47be565ff", e_portal.origin, anglestoforward(e_portal.angles), anglestoup(e_portal.angles));
+        if (!isdefined(e_portal.fx_portal)) {
+            e_portal.fx_portal = playfx(fieldname, #"hash_532aade47be565ff", e_portal.origin, anglestoforward(e_portal.angles), anglestoup(e_portal.angles));
         }
         return;
     }
-    if (isdefined(e_portal.var_b875cdb1)) {
-        stopfx(fieldname, e_portal.var_b875cdb1);
-        e_portal.var_b875cdb1 = undefined;
+    if (isdefined(e_portal.fx_portal)) {
+        stopfx(fieldname, e_portal.fx_portal);
+        e_portal.fx_portal = undefined;
     }
 }
 
@@ -105,7 +105,7 @@ function function_2d49baf(localclientnum, *oldval, newval, *bnewent, *binitialsn
             namespace_ff7e490::function_833e4b72(fieldname, e_portal);
         } else {
             namespace_ff7e490::function_60381056(fieldname, e_portal);
-            e_portal.var_b875cdb1 = playfx(fieldname, #"hash_9d2f5030c333b16", e_portal.origin, anglestoforward(e_portal.angles), anglestoup(e_portal.angles));
+            e_portal.fx_portal = playfx(fieldname, #"hash_9d2f5030c333b16", e_portal.origin, anglestoforward(e_portal.angles), anglestoup(e_portal.angles));
             e_portal.var_a3b04735 = e_portal playloopsound(#"hash_83b5ecd7e3f8f29");
             e_portal playsound(fieldname, #"hash_740416d5474f1ce7");
         }
@@ -140,8 +140,8 @@ function function_794730f(localclientnum, *oldval, newval, *bnewent, *binitialsn
 // Checksum 0x476c576f, Offset: 0xba8
 // Size: 0x152
 function private function_d93b0fff(localclientnum, e_portal) {
-    if (!isdefined(e_portal.var_b875cdb1)) {
-        e_portal.var_b875cdb1 = playfx(localclientnum, #"hash_42ec8f4ec8bcc91b", e_portal.origin, anglestoforward(e_portal.angles), anglestoup(e_portal.angles));
+    if (!isdefined(e_portal.fx_portal)) {
+        e_portal.fx_portal = playfx(localclientnum, #"hash_42ec8f4ec8bcc91b", e_portal.origin, anglestoforward(e_portal.angles), anglestoup(e_portal.angles));
     }
     if (!isdefined(e_portal.var_bd434ca)) {
         e_portal.var_bd434ca = playfx(localclientnum, #"hash_22568d89d3063dec", e_portal.origin, anglestoforward(e_portal.angles), anglestoup(e_portal.angles));

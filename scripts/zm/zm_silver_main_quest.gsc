@@ -1504,9 +1504,9 @@ function function_e0960594() {
         }
         for (var_7ee30bbb = 4 + getplayers().size * 2; var_7ee30bbb > 0; var_7ee30bbb--) {
             if (getfreeactorcount() < 1) {
-                var_2c1b14ae = getaiarchetypearray(#"zombie");
-                if (isdefined(var_2c1b14ae)) {
-                    var_2c1b14ae[0] kill();
+                a_zombie = getaiarchetypearray(#"zombie");
+                if (isdefined(a_zombie)) {
+                    a_zombie[0] kill();
                 }
             }
             zombie_utility::spawn_zombie(var_9677f2f9, undefined, undefined, level.round_number);

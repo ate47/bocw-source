@@ -708,7 +708,7 @@ function give_internal(killstreaktype, *do_not_update_death_count, noxp, tobotto
             self setinventoryweapon(get_killstreak_weapon(var_3197d2aa));
         }
     }
-    self notify(#"hash_52a52b5007f36141", {#killstreak:do_not_update_death_count});
+    self notify(#"killstreak_give", {#killstreak:do_not_update_death_count});
     self.just_given_new_inventory_killstreak = do_not_update_death_count !== just_max_stack_removed_inventory_killstreak && !is_true(var_7b935486);
     if (!isdefined(self.var_58d669ff)) {
         self.var_58d669ff = [];

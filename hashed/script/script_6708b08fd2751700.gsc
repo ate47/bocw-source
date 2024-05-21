@@ -315,8 +315,8 @@ function function_834d65f9(params) {
             stop_timer();
         } else {
             foreach (s_instance in instance.contentgroups[#"console"]) {
-                s_instance.var_4a416ea9.health = 0;
-                s_instance.var_4a416ea9 notify(#"damage");
+                s_instance.mdl_console.health = 0;
+                s_instance.mdl_console notify(#"damage");
             }
         }
         return instance.success;

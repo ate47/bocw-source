@@ -2124,7 +2124,7 @@ function function_e78fa4e5(vehicle) {
         self waittilltimeout(3, #"weapon_change_complete");
     }
     w_current = self getcurrentweapon();
-    var_7dcc4eed = getweapon(#"hash_3c8b385a76cbfe83");
+    var_7dcc4eed = getweapon(#"recon_car_zm");
     if (self hasweapon(var_7dcc4eed) || self killstreaks::has_killstreak("recon_car")) {
         var_ddd0e708 = 1;
     } else {
@@ -2405,7 +2405,7 @@ function function_43b1545e() {
     self.a_zones = [];
     self.a_s_spawns = [];
     self.var_b77578d8 = [];
-    self.var_bde5a19a = [];
+    self.a_s_zombie = [];
     self.a_s_dog = [];
     self.var_2e4e85c5 = [];
     self.var_29db796e = [];
@@ -2433,7 +2433,7 @@ function function_43b1545e() {
             a_s_spawns = struct::get_array(node.target);
             foreach (s_spawn in a_s_spawns) {
                 if (s_spawn.script_noteworthy === #"spawn_location" || s_spawn.script_noteworthy === "custom_spawner_entry crawl") {
-                    self.var_bde5a19a[self.var_bde5a19a.size] = s_spawn;
+                    self.a_s_zombie[self.a_s_zombie.size] = s_spawn;
                     continue;
                 }
                 if (s_spawn.script_noteworthy === #"dog_location") {
@@ -2575,7 +2575,7 @@ function function_8e1ce89a() {
     self thread function_d341296a();
     self.a_s_spawners = array::randomize(self.var_b77578d8);
     self.a_s_spawns = arraycombine(self.a_s_spawners[0], self.a_s_spawners[1]);
-    self.a_s_spawns = arraycombine(self.a_s_spawns, self.var_bde5a19a);
+    self.a_s_spawns = arraycombine(self.a_s_spawns, self.a_s_zombie);
     self.e_spawner = getentarray("zombie_spawner", "script_noteworthy")[0];
     i = 0;
     while (true) {
@@ -2688,7 +2688,7 @@ function function_1e31497f(s_spot) {
     }
     wait(0.1);
     if (!isdefined(ai_zombie)) {
-        ai_zombie = zombie_utility::spawn_zombie(self.e_spawner, undefined, array::random(self.var_bde5a19a), level.round_number);
+        ai_zombie = zombie_utility::spawn_zombie(self.e_spawner, undefined, array::random(self.a_s_zombie), level.round_number);
         return ai_zombie;
     }
     return ai_zombie;
@@ -2760,7 +2760,7 @@ function function_e255e996() {
     self endon(#"death");
     while (true) {
         s_result = self waittill(#"damage");
-        if (isplayer(s_result.attacker) && isalive(s_result.attacker) && (is_true(s_result.weapon.name === #"hash_69461751fa492ea4") || is_true(s_result.weapon.name === #"hash_5382c3fae4273fed"))) {
+        if (isplayer(s_result.attacker) && isalive(s_result.attacker) && (is_true(s_result.weapon.name === #"ww_axe_gun_melee_t9") || is_true(s_result.weapon.name === #"ww_axe_gun_melee_t9_upgraded"))) {
             if (level.var_90acdb64) {
                 level.var_90acdb64--;
                 if (level.var_90acdb64 < 1) {

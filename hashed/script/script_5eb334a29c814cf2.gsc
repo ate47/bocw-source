@@ -125,7 +125,7 @@ function private function_6d409ca1() {
 // Params 1, eflags: 0x0
 // Checksum 0xc2122099, Offset: 0x6f8
 // Size: 0x94
-function function_260dfa95(weapon_name) {
+function switch_weapon(weapon_name) {
     self ai::gun_remove();
     weapon = getweapon(weapon_name);
     self aiutility::setcurrentweapon(weapon);
@@ -188,7 +188,7 @@ function function_8996b315(var_ac5f535, bomb_model) {
     level flag::clear(#"hash_66eb1b5632f46da8");
     if (isdefined(self.last_weapon_name)) {
         self val::reset(#"hash_12fe84721f8b0c30", "take_weapons");
-        self function_260dfa95(self.last_weapon_name);
+        self switch_weapon(self.last_weapon_name);
         self.last_weapon_name = undefined;
     }
     if (isdefined(bomb_model)) {

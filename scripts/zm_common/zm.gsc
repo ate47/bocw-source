@@ -929,7 +929,7 @@ function init_sounds() {
 function init_levelvars() {
     level.is_zombie_level = 1;
     level.default_laststandpistol = getweapon(#"pistol_semiauto_t9");
-    level.default_solo_laststandpistol = getweapon(#"hash_e58e352069bc0a5");
+    level.default_solo_laststandpistol = getweapon(#"pistol_semiauto_t9_upgraded");
     level.super_ee_weapon = getweapon(#"pistol_burst_t9");
     level.laststandpistol = level.default_laststandpistol;
     level.start_weapon = level.default_laststandpistol;

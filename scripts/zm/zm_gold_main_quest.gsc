@@ -1641,7 +1641,7 @@ function function_b5fc7e46() {
 // Size: 0x194
 function function_9c74e3e3(e_player) {
     if (isplayer(e_player)) {
-        if (level flag::get(#"hash_102797babb455461") && !is_true(self.stub.spawn_pos.var_4a5787c9)) {
+        if (level flag::get(#"hash_102797babb455461") && !is_true(self.stub.spawn_pos.trigger_disable)) {
             if (self.stub.spawn_pos.script_noteworthy === #"zone_hillside_road_defend" && self.stub.spawn_pos flag::get(#"hash_478be680bb087e19")) {
                 self sethintstringforplayer(e_player, #"hash_10171975870a057a");
                 return true;
@@ -1693,7 +1693,7 @@ function function_f69ec622() {
 // Checksum 0x5af1b87c, Offset: 0x8ac8
 // Size: 0x474
 function function_6b76cd80(s_container) {
-    s_container.var_4a5787c9 = 1;
+    s_container.trigger_disable = 1;
     if (!s_container flag::get(#"hash_4edaa9e538a35497")) {
         level flag::set(#"hash_793eafdc24e3f0eb");
         arrayremovevalue(level.var_852bdce8, s_container);
@@ -1775,7 +1775,7 @@ function function_df33ac59(s_container) {
     }
     if (var_18ceba08 flag::get(#"success")) {
         s_container flag::set(#"hash_4edaa9e538a35497");
-        s_container.var_4a5787c9 = 0;
+        s_container.trigger_disable = 0;
         return;
     }
     s_container.mdl clientfield::set("" + #"hash_6ab08e0e1cffcd35", 1);
@@ -1783,7 +1783,7 @@ function function_df33ac59(s_container) {
     level waittill(#"end_of_round");
     s_container.mdl clientfield::set("" + #"hash_6ab08e0e1cffcd35", 0);
     s_container notify(#"hash_13939f4d75e88028");
-    s_container.var_4a5787c9 = 0;
+    s_container.trigger_disable = 0;
 }
 
 // Namespace zm_gold_main_quest/zm_gold_main_quest

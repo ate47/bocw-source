@@ -44,7 +44,7 @@ function function_a8f7fa5b() {
             continue;
         }
         switch (ent.script_noteworthy) {
-        case #"hash_4512f0aa849ffe50":
+        case #"trigger_disable":
             self.trigs[#"hack"] = ent;
             self thread function_2dc6261d();
             break;

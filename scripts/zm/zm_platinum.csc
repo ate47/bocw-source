@@ -3,7 +3,7 @@
 #using script_24f8d3e335c86c5a;
 #using script_2fbd61c3675dc7ca;
 #using script_1f60f29863707208;
-#using script_7412801d944d156b;
+#using scripts\zm\zm_platinum_ww_quest.csc;
 #using script_14b99732aeac3ca6;
 #using script_3dcf1dc8f679581e;
 #using script_5cd3f24eb1709844;
@@ -94,7 +94,7 @@ function event_handler[level_init] main(*eventstruct) {
     namespace_958b287a::init();
     namespace_b574e135::init();
     namespace_178eb32b::init();
-    namespace_47f97e84::init();
+    zm_platinum_ww_quest::init();
     namespace_1fc8f2e3::init();
     namespace_4e8d47b1::init();
     namespace_7a518726::init();

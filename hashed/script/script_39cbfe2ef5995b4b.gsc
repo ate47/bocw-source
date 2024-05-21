@@ -318,7 +318,7 @@ function private function_c3f4d281(item, *player, *networkid, *itemid, *itemcoun
     nullweapon = getweapon(#"none");
     var_f945fa92 = getweapon(#"bare_hands");
     var_f934814c = getweapon(#"ww_ieu_electric_t9");
-    var_92587dd3 = getweapon(#"hash_4ee16eb0581e4646");
+    var_92587dd3 = getweapon(#"ww_ieu_electric_t9_upgraded");
     foreach (weaponslot in namespace_a0d533d1::function_4905dddf()) {
         inventoryweapon = self namespace_a0d533d1::function_2b83d3ff(self item_inventory::function_2e711614(weaponslot));
         if (isdefined(inventoryweapon) && inventoryweapon != nullweapon && inventoryweapon != var_f945fa92 && inventoryweapon.weapclass != "melee" && inventoryweapon.rootweapon != var_f934814c && inventoryweapon.rootweapon != var_92587dd3) {

@@ -3,9 +3,9 @@
 #using script_4e44ad88a2b0f559;
 #using scripts\core_common\bots\bot_action.gsc;
 
-#namespace namespace_d9f3dd47;
+#namespace bot_weapons;
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 0, eflags: 0x2 linked
 // Checksum 0x50bb43a7, Offset: 0x218
 // Size: 0x74
@@ -19,7 +19,7 @@ function preinit() {
     function_a79f6dfb();
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 0, eflags: 0x6 linked
 // Checksum 0x2538b615, Offset: 0x298
 // Size: 0x784
@@ -32,23 +32,23 @@ function private function_ce850bf4() {
     bot_action::register_weapon(#"ar_slowfire_t9", &function_319dfab4, &use_ar);
     bot_action::register_weapon(#"ar_slowhandling_t9", &function_319dfab4, &use_ar);
     bot_action::register_weapon(#"ar_standard_t9", &function_319dfab4, &use_ar);
-    bot_action::register_weapon(#"lmg_accurate_t9", &function_aadbe8c, &function_82ebbce);
-    bot_action::register_weapon(#"lmg_fastfire_t9", &function_aadbe8c, &function_82ebbce);
-    bot_action::register_weapon(#"lmg_light_t9", &function_aadbe8c, &function_82ebbce);
-    bot_action::register_weapon(#"lmg_slowfire_t9", &function_aadbe8c, &function_82ebbce);
-    bot_action::register_weapon(#"smg_accurate_t9", &function_b9557a8a, &function_b3992b0);
-    bot_action::register_weapon(#"smg_burst_t9", &function_b9557a8a, &function_b3992b0);
-    bot_action::register_weapon(#"smg_capacity_t9", &function_b9557a8a, &function_b3992b0);
-    bot_action::register_weapon(#"smg_fastfire_t9", &function_b9557a8a, &function_b3992b0);
-    bot_action::register_weapon(#"smg_handling_t9", &function_b9557a8a, &function_b3992b0);
-    bot_action::register_weapon(#"smg_heavy_t9", &function_b9557a8a, &function_b3992b0);
-    bot_action::register_weapon(#"smg_spray_t9", &function_b9557a8a, &function_b3992b0);
-    bot_action::register_weapon(#"smg_standard_t9", &function_b9557a8a, &function_b3992b0);
-    bot_action::register_weapon(#"sniper_accurate_t9", &function_c75d81ab, &function_d6921803);
-    bot_action::register_weapon(#"sniper_cannon_t9", &function_c75d81ab, &function_d6921803);
-    bot_action::register_weapon(#"sniper_powersemi_t9", &function_c75d81ab, &function_d6921803);
-    bot_action::register_weapon(#"sniper_quickscope_t9", &function_c75d81ab, &function_d6921803);
-    bot_action::register_weapon(#"sniper_standard_t9", &function_c75d81ab, &function_d6921803);
+    bot_action::register_weapon(#"lmg_accurate_t9", &function_aadbe8c, &use_lmg);
+    bot_action::register_weapon(#"lmg_fastfire_t9", &function_aadbe8c, &use_lmg);
+    bot_action::register_weapon(#"lmg_light_t9", &function_aadbe8c, &use_lmg);
+    bot_action::register_weapon(#"lmg_slowfire_t9", &function_aadbe8c, &use_lmg);
+    bot_action::register_weapon(#"smg_accurate_t9", &function_b9557a8a, &use_smg);
+    bot_action::register_weapon(#"smg_burst_t9", &function_b9557a8a, &use_smg);
+    bot_action::register_weapon(#"smg_capacity_t9", &function_b9557a8a, &use_smg);
+    bot_action::register_weapon(#"smg_fastfire_t9", &function_b9557a8a, &use_smg);
+    bot_action::register_weapon(#"smg_handling_t9", &function_b9557a8a, &use_smg);
+    bot_action::register_weapon(#"smg_heavy_t9", &function_b9557a8a, &use_smg);
+    bot_action::register_weapon(#"smg_spray_t9", &function_b9557a8a, &use_smg);
+    bot_action::register_weapon(#"smg_standard_t9", &function_b9557a8a, &use_smg);
+    bot_action::register_weapon(#"sniper_accurate_t9", &function_c75d81ab, &use_sniper);
+    bot_action::register_weapon(#"sniper_cannon_t9", &function_c75d81ab, &use_sniper);
+    bot_action::register_weapon(#"sniper_powersemi_t9", &function_c75d81ab, &use_sniper);
+    bot_action::register_weapon(#"sniper_quickscope_t9", &function_c75d81ab, &use_sniper);
+    bot_action::register_weapon(#"sniper_standard_t9", &function_c75d81ab, &use_sniper);
     bot_action::register_weapon(#"tr_damagesemi_t9", &function_183e848d, &use_tr);
     bot_action::register_weapon(#"tr_fastburst_t9", &function_183e848d, &use_tr);
     bot_action::register_weapon(#"tr_longburst_t9", &function_183e848d, &use_tr);
@@ -56,7 +56,7 @@ function private function_ce850bf4() {
     bot_action::register_weapon(#"tr_precisionsemi_t9", &function_183e848d, &use_tr);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 0, eflags: 0x6 linked
 // Checksum 0x1e2666d2, Offset: 0xa28
 // Size: 0x31c
@@ -75,7 +75,7 @@ function private function_c50262c4() {
     bot_action::register_weapon(#"shotgun_semiauto_t9", &function_408f0f07, &function_78135f4c);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 0, eflags: 0x6 linked
 // Checksum 0xca19ab1d, Offset: 0xd50
 // Size: 0x144
@@ -87,7 +87,7 @@ function private function_ece9035a() {
     bot_action::register_weapon(#"satchel_charge", &function_66e1fe37, &function_84092214);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 0, eflags: 0x6 linked
 // Checksum 0xde823e19, Offset: 0xea0
 // Size: 0x144
@@ -99,7 +99,7 @@ function private function_c7dfc94() {
     bot_action::register_weapon(#"willy_pete", &function_66e1fe37, &function_6bc8e929);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc53638c9, Offset: 0xff0
 // Size: 0xe04
@@ -107,7 +107,7 @@ function private function_1f3281d9() {
     bot_action::register_weapon(#"ability_smart_cover", &function_66e1fe37, &function_de73a533);
     bot_action::register_weapon(#"gadget_jammer", &function_c329e7cf, &function_de73a533);
     bot_action::register_weapon(#"gadget_supplypod", &function_86ce2c, &function_de73a533);
-    bot_action::register_weapon(#"hash_2b9efbad11308e02", &function_66e1fe37, &function_de73a533);
+    bot_action::register_weapon(#"land_mine", &function_66e1fe37, &function_de73a533);
     bot_action::register_weapon(#"listening_device", &function_d6e71e28, &function_de73a533);
     bot_action::register_weapon(#"missile_turret", &function_5c276034, &function_de73a533);
     bot_action::register_weapon(#"tear_gas", &function_126a6787, &function_de73a533);
@@ -162,7 +162,7 @@ function private function_1f3281d9() {
     bot_action::register_weapon(#"hash_3d62bdc92bbcaf5f", &function_66e1fe37, &function_de73a533);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 0, eflags: 0x6 linked
 // Checksum 0xcff5227c, Offset: 0x1e00
 // Size: 0xbb4
@@ -177,8 +177,8 @@ function private function_d4db3361() {
     bot_action::register_weapon(#"inventory_" + "helicopter_comlink", &function_5f352eb0, &function_7943cde5);
     bot_action::register_weapon(#"helicopter_guard", &function_5f352eb0, &function_7943cde5);
     bot_action::register_weapon(#"inventory_" + "helicopter_guard", &function_5f352eb0, &function_7943cde5);
-    bot_action::register_weapon(#"hero_annihilator", &function_43848868, &function_f54e11c8);
-    bot_action::register_weapon(#"inventory_" + "hero_annihilator", &function_43848868, &function_f54e11c8);
+    bot_action::register_weapon(#"hero_annihilator", &function_43848868, &use_hero_annihilator);
+    bot_action::register_weapon(#"inventory_" + "hero_annihilator", &function_43848868, &use_hero_annihilator);
     bot_action::register_weapon(#"hero_flamethrower", &function_66e1fe37, &function_2bbdd2b4);
     bot_action::register_weapon(#"inventory_" + "hero_flamethrower", &function_66e1fe37, &function_2bbdd2b4);
     bot_action::register_weapon(#"hero_pineapplegun", &function_43395ff9, &function_27ae97ef);
@@ -213,7 +213,7 @@ function private function_d4db3361() {
     bot_action::register_weapon(#"inventory_" + "weapon_armor", &function_784440a3, &weapon_armor);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb24f1e71, Offset: 0x29c0
 // Size: 0x64
@@ -223,7 +223,7 @@ function private function_a79f6dfb() {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x2762b2c4, Offset: 0x2a30
 // Size: 0x32
@@ -234,7 +234,7 @@ function private function_66e1fe37(actionparams) {
     return undefined;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x5a58122a, Offset: 0x2a70
 // Size: 0x92
@@ -251,7 +251,7 @@ function private function_319dfab4(actionparams) {
     return self function_4b1db2f8(actionparams, 80, 90, 80);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x35cf806c, Offset: 0x2b10
 // Size: 0x1ae
@@ -276,7 +276,7 @@ function private use_ar(actionparams) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x24ab2258, Offset: 0x2cc8
 // Size: 0x92
@@ -293,11 +293,11 @@ function private function_aadbe8c(actionparams) {
     return self function_4b1db2f8(actionparams, 80, 90, 80);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xcaf08be6, Offset: 0x2d68
 // Size: 0x1ae
-function private function_82ebbce(actionparams) {
+function private use_lmg(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
@@ -318,7 +318,7 @@ function private function_82ebbce(actionparams) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xbf1ef350, Offset: 0x2f20
 // Size: 0x92
@@ -335,7 +335,7 @@ function private function_183e848d(actionparams) {
     return self function_4b1db2f8(actionparams, 80, 80, 80);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x34b05540, Offset: 0x2fc0
 // Size: 0x196
@@ -360,7 +360,7 @@ function private use_tr(actionparams) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x3a5a546a, Offset: 0x3160
 // Size: 0x92
@@ -377,11 +377,11 @@ function private function_c75d81ab(actionparams) {
     return self function_4b1db2f8(actionparams, 60, 80, 90);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x5d4bd449, Offset: 0x3200
 // Size: 0x1b6
-function private function_d6921803(actionparams) {
+function private use_sniper(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
@@ -402,7 +402,7 @@ function private function_d6921803(actionparams) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x80c99342, Offset: 0x33c0
 // Size: 0x92
@@ -419,11 +419,11 @@ function private function_b9557a8a(actionparams) {
     return self function_4b1db2f8(actionparams, 80, 70, 60);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x23f485cf, Offset: 0x3460
 // Size: 0x1ae
-function private function_b3992b0(actionparams) {
+function private use_smg(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
@@ -444,7 +444,7 @@ function private function_b3992b0(actionparams) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xa9bd4343, Offset: 0x3618
 // Size: 0x92
@@ -461,7 +461,7 @@ function private function_6aa40bb4(actionparams) {
     return self function_4b1db2f8(actionparams, 70, 70, 70);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x6d92a2dd, Offset: 0x36b8
 // Size: 0x1ae
@@ -486,7 +486,7 @@ function private use_pistol(actionparams) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x6452f735, Offset: 0x3870
 // Size: 0x102
@@ -511,7 +511,7 @@ function private function_408f0f07(actionparams) {
     return self function_4b1db2f8(actionparams, 90, 70, 60);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x15f1bee9, Offset: 0x3980
 // Size: 0x1ae
@@ -536,7 +536,7 @@ function private function_78135f4c(actionparams) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xcdbf42f3, Offset: 0x3b38
 // Size: 0x1f4
@@ -575,7 +575,7 @@ function private function_3929fa65(actionparams) {
     return 60;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xc437eafa, Offset: 0x3d38
 // Size: 0x366
@@ -615,7 +615,7 @@ function private use_launcher(actionparams) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xf8cdf3ce, Offset: 0x40a8
 // Size: 0x68
@@ -630,7 +630,7 @@ function private function_97bc2873(actionparams) {
     return 50;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x792c2e63, Offset: 0x4118
 // Size: 0x6c
@@ -640,7 +640,7 @@ function private function_5f7cac29(actionparams) {
     self function_185a3c39(weapon);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xe8dafd95, Offset: 0x4190
 // Size: 0x1d2
@@ -683,7 +683,7 @@ function private function_e105d8c8(actionparams) {
     return 94;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x59893161, Offset: 0x4370
 // Size: 0x1e2
@@ -724,7 +724,7 @@ function private function_16906804(actionparams) {
     return 94;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x27bb88ce, Offset: 0x4560
 // Size: 0x1ba
@@ -764,7 +764,7 @@ function private function_8640f24(actionparams) {
     return 94;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x143c2097, Offset: 0x4728
 // Size: 0x1ba
@@ -805,7 +805,7 @@ function private function_d3c685b8(actionparams) {
     return 94;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x8583986f, Offset: 0x48f0
 // Size: 0x196
@@ -841,7 +841,7 @@ function private function_bd46948a(actionparams) {
     return 94;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x4
 // Checksum 0x78d7a3cb, Offset: 0x4a90
 // Size: 0x54
@@ -850,7 +850,7 @@ function private function_55d06cb0(*actionparams) {
     self bottapbutton(15);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x46a894f9, Offset: 0x4af0
 // Size: 0x1aa
@@ -887,7 +887,7 @@ function private function_22630da6(actionparams) {
     return 94;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x102c4cc2, Offset: 0x4ca8
 // Size: 0x152
@@ -919,7 +919,7 @@ function private function_643065f9(actionparams) {
     return 94;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xa2eb1212, Offset: 0x4e08
 // Size: 0x6c
@@ -929,7 +929,7 @@ function private function_778e2491(actionparams) {
     self function_185a3c39(weapon);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xeb95b2f7, Offset: 0x4e80
 // Size: 0xd6
@@ -949,7 +949,7 @@ function private function_f023f6f9(actionparams) {
     return 99;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x702253de, Offset: 0x4f60
 // Size: 0x3c
@@ -958,7 +958,7 @@ function private counteruav(actionparams) {
     self function_c1515256(weapon);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x21dac445, Offset: 0x4fa8
 // Size: 0x6c
@@ -968,7 +968,7 @@ function private function_10b07ab6(actionparams) {
     self function_185a3c39(weapon);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x697f7f9f, Offset: 0x5020
 // Size: 0x62
@@ -979,7 +979,7 @@ function private function_5f352eb0(actionparams) {
     return 99;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x58b4b6b2, Offset: 0x5090
 // Size: 0x3c
@@ -988,7 +988,7 @@ function private function_7943cde5(actionparams) {
     self function_c1515256(weapon);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x2c4c8d5f, Offset: 0x50d8
 // Size: 0x70
@@ -999,11 +999,11 @@ function private function_43848868(actionparams) {
     return self function_4b1db2f8(actionparams, 90, 80, 70) + 1;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x17fdb698, Offset: 0x5150
 // Size: 0x1ce
-function private function_f54e11c8(actionparams) {
+function private use_hero_annihilator(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
@@ -1023,7 +1023,7 @@ function private function_f54e11c8(actionparams) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x651a6d0a, Offset: 0x5328
 // Size: 0xee
@@ -1039,7 +1039,7 @@ function private function_2bbdd2b4(actionparams) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x87a1adee, Offset: 0x5420
 // Size: 0x70
@@ -1050,7 +1050,7 @@ function private function_43395ff9(actionparams) {
     return self function_4b1db2f8(actionparams, 90, 90, 80) + 1;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xfe165cb9, Offset: 0x5498
 // Size: 0x276
@@ -1079,7 +1079,7 @@ function private function_27ae97ef(actionparams) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x78d6b809, Offset: 0x5718
 // Size: 0x2c6
@@ -1110,7 +1110,7 @@ function private function_d0cdb00e(actionparams) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x43e0e445, Offset: 0x59e8
 // Size: 0x28e
@@ -1153,7 +1153,7 @@ function private function_8d7445b8(actionparams) {
     return 99;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x966ce9e4, Offset: 0x5c80
 // Size: 0x3c
@@ -1162,7 +1162,7 @@ function private function_9839161a(actionparams) {
     self function_c1515256(weapon);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x787c5cd4, Offset: 0x5cc8
 // Size: 0xba
@@ -1180,7 +1180,7 @@ function private function_f70eb03b(actionparams) {
     return 99;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xd95bf003, Offset: 0x5d90
 // Size: 0x1be
@@ -1203,7 +1203,7 @@ function private napalm_strike(actionparams) {
     self notify(#"confirm_location", {#position:target, #yaw:randomint(360)});
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xb0cba4c6, Offset: 0x5f58
 // Size: 0xba
@@ -1221,7 +1221,7 @@ function private function_eb23222e(actionparams) {
     return 99;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x5a3e4a0, Offset: 0x6020
 // Size: 0x1f0
@@ -1248,7 +1248,7 @@ function private planemortar(actionparams) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x296fc835, Offset: 0x6218
 // Size: 0x6c
@@ -1258,7 +1258,7 @@ function private function_84a16b0(actionparams) {
     self function_185a3c39(weapon);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x9898ce48, Offset: 0x6290
 // Size: 0x92
@@ -1269,7 +1269,7 @@ function private function_14ccb855(actionparams) {
     return 99;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xdf577c80, Offset: 0x6330
 // Size: 0x3c
@@ -1278,7 +1278,7 @@ function private function_bdf61e8f(actionparams) {
     self function_c1515256(weapon);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xc8aace16, Offset: 0x6378
 // Size: 0xba
@@ -1296,7 +1296,7 @@ function private function_f1fb9968(actionparams) {
     return 99;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xa81f061a, Offset: 0x6440
 // Size: 0x2b6
@@ -1330,7 +1330,7 @@ function private remote_missile(actionparams) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x71b42d4e, Offset: 0x6700
 // Size: 0x54
@@ -1340,7 +1340,7 @@ function private function_17d6fe21(*notifyhash) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x3ea1d98b, Offset: 0x6760
 // Size: 0x70
@@ -1351,7 +1351,7 @@ function private function_184e01c(actionparams) {
     return self function_4b1db2f8(actionparams, 90, 90, 80) + 1;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x54d11c2a, Offset: 0x67d8
 // Size: 0x2e6
@@ -1387,7 +1387,7 @@ function private function_5d035c24(actionparams) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x6aaf6d74, Offset: 0x6ac8
 // Size: 0x44
@@ -1398,7 +1398,7 @@ function private function_5e217f4d(*notifyhash) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x84bf9176, Offset: 0x6b18
 // Size: 0x70
@@ -1409,7 +1409,7 @@ function private function_fee832f(actionparams) {
     return self function_4b1db2f8(actionparams, 80, 90, 80) + 1;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xbad34007, Offset: 0x6b90
 // Size: 0x19e
@@ -1433,7 +1433,7 @@ function private function_397a1c0a(actionparams) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x958a2a73, Offset: 0x6d38
 // Size: 0xba
@@ -1451,7 +1451,7 @@ function private function_25933177(actionparams) {
     return 99;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x9c9ba140, Offset: 0x6e00
 // Size: 0x1be
@@ -1474,7 +1474,7 @@ function private straferun(actionparams) {
     self notify(#"confirm_location", {#position:target, #yaw:randomint(360)});
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xb90d8bff, Offset: 0x6fc8
 // Size: 0x18e
@@ -1498,7 +1498,7 @@ function private function_69658e9b(actionparams) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdef2e083, Offset: 0x7160
 // Size: 0x42
@@ -1507,7 +1507,7 @@ function private function_1c8f36a4() {
     return self.origin + fwd * 200;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xfe135cb3, Offset: 0x71b0
 // Size: 0x92
@@ -1518,7 +1518,7 @@ function private function_c5a0aa09(actionparams) {
     return 99;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x80b7b878, Offset: 0x7250
 // Size: 0x3c
@@ -1527,7 +1527,7 @@ function private uav(actionparams) {
     self function_c1515256(weapon);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x4d6af794, Offset: 0x7298
 // Size: 0x84
@@ -1538,7 +1538,7 @@ function private function_12b05f25(actionparams) {
     self bottapbutton(0);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x81edd9b9, Offset: 0x7328
 // Size: 0xee
@@ -1565,7 +1565,7 @@ function private function_784440a3(actionparams) {
     return 99;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x15556a08, Offset: 0x7420
 // Size: 0x84
@@ -1576,7 +1576,7 @@ function private weapon_armor(actionparams) {
     self bottapbutton(0);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xb2afc95, Offset: 0x74b0
 // Size: 0x216
@@ -1612,7 +1612,7 @@ function private function_c329e7cf(actionparams) {
     return 94;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x1f6b0ab6, Offset: 0x76d0
 // Size: 0x102
@@ -1639,7 +1639,7 @@ function private function_86ce2c(actionparams) {
     return 94;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x8ccb6f9, Offset: 0x77e0
 // Size: 0x216
@@ -1675,7 +1675,7 @@ function private function_d6e71e28(actionparams) {
     return 94;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xbfe980c9, Offset: 0x7a00
 // Size: 0x18a
@@ -1705,7 +1705,7 @@ function private function_5c276034(actionparams) {
     return 94;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 0, eflags: 0x6 linked
 // Checksum 0x7ffb232c, Offset: 0x7b98
 // Size: 0x112
@@ -1719,7 +1719,7 @@ function private function_6faf985b() {
     return self cansee(self.enemy, 250);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x67a6a272, Offset: 0x7cb8
 // Size: 0x216
@@ -1755,7 +1755,7 @@ function private function_126a6787(actionparams) {
     return 94;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x130d91f8, Offset: 0x7ed8
 // Size: 0x216
@@ -1791,7 +1791,7 @@ function private function_69624ba2(actionparams) {
     return 94;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xdb88dfd7, Offset: 0x80f8
 // Size: 0x110
@@ -1811,7 +1811,7 @@ function private function_303bbccf(actionparams) {
     return clipammo > 0;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xe0eec7a1, Offset: 0x8210
 // Size: 0x108
@@ -1831,7 +1831,7 @@ function private function_d55b60f8(actionparams) {
     return true;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x4223b174, Offset: 0x8320
 // Size: 0x178
@@ -1854,7 +1854,7 @@ function private function_98a9dad4(actionparams) {
     return true;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xbf8e3a0c, Offset: 0x84a0
 // Size: 0x218
@@ -1885,7 +1885,7 @@ function private function_808ca6bb(actionparams) {
     return true;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x5d116c48, Offset: 0x86c0
 // Size: 0x1e4
@@ -1918,7 +1918,7 @@ function private function_f338aefb(actionparams) {
     return false;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x38c212b2, Offset: 0x88b0
 // Size: 0x104
@@ -1939,7 +1939,7 @@ function private function_82350d4c(actionparams) {
     return false;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 2, eflags: 0x6 linked
 // Checksum 0x5d92ed0e, Offset: 0x89c0
 // Size: 0x178
@@ -1970,7 +1970,7 @@ function private function_4e17fb37(actionparams, hitradius) {
     return true;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x87fb3346, Offset: 0x8b40
 // Size: 0x8c
@@ -1987,7 +1987,7 @@ function private function_754cc239(actionparams) {
     return true;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x6ca9bbb1, Offset: 0x8bd8
 // Size: 0xe8
@@ -2010,7 +2010,7 @@ function private function_64f2e29(actionparams) {
     return false;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x675067ea, Offset: 0x8cc8
 // Size: 0x70
@@ -2024,7 +2024,7 @@ function private function_a469c9cd(actionparams) {
     return false;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x8d108cb7, Offset: 0x8d40
 // Size: 0xa6
@@ -2038,7 +2038,7 @@ function private function_6b54ab21(weapon) {
     return multishotbasedamage + damage * weapon.shotcount;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x4
 // Checksum 0xe41a27, Offset: 0x8df0
 // Size: 0x74
@@ -2050,7 +2050,7 @@ function private min_damage(weapon) {
     return multishotbasedamage + damage;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x4
 // Checksum 0x1a1f5b7e, Offset: 0x8e70
 // Size: 0x4e
@@ -2060,7 +2060,7 @@ function private max_damage(weapon) {
     return multishotbasedamage + damage * weapon.shotcount;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 4, eflags: 0x6 linked
 // Checksum 0xf098ea46, Offset: 0x8ec8
 // Size: 0xdc
@@ -2082,7 +2082,7 @@ function private function_4b1db2f8(actionparams, var_f97fefd9, var_f7b379b8, var
     return var_edd1b764;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf3dfa445, Offset: 0x8fb0
 // Size: 0x132
@@ -2102,7 +2102,7 @@ function private function_67ca228b() {
     return enemies;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 0, eflags: 0x6 linked
 // Checksum 0x22905a, Offset: 0x90f0
 // Size: 0x1ce
@@ -2132,7 +2132,7 @@ function private function_d19a634f() {
     return (radius * cos(yaw), radius * sin(yaw), self.origin[2]);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x4
 // Checksum 0x85aa531e, Offset: 0x92c8
 // Size: 0x62
@@ -2144,7 +2144,7 @@ function private function_9dfd5e88(trace) {
     return isdefined(var_d6e7a23f) && var_d6e7a23f == self.enemy;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 2, eflags: 0x4
 // Checksum 0xfa631bab, Offset: 0x9338
 // Size: 0x58
@@ -2156,7 +2156,7 @@ function private function_e5a76b54(trace, origin) {
     return distsq <= 100;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 2, eflags: 0x6 linked
 // Checksum 0xce80b6c1, Offset: 0x9398
 // Size: 0x50
@@ -2167,7 +2167,7 @@ function private function_e63ee3e8(trace, distance) {
     return distance2d(self.origin, trace[#"position"]) >= distance;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x56e323b9, Offset: 0x93f0
 // Size: 0x76
@@ -2180,7 +2180,7 @@ function private function_185a3c39(weapon) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xc36d67da, Offset: 0x9470
 // Size: 0x3c
@@ -2189,7 +2189,7 @@ function private function_c1515256(weapon) {
     self bottapbutton(84);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x856345bb, Offset: 0x94b8
 // Size: 0x1dc
@@ -2210,7 +2210,7 @@ function private fire_weapon(weapon) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 0, eflags: 0x6 linked
 // Checksum 0x68be168a, Offset: 0x96a0
 // Size: 0x58
@@ -2224,7 +2224,7 @@ function private function_6b01cd20() {
     } while (!self.bot.var_e8c84f98);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x22933ea3, Offset: 0x9700
 // Size: 0x2c
@@ -2232,7 +2232,7 @@ function private function_84092214(actionparams) {
     self throw_offhand(actionparams, 14);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x27954dd5, Offset: 0x9738
 // Size: 0x2c
@@ -2240,7 +2240,7 @@ function private function_6bc8e929(actionparams) {
     self throw_offhand(actionparams, 15);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 2, eflags: 0x6 linked
 // Checksum 0x6f4caca0, Offset: 0x9770
 // Size: 0x246
@@ -2269,7 +2269,7 @@ function private throw_offhand(actionparams, var_dd95d559) {
     }
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xc5f7fa07, Offset: 0x99c0
 // Size: 0x6e
@@ -2281,7 +2281,7 @@ function private function_39cec272(*notifyhash) {
     self.throwinggrenade = 0;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x55c83ba0, Offset: 0x9a38
 // Size: 0xe2
@@ -2297,7 +2297,7 @@ function private function_de73a533(*actionparams) {
     self.bot.var_e636e51e = gettime() + int(5 * 1000);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 0, eflags: 0x6 linked
 // Checksum 0x7ee10f0c, Offset: 0x9b28
 // Size: 0x8e
@@ -2309,7 +2309,7 @@ function private function_bbef6e21() {
     self.bot.var_6bea1d82 = stop;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd8af9aca, Offset: 0x9bc0
 // Size: 0x2aa
@@ -2345,7 +2345,7 @@ function private function_411e397e() {
     self.bot.shoottime = gettime() + int(totaltime * 1000);
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa1148ea4, Offset: 0x9e78
 // Size: 0xac
@@ -2356,7 +2356,7 @@ function private function_d8b388a6() {
     return (!isdefined(self.bot.var_d70788cb) || self.bot.var_d70788cb <= gettime()) && !(!isdefined(self.bot.shoottime) || self.bot.shoottime <= gettime());
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0x89a2ea0a, Offset: 0x9f30
 // Size: 0x19c
@@ -2389,7 +2389,7 @@ function private function_e1e3b64c(currentweapon) {
     self namespace_87549638::think();
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 1, eflags: 0x6 linked
 // Checksum 0xdaefa11d, Offset: 0xa0d8
 // Size: 0x290
@@ -2422,7 +2422,7 @@ function private function_9160a207(currentweapon) {
     return randomfloat(100) < var_f519fbc6;
 }
 
-// Namespace namespace_d9f3dd47/namespace_d9f3dd47
+// Namespace bot_weapons/bot_weapons
 // Params 2, eflags: 0x6 linked
 // Checksum 0xb64e37aa, Offset: 0xa370
 // Size: 0xc8

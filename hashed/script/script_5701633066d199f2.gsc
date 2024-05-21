@@ -333,9 +333,9 @@ function function_d1bc3f11(var_463f7b07, reset = 0) {
 // Checksum 0x8e5f0c5a, Offset: 0x2368
 // Size: 0xa4
 function function_2c6dd74c(spawner) {
-    foreach (var_5d203c31 in level.doa.var_3a73503f) {
-        if (var_5d203c31.name === spawner.script_noteworthy) {
-            return var_5d203c31;
+    foreach (reg in level.doa.var_3a73503f) {
+        if (reg.name === spawner.script_noteworthy) {
+            return reg;
         }
     }
     return undefined;
@@ -346,9 +346,9 @@ function function_2c6dd74c(spawner) {
 // Checksum 0xc25d29da, Offset: 0x2418
 // Size: 0xa0
 function function_3dd94c25(name) {
-    foreach (var_5d203c31 in level.doa.var_3a73503f) {
-        if (var_5d203c31.name === name) {
-            return var_5d203c31;
+    foreach (reg in level.doa.var_3a73503f) {
+        if (reg.name === name) {
+            return reg;
         }
     }
     return undefined;

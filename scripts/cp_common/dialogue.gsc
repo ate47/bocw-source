@@ -142,14 +142,14 @@ function function_952d1770(alias) {
 // Checksum 0xd8016b9d, Offset: 0x730
 // Size: 0x44
 function function_96171f6d(alias, timeout, var_bcc3bb15) {
-    function_3a8bd5a3(alias, 0, undefined, undefined, undefined, timeout, var_bcc3bb15);
+    player_gesture(alias, 0, undefined, undefined, undefined, timeout, var_bcc3bb15);
 }
 
 // Namespace dialogue/dialogue
 // Params 7, eflags: 0x2 linked
 // Checksum 0xac517cf6, Offset: 0x780
 // Size: 0xfc
-function function_3a8bd5a3(alias, var_9a8be594, gestures, var_e01a79b9, targetents, timeout, var_bcc3bb15) {
+function player_gesture(alias, var_9a8be594, gestures, var_e01a79b9, targetents, timeout, var_bcc3bb15) {
     if (is_true(var_bcc3bb15)) {
         self function_3db52a33();
     }

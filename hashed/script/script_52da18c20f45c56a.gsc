@@ -230,9 +230,9 @@ function function_2795d678(encumbered, var_165b239b, var_37e68004, allow_ads, va
                     pistol = player function_d338e637();
                     if (isdefined(pistol)) {
                         player.var_74c52b3d.weapon_list = player getweaponslist();
-                        player.var_74c52b3d.var_6535f2e6 = player getcurrentweapon();
-                        if (!isdefined(player.var_74c52b3d.var_6535f2e6) || player.var_74c52b3d.var_6535f2e6.basename == "none") {
-                            player.var_74c52b3d.var_6535f2e6 = level.player.last_weapon;
+                        player.var_74c52b3d.weapon_last = player getcurrentweapon();
+                        if (!isdefined(player.var_74c52b3d.weapon_last) || player.var_74c52b3d.weapon_last.basename == "none") {
+                            player.var_74c52b3d.weapon_last = level.player.last_weapon;
                         }
                         player switchtoweapon(pistol);
                     }
@@ -261,8 +261,8 @@ function function_2795d678(encumbered, var_165b239b, var_37e68004, allow_ads, va
                 }
             }
         }
-        if (isdefined(player.var_74c52b3d.var_6535f2e6)) {
-            player switchtoweapon(player.var_74c52b3d.var_6535f2e6);
+        if (isdefined(player.var_74c52b3d.weapon_last)) {
+            player switchtoweapon(player.var_74c52b3d.weapon_last);
         }
         self prompts::function_398ab9eb();
         self flag::clear("encumbered");
@@ -426,7 +426,7 @@ function allow_weapon(allowed, forced, gesture, var_dfce6e2d) {
             self val::set(#"hash_1759513a118d68fd", "disable_offhand_special", 1);
             self.var_621f8539 = gesture;
             if (!is_true(var_dfce6e2d) && !function_1c2cb657(self getcurrentweapon())) {
-                self thread function_3ceda691(self.var_621f8539);
+                self thread gesture_play(self.var_621f8539);
             }
         }
         return;
@@ -438,7 +438,7 @@ function allow_weapon(allowed, forced, gesture, var_dfce6e2d) {
             self val::reset_all(#"hash_58b9fd1cfcf4a27d");
             if (!function_1c2cb657(self getcurrentweapon())) {
                 if (isdefined(gesture)) {
-                    self thread function_3ceda691(gesture);
+                    self thread gesture_play(gesture);
                 } else if (isdefined(self.var_621f8539)) {
                     self thread gesture_stop(self.var_621f8539);
                 }
@@ -862,7 +862,7 @@ function function_b0190b65(action) {
     self setstance("stand");
     self val::set(#"hash_16b14161e87e9ac4", "allow_crouch", 0);
     self val::set(#"hash_16b14161e87e9ac4", "allow_prone", 0);
-    self function_3ceda691("ges_body_shield_gundown_quick");
+    self gesture_play("ges_body_shield_gundown_quick");
     self function_9d7828b0(0.5);
 }
 
@@ -911,7 +911,7 @@ function function_44a46209(var_d8ba335a) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x46a5908e, Offset: 0x3da8
 // Size: 0xbc
-function function_3ceda691(gesture = "", target, var_584fcd3e, blendtime, starttime, var_8021ec1b, stopall) {
+function gesture_play(gesture = "", target, var_584fcd3e, blendtime, starttime, var_8021ec1b, stopall) {
     if (isgesture(gesture)) {
         self thread function_6f3e9127(gesture, target, var_584fcd3e, blendtime, starttime, var_8021ec1b, stopall);
         return;
@@ -1128,7 +1128,7 @@ function function_a06867b0(weapon) {
     if (isdefined(level.var_42db149f) && weapon === level.var_42db149f) {
         return true;
     }
-    if (weapon.name == #"launcher_freefire_t9" || weapon.name == #"hash_1e25706a023b5e09" || weapon.name == #"hash_1a377db5bfa579f3") {
+    if (weapon.name == #"launcher_freefire_t9" || weapon.name == #"hash_1e25706a023b5e09" || weapon.name == #"launcher_freefire_t9_upgraded") {
         return true;
     }
     return false;

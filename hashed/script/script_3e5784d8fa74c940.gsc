@@ -28,9 +28,9 @@ function private autoexec __init__system__() {
 // Checksum 0x15d55cea, Offset: 0x240
 // Size: 0xc4c
 function private preinit() {
-    level.var_db785e13 = getweapon(#"ww_ray_rifle_t9");
+    level.ray_rifle = getweapon(#"ww_ray_rifle_t9");
     level.var_a467bdbc = getweapon(#"hash_ac86d29509a8939");
-    level.var_76fe888f = getweapon(#"hash_426d7c850c7f1d2");
+    level.ray_rifle_upgraded = getweapon(#"ww_ray_rifle_t9_upgraded");
     level.var_3415bf61 = getweapon(#"hash_493fc891e20b4f8a");
     if (!isdefined(level.var_3afb1303)) {
         level.var_3afb1303 = [];
@@ -38,13 +38,13 @@ function private preinit() {
         level.var_3afb1303 = array(level.var_3afb1303);
     }
     aiutility::function_254912d7(#"ww_ray_rifle_t9", "MOD_PROJECTILE");
-    aiutility::function_254912d7(#"hash_426d7c850c7f1d2", "MOD_PROJECTILE");
+    aiutility::function_254912d7(#"ww_ray_rifle_t9_upgraded", "MOD_PROJECTILE");
     weaponobjects::function_e6400478(#"ww_ray_rifle_t9", &function_5acf1bb9, 1);
-    weaponobjects::function_e6400478(#"hash_426d7c850c7f1d2", &function_5acf1bb9, 1);
+    weaponobjects::function_e6400478(#"ww_ray_rifle_t9_upgraded", &function_5acf1bb9, 1);
     zombie_utility::add_zombie_gib_weapon_callback(#"hash_ac86d29509a8939", &function_81027f3e, &function_81027f3e);
-    callback::add_weapon_fired(level.var_db785e13, &function_a70ad564);
+    callback::add_weapon_fired(level.ray_rifle, &function_a70ad564);
     callback::add_weapon_fired(level.var_a467bdbc, &function_43a02dae);
-    callback::add_weapon_fired(level.var_76fe888f, &function_a70ad564);
+    callback::add_weapon_fired(level.ray_rifle_upgraded, &function_a70ad564);
     callback::add_weapon_fired(level.var_3415bf61, &function_43a02dae);
     clientfield::register("scriptmover", "" + #"hash_47e7d5219a26a786", 16000, 3, "int");
     clientfield::register("actor", "" + #"hash_3a47820a21ce3170", 16000, 2, "int");
@@ -147,7 +147,7 @@ function function_4ba529a7(weapon) {
     if (isdefined(weapon)) {
         var_1236db9d = zm_weapons::function_386dacbc(weapon).name;
         switch (var_1236db9d) {
-        case #"hash_426d7c850c7f1d2":
+        case #"ww_ray_rifle_t9_upgraded":
         case #"hash_493fc891e20b4f8a":
             return true;
         default:
@@ -187,7 +187,7 @@ function function_cbd0f11(weapon) {
     if (isdefined(weapon)) {
         var_1236db9d = zm_weapons::function_386dacbc(weapon).name;
         switch (var_1236db9d) {
-        case #"hash_426d7c850c7f1d2":
+        case #"ww_ray_rifle_t9_upgraded":
         case #"ww_ray_rifle_t9":
             return true;
         default:

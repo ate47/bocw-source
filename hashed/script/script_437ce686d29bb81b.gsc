@@ -648,7 +648,7 @@ function function_7695efd4(player, index, var_d17eb4df) {
     if ((paplv || weapon_rarity !== #"white" || !var_b3546c09) && (isdefined(level.var_c1f1b29a[rootweapon.name]) && isdefined(level.var_c1f1b29a[rootweapon.name][weapon_rarity]) || isdefined(level.var_ec04a8a4[rootweapon.name]) && isdefined(level.var_ec04a8a4[rootweapon.name][weapon_rarity]))) {
         if (isdefined(paplv) && weapon_rarity === #"white" && var_b3546c09) {
             if (zm_weapons::is_weapon_upgraded(rootweapon)) {
-                if (weapon.name == #"hash_7a910d220f3767fa") {
+                if (weapon.name == #"knife_loadout_upgraded") {
                     var_8114384d = "knife_loadout" + "_t9_upgraded" + "_item_sr";
                 } else {
                     var_8114384d = weapon.name + "_item_sr";

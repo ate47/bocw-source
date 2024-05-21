@@ -13,8 +13,8 @@
 function preinit() {
     level.botactions = [];
     level.botweapons = [];
-    namespace_eed5a117::preinit();
-    namespace_d9f3dd47::preinit();
+    bot_actions::preinit();
+    bot_weapons::preinit();
 }
 
 // Namespace bot_action/bot_action

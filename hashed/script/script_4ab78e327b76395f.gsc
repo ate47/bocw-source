@@ -258,7 +258,7 @@ function function_b8268bd6(action, victim, var_7318f7f0, var_65ff9d5a) {
             self val::set(#"hash_61125ef3dde6089f", "disable_weapons", 1);
         } else {
             self.takedown.body hide();
-            self action_utility::function_3ceda691("ges_body_carry_pickup_finish", undefined, 1, 0);
+            self action_utility::gesture_play("ges_body_carry_pickup_finish", undefined, 1, 0);
         }
         var_17813638 action_utility::scene_play(isdefined(override.scene) ? override.scene : scene, self, self.takedown.body);
         return;
@@ -406,7 +406,7 @@ function body_drop(victim) {
     self prompts::remove(#"stance");
     self notify(#"hash_6e2a24679f8eca8e");
     bb::function_cd497743("body_drop", self);
-    self action_utility::function_3ceda691("ges_body_carry_exit");
+    self action_utility::gesture_play("ges_body_carry_exit");
     override = self actions::function_abaa32c("body_carry");
     anim_name = isdefined(override.anim_name) ? override.anim_name : "body_carry";
     if (isdefined(self.var_9ebbaa46.var_ea195798)) {

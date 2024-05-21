@@ -8,17 +8,17 @@
 #using scripts\core_common\bots\bot_action.gsc;
 #using scripts\core_common\bots\bot.gsc;
 
-#namespace namespace_1f0cb9eb;
+#namespace bot_devgui;
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x5
 // Checksum 0xdee51b52, Offset: 0x598
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_6540387fe939dd65", &preinit, undefined, undefined, undefined);
+    system::register(#"bot_devgui", &preinit, undefined, undefined, undefined);
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x6 linked
 // Checksum 0xcd3bc0eb, Offset: 0x5e0
 // Size: 0x164
@@ -40,7 +40,7 @@ function private preinit() {
     level thread devgui_loop();
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x6 linked
 // Checksum 0xedb4b941, Offset: 0x750
 // Size: 0x34
@@ -51,7 +51,7 @@ function private on_player_connect() {
     self thread add_bot_devgui_menu();
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80cb9587, Offset: 0x790
 // Size: 0x24
@@ -61,7 +61,7 @@ function private on_player_disconnect() {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x6 linked
 // Checksum 0x852ec61e, Offset: 0x7c0
 // Size: 0x8c
@@ -75,7 +75,7 @@ function private on_player_spawned() {
     self function_78a14db2();
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x6 linked
 // Checksum 0x33210884, Offset: 0x858
 // Size: 0x1c
@@ -83,7 +83,7 @@ function private function_ac5215a9() {
     self thread add_bot_devgui_menu();
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x6 linked
 // Checksum 0xca4ff8a, Offset: 0x880
 // Size: 0x1c
@@ -91,7 +91,7 @@ function private function_8d1480e9() {
     self thread clear_bot_devgui_menu();
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 1, eflags: 0x6 linked
 // Checksum 0xa0d6e528, Offset: 0x8a8
 // Size: 0x728
@@ -102,7 +102,7 @@ function private function_40dbe923(dvarstr) {
     case #"spawn_enemy":
         level function_5aef57f5(host, #"enemy");
         break;
-    case #"hash_49daf258a305851e":
+    case #"spawn_friendly":
         level function_5aef57f5(host, #"friendly");
         break;
     case #"add":
@@ -121,10 +121,10 @@ function private function_40dbe923(dvarstr) {
         level devgui_ignoreall(host, args[1], int(args[2]));
         break;
     case #"force_press_button":
-        level function_6a4a272b(host, args[1], int(args[2]), 0);
+        level devgui_force_button(host, args[1], int(args[2]), 0);
         break;
     case #"force_toggle_button":
-        level function_6a4a272b(host, args[1], int(args[2]), 1);
+        level devgui_force_button(host, args[1], int(args[2]), 1);
         break;
     case #"clear_forced_buttons":
         level function_baee1142(host, args[1]);
@@ -179,7 +179,7 @@ function private function_40dbe923(dvarstr) {
     level notify(#"devgui_bot", {#host:host, #args:args});
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc51cab2d, Offset: 0xfd8
 // Size: 0xb8
@@ -196,7 +196,7 @@ function private devgui_loop() {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 2, eflags: 0x6 linked
 // Checksum 0x3a9be23c, Offset: 0x1098
 // Size: 0x1a6
@@ -230,7 +230,7 @@ function private function_9a819607(host, botarg) {
     return [];
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x2 linked
 // Checksum 0x38634ed8, Offset: 0x1248
 // Size: 0xc2
@@ -245,7 +245,7 @@ function get_bots() {
     return bots;
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x2 linked
 // Checksum 0x65477e47, Offset: 0x1318
 // Size: 0xce
@@ -261,7 +261,7 @@ function get_friendly_bots() {
     return bots;
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x2 linked
 // Checksum 0x538727be, Offset: 0x13f0
 // Size: 0xea
@@ -279,7 +279,7 @@ function get_enemy_bots() {
     return bots;
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 1, eflags: 0x2 linked
 // Checksum 0xf176858e, Offset: 0x14e8
 // Size: 0xd6
@@ -295,7 +295,7 @@ function function_a0f5b7f5(team) {
     return bots;
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x4
 // Checksum 0xbe878247, Offset: 0x15c8
 // Size: 0x220
@@ -321,7 +321,7 @@ function private function_d3901b82() {
     #/
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x6 linked
 // Checksum 0xadcc1aaa, Offset: 0x17f0
 // Size: 0x620
@@ -373,7 +373,7 @@ function private add_bot_devgui_menu() {
     i++;
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 5, eflags: 0x6 linked
 // Checksum 0x51271fe7, Offset: 0x1e18
 // Size: 0xe4
@@ -382,16 +382,16 @@ function private add_bot_devgui_cmd(entnum, path, sortkey, devguiarg, cmdargs = 
     util::add_debug_command(cmd);
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 5, eflags: 0x6 linked
 // Checksum 0x38cbee0a, Offset: 0x1f08
 // Size: 0xdc
-function private function_f105dc20(entnum, var_eeb5e4bd, var_8a5cf3f4, var_1e443b4, buttonbit) {
-    self add_bot_devgui_cmd(entnum, "Force Button:" + var_eeb5e4bd + "/" + var_8a5cf3f4 + ":" + var_1e443b4 + "/Press", 0, "force_press_button", buttonbit);
-    self add_bot_devgui_cmd(entnum, "Force Button:" + var_eeb5e4bd + "/" + var_8a5cf3f4 + ":" + var_1e443b4 + "/Toggle", 1, "force_toggle_button", buttonbit);
+function private function_f105dc20(entnum, var_eeb5e4bd, buttonmenu, var_1e443b4, buttonbit) {
+    self add_bot_devgui_cmd(entnum, "Force Button:" + var_eeb5e4bd + "/" + buttonmenu + ":" + var_1e443b4 + "/Press", 0, "force_press_button", buttonbit);
+    self add_bot_devgui_cmd(entnum, "Force Button:" + var_eeb5e4bd + "/" + buttonmenu + ":" + var_1e443b4 + "/Toggle", 1, "force_toggle_button", buttonbit);
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 2, eflags: 0x6 linked
 // Checksum 0x447fc05e, Offset: 0x1ff0
 // Size: 0x32c
@@ -430,7 +430,7 @@ function private function_ade411a3(entnum, var_eeb5e4bd) {
     self add_bot_devgui_cmd(entnum, "Force Button:" + var_eeb5e4bd + "/Clear All", 500, "clear_forced_buttons");
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x2 linked
 // Checksum 0xddff6f50, Offset: 0x2328
 // Size: 0x7c
@@ -443,7 +443,7 @@ function clear_bot_devgui_menu() {
     util::add_debug_command(cmd);
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 3, eflags: 0x6 linked
 // Checksum 0x5437da3d, Offset: 0x23b0
 // Size: 0xc4
@@ -459,7 +459,7 @@ function private devgui_add_bots(host, botarg, count) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 2, eflags: 0x6 linked
 // Checksum 0xf76b8b28, Offset: 0x2480
 // Size: 0x96
@@ -474,7 +474,7 @@ function private function_5aef57f5(host, botarg) {
     bot.bot.var_261b9ab3 = 1;
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 3, eflags: 0x6 linked
 // Checksum 0xbfad25e1, Offset: 0x2520
 // Size: 0x39c
@@ -519,7 +519,7 @@ function private devgui_add_fixed_spawn_bots(botarg, var_b27e53da, countarg) {
     println("<unknown string>" + botarg + "<unknown string>" + var_c6e7a9ca + "<unknown string>" + origin[0] + "<unknown string>" + origin[1] + "<unknown string>" + origin[2] + "<unknown string>" + spawnangles[1]);
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 5, eflags: 0x6 linked
 // Checksum 0xfee772cf, Offset: 0x28c8
 // Size: 0x196
@@ -549,7 +549,7 @@ function private function_57d0759d(botarg, var_b27e53da, countarg, origin, angle
     bots = function_bd48ef10(team, count, origin, angle, roleindex);
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 5, eflags: 0x6 linked
 // Checksum 0x159dc2d3, Offset: 0x2a68
 // Size: 0x1aa
@@ -578,7 +578,7 @@ function private function_bd48ef10(team, count, origin, yaw, roleindex) {
     return bots;
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 2, eflags: 0x6 linked
 // Checksum 0x11a06f1d, Offset: 0x2c20
 // Size: 0xd2
@@ -599,7 +599,7 @@ function private function_881d3aa(host, botarg) {
     return function_8dbb49c0(friendlyteam);
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 1, eflags: 0x6 linked
 // Checksum 0xf01d1d64, Offset: 0x2d00
 // Size: 0x100
@@ -618,7 +618,7 @@ function private function_8dbb49c0(ignoreteam) {
     return undefined;
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 2, eflags: 0x6 linked
 // Checksum 0x730032dc, Offset: 0x2e08
 // Size: 0xb8
@@ -629,7 +629,7 @@ function private devgui_remove_bots(host, botarg) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 3, eflags: 0x6 linked
 // Checksum 0x276a805f, Offset: 0x2ec8
 // Size: 0xb6
@@ -640,7 +640,7 @@ function private devgui_ignoreall(host, botarg, cmdarg) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 2, eflags: 0x6 linked
 // Checksum 0x950decaf, Offset: 0x2f88
 // Size: 0x190
@@ -671,7 +671,7 @@ function private devgui_set_target(botarg, cmdarg) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 2, eflags: 0x6 linked
 // Checksum 0x68502caa, Offset: 0x3120
 // Size: 0x132
@@ -698,7 +698,7 @@ function private devgui_goal(botarg, cmdarg) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 2, eflags: 0x6 linked
 // Checksum 0xf9119095, Offset: 0x3260
 // Size: 0x2d8
@@ -740,7 +740,7 @@ function private set_goal(botarg, force = 0) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 1, eflags: 0x6 linked
 // Checksum 0x763d90b8, Offset: 0x3540
 // Size: 0x148
@@ -759,7 +759,7 @@ function private function_417ef9e7(botarg) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 2, eflags: 0x6 linked
 // Checksum 0x3ac237f1, Offset: 0x3690
 // Size: 0x160
@@ -778,7 +778,7 @@ function private set_goal_ent(botarg, ent) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 1, eflags: 0x6 linked
 // Checksum 0x7d2dfc16, Offset: 0x37f8
 // Size: 0xc0
@@ -790,7 +790,7 @@ function private function_be8f790e(botarg) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 1, eflags: 0x6 linked
 // Checksum 0x71e7452b, Offset: 0x38c0
 // Size: 0x1d0
@@ -820,7 +820,7 @@ function private function_93996ae6(botarg) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 1, eflags: 0x6 linked
 // Checksum 0x4e6f8c52, Offset: 0x3a98
 // Size: 0xbc
@@ -835,7 +835,7 @@ function private function_cc8c642a(&goals) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 1, eflags: 0x6 linked
 // Checksum 0x2c74573, Offset: 0x3b60
 // Size: 0x1a
@@ -843,11 +843,11 @@ function private function_bc3bbe26(*notifyhash) {
     self.bot.var_bdb21e1f = undefined;
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 4, eflags: 0x6 linked
 // Checksum 0x97ba2706, Offset: 0x3b88
 // Size: 0x140
-function private function_6a4a272b(host, botarg, cmdarg, toggle) {
+function private devgui_force_button(host, botarg, cmdarg, toggle) {
     bots = function_9a819607(host, botarg);
     foreach (bot in bots) {
         if (!isdefined(bot.bot.var_458ddbc0)) {
@@ -862,7 +862,7 @@ function private function_6a4a272b(host, botarg, cmdarg, toggle) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 2, eflags: 0x6 linked
 // Checksum 0x37dc73c0, Offset: 0x3cd0
 // Size: 0xb6
@@ -873,7 +873,7 @@ function private function_baee1142(host, botarg) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 4, eflags: 0x6 linked
 // Checksum 0x939d9194, Offset: 0x3d90
 // Size: 0x120
@@ -889,7 +889,7 @@ function private function_8bb94cab(host, botarg, inventorytype, offhandslot) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 2, eflags: 0x6 linked
 // Checksum 0xe9c4e0ac, Offset: 0x3eb8
 // Size: 0xd2
@@ -903,7 +903,7 @@ function private function_b24b9a1e(inventorytype, offhandslot) {
     return undefined;
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 2, eflags: 0x6 linked
 // Checksum 0xc01c73a5, Offset: 0x3f98
 // Size: 0xf8
@@ -918,7 +918,7 @@ function private function_9a65e59a(host, botarg) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa9495cbb, Offset: 0x4098
 // Size: 0x1dc
@@ -941,7 +941,7 @@ function private function_ef14f060() {
     return undefined;
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 1, eflags: 0x6 linked
 // Checksum 0x3ca01c98, Offset: 0x4280
 // Size: 0x1a8
@@ -961,7 +961,7 @@ function private function_fbdf36c1(botarg) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 1, eflags: 0x6 linked
 // Checksum 0xaee23841, Offset: 0x4430
 // Size: 0xb0
@@ -972,7 +972,7 @@ function private function_30f27f9f(botarg) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 1, eflags: 0x6 linked
 // Checksum 0x5e2c16c5, Offset: 0x44e8
 // Size: 0xce
@@ -984,7 +984,7 @@ function private function_b037d12d(botarg) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 1, eflags: 0x6 linked
 // Checksum 0x8b9c8ff, Offset: 0x45c0
 // Size: 0xbe
@@ -996,7 +996,7 @@ function private function_f419ffae(botarg) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 1, eflags: 0x6 linked
 // Checksum 0x10426658, Offset: 0x4688
 // Size: 0x11a
@@ -1012,7 +1012,7 @@ function private function_2e08087e(player) {
     self.bot.var_5efe88e4 = undefined;
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 2, eflags: 0x2 linked
 // Checksum 0xfc9f5602, Offset: 0x47b0
 // Size: 0xe8
@@ -1024,7 +1024,7 @@ function devgui_tpose(host, botarg) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 3, eflags: 0x6 linked
 // Checksum 0x284c14f1, Offset: 0x48a0
 // Size: 0x118
@@ -1039,7 +1039,7 @@ function private devgui_invulnerable(host, botarg, cmdarg) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 2, eflags: 0x6 linked
 // Checksum 0xe5033f2d, Offset: 0x49c0
 // Size: 0x140
@@ -1055,7 +1055,7 @@ function private devgui_kill_bots(host, botarg) {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x6 linked
 // Checksum 0xbaef47d9, Offset: 0x4b08
 // Size: 0x180
@@ -1073,7 +1073,7 @@ function private function_263ca697() {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x6 linked
 // Checksum 0x448944f1, Offset: 0x4c90
 // Size: 0xbc
@@ -1087,7 +1087,7 @@ function private function_78a14db2() {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 3, eflags: 0x6 linked
 // Checksum 0x8df8f82c, Offset: 0x4d58
 // Size: 0xb4
@@ -1102,7 +1102,7 @@ function private function_35e77034(weapon, weaponoptions, var_e91aba42) {
     self setspawnweapon(weapon);
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x6 linked
 // Checksum 0xcf097da, Offset: 0x4e18
 // Size: 0xa8
@@ -1113,7 +1113,7 @@ function private function_85e7342b() {
     }
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 2, eflags: 0x6 linked
 // Checksum 0xcf0be617, Offset: 0x4ec8
 // Size: 0xea
@@ -1126,7 +1126,7 @@ function private eye_trace(hitents = 0, var_18daeece = 0) {
     return bullettrace(eye, end, hitents, self, var_18daeece);
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 0, eflags: 0x6 linked
 // Checksum 0x64b3886, Offset: 0x4fc0
 // Size: 0x46
@@ -1136,7 +1136,7 @@ function private function_59842621() {
     return targetentity;
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 1, eflags: 0x6 linked
 // Checksum 0x14e9ad68, Offset: 0x5010
 // Size: 0x118
@@ -1158,7 +1158,7 @@ function private function_eee09f16(pos) {
     return seatindex;
 }
 
-// Namespace namespace_1f0cb9eb/namespace_1f0cb9eb
+// Namespace bot_devgui/bot_devgui
 // Params 1, eflags: 0x6 linked
 // Checksum 0xb9cbae48, Offset: 0x5130
 // Size: 0xf8

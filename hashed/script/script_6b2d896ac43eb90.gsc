@@ -63,22 +63,22 @@ function function_67dce9cd(var_beee4994) {
 // Checksum 0x4b7a9dd7, Offset: 0x410
 // Size: 0x34c
 function function_e28ce6d9(struct) {
-    var_6afa034c = content_manager::spawn_script_model(struct, #"hash_31be7c895b8fbf9b", 1);
-    var_6afa034c thread scene::play(#"p9_fxanim_sv_tesla_tower_clean_bundle", var_6afa034c);
-    var_6afa034c.var_c7f10fc1 = 1;
-    var_6afa034c hidepart("screen_portal_jnt");
-    var_6afa034c hidepart("screen_exfil_jnt");
-    var_6afa034c hidepart("screen_respond_jnt");
-    var_6afa034c hidepart("screen_calling_jnt");
-    struct.objid = zm_utility::function_f5a222a8(#"hash_788f637c735eb34d", var_6afa034c);
-    var_6afa034c clientfield::set("item_machine_spawn_rob", 1);
-    var_6afa034c.objectiveid = struct.objid;
+    mdl_beacon = content_manager::spawn_script_model(struct, #"hash_31be7c895b8fbf9b", 1);
+    mdl_beacon thread scene::play(#"p9_fxanim_sv_tesla_tower_clean_bundle", mdl_beacon);
+    mdl_beacon.var_c7f10fc1 = 1;
+    mdl_beacon hidepart("screen_portal_jnt");
+    mdl_beacon hidepart("screen_exfil_jnt");
+    mdl_beacon hidepart("screen_respond_jnt");
+    mdl_beacon hidepart("screen_calling_jnt");
+    struct.objid = zm_utility::function_f5a222a8(#"hash_788f637c735eb34d", mdl_beacon);
+    mdl_beacon clientfield::set("item_machine_spawn_rob", 1);
+    mdl_beacon.objectiveid = struct.objid;
     if (zm_utility::is_survival()) {
-        level thread zm_utility::clear_vehicles(var_6afa034c);
+        level thread zm_utility::clear_vehicles(mdl_beacon);
     }
     if (is_true(level.var_53bc31ad)) {
-        var_6afa034c thread namespace_73df937d::function_67cbc98f();
-        level thread destroy_beacon(var_6afa034c, 120, struct.parent);
+        mdl_beacon thread namespace_73df937d::function_67cbc98f();
+        level thread destroy_beacon(mdl_beacon, 120, struct.parent);
         return;
     }
     v_trigger_offset = (0, 0, 32);
@@ -86,10 +86,10 @@ function function_e28ce6d9(struct) {
     trigger.var_9d7362a4 = #"hash_48951800c1051da7";
     trigger usetriggerrequirelookat(0);
     struct zm_utility::function_747180ea(struct.objid, undefined, trigger);
-    trigger.scriptmodel = var_6afa034c;
-    var_6afa034c.trigger = trigger;
+    trigger.scriptmodel = mdl_beacon;
+    mdl_beacon.trigger = trigger;
     level.var_1ea1d494 = trigger;
-    callback::callback(#"hash_4d2442503e03c0e8", {#var_6afa034c:var_6afa034c});
+    callback::callback(#"hash_4d2442503e03c0e8", {#mdl_beacon:mdl_beacon});
     s_result = level waittill(#"hash_3e765c26047c9f54", #"hash_345e9169ebba28fb");
     struct zm_utility::function_48d9a9c9();
     trigger delete();
@@ -215,17 +215,17 @@ function function_7b3dca17(s_spawn) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x62e4aa1c, Offset: 0xe80
 // Size: 0x6c
-function function_2f7447a7(var_6afa034c) {
-    var_6afa034c thread function_22aada64();
-    var_6afa034c scene::stop(#"p9_fxanim_sv_tesla_tower_clean_bundle");
-    var_6afa034c scene::play(#"p9_fxanim_sv_tesla_tower_clean_bundle", "Shot 2", var_6afa034c);
+function function_2f7447a7(mdl_beacon) {
+    mdl_beacon thread function_22aada64();
+    mdl_beacon scene::stop(#"p9_fxanim_sv_tesla_tower_clean_bundle");
+    mdl_beacon scene::play(#"p9_fxanim_sv_tesla_tower_clean_bundle", "Shot 2", mdl_beacon);
 }
 
 // Namespace namespace_dbb31ff3/namespace_dbb31ff3
 // Params 1, eflags: 0x2 linked
 // Checksum 0xc5a37b1e, Offset: 0xef8
 // Size: 0x768
-function warp(var_6afa034c) {
+function warp(mdl_beacon) {
     if (level flag::get(#"hash_23350b678001fece")) {
         return;
     }
@@ -234,7 +234,7 @@ function warp(var_6afa034c) {
         b_passed = zm_vote::function_c65468ef(self, 2, #"hash_4ef08498325828d6");
         if (!b_passed) {
             level flag::clear(#"hash_23350b678001fece");
-            self function_6c71e778(var_6afa034c, var_6afa034c.trigger);
+            self function_6c71e778(mdl_beacon, mdl_beacon.trigger);
             return;
         }
     }
@@ -242,7 +242,7 @@ function warp(var_6afa034c) {
         level flag::clear(#"hash_23350b678001fece");
         return;
     }
-    var_6afa034c showpart("screen_portal_jnt");
+    mdl_beacon showpart("screen_portal_jnt");
     foreach (player in getplayers()) {
         player zm_stats::function_945c7ce2(#"hash_1a5bd2708defa02b", 1);
         player chopper_gunner::function_24fbd61e();
@@ -254,9 +254,9 @@ function warp(var_6afa034c) {
     level.var_fe6ca5e8 = 1;
     level notify(#"hash_29edd9425510b40d");
     level callback::callback(#"hash_29edd9425510b40d");
-    level thread function_2f7447a7(var_6afa034c);
-    zm_utility::function_bc5a54a8(var_6afa034c.objectiveid);
-    var_6afa034c.objectiveid = undefined;
+    level thread function_2f7447a7(mdl_beacon);
+    zm_utility::function_bc5a54a8(mdl_beacon.objectiveid);
+    mdl_beacon.objectiveid = undefined;
     if (zm_utility::is_survival()) {
         changeadvertisedstatus(0);
     }
@@ -324,7 +324,7 @@ function function_e12efc1f() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xfaf13556, Offset: 0x16d8
 // Size: 0x20c
-function call_exfil(var_6afa034c) {
+function call_exfil(mdl_beacon) {
     if (level flag::get(#"hash_23350b678001fece")) {
         return;
     }
@@ -335,7 +335,7 @@ function call_exfil(var_6afa034c) {
         b_passed = zm_vote::function_c65468ef(self, 1, #"hash_37a354c147ec32f0");
         if (!b_passed) {
             level flag::clear(#"hash_23350b678001fece");
-            self function_6c71e778(var_6afa034c, var_6afa034c.trigger);
+            self function_6c71e778(mdl_beacon, mdl_beacon.trigger);
             return;
         }
     }
@@ -343,10 +343,10 @@ function call_exfil(var_6afa034c) {
     if (isplayer(self)) {
         self thread zm_vo::function_d342796e(#"hash_7e50fb36129dc24b", 1.5);
     }
-    var_6afa034c showpart("screen_exfil_jnt");
-    zm_utility::function_bc5a54a8(var_6afa034c.objectiveid);
-    var_6afa034c.objectiveid = undefined;
-    self thread destroy_beacon(var_6afa034c);
+    mdl_beacon showpart("screen_exfil_jnt");
+    zm_utility::function_bc5a54a8(mdl_beacon.objectiveid);
+    mdl_beacon.objectiveid = undefined;
+    self thread destroy_beacon(mdl_beacon);
     wait(2);
     level flag::set(#"hash_3e765c26047c9f54");
 }
@@ -418,13 +418,13 @@ function function_b26aed81(var_25942430) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xc035eaae, Offset: 0x1c38
 // Size: 0x4bc
-function destroy_beacon(var_6afa034c, var_fcfc4edd = 10, var_495727a3) {
+function destroy_beacon(mdl_beacon, var_fcfc4edd = 10, var_495727a3) {
     var_62157006 = "screen_exfil_jnt";
-    var_f6aedcc6 = var_6afa034c gettagorigin(var_62157006);
-    v_tag_angles = var_6afa034c gettagangles(var_62157006);
+    var_f6aedcc6 = mdl_beacon gettagorigin(var_62157006);
+    v_tag_angles = mdl_beacon gettagangles(var_62157006);
     var_668819de = axistoangles(anglestoright(v_tag_angles), anglestoforward(v_tag_angles));
     bomb = util::spawn_model(#"hash_397d38a359aae4e6", var_f6aedcc6, var_668819de);
-    bomb linkto(var_6afa034c, var_62157006);
+    bomb linkto(mdl_beacon, var_62157006);
     level scene::function_27f5972e(#"p9_fxanim_sv_tesla_tower_dmg_bundle");
     timer = int(var_fcfc4edd);
     var_82edff1 = 0;
@@ -453,16 +453,16 @@ function destroy_beacon(var_6afa034c, var_fcfc4edd = 10, var_495727a3) {
     }
     bomb playsound(#"hash_6842dcc160b4c6de");
     bomb delete();
-    var_6afa034c zm_blockers::function_c1342dc1();
-    var_6afa034c setmodel(#"hash_56de86439bdb98e2");
-    var_6afa034c scene::stop(#"p9_fxanim_sv_tesla_tower_clean_bundle");
-    var_6afa034c thread scene::play(#"p9_fxanim_sv_tesla_tower_dmg_bundle", var_6afa034c);
+    mdl_beacon zm_blockers::function_c1342dc1();
+    mdl_beacon setmodel(#"hash_56de86439bdb98e2");
+    mdl_beacon scene::stop(#"p9_fxanim_sv_tesla_tower_clean_bundle");
+    mdl_beacon thread scene::play(#"p9_fxanim_sv_tesla_tower_dmg_bundle", mdl_beacon);
     if (isdefined(var_495727a3)) {
-        var_495727a3 notify(#"hash_5000b502c39b09a3", {#var_6afa034c:var_6afa034c});
+        var_495727a3 notify(#"hash_5000b502c39b09a3", {#mdl_beacon:mdl_beacon});
     }
-    if (is_true(level.var_53bc31ad) && isdefined(var_6afa034c.objectiveid)) {
-        zm_utility::function_bc5a54a8(var_6afa034c.objectiveid);
-        var_6afa034c.objectiveid = undefined;
+    if (is_true(level.var_53bc31ad) && isdefined(mdl_beacon.objectiveid)) {
+        zm_utility::function_bc5a54a8(mdl_beacon.objectiveid);
+        mdl_beacon.objectiveid = undefined;
     }
     level util::delay(2, "end_game", &scene::function_f81475ae, #"p9_fxanim_sv_tesla_tower_dmg_bundle");
 }

@@ -755,7 +755,7 @@ function function_84088ec3(var_f801f37e) {
         case #"gadget_supplypod":
         case #"nightingale":
         case #"frag_grenade":
-        case #"hash_2b9efbad11308e02":
+        case #"land_mine":
         case #"gadget_jammer":
         case #"tear_gas":
         case #"eq_molotov":

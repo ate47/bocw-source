@@ -45,7 +45,7 @@ function function_4df027f2() {
 // Checksum 0x3e50aebf, Offset: 0x2e8
 // Size: 0x162
 function function_8efe7666() {
-    self callback::function_d8abfc3d(#"on_ai_melee", &namespace_85745671::function_b8eb5dea);
+    self callback::function_d8abfc3d(#"on_ai_melee", &namespace_85745671::zombie_on_melee);
     self callback::function_d8abfc3d(#"hash_10ab46b52df7967a", &namespace_85745671::function_5cb3181e);
     self.var_12af7864 = 1;
     self.var_c11b8a5a = 1;

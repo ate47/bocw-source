@@ -504,9 +504,9 @@ function delete_ai() {
 // Size: 0x3cc
 function function_7081d8a6() {
     level.player endon(#"death");
-    var_8df5d2d6 = struct::get_array("final_magic_rpg_dest");
+    a_dest = struct::get_array("final_magic_rpg_dest");
     var_5c241fe8 = [];
-    foreach (s_dest in var_8df5d2d6) {
+    foreach (s_dest in a_dest) {
         v_delta = vectornormalize(s_dest.origin - level.player.origin);
         v_facing = anglestoforward(level.player.angles);
         if (vectordot(v_delta, v_facing) > 0) {
@@ -515,7 +515,7 @@ function function_7081d8a6() {
     }
     s_dest = arraysortclosest(var_5c241fe8, level.player.origin)[0];
     if (!isdefined(s_dest)) {
-        s_dest = arraysortclosest(var_8df5d2d6, level.player.origin)[0];
+        s_dest = arraysortclosest(a_dest, level.player.origin)[0];
     }
     var_5afb6488 = struct::get_array("magic_rpg_source");
     var_15e295e1 = [];

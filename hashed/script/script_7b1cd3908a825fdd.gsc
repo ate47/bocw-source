@@ -1868,13 +1868,13 @@ function function_5a22584f() {
         return;
     }
     level flag::set("rbz_exfil_allowed");
-    var_6afa034c = content_manager::spawn_script_model(s_beacon, #"hash_615f17c2d8b69f96");
-    var_6afa034c playloopsound(#"hash_1c4b0081e8984d28");
-    var_6afa034c function_23a29590();
+    mdl_beacon = content_manager::spawn_script_model(s_beacon, #"hash_615f17c2d8b69f96");
+    mdl_beacon playloopsound(#"hash_1c4b0081e8984d28");
+    mdl_beacon function_23a29590();
     while (true) {
         level flag::wait_till("rbz_exfil_beacon_active");
-        var_6afa034c playloopsound(#"hash_48f43a95480d8b91");
-        var_6afa034c function_619a5c20();
+        mdl_beacon playloopsound(#"hash_48f43a95480d8b91");
+        mdl_beacon function_619a5c20();
         level.var_1ea1d494 = spawn("trigger_radius_use", s_beacon.origin + v_trigger_offset, 0, 100);
         level.var_1ea1d494 setcursorhint("HINT_NOICON");
         level.var_1ea1d494 sethintstring(#"hash_24961462354ea22");
@@ -1892,14 +1892,14 @@ function function_5a22584f() {
         var_f354b9b2 gameobjects::set_onenduse_event(&function_6ab13d0f);
         var_f354b9b2.dontlinkplayertotrigger = 1;
         var_f354b9b2.keepweapon = 1;
-        e_fx = util::spawn_model("tag_origin", var_6afa034c.origin, var_6afa034c.angles);
+        e_fx = util::spawn_model("tag_origin", mdl_beacon.origin, mdl_beacon.angles);
         playfxontag(#"hash_507d21e96f587fc4", e_fx, "tag_origin");
         level flag::wait_till_clear("rbz_exfil_beacon_active");
         if (isdefined(e_fx)) {
             e_fx delete();
         }
-        var_6afa034c playloopsound(#"hash_1c4b0081e8984d28");
-        var_6afa034c function_23a29590();
+        mdl_beacon playloopsound(#"hash_1c4b0081e8984d28");
+        mdl_beacon function_23a29590();
         var_f354b9b2 function_992dc59a();
     }
 }

@@ -2270,7 +2270,7 @@ function ee_head(entity, var_30ce4d1e = 1, forwardoffset) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x8bfcf50c, Offset: 0x9780
 // Size: 0x142
-function function_b8eb5dea(*params) {
+function zombie_on_melee(*params) {
     var_d54999e4 = ee_head(self, 1.5);
     foreach (dynent in var_d54999e4) {
         if (!is_true(dynent.destroyed) && function_8f57dc52(dynent)) {

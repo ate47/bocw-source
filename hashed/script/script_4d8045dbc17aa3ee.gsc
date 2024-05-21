@@ -505,7 +505,7 @@ function function_d379ba37() {
             }
             player dodamage(player.health + 100, player.origin);
             break;
-        case #"hash_66faffd5d8f49b29":
+        case #"kill_all":
             namespace_1e25ad94::debugmsg("death to all...");
             players = namespace_7f5aeb59::function_23e1f90f();
             foreach (player in players) {

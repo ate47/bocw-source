@@ -481,7 +481,7 @@ function get_perk_weapon(str_perk) {
         weapon = getweapon(#"zombie_perk_bottle_deadshot");
         return weapon;
     case #"hash_4110e6372aa77f7e":
-        weapon = getweapon(#"hash_4cb1d055c485ebdc");
+        weapon = getweapon(#"zombie_perk_bottle_doubletap");
         return weapon;
     case #"hash_47d7a8105237c88":
         weapon = getweapon(#"zombie_perk_bottle_jugg");

@@ -121,7 +121,7 @@ function function_ec7953fa() {
     weapon = self getcurrentweapon();
     w_stat = zm_weapons::get_base_weapon(weapon);
     var_947d01ee = level.zombie_weapons[w_stat].weapon_classname;
-    if (var_947d01ee === "melee" || weapon.name === #"special_ballisticknife_t9_dw" || weapon.name === #"hash_4650af6ac5c9ce80") {
+    if (var_947d01ee === "melee" || weapon.name === #"special_ballisticknife_t9_dw" || weapon.name === #"special_ballisticknife_t9_dw_upgraded") {
         return;
     }
     item = item_inventory::function_230ceec4(weapon);

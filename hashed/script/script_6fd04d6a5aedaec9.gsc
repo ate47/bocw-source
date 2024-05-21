@@ -801,7 +801,7 @@ function function_386e50d5() {
     level flag::set(#"hash_709701a349515bd7");
     var_17aa01a8 = function_10079b27(var_9a8dcfd1, 1)[0];
     var_356856d6 = util::spawn_model(#"hash_5fc40e47dd99a53f", var_17aa01a8.origin, var_17aa01a8.angles);
-    var_356856d6.var_186c542d = var_84644c81;
+    var_356856d6.e_area = var_84644c81;
     var_356856d6 init_target(var_17aa01a8);
     var_356856d6 thread function_5c555bdb("smg", level.var_a76f0ecf, &function_95b8c137);
     var_356856d6 thread function_db3d8ac(var_356856d6, var_17aa01a8);
@@ -851,8 +851,8 @@ function function_95b8c137(e_player, *a_params) {
             return;
         }
         level flag::set(#"hash_52f25b6d74f50b3d");
-        if (isdefined(self.var_186c542d.origin)) {
-            playsoundatposition(#"hash_41f370ee19a5ddc1", self.var_186c542d.origin);
+        if (isdefined(self.e_area.origin)) {
+            playsoundatposition(#"hash_41f370ee19a5ddc1", self.e_area.origin);
         }
     }
 }
@@ -952,7 +952,7 @@ function function_d6ee3b1d(e_player, var_24b25ceb, var_ae876f40, var_eb891a8f, n
             var_3d23ecc++;
             continue;
         }
-        playsoundatposition(#"hash_41f370ee19a5ddc1", self.var_186c542d.origin);
+        playsoundatposition(#"hash_41f370ee19a5ddc1", self.e_area.origin);
         break;
     }
     return var_3d23ecc == var_77ba553d;
@@ -1192,7 +1192,7 @@ function function_fcc5783b() {
     level waittill(#"hash_2bc3201ed4cba710");
     level flag::set(#"hash_709701a349515bd7");
     var_356856d6 = util::spawn_model(#"hash_5fc40e47dd99a53f", var_17aa01a8.origin, var_17aa01a8.angles);
-    var_356856d6.var_186c542d = var_84644c81;
+    var_356856d6.e_area = var_84644c81;
     var_356856d6 init_target(var_17aa01a8);
     var_356856d6 thread function_5c555bdb("pistol", level.var_9c6cf8c, &function_af0fa53c);
     var_356856d6 thread function_db3d8ac(var_356856d6, var_17aa01a8);
@@ -1320,7 +1320,7 @@ function function_1cb31d02(e_player, var_24b25ceb, n_round) {
             var_3d23ecc++;
             continue;
         }
-        playsoundatposition(#"hash_41f370ee19a5ddc1", self.var_186c542d.origin);
+        playsoundatposition(#"hash_41f370ee19a5ddc1", self.e_area.origin);
         break;
     }
     return var_3d23ecc == var_77ba553d;

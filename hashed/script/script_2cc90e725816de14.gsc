@@ -69,7 +69,7 @@ function private function_4df027f2() {
 // Checksum 0x8adc400a, Offset: 0x9c8
 // Size: 0x162
 function function_b8e86206() {
-    self callback::function_d8abfc3d(#"on_ai_melee", &namespace_85745671::function_b8eb5dea);
+    self callback::function_d8abfc3d(#"on_ai_melee", &namespace_85745671::zombie_on_melee);
     self callback::function_d8abfc3d(#"hash_10ab46b52df7967a", &function_3076443);
     self.var_12af7864 = 1;
     self.blockingpain = 1;

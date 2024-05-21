@@ -593,8 +593,8 @@ function function_3ab6b4b0(var_fa4801bb, n_min, n_max, str_endon) {
 // Checksum 0xaaa17047, Offset: 0x24a8
 // Size: 0xb0
 function function_2f3616f8() {
-    var_664b35b9 = getentarray("trigger_out_of_bounds", "classname");
-    foreach (t in var_664b35b9) {
+    a_t = getentarray("trigger_out_of_bounds", "classname");
+    foreach (t in a_t) {
         t triggerenable(0);
     }
 }
@@ -628,8 +628,8 @@ function function_eaa0342e(var_8764771, var_64fdcdec) {
 // Checksum 0x71f66e10, Offset: 0x26f8
 // Size: 0xd0
 function function_3b72c20(str_targetname) {
-    var_664b35b9 = getentarray(str_targetname, "targetname");
-    foreach (t in var_664b35b9) {
+    a_t = getentarray(str_targetname, "targetname");
+    foreach (t in a_t) {
         t thread function_4f1192f6();
         /#
             t thread function_bc0a80c();
@@ -1056,10 +1056,10 @@ function function_ad6fd59c(var_a81df2cc = 1) {
 // Params 1, eflags: 0x0
 // Checksum 0x6872a08d, Offset: 0x4008
 // Size: 0x98
-function function_f9279027(var_8500c3b7) {
-    foreach (var_9fbd6e74 in var_8500c3b7) {
-        if (self hasweapon(var_9fbd6e74)) {
-            return var_9fbd6e74;
+function function_f9279027(a_w_test) {
+    foreach (w_test in a_w_test) {
+        if (self hasweapon(w_test)) {
+            return w_test;
         }
     }
 }

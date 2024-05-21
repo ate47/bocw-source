@@ -1234,10 +1234,10 @@ function function_eafe9d9f() {
     if (level flag::get(#"dark_aether_active")) {
         level flag::clear("spawn_zombies");
         if (getfreeactorcount() < 1) {
-            var_2c1b14ae = getactorarray();
-            if (isdefined(var_2c1b14ae)) {
-                var_2c1b14ae[0].allowdeath = 1;
-                var_2c1b14ae[0] kill();
+            a_zombie = getactorarray();
+            if (isdefined(a_zombie)) {
+                a_zombie[0].allowdeath = 1;
+                a_zombie[0] kill();
             } else {
                 /#
                     iprintlnbold("fasttravel_loc_pond_down");

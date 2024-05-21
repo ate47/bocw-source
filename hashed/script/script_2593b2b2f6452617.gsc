@@ -53,17 +53,17 @@ function event_handler[level_init] main(*eventstruct) {
 function init(instance) {
     foreach (s_instance in instance.contentgroups[#"console"]) {
         s_instance.var_a43a7410 = content_manager::spawn_script_model(s_instance.contentgroups[#"platform"][0], #"hash_35b9c02d1d33868f", 1);
-        s_instance.var_4a416ea9 = content_manager::spawn_script_model(s_instance, #"hash_5cb2edd3633e3fdb", 1);
-        s_instance.var_4a416ea9.targetname = "defend_object";
+        s_instance.mdl_console = content_manager::spawn_script_model(s_instance, #"hash_5cb2edd3633e3fdb", 1);
+        s_instance.mdl_console.targetname = "defend_object";
         if (isdefined(s_instance.contentgroups[#"base"][0])) {
             instance.mdl_base = content_manager::spawn_script_model(s_instance.contentgroups[#"base"][0], s_instance.contentgroups[#"base"][0].model, 1);
         }
-        s_instance.var_4a416ea9.mdl_reward = s_instance.contentgroups[#"hash_41ae283ea203de66"][0];
-        s_instance.var_4a416ea9.var_559503f1 = s_instance.contentgroups[#"spawn_pt"];
-        s_instance.var_4a416ea9.var_a74eba1b = s_instance.contentgroups[#"spawn_dog"];
+        s_instance.mdl_console.mdl_reward = s_instance.contentgroups[#"hash_41ae283ea203de66"][0];
+        s_instance.mdl_console.var_559503f1 = s_instance.contentgroups[#"spawn_pt"];
+        s_instance.mdl_console.var_a74eba1b = s_instance.contentgroups[#"spawn_dog"];
         s_instance.var_b416cb87 = s_instance.contentgroups[#"specimen"];
         if (isdefined(s_instance.contentgroups[#"attack_spot"])) {
-            s_instance.var_4a416ea9.var_b69e83ca = s_instance.contentgroups[#"attack_spot"];
+            s_instance.mdl_console.var_b69e83ca = s_instance.contentgroups[#"attack_spot"];
         }
         if (isdefined(s_instance.contentgroups[#"hash_44a34791bb566cbc"])) {
             s_instance.a_s_blockers = s_instance.contentgroups[#"hash_44a34791bb566cbc"];
@@ -80,8 +80,8 @@ function init(instance) {
     instance.var_43123efe = function_1f14f16f(instance.var_586c917d.origin, instance.var_586c917d.angles, 1);
     instance.var_43123efe ghost();
     level.var_2026156b = instance.var_586c917d.origin;
-    instance.var_4a416ea9 = s_instance.var_4a416ea9;
-    instance.var_4a416ea9 function_41b29ff0(#"hash_46b1078a533a5a9f");
+    instance.mdl_console = s_instance.mdl_console;
+    instance.mdl_console function_41b29ff0(#"hash_46b1078a533a5a9f");
     instance.var_a43a7410 = s_instance.var_a43a7410;
     instance thread function_2cfaf9d7();
     instance thread function_15f3c92();
@@ -157,14 +157,14 @@ function function_2cfaf9d7() {
 // Size: 0x724
 function function_cf55f07a() {
     self endon(#"objective_ended");
-    self.var_5cc2eee8 = util::spawn_model(#"hash_266d8b7b1d1bec85", self.var_4a416ea9.origin, self.var_4a416ea9.angles);
-    self.var_b68642a4 = util::spawn_model(#"hash_1d9c052533aadd6f", self.var_4a416ea9.origin, self.var_4a416ea9.angles);
-    self.var_f02db10e = util::spawn_model(#"hash_4c85eb6d915fab1f", self.var_4a416ea9.origin, self.var_4a416ea9.angles);
-    self.var_ff2d00f3 = util::spawn_model(#"hash_277c746d8d5f86a9", self.var_4a416ea9.origin, self.var_4a416ea9.angles);
-    self.var_171f635e = util::spawn_model(#"hash_198df127040f257c", self.var_4a416ea9.origin, self.var_4a416ea9.angles);
-    self.var_854a6b87 = util::spawn_model(#"hash_4c85ec6d915facd2", self.var_4a416ea9.origin, self.var_4a416ea9.angles);
-    self.var_be2f6224 = util::spawn_model(#"hash_55735273f06e9432", self.var_4a416ea9.origin, self.var_4a416ea9.angles);
-    self.var_d3426a39 = util::spawn_model(#"hash_762f93017354f611", self.var_4a416ea9.origin, self.var_4a416ea9.angles);
+    self.var_5cc2eee8 = util::spawn_model(#"hash_266d8b7b1d1bec85", self.mdl_console.origin, self.mdl_console.angles);
+    self.var_b68642a4 = util::spawn_model(#"hash_1d9c052533aadd6f", self.mdl_console.origin, self.mdl_console.angles);
+    self.var_f02db10e = util::spawn_model(#"hash_4c85eb6d915fab1f", self.mdl_console.origin, self.mdl_console.angles);
+    self.var_ff2d00f3 = util::spawn_model(#"hash_277c746d8d5f86a9", self.mdl_console.origin, self.mdl_console.angles);
+    self.var_171f635e = util::spawn_model(#"hash_198df127040f257c", self.mdl_console.origin, self.mdl_console.angles);
+    self.var_854a6b87 = util::spawn_model(#"hash_4c85ec6d915facd2", self.mdl_console.origin, self.mdl_console.angles);
+    self.var_be2f6224 = util::spawn_model(#"hash_55735273f06e9432", self.mdl_console.origin, self.mdl_console.angles);
+    self.var_d3426a39 = util::spawn_model(#"hash_762f93017354f611", self.mdl_console.origin, self.mdl_console.angles);
     wait(0.1);
     if (isdefined(self.var_5cc2eee8)) {
         self.a_models[self.a_models.size] = self.var_5cc2eee8;
@@ -219,7 +219,7 @@ function function_a8cf448(instance, str_notify, str_clientfield, n_delay) {
         wait(n_delay);
     }
     if (isdefined(str_clientfield)) {
-        instance.var_4a416ea9 clientfield::set(str_clientfield, 1);
+        instance.mdl_console clientfield::set(str_clientfield, 1);
     }
     if (isdefined(self)) {
         self show();
@@ -234,7 +234,7 @@ function function_62ff42e2(instance, str_notify, str_clientfield, n_value) {
     self endon(#"death");
     instance waittill(str_notify);
     if (isdefined(str_clientfield) && isdefined(n_value)) {
-        instance.var_4a416ea9 clientfield::set(str_clientfield, n_value);
+        instance.mdl_console clientfield::set(str_clientfield, n_value);
     }
     waitframe(1);
     if (isdefined(self)) {
@@ -432,15 +432,15 @@ function function_1b438ea2() {
     self thread function_a56e1736();
     wait(1);
     level namespace_7589cf5c::play_vo("objectiveDefendStart");
-    playsoundatposition(#"hash_1fe69eb0d3391a76", self.var_4a416ea9.origin);
+    playsoundatposition(#"hash_1fe69eb0d3391a76", self.mdl_console.origin);
     wait(1);
     level namespace_7589cf5c::play_vo("objectiveDefendStartResponse");
     self flag::set(#"hash_5afa3625eb7ee268");
     self waittill(#"wave_start");
-    playsoundatposition(#"hash_1fe69eb0d3391a76", self.var_4a416ea9.origin);
+    playsoundatposition(#"hash_1fe69eb0d3391a76", self.mdl_console.origin);
     level namespace_7589cf5c::play_vo("objectiveDefendWave2");
     self waittill(#"wave_start");
-    playsoundatposition(#"hash_1fe69eb0d3391a76", self.var_4a416ea9.origin);
+    playsoundatposition(#"hash_1fe69eb0d3391a76", self.mdl_console.origin);
     level namespace_7589cf5c::play_vo("objectiveDefendWave3");
 }
 
@@ -461,14 +461,14 @@ function function_a56e1736() {
 // Size: 0x258
 function function_15f3c92() {
     self endon(#"objective_ended");
-    self.var_4a416ea9 endon(#"death");
+    self.mdl_console endon(#"death");
     if (isdefined(self.mdl_base)) {
         self.mdl_base setscale(1.55);
     }
-    self.var_4a416ea9.var_c54337b2 = zm_utility::function_f5a222a8(#"hash_69a419877aee1334", self.var_4a416ea9.origin + (0, 0, 70));
-    objective_setinvisibletoall(self.var_4a416ea9.var_c54337b2);
+    self.mdl_console.var_c54337b2 = zm_utility::function_f5a222a8(#"hash_69a419877aee1334", self.mdl_console.origin + (0, 0, 70));
+    objective_setinvisibletoall(self.mdl_console.var_c54337b2);
     self waittill(#"inserted");
-    self.var_43123efe = util::spawn_model("c_t9_zmb_defense_console_head1_male", self.var_4a416ea9.origin + (0, 0, 46), self.var_4a416ea9.angles);
+    self.var_43123efe = util::spawn_model("c_t9_zmb_defense_console_head1_male", self.mdl_console.origin + (0, 0, 46), self.mdl_console.angles);
     if (isdefined(self.var_43123efe)) {
         self.var_43123efe show();
         self.var_43123efe thread scene::play(#"aib_t9_zm_sr_vign_cust_defend_head", "tank_loop", self.var_43123efe);
@@ -530,9 +530,9 @@ function function_f5087df2() {
         self flag::clear(#"hash_12988a5a3e6a65d6");
     }
     if (is_true(self.success)) {
-        level thread namespace_cda50904::function_a92a93e9(self.var_4a416ea9.mdl_reward.origin, self.var_4a416ea9.mdl_reward.angles);
-        self.var_4a416ea9 clientfield::increment("" + #"hash_3eeee7f3f5bdb9ff");
-        self.var_4a416ea9 playrumbleonentity("sr_prototype_generator_explosion");
+        level thread namespace_cda50904::function_a92a93e9(self.mdl_console.mdl_reward.origin, self.mdl_console.mdl_reward.angles);
+        self.mdl_console clientfield::increment("" + #"hash_3eeee7f3f5bdb9ff");
+        self.mdl_console playrumbleonentity("sr_prototype_generator_explosion");
         waitframe(1);
         namespace_7589cf5c::function_3899cfea();
         wait(2);
@@ -543,7 +543,7 @@ function function_f5087df2() {
         return;
     }
     if (s_result._notify !== #"hash_8202877a3aadac8") {
-        self.var_4a416ea9 thread function_b11358ce();
+        self.mdl_console thread function_b11358ce();
     }
 }
 
@@ -557,10 +557,10 @@ function defend_start(instance, activator) {
         instance thread function_f5087df2();
         instance thread function_17f1d0f3();
         instance thread namespace_7589cf5c::function_f10301b0();
-        instance.var_4a416ea9 thread function_b9fb6c3a(instance);
-        instance.var_4a416ea9 thread function_677356aa(instance);
-        instance.var_4a416ea9 thread clear_vehicles(instance);
-        instance.var_4a416ea9 thread function_e132cdc7(instance);
+        instance.mdl_console thread function_b9fb6c3a(instance);
+        instance.mdl_console thread function_677356aa(instance);
+        instance.mdl_console thread clear_vehicles(instance);
+        instance.mdl_console thread function_e132cdc7(instance);
         instance notify(#"hash_17c21fa8ca15c918");
         level notify(#"defend_start");
         var_cdce8e6f = instance.contentgroups[#"hash_5819d8571ea7c838"][0];
@@ -629,7 +629,7 @@ function function_7cf83691() {
     var_43123efe = self.var_43123efe;
     var_43123efe show();
     var_43123efe playloopsound(#"hash_565396befc27a397");
-    level.e_obj = util::spawn_model("tag_origin", self.var_4a416ea9.origin);
+    level.e_obj = util::spawn_model("tag_origin", self.mdl_console.origin);
     n_objective_id = zm_utility::function_f5a222a8(#"hash_2e632d14a18ddc0", level.e_obj);
     b_proximity = 0;
     while (true) {
@@ -680,15 +680,15 @@ function function_beaa3f66() {
 // Size: 0x3fa
 function function_57cc3128() {
     self endon(#"objective_ended", #"inserted");
-    var_4a416ea9 = self.var_4a416ea9;
-    level.var_11af7d74 = zm_utility::function_f5a222a8(#"hash_39f360c41bb85464", var_4a416ea9.origin + (0, 0, 30));
-    var_7631cbaa = spawn("trigger_radius_use", var_4a416ea9.origin + (0, 0, 24), 0, 96, 96, 1);
+    mdl_console = self.mdl_console;
+    level.var_11af7d74 = zm_utility::function_f5a222a8(#"hash_39f360c41bb85464", mdl_console.origin + (0, 0, 30));
+    var_7631cbaa = spawn("trigger_radius_use", mdl_console.origin + (0, 0, 24), 0, 96, 96, 1);
     var_7631cbaa triggerignoreteam();
     var_7631cbaa setcursorhint("HINT_NOICON");
     var_7631cbaa sethintstring(#"hash_6442cecaf6cfb0dc");
     var_7631cbaa usetriggerrequirelookat(1);
     var_7631cbaa thread function_c4712107();
-    var_4a416ea9 zm_utility::function_747180ea(level.var_11af7d74, undefined, var_7631cbaa);
+    mdl_console zm_utility::function_747180ea(level.var_11af7d74, undefined, var_7631cbaa);
     while (true) {
         s_result = var_7631cbaa waittill(#"trigger");
         if (isalive(s_result.activator) && s_result.activator hasweapon(level.var_e4731251) && is_true(s_result.activator.var_2941a093)) {
@@ -700,7 +700,7 @@ function function_57cc3128() {
                 }
             }
             var_7631cbaa delete();
-            var_4a416ea9 zm_utility::function_48d9a9c9();
+            mdl_console zm_utility::function_48d9a9c9();
             zm_utility::function_bc5a54a8(level.var_11af7d74);
             foreach (player in getplayers()) {
                 level.var_31028c5d prototype_hud::function_817e4d10(player, 0);
@@ -1080,11 +1080,11 @@ function function_22281e97(instance) {
 // Checksum 0xe28d5c35, Offset: 0x5368
 // Size: 0xe4
 function on_dog_killed(*params) {
-    var_4a416ea9 = getent("defend_object", "targetname");
-    if (self.aitype === #"hash_7a8b592728eec95d" && isdefined(var_4a416ea9)) {
-        if (isdefined(self) && isdefined(var_4a416ea9) && distance2dsquared(self.origin, var_4a416ea9.origin) <= sqr(200)) {
+    mdl_console = getent("defend_object", "targetname");
+    if (self.aitype === #"hash_7a8b592728eec95d" && isdefined(mdl_console)) {
+        if (isdefined(self) && isdefined(mdl_console) && distance2dsquared(self.origin, mdl_console.origin) <= sqr(200)) {
             n_dmg = 50;
-            var_4a416ea9 dodamage(n_dmg, var_4a416ea9.origin, undefined, undefined, undefined, "MOD_UNKNOWN");
+            mdl_console dodamage(n_dmg, mdl_console.origin, undefined, undefined, undefined, "MOD_UNKNOWN");
         }
     }
 }
@@ -1471,7 +1471,7 @@ function function_ab97e04b(instance, var_453e0a89, n_radius) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x70f59604, Offset: 0x69b0
 // Size: 0xac
-function function_81d3631c(*var_4a416ea9) {
+function function_81d3631c(*mdl_console) {
     self endon(#"death");
     if (isvehicle(self)) {
         self makevehicleunusable();

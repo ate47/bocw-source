@@ -166,8 +166,8 @@ function private function_6ff76fc6() {
         if (isdefined(level.var_3944682)) {
             var_7188db6d = level.var_3944682[self.team];
         } else {
-            var_751726af = function_77b7335(self.team, "start_spawn");
-            var_99ce997d = function_77b7335(util::get_enemy_team(self.team), "start_spawn");
+            friendlyspawn = function_77b7335(self.team, "start_spawn");
+            enemyspawn = function_77b7335(util::get_enemy_team(self.team), "start_spawn");
         }
     } else if (isdefined(level.var_3944682)) {
         var_7188db6d = array::random(level.var_3944682);
@@ -175,9 +175,9 @@ function private function_6ff76fc6() {
     if (isdefined(var_7188db6d)) {
         angles = var_7188db6d.angles;
         var_d44b8c3e = (var_7188db6d.origin[0], var_7188db6d.origin[1], var_7188db6d.origin[2] + height);
-    } else if (isdefined(var_751726af) && isdefined(var_99ce997d)) {
-        var_ed17afc5 = var_751726af.origin;
-        forward = vectornormalize(var_99ce997d.origin - var_751726af.origin);
+    } else if (isdefined(friendlyspawn) && isdefined(enemyspawn)) {
+        var_ed17afc5 = friendlyspawn.origin;
+        forward = vectornormalize(enemyspawn.origin - friendlyspawn.origin);
         angles = vectortoangles(forward);
         var_d44b8c3e = (var_ed17afc5[0], var_ed17afc5[1], height);
     } else {

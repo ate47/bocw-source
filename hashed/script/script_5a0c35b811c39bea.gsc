@@ -94,7 +94,7 @@ function private function_f34df3c() {
     self namespace_85745671::function_9758722("walk");
     self callback::function_d8abfc3d(#"on_ai_damage", &function_ce2bd83c);
     self callback::function_d8abfc3d(#"on_ai_killed", &function_8886bcc4);
-    self callback::function_d8abfc3d(#"on_ai_melee", &namespace_85745671::function_b8eb5dea);
+    self callback::function_d8abfc3d(#"on_ai_melee", &namespace_85745671::zombie_on_melee);
     self callback::function_d8abfc3d(#"hash_7140c3848cbefaa1", &function_e44ef704);
     self callback::function_d8abfc3d(#"hash_3bb51ce51020d0eb", &namespace_85745671::function_16e2f075);
     self callback::function_d8abfc3d(#"hash_c1d64b00f1dc607", &function_f59c1777);

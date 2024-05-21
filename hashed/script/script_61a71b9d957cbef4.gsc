@@ -24,7 +24,7 @@ function autoexec function_8c49355e() {
     level.var_ebf9c160[#"eq_sticky_grenade"] = #"semtex_t9_item";
     level.var_ebf9c160[#"willy_pete"] = #"smoke_t9_item";
     level.var_ebf9c160[#"gadget_jammer"] = #"hash_3f154f45479130ed";
-    level.var_ebf9c160[#"hash_2b9efbad11308e02"] = #"hash_2c9b75b17410f2de";
+    level.var_ebf9c160[#"land_mine"] = #"hash_2c9b75b17410f2de";
     level.var_ebf9c160[#"tear_gas"] = #"hash_5f67f7b32b01ae53";
     level.var_ebf9c160[#"hash_455c48edddb3a457"] = #"perk_engineer_t9_item";
     level.var_ebf9c160[#"hash_457e3eedddd079bf"] = #"perk_engineer_t9_item";

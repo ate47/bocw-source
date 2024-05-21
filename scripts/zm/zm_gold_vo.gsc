@@ -39,17 +39,17 @@ function init() {
 function on_player_spawn() {
     self endoncallback(&function_b5b9317a, #"death");
     while (true) {
-        s_waitresult = self waittill(#"hash_360ecb13f668ae0f", #"hash_52a52b5007f36141");
+        s_waitresult = self waittill(#"hash_360ecb13f668ae0f", #"killstreak_give");
         if (s_waitresult._notify === #"hash_360ecb13f668ae0f") {
             self.var_9c1a4644 = #"cdp_taacom";
             while (true) {
-                s_waitresult = self waittill(#"hash_360ecb13f668ae0f", #"hash_52a52b5007f36141", #"killstreak_done");
+                s_waitresult = self waittill(#"hash_360ecb13f668ae0f", #"killstreak_give", #"killstreak_done");
                 if (s_waitresult._notify === #"hash_360ecb13f668ae0f") {
                     continue;
                 }
                 if (s_waitresult._notify === #"killstreak_done") {
                     if (is_true(s_waitresult.is_successful)) {
-                        s_waitresult = self waittilltimeout(20, #"hash_360ecb13f668ae0f", #"hash_52a52b5007f36141");
+                        s_waitresult = self waittilltimeout(20, #"hash_360ecb13f668ae0f", #"killstreak_give");
                     }
                     if (s_waitresult._notify !== #"hash_360ecb13f668ae0f") {
                         break;

@@ -399,22 +399,22 @@ function function_8d9ddc22(player, var_e7772c37) {
     switch (var_e7772c37) {
     case #"nitrogen":
         var_6bdde8a3 = getweapon(#"ww_ieu_acid_t9");
-        var_39023436 = getweapon(#"hash_189ef2dafffe1f4c");
+        var_39023436 = getweapon(#"ww_ieu_acid_t9_upgraded");
         self.var_37023f0e = "cryo";
         break;
     case #"gas":
         var_6bdde8a3 = getweapon(#"ww_ieu_gas_t9");
-        var_39023436 = getweapon(#"hash_941005e056449b4");
+        var_39023436 = getweapon(#"ww_ieu_gas_t9_upgraded");
         self.var_37023f0e = "gas";
         break;
     case #"plasma":
         var_6bdde8a3 = getweapon(#"ww_ieu_plasma_t9");
-        var_39023436 = getweapon(#"hash_11363c24185fecdb");
+        var_39023436 = getweapon(#"ww_ieu_plasma_t9_upgraded");
         self.var_37023f0e = "rust";
         break;
     case #"beam":
         var_6bdde8a3 = getweapon(#"ww_ieu_electric_t9");
-        var_39023436 = getweapon(#"hash_4ee16eb0581e4646");
+        var_39023436 = getweapon(#"ww_ieu_electric_t9_upgraded");
         self.var_37023f0e = "electric";
         break;
     }
@@ -460,7 +460,7 @@ function function_8d9ddc22(player, var_e7772c37) {
             var_963f7bc9 = target_weapon;
         } else {
             var_b0e35c50 = 1;
-            var_963f7bc9 = var_1edbaf3 ? getweapon(#"hash_294926d598e011fa") : getweapon(#"ww_ieu_shockwave_t9");
+            var_963f7bc9 = var_1edbaf3 ? getweapon(#"ww_ieu_shockwave_t9_upgraded") : getweapon(#"ww_ieu_shockwave_t9");
         }
         var_963f7bc9 = function_eeddea9a(var_963f7bc9, function_9f1cc9a9(var_d5c2e187));
         if (player getcurrentweapon() != var_d5c2e187) {

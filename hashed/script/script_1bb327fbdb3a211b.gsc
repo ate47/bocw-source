@@ -792,13 +792,13 @@ function function_40fcf197(b_skipped, var_19e802fa) {
 function function_ea86330e() {
     var_222825ae = struct::get("ww_crystalaxe_spawn");
     point = function_4ba8fde(#"ww_axe_gun_melee_t9_item_sr");
-    var_4d1c70f5 = item_drop::drop_item(0, getweapon(#"hash_69461751fa492ea4"), 1, 0, point.id, var_222825ae.origin, var_222825ae.angles, 0);
-    var_4d1c70f5.var_dd21aec2 = 1 | 16;
-    var_4d1c70f5.var_19920dbe = 1;
-    var_4d1c70f5.itementry.var_fa988b4b = undefined;
-    var_4d1c70f5 playsound(#"hash_250f39946d7f6289");
-    var_4d1c70f5 playloopsound(#"hash_3297d5eea6cd1217");
-    var_4d1c70f5 moveto(var_4d1c70f5.origin + (0, 0, 32), 5, 0.05, 0.05);
+    item_ww = item_drop::drop_item(0, getweapon(#"ww_axe_gun_melee_t9"), 1, 0, point.id, var_222825ae.origin, var_222825ae.angles, 0);
+    item_ww.var_dd21aec2 = 1 | 16;
+    item_ww.var_19920dbe = 1;
+    item_ww.itementry.var_fa988b4b = undefined;
+    item_ww playsound(#"hash_250f39946d7f6289");
+    item_ww playloopsound(#"hash_3297d5eea6cd1217");
+    item_ww moveto(item_ww.origin + (0, 0, 32), 5, 0.05, 0.05);
 }
 
 // Namespace namespace_8a08914c/namespace_cc6c4729

@@ -647,10 +647,10 @@ function private function_bdc03d88() {
 // Params 3, eflags: 0x6 linked
 // Checksum 0x6c7943eb, Offset: 0x28c8
 // Size: 0x2d4
-function private function_434d0c2b(itemtype, var_da328e7b, var_ab9610ad = undefined) {
+function private function_434d0c2b(itemtype, prioritylist, var_ab9610ad = undefined) {
     assert(isplayer(self));
     assert(ishash(itemtype));
-    assert(isarray(var_da328e7b));
+    assert(isarray(prioritylist));
     items = [];
     var_e3c48c83 = item_world_util::get_itemtype(var_ab9610ad);
     foreach (item in self.inventory.items) {
@@ -671,7 +671,7 @@ function private function_434d0c2b(itemtype, var_da328e7b, var_ab9610ad = undefi
             items[var_b74300d3] = item;
         }
     }
-    foreach (var_b74300d3 in var_da328e7b) {
+    foreach (var_b74300d3 in prioritylist) {
         if (isdefined(items[var_b74300d3])) {
             return items[var_b74300d3];
         }
@@ -687,10 +687,10 @@ function private function_434d0c2b(itemtype, var_da328e7b, var_ab9610ad = undefi
 // Params 3, eflags: 0x6 linked
 // Checksum 0x290c8249, Offset: 0x2ba8
 // Size: 0x292
-function private _cycle_item(itemtype, var_da328e7b, var_bcc2655a) {
+function private _cycle_item(itemtype, prioritylist, var_bcc2655a) {
     assert(isplayer(self));
     assert(ishash(itemtype));
-    assert(isarray(var_da328e7b));
+    assert(isarray(prioritylist));
     if (!isdefined(var_bcc2655a)) {
         return;
     }
@@ -711,20 +711,20 @@ function private _cycle_item(itemtype, var_da328e7b, var_bcc2655a) {
             items[var_b74300d3] = item;
         }
     }
-    for (currentindex = 0; currentindex < var_da328e7b.size; currentindex++) {
-        if (var_da328e7b[currentindex] == var_c7837092) {
+    for (currentindex = 0; currentindex < prioritylist.size; currentindex++) {
+        if (prioritylist[currentindex] == var_c7837092) {
             break;
         }
     }
-    for (index = currentindex + 1; index < var_da328e7b.size; index++) {
-        var_b74300d3 = var_da328e7b[index];
+    for (index = currentindex + 1; index < prioritylist.size; index++) {
+        var_b74300d3 = prioritylist[index];
         if (isdefined(items[var_b74300d3])) {
             return items[var_b74300d3];
         }
     }
-    if (currentindex < var_da328e7b.size) {
+    if (currentindex < prioritylist.size) {
         for (index = 0; index < currentindex; index++) {
-            var_b74300d3 = var_da328e7b[index];
+            var_b74300d3 = prioritylist[index];
             if (isdefined(items[var_b74300d3])) {
                 return items[var_b74300d3];
             }
@@ -4638,7 +4638,7 @@ function function_73ae3380(item, paplv) {
             self function_d92c6b5b(currentweapon, undefined, paplv, var_ec0c35ac);
             if (isdefined(aat_name) && isdefined(var_ec0c35ac)) {
                 var_ec0c35ac.aat = aat_name;
-                if (currentweapon.weapclass != "melee" && currentweapon.name != #"special_ballisticknife_t9_dw" && currentweapon.name != #"hash_4650af6ac5c9ce80") {
+                if (currentweapon.weapclass != "melee" && currentweapon.name != #"special_ballisticknife_t9_dw" && currentweapon.name != #"special_ballisticknife_t9_dw_upgraded") {
                     self function_bf3044dc(currentweapon, 1);
                 }
                 self aat::acquire(currentweapon, aat_name);

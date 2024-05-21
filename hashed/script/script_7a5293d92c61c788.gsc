@@ -434,7 +434,7 @@ function function_cb2d9b9b(machine, trigger) {
                     var_372067dc = level.var_1b95a5be[intpayload];
                     if (isdefined(var_35d31714) && isdefined(var_9b05d455)) {
                         if (var_35d31714 === #"hash_1bce1d027595650f") {
-                            if (weapon.weapclass === "melee" || weapon.weapclass === "rocketlauncher" || weapon.weapclass === "grenade" || weapon.name === #"special_ballisticknife_t9_dw" || weapon.name === #"hash_4650af6ac5c9ce80" || weapon.name === #"special_nailgun_t9" || weapon.name === #"hash_1f564f586c2ec416") {
+                            if (weapon.weapclass === "melee" || weapon.weapclass === "rocketlauncher" || weapon.weapclass === "grenade" || weapon.name === #"special_ballisticknife_t9_dw" || weapon.name === #"special_ballisticknife_t9_dw_upgraded" || weapon.name === #"special_nailgun_t9" || weapon.name === #"special_nailgun_t9_upgraded") {
                                 machine playsoundtoplayer(#"uin_default_action_denied", self);
                             } else {
                                 item_weapon = function_44368952(weapon, item.itementry.rarity);

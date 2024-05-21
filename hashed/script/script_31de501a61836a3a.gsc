@@ -1654,7 +1654,7 @@ function function_785ea4f4(instance) {
 // Checksum 0xfd9c541c, Offset: 0x7000
 // Size: 0x36
 function function_ceab499d(str_powerup, v_org) {
-    var_9c0bf2db = zm_powerups::specific_powerup_drop(str_powerup, v_org);
+    mdl_powerup = zm_powerups::specific_powerup_drop(str_powerup, v_org);
 }
 
 // Namespace namespace_fa1c4f0a/namespace_fa1c4f0a

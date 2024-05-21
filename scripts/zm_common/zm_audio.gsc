@@ -320,7 +320,7 @@ function player_zombie_kill_vox(params) {
         if (!isdefined(death)) {
             instakill = player zm_powerups::is_insta_kill_active();
             dist = distancesquared(player.origin, zombie.origin);
-            death = function_d412c3a8(params.shitloc, params.smeansofdeath, params.weapon, zombie, instakill, dist, player);
+            death = get_mod_kill(params.shitloc, params.smeansofdeath, params.weapon, zombie, instakill, dist, player);
         }
     }
     if (isdefined(death)) {
@@ -333,7 +333,7 @@ function player_zombie_kill_vox(params) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x5419ad38, Offset: 0x15a0
 // Size: 0x314
-function function_d412c3a8(impact, mod, weapon, zombie, instakill, dist, player) {
+function get_mod_kill(impact, mod, weapon, zombie, instakill, dist, player) {
     close_dist = 4096;
     med_dist = 15376;
     far_dist = 160000;

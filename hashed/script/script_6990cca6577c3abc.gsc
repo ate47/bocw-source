@@ -31,9 +31,9 @@ function private autoexec __init__system__() {
 // Checksum 0xb90261e, Offset: 0x2c0
 // Size: 0x9e4
 function private preinit() {
-    level.var_e23957a9 = getweapon(#"hash_69461751fa492ea4");
+    level.axe_gun = getweapon(#"ww_axe_gun_melee_t9");
     level.var_948e5165 = getweapon(#"hash_18696150427f2efb");
-    level.var_dfc68c44 = getweapon(#"hash_5382c3fae4273fed");
+    level.axe_gun_upgraded = getweapon(#"ww_axe_gun_melee_t9_upgraded");
     level.var_3e316c1b = getweapon(#"hash_7eab88123b09e2c");
     level.var_386befd7 = 22500;
     level.var_b8885484 = 750 / 20;
@@ -55,15 +55,15 @@ function private preinit() {
     } else if (!isarray(level.var_6e197241)) {
         level.var_6e197241 = array(level.var_6e197241);
     }
-    level.var_6e197241[#"hash_69461751fa492ea4"] = 1;
-    level.var_6e197241[#"hash_5382c3fae4273fed"] = 1;
+    level.var_6e197241[#"ww_axe_gun_melee_t9"] = 1;
+    level.var_6e197241[#"ww_axe_gun_melee_t9_upgraded"] = 1;
     if (!isdefined(level.var_299abeff)) {
         level.var_299abeff = [];
     } else if (!isarray(level.var_299abeff)) {
         level.var_299abeff = array(level.var_299abeff);
     }
-    level.var_299abeff[#"hash_69461751fa492ea4"] = &function_5a35d482;
-    level.var_299abeff[#"hash_5382c3fae4273fed"] = &function_5a35d482;
+    level.var_299abeff[#"ww_axe_gun_melee_t9"] = &function_5a35d482;
+    level.var_299abeff[#"ww_axe_gun_melee_t9_upgraded"] = &function_5a35d482;
     level.var_299abeff[#"hash_18696150427f2efb"] = &function_5a35d482;
     level.var_299abeff[#"hash_7eab88123b09e2c"] = &function_5a35d482;
     if (!isdefined(level.var_3216bc47)) {
@@ -71,8 +71,8 @@ function private preinit() {
     } else if (!isarray(level.var_3216bc47)) {
         level.var_3216bc47 = array(level.var_3216bc47);
     }
-    level.var_3216bc47[#"hash_69461751fa492ea4"] = &function_f53bdacf;
-    level.var_3216bc47[#"hash_5382c3fae4273fed"] = &function_f53bdacf;
+    level.var_3216bc47[#"ww_axe_gun_melee_t9"] = &function_f53bdacf;
+    level.var_3216bc47[#"ww_axe_gun_melee_t9_upgraded"] = &function_f53bdacf;
     level.var_3216bc47[#"hash_18696150427f2efb"] = &function_f53bdacf;
     level.var_3216bc47[#"hash_7eab88123b09e2c"] = &function_f53bdacf;
     if (!isdefined(level.var_faabb06f)) {
@@ -91,9 +91,9 @@ function private preinit() {
     if (!isinarray(level.var_faabb06f, #"hash_7eab88123b09e2c")) {
         level.var_faabb06f[level.var_faabb06f.size] = #"hash_7eab88123b09e2c";
     }
-    zm_weapons::function_90953640(level.var_e23957a9, 5, float(function_60d95f53()) / 1000);
+    zm_weapons::function_90953640(level.axe_gun, 5, float(function_60d95f53()) / 1000);
     zm_weapons::function_90953640(level.var_948e5165, 5, float(function_60d95f53()) / 1000);
-    zm_weapons::function_90953640(level.var_dfc68c44, 5, float(function_60d95f53()) / 1000);
+    zm_weapons::function_90953640(level.axe_gun_upgraded, 5, float(function_60d95f53()) / 1000);
     zm_weapons::function_90953640(level.var_3e316c1b, 5, float(function_60d95f53()) / 1000);
     clientfield::register("actor", "" + #"hash_d1d4ed99da50a4b", 28000, 1, "int");
     clientfield::register("actor", "" + #"hash_4189b622ab06c2d5", 28000, 1, "counter");
@@ -116,7 +116,7 @@ function private preinit() {
 // Checksum 0xbd42ee9e, Offset: 0xcb0
 // Size: 0x34
 function postinit() {
-    zm_weapons::function_8389c033(#"hash_69461751fa492ea4", #"hash_69461751fa492ea4");
+    zm_weapons::function_8389c033(#"ww_axe_gun_melee_t9", #"ww_axe_gun_melee_t9");
 }
 
 // Namespace namespace_6fc19861/namespace_6fc19861
@@ -155,7 +155,7 @@ function function_5a35d482(weapon) {
     } else {
         var_94459b80 = 0;
     }
-    if (weapon.name === #"hash_69461751fa492ea4" || weapon.name === #"hash_5382c3fae4273fed") {
+    if (weapon.name === #"ww_axe_gun_melee_t9" || weapon.name === #"ww_axe_gun_melee_t9_upgraded") {
         smg_weapon = weapon.altweapon;
     } else {
         smg_weapon = weapon;
@@ -177,7 +177,7 @@ function function_5a35d482(weapon) {
 // Checksum 0xf3798132, Offset: 0xf18
 // Size: 0xec
 function function_f53bdacf(weapon) {
-    if (weapon.name === #"hash_69461751fa492ea4" || weapon.name === #"hash_5382c3fae4273fed") {
+    if (weapon.name === #"ww_axe_gun_melee_t9" || weapon.name === #"ww_axe_gun_melee_t9_upgraded") {
         smg_weapon = weapon.altweapon;
     } else {
         smg_weapon = weapon;
@@ -242,8 +242,8 @@ function function_565c848a(weapon) {
     if (isdefined(weapon)) {
         var_1236db9d = zm_weapons::function_386dacbc(weapon).name;
         switch (var_1236db9d) {
-        case #"hash_5382c3fae4273fed":
-        case #"hash_69461751fa492ea4":
+        case #"ww_axe_gun_melee_t9_upgraded":
+        case #"ww_axe_gun_melee_t9":
             return true;
         default:
             return false;

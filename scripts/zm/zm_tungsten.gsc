@@ -192,7 +192,7 @@ function event_handler[level_init] main(*eventstruct) {
     level thread zm_zonemgr::manage_zones("zone_helipads");
     level thread sndfunctions();
     level.var_cd3d6a27 = &function_65c65feb;
-    level.var_fc439a95 = #"hash_69461751fa492ea4";
+    level.var_fc439a95 = #"ww_axe_gun_melee_t9";
     level flag::set(#"power_on");
     level flag::set("pause_round_timeout");
     level thread function_9a17632d();
@@ -2463,7 +2463,7 @@ function function_e4462dce() {
         while (self is_drinking()) {
             wait(0.1);
         }
-        self weapon_give(getweapon(#"hash_69461751fa492ea4"), 1);
+        self weapon_give(getweapon(#"ww_axe_gun_melee_t9"), 1);
     #/
 }
 
