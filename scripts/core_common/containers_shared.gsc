@@ -14,7 +14,7 @@ class ccontainer {
     var m_e_container;
 
     // Namespace ccontainer/containers_shared
-    // Params 3, eflags: 0x2 linked
+    // Params 3, eflags: 0x0
     // Checksum 0x67fc0ae0, Offset: 0x1a8
     // Size: 0x52
     function init_xmodel(str_xmodel = "script_origin", v_origin, v_angles) {
@@ -33,7 +33,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace containers/containers_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xd8e31d80, Offset: 0x308
 // Size: 0xce
 function private preinit() {
@@ -47,7 +47,7 @@ function private preinit() {
 }
 
 // Namespace containers/containers_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbed7f408, Offset: 0x3e0
 // Size: 0x52
 function init() {
@@ -59,7 +59,7 @@ function init() {
 }
 
 // Namespace containers/containers_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6083c4dc, Offset: 0x440
 // Size: 0xb0
 function setup_container_scriptbundle(s_bundle, s_container_instance) {
@@ -73,7 +73,7 @@ function setup_container_scriptbundle(s_bundle, s_container_instance) {
 }
 
 // Namespace containers/containers_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb84e69aa, Offset: 0x4f8
 // Size: 0xec
 function container_update(c_container) {
@@ -88,7 +88,7 @@ function container_update(c_container) {
 }
 
 // Namespace containers/containers_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x6834a6ad, Offset: 0x5f0
 // Size: 0x110
 function create_locker_trigger(v_pos, n_radius, str_message) {
@@ -178,7 +178,7 @@ function setup_locker_double_doors(str_left_door_name, str_right_door_name, cent
 }
 
 // Namespace containers/containers_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x567c4786, Offset: 0xba0
 // Size: 0xa4
 function get_closest_ent_from_array(v_pos, a_ents) {
@@ -195,7 +195,7 @@ function get_closest_ent_from_array(v_pos, a_ents) {
 }
 
 // Namespace containers/containers_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xdf6de6bb, Offset: 0xc50
 // Size: 0x174
 function create_locker_doors(e_left_door, e_right_door, door_open_angle, door_open_time) {

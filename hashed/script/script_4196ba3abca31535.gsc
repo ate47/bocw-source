@@ -64,7 +64,7 @@ class cluielembar_ct : cluielem {
     }
 
     // Namespace cluielembar_ct/luielembar_ct
-    // Params a, eflags: 0x0
+    // Params 10, eflags: 0x0
     // Checksum 0x1445a8c8, Offset: 0x5c8
     // Size: 0x1fc
     function setup_clientfields(xcallback, ycallback, widthcallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, var_661989d5) {
@@ -142,7 +142,7 @@ class cluielembar_ct : cluielem {
 }
 
 // Namespace luielembar_ct/luielembar_ct
-// Params a, eflags: 0x0
+// Params 10, eflags: 0x0
 // Checksum 0x679828b2, Offset: 0x138
 // Size: 0x1ce
 function register(xcallback, ycallback, widthcallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, var_661989d5) {

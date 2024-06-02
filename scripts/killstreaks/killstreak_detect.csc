@@ -432,7 +432,7 @@ function private function_d05902d9(local_client_num, newval) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x7dcfac9f, Offset: 0x1870
 // Size: 0x142
 function function_32c8b999(local_client_num) {
@@ -476,7 +476,7 @@ function private function_f27ffe49(local_client_num, newval) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x7bcddc7b, Offset: 0x1af8
 // Size: 0x142
 function function_3eff7815(local_client_num) {

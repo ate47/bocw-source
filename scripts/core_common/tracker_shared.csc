@@ -8,7 +8,7 @@
 #namespace tracker;
 
 // Namespace tracker/tracker_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xdee9ac5c, Offset: 0x120
 // Size: 0x24
 function init_shared() {
@@ -17,7 +17,7 @@ function init_shared() {
 }
 
 // Namespace tracker/tracker_shared
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xe8bcf691, Offset: 0x150
 // Size: 0xc4
 function private registerclientfields() {
@@ -27,7 +27,7 @@ function private registerclientfields() {
 }
 
 // Namespace tracker/tracker_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb768a338, Offset: 0x220
 // Size: 0x19c
 function function_fa884ccf() {
@@ -46,7 +46,7 @@ function function_fa884ccf() {
 }
 
 // Namespace tracker/tracker_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xdf21faa, Offset: 0x3c8
 // Size: 0x8c
 function on_player_spawned(localclientnum) {
@@ -64,7 +64,7 @@ function on_player_spawned(localclientnum) {
 }
 
 // Namespace tracker/tracker_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc4eea0bf, Offset: 0x460
 // Size: 0x7c
 function function_56df655f(params) {
@@ -77,7 +77,7 @@ function function_56df655f(params) {
 }
 
 // Namespace tracker/tracker_shared
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x216a8d10, Offset: 0x4e8
 // Size: 0x1fc
 function private function_8c47bbe5(localclientnum) {
@@ -115,7 +115,7 @@ function private function_8c47bbe5(localclientnum) {
 }
 
 // Namespace tracker/tracker_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x63220f2c, Offset: 0x6f0
 // Size: 0xa2
 function function_b6e83a42(localclientnum, ent) {
@@ -135,7 +135,7 @@ function function_b6e83a42(localclientnum, ent) {
 }
 
 // Namespace tracker/tracker_shared
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x618be3b2, Offset: 0x7a0
 // Size: 0x1de
 function private function_e018cdc7(localclientnum) {
@@ -172,7 +172,7 @@ function private function_e018cdc7(localclientnum) {
 }
 
 // Namespace tracker/tracker_shared
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x39ab6855, Offset: 0x988
 // Size: 0x1ce
 function function_308cd741(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -208,7 +208,7 @@ function function_308cd741(localclientnum, oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace tracker/tracker_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x6cbd11d, Offset: 0xb60
 // Size: 0x188
 function function_bcc73387(localclientnum, var_540abea5 = 0) {

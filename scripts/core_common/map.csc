@@ -2,7 +2,7 @@
 #namespace map;
 
 // Namespace map/map
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x97e0cd6d, Offset: 0x80
 // Size: 0x14
 function init() {

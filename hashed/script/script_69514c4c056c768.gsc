@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_75da5547b1822294;
+#using scripts\core_common\territory_util.gsc;
 #using script_471b31bd963b388e;
 #using scripts\core_common\item_supply_drop.gsc;
 #using scripts\core_common\system_shared.gsc;
@@ -18,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_3d2704b3/namespace_3d2704b3
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xcdb31ea6, Offset: 0x108
 // Size: 0x30
 function private preinit() {
@@ -30,7 +30,7 @@ function private preinit() {
 }
 
 // Namespace namespace_3d2704b3/namespace_3d2704b3
-// Params 6, eflags: 0x4
+// Params 6, eflags: 0x6 linked
 // Checksum 0x94cdceaa, Offset: 0x140
 // Size: 0x156
 function private function_2d47ee1e(var_6ed927a6, var_caba78c2, waittime, var_ef5e1b44, vehicledrop = 0, vehicletype = undefined) {
@@ -51,7 +51,7 @@ function private function_2d47ee1e(var_6ed927a6, var_caba78c2, waittime, var_ef5
 }
 
 // Namespace namespace_3d2704b3/namespace_3d2704b3
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x3dd46ab7, Offset: 0x2a0
 // Size: 0x126
 function function_f0297225(var_2ab9d3bd, replacementcount, var_3afaa57b) {
@@ -289,7 +289,7 @@ function start_vehicle(vehicletype, supplydrops = 1, minwaittime = 20, var_fe6b2
 }
 
 // Namespace namespace_3d2704b3/namespace_3d2704b3
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x13f07ec7, Offset: 0x1160
 // Size: 0x14c
 function function_7fc18ad5(var_2c229170, drops = 1, var_e72444ee = 30, minwaittime = 30, maxwaittime = 60) {
@@ -316,7 +316,7 @@ function function_7fc18ad5(var_2c229170, drops = 1, var_e72444ee = 30, minwaitti
 }
 
 // Namespace namespace_3d2704b3/namespace_3d2704b3
-// Params 9, eflags: 0x0
+// Params 9, eflags: 0x2 linked
 // Checksum 0x172ebe43, Offset: 0x12b8
 // Size: 0x5ac
 function function_add63876(vehicletypes, var_4b43f3d = 1, var_e72444ee = 30, minwaittime = 30, maxwaittime = 60, var_6b662968 = 1, var_aeb310db = 0, var_a1f975d8 = undefined, var_69cea650 = undefined) {

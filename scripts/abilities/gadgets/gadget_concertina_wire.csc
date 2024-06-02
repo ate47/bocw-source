@@ -6,7 +6,7 @@
 #namespace concertina_wire;
 
 // Namespace concertina_wire/gadget_concertina_wire
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x69f146a9, Offset: 0x178
 // Size: 0x1a4
 function init_shared(var_4b51853b) {
@@ -35,7 +35,7 @@ function function_34a7968c(localclientnum) {
 }
 
 // Namespace concertina_wire/gadget_concertina_wire
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xff41514e, Offset: 0x3a8
 // Size: 0x3c
 function function_8455c7c0(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -43,7 +43,7 @@ function function_8455c7c0(*localclientnum, *oldval, *newval, *bnewent, *binitia
 }
 
 // Namespace concertina_wire/gadget_concertina_wire
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xedf74b8e, Offset: 0x3f0
 // Size: 0x1ac
 function function_3a927971(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -69,7 +69,7 @@ function function_3a927971(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace concertina_wire/gadget_concertina_wire
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x48f52ae6, Offset: 0x5a8
 // Size: 0x20c
 function function_6873a657(localclientnum, *oldval, newval, bnewent, *binitialsnap, *fieldname, bwastimejump) {
@@ -135,7 +135,7 @@ function function_1c2930c7(localclientnum) {
 }
 
 // Namespace concertina_wire/gadget_concertina_wire
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x59255368, Offset: 0xa68
 // Size: 0x54
 function function_8fb44aff(*localclientnum, origin, angles, *isvalid, *var_eb65925c, *var_4b3e5e0a) {

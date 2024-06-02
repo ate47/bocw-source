@@ -607,7 +607,7 @@ function private function_8c162ba0(var_8de04fca, var_68253610) {
 }
 
 // Namespace teams/team_assignment
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xa7e30cc0, Offset: 0x2220
 // Size: 0x574
 function function_344e464d() {

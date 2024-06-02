@@ -69,7 +69,7 @@ function private function_119a2a90(weapon) {
 }
 
 // Namespace zm_sparrow/sparrow
-// Params b, eflags: 0x6 linked
+// Params 11, eflags: 0x6 linked
 // Checksum 0xde17e836, Offset: 0x330
 // Size: 0xb2
 function private function_61f584a7(*einflictor, eattacker, idamage, *idflags, *smeansofdeath, weapon, *vpoint, *vdir, *shitloc, *psoffsettime, *boneindex) {

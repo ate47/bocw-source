@@ -9,7 +9,7 @@ class class_d0a0a887 {
     var var_4198461b;
 
     // Namespace class_d0a0a887/class_shared
-    // Params 0, eflags: 0xa linked
+    // Params 0, eflags: 0x8
     // Checksum 0xdc520e06, Offset: 0x80
     // Size: 0x1a
     constructor() {
@@ -18,7 +18,7 @@ class class_d0a0a887 {
     }
 
     // Namespace namespace_d0a0a887/class_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xb94e95d1, Offset: 0x268
     // Size: 0x74
     function function_271aec18(index) {
@@ -29,7 +29,7 @@ class class_d0a0a887 {
     }
 
     // Namespace namespace_d0a0a887/class_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x97f42026, Offset: 0x138
     // Size: 0x128
     function function_65cdd2df(owner) {
@@ -52,7 +52,7 @@ class class_d0a0a887 {
     }
 
     // Namespace namespace_d0a0a887/class_shared
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x8524366a, Offset: 0x2e8
     // Size: 0xa
     function function_85a5add5() {
@@ -60,7 +60,7 @@ class class_d0a0a887 {
     }
 
     // Namespace namespace_d0a0a887/class_shared
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xa7bbeb5b, Offset: 0xa8
     // Size: 0x88
     function init(count) {

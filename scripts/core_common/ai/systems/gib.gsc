@@ -435,7 +435,7 @@ function giblegs(entity, var_c3317960 = 0) {
 }
 
 // Namespace gibserverutils/player_gibleftarmvel
-// Params 1, eflags: 0x20
+// Params 1, eflags: 0x22 linked
 // Checksum 0x38c05569, Offset: 0x18c0
 // Size: 0x5c
 function event_handler[player_gibleftarmvel] playergibleftarmvel(entitystruct) {
@@ -445,7 +445,7 @@ function event_handler[player_gibleftarmvel] playergibleftarmvel(entitystruct) {
 }
 
 // Namespace gibserverutils/player_gibrightarmvel
-// Params 1, eflags: 0x20
+// Params 1, eflags: 0x22 linked
 // Checksum 0x36bbc44e, Offset: 0x1928
 // Size: 0x5c
 function event_handler[player_gibrightarmvel] playergibrightarmvel(entitystruct) {
@@ -475,7 +475,7 @@ function event_handler[player_gibrightlegvel] playergibrightlegvel(entitystruct)
 }
 
 // Namespace gibserverutils/player_gibbothlegsvel
-// Params 1, eflags: 0x20
+// Params 1, eflags: 0x22 linked
 // Checksum 0x50b034cf, Offset: 0x1a60
 // Size: 0x94
 function event_handler[player_gibbothlegsvel] playergiblegsvel(entitystruct) {
@@ -486,7 +486,7 @@ function event_handler[player_gibbothlegsvel] playergiblegsvel(entitystruct) {
 }
 
 // Namespace gibserverutils/event_5d8d772d
-// Params 1, eflags: 0x20
+// Params 1, eflags: 0x22 linked
 // Checksum 0x8b4beecb, Offset: 0x1b00
 // Size: 0x5c
 function event_handler[event_5d8d772d] function_b14ffba8(entitystruct) {

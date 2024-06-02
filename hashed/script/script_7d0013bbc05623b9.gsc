@@ -118,7 +118,7 @@ function register(prompt, var_92bb1cb1, button_text, notify_string, var_9a98e590
 }
 
 // Namespace prompts/prompts
-// Params 12, eflags: 0x2 linked
+// Params 18, eflags: 0x2 linked
 // Checksum 0x79a4dc14, Offset: 0x12b8
 // Size: 0x1ec
 function create(prompt = #"use", var_4d98c3ce, complete_callback, var_531201f1, notify_string, offset, tag, var_754bedbb, var_de6f0004, var_4ac77177, var_71b9f0c0, var_87c991f3, var_5e83875a, var_8ce60046, var_9a27c4ee, var_be77841a, flags, var_c9643122) {

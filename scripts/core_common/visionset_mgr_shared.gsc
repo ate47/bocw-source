@@ -229,7 +229,7 @@ function ramp_in_out_thread_hold_func() {
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xf4f597ba, Offset: 0xc50
 // Size: 0x234
 function ramp_in_out_thread(ramp_in, full_period, ramp_out) {

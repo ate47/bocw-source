@@ -256,7 +256,7 @@ function is_current_user(ai_user, n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x3d9c3130, Offset: 0xd98
 // Size: 0x7e
 function set_burst_parameters(n_fire_min, n_fire_max, n_wait_min, n_wait_max, n_index) {
@@ -392,7 +392,7 @@ function clear_target(n_index = 0) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa3d50597, Offset: 0x14d0
 // Size: 0x4a
 function function_49c3b892(e_target, n_index = 0) {
@@ -410,7 +410,7 @@ function get_favorite_enemy(n_index = 0) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xaf68d358, Offset: 0x1570
 // Size: 0x4a
 function function_41c79ce4(b_enable, n_index = 0) {
@@ -449,7 +449,7 @@ function function_21827343(n_index = 0) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x1e2c0862, Offset: 0x1718
 // Size: 0x4a
 function function_3e5395(n_seconds, n_index = 0) {
@@ -667,7 +667,7 @@ function handle_rider_death(ai_rider, n_index = 0) {
 }
 
 // Namespace turret/turret_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xe539ac86, Offset: 0x24d0
 // Size: 0x154
 function function_1bc8c31c(target, v_offset, n_index = 0, b_just_once = 0) {
@@ -680,7 +680,7 @@ function function_1bc8c31c(target, v_offset, n_index = 0, b_just_once = 0) {
 }
 
 // Namespace turret/turret_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x27b0995c, Offset: 0x2630
 // Size: 0x30c
 function function_aecc6bed(var_502298b8, n_shots, n_index = 0, var_c3e16ce = undefined, var_702f0a7e = undefined) {
@@ -1602,7 +1602,7 @@ function function_3a7e640f(b_ignore, n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd78cc31e, Offset: 0x5e08
 // Size: 0x42
 function set_ignore_line_of_sight(b_ignore, n_index) {
@@ -1611,7 +1611,7 @@ function set_ignore_line_of_sight(b_ignore, n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x90201c44, Offset: 0x5e58
 // Size: 0x42
 function function_8bbe7822(b_ignore, n_index) {
@@ -1629,7 +1629,7 @@ function function_bb42e3e2(var_7994b8bf, n_index) {
 }
 
 // Namespace turret/turret_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe9a472c0, Offset: 0x5ef8
 // Size: 0x42
 function function_f5e3e1de(b_enabled, n_index) {

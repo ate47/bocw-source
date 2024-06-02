@@ -26,7 +26,7 @@ function register_clientuimodel(str_name, var_91c404f, path, n_version, n_bits, 
 }
 
 // Namespace clientfield/clientfield_shared
-// Params a, eflags: 0x2 linked
+// Params 10, eflags: 0x2 linked
 // Checksum 0x71dabe89, Offset: 0x230
 // Size: 0x7c
 function register_luielem(str_name, menu_name, var_483e93f7, path, n_version, n_bits, str_type, func_callback, b_host, b_callback_for_zero_when_new) {

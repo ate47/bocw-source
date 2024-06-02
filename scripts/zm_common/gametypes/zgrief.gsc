@@ -87,7 +87,7 @@ function onscorelimit() {
 }
 
 // Namespace zgrief/zgrief
-// Params a, eflags: 0x0
+// Params 10, eflags: 0x0
 // Checksum 0x22697615, Offset: 0x5c8
 // Size: 0x80
 function playerdamagecallback(*einflictor, eattacker, idamage, *idflags, *smeansofdeath, *weapon, *vpoint, *vdir, *shitloc, *psoffsettime) {

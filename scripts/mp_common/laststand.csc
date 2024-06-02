@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace laststand/laststand
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x9fd180b4, Offset: 0x2f0
 // Size: 0x384
 function private preinit() {
@@ -38,7 +38,7 @@ function private preinit() {
 }
 
 // Namespace laststand/laststand
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xac702451, Offset: 0x680
 // Size: 0x5c
 function function_349ff038() {
@@ -52,7 +52,7 @@ function function_349ff038() {
 }
 
 // Namespace laststand/laststand
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x28afcd9f, Offset: 0x6e8
 // Size: 0xf4
 function private function_a228d7a3(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -70,7 +70,7 @@ function private function_a228d7a3(localclientnum, *oldval, newval, *bnewent, *b
 }
 
 // Namespace laststand/laststand
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x6bedf882, Offset: 0x7e8
 // Size: 0x1cc
 function laststand_postfx(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -98,7 +98,7 @@ function laststand_postfx(localclientnum, oldval, newval, *bnewent, *binitialsna
 }
 
 // Namespace laststand/laststand
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xf0ca453b, Offset: 0x9c0
 // Size: 0x6c
 function being_revived(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -107,7 +107,7 @@ function being_revived(localclientnum, *oldval, newval, *bnewent, *binitialsnap,
 }
 
 // Namespace laststand/laststand
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xa0251f90, Offset: 0xa38
 // Size: 0x9c
 function function_6159e216(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -116,7 +116,7 @@ function function_6159e216(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace laststand/laststand
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x4e0f86dd, Offset: 0xae0
 // Size: 0xcc
 function function_766ed49(localclientnum, var_20e2bb05) {
@@ -134,7 +134,7 @@ function function_766ed49(localclientnum, var_20e2bb05) {
 }
 
 // Namespace laststand/laststand
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x31c2a13a, Offset: 0xbb8
 // Size: 0xfe
 function laststand_bleed(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -151,7 +151,7 @@ function laststand_bleed(localclientnum, oldval, newval, *bnewent, *binitialsnap
 }
 
 // Namespace laststand/laststand
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xfc6408d5, Offset: 0xcc0
 // Size: 0xe0
 function function_8960f852(oldval, newval) {
@@ -167,7 +167,7 @@ function function_8960f852(oldval, newval) {
 }
 
 // Namespace laststand/laststand
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xea518129, Offset: 0xda8
 // Size: 0xc8
 function wait_and_set_revive_shader_constant() {

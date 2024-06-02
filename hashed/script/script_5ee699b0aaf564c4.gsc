@@ -2,7 +2,7 @@
 #using scripts\core_common\util_shared.gsc;
 #using scripts\core_common\vehicle_shared.gsc;
 #using scripts\core_common\values_shared.gsc;
-#using script_75da5547b1822294;
+#using scripts\core_common\territory_util.gsc;
 #using scripts\core_common\system_shared.gsc;
 #using script_44b0b8420eabacad;
 #using scripts\core_common\spawning_shared.gsc;

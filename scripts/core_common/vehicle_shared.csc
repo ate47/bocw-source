@@ -164,7 +164,7 @@ function spawned_callback(localclientnum) {
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x2494d9db, Offset: 0x20a8
 // Size: 0x40
 function function_2f97bc52(vehicletype, callback) {
@@ -188,7 +188,7 @@ function function_2f2a656a(localclientnum, vehicle) {
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x233e81af, Offset: 0x2178
 // Size: 0x40
 function function_cd2ede5(vehicletype, callback) {

@@ -14,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace trophy_system/trophy_system_spy
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xc1c1d54b, Offset: 0x100
 // Size: 0xb4
 function private preinit() {

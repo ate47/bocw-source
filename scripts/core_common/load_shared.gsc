@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\core_common\values_shared.gsc;
 #using scripts\core_common\util_shared.gsc;
-#using script_69d3c825b6585548;
+#using scripts\core_common\telemetry.gsc;
 #using scripts\core_common\trigger_shared.gsc;
 #using scripts\core_common\system_shared.gsc;
 #using scripts\core_common\math_shared.gsc;
@@ -12,7 +12,6 @@
 #using scripts\core_common\activecamo_shared.gsc;
 #using script_25c09ccacf057919;
 #using scripts\core_common\delete.gsc;
-#using scripts\core_common\clientids_shared.gsc;
 
 #namespace load;
 
@@ -592,7 +591,7 @@ function hide_ents() {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd0bd4569, Offset: 0x1e30
 // Size: 0x23a
 function art_review() {

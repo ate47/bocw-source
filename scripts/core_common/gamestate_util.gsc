@@ -18,7 +18,7 @@ function is_game_over() {
 }
 
 // Namespace gamestate/gamestate_util
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xbce36c14, Offset: 0xf0
 // Size: 0x1c
 function is_shutting_down() {

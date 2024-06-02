@@ -58,7 +58,7 @@ function init_shared() {
 }
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x9d52143b, Offset: 0x660
 // Size: 0x14
 function function_6916626d() {
@@ -884,7 +884,7 @@ function track_fire(curweapon) {
 }
 
 // Namespace weapons/weapons
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x3af3fc55, Offset: 0x32c8
 // Size: 0x4c
 function function_b1d41bd5(weapon, damagedone) {
@@ -955,7 +955,7 @@ function watch_missile_death() {
 }
 
 // Namespace weapons/weapons
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x618fa5b0, Offset: 0x3588
 // Size: 0xe6
 function drop_all_to_ground(origin, radius) {
@@ -1834,7 +1834,7 @@ function drop_scavenger_for_death(attacker) {
 }
 
 // Namespace weapons/weapons
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x2049eb16, Offset: 0x6690
 // Size: 0x5a
 function add_limited_weapon(weapon, owner, num_drops) {

@@ -20,7 +20,7 @@
 #namespace trophy_system;
 
 // Namespace trophy_system/trophy_system
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x6359fb54, Offset: 0x1e8
 // Size: 0x124
 function init_shared() {
@@ -37,7 +37,7 @@ function init_shared() {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc03e5c8e, Offset: 0x318
 // Size: 0x50
 function function_1c601b99() {
@@ -47,7 +47,7 @@ function function_1c601b99() {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x51f4ee94, Offset: 0x370
 // Size: 0x234
 function function_bff5c062(trophysystem, attackingplayer) {
@@ -78,7 +78,7 @@ function function_bff5c062(trophysystem, attackingplayer) {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x7b21f48b, Offset: 0x5b0
 // Size: 0x1c
 function function_720ddf7f(func) {
@@ -86,7 +86,7 @@ function function_720ddf7f(func) {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf4c394bb, Offset: 0x5d8
 // Size: 0x84
 function register() {
@@ -95,7 +95,7 @@ function register() {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x722bab3c, Offset: 0x668
 // Size: 0x94
 function on_player_killed(s_params) {
@@ -110,7 +110,7 @@ function on_player_killed(s_params) {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x743ce7a2, Offset: 0x708
 // Size: 0x132
 function createtrophysystemwatcher(watcher) {
@@ -133,7 +133,7 @@ function createtrophysystemwatcher(watcher) {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x96658e1e, Offset: 0x848
 // Size: 0x5e
 function trophysystemstopped() {
@@ -144,7 +144,7 @@ function trophysystemstopped() {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xb5a61838, Offset: 0x8b0
 // Size: 0x25c
 function ontrophysystemspawn(watcher, player) {
@@ -178,7 +178,7 @@ function ontrophysystemspawn(watcher, player) {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf46d9b54, Offset: 0xb18
 // Size: 0x24
 function function_5a4f1e1e(*player) {
@@ -186,7 +186,7 @@ function function_5a4f1e1e(*player) {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xecb8e36d, Offset: 0xb48
 // Size: 0x1bc
 function ontrophysystemsmashed(attacker, *callback_data) {
@@ -208,7 +208,7 @@ function ontrophysystemsmashed(attacker, *callback_data) {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x17339f40, Offset: 0xd10
 // Size: 0x5e2
 function trophyactive(owner) {
@@ -317,7 +317,7 @@ function trophyactive(owner) {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xd3d00bd7, Offset: 0x1300
 // Size: 0x2e4
 function projectileexplode(projectile, trophy, fxfwd, fxup) {
@@ -352,7 +352,7 @@ function projectileexplode(projectile, trophy, fxfwd, fxup) {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xbafce304, Offset: 0x15f0
 // Size: 0x4c
 function _the_root_zurich_spawners(gameobject, trophy) {
@@ -360,7 +360,7 @@ function _the_root_zurich_spawners(gameobject, trophy) {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xfeb41032, Offset: 0x1648
 // Size: 0x664
 function function_3170d645(projectile, trophy) {
@@ -451,7 +451,7 @@ function trophydestroytacinsert(tacinsert, trophy) {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x32e2ac3b, Offset: 0x1e10
 // Size: 0x18c
 function trophysystemdetonate(attacker, weapon, *target) {
@@ -469,7 +469,7 @@ function trophysystemdetonate(attacker, weapon, *target) {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5440cf7f, Offset: 0x1fa8
 // Size: 0x64
 function function_3044fc5() {
@@ -479,7 +479,7 @@ function function_3044fc5() {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf4d40b3a, Offset: 0x2018
 // Size: 0x382
 function watchtrophysystemdamage(watcher) {
@@ -532,7 +532,7 @@ function watchtrophysystemdamage(watcher) {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x13c1dc3f, Offset: 0x23a8
 // Size: 0x16
 function ammo_reset() {
@@ -541,7 +541,7 @@ function ammo_reset() {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x78dd8e18, Offset: 0x23c8
 // Size: 0x86
 function ammo_get(weapon) {
@@ -573,7 +573,7 @@ function ammo_weapon_pickup(ammo) {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x46e9c933, Offset: 0x24b0
 // Size: 0x18c
 function deployanim() {

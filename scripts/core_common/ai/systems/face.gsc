@@ -4,7 +4,7 @@
 #namespace face;
 
 // Namespace face/face
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x9fdc83c8, Offset: 0x118
 // Size: 0x7be
 function playfacethread(*facialanim, str_script_alias, importance, notifystring, *waitornot, *timetowait, player_or_team) {

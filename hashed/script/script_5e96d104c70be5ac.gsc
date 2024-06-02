@@ -330,7 +330,7 @@ function private function_4bd3e96c() {
             var_dc08e79b = self.pers[#"hash_69b63c99be1fb428"][weapon_name];
             var_fa5921b6 = var_dc08e79b[#"xpearned"];
             if (isdefined(var_fa5921b6) && var_fa5921b6 > 0) {
-                var_cad81941 = {#weapon_name:weapon_name, #time_used_s:isdefined(var_dc08e79b[#"timeused"]) ? var_dc08e79b[#"timeused"] : 0, #kills:isdefined(var_dc08e79b[#"kills"]) ? var_dc08e79b[#"kills"] : 0, #shots:isdefined(var_dc08e79b[#"shots"]) ? var_dc08e79b[#"shots"] : 0, #hits:isdefined(var_dc08e79b[#"hits"]) ? var_dc08e79b[#"hits"] : 0, #var_fa5921b6:isdefined(var_dc08e79b[#"xpearned"]) ? var_dc08e79b[#"xpearned"] : 0, #game_type:hash(isdefined(level.gametype) ? level.gametype : #""), #round_number:zm_utility::get_round_number(), #star_level:zm_utility::function_e3025ca5(), #var_2b43b7a2:isdefined(var_dc08e79b[#"hash_30756c193f03f009"]) ? var_dc08e79b[#"hash_30756c193f03f009"] : 0};
+                var_cad81941 = {#weapon_name:weapon_name, #time_used_s:isdefined(var_dc08e79b[#"timeused"]) ? var_dc08e79b[#"timeused"] : 0, #kills:isdefined(var_dc08e79b[#"kills"]) ? var_dc08e79b[#"kills"] : 0, #shots:isdefined(var_dc08e79b[#"shots"]) ? var_dc08e79b[#"shots"] : 0, #hits:isdefined(var_dc08e79b[#"hits"]) ? var_dc08e79b[#"hits"] : 0, #var_fa5921b6:isdefined(var_dc08e79b[#"xpearned"]) ? var_dc08e79b[#"xpearned"] : 0, #game_type:hash(isdefined(level.gametype) ? level.gametype : #""), #round_number:zm_utility::get_round_number(), #star_level:zm_utility::function_e3025ca5(), #flourish_count:isdefined(var_dc08e79b[#"flourish_count"]) ? var_dc08e79b[#"flourish_count"] : 0};
                 self function_678f57c8(#"hash_2da62e026250c65e", var_cad81941);
             }
         }
@@ -872,7 +872,7 @@ function function_882720b2(data) {
 // Size: 0x9c
 function function_9cac835e(data) {
     if (isdefined(data.weapon)) {
-        function_abbc84ad({#player:self, #weapon:data.weapon, #statname:#"hash_30756c193f03f009", #value:1, #weaponpickedup:0});
+        function_abbc84ad({#player:self, #weapon:data.weapon, #statname:#"flourish_count", #value:1, #weaponpickedup:0});
     }
 }
 

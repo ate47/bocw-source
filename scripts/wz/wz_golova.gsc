@@ -75,7 +75,7 @@ function function_564698fd() {
 // Checksum 0x295162d9, Offset: 0x7c8
 // Size: 0x124
 function function_a387f4f5() {
-    if (level.basegametype == #"fireteam_dirty_bomb" || level.basegametype == #"fireteam_elimination" || level.basegametype == #"fireteam_koth" || level.basegametype == #"hash_1f65d49bd46739db") {
+    if (level.basegametype == #"fireteam_dirty_bomb" || level.basegametype == #"fireteam_elimination" || level.basegametype == #"fireteam_koth" || level.basegametype == #"fireteam_satlink") {
         /#
             level thread function_f9492b33();
         #/

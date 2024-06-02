@@ -529,7 +529,7 @@ function register_player_friendly_fire_callback(callback) {
 }
 
 // Namespace zm_player/zm_player
-// Params b, eflags: 0x2 linked
+// Params 11, eflags: 0x2 linked
 // Checksum 0xc8cbf77b, Offset: 0x22f8
 // Size: 0x108
 function process_friendly_fire_callbacks(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, vpoint, vdir, shitloc, psoffsettime, boneindex) {

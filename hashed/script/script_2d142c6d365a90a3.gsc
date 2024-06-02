@@ -17,7 +17,7 @@ function function_f45ee99d() {
 }
 
 // Namespace namespace_956bd4dd/namespace_956bd4dd
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x2605a8e3, Offset: 0xf0
 // Size: 0x10c
 function function_df1ecefe(maxhealth, var_1263c72f, var_9653dad7 = 0, var_21a59205 = 2147483647) {
@@ -35,7 +35,7 @@ function function_df1ecefe(maxhealth, var_1263c72f, var_9653dad7 = 0, var_21a592
 }
 
 // Namespace namespace_956bd4dd/namespace_956bd4dd
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x21c2dbd4, Offset: 0x208
 // Size: 0x1dc
 function function_1cb3c52d(name, radiationlevel, duration, var_4267b283 = #"hash_4ae27316c3f95575") {

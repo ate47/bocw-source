@@ -12,7 +12,7 @@ class cmp_revive_prompt : cluielem {
     var var_d5213cbb;
 
     // Namespace cmp_revive_prompt/mp_revive_prompt
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x61e600a3, Offset: 0x330
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -20,7 +20,7 @@ class cmp_revive_prompt : cluielem {
     }
 
     // Namespace cmp_revive_prompt/mp_revive_prompt
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x3cdf2f07, Offset: 0x3a8
     // Size: 0x44
     function set_clientnum(player, value) {
@@ -28,7 +28,7 @@ class cmp_revive_prompt : cluielem {
     }
 
     // Namespace cmp_revive_prompt/mp_revive_prompt
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xc7188580, Offset: 0x448
     // Size: 0x44
     function set_reviveprogress(player, value) {
@@ -36,7 +36,7 @@ class cmp_revive_prompt : cluielem {
     }
 
     // Namespace cmp_revive_prompt/mp_revive_prompt
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x2c33e9c5, Offset: 0x378
     // Size: 0x24
     function close(player) {
@@ -44,7 +44,7 @@ class cmp_revive_prompt : cluielem {
     }
 
     // Namespace cmp_revive_prompt/mp_revive_prompt
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x96f7a8de, Offset: 0x290
     // Size: 0x94
     function setup_clientfields() {
@@ -55,7 +55,7 @@ class cmp_revive_prompt : cluielem {
     }
 
     // Namespace cmp_revive_prompt/mp_revive_prompt
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xb1020090, Offset: 0x3f8
     // Size: 0x44
     function set_progress(player, value) {
@@ -65,7 +65,7 @@ class cmp_revive_prompt : cluielem {
 }
 
 // Namespace mp_revive_prompt/mp_revive_prompt
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf44ae389, Offset: 0x110
 // Size: 0x34
 function register() {

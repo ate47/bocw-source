@@ -156,7 +156,7 @@ function function_2e6ff61a(hardpointtype, killstreak_id, var_8c2bb724) {
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2cd83171, Offset: 0xa10
 // Size: 0x142
 function function_7f69aa48(hardpointtype) {
@@ -175,7 +175,7 @@ function function_7f69aa48(hardpointtype) {
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xce7f4c0b, Offset: 0xb60
 // Size: 0x40
 function function_feb4595f(hardpointtype, var_5f910be6) {

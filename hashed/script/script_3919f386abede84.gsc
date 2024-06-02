@@ -19,7 +19,7 @@ class class_e500a966 : cdoor {
     var var_a2f96f78;
 
     // Namespace class_e500a966/namespace_23507db6
-    // Params 0, eflags: 0xa linked
+    // Params 0, eflags: 0x8
     // Checksum 0xad8092bd, Offset: 0x428
     // Size: 0x22
     constructor() {
@@ -27,7 +27,7 @@ class class_e500a966 : cdoor {
     }
 
     // Namespace namespace_e500a966/namespace_23507db6
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x9ec7d900, Offset: 0x478
     // Size: 0x52
     function init(var_82b05767, s_instance) {
@@ -47,7 +47,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace windows/namespace_23507db6
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x6a8cd357, Offset: 0x1b0
 // Size: 0x20
 function private preinit() {
@@ -57,7 +57,7 @@ function private preinit() {
 }
 
 // Namespace windows/namespace_23507db6
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7c38e691, Offset: 0x1d8
 // Size: 0x6e
 function init_window() {
@@ -70,7 +70,7 @@ function init_window() {
 }
 
 // Namespace windows/namespace_23507db6
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x8adf8516, Offset: 0x250
 // Size: 0x1ce
 function private postinit() {

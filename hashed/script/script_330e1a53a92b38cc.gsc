@@ -8,7 +8,7 @@
 class cmp_revive_prompt : cluielem {
 
     // Namespace cmp_revive_prompt/mp_revive_prompt
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x2c85d256, Offset: 0x588
     // Size: 0x24
     function open(localclientnum) {
@@ -16,7 +16,7 @@ class cmp_revive_prompt : cluielem {
     }
 
     // Namespace cmp_revive_prompt/mp_revive_prompt
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x2928ded9, Offset: 0x5b8
     // Size: 0x30
     function set_clientnum(localclientnum, value) {
@@ -24,7 +24,7 @@ class cmp_revive_prompt : cluielem {
     }
 
     // Namespace cmp_revive_prompt/mp_revive_prompt
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x10c0b6be, Offset: 0x628
     // Size: 0x30
     function set_reviveprogress(localclientnum, value) {
@@ -32,7 +32,7 @@ class cmp_revive_prompt : cluielem {
     }
 
     // Namespace cmp_revive_prompt/mp_revive_prompt
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0xf5e69579, Offset: 0x4d0
     // Size: 0x1c
     function register_clientside() {
@@ -40,7 +40,7 @@ class cmp_revive_prompt : cluielem {
     }
 
     // Namespace cmp_revive_prompt/mp_revive_prompt
-    // Params 4, eflags: 0x0
+    // Params 4, eflags: 0x2 linked
     // Checksum 0xedc1a32f, Offset: 0x410
     // Size: 0xb4
     function setup_clientfields(var_c05c67e2, progresscallback, var_d65e5a18, *var_f228b5fa) {
@@ -51,7 +51,7 @@ class cmp_revive_prompt : cluielem {
     }
 
     // Namespace cmp_revive_prompt/mp_revive_prompt
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xa82bff24, Offset: 0x5f0
     // Size: 0x30
     function set_progress(localclientnum, value) {
@@ -59,7 +59,7 @@ class cmp_revive_prompt : cluielem {
     }
 
     // Namespace cmp_revive_prompt/mp_revive_prompt
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x1cfb25e1, Offset: 0x4f8
     // Size: 0x88
     function function_fa582112(localclientnum) {
@@ -72,7 +72,7 @@ class cmp_revive_prompt : cluielem {
 }
 
 // Namespace mp_revive_prompt/mp_revive_prompt
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x5dccf323, Offset: 0x108
 // Size: 0x196
 function register(var_c05c67e2, progresscallback, var_d65e5a18, var_f228b5fa) {

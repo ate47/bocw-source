@@ -64,7 +64,7 @@ class class_1bec696c : cluielem {
     }
 
     // Namespace namespace_1bec696c/doa_bannerelement
-    // Params b, eflags: 0x0
+    // Params 11, eflags: 0x0
     // Checksum 0xa7fe1ed2, Offset: 0x8c8
     // Size: 0x22c
     function setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, *textcallback, horizontal_alignmentcallback, var_766e2bbb) {

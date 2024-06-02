@@ -25,7 +25,7 @@ function autoexec __init__() {
 }
 
 // Namespace item_world_util/item_world_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf63ffd28, Offset: 0x230
 // Size: 0x54c
 function function_3531b9ba(scorestreak) {

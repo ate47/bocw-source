@@ -44,7 +44,7 @@ function on_prematch_end(func, obj) {
 }
 
 // Namespace callback/callbacks
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x878d8a9f, Offset: 0x1d0
 // Size: 0x6c
 function function_c11071a8(func, obj) {

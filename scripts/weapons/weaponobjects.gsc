@@ -1346,7 +1346,7 @@ function function_d5d6b91(params) {
 }
 
 // Namespace weaponobjects/weaponobjects
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4bb5cefe, Offset: 0x48d0
 // Size: 0x108
 function watchweaponobjectspawn(notify_type, endonnotify = undefined) {
@@ -2860,7 +2860,7 @@ function getwatcherforweapon(weapon) {
 }
 
 // Namespace weaponobjects/weaponobjects
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xd9509cfe, Offset: 0x9448
 // Size: 0xf4
 function destroy_other_teams_supplemental_watcher_objects(attacker, weapon, radius) {
@@ -2923,7 +2923,7 @@ function watch_supplemental_object_death() {
 }
 
 // Namespace weaponobjects/weaponobjects
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xae8fa1e7, Offset: 0x9780
 // Size: 0x8c
 function function_d9c08e94(var_2f190eaf, var_46f3f2d3) {

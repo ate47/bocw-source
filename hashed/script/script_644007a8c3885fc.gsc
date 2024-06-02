@@ -21,7 +21,7 @@ function autoexec __init() {
 }
 
 // Namespace namespace_1c7b37c6/namespace_1c7b37c6
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0xf8
 // Size: 0x4
 function private preinit() {
@@ -29,7 +29,7 @@ function private preinit() {
 }
 
 // Namespace namespace_1c7b37c6/namespace_1c7b37c6
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x48a48c64, Offset: 0x108
 // Size: 0x34
 function item_remover(func1, param1) {
@@ -42,7 +42,7 @@ function item_remover(func1, param1) {
 }
 
 // Namespace namespace_1c7b37c6/namespace_1c7b37c6
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xd980b600, Offset: 0x148
 // Size: 0x4a
 function item_replacer(func1, list1, list2) {
@@ -55,7 +55,7 @@ function item_replacer(func1, list1, list2) {
 }
 
 // Namespace namespace_1c7b37c6/namespace_1c7b37c6
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x25249d8e, Offset: 0x1a0
 // Size: 0x4e
 function function_41453b43() {

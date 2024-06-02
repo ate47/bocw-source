@@ -55,7 +55,7 @@ function is_active() {
 }
 
 // Namespace zm_trial_close_quarters/zm_trial_close_quarters
-// Params d, eflags: 0x4
+// Params 13, eflags: 0x4
 // Checksum 0x3e5ed2f0, Offset: 0x240
 // Size: 0x122
 function private range_check(inflictor, attacker, damage, *flags, *meansofdeath, *weapon, *var_fd90b0bb, *vpoint, *vdir, *shitloc, *psoffsettime, *boneindex, *surfacetype) {

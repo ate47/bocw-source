@@ -22,7 +22,7 @@ function callback(event, params) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x84711f73, Offset: 0x190
 // Size: 0xb8
 function function_bea20a96(event, params) {
@@ -33,7 +33,7 @@ function function_bea20a96(event, params) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xfdebbb73, Offset: 0x250
 // Size: 0xd8
 function function_daed27e8(event, params) {
@@ -350,7 +350,7 @@ function on_player_damage(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x99de0736, Offset: 0x1068
 // Size: 0x3c
 function remove_on_player_damage(func, obj) {
@@ -382,7 +382,7 @@ function function_5fb139ea(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x66e15e3e, Offset: 0x1188
 // Size: 0x3c
 function function_14dae612(func, obj) {
@@ -430,7 +430,7 @@ function on_player_killed(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3360fb50, Offset: 0x1338
 // Size: 0x3c
 function function_c046382d(func, obj) {
@@ -486,7 +486,7 @@ function on_ai_killed(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x27ddaf, Offset: 0x1530
 // Size: 0x3c
 function remove_on_ai_killed(func, obj) {
@@ -510,7 +510,7 @@ function remove_on_actor_killed(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf89c1362, Offset: 0x1608
 // Size: 0x3c
 function function_30c3f95d(func, obj) {
@@ -590,7 +590,7 @@ function on_ai_spawned(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x12917f27, Offset: 0x18d8
 // Size: 0x3c
 function remove_on_ai_spawned(func, obj) {
@@ -662,7 +662,7 @@ function remove_on_vehicle_damage(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x4005a1c5, Offset: 0x1b60
 // Size: 0x3c
 function on_downed(func, obj) {
@@ -726,7 +726,7 @@ function on_revived(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd9db20a6, Offset: 0x1da0
 // Size: 0x3c
 function on_mission_failed(func, obj) {
@@ -734,7 +734,7 @@ function on_mission_failed(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xbf3d6f58, Offset: 0x1de8
 // Size: 0x3c
 function on_challenge_complete(func, obj) {
@@ -782,7 +782,7 @@ function on_grenade_fired(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x17659f3f, Offset: 0x1f98
 // Size: 0x3c
 function remove_on_grenade_fired(func, obj) {
@@ -982,7 +982,7 @@ function function_94eab4fb(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xa345db08, Offset: 0x26b0
 // Size: 0x3c
 function on_menu_response(func, obj) {
@@ -998,7 +998,7 @@ function function_96bbd5dc(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xfbed6dc7, Offset: 0x2740
 // Size: 0x3c
 function on_item_pickup(func, obj) {
@@ -1022,7 +1022,7 @@ function on_drop_inventory(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xab3bdd95, Offset: 0x2818
 // Size: 0x3c
 function on_item_use(func, obj) {
@@ -1030,7 +1030,7 @@ function on_item_use(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x8508ecb8, Offset: 0x2860
 // Size: 0x3c
 function on_stash_open(func, obj) {
@@ -1038,7 +1038,7 @@ function on_stash_open(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xe44c81e5, Offset: 0x28a8
 // Size: 0x3c
 function on_character_unlock(func, obj) {
@@ -1182,7 +1182,7 @@ function event_handler[level_finalizeinit] codecallback_finalizeinitialization(*
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xe5b4af73, Offset: 0x2dc8
 // Size: 0x40
 function add_weapon_damage(weapontype, callback) {

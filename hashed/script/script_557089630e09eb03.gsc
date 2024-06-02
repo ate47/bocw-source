@@ -48,7 +48,7 @@ class class_b6739d61 : cluielem {
     }
 
     // Namespace namespace_b6739d61/onslaught_hud
-    // Params a, eflags: 0x0
+    // Params 10, eflags: 0x0
     // Checksum 0x804e02c2, Offset: 0x618
     // Size: 0x1fc
     function setup_clientfields(*var_ef8933e3, *var_61963aa5, var_964ac54, *var_a584bc49, var_52a170c, var_4e7bf429, var_9a88505e, var_e805c474, var_f1a2774e, var_c22b2a20) {

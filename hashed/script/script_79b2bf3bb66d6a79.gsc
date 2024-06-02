@@ -5,7 +5,7 @@
 #using scripts\core_common\audio_shared.csc;
 #using scripts\core_common\struct.csc;
 #using scripts\core_common\math_shared.csc;
-#using script_65fbfb5ecb1f899e;
+#using scripts\core_common\easing.csc;
 #using scripts\core_common\callbacks_shared.csc;
 #using script_6fb84768f1f09fe;
 #using scripts\core_common\util_shared.csc;

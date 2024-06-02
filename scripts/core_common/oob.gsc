@@ -709,7 +709,7 @@ function private function_20431d45(var_952a24b5) {
 }
 
 // Namespace oob/oob
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x108e6195, Offset: 0x28e8
 // Size: 0x70
 function function_93bd17f6(id, time) {
@@ -722,7 +722,7 @@ function function_93bd17f6(id, time) {
 }
 
 // Namespace oob/oob
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf5d5c60, Offset: 0x2960
 // Size: 0x44
 function function_e2d18c01(id) {

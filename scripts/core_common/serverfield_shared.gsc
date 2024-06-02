@@ -10,7 +10,7 @@ function register(str_name, n_version, n_bits, str_type, func_callback) {
 }
 
 // Namespace serverfield/serverfield_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4e930374, Offset: 0xd8
 // Size: 0x22
 function get(field_name) {

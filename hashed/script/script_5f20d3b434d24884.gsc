@@ -294,7 +294,7 @@ class class_38f05ef0 {
     }
 
     // Namespace namespace_38f05ef0/namespace_dfc652ee
-    // Params a, eflags: 0x2 linked
+    // Params 10, eflags: 0x2 linked
     // Checksum 0xff036b2f, Offset: 0x2230
     // Size: 0x142
     function init(var_49d95ac1, variant, var_44dbff18, rarity, scale, type, timeout, angles = (0, 0, 70), data = 0, entries = 1) {

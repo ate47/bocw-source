@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_75da5547b1822294;
+#using scripts\core_common\territory_util.gsc;
 #using script_7d712f77ab8d0c16;
 #using script_335d0650ed05d36d;
 #using script_44b0b8420eabacad;

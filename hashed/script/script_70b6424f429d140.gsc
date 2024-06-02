@@ -12,7 +12,7 @@
 #using scripts\core_common\lui_shared.gsc;
 #using scripts\cp_common\dialogue.gsc;
 #using script_37f9ff47f340fbe8;
-#using script_6eea75edd4d830a;
+#using scripts\core_common\easing.gsc;
 #using scripts\cp_common\skipto.gsc;
 #using scripts\core_common\vehicle_shared.gsc;
 #using scripts\core_common\vehicle_ai_shared.gsc;

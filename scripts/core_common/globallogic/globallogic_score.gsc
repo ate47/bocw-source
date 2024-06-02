@@ -814,7 +814,7 @@ function register_kill_callback(weapon, callback, var_358571b4) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xfbf558d2, Offset: 0x3800
 // Size: 0x82
 function function_a458dbe1(status_effect_name, callback) {
@@ -828,7 +828,7 @@ function function_a458dbe1(status_effect_name, callback) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xf503564c, Offset: 0x3890
 // Size: 0x82
 function function_69c6cfcc(status_effect_name, callback) {
@@ -842,7 +842,7 @@ function function_69c6cfcc(status_effect_name, callback) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xcc60da68, Offset: 0x3920
 // Size: 0x4a
 function function_86f90713(weapon, callback) {

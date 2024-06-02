@@ -12,7 +12,7 @@ class class_51e5626e : cluielem {
     var var_d5213cbb;
 
     // Namespace namespace_51e5626e/sr_message_box
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x128c7998, Offset: 0x258
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -20,7 +20,7 @@ class class_51e5626e : cluielem {
     }
 
     // Namespace namespace_51e5626e/sr_message_box
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x2666162d, Offset: 0x2a0
     // Size: 0x24
     function close(player) {
@@ -28,7 +28,7 @@ class class_51e5626e : cluielem {
     }
 
     // Namespace namespace_51e5626e/sr_message_box
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x1de1202e, Offset: 0x2d0
     // Size: 0x44
     function function_7a690474(player, value) {
@@ -36,7 +36,7 @@ class class_51e5626e : cluielem {
     }
 
     // Namespace namespace_51e5626e/sr_message_box
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xe9984f38, Offset: 0x208
     // Size: 0x44
     function setup_clientfields() {
@@ -47,7 +47,7 @@ class class_51e5626e : cluielem {
 }
 
 // Namespace sr_message_box/sr_message_box
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2beba907, Offset: 0xe8
 // Size: 0x34
 function register() {
@@ -57,7 +57,7 @@ function register() {
 }
 
 // Namespace sr_message_box/sr_message_box
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x40d59cb0, Offset: 0x128
 // Size: 0x38
 function open(player, flags = 0) {
@@ -65,7 +65,7 @@ function open(player, flags = 0) {
 }
 
 // Namespace sr_message_box/sr_message_box
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x6221b1b7, Offset: 0x168
 // Size: 0x1c
 function close(player) {
@@ -73,7 +73,7 @@ function close(player) {
 }
 
 // Namespace sr_message_box/sr_message_box
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd7920db2, Offset: 0x190
 // Size: 0x1a
 function is_open(player) {
@@ -81,7 +81,7 @@ function is_open(player) {
 }
 
 // Namespace sr_message_box/sr_message_box
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3c38d43a, Offset: 0x1b8
 // Size: 0x28
 function function_7a690474(player, value) {

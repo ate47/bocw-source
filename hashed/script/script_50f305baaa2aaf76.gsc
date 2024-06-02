@@ -20,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace trophy_system/trophy_system_spy
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xf063e7b8, Offset: 0x1c8
 // Size: 0x1a4
 function private preinit() {
@@ -39,7 +39,7 @@ function private preinit() {
 }
 
 // Namespace trophy_system/trophy_system_spy
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4d196d8d, Offset: 0x378
 // Size: 0x90
 function function_ccfcde75(trophy, grenade) {
@@ -51,7 +51,7 @@ function function_ccfcde75(trophy, grenade) {
 }
 
 // Namespace trophy_system/trophy_system_spy
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5d632610, Offset: 0x410
 // Size: 0x132
 function createtrophysystemwatcher(watcher) {
@@ -74,7 +74,7 @@ function createtrophysystemwatcher(watcher) {
 }
 
 // Namespace trophy_system/trophy_system_spy
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa576433e, Offset: 0x550
 // Size: 0x214
 function ontrophysystemspawn(watcher, player) {

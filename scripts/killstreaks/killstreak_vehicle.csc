@@ -9,7 +9,7 @@
 #namespace killstreak_vehicle;
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xbb23dfe8, Offset: 0x120
 // Size: 0x2c
 function init() {

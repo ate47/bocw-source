@@ -240,7 +240,7 @@ function function_9c5853f5(players, var_22b78352, var_89bd5332) {
 }
 
 // Namespace spectating/spectating
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xc399c4a2, Offset: 0xd90
 // Size: 0x1b6
 function function_327e6270(players, var_22b78352, var_89bd5332) {

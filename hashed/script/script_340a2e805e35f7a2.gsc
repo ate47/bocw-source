@@ -6,7 +6,7 @@
 #using scripts\core_common\item_drop.gsc;
 #using script_40fc784c60f9fa7b;
 #using scripts\core_common\flag_shared.gsc;
-#using script_75da5547b1822294;
+#using scripts\core_common\territory_util.gsc;
 #using scripts\core_common\territory.gsc;
 #using scripts\core_common\struct.gsc;
 
@@ -1357,7 +1357,7 @@ function setup_groups() {
 }
 
 // Namespace namespace_65181344/namespace_65181344
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x9f53f8f8, Offset: 0x66f8
 // Size: 0x546
 function function_5eada592(scriptbundlename, linkto = 1) {

@@ -617,7 +617,7 @@ function private function_c3f8fae7(selected, var_834d338d) {
 // Size: 0x2e6
 function function_85303021(var_8ced85ea) {
     switch (var_8ced85ea) {
-    case #"hash_de0a71f1b8beaa7":
+    case #"post_takedown":
         a_ents = level function_f2f0bdcc("cp_nic_revolucion", 1, "cp_takedown", 1, "cp_nam_armada", 0);
         break;
     case #"post_armada":
@@ -1096,7 +1096,7 @@ function function_cd10e6da(var_f587343a) {
 // Size: 0xae
 function function_9b006527(var_f587343a) {
     switch (isdefined(level.var_f5552371) ? level.var_f5552371 : "") {
-    case #"hash_de0a71f1b8beaa7":
+    case #"post_takedown":
         break;
     case #"post_armada":
         break;

@@ -121,7 +121,7 @@ function respawn_spectators_and_freeze_players() {
 }
 
 // Namespace zm_game_module/zm_game_module
-// Params a, eflags: 0x0
+// Params 10, eflags: 0x0
 // Checksum 0x4cb9d060, Offset: 0x660
 // Size: 0xc8
 function damage_callback_no_pvp_damage(*einflictor, eattacker, idamage, *idflags, *smeansofdeath, *eapon, *vpoint, *vdir, *shitloc, *psoffsettime) {

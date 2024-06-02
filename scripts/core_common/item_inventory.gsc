@@ -3341,7 +3341,7 @@ function function_471897e2() {
 }
 
 // Namespace item_inventory/item_inventory
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc5bb8ad4, Offset: 0xe988
 // Size: 0x102
 function function_7fe4ce88(item_name) {

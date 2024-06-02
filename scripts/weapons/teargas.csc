@@ -10,7 +10,7 @@
 #namespace namespace_8a3384f2;
 
 // Namespace namespace_8a3384f2/namespace_8a3384f2
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe6492820, Offset: 0xf0
 // Size: 0x4c
 function init_shared() {
@@ -18,7 +18,7 @@ function init_shared() {
 }
 
 // Namespace namespace_8a3384f2/namespace_8a3384f2
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x11147709, Offset: 0x148
 // Size: 0x1fe
 function function_9810ebc(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -57,7 +57,7 @@ function function_9810ebc(localclientnum, *oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace namespace_8a3384f2/namespace_8a3384f2
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0x7a017367, Offset: 0x350
 // Size: 0xa4
 function function_3b08d399(*currenttime, elapsedtime, *localclientnum, duration, stagefrom, stageto, constant, postfx) {

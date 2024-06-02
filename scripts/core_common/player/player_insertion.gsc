@@ -209,7 +209,7 @@ function function_948ac812(insertion, freezecontrols) {
 }
 
 // Namespace player_insertion/player_insertion
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x47f09c61, Offset: 0x16f0
 // Size: 0x31c
 function function_8dcd8623() {

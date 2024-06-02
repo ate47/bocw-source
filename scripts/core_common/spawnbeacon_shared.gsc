@@ -17,7 +17,7 @@
 #namespace spawn_beacon;
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x95d0fca7, Offset: 0x260
 // Size: 0x26c
 function init_shared() {
@@ -56,7 +56,7 @@ function init_shared() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3b5c1f2e, Offset: 0x4d8
 // Size: 0x40
 function function_1c601b99() {
@@ -66,7 +66,7 @@ function function_1c601b99() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfc221c30, Offset: 0x520
 // Size: 0x54
 function function_bff5c062(spawnbeacon, *attackingplayer) {
@@ -124,7 +124,7 @@ function function_6b437265(team) {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7e5446ff, Offset: 0x730
 // Size: 0x62
 function function_cfabb62c(watcher) {
@@ -135,7 +135,7 @@ function function_cfabb62c(watcher) {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x9a6c40c, Offset: 0x7a0
 // Size: 0x3c
 function function_f9d3fff8(*player) {
@@ -145,7 +145,7 @@ function function_f9d3fff8(*player) {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x453babcf, Offset: 0x7e8
 // Size: 0x34
 function function_13ac856e() {
@@ -155,7 +155,7 @@ function function_13ac856e() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb9a5136b, Offset: 0x828
 // Size: 0x27c
 function function_f8930fa1(time) {
@@ -189,7 +189,7 @@ function function_f8930fa1(time) {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3d4d91bc, Offset: 0xab0
 // Size: 0x284
 function beacon_spawned(watcher, owner) {
@@ -229,7 +229,7 @@ function beacon_spawned(watcher, owner) {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd7348179, Offset: 0xd40
 // Size: 0xf4
 function function_d7cd849c(soundbank, team, excludeplayer) {
@@ -248,7 +248,7 @@ function function_d7cd849c(soundbank, team, excludeplayer) {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8190ec54, Offset: 0xe40
 // Size: 0x5c
 function setupclientfields() {
@@ -257,7 +257,7 @@ function setupclientfields() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf7a9d920, Offset: 0xea8
 // Size: 0x4c
 function function_45a43bd6() {
@@ -268,7 +268,7 @@ function function_45a43bd6() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x225c4a45, Offset: 0xf00
 // Size: 0xcc
 function private setupcallbacks() {
@@ -280,7 +280,7 @@ function private setupcallbacks() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0xf97ad3b7, Offset: 0xfd8
 // Size: 0x54
 function private function_9ede386f(slot) {
@@ -293,7 +293,7 @@ function private function_9ede386f(slot) {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x15912d16, Offset: 0x1038
 // Size: 0x154
 function function_8892377a() {
@@ -313,7 +313,7 @@ function function_8892377a() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x9e771051, Offset: 0x1198
 // Size: 0x1c
 function on_loadout() {
@@ -321,7 +321,7 @@ function on_loadout() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa0c3feda, Offset: 0x11c0
 // Size: 0x48
 function on_player_spawned() {
@@ -333,7 +333,7 @@ function on_player_spawned() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa502cc22, Offset: 0x1210
 // Size: 0x196
 function function_41a037e6() {
@@ -353,7 +353,7 @@ function function_41a037e6() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa98672c8, Offset: 0x13b0
 // Size: 0x196
 function updatethreat() {
@@ -377,7 +377,7 @@ function updatethreat() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x30121772, Offset: 0x1550
 // Size: 0x92
 function getnewspawnbeaconspawnlist() {
@@ -390,7 +390,7 @@ function getnewspawnbeaconspawnlist() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xc698be08, Offset: 0x15f0
 // Size: 0x74
 function freespawnbeaconspawnlist(spawnlistname) {
@@ -401,7 +401,7 @@ function freespawnbeaconspawnlist(spawnlistname) {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x80e5d8, Offset: 0x1670
 // Size: 0x66
 function gadget_spawnbeacon_on(*slot, playerweapon) {
@@ -410,7 +410,7 @@ function gadget_spawnbeacon_on(*slot, playerweapon) {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9c740dd5, Offset: 0x16e0
 // Size: 0x1e
 function gadget_spawnbeacon_off(*slot, *weapon) {
@@ -418,7 +418,7 @@ function gadget_spawnbeacon_off(*slot, *weapon) {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x576dd05, Offset: 0x1708
 // Size: 0xac
 function on_player_killed(s_params) {
@@ -432,7 +432,7 @@ function on_player_killed(s_params) {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x95d73bf5, Offset: 0x17c0
 // Size: 0x12
 function getobjectiveid() {
@@ -440,7 +440,7 @@ function getobjectiveid() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x16322c8b, Offset: 0x17e0
 // Size: 0x44
 function deleteobjective(objectiveid) {
@@ -451,7 +451,7 @@ function deleteobjective(objectiveid) {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xb73e5587, Offset: 0x1830
 // Size: 0x15a
 function function_4d9f82ce() {
@@ -470,7 +470,7 @@ function function_4d9f82ce() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x43ca3c20, Offset: 0x1998
 // Size: 0x1bc
 function private function_e46fd633() {
@@ -491,7 +491,7 @@ function private function_e46fd633() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xca8339bd, Offset: 0x1b60
 // Size: 0x964
 function function_a9ff3efb(var_d3213f00) {
@@ -601,7 +601,7 @@ function function_a9ff3efb(var_d3213f00) {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2405362c, Offset: 0x24d0
 // Size: 0x1e
 function getspawnbeaconspawns(*origin) {
@@ -610,7 +610,7 @@ function getspawnbeaconspawns(*origin) {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2619e574, Offset: 0x24f8
 // Size: 0x19e
 function createspawngroupforspawnbeacon(associatedspawnbeacon, spawnstoadd) {
@@ -664,7 +664,7 @@ function function_425d8006() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2d6adf9b, Offset: 0x2890
 // Size: 0x134
 function watchfordeath() {
@@ -685,7 +685,7 @@ function watchfordeath() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd386961c, Offset: 0x29d0
 // Size: 0x168
 function watchfordamage() {
@@ -708,7 +708,7 @@ function watchfordamage() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 13, eflags: 0x2 linked
+// Params 13, eflags: 0x0
 // Checksum 0x4a6af65c, Offset: 0x2b40
 // Size: 0x10a
 function function_40c032a1(*einflictor, attacker, idamage, idflags, smeansofdeath, weapon, *var_fd90b0bb, *vpoint, *vdir, *shitloc, *psoffsettime, *iboneindex, *imodelindex) {
@@ -722,7 +722,7 @@ function function_40c032a1(*einflictor, attacker, idamage, idflags, smeansofdeat
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xd8c0785f, Offset: 0x2c58
 // Size: 0x34
 function function_438ca4e0() {
@@ -732,7 +732,7 @@ function function_438ca4e0() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x2bd4b16, Offset: 0x2c98
 // Size: 0x38
 function function_9c87725b() {
@@ -742,7 +742,7 @@ function function_9c87725b() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7ada044f, Offset: 0x2cd8
 // Size: 0x4c
 function function_639cb9da() {
@@ -755,7 +755,7 @@ function function_639cb9da() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x78c1c75d, Offset: 0x2d30
 // Size: 0xcc
 function function_b3608e1(spawnbeacon) {
@@ -767,7 +767,7 @@ function function_b3608e1(spawnbeacon) {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x125a709e, Offset: 0x2e08
 // Size: 0x840
 function retreatedstartmelee(var_a820f9, spawns) {
@@ -859,7 +859,7 @@ function retreatedstartmelee(var_a820f9, spawns) {
 #/
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x1c992a8d, Offset: 0x3690
 // Size: 0x80
 function function_9aafb7bb(origin, angles, player) {
@@ -874,7 +874,7 @@ function function_9aafb7bb(origin, angles, player) {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8ebbf66f, Offset: 0x3718
 // Size: 0xa4
 function onplacespawnbeacon(spawnbeacon) {
@@ -924,7 +924,7 @@ function function_e9fea0ea() {
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x3958
 // Size: 0x4
 function function_68a6ec15() {

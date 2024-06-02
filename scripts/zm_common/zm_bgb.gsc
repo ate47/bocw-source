@@ -1281,7 +1281,7 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
 }
 
 // Namespace bgb/zm_bgb
-// Params 10, eflags: 0x2 linked
+// Params 16, eflags: 0x2 linked
 // Checksum 0xd0cba4a2, Offset: 0x4dc8
 // Size: 0x16e
 function vehicle_damage_override(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, damagefromunderneath, modelindex, partname, vsurfacenormal) {

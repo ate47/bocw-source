@@ -218,7 +218,7 @@ function getrole() {
 }
 
 // Namespace rank/rank_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x94f25a60, Offset: 0x1030
 // Size: 0xce
 function getscoreinfoposition(type) {
@@ -293,7 +293,7 @@ function getcombatefficiencyevent(type) {
 }
 
 // Namespace rank/rank_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x9204461e, Offset: 0x1350
 // Size: 0x84
 function function_f7b5d9fa(type) {
@@ -342,7 +342,7 @@ function getrankxp() {
 }
 
 // Namespace rank/rank_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x17955094, Offset: 0x1510
 // Size: 0x84
 function function_5b197def(var_9169ac47) {
@@ -521,7 +521,7 @@ function getitemindex(refstring) {
 }
 
 // Namespace rank/rank_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xae1f6852, Offset: 0x2050
 // Size: 0x12
 function endgameupdate() {
@@ -538,7 +538,7 @@ function getspm() {
 }
 
 // Namespace rank/rank_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xeedf1530, Offset: 0x20c0
 // Size: 0x62
 function function_bcb5e246(type) {

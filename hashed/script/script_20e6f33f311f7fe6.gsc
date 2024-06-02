@@ -23,7 +23,7 @@ function autoexec __init__() {
     case #"fireteam_koth":
         function_1ed4cf79();
         break;
-    case #"hash_1f65d49bd46739db":
+    case #"fireteam_satlink":
         function_11109d50();
         break;
     case #"zsurvival":

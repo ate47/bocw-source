@@ -571,7 +571,7 @@ function private function_9974f649(*eventstruct) {
     }
     foreach (ai in self.instance.a_ai) {
         if (isalive(ai) && ai !== self) {
-            if (is_true(ai.var_a0a8f386)) {
+            if (is_true(ai.hastwin)) {
                 if (!is_true(ai.var_20841367)) {
                     ai.var_20841367 = 1;
                     ai callback::function_d8abfc3d(#"on_ai_killed", &function_9974f649);
@@ -579,11 +579,11 @@ function private function_9974f649(*eventstruct) {
                     ai thread namespace_2c949ef8::function_1c491c2b();
                     println("<unknown string>");
                 }
-                if (isalive(ai.var_42fce69b) && !is_true(ai.var_42fce69b.var_20841367)) {
-                    ai.var_42fce69b.var_20841367 = 1;
-                    ai.var_42fce69b callback::function_d8abfc3d(#"on_ai_killed", &function_9974f649);
-                    ai.var_42fce69b callback::function_d8abfc3d(#"hash_4afe635f36531659", &function_92184323);
-                    ai.var_42fce69b thread namespace_2c949ef8::function_1c491c2b();
+                if (isalive(ai.twin) && !is_true(ai.twin.var_20841367)) {
+                    ai.twin.var_20841367 = 1;
+                    ai.twin callback::function_d8abfc3d(#"on_ai_killed", &function_9974f649);
+                    ai.twin callback::function_d8abfc3d(#"hash_4afe635f36531659", &function_92184323);
+                    ai.twin thread namespace_2c949ef8::function_1c491c2b();
                     println("<unknown string>");
                 }
             }

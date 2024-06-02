@@ -65,7 +65,7 @@ function play_killstreak_ready_dialog(killstreaktype, taacomwaittime) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x43c028f2, Offset: 0x398
 // Size: 0x7c
 function play_taacom_dialog_response(dialogkey, killstreaktype, killstreakid, pilotindex) {
@@ -148,7 +148,7 @@ function function_248fc9f7(dialogkey, team, exclusions, objectivekey, killstreak
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd7c98a5e, Offset: 0x6d8
 // Size: 0x3c
 function play_killstreak_firewall_being_hacked_dialog(killstreaktype, killstreakid) {
@@ -158,7 +158,7 @@ function play_killstreak_firewall_being_hacked_dialog(killstreaktype, killstreak
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x59daf57f, Offset: 0x720
 // Size: 0x3c
 function play_killstreak_firewall_hacked_dialog(killstreaktype, killstreakid) {
@@ -168,7 +168,7 @@ function play_killstreak_firewall_hacked_dialog(killstreaktype, killstreakid) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x9032971c, Offset: 0x768
 // Size: 0x3c
 function play_killstreak_being_hacked_dialog(killstreaktype, killstreakid) {
@@ -178,7 +178,7 @@ function play_killstreak_being_hacked_dialog(killstreaktype, killstreakid) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xbda802d5, Offset: 0x7b0
 // Size: 0x44
 function play_killstreak_hacked_dialog(killstreaktype, killstreakid, hacker) {
@@ -198,7 +198,7 @@ function play_killstreak_start_dialog(hardpointtype, team, killstreak_id) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x83282755, Offset: 0x850
 // Size: 0x50
 function play_pilot_dialog(dialogkey, killstreaktype, killstreakid, pilotindex) {

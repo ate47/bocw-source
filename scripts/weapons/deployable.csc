@@ -28,7 +28,7 @@ function private preinit() {
 }
 
 // Namespace deployable/deployable
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x57902873, Offset: 0x1d0
 // Size: 0xa2
 function register_deployable(weapon, var_7ec218c6) {

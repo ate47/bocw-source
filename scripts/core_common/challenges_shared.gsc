@@ -41,7 +41,7 @@ function private preinit() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x578
 // Size: 0x4
 function init_shared() {
@@ -124,7 +124,7 @@ function destroyedtacticalinsert() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x1cb6f6f0, Offset: 0x978
 // Size: 0x1d8
 function addflyswatterstat(weapon, aircraft) {
@@ -223,7 +223,7 @@ function dochallengecallback(var_838fbbf5, data) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x31619e61, Offset: 0xea0
 // Size: 0x34
 function on_player_connect() {
@@ -378,7 +378,7 @@ function flakjacketprotected(weapon, attacker) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf82b5d08, Offset: 0x1818
 // Size: 0x106
 function earnedkillstreak() {
@@ -399,7 +399,7 @@ function earnedkillstreak() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd5ae4e96, Offset: 0x1928
 // Size: 0x158
 function ishighestscoringplayer(player) {
@@ -484,7 +484,7 @@ function watchformantle() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x78ce1ed9, Offset: 0x1ce8
 // Size: 0x2c
 function disarmedhackedcarepackage() {
@@ -503,7 +503,7 @@ function destroyed_car() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xff7b775c, Offset: 0x1d80
 // Size: 0xb4
 function killednemesis() {
@@ -518,7 +518,7 @@ function killednemesis() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xddd266be, Offset: 0x1e40
 // Size: 0x2c
 function killwhiledamagingwithhpm() {
@@ -526,7 +526,7 @@ function killwhiledamagingwithhpm() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x409b8dfc, Offset: 0x1e78
 // Size: 0x2c
 function longdistancehatchetkill() {
@@ -534,7 +534,7 @@ function longdistancehatchetkill() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x28c5b221, Offset: 0x1eb0
 // Size: 0x2c
 function blockedsatellite() {
@@ -597,7 +597,7 @@ function last_man_defeat_3_enemies(team) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x38e52dff, Offset: 0x2190
 // Size: 0x11c
 function roundend(winner) {
@@ -752,7 +752,7 @@ function iswinner(winner) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xa1144075, Offset: 0x2e60
 // Size: 0x1dc
 function gameend(winner, *var_c1e98979) {
@@ -937,7 +937,7 @@ function getfinalkill(player) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xfa23407d, Offset: 0x3aa0
 // Size: 0xdc
 function destroy_killstreak_vehicle(weapon, vehicle, hatchet_kill_stat) {
@@ -952,7 +952,7 @@ function destroy_killstreak_vehicle(weapon, vehicle, hatchet_kill_stat) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x67fd33, Offset: 0x3b88
 // Size: 0x114
 function capturedcrate(owner) {
@@ -1267,7 +1267,7 @@ function destroyedexplosive(weapon) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe5e887d0, Offset: 0x5458
 // Size: 0x2c
 function assisted() {
@@ -1275,7 +1275,7 @@ function assisted() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x8b61e847, Offset: 0x5490
 // Size: 0xf4
 function earnedmicrowaveassistscore(score) {
@@ -1287,7 +1287,7 @@ function earnedmicrowaveassistscore(score) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf3e0162a, Offset: 0x5590
 // Size: 0xf4
 function earnedcuavassistscore(score) {
@@ -1299,7 +1299,7 @@ function earnedcuavassistscore(score) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5f6e33ab, Offset: 0x5690
 // Size: 0xf4
 function earneduavassistscore(score) {
@@ -1323,7 +1323,7 @@ function earnedsatelliteassistscore(score) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5f7b3e21, Offset: 0x5890
 // Size: 0xf4
 function earnedempassistscore(score) {
@@ -1414,7 +1414,7 @@ function challengegameend(data) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xe6984ee0, Offset: 0x5ce0
 // Size: 0x360
 function multikill(killcount, weapon) {
@@ -1534,7 +1534,7 @@ function controlzoneentirely(team) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8ee123ee, Offset: 0x62b0
 // Size: 0x2c
 function multi_lmg_smg_kill() {
@@ -1593,7 +1593,7 @@ function updatezonemultikills() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe554be35, Offset: 0x6550
 // Size: 0x2c
 function multi_rcbomb_kill() {
@@ -1601,7 +1601,7 @@ function multi_rcbomb_kill() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x31617067, Offset: 0x6588
 // Size: 0x2c
 function function_46754062() {
@@ -1609,7 +1609,7 @@ function function_46754062() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf527af22, Offset: 0x65c0
 // Size: 0x2c
 function multi_remotemissile_kill() {
@@ -1617,7 +1617,7 @@ function multi_remotemissile_kill() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xff403c2f, Offset: 0x65f8
 // Size: 0x2c
 function multi_mgl_kill() {
@@ -1649,7 +1649,7 @@ function bothbombsdetonatewithintime() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe2c1666d, Offset: 0x66d8
 // Size: 0xcc
 function calledincarepackage() {
@@ -1663,7 +1663,7 @@ function calledincarepackage() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x7168328c, Offset: 0x67b0
 // Size: 0xbc
 function destroyedhelicopter(attacker, weapon, damagetype, playercontrolled, vehicle) {
@@ -2227,7 +2227,7 @@ function playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, shit
 }
 
 // Namespace challenges/challenges_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xe7e8dab0, Offset: 0x8e78
 // Size: 0x70
 function function_ee74d44(data, bledout) {
@@ -2274,7 +2274,7 @@ function function_730144c6(data) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xb3bd7bf7, Offset: 0x90c8
 // Size: 0x148
 function function_c3b411f6(smeansofdeath) {
@@ -2299,7 +2299,7 @@ function function_c3b411f6(smeansofdeath) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0x65b57b71, Offset: 0x9218
 // Size: 0x1e0
 function function_cbfdab8f(einflictor, attacker, *idamage, smeansofdeath, weapon, shitloc, attackerstance, *bledout) {
@@ -2437,7 +2437,7 @@ function isheatwavestunned() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x32452456, Offset: 0x9a10
 // Size: 0x1fc
 function trophy_defense(origin, radius, trophy) {
@@ -2517,7 +2517,7 @@ function function_b3e4bd8(var_32220397, var_25e55131) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd36c2609, Offset: 0x9f30
 // Size: 0x184
 function function_4e40694d(var_104294f6, eventstruct) {
@@ -2553,7 +2553,7 @@ function function_4e40694d(var_104294f6, eventstruct) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x45dde16f, Offset: 0xa0c0
 // Size: 0x174
 function function_d43316bd(var_f737f85f, eventstruct) {
@@ -2596,7 +2596,7 @@ function function_38ad2427(var_b7b748b7, amount) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xf70bfac6, Offset: 0xa2c0
 // Size: 0x2cc
 function function_7f86a7b8(attacker, attackerweapon, meansofdeath) {
@@ -2624,7 +2624,7 @@ function function_7f86a7b8(attacker, attackerweapon, meansofdeath) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x51df5d95, Offset: 0xa598
 // Size: 0x10c
 function function_a66bed3e() {
@@ -2644,7 +2644,7 @@ function function_a66bed3e() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x89de3a8b, Offset: 0xa6b0
 // Size: 0x88
 function function_c9e4f73f(target_value, var_55b913da, var_6ccd331f) {

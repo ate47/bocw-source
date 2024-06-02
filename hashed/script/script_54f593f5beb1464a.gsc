@@ -17,7 +17,7 @@ function autoexec __init__() {
 }
 
 // Namespace item_world_fixup/item_world_fixup
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0x71971c09, Offset: 0xe8
 // Size: 0xbe
 function private function_59c1a869(&replacementarray, var_d1c21f6f, var_b06dd57e) {
@@ -36,7 +36,7 @@ function private function_59c1a869(&replacementarray, var_d1c21f6f, var_b06dd57e
 }
 
 // Namespace item_world_fixup/item_world_fixup
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0xff6ba27a, Offset: 0x1b0
 // Size: 0xde
 function private function_41015db1(&replacementarray, itemname, replacementitemname) {
@@ -95,7 +95,7 @@ function private function_bbc0b67f() {
 #/
 
 // Namespace item_world_fixup/item_world_fixup
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x16c0a045, Offset: 0x360
 // Size: 0x34
 function function_6991057(var_d1c21f6f, var_b06dd57e) {
@@ -103,7 +103,7 @@ function function_6991057(var_d1c21f6f, var_b06dd57e) {
 }
 
 // Namespace item_world_fixup/item_world_fixup
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x1af9a941, Offset: 0x3a0
 // Size: 0x34
 function add_item_replacement(itemname, replacementitemname) {
@@ -111,7 +111,7 @@ function add_item_replacement(itemname, replacementitemname) {
 }
 
 // Namespace item_world_fixup/item_world_fixup
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xff1f5341, Offset: 0x3e0
 // Size: 0x20e
 function add_spawn_point(origin, targetname, angles = (0, 0, 0)) {
@@ -134,7 +134,7 @@ function add_spawn_point(origin, targetname, angles = (0, 0, 0)) {
 }
 
 // Namespace item_world_fixup/item_world_fixup
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x39211ad8, Offset: 0x5f8
 // Size: 0x10e
 function function_e70fa91c(var_cf456610, var_2ab9d3bd, var_6647c284 = -1) {
@@ -166,7 +166,7 @@ function function_2749fcc3(var_89b7987e, var_cf456610, var_2ab9d3bd, var_6647c28
 }
 
 // Namespace item_world_fixup/item_world_fixup
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6883614e, Offset: 0x840
 // Size: 0x54
 function remove_item(itemname) {
@@ -178,7 +178,7 @@ function remove_item(itemname) {
 }
 
 // Namespace item_world_fixup/item_world_fixup
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x16715412, Offset: 0x8a0
 // Size: 0xe4
 function function_a997e342(origin, radius) {

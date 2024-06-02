@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace item_supply_drop/item_supply_drop
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xd82717c3, Offset: 0x1b0
 // Size: 0x164
 function private preinit() {
@@ -29,7 +29,7 @@ function private preinit() {
 }
 
 // Namespace item_supply_drop/item_supply_drop
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x738d45a8, Offset: 0x320
 // Size: 0x94
 function supply_drop_parachute(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -41,7 +41,7 @@ function supply_drop_parachute(*localclientnum, *oldval, newval, *bnewent, *bini
 }
 
 // Namespace item_supply_drop/item_supply_drop
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xee1fa469, Offset: 0x3c0
 // Size: 0x4c
 function function_81431153(localclientnum) {
@@ -52,7 +52,7 @@ function function_81431153(localclientnum) {
 }
 
 // Namespace item_supply_drop/item_supply_drop
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x85883ec6, Offset: 0x418
 // Size: 0xc4
 function supply_drop_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -68,7 +68,7 @@ function supply_drop_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap
 }
 
 // Namespace item_supply_drop/item_supply_drop
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x2383cb89, Offset: 0x4e8
 // Size: 0x15a
 function supply_drop_portal_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -92,7 +92,7 @@ function supply_drop_portal_fx(localclientnum, *oldval, newval, *bnewent, *binit
 }
 
 // Namespace item_supply_drop/item_supply_drop
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xbcc4e3e0, Offset: 0x650
 // Size: 0x84
 function supply_drop_vehicle_landed(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

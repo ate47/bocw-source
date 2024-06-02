@@ -84,7 +84,7 @@ function inc_stat(...) {
 }
 
 // Namespace match_record/match_record
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x7dd80681, Offset: 0x438
 // Size: 0x70
 function get_player_index() {

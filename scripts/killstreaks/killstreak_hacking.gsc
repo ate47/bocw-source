@@ -119,7 +119,7 @@ function get_hacked_timeout_duration_ms() {
 }
 
 // Namespace killstreak_hacking/killstreak_hacking
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xdc202ea0, Offset: 0x5d0
 // Size: 0x5a
 function set_vehicle_drivable_time_starting_now(killstreak, duration_ms = -1) {

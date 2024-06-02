@@ -550,9 +550,9 @@ function function_69fd73ba(target, range) {
     assert(isfloat(var_5f3e2817));
     var_39e18923 = abs(var_5f3e2817);
     while (isdefined(src) && isdefined(target)) {
-        var_99f43abf = function_7284a22a(src);
+        spt = function_7284a22a(src);
         var_727198c5 = function_7284a22a(target);
-        current_distance = distance(var_99f43abf, var_727198c5);
+        current_distance = distance(spt, var_727198c5);
         if (isfloat(var_9d415208)) {
             if (current_distance <= var_9d415208 && current_distance >= var_5f3e2817) {
                 return;
@@ -1128,7 +1128,7 @@ function dvar(dvar, value, callback) {
 }
 
 // Namespace snd/snd_utility
-// Params a, eflags: 0x6 linked
+// Params 10, eflags: 0x6 linked
 // Checksum 0x61875585, Offset: 0x3db8
 // Size: 0x206
 function private function_98a0f33(callbackfunc, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) {

@@ -391,13 +391,13 @@ function function_6dc5d407(alias, islooping, var_8b0894e2, var_887e31c1, fadein,
 // Params 5, eflags: 0x0
 // Checksum 0x4b064c45, Offset: 0x1728
 // Size: 0xb0
-function function_dda1d491(alias, var_8b0894e2, var_887e31c1, var_8389ee0a, var_9e8b9b15) {
+function function_dda1d491(alias, var_8b0894e2, var_887e31c1, time_min, time_max) {
     self endon(#"hash_1fdfe9a2ee5c7a64");
     self endon(#"hash_21cbaaf28d93437b");
     self endon(#"death");
     while (true) {
         function_6dc5d407(alias, 0, var_8b0894e2, var_887e31c1);
-        var_7f793265 = function_83328b67(var_8389ee0a, var_9e8b9b15);
+        var_7f793265 = function_83328b67(time_min, time_max);
         wait(var_7f793265);
     }
 }
@@ -630,15 +630,15 @@ function function_518f6be7() {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xf35ad5f4, Offset: 0x29e8
 // Size: 0xc4
-function function_e963e8e(var_8389ee0a, var_9e8b9b15, var_2eb6a1b0) {
+function function_e963e8e(time_min, time_max, var_2eb6a1b0) {
     values = [];
-    values[0] = var_8389ee0a;
+    values[0] = time_min;
     var_99adf0c9 = level.var_9c638f25[var_2eb6a1b0].size;
-    step = (var_9e8b9b15 - var_8389ee0a) / (var_99adf0c9 - 1);
+    step = (time_max - time_min) / (var_99adf0c9 - 1);
     for (i = 1; i < var_99adf0c9 - 1; i++) {
         values[i] = values[i - 1] + step;
     }
-    values[values.size] = var_9e8b9b15;
+    values[values.size] = time_max;
     return values;
 }
 

@@ -6,7 +6,7 @@
 #namespace easing;
 
 // Namespace easing/easing
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xedd3c79c, Offset: 0x120
 // Size: 0xa4
 function ease_dvar(dvar, var_c7ec7d60, value, time, ease_type, ease_in, ease_out, var_33ce6852) {
@@ -14,7 +14,7 @@ function ease_dvar(dvar, var_c7ec7d60, value, time, ease_type, ease_in, ease_out
 }
 
 // Namespace easing/easing
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xd0722e04, Offset: 0x1d0
 // Size: 0x18c
 function ease_origin(target, time, ease_type, axis, additive, ease_in, ease_out, var_33ce6852) {
@@ -60,7 +60,7 @@ function ease_angles(target, time, ease_type, axis, additive, ease_in, ease_out,
 }
 
 // Namespace easing/easing
-// Params 11, eflags: 0x42 linked
+// Params 11, eflags: 0x40
 // Checksum 0x9adf1b30, Offset: 0x500
 // Size: 0x4fe
 function function_d4a4a726(start_value, target_value, time, var_f71e2d8f, ease_type = #"linear", notifies, endons, ease_in, ease_out, var_33ce6852, ...) {

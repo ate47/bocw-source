@@ -641,7 +641,7 @@ function terrain_trace() {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x663eeca4, Offset: 0x2ed8
 // Size: 0x3d8
 function aircraft_dustkick(localclientnum) {
@@ -730,7 +730,7 @@ function play_targeting_sound(play, sound, handle) {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x711b2a5, Offset: 0x3340
 // Size: 0x3a
 function play_targeted_sound(play) {
@@ -738,7 +738,7 @@ function play_targeted_sound(play) {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6e89b202, Offset: 0x3388
 // Size: 0x3a
 function play_locked_sound(play) {
@@ -746,7 +746,7 @@ function play_locked_sound(play) {
 }
 
 // Namespace helicopter_sounds/helicopter_sounds_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa354c209, Offset: 0x33d0
 // Size: 0x3a
 function play_fired_sound(play) {

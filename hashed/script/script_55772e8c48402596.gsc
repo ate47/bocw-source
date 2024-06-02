@@ -8,7 +8,7 @@
 class class_51e5626e : cluielem {
 
     // Namespace namespace_51e5626e/sr_message_box
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xfa7dd94a, Offset: 0x440
     // Size: 0x24
     function open(localclientnum) {
@@ -16,7 +16,7 @@ class class_51e5626e : cluielem {
     }
 
     // Namespace namespace_51e5626e/sr_message_box
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x5d2d3ed5, Offset: 0x3c0
     // Size: 0x1c
     function register_clientside() {
@@ -24,7 +24,7 @@ class class_51e5626e : cluielem {
     }
 
     // Namespace namespace_51e5626e/sr_message_box
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xc655dbc9, Offset: 0x470
     // Size: 0x30
     function function_7a690474(localclientnum, value) {
@@ -32,7 +32,7 @@ class class_51e5626e : cluielem {
     }
 
     // Namespace namespace_51e5626e/sr_message_box
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x287ae7d7, Offset: 0x368
     // Size: 0x4c
     function setup_clientfields(*var_50fe5991) {
@@ -41,7 +41,7 @@ class class_51e5626e : cluielem {
     }
 
     // Namespace namespace_51e5626e/sr_message_box
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xb2e61558, Offset: 0x3e8
     // Size: 0x4c
     function function_fa582112(localclientnum) {
@@ -52,7 +52,7 @@ class class_51e5626e : cluielem {
 }
 
 // Namespace sr_message_box/sr_message_box
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x81f7165e, Offset: 0xe0
 // Size: 0x176
 function register(var_50fe5991) {

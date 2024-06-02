@@ -17,7 +17,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace namespace_1a4edaec/namespace_1a4edaec
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x8aecbdee, Offset: 0xf0
 // Size: 0x24
 function on_localplayer_spawned(localclientnum) {
@@ -25,7 +25,7 @@ function on_localplayer_spawned(localclientnum) {
 }
 
 // Namespace namespace_1a4edaec/namespace_1a4edaec
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x44ba0747, Offset: 0x120
 // Size: 0xba
 function function_9ea44286() {
@@ -46,7 +46,7 @@ function function_9ea44286() {
 }
 
 // Namespace namespace_1a4edaec/namespace_1a4edaec
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x14ffac54, Offset: 0x1e8
 // Size: 0x1e8
 function private function_fe8cf253(localclientnum) {

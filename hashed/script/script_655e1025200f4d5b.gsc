@@ -13,7 +13,7 @@ function autoexec function_88ff61e0() {
 }
 
 // Namespace namespace_2d440395/namespace_2d440395
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x82318c2d, Offset: 0xb0
 // Size: 0x70
 function function_45a212c0() {

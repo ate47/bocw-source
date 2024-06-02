@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace character_unlock/character_unlock
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0xf0
 // Size: 0x4
 function private preinit() {

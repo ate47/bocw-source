@@ -754,7 +754,7 @@ function function_7fe1590b(*s_watcher) {
 }
 
 // Namespace ultimate_turret/ultimate_turret_shared
-// Params f, eflags: 0x2 linked
+// Params 15, eflags: 0x2 linked
 // Checksum 0xac2bb7a7, Offset: 0x37a8
 // Size: 0x3c8
 function onturretdamage(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, *vpoint, vdir, shitloc, *vdamageorigin, psoffsettime, *damagefromunderneath, *modelindex, *partname, *vsurfacenormal) {

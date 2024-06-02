@@ -490,7 +490,7 @@ function function_cc33adc8() {
 }
 
 // Namespace zm_powerups/zm_powerups
-// Params d, eflags: 0x2 linked
+// Params 13, eflags: 0x2 linked
 // Checksum 0x34b64939, Offset: 0x2378
 // Size: 0x58c
 function add_zombie_powerup(powerup_name, model_name, hint, func_should_drop_with_regular_powerups, only_affects_grabber, any_team, zombie_grabbable, fx, client_field_name, time_name, on_name, clientfield_version = 1, player_specific = 0) {

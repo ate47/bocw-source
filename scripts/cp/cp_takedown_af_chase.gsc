@@ -950,7 +950,7 @@ function function_db746914(shot) {
 }
 
 // Namespace tkdn_af_chase/namespace_3547be0
-// Params c, eflags: 0x2 linked
+// Params 12, eflags: 0x2 linked
 // Checksum 0x1c6c72e4, Offset: 0x5ba0
 // Size: 0x86
 function function_132b6d19(*einflictor, eattacker, *idamage, *idflags, *smeansofdeath, *weapon, *var_fd90b0bb, *vpoint, *vdir, *shitloc, *psoffsettime, *boneindex) {

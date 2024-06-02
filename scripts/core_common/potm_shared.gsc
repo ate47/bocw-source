@@ -314,7 +314,7 @@ function function_b5633c73(preparinginformation) {
 }
 
 // Namespace potm/potm_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x9f9fe930, Offset: 0x1060
 // Size: 0x6c
 function post_round_potm() {
@@ -1498,7 +1498,7 @@ function function_775b9ad1(weapon, meansofdeath) {
 }
 
 // Namespace potm/potm_shared
-// Params e, eflags: 0x0
+// Params 14, eflags: 0x2 linked
 // Checksum 0xa2472188, Offset: 0x5a70
 // Size: 0x2ca
 function function_5523a49a(bookmarkname, spectatorclientnum, var_1c66b97d, targetentity, killcam_entity_info, weapon, meansofdeath, deathtime, deathtimeoffset, offsettime, perks, killstreaks, attacker, einflictor) {
@@ -1536,7 +1536,7 @@ function function_5523a49a(bookmarkname, spectatorclientnum, var_1c66b97d, targe
 }
 
 // Namespace potm/potm_shared
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x112b3e5a, Offset: 0x5d48
 // Size: 0x17c
 function kill_bookmark(var_81538b15, var_f28fb772, einflictor, var_50d1e41a, overrideentitycamera) {
@@ -1560,7 +1560,7 @@ function kill_bookmark(var_81538b15, var_f28fb772, einflictor, var_50d1e41a, ove
 }
 
 // Namespace potm/potm_shared
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0xc5704a0d, Offset: 0x5ed0
 // Size: 0x194
 function function_66d09fea(bookmarkname, var_81538b15, var_f28fb772, einflictor, var_50d1e41a, overrideentitycamera) {
@@ -1622,7 +1622,7 @@ function event_bookmark(bookmarkname, time, var_81538b15, scoreeventpriority, ev
 }
 
 // Namespace potm/potm_shared
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0xff276f09, Offset: 0x6290
 // Size: 0xac
 function function_d6b60141(event_name, client, label, score, combatefficiencyscore, eventindex) {
@@ -1640,7 +1640,7 @@ function function_d6b60141(event_name, client, label, score, combatefficiencysco
 }
 
 // Namespace potm/potm_shared
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x273606b6, Offset: 0x6348
 // Size: 0x94
 function function_bcad6f70(event_name, client, label, score, tier) {

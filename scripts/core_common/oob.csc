@@ -227,7 +227,7 @@ function getoobuimodel(localclientnum) {
 }
 
 // Namespace oob/oob
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x956f42c, Offset: 0xd20
 // Size: 0x70
 function function_93bd17f6(id, time) {
@@ -240,7 +240,7 @@ function function_93bd17f6(id, time) {
 }
 
 // Namespace oob/oob
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4dc0945d, Offset: 0xd98
 // Size: 0x44
 function function_e2d18c01(id) {

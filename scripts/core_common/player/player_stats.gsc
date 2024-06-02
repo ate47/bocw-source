@@ -305,7 +305,7 @@ function private function_1d354b96(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xcde1527, Offset: 0xf00
 // Size: 0x52
 function function_ed81f25e(statname) {
@@ -337,7 +337,7 @@ function function_d40764f3(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x6c67158a, Offset: 0x1030
 // Size: 0x78
 function function_cc215323(statname, value) {
@@ -416,7 +416,7 @@ function function_561716e6(weapon, statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x53c38f51, Offset: 0x1470
 // Size: 0x78
 function function_6cdd992f(weapon, bucket, value) {
@@ -665,7 +665,7 @@ function function_62b271d8(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x24c7b1c8, Offset: 0x2070
 // Size: 0x1fc
 function function_b7f80d87(statname, value) {
@@ -693,7 +693,7 @@ function function_b7f80d87(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x7928fa4, Offset: 0x2278
 // Size: 0xca
 function function_81f5c0fe(statname, value) {
@@ -764,7 +764,7 @@ function set_stat_challenge(statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x7b5084a0, Offset: 0x25f0
 // Size: 0x3a
 function get_stat_challenge(statname) {
@@ -780,7 +780,7 @@ function function_af5584ca(statname) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xc5d376d2, Offset: 0x2680
 // Size: 0x5a
 function function_8e071909(statname, value) {
@@ -861,7 +861,7 @@ function function_d0de7686(statname, value, var_4261ca42) {
 }
 
 // Namespace stats/player_stats
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xfc85ece3, Offset: 0x2a28
 // Size: 0x154
 function function_841e4896(statname, value, var_4261ca42, weaponnamehash) {

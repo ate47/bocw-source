@@ -486,8 +486,8 @@ function function_31f5e5b(*params) {
     if (namespace_ec06fe4a::function_a8975c67()) {
         self playsound(#"hash_37a5a1ff99e806d");
     }
-    if (isdefined(self.var_b94a3fde)) {
-        self.var_b94a3fde delete();
+    if (isdefined(self.wig)) {
+        self.wig delete();
     }
     if (isdefined(self.glasses)) {
         self.glasses delete();

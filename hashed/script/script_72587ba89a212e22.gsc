@@ -8,7 +8,7 @@
 class class_fbe341f : cluielem {
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x35cafbad, Offset: 0x560
     // Size: 0x24
     function open(localclientnum) {
@@ -16,7 +16,7 @@ class class_fbe341f : cluielem {
     }
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x497bde45, Offset: 0x798
     // Size: 0x30
     function function_4aa46834(localclientnum, value) {
@@ -24,7 +24,7 @@ class class_fbe341f : cluielem {
     }
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x3fe4322e, Offset: 0x4a8
     // Size: 0x1c
     function register_clientside() {
@@ -32,7 +32,7 @@ class class_fbe341f : cluielem {
     }
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xeef57c4c, Offset: 0x3f8
     // Size: 0xa4
     function setup_clientfields(var_ec85b709, var_193163f7) {
@@ -43,7 +43,7 @@ class class_fbe341f : cluielem {
     }
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xff3d9d31, Offset: 0x590
     // Size: 0x1c4
     function set_state(localclientnum, state_name) {
@@ -79,7 +79,7 @@ class class_fbe341f : cluielem {
     }
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x228183f8, Offset: 0x760
     // Size: 0x30
     function function_f0df5702(localclientnum, value) {
@@ -87,7 +87,7 @@ class class_fbe341f : cluielem {
     }
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x7d29e272, Offset: 0x4d0
     // Size: 0x84
     function function_fa582112(localclientnum) {
@@ -100,7 +100,7 @@ class class_fbe341f : cluielem {
 }
 
 // Namespace dirtybomb_usebar/dirtybomb_usebar
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x78fc433f, Offset: 0x108
 // Size: 0x17e
 function register(var_ec85b709, var_193163f7) {

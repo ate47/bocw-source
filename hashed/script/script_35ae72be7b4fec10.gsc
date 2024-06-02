@@ -205,7 +205,7 @@ function private function_c63f7472(model) {
 }
 
 // Namespace namespace_61e6d095/namespace_61e6d095
-// Params b, eflags: 0x0
+// Params 11, eflags: 0x0
 // Checksum 0x5cb562ff, Offset: 0xef0
 // Size: 0x408
 function create_waypoint(uid = "waypoint", ent, image, text, offset, tag, var_7bd05154 = 1, var_754bedbb = 1, clamp = 1, var_577a0c84 = 0, progress) {

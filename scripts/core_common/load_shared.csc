@@ -72,7 +72,7 @@ function apply_mature_filter() {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x3a6dec54, Offset: 0x2f8
 // Size: 0x3c
 function art_review() {

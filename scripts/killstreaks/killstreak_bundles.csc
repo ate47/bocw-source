@@ -6,7 +6,7 @@
 #namespace killstreak_bundles;
 
 // Namespace killstreak_bundles/killstreak_bundles
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x60abfce3, Offset: 0x98
 // Size: 0xf4
 function spawned(local_client_num, bundle) {

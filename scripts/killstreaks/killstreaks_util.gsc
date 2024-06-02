@@ -92,7 +92,7 @@ function function_f479a2ff(weapon) {
 }
 
 // Namespace killstreaks/killstreaks_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xaa6487f8, Offset: 0x670
 // Size: 0x8c
 function function_e3a30c69(weapon) {
@@ -147,7 +147,7 @@ function is_weapon_associated_with_killstreak(weapon) {
 }
 
 // Namespace killstreaks/killstreaks_util
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x67003f1b, Offset: 0x838
 // Size: 0xa2
 function function_4a1fb0f() {
@@ -163,7 +163,7 @@ function function_4a1fb0f() {
 }
 
 // Namespace killstreaks/killstreaks_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x628ba5c1, Offset: 0x8e8
 // Size: 0x7e
 function get_killstreak_team_kill_penalty_scale(weapon) {
@@ -294,7 +294,7 @@ function private function_a021023d(rotator, angle, radius, var_b468418b, var_93e
 }
 
 // Namespace killstreaks/killstreaks_util
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x37afc6d9, Offset: 0xf70
 // Size: 0x84
 function function_67d553c4(rotator, radius, var_b468418b, var_93e44bb3, roll = 0) {
@@ -303,7 +303,7 @@ function function_67d553c4(rotator, radius, var_b468418b, var_93e44bb3, roll = 0
 }
 
 // Namespace killstreaks/killstreaks_util
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x3aa5c767, Offset: 0x1000
 // Size: 0xe4
 function function_d7123898(rotator, var_4fb9010a, var_93e44bb3, roll = 0) {
@@ -314,7 +314,7 @@ function function_d7123898(rotator, var_4fb9010a, var_93e44bb3, roll = 0) {
 }
 
 // Namespace killstreaks/killstreaks_util
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xedc598d0, Offset: 0x10f0
 // Size: 0x188
 function function_f3875fb0(var_d22c85cf, height_offset, var_b6417305, var_93e44bb3, var_e690ed4e = 0) {
@@ -436,7 +436,7 @@ function function_47b44bcc(attacker, weapon, aircraft) {
 }
 
 // Namespace killstreaks/killstreaks_util
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf8620692, Offset: 0x17b8
 // Size: 0x40
 function function_59e2c378() {
@@ -515,7 +515,7 @@ function function_79e49b15(params) {
 }
 
 // Namespace killstreaks/killstreaks_util
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x7d5b311, Offset: 0x1cd8
 // Size: 0x1e2
 function function_ef1303ba(end_time, var_e72137e8) {
@@ -605,7 +605,7 @@ function function_4aad9803(killstreaktype, killstreak_id, var_6e1d768e) {
 }
 
 // Namespace killstreaks/killstreaks_util
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x6cccfed2, Offset: 0x2188
 // Size: 0x40
 function function_1e016087(killstreaktype, var_5c980521) {

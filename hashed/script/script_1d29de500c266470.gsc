@@ -104,7 +104,7 @@ function get_parachute() {
 }
 
 // Namespace namespace_eb06e24d/namespace_eb06e24d
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf8c11f27, Offset: 0x510
 // Size: 0x2a
 function get_parachute_kit() {
@@ -120,7 +120,7 @@ function get_wingsuit() {
 }
 
 // Namespace namespace_eb06e24d/namespace_eb06e24d
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xcee3a2ab, Offset: 0x580
 // Size: 0x2a
 function get_wingsuit_kit() {
@@ -136,7 +136,7 @@ function get_trailfx() {
 }
 
 // Namespace namespace_eb06e24d/namespace_eb06e24d
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xaab928e7, Offset: 0x5f0
 // Size: 0x2a
 function function_4a39b434() {

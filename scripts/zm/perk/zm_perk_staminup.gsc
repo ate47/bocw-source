@@ -92,7 +92,7 @@ function staminup_perk_machine_setup(use_trigger, perk_machine, bump_trigger, *c
 }
 
 // Namespace zm_perk_staminup/zm_perk_staminup
-// Params a, eflags: 0x2 linked
+// Params 10, eflags: 0x2 linked
 // Checksum 0xaa67c31a, Offset: 0x580
 // Size: 0x84
 function function_dae4e0ad(*einflictor, *eattacker, *idamage, *idflags, smeansofdeath, *weapon, *vpoint, *vdir, *shitloc, *psoffsettime) {

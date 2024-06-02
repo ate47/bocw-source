@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_2ed67032/namespace_2ed67032
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xf9ed58b, Offset: 0x148
 // Size: 0x190
 function private preinit() {
@@ -34,7 +34,7 @@ function private preinit() {
 }
 
 // Namespace namespace_2ed67032/namespace_2ed67032
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x4faf000b, Offset: 0x2e0
 // Size: 0x24
 function private on_localclient_connect(localclientnum) {
@@ -42,7 +42,7 @@ function private on_localclient_connect(localclientnum) {
 }
 
 // Namespace namespace_2ed67032/namespace_2ed67032
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x6698ebae, Offset: 0x310
 // Size: 0x24
 function private on_localplayer_spawned(localclientnum) {
@@ -50,7 +50,7 @@ function private on_localplayer_spawned(localclientnum) {
 }
 
 // Namespace namespace_2ed67032/namespace_2ed67032
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x75cf94c0, Offset: 0x340
 // Size: 0x102
 function private function_321bb79b(localclientnum, value) {
@@ -69,7 +69,7 @@ function private function_321bb79b(localclientnum, value) {
 }
 
 // Namespace namespace_2ed67032/namespace_2ed67032
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xe5b7bea8, Offset: 0x450
 // Size: 0x7c
 function private function_a05cd64e(localclientnum) {
@@ -85,7 +85,7 @@ function private function_a05cd64e(localclientnum) {
 }
 
 // Namespace namespace_2ed67032/namespace_2ed67032
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xb3cae920, Offset: 0x4d8
 // Size: 0x326
 function private function_86b9a404() {

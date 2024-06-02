@@ -72,7 +72,7 @@ class class_1beae0 : cluielem {
     }
 
     // Namespace namespace_1beae0/luielemcounter
-    // Params a, eflags: 0x0
+    // Params 10, eflags: 0x0
     // Checksum 0xc1b1e97c, Offset: 0x5c0
     // Size: 0x6c
     function setup_clientfields(*xcallback, *ycallback, *heightcallback, *fadeovertimecallback, *alphacallback, *redcallback, *greencallback, *bluecallback, *var_4cf01ed6, *horizontal_alignmentcallback) {

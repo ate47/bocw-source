@@ -48,7 +48,7 @@ function function_d3790fe() {
 }
 
 // Namespace audio/audio_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x92aa648a, Offset: 0x7e0
 // Size: 0x28
 function function_21f8b7c3() {

@@ -58,7 +58,7 @@ function cymbal_monkey_exists() {
 }
 
 // Namespace namespace_5a359049/namespace_5a359049
-// Params f, eflags: 0x2 linked
+// Params 15, eflags: 0x2 linked
 // Checksum 0x683cee73, Offset: 0x2e8
 // Size: 0xda
 function function_c1c47eb6(inflictor, attacker, *damage, *flags, *meansofdeath, *weapon, *vpoint, *vdir, *shitloc, *vdamageorigin, *psoffsettime, *boneindex, *modelindex, *surfacetype, *vsurfacenormal) {

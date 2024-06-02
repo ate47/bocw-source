@@ -4,7 +4,7 @@
 #using scripts\core_common\item_drop.csc;
 #using script_2009cc4c4ecc010f;
 #using scripts\core_common\flag_shared.csc;
-#using script_19c6c147c637b960;
+#using scripts\core_common\territory_util.csc;
 #using scripts\core_common\territory.csc;
 #using scripts\core_common\struct.csc;
 

@@ -111,7 +111,7 @@ function private function_8e22661a() {
 }
 
 // Namespace spawning/spawning_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x433a2607, Offset: 0x650
 // Size: 0x88
 function add_default_spawnlist(spawnlist) {
@@ -193,7 +193,7 @@ function onspawnplayer(predictedspawn = 0) {
 }
 
 // Namespace spawning/spawning_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x96e55543, Offset: 0xab8
 // Size: 0x24
 function function_d62887a1(predictedspawn) {

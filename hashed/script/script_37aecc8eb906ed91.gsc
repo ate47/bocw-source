@@ -263,7 +263,7 @@ function function_db24f032() {
 }
 
 // Namespace nightingale/nightingale
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xa63f545b, Offset: 0x1138
 // Size: 0x92
 function function_29fbe24f(zombie) {

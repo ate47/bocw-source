@@ -189,7 +189,7 @@ function get_closest_player_ally(teamonly) {
 }
 
 // Namespace battlechatter/namespace_7819da81
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x84625b26, Offset: 0x988
 // Size: 0xfe
 function get_closest_player_enemy(origin, teamonly) {

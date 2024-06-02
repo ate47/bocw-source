@@ -260,7 +260,7 @@ function private _increment(str_field_name, n_increment_count = 1) {
 }
 
 // Namespace clientfield/clientfield_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xb0ec2a8d, Offset: 0xb30
 // Size: 0x10c
 function increment_uimodel(str_field_name, n_increment_count = 1) {

@@ -224,7 +224,7 @@ function add(&array, item, allow_dupes = 1) {
 }
 
 // Namespace array/array_shared
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x7bd41219, Offset: 0xdf0
 // Size: 0x118
 function add_sorted(&array, item, allow_dupes = 1, func_compare, var_e19f0739 = 0) {
@@ -599,7 +599,7 @@ function fartherfunc(dist1, dist2) {
 }
 
 // Namespace array/array_shared
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x4dedefe1, Offset: 0x1f20
 // Size: 0x28c
 function get_all_closest(org, &array, excluders = [], max = array.size, maxdist) {

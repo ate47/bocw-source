@@ -118,7 +118,7 @@ function _play_fx_delete(ent, time_to_delete_or_notify = -1) {
 }
 
 // Namespace fx/fx_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0xcd694660, Offset: 0x8c0
 // Size: 0x4fc
 function function_70ba68f1(target, var_486f31cd, var_bef008a5, var_e9f7aace, var_1436aa92) {
@@ -175,7 +175,7 @@ function function_70ba68f1(target, var_486f31cd, var_bef008a5, var_e9f7aace, var
 }
 
 // Namespace fx/fx_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3506f25b, Offset: 0xdc8
 // Size: 0x254
 function function_82104e32(var_486f31cd, var_e9f7aace) {

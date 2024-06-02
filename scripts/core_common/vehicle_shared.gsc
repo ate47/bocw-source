@@ -852,7 +852,7 @@ function function_bb9b43a9(path_start, var_1c847d0f, var_dda93e6c, location, var
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0xfd158b54, Offset: 0x3fd8
 // Size: 0x1c4
 function function_3f76e204(path_start, player_origin, player_angles, height_offset = 0, angle_offset = (0, 45, 0), var_bc779e6c = 0.5) {
@@ -1999,7 +1999,7 @@ function simple_spawn(name_or_spawners, b_supress_assert = 0) {
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd491b48e, Offset: 0x7a68
 // Size: 0xe0
 function simple_spawn_single(name_or_spawner, b_supress_assert = 0) {
@@ -2016,7 +2016,7 @@ function simple_spawn_single(name_or_spawner, b_supress_assert = 0) {
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x60446068, Offset: 0x7b50
 // Size: 0x92
 function simple_spawn_single_and_drive(name) {
@@ -2027,7 +2027,7 @@ function simple_spawn_single_and_drive(name) {
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x754307ef, Offset: 0x7bf0
 // Size: 0x68
 function simple_spawn_and_drive(name) {
@@ -2039,7 +2039,7 @@ function simple_spawn_and_drive(name) {
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x9e5ff04, Offset: 0x7c60
 // Size: 0xaa
 function spawn(*modelname, targetname, vehicletype, origin, angles) {
@@ -2177,7 +2177,7 @@ function toggle_ambient_anim_group(groupid, on) {
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x8d1160bc, Offset: 0x83b0
 // Size: 0x54
 function toggle_control_bone_group(groupid, on) {
@@ -2333,7 +2333,7 @@ function should_update_damage_fx_level(currenthealth, damage, maxhealth) {
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xf35b6615, Offset: 0x89c0
 // Size: 0x64
 function update_damage_fx_level(currenthealth, damage, maxhealth) {
@@ -2812,7 +2812,7 @@ function add_spawn_function_group(str_value, str_key, spawn_func, param1, param2
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 6, eflags: 0x2 linked
+// Params 6, eflags: 0x0
 // Checksum 0xad4114e0, Offset: 0x9e58
 // Size: 0x5c
 function add_spawn_function_by_type(veh_type, spawn_func, param1, param2, param3, param4) {
@@ -3002,7 +3002,7 @@ function function_f597b732(enable) {
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x203335cb, Offset: 0xa8c0
 // Size: 0xe
 function init_target_group() {
@@ -3033,7 +3033,7 @@ function remove_from_target_group(target_ent) {
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xdf91a9d, Offset: 0xa9d8
 // Size: 0xf6
 function monitor_missiles_locked_on_to_me(player, wait_time = 0.1) {
@@ -3049,7 +3049,7 @@ function monitor_missiles_locked_on_to_me(player, wait_time = 0.1) {
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x8f520522, Offset: 0xaad8
 // Size: 0x4aa
 function watch_freeze_on_flash(duration) {
@@ -3121,7 +3121,7 @@ function watch_freeze_on_flash(duration) {
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8e64e79e, Offset: 0xaf90
 // Size: 0x16
 function stop_monitor_missiles_locked_on_to_me() {
@@ -3208,7 +3208,7 @@ function function_eb183ffe(attackingplayer, weapon) {
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5de598a5, Offset: 0xb390
 // Size: 0x84
 function player_is_driver() {
@@ -3239,7 +3239,7 @@ function laser_death_watcher() {
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x6431f292, Offset: 0xb480
 // Size: 0x76
 function enable_laser(b_enable, *n_index) {
@@ -3980,7 +3980,7 @@ function event_handler[change_seat] function_124469f4(eventstruct) {
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf812ae89, Offset: 0xe310
 // Size: 0xc8
 function function_fa8ced6e(v_origin, v_angles, str_vehicle = undefined) {

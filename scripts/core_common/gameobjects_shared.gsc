@@ -2203,7 +2203,7 @@ function function_e7e3d146(b_enable = 1) {
 }
 
 // Namespace gameobjects/gameobjects_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x519286e4, Offset: 0x7380
 // Size: 0x8c
 function function_f4ccb04c(e_player, var_5098afd6 = 0) {
@@ -3580,7 +3580,7 @@ function function_2efe0342() {
 }
 
 // Namespace gameobjects/gameobjects_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe01b99b6, Offset: 0xc0b0
 // Size: 0x3c
 function function_407c83be() {
@@ -3590,7 +3590,7 @@ function function_407c83be() {
 }
 
 // Namespace gameobjects/gameobjects_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x62dd19d3, Offset: 0xc0f8
 // Size: 0x5c
 function function_664b40(player) {
@@ -3600,7 +3600,7 @@ function function_664b40(player) {
 }
 
 // Namespace gameobjects/gameobjects_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x21d8b7c9, Offset: 0xc160
 // Size: 0x5c
 function function_7a00d78c(player) {
@@ -3688,7 +3688,7 @@ function set_use_text(text) {
 }
 
 // Namespace gameobjects/gameobjects_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x8fe6d7ae, Offset: 0xc410
 // Size: 0x24
 function set_use_hint_text(text) {
@@ -4262,7 +4262,7 @@ function function_b03b5362(b_enable = 1) {
 }
 
 // Namespace gameobjects/gameobjects_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x53962015, Offset: 0xe170
 // Size: 0x6a
 function function_8f776dd0(b_enable = 1) {
@@ -4547,7 +4547,7 @@ function assign_class_object(o_class) {
 }
 
 // Namespace gameobjects/gameobjects_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x59cd3769, Offset: 0x104d0
 // Size: 0x32
 function set_onbeginuse_event(func) {
@@ -4565,7 +4565,7 @@ function set_onuse_event(func) {
 }
 
 // Namespace gameobjects/gameobjects_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6d7ddb5f, Offset: 0x10550
 // Size: 0x32
 function set_onenduse_event(func) {

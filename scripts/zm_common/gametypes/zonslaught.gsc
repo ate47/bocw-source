@@ -32,7 +32,7 @@
 #using scripts\zm_common\gametypes\zm_gametype.gsc;
 #using scripts\zm_common\zm_fasttravel.gsc;
 #using scripts\core_common\values_shared.gsc;
-#using script_75da5547b1822294;
+#using scripts\core_common\territory_util.gsc;
 #using scripts\core_common\util_shared.gsc;
 #using scripts\core_common\spawner_shared.gsc;
 #using scripts\core_common\math_shared.gsc;

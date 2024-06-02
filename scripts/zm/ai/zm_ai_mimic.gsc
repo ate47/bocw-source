@@ -706,7 +706,7 @@ function function_fe78c504(*inflictor, *attacker, damage, *dflags, *meansofdeath
 }
 
 // Namespace zm_ai_mimic/zm_ai_mimic
-// Params d, eflags: 0x6 linked
+// Params 13, eflags: 0x6 linked
 // Checksum 0xf9eb011d, Offset: 0x2ee8
 // Size: 0x184
 function private function_c41a996d(*einflictor, *eattacker, idamage, *idflags, *smeansofdeath, weapon, *var_fd90b0bb, vpoint, *vdir, shitloc, *psoffsettime, *boneindex, *surfacetype) {

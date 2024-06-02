@@ -28,7 +28,7 @@ function getentityangles(e_entity) {
 }
 
 // Namespace flowgraph_entity/flowgraph_entity
-// Params c, eflags: 0x0
+// Params 12, eflags: 0x0
 // Checksum 0xe509f337, Offset: 0xf0
 // Size: 0x296
 function lerpshaderconstantovertime(*x, e_entity, i_script_vector, f_start_x, f_start_y, f_start_z, f_start_w, f_end_x, f_end_y, f_end_z, f_end_w, f_time) {

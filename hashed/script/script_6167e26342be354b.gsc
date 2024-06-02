@@ -3,7 +3,7 @@
 #using script_5ee699b0aaf564c4;
 #using scripts\core_common\vehicle_shared.gsc;
 #using scripts\core_common\values_shared.gsc;
-#using script_75da5547b1822294;
+#using scripts\core_common\territory_util.gsc;
 #using scripts\core_common\system_shared.gsc;
 #using script_44b0b8420eabacad;
 #using scripts\core_common\spawning_shared.gsc;
@@ -292,7 +292,7 @@ function function_e5b0d177(player) {
 }
 
 // Namespace squad_spawn/namespace_cd4d78f1
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4289076e, Offset: 0x14c8
 // Size: 0x1f4
 function spawn_player() {
@@ -401,7 +401,7 @@ function function_bb63189b(player) {
 }
 
 // Namespace squad_spawn/namespace_cd4d78f1
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x7a5daff, Offset: 0x1a88
 // Size: 0x84
 function function_5f24fd47(player, *userespawntime) {
@@ -415,7 +415,7 @@ function function_5f24fd47(player, *userespawntime) {
 }
 
 // Namespace squad_spawn/namespace_cd4d78f1
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xacb5278a, Offset: 0x1b18
 // Size: 0x108
 function onplayerdamaged(player, attacker) {
@@ -550,7 +550,7 @@ function private function_6d9e5aa2() {
 }
 
 // Namespace squad_spawn/namespace_cd4d78f1
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x302b4d63, Offset: 0x2190
 // Size: 0x160
 function function_2ffd5f18() {

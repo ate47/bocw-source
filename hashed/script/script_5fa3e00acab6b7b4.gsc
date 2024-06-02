@@ -691,7 +691,7 @@ function function_abbc84ad(data) {
 function function_792e6d18() {
     foreach (weaponinfo in self.pers[#"weaponstats"]) {
         weaponitemindex = getbaseweaponitemindex(weaponinfo.weapon);
-        weaponstats = {#weapon_name:weaponinfo.weapon.name, #var_5bf208a0:weaponinfo.var_6165a2d8, #shots:isdefined(weaponinfo.stats[#"shots"]) ? weaponinfo.stats[#"shots"] : 0, #hits:isdefined(weaponinfo.stats[#"hits"]) ? weaponinfo.stats[#"hits"] : 0, #kills:isdefined(weaponinfo.stats[#"kills"]) ? weaponinfo.stats[#"kills"] : 0, #headshots:isdefined(weaponinfo.stats[#"headshots"]) ? weaponinfo.stats[#"headshots"] : 0, #var_7e2968cc:isdefined(weaponinfo.stats[#"deathsduringuse"]) ? weaponinfo.stats[#"deathsduringuse"] : 0, #time_used_s:isdefined(weaponinfo.stats[#"timeused"]) ? weaponinfo.stats[#"timeused"] : 0, #var_9239f70f:isdefined(weaponinfo.stats[#"xpearned"]) ? weaponinfo.stats[#"xpearned"] : 0, #end_level:(isdefined(self getcurrentgunrank(weaponitemindex)) ? self getcurrentgunrank(weaponitemindex) : 0) + 1, #var_2b43b7a2:isdefined(weaponinfo.stats[#"hash_30756c193f03f009"]) ? weaponinfo.stats[#"hash_30756c193f03f009"] : 0};
+        weaponstats = {#weapon_name:weaponinfo.weapon.name, #var_5bf208a0:weaponinfo.var_6165a2d8, #shots:isdefined(weaponinfo.stats[#"shots"]) ? weaponinfo.stats[#"shots"] : 0, #hits:isdefined(weaponinfo.stats[#"hits"]) ? weaponinfo.stats[#"hits"] : 0, #kills:isdefined(weaponinfo.stats[#"kills"]) ? weaponinfo.stats[#"kills"] : 0, #headshots:isdefined(weaponinfo.stats[#"headshots"]) ? weaponinfo.stats[#"headshots"] : 0, #var_7e2968cc:isdefined(weaponinfo.stats[#"deathsduringuse"]) ? weaponinfo.stats[#"deathsduringuse"] : 0, #time_used_s:isdefined(weaponinfo.stats[#"timeused"]) ? weaponinfo.stats[#"timeused"] : 0, #var_9239f70f:isdefined(weaponinfo.stats[#"xpearned"]) ? weaponinfo.stats[#"xpearned"] : 0, #end_level:(isdefined(self getcurrentgunrank(weaponitemindex)) ? self getcurrentgunrank(weaponitemindex) : 0) + 1, #flourish_count:isdefined(weaponinfo.stats[#"flourish_count"]) ? weaponinfo.stats[#"flourish_count"] : 0};
         self function_678f57c8(#"hash_71e24083d5b3f555", weaponstats);
     }
 }
@@ -747,7 +747,7 @@ function function_6c95006e(data) {
 // Size: 0x9c
 function function_9cac835e(data) {
     if (isdefined(data.weapon)) {
-        function_abbc84ad({#player:self, #weapon:data.weapon, #statname:#"hash_30756c193f03f009", #value:1, #weaponpickedup:0});
+        function_abbc84ad({#player:self, #weapon:data.weapon, #statname:#"flourish_count", #value:1, #weaponpickedup:0});
     }
 }
 

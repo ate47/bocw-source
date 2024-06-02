@@ -21,7 +21,7 @@ function __postload_init__() {
 }
 
 // Namespace player_role/player_role
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2237e382, Offset: 0xe8
 // Size: 0xb6
 function is_valid(index) {

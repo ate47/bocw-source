@@ -13,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace scriptmodels/scriptmodels_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x1d828a56, Offset: 0x108
 // Size: 0xa8
 function private preinit() {
@@ -24,7 +24,7 @@ function private preinit() {
 }
 
 // Namespace scriptmodels/scriptmodels_shared
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x5f4b5b9c, Offset: 0x1b8
 // Size: 0x154
 function private function_9abee270(model) {

@@ -5,7 +5,7 @@
 #namespace trophy_system;
 
 // Namespace trophy_system/trophy_system
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x18b582be, Offset: 0xc0
 // Size: 0xb4
 function init_shared() {
@@ -14,7 +14,7 @@ function init_shared() {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x91bad479, Offset: 0x180
 // Size: 0xa2
 function function_a485f3cf(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -29,7 +29,7 @@ function function_a485f3cf(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace trophy_system/trophy_system
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xfac43d19, Offset: 0x230
 // Size: 0x7c
 function function_82dd67c1(localclientnum) {
@@ -40,7 +40,7 @@ function function_82dd67c1(localclientnum) {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x792d0bbf, Offset: 0x2b8
 // Size: 0xfc
 function function_ce24311a(localclientnum) {
@@ -57,7 +57,7 @@ function function_ce24311a(localclientnum) {
 }
 
 // Namespace trophy_system/trophy_system
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xee1473c9, Offset: 0x3c0
 // Size: 0x3c
 function function_799a68b6(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

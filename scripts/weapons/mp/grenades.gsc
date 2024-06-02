@@ -13,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace grenades/grenades
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x98b8c2b9, Offset: 0xd8
 // Size: 0x14
 function private preinit() {

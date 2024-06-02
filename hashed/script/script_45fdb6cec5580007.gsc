@@ -241,7 +241,7 @@ function function_4c9d66b1() {
 }
 
 // Namespace squads/squads
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf6d9bad4, Offset: 0xba0
 // Size: 0x274
 function function_c70b26ea(squad = self function_4c9d66b1()) {

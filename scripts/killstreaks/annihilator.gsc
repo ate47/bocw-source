@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace annihilator/annihilator
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x39525436, Offset: 0x110
 // Size: 0x3c
 function __init__() {

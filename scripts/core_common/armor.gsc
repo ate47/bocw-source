@@ -52,7 +52,7 @@ function setlightarmorhp(newvalue) {
 }
 
 // Namespace armor/armor
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x4d41e8c5, Offset: 0x388
 // Size: 0x11c
 function setlightarmor(optionalarmorvalue, var_2274e560, var_cdeeec29) {
@@ -115,7 +115,7 @@ function haslightarmor() {
 }
 
 // Namespace armor/armor
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x2f364979, Offset: 0x5d0
 // Size: 0x178
 function function_a77114f2(*einflictor, *eattacker, idamage, smeansofdeath, weapon, shitloc) {
@@ -344,7 +344,7 @@ function private function_7538fede(weapon) {
 }
 
 // Namespace armor/armor
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x860198c1, Offset: 0x1090
 // Size: 0xa3a
 function apply_damage(weapon, damage, smeansofdeath, eattacker, shitloc) {
@@ -513,7 +513,7 @@ function function_386de852() {
 }
 
 // Namespace armor/armor
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5e1ce1a3, Offset: 0x1c30
 // Size: 0xa2
 function has_helmet() {

@@ -155,7 +155,7 @@ function function_24ca8ecf(insertion) {
 }
 
 // Namespace bot_insertion/bot_insertion
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xbc8c063a, Offset: 0x9b0
 // Size: 0x32
 function function_d7ba3d0b() {

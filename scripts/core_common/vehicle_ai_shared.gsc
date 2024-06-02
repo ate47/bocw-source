@@ -46,7 +46,7 @@ function entityisarchetype(entity, archetype) {
 }
 
 // Namespace vehicle_ai/vehicle_ai_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x238498fd, Offset: 0x408
 // Size: 0x52
 function getenemytarget() {
@@ -59,7 +59,7 @@ function getenemytarget() {
 }
 
 // Namespace vehicle_ai/vehicle_ai_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x3b299683, Offset: 0x468
 // Size: 0xf2
 function gettargetpos(target, geteye) {
@@ -112,7 +112,7 @@ function fire_for_time(totalfiretime, turretidx, target, intervalscale = 1) {
 }
 
 // Namespace vehicle_ai/vehicle_ai_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x4d9539d9, Offset: 0x798
 // Size: 0x134
 function fire_for_rounds(firecount, turretidx, target) {
@@ -365,7 +365,7 @@ function waittill_pathing_done(maxtime = 15) {
 }
 
 // Namespace vehicle_ai/vehicle_ai_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x18d0f5ac, Offset: 0x1508
 // Size: 0x9c
 function waittill_pathresult(maxtime = 0.5) {
@@ -996,7 +996,7 @@ function add_utility_connection(from_state_name, to_state_name, checkfunc, defau
 }
 
 // Namespace vehicle_ai/vehicle_ai_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf7cdbde1, Offset: 0x3640
 // Size: 0x3c
 function function_b94a7666(from_state_name, on_notify) {
@@ -1072,7 +1072,7 @@ function register_custom_add_state_callback(func) {
 }
 
 // Namespace vehicle_ai/vehicle_ai_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x2b8ed6f5, Offset: 0x3d88
 // Size: 0x56
 function call_custom_add_state_callbacks() {

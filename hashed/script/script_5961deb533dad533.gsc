@@ -11,7 +11,7 @@ class cluielembar : cluielem {
     var var_d5213cbb;
 
     // Namespace cluielembar/luielembar
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xe582a322, Offset: 0x6f8
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -19,7 +19,7 @@ class cluielembar : cluielem {
     }
 
     // Namespace cluielembar/luielembar
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xadc14e25, Offset: 0xa18
     // Size: 0x6c
     function set_green(player, value) {
@@ -27,7 +27,7 @@ class cluielembar : cluielem {
     }
 
     // Namespace cluielembar/luielembar
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x80f446c3, Offset: 0x8d0
     // Size: 0x4c
     function set_fadeovertime(player, value) {
@@ -35,7 +35,7 @@ class cluielembar : cluielem {
     }
 
     // Namespace cluielembar/luielembar
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xf88c2dfe, Offset: 0x740
     // Size: 0x24
     function close(player) {
@@ -43,7 +43,7 @@ class cluielembar : cluielem {
     }
 
     // Namespace cluielembar/luielembar
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x6093b6c7, Offset: 0x878
     // Size: 0x4c
     function set_height(player, value) {
@@ -51,7 +51,7 @@ class cluielembar : cluielem {
     }
 
     // Namespace cluielembar/luielembar
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xad0cad77, Offset: 0xa90
     // Size: 0x6c
     function set_blue(player, value) {
@@ -59,7 +59,7 @@ class cluielembar : cluielem {
     }
 
     // Namespace cluielembar/luielembar
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x16509506, Offset: 0x820
     // Size: 0x4c
     function set_width(player, value) {
@@ -67,7 +67,7 @@ class cluielembar : cluielem {
     }
 
     // Namespace cluielembar/luielembar
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xb7af7524, Offset: 0x6d0
     // Size: 0x1c
     function setup_clientfields() {
@@ -75,7 +75,7 @@ class cluielembar : cluielem {
     }
 
     // Namespace cluielembar/luielembar
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x7eeba1c3, Offset: 0x7c8
     // Size: 0x4c
     function set_y(player, value) {
@@ -83,7 +83,7 @@ class cluielembar : cluielem {
     }
 
     // Namespace cluielembar/luielembar
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x1a5ec481, Offset: 0x928
     // Size: 0x6c
     function set_alpha(player, value) {
@@ -91,7 +91,7 @@ class cluielembar : cluielem {
     }
 
     // Namespace cluielembar/luielembar
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xf5f538ab, Offset: 0x770
     // Size: 0x4c
     function set_x(player, value) {
@@ -99,7 +99,7 @@ class cluielembar : cluielem {
     }
 
     // Namespace cluielembar/luielembar
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x6feedf98, Offset: 0x9a0
     // Size: 0x6c
     function set_red(player, value) {
@@ -107,7 +107,7 @@ class cluielembar : cluielem {
     }
 
     // Namespace cluielembar/luielembar
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x54b97954, Offset: 0xb08
     // Size: 0x6c
     function set_bar_percent(player, value) {
@@ -127,7 +127,7 @@ function set_color(player, red, green, blue) {
 }
 
 // Namespace luielembar/luielembar
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xbbc125ab, Offset: 0x140
 // Size: 0x7c
 function fade(player, var_1a92607f, duration = 0) {
@@ -152,7 +152,7 @@ function hide(player, duration = 0) {
 }
 
 // Namespace luielembar/luielembar
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xca434655, Offset: 0x260
 // Size: 0x4c
 function function_e5898fd7(player, var_c6572d9b) {
@@ -160,7 +160,7 @@ function function_e5898fd7(player, var_c6572d9b) {
 }
 
 // Namespace luielembar/luielembar
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x9e9605be, Offset: 0x2b8
 // Size: 0x4c
 function function_58a135d3(player, var_d390c80e) {
@@ -186,7 +186,7 @@ function function_35f52fe9(player, width, height) {
 }
 
 // Namespace luielembar/luielembar
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xbaf60a18, Offset: 0x400
 // Size: 0x34
 function register() {
@@ -220,7 +220,7 @@ function is_open(player) {
 }
 
 // Namespace luielembar/luielembar
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xc039cd56, Offset: 0x4d0
 // Size: 0x28
 function set_x(player, value) {
@@ -228,7 +228,7 @@ function set_x(player, value) {
 }
 
 // Namespace luielembar/luielembar
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x865656d7, Offset: 0x500
 // Size: 0x28
 function set_y(player, value) {
@@ -236,7 +236,7 @@ function set_y(player, value) {
 }
 
 // Namespace luielembar/luielembar
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfa7ab9a8, Offset: 0x530
 // Size: 0x28
 function set_width(player, value) {
@@ -244,7 +244,7 @@ function set_width(player, value) {
 }
 
 // Namespace luielembar/luielembar
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xd7c27507, Offset: 0x560
 // Size: 0x28
 function set_height(player, value) {
@@ -252,7 +252,7 @@ function set_height(player, value) {
 }
 
 // Namespace luielembar/luielembar
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x56418d59, Offset: 0x590
 // Size: 0x28
 function set_fadeovertime(player, value) {
@@ -260,7 +260,7 @@ function set_fadeovertime(player, value) {
 }
 
 // Namespace luielembar/luielembar
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf23c770d, Offset: 0x5c0
 // Size: 0x28
 function set_alpha(player, value) {
@@ -268,7 +268,7 @@ function set_alpha(player, value) {
 }
 
 // Namespace luielembar/luielembar
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe51aed42, Offset: 0x5f0
 // Size: 0x28
 function set_red(player, value) {
@@ -276,7 +276,7 @@ function set_red(player, value) {
 }
 
 // Namespace luielembar/luielembar
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4e70a0f9, Offset: 0x620
 // Size: 0x28
 function set_green(player, value) {
@@ -284,7 +284,7 @@ function set_green(player, value) {
 }
 
 // Namespace luielembar/luielembar
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x263c1476, Offset: 0x650
 // Size: 0x28
 function set_blue(player, value) {

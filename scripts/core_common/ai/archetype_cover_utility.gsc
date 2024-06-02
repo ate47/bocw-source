@@ -584,7 +584,7 @@ function function_d18f7e29(entity) {
 }
 
 // Namespace aiutility/archetype_cover_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x81460a9b, Offset: 0x2b20
 // Size: 0x3e
 function isexposedatcovercondition(entity) {

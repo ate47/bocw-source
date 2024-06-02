@@ -231,7 +231,7 @@ function set_radiant(str_name, value) {
 }
 
 // Namespace val/values_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xe7195e80, Offset: 0x1b50
 // Size: 0x74
 function set_for_time(n_time, str_id, str_name, value) {
@@ -288,7 +288,7 @@ function reset_radiant(str_name) {
 }
 
 // Namespace val/values_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x18ce8595, Offset: 0x1ed8
 // Size: 0x34
 function nuke(str_name) {
@@ -733,7 +733,7 @@ function private allow_melee_victim(b_value = 1) {
 }
 
 // Namespace val/values_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xbd3a0602, Offset: 0x2e60
 // Size: 0x21c
 function function_4671dfff(str_id, value) {
@@ -759,7 +759,7 @@ function function_4671dfff(str_id, value) {
 }
 
 // Namespace val/values_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xb86321e4, Offset: 0x3088
 // Size: 0x19c
 function function_5276aede(str_id, value) {

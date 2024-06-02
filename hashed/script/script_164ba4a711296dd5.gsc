@@ -12,7 +12,7 @@ class cinsertion_passenger_count : cluielem {
     var var_d5213cbb;
 
     // Namespace cinsertion_passenger_count/insertion_passenger_count
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xd1acef65, Offset: 0x260
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -20,7 +20,7 @@ class cinsertion_passenger_count : cluielem {
     }
 
     // Namespace cinsertion_passenger_count/insertion_passenger_count
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x5770f9dd, Offset: 0x2a8
     // Size: 0x24
     function close(player) {
@@ -28,7 +28,7 @@ class cinsertion_passenger_count : cluielem {
     }
 
     // Namespace cinsertion_passenger_count/insertion_passenger_count
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0xb4eded3c, Offset: 0x210
     // Size: 0x44
     function setup_clientfields() {
@@ -37,7 +37,7 @@ class cinsertion_passenger_count : cluielem {
     }
 
     // Namespace cinsertion_passenger_count/insertion_passenger_count
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x4b88eec5, Offset: 0x2d8
     // Size: 0x44
     function set_count(player, value) {
@@ -47,7 +47,7 @@ class cinsertion_passenger_count : cluielem {
 }
 
 // Namespace insertion_passenger_count/insertion_passenger_count
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x9b629970, Offset: 0xf0
 // Size: 0x34
 function register() {
@@ -57,7 +57,7 @@ function register() {
 }
 
 // Namespace insertion_passenger_count/insertion_passenger_count
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xa4df70d2, Offset: 0x130
 // Size: 0x38
 function open(player, flags = 0) {
@@ -65,7 +65,7 @@ function open(player, flags = 0) {
 }
 
 // Namespace insertion_passenger_count/insertion_passenger_count
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2fdf789, Offset: 0x170
 // Size: 0x1c
 function close(player) {
@@ -73,7 +73,7 @@ function close(player) {
 }
 
 // Namespace insertion_passenger_count/insertion_passenger_count
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xe6010a6a, Offset: 0x198
 // Size: 0x1a
 function is_open(player) {
@@ -81,7 +81,7 @@ function is_open(player) {
 }
 
 // Namespace insertion_passenger_count/insertion_passenger_count
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xf9d70918, Offset: 0x1c0
 // Size: 0x28
 function set_count(player, value) {

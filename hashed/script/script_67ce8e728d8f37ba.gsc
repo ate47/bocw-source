@@ -83,7 +83,7 @@ function function_fa3eed17(var_43a36c6f) {
 }
 
 // Namespace namespace_66d6aa44/namespace_66d6aa44
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0x888
 // Size: 0x4
 function function_3f3466c9() {
@@ -468,7 +468,7 @@ function private function_59fe0fc1() {
 }
 
 // Namespace namespace_66d6aa44/namespace_66d6aa44
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x9f082299, Offset: 0x1a60
 // Size: 0xb14
 function function_e94b8e1a(var_66cbfaf2, *var_2a832857) {
@@ -640,7 +640,7 @@ function function_cf2c009a(team) {
 }
 
 // Namespace namespace_66d6aa44/namespace_66d6aa44
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x69cb9b15, Offset: 0x2778
 // Size: 0x324
 function function_2aaeab97(var_66cbfaf2) {
@@ -755,7 +755,7 @@ function function_c403d032(players) {
 }
 
 // Namespace namespace_66d6aa44/namespace_66d6aa44
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xc5ec5da6, Offset: 0x2e70
 // Size: 0xac
 function function_c0622ccd(players, force) {

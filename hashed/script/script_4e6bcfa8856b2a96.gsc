@@ -12,7 +12,7 @@ class class_fbe341f : cluielem {
     var var_d5213cbb;
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x2751d726, Offset: 0x330
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -20,7 +20,7 @@ class class_fbe341f : cluielem {
     }
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x2374c59, Offset: 0x638
     // Size: 0x44
     function function_4aa46834(player, value) {
@@ -28,7 +28,7 @@ class class_fbe341f : cluielem {
     }
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x9ee8c34, Offset: 0x378
     // Size: 0x24
     function close(player) {
@@ -36,7 +36,7 @@ class class_fbe341f : cluielem {
     }
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x1b59586f, Offset: 0x290
     // Size: 0x94
     function setup_clientfields() {
@@ -47,7 +47,7 @@ class class_fbe341f : cluielem {
     }
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xefde2e49, Offset: 0x3a8
     // Size: 0x234
     function set_state(player, state_name) {
@@ -83,7 +83,7 @@ class class_fbe341f : cluielem {
     }
 
     // Namespace namespace_fbe341f/dirtybomb_usebar
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xde35d2b3, Offset: 0x5e8
     // Size: 0x44
     function function_f0df5702(player, value) {
@@ -93,7 +93,7 @@ class class_fbe341f : cluielem {
 }
 
 // Namespace dirtybomb_usebar/dirtybomb_usebar
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xa9fe919, Offset: 0x110
 // Size: 0x34
 function register() {
@@ -103,7 +103,7 @@ function register() {
 }
 
 // Namespace dirtybomb_usebar/dirtybomb_usebar
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x3a6790e3, Offset: 0x150
 // Size: 0x38
 function open(player, flags = 0) {
@@ -111,7 +111,7 @@ function open(player, flags = 0) {
 }
 
 // Namespace dirtybomb_usebar/dirtybomb_usebar
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2ad0b106, Offset: 0x190
 // Size: 0x1c
 function close(player) {
@@ -119,7 +119,7 @@ function close(player) {
 }
 
 // Namespace dirtybomb_usebar/dirtybomb_usebar
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1e0592ea, Offset: 0x1b8
 // Size: 0x1a
 function is_open(player) {
@@ -127,7 +127,7 @@ function is_open(player) {
 }
 
 // Namespace dirtybomb_usebar/dirtybomb_usebar
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xca11b23c, Offset: 0x1e0
 // Size: 0x28
 function set_state(player, state_name) {
@@ -135,7 +135,7 @@ function set_state(player, state_name) {
 }
 
 // Namespace dirtybomb_usebar/dirtybomb_usebar
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x7886d3a4, Offset: 0x210
 // Size: 0x28
 function function_f0df5702(player, value) {
@@ -143,7 +143,7 @@ function function_f0df5702(player, value) {
 }
 
 // Namespace dirtybomb_usebar/dirtybomb_usebar
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x90efe864, Offset: 0x240
 // Size: 0x28
 function function_4aa46834(player, value) {

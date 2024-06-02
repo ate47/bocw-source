@@ -815,9 +815,9 @@ function private function_1ce48d0f(target, dist, var_3c67b910, var_cbf878e6, rot
 // Size: 0x1b0
 function private function_d1e7d514(emitter) {
     iss = isstruct(emitter);
-    var_7e461444 = isdefined(emitter.soundtype);
+    hast = isdefined(emitter.soundtype);
     ist = emitter.soundtype == #"emitter";
-    var_69bd016 = iss && var_7e461444 && ist;
+    var_69bd016 = iss && hast && ist;
     if (function_81fac19d(var_69bd016 == 0, "snd emitter stop not an emitter")) {
         return;
     }

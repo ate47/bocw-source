@@ -190,7 +190,7 @@ function function_116ec442() {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xffe42a8b, Offset: 0x9f8
 // Size: 0x7c
 function function_c22f319e(weapon, var_4dd90b81 = 0) {
@@ -200,7 +200,7 @@ function function_c22f319e(weapon, var_4dd90b81 = 0) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x3aa6ade0, Offset: 0xa80
 // Size: 0x1b4
 function function_f2250880(weapon, var_4dd90b81 = 0) {
@@ -326,7 +326,7 @@ function register_gadget(type) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xe81c7f3d, Offset: 0xfe0
 // Size: 0x4e
 function register_gadget_should_notify(type, should_notify) {

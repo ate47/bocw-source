@@ -12,7 +12,7 @@
 #namespace tracker;
 
 // Namespace tracker/tracker_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x476316e5, Offset: 0x130
 // Size: 0x158
 function init_shared() {
@@ -31,7 +31,7 @@ function init_shared() {
 }
 
 // Namespace tracker/tracker_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x12dbf458, Offset: 0x290
 // Size: 0x94
 function register_clientfields() {
@@ -41,7 +41,7 @@ function register_clientfields() {
 }
 
 // Namespace tracker/tracker_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb0a28778, Offset: 0x330
 // Size: 0x24
 function onplayerspawned() {
@@ -49,7 +49,7 @@ function onplayerspawned() {
 }
 
 // Namespace tracker/tracker_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x3d388c9e, Offset: 0x360
 // Size: 0xe8
 function onplayerdisconnect() {
@@ -63,7 +63,7 @@ function onplayerdisconnect() {
 }
 
 // Namespace tracker/tracker_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xb0ff9f49, Offset: 0x450
 // Size: 0x15c
 function function_1085f2e2(oldval, newval) {
@@ -91,7 +91,7 @@ function function_1085f2e2(oldval, newval) {
 }
 
 // Namespace tracker/tracker_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xff55ad10, Offset: 0x5b8
 // Size: 0x18c
 function function_6eab3112(var_f6536836) {
@@ -122,7 +122,7 @@ function function_6eab3112(var_f6536836) {
 }
 
 // Namespace tracker/tracker_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x250d4113, Offset: 0x750
 // Size: 0x86
 function function_486aa28(targetentnum, var_f6536836) {
@@ -136,7 +136,7 @@ function function_486aa28(targetentnum, var_f6536836) {
 }
 
 // Namespace tracker/tracker_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xb1a8f520, Offset: 0x7e0
 // Size: 0x17a
 function function_ec3bbe79(data) {
@@ -159,7 +159,7 @@ function function_ec3bbe79(data) {
 }
 
 // Namespace tracker/tracker_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x364a71a3, Offset: 0x968
 // Size: 0x70
 function function_c8241070(player, *weapon) {
@@ -193,7 +193,7 @@ function function_43084f6c(player) {
 }
 
 // Namespace tracker/tracker_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x9ae1a45f, Offset: 0xb90
 // Size: 0x52
 function function_2c77961d(player) {
@@ -208,7 +208,7 @@ function function_2c77961d(player) {
 }
 
 // Namespace tracker/tracker_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x3056db4a, Offset: 0xbf0
 // Size: 0xb0
 function function_796e0334(player) {
@@ -228,7 +228,7 @@ function function_796e0334(player) {
 }
 
 // Namespace tracker/tracker_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x9a862eaa, Offset: 0xca8
 // Size: 0x1c0
 function function_a7e7bda0() {

@@ -106,7 +106,7 @@ function perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision)
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
-// Params d, eflags: 0x2 linked
+// Params 13, eflags: 0x2 linked
 // Checksum 0x496b7a16, Offset: 0x900
 // Size: 0x420
 function function_abddd809(inflictor, attacker, damage, flags, meansofdeath, weapon, *var_fd90b0bb, vpoint, vdir, shitloc, psoffsettime, boneindex, surfacetype) {

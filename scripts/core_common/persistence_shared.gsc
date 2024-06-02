@@ -90,7 +90,7 @@ function adjust_recent_stats() {
 }
 
 // Namespace persistence/persistence_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xbb8eb234, Offset: 0x410
 // Size: 0xec
 function function_acac764e() {
@@ -380,7 +380,7 @@ function event_handler[player_gunchallengecomplete] codecallback_gunchallengecom
 }
 
 // Namespace persistence/persistence_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4dba64ef, Offset: 0x1600
 // Size: 0x54
 function upload_stats_soon() {

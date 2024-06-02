@@ -424,7 +424,7 @@ function function_f7086924(var_64a23077) {
 }
 
 // Namespace doa_enemy/doa_enemy
-// Params a, eflags: 0x2 linked
+// Params 10, eflags: 0x2 linked
 // Checksum 0x4a65be0c, Offset: 0x1490
 // Size: 0x1b6
 function function_5982ca9d(spawndef, count = 10, targetpoint, radius = 0, generator, enemy, var_294cccb7, arena, groupid, expiresat) {

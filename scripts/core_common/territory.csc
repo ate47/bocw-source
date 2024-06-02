@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_19c6c147c637b960;
+#using scripts\core_common\territory_util.csc;
 #using scripts\core_common\system_shared.csc;
 #using scripts\core_common\struct.csc;
 #using scripts\core_common\clientfield_shared.csc;

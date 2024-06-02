@@ -116,7 +116,7 @@ function private _trigger(player, trigger, *var_ec80d14b) {
 // Size: 0x6ba
 function private function_f2a2832d(*player, msg) {
     switch (msg) {
-    case #"hash_de0a71f1b8beaa7":
+    case #"post_takedown":
         setsoundcontext("visit", "post_takedown");
         level.var_28b99ea7 = "post_takedown";
         function_a269371b();
@@ -237,26 +237,26 @@ function private function_887ac605(objective) {
     player = players[0];
     level thread function_8cb75a6();
     switch (objective) {
-    case #"hash_55e940a3ca2d2533":
+    case #"chapter_selection":
         break;
-    case #"hash_de0a71f1b8beaa7":
-    case #"hash_55e53afbf5115da0":
+    case #"post_takedown":
+    case #"post_takedown_skip_briefing":
         level.var_28b99ea7 = "post_takedown";
         function_a269371b();
         break;
     case #"post_armada":
-    case #"hash_3f942629dd634c1d":
+    case #"post_armada_skip_briefing":
         level.var_28b99ea7 = "post_armada";
         function_a269371b();
         snd::function_645c2f9b(player, "thunder_int");
         break;
     case #"post_yamantau":
-    case #"hash_6b6b433835e19763":
+    case #"post_yamantau_skip_briefing":
         level.var_28b99ea7 = "post_yamantau";
         function_a269371b();
         break;
     case #"post_kgb":
-    case #"hash_45b5ada813cf005f":
+    case #"post_kgb_skip_briefing":
         level.var_28b99ea7 = "post_kgb";
         function_a269371b();
         break;
@@ -307,11 +307,11 @@ function function_8cb75a6() {
         level.var_2de628a1[#"hudson"][#"default"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
         level.var_2de628a1[#"woods"][#"default"] = [["attire", "tactical"], ["footwear", "combat_boot"]];
         level.var_2de628a1[#"mason"][#"default"] = [["attire", "tactical"], ["footwear", "combat_boot"]];
-        level.var_2de628a1[#"adler"][#"hash_de0a71f1b8beaa7"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
-        level.var_2de628a1[#"lazar"][#"hash_de0a71f1b8beaa7"] = [["attire", "casual"], ["footwear", "sneaker"]];
-        level.var_2de628a1[#"park"][#"hash_de0a71f1b8beaa7"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
-        level.var_2de628a1[#"sims"][#"hash_de0a71f1b8beaa7"] = [["attire", "tactical"], ["footwear", "combat_boot"]];
-        level.var_2de628a1[#"hudson"][#"hash_de0a71f1b8beaa7"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"adler"][#"post_takedown"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"lazar"][#"post_takedown"] = [["attire", "casual"], ["footwear", "sneaker"]];
+        level.var_2de628a1[#"park"][#"post_takedown"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
+        level.var_2de628a1[#"sims"][#"post_takedown"] = [["attire", "tactical"], ["footwear", "combat_boot"]];
+        level.var_2de628a1[#"hudson"][#"post_takedown"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
         level.var_2de628a1[#"adler"][#"post_armada"] = [["attire", "leather"], ["footwear", "dress_shoe"]];
         level.var_2de628a1[#"lazar"][#"post_armada"] = [["attire", "winter"], ["footwear", "cowboy_boot"]];
         level.var_2de628a1[#"park"][#"post_armada"] = [["attire", "leather"], ["footwear", "dress_shoe"]];

@@ -513,7 +513,7 @@ function function_e0e908c3(var_dbd23dc, path, stopatgoal) {
 }
 
 // Namespace airsupport/airsupport
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xcd263860, Offset: 0x1be0
 // Size: 0x2ce
 function function_f1b7b432(path, donenotify, stopatgoal, var_135dc5d1, var_96e5d7f = 0) {
@@ -808,7 +808,7 @@ function getrandommappoint(x_offset, y_offset, map_x_percentage, map_y_percentag
 }
 
 // Namespace airsupport/airsupport
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xa81a6ddf, Offset: 0x2d08
 // Size: 0xde
 function getmaxmapwidth() {
@@ -860,7 +860,7 @@ function flattenroll() {
 }
 
 // Namespace airsupport/airsupport
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x2d989a08, Offset: 0x2f70
 // Size: 0x286
 function leave(duration, var_384be02f = 0) {

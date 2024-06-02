@@ -345,7 +345,7 @@ function giveattackerandinflictorownerassist(eattacker, einflictor, idamage, sme
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xba6674e6, Offset: 0x16a0
 // Size: 0xea
 function function_efd02c1d(einflictor) {
@@ -397,7 +397,7 @@ function figureoutattacker(eattacker) {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb0b001a6, Offset: 0x18f8
 // Size: 0x96
 function function_38527849() {

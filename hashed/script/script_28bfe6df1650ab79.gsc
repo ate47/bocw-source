@@ -54,7 +54,7 @@ function is_active() {
 }
 
 // Namespace namespace_e01afe67/namespace_e01afe67
-// Params d, eflags: 0x4
+// Params 13, eflags: 0x4
 // Checksum 0x8cf33d54, Offset: 0x238
 // Size: 0xc0
 function private height_check(*inflictor, attacker, damage, *flags, *meansofdeath, *weapon, *var_fd90b0bb, *vpoint, *vdir, *shitloc, *psoffsettime, *boneindex, *surfacetype) {

@@ -50,7 +50,7 @@ function function_9677601b(callback, func) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xca804e0b, Offset: 0x3a0
 // Size: 0xc0
 function function_6f51d1e9(event, players, victim, weapon) {
@@ -275,7 +275,7 @@ function shouldaddrankxp(player) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x5eb287a, Offset: 0x11b8
 // Size: 0xc4
 function uninterruptedobitfeedkills(attacker, weapon) {
@@ -312,7 +312,7 @@ function isregisteredevent(type) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4b2cc1c0, Offset: 0x1330
 // Size: 0x4c
 function decrementlastobituaryplayercountafterfade() {
@@ -399,7 +399,7 @@ function getscoreeventtableid(gametype) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xafba13e7, Offset: 0x17d8
 // Size: 0x1dc
 function givecratecapturemedal(crate, capturer) {
@@ -492,7 +492,7 @@ function hero_ability_multikill_event(killcount, ability) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x59cc27b1, Offset: 0x1c30
 // Size: 0xb2
 function hero_weapon_multikill_event(killcount, weapon) {
@@ -507,7 +507,7 @@ function hero_weapon_multikill_event(killcount, weapon) {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x7dba135b, Offset: 0x1cf0
 // Size: 0x34
 function function_dcdf1105() {
@@ -531,7 +531,7 @@ function player_fully_healed() {
 }
 
 // Namespace scoreevents/scoreevents_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x9f7fdb4f, Offset: 0x1e10
 // Size: 0x10
 function player_spawned() {

@@ -7,7 +7,7 @@
 #using scripts\core_common\callbacks_shared.csc;
 #using script_38867f943fb86135;
 #using scripts\core_common\postfx_shared.csc;
-#using script_65fbfb5ecb1f899e;
+#using scripts\core_common\easing.csc;
 #using script_dfd475a961626c7;
 #using scripts\core_common\load_shared.csc;
 #using scripts\core_common\clientfield_shared.csc;
@@ -40,7 +40,7 @@ function on_spawned(*localclientnum) {
     self endon(#"death", #"disconnect");
     waitframe(1);
     util::function_8eb5d4b0(3000, 0.23);
-    self thread namespace_260f8380::function_d9475fc(0.6, undefined, undefined, undefined);
+    self thread cp_post::function_d9475fc(0.6, undefined, undefined, undefined);
 }
 
 // Namespace cp_takedown/cp_takedown

@@ -11,7 +11,7 @@
 #namespace heatseekingmissile;
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x80c06d39, Offset: 0x1b8
 // Size: 0xac
 function init_shared() {
@@ -855,7 +855,7 @@ function enemylockedon() {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xcee90e86, Offset: 0x2cb0
 // Size: 0x1c8
 function playlockonsoundsthread(player, var_df318bbf, var_4edd2f28) {
@@ -894,7 +894,7 @@ function function_c8b14330(vehicle) {
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x67cee0f6, Offset: 0x2ed8
 // Size: 0xe6
 function targetinghacking(target, lock) {

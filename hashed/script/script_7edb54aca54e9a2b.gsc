@@ -8,7 +8,7 @@
 class cdebug_center_screen : cluielem {
 
     // Namespace cdebug_center_screen/debug_center_screen
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x514b7cae, Offset: 0x1e8
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -16,7 +16,7 @@ class cdebug_center_screen : cluielem {
     }
 
     // Namespace cdebug_center_screen/debug_center_screen
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x2744138d, Offset: 0x230
     // Size: 0x24
     function close(player) {
@@ -24,7 +24,7 @@ class cdebug_center_screen : cluielem {
     }
 
     // Namespace cdebug_center_screen/debug_center_screen
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0xdefaefe5, Offset: 0x1c0
     // Size: 0x1c
     function setup_clientfields() {

@@ -936,7 +936,7 @@ function private function_fe189514(itementry) {
 }
 
 // Namespace item_inventory/item_inventory
-// Params a, eflags: 0x6 linked
+// Params 10, eflags: 0x6 linked
 // Checksum 0x9c8647b2, Offset: 0x4bc8
 // Size: 0x1fcc
 function private function_1a99656a(localclientnum, inventoryitem, networkid, itemid, count, totalcount, availableaction, var_e35261f6 = 1, var_189fcf49 = 0, var_1204dfe9 = 1) {

@@ -12,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace classicmode/classicmode
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x9a77a97b, Offset: 0xd0
 // Size: 0x4c
 function private preinit() {
@@ -23,7 +23,7 @@ function private preinit() {
 }
 
 // Namespace classicmode/classicmode
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc249700e, Offset: 0x128
 // Size: 0x164
 function enableclassicmode() {

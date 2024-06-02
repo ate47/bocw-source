@@ -6,7 +6,7 @@
 #namespace ballistic_knife;
 
 // Namespace ballistic_knife/ballistic_knife
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc4ddc905, Offset: 0xe8
 // Size: 0xfc
 function init_shared() {
@@ -20,7 +20,7 @@ function init_shared() {
 }
 
 // Namespace ballistic_knife/ballistic_knife
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd863cff4, Offset: 0x1f0
 // Size: 0x3b0
 function onspawn(watcher, player) {
@@ -77,7 +77,7 @@ function onspawn(watcher, player) {
 }
 
 // Namespace ballistic_knife/ballistic_knife
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xaa86bb89, Offset: 0x5a8
 // Size: 0x2a4
 function onspawnretrievetrigger(watcher, player) {
@@ -119,7 +119,7 @@ function onspawnretrievetrigger(watcher, player) {
 }
 
 // Namespace ballistic_knife/ballistic_knife
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2efceadc, Offset: 0x858
 // Size: 0x8c
 function function_8e6a040(*prey) {
@@ -133,7 +133,7 @@ function function_8e6a040(*prey) {
 }
 
 // Namespace ballistic_knife/ballistic_knife
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x910ec5d0, Offset: 0x8f0
 // Size: 0x44
 function onpickup(player, heldweapon) {
@@ -156,7 +156,7 @@ function destroy_ent() {
 }
 
 // Namespace ballistic_knife/ballistic_knife
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xea55b932, Offset: 0x9a0
 // Size: 0x68
 function dropknivestoground() {
@@ -168,7 +168,7 @@ function dropknivestoground() {
 }
 
 // Namespace ballistic_knife/ballistic_knife
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xaba4abe9, Offset: 0xa10
 // Size: 0x7c
 function droptoground(origin, radius) {
@@ -179,7 +179,7 @@ function droptoground(origin, radius) {
 }
 
 // Namespace ballistic_knife/ballistic_knife
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x7294ebe0, Offset: 0xa98
 // Size: 0x94
 function updateretrievetrigger() {
@@ -193,7 +193,7 @@ function updateretrievetrigger() {
 }
 
 // Namespace ballistic_knife/ballistic_knife
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x874b22a6, Offset: 0xb38
 // Size: 0x54
 function onfizzleout() {
@@ -203,7 +203,7 @@ function onfizzleout() {
 }
 
 // Namespace ballistic_knife/ballistic_knife
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2738df81, Offset: 0xb98
 // Size: 0x8e
 function createballisticknifewatcher(watcher) {

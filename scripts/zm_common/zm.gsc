@@ -1284,7 +1284,7 @@ function register_vehicle_damage_callback(func) {
 }
 
 // Namespace zm/zm
-// Params 10, eflags: 0x2 linked
+// Params 16, eflags: 0x2 linked
 // Checksum 0xaec037da, Offset: 0x6808
 // Size: 0x1ec
 function vehicle_damage_override(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, damagefromunderneath, modelindex, partname, vsurfacenormal) {

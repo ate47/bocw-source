@@ -4,17 +4,17 @@
 #using scripts\core_common\system_shared.csc;
 #using scripts\core_common\callbacks_shared.csc;
 
-#namespace namespace_260f8380;
+#namespace cp_post;
 
-// Namespace namespace_260f8380/namespace_260f8380
+// Namespace cp_post/cp_post
 // Params 0, eflags: 0x5
 // Checksum 0xe1aaf840, Offset: 0x118
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_5cd88d9b0fb0d8ad", undefined, &function_64608eb3, undefined, undefined);
+    system::register(#"cp_post", undefined, &function_64608eb3, undefined, undefined);
 }
 
-// Namespace namespace_260f8380/namespace_260f8380
+// Namespace cp_post/cp_post
 // Params 0, eflags: 0x2 linked
 // Checksum 0xd8f8265f, Offset: 0x160
 // Size: 0x24
@@ -22,7 +22,7 @@ function function_64608eb3() {
     callback::on_localplayer_spawned(&start);
 }
 
-// Namespace namespace_260f8380/namespace_260f8380
+// Namespace cp_post/cp_post
 // Params 7, eflags: 0x2 linked
 // Checksum 0x58dbfb26, Offset: 0x190
 // Size: 0x184
@@ -42,7 +42,7 @@ function start(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fiel
     setdvar(#"hash_7633a587d5705d08", 1);
 }
 
-// Namespace namespace_260f8380/namespace_260f8380
+// Namespace cp_post/cp_post
 // Params 7, eflags: 0x0
 // Checksum 0x80cf5a44, Offset: 0x320
 // Size: 0x74
@@ -52,7 +52,7 @@ function stop(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *field
     }
 }
 
-// Namespace namespace_260f8380/namespace_260f8380
+// Namespace cp_post/cp_post
 // Params 4, eflags: 0x0
 // Checksum 0xf9bc6735, Offset: 0x3a0
 // Size: 0x124

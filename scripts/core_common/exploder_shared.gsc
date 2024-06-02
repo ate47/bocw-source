@@ -219,7 +219,7 @@ function function_993369d6(exploder_string) {
 }
 
 // Namespace exploder/exploder_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x85157d2e, Offset: 0x1060
 // Size: 0x24
 function exploder_stop(num) {
@@ -645,7 +645,7 @@ function delete_exploder_on_clients(exploder_id) {
 }
 
 // Namespace exploder/exploder_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf93f8170, Offset: 0x2818
 // Size: 0x5c
 function kill_exploder(exploder_string) {

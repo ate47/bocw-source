@@ -37,7 +37,7 @@ function init_loadout_slot(slot_index) {
 }
 
 // Namespace loadout/player_loadout
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x7c8095f2, Offset: 0x2e8
 // Size: 0x50
 function get_loadout_slot(slot_index) {
@@ -90,7 +90,7 @@ function function_18a77b37(slot_index) {
 }
 
 // Namespace loadout/player_loadout
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x90fe3732, Offset: 0x5b0
 // Size: 0xb6
 function function_442539(slot_index, weapon) {

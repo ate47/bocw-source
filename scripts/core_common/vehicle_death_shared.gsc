@@ -1406,7 +1406,7 @@ function vehicle_damage_filter_exit_watcher(*driver) {
 }
 
 // Namespace vehicle_death/vehicle_death_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xb6dbcc94, Offset: 0x50c0
 // Size: 0x182
 function vehicle_damage_filter(vision_set, heavy_damage_threshold, *filterid, b_use_player_damage = 0) {

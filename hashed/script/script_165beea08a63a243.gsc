@@ -19,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_7da6f8ca/namespace_7da6f8ca
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x44fb4c88, Offset: 0x108
 // Size: 0x10
 function private preinit() {
@@ -27,7 +27,7 @@ function private preinit() {
 }
 
 // Namespace namespace_7da6f8ca/namespace_7da6f8ca
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd3129fa7, Offset: 0x120
 // Size: 0x120
 function fake_physicslaunch(target_pos, power) {
@@ -43,7 +43,7 @@ function fake_physicslaunch(target_pos, power) {
 }
 
 // Namespace namespace_7da6f8ca/namespace_7da6f8ca
-// Params 14, eflags: 0x0
+// Params 14, eflags: 0x2 linked
 // Checksum 0xf340f238, Offset: 0x248
 // Size: 0x32c
 function function_7a1e21a9(attacker, v_origin, min_radius, max_radius = 50, var_4dd1cd8b = 70, var_8c20ac00 = 100, n_height = 101, *var_e927082a = 64, n_power = 100, var_4c1ec23b, min_angle = 0, max_angle = 360, var_383ab56c = 0, var_92844ba1 = 0) {
@@ -154,7 +154,7 @@ function function_d92e3c5a(attacker, ai_zone, itemlist, var_e927082a = 0, n_powe
 }
 
 // Namespace namespace_7da6f8ca/namespace_7da6f8ca
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xebc6b007, Offset: 0x9e0
 // Size: 0x38
 function private function_1979a72e(pos) {
@@ -173,7 +173,7 @@ function function_fe9c13ca() {
 }
 
 // Namespace namespace_7da6f8ca/namespace_7da6f8ca
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xd49686ea, Offset: 0xa38
 // Size: 0x37a
 function function_e1cd5954(v_origin, min_radius = 0, max_radius = 32, n_height = 64, min_angle = 0, max_angle = 360, var_39262f2b = 0) {

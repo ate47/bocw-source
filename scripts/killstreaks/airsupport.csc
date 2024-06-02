@@ -17,7 +17,7 @@ function planesounds(*localclientnum, spawnsound, flybysound, flybysoundloop) {
 }
 
 // Namespace airsupport/airsupport
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xcbb6386b, Offset: 0x148
 // Size: 0x22
 function getplanemodel(*teamfaction) {
@@ -42,7 +42,7 @@ function planeturnleft(localclientnum, plane, yaw, halflife, starttime) {
 }
 
 // Namespace airsupport/airsupport
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x2189737a, Offset: 0x228
 // Size: 0x9d4
 function planeturn(localclientnum, plane, yaw, halflife, starttime, isturningright) {

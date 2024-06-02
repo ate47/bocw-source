@@ -35,7 +35,7 @@ function power_is_hero_ability(gadget) {
 }
 
 // Namespace ability_power/ability_power
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xec8795e2, Offset: 0x230
 // Size: 0x40
 function function_9d78823f(gadget, weapon) {

@@ -11,7 +11,7 @@
 #using scripts\core_common\util_shared.gsc;
 #using scripts\core_common\system_shared.gsc;
 #using scripts\core_common\flag_shared.gsc;
-#using script_6eea75edd4d830a;
+#using scripts\core_common\easing.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 #using scripts\core_common\animation_shared.gsc;
 

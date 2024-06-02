@@ -73,7 +73,7 @@ function private preinit() {
 }
 
 // Namespace bot/bot
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1290b7c1, Offset: 0x568
 // Size: 0x6
 function is_bot_ranked_match() {

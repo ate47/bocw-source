@@ -268,7 +268,7 @@ function remove_on_laststand(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x2e5f9b53, Offset: 0xd18
 // Size: 0x3c
 function on_player_corpse(func, obj) {
@@ -276,7 +276,7 @@ function on_player_corpse(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xfcf582fe, Offset: 0xd60
 // Size: 0x3c
 function function_930e5d42(func, obj) {
@@ -412,7 +412,7 @@ function on_killcam_end(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x28a6c02c, Offset: 0x1228
 // Size: 0x3c
 function function_9fcd5f60(func, obj) {

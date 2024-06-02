@@ -20,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace item_world_debug/item_world_debug
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x264680ab, Offset: 0x128
 // Size: 0xb4
 function private preinit() {
@@ -46,7 +46,7 @@ function private preinit() {
 }
 
 // Namespace item_world_debug/item_world_debug
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xd6f20ab, Offset: 0x1e8
 // Size: 0x54
 function private postinit() {

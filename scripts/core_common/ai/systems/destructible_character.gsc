@@ -285,7 +285,7 @@ function getpiececount(entity) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 13, eflags: 0x2 linked
+// Params 13, eflags: 0x0
 // Checksum 0x2de127e8, Offset: 0x12f8
 // Size: 0x138
 function handledamage(*einflictor, *eattacker, idamage, *idflags, *smeansofdeath, *weapon, *var_fd90b0bb, *vpoint, *vdir, shitloc, *psoffsettime, var_a9e3f040, *modelindex) {

@@ -26,7 +26,7 @@ function private function_788fb510(value) {
 }
 
 // Namespace gametype/gametype_shared
-// Params a, eflags: 0x2 linked
+// Params 10, eflags: 0x2 linked
 // Checksum 0x16c876f3, Offset: 0x190
 // Size: 0x1c4
 function setvisiblescoreboardcolumns(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10) {

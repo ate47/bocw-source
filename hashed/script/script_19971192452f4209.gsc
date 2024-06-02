@@ -529,7 +529,7 @@ function function_91c383b1(chapter) {
     level.a_ai_allies = [];
     level.var_58ccee4 = [];
     switch (chapter) {
-    case #"hash_de0a71f1b8beaa7":
+    case #"post_takedown":
         var_959954b3 = ["adler", "park", "lazar", "sims"];
         break;
     case #"post_armada":
@@ -621,7 +621,7 @@ function function_1f4ed1b4(var_8ced85ea) {
     var_a2279767 = getent("map_table", "targetname");
     level thread scene::play("scene_hub_env_fan_box");
     switch (var_8ced85ea) {
-    case #"hash_de0a71f1b8beaa7":
+    case #"post_takedown":
         level thread scene::stop("scene_hub_env_desk_fan");
         function_23128418();
         var_23917641 = getentarray("post_takedown_desk_set", "script_noteworthy");
@@ -2549,7 +2549,7 @@ function function_abeb9b2d(var_5d5112e8, short, fade, var_68001b81, fadetime) {
 // Size: 0x26c
 function function_29279de1(var_8ced85ea) {
     switch (var_8ced85ea) {
-    case #"hash_de0a71f1b8beaa7":
+    case #"post_takedown":
         var_ec670c03 = "cp_safehouse_reagan_inauguration";
         var_46f9f605 = "cp_shared_vietnam_brainwash";
         break;

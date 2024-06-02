@@ -82,7 +82,7 @@ function register_overlay_info_style_burn(*name, *version, *lerp_step_count, *du
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params b, eflags: 0x2 linked
+// Params 11, eflags: 0x2 linked
 // Checksum 0x6727f95f, Offset: 0x5d0
 // Size: 0x22e
 function register_overlay_info_style_speed_blur(name, version, lerp_step_count, amount, inner_radius, outer_radius, velocity_should_scale, velocity_scale, blur_in, blur_out, should_offset) {
@@ -101,7 +101,7 @@ function register_overlay_info_style_speed_blur(name, version, lerp_step_count, 
 }
 
 // Namespace visionset_mgr/visionset_mgr_shared
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xc6f59760, Offset: 0x808
 // Size: 0xde
 function register_overlay_info_style_postfx_bundle(name, version, lerp_step_count, bundle, duration) {

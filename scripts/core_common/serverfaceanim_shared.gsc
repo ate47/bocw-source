@@ -13,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace serverfaceanim/serverfaceanim_shared
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x3c49b72f, Offset: 0x128
 // Size: 0x44
 function private preinit() {
@@ -24,7 +24,7 @@ function private preinit() {
 }
 
 // Namespace serverfaceanim/serverfaceanim_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x52ef84d5, Offset: 0x178
 // Size: 0x1cc
 function init_serverfaceanim() {
@@ -46,7 +46,7 @@ function init_serverfaceanim() {
 }
 
 // Namespace serverfaceanim/serverfaceanim_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x77130515, Offset: 0x350
 // Size: 0xd0
 function wait_for_face_event() {

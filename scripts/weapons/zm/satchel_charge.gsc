@@ -31,7 +31,7 @@ function private preinit() {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params f, eflags: 0x2 linked
+// Params 15, eflags: 0x2 linked
 // Checksum 0x7d23899e, Offset: 0x1b0
 // Size: 0xda
 function function_558ac85a(inflictor, attacker, *damage, *flags, *meansofdeath, *weapon, *vpoint, *vdir, *shitloc, *vdamageorigin, *psoffsettime, *boneindex, *modelindex, *surfacetype, *vsurfacenormal) {

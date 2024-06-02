@@ -14,7 +14,7 @@
 #using scripts\cp_common\objectives.gsc;
 #using script_67c9a990c0db216c;
 #using script_74940ab70a48ee4e;
-#using script_6eea75edd4d830a;
+#using scripts\core_common\easing.gsc;
 #using script_37f9ff47f340fbe8;
 #using scripts\core_common\districts.gsc;
 #using script_7d0013bbc05623b9;

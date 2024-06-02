@@ -8,7 +8,7 @@
 class cluielemtext : cluielem {
 
     // Namespace cluielemtext/luielemtext
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x64cf93d3, Offset: 0x978
     // Size: 0x24
     function open(localclientnum) {
@@ -16,7 +16,7 @@ class cluielemtext : cluielem {
     }
 
     // Namespace cluielemtext/luielemtext
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xfc1471ec, Offset: 0xba0
     // Size: 0x30
     function set_horizontal_alignment(localclientnum, value) {
@@ -24,7 +24,7 @@ class cluielemtext : cluielem {
     }
 
     // Namespace cluielemtext/luielemtext
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x9eae093b, Offset: 0xaf8
     // Size: 0x30
     function set_green(localclientnum, value) {
@@ -32,7 +32,7 @@ class cluielemtext : cluielem {
     }
 
     // Namespace cluielemtext/luielemtext
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x380800c4, Offset: 0xa50
     // Size: 0x30
     function set_fadeovertime(localclientnum, value) {
@@ -40,7 +40,7 @@ class cluielemtext : cluielem {
     }
 
     // Namespace cluielemtext/luielemtext
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x50aed88c, Offset: 0x7e0
     // Size: 0x1c
     function register_clientside() {
@@ -48,7 +48,7 @@ class cluielemtext : cluielem {
     }
 
     // Namespace cluielemtext/luielemtext
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xfcbe7350, Offset: 0xa18
     // Size: 0x30
     function set_height(localclientnum, value) {
@@ -56,7 +56,7 @@ class cluielemtext : cluielem {
     }
 
     // Namespace cluielemtext/luielemtext
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x4bb35cd, Offset: 0xb30
     // Size: 0x30
     function set_blue(localclientnum, value) {
@@ -64,7 +64,7 @@ class cluielemtext : cluielem {
     }
 
     // Namespace cluielemtext/luielemtext
-    // Params a, eflags: 0x2 linked
+    // Params 10, eflags: 0x0
     // Checksum 0xb23feb96, Offset: 0x5d8
     // Size: 0x1fc
     function setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, *textcallback, horizontal_alignmentcallback) {
@@ -82,7 +82,7 @@ class cluielemtext : cluielem {
     }
 
     // Namespace cluielemtext/luielemtext
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x51a768af, Offset: 0x9e0
     // Size: 0x30
     function set_y(localclientnum, value) {
@@ -90,7 +90,7 @@ class cluielemtext : cluielem {
     }
 
     // Namespace cluielemtext/luielemtext
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xe979e188, Offset: 0xa88
     // Size: 0x30
     function set_alpha(localclientnum, value) {
@@ -98,7 +98,7 @@ class cluielemtext : cluielem {
     }
 
     // Namespace cluielemtext/luielemtext
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x5bd53fc8, Offset: 0x9a8
     // Size: 0x30
     function set_x(localclientnum, value) {
@@ -106,7 +106,7 @@ class cluielemtext : cluielem {
     }
 
     // Namespace cluielemtext/luielemtext
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x514fb6bc, Offset: 0xb68
     // Size: 0x30
     function set_text(localclientnum, value) {
@@ -114,7 +114,7 @@ class cluielemtext : cluielem {
     }
 
     // Namespace cluielemtext/luielemtext
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x4ff7d1eb, Offset: 0xac0
     // Size: 0x30
     function set_red(localclientnum, value) {
@@ -122,7 +122,7 @@ class cluielemtext : cluielem {
     }
 
     // Namespace cluielemtext/luielemtext
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xe308fb33, Offset: 0x808
     // Size: 0x168
     function function_fa582112(localclientnum) {
@@ -142,7 +142,7 @@ class cluielemtext : cluielem {
 }
 
 // Namespace luielemtext/luielemtext
-// Params 10, eflags: 0x2 linked
+// Params 10, eflags: 0x0
 // Checksum 0x7684b2bf, Offset: 0x148
 // Size: 0x1ce
 function register(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, textcallback, horizontal_alignmentcallback) {

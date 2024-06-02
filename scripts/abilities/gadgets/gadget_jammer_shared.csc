@@ -43,7 +43,7 @@ function init_shared() {
 }
 
 // Namespace jammer/gadget_jammer_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xe4c72bd5, Offset: 0x340
 // Size: 0x22
 function register(entity, var_b89c18) {

@@ -36,7 +36,7 @@ function player_all_players_in_laststand() {
 }
 
 // Namespace laststand/laststand_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x24072d4f, Offset: 0x160
 // Size: 0x16
 function player_any_player_in_laststand() {
@@ -63,7 +63,7 @@ function function_7fb2bbfc() {
 }
 
 // Namespace laststand/laststand_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xb3a843d1, Offset: 0x280
 // Size: 0x124
 function is_facing(facee, requireddot = 0.9) {
@@ -79,7 +79,7 @@ function is_facing(facee, requireddot = 0.9) {
 }
 
 // Namespace laststand/laststand_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1f185bbb, Offset: 0x3b0
 // Size: 0x8c
 function revive_hud_create() {
@@ -100,7 +100,7 @@ function function_7c7d873() {
 }
 
 // Namespace laststand/laststand_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x40554f75, Offset: 0x470
 // Size: 0x13c
 function revive_hud_show_n_fade(text, time, player = undefined) {
@@ -149,7 +149,7 @@ function function_f5714974() {
 #/
 
 // Namespace laststand/laststand_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x981735f8, Offset: 0x860
 // Size: 0x74
 function function_d4c9e1b5() {

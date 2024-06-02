@@ -8,7 +8,7 @@
 class class_8ebbf51b : cluielem {
 
     // Namespace namespace_8ebbf51b/sr_armor_menu
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xe9672f07, Offset: 0x398
     // Size: 0x24
     function open(localclientnum) {
@@ -16,7 +16,7 @@ class class_8ebbf51b : cluielem {
     }
 
     // Namespace namespace_8ebbf51b/sr_armor_menu
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x343720c7, Offset: 0x340
     // Size: 0x1c
     function register_clientside() {
@@ -24,7 +24,7 @@ class class_8ebbf51b : cluielem {
     }
 
     // Namespace namespace_8ebbf51b/sr_armor_menu
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xa460a7ea, Offset: 0x318
     // Size: 0x1c
     function setup_clientfields() {
@@ -32,7 +32,7 @@ class class_8ebbf51b : cluielem {
     }
 
     // Namespace namespace_8ebbf51b/sr_armor_menu
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xbb37dd6e, Offset: 0x368
     // Size: 0x24
     function function_fa582112(localclientnum) {
@@ -42,7 +42,7 @@ class class_8ebbf51b : cluielem {
 }
 
 // Namespace sr_armor_menu/sr_armor_menu
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xdfc0b962, Offset: 0xc8
 // Size: 0x16e
 function register() {

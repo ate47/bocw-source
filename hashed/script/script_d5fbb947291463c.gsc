@@ -8,7 +8,7 @@
 class czm_dac_challenges_hud : cluielem {
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x224122f1, Offset: 0xaf8
     // Size: 0x30
     function set_binlocation(localclientnum, value) {
@@ -16,7 +16,7 @@ class czm_dac_challenges_hud : cluielem {
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xe6d63e83, Offset: 0xa58
     // Size: 0x24
     function open(localclientnum) {
@@ -24,7 +24,7 @@ class czm_dac_challenges_hud : cluielem {
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xeeee84f6, Offset: 0xcf8
     // Size: 0x30
     function function_1097decc(localclientnum, value) {
@@ -32,7 +32,7 @@ class czm_dac_challenges_hud : cluielem {
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xee0aad98, Offset: 0xa88
     // Size: 0x30
     function set_challengetext(localclientnum, value) {
@@ -40,7 +40,7 @@ class czm_dac_challenges_hud : cluielem {
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x4480cd71, Offset: 0xac0
     // Size: 0x30
     function set_bottomtext(localclientnum, value) {
@@ -48,7 +48,7 @@ class czm_dac_challenges_hud : cluielem {
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xc55702d6, Offset: 0xbe0
     // Size: 0x30
     function set_rewardhidden(localclientnum, value) {
@@ -56,7 +56,7 @@ class czm_dac_challenges_hud : cluielem {
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0x7f1b2ef, Offset: 0x8a8
     // Size: 0x1c
     function register_clientside() {
@@ -64,7 +64,7 @@ class czm_dac_challenges_hud : cluielem {
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params b, eflags: 0x2 linked
+    // Params 11, eflags: 0x0
     // Checksum 0xb936ef80, Offset: 0x670
     // Size: 0x22c
     function setup_clientfields(*var_be2ad4d, *var_a7896263, var_4866daed, progresscallback, var_5d7491df, var_26df3d64, var_90359ec7, *var_2404f6c6, var_74cf4193, var_e89bb89d, var_2c511278) {
@@ -83,7 +83,7 @@ class czm_dac_challenges_hud : cluielem {
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x6e342b61, Offset: 0xb30
     // Size: 0x6c
     function increment_progress(localclientnum) {
@@ -93,7 +93,7 @@ class czm_dac_challenges_hud : cluielem {
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xf5b9ad06, Offset: 0xba8
     // Size: 0x30
     function set_tributeavailable(localclientnum, value) {
@@ -101,7 +101,7 @@ class czm_dac_challenges_hud : cluielem {
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x721f54eb, Offset: 0xc88
     // Size: 0x30
     function function_c079b98b(localclientnum, value) {
@@ -109,7 +109,7 @@ class czm_dac_challenges_hud : cluielem {
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x75119e12, Offset: 0xcc0
     // Size: 0x30
     function function_c21d733d(localclientnum, value) {
@@ -117,7 +117,7 @@ class czm_dac_challenges_hud : cluielem {
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x480b95ed, Offset: 0xc18
     // Size: 0x30
     function set_challengefailing(localclientnum, value) {
@@ -125,7 +125,7 @@ class czm_dac_challenges_hud : cluielem {
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x9cd84bdb, Offset: 0xc50
     // Size: 0x30
     function function_f63ec96b(localclientnum, value) {
@@ -133,7 +133,7 @@ class czm_dac_challenges_hud : cluielem {
     }
 
     // Namespace czm_dac_challenges_hud/zm_dac_challenges_hud
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xf50b0409, Offset: 0x8d0
     // Size: 0x180
     function function_fa582112(localclientnum) {
@@ -154,7 +154,7 @@ class czm_dac_challenges_hud : cluielem {
 }
 
 // Namespace zm_dac_challenges_hud/zm_dac_challenges_hud
-// Params 11, eflags: 0x2 linked
+// Params 11, eflags: 0x0
 // Checksum 0x8bf26842, Offset: 0x1a8
 // Size: 0x1de
 function register(var_be2ad4d, var_a7896263, var_4866daed, progresscallback, var_5d7491df, var_26df3d64, var_90359ec7, var_2404f6c6, var_74cf4193, var_e89bb89d, var_2c511278) {

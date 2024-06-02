@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace character_unlock_fixup/character_unlock_fixup
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xabd2b192, Offset: 0x100
 // Size: 0x10
 function private preinit() {
@@ -151,7 +151,7 @@ function function_c67a5089() {
 }
 
 // Namespace character_unlock_fixup/character_unlock_fixup
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xc4d991f1, Offset: 0xa98
 // Size: 0x3c
 function function_f53ec921(a, b) {

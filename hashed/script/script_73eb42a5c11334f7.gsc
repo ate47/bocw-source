@@ -658,7 +658,7 @@ function private function_1544c7f4(local_client_num, var_56bcf423, var_ec31db0f,
 }
 
 // Namespace ping/ping
-// Params e, eflags: 0x6 linked
+// Params 14, eflags: 0x6 linked
 // Checksum 0xd14b37ca, Offset: 0x31c0
 // Size: 0x336
 function private function_1793cfaf(local_client_num, unique_id, var_56bcf423, var_ec31db0f, event_type, location, var_24733578, var_ccdb199a, var_c232a3ca, var_c3fe48ea, var_52c78c2c, follow_ent = undefined, var_ea6fedda = 4, var_bd94dfbb) {

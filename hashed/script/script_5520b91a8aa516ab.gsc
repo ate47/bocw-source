@@ -8,7 +8,7 @@
 class cremote_missile_target_lockon : cluielem {
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x381d3921, Offset: 0x5b8
     // Size: 0x24
     function open(localclientnum) {
@@ -16,7 +16,7 @@ class cremote_missile_target_lockon : cluielem {
     }
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x7128b02c, Offset: 0x620
     // Size: 0x30
     function set_target_locked(localclientnum, value) {
@@ -24,7 +24,7 @@ class cremote_missile_target_lockon : cluielem {
     }
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xaecb0fc3, Offset: 0x5e8
     // Size: 0x30
     function set_clientnum(localclientnum, value) {
@@ -32,7 +32,7 @@ class cremote_missile_target_lockon : cluielem {
     }
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xb2c7aaec, Offset: 0x658
     // Size: 0x30
     function set_ishawktag(localclientnum, value) {
@@ -40,7 +40,7 @@ class cremote_missile_target_lockon : cluielem {
     }
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x27922d22, Offset: 0x4d8
     // Size: 0x1c
     function register_clientside() {
@@ -48,7 +48,7 @@ class cremote_missile_target_lockon : cluielem {
     }
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xe32dd631, Offset: 0x6c8
     // Size: 0x30
     function function_7c227f6d(localclientnum, value) {
@@ -56,7 +56,7 @@ class cremote_missile_target_lockon : cluielem {
     }
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
-    // Params 5, eflags: 0x0
+    // Params 5, eflags: 0x2 linked
     // Checksum 0xb8ad493d, Offset: 0x488
     // Size: 0x44
     function setup_clientfields(*var_c05c67e2, *var_486334bd, *var_683d075d, *killedcallback, *var_f1a86fa1) {
@@ -64,7 +64,7 @@ class cremote_missile_target_lockon : cluielem {
     }
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x611430a2, Offset: 0x690
     // Size: 0x30
     function set_killed(localclientnum, value) {
@@ -72,7 +72,7 @@ class cremote_missile_target_lockon : cluielem {
     }
 
     // Namespace cremote_missile_target_lockon/remote_missile_target_lockon
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x49ab1470, Offset: 0x500
     // Size: 0xb0
     function function_fa582112(localclientnum) {
@@ -87,7 +87,7 @@ class cremote_missile_target_lockon : cluielem {
 }
 
 // Namespace remote_missile_target_lockon/remote_missile_target_lockon
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x21e6d9a0, Offset: 0x118
 // Size: 0x19e
 function register(var_c05c67e2, var_486334bd, var_683d075d, killedcallback, var_f1a86fa1) {

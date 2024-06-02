@@ -225,7 +225,7 @@ function _waitlogic(s_tracker, notifies) {
 }
 
 // Namespace util/util_shared
-// Params 14, eflags: 0x0
+// Params 14, eflags: 0x2 linked
 // Checksum 0xcb9a6c68, Offset: 0xa38
 // Size: 0x14a
 function waittill_any_ents(ent1, string1, ent2, string2, ent3, string3, ent4, string4, ent5, string5, ent6, string6, ent7, string7) {
@@ -253,7 +253,7 @@ function waittill_any_ents(ent1, string1, ent2, string2, ent3, string3, ent4, st
 }
 
 // Namespace util/util_shared
-// Params b, eflags: 0x2 linked
+// Params 11, eflags: 0x0
 // Checksum 0x7cfa15c0, Offset: 0xb90
 // Size: 0x11a
 function function_e532f5da(n_timeout, ent1, string1, ent2, string2, ent3, string3, ent4, string4, ent5, string5) {
@@ -276,7 +276,7 @@ function function_e532f5da(n_timeout, ent1, string1, ent2, string2, ent3, string
 }
 
 // Namespace util/util_shared
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xe465b461, Offset: 0xcb8
 // Size: 0x78
 function waittill_any_ents_two(ent1, string1, ent2, string2) {
@@ -453,7 +453,7 @@ function single_thread_argarray(entity, func, &a_vars) {
 }
 
 // Namespace util/util_shared
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x10abd708, Offset: 0x15d0
 // Size: 0x44
 function function_50f54b6f(entity, func, arg1, &a_vars) {
@@ -1034,7 +1034,7 @@ function isenemyplayer(player) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4f8e87b2, Offset: 0x30e0
 // Size: 0xd2
 function function_50ed1561(localclientnum) {
@@ -2127,7 +2127,7 @@ function function_3ec868ea(localclientnum, var_7bb490d6 = 1) {
 }
 
 // Namespace util/util_shared
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x3ecc3d4d, Offset: 0x5f40
 // Size: 0x1ec
 function function_ca4b4e19(localclientnum, var_b5338ccb = 1, var_7bb490d6 = 1) {

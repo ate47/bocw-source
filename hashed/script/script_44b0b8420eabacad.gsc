@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\core_common\flag_shared.gsc;
 #using scripts\core_common\util_shared.gsc;
-#using script_75da5547b1822294;
+#using scripts\core_common\territory_util.gsc;
 #using script_335d0650ed05d36d;
 #using script_7d712f77ab8d0c16;
 #using scripts\core_common\system_shared.gsc;
@@ -304,8 +304,8 @@ function function_82ca1565(spawnpoint, gametype) {
         return (isdefined(spawnpoint.escort) && spawnpoint.escort);
     case #"bounty":
         return (isdefined(spawnpoint.bounty) && spawnpoint.bounty);
-    case #"hash_317e5380181c9168":
-        return is_true(spawnpoint.var_50bf3e3b);
+    case #"fireteam":
+        return is_true(spawnpoint.fireteam);
     case #"vip":
         return is_true(spawnpoint.vip);
     case #"war":
@@ -409,7 +409,7 @@ function usestartspawns() {
 }
 
 // Namespace spawning/namespace_48f955ce
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5e0fa6d5, Offset: 0x1868
 // Size: 0x10
 function function_7a87efaa() {
@@ -483,7 +483,7 @@ function function_fac242d0(var_9be0d23f, var_f64fe0e3, var_efb263ee) {
 }
 
 // Namespace spawning/namespace_48f955ce
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd08fefc, Offset: 0x1c88
 // Size: 0x122
 function function_90dee50d() {
@@ -506,7 +506,7 @@ function function_90dee50d() {
 }
 
 // Namespace spawning/namespace_48f955ce
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x58dc8f4c, Offset: 0x1db8
 // Size: 0x44
 function function_c24e290c(spawn) {

@@ -11,7 +11,7 @@ class class_37d61ee3 : cluielem {
     var var_d5213cbb;
 
     // Namespace namespace_37d61ee3/lui_plane_mortar
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x40042098, Offset: 0x248
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -19,7 +19,7 @@ class class_37d61ee3 : cluielem {
     }
 
     // Namespace namespace_37d61ee3/lui_plane_mortar
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x2d13fb52, Offset: 0x290
     // Size: 0x24
     function close(player) {
@@ -27,7 +27,7 @@ class class_37d61ee3 : cluielem {
     }
 
     // Namespace namespace_37d61ee3/lui_plane_mortar
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x6e06e9b8, Offset: 0x2c0
     // Size: 0x54
     function function_6c69ff4b(player, value) {
@@ -35,7 +35,7 @@ class class_37d61ee3 : cluielem {
     }
 
     // Namespace namespace_37d61ee3/lui_plane_mortar
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0xe493bbcf, Offset: 0x220
     // Size: 0x1c
     function setup_clientfields() {
@@ -43,7 +43,7 @@ class class_37d61ee3 : cluielem {
     }
 
     // Namespace namespace_37d61ee3/lui_plane_mortar
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x5fa88031, Offset: 0x320
     // Size: 0x54
     function function_b172c58e(player, value) {

@@ -689,7 +689,7 @@ function private function_7d17822(status_effect_type) {
 }
 
 // Namespace status_effect/status_effect_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x59aa197b, Offset: 0x2388
 // Size: 0x1c
 function function_7505baeb(var_5c980521) {

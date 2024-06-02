@@ -231,7 +231,7 @@ function private refresh_menu_values() {
 }
 
 // Namespace lui/lui_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x836c5244, Offset: 0x850
 // Size: 0x9c
 function play_animation(menu, str_anim) {
@@ -473,7 +473,7 @@ function private _play_movie_for_player(str_movie, str_type, show_black_screen, 
 }
 
 // Namespace lui/lui_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x85b33fc0, Offset: 0x19e0
 // Size: 0x400
 function play_outro_movie(outro_movie = getmapoutromovie()) {
@@ -803,7 +803,7 @@ function close_generic_script_dialog() {
 }
 
 // Namespace lui/lui_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x92cff311, Offset: 0x2e68
 // Size: 0xc4
 function open_script_dialog(dialog_name) {

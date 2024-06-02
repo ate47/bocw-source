@@ -207,7 +207,7 @@ function delete_on_death_wait(ent, *sounddone) {
 }
 
 // Namespace sound/sound_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x7ccd5af3, Offset: 0x9b0
 // Size: 0x174
 function play_on_players(sound, team) {

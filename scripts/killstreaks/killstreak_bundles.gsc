@@ -13,7 +13,7 @@ function spawned(bundle) {
 }
 
 // Namespace killstreak_bundles/killstreak_bundles
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe1137f44, Offset: 0x1e0
 // Size: 0xa
 function function_48e9536e() {

@@ -9,7 +9,7 @@
 #using scripts\core_common\clientfield_shared.csc;
 #using scripts\core_common\postfx_shared.csc;
 #using script_140d5347de8af85c;
-#using script_65fbfb5ecb1f899e;
+#using scripts\core_common\easing.csc;
 #using scripts\core_common\load_shared.csc;
 #using scripts\core_common\util_shared.csc;
 

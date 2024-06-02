@@ -16,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace flashlight/flashlight
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd623cf4c, Offset: 0x240
 // Size: 0x134
 function function_9b7441d1(flashlight_out = 0) {
@@ -35,7 +35,7 @@ function function_9b7441d1(flashlight_out = 0) {
 }
 
 // Namespace flashlight/flashlight
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x440e9066, Offset: 0x380
 // Size: 0x9e
 function function_8d59ee47(flashlight_out = 0) {
@@ -271,7 +271,7 @@ function function_ac53d0fb() {
 }
 
 // Namespace flashlight/flashlight
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xa43ab1d3, Offset: 0xd58
 // Size: 0x22
 function function_3aec1b7() {
@@ -294,7 +294,7 @@ function light_off() {
 }
 
 // Namespace flashlight/flashlight
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x5be15f7c, Offset: 0xe00
 // Size: 0x1ae
 function function_51dea76e(othersentient) {

@@ -8,7 +8,7 @@
 #namespace namespace_b77e8eb1;
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x84170e12, Offset: 0x1a8
 // Size: 0x26c
 function init() {
@@ -30,7 +30,7 @@ function init() {
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x240afa5d, Offset: 0x420
 // Size: 0x2a4
 function private function_f4d234f9(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -71,7 +71,7 @@ function private function_f4d234f9(localclientnum, *oldval, newval, *bnewent, *b
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x7ccab2a5, Offset: 0x6d0
 // Size: 0x9c
 function function_b315a5d2(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -86,7 +86,7 @@ function function_b315a5d2(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x61d4ff4, Offset: 0x778
 // Size: 0x132
 function private function_6856257d(localclientnum) {
@@ -111,7 +111,7 @@ function private function_6856257d(localclientnum) {
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x73ba0b3a, Offset: 0x8b8
 // Size: 0xce
 function private function_1cfa2520(localclientnum) {
@@ -132,7 +132,7 @@ function private function_1cfa2520(localclientnum) {
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x48d65761, Offset: 0x990
 // Size: 0x148
 function private function_1ef0dbb2() {
@@ -153,7 +153,7 @@ function private function_1ef0dbb2() {
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x976d49fd, Offset: 0xae0
 // Size: 0xa0
 function private function_88008fc3() {
@@ -166,7 +166,7 @@ function private function_88008fc3() {
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x6519fcde, Offset: 0xb88
 // Size: 0x74
 function private function_81784679(ent, localclientnum) {
@@ -177,7 +177,7 @@ function private function_81784679(ent, localclientnum) {
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x51eb0202, Offset: 0xc08
 // Size: 0x24
 function on_local_client_connect(localclientnum) {
@@ -185,7 +185,7 @@ function on_local_client_connect(localclientnum) {
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf59fcf24, Offset: 0xc38
 // Size: 0x484
 function function_84d33874() {
@@ -246,7 +246,7 @@ function function_84d33874() {
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xea22ed5a, Offset: 0x10c8
 // Size: 0x5e
 function function_8cf3a7d9(localclientnum) {
@@ -256,7 +256,7 @@ function function_8cf3a7d9(localclientnum) {
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x2bdf2e29, Offset: 0x1130
 // Size: 0x2e
 function function_c8be8eb1(localclientnum, enable) {
@@ -264,7 +264,7 @@ function function_c8be8eb1(localclientnum, enable) {
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xc9025cd3, Offset: 0x1168
 // Size: 0x16c
 function function_5f865d4b(localclientnum, enable) {
@@ -285,7 +285,7 @@ function function_5f865d4b(localclientnum, enable) {
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xc5d850a1, Offset: 0x12e0
 // Size: 0x2e
 function function_270bde4c(localclientnum, ent) {
@@ -293,7 +293,7 @@ function function_270bde4c(localclientnum, ent) {
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xf2bc13c8, Offset: 0x1318
 // Size: 0x78
 function disable_compass_arrow(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

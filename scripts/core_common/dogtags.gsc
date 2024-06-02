@@ -14,7 +14,7 @@
 #namespace dogtags;
 
 // Namespace dogtags/dogtags
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x749d670e, Offset: 0x2a0
 // Size: 0x14c
 function init() {
@@ -121,7 +121,7 @@ function private function_afe6cbc4(victim) {
 }
 
 // Namespace dogtags/dogtags
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0x6c5bc577, Offset: 0x9e0
 // Size: 0x564
 function spawn_dog_tag(victim, attacker, on_use_function, objectives_for_attacker_and_victim_only, posoffset, var_f75dca66, var_1c1cfb90, var_78bc5595) {
@@ -474,7 +474,7 @@ function time_out(victim) {
 }
 
 // Namespace dogtags/dogtags
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5a2d28af, Offset: 0x1e98
 // Size: 0x34
 function checkallowspectating() {
@@ -507,7 +507,7 @@ function should_spawn_tags(*einflictor, attacker, *idamage, *smeansofdeath, *wea
 }
 
 // Namespace dogtags/dogtags
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa83662cd, Offset: 0x2030
 // Size: 0xc4
 function onusedogtag(player) {

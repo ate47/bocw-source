@@ -49,7 +49,7 @@ function function_f23011ac(&array, b_keep_keys, str_classname) {
 }
 
 // Namespace array/array_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x700f76c4, Offset: 0x2d8
 // Size: 0xfa
 function get_touching(a_ents, e_volume) {
@@ -87,7 +87,7 @@ function remove_index(array, index, b_keep_keys) {
 }
 
 // Namespace array/array_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xdf0dbc24, Offset: 0x4c8
 // Size: 0x1ea
 function function_b1d17853(&array) {
@@ -481,7 +481,7 @@ function slice(&array, var_12692bcf = 0, var_d88b3814 = 2147483647, n_increment 
 }
 
 // Namespace array/array_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x878b7e56, Offset: 0x1ab8
 // Size: 0x9e
 function remove_keys(array) {
@@ -620,7 +620,7 @@ function get_all_farthest(org, &array, a_exclude, n_max = array.size, n_maxdist)
 }
 
 // Namespace array/array_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x3a8ccdad, Offset: 0x2058
 // Size: 0xaa
 function get_all_closest(org, &array, a_exclude, n_max = array.size, n_maxdist) {
@@ -650,7 +650,7 @@ function sort_by_value(&array, b_lowest_first = 0) {
 }
 
 // Namespace array/array_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x74b46e28, Offset: 0x2190
 // Size: 0x42
 function sort_by_script_int(&a_ents, b_lowest_first = 0) {

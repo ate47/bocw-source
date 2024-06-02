@@ -547,7 +547,7 @@ function private function_9e433573(entity) {
 }
 
 // Namespace namespace_b5ca279a/namespace_b5ca279a
-// Params c, eflags: 0x0
+// Params 12, eflags: 0x0
 // Checksum 0x7c4abd08, Offset: 0x2330
 // Size: 0x268
 function function_d2fee26e(*einflictor, eattacker, idamage, *idflags, smeansofdeath, *weapon, *vpoint, *vdir, shitloc, *psoffsettime, *boneindex, *modelindex) {

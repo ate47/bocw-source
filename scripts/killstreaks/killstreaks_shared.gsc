@@ -84,7 +84,7 @@ function function_447e6858() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x15b179dc, Offset: 0x970
 // Size: 0x3c
 function function_b5b6ef3e(func, obj) {
@@ -234,7 +234,7 @@ function register_killstreak(bundlename, use_function) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc8d41a13, Offset: 0x12f0
 // Size: 0x5c
 function function_94c74046(killstreaktype) {
@@ -297,7 +297,7 @@ function function_b013c2d3(killstreaktype, weapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xb30f8ce, Offset: 0x1528
 // Size: 0x40
 function function_d8c32ca4(killstreaktype, var_ae755d2f) {
@@ -535,7 +535,7 @@ function give_if_streak_count_matches(index, killstreak, streakcount) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x58ddcd6, Offset: 0x2148
 // Size: 0xc0
 function give_for_streak() {
@@ -1281,7 +1281,7 @@ function get_if_top_killstreak_has_been_used() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x2c39d5d7, Offset: 0x5258
 // Size: 0x66
 function get_top_killstreak_unique_id() {
@@ -1292,7 +1292,7 @@ function get_top_killstreak_unique_id() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x708ed037, Offset: 0x52c8
 // Size: 0x78
 function get_killstreak_index_by_id(killstreakid) {
@@ -1589,7 +1589,7 @@ function trigger_killstreak(killstreaktype, isfrominventory) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x9c8d8dab, Offset: 0x6250
 // Size: 0x5e
 function add_to_killstreak_count(*weapon) {
@@ -1600,7 +1600,7 @@ function add_to_killstreak_count(*weapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5126b3e1, Offset: 0x62b8
 // Size: 0xa6
 function should_give_killstreak(weapon) {
@@ -1721,7 +1721,7 @@ function function_c0c60634(weapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa04d8099, Offset: 0x6a08
 // Size: 0x30
 function get_killstreak_usage(usagekey) {
@@ -2205,7 +2205,7 @@ function isheldinventorykillstreakweapon(killstreakweapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x69df4c33, Offset: 0x8778
 // Size: 0xbc
 function waitfortimecheck(duration, callback, endcondition1, endcondition2, endcondition3) {
@@ -2225,7 +2225,7 @@ function waitfortimecheck(duration, callback, endcondition1, endcondition2, endc
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x1d32d525, Offset: 0x8840
 // Size: 0x7c
 function waittillemp(onempdcallback, arg) {
@@ -2237,7 +2237,7 @@ function waittillemp(onempdcallback, arg) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x857d90e0, Offset: 0x88c8
 // Size: 0x6e
 function is_killstreak_weapon_assist_allowed(weapon) {
@@ -2252,7 +2252,7 @@ function is_killstreak_weapon_assist_allowed(weapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x5f796d79, Offset: 0x8940
 // Size: 0xc0
 function should_override_entity_camera_in_demo(player, weapon) {
@@ -2284,7 +2284,7 @@ function watch_for_remove_remote_weapon() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x5e67ce36, Offset: 0x8a68
 // Size: 0x13e
 function clear_using_remote(immediate, skipnotify, gameended) {
@@ -2319,7 +2319,7 @@ function reset_killstreak_delay_killcam() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x66bd2a07, Offset: 0x8bc8
 // Size: 0x78
 function init_ride_killstreak(streak, always_allow = 0) {
@@ -2507,7 +2507,7 @@ function defaulthackedhealthupdatecallback(*hacker) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 19, eflags: 0x0
+// Params 19, eflags: 0x2 linked
 // Checksum 0xff48be5, Offset: 0x9418
 // Size: 0x180
 function function_8cd96439(killstreakref, killstreakid, onplacecallback, oncancelcallback, onmovecallback, onshutdowncallback, ondeathcallback, onempcallback, model, validmodel, invalidmodel, spawnsvehicle, pickupstring, timeout, health, empdamage, placehintstring, invalidlocationhintstring, placeimmediately = 0) {
@@ -2621,7 +2621,7 @@ function trackactivekillstreak(killstreak) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xcd9fd50e, Offset: 0x9aa8
 // Size: 0x50
 function processscoreevent(event, player, victim, weapon) {
@@ -2787,7 +2787,7 @@ function function_6d23c51c(dog) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x5de32f1f, Offset: 0xa310
 // Size: 0xa8
 function function_fff56140(owner, var_4a025683) {
@@ -2816,7 +2816,7 @@ function should_not_timeout(killstreak) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x3a6a7444, Offset: 0xa4a0
 // Size: 0x54
 function waitfortimeout(killstreak, duration, callback, endcondition1, endcondition2, endcondition3) {
@@ -2961,7 +2961,7 @@ function function_975d45c3() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5b5878f4, Offset: 0xac28
 // Size: 0x1a
 function set_killstreak_delay_killcam(killstreak_name) {
@@ -2969,7 +2969,7 @@ function set_killstreak_delay_killcam(killstreak_name) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe463a0b, Offset: 0xac50
 // Size: 0x1c
 function getactivekillstreaks() {
@@ -2977,7 +2977,7 @@ function getactivekillstreaks() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x36219a93, Offset: 0xac78
 // Size: 0x42
 function function_55e3fed6(killstreaktype) {
@@ -3005,7 +3005,7 @@ function watchteamchange(teamchangenotify) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x279d6f53, Offset: 0xad80
 // Size: 0x3c
 function killstreak_assist(victim, assister, killstreak) {
@@ -3013,7 +3013,7 @@ function killstreak_assist(victim, assister, killstreak) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xab092c1b, Offset: 0xadc8
 // Size: 0x11a
 function add_ricochet_protection(killstreak_id, owner, origin, ricochet_distance) {
@@ -3036,7 +3036,7 @@ function add_ricochet_protection(killstreak_id, owner, origin, ricochet_distance
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x3a4ae55d, Offset: 0xaef0
 // Size: 0x76
 function set_ricochet_protection_endtime(killstreak_id, owner, endtime) {
@@ -3050,7 +3050,7 @@ function set_ricochet_protection_endtime(killstreak_id, owner, endtime) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x9e1e9f53, Offset: 0xaf70
 // Size: 0x4c
 function remove_ricochet_protection(killstreak_id, owner) {
@@ -3061,7 +3061,7 @@ function remove_ricochet_protection(killstreak_id, owner) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x178e9a31, Offset: 0xafc8
 // Size: 0x24
 function thermal_glow(enable) {
@@ -3077,7 +3077,7 @@ function thermal_glow_enemies_only(enable) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x30f51e82, Offset: 0xb028
 // Size: 0x102
 function is_ricochet_protected(player) {
@@ -3110,7 +3110,7 @@ function get_script_bundle(type) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x11ea0e83, Offset: 0xb180
 // Size: 0x44
 function function_e2c3bda3(killstreaktype, var_dee4d012) {
@@ -3212,7 +3212,7 @@ function function_b3185041(killstreakslot, endtime) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe41c2a4d, Offset: 0xb6f8
 // Size: 0x24
 function function_a781e8d2() {
@@ -3220,7 +3220,7 @@ function function_a781e8d2() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb92df0fe, Offset: 0xb728
 // Size: 0x24
 function function_90e951f2() {
@@ -3228,7 +3228,7 @@ function function_90e951f2() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xea70f38b, Offset: 0xb758
 // Size: 0x24
 function function_8b4513ca() {
@@ -3236,7 +3236,7 @@ function function_8b4513ca() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8ac45b45, Offset: 0xb788
 // Size: 0x24
 function function_7d265bd3() {
@@ -3296,7 +3296,7 @@ function private function_119fdfcd(killstreaktype) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x50b531bd, Offset: 0xba40
 // Size: 0x598
 function function_fc82c544(killstreaktype) {
@@ -3389,7 +3389,7 @@ function function_47492133() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf0c8c0b1, Offset: 0xc148
 // Size: 0x1cc
 function function_edde22a8() {

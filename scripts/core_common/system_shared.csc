@@ -172,7 +172,7 @@ function function_c11b0642() {
 }
 
 // Namespace system/system_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x48a8b012, Offset: 0xbb8
 // Size: 0x92
 function ignore(str_name) {

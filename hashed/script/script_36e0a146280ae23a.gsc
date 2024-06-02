@@ -8,7 +8,7 @@
 class class_e1dc992f : cluielem {
 
     // Namespace namespace_e1dc992f/sr_crafting_table_menu
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xb54779ee, Offset: 0x418
     // Size: 0x24
     function open(localclientnum) {
@@ -16,7 +16,7 @@ class class_e1dc992f : cluielem {
     }
 
     // Namespace namespace_e1dc992f/sr_crafting_table_menu
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xbe347342, Offset: 0x3a8
     // Size: 0x1c
     function register_clientside() {
@@ -24,7 +24,7 @@ class class_e1dc992f : cluielem {
     }
 
     // Namespace namespace_e1dc992f/sr_crafting_table_menu
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x14c5fe4a, Offset: 0x448
     // Size: 0x30
     function function_8ec20f82(localclientnum, value) {
@@ -32,7 +32,7 @@ class class_e1dc992f : cluielem {
     }
 
     // Namespace namespace_e1dc992f/sr_crafting_table_menu
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xe3709bbc, Offset: 0x378
     // Size: 0x24
     function setup_clientfields(*var_47a9b6dd) {
@@ -40,7 +40,7 @@ class class_e1dc992f : cluielem {
     }
 
     // Namespace namespace_e1dc992f/sr_crafting_table_menu
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x5c968632, Offset: 0x3d0
     // Size: 0x40
     function function_fa582112(localclientnum) {
@@ -51,7 +51,7 @@ class class_e1dc992f : cluielem {
 }
 
 // Namespace sr_crafting_table_menu/sr_crafting_table_menu
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x83f1a63, Offset: 0xf0
 // Size: 0x176
 function register(var_47a9b6dd) {

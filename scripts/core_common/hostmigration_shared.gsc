@@ -41,7 +41,7 @@ function resumetimer() {
 }
 
 // Namespace hostmigration/hostmigration_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x115be52e, Offset: 0x238
 // Size: 0x80
 function locktimer() {
@@ -88,7 +88,7 @@ function matchstarttimerconsole(*type, duration) {
 }
 
 // Namespace hostmigration/hostmigration_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1aa0881c, Offset: 0x438
 // Size: 0xba
 function hostmigrationwait() {
@@ -104,7 +104,7 @@ function hostmigrationwait() {
 }
 
 // Namespace hostmigration/hostmigration_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe763f1f2, Offset: 0x500
 // Size: 0x44
 function waittillhostmigrationcountdown() {
@@ -141,7 +141,7 @@ function hostmigrationtimerthink_internal() {
 }
 
 // Namespace hostmigration/hostmigration_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x2a3b5556, Offset: 0x668
 // Size: 0x94
 function hostmigrationtimerthink() {

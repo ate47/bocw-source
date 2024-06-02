@@ -2945,7 +2945,7 @@ function isunarmed(entity) {
 }
 
 // Namespace aiutility/archetype_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x2a62be40, Offset: 0xcf00
 // Size: 0x174
 function function_7bbe1407(ai) {
@@ -2970,7 +2970,7 @@ function function_7bbe1407(ai) {
 }
 
 // Namespace aiutility/archetype_utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x32341bd1, Offset: 0xd080
 // Size: 0x48
 function function_efed8903(ai) {
@@ -3057,7 +3057,7 @@ function shouldattackobject(entity) {
 }
 
 // Namespace aiutility/archetype_utility
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x3a7f7bdd, Offset: 0xd3c0
 // Size: 0xaa
 function meleeattributescallback(entity, attribute, *oldvalue, value) {
@@ -3080,7 +3080,7 @@ function meleeattributescallback(entity, attribute, *oldvalue, value) {
 }
 
 // Namespace aiutility/archetype_utility
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xef1eb1a4, Offset: 0xd478
 // Size: 0x82
 function arrivalattributescallback(entity, attribute, *oldvalue, value) {
@@ -3096,7 +3096,7 @@ function arrivalattributescallback(entity, attribute, *oldvalue, value) {
 }
 
 // Namespace aiutility/archetype_utility
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xcfb353a6, Offset: 0xd508
 // Size: 0x82
 function function_eef4346c(entity, attribute, *oldvalue, value) {
@@ -3112,7 +3112,7 @@ function function_eef4346c(entity, attribute, *oldvalue, value) {
 }
 
 // Namespace aiutility/archetype_utility
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x48e31bcb, Offset: 0xd598
 // Size: 0x82
 function function_1cd75f29(entity, attribute, *oldvalue, value) {
@@ -3128,7 +3128,7 @@ function function_1cd75f29(entity, attribute, *oldvalue, value) {
 }
 
 // Namespace aiutility/archetype_utility
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0xcb0b21b9, Offset: 0xd628
 // Size: 0x82
 function function_a626b1a9(entity, attribute, *oldvalue, value) {

@@ -14,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace contracts/contracts_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x76313768, Offset: 0xd0
 // Size: 0x7c
 function init_player_contract_events() {
@@ -32,7 +32,7 @@ function init_player_contract_events() {
 }
 
 // Namespace contracts/contracts_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xa896f0ec, Offset: 0x158
 // Size: 0xf8
 function register_player_contract_event(event_name, event_func, max_param_count = 0) {
@@ -135,7 +135,7 @@ function function_de4ff5a(slot) {
 }
 
 // Namespace contracts/contracts_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xe97cc73f, Offset: 0x8f8
 // Size: 0x236
 function setup_player_contracts(max_contract_slots, var_1b3f5772) {

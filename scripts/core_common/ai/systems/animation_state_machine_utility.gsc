@@ -11,7 +11,7 @@ function requeststate(entity, statename) {
 }
 
 // Namespace animationstatenetworkutility/animation_state_machine_utility
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x3dfac3b9, Offset: 0xd0
 // Size: 0x4c
 function searchanimationmap(entity, aliasname) {

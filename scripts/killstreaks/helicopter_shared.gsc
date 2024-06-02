@@ -26,7 +26,7 @@
 #namespace helicopter;
 
 // Namespace helicopter/helicopter_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x16cbc862, Offset: 0x740
 // Size: 0x3dc
 function init_shared() {
@@ -128,7 +128,7 @@ function function_7da89497() {
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xaa43e587, Offset: 0xe80
 // Size: 0x200
 function usekillstreakhelicopter(hardpointtype) {
@@ -408,7 +408,7 @@ function getvalidprotectlocationstart(random_path, protectlocation, destination,
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd742f2ec, Offset: 0x22e0
 // Size: 0x204
 function getvalidrandomleavenode(start, var_aea79ccc = 1) {
@@ -465,7 +465,7 @@ function getvalidrandomstartnode(dest, var_aea79ccc = 1) {
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x3cb1e4eb, Offset: 0x2660
 // Size: 0x264
 function function_9d99f54c(dest, var_3f25aa93, var_aea79ccc = 1) {
@@ -1258,7 +1258,7 @@ function heli_hacked_health_update(*hacker) {
 }
 
 // Namespace helicopter/helicopter_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd4879dbe, Offset: 0x51c8
 // Size: 0x96a
 function heli_damage_monitor(hardpointtype) {

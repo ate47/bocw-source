@@ -165,7 +165,7 @@ function function_6e084fd3(var_37ecca7, taacombundle) {
 }
 
 // Namespace globallogic_audio/globallogic_audio
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x941d3b9e, Offset: 0xbf8
 // Size: 0xc6
 function set_leader_gametype_dialog(startgamedialogkey, starthcgamedialogkey, offenseorderdialogkey, defenseorderdialogkey, var_2888cc9d, var_826b3c1a) {
@@ -179,7 +179,7 @@ function set_leader_gametype_dialog(startgamedialogkey, starthcgamedialogkey, of
 }
 
 // Namespace globallogic_audio/globallogic_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x3cd23c8d, Offset: 0xcc8
 // Size: 0x82
 function function_ac2cb1bc() {
@@ -189,7 +189,7 @@ function function_ac2cb1bc() {
 }
 
 // Namespace globallogic_audio/globallogic_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x6e81206d, Offset: 0xd58
 // Size: 0x88
 function flush_dialog() {
@@ -215,7 +215,7 @@ function flush_dialog_on_player() {
 }
 
 // Namespace globallogic_audio/globallogic_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5df5a36e, Offset: 0xe48
 // Size: 0x8c
 function flush_killstreak_dialog_on_player(killstreakid) {
@@ -453,7 +453,7 @@ function function_30f16f29(soundevent, var_8a6b001a, weapon) {
 }
 
 // Namespace globallogic_audio/globallogic_audio
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x154301ff, Offset: 0x1938
 // Size: 0xf0
 function leader_dialog_for_other_teams(dialogkey, skipteam, objectivekey, killstreakid, dialogbufferkey, skippable, var_6ad14004) {
@@ -477,7 +477,7 @@ function function_61e17de0(dialogkey, players, objectivekey, killstreakid, dialo
 }
 
 // Namespace globallogic_audio/globallogic_audio
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0x99c40b7a, Offset: 0x1b28
 // Size: 0xec
 function function_248fc9f7(dialogkey, team, excludelist, objectivekey, killstreakid, dialogbufferkey, skippable, var_6ad14004) {
@@ -489,7 +489,7 @@ function function_248fc9f7(dialogkey, team, excludelist, objectivekey, killstrea
 }
 
 // Namespace globallogic_audio/globallogic_audio
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0xff311d0e, Offset: 0x1c20
 // Size: 0xec
 function function_b4319f8e(dialogkey, team, exclude, objectivekey, killstreakid, dialogbufferkey, skippable, var_6ad14004) {
@@ -782,7 +782,7 @@ function dialogkey_priority(dialogkey) {
 }
 
 // Namespace globallogic_audio/globallogic_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc283bde, Offset: 0x2d50
 // Size: 0x24
 function play_equipment_destroyed_on_player() {
@@ -790,7 +790,7 @@ function play_equipment_destroyed_on_player() {
 }
 
 // Namespace globallogic_audio/globallogic_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x6fe8bb2d, Offset: 0x2d80
 // Size: 0x24
 function play_equipment_hacked_on_player() {
@@ -921,7 +921,7 @@ function function_ec14f55(dialogbundle, dialogkey) {
 }
 
 // Namespace globallogic_audio/globallogic_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x679349db, Offset: 0x32c0
 // Size: 0xdc
 function is_team_winning(checkteam) {
@@ -965,7 +965,7 @@ function on_end_game() {
 }
 
 // Namespace globallogic_audio/globallogic_audio
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x80f2a3b2, Offset: 0x34f8
 // Size: 0x190
 function set_music_on_team(state, team = "both", wait_time = 0, save_state = 0, return_state = 0) {
@@ -982,7 +982,7 @@ function set_music_on_team(state, team = "both", wait_time = 0, save_state = 0, 
 }
 
 // Namespace globallogic_audio/globallogic_audio
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x49e73d71, Offset: 0x3690
 // Size: 0x160
 function function_89fe8163(state, team = "both", wait_time = 0, save_state = 0, return_state = 0) {
@@ -1022,7 +1022,7 @@ function set_music_on_player(state, wait_time, *save_state, *return_state = 0) {
 }
 
 // Namespace globallogic_audio/globallogic_audio
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xc194792d, Offset: 0x3938
 // Size: 0xf4
 function set_music_global(state, wait_time, *save_state, *return_state = 0) {
@@ -1070,7 +1070,7 @@ function function_c246758e(str_state, n_delay = 0) {
 }
 
 // Namespace globallogic_audio/globallogic_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xa67c70e0, Offset: 0x3c40
 // Size: 0x84
 function function_6fbfba95(str_state, n_delay = 0) {
@@ -1173,7 +1173,7 @@ function function_a2cde53d(weapon, var_f3ab6571) {
 }
 
 // Namespace globallogic_audio/globallogic_audio
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xd817029d, Offset: 0x3ff0
 // Size: 0x67e
 function function_4fb91bc7(weapon, var_df17fa82, var_53c10ed8) {

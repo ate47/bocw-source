@@ -6,7 +6,7 @@
 #namespace easing;
 
 // Namespace easing/easing
-// Params 8, eflags: 0x2 linked
+// Params 8, eflags: 0x0
 // Checksum 0xa152fb5d, Offset: 0x1e0
 // Size: 0xac
 function function_a037b7c9(localclientnum, ui_model, value, time, ease_type, ease_in, ease_out, var_33ce6852) {
@@ -14,7 +14,7 @@ function function_a037b7c9(localclientnum, ui_model, value, time, ease_type, eas
 }
 
 // Namespace easing/easing
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0x68839d3c, Offset: 0x298
 // Size: 0xec
 function ease_camera_position(start, target, time, ease_type, ease_in, ease_out, var_33ce6852) {
@@ -27,7 +27,7 @@ function ease_camera_position(start, target, time, ease_type, ease_in, ease_out,
 }
 
 // Namespace easing/easing
-// Params 7, eflags: 0x2 linked
+// Params 7, eflags: 0x0
 // Checksum 0xab47aab8, Offset: 0x390
 // Size: 0x124
 function ease_camera_angles(start, target, time, ease_type, ease_in, ease_out, var_33ce6852) {
@@ -42,7 +42,7 @@ function ease_camera_angles(start, target, time, ease_type, ease_in, ease_out, v
 }
 
 // Namespace easing/easing
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x743c2eb9, Offset: 0x4c0
 // Size: 0x264
 function function_f95cb457(start, target, time, ease_type, ease_in, ease_out, var_33ce6852, min, max) {
@@ -68,7 +68,7 @@ function function_f95cb457(start, target, time, ease_type, ease_in, ease_out, va
 }
 
 // Namespace easing/easing
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0xf67fbaea, Offset: 0x730
 // Size: 0x134
 function function_b6f1c993(start, target, time, ease_type, ease_in, ease_out, var_33ce6852, min, max) {
@@ -82,7 +82,7 @@ function function_b6f1c993(start, target, time, ease_type, ease_in, ease_out, va
 }
 
 // Namespace easing/easing
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x405abe27, Offset: 0x870
 // Size: 0x134
 function function_136edb11(start, target, time, ease_type, ease_in, ease_out, var_33ce6852, min, max) {
@@ -96,7 +96,7 @@ function function_136edb11(start, target, time, ease_type, ease_in, ease_out, va
 }
 
 // Namespace easing/easing
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x4669f651, Offset: 0x9b0
 // Size: 0xb4
 function ease_dvar(localclientnum, dvar, var_c7ec7d60, value, time, ease_type, ease_in, ease_out, var_33ce6852) {
@@ -150,7 +150,7 @@ function ease_angles(localclientnum, target, time, ease_type, axis, additive, ea
 }
 
 // Namespace easing/easing
-// Params 12, eflags: 0x42 linked
+// Params 12, eflags: 0x40
 // Checksum 0x9aa330e6, Offset: 0xdb0
 // Size: 0x5be
 function function_d4a4a726(localclientnum, start_value, target_value, time, var_f71e2d8f, ease_type = #"linear", notifies, endons, ease_in, ease_out, var_33ce6852, ...) {
@@ -220,7 +220,7 @@ function function_d4a4a726(localclientnum, start_value, target_value, time, var_
 }
 
 // Namespace easing/easing
-// Params 2, eflags: 0x6 linked
+// Params 2, eflags: 0x4
 // Checksum 0x58ae4baf, Offset: 0x1378
 // Size: 0x34
 function private function_3d07aeab(var_b3160f0, ui_model) {
@@ -228,7 +228,7 @@ function private function_3d07aeab(var_b3160f0, ui_model) {
 }
 
 // Namespace easing/easing
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x4532d397, Offset: 0x13b8
 // Size: 0x2c
 function private function_5b854508(var_b3160f0) {
@@ -236,7 +236,7 @@ function private function_5b854508(var_b3160f0) {
 }
 
 // Namespace easing/easing
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x484dd8bc, Offset: 0x13f0
 // Size: 0x2c
 function private function_d4923609(var_b3160f0) {
@@ -244,7 +244,7 @@ function private function_d4923609(var_b3160f0) {
 }
 
 // Namespace easing/easing
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xba0546e6, Offset: 0x1428
 // Size: 0x7c
 function private function_c426caa9(var_b3160f0, min_val = 0.01, max_val = 2147483647) {
@@ -252,7 +252,7 @@ function private function_c426caa9(var_b3160f0, min_val = 0.01, max_val = 214748
 }
 
 // Namespace easing/easing
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0x35d4b347, Offset: 0x14b0
 // Size: 0x7c
 function private function_dd427b21(var_b3160f0, min_val = 0.01, max_val = 2147483647) {
@@ -260,7 +260,7 @@ function private function_dd427b21(var_b3160f0, min_val = 0.01, max_val = 214748
 }
 
 // Namespace easing/easing
-// Params 3, eflags: 0x6 linked
+// Params 3, eflags: 0x4
 // Checksum 0xbd083057, Offset: 0x1538
 // Size: 0x7c
 function private function_9f966a98(var_b3160f0, min_val = 0.01, max_val = 2147483647) {

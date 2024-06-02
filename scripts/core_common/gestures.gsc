@@ -51,7 +51,7 @@ function give_gesture(gestureweapon) {
 }
 
 // Namespace gestures/gestures
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x9e09705c, Offset: 0x508
 // Size: 0x8e
 function clear_gesture() {
@@ -110,7 +110,7 @@ function function_a5202150(var_ee58f129, weaponname) {
 }
 
 // Namespace gestures/gestures
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x9a791289, Offset: 0x7b0
 // Size: 0xb6
 function function_ba4529d4(var_ee58f129) {
@@ -213,7 +213,7 @@ function function_e62f6dde(var_851342cf, target, var_a085312c, blendtime, startt
 }
 
 // Namespace gestures/gestures
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x18b14b98, Offset: 0xd28
 // Size: 0x262
 function function_f3e2696f(ent, weapon, weapon_options, timeout, var_1e89628f, var_1d78d31, callbackfail) {

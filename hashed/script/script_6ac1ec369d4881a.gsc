@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace weapon_armor/armor
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x80e7847b, Offset: 0x120
 // Size: 0x4c
 function init_shared() {
@@ -26,7 +26,7 @@ function init_shared() {
 }
 
 // Namespace weapon_armor/armor
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xe58e0839, Offset: 0x178
 // Size: 0x206
 function use_armor(*killstreaktype) {
@@ -52,7 +52,7 @@ function use_armor(*killstreaktype) {
 }
 
 // Namespace weapon_armor/armor
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb63a1424, Offset: 0x388
 // Size: 0xcc
 function function_b299c6ec(eattacker, weapon) {
@@ -72,7 +72,7 @@ function function_b299c6ec(eattacker, weapon) {
 }
 
 // Namespace weapon_armor/armor
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xffc24da2, Offset: 0x460
 // Size: 0x114
 function on_player_killed(params) {

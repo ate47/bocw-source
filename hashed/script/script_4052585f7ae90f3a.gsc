@@ -202,19 +202,19 @@ function function_9b8a74e0(otherent, string1, string2, string3, string4, string5
 function private function_887ac605(objective) {
     level thread function_8cb75a6();
     switch (objective) {
-    case #"hash_55e940a3ca2d2533":
+    case #"chapter_selection":
         break;
-    case #"hash_de0a71f1b8beaa7":
-    case #"hash_55e53afbf5115da0":
+    case #"post_takedown":
+    case #"post_takedown_skip_briefing":
         break;
     case #"post_armada":
-    case #"hash_3f942629dd634c1d":
+    case #"post_armada_skip_briefing":
         break;
     case #"post_yamantau":
-    case #"hash_6b6b433835e19763":
+    case #"post_yamantau_skip_briefing":
         break;
     case #"post_kgb":
-    case #"hash_45b5ada813cf005f":
+    case #"post_kgb_skip_briefing":
         break;
     case #"post_cuba":
     case #"hash_6245569317a5039e":

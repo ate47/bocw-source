@@ -8,7 +8,7 @@
 class class_51a06b68 : cluielem {
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xf7dd9dc8, Offset: 0x718
     // Size: 0x24
     function open(localclientnum) {
@@ -16,7 +16,7 @@ class class_51a06b68 : cluielem {
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xd7220277, Offset: 0x8e0
     // Size: 0x30
     function function_2d7f3298(localclientnum, value) {
@@ -24,7 +24,7 @@ class class_51a06b68 : cluielem {
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xad50e81a, Offset: 0x8a8
     // Size: 0x30
     function function_43ba5f0e(localclientnum, value) {
@@ -32,7 +32,7 @@ class class_51a06b68 : cluielem {
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xe4bafba, Offset: 0x610
     // Size: 0x1c
     function register_clientside() {
@@ -40,7 +40,7 @@ class class_51a06b68 : cluielem {
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
-    // Params 5, eflags: 0x2 linked
+    // Params 5, eflags: 0x0
     // Checksum 0x8419e25f, Offset: 0x4d0
     // Size: 0x134
     function setup_clientfields(var_e4dedc0e, var_c8914fcf, var_2f1b82f5, var_bf555938, var_18d66c99) {
@@ -54,7 +54,7 @@ class class_51a06b68 : cluielem {
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xd7eea3a5, Offset: 0x950
     // Size: 0x30
     function set_color(localclientnum, value) {
@@ -62,7 +62,7 @@ class class_51a06b68 : cluielem {
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x89512ffb, Offset: 0x918
     // Size: 0x30
     function function_ada8b2f1(localclientnum, value) {
@@ -70,7 +70,7 @@ class class_51a06b68 : cluielem {
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x19a0d88, Offset: 0x870
     // Size: 0x30
     function function_b94196b8(localclientnum, value) {
@@ -78,7 +78,7 @@ class class_51a06b68 : cluielem {
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x59b8f7fd, Offset: 0x748
     // Size: 0x11c
     function set_state(localclientnum, state_name) {
@@ -102,7 +102,7 @@ class class_51a06b68 : cluielem {
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0x5739ac69, Offset: 0x638
     // Size: 0xd8
     function function_fa582112(localclientnum) {

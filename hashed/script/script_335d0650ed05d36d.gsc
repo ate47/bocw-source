@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_75da5547b1822294;
+#using scripts\core_common\territory_util.gsc;
 #using script_3e196d275a6fb180;
 #using script_491ff5a2ba670762;
 #using script_335d0650ed05d36d;
@@ -45,7 +45,7 @@ function clear_spawn_points() {
 }
 
 // Namespace spawning/namespace_ade8eb98
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x34e38d0c, Offset: 0x240
 // Size: 0x4a
 function function_32b97d1b(callbackfunction) {
@@ -56,7 +56,7 @@ function function_32b97d1b(callbackfunction) {
 }
 
 // Namespace spawning/namespace_ade8eb98
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xb2edf719, Offset: 0x298
 // Size: 0x4a
 function function_adbbb58a(callbackfunction) {
@@ -75,7 +75,7 @@ function function_c40af6fa() {
 }
 
 // Namespace spawning/namespace_ade8eb98
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x187a9477, Offset: 0x308
 // Size: 0xb2
 function function_d3d4ff67(spawn) {
@@ -106,7 +106,7 @@ function function_7309b6b3(spawn) {
 }
 
 // Namespace spawning/namespace_ade8eb98
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xfe652980, Offset: 0x4a8
 // Size: 0x8c
 function addsupportedspawnpointtype(spawnpointtype, team) {
@@ -202,7 +202,7 @@ function private function_4277fa85(spawnpoints, var_6de73ddb) {
 }
 
 // Namespace spawning/namespace_ade8eb98
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xbcbd57cf, Offset: 0x9f0
 // Size: 0xe4
 function addspawns() {
@@ -220,7 +220,7 @@ function addspawns() {
 }
 
 // Namespace spawning/namespace_ade8eb98
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x92cc86a6, Offset: 0xae0
 // Size: 0x1d4
 function function_b4f071cd() {

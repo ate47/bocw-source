@@ -38,7 +38,7 @@ function setplayerburning(duration, interval, damageperinterval, attacker, weapo
 }
 
 // Namespace burnplayer/burnplayer
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x45715098, Offset: 0x2e8
 // Size: 0xbc
 function takingburndamage(eattacker, weapon, *smeansofdeath) {

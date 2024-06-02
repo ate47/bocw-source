@@ -100,7 +100,7 @@ function is_friendly(localclientnum, team) {
 }
 
 // Namespace codcaster/codcaster
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x29ede6d1, Offset: 0x598
 // Size: 0xc4
 function function_57a6b7b0(localclientnum) {
@@ -130,7 +130,7 @@ function private function_914ef81b(localclientnum) {
 }
 
 // Namespace codcaster/codcaster
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x37bb839e, Offset: 0x6e0
 // Size: 0x14
 function function_12acfa84() {
@@ -320,7 +320,7 @@ function function_89106df8(localclientnum, robkey, rob, var_4724c867, settings) 
 }
 
 // Namespace codcaster/codcaster
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xec44236a, Offset: 0x15f8
 // Size: 0x54
 function function_6d9b84d9(rob) {

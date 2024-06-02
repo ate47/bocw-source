@@ -287,7 +287,7 @@ function private is_influencer_tracked(influencer) {
 }
 
 // Namespace influencers/influencers_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x7ece0c8, Offset: 0xd90
 // Size: 0x6c
 function remove_influencer(to_be_removed) {

@@ -20,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace concertina_wire/gadget_concertina_wire
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x34cea211, Offset: 0x130
 // Size: 0x1c
 function private preinit() {

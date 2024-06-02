@@ -195,7 +195,7 @@ function private registerbehaviorscriptfunctions() {
 }
 
 // Namespace namespace_6479037a/namespace_6479037a
-// Params d, eflags: 0x2 linked
+// Params 13, eflags: 0x2 linked
 // Checksum 0x6147bce9, Offset: 0x1828
 // Size: 0xaa
 function function_aab3a5fc(inflictor, attacker, damage, *dflags, *mod, *weapon, *var_fd90b0bb, *point, *dir, *hitloc, *offsettime, *boneindex, *modelindex) {

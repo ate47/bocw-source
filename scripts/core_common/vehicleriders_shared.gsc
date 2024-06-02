@@ -1490,7 +1490,7 @@ function delete_rider_asap(entity) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x24965c5d, Offset: 0x67b0
 // Size: 0x4b0
 function function_86c7bebb(seat = "all") {

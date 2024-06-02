@@ -442,7 +442,7 @@ function private function_3df61a1a(entity, inflictor, attacker, damage, flags, m
 }
 
 // Namespace namespace_6e561646/namespace_33cf6d06
-// Params e, eflags: 0x6 linked
+// Params 14, eflags: 0x6 linked
 // Checksum 0x4176418e, Offset: 0x2898
 // Size: 0xcc
 function private function_fa7c080(entity, *inflictor, *attacker, *damage, *flags, *meansofdamage, *weapon, *var_fd90b0bb, *point, *dir, *hitloc, *offsettime, *boneindex, *modelindex) {

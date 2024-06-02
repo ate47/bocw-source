@@ -12,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace spy_wanted_order/spy_wanted_order
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0xd8
 // Size: 0x4
 function private preinit() {

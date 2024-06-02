@@ -96,7 +96,7 @@ function add_to_stat(statname, delta) {
 }
 
 // Namespace bb/bb_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x43fd3b6e, Offset: 0x4c0
 // Size: 0x44
 function function_a7ba460f(reason) {
@@ -113,7 +113,7 @@ function function_afcc007d(name, clientnum, xuid) {
 }
 
 // Namespace bb/bb_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x6db3c012, Offset: 0x5b0
 // Size: 0x94
 function function_e0dfa262(name, clientnum, xuid) {

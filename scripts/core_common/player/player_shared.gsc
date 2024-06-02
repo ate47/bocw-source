@@ -332,7 +332,7 @@ function take_weapons() {
 }
 
 // Namespace player/player_shared
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x8a2f8344, Offset: 0x1548
 // Size: 0x21c
 function generate_weapon_data() {
@@ -762,7 +762,7 @@ function function_466d8a4b(var_b66879ad, team) {
 }
 
 // Namespace player/player_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xfa5077bc, Offset: 0x2d38
 // Size: 0x9c
 function function_6f6c29e(var_b66879ad) {
@@ -773,7 +773,7 @@ function function_6f6c29e(var_b66879ad) {
 }
 
 // Namespace player/player_shared
-// Params 2, eflags: 0x40
+// Params 2, eflags: 0x42 linked
 // Checksum 0x18fc3084, Offset: 0x2de0
 // Size: 0xb0
 function function_2f80d95b(player_func, ...) {
@@ -784,7 +784,7 @@ function function_2f80d95b(player_func, ...) {
 }
 
 // Namespace player/player_shared
-// Params 3, eflags: 0x40
+// Params 3, eflags: 0x42 linked
 // Checksum 0x3634adc6, Offset: 0x2e98
 // Size: 0xa0
 function function_4dcd9a89(players, player_func, ...) {
@@ -807,7 +807,7 @@ function function_7629df88(team, player_func, ...) {
 }
 
 // Namespace player/player_shared
-// Params 2, eflags: 0x40
+// Params 2, eflags: 0x42 linked
 // Checksum 0x4e68fa96, Offset: 0x3018
 // Size: 0xd0
 function function_e7f18b20(player_func, ...) {
@@ -821,7 +821,7 @@ function function_e7f18b20(player_func, ...) {
 }
 
 // Namespace player/player_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xb25f9676, Offset: 0x30f0
 // Size: 0x9c
 function function_38de2d5a(notification) {
@@ -877,7 +877,7 @@ function figure_out_attacker(eattacker) {
 }
 
 // Namespace player/player_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc45c5f11, Offset: 0x3430
 // Size: 0x12e
 function function_803e2c82(weapon) {
@@ -910,7 +910,7 @@ function function_4ca4d8c6(string, value) {
 }
 
 // Namespace player/player_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xa72832aa, Offset: 0x35c8
 // Size: 0x78
 function function_2abc116(string, defaultval) {

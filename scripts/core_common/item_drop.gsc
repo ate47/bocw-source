@@ -1155,7 +1155,7 @@ function drop_item(index = 0, weapon = undefined, count = 0, amount = 0, itemid,
 }
 
 // Namespace item_drop/item_drop
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0xe88699ac, Offset: 0x55f0
 // Size: 0xc4
 function function_7910964d(index = 0, weapon = undefined, count = 0, amount = 0, itemid, position, angles = (0, 0, 0), falling = 2) {
@@ -1228,7 +1228,7 @@ function function_ba84d97e() {
 }
 
 // Namespace item_drop/item_drop
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xbf13f180, Offset: 0x5c78
 // Size: 0x26a
 function function_4da960f6(origin, radius, time) {
@@ -1269,7 +1269,7 @@ function function_d8342646(deathstash) {
 }
 
 // Namespace item_drop/item_drop
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xef092470, Offset: 0x5f60
 // Size: 0x54
 function function_ccba50c6(dogtag) {

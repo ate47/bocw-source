@@ -10,7 +10,7 @@
 #namespace smart_bomb;
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x7529486b, Offset: 0x180
 // Size: 0x1b4
 function function_c6f75619() {
@@ -40,7 +40,7 @@ function function_c6f75619() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x184a2b01, Offset: 0x340
 // Size: 0xac
 function state_scripted_update(*params) {
@@ -54,7 +54,7 @@ function state_scripted_update(*params) {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x184d187d, Offset: 0x3f8
 // Size: 0x12c
 function state_death_update(params) {
@@ -76,7 +76,7 @@ function state_death_update(params) {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6b9c819c, Offset: 0x530
 // Size: 0x1c4
 function state_emped_update(params) {
@@ -95,7 +95,7 @@ function state_emped_update(params) {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6396040d, Offset: 0x700
 // Size: 0x9d4
 function state_combat_update(*params) {
@@ -233,7 +233,7 @@ function state_combat_update(*params) {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x78628059, Offset: 0x10e0
 // Size: 0x60a
 function hunt_enemy() {
@@ -310,7 +310,7 @@ function hunt_enemy() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x57d90e5a, Offset: 0x16f8
 // Size: 0x11e
 function prevent_stuck() {
@@ -335,7 +335,7 @@ function prevent_stuck() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x2b717b37, Offset: 0x1820
 // Size: 0x14c
 function check_detonation_dist(origin, enemy) {
@@ -350,7 +350,7 @@ function check_detonation_dist(origin, enemy) {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xee1d216b, Offset: 0x1978
 // Size: 0x23c
 function jump_detonate() {
@@ -384,7 +384,7 @@ function jump_detonate() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf9195b80, Offset: 0x1bc0
 // Size: 0xdc
 function detonate(attacker = self) {
@@ -397,7 +397,7 @@ function detonate(attacker = self) {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x76b83e23, Offset: 0x1ca8
 // Size: 0x98
 function detonation_monitor() {
@@ -415,7 +415,7 @@ function detonation_monitor() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6f777f03, Offset: 0x1d48
 // Size: 0x450
 function function_ded83def(lastenemy) {
@@ -462,7 +462,7 @@ function function_ded83def(lastenemy) {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xef4c8fe, Offset: 0x21a0
 // Size: 0x7c
 function function_47dbd72(bomb) {
@@ -477,7 +477,7 @@ function function_47dbd72(bomb) {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x64537d8f, Offset: 0x2228
 // Size: 0x470
 function try_detonate() {
@@ -539,7 +539,7 @@ function try_detonate() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x95f11788, Offset: 0x26a0
 // Size: 0x37c
 function function_dcecac3c() {
@@ -593,7 +593,7 @@ function function_dcecac3c() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4886deec, Offset: 0x2a28
 // Size: 0x364
 function path_update_interrupt() {
@@ -643,7 +643,7 @@ function path_update_interrupt() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x505b9ee4, Offset: 0x2d98
 // Size: 0xfa
 function function_bf16c9ed(*einflictor, eattacker, smeansofdeath, weapon) {
@@ -657,7 +657,7 @@ function function_bf16c9ed(*einflictor, eattacker, smeansofdeath, weapon) {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1d1532d5, Offset: 0x2ea0
 // Size: 0x15c
 function detonate_sides(einflictor) {
@@ -697,7 +697,7 @@ function function_ec8d8bbc(einflictor, eattacker, idamage, *idflags, smeansofdea
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x30df6f9, Offset: 0x32f8
 // Size: 0xba
 function force_get_enemies() {
@@ -710,7 +710,7 @@ function force_get_enemies() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x59f9af2e, Offset: 0x33c0
 // Size: 0x8c
 function sndfunctions() {
@@ -725,7 +725,7 @@ function sndfunctions() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xeedb5340, Offset: 0x3458
 // Size: 0x80
 function function_dd7a181d() {
@@ -739,7 +739,7 @@ function function_dd7a181d() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x58180d12, Offset: 0x34e0
 // Size: 0x130
 function function_2a91d5ee() {
@@ -760,7 +760,7 @@ function function_2a91d5ee() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc8512a38, Offset: 0x3618
 // Size: 0x164
 function function_12857be3() {
@@ -780,7 +780,7 @@ function function_12857be3() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x38ebda85, Offset: 0x3788
 // Size: 0x34
 function isdrivableplayervehicle() {
@@ -792,7 +792,7 @@ function isdrivableplayervehicle() {
 }
 
 // Namespace smart_bomb/smart_bomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x3ae150fe, Offset: 0x37c8
 // Size: 0x3c
 function do_death_fx() {

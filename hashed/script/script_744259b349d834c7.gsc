@@ -505,7 +505,7 @@ function function_859e7ea2(*inflictor, *attacker, damage, *dflags, *meansofdeath
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
-// Params d, eflags: 0x2 linked
+// Params 13, eflags: 0x2 linked
 // Checksum 0x5b2e26bc, Offset: 0x3648
 // Size: 0x3c4
 function function_29c1ba76(*einflictor, eattacker, idamage, *idflags, smeansofdeath, weapon, *var_fd90b0bb, vpoint, *vdir, shitloc, *psoffsettime, *boneindex, *surfacetype) {
@@ -1440,8 +1440,8 @@ function function_a6e66d26(entity) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x64d40e79, Offset: 0x6fb0
 // Size: 0x46
-function function_2aa322b7(var_5895df27) {
-    self.var_8196533 = gettime() + int(var_5895df27 * 1000);
+function function_2aa322b7(time_s) {
+    self.var_8196533 = gettime() + int(time_s * 1000);
     self.var_78fdc8b4 = self.origin;
 }
 

@@ -72,7 +72,7 @@ class class_df106b1 : cluielem {
     }
 
     // Namespace namespace_df106b1/doa_textelement
-    // Params d, eflags: 0x0
+    // Params 13, eflags: 0x0
     // Checksum 0xb7169364, Offset: 0x990
     // Size: 0x28c
     function setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, *textcallback, horizontal_alignmentcallback, var_9194fd72, *var_3d17213, var_766e2bbb) {

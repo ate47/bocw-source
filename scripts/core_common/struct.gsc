@@ -126,7 +126,7 @@ function get_array(str_value, str_key = "targetname") {
 }
 
 // Namespace struct/struct
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x5f28999d, Offset: 0xb60
 // Size: 0x5c
 function spawn(v_origin = (0, 0, 0), v_angles) {

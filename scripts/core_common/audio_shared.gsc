@@ -126,7 +126,7 @@ function vehiclespawncontext() {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x23964683, Offset: 0xa10
 // Size: 0x84
 function sndupdatevehiclecontext(added) {
@@ -198,7 +198,7 @@ function unlockfrontendmusic(*unlockname, *allplayers) {
 }
 
 // Namespace audio/audio_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x7f677b2e, Offset: 0xd78
 // Size: 0x144
 function function_30d4f8c4(attacker, smeansofdeath, weapon) {

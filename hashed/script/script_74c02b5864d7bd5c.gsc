@@ -18,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace spy_wanted_order/spy_wanted_order
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe7bf5175, Offset: 0x1f0
 // Size: 0x58
 function private preinit() {
@@ -28,7 +28,7 @@ function private preinit() {
 }
 
 // Namespace spy_wanted_order/spy_wanted_order
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x79d38aae, Offset: 0x250
 // Size: 0x520
 function function_cd089b2e(*killstreaktype) {
@@ -86,7 +86,7 @@ function function_cd089b2e(*killstreaktype) {
 }
 
 // Namespace spy_wanted_order/spy_wanted_order
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x34e84884, Offset: 0x778
 // Size: 0x96
 function private on_weapon_change(*params) {
@@ -101,7 +101,7 @@ function private on_weapon_change(*params) {
 }
 
 // Namespace spy_wanted_order/spy_wanted_order
-// Params 1, eflags: 0x6 linked
+// Params 1, eflags: 0x4
 // Checksum 0x3d1e9ccd, Offset: 0x818
 // Size: 0x46
 function private function_84845e32(*params) {
@@ -112,7 +112,7 @@ function private function_84845e32(*params) {
 }
 
 // Namespace spy_wanted_order/spy_wanted_order
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe4e9083b, Offset: 0x868
 // Size: 0x162
 function private function_eb585639() {

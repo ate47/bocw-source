@@ -12,7 +12,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace activities/activities_util
-// Params 0, eflags: 0x6 linked
+// Params 0, eflags: 0x4
 // Checksum 0xe82ae9a6, Offset: 0xf0
 // Size: 0x3a
 function private preinit() {
@@ -21,7 +21,7 @@ function private preinit() {
 }
 
 // Namespace activities/activities_util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x7cbecd74, Offset: 0x138
 // Size: 0x22
 function function_b73af3c(name) {
@@ -29,7 +29,7 @@ function function_b73af3c(name) {
 }
 
 // Namespace activities/activities_util
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x29132605, Offset: 0x168
 // Size: 0x144
 function function_59e67711(objective) {

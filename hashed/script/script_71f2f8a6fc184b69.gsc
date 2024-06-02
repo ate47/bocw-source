@@ -8,7 +8,7 @@
 class cinsertion_passenger_count : cluielem {
 
     // Namespace cinsertion_passenger_count/insertion_passenger_count
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x417f4cce, Offset: 0x438
     // Size: 0x24
     function open(localclientnum) {
@@ -16,7 +16,7 @@ class cinsertion_passenger_count : cluielem {
     }
 
     // Namespace cinsertion_passenger_count/insertion_passenger_count
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x148641e6, Offset: 0x3c8
     // Size: 0x1c
     function register_clientside() {
@@ -24,7 +24,7 @@ class cinsertion_passenger_count : cluielem {
     }
 
     // Namespace cinsertion_passenger_count/insertion_passenger_count
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xeafae332, Offset: 0x370
     // Size: 0x4c
     function setup_clientfields(var_fbcc4763) {
@@ -33,7 +33,7 @@ class cinsertion_passenger_count : cluielem {
     }
 
     // Namespace cinsertion_passenger_count/insertion_passenger_count
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xb58457c0, Offset: 0x468
     // Size: 0x30
     function set_count(localclientnum, value) {
@@ -41,7 +41,7 @@ class cinsertion_passenger_count : cluielem {
     }
 
     // Namespace cinsertion_passenger_count/insertion_passenger_count
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x451087d2, Offset: 0x3f0
     // Size: 0x40
     function function_fa582112(localclientnum) {
@@ -52,7 +52,7 @@ class cinsertion_passenger_count : cluielem {
 }
 
 // Namespace insertion_passenger_count/insertion_passenger_count
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x3f1d3fcc, Offset: 0xe8
 // Size: 0x176
 function register(var_fbcc4763) {

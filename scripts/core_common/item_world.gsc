@@ -1683,7 +1683,7 @@ function function_8eee98dd(supplystash) {
 }
 
 // Namespace item_world/item_world
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xaf25af1b, Offset: 0x7458
 // Size: 0x234
 function function_7a0c5d2e(probability, targetname, var_8bd8496 = undefined) {

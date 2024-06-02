@@ -3326,7 +3326,7 @@ function register_actor_damage_override(str_perk, actor_damage_override_func) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params d, eflags: 0x2 linked
+// Params 13, eflags: 0x2 linked
 // Checksum 0xcb26d19a, Offset: 0xcf58
 // Size: 0x30c
 function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, psoffsettime, boneindex, surfacetype) {

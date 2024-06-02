@@ -46,7 +46,7 @@ function event_handler[gametype_init] main(*eventstruct) {
 }
 
 // Namespace tdm/tdm
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x829cceff, Offset: 0x310
 // Size: 0x8c
 function onstartgametype() {
@@ -64,7 +64,7 @@ function onstartgametype() {
 }
 
 // Namespace tdm/tdm
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xb5d08011, Offset: 0x3a8
 // Size: 0x7c
 function onspawnplayer(predictedspawn) {
@@ -76,7 +76,7 @@ function onspawnplayer(predictedspawn) {
 }
 
 // Namespace tdm/tdm
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xf06aa1, Offset: 0x430
 // Size: 0x24
 function onroundswitch() {
@@ -85,7 +85,7 @@ function onroundswitch() {
 }
 
 // Namespace tdm/tdm
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xeed333e8, Offset: 0x460
 // Size: 0x24
 function onendround(var_c1e98979) {
@@ -93,7 +93,7 @@ function onendround(var_c1e98979) {
 }
 
 // Namespace tdm/tdm
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x42fb7dcf, Offset: 0x490
 // Size: 0x19c
 function onscoreclosemusic() {
@@ -126,7 +126,7 @@ function onscoreclosemusic() {
 }
 
 // Namespace tdm/tdm
-// Params 9, eflags: 0x2 linked
+// Params 9, eflags: 0x0
 // Checksum 0x66d23ade, Offset: 0x638
 // Size: 0x214
 function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, vdir, shitloc, psoffsettime, deathanimduration) {
@@ -154,7 +154,7 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, vd
 }
 
 // Namespace tdm/tdm
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xf2002c2b, Offset: 0x858
 // Size: 0x104
 function function_e596b745(var_c1e98979) {
@@ -177,7 +177,7 @@ function function_e596b745(var_c1e98979) {
 }
 
 // Namespace tdm/tdm
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe46f0f9d, Offset: 0x968
 // Size: 0x3e
 function function_f9df98d3(type, value) {

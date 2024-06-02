@@ -282,7 +282,7 @@ function function_791aef0d() {
 }
 
 // Namespace ability_util/ability_util
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x7af8bc93, Offset: 0xc58
 // Size: 0x654
 function gadget_reset(gadgetweapon, changedclass, roundbased, firstround, changedspecialist) {
@@ -337,7 +337,7 @@ function gadget_reset(gadgetweapon, changedclass, roundbased, firstround, change
 }
 
 // Namespace ability_util/ability_util
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe348510c, Offset: 0x12b8
 // Size: 0x1a
 function gadget_power_armor_on() {

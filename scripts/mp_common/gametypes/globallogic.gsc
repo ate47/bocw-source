@@ -2874,7 +2874,7 @@ function totalplayerlives() {
 }
 
 // Namespace globallogic/globallogic
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd2b93e96, Offset: 0xbb08
 // Size: 0xa4
 function function_e9e52d05() {

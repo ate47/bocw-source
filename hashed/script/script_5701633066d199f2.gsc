@@ -1740,7 +1740,7 @@ function function_50547dae(entity) {
 }
 
 // Namespace namespace_250e9486/namespace_250e9486
-// Params 10, eflags: 0x2 linked
+// Params 16, eflags: 0x2 linked
 // Checksum 0xe8a5e397, Offset: 0x6e28
 // Size: 0xa04
 function function_dab7edc(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, timeoffset, boneindex, modelindex, surfacetype, surfacenormal) {

@@ -18,7 +18,7 @@ function set(str_field_name, n_value) {
 }
 
 // Namespace serverfield/serverfield_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x4c1bd6ae, Offset: 0x108
 // Size: 0x22
 function get(field_name) {

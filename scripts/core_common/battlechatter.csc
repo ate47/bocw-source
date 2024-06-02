@@ -543,7 +543,7 @@ function function_ad01601e(localclientnum, characterindex) {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x44ab651f, Offset: 0x1f10
 // Size: 0x14a
 function play_dialog(dialogkey, localclientnum) {
