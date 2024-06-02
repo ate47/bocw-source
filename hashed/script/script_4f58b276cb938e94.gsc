@@ -1,8 +1,8 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\core_common\flag_shared.gsc;
-#using script_7e3221b6c80d8cc4;
+#using scripts\core_common\stealth\debug.gsc;
 #using script_139ae0bb0a87141c;
-#using script_42310dfa1362069f;
+#using scripts\core_common\stealth\event.gsc;
 #using script_5450c003e8a913b7;
 #using script_3072532951b5b4ae;
 
@@ -21,10 +21,10 @@ function main() {
     self namespace_f1f700ac::init_flags();
     stealth_group::addtogroup(self.script_stealthgroup, self);
     self namespace_f1f700ac::setpatrolstyle_base();
-    self namespace_cf88f507::event_init_entity();
+    self stealth_event::event_init_entity();
     self thread namespace_f1f700ac::monitor_damage_thread(level.stealth.damage_auto_range, level.stealth.damage_sight_range);
     /#
-        self thread namespace_b0df45a::debug_enemy();
+        self thread stealth_debug::debug_enemy();
     #/
     self namespace_f1f700ac::set_alert_level("reset");
     self namespace_f1f700ac::bt_set_stealth_state("idle");

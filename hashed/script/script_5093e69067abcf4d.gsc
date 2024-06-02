@@ -9,7 +9,7 @@
 #using scripts\cp_common\objectives.gsc;
 #using scripts\cp_common\skipto.gsc;
 #using scripts\cp_common\util.gsc;
-#using script_1883fa4e60abbf9f;
+#using scripts\core_common\stealth\utility.gsc;
 #using scripts\core_common\colors_shared.gsc;
 #using scripts\core_common\turret_shared.gsc;
 #using scripts\core_common\exploder_shared.gsc;

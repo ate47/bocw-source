@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_1883fa4e60abbf9f;
+#using scripts\core_common\stealth\utility.gsc;
 #using script_3072532951b5b4ae;
 #using script_68d08b784c92da95;
 #using scripts\core_common\system_shared.gsc;

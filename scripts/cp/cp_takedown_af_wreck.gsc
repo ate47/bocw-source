@@ -6,7 +6,7 @@
 #using scripts\cp_common\snd.gsc;
 #using script_61cfc2ab8e60625;
 #using script_31e9b35aaacbbd93;
-#using script_1883fa4e60abbf9f;
+#using scripts\core_common\stealth\utility.gsc;
 #using script_4ae261b2785dda9f;
 #using scripts\cp_common\gametypes\globallogic_ui.gsc;
 #using scripts\cp_common\skipto.gsc;

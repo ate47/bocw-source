@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_1883fa4e60abbf9f;
-#using script_912160eeb6a2d51;
-#using script_21cbc79d1d70402;
+#using scripts\core_common\stealth\utility.gsc;
+#using scripts\core_common\stealth\threat_sight.gsc;
+#using scripts\core_common\stealth\player.gsc;
 #using script_6c5ee33879e077f8;
 
 #namespace stealth_init;
@@ -23,14 +23,14 @@ function set_stealth_mode(enabled, musichidden, musicspotted) {
         if (isdefined(musichidden) && isdefined(musicspotted)) {
             level thread namespace_979752dc::stealth_music(musichidden, musicspotted);
         }
-        level thread namespace_6c0cd084::threat_sight_set_enabled(1);
+        level thread stealth_threat_sight::threat_sight_set_enabled(1);
         foreach (player in getplayers()) {
-            player thread namespace_7a865494::main();
+            player thread stealth_player::main();
         }
         setsaveddvar(#"hash_3e8c4724c1db5fe7", 0);
     } else {
         level thread namespace_979752dc::stealth_music_stop();
-        level thread namespace_6c0cd084::threat_sight_set_enabled(0);
+        level thread stealth_threat_sight::threat_sight_set_enabled(0);
         setsaveddvar(#"hash_3e8c4724c1db5fe7", 1);
     }
     if (isdefined(level.stealth.fnsetstealthmode)) {

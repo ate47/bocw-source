@@ -1,8 +1,8 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_fe983bbff18d77f;
 #using script_6f8610e78fdd3440;
-#using script_1883fa4e60abbf9f;
-#using script_7e3221b6c80d8cc4;
+#using scripts\core_common\stealth\utility.gsc;
+#using scripts\core_common\stealth\debug.gsc;
 #using script_5450c003e8a913b7;
 #using script_3072532951b5b4ae;
 #using scripts\core_common\ai_shared.gsc;
@@ -321,9 +321,9 @@ function group_assigntohuntpod(groupdata, guy, lastknownpos, *lastknowntime) {
     newpod thread pod_hunt_delayednotify();
     /#
         if (isdefined(newpod.borigininvolume) && !newpod.borigininvolume) {
-            namespace_b0df45a::function_65b21ab8(lastknownpos, "<unknown string>");
+            stealth_debug::function_65b21ab8(lastknownpos, "<unknown string>");
         } else {
-            namespace_b0df45a::function_65b21ab8(lastknownpos, "<unknown string>");
+            stealth_debug::function_65b21ab8(lastknownpos, "<unknown string>");
         }
     #/
     /#
@@ -383,7 +383,7 @@ function group_removefrompod(groupdata = getgroup(guy.script_stealthgroup), guy)
         up = (0, 0, 128);
         down = (0, 0, -12);
         while (true) {
-            if (namespace_b0df45a::debug_enabled() && isdefined(pod.origin)) {
+            if (stealth_debug::debug_enabled() && isdefined(pod.origin)) {
                 zoffset = 0;
                 var_5a7a026e = [];
                 foreach (group in level.stealth.groupdata.groups) {
@@ -483,13 +483,13 @@ function group_checkrequestbackupoutsideofvolume(e) {
             otherguy = group_findsomeotherguytoinvestigate(e.investigate_pos, self.script_stealthgroup);
             if (isdefined(otherguy)) {
                 /#
-                    namespace_b0df45a::function_65b21ab8(self, "<unknown string>");
+                    stealth_debug::function_65b21ab8(self, "<unknown string>");
                 #/
                 /#
-                    namespace_b0df45a::function_65b21ab8(self, "<unknown string>");
+                    stealth_debug::function_65b21ab8(self, "<unknown string>");
                 #/
                 /#
-                    namespace_b0df45a::function_65b21ab8(otherguy, "<unknown string>");
+                    stealth_debug::function_65b21ab8(otherguy, "<unknown string>");
                 #/
                 otherguy function_a3fcf9e0("seek_backup", self, e.investigate_pos);
                 return true;
@@ -1087,7 +1087,7 @@ function group_delayedcombatpropagationfromhunt(delaytime, guy, target, targetpo
                     otherguy getenemyinfo(target);
                     otherguy function_a3fcf9e0("combat", target, targetpos);
                     /#
-                        namespace_b0df45a::function_65b21ab8(otherguy, "<unknown string>");
+                        stealth_debug::function_65b21ab8(otherguy, "<unknown string>");
                     #/
                     wait(0.5);
                 }
@@ -1136,14 +1136,14 @@ function group_delayedcombatpropagation(delaytime, guy, target, targetpos) {
                     var_b288ad4a = 1;
                     var_3f01ab8a = 1;
                     /#
-                        namespace_b0df45a::function_65b21ab8(otherguy, "<unknown string>");
+                        stealth_debug::function_65b21ab8(otherguy, "<unknown string>");
                     #/
                 }
             }
             if (!var_b288ad4a && otherguy cansee(guy)) {
                 var_b288ad4a = 1;
                 /#
-                    namespace_b0df45a::function_65b21ab8(otherguy, "<unknown string>");
+                    stealth_debug::function_65b21ab8(otherguy, "<unknown string>");
                 #/
             }
             if (!var_b288ad4a && distancesquared(otherguy.origin, guy.origin) < var_91239be5 && (!false || otherguy util::has_tac_vis(guy))) {
@@ -1152,7 +1152,7 @@ function group_delayedcombatpropagation(delaytime, guy, target, targetpos) {
                     var_3f01ab8a = 1;
                 }
                 /#
-                    namespace_b0df45a::function_65b21ab8(otherguy, "<unknown string>");
+                    stealth_debug::function_65b21ab8(otherguy, "<unknown string>");
                 #/
             }
             if (var_3f01ab8a) {
@@ -1325,7 +1325,7 @@ function pod_combat_periodicping() {
                 }
                 if (self pod_isclosetoanymembers(guy, var_26031df0, 1)) {
                     /#
-                        namespace_b0df45a::function_65b21ab8(guy, "<unknown string>");
+                        stealth_debug::function_65b21ab8(guy, "<unknown string>");
                     #/
                     guy function_a3fcf9e0("combat", guy, guy.origin);
                 }

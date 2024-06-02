@@ -20,7 +20,7 @@
 // Checksum 0xbdb2dbb3, Offset: 0x6b0
 // Size: 0x3c
 function private event_handler[level_preinit] function_b489bb7b(*eventstruct) {
-    snd::function_5e69f468(&function_887ac605);
+    snd::function_5e69f468(&_objective);
     snd::function_294cb4fa();
 }
 
@@ -41,7 +41,7 @@ function private event_handler[event_cc819519] function_686b88aa(*eventstruct) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x74f3df06, Offset: 0x7a8
 // Size: 0x392
-function private function_887ac605(objective) {
+function private _objective(objective) {
     switch (objective) {
     case #"tkdn_raid_bar":
         snd::function_7db65a93("triton_on");

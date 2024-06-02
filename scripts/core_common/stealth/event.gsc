@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_7e3221b6c80d8cc4;
-#using script_1883fa4e60abbf9f;
+#using scripts\core_common\stealth\debug.gsc;
+#using scripts\core_common\stealth\utility.gsc;
 #using script_3ad66e3076c279ab;
 #using scripts\core_common\util_shared.gsc;
 #using scripts\core_common\flag_shared.gsc;
@@ -15,9 +15,9 @@ function scalevolume(*ent, *vol) {
     
 }
 
-#namespace namespace_cf88f507;
+#namespace stealth_event;
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 0, eflags: 0x2 linked
 // Checksum 0xaa89b08e, Offset: 0x2c8
 // Size: 0x34
@@ -26,7 +26,7 @@ function event_init_entity() {
     self event_entity_core_set_enabled(1);
 }
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 1, eflags: 0x2 linked
 // Checksum 0x26b98cc, Offset: 0x308
 // Size: 0x276
@@ -49,7 +49,7 @@ function event_entity_core_set_enabled(enabled) {
     }
 }
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1a00db67, Offset: 0x588
 // Size: 0x484
@@ -88,7 +88,7 @@ function event_init_level() {
     event_severity_set("combat", "ally_killed");
 }
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 2, eflags: 0x2 linked
 // Checksum 0x64645d3, Offset: 0xa18
 // Size: 0xfe
@@ -101,7 +101,7 @@ function event_severity_compare(var_86dfea16, var_3ec8d9e9) {
     return result;
 }
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 2, eflags: 0x2 linked
 // Checksum 0x90e63f74, Offset: 0xb20
 // Size: 0x142
@@ -118,7 +118,7 @@ function event_severity_shift(severity, direction) {
     return severity;
 }
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 5, eflags: 0x2 linked
 // Checksum 0x139bafe, Offset: 0xc70
 // Size: 0x1ac
@@ -149,7 +149,7 @@ function event_severity_set(severity, eventname, escalation, var_4cca9730, var_a
     level.stealth.event_escalation_to_combat[eventname] = var_af2ae264;
 }
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 1, eflags: 0x2 linked
 // Checksum 0x39659000, Offset: 0xe28
 // Size: 0x4c
@@ -158,7 +158,7 @@ function event_severity_get(eventname) {
     return level.stealth.event_severity[eventname];
 }
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 1, eflags: 0x2 linked
 // Checksum 0xa67f879, Offset: 0xe80
 // Size: 0x4c
@@ -167,7 +167,7 @@ function event_escalation_get(eventname) {
     return level.stealth.event_escalation[eventname];
 }
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 1, eflags: 0x2 linked
 // Checksum 0xbe325a2c, Offset: 0xed8
 // Size: 0x4c
@@ -176,7 +176,7 @@ function event_escalation_scalar_get(eventname) {
     return level.stealth.event_escalation_scalars[eventname];
 }
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 1, eflags: 0x2 linked
 // Checksum 0xeabce533, Offset: 0xf30
 // Size: 0x4c
@@ -185,7 +185,7 @@ function event_escalation_to_combat_get(eventname) {
     return level.stealth.event_escalation_to_combat[eventname];
 }
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc820a17b, Offset: 0xf88
 // Size: 0x2a
@@ -194,7 +194,7 @@ function event_escalation_clear() {
     self.stealth.event_escalation_scalar = 0;
 }
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1b39c5d7, Offset: 0xfc0
 // Size: 0x6e6
@@ -278,14 +278,14 @@ function event_listener_thread() {
                 if (isdefined(eventhandled) && !eventhandled) {
                     event_str += "<unknown string>";
                 }
-                self thread namespace_b0df45a::function_314b7255(event_str, (1, 1, 1), 1, 0.5, (0, 0, 40), 4);
+                self thread stealth_debug::function_314b7255(event_str, (1, 1, 1), 1, 0.5, (0, 0, 40), 4);
                 self.stealth.ai_event = event.type;
             #/
         }
     }
 }
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 5, eflags: 0x2 linked
 // Checksum 0xca700756, Offset: 0x16b0
 // Size: 0x2e8
@@ -333,7 +333,7 @@ function event_broadcast_axis(eventtype, eventtypeperipheral, enemy, rangeauto, 
     }
 }
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 4, eflags: 0x2 linked
 // Checksum 0x44b6e6e1, Offset: 0x19a0
 // Size: 0x170
@@ -356,7 +356,7 @@ function event_broadcast_generic(eventtype, eventposition, eventradius, eventent
     }
 }
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 7, eflags: 0x0
 // Checksum 0x5d36280a, Offset: 0x1b18
 // Size: 0x1f0
@@ -395,7 +395,7 @@ function event_broadcast_axis_by_tacsight(eventtype, enemy, eventposition, event
     }
 }
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 7, eflags: 0x0
 // Checksum 0x30c0e301, Offset: 0x1d10
 // Size: 0x5c
@@ -403,7 +403,7 @@ function event_broadcast_axis_by_sight(eventtype, enemy, eventposition, eventrad
     thread event_broadcast_axis_by_sight_thread(eventtype, enemy, eventposition, eventradius, var_c5108979, tacposition, autorange);
 }
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 7, eflags: 0x2 linked
 // Checksum 0x73dca09b, Offset: 0x1d78
 // Size: 0x278
@@ -450,7 +450,7 @@ function event_broadcast_axis_by_sight_thread(eventtype, enemy, eventposition, e
     }
 }
 
-// Namespace namespace_cf88f507/event
+// Namespace stealth_event/event
 // Params 1, eflags: 0x2 linked
 // Checksum 0x62277780, Offset: 0x1ff8
 // Size: 0xc0

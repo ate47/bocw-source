@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_7e3221b6c80d8cc4;
-#using script_1883fa4e60abbf9f;
+#using scripts\core_common\stealth\debug.gsc;
+#using scripts\core_common\stealth\utility.gsc;
 #using script_6c5ee33879e077f8;
 #using script_3ad66e3076c279ab;
 #using scripts\core_common\flag_shared.gsc;
@@ -19,7 +19,7 @@ function main() {
     self thread spotted_thread();
     self thread visibility_thread();
     /#
-        self thread namespace_b0df45a::debug_friendly();
+        self thread stealth_debug::debug_friendly();
     #/
 }
 

@@ -909,8 +909,8 @@ function function_827811b5() {
 // Size: 0x46
 function function_95c9af4b() {
     /#
-        if (isdefined(level._snd.var_88612b20.debuglevel)) {
-            return level._snd.var_88612b20.debuglevel;
+        if (isdefined(level._snd._debug.debuglevel)) {
+            return level._snd._debug.debuglevel;
         }
     #/
     return 0;

@@ -1,8 +1,8 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\cp_common\gametypes\battlechatter.gsc;
 #using script_268625b0934ee2ce;
-#using script_1883fa4e60abbf9f;
-#using script_7e3221b6c80d8cc4;
+#using scripts\core_common\stealth\utility.gsc;
+#using scripts\core_common\stealth\debug.gsc;
 #using script_6c5ee33879e077f8;
 #using script_3ad66e3076c279ab;
 #using scripts\core_common\callbacks_shared.gsc;
@@ -88,12 +88,12 @@ function private on_ai_spawned() {
 function set_stealth_mode_sp(enabled, *musichidden, *musicspotted) {
     if (musicspotted) {
         foreach (player in getplayers()) {
-            player thread namespace_7a865494::ambient_player_thread();
+            player thread stealth_player::ambient_player_thread();
         }
         return;
     }
     foreach (player in getplayers()) {
-        player thread namespace_7a865494::ambient_player_stop();
+        player thread stealth_player::ambient_player_stop();
     }
 }
 

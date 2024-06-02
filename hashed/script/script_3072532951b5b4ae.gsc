@@ -1,14 +1,14 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_912160eeb6a2d51;
+#using scripts\core_common\stealth\threat_sight.gsc;
 #using script_fe983bbff18d77f;
 #using script_4f58b276cb938e94;
 #using script_3eb3df5aef50b41c;
-#using script_7e3221b6c80d8cc4;
+#using scripts\core_common\stealth\debug.gsc;
 #using script_5450c003e8a913b7;
 #using script_16a28d93ee216f6f;
-#using script_42310dfa1362069f;
+#using scripts\core_common\stealth\event.gsc;
 #using script_139ae0bb0a87141c;
-#using script_1883fa4e60abbf9f;
+#using scripts\core_common\stealth\utility.gsc;
 #using script_3ad66e3076c279ab;
 #using script_6f8610e78fdd3440;
 #using scripts\core_common\ai\archetype_human_locomotion.gsc;
@@ -696,7 +696,7 @@ function function_d346f1cf() {
     self notify("b478fa11a5368c9");
     self endon("b478fa11a5368c9");
     self endon(#"death", #"stop_shoot_at_target");
-    level waittill(#"hash_733d7b56ac978e53");
+    level waittill(#"stealth_event");
     self ai::stop_shoot_at_target();
 }
 
@@ -829,7 +829,7 @@ function idle_init(behaviortreeentity) {
     self.stealth.bidlecurious = 0;
     self.bt.instancedata[taskid].curiousstarttime = -1;
     self thread namespace_f1f700ac::set_alert_level("reset");
-    self namespace_cf88f507::event_escalation_clear();
+    self stealth_event::event_escalation_clear();
     if (isdefined(self.stealth.funcs[#"hidden"])) {
         self namespace_b2b86d39::stealth_call_thread("hidden");
     }
@@ -1208,7 +1208,7 @@ function investigate_setreaction(event) {
     if (event.typeorig == "bulletwhizby" || event.typeorig == "grenade danger") {
         var_7137846d = "medium";
     } else if (event.typeorig == "footstep_sprint") {
-        if (isdefined(event.entity) && isplayer(event.entity) && event.entity namespace_6c0cd084::player_is_sprinting_at_me(self)) {
+        if (isdefined(event.entity) && isplayer(event.entity) && event.entity stealth_threat_sight::player_is_sprinting_at_me(self)) {
             var_7137846d = "medium";
         }
     } else if (event.typeorig == "sight" && self.alertlevel == "high_alert" && self namespace_979752dc::function_d58e1c1c()) {
@@ -2450,7 +2450,7 @@ function hunt_sidechecks(instancedata) {
                     continue;
                 }
                 /#
-                    if (namespace_b0df45a::debug_enabled()) {
+                    if (stealth_debug::debug_enabled()) {
                         var_861ee216 = anglestoforward(node.angles);
                         circle(lookaheadpos, var_bea9b15e, (0, 1, 0), 1, 0, 1);
                         box(node.origin, (-16, -16, 0), (16, 16, 8), node.angles[1], (1, 1, 0), 1, 0, 1);
@@ -2472,7 +2472,7 @@ function hunt_sidechecks(instancedata) {
     if (isdefined(instancedata.cornerchecknode)) {
         cornerchecknode = instancedata.cornerchecknode;
         /#
-            if (namespace_b0df45a::debug_enabled()) {
+            if (stealth_debug::debug_enabled()) {
                 box(cornerchecknode.origin, (-16, -16, 0), (16, 16, 8), cornerchecknode.angles[1], (1, 1, 0), 1, 0, 1);
             }
         #/
@@ -2491,7 +2491,7 @@ function hunt_sidechecks(instancedata) {
             checkpos = self.origin + rotatepoint((128, 0, 0), cornerchecknode.angles);
         }
         /#
-            if (namespace_b0df45a::debug_enabled()) {
+            if (stealth_debug::debug_enabled()) {
                 line(cornerchecknode.origin, checkpos, (1, 1, 0), 1, 0, 1);
             }
         #/
@@ -2799,7 +2799,7 @@ function combat_init() {
     self ai::look_at(undefined);
     self namespace_979752dc::clear_movement_speed();
     self namespace_979752dc::set_goal_radius(undefined);
-    self namespace_cf88f507::event_escalation_clear();
+    self stealth_event::event_escalation_clear();
     self function_94575fdf();
     if (isdefined(self.script_combatmode)) {
         self.combatmode = self.script_combatmode;
@@ -2898,7 +2898,7 @@ function setstealthstate(statename, e) {
                     if (self.stealth.investigateevent.typeorig == "saw_corpse" && e.typeorig == "found_corpse" && e.entity == self.stealth.investigate_entity) {
                         break;
                     }
-                    importancediff = namespace_cf88f507::event_severity_compare(self.stealth.investigate_severity, e.type);
+                    importancediff = stealth_event::event_severity_compare(self.stealth.investigate_severity, e.type);
                     if (importancediff >= 0) {
                         self.stealth.investigate_severity = e.type;
                         self.stealth.investigate_entity = e.entity;

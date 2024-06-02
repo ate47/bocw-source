@@ -18,7 +18,7 @@
 // Checksum 0xbdb2dbb3, Offset: 0x958
 // Size: 0x3c
 function private event_handler[level_preinit] function_b489bb7b(*eventstruct) {
-    snd::function_5e69f468(&function_887ac605);
+    snd::function_5e69f468(&_objective);
     snd::function_294cb4fa();
 }
 
@@ -199,7 +199,7 @@ function function_9b8a74e0(otherent, string1, string2, string3, string4, string5
 // Params 1, eflags: 0x6 linked
 // Checksum 0xb9e3ce81, Offset: 0x11e0
 // Size: 0x18a
-function private function_887ac605(objective) {
+function private _objective(objective) {
     level thread function_8cb75a6();
     switch (objective) {
     case #"chapter_selection":

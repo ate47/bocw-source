@@ -20,7 +20,7 @@ function event_handler[level_preinit] function_b489bb7b(*eventstruct) {
     snd::function_d4ec748e(&function_f2a2832d);
     snd::function_ce78b33b(&function_32ab045);
     snd::trigger_init(&_trigger);
-    snd::function_5e69f468(&function_887ac605);
+    snd::function_5e69f468(&_objective);
 }
 
 // Namespace namespace_a052577e/event_cc819519
@@ -41,7 +41,7 @@ function event_handler[event_cc819519] function_686b88aa(*eventstruct) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x2ce0fe67, Offset: 0x798
 // Size: 0x3d2
-function private function_887ac605(objective) {
+function private _objective(objective) {
     switch (objective) {
     case #"tkdn_raid_bar":
         function_b6407dd4(1);

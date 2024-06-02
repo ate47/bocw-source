@@ -1,5 +1,5 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_1883fa4e60abbf9f;
+#using scripts\core_common\stealth\utility.gsc;
 #using script_42e8ee8721f5e6ef;
 #using scripts\core_common\callbacks_shared.gsc;
 #using scripts\core_common\array_shared.gsc;
@@ -17,9 +17,9 @@ function scalevolume(*ent, *vol) {
     
 }
 
-#namespace namespace_7a865494;
+#namespace stealth_player;
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 2, eflags: 0x0
 // Checksum 0x5a68c9e4, Offset: 0x218
 // Size: 0x506
@@ -86,7 +86,7 @@ function stealth_noteworthy_thread(enabled, callouts) {
     }
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 1, eflags: 0x6 linked
 // Checksum 0x64a9f84, Offset: 0x728
 // Size: 0x2c
@@ -94,7 +94,7 @@ function private function_19d52da4(*var_352058a) {
     callback::remove_on_ai_killed(&function_3a7a5076);
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb938374a, Offset: 0x760
 // Size: 0x33a
@@ -131,7 +131,7 @@ function private stealth_noteworthy_init() {
     level.stealth.noteworthy.callout_spotted = 0;
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 0, eflags: 0x6 linked
 // Checksum 0x303f37ee, Offset: 0xaa8
 // Size: 0x340
@@ -187,7 +187,7 @@ function private stealth_noteworthy_kill_monitor() {
     }
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 1, eflags: 0x6 linked
 // Checksum 0x89c8998a, Offset: 0xdf0
 // Size: 0x30
@@ -196,7 +196,7 @@ function private function_3a7a5076(var_854423c5) {
     level notify(#"ai_killed", var_854423c5);
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 4, eflags: 0x6 linked
 // Checksum 0x2261ead0, Offset: 0xe28
 // Size: 0x5d6
@@ -269,7 +269,7 @@ function private stealth_noteworthy_delayed(eventname, target, var_78a2f9b6, del
     self.stealth.stealth_note_pending_targets = undefined;
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 1, eflags: 0x6 linked
 // Checksum 0x9c984061, Offset: 0x1408
 // Size: 0x10c
@@ -302,7 +302,7 @@ function private stealth_noteworthy_priority(eventname) {
 
 /#
 
-    // Namespace namespace_7a865494/player
+    // Namespace stealth_player/player
     // Params 0, eflags: 0x4
     // Checksum 0x3959c489, Offset: 0x1520
     // Size: 0x174
@@ -325,7 +325,7 @@ function private stealth_noteworthy_priority(eventname) {
 
 #/
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x16a0
 // Size: 0x4
@@ -333,7 +333,7 @@ function private stealth_noteworthy_aim_contents() {
     
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 5, eflags: 0x6 linked
 // Checksum 0xebada70b, Offset: 0x16b0
 // Size: 0x1ae
@@ -355,7 +355,7 @@ function private stealth_noteworthy_entities(origin, radius, team = "axis", civi
     return entities;
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 1, eflags: 0x2 linked
 // Checksum 0x266d3ce, Offset: 0x1868
 // Size: 0x8c0
@@ -441,7 +441,7 @@ function stealth_noteworthy_callouts(enabled) {
     }
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb4cf1570, Offset: 0x2130
 // Size: 0xd6
@@ -458,7 +458,7 @@ function private stealth_noteworthy_callouts_init() {
     return callouts;
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 1, eflags: 0x6 linked
 // Checksum 0xe7c418f3, Offset: 0x2210
 // Size: 0x1f2
@@ -491,7 +491,7 @@ function private stealth_noteworthy_callout_type(ent) {
     return type;
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 2, eflags: 0x6 linked
 // Checksum 0xc95905b0, Offset: 0x2410
 // Size: 0xf8
@@ -512,7 +512,7 @@ function private stealth_noteworthy_visible(other, var_5958f865) {
     return false;
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6ce671d2, Offset: 0x2510
 // Size: 0x8a
@@ -526,7 +526,7 @@ function private stealth_noteworthy_get_eye() {
     return eye;
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 3, eflags: 0x6 linked
 // Checksum 0x7aefa0d8, Offset: 0x25a8
 // Size: 0x9a
@@ -539,7 +539,7 @@ function private stealth_noteworthy_trace(start, end, ignore_ent) {
     return sighttracepassed(start, end, 0, self, ignore_ent);
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 4, eflags: 0x2 linked
 // Checksum 0x768763e4, Offset: 0x2650
 // Size: 0x27a
@@ -587,7 +587,7 @@ function ambient_player_thread(var_bfd9f922, var_ececce87, var_d572c578, var_4fb
     }
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 2, eflags: 0x6 linked
 // Checksum 0xa8fbd5b7, Offset: 0x28d8
 // Size: 0x362
@@ -640,7 +640,7 @@ function private ambient_candidates(var_af882d4b, var_b5e49a23) {
     return candidates;
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0xf4f740f6, Offset: 0x2c48
 // Size: 0x16

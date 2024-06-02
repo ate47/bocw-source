@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_3dc93ca9902a9cda;
-#using script_21cbc79d1d70402;
-#using script_1883fa4e60abbf9f;
+#using scripts\core_common\stealth\player.gsc;
+#using scripts\core_common\stealth\utility.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 #using scripts\core_common\system_shared.gsc;
 #using scripts\core_common\flag_shared.gsc;
@@ -17,17 +17,17 @@ function scalevolume(*ent, *vol) {
     
 }
 
-#namespace namespace_6c0cd084;
+#namespace stealth_threat_sight;
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 0, eflags: 0x5
 // Checksum 0xac5e67f4, Offset: 0x2a8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_299575137124db03", &preinit, undefined, undefined, undefined);
+    system::register(#"stealth_threat_sight", &preinit, undefined, undefined, undefined);
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 0, eflags: 0x6 linked
 // Checksum 0x5d5d77b4, Offset: 0x2f0
 // Size: 0x1b4
@@ -45,7 +45,7 @@ function private preinit() {
     util::init_dvar("ai_threatUseDisplay", 0, &function_4c75a19);
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 0, eflags: 0x6 linked
 // Checksum 0x4d9bbd5b, Offset: 0x4b0
 // Size: 0x64
@@ -54,7 +54,7 @@ function private register_clientfields() {
     clientfield::register("actor", "threat_state", 1, 2, "int");
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 1, eflags: 0x6 linked
 // Checksum 0x39c816ed, Offset: 0x520
 // Size: 0x28
@@ -62,7 +62,7 @@ function private function_4c75a19(dvar) {
     level.var_53ad6e22[dvar.name] = dvar.value;
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 1, eflags: 0x2 linked
 // Checksum 0x458ef145, Offset: 0x550
 // Size: 0x260
@@ -87,7 +87,7 @@ function threat_sight_set_enabled(enabled) {
     }
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 1, eflags: 0x2 linked
 // Checksum 0xdf73ddd, Offset: 0x7b8
 // Size: 0x84
@@ -99,7 +99,7 @@ function threat_sight_set_dvar(enabled) {
     level thread threat_sight_set_dvar_display(enabled);
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 1, eflags: 0x2 linked
 // Checksum 0x69f4194b, Offset: 0x848
 // Size: 0x9c
@@ -115,7 +115,7 @@ function threat_sight_set_dvar_display(enabled) {
     setdvar(#"hash_28758912434b7866", enabled);
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 0, eflags: 0x0
 // Checksum 0xeb2567d, Offset: 0x8f0
 // Size: 0x74
@@ -129,7 +129,7 @@ function threat_sight_enabled() {
     return isdefined(self.threatsight) && self.threatsight;
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 1, eflags: 0x2 linked
 // Checksum 0x784a2cb4, Offset: 0x970
 // Size: 0x2f4
@@ -187,7 +187,7 @@ function threat_sight_set_state(statename) {
     }
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 1, eflags: 0x2 linked
 // Checksum 0x64cbc1d, Offset: 0xc70
 // Size: 0x70
@@ -197,7 +197,7 @@ function threat_sight_set_state_parameters(statename) {
     self [[ level.stealth.fnthreatsightsetstateparameters ]](statename);
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 1, eflags: 0x6 linked
 // Checksum 0xca02aaee, Offset: 0xce8
 // Size: 0x4c
@@ -206,7 +206,7 @@ function private function_eefd0bb3(*str_notify) {
     self clientfield::set("threat_state", 0);
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 0, eflags: 0x2 linked
 // Checksum 0x2a6edcbc, Offset: 0xd40
 // Size: 0x16
@@ -214,7 +214,7 @@ function function_60514e0b() {
     self notify(#"hash_247b691774e7a2e2");
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9b7b8cde, Offset: 0xd60
 // Size: 0x388
@@ -266,7 +266,7 @@ function private function_3a739b35() {
     }
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 0, eflags: 0x2 linked
 // Checksum 0x3ae3e0a8, Offset: 0x10f0
 // Size: 0x194
@@ -292,7 +292,7 @@ function threat_sight_immediate_thread() {
     }
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 0, eflags: 0x2 linked
 // Checksum 0x39073e42, Offset: 0x1290
 // Size: 0xa2
@@ -311,13 +311,13 @@ function threat_sight_player_init() {
     }
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 2, eflags: 0x2 linked
 // Checksum 0x6ce293f1, Offset: 0x1340
 // Size: 0x1dc
 function threat_sight_player_entity_state_set(ai, statename) {
     if (!isdefined(self.stealth)) {
-        self thread namespace_7a865494::main();
+        self thread stealth_player::main();
     }
     self threat_sight_player_init();
     entid = ai getentitynumber();
@@ -349,7 +349,7 @@ function threat_sight_player_entity_state_set(ai, statename) {
     }
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 0, eflags: 0x2 linked
 // Checksum 0x938a11eb, Offset: 0x1528
 // Size: 0x22
@@ -357,7 +357,7 @@ function function_36a6a90() {
     return is_true(self.stealth.var_56d82ea8);
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 1, eflags: 0x2 linked
 // Checksum 0x8b8422fa, Offset: 0x1558
 // Size: 0x84
@@ -369,7 +369,7 @@ function function_79fc894b(player) {
     self threat_sight_sighted(player);
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 1, eflags: 0x2 linked
 // Checksum 0x1fc797b6, Offset: 0x15e8
 // Size: 0x74
@@ -380,7 +380,7 @@ function function_ee9635fa(player) {
     self threat_sight_sighted(player);
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 1, eflags: 0x2 linked
 // Checksum 0xa0e0fd83, Offset: 0x1668
 // Size: 0x74
@@ -391,7 +391,7 @@ function function_740f4859(player) {
     self threat_sight_sighted(player);
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 1, eflags: 0x2 linked
 // Checksum 0x4ded63a0, Offset: 0x16e8
 // Size: 0x2ec
@@ -435,7 +435,7 @@ function threat_sight_sighted(player) {
     self thread threat_sight_sighted_wait_lost(player);
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 1, eflags: 0x2 linked
 // Checksum 0xd4c14815, Offset: 0x19e0
 // Size: 0xfc
@@ -455,7 +455,7 @@ function threat_sight_sighted_wait_lost(player) {
     }
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 2, eflags: 0x2 linked
 // Checksum 0x68c8a20d, Offset: 0x1ae8
 // Size: 0x174
@@ -475,7 +475,7 @@ function threat_sight_force_visible(othersentient, durationseconds) {
     self thread threat_sight_force_visible_thread();
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 0, eflags: 0x2 linked
 // Checksum 0x4c0c10a5, Offset: 0x1c68
 // Size: 0x406
@@ -521,7 +521,7 @@ function threat_sight_force_visible_thread() {
     self.stealth.force_visible_thread = undefined;
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 1, eflags: 0x2 linked
 // Checksum 0xd6d55a88, Offset: 0x2078
 // Size: 0x2c
@@ -529,7 +529,7 @@ function function_7af4fa05(entity) {
     self setthreatsight(entity, 0.05);
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 0, eflags: 0x2 linked
 // Checksum 0xcd9afeb6, Offset: 0x20b0
 // Size: 0x684
@@ -605,7 +605,7 @@ function threat_sight_player_entity_state_thread() {
     }
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 1, eflags: 0x2 linked
 // Checksum 0xb698c24f, Offset: 0x2740
 // Size: 0xba
@@ -622,7 +622,7 @@ function player_is_sprinting_at_me(ai) {
     return util::within_fov(self.origin, self.angles, ai.origin, 0.93969);
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 2, eflags: 0x0
 // Checksum 0xd178aca1, Offset: 0x2808
 // Size: 0x184
@@ -643,7 +643,7 @@ function threat_sight_fake(origin, amount) {
     self thread threat_sight_player_sight_audio(0, max(self.stealth.maxthreat, amount));
 }
 
-// Namespace namespace_6c0cd084/threat_sight
+// Namespace stealth_threat_sight/threat_sight
 // Params 3, eflags: 0x2 linked
 // Checksum 0xe5b0c426, Offset: 0x2998
 // Size: 0x68

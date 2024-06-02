@@ -20,7 +20,7 @@ function event_handler[level_preinit] function_b489bb7b(*eventstruct) {
     snd::function_d4ec748e(&function_f2a2832d);
     snd::function_ce78b33b(&function_32ab045);
     snd::trigger_init(&_trigger);
-    snd::function_5e69f468(&function_887ac605);
+    snd::function_5e69f468(&_objective);
 }
 
 // Namespace namespace_4ed3ce47/event_cc819519
@@ -232,7 +232,7 @@ function private function_f2a2832d(*player, msg) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x6d24e0f8, Offset: 0x1330
 // Size: 0x2e2
-function private function_887ac605(objective) {
+function private _objective(objective) {
     players = snd::function_da785aa8();
     player = players[0];
     level thread function_8cb75a6();

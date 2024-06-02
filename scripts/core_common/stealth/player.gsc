@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
-#using script_7e3221b6c80d8cc4;
-#using script_1883fa4e60abbf9f;
+#using scripts\core_common\stealth\debug.gsc;
+#using scripts\core_common\stealth\utility.gsc;
 #using scripts\core_common\flag_shared.gsc;
 #using scripts\core_common\util_shared.gsc;
 #using scripts\core_common\array_shared.gsc;
@@ -15,9 +15,9 @@ function scalevolume(*ent, *vol) {
     
 }
 
-#namespace namespace_7a865494;
+#namespace stealth_player;
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0xd0930c02, Offset: 0x228
 // Size: 0x174
@@ -40,11 +40,11 @@ function main() {
         self thread stealthhints_thread();
     }
     /#
-        self childthread namespace_b0df45a::debug_player();
+        self childthread stealth_debug::debug_player();
     #/
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0x516c00af, Offset: 0x3a8
 // Size: 0x6c
@@ -59,7 +59,7 @@ function maxvisibility_thread() {
     }
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0xaf03cc80, Offset: 0x420
 // Size: 0x8a
@@ -79,7 +79,7 @@ function maxvisibility_shouldupdate() {
     return true;
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0x9fe9ffbd, Offset: 0x4b8
 // Size: 0x18a
@@ -101,7 +101,7 @@ function get_detect_range() {
     return range;
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 1, eflags: 0x0
 // Checksum 0x4637e280, Offset: 0x650
 // Size: 0x688
@@ -211,7 +211,7 @@ function combatstate_thread(enabled = 1) {
     }
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0x44863108, Offset: 0xce0
 // Size: 0xd6
@@ -224,7 +224,7 @@ function combatstate_updatethread() {
     }
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 2, eflags: 0x0
 // Checksum 0x1f23a016, Offset: 0xdc0
 // Size: 0x110
@@ -237,7 +237,7 @@ function combatstate_addupdatefunc(key, func) {
     self.stealth.combatstate.updatefuncs[key] = func;
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 1, eflags: 0x0
 // Checksum 0x79252853, Offset: 0xed8
 // Size: 0x100
@@ -250,7 +250,7 @@ function combatstate_removeupdatefunc(key) {
     self.stealth.combatstate.updatefuncs[key] = undefined;
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0x3c38066c, Offset: 0xfe0
 // Size: 0x42
@@ -261,7 +261,7 @@ function playerattackedmonitor() {
     }
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0xeaeb71ba, Offset: 0x1030
 // Size: 0x154
@@ -279,7 +279,7 @@ function stealthhints_thread() {
     self childthread stealthhints_combatmonitor();
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0x52293d8, Offset: 0x1190
 // Size: 0x410
@@ -287,7 +287,7 @@ function stealthhints_eventmonitor() {
     self endon(#"death");
     while (true) {
         self flag::wait_till("stealth_enabled");
-        wait_result = level waittill(#"hash_733d7b56ac978e53");
+        wait_result = level waittill(#"stealth_event");
         event = wait_result.event;
         receiver = wait_result.receiver;
         if (!isalive(receiver)) {
@@ -340,7 +340,7 @@ function stealthhints_eventmonitor() {
     }
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 2, eflags: 0x2 linked
 // Checksum 0xeec863f4, Offset: 0x15a8
 // Size: 0x216
@@ -363,7 +363,7 @@ function stealthhints_aimonitor(ai, eventtype) {
     self notify(#"combat_started");
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0x6f5c4af, Offset: 0x17c8
 // Size: 0xa8
@@ -381,7 +381,7 @@ function stealthhints_deathmonitor() {
     level.custom_death_quote = self.stealth.hints.deathhints[self.stealth.hints.causeofdeath];
 }
 
-// Namespace namespace_7a865494/player
+// Namespace stealth_player/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0x28f58967, Offset: 0x1878
 // Size: 0x9a

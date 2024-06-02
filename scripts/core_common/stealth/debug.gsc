@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_139ae0bb0a87141c;
-#using script_1883fa4e60abbf9f;
+#using scripts\core_common\stealth\utility.gsc;
 #using script_7b68dad851540de;
 #using scripts\core_common\ai_shared.gsc;
 #using scripts\core_common\util_shared.gsc;
@@ -16,11 +16,11 @@ function scalevolume(*ent, *vol) {
     
 }
 
-#namespace namespace_b0df45a;
+#namespace stealth_debug;
 
 /#
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0x8f50faab, Offset: 0xd0
     // Size: 0x210
@@ -48,7 +48,7 @@ function scalevolume(*ent, *vol) {
         }
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0x6e4916a2, Offset: 0x2e8
     // Size: 0x550
@@ -107,7 +107,7 @@ function scalevolume(*ent, *vol) {
         }
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0x60ddebea, Offset: 0x840
     // Size: 0x118
@@ -128,7 +128,7 @@ function scalevolume(*ent, *vol) {
         }
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0x5fd5a2a9, Offset: 0x960
     // Size: 0x100
@@ -151,7 +151,7 @@ function scalevolume(*ent, *vol) {
         }
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0xe8c682fa, Offset: 0xa68
     // Size: 0x54
@@ -160,7 +160,7 @@ function scalevolume(*ent, *vol) {
         return int(dvar);
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0x7c40719c, Offset: 0xac8
     // Size: 0x54
@@ -169,7 +169,7 @@ function scalevolume(*ent, *vol) {
         return int(dvar);
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0x1799361a, Offset: 0xb28
     // Size: 0x54
@@ -178,7 +178,7 @@ function scalevolume(*ent, *vol) {
         return int(dvar);
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0x56d0ee37, Offset: 0xb88
     // Size: 0x54
@@ -187,7 +187,7 @@ function scalevolume(*ent, *vol) {
         return int(dvar);
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0x2efec3b9, Offset: 0xbe8
     // Size: 0x54
@@ -196,7 +196,7 @@ function scalevolume(*ent, *vol) {
         return int(dvar);
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0xea6175d8, Offset: 0xc48
     // Size: 0x54
@@ -205,7 +205,7 @@ function scalevolume(*ent, *vol) {
         return int(dvar);
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0xc279354e, Offset: 0xca8
     // Size: 0x54
@@ -214,7 +214,7 @@ function scalevolume(*ent, *vol) {
         return int(dvar);
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0x3b77fb39, Offset: 0xd08
     // Size: 0x54
@@ -223,7 +223,7 @@ function scalevolume(*ent, *vol) {
         return int(dvar);
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0xedf3badb, Offset: 0xd68
     // Size: 0x34
@@ -231,7 +231,7 @@ function scalevolume(*ent, *vol) {
         return getdvarstring(#"hash_7f779674ec8b206d", "<unknown string>");
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 3, eflags: 0x0
     // Checksum 0x93b6b0bf, Offset: 0xda8
     // Size: 0x9c
@@ -244,7 +244,7 @@ function scalevolume(*ent, *vol) {
         }
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 4, eflags: 0x0
     // Checksum 0x9cac5a48, Offset: 0xe50
     // Size: 0xc4
@@ -257,7 +257,7 @@ function scalevolume(*ent, *vol) {
         }
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 1, eflags: 0x0
     // Checksum 0x3dd24649, Offset: 0xf20
     // Size: 0x184
@@ -285,7 +285,7 @@ function scalevolume(*ent, *vol) {
         }
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 2, eflags: 0x0
     // Checksum 0xa3b78146, Offset: 0x10b0
     // Size: 0x14e
@@ -308,7 +308,7 @@ function scalevolume(*ent, *vol) {
         level.stealth.debug.screen[type]++;
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 1, eflags: 0x0
     // Checksum 0xb31b7898, Offset: 0x1208
     // Size: 0x30
@@ -316,7 +316,7 @@ function scalevolume(*ent, *vol) {
         level.stealth.debug.screen[type] = 0;
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 2, eflags: 0x0
     // Checksum 0xea239e25, Offset: 0x1240
     // Size: 0x124
@@ -337,7 +337,7 @@ function scalevolume(*ent, *vol) {
         }
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 1, eflags: 0x0
     // Checksum 0x179c4481, Offset: 0x1370
     // Size: 0x1a0
@@ -370,7 +370,7 @@ function scalevolume(*ent, *vol) {
         }
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 4, eflags: 0x0
     // Checksum 0x80489d06, Offset: 0x1518
     // Size: 0x5c
@@ -381,7 +381,7 @@ function scalevolume(*ent, *vol) {
         function_314b7255(msg, color, 1, scale, offset);
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 6, eflags: 0x0
     // Checksum 0x8424bf0e, Offset: 0x1580
     // Size: 0x4b0
@@ -435,7 +435,7 @@ function scalevolume(*ent, *vol) {
         }
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 2, eflags: 0x0
     // Checksum 0xc69b1d14, Offset: 0x1a38
     // Size: 0x1e0
@@ -462,7 +462,7 @@ function scalevolume(*ent, *vol) {
         }
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0x492664aa, Offset: 0x1c20
     // Size: 0x65c
@@ -558,7 +558,7 @@ function scalevolume(*ent, *vol) {
         line(facingstart, facingend, (0, 0, 1));
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 3, eflags: 0x0
     // Checksum 0x191d2a50, Offset: 0x2288
     // Size: 0xac
@@ -574,7 +574,7 @@ function scalevolume(*ent, *vol) {
         }
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 8, eflags: 0x0
     // Checksum 0xefed9505, Offset: 0x2340
     // Size: 0x16c
@@ -593,7 +593,7 @@ function scalevolume(*ent, *vol) {
         line(origin, nextpt, color);
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0xf9c2ae01, Offset: 0x24b8
     // Size: 0x38c
@@ -635,7 +635,7 @@ function scalevolume(*ent, *vol) {
         }
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0x41804c42, Offset: 0x2850
     // Size: 0x34c
@@ -677,7 +677,7 @@ function scalevolume(*ent, *vol) {
         function_ea707af9("<unknown string>");
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0x819cb48f, Offset: 0x2ba8
     // Size: 0x304
@@ -723,7 +723,7 @@ function scalevolume(*ent, *vol) {
         }
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 2, eflags: 0x0
     // Checksum 0xd8e80e76, Offset: 0x2eb8
     // Size: 0x1e4
@@ -752,7 +752,7 @@ function scalevolume(*ent, *vol) {
         assert(stealth.var_42d9f5df <= 16);
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 2, eflags: 0x0
     // Checksum 0x2da5a96, Offset: 0x30a8
     // Size: 0xdc
@@ -769,7 +769,7 @@ function scalevolume(*ent, *vol) {
         }
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 3, eflags: 0x0
     // Checksum 0x633bdd7a, Offset: 0x3190
     // Size: 0x104
@@ -783,7 +783,7 @@ function scalevolume(*ent, *vol) {
         line(origin - right, origin + right, (0, 0, 1), 1);
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0x5cd9c422, Offset: 0x32a0
     // Size: 0x3e8
@@ -828,7 +828,7 @@ function scalevolume(*ent, *vol) {
         }
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0xa11107c, Offset: 0x3690
     // Size: 0x3ec
@@ -863,7 +863,7 @@ function scalevolume(*ent, *vol) {
         }
     }
 
-    // Namespace namespace_b0df45a/debug
+    // Namespace stealth_debug/debug
     // Params 0, eflags: 0x0
     // Checksum 0x594c7910, Offset: 0x3a88
     // Size: 0x500

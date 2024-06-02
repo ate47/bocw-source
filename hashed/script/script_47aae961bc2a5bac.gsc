@@ -26,7 +26,7 @@
     // Checksum 0xfed6e4fa, Offset: 0x1a0
     // Size: 0xb4
     function private function_1c3e68dd(linenum) {
-        var_d63a89fd = level._snd.var_88612b20.var_8ef03ed3;
+        var_d63a89fd = level._snd._debug.var_8ef03ed3;
         var_1790a507 = function_827811b5();
         var_38c41a5e = var_1790a507[0];
         var_c13d121d = var_1790a507[1];
@@ -42,7 +42,7 @@
     // Checksum 0xbdf678f7, Offset: 0x260
     // Size: 0x11c
     function private function_d34c1a24(xoffset, linenum, text, color) {
-        var_7ab7d2f1 = level._snd.var_88612b20.var_2a7875e1;
+        var_7ab7d2f1 = level._snd._debug.var_2a7875e1;
         var_1790a507 = function_827811b5();
         var_38c41a5e = var_1790a507[0];
         var_c13d121d = var_1790a507[1];
@@ -116,7 +116,7 @@
     // Checksum 0xaffd7506, Offset: 0x5f8
     // Size: 0x30c
     function private function_7814c6ed(player, playerview, playerangles, cosfov, maxdistance) {
-        var_1e686756 = level._snd.var_88612b20.filter;
+        var_1e686756 = level._snd._debug.filter;
         soundalias = self function_738e0260();
         origin = undefined;
         assert(isdefined(soundalias) == 1);
@@ -138,7 +138,7 @@
         playerforward = anglestoforward(playerangles);
         dot = vectordot(playerforward, normal);
         iswithinfov = dot >= cosfov;
-        var_25f190e = level._snd.var_88612b20.dot;
+        var_25f190e = level._snd._debug.dot;
         if (isdefined(player.var_6d42228d) && player.var_6d42228d == self && isdefined(player.var_c84d8d23) && player.var_c84d8d23 != dot) {
             player.var_c84d8d23 = dot;
             player.var_6d42228d = undefined;
@@ -173,7 +173,7 @@
             visible = function_ada64c98(player, playerangles, playerforward, playerfov, maxdistance);
             array = arraycombine(array, visible, 0);
         }
-        var_1e686756 = level._snd.var_88612b20.filter;
+        var_1e686756 = level._snd._debug.filter;
         if (isdefined(var_1e686756) == 1 && var_1e686756 != "<unknown string>") {
             foreach (ent in array) {
                 soundalias = ent function_738e0260();
@@ -190,7 +190,7 @@
     // Checksum 0x5e610f9, Offset: 0xb30
     // Size: 0x1ec
     function private function_9386ad03(player, var_977d0bf3) {
-        maxdistance = level._snd.var_88612b20.var_f0f0e7f7;
+        maxdistance = level._snd._debug.var_f0f0e7f7;
         maxdistance = maxdistance <= 0 ? 262144 : maxdistance;
         var_22a4e6a0 = [];
         assert(isdefined(player) == 1);
@@ -216,7 +216,7 @@
         origin = self function_43c85ce2();
         angles = self function_cb457f5b();
         soundalias = self function_738e0260();
-        var_3c7a802b = level._snd.var_88612b20.var_2e1c6bb5;
+        var_3c7a802b = level._snd._debug.var_2e1c6bb5;
         radius = var_3c7a802b;
         var_6d59b8a9 = 0;
         angle = undefined;
@@ -241,7 +241,7 @@
                 break;
             }
         }
-        colorscale = level._snd.var_88612b20.var_2d81109e;
+        colorscale = level._snd._debug.var_2d81109e;
         color = vectorscale((1, 1, 1), colorscale);
         var_63d57cb2 = 0.72974;
         if (isdefined(angle) && angle > 0) {
@@ -265,12 +265,12 @@
         if (isdefined(var_22a4e6a0.var_6d42228d)) {
             return var_22a4e6a0.var_6d42228d;
         }
-        var_623f1012 = level._snd.var_88612b20.var_4b824b64;
+        var_623f1012 = level._snd._debug.var_4b824b64;
         fov = var_22a4e6a0 function_731299e5();
         playerview = var_22a4e6a0 function_efda2d6d();
         playerangles = var_22a4e6a0 function_3d31768f();
         playerforward = anglestoforward(playerangles);
-        var_25f190e = level._snd.var_88612b20.dot;
+        var_25f190e = level._snd._debug.dot;
         var_f45e7cd0 = 0;
         var_2ae8ee02 = undefined;
         var_574dfdc3 = function_9ade037c(playerview, playerforward, var_977d0bf3);
@@ -292,8 +292,8 @@
     // Checksum 0xb55ce21c, Offset: 0x12b0
     // Size: 0x614
     function private function_b78b1ab1(player, *var_977d0bf3) {
-        var_57cfcf52 = level._snd.var_88612b20.var_87b166bf;
-        colorscale = level._snd.var_88612b20.var_2d81109e;
+        var_57cfcf52 = level._snd._debug.var_87b166bf;
+        colorscale = level._snd._debug.var_2d81109e;
         var_ff7397dc = function_2677a7e2(var_57cfcf52, colorscale * 10);
         fov = var_977d0bf3 function_731299e5();
         origin = self function_43c85ce2();
@@ -315,7 +315,7 @@
             }
         }
         if (isdefined(soundalias) == 1) {
-            var_c75cd11f = level._snd.var_88612b20.var_29cb2b81;
+            var_c75cd11f = level._snd._debug.var_29cb2b81;
             dist = distance(origin, playerview);
             alpha = 1;
             var_8b9208e = alpha * alpha;
@@ -364,7 +364,7 @@
             var_a9d76ab3 = function_9386ad03(player, var_977d0bf3);
             level.var_dbe59aee = arraycombine(level.var_dbe59aee, var_a9d76ab3, 0);
         }
-        var_6c5d4613 = level._snd.var_88612b20.var_797d43c2;
+        var_6c5d4613 = level._snd._debug.var_797d43c2;
         var_82d451c6 = 0;
         if (level.var_dbe59aee.size >= var_6c5d4613) {
             var_d8515b45 = [];
@@ -404,7 +404,7 @@
     // Checksum 0xe355fb4, Offset: 0x1d90
     // Size: 0x638
     function private function_3d58f598(var_977d0bf3) {
-        var_1e686756 = level._snd.var_88612b20.filter;
+        var_1e686756 = level._snd._debug.filter;
         var_56ac818e = 0;
         var_da38b6bb = 0;
         var_a00ac395 = 0;
@@ -539,66 +539,66 @@
             break;
         case #"hash_7bf92664f192f2a2":
         case #"hash_7bf92664f192f2a2":
-            level._snd.var_88612b20.debuglevel = int(value);
+            level._snd._debug.debuglevel = int(value);
             break;
         case #"hash_7f77282fd4f2f35c":
         case #"hash_7f77282fd4f2f35c":
-            level._snd.var_88612b20.filter = "<unknown string>" + value;
+            level._snd._debug.filter = "<unknown string>" + value;
             break;
         case #"hash_52bc4ee11d186c55":
         case #"hash_52bc4ee11d186c55":
-            level._snd.var_88612b20.var_2a7875e1 = int(value);
+            level._snd._debug.var_2a7875e1 = int(value);
             break;
         case #"hash_52bc4de11d186aa2":
         case #"hash_52bc4de11d186aa2":
-            level._snd.var_88612b20.var_8ef03ed3 = int(value);
+            level._snd._debug.var_8ef03ed3 = int(value);
             break;
         case #"hash_4b427a4d65f4f4b0":
         case #"hash_4b427a4d65f4f4b0":
-            level._snd.var_88612b20.var_2e1c6bb5 = int(value);
+            level._snd._debug.var_2e1c6bb5 = int(value);
             break;
         case #"hash_182296346d138cf8":
         case #"hash_182296346d138cf8":
-            level._snd.var_88612b20.var_29cb2b81 = float(value);
+            level._snd._debug.var_29cb2b81 = float(value);
             break;
         case #"hash_3b9f89c8082a9915":
         case #"hash_3b9f89c8082a9915":
             if (isstring(value)) {
             } else if (isvec(value)) {
-                level._snd.var_88612b20.var_87b166bf = value;
+                level._snd._debug.var_87b166bf = value;
             }
             break;
         case #"hash_3944b771315157c1":
         case #"hash_3944b771315157c1":
-            level._snd.var_88612b20.var_2d81109e = float(value);
+            level._snd._debug.var_2d81109e = float(value);
             break;
         case #"hash_28da12ba1bad355a":
         case #"hash_28da12ba1bad355a":
-            level._snd.var_88612b20.var_2751db2e = int(value);
+            level._snd._debug.var_2751db2e = int(value);
             break;
         case #"hash_7fb5d688966509c9":
         case #"hash_7fb5d688966509c9":
-            level._snd.var_88612b20.var_f0f0e7f7 = int(value);
+            level._snd._debug.var_f0f0e7f7 = int(value);
             break;
         case #"hash_4a9b448151bd0fa9":
         case #"hash_4a9b448151bd0fa9":
-            level._snd.var_88612b20.dot = float(value);
+            level._snd._debug.dot = float(value);
             break;
         case #"hash_579325eaa87b4d2f":
         case #"hash_579325eaa87b4d2f":
-            level._snd.var_88612b20.var_797d43c2 = int(value);
+            level._snd._debug.var_797d43c2 = int(value);
             break;
         case #"hash_35a6f662245752fa":
         case #"hash_35a6f662245752fa":
-            level._snd.var_88612b20.var_77da0ec2 = int(value);
+            level._snd._debug.var_77da0ec2 = int(value);
             break;
         case #"hash_5ba24ffba2d85322":
         case #"hash_5ba24ffba2d85322":
-            level._snd.var_88612b20.var_4c5d0455 = float(value);
+            level._snd._debug.var_4c5d0455 = float(value);
             break;
         case #"hash_3d649e7c9abdc358":
         case #"hash_3d649e7c9abdc358":
-            level._snd.var_88612b20.var_4b824b64 = int(value);
+            level._snd._debug.var_4b824b64 = int(value);
             break;
         }
     }
@@ -635,37 +635,37 @@
             var_39fdd05 = -248;
         }
         waitforplayers();
-        level._snd.var_88612b20 = spawnstruct();
-        level._snd.var_88612b20.debuglevel = 0;
-        level._snd.var_88612b20.filter = "<unknown string>";
-        level._snd.var_88612b20.var_2a7875e1 = var_11ea799a;
-        level._snd.var_88612b20.var_8ef03ed3 = var_39fdd05;
-        level._snd.var_88612b20.var_2e1c6bb5 = 12;
-        level._snd.var_88612b20.var_29cb2b81 = 0.666;
-        level._snd.var_88612b20.var_87b166bf = (0.5, 1, 0.666);
-        level._snd.var_88612b20.var_2d81109e = 0.72974;
-        level._snd.var_88612b20.var_2751db2e = 5;
-        level._snd.var_88612b20.var_f0f0e7f7 = 0;
-        level._snd.var_88612b20.dot = 0.99;
-        level._snd.var_88612b20.var_797d43c2 = 0;
-        level._snd.var_88612b20.var_77da0ec2 = 0;
-        level._snd.var_88612b20.var_4c5d0455 = 0.1;
-        level._snd.var_88612b20.var_4b824b64 = 5;
-        util::init_dvar("<unknown string>", level._snd.var_88612b20.debuglevel, &function_a3f5c17f);
-        util::init_dvar("<unknown string>", level._snd.var_88612b20.filter, &function_a3f5c17f);
-        util::init_dvar("<unknown string>", level._snd.var_88612b20.var_2a7875e1, &function_a3f5c17f);
-        util::init_dvar("<unknown string>", level._snd.var_88612b20.var_8ef03ed3, &function_a3f5c17f);
-        util::init_dvar("<unknown string>", level._snd.var_88612b20.var_2e1c6bb5, &function_a3f5c17f);
-        util::init_dvar("<unknown string>", level._snd.var_88612b20.var_29cb2b81, &function_a3f5c17f);
-        util::init_dvar("<unknown string>", level._snd.var_88612b20.var_87b166bf, &function_a3f5c17f);
-        util::init_dvar("<unknown string>", level._snd.var_88612b20.var_2d81109e, &function_a3f5c17f);
-        util::init_dvar("<unknown string>", level._snd.var_88612b20.var_2751db2e, &function_a3f5c17f);
-        util::init_dvar("<unknown string>", level._snd.var_88612b20.var_f0f0e7f7, &function_a3f5c17f);
-        util::init_dvar("<unknown string>", level._snd.var_88612b20.dot, &function_a3f5c17f);
-        util::init_dvar("<unknown string>", level._snd.var_88612b20.var_797d43c2, &function_a3f5c17f);
-        util::init_dvar("<unknown string>", level._snd.var_88612b20.var_77da0ec2, &function_a3f5c17f);
-        util::init_dvar("<unknown string>", level._snd.var_88612b20.var_4c5d0455, &function_a3f5c17f);
-        util::init_dvar("<unknown string>", level._snd.var_88612b20.var_4b824b64, &function_a3f5c17f);
+        level._snd._debug = spawnstruct();
+        level._snd._debug.debuglevel = 0;
+        level._snd._debug.filter = "<unknown string>";
+        level._snd._debug.var_2a7875e1 = var_11ea799a;
+        level._snd._debug.var_8ef03ed3 = var_39fdd05;
+        level._snd._debug.var_2e1c6bb5 = 12;
+        level._snd._debug.var_29cb2b81 = 0.666;
+        level._snd._debug.var_87b166bf = (0.5, 1, 0.666);
+        level._snd._debug.var_2d81109e = 0.72974;
+        level._snd._debug.var_2751db2e = 5;
+        level._snd._debug.var_f0f0e7f7 = 0;
+        level._snd._debug.dot = 0.99;
+        level._snd._debug.var_797d43c2 = 0;
+        level._snd._debug.var_77da0ec2 = 0;
+        level._snd._debug.var_4c5d0455 = 0.1;
+        level._snd._debug.var_4b824b64 = 5;
+        util::init_dvar("<unknown string>", level._snd._debug.debuglevel, &function_a3f5c17f);
+        util::init_dvar("<unknown string>", level._snd._debug.filter, &function_a3f5c17f);
+        util::init_dvar("<unknown string>", level._snd._debug.var_2a7875e1, &function_a3f5c17f);
+        util::init_dvar("<unknown string>", level._snd._debug.var_8ef03ed3, &function_a3f5c17f);
+        util::init_dvar("<unknown string>", level._snd._debug.var_2e1c6bb5, &function_a3f5c17f);
+        util::init_dvar("<unknown string>", level._snd._debug.var_29cb2b81, &function_a3f5c17f);
+        util::init_dvar("<unknown string>", level._snd._debug.var_87b166bf, &function_a3f5c17f);
+        util::init_dvar("<unknown string>", level._snd._debug.var_2d81109e, &function_a3f5c17f);
+        util::init_dvar("<unknown string>", level._snd._debug.var_2751db2e, &function_a3f5c17f);
+        util::init_dvar("<unknown string>", level._snd._debug.var_f0f0e7f7, &function_a3f5c17f);
+        util::init_dvar("<unknown string>", level._snd._debug.dot, &function_a3f5c17f);
+        util::init_dvar("<unknown string>", level._snd._debug.var_797d43c2, &function_a3f5c17f);
+        util::init_dvar("<unknown string>", level._snd._debug.var_77da0ec2, &function_a3f5c17f);
+        util::init_dvar("<unknown string>", level._snd._debug.var_4c5d0455, &function_a3f5c17f);
+        util::init_dvar("<unknown string>", level._snd._debug.var_4b824b64, &function_a3f5c17f);
     }
 
     // Namespace snd/namespace_db9ff804
@@ -771,8 +771,8 @@
             distance = 2400;
         }
         while (!function_3132f113(player)) {
-            scale = -1 * level._snd.var_88612b20.var_29cb2b81;
-            var_edbb6afa = 6 * level._snd.var_88612b20.var_29cb2b81;
+            scale = -1 * level._snd._debug.var_29cb2b81;
+            var_edbb6afa = 6 * level._snd._debug.var_29cb2b81;
             playervieworg = player function_efda2d6d();
             playerangles = player function_3d31768f();
             playerforward = anglestoforward(playerangles);

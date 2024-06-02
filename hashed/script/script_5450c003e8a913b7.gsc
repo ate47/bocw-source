@@ -1,12 +1,12 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_3819e7a1427df6d2;
 #using script_3072532951b5b4ae;
-#using script_7e3221b6c80d8cc4;
-#using script_912160eeb6a2d51;
+#using scripts\core_common\stealth\debug.gsc;
+#using scripts\core_common\stealth\threat_sight.gsc;
 #using script_16a28d93ee216f6f;
-#using script_42310dfa1362069f;
+#using scripts\core_common\stealth\event.gsc;
 #using script_139ae0bb0a87141c;
-#using script_1883fa4e60abbf9f;
+#using scripts\core_common\stealth\utility.gsc;
 #using script_3ad66e3076c279ab;
 #using scripts\cp_common\util.gsc;
 #using scripts\core_common\util_shared.gsc;
@@ -33,13 +33,13 @@ function main() {
     self init_flags();
     stealth_group::addtogroup(self.script_stealthgroup, self);
     self setpatrolstyle_base();
-    self namespace_cf88f507::event_init_entity();
+    self stealth_event::event_init_entity();
     self thread monitor_damage_thread(level.stealth.damage_auto_range, level.stealth.damage_sight_range);
     self set_alert_level("reset");
     self bt_set_stealth_state("idle");
     self stealth_init_goal_radius();
     /#
-        self thread namespace_b0df45a::debug_enemy();
+        self thread stealth_debug::debug_enemy();
     #/
     if (isdefined(level.stealth.fninitenemygame)) {
         self thread [[ level.stealth.fninitenemygame ]]();
@@ -111,7 +111,7 @@ function init_settings() {
     self.stealth.starttime = gettime();
     self namespace_979752dc::function_6a3b08d0();
     self namespace_77fd5d41::initstealthfunctions();
-    self namespace_6c0cd084::threat_sight_set_state("hidden");
+    self stealth_threat_sight::threat_sight_set_state("hidden");
 }
 
 // Namespace namespace_f1f700ac/enemy
@@ -144,7 +144,7 @@ function function_2b1c382() {
 // Size: 0x1fc
 function death_cleanup() {
     if (isdefined(self)) {
-        self namespace_6c0cd084::threat_sight_set_state("death");
+        self stealth_threat_sight::threat_sight_set_state("death");
         aiutility::removeaioverridedamagecallback(self, &check_kill_damage);
     } else {
         foreach (player in getplayers()) {
@@ -300,7 +300,7 @@ function set_blind(blind, force) {
 function set_sight_state(state) {
     switch (state) {
     case #"blind":
-        self namespace_6c0cd084::threat_sight_set_state("blind");
+        self stealth_threat_sight::threat_sight_set_state("blind");
         self.fovcosine = 0.98;
         self.fovcosinebusy = 0.98;
         self.fovcosinez = 0;
@@ -311,7 +311,7 @@ function set_sight_state(state) {
     case #"idle":
     case #"hidden":
     case #"unaware":
-        self namespace_6c0cd084::threat_sight_set_state("hidden");
+        self stealth_threat_sight::threat_sight_set_state("hidden");
         self.fovcosine = 0.7;
         self.fovcosinebusy = 0.86;
         self.fovcosinez = 0.97;
@@ -320,7 +320,7 @@ function set_sight_state(state) {
         self.fovcosineperiphmaxdistsq = 90000;
         break;
     case #"investigate":
-        self namespace_6c0cd084::threat_sight_set_state("investigate");
+        self stealth_threat_sight::threat_sight_set_state("investigate");
         self.fovcosine = 0.7;
         self.fovcosinebusy = 0.86;
         self.fovcosinez = 0.97;
@@ -330,7 +330,7 @@ function set_sight_state(state) {
         break;
     case #"hunt":
     case #"combat_hunt":
-        self namespace_6c0cd084::threat_sight_set_state("combat_hunt");
+        self stealth_threat_sight::threat_sight_set_state("combat_hunt");
         self.fovcosine = 0.7;
         self.fovcosinebusy = 0.86;
         self.fovcosinez = 0.97;
@@ -340,7 +340,7 @@ function set_sight_state(state) {
         break;
     case #"combat":
     case #"spotted":
-        self namespace_6c0cd084::threat_sight_set_state("spotted");
+        self stealth_threat_sight::threat_sight_set_state("spotted");
         self.fovcosine = 0.01;
         self.fovcosinebusy = 0.574;
         self.fovcosinez = 0;
@@ -395,13 +395,13 @@ function set_alert_level(type, event) {
         wait(0.05);
     }
     /#
-        self thread namespace_b0df45a::function_690312e5(type);
+        self thread stealth_debug::function_690312e5(type);
     #/
     self namespace_979752dc::set_stealth_state(type);
     self notify(#"hash_1969930500784d9a", type);
     self.alertlevel = namespace_979752dc::alertlevel_script_to_exe(type);
     iscombat = self.alertlevelint >= level.stealth.alert_levels_exe[#"combat"];
-    self namespace_cf88f507::event_entity_core_set_enabled(!iscombat);
+    self stealth_event::event_entity_core_set_enabled(!iscombat);
     self.ignoreexplosionevents = !iscombat;
     if (self.awarenesslevelcurrent === "unaware" && self.awarenesslevelprevious !== "unaware" && self.awarenesslevelprevious !== "combat") {
         self.stealth.var_e39ea5e7 = 1;
@@ -470,10 +470,10 @@ function monitor_damage_thread(rangeauto, rangesight) {
         rangesight = level.stealth.override_damage_sight_range;
     }
     if (isalive(self) && self.health > 0) {
-        self namespace_cf88f507::event_broadcast_axis("ally_damaged", "ally_hurt_peripheral", other, rangeauto, rangesight);
+        self stealth_event::event_broadcast_axis("ally_damaged", "ally_hurt_peripheral", other, rangeauto, rangesight);
         return;
     }
-    self namespace_cf88f507::event_broadcast_axis("ally_killed", "ally_hurt_peripheral", other, rangeauto, rangesight);
+    self stealth_event::event_broadcast_axis("ally_killed", "ally_hurt_peripheral", other, rangeauto, rangesight);
 }
 
 // Namespace namespace_f1f700ac/enemy
@@ -563,7 +563,7 @@ function event_handler_should_ignore(event) {
         return 1;
     }
     if (isdefined(event_severity_min)) {
-        diff = namespace_cf88f507::event_severity_compare(event_severity_min, event.type);
+        diff = stealth_event::event_severity_compare(event_severity_min, event.type);
         if (diff > 0) {
             return 1;
         }
@@ -630,7 +630,7 @@ function should_ignore_sprint_footstep(event) {
             return false;
         }
         playervisible = self cansee(event.entity);
-        if (!playervisible && event.entity namespace_6c0cd084::player_is_sprinting_at_me(self)) {
+        if (!playervisible && event.entity stealth_threat_sight::player_is_sprinting_at_me(self)) {
             return false;
         }
     }
@@ -649,7 +649,7 @@ function event_override_disguise(event) {
         case #"footstep_walk":
         case #"footstep_run":
         case #"proximity":
-            self thread namespace_6c0cd084::threat_sight_force_visible(event.entity, 1);
+            self thread stealth_threat_sight::threat_sight_force_visible(event.entity, 1);
             return true;
         }
     }
@@ -757,21 +757,21 @@ function react_announce(event) {
         self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "investigate", delaytime);
         println("<unknown string>" + self getentitynumber() + "<unknown string>" + event.typeorig + "<unknown string>");
         /#
-            namespace_b0df45a::function_65b21ab8(self, "<unknown string>");
+            stealth_debug::function_65b21ab8(self, "<unknown string>");
         #/
         return true;
     case #"cover_blown":
         self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "coverblown", delaytime);
         println("<unknown string>" + self getentitynumber() + "<unknown string>" + event.typeorig + "<unknown string>");
         /#
-            namespace_b0df45a::function_65b21ab8(self, "<unknown string>");
+            stealth_debug::function_65b21ab8(self, "<unknown string>");
         #/
         return true;
     case #"combat":
         self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "combat", 1);
         println("<unknown string>" + self getentitynumber() + "<unknown string>" + event.typeorig + "<unknown string>");
         /#
-            namespace_b0df45a::function_65b21ab8(self, "<unknown string>");
+            stealth_debug::function_65b21ab8(self, "<unknown string>");
         #/
         return true;
     }
@@ -803,27 +803,27 @@ function react_announce_specific(event) {
         case #"found_corpse":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", event.typeorig, delaytime);
             /#
-                namespace_b0df45a::function_65b21ab8(self, "<unknown string>");
+                stealth_debug::function_65b21ab8(self, "<unknown string>");
             #/
             return true;
         case #"bulletwhizby":
         case #"gunshot":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "gunshot", 0.2, event);
             /#
-                namespace_b0df45a::function_65b21ab8(self, "<unknown string>");
+                stealth_debug::function_65b21ab8(self, "<unknown string>");
             #/
             return true;
         case #"ally_damaged":
         case #"gunshot_teammate":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "gunshot", randomfloatrange(0.8, 1.3), event);
             /#
-                namespace_b0df45a::function_65b21ab8(self, "<unknown string>");
+                stealth_debug::function_65b21ab8(self, "<unknown string>");
             #/
             return true;
         case #"ally_killed":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "ally_killed", 0.5);
             /#
-                namespace_b0df45a::function_65b21ab8(self, "<unknown string>");
+                stealth_debug::function_65b21ab8(self, "<unknown string>");
             #/
             return true;
         case #"proximity":
@@ -917,7 +917,7 @@ function bt_event_handler_severity(event) {
         self thread bt_event_combat(event);
         break;
     }
-    level notify(#"hash_733d7b56ac978e53", {#event:event, #receiver:self});
+    level notify(#"stealth_event", {#event:event, #receiver:self});
     func = namespace_b2b86d39::stealth_get_func(event.typeorig);
     if (isdefined(func) && func != &bt_event_handler_severity) {
         self thread [[ func ]](event);
@@ -943,7 +943,7 @@ function bt_event_cover_blown(event) {
         self set_alert_level("warning1", event);
     } else {
         if (event.typeorig == "sight" && self namespace_979752dc::function_d58e1c1c() && isdefined(event.entity)) {
-            self namespace_6c0cd084::function_7af4fa05(event.entity);
+            self stealth_threat_sight::function_7af4fa05(event.entity);
         }
         self set_alert_level("warning2", event);
     }

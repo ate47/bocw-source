@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\cp_common\gametypes\globallogic_ui.gsc;
 #using scripts\cp_common\skipto.gsc;
-#using script_1883fa4e60abbf9f;
+#using scripts\core_common\stealth\utility.gsc;
 #using scripts\cp_common\util.gsc;
 #using scripts\core_common\values_shared.gsc;
 #using scripts\cp_common\snd.gsc;

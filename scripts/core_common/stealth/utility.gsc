@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_68d08b784c92da95;
-#using script_7e3221b6c80d8cc4;
-#using script_912160eeb6a2d51;
+#using scripts\core_common\stealth\debug.gsc;
+#using scripts\core_common\stealth\threat_sight.gsc;
 #using script_6c5ee33879e077f8;
 #using script_139ae0bb0a87141c;
 #using script_4f58b276cb938e94;
@@ -863,7 +863,7 @@ function set_disguised_default(disguised = 0) {
             continue;
         }
         if (isdefined(ai.stealth) && isdefined(ai.stealth.threat_sight_state)) {
-            ai namespace_6c0cd084::threat_sight_set_state_parameters();
+            ai stealth_threat_sight::threat_sight_set_state_parameters();
         }
     }
 }
@@ -979,7 +979,7 @@ function enable_stealth_for_ai(enabled, var_6f52290c = 0) {
             self.dontattackme = 0;
             self namespace_f1f700ac::bt_event_combat(dummyevent);
             stealth_group::function_b6ebd4af(self);
-            self namespace_6c0cd084::function_60514e0b();
+            self stealth_threat_sight::function_60514e0b();
         }
     }
     if (self flag::exists("stealth_enabled")) {
@@ -1165,7 +1165,7 @@ function function_2324f175(enabled) {
 // Size: 0x6c
 function function_3249d5ff() {
     self.stealth.var_f4926fd9 = 1;
-    self namespace_6c0cd084::threat_sight_set_state_parameters("investigate_grace_period");
+    self stealth_threat_sight::threat_sight_set_state_parameters("investigate_grace_period");
     self.awarenesslevelcurrent = "high_alert";
     if (self flashlight::function_47df32b8()) {
         self thread flashlight::function_8d59ee47(1);
@@ -1179,7 +1179,7 @@ function function_3249d5ff() {
 function function_64608a78() {
     self.stealth.var_f4926fd9 = 0;
     self.stealth.var_3bf603d9 = gettime();
-    self namespace_6c0cd084::threat_sight_set_state_parameters("investigate");
+    self stealth_threat_sight::threat_sight_set_state_parameters("investigate");
     self.awarenesslevelcurrent = "low_alert";
     if (self flashlight::function_3aec1b7()) {
         self thread flashlight::function_8d59ee47(0);

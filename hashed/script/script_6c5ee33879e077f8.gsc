@@ -1,12 +1,12 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_4a6f4e6c1c838e01;
 #using script_6f8610e78fdd3440;
-#using script_7e3221b6c80d8cc4;
+#using scripts\core_common\stealth\debug.gsc;
 #using script_139ae0bb0a87141c;
-#using script_912160eeb6a2d51;
+#using scripts\core_common\stealth\threat_sight.gsc;
 #using script_5450c003e8a913b7;
-#using script_1883fa4e60abbf9f;
-#using script_42310dfa1362069f;
+#using scripts\core_common\stealth\utility.gsc;
+#using scripts\core_common\stealth\event.gsc;
 #using script_16a28d93ee216f6f;
 #using scripts\core_common\array_shared.gsc;
 #using scripts\core_common\flag_shared.gsc;
@@ -44,7 +44,7 @@ function function_f9682fd() {
     }
     level.var_8bca2033 = &namespace_979752dc::function_2baa2568;
     /#
-        thread namespace_b0df45a::debug_manager();
+        thread stealth_debug::debug_manager();
     #/
 }
 
@@ -94,7 +94,7 @@ function init() {
     level.stealth.detect.minrangedarkness[#"spotted"] = [];
     level.stealth.detect.timeout = 5;
     namespace_cc4354b9::corpse_init_level();
-    namespace_cf88f507::event_init_level();
+    stealth_event::event_init_level();
     level.stealth.next_sound_wait = 3000;
     level.stealth.head_shot_dist = 20;
     level.stealth.group = spawnstruct();
@@ -195,7 +195,7 @@ function set_detect_ranges_internal(hidden, spotted) {
 function manager_thread() {
     while (true) {
         level flag::wait_till("stealth_enabled");
-        namespace_6c0cd084::threat_sight_set_dvar(1);
+        stealth_threat_sight::threat_sight_set_dvar(1);
         level flag::wait_till("stealth_spotted");
         if (!level flag::get("stealth_enabled")) {
             continue;
@@ -382,7 +382,7 @@ function stealth_suspicious_doors_init() {
             level.stealth.suspicious_door.found_distsqrd = sqr(300);
         }
         level namespace_979752dc::set_stealth_func("suspicious_door", &namespace_cc4354b9::suspicious_door_found);
-        level namespace_cf88f507::event_severity_set("investigate", "suspicious_door", 20);
+        level stealth_event::event_severity_set("investigate", "suspicious_door", 20);
     }
 }
 

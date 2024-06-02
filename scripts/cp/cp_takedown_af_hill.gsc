@@ -15,7 +15,7 @@
 #using script_32399001bdb550da;
 #using script_35ae72be7b4fec10;
 #using scripts\core_common\lui_shared.gsc;
-#using script_1883fa4e60abbf9f;
+#using scripts\core_common\stealth\utility.gsc;
 #using script_37f9ff47f340fbe8;
 #using scripts\core_common\colors_shared.gsc;
 #using scripts\core_common\exploder_shared.gsc;

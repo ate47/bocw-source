@@ -116,7 +116,7 @@ function private function_8764fdff(var_952fc2b4, role, var_229cbfe0, var_8bf1051
     skill.role = role;
     skill.var_ada67e63 = isdefined(var_6669664.var_a99abf33) ? var_6669664.var_a99abf33 : "";
     skill.id = isdefined(var_6669664.var_e1bfe02c) ? var_6669664.var_e1bfe02c : 0;
-    skill.var_1f7d36a1 = var_8bf10510;
+    skill.credit = var_8bf10510;
     skill.var_df565943 = var_229cbfe0;
     skill.cooldown = isdefined(var_6669664.cooldown) ? var_6669664.cooldown : 0;
     skill.var_3e32dc53 = isdefined(var_6669664.var_a58f84b8) ? var_6669664.var_a58f84b8 : 0;
@@ -365,7 +365,7 @@ function function_45d8c5d5(var_ada67e63) {
     assert(isdefined(skill));
     while (true) {
         player waittill(#"hash_70f820388a1ba07f");
-        if (player.var_1f7d36a1 >= skill.var_1f7d36a1) {
+        if (player.credit >= skill.credit) {
             player function_ca32358b(role, var_ada67e63);
             break;
         }
@@ -855,7 +855,7 @@ function function_b3dbed86() {
             if (!isdefined(var_fd4bfb0e) || var_fd4bfb0e <= 0) {
                 break;
             }
-            if (player.var_1f7d36a1 >= var_fd4bfb0e) {
+            if (player.credit >= var_fd4bfb0e) {
                 player.var_df565943++;
                 if (isdefined(var_7a4fec0b)) {
                     function_ea44a840(var_7a4fec0b);
@@ -980,14 +980,14 @@ function function_35dcdbf0(var_ada67e63) {
 // Params 1, eflags: 0x0
 // Checksum 0xac0cd03b, Offset: 0x3ef8
 // Size: 0x1d0
-function function_eba95887(var_1f7d36a1) {
+function function_eba95887(credit) {
     assert(isplayer(self));
-    var_1f7d36a1 = int(math::clamp(isdefined(var_1f7d36a1) ? var_1f7d36a1 : 0, 0, 100));
-    self.var_1f7d36a1 = var_1f7d36a1;
+    credit = int(math::clamp(isdefined(credit) ? credit : 0, 0, 100));
+    self.credit = credit;
     self notify(#"hash_70f820388a1ba07f");
     /#
         if (getdvarint(#"hash_628a73b6809e0598", 0) > 0) {
-            iprintln(self.playername + "<unknown string>" + self.var_1f7d36a1);
+            iprintln(self.playername + "<unknown string>" + self.credit);
         }
     #/
     role = self spy::function_da8679c7();
@@ -1004,17 +1004,17 @@ function function_eba95887(var_1f7d36a1) {
 // Params 1, eflags: 0x0
 // Checksum 0x36e66fdf, Offset: 0x40d0
 // Size: 0xcc
-function function_53a81144(var_1f7d36a1) {
+function function_53a81144(credit) {
     assert(isplayer(self));
-    assert(isint(self.var_1f7d36a1));
-    var_1f7d36a1 = int(isdefined(var_1f7d36a1) ? var_1f7d36a1 : 0);
-    if (var_1f7d36a1 == 0) {
+    assert(isint(self.credit));
+    credit = int(isdefined(credit) ? credit : 0);
+    if (credit == 0) {
         return;
     }
     /#
     #/
-    var_52fe6461 = self.var_1f7d36a1;
-    self function_eba95887(var_1f7d36a1 + var_52fe6461);
+    var_52fe6461 = self.credit;
+    self function_eba95887(credit + var_52fe6461);
 }
 
 // Namespace namespace_4d9a1379/namespace_4d9a1379
@@ -1074,8 +1074,8 @@ function function_395f82d0(var_ada67e63) {
         return;
     }
     skill = function_cb6ba828(self spy::function_da8679c7(), var_ada67e63);
-    if (isdefined(skill.var_1f7d36a1) && isdefined(skill.scorestreak) && skill.var_1f7d36a1 > 0 && skill.var_1f7d36a1 >= self.var_1f7d36a1) {
-        progress = self.var_1f7d36a1 / skill.var_1f7d36a1;
+    if (isdefined(skill.credit) && isdefined(skill.scorestreak) && skill.credit > 0 && skill.credit >= self.credit) {
+        progress = self.credit / skill.credit;
         slot = function_5648ed56(skill.var_5fcde6a8);
         cost = self function_dceb5542(level.killstreaks[skill.scorestreak.var_d3413870].itemindex);
         self function_2c334e8f(slot, int(cost * progress));

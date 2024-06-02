@@ -211,7 +211,7 @@ function function_8c3be026() {
     if (!isdefined(self.angles)) {
         self.angles = (0, 0, 0);
     }
-    var_57f4c959 = level.var_ddf5b902[#"sitrep"][self.scriptbundlename];
+    var_57f4c959 = level.scriptbundles[#"sitrep"][self.scriptbundlename];
     var_7343683f = util::spawn_model(var_57f4c959.model, self.origin, self.angles);
     if (isdefined(var_57f4c959.var_2e0f906a)) {
         var_7343683f.var_280ea1f = var_57f4c959.var_2e0f906a;

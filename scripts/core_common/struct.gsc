@@ -59,7 +59,7 @@ function event_handler[createstruct] init(s) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x85aad555, Offset: 0x670
 // Size: 0x16a
-function private function_efa51bbb(k, v) {
+function private _cache(k, v) {
     /#
         assert(isdefined(k), "<unknown string>");
         print("<unknown string>" + k + "<unknown string>");
@@ -117,7 +117,7 @@ function get_array(str_value, str_key = "targetname") {
     if (isdefined(str_value)) {
         if (!isdefined(level.var_41204f29) || !isinarray(level.var_41204f29, tolower(str_key))) {
             if (!isdefined(level.var_657bb3b3[str_key][str_value])) {
-                function_efa51bbb(str_key, str_value);
+                _cache(str_key, str_value);
             }
         }
         return arraycopy(isdefined(level.var_657bb3b3[str_key][str_value]) ? level.var_657bb3b3[str_key][str_value] : []);

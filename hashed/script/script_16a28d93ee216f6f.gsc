@@ -1,6 +1,6 @@
 // Atian COD Tools GSC CW decompiler test
 #using script_5450c003e8a913b7;
-#using script_1883fa4e60abbf9f;
+#using scripts\core_common\stealth\utility.gsc;
 #using script_2d443451ce681a;
 #using scripts\cp_common\util.gsc;
 #using scripts\core_common\flag_shared.gsc;
