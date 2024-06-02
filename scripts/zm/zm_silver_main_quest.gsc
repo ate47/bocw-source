@@ -2703,9 +2703,9 @@ function function_8d1b6fd8(var_26fccdce, var_6f9a60d5, var_80e903b2, var_465f425
 // Checksum 0xfcee527c, Offset: 0xe990
 // Size: 0x132
 function private function_b6a1fe09() {
-    var_84e505 = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
+    steiners = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
     var_3fa8bde0 = [];
-    foreach (steiner in var_84e505) {
+    foreach (steiner in steiners) {
         if (isalive(steiner) && steiner.team == #"allies") {
             if (!isdefined(var_3fa8bde0)) {
                 var_3fa8bde0 = [];

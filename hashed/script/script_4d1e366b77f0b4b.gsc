@@ -390,7 +390,7 @@ function function_cf0706a7() {
         case #"hash_fb30e673c6ed7ed":
         case #"hash_3710ddeafb2df7df":
         case #"hash_7791897f03cdc3bf":
-        case #"hash_794aad9f189f1889":
+        case #"steiner_spawn":
             player = getplayers()[0];
             v_direction = player getplayerangles();
             v_direction = anglestoforward(v_direction) * 8000;
@@ -419,22 +419,22 @@ function function_cf0706a7() {
             }
             break;
         case #"hash_7168487d1ca40ace":
-            var_84e505 = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
-            foreach (steiner in var_84e505) {
+            steiners = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
+            foreach (steiner in steiners) {
                 steiner thread function_735ef74d();
             }
             break;
         case #"hash_56fe56d42aeaae84":
-            var_84e505 = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
-            foreach (steiner in var_84e505) {
+            steiners = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
+            foreach (steiner in steiners) {
                 if (isalive(steiner)) {
                     steiner function_bf898e7e(!steiner function_b37b32b9());
                 }
             }
             break;
         case #"hash_6c5505a13bdeb727":
-            var_84e505 = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
-            foreach (steiner in var_84e505) {
+            steiners = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
+            foreach (steiner in steiners) {
                 if (isalive(steiner)) {
                     if (!isdefined(steiner.var_9fde8624) || steiner function_ba878b50() || steiner.var_9fde8624 === #"hash_5605f3a585b3ef9f") {
                         steiner function_af554aaf(!is_true(steiner.var_53bac70d));
@@ -443,8 +443,8 @@ function function_cf0706a7() {
             }
             break;
         case #"hash_359a6fc8ff117087":
-            var_84e505 = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
-            foreach (steiner in var_84e505) {
+            steiners = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
+            foreach (steiner in steiners) {
                 if (isalive(steiner)) {
                     if (!isdefined(steiner.var_9fde8624) || steiner function_3758a4e7() || steiner.var_9fde8624 === #"hash_5605f3a585b3ef9f") {
                         steiner function_16a8babd(!is_true(steiner.var_22b8f534));
@@ -453,18 +453,18 @@ function function_cf0706a7() {
             }
             break;
         case #"hash_24ad0cbc87557614":
-            var_84e505 = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
-            foreach (steiner in var_84e505) {
+            steiners = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
+            foreach (steiner in steiners) {
                 if (isalive(steiner)) {
                     steiner.ai.var_bb06b848 = !steiner.ai.var_bb06b848;
                 }
             }
             break;
         case #"hash_2359be32da56aa21":
-            var_84e505 = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
+            steiners = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
             split_blast = undefined;
             split_bomb = undefined;
-            foreach (steiner in var_84e505) {
+            foreach (steiner in steiners) {
                 if (!isdefined(steiner.var_9fde8624) || steiner.var_9fde8624 === #"hash_5605f3a585b3ef9f") {
                     continue;
                 }
@@ -2954,9 +2954,9 @@ function function_c6579189(target) {
 // Checksum 0x98072ffe, Offset: 0xb600
 // Size: 0x132
 function private function_46d99f6b() {
-    var_84e505 = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
+    steiners = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
     var_ddb534a3 = [];
-    foreach (steiner in var_84e505) {
+    foreach (steiner in steiners) {
         if (isalive(steiner) && steiner.team == #"allies") {
             if (!isdefined(var_ddb534a3)) {
                 var_ddb534a3 = [];
